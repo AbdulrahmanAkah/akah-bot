@@ -1,0 +1,43 @@
+Metadata-Version: 2.4
+Name: spot-speculation-bot
+Version: 0.1.0
+Summary: Spot-only cryptocurrency speculation and research system
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+Requires-Dist: ccxt>=4.4
+Requires-Dist: numpy>=2.0
+Requires-Dist: pandas>=2.2
+Requires-Dist: pyarrow>=17
+Requires-Dist: pyyaml>=6.0
+Provides-Extra: dev
+Requires-Dist: pytest>=8.0; extra == "dev"
+Requires-Dist: pytest-cov>=5.0; extra == "dev"
+Requires-Dist: ruff>=0.6; extra == "dev"
+Requires-Dist: mypy>=1.11; extra == "dev"
+Requires-Dist: pandas-stubs; extra == "dev"
+
+﻿# Spot Speculation Bot
+
+نظام بحث ومضاربة آلية للعملات الرقمية.
+
+## القيود الأساسية
+
+- Spot فقط.
+- شراء الأصل ثم بيع الكمية المملوكة فقط.
+- دون رافعة مالية.
+- دون Margin.
+- دون Futures أو Perpetuals.
+- دون بيع على المكشوف.
+- دون اقتراض أو فوائد.
+- المضاربة فقط؛ الاستثمار طويل الأجل خارج نطاق البوت.
+
+## الحالة الحالية
+
+الإصدار: v0.1 Core
+
+المرحلة الحالية:
+- نماذج البيانات.
+- محاسبة المحفظة.
+- حساب حجم الصفقة.
+- الحارس التشغيلي الشرعي.
+- الاختبارات الأساسية.
