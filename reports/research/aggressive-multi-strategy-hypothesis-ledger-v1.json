@@ -105,7 +105,7 @@
       "thesis": "Enter concentrated Spot positions when prolonged volatility compression resolves upward with expanding turnover."
     }
   ],
-  "last_updated_at": "2026-07-24T21:45:04.729647Z",
+  "last_updated_at": "2026-07-24T22:27:52.724164Z",
   "protocol_id": "AGGRESSIVE_MULTI_STRATEGY_RESEARCH_PROTOCOL_V1",
   "registered_at": "2026-07-24T12:20:39+00:00",
   "results": [
@@ -433,6 +433,169 @@
           "maximum_drawdown": -0.8631694743826882,
           "total_return": 0.8231402643053183,
           "trade_count": 93,
+          "transaction_cost_fraction": 0.004
+        }
+      ]
+    },
+    {
+      "artifacts": {
+        "daily_results": "data/research/strategy_results/ams_v1_h03_liquidity_sweep_reversal/ams-v1-h03-liquidity-sweep-reversal-daily-results.parquet",
+        "monthly_csv": "reports/research/ams-v1-h03-liquidity-sweep-reversal-monthly.csv",
+        "report": "reports/research/ams-v1-h03-liquidity-sweep-reversal.json",
+        "signals": "data/research/strategy_results/ams_v1_h03_liquidity_sweep_reversal/ams-v1-h03-liquidity-sweep-reversal-signals.parquet",
+        "trades_csv": "reports/research/ams-v1-h03-liquidity-sweep-reversal-trades.csv",
+        "trades_parquet": "data/research/strategy_results/ams_v1_h03_liquidity_sweep_reversal/ams-v1-h03-liquidity-sweep-reversal-trades.parquet",
+        "weights": "data/research/strategy_results/ams_v1_h03_liquidity_sweep_reversal/ams-v1-h03-liquidity-sweep-reversal-weights.parquet"
+      },
+      "benchmark": {
+        "annual_capital_multiple": 1.3392517638199788,
+        "annual_compound_return": 0.3392517638199788,
+        "annualized_volatility": 0.6209620813021148,
+        "average_active_positions": 1.0,
+        "average_exposure": 1.0,
+        "capital_survived": true,
+        "end_time": "2024-12-31T00:00:00+00:00",
+        "final_equity": 3.214489349835998,
+        "geometric_monthly_return": 0.024641289012008682,
+        "maximum_active_positions": 1,
+        "maximum_drawdown": -0.7662699323798872,
+        "maximum_exposure": 1.0,
+        "observations": 1461,
+        "positive_day_fraction": 0.5023956194387406,
+        "return_to_drawdown_ratio": 2.889959864349916,
+        "sharpe_ratio": 0.7798085675185674,
+        "start_time": "2021-01-01T00:00:00+00:00",
+        "total_return": 2.214489349835998,
+        "total_transaction_cost": 0.0,
+        "total_turnover": 0.0
+      },
+      "binding": true,
+      "completed_at": "2026-07-24T22:27:52.593231Z",
+      "decision": "REJECT_H03",
+      "execution_model": {
+        "atr_days": 14,
+        "borrowing": false,
+        "derivatives": false,
+        "leverage": false,
+        "long_only": true,
+        "market": "SPOT_ONLY",
+        "portfolio_application": "NEXT_DAILY_RETURN_PERIOD",
+        "short_selling": false,
+        "signal_time": "DAILY_CANDLE_CLOSE",
+        "stop_model": "DAILY_OHLC_TRIGGER_WITH_EXIT_AT_DAILY_CLOSE",
+        "survivorship_bias_remaining": true
+      },
+      "family": "LIQUIDITY_SWEEP_REVERSAL",
+      "hypothesis_id": "AMS-V1-H03-LIQUIDITY-SWEEP-REVERSAL",
+      "limitations": [
+        "Bootstrap point-in-time universe still has survivorship bias because delisted asset history is incomplete.",
+        "2025 test and 2026 holdout data remain locked.",
+        "Daily OHLC data cannot determine exact intraday stop sequence or fill price."
+      ],
+      "monthly_statistics": {
+        "best_month": 0.3436228536012813,
+        "month_count": 48,
+        "positive_month_fraction": 0.4166666666666667,
+        "target_month_fraction": 0.041666666666666664,
+        "worst_month": -0.35498943820060025
+      },
+      "objective": {
+        "annual_capital_multiple_equivalent": 13.214788658781796,
+        "geometric_monthly_return_target": 0.24,
+        "objective_met": false
+      },
+      "parameter_hash_sha256": "266a93110f083e5b63b849d3524f9cd2f69e35583ac4f8c8944f51387e328d47",
+      "parameters": {
+        "initial_stop_atr": 2.0,
+        "maximum_holding_days": 14,
+        "maximum_positions": 3,
+        "minimum_turnover_expansion": 1.25,
+        "profit_trail_atr": 2.5,
+        "ranking_maximum": 15,
+        "recovery_close_fraction": 0.65,
+        "sweep_lookback_days": 20,
+        "transaction_cost_fraction": 0.002
+      },
+      "performance": {
+        "annual_capital_multiple": 1.0760040441862215,
+        "annual_compound_return": 0.07600404418622153,
+        "annualized_volatility": 0.45037491325435564,
+        "average_active_positions": 0.648186173853525,
+        "average_exposure": 0.3408624229979466,
+        "capital_survived": true,
+        "end_time": "2024-12-31T00:00:00+00:00",
+        "final_equity": 1.3402046614609584,
+        "geometric_monthly_return": 0.006123188900230003,
+        "maximum_active_positions": 3,
+        "maximum_drawdown": -0.6156694253775528,
+        "maximum_exposure": 1.0,
+        "observations": 1461,
+        "positive_day_fraction": 0.17864476386036962,
+        "return_to_drawdown_ratio": 0.5525768333425547,
+        "sharpe_ratio": 0.3899911313771975,
+        "start_time": "2021-01-01T00:00:00+00:00",
+        "total_return": 0.3402046614609584,
+        "total_transaction_cost": 0.21133333333333335,
+        "total_turnover": 105.66666666666667
+      },
+      "protocol_id": "AMS-V1",
+      "research_window": {
+        "end_exclusive": "2025-01-01T00:00:00+00:00",
+        "locked_test_start": "2025-01-01T00:00:00+00:00",
+        "start": "2021-01-01T00:00:00+00:00"
+      },
+      "schema_version": "ams-v1-h03-liquidity-sweep-reversal-result-v1",
+      "single_pass": true,
+      "source_commit": "5d1d6077c71959985e93a36ea872afe57282ed3d",
+      "technical_status": "PASS",
+      "technical_validation": {
+        "candidates_exist": true,
+        "daily_results_nonempty": true,
+        "daily_values_finite": true,
+        "exposure_never_exceeds_one": true,
+        "no_locked_test_dates": true,
+        "no_negative_weights": true,
+        "position_limit_respected": true,
+        "signals_nonempty": true,
+        "weights_nonempty": true
+      },
+      "trade_statistics": {
+        "average_holding_days": 10.885057471264368,
+        "average_trade_return": 0.030911293090153714,
+        "best_trade_return": 0.42156697102952,
+        "exit_reason_counts": {
+          "DAILY_STOP_TRIGGER": 40,
+          "END_OF_RESEARCH": 2,
+          "MAXIMUM_HOLDING_DAYS": 45
+        },
+        "median_trade_return": 0.0020340593426650955,
+        "trade_count": 87,
+        "win_rate": 0.5172413793103449,
+        "worst_trade_return": -0.4176301854347374
+      },
+      "transaction_cost_sensitivity": [
+        {
+          "final_equity": 1.6577395101535692,
+          "geometric_monthly_return": 0.01059302021840014,
+          "maximum_drawdown": -0.5926517814216408,
+          "total_return": 0.6577395101535692,
+          "trade_count": 87,
+          "transaction_cost_fraction": 0.0
+        },
+        {
+          "final_equity": 1.3402046614609584,
+          "geometric_monthly_return": 0.006123188900230003,
+          "maximum_drawdown": -0.6156694253775528,
+          "total_return": 0.3402046614609584,
+          "trade_count": 87,
+          "transaction_cost_fraction": 0.002
+        },
+        {
+          "final_equity": 1.083015882975383,
+          "geometric_monthly_return": 0.0016639373512257194,
+          "maximum_drawdown": -0.6442943528066246,
+          "total_return": 0.08301588297538309,
+          "trade_count": 87,
           "transaction_cost_fraction": 0.004
         }
       ]
