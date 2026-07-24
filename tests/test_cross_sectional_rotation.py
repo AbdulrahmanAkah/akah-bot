@@ -100,7 +100,7 @@ def trend(
     )
 
 
-def test_frames(
+def sample_frames(
     *,
     low_liquidity_leader: bool = False,
 ) -> list[pd.DataFrame]:
@@ -196,7 +196,7 @@ def history_and_ranking(
     pd.DataFrame,
     pd.DataFrame,
 ]:
-    frames = test_frames(
+    frames = sample_frames(
         low_liquidity_leader=(
             low_liquidity_leader
         )
