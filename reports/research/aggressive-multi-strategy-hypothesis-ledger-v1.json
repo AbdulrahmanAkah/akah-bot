@@ -1,0 +1,119 @@
+{
+  "base_commit": "023bc1a0e4bd9f26891e35149301a1ea512cb539",
+  "evaluation_order": [
+    {
+      "evaluation_order": 1,
+      "family": "VOLATILITY_BREAKOUT",
+      "hypothesis_id": "AMS-V1-H01-VOLATILITY-BREAKOUT",
+      "parameters": {
+        "atr_expansion_minimum": 1.2,
+        "breakout_lookback_days": 20,
+        "initial_stop_atr": 2.5,
+        "maximum_holding_days": 45,
+        "maximum_positions": 2,
+        "ranking_maximum": 8,
+        "rebalance_frequency": "DAILY",
+        "trailing_stop_atr": 3.5,
+        "transaction_cost_fraction": 0.002,
+        "turnover_expansion_minimum": 1.5
+      },
+      "parameters_frozen": true,
+      "principal_failure_mode": "Frequent false breakouts during low-conviction markets.",
+      "status": "REGISTERED",
+      "thesis": "Trade early price and turnover expansion in the highest-ranked Spot assets before long trend filters delay entry."
+    },
+    {
+      "evaluation_order": 2,
+      "family": "MOMENTUM_REACCELERATION",
+      "hypothesis_id": "AMS-V1-H02-AGGRESSIVE-REACCELERATION",
+      "parameters": {
+        "ema_reclaim_days": 10,
+        "maximum_positions": 2,
+        "maximum_pullback": 0.25,
+        "minimum_momentum": 0.02,
+        "minimum_relative_strength": 0.0,
+        "momentum_days": 3,
+        "ranking_maximum": 5,
+        "rebalance_frequency": "DAILY",
+        "relative_strength_days": 60,
+        "trailing_stop_atr": 3.0,
+        "transaction_cost_fraction": 0.002
+      },
+      "parameters_frozen": true,
+      "principal_failure_mode": "Entering late into exhausted parabolic advances.",
+      "status": "REGISTERED",
+      "thesis": "Concentrate in assets whose short-term momentum resumes while long-horizon relative strength remains positive."
+    },
+    {
+      "evaluation_order": 3,
+      "family": "LIQUIDITY_SWEEP_REVERSAL",
+      "hypothesis_id": "AMS-V1-H03-LIQUIDITY-SWEEP-REVERSAL",
+      "parameters": {
+        "initial_stop_atr": 2.0,
+        "maximum_holding_days": 14,
+        "maximum_positions": 3,
+        "minimum_turnover_expansion": 1.25,
+        "profit_trail_atr": 2.5,
+        "ranking_maximum": 15,
+        "recovery_close_fraction": 0.65,
+        "sweep_lookback_days": 20,
+        "transaction_cost_fraction": 0.002
+      },
+      "parameters_frozen": true,
+      "principal_failure_mode": "Catching persistent downtrends rather than temporary sweeps.",
+      "status": "REGISTERED",
+      "thesis": "Buy Spot assets after a causal downside liquidity sweep and strong close recovery, provided cross-sectional quality remains acceptable."
+    },
+    {
+      "evaluation_order": 4,
+      "family": "CROSS_SECTIONAL_ROTATION",
+      "hypothesis_id": "AMS-V1-H04-CROSS-SECTIONAL-ROTATION",
+      "parameters": {
+        "maximum_positions": 2,
+        "minimum_liquidity_rank_percentile": 0.5,
+        "minimum_rank_improvement": 3,
+        "ranking_relative_strength_days": 30,
+        "ranking_return_days": 14,
+        "ranking_turnover_days": 7,
+        "rebalance_frequency": "EVERY_3_DAYS",
+        "transaction_cost_fraction": 0.002
+      },
+      "parameters_frozen": true,
+      "principal_failure_mode": "Excess turnover and rapid leadership reversals.",
+      "status": "REGISTERED",
+      "thesis": "Rotate concentrated Spot capital toward the strongest short-horizon leaders as market leadership changes."
+    },
+    {
+      "evaluation_order": 5,
+      "family": "VOLATILITY_COMPRESSION_EXPANSION",
+      "hypothesis_id": "AMS-V1-H05-COMPRESSION-EXPANSION",
+      "parameters": {
+        "breakout_lookback_days": 20,
+        "compression_lookback_days": 60,
+        "compression_percentile_maximum": 0.2,
+        "initial_stop_atr": 2.5,
+        "maximum_holding_days": 30,
+        "maximum_positions": 2,
+        "minimum_turnover_expansion": 1.5,
+        "ranking_maximum": 10,
+        "trailing_stop_atr": 4.0,
+        "transaction_cost_fraction": 0.002
+      },
+      "parameters_frozen": true,
+      "principal_failure_mode": "Compression resolves downward or upward expansion immediately fails.",
+      "status": "REGISTERED",
+      "thesis": "Enter concentrated Spot positions when prolonged volatility compression resolves upward with expanding turnover."
+    }
+  ],
+  "protocol_id": "AGGRESSIVE_MULTI_STRATEGY_RESEARCH_PROTOCOL_V1",
+  "registered_at": "2026-07-24T12:20:39+00:00",
+  "results": [],
+  "schema_version": "aggressive-multi-strategy-hypothesis-ledger-v1",
+  "single_pass_policy": {
+    "first_complete_result_is_binding": true,
+    "new_version_requires_new_hypothesis": true,
+    "parameters_are_frozen": true,
+    "post_result_parameter_editing_forbidden": true
+  },
+  "status": "REGISTERED"
+}

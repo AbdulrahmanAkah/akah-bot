@@ -1,0 +1,55 @@
+{
+  "active_components": [
+    "MULTI_ASSET_RESEARCH_PROTOCOL_V3",
+    "POINT_IN_TIME_SPOT_UNIVERSE_V1",
+    "WALK_FORWARD_EVALUATION_ENGINE_V1"
+  ],
+  "active_protocol": "MULTI_ASSET_RESEARCH_PROTOCOL_V3",
+  "current_discovery_is_research_universe": false,
+  "current_stage": "MULTI_ASSET_DAILY_HISTORY_V2_COMPLETE",
+  "daily_history_coverage_path": "C:\\SIRAJ\\Repositories\\spot-speculation-bot\\reports\\research\\multi-asset-daily-history-coverage-v2.json",
+  "daily_history_coverage_sha256": "f16234562f9b4c760e7634db1e3c1ca7c324829857566a59c93fba1e18181c87",
+  "dataset_manifest_path": "C:\\SIRAJ\\Repositories\\spot-speculation-bot\\reports\\research\\historical-multi-asset-dataset-manifest-v1.json",
+  "dataset_manifest_sha256": "95231866eeb5c2495aac470aa3071680cb4e4453c5a4e141e4f6f2ff13503fcd",
+  "historical_delisting_coverage_status": "INCOMPLETE_BLOCKS_FINAL_MODEL_SELECTION",
+  "holdout_2026_status": "LOCKED_NOT_ACCESSED",
+  "holdout_accessed": false,
+  "ledger_status": "CURRENT",
+  "next_action": "AUDIT_DAILY_COVERAGE_ENDS_AND_BUILD_POINT_IN_TIME_UNIVERSE",
+  "previous_ledger_path": "C:\\SIRAJ\\Repositories\\spot-speculation-bot\\reports\\research\\project-research-ledger-v2.json",
+  "previous_ledger_sha256": "e629f33b0c6cddc8183feebcd803576b4ae4c44f8b545cab0f0987af17013919",
+  "previous_protocol": "BTC_RESEARCH_PROTOCOL_V2",
+  "protocol_manifest_path": "C:\\SIRAJ\\Repositories\\spot-speculation-bot\\reports\\research\\multi-asset-research-protocol-v3.json",
+  "protocol_manifest_sha256": "7b93e03b716c82c4fc1c581b311b144d90fed85881606c6e20d3c1c23d61dfd8",
+  "protocol_updates": [
+    {
+      "annual_capital_multiple_equivalent": 13.214788658781796,
+      "base_commit": "023bc1a0e4bd9f26891e35149301a1ea512cb539",
+      "branch": "research/aggressive-multi-strategy-v1",
+      "event_id": "AGGRESSIVE_MULTI_STRATEGY_PROTOCOL_V1_REGISTERED",
+      "event_type": "RESEARCH_PROTOCOL_REGISTERED",
+      "final_model_selection_allowed": false,
+      "historical_results_preserved": [
+        {
+          "decision": "REJECT_V1",
+          "new_objective_status": "FAR_BELOW_TARGET",
+          "version": "MOMENTUM_REACCELERATION_V1"
+        },
+        {
+          "decision": "REJECT_V2",
+          "new_objective_status": "FAR_BELOW_TARGET",
+          "version": "MOMENTUM_REACCELERATION_V2"
+        }
+      ],
+      "holdout_2026_locked": true,
+      "monthly_compound_target": 0.24,
+      "protocol_id": "AGGRESSIVE_MULTI_STRATEGY_RESEARCH_PROTOCOL_V1",
+      "recorded_at": "2026-07-24T12:20:39+00:00",
+      "registered_hypothesis_count": 5,
+      "test_2025_locked": true
+    }
+  ],
+  "schema_version": "spotbot-project-research-ledger-v3",
+  "test_2025_status": "LOCKED_NOT_ACCESSED",
+  "test_accessed": false
+}

@@ -1,0 +1,197 @@
+{
+  "base_commit": "023bc1a0e4bd9f26891e35149301a1ea512cb539",
+  "bootstrap_research_only": true,
+  "constraints": [
+    "ASSET_OWNERSHIP_REQUIRED",
+    "NO_BORROWING",
+    "NO_DERIVATIVES",
+    "NO_FUNDING_TRANSACTIONS",
+    "NO_FUTURES",
+    "NO_INTEREST",
+    "NO_LENDING",
+    "NO_LEVERAGE",
+    "NO_MARGIN",
+    "NO_SHORT_SELLING",
+    "SPOT_ONLY"
+  ],
+  "final_model_selection_allowed": false,
+  "holdout_start": "2026-01-01T00:00:00+00:00",
+  "hypotheses": [
+    {
+      "evaluation_order": 1,
+      "family": "VOLATILITY_BREAKOUT",
+      "hypothesis_id": "AMS-V1-H01-VOLATILITY-BREAKOUT",
+      "parameters": {
+        "atr_expansion_minimum": 1.2,
+        "breakout_lookback_days": 20,
+        "initial_stop_atr": 2.5,
+        "maximum_holding_days": 45,
+        "maximum_positions": 2,
+        "ranking_maximum": 8,
+        "rebalance_frequency": "DAILY",
+        "trailing_stop_atr": 3.5,
+        "transaction_cost_fraction": 0.002,
+        "turnover_expansion_minimum": 1.5
+      },
+      "parameters_frozen": true,
+      "principal_failure_mode": "Frequent false breakouts during low-conviction markets.",
+      "status": "REGISTERED",
+      "thesis": "Trade early price and turnover expansion in the highest-ranked Spot assets before long trend filters delay entry."
+    },
+    {
+      "evaluation_order": 2,
+      "family": "MOMENTUM_REACCELERATION",
+      "hypothesis_id": "AMS-V1-H02-AGGRESSIVE-REACCELERATION",
+      "parameters": {
+        "ema_reclaim_days": 10,
+        "maximum_positions": 2,
+        "maximum_pullback": 0.25,
+        "minimum_momentum": 0.02,
+        "minimum_relative_strength": 0.0,
+        "momentum_days": 3,
+        "ranking_maximum": 5,
+        "rebalance_frequency": "DAILY",
+        "relative_strength_days": 60,
+        "trailing_stop_atr": 3.0,
+        "transaction_cost_fraction": 0.002
+      },
+      "parameters_frozen": true,
+      "principal_failure_mode": "Entering late into exhausted parabolic advances.",
+      "status": "REGISTERED",
+      "thesis": "Concentrate in assets whose short-term momentum resumes while long-horizon relative strength remains positive."
+    },
+    {
+      "evaluation_order": 3,
+      "family": "LIQUIDITY_SWEEP_REVERSAL",
+      "hypothesis_id": "AMS-V1-H03-LIQUIDITY-SWEEP-REVERSAL",
+      "parameters": {
+        "initial_stop_atr": 2.0,
+        "maximum_holding_days": 14,
+        "maximum_positions": 3,
+        "minimum_turnover_expansion": 1.25,
+        "profit_trail_atr": 2.5,
+        "ranking_maximum": 15,
+        "recovery_close_fraction": 0.65,
+        "sweep_lookback_days": 20,
+        "transaction_cost_fraction": 0.002
+      },
+      "parameters_frozen": true,
+      "principal_failure_mode": "Catching persistent downtrends rather than temporary sweeps.",
+      "status": "REGISTERED",
+      "thesis": "Buy Spot assets after a causal downside liquidity sweep and strong close recovery, provided cross-sectional quality remains acceptable."
+    },
+    {
+      "evaluation_order": 4,
+      "family": "CROSS_SECTIONAL_ROTATION",
+      "hypothesis_id": "AMS-V1-H04-CROSS-SECTIONAL-ROTATION",
+      "parameters": {
+        "maximum_positions": 2,
+        "minimum_liquidity_rank_percentile": 0.5,
+        "minimum_rank_improvement": 3,
+        "ranking_relative_strength_days": 30,
+        "ranking_return_days": 14,
+        "ranking_turnover_days": 7,
+        "rebalance_frequency": "EVERY_3_DAYS",
+        "transaction_cost_fraction": 0.002
+      },
+      "parameters_frozen": true,
+      "principal_failure_mode": "Excess turnover and rapid leadership reversals.",
+      "status": "REGISTERED",
+      "thesis": "Rotate concentrated Spot capital toward the strongest short-horizon leaders as market leadership changes."
+    },
+    {
+      "evaluation_order": 5,
+      "family": "VOLATILITY_COMPRESSION_EXPANSION",
+      "hypothesis_id": "AMS-V1-H05-COMPRESSION-EXPANSION",
+      "parameters": {
+        "breakout_lookback_days": 20,
+        "compression_lookback_days": 60,
+        "compression_percentile_maximum": 0.2,
+        "initial_stop_atr": 2.5,
+        "maximum_holding_days": 30,
+        "maximum_positions": 2,
+        "minimum_turnover_expansion": 1.5,
+        "ranking_maximum": 10,
+        "trailing_stop_atr": 4.0,
+        "transaction_cost_fraction": 0.002
+      },
+      "parameters_frozen": true,
+      "principal_failure_mode": "Compression resolves downward or upward expansion immediately fails.",
+      "status": "REGISTERED",
+      "thesis": "Enter concentrated Spot positions when prolonged volatility compression resolves upward with expanding turnover."
+    }
+  ],
+  "objective": {
+    "annual_capital_multiple": 13.214788658781796,
+    "annual_compound_return": 12.214788658781796,
+    "bear_market_annual_multiple_minimum": 2.0,
+    "bull_market_annual_multiple_minimum": 10.0,
+    "bull_market_annual_multiple_stretch": 15.0,
+    "monthly_compound_target": 0.24,
+    "sideways_market_annual_multiple_minimum": 3.0,
+    "sideways_market_annual_multiple_stretch": 4.0
+  },
+  "primary_promotion_gate": {
+    "annual_capital_multiple_equivalent": 13.214788658781796,
+    "annual_return_equivalent": 12.214788658781796,
+    "metric": "FULL_PERIOD_GEOMETRIC_MONTHLY_RETURN",
+    "minimum": 0.24
+  },
+  "protocol_id": "AGGRESSIVE_MULTI_STRATEGY_RESEARCH_PROTOCOL_V1",
+  "regime_targets": {
+    "BEAR": {
+      "capital_multiple_minimum": 2.0
+    },
+    "BULL": {
+      "capital_multiple_minimum": 10.0,
+      "capital_multiple_stretch": 15.0
+    },
+    "SIDEWAYS": {
+      "capital_multiple_minimum": 3.0,
+      "capital_multiple_stretch": 4.0
+    }
+  },
+  "registered_at": "2026-07-24T12:20:39+00:00",
+  "research_end_exclusive": "2025-01-01T00:00:00+00:00",
+  "research_integrity": {
+    "final_model_selection_blocked": true,
+    "holdout_2026_locked": true,
+    "new_parameters_require_new_hypothesis_id": true,
+    "parameters_frozen_before_result": true,
+    "rejected_parameters_cannot_be_edited": true,
+    "single_pass_per_hypothesis": true,
+    "survivorship_bias_present": true,
+    "test_2025_locked": true
+  },
+  "research_start": "2021-01-01T00:00:00+00:00",
+  "risk_evaluation": {
+    "fixed_drawdown_gate": null,
+    "hard_constraints": [
+      "NO_EQUITY_RUIN",
+      "NO_NEGATIVE_CASH",
+      "NO_LEVERAGE",
+      "NO_BORROWING",
+      "NO_SHORT_POSITION"
+    ],
+    "mandatory_diagnostics": [
+      "MAXIMUM_DRAWDOWN",
+      "WORST_MONTH",
+      "LONGEST_DRAWDOWN_DURATION",
+      "LONGEST_NEGATIVE_MONTH_SEQUENCE",
+      "RETURN_TO_DRAWDOWN_RATIO",
+      "TOP_5_TRADES_PROFIT_CONCENTRATION",
+      "TRANSACTION_COST_SENSITIVITY",
+      "REGIME_CONSISTENCY"
+    ],
+    "reason": "The protocol evaluates capital survival and return efficiency without reusing the previous arbitrary -45% gate."
+  },
+  "schema_version": "aggressive-multi-strategy-research-protocol-v1",
+  "status": "ACTIVE",
+  "superseded_future_gates": {
+    "annualized_return_10_percent": true,
+    "annualized_return_20_percent": true,
+    "annualized_return_24_percent": true,
+    "note": "Previous V1 and V2 results remain historically preserved, but these low annual-return thresholds cannot promote any future strategy."
+  },
+  "test_start": "2025-01-01T00:00:00+00:00"
+}
