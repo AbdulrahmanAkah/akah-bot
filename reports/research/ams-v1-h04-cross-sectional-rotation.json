@@ -1,0 +1,161 @@
+{
+  "artifacts": {
+    "daily_results": "data/research/strategy_results/ams_v1_h04_cross_sectional_rotation/ams-v1-h04-daily-results.parquet",
+    "monthly_csv": "reports/research/ams-v1-h04-cross-sectional-rotation-monthly.csv",
+    "report": "reports/research/ams-v1-h04-cross-sectional-rotation.json",
+    "signals": "data/research/strategy_results/ams_v1_h04_cross_sectional_rotation/ams-v1-h04-signals.parquet",
+    "trades_csv": "reports/research/ams-v1-h04-cross-sectional-rotation-trades.csv",
+    "trades_parquet": "data/research/strategy_results/ams_v1_h04_cross_sectional_rotation/ams-v1-h04-trades.parquet",
+    "weights": "data/research/strategy_results/ams_v1_h04_cross_sectional_rotation/ams-v1-h04-weights.parquet"
+  },
+  "benchmark": {
+    "annual_capital_multiple": 1.3392517638199788,
+    "annual_compound_return": 0.3392517638199788,
+    "annualized_volatility": 0.6209620813021148,
+    "average_active_positions": 1.0,
+    "average_exposure": 1.0,
+    "capital_survived": true,
+    "end_time": "2024-12-31T00:00:00+00:00",
+    "final_equity": 3.214489349835998,
+    "geometric_monthly_return": 0.024641289012008682,
+    "maximum_active_positions": 1,
+    "maximum_drawdown": -0.7662699323798872,
+    "maximum_exposure": 1.0,
+    "observations": 1461,
+    "positive_day_fraction": 0.5023956194387406,
+    "return_to_drawdown_ratio": 2.889959864349916,
+    "sharpe_ratio": 0.7798085675185674,
+    "start_time": "2021-01-01T00:00:00+00:00",
+    "total_return": 2.214489349835998,
+    "total_transaction_cost": 0.0,
+    "total_turnover": 0.0
+  },
+  "binding": true,
+  "completed_at": "2026-07-24T22:56:58.958734Z",
+  "decision": "REJECT_H04",
+  "execution_model": {
+    "borrowing": false,
+    "derivatives": false,
+    "leverage": false,
+    "long_only": true,
+    "market": "SPOT_ONLY",
+    "portfolio_application": "NEXT_DAILY_RETURN_PERIOD",
+    "rebalance_frequency": "EVERY_3_DAYS",
+    "short_selling": false,
+    "signal_time": "DAILY_CANDLE_CLOSE",
+    "survivorship_bias_remaining": true
+  },
+  "family": "CROSS_SECTIONAL_ROTATION",
+  "hypothesis_id": "AMS-V1-H04-CROSS-SECTIONAL-ROTATION",
+  "limitations": [
+    "Bootstrap point-in-time universe still has survivorship bias because delisted asset history is incomplete.",
+    "2025 test and 2026 holdout data remain locked.",
+    "Daily data cannot model intraday execution or order-book impact."
+  ],
+  "monthly_statistics": {
+    "best_month": 1.0590664375370098,
+    "month_count": 48,
+    "positive_month_fraction": 0.5,
+    "target_month_fraction": 0.14583333333333334,
+    "worst_month": -0.492459600795516
+  },
+  "objective": {
+    "annual_capital_multiple_equivalent": 13.214788658781796,
+    "geometric_monthly_return_target": 0.24,
+    "objective_met": false
+  },
+  "parameter_hash_sha256": "9f19f6238fd4c3b19e247fd786dd80269b939a0f87f2f8005e54935e831fa3d0",
+  "parameters": {
+    "maximum_positions": 2,
+    "minimum_liquidity_rank_percentile": 0.5,
+    "minimum_rank_improvement": 3,
+    "ranking_relative_strength_days": 30,
+    "ranking_return_days": 14,
+    "ranking_turnover_days": 7,
+    "rebalance_frequency": "EVERY_3_DAYS",
+    "transaction_cost_fraction": 0.002
+  },
+  "performance": {
+    "annual_capital_multiple": 0.926710845468978,
+    "annual_compound_return": -0.07328915453102203,
+    "annualized_volatility": 0.9540888174198053,
+    "average_active_positions": 1.4647501711156743,
+    "average_exposure": 0.8699520876112252,
+    "capital_survived": true,
+    "end_time": "2024-12-31T00:00:00+00:00",
+    "final_equity": 0.7376745003511579,
+    "geometric_monthly_return": -0.006322734121752438,
+    "maximum_active_positions": 2,
+    "maximum_drawdown": -0.9245536262817688,
+    "maximum_exposure": 1.0,
+    "observations": 1461,
+    "positive_day_fraction": 0.4216290212183436,
+    "return_to_drawdown_ratio": -0.2837320542495988,
+    "sharpe_ratio": 0.3843759208408959,
+    "start_time": "2021-01-01T00:00:00+00:00",
+    "total_return": -0.2623254996488421,
+    "total_transaction_cost": 1.538,
+    "total_turnover": 769.0
+  },
+  "protocol_id": "AMS-V1",
+  "research_window": {
+    "end_exclusive": "2025-01-01T00:00:00+00:00",
+    "locked_test_start": "2025-01-01T00:00:00+00:00",
+    "start": "2021-01-01T00:00:00+00:00"
+  },
+  "schema_version": "ams-v1-h04-cross-sectional-rotation-result-v1",
+  "single_pass": true,
+  "source_commit": "eaf7e4ea16e329d5a1c263286de9f256d6fc4673",
+  "technical_status": "PASS",
+  "technical_validation": {
+    "candidates_exist": true,
+    "daily_results_nonempty": true,
+    "daily_values_finite": true,
+    "exposure_never_exceeds_one": true,
+    "no_locked_test_dates": true,
+    "no_negative_weights": true,
+    "position_limit_respected": true,
+    "signals_nonempty": true,
+    "three_day_rebalance_respected": true,
+    "weights_nonempty": true
+  },
+  "trade_statistics": {
+    "average_holding_days": 3.3594976452119307,
+    "average_trade_return": 0.004346236581630976,
+    "best_trade_return": 1.640230533197467,
+    "exit_reason_counts": {
+      "END_OF_RESEARCH": 2,
+      "ROTATION_EXIT": 635
+    },
+    "median_trade_return": -0.00901180890683817,
+    "trade_count": 637,
+    "win_rate": 0.44583987441130296,
+    "worst_trade_return": -0.36938089836689103
+  },
+  "transaction_cost_sensitivity": [
+    {
+      "final_equity": 3.4422409417393682,
+      "geometric_monthly_return": 0.026104574212534537,
+      "maximum_drawdown": -0.8632321755490232,
+      "total_return": 2.4422409417393682,
+      "trade_count": 637,
+      "transaction_cost_fraction": 0.0
+    },
+    {
+      "final_equity": 0.7376745003511579,
+      "geometric_monthly_return": -0.006322734121752438,
+      "maximum_drawdown": -0.9245536262817688,
+      "total_return": -0.2623254996488421,
+      "trade_count": 637,
+      "transaction_cost_fraction": 0.002
+    },
+    {
+      "final_equity": 0.15721154357003522,
+      "geometric_monthly_return": -0.03783629431656266,
+      "maximum_drawdown": -0.9654405051092421,
+      "total_return": -0.8427884564299648,
+      "trade_count": 637,
+      "transaction_cost_fraction": 0.004
+    }
+  ]
+}
