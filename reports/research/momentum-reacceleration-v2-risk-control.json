@@ -1,0 +1,132 @@
+{
+  "benchmark_metrics": {
+    "annualized_return": 0.3387245354677966,
+    "annualized_volatility": 0.6207495322350283,
+    "maximum_drawdown": -0.7662699323798872,
+    "sharpe": 0.7800755795337604,
+    "total_return": 2.214489349835998
+  },
+  "classification": "PREREGISTERED_BOOTSTRAP_RISK_CONTROL_RESEARCH",
+  "comparison_with_v1": {
+    "annualized_return_difference": -0.25530504723920044,
+    "annualized_return_retention": 0.4722252739535984,
+    "drawdown_improvement": 0.3830997081672264,
+    "sharpe_difference": -0.0938094005336968
+  },
+  "final_model_selection_allowed": false,
+  "generated_at": "2026-07-24T11:58:50+00:00",
+  "locked_periods": {
+    "holdout_2026_accessed": false,
+    "test_2025_accessed": false
+  },
+  "portfolio_metrics": {
+    "active_day_count": 609,
+    "average_effective_exposure": 0.2128209195630732,
+    "average_risk_scale": 0.511028998954894,
+    "maximum_effective_exposure": 1.0,
+    "minimum_risk_scale": 0.1903569483185857,
+    "positive_year_count": 4,
+    "total_transaction_cost": 0.14257120668342305,
+    "total_turnover": 71.28560334171152
+  },
+  "research_decision": "REJECT_V2",
+  "research_gates": {
+    "annualized_return_at_least_20_percent": true,
+    "at_least_100_active_days": true,
+    "at_least_three_positive_years": true,
+    "drawdown_improvement_at_least_10_points": true,
+    "maximum_drawdown_not_worse_than_45_percent": true,
+    "positive_total_return": true,
+    "retain_at_least_half_of_v1_annualized_return": false,
+    "sharpe_at_least_0_60": true
+  },
+  "risk_policy": {
+    "benchmark_symbol": "BTC/USDT",
+    "drawdown_level_1": -0.1,
+    "drawdown_level_2": -0.2,
+    "drawdown_level_3": -0.3,
+    "drawdown_level_4": -0.4,
+    "exposure_level_1": 0.75,
+    "exposure_level_2": 0.5,
+    "exposure_level_3": 0.25,
+    "exposure_level_4": 0.0,
+    "initial_exposure_fraction": 0.5,
+    "maximum_exposure_fraction": 1.0,
+    "minimum_volatility_observations": 20,
+    "research_end_exclusive": "2025-01-01 00:00:00+00:00",
+    "research_start": "2021-01-01 00:00:00+00:00",
+    "target_annualized_volatility": 0.35,
+    "transaction_cost_fraction": 0.002,
+    "volatility_lookback_days": 30
+  },
+  "schema_version": "momentum-reacceleration-v2-risk-control",
+  "strategy_metrics": {
+    "annualized_return": 0.2284336288275921,
+    "annualized_volatility": 0.29341894195963797,
+    "maximum_drawdown": -0.255078551762996,
+    "sharpe": 0.8463803255918614,
+    "total_return": 1.278513398808704
+  },
+  "technical_checks": {
+    "equity_is_positive": true,
+    "maximum_exposure_not_above_one": true,
+    "no_test_period_access": true,
+    "portfolio_was_active": true,
+    "risk_scale_is_bounded": true,
+    "transaction_cost_is_non_negative": true
+  },
+  "technical_status": "PASS",
+  "v1_strategy_metrics": {
+    "annualized_return": 0.48373867606679255,
+    "annualized_volatility": 0.6358563700761629,
+    "maximum_drawdown": -0.6381782599302224,
+    "sharpe": 0.9401897261255582,
+    "total_return": 3.8517581279606015
+  },
+  "yearly_results": [
+    {
+      "average_effective_exposure": 0.22900529651611232,
+      "average_risk_scale": 0.4228817619397812,
+      "benchmark_return": 0.6323346531292335,
+      "strategy_maximum_drawdown": -0.18042876187381351,
+      "strategy_return": 0.23115030731752428,
+      "strategy_sharpe": 0.7872487281321822,
+      "transaction_cost": 0.036132252310103266,
+      "turnover": 18.066126155051634,
+      "year": 2021
+    },
+    {
+      "average_effective_exposure": 0.0061643835616438354,
+      "average_risk_scale": 0.5219178082191781,
+      "benchmark_return": -0.6476431590920666,
+      "strategy_maximum_drawdown": -0.0014999999999999458,
+      "strategy_return": 0.02261788427365552,
+      "strategy_sharpe": 0.9825191166467842,
+      "transaction_cost": 0.0015,
+      "turnover": 0.75,
+      "year": 2022
+    },
+    {
+      "average_effective_exposure": 0.2620597303260716,
+      "average_risk_scale": 0.5508531381938634,
+      "benchmark_return": 1.538283174434922,
+      "strategy_maximum_drawdown": -0.20919130539541408,
+      "strategy_return": 0.13975527148919165,
+      "strategy_sharpe": 0.5568816720558212,
+      "transaction_cost": 0.04295979881798022,
+      "turnover": 21.47989940899011,
+      "year": 2023
+    },
+    {
+      "average_effective_exposure": 0.35366838438320447,
+      "average_risk_scale": 0.5483610079899447,
+      "benchmark_return": 1.2018108737845647,
+      "strategy_maximum_drawdown": -0.22326398923021962,
+      "strategy_return": 0.5878720919230755,
+      "strategy_sharpe": 1.5030648010968877,
+      "transaction_cost": 0.06197915555533955,
+      "turnover": 30.989577777669773,
+      "year": 2024
+    }
+  ]
+}
