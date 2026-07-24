@@ -1,0 +1,124 @@
+{
+  "benchmark_metrics": {
+    "annualized_return": 0.3387245354677966,
+    "annualized_volatility": 0.6207495322350283,
+    "maximum_drawdown": -0.7662699323798872,
+    "sharpe": 0.7800755795337604,
+    "total_return": 2.214489349835998
+  },
+  "classification": "BOOTSTRAP_RESEARCH_RESULT",
+  "counts": {
+    "active_day_count": 609,
+    "candidate_signal_count": 2262,
+    "daily_result_count": 1461,
+    "positive_year_count": 4,
+    "selected_weight_row_count": 1962,
+    "signal_row_count": 31018,
+    "target_weight_row_count": 42369
+  },
+  "final_model_selection_allowed": false,
+  "generated_at": "2026-07-24T11:45:28+00:00",
+  "locked_periods": {
+    "holdout_2026_accessed": false,
+    "test_2025_accessed": false
+  },
+  "policy": {
+    "benchmark_symbol": "BTC/USDT",
+    "execution_rule": "Target weights generated at snapshot t are applied to returns beginning after t.",
+    "maximum_positions": 5,
+    "maximum_rank": 10,
+    "rebalance_weekday": "MONDAY",
+    "research_end_exclusive": "2025-01-01T00:00:00+00:00",
+    "research_start": "2021-01-01T00:00:00+00:00",
+    "transaction_cost_fraction": 0.002
+  },
+  "portfolio_metrics": {
+    "average_exposure": 0.4161533196440794,
+    "maximum_active_positions": 5,
+    "total_transaction_cost": 0.24033333333333334,
+    "total_turnover": 120.16666666666666
+  },
+  "relative_metrics": {
+    "annualized_return_difference": 0.14501414059899598,
+    "maximum_drawdown_improvement": 0.1280916724496648,
+    "total_return_difference": 1.6372687781246036
+  },
+  "research_decision": "REJECT_V1",
+  "research_gates": {
+    "annualized_return_at_least_10_percent": true,
+    "at_least_100_active_days": true,
+    "at_least_three_positive_years": true,
+    "maximum_drawdown_not_worse_than_45_percent": false,
+    "positive_total_return": true,
+    "sharpe_at_least_0_40": true
+  },
+  "schema_version": "momentum-reacceleration-v1",
+  "strategy_metrics": {
+    "annualized_return": 0.48373867606679255,
+    "annualized_volatility": 0.6358563700761629,
+    "maximum_drawdown": -0.6381782599302224,
+    "sharpe": 0.9401897261255582,
+    "total_return": 3.8517581279606015
+  },
+  "survivorship_bias": {
+    "present": true,
+    "reason": "The strategy uses the Bootstrap Point-in-Time Universe derived from currently visible KuCoin markets. Historically delisted markets are incomplete."
+  },
+  "technical_checks": {
+    "benchmark_features_are_causal": true,
+    "candidate_signals_exist": true,
+    "equity_is_positive": true,
+    "maximum_five_positions": true,
+    "no_test_period_access": true,
+    "portfolio_selections_exist": true,
+    "signal_features_are_causal": true,
+    "target_weight_not_above_one": true
+  },
+  "technical_status": "PASS",
+  "yearly_results": [
+    {
+      "active_day_count": 207,
+      "average_exposure": 0.5671232876712329,
+      "benchmark_return": 0.6323346531292335,
+      "strategy_maximum_drawdown": -0.5556912833137437,
+      "strategy_return": 0.46447975642646133,
+      "strategy_sharpe": 0.8913703247176079,
+      "transaction_cost": 0.08013333333333333,
+      "turnover": 40.06666666666667,
+      "year": 2021
+    },
+    {
+      "active_day_count": 3,
+      "average_exposure": 0.00821917808219178,
+      "benchmark_return": -0.6476431590920666,
+      "strategy_maximum_drawdown": -0.0019999999999998908,
+      "strategy_return": 0.030151195078422788,
+      "strategy_sharpe": 0.9825191166467836,
+      "transaction_cost": 0.002,
+      "turnover": 1.0,
+      "year": 2022
+    },
+    {
+      "active_day_count": 174,
+      "average_exposure": 0.4767123287671233,
+      "benchmark_return": 1.538283174434922,
+      "strategy_maximum_drawdown": -0.30439361556335975,
+      "strategy_return": 0.6144639698795848,
+      "strategy_sharpe": 1.0992037841394031,
+      "transaction_cost": 0.06726666666666667,
+      "turnover": 33.63333333333333,
+      "year": 2023
+    },
+    {
+      "active_day_count": 225,
+      "average_exposure": 0.6120218579234973,
+      "benchmark_return": 1.2018108737845647,
+      "strategy_maximum_drawdown": -0.35916370108803886,
+      "strategy_return": 0.9919867316977415,
+      "strategy_sharpe": 1.4003057649339534,
+      "transaction_cost": 0.09093333333333334,
+      "turnover": 45.46666666666667,
+      "year": 2024
+    }
+  ]
+}
