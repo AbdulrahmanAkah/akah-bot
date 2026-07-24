@@ -1,0 +1,163 @@
+{
+  "artifacts": {
+    "daily_results": "data/research/strategy_results/ams_v1_h01_volatility_breakout/ams-v1-h01-volatility-breakout-daily-results.parquet",
+    "monthly_csv": "reports/research/ams-v1-h01-volatility-breakout-monthly.csv",
+    "report": "reports/research/ams-v1-h01-volatility-breakout.json",
+    "signals": "data/research/strategy_results/ams_v1_h01_volatility_breakout/ams-v1-h01-volatility-breakout-signals.parquet",
+    "trades_csv": "reports/research/ams-v1-h01-volatility-breakout-trades.csv",
+    "trades_parquet": "data/research/strategy_results/ams_v1_h01_volatility_breakout/ams-v1-h01-volatility-breakout-trades.parquet",
+    "weights": "data/research/strategy_results/ams_v1_h01_volatility_breakout/ams-v1-h01-volatility-breakout-weights.parquet"
+  },
+  "benchmark": {
+    "annual_capital_multiple": 1.3392517638199788,
+    "annual_compound_return": 0.3392517638199788,
+    "annualized_volatility": 0.6209620813021148,
+    "average_active_positions": 1.0,
+    "average_exposure": 1.0,
+    "capital_survived": true,
+    "end_time": "2024-12-31T00:00:00+00:00",
+    "final_equity": 3.214489349835998,
+    "geometric_monthly_return": 0.024641289012008682,
+    "maximum_active_positions": 1,
+    "maximum_drawdown": -0.7662699323798872,
+    "maximum_exposure": 1.0,
+    "observations": 1461,
+    "positive_day_fraction": 0.5023956194387406,
+    "return_to_drawdown_ratio": 2.889959864349916,
+    "sharpe_ratio": 0.7798085675185674,
+    "start_time": "2021-01-01T00:00:00+00:00",
+    "total_return": 2.214489349835998,
+    "total_transaction_cost": 0.0,
+    "total_turnover": 0.0
+  },
+  "binding": true,
+  "completed_at": "2026-07-24T21:18:47.255945Z",
+  "decision": "REJECT_H01",
+  "execution_model": {
+    "borrowing": false,
+    "derivatives": false,
+    "leverage": false,
+    "long_only": true,
+    "market": "SPOT_ONLY",
+    "portfolio_application": "NEXT_DAILY_RETURN_PERIOD",
+    "short_selling": false,
+    "signal_time": "DAILY_CANDLE_CLOSE",
+    "stop_model": "DAILY_OHLC_TRIGGER_WITH_EXIT_AT_DAILY_CLOSE",
+    "survivorship_bias_remaining": true
+  },
+  "family": "VOLATILITY_BREAKOUT",
+  "hypothesis_id": "AMS-V1-H01-VOLATILITY-BREAKOUT",
+  "limitations": [
+    "Bootstrap point-in-time universe still has survivorship bias because delisted asset history is incomplete.",
+    "2025 test and 2026 holdout data remain locked.",
+    "Daily data cannot establish intraday stop execution order or exact fill price."
+  ],
+  "monthly_statistics": {
+    "best_month": 1.4678477246449337,
+    "month_count": 48,
+    "positive_month_fraction": 0.4791666666666667,
+    "target_month_fraction": 0.22916666666666666,
+    "worst_month": -0.4256532940474016
+  },
+  "objective": {
+    "annual_capital_multiple_equivalent": 13.214788658781796,
+    "geometric_monthly_return_target": 0.24,
+    "objective_met": false
+  },
+  "parameter_hash_sha256": "d07f7495e38721ae283400662dfd89bbf3b523fcd21275f9006109efa97920c9",
+  "parameters": {
+    "atr_expansion_minimum": 1.2,
+    "breakout_lookback_days": 20,
+    "initial_stop_atr": 2.5,
+    "maximum_holding_days": 45,
+    "maximum_positions": 2,
+    "ranking_maximum": 8,
+    "rebalance_frequency": "DAILY",
+    "trailing_stop_atr": 3.5,
+    "transaction_cost_fraction": 0.002,
+    "turnover_expansion_minimum": 1.5
+  },
+  "performance": {
+    "annual_capital_multiple": 1.5453683807663696,
+    "annual_compound_return": 0.5453683807663696,
+    "annualized_volatility": 0.8792094100021371,
+    "average_active_positions": 1.2416153319644079,
+    "average_exposure": 0.7173169062286106,
+    "capital_survived": true,
+    "end_time": "2024-12-31T00:00:00+00:00",
+    "final_equity": 5.696735593076304,
+    "geometric_monthly_return": 0.0369377097227519,
+    "maximum_active_positions": 2,
+    "maximum_drawdown": -0.9161702783836152,
+    "maximum_exposure": 1.0,
+    "observations": 1461,
+    "positive_day_fraction": 0.3586584531143053,
+    "return_to_drawdown_ratio": 5.126487623417211,
+    "sharpe_ratio": 0.9231869183407911,
+    "start_time": "2021-01-01T00:00:00+00:00",
+    "total_return": 4.696735593076304,
+    "total_transaction_cost": 0.29600000000000004,
+    "total_turnover": 148.0
+  },
+  "protocol_id": "AMS-V1",
+  "research_window": {
+    "end_exclusive": "2025-01-01T00:00:00+00:00",
+    "locked_test_start": "2025-01-01T00:00:00+00:00",
+    "start": "2021-01-01T00:00:00+00:00"
+  },
+  "schema_version": "ams-v1-h01-volatility-breakout-result-v1",
+  "single_pass": true,
+  "source_commit": "eb22b958340e803184b370e6a3b15ccf8ec01791",
+  "technical_status": "PASS",
+  "technical_validation": {
+    "candidates_exist": true,
+    "daily_results_nonempty": true,
+    "daily_values_finite": true,
+    "exposure_never_exceeds_one": true,
+    "no_locked_test_dates": true,
+    "no_negative_weights": true,
+    "position_limit_respected": true,
+    "signals_nonempty": true,
+    "weights_nonempty": true
+  },
+  "trade_statistics": {
+    "average_holding_days": 21.093023255813954,
+    "average_trade_return": 0.09578640005084262,
+    "best_trade_return": 3.0221794707137715,
+    "exit_reason_counts": {
+      "DAILY_STOP_TRIGGER": 77,
+      "MAXIMUM_HOLDING_DAYS": 8,
+      "UNIVERSE_OR_DATA_EXIT": 1
+    },
+    "median_trade_return": -0.0502461318941792,
+    "trade_count": 86,
+    "win_rate": 0.43023255813953487,
+    "worst_trade_return": -0.3126677669069209
+  },
+  "transaction_cost_sensitivity": [
+    {
+      "final_equity": 7.66141026521167,
+      "geometric_monthly_return": 0.04336277590480919,
+      "maximum_drawdown": -0.9031791231611433,
+      "total_return": 6.66141026521167,
+      "trade_count": 86,
+      "transaction_cost_fraction": 0.0
+    },
+    {
+      "final_equity": 5.696735593076304,
+      "geometric_monthly_return": 0.0369377097227519,
+      "maximum_drawdown": -0.9161702783836152,
+      "total_return": 4.696735593076304,
+      "trade_count": 86,
+      "transaction_cost_fraction": 0.002
+    },
+    {
+      "final_equity": 4.233285687095178,
+      "geometric_monthly_return": 0.030539059183936734,
+      "maximum_drawdown": -0.9274402101129277,
+      "total_return": 3.2332856870951776,
+      "trade_count": 86,
+      "transaction_cost_fraction": 0.004
+    }
+  ]
+}
