@@ -457,3 +457,46 @@ def test_naive_policy_timestamp_is_rejected() -> None:
                 tzinfo=UTC,
             ),
         )
+
+
+def test_base_volume_is_converted_to_quote_turnover() -> None:
+    history, ranks = history_and_ranking()
+
+    history["base_volume"] = (
+        history["turnover"]
+        / history["close"]
+    )
+
+    history = history.drop(
+        columns=["turnover"]
+    )
+
+    signals = (
+        build_liquidity_sweep_signals(
+            history,
+            ranks,
+            policy=policy(),
+        )
+    )
+
+    assert bool(
+        signals["candidate"].any()
+    )
+
+
+def test_missing_volume_reports_available_columns() -> None:
+    history, ranks = history_and_ranking()
+
+    history = history.drop(
+        columns=["turnover"]
+    )
+
+    with pytest.raises(
+        LiquiditySweepConfigurationError,
+        match="Available columns",
+    ):
+        build_liquidity_sweep_signals(
+            history,
+            ranks,
+            policy=policy(),
+        )

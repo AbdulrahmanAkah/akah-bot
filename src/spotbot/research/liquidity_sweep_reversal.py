@@ -153,33 +153,135 @@ def _require_columns(
         )
 
 
-def _turnover_column(
-    history: pd.DataFrame,
+def _normalise_column_name(
+    value: object,
 ) -> str:
-    candidates = (
-        "turnover",
-        "quote_volume",
-        "quote_asset_volume",
-        "volume",
+    return "".join(
+        character
+        for character in str(value).lower()
+        if character.isalnum()
     )
 
-    for column in candidates:
-        if column in history.columns:
-            return column
+
+def _turnover_values(
+    history: pd.DataFrame,
+) -> pd.Series:
+    normalised_columns = {
+        _normalise_column_name(column): str(column)
+        for column in history.columns
+    }
+
+    direct_priorities = (
+        "turnover",
+        "quotevolume",
+        "quoteassetvolume",
+        "quotevol",
+        "quotevolumeusdt",
+        "quotevolumeusd",
+        "funds",
+    )
+
+    direct_column = next(
+        (
+            normalised_columns[name]
+            for name in direct_priorities
+            if name in normalised_columns
+        ),
+        None,
+    )
+
+    if direct_column is None:
+        for column in history.columns:
+            normalised = _normalise_column_name(
+                column
+            )
+
+            quote_volume = (
+                "quote" in normalised
+                and (
+                    "volume" in normalised
+                    or "vol" in normalised
+                )
+            )
+
+            if (
+                "turnover" in normalised
+                or quote_volume
+            ):
+                direct_column = str(column)
+                break
+
+    if direct_column is not None:
+        return pd.to_numeric(
+            history[direct_column],
+            errors="raise",
+        )
+
+    base_priorities = (
+        "basevolume",
+        "baseassetvolume",
+        "basevol",
+        "volume",
+        "amount",
+        "quantity",
+        "size",
+    )
+
+    base_column = next(
+        (
+            normalised_columns[name]
+            for name in base_priorities
+            if name in normalised_columns
+        ),
+        None,
+    )
+
+    if base_column is None:
+        for column in history.columns:
+            normalised = _normalise_column_name(
+                column
+            )
+
+            probable_volume = (
+                "volume" in normalised
+                or normalised.endswith("vol")
+            )
+
+            if (
+                probable_volume
+                and "quote" not in normalised
+            ):
+                base_column = str(column)
+                break
+
+    if base_column is not None:
+        base_volume = pd.to_numeric(
+            history[base_column],
+            errors="raise",
+        )
+
+        close = pd.to_numeric(
+            history["close"],
+            errors="raise",
+        )
+
+        return base_volume * close
+
+    available = sorted(
+        str(column)
+        for column in history.columns
+    )
 
     raise LiquiditySweepConfigurationError(
         "History does not contain a supported "
-        "turnover or volume column."
+        "quote-turnover or base-volume column. "
+        f"Available columns: {available}."
     )
 
 
 def _prepare_history(
     history: pd.DataFrame,
 ) -> pd.DataFrame:
-    turnover_source = _turnover_column(
-        history
-    )
-
     required = {
         "symbol",
         "open_time",
@@ -188,7 +290,6 @@ def _prepare_history(
         "high",
         "low",
         "close",
-        turnover_source,
     }
 
     _require_columns(
@@ -206,14 +307,11 @@ def _prepare_history(
             "high",
             "low",
             "close",
-            turnover_source,
         ]
     ].copy()
 
-    result = result.rename(
-        columns={
-            turnover_source: "turnover",
-        }
+    result["turnover"] = _turnover_values(
+        history
     )
 
     result["symbol"] = (
