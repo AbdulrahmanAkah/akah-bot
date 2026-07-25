@@ -1,0 +1,413 @@
+{
+  "branch": "research/ams-v2-f01-c01-trial-v1",
+  "completed_at": "2026-07-25T17:35:52.950427+00:00",
+  "completed_fold_count": 1,
+  "configuration_id": "AMS-V2-F01-C01",
+  "counts_as_registered_trial": true,
+  "failure": {
+    "message": "Raw artifact does not provide entry_time; accepted aliases=['entry_time', 'entry_timestamp', 'entry_snapshot_time', 'opened_at', 'open_time'].",
+    "traceback": "Traceback (most recent call last):\n  File \"C:\\SIRAJ\\Repositories\\spot-speculation-bot\\scripts\\research\\run_ams_v2_f01_c01_trial.py\", line 720, in <module>\n    run_f01_fold_execution_harness(\n    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n        history,\n        ^^^^^^^^\n    ...<2 lines>...\n        fold=fold,\n        ^^^^^^^^^^\n    )\n    ^\n  File \"C:\\SIRAJ\\Repositories\\spot-speculation-bot\\src\\spotbot\\research\\ams_v2_f01_fold_harness.py\", line 300, in run_f01_fold_execution_harness\n    build_f01_canonical_artifacts(\n    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n        raw_trade_records=(\n        ^^^^^^^^^^^^^^^^^^^\n    ...<10 lines>...\n        ),\n        ^^\n    )\n    ^\n  File \"C:\\SIRAJ\\Repositories\\spot-speculation-bot\\src\\spotbot\\research\\ams_v2_f01_canonical_artifacts.py\", line 697, in build_f01_canonical_artifacts\n    canonicalize_f01_trade_records(\n    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n        raw_trade_records,\n        ^^^^^^^^^^^^^^^^^^\n    ...<3 lines>...\n        fold=fold,\n        ^^^^^^^^^^\n    )\n    ^\n  File \"C:\\SIRAJ\\Repositories\\spot-speculation-bot\\src\\spotbot\\research\\ams_v2_f01_canonical_artifacts.py\", line 292, in canonicalize_f01_trade_records\n    entry_time_column = _resolve_column(\n        raw,\n        ENTRY_TIME_ALIASES,\n        field_name=\"entry_time\",\n    )\n  File \"C:\\SIRAJ\\Repositories\\spot-speculation-bot\\src\\spotbot\\research\\ams_v2_f01_canonical_artifacts.py\", line 152, in _resolve_column\n    raise F01CanonicalTranslationError(\n    ...<2 lines>...\n    )\nspotbot.research.ams_v2_f01_canonical_artifacts.F01CanonicalTranslationError: Raw artifact does not provide entry_time; accepted aliases=['entry_time', 'entry_timestamp', 'entry_snapshot_time', 'opened_at', 'open_time'].\n",
+    "type": "F01CanonicalTranslationError"
+  },
+  "family_id": "AMS-V2-F01",
+  "fold_results": [
+    {
+      "baseline_engine": {
+        "daily_rows": 365,
+        "signal_rows": 7301,
+        "trade_rows": 0,
+        "weight_rows": 7665
+      },
+      "baseline_transaction_cost_fraction": 0.002,
+      "canonical_baseline": {
+        "canonical_portfolio_rows": 365,
+        "canonical_trade_rows": 0
+      },
+      "canonical_stress": {
+        "canonical_portfolio_rows": 365,
+        "canonical_trade_rows": 0
+      },
+      "evaluation_end_exclusive": "2023-01-01T00:00:00+00:00",
+      "evaluation_start": "2022-01-01T00:00:00+00:00",
+      "fold_name": "WF_2022",
+      "metrics": {
+        "base_price_gross_pnl": 0.0,
+        "evaluation_end_exclusive": "2023-01-01T00:00:00+00:00",
+        "evaluation_start": "2022-01-01T00:00:00+00:00",
+        "executed_trade_count": 0,
+        "fold_name": "WF_2022",
+        "gross_loss_abs": 0.0,
+        "gross_profit": 0.0,
+        "maximum_drawdown": 0.0,
+        "net_pnl": 0.0,
+        "stress_cost_total_return_0_004": 0.0,
+        "total_r_multiple": 0.0,
+        "total_return": 0.0
+      },
+      "stress_engine": {
+        "daily_rows": 365,
+        "signal_rows": 7301,
+        "trade_rows": 0,
+        "weight_rows": 7665
+      },
+      "stress_transaction_cost_fraction": 0.004
+    }
+  ],
+  "input_manifest": {
+    "history_directory": "C:\\SIRAJ\\Repositories\\spot-speculation-bot\\data\\research\\multi_asset_daily\\kucoin_direct_v3",
+    "history_file_count": 40,
+    "history_files": [
+      {
+        "bytes": 101905,
+        "path": "data/research/multi_asset_daily/kucoin_direct_v3/aave_usdt.parquet",
+        "sha256": "e2bce68b701a8747dbb22985722445e7e9854fac0b73cb970e653a7784f5ba36"
+      },
+      {
+        "bytes": 151811,
+        "path": "data/research/multi_asset_daily/kucoin_direct_v3/ada_usdt.parquet",
+        "sha256": "404f6f60841d6c0c4390e6cd480c9ccdc81e53972f4c407d2ac07563d340888c"
+      },
+      {
+        "bytes": 6043,
+        "path": "data/research/multi_asset_daily/kucoin_direct_v3/adi_usdt.parquet",
+        "sha256": "b990fa30620eee3d4b84b30fb3e6113a4be2aeae9abfb66d7a1526b84131c268"
+      },
+      {
+        "bytes": 6043,
+        "path": "data/research/multi_asset_daily/kucoin_direct_v3/ake_usdt.parquet",
+        "sha256": "b990fa30620eee3d4b84b30fb3e6113a4be2aeae9abfb66d7a1526b84131c268"
+      },
+      {
+        "bytes": 6043,
+        "path": "data/research/multi_asset_daily/kucoin_direct_v3/ansem_usdt.parquet",
+        "sha256": "b990fa30620eee3d4b84b30fb3e6113a4be2aeae9abfb66d7a1526b84131c268"
+      },
+      {
+        "bytes": 6043,
+        "path": "data/research/multi_asset_daily/kucoin_direct_v3/aster_usdt.parquet",
+        "sha256": "b990fa30620eee3d4b84b30fb3e6113a4be2aeae9abfb66d7a1526b84131c268"
+      },
+      {
+        "bytes": 92971,
+        "path": "data/research/multi_asset_daily/kucoin_direct_v3/avax_usdt.parquet",
+        "sha256": "90a6d5d999231f2029571e6c8f604fc15f6bdba35905a4a948b70b7292cc8169"
+      },
+      {
+        "bytes": 6043,
+        "path": "data/research/multi_asset_daily/kucoin_direct_v3/bank_usdt.parquet",
+        "sha256": "b990fa30620eee3d4b84b30fb3e6113a4be2aeae9abfb66d7a1526b84131c268"
+      },
+      {
+        "bytes": 6043,
+        "path": "data/research/multi_asset_daily/kucoin_direct_v3/bill_usdt.parquet",
+        "sha256": "b990fa30620eee3d4b84b30fb3e6113a4be2aeae9abfb66d7a1526b84131c268"
+      },
+      {
+        "bytes": 130470,
+        "path": "data/research/multi_asset_daily/kucoin_direct_v3/bnb_usdt.parquet",
+        "sha256": "9e2eb936a48c4b2223cc7b3b9aa20278a9de759672dd22ee096a0a73d97445d3"
+      },
+      {
+        "bytes": 172248,
+        "path": "data/research/multi_asset_daily/kucoin_direct_v3/btc_usdt.parquet",
+        "sha256": "6586f58ad1a3c0eff978d510ec211e5930ff518b528488f1e8ac8527af99f39f"
+      },
+      {
+        "bytes": 83729,
+        "path": "data/research/multi_asset_daily/kucoin_direct_v3/dexe_usdt.parquet",
+        "sha256": "ec46aca06ac708bd53e002e806b8dd8e73be60587a9f1aef0db2e9ae3c80f7fd"
+      },
+      {
+        "bytes": 108054,
+        "path": "data/research/multi_asset_daily/kucoin_direct_v3/doge_usdt.parquet",
+        "sha256": "082771fd8c421e92d41623fbdc0cebaf05c8b425b38958c4446b489f5ac8dd32"
+      },
+      {
+        "bytes": 112507,
+        "path": "data/research/multi_asset_daily/kucoin_direct_v3/dot_usdt.parquet",
+        "sha256": "f3146a7f6db136626511c6ff9702153784064042699300ea01e78c6784be08fb"
+      },
+      {
+        "bytes": 26579,
+        "path": "data/research/multi_asset_daily/kucoin_direct_v3/ena_usdt.parquet",
+        "sha256": "717f7e1c2fed7e6df82b9448c621e4b84150ccfd99cdb3474d0c51148fd0bd28"
+      },
+      {
+        "bytes": 170770,
+        "path": "data/research/multi_asset_daily/kucoin_direct_v3/eth_usdt.parquet",
+        "sha256": "a8d26ac16029874c517c76db4c94e72f87a372417a9e81878d5ec45d0046c02a"
+      },
+      {
+        "bytes": 60674,
+        "path": "data/research/multi_asset_daily/kucoin_direct_v3/gram_usdt.parquet",
+        "sha256": "56e3e49445762f91806880d57583a49530f580ceb74c67726b426ba71618c6dc"
+      },
+      {
+        "bytes": 9650,
+        "path": "data/research/multi_asset_daily/kucoin_direct_v3/hype_usdt.parquet",
+        "sha256": "7de73cb72b40e37af894d501f1368256d4da0875c6f7feb64d9c5e38947d5cdc"
+      },
+      {
+        "bytes": 112436,
+        "path": "data/research/multi_asset_daily/kucoin_direct_v3/link_usdt.parquet",
+        "sha256": "8c0c99d1387b8375a5a223f43b252f57ecacc9dd3c4fcc9e86ef8e908c5fc747"
+      },
+      {
+        "bytes": 161840,
+        "path": "data/research/multi_asset_daily/kucoin_direct_v3/ltc_usdt.parquet",
+        "sha256": "3392bc1644ebd4b54ccd8773e2e3f44c2ed1b8cf2b48f30d8bcd13fa749d7759"
+      },
+      {
+        "bytes": 93481,
+        "path": "data/research/multi_asset_daily/kucoin_direct_v3/near_usdt.parquet",
+        "sha256": "aa48991719207286ce5e5c56bd067fc3353e9e511a2503d487789d37ad670767"
+      },
+      {
+        "bytes": 6043,
+        "path": "data/research/multi_asset_daily/kucoin_direct_v3/o_usdt.parquet",
+        "sha256": "b990fa30620eee3d4b84b30fb3e6113a4be2aeae9abfb66d7a1526b84131c268"
+      },
+      {
+        "bytes": 32628,
+        "path": "data/research/multi_asset_daily/kucoin_direct_v3/ondo_usdt.parquet",
+        "sha256": "97a8a23c9c6197ae3e193a5bed2608c79376ae22adc0a1db93874676fdbe68ff"
+      },
+      {
+        "bytes": 49729,
+        "path": "data/research/multi_asset_daily/kucoin_direct_v3/pepe_usdt.parquet",
+        "sha256": "911e72aa0c13571d565569300a2e20b5ddb01d6786cf195a429c7fc87ff6757e"
+      },
+      {
+        "bytes": 6043,
+        "path": "data/research/multi_asset_daily/kucoin_direct_v3/pieverse_usdt.parquet",
+        "sha256": "b990fa30620eee3d4b84b30fb3e6113a4be2aeae9abfb66d7a1526b84131c268"
+      },
+      {
+        "bytes": 40853,
+        "path": "data/research/multi_asset_daily/kucoin_direct_v3/sei_usdt.parquet",
+        "sha256": "08c54e2ffe9e0859f15e1fd83d488fd9c02735c7c58b3fb5c6a38ae65e4f2f7f"
+      },
+      {
+        "bytes": 99582,
+        "path": "data/research/multi_asset_daily/kucoin_direct_v3/shib_usdt.parquet",
+        "sha256": "a072343d422b983ce521483a8d03c13eb7ed3f2434c4918bf43456a2f77338cd"
+      },
+      {
+        "bytes": 175401,
+        "path": "data/research/multi_asset_daily/kucoin_direct_v3/snx_usdt.parquet",
+        "sha256": "daba5407ae3b8f7c4397dc8d2a414ff8acca113feead34c2491d13b8e1ff2871"
+      },
+      {
+        "bytes": 84211,
+        "path": "data/research/multi_asset_daily/kucoin_direct_v3/sol_usdt.parquet",
+        "sha256": "f8d0ea17c6e0cbe2e8d3ac6118c440b2de1e5a15b19a8e38755028155c14da4f"
+      },
+      {
+        "bytes": 49427,
+        "path": "data/research/multi_asset_daily/kucoin_direct_v3/sui_usdt.parquet",
+        "sha256": "b4d9cbe5306364619c6018d94c156ef37c69e49c773688872cf1b73b6dd060bd"
+      },
+      {
+        "bytes": 49306,
+        "path": "data/research/multi_asset_daily/kucoin_direct_v3/syn_usdt.parquet",
+        "sha256": "7fe5c2436651a10d79ca8820389424796cd2e130ac13a954e66c512fc05db51e"
+      },
+      {
+        "bytes": 29998,
+        "path": "data/research/multi_asset_daily/kucoin_direct_v3/tao_usdt.parquet",
+        "sha256": "2cbcc9cf98780cb729e72f96a87257e16f8afc2e4c53042179e18f5cff711d56"
+      },
+      {
+        "bytes": 6043,
+        "path": "data/research/multi_asset_daily/kucoin_direct_v3/tea_usdt.parquet",
+        "sha256": "b990fa30620eee3d4b84b30fb3e6113a4be2aeae9abfb66d7a1526b84131c268"
+      },
+      {
+        "bytes": 6043,
+        "path": "data/research/multi_asset_daily/kucoin_direct_v3/trump_usdt.parquet",
+        "sha256": "b990fa30620eee3d4b84b30fb3e6113a4be2aeae9abfb66d7a1526b84131c268"
+      },
+      {
+        "bytes": 164989,
+        "path": "data/research/multi_asset_daily/kucoin_direct_v3/trx_usdt.parquet",
+        "sha256": "ace309235df3909ec34fa6ae3efee53c462dbee9500007799303da22b38c7283"
+      },
+      {
+        "bytes": 113448,
+        "path": "data/research/multi_asset_daily/kucoin_direct_v3/uni_usdt.parquet",
+        "sha256": "7223c3e3521d9b3f4a9bc66c32d560b4ba107c4471ecac72665f8ca136880af5"
+      },
+      {
+        "bytes": 164920,
+        "path": "data/research/multi_asset_daily/kucoin_direct_v3/xlm_usdt.parquet",
+        "sha256": "32a696adfa6326b7a269bb4c8d09d8b316c87548c9346dfb7a3c7579054f2b95"
+      },
+      {
+        "bytes": 86410,
+        "path": "data/research/multi_asset_daily/kucoin_direct_v3/xmr_usdt.parquet",
+        "sha256": "bcfa0a3c1ed64de42d3af18455871eb612f65e8f80005592f643db9596bd491a"
+      },
+      {
+        "bytes": 162011,
+        "path": "data/research/multi_asset_daily/kucoin_direct_v3/xrp_usdt.parquet",
+        "sha256": "7b423d93b7120bee32ac76bc5e4a912b7b0d05cf0bfd9b06f2ea1bbbac3a14c3"
+      },
+      {
+        "bytes": 129397,
+        "path": "data/research/multi_asset_daily/kucoin_direct_v3/zec_usdt.parquet",
+        "sha256": "6c32c29febacb64404dc9d6612181fbda436a7c0e37e436323b0b4b172076293"
+      }
+    ],
+    "ranking_file": {
+      "bytes": 2372313,
+      "path": "data/research/asset_ranking/v1/asset-ranking-engine-v1.parquet",
+      "sha256": "274d6f84f5d6e9322d3b5110cf0f600dd78ea165edc5a989b1726361689e11df"
+    }
+  },
+  "input_profiles": {
+    "history": {
+      "columns": [
+        "symbol",
+        "exchange_symbol",
+        "open_time",
+        "close_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "base_volume",
+        "quote_turnover",
+        "quote_volume_source",
+        "source",
+        "interval"
+      ],
+      "rows": 42325,
+      "time_ranges": {
+        "close_time": {
+          "maximum": "2024-12-31T00:00:00+00:00",
+          "minimum": "2017-10-20T00:00:00+00:00"
+        },
+        "open_time": {
+          "maximum": "2024-12-30T00:00:00+00:00",
+          "minimum": "2017-10-19T00:00:00+00:00"
+        }
+      },
+      "unique_symbols": 30
+    },
+    "ranking": {
+      "columns": [
+        "snapshot_time",
+        "symbol",
+        "feature_time",
+        "benchmark_feature_time",
+        "feature_close",
+        "return_30d",
+        "return_90d",
+        "benchmark_return_90d",
+        "relative_strength_90d",
+        "volatility_30d",
+        "turnover_expansion",
+        "drawdown_90d",
+        "momentum_30_score",
+        "momentum_90_score",
+        "relative_strength_score",
+        "turnover_expansion_score",
+        "drawdown_recovery_score",
+        "composite_score",
+        "cross_section_size",
+        "rank_within_snapshot",
+        "top_5",
+        "top_10"
+      ],
+      "rows": 31018,
+      "time_ranges": {
+        "snapshot_time": {
+          "maximum": "2024-12-31T00:00:00+00:00",
+          "minimum": "2021-01-01T00:00:00+00:00"
+        }
+      },
+      "unique_symbols": 29
+    }
+  },
+  "known_limitations": [
+    "The research universe retains unresolved survivorship bias because complete delisted-asset history is unavailable.",
+    "Daily bars cannot establish intraday stop ordering or exact intraday execution prices.",
+    "Four-hour and one-hour validation remain separate promotion gates."
+  ],
+  "locked_periods": {
+    "holdout_2026_accessed": false,
+    "test_2025_accessed": false
+  },
+  "parameter_hash_sha256": "0801343e31964284faa0671d87ee8afd41c6194dda05a786d98d88d053e18ff4",
+  "parameters": {
+    "breakout_lookback_days": 20,
+    "initial_stop_atr": 2.5,
+    "maximum_holding_days": 60,
+    "maximum_positions": 2,
+    "momentum_lookback_days": 20,
+    "ranking_maximum": 8,
+    "trailing_stop_atr": 3.0,
+    "transaction_cost_fraction": 0.002,
+    "turnover_expansion_minimum": 1.2
+  },
+  "preflight_evidence": {
+    "bytes": 27863,
+    "path": "C:\\SIRAJ\\Reports\\ams-v2-f01-wf2022-real-data-structural-preflight.json",
+    "sha256": "78559c89084b75494b55f9f11ff625968a193da74d7f141fb9ff35b06091dcc5"
+  },
+  "registered_trials_consumed": 1,
+  "schema_version": "ams-v2-f01-c01-walk-forward-trial-v1",
+  "source_commit": "3ba939e996e070d51b4f8d8d7693d7c4dbb1178d",
+  "started_at": "2026-07-25T17:35:43.218536+00:00",
+  "terminal_result": "FAILED_CONSUMED",
+  "trial_accounting": {
+    "after": {
+      "alpha_configurations_registered": 96,
+      "holdout_2026_accessed": false,
+      "portfolio_variants_registered": 4,
+      "remaining_authorized_trials": 99,
+      "test_2025_accessed": false,
+      "total_unique_variants_registered": 100,
+      "trials_executed": 1,
+      "trials_invalidated": 0
+    },
+    "before": {
+      "alpha_configurations_registered": 96,
+      "holdout_2026_accessed": false,
+      "portfolio_variants_registered": 4,
+      "remaining_authorized_trials": 100,
+      "test_2025_accessed": false,
+      "total_unique_variants_registered": 100,
+      "trials_executed": 0,
+      "trials_invalidated": 0
+    }
+  },
+  "trial_decision": null,
+  "trial_execution": {
+    "completed_at": "2026-07-25T17:35:52.950427+00:00",
+    "configuration_id": "AMS-V2-F01-C01",
+    "failure_reason": "F01CanonicalTranslationError: Raw artifact does not provide entry_time; accepted aliases=['entry_time', 'entry_timestamp', 'entry_snapshot_time', 'opened_at', 'open_time'].",
+    "family_id": "AMS-V2-F01",
+    "fold_metrics": [
+      {
+        "base_price_gross_pnl": 0.0,
+        "evaluation_end_exclusive": "2023-01-01T00:00:00+00:00",
+        "evaluation_start": "2022-01-01T00:00:00+00:00",
+        "executed_trade_count": 0,
+        "fold_name": "WF_2022",
+        "gross_loss_abs": 0.0,
+        "gross_profit": 0.0,
+        "maximum_drawdown": 0.0,
+        "net_pnl": 0.0,
+        "stress_cost_total_return_0_004": 0.0,
+        "total_r_multiple": 0.0,
+        "total_return": 0.0
+      }
+    ],
+    "invalidation_reason": null,
+    "parameter_hash_sha256": "0801343e31964284faa0671d87ee8afd41c6194dda05a786d98d88d053e18ff4",
+    "source_commit": "3ba939e996e070d51b4f8d8d7693d7c4dbb1178d",
+    "started_at": "2026-07-25T17:35:43.218536+00:00",
+    "terminal_status": "FAILED"
+  }
+}

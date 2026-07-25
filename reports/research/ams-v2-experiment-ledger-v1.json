@@ -1,8 +1,17 @@
 {
   "alpha_configurations": [
     {
-      "aggregate_result": null,
+      "aggregate_result": {
+        "decision": "FAILED",
+        "failure_reason": "F01CanonicalTranslationError: Raw artifact does not provide entry_time; accepted aliases=['entry_time', 'entry_timestamp', 'entry_snapshot_time', 'opened_at', 'open_time']."
+      },
       "configuration_id": "AMS-V2-F01-C01",
+      "execution_metadata": {
+        "completed_at": "2026-07-25T17:35:52.950427+00:00",
+        "orchestrator_version": "AMS_V2_WALK_FORWARD_ORCHESTRATOR_V1",
+        "source_commit": "3ba939e996e070d51b4f8d8d7693d7c4dbb1178d",
+        "started_at": "2026-07-25T17:35:43.218536+00:00"
+      },
       "family": "TREND_MOMENTUM",
       "family_id": "AMS-V2-F01",
       "fold_results": [],
@@ -20,7 +29,7 @@
         "turnover_expansion_minimum": 1.2
       },
       "parameters_frozen": true,
-      "trial_status": "REGISTERED_NOT_EXECUTED"
+      "trial_status": "FAILED_CONSUMED"
     },
     {
       "aggregate_result": null,
@@ -2163,16 +2172,25 @@
   "protocol_id": "AGGRESSIVE_MULTI_STRATEGY_RESEARCH_PROTOCOL_V2",
   "registered_at": "2026-07-25T00:07:07.346296Z",
   "schema_version": "ams-v2-experiment-ledger-v1",
-  "status": "REGISTERED_NO_TRIALS_EXECUTED",
+  "status": "IN_PROGRESS",
   "test_2025_result": null,
   "trial_accounting": {
     "alpha_configurations_registered": 96,
     "holdout_2026_accessed": false,
     "portfolio_variants_registered": 4,
-    "remaining_authorized_trials": 100,
+    "remaining_authorized_trials": 99,
     "test_2025_accessed": false,
     "total_unique_variants_registered": 100,
-    "trials_executed": 0,
+    "trials_executed": 1,
     "trials_invalidated": 0
-  }
+  },
+  "trial_history": [
+    {
+      "completed_at": "2026-07-25T17:35:52.950427+00:00",
+      "configuration_id": "AMS-V2-F01-C01",
+      "family_id": "AMS-V2-F01",
+      "source_commit": "3ba939e996e070d51b4f8d8d7693d7c4dbb1178d",
+      "terminal_status": "FAILED"
+    }
+  ]
 }
