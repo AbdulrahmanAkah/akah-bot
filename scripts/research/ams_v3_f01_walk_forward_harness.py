@@ -362,15 +362,20 @@ def load_trial_specification(
 
     accounting = experiment.get("trial_accounting")
 
-    expected_accounting = {
-        "total_authorized_trials": 20,
-        "trials_executed": 0,
-        "remaining_authorized_trials": 20,
-        "test_2025_accessed": False,
-        "holdout_2026_accessed": False,
-    }
+    if not isinstance(accounting, dict):
+        raise HarnessError("Unexpected AMS V3 trial accounting.")
 
-    if accounting != expected_accounting:
+    executed = accounting.get("trials_executed")
+    remaining = accounting.get("remaining_authorized_trials")
+    if (
+        accounting.get("total_authorized_trials") != 20
+        or not isinstance(executed, int)
+        or not isinstance(remaining, int)
+        or executed < 0
+        or remaining != 20 - executed
+        or accounting.get("test_2025_accessed") is not False
+        or accounting.get("holdout_2026_accessed") is not False
+    ):
         raise HarnessError("Unexpected AMS V3 trial accounting.")
 
     configurations = experiment.get("alpha_configurations")
@@ -412,9 +417,6 @@ def load_trial_specification(
 
     if profile is None:
         raise HarnessError(f"Unknown portfolio profile: {portfolio_profile_id}.")
-
-    if configuration.get("trial_status") != "REGISTERED_NOT_EXECUTED":
-        raise HarnessError("Configuration has already been consumed.")
 
     parameters = configuration.get("parameters")
 
@@ -1057,8 +1059,9 @@ def validation_slice(
     contract: ExecutionContract,
     fold: WalkForwardFold,
 ) -> pd.DataFrame:
+    ownership_column = contract.bar_open_time or contract.timestamp
     timestamps = pd.to_datetime(
-        panel[contract.timestamp],
+        panel[ownership_column],
         utc=True,
         errors="raise",
     )
@@ -1375,11 +1378,7 @@ def simulate_portfolio(
         maximum_positions=maximum_positions_seen,
         gross_profit=gross_profit,
         gross_loss=gross_loss,
-        profit_factor=(
-            gross_profit / gross_loss
-            if gross_loss
-            else (None if not gross_profit else math.inf)
-        ),
+        profit_factor=(gross_profit / gross_loss if gross_loss else None),
         average_trade_return=(sum(return_values) / len(return_values) if return_values else 0.0),
         median_trade_return=(float(pd.Series(return_values).median()) if return_values else 0.0),
         average_holding_hours=(
@@ -1523,6 +1522,56 @@ def utc_now() -> str:
     return pd.Timestamp.now(tz="UTC").isoformat()
 
 
+def registered_trial_plan() -> list[dict[str, str]]:
+    """Return the fixed twenty-trial budget with explicit profile sensitivity."""
+
+    plan = [
+        {
+            "trial_id": "AMS-V3-F01-T01",
+            "configuration_id": "AMS-V3-F01-C01",
+            "portfolio_profile_id": "AMS-V3-PORTFOLIO-P02",
+        },
+        {
+            "trial_id": "AMS-V3-F01-T02",
+            "configuration_id": "AMS-V3-F01-C02",
+            "portfolio_profile_id": "AMS-V3-PORTFOLIO-P02",
+        },
+    ]
+    plan.extend(
+        {
+            "trial_id": f"AMS-V3-F01-T{sequence:02d}",
+            "configuration_id": f"AMS-V3-F01-C{configuration:02d}",
+            "portfolio_profile_id": "AMS-V3-PORTFOLIO-P02",
+        }
+        for sequence, configuration in enumerate(range(3, 17), start=3)
+    )
+    plan.extend(
+        [
+            {
+                "trial_id": "AMS-V3-F01-T17",
+                "configuration_id": "AMS-V3-F01-C01",
+                "portfolio_profile_id": "AMS-V3-PORTFOLIO-P01",
+            },
+            {
+                "trial_id": "AMS-V3-F01-T18",
+                "configuration_id": "AMS-V3-F01-C01",
+                "portfolio_profile_id": "AMS-V3-PORTFOLIO-P03",
+            },
+            {
+                "trial_id": "AMS-V3-F01-T19",
+                "configuration_id": "AMS-V3-F01-C01",
+                "portfolio_profile_id": "AMS-V3-PORTFOLIO-P04",
+            },
+            {
+                "trial_id": "AMS-V3-F01-T20",
+                "configuration_id": "AMS-V3-F01-C02",
+                "portfolio_profile_id": "AMS-V3-PORTFOLIO-P01",
+            },
+        ]
+    )
+    return plan
+
+
 def register_harness() -> dict[str, Any]:
     """Register a verified harness without consuming an AMS V3 trial."""
 
@@ -1555,6 +1604,10 @@ def register_harness() -> dict[str, Any]:
 
     experiment["alpha_configurations"] = configurations
     experiment["source_commit"] = source_commit
+    experiment["trial_plan"] = [
+        {**value, "trial_status": "REGISTERED_NOT_EXECUTED"}
+        for value in registered_trial_plan()
+    ]
     experiment["harness_registration"] = {
         "status": "REGISTERED_NOT_EXECUTED",
         "report_path": str(DEFAULT_HARNESS_REGISTRATION_PATH.relative_to(ROOT)).replace("\\", "/"),
@@ -1602,6 +1655,21 @@ def register_harness() -> dict[str, Any]:
             "control_configuration": "AMS-V3-F01-C01",
             "fibonacci_configuration": "AMS-V3-F01-C02",
             "parameter_differences": paired_differences,
+        },
+        "trial_plan": {
+            "total_trials": 20,
+            "primary_trials": ["AMS-V3-F01-T01", "AMS-V3-F01-T02"],
+            "default_portfolio_profile": "AMS-V3-PORTFOLIO-P02",
+            "profile_sensitivity_trials": [
+                "AMS-V3-F01-T17",
+                "AMS-V3-F01-T18",
+                "AMS-V3-F01-T19",
+                "AMS-V3-F01-T20",
+            ],
+            "rationale": (
+                "All sixteen alpha configurations are evaluated once on P02; "
+                "four remaining authorized trials test preregistered portfolio sensitivity."
+            ),
         },
         "trial_accounting": dict(accounting),
         "next_action": "RUN_AMS_V3_F01_C01_CONTROL",
@@ -1708,6 +1776,163 @@ def run_walk_forward(
     }
 
 
+def trial_report_path(
+    *,
+    trial_id: str,
+    configuration_id: str,
+    portfolio_profile_id: str,
+) -> Path:
+    configuration_token = configuration_id.lower().replace("ams-v3-f01-", "")
+    profile_token = portfolio_profile_id.lower().replace("ams-v3-portfolio-", "")
+    suffix = "" if trial_id in {"AMS-V3-F01-T01", "AMS-V3-F01-T02"} else f"-{profile_token}"
+    return ROOT / "reports/research" / f"ams-v3-f01-{configuration_token}{suffix}-trial-v1.json"
+
+
+def execute_registered_trial(
+    *,
+    trial_id: str,
+    panel: pd.DataFrame | None = None,
+    initial_capital: float = 100_000.0,
+) -> dict[str, Any]:
+    """Execute exactly one preregistered trial and consume it after durable writes."""
+
+    experiment = load_object(DEFAULT_EXPERIMENT_PATH)
+    accounting = experiment.get("trial_accounting")
+    plan = experiment.get("trial_plan")
+    if not isinstance(accounting, dict) or not isinstance(plan, list):
+        raise HarnessError("Harness registration is missing the trial plan.")
+    if accounting.get("remaining_authorized_trials", 0) <= 0:
+        raise HarnessError("No authorized AMS V3 trials remain.")
+    matches = [
+        value
+        for value in plan
+        if isinstance(value, dict) and value.get("trial_id") == trial_id
+    ]
+    if len(matches) != 1:
+        raise HarnessError(f"Unknown registered trial: {trial_id}.")
+    trial = matches[0]
+    if trial.get("trial_status") != "REGISTERED_NOT_EXECUTED":
+        raise HarnessError(f"Trial is already consumed: {trial_id}.")
+    configuration_id = str(trial["configuration_id"])
+    portfolio_profile_id = str(trial["portfolio_profile_id"])
+    started_at = utc_now()
+    result = run_walk_forward(
+        configuration_id=configuration_id,
+        portfolio_profile_id=portfolio_profile_id,
+        initial_capital=initial_capital,
+        panel=panel,
+    )
+    completed_at = utc_now()
+    source_commit = git_output("rev-parse", "HEAD")
+    report_path = trial_report_path(
+        trial_id=trial_id,
+        configuration_id=configuration_id,
+        portfolio_profile_id=portfolio_profile_id,
+    )
+    report = {
+        "schema_version": "ams-v3-f01-trial-v1",
+        "trial_id": trial_id,
+        "configuration_id": configuration_id,
+        "portfolio_profile_id": portfolio_profile_id,
+        "status": "EXECUTED",
+        "source_commit": source_commit,
+        "started_at": started_at,
+        "completed_at": completed_at,
+        "execution_rule": "SIGNAL_AT_CLOSE_EXECUTE_NEXT_BAR_OPEN",
+        "results": result,
+        "test_2025_accessed": False,
+        "holdout_2026_accessed": False,
+    }
+    # A valid result report is written first.  Only then can the ledger consume
+    # the trial, so a computation failure never decrements the budget.
+    write_json_atomically(report_path, report)
+
+    updated = copy.deepcopy(experiment)
+    updated_plan = updated["trial_plan"]
+    updated_trial = next(value for value in updated_plan if value["trial_id"] == trial_id)
+    updated_trial["trial_status"] = "EXECUTED"
+    updated_trial["report_path"] = str(report_path.relative_to(ROOT)).replace("\\", "/")
+    updated_trial["report_sha256"] = file_sha256(report_path)
+    updated_trial["completed_at"] = completed_at
+    updated_trial["aggregate_result"] = result["aggregate_result"]
+    updated_accounting = updated["trial_accounting"]
+    updated_accounting["trials_executed"] = int(updated_accounting["trials_executed"]) + 1
+    updated_accounting["remaining_authorized_trials"] = (
+        int(updated_accounting["remaining_authorized_trials"]) - 1
+    )
+
+    configurations = updated["alpha_configurations"]
+    configuration = next(
+        value
+        for value in configurations
+        if value["configuration_id"] == configuration_id
+    )
+    configuration.setdefault("portfolio_results", {})[portfolio_profile_id] = {
+        "trial_id": trial_id,
+        "report_path": updated_trial["report_path"],
+        "aggregate_result": result["aggregate_result"],
+    }
+    if portfolio_profile_id == "AMS-V3-PORTFOLIO-P02":
+        configuration["fold_results"] = result["fold_results"]
+        configuration["aggregate_result"] = result["aggregate_result"]
+    if not any(
+        value["configuration_id"] == configuration_id
+        and value["trial_status"] == "REGISTERED_NOT_EXECUTED"
+        for value in updated_plan
+    ):
+        configuration["trial_status"] = "EXECUTED"
+    write_json_atomically(DEFAULT_EXPERIMENT_PATH, updated)
+
+    project = load_object(DEFAULT_PROJECT_LEDGER_PATH)
+    updates = project.setdefault("protocol_updates", [])
+    event_id = f"{trial_id.replace('-', '_')}_EXECUTED"
+    updates.append(
+        {
+            "event_id": event_id,
+            "event_type": "REGISTERED_ALPHA_TRIAL",
+            "recorded_at": completed_at,
+            "configuration_id": configuration_id,
+            "portfolio_profile_id": portfolio_profile_id,
+            "report_path": updated_trial["report_path"],
+            "report_sha256": updated_trial["report_sha256"],
+            "registered_trials_consumed": 1,
+            "test_2025_accessed": False,
+            "holdout_2026_accessed": False,
+        }
+    )
+    project["current_stage"] = f"{trial_id.replace('-', '_')}_EXECUTED"
+    project["next_action"] = "RUN_NEXT_AMS_V3_F01_REGISTERED_TRIAL"
+    project["last_updated_at"] = completed_at
+    write_json_atomically(DEFAULT_PROJECT_LEDGER_PATH, project)
+    return report
+
+
+def execute_all_registered_trials(
+    *,
+    initial_capital: float = 100_000.0,
+) -> list[dict[str, Any]]:
+    """Build the verified panel once, then consume every remaining planned trial."""
+
+    datasets = load_registered_datasets()
+    panel = build_execution_panel(datasets)
+    experiment = load_object(DEFAULT_EXPERIMENT_PATH)
+    plan = experiment.get("trial_plan")
+    if not isinstance(plan, list):
+        raise HarnessError("Harness registration is missing the trial plan.")
+    reports = []
+    for trial in plan:
+        if not isinstance(trial, dict) or trial.get("trial_status") != "REGISTERED_NOT_EXECUTED":
+            continue
+        reports.append(
+            execute_registered_trial(
+                trial_id=str(trial["trial_id"]),
+                panel=panel,
+                initial_capital=initial_capital,
+            )
+        )
+    return reports
+
+
 def parse_arguments() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
 
@@ -1726,6 +1951,13 @@ def parse_arguments() -> argparse.Namespace:
         action="store_true",
     )
 
+    parser.add_argument("--trial-id")
+
+    parser.add_argument(
+        "--execute-all",
+        action="store_true",
+    )
+
     parser.add_argument(
         "--register",
         action="store_true",
@@ -1738,20 +1970,24 @@ def main() -> int:
     arguments = parse_arguments()
 
     if arguments.register:
-        if arguments.execute:
+        if arguments.execute or arguments.execute_all:
             raise HarnessError("Registration and execution cannot be combined.")
         print(json.dumps(register_harness(), indent=2, sort_keys=True, allow_nan=False))
+        return 0
+
+    if arguments.execute_all:
+        reports = execute_all_registered_trials(initial_capital=arguments.initial_capital)
+        print(json.dumps(reports, indent=2, sort_keys=True, allow_nan=False))
         return 0
 
     if not arguments.execute:
         raise HarnessError("Execution requires the explicit --execute flag.")
 
-    if not arguments.configuration_id or not arguments.portfolio_profile_id:
-        raise HarnessError("Execution requires configuration and portfolio profile identifiers.")
+    if not arguments.trial_id:
+        raise HarnessError("Recorded execution requires a registered trial identifier.")
 
-    result = run_walk_forward(
-        configuration_id=(arguments.configuration_id),
-        portfolio_profile_id=(arguments.portfolio_profile_id),
+    result = execute_registered_trial(
+        trial_id=arguments.trial_id,
         initial_capital=(arguments.initial_capital),
     )
 

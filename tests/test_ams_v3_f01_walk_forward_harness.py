@@ -365,6 +365,51 @@ def test_bar_opening_in_2025_is_rejected() -> None:
         harness.assert_no_locked_data(frame)
 
 
+def test_validation_owns_the_final_bar_by_bar_open_time() -> None:
+    panel = pd.DataFrame(
+        {
+            "symbol": ["BTC"],
+            "bar_open_time": [pd.Timestamp("2024-12-31T20:00:00Z")],
+            "bar_close_time": [pd.Timestamp("2025-01-01T00:00:00Z")],
+        }
+    )
+    contract = harness.ExecutionContract(
+        timestamp="bar_close_time",
+        open_price="open",
+        high_price="high",
+        low_price="low",
+        close_price="close",
+        setup="setup",
+        risk_fraction="risk",
+        initial_stop="stop",
+        trailing_stop=None,
+        fibonacci_zone=None,
+        score=None,
+        bar_open_time="bar_open_time",
+        tradable_from=None,
+        tradable_until=None,
+    )
+
+    result = harness.validation_slice(
+        panel,
+        contract=contract,
+        fold=harness.anchored_walk_forward_folds()[-1],
+    )
+
+    assert len(result) == 1
+
+
+def test_registered_trial_plan_uses_exactly_twenty_authorized_trials() -> None:
+    plan = harness.registered_trial_plan()
+
+    assert len(plan) == 20
+    assert len({item["trial_id"] for item in plan}) == 20
+    assert plan[0]["configuration_id"] == "AMS-V3-F01-C01"
+    assert plan[0]["portfolio_profile_id"] == "AMS-V3-PORTFOLIO-P02"
+    assert plan[1]["configuration_id"] == "AMS-V3-F01-C02"
+    assert plan[1]["portfolio_profile_id"] == "AMS-V3-PORTFOLIO-P02"
+
+
 def simulation_specification(
     *,
     maximum_positions: int = 2,

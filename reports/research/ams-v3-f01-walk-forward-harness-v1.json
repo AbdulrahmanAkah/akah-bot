@@ -44,9 +44,9 @@
     }
   },
   "protocol_id": "AMS-V3-MTF-FIBONACCI",
-  "registered_at": "2026-07-25T23:08:35.139732+00:00",
+  "registered_at": "2026-07-25T23:12:13.566293+00:00",
   "schema_version": "ams-v3-f01-walk-forward-harness-v1",
-  "source_commit": "1683ca0d962dadceb71cbdc8d5b3c5c11d611fa4",
+  "source_commit": "ef25ff61ba4742bbc4df292d26b15cccdf355e50",
   "spot_constraints": {
     "borrowing_allowed": false,
     "derivatives_allowed": false,
@@ -62,5 +62,20 @@
     "test_2025_accessed": false,
     "total_authorized_trials": 20,
     "trials_executed": 0
+  },
+  "trial_plan": {
+    "default_portfolio_profile": "AMS-V3-PORTFOLIO-P02",
+    "primary_trials": [
+      "AMS-V3-F01-T01",
+      "AMS-V3-F01-T02"
+    ],
+    "profile_sensitivity_trials": [
+      "AMS-V3-F01-T17",
+      "AMS-V3-F01-T18",
+      "AMS-V3-F01-T19",
+      "AMS-V3-F01-T20"
+    ],
+    "rationale": "All sixteen alpha configurations are evaluated once on P02; four remaining authorized trials test preregistered portfolio sensitivity.",
+    "total_trials": 20
   }
 }
