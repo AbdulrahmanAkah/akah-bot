@@ -1,0 +1,146 @@
+{
+  "artifacts": {
+    "feature_frame": "data/research/ams_v2/regime_router_v1/ams-v2-regime-features-v1.parquet",
+    "feature_frame_sha256": "5ee4fa75acd05fb148d6fce525cd7a6171e9e0744994e110b90027ebcb6d280c",
+    "routing_frame": "data/research/ams_v2/regime_router_v1/ams-v2-regime-routing-v1.parquet",
+    "routing_frame_sha256": "d94960d6db3baa0fd3e27838c627aae556b349adeef851caf3df12f3aed2c5c0"
+  },
+  "binding": false,
+  "counts_as_registered_trial": false,
+  "coverage": {
+    "complete_snapshot_count": 1260,
+    "complete_snapshot_fraction": 0.9992069785884219,
+    "first_complete_snapshot": "2021-07-21T00:00:00+00:00",
+    "incomplete_snapshot_count": 1,
+    "last_complete_snapshot": "2024-12-31T00:00:00+00:00",
+    "snapshot_count": 1261
+  },
+  "decision": "INFRASTRUCTURE_PROFILE_ONLY_NOT_A_TRIAL",
+  "diagnostic_flags": {
+    "all_five_regimes_observed": true,
+    "dominant_regime_fraction_above_0_70": false,
+    "dominant_regime_fraction_above_0_85": false,
+    "manual_review_required_before_alpha_trials": true,
+    "zero_regime_transitions": false
+  },
+  "generated_at": "2026-07-25T12:17:11.912326Z",
+  "inputs": {
+    "history_directory": "data/research/multi_asset_daily/kucoin_direct_v3",
+    "history_file_count": 40,
+    "history_file_set_sha256": "f8f4b012fc1e6e508efbcd990e10f45dbc6abc2a38f8e2484878611cba62000d",
+    "history_row_count": 42325,
+    "universe_path": "data/research/universe_snapshots/bootstrap_v1/bootstrap-point-in-time-universe-v1.parquet",
+    "universe_row_count": 43830,
+    "universe_sha256": "aa5005e43216f5a7d7a98a6afeb6032f791022d9595fcd982cb3e1e1e7728f8e"
+  },
+  "limitations": [
+    "This is an infrastructure profile, not an Alpha or portfolio trial.",
+    "Daily data cannot validate four-hour portfolio decisions or one-hour execution.",
+    "Historical delisting coverage remains incomplete and blocks final selection.",
+    "The router thresholds are deterministic rules, not learned probabilities.",
+    "The 2025 test and 2026 holdout were not accessed."
+  ],
+  "protocol_id": "AGGRESSIVE_MULTI_STRATEGY_RESEARCH_PROTOCOL_V2",
+  "regime_distribution": {
+    "counts": {
+      "BEAR_TREND": 623,
+      "BULL_EXPANSION": 354,
+      "BULL_PULLBACK_REACCELERATION": 123,
+      "CAPITULATION_RECOVERY": 25,
+      "SIDEWAYS_LOW_VOLATILITY": 135
+    },
+    "distinct_regime_count": 5,
+    "dominant_regime": "BEAR_TREND",
+    "dominant_regime_fraction": 0.49444444444444446,
+    "fractions": {
+      "BEAR_TREND": 0.49444444444444446,
+      "BULL_EXPANSION": 0.28095238095238095,
+      "BULL_PULLBACK_REACCELERATION": 0.09761904761904762,
+      "CAPITULATION_RECOVERY": 0.01984126984126984,
+      "SIDEWAYS_LOW_VOLATILITY": 0.10714285714285714
+    },
+    "longest_consecutive_runs": {
+      "BEAR_TREND": 203,
+      "BULL_EXPANSION": 72,
+      "BULL_PULLBACK_REACCELERATION": 8,
+      "CAPITULATION_RECOVERY": 3,
+      "INSUFFICIENT_HISTORY": 1,
+      "SIDEWAYS_LOW_VOLATILITY": 15
+    },
+    "transition_count": 217
+  },
+  "research_window": {
+    "end_inclusive": "2024-12-31T00:00:00+00:00",
+    "locked_test_start": "2025-01-01T00:00:00+00:00",
+    "start": "2021-07-20T00:00:00+00:00"
+  },
+  "router_version": "AMS_V2_REGIME_ROUTER_V1",
+  "routing_distribution": {
+    "action_counts": {
+      "CASH": 624,
+      "ENABLE_ENGINES": 637
+    },
+    "average_regime_risk_multiplier": 0.43039682539682533,
+    "average_routing_confidence": 0.7755555555555556,
+    "engine_activation_counts": {
+      "AMS-V2-F01": 354,
+      "AMS-V2-F02": 123,
+      "AMS-V2-F03": 489,
+      "AMS-V2-F04": 160,
+      "AMS-V2-F05": 25,
+      "AMS-V2-F06": 477
+    },
+    "matched_rule_counts": {
+      "FALLBACK_DEFENSIVE_CASH": 229,
+      "FALLBACK_POSITIVE_TREND": 69,
+      "FALLBACK_SIDEWAYS": 126,
+      "FALLBACK_STRESS_RECOVERY": 24,
+      "INSUFFICIENT_HISTORY": 1,
+      "PRIMARY_BEAR_TREND": 394,
+      "PRIMARY_BULL_EXPANSION": 354,
+      "PRIMARY_BULL_PULLBACK_REACCELERATION": 54,
+      "PRIMARY_CAPITULATION_RECOVERY": 1,
+      "PRIMARY_SIDEWAYS_LOW_VOLATILITY": 9
+    }
+  },
+  "schema_version": "ams-v2-regime-router-v1-profile-v1",
+  "source_commit": "a59c219662b1d377a6c9fb47aa3546293b6e759d",
+  "technical_status": "PASS",
+  "technical_validation": {
+    "bear_regime_routes_to_zero_risk_cash": true,
+    "complete_observations_exist": true,
+    "experiment_count_unchanged": true,
+    "feature_and_routing_row_counts_match": true,
+    "feature_cutoff_precedes_snapshot": true,
+    "feature_rows_nonempty": true,
+    "holdout_2026_not_accessed": true,
+    "incomplete_rows_route_to_cash": true,
+    "no_locked_2025_or_later_dates": true,
+    "only_registered_engine_ids_enabled": true,
+    "routing_rows_nonempty": true,
+    "test_2025_not_accessed": true
+  },
+  "trial_accounting": {
+    "after": {
+      "alpha_configurations_registered": 96,
+      "holdout_2026_accessed": false,
+      "portfolio_variants_registered": 4,
+      "remaining_authorized_trials": 100,
+      "test_2025_accessed": false,
+      "total_unique_variants_registered": 100,
+      "trials_executed": 0,
+      "trials_invalidated": 0
+    },
+    "before": {
+      "alpha_configurations_registered": 96,
+      "holdout_2026_accessed": false,
+      "portfolio_variants_registered": 4,
+      "remaining_authorized_trials": 100,
+      "test_2025_accessed": false,
+      "total_unique_variants_registered": 100,
+      "trials_executed": 0,
+      "trials_invalidated": 0
+    },
+    "changed": false
+  }
+}

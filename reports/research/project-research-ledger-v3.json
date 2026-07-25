@@ -4,7 +4,9 @@
     "POINT_IN_TIME_SPOT_UNIVERSE_V1",
     "WALK_FORWARD_EVALUATION_ENGINE_V1",
     "AGGRESSIVE_MULTI_STRATEGY_RESEARCH_PROTOCOL_V2",
-    "AMS_V2_EXPERIMENT_LEDGER_V1"
+    "AMS_V2_EXPERIMENT_LEDGER_V1",
+    "AMS_V2_REGIME_FEATURE_FRAME_V1",
+    "AMS_V2_REGIME_ROUTER_V1"
   ],
   "active_protocol": "MULTI_ASSET_RESEARCH_PROTOCOL_V3",
   "aggressive_multi_strategy_results": [
@@ -70,7 +72,7 @@
     }
   ],
   "current_discovery_is_research_universe": false,
-  "current_stage": "AMS_V2_PROTOCOL_REGISTERED",
+  "current_stage": "AMS_V2_REGIME_ROUTER_V1_PROFILED",
   "daily_history_coverage_path": "C:\\SIRAJ\\Repositories\\spot-speculation-bot\\reports\\research\\multi-asset-daily-history-coverage-v2.json",
   "daily_history_coverage_sha256": "f16234562f9b4c760e7634db1e3c1ca7c324829857566a59c93fba1e18181c87",
   "dataset_manifest_path": "C:\\SIRAJ\\Repositories\\spot-speculation-bot\\reports\\research\\historical-multi-asset-dataset-manifest-v1.json",
@@ -78,9 +80,9 @@
   "historical_delisting_coverage_status": "INCOMPLETE_BLOCKS_FINAL_MODEL_SELECTION",
   "holdout_2026_status": "LOCKED_NOT_ACCESSED",
   "holdout_accessed": false,
-  "last_updated_at": "2026-07-25T00:07:07.346296Z",
+  "last_updated_at": "2026-07-25T12:17:11.912326Z",
   "ledger_status": "CURRENT",
-  "next_action": "IMPLEMENT_AMS_V2_REGIME_FEATURE_FRAME_AND_WALK_FORWARD_ORCHESTRATOR_WITHOUT_ACCESSING_2025_OR_2026",
+  "next_action": "REVIEW_ROUTER_V1_EMPIRICAL_DISTRIBUTION_BEFORE_IMPLEMENTING_ALPHA_WALK_FORWARD",
   "previous_ledger_path": "C:\\SIRAJ\\Repositories\\spot-speculation-bot\\reports\\research\\project-research-ledger-v2.json",
   "previous_ledger_sha256": "e629f33b0c6cddc8183feebcd803576b4ae4c44f8b545cab0f0987af17013919",
   "previous_protocol": "BTC_RESEARCH_PROTOCOL_V2",
@@ -133,6 +135,24 @@
       "successor_protocol_path": "reports/research/aggressive-multi-strategy-research-protocol-v2.json",
       "successor_protocol_sha256": "10c805f521c006b29623ffaba10c0f701f9faf24c218b74041ce0f5741e17825",
       "test_2025_locked": true
+    },
+    {
+      "complete_snapshot_count": 1260,
+      "event_id": "AMS_V2_REGIME_ROUTER_V1_PROFILED",
+      "event_type": "RESEARCH_INFRASTRUCTURE_PROFILE",
+      "feature_frame_path": "data/research/ams_v2/regime_router_v1/ams-v2-regime-features-v1.parquet",
+      "feature_frame_sha256": "5ee4fa75acd05fb148d6fce525cd7a6171e9e0744994e110b90027ebcb6d280c",
+      "holdout_2026_accessed": false,
+      "recorded_at": "2026-07-25T12:17:11.912326Z",
+      "registered_trials_consumed": 0,
+      "report_path": "reports/research/ams-v2-regime-router-v1-profile.json",
+      "report_sha256": "235ed7980931a64d133d502ea0455ee308dcc34f454efc9716a7b2b07cfa4145",
+      "router_version": "AMS_V2_REGIME_ROUTER_V1",
+      "routing_frame_path": "data/research/ams_v2/regime_router_v1/ams-v2-regime-routing-v1.parquet",
+      "routing_frame_sha256": "d94960d6db3baa0fd3e27838c627aae556b349adeef851caf3df12f3aed2c5c0",
+      "snapshot_count": 1261,
+      "source_commit": "a59c219662b1d377a6c9fb47aa3546293b6e759d",
+      "test_2025_accessed": false
     }
   ],
   "schema_version": "spotbot-project-research-ledger-v3",
