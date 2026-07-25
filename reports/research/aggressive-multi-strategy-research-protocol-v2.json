@@ -1,0 +1,452 @@
+{
+  "alpha_families": [
+    {
+      "configuration_count": 16,
+      "eligible_regimes": [
+        "BULL_EXPANSION"
+      ],
+      "family": "TREND_MOMENTUM",
+      "family_id": "AMS-V2-F01",
+      "fixed_parameters": {
+        "initial_stop_atr": 2.5,
+        "maximum_holding_days": 60,
+        "maximum_positions": 2,
+        "ranking_maximum": 8,
+        "transaction_cost_fraction": 0.002
+      },
+      "parameter_grid": {
+        "breakout_lookback_days": [
+          20,
+          55
+        ],
+        "momentum_lookback_days": [
+          20,
+          60
+        ],
+        "trailing_stop_atr": [
+          3.0,
+          4.0
+        ],
+        "turnover_expansion_minimum": [
+          1.2,
+          1.5
+        ]
+      },
+      "thesis": "Capture sustained leadership only during broad bull expansion."
+    },
+    {
+      "configuration_count": 16,
+      "eligible_regimes": [
+        "BULL_PULLBACK_REACCELERATION"
+      ],
+      "family": "PULLBACK_REACCELERATION",
+      "family_id": "AMS-V2-F02",
+      "fixed_parameters": {
+        "maximum_holding_days": 30,
+        "maximum_positions": 2,
+        "ranking_maximum": 5,
+        "relative_strength_days": 60,
+        "transaction_cost_fraction": 0.002
+      },
+      "parameter_grid": {
+        "ema_reclaim_days": [
+          10,
+          20
+        ],
+        "maximum_pullback": [
+          0.15,
+          0.25
+        ],
+        "momentum_days": [
+          3,
+          5
+        ],
+        "trailing_stop_atr": [
+          2.5,
+          3.5
+        ]
+      },
+      "thesis": "Enter controlled pullbacks only when higher-horizon leadership remains intact."
+    },
+    {
+      "configuration_count": 16,
+      "eligible_regimes": [
+        "BULL_EXPANSION",
+        "SIDEWAYS_LOW_VOLATILITY"
+      ],
+      "family": "VOLATILITY_COMPRESSION_EXPANSION",
+      "family_id": "AMS-V2-F03",
+      "fixed_parameters": {
+        "initial_stop_atr": 2.5,
+        "maximum_holding_days": 30,
+        "maximum_positions": 2,
+        "ranking_maximum": 10,
+        "trailing_stop_atr": 4.0,
+        "transaction_cost_fraction": 0.002
+      },
+      "parameter_grid": {
+        "breakout_lookback_days": [
+          20,
+          40
+        ],
+        "compression_lookback_days": [
+          40,
+          60
+        ],
+        "compression_percentile_maximum": [
+          0.15,
+          0.25
+        ],
+        "minimum_turnover_expansion": [
+          1.25,
+          1.5
+        ]
+      },
+      "thesis": "Trade upward resolution of genuine low-volatility compression."
+    },
+    {
+      "configuration_count": 16,
+      "eligible_regimes": [
+        "SIDEWAYS_LOW_VOLATILITY",
+        "CAPITULATION_RECOVERY"
+      ],
+      "family": "LIQUIDITY_SWEEP_RECOVERY",
+      "family_id": "AMS-V2-F04",
+      "fixed_parameters": {
+        "maximum_holding_days": 14,
+        "maximum_positions": 3,
+        "profit_trail_atr": 2.5,
+        "ranking_maximum": 15,
+        "transaction_cost_fraction": 0.002
+      },
+      "parameter_grid": {
+        "initial_stop_atr": [
+          1.5,
+          2.5
+        ],
+        "minimum_turnover_expansion": [
+          1.1,
+          1.4
+        ],
+        "recovery_close_fraction": [
+          0.6,
+          0.75
+        ],
+        "sweep_lookback_days": [
+          20,
+          40
+        ]
+      },
+      "thesis": "Buy failed downside auctions only when recovery quality and market regime agree."
+    },
+    {
+      "configuration_count": 16,
+      "eligible_regimes": [
+        "CAPITULATION_RECOVERY"
+      ],
+      "family": "CAPITULATION_RECOVERY",
+      "family_id": "AMS-V2-F05",
+      "fixed_parameters": {
+        "initial_stop_atr": 2.0,
+        "maximum_holding_days": 21,
+        "maximum_positions": 3,
+        "ranking_maximum": 15,
+        "trailing_stop_atr": 3.0,
+        "transaction_cost_fraction": 0.002
+      },
+      "parameter_grid": {
+        "drawdown_lookback_days": [
+          20,
+          60
+        ],
+        "drawdown_threshold": [
+          0.2,
+          0.35
+        ],
+        "minimum_turnover_expansion": [
+          1.25,
+          1.75
+        ],
+        "rebound_lookback_days": [
+          2,
+          5
+        ]
+      },
+      "thesis": "Enter recovery only after objectively measured capitulation and rebound."
+    },
+    {
+      "configuration_count": 16,
+      "eligible_regimes": [
+        "BULL_EXPANSION",
+        "BULL_PULLBACK_REACCELERATION"
+      ],
+      "family": "CROSS_SECTIONAL_LEADERSHIP",
+      "family_id": "AMS-V2-F06",
+      "fixed_parameters": {
+        "maximum_positions": 2,
+        "transaction_cost_fraction": 0.002
+      },
+      "parameter_grid": {
+        "minimum_liquidity_rank_percentile": [
+          0.5,
+          0.7
+        ],
+        "ranking_relative_strength_days": [
+          30,
+          60
+        ],
+        "ranking_return_days": [
+          7,
+          14
+        ],
+        "rebalance_days": [
+          3,
+          7
+        ]
+      },
+      "thesis": "Hold persistent leaders without the three-day over-rotation observed in AMS V1."
+    }
+  ],
+  "base_commit": "29206d29c57483932ed812e523e64bd1ad885137",
+  "bootstrap_research_only": true,
+  "constraints": [
+    "ASSET_OWNERSHIP_REQUIRED",
+    "NO_BORROWING",
+    "NO_DERIVATIVES",
+    "NO_FUNDING_TRANSACTIONS",
+    "NO_FUTURES",
+    "NO_INTEREST",
+    "NO_LENDING",
+    "NO_LEVERAGE",
+    "NO_MARGIN",
+    "NO_SHORT_SELLING",
+    "SPOT_ONLY"
+  ],
+  "current_blockers": [
+    "Historical delisting coverage remains incomplete and blocks final selection.",
+    "Four-hour portfolio-decision data has not yet been validated.",
+    "One-hour execution data has not yet been validated.",
+    "The 2025 test and 2026 holdout remain locked."
+  ],
+  "data_stage": {
+    "daily_discovery_available": true,
+    "daily_discovery_end_exclusive": "2025-01-01T00:00:00+00:00",
+    "daily_only_result_cannot_be_final_model": true,
+    "execution_1h_required_before_test": true,
+    "portfolio_decision_4h_required_before_test": true
+  },
+  "experiment_budget": {
+    "alpha_family_count": 6,
+    "configurations_per_family": 16,
+    "cross_product_of_all_alpha_and_portfolio_profiles_prohibited": true,
+    "maximum_portfolio_profiles": 4,
+    "maximum_total_unique_variants": 100,
+    "maximum_unique_alpha_configurations": 96,
+    "rerun_policy": "ONLY_AFTER_FORMAL_INVALIDATION",
+    "unregistered_trials_prohibited": true
+  },
+  "final_model_selection_allowed": false,
+  "governing_protocol_id": "MULTI_ASSET_RESEARCH_PROTOCOL_V3",
+  "holdout_governance": {
+    "access_requires_frozen_2025_winner": true,
+    "accessed": false,
+    "end_exclusive": "2026-07-23T01:00:00+00:00",
+    "start": "2026-01-01T00:00:00+00:00",
+    "status": "LOCKED_NOT_ACCESSED"
+  },
+  "objective": {
+    "annual_capital_multiple_target": 13.214788658781796,
+    "low_return_strategy_is_not_sufficient": true,
+    "minimum_geometric_monthly_return_for_2025_test_access": 0.08,
+    "monthly_compound_target": 0.24,
+    "primary": "MAXIMIZE_AFTER_COST_GEOMETRIC_CAPITAL_GROWTH",
+    "target_status": "ASPIRATIONAL_NOT_GUARANTEED"
+  },
+  "overfitting_controls": {
+    "deflated_sharpe_ratio_required": true,
+    "maximum_probability_of_backtest_overfitting": 0.2,
+    "maximum_single_asset_profit_fraction": 0.35,
+    "maximum_single_fold_profit_fraction": 0.6,
+    "maximum_single_month_profit_fraction": 0.3,
+    "maximum_unique_variants": 100,
+    "minimum_deflated_sharpe_probability": 0.95,
+    "minimum_passing_parameter_neighbors": 2,
+    "neighbor_performance_floor_fraction": 0.7,
+    "positive_at_0_004_cost_required": true,
+    "probability_of_backtest_overfitting_required": true,
+    "transaction_cost_sensitivity": [
+      0.0,
+      0.002,
+      0.004
+    ],
+    "trial_counting_required": true
+  },
+  "portfolio_profiles": [
+    {
+      "initial_risk_per_trade": 0.005,
+      "maximum_gross_exposure": 0.75,
+      "maximum_pairwise_correlation": 0.65,
+      "maximum_positions": 4,
+      "maximum_total_open_risk": 0.02,
+      "name": "DEFENSIVE",
+      "profile_id": "AMS-V2-P01"
+    },
+    {
+      "initial_risk_per_trade": 0.01,
+      "maximum_gross_exposure": 1.0,
+      "maximum_pairwise_correlation": 0.7,
+      "maximum_positions": 3,
+      "maximum_total_open_risk": 0.03,
+      "name": "BALANCED",
+      "profile_id": "AMS-V2-P02"
+    },
+    {
+      "initial_risk_per_trade": 0.015,
+      "maximum_gross_exposure": 1.0,
+      "maximum_pairwise_correlation": 0.75,
+      "maximum_positions": 2,
+      "maximum_total_open_risk": 0.03,
+      "name": "CONCENTRATED",
+      "profile_id": "AMS-V2-P03"
+    },
+    {
+      "initial_risk_per_trade": 0.02,
+      "maximum_gross_exposure": 1.0,
+      "maximum_pairwise_correlation": 0.8,
+      "maximum_positions": 2,
+      "maximum_total_open_risk": 0.04,
+      "name": "MAXIMUM_AUTHORIZED",
+      "profile_id": "AMS-V2-P04"
+    }
+  ],
+  "portfolio_risk_controls": {
+    "averaging_down_prohibited": true,
+    "cash_is_valid_position": true,
+    "drawdown_brakes": [
+      {
+        "maximum_gross_exposure": 0.5,
+        "portfolio_drawdown": 0.1
+      },
+      {
+        "maximum_gross_exposure": 0.0,
+        "portfolio_drawdown": 0.2
+      }
+    ],
+    "pyramiding_only_after_favorable_movement": true,
+    "risk_above_2_percent_prohibited": true
+  },
+  "predecessor_protocol_id": "AGGRESSIVE_MULTI_STRATEGY_RESEARCH_PROTOCOL_V1",
+  "promotion_to_2025_test_gate": {
+    "explicit_authorization_required": true,
+    "four_hour_and_one_hour_validation_required": true,
+    "historical_delisting_coverage_must_be_complete": true,
+    "maximum_research_drawdown": 0.45,
+    "minimum_geometric_monthly_return": 0.08,
+    "minimum_orthogonal_advancing_families": 2,
+    "parameter_plateau_required": true,
+    "pbo_and_dsr_gates_required": true,
+    "positive_at_0_004_cost_required": true,
+    "regime_router_causality_tests_required": true
+  },
+  "protocol_id": "AGGRESSIVE_MULTI_STRATEGY_RESEARCH_PROTOCOL_V2",
+  "regime_router": {
+    "all_features_lagged_periods": 1,
+    "bear_trend_default_action": "CASH",
+    "cash_is_valid_position": true,
+    "causal_features": [
+      "BTC_CLOSE_VS_EMA_200",
+      "BTC_EMA_50_SLOPE",
+      "ELIGIBLE_ASSET_BREADTH_ABOVE_EMA_50",
+      "REALIZED_VOLATILITY_PERCENTILE_20D",
+      "AVERAGE_PAIRWISE_CORRELATION_30D",
+      "CROSS_SECTIONAL_RETURN_DISPERSION_30D",
+      "BENCHMARK_DRAWDOWN_FROM_90D_HIGH"
+    ],
+    "future_information_prohibited": true,
+    "regimes": [
+      "BULL_EXPANSION",
+      "BULL_PULLBACK_REACCELERATION",
+      "SIDEWAYS_LOW_VOLATILITY",
+      "BEAR_TREND",
+      "CAPITULATION_RECOVERY"
+    ]
+  },
+  "registered_at": "2026-07-25T00:07:07.346296Z",
+  "research_window": {
+    "end_exclusive": "2025-01-01T00:00:00+00:00",
+    "start": "2021-07-20T00:00:00+00:00"
+  },
+  "schema_version": "aggressive-multi-strategy-research-protocol-v2",
+  "selection_sequence": [
+    "Evaluate all 96 frozen Alpha configurations across the registered folds.",
+    "Select at most one advancing configuration per family.",
+    "Build one deterministic regime-routed ensemble from advancing families.",
+    "Evaluate only the four registered portfolio profiles on that ensemble."
+  ],
+  "status": "REGISTERED",
+  "test_governance": {
+    "accessed": false,
+    "end_exclusive": "2026-01-01T00:00:00+00:00",
+    "explicit_authorization_required": true,
+    "start": "2025-01-01T00:00:00+00:00",
+    "status": "LOCKED_NOT_ACCESSED"
+  },
+  "training_selection_rule": {
+    "lexicographic_order": [
+      "MEDIAN_MONTHLY_LOG_RETURN_DESC",
+      "MAXIMUM_DRAWDOWN_ASC",
+      "TOTAL_TURNOVER_ASC",
+      "CONFIGURATION_ID_ASC"
+    ],
+    "mandatory_filters": {
+      "capital_survived": true,
+      "maximum_drawdown": 0.45,
+      "positive_return_at_0_004_transaction_cost": true
+    },
+    "parameters_frozen_before_evaluation": true
+  },
+  "walk_forward": {
+    "family_advancement_rules": {
+      "aggregate_average_r_multiple": "> 0",
+      "aggregate_base_price_gross_pnl": "> 0",
+      "aggregate_net_pnl": "> 0",
+      "aggregate_profit_factor": "> 1.1",
+      "latest_fold_must_pass": true,
+      "latest_fold_name": "WF_2024",
+      "maximum_single_fold_drawdown": 0.45,
+      "minimum_passing_folds": 2,
+      "minimum_total_executed_trades": 30
+    },
+    "fold_pass_rules": {
+      "average_r_multiple": "> 0",
+      "base_price_gross_pnl": "> 0",
+      "maximum_drawdown": 0.45,
+      "minimum_executed_trades": 8,
+      "net_total_return": "> 0",
+      "profit_factor": "> 1"
+    },
+    "folds": [
+      {
+        "evaluation_end_exclusive": "2023-01-01T00:00:00+00:00",
+        "evaluation_start": "2022-01-01T00:00:00+00:00",
+        "name": "WF_2022",
+        "train_end_exclusive": "2022-01-01T00:00:00+00:00",
+        "train_start": "2021-07-20T00:00:00+00:00"
+      },
+      {
+        "evaluation_end_exclusive": "2024-01-01T00:00:00+00:00",
+        "evaluation_start": "2023-01-01T00:00:00+00:00",
+        "name": "WF_2023",
+        "train_end_exclusive": "2023-01-01T00:00:00+00:00",
+        "train_start": "2021-07-20T00:00:00+00:00"
+      },
+      {
+        "evaluation_end_exclusive": "2025-01-01T00:00:00+00:00",
+        "evaluation_start": "2024-01-01T00:00:00+00:00",
+        "name": "WF_2024",
+        "train_end_exclusive": "2024-01-01T00:00:00+00:00",
+        "train_start": "2021-07-20T00:00:00+00:00"
+      }
+    ]
+  }
+}

@@ -2,7 +2,9 @@
   "active_components": [
     "MULTI_ASSET_RESEARCH_PROTOCOL_V3",
     "POINT_IN_TIME_SPOT_UNIVERSE_V1",
-    "WALK_FORWARD_EVALUATION_ENGINE_V1"
+    "WALK_FORWARD_EVALUATION_ENGINE_V1",
+    "AGGRESSIVE_MULTI_STRATEGY_RESEARCH_PROTOCOL_V2",
+    "AMS_V2_EXPERIMENT_LEDGER_V1"
   ],
   "active_protocol": "MULTI_ASSET_RESEARCH_PROTOCOL_V3",
   "aggressive_multi_strategy_results": [
@@ -68,7 +70,7 @@
     }
   ],
   "current_discovery_is_research_universe": false,
-  "current_stage": "MULTI_ASSET_DAILY_HISTORY_V2_COMPLETE",
+  "current_stage": "AMS_V2_PROTOCOL_REGISTERED",
   "daily_history_coverage_path": "C:\\SIRAJ\\Repositories\\spot-speculation-bot\\reports\\research\\multi-asset-daily-history-coverage-v2.json",
   "daily_history_coverage_sha256": "f16234562f9b4c760e7634db1e3c1ca7c324829857566a59c93fba1e18181c87",
   "dataset_manifest_path": "C:\\SIRAJ\\Repositories\\spot-speculation-bot\\reports\\research\\historical-multi-asset-dataset-manifest-v1.json",
@@ -76,9 +78,9 @@
   "historical_delisting_coverage_status": "INCOMPLETE_BLOCKS_FINAL_MODEL_SELECTION",
   "holdout_2026_status": "LOCKED_NOT_ACCESSED",
   "holdout_accessed": false,
-  "last_updated_at": "2026-07-24T23:33:03.633103Z",
+  "last_updated_at": "2026-07-25T00:07:07.346296Z",
   "ledger_status": "CURRENT",
-  "next_action": "AUDIT_DAILY_COVERAGE_ENDS_AND_BUILD_POINT_IN_TIME_UNIVERSE",
+  "next_action": "IMPLEMENT_AMS_V2_REGIME_FEATURE_FRAME_AND_WALK_FORWARD_ORCHESTRATOR_WITHOUT_ACCESSING_2025_OR_2026",
   "previous_ledger_path": "C:\\SIRAJ\\Repositories\\spot-speculation-bot\\reports\\research\\project-research-ledger-v2.json",
   "previous_ledger_sha256": "e629f33b0c6cddc8183feebcd803576b4ae4c44f8b545cab0f0987af17013919",
   "previous_protocol": "BTC_RESEARCH_PROTOCOL_V2",
@@ -109,6 +111,27 @@
       "protocol_id": "AGGRESSIVE_MULTI_STRATEGY_RESEARCH_PROTOCOL_V1",
       "recorded_at": "2026-07-24T12:20:39+00:00",
       "registered_hypothesis_count": 5,
+      "test_2025_locked": true
+    },
+    {
+      "base_commit": "29206d29c57483932ed812e523e64bd1ad885137",
+      "closed_protocol_id": "AGGRESSIVE_MULTI_STRATEGY_RESEARCH_PROTOCOL_V1",
+      "closure_report_path": "reports/research/ams-v1-closure-report.json",
+      "closure_report_sha256": "ebcac5b52b9789e4f97e58499c42c12f6c691d10c6a2422729b28b7c10c84b04",
+      "closure_status": "CLOSED_ALL_HYPOTHESES_REJECTED",
+      "event_id": "AMS_V1_CLOSED_AND_AMS_V2_REGISTERED",
+      "event_type": "RESEARCH_PROTOCOL_TRANSITION",
+      "experiment_ledger_path": "reports/research/ams-v2-experiment-ledger-v1.json",
+      "experiment_ledger_sha256": "bbe804487274a0b98641b56de388910091588c5f7db683c6bb6b945684496490",
+      "final_model_selection_allowed": false,
+      "holdout_2026_locked": true,
+      "maximum_total_unique_variants": 100,
+      "recorded_at": "2026-07-25T00:07:07.346296Z",
+      "registered_alpha_configurations": 96,
+      "registered_portfolio_profiles": 4,
+      "successor_protocol_id": "AGGRESSIVE_MULTI_STRATEGY_RESEARCH_PROTOCOL_V2",
+      "successor_protocol_path": "reports/research/aggressive-multi-strategy-research-protocol-v2.json",
+      "successor_protocol_sha256": "10c805f521c006b29623ffaba10c0f701f9faf24c218b74041ce0f5741e17825",
       "test_2025_locked": true
     }
   ],

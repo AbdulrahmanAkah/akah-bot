@@ -1,0 +1,109 @@
+{
+  "best_geometric_return_result": {
+    "geometric_monthly_return": 0.0369377097227519,
+    "hypothesis_id": "AMS-V1-H01-VOLATILITY-BREAKOUT",
+    "maximum_drawdown": -0.9161702783836152
+  },
+  "binding_result_count": 5,
+  "closed_at": "2026-07-25T00:07:07.346296Z",
+  "conclusions": [
+    "No independent AMS V1 family met the registered monthly objective.",
+    "High-return families suffered catastrophic drawdowns.",
+    "Lower-drawdown reversal logic did not produce sufficient growth.",
+    "Fast cross-sectional rotation created excessive turnover and loss.",
+    "A regime-aware multi-engine architecture is required."
+  ],
+  "final_model_selected": false,
+  "holdout_2026_accessed": false,
+  "lowest_drawdown_result": {
+    "geometric_monthly_return": 0.006123188900230003,
+    "hypothesis_id": "AMS-V1-H03-LIQUIDITY-SWEEP-REVERSAL",
+    "maximum_drawdown": -0.6156694253775528
+  },
+  "promoted_count": 0,
+  "protocol_id": "AGGRESSIVE_MULTI_STRATEGY_RESEARCH_PROTOCOL_V1",
+  "rejected_count": 5,
+  "results": [
+    {
+      "annual_capital_multiple": 1.5453683807663696,
+      "decision": "REJECT_H01",
+      "family": "VOLATILITY_BREAKOUT",
+      "final_equity": 5.696735593076304,
+      "geometric_monthly_return": 0.0369377097227519,
+      "hypothesis_id": "AMS-V1-H01-VOLATILITY-BREAKOUT",
+      "maximum_drawdown": -0.9161702783836152,
+      "report_path": "reports/research/ams-v1-h01-volatility-breakout.json",
+      "sharpe_ratio": 0.9231869183407911,
+      "technical_status": "PASS",
+      "total_return": 4.696735593076304,
+      "trade_count": 86
+    },
+    {
+      "annual_capital_multiple": 1.2597447011628793,
+      "decision": "REJECT_H02",
+      "family": "MOMENTUM_REACCELERATION",
+      "final_equity": 2.5168876731148435,
+      "geometric_monthly_return": 0.019428752176681607,
+      "hypothesis_id": "AMS-V1-H02-AGGRESSIVE-REACCELERATION",
+      "maximum_drawdown": -0.820734428927091,
+      "report_path": "reports/research/ams-v1-h02-aggressive-reacceleration.json",
+      "sharpe_ratio": 0.6895563031385018,
+      "technical_status": "PASS",
+      "total_return": 1.5168876731148435,
+      "trade_count": 93
+    },
+    {
+      "annual_capital_multiple": 1.0760040441862215,
+      "decision": "REJECT_H03",
+      "family": "LIQUIDITY_SWEEP_REVERSAL",
+      "final_equity": 1.3402046614609584,
+      "geometric_monthly_return": 0.006123188900230003,
+      "hypothesis_id": "AMS-V1-H03-LIQUIDITY-SWEEP-REVERSAL",
+      "maximum_drawdown": -0.6156694253775528,
+      "report_path": "reports/research/ams-v1-h03-liquidity-sweep-reversal.json",
+      "sharpe_ratio": 0.3899911313771975,
+      "technical_status": "PASS",
+      "total_return": 0.3402046614609584,
+      "trade_count": 87
+    },
+    {
+      "annual_capital_multiple": 0.926710845468978,
+      "decision": "REJECT_H04",
+      "family": "CROSS_SECTIONAL_ROTATION",
+      "final_equity": 0.7376745003511579,
+      "geometric_monthly_return": -0.006322734121752438,
+      "hypothesis_id": "AMS-V1-H04-CROSS-SECTIONAL-ROTATION",
+      "maximum_drawdown": -0.9245536262817688,
+      "report_path": "reports/research/ams-v1-h04-cross-sectional-rotation.json",
+      "sharpe_ratio": 0.3843759208408959,
+      "technical_status": "PASS",
+      "total_return": -0.2623254996488421,
+      "trade_count": 637
+    },
+    {
+      "annual_capital_multiple": 0.8895323123194397,
+      "decision": "REJECT_H05",
+      "family": "VOLATILITY_COMPRESSION_EXPANSION",
+      "final_equity": 0.6262993034220544,
+      "geometric_monthly_return": -0.009707528619230299,
+      "hypothesis_id": "AMS-V1-H05-COMPRESSION-EXPANSION",
+      "maximum_drawdown": -0.8720269490798054,
+      "report_path": "reports/research/ams-v1-h05-compression-expansion.json",
+      "sharpe_ratio": 0.08792404577964892,
+      "technical_status": "PASS",
+      "total_return": -0.3737006965779456,
+      "trade_count": 57
+    }
+  ],
+  "schema_version": "ams-v1-closure-report-v1",
+  "selection_blockers": [
+    "All five registered hypotheses were rejected.",
+    "Historical delisting coverage remains incomplete.",
+    "Four-hour and one-hour validation has not been completed.",
+    "The 2025 test and 2026 holdout remain locked."
+  ],
+  "source_commit": "29206d29c57483932ed812e523e64bd1ad885137",
+  "status": "CLOSED_ALL_HYPOTHESES_REJECTED",
+  "technical_pass_count": 5,
+  "test_2025_accessed": false
+}
