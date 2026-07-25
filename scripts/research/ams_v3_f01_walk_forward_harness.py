@@ -1933,6 +1933,236 @@ def execute_all_registered_trials(
     return reports
 
 
+def create_final_assessment() -> dict[str, Any]:
+    """Create the frozen research assessment from the twenty registered trials."""
+
+    experiment = load_object(DEFAULT_EXPERIMENT_PATH)
+    accounting = experiment.get("trial_accounting")
+    plan = experiment.get("trial_plan")
+    if accounting != {
+        "total_authorized_trials": 20,
+        "trials_executed": 20,
+        "remaining_authorized_trials": 0,
+        "test_2025_accessed": False,
+        "holdout_2026_accessed": False,
+    }:
+        raise HarnessError("Final assessment requires exactly twenty consumed trials.")
+    if not isinstance(plan, list) or any(
+        not isinstance(value, dict) or value.get("trial_status") != "EXECUTED"
+        for value in plan
+    ):
+        raise HarnessError("Final assessment requires every registered trial report.")
+
+    trial_summaries: list[dict[str, Any]] = []
+    reports_by_trial: dict[str, dict[str, Any]] = {}
+    for trial in plan:
+        report_path = ROOT / str(trial["report_path"])
+        report = load_object(report_path)
+        if report.get("trial_id") != trial["trial_id"] or report.get("status") != "EXECUTED":
+            raise HarnessError(f"Invalid trial report: {report_path}.")
+        reports_by_trial[str(trial["trial_id"])] = report
+        aggregate = report["results"]["aggregate_result"]
+        trial_summaries.append(
+            {
+                "trial_id": trial["trial_id"],
+                "configuration_id": trial["configuration_id"],
+                "portfolio_profile_id": trial["portfolio_profile_id"],
+                "aggregate_result": aggregate,
+                "report_path": trial["report_path"],
+                "report_sha256": file_sha256(report_path),
+            }
+        )
+
+    ranked = sorted(
+        trial_summaries,
+        key=lambda value: float(value["aggregate_result"]["aggregate_compounded_return"]),
+        reverse=True,
+    )
+    control = reports_by_trial["AMS-V3-F01-T01"]
+    fibonacci = reports_by_trial["AMS-V3-F01-T02"]
+    control_aggregate = control["results"]["aggregate_result"]
+    fibonacci_aggregate = fibonacci["results"]["aggregate_result"]
+    paired_difference = {
+        "aggregate_compounded_return": (
+            float(fibonacci_aggregate["aggregate_compounded_return"])
+            - float(control_aggregate["aggregate_compounded_return"])
+        ),
+        "stress_cost_return_0_004": (
+            float(fibonacci_aggregate["aggregate_stress_cost_return_0_004"])
+            - float(control_aggregate["aggregate_stress_cost_return_0_004"])
+        ),
+        "trade_count": (
+            int(fibonacci_aggregate["total_trade_count"])
+            - int(control_aggregate["total_trade_count"])
+        ),
+        "accepted_entries": (
+            int(fibonacci_aggregate["total_accepted_entries"])
+            - int(control_aggregate["total_accepted_entries"])
+        ),
+    }
+    fold_comparison = [
+        {
+            "fold_id": base["fold"]["fold_id"],
+            "control": base["base_metrics"],
+            "fibonacci": filtered["base_metrics"],
+        }
+        for base, filtered in zip(
+            control["results"]["fold_results"],
+            fibonacci["results"]["fold_results"],
+            strict=True,
+        )
+    ]
+    assessment = "FAIL"
+    reasoning = [
+        "The paired Fibonacci trial C02 generated zero accepted entries and zero trades.",
+        "C01 generated 67 trades with a positive 33.96% compounded base-cost result.",
+        "Fibonacci therefore did not improve return, trade quality, or stress-cost robustness.",
+        "The highest-return trial has only one positive fold, so it is not robust evidence.",
+    ]
+    limitations = [
+        "The CORE Fibonacci filter was too restrictive for the registered setup semantics.",
+        (
+            "Several registered parameter combinations map to the same runtime feature policy; "
+            "daily risk profile sensitivity needs a separately preregistered implementation review."
+        ),
+        "This result is in-sample research only and does not authorize access to 2025 or 2026.",
+    ]
+    next_action = (
+        "DO_NOT_OPEN_2025; "
+        "PREREGISTER_A_FIBONACCI_FILTER_REDESIGN_AND_PROFILE_WIRING_REVIEW"
+    )
+    assessment_payload = {
+        "status": "PASS",
+        "assessment": assessment,
+        "authorized_trials": 20,
+        "executed_trials": 20,
+        "remaining_trials": 0,
+        "best_configuration": ranked[0]["configuration_id"],
+        "best_portfolio_profile": ranked[0]["portfolio_profile_id"],
+        "control_configuration": "AMS-V3-F01-C01",
+        "paired_fibonacci_configuration": "AMS-V3-F01-C02",
+        "control_metrics": control_aggregate,
+        "fibonacci_metrics": fibonacci_aggregate,
+        "paired_difference": paired_difference,
+        "fold_comparison": fold_comparison,
+        "stress_cost_comparison": {
+            "control_0_004": control_aggregate["aggregate_stress_cost_return_0_004"],
+            "fibonacci_0_004": fibonacci_aggregate["aggregate_stress_cost_return_0_004"],
+        },
+        "all_trials": trial_summaries,
+        "reasoning": reasoning,
+        "limitations": limitations,
+        "test_2025_accessed": False,
+        "holdout_2026_accessed": False,
+        "next_action": next_action,
+    }
+    report_path = ROOT / "reports/research/ams-v3-f01-final-assessment-v1.json"
+    write_json_atomically(report_path, assessment_payload)
+    markdown_path = ROOT / "reports/research/ams-v3-f01-final-assessment-v1.md"
+    markdown = "\n".join(
+        [
+            "# AMS V3 F01 final assessment",
+            "",
+            f"- Assessment: `{assessment}`",
+            (
+                "- Is the strategy successful? No; the registered family fails the paired "
+                "Fibonacci test."
+            ),
+            "- Did Fibonacci add value? No. C02 made zero trades versus C01's 67.",
+            (
+                f"- Best configuration: `{ranked[0]['configuration_id']}` on "
+                f"`{ranked[0]['portfolio_profile_id']}`."
+            ),
+            f"- Worst C01 fold return: {control_aggregate['worst_fold_return']:.2%}.",
+            (
+                "- Does C01 tolerate 0.4% fees? Yes mechanically: "
+                f"{control_aggregate['aggregate_stress_cost_return_0_004']:.2%}; "
+                "Fibonacci does not trade."
+            ),
+            (
+                "- Is trade count sufficient? C01 has 67 trades; C02 has none, so the paired "
+                "Fibonacci result rejects this filter implementation."
+            ),
+            (
+                "- Largest weakness: the Fibonacci filter eliminates every eligible entry under "
+                "the frozen setup semantics."
+            ),
+            (
+                "- Open 2025 later? No. First preregister a redesigned filter and wire the "
+                "portfolio profile dimension into runtime behavior."
+            ),
+            (
+                "- Next scientific step: run a new, separately registered protocol after that "
+                "redesign; do not modify this completed trial set."
+            ),
+            "",
+            "## Paired results",
+            "",
+            "| Trial | Base compounded return | Stress return | Trades |",
+            "| --- | ---: | ---: | ---: |",
+            (
+                f"| C01 control | {control_aggregate['aggregate_compounded_return']:.2%} | "
+                f"{control_aggregate['aggregate_stress_cost_return_0_004']:.2%} | "
+                f"{control_aggregate['total_trade_count']} |"
+            ),
+            (
+                f"| C02 Fibonacci | {fibonacci_aggregate['aggregate_compounded_return']:.2%} | "
+                f"{fibonacci_aggregate['aggregate_stress_cost_return_0_004']:.2%} | "
+                f"{fibonacci_aggregate['total_trade_count']} |"
+            ),
+            "",
+        ]
+    )
+    markdown_path.write_text(markdown, encoding="utf-8", newline="\n")
+
+    updated = copy.deepcopy(experiment)
+    updated["final_assessment"] = {
+        "assessment": assessment,
+        "report_path": str(report_path.relative_to(ROOT)).replace("\\", "/"),
+        "report_sha256": file_sha256(report_path),
+        "next_action": assessment_payload["next_action"],
+    }
+    write_json_atomically(DEFAULT_EXPERIMENT_PATH, updated)
+    readiness = load_object(DEFAULT_READINESS_PATH)
+    readiness["status"] = "AMS_V3_F01_FINALIZED"
+    readiness["next_action"] = assessment_payload["next_action"]
+    readiness["final_assessment"] = {
+        "assessment": assessment,
+        "executed_trials": 20,
+        "remaining_trials": 0,
+        "report_path": updated["final_assessment"]["report_path"],
+        "report_sha256": updated["final_assessment"]["report_sha256"],
+        "test_2025_accessed": False,
+        "holdout_2026_accessed": False,
+    }
+    write_json_atomically(DEFAULT_READINESS_PATH, readiness)
+    project = load_object(DEFAULT_PROJECT_LEDGER_PATH)
+    updates = project.setdefault("protocol_updates", [])
+    event_id = "AMS_V3_F01_FINAL_ASSESSMENT_V1"
+    event = {
+        "event_id": event_id,
+        "event_type": "RESEARCH_FINAL_ASSESSMENT",
+        "recorded_at": utc_now(),
+        "assessment": assessment,
+        "report_path": updated["final_assessment"]["report_path"],
+        "report_sha256": updated["final_assessment"]["report_sha256"],
+        "registered_trials_consumed": 20,
+        "test_2025_accessed": False,
+        "holdout_2026_accessed": False,
+    }
+    updates[:] = [
+        value
+        for value in updates
+        if not isinstance(value, dict) or value.get("event_id") != event_id
+    ]
+    updates.append(event)
+    project["current_stage"] = "AMS_V3_F01_FINAL_ASSESSMENT_COMPLETED"
+    project["next_action"] = assessment_payload["next_action"]
+    project["last_updated_at"] = utc_now()
+    write_json_atomically(DEFAULT_PROJECT_LEDGER_PATH, project)
+    return assessment_payload
+
+
 def parse_arguments() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
 
@@ -1959,6 +2189,11 @@ def parse_arguments() -> argparse.Namespace:
     )
 
     parser.add_argument(
+        "--finalize",
+        action="store_true",
+    )
+
+    parser.add_argument(
         "--register",
         action="store_true",
     )
@@ -1970,7 +2205,7 @@ def main() -> int:
     arguments = parse_arguments()
 
     if arguments.register:
-        if arguments.execute or arguments.execute_all:
+        if arguments.execute or arguments.execute_all or arguments.finalize:
             raise HarnessError("Registration and execution cannot be combined.")
         print(json.dumps(register_harness(), indent=2, sort_keys=True, allow_nan=False))
         return 0
@@ -1978,6 +2213,10 @@ def main() -> int:
     if arguments.execute_all:
         reports = execute_all_registered_trials(initial_capital=arguments.initial_capital)
         print(json.dumps(reports, indent=2, sort_keys=True, allow_nan=False))
+        return 0
+
+    if arguments.finalize:
+        print(json.dumps(create_final_assessment(), indent=2, sort_keys=True, allow_nan=False))
         return 0
 
     if not arguments.execute:
