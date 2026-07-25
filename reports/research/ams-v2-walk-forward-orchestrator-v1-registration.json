@@ -1,0 +1,81 @@
+{
+  "counts_as_registered_trial": false,
+  "decision_contract": {
+    "aggregate_0_004_cost_return": "STRICTLY_POSITIVE",
+    "aggregate_profit_factor": "STRICTLY_ABOVE_1_1",
+    "latest_fold_0_004_cost_return": "STRICTLY_POSITIVE",
+    "latest_fold_must_pass": true,
+    "maximum_fold_drawdown": 0.45,
+    "minimum_passing_folds": 2,
+    "minimum_total_trades": 30,
+    "successful_baseline_decision": "PROCEED_TO_FROZEN_TEST"
+  },
+  "folds": [
+    {
+      "evaluation_end_exclusive": "2023-01-01T00:00:00+00:00",
+      "evaluation_start": "2022-01-01T00:00:00+00:00",
+      "name": "WF_2022",
+      "train_end_exclusive": "2022-01-01T00:00:00+00:00",
+      "train_start": "2021-07-20T00:00:00+00:00"
+    },
+    {
+      "evaluation_end_exclusive": "2024-01-01T00:00:00+00:00",
+      "evaluation_start": "2023-01-01T00:00:00+00:00",
+      "name": "WF_2023",
+      "train_end_exclusive": "2023-01-01T00:00:00+00:00",
+      "train_start": "2021-07-20T00:00:00+00:00"
+    },
+    {
+      "evaluation_end_exclusive": "2025-01-01T00:00:00+00:00",
+      "evaluation_start": "2024-01-01T00:00:00+00:00",
+      "name": "WF_2024",
+      "train_end_exclusive": "2024-01-01T00:00:00+00:00",
+      "train_start": "2021-07-20T00:00:00+00:00"
+    }
+  ],
+  "in_memory_validation": {
+    "completed_probe_status": "COMPLETED_ADVANCE",
+    "failed_probe_status": "FAILED_CONSUMED",
+    "original_ledger_unchanged": true
+  },
+  "limitations": [
+    "No Alpha strategy was executed.",
+    "Family adapters and metric extraction remain to be implemented.",
+    "PBO and Deflated Sharpe require the completed trial matrix.",
+    "Historical delisting coverage remains incomplete."
+  ],
+  "locked_periods": {
+    "holdout_2026_accessed": false,
+    "test_2025_accessed": false
+  },
+  "orchestrator_version": "AMS_V2_WALK_FORWARD_ORCHESTRATOR_V1",
+  "pending_alpha_configurations": 96,
+  "protocol_id": "AGGRESSIVE_MULTI_STRATEGY_RESEARCH_PROTOCOL_V2",
+  "registered_at": "2026-07-25T14:51:45.554222Z",
+  "schema_version": "ams-v2-walk-forward-orchestrator-v1-registration-v1",
+  "source_commit": "2858b2e36c40eee027c8410d3da4650b9af3d6e2",
+  "status": "REGISTERED",
+  "trial_accounting": {
+    "after": {
+      "alpha_configurations_registered": 96,
+      "holdout_2026_accessed": false,
+      "portfolio_variants_registered": 4,
+      "remaining_authorized_trials": 100,
+      "test_2025_accessed": false,
+      "total_unique_variants_registered": 100,
+      "trials_executed": 0,
+      "trials_invalidated": 0
+    },
+    "before": {
+      "alpha_configurations_registered": 96,
+      "holdout_2026_accessed": false,
+      "portfolio_variants_registered": 4,
+      "remaining_authorized_trials": 100,
+      "test_2025_accessed": false,
+      "total_unique_variants_registered": 100,
+      "trials_executed": 0,
+      "trials_invalidated": 0
+    },
+    "changed": false
+  }
+}
