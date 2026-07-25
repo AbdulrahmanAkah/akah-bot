@@ -1,19 +1,5 @@
 {
-  "daily_dataset_policy": "RESAMPLE_FROM_VALIDATED_4H_FOR_CAUSAL_ALIGNMENT",
-  "daily_research_data": {
-    "load_succeeded": true,
-    "loader_path": "C:\\SIRAJ\\Repositories\\spot-speculation-bot\\scripts\\research\\run_ams_v1_h01.py",
-    "maximum_timestamp": "1970-01-01T00:00:00.000042324+00:00",
-    "minimum_timestamp": "1970-01-01T00:00:00+00:00",
-    "research_window_locked": true,
-    "row_count": 42325,
-    "symbol_count": 30
-  },
-  "dataset_exchange": "kucoin",
-  "dataset_manifest_path": "reports/research/ams-v3-4h-dataset-manifest-v1.json",
-  "dataset_manifest_sha256": "b0d59ed0374a410260b49d688efb5796b18ad21c471277c83f81984aeffa451e",
-  "dataset_registration_path": "reports/research/ams-v3-4h-dataset-registration-v1.json",
-  "dataset_registration_sha256": "7d3f372a544479f877768564f00430225ce77f8983ace6d9e8bee07a72b46b36",
+  "coverage_ratio": 1.0,
   "datasets": {
     "availability": {
       "bytes": 5588,
@@ -53,38 +39,27 @@
       "symbol_count": 30
     }
   },
-  "eight_hour_dataset_policy": "RESAMPLE_FROM_VALIDATED_4H",
-  "four_hour_dataset_registered": true,
+  "derived_timeframes": [
+    "8h",
+    "1d"
+  ],
+  "exchange": "kucoin",
+  "expected_symbol_count": 30,
   "holdout_2026_accessed": false,
-  "intraday_loader_candidates": [],
+  "manifest_path": "reports/research/ams-v3-4h-dataset-manifest-v1.json",
+  "manifest_sha256": "b0d59ed0374a410260b49d688efb5796b18ad21c471277c83f81984aeffa451e",
+  "market_type": "spot",
   "next_action": "BUILD_AMS_V3_F01_WALK_FORWARD_HARNESS",
-  "registered_at": "2026-07-25T20:42:26.427354Z",
+  "quote_asset": "USDT",
+  "registered_at": "2026-07-25T22:23:36.830839Z",
+  "registered_symbol_count": 30,
   "registered_trials_consumed": 0,
-  "required_checks": [
-    "UTC_BOUNDARIES",
-    "NO_DUPLICATE_SYMBOL_TIMESTAMPS",
-    "NO_MISSING_INTERNAL_BARS",
-    "OHLC_CONSISTENCY",
-    "POSITIVE_PRICES",
-    "POINT_IN_TIME_UNIVERSE_MEMBERSHIP",
-    "DELISTING_COMPLETENESS",
-    "NO_POST_2024_RESEARCH_ACCESS",
-    "DETERMINISTIC_8H_RESAMPLING",
-    "DETERMINISTIC_DAILY_RESAMPLING"
-  ],
-  "required_four_hour_schema": [
-    "symbol",
-    "bar_open_time",
-    "open",
-    "high",
-    "low",
-    "close",
-    "volume_or_dollar_volume"
-  ],
-  "schema_version": "ams-v3-mtf-data-readiness-v1",
-  "source_commit": "455f7a2150c49411b1dcbaac91bc41fe1fa956c5",
-  "status": "READY_FOR_AMS_V3_TRIALS",
+  "schema_version": "ams-v3-4h-dataset-registration-v2",
+  "source_commit": "73199e92a177c49227c88df5a279e2ed7fb66743",
+  "source_timeframe": "4h",
+  "status": "PASS",
   "test_2025_accessed": false,
+  "universe_policy": "POINT_IN_TIME_KUCOIN_SPOT_ELIGIBILITY",
   "validation": {
     "alias_transitions": [],
     "benchmark_available": true,
@@ -580,5 +555,25 @@
       "XMR"
     ],
     "venue_unavailable_symbols": []
-  }
+  },
+  "venue_early_delisting_symbols": [],
+  "venue_listing_delay_symbols": [
+    "AVAX",
+    "DEXE",
+    "DOGE",
+    "ENA",
+    "GRAM",
+    "HYPE",
+    "NEAR",
+    "ONDO",
+    "PEPE",
+    "SEI",
+    "SHIB",
+    "SOL",
+    "SUI",
+    "SYN",
+    "TAO",
+    "XMR"
+  ],
+  "venue_unavailable_symbols": []
 }
