@@ -1,0 +1,374 @@
+{
+  "composition_contract": {
+    "breakout_surface": "build_volatility_breakout_signals",
+    "candidate_rule": "MOMENTUM_CANDIDATE_AND_BREAKOUT_CANDIDATE",
+    "momentum_surface": "build_momentum_reacceleration_signals",
+    "portfolio_backtester": "run_daily_portfolio_backtest",
+    "weight_and_trade_engine": "build_volatility_breakout_weights"
+  },
+  "configuration_count": 16,
+  "counts_as_registered_trial": false,
+  "engine_execution_status": "CORE_REGISTERED_NOT_TRIAL_EXECUTABLE",
+  "engine_version": "AMS_V2_F01_TREND_MOMENTUM_ENGINE_CORE_V1",
+  "execution_barrier": {
+    "canonical_fold_artifacts_complete": false,
+    "canonical_trade_mapping_complete": false,
+    "trial_executable": false,
+    "walk_forward_execution_allowed": false
+  },
+  "locked_periods": {
+    "holdout_2026_accessed": false,
+    "test_2025_accessed": false
+  },
+  "next_action": "IMPLEMENT_F01_CANONICAL_TRADE_AND_PORTFOLIO_ARTIFACT_TRANSLATION_USING_SYNTHETIC_DATA_ONLY",
+  "parameter_translations": [
+    {
+      "configuration_id": "AMS-V2-F01-C01",
+      "parameter_hash_sha256": "0801343e31964284faa0671d87ee8afd41c6194dda05a786d98d88d053e18ff4",
+      "translated_policy": {
+        "atr_days": 14,
+        "atr_expansion_minimum": 1.2,
+        "benchmark_symbol": "BTC/USDT",
+        "breakout_lookback_days": 20,
+        "initial_stop_atr": 2.5,
+        "maximum_holding_days": 60,
+        "maximum_positions": 2,
+        "momentum_lookback_days": 20,
+        "ranking_maximum": 8,
+        "research_end_exclusive": "2025-01-01T00:00:00+00:00",
+        "research_start": "2021-07-20T00:00:00+00:00",
+        "trailing_stop_atr": 3.0,
+        "transaction_cost_fraction": 0.002,
+        "turnover_expansion_minimum": 1.2
+      }
+    },
+    {
+      "configuration_id": "AMS-V2-F01-C02",
+      "parameter_hash_sha256": "cf59c80749f2f62adbafe11334384d6df6a38596917c3c63a11c0ce254ca7ec3",
+      "translated_policy": {
+        "atr_days": 14,
+        "atr_expansion_minimum": 1.2,
+        "benchmark_symbol": "BTC/USDT",
+        "breakout_lookback_days": 20,
+        "initial_stop_atr": 2.5,
+        "maximum_holding_days": 60,
+        "maximum_positions": 2,
+        "momentum_lookback_days": 20,
+        "ranking_maximum": 8,
+        "research_end_exclusive": "2025-01-01T00:00:00+00:00",
+        "research_start": "2021-07-20T00:00:00+00:00",
+        "trailing_stop_atr": 3.0,
+        "transaction_cost_fraction": 0.002,
+        "turnover_expansion_minimum": 1.5
+      }
+    },
+    {
+      "configuration_id": "AMS-V2-F01-C03",
+      "parameter_hash_sha256": "fa8c8e3b6716ff488dca76d359a905d69ad0796fa6ddbf1d2fc95bddc83e2685",
+      "translated_policy": {
+        "atr_days": 14,
+        "atr_expansion_minimum": 1.2,
+        "benchmark_symbol": "BTC/USDT",
+        "breakout_lookback_days": 20,
+        "initial_stop_atr": 2.5,
+        "maximum_holding_days": 60,
+        "maximum_positions": 2,
+        "momentum_lookback_days": 20,
+        "ranking_maximum": 8,
+        "research_end_exclusive": "2025-01-01T00:00:00+00:00",
+        "research_start": "2021-07-20T00:00:00+00:00",
+        "trailing_stop_atr": 4.0,
+        "transaction_cost_fraction": 0.002,
+        "turnover_expansion_minimum": 1.2
+      }
+    },
+    {
+      "configuration_id": "AMS-V2-F01-C04",
+      "parameter_hash_sha256": "616c9892d1012ad0ad4e365fbd9d926eb659f8b8d1369814fd58300d72145985",
+      "translated_policy": {
+        "atr_days": 14,
+        "atr_expansion_minimum": 1.2,
+        "benchmark_symbol": "BTC/USDT",
+        "breakout_lookback_days": 20,
+        "initial_stop_atr": 2.5,
+        "maximum_holding_days": 60,
+        "maximum_positions": 2,
+        "momentum_lookback_days": 20,
+        "ranking_maximum": 8,
+        "research_end_exclusive": "2025-01-01T00:00:00+00:00",
+        "research_start": "2021-07-20T00:00:00+00:00",
+        "trailing_stop_atr": 4.0,
+        "transaction_cost_fraction": 0.002,
+        "turnover_expansion_minimum": 1.5
+      }
+    },
+    {
+      "configuration_id": "AMS-V2-F01-C05",
+      "parameter_hash_sha256": "91bf7f3c9cc2ac7a4e50697a82f7097a309b51a4f5baa0e8a5383ee91b13f3ae",
+      "translated_policy": {
+        "atr_days": 14,
+        "atr_expansion_minimum": 1.2,
+        "benchmark_symbol": "BTC/USDT",
+        "breakout_lookback_days": 20,
+        "initial_stop_atr": 2.5,
+        "maximum_holding_days": 60,
+        "maximum_positions": 2,
+        "momentum_lookback_days": 60,
+        "ranking_maximum": 8,
+        "research_end_exclusive": "2025-01-01T00:00:00+00:00",
+        "research_start": "2021-07-20T00:00:00+00:00",
+        "trailing_stop_atr": 3.0,
+        "transaction_cost_fraction": 0.002,
+        "turnover_expansion_minimum": 1.2
+      }
+    },
+    {
+      "configuration_id": "AMS-V2-F01-C06",
+      "parameter_hash_sha256": "d7f785e6fc20b90c59bdd4f898f6362c5162f1b44fa4705026c063799d92a95b",
+      "translated_policy": {
+        "atr_days": 14,
+        "atr_expansion_minimum": 1.2,
+        "benchmark_symbol": "BTC/USDT",
+        "breakout_lookback_days": 20,
+        "initial_stop_atr": 2.5,
+        "maximum_holding_days": 60,
+        "maximum_positions": 2,
+        "momentum_lookback_days": 60,
+        "ranking_maximum": 8,
+        "research_end_exclusive": "2025-01-01T00:00:00+00:00",
+        "research_start": "2021-07-20T00:00:00+00:00",
+        "trailing_stop_atr": 3.0,
+        "transaction_cost_fraction": 0.002,
+        "turnover_expansion_minimum": 1.5
+      }
+    },
+    {
+      "configuration_id": "AMS-V2-F01-C07",
+      "parameter_hash_sha256": "719f5bc7c563a232236416f9158a3f77dfdd059fb40f1f4dffb491148c0aecf6",
+      "translated_policy": {
+        "atr_days": 14,
+        "atr_expansion_minimum": 1.2,
+        "benchmark_symbol": "BTC/USDT",
+        "breakout_lookback_days": 20,
+        "initial_stop_atr": 2.5,
+        "maximum_holding_days": 60,
+        "maximum_positions": 2,
+        "momentum_lookback_days": 60,
+        "ranking_maximum": 8,
+        "research_end_exclusive": "2025-01-01T00:00:00+00:00",
+        "research_start": "2021-07-20T00:00:00+00:00",
+        "trailing_stop_atr": 4.0,
+        "transaction_cost_fraction": 0.002,
+        "turnover_expansion_minimum": 1.2
+      }
+    },
+    {
+      "configuration_id": "AMS-V2-F01-C08",
+      "parameter_hash_sha256": "ce2cc061d6fe236c4945c88989f29a6e1442a86c73e96d7283820b6e3cd054cd",
+      "translated_policy": {
+        "atr_days": 14,
+        "atr_expansion_minimum": 1.2,
+        "benchmark_symbol": "BTC/USDT",
+        "breakout_lookback_days": 20,
+        "initial_stop_atr": 2.5,
+        "maximum_holding_days": 60,
+        "maximum_positions": 2,
+        "momentum_lookback_days": 60,
+        "ranking_maximum": 8,
+        "research_end_exclusive": "2025-01-01T00:00:00+00:00",
+        "research_start": "2021-07-20T00:00:00+00:00",
+        "trailing_stop_atr": 4.0,
+        "transaction_cost_fraction": 0.002,
+        "turnover_expansion_minimum": 1.5
+      }
+    },
+    {
+      "configuration_id": "AMS-V2-F01-C09",
+      "parameter_hash_sha256": "c3bc4d7e8a8b1c09ab96a3408a19f65125a35db12bcdc254e9135a8a53349a1a",
+      "translated_policy": {
+        "atr_days": 14,
+        "atr_expansion_minimum": 1.2,
+        "benchmark_symbol": "BTC/USDT",
+        "breakout_lookback_days": 55,
+        "initial_stop_atr": 2.5,
+        "maximum_holding_days": 60,
+        "maximum_positions": 2,
+        "momentum_lookback_days": 20,
+        "ranking_maximum": 8,
+        "research_end_exclusive": "2025-01-01T00:00:00+00:00",
+        "research_start": "2021-07-20T00:00:00+00:00",
+        "trailing_stop_atr": 3.0,
+        "transaction_cost_fraction": 0.002,
+        "turnover_expansion_minimum": 1.2
+      }
+    },
+    {
+      "configuration_id": "AMS-V2-F01-C10",
+      "parameter_hash_sha256": "d6746a37f9f13f020accd6701d4950183ab5f4f52141db1bd049616fef255a36",
+      "translated_policy": {
+        "atr_days": 14,
+        "atr_expansion_minimum": 1.2,
+        "benchmark_symbol": "BTC/USDT",
+        "breakout_lookback_days": 55,
+        "initial_stop_atr": 2.5,
+        "maximum_holding_days": 60,
+        "maximum_positions": 2,
+        "momentum_lookback_days": 20,
+        "ranking_maximum": 8,
+        "research_end_exclusive": "2025-01-01T00:00:00+00:00",
+        "research_start": "2021-07-20T00:00:00+00:00",
+        "trailing_stop_atr": 3.0,
+        "transaction_cost_fraction": 0.002,
+        "turnover_expansion_minimum": 1.5
+      }
+    },
+    {
+      "configuration_id": "AMS-V2-F01-C11",
+      "parameter_hash_sha256": "05266ac33b7f168e8bae6ee5c8c4650e0861a5ce85be63f3e54fe259eb2ac968",
+      "translated_policy": {
+        "atr_days": 14,
+        "atr_expansion_minimum": 1.2,
+        "benchmark_symbol": "BTC/USDT",
+        "breakout_lookback_days": 55,
+        "initial_stop_atr": 2.5,
+        "maximum_holding_days": 60,
+        "maximum_positions": 2,
+        "momentum_lookback_days": 20,
+        "ranking_maximum": 8,
+        "research_end_exclusive": "2025-01-01T00:00:00+00:00",
+        "research_start": "2021-07-20T00:00:00+00:00",
+        "trailing_stop_atr": 4.0,
+        "transaction_cost_fraction": 0.002,
+        "turnover_expansion_minimum": 1.2
+      }
+    },
+    {
+      "configuration_id": "AMS-V2-F01-C12",
+      "parameter_hash_sha256": "48afb4a2093b2222f9c9332abd4421736b5fba7dd5bcc82e1868ebdcc425da8b",
+      "translated_policy": {
+        "atr_days": 14,
+        "atr_expansion_minimum": 1.2,
+        "benchmark_symbol": "BTC/USDT",
+        "breakout_lookback_days": 55,
+        "initial_stop_atr": 2.5,
+        "maximum_holding_days": 60,
+        "maximum_positions": 2,
+        "momentum_lookback_days": 20,
+        "ranking_maximum": 8,
+        "research_end_exclusive": "2025-01-01T00:00:00+00:00",
+        "research_start": "2021-07-20T00:00:00+00:00",
+        "trailing_stop_atr": 4.0,
+        "transaction_cost_fraction": 0.002,
+        "turnover_expansion_minimum": 1.5
+      }
+    },
+    {
+      "configuration_id": "AMS-V2-F01-C13",
+      "parameter_hash_sha256": "a054106edef80de0b0696c8dc908336936fa8da8a2e61c4d449c040cc800ead7",
+      "translated_policy": {
+        "atr_days": 14,
+        "atr_expansion_minimum": 1.2,
+        "benchmark_symbol": "BTC/USDT",
+        "breakout_lookback_days": 55,
+        "initial_stop_atr": 2.5,
+        "maximum_holding_days": 60,
+        "maximum_positions": 2,
+        "momentum_lookback_days": 60,
+        "ranking_maximum": 8,
+        "research_end_exclusive": "2025-01-01T00:00:00+00:00",
+        "research_start": "2021-07-20T00:00:00+00:00",
+        "trailing_stop_atr": 3.0,
+        "transaction_cost_fraction": 0.002,
+        "turnover_expansion_minimum": 1.2
+      }
+    },
+    {
+      "configuration_id": "AMS-V2-F01-C14",
+      "parameter_hash_sha256": "386ec45e8996d067d2f6b55ef8201d7f44c1f555572237bd27b21d4cd4ba9cc0",
+      "translated_policy": {
+        "atr_days": 14,
+        "atr_expansion_minimum": 1.2,
+        "benchmark_symbol": "BTC/USDT",
+        "breakout_lookback_days": 55,
+        "initial_stop_atr": 2.5,
+        "maximum_holding_days": 60,
+        "maximum_positions": 2,
+        "momentum_lookback_days": 60,
+        "ranking_maximum": 8,
+        "research_end_exclusive": "2025-01-01T00:00:00+00:00",
+        "research_start": "2021-07-20T00:00:00+00:00",
+        "trailing_stop_atr": 3.0,
+        "transaction_cost_fraction": 0.002,
+        "turnover_expansion_minimum": 1.5
+      }
+    },
+    {
+      "configuration_id": "AMS-V2-F01-C15",
+      "parameter_hash_sha256": "106c966bc5fe3e04c1e082f94c974483cb899f206db26b71b345f7e9ea2d97d1",
+      "translated_policy": {
+        "atr_days": 14,
+        "atr_expansion_minimum": 1.2,
+        "benchmark_symbol": "BTC/USDT",
+        "breakout_lookback_days": 55,
+        "initial_stop_atr": 2.5,
+        "maximum_holding_days": 60,
+        "maximum_positions": 2,
+        "momentum_lookback_days": 60,
+        "ranking_maximum": 8,
+        "research_end_exclusive": "2025-01-01T00:00:00+00:00",
+        "research_start": "2021-07-20T00:00:00+00:00",
+        "trailing_stop_atr": 4.0,
+        "transaction_cost_fraction": 0.002,
+        "turnover_expansion_minimum": 1.2
+      }
+    },
+    {
+      "configuration_id": "AMS-V2-F01-C16",
+      "parameter_hash_sha256": "3beed9f5019dab912832b39d6e51953951171197e9ba2818605de7930555046e",
+      "translated_policy": {
+        "atr_days": 14,
+        "atr_expansion_minimum": 1.2,
+        "benchmark_symbol": "BTC/USDT",
+        "breakout_lookback_days": 55,
+        "initial_stop_atr": 2.5,
+        "maximum_holding_days": 60,
+        "maximum_positions": 2,
+        "momentum_lookback_days": 60,
+        "ranking_maximum": 8,
+        "research_end_exclusive": "2025-01-01T00:00:00+00:00",
+        "research_start": "2021-07-20T00:00:00+00:00",
+        "trailing_stop_atr": 4.0,
+        "transaction_cost_fraction": 0.002,
+        "turnover_expansion_minimum": 1.5
+      }
+    }
+  ],
+  "registered_at": "2026-07-25T16:07:30.863093Z",
+  "registered_trials_consumed": 0,
+  "schema_version": "ams-v2-f01-engine-core-v1-registration-v1",
+  "source_commit": "8a2ad00eefe402ec2fbf4b9dcacfd3cd35b2e7bc",
+  "status": "REGISTERED",
+  "trial_accounting": {
+    "after": {
+      "alpha_configurations_registered": 96,
+      "holdout_2026_accessed": false,
+      "portfolio_variants_registered": 4,
+      "remaining_authorized_trials": 100,
+      "test_2025_accessed": false,
+      "total_unique_variants_registered": 100,
+      "trials_executed": 0,
+      "trials_invalidated": 0
+    },
+    "before": {
+      "alpha_configurations_registered": 96,
+      "holdout_2026_accessed": false,
+      "portfolio_variants_registered": 4,
+      "remaining_authorized_trials": 100,
+      "test_2025_accessed": false,
+      "total_unique_variants_registered": 100,
+      "trials_executed": 0,
+      "trials_invalidated": 0
+    },
+    "changed": false
+  }
+}
