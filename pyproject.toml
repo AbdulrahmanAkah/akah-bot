@@ -36,6 +36,9 @@ where = ["src"]
 pythonpath = ["src"]
 testpaths = ["tests"]
 addopts = "-ra --strict-markers"
+markers = [
+    "integration: reads registered local research data and is opt-in",
+]
 
 [tool.ruff]
 line-length = 100

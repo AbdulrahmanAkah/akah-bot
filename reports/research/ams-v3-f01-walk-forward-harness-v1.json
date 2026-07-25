@@ -1,0 +1,66 @@
+{
+  "data_integrity": {
+    "bar_boundary_policy": {
+      "bar_close_time": "AT_OR_BEFORE_2025_01_01T00:00:00Z",
+      "bar_open_time": "STRICTLY_BEFORE_2025_01_01T00:00:00Z"
+    },
+    "dataset_hashes_verified_at_runtime": true,
+    "holdout_2026_accessed": false,
+    "test_2025_accessed": false
+  },
+  "execution_rule": "SIGNAL_AT_CLOSE_EXECUTE_NEXT_BAR_OPEN",
+  "folds": [
+    {
+      "fold_id": "AMS-V3-F01-WF01",
+      "train_end_exclusive": "2022-01-01T00:00:00+00:00",
+      "train_start": "2021-01-01T00:00:00+00:00",
+      "validation_end_exclusive": "2023-01-01T00:00:00+00:00",
+      "validation_start": "2022-01-01T00:00:00+00:00"
+    },
+    {
+      "fold_id": "AMS-V3-F01-WF02",
+      "train_end_exclusive": "2023-01-01T00:00:00+00:00",
+      "train_start": "2021-01-01T00:00:00+00:00",
+      "validation_end_exclusive": "2024-01-01T00:00:00+00:00",
+      "validation_start": "2023-01-01T00:00:00+00:00"
+    },
+    {
+      "fold_id": "AMS-V3-F01-WF03",
+      "train_end_exclusive": "2024-01-01T00:00:00+00:00",
+      "train_start": "2021-01-01T00:00:00+00:00",
+      "validation_end_exclusive": "2025-01-01T00:00:00+00:00",
+      "validation_start": "2024-01-01T00:00:00+00:00"
+    }
+  ],
+  "next_action": "RUN_AMS_V3_F01_C01_CONTROL",
+  "paired_comparison": {
+    "control_configuration": "AMS-V3-F01-C01",
+    "fibonacci_configuration": "AMS-V3-F01-C02",
+    "parameter_differences": {
+      "fibonacci_mode": [
+        "NO_FIBONACCI_CONTROL",
+        "CORE_382_618"
+      ]
+    }
+  },
+  "protocol_id": "AMS-V3-MTF-FIBONACCI",
+  "registered_at": "2026-07-25T23:08:35.139732+00:00",
+  "schema_version": "ams-v3-f01-walk-forward-harness-v1",
+  "source_commit": "1683ca0d962dadceb71cbdc8d5b3c5c11d611fa4",
+  "spot_constraints": {
+    "borrowing_allowed": false,
+    "derivatives_allowed": false,
+    "leverage_allowed": false,
+    "margin_allowed": false,
+    "short_allowed": false,
+    "spot_long_only": true
+  },
+  "status": "REGISTERED_NOT_EXECUTED",
+  "trial_accounting": {
+    "holdout_2026_accessed": false,
+    "remaining_authorized_trials": 20,
+    "test_2025_accessed": false,
+    "total_authorized_trials": 20,
+    "trials_executed": 0
+  }
+}

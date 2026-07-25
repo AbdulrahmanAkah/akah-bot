@@ -1940,21 +1940,26 @@ def build_ams_v3_configuration_grid() -> tuple[
     dict[str, Any],
     ...,
 ]:
-    fibonacci_modes = (
-        "NO_FIBONACCI_CONTROL",
-        "CORE_382_618",
-        "SHALLOW_236_500",
-        "DEEP_500_786",
-    )
-
-    daily_risk_profiles = (
-        "BALANCED",
-        "DEFENSIVE",
-    )
-
-    trigger_modes = (
-        "BREAKOUT",
-        "PULLBACK_REACCELERATION",
+    # The first two configurations are a preregistered paired comparison:
+    # identical portfolio-relevant settings, with Fibonacci mode as the only
+    # variable.  Keep this order stable because C01/C02 are the primary test.
+    configuration_variants = (
+        ("NO_FIBONACCI_CONTROL", "BALANCED", "BREAKOUT"),
+        ("CORE_382_618", "BALANCED", "BREAKOUT"),
+        ("NO_FIBONACCI_CONTROL", "BALANCED", "PULLBACK_REACCELERATION"),
+        ("CORE_382_618", "BALANCED", "PULLBACK_REACCELERATION"),
+        ("NO_FIBONACCI_CONTROL", "DEFENSIVE", "BREAKOUT"),
+        ("CORE_382_618", "DEFENSIVE", "BREAKOUT"),
+        ("NO_FIBONACCI_CONTROL", "DEFENSIVE", "PULLBACK_REACCELERATION"),
+        ("CORE_382_618", "DEFENSIVE", "PULLBACK_REACCELERATION"),
+        ("SHALLOW_236_500", "BALANCED", "BREAKOUT"),
+        ("SHALLOW_236_500", "BALANCED", "PULLBACK_REACCELERATION"),
+        ("SHALLOW_236_500", "DEFENSIVE", "BREAKOUT"),
+        ("SHALLOW_236_500", "DEFENSIVE", "PULLBACK_REACCELERATION"),
+        ("DEEP_500_786", "BALANCED", "BREAKOUT"),
+        ("DEEP_500_786", "BALANCED", "PULLBACK_REACCELERATION"),
+        ("DEEP_500_786", "DEFENSIVE", "BREAKOUT"),
+        ("DEEP_500_786", "DEFENSIVE", "PULLBACK_REACCELERATION"),
     )
 
     configurations: list[
@@ -1963,57 +1968,40 @@ def build_ams_v3_configuration_grid() -> tuple[
 
     sequence = 1
 
-    for fibonacci_mode in fibonacci_modes:
-        for daily_risk_profile in daily_risk_profiles:
-            for trigger_mode in trigger_modes:
-                configuration_id = (
-                    "AMS-V3-F01-C"
-                    f"{sequence:02d}"
-                )
+    for fibonacci_mode, daily_risk_profile, trigger_mode in configuration_variants:
+        configuration_id = (
+            "AMS-V3-F01-C"
+            f"{sequence:02d}"
+        )
 
-                parameters = {
-                    "fibonacci_mode": fibonacci_mode,
-                    "daily_risk_profile": (
-                        daily_risk_profile
-                    ),
-                    "trigger_mode": trigger_mode,
-                    "daily_timeframe": "1D",
-                    "allocation_timeframe": "8H",
-                    "execution_timeframe": "4H",
-                    "spot_long_only": True,
-                    "leverage_allowed": False,
-                    "borrowing_allowed": False,
-                    "base_transaction_cost": 0.002,
-                    "stress_transaction_cost": 0.004,
-                }
+        parameters = {
+            "fibonacci_mode": fibonacci_mode,
+            "daily_risk_profile": daily_risk_profile,
+            "trigger_mode": trigger_mode,
+            "daily_timeframe": "1D",
+            "allocation_timeframe": "8H",
+            "execution_timeframe": "4H",
+            "spot_long_only": True,
+            "leverage_allowed": False,
+            "borrowing_allowed": False,
+            "base_transaction_cost": 0.002,
+            "stress_transaction_cost": 0.004,
+        }
 
-                configurations.append(
-                    {
-                        "configuration_id": (
-                            configuration_id
-                        ),
-                        "family_id": (
-                            "AMS-V3-F01"
-                        ),
-                        "family": (
-                            "MULTI_TIMEFRAME_"
-                            "FIBONACCI_TREND"
-                        ),
-                        "parameters": parameters,
-                        "parameter_hash_sha256": (
-                            _parameter_hash(
-                                parameters
-                            )
-                        ),
-                        "trial_status": (
-                            "REGISTERED_NOT_EXECUTED"
-                        ),
-                        "fold_results": [],
-                        "aggregate_result": None,
-                    }
-                )
+        configurations.append(
+            {
+                "configuration_id": configuration_id,
+                "family_id": "AMS-V3-F01",
+                "family": "MULTI_TIMEFRAME_FIBONACCI_TREND",
+                "parameters": parameters,
+                "parameter_hash_sha256": _parameter_hash(parameters),
+                "trial_status": "REGISTERED_NOT_EXECUTED",
+                "fold_results": [],
+                "aggregate_result": None,
+            }
+        )
 
-                sequence += 1
+        sequence += 1
 
     if len(
         configurations
