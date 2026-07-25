@@ -2322,11 +2322,218 @@
       "trial_status": "COMPLETED_REJECTED"
     },
     {
-      "aggregate_result": null,
+      "aggregate_result": {
+        "aggregate_stress_cost_total_return_0_004": 3.7258929607915716,
+        "baseline_walk_forward": {
+          "aggregate_metrics": {
+            "aggregate_average_r_multiple": 0.6920924883649952,
+            "aggregate_base_price_gross_pnl": 4.3303339713825055,
+            "aggregate_gross_loss_abs": 1.5887180271974448,
+            "aggregate_gross_profit": 5.7979728210494805,
+            "aggregate_net_pnl": 4.209254793852036,
+            "aggregate_profit_factor": 3.6494662500162542,
+            "aggregate_profit_factor_is_infinite": false,
+            "aggregate_total_r_multiple": 17.994404697489873,
+            "maximum_single_fold_drawdown": 0.5366786939061925,
+            "total_executed_trades": 26
+          },
+          "decision": "DO_NOT_PROCEED",
+          "family_gates": {
+            "aggregate_profit_factor_above_one": true,
+            "latest_fold_passed": true,
+            "maximum_single_fold_drawdown_within_limit": false,
+            "minimum_passing_folds": false,
+            "minimum_total_executed_trades": false,
+            "positive_aggregate_average_r_multiple": true,
+            "positive_aggregate_base_price_gross_pnl": true,
+            "positive_aggregate_net_pnl": true
+          },
+          "fold_evaluations": {
+            "WF_2022": {
+              "gates": {
+                "maximum_drawdown_within_limit": true,
+                "minimum_executed_trades": false,
+                "positive_average_r_multiple": false,
+                "positive_base_price_gross_pnl": false,
+                "positive_net_total_return": false,
+                "profit_factor_above_one": false
+              },
+              "metrics": {
+                "average_r_multiple": null,
+                "base_price_gross_pnl": 0.0,
+                "executed_trade_count": 0,
+                "fold_name": "WF_2022",
+                "gross_loss_abs": 0.0,
+                "gross_profit": 0.0,
+                "maximum_drawdown": 0.0,
+                "net_pnl": 0.0,
+                "profit_factor": null,
+                "profit_factor_is_infinite": false,
+                "total_r_multiple": 0.0,
+                "total_return": 0.0
+              },
+              "passed": false
+            },
+            "WF_2023": {
+              "gates": {
+                "maximum_drawdown_within_limit": false,
+                "minimum_executed_trades": true,
+                "positive_average_r_multiple": true,
+                "positive_base_price_gross_pnl": true,
+                "positive_net_total_return": false,
+                "profit_factor_above_one": true
+              },
+              "metrics": {
+                "average_r_multiple": 0.4233719347439828,
+                "base_price_gross_pnl": 1.3111084494720977,
+                "executed_trade_count": 12,
+                "fold_name": "WF_2023",
+                "gross_loss_abs": 0.8725230626360321,
+                "gross_profit": 2.1304933546252074,
+                "maximum_drawdown": 0.5366786939061925,
+                "net_pnl": 1.2579702919891753,
+                "profit_factor": 2.4417616517649923,
+                "profit_factor_is_infinite": false,
+                "total_r_multiple": 5.080463216927794,
+                "total_return": -0.05942808045683878
+              },
+              "passed": false
+            },
+            "WF_2024": {
+              "gates": {
+                "maximum_drawdown_within_limit": true,
+                "minimum_executed_trades": true,
+                "positive_average_r_multiple": true,
+                "positive_base_price_gross_pnl": true,
+                "positive_net_total_return": true,
+                "profit_factor_above_one": true
+              },
+              "metrics": {
+                "average_r_multiple": 0.9224243914687199,
+                "base_price_gross_pnl": 3.019225521910408,
+                "executed_trade_count": 14,
+                "fold_name": "WF_2024",
+                "gross_loss_abs": 0.7161949645614127,
+                "gross_profit": 3.6674794664242736,
+                "maximum_drawdown": 0.32003362488324516,
+                "net_pnl": 2.951284501862861,
+                "profit_factor": 5.120783652353914,
+                "profit_factor_is_infinite": false,
+                "total_r_multiple": 12.913941480562078,
+                "total_return": 4.5288042022933235
+              },
+              "passed": true
+            }
+          },
+          "passing_fold_count": 1
+        },
+        "decision": "REJECT",
+        "fold_metrics": [
+          {
+            "base_price_gross_pnl": 0.0,
+            "evaluation_end_exclusive": "2023-01-01T00:00:00+00:00",
+            "evaluation_start": "2022-01-01T00:00:00+00:00",
+            "executed_trade_count": 0,
+            "fold_name": "WF_2022",
+            "gross_loss_abs": 0.0,
+            "gross_profit": 0.0,
+            "maximum_drawdown": 0.0,
+            "net_pnl": 0.0,
+            "stress_cost_total_return_0_004": 0.0,
+            "total_r_multiple": 0.0,
+            "total_return": 0.0
+          },
+          {
+            "base_price_gross_pnl": 1.3111084494720977,
+            "evaluation_end_exclusive": "2024-01-01T00:00:00+00:00",
+            "evaluation_start": "2023-01-01T00:00:00+00:00",
+            "executed_trade_count": 12,
+            "fold_name": "WF_2023",
+            "gross_loss_abs": 0.8725230626360321,
+            "gross_profit": 2.1304933546252074,
+            "maximum_drawdown": 0.5366786939061925,
+            "net_pnl": 1.2579702919891753,
+            "stress_cost_total_return_0_004": -0.09856023909982414,
+            "total_r_multiple": 5.080463216927794,
+            "total_return": -0.05942808045683878
+          },
+          {
+            "base_price_gross_pnl": 3.019225521910408,
+            "evaluation_end_exclusive": "2025-01-01T00:00:00+00:00",
+            "evaluation_start": "2024-01-01T00:00:00+00:00",
+            "executed_trade_count": 14,
+            "fold_name": "WF_2024",
+            "gross_loss_abs": 0.7161949645614127,
+            "gross_profit": 3.6674794664242736,
+            "maximum_drawdown": 0.32003362488324516,
+            "net_pnl": 2.951284501862861,
+            "stress_cost_total_return_0_004": 4.242605402797304,
+            "total_r_multiple": 12.913941480562078,
+            "total_return": 4.5288042022933235
+          }
+        ],
+        "strict_gates": {
+          "aggregate_0_004_cost_return_positive": true,
+          "aggregate_profit_factor_above_1_1": true,
+          "baseline_proceeds_to_frozen_test": false,
+          "latest_fold_0_004_cost_return_positive": true,
+          "maximum_fold_drawdown_at_most_0_45": false,
+          "minimum_total_executed_trades_30": false
+        }
+      },
       "configuration_id": "AMS-V2-F01-C12",
+      "execution_metadata": {
+        "completed_at": "2026-07-25T19:43:58.950808+00:00",
+        "orchestrator_version": "AMS_V2_WALK_FORWARD_ORCHESTRATOR_V1",
+        "source_commit": "865ba3718155c91ed785e28f3d02f1a88c7012d6",
+        "started_at": "2026-07-25T19:43:46.107884+00:00"
+      },
       "family": "TREND_MOMENTUM",
       "family_id": "AMS-V2-F01",
-      "fold_results": [],
+      "fold_results": [
+        {
+          "base_price_gross_pnl": 0.0,
+          "evaluation_end_exclusive": "2023-01-01T00:00:00+00:00",
+          "evaluation_start": "2022-01-01T00:00:00+00:00",
+          "executed_trade_count": 0,
+          "fold_name": "WF_2022",
+          "gross_loss_abs": 0.0,
+          "gross_profit": 0.0,
+          "maximum_drawdown": 0.0,
+          "net_pnl": 0.0,
+          "stress_cost_total_return_0_004": 0.0,
+          "total_r_multiple": 0.0,
+          "total_return": 0.0
+        },
+        {
+          "base_price_gross_pnl": 1.3111084494720977,
+          "evaluation_end_exclusive": "2024-01-01T00:00:00+00:00",
+          "evaluation_start": "2023-01-01T00:00:00+00:00",
+          "executed_trade_count": 12,
+          "fold_name": "WF_2023",
+          "gross_loss_abs": 0.8725230626360321,
+          "gross_profit": 2.1304933546252074,
+          "maximum_drawdown": 0.5366786939061925,
+          "net_pnl": 1.2579702919891753,
+          "stress_cost_total_return_0_004": -0.09856023909982414,
+          "total_r_multiple": 5.080463216927794,
+          "total_return": -0.05942808045683878
+        },
+        {
+          "base_price_gross_pnl": 3.019225521910408,
+          "evaluation_end_exclusive": "2025-01-01T00:00:00+00:00",
+          "evaluation_start": "2024-01-01T00:00:00+00:00",
+          "executed_trade_count": 14,
+          "fold_name": "WF_2024",
+          "gross_loss_abs": 0.7161949645614127,
+          "gross_profit": 3.6674794664242736,
+          "maximum_drawdown": 0.32003362488324516,
+          "net_pnl": 2.951284501862861,
+          "stress_cost_total_return_0_004": 4.242605402797304,
+          "total_r_multiple": 12.913941480562078,
+          "total_return": 4.5288042022933235
+        }
+      ],
       "invalidation": null,
       "parameter_hash_sha256": "48afb4a2093b2222f9c9332abd4421736b5fba7dd5bcc82e1868ebdcc425da8b",
       "parameters": {
@@ -2341,7 +2548,7 @@
         "turnover_expansion_minimum": 1.5
       },
       "parameters_frozen": true,
-      "trial_status": "REGISTERED_NOT_EXECUTED"
+      "trial_status": "COMPLETED_REJECTED"
     },
     {
       "aggregate_result": null,
@@ -4248,10 +4455,10 @@
     "alpha_configurations_registered": 96,
     "holdout_2026_accessed": false,
     "portfolio_variants_registered": 4,
-    "remaining_authorized_trials": 89,
+    "remaining_authorized_trials": 88,
     "test_2025_accessed": false,
     "total_unique_variants_registered": 100,
-    "trials_executed": 11,
+    "trials_executed": 12,
     "trials_invalidated": 0
   },
   "trial_history": [
@@ -4330,6 +4537,13 @@
       "configuration_id": "AMS-V2-F01-C11",
       "family_id": "AMS-V2-F01",
       "source_commit": "f8b447565e184971c09ff51085ef14a237d060b1",
+      "terminal_status": "COMPLETED"
+    },
+    {
+      "completed_at": "2026-07-25T19:43:58.950808+00:00",
+      "configuration_id": "AMS-V2-F01-C12",
+      "family_id": "AMS-V2-F01",
+      "source_commit": "865ba3718155c91ed785e28f3d02f1a88c7012d6",
       "terminal_status": "COMPLETED"
     }
   ]
