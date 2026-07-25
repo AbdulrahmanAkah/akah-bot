@@ -1,0 +1,101 @@
+{
+  "alpha_configurations": 16,
+  "authorized_trials": 20,
+  "causal_timing_contract": {
+    "daily_boundary_utc": "00:00",
+    "eight_hour_boundaries_utc": [
+      "00:00-08:00",
+      "08:00-16:00",
+      "16:00-00:00"
+    ],
+    "higher_timeframe_values": "AVAILABLE_ONLY_AFTER_BAR_CLOSE",
+    "lookahead_allowed": false,
+    "pivot_confirmation": "RIGHT_SIDE_CONFIRMATION_DELAY_REQUIRED",
+    "source_bars": "4H_BARS_WITH_UTC_OPEN_TIMESTAMPS",
+    "zigzag_repainting_allowed": false
+  },
+  "execution_gate": "BLOCKED_UNTIL_4H_DATASET_IS_REGISTERED_AND_VALIDATED",
+  "fibonacci_extensions": [
+    1.272,
+    1.618
+  ],
+  "fibonacci_retracement_zones": {
+    "core": [
+      0.382,
+      0.618
+    ],
+    "deep": [
+      0.618,
+      0.786
+    ],
+    "invalidated": [
+      0.786,
+      1.0
+    ],
+    "minor": [
+      0.0,
+      0.236
+    ],
+    "shallow": [
+      0.236,
+      0.382
+    ]
+  },
+  "next_action": "BUILD_AND_VALIDATE_AMS_V3_4H_RESEARCH_DATASET",
+  "portfolio_profiles": 4,
+  "protocol_id": "AMS-V3-MTF-FIBONACCI",
+  "registered_at": "2026-07-25T20:42:26.427354Z",
+  "registered_trials_consumed": 0,
+  "research_constraints": {
+    "base_transaction_cost": 0.002,
+    "borrowing": false,
+    "holdout_2026_accessed": false,
+    "leverage": false,
+    "margin": false,
+    "research_end": "2024-12-31",
+    "shorting": false,
+    "spot_long_only": true,
+    "stress_transaction_cost": 0.004,
+    "test_2025_accessed": false
+  },
+  "schema_version": "ams-v3-mtf-fibonacci-protocol-registration-v1",
+  "source_commit": "455f7a2150c49411b1dcbaac91bc41fe1fa956c5",
+  "status": "REGISTERED_NOT_EXECUTED",
+  "strategy_layers": {
+    "daily": {
+      "purpose": "LONG_TERM_MARKET_REGIME_AND_RISK_BUDGET",
+      "tools": [
+        "EMA_50_200",
+        "EMA_SLOPE",
+        "ADX_14",
+        "REALIZED_VOLATILITY_20_60",
+        "MARKET_BREADTH",
+        "BENCHMARK_REGIME",
+        "CAUSAL_FIBONACCI_MAJOR_SWING"
+      ]
+    },
+    "eight_hour": {
+      "purpose": "MEDIUM_TERM_STRUCTURE_AND_CAPITAL_ALLOCATION",
+      "tools": [
+        "EMA_21_55",
+        "ATR_14",
+        "RELATIVE_STRENGTH_VS_BTC",
+        "CAUSAL_MARKET_STRUCTURE",
+        "FIBONACCI_RETRACEMENT_DEPTH",
+        "ATR_OVEREXTENSION"
+      ]
+    },
+    "four_hour": {
+      "purpose": "SETUP_ENTRY_STOP_EXIT_AND_REENTRY",
+      "tools": [
+        "DONCHIAN_BREAKOUT_20",
+        "PULLBACK_REACCELERATION",
+        "ATR_COMPRESSION_EXPANSION",
+        "CAUSAL_FIBONACCI_ENTRY_ZONE",
+        "ATR_INITIAL_STOP",
+        "ATR_TRAILING_STOP",
+        "FIBONACCI_EXTENSION_1272_1618"
+      ]
+    }
+  }
+}
