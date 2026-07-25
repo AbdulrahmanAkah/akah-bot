@@ -1,0 +1,191 @@
+{
+  "adapter_contract_version": "AMS_V2_FAMILY_ADAPTER_CONTRACTS_V1",
+  "adapter_registry": [
+    {
+      "candidate_modules": [
+        "momentum_reacceleration",
+        "volatility_breakout"
+      ],
+      "execution_status": "CONTRACT_REGISTERED_NOT_EXECUTABLE",
+      "family_id": "AMS-V2-F01",
+      "family_name": "TREND_MOMENTUM",
+      "implementation_kind": "COMPOSITE_ENGINE_REQUIRED",
+      "notes": [
+        "Requires one composite trend, momentum and breakout engine."
+      ],
+      "required_parameter_keys": [
+        "breakout_lookback_days",
+        "initial_stop_atr",
+        "maximum_holding_days",
+        "maximum_positions",
+        "momentum_lookback_days",
+        "ranking_maximum",
+        "trailing_stop_atr",
+        "transaction_cost_fraction",
+        "turnover_expansion_minimum"
+      ]
+    },
+    {
+      "candidate_modules": [
+        "momentum_reacceleration"
+      ],
+      "execution_status": "CONTRACT_REGISTERED_NOT_EXECUTABLE",
+      "family_id": "AMS-V2-F02",
+      "family_name": "PULLBACK_REACCELERATION",
+      "implementation_kind": "DEDICATED_ADAPTER_REQUIRED",
+      "notes": [
+        "Requires V2-specific pullback logic."
+      ],
+      "required_parameter_keys": [
+        "ema_reclaim_days",
+        "maximum_holding_days",
+        "maximum_positions",
+        "maximum_pullback",
+        "momentum_days",
+        "ranking_maximum",
+        "relative_strength_days",
+        "trailing_stop_atr",
+        "transaction_cost_fraction"
+      ]
+    },
+    {
+      "candidate_modules": [
+        "compression_expansion",
+        "volatility_breakout"
+      ],
+      "execution_status": "CONTRACT_REGISTERED_NOT_EXECUTABLE",
+      "family_id": "AMS-V2-F03",
+      "family_name": "VOLATILITY_COMPRESSION_EXPANSION",
+      "implementation_kind": "COMPOSITE_ENGINE_REQUIRED",
+      "notes": [
+        "Requires explicit compression-breakout sequencing."
+      ],
+      "required_parameter_keys": [
+        "breakout_lookback_days",
+        "compression_lookback_days",
+        "compression_percentile_maximum",
+        "initial_stop_atr",
+        "maximum_holding_days",
+        "maximum_positions",
+        "minimum_turnover_expansion",
+        "ranking_maximum",
+        "trailing_stop_atr",
+        "transaction_cost_fraction"
+      ]
+    },
+    {
+      "candidate_modules": [
+        "liquidity_sweep_reversal"
+      ],
+      "execution_status": "CONTRACT_REGISTERED_NOT_EXECUTABLE",
+      "family_id": "AMS-V2-F04",
+      "family_name": "LIQUIDITY_SWEEP_RECOVERY",
+      "implementation_kind": "DEDICATED_ADAPTER_REQUIRED",
+      "notes": [
+        "Requires canonical V2 parameter translation."
+      ],
+      "required_parameter_keys": [
+        "initial_stop_atr",
+        "maximum_holding_days",
+        "maximum_positions",
+        "minimum_turnover_expansion",
+        "profit_trail_atr",
+        "ranking_maximum",
+        "recovery_close_fraction",
+        "sweep_lookback_days",
+        "transaction_cost_fraction"
+      ]
+    },
+    {
+      "candidate_modules": [
+        "liquidity_sweep_reversal"
+      ],
+      "execution_status": "CONTRACT_REGISTERED_NOT_EXECUTABLE",
+      "family_id": "AMS-V2-F05",
+      "family_name": "CAPITULATION_RECOVERY",
+      "implementation_kind": "NEW_ENGINE_REQUIRED",
+      "notes": [
+        "A new capitulation-recovery engine is mandatory."
+      ],
+      "required_parameter_keys": [
+        "drawdown_lookback_days",
+        "drawdown_threshold",
+        "initial_stop_atr",
+        "maximum_holding_days",
+        "maximum_positions",
+        "minimum_turnover_expansion",
+        "ranking_maximum",
+        "rebound_lookback_days",
+        "trailing_stop_atr",
+        "transaction_cost_fraction"
+      ]
+    },
+    {
+      "candidate_modules": [
+        "cross_sectional_rotation"
+      ],
+      "execution_status": "CONTRACT_REGISTERED_NOT_EXECUTABLE",
+      "family_id": "AMS-V2-F06",
+      "family_name": "CROSS_SECTIONAL_LEADERSHIP",
+      "implementation_kind": "DEDICATED_ADAPTER_REQUIRED",
+      "notes": [
+        "Requires V2 regime and leadership constraints."
+      ],
+      "required_parameter_keys": [
+        "maximum_positions",
+        "minimum_liquidity_rank_percentile",
+        "ranking_relative_strength_days",
+        "ranking_return_days",
+        "rebalance_days",
+        "transaction_cost_fraction"
+      ]
+    }
+  ],
+  "configuration_count": 96,
+  "counts_as_registered_trial": false,
+  "execution_barrier": {
+    "all_family_adapters_nonexecutable": true,
+    "next_family_engine": "AMS-V2-F01",
+    "registered_trial_execution_allowed": false
+  },
+  "family_configuration_counts": {
+    "AMS-V2-F01": 16,
+    "AMS-V2-F02": 16,
+    "AMS-V2-F03": 16,
+    "AMS-V2-F04": 16,
+    "AMS-V2-F05": 16,
+    "AMS-V2-F06": 16
+  },
+  "locked_periods": {
+    "holdout_2026_accessed": false,
+    "test_2025_accessed": false
+  },
+  "registered_at": "2026-07-25T15:31:42.789288Z",
+  "registered_trials_consumed": 0,
+  "schema_version": "ams-v2-family-adapter-contracts-v1-registration-v1",
+  "source_commit": "13b499ac17003de698cbe0b13d538b73dff25660",
+  "status": "REGISTERED",
+  "trial_accounting": {
+    "after": {
+      "alpha_configurations_registered": 96,
+      "holdout_2026_accessed": false,
+      "portfolio_variants_registered": 4,
+      "remaining_authorized_trials": 100,
+      "test_2025_accessed": false,
+      "total_unique_variants_registered": 100,
+      "trials_executed": 0,
+      "trials_invalidated": 0
+    },
+    "before": {
+      "alpha_configurations_registered": 96,
+      "holdout_2026_accessed": false,
+      "portfolio_variants_registered": 4,
+      "remaining_authorized_trials": 100,
+      "test_2025_accessed": false,
+      "total_unique_variants_registered": 100,
+      "trials_executed": 0,
+      "trials_invalidated": 0
+    },
+    "changed": false
+  }
+}
