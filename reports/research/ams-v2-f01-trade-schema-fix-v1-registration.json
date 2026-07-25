@@ -1,0 +1,89 @@
+{
+  "c01_disposition": {
+    "configuration_id": "AMS-V2-F01-C01",
+    "failure_classification": "INFRASTRUCTURE_SCHEMA_FAILURE",
+    "retry_allowed": false,
+    "terminal_result": "FAILED_CONSUMED"
+  },
+  "c02_real_data_structural_preflight": {
+    "configuration_id": "AMS-V2-F01-C02",
+    "fold_count": 3,
+    "folds": [
+      {
+        "baseline_portfolio_rows": 365,
+        "baseline_stress_identity_passed": true,
+        "baseline_trade_rows": 0,
+        "canonical_translation_passed": true,
+        "fold_name": "WF_2022",
+        "stress_portfolio_rows": 365,
+        "stress_trade_rows": 0
+      },
+      {
+        "baseline_portfolio_rows": 365,
+        "baseline_stress_identity_passed": true,
+        "baseline_trade_rows": 17,
+        "canonical_translation_passed": true,
+        "fold_name": "WF_2023",
+        "stress_portfolio_rows": 365,
+        "stress_trade_rows": 17
+      },
+      {
+        "baseline_portfolio_rows": 366,
+        "baseline_stress_identity_passed": true,
+        "baseline_trade_rows": 24,
+        "canonical_translation_passed": true,
+        "fold_name": "WF_2024",
+        "stress_portfolio_rows": 366,
+        "stress_trade_rows": 24
+      }
+    ],
+    "performance_metrics_disclosed": false,
+    "research_decision_allowed": false
+  },
+  "counts_as_registered_trial": false,
+  "implemented_translation": {
+    "entry_time_source": "entry_signal_time",
+    "exit_time_source": "exit_signal_time",
+    "gross_pnl_formula": "exit_price / entry_price - 1",
+    "net_pnl_source": "net_trade_return_after_round_trip_cost",
+    "r_multiple_formula": "net_pnl / (initial_stop_atr * entry_atr / entry_price)",
+    "transaction_cost_formula": "base_price_gross_pnl - net_pnl"
+  },
+  "locked_periods": {
+    "holdout_2026_accessed": false,
+    "test_2025_accessed": false
+  },
+  "next_action": "EXECUTE_AMS_V2_F01_C02_OFFICIAL_WALK_FORWARD_TRIAL",
+  "registered_at": "2026-07-25T18:35:11.786739Z",
+  "registered_trials_consumed": 0,
+  "schema_version": "ams-v2-f01-trade-schema-fix-v1-registration-v1",
+  "source_commit": "9c44357e17d25d82612a245757aa20ae1719261c",
+  "status": "REGISTERED",
+  "test_isolation_fix": {
+    "live_ledger_used_as_pristine_fixture": false,
+    "synthetic_pristine_state_validated": true
+  },
+  "trial_accounting": {
+    "after": {
+      "alpha_configurations_registered": 96,
+      "holdout_2026_accessed": false,
+      "portfolio_variants_registered": 4,
+      "remaining_authorized_trials": 99,
+      "test_2025_accessed": false,
+      "total_unique_variants_registered": 100,
+      "trials_executed": 1,
+      "trials_invalidated": 0
+    },
+    "before": {
+      "alpha_configurations_registered": 96,
+      "holdout_2026_accessed": false,
+      "portfolio_variants_registered": 4,
+      "remaining_authorized_trials": 99,
+      "test_2025_accessed": false,
+      "total_unique_variants_registered": 100,
+      "trials_executed": 1,
+      "trials_invalidated": 0
+    },
+    "changed": false
+  }
+}

@@ -43,6 +43,7 @@ ENTRY_TIME_ALIASES: Final[tuple[str, ...]] = (
     "entry_snapshot_time",
     "opened_at",
     "open_time",
+    "entry_signal_time",
 )
 
 EXIT_TIME_ALIASES: Final[tuple[str, ...]] = (
@@ -51,6 +52,7 @@ EXIT_TIME_ALIASES: Final[tuple[str, ...]] = (
     "exit_snapshot_time",
     "closed_at",
     "close_time",
+    "exit_signal_time",
 )
 
 GROSS_PNL_ALIASES: Final[tuple[str, ...]] = (
@@ -68,6 +70,7 @@ NET_PNL_ALIASES: Final[tuple[str, ...]] = (
     "net_return_fraction",
     "return_after_cost",
     "realized_return",
+    "net_trade_return_after_round_trip_cost",
 )
 
 R_MULTIPLE_ALIASES: Final[tuple[str, ...]] = (
@@ -83,6 +86,19 @@ TRANSACTION_COST_ALIASES: Final[tuple[str, ...]] = (
     "cost_fraction",
     "round_trip_cost_fraction",
 )
+
+ENTRY_PRICE_ALIASES: Final[tuple[str, ...]] = (
+    "entry_price",
+    "fill_entry_price",
+    "open_price",
+)
+
+EXIT_PRICE_ALIASES: Final[tuple[str, ...]] = (
+    "exit_price",
+    "fill_exit_price",
+    "close_price",
+)
+
 
 SNAPSHOT_TIME_ALIASES: Final[tuple[str, ...]] = (
     "snapshot_time",
@@ -220,6 +236,319 @@ def _timestamp_series(
     )
 
 
+
+def _resolve_entry_atr_column(
+    frame: pd.DataFrame,
+    *,
+    atr_days: int,
+) -> str:
+    excluded_tokens = (
+        "expansion",
+        "minimum",
+        "maximum",
+        "stop",
+        "trail",
+        "multiple",
+        "percentile",
+        "rank",
+    )
+
+    scored: list[tuple[int, str]] = []
+
+    for raw_column in frame.columns:
+        column = str(raw_column)
+        lowered = column.casefold()
+
+        if (
+            "atr" not in lowered
+            and "average_true_range" not in lowered
+        ):
+            continue
+
+        if any(
+            token in lowered
+            for token in excluded_tokens
+        ):
+            continue
+
+        score = 0
+
+        if lowered == f"atr_{atr_days}":
+            score = 100
+        elif lowered == f"atr{atr_days}":
+            score = 95
+        elif lowered == "atr":
+            score = 90
+        elif lowered == "average_true_range":
+            score = 85
+        elif (
+            lowered.startswith("atr_")
+            and str(atr_days) in lowered
+        ):
+            score = 80
+        elif lowered.startswith("atr"):
+            score = 70
+        else:
+            score = 60
+
+        try:
+            pd.to_numeric(
+                frame[column],
+                errors="raise",
+            )
+        except (TypeError, ValueError):
+            continue
+
+        scored.append(
+            (
+                score,
+                column,
+            )
+        )
+
+    if not scored:
+        raise F01CanonicalTranslationError(
+            "Entry signal frame does not provide a usable ATR "
+            "column for R-multiple derivation."
+        )
+
+    scored.sort(
+        key=lambda item: (
+            -item[0],
+            item[1],
+        )
+    )
+
+    best_score = scored[0][0]
+
+    best_columns = [
+        column
+        for score, column in scored
+        if score == best_score
+    ]
+
+    if len(best_columns) != 1:
+        raise F01CanonicalTranslationError(
+            "Entry signal frame provides ambiguous ATR columns: "
+            f"{best_columns}."
+        )
+
+    return best_columns[0]
+
+
+def _derive_r_multiple_from_entry_signals(
+    *,
+    entry_signal_frame: pd.DataFrame,
+    symbols: pd.Series,
+    entry_times: pd.Series,
+    entry_prices: pd.Series,
+    net_pnl: pd.Series,
+    initial_stop_atr: float,
+    atr_days: int,
+) -> pd.Series:
+    if (
+        not math.isfinite(initial_stop_atr)
+        or initial_stop_atr <= 0.0
+    ):
+        raise F01CanonicalTranslationError(
+            "initial_stop_atr must be positive and finite."
+        )
+
+    if atr_days <= 0:
+        raise F01CanonicalTranslationError(
+            "atr_days must be positive."
+        )
+
+    signal_symbol_column = _resolve_column(
+        entry_signal_frame,
+        SYMBOL_ALIASES,
+        field_name="entry signal symbol",
+    )
+
+    signal_time_column = _resolve_column(
+        entry_signal_frame,
+        SNAPSHOT_TIME_ALIASES,
+        field_name="entry signal time",
+    )
+
+    if (
+        signal_symbol_column is None
+        or signal_time_column is None
+    ):
+        raise F01CanonicalTranslationError(
+            "Entry signal frame mapping is incomplete."
+        )
+
+    atr_column = _resolve_entry_atr_column(
+        entry_signal_frame,
+        atr_days=atr_days,
+    )
+
+    signal_symbols = (
+        entry_signal_frame[
+            signal_symbol_column
+        ]
+        .astype(str)
+        .str.strip()
+    )
+
+    signal_times = _timestamp_series(
+        entry_signal_frame,
+        signal_time_column,
+        field_name="entry signal time",
+    )
+
+    signal_atr = _numeric_series(
+        entry_signal_frame,
+        atr_column,
+        field_name="entry signal ATR",
+    )
+
+    signals = pd.DataFrame(
+        {
+            "_signal_symbol": signal_symbols,
+            "_signal_entry_time": signal_times,
+            "_entry_atr": signal_atr,
+        }
+    )
+
+    grouped = signals.groupby(
+        [
+            "_signal_symbol",
+            "_signal_entry_time",
+        ],
+        sort=False,
+    )["_entry_atr"]
+
+    spread = (
+        grouped.max()
+        - grouped.min()
+    )
+
+    if (
+        spread > 1e-12
+    ).any():
+        raise F01CanonicalTranslationError(
+            "Entry signal frame contains conflicting ATR "
+            "values for the same symbol and timestamp."
+        )
+
+    signals = (
+        signals.sort_values(
+            [
+                "_signal_entry_time",
+                "_signal_symbol",
+            ]
+        )
+        .drop_duplicates(
+            subset=[
+                "_signal_symbol",
+                "_signal_entry_time",
+            ],
+            keep="last",
+        )
+        .reset_index(drop=True)
+    )
+
+    trades = pd.DataFrame(
+        {
+            "_row_order": range(
+                len(symbols)
+            ),
+            "_signal_symbol": (
+                symbols.astype(str)
+                .str.strip()
+                .to_numpy()
+            ),
+            "_signal_entry_time": (
+                entry_times.to_numpy()
+            ),
+            "_entry_price": (
+                entry_prices.to_numpy(
+                    dtype=float
+                )
+            ),
+            "_net_pnl": (
+                net_pnl.to_numpy(
+                    dtype=float
+                )
+            ),
+        }
+    )
+
+    merged = trades.merge(
+        signals,
+        on=[
+            "_signal_symbol",
+            "_signal_entry_time",
+        ],
+        how="left",
+        validate="many_to_one",
+    )
+
+    merged = merged.sort_values(
+        "_row_order"
+    ).reset_index(drop=True)
+
+    if merged["_entry_atr"].isna().any():
+        missing = merged.loc[
+            merged["_entry_atr"].isna(),
+            [
+                "_signal_symbol",
+                "_signal_entry_time",
+            ],
+        ]
+
+        raise F01CanonicalTranslationError(
+            "Could not match entry ATR for raw F01 trades: "
+            f"{missing.to_dict(orient='records')[:5]}."
+        )
+
+    if (
+        merged["_entry_price"] <= 0.0
+    ).any():
+        raise F01CanonicalTranslationError(
+            "Raw F01 entry prices must be positive."
+        )
+
+    initial_risk_fraction = (
+        initial_stop_atr
+        * merged["_entry_atr"]
+        / merged["_entry_price"]
+    )
+
+    if (
+        initial_risk_fraction <= 0.0
+    ).any():
+        raise F01CanonicalTranslationError(
+            "Derived F01 initial risk must be positive."
+        )
+
+    r_multiple = (
+        merged["_net_pnl"]
+        / initial_risk_fraction
+    )
+
+    if not bool(
+        np.isfinite(
+            r_multiple.to_numpy(
+                dtype=float
+            )
+        ).all()
+    ):
+        raise F01CanonicalTranslationError(
+            "Derived F01 R-multiple contains non-finite values."
+        )
+
+    return pd.Series(
+        r_multiple.to_numpy(
+            dtype=float
+        ),
+        index=symbols.index,
+        dtype="float64",
+    )
+
+
 def _empty_canonical_trade_frame() -> pd.DataFrame:
     return pd.DataFrame(
         {
@@ -265,6 +594,9 @@ def canonicalize_f01_trade_records(
     *,
     configuration_id: str,
     fold: AmsV2FoldDefinition,
+    entry_signal_frame: pd.DataFrame | None = None,
+    initial_stop_atr: float | None = None,
+    atr_days: int | None = None,
 ) -> pd.DataFrame:
     if not configuration_id.strip():
         raise F01CanonicalTranslationError(
@@ -305,6 +637,7 @@ def canonicalize_f01_trade_records(
         raw,
         GROSS_PNL_ALIASES,
         field_name="base_price_gross_pnl",
+        required=False,
     )
 
     net_pnl_column = _resolve_column(
@@ -317,6 +650,7 @@ def canonicalize_f01_trade_records(
         raw,
         R_MULTIPLE_ALIASES,
         field_name="r_multiple",
+        required=False,
     )
 
     cost_column = _resolve_column(
@@ -333,13 +667,25 @@ def canonicalize_f01_trade_records(
         required=False,
     )
 
+    entry_price_column = _resolve_column(
+        raw,
+        ENTRY_PRICE_ALIASES,
+        field_name="entry_price",
+        required=False,
+    )
+
+    exit_price_column = _resolve_column(
+        raw,
+        EXIT_PRICE_ALIASES,
+        field_name="exit_price",
+        required=False,
+    )
+
     if (
         symbol_column is None
         or entry_time_column is None
         or exit_time_column is None
-        or gross_pnl_column is None
         or net_pnl_column is None
-        or r_multiple_column is None
     ):
         raise F01CanonicalTranslationError(
             "Required F01 trade mapping is incomplete."
@@ -373,11 +719,56 @@ def canonicalize_f01_trade_records(
         field_name="exit_time",
     )
 
-    gross_pnl = _numeric_series(
-        raw,
-        gross_pnl_column,
-        field_name="base_price_gross_pnl",
-    )
+    entry_price: pd.Series | None = None
+
+    if entry_price_column is not None:
+        entry_price = _numeric_series(
+            raw,
+            entry_price_column,
+            field_name="entry_price",
+        )
+
+        if (
+            entry_price <= 0.0
+        ).any():
+            raise F01CanonicalTranslationError(
+                "Raw F01 entry prices must be positive."
+            )
+
+    if gross_pnl_column is None:
+        if (
+            entry_price is None
+            or exit_price_column is None
+        ):
+            raise F01CanonicalTranslationError(
+                "Raw artifact must provide gross PnL or both "
+                "entry_price and exit_price."
+            )
+
+        exit_price = _numeric_series(
+            raw,
+            exit_price_column,
+            field_name="exit_price",
+        )
+
+        if (
+            exit_price <= 0.0
+        ).any():
+            raise F01CanonicalTranslationError(
+                "Raw F01 exit prices must be positive."
+            )
+
+        gross_pnl = (
+            exit_price
+            / entry_price
+            - 1.0
+        ).astype("float64")
+    else:
+        gross_pnl = _numeric_series(
+            raw,
+            gross_pnl_column,
+            field_name="base_price_gross_pnl",
+        )
 
     net_pnl = _numeric_series(
         raw,
@@ -385,11 +776,36 @@ def canonicalize_f01_trade_records(
         field_name="net_pnl",
     )
 
-    r_multiple = _numeric_series(
-        raw,
-        r_multiple_column,
-        field_name="r_multiple",
-    )
+    if r_multiple_column is None:
+        if (
+            entry_signal_frame is None
+            or initial_stop_atr is None
+            or atr_days is None
+            or entry_price is None
+        ):
+            raise F01CanonicalTranslationError(
+                "Raw artifact does not provide r_multiple; "
+                "entry signals, initial_stop_atr, atr_days, "
+                "and entry_price are required for derivation."
+            )
+
+        r_multiple = (
+            _derive_r_multiple_from_entry_signals(
+                entry_signal_frame=entry_signal_frame,
+                symbols=symbol,
+                entry_times=entry_time,
+                entry_prices=entry_price,
+                net_pnl=net_pnl,
+                initial_stop_atr=initial_stop_atr,
+                atr_days=atr_days,
+            )
+        )
+    else:
+        r_multiple = _numeric_series(
+            raw,
+            r_multiple_column,
+            field_name="r_multiple",
+        )
 
     if cost_column is None:
         transaction_cost = (
@@ -692,6 +1108,9 @@ def build_f01_canonical_artifacts(
     configuration_id: str,
     fold: AmsV2FoldDefinition,
     transaction_cost_fraction: float,
+    entry_signal_frame: pd.DataFrame | None = None,
+    initial_stop_atr: float | None = None,
+    atr_days: int | None = None,
 ) -> F01CanonicalArtifacts:
     canonical_trades = (
         canonicalize_f01_trade_records(
@@ -700,6 +1119,9 @@ def build_f01_canonical_artifacts(
                 configuration_id
             ),
             fold=fold,
+            entry_signal_frame=entry_signal_frame,
+            initial_stop_atr=initial_stop_atr,
+            atr_days=atr_days,
         )
     )
 

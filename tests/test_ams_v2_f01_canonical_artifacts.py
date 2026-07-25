@@ -346,3 +346,108 @@ def test_empty_trade_frame_is_supported() -> None:
         "r_multiple",
         "transaction_cost",
     ]
+
+def test_real_breakout_trade_schema_is_canonicalized() -> None:
+    raw = pd.DataFrame(
+        {
+            "symbol": [
+                "BTC/USDT",
+            ],
+            "entry_signal_time": [
+                datetime(
+                    2022,
+                    2,
+                    1,
+                    tzinfo=UTC,
+                ),
+            ],
+            "exit_signal_time": [
+                datetime(
+                    2022,
+                    2,
+                    10,
+                    tzinfo=UTC,
+                ),
+            ],
+            "entry_price": [
+                100.0,
+            ],
+            "exit_price": [
+                120.0,
+            ],
+            "net_trade_return_after_round_trip_cost": [
+                0.196,
+            ],
+            "holding_days": [
+                9,
+            ],
+            "exit_reason": [
+                "TRAILING_STOP",
+            ],
+        }
+    )
+
+    entry_signals = pd.DataFrame(
+        {
+            "snapshot_time": [
+                datetime(
+                    2022,
+                    2,
+                    1,
+                    tzinfo=UTC,
+                ),
+            ],
+            "symbol": [
+                "BTC/USDT",
+            ],
+            "atr_14": [
+                4.0,
+            ],
+        }
+    )
+
+    canonical = canonicalize_f01_trade_records(
+        raw,
+        configuration_id="AMS-V2-F01-C02",
+        fold=fold(),
+        entry_signal_frame=entry_signals,
+        initial_stop_atr=2.5,
+        atr_days=14,
+    )
+
+    assert canonical[
+        "base_price_gross_pnl"
+    ].iloc[0] == pytest.approx(
+        0.20
+    )
+
+    assert canonical[
+        "net_pnl"
+    ].iloc[0] == pytest.approx(
+        0.196
+    )
+
+    assert canonical[
+        "transaction_cost"
+    ].iloc[0] == pytest.approx(
+        0.004
+    )
+
+    assert canonical[
+        "r_multiple"
+    ].iloc[0] == pytest.approx(
+        1.96
+    )
+
+    assert canonical[
+        "entry_time"
+    ].iloc[0] == pd.Timestamp(
+        "2022-02-01T00:00:00Z"
+    )
+
+    assert canonical[
+        "exit_time"
+    ].iloc[0] == pd.Timestamp(
+        "2022-02-10T00:00:00Z"
+    )
+

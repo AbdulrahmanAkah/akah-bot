@@ -310,6 +310,21 @@ def run_f01_fold_execution_harness(
                 baseline_policy
                 .transaction_cost_fraction
             ),
+            entry_signal_frame=(
+                baseline_engine
+                .composite_signals
+            ),
+            initial_stop_atr=float(
+                baseline_policy
+                .initial_stop_atr
+            ),
+            atr_days=int(
+                getattr(
+                    baseline_policy,
+                    "atr_days",
+                    14,
+                )
+            ),
         )
     )
 
@@ -326,6 +341,21 @@ def run_f01_fold_execution_harness(
             transaction_cost_fraction=(
                 stress_policy
                 .transaction_cost_fraction
+            ),
+            entry_signal_frame=(
+                stress_engine
+                .composite_signals
+            ),
+            initial_stop_atr=float(
+                stress_policy
+                .initial_stop_atr
+            ),
+            atr_days=int(
+                getattr(
+                    stress_policy,
+                    "atr_days",
+                    14,
+                )
             ),
         )
     )

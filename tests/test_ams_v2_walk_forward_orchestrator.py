@@ -4,7 +4,6 @@ import copy
 import json
 from datetime import UTC, datetime
 from pathlib import Path
-from typing import Any
 
 import pytest
 
@@ -34,10 +33,136 @@ LEDGER_PATH = (
 )
 
 
-def pristine_ledger() -> dict[str, Any]:
-    return load_json_object(
+def pristine_ledger() -> dict[str, object]:
+    import copy as copy_module
+
+    from spotbot.research.ams_v2_walk_forward_orchestrator import (
+        validate_ams_v2_experiment_ledger,
+    )
+
+    ledger = load_json_object(
         LEDGER_PATH
     )
+
+    configurations = ledger.get(
+        "alpha_configurations"
+    )
+
+    if not isinstance(
+        configurations,
+        list,
+    ):
+        raise RuntimeError(
+            "Test ledger has no configuration list."
+        )
+
+    pending_template = next(
+        (
+            configuration
+            for configuration in configurations
+            if (
+                isinstance(configuration, dict)
+                and configuration.get("trial_status")
+                == "REGISTERED_NOT_EXECUTED"
+            )
+        ),
+        None,
+    )
+
+    if not isinstance(
+        pending_template,
+        dict,
+    ):
+        raise RuntimeError(
+            "Test ledger has no pending configuration template."
+        )
+
+    all_configuration_keys = {
+        str(key)
+        for configuration in configurations
+        if isinstance(configuration, dict)
+        for key in configuration
+    }
+
+    operational_keys = {
+        key
+        for key in all_configuration_keys
+        if (
+            key == "trial_status"
+            or key.endswith("_result")
+            or key.endswith("_results")
+            or "execution" in key.casefold()
+            or "failure" in key.casefold()
+            or "invalidation" in key.casefold()
+            or "terminal" in key.casefold()
+        )
+    }
+
+    for configuration in configurations:
+        if not isinstance(
+            configuration,
+            dict,
+        ):
+            raise RuntimeError(
+                "Test configuration is not an object."
+            )
+
+        for key in operational_keys:
+            if key in pending_template:
+                configuration[key] = (
+                    copy_module.deepcopy(
+                        pending_template[key]
+                    )
+                )
+            else:
+                configuration.pop(
+                    key,
+                    None,
+                )
+
+        configuration["trial_status"] = (
+            "REGISTERED_NOT_EXECUTED"
+        )
+
+    accounting = ledger.get(
+        "trial_accounting"
+    )
+
+    if not isinstance(
+        accounting,
+        dict,
+    ):
+        raise RuntimeError(
+            "Test ledger has no trial accounting."
+        )
+
+    accounting["trials_executed"] = 0
+    accounting["trials_invalidated"] = 0
+    accounting["remaining_authorized_trials"] = 100
+    accounting["test_2025_accessed"] = False
+    accounting["holdout_2026_accessed"] = False
+
+    if "family_decisions" in ledger:
+        ledger["family_decisions"] = []
+
+    if "ensemble_result" in ledger:
+        ledger["ensemble_result"] = None
+
+    for key in (
+        "trial_executions",
+        "completed_trials",
+        "invalidated_trials",
+    ):
+        if key in ledger:
+            ledger[key] = []
+
+    validate_ams_v2_experiment_ledger(
+        ledger
+    )
+
+    return ledger
+
+
 
 
 def passing_metrics() -> tuple[
