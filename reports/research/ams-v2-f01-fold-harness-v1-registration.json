@@ -1,0 +1,93 @@
+{
+  "counts_as_registered_trial": false,
+  "execution_barrier": {
+    "real_data_preflight_complete": false,
+    "trial_executable": false,
+    "walk_forward_execution_allowed": false
+  },
+  "execution_contract": {
+    "baseline_engine_rerun": true,
+    "canonical_portfolio_translation": true,
+    "canonical_trade_translation": true,
+    "portfolio_snapshot_identity_required": true,
+    "standardized_fold_metrics": true,
+    "stress_engine_rerun_at_0_004": true,
+    "trade_identity_required": true
+  },
+  "harness_status": "HARNESS_REGISTERED_NOT_TRIAL_EXECUTABLE",
+  "harness_version": "AMS_V2_F01_FOLD_EXECUTION_HARNESS_V1",
+  "locked_periods": {
+    "holdout_2026_accessed": false,
+    "test_2025_accessed": false
+  },
+  "next_action": "RUN_F01_REAL_DATA_PREFLIGHT_ON_WF_2022_WITHOUT_MUTATING_EXPERIMENT_LEDGER",
+  "registered_at": "2026-07-25T16:55:49.800465Z",
+  "registered_trials_consumed": 0,
+  "schema_version": "ams-v2-f01-fold-harness-v1-registration-v1",
+  "source_commit": "dfde51a7c9192693037dc106b19dca2f98edd293",
+  "status": "REGISTERED",
+  "synthetic_probe": {
+    "baseline_canonical": {
+      "canonical_portfolio_rows": 3,
+      "canonical_trade_rows": 2
+    },
+    "baseline_engine": {
+      "daily_rows": 3,
+      "signal_rows": 1,
+      "trade_rows": 2,
+      "weight_rows": 1
+    },
+    "baseline_transaction_cost_fraction": 0.002,
+    "completed_fold_metrics": {
+      "base_price_gross_pnl": 0.1,
+      "evaluation_end_exclusive": "2023-01-01T00:00:00+00:00",
+      "evaluation_start": "2022-01-01T00:00:00+00:00",
+      "executed_trade_count": 2,
+      "fold_name": "WF_2022",
+      "gross_loss_abs": 0.10200000000000001,
+      "gross_profit": 0.198,
+      "maximum_drawdown": 0.09999999999999998,
+      "net_pnl": 0.096,
+      "stress_cost_total_return_0_004": 0.10000000000000009,
+      "total_r_multiple": 1.0,
+      "total_return": 0.19999999999999996
+    },
+    "configuration_id": "AMS-V2-F01-C01",
+    "family_id": "AMS-V2-F01",
+    "fold_name": "WF_2022",
+    "stress_canonical": {
+      "canonical_portfolio_rows": 3,
+      "canonical_trade_rows": 2
+    },
+    "stress_engine": {
+      "daily_rows": 3,
+      "signal_rows": 1,
+      "trade_rows": 2,
+      "weight_rows": 1
+    },
+    "stress_transaction_cost_fraction": 0.004
+  },
+  "trial_accounting": {
+    "after": {
+      "alpha_configurations_registered": 96,
+      "holdout_2026_accessed": false,
+      "portfolio_variants_registered": 4,
+      "remaining_authorized_trials": 100,
+      "test_2025_accessed": false,
+      "total_unique_variants_registered": 100,
+      "trials_executed": 0,
+      "trials_invalidated": 0
+    },
+    "before": {
+      "alpha_configurations_registered": 96,
+      "holdout_2026_accessed": false,
+      "portfolio_variants_registered": 4,
+      "remaining_authorized_trials": 100,
+      "test_2025_accessed": false,
+      "total_unique_variants_registered": 100,
+      "trials_executed": 0,
+      "trials_invalidated": 0
+    },
+    "changed": false
+  }
+}
