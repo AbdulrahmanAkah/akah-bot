@@ -107,8 +107,8 @@ def test_third_simultaneous_candidate_in_same_cluster_is_rejected(
 ) -> None:
     monkeypatch.setattr(
         ams_v5_native_engine,
-        "correlation_clusters",
-        lambda _frame, _as_of: {"AAA": "ONE", "BBB": "ONE", "CCC": "ONE"},
+        "_clusters_from_daily_close",
+        lambda _daily, _symbols, _as_of: {"AAA": "ONE", "BBB": "ONE", "CCC": "ONE"},
     )
     frame = panel(
         *(

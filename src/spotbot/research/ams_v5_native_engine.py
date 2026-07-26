@@ -532,24 +532,30 @@ def correlation_clusters(
 ) -> dict[str, str]:
     """Return deterministic causal connected components from daily returns."""
     as_of = pd.Timestamp(as_of)
-    eligible = frame.loc[
-        (pd.to_datetime(frame["bar_close_time"], utc=True) < as_of)
-        & (
-            pd.to_datetime(frame["bar_close_time"], utc=True)
-            >= as_of - pd.Timedelta(days=window_days)
-        )
-    ].copy()
     symbols = sorted(str(value) for value in frame["symbol"].unique())
-    if eligible.empty:
-        return {symbol: symbol for symbol in symbols}
-    daily = (
-        eligible.set_index("bar_close_time")
+    daily_close = (
+        frame.set_index("bar_close_time")
         .groupby("symbol")["close"]
         .resample("1D")
         .last()
         .unstack(0)
-        .pct_change(fill_method=None)
     )
+    return _clusters_from_daily_close(daily_close, symbols, as_of, window_days)
+
+
+def _clusters_from_daily_close(
+    daily_close: pd.DataFrame,
+    symbols: Sequence[str],
+    as_of: pd.Timestamp,
+    window_days: int = CLUSTER_LOOKBACK_DAYS,
+) -> dict[str, str]:
+    eligible = daily_close.loc[
+        (daily_close.index < as_of)
+        & (daily_close.index >= as_of - pd.Timedelta(days=window_days))
+    ]
+    if eligible.empty:
+        return {symbol: symbol for symbol in symbols}
+    daily = eligible.pct_change(fill_method=None)
     parent = {symbol: symbol for symbol in symbols}
 
     def find(symbol: str) -> str:
@@ -941,13 +947,14 @@ def _reject(candidate: V5SetupCandidate, counters: V5RejectionCounters, reason: 
 
 
 def _cluster_snapshot(
-    frame: pd.DataFrame,
+    daily_close: pd.DataFrame,
+    symbols: Sequence[str],
     as_of: pd.Timestamp,
     cache: dict[pd.Timestamp, dict[str, str]],
 ) -> tuple[dict[str, str], pd.Timestamp, pd.Timestamp]:
     day = as_of.normalize()
     if day not in cache:
-        cache[day] = correlation_clusters(frame, day)
+        cache[day] = _clusters_from_daily_close(daily_close, symbols, day)
     return cache[day], day - pd.Timedelta(days=CLUSTER_LOOKBACK_DAYS), day
 
 
@@ -1021,6 +1028,14 @@ def simulate_native_fold(
     position_sequences: dict[str, int] = {}
     cluster_cache: dict[pd.Timestamp, dict[str, str]] = {}
     last_prices: dict[str, float] = {}
+    symbols = sorted(str(value) for value in frame["symbol"].unique())
+    daily_close = (
+        frame.set_index("bar_close_time")
+        .groupby("symbol")["close"]
+        .resample("1D")
+        .last()
+        .unstack(0)
+    )
 
     grouped = frame.groupby("bar_open_time", sort=True)
     for raw_bar_open, group in grouped:
@@ -1088,7 +1103,12 @@ def simulate_native_fold(
             if scheduled.action != "ADD_ON" and distance / atr > maximum_atr:
                 _reject(candidate, rejections, "GAP_OVEREXTENSION")
                 continue
-            clusters, window_start, window_end = _cluster_snapshot(frame, timestamp, cluster_cache)
+            clusters, window_start, window_end = _cluster_snapshot(
+                daily_close,
+                symbols,
+                timestamp,
+                cluster_cache,
+            )
             cluster_id = clusters.get(scheduled.symbol, scheduled.symbol)
             cluster_count = sum(
                 clusters.get(symbol, symbol) == cluster_id for symbol in positions
