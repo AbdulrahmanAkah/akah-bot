@@ -1,0 +1,1048 @@
+{
+  "all_v4_trial_average": {
+    "candidates_per_executed_trade": 56.24513750964794,
+    "completed_trades": 226.5,
+    "mean_exposure": 0.34821738985785694,
+    "mean_open_positions": 0.6508647242946218
+  },
+  "answers": {
+    "least_risky_activity_change": "Add causal pullback-reclaim and reacceleration families while retaining score-based ranking, next-open execution, and portfolio constraints.",
+    "missing_entry_types": "V4 omitted shallow/deep pullback reclaim, failed-breakdown recovery, and reacceleration as independent families.",
+    "overextension_filter": "Present in raw breakout construction but not the main V4 funnel blocker.",
+    "portfolio_constraints": "Secondary; average open-position use was below capacity.",
+    "why_78_trades_per_year": "Primarily setup scarcity after V4's binary breakout/pullback definition and conviction threshold, not a broad daily or 8H hard gate."
+  },
+  "holdout_2026_accessed": false,
+  "limitations": [
+    "V4 artifacts persist executed trades and aggregate rejections, not every rejected setup path.",
+    [
+      "Requested rejected-signal MAE/MFE and post-signal opportunity analyses are not recoverable without a separate V4 decision-event log; unavailable values are not fabricated."
+    ]
+  ],
+  "schema_version": "ams-v5-v4-activity-bottleneck-diagnosis-v1",
+  "selected_trials": [
+    {
+      "configuration_id": "AMS-V4-A04",
+      "executed_trade_summary": {
+        "accepted_entries": 253,
+        "candidates_per_executed_trade": 54.16205533596838,
+        "completed_trades": 253,
+        "mean_exposure": 0.3378251033427319,
+        "mean_maximum_heat": 0.029749022321768254,
+        "mean_open_positions": 0.6401618550956076,
+        "rejection_reasons_from_simulator": {
+          "availability": 0,
+          "cash": 0,
+          "cluster": 2552,
+          "drawdown": 55,
+          "heat": 79,
+          "position_limit": 289,
+          "reentry_limit": 8947,
+          "score": 219,
+          "stop": 574
+        },
+        "trades_by_fold": {
+          "AMS-V4-WF01": 77,
+          "AMS-V4-WF02": 79,
+          "AMS-V4-WF03": 97
+        },
+        "trades_by_symbol": {
+          "AAVE": 12,
+          "ADA": 8,
+          "AVAX": 9,
+          "BNB": 7,
+          "BTC": 7,
+          "DEXE": 7,
+          "DOGE": 12,
+          "DOT": 11,
+          "ENA": 6,
+          "ETH": 8,
+          "GRAM": 4,
+          "HYPE": 5,
+          "LINK": 12,
+          "LTC": 8,
+          "NEAR": 17,
+          "ONDO": 2,
+          "PEPE": 5,
+          "SEI": 8,
+          "SHIB": 7,
+          "SNX": 10,
+          "SOL": 7,
+          "SUI": 13,
+          "SYN": 9,
+          "TAO": 4,
+          "TRX": 11,
+          "UNI": 9,
+          "XLM": 8,
+          "XMR": 7,
+          "XRP": 14,
+          "ZEC": 6
+        }
+      },
+      "portfolio_profile_id": "AMS-V4-PORTFOLIO-P01",
+      "setup_funnel": {
+        "all_years": {
+          "after_conviction_threshold": 17618,
+          "candidate_score_mean": 80.00935434652804,
+          "candidate_score_median": 80.17373244527836,
+          "hard_8h_gate_rejections": 0,
+          "hard_d1_gate_rejections": 0,
+          "portfolio_constraints_recorded_only_in_simulator": true,
+          "raw_setup_candidates": 17712,
+          "rejected_conviction_threshold": 94,
+          "rejected_unavailable": 0,
+          "soft_fibonacci_alone_rejections": 0
+        },
+        "by_year": {
+          "2021": {
+            "after_conviction_threshold": 3989,
+            "raw_setup_candidates": 4009,
+            "rejected_conviction_threshold": 20,
+            "rejected_unavailable": 0,
+            "scores_accepted": {
+              "25%": 75.06899777886416,
+              "50%": 81.97798918710278,
+              "75%": 88.80567086248858,
+              "count": 3989.0,
+              "max": 100.0,
+              "mean": 81.84729993376952,
+              "min": 55.12676877683769,
+              "std": 9.632062937163218
+            },
+            "scores_rejected": {
+              "25%": 51.847121011159274,
+              "50%": 53.02841813337291,
+              "75%": 53.97845913715072,
+              "count": 6.0,
+              "max": 54.95166413296247,
+              "mean": 52.68227152068826,
+              "min": 49.33663394892326,
+              "std": 2.018649152553177
+            },
+            "simultaneous_signal_bars": 794,
+            "within_10_points_below": 6,
+            "within_1_point_below": 2,
+            "within_3_points_below": 4,
+            "within_5_points_below": 5
+          },
+          "2022": {
+            "after_conviction_threshold": 2960,
+            "raw_setup_candidates": 3001,
+            "rejected_conviction_threshold": 41,
+            "rejected_unavailable": 0,
+            "scores_accepted": {
+              "25%": 66.47632523292464,
+              "50%": 72.47777741314903,
+              "75%": 79.36374868974065,
+              "count": 2960.0,
+              "max": 100.0,
+              "mean": 73.0376741844371,
+              "min": 55.011250580271756,
+              "std": 8.863982019205356
+            },
+            "scores_rejected": {
+              "25%": 51.86971292155232,
+              "50%": 53.30622859707411,
+              "75%": 53.85401149454015,
+              "count": 41.0,
+              "max": 54.86390625368218,
+              "mean": 52.68151284347125,
+              "min": 47.456803701906594,
+              "std": 1.8333403622823747
+            },
+            "simultaneous_signal_bars": 552,
+            "within_10_points_below": 41,
+            "within_1_point_below": 9,
+            "within_3_points_below": 29,
+            "within_5_points_below": 36
+          },
+          "2023": {
+            "after_conviction_threshold": 5150,
+            "raw_setup_candidates": 5164,
+            "rejected_conviction_threshold": 14,
+            "rejected_unavailable": 0,
+            "scores_accepted": {
+              "25%": 74.419570068579,
+              "50%": 81.48347606778427,
+              "75%": 87.7831640599078,
+              "count": 5150.0,
+              "max": 100.0,
+              "mean": 81.22693937938585,
+              "min": 55.0607662327877,
+              "std": 9.566937819461385
+            },
+            "scores_rejected": {
+              "25%": 52.66783807603814,
+              "50%": 53.07972190945444,
+              "75%": 54.45574509827918,
+              "count": 9.0,
+              "max": 54.93124225825675,
+              "mean": 52.921998007803765,
+              "min": 49.737483791782324,
+              "std": 1.8644715755357217
+            },
+            "simultaneous_signal_bars": 911,
+            "within_10_points_below": 9,
+            "within_1_point_below": 3,
+            "within_3_points_below": 7,
+            "within_5_points_below": 8
+          },
+          "2024": {
+            "after_conviction_threshold": 5519,
+            "raw_setup_candidates": 5538,
+            "rejected_conviction_threshold": 19,
+            "rejected_unavailable": 0,
+            "scores_accepted": {
+              "25%": 74.89804848593008,
+              "50%": 81.77596129365585,
+              "75%": 87.94235879691547,
+              "count": 5519.0,
+              "max": 100.0,
+              "mean": 81.62465303454717,
+              "min": 55.30558422689705,
+              "std": 9.256031391711042
+            },
+            "scores_rejected": {
+              "25%": 52.428656793642624,
+              "50%": 53.19553248428443,
+              "75%": 54.02161258651466,
+              "count": 13.0,
+              "max": 54.860042531813164,
+              "mean": 52.88644354010808,
+              "min": 48.60972827165273,
+              "std": 1.695418497371782
+            },
+            "simultaneous_signal_bars": 1009,
+            "within_10_points_below": 13,
+            "within_1_point_below": 4,
+            "within_3_points_below": 11,
+            "within_5_points_below": 12
+          }
+        },
+        "entry_family": "PULLBACK_CONTINUATION",
+        "fibonacci_mode": "SOFT_FIBONACCI_SCORE",
+        "score_threshold": 55
+      },
+      "trial_id": "AMS-V4-T07"
+    },
+    {
+      "configuration_id": "AMS-V4-A06",
+      "executed_trade_summary": {
+        "accepted_entries": 234,
+        "candidates_per_executed_trade": 82.45726495726495,
+        "completed_trades": 234,
+        "mean_exposure": 0.3358272824812237,
+        "mean_maximum_heat": 0.03108890554575382,
+        "mean_open_positions": 0.650738578236894,
+        "rejection_reasons_from_simulator": {
+          "availability": 0,
+          "cash": 0,
+          "cluster": 2834,
+          "drawdown": 86,
+          "heat": 69,
+          "position_limit": 339,
+          "reentry_limit": 10343,
+          "score": 300,
+          "stop": 4353
+        },
+        "trades_by_fold": {
+          "AMS-V4-WF01": 66,
+          "AMS-V4-WF02": 75,
+          "AMS-V4-WF03": 93
+        },
+        "trades_by_symbol": {
+          "AAVE": 7,
+          "ADA": 7,
+          "AVAX": 10,
+          "BNB": 7,
+          "BTC": 7,
+          "DEXE": 7,
+          "DOGE": 12,
+          "DOT": 8,
+          "ENA": 5,
+          "ETH": 8,
+          "GRAM": 6,
+          "HYPE": 5,
+          "LINK": 8,
+          "LTC": 9,
+          "NEAR": 14,
+          "ONDO": 4,
+          "PEPE": 6,
+          "SEI": 7,
+          "SHIB": 6,
+          "SNX": 8,
+          "SOL": 6,
+          "SUI": 11,
+          "SYN": 10,
+          "TAO": 3,
+          "TRX": 11,
+          "UNI": 7,
+          "XLM": 9,
+          "XMR": 7,
+          "XRP": 13,
+          "ZEC": 6
+        }
+      },
+      "portfolio_profile_id": "AMS-V4-PORTFOLIO-P01",
+      "setup_funnel": {
+        "all_years": {
+          "after_conviction_threshold": 24813,
+          "candidate_score_mean": 81.80387512110748,
+          "candidate_score_median": 82.04586129839797,
+          "hard_8h_gate_rejections": 0,
+          "hard_d1_gate_rejections": 0,
+          "portfolio_constraints_recorded_only_in_simulator": true,
+          "raw_setup_candidates": 24935,
+          "rejected_conviction_threshold": 122,
+          "rejected_unavailable": 0,
+          "soft_fibonacci_alone_rejections": 0
+        },
+        "by_year": {
+          "2021": {
+            "after_conviction_threshold": 5619,
+            "raw_setup_candidates": 5640,
+            "rejected_conviction_threshold": 21,
+            "rejected_unavailable": 0,
+            "scores_accepted": {
+              "25%": 76.80065943698133,
+              "50%": 84.37540429505654,
+              "75%": 92.0,
+              "count": 5619.0,
+              "max": 100.0,
+              "mean": 84.05581425414391,
+              "min": 55.12676877683769,
+              "std": 10.291145924206546
+            },
+            "scores_rejected": {
+              "25%": 51.84345501956395,
+              "50%": 52.79641322290585,
+              "75%": 53.73911377271381,
+              "count": 7.0,
+              "max": 54.95166413296247,
+              "mean": 52.60712126990672,
+              "min": 49.33663394892326,
+              "std": 1.853461605285477
+            },
+            "simultaneous_signal_bars": 1039,
+            "within_10_points_below": 7,
+            "within_1_point_below": 2,
+            "within_3_points_below": 5,
+            "within_5_points_below": 6
+          },
+          "2022": {
+            "after_conviction_threshold": 4395,
+            "raw_setup_candidates": 4441,
+            "rejected_conviction_threshold": 46,
+            "rejected_unavailable": 0,
+            "scores_accepted": {
+              "25%": 68.30148236124646,
+              "50%": 74.89715730307299,
+              "75%": 82.11765943008834,
+              "count": 4395.0,
+              "max": 100.0,
+              "mean": 75.06733256835325,
+              "min": 55.011250580271756,
+              "std": 9.018305884035428
+            },
+            "scores_rejected": {
+              "25%": 51.441144483926514,
+              "50%": 53.21059093005155,
+              "75%": 53.837834656267084,
+              "count": 46.0,
+              "max": 54.86390625368218,
+              "mean": 52.55803095835666,
+              "min": 47.456803701906594,
+              "std": 1.8285893491827931
+            },
+            "simultaneous_signal_bars": 764,
+            "within_10_points_below": 46,
+            "within_1_point_below": 10,
+            "within_3_points_below": 30,
+            "within_5_points_below": 41
+          },
+          "2023": {
+            "after_conviction_threshold": 6912,
+            "raw_setup_candidates": 6935,
+            "rejected_conviction_threshold": 23,
+            "rejected_unavailable": 0,
+            "scores_accepted": {
+              "25%": 75.40216356119814,
+              "50%": 82.71557623946197,
+              "75%": 89.67740768234573,
+              "count": 6912.0,
+              "max": 100.0,
+              "mean": 82.52605638102922,
+              "min": 55.0607662327877,
+              "std": 10.127276400880838
+            },
+            "scores_rejected": {
+              "25%": 49.63335624336567,
+              "50%": 51.50413343932887,
+              "75%": 53.53716476670459,
+              "count": 18.0,
+              "max": 54.93124225825675,
+              "mean": 51.093803470150036,
+              "min": 44.22995589473351,
+              "std": 3.130057437056304
+            },
+            "simultaneous_signal_bars": 1105,
+            "within_10_points_below": 17,
+            "within_1_point_below": 4,
+            "within_3_points_below": 9,
+            "within_5_points_below": 11
+          },
+          "2024": {
+            "after_conviction_threshold": 7887,
+            "raw_setup_candidates": 7919,
+            "rejected_conviction_threshold": 32,
+            "rejected_unavailable": 0,
+            "scores_accepted": {
+              "25%": 76.58916451903707,
+              "50%": 83.80015068838081,
+              "75%": 91.0,
+              "count": 7887.0,
+              "max": 100.0,
+              "mean": 83.68453290769996,
+              "min": 55.19854706890112,
+              "std": 9.876144346833698
+            },
+            "scores_rejected": {
+              "25%": 51.699761156947545,
+              "50%": 52.91546351761023,
+              "75%": 53.94033710613074,
+              "count": 26.0,
+              "max": 54.8791620249413,
+              "mean": 52.244686565385024,
+              "min": 43.56644515850918,
+              "std": 2.4482019780703177
+            },
+            "simultaneous_signal_bars": 1296,
+            "within_10_points_below": 25,
+            "within_1_point_below": 6,
+            "within_3_points_below": 16,
+            "within_5_points_below": 23
+          }
+        },
+        "entry_family": "HYBRID",
+        "fibonacci_mode": "SOFT_FIBONACCI_SCORE",
+        "score_threshold": 55
+      },
+      "trial_id": "AMS-V4-T11"
+    },
+    {
+      "configuration_id": "AMS-V4-A06",
+      "executed_trade_summary": {
+        "accepted_entries": 234,
+        "candidates_per_executed_trade": 82.45726495726495,
+        "completed_trades": 234,
+        "mean_exposure": 0.3358272824812237,
+        "mean_maximum_heat": 0.0445478248479896,
+        "mean_open_positions": 0.650738578236894,
+        "rejection_reasons_from_simulator": {
+          "availability": 0,
+          "cash": 0,
+          "cluster": 3159,
+          "drawdown": 105,
+          "heat": 63,
+          "position_limit": 0,
+          "reentry_limit": 10338,
+          "score": 300,
+          "stop": 4353
+        },
+        "trades_by_fold": {
+          "AMS-V4-WF01": 66,
+          "AMS-V4-WF02": 75,
+          "AMS-V4-WF03": 93
+        },
+        "trades_by_symbol": {
+          "AAVE": 7,
+          "ADA": 7,
+          "AVAX": 10,
+          "BNB": 7,
+          "BTC": 7,
+          "DEXE": 7,
+          "DOGE": 12,
+          "DOT": 8,
+          "ENA": 5,
+          "ETH": 8,
+          "GRAM": 6,
+          "HYPE": 5,
+          "LINK": 8,
+          "LTC": 9,
+          "NEAR": 14,
+          "ONDO": 4,
+          "PEPE": 6,
+          "SEI": 7,
+          "SHIB": 6,
+          "SNX": 8,
+          "SOL": 6,
+          "SUI": 11,
+          "SYN": 10,
+          "TAO": 3,
+          "TRX": 11,
+          "UNI": 7,
+          "XLM": 9,
+          "XMR": 7,
+          "XRP": 13,
+          "ZEC": 6
+        }
+      },
+      "portfolio_profile_id": "AMS-V4-PORTFOLIO-P02",
+      "setup_funnel": {
+        "all_years": {
+          "after_conviction_threshold": 24813,
+          "candidate_score_mean": 81.80387512110748,
+          "candidate_score_median": 82.04586129839797,
+          "hard_8h_gate_rejections": 0,
+          "hard_d1_gate_rejections": 0,
+          "portfolio_constraints_recorded_only_in_simulator": true,
+          "raw_setup_candidates": 24935,
+          "rejected_conviction_threshold": 122,
+          "rejected_unavailable": 0,
+          "soft_fibonacci_alone_rejections": 0
+        },
+        "by_year": {
+          "2021": {
+            "after_conviction_threshold": 5619,
+            "raw_setup_candidates": 5640,
+            "rejected_conviction_threshold": 21,
+            "rejected_unavailable": 0,
+            "scores_accepted": {
+              "25%": 76.80065943698133,
+              "50%": 84.37540429505654,
+              "75%": 92.0,
+              "count": 5619.0,
+              "max": 100.0,
+              "mean": 84.05581425414391,
+              "min": 55.12676877683769,
+              "std": 10.291145924206546
+            },
+            "scores_rejected": {
+              "25%": 51.84345501956395,
+              "50%": 52.79641322290585,
+              "75%": 53.73911377271381,
+              "count": 7.0,
+              "max": 54.95166413296247,
+              "mean": 52.60712126990672,
+              "min": 49.33663394892326,
+              "std": 1.853461605285477
+            },
+            "simultaneous_signal_bars": 1039,
+            "within_10_points_below": 7,
+            "within_1_point_below": 2,
+            "within_3_points_below": 5,
+            "within_5_points_below": 6
+          },
+          "2022": {
+            "after_conviction_threshold": 4395,
+            "raw_setup_candidates": 4441,
+            "rejected_conviction_threshold": 46,
+            "rejected_unavailable": 0,
+            "scores_accepted": {
+              "25%": 68.30148236124646,
+              "50%": 74.89715730307299,
+              "75%": 82.11765943008834,
+              "count": 4395.0,
+              "max": 100.0,
+              "mean": 75.06733256835325,
+              "min": 55.011250580271756,
+              "std": 9.018305884035428
+            },
+            "scores_rejected": {
+              "25%": 51.441144483926514,
+              "50%": 53.21059093005155,
+              "75%": 53.837834656267084,
+              "count": 46.0,
+              "max": 54.86390625368218,
+              "mean": 52.55803095835666,
+              "min": 47.456803701906594,
+              "std": 1.8285893491827931
+            },
+            "simultaneous_signal_bars": 764,
+            "within_10_points_below": 46,
+            "within_1_point_below": 10,
+            "within_3_points_below": 30,
+            "within_5_points_below": 41
+          },
+          "2023": {
+            "after_conviction_threshold": 6912,
+            "raw_setup_candidates": 6935,
+            "rejected_conviction_threshold": 23,
+            "rejected_unavailable": 0,
+            "scores_accepted": {
+              "25%": 75.40216356119814,
+              "50%": 82.71557623946197,
+              "75%": 89.67740768234573,
+              "count": 6912.0,
+              "max": 100.0,
+              "mean": 82.52605638102922,
+              "min": 55.0607662327877,
+              "std": 10.127276400880838
+            },
+            "scores_rejected": {
+              "25%": 49.63335624336567,
+              "50%": 51.50413343932887,
+              "75%": 53.53716476670459,
+              "count": 18.0,
+              "max": 54.93124225825675,
+              "mean": 51.093803470150036,
+              "min": 44.22995589473351,
+              "std": 3.130057437056304
+            },
+            "simultaneous_signal_bars": 1105,
+            "within_10_points_below": 17,
+            "within_1_point_below": 4,
+            "within_3_points_below": 9,
+            "within_5_points_below": 11
+          },
+          "2024": {
+            "after_conviction_threshold": 7887,
+            "raw_setup_candidates": 7919,
+            "rejected_conviction_threshold": 32,
+            "rejected_unavailable": 0,
+            "scores_accepted": {
+              "25%": 76.58916451903707,
+              "50%": 83.80015068838081,
+              "75%": 91.0,
+              "count": 7887.0,
+              "max": 100.0,
+              "mean": 83.68453290769996,
+              "min": 55.19854706890112,
+              "std": 9.876144346833698
+            },
+            "scores_rejected": {
+              "25%": 51.699761156947545,
+              "50%": 52.91546351761023,
+              "75%": 53.94033710613074,
+              "count": 26.0,
+              "max": 54.8791620249413,
+              "mean": 52.244686565385024,
+              "min": 43.56644515850918,
+              "std": 2.4482019780703177
+            },
+            "simultaneous_signal_bars": 1296,
+            "within_10_points_below": 25,
+            "within_1_point_below": 6,
+            "within_3_points_below": 16,
+            "within_5_points_below": 23
+          }
+        },
+        "entry_family": "HYBRID",
+        "fibonacci_mode": "SOFT_FIBONACCI_SCORE",
+        "score_threshold": 55
+      },
+      "trial_id": "AMS-V4-T12"
+    },
+    {
+      "configuration_id": "AMS-V4-A12",
+      "executed_trade_summary": {
+        "accepted_entries": 234,
+        "candidates_per_executed_trade": 82.45726495726495,
+        "completed_trades": 234,
+        "mean_exposure": 0.3358272824812237,
+        "mean_maximum_heat": 0.031097196523822163,
+        "mean_open_positions": 0.650738578236894,
+        "rejection_reasons_from_simulator": {
+          "availability": 0,
+          "cash": 0,
+          "cluster": 2861,
+          "drawdown": 52,
+          "heat": 81,
+          "position_limit": 339,
+          "reentry_limit": 10350,
+          "score": 300,
+          "stop": 4353
+        },
+        "trades_by_fold": {
+          "AMS-V4-WF01": 66,
+          "AMS-V4-WF02": 75,
+          "AMS-V4-WF03": 93
+        },
+        "trades_by_symbol": {
+          "AAVE": 7,
+          "ADA": 7,
+          "AVAX": 10,
+          "BNB": 7,
+          "BTC": 7,
+          "DEXE": 7,
+          "DOGE": 12,
+          "DOT": 8,
+          "ENA": 5,
+          "ETH": 8,
+          "GRAM": 6,
+          "HYPE": 5,
+          "LINK": 8,
+          "LTC": 9,
+          "NEAR": 14,
+          "ONDO": 4,
+          "PEPE": 6,
+          "SEI": 7,
+          "SHIB": 6,
+          "SNX": 8,
+          "SOL": 6,
+          "SUI": 11,
+          "SYN": 10,
+          "TAO": 3,
+          "TRX": 11,
+          "UNI": 7,
+          "XLM": 9,
+          "XMR": 7,
+          "XRP": 13,
+          "ZEC": 6
+        }
+      },
+      "portfolio_profile_id": "AMS-V4-PORTFOLIO-P01",
+      "setup_funnel": {
+        "all_years": {
+          "after_conviction_threshold": 24813,
+          "candidate_score_mean": 81.80387512110748,
+          "candidate_score_median": 82.04586129839797,
+          "hard_8h_gate_rejections": 0,
+          "hard_d1_gate_rejections": 0,
+          "portfolio_constraints_recorded_only_in_simulator": true,
+          "raw_setup_candidates": 24935,
+          "rejected_conviction_threshold": 122,
+          "rejected_unavailable": 0,
+          "soft_fibonacci_alone_rejections": 0
+        },
+        "by_year": {
+          "2021": {
+            "after_conviction_threshold": 5619,
+            "raw_setup_candidates": 5640,
+            "rejected_conviction_threshold": 21,
+            "rejected_unavailable": 0,
+            "scores_accepted": {
+              "25%": 76.80065943698133,
+              "50%": 84.37540429505654,
+              "75%": 92.0,
+              "count": 5619.0,
+              "max": 100.0,
+              "mean": 84.05581425414391,
+              "min": 55.12676877683769,
+              "std": 10.291145924206546
+            },
+            "scores_rejected": {
+              "25%": 51.84345501956395,
+              "50%": 52.79641322290585,
+              "75%": 53.73911377271381,
+              "count": 7.0,
+              "max": 54.95166413296247,
+              "mean": 52.60712126990672,
+              "min": 49.33663394892326,
+              "std": 1.853461605285477
+            },
+            "simultaneous_signal_bars": 1039,
+            "within_10_points_below": 7,
+            "within_1_point_below": 2,
+            "within_3_points_below": 5,
+            "within_5_points_below": 6
+          },
+          "2022": {
+            "after_conviction_threshold": 4395,
+            "raw_setup_candidates": 4441,
+            "rejected_conviction_threshold": 46,
+            "rejected_unavailable": 0,
+            "scores_accepted": {
+              "25%": 68.30148236124646,
+              "50%": 74.89715730307299,
+              "75%": 82.11765943008834,
+              "count": 4395.0,
+              "max": 100.0,
+              "mean": 75.06733256835325,
+              "min": 55.011250580271756,
+              "std": 9.018305884035428
+            },
+            "scores_rejected": {
+              "25%": 51.441144483926514,
+              "50%": 53.21059093005155,
+              "75%": 53.837834656267084,
+              "count": 46.0,
+              "max": 54.86390625368218,
+              "mean": 52.55803095835666,
+              "min": 47.456803701906594,
+              "std": 1.8285893491827931
+            },
+            "simultaneous_signal_bars": 764,
+            "within_10_points_below": 46,
+            "within_1_point_below": 10,
+            "within_3_points_below": 30,
+            "within_5_points_below": 41
+          },
+          "2023": {
+            "after_conviction_threshold": 6912,
+            "raw_setup_candidates": 6935,
+            "rejected_conviction_threshold": 23,
+            "rejected_unavailable": 0,
+            "scores_accepted": {
+              "25%": 75.40216356119814,
+              "50%": 82.71557623946197,
+              "75%": 89.67740768234573,
+              "count": 6912.0,
+              "max": 100.0,
+              "mean": 82.52605638102922,
+              "min": 55.0607662327877,
+              "std": 10.127276400880838
+            },
+            "scores_rejected": {
+              "25%": 49.63335624336567,
+              "50%": 51.50413343932887,
+              "75%": 53.53716476670459,
+              "count": 18.0,
+              "max": 54.93124225825675,
+              "mean": 51.093803470150036,
+              "min": 44.22995589473351,
+              "std": 3.130057437056304
+            },
+            "simultaneous_signal_bars": 1105,
+            "within_10_points_below": 17,
+            "within_1_point_below": 4,
+            "within_3_points_below": 9,
+            "within_5_points_below": 11
+          },
+          "2024": {
+            "after_conviction_threshold": 7887,
+            "raw_setup_candidates": 7919,
+            "rejected_conviction_threshold": 32,
+            "rejected_unavailable": 0,
+            "scores_accepted": {
+              "25%": 76.58916451903707,
+              "50%": 83.80015068838081,
+              "75%": 91.0,
+              "count": 7887.0,
+              "max": 100.0,
+              "mean": 83.68453290769996,
+              "min": 55.19854706890112,
+              "std": 9.876144346833698
+            },
+            "scores_rejected": {
+              "25%": 51.699761156947545,
+              "50%": 52.91546351761023,
+              "75%": 53.94033710613074,
+              "count": 26.0,
+              "max": 54.8791620249413,
+              "mean": 52.244686565385024,
+              "min": 43.56644515850918,
+              "std": 2.4482019780703177
+            },
+            "simultaneous_signal_bars": 1296,
+            "within_10_points_below": 25,
+            "within_1_point_below": 6,
+            "within_3_points_below": 16,
+            "within_5_points_below": 23
+          }
+        },
+        "entry_family": "HYBRID",
+        "fibonacci_mode": "SOFT_FIBONACCI_SCORE",
+        "score_threshold": 55
+      },
+      "trial_id": "AMS-V4-T23"
+    },
+    {
+      "configuration_id": "AMS-V4-A12",
+      "executed_trade_summary": {
+        "accepted_entries": 234,
+        "candidates_per_executed_trade": 82.45726495726495,
+        "completed_trades": 234,
+        "mean_exposure": 0.3358272824812237,
+        "mean_maximum_heat": 0.04457008467788021,
+        "mean_open_positions": 0.650738578236894,
+        "rejection_reasons_from_simulator": {
+          "availability": 0,
+          "cash": 0,
+          "cluster": 3173,
+          "drawdown": 86,
+          "heat": 75,
+          "position_limit": 0,
+          "reentry_limit": 10343,
+          "score": 300,
+          "stop": 4353
+        },
+        "trades_by_fold": {
+          "AMS-V4-WF01": 66,
+          "AMS-V4-WF02": 75,
+          "AMS-V4-WF03": 93
+        },
+        "trades_by_symbol": {
+          "AAVE": 7,
+          "ADA": 7,
+          "AVAX": 10,
+          "BNB": 7,
+          "BTC": 7,
+          "DEXE": 7,
+          "DOGE": 12,
+          "DOT": 8,
+          "ENA": 5,
+          "ETH": 8,
+          "GRAM": 6,
+          "HYPE": 5,
+          "LINK": 8,
+          "LTC": 9,
+          "NEAR": 14,
+          "ONDO": 4,
+          "PEPE": 6,
+          "SEI": 7,
+          "SHIB": 6,
+          "SNX": 8,
+          "SOL": 6,
+          "SUI": 11,
+          "SYN": 10,
+          "TAO": 3,
+          "TRX": 11,
+          "UNI": 7,
+          "XLM": 9,
+          "XMR": 7,
+          "XRP": 13,
+          "ZEC": 6
+        }
+      },
+      "portfolio_profile_id": "AMS-V4-PORTFOLIO-P02",
+      "setup_funnel": {
+        "all_years": {
+          "after_conviction_threshold": 24813,
+          "candidate_score_mean": 81.80387512110748,
+          "candidate_score_median": 82.04586129839797,
+          "hard_8h_gate_rejections": 0,
+          "hard_d1_gate_rejections": 0,
+          "portfolio_constraints_recorded_only_in_simulator": true,
+          "raw_setup_candidates": 24935,
+          "rejected_conviction_threshold": 122,
+          "rejected_unavailable": 0,
+          "soft_fibonacci_alone_rejections": 0
+        },
+        "by_year": {
+          "2021": {
+            "after_conviction_threshold": 5619,
+            "raw_setup_candidates": 5640,
+            "rejected_conviction_threshold": 21,
+            "rejected_unavailable": 0,
+            "scores_accepted": {
+              "25%": 76.80065943698133,
+              "50%": 84.37540429505654,
+              "75%": 92.0,
+              "count": 5619.0,
+              "max": 100.0,
+              "mean": 84.05581425414391,
+              "min": 55.12676877683769,
+              "std": 10.291145924206546
+            },
+            "scores_rejected": {
+              "25%": 51.84345501956395,
+              "50%": 52.79641322290585,
+              "75%": 53.73911377271381,
+              "count": 7.0,
+              "max": 54.95166413296247,
+              "mean": 52.60712126990672,
+              "min": 49.33663394892326,
+              "std": 1.853461605285477
+            },
+            "simultaneous_signal_bars": 1039,
+            "within_10_points_below": 7,
+            "within_1_point_below": 2,
+            "within_3_points_below": 5,
+            "within_5_points_below": 6
+          },
+          "2022": {
+            "after_conviction_threshold": 4395,
+            "raw_setup_candidates": 4441,
+            "rejected_conviction_threshold": 46,
+            "rejected_unavailable": 0,
+            "scores_accepted": {
+              "25%": 68.30148236124646,
+              "50%": 74.89715730307299,
+              "75%": 82.11765943008834,
+              "count": 4395.0,
+              "max": 100.0,
+              "mean": 75.06733256835325,
+              "min": 55.011250580271756,
+              "std": 9.018305884035428
+            },
+            "scores_rejected": {
+              "25%": 51.441144483926514,
+              "50%": 53.21059093005155,
+              "75%": 53.837834656267084,
+              "count": 46.0,
+              "max": 54.86390625368218,
+              "mean": 52.55803095835666,
+              "min": 47.456803701906594,
+              "std": 1.8285893491827931
+            },
+            "simultaneous_signal_bars": 764,
+            "within_10_points_below": 46,
+            "within_1_point_below": 10,
+            "within_3_points_below": 30,
+            "within_5_points_below": 41
+          },
+          "2023": {
+            "after_conviction_threshold": 6912,
+            "raw_setup_candidates": 6935,
+            "rejected_conviction_threshold": 23,
+            "rejected_unavailable": 0,
+            "scores_accepted": {
+              "25%": 75.40216356119814,
+              "50%": 82.71557623946197,
+              "75%": 89.67740768234573,
+              "count": 6912.0,
+              "max": 100.0,
+              "mean": 82.52605638102922,
+              "min": 55.0607662327877,
+              "std": 10.127276400880838
+            },
+            "scores_rejected": {
+              "25%": 49.63335624336567,
+              "50%": 51.50413343932887,
+              "75%": 53.53716476670459,
+              "count": 18.0,
+              "max": 54.93124225825675,
+              "mean": 51.093803470150036,
+              "min": 44.22995589473351,
+              "std": 3.130057437056304
+            },
+            "simultaneous_signal_bars": 1105,
+            "within_10_points_below": 17,
+            "within_1_point_below": 4,
+            "within_3_points_below": 9,
+            "within_5_points_below": 11
+          },
+          "2024": {
+            "after_conviction_threshold": 7887,
+            "raw_setup_candidates": 7919,
+            "rejected_conviction_threshold": 32,
+            "rejected_unavailable": 0,
+            "scores_accepted": {
+              "25%": 76.58916451903707,
+              "50%": 83.80015068838081,
+              "75%": 91.0,
+              "count": 7887.0,
+              "max": 100.0,
+              "mean": 83.68453290769996,
+              "min": 55.19854706890112,
+              "std": 9.876144346833698
+            },
+            "scores_rejected": {
+              "25%": 51.699761156947545,
+              "50%": 52.91546351761023,
+              "75%": 53.94033710613074,
+              "count": 26.0,
+              "max": 54.8791620249413,
+              "mean": 52.244686565385024,
+              "min": 43.56644515850918,
+              "std": 2.4482019780703177
+            },
+            "simultaneous_signal_bars": 1296,
+            "within_10_points_below": 25,
+            "within_1_point_below": 6,
+            "within_3_points_below": 16,
+            "within_5_points_below": 23
+          }
+        },
+        "entry_family": "HYBRID",
+        "fibonacci_mode": "SOFT_FIBONACCI_SCORE",
+        "score_threshold": 55
+      },
+      "trial_id": "AMS-V4-T24"
+    }
+  ],
+  "source_protocol": "AMS-V4-ACTIVE-CONVICTION-SWING",
+  "status": "PASS",
+  "test_2025_accessed": false
+}
