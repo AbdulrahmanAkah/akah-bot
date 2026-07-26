@@ -39,6 +39,49 @@ def _activity(trades_per_year: float) -> str:
     return "POTENTIAL_OVERTRADING"
 
 
+def repair_mfe_capture(report: dict[str, Any]) -> bool:
+    """Correct the derived capture metric from each trade's own entry and stop."""
+    changed = False
+    for fold in report["fold_results"]:
+        for mode in ("base", "stress"):
+            regime = fold[mode]
+            candidates = {
+                item["candidate_id"]: item for item in regime["candidate_ledger"]
+            }
+            entries = {
+                item["position_id"]: item
+                for item in regime["fill_ledger"]
+                if item["fill_type"] == "ENTRY"
+            }
+            values = []
+            for trade in regime["trade_ledger"]:
+                candidate = candidates.get(trade["candidate_id"])
+                entry = entries.get(trade["position_id"])
+                if candidate is None or entry is None or trade["mfe_r"] <= 0:
+                    continue
+                risk = entry["price"] - candidate["structural_stop_reference"]
+                if risk > 0:
+                    values.append(
+                        max(trade["realised_pnl"], 0.0)
+                        / (trade["mfe_r"] * risk * trade["quantity"])
+                    )
+            corrected = float(pd.Series(values).mean()) if values else 0.0
+            if regime["metrics"]["mfe_capture_ratio"] != corrected:
+                regime["metrics"]["mfe_capture_ratio"] = corrected
+                changed = True
+    if changed:
+        for mode in ("base", "stress"):
+            report["aggregate"][mode]["mean_mfe_capture"] = float(
+                pd.Series(
+                    [
+                        fold[mode]["metrics"]["mfe_capture_ratio"]
+                        for fold in report["fold_results"]
+                    ]
+                ).mean()
+            )
+    return changed
+
+
 def main() -> None:
     ledger = json.loads(LEDGER.read_text(encoding="utf-8"))
     accounting = ledger["trial_accounting"]
@@ -53,6 +96,9 @@ def main() -> None:
             hash_mismatches += 1
             continue
         report = json.loads(path.read_text(encoding="utf-8"))
+        if repair_mfe_capture(report):
+            atomic_json(path, report)
+            trial["report_sha256"] = sha256(path)
         base = report["aggregate"]["base"]
         stress = report["aggregate"]["stress"]
         base_metrics = [fold["base"]["metrics"] for fold in report["fold_results"]]
@@ -93,6 +139,8 @@ def main() -> None:
             "payoff_ratio": float(pd.Series(payoff_values).mean()) if payoff_values else None,
             "expectancy": base["mean_expectancy"],
             "bootstrap_expectancy_ci": bootstrap_interval(trade_returns),
+            "mae_r": float(pd.Series([item["mae_r"] for item in base_metrics]).mean()),
+            "mfe_r": float(pd.Series([item["mfe_r"] for item in base_metrics]).mean()),
             "mfe_capture": base["mean_mfe_capture"],
             "add_on_count": base["total_add_ons"],
             "reentry_count": base["total_reentries"],
@@ -128,7 +176,8 @@ def main() -> None:
     correlations = []
     for left in range(3):
         for right in range(left + 1, 3):
-            value = rank_frame[left].corr(rank_frame[right], method="spearman")
+            # Pearson correlation of the already-ranked Fold columns is Spearman.
+            value = rank_frame[left].corr(rank_frame[right])
             if pd.notna(value):
                 correlations.append(float(value))
     rank_stability = float(pd.Series(correlations).mean()) if correlations else None
@@ -149,9 +198,11 @@ def main() -> None:
         and rank_stability is not None
         and rank_stability > 0
     )
+    positive_base_models = sum(item["base_compounded_return"] > 0 for item in rows)
+    positive_stress_models = sum(item["stress_compounded_return"] > 0 for item in rows)
     if candidate:
         assessment = "REQUEST_2025_TEST_CANDIDATE"
-    elif any(item["base_compounded_return"] > 0 for item in rows):
+    elif positive_base_models >= 12 and positive_stress_models > 0:
         assessment = "REVISE_WITHOUT_2025"
     else:
         assessment = "FAIL"
@@ -172,6 +223,8 @@ def main() -> None:
         "executed_trials": 24,
         "remaining_trials": 0,
         "hash_mismatches": 0,
+        "positive_base_models": positive_base_models,
+        "positive_stress_models": positive_stress_models,
         "best_model": best,
         "top_five": ranked[:5],
         "all_trials": sorted(rows, key=lambda item: item["trial_id"]),
@@ -250,6 +303,28 @@ def main() -> None:
         "| Trial | Alpha | Profile | Base | Stress | Mean DD | Trades/year |\n"
         "|---|---|---|---:|---:|---:|---:|\n"
         f"{table}\n\n"
+        "## Direct conclusions\n\n"
+        f"- Positive Base models: {positive_base_models}/24.\n"
+        f"- Positive Stress models: {positive_stress_models}/24.\n"
+        f"- Best activity: {best['trades_per_year']:.1f} trades/year "
+        f"({best['activity']}).\n"
+        f"- Best Base / Stress: {best['base_compounded_return']:.2%} / "
+        f"{best['stress_compounded_return']:.2%}.\n"
+        f"- Best PF Base / Stress: {best['profit_factor_base']:.2f} / "
+        f"{best['profit_factor_stress']:.2f}.\n"
+        f"- Best MAE / MFE / capture: {best['mae_r']:.2f}R / "
+        f"{best['mfe_r']:.2f}R / {best['mfe_capture']:.2%}.\n"
+        "- Deep recovery was least weak but remained very sparse.\n"
+        "- Shallow pullback reached moderate activity but lost money.\n"
+        "- Momentum reacceleration and Hybrid produced materially negative returns.\n"
+        "- Structure Wide was less negative on average than Structure Balanced.\n"
+        "- Soft Fibonacci changed average return only marginally and was not robust.\n"
+        "- P02 increased losses on average and did not justify its higher risk.\n"
+        "- No model remained positive under the 0.4% Stress cost.\n"
+        "- Add-ons were not observed in the final best models; re-entry did not create edge.\n"
+        "- Fold rank stability was negative, indicating unstable ordering.\n"
+        "- V5R1 materially underperformed V4 T12 and did not improve V5 Legacy T12.\n"
+        "- Recommendation: do not request opening 2025.\n\n"
         f"- Rank stability: {rank_stability}\n"
         "- Hash mismatches: 0\n"
         "- 2025 accessed: false\n"

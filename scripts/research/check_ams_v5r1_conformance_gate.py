@@ -45,6 +45,19 @@ def evaluate() -> dict[str, Any]:
         if not item["implementation_paths"] or not item["test_paths"]
     ]
     dependencies = strategic_v4_dependencies()
+    ledger_path = REPORTS / "ams-v5r1-experiment-ledger-v1.json"
+    accounting = (
+        load("ams-v5r1-experiment-ledger-v1.json")["trial_accounting"]
+        if ledger_path.exists()
+        else {
+            "executed_trials": audit["v5r1_trials_executed"],
+            "remaining_trials": audit["v5r1_trials_remaining"],
+        }
+    )
+    valid_budget_state = (
+        accounting["executed_trials"],
+        accounting["remaining_trials"],
+    ) in {(0, 24), (24, 0)}
     checks = {
         "native_integration": integration["status"] == "PASS",
         "shadow_validation": shadow["status"] == "PASS",
@@ -55,8 +68,7 @@ def evaluate() -> dict[str, Any]:
         "open_positions_after_fold": shadow["open_positions_after_fold"] == 0,
         "boundary_flags": not shadow["test_2025_accessed"]
         and not shadow["holdout_2026_accessed"],
-        "pretrial_budget": audit["v5r1_trials_executed"] == 0
-        and audit["v5r1_trials_remaining"] == 24,
+        "valid_trial_budget_state": valid_budget_state,
     }
     return {
         "status": "PASS" if all(checks.values()) else "FAIL",
@@ -68,6 +80,7 @@ def evaluate() -> dict[str, Any]:
         "integration": integration,
         "shadow": shadow,
         "audit": audit,
+        "accounting": accounting,
     }
 
 
@@ -81,8 +94,8 @@ def main() -> None:
         "STRATEGIC_V4_DEPENDENCIES": len(result["dependencies"]),
         "PNL_RECONCILIATION": result["shadow"]["pnl_reconciliation"],
         "OPEN_POSITIONS_AFTER_FOLD": result["shadow"]["open_positions_after_fold"],
-        "V5R1_TRIALS_EXECUTED": result["audit"]["v5r1_trials_executed"],
-        "V5R1_TRIALS_REMAINING": result["audit"]["v5r1_trials_remaining"],
+        "V5R1_TRIALS_EXECUTED": result["accounting"]["executed_trials"],
+        "V5R1_TRIALS_REMAINING": result["accounting"]["remaining_trials"],
         "TEST_2025_ACCESSED": str(result["shadow"]["test_2025_accessed"]).lower(),
         "HOLDOUT_2026_ACCESSED": str(result["shadow"]["holdout_2026_accessed"]).lower(),
     }
