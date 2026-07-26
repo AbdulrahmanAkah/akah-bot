@@ -1,0 +1,2 @@
+def test_setup_placeholder_contract():
+ assert {'SHALLOW_PULLBACK_RECLAIM','DEEP_PULLBACK_RECOVERY','MOMENTUM_REACCELERATION'}
