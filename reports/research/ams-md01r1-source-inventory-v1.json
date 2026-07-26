@@ -1,0 +1,50 @@
+{
+  "bounded_query": {
+    "end": "2024-12-31T23:59:59Z",
+    "end_time_ms": 1735689599000,
+    "start": "2021-01-01T00:00:00Z",
+    "start_time_ms": 1609459200000
+  },
+  "holdout_2026_accessed": false,
+  "local_sources": [
+    {
+      "manifest": "reports/research/ams-v3-4h-dataset-manifest-v1.json",
+      "name": "AMS_V3_SURVIVOR_30",
+      "scope": "THIRTY_SURVIVOR_ASSETS_ONLY"
+    },
+    {
+      "name": "BOOTSTRAP_UNIVERSE_SNAPSHOT",
+      "path": "data/research/universe_snapshots/bootstrap_v1/bootstrap-point-in-time-universe-v1.parquet",
+      "scope": "THIRTY_SURVIVOR_ASSETS_ONLY"
+    }
+  ],
+  "official_sources": [
+    {
+      "historical_membership_capability": false,
+      "name": "KUCOIN_CURRENT_SPOT_SYMBOLS",
+      "record_count": 1042,
+      "url": "https://api.kucoin.com/api/v2/symbols"
+    },
+    {
+      "archive_hash": "ed3b1c5aab616a62d3c54fa60917ce1f8145c51f6ad6074fa17a57093dd85f7b",
+      "name": "KUCOIN_BOUNDED_LISTING_ANNOUNCEMENTS",
+      "record_count": 1224,
+      "url": "https://api.kucoin.com/api/v3/announcements"
+    },
+    {
+      "archive_hash": "ba32f6169cbf729403d54155e72e15aa72274771fc156bac47c5f8eabb01914e",
+      "name": "KUCOIN_BOUNDED_DELISTING_ANNOUNCEMENTS",
+      "record_count": 127,
+      "url": "https://api.kucoin.com/api/v3/announcements"
+    }
+  ],
+  "schema_version": "ams-md01r1-source-inventory-v1",
+  "source_limitations": [
+    "CURRENT_SYMBOLS_ENDPOINT_HAS_NO_HISTORICAL_SNAPSHOTS",
+    "ANNOUNCEMENT_PUBLICATION_TIME_IS_NOT_TRADING_EVENT_TIME",
+    "LOCAL_4H_DATA_COVERS_ONLY_SURVIVOR_30",
+    "DELISTED_4H_HISTORY_NOT_ACQUIRED"
+  ],
+  "status": "COMPLETE_INVENTORY_PARTIAL_HISTORICAL_COVERAGE",
+  "test_2025_accessed": false
+}
