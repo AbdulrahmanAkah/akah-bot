@@ -161,7 +161,7 @@ def stable_id(prefix: str, *parts: object) -> str:
 
 
 def _utc(series: pd.Series) -> pd.Series:
-    return pd.to_datetime(series, utc=True)
+    return pd.to_datetime(series, utc=True).astype("datetime64[ns, UTC]")
 
 
 def assert_research_boundary(frame: pd.DataFrame) -> None:
