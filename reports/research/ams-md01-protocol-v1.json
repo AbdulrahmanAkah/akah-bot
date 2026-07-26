@@ -1,0 +1,155 @@
+{
+  "allocation": {
+    "DUAL": {
+      "base_weight": 0.25,
+      "maximum_positions": 3
+    },
+    "TSM": {
+      "maximum_positions": 5,
+      "maximum_weight": 0.2
+    },
+    "XSM": {
+      "base_weight": 0.25,
+      "maximum_positions": 3
+    },
+    "renormalise": false
+  },
+  "authorized_primary_variants": 6,
+  "clusters": {
+    "causal_lookback_days": 90,
+    "correlation_threshold": 0.75,
+    "maximum_positions_per_cluster": 2,
+    "returns": "DAILY"
+  },
+  "controls": [
+    "FLAT_ALIGNMENT",
+    "CRISIS_OFF"
+  ],
+  "cost_modes": {
+    "BASE_COST": 0.002,
+    "STRESS_0_4_PERCENT": 0.004,
+    "ZERO_COST": 0.0
+  },
+  "crisis": {
+    "blocks_new_entry_and_rotation": true,
+    "definition": "BTC daily DOWNTREND and close at least 20% below causal trailing-84-completed-bar high",
+    "forces_intrabar_exit": false
+  },
+  "executed_primary_variants": 0,
+  "execution": {
+    "add_on": false,
+    "entry": "4H signal close then next 4H open",
+    "exits": [
+      "REBALANCE_EXIT",
+      "VENUE_EXIT",
+      "END_OF_FOLD_EXIT"
+    ],
+    "mid_week_reentry": false,
+    "natural_reselection_cooldown_days": 7,
+    "tactical_stop": false,
+    "trailing": false
+  },
+  "folds": [
+    {
+      "fold_id": "WF01",
+      "validation_end": "2023-01-01T00:00:00+00:00",
+      "validation_start": "2022-01-01T00:00:00+00:00"
+    },
+    {
+      "fold_id": "WF02",
+      "validation_end": "2024-01-01T00:00:00+00:00",
+      "validation_start": "2023-01-01T00:00:00+00:00"
+    },
+    {
+      "fold_id": "WF03",
+      "validation_end": "2025-01-01T00:00:00+00:00",
+      "validation_start": "2024-01-01T00:00:00+00:00"
+    }
+  ],
+  "gross_edge_gate": {
+    "maximum_top_1_symbol_contribution": 0.6,
+    "minimum_positive_folds": 2,
+    "minimum_profit_factor": 1.05,
+    "minimum_trade_count": 20,
+    "positive_expectancy": true,
+    "positive_return": true
+  },
+  "holdout_2026_accessed": false,
+  "market_contract": {
+    "borrowing": false,
+    "direction": "LONG_ONLY",
+    "leverage": false,
+    "market_type": "SPOT",
+    "negative_cash": false
+  },
+  "momentum_horizons_calendar_days": [
+    28,
+    84
+  ],
+  "new_strategy_school": true,
+  "parameter_optimisation": false,
+  "protocol_id": "AMS-MD01-MOMENTUM-UNIVERSE-GROSS-EDGE",
+  "rebalance": {
+    "frequency": "WEEKLY",
+    "time": "00:00:00Z",
+    "weekday": "MONDAY"
+  },
+  "remaining_primary_variants": 6,
+  "research_boundary": {
+    "bar_close_time": "<= 2025-01-01T00:00:00Z",
+    "bar_open_time": "< 2025-01-01T00:00:00Z"
+  },
+  "research_label": "PROVISIONAL_UNDER_SURVIVORSHIP_RISK",
+  "schema_version": "ams-md01-protocol-v1",
+  "study_type": "MOMENTUM_GROSS_EDGE_DISCOVERY",
+  "test_2025_accessed": false,
+  "trend_alignment": {
+    "atr_period": 14,
+    "breakout_window_bars": 3,
+    "ema_fast": 20,
+    "ema_slow": 50,
+    "ema_slow_slope_bars": 5,
+    "overextension_atr": 2.5,
+    "reclaim_window_bars": 3,
+    "recovery_ema_slope_bars": 3,
+    "strength_multipliers": {
+      "FOUR_HOUR_ONLY": 0.33,
+      "FULL": 1.0,
+      "MEDIUM": 0.67,
+      "NONE": 0.0
+    }
+  },
+  "universe_status": "SURVIVORSHIP_RISK",
+  "variants": [
+    {
+      "horizon_days": 28,
+      "school": "TSM",
+      "variant_id": "MD01-M01"
+    },
+    {
+      "horizon_days": 84,
+      "school": "TSM",
+      "variant_id": "MD01-M02"
+    },
+    {
+      "horizon_days": 28,
+      "school": "XSM",
+      "variant_id": "MD01-M03"
+    },
+    {
+      "horizon_days": 84,
+      "school": "XSM",
+      "variant_id": "MD01-M04"
+    },
+    {
+      "horizon_days": 28,
+      "school": "DUAL",
+      "variant_id": "MD01-M05"
+    },
+    {
+      "horizon_days": 84,
+      "school": "DUAL",
+      "variant_id": "MD01-M06"
+    }
+  ]
+}
