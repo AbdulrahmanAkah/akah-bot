@@ -65,6 +65,10 @@ class OpenPosition:
     bars_held: int = 0
     mfe_r: float = 0.0
     mae_r: float = 0.0
+    initial_quantity: float = 0.0
+    realized_pnl: float = 0.0
+    reentry: bool = False
+    trend_failure_bars: int = 0
 
 
 @dataclass(frozen=True)
@@ -375,7 +379,10 @@ def simulate_portfolio(
     peak = initial_capital
     positions: dict[str, OpenPosition] = {}
     pending: dict[str, dict[str, Any]] = {}
+    pending_adds: dict[str, dict[str, Any]] = {}
+    pending_exits: set[str] = set()
     stopped: dict[str, tuple[int, bool]] = {}
+    reentry_attempts: dict[str, int] = {}
     trades: list[ClosedTrade] = []
     rows: list[dict[str, Any]] = []
     rejected = {
@@ -389,6 +396,7 @@ def simulate_portfolio(
             "cluster",
             "cash",
             "drawdown",
+            "reentry_limit",
         )
     }
     candidate_signals = 0
@@ -409,7 +417,7 @@ def simulate_portfolio(
         cash += notional - fee
         turnover += notional
         total_fees += fee
-        pnl = notional - fee - position.entry_notional - position.entry_fee
+        pnl = position.realized_pnl + notional - fee - position.entry_notional - position.entry_fee
         risk = max(position.entry_price - position.initial_stop, 1e-12)
         trades.append(
             ClosedTrade(
@@ -418,7 +426,7 @@ def simulate_portfolio(
                 timestamp,
                 position.entry_price,
                 price,
-                position.quantity,
+                position.initial_quantity,
                 pnl,
                 pnl / (position.entry_notional + position.entry_fee),
                 risk,
@@ -427,7 +435,7 @@ def simulate_portfolio(
                 reason,
                 int(position.partial_taken),
                 position.add_on_used,
-                symbol in stopped,
+                position.reentry,
             )
         )
         if reason == "STOP":
@@ -459,6 +467,10 @@ def simulate_portfolio(
             if current_time >= pd.Timestamp(row["tradable_until"]):
                 close(symbol, position, open_price, current_time, "VENUE_END")
                 continue
+            if symbol in pending_exits:
+                close(symbol, position, open_price, current_time, "TREND")
+                pending_exits.discard(symbol)
+                continue
             target = position.entry_price + 2.5 * r
             hit_stop = low <= position.stop_price
             hit_target = high >= target and not position.partial_taken
@@ -473,13 +485,18 @@ def simulate_portfolio(
                 continue
             if specification.exit_model == "PARTIAL_AND_RUNNER" and hit_target:
                 amount = position.quantity * 0.25
-                notional = amount * target
+                fill_price = open_price if open_price >= target else target
+                notional = amount * fill_price
                 fee = notional * specification.transaction_cost
+                basis = position.entry_notional * 0.25
+                basis_fee = position.entry_fee * 0.25
                 cash += notional - fee
                 total_fees += fee
                 turnover += notional
+                position.realized_pnl += notional - fee - basis - basis_fee
                 position.quantity -= amount
-                position.entry_notional -= position.entry_notional * 0.25
+                position.entry_notional -= basis
+                position.entry_fee -= basis_fee
                 position.partial_taken = True
                 partial_exit_count += 1
             if position.mfe_r >= 2.5 or (
@@ -492,12 +509,63 @@ def simulate_portfolio(
                 and float(row["trend_slope"]) < 0.0
             ):
                 close(symbol, position, float(row["close"]), current_time, "TIME")
+                continue
+            trend_failure = bool(
+                float(row["close"]) < float(row["ema_fast"])
+                and float(row["trend_slope"]) < 0.0
+            )
+            position.trend_failure_bars = position.trend_failure_bars + 1 if trend_failure else 0
+            if position.trend_failure_bars >= 2:
+                pending_exits.add(symbol)
 
         heat = sum(position.risk_fraction for position in positions.values())
         cluster_counts = {
             cluster: sum(position.cluster == cluster for position in positions.values())
             for cluster in {position.cluster for position in positions.values()}
         }
+        for symbol, _signal in sorted(
+            pending_adds.items(),
+            key=lambda value: (-float(value[1]["score"]), -float(value[1]["rs"]), value[0]),
+        ):
+            add_position = positions.get(symbol)
+            row = by_symbol.get(symbol)
+            if add_position is None or row is None or add_position.add_on_used or throttle <= 0.0:
+                continue
+            entry = float(row["open"])
+            if not (entry > add_position.initial_stop > 0.0):
+                rejected["stop"] += 1
+                continue
+            quantity = add_position.initial_quantity * 0.30
+            add_risk = quantity * (entry - add_position.initial_stop) / max(equity_before, 1e-12)
+            if (
+                add_position.risk_fraction + add_risk
+                > specification.portfolio.maximum_initial_risk + 1e-12
+                or heat + add_risk > specification.portfolio.maximum_portfolio_heat + 1e-12
+            ):
+                rejected["heat"] += 1
+                continue
+            notional = quantity * entry
+            fee = notional * specification.transaction_cost
+            if notional + fee > cash + 1e-9 or notional + fee > entry_cash + 1e-9:
+                rejected["cash"] += 1
+                continue
+            cash -= notional + fee
+            entry_cash -= notional + fee
+            total_fees += fee
+            turnover += notional
+            add_position.entry_price = (
+                add_position.entry_price * add_position.quantity + entry * quantity
+            ) / (add_position.quantity + quantity)
+            add_position.quantity += quantity
+            add_position.initial_quantity += quantity
+            add_position.entry_notional += notional
+            add_position.entry_fee += fee
+            add_position.risk_fraction += add_risk
+            add_position.add_on_used = True
+            heat += add_risk
+            add_on_count += 1
+        pending_adds = {}
+        opened_symbols: list[str] = []
         for symbol, signal in sorted(
             pending.items(),
             key=lambda value: (-float(value[1]["score"]), -float(value[1]["rs"]), value[0]),
@@ -551,6 +619,9 @@ def simulate_portfolio(
             prior_stop = stopped.get(symbol)
             if prior_stop is not None and bar_number - prior_stop[0] < 2:
                 continue
+            if prior_stop is not None and reentry_attempts.get(symbol, 0) >= 1:
+                rejected["reentry_limit"] += 1
+                continue
             cash -= notional + fee
             entry_cash -= notional + fee
             total_fees += fee
@@ -567,12 +638,44 @@ def simulate_portfolio(
                 notional,
                 fee,
                 highest_price=entry,
+                initial_quantity=quantity,
+                reentry=prior_stop is not None,
             )
             heat += risk_fraction
             cluster_counts[cluster] = cluster_counts.get(cluster, 0) + 1
             accepted_entries += 1
+            opened_symbols.append(symbol)
             if prior_stop is not None:
                 reentry_count += 1
+                reentry_attempts[symbol] = reentry_attempts.get(symbol, 0) + 1
+        for symbol in opened_symbols:
+            opened_position = positions.get(symbol)
+            row = by_symbol.get(symbol)
+            if opened_position is None or row is None:
+                continue
+            low, high, open_price = float(row["low"]), float(row["high"]), float(row["open"])
+            target = opened_position.entry_price + 2.5 * (
+                opened_position.entry_price - opened_position.initial_stop
+            )
+            if low <= opened_position.stop_price:
+                close(symbol, opened_position, opened_position.stop_price, current_time, "STOP")
+                continue
+            if specification.exit_model == "PARTIAL_AND_RUNNER" and high >= target:
+                amount = opened_position.quantity * 0.25
+                fill_price = open_price if open_price >= target else target
+                notional = amount * fill_price
+                fee = notional * specification.transaction_cost
+                basis = opened_position.entry_notional * 0.25
+                basis_fee = opened_position.entry_fee * 0.25
+                cash += notional - fee
+                total_fees += fee
+                turnover += notional
+                opened_position.realized_pnl += notional - fee - basis - basis_fee
+                opened_position.quantity -= amount
+                opened_position.entry_notional -= basis
+                opened_position.entry_fee -= basis_fee
+                opened_position.partial_taken = True
+                partial_exit_count += 1
         pending = {}
 
         candidates: list[tuple[float, str, dict[str, Any]]] = []
@@ -585,17 +688,18 @@ def simulate_portfolio(
             )
             if family == "HYBRID":
                 setup = bool(row["breakout_signal"]) or bool(row["pullback_signal"])
-            if not setup or symbol in positions:
+            if not setup:
                 continue
             candidate_signals += 1
             score = float(row[score_column])
-            if score < specification.score_threshold:
+            base_score = float(row["conviction_no_fib"])
+            if base_score < specification.score_threshold:
                 rejected["score"] += 1
                 continue
             if bool(row["stop_invalid"]) or not math.isfinite(float(row["initial_stop"])):
                 rejected["stop"] += 1
                 continue
-            candidates.append(
+            candidate = (
                 (
                     score,
                     symbol,
@@ -607,6 +711,16 @@ def simulate_portfolio(
                     },
                 )
             )
+            if symbol in positions:
+                position = positions[symbol]
+                if (
+                    not position.add_on_used
+                    and position.mfe_r >= 1.0
+                    and bool(row["pullback_signal"])
+                ):
+                    pending_adds[symbol] = candidate[2]
+                continue
+            candidates.append(candidate)
         for _, symbol, signal in sorted(
             candidates, key=lambda value: (-value[0], -value[2]["rs"], value[1])
         ):
@@ -694,8 +808,15 @@ def metrics(result: SimulationResult) -> dict[str, Any]:
         else None
     )
     per_symbol: dict[str, float] = {}
+    per_symbol_trades: dict[str, int] = {}
     for trade in result.trades:
         per_symbol[trade.symbol] = per_symbol.get(trade.symbol, 0.0) + trade.pnl
+        per_symbol_trades[trade.symbol] = per_symbol_trades.get(trade.symbol, 0) + 1
+    mfe_capture = [
+        trade.pnl / (trade.initial_risk_per_unit * trade.quantity * trade.mfe_r)
+        for trade in result.trades
+        if trade.initial_risk_per_unit > 0.0 and trade.quantity > 0.0 and trade.mfe_r > 0.0
+    ]
     gross_profit, gross_loss = sum(wins), sum(losses)
     return {
         "initial_capital": result.initial_capital,
@@ -722,11 +843,9 @@ def metrics(result: SimulationResult) -> dict[str, Any]:
         "mae_r": float(pd.Series([trade.mae_r for trade in result.trades]).mean()) if pnl else 0.0,
         "mfe_r": float(pd.Series([trade.mfe_r for trade in result.trades]).mean()) if pnl else 0.0,
         "mfe_capture_ratio": float(
-            pd.Series(
-                [trade.return_fraction / trade.mfe_r for trade in result.trades if trade.mfe_r > 0]
-            ).mean()
+            pd.Series(mfe_capture).mean()
         )
-        if any(trade.mfe_r > 0 for trade in result.trades)
+        if mfe_capture
         else None,
         "average_holding_hours": float(
             pd.Series(
@@ -735,6 +854,16 @@ def metrics(result: SimulationResult) -> dict[str, Any]:
                     for trade in result.trades
                 ]
             ).mean()
+        )
+        if pnl
+        else 0.0,
+        "median_holding_hours": float(
+            pd.Series(
+                [
+                    (trade.exit_time - trade.entry_time).total_seconds() / 3600
+                    for trade in result.trades
+                ]
+            ).median()
         )
         if pnl
         else 0.0,
@@ -755,6 +884,10 @@ def metrics(result: SimulationResult) -> dict[str, Any]:
         "accepted_entries": result.accepted_entries,
         "rejected_entries": dict(result.rejected_entries),
         "per_symbol_pnl": per_symbol,
+        "per_symbol_trades": per_symbol_trades,
+        "pnl_concentration_by_symbol": max(
+            (abs(value) for value in per_symbol.values()), default=0.0
+        ) / max(sum(abs(value) for value in per_symbol.values()), 1e-12),
         "monthly_returns": {
             str(index): value
             for index, value in curve.set_index("timestamp")["equity"]
