@@ -166,12 +166,50 @@ def _write_external(names: Iterable[str]) -> None:
         shutil.copy2(REPORTS / name, OUTSIDE / name)
 
 
+def _mfe_capture(run: dict[str, Any]) -> float:
+    values: list[float] = []
+    for fold in run["fold_results"]:
+        candidates = {item["candidate_id"]: item for item in fold["candidate_ledger"]}
+        entries = {
+            item["position_id"]: item
+            for item in fold["fill_ledger"]
+            if item["fill_type"] == "ENTRY"
+        }
+        for trade in fold["trade_ledger"]:
+            candidate = candidates.get(trade["candidate_id"])
+            entry = entries.get(trade["position_id"])
+            risk = (
+                float(entry["price"]) - float(candidate["structural_stop_reference"])
+                if candidate is not None and entry is not None
+                else 0.0
+            )
+            if risk > 0 and float(trade["mfe_r"]) > 0:
+                values.append(
+                    max(float(trade["realised_pnl"]), 0.0)
+                    / (float(trade["mfe_r"]) * risk * float(trade["quantity"]))
+                )
+    return float(np.mean(values)) if values else 0.0
+
+
+def _bootstrap_expectancy(run: dict[str, Any]) -> list[float] | str:
+    values = np.asarray([float(item["realised_pnl"]) for item in _trades(run)], dtype=float)
+    if len(values) < 20:
+        return "INSUFFICIENT_SAMPLE"
+    generator = np.random.default_rng(10_001)
+    means = [
+        float(generator.choice(values, len(values), replace=True).mean()) for _ in range(2_000)
+    ]
+    return [float(np.quantile(means, 0.025)), float(np.quantile(means, 0.975))]
+
+
 def _variant_summary(report: dict[str, Any]) -> dict[str, Any]:
     return {
         "variant_id": report["variant_id"],
         "name": report["name"],
         "base": report["base"]["aggregate"],
         "stress": report["stress"]["aggregate"],
+        "base_mfe_capture": _mfe_capture(report["base"]),
+        "base_bootstrap_expectancy_ci_95": _bootstrap_expectancy(report["base"]),
     }
 
 
