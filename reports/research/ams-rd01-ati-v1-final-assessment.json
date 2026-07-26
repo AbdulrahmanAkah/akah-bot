@@ -1,0 +1,98 @@
+{
+  "ati": {
+    "counterfactual": "BLOCKED_BY_DATA",
+    "foundation": "ATI_FOUNDATION_COMPLETE",
+    "no_risk_increase": true,
+    "no_stop_widening": true,
+    "profit_protection": "ENGINE_VERIFIED_SHADOW_ONLY",
+    "promotion": "ATI_NOT_PROMOTABLE",
+    "shadow": "ATI_SHADOW_COMPLETE",
+    "shadow_decisions": 201,
+    "shadow_pnl_changed": false,
+    "shadow_trade_ledger_changed": false,
+    "sizing": "ENGINE_VERIFIED_SHADOW_ONLY",
+    "stop_management": "ENGINE_VERIFIED_SHADOW_ONLY"
+  },
+  "authorizations": {
+    "kelly": "BLOCKED",
+    "md02": "BLOCKED",
+    "production": "BLOCKED"
+  },
+  "beta": {
+    "fold_estimate_count": 18,
+    "high_beta_benchmark": "ENGINE_CAUSALITY_TESTED_PERFORMANCE_NOT_RUN",
+    "mean_btc_beta": 0.6911634123907173,
+    "mean_downside_beta": 0.7164958569049826,
+    "residual_momentum": "MIXED",
+    "status": "MIXED",
+    "volatility_matched_btc": "CAUSAL_EXPOSURE_CAPPED_AT_ONE"
+  },
+  "concentration": {
+    "ablation": "BLOCKED_BY_DATA",
+    "leave_one_asset_out": "COMPLETE",
+    "leave_top_n_out": "COMPLETE",
+    "maximum_top_3_positive_profit_share": 0.6904150924656093,
+    "placebo": "BLOCKED_BY_DATA",
+    "status": "MODERATELY_CONCENTRATED"
+  },
+  "dominance": {
+    "broad_alt_findings": "BLOCKED_BY_DATA",
+    "btc_leadership_findings": "BLOCKED_BY_DATA",
+    "cash_flight_findings": "BLOCKED_BY_DATA",
+    "daily_authorised": false,
+    "daily_coverage": 0.0,
+    "data_status": "DOMINANCE_DATA_UNAVAILABLE",
+    "diagnostic_signal": "BLOCKED_BY_DATA",
+    "eight_hour_authorised": false,
+    "eight_hour_coverage": 0.0,
+    "four_hour_authorised": false,
+    "four_hour_coverage": 0.0,
+    "sample_sufficiency": "BLOCKED_BY_DATA"
+  },
+  "evidence_hashes": {
+    "ams-ati-v1-shadow-summary.json": "02e621ae3e5025f5c74bf80a634f5da419e86ce5a4cace886c45636ce8b1ca75",
+    "ams-rd01-ati-v1-protocol.json": "069288fd97267fe05a24acd7b1ea22fda2597eab87b9642d66fff68e65b5fbcc",
+    "ams-rd01-btc-beta-diagnostics-v1.json": "88fe979f6ebfed2a3d5f11bbcfc13013326a2bf6d138d256d65590d97d6a467a",
+    "ams-rd01-concentration-diagnostics-v1.json": "3ebc1ba41574758b5a71bbcf40584051c170a5323fda8b8b0d3e71814b53b02d",
+    "ams-rd01-dominance-data-quality-v1.json": "639ecd27dc0993ea28d853f4720403ae430eed10742c4154750f59f7415d7c2a",
+    "ams-rd01-dominance-source-feasibility-v1.json": "45543fc863f5d4a9818e4251b2fc787fc186957c2601a97b8c109af62bcbc462"
+  },
+  "holdout_2026_accessed": false,
+  "kelly_used": false,
+  "leverage_used": false,
+  "overlay": {
+    "configurations_executed": 0,
+    "cost_executions": 0,
+    "maximum_budget": 12,
+    "status": "BLOCKED_BY_DATA"
+  },
+  "policy_hashes": {
+    "ablations": "3fdf6e417d61fb0bd7f2c8c30707f1ff1a657a2e8309b6f6a516dca5cc700294",
+    "ati_invariants": "265c050e4af7f3bd929d8acb09455b6aae16b3766c9155ca7a8f713838226460",
+    "ati_policies": "a079a6f46fc36c89dcbb3993e7132d1727fb9d7eb4214e2d7cc0818889b7ddc0",
+    "negative_controls": "9002498f104e273b25b36d8f24e79eff63970a621b8b58d8636274129583d21b",
+    "overlay_budget": "5df9d9f77d090d0e3755b99289b097bc4018d036c03b9f2d869346e9f162af76",
+    "overlays": "716302a25693928801586af339dadc02660f823aaf6a879234f1a6bf731e89c9",
+    "regime_specifications": "cf3da61f2eef0ba2dbc2e7614b90ce42540e6a50a7c9f3cb6cd58326dccadc08",
+    "sample_gate": "d46922ba40b6d8fa15ace55e48198f804bcbae007124418297c31992c8a9b449",
+    "study_mode": "bc760920d4148b376569152559766e9cc1ac4c79fb3f7d674d5d26901ff3c3d6",
+    "timeframes": "7128ca5083c756f14af55eb6ddd06f8a31b8e8aed355384dc0e8fcefa9527da8"
+  },
+  "quality_gates": {
+    "mypy": "PASS",
+    "pytest": "PASS",
+    "ruff": "PASS"
+  },
+  "research_result": "PARTIAL",
+  "safety_stop": "PASS",
+  "schema_version": "ams-rd01-ati-v1-final-assessment",
+  "test_2025_accessed": false,
+  "universe": {
+    "cost_budget_consumed": 0,
+    "delisted_four_hour_coverage": 0.0,
+    "dynamic_four_hour_coverage": 0.0,
+    "dynamic_matrix_consumed": 0,
+    "historical_membership_resolution": 0.0,
+    "status": "PARTIAL"
+  }
+}
