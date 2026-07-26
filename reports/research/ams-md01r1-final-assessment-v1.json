@@ -1,0 +1,262 @@
+{
+  "alignment_status": "INSUFFICIENT_SAMPLE",
+  "blockers": [
+    "MEMBERSHIP_RESOLUTION_BELOW_95_PERCENT",
+    "ELIGIBLE_HOUR_4H_COVERAGE_BELOW_98_PERCENT",
+    "DELISTED_DATA_COVERAGE_BELOW_90_PERCENT"
+  ],
+  "census_summary": {
+    "current_usdt_symbols": 865,
+    "dynamic_assets_with_registered_4h": 0,
+    "historically_delisted_candidates": 47,
+    "instrument_candidates": 1436,
+    "renames_or_migrations_resolved": 0,
+    "resolved_memberships": 0
+  },
+  "continuous_oos": "NOT_EXECUTED_UNIVERSE_GATE_PARTIAL",
+  "cost_mode_executions": 0,
+  "cost_mode_executions_remaining": 36,
+  "dynamic_results": "NOT_EXECUTED_UNIVERSE_GATE_PARTIAL",
+  "external_hash_mismatches": 0,
+  "factor_statuses": {
+    "DUAL": "INSUFFICIENT_SAMPLE",
+    "TSM": "INSUFFICIENT_SAMPLE",
+    "XSM": "INSUFFICIENT_SAMPLE"
+  },
+  "final_research_decision": "REVISE_UNIVERSE_DATA_WITHOUT_2025",
+  "hash_mismatches": 0,
+  "holdout_2026_accessed": false,
+  "kelly_research_authorized": false,
+  "limitations": [
+    "CURRENT_SYMBOLS_ENDPOINT_IS_NOT_A_HISTORICAL_SNAPSHOT",
+    "ANNOUNCEMENT_PUBLICATION_TIME_NOT_SUBSTITUTED_FOR_TRADING_TIME",
+    "DELISTED_4H_HISTORY_COVERAGE_IS_ZERO",
+    "DYNAMIC_SURVIVORSHIP_ATTRIBUTION_NOT_COMPUTABLE"
+  ],
+  "liquidity": {
+    "close_times_base_volume_proxy_uses": 0,
+    "definition": "30D median quote turnover >= 250000 USDT",
+    "true_quote_turnover_uses": 0,
+    "weekly_eligible_counts": "NOT_COMPUTED_UNRESOLVED_MEMBERSHIP"
+  },
+  "md01_reproduction_status": "EXACT_MD01_REPRODUCTION",
+  "next_action": "OBTAIN_CANONICAL_ARCHIVED_KUCOIN_MARKET_MEMBERSHIP_AND_DELISTED_4H_DATA",
+  "open_2025_recommended": false,
+  "open_2026_recommended": false,
+  "open_positions_after_fold": 0,
+  "paired_configurations_executed": 0,
+  "paired_configurations_remaining": 12,
+  "pnl_reconciliation": "PASS",
+  "portfolio_edge_status": "PORTFOLIO_EDGE_WEAK",
+  "proceed_to_md02": false,
+  "schema_version": "ams-md01r1-final-assessment-v1",
+  "status": "PARTIAL",
+  "survivor_30_reproduction": {
+    "exact_historical_comparisons": 14,
+    "execution_count": 18,
+    "maximum_absolute_referenced_difference": 0.0,
+    "results": [
+      {
+        "compounded_return": 2.296082511265581,
+        "cost_mode": "ZERO_COST",
+        "mean_maximum_drawdown": 0.41711286598559844,
+        "profit_factor": 1.7938644721059307,
+        "status": "EXACT_REPRODUCTION",
+        "trade_count": 201,
+        "trades_per_year": 67.0,
+        "variant_id": "MD01-M01"
+      },
+      {
+        "compounded_return": 1.851906978212594,
+        "cost_mode": "BASE_COST",
+        "mean_maximum_drawdown": 0.4311758827091796,
+        "profit_factor": 1.6909922763530518,
+        "status": "EXACT_REPRODUCTION",
+        "trade_count": 201,
+        "trades_per_year": 67.0,
+        "variant_id": "MD01-M01"
+      },
+      {
+        "compounded_return": 1.467352523288386,
+        "cost_mode": "STRESS_0_4_PERCENT",
+        "mean_maximum_drawdown": 0.44547917092070444,
+        "profit_factor": 1.5947845177904187,
+        "status": "EXACT_REPRODUCTION",
+        "trade_count": 201,
+        "trades_per_year": 67.0,
+        "variant_id": "MD01-M01"
+      },
+      {
+        "compounded_return": 0.3600546810054577,
+        "cost_mode": "ZERO_COST",
+        "mean_maximum_drawdown": 0.46866371911088045,
+        "profit_factor": 1.667126663463856,
+        "status": "EXACT_REPRODUCTION",
+        "trade_count": 128,
+        "trades_per_year": 42.666666666666664,
+        "variant_id": "MD01-M02"
+      },
+      {
+        "compounded_return": 0.2446144333021083,
+        "cost_mode": "BASE_COST",
+        "mean_maximum_drawdown": 0.4761340588594631,
+        "profit_factor": 1.5858287387976955,
+        "status": "EXACT_REPRODUCTION",
+        "trade_count": 128,
+        "trades_per_year": 42.666666666666664,
+        "variant_id": "MD01-M02"
+      },
+      {
+        "compounded_return": 0.13900458850382624,
+        "cost_mode": "STRESS_0_4_PERCENT",
+        "mean_maximum_drawdown": 0.48349734555058627,
+        "profit_factor": 1.5085363663556175,
+        "status": "EXACT_REPRODUCTION",
+        "trade_count": 128,
+        "trades_per_year": 42.666666666666664,
+        "variant_id": "MD01-M02"
+      },
+      {
+        "compounded_return": 2.48938598950988,
+        "cost_mode": "ZERO_COST",
+        "mean_maximum_drawdown": 0.4299464155708225,
+        "profit_factor": 2.0856191326114493,
+        "status": "EXACT_REPRODUCTION",
+        "trade_count": 161,
+        "trades_per_year": 53.666666666666664,
+        "variant_id": "MD01-M03"
+      },
+      {
+        "compounded_return": 2.0246910843194907,
+        "cost_mode": "BASE_COST",
+        "mean_maximum_drawdown": 0.4445397975831597,
+        "profit_factor": 1.9716138193578552,
+        "status": "EXACT_REPRODUCTION",
+        "trade_count": 161,
+        "trades_per_year": 53.666666666666664,
+        "variant_id": "MD01-M03"
+      },
+      {
+        "compounded_return": 1.6210670117932446,
+        "cost_mode": "STRESS_0_4_PERCENT",
+        "mean_maximum_drawdown": 0.45870072320093036,
+        "profit_factor": 1.8649236045796467,
+        "status": "EXACT_REPRODUCTION",
+        "trade_count": 161,
+        "trades_per_year": 53.666666666666664,
+        "variant_id": "MD01-M03"
+      },
+      {
+        "compounded_return": -0.10956410478580669,
+        "cost_mode": "ZERO_COST",
+        "mean_maximum_drawdown": 0.48606929224333456,
+        "profit_factor": 1.2440888040365774,
+        "status": "EXACT_REPRODUCTION",
+        "trade_count": 96,
+        "trades_per_year": 32.0,
+        "variant_id": "MD01-M04"
+      },
+      {
+        "compounded_return": -0.18510859278711767,
+        "cost_mode": "BASE_COST",
+        "mean_maximum_drawdown": 0.4946175596788809,
+        "profit_factor": 1.184265804442438,
+        "status": "EXECUTED_NO_HISTORICAL_REFERENCE",
+        "trade_count": 96,
+        "trades_per_year": 32.0,
+        "variant_id": "MD01-M04"
+      },
+      {
+        "compounded_return": -0.25444418323739404,
+        "cost_mode": "STRESS_0_4_PERCENT",
+        "mean_maximum_drawdown": 0.5030488683517302,
+        "profit_factor": 1.1275095723111475,
+        "status": "EXECUTED_NO_HISTORICAL_REFERENCE",
+        "trade_count": 96,
+        "trades_per_year": 32.0,
+        "variant_id": "MD01-M04"
+      },
+      {
+        "compounded_return": 3.2184367709303876,
+        "cost_mode": "ZERO_COST",
+        "mean_maximum_drawdown": 0.4164948802205643,
+        "profit_factor": 2.121960767414217,
+        "status": "EXACT_REPRODUCTION",
+        "trade_count": 147,
+        "trades_per_year": 49.0,
+        "variant_id": "MD01-M05"
+      },
+      {
+        "compounded_return": 2.6861470605832247,
+        "cost_mode": "BASE_COST",
+        "mean_maximum_drawdown": 0.4312530196716661,
+        "profit_factor": 2.004196566411565,
+        "status": "EXACT_REPRODUCTION",
+        "trade_count": 147,
+        "trades_per_year": 49.0,
+        "variant_id": "MD01-M05"
+      },
+      {
+        "compounded_return": 2.22009138426767,
+        "cost_mode": "STRESS_0_4_PERCENT",
+        "mean_maximum_drawdown": 0.4455981573322763,
+        "profit_factor": 1.893965267436359,
+        "status": "EXACT_REPRODUCTION",
+        "trade_count": 147,
+        "trades_per_year": 49.0,
+        "variant_id": "MD01-M05"
+      },
+      {
+        "compounded_return": -0.23969783763714758,
+        "cost_mode": "ZERO_COST",
+        "mean_maximum_drawdown": 0.4862704158213429,
+        "profit_factor": 1.088558904168137,
+        "status": "EXACT_REPRODUCTION",
+        "trade_count": 85,
+        "trades_per_year": 28.333333333333332,
+        "variant_id": "MD01-M06"
+      },
+      {
+        "compounded_return": -0.2978147919302585,
+        "cost_mode": "BASE_COST",
+        "mean_maximum_drawdown": 0.49416727693105883,
+        "profit_factor": 1.0345325492568613,
+        "status": "EXECUTED_NO_HISTORICAL_REFERENCE",
+        "trade_count": 85,
+        "trades_per_year": 28.333333333333332,
+        "variant_id": "MD01-M06"
+      },
+      {
+        "compounded_return": -0.35164155580997614,
+        "cost_mode": "STRESS_0_4_PERCENT",
+        "mean_maximum_drawdown": 0.502339364007957,
+        "profit_factor": 0.9833049484032457,
+        "status": "EXECUTED_NO_HISTORICAL_REFERENCE",
+        "trade_count": 85,
+        "trades_per_year": 28.333333333333332,
+        "variant_id": "MD01-M06"
+      }
+    ],
+    "status": "EXACT_MD01_REPRODUCTION",
+    "unreferenced_cost_executions": 4
+  },
+  "survivorship_drawdown_difference": "INCONCLUSIVE_DATA_COVERAGE",
+  "survivorship_impact_status": "INCONCLUSIVE_DATA_COVERAGE",
+  "survivorship_profit_factor_difference": "INCONCLUSIVE_DATA_COVERAGE",
+  "survivorship_return_inflation": "INCONCLUSIVE_DATA_COVERAGE",
+  "test_2025_accessed": false,
+  "universe_gate": {
+    "blockers": [
+      "MEMBERSHIP_RESOLUTION_BELOW_95_PERCENT",
+      "ELIGIBLE_HOUR_4H_COVERAGE_BELOW_98_PERCENT",
+      "DELISTED_DATA_COVERAGE_BELOW_90_PERCENT"
+    ],
+    "boundary_violations": 0,
+    "delisted_data_coverage": 0.0,
+    "eligible_four_hour_coverage": 0.0,
+    "mapping_conflicts": 0,
+    "membership_resolved_ratio": 0.0,
+    "status": "POINT_IN_TIME_UNIVERSE_PARTIAL"
+  },
+  "universe_reconstruction_status": "POINT_IN_TIME_UNIVERSE_PARTIAL"
+}
