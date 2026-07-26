@@ -61,6 +61,14 @@ FOLDS: tuple[tuple[str, pd.Timestamp, pd.Timestamp], ...] = (
         RESEARCH_LOCK,
     ),
 )
+_FEATURE_CACHE: dict[
+    tuple[int, int, int],
+    tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame, pd.DataFrame],
+] = {}
+_REBALANCE_CACHE: dict[
+    tuple[int, int, int, int, int, int],
+    tuple[pd.DataFrame, dict[str, Any], dict[str, str], pd.Timestamp, pd.Timestamp, float],
+] = {}
 
 
 class MD01Error(RuntimeError):
@@ -686,10 +694,16 @@ def simulate_md01_fold(
     if control_mode not in {"REGISTERED", "FLAT_ALIGNMENT", "CRISIS_OFF"}:
         raise MD01Error("unregistered control mode")
     variant = variant_spec(variant_id)
-    daily_features = build_trend_features(daily)
-    eight_features = build_trend_features(eight_hour)
-    four_features = build_trend_features(four_hour, four_hour=True)
-    crisis_frame = build_daily_crisis(daily_features)
+    feature_key = (id(daily), id(eight_hour), id(four_hour))
+    cached_features = _FEATURE_CACHE.get(feature_key)
+    if cached_features is None:
+        daily_features = build_trend_features(daily)
+        eight_features = build_trend_features(eight_hour)
+        four_features = build_trend_features(four_hour, four_hour=True)
+        crisis_frame = build_daily_crisis(daily_features)
+        cached_features = (daily_features, eight_features, four_features, crisis_frame)
+        _FEATURE_CACHE[feature_key] = cached_features
+    daily_features, eight_features, four_features, crisis_frame = cached_features
     availability_frame = availability.copy()
     availability_frame["tradable_from"] = _utc(availability_frame["tradable_from"])
     availability_frame["tradable_until"] = _utc(availability_frame["tradable_until"])
@@ -709,6 +723,7 @@ def simulate_md01_fold(
     pending_entries: dict[pd.Timestamp, list[dict[str, Any]]] = defaultdict(list)
     pending_exits: dict[pd.Timestamp, list[tuple[str, str]]] = defaultdict(list)
     active_selection: set[str] = set()
+    active_ranks: dict[str, int] = {}
     active_selection_count = 0
     selection_generation = 0
     last_exit_rebalance: dict[str, pd.Timestamp] = {}
@@ -792,19 +807,51 @@ def simulate_md01_fold(
         if timestamp in rebalance_times:
             current_rebalance = timestamp
             selection_generation += 1
-            ranked, eligibility = eligible_universe_at(
-                timestamp=timestamp,
-                horizon_days=variant.horizon_days,
-                daily=daily_features,
-                eight_hour=eight_features,
-                four_hour=four_features,
-                availability=availability_frame,
+            cache_key = (
+                id(daily_features),
+                id(eight_features),
+                id(four_features),
+                id(availability),
+                variant.horizon_days,
+                timestamp.value,
             )
-            cluster_map, window_start, window_end, corr_dispersion = causal_cluster_snapshot(
-                daily_features,
-                timestamp=timestamp,
-                symbols=ranked["symbol"].astype(str).tolist(),
-            )
+            cached_rebalance = _REBALANCE_CACHE.get(cache_key)
+            if cached_rebalance is None:
+                ranked, eligibility = eligible_universe_at(
+                    timestamp=timestamp,
+                    horizon_days=variant.horizon_days,
+                    daily=daily_features,
+                    eight_hour=eight_features,
+                    four_hour=four_features,
+                    availability=availability_frame,
+                )
+                (
+                    cluster_map,
+                    window_start,
+                    window_end,
+                    corr_dispersion,
+                ) = causal_cluster_snapshot(
+                    daily_features,
+                    timestamp=timestamp,
+                    symbols=ranked["symbol"].astype(str).tolist(),
+                )
+                cached_rebalance = (
+                    ranked,
+                    eligibility,
+                    cluster_map,
+                    window_start,
+                    window_end,
+                    corr_dispersion,
+                )
+                _REBALANCE_CACHE[cache_key] = cached_rebalance
+            (
+                ranked,
+                eligibility,
+                cluster_map,
+                window_start,
+                window_end,
+                corr_dispersion,
+            ) = cached_rebalance
             selected, cluster_decisions = select_assets(
                 ranked,
                 variant=variant,
@@ -823,6 +870,11 @@ def simulate_md01_fold(
                 counters["CRISIS_ROTATION_BLOCK"] += len(new_symbols)
                 selected_set -= new_symbols
             active_selection = selected_set
+            active_ranks = {
+                symbol: rank
+                for rank, symbol in enumerate(selected)
+                if symbol in active_selection
+            }
             active_selection_count = len(selected_set)
             counters["CLUSTER_BLOCKED"] += sum(
                 decision["decision"] == "CLUSTER_BLOCKED" for decision in cluster_decisions
@@ -976,8 +1028,11 @@ def simulate_md01_fold(
             candidate["fill_timestamp"] = timestamp.isoformat()
             candidate["fill_price"] = price
             counters["ENTRY_FILLED"] += 1
-            if timestamp <= pd.Timestamp(candidate["signal_bar_close"]):
-                raise MD01Error("same-bar entry detected")
+            if (
+                timestamp != pd.Timestamp(candidate["scheduled_entry"])
+                or timestamp <= pd.Timestamp(candidate["signal_bar_open"])
+            ):
+                raise MD01Error("same-bar entry or wrong scheduled open detected")
 
         # Track open-position excursions from current completed bar.
         for symbol, position in positions.items():
@@ -996,7 +1051,7 @@ def simulate_md01_fold(
         # Generate causal candidates only after this 4H bar has closed.
         close_timestamp = timestamp + pd.Timedelta(hours=4)
         regime = _market_regime_at(crisis_frame, close_timestamp)
-        for rank, symbol in enumerate(sorted(active_selection)):
+        for symbol in sorted(active_selection, key=lambda value: (active_ranks[value], value)):
             if symbol in positions or symbol not in rows_by_symbol.index:
                 continue
             row = rows_by_symbol.loc[symbol]
@@ -1066,7 +1121,7 @@ def simulate_md01_fold(
                 counters["CRISIS_ENTRY_BLOCK"] += 1
                 continue
             pending_entries[close_timestamp].append(
-                {"symbol": symbol, "rank": rank, "candidate": candidate}
+                {"symbol": symbol, "rank": active_ranks[symbol], "candidate": candidate}
             )
             counters["ENTRY_SCHEDULED"] += 1
 
