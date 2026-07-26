@@ -18,6 +18,7 @@ REPORTS = ROOT / "reports/research"
 LEDGER_PATH = REPORTS / "ams-v4-experiment-ledger-v1.json"
 ASSESSMENT_PATH = REPORTS / "ams-v4-final-assessment-v1.json"
 MARKDOWN_PATH = REPORTS / "ams-v4-final-assessment-v1.md"
+READINESS_PATH = REPORTS / "ams-v4-data-readiness-v1.json"
 
 
 def write_text_atomically(path: Path, text: str) -> None:
@@ -115,6 +116,23 @@ def _score(summary: dict[str, Any]) -> float:
     )
 
 
+def _group_mean(items: list[dict[str, Any]]) -> dict[str, float]:
+    return {
+        "mean_base_compounded_return": float(
+            pd.Series([item["base_compounded_return"] for item in items]).mean()
+        ),
+        "mean_stress_compounded_return": float(
+            pd.Series([item["stress_compounded_return"] for item in items]).mean()
+        ),
+        "mean_maximum_drawdown": float(
+            pd.Series([item["mean_maximum_drawdown"] for item in items]).mean()
+        ),
+        "mean_trades_per_year": float(
+            pd.Series([item["trades_per_year"] for item in items]).mean()
+        ),
+    }
+
+
 def main() -> None:
     ledger = json.loads(LEDGER_PATH.read_text(encoding="utf-8"))
     accounting = ledger["trial_accounting"]
@@ -129,6 +147,9 @@ def main() -> None:
             raise RuntimeError(f"Report hash mismatch: {path}")
         reports.append(json.loads(path.read_text(encoding="utf-8")))
     summaries = [_summary(report) for report in reports]
+    parameters = {
+        item["configuration_id"]: item["parameters"] for item in ledger["alpha_configurations"]
+    }
     ranked = sorted(summaries, key=lambda item: (-_score(item), item["trial_id"]))
     for fold_index in range(3):
         ordered = sorted(
@@ -141,6 +162,7 @@ def main() -> None:
         ranks = item["fold_ranks"]
         item["rank_stability_standard_deviation"] = float(pd.Series(ranks).std(ddof=0))
     best = ranked[0]
+    positive_summaries = [item for item in summaries if item["base_compounded_return"] > 0.0]
     profile_limit = 0.25 if best["portfolio_profile_id"].endswith("P01") else 0.30
     expectancy = best["bootstrap_expectancy"]
     strong = (
@@ -178,6 +200,28 @@ def main() -> None:
                     - no_fib["stress_compounded_return"],
                 }
             )
+    runner = [
+        item
+        for item in summaries
+        if parameters[item["configuration_id"]]["exit_model"] == "RUNNER_ONLY"
+    ]
+    partial = [
+        item
+        for item in summaries
+        if parameters[item["configuration_id"]]["exit_model"] == "PARTIAL_AND_RUNNER"
+    ]
+    no_fib = [
+        item
+        for item in summaries
+        if parameters[item["configuration_id"]]["fibonacci_mode"] == "NO_FIBONACCI"
+    ]
+    soft_fib = [
+        item
+        for item in summaries
+        if parameters[item["configuration_id"]]["fibonacci_mode"] == "SOFT_FIBONACCI_SCORE"
+    ]
+    p01 = [item for item in summaries if item["portfolio_profile_id"].endswith("P01")]
+    p02 = [item for item in summaries if item["portfolio_profile_id"].endswith("P02")]
     payload = {
         "schema_version": "ams-v4-final-assessment-v1",
         "status": "PASS",
@@ -187,7 +231,7 @@ def main() -> None:
         "remaining_trials": 0,
         "best_return_drawdown_model": best,
         "best_robustness_model": min(
-            summaries,
+            positive_summaries,
             key=lambda item: (
                 item["worst_fold_drawdown"],
                 -item["positive_fold_ratio"],
@@ -200,6 +244,15 @@ def main() -> None:
         "all_trials": sorted(summaries, key=lambda item: item["trial_id"]),
         "top_five": ranked[:5],
         "paired_fibonacci_comparison": paired,
+        "strategy_comparisons": {
+            "runner_only": _group_mean(runner),
+            "partial_and_runner": _group_mean(partial),
+            "no_fibonacci": _group_mean(no_fib),
+            "soft_fibonacci": _group_mean(soft_fib),
+            "p01_active_balanced": _group_mean(p01),
+            "p02_controlled_conviction": _group_mean(p02),
+            "wider_stop_mfe_capture": "NOT_IDENTIFIABLE: fixed stop parameters across matrix.",
+        },
         "overfitting": {
             "models_tested": 24,
             "deflated_sharpe_ratio": "INSUFFICIENT_INDEPENDENT_FOLDS",
@@ -214,6 +267,17 @@ def main() -> None:
         "next_action": "DO_NOT_OPEN_2025"
         if assessment != "REQUEST_2025_TEST_CANDIDATE"
         else "REQUEST_GOVERNED_2025_OPENING",
+        "reasoning": [
+            "The best return/drawdown result is positive under base and stress costs but SPARSE.",
+            "Its Calmar ratio is below the pre-registered 1.5 strong-candidate threshold.",
+            "Its bootstrap expectancy confidence interval crosses zero.",
+            "Three-fold rank stability is weak and valid CSCV/PBO is unavailable.",
+        ],
+        "limitations": [
+            "Stop width was fixed, so the matrix cannot isolate wider-stop MFE capture.",
+            "Three annual folds are insufficient for valid CSCV/PBO.",
+            "The target activity range was not achieved by the strongest models.",
+        ],
     }
     text = json.dumps(payload, indent=2, sort_keys=True, allow_nan=False) + "\n"
     write_text_atomically(ASSESSMENT_PATH, text)
@@ -223,6 +287,46 @@ def main() -> None:
         f"{item['mean_maximum_drawdown']:.2%} | {item['trade_count']} |"
         for item in sorted(summaries, key=lambda value: value["trial_id"])
     )
+    comparisons = payload["strategy_comparisons"]
+    direct_answers = "\n".join(
+        [
+            (
+                "1. Activity did not meet the 150-300 target: "
+                f"{best['trades_per_year']:.1f}/year ({best['activity_classification']})."
+            ),
+            "2. Wider-stop MFE capture is not identifiable because stop parameters were fixed.",
+            (
+                "3. Runner-only mean base return was "
+                f"{comparisons['runner_only']['mean_base_compounded_return']:.2%}; "
+                "partial-and-runner was "
+                f"{comparisons['partial_and_runner']['mean_base_compounded_return']:.2%}."
+            ),
+            (
+                "4. Soft Fibonacci mean base return was "
+                f"{comparisons['soft_fibonacci']['mean_base_compounded_return']:.2%}; "
+                "no-Fibonacci was "
+                f"{comparisons['no_fibonacci']['mean_base_compounded_return']:.2%}."
+            ),
+            (
+                "5. P02 mean base return was "
+                f"{comparisons['p02_controlled_conviction']['mean_base_compounded_return']:.2%}; "
+                "P01 was "
+                f"{comparisons['p01_active_balanced']['mean_base_compounded_return']:.2%}."
+            ),
+            (
+                f"6. Best model under stress is `{best['trial_id']}` at "
+                f"{best['stress_compounded_return']:.2%}."
+            ),
+            (
+                "7. No model is approved for 2025: sparse activity, weak Calmar, "
+                "and unstable ranks remain."
+            ),
+            (
+                "8. Main live risks are opportunity sparsity, regime dependence, "
+                "and transaction costs."
+            ),
+        ]
+    )
     markdown = (
         "# AMS V4 Active Conviction Swing — Final Assessment\n\n"
         f"Assessment: **{assessment}**\n\n"
@@ -231,6 +335,8 @@ def main() -> None:
         "| Trial | Alpha | Profile | Base | Stress | Mean Max DD | Trades |\n"
         "|---|---|---|---:|---:|---:|---:|\n"
         f"{table}\n\n"
+        "## Direct answers\n\n"
+        f"{direct_answers}\n\n"
         "The 2025 and 2026 locks were not opened. Deflated Sharpe and PBO are reported "
         "as insufficient because three folds cannot support valid independent CSCV.\n"
     )
@@ -242,6 +348,22 @@ def main() -> None:
     }
     write_text_atomically(
         LEDGER_PATH, json.dumps(ledger, indent=2, sort_keys=True, allow_nan=False) + "\n"
+    )
+    readiness = json.loads(READINESS_PATH.read_text(encoding="utf-8"))
+    readiness.update(
+        {
+            "status": "AMS_V4_COMPLETE",
+            "executed_trials": 24,
+            "remaining_trials": 0,
+            "assessment": assessment,
+            "assessment_report_sha256": file_sha256(ASSESSMENT_PATH),
+            "next_action": payload["next_action"],
+            "test_2025_accessed": False,
+            "holdout_2026_accessed": False,
+        }
+    )
+    write_text_atomically(
+        READINESS_PATH, json.dumps(readiness, indent=2, sort_keys=True, allow_nan=False) + "\n"
     )
     print(ASSESSMENT_PATH)
 
