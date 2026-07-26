@@ -1,133 +1,160 @@
 {
-  "counts": {
-    "DIFFERENT_IMPLEMENTATION": 1,
-    "FULL": 0,
-    "INHERITED_V4": 2,
-    "MISSING": 1,
-    "PARTIAL": 3,
-    "UNTESTED": 1
-  },
-  "critical_blockers": [
-    "V5-REQ-NATIVE-001",
-    "V5-REQ-EXEC-002",
-    "V5-REQ-THRESHOLD-003",
-    "V5-REQ-STOP-005",
-    "V5-REQ-TEST-007"
-  ],
+  "critical_requirement_count": 10,
+  "critical_requirements_full": 10,
+  "critical_requirements_not_full": 0,
   "holdout_2026_accessed": false,
-  "legacy_v5_scientific_status": "IMPLEMENTATION_INCOMPLETE",
+  "native_engine_status": "VERIFIED",
+  "native_integration": "PASS",
+  "open_positions_after_fold": 0,
+  "pnl_reconciliation": "PASS",
   "requirements": [
     {
-      "expected_behaviour": "V5 engine must not import V4 strategic engine.",
       "implementation_paths": [
-        "src\\spotbot\\research\\ams_v5_active_pullback_reacceleration.py"
+        "src/spotbot/research/ams_v5_native_engine.py"
       ],
-      "observed_behaviour": "Verified by AST and source review.",
-      "required_correction": "Create ams_v5_native_engine.py without V4 strategy imports.",
-      "requirement": "V5 engine must not import V4 strategic engine.",
-      "requirement_id": "V5-REQ-NATIVE-001",
+      "integration_evidence": "reports/research/ams-v5r1-native-engine-integration-v1.json",
+      "requirement": "Native engine has no V4 strategic dependency.",
+      "requirement_id": "V5R1-REQ-NATIVE-001",
       "risk": "CRITICAL",
-      "status": "DIFFERENT_IMPLEMENTATION",
-      "test_paths": []
+      "shadow_evidence": "reports/research/ams-v5r1-shadow-validation-v1.json",
+      "status": "FULL",
+      "test_paths": [
+        "tests/test_ams_v5r1_assessment.py"
+      ]
     },
     {
-      "expected_behaviour": "Native V5 fill, stop, trailing, add-on and re-entry policies.",
       "implementation_paths": [
-        "src\\spotbot\\research\\ams_v5_active_pullback_reacceleration.py"
+        "src/spotbot/research/ams_v5_native_engine.py"
       ],
-      "observed_behaviour": "Verified by AST and source review.",
-      "required_correction": "Implement and test native V5 execution state machine.",
-      "requirement": "Native V5 fill, stop, trailing, add-on and re-entry policies.",
-      "requirement_id": "V5-REQ-EXEC-002",
+      "integration_evidence": "reports/research/ams-v5r1-native-engine-integration-v1.json",
+      "requirement": "Next-open entry, stops, fees, and conservative event ordering.",
+      "requirement_id": "V5R1-REQ-EXEC-002",
       "risk": "CRITICAL",
-      "status": "INHERITED_V4",
-      "test_paths": []
+      "shadow_evidence": "reports/research/ams-v5r1-shadow-validation-v1.json",
+      "status": "FULL",
+      "test_paths": [
+        "tests/test_ams_v5_native_execution.py"
+      ]
     },
     {
-      "expected_behaviour": "Train-only 50/55 threshold objective with safety gates.",
       "implementation_paths": [
-        "src\\spotbot\\research\\ams_v5_active_pullback_reacceleration.py"
+        "src/spotbot/research/ams_v5_native_engine.py"
       ],
-      "observed_behaviour": "Verified by AST and source review.",
-      "required_correction": "Implement frozen quality-score objective and validation-independence tests.",
-      "requirement": "Train-only 50/55 threshold objective with safety gates.",
-      "requirement_id": "V5-REQ-THRESHOLD-003",
+      "integration_evidence": "reports/research/ams-v5r1-native-engine-integration-v1.json",
+      "requirement": "One next-open 25 percent add-on to a winning position only.",
+      "requirement_id": "V5R1-REQ-ADDON-003",
       "risk": "CRITICAL",
-      "status": "PARTIAL",
-      "test_paths": []
+      "shadow_evidence": "reports/research/ams-v5r1-shadow-validation-v1.json",
+      "status": "FULL",
+      "test_paths": [
+        "tests/test_ams_v5_native_portfolio.py"
+      ]
     },
     {
-      "expected_behaviour": "Three V5 families with distinct causal rules.",
       "implementation_paths": [
-        "src\\spotbot\\research\\ams_v5_active_pullback_reacceleration.py"
+        "src/spotbot/research/ams_v5_native_engine.py"
       ],
-      "observed_behaviour": "Verified by AST and source review.",
-      "required_correction": "Implement native family-specific candidate records and tests.",
-      "requirement": "Three V5 families with distinct causal rules.",
-      "requirement_id": "V5-REQ-SETUP-004",
-      "risk": "HIGH",
-      "status": "PARTIAL",
-      "test_paths": []
-    },
-    {
-      "expected_behaviour": "Balanced/wide structural stop contract.",
-      "implementation_paths": [
-        "src\\spotbot\\research\\ams_v5_active_pullback_reacceleration.py"
-      ],
-      "observed_behaviour": "Verified by AST and source review.",
-      "required_correction": "Implement native structural anchors, ceilings, gap recalculation and sizing.",
-      "requirement": "Balanced/wide structural stop contract.",
-      "requirement_id": "V5-REQ-STOP-005",
+      "integration_evidence": "reports/research/ams-v5r1-native-engine-integration-v1.json",
+      "requirement": "One independent re-entry after two complete bars.",
+      "requirement_id": "V5R1-REQ-REENTRY-004",
       "risk": "CRITICAL",
-      "status": "PARTIAL",
-      "test_paths": []
+      "shadow_evidence": "reports/research/ams-v5r1-shadow-validation-v1.json",
+      "status": "FULL",
+      "test_paths": [
+        "tests/test_ams_v5_native_portfolio.py"
+      ]
     },
     {
-      "expected_behaviour": "Full V5 diagnostics and rejection audit trail.",
       "implementation_paths": [
-        "scripts/research/run_ams_v5_trial.py"
+        "src/spotbot/research/ams_v5_native_engine.py"
       ],
-      "observed_behaviour": "Verified by AST and source review.",
-      "required_correction": "Persist candidate/fill records and required metrics.",
-      "requirement": "Full V5 diagnostics and rejection audit trail.",
-      "requirement_id": "V5-REQ-REPORT-006",
-      "risk": "HIGH",
-      "status": "MISSING",
-      "test_paths": []
-    },
-    {
-      "expected_behaviour": "Comprehensive behavioural test suite.",
-      "implementation_paths": [
-        "tests/test_ams_v5_*.py"
-      ],
-      "observed_behaviour": "Verified by AST and source review.",
-      "required_correction": "Add native feature, setup, execution, portfolio, threshold and accounting tests.",
-      "requirement": "Comprehensive behavioural test suite.",
-      "requirement_id": "V5-REQ-TEST-007",
+      "integration_evidence": "reports/research/ams-v5r1-native-engine-integration-v1.json",
+      "requirement": "Causal 90-day daily-return clusters enforce a limit of two.",
+      "requirement_id": "V5R1-REQ-CLUSTER-005",
       "risk": "CRITICAL",
-      "status": "UNTESTED",
-      "test_paths": []
+      "shadow_evidence": "reports/research/ams-v5r1-shadow-validation-v1.json",
+      "status": "FULL",
+      "test_paths": [
+        "tests/test_ams_v5_native_portfolio.py"
+      ]
     },
     {
-      "expected_behaviour": "Research boundary and next-open execution.",
       "implementation_paths": [
-        "src\\spotbot\\research\\ams_v5_active_pullback_reacceleration.py"
+        "src/spotbot/research/ams_v5_native_engine.py"
       ],
-      "observed_behaviour": "Verified by AST and source review.",
-      "required_correction": "Re-prove in neutral native core tests.",
-      "requirement": "Research boundary and next-open execution.",
-      "requirement_id": "V5-REQ-CAUSAL-008",
-      "risk": "MEDIUM",
-      "status": "INHERITED_V4",
-      "test_paths": []
+      "integration_evidence": "reports/research/ams-v5r1-native-engine-integration-v1.json",
+      "requirement": "Trailing, structure, stagnation, venue, and Fold exits are fills.",
+      "requirement_id": "V5R1-REQ-EXIT-006",
+      "risk": "CRITICAL",
+      "shadow_evidence": "reports/research/ams-v5r1-shadow-validation-v1.json",
+      "status": "FULL",
+      "test_paths": [
+        "tests/test_ams_v5_native_execution.py",
+        "tests/test_ams_v5_native_fold_integration.py"
+      ]
+    },
+    {
+      "implementation_paths": [
+        "src/spotbot/research/ams_v5_native_engine.py"
+      ],
+      "integration_evidence": "reports/research/ams-v5r1-native-engine-integration-v1.json",
+      "requirement": "Threshold 50 or 55 is selected from Train only.",
+      "requirement_id": "V5R1-REQ-THRESHOLD-007",
+      "risk": "CRITICAL",
+      "shadow_evidence": "reports/research/ams-v5r1-shadow-validation-v1.json",
+      "status": "FULL",
+      "test_paths": [
+        "tests/test_ams_v5_native_threshold_selection.py"
+      ]
+    },
+    {
+      "implementation_paths": [
+        "src/spotbot/research/ams_v5_native_engine.py"
+      ],
+      "integration_evidence": "reports/research/ams-v5r1-native-engine-integration-v1.json",
+      "requirement": "Cash, quantities, fees, turnover, and PnL reconcile from fills.",
+      "requirement_id": "V5R1-REQ-ACCOUNTING-008",
+      "risk": "CRITICAL",
+      "shadow_evidence": "reports/research/ams-v5r1-shadow-validation-v1.json",
+      "status": "FULL",
+      "test_paths": [
+        "tests/test_ams_v5_native_reconciliation.py"
+      ]
+    },
+    {
+      "implementation_paths": [
+        "src/spotbot/research/ams_v5_native_engine.py"
+      ],
+      "integration_evidence": "reports/research/ams-v5r1-native-engine-integration-v1.json",
+      "requirement": "Research boundary and bar ownership prevent 2025 and 2026 access.",
+      "requirement_id": "V5R1-REQ-CAUSAL-009",
+      "risk": "CRITICAL",
+      "shadow_evidence": "reports/research/ams-v5r1-shadow-validation-v1.json",
+      "status": "FULL",
+      "test_paths": [
+        "tests/test_ams_v5_native_features.py"
+      ]
+    },
+    {
+      "implementation_paths": [
+        "src/spotbot/research/ams_v5_native_engine.py"
+      ],
+      "integration_evidence": "reports/research/ams-v5r1-native-engine-integration-v1.json",
+      "requirement": "Twelve configurations and two profiles form 24 unique trials.",
+      "requirement_id": "V5R1-REQ-MATRIX-010",
+      "risk": "CRITICAL",
+      "shadow_evidence": "reports/research/ams-v5r1-shadow-validation-v1.json",
+      "status": "FULL",
+      "test_paths": [
+        "tests/test_ams_v5_native_trial_accounting.py"
+      ]
     }
   ],
-  "rerun_allowed": false,
   "schema_version": "ams-v5r1-conformance-audit-v1",
+  "shadow_validation": "PASS",
   "status": "PASS",
+  "strategic_v4_dependencies": [],
   "test_2025_accessed": false,
-  "v4_strategy_imports": [
-    "spotbot.research.ams_v4_active_conviction_swing",
-    "spotbot.research.ams_v4_active_conviction_swing"
-  ]
+  "v5r1_trials_executed": 0,
+  "v5r1_trials_remaining": 24
 }
