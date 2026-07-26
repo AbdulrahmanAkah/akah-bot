@@ -440,7 +440,10 @@ def drawdown_multiplier(drawdown: float) -> float:
 def stop_distance(entry: float, atr: float, structural: float, model: str) -> float | None:
     if not all(math.isfinite(value) for value in (entry, atr, structural)) or atr <= 0:
         return None
-    minimum, maximum = (2.2, 3.4) if model == "STRUCTURE_BALANCED" else (2.6, 4.0)
+    if model == "V4_T12_STRUCTURE":
+        minimum, maximum = 2.2, 3.8
+    else:
+        minimum, maximum = (2.2, 3.4) if model == "STRUCTURE_BALANCED" else (2.6, 4.0)
     structural_distance = entry - structural
     if structural_distance <= 0 or structural_distance / atr > maximum:
         return None
@@ -467,7 +470,9 @@ def trailing_stop(
 
 
 def _candidate_family_matches(actual: str, configured: str) -> bool:
-    return actual != "NONE" and (configured == "HYBRID_ALL_THREE" or actual == configured)
+    return actual != "NONE" and (
+        configured in {"HYBRID_ALL_THREE", "HYBRID"} or actual == configured
+    )
 
 
 def make_candidate(
@@ -981,6 +986,8 @@ def simulate_native_fold(
     daily_panel: pd.DataFrame | None = None,
     eight_hour_panel: pd.DataFrame | None = None,
     availability: pd.DataFrame | None = None,
+    allow_add_on: bool = True,
+    allow_reentry: bool = True,
 ) -> V5FoldResult:
     """Run the single native event path used by tests, Shadow, and V5R1 trials."""
     del daily_panel, eight_hour_panel, availability
@@ -1111,7 +1118,11 @@ def simulate_native_fold(
             open_price = float(row["open"])
             atr = float(row["atr"])
             distance = open_price - candidate.structural_stop_reference
-            maximum_atr = 3.4 if params.stop_model == "STRUCTURE_BALANCED" else 4.0
+            maximum_atr = (
+                3.8
+                if params.stop_model == "V4_T12_STRUCTURE"
+                else (3.4 if params.stop_model == "STRUCTURE_BALANCED" else 4.0)
+            )
             if scheduled.action != "ADD_ON" and distance <= 0:
                 _reject(candidate, rejections, "GAP_INVALIDATED_STOP")
                 continue
@@ -1140,6 +1151,9 @@ def simulate_native_fold(
             throttle = drawdown_multiplier(drawdown)
 
             if scheduled.action == "ADD_ON":
+                if not allow_add_on:
+                    _reject(candidate, rejections, "ADD_ON_DISABLED")
+                    continue
                 position = positions.get(scheduled.symbol)
                 if position is None:
                     _reject(candidate, rejections, "ADD_ON_POSITION_CLOSED")
@@ -1412,6 +1426,8 @@ def simulate_native_fold(
                 original_position_id = positions[symbol].position_id
             elif symbol in reentry:
                 state = reentry[symbol]
+                if not allow_reentry:
+                    continue
                 if state.used:
                     action = "REENTRY"
                     reentry_sequence = 2
