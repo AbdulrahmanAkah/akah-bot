@@ -193,9 +193,23 @@ def main() -> None:
         "holdout_2026_accessed": False,
         "next_action": "RUN_AMS_V4_T01",
     }
+    trial_matrix = {
+        "schema_version": "ams-v4-trial-matrix-registration-v1",
+        "protocol_id": protocol["protocol_id"],
+        "status": "REGISTERED_NOT_EXECUTED",
+        "authorized_trials": 24,
+        "executed_trials": 0,
+        "remaining_trials": 24,
+        "matrix": trial_plan,
+        "pairing_contract": "Adjacent alpha configurations differ only in fibonacci_mode.",
+        "test_2025_accessed": False,
+        "holdout_2026_accessed": False,
+        "next_action": "RUN_AMS_V4_T01",
+    }
     write_json(REPORTS / "ams-v4-active-conviction-protocol-v1.json", protocol)
     write_json(REPORTS / "ams-v4-experiment-ledger-v1.json", ledger)
     write_json(REPORTS / "ams-v4-data-readiness-v1.json", readiness)
+    write_json(REPORTS / "ams-v4-trial-matrix-registration-v1.json", trial_matrix)
     print(
         json.dumps(
             {
