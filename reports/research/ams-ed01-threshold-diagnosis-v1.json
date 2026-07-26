@@ -1,0 +1,44 @@
+{
+  "calibration": "OUTCOME_CALIBRATION_INSUFFICIENT: historical candidates have no persisted ledger; Native accepted trades are reported separately.",
+  "frozen_threshold": 55,
+  "holdout_2026_accessed": false,
+  "schema_version": "ams-ed01-threshold-diagnosis-v1",
+  "score_bins": {
+    "50-54": {
+      "accepted_count": 1,
+      "candidate_count": 81
+    },
+    "55-59": {
+      "accepted_count": 1,
+      "candidate_count": 425
+    },
+    "60-64": {
+      "accepted_count": 9,
+      "candidate_count": 984
+    },
+    "65-69": {
+      "accepted_count": 17,
+      "candidate_count": 2007
+    },
+    "70-74": {
+      "accepted_count": 36,
+      "candidate_count": 3213
+    },
+    "75-79": {
+      "accepted_count": 41,
+      "candidate_count": 3993
+    },
+    "80+": {
+      "accepted_count": 116,
+      "candidate_count": 14191
+    },
+    "<50": {
+      "accepted_count": 0,
+      "candidate_count": 16
+    }
+  },
+  "selection": "NOT_USED_IN_V4_T12; protocol and executed code freeze 55",
+  "status": "PASS",
+  "test_2025_accessed": false,
+  "train_metrics": "NOT_AVAILABLE_IN_HISTORICAL_T12"
+}
