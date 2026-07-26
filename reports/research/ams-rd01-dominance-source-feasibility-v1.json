@@ -1,0 +1,81 @@
+{
+  "capabilities": [
+    {
+      "asset_specific": true,
+      "authentication_required": false,
+      "daily_granularity": "Daily",
+      "data_type": "PRICE_VOLUME_OHLCV",
+      "delisted_support": "No",
+      "exchange_specific": true,
+      "historical_coverage": "2021-2024 Survivor-30",
+      "historical_ranking_support": "No",
+      "historical_supply_support": "No",
+      "intraday_granularity": "4H",
+      "provider": "REGISTERED_LOCAL_KUCOIN",
+      "raw_response_available": true,
+      "reproducibility": "SHA256 registered parquet",
+      "restriction_notes": "Price and volume do not establish aggregate market capitalisation."
+    },
+    {
+      "asset_specific": true,
+      "authentication_required": true,
+      "daily_granularity": "Yes",
+      "data_type": "AGGREGATED_ASSET_MARKET_CAP",
+      "delisted_support": "Asset dependent",
+      "exchange_specific": false,
+      "historical_coverage": "Documented historical endpoint",
+      "historical_ranking_support": "Not established in local evidence",
+      "historical_supply_support": "Historical market cap provided, supply history not guaranteed",
+      "intraday_granularity": "Plan dependent",
+      "provider": "COINGECKO_API",
+      "raw_response_available": false,
+      "reproducibility": "No credential configured; not ingested",
+      "restriction_notes": "Would require authenticated, archived raw responses."
+    },
+    {
+      "asset_specific": true,
+      "authentication_required": true,
+      "daily_granularity": "Yes",
+      "data_type": "AGGREGATED_MARKET_CAP_AND_HISTORICAL_LISTINGS",
+      "delisted_support": "Asset dependent",
+      "exchange_specific": false,
+      "historical_coverage": "Documented historical quotes/listings",
+      "historical_ranking_support": "Documented historical listings endpoint",
+      "historical_supply_support": "Plan dependent",
+      "intraday_granularity": "Plan dependent",
+      "provider": "COINMARKETCAP_API",
+      "raw_response_available": false,
+      "reproducibility": "No credential configured; not ingested",
+      "restriction_notes": "Commercial terms and plan coverage require review."
+    },
+    {
+      "asset_specific": true,
+      "authentication_required": false,
+      "daily_granularity": "Potential",
+      "data_type": "STABLECOIN_MARKET_CAP_PROXY",
+      "delisted_support": "Not applicable",
+      "exchange_specific": false,
+      "historical_coverage": "Potential historical stablecoin series",
+      "historical_ranking_support": "No",
+      "historical_supply_support": "Potential",
+      "intraday_granularity": "Not established",
+      "provider": "DEFILLAMA_STABLECOINS",
+      "raw_response_available": false,
+      "reproducibility": "No raw snapshot registered; not ingested",
+      "restriction_notes": "Definition and reproducibility must be verified before use."
+    }
+  ],
+  "conclusion": "NO_REGISTERED_REPRODUCIBLE_MARKET_CAP_SERIES_FOR_2021_2024",
+  "credential_names_present": [],
+  "documentation_sources": [
+    "https://docs.coingecko.com/reference/coins-id-history",
+    "https://docs.coingecko.com/reference/endpoint-overview",
+    "https://coinmarketcap.com/api/documentation/pro-api-reference/cryptocurrency"
+  ],
+  "holdout_2026_accessed": false,
+  "market_data_ingested": false,
+  "providers_tested": 4,
+  "schema_version": "ams-rd01-dominance-source-feasibility-v1",
+  "status": "DOMINANCE_DATA_UNAVAILABLE",
+  "test_2025_accessed": false
+}
