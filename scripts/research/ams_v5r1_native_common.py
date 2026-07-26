@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import math
 import os
 import tempfile
 from collections import Counter
@@ -36,7 +37,19 @@ def sha256(path: Path) -> str:
 
 def atomic_json(path: Path, value: Mapping[str, Any]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    text = json.dumps(value, indent=2, sort_keys=True, allow_nan=False) + "\n"
+
+    def finite(item: Any) -> Any:
+        if isinstance(item, Mapping):
+            return {str(key): finite(nested) for key, nested in item.items()}
+        if isinstance(item, (list, tuple)):
+            return [finite(nested) for nested in item]
+        if isinstance(item, (float, np.floating)) and not math.isfinite(float(item)):
+            return None
+        if isinstance(item, np.generic):
+            return item.item()
+        return item
+
+    text = json.dumps(finite(value), indent=2, sort_keys=True, allow_nan=False) + "\n"
     descriptor, temporary = tempfile.mkstemp(
         dir=path.parent,
         prefix=f".{path.name}.",
@@ -155,6 +168,24 @@ def metrics(result: V5FoldResult) -> dict[str, Any]:
         if positive_pnl > 0
         else 0.0
     )
+    candidates_by_id = {
+        candidate.candidate_id: candidate for candidate in result.candidates
+    }
+    entry_prices = {
+        fill.position_id: fill.price for fill in result.fills if fill.fill_type == "ENTRY"
+    }
+    capture_values = []
+    for trade in trades:
+        candidate = candidates_by_id.get(trade.candidate_id)
+        entry_price = entry_prices.get(trade.position_id)
+        if candidate is None or entry_price is None or trade.mfe_r <= 0:
+            continue
+        initial_risk = entry_price - candidate.structural_stop_reference
+        if initial_risk > 0:
+            capture_values.append(
+                max(trade.realised_pnl, 0.0)
+                / (trade.mfe_r * initial_risk * trade.quantity)
+            )
     return {
         "initial_capital": result.initial_capital,
         "final_equity": result.final_cash,
@@ -178,23 +209,7 @@ def metrics(result: V5FoldResult) -> dict[str, Any]:
         "median_trade": float(np.median(returns)) if returns.size else 0.0,
         "mae_r": float(np.mean([trade.mae_r for trade in trades])) if trades else 0.0,
         "mfe_r": float(np.mean([trade.mfe_r for trade in trades])) if trades else 0.0,
-        "mfe_capture_ratio": float(
-            np.mean(
-                [
-                    max(trade.realised_pnl, 0.0)
-                    / max(
-                        trade.mfe_r
-                        * (trade.average_entry - result.candidates[0].structural_stop_reference)
-                        * trade.quantity,
-                        1e-12,
-                    )
-                    for trade in trades
-                    if trade.mfe_r > 0 and result.candidates
-                ]
-            )
-        )
-        if trades
-        else 0.0,
+        "mfe_capture_ratio": float(np.mean(capture_values)) if capture_values else 0.0,
         "average_holding_bars": float(np.mean([trade.bars_held for trade in trades]))
         if trades
         else 0.0,

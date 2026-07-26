@@ -8,7 +8,9 @@ at the next bar open.  The module deliberately has no V4 strategy dependency.
 from __future__ import annotations
 
 import hashlib
+import itertools
 import math
+import operator
 from collections.abc import Mapping, Sequence
 from dataclasses import asdict, dataclass, field
 from typing import Any, Literal, cast
@@ -31,6 +33,8 @@ EXIT_FILL_TYPES = frozenset(
         "END_OF_FOLD_EXIT",
     }
 )
+_DAILY_CLOSE_CACHE: dict[str, pd.DataFrame] = {}
+_CLUSTER_SNAPSHOT_CACHE: dict[str, dict[pd.Timestamp, dict[str, str]]] = {}
 
 
 class V5NativeError(RuntimeError):
@@ -467,7 +471,7 @@ def _candidate_family_matches(actual: str, configured: str) -> bool:
 
 
 def make_candidate(
-    row: pd.Series,
+    row: Mapping[str, Any],
     params: V5Parameters,
     fold_id: str,
     *,
@@ -556,6 +560,7 @@ def _clusters_from_daily_close(
     if eligible.empty:
         return {symbol: symbol for symbol in symbols}
     daily = eligible.pct_change(fill_method=None)
+    correlations = daily.corr(min_periods=20)
     parent = {symbol: symbol for symbol in symbols}
 
     def find(symbol: str) -> str:
@@ -570,12 +575,12 @@ def _clusters_from_daily_close(
             parent[max(left_root, right_root)] = min(left_root, right_root)
 
     for index, left in enumerate(symbols):
-        if left not in daily:
+        if left not in correlations:
             continue
         for right in symbols[index + 1 :]:
             correlation = (
-                daily[left].corr(daily[right], min_periods=20)
-                if right in daily
+                float(cast(Any, correlations.at[left, right]))
+                if right in correlations
                 else np.nan
             )
             if correlation >= CLUSTER_CORRELATION:
@@ -586,6 +591,12 @@ def _clusters_from_daily_close(
 def _frame_hash(frame: pd.DataFrame) -> str:
     ordered = frame.sort_values(["bar_open_time", "symbol"], kind="mergesort")
     hashed = np.asarray(pd.util.hash_pandas_object(ordered, index=True)).tobytes()
+    return hashlib.sha256(hashed).hexdigest()
+
+
+def _cluster_cache_key(frame: pd.DataFrame) -> str:
+    columns = frame[["symbol", "bar_close_time", "close"]]
+    hashed = np.asarray(pd.util.hash_pandas_object(columns, index=False)).tobytes()
     return hashlib.sha256(hashed).hexdigest()
 
 
@@ -1026,23 +1037,27 @@ def simulate_native_fold(
     rejections = V5RejectionCounters()
     reentry: dict[str, _ReentryState] = {}
     position_sequences: dict[str, int] = {}
-    cluster_cache: dict[pd.Timestamp, dict[str, str]] = {}
     last_prices: dict[str, float] = {}
     symbols = sorted(str(value) for value in frame["symbol"].unique())
-    daily_close = (
-        frame.set_index("bar_close_time")
-        .groupby("symbol")["close"]
-        .resample("1D")
-        .last()
-        .unstack(0)
-    )
+    cluster_key = _cluster_cache_key(frame)
+    if cluster_key not in _DAILY_CLOSE_CACHE:
+        _DAILY_CLOSE_CACHE[cluster_key] = (
+            frame.set_index("bar_close_time")
+            .groupby("symbol")["close"]
+            .resample("1D")
+            .last()
+            .unstack(0)
+        )
+    daily_close = _DAILY_CLOSE_CACHE[cluster_key]
+    cluster_cache = _CLUSTER_SNAPSHOT_CACHE.setdefault(cluster_key, {})
 
-    grouped = frame.groupby("bar_open_time", sort=True)
-    for raw_bar_open, group in grouped:
+    records = frame.to_dict(orient="records")
+    grouped = itertools.groupby(records, key=operator.itemgetter("bar_open_time"))
+    for raw_bar_open, raw_rows in grouped:
         timestamp = pd.Timestamp(cast(Any, raw_bar_open))
-        rows: dict[str, pd.Series[Any]] = {
-            str(record["symbol"]): pd.Series(record)
-            for record in group.to_dict(orient="records")
+        batch = list(raw_rows)
+        rows: dict[str, Mapping[str, Any]] = {
+            str(record["symbol"]): cast(dict[str, Any], record) for record in batch
         }
         for symbol, row in rows.items():
             last_prices[symbol] = float(row["open"])
@@ -1384,10 +1399,10 @@ def simulate_native_fold(
         last_prices.update(close_prices)
         equity = _equity(cash, positions, last_prices)
         peak_equity = max(peak_equity, equity)
-        equity_curve.append((pd.Timestamp(group["bar_close_time"].max()), equity))
+        close_time = max(pd.Timestamp(record["bar_close_time"]) for record in batch)
+        equity_curve.append((close_time, equity))
 
         # Closed-bar signals create next-open work.  Nothing executes on this close.
-        close_time = pd.Timestamp(group["bar_close_time"].max())
         for symbol, row in rows.items():
             action: Literal["ENTRY", "ADD_ON", "REENTRY"] = "ENTRY"
             original_position_id: str | None = None
