@@ -1,0 +1,321 @@
+{
+  "fields": [
+    {
+      "ambiguity": null,
+      "confidence": "HIGH",
+      "field": "configuration_id",
+      "source_lines_or_keys": [
+        "alpha_configurations[A06]"
+      ],
+      "source_paths": [
+        "reports/research/ams-v4-experiment-ledger-v1.json"
+      ],
+      "value": "AMS-V4-A06"
+    },
+    {
+      "ambiguity": null,
+      "confidence": "HIGH",
+      "field": "entry_family",
+      "source_lines_or_keys": [
+        "A06.parameters.entry_family"
+      ],
+      "source_paths": [
+        "reports/research/ams-v4-experiment-ledger-v1.json"
+      ],
+      "value": "HYBRID"
+    },
+    {
+      "ambiguity": null,
+      "confidence": "HIGH",
+      "field": "exit_model",
+      "source_lines_or_keys": [
+        "A06.parameters.exit_model"
+      ],
+      "source_paths": [
+        "reports/research/ams-v4-experiment-ledger-v1.json"
+      ],
+      "value": "RUNNER_ONLY"
+    },
+    {
+      "ambiguity": null,
+      "confidence": "HIGH",
+      "field": "fibonacci_mode",
+      "source_lines_or_keys": [
+        "A06.parameters.fibonacci_mode"
+      ],
+      "source_paths": [
+        "reports/research/ams-v4-experiment-ledger-v1.json"
+      ],
+      "value": "SOFT_FIBONACCI_SCORE"
+    },
+    {
+      "ambiguity": null,
+      "confidence": "HIGH",
+      "field": "score_threshold",
+      "source_lines_or_keys": [
+        "frozen_score_threshold"
+      ],
+      "source_paths": [
+        "reports/research/ams-v4-active-conviction-protocol-v1.json"
+      ],
+      "value": 55
+    },
+    {
+      "ambiguity": null,
+      "confidence": "HIGH",
+      "field": "execution_rule",
+      "source_lines_or_keys": [
+        "execution_rule"
+      ],
+      "source_paths": [
+        "reports/research/ams-v4-active-conviction-protocol-v1.json"
+      ],
+      "value": "SIGNAL_CLOSE_NEXT_BAR_OPEN"
+    },
+    {
+      "ambiguity": null,
+      "confidence": "HIGH",
+      "field": "minimum_stop_atr",
+      "source_lines_or_keys": [
+        "A06.parameters.minimum_stop_atr"
+      ],
+      "source_paths": [
+        "reports/research/ams-v4-experiment-ledger-v1.json"
+      ],
+      "value": 2.2
+    },
+    {
+      "ambiguity": null,
+      "confidence": "HIGH",
+      "field": "typical_stop_atr",
+      "source_lines_or_keys": [
+        "A06.parameters.typical_stop_atr"
+      ],
+      "source_paths": [
+        "reports/research/ams-v4-experiment-ledger-v1.json"
+      ],
+      "value": 2.8
+    },
+    {
+      "ambiguity": null,
+      "confidence": "HIGH",
+      "field": "maximum_stop_atr",
+      "source_lines_or_keys": [
+        "A06.parameters.maximum_stop_atr"
+      ],
+      "source_paths": [
+        "reports/research/ams-v4-experiment-ledger-v1.json"
+      ],
+      "value": 3.8
+    },
+    {
+      "ambiguity": null,
+      "confidence": "HIGH",
+      "field": "trailing_atr",
+      "source_lines_or_keys": [
+        "A06.parameters.trailing_atr"
+      ],
+      "source_paths": [
+        "reports/research/ams-v4-experiment-ledger-v1.json"
+      ],
+      "value": 3.5
+    },
+    {
+      "ambiguity": null,
+      "confidence": "HIGH",
+      "field": "base_cost",
+      "source_lines_or_keys": [
+        "A06.parameters.base_transaction_cost"
+      ],
+      "source_paths": [
+        "reports/research/ams-v4-experiment-ledger-v1.json"
+      ],
+      "value": 0.002
+    },
+    {
+      "ambiguity": null,
+      "confidence": "HIGH",
+      "field": "stress_cost",
+      "source_lines_or_keys": [
+        "A06.parameters.stress_transaction_cost"
+      ],
+      "source_paths": [
+        "reports/research/ams-v4-experiment-ledger-v1.json"
+      ],
+      "value": 0.004
+    },
+    {
+      "ambiguity": null,
+      "confidence": "HIGH",
+      "field": "portfolio_profile",
+      "source_lines_or_keys": [
+        "portfolio_profiles[P02]"
+      ],
+      "source_paths": [
+        "reports/research/ams-v4-experiment-ledger-v1.json"
+      ],
+      "value": {
+        "base_risk_fraction": 0.009,
+        "maximum_cluster_positions": 2,
+        "maximum_initial_risk": 0.0125,
+        "maximum_portfolio_heat": 0.06,
+        "maximum_positions": 6,
+        "name": "CONTROLLED_CONVICTION",
+        "profile_id": "AMS-V4-PORTFOLIO-P02"
+      }
+    },
+    {
+      "ambiguity": null,
+      "confidence": "HIGH",
+      "field": "walk_forward",
+      "source_lines_or_keys": [
+        "fold_results[].fold"
+      ],
+      "source_paths": [
+        "reports/research/ams-v4-ams-v4-t12-trial-v1.json"
+      ],
+      "value": [
+        {
+          "fold_id": "AMS-V4-WF01",
+          "train_start": "2021-01-01T00:00:00Z",
+          "train_usage": "WARM_UP_AND_CAUSAL_FEATURE_HISTORY_ONLY",
+          "validation_end_exclusive": "2023-01-01T00:00:00Z",
+          "validation_start": "2022-01-01T00:00:00Z"
+        },
+        {
+          "fold_id": "AMS-V4-WF02",
+          "train_start": "2021-01-01T00:00:00Z",
+          "train_usage": "WARM_UP_AND_CAUSAL_FEATURE_HISTORY_ONLY",
+          "validation_end_exclusive": "2024-01-01T00:00:00Z",
+          "validation_start": "2023-01-01T00:00:00Z"
+        },
+        {
+          "fold_id": "AMS-V4-WF03",
+          "train_start": "2021-01-01T00:00:00Z",
+          "train_usage": "WARM_UP_AND_CAUSAL_FEATURE_HISTORY_ONLY",
+          "validation_end_exclusive": "2025-01-01T00:00:00Z",
+          "validation_start": "2024-01-01T00:00:00Z"
+        }
+      ]
+    },
+    {
+      "ambiguity": null,
+      "confidence": "HIGH",
+      "field": "initial_capital",
+      "source_lines_or_keys": [
+        "simulate_portfolio default"
+      ],
+      "source_paths": [
+        "scripts/research/run_ams_v4_trial.py"
+      ],
+      "value": 100000.0
+    },
+    {
+      "ambiguity": null,
+      "confidence": "HIGH",
+      "field": "candidate_ordering",
+      "source_lines_or_keys": [
+        "simulate_portfolio candidates sort"
+      ],
+      "source_paths": [
+        "src/spotbot/research/ams_v4_active_conviction_swing.py"
+      ],
+      "value": "score_desc, relative_strength_desc, symbol_asc"
+    },
+    {
+      "ambiguity": null,
+      "confidence": "HIGH",
+      "field": "daily_logic",
+      "source_lines_or_keys": [
+        "build_execution_panel daily_btc"
+      ],
+      "source_paths": [
+        "src/spotbot/research/ams_v4_active_conviction_swing.py"
+      ],
+      "value": "BTC EMA50/EMA200, breadth, drawdown score and multiplier"
+    },
+    {
+      "ambiguity": null,
+      "confidence": "HIGH",
+      "field": "eight_hour_logic",
+      "source_lines_or_keys": [
+        "build_execution_panel per-symbol features"
+      ],
+      "source_paths": [
+        "src/spotbot/research/ams_v4_active_conviction_swing.py"
+      ],
+      "value": "EMA21/EMA55 trend, slope and BTC-relative 20-bar strength"
+    },
+    {
+      "ambiguity": null,
+      "confidence": "HIGH",
+      "field": "four_hour_logic",
+      "source_lines_or_keys": [
+        "breakout/pullback"
+      ],
+      "source_paths": [
+        "src/spotbot/research/ams_v4_active_conviction_swing.py"
+      ],
+      "value": "Donchian breakout or EMA pullback reclaim"
+    },
+    {
+      "ambiguity": null,
+      "confidence": "HIGH",
+      "field": "fibonacci_contribution",
+      "source_lines_or_keys": [
+        "fib_score"
+      ],
+      "source_paths": [
+        "src/spotbot/research/ams_v4_active_conviction_swing.py"
+      ],
+      "value": "8, 4, 0, or -5 points; never hard reject"
+    },
+    {
+      "ambiguity": null,
+      "confidence": "HIGH",
+      "field": "add_on",
+      "source_lines_or_keys": [
+        "pending_adds"
+      ],
+      "source_paths": [
+        "src/spotbot/research/ams_v4_active_conviction_swing.py"
+      ],
+      "value": "one 30% legacy add after +1R pullback"
+    },
+    {
+      "ambiguity": null,
+      "confidence": "HIGH",
+      "field": "reentry",
+      "source_lines_or_keys": [
+        "stopped/reentry_attempts"
+      ],
+      "source_paths": [
+        "src/spotbot/research/ams_v4_active_conviction_swing.py"
+      ],
+      "value": "one after stop and legacy two-bar condition"
+    }
+  ],
+  "historical_trial_id": "AMS-V4-T12",
+  "historical_trial_sha256": "1c86549b924b8f34149fb61dadd4f9ad8b3893a9f1c418e017e7420eb80c31e2",
+  "holdout_2026_accessed": false,
+  "protocol_id": "AMS-ED01-V4-T12-NATIVE-EDGE-VERIFICATION",
+  "schema_version": "ams-ed01-v4-t12-spec-extraction-v1",
+  "spec_conflicts": [
+    {
+      "executed_t12_value": "30% of legacy initial quantity",
+      "field": "add_on_quantity",
+      "protocol_value": "25% to 35%",
+      "resolution": "ED01 preserves executed T12 behavior for parity. Native corrected uses its audited 25% policy only when add-on is enabled.",
+      "status": "SPEC_CONFLICT"
+    },
+    {
+      "executed_t12_value": "frozen 55; no train selection record",
+      "field": "threshold_selection",
+      "protocol_value": "frozen 55",
+      "resolution": "ED01 does not introduce threshold optimisation.",
+      "status": "SPEC_CONFLICT"
+    }
+  ],
+  "status": "PASS",
+  "test_2025_accessed": false
+}

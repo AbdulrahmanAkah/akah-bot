@@ -1,0 +1,60 @@
+{
+  "data_registration": {
+    "availability": {
+      "bytes": 5588,
+      "file_sha256": "de71d0a229120873fc7294cef52b41c577e81bc466f009a49a970a8bfe21473e",
+      "path": "data/research/ams-v3/kucoin-spot-usdt/ams-v3-kucoin-spot-usdt-availability.parquet",
+      "row_count": 30,
+      "symbol_count": 30
+    },
+    "four_hour": {
+      "bytes": 7495295,
+      "content_sha256": "a1925afc45b8e2ef2e20d3a4ad2a1fd00c29e0e88b6addb8e6afd83aee1a30c2",
+      "file_sha256": "591e9006ffa0ab7538869b4c5c2d8d66fac98736e60a1d6b09ee302b403feb70",
+      "first_bar_open_time": "2021-01-01T00:00:00+00:00",
+      "last_bar_close_time": "2025-01-01T00:00:00+00:00",
+      "path": "data/research/ams-v3/kucoin-spot-usdt/ams-v3-kucoin-spot-usdt-4h.parquet",
+      "row_count": 200077,
+      "symbol_count": 30
+    }
+  },
+  "holdout_2026_accessed": false,
+  "protocol_id": "AMS-ED01-V4-T12-NATIVE-EDGE-VERIFICATION",
+  "schema_version": "ams-ed01-experiment-ledger-v1",
+  "test_2025_accessed": false,
+  "trial_accounting": {
+    "authorized_diagnostic_trials": 4,
+    "executed_diagnostic_trials": 0,
+    "remaining_diagnostic_trials": 4
+  },
+  "trial_plan": [
+    {
+      "allow_add_on": true,
+      "allow_reentry": true,
+      "name": "CONTROL",
+      "status": "REGISTERED_NOT_EXECUTED",
+      "variant_id": "ED01-R01"
+    },
+    {
+      "allow_add_on": true,
+      "allow_reentry": false,
+      "name": "NO_REENTRY",
+      "status": "REGISTERED_NOT_EXECUTED",
+      "variant_id": "ED01-R02"
+    },
+    {
+      "allow_add_on": false,
+      "allow_reentry": true,
+      "name": "NO_ADDON",
+      "status": "REGISTERED_NOT_EXECUTED",
+      "variant_id": "ED01-R03"
+    },
+    {
+      "allow_add_on": false,
+      "allow_reentry": false,
+      "name": "NO_REENTRY_NO_ADDON",
+      "status": "REGISTERED_NOT_EXECUTED",
+      "variant_id": "ED01-R04"
+    }
+  ]
+}

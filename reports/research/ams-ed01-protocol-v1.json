@@ -1,0 +1,55 @@
+{
+  "alpha_frozen": {
+    "exit": "RUNNER_ONLY",
+    "family": "HYBRID",
+    "fibonacci": "SOFT_FIBONACCI_SCORE",
+    "threshold": 55
+  },
+  "authorized_diagnostic_trials": 4,
+  "cost_modes": {
+    "BASE": 0.002,
+    "STRESS": 0.004,
+    "ZERO_COST": 0.0
+  },
+  "executed_diagnostic_trials": 0,
+  "historical_reference": "AMS-V4-T12 / AMS-V4-A06 / AMS-V4-PORTFOLIO-P02",
+  "holdout_2026_accessed": false,
+  "native_execution": "ams_v5_native_engine.simulate_native_fold",
+  "new_alpha_parameters": false,
+  "protocol_id": "AMS-ED01-V4-T12-NATIVE-EDGE-VERIFICATION",
+  "remaining_diagnostic_trials": 4,
+  "research_boundary": {
+    "bar_close_time": "<= 2025-01-01T00:00:00Z",
+    "bar_open_time": "< 2025-01-01T00:00:00Z"
+  },
+  "schema_version": "ams-ed01-protocol-v1",
+  "strategy_development": false,
+  "study_type": "DIAGNOSTIC",
+  "test_2025_accessed": false,
+  "variants": [
+    {
+      "allow_add_on": true,
+      "allow_reentry": true,
+      "name": "CONTROL",
+      "variant_id": "ED01-R01"
+    },
+    {
+      "allow_add_on": true,
+      "allow_reentry": false,
+      "name": "NO_REENTRY",
+      "variant_id": "ED01-R02"
+    },
+    {
+      "allow_add_on": false,
+      "allow_reentry": true,
+      "name": "NO_ADDON",
+      "variant_id": "ED01-R03"
+    },
+    {
+      "allow_add_on": false,
+      "allow_reentry": false,
+      "name": "NO_REENTRY_NO_ADDON",
+      "variant_id": "ED01-R04"
+    }
+  ]
+}
