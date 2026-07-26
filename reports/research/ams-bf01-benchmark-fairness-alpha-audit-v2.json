@@ -1,0 +1,2276 @@
+{
+  "benchmark_audit": {
+    "alpha_value_judgement": "INCONCLUSIVE",
+    "equal_weight_total_return": 7.833273176853833,
+    "exposure_matched_comparison_authorized": false,
+    "m05_minus_equal_weight": -5.147126116270608,
+    "m05_total_return": 2.6861470605832247,
+    "raw_return_comparison_available": true,
+    "reason": "Aligned validated M05 and Equal-weight daily series were not supplied; raw aggregate returns alone cannot establish or destroy alpha.",
+    "risk_adjusted_comparison_authorized": false,
+    "volatility_matched_comparison_authorized": false
+  },
+  "generated_files": [
+    "reports/research/ams-bf01-source-inventory-v2.csv",
+    "reports/research/ams-bf01-benchmark-fairness-metrics-v2.csv",
+    "reports/research/ams-bf01-m02-contributors-v2.csv",
+    "reports/research/ams-bf01-regression-v2.csv",
+    "reports/research/ams-bf01-benchmark-fairness-alpha-audit-v2.json",
+    "reports/research/ams-bf01-benchmark-fairness-alpha-audit-v2.md",
+    "BF01_V2_RESULT_FOR_CHATGPT.md"
+  ],
+  "invariants": {
+    "aggregate_fold_separation": true,
+    "domain_gates_enabled": true,
+    "exact_entity_matching": true,
+    "explicit_metric_units": true,
+    "metadata_metric_separation": true,
+    "missing_data_returns_not_evaluated": true,
+    "single_percent_scaling": true,
+    "snapshot_time_alias_present": true
+  },
+  "m02_tsm84": {
+    "contributor_robustness": {
+      "judgement": "NOT_EVALUATED",
+      "reason": "The concentration summary contains no per-symbol contribution ledger and no leave-one-asset-out outcomes.",
+      "status": "NOT_EVALUATED"
+    }
+  },
+  "metrics": [
+    {
+      "entity": "MD01_B00_CASH",
+      "fold_id": null,
+      "metric": "total_return",
+      "scope": "aggregate",
+      "source_path": "benchmarks/B00/BASE_COST/compounded_return",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 0.0
+    },
+    {
+      "entity": "MD01_B00_CASH",
+      "fold_id": null,
+      "metric": "mean_maximum_drawdown",
+      "scope": "aggregate",
+      "source_path": "benchmarks/B00/BASE_COST/mean_maximum_drawdown",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 0.0
+    },
+    {
+      "entity": "MD01_B00_CASH",
+      "fold_id": null,
+      "metric": "recovery_time_days",
+      "scope": "aggregate",
+      "source_path": "benchmarks/B00/BASE_COST/recovery_time_days",
+      "status": "VALID",
+      "unit": "days",
+      "value": 0
+    },
+    {
+      "entity": "MD01_B00_CASH",
+      "fold_id": null,
+      "metric": "turnover",
+      "scope": "aggregate",
+      "source_path": "benchmarks/B00/BASE_COST/turnover",
+      "status": "VALID",
+      "unit": "currency",
+      "value": 0.0
+    },
+    {
+      "entity": "MD01_B00_CASH",
+      "fold_id": null,
+      "metric": "worst_month",
+      "scope": "aggregate",
+      "source_path": "benchmarks/B00/BASE_COST/worst_month",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 0.0
+    },
+    {
+      "entity": "MD01_B00_CASH",
+      "fold_id": null,
+      "metric": "worst_year",
+      "scope": "aggregate",
+      "source_path": "benchmarks/B00/BASE_COST/worst_year",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 0.0
+    },
+    {
+      "entity": "MD01_B00_CASH",
+      "fold_id": "WF01",
+      "metric": "net_return",
+      "scope": "fold",
+      "source_path": "benchmarks/B00/BASE_COST/folds/0/net_return",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 0.0
+    },
+    {
+      "entity": "MD01_B00_CASH",
+      "fold_id": "WF01",
+      "metric": "cagr",
+      "scope": "fold",
+      "source_path": "benchmarks/B00/BASE_COST/folds/0/cagr",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 0.0
+    },
+    {
+      "entity": "MD01_B00_CASH",
+      "fold_id": "WF01",
+      "metric": "maximum_drawdown",
+      "scope": "fold",
+      "source_path": "benchmarks/B00/BASE_COST/folds/0/maximum_drawdown",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 0.0
+    },
+    {
+      "entity": "MD01_B00_CASH",
+      "fold_id": "WF01",
+      "metric": "exposure",
+      "scope": "fold",
+      "source_path": "benchmarks/B00/BASE_COST/folds/0/exposure",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 0.0
+    },
+    {
+      "entity": "MD01_B00_CASH",
+      "fold_id": "WF01",
+      "metric": "recovery_time_days",
+      "scope": "fold",
+      "source_path": "benchmarks/B00/BASE_COST/folds/0/recovery_time_days",
+      "status": "VALID",
+      "unit": "days",
+      "value": 0
+    },
+    {
+      "entity": "MD01_B00_CASH",
+      "fold_id": "WF01",
+      "metric": "turnover",
+      "scope": "fold",
+      "source_path": "benchmarks/B00/BASE_COST/folds/0/turnover",
+      "status": "VALID",
+      "unit": "currency",
+      "value": 0.0
+    },
+    {
+      "entity": "MD01_B00_CASH",
+      "fold_id": "WF01",
+      "metric": "fees",
+      "scope": "fold",
+      "source_path": "benchmarks/B00/BASE_COST/folds/0/fees",
+      "status": "VALID",
+      "unit": "currency",
+      "value": 0.0
+    },
+    {
+      "entity": "MD01_B00_CASH",
+      "fold_id": "WF01",
+      "metric": "worst_month",
+      "scope": "fold",
+      "source_path": "benchmarks/B00/BASE_COST/folds/0/worst_month",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 0.0
+    },
+    {
+      "entity": "MD01_B00_CASH",
+      "fold_id": "WF01",
+      "metric": "worst_year",
+      "scope": "fold",
+      "source_path": "benchmarks/B00/BASE_COST/folds/0/worst_year",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 0.0
+    },
+    {
+      "entity": "MD01_B00_CASH",
+      "fold_id": "WF02",
+      "metric": "net_return",
+      "scope": "fold",
+      "source_path": "benchmarks/B00/BASE_COST/folds/1/net_return",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 0.0
+    },
+    {
+      "entity": "MD01_B00_CASH",
+      "fold_id": "WF02",
+      "metric": "cagr",
+      "scope": "fold",
+      "source_path": "benchmarks/B00/BASE_COST/folds/1/cagr",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 0.0
+    },
+    {
+      "entity": "MD01_B00_CASH",
+      "fold_id": "WF02",
+      "metric": "maximum_drawdown",
+      "scope": "fold",
+      "source_path": "benchmarks/B00/BASE_COST/folds/1/maximum_drawdown",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 0.0
+    },
+    {
+      "entity": "MD01_B00_CASH",
+      "fold_id": "WF02",
+      "metric": "exposure",
+      "scope": "fold",
+      "source_path": "benchmarks/B00/BASE_COST/folds/1/exposure",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 0.0
+    },
+    {
+      "entity": "MD01_B00_CASH",
+      "fold_id": "WF02",
+      "metric": "recovery_time_days",
+      "scope": "fold",
+      "source_path": "benchmarks/B00/BASE_COST/folds/1/recovery_time_days",
+      "status": "VALID",
+      "unit": "days",
+      "value": 0
+    },
+    {
+      "entity": "MD01_B00_CASH",
+      "fold_id": "WF02",
+      "metric": "turnover",
+      "scope": "fold",
+      "source_path": "benchmarks/B00/BASE_COST/folds/1/turnover",
+      "status": "VALID",
+      "unit": "currency",
+      "value": 0.0
+    },
+    {
+      "entity": "MD01_B00_CASH",
+      "fold_id": "WF02",
+      "metric": "fees",
+      "scope": "fold",
+      "source_path": "benchmarks/B00/BASE_COST/folds/1/fees",
+      "status": "VALID",
+      "unit": "currency",
+      "value": 0.0
+    },
+    {
+      "entity": "MD01_B00_CASH",
+      "fold_id": "WF02",
+      "metric": "worst_month",
+      "scope": "fold",
+      "source_path": "benchmarks/B00/BASE_COST/folds/1/worst_month",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 0.0
+    },
+    {
+      "entity": "MD01_B00_CASH",
+      "fold_id": "WF02",
+      "metric": "worst_year",
+      "scope": "fold",
+      "source_path": "benchmarks/B00/BASE_COST/folds/1/worst_year",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 0.0
+    },
+    {
+      "entity": "MD01_B00_CASH",
+      "fold_id": "WF03",
+      "metric": "net_return",
+      "scope": "fold",
+      "source_path": "benchmarks/B00/BASE_COST/folds/2/net_return",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 0.0
+    },
+    {
+      "entity": "MD01_B00_CASH",
+      "fold_id": "WF03",
+      "metric": "cagr",
+      "scope": "fold",
+      "source_path": "benchmarks/B00/BASE_COST/folds/2/cagr",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 0.0
+    },
+    {
+      "entity": "MD01_B00_CASH",
+      "fold_id": "WF03",
+      "metric": "maximum_drawdown",
+      "scope": "fold",
+      "source_path": "benchmarks/B00/BASE_COST/folds/2/maximum_drawdown",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 0.0
+    },
+    {
+      "entity": "MD01_B00_CASH",
+      "fold_id": "WF03",
+      "metric": "exposure",
+      "scope": "fold",
+      "source_path": "benchmarks/B00/BASE_COST/folds/2/exposure",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 0.0
+    },
+    {
+      "entity": "MD01_B00_CASH",
+      "fold_id": "WF03",
+      "metric": "recovery_time_days",
+      "scope": "fold",
+      "source_path": "benchmarks/B00/BASE_COST/folds/2/recovery_time_days",
+      "status": "VALID",
+      "unit": "days",
+      "value": 0
+    },
+    {
+      "entity": "MD01_B00_CASH",
+      "fold_id": "WF03",
+      "metric": "turnover",
+      "scope": "fold",
+      "source_path": "benchmarks/B00/BASE_COST/folds/2/turnover",
+      "status": "VALID",
+      "unit": "currency",
+      "value": 0.0
+    },
+    {
+      "entity": "MD01_B00_CASH",
+      "fold_id": "WF03",
+      "metric": "fees",
+      "scope": "fold",
+      "source_path": "benchmarks/B00/BASE_COST/folds/2/fees",
+      "status": "VALID",
+      "unit": "currency",
+      "value": 0.0
+    },
+    {
+      "entity": "MD01_B00_CASH",
+      "fold_id": "WF03",
+      "metric": "worst_month",
+      "scope": "fold",
+      "source_path": "benchmarks/B00/BASE_COST/folds/2/worst_month",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 0.0
+    },
+    {
+      "entity": "MD01_B00_CASH",
+      "fold_id": "WF03",
+      "metric": "worst_year",
+      "scope": "fold",
+      "source_path": "benchmarks/B00/BASE_COST/folds/2/worst_year",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 0.0
+    },
+    {
+      "entity": "MD01_B01_BTC_BUY_HOLD",
+      "fold_id": null,
+      "metric": "total_return",
+      "scope": "aggregate",
+      "source_path": "benchmarks/B01/BASE_COST/compounded_return",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 1.0045328604897636
+    },
+    {
+      "entity": "MD01_B01_BTC_BUY_HOLD",
+      "fold_id": null,
+      "metric": "mean_calmar",
+      "scope": "aggregate",
+      "source_path": "benchmarks/B01/BASE_COST/mean_calmar",
+      "status": "VALID",
+      "unit": "ratio",
+      "value": 3.799643140045294
+    },
+    {
+      "entity": "MD01_B01_BTC_BUY_HOLD",
+      "fold_id": null,
+      "metric": "mean_maximum_drawdown",
+      "scope": "aggregate",
+      "source_path": "benchmarks/B01/BASE_COST/mean_maximum_drawdown",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 0.3769916744422721
+    },
+    {
+      "entity": "MD01_B01_BTC_BUY_HOLD",
+      "fold_id": null,
+      "metric": "recovery_time_days",
+      "scope": "aggregate",
+      "source_path": "benchmarks/B01/BASE_COST/recovery_time_days",
+      "status": "VALID",
+      "unit": "days",
+      "value": 364
+    },
+    {
+      "entity": "MD01_B01_BTC_BUY_HOLD",
+      "fold_id": null,
+      "metric": "turnover",
+      "scope": "aggregate",
+      "source_path": "benchmarks/B01/BASE_COST/turnover",
+      "status": "VALID",
+      "unit": "currency",
+      "value": 818981.5885519525
+    },
+    {
+      "entity": "MD01_B01_BTC_BUY_HOLD",
+      "fold_id": null,
+      "metric": "worst_month",
+      "scope": "aggregate",
+      "source_path": "benchmarks/B01/BASE_COST/worst_month",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": -0.36593188140521826
+    },
+    {
+      "entity": "MD01_B01_BTC_BUY_HOLD",
+      "fold_id": null,
+      "metric": "worst_year",
+      "scope": "aggregate",
+      "source_path": "benchmarks/B01/BASE_COST/worst_year",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": -0.0058407964393907275
+    },
+    {
+      "entity": "MD01_B01_BTC_BUY_HOLD",
+      "fold_id": "WF01",
+      "metric": "net_return",
+      "scope": "fold",
+      "source_path": "benchmarks/B01/BASE_COST/folds/0/net_return",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": -0.64354847716395
+    },
+    {
+      "entity": "MD01_B01_BTC_BUY_HOLD",
+      "fold_id": "WF01",
+      "metric": "cagr",
+      "scope": "fold",
+      "source_path": "benchmarks/B01/BASE_COST/folds/0/cagr",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": -0.64354847716395
+    },
+    {
+      "entity": "MD01_B01_BTC_BUY_HOLD",
+      "fold_id": "WF01",
+      "metric": "maximum_drawdown",
+      "scope": "fold",
+      "source_path": "benchmarks/B01/BASE_COST/folds/0/maximum_drawdown",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 0.6694015747371591
+    },
+    {
+      "entity": "MD01_B01_BTC_BUY_HOLD",
+      "fold_id": "WF01",
+      "metric": "exposure",
+      "scope": "fold",
+      "source_path": "benchmarks/B01/BASE_COST/folds/0/exposure",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 1.0
+    },
+    {
+      "entity": "MD01_B01_BTC_BUY_HOLD",
+      "fold_id": "WF01",
+      "metric": "sharpe",
+      "scope": "fold",
+      "source_path": "benchmarks/B01/BASE_COST/folds/0/sharpe",
+      "status": "VALID",
+      "unit": "ratio",
+      "value": -1.2942267045585232
+    },
+    {
+      "entity": "MD01_B01_BTC_BUY_HOLD",
+      "fold_id": "WF01",
+      "metric": "sortino",
+      "scope": "fold",
+      "source_path": "benchmarks/B01/BASE_COST/folds/0/sortino",
+      "status": "VALID",
+      "unit": "ratio",
+      "value": -1.6776125623863167
+    },
+    {
+      "entity": "MD01_B01_BTC_BUY_HOLD",
+      "fold_id": "WF01",
+      "metric": "calmar",
+      "scope": "fold",
+      "source_path": "benchmarks/B01/BASE_COST/folds/0/calmar",
+      "status": "VALID",
+      "unit": "ratio",
+      "value": -0.9613787918210973
+    },
+    {
+      "entity": "MD01_B01_BTC_BUY_HOLD",
+      "fold_id": "WF01",
+      "metric": "recovery_time_days",
+      "scope": "fold",
+      "source_path": "benchmarks/B01/BASE_COST/folds/0/recovery_time_days",
+      "status": "VALID",
+      "unit": "days",
+      "value": 364
+    },
+    {
+      "entity": "MD01_B01_BTC_BUY_HOLD",
+      "fold_id": "WF01",
+      "metric": "turnover",
+      "scope": "fold",
+      "source_path": "benchmarks/B01/BASE_COST/folds/0/turnover",
+      "status": "VALID",
+      "unit": "currency",
+      "value": 138988.5841389637
+    },
+    {
+      "entity": "MD01_B01_BTC_BUY_HOLD",
+      "fold_id": "WF01",
+      "metric": "fees",
+      "scope": "fold",
+      "source_path": "benchmarks/B01/BASE_COST/folds/0/fees",
+      "status": "VALID",
+      "unit": "currency",
+      "value": 277.9771682779274
+    },
+    {
+      "entity": "MD01_B01_BTC_BUY_HOLD",
+      "fold_id": "WF01",
+      "metric": "worst_month",
+      "scope": "fold",
+      "source_path": "benchmarks/B01/BASE_COST/folds/0/worst_month",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": -0.36593188140521826
+    },
+    {
+      "entity": "MD01_B01_BTC_BUY_HOLD",
+      "fold_id": "WF01",
+      "metric": "worst_year",
+      "scope": "fold",
+      "source_path": "benchmarks/B01/BASE_COST/folds/0/worst_year",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": -0.0058407964393907275
+    },
+    {
+      "entity": "MD01_B01_BTC_BUY_HOLD",
+      "fold_id": "WF02",
+      "metric": "net_return",
+      "scope": "fold",
+      "source_path": "benchmarks/B01/BASE_COST/folds/1/net_return",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 1.5509459250302333
+    },
+    {
+      "entity": "MD01_B01_BTC_BUY_HOLD",
+      "fold_id": "WF02",
+      "metric": "cagr",
+      "scope": "fold",
+      "source_path": "benchmarks/B01/BASE_COST/folds/1/cagr",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 1.5509459250302333
+    },
+    {
+      "entity": "MD01_B01_BTC_BUY_HOLD",
+      "fold_id": "WF02",
+      "metric": "maximum_drawdown",
+      "scope": "fold",
+      "source_path": "benchmarks/B01/BASE_COST/folds/1/maximum_drawdown",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 0.199965661851907
+    },
+    {
+      "entity": "MD01_B01_BTC_BUY_HOLD",
+      "fold_id": "WF02",
+      "metric": "exposure",
+      "scope": "fold",
+      "source_path": "benchmarks/B01/BASE_COST/folds/1/exposure",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 1.0
+    },
+    {
+      "entity": "MD01_B01_BTC_BUY_HOLD",
+      "fold_id": "WF02",
+      "metric": "sharpe",
+      "scope": "fold",
+      "source_path": "benchmarks/B01/BASE_COST/folds/1/sharpe",
+      "status": "VALID",
+      "unit": "ratio",
+      "value": 2.345921388560279
+    },
+    {
+      "entity": "MD01_B01_BTC_BUY_HOLD",
+      "fold_id": "WF02",
+      "metric": "sortino",
+      "scope": "fold",
+      "source_path": "benchmarks/B01/BASE_COST/folds/1/sortino",
+      "status": "VALID",
+      "unit": "ratio",
+      "value": 3.940785637290127
+    },
+    {
+      "entity": "MD01_B01_BTC_BUY_HOLD",
+      "fold_id": "WF02",
+      "metric": "calmar",
+      "scope": "fold",
+      "source_path": "benchmarks/B01/BASE_COST/folds/1/calmar",
+      "status": "VALID",
+      "unit": "ratio",
+      "value": 7.756061269053542
+    },
+    {
+      "entity": "MD01_B01_BTC_BUY_HOLD",
+      "fold_id": "WF02",
+      "metric": "recovery_time_days",
+      "scope": "fold",
+      "source_path": "benchmarks/B01/BASE_COST/folds/1/recovery_time_days",
+      "status": "VALID",
+      "unit": "days",
+      "value": 101
+    },
+    {
+      "entity": "MD01_B01_BTC_BUY_HOLD",
+      "fold_id": "WF02",
+      "metric": "turnover",
+      "scope": "fold",
+      "source_path": "benchmarks/B01/BASE_COST/folds/1/turnover",
+      "status": "VALID",
+      "unit": "currency",
+      "value": 355094.59250302333
+    },
+    {
+      "entity": "MD01_B01_BTC_BUY_HOLD",
+      "fold_id": "WF02",
+      "metric": "fees",
+      "scope": "fold",
+      "source_path": "benchmarks/B01/BASE_COST/folds/1/fees",
+      "status": "VALID",
+      "unit": "currency",
+      "value": 710.1891850060467
+    },
+    {
+      "entity": "MD01_B01_BTC_BUY_HOLD",
+      "fold_id": "WF02",
+      "metric": "worst_month",
+      "scope": "fold",
+      "source_path": "benchmarks/B01/BASE_COST/folds/1/worst_month",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": -0.0675346587745872
+    },
+    {
+      "entity": "MD01_B01_BTC_BUY_HOLD",
+      "fold_id": "WF02",
+      "metric": "worst_year",
+      "scope": "fold",
+      "source_path": "benchmarks/B01/BASE_COST/folds/1/worst_year",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 0.0011210143930295846
+    },
+    {
+      "entity": "MD01_B01_BTC_BUY_HOLD",
+      "fold_id": "WF03",
+      "metric": "net_return",
+      "scope": "fold",
+      "source_path": "benchmarks/B01/BASE_COST/folds/2/net_return",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 1.2045068523270208
+    },
+    {
+      "entity": "MD01_B01_BTC_BUY_HOLD",
+      "fold_id": "WF03",
+      "metric": "cagr",
+      "scope": "fold",
+      "source_path": "benchmarks/B01/BASE_COST/folds/2/cagr",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 1.2045068523270208
+    },
+    {
+      "entity": "MD01_B01_BTC_BUY_HOLD",
+      "fold_id": "WF03",
+      "metric": "maximum_drawdown",
+      "scope": "fold",
+      "source_path": "benchmarks/B01/BASE_COST/folds/2/maximum_drawdown",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 0.2616077867377502
+    },
+    {
+      "entity": "MD01_B01_BTC_BUY_HOLD",
+      "fold_id": "WF03",
+      "metric": "exposure",
+      "scope": "fold",
+      "source_path": "benchmarks/B01/BASE_COST/folds/2/exposure",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 1.0
+    },
+    {
+      "entity": "MD01_B01_BTC_BUY_HOLD",
+      "fold_id": "WF03",
+      "metric": "sharpe",
+      "scope": "fold",
+      "source_path": "benchmarks/B01/BASE_COST/folds/2/sharpe",
+      "status": "VALID",
+      "unit": "ratio",
+      "value": 1.7485935698042339
+    },
+    {
+      "entity": "MD01_B01_BTC_BUY_HOLD",
+      "fold_id": "WF03",
+      "metric": "sortino",
+      "scope": "fold",
+      "source_path": "benchmarks/B01/BASE_COST/folds/2/sortino",
+      "status": "VALID",
+      "unit": "ratio",
+      "value": 2.88824398377322
+    },
+    {
+      "entity": "MD01_B01_BTC_BUY_HOLD",
+      "fold_id": "WF03",
+      "metric": "calmar",
+      "scope": "fold",
+      "source_path": "benchmarks/B01/BASE_COST/folds/2/calmar",
+      "status": "VALID",
+      "unit": "ratio",
+      "value": 4.604246942903438
+    },
+    {
+      "entity": "MD01_B01_BTC_BUY_HOLD",
+      "fold_id": "WF03",
+      "metric": "recovery_time_days",
+      "scope": "fold",
+      "source_path": "benchmarks/B01/BASE_COST/folds/2/recovery_time_days",
+      "status": "VALID",
+      "unit": "days",
+      "value": 237
+    },
+    {
+      "entity": "MD01_B01_BTC_BUY_HOLD",
+      "fold_id": "WF03",
+      "metric": "turnover",
+      "scope": "fold",
+      "source_path": "benchmarks/B01/BASE_COST/folds/2/turnover",
+      "status": "VALID",
+      "unit": "currency",
+      "value": 324898.4119099655
+    },
+    {
+      "entity": "MD01_B01_BTC_BUY_HOLD",
+      "fold_id": "WF03",
+      "metric": "fees",
+      "scope": "fold",
+      "source_path": "benchmarks/B01/BASE_COST/folds/2/fees",
+      "status": "VALID",
+      "unit": "currency",
+      "value": 649.796823819931
+    },
+    {
+      "entity": "MD01_B01_BTC_BUY_HOLD",
+      "fold_id": "WF03",
+      "metric": "worst_month",
+      "scope": "fold",
+      "source_path": "benchmarks/B01/BASE_COST/folds/2/worst_month",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": -0.10780653372931692
+    },
+    {
+      "entity": "MD01_B01_BTC_BUY_HOLD",
+      "fold_id": "WF03",
+      "metric": "worst_year",
+      "scope": "fold",
+      "source_path": "benchmarks/B01/BASE_COST/folds/2/worst_year",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 0.0063682715456021555
+    },
+    {
+      "entity": "MD01_B02_EQUAL_WEIGHT",
+      "fold_id": null,
+      "metric": "total_return",
+      "scope": "aggregate",
+      "source_path": "benchmarks/B02/BASE_COST/compounded_return",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 0.6061708011518021
+    },
+    {
+      "entity": "MD01_B02_EQUAL_WEIGHT",
+      "fold_id": null,
+      "metric": "mean_calmar",
+      "scope": "aggregate",
+      "source_path": "benchmarks/B02/BASE_COST/mean_calmar",
+      "status": "VALID",
+      "unit": "ratio",
+      "value": 2.023541677264981
+    },
+    {
+      "entity": "MD01_B02_EQUAL_WEIGHT",
+      "fold_id": null,
+      "metric": "mean_maximum_drawdown",
+      "scope": "aggregate",
+      "source_path": "benchmarks/B02/BASE_COST/mean_maximum_drawdown",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 0.4884857305583517
+    },
+    {
+      "entity": "MD01_B02_EQUAL_WEIGHT",
+      "fold_id": null,
+      "metric": "recovery_time_days",
+      "scope": "aggregate",
+      "source_path": "benchmarks/B02/BASE_COST/recovery_time_days",
+      "status": "VALID",
+      "unit": "days",
+      "value": 362
+    },
+    {
+      "entity": "MD01_B02_EQUAL_WEIGHT",
+      "fold_id": null,
+      "metric": "turnover",
+      "scope": "aggregate",
+      "source_path": "benchmarks/B02/BASE_COST/turnover",
+      "status": "VALID",
+      "unit": "currency",
+      "value": 877597.3713226618
+    },
+    {
+      "entity": "MD01_B02_EQUAL_WEIGHT",
+      "fold_id": null,
+      "metric": "worst_month",
+      "scope": "aggregate",
+      "source_path": "benchmarks/B02/BASE_COST/worst_month",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": -0.29799342383160554
+    },
+    {
+      "entity": "MD01_B02_EQUAL_WEIGHT",
+      "fold_id": null,
+      "metric": "worst_year",
+      "scope": "aggregate",
+      "source_path": "benchmarks/B02/BASE_COST/worst_year",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": -0.016938239336836136
+    },
+    {
+      "entity": "MD01_B02_EQUAL_WEIGHT",
+      "fold_id": "WF01",
+      "metric": "net_return",
+      "scope": "fold",
+      "source_path": "benchmarks/B02/BASE_COST/folds/0/net_return",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": -0.704672210597237
+    },
+    {
+      "entity": "MD01_B02_EQUAL_WEIGHT",
+      "fold_id": "WF01",
+      "metric": "cagr",
+      "scope": "fold",
+      "source_path": "benchmarks/B02/BASE_COST/folds/0/cagr",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": -0.704672210597237
+    },
+    {
+      "entity": "MD01_B02_EQUAL_WEIGHT",
+      "fold_id": "WF01",
+      "metric": "maximum_drawdown",
+      "scope": "fold",
+      "source_path": "benchmarks/B02/BASE_COST/folds/0/maximum_drawdown",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 0.7070029744426042
+    },
+    {
+      "entity": "MD01_B02_EQUAL_WEIGHT",
+      "fold_id": "WF01",
+      "metric": "exposure",
+      "scope": "fold",
+      "source_path": "benchmarks/B02/BASE_COST/folds/0/exposure",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 0.9972602739726028
+    },
+    {
+      "entity": "MD01_B02_EQUAL_WEIGHT",
+      "fold_id": "WF01",
+      "metric": "sharpe",
+      "scope": "fold",
+      "source_path": "benchmarks/B02/BASE_COST/folds/0/sharpe",
+      "status": "VALID",
+      "unit": "ratio",
+      "value": -1.0733894801226818
+    },
+    {
+      "entity": "MD01_B02_EQUAL_WEIGHT",
+      "fold_id": "WF01",
+      "metric": "sortino",
+      "scope": "fold",
+      "source_path": "benchmarks/B02/BASE_COST/folds/0/sortino",
+      "status": "VALID",
+      "unit": "ratio",
+      "value": -1.3951623605433385
+    },
+    {
+      "entity": "MD01_B02_EQUAL_WEIGHT",
+      "fold_id": "WF01",
+      "metric": "calmar",
+      "scope": "fold",
+      "source_path": "benchmarks/B02/BASE_COST/folds/0/calmar",
+      "status": "VALID",
+      "unit": "ratio",
+      "value": -0.9967033181901324
+    },
+    {
+      "entity": "MD01_B02_EQUAL_WEIGHT",
+      "fold_id": "WF01",
+      "metric": "recovery_time_days",
+      "scope": "fold",
+      "source_path": "benchmarks/B02/BASE_COST/folds/0/recovery_time_days",
+      "status": "VALID",
+      "unit": "days",
+      "value": 362
+    },
+    {
+      "entity": "MD01_B02_EQUAL_WEIGHT",
+      "fold_id": "WF01",
+      "metric": "turnover",
+      "scope": "fold",
+      "source_path": "benchmarks/B02/BASE_COST/folds/0/turnover",
+      "status": "VALID",
+      "unit": "currency",
+      "value": 129591.96286600831
+    },
+    {
+      "entity": "MD01_B02_EQUAL_WEIGHT",
+      "fold_id": "WF01",
+      "metric": "fees",
+      "scope": "fold",
+      "source_path": "benchmarks/B02/BASE_COST/folds/0/fees",
+      "status": "VALID",
+      "unit": "currency",
+      "value": 259.18392573201663
+    },
+    {
+      "entity": "MD01_B02_EQUAL_WEIGHT",
+      "fold_id": "WF01",
+      "metric": "worst_month",
+      "scope": "fold",
+      "source_path": "benchmarks/B02/BASE_COST/folds/0/worst_month",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": -0.29799342383160554
+    },
+    {
+      "entity": "MD01_B02_EQUAL_WEIGHT",
+      "fold_id": "WF01",
+      "metric": "worst_year",
+      "scope": "fold",
+      "source_path": "benchmarks/B02/BASE_COST/folds/0/worst_year",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": -0.0015886396141888692
+    },
+    {
+      "entity": "MD01_B02_EQUAL_WEIGHT",
+      "fold_id": "WF02",
+      "metric": "net_return",
+      "scope": "fold",
+      "source_path": "benchmarks/B02/BASE_COST/folds/1/net_return",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 1.1395517836793654
+    },
+    {
+      "entity": "MD01_B02_EQUAL_WEIGHT",
+      "fold_id": "WF02",
+      "metric": "cagr",
+      "scope": "fold",
+      "source_path": "benchmarks/B02/BASE_COST/folds/1/cagr",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 1.1395517836793654
+    },
+    {
+      "entity": "MD01_B02_EQUAL_WEIGHT",
+      "fold_id": "WF02",
+      "metric": "maximum_drawdown",
+      "scope": "fold",
+      "source_path": "benchmarks/B02/BASE_COST/folds/1/maximum_drawdown",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 0.32360845518889947
+    },
+    {
+      "entity": "MD01_B02_EQUAL_WEIGHT",
+      "fold_id": "WF02",
+      "metric": "exposure",
+      "scope": "fold",
+      "source_path": "benchmarks/B02/BASE_COST/folds/1/exposure",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 1.0
+    },
+    {
+      "entity": "MD01_B02_EQUAL_WEIGHT",
+      "fold_id": "WF02",
+      "metric": "sharpe",
+      "scope": "fold",
+      "source_path": "benchmarks/B02/BASE_COST/folds/1/sharpe",
+      "status": "VALID",
+      "unit": "ratio",
+      "value": 1.7450829892771178
+    },
+    {
+      "entity": "MD01_B02_EQUAL_WEIGHT",
+      "fold_id": "WF02",
+      "metric": "sortino",
+      "scope": "fold",
+      "source_path": "benchmarks/B02/BASE_COST/folds/1/sortino",
+      "status": "VALID",
+      "unit": "ratio",
+      "value": 2.5246961246493496
+    },
+    {
+      "entity": "MD01_B02_EQUAL_WEIGHT",
+      "fold_id": "WF02",
+      "metric": "calmar",
+      "scope": "fold",
+      "source_path": "benchmarks/B02/BASE_COST/folds/1/calmar",
+      "status": "VALID",
+      "unit": "ratio",
+      "value": 3.5213906355264313
+    },
+    {
+      "entity": "MD01_B02_EQUAL_WEIGHT",
+      "fold_id": "WF02",
+      "metric": "recovery_time_days",
+      "scope": "fold",
+      "source_path": "benchmarks/B02/BASE_COST/folds/1/recovery_time_days",
+      "status": "VALID",
+      "unit": "days",
+      "value": 204
+    },
+    {
+      "entity": "MD01_B02_EQUAL_WEIGHT",
+      "fold_id": "WF02",
+      "metric": "turnover",
+      "scope": "fold",
+      "source_path": "benchmarks/B02/BASE_COST/folds/1/turnover",
+      "status": "VALID",
+      "unit": "currency",
+      "value": 369562.2502284833
+    },
+    {
+      "entity": "MD01_B02_EQUAL_WEIGHT",
+      "fold_id": "WF02",
+      "metric": "fees",
+      "scope": "fold",
+      "source_path": "benchmarks/B02/BASE_COST/folds/1/fees",
+      "status": "VALID",
+      "unit": "currency",
+      "value": 739.1245004569666
+    },
+    {
+      "entity": "MD01_B02_EQUAL_WEIGHT",
+      "fold_id": "WF02",
+      "metric": "worst_month",
+      "scope": "fold",
+      "source_path": "benchmarks/B02/BASE_COST/folds/1/worst_month",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": -0.13960989808075697
+    },
+    {
+      "entity": "MD01_B02_EQUAL_WEIGHT",
+      "fold_id": "WF02",
+      "metric": "worst_year",
+      "scope": "fold",
+      "source_path": "benchmarks/B02/BASE_COST/folds/1/worst_year",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": -0.016938239336836136
+    },
+    {
+      "entity": "MD01_B02_EQUAL_WEIGHT",
+      "fold_id": "WF03",
+      "metric": "net_return",
+      "scope": "fold",
+      "source_path": "benchmarks/B02/BASE_COST/folds/2/net_return",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 1.5419359876027383
+    },
+    {
+      "entity": "MD01_B02_EQUAL_WEIGHT",
+      "fold_id": "WF03",
+      "metric": "cagr",
+      "scope": "fold",
+      "source_path": "benchmarks/B02/BASE_COST/folds/2/cagr",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 1.5419359876027383
+    },
+    {
+      "entity": "MD01_B02_EQUAL_WEIGHT",
+      "fold_id": "WF03",
+      "metric": "maximum_drawdown",
+      "scope": "fold",
+      "source_path": "benchmarks/B02/BASE_COST/folds/2/maximum_drawdown",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 0.4348457620435515
+    },
+    {
+      "entity": "MD01_B02_EQUAL_WEIGHT",
+      "fold_id": "WF03",
+      "metric": "exposure",
+      "scope": "fold",
+      "source_path": "benchmarks/B02/BASE_COST/folds/2/exposure",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 1.0
+    },
+    {
+      "entity": "MD01_B02_EQUAL_WEIGHT",
+      "fold_id": "WF03",
+      "metric": "sharpe",
+      "scope": "fold",
+      "source_path": "benchmarks/B02/BASE_COST/folds/2/sharpe",
+      "status": "VALID",
+      "unit": "ratio",
+      "value": 1.7108354354289006
+    },
+    {
+      "entity": "MD01_B02_EQUAL_WEIGHT",
+      "fold_id": "WF03",
+      "metric": "sortino",
+      "scope": "fold",
+      "source_path": "benchmarks/B02/BASE_COST/folds/2/sortino",
+      "status": "VALID",
+      "unit": "ratio",
+      "value": 2.6816646210616826
+    },
+    {
+      "entity": "MD01_B02_EQUAL_WEIGHT",
+      "fold_id": "WF03",
+      "metric": "calmar",
+      "scope": "fold",
+      "source_path": "benchmarks/B02/BASE_COST/folds/2/calmar",
+      "status": "VALID",
+      "unit": "ratio",
+      "value": 3.5459377144586437
+    },
+    {
+      "entity": "MD01_B02_EQUAL_WEIGHT",
+      "fold_id": "WF03",
+      "metric": "recovery_time_days",
+      "scope": "fold",
+      "source_path": "benchmarks/B02/BASE_COST/folds/2/recovery_time_days",
+      "status": "VALID",
+      "unit": "days",
+      "value": 242
+    },
+    {
+      "entity": "MD01_B02_EQUAL_WEIGHT",
+      "fold_id": "WF03",
+      "metric": "turnover",
+      "scope": "fold",
+      "source_path": "benchmarks/B02/BASE_COST/folds/2/turnover",
+      "status": "VALID",
+      "unit": "currency",
+      "value": 378443.1582281702
+    },
+    {
+      "entity": "MD01_B02_EQUAL_WEIGHT",
+      "fold_id": "WF03",
+      "metric": "fees",
+      "scope": "fold",
+      "source_path": "benchmarks/B02/BASE_COST/folds/2/fees",
+      "status": "VALID",
+      "unit": "currency",
+      "value": 756.8863164563404
+    },
+    {
+      "entity": "MD01_B02_EQUAL_WEIGHT",
+      "fold_id": "WF03",
+      "metric": "worst_month",
+      "scope": "fold",
+      "source_path": "benchmarks/B02/BASE_COST/folds/2/worst_month",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": -0.19503393872110397
+    },
+    {
+      "entity": "MD01_B02_EQUAL_WEIGHT",
+      "fold_id": "WF03",
+      "metric": "worst_year",
+      "scope": "fold",
+      "source_path": "benchmarks/B02/BASE_COST/folds/2/worst_year",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": -0.006500223524390614
+    },
+    {
+      "entity": "RD01_BTC_BUY_HOLD",
+      "fold_id": null,
+      "metric": "total_return",
+      "scope": "aggregate",
+      "source_path": "benchmarks/BTC_BUY_AND_HOLD",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 2.1900474547611752
+    },
+    {
+      "entity": "SURVIVOR_30_EQUAL_WEIGHT",
+      "fold_id": null,
+      "metric": "total_return",
+      "scope": "aggregate",
+      "source_path": "benchmarks/EQUAL_WEIGHT_SURVIVOR_30",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 7.833273176853833
+    },
+    {
+      "entity": "HIGH_BETA_28",
+      "fold_id": null,
+      "metric": "total_return",
+      "scope": "aggregate",
+      "source_path": "benchmarks/HIGH_BETA_28/net_compounded_return",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 2.3503989236857206
+    },
+    {
+      "entity": "HIGH_BETA_28",
+      "fold_id": null,
+      "metric": "average_exposure",
+      "scope": "aggregate",
+      "source_path": "benchmarks/HIGH_BETA_28/average_exposure",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 0.9945205479452055
+    },
+    {
+      "entity": "HIGH_BETA_28",
+      "fold_id": null,
+      "metric": "maximum_exposure",
+      "scope": "aggregate",
+      "source_path": "benchmarks/HIGH_BETA_28/maximum_exposure",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 1.0
+    },
+    {
+      "entity": "HIGH_BETA_28",
+      "fold_id": null,
+      "metric": "selection_count",
+      "scope": "aggregate",
+      "source_path": "benchmarks/HIGH_BETA_28/selection_count",
+      "status": "VALID",
+      "unit": "count",
+      "value": 208
+    },
+    {
+      "entity": "HIGH_BETA_28",
+      "fold_id": null,
+      "metric": "turnover",
+      "scope": "aggregate",
+      "source_path": "benchmarks/HIGH_BETA_28/turnover",
+      "status": "VALID",
+      "unit": "ratio",
+      "value": 133.66666666666669
+    },
+    {
+      "entity": "HIGH_BETA_28",
+      "fold_id": null,
+      "metric": "window_days",
+      "scope": "metadata",
+      "source_path": "benchmarks/HIGH_BETA_28/window_days",
+      "status": "VALID",
+      "unit": "days",
+      "value": 28
+    },
+    {
+      "entity": "HIGH_BETA_84",
+      "fold_id": null,
+      "metric": "total_return",
+      "scope": "aggregate",
+      "source_path": "benchmarks/HIGH_BETA_84/net_compounded_return",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 1.3831532398039448
+    },
+    {
+      "entity": "HIGH_BETA_84",
+      "fold_id": null,
+      "metric": "average_exposure",
+      "scope": "aggregate",
+      "source_path": "benchmarks/HIGH_BETA_84/average_exposure",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 0.9945205479452055
+    },
+    {
+      "entity": "HIGH_BETA_84",
+      "fold_id": null,
+      "metric": "maximum_exposure",
+      "scope": "aggregate",
+      "source_path": "benchmarks/HIGH_BETA_84/maximum_exposure",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 1.0
+    },
+    {
+      "entity": "HIGH_BETA_84",
+      "fold_id": null,
+      "metric": "selection_count",
+      "scope": "aggregate",
+      "source_path": "benchmarks/HIGH_BETA_84/selection_count",
+      "status": "VALID",
+      "unit": "count",
+      "value": 208
+    },
+    {
+      "entity": "HIGH_BETA_84",
+      "fold_id": null,
+      "metric": "turnover",
+      "scope": "aggregate",
+      "source_path": "benchmarks/HIGH_BETA_84/turnover",
+      "status": "VALID",
+      "unit": "ratio",
+      "value": 67.66666666666663
+    },
+    {
+      "entity": "HIGH_BETA_84",
+      "fold_id": null,
+      "metric": "window_days",
+      "scope": "metadata",
+      "source_path": "benchmarks/HIGH_BETA_84/window_days",
+      "status": "VALID",
+      "unit": "days",
+      "value": 84
+    },
+    {
+      "entity": "M05_DUAL_28",
+      "fold_id": null,
+      "metric": "concentration_hhi",
+      "scope": "aggregate",
+      "source_path": "variants/MD01-M05/concentration/hhi",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 0.11134600252771837
+    },
+    {
+      "entity": "M05_DUAL_28",
+      "fold_id": null,
+      "metric": "concentration_top_1",
+      "scope": "aggregate",
+      "source_path": "variants/MD01-M05/concentration/top_1",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 0.18040560400257027
+    },
+    {
+      "entity": "M05_DUAL_28",
+      "fold_id": null,
+      "metric": "concentration_top_3",
+      "scope": "aggregate",
+      "source_path": "variants/MD01-M05/concentration/top_3",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 0.48170563639752256
+    },
+    {
+      "entity": "M05_DUAL_28",
+      "fold_id": null,
+      "metric": "concentration_top_5",
+      "scope": "aggregate",
+      "source_path": "variants/MD01-M05/concentration/top_5",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 0.6625543030003098
+    },
+    {
+      "entity": "M05_DUAL_28",
+      "fold_id": "WF01",
+      "metric": "net_return",
+      "scope": "fold",
+      "source_path": "variants/MD01-M05/fold_returns/0",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": -0.44848395230348626
+    },
+    {
+      "entity": "M05_DUAL_28",
+      "fold_id": "WF02",
+      "metric": "net_return",
+      "scope": "fold",
+      "source_path": "variants/MD01-M05/fold_returns/1",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 1.0894051609172766
+    },
+    {
+      "entity": "M05_DUAL_28",
+      "fold_id": "WF03",
+      "metric": "net_return",
+      "scope": "fold",
+      "source_path": "variants/MD01-M05/fold_returns/2",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 2.1988350111110138
+    },
+    {
+      "entity": "M05_DUAL_28",
+      "fold_id": null,
+      "metric": "total_return",
+      "scope": "aggregate",
+      "source_path": "variants/MD01-M05/fold_returns[compounded]",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 2.6861470605832247
+    },
+    {
+      "entity": "M05_DUAL_28",
+      "fold_id": null,
+      "metric": "net_pnl",
+      "scope": "aggregate",
+      "source_path": "variants/MD01-M05/net_pnl",
+      "status": "VALID",
+      "unit": "currency",
+      "value": 283975.6219724804
+    },
+    {
+      "entity": "M05_DUAL_28",
+      "fold_id": null,
+      "metric": "trade_count",
+      "scope": "aggregate",
+      "source_path": "variants/MD01-M05/trade_count",
+      "status": "VALID",
+      "unit": "count",
+      "value": 147
+    },
+    {
+      "entity": "M02_TSM_84",
+      "fold_id": null,
+      "metric": "concentration_hhi",
+      "scope": "aggregate",
+      "source_path": "variants/MD01-M02/concentration/hhi",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 0.1980039675835362
+    },
+    {
+      "entity": "M02_TSM_84",
+      "fold_id": null,
+      "metric": "concentration_top_1",
+      "scope": "aggregate",
+      "source_path": "variants/MD01-M02/concentration/top_1",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 0.3930962299428794
+    },
+    {
+      "entity": "M02_TSM_84",
+      "fold_id": null,
+      "metric": "concentration_top_3",
+      "scope": "aggregate",
+      "source_path": "variants/MD01-M02/concentration/top_3",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 0.6178142190472325
+    },
+    {
+      "entity": "M02_TSM_84",
+      "fold_id": null,
+      "metric": "concentration_top_5",
+      "scope": "aggregate",
+      "source_path": "variants/MD01-M02/concentration/top_5",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 0.748591258519935
+    },
+    {
+      "entity": "M02_TSM_84",
+      "fold_id": "WF01",
+      "metric": "net_return",
+      "scope": "fold",
+      "source_path": "variants/MD01-M02/fold_returns/0",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": -0.6213099176686891
+    },
+    {
+      "entity": "M02_TSM_84",
+      "fold_id": "WF02",
+      "metric": "net_return",
+      "scope": "fold",
+      "source_path": "variants/MD01-M02/fold_returns/1",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 0.4405805055466041
+    },
+    {
+      "entity": "M02_TSM_84",
+      "fold_id": "WF03",
+      "metric": "net_return",
+      "scope": "fold",
+      "source_path": "variants/MD01-M02/fold_returns/2",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 1.2814626758170995
+    },
+    {
+      "entity": "M02_TSM_84",
+      "fold_id": null,
+      "metric": "total_return",
+      "scope": "aggregate",
+      "source_path": "variants/MD01-M02/fold_returns[compounded]",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 0.2446144333021083
+    },
+    {
+      "entity": "M02_TSM_84",
+      "fold_id": null,
+      "metric": "net_pnl",
+      "scope": "aggregate",
+      "source_path": "variants/MD01-M02/net_pnl",
+      "status": "VALID",
+      "unit": "currency",
+      "value": 110073.32636950142
+    },
+    {
+      "entity": "M02_TSM_84",
+      "fold_id": null,
+      "metric": "trade_count",
+      "scope": "aggregate",
+      "source_path": "variants/MD01-M02/trade_count",
+      "status": "VALID",
+      "unit": "count",
+      "value": 128
+    },
+    {
+      "entity": "M05_DUAL_28",
+      "fold_id": "WF01",
+      "metric": "alpha_intercept",
+      "scope": "fold",
+      "source_path": "fold_estimates/12/alpha_intercept",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": -0.00017526004839146483
+    },
+    {
+      "entity": "M05_DUAL_28",
+      "fold_id": "WF01",
+      "metric": "beta",
+      "scope": "fold",
+      "source_path": "fold_estimates/12/beta",
+      "status": "VALID",
+      "unit": "ratio",
+      "value": 0.1944208548266042
+    },
+    {
+      "entity": "M05_DUAL_28",
+      "fold_id": "WF01",
+      "metric": "downside_beta",
+      "scope": "fold",
+      "source_path": "fold_estimates/12/downside_beta",
+      "status": "VALID",
+      "unit": "ratio",
+      "value": 0.185543241203114
+    },
+    {
+      "entity": "M05_DUAL_28",
+      "fold_id": "WF01",
+      "metric": "upside_beta",
+      "scope": "fold",
+      "source_path": "fold_estimates/12/upside_beta",
+      "status": "VALID",
+      "unit": "ratio",
+      "value": 0.1554824534281834
+    },
+    {
+      "entity": "M05_DUAL_28",
+      "fold_id": "WF01",
+      "metric": "correlation",
+      "scope": "fold",
+      "source_path": "fold_estimates/12/correlation",
+      "status": "VALID",
+      "unit": "ratio",
+      "value": 0.3921399891644408
+    },
+    {
+      "entity": "M05_DUAL_28",
+      "fold_id": "WF01",
+      "metric": "r_squared",
+      "scope": "fold",
+      "source_path": "fold_estimates/12/r_squared",
+      "status": "VALID",
+      "unit": "ratio",
+      "value": 0.15377377110188772
+    },
+    {
+      "entity": "M05_DUAL_28",
+      "fold_id": "WF01",
+      "metric": "residual_return",
+      "scope": "fold",
+      "source_path": "fold_estimates/12/residual_return",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": -1.3877787807814457e-16
+    },
+    {
+      "entity": "M05_DUAL_28",
+      "fold_id": "WF01",
+      "metric": "residual_volatility",
+      "scope": "fold",
+      "source_path": "fold_estimates/12/residual_volatility",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 0.0059707422901678405
+    },
+    {
+      "entity": "M05_DUAL_28",
+      "fold_id": "WF01",
+      "metric": "volatility_matched_btc_return",
+      "scope": "fold",
+      "source_path": "fold_estimates/12/volatility_matched_btc_return",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": -0.5083622495649938
+    },
+    {
+      "entity": "M05_DUAL_28",
+      "fold_id": "WF01",
+      "metric": "maximum_btc_exposure",
+      "scope": "fold",
+      "source_path": "fold_estimates/12/maximum_btc_exposure",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 1.0
+    },
+    {
+      "entity": "M05_DUAL_28",
+      "fold_id": "WF01",
+      "metric": "observations",
+      "scope": "fold",
+      "source_path": "fold_estimates/12/observations",
+      "status": "VALID",
+      "unit": "count",
+      "value": 2188
+    },
+    {
+      "entity": "M05_DUAL_28",
+      "fold_id": "WF02",
+      "metric": "alpha_intercept",
+      "scope": "fold",
+      "source_path": "fold_estimates/13/alpha_intercept",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 5.018548070323753e-05
+    },
+    {
+      "entity": "M05_DUAL_28",
+      "fold_id": "WF02",
+      "metric": "beta",
+      "scope": "fold",
+      "source_path": "fold_estimates/13/beta",
+      "status": "VALID",
+      "unit": "ratio",
+      "value": 0.7732223159435048
+    },
+    {
+      "entity": "M05_DUAL_28",
+      "fold_id": "WF02",
+      "metric": "downside_beta",
+      "scope": "fold",
+      "source_path": "fold_estimates/13/downside_beta",
+      "status": "VALID",
+      "unit": "ratio",
+      "value": 0.7975543833720472
+    },
+    {
+      "entity": "M05_DUAL_28",
+      "fold_id": "WF02",
+      "metric": "upside_beta",
+      "scope": "fold",
+      "source_path": "fold_estimates/13/upside_beta",
+      "status": "VALID",
+      "unit": "ratio",
+      "value": 0.6138289059579435
+    },
+    {
+      "entity": "M05_DUAL_28",
+      "fold_id": "WF02",
+      "metric": "correlation",
+      "scope": "fold",
+      "source_path": "fold_estimates/13/correlation",
+      "status": "VALID",
+      "unit": "ratio",
+      "value": 0.6052987015329864
+    },
+    {
+      "entity": "M05_DUAL_28",
+      "fold_id": "WF02",
+      "metric": "r_squared",
+      "scope": "fold",
+      "source_path": "fold_estimates/13/r_squared",
+      "status": "VALID",
+      "unit": "ratio",
+      "value": 0.36638651807751954
+    },
+    {
+      "entity": "M05_DUAL_28",
+      "fold_id": "WF02",
+      "metric": "residual_return",
+      "scope": "fold",
+      "source_path": "fold_estimates/13/residual_return",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": -1.1102230246251565e-16
+    },
+    {
+      "entity": "M05_DUAL_28",
+      "fold_id": "WF02",
+      "metric": "residual_volatility",
+      "scope": "fold",
+      "source_path": "fold_estimates/13/residual_volatility",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 0.009147943507339641
+    },
+    {
+      "entity": "M05_DUAL_28",
+      "fold_id": "WF02",
+      "metric": "volatility_matched_btc_return",
+      "scope": "fold",
+      "source_path": "fold_estimates/13/volatility_matched_btc_return",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 0.8171495233746973
+    },
+    {
+      "entity": "M05_DUAL_28",
+      "fold_id": "WF02",
+      "metric": "maximum_btc_exposure",
+      "scope": "fold",
+      "source_path": "fold_estimates/13/maximum_btc_exposure",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 1.0
+    },
+    {
+      "entity": "M05_DUAL_28",
+      "fold_id": "WF02",
+      "metric": "observations",
+      "scope": "fold",
+      "source_path": "fold_estimates/13/observations",
+      "status": "VALID",
+      "unit": "count",
+      "value": 2188
+    },
+    {
+      "entity": "M05_DUAL_28",
+      "fold_id": "WF03",
+      "metric": "alpha_intercept",
+      "scope": "fold",
+      "source_path": "fold_estimates/14/alpha_intercept",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 0.0003021001050743216
+    },
+    {
+      "entity": "M05_DUAL_28",
+      "fold_id": "WF03",
+      "metric": "beta",
+      "scope": "fold",
+      "source_path": "fold_estimates/14/beta",
+      "status": "VALID",
+      "unit": "ratio",
+      "value": 0.9189554699557954
+    },
+    {
+      "entity": "M05_DUAL_28",
+      "fold_id": "WF03",
+      "metric": "downside_beta",
+      "scope": "fold",
+      "source_path": "fold_estimates/14/downside_beta",
+      "status": "VALID",
+      "unit": "ratio",
+      "value": 0.8894335438653254
+    },
+    {
+      "entity": "M05_DUAL_28",
+      "fold_id": "WF03",
+      "metric": "upside_beta",
+      "scope": "fold",
+      "source_path": "fold_estimates/14/upside_beta",
+      "status": "VALID",
+      "unit": "ratio",
+      "value": 0.8310976061069463
+    },
+    {
+      "entity": "M05_DUAL_28",
+      "fold_id": "WF03",
+      "metric": "correlation",
+      "scope": "fold",
+      "source_path": "fold_estimates/14/correlation",
+      "status": "VALID",
+      "unit": "ratio",
+      "value": 0.5624304288353299
+    },
+    {
+      "entity": "M05_DUAL_28",
+      "fold_id": "WF03",
+      "metric": "r_squared",
+      "scope": "fold",
+      "source_path": "fold_estimates/14/r_squared",
+      "status": "VALID",
+      "unit": "ratio",
+      "value": 0.31632798727989364
+    },
+    {
+      "entity": "M05_DUAL_28",
+      "fold_id": "WF03",
+      "metric": "residual_return",
+      "scope": "fold",
+      "source_path": "fold_estimates/14/residual_return",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 1.942890293094024e-16
+    },
+    {
+      "entity": "M05_DUAL_28",
+      "fold_id": "WF03",
+      "metric": "residual_volatility",
+      "scope": "fold",
+      "source_path": "fold_estimates/14/residual_volatility",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 0.014963949254867992
+    },
+    {
+      "entity": "M05_DUAL_28",
+      "fold_id": "WF03",
+      "metric": "volatility_matched_btc_return",
+      "scope": "fold",
+      "source_path": "fold_estimates/14/volatility_matched_btc_return",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 1.2759337560528077
+    },
+    {
+      "entity": "M05_DUAL_28",
+      "fold_id": "WF03",
+      "metric": "maximum_btc_exposure",
+      "scope": "fold",
+      "source_path": "fold_estimates/14/maximum_btc_exposure",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 1.0
+    },
+    {
+      "entity": "M05_DUAL_28",
+      "fold_id": "WF03",
+      "metric": "observations",
+      "scope": "fold",
+      "source_path": "fold_estimates/14/observations",
+      "status": "VALID",
+      "unit": "count",
+      "value": 2194
+    },
+    {
+      "entity": "M02_TSM_84",
+      "fold_id": "WF01",
+      "metric": "alpha_intercept",
+      "scope": "fold",
+      "source_path": "fold_estimates/3/alpha_intercept",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": -0.00028934268895293756
+    },
+    {
+      "entity": "M02_TSM_84",
+      "fold_id": "WF01",
+      "metric": "beta",
+      "scope": "fold",
+      "source_path": "fold_estimates/3/beta",
+      "status": "VALID",
+      "unit": "ratio",
+      "value": 0.31138137023423385
+    },
+    {
+      "entity": "M02_TSM_84",
+      "fold_id": "WF01",
+      "metric": "downside_beta",
+      "scope": "fold",
+      "source_path": "fold_estimates/3/downside_beta",
+      "status": "VALID",
+      "unit": "ratio",
+      "value": 0.36070391384392864
+    },
+    {
+      "entity": "M02_TSM_84",
+      "fold_id": "WF01",
+      "metric": "upside_beta",
+      "scope": "fold",
+      "source_path": "fold_estimates/3/upside_beta",
+      "status": "VALID",
+      "unit": "ratio",
+      "value": 0.19833831456622703
+    },
+    {
+      "entity": "M02_TSM_84",
+      "fold_id": "WF01",
+      "metric": "correlation",
+      "scope": "fold",
+      "source_path": "fold_estimates/3/correlation",
+      "status": "VALID",
+      "unit": "ratio",
+      "value": 0.5051579676747266
+    },
+    {
+      "entity": "M02_TSM_84",
+      "fold_id": "WF01",
+      "metric": "r_squared",
+      "scope": "fold",
+      "source_path": "fold_estimates/3/r_squared",
+      "status": "VALID",
+      "unit": "ratio",
+      "value": 0.25518457230526037
+    },
+    {
+      "entity": "M02_TSM_84",
+      "fold_id": "WF01",
+      "metric": "residual_return",
+      "scope": "fold",
+      "source_path": "fold_estimates/3/residual_return",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 1.6653345369377348e-16
+    },
+    {
+      "entity": "M02_TSM_84",
+      "fold_id": "WF01",
+      "metric": "residual_volatility",
+      "scope": "fold",
+      "source_path": "fold_estimates/3/residual_volatility",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 0.006964230223508264
+    },
+    {
+      "entity": "M02_TSM_84",
+      "fold_id": "WF01",
+      "metric": "volatility_matched_btc_return",
+      "scope": "fold",
+      "source_path": "fold_estimates/3/volatility_matched_btc_return",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": -0.5799462979056141
+    },
+    {
+      "entity": "M02_TSM_84",
+      "fold_id": "WF01",
+      "metric": "maximum_btc_exposure",
+      "scope": "fold",
+      "source_path": "fold_estimates/3/maximum_btc_exposure",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 1.0
+    },
+    {
+      "entity": "M02_TSM_84",
+      "fold_id": "WF01",
+      "metric": "observations",
+      "scope": "fold",
+      "source_path": "fold_estimates/3/observations",
+      "status": "VALID",
+      "unit": "count",
+      "value": 2188
+    },
+    {
+      "entity": "M02_TSM_84",
+      "fold_id": "WF02",
+      "metric": "alpha_intercept",
+      "scope": "fold",
+      "source_path": "fold_estimates/4/alpha_intercept",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": -0.0001153814282692521
+    },
+    {
+      "entity": "M02_TSM_84",
+      "fold_id": "WF02",
+      "metric": "beta",
+      "scope": "fold",
+      "source_path": "fold_estimates/4/beta",
+      "status": "VALID",
+      "unit": "ratio",
+      "value": 0.7473775167214188
+    },
+    {
+      "entity": "M02_TSM_84",
+      "fold_id": "WF02",
+      "metric": "downside_beta",
+      "scope": "fold",
+      "source_path": "fold_estimates/4/downside_beta",
+      "status": "VALID",
+      "unit": "ratio",
+      "value": 0.8686949118254851
+    },
+    {
+      "entity": "M02_TSM_84",
+      "fold_id": "WF02",
+      "metric": "upside_beta",
+      "scope": "fold",
+      "source_path": "fold_estimates/4/upside_beta",
+      "status": "VALID",
+      "unit": "ratio",
+      "value": 0.5520226531495563
+    },
+    {
+      "entity": "M02_TSM_84",
+      "fold_id": "WF02",
+      "metric": "correlation",
+      "scope": "fold",
+      "source_path": "fold_estimates/4/correlation",
+      "status": "VALID",
+      "unit": "ratio",
+      "value": 0.6249418750974985
+    },
+    {
+      "entity": "M02_TSM_84",
+      "fold_id": "WF02",
+      "metric": "r_squared",
+      "scope": "fold",
+      "source_path": "fold_estimates/4/r_squared",
+      "status": "VALID",
+      "unit": "ratio",
+      "value": 0.3905523472503776
+    },
+    {
+      "entity": "M02_TSM_84",
+      "fold_id": "WF02",
+      "metric": "residual_return",
+      "scope": "fold",
+      "source_path": "fold_estimates/4/residual_return",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": -1.6653345369377348e-16
+    },
+    {
+      "entity": "M02_TSM_84",
+      "fold_id": "WF02",
+      "metric": "residual_volatility",
+      "scope": "fold",
+      "source_path": "fold_estimates/4/residual_volatility",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 0.008399341495158374
+    },
+    {
+      "entity": "M02_TSM_84",
+      "fold_id": "WF02",
+      "metric": "volatility_matched_btc_return",
+      "scope": "fold",
+      "source_path": "fold_estimates/4/volatility_matched_btc_return",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 0.6782064891423454
+    },
+    {
+      "entity": "M02_TSM_84",
+      "fold_id": "WF02",
+      "metric": "maximum_btc_exposure",
+      "scope": "fold",
+      "source_path": "fold_estimates/4/maximum_btc_exposure",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 1.0
+    },
+    {
+      "entity": "M02_TSM_84",
+      "fold_id": "WF02",
+      "metric": "observations",
+      "scope": "fold",
+      "source_path": "fold_estimates/4/observations",
+      "status": "VALID",
+      "unit": "count",
+      "value": 2188
+    },
+    {
+      "entity": "M02_TSM_84",
+      "fold_id": "WF03",
+      "metric": "alpha_intercept",
+      "scope": "fold",
+      "source_path": "fold_estimates/5/alpha_intercept",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 7.279536837100396e-05
+    },
+    {
+      "entity": "M02_TSM_84",
+      "fold_id": "WF03",
+      "metric": "beta",
+      "scope": "fold",
+      "source_path": "fold_estimates/5/beta",
+      "status": "VALID",
+      "unit": "ratio",
+      "value": 1.144705816072792
+    },
+    {
+      "entity": "M02_TSM_84",
+      "fold_id": "WF03",
+      "metric": "downside_beta",
+      "scope": "fold",
+      "source_path": "fold_estimates/5/downside_beta",
+      "status": "VALID",
+      "unit": "ratio",
+      "value": 1.1471485389865033
+    },
+    {
+      "entity": "M02_TSM_84",
+      "fold_id": "WF03",
+      "metric": "upside_beta",
+      "scope": "fold",
+      "source_path": "fold_estimates/5/upside_beta",
+      "status": "VALID",
+      "unit": "ratio",
+      "value": 1.0457745794703652
+    },
+    {
+      "entity": "M02_TSM_84",
+      "fold_id": "WF03",
+      "metric": "correlation",
+      "scope": "fold",
+      "source_path": "fold_estimates/5/correlation",
+      "status": "VALID",
+      "unit": "ratio",
+      "value": 0.6652957056813548
+    },
+    {
+      "entity": "M02_TSM_84",
+      "fold_id": "WF03",
+      "metric": "r_squared",
+      "scope": "fold",
+      "source_path": "fold_estimates/5/r_squared",
+      "status": "VALID",
+      "unit": "ratio",
+      "value": 0.44261837599805154
+    },
+    {
+      "entity": "M02_TSM_84",
+      "fold_id": "WF03",
+      "metric": "residual_return",
+      "scope": "fold",
+      "source_path": "fold_estimates/5/residual_return",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": -1.942890293094024e-16
+    },
+    {
+      "entity": "M02_TSM_84",
+      "fold_id": "WF03",
+      "metric": "residual_volatility",
+      "scope": "fold",
+      "source_path": "fold_estimates/5/residual_volatility",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 0.014228272043852188
+    },
+    {
+      "entity": "M02_TSM_84",
+      "fold_id": "WF03",
+      "metric": "volatility_matched_btc_return",
+      "scope": "fold",
+      "source_path": "fold_estimates/5/volatility_matched_btc_return",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 1.1992713553369514
+    },
+    {
+      "entity": "M02_TSM_84",
+      "fold_id": "WF03",
+      "metric": "maximum_btc_exposure",
+      "scope": "fold",
+      "source_path": "fold_estimates/5/maximum_btc_exposure",
+      "status": "VALID",
+      "unit": "fraction",
+      "value": 1.0
+    },
+    {
+      "entity": "M02_TSM_84",
+      "fold_id": "WF03",
+      "metric": "observations",
+      "scope": "fold",
+      "source_path": "fold_estimates/5/observations",
+      "status": "VALID",
+      "unit": "count",
+      "value": 2194
+    }
+  ],
+  "research_result": "PARTIAL",
+  "safety_stop": "PASS",
+  "schema_version": "ams-bf01-benchmark-fairness-alpha-audit-v2",
+  "scope": {
+    "holdout_2026_accessed": false,
+    "kelly_used": false,
+    "leverage_used": false,
+    "live_ready": false,
+    "md02_authorized": false,
+    "point_in_time": false,
+    "production_ready": false,
+    "promotable": false,
+    "test_2025_accessed": false,
+    "universe": "SURVIVOR_30_DIAGNOSTIC_ONLY"
+  },
+  "source_inventory": [
+    {
+      "schema_version": "ams-md01-benchmark-comparison-v1",
+      "sha256": "188aa1def3798609ff7cc0e321fd7b5575bb597af4325a8f9a0bde109ee25023",
+      "size_bytes": 37295,
+      "source": "reports/research/ams-md01-benchmark-comparison-v1.json",
+      "status": "READ"
+    },
+    {
+      "schema_version": "ams-rd01-causal-benchmark-comparison-v2",
+      "sha256": "386375523970745d23992a2b38163fbbfd9b25eb3e9d99226e922c48b4e3b7f6",
+      "size_bytes": 1423,
+      "source": "reports/research/ams-rd01-benchmark-comparison-v2.json",
+      "status": "READ"
+    },
+    {
+      "schema_version": "ams-rd01-btc-beta-diagnostics-v1",
+      "sha256": "88fe979f6ebfed2a3d5f11bbcfc13013326a2bf6d138d256d65590d97d6a467a",
+      "size_bytes": 10585,
+      "source": "reports/research/ams-rd01-btc-beta-diagnostics-v1.json",
+      "status": "READ"
+    },
+    {
+      "schema_version": "ams-rd01-concentration-diagnostics-v1",
+      "sha256": "3ebc1ba41574758b5a71bbcf40584051c170a5323fda8b8b0d3e71814b53b02d",
+      "size_bytes": 2679,
+      "source": "reports/research/ams-rd01-concentration-diagnostics-v1.json",
+      "status": "READ"
+    }
+  ]
+}
