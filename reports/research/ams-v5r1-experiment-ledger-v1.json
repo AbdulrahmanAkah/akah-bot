@@ -1,0 +1,428 @@
+{
+  "alpha_configurations": [
+    {
+      "configuration_id": "AMS-V5R1-A01",
+      "parameter_hash_sha256": "d9fd9be25915672639af1a2af3f5b4a58194b7bc3c365b82928b0ce097912d4e",
+      "parameters": {
+        "base_transaction_cost": 0.002,
+        "correlation_lookback_days": 90,
+        "entry_family": "SHALLOW_PULLBACK_RECLAIM",
+        "exit_model": "RUNNER_ONLY",
+        "fibonacci_mode": "NO_FIBONACCI",
+        "stop_model": "STRUCTURE_BALANCED",
+        "stress_transaction_cost": 0.004,
+        "threshold_candidates": [
+          50,
+          55
+        ]
+      }
+    },
+    {
+      "configuration_id": "AMS-V5R1-A02",
+      "parameter_hash_sha256": "e7104ab48e8437d456aacb77e818a9f4f09e5fc1a2a14d66b65e017160223e9a",
+      "parameters": {
+        "base_transaction_cost": 0.002,
+        "correlation_lookback_days": 90,
+        "entry_family": "SHALLOW_PULLBACK_RECLAIM",
+        "exit_model": "RUNNER_ONLY",
+        "fibonacci_mode": "SOFT_FIBONACCI_SCORE",
+        "stop_model": "STRUCTURE_BALANCED",
+        "stress_transaction_cost": 0.004,
+        "threshold_candidates": [
+          50,
+          55
+        ]
+      }
+    },
+    {
+      "configuration_id": "AMS-V5R1-A03",
+      "parameter_hash_sha256": "5faa21a094e2e84cda0449ad6a1b1795837b8f1e81660ae18c4f0dabc52f640c",
+      "parameters": {
+        "base_transaction_cost": 0.002,
+        "correlation_lookback_days": 90,
+        "entry_family": "SHALLOW_PULLBACK_RECLAIM",
+        "exit_model": "RUNNER_ONLY",
+        "fibonacci_mode": "NO_FIBONACCI",
+        "stop_model": "STRUCTURE_WIDE",
+        "stress_transaction_cost": 0.004,
+        "threshold_candidates": [
+          50,
+          55
+        ]
+      }
+    },
+    {
+      "configuration_id": "AMS-V5R1-A04",
+      "parameter_hash_sha256": "f0ccb07f6db048b775d239774804856323ada0d454623474d43f88e9dacff0b9",
+      "parameters": {
+        "base_transaction_cost": 0.002,
+        "correlation_lookback_days": 90,
+        "entry_family": "SHALLOW_PULLBACK_RECLAIM",
+        "exit_model": "RUNNER_ONLY",
+        "fibonacci_mode": "SOFT_FIBONACCI_SCORE",
+        "stop_model": "STRUCTURE_WIDE",
+        "stress_transaction_cost": 0.004,
+        "threshold_candidates": [
+          50,
+          55
+        ]
+      }
+    },
+    {
+      "configuration_id": "AMS-V5R1-A05",
+      "parameter_hash_sha256": "4506898423b5fe935ccf4705fb4bdf0e5ef35694b6f53dda043ce7457907d1a1",
+      "parameters": {
+        "base_transaction_cost": 0.002,
+        "correlation_lookback_days": 90,
+        "entry_family": "DEEP_PULLBACK_RECOVERY",
+        "exit_model": "RUNNER_ONLY",
+        "fibonacci_mode": "NO_FIBONACCI",
+        "stop_model": "STRUCTURE_BALANCED",
+        "stress_transaction_cost": 0.004,
+        "threshold_candidates": [
+          50,
+          55
+        ]
+      }
+    },
+    {
+      "configuration_id": "AMS-V5R1-A06",
+      "parameter_hash_sha256": "249eb21404b6b72ce64038c64f8c88fe2f234401ba9136a0cbb8eee116becdc5",
+      "parameters": {
+        "base_transaction_cost": 0.002,
+        "correlation_lookback_days": 90,
+        "entry_family": "DEEP_PULLBACK_RECOVERY",
+        "exit_model": "RUNNER_ONLY",
+        "fibonacci_mode": "SOFT_FIBONACCI_SCORE",
+        "stop_model": "STRUCTURE_BALANCED",
+        "stress_transaction_cost": 0.004,
+        "threshold_candidates": [
+          50,
+          55
+        ]
+      }
+    },
+    {
+      "configuration_id": "AMS-V5R1-A07",
+      "parameter_hash_sha256": "dc08c8b2257f46bc8346b7346733ec158abcca39990a9a86d313adf26340af2b",
+      "parameters": {
+        "base_transaction_cost": 0.002,
+        "correlation_lookback_days": 90,
+        "entry_family": "DEEP_PULLBACK_RECOVERY",
+        "exit_model": "RUNNER_ONLY",
+        "fibonacci_mode": "NO_FIBONACCI",
+        "stop_model": "STRUCTURE_WIDE",
+        "stress_transaction_cost": 0.004,
+        "threshold_candidates": [
+          50,
+          55
+        ]
+      }
+    },
+    {
+      "configuration_id": "AMS-V5R1-A08",
+      "parameter_hash_sha256": "455575e55eeb95e5cee0548565aec7f244f5c85ebe8c2a874e6ac1ec5f27e7cd",
+      "parameters": {
+        "base_transaction_cost": 0.002,
+        "correlation_lookback_days": 90,
+        "entry_family": "DEEP_PULLBACK_RECOVERY",
+        "exit_model": "RUNNER_ONLY",
+        "fibonacci_mode": "SOFT_FIBONACCI_SCORE",
+        "stop_model": "STRUCTURE_WIDE",
+        "stress_transaction_cost": 0.004,
+        "threshold_candidates": [
+          50,
+          55
+        ]
+      }
+    },
+    {
+      "configuration_id": "AMS-V5R1-A09",
+      "parameter_hash_sha256": "330dc1876c5df2f4b5d0df2bf6d6310e8d62d579ed96c480bffcdadac3f14123",
+      "parameters": {
+        "base_transaction_cost": 0.002,
+        "correlation_lookback_days": 90,
+        "entry_family": "MOMENTUM_REACCELERATION",
+        "exit_model": "RUNNER_ONLY",
+        "fibonacci_mode": "NO_FIBONACCI",
+        "stop_model": "STRUCTURE_BALANCED",
+        "stress_transaction_cost": 0.004,
+        "threshold_candidates": [
+          50,
+          55
+        ]
+      }
+    },
+    {
+      "configuration_id": "AMS-V5R1-A10",
+      "parameter_hash_sha256": "e9d3ffbb8e843a36de561fdbbcd9920cf459b2a876c76f4876364e5b5692d530",
+      "parameters": {
+        "base_transaction_cost": 0.002,
+        "correlation_lookback_days": 90,
+        "entry_family": "MOMENTUM_REACCELERATION",
+        "exit_model": "RUNNER_ONLY",
+        "fibonacci_mode": "SOFT_FIBONACCI_SCORE",
+        "stop_model": "STRUCTURE_BALANCED",
+        "stress_transaction_cost": 0.004,
+        "threshold_candidates": [
+          50,
+          55
+        ]
+      }
+    },
+    {
+      "configuration_id": "AMS-V5R1-A11",
+      "parameter_hash_sha256": "bf16e4c40c0da111533e75a8ee79c7436f5c9afd4d2c429de58cd4aff06b32b8",
+      "parameters": {
+        "base_transaction_cost": 0.002,
+        "correlation_lookback_days": 90,
+        "entry_family": "HYBRID_ALL_THREE",
+        "exit_model": "RUNNER_ONLY",
+        "fibonacci_mode": "NO_FIBONACCI",
+        "stop_model": "STRUCTURE_BALANCED",
+        "stress_transaction_cost": 0.004,
+        "threshold_candidates": [
+          50,
+          55
+        ]
+      }
+    },
+    {
+      "configuration_id": "AMS-V5R1-A12",
+      "parameter_hash_sha256": "7042168ffd45a28ddf144eac4908de86605dd248f1fdedae7c843d208ae7f47d",
+      "parameters": {
+        "base_transaction_cost": 0.002,
+        "correlation_lookback_days": 90,
+        "entry_family": "HYBRID_ALL_THREE",
+        "exit_model": "RUNNER_ONLY",
+        "fibonacci_mode": "SOFT_FIBONACCI_SCORE",
+        "stop_model": "STRUCTURE_BALANCED",
+        "stress_transaction_cost": 0.004,
+        "threshold_candidates": [
+          50,
+          55
+        ]
+      }
+    }
+  ],
+  "dataset_hashes": {
+    "availability": "de71d0a229120873fc7294cef52b41c577e81bc466f009a49a970a8bfe21473e",
+    "daily": "c716a0586b572939a93035b5e85d30f9ad1a18e1a05521dc801bf4ab6728c10d",
+    "eight_hour": "9335e64d558c6494a6712c718e239096d65d4d5309c97985c49ed234ebc0721b",
+    "four_hour": "591e9006ffa0ab7538869b4c5c2d8d66fac98736e60a1d6b09ee302b403feb70"
+  },
+  "dataset_registration": {
+    "availability": {
+      "bytes": 5588,
+      "file_sha256": "de71d0a229120873fc7294cef52b41c577e81bc466f009a49a970a8bfe21473e",
+      "path": "data/research/ams-v3/kucoin-spot-usdt/ams-v3-kucoin-spot-usdt-availability.parquet",
+      "row_count": 30,
+      "symbol_count": 30
+    },
+    "daily": {
+      "bytes": 1292354,
+      "content_sha256": "a08fc527eee8d39229f9cf64a974f4eeb5e91ce1d70ffef0a063c7e50a24e8bf",
+      "file_sha256": "c716a0586b572939a93035b5e85d30f9ad1a18e1a05521dc801bf4ab6728c10d",
+      "first_bar_open_time": "2021-01-01T00:00:00+00:00",
+      "last_bar_close_time": "2025-01-01T00:00:00+00:00",
+      "path": "data/research/ams-v3/kucoin-spot-usdt/ams-v3-kucoin-spot-usdt-1d.parquet",
+      "row_count": 33344,
+      "symbol_count": 30
+    },
+    "eight_hour": {
+      "bytes": 4163054,
+      "content_sha256": "56361153e9ac35b71d2e962101cbcdf867663c5efb89bf63b6765646688917ce",
+      "file_sha256": "9335e64d558c6494a6712c718e239096d65d4d5309c97985c49ed234ebc0721b",
+      "first_bar_open_time": "2021-01-01T00:00:00+00:00",
+      "last_bar_close_time": "2025-01-01T00:00:00+00:00",
+      "path": "data/research/ams-v3/kucoin-spot-usdt/ams-v3-kucoin-spot-usdt-8h.parquet",
+      "row_count": 100038,
+      "symbol_count": 30
+    },
+    "four_hour": {
+      "bytes": 7495295,
+      "content_sha256": "a1925afc45b8e2ef2e20d3a4ad2a1fd00c29e0e88b6addb8e6afd83aee1a30c2",
+      "file_sha256": "591e9006ffa0ab7538869b4c5c2d8d66fac98736e60a1d6b09ee302b403feb70",
+      "first_bar_open_time": "2021-01-01T00:00:00+00:00",
+      "last_bar_close_time": "2025-01-01T00:00:00+00:00",
+      "path": "data/research/ams-v3/kucoin-spot-usdt/ams-v3-kucoin-spot-usdt-4h.parquet",
+      "row_count": 200077,
+      "symbol_count": 30
+    }
+  },
+  "portfolio_profiles": [
+    {
+      "base_risk": 0.007,
+      "max_cluster": 2,
+      "max_heat": 0.045,
+      "max_initial_risk": 0.0095,
+      "max_position_risk": 0.012,
+      "max_positions": 5,
+      "profile_id": "AMS-V5R1-P01"
+    },
+    {
+      "base_risk": 0.0095,
+      "max_cluster": 2,
+      "max_heat": 0.065,
+      "max_initial_risk": 0.013,
+      "max_position_risk": 0.016,
+      "max_positions": 6,
+      "profile_id": "AMS-V5R1-P02"
+    }
+  ],
+  "protocol_id": "AMS-V5R1-NATIVE-ENGINE-CONFORMANCE-RERUN",
+  "schema_version": "ams-v5r1-experiment-ledger-v1",
+  "trial_accounting": {
+    "authorized_trials": 24,
+    "executed_trials": 0,
+    "holdout_2026_accessed": false,
+    "remaining_trials": 24,
+    "test_2025_accessed": false
+  },
+  "trial_plan": [
+    {
+      "configuration_id": "AMS-V5R1-A01",
+      "portfolio_profile_id": "AMS-V5R1-P01",
+      "trial_id": "AMS-V5R1-T01",
+      "trial_status": "REGISTERED_NOT_EXECUTED"
+    },
+    {
+      "configuration_id": "AMS-V5R1-A01",
+      "portfolio_profile_id": "AMS-V5R1-P02",
+      "trial_id": "AMS-V5R1-T02",
+      "trial_status": "REGISTERED_NOT_EXECUTED"
+    },
+    {
+      "configuration_id": "AMS-V5R1-A02",
+      "portfolio_profile_id": "AMS-V5R1-P01",
+      "trial_id": "AMS-V5R1-T03",
+      "trial_status": "REGISTERED_NOT_EXECUTED"
+    },
+    {
+      "configuration_id": "AMS-V5R1-A02",
+      "portfolio_profile_id": "AMS-V5R1-P02",
+      "trial_id": "AMS-V5R1-T04",
+      "trial_status": "REGISTERED_NOT_EXECUTED"
+    },
+    {
+      "configuration_id": "AMS-V5R1-A03",
+      "portfolio_profile_id": "AMS-V5R1-P01",
+      "trial_id": "AMS-V5R1-T05",
+      "trial_status": "REGISTERED_NOT_EXECUTED"
+    },
+    {
+      "configuration_id": "AMS-V5R1-A03",
+      "portfolio_profile_id": "AMS-V5R1-P02",
+      "trial_id": "AMS-V5R1-T06",
+      "trial_status": "REGISTERED_NOT_EXECUTED"
+    },
+    {
+      "configuration_id": "AMS-V5R1-A04",
+      "portfolio_profile_id": "AMS-V5R1-P01",
+      "trial_id": "AMS-V5R1-T07",
+      "trial_status": "REGISTERED_NOT_EXECUTED"
+    },
+    {
+      "configuration_id": "AMS-V5R1-A04",
+      "portfolio_profile_id": "AMS-V5R1-P02",
+      "trial_id": "AMS-V5R1-T08",
+      "trial_status": "REGISTERED_NOT_EXECUTED"
+    },
+    {
+      "configuration_id": "AMS-V5R1-A05",
+      "portfolio_profile_id": "AMS-V5R1-P01",
+      "trial_id": "AMS-V5R1-T09",
+      "trial_status": "REGISTERED_NOT_EXECUTED"
+    },
+    {
+      "configuration_id": "AMS-V5R1-A05",
+      "portfolio_profile_id": "AMS-V5R1-P02",
+      "trial_id": "AMS-V5R1-T10",
+      "trial_status": "REGISTERED_NOT_EXECUTED"
+    },
+    {
+      "configuration_id": "AMS-V5R1-A06",
+      "portfolio_profile_id": "AMS-V5R1-P01",
+      "trial_id": "AMS-V5R1-T11",
+      "trial_status": "REGISTERED_NOT_EXECUTED"
+    },
+    {
+      "configuration_id": "AMS-V5R1-A06",
+      "portfolio_profile_id": "AMS-V5R1-P02",
+      "trial_id": "AMS-V5R1-T12",
+      "trial_status": "REGISTERED_NOT_EXECUTED"
+    },
+    {
+      "configuration_id": "AMS-V5R1-A07",
+      "portfolio_profile_id": "AMS-V5R1-P01",
+      "trial_id": "AMS-V5R1-T13",
+      "trial_status": "REGISTERED_NOT_EXECUTED"
+    },
+    {
+      "configuration_id": "AMS-V5R1-A07",
+      "portfolio_profile_id": "AMS-V5R1-P02",
+      "trial_id": "AMS-V5R1-T14",
+      "trial_status": "REGISTERED_NOT_EXECUTED"
+    },
+    {
+      "configuration_id": "AMS-V5R1-A08",
+      "portfolio_profile_id": "AMS-V5R1-P01",
+      "trial_id": "AMS-V5R1-T15",
+      "trial_status": "REGISTERED_NOT_EXECUTED"
+    },
+    {
+      "configuration_id": "AMS-V5R1-A08",
+      "portfolio_profile_id": "AMS-V5R1-P02",
+      "trial_id": "AMS-V5R1-T16",
+      "trial_status": "REGISTERED_NOT_EXECUTED"
+    },
+    {
+      "configuration_id": "AMS-V5R1-A09",
+      "portfolio_profile_id": "AMS-V5R1-P01",
+      "trial_id": "AMS-V5R1-T17",
+      "trial_status": "REGISTERED_NOT_EXECUTED"
+    },
+    {
+      "configuration_id": "AMS-V5R1-A09",
+      "portfolio_profile_id": "AMS-V5R1-P02",
+      "trial_id": "AMS-V5R1-T18",
+      "trial_status": "REGISTERED_NOT_EXECUTED"
+    },
+    {
+      "configuration_id": "AMS-V5R1-A10",
+      "portfolio_profile_id": "AMS-V5R1-P01",
+      "trial_id": "AMS-V5R1-T19",
+      "trial_status": "REGISTERED_NOT_EXECUTED"
+    },
+    {
+      "configuration_id": "AMS-V5R1-A10",
+      "portfolio_profile_id": "AMS-V5R1-P02",
+      "trial_id": "AMS-V5R1-T20",
+      "trial_status": "REGISTERED_NOT_EXECUTED"
+    },
+    {
+      "configuration_id": "AMS-V5R1-A11",
+      "portfolio_profile_id": "AMS-V5R1-P01",
+      "trial_id": "AMS-V5R1-T21",
+      "trial_status": "REGISTERED_NOT_EXECUTED"
+    },
+    {
+      "configuration_id": "AMS-V5R1-A11",
+      "portfolio_profile_id": "AMS-V5R1-P02",
+      "trial_id": "AMS-V5R1-T22",
+      "trial_status": "REGISTERED_NOT_EXECUTED"
+    },
+    {
+      "configuration_id": "AMS-V5R1-A12",
+      "portfolio_profile_id": "AMS-V5R1-P01",
+      "trial_id": "AMS-V5R1-T23",
+      "trial_status": "REGISTERED_NOT_EXECUTED"
+    },
+    {
+      "configuration_id": "AMS-V5R1-A12",
+      "portfolio_profile_id": "AMS-V5R1-P02",
+      "trial_id": "AMS-V5R1-T24",
+      "trial_status": "REGISTERED_NOT_EXECUTED"
+    }
+  ]
+}
