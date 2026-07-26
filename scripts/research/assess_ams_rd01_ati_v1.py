@@ -44,6 +44,7 @@ def main() -> None:
     protocol = load_json(REPORTS / "ams-rd01-ati-v1-protocol.json")
     quality = load_json(REPORTS / "ams-rd01-dominance-data-quality-v1.json")
     beta = load_json(REPORTS / "ams-rd01-btc-beta-diagnostics-v1.json")
+    benchmarks = load_json(REPORTS / "ams-rd01-benchmark-comparison-v2.json")
     concentration = load_json(REPORTS / "ams-rd01-concentration-diagnostics-v1.json")
     shadow = load_json(REPORTS / "ams-ati-v1-shadow-summary.json")
     dominance_reason = "NO_REGISTERED_REPRODUCIBLE_MARKET_CAP_SERIES"
@@ -117,7 +118,15 @@ def main() -> None:
             "mean_btc_beta": statistics.mean(betas),
             "mean_downside_beta": statistics.mean(downside_betas),
             "fold_estimate_count": len(betas),
-            "high_beta_benchmark": "ENGINE_CAUSALITY_TESTED_PERFORMANCE_NOT_RUN",
+            "high_beta_benchmark": {
+                "status": "COMPLETE",
+                "high_beta_28_return": benchmarks["benchmarks"]["HIGH_BETA_28"][
+                    "net_compounded_return"
+                ],
+                "high_beta_84_return": benchmarks["benchmarks"]["HIGH_BETA_84"][
+                    "net_compounded_return"
+                ],
+            },
             "volatility_matched_btc": "CAUSAL_EXPOSURE_CAPPED_AT_ONE",
             "residual_momentum": "MIXED",
         },
@@ -168,6 +177,7 @@ def main() -> None:
         "ams-rd01-dominance-source-feasibility-v1.json",
         "ams-rd01-dominance-data-quality-v1.json",
         "ams-rd01-btc-beta-diagnostics-v1.json",
+        "ams-rd01-benchmark-comparison-v2.json",
         "ams-rd01-concentration-diagnostics-v1.json",
         "ams-ati-v1-shadow-summary.json",
     ]

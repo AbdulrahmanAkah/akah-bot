@@ -23,6 +23,14 @@ class BetaEstimate:
     residual_volatility: float | None
 
 
+@dataclass(frozen=True)
+class CausalBenchmark:
+    returns: pd.Series
+    exposure: pd.Series
+    turnover: float
+    selection_count: int
+
+
 def _slope(y: pd.Series, x: pd.Series) -> float | None:
     variance = float(x.var(ddof=1))
     if len(x) < 3 or not math.isfinite(variance) or variance <= 0:
@@ -47,7 +55,8 @@ def estimate_beta(
     beta = _slope(y, x)
     downside = _slope(y[x < 0], x[x < 0])
     upside = _slope(y[x >= 0], x[x >= 0])
-    correlation = float(y.corr(x))
+    y_variance = float(y.var(ddof=1))
+    correlation = float(y.corr(x)) if y_variance > 0 else None
     alpha = float(y.mean() - (beta or 0.0) * x.mean())
     fitted = alpha + (beta or 0.0) * x
     residual = y - fitted
@@ -106,6 +115,62 @@ def causal_asset_betas(
     ).dropna()
 
 
+def causal_high_beta_benchmark(
+    asset_returns: pd.DataFrame,
+    btc_returns: pd.Series,
+    *,
+    lookback_days: int,
+    maximum_positions: int = 3,
+    transaction_cost: float = 0.002,
+) -> CausalBenchmark:
+    """Weekly top-beta Survivor benchmark using only pre-decision returns."""
+    index = asset_returns.index.intersection(btc_returns.index).sort_values()
+    selected: tuple[str, ...] = ()
+    prior_weights: dict[str, float] = {}
+    output: list[float] = []
+    exposures: list[float] = []
+    turnover = 0.0
+    selections = 0
+    for timestamp in index:
+        fee = 0.0
+        if timestamp.weekday() == 0:
+            betas = causal_asset_betas(
+                asset_returns,
+                btc_returns,
+                as_of=pd.Timestamp(timestamp),
+                lookback_days=lookback_days,
+            ).sort_values(ascending=False, kind="stable")
+            selected = tuple(betas.index[:maximum_positions])
+            weights = (
+                {symbol: 1.0 / len(selected) for symbol in selected}
+                if selected
+                else {}
+            )
+            names = set(prior_weights) | set(weights)
+            change = sum(
+                abs(weights.get(name, 0.0) - prior_weights.get(name, 0.0))
+                for name in names
+            )
+            turnover += change
+            fee = change * transaction_cost
+            prior_weights = weights
+            selections += bool(selected)
+        day = asset_returns.loc[timestamp]
+        gross = sum(
+            prior_weights.get(symbol, 0.0) * float(day.get(symbol, np.nan))
+            for symbol in selected
+            if pd.notna(day.get(symbol, np.nan))
+        )
+        output.append(gross - fee)
+        exposures.append(sum(prior_weights.values()))
+    return CausalBenchmark(
+        pd.Series(output, index=index, dtype=float),
+        pd.Series(exposures, index=index, dtype=float),
+        turnover,
+        selections,
+    )
+
+
 def concentration_metrics(pnl_by_symbol: Mapping[str, float]) -> Mapping[str, float]:
     """Compute positive-profit concentration without hiding losses."""
     positive = {key: max(0.0, float(value)) for key, value in pnl_by_symbol.items()}
@@ -128,4 +193,3 @@ def leave_top_n_out(
     """Remove top trade contributors as a diagnostic, not model selection."""
     pnl = sorted((float(trade["net_pnl"]) for trade in trades), reverse=True)
     return sum(pnl[count:])
-

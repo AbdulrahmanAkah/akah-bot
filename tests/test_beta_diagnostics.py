@@ -6,6 +6,7 @@ import pytest
 
 from spotbot.research.beta_diagnostics import (
     causal_asset_betas,
+    causal_high_beta_benchmark,
     causal_volatility_matched_exposure,
     concentration_metrics,
     estimate_beta,
@@ -38,6 +39,23 @@ def test_future_asset_returns_do_not_change_past_beta_rank() -> None:
     assets.loc[assets.index >= cutoff, "A"] = 1_000
     after = causal_asset_betas(assets, btc, as_of=cutoff, lookback_days=28)
     pd.testing.assert_series_equal(before, after)
+
+
+def test_high_beta_benchmark_is_causal_spot_only_and_deterministic() -> None:
+    index = pd.date_range("2024-01-01", periods=100, freq="D", tz="UTC")
+    btc = pd.Series(np.sin(np.arange(100)) * 0.01, index=index)
+    assets = pd.DataFrame({"A": btc * 2, "B": btc * 0.5, "C": -btc}, index=index)
+    first = causal_high_beta_benchmark(assets, btc, lookback_days=28)
+    mutated = assets.copy()
+    cutoff = pd.Timestamp("2024-03-01T00:00:00Z")
+    mutated.loc[mutated.index >= cutoff, "A"] = 100.0
+    second = causal_high_beta_benchmark(mutated, btc, lookback_days=28)
+    pd.testing.assert_series_equal(
+        first.returns.loc[first.returns.index < cutoff],
+        second.returns.loc[second.returns.index < cutoff],
+    )
+    assert first.exposure.between(0.0, 1.0).all()
+    assert first.turnover >= 0.0
 
 
 def test_concentration_and_leave_top_out_are_deterministic() -> None:
