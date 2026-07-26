@@ -13,7 +13,7 @@ import math
 from collections import Counter, defaultdict
 from collections.abc import Iterable, Mapping, Sequence
 from dataclasses import asdict, dataclass
-from typing import Any, Literal
+from typing import Any, Literal, cast
 
 import numpy as np
 import pandas as pd
@@ -36,7 +36,9 @@ ALIGNMENT_MULTIPLIERS = {
     "FOUR_HOUR_ONLY": 0.33,
     "NONE": 0.0,
 }
-VARIANTS: Mapping[str, tuple[str, int]] = {
+MomentumSchool = Literal["TSM", "XSM", "DUAL"]
+MomentumHorizon = Literal[28, 84]
+VARIANTS: Mapping[str, tuple[MomentumSchool, MomentumHorizon]] = {
     "MD01-M01": ("TSM", 28),
     "MD01-M02": ("TSM", 84),
     "MD01-M03": ("XSM", 28),
@@ -78,8 +80,8 @@ class MD01Error(RuntimeError):
 @dataclass(frozen=True)
 class MD01Variant:
     variant_id: str
-    school: Literal["TSM", "XSM", "DUAL"]
-    horizon_days: Literal[28, 84]
+    school: MomentumSchool
+    horizon_days: MomentumHorizon
     maximum_positions: int
     base_target_weight: float
 
@@ -496,8 +498,9 @@ def causal_cluster_snapshot(
                 else np.nan
             )
             if pd.notna(value):
-                comparable.append(float(value))
-                if float(value) >= threshold:
+                numeric_value = float(cast(Any, value))
+                comparable.append(numeric_value)
+                if numeric_value >= threshold:
                     union(left, right)
     groups: dict[str, list[str]] = defaultdict(list)
     for symbol in ordered:
@@ -524,7 +527,7 @@ def select_assets(
     decisions: list[dict[str, Any]] = []
     for row in ranked.itertuples(index=False):
         symbol = str(row.symbol)
-        momentum = float(row.momentum_return)
+        momentum = float(cast(Any, row.momentum_return))
         if variant.school in {"TSM", "DUAL"} and momentum <= 0:
             decisions.append(
                 {"symbol": symbol, "decision": "ABSOLUTE_MOMENTUM_NONPOSITIVE"}
@@ -911,16 +914,16 @@ def simulate_md01_fold(
                 close_position(
                     symbol,
                     timestamp=timestamp,
-                    price=float(rows_by_symbol.loc[symbol, "open"]),
+                    price=float(cast(Any, rows_by_symbol.loc[symbol, "open"])),
                     fill_type=reason,
                 )
 
         # Venue exits are mandatory before any new activity.
         for symbol in sorted(list(positions)):
-            availability_row = availability_by_symbol.loc[symbol]
+            availability_row = cast(pd.Series, availability_by_symbol.loc[symbol])
             if timestamp >= pd.Timestamp(availability_row["tradable_until"]):
                 price = (
-                    float(rows_by_symbol.loc[symbol, "open"])
+                    float(cast(Any, rows_by_symbol.loc[symbol, "open"]))
                     if symbol in rows_by_symbol.index
                     else positions[symbol].entry_price
                 )
@@ -937,49 +940,49 @@ def simulate_md01_fold(
             key=lambda item: (item["rank"], item["symbol"]),
         ):
             symbol = str(order["symbol"])
-            candidate = order["candidate"]
+            entry_candidate = order["candidate"]
             if symbol not in active_selection:
-                candidate["accepted"] = False
-                candidate["rejection_reason"] = "SELECTION_EXPIRED"
+                entry_candidate["accepted"] = False
+                entry_candidate["rejection_reason"] = "SELECTION_EXPIRED"
                 counters["SELECTION_EXPIRED"] += 1
                 continue
             if symbol in positions:
-                candidate["accepted"] = False
-                candidate["rejection_reason"] = "EXISTING_POSITION"
+                entry_candidate["accepted"] = False
+                entry_candidate["rejection_reason"] = "EXISTING_POSITION"
                 counters["EXISTING_POSITION"] += 1
                 continue
             if symbol not in rows_by_symbol.index:
-                candidate["accepted"] = False
-                candidate["rejection_reason"] = "NO_NEXT_OPEN"
+                entry_candidate["accepted"] = False
+                entry_candidate["rejection_reason"] = "NO_NEXT_OPEN"
                 counters["NO_NEXT_OPEN"] += 1
                 continue
-            availability_row = availability_by_symbol.loc[symbol]
+            availability_row = cast(pd.Series, availability_by_symbol.loc[symbol])
             if not (
                 pd.Timestamp(availability_row["tradable_from"])
                 <= timestamp
                 < pd.Timestamp(availability_row["tradable_until"])
             ):
-                candidate["accepted"] = False
-                candidate["rejection_reason"] = "VENUE_UNAVAILABLE"
+                entry_candidate["accepted"] = False
+                entry_candidate["rejection_reason"] = "VENUE_UNAVAILABLE"
                 counters["VENUE_UNAVAILABLE"] += 1
                 continue
             if (
                 _market_regime_at(crisis_frame, timestamp) == "CRISIS"
                 and control_mode != "CRISIS_OFF"
             ):
-                candidate["accepted"] = False
-                candidate["rejection_reason"] = "CRISIS_ENTRY_BLOCK"
+                entry_candidate["accepted"] = False
+                entry_candidate["rejection_reason"] = "CRISIS_ENTRY_BLOCK"
                 counters["CRISIS_ENTRY_BLOCK"] += 1
                 continue
-            price = float(rows_by_symbol.loc[symbol, "open"])
+            price = float(cast(Any, rows_by_symbol.loc[symbol, "open"]))
             equity = market_value(timestamp)
-            weight = float(candidate["target_weight"])
+            weight = float(entry_candidate["target_weight"])
             requested_notional = equity * weight
             affordable = cash / (1.0 + transaction_cost)
             notional = min(requested_notional, affordable)
             if notional <= 1e-9:
-                candidate["accepted"] = False
-                candidate["rejection_reason"] = "INSUFFICIENT_CASH"
+                entry_candidate["accepted"] = False
+                entry_candidate["rejection_reason"] = "INSUFFICIENT_CASH"
                 counters["INSUFFICIENT_CASH"] += 1
                 continue
             quantity = notional / price
@@ -987,10 +990,12 @@ def simulate_md01_fold(
             cash_after = cash - notional - fee
             if cash_after < -1e-7:
                 raise MD01Error("negative cash or implicit leverage")
-            position_id = stable_id("POS", candidate["candidate_id"], timestamp.isoformat())
+            position_id = stable_id(
+                "POS", entry_candidate["candidate_id"], timestamp.isoformat()
+            )
             fill = V5Fill(
                 fill_id=stable_id("FILL", position_id, "ENTRY", timestamp.isoformat()),
-                candidate_id=str(candidate["candidate_id"]),
+                candidate_id=str(entry_candidate["candidate_id"]),
                 position_id=position_id,
                 symbol=symbol,
                 timestamp=timestamp,
@@ -1013,24 +1018,24 @@ def simulate_md01_fold(
                 reselection_sequence[symbol] += 1
             positions[symbol] = MD01Position(
                 position_id,
-                str(candidate["candidate_id"]),
+                str(entry_candidate["candidate_id"]),
                 symbol,
                 quantity,
                 price,
                 timestamp,
                 fee,
                 notional,
-                str(candidate["alignment_tier"]),
+                str(entry_candidate["alignment_tier"]),
                 reselection_sequence[symbol],
                 previous_position.get(symbol),
             )
-            candidate["accepted"] = True
-            candidate["fill_timestamp"] = timestamp.isoformat()
-            candidate["fill_price"] = price
+            entry_candidate["accepted"] = True
+            entry_candidate["fill_timestamp"] = timestamp.isoformat()
+            entry_candidate["fill_price"] = price
             counters["ENTRY_FILLED"] += 1
             if (
-                timestamp != pd.Timestamp(candidate["scheduled_entry"])
-                or timestamp <= pd.Timestamp(candidate["signal_bar_open"])
+                timestamp != pd.Timestamp(entry_candidate["scheduled_entry"])
+                or timestamp <= pd.Timestamp(entry_candidate["signal_bar_open"])
             ):
                 raise MD01Error("same-bar entry or wrong scheduled open detected")
 
@@ -1038,14 +1043,14 @@ def simulate_md01_fold(
         for symbol, position in positions.items():
             if symbol not in rows_by_symbol.index:
                 continue
-            row = rows_by_symbol.loc[symbol]
+            row = cast(pd.Series, rows_by_symbol.loc[symbol])
             position_mfe[position.position_id] = max(
                 position_mfe[position.position_id],
-                float(row["high"]) / position.entry_price - 1.0,
+                float(cast(Any, row["high"])) / position.entry_price - 1.0,
             )
             position_mae[position.position_id] = min(
                 position_mae[position.position_id],
-                float(row["low"]) / position.entry_price - 1.0,
+                float(cast(Any, row["low"])) / position.entry_price - 1.0,
             )
 
         # Generate causal candidates only after this 4H bar has closed.
@@ -1054,7 +1059,7 @@ def simulate_md01_fold(
         for symbol in sorted(active_selection, key=lambda value: (active_ranks[value], value)):
             if symbol in positions or symbol not in rows_by_symbol.index:
                 continue
-            row = rows_by_symbol.loc[symbol]
+            row = cast(pd.Series, rows_by_symbol.loc[symbol])
             if not bool(row["four_hour_positive"]):
                 counters["WAITING_FOR_4H_TRIGGER"] += 1
                 continue
@@ -1084,7 +1089,7 @@ def simulate_md01_fold(
                 close_timestamp.isoformat(),
                 selection_generation,
             )
-            candidate: dict[str, Any] = {
+            signal_candidate: dict[str, Any] = {
                 "candidate_id": candidate_id,
                 "fold_id": fold_id,
                 "variant_id": variant_id,
@@ -1115,13 +1120,17 @@ def simulate_md01_fold(
                 "accepted": False,
                 "rejection_reason": None,
             }
-            candidates.append(candidate)
+            candidates.append(signal_candidate)
             if crisis_active:
-                candidate["rejection_reason"] = "CRISIS_ENTRY_BLOCK"
+                signal_candidate["rejection_reason"] = "CRISIS_ENTRY_BLOCK"
                 counters["CRISIS_ENTRY_BLOCK"] += 1
                 continue
             pending_entries[close_timestamp].append(
-                {"symbol": symbol, "rank": active_ranks[symbol], "candidate": candidate}
+                {
+                    "symbol": symbol,
+                    "rank": active_ranks[symbol],
+                    "candidate": signal_candidate,
+                }
             )
             counters["ENTRY_SCHEDULED"] += 1
 
@@ -1132,11 +1141,11 @@ def simulate_md01_fold(
     final_rows = by_time[last_timestamp].set_index("symbol")
     liquidation_timestamp = min(
         validation_end,
-        pd.Timestamp(by_time[last_timestamp]["bar_close_time"].max()),
+        pd.Timestamp(cast(Any, by_time[last_timestamp]["bar_close_time"].max())),
     )
     for symbol in sorted(list(positions)):
         price = (
-            float(final_rows.loc[symbol, "close"])
+            float(cast(Any, final_rows.loc[symbol, "close"]))
             if symbol in final_rows.index
             else positions[symbol].entry_price
         )

@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import argparse
 import json
 from collections.abc import Iterable
 from typing import Any
@@ -228,6 +229,26 @@ def factor_diagnostics(
             sample=int(report_28["sample_count"]),
         )
         positive = observations.loc[observations["momentum_return"] > 0, "forward_28d"].dropna()
+        positive_fold = {
+            fold_id: float(
+                observations.loc[
+                    observations["fold_id"].eq(fold_id)
+                    & (observations["momentum_return"] > 0),
+                    "forward_28d",
+                ].mean()
+            )
+            for fold_id, _, _ in FOLDS
+        }
+        dual = observations.loc[
+            observations["bucket"].eq(0) & (observations["momentum_return"] > 0)
+        ]
+        dual_forward = dual["forward_28d"].dropna()
+        dual_fold = {
+            fold_id: float(
+                dual.loc[dual["fold_id"].eq(fold_id), "forward_28d"].mean()
+            )
+            for fold_id, _, _ in FOLDS
+        }
         factors[f"MOMENTUM_{horizon}D"] = {
             "status": status,
             "forward_returns": forward_reports,
@@ -236,6 +257,20 @@ def factor_diagnostics(
                 "mean_forward_28d": float(positive.mean()) if len(positive) else None,
                 "median_forward_28d": float(positive.median()) if len(positive) else None,
                 "positive_frequency": float((positive > 0).mean()) if len(positive) else None,
+                "fold_mean_forward_28d": positive_fold,
+            },
+            "dual_top_positive_signal": {
+                "sample_count": int(len(dual_forward)),
+                "mean_forward_28d": float(dual_forward.mean())
+                if len(dual_forward)
+                else None,
+                "median_forward_28d": float(dual_forward.median())
+                if len(dual_forward)
+                else None,
+                "positive_frequency": float((dual_forward > 0).mean())
+                if len(dual_forward)
+                else None,
+                "fold_mean_forward_28d": dual_fold,
             },
             "top_bucket_turnover": float(np.mean(turnover)) if turnover else None,
             "rank_dispersion": float(observations["momentum_return"].std(ddof=0)),
@@ -254,29 +289,54 @@ def factor_diagnostics(
                 for symbol, values in observations.groupby("symbol")
             },
         }
+    factor_values = list(factors.values())
+    tsm_pass = any(
+        record["time_series_positive_signal"]["mean_forward_28d"] > 0
+        and sum(
+            value > 0
+            for value in record["time_series_positive_signal"][
+                "fold_mean_forward_28d"
+            ].values()
+        )
+        >= 2
+        for record in factor_values
+    )
+    dual_positive = any(
+        record["dual_top_positive_signal"]["mean_forward_28d"] > 0
+        and sum(
+            value > 0
+            for value in record["dual_top_positive_signal"][
+                "fold_mean_forward_28d"
+            ].values()
+        )
+        >= 2
+        for record in factor_values
+    )
+    xsm_status = max(
+        (record["status"] for record in factor_values),
+        key=lambda value: {
+            "RAW_FACTOR_FAIL": 0,
+            "RAW_FACTOR_WEAK": 1,
+            "RAW_FACTOR_PASS": 2,
+            "INSUFFICIENT_SAMPLE": -1,
+        }[value],
+    )
     return {
         "schema_version": "ams-md01-factor-diagnostics-v1",
         "status": "PASS",
         "factors": factors,
         "school_statuses": {
             "TSM": (
+                "RAW_FACTOR_PASS" if tsm_pass else "RAW_FACTOR_FAIL"
+            ),
+            "XSM": xsm_status,
+            "DUAL": (
                 "RAW_FACTOR_PASS"
-                if any(
-                    factors[key]["time_series_positive_signal"]["mean_forward_28d"] > 0
-                    for key in factors
-                )
+                if dual_positive and xsm_status == "RAW_FACTOR_PASS"
+                else "RAW_FACTOR_WEAK"
+                if dual_positive
                 else "RAW_FACTOR_FAIL"
             ),
-            "XSM": max(
-                (factors[key]["status"] for key in factors),
-                key=lambda value: {
-                    "RAW_FACTOR_FAIL": 0,
-                    "RAW_FACTOR_WEAK": 1,
-                    "RAW_FACTOR_PASS": 2,
-                    "INSUFFICIENT_SAMPLE": -1,
-                }[value],
-            ),
-            "DUAL": "DERIVED_FROM_TSM_AND_XSM_DIAGNOSTICS",
         },
         "test_2025_accessed": False,
         "holdout_2026_accessed": False,
@@ -446,12 +506,25 @@ def _write_report(name: str, report: dict[str, Any], title: str) -> tuple[str, s
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--reuse-verified-alignment", action="store_true")
+    arguments = parser.parse_args()
     frames, _ = load_registered_data()
     daily = build_trend_features(frames["daily"])
     eight = build_trend_features(frames["eight_hour"])
     four = build_trend_features(frames["four_hour"], four_hour=True)
     factor = factor_diagnostics(daily, eight, four, frames["availability"])
-    alignment = alignment_diagnostics(daily, eight, four)
+    alignment_path = REPORTS / "ams-md01-alignment-analysis-v1.json"
+    if arguments.reuse_verified_alignment:
+        alignment = json.loads(alignment_path.read_text(encoding="utf-8"))
+        if (
+            alignment["status"] != "PASS"
+            or alignment["test_2025_accessed"]
+            or alignment["holdout_2026_accessed"]
+        ):
+            raise RuntimeError("existing alignment report is not reusable")
+    else:
+        alignment = alignment_diagnostics(daily, eight, four)
     names = [
         *_write_report(
             "ams-md01-factor-diagnostics-v1",

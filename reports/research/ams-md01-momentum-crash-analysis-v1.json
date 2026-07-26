@@ -1,0 +1,101 @@
+{
+  "crash_loss_to_positive_pnl": 0.02153745078460156,
+  "crash_status": "MOMENTUM_CRASH_CONTAINED",
+  "crisis_gate_effect_compounded_return": 0.8284771570865335,
+  "definition": "BTC causal 7-calendar-day return <= -15%; event attribution is post hoc",
+  "events": [
+    {
+      "btc_worst_7d_return": -0.18595208246273842,
+      "drawdown_contribution_pnl": 0,
+      "end": "2022-01-24T00:00:00+00:00",
+      "event_id": "CRASH-01",
+      "overlapping_trade_count": 0,
+      "post_event_window_end": "2022-02-07T00:00:00+00:00",
+      "start": "2022-01-22T00:00:00+00:00",
+      "symbols": []
+    },
+    {
+      "btc_worst_7d_return": -0.15091466542051812,
+      "drawdown_contribution_pnl": -1142.4380256539014,
+      "end": "2022-02-24T00:00:00+00:00",
+      "event_id": "CRASH-02",
+      "overlapping_trade_count": 1,
+      "post_event_window_end": "2022-03-10T00:00:00+00:00",
+      "start": "2022-02-24T00:00:00+00:00",
+      "symbols": [
+        "XRP"
+      ]
+    },
+    {
+      "btc_worst_7d_return": -0.15158820284174213,
+      "drawdown_contribution_pnl": -23672.571540772955,
+      "end": "2022-04-12T00:00:00+00:00",
+      "event_id": "CRASH-03",
+      "overlapping_trade_count": 6,
+      "post_event_window_end": "2022-04-26T00:00:00+00:00",
+      "start": "2022-04-12T00:00:00+00:00",
+      "symbols": [
+        "AAVE",
+        "DOGE",
+        "NEAR",
+        "SNX",
+        "SOL",
+        "XMR"
+      ]
+    },
+    {
+      "btc_worst_7d_return": -0.26686870824390097,
+      "drawdown_contribution_pnl": 0,
+      "end": "2022-05-15T00:00:00+00:00",
+      "event_id": "CRASH-04",
+      "overlapping_trade_count": 0,
+      "post_event_window_end": "2022-05-29T00:00:00+00:00",
+      "start": "2022-05-10T00:00:00+00:00",
+      "symbols": []
+    },
+    {
+      "btc_worst_7d_return": -0.33224383241622923,
+      "drawdown_contribution_pnl": 0,
+      "end": "2022-06-20T00:00:00+00:00",
+      "event_id": "CRASH-05",
+      "overlapping_trade_count": 0,
+      "post_event_window_end": "2022-07-04T00:00:00+00:00",
+      "start": "2022-06-14T00:00:00+00:00",
+      "symbols": []
+    },
+    {
+      "btc_worst_7d_return": -0.2185863185638367,
+      "drawdown_contribution_pnl": -9714.083891892285,
+      "end": "2022-11-15T00:00:00+00:00",
+      "event_id": "CRASH-06",
+      "overlapping_trade_count": 3,
+      "post_event_window_end": "2022-11-29T00:00:00+00:00",
+      "start": "2022-11-10T00:00:00+00:00",
+      "symbols": [
+        "BNB",
+        "DOGE",
+        "LTC"
+      ]
+    },
+    {
+      "btc_worst_7d_return": -0.19126239469562445,
+      "drawdown_contribution_pnl": 21689.438405297726,
+      "end": "2024-08-07T00:00:00+00:00",
+      "event_id": "CRASH-07",
+      "overlapping_trade_count": 4,
+      "post_event_window_end": "2024-08-21T00:00:00+00:00",
+      "start": "2024-08-06T00:00:00+00:00",
+      "symbols": [
+        "AAVE",
+        "SUI",
+        "XRP",
+        "ZEC"
+      ]
+    }
+  ],
+  "holdout_2026_accessed": false,
+  "schema_version": "ams-md01-momentum-crash-analysis-v1",
+  "status": "PASS",
+  "test_2025_accessed": false,
+  "total_crash_window_pnl": -12839.655053021415
+}

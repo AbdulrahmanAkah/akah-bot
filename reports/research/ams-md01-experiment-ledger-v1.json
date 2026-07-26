@@ -1,4 +1,41 @@
 {
+  "assessment": {
+    "alignment_status": "ALIGNMENT_MONOTONIC",
+    "assessment_report": "ams-md01-final-assessment-v1.json",
+    "assessment_report_sha256": "16b80dcb68e57cf207ffa790e9b394d93522c7c4f75b414f198bd4a3c8ca9ac3",
+    "factor_statuses": {
+      "DUAL": "RAW_FACTOR_WEAK",
+      "TSM": "RAW_FACTOR_PASS",
+      "XSM": "RAW_FACTOR_FAIL"
+    },
+    "final_research_decision": "REVISE_UNIVERSE_WITHOUT_2025",
+    "portfolio_gross_edge_status": "PORTFOLIO_GROSS_EDGE_WEAK",
+    "status": "COMPLETE",
+    "universe_status": "SURVIVORSHIP_RISK"
+  },
+  "conditional_cost_runs": {
+    "executed": {
+      "MD01-M01": [
+        "ams-md01-m01-base-cost-v1.json",
+        "ams-md01-m01-stress-cost-v1.json"
+      ],
+      "MD01-M02": [
+        "ams-md01-m02-base-cost-v1.json",
+        "ams-md01-m02-stress-cost-v1.json"
+      ],
+      "MD01-M03": [
+        "ams-md01-m03-base-cost-v1.json",
+        "ams-md01-m03-stress-cost-v1.json"
+      ],
+      "MD01-M04": [],
+      "MD01-M05": [
+        "ams-md01-m05-base-cost-v1.json",
+        "ams-md01-m05-stress-cost-v1.json"
+      ],
+      "MD01-M06": []
+    },
+    "rule": "ONLY_PORTFOLIO_GROSS_EDGE_PASS"
+  },
   "dataset_hashes": {
     "availability": "de71d0a229120873fc7294cef52b41c577e81bc466f009a49a970a8bfe21473e",
     "daily": "c716a0586b572939a93035b5e85d30f9ad1a18e1a05521dc801bf4ab6728c10d",
@@ -10,8 +47,40 @@
   "report_hashes": {
     "ams-md01-alignment-analysis-v1.json": "a1826c4f233dc8ed5a6462f8b8cc7ce45a252493b24167661e66b69c95198af8",
     "ams-md01-alignment-analysis-v1.md": "1ec92e66291d01a92f9660d5eef4399bdc2d08bc0b2221615898837a8c5ec268",
-    "ams-md01-factor-diagnostics-v1.json": "f5e2b280bebf6835a0dd741d735b1aaa2cfa3deb01fc1aa10a7a275193503bc7",
+    "ams-md01-benchmark-comparison-v1.json": "188aa1def3798609ff7cc0e321fd7b5575bb597af4325a8f9a0bde109ee25023",
+    "ams-md01-benchmark-comparison-v1.md": "ed229f70902093af8f989fcbf071cc4d14da8bfbf6460ac1b8d03349a9ce029f",
+    "ams-md01-factor-diagnostics-v1.json": "12e706031b1dbc76d3d9442181ff4e40e45500df2a857a61d2fd0346076c9697",
     "ams-md01-factor-diagnostics-v1.md": "8f35e6b4e1add8624897d9957b3bd72967af68265798bbc1a920725e654c202b",
+    "ams-md01-final-assessment-v1.json": "16b80dcb68e57cf207ffa790e9b394d93522c7c4f75b414f198bd4a3c8ca9ac3",
+    "ams-md01-final-assessment-v1.md": "d2c9d5a0a35cfd18d343bbe137193e4e1f8f93d71c65bf0cc1d73f6b55212d7e",
+    "ams-md01-m01-base-cost-v1.json": "3483f93b7ba63f39ee3cb5e6b623da00e9bf50d9eeb5e2bed00f0d55bde20b59",
+    "ams-md01-m01-stress-cost-v1.json": "94824d5250e47746e6da94a1e1b11a708d9e5b0c1b6dd1331c91a5b868ca4d62",
+    "ams-md01-m01-zero-cost-crisis-off-v1.json": "3854009f9253e98694d00cb59f16a3aaef431647e0c66048844ecf1617f190bd",
+    "ams-md01-m01-zero-cost-flat-alignment-v1.json": "68854219ee0bdacecf219963ce05e02cab91a3ee018d4de0543f7877feed86c5",
+    "ams-md01-m01-zero-cost-v1.json": "27bc5f664b8b7e2d1dc5e92e7bd66000ff93b0b44438f4ced12d79776e61d8aa",
+    "ams-md01-m02-base-cost-v1.json": "a23c8126ba53d9f0d394222b19aa35253e9db5d7797009627f4af93f5a36ac93",
+    "ams-md01-m02-stress-cost-v1.json": "be17acecb5756b7a4a212c38dc71e4174c951d517e539154bbd2d17b047f672e",
+    "ams-md01-m02-zero-cost-crisis-off-v1.json": "fc90027c2f798684b646acaa9715daf6d286cc961936fb48592fc78968d6e86b",
+    "ams-md01-m02-zero-cost-flat-alignment-v1.json": "3d78e7a022ec9f82b5fe7bc7b7cb4a55f25db83811b694e8dfe1bd92640de4ab",
+    "ams-md01-m02-zero-cost-v1.json": "10d7c5668bbfb25138238f6bac6df9ad915c1c056653f38dc43717b2cd20a631",
+    "ams-md01-m03-base-cost-v1.json": "110de796ae30602fc63ee36a7e53bbb39d2ad0920e53362ba90fe42494a7d3f8",
+    "ams-md01-m03-stress-cost-v1.json": "ddf6744f7edbb7eeb58be3d285b70592f49da4bbd66196bb7589e6bdb8e462a0",
+    "ams-md01-m03-zero-cost-crisis-off-v1.json": "3347934af2530dae8e1448eb9861cb296a35cba10f822335206334352d6b5d74",
+    "ams-md01-m03-zero-cost-flat-alignment-v1.json": "7e7ec82e93efb44a101019e5bca6439394169f26a3b180a445914c62a3bb9b2a",
+    "ams-md01-m03-zero-cost-v1.json": "d538d9d2fb945a289d5a1e75b95650db28b35a44619ffbb8ccb75c68d9186aea",
+    "ams-md01-m04-zero-cost-crisis-off-v1.json": "b5369ac0626944bcc7d7cf005aff58e2d2841a87de94e4063b086d429b80b283",
+    "ams-md01-m04-zero-cost-flat-alignment-v1.json": "e278a0e8af63b3360d9b484c1b10eef2cfb141e3e90bdf9e9f5d0983c86b0b27",
+    "ams-md01-m04-zero-cost-v1.json": "9959b430791e90e4174086f33d32180211c03237c6054ea0b76110fc36e61752",
+    "ams-md01-m05-base-cost-v1.json": "b5e1b1548d6991625d8d5c5fc515018a6b9be68279b6157198ff2ed4248adb92",
+    "ams-md01-m05-stress-cost-v1.json": "01aaf238476f78f6e53a5a5a76f9089037b590696c6488f633664777b06f3b63",
+    "ams-md01-m05-zero-cost-crisis-off-v1.json": "899a43acf6fa97a288fc0c156794c0dcf9f92bc5a737f487bb061116f4021fcc",
+    "ams-md01-m05-zero-cost-flat-alignment-v1.json": "1e7eb2f1e2020134ad16bdc2235faf9580b0602da3ce28ad9cd4d211112d75bd",
+    "ams-md01-m05-zero-cost-v1.json": "30d502934d5b61e6d240ba4f60f40fc0302b52d3df137a0c1c35089a661937b9",
+    "ams-md01-m06-zero-cost-crisis-off-v1.json": "1dcaa2ca54c84a26034a78b1213c2c389575acb25c6f7be4679d31786c1e9e43",
+    "ams-md01-m06-zero-cost-flat-alignment-v1.json": "e257e2241c523659efc59100de01038007971386faee698c2e28001f2b4675bc",
+    "ams-md01-m06-zero-cost-v1.json": "dc8bae27197001a76243353b700d137d95e7f1164512af920812830810e6ea8e",
+    "ams-md01-momentum-crash-analysis-v1.json": "5c2c7d22af83427f73d0cb132ec37f1c598cfb70f1242e4a3326805424844a5c",
+    "ams-md01-momentum-crash-analysis-v1.md": "ea284e2b7f70eb7add0d7727139a89004837063b2a39c5b103af9b84ea89397d",
     "ams-md01-universe-audit-v1.json": "f8fb1a2be600429300f525b90842a5e51e5293156aa7578aeb414f1cad7693ea",
     "ams-md01-universe-audit-v1.md": "42c582372efca7fd5bd0b40722b76bd9100bddd84077cc215f7105f2abe2194e"
   },
@@ -19,45 +88,81 @@
   "test_2025_accessed": false,
   "trial_accounting": {
     "authorized_primary_variants": 6,
-    "executed_primary_variants": 0,
-    "remaining_primary_variants": 6
+    "executed_primary_variants": 6,
+    "remaining_primary_variants": 0
   },
   "trial_plan": [
     {
+      "costed_reports": [
+        "ams-md01-m01-base-cost-v1.json",
+        "ams-md01-m01-stress-cost-v1.json"
+      ],
+      "gross_edge_status": "PORTFOLIO_GROSS_EDGE_PASS",
       "horizon_days": 28,
       "school": "TSM",
-      "status": "REGISTERED_NOT_EXECUTED",
-      "variant_id": "MD01-M01"
+      "status": "EXECUTED",
+      "variant_id": "MD01-M01",
+      "zero_cost_report": "ams-md01-m01-zero-cost-v1.json",
+      "zero_cost_report_sha256": "27bc5f664b8b7e2d1dc5e92e7bd66000ff93b0b44438f4ced12d79776e61d8aa"
     },
     {
+      "costed_reports": [
+        "ams-md01-m02-base-cost-v1.json",
+        "ams-md01-m02-stress-cost-v1.json"
+      ],
+      "gross_edge_status": "PORTFOLIO_GROSS_EDGE_PASS",
       "horizon_days": 84,
       "school": "TSM",
-      "status": "REGISTERED_NOT_EXECUTED",
-      "variant_id": "MD01-M02"
+      "status": "EXECUTED",
+      "variant_id": "MD01-M02",
+      "zero_cost_report": "ams-md01-m02-zero-cost-v1.json",
+      "zero_cost_report_sha256": "10d7c5668bbfb25138238f6bac6df9ad915c1c056653f38dc43717b2cd20a631"
     },
     {
+      "costed_reports": [
+        "ams-md01-m03-base-cost-v1.json",
+        "ams-md01-m03-stress-cost-v1.json"
+      ],
+      "gross_edge_status": "PORTFOLIO_GROSS_EDGE_PASS",
       "horizon_days": 28,
       "school": "XSM",
-      "status": "REGISTERED_NOT_EXECUTED",
-      "variant_id": "MD01-M03"
+      "status": "EXECUTED",
+      "variant_id": "MD01-M03",
+      "zero_cost_report": "ams-md01-m03-zero-cost-v1.json",
+      "zero_cost_report_sha256": "d538d9d2fb945a289d5a1e75b95650db28b35a44619ffbb8ccb75c68d9186aea"
     },
     {
+      "costed_reports": [],
+      "gross_edge_status": "PORTFOLIO_GROSS_EDGE_FAIL",
       "horizon_days": 84,
       "school": "XSM",
-      "status": "REGISTERED_NOT_EXECUTED",
-      "variant_id": "MD01-M04"
+      "status": "EXECUTED",
+      "variant_id": "MD01-M04",
+      "zero_cost_report": "ams-md01-m04-zero-cost-v1.json",
+      "zero_cost_report_sha256": "9959b430791e90e4174086f33d32180211c03237c6054ea0b76110fc36e61752"
     },
     {
+      "costed_reports": [
+        "ams-md01-m05-base-cost-v1.json",
+        "ams-md01-m05-stress-cost-v1.json"
+      ],
+      "gross_edge_status": "PORTFOLIO_GROSS_EDGE_PASS",
       "horizon_days": 28,
       "school": "DUAL",
-      "status": "REGISTERED_NOT_EXECUTED",
-      "variant_id": "MD01-M05"
+      "status": "EXECUTED",
+      "variant_id": "MD01-M05",
+      "zero_cost_report": "ams-md01-m05-zero-cost-v1.json",
+      "zero_cost_report_sha256": "30d502934d5b61e6d240ba4f60f40fc0302b52d3df137a0c1c35089a661937b9"
     },
     {
+      "costed_reports": [],
+      "gross_edge_status": "PORTFOLIO_GROSS_EDGE_FAIL",
       "horizon_days": 84,
       "school": "DUAL",
-      "status": "REGISTERED_NOT_EXECUTED",
-      "variant_id": "MD01-M06"
+      "status": "EXECUTED",
+      "variant_id": "MD01-M06",
+      "zero_cost_report": "ams-md01-m06-zero-cost-v1.json",
+      "zero_cost_report_sha256": "dc8bae27197001a76243353b700d137d95e7f1164512af920812830810e6ea8e"
     }
   ]
 }
