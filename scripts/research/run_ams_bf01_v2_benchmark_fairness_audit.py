@@ -5,8 +5,9 @@ from __future__ import annotations
 import csv
 import hashlib
 import json
+from collections.abc import Sequence
 from pathlib import Path
-from typing import Any, Sequence
+from typing import Any
 
 from spotbot.research.ams_bf01_v2 import (
     MetricRecord,
@@ -28,12 +29,17 @@ RD01_BETA = REPORTS / "ams-rd01-btc-beta-diagnostics-v1.json"
 RD01_CONCENTRATION = REPORTS / "ams-rd01-concentration-diagnostics-v1.json"
 
 SOURCE_PATHS = (
-    MD01_BENCHMARKS,
-    RD01_BENCHMARKS,
-    RD01_BETA,
-    RD01_CONCENTRATION,
+    REPORTS / "ams-md01-final-assessment-v1.json",
+    REPORTS / "ams-md01-benchmark-comparison-v1.json",
+    REPORTS / "ams-md01-m02-base-cost-v1.json",
+    REPORTS / "ams-md01-m05-base-cost-v1.json",
+    REPORTS / "ams-md01r1-survivor30-reproduction-v1.json",
+    REPORTS / "ams-rd01-benchmark-comparison-v1.json",
+    REPORTS / "ams-rd01-benchmark-comparison-v2.json",
+    REPORTS / "ams-rd01-btc-beta-diagnostics-v1.json",
+    REPORTS / "ams-rd01-concentration-diagnostics-v1.json",
+    REPORTS / "ams-rd01-ati-v1-final-assessment.json",
 )
-
 INVENTORY_CSV = REPORTS / "ams-bf01-source-inventory-v2.csv"
 METRICS_CSV = REPORTS / "ams-bf01-benchmark-fairness-metrics-v2.csv"
 M02_CSV = REPORTS / "ams-bf01-m02-contributors-v2.csv"
@@ -72,19 +78,50 @@ def _source_inventory(
     rows: list[dict[str, Any]] = []
 
     for path in paths:
-        payload = load_json(path)
+        relative_path = path.relative_to(ROOT).as_posix()
+
+        if not path.exists():
+            rows.append(
+                {
+                    "source": relative_path,
+                    "status": "MISSING",
+                    "size_bytes": None,
+                    "sha256": None,
+                    "schema_version": None,
+                }
+            )
+            continue
+
+        size_bytes = path.stat().st_size
+        sha256 = _sha256_file(path)
+        schema_version: object | None = None
+        status = "READ"
+
+        try:
+            text = path.read_text(
+                encoding="utf-8-sig"
+            ).strip()
+
+            if not text:
+                status = "EMPTY"
+            else:
+                schema_version = load_json(
+                    path
+                ).get("schema_version")
+        except (TypeError, ValueError, UnicodeError):
+            status = "INVALID_JSON"
+
         rows.append(
             {
-                "source": path.relative_to(ROOT).as_posix(),
-                "status": "READ",
-                "size_bytes": path.stat().st_size,
-                "sha256": _sha256_file(path),
-                "schema_version": payload.get("schema_version"),
+                "source": relative_path,
+                "status": status,
+                "size_bytes": size_bytes,
+                "sha256": sha256,
+                "schema_version": schema_version,
             }
         )
 
     return rows
-
 
 def _metric_rows(
     records: Sequence[MetricRecord],
@@ -378,7 +415,7 @@ def main() -> None:
         encoding="utf-8",
     )
 
-    print("تم انجاز المهمة وانشاء ملف في داخل المستودع")
+    print("BF01 V2 audit completed.")
 
 
 if __name__ == "__main__":
