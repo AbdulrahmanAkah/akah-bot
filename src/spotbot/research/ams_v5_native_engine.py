@@ -9,6 +9,9 @@ import numpy as np
 LOCK=pd.Timestamp("2025-01-01T00:00:00Z")
 class V5NativeError(RuntimeError): pass
 @dataclass(frozen=True)
+class V5FoldResult:
+    final_cash:float;trades:tuple[V5ClosedTrade,...];fills:tuple[V5Fill,...];rejections:dict[str,int];reconciliation:dict[str,float];open_positions_after_fold:int
+@dataclass(frozen=True)
 class V5Fill:
     fill_id:str;candidate_id:str;position_id:str;symbol:str;timestamp:pd.Timestamp;fill_type:str;price:float;quantity:float;notional:float;fee:float;cash_before:float;cash_after:float;position_quantity_before:float;position_quantity_after:float;reason:str
 @dataclass(frozen=True)
@@ -143,3 +146,11 @@ def simulate_fold(frame:pd.DataFrame,params:V5Parameters,profile:V5PortfolioProf
     for sym,p in list(positions.items()):
         price=p.entry;fee=price*p.quantity*params.cost;cash+=price*p.quantity-fee;trades.append(V5ClosedTrade(sym,p.entry_time,pd.Timestamp(frame.bar_close_time.max()),p.entry,price,p.quantity,price*p.quantity-fee-p.notional-p.entry_fee,"END_OF_FOLD_EXIT",p.mae,p.mfe))
     return cash,trades,fills,reject
+def simulate_native_fold(*,four_hour_panel:pd.DataFrame,configuration:V5Parameters,portfolio_profile:V5PortfolioProfile,selected_threshold:int,transaction_cost:float,initial_capital:float=100000.)->V5FoldResult:
+    """Single native Fold path used by shadow and later V5R1 trials."""
+    if selected_threshold not in {50,55}:raise V5NativeError("invalid threshold")
+    params=V5Parameters(configuration.configuration_id,configuration.family,configuration.stop_model,configuration.fibonacci_mode,selected_threshold,transaction_cost)
+    cash,trades,fills,rejections=simulate_fold(four_hour_panel,params,portfolio_profile,initial_capital)
+    reconciliation=reconcile_fills(initial_capital,fills)
+    if abs(cash-reconciliation["cash"])>1e-7:raise V5NativeError("fill reconciliation failed")
+    return V5FoldResult(cash,tuple(trades),tuple(fills),dict(rejections.values),reconciliation,0)
