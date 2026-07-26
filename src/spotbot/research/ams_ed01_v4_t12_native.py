@@ -328,12 +328,24 @@ def _jsonable(value: Any) -> Any:
 
 
 def serialise_fold(result: V5FoldResult) -> dict[str, Any]:
+    accepted = [item for item in result.candidates if item.accepted]
+    rejected_sample = [
+        item
+        for item in result.candidates
+        if not item.accepted and item.rejection_reason is not None
+    ][:100]
     return _jsonable(
         {
             "fold_id": result.fold_id,
             "status": result.status,
             "metrics": _native_metrics(result),
-            "candidate_ledger": [asdict(item) for item in result.candidates],
+            "candidate_ledger": [asdict(item) for item in accepted + rejected_sample],
+            "candidate_ledger_scope": {
+                "stored": "ALL_ACCEPTED_PLUS_FIRST_100_REJECTED_DETERMINISTIC",
+                "total_candidates": len(result.candidates),
+                "accepted_candidates": len(accepted),
+                "sampled_rejected_candidates": len(rejected_sample),
+            },
             "scheduled_entries": [asdict(item) for item in result.scheduled_entries],
             "fill_ledger": [asdict(item) for item in result.fills],
             "trade_ledger": [asdict(item) for item in result.trades],
