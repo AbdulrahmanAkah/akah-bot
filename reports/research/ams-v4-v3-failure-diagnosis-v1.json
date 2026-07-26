@@ -1,0 +1,653 @@
+{
+  "behaviorally_identical_named_configurations": [
+    [
+      "AMS-V3-F01-C01",
+      "AMS-V3-F01-C01",
+      "AMS-V3-F01-C05"
+    ],
+    [
+      "AMS-V3-F01-C02",
+      "AMS-V3-F01-C02",
+      "AMS-V3-F01-C06",
+      "AMS-V3-F01-C09",
+      "AMS-V3-F01-C11",
+      "AMS-V3-F01-C13",
+      "AMS-V3-F01-C15"
+    ],
+    [
+      "AMS-V3-F01-C03",
+      "AMS-V3-F01-C07"
+    ],
+    [
+      "AMS-V3-F01-C04",
+      "AMS-V3-F01-C08"
+    ],
+    [
+      "AMS-V3-F01-C10",
+      "AMS-V3-F01-C12"
+    ],
+    [
+      "AMS-V3-F01-C14",
+      "AMS-V3-F01-C16"
+    ]
+  ],
+  "c02_zero_trade_cause": "The hard Fibonacci eligibility condition rejected every candidate; it was a Boolean gate, not a score contribution.",
+  "holdout_2026_accessed": false,
+  "limitations": [
+    "V3 trade artifacts do not persist intratrade MAE/MFE or post-exit excursion paths.",
+    "V4 records these quantities directly for future diagnosis."
+  ],
+  "primary_failure": {
+    "classification": "BOOLEAN_GATING_AND_STOP_DOMINANCE",
+    "evidence": [
+      "C02 and other hard Fibonacci configurations accepted zero entries.",
+      "Active V3 reports are dominated by STOP exits.",
+      "Daily profile labels produced behaviorally identical artifacts in several pairs."
+    ]
+  },
+  "schema_version": "ams-v4-v3-failure-diagnosis-v1",
+  "source_protocol": "AMS-V3-F01",
+  "status": "PASS",
+  "test_2025_accessed": false,
+  "trials": [
+    {
+      "accepted_entries": 47,
+      "average_holding_hours": 712.8296296296297,
+      "candidate_signals": 5406,
+      "configuration_id": "AMS-V3-F01-C01",
+      "exit_efficiency": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "exit_reasons": {
+        "END_OF_FOLD": 4,
+        "STOP": 43
+      },
+      "mae_r": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "mfe_r": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "portfolio_profile_id": "AMS-V3-PORTFOLIO-P01",
+      "post_exit_returns": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "rejection_reasons": {
+        "daily_regime": 3114,
+        "eight_hour_allocation_state": 1559,
+        "fibonacci_filter": 0,
+        "insufficient_cash": 0,
+        "portfolio_heat": 0,
+        "position_limit": 686,
+        "venue_availability": 0
+      },
+      "trade_count": 47,
+      "trades_per_year": {
+        "2022": 14,
+        "2023": 18,
+        "2024": 15
+      },
+      "trial_id": "AMS-V3-F01-T17"
+    },
+    {
+      "accepted_entries": 100,
+      "average_holding_hours": 540.9307723089236,
+      "candidate_signals": 5122,
+      "configuration_id": "AMS-V3-F01-C01",
+      "exit_efficiency": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "exit_reasons": {
+        "END_OF_FOLD": 8,
+        "STOP": 92
+      },
+      "mae_r": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "mfe_r": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "portfolio_profile_id": "AMS-V3-PORTFOLIO-P03",
+      "post_exit_returns": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "rejection_reasons": {
+        "daily_regime": 3104,
+        "eight_hour_allocation_state": 1403,
+        "fibonacci_filter": 0,
+        "insufficient_cash": 0,
+        "portfolio_heat": 0,
+        "position_limit": 515,
+        "venue_availability": 0
+      },
+      "trade_count": 100,
+      "trades_per_year": {
+        "2022": 17,
+        "2023": 49,
+        "2024": 34
+      },
+      "trial_id": "AMS-V3-F01-T18"
+    },
+    {
+      "accepted_entries": 67,
+      "average_holding_hours": 722.9986928104576,
+      "candidate_signals": 5244,
+      "configuration_id": "AMS-V3-F01-C01",
+      "exit_efficiency": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "exit_reasons": {
+        "END_OF_FOLD": 6,
+        "STOP": 61
+      },
+      "mae_r": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "mfe_r": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "portfolio_profile_id": "AMS-V3-PORTFOLIO-P04",
+      "post_exit_returns": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "rejection_reasons": {
+        "daily_regime": 3109,
+        "eight_hour_allocation_state": 1470,
+        "fibonacci_filter": 0,
+        "insufficient_cash": 0,
+        "portfolio_heat": 0,
+        "position_limit": 598,
+        "venue_availability": 0
+      },
+      "trade_count": 67,
+      "trades_per_year": {
+        "2022": 15,
+        "2023": 34,
+        "2024": 18
+      },
+      "trial_id": "AMS-V3-F01-T19"
+    },
+    {
+      "accepted_entries": 67,
+      "average_holding_hours": 722.9986928104576,
+      "candidate_signals": 5244,
+      "configuration_id": "AMS-V3-F01-C01",
+      "exit_efficiency": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "exit_reasons": {
+        "END_OF_FOLD": 6,
+        "STOP": 61
+      },
+      "mae_r": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "mfe_r": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "portfolio_profile_id": "AMS-V3-PORTFOLIO-P02",
+      "post_exit_returns": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "rejection_reasons": {
+        "daily_regime": 3109,
+        "eight_hour_allocation_state": 1470,
+        "fibonacci_filter": 0,
+        "insufficient_cash": 0,
+        "portfolio_heat": 0,
+        "position_limit": 598,
+        "venue_availability": 0
+      },
+      "trade_count": 67,
+      "trades_per_year": {
+        "2022": 15,
+        "2023": 34,
+        "2024": 18
+      },
+      "trial_id": "AMS-V3-F01-T01"
+    },
+    {
+      "accepted_entries": 0,
+      "average_holding_hours": 0,
+      "candidate_signals": 5756,
+      "configuration_id": "AMS-V3-F01-C02",
+      "exit_efficiency": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "exit_reasons": {},
+      "mae_r": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "mfe_r": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "portfolio_profile_id": "AMS-V3-PORTFOLIO-P01",
+      "post_exit_returns": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "rejection_reasons": {
+        "daily_regime": 0,
+        "eight_hour_allocation_state": 0,
+        "fibonacci_filter": 5756,
+        "insufficient_cash": 0,
+        "portfolio_heat": 0,
+        "position_limit": 0,
+        "venue_availability": 0
+      },
+      "trade_count": 0,
+      "trades_per_year": {
+        "2022": 0,
+        "2023": 0,
+        "2024": 0
+      },
+      "trial_id": "AMS-V3-F01-T20"
+    },
+    {
+      "accepted_entries": 0,
+      "average_holding_hours": 0,
+      "candidate_signals": 5756,
+      "configuration_id": "AMS-V3-F01-C02",
+      "exit_efficiency": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "exit_reasons": {},
+      "mae_r": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "mfe_r": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "portfolio_profile_id": "AMS-V3-PORTFOLIO-P02",
+      "post_exit_returns": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "rejection_reasons": {
+        "daily_regime": 0,
+        "eight_hour_allocation_state": 0,
+        "fibonacci_filter": 5756,
+        "insufficient_cash": 0,
+        "portfolio_heat": 0,
+        "position_limit": 0,
+        "venue_availability": 0
+      },
+      "trade_count": 0,
+      "trades_per_year": {
+        "2022": 0,
+        "2023": 0,
+        "2024": 0
+      },
+      "trial_id": "AMS-V3-F01-T02"
+    },
+    {
+      "accepted_entries": 99,
+      "average_holding_hours": 453.95482678241297,
+      "candidate_signals": 2937,
+      "configuration_id": "AMS-V3-F01-C03",
+      "exit_efficiency": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "exit_reasons": {
+        "END_OF_FOLD": 6,
+        "STOP": 93
+      },
+      "mae_r": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "mfe_r": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "portfolio_profile_id": "AMS-V3-PORTFOLIO-P02",
+      "post_exit_returns": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "rejection_reasons": {
+        "daily_regime": 1737,
+        "eight_hour_allocation_state": 624,
+        "fibonacci_filter": 0,
+        "insufficient_cash": 0,
+        "portfolio_heat": 0,
+        "position_limit": 477,
+        "venue_availability": 0
+      },
+      "trade_count": 99,
+      "trades_per_year": {
+        "2022": 29,
+        "2023": 44,
+        "2024": 26
+      },
+      "trial_id": "AMS-V3-F01-T03"
+    },
+    {
+      "accepted_entries": 94,
+      "average_holding_hours": 316.5128205128205,
+      "candidate_signals": 2953,
+      "configuration_id": "AMS-V3-F01-C04",
+      "exit_efficiency": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "exit_reasons": {
+        "END_OF_FOLD": 5,
+        "STOP": 89
+      },
+      "mae_r": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "mfe_r": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "portfolio_profile_id": "AMS-V3-PORTFOLIO-P02",
+      "post_exit_returns": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "rejection_reasons": {
+        "daily_regime": 672,
+        "eight_hour_allocation_state": 249,
+        "fibonacci_filter": 1786,
+        "insufficient_cash": 0,
+        "portfolio_heat": 0,
+        "position_limit": 152,
+        "venue_availability": 0
+      },
+      "trade_count": 94,
+      "trades_per_year": {
+        "2022": 16,
+        "2023": 39,
+        "2024": 39
+      },
+      "trial_id": "AMS-V3-F01-T04"
+    },
+    {
+      "accepted_entries": 67,
+      "average_holding_hours": 722.9986928104576,
+      "candidate_signals": 5244,
+      "configuration_id": "AMS-V3-F01-C05",
+      "exit_efficiency": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "exit_reasons": {
+        "END_OF_FOLD": 6,
+        "STOP": 61
+      },
+      "mae_r": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "mfe_r": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "portfolio_profile_id": "AMS-V3-PORTFOLIO-P02",
+      "post_exit_returns": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "rejection_reasons": {
+        "daily_regime": 3109,
+        "eight_hour_allocation_state": 1470,
+        "fibonacci_filter": 0,
+        "insufficient_cash": 0,
+        "portfolio_heat": 0,
+        "position_limit": 598,
+        "venue_availability": 0
+      },
+      "trade_count": 67,
+      "trades_per_year": {
+        "2022": 15,
+        "2023": 34,
+        "2024": 18
+      },
+      "trial_id": "AMS-V3-F01-T05"
+    },
+    {
+      "accepted_entries": 0,
+      "average_holding_hours": 0,
+      "candidate_signals": 5756,
+      "configuration_id": "AMS-V3-F01-C06",
+      "exit_efficiency": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "exit_reasons": {},
+      "mae_r": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "mfe_r": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "portfolio_profile_id": "AMS-V3-PORTFOLIO-P02",
+      "post_exit_returns": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "rejection_reasons": {
+        "daily_regime": 0,
+        "eight_hour_allocation_state": 0,
+        "fibonacci_filter": 5756,
+        "insufficient_cash": 0,
+        "portfolio_heat": 0,
+        "position_limit": 0,
+        "venue_availability": 0
+      },
+      "trade_count": 0,
+      "trades_per_year": {
+        "2022": 0,
+        "2023": 0,
+        "2024": 0
+      },
+      "trial_id": "AMS-V3-F01-T06"
+    },
+    {
+      "accepted_entries": 99,
+      "average_holding_hours": 453.95482678241297,
+      "candidate_signals": 2937,
+      "configuration_id": "AMS-V3-F01-C07",
+      "exit_efficiency": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "exit_reasons": {
+        "END_OF_FOLD": 6,
+        "STOP": 93
+      },
+      "mae_r": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "mfe_r": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "portfolio_profile_id": "AMS-V3-PORTFOLIO-P02",
+      "post_exit_returns": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "rejection_reasons": {
+        "daily_regime": 1737,
+        "eight_hour_allocation_state": 624,
+        "fibonacci_filter": 0,
+        "insufficient_cash": 0,
+        "portfolio_heat": 0,
+        "position_limit": 477,
+        "venue_availability": 0
+      },
+      "trade_count": 99,
+      "trades_per_year": {
+        "2022": 29,
+        "2023": 44,
+        "2024": 26
+      },
+      "trial_id": "AMS-V3-F01-T07"
+    },
+    {
+      "accepted_entries": 94,
+      "average_holding_hours": 316.5128205128205,
+      "candidate_signals": 2953,
+      "configuration_id": "AMS-V3-F01-C08",
+      "exit_efficiency": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "exit_reasons": {
+        "END_OF_FOLD": 5,
+        "STOP": 89
+      },
+      "mae_r": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "mfe_r": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "portfolio_profile_id": "AMS-V3-PORTFOLIO-P02",
+      "post_exit_returns": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "rejection_reasons": {
+        "daily_regime": 672,
+        "eight_hour_allocation_state": 249,
+        "fibonacci_filter": 1786,
+        "insufficient_cash": 0,
+        "portfolio_heat": 0,
+        "position_limit": 152,
+        "venue_availability": 0
+      },
+      "trade_count": 94,
+      "trades_per_year": {
+        "2022": 16,
+        "2023": 39,
+        "2024": 39
+      },
+      "trial_id": "AMS-V3-F01-T08"
+    },
+    {
+      "accepted_entries": 0,
+      "average_holding_hours": 0,
+      "candidate_signals": 5756,
+      "configuration_id": "AMS-V3-F01-C09",
+      "exit_efficiency": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "exit_reasons": {},
+      "mae_r": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "mfe_r": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "portfolio_profile_id": "AMS-V3-PORTFOLIO-P02",
+      "post_exit_returns": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "rejection_reasons": {
+        "daily_regime": 0,
+        "eight_hour_allocation_state": 0,
+        "fibonacci_filter": 5756,
+        "insufficient_cash": 0,
+        "portfolio_heat": 0,
+        "position_limit": 0,
+        "venue_availability": 0
+      },
+      "trade_count": 0,
+      "trades_per_year": {
+        "2022": 0,
+        "2023": 0,
+        "2024": 0
+      },
+      "trial_id": "AMS-V3-F01-T09"
+    },
+    {
+      "accepted_entries": 84,
+      "average_holding_hours": 434.4552104899931,
+      "candidate_signals": 2991,
+      "configuration_id": "AMS-V3-F01-C10",
+      "exit_efficiency": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "exit_reasons": {
+        "END_OF_FOLD": 6,
+        "STOP": 78
+      },
+      "mae_r": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "mfe_r": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "portfolio_profile_id": "AMS-V3-PORTFOLIO-P02",
+      "post_exit_returns": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "rejection_reasons": {
+        "daily_regime": 907,
+        "eight_hour_allocation_state": 362,
+        "fibonacci_filter": 1444,
+        "insufficient_cash": 0,
+        "portfolio_heat": 0,
+        "position_limit": 194,
+        "venue_availability": 0
+      },
+      "trade_count": 84,
+      "trades_per_year": {
+        "2022": 21,
+        "2023": 40,
+        "2024": 23
+      },
+      "trial_id": "AMS-V3-F01-T10"
+    },
+    {
+      "accepted_entries": 0,
+      "average_holding_hours": 0,
+      "candidate_signals": 5756,
+      "configuration_id": "AMS-V3-F01-C11",
+      "exit_efficiency": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "exit_reasons": {},
+      "mae_r": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "mfe_r": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "portfolio_profile_id": "AMS-V3-PORTFOLIO-P02",
+      "post_exit_returns": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "rejection_reasons": {
+        "daily_regime": 0,
+        "eight_hour_allocation_state": 0,
+        "fibonacci_filter": 5756,
+        "insufficient_cash": 0,
+        "portfolio_heat": 0,
+        "position_limit": 0,
+        "venue_availability": 0
+      },
+      "trade_count": 0,
+      "trades_per_year": {
+        "2022": 0,
+        "2023": 0,
+        "2024": 0
+      },
+      "trial_id": "AMS-V3-F01-T11"
+    },
+    {
+      "accepted_entries": 84,
+      "average_holding_hours": 434.4552104899931,
+      "candidate_signals": 2991,
+      "configuration_id": "AMS-V3-F01-C12",
+      "exit_efficiency": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "exit_reasons": {
+        "END_OF_FOLD": 6,
+        "STOP": 78
+      },
+      "mae_r": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "mfe_r": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "portfolio_profile_id": "AMS-V3-PORTFOLIO-P02",
+      "post_exit_returns": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "rejection_reasons": {
+        "daily_regime": 907,
+        "eight_hour_allocation_state": 362,
+        "fibonacci_filter": 1444,
+        "insufficient_cash": 0,
+        "portfolio_heat": 0,
+        "position_limit": 194,
+        "venue_availability": 0
+      },
+      "trade_count": 84,
+      "trades_per_year": {
+        "2022": 21,
+        "2023": 40,
+        "2024": 23
+      },
+      "trial_id": "AMS-V3-F01-T12"
+    },
+    {
+      "accepted_entries": 0,
+      "average_holding_hours": 0,
+      "candidate_signals": 5756,
+      "configuration_id": "AMS-V3-F01-C13",
+      "exit_efficiency": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "exit_reasons": {},
+      "mae_r": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "mfe_r": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "portfolio_profile_id": "AMS-V3-PORTFOLIO-P02",
+      "post_exit_returns": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "rejection_reasons": {
+        "daily_regime": 0,
+        "eight_hour_allocation_state": 0,
+        "fibonacci_filter": 5756,
+        "insufficient_cash": 0,
+        "portfolio_heat": 0,
+        "position_limit": 0,
+        "venue_availability": 0
+      },
+      "trade_count": 0,
+      "trades_per_year": {
+        "2022": 0,
+        "2023": 0,
+        "2024": 0
+      },
+      "trial_id": "AMS-V3-F01-T13"
+    },
+    {
+      "accepted_entries": 47,
+      "average_holding_hours": 220.36868686868686,
+      "candidate_signals": 3072,
+      "configuration_id": "AMS-V3-F01-C14",
+      "exit_efficiency": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "exit_reasons": {
+        "END_OF_FOLD": 6,
+        "STOP": 41
+      },
+      "mae_r": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "mfe_r": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "portfolio_profile_id": "AMS-V3-PORTFOLIO-P02",
+      "post_exit_returns": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "rejection_reasons": {
+        "daily_regime": 153,
+        "eight_hour_allocation_state": 46,
+        "fibonacci_filter": 2812,
+        "insufficient_cash": 0,
+        "portfolio_heat": 0,
+        "position_limit": 14,
+        "venue_availability": 0
+      },
+      "trade_count": 47,
+      "trades_per_year": {
+        "2022": 1,
+        "2023": 22,
+        "2024": 24
+      },
+      "trial_id": "AMS-V3-F01-T14"
+    },
+    {
+      "accepted_entries": 0,
+      "average_holding_hours": 0,
+      "candidate_signals": 5756,
+      "configuration_id": "AMS-V3-F01-C15",
+      "exit_efficiency": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "exit_reasons": {},
+      "mae_r": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "mfe_r": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "portfolio_profile_id": "AMS-V3-PORTFOLIO-P02",
+      "post_exit_returns": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "rejection_reasons": {
+        "daily_regime": 0,
+        "eight_hour_allocation_state": 0,
+        "fibonacci_filter": 5756,
+        "insufficient_cash": 0,
+        "portfolio_heat": 0,
+        "position_limit": 0,
+        "venue_availability": 0
+      },
+      "trade_count": 0,
+      "trades_per_year": {
+        "2022": 0,
+        "2023": 0,
+        "2024": 0
+      },
+      "trial_id": "AMS-V3-F01-T15"
+    },
+    {
+      "accepted_entries": 47,
+      "average_holding_hours": 220.36868686868686,
+      "candidate_signals": 3072,
+      "configuration_id": "AMS-V3-F01-C16",
+      "exit_efficiency": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "exit_reasons": {
+        "END_OF_FOLD": 6,
+        "STOP": 41
+      },
+      "mae_r": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "mfe_r": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "portfolio_profile_id": "AMS-V3-PORTFOLIO-P02",
+      "post_exit_returns": "NOT_RECORDED_BY_V3_ARTIFACT",
+      "rejection_reasons": {
+        "daily_regime": 153,
+        "eight_hour_allocation_state": 46,
+        "fibonacci_filter": 2812,
+        "insufficient_cash": 0,
+        "portfolio_heat": 0,
+        "position_limit": 14,
+        "venue_availability": 0
+      },
+      "trade_count": 47,
+      "trades_per_year": {
+        "2022": 1,
+        "2023": 22,
+        "2024": 24
+      },
+      "trial_id": "AMS-V3-F01-T16"
+    }
+  ]
+}
