@@ -1,0 +1,133 @@
+{
+  "counts": {
+    "DIFFERENT_IMPLEMENTATION": 1,
+    "FULL": 0,
+    "INHERITED_V4": 2,
+    "MISSING": 1,
+    "PARTIAL": 3,
+    "UNTESTED": 1
+  },
+  "critical_blockers": [
+    "V5-REQ-NATIVE-001",
+    "V5-REQ-EXEC-002",
+    "V5-REQ-THRESHOLD-003",
+    "V5-REQ-STOP-005",
+    "V5-REQ-TEST-007"
+  ],
+  "holdout_2026_accessed": false,
+  "legacy_v5_scientific_status": "IMPLEMENTATION_INCOMPLETE",
+  "requirements": [
+    {
+      "expected_behaviour": "V5 engine must not import V4 strategic engine.",
+      "implementation_paths": [
+        "src\\spotbot\\research\\ams_v5_active_pullback_reacceleration.py"
+      ],
+      "observed_behaviour": "Verified by AST and source review.",
+      "required_correction": "Create ams_v5_native_engine.py without V4 strategy imports.",
+      "requirement": "V5 engine must not import V4 strategic engine.",
+      "requirement_id": "V5-REQ-NATIVE-001",
+      "risk": "CRITICAL",
+      "status": "DIFFERENT_IMPLEMENTATION",
+      "test_paths": []
+    },
+    {
+      "expected_behaviour": "Native V5 fill, stop, trailing, add-on and re-entry policies.",
+      "implementation_paths": [
+        "src\\spotbot\\research\\ams_v5_active_pullback_reacceleration.py"
+      ],
+      "observed_behaviour": "Verified by AST and source review.",
+      "required_correction": "Implement and test native V5 execution state machine.",
+      "requirement": "Native V5 fill, stop, trailing, add-on and re-entry policies.",
+      "requirement_id": "V5-REQ-EXEC-002",
+      "risk": "CRITICAL",
+      "status": "INHERITED_V4",
+      "test_paths": []
+    },
+    {
+      "expected_behaviour": "Train-only 50/55 threshold objective with safety gates.",
+      "implementation_paths": [
+        "src\\spotbot\\research\\ams_v5_active_pullback_reacceleration.py"
+      ],
+      "observed_behaviour": "Verified by AST and source review.",
+      "required_correction": "Implement frozen quality-score objective and validation-independence tests.",
+      "requirement": "Train-only 50/55 threshold objective with safety gates.",
+      "requirement_id": "V5-REQ-THRESHOLD-003",
+      "risk": "CRITICAL",
+      "status": "PARTIAL",
+      "test_paths": []
+    },
+    {
+      "expected_behaviour": "Three V5 families with distinct causal rules.",
+      "implementation_paths": [
+        "src\\spotbot\\research\\ams_v5_active_pullback_reacceleration.py"
+      ],
+      "observed_behaviour": "Verified by AST and source review.",
+      "required_correction": "Implement native family-specific candidate records and tests.",
+      "requirement": "Three V5 families with distinct causal rules.",
+      "requirement_id": "V5-REQ-SETUP-004",
+      "risk": "HIGH",
+      "status": "PARTIAL",
+      "test_paths": []
+    },
+    {
+      "expected_behaviour": "Balanced/wide structural stop contract.",
+      "implementation_paths": [
+        "src\\spotbot\\research\\ams_v5_active_pullback_reacceleration.py"
+      ],
+      "observed_behaviour": "Verified by AST and source review.",
+      "required_correction": "Implement native structural anchors, ceilings, gap recalculation and sizing.",
+      "requirement": "Balanced/wide structural stop contract.",
+      "requirement_id": "V5-REQ-STOP-005",
+      "risk": "CRITICAL",
+      "status": "PARTIAL",
+      "test_paths": []
+    },
+    {
+      "expected_behaviour": "Full V5 diagnostics and rejection audit trail.",
+      "implementation_paths": [
+        "scripts/research/run_ams_v5_trial.py"
+      ],
+      "observed_behaviour": "Verified by AST and source review.",
+      "required_correction": "Persist candidate/fill records and required metrics.",
+      "requirement": "Full V5 diagnostics and rejection audit trail.",
+      "requirement_id": "V5-REQ-REPORT-006",
+      "risk": "HIGH",
+      "status": "MISSING",
+      "test_paths": []
+    },
+    {
+      "expected_behaviour": "Comprehensive behavioural test suite.",
+      "implementation_paths": [
+        "tests/test_ams_v5_*.py"
+      ],
+      "observed_behaviour": "Verified by AST and source review.",
+      "required_correction": "Add native feature, setup, execution, portfolio, threshold and accounting tests.",
+      "requirement": "Comprehensive behavioural test suite.",
+      "requirement_id": "V5-REQ-TEST-007",
+      "risk": "CRITICAL",
+      "status": "UNTESTED",
+      "test_paths": []
+    },
+    {
+      "expected_behaviour": "Research boundary and next-open execution.",
+      "implementation_paths": [
+        "src\\spotbot\\research\\ams_v5_active_pullback_reacceleration.py"
+      ],
+      "observed_behaviour": "Verified by AST and source review.",
+      "required_correction": "Re-prove in neutral native core tests.",
+      "requirement": "Research boundary and next-open execution.",
+      "requirement_id": "V5-REQ-CAUSAL-008",
+      "risk": "MEDIUM",
+      "status": "INHERITED_V4",
+      "test_paths": []
+    }
+  ],
+  "rerun_allowed": false,
+  "schema_version": "ams-v5r1-conformance-audit-v1",
+  "status": "PASS",
+  "test_2025_accessed": false,
+  "v4_strategy_imports": [
+    "spotbot.research.ams_v4_active_conviction_swing",
+    "spotbot.research.ams_v4_active_conviction_swing"
+  ]
+}
