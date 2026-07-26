@@ -18,42 +18,55 @@
       "symbol_count": 30
     }
   },
+  "final_assessment": {
+    "decision": "STOP_V4_STRATEGY_LINE",
+    "report_path": "reports/research/ams-ed01-final-assessment-v1.json",
+    "report_sha256": "ae64da767ea440a01559dc299976a822cea96d712e2f509a833ddd557189943a"
+  },
   "holdout_2026_accessed": false,
   "protocol_id": "AMS-ED01-V4-T12-NATIVE-EDGE-VERIFICATION",
   "schema_version": "ams-ed01-experiment-ledger-v1",
   "test_2025_accessed": false,
   "trial_accounting": {
     "authorized_diagnostic_trials": 4,
-    "executed_diagnostic_trials": 0,
-    "remaining_diagnostic_trials": 4
+    "executed_diagnostic_trials": 4,
+    "remaining_diagnostic_trials": 0
   },
   "trial_plan": [
     {
       "allow_add_on": true,
       "allow_reentry": true,
       "name": "CONTROL",
-      "status": "REGISTERED_NOT_EXECUTED",
+      "report_path": "reports/research/ams-ed01-ed01-r01-diagnostic-v1.json",
+      "report_sha256": "e6782c81c84c9536900ed7286ba4292fb52d1efe6d5956f87fd238dafab91a5b",
+      "status": "EXECUTED",
       "variant_id": "ED01-R01"
     },
     {
       "allow_add_on": true,
       "allow_reentry": false,
       "name": "NO_REENTRY",
-      "status": "REGISTERED_NOT_EXECUTED",
+      "report_path": "reports/research/ams-ed01-ed01-r02-diagnostic-v1.json",
+      "report_sha256": "e415cf56f9cadcfef818bb72826f0866dc4baa94bc80b7b52983d6816aeb44b0",
+      "status": "EXECUTED",
       "variant_id": "ED01-R02"
     },
     {
       "allow_add_on": false,
       "allow_reentry": true,
       "name": "NO_ADDON",
-      "status": "REGISTERED_NOT_EXECUTED",
+      "report_path": "reports/research/ams-ed01-ed01-r03-diagnostic-v1.json",
+      "report_sha256": "1288ecc5ccaeee3e0ba31c19e821d183a14a2f7951ba402afb18132ef99ff156",
+      "status": "EXECUTED",
       "variant_id": "ED01-R03"
     },
     {
       "allow_add_on": false,
       "allow_reentry": false,
       "name": "NO_REENTRY_NO_ADDON",
-      "status": "REGISTERED_NOT_EXECUTED",
+      "report_path": "reports/research/ams-ed01-ed01-r04-diagnostic-v1.json",
+      "report_sha256": "b3efcb336e15d96dbd75597e6e446e256797d96c07312069bc4614442dd2496f",
+      "status": "EXECUTED",
       "variant_id": "ED01-R04"
     }
   ]
