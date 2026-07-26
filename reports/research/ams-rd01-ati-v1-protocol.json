@@ -1,0 +1,115 @@
+{
+  "allowed": [
+    "SURVIVOR_30_TAGGING",
+    "DOMINANCE_DIAGNOSTICS",
+    "BETA_AND_BENCHMARKS",
+    "CONCENTRATION_AND_PLACEBOS",
+    "ATI_SHADOW",
+    "LIMITED_COUNTERFACTUAL_REPLAY_IF_GATES_PASS"
+  ],
+  "alpha_changed": false,
+  "blocked": [
+    "POINT_IN_TIME_CLAIM",
+    "EDGE_PASS",
+    "PRODUCTION_READY",
+    "DYNAMIC_MD01_MATRIX",
+    "MD02",
+    "KELLY",
+    "2025_DATA",
+    "2026_DATA"
+  ],
+  "branch": "research/ams-rd01-survivor-diagnostics-ati-foundation-v1",
+  "cost_budget_consumed": 0,
+  "dynamic_md01_budget_consumed": 0,
+  "holdout_2026_accessed": false,
+  "policies": {
+    "ablations": [
+      "A0",
+      "A1",
+      "A2",
+      "A3",
+      "A4",
+      "A5",
+      "A6",
+      "A7",
+      "A8",
+      "A9"
+    ],
+    "ati_invariants": [
+      "NO_KELLY",
+      "NO_RISK_MULTIPLIER_ABOVE_ONE",
+      "NO_STOP_WIDENING",
+      "NO_NEGATIVE_WEIGHT",
+      "TOTAL_EXPOSURE_AT_MOST_ONE",
+      "SHADOW_DOES_NOT_CHANGE_TRADES_OR_PNL"
+    ],
+    "ati_policies": [
+      "ATI0",
+      "ATI1",
+      "ATI2",
+      "ATI3"
+    ],
+    "negative_controls": [
+      "BLOCK_SHUFFLE",
+      "FREQUENCY_MATCHED_LABELS",
+      "DELAY_1_BAR",
+      "DELAY_2_BARS",
+      "INVERTED_INTERPRETATION",
+      "FUTURE_MUTATION",
+      "DUMMY_FEATURE"
+    ],
+    "overlay_budget": {
+      "configurations": 4,
+      "cost_modes": 3,
+      "maximum": 12
+    },
+    "overlays": [
+      "O0",
+      "O1",
+      "O2",
+      "O3"
+    ],
+    "regime_specifications": [
+      "R1_CONSERVATIVE",
+      "R2_BALANCED",
+      "R3_PERSISTENT"
+    ],
+    "sample_gate": {
+      "minimum_folds": 2,
+      "minimum_pooled_trades": 20,
+      "minimum_trades_per_represented_fold": 5
+    },
+    "study_mode": [
+      "SURVIVOR_DIAGNOSTIC",
+      "NOT_POINT_IN_TIME",
+      "NOT_PROMOTABLE",
+      "UNIVERSE_PARTIAL"
+    ],
+    "timeframes": {
+      "daily": "strategic regime; last closed UTC daily bar",
+      "effectiveness": "decision at close, effective next bar",
+      "eight_hour": "transition confirmation; last closed UTC 8H bar",
+      "four_hour": "execution timing; last closed UTC 4H bar"
+    }
+  },
+  "policy_hashes": {
+    "ablations": "3fdf6e417d61fb0bd7f2c8c30707f1ff1a657a2e8309b6f6a516dca5cc700294",
+    "ati_invariants": "265c050e4af7f3bd929d8acb09455b6aae16b3766c9155ca7a8f713838226460",
+    "ati_policies": "a079a6f46fc36c89dcbb3993e7132d1727fb9d7eb4214e2d7cc0818889b7ddc0",
+    "negative_controls": "9002498f104e273b25b36d8f24e79eff63970a621b8b58d8636274129583d21b",
+    "overlay_budget": "5df9d9f77d090d0e3755b99289b097bc4018d036c03b9f2d869346e9f162af76",
+    "overlays": "716302a25693928801586af339dadc02660f823aaf6a879234f1a6bf731e89c9",
+    "regime_specifications": "cf3da61f2eef0ba2dbc2e7614b90ce42540e6a50a7c9f3cb6cd58326dccadc08",
+    "sample_gate": "d46922ba40b6d8fa15ace55e48198f804bcbae007124418297c31992c8a9b449",
+    "study_mode": "bc760920d4148b376569152559766e9cc1ac4c79fb3f7d674d5d26901ff3c3d6",
+    "timeframes": "7128ca5083c756f14af55eb6ddd06f8a31b8e8aed355384dc0e8fcefa9527da8"
+  },
+  "research_period": {
+    "end_exclusive": "2025-01-01T00:00:00Z",
+    "start": "2021-01-01T00:00:00Z"
+  },
+  "schema_version": "ams-rd01-ati-v1-protocol",
+  "source_commit": "1f3029483311a1ecfb3e794bb4abdb46d70c2d01",
+  "status": "REGISTERED",
+  "test_2025_accessed": false
+}
