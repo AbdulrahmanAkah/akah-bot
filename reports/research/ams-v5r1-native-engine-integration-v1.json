@@ -1,25 +1,61 @@
 {
-  "families": {
-    "DEEP_PULLBACK_RECOVERY": 3,
-    "MOMENTUM_REACCELERATION": 1008,
-    "NONE": 23353,
-    "SHALLOW_PULLBACK_RECLAIM": 314
+  "candidate_count": 11,
+  "candidate_families": {
+    "MOMENTUM_REACCELERATION": 2,
+    "SHALLOW_PULLBACK_RECLAIM": 9
   },
-  "fibonacci_bounds": [
-    -5.0,
-    5.0
-  ],
+  "checks": {
+    "candidate_ids_unique": true,
+    "fill_ids_unique": true,
+    "holdout_2026_not_accessed": true,
+    "native_fold_status": true,
+    "next_open_fills": true,
+    "no_implicit_leverage": true,
+    "nonnegative_cash": true,
+    "open_positions_after_fold": true,
+    "reconciliation": true,
+    "strategic_v4_dependencies_zero": true,
+    "test_2025_not_accessed": true,
+    "threshold_train_only": true
+  },
+  "dataset_hashes": {
+    "availability": "de71d0a229120873fc7294cef52b41c577e81bc466f009a49a970a8bfe21473e",
+    "four_hour": "591e9006ffa0ab7538869b4c5c2d8d66fac98736e60a1d6b09ee302b403feb70"
+  },
+  "fees": 442.415037848615,
+  "fill_count": 14,
+  "fill_types": {
+    "ENTRY": 7,
+    "STRUCTURE_EXIT": 1,
+    "TRAILING_EXIT": 6
+  },
+  "final_cash": 101964.68742985716,
   "holdout_2026_accessed": false,
-  "rows": 24678,
-  "score_bounds": [
-    20.0,
-    78.0
-  ],
+  "open_positions_after_fold": 0,
+  "pnl_reconciliation": "PASS",
+  "rejections": {
+    "ADD_ON_BELOW_1_25R": 3,
+    "ENTRY_CLUSTER_LIMIT": 1
+  },
+  "schema_version": "ams-v5r1-native-engine-integration-v1",
+  "selected_threshold": 55,
   "status": "PASS",
+  "strategic_v4_dependencies": [],
   "symbols": [
     "BTC",
     "ETH",
     "SOL"
   ],
-  "test_2025_accessed": false
+  "test_2025_accessed": false,
+  "trade_count": 7,
+  "train_hash_sha256": "158352c3836ae53b532290a7cb7ecf7c74eb13325be3327296f5943d7b6ed6ae",
+  "train_window": [
+    "2021-01-01",
+    "2022-01-01"
+  ],
+  "turnover": 221207.5189243075,
+  "validation_window": [
+    "2022-01-01",
+    "2022-04-01"
+  ]
 }

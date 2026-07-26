@@ -4,7 +4,9 @@ import pandas as pd
 import pytest
 from ams_v5_native_support import panel, row, run
 
+from spotbot.research import ams_v5_native_engine
 from spotbot.research.ams_v5_native_engine import (
+    V5PortfolioProfile,
     correlation_clusters,
     drawdown_multiplier,
     profiles,
@@ -98,3 +100,24 @@ def test_drawdown_throttle_and_profiles_are_literal() -> None:
     assert (p02.base_risk, p02.max_heat, p02.max_positions) == (0.0095, 0.065, 6)
     assert drawdown_multiplier(0.08) == 0.85
     assert drawdown_multiplier(0.241) == 0.0
+
+
+def test_third_simultaneous_candidate_in_same_cluster_is_rejected(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    monkeypatch.setattr(
+        ams_v5_native_engine,
+        "correlation_clusters",
+        lambda _frame, _as_of: {"AAA": "ONE", "BBB": "ONE", "CCC": "ONE"},
+    )
+    frame = panel(
+        *(
+            row(0, symbol=symbol, family="SHALLOW_PULLBACK_RECLAIM")
+            for symbol in ("AAA", "BBB", "CCC")
+        ),
+        *(row(1, symbol=symbol) for symbol in ("AAA", "BBB", "CCC")),
+    )
+    profile = V5PortfolioProfile("CLUSTER", 0.007, 0.0095, 0.012, 0.045, 5, 2)
+    result = run(frame, profile=profile)
+    assert len([fill for fill in result.fills if fill.fill_type == "ENTRY"]) == 2
+    assert result.rejections["ENTRY_CLUSTER_LIMIT"] == 1
