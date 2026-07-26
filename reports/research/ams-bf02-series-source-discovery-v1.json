@@ -1,0 +1,911 @@
+{
+  "branch": "research/ams-bf02-aligned-daily-series-evidence-v1",
+  "candidates": [
+    {
+      "date_keys": [],
+      "details": {
+        "all_keys": [
+          "accepted",
+          "alignment_tier",
+          "candidate_id",
+          "cooldown_satisfied",
+          "daily_market_regime",
+          "daily_state",
+          "earliest_reentry_rebalance",
+          "eight_hour_state",
+          "entry_strength_multiplier",
+          "entry_trigger",
+          "fill_price",
+          "fill_timestamp",
+          "fold_id",
+          "four_hour_state",
+          "last_exit_rebalance",
+          "natural_reselection_sequence",
+          "rejection_reason",
+          "scheduled_entry",
+          "signal_bar_close",
+          "signal_bar_open",
+          "symbol",
+          "target_weight",
+          "variant_id"
+        ],
+        "all_numeric_keys": [
+          "entry_strength_multiplier",
+          "fill_price",
+          "natural_reselection_sequence",
+          "target_weight"
+        ]
+      },
+      "kind": "RECORD_LIST",
+      "length": 31,
+      "path": "fold_results/[0]/candidate_ledger",
+      "source": "reports/research/ams-md01-m05-base-cost-v1.json",
+      "value_keys": [
+        "fill_price",
+        "target_weight"
+      ]
+    },
+    {
+      "date_keys": [
+        "timestamp"
+      ],
+      "details": {
+        "all_keys": [
+          "candidate_id",
+          "cash_after",
+          "cash_before",
+          "fee",
+          "fill_id",
+          "fill_type",
+          "notional",
+          "portfolio_heat_after",
+          "portfolio_heat_before",
+          "position_id",
+          "position_quantity_after",
+          "position_quantity_before",
+          "price",
+          "quantity",
+          "reason",
+          "symbol",
+          "timestamp"
+        ],
+        "all_numeric_keys": [
+          "cash_after",
+          "cash_before",
+          "fee",
+          "notional",
+          "portfolio_heat_after",
+          "portfolio_heat_before",
+          "position_quantity_after",
+          "position_quantity_before",
+          "price",
+          "quantity"
+        ]
+      },
+      "kind": "RECORD_LIST",
+      "length": 58,
+      "path": "fold_results/[0]/fill_ledger",
+      "source": "reports/research/ams-md01-m05-base-cost-v1.json",
+      "value_keys": [
+        "cash_after",
+        "cash_before",
+        "portfolio_heat_after",
+        "portfolio_heat_before",
+        "price"
+      ]
+    },
+    {
+      "date_keys": [
+        "timestamp"
+      ],
+      "details": {
+        "all_keys": [
+          "cluster_decisions",
+          "cluster_window_end",
+          "cluster_window_start",
+          "correlation_dispersion",
+          "daily_market_regime",
+          "excluded_symbols_by_reason",
+          "final_rankable_count",
+          "fold_id",
+          "history_eligible_count",
+          "horizon_days",
+          "liquidity_eligible_count",
+          "liquidity_filter",
+          "rank_dispersion",
+          "raw_universe_count",
+          "school",
+          "selected_symbols",
+          "selection_generation",
+          "timestamp",
+          "tradable_count",
+          "variant_id"
+        ],
+        "all_numeric_keys": [
+          "correlation_dispersion",
+          "final_rankable_count",
+          "history_eligible_count",
+          "horizon_days",
+          "liquidity_eligible_count",
+          "rank_dispersion",
+          "raw_universe_count",
+          "selection_generation",
+          "tradable_count"
+        ]
+      },
+      "kind": "RECORD_LIST",
+      "length": 52,
+      "path": "fold_results/[0]/selection_ledger",
+      "source": "reports/research/ams-md01-m05-base-cost-v1.json",
+      "value_keys": []
+    },
+    {
+      "date_keys": [],
+      "details": {
+        "all_keys": [
+          "alignment_tier",
+          "candidate_id",
+          "entry_price",
+          "entry_time",
+          "exit_price",
+          "exit_reason",
+          "exit_time",
+          "gross_pnl",
+          "holding_hours",
+          "mae",
+          "mfe",
+          "natural_reselection_sequence",
+          "net_pnl",
+          "position_id",
+          "previous_position_id",
+          "quantity",
+          "return_fraction",
+          "symbol",
+          "trade_id"
+        ],
+        "all_numeric_keys": [
+          "entry_price",
+          "exit_price",
+          "gross_pnl",
+          "holding_hours",
+          "mae",
+          "mfe",
+          "natural_reselection_sequence",
+          "net_pnl",
+          "quantity",
+          "return_fraction"
+        ]
+      },
+      "kind": "RECORD_LIST",
+      "length": 29,
+      "path": "fold_results/[0]/trade_ledger",
+      "source": "reports/research/ams-md01-m05-base-cost-v1.json",
+      "value_keys": [
+        "entry_price",
+        "exit_price",
+        "gross_pnl",
+        "net_pnl",
+        "return_fraction"
+      ]
+    },
+    {
+      "date_keys": [],
+      "details": {
+        "all_keys": [
+          "accepted",
+          "alignment_tier",
+          "candidate_id",
+          "cooldown_satisfied",
+          "daily_market_regime",
+          "daily_state",
+          "earliest_reentry_rebalance",
+          "eight_hour_state",
+          "entry_strength_multiplier",
+          "entry_trigger",
+          "fill_price",
+          "fill_timestamp",
+          "fold_id",
+          "four_hour_state",
+          "last_exit_rebalance",
+          "natural_reselection_sequence",
+          "rejection_reason",
+          "scheduled_entry",
+          "signal_bar_close",
+          "signal_bar_open",
+          "symbol",
+          "target_weight",
+          "variant_id"
+        ],
+        "all_numeric_keys": [
+          "entry_strength_multiplier",
+          "fill_price",
+          "natural_reselection_sequence",
+          "target_weight"
+        ]
+      },
+      "kind": "RECORD_LIST",
+      "length": 59,
+      "path": "fold_results/[1]/candidate_ledger",
+      "source": "reports/research/ams-md01-m05-base-cost-v1.json",
+      "value_keys": [
+        "fill_price",
+        "target_weight"
+      ]
+    },
+    {
+      "date_keys": [
+        "timestamp"
+      ],
+      "details": {
+        "all_keys": [
+          "candidate_id",
+          "cash_after",
+          "cash_before",
+          "fee",
+          "fill_id",
+          "fill_type",
+          "notional",
+          "portfolio_heat_after",
+          "portfolio_heat_before",
+          "position_id",
+          "position_quantity_after",
+          "position_quantity_before",
+          "price",
+          "quantity",
+          "reason",
+          "symbol",
+          "timestamp"
+        ],
+        "all_numeric_keys": [
+          "cash_after",
+          "cash_before",
+          "fee",
+          "notional",
+          "portfolio_heat_after",
+          "portfolio_heat_before",
+          "position_quantity_after",
+          "position_quantity_before",
+          "price",
+          "quantity"
+        ]
+      },
+      "kind": "RECORD_LIST",
+      "length": 118,
+      "path": "fold_results/[1]/fill_ledger",
+      "source": "reports/research/ams-md01-m05-base-cost-v1.json",
+      "value_keys": [
+        "cash_after",
+        "cash_before",
+        "portfolio_heat_after",
+        "portfolio_heat_before",
+        "price"
+      ]
+    },
+    {
+      "date_keys": [
+        "timestamp"
+      ],
+      "details": {
+        "all_keys": [
+          "cluster_decisions",
+          "cluster_window_end",
+          "cluster_window_start",
+          "correlation_dispersion",
+          "daily_market_regime",
+          "excluded_symbols_by_reason",
+          "final_rankable_count",
+          "fold_id",
+          "history_eligible_count",
+          "horizon_days",
+          "liquidity_eligible_count",
+          "liquidity_filter",
+          "rank_dispersion",
+          "raw_universe_count",
+          "school",
+          "selected_symbols",
+          "selection_generation",
+          "timestamp",
+          "tradable_count",
+          "variant_id"
+        ],
+        "all_numeric_keys": [
+          "correlation_dispersion",
+          "final_rankable_count",
+          "history_eligible_count",
+          "horizon_days",
+          "liquidity_eligible_count",
+          "rank_dispersion",
+          "raw_universe_count",
+          "selection_generation",
+          "tradable_count"
+        ]
+      },
+      "kind": "RECORD_LIST",
+      "length": 52,
+      "path": "fold_results/[1]/selection_ledger",
+      "source": "reports/research/ams-md01-m05-base-cost-v1.json",
+      "value_keys": []
+    },
+    {
+      "date_keys": [],
+      "details": {
+        "all_keys": [
+          "alignment_tier",
+          "candidate_id",
+          "entry_price",
+          "entry_time",
+          "exit_price",
+          "exit_reason",
+          "exit_time",
+          "gross_pnl",
+          "holding_hours",
+          "mae",
+          "mfe",
+          "natural_reselection_sequence",
+          "net_pnl",
+          "position_id",
+          "previous_position_id",
+          "quantity",
+          "return_fraction",
+          "symbol",
+          "trade_id"
+        ],
+        "all_numeric_keys": [
+          "entry_price",
+          "exit_price",
+          "gross_pnl",
+          "holding_hours",
+          "mae",
+          "mfe",
+          "natural_reselection_sequence",
+          "net_pnl",
+          "quantity",
+          "return_fraction"
+        ]
+      },
+      "kind": "RECORD_LIST",
+      "length": 59,
+      "path": "fold_results/[1]/trade_ledger",
+      "source": "reports/research/ams-md01-m05-base-cost-v1.json",
+      "value_keys": [
+        "entry_price",
+        "exit_price",
+        "gross_pnl",
+        "net_pnl",
+        "return_fraction"
+      ]
+    },
+    {
+      "date_keys": [],
+      "details": {
+        "all_keys": [
+          "accepted",
+          "alignment_tier",
+          "candidate_id",
+          "cooldown_satisfied",
+          "daily_market_regime",
+          "daily_state",
+          "earliest_reentry_rebalance",
+          "eight_hour_state",
+          "entry_strength_multiplier",
+          "entry_trigger",
+          "fill_price",
+          "fill_timestamp",
+          "fold_id",
+          "four_hour_state",
+          "last_exit_rebalance",
+          "natural_reselection_sequence",
+          "rejection_reason",
+          "scheduled_entry",
+          "signal_bar_close",
+          "signal_bar_open",
+          "symbol",
+          "target_weight",
+          "variant_id"
+        ],
+        "all_numeric_keys": [
+          "entry_strength_multiplier",
+          "fill_price",
+          "natural_reselection_sequence",
+          "target_weight"
+        ]
+      },
+      "kind": "RECORD_LIST",
+      "length": 61,
+      "path": "fold_results/[2]/candidate_ledger",
+      "source": "reports/research/ams-md01-m05-base-cost-v1.json",
+      "value_keys": [
+        "fill_price",
+        "target_weight"
+      ]
+    },
+    {
+      "date_keys": [
+        "timestamp"
+      ],
+      "details": {
+        "all_keys": [
+          "candidate_id",
+          "cash_after",
+          "cash_before",
+          "fee",
+          "fill_id",
+          "fill_type",
+          "notional",
+          "portfolio_heat_after",
+          "portfolio_heat_before",
+          "position_id",
+          "position_quantity_after",
+          "position_quantity_before",
+          "price",
+          "quantity",
+          "reason",
+          "symbol",
+          "timestamp"
+        ],
+        "all_numeric_keys": [
+          "cash_after",
+          "cash_before",
+          "fee",
+          "notional",
+          "portfolio_heat_after",
+          "portfolio_heat_before",
+          "position_quantity_after",
+          "position_quantity_before",
+          "price",
+          "quantity"
+        ]
+      },
+      "kind": "RECORD_LIST",
+      "length": 118,
+      "path": "fold_results/[2]/fill_ledger",
+      "source": "reports/research/ams-md01-m05-base-cost-v1.json",
+      "value_keys": [
+        "cash_after",
+        "cash_before",
+        "portfolio_heat_after",
+        "portfolio_heat_before",
+        "price"
+      ]
+    },
+    {
+      "date_keys": [
+        "timestamp"
+      ],
+      "details": {
+        "all_keys": [
+          "cluster_decisions",
+          "cluster_window_end",
+          "cluster_window_start",
+          "correlation_dispersion",
+          "daily_market_regime",
+          "excluded_symbols_by_reason",
+          "final_rankable_count",
+          "fold_id",
+          "history_eligible_count",
+          "horizon_days",
+          "liquidity_eligible_count",
+          "liquidity_filter",
+          "rank_dispersion",
+          "raw_universe_count",
+          "school",
+          "selected_symbols",
+          "selection_generation",
+          "timestamp",
+          "tradable_count",
+          "variant_id"
+        ],
+        "all_numeric_keys": [
+          "correlation_dispersion",
+          "final_rankable_count",
+          "history_eligible_count",
+          "horizon_days",
+          "liquidity_eligible_count",
+          "rank_dispersion",
+          "raw_universe_count",
+          "selection_generation",
+          "tradable_count"
+        ]
+      },
+      "kind": "RECORD_LIST",
+      "length": 53,
+      "path": "fold_results/[2]/selection_ledger",
+      "source": "reports/research/ams-md01-m05-base-cost-v1.json",
+      "value_keys": []
+    },
+    {
+      "date_keys": [],
+      "details": {
+        "all_keys": [
+          "alignment_tier",
+          "candidate_id",
+          "entry_price",
+          "entry_time",
+          "exit_price",
+          "exit_reason",
+          "exit_time",
+          "gross_pnl",
+          "holding_hours",
+          "mae",
+          "mfe",
+          "natural_reselection_sequence",
+          "net_pnl",
+          "position_id",
+          "previous_position_id",
+          "quantity",
+          "return_fraction",
+          "symbol",
+          "trade_id"
+        ],
+        "all_numeric_keys": [
+          "entry_price",
+          "exit_price",
+          "gross_pnl",
+          "holding_hours",
+          "mae",
+          "mfe",
+          "natural_reselection_sequence",
+          "net_pnl",
+          "quantity",
+          "return_fraction"
+        ]
+      },
+      "kind": "RECORD_LIST",
+      "length": 59,
+      "path": "fold_results/[2]/trade_ledger",
+      "source": "reports/research/ams-md01-m05-base-cost-v1.json",
+      "value_keys": [
+        "entry_price",
+        "exit_price",
+        "gross_pnl",
+        "net_pnl",
+        "return_fraction"
+      ]
+    }
+  ],
+  "daily_candidates": [
+    {
+      "date_keys": [
+        "timestamp"
+      ],
+      "details": {
+        "all_keys": [
+          "candidate_id",
+          "cash_after",
+          "cash_before",
+          "fee",
+          "fill_id",
+          "fill_type",
+          "notional",
+          "portfolio_heat_after",
+          "portfolio_heat_before",
+          "position_id",
+          "position_quantity_after",
+          "position_quantity_before",
+          "price",
+          "quantity",
+          "reason",
+          "symbol",
+          "timestamp"
+        ],
+        "all_numeric_keys": [
+          "cash_after",
+          "cash_before",
+          "fee",
+          "notional",
+          "portfolio_heat_after",
+          "portfolio_heat_before",
+          "position_quantity_after",
+          "position_quantity_before",
+          "price",
+          "quantity"
+        ]
+      },
+      "kind": "RECORD_LIST",
+      "length": 118,
+      "path": "fold_results/[1]/fill_ledger",
+      "source": "reports/research/ams-md01-m05-base-cost-v1.json",
+      "value_keys": [
+        "cash_after",
+        "cash_before",
+        "portfolio_heat_after",
+        "portfolio_heat_before",
+        "price"
+      ]
+    },
+    {
+      "date_keys": [
+        "timestamp"
+      ],
+      "details": {
+        "all_keys": [
+          "candidate_id",
+          "cash_after",
+          "cash_before",
+          "fee",
+          "fill_id",
+          "fill_type",
+          "notional",
+          "portfolio_heat_after",
+          "portfolio_heat_before",
+          "position_id",
+          "position_quantity_after",
+          "position_quantity_before",
+          "price",
+          "quantity",
+          "reason",
+          "symbol",
+          "timestamp"
+        ],
+        "all_numeric_keys": [
+          "cash_after",
+          "cash_before",
+          "fee",
+          "notional",
+          "portfolio_heat_after",
+          "portfolio_heat_before",
+          "position_quantity_after",
+          "position_quantity_before",
+          "price",
+          "quantity"
+        ]
+      },
+      "kind": "RECORD_LIST",
+      "length": 118,
+      "path": "fold_results/[2]/fill_ledger",
+      "source": "reports/research/ams-md01-m05-base-cost-v1.json",
+      "value_keys": [
+        "cash_after",
+        "cash_before",
+        "portfolio_heat_after",
+        "portfolio_heat_before",
+        "price"
+      ]
+    }
+  ],
+  "discovery_status": "DAILY_SERIES_CANDIDATES_FOUND",
+  "head": "88eb0d7d7fca63a7e8b197ad435fead80be98bf8",
+  "referenced_files": [
+    {
+      "exists": false,
+      "reference": "ams-md01r1-survivor30-md01-m01-base-cost-reproduction-v1.json",
+      "resolved_path": "ams-md01r1-survivor30-md01-m01-base-cost-reproduction-v1.json",
+      "suffix": ".json"
+    },
+    {
+      "exists": false,
+      "reference": "ams-md01r1-survivor30-md01-m01-stress-cost-reproduction-v1.json",
+      "resolved_path": "ams-md01r1-survivor30-md01-m01-stress-cost-reproduction-v1.json",
+      "suffix": ".json"
+    },
+    {
+      "exists": false,
+      "reference": "ams-md01r1-survivor30-md01-m01-zero-cost-reproduction-v1.json",
+      "resolved_path": "ams-md01r1-survivor30-md01-m01-zero-cost-reproduction-v1.json",
+      "suffix": ".json"
+    },
+    {
+      "exists": false,
+      "reference": "ams-md01r1-survivor30-md01-m02-base-cost-reproduction-v1.json",
+      "resolved_path": "ams-md01r1-survivor30-md01-m02-base-cost-reproduction-v1.json",
+      "suffix": ".json"
+    },
+    {
+      "exists": false,
+      "reference": "ams-md01r1-survivor30-md01-m02-zero-cost-reproduction-v1.json",
+      "resolved_path": "ams-md01r1-survivor30-md01-m02-zero-cost-reproduction-v1.json",
+      "suffix": ".json"
+    }
+  ],
+  "safety": {
+    "holdout_2026_accessed": false,
+    "kelly_used": false,
+    "leverage_used": false,
+    "md02_authorized": false,
+    "production_authorized": false,
+    "test_2025_accessed": false
+  },
+  "schema_version": "ams-bf02-series-source-discovery-v1",
+  "sources": [
+    {
+      "candidate_count": 0,
+      "reference_count": 0,
+      "schema_version": "ams-md01-final-assessment-v1",
+      "size_bytes": 337102,
+      "source": "reports/research/ams-md01-final-assessment-v1.json",
+      "status": "READ",
+      "top_level_keys": [
+        "alignment_control_average_return_difference",
+        "alignment_forward_28d",
+        "alignment_signal_counts",
+        "alignment_status",
+        "benchmark_comparison",
+        "best_school",
+        "best_variant",
+        "concentration",
+        "cost_status",
+        "crisis_gate_average_return_difference",
+        "dataset_hashes",
+        "factor_statuses",
+        "final_research_decision",
+        "hash_mismatches",
+        "holdout_2026_accessed",
+        "kelly_research_authorized",
+        "limitations",
+        "momentum_crash_status",
+        "open_positions_after_fold",
+        "pnl_reconciliation",
+        "portfolio_gross_edge_status",
+        "primary_variants_executed",
+        "primary_variants_remaining",
+        "proceed_to_md02",
+        "reasoning",
+        "request_2025_test",
+        "research_label",
+        "schema_version",
+        "status",
+        "test_2025_accessed",
+        "universe_status",
+        "variants"
+      ]
+    },
+    {
+      "candidate_count": 0,
+      "reference_count": 0,
+      "schema_version": "ams-md01-benchmark-comparison-v1",
+      "size_bytes": 37295,
+      "source": "reports/research/ams-md01-benchmark-comparison-v1.json",
+      "status": "READ",
+      "top_level_keys": [
+        "benchmarks",
+        "dataset_hashes",
+        "holdout_2026_accessed",
+        "methodology",
+        "schema_version",
+        "status",
+        "test_2025_accessed"
+      ]
+    },
+    {
+      "candidate_count": 12,
+      "reference_count": 0,
+      "schema_version": "ams-md01-variant-result-v1",
+      "size_bytes": 1225029,
+      "source": "reports/research/ams-md01-m05-base-cost-v1.json",
+      "status": "READ",
+      "top_level_keys": [
+        "aggregate",
+        "control_mode",
+        "cost_mode",
+        "dataset_hashes",
+        "execution_contract",
+        "fold_results",
+        "holdout_2026_accessed",
+        "horizon_days",
+        "schema_version",
+        "school",
+        "status",
+        "test_2025_accessed",
+        "transaction_cost",
+        "variant_id"
+      ]
+    },
+    {
+      "candidate_count": 0,
+      "reference_count": 5,
+      "schema_version": "ams-md01r1-survivor30-reproduction-v1",
+      "size_bytes": 196624,
+      "source": "reports/research/ams-md01r1-survivor30-reproduction-v1.json",
+      "status": "READ",
+      "top_level_keys": [
+        "cost_execution_budget_consumed",
+        "exact_execution_count",
+        "execution_count",
+        "executions",
+        "historically_referenced_execution_count",
+        "holdout_2026_accessed",
+        "paired_dynamic_configurations_consumed",
+        "schema_version",
+        "status",
+        "test_2025_accessed",
+        "unreferenced_execution_count"
+      ]
+    },
+    {
+      "candidate_count": 0,
+      "reference_count": 0,
+      "schema_version": "ams-rd01-benchmark-comparison-v1",
+      "size_bytes": 644,
+      "source": "reports/research/ams-rd01-benchmark-comparison-v1.json",
+      "status": "READ",
+      "top_level_keys": [
+        "benchmarks",
+        "holdout_2026_accessed",
+        "judgment",
+        "schema_version",
+        "status",
+        "test_2025_accessed"
+      ]
+    },
+    {
+      "candidate_count": 0,
+      "reference_count": 0,
+      "schema_version": "ams-rd01-causal-benchmark-comparison-v2",
+      "size_bytes": 1423,
+      "source": "reports/research/ams-rd01-benchmark-comparison-v2.json",
+      "status": "READ",
+      "top_level_keys": [
+        "benchmarks",
+        "constraints",
+        "dataset_hashes",
+        "holdout_2026_accessed",
+        "judgment",
+        "schema_version",
+        "status",
+        "test_2025_accessed"
+      ]
+    },
+    {
+      "candidate_count": 0,
+      "reference_count": 0,
+      "schema_version": "ams-rd01-btc-beta-diagnostics-v1",
+      "size_bytes": 10585,
+      "source": "reports/research/ams-rd01-btc-beta-diagnostics-v1.json",
+      "status": "READ",
+      "top_level_keys": [
+        "dataset_hashes",
+        "fold_estimates",
+        "holdout_2026_accessed",
+        "judgment",
+        "schema_version",
+        "status",
+        "test_2025_accessed",
+        "windows_days"
+      ]
+    },
+    {
+      "candidate_count": 0,
+      "reference_count": 0,
+      "schema_version": "ams-rd01-concentration-diagnostics-v1",
+      "size_bytes": 2679,
+      "source": "reports/research/ams-rd01-concentration-diagnostics-v1.json",
+      "status": "READ",
+      "top_level_keys": [
+        "classification",
+        "holdout_2026_accessed",
+        "maximum_top_3_positive_profit_share",
+        "schema_version",
+        "status",
+        "test_2025_accessed",
+        "variants"
+      ]
+    },
+    {
+      "candidate_count": 0,
+      "reference_count": 0,
+      "schema_version": "ams-rd01-ati-v1-final-assessment",
+      "size_bytes": 4299,
+      "source": "reports/research/ams-rd01-ati-v1-final-assessment.json",
+      "status": "READ",
+      "top_level_keys": [
+        "ati",
+        "authorizations",
+        "beta",
+        "concentration",
+        "dominance",
+        "evidence_hashes",
+        "holdout_2026_accessed",
+        "kelly_used",
+        "leverage_used",
+        "overlay",
+        "policy_hashes",
+        "quality_gates",
+        "research_result",
+        "safety_stop",
+        "schema_version",
+        "test_2025_accessed",
+        "universe"
+      ]
+    }
+  ]
+}
