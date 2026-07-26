@@ -1,6 +1,48 @@
-import pandas as pd
-from spotbot.research.ams_v5_native_engine import V5Parameters,profiles,simulate_native_fold
-def test_empty_native_fold_reconciles_without_positions():
- x=pd.DataFrame({'bar_open_time':[pd.Timestamp('2024-01-01T00:00Z')],'bar_close_time':[pd.Timestamp('2024-01-01T04:00Z')],'symbol':['X'],'open':[10.],'high':[10.],'low':[10.],'close':[10.],'family':['NONE'],'score_no_fib':[0.],'score_soft_fib':[0.],'d1_score':[0.],'eight_hour_score':[0.],'four_hour_score':[0.],'fib':[0.],'atr':[1.],'tradable_from':[pd.Timestamp('2020-01-01T00:00Z')],'tradable_until':[pd.Timestamp('2025-01-01T00:00Z')]})
- r=simulate_native_fold(four_hour_panel=x,configuration=V5Parameters('A','HYBRID_ALL_THREE','STRUCTURE_BALANCED','NO_FIBONACCI',50,.002),portfolio_profile=profiles()[0],selected_threshold=50,transaction_cost=.002)
- assert r.final_cash==100000 and r.open_positions_after_fold==0
+from __future__ import annotations
+
+from ams_v5_native_support import panel, row, run
+
+
+def test_end_of_fold_is_an_explicit_fill_and_leaves_no_position() -> None:
+    result = run(
+        panel(
+            row(0, family="SHALLOW_PULLBACK_RECLAIM"),
+            row(1, open_price=100, high=103, low=96, close=102),
+        )
+    )
+    assert result.fills[-1].fill_type == "END_OF_FOLD_EXIT"
+    assert result.open_positions_after_fold == 0
+    assert result.status == "PASS"
+    assert result.reconciliation.status == "PASS"
+
+
+def test_candidate_and_fill_ids_are_unique_and_order_is_deterministic() -> None:
+    frame = panel(
+        row(0, symbol="BBB", family="SHALLOW_PULLBACK_RECLAIM", score=80),
+        row(0, symbol="AAA", family="SHALLOW_PULLBACK_RECLAIM", score=80),
+        row(1, symbol="BBB"),
+        row(1, symbol="AAA"),
+    )
+    first = run(frame, fold_id="ORDER")
+    second = run(frame, fold_id="ORDER")
+    assert [fill.symbol for fill in first.fills[:2]] == ["AAA", "BBB"]
+    assert [fill.fill_id for fill in first.fills] == [fill.fill_id for fill in second.fills]
+    assert len({item.candidate_id for item in first.candidates}) == len(first.candidates)
+    assert len({item.fill_id for item in first.fills}) == len(first.fills)
+
+
+def test_venue_exit_is_explicit_and_precedes_later_activity() -> None:
+    until = row(2)["bar_open_time"]
+    result = run(
+        panel(
+            row(
+                0,
+                family="SHALLOW_PULLBACK_RECLAIM",
+                overrides={"tradable_until": until},
+            ),
+            row(1, overrides={"tradable_until": until}),
+            row(2, overrides={"tradable_until": until}),
+        )
+    )
+    assert result.fills[-1].fill_type == "VENUE_EXIT"
+    assert result.open_positions_after_fold == 0

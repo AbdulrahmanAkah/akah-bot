@@ -1,6 +1,26 @@
-import pandas as pd
-from spotbot.research.ams_v5_native_engine import V5Fill,reconcile_fills
-def test_fill_reconciliation():
- a=V5Fill('1','c','p','X',pd.Timestamp('2024-01-01',tz='UTC'),'ENTRY',10,5,50,1,100,49,0,5,'')
- b=V5Fill('2','c','p','X',pd.Timestamp('2024-01-02',tz='UTC'),'STOP_EXIT',9,5,45,1,49,93,5,0,'')
- assert reconcile_fills(100,[a,b])['cash']==93
+from __future__ import annotations
+
+from spotbot.research.ams_v5_native_engine import configuration_grid, profiles
+
+
+def test_registered_native_matrix_is_24_unique_behaviours() -> None:
+    configurations = configuration_grid()
+    assert len(configurations) == 12
+    behaviours = {
+        (item.family, item.stop_model, item.fibonacci_mode) for item in configurations
+    }
+    assert len(behaviours) == 12
+    trials = {
+        (item.configuration_id, profile.profile_id)
+        for item in configurations
+        for profile in profiles()
+    }
+    assert len(trials) == 24
+
+
+def test_paired_fibonacci_configs_differ_only_by_fibonacci_mode() -> None:
+    configurations = configuration_grid()
+    for index in range(0, 12, 2):
+        left, right = configurations[index : index + 2]
+        assert (left.family, left.stop_model) == (right.family, right.stop_model)
+        assert left.fibonacci_mode != right.fibonacci_mode
