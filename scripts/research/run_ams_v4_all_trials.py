@@ -3,8 +3,12 @@
 from __future__ import annotations
 
 import json
+import sys
+from pathlib import Path
 
-from scripts.research.run_ams_v4_trial import LEDGER_PATH, load_panel, run_trial
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+
+from run_ams_v4_trial import LEDGER_PATH, load_panel, run_trial
 
 
 def main() -> None:
