@@ -1,0 +1,308 @@
+{
+  "capabilities": [
+    {
+      "evidence": "Returns currently available pairs, not dated historical snapshots.",
+      "historical": false,
+      "operation": "historical_membership",
+      "source_id": "KUCOIN_CURRENT_SYMBOLS",
+      "status": "UNSUPPORTED",
+      "venue_specific": true
+    },
+    {
+      "evidence": "Some notices state exact effective times; many do not resolve both boundaries.",
+      "historical": true,
+      "operation": "effective_listing_and_delisting",
+      "source_id": "KUCOIN_ANNOUNCEMENTS",
+      "status": "PARTIAL",
+      "venue_specific": true
+    },
+    {
+      "evidence": "Sampled delisted and retired symbols return no accessible history.",
+      "historical": true,
+      "operation": "delisted_symbol_4h_history",
+      "source_id": "KUCOIN_KLINES",
+      "status": "UNSUPPORTED",
+      "venue_specific": true
+    },
+    {
+      "evidence": "Aggregated prices do not prove KuCoin venue membership.",
+      "historical": true,
+      "operation": "kucoin_historical_membership",
+      "source_id": "COINGECKO_AGGREGATED_MARKET",
+      "status": "UNSUPPORTED",
+      "venue_specific": false
+    },
+    {
+      "evidence": "Historical market data is not venue-membership evidence.",
+      "historical": true,
+      "operation": "kucoin_historical_membership",
+      "source_id": "COINMARKETCAP_AGGREGATED_MARKET",
+      "status": "AUTH_REQUIRED",
+      "venue_specific": false
+    },
+    {
+      "evidence": "No canonical complete snapshot series was established.",
+      "historical": true,
+      "operation": "complete_historical_symbol_snapshots",
+      "source_id": "SECONDARY_WEB_ARCHIVES",
+      "status": "UNRESOLVED",
+      "venue_specific": true
+    }
+  ],
+  "cases": [
+    {
+      "case_id": "CURRENT_OLD",
+      "case_type": "CURRENT_OLD_PAIR",
+      "distinctions": {
+        "asset_existed": true,
+        "generic_price_may_exist": true,
+        "md01_eligible": "NOT_ESTABLISHED",
+        "traded_on_kucoin": "PARTIAL_EVIDENCE",
+        "traded_somewhere": "NOT_EQUIVALENT_TO_KUCOIN_MEMBERSHIP"
+      },
+      "evidence_level": "CANDLE_DERIVED",
+      "exact_end_evidence_present": false,
+      "expected_evidence": "CANDLE_DERIVED",
+      "identity": "BTC",
+      "membership_fully_resolved": false,
+      "primary_candle_probe": {
+        "bounded_end_exclusive": "2025-01-01T00:00:00Z",
+        "first_open": "2024-04-26T00:00:00+00:00",
+        "http_status": 200,
+        "last_open": "2024-12-31T20:00:00+00:00",
+        "locked_rows": 0,
+        "row_count": 1500
+      },
+      "replacement_candle_probe": null,
+      "sampled_event_boundary_resolved": false,
+      "symbol": "BTC-USDT"
+    },
+    {
+      "case_id": "CURRENT_POST_2021",
+      "case_type": "CURRENT_LISTED_AFTER_2021",
+      "distinctions": {
+        "asset_existed": true,
+        "generic_price_may_exist": true,
+        "md01_eligible": "NOT_ESTABLISHED",
+        "traded_on_kucoin": "PARTIAL_EVIDENCE",
+        "traded_somewhere": "NOT_EQUIVALENT_TO_KUCOIN_MEMBERSHIP"
+      },
+      "evidence_level": "CANDLE_DERIVED",
+      "exact_end_evidence_present": false,
+      "expected_evidence": "CANDLE_DERIVED",
+      "identity": "SOL",
+      "membership_fully_resolved": false,
+      "primary_candle_probe": {
+        "bounded_end_exclusive": "2025-01-01T00:00:00Z",
+        "first_open": "2024-04-26T00:00:00+00:00",
+        "http_status": 200,
+        "last_open": "2024-12-31T20:00:00+00:00",
+        "locked_rows": 0,
+        "row_count": 1500
+      },
+      "replacement_candle_probe": null,
+      "sampled_event_boundary_resolved": false,
+      "symbol": "SOL-USDT"
+    },
+    {
+      "case_id": "KNOWN_DELISTED",
+      "case_type": "KNOWN_DELISTED",
+      "distinctions": {
+        "asset_existed": true,
+        "generic_price_may_exist": true,
+        "md01_eligible": "NOT_ESTABLISHED",
+        "traded_on_kucoin": "UNRESOLVED",
+        "traded_somewhere": "NOT_EQUIVALENT_TO_KUCOIN_MEMBERSHIP"
+      },
+      "effective_end": "2023-09-22T07:00:00Z",
+      "evidence_level": "EXCHANGE_ANNOUNCEMENT_EFFECTIVE_TIME",
+      "exact_end_evidence_present": true,
+      "identity": "ARRR",
+      "membership_fully_resolved": false,
+      "primary_candle_probe": {
+        "bounded_end_exclusive": "2025-01-01T00:00:00Z",
+        "first_open": null,
+        "http_status": 200,
+        "last_open": null,
+        "locked_rows": 0,
+        "row_count": 0
+      },
+      "replacement_candle_probe": null,
+      "sampled_event_boundary_resolved": false,
+      "symbol": "ARRR-USDT",
+      "url": "https://www.kucoin.com/announcement/vn-st-kucoin-will-delist-certain-projects-20230921"
+    },
+    {
+      "case_id": "SYMBOL_CHANGE",
+      "case_type": "SYMBOL_CHANGE",
+      "distinctions": {
+        "asset_existed": true,
+        "generic_price_may_exist": true,
+        "md01_eligible": "NOT_ESTABLISHED",
+        "traded_on_kucoin": "UNRESOLVED",
+        "traded_somewhere": "NOT_EQUIVALENT_TO_KUCOIN_MEMBERSHIP"
+      },
+      "effective_end": "2024-08-01T07:00:00Z",
+      "effective_start_replacement": "2024-08-21T08:00:00Z",
+      "evidence_level": "EXCHANGE_ANNOUNCEMENT_EFFECTIVE_TIME",
+      "exact_end_evidence_present": true,
+      "identity": "RENDER",
+      "membership_fully_resolved": false,
+      "primary_candle_probe": {
+        "bounded_end_exclusive": "2025-01-01T00:00:00Z",
+        "first_open": null,
+        "http_status": 200,
+        "last_open": null,
+        "locked_rows": 0,
+        "row_count": 0
+      },
+      "replacement_candle_probe": {
+        "bounded_end_exclusive": "2025-01-01T00:00:00Z",
+        "first_open": "2024-08-21T08:00:00+00:00",
+        "http_status": 200,
+        "last_open": "2024-12-31T20:00:00+00:00",
+        "locked_rows": 0,
+        "row_count": 796
+      },
+      "replacement_symbol": "RENDER-USDT",
+      "sampled_event_boundary_resolved": true,
+      "symbol": "RNDR-USDT",
+      "url": "https://www.kucoin.com/announcement/th-kucoin-will-support-the-render-token-rndr-upgrading-to-render-render-20240731"
+    },
+    {
+      "case_id": "CONTRACT_MIGRATION",
+      "case_type": "CONTRACT_MIGRATION",
+      "distinctions": {
+        "asset_existed": true,
+        "generic_price_may_exist": true,
+        "md01_eligible": "NOT_ESTABLISHED",
+        "traded_on_kucoin": "UNRESOLVED",
+        "traded_somewhere": "NOT_EQUIVALENT_TO_KUCOIN_MEMBERSHIP"
+      },
+      "effective_end": "2024-09-06T03:00:00Z",
+      "evidence_level": "CONFLICTED",
+      "exact_end_evidence_present": true,
+      "identity": "POLYGON",
+      "membership_fully_resolved": false,
+      "primary_candle_probe": {
+        "bounded_end_exclusive": "2025-01-01T00:00:00Z",
+        "first_open": null,
+        "http_status": 200,
+        "last_open": null,
+        "locked_rows": 0,
+        "row_count": 0
+      },
+      "replacement_candle_probe": {
+        "bounded_end_exclusive": "2025-01-01T00:00:00Z",
+        "first_open": "2024-04-26T00:00:00+00:00",
+        "http_status": 200,
+        "last_open": "2024-12-31T20:00:00+00:00",
+        "locked_rows": 0,
+        "row_count": 1500
+      },
+      "replacement_symbol": "POL-USDT",
+      "sampled_event_boundary_resolved": false,
+      "symbol": "MATIC-USDT",
+      "url": "https://www.kucoin.com/announcement/en-kucoin-will-support-the-token-swap-of-polygon-matic-to-polygon-pol-20240830"
+    },
+    {
+      "case_id": "REDENOMINATION",
+      "case_type": "REDENOMINATION",
+      "distinctions": {
+        "asset_existed": true,
+        "generic_price_may_exist": true,
+        "md01_eligible": "NOT_ESTABLISHED",
+        "traded_on_kucoin": "PARTIAL_EVIDENCE",
+        "traded_somewhere": "NOT_EQUIVALENT_TO_KUCOIN_MEMBERSHIP"
+      },
+      "evidence_level": "UNRESOLVED",
+      "exact_end_evidence_present": false,
+      "identity": "BITTORRENT",
+      "membership_fully_resolved": false,
+      "primary_candle_probe": {
+        "bounded_end_exclusive": "2025-01-01T00:00:00Z",
+        "first_open": "2024-04-26T00:00:00+00:00",
+        "http_status": 200,
+        "last_open": "2024-12-31T20:00:00+00:00",
+        "locked_rows": 0,
+        "row_count": 1500
+      },
+      "ratio": "1:1000",
+      "replacement_candle_probe": null,
+      "sampled_event_boundary_resolved": false,
+      "symbol": "BTT-USDT",
+      "url": "https://www.kucoin.com/announcement/kucoin-has-completed-the-btt-token-swap-220124"
+    },
+    {
+      "case_id": "MULTIPLE_IDENTITIES",
+      "case_type": "MULTIPLE_HISTORICAL_IDENTITIES",
+      "distinctions": {
+        "asset_existed": true,
+        "generic_price_may_exist": true,
+        "md01_eligible": "NOT_ESTABLISHED",
+        "traded_on_kucoin": "PARTIAL_EVIDENCE",
+        "traded_somewhere": "NOT_EQUIVALENT_TO_KUCOIN_MEMBERSHIP"
+      },
+      "effective_end": "2022-05-26T09:30:00Z",
+      "evidence_level": "CONFLICTED",
+      "exact_end_evidence_present": true,
+      "identity": "TERRA_CLASSIC",
+      "membership_fully_resolved": false,
+      "primary_candle_probe": {
+        "bounded_end_exclusive": "2025-01-01T00:00:00Z",
+        "first_open": "2024-04-26T00:00:00+00:00",
+        "http_status": 200,
+        "last_open": "2024-12-31T20:00:00+00:00",
+        "locked_rows": 0,
+        "row_count": 1500
+      },
+      "replacement_candle_probe": {
+        "bounded_end_exclusive": "2025-01-01T00:00:00Z",
+        "first_open": "2024-04-26T00:00:00+00:00",
+        "http_status": 200,
+        "last_open": "2024-12-31T20:00:00+00:00",
+        "locked_rows": 0,
+        "row_count": 1500
+      },
+      "replacement_symbol": "LUNC-USDT",
+      "sampled_event_boundary_resolved": false,
+      "symbol": "LUNA-USDT",
+      "url": "https://www.kucoin.com/announcement/en-kucoin-will-support-migration-and-airdrop-for-luna-and-ust-tokens"
+    },
+    {
+      "case_id": "UNRESOLVED_IDENTITY",
+      "case_type": "UNRESOLVED_IDENTITY",
+      "distinctions": {
+        "asset_existed": false,
+        "generic_price_may_exist": true,
+        "md01_eligible": "NOT_ESTABLISHED",
+        "traded_on_kucoin": "PARTIAL_EVIDENCE",
+        "traded_somewhere": "NOT_EQUIVALENT_TO_KUCOIN_MEMBERSHIP"
+      },
+      "evidence_level": "UNRESOLVED",
+      "exact_end_evidence_present": false,
+      "identity": null,
+      "membership_fully_resolved": false,
+      "primary_candle_probe": {
+        "bounded_end_exclusive": "2025-01-01T00:00:00Z",
+        "first_open": "2024-04-26T00:00:00+00:00",
+        "http_status": 200,
+        "last_open": "2024-12-31T20:00:00+00:00",
+        "locked_rows": 0,
+        "row_count": 1500
+      },
+      "replacement_candle_probe": null,
+      "sampled_event_boundary_resolved": false,
+      "symbol": "GRAM-USDT"
+    }
+  ],
+  "conclusion": "NO_TESTED_SOURCE_PROVES_COMPLETE_KUCOIN_MEMBERSHIP_AND_DELISTED_4H_HISTORY",
+  "evidence_fingerprint": "e4899689c2011e7010b0729d5bca0f83e69538ce572fc8bff18841b4ba041018",
+  "fully_resolved_sample_cases": 0,
+  "holdout_2026_accessed": false,
+  "sample_case_count": 8,
+  "schema_version": "ams-md01r2-source-feasibility-v1",
+  "status": "PARTIAL",
+  "study_phase": "PHASE_A_HISTORICAL_UNIVERSE_RECOVERY",
+  "test_2025_accessed": false
+}
