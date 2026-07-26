@@ -16,7 +16,7 @@ from collections import defaultdict
 from collections.abc import Mapping, Sequence
 from dataclasses import asdict, replace
 from pathlib import Path
-from typing import Any
+from typing import Any, cast
 
 import numpy as np
 import pandas as pd
@@ -67,7 +67,7 @@ def historical_trial(root: Path) -> dict[str, Any]:
         raise Ed01Error("historical T12 configuration mismatch")
     if value.get("portfolio_profile_id") != T12_PROFILE_ID:
         raise Ed01Error("historical T12 portfolio mismatch")
-    return value
+    return cast(dict[str, Any], value)
 
 
 def load_registered_v4_source(root: Path) -> tuple[pd.DataFrame, pd.DataFrame, dict[str, str]]:
@@ -334,24 +334,27 @@ def serialise_fold(result: V5FoldResult) -> dict[str, Any]:
         for item in result.candidates
         if not item.accepted and item.rejection_reason is not None
     ][:100]
-    return _jsonable(
-        {
-            "fold_id": result.fold_id,
-            "status": result.status,
-            "metrics": _native_metrics(result),
-            "candidate_ledger": [asdict(item) for item in accepted + rejected_sample],
-            "candidate_ledger_scope": {
-                "stored": "ALL_ACCEPTED_PLUS_FIRST_100_REJECTED_DETERMINISTIC",
-                "total_candidates": len(result.candidates),
-                "accepted_candidates": len(accepted),
-                "sampled_rejected_candidates": len(rejected_sample),
-            },
-            "scheduled_entries": [asdict(item) for item in result.scheduled_entries],
-            "fill_ledger": [asdict(item) for item in result.fills],
-            "trade_ledger": [asdict(item) for item in result.trades],
-            "reconciliation": asdict(result.reconciliation),
-            "open_positions_after_fold": result.open_positions_after_fold,
-        }
+    return cast(
+        dict[str, Any],
+        _jsonable(
+            {
+                "fold_id": result.fold_id,
+                "status": result.status,
+                "metrics": _native_metrics(result),
+                "candidate_ledger": [asdict(item) for item in accepted + rejected_sample],
+                "candidate_ledger_scope": {
+                    "stored": "ALL_ACCEPTED_PLUS_FIRST_100_REJECTED_DETERMINISTIC",
+                    "total_candidates": len(result.candidates),
+                    "accepted_candidates": len(accepted),
+                    "sampled_rejected_candidates": len(rejected_sample),
+                },
+                "scheduled_entries": [asdict(item) for item in result.scheduled_entries],
+                "fill_ledger": [asdict(item) for item in result.fills],
+                "trade_ledger": [asdict(item) for item in result.trades],
+                "reconciliation": asdict(result.reconciliation),
+                "open_positions_after_fold": result.open_positions_after_fold,
+            }
+        ),
     )
 
 
