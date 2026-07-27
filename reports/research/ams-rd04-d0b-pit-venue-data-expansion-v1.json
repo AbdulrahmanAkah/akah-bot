@@ -1,0 +1,169 @@
+{
+  "acquisition_summary": {
+    "attempted_symbol_count": 75,
+    "complete_symbol_count": 34,
+    "expanded_symbol_count": 64,
+    "incomplete_1d_group_count": 20,
+    "incomplete_8h_group_count": 4,
+    "integrity_failure_count": 38,
+    "no_data_symbol_count": 3
+  },
+  "authorizations": {
+    "additional_source_expansion_research_authorized": false,
+    "ati_v1_authorized": false,
+    "entry_change_authorized": false,
+    "exit_change_authorized": false,
+    "live_ready": false,
+    "production_ready": false,
+    "ranking_change_authorized": false,
+    "rd04_d1_pit_universe_replay_research_authorized": false,
+    "universe_change_authorized": false,
+    "weight_change_authorized": false
+  },
+  "datasets": {
+    "availability": {
+      "bytes": 8160,
+      "file_sha256": "74663397b4a48633bcd078a4e8517427929c24aac265f0db9c7a3bca2f00afc9",
+      "path": "data/research/rd04/kucoin-spot-usdt-expanded-v1/ams-rd04-d0b-kucoin-expanded-availability.parquet",
+      "row_count": 64,
+      "symbol_count": 64
+    },
+    "daily": {
+      "bytes": 2932477,
+      "content_sha256": "a1222d493d640fc840a9613bd1f0729de0721af856fd24cb0e15de2868351472",
+      "file_sha256": "eb57efcd2fc23c1ce674aada5f01f8cde53b271b4f30ee4c116346f5fc462f8c",
+      "first_bar_open_time": "2021-01-01T00:00:00+00:00",
+      "last_bar_close_time": "2025-01-01T00:00:00+00:00",
+      "path": "data/research/rd04/kucoin-spot-usdt-expanded-v1/ams-rd04-d0b-kucoin-expanded-1d.parquet",
+      "row_count": 74733,
+      "symbol_count": 64
+    },
+    "eight_hour": {
+      "bytes": 7970224,
+      "content_sha256": "6bf5d3196fe0f01d579a176a4d0293e607b605a1cb2bf9fb61176874e085b2b4",
+      "file_sha256": "8656d9db299d3eb6d85cdb974b6f4f1d3b520a2176ef9c6fac878a73adf2a4f4",
+      "first_bar_open_time": "2021-01-01T00:00:00+00:00",
+      "last_bar_close_time": "2025-01-01T00:00:00+00:00",
+      "path": "data/research/rd04/kucoin-spot-usdt-expanded-v1/ams-rd04-d0b-kucoin-expanded-8h.parquet",
+      "row_count": 224244,
+      "symbol_count": 64
+    },
+    "four_hour": {
+      "bytes": 13736123,
+      "content_sha256": "222f943a59e8d43e6240745f54c95101df3dad9f3aa87cb603759ff66060cf94",
+      "file_sha256": "1b7510862238f7a65cd624527c7cfe085dbb466789f0bd5f4003a8afd4dc0173",
+      "first_bar_open_time": "2021-01-01T00:00:00+00:00",
+      "last_bar_close_time": "2025-01-01T00:00:00+00:00",
+      "path": "data/research/rd04/kucoin-spot-usdt-expanded-v1/ams-rd04-d0b-kucoin-expanded-4h.parquet",
+      "row_count": 448493,
+      "symbol_count": 64
+    }
+  },
+  "decision": {
+    "additional_source_expansion_research_authorized": false,
+    "complete_snapshot_count": 157,
+    "decision": "BLOCKED_BY_DATA_INTEGRITY",
+    "maximum_required_market_cap_rank": 41,
+    "minimum_selected_count": 30,
+    "rd04_d1_pit_universe_replay_research_authorized": false,
+    "reason": "ONE_OR_MORE_ACQUIRED_SYMBOL_DATASETS_FAILED_INTEGRITY",
+    "snapshot_count": 157,
+    "universe_change_authorized": false
+  },
+  "financial_fingerprints": [
+    {
+      "after": "bfea9d7c82c79716e6ce19b60a537de5f83c802c3b758e876fb4c3198ae6bd99",
+      "before": "bfea9d7c82c79716e6ce19b60a537de5f83c802c3b758e876fb4c3198ae6bd99",
+      "fold_id": "WF01",
+      "invariant": true,
+      "trade_count": 29
+    },
+    {
+      "after": "1b7a649b8f7ca64a0232be4f65cecc879abebb5cd7a9d8f03d520d49e4dfecb6",
+      "before": "1b7a649b8f7ca64a0232be4f65cecc879abebb5cd7a9d8f03d520d49e4dfecb6",
+      "fold_id": "WF02",
+      "invariant": true,
+      "trade_count": 59
+    },
+    {
+      "after": "e0c95a0d11e46bd1e4a348802277e775129d8d85c3bb310ff7b0e3321fef5848",
+      "before": "e0c95a0d11e46bd1e4a348802277e775129d8d85c3bb310ff7b0e3321fef5848",
+      "fold_id": "WF03",
+      "invariant": true,
+      "trade_count": 59
+    }
+  ],
+  "generated_at": "2026-07-27T16:28:09.540037+00:00",
+  "identity_summary": {
+    "aliased_identity_rows": 7,
+    "excluded_identity_rows": 3,
+    "overlay_audit_rows": 99,
+    "repaired_canonical_assets": 91
+  },
+  "outputs": {
+    "acquisition_manifest": "reports/research/ams-rd04-d0b-acquisition-manifest-v1.csv",
+    "expanded_availability": "reports/research/ams-rd04-d0b-expanded-availability-v1.csv",
+    "expanded_dataset_registration": "reports/research/ams-rd04-d0b-expanded-dataset-registration-v1.json",
+    "identity_overlay_audit": "reports/research/ams-rd04-d0b-identity-overlay-audit-v1.csv",
+    "source_attempts": "reports/research/ams-rd04-d0b-source-attempts-v1.csv",
+    "symbol_data_status": "reports/research/ams-rd04-d0b-symbol-data-status-v1.csv",
+    "venue_eligible_weekly_candidates": "reports/research/ams-rd04-d0b-venue-eligible-weekly-candidates-v1.csv",
+    "weekly_ranked_pool": "reports/research/ams-rd04-d0b-weekly-ranked-pool-v1.csv",
+    "weekly_snapshot_summary": "reports/research/ams-rd04-d0b-weekly-snapshot-summary-v1.csv"
+  },
+  "ranked_pool_summary": {
+    "maximum_ranked_assets": 90,
+    "minimum_ranked_assets": 79,
+    "ranked_pool_rows": 13305,
+    "weekly_snapshots": 157
+  },
+  "raw_sources": {
+    "coinmetrics_market_cap": {
+      "bytes": 17665158,
+      "path": "data/research/rd01/dominance/raw/coinmetrics-community-market-cap-panel-2021-2024.json",
+      "sha256": "f78c608f47d01da4853011c86ded2a6e9478a8e8ece472d27dc80bc0ba1ec9c9"
+    },
+    "defillama_stablecoin_catalogue": {
+      "bytes": 539345,
+      "path": "data/research/rd04/eligibility/raw/defillama-stablecoins-catalogue.json",
+      "sha256": "8755b6863f73292085c89e0b33266ab1104a9c2b5928c52228ece4eeef4b90bc"
+    },
+    "kucoin_legacy_endpoint": "https://api.kucoin.com/api/v1/market/candles",
+    "kucoin_uta_endpoint": "https://api.kucoin.com/api/ua/v1/market/kline"
+  },
+  "research_stage": "RD04-D0B",
+  "safety": {
+    "averaging_down_authorized": false,
+    "holdout_2026_accessed": false,
+    "kelly_used": false,
+    "leverage_used": false,
+    "portfolio_simulation_changed": false,
+    "pyramiding_authorized": false,
+    "test_2025_accessed": false,
+    "trade_logic_changed": false
+  },
+  "schema_version": "ams-rd04-d0b-pit-venue-data-expansion-v1",
+  "source_commit": "24a83747674c7e4ca5744599899c687784af2ef4",
+  "status": "COMPLETE",
+  "upstream": {
+    "rd04_d0a_decision": "NORMALIZED_PIT_UNIVERSE_DATA_EXPANSION_REQUIRED",
+    "rd04_d0a_evidence_commit": "be06c32cc3b7ae4647040e1d505a7e9d2be38576"
+  },
+  "validation": {
+    "canonical_assets_unique_per_snapshot": true,
+    "complete_snapshot_count": 157,
+    "expected_trade_count": 147,
+    "financial_invariance": true,
+    "no_2025_access": true,
+    "observed_trade_count": 147,
+    "portfolio_simulation_changed": false,
+    "selected_rows": 4710,
+    "selected_rows_match_ready_decision": true,
+    "snapshot_count": 157,
+    "snapshot_count_matches": true,
+    "status": "COMPLETE",
+    "trade_count_matches": true,
+    "trade_logic_changed": false
+  },
+  "variant_id": "MD01-M05"
+}
