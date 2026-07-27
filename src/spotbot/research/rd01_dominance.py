@@ -938,12 +938,12 @@ def tag_events_causally(
         left[event_time_column],
         utc=True,
         errors="raise",
-    )
+    ).astype("datetime64[ns, UTC]")
     right["available_at"] = pd.to_datetime(
         right["available_at"],
         utc=True,
         errors="raise",
-    )
+    ).astype("datetime64[ns, UTC]")
     left = left.sort_values(event_time_column, kind="stable")
     right = right.sort_values("available_at", kind="stable")
 

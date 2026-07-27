@@ -187,6 +187,33 @@ def test_causal_tagging_uses_only_available_observations() -> None:
     assert tagged["day"].iloc[1] == pd.Timestamp("2021-01-04T00:00:00Z")
 
 
+def test_causal_tagging_normalizes_mixed_datetime_precision() -> None:
+    _, _, aligned = parse_pair(periods=10)
+    events = pd.DataFrame(
+        {
+            "event_time": pd.Series(
+                [
+                    pd.Timestamp("2021-01-03T12:00:00Z"),
+                    pd.Timestamp("2021-01-05T00:00:00Z"),
+                ],
+                dtype="datetime64[us, UTC]",
+            )
+        }
+    )
+    mixed = aligned.copy()
+    mixed["available_at"] = mixed["available_at"].astype("datetime64[ns, UTC]")
+
+    assert str(events["event_time"].dtype) == "datetime64[us, UTC]"
+    assert str(mixed["available_at"].dtype) == "datetime64[ns, UTC]"
+
+    tagged = tag_events_causally(events, mixed)
+
+    assert str(tagged["event_time"].dtype) == "datetime64[ns, UTC]"
+    assert str(tagged["available_at"].dtype) == "datetime64[ns, UTC]"
+    assert tagged["day"].iloc[0] == pd.Timestamp("2021-01-02T00:00:00Z")
+    assert tagged["day"].iloc[1] == pd.Timestamp("2021-01-04T00:00:00Z")
+
+
 def test_future_mutation_cannot_change_past_tags() -> None:
     _, _, aligned = parse_pair(periods=20)
     events = pd.DataFrame(
