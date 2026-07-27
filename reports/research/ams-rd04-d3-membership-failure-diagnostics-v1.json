@@ -1,0 +1,235 @@
+{
+  "authorizations": {
+    "ati_v1_authorized": false,
+    "candidate_universe_authorized": false,
+    "entry_change_authorized": false,
+    "exit_change_authorized": false,
+    "live_ready": false,
+    "point_in_time_universe_research_baseline_authorized": false,
+    "production_ready": false,
+    "ranking_change_authorized": false,
+    "rd04_d4_hypothesis_registration_research_authorized": true,
+    "universe_change_authorized": false,
+    "weight_change_authorized": false
+  },
+  "candidate_validation": {
+    "all_rows_venue_data_eligible": true,
+    "duplicate_symbol_snapshot_rows": 0,
+    "maximum_snapshot_size": 30,
+    "minimum_snapshot_size": 30,
+    "monday_midnight_only": true,
+    "passed": true,
+    "pre_2025_only": true,
+    "row_count": 4710,
+    "snapshot_count": 157,
+    "venue_ranks_valid": true
+  },
+  "common_path_comparison": {
+    "fixed_common_net_pnl": 184485.8450530305,
+    "intersection_common_net_pnl": 38881.65388182799,
+    "intersection_minus_fixed_common_net_pnl": -145604.19117120252,
+    "pit_common_net_pnl": 62635.885796607836,
+    "pit_minus_intersection_common_net_pnl": 23754.231914779848,
+    "pit_minus_union_common_net_pnl": -64514.65071745738,
+    "union_common_net_pnl": 127150.53651406521,
+    "union_minus_fixed_common_net_pnl": -57335.308538965284
+  },
+  "d2_base_cost_return_attribution": {
+    "addition_after_removal": -0.6309145402187201,
+    "addition_on_fixed": -2.1306047851802674,
+    "addition_shapley": -1.3807596626994938,
+    "cost_mode": "BASE_COST",
+    "decomposition_error": -2.220446049250313e-16,
+    "decomposition_exact": true,
+    "fixed_value": 2.6861470605832247,
+    "interaction": 1.4996902449615477,
+    "intersection_value": 0.14988002451666427,
+    "metric": "compounded_return",
+    "pit_value": -0.4810345157020558,
+    "removal_shapley": -1.7864219135857866,
+    "removal_with_entrants": -1.0365767911050128,
+    "removal_without_entrants": -2.5362670360665605,
+    "total_pit_minus_fixed": -3.1671815762852806,
+    "transaction_cost": 0.002,
+    "union_value": 0.5555422754029571
+  },
+  "decision": {
+    "candidate_universe_authorized": false,
+    "common_member_path_degradation_confirmed": false,
+    "decision": "ENTRANT_EDGE_AND_SURVIVOR_DISPLACEMENT_CONFIRMED",
+    "entrant_negative_edge_confirmed": true,
+    "entrant_pit_net_pnl": -94301.5435961918,
+    "entrant_union_net_pnl": -97193.91766048955,
+    "entry_change_authorized": false,
+    "exit_change_authorized": false,
+    "live_ready": false,
+    "next_research_recommendation": "RD04_D4_CAUSAL_ELIGIBILITY_HYPOTHESIS_REGISTRATION",
+    "pit_minus_intersection_common_net_pnl": 23754.231914779848,
+    "point_in_time_universe_research_baseline_authorized": false,
+    "production_ready": false,
+    "ranking_change_authorized": false,
+    "rd04_d4_hypothesis_registration_research_authorized": true,
+    "reason": "NEGATIVE_ENTRANT_EDGE_AND_POSITIVE_REMOVED_SURVIVOR_OPPORTUNITY",
+    "removed_survivor_fixed_net_pnl": 99489.7769194499,
+    "removed_survivor_union_net_pnl": 90613.37963955523,
+    "structural_checks": {
+      "annotated_trade_count_matches": true,
+      "candidate_schedule_valid": true,
+      "d2_authorized_d3": true,
+      "d2_decision_mixed_membership_failure": true,
+      "d2_decomposition_exact": true,
+      "d2_fixed_replay_match": true,
+      "d2_no_2025_access": true,
+      "d2_no_2026_access": true,
+      "d2_no_candidate_universe": true,
+      "d2_no_parameter_optimisation": true,
+      "d2_pit_replay_match": true,
+      "d2_status_complete": true,
+      "d2_trade_logic_unchanged": true,
+      "d2_validation_complete": true,
+      "input_hashes_invariant": true,
+      "membership_snapshots_match_candidates": true,
+      "mode_roles_valid": true,
+      "no_2025_entries": true,
+      "no_outside_membership_trades": true,
+      "no_portfolio_simulation_executed": true,
+      "no_post_lock_exits": true,
+      "registered_dataset_hashes_match_d2": true,
+      "trade_totals_match_d2": true
+    },
+    "structural_pass": true,
+    "survivor_displacement_confirmed": true,
+    "union_minus_fixed_common_net_pnl": -57335.308538965284,
+    "universe_change_authorized": false,
+    "weight_change_authorized": false
+  },
+  "generated_at": "2026-07-27T20:22:42.434970Z",
+  "input_hashes": {
+    "d0c_weekly_candidates": "17cf3cca1400c071afe75b86342b09718aba2f84992777f18ffb17436f9a138b",
+    "d2_base_cost_trades": "8da6a3d7061895dc0ee9bbc8dea191f0dd25a4294878d1f7622b52fb40da38a8",
+    "d2_membership_snapshots": "875b06c250d491569b7ca989a17a2f09f4452abaaa50cad6862c231ed963bfec",
+    "d2_report": "3bc676368e51163cb2f25aa4ae8cd4242ba59f2e20c4887fcf6bc6af823bb135"
+  },
+  "membership_summary": {
+    "candidate_row_count": 4710,
+    "fixed_only_symbol_count": 14,
+    "fixed_symbol_count": 30,
+    "pit_entrant_symbol_count": 25,
+    "pit_ever_symbol_count": 41,
+    "snapshot_count": 157
+  },
+  "membership_validation": {
+    "mismatch_count": 0,
+    "passed": true,
+    "row_count": 157
+  },
+  "mode_role_validation": {
+    "invalid_role_count": 0,
+    "passed": true
+  },
+  "outputs": {
+    "common_path_comparison": "reports/research/ams-rd04-d3-common-path-comparison-v1.csv",
+    "entrant_trade_diagnostics": "reports/research/ams-rd04-d3-entrant-trade-diagnostics-v1.csv",
+    "membership_exposure": "reports/research/ams-rd04-d3-membership-exposure-v1.csv",
+    "rank_tenure_diagnostics": "reports/research/ams-rd04-d3-rank-tenure-diagnostics-v1.csv",
+    "removed_survivor_opportunity": "reports/research/ams-rd04-d3-removed-survivor-opportunity-v1.csv",
+    "role_summary": "reports/research/ams-rd04-d3-role-summary-v1.csv",
+    "symbol_diagnostics": "reports/research/ams-rd04-d3-symbol-diagnostics-v1.csv",
+    "trade_membership_attribution": "reports/research/ams-rd04-d3-trade-membership-attribution-v1.csv"
+  },
+  "registered_dataset_hashes": {
+    "availability": "de71d0a229120873fc7294cef52b41c577e81bc466f009a49a970a8bfe21473e",
+    "daily": "c716a0586b572939a93035b5e85d30f9ad1a18e1a05521dc801bf4ab6728c10d",
+    "eight_hour": "9335e64d558c6494a6712c718e239096d65d4d5309c97985c49ed234ebc0721b",
+    "four_hour": "591e9006ffa0ab7538869b4c5c2d8d66fac98736e60a1d6b09ee302b403feb70"
+  },
+  "research_stage": "RD04-D3",
+  "role_pnl": {
+    "FIXED_SURVIVOR_30|COMMON_MEMBER": 184485.8450530305,
+    "FIXED_SURVIVOR_30|REMOVED_SURVIVOR": 99489.7769194499,
+    "INTERSECTION_FIXED_AND_PIT|COMMON_MEMBER": 38881.65388182799,
+    "PIT_UNIVERSE|COMMON_MEMBER": 62635.885796607836,
+    "PIT_UNIVERSE|PIT_ENTRANT": -94301.5435961918,
+    "UNION_FIXED_AND_PIT|COMMON_MEMBER": 127150.53651406521,
+    "UNION_FIXED_AND_PIT|PIT_ENTRANT": -97193.91766048955,
+    "UNION_FIXED_AND_PIT|REMOVED_SURVIVOR": 90613.37963955523
+  },
+  "safety": {
+    "averaging_down_authorized": false,
+    "candidate_universe_created": false,
+    "holdout_2026_accessed": false,
+    "kelly_used": false,
+    "leverage_used": false,
+    "parameter_optimisation_used": false,
+    "portfolio_simulation_changed": false,
+    "portfolio_simulation_executed": false,
+    "pyramiding_authorized": false,
+    "test_2025_accessed": false,
+    "trade_logic_changed": false
+  },
+  "schema_version": "ams-rd04-d3-membership-failure-diagnostics-v1",
+  "source_commit": "02156d02958a87eac05800e454bc88f4ae5f7671",
+  "status": "COMPLETE",
+  "trade_validation": {
+    "mismatches": [],
+    "observed": {
+      "FIXED_SURVIVOR_30": {
+        "net_pnl": 283975.6219724804,
+        "trade_count": 147.0
+      },
+      "INTERSECTION_FIXED_AND_PIT": {
+        "net_pnl": 38881.653881828,
+        "trade_count": 125.0
+      },
+      "PIT_UNIVERSE": {
+        "net_pnl": -31665.65779958396,
+        "trade_count": 153.0
+      },
+      "UNION_FIXED_AND_PIT": {
+        "net_pnl": 120569.9984931309,
+        "trade_count": 152.0
+      }
+    },
+    "passed": true
+  },
+  "upstream": {
+    "rd04_d0c_weekly_candidates": "reports/research/ams-rd04-d0c-venue-eligible-weekly-candidates-v1.csv",
+    "rd04_d2_base_cost_trades": "reports/research/ams-rd04-d2-base-cost-trades-v1.csv",
+    "rd04_d2_decision": "MIXED_MEMBERSHIP_FAILURE",
+    "rd04_d2_report": "reports/research/ams-rd04-d2-universe-membership-attribution-v1.json",
+    "rd04_d2_source_commit": "35024c2accde6f1216a566ed189a06f424b9cfe5"
+  },
+  "validation": {
+    "annotated_trade_count": 577,
+    "annotated_trade_count_matches": true,
+    "candidate_schedule_valid": true,
+    "d2_authorized_d3": true,
+    "d2_decision_mixed_membership_failure": true,
+    "d2_decomposition_exact": true,
+    "d2_fixed_replay_match": true,
+    "d2_no_2025_access": true,
+    "d2_no_2026_access": true,
+    "d2_no_candidate_universe": true,
+    "d2_no_parameter_optimisation": true,
+    "d2_pit_replay_match": true,
+    "d2_status_complete": true,
+    "d2_trade_logic_unchanged": true,
+    "d2_validation_complete": true,
+    "entrant_trade_count": 140,
+    "fixed_symbol_count": 30,
+    "input_hashes_invariant": true,
+    "membership_snapshots_match_candidates": true,
+    "mode_roles_valid": true,
+    "no_2025_entries": true,
+    "no_outside_membership_trades": true,
+    "no_portfolio_simulation_executed": true,
+    "no_post_lock_exits": true,
+    "pit_candidate_row_count": 4710,
+    "pit_snapshot_count": 157,
+    "registered_dataset_hashes_match_d2": true,
+    "removed_survivor_trade_count": 111,
+    "status": "COMPLETE",
+    "trade_totals_match_d2": true
+  },
+  "variant_id": "MD01-M05"
+}
