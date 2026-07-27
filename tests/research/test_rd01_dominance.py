@@ -122,6 +122,40 @@ def test_defillama_parser_handles_pegged_usd_mapping() -> None:
     assert (stable["available_at"] - stable["day"]).eq(DECISION_LAG).all()
 
 
+def test_defillama_parser_accepts_numeric_string_unix_dates() -> None:
+    payload = stablecoin_payload("2021-01-01", 3)
+
+    for record in payload:
+        record["date"] = str(record["date"])
+
+    stable = parse_defillama_stablecoin_history(
+        payload,
+        start=pd.Timestamp("2021-01-01T00:00:00Z"),
+        end_exclusive=pd.Timestamp("2021-01-04T00:00:00Z"),
+    )
+
+    assert len(stable) == 3
+    assert stable["day"].iloc[0] == pd.Timestamp("2021-01-01T00:00:00Z")
+    assert (stable["available_at"] - stable["day"]).eq(DECISION_LAG).all()
+
+
+def test_defillama_parser_preserves_iso_date_strings() -> None:
+    payload = stablecoin_payload("2021-01-01", 2)
+    payload[0]["date"] = "2021-01-01T00:00:00Z"
+    payload[1]["date"] = "2021-01-02"
+
+    stable = parse_defillama_stablecoin_history(
+        payload,
+        start=pd.Timestamp("2021-01-01T00:00:00Z"),
+        end_exclusive=pd.Timestamp("2021-01-03T00:00:00Z"),
+    )
+
+    assert stable["day"].tolist() == [
+        pd.Timestamp("2021-01-01T00:00:00Z"),
+        pd.Timestamp("2021-01-02T00:00:00Z"),
+    ]
+
+
 def test_alignment_is_inner_without_forward_fill() -> None:
     _, _, aligned = parse_pair(
         periods=10,

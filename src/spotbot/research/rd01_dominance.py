@@ -547,9 +547,28 @@ def parse_defillama_stablecoin_history(
             raise DominanceDataError("DefiLlama stablecoin entry must be an object.")
 
         raw_date = record.get("date")
+        unix_seconds: float | None = None
 
-        if isinstance(raw_date, (int, float)):
-            timestamp = pd.Timestamp(datetime.fromtimestamp(float(raw_date), tz=UTC))
+        if isinstance(raw_date, (int, float)) and not isinstance(raw_date, bool):
+            unix_seconds = float(raw_date)
+        elif isinstance(raw_date, str):
+            stripped_date = raw_date.strip()
+
+            try:
+                unix_seconds = float(stripped_date)
+            except ValueError:
+                unix_seconds = None
+
+        if unix_seconds is not None:
+            if not math.isfinite(unix_seconds):
+                raise DominanceDataError("DefiLlama date contains a non-finite Unix timestamp.")
+
+            try:
+                timestamp = pd.Timestamp(datetime.fromtimestamp(unix_seconds, tz=UTC))
+            except (OverflowError, OSError, ValueError) as error:
+                raise DominanceDataError(
+                    f"DefiLlama date contains an invalid Unix timestamp: {raw_date!r}"
+                ) from error
         else:
             timestamp = utc_timestamp(raw_date)
 
