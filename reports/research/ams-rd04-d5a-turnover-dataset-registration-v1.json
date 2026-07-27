@@ -1,0 +1,41 @@
+{
+  "datasets": {
+    "daily": {
+      "file_sha256": "d64cdaf7a91af065056df1428c46a97e64aea88e88db07dd13e9faddc33e4446",
+      "first_bar_open_time": "2021-01-01T00:00:00+00:00",
+      "last_bar_close_time": "2025-01-01T00:00:00+00:00",
+      "path": "data/research/rd04/kucoin-native-quote-turnover-v1/ams-rd04-d5a-native-quote-turnover-1d.parquet",
+      "row_count": 76612,
+      "symbol_count": 66
+    },
+    "four_hour": {
+      "file_sha256": "76b88fb8d79f03d47630e2a285629827176583a5912115a34c141c496453f357",
+      "first_bar_open_time": "2021-01-01T00:00:00+00:00",
+      "last_bar_close_time": "2025-01-01T00:00:00+00:00",
+      "pair_count": 66,
+      "path": "data/research/rd04/kucoin-native-quote-turnover-v1/ams-rd04-d5a-native-quote-turnover-4h.parquet",
+      "row_count": 459771
+    }
+  },
+  "schema_version": "ams-rd04-d5a-kucoin-quote-turnover-contract-v1",
+  "source": {
+    "close_times_volume_approximation_used": false,
+    "endpoint": "https://api.kucoin.com/api/v1/market/candles",
+    "exchange": "kucoin",
+    "interval": "4hour",
+    "market_type": "spot",
+    "official_documentation": "https://www.kucoin.com/docs-new/rest/spot-trading/market-data/get-klines",
+    "quote_currency": "USDT",
+    "quote_turnover_source": "NATIVE_SEVENTH_KLINE_FIELD",
+    "response_field_order": [
+      "start_time",
+      "open",
+      "close",
+      "high",
+      "low",
+      "base_volume",
+      "quote_turnover_usdt"
+    ]
+  },
+  "status": "PASS"
+}
