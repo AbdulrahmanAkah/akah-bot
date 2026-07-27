@@ -259,3 +259,36 @@ def test_canonical_hash_is_order_independent() -> None:
     assert left == right
     assert sha256_bytes(left) == sha256_bytes(right)
     assert json.loads(left) == {"a": 1, "b": 2}
+
+
+def test_parser_derives_dominance_from_free_market_cap_panel() -> None:
+    payload = {
+        "data": [
+            {
+                "asset": "btc",
+                "time": "2021-01-01T00:02:00+00:00",
+                "CapMrktCurUSD": "500",
+            },
+            {
+                "asset": "eth",
+                "time": "2021-01-01T00:03:00+00:00",
+                "CapMrktCurUSD": "300",
+            },
+            {
+                "asset": "xrp",
+                "time": "2021-01-01T00:04:00+00:00",
+                "CapMrktCurUSD": "200",
+            },
+        ]
+    }
+    market = parse_coinmetrics_dominance_history(
+        payload,
+        start=pd.Timestamp("2021-01-01T00:00:00Z"),
+        end_exclusive=pd.Timestamp("2021-01-02T00:00:00Z"),
+    )
+
+    assert len(market) == 1
+    assert market["total_market_cap_usd"].iloc[0] == pytest.approx(1_000.0)
+    assert market["btc_dominance_pct"].iloc[0] == pytest.approx(50.0)
+    assert market["eth_dominance_pct"].iloc[0] == pytest.approx(30.0)
+    assert market["altcoin_market_cap_usd"].iloc[0] == pytest.approx(500.0)

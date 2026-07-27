@@ -126,7 +126,7 @@ def build_coinmetrics_dominance_url(
     start: pd.Timestamp = RESEARCH_START,
     end_exclusive: pd.Timestamp = RESEARCH_END_EXCLUSIVE,
 ) -> str:
-    """Build the free Coin Metrics Community daily dominance request."""
+    """Build the free Coin Metrics Community daily market-cap panel request."""
 
     start_utc = utc_timestamp(start)
     end_utc = utc_timestamp(end_exclusive)
@@ -135,13 +135,15 @@ def build_coinmetrics_dominance_url(
         raise ValueError("end_exclusive must be after start.")
 
     params = {
-        "assets": "btc,eth",
-        "metrics": "CapMrktEstDomPct,CapMrktEstUSD,CapMrktCurUSD",
+        "assets": "*",
+        "metrics": "CapMrktCurUSD",
         "start_time": start_utc.isoformat(),
         "end_time": (end_utc - pd.Timedelta(days=1)).isoformat(),
         "frequency": "1d",
         "page_size": "10000",
         "paging_from": "start",
+        "ignore_forbidden_errors": "true",
+        "ignore_unsupported_errors": "true",
     }
     return (
         f"{COINMETRICS_COMMUNITY_BASE}{COINMETRICS_ASSET_METRICS_PATH}"
@@ -196,9 +198,9 @@ def fetch_coinmetrics_dominance_history(
     start: pd.Timestamp = RESEARCH_START,
     end_exclusive: pd.Timestamp = RESEARCH_END_EXCLUSIVE,
 ) -> tuple[str, bytes]:
-    """Download free daily BTC/ETH estimated dominance from Coin Metrics."""
+    """Download and freeze the free paginated Coin Metrics market-cap panel."""
 
-    url = build_coinmetrics_dominance_url(
+    initial_url = build_coinmetrics_dominance_url(
         start=start,
         end_exclusive=end_exclusive,
     )
@@ -206,7 +208,54 @@ def fetch_coinmetrics_dominance_history(
         "Accept": "application/json",
         "User-Agent": "spot-speculation-bot-rd01/1.0",
     }
-    return url, fetcher(url, headers)
+    page_url: str | None = initial_url
+    seen_urls: set[str] = set()
+    rows: list[Any] = []
+    page_count = 0
+
+    while page_url is not None:
+        if page_url in seen_urls:
+            raise DominanceDataError("Coin Metrics pagination repeated a page URL.")
+        seen_urls.add(page_url)
+
+        page_payload = decode_json_bytes(
+            fetcher(page_url, headers),
+            source="Coin Metrics",
+        )
+        if not isinstance(page_payload, dict):
+            raise DominanceDataError("Coin Metrics page must be a JSON object.")
+
+        page_data = page_payload.get("data")
+        if not isinstance(page_data, list):
+            raise DominanceDataError("Coin Metrics page is missing data array.")
+        rows.extend(page_data)
+        page_count += 1
+
+        if page_count > 500:
+            raise DominanceDataError("Coin Metrics pagination exceeded 500 pages.")
+
+        next_page = page_payload.get("next_page_url")
+        if next_page is None or next_page == "":
+            page_url = None
+        elif not isinstance(next_page, str):
+            raise DominanceDataError("Coin Metrics next_page_url must be text.")
+        else:
+            page_url = next_page.replace(
+                "https://api.coinmetrics.io/v4/",
+                f"{COINMETRICS_COMMUNITY_BASE}/",
+                1,
+            )
+
+    if not rows:
+        raise DominanceDataUnavailable("Coin Metrics returned no free market-cap history.")
+
+    frozen_payload = {
+        "data": rows,
+        "page_count": page_count,
+        "request_url": initial_url,
+        "source_definition": "SUM_FREE_CAPMRKTCURUSD_BY_UTC_DAY",
+    }
+    return initial_url, canonical_json_bytes(frozen_payload)
 
 
 def fetch_defillama_stablecoin_history(
@@ -249,146 +298,205 @@ def parse_coinmetrics_dominance_history(
     start: pd.Timestamp = RESEARCH_START,
     end_exclusive: pd.Timestamp = RESEARCH_END_EXCLUSIVE,
 ) -> pd.DataFrame:
-    """Normalize free Coin Metrics BTC/ETH dominance to one row per UTC day."""
+    """Normalize free Coin Metrics market caps and derive daily dominance."""
 
     if not isinstance(payload, dict):
         raise DominanceDataError("Coin Metrics payload must be a JSON object.")
 
     data = payload.get("data")
-
     if not isinstance(data, list):
         raise DominanceDataError("Coin Metrics payload is missing data array.")
 
     asset_rows: list[dict[str, Any]] = []
 
-    for record in cast(list[Any], data):
+    for record in data:
         if not isinstance(record, dict):
             raise DominanceDataError("Coin Metrics data entry must be an object.")
 
-        asset = str(record.get("asset") or "").lower()
+        asset = str(record.get("asset") or "").lower().strip()
+        if not asset:
+            continue
 
-        if asset not in {"btc", "eth"}:
+        cap_value = record.get("CapMrktCurUSD")
+        if cap_value is None:
+            cap_value = record.get("CapMrktEstUSD")
+        if cap_value is None:
             continue
 
         timestamp = utc_timestamp(record.get("time"))
         day = timestamp.normalize()
-        dominance = _require_finite_number(
-            record.get("CapMrktEstDomPct"),
-            field="CapMrktEstDomPct",
-            source="Coin Metrics",
-        )
-        cap_value = record.get("CapMrktEstUSD")
-
-        if cap_value is None:
-            cap_value = record.get("CapMrktCurUSD")
-
         market_cap = _require_finite_number(
             cap_value,
-            field="CapMrktEstUSD|CapMrktCurUSD",
+            field="CapMrktCurUSD|CapMrktEstUSD",
             source="Coin Metrics",
         )
+        if market_cap <= 0.0:
+            continue
 
-        if dominance <= 0.0 or market_cap <= 0.0:
-            raise DominanceDataError("Coin Metrics dominance and market cap must be positive.")
+        dominance_value = record.get("CapMrktEstDomPct")
+        explicit_dominance: float | None = None
+        if dominance_value is not None:
+            explicit_dominance = _require_finite_number(
+                dominance_value,
+                field="CapMrktEstDomPct",
+                source="Coin Metrics",
+            )
+            if not 0.0 < explicit_dominance <= 100.0:
+                raise DominanceDataError("Coin Metrics explicit dominance is out of bounds.")
 
         asset_rows.append(
             {
                 "asset": asset,
                 "day": day,
                 "source_timestamp": timestamp,
-                "dominance_pct": dominance,
                 "market_cap_usd": market_cap,
+                "explicit_dominance_pct": explicit_dominance,
             }
         )
 
     frame = pd.DataFrame(asset_rows)
-
     if frame.empty:
-        raise DominanceDataUnavailable("Coin Metrics returned no BTC/ETH dominance history.")
+        raise DominanceDataUnavailable("Coin Metrics returned no usable market-cap history.")
 
     frame = frame.sort_values(
         ["asset", "day", "source_timestamp"],
         kind="stable",
     ).drop_duplicates(["asset", "day"], keep="last")
-    btc = frame.loc[frame["asset"].eq("btc")].rename(
-        columns={
-            "source_timestamp": "btc_source_timestamp",
-            "dominance_pct": "btc_dominance_pct",
-            "market_cap_usd": "btc_market_cap_usd",
-        }
+
+    start_utc = utc_timestamp(start)
+    end_utc = utc_timestamp(end_exclusive)
+    day_series = cast(pd.Series, frame["day"])
+    frame = pd.DataFrame(frame.loc[(day_series >= start_utc) & (day_series < end_utc)]).reset_index(
+        drop=True
     )
-    eth = frame.loc[frame["asset"].eq("eth")].rename(
-        columns={
-            "source_timestamp": "eth_source_timestamp",
-            "dominance_pct": "eth_dominance_pct",
-            "market_cap_usd": "eth_market_cap_usd",
-        }
-    )
-    combined = btc[
-        [
-            "day",
-            "btc_source_timestamp",
-            "btc_dominance_pct",
-            "btc_market_cap_usd",
-        ]
-    ].merge(
-        eth[
+    if frame.empty:
+        raise DominanceDataUnavailable("Coin Metrics history does not overlap the locked interval.")
+
+    btc_rows = frame.loc[frame["asset"].eq("btc")].copy()
+    eth_rows = frame.loc[frame["asset"].eq("eth")].copy()
+    if btc_rows.empty or eth_rows.empty:
+        raise DominanceDataUnavailable("Coin Metrics free panel lacks BTC or ETH market caps.")
+
+    explicit_pair = pd.concat([btc_rows, eth_rows], ignore_index=True)
+    use_explicit = bool(explicit_pair["explicit_dominance_pct"].notna().all())
+
+    if use_explicit:
+        btc = btc_rows.rename(
+            columns={
+                "source_timestamp": "btc_source_timestamp",
+                "explicit_dominance_pct": "btc_dominance_pct",
+                "market_cap_usd": "btc_market_cap_usd",
+            }
+        )
+        eth = eth_rows.rename(
+            columns={
+                "source_timestamp": "eth_source_timestamp",
+                "explicit_dominance_pct": "eth_dominance_pct",
+                "market_cap_usd": "eth_market_cap_usd",
+            }
+        )
+        combined = btc[
             [
                 "day",
-                "eth_source_timestamp",
-                "eth_dominance_pct",
-                "eth_market_cap_usd",
+                "btc_source_timestamp",
+                "btc_dominance_pct",
+                "btc_market_cap_usd",
             ]
-        ],
-        on="day",
-        how="inner",
-        validate="one_to_one",
-    )
+        ].merge(
+            eth[
+                [
+                    "day",
+                    "eth_source_timestamp",
+                    "eth_dominance_pct",
+                    "eth_market_cap_usd",
+                ]
+            ],
+            on="day",
+            how="inner",
+            validate="one_to_one",
+        )
+        combined["source_timestamp"] = pd.concat(
+            [
+                cast(pd.Series, combined["btc_source_timestamp"]),
+                cast(pd.Series, combined["eth_source_timestamp"]),
+            ],
+            axis=1,
+        ).max(axis=1)
+        combined["total_market_cap_usd"] = cast(pd.Series, combined["btc_market_cap_usd"]) / (
+            cast(pd.Series, combined["btc_dominance_pct"]) / 100.0
+        )
+        source_id = "COINMETRICS_EXPLICIT_DOMINANCE_FIXTURE"
+    else:
+        totals = (
+            frame.groupby("day", as_index=False)
+            .agg(
+                total_market_cap_usd=("market_cap_usd", "sum"),
+                source_timestamp=("source_timestamp", "max"),
+                source_asset_count=("asset", "nunique"),
+            )
+            .sort_values("day", kind="stable")
+        )
+        btc = btc_rows[["day", "market_cap_usd"]].rename(
+            columns={"market_cap_usd": "btc_market_cap_usd"}
+        )
+        eth = eth_rows[["day", "market_cap_usd"]].rename(
+            columns={"market_cap_usd": "eth_market_cap_usd"}
+        )
+        combined = totals.merge(
+            btc,
+            on="day",
+            how="inner",
+            validate="one_to_one",
+        ).merge(
+            eth,
+            on="day",
+            how="inner",
+            validate="one_to_one",
+        )
+        combined["btc_dominance_pct"] = (
+            cast(pd.Series, combined["btc_market_cap_usd"])
+            / cast(pd.Series, combined["total_market_cap_usd"])
+            * 100.0
+        )
+        combined["eth_dominance_pct"] = (
+            cast(pd.Series, combined["eth_market_cap_usd"])
+            / cast(pd.Series, combined["total_market_cap_usd"])
+            * 100.0
+        )
+        source_id = "COINMETRICS_COMMUNITY_RECONSTRUCTED_MARKET_CAP"
 
     if combined.empty:
         raise DominanceDataUnavailable("Coin Metrics BTC and ETH series do not overlap.")
 
-    combined["source_timestamp"] = pd.concat(
-        [
-            cast(pd.Series, combined["btc_source_timestamp"]),
-            cast(pd.Series, combined["eth_source_timestamp"]),
-        ],
-        axis=1,
-    ).max(axis=1)
     combined["available_at"] = cast(pd.Series, combined["day"]) + DECISION_LAG
-    combined["total_market_cap_usd"] = cast(pd.Series, combined["btc_market_cap_usd"]) / (
-        cast(pd.Series, combined["btc_dominance_pct"]) / 100.0
-    )
     combined["altcoin_market_cap_usd"] = cast(pd.Series, combined["total_market_cap_usd"]) - cast(
         pd.Series, combined["btc_market_cap_usd"]
     )
-    combined["source_id"] = "COINMETRICS_COMMUNITY_DOMINANCE"
+    combined["source_id"] = source_id
 
-    start_utc = utc_timestamp(start)
-    end_utc = utc_timestamp(end_exclusive)
-    day_series = cast(pd.Series, combined["day"])
-    combined = (
-        pd.DataFrame(combined.loc[(day_series >= start_utc) & (day_series < end_utc)])
+    bounded = cast(pd.Series, combined["btc_dominance_pct"]).between(
+        0.0, 100.0, inclusive="neither"
+    ) & cast(pd.Series, combined["eth_dominance_pct"]).between(0.0, 100.0, inclusive="neither")
+    if not bool(bounded.all()):
+        raise DominanceDataError("Derived Coin Metrics dominance is out of bounds.")
+
+    return (
+        combined[
+            [
+                "day",
+                "source_timestamp",
+                "available_at",
+                "btc_dominance_pct",
+                "eth_dominance_pct",
+                "total_market_cap_usd",
+                "altcoin_market_cap_usd",
+                "btc_market_cap_usd",
+                "source_id",
+            ]
+        ]
         .sort_values("day", kind="stable")
         .reset_index(drop=True)
     )
-
-    if combined.empty:
-        raise DominanceDataUnavailable("Coin Metrics history does not overlap the locked interval.")
-
-    return combined[
-        [
-            "day",
-            "source_timestamp",
-            "available_at",
-            "btc_dominance_pct",
-            "eth_dominance_pct",
-            "total_market_cap_usd",
-            "altcoin_market_cap_usd",
-            "btc_market_cap_usd",
-            "source_id",
-        ]
-    ]
 
 
 def _extract_pegged_usd(value: Any) -> float:

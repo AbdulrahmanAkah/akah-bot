@@ -283,14 +283,14 @@ def main() -> int:
         else:
             stablecoin_url, stablecoin_bytes = fetch_defillama_stablecoin_history()
 
-        market_raw_path = raw_root / "coinmetrics-community-dominance-2021-2024.json"
+        market_raw_path = raw_root / "coinmetrics-community-market-cap-panel-2021-2024.json"
         stablecoin_raw_path = raw_root / "defillama-stablecoins-2021-2024.json"
         atomic_bytes(market_raw_path, market_bytes)
         atomic_bytes(stablecoin_raw_path, stablecoin_bytes)
 
         raw_sources = [
             raw_source_record(
-                source_id="COINMETRICS_COMMUNITY_DOMINANCE",
+                source_id="COINMETRICS_COMMUNITY_RECONSTRUCTED_MARKET_CAP",
                 url=market_url,
                 content=market_bytes,
                 destination=market_raw_path.relative_to(root),
@@ -313,7 +313,7 @@ def main() -> int:
         validation = validate_dominance_frame(
             aligned,
             source_frames=(
-                ("COINMETRICS_COMMUNITY_DOMINANCE", market),
+                ("COINMETRICS_COMMUNITY_RECONSTRUCTED_MARKET_CAP", market),
                 ("DEFILLAMA_STABLECOINS_ALL", stablecoins),
             ),
         )

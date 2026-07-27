@@ -45,3 +45,11 @@
 Ruff and mypy were not installed in the isolated runtime. The repository runners
 are structured for the existing repository environment, where those checks are
 already available.
+
+
+## Free-source correction
+
+- Removed dependency on paid `CapMrktEstDomPct`.
+- BTC and ETH dominance are reconstructed from the free daily `CapMrktCurUSD` panel.
+- The daily denominator is the sum of all community-accessible positive market caps.
+- This remains a diagnostic reconstructed universe, not a claim of exact TradingView `BTC.D`.
