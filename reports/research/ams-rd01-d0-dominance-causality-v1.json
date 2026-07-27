@@ -1,10 +1,35 @@
 {
-  "detail": "HTTP 400 from https://community-api.coinmetrics.io/v4/timeseries/asset-metrics?assets=%2A&metrics=CapMrktCurUSD&start_time=2021-01-01T00%3A00%3A00%2B00%3A00&end_time=2024-12-31T00%3A00%3A00%2B00%3A00&frequency=1d&page_size=10000&paging_from=start&ignore_forbidden_errors=true&ignore_unsupported_errors=true: {\"error\":{\"type\":\"bad_parameter\",\"message\":\"Bad parameter 'start_time'. Incorrect time format '2021-01-01T00:00:00+00:00'. Supported formats are 'yyyy-MM-dd', 'yyyyMMdd', 'yyyy-MM-ddTHH:mm:ss', 'yyyy-MM-ddTHHmmss', 'yyyy-MM-ddTHH:mm:ss.SSS', 'yyyy-MM-ddTHHmmss.SSS', 'yyyy-MM-ddTHH:mm:ss.SSSSSS', 'yyyy-MM-ddTHHmmss.SSSSSS', 'yyyy-MM-ddTHH:mm:ss.SSSSSSSSS', 'yyyy-MM-ddTHHmmss.SSSSSSSSS'.\"}}",
-  "generated_at": "2026-07-27T03:07:44.539702+00:00",
-  "reason": "UPSTREAM_HISTORY_UNAVAILABLE",
-  "repository_root": "C:/SIRAJ/Repositories/spot-speculation-bot",
+  "causality": {
+    "asof_join_direction": "backward",
+    "future_mutation_invariance": true,
+    "maximum_tag_age_days": 3,
+    "observation_available_next_utc_day": true,
+    "same_day_observation_use_allowed": false
+  },
+  "generated_at": "2026-07-27T03:24:52.278490+00:00",
+  "normalized_output": "reports/research/ams-rd01-d0-dominance-daily-v1.csv",
+  "raw_sources": [
+    {
+      "bytes": 17665158,
+      "destination": "data/research/rd01/dominance/raw/coinmetrics-community-market-cap-panel-2021-2024.json",
+      "fetched_at": "2026-07-27T03:24:49.494358+00:00",
+      "sha256": "f78c608f47d01da4853011c86ded2a6e9478a8e8ece472d27dc80bc0ba1ec9c9",
+      "source_id": "COINMETRICS_COMMUNITY_RECONSTRUCTED_MARKET_CAP",
+      "url": "https://community-api.coinmetrics.io/v4/timeseries/asset-metrics?assets=%2A&metrics=CapMrktCurUSD&start_time=2021-01-01&end_time=2024-12-31&frequency=1d&page_size=10000&paging_from=start&ignore_forbidden_errors=true&ignore_unsupported_errors=true"
+    },
+    {
+      "bytes": 1206254,
+      "destination": "data/research/rd01/dominance/raw/defillama-stablecoins-2021-2024.json",
+      "fetched_at": "2026-07-27T03:24:49.508649+00:00",
+      "sha256": "8b45f555eb122248058ec3821b7cae1c083f8dd6bdeae8dd783403a85d29fce4",
+      "source_id": "DEFILLAMA_STABLECOINS_ALL",
+      "url": "https://stablecoins.llama.fi/stablecoincharts/all"
+    }
+  ],
+  "reason": "FULL_CAUSAL_COVERAGE",
   "research_stage": "RD01-D0",
   "research_window": {
+    "decision_lag": "1 days 00:00:00",
     "end_exclusive": "2025-01-01T00:00:00+00:00",
     "start": "2021-01-01T00:00:00+00:00"
   },
@@ -22,6 +47,53 @@
     "trade_logic_changed": false
   },
   "schema_version": "ams-rd01-d0-dominance-causality-v1",
-  "source_commit": "d79e1525881d963f4c9ac66b0460441603acca08",
-  "status": "BLOCKED_BY_DATA"
+  "source_commit": "15d30d5c442844933c968a21937fb7c3d8197a09",
+  "status": "PASS",
+  "validation": {
+    "aligned_observations": 1461,
+    "causal_availability_enforced": true,
+    "coverage": [
+      {
+        "coverage_ratio": 1.0,
+        "duplicate_days": 0,
+        "expected_observations": 1461,
+        "first_day": "2021-01-01T00:00:00+00:00",
+        "last_day": "2024-12-31T00:00:00+00:00",
+        "maximum_gap_days": 0,
+        "missing_days": 0,
+        "observations": 1461,
+        "source_id": "COINMETRICS_COMMUNITY_RECONSTRUCTED_MARKET_CAP"
+      },
+      {
+        "coverage_ratio": 1.0,
+        "duplicate_days": 0,
+        "expected_observations": 1461,
+        "first_day": "2021-01-01T00:00:00+00:00",
+        "last_day": "2024-12-31T00:00:00+00:00",
+        "maximum_gap_days": 0,
+        "missing_days": 0,
+        "observations": 1461,
+        "source_id": "DEFILLAMA_STABLECOINS_ALL"
+      },
+      {
+        "coverage_ratio": 1.0,
+        "duplicate_days": 0,
+        "expected_observations": 1461,
+        "first_day": "2021-01-01T00:00:00+00:00",
+        "last_day": "2024-12-31T00:00:00+00:00",
+        "maximum_gap_days": 0,
+        "missing_days": 0,
+        "observations": 1461,
+        "source_id": "ALIGNED_COINMETRICS_DEFILLAMA"
+      }
+    ],
+    "expected_observations": 1461,
+    "no_2025_access": true,
+    "no_2026_access": true,
+    "no_forward_fill": true,
+    "reason": "FULL_CAUSAL_COVERAGE",
+    "status": "PASS",
+    "timestamps_unique": true,
+    "values_bounded": true
+  }
 }

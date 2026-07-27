@@ -2,17 +2,34 @@
 
 ## Executive result
 
-- Status: `BLOCKED_BY_DATA`
-- Reason: `UPSTREAM_HISTORY_UNAVAILABLE`
+- Status: `PASS`
+- Reason: `FULL_CAUSAL_COVERAGE`
 - Research stage: `RD01-D0`
 - Scope: data ingestion and causality validation only
 - Trading decisions changed: `NO`
 - Overlay authorized: `NO`
 - ATI-V1 authorized: `NO`
 
-## Blocker
+## Validation
 
-HTTP 400 from https://community-api.coinmetrics.io/v4/timeseries/asset-metrics?assets=%2A&metrics=CapMrktCurUSD&start_time=2021-01-01T00%3A00%3A00%2B00%3A00&end_time=2024-12-31T00%3A00%3A00%2B00%3A00&frequency=1d&page_size=10000&paging_from=start&ignore_forbidden_errors=true&ignore_unsupported_errors=true: {"error":{"type":"bad_parameter","message":"Bad parameter 'start_time'. Incorrect time format '2021-01-01T00:00:00+00:00'. Supported formats are 'yyyy-MM-dd', 'yyyyMMdd', 'yyyy-MM-ddTHH:mm:ss', 'yyyy-MM-ddTHHmmss', 'yyyy-MM-ddTHH:mm:ss.SSS', 'yyyy-MM-ddTHHmmss.SSS', 'yyyy-MM-ddTHH:mm:ss.SSSSSS', 'yyyy-MM-ddTHHmmss.SSSSSS', 'yyyy-MM-ddTHH:mm:ss.SSSSSSSSS', 'yyyy-MM-ddTHHmmss.SSSSSSSSS'."}}
+- Aligned observations: `1461`
+- Expected observations: `1461`
+- No forward fill: `True`
+- Causal availability enforced: `True`
+- Future mutation invariance: `True`
+
+## Coverage
+
+| Source | Observations | Coverage | Missing | Maximum gap |
+|---|---:|---:|---:|---:|
+| `COINMETRICS_COMMUNITY_RECONSTRUCTED_MARKET_CAP` | 1461 | 1.0000 | 0 | 0 |
+| `DEFILLAMA_STABLECOINS_ALL` | 1461 | 1.0000 | 0 | 0 |
+| `ALIGNED_COINMETRICS_DEFILLAMA` | 1461 | 1.0000 | 0 | 0 |
+
+## Raw source provenance
+
+- `COINMETRICS_COMMUNITY_RECONSTRUCTED_MARKET_CAP`: `sha256:f78c608f47d01da4853011c86ded2a6e9478a8e8ece472d27dc80bc0ba1ec9c9` (17665158 bytes)
+- `DEFILLAMA_STABLECOINS_ALL`: `sha256:8b45f555eb122248058ec3821b7cae1c083f8dd6bdeae8dd783403a85d29fce4` (1206254 bytes)
 
 ## Safety boundaries
 
