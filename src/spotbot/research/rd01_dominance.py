@@ -137,8 +137,8 @@ def build_coinmetrics_dominance_url(
     params = {
         "assets": "*",
         "metrics": "CapMrktCurUSD",
-        "start_time": start_utc.isoformat(),
-        "end_time": (end_utc - pd.Timedelta(days=1)).isoformat(),
+        "start_time": start_utc.strftime("%Y-%m-%d"),
+        "end_time": (end_utc - pd.Timedelta(days=1)).strftime("%Y-%m-%d"),
         "frequency": "1d",
         "page_size": "10000",
         "paging_from": "start",

@@ -10,6 +10,7 @@ from spotbot.research.rd01_dominance import (
     DECISION_LAG,
     DominanceDataError,
     align_dominance_sources,
+    build_coinmetrics_dominance_url,
     canonical_json_bytes,
     coverage_record,
     future_mutation_invariance,
@@ -292,3 +293,14 @@ def test_parser_derives_dominance_from_free_market_cap_panel() -> None:
     assert market["btc_dominance_pct"].iloc[0] == pytest.approx(50.0)
     assert market["eth_dominance_pct"].iloc[0] == pytest.approx(30.0)
     assert market["altcoin_market_cap_usd"].iloc[0] == pytest.approx(500.0)
+
+
+def test_coinmetrics_url_uses_supported_date_only_format() -> None:
+    url = build_coinmetrics_dominance_url(
+        start=pd.Timestamp("2021-01-01T00:00:00Z"),
+        end_exclusive=pd.Timestamp("2021-01-04T00:00:00Z"),
+    )
+
+    assert "start_time=2021-01-01" in url
+    assert "end_time=2021-01-03" in url
+    assert "%2B00%3A00" not in url
