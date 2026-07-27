@@ -1,0 +1,237 @@
+{
+  "adjudication_summary": {
+    "blocking_failure_count": 0,
+    "pair_attempt_count": 77,
+    "recoverable_symbol_count": 2,
+    "symbol_count": 75,
+    "usable_complete_count": 34,
+    "venue_unavailable_count": 39
+  },
+  "authorizations": {
+    "additional_source_expansion_research_authorized": false,
+    "ati_v1_authorized": false,
+    "entry_change_authorized": false,
+    "exit_change_authorized": false,
+    "live_ready": false,
+    "production_ready": false,
+    "ranking_change_authorized": false,
+    "rd04_d1_pit_universe_replay_research_authorized": true,
+    "universe_change_authorized": false,
+    "weight_change_authorized": false
+  },
+  "dataset_validation": {
+    "common_symbol_count": 66,
+    "common_symbols": [
+      "1INCH",
+      "AAVE",
+      "ADA",
+      "ALGO",
+      "AVAX",
+      "BAL",
+      "BAT",
+      "BCH",
+      "BNB",
+      "BTC",
+      "COMP",
+      "CRO",
+      "CRV",
+      "CVC",
+      "DASH",
+      "DCR",
+      "DEXE",
+      "DGB",
+      "DOGE",
+      "DOT",
+      "ENA",
+      "ETC",
+      "ETH",
+      "FLOW",
+      "FTT",
+      "GAS",
+      "GRAM",
+      "HYPE",
+      "ICP",
+      "ICX",
+      "KNC",
+      "LDO",
+      "LINK",
+      "LPT",
+      "LRC",
+      "LTC",
+      "MANA",
+      "MATIC",
+      "NEAR",
+      "NEO",
+      "ONDO",
+      "PAXG",
+      "PEPE",
+      "QNT",
+      "QTUM",
+      "SEI",
+      "SHIB",
+      "SNX",
+      "SOL",
+      "SUI",
+      "SUSHI",
+      "SYN",
+      "TAO",
+      "TRX",
+      "UMA",
+      "UNI",
+      "VET",
+      "XEM",
+      "XLM",
+      "XMR",
+      "XRP",
+      "XTZ",
+      "YFI",
+      "ZEC",
+      "ZIL",
+      "ZRX"
+    ],
+    "duplicate_counts": {
+      "daily": 0,
+      "eight_hour": 0,
+      "four_hour": 0
+    },
+    "passed": true,
+    "post_lock_counts": {
+      "daily": 0,
+      "eight_hour": 0,
+      "four_hour": 0
+    }
+  },
+  "datasets": {
+    "availability": {
+      "bytes": 8235,
+      "file_sha256": "6ae1e0612c379765f6dace35a27054f484083cf3a4a71481c527ce1b6e99bdcf",
+      "path": "data/research/rd04/kucoin-spot-usdt-adjudicated-v1/ams-rd04-d0c-kucoin-adjudicated-availability.parquet",
+      "row_count": 66,
+      "symbol_count": 66
+    },
+    "daily": {
+      "bytes": 2994256,
+      "content_sha256": "bea242cacee98c76532017f6461e735f007b11ba5360c2423f18d18670da611f",
+      "file_sha256": "55a7a732c8cb464de528727aff3cfd536a9b74a14e117e1b6fe9c9d0cba8f3de",
+      "first_bar_open_time": "2021-01-01T00:00:00+00:00",
+      "last_bar_close_time": "2025-01-01T00:00:00+00:00",
+      "path": "data/research/rd04/kucoin-spot-usdt-adjudicated-v1/ams-rd04-d0c-kucoin-adjudicated-1d.parquet",
+      "row_count": 76612,
+      "symbol_count": 66
+    },
+    "eight_hour": {
+      "bytes": 8104386,
+      "content_sha256": "1c709f8063f1a707bd535e8fd5e484579b0f52d573fa11bbe973b341c7537ef4",
+      "file_sha256": "14033d98f2ad00d7bdd5006bec4308c1f48414240f6399b1d78049ec743b3c6f",
+      "first_bar_open_time": "2021-01-01T00:00:00+00:00",
+      "last_bar_close_time": "2025-01-01T00:00:00+00:00",
+      "path": "data/research/rd04/kucoin-spot-usdt-adjudicated-v1/ams-rd04-d0c-kucoin-adjudicated-8h.parquet",
+      "row_count": 229883,
+      "symbol_count": 66
+    },
+    "four_hour": {
+      "bytes": 14094681,
+      "content_sha256": "39f4318b8de2282b3cc81bb7876de55a378500a98956365f3e881f3ac2483048",
+      "file_sha256": "1c72416f889137b68ff48008c5760e809d0a94a5647569bab631e96904cebd72",
+      "first_bar_open_time": "2021-01-01T00:00:00+00:00",
+      "last_bar_close_time": "2025-01-01T00:00:00+00:00",
+      "path": "data/research/rd04/kucoin-spot-usdt-adjudicated-v1/ams-rd04-d0c-kucoin-adjudicated-4h.parquet",
+      "row_count": 459771,
+      "symbol_count": 66
+    }
+  },
+  "decision": {
+    "additional_source_expansion_research_authorized": false,
+    "blocking_integrity_failure_count": 0,
+    "complete_snapshot_count": 157,
+    "decision": "PIT_UNIVERSE_REPLAY_READY",
+    "maximum_required_market_cap_rank": 39,
+    "minimum_selected_count": 30,
+    "rd04_d1_pit_universe_replay_research_authorized": true,
+    "reason": "ALL_WEEKLY_TOP_30_DATASETS_COMPLETE_AFTER_SOURCE_ADJUDICATION",
+    "snapshot_count": 157,
+    "universe_change_authorized": false
+  },
+  "financial_fingerprints": [
+    {
+      "after": "bfea9d7c82c79716e6ce19b60a537de5f83c802c3b758e876fb4c3198ae6bd99",
+      "before": "bfea9d7c82c79716e6ce19b60a537de5f83c802c3b758e876fb4c3198ae6bd99",
+      "fold_id": "WF01",
+      "invariant": true,
+      "trade_count": 29
+    },
+    {
+      "after": "1b7a649b8f7ca64a0232be4f65cecc879abebb5cd7a9d8f03d520d49e4dfecb6",
+      "before": "1b7a649b8f7ca64a0232be4f65cecc879abebb5cd7a9d8f03d520d49e4dfecb6",
+      "fold_id": "WF02",
+      "invariant": true,
+      "trade_count": 59
+    },
+    {
+      "after": "e0c95a0d11e46bd1e4a348802277e775129d8d85c3bb310ff7b0e3321fef5848",
+      "before": "e0c95a0d11e46bd1e4a348802277e775129d8d85c3bb310ff7b0e3321fef5848",
+      "fold_id": "WF03",
+      "invariant": true,
+      "trade_count": 59
+    }
+  ],
+  "generated_at": "2026-07-27T17:06:40.563525+00:00",
+  "outputs": {
+    "dataset_registration": "reports/research/ams-rd04-d0c-adjudicated-dataset-registration-v1.json",
+    "pair_adjudication": "reports/research/ams-rd04-d0c-pair-adjudication-v1.csv",
+    "recovered_symbols": "reports/research/ams-rd04-d0c-recovered-symbols-v1.csv",
+    "symbol_adjudication": "reports/research/ams-rd04-d0c-symbol-adjudication-v1.csv",
+    "weekly_candidates": "reports/research/ams-rd04-d0c-venue-eligible-weekly-candidates-v1.csv",
+    "weekly_summary": "reports/research/ams-rd04-d0c-weekly-snapshot-summary-v1.csv"
+  },
+  "recovery_summary": {
+    "d0b_dataset_symbol_count": 64,
+    "dataset_symbol_count": 66,
+    "recovered_symbol_count": 2,
+    "recovered_symbols": [
+      "BCH",
+      "MATIC"
+    ]
+  },
+  "research_stage": "RD04-D0C",
+  "safety": {
+    "averaging_down_authorized": false,
+    "holdout_2026_accessed": false,
+    "kelly_used": false,
+    "leverage_used": false,
+    "portfolio_simulation_changed": false,
+    "pyramiding_authorized": false,
+    "test_2025_accessed": false,
+    "trade_logic_changed": false
+  },
+  "schema_version": "ams-rd04-d0c-source-integrity-adjudication-v1",
+  "source_commit": "964819c7907af97ee65c7ac28d609bd602804724",
+  "status": "COMPLETE",
+  "upstream": {
+    "rd04_d0b_decision": "BLOCKED_BY_DATA_INTEGRITY",
+    "rd04_d0b_evidence_commit": "0d1ca2c9f2a31ca5b63beef3943f96dbb14779dc"
+  },
+  "validation": {
+    "all_snapshots_complete": true,
+    "blocking_integrity_failure_count": 0,
+    "canonical_assets_unique_per_snapshot": true,
+    "complete_snapshot_count": 157,
+    "d0b_dataset_hashes_verified": true,
+    "dataset_validation_passed": true,
+    "expected_trade_count": 147,
+    "financial_invariance": true,
+    "no_2025_access": true,
+    "no_true_integrity_failures": true,
+    "observed_trade_count": 147,
+    "portfolio_simulation_changed": false,
+    "recovered_symbols_match_expected": true,
+    "selected_rows": 4710,
+    "selected_rows_match": true,
+    "snapshot_count": 157,
+    "snapshot_count_matches": true,
+    "status": "COMPLETE",
+    "trade_count_matches": true,
+    "trade_logic_changed": false
+  },
+  "variant_id": "MD01-M05"
+}

@@ -1,0 +1,82 @@
+{
+  "datasets": {
+    "availability": {
+      "bytes": 8235,
+      "file_sha256": "6ae1e0612c379765f6dace35a27054f484083cf3a4a71481c527ce1b6e99bdcf",
+      "path": "data/research/rd04/kucoin-spot-usdt-adjudicated-v1/ams-rd04-d0c-kucoin-adjudicated-availability.parquet",
+      "row_count": 66,
+      "symbol_count": 66
+    },
+    "daily": {
+      "bytes": 2994256,
+      "content_sha256": "bea242cacee98c76532017f6461e735f007b11ba5360c2423f18d18670da611f",
+      "file_sha256": "55a7a732c8cb464de528727aff3cfd536a9b74a14e117e1b6fe9c9d0cba8f3de",
+      "first_bar_open_time": "2021-01-01T00:00:00+00:00",
+      "last_bar_close_time": "2025-01-01T00:00:00+00:00",
+      "path": "data/research/rd04/kucoin-spot-usdt-adjudicated-v1/ams-rd04-d0c-kucoin-adjudicated-1d.parquet",
+      "row_count": 76612,
+      "symbol_count": 66
+    },
+    "eight_hour": {
+      "bytes": 8104386,
+      "content_sha256": "1c709f8063f1a707bd535e8fd5e484579b0f52d573fa11bbe973b341c7537ef4",
+      "file_sha256": "14033d98f2ad00d7bdd5006bec4308c1f48414240f6399b1d78049ec743b3c6f",
+      "first_bar_open_time": "2021-01-01T00:00:00+00:00",
+      "last_bar_close_time": "2025-01-01T00:00:00+00:00",
+      "path": "data/research/rd04/kucoin-spot-usdt-adjudicated-v1/ams-rd04-d0c-kucoin-adjudicated-8h.parquet",
+      "row_count": 229883,
+      "symbol_count": 66
+    },
+    "four_hour": {
+      "bytes": 14094681,
+      "content_sha256": "39f4318b8de2282b3cc81bb7876de55a378500a98956365f3e881f3ac2483048",
+      "file_sha256": "1c72416f889137b68ff48008c5760e809d0a94a5647569bab631e96904cebd72",
+      "first_bar_open_time": "2021-01-01T00:00:00+00:00",
+      "last_bar_close_time": "2025-01-01T00:00:00+00:00",
+      "path": "data/research/rd04/kucoin-spot-usdt-adjudicated-v1/ams-rd04-d0c-kucoin-adjudicated-4h.parquet",
+      "row_count": 459771,
+      "symbol_count": 66
+    }
+  },
+  "decision": {
+    "additional_source_expansion_research_authorized": false,
+    "blocking_integrity_failure_count": 0,
+    "complete_snapshot_count": 157,
+    "decision": "PIT_UNIVERSE_REPLAY_READY",
+    "maximum_required_market_cap_rank": 39,
+    "minimum_selected_count": 30,
+    "rd04_d1_pit_universe_replay_research_authorized": true,
+    "reason": "ALL_WEEKLY_TOP_30_DATASETS_COMPLETE_AFTER_SOURCE_ADJUDICATION",
+    "snapshot_count": 157,
+    "universe_change_authorized": false
+  },
+  "derived_timeframes": [
+    "8h",
+    "1d"
+  ],
+  "exchange": "kucoin",
+  "holdout_2026_accessed": false,
+  "market_type": "spot",
+  "original_registered_dataset_hashes": {
+    "availability": "de71d0a229120873fc7294cef52b41c577e81bc466f009a49a970a8bfe21473e",
+    "daily": "c716a0586b572939a93035b5e85d30f9ad1a18e1a05521dc801bf4ab6728c10d",
+    "eight_hour": "9335e64d558c6494a6712c718e239096d65d4d5309c97985c49ed234ebc0721b",
+    "four_hour": "591e9006ffa0ab7538869b4c5c2d8d66fac98736e60a1d6b09ee302b403feb70"
+  },
+  "quote_asset": "USDT",
+  "recovered_symbols": [
+    "BCH",
+    "MATIC"
+  ],
+  "registered_at": "2026-07-27T17:06:40.485931+00:00",
+  "registered_symbol_count": 66,
+  "research_end_exclusive": "2025-01-01T00:00:00+00:00",
+  "research_start": "2021-01-01T00:00:00+00:00",
+  "schema_version": "ams-rd04-d0c-adjudicated-dataset-registration-v1",
+  "source_commit": "964819c7907af97ee65c7ac28d609bd602804724",
+  "source_timeframe": "4h",
+  "status": "PASS",
+  "test_2025_accessed": false,
+  "trading_logic_changed": false,
+  "upstream_d0b_registration_sha256": "a42297c083cd96e41279fe7893fcc6f54769f3756d5b0f47c8adce7885793cf2"
+}
