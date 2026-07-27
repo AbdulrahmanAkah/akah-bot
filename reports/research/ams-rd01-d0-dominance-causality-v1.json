@@ -1,0 +1,27 @@
+{
+  "detail": "HTTP 400 from https://community-api.coinmetrics.io/v4/timeseries/asset-metrics?assets=%2A&metrics=CapMrktCurUSD&start_time=2021-01-01T00%3A00%3A00%2B00%3A00&end_time=2024-12-31T00%3A00%3A00%2B00%3A00&frequency=1d&page_size=10000&paging_from=start&ignore_forbidden_errors=true&ignore_unsupported_errors=true: {\"error\":{\"type\":\"bad_parameter\",\"message\":\"Bad parameter 'start_time'. Incorrect time format '2021-01-01T00:00:00+00:00'. Supported formats are 'yyyy-MM-dd', 'yyyyMMdd', 'yyyy-MM-ddTHH:mm:ss', 'yyyy-MM-ddTHHmmss', 'yyyy-MM-ddTHH:mm:ss.SSS', 'yyyy-MM-ddTHHmmss.SSS', 'yyyy-MM-ddTHH:mm:ss.SSSSSS', 'yyyy-MM-ddTHHmmss.SSSSSS', 'yyyy-MM-ddTHH:mm:ss.SSSSSSSSS', 'yyyy-MM-ddTHHmmss.SSSSSSSSS'.\"}}",
+  "generated_at": "2026-07-27T03:07:44.539702+00:00",
+  "reason": "UPSTREAM_HISTORY_UNAVAILABLE",
+  "repository_root": "C:/SIRAJ/Repositories/spot-speculation-bot",
+  "research_stage": "RD01-D0",
+  "research_window": {
+    "end_exclusive": "2025-01-01T00:00:00+00:00",
+    "start": "2021-01-01T00:00:00+00:00"
+  },
+  "safety": {
+    "ati_v1_authorized": false,
+    "data_validation_only": true,
+    "holdout_2026_accessed": false,
+    "kelly_used": false,
+    "leverage_used": false,
+    "live_ready": false,
+    "md02_authorized": false,
+    "overlay_authorized": false,
+    "production_ready": false,
+    "test_2025_accessed": false,
+    "trade_logic_changed": false
+  },
+  "schema_version": "ams-rd01-d0-dominance-causality-v1",
+  "source_commit": "d79e1525881d963f4c9ac66b0460441603acca08",
+  "status": "BLOCKED_BY_DATA"
+}
