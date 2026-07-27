@@ -1,0 +1,7 @@
+gate_id,requirements
+STRUCTURAL_INTEGRITY,all folds PASS; reconciliation PASS; input hashes invariant; no 2025 test or 2026 holdout access
+REGISTERED_BASE_EDGE,compounded return > 0; expectancy > 0; profit factor >= 1.05; trade count >= 20; positive folds >= 2; top-1 contribution <= 0.60
+STRESS_COST_EDGE,"at 0.4 percent transaction cost, compounded return > 0 and expectancy > 0"
+FOLD_ROBUSTNESS,treatment improves the declared primary metric in at least two of three folds; aggregate improvement alone is insufficient
+NO_OUTCOME_FILTERING,"no symbol blacklist, post-event exclusion, rank threshold, or tenure threshold inferred from D1-D3 realised PnL"
+AUTHORIZATION_BOUNDARY,"a pass authorizes only the next named research stage; it never authorizes production, live trading, ATI, universe, rank, weight, entry, or exit changes"

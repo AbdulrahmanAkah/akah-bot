@@ -1,0 +1,343 @@
+{
+  "authorizations": {
+    "ati_v1_authorized": false,
+    "candidate_universe_authorized": false,
+    "d5_research_sequence_authorized": true,
+    "entry_change_authorized": false,
+    "exit_change_authorized": false,
+    "live_ready": false,
+    "point_in_time_universe_research_baseline_authorized": false,
+    "production_ready": false,
+    "ranking_change_authorized": false,
+    "universe_change_authorized": false,
+    "weight_change_authorized": false
+  },
+  "decision": "HYPOTHESIS_REGISTRATION_COMPLETE",
+  "decision_gates": [
+    {
+      "gate_id": "STRUCTURAL_INTEGRITY",
+      "requirements": "all folds PASS; reconciliation PASS; input hashes invariant; no 2025 test or 2026 holdout access"
+    },
+    {
+      "gate_id": "REGISTERED_BASE_EDGE",
+      "requirements": "compounded return > 0; expectancy > 0; profit factor >= 1.05; trade count >= 20; positive folds >= 2; top-1 contribution <= 0.60"
+    },
+    {
+      "gate_id": "STRESS_COST_EDGE",
+      "requirements": "at 0.4 percent transaction cost, compounded return > 0 and expectancy > 0"
+    },
+    {
+      "gate_id": "FOLD_ROBUSTNESS",
+      "requirements": "treatment improves the declared primary metric in at least two of three folds; aggregate improvement alone is insufficient"
+    },
+    {
+      "gate_id": "NO_OUTCOME_FILTERING",
+      "requirements": "no symbol blacklist, post-event exclusion, rank threshold, or tenure threshold inferred from D1-D3 realised PnL"
+    },
+    {
+      "gate_id": "AUTHORIZATION_BOUNDARY",
+      "requirements": "a pass authorizes only the next named research stage; it never authorizes production, live trading, ATI, universe, rank, weight, entry, or exit changes"
+    }
+  ],
+  "deferred_or_prohibited": [
+    {
+      "proposal": "BLACKLIST_FTT_CRV_ALGO_ETC_OR_ANY_REALIZED_LOSER",
+      "reason": "outcome-based symbol filtering",
+      "status": "PROHIBITED"
+    },
+    {
+      "proposal": "MARKET_CAP_RANK_THRESHOLD_FROM_D3_BUCKET_PNL",
+      "reason": "negative edge spans multiple rank buckets and folds",
+      "status": "DEFERRED"
+    },
+    {
+      "proposal": "MINIMUM_PIT_TENURE_THRESHOLD_FROM_D3_BUCKET_PNL",
+      "reason": "negative edge persists even in 27-plus-week tenure buckets",
+      "status": "DEFERRED"
+    },
+    {
+      "proposal": "TUESDAY_ONLY_ENTRY_RULE",
+      "reason": "the user observation must first pass the frozen diagnostic",
+      "status": "DEFERRED"
+    },
+    {
+      "proposal": "BEST_ATR_STOP_SELECTED_FROM_CURRENT_RESULTS",
+      "reason": "the exact earlier grid must be recovered before execution",
+      "status": "PROHIBITED"
+    }
+  ],
+  "dependencies": [
+    {
+      "dependency_id": "PIT_QUOTE_TURNOVER_DATA_CONTRACT",
+      "required_by": "RD04-D5A-LIQUIDITY-FLOOR",
+      "resolution": "prove causal 30-day quote-turnover availability and units before the liquidity ablation",
+      "status": "OPEN"
+    },
+    {
+      "dependency_id": "V5R1_EXACT_ATR_GRID",
+      "required_by": "RD04-D5B-STRUCTURAL-ATR-STOP",
+      "resolution": "recover the exact discrete preregistered ATR values from V5R1; do not interpolate or choose values from D1-D3 outcomes",
+      "status": "OPEN"
+    },
+    {
+      "dependency_id": "EXTERNAL_TAIL_EVENT_SOURCE_FREEZE",
+      "required_by": "RD04-D5C-IDIOSYNCRATIC-TAIL-LABELS",
+      "resolution": "freeze event taxonomy, dates, and independent public sources before joining labels to trades",
+      "status": "OPEN"
+    },
+    {
+      "dependency_id": "BF01_EQUAL_WEIGHT_PROTOCOL",
+      "required_by": "RD04-D5D-PIT-EQUAL-WEIGHT-BENCHMARK",
+      "resolution": "recover the exact BF01 benchmark definition and accounting contract; reconstruction from memory is prohibited",
+      "status": "OPEN"
+    },
+    {
+      "dependency_id": "STOP_EXIT_EXISTS",
+      "required_by": "RD04-D5E-MIDWEEK-PULLBACK-DIAGNOSTIC",
+      "resolution": "the weekday diagnostic may run now, but a reentry ablation may run only after a frozen tactical-exit protocol exists",
+      "status": "CONDITIONAL"
+    }
+  ],
+  "evidence_basis": {
+    "entrant_pit_net_pnl": -94301.5435961918,
+    "entrant_union_net_pnl": -97193.91766048955,
+    "expert_review": {
+      "accepted_methodological_points": [
+        "liquidity_floor_ablation",
+        "structural_stop_ablation",
+        "tail_event_diagnostic_labels",
+        "pit_equal_weight_benchmark"
+      ],
+      "independently_verified_in_d4": false,
+      "provenance": "USER_SUPPLIED_TEXT"
+    },
+    "removed_survivor_fixed_net_pnl": 99489.7769194499,
+    "removed_survivor_union_net_pnl": 90613.37963955523,
+    "user_hypothesis": {
+      "claim": "Tuesday may form a temporary weekly low followed by recovery toward Friday",
+      "provenance": "USER_SUPPLIED_OBSERVATION",
+      "registered_for_diagnostic_only": true,
+      "treated_as_fact": false
+    }
+  },
+  "experiment_order": [
+    "RD04-D5A-LIQUIDITY-FLOOR",
+    "RD04-D5D-PIT-EQUAL-WEIGHT-BENCHMARK",
+    "RD04-D5B-STRUCTURAL-ATR-STOP",
+    "RD04-D5C-IDIOSYNCRATIC-TAIL-LABELS",
+    "RD04-D5E-MIDWEEK-PULLBACK-DIAGNOSTIC",
+    "RD04-D5F-MEMBERSHIP-EXIT-PATH-DIAGNOSTIC"
+  ],
+  "generated_at": "2026-07-27T20:49:20.901061Z",
+  "hypotheses": [
+    {
+      "authorization_if_passed": "NEXT_RESEARCH_STAGE_ONLY",
+      "control": "PIT_UNIVERSE_WITHOUT_LIQUIDITY_FILTER",
+      "data_contract": "Use point-in-time quote turnover available before each Monday. If the source provides only base volume, close multiplied by base volume cannot be treated as validated quote turnover until an equivalence audit passes.",
+      "family": "CAUSAL_ELIGIBILITY",
+      "frozen_parameters": {
+        "decision_time": "MONDAY_00_00_UTC",
+        "future_data_allowed": false,
+        "lookback_completed_days": 30,
+        "median_quote_turnover_floor_usdt": 250000.0,
+        "symbol_blacklist_allowed": false
+      },
+      "hypothesis_id": "RD04-D5A-LIQUIDITY-FLOOR",
+      "primary_metrics": [
+        "base_cost_compounded_return",
+        "base_cost_expectancy",
+        "base_cost_profit_factor",
+        "positive_fold_count"
+      ],
+      "priority": 1,
+      "question": "Does a pre-existing causal liquidity floor remove negative entrant edge without using outcome-based symbol exclusions?",
+      "secondary_metrics": [
+        "stress_cost_compounded_return",
+        "stress_cost_expectancy",
+        "maximum_drawdown",
+        "trade_count",
+        "top_1_symbol_contribution"
+      ],
+      "status": "READY_FOR_DATA_CONTRACT_THEN_ABLATION",
+      "treatment": "PIT_UNIVERSE_WITH_FROZEN_LIQUIDITY_FLOOR"
+    },
+    {
+      "authorization_if_passed": "NEXT_RESEARCH_STAGE_ONLY",
+      "control": "FIXED_AND_PIT_WITHOUT_TACTICAL_STOP",
+      "family": "RISK_CONTAINMENT",
+      "frozen_parameters": {
+        "exact_discrete_grid": "MUST_BE_RECOVERED_FROM_V5R1",
+        "parameter_interpolation_allowed": false,
+        "registered_range_atr": [
+          2.2,
+          3.4
+        ],
+        "same_entry_logic": true,
+        "same_position_weights": true,
+        "same_transaction_costs": true
+      },
+      "hypothesis_id": "RD04-D5B-STRUCTURAL-ATR-STOP",
+      "primary_metrics": [
+        "pit_base_cost_compounded_return",
+        "pit_base_cost_expectancy",
+        "pit_maximum_drawdown",
+        "pit_tail_loss_reduction"
+      ],
+      "priority": 3,
+      "question": "Did survivorship bias conceal idiosyncratic tail risk that a pre-existing structural ATR stop could contain?",
+      "secondary_metrics": [
+        "fixed_vs_pit_stop_delta",
+        "stress_cost_compounded_return",
+        "stopped_trade_recovery_mfe"
+      ],
+      "status": "BLOCKED_PENDING_FROZEN_V5R1_GRID_RECOVERY",
+      "treatment": "FIXED_AND_PIT_WITH_EXACT_V5R1_ATR_GRID"
+    },
+    {
+      "authorization_if_passed": "NONE_DIAGNOSTIC_ONLY",
+      "control": "ALL_PIT_TRADES_REPORTED_UNCHANGED",
+      "family": "DIAGNOSTIC_TRANSPARENCY",
+      "frozen_parameters": {
+        "event_categories": [
+          "FRAUD_OR_INSOLVENCY",
+          "ISSUER_OR_PROTOCOL_COLLAPSE",
+          "STABLECOIN_OR_PEG_FAILURE"
+        ],
+        "event_sources_frozen_before_join": true,
+        "outcome_based_exclusion_allowed": false,
+        "reported_with_and_without_labels": true
+      },
+      "hypothesis_id": "RD04-D5C-IDIOSYNCRATIC-TAIL-LABELS",
+      "primary_metrics": [
+        "labelled_trade_net_pnl",
+        "unlabelled_trade_net_pnl",
+        "labelled_trade_count"
+      ],
+      "priority": 4,
+      "question": "How much PIT loss is associated with independently documented fraud, insolvency, issuer collapse, or protocol-collapse events?",
+      "secondary_metrics": [
+        "labelled_loss_share",
+        "fold_distribution",
+        "maximum_adverse_excursion"
+      ],
+      "status": "READY_FOR_EXTERNAL_EVENT_SOURCE_FREEZE",
+      "treatment": "DIAGNOSTIC_LABELS_ONLY_NO_EXCLUSIONS"
+    },
+    {
+      "authorization_if_passed": "NEXT_RESEARCH_STAGE_ONLY",
+      "control": "EXACT_BF01_EQUAL_WEIGHT_PROTOCOL_ON_PIT",
+      "family": "EDGE_ORIGIN",
+      "frozen_parameters": {
+        "benchmark_definition": "MUST_BE_RECOVERED_FROM_BF01",
+        "benchmark_reconstruction_from_memory_allowed": false,
+        "same_cost_modes": true,
+        "same_pit_membership_schedule": true
+      },
+      "hypothesis_id": "RD04-D5D-PIT-EQUAL-WEIGHT-BENCHMARK",
+      "primary_metrics": [
+        "base_cost_compounded_return_delta",
+        "base_cost_expectancy_delta",
+        "maximum_drawdown_delta"
+      ],
+      "priority": 2,
+      "question": "Does MD01-M05 add value over the exact preregistered equal-weight benchmark on the clean PIT universe?",
+      "secondary_metrics": [
+        "stress_cost_return_delta",
+        "turnover_delta",
+        "fold_level_delta"
+      ],
+      "status": "BLOCKED_PENDING_EXACT_BF01_PROTOCOL_RECOVERY",
+      "treatment": "MD01_M05_ON_PIT"
+    },
+    {
+      "authorization_if_passed": "REGISTER_STOP_PLUS_ONE_REENTRY_ABLATION_ONLY",
+      "control": "CURRENT_PIT_ENTRIES_AND_WEEKLY_PRICE_PATHS",
+      "family": "TIMING_AND_REENTRY",
+      "frozen_parameters": {
+        "all_weekdays_reported": true,
+        "averaging_down_allowed": false,
+        "first_entry_and_reentry_separated": true,
+        "fresh_four_hour_trigger_required": true,
+        "primary_weekday": "TUESDAY",
+        "pyramiding_allowed": false,
+        "reentry_ablation_dependency": "RD04-D5B-STRUCTURAL-ATR-STOP",
+        "reentry_attempts_if_later_tested": 1,
+        "timezone": "UTC",
+        "week_start": "MONDAY_00_00"
+      },
+      "hypothesis_id": "RD04-D5E-MIDWEEK-PULLBACK-DIAGNOSTIC",
+      "primary_metrics": [
+        "tuesday_weekly_low_share",
+        "tuesday_signal_to_friday_return",
+        "fold_sign_consistency"
+      ],
+      "priority": 5,
+      "question": "Do PIT-selected assets form a recurring Tuesday UTC weekly low followed by positive recovery into Friday, and could fresh-trigger reentry matter after a tactical exit?",
+      "secondary_metrics": [
+        "entry_pnl_by_weekday",
+        "entry_mfe_by_weekday",
+        "entry_mae_by_weekday",
+        "weekly_low_distribution_all_days"
+      ],
+      "status": "READY_FOR_DIAGNOSTIC_ONLY",
+      "treatment": "NO_TRADING_TREATMENT_IN_DIAGNOSTIC_STAGE"
+    },
+    {
+      "authorization_if_passed": "REGISTER_ONE_FIXED_EXIT_POLICY_ABLATION_ONLY",
+      "control": "FROZEN_D0C_D1_D2_D3_EVIDENCE",
+      "family": "ELIGIBILITY_PATH",
+      "frozen_parameters": {
+        "diagnose_blocked_removed_survivor_entries": true,
+        "diagnose_forced_exit_following_mfe": true,
+        "existing_position_grandfathering_authorized": false,
+        "membership_grace_parameter_search_allowed": false,
+        "new_entry_outside_pit_authorized": false
+      },
+      "hypothesis_id": "RD04-D5F-MEMBERSHIP-EXIT-PATH-DIAGNOSTIC",
+      "primary_metrics": [
+        "membership_exit_count",
+        "post_exit_seven_day_mfe",
+        "blocked_removed_survivor_opportunity_pnl"
+      ],
+      "priority": 6,
+      "question": "How much opportunity loss comes from membership-path exits or blocked entries, distinct from entrant quality and ranking?",
+      "secondary_metrics": [
+        "fold_distribution",
+        "alignment_tier_distribution",
+        "symbol_concentration"
+      ],
+      "status": "READY_FOR_DIAGNOSTIC_ONLY",
+      "treatment": "NO_TRADING_TREATMENT_IN_DIAGNOSTIC_STAGE"
+    }
+  ],
+  "research_stage": "RD04-D4",
+  "safety": {
+    "averaging_down_authorized": false,
+    "candidate_universe_created": false,
+    "holdout_2026_accessed": false,
+    "kelly_used": false,
+    "leverage_used": false,
+    "parameter_optimisation_used": false,
+    "portfolio_simulation_executed": false,
+    "pyramiding_authorized": false,
+    "test_2025_accessed": false,
+    "trade_logic_changed": false
+  },
+  "schema_version": "ams-rd04-d4-hypothesis-registry-v1",
+  "status": "COMPLETE",
+  "upstream": {
+    "d3_decision": "ENTRANT_EDGE_AND_SURVIVOR_DISPLACEMENT_CONFIRMED",
+    "d3_evidence_commit": "0fc01e01ae81ff3117ade5c8e510c072293225f6",
+    "d3_report": "reports/research/ams-rd04-d3-membership-failure-diagnostics-v1.json",
+    "d3_report_sha256": "45068589985a9232cea874c1bd3bcd910511e07358c2e7b791adad338213fcbf"
+  },
+  "validation": {
+    "all_hypotheses_preregistered_before_execution": true,
+    "d3_authorization_valid": true,
+    "hypothesis_count": 6,
+    "no_portfolio_simulation_executed": true,
+    "no_rank_or_tenure_threshold_inferred": true,
+    "no_symbol_blacklist": true,
+    "status": "COMPLETE"
+  }
+}
