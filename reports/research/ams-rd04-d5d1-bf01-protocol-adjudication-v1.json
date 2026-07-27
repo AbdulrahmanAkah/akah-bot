@@ -1,0 +1,204 @@
+{
+  "adjudicated_contract": [
+    {
+      "field": "benchmark_identity",
+      "rationale": "EQUAL_WEIGHT_ELIGIBLE_UNIVERSE",
+      "value": "B02"
+    },
+    {
+      "field": "universe",
+      "rationale": "Use the same Monday PIT membership schedule; never use survivor-30.",
+      "value": "FROZEN_RD04_PIT_WEEKLY_TOP30_INTERSECT_CAUSAL_DAILY_DATA_READY"
+    },
+    {
+      "field": "history_readiness",
+      "rationale": "Preserve the legacy momentum_84-not-null readiness gate without using the momentum value for ranking.",
+      "value": "84_COMPLETED_DAILY_RETURN_LOOKBACK"
+    },
+    {
+      "field": "decision_time",
+      "rationale": "Use the completed Sunday close and the frozen Monday PIT snapshot before the next daily return.",
+      "value": "MONDAY_00_00_UTC"
+    },
+    {
+      "field": "target_weights",
+      "rationale": "Equal weight every eligible PIT member; hold cash if N is zero.",
+      "value": "EQUAL_1_OVER_N"
+    },
+    {
+      "field": "rebalance_frequency",
+      "rationale": "Preserve the BF01 B02 weekly schedule.",
+      "value": "WEEKLY_MONDAY"
+    },
+    {
+      "field": "between_rebalances",
+      "rationale": "Do not imply free daily rebalancing.",
+      "value": "SELF_FINANCING_HOLDINGS_DRIFT"
+    },
+    {
+      "field": "turnover",
+      "rationale": "Charge actual one-way buy and sell notional at each weekly rebalance.",
+      "value": "SUM_ABS_TARGET_MINUS_PRETRADE_DRIFTED_WEIGHT"
+    },
+    {
+      "field": "transaction_costs",
+      "rationale": "Preserve BF01 zero/base and add the already registered D4 stress mode.",
+      "value": "ZERO_0_BASE_0_002_STRESS_0_004"
+    },
+    {
+      "field": "initial_capital",
+      "rationale": "Fees reduce equity, never the reported initial-capital denominator.",
+      "value": "100000_FIXED_PER_FOLD"
+    },
+    {
+      "field": "fold_end",
+      "rationale": "Close all holdings and include liquidation turnover and fees.",
+      "value": "FULL_LIQUIDATION_WITH_COST"
+    },
+    {
+      "field": "missing_held_return",
+      "rationale": "Never coerce a missing held-asset return to zero.",
+      "value": "DATA_CONTRACT_FAILURE"
+    },
+    {
+      "field": "return_sampling",
+      "rationale": "Causal completed-close decision followed by the next daily return.",
+      "value": "DAILY_CLOSE_TO_CLOSE_NEXT_RETURN"
+    },
+    {
+      "field": "expectancy_metric",
+      "rationale": "Compute expectancy for M05 and equal-weight on identical weekly intervals; do not compare trade expectancy with portfolio-interval expectancy.",
+      "value": "MEAN_MATCHED_MONDAY_TO_MONDAY_NET_RETURN"
+    },
+    {
+      "field": "primary_delta_sign",
+      "rationale": "Positive return and expectancy deltas favor M05; positive drawdown improvement is EQUAL_WEIGHT_DRAWDOWN_MINUS_M05_DRAWDOWN.",
+      "value": "M05_MINUS_EQUAL_WEIGHT"
+    },
+    {
+      "field": "fold_robustness",
+      "rationale": "Aggregate improvement alone is insufficient.",
+      "value": "M05_BASE_RETURN_BEATS_EQUAL_WEIGHT_IN_AT_LEAST_2_OF_3_FOLDS"
+    },
+    {
+      "field": "authorization_boundary",
+      "rationale": "A relative benchmark result cannot authorize PIT baseline, production, ATI, universe, ranking, weight, entry, or exit changes.",
+      "value": "D5D2_RESEARCH_ONLY"
+    }
+  ],
+  "decision": {
+    "ati_v1_authorized": false,
+    "d5d2_benchmark_execution_research_authorized": true,
+    "decision": "BF01_PROTOCOL_RECOVERED_ACCOUNTING_REPAIR_REGISTERED",
+    "entry_change_authorized": false,
+    "equal_weight_change_authorized": false,
+    "exit_change_authorized": false,
+    "legacy_benchmark_execution_authorized": false,
+    "live_ready": false,
+    "point_in_time_universe_research_baseline_authorized": false,
+    "production_ready": false,
+    "ranking_change_authorized": false,
+    "reason": "EXACT_B02_INTENT_RECOVERED_AND_ACCOUNTING_DEFECTS_REPAIRED_BEFORE_PIT_EXECUTION",
+    "structural_pass": true,
+    "trade_logic_changed": false,
+    "universe_change_authorized": false,
+    "weight_change_authorized": false
+  },
+  "generated_at": "2026-07-27T23:46:24.091331Z",
+  "legacy_analysis": {
+    "benchmark_map": {
+      "B00": "CASH",
+      "B01": "BTC_BUY_AND_HOLD",
+      "B02": "EQUAL_WEIGHT_ELIGIBLE_UNIVERSE",
+      "B03": "BTC_DAILY_TREND_FILTERED",
+      "B04": "EQUAL_WEIGHT_DAILY_TREND_FILTERED",
+      "B05": "SIMPLE_TSM_12W_WITHOUT_4H",
+      "B06": "SIMPLE_XSM_12W_TOP3_WITHOUT_4H",
+      "B07": "SIMPLE_DUAL_12W_TOP3_WITHOUT_4H"
+    },
+    "confirmed_defect_ids": [
+      "DAILY_CONSTANT_TARGET_WEIGHTS_WITH_WEEKLY_TURNOVER",
+      "TURNOVER_IGNORES_INTER_REBALANCE_WEIGHT_DRIFT",
+      "ENTRY_FEE_CAN_MUTATE_REPORTED_INITIAL_CAPITAL",
+      "HELD_MISSING_RETURN_IS_COERCED_TO_ZERO"
+    ],
+    "expected_normalized_sha256": "595d793b5c055bb052afebd75329c0b2d0076c1b871d324866c5247b27063bff",
+    "findings": [
+      {
+        "detail": "B02='EQUAL_WEIGHT_ELIGIBLE_UNIVERSE'",
+        "finding_id": "LEGACY_BENCHMARK_ID",
+        "status": "PASS"
+      },
+      {
+        "detail": "B02 schedule is frozen only on completed Sunday daily closes.",
+        "finding_id": "SUNDAY_DECISION_SCHEDULE",
+        "status": "PASS"
+      },
+      {
+        "detail": "The Sunday decision is applied on the following Monday daily return.",
+        "finding_id": "MONDAY_NEXT_RETURN_APPLICATION",
+        "status": "PASS"
+      },
+      {
+        "detail": "All causally eligible symbols receive equal target weight.",
+        "finding_id": "EQUAL_WEIGHT_ALL_ELIGIBLE",
+        "status": "PASS"
+      },
+      {
+        "detail": "Daily portfolio returns reuse unchanged target weights between Mondays, while turnover and fees are charged only when the weekly target schedule changes.",
+        "finding_id": "DAILY_CONSTANT_TARGET_WEIGHTS_WITH_WEEKLY_TURNOVER",
+        "status": "CONFIRMED"
+      },
+      {
+        "detail": "Turnover compares the new target with prior target weights rather than pre-trade weights drifted by realized asset returns.",
+        "finding_id": "TURNOVER_IGNORES_INTER_REBALANCE_WEIGHT_DRIFT",
+        "status": "CONFIRMED"
+      },
+      {
+        "detail": "The entry fee is deducted from equity_values[-1] before the equity series is built, so the reported initial capital can become 99,800 instead of 100,000.",
+        "finding_id": "ENTRY_FEE_CAN_MUTATE_REPORTED_INITIAL_CAPITAL",
+        "status": "CONFIRMED"
+      },
+      {
+        "detail": "pct_change(...).fillna(0.0) can turn a missing held-asset return into a zero return instead of a data-contract failure.",
+        "finding_id": "HELD_MISSING_RETURN_IS_COERCED_TO_ZERO",
+        "status": "CONFIRMED"
+      }
+    ],
+    "hash_matches": true,
+    "legacy_commit": "0c90d338ea7390e17ec8906fa0ae91ee9b15c2c4",
+    "legacy_path": "scripts/research/run_ams_md01_benchmarks.py",
+    "missing_functions": [],
+    "missing_signatures": [],
+    "normalized_sha256": "595d793b5c055bb052afebd75329c0b2d0076c1b871d324866c5247b27063bff",
+    "protocol_recovered": true
+  },
+  "outputs": {
+    "accounting_contract": "reports/research/ams-rd04-d5d1-adjudicated-accounting-contract-v1.csv",
+    "findings": "reports/research/ams-rd04-d5d1-legacy-source-findings-v1.csv"
+  },
+  "research_stage": "RD04-D5D1",
+  "safety": {
+    "averaging_down_authorized": false,
+    "candidate_universe_created": false,
+    "holdout_2026_accessed": false,
+    "kelly_used": false,
+    "leverage_used": false,
+    "parameter_optimisation_used": false,
+    "portfolio_simulation_executed": false,
+    "pyramiding_authorized": false,
+    "test_2025_accessed": false,
+    "trade_logic_changed": false
+  },
+  "schema_version": "ams-rd04-d5d1-bf01-protocol-adjudication-v1",
+  "source_commit": "9c1a27699d6d9eaafc6fafa0c6482b7502b9f0ce",
+  "status": "COMPLETE",
+  "upstream": {
+    "d5d0_decision": "BF01_PROTOCOL_EVIDENCE_COLLECTED",
+    "d5d0_evidence_commit": "64b584fa421afa4ee891a80a15d7a2995c4a3622",
+    "d5d0_status": "COMPLETE",
+    "legacy_commit": "0c90d338ea7390e17ec8906fa0ae91ee9b15c2c4",
+    "legacy_normalized_sha256": "595d793b5c055bb052afebd75329c0b2d0076c1b871d324866c5247b27063bff",
+    "legacy_path": "scripts/research/run_ams_md01_benchmarks.py"
+  }
+}

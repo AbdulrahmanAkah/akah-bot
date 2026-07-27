@@ -1,0 +1,9 @@
+finding_id,status,detail
+LEGACY_BENCHMARK_ID,PASS,B02='EQUAL_WEIGHT_ELIGIBLE_UNIVERSE'
+SUNDAY_DECISION_SCHEDULE,PASS,B02 schedule is frozen only on completed Sunday daily closes.
+MONDAY_NEXT_RETURN_APPLICATION,PASS,The Sunday decision is applied on the following Monday daily return.
+EQUAL_WEIGHT_ALL_ELIGIBLE,PASS,All causally eligible symbols receive equal target weight.
+DAILY_CONSTANT_TARGET_WEIGHTS_WITH_WEEKLY_TURNOVER,CONFIRMED,"Daily portfolio returns reuse unchanged target weights between Mondays, while turnover and fees are charged only when the weekly target schedule changes."
+TURNOVER_IGNORES_INTER_REBALANCE_WEIGHT_DRIFT,CONFIRMED,Turnover compares the new target with prior target weights rather than pre-trade weights drifted by realized asset returns.
+ENTRY_FEE_CAN_MUTATE_REPORTED_INITIAL_CAPITAL,CONFIRMED,"The entry fee is deducted from equity_values[-1] before the equity series is built, so the reported initial capital can become 99,800 instead of 100,000."
+HELD_MISSING_RETURN_IS_COERCED_TO_ZERO,CONFIRMED,pct_change(...).fillna(0.0) can turn a missing held-asset return into a zero return instead of a data-contract failure.

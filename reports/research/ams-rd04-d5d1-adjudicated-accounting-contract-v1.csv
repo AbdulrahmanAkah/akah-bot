@@ -1,0 +1,18 @@
+field,value,rationale
+benchmark_identity,B02,EQUAL_WEIGHT_ELIGIBLE_UNIVERSE
+universe,FROZEN_RD04_PIT_WEEKLY_TOP30_INTERSECT_CAUSAL_DAILY_DATA_READY,Use the same Monday PIT membership schedule; never use survivor-30.
+history_readiness,84_COMPLETED_DAILY_RETURN_LOOKBACK,Preserve the legacy momentum_84-not-null readiness gate without using the momentum value for ranking.
+decision_time,MONDAY_00_00_UTC,Use the completed Sunday close and the frozen Monday PIT snapshot before the next daily return.
+target_weights,EQUAL_1_OVER_N,Equal weight every eligible PIT member; hold cash if N is zero.
+rebalance_frequency,WEEKLY_MONDAY,Preserve the BF01 B02 weekly schedule.
+between_rebalances,SELF_FINANCING_HOLDINGS_DRIFT,Do not imply free daily rebalancing.
+turnover,SUM_ABS_TARGET_MINUS_PRETRADE_DRIFTED_WEIGHT,Charge actual one-way buy and sell notional at each weekly rebalance.
+transaction_costs,ZERO_0_BASE_0_002_STRESS_0_004,Preserve BF01 zero/base and add the already registered D4 stress mode.
+initial_capital,100000_FIXED_PER_FOLD,"Fees reduce equity, never the reported initial-capital denominator."
+fold_end,FULL_LIQUIDATION_WITH_COST,Close all holdings and include liquidation turnover and fees.
+missing_held_return,DATA_CONTRACT_FAILURE,Never coerce a missing held-asset return to zero.
+return_sampling,DAILY_CLOSE_TO_CLOSE_NEXT_RETURN,Causal completed-close decision followed by the next daily return.
+expectancy_metric,MEAN_MATCHED_MONDAY_TO_MONDAY_NET_RETURN,Compute expectancy for M05 and equal-weight on identical weekly intervals; do not compare trade expectancy with portfolio-interval expectancy.
+primary_delta_sign,M05_MINUS_EQUAL_WEIGHT,Positive return and expectancy deltas favor M05; positive drawdown improvement is EQUAL_WEIGHT_DRAWDOWN_MINUS_M05_DRAWDOWN.
+fold_robustness,M05_BASE_RETURN_BEATS_EQUAL_WEIGHT_IN_AT_LEAST_2_OF_3_FOLDS,Aggregate improvement alone is insufficient.
+authorization_boundary,D5D2_RESEARCH_ONLY,"A relative benchmark result cannot authorize PIT baseline, production, ATI, universe, ranking, weight, entry, or exit changes."
