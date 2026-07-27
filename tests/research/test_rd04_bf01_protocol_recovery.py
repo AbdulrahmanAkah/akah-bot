@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from pathlib import Path
+
 import pytest
 
 from spotbot.research.rd04_bf01_protocol_recovery import (
@@ -159,3 +161,11 @@ def test_validate_report_accepts_safe_report() -> None:
         },
     }
     validate_report(report)
+
+
+def test_runner_uses_registered_next_stage_field() -> None:
+    root = Path(__file__).resolve().parents[2]
+    runner = root / "scripts/research/run_rd04_d5d0_bf01_protocol_recovery.py"
+    text = runner.read_text(encoding="utf-8")
+    assert 'decision.get("next_registered_research_stage")' in text
+    assert 'decision.get("next_stage")' not in text

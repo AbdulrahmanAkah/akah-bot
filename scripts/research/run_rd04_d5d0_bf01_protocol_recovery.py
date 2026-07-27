@@ -124,7 +124,7 @@ def verify_upstream() -> tuple[dict[str, Any], dict[str, Any]]:
     decision = d5a.get("decision")
     if not isinstance(decision, Mapping) or decision.get("decision") != "LIQUIDITY_FLOOR_FAIL":
         raise BF01ProtocolRecoveryRunError("RD04-D5A did not record the expected failed ablation.")
-    if decision.get("next_stage") != "RD04-D5D-PIT-EQUAL-WEIGHT-BENCHMARK":
+    if decision.get("next_registered_research_stage") != "RD04-D5D-PIT-EQUAL-WEIGHT-BENCHMARK":
         raise BF01ProtocolRecoveryRunError("RD04-D5A next-stage pointer drifted.")
     return d4, d5a
 
