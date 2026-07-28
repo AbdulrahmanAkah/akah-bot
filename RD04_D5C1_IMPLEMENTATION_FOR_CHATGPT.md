@@ -18,3 +18,9 @@ Loss share is calculated from loss amounts `max(-net_pnl, 0)`, not from net PnL,
 so profitable trades cannot conceal labelled losses. No trade or symbol is
 excluded, no market data is read and no portfolio simulation is performed.
 The result is diagnostic only and cannot authorize a production change.
+
+The 2021–2024 research interval is entry-exclusive at
+`2025-01-01T00:00:00Z`. Three registered WF03 positions are liquidated exactly
+at that terminal boundary with `END_OF_FOLD_EXIT`. Those boundary liquidations
+are retained because they close the frozen fold; entry at the boundary, exit
+after it, or a different boundary exit reason remains prohibited.

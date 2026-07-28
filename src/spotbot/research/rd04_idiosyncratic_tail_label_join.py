@@ -61,6 +61,8 @@ LABEL_FIELDS = (
 )
 
 EXPECTED_PIT_CONTROL_TRADE_COUNT = 153
+EXPECTED_RESEARCH_BOUNDARY_EXIT_COUNT = 3
+RESEARCH_END_UTC = "2025-01-01T00:00:00Z"
 
 
 class TailLabelDiagnosticError(RuntimeError):
@@ -160,6 +162,28 @@ def timing_label(
     raise TailLabelDiagnosticError("overlapping event has no registered timing label")
 
 
+def research_boundary_audit(
+    trades: list[TradeRow],
+) -> dict[str, int]:
+    boundary = parse_utc(RESEARCH_END_UTC)
+    return {
+        "entry_at_or_after_boundary_count": sum(
+            parse_trade_time(row, "entry_time") >= boundary for row in trades
+        ),
+        "post_boundary_exit_count": sum(
+            parse_trade_time(row, "exit_time") > boundary for row in trades
+        ),
+        "boundary_exit_count": sum(
+            parse_trade_time(row, "exit_time") == boundary for row in trades
+        ),
+        "boundary_exit_reason_mismatch_count": sum(
+            parse_trade_time(row, "exit_time") == boundary
+            and required_text(row, "exit_reason") != "END_OF_FOLD_EXIT"
+            for row in trades
+        ),
+    }
+
+
 def validate_input_trades(
     trades: list[TradeRow],
     *,
@@ -172,6 +196,8 @@ def validate_input_trades(
 
     trade_ids: set[str] = set()
     folds: set[str] = set()
+    boundary = parse_utc(RESEARCH_END_UTC)
+    boundary_exit_count = 0
     for row in trades:
         missing = [field for field in ORIGINAL_TRADE_FIELDS if field not in row]
         if missing:
@@ -190,8 +216,18 @@ def validate_input_trades(
         exit_time = parse_trade_time(row, "exit_time")
         if exit_time < entry:
             raise TailLabelDiagnosticError(f"trade exits before entry: {trade_id}")
-        if exit_time >= parse_utc("2025-01-01T00:00:00Z"):
-            raise TailLabelDiagnosticError(f"trade reaches prohibited 2025 test window: {trade_id}")
+        if entry >= boundary:
+            raise TailLabelDiagnosticError(
+                f"trade entry reaches prohibited research boundary: {trade_id}"
+            )
+        if exit_time > boundary:
+            raise TailLabelDiagnosticError(f"trade exits after research boundary: {trade_id}")
+        if exit_time == boundary:
+            if required_text(row, "exit_reason") != "END_OF_FOLD_EXIT":
+                raise TailLabelDiagnosticError(
+                    f"research-boundary exit is not END_OF_FOLD_EXIT: {trade_id}"
+                )
+            boundary_exit_count += 1
         for field in (
             "entry_price",
             "exit_price",
@@ -207,6 +243,10 @@ def validate_input_trades(
 
     if folds != {"WF01", "WF02", "WF03"}:
         raise TailLabelDiagnosticError(f"unexpected fold set: {sorted(folds)}")
+    if boundary_exit_count != EXPECTED_RESEARCH_BOUNDARY_EXIT_COUNT:
+        raise TailLabelDiagnosticError(
+            f"unexpected registered research-boundary exit count: {boundary_exit_count}"
+        )
 
 
 def label_trades(
@@ -550,6 +590,18 @@ def validate_report(report: dict[str, Any]) -> None:
         if validation.get(field) is not True:
             raise TailLabelDiagnosticError(f"D5C1 validation failed: {field}")
 
+    boundary_audit = report.get("research_boundary_audit")
+    if not isinstance(boundary_audit, dict):
+        raise TailLabelDiagnosticError("D5C1 research-boundary audit is missing")
+    expected_boundary = {
+        "entry_at_or_after_boundary_count": 0,
+        "post_boundary_exit_count": 0,
+        "boundary_exit_count": EXPECTED_RESEARCH_BOUNDARY_EXIT_COUNT,
+        "boundary_exit_reason_mismatch_count": 0,
+    }
+    if any(boundary_audit.get(field) != expected for field, expected in expected_boundary.items()):
+        raise TailLabelDiagnosticError("D5C1 research-boundary audit failed")
+
     metrics = report.get("metrics")
     if not isinstance(metrics, dict):
         raise TailLabelDiagnosticError("D5C1 metrics are missing")
@@ -614,9 +666,11 @@ __all__ = [
     "DECISION_BLOCKED",
     "DECISION_COMPLETE",
     "EXPECTED_PIT_CONTROL_TRADE_COUNT",
+    "EXPECTED_RESEARCH_BOUNDARY_EXIT_COUNT",
     "EventLink",
     "LABEL_FIELDS",
     "ORIGINAL_TRADE_FIELDS",
+    "RESEARCH_END_UTC",
     "RESEARCH_STAGE",
     "SCHEMA_VERSION",
     "SummaryRow",
@@ -635,6 +689,7 @@ __all__ = [
     "loss_amount",
     "parse_trade_time",
     "projection_fingerprint",
+    "research_boundary_audit",
     "required_float",
     "required_text",
     "timing_breakdown",

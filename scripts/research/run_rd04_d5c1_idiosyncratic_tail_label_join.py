@@ -18,6 +18,7 @@ from spotbot.research.rd04_external_tail_event_source_freeze import (
 from spotbot.research.rd04_idiosyncratic_tail_label_join import (
     DECISION_COMPLETE,
     EXPECTED_PIT_CONTROL_TRADE_COUNT,
+    EXPECTED_RESEARCH_BOUNDARY_EXIT_COUNT,
     LABEL_FIELDS,
     ORIGINAL_TRADE_FIELDS,
     RESEARCH_STAGE,
@@ -32,6 +33,7 @@ from spotbot.research.rd04_idiosyncratic_tail_label_join import (
     label_trades,
     link_rows,
     projection_fingerprint,
+    research_boundary_audit,
     timing_breakdown,
     validate_input_trades,
     validate_projection,
@@ -291,6 +293,7 @@ def main() -> None:
         if row.get("universe_mode") == "PIT_UNIVERSE" and row.get("portfolio_mode") == "CONTROL"
     ]
     validate_input_trades(trades)
+    boundary_audit = research_boundary_audit(trades)
 
     labelled_rows, links = label_trades(trades)
     validate_projection(trades, labelled_rows)
@@ -358,6 +361,7 @@ def main() -> None:
             "input_portfolio": ("RD04_D5B2_PIT_UNIVERSE_CONTROL_BASE_COST"),
             "source_row_count": len(all_rows),
             "selected_trade_count": len(trades),
+            "expected_research_boundary_exit_count": (EXPECTED_RESEARCH_BOUNDARY_EXIT_COUNT),
         },
         "validation": {
             "source_trade_hash_matches_d5b2": True,
@@ -374,6 +378,7 @@ def main() -> None:
             "input_projection_fingerprint": input_projection,
             "output_projection_fingerprint": output_projection,
         },
+        "research_boundary_audit": boundary_audit,
         "metrics": metrics,
         "with_without_labels": with_without,
         "fold_distribution": folds,
@@ -439,6 +444,9 @@ def main() -> None:
     print(f"LABELLED_LOSS_SHARE={metrics['labelled_loss_share']}")
     print(f"LABELLED_MAXIMUM_ADVERSE_EXCURSION={metrics['labelled_maximum_adverse_excursion']}")
     print(f"EVENT_LINK_COUNT={len(links)}")
+    print(f"RESEARCH_BOUNDARY_END_OF_FOLD_EXIT_COUNT={boundary_audit['boundary_exit_count']}")
+    print("ENTRY_AT_OR_AFTER_RESEARCH_BOUNDARY_COUNT=0")
+    print("POST_RESEARCH_BOUNDARY_EXIT_COUNT=0")
     print("ALL_ORIGINAL_TRADE_FIELDS_UNCHANGED=True")
     print("ALL_TRADE_ROWS_RETAINED=True")
     print("NEXT_STAGE=RD04-D5E0-MIDWEEK-PULLBACK-DIAGNOSTIC")
