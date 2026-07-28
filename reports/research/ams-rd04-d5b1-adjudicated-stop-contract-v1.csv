@@ -1,0 +1,107 @@
+section,field,value
+comparison_contract,control_replay_must_match_d1,True
+comparison_contract,cost_modes.BASE_COST,0.002
+comparison_contract,cost_modes.STRESS_0_4_PERCENT,0.004
+comparison_contract,cost_modes.ZERO_COST,0.0
+comparison_contract,folds[0],WF01
+comparison_contract,folds[1],WF02
+comparison_contract,folds[2],WF03
+comparison_contract,full_costed_fold_liquidation,True
+comparison_contract,same_entry_logic,True
+comparison_contract,same_entry_weight,True
+comparison_contract,same_market_data,True
+comparison_contract,same_universe_schedule,True
+control,entry_logic_changed,False
+control,portfolio,MD01_M05
+control,position_weights_changed,False
+control,tactical_stop,NONE
+control,universes[0],FIXED
+control,universes[1],PIT
+decision_gate,blocked.decision,STRUCTURAL_STOP_DATA_CONTRACT_BLOCKED
+decision_gate,blocked.requirements[0],"Any causal, replay, reconciliation, or data gate fails"
+decision_gate,confirmed.decision,STRUCTURAL_STOP_EDGE_CONFIRMED
+decision_gate,confirmed.requirements[0],PIT base compounded return delta > 0
+decision_gate,confirmed.requirements[1],PIT base expectancy delta > 0
+decision_gate,confirmed.requirements[2],PIT maximum drawdown reduction > 0
+decision_gate,confirmed.requirements[3],PIT trade CVaR10 improvement > 0
+decision_gate,confirmed.requirements[4],At least 2 of 3 PIT base folds improve
+decision_gate,confirmed.requirements[5],PIT stress compounded return delta >= 0
+decision_gate,cost_fragile.decision,STRUCTURAL_STOP_EDGE_COST_FRAGILE
+decision_gate,cost_fragile.requirements[0],All confirmed requirements except stress return pass
+decision_gate,cost_fragile.requirements[1],PIT zero-cost compounded return delta > 0
+decision_gate,not_confirmed.decision,STRUCTURAL_STOP_EDGE_NOT_CONFIRMED
+decision_gate,not_confirmed.requirements[0],Confirmed and cost-fragile gates both fail
+excluded_v5r1_components,[0],V5R1_RISK_SIZING
+excluded_v5r1_components,[1],DRAWDOWN_THROTTLE
+excluded_v5r1_components,[2],PORTFOLIO_HEAT
+excluded_v5r1_components,[3],ADD_ON
+excluded_v5r1_components,[4],V5R1_REENTRY
+excluded_v5r1_components,[5],TRAILING_STOP
+excluded_v5r1_components,[6],STRUCTURE_EXIT
+excluded_v5r1_components,[7],STAGNATION_EXIT
+excluded_v5r1_components,[8],V5R1_SIGNAL_FAMILIES
+excluded_v5r1_components,[9],V5R1_FIBONACCI_SCORING
+execution_contract,fixed_stop,True
+execution_contract,gap_rule,OPEN_IF_OPEN_LE_STOP
+execution_contract,intrabar_rule,STOP_PRICE_IF_LOW_LE_STOP
+execution_contract,same_bar_entry_and_stop_allowed,True
+execution_contract,same_bar_round_trip_costs_charged,True
+execution_contract,stop_active_from_entry_bar,True
+execution_contract,stop_exit_reason,STRUCTURAL_ATR_STOP_EXIT
+execution_contract,trailing_allowed,False
+execution_order,[0],VENUE_EXIT_AT_BAR_OPEN
+execution_order,[1],KNOWN_STOP_GAP_CHECK_AT_BAR_OPEN
+execution_order,[2],SCHEDULED_M05_EXIT_AT_BAR_OPEN
+execution_order,[3],NORMAL_M05_ENTRY_AT_BAR_OPEN
+execution_order,[4],KNOWN_STOP_INTRABAR_LOW_CHECK
+execution_order,[5],M05_SIGNAL_GENERATION_AFTER_BAR_CLOSE
+feature_contract,atr_definition,SMA_TRUE_RANGE
+feature_contract,atr_period,14
+feature_contract,future_data_allowed,False
+feature_contract,signal_bar_excluded_from_structure,True
+feature_contract,signal_information_cutoff,COMPLETED_SIGNAL_BAR_CLOSE
+feature_contract,structure_definition,PRIOR_12_COMPLETED_4H_BAR_LOW_MINIMUM
+feature_contract,structure_lookback_bars,12
+feature_contract,structure_min_periods,6
+feature_contract,timeframe,4H
+identity,contract_id,RD04-D5B1-V5R1-DERIVED-EXIT-ONLY-OVERLAY
+identity,derivation_status,AMENDED_FOR_D4_ENTRY_AND_WEIGHT_PARITY
+identity,not_exact_legacy_v5r1_bundle,True
+identity,source_model,V5R1_STRUCTURE_BALANCED
+metrics,primary[0],pit_base_cost_compounded_return_delta
+metrics,primary[1],pit_base_cost_expectancy_delta
+metrics,primary[2],pit_maximum_drawdown_reduction
+metrics,primary[3],pit_trade_cvar_10_improvement
+metrics,secondary[0],fixed_vs_pit_stop_delta
+metrics,secondary[1],stress_cost_compounded_return_delta
+metrics,secondary[2],stopped_trade_recovery_mfe
+metrics,secondary[3],stop_exit_count
+metrics,secondary[4],same_bar_stop_count
+metrics,secondary[5],minimum_floor_count
+metrics,secondary[6],within_bounds_count
+metrics,secondary[7],maximum_cap_count
+metrics,stopped_trade_recovery_mfe,"For a stopped treatment trade matched to the control entry by fold, universe, symbol, candidate_id, and entry_time: maximum high after stop exit through the matched control exit, divided by the treatment stop-exit price, minus one."
+metrics,trade_cvar_10,"Mean return_fraction of the worst max(1, ceil(10 percent of trade_count)) closed trades, calculated separately per portfolio and cost mode."
+safety,holdout_2026_allowed,False
+safety,leverage_allowed,False
+safety,long_only,True
+safety,margin_allowed,False
+safety,outcome_based_stop_selection_allowed,False
+safety,parameter_search_allowed,False
+safety,shorting_allowed,False
+safety,spot_only,True
+safety,test_2025_allowed,False
+stop_formula,applied_distance_atr,"clip(raw_distance_atr, 2.2, 3.4)"
+stop_formula,entry_rejection_allowed,False
+stop_formula,maximum_atr,3.4
+stop_formula,minimum_atr,2.2
+stop_formula,position_resizing_allowed,False
+stop_formula,raw_distance_atr,(signal_close - prior_12_bar_low) / atr14
+stop_formula,stop_price,signal_close - applied_distance_atr * atr14
+treatment,entry_logic_changed,False
+treatment,overlay,V5R1_DERIVED_BOUNDED_STRUCTURAL_FIXED_STOP
+treatment,portfolio,MD01_M05
+treatment,position_weights_changed,False
+treatment,stop_only_exit_change,True
+treatment,universes[0],FIXED
+treatment,universes[1],PIT
