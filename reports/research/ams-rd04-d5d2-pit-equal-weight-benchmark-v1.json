@@ -1,0 +1,326 @@
+{
+  "adjudicated_contract": {
+    "authorization_boundary": "D5D2_RESEARCH_ONLY",
+    "benchmark_identity": "B02",
+    "between_rebalances": "SELF_FINANCING_HOLDINGS_DRIFT",
+    "decision_time": "MONDAY_00_00_UTC",
+    "expectancy_metric": "MEAN_MATCHED_MONDAY_TO_MONDAY_NET_RETURN",
+    "fold_end": "FULL_LIQUIDATION_WITH_COST",
+    "fold_robustness": "M05_BASE_RETURN_BEATS_EQUAL_WEIGHT_IN_AT_LEAST_2_OF_3_FOLDS",
+    "history_readiness": "84_COMPLETED_DAILY_RETURN_LOOKBACK",
+    "initial_capital": "100000_FIXED_PER_FOLD",
+    "missing_held_return": "DATA_CONTRACT_FAILURE",
+    "primary_delta_sign": "M05_MINUS_EQUAL_WEIGHT",
+    "rebalance_frequency": "WEEKLY_MONDAY",
+    "return_sampling": "DAILY_CLOSE_TO_CLOSE_NEXT_RETURN",
+    "target_weights": "EQUAL_1_OVER_N",
+    "transaction_costs": "ZERO_0_BASE_0_002_STRESS_0_004",
+    "turnover": "SUM_ABS_TARGET_MINUS_PRETRADE_DRIFTED_WEIGHT",
+    "universe": "FROZEN_RD04_PIT_WEEKLY_TOP30_INTERSECT_CAUSAL_DAILY_DATA_READY"
+  },
+  "aggregate_metrics": {
+    "M05_PIT": {
+      "BASE_COST": {
+        "compounded_return": -0.4810345157020558,
+        "fees": 10446.555515260969,
+        "mean_fold_return": -0.10555219266528004,
+        "mean_maximum_drawdown": 0.5534433874568565,
+        "open_positions_after_fold": 0,
+        "positive_folds": 2,
+        "reconciliation_status": "PASS",
+        "turnover": 5223277.757630483,
+        "weekly_expectancy": -0.0009759888219548795,
+        "weekly_interval_count": 155,
+        "worst_fold_return": -0.6004860326022057
+      },
+      "STRESS_0_4_PERCENT": {
+        "compounded_return": -0.5481740878572945,
+        "fees": 20398.654186263928,
+        "mean_fold_return": -0.14984169069945708,
+        "mean_maximum_drawdown": 0.5674969464635001,
+        "open_positions_after_fold": 0,
+        "positive_folds": 2,
+        "reconciliation_status": "PASS",
+        "turnover": 5099663.546565982,
+        "weekly_expectancy": -0.0018280017132115836,
+        "weekly_interval_count": 155,
+        "worst_fold_return": -0.6119255068690967
+      },
+      "ZERO_COST": {
+        "compounded_return": -0.40411894482882516,
+        "fees": 0.0,
+        "mean_fold_return": -0.058993547309334295,
+        "mean_maximum_drawdown": 0.5389537577499274,
+        "open_positions_after_fold": 0,
+        "positive_folds": 2,
+        "reconciliation_status": "PASS",
+        "turnover": 5351123.608669361,
+        "weekly_expectancy": -0.0001246600957190371,
+        "weekly_interval_count": 155,
+        "worst_fold_return": -0.5887347479585601
+      }
+    },
+    "PIT_EQUAL_WEIGHT": {
+      "BASE_COST": {
+        "compounded_return": -0.3477089988835531,
+        "fees": 3525.157882636807,
+        "mean_fold_return": 0.20396897560119695,
+        "mean_maximum_drawdown": 0.559941106835251,
+        "open_positions_after_fold": 0,
+        "positive_folds": 2,
+        "reconciliation_status": "PASS",
+        "turnover": 1762578.9413184037,
+        "weekly_expectancy": 0.002455376518637891,
+        "weekly_interval_count": 155,
+        "worst_fold_return": -0.7689894886724828
+      },
+      "STRESS_0_4_PERCENT": {
+        "compounded_return": -0.3704107674183956,
+        "fees": 7007.8898636181475,
+        "mean_fold_return": 0.19037543240626612,
+        "mean_maximum_drawdown": 0.5618704069572947,
+        "open_positions_after_fold": 0,
+        "positive_folds": 2,
+        "reconciliation_status": "PASS",
+        "turnover": 1751972.4659045367,
+        "weekly_expectancy": 0.0022675980585925744,
+        "weekly_interval_count": 155,
+        "worst_fold_return": -0.7719132545354487
+      },
+      "ZERO_COST": {
+        "compounded_return": -0.3241805108259409,
+        "fees": 0.0,
+        "mean_fold_return": 0.21772394206535706,
+        "mean_maximum_drawdown": 0.5579959974941904,
+        "open_positions_after_fold": 0,
+        "positive_folds": 2,
+        "reconciliation_status": "PASS",
+        "turnover": 1773283.0605729083,
+        "weekly_expectancy": 0.0026434120303309174,
+        "weekly_interval_count": 155,
+        "worst_fold_return": -0.7660275176023362
+      }
+    }
+  },
+  "benchmark_id": "B02",
+  "benchmark_name": "EQUAL_WEIGHT_ELIGIBLE_UNIVERSE",
+  "comparisons": [
+    {
+      "cost_mode": "ZERO_COST",
+      "delta_compounded_return": -0.07993843400288425,
+      "delta_weekly_expectancy": -0.0027680721260499547,
+      "drawdown_improvement": 0.019042239744263,
+      "equal_weight_compounded_return": -0.3241805108259409,
+      "equal_weight_fees": 0.0,
+      "equal_weight_mean_maximum_drawdown": 0.5579959974941904,
+      "equal_weight_turnover": 1773283.0605729083,
+      "equal_weight_weekly_expectancy": 0.0026434120303309174,
+      "m05_compounded_return": -0.40411894482882516,
+      "m05_fees": 0.0,
+      "m05_mean_maximum_drawdown": 0.5389537577499274,
+      "m05_turnover": 5351123.608669361,
+      "m05_weekly_expectancy": -0.0001246600957190371,
+      "transaction_cost": 0.0
+    },
+    {
+      "cost_mode": "BASE_COST",
+      "delta_compounded_return": -0.1333255168185027,
+      "delta_weekly_expectancy": -0.0034313653405927706,
+      "drawdown_improvement": 0.006497719378394495,
+      "equal_weight_compounded_return": -0.3477089988835531,
+      "equal_weight_fees": 3525.157882636807,
+      "equal_weight_mean_maximum_drawdown": 0.559941106835251,
+      "equal_weight_turnover": 1762578.9413184037,
+      "equal_weight_weekly_expectancy": 0.002455376518637891,
+      "m05_compounded_return": -0.4810345157020558,
+      "m05_fees": 10446.555515260969,
+      "m05_mean_maximum_drawdown": 0.5534433874568565,
+      "m05_turnover": 5223277.757630483,
+      "m05_weekly_expectancy": -0.0009759888219548795,
+      "transaction_cost": 0.002
+    },
+    {
+      "cost_mode": "STRESS_0_4_PERCENT",
+      "delta_compounded_return": -0.17776332043889886,
+      "delta_weekly_expectancy": -0.004095599771804158,
+      "drawdown_improvement": -0.005626539506205397,
+      "equal_weight_compounded_return": -0.3704107674183956,
+      "equal_weight_fees": 7007.8898636181475,
+      "equal_weight_mean_maximum_drawdown": 0.5618704069572947,
+      "equal_weight_turnover": 1751972.4659045367,
+      "equal_weight_weekly_expectancy": 0.0022675980585925744,
+      "m05_compounded_return": -0.5481740878572945,
+      "m05_fees": 20398.654186263928,
+      "m05_mean_maximum_drawdown": 0.5674969464635001,
+      "m05_turnover": 5099663.546565982,
+      "m05_weekly_expectancy": -0.0018280017132115836,
+      "transaction_cost": 0.004
+    }
+  ],
+  "cost_modes": {
+    "BASE_COST": 0.002,
+    "STRESS_0_4_PERCENT": 0.004,
+    "ZERO_COST": 0.0
+  },
+  "dataset_hashes": {
+    "d0c_after": {
+      "availability": "6ae1e0612c379765f6dace35a27054f484083cf3a4a71481c527ce1b6e99bdcf",
+      "daily": "55a7a732c8cb464de528727aff3cfd536a9b74a14e117e1b6fe9c9d0cba8f3de",
+      "eight_hour": "14033d98f2ad00d7bdd5006bec4308c1f48414240f6399b1d78049ec743b3c6f",
+      "four_hour": "1c72416f889137b68ff48008c5760e809d0a94a5647569bab631e96904cebd72"
+    },
+    "d0c_before": {
+      "availability": "6ae1e0612c379765f6dace35a27054f484083cf3a4a71481c527ce1b6e99bdcf",
+      "daily": "55a7a732c8cb464de528727aff3cfd536a9b74a14e117e1b6fe9c9d0cba8f3de",
+      "eight_hour": "14033d98f2ad00d7bdd5006bec4308c1f48414240f6399b1d78049ec743b3c6f",
+      "four_hour": "1c72416f889137b68ff48008c5760e809d0a94a5647569bab631e96904cebd72"
+    },
+    "invariant": true
+  },
+  "decision": {
+    "ati_v1_authorized": false,
+    "base_relative_gate": {
+      "minimum_two_of_three_fold_wins": false,
+      "passed": false,
+      "positive_drawdown_improvement": true,
+      "positive_return_delta": false,
+      "positive_weekly_expectancy_delta": false
+    },
+    "d5b_grid_recovery_research_authorized": true,
+    "decision": "M05_RELATIVE_EDGE_NOT_CONFIRMED",
+    "entry_change_authorized": false,
+    "equal_weight_change_authorized": false,
+    "exit_change_authorized": false,
+    "improved_base_cost_folds": 1,
+    "live_ready": false,
+    "next_stage": "RD04-D5B0-V5R1-ATR-GRID-RECOVERY",
+    "point_in_time_universe_research_baseline_authorized": false,
+    "production_ready": false,
+    "ranking_change_authorized": false,
+    "reason": "M05_FAILED_BASE_RELATIVE_RETURN_EXPECTANCY_DRAWDOWN_OR_FOLD_GATE",
+    "relative_benchmark_result_only": true,
+    "stress_relative_gate": {
+      "passed": false,
+      "positive_return_delta": false,
+      "positive_weekly_expectancy_delta": false
+    },
+    "structural_checks": {
+      "all_fold_statuses_passed": true,
+      "d5d1_contract_match": true,
+      "data_contract_passed": true,
+      "m05_control_replay_passed": true,
+      "matched_weekly_intervals_passed": true
+    },
+    "trade_logic_changed": false,
+    "universe_change_authorized": false,
+    "weight_change_authorized": false
+  },
+  "generated_at": "2026-07-28T00:26:51.599890Z",
+  "m05_control_replay": {
+    "aggregates": {
+      "mismatches": {},
+      "passed": true
+    },
+    "passed": true,
+    "trade_ledger": {
+      "expected_row_count": 153,
+      "mismatch_columns": {
+        "alignment_tier": 0,
+        "candidate_id": 0,
+        "entry_price": 0,
+        "entry_time": 0,
+        "exit_price": 0,
+        "exit_reason": 0,
+        "exit_time": 0,
+        "fold_id": 0,
+        "gross_pnl": 0,
+        "holding_hours": 0,
+        "mae": 0,
+        "mfe": 0,
+        "natural_reselection_sequence": 0,
+        "net_pnl": 0,
+        "position_id": 0,
+        "previous_position_id": 0,
+        "quantity": 0,
+        "return_fraction": 0,
+        "symbol": 0,
+        "trade_id": 0,
+        "universe_mode": 0
+      },
+      "observed_row_count": 153,
+      "passed": true
+    }
+  },
+  "outputs": {
+    "aggregate_metrics": "reports/research/ams-rd04-d5d2-aggregate-metrics-v1.csv",
+    "comparison": "reports/research/ams-rd04-d5d2-comparison-v1.csv",
+    "fold_metrics": "reports/research/ams-rd04-d5d2-fold-metrics-v1.csv",
+    "readiness_audit": "reports/research/ams-rd04-d5d2-readiness-audit-v1.csv",
+    "rebalance_audit": "reports/research/ams-rd04-d5d2-rebalance-audit-v1.csv",
+    "weekly_intervals": "reports/research/ams-rd04-d5d2-weekly-intervals-v1.csv"
+  },
+  "pit_universe_validation": {
+    "all_rows_venue_data_eligible": true,
+    "duplicate_symbol_snapshot_count": 0,
+    "invalid_venue_rank_snapshot_count": 0,
+    "maximum_snapshot_count": 30,
+    "minimum_snapshot_count": 30,
+    "monday_midnight_only": true,
+    "passed": true,
+    "pre_2025_only": true,
+    "row_count": 4710,
+    "snapshot_count": 157
+  },
+  "readiness_validation": {
+    "candidate_row_count": 4710,
+    "eligible_row_count": 4686,
+    "lookback_completed_daily_returns": 84,
+    "maximum_ready_count": 30,
+    "mean_ready_count": 29.84713375796178,
+    "minimum_ready_count": 29,
+    "momentum_value_used_for_ranking": false,
+    "snapshot_count": 157
+  },
+  "research_stage": "RD04-D5D2",
+  "safety": {
+    "averaging_down_authorized": false,
+    "holdout_2026_accessed": false,
+    "kelly_used": false,
+    "leverage_used": false,
+    "missing_return_filled_with_zero": false,
+    "outcome_based_symbol_filtering_used": false,
+    "parameter_optimisation_used": false,
+    "pyramiding_authorized": false,
+    "survivor_universe_used": false,
+    "test_2025_accessed": false,
+    "trade_logic_changed": false
+  },
+  "schema_version": "ams-rd04-d5d2-pit-equal-weight-benchmark-v1",
+  "simulation_error": "",
+  "source_commit": "359c0dc28e8772a647781738d9fa777fe2d3ea1b",
+  "status": "COMPLETE",
+  "upstream": {
+    "d0c_candidates": "reports/research/ams-rd04-d0c-venue-eligible-weekly-candidates-v1.csv",
+    "d0c_registration": "reports/research/ams-rd04-d0c-adjudicated-dataset-registration-v1.json",
+    "d1_report": "reports/research/ams-rd04-d1-pit-universe-replay-v1.json",
+    "d5d1_decision": "BF01_PROTOCOL_RECOVERED_ACCOUNTING_REPAIR_REGISTERED",
+    "d5d1_evidence_commit": "989ec18909354c834f596e949faa2fddcdbca15b",
+    "d5d1_status": "COMPLETE"
+  },
+  "validation": {
+    "all_fold_statuses_passed": true,
+    "d5d1_contract_match": true,
+    "data_contract_passed": true,
+    "dataset_hashes_invariant": true,
+    "full_costed_liquidation": true,
+    "initial_capital_fixed": true,
+    "m05_control_replay_passed": true,
+    "matched_weekly_intervals_passed": true,
+    "no_2025_access": true,
+    "no_missing_return_fill": true,
+    "no_parameter_optimisation": true,
+    "self_financing_holdings_drift": true,
+    "trade_logic_changed": false
+  },
+  "variant_id": "MD01-M05"
+}
