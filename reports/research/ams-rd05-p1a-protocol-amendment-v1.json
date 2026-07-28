@@ -1,0 +1,74 @@
+{
+  "decision": {
+    "decision": "RD05_PROTOCOL_AMENDMENT_REGISTERED",
+    "next_stage": "RD05-P1-RE-ADJUDICATION"
+  },
+  "folds": [
+    {
+      "fold_id": "WF01",
+      "purge_embargo_days": 28,
+      "timezone": "UTC",
+      "train_end": "2022-11-28",
+      "train_start": "2022-01-03",
+      "validation_end": "2023-06-26",
+      "validation_start": "2023-01-02"
+    },
+    {
+      "fold_id": "WF02",
+      "purge_embargo_days": 28,
+      "timezone": "UTC",
+      "train_end": "2023-05-29",
+      "train_start": "2022-01-03",
+      "validation_end": "2023-12-25",
+      "validation_start": "2023-07-03"
+    },
+    {
+      "fold_id": "WF03",
+      "purge_embargo_days": 28,
+      "timezone": "UTC",
+      "train_end": "2023-11-27",
+      "train_start": "2022-01-03",
+      "validation_end": "2024-12-23",
+      "validation_start": "2024-01-01"
+    }
+  ],
+  "formula_resolutions": {
+    "ATR_EXPANSION_WITH_POSITIVE_RETURN": "Wilder ATR14 / prior 20 ATR mean -1 times max(r1,0)",
+    "BETA_ADJUSTED_MOMENTUM_28D": "84 paired OLS intercept BTC beta; 60 min; 28D asset less beta BTC",
+    "IDIOSYNCRATIC_STRENGTH_28D": "market residual sum 28 / (sample std residual84 * sqrt(28))",
+    "MARKET_RESIDUAL_MOMENTUM_28D": "84 paired OLS intercept market model; 60 min; sum last 28 residuals",
+    "MULTI_HORIZON_TREND_AGREEMENT": "(sign(r7)+sign(r28)+sign(r84))/3; complete 84D",
+    "VOLATILITY_CONTRACTION_BREAKOUT": "Wilder ATR14; 60D median normalized prior ATR; prior 20D high"
+  },
+  "generated_at_utc": "2026-07-28T17:40:02.949638+00:00",
+  "holdout_2026_accessed": false,
+  "membership_contract": {
+    "2021_ohlcv_warmup_only": true,
+    "first_pit_decision": "2022-01-03T00:00:00Z",
+    "no_synthetic_2021_membership": true
+  },
+  "output_hashes": {
+    "reports\\research\\ams-rd05-p1a-protocol-amendment-v1.md": "0b20e33bd1e66acbd5e22e9990f485ba06a9cfd4f25ef86109670965f6e915ee"
+  },
+  "regime_amendment": {
+    "btc_trend_minimum_completed_daily_bars": 84,
+    "history_cutoff": "strictly before decision_time",
+    "quantile_method": "linear",
+    "quantiles": [
+      0.3333333333333333,
+      0.6666666666666666
+    ],
+    "tercile_minimum_prior_weekly_decisions": 52
+  },
+  "research_stage": "RD05-P1A-PROTOCOL-AMENDMENT",
+  "schema_version": "ams-rd05-p1a-protocol-amendment-v1",
+  "status": "COMPLETE",
+  "test_2025_accessed": false,
+  "trial_budget": {
+    "maximum_ensemble_candidates": 28,
+    "maximum_model_families": 2,
+    "maximum_primitive_trials": 33,
+    "maximum_regime_interactions": 198,
+    "total_declared_trial_count": 261
+  }
+}
