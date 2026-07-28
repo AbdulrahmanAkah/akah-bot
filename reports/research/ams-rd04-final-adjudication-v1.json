@@ -1,0 +1,269 @@
+{
+  "factual_summary": {
+    "d1_pit_replay": {
+      "fixed_base_compounded_return": 2.6861470605832247,
+      "pit_base_compounded_return": -0.4810345157020558,
+      "pit_base_profit_factor": 0.8533000104768909
+    },
+    "d3_diagnostics": {
+      "entrant_pit_net_pnl": -94301.5435961918,
+      "removed_survivor_fixed_net_pnl": 99489.7769194499,
+      "removed_survivor_union_net_pnl": 90613.37963955523
+    },
+    "d5a_liquidity_floor": {
+      "base_pf_delta": -0.05545703538888003,
+      "base_return_delta": -0.055126588705641244
+    },
+    "d5b2_structural_stop": {
+      "base_improved_folds": 1,
+      "base_return_delta": 0.14798842236375032
+    },
+    "d5c1_labelled_loss_share": 0.07157930646497127,
+    "d5d2_equal_weight": {
+      "equal_weight_base_compounded_return": -0.3477089988835531,
+      "m05_base_compounded_return": -0.4810345157020558
+    },
+    "d5e0_largest_other_weekday_share": 0.24342105263157895,
+    "d5e0_midweek": {
+      "largest_other_weekday_share": 0.24342105263157895,
+      "tuesday_low_share": 0.13157894736842105
+    },
+    "d5e0_tuesday_low_share": 0.13157894736842105,
+    "d5f_gap_share": -0.006496207717361605,
+    "d5f_membership_exit": {
+      "exit_events": 54,
+      "fixed_pit_gap_share": -0.006496207717361605,
+      "later_reentry_share": 0.7962962962962963,
+      "unique_symbols": 16
+    },
+    "d5f_membership_exit_events": 54
+  },
+  "final_adjudication": {
+    "completed_stage_count": 22,
+    "confirmed_registered_edge_count": 0,
+    "decision": "RD04_RESEARCH_SEQUENCE_COMPLETE_NO_EDGE_CONFIRMED",
+    "diagnostic_only_finding_count": 3,
+    "rd05_authorization": "RD05_PROTOCOL_REGISTRATION_ONLY",
+    "rejected_hypothesis_count": 6
+  },
+  "generated_at_utc": "2026-07-28T15:00:25.368838Z",
+  "hypothesis_outcomes": [
+    {
+      "evidence": "D1 PIT_UNIVERSE_REPLAY_FAIL",
+      "hypothesis": "PIT_REPLAY",
+      "outcome_type": "REJECTED_HYPOTHESIS"
+    },
+    {
+      "evidence": "D5A LIQUIDITY_FLOOR_FAIL",
+      "hypothesis": "LIQUIDITY_FLOOR",
+      "outcome_type": "REJECTED_HYPOTHESIS"
+    },
+    {
+      "evidence": "D5D2 M05_RELATIVE_EDGE_NOT_CONFIRMED",
+      "hypothesis": "M05_RELATIVE_EDGE",
+      "outcome_type": "REJECTED_HYPOTHESIS"
+    },
+    {
+      "evidence": "D5B2 STRUCTURAL_STOP_EDGE_NOT_CONFIRMED",
+      "hypothesis": "STRUCTURAL_STOP_EDGE",
+      "outcome_type": "REJECTED_HYPOTHESIS"
+    },
+    {
+      "evidence": "D5E0 MIDWEEK_PULLBACK_PATTERN_NOT_SUPPORTED",
+      "hypothesis": "TUESDAY_PULLBACK",
+      "outcome_type": "REJECTED_HYPOTHESIS"
+    },
+    {
+      "evidence": "D5F NO_D5F_TREATMENT_AUTHORIZED",
+      "hypothesis": "MEMBERSHIP_EXIT_TREATMENT",
+      "outcome_type": "REJECTED_HYPOTHESIS"
+    },
+    {
+      "evidence": "D3 entrant negative PnL",
+      "hypothesis": "ENTRANT_UNDERPERFORMANCE",
+      "outcome_type": "DIAGNOSTIC_ASSOCIATION"
+    },
+    {
+      "evidence": "D3 positive removed-survivor contribution",
+      "hypothesis": "SURVIVOR_DISPLACEMENT",
+      "outcome_type": "DIAGNOSTIC_ASSOCIATION"
+    },
+    {
+      "evidence": "D5C1 labelled loss share only",
+      "hypothesis": "EXTERNAL_TAIL_CAUSAL_SHARE",
+      "outcome_type": "DIAGNOSTIC_ASSOCIATION"
+    }
+  ],
+  "open_questions": [
+    {
+      "classification": "UNRESOLVED_QUESTION",
+      "question": "Does the momentum signal have cross-sectional predictive power before sizing and exits?"
+    },
+    {
+      "classification": "UNRESOLVED_QUESTION",
+      "question": "Can a separately preregistered ranking beat PIT equal weight after matched costs?"
+    },
+    {
+      "classification": "UNRESOLVED_QUESTION",
+      "question": "Can any future candidate satisfy base, stress, fold, and concentration gates?"
+    }
+  ],
+  "output_hashes": {
+    "reports/research/ams-rd04-final-authorization-ledger-v1.csv": "17f6c679464bbfcbca19926062e0c467ef9113ea1d13ddb16878c812517c05bc",
+    "reports/research/ams-rd04-final-hypothesis-outcomes-v1.csv": "beb47fc0dea0ce8a764bee50b5e6c24c4a0e777a0a8f20089df3fbc3ea129a8e",
+    "reports/research/ams-rd04-final-open-questions-v1.csv": "f64fccee8c9d572fa59877f101fe6b1a67ba6b98a5305288990b0cac5873de5c",
+    "reports/research/ams-rd04-final-rd05-candidate-program-v1.csv": "689884efa4de3b80438a2b259bed6e0e4c24f2fb821e00c77b75788b7ff2172e",
+    "reports/research/ams-rd04-final-reconciliation-v1.csv": "f9a89904b7141b212e9e9762a51dc6b76cf097322e3ee16de83d9bde05b75b50",
+    "reports/research/ams-rd04-final-root-cause-ledger-v1.csv": "d4ac24da0477ca80be60d11ba7524dec91175532a735632ea0725680962cce1e",
+    "reports/research/ams-rd04-final-stage-ledger-v1.csv": "11dc51366b07dd731475e88c12d8238579f0dcd2da5e63ca1b810541f38b8f7f"
+  },
+  "rd05_candidate_program": [
+    {
+      "causal_contract": "frozen PIT ranks and walk-forward labels",
+      "control": "rank-neutral PIT equal weight",
+      "data_requirements": "D0C PIT data only",
+      "failure_gate": "no stable fold direction after costs",
+      "prerequisites": "protocol registration only",
+      "primary_metrics": "rank IC and net spread",
+      "research_question": "Does the momentum signal predict cross-sectional returns before portfolio construction?",
+      "risk_of_data_mining": "HIGH",
+      "track": "RD05-01",
+      "treatment": "preregistered signal ranking"
+    },
+    {
+      "causal_contract": "one layer changes per registered study",
+      "control": "frozen PIT equal weight",
+      "data_requirements": "registered 2021-2024 artifacts",
+      "failure_gate": "stress or fold gate fails",
+      "prerequisites": "validated signal study",
+      "primary_metrics": "incremental fold-stable return and expectancy",
+      "research_question": "Which alpha layer fails: eligibility, ranking, sizing, or exits?",
+      "risk_of_data_mining": "HIGH",
+      "track": "RD05-02",
+      "treatment": "single isolated layer"
+    },
+    {
+      "causal_contract": "matched PIT intervals and costs",
+      "control": "PIT equal weight and BTC proxy",
+      "data_requirements": "existing PIT schedule",
+      "failure_gate": "benchmark-relative base or stress failure",
+      "prerequisites": "benchmark protocol freeze",
+      "primary_metrics": "relative return, drawdown, expectancy",
+      "research_question": "Can preregistered benchmarks bound any claimed alpha?",
+      "risk_of_data_mining": "MEDIUM",
+      "track": "RD05-03",
+      "treatment": "future registered candidate"
+    },
+    {
+      "causal_contract": "predeclared 2021-2024 walk-forward gates",
+      "control": "no additional treatment",
+      "data_requirements": "registered reports",
+      "failure_gate": "any primary gate fails",
+      "prerequisites": "RD05 protocol registration",
+      "primary_metrics": "integrity, stress, folds, concentration",
+      "research_question": "What stop criteria justify ending research before any holdout?",
+      "risk_of_data_mining": "LOW",
+      "track": "RD05-04",
+      "treatment": "none"
+    }
+  ],
+  "reconciliation": {
+    "d4_experiment_order_pass": true,
+    "d5f_terminal_closure_pass": true,
+    "failure_count": 0,
+    "no_unregistered_stage_reports": true
+  },
+  "research_stage": "RD04-FINAL-ADJUDICATION-AND-CLOSURE",
+  "root_cause_adjudication": [
+    {
+      "classification": "PRIMARY_SUPPORTED_FAILURE",
+      "evidence": "D1 fixed replay cannot validate PIT edge",
+      "factor": "survivorship_bias"
+    },
+    {
+      "classification": "PRIMARY_SUPPORTED_FAILURE",
+      "evidence": "D5D2 M05 underperformed PIT equal weight",
+      "factor": "m05_selection_ranking_weakness"
+    },
+    {
+      "classification": "SECONDARY_SUPPORTED_CONTRIBUTOR",
+      "evidence": "D3 negative entrant contribution",
+      "factor": "entrant_underperformance"
+    },
+    {
+      "classification": "SECONDARY_SUPPORTED_CONTRIBUTOR",
+      "evidence": "D3 removed-survivor contribution",
+      "factor": "survivor_displacement"
+    },
+    {
+      "classification": "PRIMARY_SUPPORTED_FAILURE",
+      "evidence": "D5D2 base and stress relative gates fail",
+      "factor": "benchmark_relative_weakness"
+    },
+    {
+      "classification": "REJECTED_EXPLANATION",
+      "evidence": "D5A liquidity floor fail",
+      "factor": "liquidity"
+    },
+    {
+      "classification": "DIAGNOSTIC_BUT_UNCONFIRMED",
+      "evidence": "D5C1 labels explain 7.16 percent of loss",
+      "factor": "tail_events"
+    },
+    {
+      "classification": "DIAGNOSTIC_BUT_UNCONFIRMED",
+      "evidence": "D5B2 aggregate improvement, one improved fold",
+      "factor": "stop_containment"
+    },
+    {
+      "classification": "REJECTED_EXPLANATION",
+      "evidence": "D5E0 Tuesday gate fails",
+      "factor": "weekday_timing"
+    },
+    {
+      "classification": "REJECTED_EXPLANATION",
+      "evidence": "D5F treatment not authorized",
+      "factor": "membership_exits"
+    },
+    {
+      "classification": "DIAGNOSTIC_BUT_UNCONFIRMED",
+      "evidence": "D5D repairs BF01 but no M05 relative edge",
+      "factor": "accounting_artifacts"
+    },
+    {
+      "classification": "UNRESOLVED",
+      "evidence": "requires independently registered RD05 research",
+      "factor": "economic_alpha_source"
+    }
+  ],
+  "safety": {
+    "ati_v1_authorized": false,
+    "entry_change_authorized": false,
+    "exit_change_authorized": false,
+    "holdout_2026_accessed": false,
+    "live_ready": false,
+    "long_only": true,
+    "no_averaging_down": true,
+    "no_borrowing": true,
+    "no_dca": true,
+    "no_futures": true,
+    "no_interest": true,
+    "no_kelly": true,
+    "no_leverage": true,
+    "no_margin": true,
+    "no_pyramiding": true,
+    "no_shorts": true,
+    "point_in_time_universe_research_baseline_authorized": false,
+    "production_change_authorized": false,
+    "production_ready": false,
+    "ranking_change_authorized": false,
+    "spot_only": true,
+    "test_2025_accessed": false,
+    "trade_logic_changed": false,
+    "universe_change_authorized": false,
+    "weight_change_authorized": false
+  },
+  "schema_version": "ams-rd04-final-adjudication-v1",
+  "source_commit": "e58b850b3e5f4f920eb90629da1592b88101506b",
+  "status": "COMPLETE"
+}
