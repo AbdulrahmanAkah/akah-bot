@@ -51,9 +51,12 @@ def classify_quintile_shape(means: dict[int, float]) -> str:
     spread = max(ordered) - min(ordered)
     if not np.isfinite(ordered).all() or spread <= 1e-12:
         return "NO_ECONOMIC_SHAPE"
-    if ordered[4] == max(ordered) and ordered[4] > float(np.mean(ordered[:4])):
-        if len(set(ordered[:4])) <= 2:
-            return "TOP_TAIL_SELECTION"
+    if (
+        ordered[4] == max(ordered)
+        and ordered[4] > float(np.mean(ordered[:4]))
+        and len(set(ordered[:4])) <= 2
+    ):
+        return "TOP_TAIL_SELECTION"
     monotonic_up = all(
         left <= right for left, right in zip(ordered[:-1], ordered[1:], strict=True)
     )
