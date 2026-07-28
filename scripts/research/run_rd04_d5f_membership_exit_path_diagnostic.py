@@ -442,6 +442,18 @@ def run() -> dict[str, Any]:
             }
         )
     reentry_frame = frame_from_rows(reentry_rows)
+    label_summary = (
+        event_frame.assign(event_labelled=event_frame["event_label"].ne("UNLABELLED"))
+        .groupby("event_labelled", sort=True)
+        .agg(
+            event_count=("symbol", "size"),
+            mean_return_4w=("return_4w", "mean"),
+            mean_mfe_8w=("mfe_8w", "mean"),
+            mean_mae_8w=("mae_8w", "mean"),
+        )
+        .reset_index()
+        .to_dict("records")
+    )
     gap_frame = pd.DataFrame(
         [
             {
@@ -506,6 +518,20 @@ def run() -> dict[str, Any]:
         ),
         "mean_mfe_8w": float(event_frame["mfe_8w"].mean()),
         "mean_mae_8w": float(event_frame["mae_8w"].mean()),
+        "event_label_metrics": label_summary,
+        "reentry_path_metrics": {
+            "reentry_observation_count": len(reentry_frame),
+            "mean_return_before_reentry": (
+                float(reentry_frame["return_before_reentry"].mean())
+                if not reentry_frame.empty
+                else None
+            ),
+            "mean_return_4w_after_reentry": (
+                float(reentry_frame["return_4w_after_reentry"].mean())
+                if not reentry_frame.empty
+                else None
+            ),
+        },
     }
     decision = {
         "decision": "MEMBERSHIP_EXIT_PATH_DIAGNOSTIC_COMPLETE",
