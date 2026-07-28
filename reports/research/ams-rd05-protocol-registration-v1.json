@@ -1,0 +1,104 @@
+{
+  "conditional_ml": {
+    "authorized_now": false,
+    "model_families": [
+      "regularized_linear",
+      "gradient_boosted_trees"
+    ]
+  },
+  "decision": {
+    "decision": "RD05_ALPHA_DISCOVERY_PROTOCOL_REGISTERED",
+    "next_stage": "RD05-P1-SIGNAL-DATA-CONTRACT-AND-SOURCE-FREEZE",
+    "portfolio_simulation_authorized": false,
+    "production_change_authorized": false,
+    "rd05_signal_data_contract_and_panel_build_authorized": true
+  },
+  "early_termination_gate": {
+    "decision": "RD05_PRIMITIVE_SIGNAL_EDGE_NOT_CONFIRMED",
+    "next_stage": "RD05_RESEARCH_TERMINATION_OR_NEW_DATA_PROTOCOL",
+    "portfolio_construction_authorized": false
+  },
+  "execution_status": "PROTOCOL_REGISTERED_NO_DATA_EVALUATED",
+  "generated_at_utc": "2026-07-28T16:08:33.162236Z",
+  "label_count": 7,
+  "multiple_testing_controls": [
+    "adjusted significance",
+    "decision-time clustered bootstrap",
+    "DSR when portfolio returns later exist",
+    "CSCV/PBO when applicable",
+    "all trials ledger"
+  ],
+  "output_hashes": {
+    "reports/research/ams-rd05-authorization-ledger-v1.csv": "0725841f8542567b6e60c7e29d8b09414bed877e3cc9a61b74d9189fa8102170",
+    "reports/research/ams-rd05-label-registry-v1.csv": "a7b616359e52fd6474df4fea28ba276d2aa238b836ad5d515a987ee0e16c98cc",
+    "reports/research/ams-rd05-literature-source-registry-v1.csv": "48397e1d9731dd3bc8f9c424936eda8c1ee647bd7f5fab8b4cdbcc31c5241917",
+    "reports/research/ams-rd05-metric-registry-v1.csv": "6b4b3804cf20b2672471b623f43017429a6e4b68608456574e73f971e8bdb142",
+    "reports/research/ams-rd05-regime-registry-v1.csv": "71f6fc6893487d9c0a3d1ab1a64c210c3c3c1c9dceffa90540ca9f2bbdbe9083",
+    "reports/research/ams-rd05-signal-family-registry-v1.csv": "c4d046b026525931902ad02bb5e60f645efd20d41f90e71c64d5f053f4dd0aef",
+    "reports/research/ams-rd05-signal-variant-registry-v1.csv": "58118b4d9246ec12508581baa134926a717ab211998b57309c0ec2207e16f546",
+    "reports/research/ams-rd05-source-registry-v1.csv": "fdfba961af67676e0c52de696a16779a987f472189b7f86f23499fbd5c7866b5",
+    "reports/research/ams-rd05-stage-ledger-v1.csv": "0ee2ebd3af03f1e0a17aca5dad99a95c134b9f86b2fda6da2b95d6c818b21d4f",
+    "reports/research/ams-rd05-trial-budget-v1.csv": "92a40093b81eca1a83d38bc01dbac69d80c1c2080496f4c705a23aab281a3c64",
+    "reports/research/ams-rd05-upstream-reconciliation-v1.csv": "52116044f3c8498dc4e2f7923a193227edda49f80d176f6202c7955656bbdccf",
+    "reports/research/ams-rd05-validation-protocol-v1.csv": "bdd653bcb69d6548d2e8bc0037b8837acc6a32b9a6e392971cecc1bf9e2e138f"
+  },
+  "primitive_signal_pass_gate": {
+    "adjusted_p_value_maximum": 0.05,
+    "ic_information_ratio_minimum": 0.2,
+    "maximum_missing_label_share": 0.05,
+    "maximum_single_symbol_contribution": 0.25,
+    "mean_rank_ic_minimum": 0.02,
+    "minimum_positive_folds": 2,
+    "minimum_regime_cells_expected_direction": 2,
+    "positive_ic_period_share_minimum": 0.55,
+    "top_quintile_excess_return_minimum": 0.0
+  },
+  "regime_count": 6,
+  "research_stage": "RD05-P0-PROTOCOL-REGISTRATION",
+  "safety": {
+    "ati_v1_authorized": false,
+    "holdout_2026_accessed": false,
+    "live_ready": false,
+    "long_only": true,
+    "no_averaging_down": true,
+    "no_borrowing": true,
+    "no_dca": true,
+    "no_futures": true,
+    "no_interest": true,
+    "no_kelly": true,
+    "no_leverage": true,
+    "no_margin": true,
+    "no_pyramiding": true,
+    "no_shorts": true,
+    "point_in_time_universe_research_baseline_authorized": false,
+    "portfolio_simulation_authorized": false,
+    "production_change_authorized": false,
+    "production_ready": false,
+    "spot_only": true,
+    "test_2025_accessed": false,
+    "trade_logic_changed": false
+  },
+  "schema_version": "ams-rd05-protocol-registration-v1",
+  "signal_family_count": 8,
+  "signal_variant_count": 33,
+  "source_commit": "a163268c6cf734790950a5131b9f729df2c2b956",
+  "stage_count": 10,
+  "status": "COMPLETE",
+  "trial_budget": {
+    "maximum_ensemble_candidates": 28,
+    "maximum_model_families": 2,
+    "maximum_primitive_trials": 33,
+    "maximum_regime_interactions": 198,
+    "total_declared_trial_count": 261
+  },
+  "upstream_hashes": {
+    "D0C_DATASET": "20274d913a7b52c818555d23308bac43b6ddb3b962531286b1c523e7e0f6ca07",
+    "D5A_TURNOVER": "a3a595c6853397aabff01eec5a41b8501befdbb816d7eed6bdc18b3ebf243df3",
+    "RD04_AUTHORIZATION": "17f6c679464bbfcbca19926062e0c467ef9113ea1d13ddb16878c812517c05bc",
+    "RD04_CANDIDATES": "689884efa4de3b80438a2b259bed6e0e4c24f2fb821e00c77b75788b7ff2172e",
+    "RD04_FINAL": "e92fbe11a4b1d4dd365e57361704e5212abc16e9813f2bdeac3d3d2a68a04f66",
+    "RD04_OPEN_QUESTIONS": "f64fccee8c9d572fa59877f101fe6b1a67ba6b98a5305288990b0cac5873de5c",
+    "RD04_ROOT_CAUSES": "d4ac24da0477ca80be60d11ba7524dec91175532a735632ea0725680962cce1e"
+  },
+  "upstream_reconciliation_failures": 0
+}
