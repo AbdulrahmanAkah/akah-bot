@@ -7,6 +7,9 @@ from datetime import UTC, datetime, timedelta
 import pandas as pd
 import pytest
 
+from scripts.research.run_rd04_d5e0_midweek_pullback_diagnostic import (
+    select_pit_control_trades,
+)
 from spotbot.research.rd04_midweek_pullback_diagnostic import (
     ORIGINAL_TRADE_FIELDS,
     MidweekPullbackError,
@@ -145,6 +148,14 @@ def test_input_contract_accepts_exact_boundary_end_of_fold_exit() -> None:
     rows[2]["entry_time"] = "2025-01-01T00:00:00Z"
     with pytest.raises(MidweekPullbackError, match="locked boundary"):
         validate_input_trades(rows, expected_count=3, expected_boundary_exit_count=1)
+
+
+def test_pit_control_projection_selects_only_registered_control_rows() -> None:
+    control_rows = [trade(trade_id=f"T{index}") for index in range(153)]
+    treatment = trade(trade_id="TREATMENT")
+    treatment["portfolio_mode"] = "TREATMENT"
+    selected = select_pit_control_trades([*control_rows, treatment])
+    assert selected == control_rows
 
 
 def test_trade_projection_is_immutable_and_tuesday_return_uses_friday_close() -> None:

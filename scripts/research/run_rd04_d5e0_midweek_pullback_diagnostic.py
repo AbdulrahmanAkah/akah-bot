@@ -125,6 +125,20 @@ def read_trades(path: Path) -> tuple[list[str], list[TradeRow]]:
     return fields, rows
 
 
+def select_pit_control_trades(rows: Sequence[TradeRow]) -> list[TradeRow]:
+    """Select exactly the immutable D5B2 PIT_UNIVERSE/CONTROL projection."""
+    selected = [
+        row
+        for row in rows
+        if row.get("universe_mode") == "PIT_UNIVERSE" and row.get("portfolio_mode") == "CONTROL"
+    ]
+    if len(selected) != EXPECTED_TRADE_COUNT:
+        raise MidweekDiagnosticRunError(
+            "D5B2 PIT_UNIVERSE/CONTROL projection does not contain 153 trades"
+        )
+    return selected
+
+
 def output_fields(rows: Sequence[Mapping[str, Any]]) -> list[str]:
     fields: list[str] = []
     for row in rows:
@@ -280,9 +294,10 @@ def markdown_report(report: Mapping[str, Any]) -> str:
 
 def run() -> dict[str, Any]:
     upstream = verify_upstream()
-    fields, trades = read_trades(TRADE_SOURCE)
+    fields, all_rows = read_trades(TRADE_SOURCE)
     if tuple(fields) != ORIGINAL_TRADE_FIELDS:
         raise MidweekDiagnosticRunError("D5B2 trade columns changed")
+    trades = select_pit_control_trades(all_rows)
     validate_input_trades(trades)
     source_fingerprint = projection_fingerprint(trades)
     bars_path = ROOT / str(upstream["d0c_four_hour_path"])
