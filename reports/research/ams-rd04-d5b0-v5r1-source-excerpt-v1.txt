@@ -1,0 +1,70 @@
+--- src/spotbot/research/ams_v5_native_engine.py lines 246-270 ---
+0246: def configuration_grid() -> tuple[V5Parameters, ...]:
+0247:     variants = (
+0248:         ("SHALLOW_PULLBACK_RECLAIM", "STRUCTURE_BALANCED"),
+0249:         ("SHALLOW_PULLBACK_RECLAIM", "STRUCTURE_WIDE"),
+0250:         ("DEEP_PULLBACK_RECOVERY", "STRUCTURE_BALANCED"),
+0251:         ("DEEP_PULLBACK_RECOVERY", "STRUCTURE_WIDE"),
+0252:         ("MOMENTUM_REACCELERATION", "STRUCTURE_BALANCED"),
+0253:         ("HYBRID_ALL_THREE", "STRUCTURE_BALANCED"),
+0254:     )
+0255:     result: list[V5Parameters] = []
+0256:     sequence = 1
+0257:     for family, stop_model in variants:
+0258:         for fibonacci_mode in ("NO_FIBONACCI", "SOFT_FIBONACCI_SCORE"):
+0259:             result.append(
+0260:                 V5Parameters(
+0261:                     f"AMS-V5R1-A{sequence:02d}",
+0262:                     family,
+0263:                     stop_model,
+0264:                     fibonacci_mode,
+0265:                 )
+0266:             )
+0267:             sequence += 1
+0268:     return tuple(result)
+0269:
+0270:
+
+--- src/spotbot/research/ams_v5_native_engine.py lines 440-451 ---
+0440: def stop_distance(entry: float, atr: float, structural: float, model: str) -> float | None:
+0441:     if not all(math.isfinite(value) for value in (entry, atr, structural)) or atr <= 0:
+0442:         return None
+0443:     minimum, maximum = (2.2, 3.4) if model == "STRUCTURE_BALANCED" else (2.6, 4.0)
+0444:     structural_distance = entry - structural
+0445:     if structural_distance <= 0 or structural_distance / atr > maximum:
+0446:         return None
+0447:     return max(structural_distance, minimum * atr)
+0448:
+0449:
+0450: def trailing_stop(
+0451:     current: float,
+
+--- src/spotbot/research/ams_v5_native_engine.py lines 473-500 ---
+0473: def make_candidate(
+0474:     row: Mapping[str, Any],
+0475:     params: V5Parameters,
+0476:     fold_id: str,
+0477:     *,
+0478:     action: Literal["ENTRY", "ADD_ON", "REENTRY"] = "ENTRY",
+0479:     original_position_id: str | None = None,
+0480:     reentry_sequence: int = 0,
+0481: ) -> V5SetupCandidate | None:
+0482:     actual = str(row["family"])
+0483:     if not _candidate_family_matches(actual, params.family):
+0484:         return None
+0485:     score = float(
+0486:         row["score_soft_fib"]
+0487:         if params.fibonacci_mode == "SOFT_FIBONACCI_SCORE"
+0488:         else row["score_no_fib"]
+0489:     )
+0490:     atr = float(row["atr"])
+0491:     structural = float(row.get("structure_reference", row["low"] - 0.25 * atr))
+0492:     distance = (
+0493:         (2.2 if params.stop_model == "STRUCTURE_BALANCED" else 2.6) * atr
+0494:         if action == "ADD_ON"
+0495:         else stop_distance(float(row["close"]), atr, structural, params.stop_model)
+0496:     )
+0497:     if distance is None:
+0498:         return None
+0499:     signal_close = pd.Timestamp(row["bar_close_time"])
+0500:     identity = (

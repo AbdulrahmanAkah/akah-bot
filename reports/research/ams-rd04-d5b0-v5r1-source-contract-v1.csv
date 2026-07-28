@@ -1,0 +1,14 @@
+section,identity,field,value
+stop_model,STRUCTURE_BALANCED,minimum_atr,2.2
+stop_model,STRUCTURE_BALANCED,maximum_atr,3.4
+stop_model,STRUCTURE_WIDE,minimum_atr,2.6
+stop_model,STRUCTURE_WIDE,maximum_atr,4.0
+configuration_variant,VARIANT_01,family_stop_model,SHALLOW_PULLBACK_RECLAIM|STRUCTURE_BALANCED
+configuration_variant,VARIANT_02,family_stop_model,SHALLOW_PULLBACK_RECLAIM|STRUCTURE_WIDE
+configuration_variant,VARIANT_03,family_stop_model,DEEP_PULLBACK_RECOVERY|STRUCTURE_BALANCED
+configuration_variant,VARIANT_04,family_stop_model,DEEP_PULLBACK_RECOVERY|STRUCTURE_WIDE
+configuration_variant,VARIANT_05,family_stop_model,MOMENTUM_REACCELERATION|STRUCTURE_BALANCED
+configuration_variant,VARIANT_06,family_stop_model,HYBRID_ALL_THREE|STRUCTURE_BALANCED
+recovery,D4,registered_range_atr,"[2.2,3.4]"
+recovery,D4,range_matches_balanced,True
+recovery,V5R1,effective_stop_atr_is_continuous_within_bounds,True
