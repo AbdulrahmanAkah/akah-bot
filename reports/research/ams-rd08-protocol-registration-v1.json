@@ -1,0 +1,116 @@
+{
+  "additional_parameter_variants": 0,
+  "bh_family_count": 14,
+  "confirmatory_trials": 13,
+  "cross_sectional_price_volume_flow_space_closed": true,
+  "decision": "RD08_MARKET_STATE_TIMING_PROTOCOL_REGISTERED",
+  "holdout_2026_accessed": false,
+  "labels": [
+    "PIT_EQUAL_WEIGHT_FORWARD_24H_RETURN",
+    "BTC_SPOT_FORWARD_24H_RETURN",
+    "BINANCE_MATCHED_EQUAL_WEIGHT_FORWARD_24H_RETURN",
+    "PIT_EQUAL_WEIGHT_FORWARD_72H_RETURN",
+    "PIT_EQUAL_WEIGHT_FORWARD_7D_RETURN",
+    "BTC_SPOT_FORWARD_72H_RETURN",
+    "BTC_SPOT_FORWARD_7D_RETURN",
+    "BINANCE_MATCHED_EQUAL_WEIGHT_FORWARD_72H_RETURN",
+    "BINANCE_MATCHED_EQUAL_WEIGHT_FORWARD_7D_RETURN"
+  ],
+  "next_stage": "RD08-P1-MARKET-STATE-CAUSAL-PANEL",
+  "panel_grain": "decision_time|grid_id",
+  "portfolio_construction_authorized": false,
+  "portfolio_simulation_authorized": false,
+  "post_hoc_trials": 1,
+  "prohibited_signal_classes": [
+    "individual-asset momentum",
+    "individual-asset reversal",
+    "individual-asset low volatility",
+    "individual-asset age",
+    "individual-asset turnover",
+    "individual-asset taker imbalance",
+    "individual-asset cross-venue divergence"
+  ],
+  "signal_count": 14,
+  "signals": [
+    {
+      "required_source": "KUCOIN",
+      "signal_class": "CONFIRMATORY",
+      "signal_id": "MKT_PIT_EW_RETURN_6BAR"
+    },
+    {
+      "required_source": "KUCOIN",
+      "signal_class": "CONFIRMATORY",
+      "signal_id": "MKT_PIT_EW_RETURN_18BAR"
+    },
+    {
+      "required_source": "KUCOIN",
+      "signal_class": "CONFIRMATORY",
+      "signal_id": "MKT_PIT_EW_RETURN_42BAR"
+    },
+    {
+      "required_source": "KUCOIN",
+      "signal_class": "CONFIRMATORY",
+      "signal_id": "MKT_BREADTH_POSITIVE_6BAR"
+    },
+    {
+      "required_source": "KUCOIN",
+      "signal_class": "CONFIRMATORY",
+      "signal_id": "MKT_BREADTH_THRUST_6_42"
+    },
+    {
+      "required_source": "KUCOIN",
+      "signal_class": "CONFIRMATORY",
+      "signal_id": "MKT_BREADTH_ABOVE_EMA20"
+    },
+    {
+      "required_source": "KUCOIN",
+      "signal_class": "CONFIRMATORY",
+      "signal_id": "MKT_CROSS_SECTIONAL_DISPERSION_42"
+    },
+    {
+      "required_source": "KUCOIN",
+      "signal_class": "CONFIRMATORY",
+      "signal_id": "MKT_DISPERSION_ACCEL_18_42"
+    },
+    {
+      "required_source": "KUCOIN",
+      "signal_class": "CONFIRMATORY",
+      "signal_id": "MKT_AVG_PAIRWISE_CORRELATION_42"
+    },
+    {
+      "required_source": "KUCOIN",
+      "signal_class": "CONFIRMATORY",
+      "signal_id": "MKT_CORRELATION_CHANGE_18_42"
+    },
+    {
+      "required_source": "KUCOIN",
+      "signal_class": "CONFIRMATORY",
+      "signal_id": "MKT_AGG_QUOTE_TURNOVER_ACCEL_6_42"
+    },
+    {
+      "required_source": "BINANCE",
+      "signal_class": "CONFIRMATORY",
+      "signal_id": "MKT_BN_AGG_TAKER_IMBALANCE_6"
+    },
+    {
+      "required_source": "CROSS_VENUE",
+      "signal_class": "CONFIRMATORY",
+      "signal_id": "MKT_BN_KC_RETURN_DIVERGENCE_6"
+    },
+    {
+      "required_source": "KUCOIN",
+      "signal_class": "POST_HOC_MARKET_LEVEL_REPLICATION",
+      "signal_id": "MKT_LOW_REALIZED_VOLATILITY_42"
+    }
+  ],
+  "stage": "RD08-P0-MARKET-STATE-TIMING-PROTOCOL",
+  "status": "COMPLETE",
+  "test_2025_accessed": false,
+  "total_prior_registered_primitive_trials": 62,
+  "upstream_hashes": {
+    "reports\\research\\ams-rd05-final-weekly-signal-adjudication-v1.json": "6ed85f7f00c04faffda1688757bad04563501c4ab907559eac771238a92165f7",
+    "reports\\research\\ams-rd06-final-adjudication-v1.json": "630e1966ca9e104cacaeb62dc528d437372c656d1170ad6b08e3b9cb97e6d8b8",
+    "reports\\research\\ams-rd07-final-adjudication-v1.json": "5debd3cbd230f6709f75f6c904425689ec9964ebc995e383e7f9810a5750cfa9",
+    "reports\\research\\ams-rd07a-age-quality-mechanism-v1.json": "23a36882ac0c10f5ceca4e6d9c5a5c1706b6d74b40f288a73bbec4cd55b5b44c"
+  }
+}
