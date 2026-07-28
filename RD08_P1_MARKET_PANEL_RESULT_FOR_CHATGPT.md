@@ -1,0 +1,4 @@
+# RD08 P1 Market Panel
+
+- Rows: `3282`
+- Decision: `RD08_MARKET_STATE_CAUSAL_PANEL_COMPLETE`
