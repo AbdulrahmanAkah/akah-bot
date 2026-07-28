@@ -1,0 +1,24 @@
+field,value
+association_rule,"canonical_symbol matches event direct_symbols and trade interval overlaps [event_start_utc, association_end_utc)"
+causality_claim_allowed,False
+event_sort_order,"event_start_utc,event_id,primary_category"
+input_portfolio,RD04_D5B2_PIT_UNIVERSE_CONTROL_BASE_COST
+interpretation,"A label means temporal association with a frozen direct-asset event, not proof that the event caused the trade result."
+interval_semantics,HALF_OPEN_UTC_INTERVAL
+join_key,DIRECT_SYMBOL_OR_FROZEN_ALIAS
+multiple_event_labels_allowed,True
+outcome_based_event_selection_allowed,False
+reporting.all_pit_trades_unchanged,True
+reporting.category_level_breakdown,True
+reporting.event_level_breakdown,True
+reporting.fold_distribution,True
+reporting.labelled_and_unlabelled_totals,True
+reporting.maximum_adverse_excursion,True
+reporting.post_event_entry_reported_separately,True
+symbol_blacklist_allowed,False
+timing_labels.EVENT_WINDOW_ENTRY,event_start_utc <= entry_time < association_end_utc
+timing_labels.NO_EVENT_ASSOCIATION,no direct-symbol event interval overlap
+timing_labels.PRE_EVENT_EXPOSURE,entry_time < event_start_utc <= exit_time
+trade_interval,"[entry_time, exit_time]"
+trade_rows_changed,False
+trade_rows_excluded,False
