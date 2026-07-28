@@ -1,3 +1,3 @@
-# RD05 P2 causal panel
+# RD05 P2 causal symbol-time panel
 
-No predictive evaluation or portfolio simulation was executed.
+The corrected panel contains features and labels only; it performs no predictive evaluation or portfolio simulation.

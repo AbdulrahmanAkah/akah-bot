@@ -1,21 +1,35 @@
 {
-  "status": "COMPLETE",
   "decision": "RD05_CAUSAL_SYMBOL_TIME_PANEL_COMPLETE",
+  "generated_at_utc": "2026-07-28T19:57:49.104392+00:00",
+  "holdout_2026_accessed": false,
   "next_stage": "RD05-S1-PRIMITIVE-SIGNAL-DIAGNOSTIC",
-  "rd05_s1_primitive_signal_diagnostic_authorized": true,
+  "portfolio_construction_authorized": false,
   "portfolio_simulation_authorized": false,
-  "rows": 4710,
+  "production_change_authorized": false,
+  "quality": {
+    "all_33_signal_columns_present": true,
+    "all_33_signal_missing_reason_columns_present": true,
+    "average_pairwise_correlation_computed": true,
+    "panel_fingerprint": "9f86b7ac2751f006999e5cdc16ed2f9fc0caa1558bf7ce6934e378f9289cf441",
+    "previous_p2_evidence_superseded": true,
+    "previous_s1_evidence_superseded": true,
+    "quality_gate_passed": true,
+    "quality_repair_of_commit": "e0c146c85709f46abf5a5c553778d33214d0a524",
+    "quote_turnover_signal_computed": true,
+    "warnings_observed": 0
+  },
+  "rd05_s1_primitive_signal_diagnostic_authorized": true,
   "reconciliation": {
-    "index_rows": 4710,
     "feature_rows": 4710,
-    "label_rows": 4710,
+    "index_rows": 4710,
     "keys_identical": true,
-    "signal_columns": 33,
     "label_columns": 7,
+    "label_rows": 4710,
     "regime_columns": 6,
+    "signal_columns": 33,
     "status": "PASS"
   },
-  "test_2025_accessed": false,
-  "holdout_2026_accessed": false,
-  "generated_at_utc": "2026-07-28T17:50:13.136539+00:00"
+  "rows": 4710,
+  "status": "COMPLETE",
+  "test_2025_accessed": false
 }

@@ -1,3 +1,3 @@
-# RD05 S1
+# RD05 S1 primitive signal diagnostic
 
-Decision: `RD05_PRIMITIVE_SIGNAL_EDGE_NOT_CONFIRMED`
+Corrected signal diagnostics only; no portfolio construction was performed.
