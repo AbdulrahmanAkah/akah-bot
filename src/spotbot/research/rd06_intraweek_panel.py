@@ -50,6 +50,7 @@ def add_signal_columns(frame: pd.DataFrame) -> pd.DataFrame:
     result["DISTANCE_FROM_EMA20_ATR_4H"] = -(result["close"] - result["ema20"]) / result["atr14"]
     for bars in (6, 18, 42):
         result[f"RETURN_{bars}BAR"] = result["close"] / groups["close"].shift(bars) - 1
+    result["BTC_TREND_84D"] = result["close"] / groups["close"].shift(504) - 1
     result["XSM_18BAR_SKIP_1BAR"] = groups["close"].shift(1) / groups["close"].shift(19) - 1
     prior_high = groups["high"].transform(
         lambda value: value.shift(1).rolling(42, min_periods=42).max()

@@ -89,7 +89,7 @@ def fold_assignments(decisions: pd.DataFrame) -> pd.DataFrame:
     return pd.DataFrame(rows)
 
 
-def add_regimes(feature: pd.DataFrame) -> pd.DataFrame:
+def add_regimes(feature: pd.DataFrame, history: pd.DataFrame) -> pd.DataFrame:
     result = feature.copy()
     decision_metrics = (
         result.groupby(["decision_time", "grid_id"], sort=True)
@@ -100,14 +100,32 @@ def add_regimes(feature: pd.DataFrame) -> pd.DataFrame:
         )
         .reset_index()
     )
-    btc = result.loc[result["symbol"] == "BTC", ["decision_time", "RETURN_42BAR", "std42"]]
+    btc = result.loc[result["symbol"] == "BTC", ["decision_time", "BTC_TREND_84D", "std42"]]
     decision_metrics = decision_metrics.merge(btc, on="decision_time", how="left")
     decision_metrics["BTC_TREND_STATE"] = np.select(
-        [decision_metrics["RETURN_42BAR"] > 0, decision_metrics["RETURN_42BAR"] < 0],
+        [
+            decision_metrics["BTC_TREND_84D"] > 0,
+            decision_metrics["BTC_TREND_84D"] < 0,
+        ],
         ["UP", "DOWN"],
         default="NEUTRAL",
     )
-    decision_metrics["pairwise"] = decision_metrics["dispersion"]
+    returns = history.pivot(
+        index="bar_close_time", columns="symbol", values="log_return"
+    ).sort_index()
+    member_map = {
+        timestamp: tuple(group["symbol"].astype(str))
+        for timestamp, group in result.groupby("decision_time", sort=False)
+    }
+    pairwise_values: list[float] = []
+    for decision_time in decision_metrics["decision_time"]:
+        members = member_map[pd.Timestamp(decision_time)]
+        window = returns.loc[returns.index <= decision_time, list(members)].tail(42)
+        correlation = window.corr(min_periods=30).to_numpy(dtype=float)
+        upper = correlation[np.triu_indices_from(correlation, k=1)]
+        finite = upper[np.isfinite(upper)]
+        pairwise_values.append(float(np.mean(finite)) if finite.size else np.nan)
+    decision_metrics["pairwise"] = pairwise_values
     metric_map = {
         "BTC_REALIZED_VOLATILITY_TERCILE": "std42",
         "CROSS_SECTIONAL_DISPERSION_TERCILE": "dispersion",
@@ -164,7 +182,7 @@ def main() -> None:
         validate="one_to_one",
     )
     panel = attach_availability(panel, (*SIGNAL_IDS, "AGE_OR_TENURE", *LABEL_IDS))
-    panel = add_regimes(panel)
+    panel = add_regimes(panel, computed)
     key_columns = ["decision_time", "symbol"]
     index_panel = panel[
         [*key_columns, "snapshot", "grid_id", "bar_open_time", "bar_close_time"]
