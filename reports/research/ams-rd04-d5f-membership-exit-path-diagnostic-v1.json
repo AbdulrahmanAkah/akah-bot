@@ -1,0 +1,112 @@
+{
+  "contract": {
+    "classification_definition": "PREDECLARED_DESCRIPTIVE_ONLY",
+    "diagnostic_only": true,
+    "membership_event_definition": "PREVIOUS_PIT_MEMBER_AND_CURRENT_WEEK_NOT_MEMBER",
+    "mfe_mae_window": "FIRST_EIGHT_WEEKS_AFTER_DECISION",
+    "post_exit_horizons_weeks": [
+      1,
+      2,
+      4,
+      8
+    ],
+    "price_measurement": "DECISION_OPEN_TO_HORIZON_FINAL_4H_CLOSE"
+  },
+  "decision": {
+    "ati_v1_authorized": false,
+    "counterfactual_portfolio_simulation_executed": false,
+    "decision": "MEMBERSHIP_EXIT_PATH_DIAGNOSTIC_COMPLETE",
+    "descriptive_classification": "REMOVED_SURVIVOR_DISPLACEMENT_NOT_EVIDENT",
+    "entry_change_authorized": false,
+    "exit_change_authorized": false,
+    "next_research_stage": "NO_D5F_TREATMENT_AUTHORIZED",
+    "point_in_time_universe_research_baseline_authorized": false,
+    "production_change_authorized": false,
+    "ranking_change_authorized": false,
+    "trade_logic_changed": false,
+    "universe_change_authorized": false,
+    "weight_change_authorized": false
+  },
+  "generated_at_utc": "2026-07-28T14:38:11.103404Z",
+  "output_hashes": {
+    "reports/research/ams-rd04-d5f-fixed-pit-gap-attribution-v1.csv": "803c5e8ed32c8d652cb8b7c047ab0726663c4ed7aa5cf0ebdc58ac5a854f26a4",
+    "reports/research/ams-rd04-d5f-fold-metrics-v1.csv": "88a571226bde27b280dbe331de1bc01d199634e673f5246b5544cf2dd539f50c",
+    "reports/research/ams-rd04-d5f-membership-exit-events-v1.csv": "9028fc0b3f1c9218172cd261ba3c9976de2012fbbdaeecb4542ad2deb0c963fd",
+    "reports/research/ams-rd04-d5f-membership-reentry-v1.csv": "e7b2f9f8b4d61f8ac43e1a293415597cd56661d587d7879a4c398cfa9846c37f",
+    "reports/research/ams-rd04-d5f-post-exit-horizon-metrics-v1.csv": "934e863af275fe6097993d904a5c8616dee32ed4f32e779ed6ff9f4b289c3e97",
+    "reports/research/ams-rd04-d5f-reconciliation-v1.csv": "6c50c8b06940b60c7dbc6dbcf073d5d2d87a9c15d34c33df2a3d18d8d7884d6a",
+    "reports/research/ams-rd04-d5f-symbol-metrics-v1.csv": "8989ce35afb32282142e682b0864305d728af07def88f27b8608cf02d3b88877"
+  },
+  "research_stage": "RD04-D5F-MEMBERSHIP-EXIT-PATH-DIAGNOSTIC",
+  "safety": {
+    "holdout_2026_accessed": false,
+    "long_only": true,
+    "no_averaging_down": true,
+    "no_borrowing": true,
+    "no_dca": true,
+    "no_futures": true,
+    "no_interest": true,
+    "no_kelly": true,
+    "no_leverage": true,
+    "no_margin": true,
+    "no_pyramiding": true,
+    "no_shorts": true,
+    "spot_only": true,
+    "test_2025_accessed": false
+  },
+  "schema_version": "ams-rd04-d5f-membership-exit-path-diagnostic-v1",
+  "source_commit": "253b974bb03aa3f71e087b1d7b3d7cc9fa8b5152",
+  "status": "COMPLETE",
+  "summary": {
+    "counts_by_fold": {
+      "WF01": 24,
+      "WF02": 14,
+      "WF03": 16
+    },
+    "event_label_metrics": [
+      {
+        "event_count": 48,
+        "event_labelled": false,
+        "mean_mae_8w": -0.2888242773411228,
+        "mean_mfe_8w": 0.31820057833786114,
+        "mean_return_4w": 0.0015941766930628158
+      },
+      {
+        "event_count": 6,
+        "event_labelled": true,
+        "mean_mae_8w": -0.20861253754871456,
+        "mean_mfe_8w": 1.4892906639320518,
+        "mean_return_4w": 0.258921128469164
+      }
+    ],
+    "fixed_pit_gap_share_attributed": -0.006496207717361605,
+    "fixed_post_exit_net_pnl": -2050.471317573178,
+    "later_pit_reentry_count": 43,
+    "later_pit_reentry_share": 0.7962962962962963,
+    "mean_mae_8w": -0.2797437030250011,
+    "mean_mfe_8w": 0.4507768144428638,
+    "membership_exit_event_count": 54,
+    "missing_data_count": 0,
+    "reentry_path_metrics": {
+      "mean_return_4w_after_reentry": -0.009554715689790627,
+      "mean_return_before_reentry": 0.11100005358435301,
+      "reentry_observation_count": 43
+    },
+    "terminal_data_end_count": 1,
+    "terminal_event_count": 6,
+    "union_post_exit_net_pnl": 0.0,
+    "unique_removed_symbol_count": 16
+  },
+  "upstream": {
+    "d0c_four_hour_path": "data/research/rd04/kucoin-spot-usdt-adjudicated-v1/ams-rd04-d0c-kucoin-adjudicated-4h.parquet",
+    "d0c_four_hour_sha256": "1c72416f889137b68ff48008c5760e809d0a94a5647569bab631e96904cebd72",
+    "d4_hypothesis_id": "RD04-D5F-MEMBERSHIP-EXIT-PATH-DIAGNOSTIC",
+    "d5e0_decision": "MIDWEEK_PULLBACK_PATTERN_NOT_SUPPORTED",
+    "input_hashes": {
+      "d0c_weekly_candidates": "17cf3cca1400c071afe75b86342b09718aba2f84992777f18ffb17436f9a138b",
+      "d2_base_cost_trades": "8da6a3d7061895dc0ee9bbc8dea191f0dd25a4294878d1f7622b52fb40da38a8",
+      "d2_membership_snapshots": "875b06c250d491569b7ca989a17a2f09f4452abaaa50cad6862c231ed963bfec",
+      "d2_report": "3bc676368e51163cb2f25aa4ae8cd4242ba59f2e20c4887fcf6bc6af823bb135"
+    }
+  }
+}
