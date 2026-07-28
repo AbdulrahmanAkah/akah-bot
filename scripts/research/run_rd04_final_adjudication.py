@@ -378,6 +378,13 @@ def rd05_program() -> list[dict[str, str]]:
 def markdown(report: Mapping[str, Any]) -> str:
     final = mapping(report["final_adjudication"])
     facts = mapping(report["factual_summary"])
+    d1 = mapping(facts["d1_pit_replay"])
+    d3 = mapping(facts["d3_diagnostics"])
+    d5a = mapping(facts["d5a_liquidity_floor"])
+    d5b2 = mapping(facts["d5b2_structural_stop"])
+    d5d2 = mapping(facts["d5d2_equal_weight"])
+    d5e0 = mapping(facts["d5e0_midweek"])
+    d5f = mapping(facts["d5f_membership_exit"])
     return "\n".join(
         [
             "# RD04 Final Adjudication and Closure",
@@ -391,6 +398,43 @@ def markdown(report: Mapping[str, Any]) -> str:
             f"- Confirmed registered edges: `{final['confirmed_registered_edge_count']}`",
             "- Trading, production, and PIT-baseline authorization: `false`.",
             "- RD05 authorization: `RD05_PROTOCOL_REGISTRATION_ONLY`.",
+            "",
+            "## Why RD04 started and what D0--D4 established",
+            "",
+            "RD04 tested whether the favorable historical Fixed-universe result could survive a "
+            "causal point-in-time replay.  D0 registered and adjudicated the PIT data path.  D1 "
+            "showed that PIT did not pass its registered base or stress gates.  D2 and D3 isolated "
+            "membership interactions: entrant underperformance and removed-survivor displacement "
+            "are diagnostic associations, not authorized rules.",
+            "D4 froze exactly six D5 hypotheses.",
+            "",
+            f"- D1 Fixed base compounded return: `{d1['fixed_base_compounded_return']}`",
+            f"- D1 PIT base compounded return: `{d1['pit_base_compounded_return']}`",
+            f"- D1 PIT base profit factor: `{d1['pit_base_profit_factor']}`",
+            f"- D3 entrant PIT net PnL: `{d3['entrant_pit_net_pnl']}`",
+            f"- D3 removed-survivor Fixed net PnL: `{d3['removed_survivor_fixed_net_pnl']}`",
+            "",
+            "## D5 evidence-only adjudication",
+            "",
+            "- D5A liquidity-floor treatment failed; it is not an authorized universe change.",
+            f"  Base return delta: `{d5a['base_return_delta']}`; "
+            f"PF delta: `{d5a['base_pf_delta']}`.",
+            "- D5D recovered BF01 accounting and defined PIT equal weight correctly.",
+            "  M05 still did not establish benchmark-relative edge.",
+            f"  M05 base return: `{d5d2['m05_base_compounded_return']}`; equal-weight base return: "
+            f"`{d5d2['equal_weight_base_compounded_return']}`.",
+            "- D5B structural stops improved aggregate containment but only one fold.",
+            "  No production exit change is authorized.",
+            f"  Base return delta: `{d5b2['base_return_delta']}`; improved folds: "
+            f"`{d5b2['base_improved_folds']}`.",
+            "- D5C external-event labels covered only a minority of loss.",
+            "  They do not authorize a blacklist.",
+            f"- D5E Tuesday weekly-low share was `{d5e0['tuesday_low_share']}` versus Monday "
+            f"  `{d5e0['largest_other_weekday_share']}`; the pre-registered pattern gate failed.",
+            "- D5F found no support for a membership-exit treatment.",
+            f"  Events: `{d5f['exit_events']}`; unique symbols: `{d5f['unique_symbols']}`; "
+            f"  later re-entry share: `{d5f['later_reentry_share']}`; Fixed-minus-PIT gap share: "
+            f"  `{d5f['fixed_pit_gap_share']}`.",
             "",
             "## Root-cause adjudication",
             "",
@@ -410,6 +454,13 @@ def markdown(report: Mapping[str, Any]) -> str:
             f"- D5E0 Tuesday weekly-low share: `{facts['d5e0_tuesday_low_share']}`",
             f"- D5F membership exits: `{facts['d5f_membership_exit_events']}`",
             f"- D5F Fixed-vs-PIT diagnostic gap share: `{facts['d5f_gap_share']}`",
+            "",
+            "## Future work outside RD04",
+            "",
+            "The only permitted next action is RD05 protocol registration.",
+            "Its candidate program is recorded in the companion CSV and isolates signal prediction.",
+            "alpha layers, benchmark definition, and pre-holdout stopping rules.",
+            "It authorizes no simulation automatically.",
             "",
             "No 2025 test or 2026 holdout data were accessed by this closure.",
             "",
@@ -456,7 +507,53 @@ def run() -> dict[str, Any]:
     d5c1_metrics = mapping(reports["D5C1"].get("metrics"))
     d5e0_gate = mapping(reports["D5E0"].get("pattern_gate"))
     d5f_summary = mapping(reports["D5F"].get("summary"))
+    d1_fixed_base = get_path(reports["D1"], "aggregate_metrics", "FIXED_SURVIVOR_30", "BASE_COST")
+    d1_pit_base = get_path(reports["D1"], "aggregate_metrics", "PIT_UNIVERSE", "BASE_COST")
+    d3_decision = mapping(reports["D3"].get("decision"))
+    d5a_base = next(
+        (
+            row
+            for row in reports["D5A"].get("control_vs_treatment", [])
+            if isinstance(row, Mapping) and row.get("cost_mode") == "BASE_COST"
+        ),
+        {},
+    )
+    d5d2_m05 = get_path(reports["D5D2"], "aggregate_metrics", "M05_PIT", "BASE_COST")
+    d5d2_equal = get_path(reports["D5D2"], "aggregate_metrics", "PIT_EQUAL_WEIGHT", "BASE_COST")
+    d5b2_base = get_path(reports["D5B2"], "pit_comparison", "BASE_COST")
     factual_summary = {
+        "d1_pit_replay": {
+            "fixed_base_compounded_return": get_path(d1_fixed_base, "compounded_return"),
+            "pit_base_compounded_return": get_path(d1_pit_base, "compounded_return"),
+            "pit_base_profit_factor": get_path(d1_pit_base, "profit_factor"),
+        },
+        "d3_diagnostics": {
+            "entrant_pit_net_pnl": d3_decision.get("entrant_pit_net_pnl"),
+            "removed_survivor_fixed_net_pnl": d3_decision.get("removed_survivor_fixed_net_pnl"),
+            "removed_survivor_union_net_pnl": d3_decision.get("removed_survivor_union_net_pnl"),
+        },
+        "d5a_liquidity_floor": {
+            "base_return_delta": mapping(d5a_base).get("delta_compounded_return"),
+            "base_pf_delta": mapping(d5a_base).get("delta_profit_factor"),
+        },
+        "d5b2_structural_stop": {
+            "base_return_delta": get_path(d5b2_base, "compounded_return_delta"),
+            "base_improved_folds": get_path(d5b2_base, "improved_folds"),
+        },
+        "d5d2_equal_weight": {
+            "m05_base_compounded_return": get_path(d5d2_m05, "compounded_return"),
+            "equal_weight_base_compounded_return": get_path(d5d2_equal, "compounded_return"),
+        },
+        "d5e0_midweek": {
+            "tuesday_low_share": d5e0_gate.get("tuesday_weekly_low_share"),
+            "largest_other_weekday_share": d5e0_gate.get("largest_other_weekday_share"),
+        },
+        "d5f_membership_exit": {
+            "exit_events": d5f_summary.get("membership_exit_event_count"),
+            "unique_symbols": d5f_summary.get("unique_removed_symbol_count"),
+            "later_reentry_share": d5f_summary.get("later_pit_reentry_share"),
+            "fixed_pit_gap_share": d5f_summary.get("fixed_pit_gap_share_attributed"),
+        },
         "d5c1_labelled_loss_share": d5c1_metrics.get("labelled_loss_share"),
         "d5e0_tuesday_low_share": d5e0_gate.get("tuesday_weekly_low_share"),
         "d5e0_largest_other_weekday_share": d5e0_gate.get("largest_other_weekday_share"),
