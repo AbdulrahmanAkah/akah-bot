@@ -171,15 +171,17 @@ def verify_upstream() -> dict[str, Any]:
     if not isinstance(hypothesis, Mapping):
         raise MidweekDiagnosticRunError("RD04-D5E hypothesis is not registered")
     frozen = required_mapping(hypothesis.get("frozen_parameters"), "D5E frozen parameters")
-    if frozen.get("week_start") != "MONDAY_00_UTC":
+    if frozen.get("week_start") != "MONDAY_00_00":
         raise MidweekDiagnosticRunError("D5E week boundary changed")
     if frozen.get("primary_weekday") != "TUESDAY":
         raise MidweekDiagnosticRunError("D5E primary weekday changed")
     if frozen.get("all_weekdays_reported") is not True:
         raise MidweekDiagnosticRunError("D5E all-weekday reporting was disabled")
-    if frozen.get("reentry_attempts") != 1:
+    if frozen.get("reentry_attempts_if_later_tested") != 1:
         raise MidweekDiagnosticRunError("D5E reentry contract changed")
-    if frozen.get("averaging_down") is not False or frozen.get("pyramiding") is not False:
+    if frozen.get("averaging_down_allowed") is not False:
+        raise MidweekDiagnosticRunError("D5E averaging-down constraint changed")
+    if frozen.get("pyramiding_allowed") is not False:
         raise MidweekDiagnosticRunError("D5E risk constraints changed")
     if d5b1.get("status") != "COMPLETE":
         raise MidweekDiagnosticRunError("RD04-D5B1 is not COMPLETE")
