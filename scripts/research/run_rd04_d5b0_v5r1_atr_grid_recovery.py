@@ -321,7 +321,7 @@ def source_excerpt(source: str) -> str:
     for start, end in ranges:
         rendered.append(f"--- {ENGINE_PATH} lines {start + 1}-{end} ---")
         for index in range(start, end):
-            rendered.append(f"{index + 1:04d}: {lines[index].rstrip()}")
+            rendered.append(f"{index + 1:04d}: {lines[index].rstrip()}".rstrip())
         rendered.append("")
     return "\n".join(rendered).rstrip() + "\n"
 

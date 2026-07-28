@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import json
+import runpy
+from pathlib import Path
 
 import pytest
 
@@ -259,3 +261,24 @@ def test_validate_report_rejects_execution_authorization() -> None:
     }
     with pytest.raises(AtrGridRecoveryError):
         validate_report(report)
+
+
+def test_source_excerpt_has_no_trailing_whitespace() -> None:
+    runner = Path(__file__).parents[2] / "scripts/research/run_rd04_d5b0_v5r1_atr_grid_recovery.py"
+    namespace = runpy.run_path(
+        str(runner),
+        run_name="rd04_d5b0_excerpt_test",
+    )
+    render = namespace["source_excerpt"]
+    source = (
+        "def configuration_grid():\n"
+        "    pass\n"
+        "\n"
+        "def stop_distance():\n"
+        "    pass\n"
+        "\n"
+        "def make_candidate():\n"
+        "    pass\n"
+    )
+    rendered = render(source)
+    assert all(line == line.rstrip() for line in rendered.splitlines())
