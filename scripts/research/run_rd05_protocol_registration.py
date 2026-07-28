@@ -393,7 +393,7 @@ def run() -> dict[str, Any]:
         if name not in {"protocol", "markdown"}
     }
     atomic_text(OUT["protocol"], json.dumps(protocol, indent=2, sort_keys=True) + "\n")
-    rendered = markdown(protocol) + "\n"
+    rendered = markdown(protocol)
     if not text_contract_valid(rendered):
         raise RegistrationError("text contract failed")
     atomic_text(OUT["markdown"], rendered)
