@@ -1,0 +1,2 @@
+contract_id,week_timezone,decision_clock,closed_bar_inclusion,bar_opening_at_decision_excluded,same_timestamp_close_included,availability_interval_closure,membership_snapshot_join_rule,partial_bars_prohibited
+WEEKLY_PIT_DECISION,UTC,Monday 00:00 UTC,bar_close_time <= decision_time,True,True,"[tradable_from, tradable_until)",rebalance_time == decision_time and venue_data_eligible == true,True
