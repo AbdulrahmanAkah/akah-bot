@@ -1,0 +1,83 @@
+{
+  "dataset": {
+    "bar_close_time_at_or_before_2025": true,
+    "bar_open_time_before_2025": true,
+    "four_hour_path": "data/research/rd04/kucoin-spot-usdt-adjudicated-v1/ams-rd04-d0c-kucoin-adjudicated-4h.parquet",
+    "four_hour_row_count": 459771,
+    "four_hour_sha256": "1c72416f889137b68ff48008c5760e809d0a94a5647569bab631e96904cebd72"
+  },
+  "decision": {
+    "ati_v1_authorized": false,
+    "averaging_down_authorized": false,
+    "d5e1_single_reentry_ablation_authorized": false,
+    "decision": "MIDWEEK_PULLBACK_PATTERN_NOT_SUPPORTED",
+    "more_than_one_reentry_authorized": false,
+    "next_stage": "RD04-D5F-MEMBERSHIP-EXIT-PATH-DIAGNOSTIC",
+    "point_in_time_universe_research_baseline_authorized": false,
+    "production_change_authorized": false,
+    "pyramiding_authorized": false,
+    "tactical_reentries_executed": 0,
+    "trade_logic_changed": false,
+    "tuesday_only_entry_rule_authorized": false
+  },
+  "diagnostic_only": true,
+  "generated_at_utc": "2026-07-28T14:10:47.040306Z",
+  "output_hashes": {
+    "reports/research/ams-rd04-d5e0-entry-diagnostics-v1.csv": "e3212ad8d7322b9bf3cc2a3ebbefc04cc2c025f117f026264c91772f31c3ec63",
+    "reports/research/ams-rd04-d5e0-entry-weekday-metrics-v1.csv": "557ccc26ecd77c68b6f02155a003492d8e4683b0a98f1f7e5461706054df984a",
+    "reports/research/ams-rd04-d5e0-fold-metrics-v1.csv": "2e3d99d8d8c9809a8c9900b73ac9e2d6de3e3a10c7b0a540a78cc015f1190dcf",
+    "reports/research/ams-rd04-d5e0-pattern-gate-v1.csv": "646b8e739e96261c8b56733e864c609f19fee4910fcf435c6417b04e4e335edc",
+    "reports/research/ams-rd04-d5e0-tuesday-signal-to-friday-v1.csv": "10bcf19651679dbbe5b0e48edc7b4b71831eac62fc8b9293b7c61356bc069b6d",
+    "reports/research/ams-rd04-d5e0-weekly-low-distribution-v1.csv": "4c1c700acd03a21fb47cca7ae8d260321fd15f6c0e333f8dc9f5b23a140aa211",
+    "reports/research/ams-rd04-d5e0-weekly-path-samples-v1.csv": "54ecd691ef3da62b02ea963b6fd0abf739ea4ac7847f6468b021b41e2903c35e"
+  },
+  "pattern_gate": {
+    "aggregate_tuesday_mean_positive": true,
+    "folds_with_tuesday_observations": 3,
+    "largest_other_weekday_share": 0.24342105263157895,
+    "pattern_supported": false,
+    "positive_tuesday_fold_count": 2,
+    "positive_tuesday_mean_at_least_two_folds": true,
+    "tuesday_observations_at_least_two_folds": true,
+    "tuesday_share_above_uniform": false,
+    "tuesday_share_largest_weekday": false,
+    "tuesday_signal_count": 52,
+    "tuesday_to_friday_mean_return": 0.01227006107747806,
+    "tuesday_to_friday_median_return": -0.0007703357041911607,
+    "tuesday_to_friday_observation_count": 51,
+    "tuesday_weekly_low_share": 0.13157894736842105
+  },
+  "research_stage": "RD04-D5E0-MIDWEEK-PULLBACK-DIAGNOSTIC",
+  "safety": {
+    "holdout_2026_accessed": false,
+    "long_only": true,
+    "no_borrowing": true,
+    "no_dca": true,
+    "no_futures": true,
+    "no_interest": true,
+    "no_kelly_sizing": true,
+    "no_leverage": true,
+    "no_margin": true,
+    "no_shorts": true,
+    "spot_only": true,
+    "test_2025_accessed": false
+  },
+  "schema_version": "ams-rd04-d5e0-midweek-pullback-diagnostic-v1",
+  "source_commit": "3c38bff3842e151170bcccf7ffdb4fb2491bdcca",
+  "status": "COMPLETE",
+  "trade_source": {
+    "original_trades_unchanged": true,
+    "path": "reports/research/ams-rd04-d5b2-base-cost-trades-v1.csv",
+    "projection_fingerprint": "badc1c8a86d7fa4188427313a7c05080456d791609144ff6b15da91de2bae73e",
+    "sha256": "6b5ecfab4ba64b3f22bbc87b2391bcb40189668952a2b5ea33f00d866a9650da",
+    "trade_count": 153
+  },
+  "weekly_path_population": "UNIQUE_TRADE_ASSOCIATED_FOLD_SYMBOL_MONDAY_00_UTC",
+  "weekly_paths": {
+    "bars_per_complete_path": 42,
+    "complete": 152,
+    "incomplete": 1,
+    "tie_break": "EARLIEST_FOUR_HOUR_BAR",
+    "total": 153
+  }
+}
