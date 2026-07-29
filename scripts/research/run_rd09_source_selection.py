@@ -425,6 +425,7 @@ def main() -> None:
     )
     metric_rows: list[dict[str, object]] = []
     for concept, candidates in METRIC_CONCEPTS.items():
+        emitted = False
         for metric_id in candidates:
             supported_assets = [
                 asset
@@ -435,6 +436,7 @@ def main() -> None:
             ]
             if not supported_assets:
                 continue
+            emitted = True
             example = catalog[supported_assets[0]][metric_id]
             frequency, minimum, maximum = metric_frequency(example)
             metric_rows.append(
@@ -456,6 +458,29 @@ def main() -> None:
                     "revision_backfill_risk": "REVIEWED_OR_REVISED_VALUES_MAY_CHANGE",
                     "publication_database_timestamp_available": "PARTIAL_STATUS_TIME_ONLY",
                     "causal_grade": CausalGrade.D_DERIVED_HISTORICAL_SERIES_WITH_UNKNOWN_REVISION,
+                    "source_ready": False,
+                }
+            )
+        if not emitted:
+            metric_rows.append(
+                {
+                    "source_id": "COIN_METRICS_COMMUNITY",
+                    "concept": concept,
+                    "metric_id": "NOT_AVAILABLE_IN_COMMUNITY",
+                    "entity_type": "ASSET",
+                    "endpoint": CM_TIMESERIES,
+                    "authorization_requirement": "PRO_OR_UNAVAILABLE",
+                    "free_or_paid": "NOT_COMMUNITY_READY",
+                    "assets_supported_count": 0,
+                    "minimum_time": "",
+                    "maximum_time": "",
+                    "frequency": "",
+                    "unit": "",
+                    "methodology_reference": "https://docs.coinmetrics.io/metrics",
+                    "null_semantics": "NOT_APPLICABLE",
+                    "revision_backfill_risk": "NOT_ASSESSED_NO_COMMUNITY_SERIES",
+                    "publication_database_timestamp_available": "NO",
+                    "causal_grade": CausalGrade.E_NOT_CAUSALLY_USABLE,
                     "source_ready": False,
                 }
             )
