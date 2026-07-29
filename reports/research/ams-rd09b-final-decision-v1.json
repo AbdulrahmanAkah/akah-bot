@@ -1,0 +1,84 @@
+{
+  "alpha_protocol_authorized": false,
+  "api_requests_executed": 0,
+  "broad_coverage_gate_passed": false,
+  "created_at_utc": "2026-07-29T01:27:21.955873+00:00",
+  "credential_present": false,
+  "credits_consumed": 0,
+  "credits_included": null,
+  "credits_used": null,
+  "decision": "RD09B_DUNE_CREDENTIAL_REQUIRED",
+  "executed_query_count": 0,
+  "execution_mode": "BLOCKED_BEFORE_API",
+  "full_source_freeze_authorized": false,
+  "full_source_freeze_protocol_authorized": false,
+  "mapping_rows": 41,
+  "next_stage": "DUNE_CREDENTIAL_AND_ZERO_SPEND_ATTESTATION_REQUIRED",
+  "pilot_row_count": 0,
+  "registered_query_count": 12,
+  "safety": {
+    "holdout_2026_accessed": false,
+    "label_computation_authorized": false,
+    "live_ready": false,
+    "long_only": true,
+    "no_averaging_down": true,
+    "no_borrowing": true,
+    "no_dca": true,
+    "no_futures": true,
+    "no_interest": true,
+    "no_kelly": true,
+    "no_leverage": true,
+    "no_margin": true,
+    "no_pyramiding": true,
+    "no_shorts": true,
+    "portfolio_construction_authorized": false,
+    "portfolio_simulation_authorized": false,
+    "production_change_authorized": false,
+    "production_ready": false,
+    "signal_computation_authorized": false,
+    "spot_only": true,
+    "test_2025_accessed": false,
+    "trade_logic_changed": false
+  },
+  "sector_coverage_gate_passed": false,
+  "selected_namespaces": [
+    "avalanche_c",
+    "bitcoin",
+    "cardano",
+    "ethereum"
+  ],
+  "selection_weights": {
+    "causal_integrity": 30,
+    "cost_licensing_suitability": 10,
+    "economic_information_independence": 15,
+    "native_frequency_latency_suitability": 5,
+    "pit_coverage": 25,
+    "reproducibility": 15
+  },
+  "silent_entity_exclusions": 0,
+  "stage": "RD09B-DUNE-ZERO-SPEND-RAW-CHAIN-FEASIBILITY",
+  "status": "BLOCKED",
+  "updated_dune_selection_score": 65,
+  "upstream_rd09": {
+    "coin_metrics": {
+      "causal_grade": "D_DERIVED_HISTORICAL_SERIES_WITH_UNKNOWN_REVISION",
+      "score": 59
+    },
+    "defillama": {
+      "causal_grade": "D_DERIVED_HISTORICAL_SERIES_WITH_UNKNOWN_REVISION",
+      "score": 51
+    },
+    "dune": {
+      "causal_grade": "B_RECONSTRUCTABLE_FROM_RAW_CHAIN",
+      "classification": "CREDENTIAL_REQUIRED",
+      "coverage_gate_passed": false,
+      "coverage_score": 0,
+      "score": 65
+    },
+    "final_sha256": "f31e04609a02d915ac278e0fac6fe5adad1c8b557439863679bb4f94c5cf8bfb",
+    "score_ledger_sha256": "55d73e3816da1bba2036b815d57ec6b53a47b1d50422409f5498f534e1a77282"
+  },
+  "upstream_rd09_decision": "RD09_NEW_INFORMATION_SOURCE_FEASIBILITY_NOT_CONFIRMED",
+  "user_attested_spend_limit_usd": null,
+  "zero_spend_attested": false
+}

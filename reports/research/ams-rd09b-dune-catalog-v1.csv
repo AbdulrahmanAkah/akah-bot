@@ -1,0 +1,6 @@
+namespace,table_name,table_type,timestamp_field,success_field,fee_fields,address_fields,contract_address_field,token_decimal_metadata,official_reference
+avalanche_c,avalanche_c.transactions,RAW_TRANSACTIONS,block_time,success,gas_used|gas_price,from|to,to,NOT_USED_NATIVE_BUNDLE,https://docs.dune.com/data-catalog/evm/avalanche/raw/transactions
+avalanche_c,avalanche_c.blocks,RAW_BLOCKS,time,,,,,NOT_APPLICABLE,https://docs.dune.com/data-catalog/evm/avalanche/raw/blocks
+bitcoin,bitcoin.transactions|bitcoin.inputs|bitcoin.outputs|bitcoin.blocks,RAW_UTXO_TRANSACTIONS_AND_BLOCKS,block_time|time,INCLUSION_IN_BLOCK,fee|total_fees,inputs.address|outputs.address,NOT_APPLICABLE,NOT_APPLICABLE,https://docs.dune.com/data-catalog/bitcoin/overview
+cardano,cardano.transaction|cardano.block,RAW_LEDGER_TRANSACTIONS_AND_BLOCKS,block_time,is_invalid,fee_lovelace|total_fees_lovelace,NOT_USED_UNTIL_RAW_UTXO_SCHEMA_REVIEW,NOT_APPLICABLE_NATIVE_BUNDLE,NOT_APPLICABLE,https://docs.dune.com/data-catalog/cardano/overview
+ethereum,ethereum.transactions|ethereum.blocks,RAW_TRANSACTIONS_AND_BLOCKS,block_time|time,success,gas_used|gas_price,from|to,to,NOT_USED_NATIVE_BUNDLE,https://docs.dune.com/data-catalog/evm/ethereum/overview
