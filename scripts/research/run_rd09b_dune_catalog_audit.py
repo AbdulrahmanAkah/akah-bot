@@ -258,12 +258,9 @@ def main() -> None:
             row["dune_blockchain_namespace"],
         )
         mapping_effective = bool(row["mapping_start"] or row["asset_type"] == "NATIVE_L1")
-        usable = (
-            entity_class == EntityClass.NATIVE_CHAIN_ASSET
-            and namespace in SUPPORTED_RAW
-            and mapping_effective
-        )
-        if usable:
+        native_mapping = entity_class == EntityClass.NATIVE_CHAIN_ASSET and mapping_effective
+        usable = native_mapping and namespace in SUPPORTED_RAW
+        if native_mapping:
             native_counts[namespace] += 1
         entity_rows.append(
             {
@@ -288,17 +285,34 @@ def main() -> None:
     ]
     selected = rank_namespaces(candidates)
     selected_names = {candidate.namespace for candidate in selected}
+    supported_order = {
+        candidate.namespace: index + 1
+        for index, candidate in enumerate(
+            sorted(
+                (candidate for candidate in candidates if candidate.raw_catalog_supported),
+                key=lambda item: (
+                    -item.mapped_pit_asset_count,
+                    item.namespace,
+                ),
+            )
+        )
+    }
     namespace_rows: list[dict[str, object]] = [
         {
             "namespace": candidate.namespace,
             "mapped_pit_asset_count": candidate.mapped_pit_asset_count,
             "raw_catalog_supported": candidate.raw_catalog_supported,
-            "rank": index + 1,
+            "overall_rank": index + 1,
+            "supported_rank": supported_order.get(candidate.namespace, ""),
             "selected": candidate.namespace in selected_names,
             "selection_reason": (
                 "TOP_FOUR_COUNT_DESC_NAMESPACE_ASC"
                 if candidate.namespace in selected_names
-                else "OUTSIDE_TOP_FOUR"
+                else (
+                    "OUTSIDE_TOP_FOUR"
+                    if candidate.raw_catalog_supported
+                    else "RAW_CATALOG_UNSUPPORTED"
+                )
             ),
         }
         for index, candidate in enumerate(

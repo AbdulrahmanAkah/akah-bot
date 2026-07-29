@@ -45,6 +45,17 @@ def read_csv(path: Path) -> list[dict[str, str]]:
 
 def main() -> None:
     validate_weights()
+    upstream_final_path = REPORTS / "ams-rd09-final-decision-v1.json"
+    upstream_score_path = REPORTS / "ams-rd09-source-selection-score-v1.csv"
+    upstream_final = json.loads(upstream_final_path.read_text(encoding="utf-8"))
+    upstream_scores = {row["source_id"]: row for row in read_csv(upstream_score_path)}
+    if (
+        upstream_final["decision"] != "RD09_NEW_INFORMATION_SOURCE_FEASIBILITY_NOT_CONFIRMED"
+        or upstream_scores["COIN_METRICS_COMMUNITY"]["total_score"] != "59"
+        or upstream_scores["DEFILLAMA_FREE_API"]["total_score"] != "51"
+        or upstream_scores["DUNE_RAW_ONCHAIN"]["total_score"] != "65"
+    ):
+        raise RuntimeError("RD09 upstream adjudication mismatch")
     account_path = REPORTS / "ams-rd09b-dune-account-usage-v1.json"
     account = json.loads(account_path.read_text(encoding="utf-8"))
     if account["decision"] != "RD09B_DUNE_CREDENTIAL_REQUIRED":
@@ -196,6 +207,25 @@ def main() -> None:
         "decision": "RD09B_DUNE_CREDENTIAL_REQUIRED",
         "created_at_utc": datetime.now(UTC).isoformat(),
         "upstream_rd09_decision": ("RD09_NEW_INFORMATION_SOURCE_FEASIBILITY_NOT_CONFIRMED"),
+        "upstream_rd09": {
+            "coin_metrics": {
+                "score": 59,
+                "causal_grade": ("D_DERIVED_HISTORICAL_SERIES_WITH_UNKNOWN_REVISION"),
+            },
+            "defillama": {
+                "score": 51,
+                "causal_grade": ("D_DERIVED_HISTORICAL_SERIES_WITH_UNKNOWN_REVISION"),
+            },
+            "dune": {
+                "score": 65,
+                "causal_grade": "B_RECONSTRUCTABLE_FROM_RAW_CHAIN",
+                "coverage_gate_passed": False,
+                "coverage_score": 0,
+                "classification": "CREDENTIAL_REQUIRED",
+            },
+            "final_sha256": sha256(upstream_final_path),
+            "score_ledger_sha256": sha256(upstream_score_path),
+        },
         "credential_present": False,
         "zero_spend_attested": bool(account["zero_spend_attested"]),
         "user_attested_spend_limit_usd": account["user_attested_spend_limit_usd"],
