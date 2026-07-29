@@ -702,8 +702,7 @@ def main() -> None:
             "no_2025_or_2026_access": True,
             "gate_passed": False,
             "notes": (
-                "No source has both continuous acquired coverage and a passing "
-                "causal contract."
+                "No source has both continuous acquired coverage and a passing causal contract."
             ),
         }
         for source in source_candidates
