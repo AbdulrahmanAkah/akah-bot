@@ -47,7 +47,28 @@ def test_credential_is_never_serialized_and_header_authentication_is_used() -> N
     assert "api_key" not in request.full_url.lower()
     assert request.get_header("X-dune-api-key") == secret
     assert secret not in repr(client)
+    assert request.data is not None
     assert secret not in request.data.decode("utf-8")
+
+
+def test_result_pagination_uses_header_authentication() -> None:
+    secret = "do-not-serialize"
+    captured: list[urllib.request.Request] = []
+
+    def opener(request: urllib.request.Request, timeout: int) -> FakeResponse:
+        assert timeout == 60
+        captured.append(request)
+        return FakeResponse({"result": {"rows": []}, "next_offset": None})
+
+    client = DuneClient(secret, opener=opener)
+    client.execution_results("execution-id", offset=100, limit=500)
+    request = captured[0]
+    assert request.full_url == (
+        "https://api.dune.com/api/v1/execution/execution-id/results?offset=100&limit=500"
+    )
+    assert request.get_header("X-dune-api-key") == secret
+    assert secret not in request.full_url
+    assert request.data is None
 
 
 def test_process_environment_gate_and_credit_stops() -> None:

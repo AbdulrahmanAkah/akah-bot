@@ -1,7 +1,27 @@
 # RD09B v2 Final Decision
 
-Status: BLOCKED
+Status: PASS
 
-Decision: RD09B_DUNE_CREDENTIAL_NOT_IN_PROCESS_ENVIRONMENT
+Decision: RD09B_DUNE_MARKET_LEVEL_FEASIBILITY_CONFIRMED
 
-The pre-acquisition amendment and SQL pack are complete. The Dune pilot was not started because the credential and attestation were not visible inside the runner process. No API request, credit use, signal, label, or portfolio operation occurred.
+Acquisition mode: Dune Query Editor manual export
+
+Passing namespaces: 5/5
+
+Market-level feasibility score: 100/100
+
+Selection gate passed: True
+
+API credits consumed: 0
+
+Paid spending: $0
+
+Namespace results:
+
+- bitcoin: PASS
+- ethereum: PASS
+- cardano: PASS
+- avalanche_c: PASS
+- polkadot: PASS
+
+No signal, label, portfolio, test-2025, holdout-2026, production, or live operation occurred.

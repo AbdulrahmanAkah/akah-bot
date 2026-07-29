@@ -1,7 +1,15 @@
 # RD09B v2 Dune Pilot Result
 
-Status: BLOCKED
+Status: PASS
 
-Decision: RD09B_DUNE_CREDENTIAL_NOT_IN_PROCESS_ENVIRONMENT
+Decision: RD09B_DUNE_MARKET_LEVEL_FEASIBILITY_CONFIRMED
 
-Queries executed: 0 of 15. Pilot credits consumed: 0. Paid spending: $0.
+Passing namespaces: 5/5
+
+Score: 100/100
+
+Manual files evaluated: 15/15
+
+Daily rows evaluated: 465
+
+API credits consumed: 0. Paid spending: $0.

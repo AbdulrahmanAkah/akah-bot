@@ -83,8 +83,11 @@ def environment_gate(environment: Mapping[str, str] | None = None) -> Environmen
 
 def parse_usage(payload: Mapping[str, object]) -> UsageSnapshot:
     periods = payload.get("billingPeriods")
+    if periods is None:
+        periods = payload.get("billing_periods")
     if not isinstance(periods, list) or not periods:
-        raise ValueError("usage response lacks billing periods")
+        keys = ",".join(sorted(str(key) for key in payload))
+        raise ValueError(f"usage response lacks billing periods; top-level keys={keys}")
     item = periods[-1]
     if not isinstance(item, dict):
         raise ValueError("usage billing period has invalid shape")
@@ -156,7 +159,20 @@ class DuneClient:
             response = self._opener(request, timeout=60)
             raw = response.read()
         except urllib.error.HTTPError as exc:
-            raise RuntimeError(f"Dune API HTTP status {exc.code}") from None
+            raw_error = exc.read().decode("utf-8", errors="replace")
+            try:
+                error_payload = json.loads(raw_error)
+            except json.JSONDecodeError:
+                error_payload = {}
+
+            message = error_payload.get("error")
+            if not isinstance(message, str):
+                message = f"Dune API HTTP status {exc.code}"
+
+            if exc.code == 400 and "performance tier is not available" in message.lower():
+                raise RuntimeError("DUNE_SUBSCRIPTION_BLOCKS_API_EXECUTION") from None
+
+            raise RuntimeError(f"Dune API HTTP status {exc.code}: {message}") from None
         except urllib.error.URLError:
             raise RuntimeError("Dune API network request failed") from None
         parsed = json.loads(raw)
@@ -177,8 +193,19 @@ class DuneClient:
     def execution_status(self, execution_id: str) -> dict[str, object]:
         return self._request("GET", f"/execution/{execution_id}/status")
 
-    def execution_results(self, execution_id: str) -> dict[str, object]:
-        return self._request("GET", f"/execution/{execution_id}/results")
+    def execution_results(
+        self,
+        execution_id: str,
+        *,
+        offset: int = 0,
+        limit: int = 1000,
+    ) -> dict[str, object]:
+        if offset < 0 or limit <= 0:
+            raise ValueError("Dune result pagination bounds are invalid")
+        return self._request(
+            "GET",
+            f"/execution/{execution_id}/results?offset={offset}&limit={limit}",
+        )
 
     def poll(
         self,
