@@ -1,0 +1,43 @@
+{
+  "closed_information_spaces": {
+    "CROSS_SECTIONAL_PRICE_VOLUME_FLOW_SPACE_CLOSED": true,
+    "MARKET_STATE_TIMING_SPACE_CLOSED": true,
+    "OHLCV_PRIMITIVE_SIGNAL_SPACE_CLOSED": true,
+    "PUBLIC_SPOT_MARKET_DATA_SPACE_CLOSED": true
+  },
+  "created_at_utc": "2026-07-29T00:24:08.168841+00:00",
+  "decision": "RD08_MARKET_DATA_RESEARCH_SEQUENCE_COMPLETE_NO_EDGE_CONFIRMED",
+  "near_miss": {
+    "bh_block_28": 0.05599440055994401,
+    "bh_block_7": 0.19668033196680332,
+    "classification": "UNCONFIRMED_NEAR_MISS",
+    "registered_threshold": 0.05,
+    "signal_id": "MKT_AGG_QUOTE_TURNOVER_ACCEL_6_42"
+  },
+  "next_stage": "RD09_NEW_INFORMATION_SOURCE_SELECTION_AND_FEASIBILITY",
+  "portfolio_construction_authorized": false,
+  "prohibited_inferences": [
+    "DROP_HISTORICAL_BH_TRIALS",
+    "RELAX_FDR_THRESHOLD",
+    "SELECT_ONLY_BLOCK_28_RESULT",
+    "CONSTRUCT_EXPOSURE_RULE",
+    "RETEST_PARAMETER_VARIANTS"
+  ],
+  "safety": {
+    "holdout_2026_accessed": false,
+    "portfolio_simulation_authorized": false,
+    "production_change_authorized": false,
+    "test_2025_accessed": false,
+    "trade_logic_changed": false
+  },
+  "stage": "RD08-FINAL-MARKET-DATA-RESEARCH-CLOSURE",
+  "status": "COMPLETE",
+  "trial_counts": {
+    "confirmed": 0,
+    "rd05": 33,
+    "rd06": 15,
+    "rd07": 14,
+    "rd08": 14,
+    "total": 76
+  }
+}
