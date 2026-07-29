@@ -244,6 +244,10 @@ def main() -> None:
         "next_stage": "NONE_WHILE_BLOCKED",
         "credential_present": account.get("credential_present", False),
         "zero_spend_attested": account.get("zero_spend_attested", False),
+        "user_zero_spend_attestation_recorded": True,
+        "process_zero_spend_attestation_visible": account.get(
+            "process_zero_spend_attestation_visible", False
+        ),
         "user_attested_spend_limit_usd": 0,
         "usage_endpoint_called": account.get("usage_endpoint_called", False),
         "credits_included_user_reported": 2500,
