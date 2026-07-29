@@ -13,7 +13,7 @@ def test_resume_does_not_duplicate_download(tmp_path: Path) -> None:
 
 
 def test_manifest_replaces_same_request(tmp_path: Path) -> None:
-    path = tmp_path / "manifest.json"
+    path = tmp_path / "nested" / "manifest.json"
     record = {
         "source_id": "SOURCE",
         "request_url": "https://example.test",

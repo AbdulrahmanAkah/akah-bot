@@ -39,7 +39,7 @@ MAPPING_SOURCE = REPORTS / "ams-rd07-binance-symbol-mapping-v1.csv"
 PANEL_SOURCE = REPORTS / "ams-rd06-p1-panel-index-v1.parquet"
 FOLD_SOURCE = REPORTS / "ams-rd06-p1-fold-grid-assignments-v1.csv"
 
-CM_CATALOG_URL = "https://community-api.coinmetrics.io/v4/catalog-all/asset-metrics?page_size=10000"
+CM_CATALOG_URL = "https://community-api.coinmetrics.io/v4/catalog-v2/asset-metrics"
 CM_TIMESERIES = "https://community-api.coinmetrics.io/v4/timeseries/asset-metrics"
 
 PROTOCOL_SLUGS = {
@@ -227,6 +227,14 @@ def metric_frequency(metric: dict[str, Any]) -> tuple[str, str, str]:
     )
 
 
+def is_community_daily(metric: dict[str, Any]) -> bool:
+    frequencies = metric.get("frequencies", [])
+    return isinstance(frequencies, list) and any(
+        isinstance(item, dict) and item.get("frequency") == "1d" and item.get("community") is True
+        for item in frequencies
+    )
+
+
 def build_mappings(
     symbols: list[str],
     catalog: dict[str, dict[str, dict[str, Any]]],
@@ -295,7 +303,11 @@ def pilot_quality(
         "null_count": null_count,
         "duplicate_count": len(rows) - len({json.dumps(row, sort_keys=True) for row in rows}),
         "nonfinite_numeric_count": numeric_invalid,
-        "quality_status": "PASS" if rows and numeric_invalid == 0 else "PARTIAL",
+        "quality_status": (
+            "PASS_WITH_NULLS"
+            if rows and numeric_invalid == 0 and null_count > 0
+            else ("PASS" if rows and numeric_invalid == 0 else "PARTIAL")
+        ),
     }
 
 
@@ -305,10 +317,12 @@ def main() -> None:
     symbols = sorted(mapping_source["kucoin_canonical_symbol"].astype(str).unique())
     if len(symbols) != 41:
         raise RuntimeError(f"expected 41 actual PIT symbols, observed {len(symbols)}")
+    catalog_assets = ",".join(symbol.lower() for symbol in symbols)
+    catalog_url = f"{CM_CATALOG_URL}?{urllib.parse.urlencode({'assets': catalog_assets})}"
     catalog_result = fetch_record(
         "COIN_METRICS_COMMUNITY",
-        CM_CATALOG_URL,
-        PILOT / "coinmetrics" / "catalog-all-asset-metrics.json",
+        catalog_url,
+        PILOT / "coinmetrics" / "catalog-v2-pit-asset-metrics.json",
     )
     catalog = catalog_index(json_rows(catalog_result.path))
     mappings = build_mappings(symbols, catalog)
@@ -318,12 +332,28 @@ def main() -> None:
             for asset in ("btc", "eth", "ada")
             for metric in catalog.get(asset, {})
             if any(metric in candidates for candidates in METRIC_CONCEPTS.values())
+            and is_community_daily(catalog[asset][metric])
         }
     )
     if not available_metrics:
         raise RuntimeError("Coin Metrics Community concepts unavailable")
     pilot_rows: list[dict[str, object]] = []
-    request_rows: list[dict[str, object]] = []
+    request_rows: list[dict[str, object]] = [
+        {
+            "source_id": "COIN_METRICS_COMMUNITY",
+            "endpoint": CM_CATALOG_URL,
+            "request_parameters": json.dumps({"assets": symbols}, sort_keys=True),
+            "request_timestamp_utc": catalog_result.retrieved_at_utc,
+            "http_status": catalog_result.http_status,
+            "response_headers": json.dumps(catalog_result.response_headers, sort_keys=True),
+            "raw_sha256": catalog_result.sha256,
+            "row_count": len(catalog),
+            "pilot_start": "",
+            "pilot_end": "",
+            "status": "PASS_CATALOG_METADATA_ONLY",
+            "notes": "Catalog metadata is not a market observation or predictive input.",
+        }
+    ]
     pilot_assets = [asset for asset in ("btc", "eth", "ada") if asset in catalog]
     for start, end in PILOT_RANGES:
         parameters = {
@@ -335,7 +365,7 @@ def main() -> None:
             "page_size": "10000",
         }
         url = f"{CM_TIMESERIES}?{urllib.parse.urlencode(parameters)}"
-        destination = PILOT / "coinmetrics" / f"asset-metrics-{start[:4]}-03.json"
+        destination = PILOT / "coinmetrics" / f"asset-metrics-btc-eth-ada-{start[:4]}-03.json"
         result = fetch_record("COIN_METRICS_COMMUNITY", url, destination, start, end)
         rows = json_rows(destination)
         pilot_rows.append(pilot_quality("COIN_METRICS_COMMUNITY", result, rows, start, end))
@@ -401,6 +431,7 @@ def main() -> None:
                 for asset in catalog
                 if metric_id in catalog[asset]
                 and metric_frequency(catalog[asset][metric_id])[0] == "1d"
+                and is_community_daily(catalog[asset][metric_id])
             ]
             if not supported_assets:
                 continue

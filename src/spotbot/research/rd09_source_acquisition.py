@@ -98,6 +98,7 @@ def fetch_json(
 
 
 def append_manifest(path: Path, record: dict[str, object]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
     records: list[dict[str, object]]
     if path.exists():
         loaded = json.loads(path.read_text(encoding="utf-8"))
