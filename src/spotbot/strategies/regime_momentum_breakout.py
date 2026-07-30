@@ -30,6 +30,15 @@ class RegimeMomentumBreakoutConfig:
     trailing_stop_atr: float = 2.5
     rsi_exit_threshold: float = 45.0
     maximum_holding_bars: int = 30
+    enable_long_term_trend: bool = True
+    enable_medium_term_alignment: bool = True
+    enable_rsi_entry_filter: bool = True
+    enable_volume_confirmation: bool = True
+    enable_volatility_sanity: bool = True
+    enable_trailing_stop: bool = True
+    enable_ema50_exit: bool = True
+    enable_rsi_exit: bool = True
+    enable_time_stop: bool = True
 
     def validate(self) -> None:
         periods = (
@@ -257,12 +266,15 @@ class RegimeMomentumBreakoutStrategy:
         indicators: IndicatorSnapshot,
     ) -> OrderRequest | None:
         conditions = (
-            indicators.close > indicators.ema_200,
-            indicators.ema_50 > indicators.ema_200,
-            self.config.rsi_entry_minimum <= indicators.rsi_14 <= self.config.rsi_entry_maximum,
+            not self.config.enable_long_term_trend or indicators.close > indicators.ema_200,
+            not self.config.enable_medium_term_alignment or indicators.ema_50 > indicators.ema_200,
+            not self.config.enable_rsi_entry_filter
+            or self.config.rsi_entry_minimum <= indicators.rsi_14 <= self.config.rsi_entry_maximum,
             indicators.close > indicators.previous_high_20,
-            candle.volume >= self.config.volume_multiplier * indicators.previous_volume_mean_20,
-            self.config.atr_fraction_minimum
+            not self.config.enable_volume_confirmation
+            or candle.volume >= self.config.volume_multiplier * indicators.previous_volume_mean_20,
+            not self.config.enable_volatility_sanity
+            or self.config.atr_fraction_minimum
             <= indicators.atr_fraction
             <= self.config.atr_fraction_maximum,
         )
@@ -296,13 +308,13 @@ class RegimeMomentumBreakoutStrategy:
         trailing_stop = self._highest_close - self.config.trailing_stop_atr * indicators.atr_14
 
         reason: str | None = None
-        if trailing_active and candle.close <= trailing_stop:
+        if self.config.enable_trailing_stop and trailing_active and candle.close <= trailing_stop:
             reason = "trailing_stop_close"
-        elif candle.close < indicators.ema_50:
+        elif self.config.enable_ema50_exit and candle.close < indicators.ema_50:
             reason = "momentum_failure_close_below_ema50"
-        elif indicators.rsi_14 < self.config.rsi_exit_threshold:
+        elif self.config.enable_rsi_exit and indicators.rsi_14 < self.config.rsi_exit_threshold:
             reason = "rsi_failure_below_45"
-        elif self._bars_held >= self.config.maximum_holding_bars:
+        elif self.config.enable_time_stop and self._bars_held >= self.config.maximum_holding_bars:
             reason = "time_stop_30_bars"
 
         if reason is None:

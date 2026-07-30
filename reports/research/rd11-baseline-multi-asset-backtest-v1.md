@@ -8,7 +8,7 @@ AVAX/USDT, and DOT/USDT. The strategy specification remained byte-for-byte
 unchanged at SHA-256
 `dda3e786f473320139290cebde2edf551ba3255cd89834684e5afc2b67c696ad`.
 
-Technical status is PASS. Evidence classification is POSITIVE under the
+Technical status is PASS. Evidence classification is MIXED under the
 preregistered rule, but the result is not a claim of superior performance:
 the strategy returned 7.3472% while the equal-weight buy-and-hold benchmark
 returned 232.5038%. The main measured benefit was a materially lower maximum
@@ -73,8 +73,9 @@ marked `insufficient_trade_sample=true`.
 - Drawdown improvement: 44.3990 percentage points
 
 Net PnL contribution was BTC +8,316.35, ADA +2,141.96, AVAX -423.73,
-DOT -1,001.31, and ETH -1,686.04. BTC supplied 79.54% of positive
-contribution, below the preregistered 80% concentration limit.
+DOT -1,001.31, and ETH -1,686.04. BTC supplied 113.19% of portfolio net
+profit because other assets had negative contributions. This exceeds the
+preregistered 80% concentration limit.
 
 ## Time and regime attribution
 
@@ -108,16 +109,18 @@ and `git diff --check`.
 
 ## Interpretation
 
-The preregistered POSITIVE rule passes because portfolio return, expectancy,
-and profit factor are positive; drawdown is lower than the benchmark; two
-assets are profitable; positive PnL concentration is below 80%; and all
-technical gates pass. This classification should be interpreted cautiously:
-sample sizes are small and absolute return substantially trails buy-and-hold.
+RD12 corrected the original POSITIVE label to MIXED. The original calculation
+incorrectly divided BTC contribution by total positive contributions rather
+than portfolio net profit. BTC contribution of 8,316.35 divided by portfolio
+net profit of 7,347.24 is 113.19%, which violates the frozen 80% limit.
+Technical gates still pass, but sample sizes are small and absolute return
+substantially trails buy-and-hold.
 
 ## Decision
 
 - Decision: `RD11_BASELINE_MULTI_ASSET_BACKTEST_COMPLETED`
-- Evidence classification: `POSITIVE`
+- Evidence classification: `MIXED`
+- Correction: `RD11_EVIDENCE_CLASSIFICATION_CORRECTED_TO_MIXED`
 - Next stage: `RD12_REGIME_AND_COMPONENT_ATTRIBUTION`
 
 RD12 was not started.

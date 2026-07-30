@@ -1,0 +1,13 @@
+sequence,variant_id,component,kind,changed_fields,status
+1,RD12_BASELINE,BASELINE,BASELINE,{},COMPLETE
+2,RD12_E01_NO_LONG_TERM_TREND,LONG_TERM_TREND,ENTRY_ABLATION,"{""enable_long_term_trend"": false}",COMPLETE
+3,RD12_E02_NO_MEDIUM_TERM_ALIGNMENT,MEDIUM_TERM_ALIGNMENT,ENTRY_ABLATION,"{""enable_medium_term_alignment"": false}",COMPLETE
+4,RD12_E03_NO_RSI_ENTRY_FILTER,RSI_ENTRY_FILTER,ENTRY_ABLATION,"{""enable_rsi_entry_filter"": false}",COMPLETE
+5,RD12_E04_NO_VOLUME_CONFIRMATION,VOLUME_CONFIRMATION,ENTRY_ABLATION,"{""enable_volume_confirmation"": false}",COMPLETE
+6,RD12_E05_NO_VOLATILITY_SANITY,VOLATILITY_SANITY,ENTRY_ABLATION,"{""enable_volatility_sanity"": false}",COMPLETE
+7,RD12_X01_NO_TRAILING_STOP,TRAILING_STOP,EXIT_ABLATION,"{""enable_trailing_stop"": false}",COMPLETE
+8,RD12_X02_NO_EMA50_EXIT,EMA50_EXIT,EXIT_ABLATION,"{""enable_ema50_exit"": false}",COMPLETE
+9,RD12_X03_NO_RSI_EXIT,RSI_EXIT,EXIT_ABLATION,"{""enable_rsi_exit"": false}",COMPLETE
+10,RD12_X04_NO_TIME_STOP,TIME_STOP,EXIT_ABLATION,"{""enable_time_stop"": false}",COMPLETE
+11,RD12_G01_BREAKOUT_CORE_ONLY,ENTRY_FILTER_GROUP,GROUPED_DIAGNOSTIC,"{""enable_long_term_trend"": false, ""enable_medium_term_alignment"": false, ""enable_rsi_entry_filter"": false, ""enable_volume_confirmation"": false}",COMPLETE
+12,RD12_G02_INITIAL_STOP_AND_TIME_EXIT_ONLY,MOMENTUM_EXIT_GROUP,GROUPED_DIAGNOSTIC,"{""enable_ema50_exit"": false, ""enable_rsi_exit"": false, ""enable_trailing_stop"": false}",COMPLETE

@@ -1,0 +1,24 @@
+{
+  "changed_fields": {
+    "enable_volatility_sanity": false
+  },
+  "component": "VOLATILITY_SANITY",
+  "component_flags": {
+    "enable_ema50_exit": true,
+    "enable_long_term_trend": true,
+    "enable_medium_term_alignment": true,
+    "enable_rsi_entry_filter": true,
+    "enable_rsi_exit": true,
+    "enable_time_stop": true,
+    "enable_trailing_stop": true,
+    "enable_volatility_sanity": false,
+    "enable_volume_confirmation": true
+  },
+  "costs_unchanged": true,
+  "data_window_unchanged": true,
+  "kind": "ENTRY_ABLATION",
+  "portfolio_constraints_unchanged": true,
+  "purpose": "Remove ATR fraction sanity gate.",
+  "strategy_parameters_unchanged": true,
+  "variant_id": "RD12_E05_NO_VOLATILITY_SANITY"
+}

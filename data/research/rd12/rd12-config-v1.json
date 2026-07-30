@@ -1,0 +1,34 @@
+{
+  "baseline_component_flags": {
+    "enable_ema50_exit": true,
+    "enable_long_term_trend": true,
+    "enable_medium_term_alignment": true,
+    "enable_rsi_entry_filter": true,
+    "enable_rsi_exit": true,
+    "enable_time_stop": true,
+    "enable_trailing_stop": true,
+    "enable_volatility_sanity": true,
+    "enable_volume_confirmation": true
+  },
+  "classification_thresholds": {
+    "harmful_drawdown_tolerance": 0.01,
+    "harmful_return_improvement": 0.02,
+    "large_trade_count_change_fraction": 0.5,
+    "minimum_closed_trade_sample": 30,
+    "neutral_drawdown_delta": 0.005,
+    "neutral_profit_factor_delta": 0.1,
+    "neutral_return_delta": 0.005,
+    "risk_control_drawdown_delta": 0.02,
+    "supportive_asset_count": 3,
+    "supportive_profit_factor_delta": 0.15,
+    "supportive_return_delta": 0.01
+  },
+  "method": "ONE_COMPONENT_AT_A_TIME_ABLATION",
+  "optimization_performed": false,
+  "schema_version": "rd12-config-v1",
+  "source_commit": "49427468d06d63dedc7d926905cc9e255edc601a",
+  "stage": "RD12_REGIME_AND_COMPONENT_ATTRIBUTION",
+  "strategy_id": "AKAH_REGIME_MOMENTUM_BREAKOUT_V1",
+  "variant_count": 12,
+  "winner_selection_prohibited": true
+}

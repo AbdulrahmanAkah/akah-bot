@@ -1,0 +1,24 @@
+{
+  "changed_fields": {
+    "enable_rsi_exit": false
+  },
+  "component": "RSI_EXIT",
+  "component_flags": {
+    "enable_ema50_exit": true,
+    "enable_long_term_trend": true,
+    "enable_medium_term_alignment": true,
+    "enable_rsi_entry_filter": true,
+    "enable_rsi_exit": false,
+    "enable_time_stop": true,
+    "enable_trailing_stop": true,
+    "enable_volatility_sanity": true,
+    "enable_volume_confirmation": true
+  },
+  "costs_unchanged": true,
+  "data_window_unchanged": true,
+  "kind": "EXIT_ABLATION",
+  "portfolio_constraints_unchanged": true,
+  "purpose": "Remove RSI-below-45 exit.",
+  "strategy_parameters_unchanged": true,
+  "variant_id": "RD12_X03_NO_RSI_EXIT"
+}

@@ -152,6 +152,8 @@ def test_batch_guards_global_chronology_and_duplicate_symbols() -> None:
 
 def test_classification_rules_are_deterministic() -> None:
     metrics: dict[str, Any] = {
+        "initial_equity": 100_000.0,
+        "final_equity": 110_000.0,
         "net_return": 0.1,
         "expectancy": 100.0,
         "profit_factor": 1.5,
@@ -169,7 +171,11 @@ def test_classification_rules_are_deterministic() -> None:
     assert _classification({**metrics, "net_return": 0.0}, per_asset) == "NEGATIVE"
     concentrated = {
         **metrics,
-        "pnl_contribution_by_asset": {"BTC/USDT": 90.0, "ETH/USDT": 10.0},
+        "pnl_contribution_by_asset": {
+            "BTC/USDT": 11_500.0,
+            "ETH/USDT": 500.0,
+            "ADA/USDT": -2_000.0,
+        },
     }
     assert _classification(concentrated, per_asset) == "MIXED"
 

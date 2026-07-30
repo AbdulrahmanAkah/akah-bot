@@ -25,6 +25,7 @@ from spotbot.risk.position_sizing import RiskConfig
 from spotbot.strategies.regime_momentum_breakout import (
     STRATEGY_ID,
     STRATEGY_NAME,
+    RegimeMomentumBreakoutConfig,
     RegimeMomentumBreakoutStrategy,
     SignalRecord,
     StrategyOrderRecord,
@@ -125,9 +126,14 @@ class AssetEligibility:
 
 
 class MultiAssetRegimeStrategy:
-    def __init__(self, symbols: Iterable[str]) -> None:
+    def __init__(
+        self,
+        symbols: Iterable[str],
+        config: RegimeMomentumBreakoutConfig | None = None,
+    ) -> None:
         self.strategies = {
             symbol: RegimeMomentumBreakoutStrategy(
+                config=config,
                 id_prefix=f"{ASSETS[symbol]}-",
             )
             for symbol in symbols
@@ -710,10 +716,11 @@ def run_per_asset(
     symbol: str,
     frame: pd.DataFrame,
     output: Path,
+    strategy_config: RegimeMomentumBreakoutConfig | None = None,
 ) -> dict[str, Any]:
     if output.exists():
         shutil.rmtree(output)
-    strategy = MultiAssetRegimeStrategy([symbol])
+    strategy = MultiAssetRegimeStrategy([symbol], strategy_config)
     engine = BacktestEngine(
         initial_cash=INITIAL_CASH,
         strategy=strategy,
@@ -825,11 +832,12 @@ def _portfolio_positions_and_cash(
 def run_portfolio(
     frames: dict[str, pd.DataFrame],
     output: Path,
+    strategy_config: RegimeMomentumBreakoutConfig | None = None,
 ) -> dict[str, Any]:
     if output.exists():
         shutil.rmtree(output)
     symbols = sorted(frames)
-    strategy = MultiAssetRegimeStrategy(symbols)
+    strategy = MultiAssetRegimeStrategy(symbols, strategy_config)
     engine = BacktestEngine(
         initial_cash=INITIAL_CASH,
         strategy=strategy,
@@ -1099,11 +1107,14 @@ def _classification(
         dict[str, float],
         portfolio_metrics["pnl_contribution_by_asset"],
     )
-    positive_total = sum(max(value, 0.0) for value in contributions.values())
+    portfolio_net_profit = float(portfolio_metrics["final_equity"]) - float(
+        portfolio_metrics["initial_equity"]
+    )
     concentrated = (
-        max((max(value, 0.0) for value in contributions.values()), default=0.0) / positive_total
+        max((max(value, 0.0) for value in contributions.values()), default=0.0)
+        / portfolio_net_profit
         > 0.8
-        if positive_total > 0
+        if portfolio_net_profit > 0
         else True
     )
     positive = (
