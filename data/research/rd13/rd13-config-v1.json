@@ -1,0 +1,40 @@
+{
+  "bootstrap_resamples": 2000,
+  "bootstrap_seed": 20260730,
+  "cohort_count": 2,
+  "component_flags": {
+    "enable_ema50_exit": true,
+    "enable_long_term_trend": true,
+    "enable_medium_term_alignment": true,
+    "enable_rsi_entry_filter": true,
+    "enable_rsi_exit": true,
+    "enable_time_stop": true,
+    "enable_trailing_stop": true,
+    "enable_volatility_sanity": true,
+    "enable_volume_confirmation": true
+  },
+  "cross_asset_minimum_trades": 10,
+  "expanded_portfolio_trades": 100,
+  "full_output_variants": [
+    "RD12_BASELINE",
+    "RD12_E02_NO_MEDIUM_TERM_ALIGNMENT",
+    "RD12_E03_NO_RSI_ENTRY_FILTER",
+    "RD12_E04_NO_VOLUME_CONFIRMATION",
+    "RD12_G01_BREAKOUT_CORE_ONLY",
+    "RD12_X03_NO_RSI_EXIT",
+    "RD12_X04_NO_TIME_STOP"
+  ],
+  "long_history_assets": [
+    "BTC/USDT",
+    "ETH/USDT",
+    "ADA/USDT"
+  ],
+  "minimum_portfolio_trades": 30,
+  "optimization_performed": false,
+  "schema_version": "rd13-config-v1",
+  "source_commit": "18da5e89b705648b671f3a96f113fcd13960f157",
+  "stage": "RD13_SAMPLE_EXPANSION_WITH_FROZEN_RULES",
+  "strategy_id": "AKAH_REGIME_MOMENTUM_BREAKOUT_V1",
+  "variant_count": 12,
+  "winner_selected": false
+}
