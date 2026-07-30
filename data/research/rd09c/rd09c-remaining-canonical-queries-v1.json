@@ -1,0 +1,64 @@
+{
+  "stage": "RD09C_REMAINING_CANONICAL_QUERY_CREATION",
+  "status": "COMPLETE",
+  "decision": "RD09C_REMAINING_CANONICAL_QUERIES_CONFIRMED",
+  "branch": "research/rd09b-market-level-native-chain-feasibility-v2",
+  "head_before": "7781274dcd7b6e71cc9975341305109e3c2816e9",
+  "networks_requested": 4,
+  "networks_completed": ["ethereum", "cardano", "avalanche_c", "polkadot"],
+  "networks_failed": [],
+  "networks_not_attempted": [],
+  "total_execution_attempts": 4,
+  "total_download_attempts": 4,
+  "total_credits_consumed": 0,
+  "paid_spending_usd": 0,
+  "test_2025_accessed": false,
+  "holdout_2026_accessed": false,
+  "dune_api_called": false,
+  "per_network_results": {
+    "ethereum": {
+      "status": "COMPLETE",
+      "decision": "PASS",
+      "query_id": "8163282",
+      "execution_status": "SUCCESS",
+      "credits_consumed": 0,
+      "row_count": 31,
+      "schema_match": true,
+      "normalized_content_match": true
+    },
+    "cardano": {
+      "status": "COMPLETE",
+      "decision": "RD09C_CARDANO_CANONICAL_QUERY_CONFIRMED",
+      "query_id": "8164235",
+      "execution_status": "SUCCESS",
+      "execution_reused": true,
+      "credits_consumed": 0,
+      "row_count": 31,
+      "schema_match": true,
+      "normalized_content_match": true
+    },
+    "avalanche_c": {
+      "status": "COMPLETE",
+      "decision": "RD09C_AVALANCHE_C_CANONICAL_QUERY_CONFIRMED",
+      "query_id": "8164483",
+      "execution_status": "SUCCESS",
+      "credits_consumed": 0,
+      "row_count": 31,
+      "schema_match": true,
+      "normalized_content_match": true
+    },
+    "polkadot": {
+      "status": "COMPLETE",
+      "decision": "RD09C_POLKADOT_CANONICAL_QUERY_CONFIRMED",
+      "query_id": "8165479",
+      "execution_status": "SUCCESS",
+      "credits_consumed": 0,
+      "row_count": 31,
+      "schema_match": true,
+      "normalized_content_match": true
+    }
+  },
+  "registry_reconciliation": "PASS: all five canonical query rows reconciled",
+  "acquisition_plan_reconciliation": "PASS: all five browser-validation requests reconciled",
+  "next_stage": "RD09C_FINAL_RECONCILIATION_AND_COMMIT"
+}
