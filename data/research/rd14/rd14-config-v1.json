@@ -1,0 +1,36 @@
+{
+  "bootstrap_resamples": 2000,
+  "bootstrap_seed": 20260731,
+  "branch": "research/rd09b-market-level-native-chain-feasibility-v2",
+  "cohorts": {
+    "long_history": {
+      "assets": [
+        "BTC/USDT",
+        "ETH/USDT",
+        "ADA/USDT"
+      ],
+      "common_window_start": "2019-07-05T00:00:00+00:00",
+      "evaluation_start": "2020-01-21T00:00:00+00:00",
+      "period_end_exclusive": "2025-01-01T00:00:00+00:00",
+      "warmup_bars": 200
+    },
+    "transfer": {
+      "assets": [
+        "BTC/USDT",
+        "ETH/USDT",
+        "ADA/USDT",
+        "AVAX/USDT",
+        "DOT/USDT"
+      ],
+      "common_window_start": "2022-06-17T00:00:00+00:00",
+      "evaluation_start": "2023-01-03T00:00:00+00:00",
+      "period_end_exclusive": "2025-01-01T00:00:00+00:00",
+      "warmup_bars": 200
+    }
+  },
+  "optimization_performed": false,
+  "schema_version": "rd14-config-v1",
+  "source_commit": "6739dfac439d7fd62ba0a6fe8a52fa921f2144ed",
+  "strategy_id": "AKAH_SCORED_BREAKOUT_V1",
+  "winner_selected": false
+}

@@ -1,0 +1,163 @@
+{
+  "cooldown_rules": {
+    "health_exit_bars": 3,
+    "protective_stop_bars": 5
+  },
+  "dune_api_called": false,
+  "entry_score_functions": {
+    "breakout_quality": "penetration_12+close_location_7+range_expansion_6",
+    "momentum_quality": "rsi_piecewise_8+rsi_acceleration_4+roc20_3",
+    "relative_strength": "roc20_cross_section_8+roc60_cross_section_7",
+    "risk_execution_quality": "atr_quality_8+extension_quality_6+capacity_6",
+    "trend_structure": "price_ema200_5+ema200_slope_5+ema_spread_5",
+    "volume_participation": "current_ratio_6+recent_ratio_4"
+  },
+  "entry_score_groups": {
+    "breakout_quality": 25.0,
+    "momentum_quality": 15.0,
+    "relative_strength": 15.0,
+    "risk_execution_quality": 20.0,
+    "trend_structure": 15.0,
+    "volume_participation": 10.0
+  },
+  "entry_threshold": 70.0,
+  "execution_timing": {
+    "entry_fill": "next_bar_open",
+    "entry_signal": "completed_bar_close",
+    "soft_exit_fill": "next_bar_open",
+    "soft_exit_signal": "completed_bar_close"
+  },
+  "fee_model": {
+    "rate_per_fill": 0.001
+  },
+  "group_floors": {
+    "breakout_quality": 15.0,
+    "risk_execution_quality": 10.0
+  },
+  "hard_exit_rules": {
+    "gap_through": "fill_at_worse_of_next_open_or_stop",
+    "initial_protective_stop": "signal_close_minus_2_atr14"
+  },
+  "hard_safety_gates": [
+    "complete_ohlcv_and_indicators",
+    "completed_bars_only",
+    "no_future_access",
+    "one_position_per_asset",
+    "maximum_two_positions",
+    "sufficient_cash_after_costs",
+    "positive_quantity_and_minimum_order",
+    "valid_price_and_quantity_precision",
+    "positive_finite_atr",
+    "positive_close",
+    "zero_lt_atr_fraction_lte_0_15",
+    "initial_stop_below_expected_entry",
+    "no_negative_cash",
+    "next_bar_entry_only",
+    "forbidden_year_rejection",
+    "critical_timestamp_completeness"
+  ],
+  "holdout_2026_accessed": false,
+  "optimization_performed": false,
+  "portfolio_constraints": {
+    "long_only": true,
+    "maximum_positions_per_asset": 1,
+    "maximum_simultaneous_positions": 2,
+    "shared_cash": true,
+    "spot_only": true
+  },
+  "position_health_functions": {
+    "momentum_persistence": "rsi+rsi_delta+roc10",
+    "r_state_profit_retention": "current_r+giveback",
+    "structure_retention": "breakout_retention+ema20+drawdown_from_high",
+    "time_efficiency": "time_and_r_state_without_absolute_time_exit",
+    "trend_continuation": "price_ema50+ema50_slope+ema_spread",
+    "volatility_stability": "atr_expansion_vs_entry"
+  },
+  "position_health_groups": {
+    "momentum_persistence": 15.0,
+    "r_state_profit_retention": 20.0,
+    "structure_retention": 25.0,
+    "time_efficiency": 10.0,
+    "trend_continuation": 20.0,
+    "volatility_stability": 10.0
+  },
+  "position_sizing": {
+    "initial_stop_atr": 2.0,
+    "maximum_allocation": 0.25,
+    "risk_per_trade": 0.01,
+    "score_independent": true
+  },
+  "schema_version": "rd14-scored-breakout-specification-v1",
+  "sensitivity_variants": [
+    {
+      "changes": {},
+      "configuration_id": "RD14_S0_PRIMARY",
+      "purpose": "Frozen primary scored strategy."
+    },
+    {
+      "changes": {
+        "entry_threshold": 65.0
+      },
+      "configuration_id": "RD14_S1_ENTRY_THRESHOLD_65",
+      "purpose": "Entry-threshold sensitivity."
+    },
+    {
+      "changes": {
+        "entry_threshold": 75.0
+      },
+      "configuration_id": "RD14_S2_ENTRY_THRESHOLD_75",
+      "purpose": "Entry-threshold sensitivity."
+    },
+    {
+      "changes": {
+        "confirmed_health_threshold": 30.0
+      },
+      "configuration_id": "RD14_S3_HEALTH_EXIT_30",
+      "purpose": "Confirmed-health sensitivity."
+    },
+    {
+      "changes": {
+        "confirmed_health_threshold": 40.0
+      },
+      "configuration_id": "RD14_S4_HEALTH_EXIT_40",
+      "purpose": "Confirmed-health sensitivity."
+    },
+    {
+      "changes": {
+        "breakout_weight": 30.0,
+        "trend_weight": 10.0
+      },
+      "configuration_id": "RD14_S5_BREAKOUT_WEIGHT_SHIFT",
+      "purpose": "Five-point trend-to-breakout diagnostic."
+    },
+    {
+      "changes": {
+        "relative_strength_weight": 20.0,
+        "volume_weight": 5.0
+      },
+      "configuration_id": "RD14_S6_RELATIVE_STRENGTH_WEIGHT_SHIFT",
+      "purpose": "Five-point volume-to-relative-strength diagnostic."
+    }
+  ],
+  "slippage_model": {
+    "adverse_rate_per_fill": 0.0005
+  },
+  "soft_exit_rules": {
+    "confirmed": {
+      "bars": 2,
+      "execution": "next_open",
+      "threshold_lte": 35.0
+    },
+    "critical": {
+      "bars": 1,
+      "execution": "next_open",
+      "threshold_lte": 20.0
+    }
+  },
+  "source_authorization": "USER_AUTHORIZED_RD14_SCORED_STRATEGY_REGISTRATION",
+  "status": "REGISTERED_FOR_RD14_CONTROLLED_VALIDATION",
+  "strategy_id": "AKAH_SCORED_BREAKOUT_V1",
+  "strategy_name": "Akah Scored Breakout V1",
+  "test_2025_accessed": false,
+  "winner_selected": false
+}
