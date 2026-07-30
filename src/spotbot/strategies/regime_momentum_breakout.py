@@ -61,6 +61,7 @@ class IndicatorSnapshot:
     rsi_14: float
     previous_high_20: float
     previous_volume_mean_20: float
+    current_volume: float
     atr_fraction: float
 
 
@@ -93,9 +94,11 @@ class RegimeMomentumBreakoutStrategy:
         self,
         *,
         config: RegimeMomentumBreakoutConfig | None = None,
+        id_prefix: str = "",
     ) -> None:
         self.config = config or RegimeMomentumBreakoutConfig()
         self.config.validate()
+        self.id_prefix = id_prefix
         self.signals: list[SignalRecord] = []
         self.orders: list[StrategyOrderRecord] = []
         self.indicator_history: list[IndicatorSnapshot] = []
@@ -192,6 +195,7 @@ class RegimeMomentumBreakoutStrategy:
                 rsi_14=rsi,
                 previous_high_20=previous_high,
                 previous_volume_mean_20=previous_volume,
+                current_volume=candle.volume,
                 atr_fraction=atr / candle.close,
             )
             self.indicator_history.append(snapshot)
@@ -211,8 +215,8 @@ class RegimeMomentumBreakoutStrategy:
         stop_loss: float | None = None,
     ) -> OrderRequest:
         sequence = len(self.signals) + 1
-        signal_id = f"SIG-{sequence:06d}"
-        order_id = f"ORD-{sequence:06d}"
+        signal_id = f"{self.id_prefix}SIG-{sequence:06d}"
+        order_id = f"{self.id_prefix}ORD-{sequence:06d}"
         self.signals.append(
             SignalRecord(
                 signal_id=signal_id,

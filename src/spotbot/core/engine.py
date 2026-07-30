@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from collections.abc import Sequence
+from collections.abc import Callable, Sequence
 from dataclasses import dataclass
 from datetime import datetime
 from typing import Protocol
@@ -472,6 +472,85 @@ class BacktestEngine:
 
         self._record_equity(candle)
 
+    def process_candle_batch(
+        self,
+        candles: Sequence[Candle],
+        *,
+        buy_rank_key: Callable[[OrderRequest], tuple[float, ...]] | None = None,
+    ) -> None:
+        """Process one global timestamp across symbols without symbol-order leakage."""
+        if not candles:
+            return
+        ordered = sorted(candles, key=lambda item: item.symbol)
+        timestamps = {candle.timestamp for candle in ordered}
+        symbols = {candle.symbol for candle in ordered}
+        if len(timestamps) != 1:
+            raise ValueError("A candle batch must share one timestamp.")
+        if len(symbols) != len(ordered):
+            raise ValueError("A candle batch cannot repeat a symbol.")
+
+        candle_by_symbol = {candle.symbol: candle for candle in ordered}
+        for candle in ordered:
+            candle.validate()
+            self._validate_chronology(candle)
+
+        executable: list[OrderRequest] = []
+        remaining: list[OrderRequest] = []
+        batch_timestamp = ordered[0].timestamp
+        for order in self.pending_orders:
+            if order.symbol in candle_by_symbol and batch_timestamp > order.execute_after:
+                executable.append(order)
+            else:
+                remaining.append(order)
+        self.pending_orders = remaining
+        for order in sorted(
+            executable,
+            key=lambda item: (item.side is Side.BUY, item.symbol),
+        ):
+            candle = candle_by_symbol[order.symbol]
+            if order.side is Side.SELL:
+                self._execute_sell(order=order, candle=candle)
+            else:
+                self._execute_buy(order=order, candle=candle)
+
+        for candle in ordered:
+            self._process_stop_loss(candle)
+
+        for candle in ordered:
+            self.last_prices[candle.symbol] = candle.close
+            self.last_timestamp_by_symbol[candle.symbol] = candle.timestamp
+
+        snapshot = self._snapshot()
+        candidate_orders: list[OrderRequest] = []
+        for candle in ordered:
+            new_orders = self.strategy.on_candle_close(candle, snapshot)
+            for order in new_orders:
+                self._validate_new_order(order=order, candle=candle)
+                candidate_orders.append(order)
+
+        sell_orders = [order for order in candidate_orders if order.side is Side.SELL]
+        buy_orders = [order for order in candidate_orders if order.side is Side.BUY]
+        buy_orders.sort(key=lambda order: order.symbol)
+        if buy_rank_key is not None:
+            buy_orders.sort(key=buy_rank_key, reverse=True)
+
+        available_slots = min(
+            self.risk.max_open_positions - self.portfolio.open_positions_count() + len(sell_orders),
+            self.risk.max_open_positions,
+        )
+        accepted_buys = buy_orders[: max(available_slots, 0)]
+        rejected_buys = buy_orders[max(available_slots, 0) :]
+        for order in rejected_buys:
+            self._reject(
+                order=order,
+                timestamp=ordered[0].timestamp,
+                reason="simultaneous_signal_slot_limit",
+            )
+
+        self.pending_orders.extend(sell_orders)
+        self.pending_orders.extend(accepted_buys)
+        self._record_equity(ordered[0])
+
     def close_open_positions_at_end(self, candle: Candle) -> None:
         """Close the candle symbol at its final close using normal sell costs."""
         candle.validate()
@@ -490,3 +569,13 @@ class BacktestEngine:
         if self.equity_curve and self.equity_curve[-1].timestamp == candle.timestamp:
             self.equity_curve.pop()
         self._record_equity(candle)
+
+    def cancel_pending_orders_at_end(self, timestamp: datetime) -> None:
+        """Cancel orders that cannot receive a causally later bar."""
+        for order in self.pending_orders:
+            self._reject(
+                order=order,
+                timestamp=timestamp,
+                reason="end_of_period_unfilled",
+            )
+        self.pending_orders.clear()

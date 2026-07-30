@@ -1,0 +1,60 @@
+{
+  "schema_version": "rd11-config-v1",
+  "stage": "RD11_BASELINE_MULTI_ASSET_BACKTEST",
+  "strategy_id": "AKAH_REGIME_MOMENTUM_BREAKOUT_V1",
+  "strategy_specification_path": "data/research/rd10/strategy-specification-v1.json",
+  "strategy_specification_sha256": "dda3e786f473320139290cebde2edf551ba3255cd89834684e5afc2b67c696ad",
+  "target_assets": [
+    "BTC/USDT",
+    "ETH/USDT",
+    "ADA/USDT",
+    "AVAX/USDT",
+    "DOT/USDT"
+  ],
+  "window_selection": "LONGEST_COMPLETE_DAILY_INTERSECTION_ACROSS_ELIGIBLE_TARGET_ASSETS",
+  "common_window_start": "2022-06-17T00:00:00Z",
+  "evaluation_start": "2023-01-03T00:00:00Z",
+  "period_end_exclusive": "2025-01-01T00:00:00Z",
+  "last_included_timestamp": "2024-12-31T00:00:00Z",
+  "warmup_bars": 200,
+  "minimum_evaluation_bars": 365,
+  "initial_cash": 100000.0,
+  "fee_rate": 0.001,
+  "slippage_rate": 0.0005,
+  "risk_per_trade": 0.01,
+  "maximum_position_fraction": 0.25,
+  "maximum_simultaneous_positions": 2,
+  "simultaneous_signal_ranking": [
+    "breakout_strength_descending",
+    "volume_ratio_descending",
+    "rsi_descending",
+    "symbol_ascending"
+  ],
+  "benchmark": "EQUAL_WEIGHT_BUY_AND_HOLD_NO_REBALANCE_WITH_ENTRY_AND_EXIT_COSTS",
+  "evidence_classification_rules": {
+    "positive": [
+      "portfolio_net_return_positive",
+      "portfolio_expectancy_positive",
+      "portfolio_profit_factor_above_one",
+      "portfolio_drawdown_below_benchmark",
+      "no_asset_exceeds_80_percent_of_positive_net_profit",
+      "at_least_two_profitable_assets",
+      "no_reconciliation_failure",
+      "no_leakage",
+      "nonzero_sample"
+    ],
+    "negative_any": [
+      "portfolio_net_return_nonpositive",
+      "portfolio_expectancy_nonpositive",
+      "portfolio_profit_factor_at_or_below_one",
+      "broad_asset_losses",
+      "no_practical_edge",
+      "material_benchmark_underperformance_without_risk_compensation"
+    ],
+    "mixed": "technically_valid_with_conflicting_positive_and_negative_evidence"
+  },
+  "optimization_performed": false,
+  "test_2025_accessed": false,
+  "holdout_2026_accessed": false,
+  "dune_api_called": false
+}
