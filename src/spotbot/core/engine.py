@@ -166,27 +166,18 @@ class BacktestEngine:
             )
 
         if order.created_at != candle.timestamp:
-            raise ValueError(
-                "Order creation time must equal the closed candle timestamp."
-            )
+            raise ValueError("Order creation time must equal the closed candle timestamp.")
 
         if order.execute_after < order.created_at:
-            raise ValueError(
-                "execute_after cannot be earlier than created_at."
-            )
+            raise ValueError("execute_after cannot be earlier than created_at.")
 
         ShariaGuard.validate_market(order)
 
         if order.side is Side.BUY:
             ShariaGuard.validate_entry(order)
 
-        if any(
-            pending.symbol == order.symbol
-            for pending in self.pending_orders
-        ):
-            raise ValueError(
-                f"A pending order already exists for {order.symbol}."
-            )
+        if any(pending.symbol == order.symbol for pending in self.pending_orders):
+            raise ValueError(f"A pending order already exists for {order.symbol}.")
 
     def _buy_fill_price(self, candle: Candle) -> float:
         return candle.open * (1 + self.risk.slippage_rate)
@@ -373,11 +364,7 @@ class BacktestEngine:
             )
             return
 
-        quantity = (
-            position.quantity
-            if order.quantity is None
-            else order.quantity
-        )
+        quantity = position.quantity if order.quantity is None else order.quantity
 
         try:
             ShariaGuard.validate_sell(
@@ -483,4 +470,23 @@ class BacktestEngine:
             )
             self.pending_orders.append(order)
 
+        self._record_equity(candle)
+
+    def close_open_positions_at_end(self, candle: Candle) -> None:
+        """Close the candle symbol at its final close using normal sell costs."""
+        candle.validate()
+        position = self.portfolio.position(candle.symbol)
+        if position is None:
+            return
+        fill_price = self._sell_fill_price(candle.close)
+        self._close_position(
+            symbol=candle.symbol,
+            quantity=position.quantity,
+            fill_price=fill_price,
+            timestamp=candle.timestamp,
+            reason="forced_end_of_period_exit",
+        )
+        self.last_prices[candle.symbol] = candle.close
+        if self.equity_curve and self.equity_curve[-1].timestamp == candle.timestamp:
+            self.equity_curve.pop()
         self._record_equity(candle)

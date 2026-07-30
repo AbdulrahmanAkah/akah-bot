@@ -1,0 +1,87 @@
+{
+  "schema_version": "rd10-final-report-v1",
+  "stage": "RD10_STRATEGY_SPECIFICATION_REGISTRATION_INTEGRATION_AND_SMOKE_BACKTEST",
+  "strategy_id": "AKAH_REGIME_MOMENTUM_BREAKOUT_V1",
+  "strategy_name": "Akah Regime-Adaptive Momentum Breakout V1",
+  "git_branch": "research/rd09b-market-level-native-chain-feasibility-v2",
+  "source_commit": "72c2d67b0f162fadf425d4e3fae1c6547f5d7df0",
+  "assets": [
+    "BTC/USDT"
+  ],
+  "period_start": "2022-06-17T00:00:00Z",
+  "period_end_exclusive": "2023-06-18T00:00:00Z",
+  "data_paths": [
+    "data/research/multi_asset_daily/kucoin/BTC_USDT.parquet"
+  ],
+  "config_path": "data/research/rd10/smoke-backtest/config.json",
+  "initial_cash": 100000.0,
+  "fee_model": {
+    "rate_per_fill": 0.001
+  },
+  "slippage_model": {
+    "fixed_adverse_rate_per_fill": 0.0005
+  },
+  "bar_frequency": "1d",
+  "signal_timing": "completed_bar_close",
+  "execution_timing": "next_bar_open_except_intrabar_stop_and_final_period_close",
+  "signal_count": 3,
+  "entry_signal_count": 2,
+  "order_count": 4,
+  "fill_count": 4,
+  "closed_trade_count": 2,
+  "open_position_count": 0,
+  "initial_equity": 100000.0,
+  "final_equity": 101385.16019475524,
+  "net_return": 0.013851601947552306,
+  "gross_profit": 2447.3849237077347,
+  "gross_loss": -1007.4932443340724,
+  "total_fees": 54.731484618429306,
+  "total_slippage_cost": 27.366109123661776,
+  "max_drawdown": 0.015325714860429177,
+  "win_rate": 0.5,
+  "average_win": 2423.6189231812627,
+  "average_loss": -1038.4587284260297,
+  "profit_factor": 2.3338615746960802,
+  "expectancy": 692.5800973776165,
+  "exposure": 0.10655737704918032,
+  "average_holding_period_bars": 19.5,
+  "turnover": 0.547314846184293,
+  "buy_and_hold_return": 0.592977067853278,
+  "deterministic_replay_match": true,
+  "no_lookahead_pass": true,
+  "spot_only_pass": true,
+  "no_leverage_pass": true,
+  "no_margin_pass": true,
+  "no_short_pass": true,
+  "no_dca_pass": true,
+  "no_kelly_pass": true,
+  "no_pyramiding_pass": true,
+  "no_negative_cash_pass": true,
+  "signal_order_fill_linkage_pass": true,
+  "trade_pnl_reconciliation_pass": true,
+  "equity_reconciliation_pass": true,
+  "manual_trade_audit_pass": true,
+  "test_2025_accessed": false,
+  "holdout_2026_accessed": false,
+  "dune_api_called": false,
+  "optimization_performed": false,
+  "tests_passed": 493,
+  "tests_failed": 0,
+  "test_results": {
+    "focused_rd10": "11 passed",
+    "research_suite": "484 passed",
+    "engine_regression": "9 passed",
+    "warnings_as_errors": "PASS",
+    "strict_mypy": "PASS",
+    "ruff": "PASS",
+    "py_compile": "PASS"
+  },
+  "bugs_found": [
+    "The first validation gate treated expected false safety flags as failed positive checks."
+  ],
+  "fixes_applied": [
+    "Separated positive invariants from negative safety and duplicate flags and added deterministic regression coverage."
+  ],
+  "decision": "RD10_STRATEGY_INTEGRATION_AND_SMOKE_BACKTEST_CONFIRMED",
+  "next_stage": "RD11_BASELINE_MULTI_ASSET_BACKTEST"
+}

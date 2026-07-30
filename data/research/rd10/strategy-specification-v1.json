@@ -1,0 +1,78 @@
+{
+  "schema_version": "rd10-strategy-specification-v1",
+  "strategy_id": "AKAH_REGIME_MOMENTUM_BREAKOUT_V1",
+  "strategy_name": "Akah Regime-Adaptive Momentum Breakout V1",
+  "status": "REGISTERED_FOR_RD10_SMOKE_TEST",
+  "entry_rules": [
+    "close > EMA200",
+    "EMA50 > EMA200",
+    "52 <= RSI14 <= 75",
+    "close > highest high of the previous 20 completed bars",
+    "volume >= 1.10 * mean volume of the previous 20 completed bars",
+    "0.005 <= ATR14 / close <= 0.08",
+    "no existing position in the asset",
+    "sufficient cash after fees and slippage"
+  ],
+  "exit_rules": [
+    "intrabar initial stop at signal close minus 2 * ATR14, with gaps filled at the worse open",
+    "after 1R, close-based trailing stop at highest close since entry minus 2.5 * ATR14",
+    "close below EMA50",
+    "RSI14 below 45",
+    "30 completed bars after entry",
+    "forced end-of-period close"
+  ],
+  "indicator_parameters": {
+    "atr_period": 14,
+    "breakout_period": 20,
+    "ema_fast_period": 50,
+    "ema_slow_period": 200,
+    "rsi_period": 14,
+    "volume_period": 20
+  },
+  "position_sizing": {
+    "maximum_position_fraction": 0.25,
+    "maximum_simultaneous_positions": 2,
+    "one_position_per_asset": true,
+    "risk_per_trade": 0.01
+  },
+  "fee_model": {
+    "fee_rate_per_fill": 0.001
+  },
+  "slippage_model": {
+    "fixed_adverse_rate_per_fill": 0.0005
+  },
+  "execution_timing": {
+    "entry_signal": "completed_bar_close",
+    "entry_fill": "next_bar_open",
+    "close_based_exit_fill": "next_bar_open",
+    "initial_stop": "intrabar_conservative_stop_or_worse_gap_open",
+    "end_of_period": "final_bar_close_with_adverse_slippage"
+  },
+  "risk_constraints": [
+    "SPOT_ONLY",
+    "LONG_ONLY",
+    "NO_LEVERAGE",
+    "NO_MARGIN",
+    "NO_SHORTS",
+    "NO_DCA",
+    "NO_KELLY",
+    "NO_PYRAMIDING",
+    "NO_AVERAGING_DOWN",
+    "NO_BORROWING",
+    "NO_NEGATIVE_CASH"
+  ],
+  "forbidden_features": [
+    "centered rolling windows",
+    "negative shifts",
+    "future backfill",
+    "2025 data",
+    "2026 data",
+    "Dune API",
+    "optimization",
+    "grid search"
+  ],
+  "source_authorization": "USER_AUTHORIZED_RD10_REGISTRATION",
+  "optimization_performed": false,
+  "test_2025_accessed": false,
+  "holdout_2026_accessed": false
+}
