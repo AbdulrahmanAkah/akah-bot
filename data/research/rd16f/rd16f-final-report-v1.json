@@ -1,0 +1,67 @@
+{
+  "admitted_trade_count": 554,
+  "architecture_id": "COMPOSITE_ALPHA_V1",
+  "branch": "research/rd09b-market-level-native-chain-feasibility-v2",
+  "candidate_count": 631,
+  "decision": "RD16F_REGISTERED_INTRADAY_COMPOSITE_ALPHA_ARCHITECTURE_COMPLETED",
+  "diagnostic_only": {
+    "diagnostic_net_pnl": 49114.1981446711,
+    "diagnostic_net_return": 0.491141981446711,
+    "diagnostic_profit_factor": 1.338906211649608,
+    "diagnostic_win_rate": 0.40613718411552346,
+    "trade_count": 554
+  },
+  "economic_baseline_performed": false,
+  "engine_admitted_counts": {
+    "COMPRESSION_EXPANSION_SPECIALIST": 275,
+    "TREND_CONTINUATION_CORE": 279
+  },
+  "engine_candidate_counts": {
+    "COMPRESSION_EXPANSION_SPECIALIST": 313,
+    "TREND_CONTINUATION_CORE": 318
+  },
+  "engines_registered": 2,
+  "evidence_classification": "READY_FOR_FIXED_COMPOSITE_BASELINE",
+  "limitations": [
+    "RD16-F is a registration and smoke-test stage, not an economic baseline.",
+    "Both engines use filtered frozen RD16-D admitted trades.",
+    "Previously rejected family candidates are not re-admitted.",
+    "Diagnostic PnL is not a pass gate and does not authorize production.",
+    "2025 and 2026 remain sealed and were not accessed."
+  ],
+  "maximum_open_risk_fraction": 0.015,
+  "maximum_positions_observed": 3,
+  "next_stage": "RD16G_FIXED_COMPOSITE_ALPHA_BASELINE_EVALUATION",
+  "optimization_performed": false,
+  "production_authorized": false,
+  "schema_version": "rd16f-registered-composite-alpha-v1",
+  "source_components_verified": 2,
+  "strategic_monthly_target": 0.24,
+  "strategic_objective_evaluated": false,
+  "technical_gates": {
+    "both_registered_engines_have_admitted_trades": true,
+    "both_registered_engines_have_candidates": true,
+    "deterministic_replay_match": true,
+    "dune_api_called": false,
+    "duplicate_composite_trade_ids_absent": true,
+    "economic_baseline_performed": false,
+    "frozen_inputs_unchanged": true,
+    "global_cooldown_respected": true,
+    "holdout_2026_accessed": false,
+    "long_only": true,
+    "maximum_open_risk_respected": true,
+    "maximum_positions_respected": true,
+    "optimization_performed": false,
+    "production_authorized": false,
+    "same_symbol_overlap_absent": true,
+    "sealed_cutoff_respected": true,
+    "simultaneous_conflicts_resolved_deterministically": true,
+    "source_components_verified_retained": true,
+    "spot_only": true,
+    "test_2025_accessed": false,
+    "two_registered_engines": true,
+    "winner_selected": false
+  },
+  "technical_status": "COMPLETED",
+  "winner_selected": false
+}
