@@ -190,13 +190,21 @@ def main(argv: Sequence[str] | None = None) -> None:
     _git(repo, "diff", "--check", capture=False)
 
     generated = _generated_paths(repo)
-    data_paths = [str(path) for path in generated if path.parts[0] == "data"]
-    report_paths = [str(path) for path in generated if path.parts[0] == "reports"]
+    data_paths = [path.as_posix() for path in generated if path.parts[0] == "data"]
+    report_paths = [path.as_posix() for path in generated if path.parts[0] == "reports"]
     _git(repo, "add", "--", *data_paths, capture=False)
     _git(repo, "add", "-f", "--", *report_paths, capture=False)
     _git(repo, "diff", "--cached", "--check", capture=False)
 
-    staged = _git(repo, "diff", "--cached", "--name-only").splitlines()
+    staged = [
+        line.replace("\\", "/")
+        for line in _git(
+            repo,
+            "diff",
+            "--cached",
+            "--name-only",
+        ).splitlines()
+    ]
     allowed = set([*data_paths, *report_paths])
     unexpected = sorted(set(staged).difference(allowed))
     if unexpected:

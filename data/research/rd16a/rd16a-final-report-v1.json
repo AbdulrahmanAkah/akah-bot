@@ -1,0 +1,70 @@
+{
+  "baseline_commit": "85bafd02e5cee0e62c9b28d0e42dc985d8e35b82",
+  "branch": "research/rd09b-market-level-native-chain-feasibility-v2",
+  "decision": "RD16A_DAILY_FORENSIC_CLOSURE_COMPLETED",
+  "evidence_classification": "USEFUL_COMPONENTS_ONLY",
+  "limitations": [
+    "Daily candles cannot reconstruct intrabar paths.",
+    "Arithmetic removal of top trades is a sensitivity diagnostic, not a portfolio rerun.",
+    "The transfer cohort has already been observed and is not a pristine holdout.",
+    "RD16-A diagnoses the daily architecture; it does not optimize or select a replacement."
+  ],
+  "next_stage": "RD16B_HOURLY_DATA_READINESS_AND_CAUSAL_AGGREGATION",
+  "primary_metrics": {
+    "cagr": 0.30306169229658475,
+    "closed_trade_count": 43,
+    "maximum_drawdown": 0.14980547536664854,
+    "net_return": 2.7021248359206216,
+    "profit_factor": 6.120523968498508
+  },
+  "rd15_engineering_status": "PASS",
+  "rd15_primary_architecture_status": "FAILED_FOR_STRATEGIC_OBJECTIVE",
+  "rejected_as_final_architecture": [
+    "daily primary signal and execution timeframe",
+    "current total-score ranking calibration",
+    "current thesis-health exit",
+    "current bull-market participation level",
+    "three-asset primary opportunity universe"
+  ],
+  "rejected_opportunity_group_count": 23,
+  "reusable_components": [
+    "portfolio accounting and reconciliation",
+    "Spot-only and Long-only enforcement",
+    "next-bar deterministic execution",
+    "initial protective stop",
+    "profit-protection floor concept",
+    "auditable signal/order/fill/trade/equity ledgers",
+    "cross-asset simultaneous-signal handling"
+  ],
+  "same_bar_stop_count": 3,
+  "schema_version": "rd16a-daily-forensic-v1",
+  "strategic_gates": {
+    "bull_capture_adequate": false,
+    "bull_exposure_gte_35pct": false,
+    "primary_top_trade_share_lte_35pct": true,
+    "profit_floor_independently_supported": true,
+    "score_not_inverse_primary": true,
+    "score_not_inverse_transfer": false,
+    "thesis_exit_independently_supported": false,
+    "transfer_top_trade_share_lte_50pct": false
+  },
+  "technical_gates": {
+    "deterministic_replay_match": true,
+    "dune_api_called": false,
+    "frozen_inputs_unchanged": true,
+    "holdout_2026_accessed": false,
+    "optimization_performed": false,
+    "primary_rd15_validation_pass": true,
+    "test_2025_accessed": false,
+    "transfer_rd15_validation_pass": true,
+    "winner_selected": false
+  },
+  "technical_status": "COMPLETED",
+  "transfer_metrics": {
+    "cagr": 0.12049384176223121,
+    "closed_trade_count": 35,
+    "maximum_drawdown": 0.12573681468655404,
+    "net_return": 0.25452915467318094,
+    "profit_factor": 1.9902196146088489
+  }
+}
