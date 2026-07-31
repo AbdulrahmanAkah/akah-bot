@@ -1,0 +1,53 @@
+{
+  "architecture_id": "COMPOSITE_ALPHA_V2",
+  "branch": "research/rd09b-market-level-native-chain-feasibility-v2",
+  "capacity_change": {
+    "change_source": "explicit_user_instruction",
+    "evidence_status": "Not validated by RD16-H. RD16-J must measure realized position count, cash utilization, drawdown, cost stress, and capital feasibility.",
+    "previous_maximum_positions": 3,
+    "registered_maximum_positions": 5
+  },
+  "input_stage": "RD16H_COMPOSITE_ALPHA_RETURN_EXPANSION_AND_BULL_CAPTURE_REMEDIATION_COMPLETED",
+  "interpretation": {
+    "economic_baseline_performed": false,
+    "optimization_performed": false,
+    "production_authorization": false,
+    "registration_only": true,
+    "winner_selected": false
+  },
+  "next_stage": "RD16J_FIXED_COMPOSITE_ALPHA_V2_BASELINE_EVALUATION",
+  "objective": "Register the retained RD16-H evidence composite as COMPOSITE_ALPHA_V2, with a user-directed maximum position capacity increase from three to five, without changing source signals, cooldowns, risk scaling, same-symbol exclusion, or sealed-period restrictions.",
+  "prohibitions": {
+    "2025_access": true,
+    "2026_access": true,
+    "DCA_Kelly_pyramiding_averaging_down": true,
+    "Dune_API": true,
+    "leverage_margin_short_derivatives": true,
+    "outcome_based_routing": true,
+    "parameter_optimization": true,
+    "same_symbol_overlap": true
+  },
+  "registered_rules": {
+    "base_risk_per_trade_fraction": 0.005,
+    "compression_cooldown_hours": 24,
+    "compression_engine": "COMPRESSION_EXPANSION_SPECIALIST_V2",
+    "compression_source": "RD16-H EVIDENCE_COMPOSITE_EXPANSION Compression source",
+    "engine_conflict_priority": "Trend before Compression",
+    "maximum_open_risk_fraction": 0.0225,
+    "maximum_positions": 5,
+    "risk_conditions_do_not_compound": true,
+    "same_symbol_overlap_allowed": false,
+    "strong_bull_or_engine_agreement_risk_fraction": 0.0075,
+    "trend_cooldown_hours": 12,
+    "trend_engine": "TREND_CONTINUATION_CORE_V2",
+    "trend_source": "RD16-H EVIDENCE_COMPOSITE_EXPANSION Trend source"
+  },
+  "schema_version": "rd16i-registered-composite-alpha-v2-v1",
+  "source_architecture_id": "COMPOSITE_ALPHA_V1",
+  "source_variant_id": "EVIDENCE_COMPOSITE_EXPANSION",
+  "strategic_objective": {
+    "geometric_monthly_return": 0.24,
+    "high_opportunity_bull_rule": "For every equal-weight benchmark window above 200%, architecture return must be at least 100% or capture at least 40%.",
+    "not_reduced": true
+  }
+}
