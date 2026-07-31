@@ -1,0 +1,96 @@
+{
+  "schema_version": "rd16g-fixed-composite-alpha-baseline-v1",
+  "branch": "research/rd09b-market-level-native-chain-feasibility-v2",
+  "baseline_commit": "7e69fd6abfc50f45f25853174c14613e407a83f5",
+  "objective": "Evaluate the preregistered COMPOSITE_ALPHA_V1 architecture economically without changing engines, routing, thresholds, trade paths, quantities, risk budgets, or sealed-period boundaries.",
+  "input_stage": "RD16F_REGISTERED_INTRADAY_COMPOSITE_ALPHA_ARCHITECTURE_COMPLETED",
+  "architecture_id": "COMPOSITE_ALPHA_V1",
+  "registered_engines": [
+    "TREND_CONTINUATION_CORE",
+    "COMPRESSION_EXPANSION_SPECIALIST"
+  ],
+  "universe": [
+    "BTC/USDT",
+    "ETH/USDT",
+    "SOL/USDT",
+    "LINK/USDT",
+    "AVAX/USDT",
+    "NEAR/USDT"
+  ],
+  "timeframes": {
+    "signal_execution": "1h",
+    "structure": "4h",
+    "regime": "1d",
+    "macro": "1w"
+  },
+  "sealed_cutoff": "2025-01-01T00:00:00+00:00",
+  "frozen_execution": {
+    "instrument": "Spot",
+    "direction": "Long-only",
+    "initial_equity": 100000.0,
+    "risk_per_trade_fraction": 0.005,
+    "maximum_open_risk_fraction": 0.015,
+    "maximum_positions": 3,
+    "recorded_fee_rate_per_side": 0.001,
+    "global_same_symbol_cooldown_hours": 24,
+    "next_bar_execution": true,
+    "hard_stop_first": true
+  },
+  "cost_stress_multipliers": [1.0, 1.5, 2.0, 3.0],
+  "fixed_baseline_gates": {
+    "minimum_profit_factor": 1.2,
+    "strong_profit_factor": 1.5,
+    "maximum_drawdown": 0.3,
+    "two_x_cost_must_remain_positive": true,
+    "two_x_cost_profit_factor_minimum": 1.0,
+    "positive_active_year_fraction_minimum": 0.5,
+    "top_three_trade_profit_share_maximum": 0.35,
+    "top_engine_profit_share_maximum": 0.8,
+    "both_engines_must_contribute_positive_net_pnl": true,
+    "minimum_trade_count": 100,
+    "capital_must_remain_feasible": true
+  },
+  "strategic_objective": {
+    "geometric_monthly_return": 0.24,
+    "not_reduced": true,
+    "high_opportunity_bull_rule": "If equal-weight benchmark return exceeds 200%, the architecture must return at least 100% or capture at least 40%."
+  },
+  "evaluation_dimensions": [
+    "full-period return, CAGR and geometric monthly return",
+    "maximum drawdown, Sharpe, Sortino, Calmar, ulcer index and recovery",
+    "calendar-year and calendar-month performance",
+    "engine, asset, market-regime and volatility-regime attribution",
+    "exit-reason and holding-period behavior",
+    "MFE, MAE, realized R and exit efficiency",
+    "transaction-cost stress at 1x, 1.5x, 2x and 3x",
+    "trade and engine concentration",
+    "rolling 90-day, 180-day and 365-day stability",
+    "drawdown episode depth and recovery",
+    "router decision opportunity audit",
+    "BTC and equal-weight benchmark capture",
+    "high-opportunity bull-window adequacy",
+    "capital feasibility of the frozen composite ledger"
+  ],
+  "interpretation": {
+    "optimization_performed": false,
+    "winner_selected": false,
+    "production_authorization": false,
+    "architecture_changed": false
+  },
+  "prohibitions": {
+    "grid_search": true,
+    "parameter_sweep": true,
+    "architecture_change": true,
+    "engine_change": true,
+    "routing_change": true,
+    "outcome_based_trade_selection": true,
+    "winner_selection": true,
+    "2025_access": true,
+    "2026_access": true,
+    "Dune_API": true,
+    "leverage_margin_short_derivatives": true,
+    "DCA_Kelly_pyramiding_averaging_down": true
+  },
+  "next_stage_if_strategically_inadequate": "RD16H_COMPOSITE_ALPHA_RETURN_EXPANSION_AND_BULL_CAPTURE_REMEDIATION",
+  "next_stage_if_strategically_adequate": "RD16H_PREHOLDOUT_FREEZE_AND_VALIDATION"
+}
