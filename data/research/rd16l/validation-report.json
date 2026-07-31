@@ -1,0 +1,48 @@
+{
+  "candidate_count": 688,
+  "checks": [
+    {
+      "constraint": "source_variant_retained",
+      "detail": "RD16-K retained exactly STRONG_BULL_HOLD_96.",
+      "passed": true
+    },
+    {
+      "constraint": "same_symbol_overlap_absent",
+      "detail": "No concurrent positions share a symbol.",
+      "passed": true
+    },
+    {
+      "constraint": "engine_cooldowns_respected",
+      "detail": "Trend 12h and Compression 24h cooldowns are preserved.",
+      "passed": true
+    },
+    {
+      "constraint": "maximum_positions_respected",
+      "detail": "Configured position capacity remains five.",
+      "passed": true
+    },
+    {
+      "constraint": "maximum_open_risk_respected",
+      "detail": "Open risk remains capped at 2.25% of initial equity.",
+      "passed": true
+    },
+    {
+      "constraint": "holding_policy_respected",
+      "detail": "Strong Bull uses 96 bars; all other regimes use 48.",
+      "passed": true
+    },
+    {
+      "constraint": "sealed_cutoff_respected",
+      "detail": "No candidate signal reaches the sealed cutoff.",
+      "passed": true
+    },
+    {
+      "constraint": "spot_long_only_preserved",
+      "detail": "No leverage, margin, short, or derivative path exists.",
+      "passed": true
+    }
+  ],
+  "schema_version": "rd16l-registered-composite-alpha-v3-v1",
+  "status": "PASS",
+  "trade_count": 567
+}
