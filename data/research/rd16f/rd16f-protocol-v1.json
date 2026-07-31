@@ -1,0 +1,90 @@
+{
+  "schema_version": "rd16f-registered-composite-alpha-v1",
+  "branch": "research/rd09b-market-level-native-chain-feasibility-v2",
+  "baseline_commit": "9f924cf0f3ef822718f19731553647f1b6caaf42",
+  "objective": "Preregister and smoke-test one deterministic Spot-only, Long-only composite intraday alpha architecture using only RD16-E carry-forward components, without economic winner selection, parameter tuning, or sealed-period access.",
+  "input_stage": "RD16E_INTRADAY_FAMILY_REMEDIATION_AND_COMPONENT_EXTRACTION_COMPLETED",
+  "architecture_id": "COMPOSITE_ALPHA_V1",
+  "engines": [
+    {
+      "engine_id": "TREND_CONTINUATION_CORE",
+      "source_family_id": "MTF_TREND_BREAKOUT",
+      "source_variant_id": "FULL_REMEDIATION_STACK",
+      "source_component_id": "MTF_TREND_BREAKOUT::FULL_REMEDIATION_STACK",
+      "priority": 10,
+      "role": "Primary continuation engine"
+    },
+    {
+      "engine_id": "COMPRESSION_EXPANSION_SPECIALIST",
+      "source_family_id": "MTF_COMPRESSION_EXPANSION",
+      "source_variant_id": "FULL_REMEDIATION_STACK",
+      "source_component_id": "MTF_COMPRESSION_EXPANSION::FULL_REMEDIATION_STACK",
+      "priority": 20,
+      "role": "Specialist compression-to-expansion engine"
+    }
+  ],
+  "excluded_alpha_branches": {
+    "MTF_PULLBACK_RECLAIM": "No RD16-E variant passed every fixed component-retention gate.",
+    "MTF_RANGE_RECLAIM": "No retained RD16-E component with adequate sample size exists."
+  },
+  "routing": {
+    "simultaneous_same_symbol_rule": "Keep the lower numeric engine priority; reject the other source.",
+    "same_timestamp_cross_symbol_order": "engine priority, symbol, signal close, source trade ID",
+    "exit_before_entry": true,
+    "same_symbol_concurrent_positions": false,
+    "global_same_symbol_cooldown_hours": 24,
+    "maximum_positions": 3,
+    "maximum_open_risk_fraction": 0.015,
+    "risk_per_trade_fraction": 0.005,
+    "initial_equity": 100000.0
+  },
+  "execution_inheritance": {
+    "instrument": "Spot",
+    "direction": "Long-only",
+    "signal_timeframe": "1h",
+    "structure_timeframe": "4h",
+    "regime_timeframe": "1d",
+    "macro_timeframe": "1w",
+    "entry": "Frozen source next-bar open",
+    "exit": "Frozen source hard-stop-first, profit-floor, and 48-bar time exit",
+    "fee_rate_per_side": 0.001,
+    "quantity_and_risk_path": "Frozen RD16-C source quantities and risk budgets"
+  },
+  "registration_interpretation": {
+    "economic_baseline_performed": false,
+    "production_authorization": false,
+    "winner_selected": false,
+    "optimization_performed": false,
+    "performance_is_diagnostic_only": true
+  },
+  "smoke_gates": {
+    "both_registered_engines_have_candidates": true,
+    "both_registered_engines_have_admitted_trades": true,
+    "source_components_are_rd16e_retained": true,
+    "deterministic_replay_match": true,
+    "frozen_inputs_unchanged": true,
+    "maximum_positions_respected": true,
+    "maximum_open_risk_respected": true,
+    "same_symbol_overlap_absent": true,
+    "global_cooldown_respected": true,
+    "simultaneous_conflicts_resolved_deterministically": true,
+    "sealed_cutoff_respected": true
+  },
+  "strategic_objective": {
+    "geometric_monthly_return": 0.24,
+    "not_reduced": true,
+    "evaluated_in_this_stage": false
+  },
+  "prohibitions": {
+    "grid_search": true,
+    "parameter_sweep": true,
+    "outcome_based_routing": true,
+    "winner_selection": true,
+    "2025_access": true,
+    "2026_access": true,
+    "Dune_API": true,
+    "leverage_margin_short_derivatives": true,
+    "DCA_Kelly_pyramiding_averaging_down": true
+  },
+  "next_stage": "RD16G_FIXED_COMPOSITE_ALPHA_BASELINE_EVALUATION"
+}
