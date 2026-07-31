@@ -1,0 +1,16 @@
+# RD16-H Return Expansion Results v1
+
+All variants are preregistered in-sample remediation tests. No winner or production authorization is created.
+
+| Variant | Decision | Return | Monthly | PF | DD | 2x Return | Capture | Trades |
+|---|---|---:|---:|---:|---:|---:|---:|---:|
+| BASELINE | REFERENCE_BASELINE | 49.11% | 0.556% | 1.339 | 9.93% | 16.22% | 3.50% | 554 |
+| TREND_STRONG_BULL_STRUCTURE_BREADTH | PROMISING_BUT_FRAGILE | 55.44% | 0.614% | 1.381 | 10.25% | 22.18% | 3.69% | 560 |
+| TREND_STRONG_BULL_DIAGNOSTIC_BREADTH | PROMISING_BUT_FRAGILE | 57.22% | 0.630% | 1.313 | 8.26% | 16.84% | 4.22% | 683 |
+| COMPRESSION_STRONG_BULL_STRUCTURE_BREADTH | REJECT_EXPANSION | 43.91% | 0.507% | 1.271 | 13.91% | 6.64% | 3.04% | 621 |
+| DUAL_STRONG_BULL_STRUCTURE_BREADTH | REJECT_EXPANSION | 50.24% | 0.567% | 1.309 | 14.04% | 12.60% | 3.28% | 627 |
+| TREND_COOLDOWN_12H | RETAIN_FOR_COMPOSITE_V2_REGISTRATION | 62.27% | 0.674% | 1.405 | 9.04% | 27.38% | 4.18% | 590 |
+| CONSENSUS_RISK_075 | PROMISING_BUT_FRAGILE | 50.43% | 0.569% | 1.340 | 9.94% | 16.40% | 3.44% | 554 |
+| STRONG_BULL_RISK_075 | RETAIN_FOR_COMPOSITE_V2_REGISTRATION | 69.59% | 0.736% | 1.331 | 12.58% | 21.83% | 4.91% | 554 |
+| STRONG_BULL_RISK_100 | PROMISING_BUT_FRAGILE | 90.06% | 0.896% | 1.326 | 14.56% | 27.44% | 6.16% | 554 |
+| EVIDENCE_COMPOSITE_EXPANSION | RETAIN_FOR_COMPOSITE_V2_REGISTRATION | 91.64% | 0.907% | 1.410 | 11.30% | 40.34% | 5.72% | 596 |

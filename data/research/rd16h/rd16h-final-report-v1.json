@@ -1,0 +1,61 @@
+{
+  "architecture_changed": false,
+  "architecture_id": "COMPOSITE_ALPHA_V1",
+  "baseline_commit": "78cd0f4ed09983b2785175727d1bc19149a66f1f",
+  "baseline_metrics": {
+    "maximum_drawdown": 0.099340842472462,
+    "monthly_geometric_return": 0.005563456550970125,
+    "net_return": 0.49114198144670174,
+    "profit_factor": 1.338906211649608,
+    "trade_count": 554
+  },
+  "branch": "research/rd09b-market-level-native-chain-feasibility-v2",
+  "decision": "RD16H_COMPOSITE_ALPHA_RETURN_EXPANSION_AND_BULL_CAPTURE_REMEDIATION_COMPLETED",
+  "evidence_classification": "RETURN_EXPANSION_EVIDENCE_EXTRACTED",
+  "in_sample_remediation": true,
+  "limitations": [
+    "RD16-H is an in-sample remediation study over the frozen development period.",
+    "Broader variants only use preregistered RD16-E component ledgers.",
+    "Risk expansion is fixed and causal but remains research-only.",
+    "The six-asset pilot universe is not a point-in-time production universe.",
+    "2025 and 2026 remain sealed."
+  ],
+  "next_stage": "RD16I_REGISTERED_COMPOSITE_ALPHA_V2_ARCHITECTURE",
+  "optimization_performed": false,
+  "production_authorized": false,
+  "promising_variant_count": 4,
+  "retained_variant_count": 3,
+  "retained_variants": [
+    "TREND_COOLDOWN_12H",
+    "STRONG_BULL_RISK_075",
+    "EVIDENCE_COMPOSITE_EXPANSION"
+  ],
+  "schema_version": "rd16h-return-expansion-v1",
+  "strategic_monthly_target": 0.24,
+  "strategic_objective_met_count": 0,
+  "technical_gates": {
+    "all_ten_variants_evaluated": true,
+    "deterministic_replay_match": true,
+    "dune_api_called": false,
+    "frozen_inputs_unchanged": true,
+    "holdout_2026_accessed": false,
+    "long_only": true,
+    "maximum_positions_three": true,
+    "optimization_performed": false,
+    "production_authorized": false,
+    "rd16e_component_ledgers_verified": true,
+    "rd16f_local_ledgers_verified": true,
+    "rd16g_outputs_verified": true,
+    "rd16g_ready": true,
+    "risk_multipliers_non_compounding": true,
+    "same_symbol_overlap_prohibited": true,
+    "sealed_cutoff_respected": true,
+    "spot_only": true,
+    "test_2025_accessed": false,
+    "winner_selected": false
+  },
+  "technical_status": "COMPLETED",
+  "variants_evaluated": 10,
+  "variants_total": 10,
+  "winner_selected": false
+}
