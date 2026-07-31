@@ -488,8 +488,8 @@ def register_composite_alpha_v3() -> dict[str, object]:
     )
     results_path = REPORTS_ROOT / "rd16l-composite-alpha-v3-registration-results-v1.md"
     audit_path = REPORTS_ROOT / "rd16l-causality-holding-audit-v1.md"
-    results_path.write_text(results_text, encoding="utf-8", newline="\\n")
-    audit_path.write_text(audit_text, encoding="utf-8", newline="\\n")
+    results_path.write_text(results_text, encoding="utf-8", newline="\n")
+    audit_path.write_text(audit_text, encoding="utf-8", newline="\n")
 
     tracked_outputs = [
         RD16L_ROOT / "architecture-registration.csv",
