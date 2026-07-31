@@ -1,0 +1,49 @@
+{
+  "assets_passed": 6,
+  "assets_total": 6,
+  "baseline_commit": "a75919177e2e371f293df27dc5058113a42cfb92",
+  "branch": "research/rd09b-market-level-native-chain-feasibility-v2",
+  "canonical_source_timeframe": "1h",
+  "context_timeframes": [
+    "4h",
+    "1d",
+    "1w"
+  ],
+  "decision": "RD16B_HOURLY_DATA_READINESS_AND_CAUSAL_AGGREGATION_COMPLETED",
+  "download_enabled": true,
+  "evidence_classification": "READY",
+  "exchange": "kucoin",
+  "limitations": [
+    "RD16-B validates data and causality; it does not evaluate trading performance.",
+    "The fixed pilot universe is not yet a point-in-time production universe.",
+    "Exchange maintenance gaps, if present, block readiness rather than being filled.",
+    "Raw and derived Parquet datasets remain local and are not committed."
+  ],
+  "next_stage": "RD16C_REGISTERED_INTRADAY_STRATEGY_FAMILIES_SMOKE_TESTS",
+  "pilot_symbols": [
+    "BTC/USDT",
+    "ETH/USDT",
+    "SOL/USDT",
+    "LINK/USDT",
+    "AVAX/USDT",
+    "NEAR/USDT"
+  ],
+  "requested_since": "2019-01-01T00:00:00+00:00",
+  "schema_version": "rd16b-hourly-readiness-v1",
+  "sealed_cutoff": "2025-01-01T00:00:00+00:00",
+  "technical_gates": {
+    "all_six_assets_ready": true,
+    "assets_configuration_frozen": true,
+    "canonical_source_is_1h": true,
+    "deterministic_replay_match": true,
+    "dune_api_called": false,
+    "frozen_inputs_unchanged": true,
+    "holdout_2026_accessed": false,
+    "listing_start_verified_online": true,
+    "optimization_performed": false,
+    "partial_aggregate_bars_accepted": false,
+    "test_2025_accessed": false,
+    "winner_selected": false
+  },
+  "technical_status": "COMPLETED"
+}
