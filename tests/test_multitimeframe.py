@@ -27,45 +27,21 @@ def frame_from_close_hours(
 
     return pd.DataFrame(
         {
-            "timestamp": [
-                START + timedelta(hours=hour)
-                for hour in close_hours
-            ],
-            "open": [
-                100.0 + index
-                for index in range(rows)
-            ],
-            "high": [
-                103.0 + index
-                for index in range(rows)
-            ],
-            "low": [
-                99.0 + index
-                for index in range(rows)
-            ],
-            "close": [
-                101.0 + index
-                for index in range(rows)
-            ],
-            "volume": [
-                1_000.0 + index
-                for index in range(rows)
-            ],
+            "timestamp": [START + timedelta(hours=hour) for hour in close_hours],
+            "open": [100.0 + index for index in range(rows)],
+            "high": [103.0 + index for index in range(rows)],
+            "low": [99.0 + index for index in range(rows)],
+            "close": [101.0 + index for index in range(rows)],
+            "volume": [1_000.0 + index for index in range(rows)],
         }
     )
 
 
 def source_frames() -> dict[str, pd.DataFrame]:
     return {
-        "1h": frame_from_close_hours(
-            list(range(1, 31))
-        ),
-        "4h": frame_from_close_hours(
-            list(range(4, 29, 4))
-        ),
-        "1d": frame_from_close_hours(
-            [24]
-        ),
+        "1h": frame_from_close_hours(list(range(1, 31))),
+        "4h": frame_from_close_hours(list(range(4, 29, 4))),
+        "1d": frame_from_close_hours([24]),
     }
 
 
@@ -77,42 +53,20 @@ def test_alignment_uses_only_latest_closed_context() -> None:
         context_timeframes=("4h", "1d"),
     )
 
-    signal_25 = aligned.loc[
-        aligned["timestamp"]
-        == pd.Timestamp(
-            START + timedelta(hours=25)
-        )
-    ].iloc[0]
+    signal_25 = aligned.loc[aligned["timestamp"] == pd.Timestamp(START + timedelta(hours=25))].iloc[
+        0
+    ]
 
-    signal_28 = aligned.loc[
-        aligned["timestamp"]
-        == pd.Timestamp(
-            START + timedelta(hours=28)
-        )
-    ].iloc[0]
+    signal_28 = aligned.loc[aligned["timestamp"] == pd.Timestamp(START + timedelta(hours=28))].iloc[
+        0
+    ]
 
-    assert signal_25["4h_timestamp"] == pd.Timestamp(
-        START + timedelta(hours=24)
-    )
-    assert signal_25["1d_timestamp"] == pd.Timestamp(
-        START + timedelta(hours=24)
-    )
-    assert signal_28["4h_timestamp"] == pd.Timestamp(
-        START + timedelta(hours=28)
-    )
+    assert signal_25["4h_timestamp"] == pd.Timestamp(START + timedelta(hours=24))
+    assert signal_25["1d_timestamp"] == pd.Timestamp(START + timedelta(hours=24))
+    assert signal_28["4h_timestamp"] == pd.Timestamp(START + timedelta(hours=28))
 
-    assert bool(
-        (
-            aligned["4h_timestamp"]
-            <= aligned["timestamp"]
-        ).all()
-    )
-    assert bool(
-        (
-            aligned["1d_timestamp"]
-            <= aligned["timestamp"]
-        ).all()
-    )
+    assert bool((aligned["4h_timestamp"] <= aligned["timestamp"]).all())
+    assert bool((aligned["1d_timestamp"] <= aligned["timestamp"]).all())
 
 
 def test_signals_before_context_warmup_are_removed() -> None:
@@ -124,12 +78,8 @@ def test_signals_before_context_warmup_are_removed() -> None:
     )
 
     assert len(aligned) == 7
-    assert aligned.iloc[0]["timestamp"] == pd.Timestamp(
-        START + timedelta(hours=24)
-    )
-    assert aligned.iloc[-1]["timestamp"] == pd.Timestamp(
-        START + timedelta(hours=30)
-    )
+    assert aligned.iloc[0]["timestamp"] == pd.Timestamp(START + timedelta(hours=24))
+    assert aligned.iloc[-1]["timestamp"] == pd.Timestamp(START + timedelta(hours=30))
 
 
 def test_context_timeframe_must_be_larger() -> None:
@@ -139,9 +89,7 @@ def test_context_timeframe_must_be_larger() -> None:
     ):
         build_aligned_frame(
             frames={
-                "1h": frame_from_close_hours(
-                    [1, 2]
-                ),
+                "1h": frame_from_close_hours([1, 2]),
             },
             symbol="BTC/USDT",
             signal_timeframe="1h",
@@ -195,3 +143,27 @@ def test_bundle_is_loaded_from_parquet_store(
     )
     assert "4h_close" in bundle.frame.columns
     assert "1d_close" in bundle.frame.columns
+
+
+def test_alignment_normalizes_mixed_datetime_units() -> None:
+    frames = source_frames()
+    frames["1h"]["timestamp"] = pd.to_datetime(
+        frames["1h"]["timestamp"],
+        utc=True,
+    ).astype("datetime64[us, UTC]")
+    for timeframe in ("4h", "1d"):
+        frames[timeframe]["timestamp"] = pd.to_datetime(
+            frames[timeframe]["timestamp"],
+            utc=True,
+        ).astype("datetime64[ns, UTC]")
+
+    aligned = build_aligned_frame(
+        frames=frames,
+        symbol="BTC/USDT",
+        signal_timeframe="1h",
+        context_timeframes=("4h", "1d"),
+    )
+
+    assert str(aligned["timestamp"].dtype) == ("datetime64[ns, UTC]")
+    assert str(aligned["4h_timestamp"].dtype) == ("datetime64[ns, UTC]")
+    assert str(aligned["1d_timestamp"].dtype) == ("datetime64[ns, UTC]")

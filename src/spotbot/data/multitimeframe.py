@@ -50,43 +50,23 @@ def _validate_timeframe_relationships(
     normalized_signal = signal_timeframe.strip()
 
     if not normalized_signal:
-        raise TimeframeRelationshipError(
-            "Signal timeframe cannot be empty."
-        )
+        raise TimeframeRelationshipError("Signal timeframe cannot be empty.")
 
-    normalized_contexts = tuple(
-        timeframe.strip()
-        for timeframe in context_timeframes
-    )
+    normalized_contexts = tuple(timeframe.strip() for timeframe in context_timeframes)
 
     if not normalized_contexts:
-        raise TimeframeRelationshipError(
-            "At least one context timeframe is required."
-        )
+        raise TimeframeRelationshipError("At least one context timeframe is required.")
 
-    if any(
-        not timeframe
-        for timeframe in normalized_contexts
-    ):
-        raise TimeframeRelationshipError(
-            "Context timeframes cannot be empty."
-        )
+    if any(not timeframe for timeframe in normalized_contexts):
+        raise TimeframeRelationshipError("Context timeframes cannot be empty.")
 
-    if len(set(normalized_contexts)) != len(
-        normalized_contexts
-    ):
-        raise TimeframeRelationshipError(
-            "Context timeframes must be unique."
-        )
+    if len(set(normalized_contexts)) != len(normalized_contexts):
+        raise TimeframeRelationshipError("Context timeframes must be unique.")
 
-    signal_duration = timeframe_to_timedelta(
-        normalized_signal
-    )
+    signal_duration = timeframe_to_timedelta(normalized_signal)
 
     for timeframe in normalized_contexts:
-        context_duration = timeframe_to_timedelta(
-            timeframe
-        )
+        context_duration = timeframe_to_timedelta(timeframe)
 
         if context_duration <= signal_duration:
             raise TimeframeRelationshipError(
@@ -105,15 +85,10 @@ def _normalize_frame(
     symbol: str,
     timeframe: str,
 ) -> pd.DataFrame:
-    missing_columns = set(
-        REQUIRED_COLUMNS
-    ).difference(frame.columns)
+    missing_columns = set(REQUIRED_COLUMNS).difference(frame.columns)
 
     if missing_columns:
-        raise MultiTimeframeDataError(
-            f"{timeframe}: missing columns "
-            f"{sorted(missing_columns)}."
-        )
+        raise MultiTimeframeDataError(f"{timeframe}: missing columns {sorted(missing_columns)}.")
 
     normalized = frame.loc[
         :,
@@ -124,7 +99,7 @@ def _normalize_frame(
         normalized["timestamp"],
         utc=True,
         errors="coerce",
-    )
+    ).astype("datetime64[ns, UTC]")
 
     for column in REQUIRED_COLUMNS[1:]:
         normalized[column] = pd.to_numeric(
@@ -162,22 +137,15 @@ def build_aligned_frame(
     signal_timeframe: str,
     context_timeframes: Sequence[str],
 ) -> pd.DataFrame:
-    normalized_contexts = (
-        _validate_timeframe_relationships(
-            signal_timeframe=signal_timeframe,
-            context_timeframes=context_timeframes,
-        )
+    normalized_contexts = _validate_timeframe_relationships(
+        signal_timeframe=signal_timeframe,
+        context_timeframes=context_timeframes,
     )
 
-    signal_source = frames.get(
-        signal_timeframe
-    )
+    signal_source = frames.get(signal_timeframe)
 
     if signal_source is None:
-        raise MultiTimeframeDataError(
-            f"Signal frame is missing: "
-            f"{signal_timeframe}."
-        )
+        raise MultiTimeframeDataError(f"Signal frame is missing: {signal_timeframe}.")
 
     aligned = _normalize_frame(
         signal_source,
@@ -191,10 +159,7 @@ def build_aligned_frame(
         context_source = frames.get(timeframe)
 
         if context_source is None:
-            raise MultiTimeframeDataError(
-                f"Context frame is missing: "
-                f"{timeframe}."
-            )
+            raise MultiTimeframeDataError(f"Context frame is missing: {timeframe}.")
 
         normalized_context = _normalize_frame(
             context_source,
@@ -210,19 +175,13 @@ def build_aligned_frame(
             for column in REQUIRED_COLUMNS
         }
 
-        renamed_context = (
-            normalized_context.rename(
-                columns=rename_map
-            )
-        )
+        renamed_context = normalized_context.rename(columns=rename_map)
 
         context_timestamp = context_column(
             timeframe,
             "timestamp",
         )
-        context_timestamp_columns.append(
-            context_timestamp
-        )
+        context_timestamp_columns.append(context_timestamp)
 
         aligned = pd.merge_asof(
             aligned.sort_values(
@@ -239,37 +198,22 @@ def build_aligned_frame(
             allow_exact_matches=True,
         )
 
-    aligned = aligned.dropna(
-        subset=context_timestamp_columns
-    ).reset_index(drop=True)
+    aligned = aligned.dropna(subset=context_timestamp_columns).reset_index(drop=True)
 
     if aligned.empty:
-        raise MultiTimeframeDataError(
-            "No signal candles remain after "
-            "context warm-up alignment."
+        raise MultiTimeframeDataError("No signal candles remain after context warm-up alignment.")
+
+    for context_timestamp in context_timestamp_columns:
+        aligned[context_timestamp] = pd.to_datetime(
+            aligned[context_timestamp],
+            utc=True,
+            errors="raise",
         )
 
-    for context_timestamp in (
-        context_timestamp_columns
-    ):
-        aligned[context_timestamp] = (
-            pd.to_datetime(
-                aligned[context_timestamp],
-                utc=True,
-                errors="raise",
-            )
-        )
-
-        future_context = (
-            aligned[context_timestamp]
-            > aligned["timestamp"]
-        )
+        future_context = aligned[context_timestamp] > aligned["timestamp"]
 
         if bool(future_context.any()):
-            raise MultiTimeframeDataError(
-                "Future context candle detected: "
-                f"{context_timestamp}."
-            )
+            raise MultiTimeframeDataError(f"Future context candle detected: {context_timestamp}.")
 
     return aligned
 
@@ -282,11 +226,9 @@ def load_multitimeframe_bundle(
     signal_timeframe: str,
     context_timeframes: Sequence[str],
 ) -> MultiTimeframeBundle:
-    normalized_contexts = (
-        _validate_timeframe_relationships(
-            signal_timeframe=signal_timeframe,
-            context_timeframes=context_timeframes,
-        )
+    normalized_contexts = _validate_timeframe_relationships(
+        signal_timeframe=signal_timeframe,
+        context_timeframes=context_timeframes,
     )
 
     all_timeframes = (

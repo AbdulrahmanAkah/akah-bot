@@ -1,0 +1,87 @@
+{
+  "baseline_commit": "a75919177e2e371f293df27dc5058113a42cfb92",
+  "branch": "research/rd09b-market-level-native-chain-feasibility-v2",
+  "causality": {
+    "alignment": "latest completed context close less than or equal to the 1H signal close",
+    "eventual_entry_rule": "next 1H open",
+    "future_context_allowed": false,
+    "source_timestamps": "candle close time",
+    "stale_context_allowed": false
+  },
+  "classification": {
+    "BLOCKED": "no asset passes or deterministic integrity fails",
+    "PARTIAL": "one to five assets pass; remediation required",
+    "READY": "all six assets and every technical gate pass"
+  },
+  "forbidden": {
+    "averaging_down": true,
+    "dca": true,
+    "derivatives": true,
+    "dune_api_calls": true,
+    "holdout_2026_access": true,
+    "kelly": true,
+    "leverage": true,
+    "margin": true,
+    "pyramiding": true,
+    "shorts": true,
+    "strategy_optimization": true,
+    "test_2025_access": true,
+    "winner_selection": true
+  },
+  "next_stage_if_not_ready": "RD16B_DATA_REMEDIATION",
+  "next_stage_if_ready": "RD16C_REGISTERED_INTRADAY_STRATEGY_FAMILIES_SMOKE_TESTS",
+  "official_run": {
+    "download_public_spot_data": true,
+    "exchange": "kucoin",
+    "minimum_coverage_days_per_asset": 1000,
+    "raw_store": "data/raw/rd16b",
+    "raw_store_committed": false,
+    "requested_since": "2019-01-01T00:00:00+00:00",
+    "sealed_cutoff": "2025-01-01T00:00:00+00:00"
+  },
+  "pilot_symbols": [
+    "BTC/USDT",
+    "ETH/USDT",
+    "SOL/USDT",
+    "LINK/USDT",
+    "AVAX/USDT",
+    "NEAR/USDT"
+  ],
+  "purpose": "Validate listing-aware 1H Spot data, derive complete 4H/1D/1W context candles, and prove causal multi-timeframe alignment.",
+  "readiness_gates": [
+    "explicit Spot market",
+    "unique valid hourly OHLCV",
+    "zero missing hourly intervals",
+    "last hourly close equals sealed cutoff",
+    "at least 1000 days of pre-cutoff hourly coverage per asset",
+    "no candle beyond cutoff",
+    "complete nonempty 4H/1D/1W outputs",
+    "zero interior aggregation drops",
+    "zero derived missing intervals",
+    "zero future context violations",
+    "zero stale context violations",
+    "deterministic replay match",
+    "frozen inputs unchanged"
+  ],
+  "schema_version": "rd16b-hourly-readiness-protocol-v1",
+  "stage": "RD16B_HOURLY_DATA_READINESS_AND_CAUSAL_AGGREGATION",
+  "timeframe_architecture": {
+    "boundaries": {
+      "1d": "UTC midnight closes",
+      "1w": "Monday 00:00 UTC closes",
+      "4h": "UTC epoch-aligned closes"
+    },
+    "canonical_source": "1h",
+    "forward_fill_ohlcv": false,
+    "macro": "1w",
+    "missing_children": "REJECT_GROUP",
+    "partial_groups": "REJECT",
+    "regime": "1d",
+    "required_children": {
+      "1d": 24,
+      "1w": 168,
+      "4h": 4
+    },
+    "structure": "4h"
+  }
+}
