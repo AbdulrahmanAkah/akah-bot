@@ -1,0 +1,80 @@
+{
+  "schema_version": "rd16e-component-extraction-v1",
+  "branch": "research/rd09b-market-level-native-chain-feasibility-v2",
+  "objective": "Extract reusable causal components from the four frozen RD16-C intraday families using a preregistered remediation ablation matrix, without parameter optimization, family ranking, winner selection or sealed-period access.",
+  "input_stage": "RD16D_FIXED_INTRADAY_FAMILY_BASELINE_EVALUATION_COMPLETED",
+  "families": [
+    "MTF_TREND_BREAKOUT",
+    "MTF_PULLBACK_RECLAIM",
+    "MTF_COMPRESSION_EXPANSION",
+    "MTF_RANGE_RECLAIM"
+  ],
+  "variant_matrix": [
+    "BASELINE",
+    "REGIME_GATE",
+    "VOLATILITY_GATE",
+    "ASSET_GATE",
+    "REGIME_VOLATILITY_GATE",
+    "REGIME_ASSET_GATE",
+    "ALL_DIAGNOSTIC_GATES",
+    "STRUCTURAL_CONFIRMATION",
+    "DIAGNOSTIC_PLUS_STRUCTURE",
+    "FULL_REMEDIATION_STACK"
+  ],
+  "fixed_remediation_components": {
+    "regime_gates": {
+      "MTF_TREND_BREAKOUT": ["BEAR", "BULL", "STRONG_BULL"],
+      "MTF_PULLBACK_RECLAIM": ["BEAR", "BULL", "STRONG_BULL"],
+      "MTF_COMPRESSION_EXPANSION": ["BEAR", "STRONG_BULL"],
+      "MTF_RANGE_RECLAIM": ["TRANSITION"]
+    },
+    "volatility_gates": {
+      "MTF_TREND_BREAKOUT": ["LOW_VOLATILITY", "NORMAL_VOLATILITY"],
+      "MTF_PULLBACK_RECLAIM": ["NORMAL_VOLATILITY"],
+      "MTF_COMPRESSION_EXPANSION": ["LOW_VOLATILITY", "NORMAL_VOLATILITY"],
+      "MTF_RANGE_RECLAIM": ["LOW_VOLATILITY", "NORMAL_VOLATILITY", "HIGH_VOLATILITY"]
+    },
+    "asset_gates": {
+      "MTF_TREND_BREAKOUT": ["BTC/USDT", "ETH/USDT", "LINK/USDT", "SOL/USDT"],
+      "MTF_PULLBACK_RECLAIM": ["AVAX/USDT", "BTC/USDT", "ETH/USDT", "SOL/USDT"],
+      "MTF_COMPRESSION_EXPANSION": ["AVAX/USDT", "BTC/USDT", "ETH/USDT", "NEAR/USDT", "SOL/USDT"],
+      "MTF_RANGE_RECLAIM": ["SOL/USDT"]
+    },
+    "same_symbol_cooldown_hours": 24,
+    "fee_buffer_fraction": 0.002
+  },
+  "cost_stress_multipliers": [1.0, 1.5, 2.0, 3.0],
+  "component_retention_gates": {
+    "minimum_profit_factor": 1.2,
+    "maximum_drawdown": 0.3,
+    "two_x_cost_must_remain_positive": true,
+    "two_x_cost_profit_factor_minimum": 1.0,
+    "minimum_trade_count": 100,
+    "positive_active_year_fraction_minimum": 0.5,
+    "capital_must_remain_feasible": true
+  },
+  "strategic_objective": {
+    "geometric_monthly_return": 0.24,
+    "not_reduced": true,
+    "high_opportunity_bull_rule": "If equal-weight benchmark return exceeds 200%, a complete architecture must return at least 100% or capture at least 40%. Component extraction does not waive this rule."
+  },
+  "interpretation": {
+    "in_sample_diagnostic": true,
+    "production_authorization": false,
+    "winner_selected": false,
+    "optimization_performed": false
+  },
+  "prohibitions": {
+    "grid_search": true,
+    "parameter_sweep": true,
+    "outcome_based_trade_selection": true,
+    "family_ranking": true,
+    "winner_selection": true,
+    "2025_access": true,
+    "2026_access": true,
+    "Dune_API": true,
+    "leverage_margin_short_derivatives": true,
+    "DCA_Kelly_pyramiding_averaging_down": true
+  },
+  "next_stage": "RD16F_REGISTERED_INTRADAY_COMPOSITE_ALPHA_ARCHITECTURE"
+}
