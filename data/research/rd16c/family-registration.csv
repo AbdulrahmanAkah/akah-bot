@@ -1,0 +1,5 @@
+family_id,description,stop_atr_multiple,maximum_holding_bars,fixed_parameters
+MTF_TREND_BREAKOUT,"1H breakout with aligned bullish 4H, 1D and 1W context.",1.5,48,1H close above prior 24H high; 1H volume >= 0.8 x 20H median; 4H close > EMA20 > EMA50; 1D close > EMA50; 1W close > EMA20
+MTF_PULLBACK_RECLAIM,1H EMA20 reclaim inside aligned higher-timeframe uptrend.,1.25,48,previous 1H close <= previous EMA20; current 1H low <= EMA20 and close > EMA20; 4H close > EMA50; 1D close > EMA50; 1W close > 0.95 x EMA40
+MTF_COMPRESSION_EXPANSION,1H range expansion from non-expanding 4H volatility.,1.5,48,4H ATR14 <= rolling median ATR; 1H close above prior 12H high; 1H range >= 0.8 x ATR14; 1D close > 0.95 x EMA50; 1W close > 0.90 x EMA40
+MTF_RANGE_RECLAIM,1H downside sweep and reclaim with non-bearish daily/weekly context.,1.25,48,1H low below prior 12H low; 1H close back above prior 12H low; 1H bullish close; 1D close > 0.85 x EMA50; 1W close > 0.85 x EMA40
