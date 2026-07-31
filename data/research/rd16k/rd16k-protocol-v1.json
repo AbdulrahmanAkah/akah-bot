@@ -1,0 +1,70 @@
+{
+  "architecture_id": "COMPOSITE_ALPHA_V2",
+  "baseline_commit": "c496b4bc77b1b147d754e44d5732d6dea5385112",
+  "branch": "research/rd09b-market-level-native-chain-feasibility-v2",
+  "cost_stress_multipliers": [1.0, 1.5, 2.0, 3.0],
+  "input_stage": "RD16J_FIXED_COMPOSITE_ALPHA_V2_BASELINE_EVALUATION_COMPLETED",
+  "objective": "Repair COMPOSITE_ALPHA_V2 cash efficiency at stressed cost and improve high-opportunity bull capture through preregistered notional caps, portfolio gross-notional caps, fixed open-risk capacity, and causal Strong Bull holding extensions.",
+  "prohibitions": {
+    "2025_access": true,
+    "2026_access": true,
+    "DCA_Kelly_averaging_down": true,
+    "Dune_API": true,
+    "grid_search": true,
+    "leverage_margin_short_derivatives": true,
+    "outcome_based_trade_selection": true,
+    "parameter_sweep": true,
+    "same_symbol_pyramiding": true,
+    "winner_selection": true
+  },
+  "fixed_execution": {
+    "hard_stop_first": true,
+    "profit_floor_trigger_r": 1.5,
+    "profit_floor_lock_r": 0.25,
+    "second_profit_trigger_r": 2.5,
+    "second_profit_lock_r": 1.0,
+    "normal_holding_bars": 48,
+    "strong_bull_holding_candidates": [72, 96],
+    "maximum_positions": 5,
+    "same_symbol_overlap_prohibited": true,
+    "trend_cooldown_hours": 12,
+    "compression_cooldown_hours": 24,
+    "base_risk_per_trade_fraction": 0.005,
+    "expanded_risk_per_trade_fraction": 0.0075
+  },
+  "retention_gates": {
+    "base_capital_feasible": true,
+    "two_x_cost_capital_feasible": true,
+    "two_x_cost_positive": true,
+    "two_x_cost_profit_factor_minimum": 1.0,
+    "minimum_profit_factor": 1.2,
+    "maximum_drawdown": 0.3,
+    "minimum_trade_count": 100,
+    "positive_active_year_fraction_minimum": 0.5,
+    "top_three_trade_profit_share_maximum": 0.35,
+    "top_engine_profit_share_maximum": 0.8,
+    "both_engines_positive": true,
+    "minimum_net_return_fraction_of_v2_baseline": 0.85,
+    "high_opportunity_capture_must_not_regress": true
+  },
+  "strategic_objective": {
+    "geometric_monthly_return": 0.24,
+    "high_opportunity_bull_rule": "For every equal-weight benchmark window above 200%, architecture return must be at least 100% or capture at least 40%.",
+    "not_reduced": true
+  },
+  "variants": [
+    "BASELINE_V2",
+    "PER_TRADE_NOTIONAL_25",
+    "PER_TRADE_NOTIONAL_20",
+    "PORTFOLIO_NOTIONAL_90",
+    "PORTFOLIO_NOTIONAL_80",
+    "STRONG_BULL_HOLD_72",
+    "STRONG_BULL_HOLD_96",
+    "PORTFOLIO_80_SB72",
+    "OPEN_RISK_300_PORTFOLIO_80",
+    "EVIDENCE_CAPITAL_BULL_COMPOSITE"
+  ],
+  "next_stage_if_retained": "RD16L_REGISTERED_COMPOSITE_ALPHA_V3_ARCHITECTURE",
+  "next_stage_if_none_retained": "RD16L_INTRADAY_ALPHA_ENGINE_DIVERSIFICATION_AND_NEW_SIGNAL_RESEARCH",
+  "schema_version": "rd16k-capital-efficiency-bull-capture-remediation-v1"
+}
