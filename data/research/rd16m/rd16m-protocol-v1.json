@@ -1,0 +1,49 @@
+{
+  "architecture_id": "COMPOSITE_ALPHA_V3",
+  "baseline_commit": "444d808051d95328aa1dc66f060a0669ff46daf3",
+  "branch": "research/rd09b-market-level-native-chain-feasibility-v2",
+  "cost_multipliers": [
+    1.0,
+    1.5,
+    2.0,
+    3.0
+  ],
+  "expected_next_stage_if_robust_but_strategically_inadequate": "RD16N_INTRADAY_ALPHA_ENGINE_DIVERSIFICATION_AND_NEW_SIGNAL_RESEARCH",
+  "fixed_architecture": {
+    "long_only": true,
+    "maximum_open_risk_fraction": 0.0225,
+    "maximum_positions": 5,
+    "normal_holding_bars": 48,
+    "spot_only": true,
+    "strong_bull_holding_bars": 96
+  },
+  "objective": "Independently evaluate the frozen COMPOSITE_ALPHA_V3 ledger, verify economic parity with retained RD16-K evidence, compare V3 against the fixed V2 baseline, and classify cost, capital, capacity, robustness, and bull-capture evidence without changing the architecture.",
+  "prohibitions": {
+    "2025_access": true,
+    "2026_access": true,
+    "DCA_Kelly_pyramiding_averaging_down": true,
+    "Dune_API": true,
+    "architecture_change": true,
+    "leverage_margin_short_derivatives": true,
+    "outcome_based_routing": true,
+    "parameter_optimization": true,
+    "production_authorization": true,
+    "winner_selection": true
+  },
+  "required_outputs": [
+    "economic baseline summary",
+    "cost stress",
+    "annual and monthly performance",
+    "asset, regime, exit, and holding attribution",
+    "engine and routing attribution",
+    "position and risk-capacity audits",
+    "concentration and trade-distribution audits",
+    "benchmark and bull-window capture",
+    "V2-to-V3 comparison",
+    "deterministic replay and frozen-input validation"
+  ],
+  "schema_version": "rd16m-fixed-composite-alpha-v3-baseline-v1",
+  "source_registration_stage": "RD16L_REGISTERED_COMPOSITE_ALPHA_V3_ARCHITECTURE_COMPLETED",
+  "source_variant_id": "STRONG_BULL_HOLD_96",
+  "strategic_monthly_target": 0.24
+}
