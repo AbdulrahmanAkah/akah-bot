@@ -1,0 +1,87 @@
+{
+  "baseline_commit": "715b771d72114e38bc5fbe4816e942dcb41f45cf",
+  "branch": "research/rd09b-market-level-native-chain-feasibility-v2",
+  "classification": {
+    "READY_FOR_FIXED_BASELINE": "all four registered families pass every smoke, causality, constraint, deterministic and frozen-input gate",
+    "REMEDIATION_REQUIRED": "one or more registered families or technical gates fail"
+  },
+  "execution": {
+    "entry": "next completed 1H candle open after the signal close",
+    "fee_rate_per_side": 0.001,
+    "hard_stop_priority": "stop-first conservative ambiguity handling",
+    "initial_equity": 100000,
+    "maximum_holding_bars": 48,
+    "maximum_notional_per_position": 33300.0333000333,
+    "maximum_open_risk_fraction": 0.015,
+    "maximum_positions": 3,
+    "profit_floor_lock_r": 0.25,
+    "profit_floor_trigger_r": 1.5,
+    "risk_per_trade_fraction": 0.005,
+    "second_profit_lock_r": 1.0,
+    "second_profit_trigger_r": 2.5
+  },
+  "families": [
+    "MTF_TREND_BREAKOUT",
+    "MTF_PULLBACK_RECLAIM",
+    "MTF_COMPRESSION_EXPANSION",
+    "MTF_RANGE_RECLAIM"
+  ],
+  "forbidden": {
+    "averaging_down": true,
+    "dca": true,
+    "derivatives": true,
+    "dune_api_calls": true,
+    "holdout_2026_access": true,
+    "kelly": true,
+    "leverage": true,
+    "margin": true,
+    "optimization": true,
+    "pyramiding": true,
+    "shorts": true,
+    "test_2025_access": true,
+    "winner_selection": true
+  },
+  "inputs": {
+    "canonical_timeframe": "1h",
+    "context_timeframes": [
+      "4h",
+      "1d",
+      "1w"
+    ],
+    "exchange": "kucoin",
+    "local_store": "data/raw/rd16b",
+    "pilot_symbols": [
+      "BTC/USDT",
+      "ETH/USDT",
+      "SOL/USDT",
+      "LINK/USDT",
+      "AVAX/USDT",
+      "NEAR/USDT"
+    ],
+    "sealed_cutoff": "2025-01-01T00:00:00+00:00"
+  },
+  "next_stage_if_ready": "RD16D_FIXED_INTRADAY_FAMILY_BASELINE_EVALUATION",
+  "next_stage_if_remediation": "RD16C_REGISTERED_FAMILY_REMEDIATION",
+  "performance_policy": {
+    "diagnostic_metrics_allowed": true,
+    "performance_used_as_gate": false,
+    "ranking_allowed": false,
+    "winner_selection_allowed": false
+  },
+  "purpose": "Prove that every frozen intraday multi-timeframe strategy family produces causal, executable, auditable Spot Long-only smoke trades before any fixed baseline performance evaluation.",
+  "schema_version": "rd16c-registered-families-smoke-protocol-v1",
+  "smoke_gates_per_family": [
+    "registered with fixed parameters",
+    "at least one candidate",
+    "candidate coverage across at least two assets",
+    "at least one admitted trade",
+    "admitted trade coverage across at least two assets",
+    "zero next-bar violations",
+    "zero future-context violations",
+    "maximum three simultaneous positions",
+    "maximum 1.5 percent open risk",
+    "Spot and Long-only",
+    "no leverage or prohibited behavior"
+  ],
+  "stage": "RD16C_REGISTERED_INTRADAY_STRATEGY_FAMILIES_SMOKE_TESTS"
+}
