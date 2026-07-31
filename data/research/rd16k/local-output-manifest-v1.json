@@ -1,0 +1,447 @@
+{
+  "architecture_id": "COMPOSITE_ALPHA_V2",
+  "root_committed": false,
+  "schema_version": "rd16k-capital-efficiency-bull-capture-remediation-v1",
+  "variants": {
+    "BASELINE_V2": {
+      "candidates": {
+        "content_sha256": "e576c98e756f19783869b3e785ee9e222327bf5e6617edc2dd38233c29a285d3",
+        "file_sha256": "72868f74532c0f6f58b279cf216147ab2f6a9d2018051282fd108bb857056755",
+        "logical_path": "baseline_v2/candidates.parquet",
+        "rows": 688
+      },
+      "equity_cost_1_0x": {
+        "content_sha256": "fa91786fd695d94408ab446b0f7b0ec8d068a703d89bc02f6a38b5de38f0e7ae",
+        "file_sha256": "34d6fd7a28e7d1208c38412d925b67f0bab03124715d20fdcccf833004306185",
+        "logical_path": "baseline_v2/equity-cost-1_0x.parquet",
+        "rows": 52608
+      },
+      "equity_cost_1_5x": {
+        "content_sha256": "337f4ea5ceeefcba76a9371043fb3fb7dd7dd88a9f433e12f2e09bb4b1dee0c8",
+        "file_sha256": "352c7f834dc49eb62e35132c3ebfd06225394043bfaa9da727ccfa42b14975ef",
+        "logical_path": "baseline_v2/equity-cost-1_5x.parquet",
+        "rows": 52608
+      },
+      "equity_cost_2_0x": {
+        "content_sha256": "aa371703e9c83d653f51d897d96daa639d43f008c3b495cd8b80e67ea0d2cbe2",
+        "file_sha256": "2abcdbae3e2bea22090fa119aaedf1cc706015a68591ca85be9b5eb43a611ad4",
+        "logical_path": "baseline_v2/equity-cost-2_0x.parquet",
+        "rows": 52608
+      },
+      "equity_cost_3_0x": {
+        "content_sha256": "fb24681899ecfc2ed3f4b8e1986f26bde7581f5c98f1d53eff9c2168e0c64233",
+        "file_sha256": "c463f8202de72f93ffc53753247ed5bf0834c4b2969ecaf0becea07ebce6f42a",
+        "logical_path": "baseline_v2/equity-cost-3_0x.parquet",
+        "rows": 52608
+      },
+      "evaluated": {
+        "content_sha256": "113b9fcddf00b6acd582693930e2de69cde9f58316e6bcfdc3952b448c03a266",
+        "file_sha256": "751f1fdf1077f217475b5f53260404e10528f783cf389bc22e5b01df0332a40f",
+        "logical_path": "baseline_v2/evaluated.parquet",
+        "rows": 688
+      },
+      "trades": {
+        "content_sha256": "44d946d1fd937825009780052e3bbb970ee083a258a914c13e94e9bb6ec103fe",
+        "file_sha256": "bc90499f70574fa6fb6e7abb505a8a8be4be5f9dee27844ecded2a9c2229a4f9",
+        "logical_path": "baseline_v2/trades.parquet",
+        "rows": 596
+      }
+    },
+    "EVIDENCE_CAPITAL_BULL_COMPOSITE": {
+      "candidates": {
+        "content_sha256": "01d76844586f35ac56d69b25e7836bbe518bfeda71be54678583f035faa47d3d",
+        "file_sha256": "18de38b884b51ce3aadfa1c3d8f804d5363b520a2fe84dcbc7cd3d4ee4dbc753",
+        "logical_path": "evidence_capital_bull_composite/candidates.parquet",
+        "rows": 688
+      },
+      "equity_cost_1_0x": {
+        "content_sha256": "488fb87e7280e7a73fe71bbef50192afe7cd34650215bc4ffa0e8ef7e8ebf80c",
+        "file_sha256": "1060d6b5f154fd533ca1165143be927063eb706d002e09b801f2ebb7f19ce2d1",
+        "logical_path": "evidence_capital_bull_composite/equity-cost-1_0x.parquet",
+        "rows": 52608
+      },
+      "equity_cost_1_5x": {
+        "content_sha256": "d4f530be7825835119aecb2bb9c76b000d014a62588cad6d392bac3405fbf019",
+        "file_sha256": "db682b71f63699486750ad46f06b7aba45ad3a89afc204d9866233d33bbe9507",
+        "logical_path": "evidence_capital_bull_composite/equity-cost-1_5x.parquet",
+        "rows": 52608
+      },
+      "equity_cost_2_0x": {
+        "content_sha256": "aa64362338a95db0548ad4eead513cb5b998a20791c6740a4845e3d112d9ead2",
+        "file_sha256": "b7552c9cb26968487c318df14d4269464ccb1ec0300a1dbc3ba56ed1881f6df0",
+        "logical_path": "evidence_capital_bull_composite/equity-cost-2_0x.parquet",
+        "rows": 52608
+      },
+      "equity_cost_3_0x": {
+        "content_sha256": "a54b8b6b417fc8665576f8aa35b0e80bff9322a775d0bc9dfbcb7a7905b392ba",
+        "file_sha256": "da2258a845473ef68164b21acea998f02710f04c2d6ffcada9a10017992c7caf",
+        "logical_path": "evidence_capital_bull_composite/equity-cost-3_0x.parquet",
+        "rows": 52608
+      },
+      "evaluated": {
+        "content_sha256": "d9c62e857ce8f7ffc5dd79f15e9ddcb3523bdd85e191c3e0832b8f6eb75541df",
+        "file_sha256": "c370181854112a728dee8055b76ded8fcf9cfaf6213266c99d13df1ad9f65e3c",
+        "logical_path": "evidence_capital_bull_composite/evaluated.parquet",
+        "rows": 688
+      },
+      "trades": {
+        "content_sha256": "cfbb081d8feaf276fa446748c48157a578783c2decbc9802eaf094394b297760",
+        "file_sha256": "d18c7de2aeed7fb791bf19388a679a2e3439942f63d75b240253d1d6844c4d8e",
+        "logical_path": "evidence_capital_bull_composite/trades.parquet",
+        "rows": 578
+      }
+    },
+    "OPEN_RISK_300_PORTFOLIO_80": {
+      "candidates": {
+        "content_sha256": "8d9163df1b246ce00f953349003a967ab7ac42e7e99523b6a90873f56ea4b978",
+        "file_sha256": "052537e5250fee5e83aad5dc95a140162e5a08f7a64c5e975e2abeb6ef37a1a3",
+        "logical_path": "open_risk_300_portfolio_80/candidates.parquet",
+        "rows": 688
+      },
+      "equity_cost_1_0x": {
+        "content_sha256": "2b2ea2e71e8922fa5c4f6c178babb570a2bd3288b350028adc940aa98a95e2fa",
+        "file_sha256": "823ae5c765b75e55994cef6af5c2bbd9daaf556227eec01acb7b33095c215b96",
+        "logical_path": "open_risk_300_portfolio_80/equity-cost-1_0x.parquet",
+        "rows": 52608
+      },
+      "equity_cost_1_5x": {
+        "content_sha256": "3326004ed0ddc6350ab1671e37cc4ee9df9222c240d825e6c572e675c0679f6f",
+        "file_sha256": "2a431889d59d87239ab13c997137a6328a732ff6d028bd1c181659dc1379c8b9",
+        "logical_path": "open_risk_300_portfolio_80/equity-cost-1_5x.parquet",
+        "rows": 52608
+      },
+      "equity_cost_2_0x": {
+        "content_sha256": "e598832792d01b3eaf84546cb59fa0c2092c5d7d5b6df506e818c9b75e27d52c",
+        "file_sha256": "9115f38f0e21e6e939361ea8f32b6e40bb55eb31db305f3aff82f53418a32dde",
+        "logical_path": "open_risk_300_portfolio_80/equity-cost-2_0x.parquet",
+        "rows": 52608
+      },
+      "equity_cost_3_0x": {
+        "content_sha256": "6a7470851d252d0f9b5964cde04d581641411e902c7c16b31ad75db9597b4c03",
+        "file_sha256": "cc79cbd4c900be110ff91a60304c6fc4c9fba47b1fb2b1b8b0f51cf89413c7fa",
+        "logical_path": "open_risk_300_portfolio_80/equity-cost-3_0x.parquet",
+        "rows": 52608
+      },
+      "evaluated": {
+        "content_sha256": "2381ac4fe2d59bb36c57b4af604c226990b6f9e3798ca250c498ec83eeba9c28",
+        "file_sha256": "4822d079b9a1356a5c14c8d5e52cf725764b90ef394e559477acf1b995f11106",
+        "logical_path": "open_risk_300_portfolio_80/evaluated.parquet",
+        "rows": 688
+      },
+      "trades": {
+        "content_sha256": "528f1f3427878bb33230ac9dbb83719b95a1f45d3a22995089cda711c744bf17",
+        "file_sha256": "7a84a41e770e9d4b7835650ff97d1f2d44913267a27f510511578a41eb322ad7",
+        "logical_path": "open_risk_300_portfolio_80/trades.parquet",
+        "rows": 576
+      }
+    },
+    "PER_TRADE_NOTIONAL_20": {
+      "candidates": {
+        "content_sha256": "050669be4188abc6f7ea1ba0eae6d1dcac9063b162e898c768c8c363e2648924",
+        "file_sha256": "dae2bdc81a0eb13261d21538a6703db7f78ef802b4fb49527df3b23704fc71f2",
+        "logical_path": "per_trade_notional_20/candidates.parquet",
+        "rows": 688
+      },
+      "equity_cost_1_0x": {
+        "content_sha256": "0556b0108769147b2b123ee43c3bb486f29db431ff53fc9248d267b9027686bd",
+        "file_sha256": "b9d0c094ce2704b50143ec9a4b62b7b020ce9cf7ab7ff81181f0cb70b0350fa7",
+        "logical_path": "per_trade_notional_20/equity-cost-1_0x.parquet",
+        "rows": 52608
+      },
+      "equity_cost_1_5x": {
+        "content_sha256": "fdf73c2c93033bb48bcd2e145b33f9940ab2b46de57c39ed15c9bc26a536294f",
+        "file_sha256": "9b9c165db695fd7e85da350978170c81f713e03e72d5c2f69d21e5ada3c55b65",
+        "logical_path": "per_trade_notional_20/equity-cost-1_5x.parquet",
+        "rows": 52608
+      },
+      "equity_cost_2_0x": {
+        "content_sha256": "81380ab7f28b97b69f11f3ed5727126ce34e1fa3acd9f27a461a23376008a82c",
+        "file_sha256": "a5b870050588d31ffbddfa5567b84175ab44506af48b348c77d607eeb143058c",
+        "logical_path": "per_trade_notional_20/equity-cost-2_0x.parquet",
+        "rows": 52608
+      },
+      "equity_cost_3_0x": {
+        "content_sha256": "8b7a8a8bf336f88411ff25c3a3e33ccbb3ddd2ebd7915c3be2a43bd191863de9",
+        "file_sha256": "56a6ef271671fb7452fb4649db389829fc7aae60b562053a54f69e7192ab0f19",
+        "logical_path": "per_trade_notional_20/equity-cost-3_0x.parquet",
+        "rows": 52608
+      },
+      "evaluated": {
+        "content_sha256": "2105ac34fd15c45aae9968a61e739d2b188e9dd3b83f5c04dd37b8a8e0886fab",
+        "file_sha256": "15a95ea262a892e4137cabffb9fe049e2fadcdde168f26c7b8928890c50f9e04",
+        "logical_path": "per_trade_notional_20/evaluated.parquet",
+        "rows": 688
+      },
+      "trades": {
+        "content_sha256": "6e5e6e2e9521304ce7ae0fc8c67da432ea7bce81ac846faa4347595c24b952af",
+        "file_sha256": "e8544101cd3fb9cf09ab2620cd5957ccde25c8c1e5ccf472efd6d35d5ea41442",
+        "logical_path": "per_trade_notional_20/trades.parquet",
+        "rows": 597
+      }
+    },
+    "PER_TRADE_NOTIONAL_25": {
+      "candidates": {
+        "content_sha256": "f6f0f02815d522b6dd6239aefd332918a6cac20fd2b451ac748a37c0b015fea9",
+        "file_sha256": "f1e22fdd6c369536b236b29898328905f3ce83cf8a56d2dfbac1a77c372125b6",
+        "logical_path": "per_trade_notional_25/candidates.parquet",
+        "rows": 688
+      },
+      "equity_cost_1_0x": {
+        "content_sha256": "db4187b43fa17cee98e454f9d4bff640154bd34fcca159f448fc04680143467c",
+        "file_sha256": "1bda86a3bea8bb21535a27fd3a871c440387e9a650ed13930f557ad8462f5ef7",
+        "logical_path": "per_trade_notional_25/equity-cost-1_0x.parquet",
+        "rows": 52608
+      },
+      "equity_cost_1_5x": {
+        "content_sha256": "5b06f0a87803da280d5e5809d4eac18a9d1e2b044fdcf6fbb4a1beb50763bee8",
+        "file_sha256": "102ea3069287b27bb2d1c0a949632b583edb3b09dc10d7f7bc292affb2b18b49",
+        "logical_path": "per_trade_notional_25/equity-cost-1_5x.parquet",
+        "rows": 52608
+      },
+      "equity_cost_2_0x": {
+        "content_sha256": "a1d5103cdf6edf779ed887c2c6a3eb2c45e852db2c4e91b2d68d7ec89b822680",
+        "file_sha256": "f39f52beec5bd8c0c273e37efc511dff06575ea1cbc1f4820b6d41329c878ab7",
+        "logical_path": "per_trade_notional_25/equity-cost-2_0x.parquet",
+        "rows": 52608
+      },
+      "equity_cost_3_0x": {
+        "content_sha256": "548ccd1f03c9b3d6359b0c3ed84aedd0c67a2c71c6123551d0ead02d0f0276c0",
+        "file_sha256": "6b6170b0e7eba3af2ae66c1c148d4eeb15a358ecfaf2f1bdb6d11f45dba609af",
+        "logical_path": "per_trade_notional_25/equity-cost-3_0x.parquet",
+        "rows": 52608
+      },
+      "evaluated": {
+        "content_sha256": "c84a9905fe73262b265f0b13ccb11a6d8c5683e38fa1bb767b258589de4b138d",
+        "file_sha256": "57a49d73908bf97158c639dd3261285ca93726242b5b84840a03efeafea3ea63",
+        "logical_path": "per_trade_notional_25/evaluated.parquet",
+        "rows": 688
+      },
+      "trades": {
+        "content_sha256": "9374ec705eaa2490fcb6ee5754e9f01b3814b71f9466f9ea4872c32128454a26",
+        "file_sha256": "7b0a9e82de77240af9f673642f0bb2ba5ab97c92e2645dba266cbf2a47e06f37",
+        "logical_path": "per_trade_notional_25/trades.parquet",
+        "rows": 597
+      }
+    },
+    "PORTFOLIO_80_SB72": {
+      "candidates": {
+        "content_sha256": "9ca7017575359b46bab4ea9ba0529aff6dcc04d31ecbf36c38a3b9ec0963a801",
+        "file_sha256": "cd4368512aa05587296b8333de42de4c2d2cba89d6921013a6d136291d8646be",
+        "logical_path": "portfolio_80_sb72/candidates.parquet",
+        "rows": 688
+      },
+      "equity_cost_1_0x": {
+        "content_sha256": "d56b1f72c3adb333b117dcfa2cb82c19c6f49a394f0c051dc734b501764615b0",
+        "file_sha256": "af4ddd5d0f0f144c968bc5e2fd14289d030eb2672fec106aa876f10bc6fa08ad",
+        "logical_path": "portfolio_80_sb72/equity-cost-1_0x.parquet",
+        "rows": 52608
+      },
+      "equity_cost_1_5x": {
+        "content_sha256": "1fd2efeadaa60fb68281c6dae24108dfede4f86ba0b20cc58628574e99a7f23e",
+        "file_sha256": "41ce16a665bdaf27653935095e662fcaed880340ccf3f013e6eefc85387a7ef6",
+        "logical_path": "portfolio_80_sb72/equity-cost-1_5x.parquet",
+        "rows": 52608
+      },
+      "equity_cost_2_0x": {
+        "content_sha256": "a1075a21c2a7c8372846c6b36eb82a2c3b563404f60380d231a34023553ed7a3",
+        "file_sha256": "85bf6afec88d7dfa8f340ca50e63e9d4e052d4206783d815a3ac6d8d20cc1362",
+        "logical_path": "portfolio_80_sb72/equity-cost-2_0x.parquet",
+        "rows": 52608
+      },
+      "equity_cost_3_0x": {
+        "content_sha256": "7fc0f1987cf3743b1c46c23a6b81a3c931694519da1e4652953ecff087988335",
+        "file_sha256": "7d5f54a9ba57603f3306c30544dbeac248d81e2c1f5ff387d87ad2c5bfec7db0",
+        "logical_path": "portfolio_80_sb72/equity-cost-3_0x.parquet",
+        "rows": 52608
+      },
+      "evaluated": {
+        "content_sha256": "94e7cb6a6e0f10f594abf3eb91724ff4e8037b14848e5815e080e8054f0a41d8",
+        "file_sha256": "34d90d3c9dd7202803675f2d571290d7f65d8b1a641f16bd849d6c3459c18172",
+        "logical_path": "portfolio_80_sb72/evaluated.parquet",
+        "rows": 688
+      },
+      "trades": {
+        "content_sha256": "afda562353af06564a75fb93a8cafae32d88ba950703c2ee356858301cff34f3",
+        "file_sha256": "c808414eb6cfea3cb2419bd2636f9a510597d690daab24bb7d662a423af557cf",
+        "logical_path": "portfolio_80_sb72/trades.parquet",
+        "rows": 557
+      }
+    },
+    "PORTFOLIO_NOTIONAL_80": {
+      "candidates": {
+        "content_sha256": "1769284f9c86052d9706e9c49987d3b64e16e766c2d8fb015ae9f1b356f5af1d",
+        "file_sha256": "1cf57a62745b2e7d84823d69a17953f7bf56370ae1f26e9715ee98cd068ea793",
+        "logical_path": "portfolio_notional_80/candidates.parquet",
+        "rows": 688
+      },
+      "equity_cost_1_0x": {
+        "content_sha256": "2b2ea2e71e8922fa5c4f6c178babb570a2bd3288b350028adc940aa98a95e2fa",
+        "file_sha256": "823ae5c765b75e55994cef6af5c2bbd9daaf556227eec01acb7b33095c215b96",
+        "logical_path": "portfolio_notional_80/equity-cost-1_0x.parquet",
+        "rows": 52608
+      },
+      "equity_cost_1_5x": {
+        "content_sha256": "3326004ed0ddc6350ab1671e37cc4ee9df9222c240d825e6c572e675c0679f6f",
+        "file_sha256": "2a431889d59d87239ab13c997137a6328a732ff6d028bd1c181659dc1379c8b9",
+        "logical_path": "portfolio_notional_80/equity-cost-1_5x.parquet",
+        "rows": 52608
+      },
+      "equity_cost_2_0x": {
+        "content_sha256": "e598832792d01b3eaf84546cb59fa0c2092c5d7d5b6df506e818c9b75e27d52c",
+        "file_sha256": "9115f38f0e21e6e939361ea8f32b6e40bb55eb31db305f3aff82f53418a32dde",
+        "logical_path": "portfolio_notional_80/equity-cost-2_0x.parquet",
+        "rows": 52608
+      },
+      "equity_cost_3_0x": {
+        "content_sha256": "6a7470851d252d0f9b5964cde04d581641411e902c7c16b31ad75db9597b4c03",
+        "file_sha256": "cc79cbd4c900be110ff91a60304c6fc4c9fba47b1fb2b1b8b0f51cf89413c7fa",
+        "logical_path": "portfolio_notional_80/equity-cost-3_0x.parquet",
+        "rows": 52608
+      },
+      "evaluated": {
+        "content_sha256": "f9a51a8fce2088d8aeeb6e34e6c37ca28dca2825e543b5accafc9b7a9254ce4e",
+        "file_sha256": "0e2af7d0d08f713977a55066b51957711c0e15a702a10b66f224a24ff5a7ac8f",
+        "logical_path": "portfolio_notional_80/evaluated.parquet",
+        "rows": 688
+      },
+      "trades": {
+        "content_sha256": "0bd9f3c68bb763e79495076699b7edeb7eb4f4345d34d28265a367ac37b5f378",
+        "file_sha256": "1f387e67f53747c8bb1dd4bd279ef965e958bdad4dacc7254d3bf1c4a76e2e0f",
+        "logical_path": "portfolio_notional_80/trades.parquet",
+        "rows": 576
+      }
+    },
+    "PORTFOLIO_NOTIONAL_90": {
+      "candidates": {
+        "content_sha256": "514fe829d5892497c7cc7c1f4d0d00775a8b1e5e18dbadeb4d59ffc25ef70ae9",
+        "file_sha256": "0db384683bf6f7470adaa5880db86146cf7d1f1ec0c5363a856fe1eeb45642fe",
+        "logical_path": "portfolio_notional_90/candidates.parquet",
+        "rows": 688
+      },
+      "equity_cost_1_0x": {
+        "content_sha256": "776a018e5a171dd473e393b6e403a7d5046b02ae451b783dc6e4f10f3021c7b7",
+        "file_sha256": "f51fd42528da1c2eccf374be18fab2a0993ddc62120a5548de63e135cf0a951e",
+        "logical_path": "portfolio_notional_90/equity-cost-1_0x.parquet",
+        "rows": 52608
+      },
+      "equity_cost_1_5x": {
+        "content_sha256": "c91c82237f5a46c862bc3270665bd7926f1a262e07527a094c0ab8d840614bb9",
+        "file_sha256": "1bd1c24198ef9223ebcb20890047364386f01e9b401a6d598604b3b01a5c03ca",
+        "logical_path": "portfolio_notional_90/equity-cost-1_5x.parquet",
+        "rows": 52608
+      },
+      "equity_cost_2_0x": {
+        "content_sha256": "39a2ebe016a77aa798ed074dae3de26d5092e3ce3f56b2bc0e999281179e5f6d",
+        "file_sha256": "f41d3cb229dd5a6937e80e4e6976390262db61f816b61a91cf8bb6cb30e882c8",
+        "logical_path": "portfolio_notional_90/equity-cost-2_0x.parquet",
+        "rows": 52608
+      },
+      "equity_cost_3_0x": {
+        "content_sha256": "3eb2107859fe7faac9c60a425c8bc415758015f8b7a2bbc313e7628b112f047a",
+        "file_sha256": "460d767504e705bda580e315d47126b6bf390ced31159e58e73edea17a483677",
+        "logical_path": "portfolio_notional_90/equity-cost-3_0x.parquet",
+        "rows": 52608
+      },
+      "evaluated": {
+        "content_sha256": "d2b410dd8d4c47aff5c55c4bf6b0e47a07b8b78dacab24acf2ffa9d3f666ff1b",
+        "file_sha256": "1a72bd71327fe9762f75242cbaf740e7995cc6041861d3e8b6f1c765f9b127b6",
+        "logical_path": "portfolio_notional_90/evaluated.parquet",
+        "rows": 688
+      },
+      "trades": {
+        "content_sha256": "e84a80173bce1138660862dbbd2b5a0e2c8aa854b78d4509febe6fea09835bfb",
+        "file_sha256": "58927a055433b23f71baae5dda07f0b4ee6525da29e1a1bf3f184efacb29a09b",
+        "logical_path": "portfolio_notional_90/trades.parquet",
+        "rows": 576
+      }
+    },
+    "STRONG_BULL_HOLD_72": {
+      "candidates": {
+        "content_sha256": "ffb43718839e9b77bbdc9e0052f98bfbcdbb99c4e889b62ea5917bc1f8b27b3c",
+        "file_sha256": "ffc9e8bd2ae20a45bccce40b844a525e0314cff39a35edeb15a711556cbde414",
+        "logical_path": "strong_bull_hold_72/candidates.parquet",
+        "rows": 688
+      },
+      "equity_cost_1_0x": {
+        "content_sha256": "0d71224d1de306984400825441073257198d66cbb1799b1982b2bba5d3036aeb",
+        "file_sha256": "1b5e35bfe0174de348a7d2975413bbb0368d535eb43b8d5c3b8e65efc1cc9cea",
+        "logical_path": "strong_bull_hold_72/equity-cost-1_0x.parquet",
+        "rows": 52608
+      },
+      "equity_cost_1_5x": {
+        "content_sha256": "653502d06bf2c6537616ba3c3da0e7f24bc9ae26a3a39e5c6a818d7373651951",
+        "file_sha256": "af31bbcfc0d798bc32d249e08d5ba11e9f913ae50b3437a257005a22de283d64",
+        "logical_path": "strong_bull_hold_72/equity-cost-1_5x.parquet",
+        "rows": 52608
+      },
+      "equity_cost_2_0x": {
+        "content_sha256": "80dac43f59f4d477542cf06922d5fa1a8cee17846b08adeb9debd69bcee1249d",
+        "file_sha256": "ecbaec1c3d4cfbc1be8328f66243bbad6ef009eb186d25264419b3b296f362e7",
+        "logical_path": "strong_bull_hold_72/equity-cost-2_0x.parquet",
+        "rows": 52608
+      },
+      "equity_cost_3_0x": {
+        "content_sha256": "aa98d02698065db9d80e7988cc274d42a38a5360a71e97245957b95e782fcaf1",
+        "file_sha256": "729b2e41708efcf510961506962a3b649e21de2cec3107cc3bc677d8732bb898",
+        "logical_path": "strong_bull_hold_72/equity-cost-3_0x.parquet",
+        "rows": 52608
+      },
+      "evaluated": {
+        "content_sha256": "e1e2bb5798a685dad775100a954bb0578427c89e60f3ebad3603a4bd3babb84d",
+        "file_sha256": "35271a4f90d48589c35b2a49d67f5b208a22fefa682a2e5d373cad80abb35e40",
+        "logical_path": "strong_bull_hold_72/evaluated.parquet",
+        "rows": 688
+      },
+      "trades": {
+        "content_sha256": "71364a5450a8b8d19ffb1bad0af116a96fd79464c0ddca2327ff77dfd2673103",
+        "file_sha256": "010bb5401c5cb3e1ab776626be2c0e836f42f5eb6b4f39fce9794f1d292fef90",
+        "logical_path": "strong_bull_hold_72/trades.parquet",
+        "rows": 578
+      }
+    },
+    "STRONG_BULL_HOLD_96": {
+      "candidates": {
+        "content_sha256": "8b567eda5fa12487f81befdf11f61ede541281aed33a38a479d68af1446f645c",
+        "file_sha256": "ab52853c5f78b87d61a66d63f5ed8e1d1357b7c343c4ba628ca3cd2e89c47622",
+        "logical_path": "strong_bull_hold_96/candidates.parquet",
+        "rows": 688
+      },
+      "equity_cost_1_0x": {
+        "content_sha256": "fcfe398aee7fa318ba66a0e9f560a2147a15ca993a45a0c19ca63f4792f9f4f6",
+        "file_sha256": "f6dba11dde93438360ce0f3184df62e96cdc5a0516f05475481555a731c2165d",
+        "logical_path": "strong_bull_hold_96/equity-cost-1_0x.parquet",
+        "rows": 52608
+      },
+      "equity_cost_1_5x": {
+        "content_sha256": "02765e416854ef0f5ca6ce5d14b4f9c8858fc517aa0a277dbc261b5cb791ec30",
+        "file_sha256": "1a01a057374c065e83e487e414769b33a46f992a1f24375df332b8a1132c4b90",
+        "logical_path": "strong_bull_hold_96/equity-cost-1_5x.parquet",
+        "rows": 52608
+      },
+      "equity_cost_2_0x": {
+        "content_sha256": "82a537a85e0bdccc11b0a01eeb9ab284a9bc2aea874195f95c73ded88c48e3bf",
+        "file_sha256": "64380b33baf307f3a9b425a1e07abe766a81a19bbeac06698b95647ef7c6f6cc",
+        "logical_path": "strong_bull_hold_96/equity-cost-2_0x.parquet",
+        "rows": 52608
+      },
+      "equity_cost_3_0x": {
+        "content_sha256": "3c2a66557348131a200e1f4ddf49a87e9b6229f68495ea4ca3bf043d47988a95",
+        "file_sha256": "043f73ae58a2057604dbb28170b9c8ae05721522dec126049c073b6f3e281fa2",
+        "logical_path": "strong_bull_hold_96/equity-cost-3_0x.parquet",
+        "rows": 52608
+      },
+      "evaluated": {
+        "content_sha256": "fb4e031d22bdfd550cbed9bd587a3d0d93b23a391b44b88ae128c476a5302925",
+        "file_sha256": "8d06034b9305bf67fca1baf2f850bf50906538204e4dc8ef6c5d2b8b341dfd61",
+        "logical_path": "strong_bull_hold_96/evaluated.parquet",
+        "rows": 688
+      },
+      "trades": {
+        "content_sha256": "0918267182532b52ba9c813827e1c493494746dc46322bbf2327f456408e036b",
+        "file_sha256": "be1af238dfaac5b832fd5c3ca54188242cf02a785af4d268a33c0878c75ff862",
+        "logical_path": "strong_bull_hold_96/trades.parquet",
+        "rows": 567
+      }
+    }
+  }
+}

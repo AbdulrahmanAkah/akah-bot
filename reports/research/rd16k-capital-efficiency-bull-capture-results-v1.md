@@ -1,0 +1,14 @@
+# RD16-K Capital Efficiency and Bull Capture Results v1
+
+| Variant | Decision | Return | Monthly | PF | DD | 2x feasible | Capture |
+|---|---|---:|---:|---:|---:|:---:|---:|
+| BASELINE_V2 | REFERENCE_BASELINE | 91.64% | 0.91% | 1.410 | 11.30% | False | 5.72% |
+| PER_TRADE_NOTIONAL_25 | PROMISING_BUT_FRAGILE | 48.35% | 0.55% | 1.344 | 9.00% | True | 3.74% |
+| PER_TRADE_NOTIONAL_20 | PROMISING_BUT_FRAGILE | 39.12% | 0.46% | 1.344 | 7.73% | True | 3.07% |
+| PORTFOLIO_NOTIONAL_90 | PROMISING_BUT_FRAGILE | 64.22% | 0.69% | 1.304 | 14.93% | True | 2.59% |
+| PORTFOLIO_NOTIONAL_80 | PROMISING_BUT_FRAGILE | 59.84% | 0.65% | 1.295 | 15.34% | True | 2.15% |
+| STRONG_BULL_HOLD_72 | REJECT_REMEDIATION | 91.06% | 0.90% | 1.416 | 12.16% | False | 5.71% |
+| STRONG_BULL_HOLD_96 | RETAIN_FOR_COMPOSITE_V3_REGISTRATION | 108.16% | 1.02% | 1.506 | 11.03% | True | 6.27% |
+| PORTFOLIO_80_SB72 | PROMISING_BUT_FRAGILE | 52.98% | 0.59% | 1.267 | 18.25% | True | 1.43% |
+| OPEN_RISK_300_PORTFOLIO_80 | PROMISING_BUT_FRAGILE | 59.84% | 0.65% | 1.295 | 15.34% | True | 2.15% |
+| EVIDENCE_CAPITAL_BULL_COMPOSITE | PROMISING_BUT_FRAGILE | 48.06% | 0.55% | 1.350 | 9.73% | True | 3.57% |
