@@ -1,0 +1,49 @@
+{
+  "architecture_id": "COMPOSITE_ALPHA_V2",
+  "baseline_commit": "5419440713251dc368c36b6c9938b4b6f00748cc",
+  "branch": "research/rd09b-market-level-native-chain-feasibility-v2",
+  "capacity_questions": [
+    "Did COMPOSITE_ALPHA_V2 ever use a fourth or fifth position?",
+    "Did the 2.25% open-risk cap bind before the five-position limit?",
+    "Is the ledger cash-feasible at 1x, 1.5x, 2x, and 3x cost?"
+  ],
+  "cost_stress_multipliers": [
+    1.0,
+    1.5,
+    2.0,
+    3.0
+  ],
+  "fixed_architecture": {
+    "base_risk_per_trade_fraction": 0.005,
+    "compression_cooldown_hours": 24,
+    "expanded_risk_per_trade_fraction": 0.0075,
+    "maximum_open_risk_fraction": 0.0225,
+    "maximum_positions": 5,
+    "risk_multipliers_non_compounding": true,
+    "same_symbol_overlap_prohibited": true,
+    "source_variant_id": "EVIDENCE_COMPOSITE_EXPANSION",
+    "trend_cooldown_hours": 12
+  },
+  "input_stage": "RD16I_REGISTERED_COMPOSITE_ALPHA_V2_ARCHITECTURE_COMPLETED",
+  "next_stage_if_cost_capacity_constraint": "RD16K_COMPOSITE_ALPHA_V2_CAPITAL_EFFICIENCY_AND_BULL_CAPTURE_REMEDIATION",
+  "next_stage_if_return_gap": "RD16K_COMPOSITE_ALPHA_V2_RETURN_EXPANSION_AND_BULL_CAPTURE_REMEDIATION",
+  "next_stage_if_strategic_pass": "RD16K_COMPOSITE_ALPHA_V2_PREHOLDOUT_FREEZE_AND_VALIDATION",
+  "objective": "Evaluate the frozen COMPOSITE_ALPHA_V2 architecture economically, including transaction-cost stress, cash feasibility, position-capacity utilization, V1 comparison, concentration, regime, and bull-capture diagnostics.",
+  "prohibitions": {
+    "2025_access": true,
+    "2026_access": true,
+    "DCA_Kelly_pyramiding_averaging_down": true,
+    "Dune_API": true,
+    "architecture_changes": true,
+    "leverage_margin_short_derivatives": true,
+    "parameter_optimization": true,
+    "production_authorization": true,
+    "winner_selection": true
+  },
+  "schema_version": "rd16j-fixed-composite-alpha-v2-baseline-v1",
+  "strategic_objective": {
+    "geometric_monthly_return": 0.24,
+    "high_opportunity_bull_rule": "For every equal-weight benchmark window above 200%, architecture return must be at least 100% or capture at least 40%.",
+    "not_reduced": true
+  }
+}
