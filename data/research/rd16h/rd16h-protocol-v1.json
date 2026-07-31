@@ -1,0 +1,84 @@
+{
+  "architecture_id": "COMPOSITE_ALPHA_V1",
+  "baseline_commit": "78cd0f4ed09983b2785175727d1bc19149a66f1f",
+  "branch": "research/rd09b-market-level-native-chain-feasibility-v2",
+  "cost_stress_multipliers": [
+    1.0,
+    1.5,
+    2.0,
+    3.0
+  ],
+  "fixed_evidence": {
+    "compression_cooldown_hours": 24,
+    "consensus_risk_multiplier": 1.5,
+    "maximum_open_risk_fractions": [
+      0.015,
+      0.0225,
+      0.03
+    ],
+    "preserve_maximum_positions": 3,
+    "preserve_same_symbol_active_rejection": true,
+    "preserve_spot_long_only": true,
+    "risk_multipliers_do_not_compound": true,
+    "strong_bull_risk_multipliers": [
+      1.5,
+      2.0
+    ],
+    "trend_cooldown_candidate_hours": 12
+  },
+  "input_stage": "RD16G_FIXED_COMPOSITE_ALPHA_BASELINE_EVALUATION_COMPLETED",
+  "next_stage_if_none_retained": "RD16I_INTRADAY_ALPHA_ENGINE_DIVERSIFICATION_AND_NEW_SIGNAL_RESEARCH",
+  "next_stage_if_retained": "RD16I_REGISTERED_COMPOSITE_ALPHA_V2_ARCHITECTURE",
+  "objective": "Expand fixed composite alpha return and high-opportunity bull capture through preregistered causal breadth, cooldown, and fixed-risk variants without optimization, leverage, pyramiding, or sealed-period access.",
+  "prohibitions": {
+    "2025_access": true,
+    "2026_access": true,
+    "DCA_Kelly_averaging_down": true,
+    "Dune_API": true,
+    "grid_search": true,
+    "leverage_margin_short_derivatives": true,
+    "outcome_based_trade_selection": true,
+    "parameter_sweep": true,
+    "same_symbol_pyramiding": true,
+    "winner_selection": true
+  },
+  "retention_gates": {
+    "both_engines_positive": true,
+    "bull_capture_must_not_regress": true,
+    "maximum_drawdown": 0.3,
+    "minimum_high_opportunity_capture_gain_vs_baseline": 0.02,
+    "minimum_net_return_gain_vs_baseline": 0.1,
+    "minimum_profit_factor": 1.2,
+    "minimum_trade_count": 100,
+    "positive_active_year_fraction_minimum": 0.5,
+    "top_engine_profit_share_maximum": 0.8,
+    "top_three_trade_profit_share_maximum": 0.35,
+    "two_x_cost_positive": true,
+    "two_x_cost_profit_factor_minimum": 1.0
+  },
+  "schema_version": "rd16h-return-expansion-v1",
+  "source_components": {
+    "compression_full": "MTF_COMPRESSION_EXPANSION::FULL_REMEDIATION_STACK",
+    "compression_structure": "MTF_COMPRESSION_EXPANSION::DIAGNOSTIC_PLUS_STRUCTURE",
+    "trend_diagnostic": "MTF_TREND_BREAKOUT::ALL_DIAGNOSTIC_GATES",
+    "trend_full": "MTF_TREND_BREAKOUT::FULL_REMEDIATION_STACK",
+    "trend_structure": "MTF_TREND_BREAKOUT::DIAGNOSTIC_PLUS_STRUCTURE"
+  },
+  "strategic_objective": {
+    "geometric_monthly_return": 0.24,
+    "high_opportunity_bull_rule": "For every equal-weight benchmark window above 200%, architecture return must be at least 100% or capture at least 40%.",
+    "not_reduced": true
+  },
+  "variants": [
+    "BASELINE",
+    "TREND_STRONG_BULL_STRUCTURE_BREADTH",
+    "TREND_STRONG_BULL_DIAGNOSTIC_BREADTH",
+    "COMPRESSION_STRONG_BULL_STRUCTURE_BREADTH",
+    "DUAL_STRONG_BULL_STRUCTURE_BREADTH",
+    "TREND_COOLDOWN_12H",
+    "CONSENSUS_RISK_075",
+    "STRONG_BULL_RISK_075",
+    "STRONG_BULL_RISK_100",
+    "EVIDENCE_COMPOSITE_EXPANSION"
+  ]
+}

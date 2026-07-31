@@ -1,0 +1,340 @@
+from __future__ import annotations
+
+import argparse
+import json
+import subprocess
+import sys
+from collections.abc import Sequence
+from pathlib import Path
+from typing import Final, cast
+
+EXPECTED_BRANCH: Final = "research/rd09b-market-level-native-chain-feasibility-v2"
+IMPLEMENTATION_SUBJECT: Final = "research(rd16h): add return expansion remediation"
+RESULT_SUBJECT: Final = "research(rd16h): complete return expansion remediation"
+DATA_ROOT: Final = Path("data/research/rd16h")
+GENERATED_REPORTS: Final = (
+    Path("reports/research/rd16h-return-expansion-results-v1.md"),
+    Path("reports/research/rd16h-carry-forward-decisions-v1.md"),
+    Path("reports/research/rd16h-causality-constraint-audit-v1.md"),
+)
+ALLOWED_NEXT_STAGES: Final = frozenset(
+    {
+        "RD16I_REGISTERED_COMPOSITE_ALPHA_V2_ARCHITECTURE",
+        ("RD16I_INTRADAY_ALPHA_ENGINE_DIVERSIFICATION_AND_NEW_SIGNAL_RESEARCH"),
+        "RD16I_PREHOLDOUT_FREEZE_AND_VALIDATION",
+    }
+)
+
+
+class CompletionError(RuntimeError):
+    pass
+
+
+def _run(
+    command: Sequence[str],
+    *,
+    cwd: Path,
+    capture: bool = False,
+) -> str:
+    print("\n>", " ".join(command), flush=True)
+    completed = subprocess.run(
+        list(command),
+        cwd=cwd,
+        check=False,
+        text=True,
+        capture_output=capture,
+    )
+    if capture:
+        if completed.stdout:
+            print(completed.stdout, end="")
+        if completed.stderr:
+            print(completed.stderr, end="", file=sys.stderr)
+    if completed.returncode != 0:
+        raise CompletionError(
+            f"Command failed with exit code {completed.returncode}: {' '.join(command)}"
+        )
+    return completed.stdout.strip() if capture else ""
+
+
+def _git(repo: Path, *arguments: str, capture: bool = True) -> str:
+    return _run(("git", *arguments), cwd=repo, capture=capture)
+
+
+def _python(repo: Path) -> str:
+    windows = repo / ".venv" / "Scripts" / "python.exe"
+    if windows.is_file():
+        return str(windows)
+    posix = repo / ".venv" / "bin" / "python"
+    if posix.is_file():
+        return str(posix)
+    return sys.executable
+
+
+def _load_report(repo: Path) -> dict[str, object]:
+    path = repo / DATA_ROOT / "rd16h-final-report-v1.json"
+    if not path.is_file():
+        raise CompletionError(f"Missing RD16-H final report: {path}")
+    raw: object = json.loads(path.read_text(encoding="utf-8"))
+    if not isinstance(raw, dict):
+        raise CompletionError("RD16-H final report must be an object.")
+    report = cast(dict[str, object], raw)
+    expected = {
+        "decision": (
+            "RD16H_COMPOSITE_ALPHA_RETURN_EXPANSION_AND_BULL_CAPTURE_REMEDIATION_COMPLETED"
+        ),
+        "technical_status": "COMPLETED",
+        "evidence_classification": ("RETURN_EXPANSION_EVIDENCE_EXTRACTED"),
+        "architecture_id": "COMPOSITE_ALPHA_V1",
+        "variants_evaluated": 10,
+        "variants_total": 10,
+        "optimization_performed": False,
+        "architecture_changed": False,
+        "winner_selected": False,
+        "production_authorized": False,
+    }
+    for key, expected_value in expected.items():
+        if report.get(key) != expected_value:
+            raise CompletionError(f"Unexpected RD16-H report field {key}: {report.get(key)!r}")
+    next_stage = report.get("next_stage")
+    if next_stage not in ALLOWED_NEXT_STAGES:
+        raise CompletionError(f"Unexpected RD16-H next stage: {next_stage!r}")
+    technical = report.get("technical_gates")
+    if not isinstance(technical, dict):
+        raise CompletionError("RD16-H technical_gates is missing.")
+    for key in (
+        "rd16g_ready",
+        "rd16g_outputs_verified",
+        "rd16f_local_ledgers_verified",
+        "rd16e_component_ledgers_verified",
+        "all_ten_variants_evaluated",
+        "deterministic_replay_match",
+        "frozen_inputs_unchanged",
+        "sealed_cutoff_respected",
+        "spot_only",
+        "long_only",
+        "maximum_positions_three",
+        "same_symbol_overlap_prohibited",
+        "risk_multipliers_non_compounding",
+    ):
+        if technical.get(key) is not True:
+            raise CompletionError(f"RD16-H technical gate failed: {key}")
+    for key in (
+        "test_2025_accessed",
+        "holdout_2026_accessed",
+        "dune_api_called",
+        "optimization_performed",
+        "winner_selected",
+        "production_authorized",
+    ):
+        if technical.get(key) is True:
+            raise CompletionError(f"RD16-H forbidden flag is true: {key}")
+    return report
+
+
+def _generated_paths(repo: Path) -> tuple[list[str], list[str]]:
+    data_root = repo / DATA_ROOT
+    if not data_root.is_dir():
+        raise CompletionError(f"Missing RD16-H data directory: {data_root}")
+    data_paths = sorted(
+        path.relative_to(repo).as_posix() for path in data_root.iterdir() if path.is_file()
+    )
+    if not data_paths:
+        raise CompletionError("No RD16-H data outputs were generated.")
+    report_paths: list[str] = []
+    for report in GENERATED_REPORTS:
+        if not (repo / report).is_file():
+            raise CompletionError(f"Missing RD16-H report: {report}")
+        report_paths.append(report.as_posix())
+    return data_paths, sorted(report_paths)
+
+
+def build_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(description="Run, validate, commit and push RD16-H.")
+    parser.add_argument("--repo", type=Path, required=True)
+    parser.add_argument("--no-push", action="store_true")
+    return parser
+
+
+def main(argv: Sequence[str] | None = None) -> None:
+    arguments = build_parser().parse_args(list(argv) if argv is not None else None)
+    repo = arguments.repo.resolve()
+    if not (repo / ".git").is_dir():
+        raise CompletionError(f"Not a Git repository: {repo}")
+
+    branch = _git(repo, "branch", "--show-current")
+    if branch != EXPECTED_BRANCH:
+        raise CompletionError(f"Expected branch {EXPECTED_BRANCH}, found {branch}")
+    _git(repo, "fetch", "origin", EXPECTED_BRANCH, capture=False)
+    local = _git(repo, "rev-parse", "HEAD")
+    remote = _git(
+        repo,
+        "rev-parse",
+        f"origin/{EXPECTED_BRANCH}",
+    )
+    if local != remote:
+        raise CompletionError("Local and remote heads differ before RD16-H.")
+    subject = _git(repo, "log", "-1", "--pretty=%s")
+    if subject != IMPLEMENTATION_SUBJECT:
+        raise CompletionError("RD16-H implementation commit is not at HEAD: " + subject)
+    tracked = _git(
+        repo,
+        "status",
+        "--short",
+        "--untracked-files=no",
+    )
+    if tracked:
+        raise CompletionError("Tracked changes exist before RD16-H completion:\n" + tracked)
+
+    python = _python(repo)
+    targets = (
+        "src/spotbot/research/rd16h_expansion.py",
+        "src/spotbot/research/rd16h_evaluation.py",
+        "scripts/research/run_rd16h_return_expansion.py",
+        "scripts/research/complete_rd16h_return_expansion.py",
+        "tests/research/test_rd16h_return_expansion.py",
+    )
+    _run((python, "-m", "py_compile", *targets), cwd=repo)
+    _run((python, "-m", "ruff", "check", *targets), cwd=repo)
+    _run(
+        (python, "-m", "ruff", "format", "--check", *targets),
+        cwd=repo,
+    )
+    _run(
+        (
+            python,
+            "-m",
+            "mypy",
+            "src/spotbot/research/rd16h_expansion.py",
+            "src/spotbot/research/rd16h_evaluation.py",
+            "--strict",
+        ),
+        cwd=repo,
+    )
+    _run(
+        (
+            python,
+            "-m",
+            "pytest",
+            "tests/research/test_rd16h_return_expansion.py",
+            "-q",
+            "-W",
+            "error",
+        ),
+        cwd=repo,
+    )
+    _run(
+        (
+            python,
+            "scripts/research/run_rd16h_return_expansion.py",
+            "--repo",
+            str(repo),
+        ),
+        cwd=repo,
+    )
+    _run(
+        (
+            python,
+            "-m",
+            "pytest",
+            "tests/research",
+            "-q",
+            "-W",
+            "error",
+        ),
+        cwd=repo,
+    )
+    _run(
+        (python, "-m", "pytest", "-q", "-W", "error"),
+        cwd=repo,
+    )
+    _git(repo, "diff", "--check", capture=False)
+
+    report = _load_report(repo)
+    data_paths, report_paths = _generated_paths(repo)
+    _git(repo, "add", "--", *data_paths, capture=False)
+    _git(
+        repo,
+        "add",
+        "-f",
+        "--",
+        *report_paths,
+        capture=False,
+    )
+    _git(repo, "diff", "--cached", "--check", capture=False)
+    staged = [
+        line.replace("\\", "/")
+        for line in _git(
+            repo,
+            "diff",
+            "--cached",
+            "--name-only",
+        ).splitlines()
+        if line
+    ]
+    unexpected = [
+        path
+        for path in staged
+        if not (
+            path.startswith("data/research/rd16h/") or path.startswith("reports/research/rd16h-")
+        )
+    ]
+    if unexpected:
+        raise CompletionError("Unexpected files staged with RD16-H: " + ", ".join(unexpected))
+    _git(
+        repo,
+        "commit",
+        "-m",
+        RESULT_SUBJECT,
+        capture=False,
+    )
+    result_commit = _git(repo, "rev-parse", "HEAD")
+
+    if not arguments.no_push:
+        _git(
+            repo,
+            "push",
+            "origin",
+            EXPECTED_BRANCH,
+            capture=False,
+        )
+        _git(
+            repo,
+            "fetch",
+            "origin",
+            EXPECTED_BRANCH,
+            capture=False,
+        )
+        remote_after = _git(
+            repo,
+            "rev-parse",
+            f"origin/{EXPECTED_BRANCH}",
+        )
+        if result_commit != remote_after:
+            raise CompletionError("RD16-H result commit did not reach remote.")
+
+    tracked_after = _git(
+        repo,
+        "status",
+        "--short",
+        "--untracked-files=no",
+    )
+    if tracked_after:
+        raise CompletionError("Tracked changes remain after RD16-H:\n" + tracked_after)
+
+    print("\nRD16-H COMPLETE")
+    print(f"commit={result_commit}")
+    for key in (
+        "decision",
+        "architecture_id",
+        "variants_evaluated",
+        "retained_variant_count",
+        "promising_variant_count",
+        "strategic_objective_met_count",
+        "retained_variants",
+        "next_stage",
+    ):
+        print(f"{key}={report[key]}")
+
+
+if __name__ == "__main__":
+    main()
