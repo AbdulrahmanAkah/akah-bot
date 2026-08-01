@@ -1,0 +1,54 @@
+{
+  "architecture_id": "COMPOSITE_ALPHA_V3",
+  "baseline_commit": "8bae71f27907c77200dd8aeb4f012478f4c065b5",
+  "branch": "research/rd09b-market-level-native-chain-feasibility-v2",
+  "cost_multipliers": [
+    1.0,
+    1.5,
+    2.0,
+    3.0
+  ],
+  "fixed_portfolio_constraints": {
+    "base_risk_fraction": 0.005,
+    "frozen_v3_trades_preserved": true,
+    "long_only": true,
+    "maximum_open_risk_fraction": 0.0225,
+    "maximum_positions": 5,
+    "normal_holding_bars": 48,
+    "same_symbol_overlap_prohibited": true,
+    "spot_only": true,
+    "strong_bull_holding_bars": 96,
+    "strong_bull_risk_fraction": 0.0075
+  },
+  "hypotheses": [
+    "FAST_MOMENTUM_BREAKOUT",
+    "TREND_REACCELERATION",
+    "VWAP_RECLAIM_CONTINUATION",
+    "VOLATILITY_SQUEEZE_RELEASE",
+    "RELATIVE_STRENGTH_LEADER_BREAKOUT",
+    "DEFENSIVE_SWEEP_REVERSAL"
+  ],
+  "next_stage_if_none_retained": "RD16O_INTRADAY_ALPHA_ENGINE_REDESIGN_AND_SECOND_GENERATION_SIGNAL_RESEARCH",
+  "next_stage_if_retained": "RD16O_COMPOSITE_ALPHA_V4_CANDIDATE_ASSEMBLY_AND_INTERACTION_TEST",
+  "objective": "Evaluate six pre-registered causal intraday alpha hypotheses standalone and as additive overlays to frozen COMPOSITE_ALPHA_V3.",
+  "prohibitions": {
+    "2025_access": true,
+    "2026_access": true,
+    "DCA": true,
+    "Dune_API": true,
+    "Kelly": true,
+    "averaging_down": true,
+    "borrowing": true,
+    "derivatives": true,
+    "grid_search": true,
+    "leverage": true,
+    "margin": true,
+    "parameter_sweep": true,
+    "production_authorization": true,
+    "pyramiding": true,
+    "shorting": true,
+    "winner_selection": true
+  },
+  "schema_version": "rd16n-intraday-alpha-engine-diversification-v1",
+  "source_stage": "RD16M_FIXED_COMPOSITE_ALPHA_V3_BASELINE_EVALUATION_COMPLETED"
+}
