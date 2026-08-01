@@ -1,0 +1,117 @@
+{
+  "branch": "research/rd17-p0s-free-pit-market-cap-source-v1",
+  "candidate_generation_stage_authorized": false,
+  "candidate_sources": [
+    {
+      "access_status": "REJECTED_HISTORY_OR_CREDENTIAL_GATE",
+      "circulating_market_cap": true,
+      "free_for_full_2019_2024": false,
+      "historical_ranking": false,
+      "provider": "coingecko_demo",
+      "reason": "Free/demo historical access and complete 2019-2024 ranked snapshots are not proven by the public plan; a credential is required.",
+      "role": "CANDIDATE_PRIMARY_SOURCE",
+      "stable_identity": true,
+      "timing_proven": false
+    },
+    {
+      "access_status": "PUBLIC_REFERENCE_PAGE_FIXTURE_ONLY",
+      "circulating_market_cap": true,
+      "free_for_full_2019_2024": false,
+      "historical_ranking": true,
+      "provider": "coinmarketcap_public",
+      "reason": "Public historical pages are represented by the frozen top-10 reference fixtures; no immutable top-30 archive or independent validation is registered.",
+      "role": "REFERENCE_SOURCE_RECONSTRUCTION",
+      "stable_identity": false,
+      "timing_proven": false
+    },
+    {
+      "access_status": "REJECTED_FREE_HISTORY_LIMIT",
+      "circulating_market_cap": false,
+      "free_for_full_2019_2024": false,
+      "historical_ranking": false,
+      "provider": "coinpaprika_public",
+      "reason": "Public/free historical OHLC access is limited; no complete free 2019-2024 market-cap-ranked panel is available.",
+      "role": "CANDIDATE_PRIMARY_SOURCE",
+      "stable_identity": true,
+      "timing_proven": false
+    },
+    {
+      "access_status": "REJECTED_SEMANTICS_OR_COVERAGE",
+      "circulating_market_cap": false,
+      "free_for_full_2019_2024": false,
+      "historical_ranking": false,
+      "provider": "cryptocompare_public",
+      "reason": "Public historical OHLC endpoints do not provide a proven PIT circulating-market-cap-ranked universe.",
+      "role": "CANDIDATE_PRIMARY_SOURCE",
+      "stable_identity": false,
+      "timing_proven": false
+    },
+    {
+      "access_status": "NO_QUALIFYING_LOCAL_DATASET",
+      "circulating_market_cap": false,
+      "free_for_full_2019_2024": false,
+      "historical_ranking": false,
+      "provider": "open_dataset_local_scan",
+      "reason": "No locally registered, licensed, causal 2019-2024 asset-level circulating market-cap archive was found.",
+      "role": "CANDIDATE_PRIMARY_SOURCE",
+      "stable_identity": false,
+      "timing_proven": false
+    },
+    {
+      "access_status": "AUDIT_ONLY_NO_MANUAL_EXPORTS",
+      "circulating_market_cap": true,
+      "free_for_full_2019_2024": false,
+      "historical_ranking": false,
+      "provider": "tradingview_free_manual",
+      "reason": "CRYPTOCAP series may audit individual assets; the current screener cannot reconstruct historical PIT membership and no manual exports were supplied.",
+      "role": "SECONDARY_INDEPENDENT_MARKET_CAP_AUDIT_SOURCE",
+      "stable_identity": true,
+      "timing_proven": false
+    }
+  ],
+  "clean_pass": false,
+  "decision": "RD17_P0S_NO_FREE_SOURCE_MEETS_PIT_REQUIREMENTS",
+  "dune_api_called": false,
+  "frozen_snapshot_dates": [
+    "2021-05-09",
+    "2022-06-26",
+    "2023-10-22",
+    "2024-03-10"
+  ],
+  "gate_results": {
+    "circulating_market_cap_proven": false,
+    "four_snapshots_retrieved_lawfully": true,
+    "free_complete_2019_2024": false,
+    "identity_collisions_resolved": true,
+    "minimum_thirty_eligible_assets": false,
+    "no_estimated_or_fdv_fallback": true,
+    "offline_parser_deterministic": true,
+    "raw_evidence_preserved": true,
+    "sealed_years_not_accessed": true,
+    "timing_pass": false,
+    "twenty_four_reference_top6_observations": true
+  },
+  "holdout_2026_accessed": false,
+  "independent_source_confirmed": false,
+  "limitations": [
+    "CMC public rows are reference-equivalent rather than independent.",
+    "Frozen CMC fixtures contain top-10 rows, not a verified top-30 archive.",
+    "Provider publication/availability timing is not proven for a clean causal gate.",
+    "No lawful free source with complete 2019-2024 PIT circulating market-cap history was found."
+  ],
+  "metric_definition": "CIRCULATING_MARKET_CAP_USD",
+  "network_requests": 0,
+  "next_stage": "RD17_BLOCKED_PENDING_FREE_PIT_SOURCE",
+  "optimization_performed": false,
+  "production_authorized": false,
+  "raw_fixture_sha256": "ea3ec8876062c9e1d96d5ec71b0ca9f4367e462fa12d2d69f3a7734b1a216c3f",
+  "reference_equivalent_source": "coinmarketcap_public",
+  "reference_top6_exact_set_matches": 4,
+  "reference_top6_rank_matches": 4,
+  "schema_version": "rd17-p0s-final-report-v1",
+  "selected_source": null,
+  "source_commit": "7bb8db9eadac298bc28efa0b2ab7a8dc589240c3",
+  "stage": "RD17_P0S_ALTERNATE_PIT_MARKET_CAP_SOURCE_SELECTION",
+  "test_2025_accessed": false,
+  "trading_run_authorized": false
+}

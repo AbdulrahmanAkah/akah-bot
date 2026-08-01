@@ -1,0 +1,73 @@
+{
+  "schema_version": "rd17-p0s-free-pit-market-cap-source-selection-v1",
+  "source_commit": "7bb8db9eadac298bc28efa0b2ab7a8dc589240c3",
+  "stage": "RD17_P0S_ALTERNATE_PIT_MARKET_CAP_SOURCE_SELECTION",
+  "free_only_eligibility_rule": "The complete 2019-2024 history must be retrievable at zero monetary cost without a temporary trial, card, paid extension, access-control bypass, or current-supply look-ahead.",
+  "permitted_candidate_sources": [
+    "CoinMarketCap public historical pages",
+    "CoinGecko public or Demo",
+    "CoinPaprika public API",
+    "CoinDesk/CryptoCompare public API",
+    "licensed open downloadable datasets",
+    "TradingView CRYPTOCAP manual audit only"
+  ],
+  "permitted_hosts": [
+    "coinmarketcap.com",
+    "api.coingecko.com",
+    "docs.coingecko.com",
+    "coinpaprika.com",
+    "api.coinpaprika.com",
+    "min-api.cryptocompare.com",
+    "tradingview.com"
+  ],
+  "frozen_snapshot_dates": [
+    "2021-05-09",
+    "2022-06-26",
+    "2023-10-22",
+    "2024-03-10"
+  ],
+  "metric_definition": "circulating market capitalization in USD at the observation time",
+  "identity_requirements": [
+    "stable provider asset ID",
+    "canonical identity with temporal aliases where known",
+    "no unresolved symbol collisions",
+    "stablecoin, wrapped and duplicate-network exclusions are explicit"
+  ],
+  "availability_time_requirements": [
+    "observation and provider publication times are UTC-aware",
+    "available_at is proven or conservatively bounded",
+    "no current supply is projected backward",
+    "no observation after the sealed cutoff"
+  ],
+  "exclusion_policy": [
+    "stablecoins and cash equivalents",
+    "wrapped assets",
+    "duplicate network representations",
+    "unresolved or invalid identities"
+  ],
+  "ranking_rule": "positive finite circulating market_cap_usd descending, then canonical_asset_id ascending as deterministic tie-breaker",
+  "source_selection_gates": [
+    "free complete 2019-2024 coverage",
+    "four snapshots retrieved lawfully",
+    "at least thirty eligible historical assets per snapshot unless source proves fewer existed",
+    "all twenty-four reference Top-6 observations covered",
+    "identity collisions resolved",
+    "circulating market-cap semantics proven",
+    "no estimated, FDV or total-supply fallback",
+    "PIT timing passes",
+    "raw evidence and deterministic offline parser preserved",
+    "normalized parser hash is stable",
+    "sealed years are not accessed"
+  ],
+  "no_optimization": true,
+  "no_trading": true,
+  "sealed_data_boundary": "No 2025 or 2026 data, current survivor lists, or latest endpoints may enter the research panel.",
+  "stop_conditions": [
+    "RD17_P0S_NO_FREE_SOURCE_MEETS_PIT_REQUIREMENTS",
+    "RD17_P0S_FREE_SOURCE_ACCESS_BLOCKED",
+    "RD17_P0S_FREE_SOURCE_SEMANTICS_UNRESOLVED"
+  ],
+  "candidate_generation_stage_authorized": false,
+  "production_authorized": false,
+  "trading_run_authorized": false
+}
