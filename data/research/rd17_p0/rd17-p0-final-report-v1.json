@@ -1,0 +1,43 @@
+{
+  "candidate_generation_stage_authorized": false,
+  "comparison_gates": {
+    "all_snapshot_comparison_gates": false,
+    "common_rank_displacement_lte_2": false,
+    "exact_top6_set_match_all_snapshots": false,
+    "four_snapshots_present": true,
+    "market_cap_unit_ratio_within_bounds": true,
+    "minimum_five_of_six_overlap_each": false,
+    "timing_and_local_unit_integrity": true
+  },
+  "daily_decision_lag_days": 1,
+  "decision": "RD17_P0_UNIVERSE_METHOD_REJECTED",
+  "exact_top6_snapshot_match_count": 0,
+  "factorial_shapley_required": true,
+  "holdout_2026_accessed": false,
+  "hysteresis_sensitivity": "ENTER_TOP6_RETAIN_THROUGH_TOP8",
+  "independent_source": "COINMARKETCAP_HISTORICAL_SNAPSHOTS",
+  "manual_snapshot_count": 4,
+  "maximum_rank_displacement_observed": 3,
+  "mean_jaccard_similarity": 0.5535714285714286,
+  "mean_top6_overlap": 4.25,
+  "minimum_top6_overlap_observed": 4,
+  "next_stage": "RD17_P0_RANKING_METHOD_REPAIR_REQUIRED",
+  "optimization_performed": false,
+  "prerequisite_a2a_decision": "A2_LIQUIDITY_METRICS_CONFIRMED_SHARED_FLOOR_EVENT",
+  "primary_universe_role": "RD16_COMPARABILITY_ANCHOR_NOT_OPTIMUM_CLAIM",
+  "primary_universe_size": 6,
+  "production_authorized": false,
+  "rd17_trading_run_authorized": false,
+  "schema_version": "rd17-p0-manual-universe-verification-v1",
+  "source_commit": "734970bdeb7edf1925db6a19b06569ffdddebff8",
+  "stage": "RD17_P0_UNIVERSE_PROTOCOL_AND_MANUAL_RANK_VERIFICATION",
+  "structural_universe_sensitivities": [
+    4,
+    6,
+    8,
+    10
+  ],
+  "test_2025_accessed": false,
+  "timing_and_unit_checks_passed": true,
+  "universe_first_invariant_registered": true
+}
