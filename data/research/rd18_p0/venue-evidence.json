@@ -1,0 +1,18 @@
+{
+  "config_path": "config/assets.yaml",
+  "config_unchanged": true,
+  "confirmed": true,
+  "current_symbols_used_for_membership": false,
+  "evidence": [
+    "config/assets.yaml: exchange: kucoin",
+    "src/spotbot/research/daily_history.py: DailyHistoryPolicy.exchange_id defaults to kucoin",
+    "src/spotbot/research/kucoin_daily_history.py: KuCoin Spot daily parser",
+    "scripts/research/acquire_rd13_long_history.py: api.kucoin.com Spot acquisition"
+  ],
+  "execution_venue": "KUCOIN_SPOT",
+  "official_documentation": [
+    "https://www.kucoin.com/docs-new/rest/spot-trading/market-data/get-klines",
+    "https://www.kucoin.com/docs-new/rest/spot-trading/market-data/get-announcements",
+    "https://www.kucoin.com/docs-new/rest/spot-trading/market-data/get-all-currencies"
+  ]
+}

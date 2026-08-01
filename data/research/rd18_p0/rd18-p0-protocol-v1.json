@@ -1,0 +1,180 @@
+{
+  "schema_version": "rd18-p0-kucoin-spot-liquidity-protocol-v1",
+  "source_commit": "b2ff6dd38f447bb5d2fda3b9f066737fcd31545d",
+  "stage": "RD18_P0_KUCOIN_SPOT_LIQUIDITY_SOURCE_FEASIBILITY",
+  "execution_venue": "KUCOIN_SPOT",
+  "venue_evidence": [
+    "config/assets.yaml: exchange: kucoin",
+    "src/spotbot/research/daily_history.py: DailyHistoryPolicy.exchange_id defaults to kucoin",
+    "src/spotbot/research/kucoin_daily_history.py: KuCoin Spot daily parser",
+    "scripts/research/acquire_rd13_long_history.py: api.kucoin.com Spot acquisition"
+  ],
+  "source_hosts": [
+    "api.kucoin.com",
+    "www.kucoin.com"
+  ],
+  "permitted_endpoints": [
+    "/api/v1/market/candles",
+    "/api/ua/v1/market/kline",
+    "/api/v3/announcements",
+    "/api/v3/currencies"
+  ],
+  "research_period": {
+    "start": "2019-01-01T00:00:00Z",
+    "end_exclusive": "2025-01-01T00:00:00Z",
+    "sealed_years": [
+      2025,
+      2026
+    ]
+  },
+  "announcement_discovery_period": {
+    "start": "2017-09-01T00:00:00Z",
+    "end_exclusive": "2025-01-01T00:00:00Z",
+    "purpose": "historical listing and delisting discovery only; not market observations"
+  },
+  "quote_currency": "USDT",
+  "spot_only": true,
+  "candidate_discovery": {
+    "channels": [
+      "official_listing_announcements",
+      "official_delisting_announcements",
+      "validated_historical_klines",
+      "immutable_repository_kucoin_evidence_seed",
+      "current_currency_metadata_supplement_only"
+    ],
+    "current_symbols_as_membership_source": false,
+    "explicit_base_usdt_pair_required": true
+  },
+  "identity": {
+    "provider_identity": "KuCoin currency code and symbol evidence",
+    "canonical_layer": "spotbot.research.universe_identity",
+    "temporal_aliases_required": true,
+    "unresolved_collisions_rejected": true
+  },
+  "liquidity": {
+    "primary_metric": "trailing_28d_median_daily_quote_volume_usdt",
+    "window_calendar_days": 28,
+    "minimum_valid_days": 26,
+    "decision_day_excluded": true,
+    "diagnostics": [
+      "trailing_28d_sum_quote_volume_usdt",
+      "trailing_28d_mean_quote_volume_usdt",
+      "trailing_7d_median_quote_volume_usdt",
+      "valid_day_count",
+      "missing_day_count",
+      "zero_volume_day_count",
+      "largest_day_share",
+      "listing_age_days",
+      "days_since_last_valid_candle"
+    ]
+  },
+  "eligibility": {
+    "minimum_listing_age_calendar_days": 90,
+    "observation_coverage": "26_of_preceding_28_calendar_days",
+    "finite_nonnegative_quote_volume": true,
+    "exclude_stablecoins_cash_fiat": true,
+    "exclude_leveraged_tokens": true,
+    "exclude_wrapped_bridged_staking_duplicates": true,
+    "historical_inactivity_respected": true,
+    "future_observations_forbidden": true
+  },
+  "timing": {
+    "rebalance_schedule": "MONDAY_00:00:00Z_WEEKLY",
+    "decision_cutoff": "SATURDAY_00:00:00Z_CLOSE_OR_EARLIER",
+    "rule": "Monday decision uses only completed daily candles whose close is at least 24 hours before decision; Sunday is excluded because historical publication delay is not proven.",
+    "availability_delay_hours": 24,
+    "observation_close_must_precede_decision": true
+  },
+  "ranking": {
+    "sort": [
+      "liquidity_descending",
+      "listing_age_descending",
+      "canonical_asset_id_ascending"
+    ],
+    "top_n": [
+      4,
+      6,
+      8,
+      10,
+      30
+    ],
+    "hysteresis": {
+      "entry_rank": 6,
+      "retention_rank": 8,
+      "vacancy_fill": "highest_ranked_eligible_non_incumbent",
+      "fewer_than_six_allowed_only_when_fewer_than_six_eligible": true
+    }
+  },
+  "exclusions": [
+    "USDT",
+    "USDC",
+    "BUSD",
+    "DAI",
+    "TUSD",
+    "USDP",
+    "FDUSD",
+    "EUR_AND_FIAT_PROXIES",
+    "LEVERAGED_SUFFIXES_3L_3S_UP_DOWN_BULL_BEAR",
+    "WRAPPED_BRIDGED_STAKING_REPRESENTATIONS",
+    "SYNTHETIC_PRODUCTS",
+    "UNRESOLVED_SYMBOL_COLLISIONS",
+    "INVALID_OR_TEST_SYMBOLS"
+  ],
+  "p0_probe": {
+    "months": [
+      "2019-03",
+      "2019-11",
+      "2020-06",
+      "2021-05",
+      "2022-06",
+      "2023-10",
+      "2024-03"
+    ],
+    "symbols": [
+      "BTC-USDT",
+      "ETH-USDT",
+      "KCS-USDT",
+      "ADA-USDT",
+      "DOT-USDT",
+      "SOL-USDT",
+      "LUNA-USDT",
+      "FTT-USDT",
+      "NANO-USDT",
+      "INVALID-RD18-USDT"
+    ],
+    "sample_selection": "preregistered major, 2019-2024 listings, delisted/inactive, sparse, renamed/migrated where available, and one invalid pair"
+  },
+  "feasibility_gates": [
+    "venue_confirmed_kucoin_spot",
+    "public_free_no_credentials",
+    "spot_kline_history_covers_required_dates",
+    "quote_transaction_amount_semantics_validated",
+    "historical_delisted_pair_retention_or_equivalent",
+    "discovery_not_current_survivor_only",
+    "official_historical_discovery_adequate",
+    "pre_2019_and_2019_2024_candidates_covered",
+    "temporal_migrations_and_collisions_audited",
+    "no_post_2024_market_observations",
+    "conservative_timing_implementable",
+    "offline_normalized_hash_reproduces",
+    "raw_evidence_and_manifests_complete",
+    "no_futures_data",
+    "no_trading_or_optimization"
+  ],
+  "decisions": {
+    "success": "RD18_P0_KUCOIN_SPOT_LIQUIDITY_SOURCE_CONFIRMED",
+    "success_next": "RD18_P1_KUCOIN_LIQUIDITY_UNIVERSE_RECONSTRUCTION",
+    "inventory_block": "RD18_P0_KUCOIN_HISTORICAL_SYMBOL_INVENTORY_INSUFFICIENT",
+    "inventory_block_next": "RD18_BLOCKED_PENDING_CAUSAL_KUCOIN_SYMBOL_INVENTORY",
+    "kline_block": "RD18_P0_KUCOIN_KLINE_HISTORY_INSUFFICIENT",
+    "kline_block_next": "RD18_BLOCKED_PENDING_KUCOIN_HISTORICAL_MARKET_DATA",
+    "timing_block": "RD18_P0_KUCOIN_TIMING_UNRESOLVED",
+    "timing_block_next": "RD18_BLOCKED_PENDING_CAUSAL_AVAILABILITY_RULE",
+    "identity_block": "RD18_P0_KUCOIN_IDENTITY_INSUFFICIENT",
+    "identity_block_next": "RD18_BLOCKED_PENDING_TEMPORAL_IDENTITY_MAPPING"
+  },
+  "no_trading": true,
+  "no_optimization": true,
+  "candidate_generation_authorized": false,
+  "production_authorized": false
+}
