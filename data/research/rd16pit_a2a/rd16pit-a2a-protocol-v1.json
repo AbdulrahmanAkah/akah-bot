@@ -1,0 +1,30 @@
+{
+  "audit_requirements": [
+    "Independently reconstruct every hourly cash and equity row.",
+    "Verify cash and equity accounting identities.",
+    "Compare independent curves to the official A2 engine.",
+    "Compare saved A2 dynamic curves at 1x and 2x.",
+    "Record the timestamp and event state of every minimum cash and minimum equity floor.",
+    "Record open positions and marks at each floor.",
+    "Distinguish shared-event equality from numerical coincidence."
+  ],
+  "cost_multipliers": [
+    1.0,
+    1.5,
+    2.0,
+    3.0
+  ],
+  "optimization_performed": false,
+  "production_authorized": false,
+  "purpose": "Verify the provenance of identical or near-identical cash and equity floors in A2.",
+  "rd16_u_authorized": false,
+  "rd17_trading_run_authorized": false,
+  "schema_version": "rd16-pit-a2a-protocol-v1",
+  "scopes": [
+    "FROZEN_V3_CONTROL",
+    "PIT_DYNAMIC_REROUTE"
+  ],
+  "sealed_cutoff": "2025-01-01T00:00:00Z",
+  "source_commit": "3700cc452990a737947ee2a1ffd0eaf20571698a",
+  "stage": "RD16_PIT_A2A_CASH_EQUITY_FLOOR_PROVENANCE_AUDIT"
+}
