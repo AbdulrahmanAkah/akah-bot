@@ -1,0 +1,36 @@
+{
+  "schema_version": "rd16r-universe-expansion-liquidity-tier-research-v1",
+  "stage": "RD16R",
+  "decision_target": "RD16R_UNIVERSE_EXPANSION_AND_LIQUIDITY_TIER_RESEARCH_COMPLETED",
+  "source_stage": "RD16Q_SIGNAL_DOMAIN_EXPANSION_AND_ALTERNATIVE_DATA_RESEARCH_COMPLETED",
+  "exchange": "kucoin",
+  "instrument": "SPOT",
+  "side": "LONG_ONLY",
+  "quote_currency": "USDT",
+  "download_since": "2020-01-01T00:00:00+00:00",
+  "sealed_until_exclusive": "2025-01-01T00:00:00+00:00",
+  "timeframes": ["1h", "4h", "1d", "1w"],
+  "liquidity_tiers": {
+    "A": "ranks 1-6 by median approximate daily quote volume",
+    "B": "ranks 7-12",
+    "C": "ranks 13 and below"
+  },
+  "eligibility_minimum_rows": {
+    "1h": 8760,
+    "4h": 2190,
+    "1d": 365,
+    "1w": 52
+  },
+  "constraints": {
+    "derivatives": false,
+    "margin": false,
+    "leverage": false,
+    "shorting": false,
+    "dune": false,
+    "optimization": false,
+    "winner_selection": false,
+    "production_authorization": false,
+    "test_2025_access": false,
+    "holdout_2026_access": false
+  }
+}
