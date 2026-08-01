@@ -1,0 +1,94 @@
+{
+  "factorial_attribution": {
+    "cells": [
+      "ORIGINAL_FIXED_UNIVERSE",
+      "REMOVAL_ONLY_RESTRICTED",
+      "ADDITION_ONLY_DIAGNOSTIC",
+      "FULL_PIT_UNIVERSE"
+    ],
+    "factors": [
+      "REMOVE_NON_PIT_OLD_UNIVERSE",
+      "ADD_TRUE_PIT_MISSING_ASSETS"
+    ],
+    "shapley_required": true
+  },
+  "holdout_2026_accessed": false,
+  "manual_snapshots": [
+    {
+      "independent_source": "https://coinmarketcap.com/historical/20210509/",
+      "rebalance_date": "2021-05-10",
+      "regime": "2021_BULL",
+      "snapshot_date": "2021-05-09"
+    },
+    {
+      "independent_source": "https://coinmarketcap.com/historical/20220626/",
+      "rebalance_date": "2022-06-27",
+      "regime": "2022_BEAR_STRESS",
+      "snapshot_date": "2022-06-26"
+    },
+    {
+      "independent_source": "https://coinmarketcap.com/historical/20231022/",
+      "rebalance_date": "2023-10-23",
+      "regime": "2023_RECOVERY",
+      "snapshot_date": "2023-10-22"
+    },
+    {
+      "independent_source": "https://coinmarketcap.com/historical/20240310/",
+      "rebalance_date": "2024-03-11",
+      "regime": "2024_ACCELERATION",
+      "snapshot_date": "2024-03-10"
+    }
+  ],
+  "manual_verification_gates": {
+    "exact_set_match_for_clean_pass": true,
+    "market_cap_ratio_bounds": [
+      0.25,
+      4.0
+    ],
+    "maximum_common_rank_displacement": 2,
+    "minimum_top6_overlap_each": 5,
+    "one_day_lag_required": true,
+    "positive_usd_market_caps_required": true,
+    "snapshot_count": 4
+  },
+  "optimization_performed": false,
+  "pre_registered_operational_sensitivity": {
+    "entry_rule": "enter when rank <= 6",
+    "name": "TOP6_ENTER_TOP8_EXIT_BUFFER",
+    "retention_rule": "remain eligible while rank <= 8",
+    "selection_by_return_forbidden": true
+  },
+  "primary_reference": {
+    "daily_decision_rule": "Day D uses information available from day D-1.",
+    "decision_lag_days": 1,
+    "duplicate_network_representation_exclusion": true,
+    "membership_metric": "circulating market capitalization in USD",
+    "reason": "Direct comparability anchor to RD16 and compatibility with the registered portfolio capacity architecture.",
+    "stablecoin_exclusion": true,
+    "universe_size": 6,
+    "wrapped_asset_exclusion": true
+  },
+  "production_authorized": false,
+  "schema_version": "rd17-p0-universe-protocol-v1",
+  "source_commit": "734970bdeb7edf1925db6a19b06569ffdddebff8",
+  "stage": "RD17_P0_UNIVERSE_PROTOCOL_AND_MANUAL_RANK_VERIFICATION",
+  "structural_universe_sensitivities": {
+    "primary": 6,
+    "role": "diagnostic structural sensitivity, not winner selection",
+    "sizes": [
+      4,
+      6,
+      8,
+      10
+    ]
+  },
+  "test_2025_accessed": false,
+  "trading_run_authorized": false,
+  "universe_first_invariant": {
+    "full_validation_minimum_coverage": 0.95,
+    "historical_current-survivor_lists_forbidden": true,
+    "manual_snapshot_check_required_before_full_run": true,
+    "restricted_runs_cannot_authorize_production": true,
+    "rule": "Point-in-time universe membership must be validated before signal or parameter research."
+  }
+}
