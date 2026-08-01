@@ -1,0 +1,33 @@
+{
+  "candidate_generation_authorized": false,
+  "gates": {
+    "current_only_exact_top6_all_four": true,
+    "independent_top6_current_metric_coverage": 1.0,
+    "no_sealed_period_access": true
+  },
+  "metrics": [
+    "CapMrktCurUSD",
+    "CapMrktEstUSD"
+  ],
+  "official_endpoint": "https://community-api.coinmetrics.io/v4/timeseries/asset-metrics",
+  "optimization_performed": false,
+  "policies": [
+    "CURRENT_ONLY",
+    "ESTIMATED_ONLY",
+    "CURRENT_THEN_ESTIMATED_FALLBACK",
+    "REGISTERED_LOCAL_PANEL"
+  ],
+  "primary_semantic_requirement": "Circulating market capitalization in USD must use CapMrktCurUSD without estimated-cap fallback.",
+  "production_authorized": false,
+  "purpose": "Separate market-cap metric semantics from asset-coverage failure before any RD17 candidate generation.",
+  "schema_version": "rd17-p0r-source-metric-diagnosis-protocol-v1",
+  "snapshot_dates": [
+    "2021-05-09",
+    "2022-06-26",
+    "2023-10-22",
+    "2024-03-10"
+  ],
+  "source_commit": "aa893f3c71a9d67801174505653e89c753dc13b9",
+  "stage": "RD17_P0R_SOURCE_METRIC_DIAGNOSIS",
+  "trading_run_authorized": false
+}
