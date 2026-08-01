@@ -4,6 +4,7 @@ import argparse
 import hashlib
 import json
 import math
+import sys
 import time
 import urllib.error
 import urllib.parse
@@ -14,7 +15,11 @@ from typing import Any, Final, cast
 
 import pandas as pd
 
-from scripts.research.run_rd16pit_a1 import (
+REPO_ROOT = Path(__file__).resolve().parents[2]
+if str(REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(REPO_ROOT))
+
+from scripts.research.run_rd16pit_a1 import (  # noqa: E402
     bool_count,
     bool_mean,
     build_weekly_membership,

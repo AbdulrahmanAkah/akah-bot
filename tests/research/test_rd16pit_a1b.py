@@ -1,6 +1,9 @@
 from __future__ import annotations
 
+import subprocess
+import sys
 import urllib.parse
+from pathlib import Path
 
 import pandas as pd
 import pytest
@@ -146,3 +149,16 @@ def test_masked_pnl_partition_uses_explicit_net_pnl_column() -> None:
     )
 
     assert partition_total == frame["net_pnl"].sum()
+
+
+def test_runner_supports_direct_script_execution() -> None:
+    repo = Path(__file__).resolve().parents[2]
+    runner = repo / "scripts" / "research" / "run_rd16pit_a1b.py"
+    completed = subprocess.run(
+        [sys.executable, str(runner), "--help"],
+        cwd=repo,
+        text=True,
+        capture_output=True,
+        check=False,
+    )
+    assert completed.returncode == 0, completed.stderr
