@@ -1,0 +1,78 @@
+{
+  "schema_version": "rd16s-limited-expanded-universe-signal-research-v1",
+  "stage": "RD16S",
+  "decision_target": "RD16S_LIMITED_EXPANDED_UNIVERSE_SIGNAL_RESEARCH_COMPLETED",
+  "source_stage": "RD16R_UNIVERSE_EXPANSION_AND_LIQUIDITY_TIER_RESEARCH_COMPLETED",
+  "source_architecture": "COMPOSITE_ALPHA_V3",
+  "source_universe_size": 6,
+  "expanded_universe_size": 10,
+  "eligible_symbols": [
+    "BTC/USDT",
+    "ETH/USDT",
+    "SOL/USDT",
+    "XRP/USDT",
+    "NEAR/USDT",
+    "AVAX/USDT",
+    "ADA/USDT",
+    "LTC/USDT",
+    "LINK/USDT",
+    "ATOM/USDT"
+  ],
+  "incremental_noncore_symbols": [
+    "XRP/USDT",
+    "ADA/USDT",
+    "LTC/USDT",
+    "ATOM/USDT"
+  ],
+  "fixed_domains": [
+    "BREADTH_THRUST_LEADER_BREAKOUT",
+    "BTC_TO_ALT_ROTATION_BREAKOUT",
+    "DISPERSION_EXPANSION_LEADER",
+    "VOLUME_BREADTH_THRUST",
+    "CORRELATION_RELEASE_ROTATION"
+  ],
+  "research_design": {
+    "thresholds_changed": false,
+    "cross_sectional_internals_recomputed_across_ten_assets": true,
+    "standalone_evaluation": true,
+    "frozen_v3_additive_overlay": true,
+    "direct_comparison_to_rd16q_six_asset_results": true,
+    "noncore_contribution_attribution": true,
+    "pre_registered_combined_overlay": true,
+    "cost_multipliers": [1.0, 1.5, 2.0, 3.0]
+  },
+  "retention_policy": {
+    "candidate_count_minimum": 24,
+    "candidate_count_maximum": 1000,
+    "standalone_trade_count_minimum": 24,
+    "standalone_profit_factor_minimum": 1.15,
+    "standalone_maximum_drawdown": 0.30,
+    "overlay_minimum_return_delta_vs_v3": 0.02,
+    "overlay_profit_factor_tolerance_vs_v3": -0.05,
+    "overlay_drawdown_tolerance_vs_v3": 0.03,
+    "overlay_capture_tolerance_vs_v3": -0.005,
+    "universe_expansion_evidence": "RD16-Q overlay return improvement >= 2 percentage points OR at least 12 non-core overlay trades with positive PnL and profit factor >= 1.05"
+  },
+  "constraints": {
+    "spot_only": true,
+    "long_only": true,
+    "leverage": false,
+    "margin": false,
+    "shorting": false,
+    "derivatives": false,
+    "borrowing": false,
+    "interest": false,
+    "dca": false,
+    "kelly": false,
+    "pyramiding": false,
+    "averaging_down": false,
+    "network_access": false,
+    "dune": false,
+    "optimization": false,
+    "winner_selection": false,
+    "production_authorization": false,
+    "test_2025_access": false,
+    "holdout_2026_access": false
+  },
+  "strategic_monthly_target": 0.24
+}
