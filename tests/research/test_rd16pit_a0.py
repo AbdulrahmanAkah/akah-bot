@@ -11,6 +11,7 @@ from scripts.research.run_rd16pit_a0 import (
     normalize_trades,
     parse_panel,
     pit_status,
+    schedule,
 )
 
 
@@ -134,3 +135,62 @@ def test_registered_v3_trade_schema_resolves_entry_open_time() -> None:
     assert normalized["audit_symbol"].tolist() == ["BTC"]
     assert normalized["audit_entry_time"].iloc[0] == pd.Timestamp("2022-01-03T01:00:00Z")
     assert normalized["audit_net_pnl"].tolist() == [42.5]
+
+
+def test_full_v3_scope_keeps_pre_panel_trades() -> None:
+    normalized = normalize_trades(
+        pd.DataFrame(
+            {
+                "symbol": ["BTC/USDT", "ETH/USDT"],
+                "entry_open_time": [
+                    "2019-01-03T00:00:00Z",
+                    "2024-12-31T00:00:00Z",
+                ],
+                "net_pnl": [1.0, 2.0],
+            }
+        )
+    )
+    assert len(normalized) == 2
+    assert normalized["audit_entry_time"].min() == pd.Timestamp("2019-01-03T00:00:00Z")
+
+
+def test_causal_schedule_starts_in_2021() -> None:
+    decisions = schedule()
+    assert decisions[0] == pd.Timestamp("2021-01-04T00:00:00Z")
+    assert decisions[-1] == pd.Timestamp("2024-12-30T00:00:00Z")
+
+
+def test_rd16r_coverage_schema_resolves_fixed10_tradability() -> None:
+    symbols = ["BTC", "ETH", "SOL", "LINK", "AVAX", "NEAR", "XRP", "ADA", "LTC", "ATOM"]
+    coverage = pd.DataFrame(
+        {
+            "canonical_id": symbols,
+            "first_hourly_timestamp": [
+                "2019-01-01T01:00:00Z",
+                "2019-01-01T01:00:00Z",
+                "2021-09-17T01:00:00Z",
+                "2020-09-22T01:00:00Z",
+                "2021-03-21T01:00:00Z",
+                "2021-09-17T01:00:00Z",
+                "2020-01-01T01:00:00Z",
+                "2020-01-01T01:00:00Z",
+                "2020-01-01T01:00:00Z",
+                "2020-01-01T01:00:00Z",
+            ],
+            "last_hourly_timestamp": ["2025-01-01T00:00:00Z"] * 10,
+        }
+    )
+    trades = normalize_trades(
+        pd.DataFrame(
+            {
+                "symbol": ["BTC/USDT"],
+                "entry_open_time": ["2019-01-03T00:00:00Z"],
+                "net_pnl": [1.0],
+            }
+        )
+    )
+    census = coverage_bounds(coverage, trades)
+    assert census["tradability_resolved"].all()
+    assert set(census["evidence_source"]) == {"RD16R_DATA_COVERAGE"}
+    sol = census.loc[census["symbol"].eq("SOL")].iloc[0]
+    assert sol["tradable_from"] == "2021-09-17T01:00:00+00:00"

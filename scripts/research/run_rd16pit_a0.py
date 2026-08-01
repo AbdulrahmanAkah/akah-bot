@@ -9,8 +9,8 @@ from typing import Any, cast
 import pandas as pd
 
 SCHEMA_VERSION = "rd16-pit-a0-universe-selection-bias-audit-v1"
-RESEARCH_START = pd.Timestamp("2021-01-01T00:00:00Z")
-VALIDATION_START = pd.Timestamp("2022-01-01T00:00:00Z")
+RESEARCH_START = pd.Timestamp("2019-01-01T00:00:00Z")
+VALIDATION_START = pd.Timestamp("2021-01-04T00:00:00Z")
 RESEARCH_LOCK = pd.Timestamp("2025-01-01T00:00:00Z")
 DECISION_LAG = pd.Timedelta(days=1)
 FIXED6 = ("BTC", "ETH", "SOL", "LINK", "AVAX", "NEAR")
@@ -249,13 +249,36 @@ def coverage_bounds(coverage: pd.DataFrame | None, trades: pd.DataFrame) -> pd.D
         start = end = None
         source = "TRADE_LEDGER_BOUND_ONLY"
         if coverage is not None and not coverage.empty:
-            sc = first_col(coverage, ("canonical_asset", "canonical_symbol", "symbol", "asset"))
+            sc = first_col(
+                coverage,
+                (
+                    "canonical_id",
+                    "canonical_asset",
+                    "canonical_symbol",
+                    "symbol",
+                    "asset",
+                ),
+            )
             tc = first_col(coverage, ("timeframe", "interval"))
             fc = first_col(
-                coverage, ("first_timestamp", "start_timestamp", "first_open_time", "data_start")
+                coverage,
+                (
+                    "first_hourly_timestamp",
+                    "first_timestamp",
+                    "start_timestamp",
+                    "first_open_time",
+                    "data_start",
+                ),
             )
             lc = first_col(
-                coverage, ("last_timestamp", "end_timestamp", "last_open_time", "data_end")
+                coverage,
+                (
+                    "last_hourly_timestamp",
+                    "last_timestamp",
+                    "end_timestamp",
+                    "last_open_time",
+                    "data_end",
+                ),
             )
             if sc and fc and lc:
                 normalized = coverage[sc].astype(str).str.upper().str.split("/").str[0]
