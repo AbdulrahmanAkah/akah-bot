@@ -375,16 +375,31 @@ def build_long_horizon_feature_frames(
                 "rank60": "lh_rank60",
             }
         )
-        weekly = _weekly_features(market_frames[symbol]["1w"]).rename(
-            columns={
-                "timestamp": "lh_1w_timestamp",
-                "close": "lh_1w_close",
-                "ema20": "lh_1w_ema20",
-                "ema40": "lh_1w_ema40",
-                "previous_close": "lh_previous_1w_close",
-                "previous_ema20": "lh_previous_1w_ema20",
-                "ema20_slope4": "lh_1w_ema20_slope4",
-            }
+        weekly = (
+            _weekly_features(market_frames[symbol]["1w"])
+            .loc[
+                :,
+                [
+                    "timestamp",
+                    "close",
+                    "ema20",
+                    "ema40",
+                    "previous_close",
+                    "previous_ema20",
+                    "ema20_slope4",
+                ],
+            ]
+            .rename(
+                columns={
+                    "timestamp": "lh_1w_timestamp",
+                    "close": "lh_1w_close",
+                    "ema20": "lh_1w_ema20",
+                    "ema40": "lh_1w_ema40",
+                    "previous_close": "lh_previous_1w_close",
+                    "previous_ema20": "lh_previous_1w_ema20",
+                    "ema20_slope4": "lh_1w_ema20_slope4",
+                }
+            )
         )
         merged = _merge_context(
             base_features[symbol],

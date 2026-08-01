@@ -7,6 +7,7 @@ import pandas as pd
 import pytest
 
 from spotbot.research.rd16n_evaluation import PortfolioEvidence
+from spotbot.research.rd16s_signals import ELIGIBLE_SYMBOLS
 from spotbot.research.rd16t_evaluation import (
     _exit_rows,
     _holding_diagnostics,
@@ -17,6 +18,7 @@ from spotbot.research.rd16t_evaluation import (
 from spotbot.research.rd16t_signals import (
     HYPOTHESIS_BY_ID,
     HYPOTHESIS_REGISTRY,
+    build_long_horizon_feature_frames,
     hypothesis_registry_rows,
     hypothesis_signal_mask,
 )
@@ -311,3 +313,76 @@ def test_hypothesis_lookup_contains_weekly_architecture() -> None:
 
     assert hypothesis.normal_holding_bars == 720
     assert hypothesis.trail_atr_multiple == pytest.approx(3.25)
+
+
+def test_long_horizon_context_merge_preserves_hourly_ohlcv() -> None:
+    hourly_timestamps = pd.date_range(
+        "2024-01-08T01:00:00Z",
+        periods=3,
+        freq="1h",
+    )
+    hourly = pd.DataFrame(
+        {
+            "timestamp": hourly_timestamps,
+            "open": [100.0, 101.0, 102.0],
+            "high": [101.0, 102.0, 103.0],
+            "low": [99.0, 100.0, 101.0],
+            "close": [100.5, 101.5, 102.5],
+            "volume": [1_000.0, 1_100.0, 1_200.0],
+            "4h_timestamp": [pd.Timestamp("2024-01-08T00:00:00Z")] * 3,
+        }
+    )
+    daily = pd.DataFrame(
+        {
+            "timestamp": [pd.Timestamp("2024-01-07T00:00:00Z")],
+            "open": [95.0],
+            "high": [105.0],
+            "low": [94.0],
+            "close": [100.0],
+            "volume": [10_000.0],
+        }
+    )
+    weekly = pd.DataFrame(
+        {
+            "timestamp": [pd.Timestamp("2024-01-01T00:00:00Z")],
+            "open": [90.0],
+            "high": [110.0],
+            "low": [85.0],
+            "close": [100.0],
+            "volume": [50_000.0],
+        }
+    )
+
+    base_features = {symbol: hourly.copy() for symbol in ELIGIBLE_SYMBOLS}
+    market_frames = {
+        symbol: {
+            "1d": daily.copy(),
+            "1w": weekly.copy(),
+        }
+        for symbol in ELIGIBLE_SYMBOLS
+    }
+
+    frames = build_long_horizon_feature_frames(
+        base_features,
+        market_frames,
+    )
+
+    for frame in frames.values():
+        assert {
+            "open",
+            "high",
+            "low",
+            "close",
+            "volume",
+        }.issubset(frame.columns)
+        assert not {
+            "open_x",
+            "open_y",
+            "high_x",
+            "high_y",
+            "low_x",
+            "low_y",
+            "volume_x",
+            "volume_y",
+        }.intersection(frame.columns)
+        assert frame["open"].tolist() == [100.0, 101.0, 102.0]
