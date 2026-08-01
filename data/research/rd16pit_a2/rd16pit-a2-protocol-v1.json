@@ -1,0 +1,88 @@
+{
+  "control_replay": {
+    "candidate_ledger_exact": true,
+    "evaluated_ledger_exact": true,
+    "frozen_rd16m_metric_match": true,
+    "required_candidate_count": 688,
+    "required_trade_count": 567,
+    "trade_ledger_exact": true
+  },
+  "dynamic_replay": {
+    "base_risk_fraction": 0.005,
+    "candidate_source": "RD16-K STRONG_BULL_HOLD_96 candidate ledger",
+    "compression_cooldown_hours": 24,
+    "conflict_rank_recomputed_after_filter": true,
+    "cost_multipliers": [
+      1.0,
+      1.5,
+      2.0,
+      3.0
+    ],
+    "expanded_risk_fraction": 0.0075,
+    "maximum_open_risk_fraction": 0.0225,
+    "maximum_positions": 5,
+    "router_reexecuted": true,
+    "same_symbol_overlap_prohibited": true,
+    "trend_cooldown_hours": 12
+  },
+  "objective": "Re-execute the frozen COMPOSITE_ALPHA_V3 router after causal weekly PIT Top-6 filtering, measure portfolio economics and capital feasibility, and distinguish restricted registered-candidate evidence from full-market validation.",
+  "pit_universe": {
+    "complete_top30_absence_rank_lower_bound": 31,
+    "information_lag_days": 1,
+    "membership_resolution_required": 1.0,
+    "rank_limit": 6,
+    "source": "RD16-PIT-A1B corrected weekly membership",
+    "weekly_decision_day": "MONDAY"
+  },
+  "prohibitions": [
+    "2025 test access",
+    "2026 holdout access",
+    "optimization",
+    "grid search",
+    "parameter sweep",
+    "outcome-based candidate filtering",
+    "leverage",
+    "margin",
+    "shorting",
+    "futures",
+    "perpetuals",
+    "options",
+    "derivatives",
+    "borrowing",
+    "interest",
+    "DCA",
+    "Kelly sizing",
+    "pyramiding",
+    "averaging down",
+    "production authorization",
+    "RD16-U continuation"
+  ],
+  "required_metrics": [
+    "net_return",
+    "monthly_geometric_return",
+    "profit_factor",
+    "maximum_drawdown",
+    "minimum_cash",
+    "minimum_equity",
+    "capital_feasible",
+    "maximum_positions_observed",
+    "two_x_cost_net_return",
+    "two_x_cost_profit_factor",
+    "two_x_cost_minimum_cash",
+    "two_x_cost_capital_feasible",
+    "newly_admitted_trade_count",
+    "dropped_original_admission_count",
+    "full_top6_candidate_coverage_fraction"
+  ],
+  "schema_version": "rd16-pit-a2-protocol-v1",
+  "scope_limits": {
+    "full_dynamic_validation_claimed": false,
+    "full_market_signal_regeneration": false,
+    "full_top6_candidate_coverage_gate": 0.95,
+    "registered_candidate_universe_only": true
+  },
+  "source_commit": "682bf4f4029a04015086c357c645199b6cabf717",
+  "source_decision": "PIT_MATERIAL_DEGRADATION",
+  "stage": "RD16_PIT_A2_DYNAMIC_V3_REPLAY",
+  "two_x_definition": "TRANSACTION_COST_MULTIPLIER_NOT_LEVERAGE"
+}
