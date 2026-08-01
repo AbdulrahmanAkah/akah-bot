@@ -1,0 +1,39 @@
+{
+  "authorized_endpoint": [
+    "/v4/timeseries/asset-metrics"
+  ],
+  "authorized_network_host": [
+    "community-api.coinmetrics.io"
+  ],
+  "branch": "research/rd16-pit-universe-audit-v1",
+  "causality": {
+    "incomplete_snapshot_policy": "UNRESOLVED_NOT_RANKED",
+    "information_lag_days": 1,
+    "minimum_complete_snapshot_assets": 30,
+    "weekly_decision_day": "MONDAY"
+  },
+  "objective": "Acquire and validate causal daily market-cap data for 2018-12-30 through 2020-12-31, then rerun membership attribution and bounded audit.",
+  "prohibited": [
+    "catalog endpoint access",
+    "2025 test data access",
+    "2026 holdout data access",
+    "dynamic V3 replay",
+    "signal or portfolio optimization",
+    "bootstrap p-value confirmation",
+    "Benjamini-Hochberg confirmation",
+    "RD16-U continuation"
+  ],
+  "request_window": {
+    "assets": "*",
+    "end_time": "2020-12-31",
+    "frequency": "1d",
+    "metrics": [
+      "CapMrktCurUSD",
+      "CapMrktEstUSD"
+    ],
+    "start_time": "2018-12-30"
+  },
+  "schema_version": "rd16-pit-a1b-protocol-v1",
+  "source_commit": "5d7594ab8f5745502a7c34aa50111294b119a815",
+  "stage": "RD16-PIT-A1B"
+}
