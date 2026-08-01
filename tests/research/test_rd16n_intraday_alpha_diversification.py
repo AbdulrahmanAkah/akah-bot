@@ -460,3 +460,61 @@ def test_empty_hypothesis_is_rejected_without_router_failure() -> None:
     assert overlay_admitted.empty
     assert "router_decision" in standalone_evaluated.columns
     assert "router_decision" in overlay_evaluated.columns
+
+
+def test_unavailable_hypothesis_metrics_are_rejected_without_aborting() -> None:
+    hypothesis = HYPOTHESIS_BY_ID["FAST_MOMENTUM_BREAKOUT"]
+    standalone = _portfolio(
+        net_return=-1.10,
+        monthly=0.0,
+        profit_factor=0.80,
+        drawdown=1.10,
+        two_x_return=-1.20,
+        two_x_profit_factor=0.0,
+        two_x_feasible=False,
+        capture=0.0,
+        trade_count=80,
+    )
+    overlay = _portfolio(
+        net_return=-1.05,
+        monthly=0.0,
+        profit_factor=0.70,
+        drawdown=1.05,
+        two_x_return=-1.15,
+        two_x_profit_factor=0.0,
+        two_x_feasible=False,
+        capture=0.0,
+        trade_count=567,
+    )
+    overlay.metrics[1.0]["monthly_geometric_return"] = None
+    standalone.metrics[2.0]["profit_factor"] = None
+
+    decision = classify_hypothesis(
+        hypothesis=hypothesis,
+        candidate_count=100,
+        candidate_assets=6,
+        standalone_traded_assets=6,
+        standalone=standalone,
+        overlay=overlay,
+        overlay_new_trades=pd.DataFrame(
+            [
+                {
+                    "market_regime": "STRONG_BULL",
+                    "net_pnl": -100.0,
+                }
+            ]
+        ),
+        baseline={
+            "net_return": 1.0815,
+            "monthly_geometric_return": 0.0102,
+            "profit_factor": 1.505,
+            "maximum_drawdown": 0.1103,
+            "two_x_net_return": 0.594,
+            "two_x_profit_factor": 1.243,
+            "mean_high_opportunity_capture": 0.0627,
+        },
+    )
+
+    assert decision.decision == "REJECT_NEW_ENGINE"
+    assert not decision.carry_forward
+    assert not decision.strategic_objective_met

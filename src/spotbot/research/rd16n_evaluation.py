@@ -263,6 +263,14 @@ def _optional_float(value: object) -> float | None:
     return result if math.isfinite(result) else None
 
 
+def _optional_delta(
+    value: object,
+    baseline: float,
+) -> float | None:
+    numeric = _optional_float(value)
+    return numeric - baseline if numeric is not None else None
+
+
 def _records(frame: pd.DataFrame) -> list[dict[str, object]]:
     raw_records = frame.to_dict(orient="records")
     return [{str(key): value for key, value in raw.items()} for raw in raw_records]
@@ -1156,10 +1164,7 @@ def classify_hypothesis(
         overlay_1x["maximum_drawdown"],
         name="overlay_drawdown",
     )
-    overlay_monthly = _finite(
-        overlay_1x["monthly_geometric_return"],
-        name="overlay_monthly_return",
-    )
+    overlay_monthly = _optional_float(overlay_1x["monthly_geometric_return"])
     delta_return = overlay_return - baseline["net_return"]
     delta_capture = (
         overlay.mean_high_opportunity_capture - baseline["mean_high_opportunity_capture"]
@@ -1206,13 +1211,7 @@ def classify_hypothesis(
             )
             > 0.0
         ),
-        "standalone_two_x_profit_factor_gte_1": (
-            _finite(
-                standalone_2x["profit_factor"],
-                name="standalone_two_x_profit_factor",
-            )
-            >= 1.0
-        ),
+        "standalone_two_x_profit_factor_gte_1": (_metric_profit_factor(standalone_2x) >= 1.0),
         "standalone_two_x_capital_feasible": bool(standalone_2x["capital_feasible"]),
         "standalone_positive_year_fraction_gte_50pct": (
             standalone.positive_active_year_fraction >= 0.50
@@ -1245,7 +1244,9 @@ def classify_hypothesis(
         and delta_return > 0.0
         and bool(overlay_2x["capital_feasible"])
     )
-    strategic = robust and overlay_monthly >= STRATEGIC_MONTHLY_TARGET
+    strategic = (
+        robust and overlay_monthly is not None and overlay_monthly >= STRATEGIC_MONTHLY_TARGET
+    )
 
     if robust:
         decision = "RETAIN_FOR_COMPOSITE_V4_ASSEMBLY"
@@ -1806,11 +1807,10 @@ def run_rd16n_research() -> dict[str, object]:
                 - baseline["net_return"]
             ),
             "overlay_delta_monthly_return_vs_v3": (
-                _finite(
+                _optional_delta(
                     overlay_1x["monthly_geometric_return"],
-                    name="overlay_monthly_return",
+                    baseline["monthly_geometric_return"],
                 )
-                - baseline["monthly_geometric_return"]
             ),
             "overlay_delta_profit_factor_vs_v3": (
                 _metric_profit_factor(overlay_1x) - baseline["profit_factor"]
