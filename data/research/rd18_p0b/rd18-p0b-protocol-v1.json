@@ -1,0 +1,151 @@
+{
+  "schema_version": "rd18-p0b-protocol-v1",
+  "stage": "RD18_P0B_KUCOIN_INVENTORY_CLOSURE",
+  "starting_commit": "12028034259216329ae7b2103bea89f006f4b621",
+  "execution_venue": "KUCOIN_SPOT",
+  "source_commit_p0": "b2ff6dd38f447bb5d2fda3b9f066737fcd31545d",
+  "baseline": {
+    "candidate_union_count": 2269,
+    "previous_confirmed_historical_pairs": 300,
+    "previous_confirmed_delisted_pairs": 6,
+    "previous_unprobed_candidates": 1154,
+    "candidate_union_sha256": "368fed59f3a8d0517ffcffd29892cd2a8b5eab81de5209a7815478e812e10c59",
+    "p0a_report_sha256": "505306bb3fe3643f3b9350da55bfcec235660ffda28dbf187a78c3e6e33dd9c2",
+    "p0a_boundaries_sha256": "8c7698b91f9ccd45bb1479ca2f3f8a4d84aca718f54e2186c3ff7d8ab17a5c1d",
+    "p0a_delisting_audit_sha256": "ca28574ee0f3c321ac7c684f9fd970cfa77fe9a04a33deb19664e041718e3983",
+    "p0a_request_manifest_sha256": "eb2bd7c29471e18577fc346de49737f15f74a4d8bb186c2986ddd046fbccd7af",
+    "p0a_output_manifest_sha256": "5d578bef6efc51dfea77e9d4f119ca781e5de8cfae6847c6d5c840a872d962e0"
+  },
+  "permitted_source_hosts": [
+    "api.kucoin.com",
+    "web.archive.org",
+    "archive.org",
+    "ia801*.us.archive.org",
+    "ia80*.us.archive.org"
+  ],
+  "permitted_endpoints": [
+    "https://api.kucoin.com/api/v1/market/candles",
+    "https://web.archive.org/cdx/search/cdx",
+    "https://web.archive.org/web/*/https://api.kucoin.com/api/v1/symbols",
+    "https://web.archive.org/web/*/https://api.kucoin.com/api/v1/market/allTickers",
+    "https://web.archive.org/web/*/https://www.kucoin.com/markets",
+    "https://web.archive.org/web/*/https://www.kucoin.com/market"
+  ],
+  "external_archive_policy": {
+    "role": "EXTERNAL_ARCHIVE_OF_OFFICIAL_PUBLIC_KUCOIN_CONTENT",
+    "original_host_must_be_official_kucoin": true,
+    "capture_cutoff_exclusive": "2025-01-01T00:00:00Z",
+    "no_save_page_now": true,
+    "no_unbounded_crawl": true,
+    "archive_capture_is_not_listing_time": true,
+    "archive_evidence_cannot_replace_kline_membership": true
+  },
+  "historical_period": {
+    "market_observation_start": "2017-09-01T00:00:00Z",
+    "market_observation_end_exclusive": "2025-01-01T00:00:00Z",
+    "research_years": [2019, 2020, 2021, 2022, 2023, 2024]
+  },
+  "candidate_completion": {
+    "terminal_resolutions": [
+      "VALID_HISTORICAL_KLINE_CONFIRMED",
+      "INVALID_SYMBOL_SYNTAX",
+      "STABLECOIN_EXCLUSION",
+      "LEVERAGED_TOKEN_EXCLUSION",
+      "WRAPPED_OR_DUPLICATE_EXCLUSION",
+      "IDENTITY_AMBIGUITY",
+      "NO_HISTORICAL_KLINES_AFTER_COMPLETE_PROBE",
+      "ENDPOINT_TECHNICAL_FAILURE_AFTER_BOUNDED_RETRIES",
+      "PROHIBITED_OR_NON_SPOT_PRODUCT",
+      "DUPLICATE_CANONICAL_ROW"
+    ],
+    "unattempted_current_only_is_not_complete": true,
+    "membership_source": "CLASSIC_SPOT_KLINE_ONLY"
+  },
+  "existence_probe_plan": {
+    "endpoint": "/api/v1/market/candles",
+    "interval": "1day",
+    "windows_per_year": 2,
+    "windows": [
+      ["2018-01-15T00:00:00Z", "2018-01-22T00:00:00Z"],
+      ["2018-07-15T00:00:00Z", "2018-07-22T00:00:00Z"],
+      ["2019-01-15T00:00:00Z", "2019-01-22T00:00:00Z"],
+      ["2019-07-15T00:00:00Z", "2019-07-22T00:00:00Z"],
+      ["2020-01-15T00:00:00Z", "2020-01-22T00:00:00Z"],
+      ["2020-07-15T00:00:00Z", "2020-07-22T00:00:00Z"],
+      ["2021-01-15T00:00:00Z", "2021-01-22T00:00:00Z"],
+      ["2021-07-15T00:00:00Z", "2021-07-22T00:00:00Z"],
+      ["2022-01-15T00:00:00Z", "2022-01-22T00:00:00Z"],
+      ["2022-07-15T00:00:00Z", "2022-07-22T00:00:00Z"],
+      ["2023-01-15T00:00:00Z", "2023-01-22T00:00:00Z"],
+      ["2023-07-15T00:00:00Z", "2023-07-22T00:00:00Z"],
+      ["2024-01-15T00:00:00Z", "2024-01-22T00:00:00Z"],
+      ["2024-07-15T00:00:00Z", "2024-07-22T00:00:00Z"]
+    ],
+    "early_stop_after_first_valid_candle": true,
+    "all_windows_required_before_no_history": true,
+    "max_retries": 2,
+    "max_workers": 12
+  },
+  "full_boundary_plan": {
+    "interval": "1day",
+    "start_at": "2017-09-01T00:00:00Z",
+    "end_at_exclusive": "2025-01-01T00:00:00Z",
+    "max_rows_per_request": 1500,
+    "non_overlapping_chunks": true,
+    "exact_first_and_last_candle": true,
+    "internal_gap_audit": true,
+    "post_2024_rows_rejected": true
+  },
+  "identity_rules": {
+    "canonicalization_module": "src/spotbot/research/universe_identity.py",
+    "symbols_are_not_sufficient": true,
+    "temporal_migrations_must_be_explicit": true,
+    "duplicate_canonical_periods_rejected": true,
+    "stablecoin_wrapped_leveraged_and_fiat_exclusions": true
+  },
+  "gates": {
+    "baseline_reconciled": true,
+    "all_candidates_terminal": true,
+    "all_archive_candidates_terminal": true,
+    "all_confirmed_pairs_exact_boundaries": true,
+    "pre_2020_archive_capture": true,
+    "early_archive_pairs_kline_reconciled": true,
+    "historical_pair_absent_from_current_metadata": true,
+    "six_delisted_pairs_retained": true,
+    "ten_prior_delistings_resolved": true,
+    "every_2019_2024_year_represented": true,
+    "pre_2019_assets_represented": true,
+    "no_current_survivor_filter": true,
+    "current_metadata_candidate_only": true,
+    "kline_membership_required": true,
+    "temporal_identity_resolved": true,
+    "no_duplicate_canonical_pair": true,
+    "no_post_2024_market_observations": true,
+    "bounded_manifested_requests": true,
+    "immutable_hashed_evidence": true,
+    "two_offline_hash_reproductions": true,
+    "no_futures_margin_trading_optimization": true
+  },
+  "conditional_p1": {
+    "run_only_if_decision": "RD18_P0B_KUCOIN_CAUSAL_SYMBOL_INVENTORY_CONFIRMED",
+    "success_decision": "RD18_P1_KUCOIN_LIQUIDITY_UNIVERSE_CONFIRMED"
+  },
+  "stop_decisions": [
+    "RD18_P0B_BASELINE_RECONCILIATION_FAILED",
+    "RD18_P0B_CANDIDATE_RESOLUTION_INCOMPLETE",
+    "RD18_P0B_HISTORICAL_BOUNDARIES_INCOMPLETE",
+    "RD18_P0B_EXTERNAL_ARCHIVE_INSUFFICIENT",
+    "RD18_P0B_INVENTORY_SURVIVORSHIP_RISK",
+    "RD18_P0B_TEMPORAL_IDENTITY_INSUFFICIENT"
+  ],
+  "sealed_data_boundary": {
+    "request_end_exclusive": "2025-01-01T00:00:00Z",
+    "reject_post_2024_requests": true,
+    "reject_post_2024_response_rows": true
+  },
+  "trading_run_authorized": false,
+  "candidate_generation_authorized": false,
+  "optimization_performed": false,
+  "no_trading_declaration": true,
+  "no_optimization_declaration": true
+}
