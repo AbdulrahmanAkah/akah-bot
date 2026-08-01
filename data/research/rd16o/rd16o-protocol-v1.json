@@ -1,0 +1,44 @@
+{
+  "architecture_id": "COMPOSITE_ALPHA_V3",
+  "baseline_commit": "aee28982b66263d5627344878b881e0c8c6105a6",
+  "branch": "research/rd09b-market-level-native-chain-feasibility-v2",
+  "design_response_to_rd16n": {
+    "avoid_parameter_sweep": true,
+    "avoid_weak_daily_defensive_longs": true,
+    "avoid_winner_selection": true,
+    "reduce_signal_frequency": true,
+    "require_cross_sectional_breadth": true,
+    "require_relative_strength_rank_where_applicable": true
+  },
+  "frozen_constraints": {
+    "base_risk_per_trade_fraction": 0.005,
+    "frozen_v3_trades_never_displaced": true,
+    "long_only": true,
+    "maximum_open_risk_fraction": 0.0225,
+    "maximum_positions": 5,
+    "normal_holding_bars": 48,
+    "same_symbol_overlap_prohibited": true,
+    "spot_only": true,
+    "strong_bull_holding_bars": 96,
+    "strong_bull_risk_per_trade_fraction": 0.0075
+  },
+  "hypotheses": [
+    "QUALITY_MOMENTUM_BREAKOUT_V2",
+    "PULLBACK_REACCELERATION_V2",
+    "SQUEEZE_TREND_RELEASE_V2",
+    "BULL_LIQUIDITY_SWEEP_RECLAIM_V2",
+    "RELATIVE_STRENGTH_ROTATION_RECLAIM_V2"
+  ],
+  "input_stage": "RD16N_INTRADAY_ALPHA_ENGINE_DIVERSIFICATION_AND_NEW_SIGNAL_RESEARCH_COMPLETED",
+  "next_stage_policy": {
+    "none": "RD16P_MULTITIMEFRAME_STRUCTURE_AND_CROSS_SECTIONAL_PORTFOLIO_RESEARCH",
+    "promising_only": "RD16P_TARGETED_SECOND_GENERATION_ALPHA_REFINEMENT",
+    "retained": "RD16P_COMPOSITE_ALPHA_V4_CANDIDATE_ASSEMBLY_AND_INTERACTION_TEST"
+  },
+  "objective": "Evaluate five pre-registered second-generation, lower-frequency intraday alpha hypotheses designed from RD16-N failure evidence without changing the frozen V3 architecture.",
+  "schema_version": "rd16o-intraday-alpha-engine-redesign-v1",
+  "sealed_periods": {
+    "2025": true,
+    "2026": true
+  }
+}
