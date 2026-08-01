@@ -1,0 +1,104 @@
+{
+  "architecture_id": "COMPOSITE_ALPHA_V3",
+  "constraints": {
+    "dca": false,
+    "derivatives": false,
+    "dune_api_called": false,
+    "frozen_v3_trades_never_displaced": true,
+    "holdout_2026_accessed": false,
+    "kelly": false,
+    "leverage": false,
+    "long_only": true,
+    "margin": false,
+    "maximum_total_open_risk_fraction": 0.0225,
+    "maximum_total_positions": 5,
+    "notional_scaled_up": false,
+    "optimization": false,
+    "production_authorization": false,
+    "pyramiding": false,
+    "risk_scaled_up": false,
+    "same_symbol_overlap_prohibited": true,
+    "shorting": false,
+    "spot_only": true,
+    "test_2025_accessed": false,
+    "winner_selection": false
+  },
+  "decision": "RD16P_MULTITIMEFRAME_STRUCTURE_AND_CROSS_SECTIONAL_PORTFOLIO_RESEARCH_COMPLETED",
+  "next_stage_logic": {
+    "none": "RD16Q_SIGNAL_DOMAIN_EXPANSION_AND_ALTERNATIVE_DATA_RESEARCH",
+    "promising_only": "RD16Q_CROSS_SECTIONAL_PORTFOLIO_REFINEMENT",
+    "retained": "RD16Q_COMPOSITE_ALPHA_V4_CANDIDATE_ASSEMBLY_AND_INTERACTION_TEST"
+  },
+  "objective": "Test whether deterministic cross-sectional ranking, multi-timeframe quality gates, and a separately capped new-engine sleeve can convert RD16-O candidate-level alpha into additive portfolio alpha.",
+  "quality_score": {
+    "anti_extension_quality": 0.1,
+    "market_breadth": 0.2,
+    "market_regime_quality": 0.05,
+    "return24_rank": 0.22,
+    "return72_rank": 0.28,
+    "volume_quality": 0.15
+  },
+  "retention_gates": {
+    "overlay_capture_tolerance": -0.005,
+    "overlay_delta_net_return_minimum": 0.02,
+    "overlay_drawdown_tolerance": 0.03,
+    "overlay_one_x_capital_feasible": true,
+    "overlay_profit_factor_tolerance": -0.05,
+    "overlay_two_x_capital_feasible": true,
+    "overlay_two_x_return_not_below_v3": true,
+    "selected_count": "24 to 600",
+    "standalone_maximum_drawdown": 0.3,
+    "standalone_net_return_positive": true,
+    "standalone_profit_factor_minimum": 1.1,
+    "standalone_trade_count_minimum": 24,
+    "standalone_two_x_capital_feasible": true,
+    "standalone_two_x_profit_factor_minimum": 1.0,
+    "standalone_two_x_return_positive": true
+  },
+  "schema_version": "rd16p-multitimeframe-cross-sectional-portfolio-research-v1",
+  "source_commit": "236b48f76eea8da1361414e5b3ac622358cadaae",
+  "source_stage": "RD16O",
+  "stage_id": "RD16P",
+  "variants": [
+    {
+      "notional_cap_fraction": 0.12,
+      "risk_fraction": 0.0025,
+      "sleeve_max_positions": 1,
+      "sleeve_open_risk_fraction": 0.0025,
+      "top_k": 1,
+      "variant_id": "CS_TOP1_BALANCED_12PCT"
+    },
+    {
+      "notional_cap_fraction": 0.08,
+      "risk_fraction": 0.0015,
+      "sleeve_max_positions": 2,
+      "sleeve_open_risk_fraction": 0.003,
+      "top_k": 2,
+      "variant_id": "CS_TOP2_DIVERSIFIED_8PCT"
+    },
+    {
+      "notional_cap_fraction": 0.15,
+      "risk_fraction": 0.003,
+      "sleeve_max_positions": 1,
+      "sleeve_open_risk_fraction": 0.003,
+      "top_k": 1,
+      "variant_id": "MTF_STRONG_BULL_TOP1_15PCT"
+    },
+    {
+      "notional_cap_fraction": 0.1,
+      "risk_fraction": 0.002,
+      "sleeve_max_positions": 1,
+      "sleeve_open_risk_fraction": 0.002,
+      "top_k": 1,
+      "variant_id": "MTF_STRUCTURE_TOP1_10PCT"
+    },
+    {
+      "notional_cap_fraction": 0.06,
+      "risk_fraction": 0.00125,
+      "sleeve_max_positions": 2,
+      "sleeve_open_risk_fraction": 0.0025,
+      "top_k": 2,
+      "variant_id": "CROSS_SECTIONAL_ROTATION_TOP2_6PCT"
+    }
+  ]
+}
