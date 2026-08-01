@@ -1,0 +1,28 @@
+{
+  "branch": "research/rd16-pit-universe-audit-v1",
+  "decision_labels": [
+    "PIT_MEMBERSHIP_RESOLVED",
+    "PIT_MATERIAL_DEGRADATION",
+    "PIT_SEVERE_INVALIDATION",
+    "PIT_INCONCLUSIVE_BUT_ROBUST_UNDER_BOUNDS",
+    "PIT_INCONCLUSIVE_AND_FRAGILE_UNDER_BOUNDS"
+  ],
+  "objectives": [
+    "resolve 2019-2020 market-cap membership from safe local pre-2025 panels",
+    "attribute V3 PnL by year, symbol, engine, and PIT status",
+    "produce documented bounded worst-case sensitivity",
+    "produce descriptive ESS and moving-block bootstrap diagnostics"
+  ],
+  "prohibited": [
+    "network access",
+    "reading files whose names indicate 2025 or 2026",
+    "dynamic V3 replay",
+    "signal or portfolio optimization",
+    "bootstrap p-value confirmation",
+    "Benjamini-Hochberg confirmation",
+    "RD16-U continuation"
+  ],
+  "schema_version": "rd16-pit-a1-protocol-v1",
+  "source_commit": "b142d9a72ee3d122ddebd8e8af2a64fafd93616d",
+  "stage": "RD16-PIT-A1"
+}
