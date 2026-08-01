@@ -115,3 +115,22 @@ def test_pit_status_uses_explicit_trade_values() -> None:
         )
         == "UNRESOLVED_MARKET_CAP_RANK"
     )
+
+
+def test_registered_v3_trade_schema_resolves_entry_open_time() -> None:
+    normalized = normalize_trades(
+        pd.DataFrame(
+            {
+                "symbol": ["BTC/USDT"],
+                "entry_open_time": ["2022-01-03T01:00:00Z"],
+                "net_pnl": [42.5],
+                "signal_close": ["2022-01-03T00:00:00Z"],
+                "entry_bar_close": ["2022-01-03T02:00:00Z"],
+                "exit_bar_close": ["2022-01-04T00:00:00Z"],
+            }
+        )
+    )
+
+    assert normalized["audit_symbol"].tolist() == ["BTC"]
+    assert normalized["audit_entry_time"].iloc[0] == pd.Timestamp("2022-01-03T01:00:00Z")
+    assert normalized["audit_net_pnl"].tolist() == [42.5]

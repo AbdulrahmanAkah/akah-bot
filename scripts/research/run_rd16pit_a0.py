@@ -219,7 +219,15 @@ def first_col(frame: pd.DataFrame, names: tuple[str, ...]) -> str | None:
 def normalize_trades(frame: pd.DataFrame) -> pd.DataFrame:
     symbol = first_col(frame, ("symbol", "market", "pair"))
     entry = first_col(
-        frame, ("entry_time", "entry_timestamp", "entry_at", "timestamp", "signal_time")
+        frame,
+        (
+            "entry_open_time",
+            "entry_time",
+            "entry_timestamp",
+            "entry_at",
+            "timestamp",
+            "signal_time",
+        ),
     )
     pnl = first_col(frame, ("net_pnl", "pnl", "realized_pnl", "profit_loss"))
     if not symbol or not entry or not pnl:
