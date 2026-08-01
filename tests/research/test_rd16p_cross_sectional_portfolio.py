@@ -3,7 +3,10 @@ from __future__ import annotations
 import pandas as pd
 
 from spotbot.research.rd16n_evaluation import PortfolioEvidence
-from spotbot.research.rd16p_evaluation import classify_portfolio_variant
+from spotbot.research.rd16p_evaluation import (
+    _annual_rows,
+    classify_portfolio_variant,
+)
 from spotbot.research.rd16p_portfolio import (
     INITIAL_EQUITY,
     VARIANT_BY_ID,
@@ -358,3 +361,39 @@ def test_empty_selection_is_safe() -> None:
     )
     assert len(audit) == 3
     assert selected.empty
+
+
+def test_annual_rows_map_period_to_year() -> None:
+    evidence = PortfolioEvidence(
+        trades=pd.DataFrame(),
+        curves={},
+        metrics={},
+        annual_rows=(
+            {
+                "family_id": "TEST_VARIANT",
+                "period": "2024",
+                "start_equity": 100_000.0,
+                "end_equity": 110_000.0,
+                "return": 0.10,
+                "trade_count": 7,
+            },
+        ),
+        bull_rows=(),
+        concentration={},
+        positive_active_year_fraction=1.0,
+        mean_high_opportunity_capture=0.0,
+    )
+
+    rows = _annual_rows(
+        evidence,
+        variant_id="TEST_VARIANT",
+    )
+
+    assert rows == [
+        {
+            "variant_id": "TEST_VARIANT",
+            "year": "2024",
+            "trade_count": 7,
+            "return": 0.10,
+        }
+    ]

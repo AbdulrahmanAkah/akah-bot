@@ -689,7 +689,7 @@ def _annual_rows(
         rows.append(
             {
                 "variant_id": variant_id,
-                "year": raw["year"],
+                "year": raw["period"],
                 "trade_count": raw["trade_count"],
                 "return": raw["return"],
             }
