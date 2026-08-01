@@ -599,7 +599,7 @@ def _bull_rows(
                 "start": raw["start"],
                 "end": raw["end"],
                 "days": raw["days"],
-                "portfolio_return": raw["portfolio_return"],
+                "portfolio_return": raw["family_return"],
                 "equal_weight_return": raw["equal_weight_return"],
                 "capture_ratio": raw["capture_ratio"],
                 "high_opportunity_window": (raw["high_opportunity_window"]),

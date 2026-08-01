@@ -6,6 +6,7 @@ import pytest
 from spotbot.research.rd16n_evaluation import PortfolioEvidence
 from spotbot.research.rd16o_evaluation import (
     SecondGenDecision,
+    _bull_rows,
     classify_second_gen_hypothesis,
 )
 from spotbot.research.rd16o_signals import (
@@ -302,3 +303,39 @@ def test_diversifier_requires_non_strong_bull_profit() -> None:
     )
     assert not decision.carry_forward
     assert not decision.gates["role_specific_evidence"]
+
+
+def test_bull_rows_map_family_return_to_portfolio_return() -> None:
+    evidence = PortfolioEvidence(
+        trades=pd.DataFrame(),
+        curves={},
+        metrics={},
+        annual_rows=(),
+        bull_rows=(
+            {
+                "family_id": "TEST_VARIANT",
+                "window_id": 1,
+                "start": "2020-01-01T00:00:00+00:00",
+                "end": "2020-02-01T00:00:00+00:00",
+                "days": 32,
+                "family_return": 0.25,
+                "equal_weight_return": 0.50,
+                "capture_ratio": 0.50,
+                "high_opportunity_window": False,
+                "strategic_bull_adequacy": None,
+            },
+        ),
+        concentration={},
+        positive_active_year_fraction=1.0,
+        mean_high_opportunity_capture=0.50,
+    )
+
+    rows = _bull_rows(
+        evidence,
+        scope="OVERLAY",
+        variant_id="TEST_VARIANT",
+    )
+
+    assert len(rows) == 1
+    assert rows[0]["portfolio_return"] == pytest.approx(0.25)
+    assert rows[0]["equal_weight_return"] == pytest.approx(0.50)
