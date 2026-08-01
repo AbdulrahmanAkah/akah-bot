@@ -1,24 +1,24 @@
 {
   "audit_scope": "A0_MEMBERSHIP_AND_SELECTION_BIAS_ONLY",
   "bootstrap_inference_authorized": false,
-  "complete_weekly_snapshot_count": 157,
-  "decision": "PIT_A0_BLOCKED",
+  "complete_weekly_snapshot_count": 209,
+  "decision": "PIT_A0_PARTIAL_WITH_BOUNDED_SENSITIVITY",
   "dynamic_v3_replay_performed": false,
   "fixed10_summary": {
     "non_pit_net_pnl": 0.0,
     "non_pit_positive_pnl_share": 0.0,
     "non_pit_trade_count": 0,
     "non_pit_trade_fraction": 0.0,
-    "pit_eligible_net_pnl": 14620.94464264246,
-    "pit_eligible_trade_count": 199,
-    "pit_eligible_trade_fraction": 0.45958429561200925,
-    "resolved_trade_count": 199,
-    "resolved_trade_ratio": 0.45958429561200925,
-    "total_net_pnl": 66124.56565208244,
-    "trade_count": 433,
-    "unresolved_net_pnl": 51503.62100943999,
-    "unresolved_trade_count": 234,
-    "unresolved_trade_fraction": 0.5404157043879908
+    "pit_eligible_net_pnl": 27196.702303936338,
+    "pit_eligible_trade_count": 319,
+    "pit_eligible_trade_fraction": 0.562610229276896,
+    "resolved_trade_count": 319,
+    "resolved_trade_ratio": 0.562610229276896,
+    "total_net_pnl": 108155.86314022547,
+    "trade_count": 567,
+    "unresolved_net_pnl": 80959.16083628913,
+    "unresolved_trade_count": 248,
+    "unresolved_trade_fraction": 0.43738977072310403
   },
   "fixed10_symbols": [
     "BTC",
@@ -33,20 +33,20 @@
     "ATOM"
   ],
   "fixed6_summary": {
-    "non_pit_net_pnl": 16614.171033521026,
-    "non_pit_positive_pnl_share": 0.10543556553738592,
-    "non_pit_trade_count": 18,
-    "non_pit_trade_fraction": 0.04157043879907621,
-    "pit_eligible_net_pnl": -1993.2263908785671,
-    "pit_eligible_trade_count": 181,
-    "pit_eligible_trade_fraction": 0.418013856812933,
-    "resolved_trade_count": 199,
-    "resolved_trade_ratio": 0.45958429561200925,
-    "total_net_pnl": 66124.56565208244,
-    "trade_count": 433,
-    "unresolved_net_pnl": 51503.62100943999,
-    "unresolved_trade_count": 234,
-    "unresolved_trade_fraction": 0.5404157043879908
+    "non_pit_net_pnl": 10089.23504762301,
+    "non_pit_positive_pnl_share": 0.08097190721906404,
+    "non_pit_trade_count": 30,
+    "non_pit_trade_fraction": 0.05291005291005291,
+    "pit_eligible_net_pnl": 17107.46725631332,
+    "pit_eligible_trade_count": 289,
+    "pit_eligible_trade_fraction": 0.5097001763668431,
+    "resolved_trade_count": 319,
+    "resolved_trade_ratio": 0.562610229276896,
+    "total_net_pnl": 108155.86314022547,
+    "trade_count": 567,
+    "unresolved_net_pnl": 80959.16083628913,
+    "unresolved_trade_count": 248,
+    "unresolved_trade_fraction": 0.43738977072310403
   },
   "fixed6_symbols": [
     "BTC",
@@ -58,17 +58,15 @@
   ],
   "gate": {
     "blockers": [
-      "V3_TRADE_LEDGER_NOT_EXACTLY_567",
-      "TRADE_MEMBERSHIP_RESOLUTION_BELOW_95_PERCENT",
-      "FIXED10_TRADABILITY_RESOLUTION_BELOW_95_PERCENT"
+      "TRADE_MEMBERSHIP_RESOLUTION_BELOW_95_PERCENT"
     ],
-    "fixed_trade_ledger_verified": false,
+    "fixed_trade_ledger_verified": true,
     "market_cap_panel_sufficient": true,
-    "tradability_resolved_ratio": 0.6,
-    "trade_membership_resolved_ratio": 0.45958429561200925
+    "tradability_resolved_ratio": 1.0,
+    "trade_membership_resolved_ratio": 0.562610229276896
   },
   "holdout_2026_accessed": false,
-  "next_stage": "RD16_PIT_A0_DATA_REMEDIATION",
+  "next_stage": "RD16_PIT_A1_MEMBERSHIP_RESOLUTION_AND_BOUNDED_AUDIT",
   "optimization_performed": false,
   "portfolio_logic_changed": false,
   "schema_version": "rd16-pit-a0-universe-selection-bias-audit-v1",
@@ -76,6 +74,6 @@
   "source_architecture_id": "COMPOSITE_ALPHA_V3",
   "source_commit": "25782967e3e7e6d6d551fbde45a6b92fc02bfb68",
   "test_2025_accessed": false,
-  "v3_trade_count": 433,
-  "weekly_snapshot_count": 157
+  "v3_trade_count": 567,
+  "weekly_snapshot_count": 209
 }
