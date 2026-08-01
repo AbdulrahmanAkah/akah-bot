@@ -1,10 +1,13 @@
 from __future__ import annotations
 
+import json
+
 import pandas as pd
 
 from spotbot.research.rd16n_evaluation import PortfolioEvidence
 from spotbot.research.rd16p_evaluation import (
     _annual_rows,
+    _validation_payload,
     classify_portfolio_variant,
 )
 from spotbot.research.rd16p_portfolio import (
@@ -397,3 +400,15 @@ def test_annual_rows_map_period_to_year() -> None:
             "return": 0.10,
         }
     ]
+
+
+def test_validation_payload_is_json_serializable() -> None:
+    payload = _validation_payload(summary_row_count=len(VARIANT_REGISTRY))
+
+    encoded = json.dumps(payload, allow_nan=False)
+
+    assert encoded
+    assert payload["technical_status"] == "PASS"
+    assert payload["all_variants_classified"] is True
+    assert payload["sealed_cutoff"] == "2025-01-01T00:00:00+00:00"
+    assert isinstance(payload["sealed_cutoff"], str)

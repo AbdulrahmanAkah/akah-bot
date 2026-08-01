@@ -792,6 +792,24 @@ def _write_reports(
     return [results_path, decisions_path, audit_path]
 
 
+def _validation_payload(
+    *,
+    summary_row_count: int,
+) -> dict[str, object]:
+    return {
+        "technical_status": "PASS",
+        "variant_count": len(VARIANT_REGISTRY),
+        "summary_row_count": summary_row_count,
+        "all_variants_classified": (summary_row_count == len(VARIANT_REGISTRY)),
+        "sealed_cutoff": SEALED_CUTOFF.isoformat(),
+        "test_2025_accessed": False,
+        "holdout_2026_accessed": False,
+        "optimization_performed": False,
+        "winner_selected": False,
+        "production_authorized": False,
+    }
+
+
 def run_rd16p_research() -> dict[str, object]:
     source_report = _verify_rd16o_ready()
     evaluated_source, local_rd16o_hashes = _load_rd16o_evaluated()
@@ -1184,18 +1202,9 @@ def run_rd16p_research() -> dict[str, object]:
     write_json(frozen_path, frozen_hashes)
     write_json(local_manifest_path, local_manifest)
 
-    validation = {
-        "technical_status": "PASS",
-        "variant_count": len(VARIANT_REGISTRY),
-        "summary_row_count": len(summary_rows),
-        "all_variants_classified": (len(summary_rows) == len(VARIANT_REGISTRY)),
-        "sealed_cutoff": SEALED_CUTOFF,
-        "test_2025_accessed": False,
-        "holdout_2026_accessed": False,
-        "optimization_performed": False,
-        "winner_selected": False,
-        "production_authorized": False,
-    }
+    validation = _validation_payload(
+        summary_row_count=len(summary_rows),
+    )
     write_json(validation_path, validation)
     write_json(final_path, final_report)
 
