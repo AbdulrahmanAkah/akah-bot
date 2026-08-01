@@ -1,0 +1,61 @@
+{
+  "architecture_id": "COMPOSITE_ALPHA_V3",
+  "data_policy": {
+    "derivatives_data": false,
+    "dune_api": false,
+    "exchange": "kucoin",
+    "external_alternative_data": false,
+    "holdout_2026_accessed": false,
+    "instrument_type": "SPOT",
+    "pilot_symbols": 6,
+    "sealed_cutoff": "2025-01-01T00:00:00+00:00",
+    "test_2025_accessed": false,
+    "timeframes": [
+      "1h",
+      "4h",
+      "1d",
+      "1w"
+    ]
+  },
+  "decision": "RD16Q_SIGNAL_DOMAIN_EXPANSION_AND_ALTERNATIVE_DATA_RESEARCH_COMPLETED",
+  "domains": [
+    "BREADTH_THRUST_LEADER_BREAKOUT",
+    "BTC_TO_ALT_ROTATION_BREAKOUT",
+    "DISPERSION_EXPANSION_LEADER",
+    "VOLUME_BREADTH_THRUST",
+    "CORRELATION_RELEASE_ROTATION"
+  ],
+  "objective": "Test fixed causal Spot-market-internal information domains that differ materially from prior single-asset price-pattern and portfolio-ranking research.",
+  "portfolio_constraints": {
+    "borrowing": false,
+    "derivatives": false,
+    "frozen_v3_trades_displaced": false,
+    "interest": false,
+    "leverage": false,
+    "long_only": true,
+    "margin": false,
+    "maximum_open_risk_fraction": 0.0225,
+    "maximum_positions": 5,
+    "same_symbol_overlap_allowed": false,
+    "short_selling": false,
+    "spot_only": true
+  },
+  "research_policy": {
+    "architecture_changed": false,
+    "cost_multipliers": [
+      1.0,
+      1.5,
+      2.0,
+      3.0
+    ],
+    "deterministic_replay_required": true,
+    "optimization_performed": false,
+    "pre_registered_all_domain_overlay": true,
+    "production_authorized": false,
+    "winner_selected": false
+  },
+  "schema_version": "rd16q-signal-domain-expansion-alternative-data-v1",
+  "source_stage": "RD16P_MULTITIMEFRAME_STRUCTURE_AND_CROSS_SECTIONAL_PORTFOLIO_RESEARCH_COMPLETED",
+  "stage": "RD16Q",
+  "strategic_monthly_target": 0.24
+}
