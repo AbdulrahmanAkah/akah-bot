@@ -15,7 +15,9 @@ from scripts.research.run_rd16pit_a1b import (
     decision_for_a1b,
     masked_numeric_sum,
     request_url,
+    resolve_complete_top30_absence,
     scenario_summary,
+    unresolved_year_symbol_summary,
     validate_request_url,
 )
 
@@ -162,3 +164,81 @@ def test_runner_supports_direct_script_execution() -> None:
         check=False,
     )
     assert completed.returncode == 0, completed.stderr
+
+
+def test_complete_top30_absence_is_non_pit_membership() -> None:
+    attribution = pd.DataFrame(
+        {
+            "rebalance_time": pd.to_datetime(
+                ["2020-01-06T00:00:00Z"],
+                utc=True,
+            ),
+            "market_cap_rank": [pd.NA],
+            "fixed6_pit_status": ["UNRESOLVED_MARKET_CAP_RANK"],
+            "fixed10_pit_status": ["UNRESOLVED_MARKET_CAP_RANK"],
+        }
+    )
+    snapshots = pd.DataFrame(
+        {
+            "rebalance_time": pd.to_datetime(
+                ["2020-01-06T00:00:00Z"],
+                utc=True,
+            ),
+            "snapshot_complete": [True],
+        }
+    )
+
+    result = resolve_complete_top30_absence(attribution, snapshots)
+
+    assert result.iloc[0]["fixed6_pit_status"] == "FIXED_SELECTION_NOT_TOP6"
+    assert result.iloc[0]["fixed10_pit_status"] == "FIXED_SELECTION_NOT_TOP10"
+    assert result.iloc[0]["market_cap_rank_lower_bound"] == 31.0
+    assert result.iloc[0]["rank_resolution_method"] == "COMPLETE_TOP30_ABSENCE"
+
+
+def test_incomplete_snapshot_absence_remains_unresolved() -> None:
+    attribution = pd.DataFrame(
+        {
+            "rebalance_time": pd.to_datetime(
+                ["2020-01-06T00:00:00Z"],
+                utc=True,
+            ),
+            "market_cap_rank": [pd.NA],
+            "fixed6_pit_status": ["UNRESOLVED_MARKET_CAP_RANK"],
+            "fixed10_pit_status": ["UNRESOLVED_MARKET_CAP_RANK"],
+        }
+    )
+    snapshots = pd.DataFrame(
+        {
+            "rebalance_time": pd.to_datetime(
+                ["2020-01-06T00:00:00Z"],
+                utc=True,
+            ),
+            "snapshot_complete": [False],
+        }
+    )
+
+    result = resolve_complete_top30_absence(attribution, snapshots)
+
+    assert result.iloc[0]["fixed6_pit_status"] == "UNRESOLVED_MARKET_CAP_RANK"
+    assert result.iloc[0]["rank_resolution_method"] == ("UNRESOLVED_MARKET_CAP_RANK")
+
+
+def test_unresolved_summary_excludes_resolved_trades() -> None:
+    frame = pd.DataFrame(
+        {
+            "year": [2020, 2020],
+            "symbol": ["BTC", "ETH"],
+            "fixed6_pit_status": [
+                "PIT_ELIGIBLE",
+                "UNRESOLVED_MARKET_CAP_RANK",
+            ],
+            "net_pnl": [10.0, -5.0],
+        }
+    )
+
+    summary = unresolved_year_symbol_summary(frame)
+
+    assert len(summary) == 1
+    assert summary.iloc[0]["symbol"] == "ETH"
+    assert summary.iloc[0]["net_pnl"] == -5.0

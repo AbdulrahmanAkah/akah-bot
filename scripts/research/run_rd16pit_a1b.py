@@ -308,6 +308,56 @@ def complete_membership_only(
     ].copy()
 
 
+def resolve_complete_top30_absence(
+    attribution: pd.DataFrame,
+    snapshots: pd.DataFrame,
+) -> pd.DataFrame:
+    result = attribution.copy()
+    result["market_cap_rank_lower_bound"] = pd.to_numeric(
+        result["market_cap_rank"],
+        errors="coerce",
+    )
+    result["rank_resolution_method"] = "UNRESOLVED_MARKET_CAP_RANK"
+
+    exact_rank = result["market_cap_rank_lower_bound"].notna()
+    result.loc[exact_rank, "rank_resolution_method"] = "EXACT_TOP30_RANK"
+
+    complete_times = pd.to_datetime(
+        cast(
+            Any,
+            snapshots.loc[
+                snapshots["snapshot_complete"].astype(bool),
+                "rebalance_time",
+            ],
+        ),
+        utc=True,
+    )
+    complete_weeks = set(pd.DatetimeIndex(complete_times).tolist())
+    trade_weeks = pd.DatetimeIndex(pd.to_datetime(cast(Any, result["rebalance_time"]), utc=True))
+    complete_mask = pd.Series(
+        trade_weeks.isin(complete_weeks),
+        index=result.index,
+        dtype=bool,
+    )
+
+    fixed6_missing = (
+        result["fixed6_pit_status"].astype(str).eq("UNRESOLVED_MARKET_CAP_RANK") & complete_mask
+    )
+    fixed10_missing = (
+        result["fixed10_pit_status"].astype(str).eq("UNRESOLVED_MARKET_CAP_RANK") & complete_mask
+    )
+    resolved_by_absence = fixed6_missing | fixed10_missing
+
+    result.loc[resolved_by_absence, "market_cap_rank_lower_bound"] = 31.0
+    result.loc[
+        resolved_by_absence,
+        "rank_resolution_method",
+    ] = "COMPLETE_TOP30_ABSENCE"
+    result.loc[fixed6_missing, "fixed6_pit_status"] = "FIXED_SELECTION_NOT_TOP6"
+    result.loc[fixed10_missing, "fixed10_pit_status"] = "FIXED_SELECTION_NOT_TOP10"
+    return result
+
+
 def decision_for_a1b(
     attribution: pd.DataFrame,
     scenarios: pd.DataFrame,
@@ -365,6 +415,7 @@ def main() -> None:
     a0 = load_a0_attribution(repo)
     merged = merge_a0_and_v3(a0, v3)
     attribution = resolve_membership(merged, causal_weekly)
+    attribution = resolve_complete_top30_absence(attribution, snapshots)
 
     scenarios = scenario_summary(attribution)
     by_year = summarize_group(attribution, ["year"], status_column="fixed6_pit_status")
@@ -439,6 +490,9 @@ def main() -> None:
         "acquired_panel_first_timestamp": pd.Timestamp(cast(Any, panel["time"].min())).isoformat(),
         "acquired_panel_last_timestamp": pd.Timestamp(cast(Any, panel["time"].max())).isoformat(),
         "complete_weekly_snapshot_count": bool_count(snapshots["snapshot_complete"].astype(bool)),
+        "complete_top30_absence_trade_count": bool_count(
+            attribution["rank_resolution_method"].astype(str).eq("COMPLETE_TOP30_ABSENCE")
+        ),
         "total_weekly_snapshot_count": len(snapshots),
         "complete_2019_2020_snapshot_count": bool_count(
             snapshots.loc[

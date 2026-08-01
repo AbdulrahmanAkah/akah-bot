@@ -989,8 +989,14 @@ def unresolved_year_symbol_summary(frame: pd.DataFrame) -> pd.DataFrame:
     if frame.empty:
         return pd.DataFrame(columns=columns)
 
+    unresolved = frame.loc[
+        frame["fixed6_pit_status"].astype(str).str.startswith("UNRESOLVED")
+    ].copy()
+    if unresolved.empty:
+        return pd.DataFrame(columns=columns)
+
     rows: list[dict[str, object]] = []
-    for keys, group in frame.groupby(["year", "symbol"], sort=True):
+    for keys, group in unresolved.groupby(["year", "symbol"], sort=True):
         year_value, symbol_value = group_key_values(keys, 2)
         pnl = pd.to_numeric(group["net_pnl"], errors="raise").to_numpy(dtype=float)
         rows.append(
