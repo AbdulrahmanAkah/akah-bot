@@ -5,6 +5,7 @@ from datetime import UTC, datetime
 
 import pandas as pd
 
+from spotbot.research.rd16r_evaluation import MARKET_FIELDS
 from spotbot.research.rd16r_universe import (
     CORE_CANONICAL_IDS,
     TIMEFRAMES,
@@ -262,3 +263,11 @@ def test_registry_rows_preserve_aliases_and_core_flag() -> None:
     render = next(row for row in rows if row["canonical_id"] == "RENDER")
     assert render["aliases"] == "RENDER/USDT; RNDR/USDT"
     assert render["core"] is False
+
+
+def test_market_fields_match_resolved_universe_rows() -> None:
+    rows = resolve_universe({})
+
+    assert rows
+    assert set(rows[0]) == set(MARKET_FIELDS)
+    assert "rationale" in MARKET_FIELDS

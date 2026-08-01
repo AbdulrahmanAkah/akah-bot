@@ -60,6 +60,7 @@ MARKET_FIELDS: Final = (
     "aliases",
     "category",
     "core",
+    "rationale",
     "resolved_symbol",
     "market_status",
 )
