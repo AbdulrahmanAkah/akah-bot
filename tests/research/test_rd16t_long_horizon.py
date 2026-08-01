@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 from collections.abc import Mapping
+from pathlib import Path
 
 import pandas as pd
 import pytest
@@ -12,6 +13,7 @@ from spotbot.research.rd16t_evaluation import (
     _exit_rows,
     _holding_diagnostics,
     _validation_payload,
+    _write_local_frame,
     classify_long_horizon,
     evaluate_long_horizon_candidate,
 )
@@ -386,3 +388,29 @@ def test_long_horizon_context_merge_preserves_hourly_ohlcv() -> None:
             "volume_y",
         }.intersection(frame.columns)
         assert frame["open"].tolist() == [100.0, 101.0, 102.0]
+
+
+def test_rd16t_local_frame_manifest_uses_rd16t_root(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    local_root = tmp_path / "data" / "raw" / "rd16t"
+    output = local_root / "TEST" / "candidates.parquet"
+    frame = pd.DataFrame(
+        {
+            "candidate_id": ["A", "B"],
+            "entry_price": [100.0, 101.0],
+        }
+    )
+
+    monkeypatch.setattr(
+        "spotbot.research.rd16t_evaluation.RD16T_LOCAL_ROOT",
+        local_root,
+    )
+    manifest = _write_local_frame(output, frame)
+
+    assert output.is_file()
+    assert manifest["logical_path"] == "TEST/candidates.parquet"
+    assert manifest["rows"] == 2
+    assert isinstance(manifest["file_sha256"], str)
+    assert isinstance(manifest["content_sha256"], str)

@@ -572,6 +572,20 @@ def _exit_rows(
     return rows
 
 
+def _write_local_frame(
+    path: Path,
+    frame: pd.DataFrame,
+) -> dict[str, object]:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    frame.to_parquet(path, index=False)
+    return {
+        "logical_path": path.relative_to(RD16T_LOCAL_ROOT).as_posix(),
+        "rows": len(frame),
+        "file_sha256": sha256_path(path),
+        "content_sha256": dataframe_content_hash(frame),
+    }
+
+
 def _validation_payload(
     *,
     summary_count: int,
@@ -984,21 +998,21 @@ def run_rd16t_research() -> dict[str, object]:
         )
         local_root = RD16T_LOCAL_ROOT / hypothesis.hypothesis_id
         hypothesis_manifest[hypothesis.hypothesis_id] = {
-            "candidates": rd16s._write_local_frame(local_root / "candidates.parquet", candidates),
-            "evaluated": rd16s._write_local_frame(local_root / "evaluated.parquet", evaluated),
-            "standalone_evaluated": rd16s._write_local_frame(
+            "candidates": _write_local_frame(local_root / "candidates.parquet", candidates),
+            "evaluated": _write_local_frame(local_root / "evaluated.parquet", evaluated),
+            "standalone_evaluated": _write_local_frame(
                 local_root / "standalone-evaluated.parquet", standalone_evaluated
             ),
-            "standalone_trades": rd16s._write_local_frame(
+            "standalone_trades": _write_local_frame(
                 local_root / "standalone-trades.parquet", standalone_enriched
             ),
-            "overlay_evaluated": rd16s._write_local_frame(
+            "overlay_evaluated": _write_local_frame(
                 local_root / "overlay-evaluated.parquet", overlay_evaluated
             ),
-            "overlay_new_trades": rd16s._write_local_frame(
+            "overlay_new_trades": _write_local_frame(
                 local_root / "overlay-new-trades.parquet", overlay_new_enriched
             ),
-            "overlay_combined_trades": rd16s._write_local_frame(
+            "overlay_combined_trades": _write_local_frame(
                 local_root / "overlay-combined-trades.parquet", overlay_combined
             ),
         }
@@ -1103,19 +1117,19 @@ def run_rd16t_research() -> dict[str, object]:
     combined_manifest = cast(dict[str, object], local_manifest["combined"])
     combined_manifest.update(
         {
-            "evaluated": rd16s._write_local_frame(
+            "evaluated": _write_local_frame(
                 RD16T_LOCAL_ROOT / "combined" / "evaluated.parquet",
                 combined_evaluated,
             ),
-            "overlay_evaluated": rd16s._write_local_frame(
+            "overlay_evaluated": _write_local_frame(
                 RD16T_LOCAL_ROOT / "combined" / "overlay-evaluated.parquet",
                 combined_routing,
             ),
-            "overlay_new_trades": rd16s._write_local_frame(
+            "overlay_new_trades": _write_local_frame(
                 RD16T_LOCAL_ROOT / "combined" / "overlay-new-trades.parquet",
                 combined_new_enriched,
             ),
-            "overlay_combined_trades": rd16s._write_local_frame(
+            "overlay_combined_trades": _write_local_frame(
                 RD16T_LOCAL_ROOT / "combined" / "overlay-combined-trades.parquet",
                 combined_trades,
             ),
