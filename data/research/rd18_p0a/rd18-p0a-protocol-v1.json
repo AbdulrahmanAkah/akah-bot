@@ -1,0 +1,161 @@
+{
+  "schema_version": "rd18-p0a-kucoin-symbol-inventory-recovery-v1",
+  "source_commit": "301f0054ebea79a28738ec09b0174b9fa55c29c6",
+  "stage": "RD18_P0A_KUCOIN_SYMBOL_INVENTORY_RECOVERY",
+  "execution_venue": "KUCOIN_SPOT",
+  "source_allowlist": {
+    "api_hosts": [
+      "api.kucoin.com"
+    ],
+    "web_hosts": [
+      "www.kucoin.com"
+    ],
+    "permitted_endpoints": [
+      "/api/v1/market/candles",
+      "/api/v3/announcements",
+      "/api/v3/currencies"
+    ],
+    "permitted_public_page": "https://www.kucoin.com/markets/historydata",
+    "authentication_required": false,
+    "private_endpoints_forbidden": true
+  },
+  "historical_period": {
+    "start_inclusive": "2019-01-01T00:00:00Z",
+    "end_exclusive": "2025-01-01T00:00:00Z",
+    "sealed_market_years": [
+      2025,
+      2026
+    ]
+  },
+  "announcement_discovery_period": {
+    "start_inclusive": "2017-09-01T00:00:00Z",
+    "end_exclusive": "2025-01-01T00:00:00Z",
+    "offline_reuse_of_rd18_p0_raw": true,
+    "new_downloads_only_if_manifest_discrepancy": true
+  },
+  "discovery_channels": [
+    "official_historical_market_data_catalogue",
+    "official_all_currencies_current_metadata_seed",
+    "expanded_rd18_p0_listing_announcements",
+    "expanded_rd18_p0_delisting_announcements",
+    "official_historical_kline_probes",
+    "immutable_rd18_p0_repository_evidence"
+  ],
+  "candidate_generation": {
+    "current_currency_role": "CURRENT_METADATA_NON_CAUSAL_CANDIDATE_SEED",
+    "current_symbols_as_membership_source": false,
+    "explicit_base_usdt_inference_forbidden": true,
+    "candidate_union_requires_provenance_per_channel": true,
+    "display_symbol_only_deduplication_forbidden": true,
+    "non_spot_and_product_announcements_are_excluded_from_pair_membership": true
+  },
+  "membership_proof": {
+    "authoritative_proof": "valid_dated_classic_spot_kline_for_BASE-USDT",
+    "explicit_listing_pair_requires_kline_confirmation": true,
+    "explicit_delisting_pair_requires_pre_event_kline_confirmation": true,
+    "current_metadata_alone_is_insufficient": true,
+    "historical_download_catalogue_alone_is_pending_until_kline_checked": true,
+    "uta_not_used_for_primary_evidence": true
+  },
+  "kline_probe": {
+    "endpoint": "/api/v1/market/candles",
+    "interval": "1day",
+    "stages": [
+      "E1_EXISTENCE_SCAN",
+      "E2_BOUNDARY_SEARCH",
+      "E3_DELISTED_PAIR_VALIDATION"
+    ],
+    "existence_probe_years": [
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024
+    ],
+    "existence_window_days": 7,
+    "maximum_requests_per_candidate": 12,
+    "boundary_search": "deterministic_coarse_to_fine_binary_search",
+    "post_2024_request_forbidden": true,
+    "post_2024_response_rows_forbidden": true,
+    "maximum_rows_per_request": 1500
+  },
+  "identity": {
+    "canonical_layer": "spotbot.research.universe_identity",
+    "temporal_aliases_required": true,
+    "symbol_collisions_rejected": true,
+    "stablecoin_wrapped_leveraged_and_duplicate_network_exclusions": true,
+    "unresolved_identity_is_not_eligible": true
+  },
+  "historical_download_facility": {
+    "page": "https://www.kucoin.com/markets/historydata",
+    "public_page_probe_only_before_catalogue_use": true,
+    "spot_futures_separation_required": true,
+    "catalogue_must_record_url_schema_checksum_and_auth": true,
+    "stable_reproducible_download_required": true,
+    "no_access_control_bypass": true
+  },
+  "completeness_gates": [
+    "all_sources_official_free_and_public",
+    "no_credentials_or_login",
+    "discovery_not_current_survivor_only",
+    "current_currencies_non_causal_only",
+    "historical_membership_requires_kline_confirmation",
+    "pre_2019_assets_represented",
+    "each_year_2019_2024_has_new_listing_candidates",
+    "explicitly_delisted_pair_pre_event_kline_retained",
+    "all_16_rd18_p0_unresolved_delistings_resolved_or_reasoned",
+    "95_percent_parseable_listing_symbols_probed",
+    "95_percent_parseable_delisting_candidates_probed",
+    "historical_download_channel_incorporated_or_conclusively_unusable",
+    "inventory_broader_than_rd18_p0_68_pairs",
+    "no_current_survivor_filter",
+    "temporal_identity_and_collision_controls",
+    "no_duplicate_canonical_pair_in_period",
+    "no_post_2024_market_observations",
+    "raw_evidence_hashes_and_manifests_complete",
+    "deterministic_offline_replay",
+    "no_futures_trading_or_optimization"
+  ],
+  "baseline_audit_counts": {
+    "rd18_p0_listing_rows": 1378,
+    "rd18_p0_explicit_pair_rows": 46,
+    "rd18_p0_unique_explicit_pairs": 59,
+    "rd18_p0_base_symbol_without_pair_rows": 1099,
+    "rd18_p0_no_reliably_parsed_symbol_rows": 233,
+    "rd18_p0_repeated_project_symbols": 38,
+    "rd18_p0_repeated_listing_rows_after_first": 810,
+    "rd18_p0_non_spot_or_product_rows": 235,
+    "rd18_p0_initially_btc_eth_kcs_pair_rows": 38,
+    "rd18_p0_parser_request_failures": 4,
+    "rd18_p0_identity_collisions": 0
+  },
+  "decisions": {
+    "success": "RD18_P0A_KUCOIN_CAUSAL_SYMBOL_INVENTORY_CONFIRMED",
+    "success_next": "RD18_P1_KUCOIN_LIQUIDITY_UNIVERSE_RECONSTRUCTION",
+    "partial": "RD18_P0A_KUCOIN_INVENTORY_PARTIAL",
+    "partial_next": "RD18_BLOCKED_PENDING_ADDITIONAL_KUCOIN_PAIR_EVIDENCE",
+    "delisted_failed": "RD18_P0A_KUCOIN_DELISTED_PAIR_RETENTION_FAILED",
+    "delisted_failed_next": "RD18_BLOCKED_PENDING_DELISTED_PAIR_ARCHIVE",
+    "survivorship_risk": "RD18_P0A_KUCOIN_INVENTORY_SURVIVORSHIP_RISK",
+    "survivorship_risk_next": "RD18_BLOCKED_PENDING_CAUSAL_SYMBOL_INVENTORY",
+    "no_sufficient_solution": "RD18_P0A_NO_SUFFICIENT_OFFICIAL_KUCOIN_INVENTORY",
+    "no_sufficient_solution_next": "RD18_BLOCKED_PENDING_EXTERNAL_FREE_CAUSAL_INVENTORY"
+  },
+  "stop_conditions": [
+    "do_not_run_p1_without_exact_success_decision",
+    "do_not_request_or_parse_2025_or_2026_market_observations",
+    "do_not_use_futures_margin_or_leverage_data",
+    "do_not_use_current_symbols_for_membership",
+    "do_not_use_third_party_or_paid_sources",
+    "do_not_trade_generate_candidates_or_optimize",
+    "do_not_weaken_gates_after_results",
+    "do_not_modify_rd18_p0_outputs"
+  ],
+  "no_trading": true,
+  "no_optimization": true,
+  "candidate_generation_authorized": false,
+  "p1_authorized": false,
+  "source_commit_is_frozen": true
+}
