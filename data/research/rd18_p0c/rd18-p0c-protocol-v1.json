@@ -1,0 +1,150 @@
+{
+  "schema_version": "rd18-p0c-protocol-v1",
+  "stage": "RD18_P0C_COMMON_CRAWL_LAUNCH_ERA_CLOSURE",
+  "starting_commit": "0f4eef6453471dd54ab4e139c2fd855e29549260",
+  "source_commit_p0b": "0f4eef6453471dd54ab4e139c2fd855e29549260",
+  "execution_venue": "KUCOIN_SPOT",
+  "baseline": {
+    "candidate_union_count": 2269,
+    "confirmed_historical_pairs": 376,
+    "confirmed_historically_delisted_pairs": 6,
+    "candidate_union_sha256": "368fed59f3a8d0517ffcffd29892cd2a8b5eab81de5209a7815478e812e10c59",
+    "p0b_protocol_sha256": "c30c2048e55e0c5ced2655a5cee32afd8bc58a8a2f2af7e3930e7f171949ddc1",
+    "p0b_report_sha256": "58a354a143ca8cc3f604020921897749e41689657268c2c0e6e0d0ccb068b802",
+    "p0b_inventory_sha256": "0dffdbba976a45de1ec6072cbe64600f3582edda016a2bc44dc3f9168af85253",
+    "p0b_boundaries_sha256": "c17fe972c06e8582aff6390d85aab972c6258e0fe5e9cc86d5e2653354e198f3",
+    "p0b_request_manifest_sha256": "37701b5dbd76af034fce8a2adf81a468d62ac50afca1e56aba2994922df20365",
+    "p0b_output_manifest_sha256": "85ade0a9151c5d48ee340b45bb42daf790f1990156e38f8fd3f5917bcdd0feba"
+  },
+  "permitted_source_hosts": [
+    "index.commoncrawl.org",
+    "data.commoncrawl.org",
+    "commoncrawl.org",
+    "api.kucoin.com"
+  ],
+  "common_crawl": {
+    "role": "EXTERNAL_ARCHIVE_OF_OFFICIAL_PUBLIC_KUCOIN_CONTENT",
+    "collection_listing_url": "https://index.commoncrawl.org/collinfo.json",
+    "collection_year_cutoff_exclusive": 2025,
+    "collections": [
+      "2017-09", "2017-10", "2017-11", "2017-12",
+      "2018-Q1", "2018-Q2", "2018-Q3", "2018-Q4",
+      "2019-Q1", "2019-Q2", "2019-Q3", "2019-Q4"
+    ],
+    "collection_selection_rule": "Use only official collection identifiers whose crawl coverage intersects 2017-01-01 through 2019-12-31 and whose crawl end is before 2025-01-01; record available identifiers rather than inventing names.",
+    "original_hosts": ["kucoin.com", "www.kucoin.com"],
+    "url_patterns": [
+      "https://kucoin.com/announcement/*",
+      "https://www.kucoin.com/announcement/*",
+      "https://kucoin.com/news/*",
+      "https://www.kucoin.com/news/*",
+      "https://kucoin.com/markets",
+      "https://www.kucoin.com/markets",
+      "https://kucoin.com/market",
+      "https://www.kucoin.com/market",
+      "https://api.kucoin.com/api/v1/symbols",
+      "https://api.kucoin.com/api/v1/market/allTickers"
+    ],
+    "max_results_per_query": 1000,
+    "max_index_response_bytes": 10485760,
+    "max_captures_to_retrieve": 200,
+    "capture_cutoff_exclusive": "2025-01-01T00:00:00Z",
+    "launch_capture_cutoff_exclusive": "2020-01-01T00:00:00Z",
+    "warc_range_only": true,
+    "max_payload_bytes": 8388608,
+    "max_decompressed_bytes": 16777216,
+    "no_save_page_now": true,
+    "no_unbounded_crawl": true,
+    "archive_capture_is_not_listing_time": true,
+    "archive_evidence_cannot_replace_kline_membership": true
+  },
+  "historical_period": {
+    "market_observation_start": "2017-09-01T00:00:00Z",
+    "market_observation_end_exclusive": "2025-01-01T00:00:00Z",
+    "archive_publication_period": ["2017-01-01T00:00:00Z", "2019-12-31T23:59:59Z"]
+  },
+  "content_rules": {
+    "official_original_host_required": true,
+    "allowed_classes": [
+      "ARCHIVED_KUCOIN_ANNOUNCEMENT_INDEX",
+      "ARCHIVED_KUCOIN_LISTING_ANNOUNCEMENT",
+      "ARCHIVED_KUCOIN_PAIR_ADDITION",
+      "ARCHIVED_KUCOIN_PAIR_REMOVAL",
+      "ARCHIVED_KUCOIN_DELISTING",
+      "ARCHIVED_KUCOIN_SYMBOL_LIST",
+      "ARCHIVED_KUCOIN_TICKER_LIST",
+      "ARCHIVED_KUCOIN_MARKET_PAGE",
+      "ARCHIVED_KUCOIN_API_RESPONSE"
+    ],
+    "reject_login_captcha_cloudflare_error_pages": true,
+    "known_regression_subjects": [
+      "Black Hole Coin", "Hshare", "Raiden Network", "Quantstamp", "Power Ledger",
+      "ETHLend", "Oyster Pearl", "DeepOnion", "LTC/USDT", "ETC/USDT", "TEL/USDT",
+      "OCN/USDT", "EOS/USDT", "ACT/USDT", "HSR/USDT", "TKY/USDT", "PRL/USDT",
+      "August 2018 USDT pair adjustment", "December 2018 USDT pair adjustment"
+    ]
+  },
+  "candidate_rules": {
+    "archive_evidence_can_generate_candidates": true,
+    "archive_evidence_cannot_create_membership": true,
+    "membership_requires_classic_spot_kline": true,
+    "pair_form": "BASE-USDT",
+    "current_metadata_candidate_only": true,
+    "current_registry_retention_threshold": {
+      "archive_discovered_kline_confirmed_bases_present": 1.0,
+      "p0b_confirmed_delisted_bases_present": 1.0
+    }
+  },
+  "kline_verification": {
+    "host": "api.kucoin.com",
+    "endpoint": "/api/v1/market/candles",
+    "interval": "1day",
+    "classic_spot_only": true,
+    "max_rows_per_request": 1500,
+    "full_history_start": "2017-09-01T00:00:00Z",
+    "full_history_end_exclusive": "2025-01-01T00:00:00Z",
+    "reject_post_2024_rows": true,
+    "complete_boundaries_required_for_new_pairs": true,
+    "reuse_p0b_boundaries_for_existing_pairs": true
+  },
+  "gates": {
+    "p0b_baseline_byte_for_byte_reconciled": true,
+    "free_common_crawl_no_credentials": true,
+    "usable_pre_2020_official_capture": false,
+    "usable_spot_capture": false,
+    "usable_2017_or_2018_capture": false,
+    "all_archive_candidates_terminal": false,
+    "archive_candidates_complete_boundaries": false,
+    "known_regression_subjects_found_or_documented": false,
+    "multi_pair_inventory_capture": false,
+    "pre_2019_assets_represented": true,
+    "current_registry_retention_audited": false,
+    "historical_delisted_pairs_retained": true,
+    "final_boundaries_complete": true,
+    "temporal_identity_resolved": true,
+    "no_post_2024_market_observations": true,
+    "manifested_hashed_requests": true,
+    "two_offline_hash_reproductions": false,
+    "no_futures_margin_trading_optimization": true
+  },
+  "conditional_p1": {
+    "run_only_if_decision": "RD18_P0C_KUCOIN_LAUNCH_ERA_INVENTORY_CONFIRMED",
+    "success_decision": "RD18_P1_KUCOIN_LIQUIDITY_UNIVERSE_CONFIRMED"
+  },
+  "stop_decisions": [
+    "RD18_P0C_COMMON_CRAWL_COVERAGE_INSUFFICIENT",
+    "RD18_P0C_ARCHIVE_EVIDENCE_TOO_SPARSE",
+    "RD18_P0C_ARCHIVE_CANDIDATE_RESOLUTION_INCOMPLETE",
+    "RD18_P0C_CURRENT_REGISTRY_RETENTION_INSUFFICIENT"
+  ],
+  "sealed_data_boundary": {
+    "request_end_exclusive": "2025-01-01T00:00:00Z",
+    "reject_post_2024_requests": true,
+    "reject_post_2024_response_rows": true
+  },
+  "no_trading_declaration": true,
+  "trading_run_authorized": false,
+  "no_optimization_declaration": true,
+  "optimization_performed": false,
+  "candidate_generation_authorized": false
+}

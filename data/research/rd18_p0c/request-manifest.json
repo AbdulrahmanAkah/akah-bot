@@ -1,0 +1,62 @@
+{
+  "network_hosts": [
+    "index.commoncrawl.org"
+  ],
+  "requests": [
+    {
+      "byte_count": 34675,
+      "payload_sha256": "eac053eb9d810c1ca519c99e7fdcf3c24a8042809becbbf6c6854a5795c1d52a",
+      "request_id": "cc-collinfo",
+      "response_headers": {
+        "Accept-Ranges": "bytes",
+        "Access-Control-Allow-Headers": "Range",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Expose-Headers": "Content-Range, Content-Length",
+        "Cache-Control": "public, max-age=300",
+        "Connection": "close",
+        "Content-Length": "34675",
+        "Content-Type": "application/json",
+        "Date": "Sun, 02 Aug 2026 00:40:24 GMT",
+        "ETag": "\"6a68bcda-8773\"",
+        "Last-Modified": "Tue, 28 Jul 2026 14:29:46 GMT",
+        "Server": "nginx/1.31.3"
+      },
+      "retrieved_at": "2026-08-02T00:40:25.284913+00:00",
+      "retry_count": 0,
+      "status": 200,
+      "url": "https://index.commoncrawl.org/collinfo.json"
+    },
+    {
+      "collection_id": "CC-MAIN-2017-04",
+      "error": "Common Crawl request failed after bounded retries: https://index.commoncrawl.org/CC-MAIN-2017-04-index?url=https%3A%2F%2Fkucoin.com%2Fannouncement%2F&output=json&filter=status%3A200&collapse=digest&limit=1000&matchType=prefix; The read operation timed out",
+      "query_status": "ERROR",
+      "request_id": "cc-index-CC-MAIN-2017-04-00",
+      "result_count": 0,
+      "status": "ERROR",
+      "url": "https://index.commoncrawl.org/CC-MAIN-2017-04-index?url=https%3A%2F%2Fkucoin.com%2Fannouncement%2F&output=json&filter=status%3A200&collapse=digest&limit=1000&matchType=prefix",
+      "url_pattern": "https://kucoin.com/announcement/*"
+    },
+    {
+      "collection_id": "CC-MAIN-2017-04",
+      "error": "Common Crawl request failed after bounded retries: https://index.commoncrawl.org/CC-MAIN-2017-04-index?url=https%3A%2F%2Fwww.kucoin.com%2Fannouncement%2F&output=json&filter=status%3A200&collapse=digest&limit=1000&matchType=prefix; HTTP Error 404: Not Found",
+      "query_status": "ERROR",
+      "request_id": "cc-index-CC-MAIN-2017-04-01",
+      "result_count": 0,
+      "status": "ERROR",
+      "url": "https://index.commoncrawl.org/CC-MAIN-2017-04-index?url=https%3A%2F%2Fwww.kucoin.com%2Fannouncement%2F&output=json&filter=status%3A200&collapse=digest&limit=1000&matchType=prefix",
+      "url_pattern": "https://www.kucoin.com/announcement/*"
+    },
+    {
+      "collection_id": "CC-MAIN-2017-04",
+      "error": "Common Crawl request failed after bounded retries: https://index.commoncrawl.org/CC-MAIN-2017-04-index?url=https%3A%2F%2Fkucoin.com%2Fnews%2F&output=json&filter=status%3A200&collapse=digest&limit=1000&matchType=prefix; The read operation timed out",
+      "query_status": "ERROR",
+      "request_id": "cc-index-CC-MAIN-2017-04-02",
+      "result_count": 0,
+      "status": "ERROR",
+      "url": "https://index.commoncrawl.org/CC-MAIN-2017-04-index?url=https%3A%2F%2Fkucoin.com%2Fnews%2F&output=json&filter=status%3A200&collapse=digest&limit=1000&matchType=prefix",
+      "url_pattern": "https://kucoin.com/news/*"
+    }
+  ],
+  "schema_version": "rd18-p0c-request-manifest-v1",
+  "stage": "RD18_P0C_COMMON_CRAWL_LAUNCH_ERA_CLOSURE"
+}
