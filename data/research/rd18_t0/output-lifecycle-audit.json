@@ -1,0 +1,41 @@
+{
+  "schema_version": "rd18-t0-output-lifecycle-audit-v1",
+  "scope": [
+    "scripts/research/run_rd18_p1r2_panel_repair.py",
+    "scripts/research/run_rd18_p2r2_structural_comparison.py",
+    "scripts/research/run_rd18_p2s2_risk_redesign.py",
+    "src/spotbot/research/atomic_output.py",
+    "existing shared research output helpers"
+  ],
+  "pre_repair_findings": {
+    "p1r2_csv_json": "direct final-path open/write",
+    "p1r2_parquet": "direct DataFrame.to_parquet to final path",
+    "p2r2_csv_json_reports": "direct final-path open/write",
+    "p2s2_csv_json_reports": "direct final-path open/write",
+    "temporary_files": "not used by the affected runners",
+    "source_destination_collision_guard": false,
+    "failure_cleanup": "not guaranteed",
+    "manifest_sequencing": "after outputs, but through the same direct writer",
+    "committed_input_mutation_protection": "no isolated output-dir option in P1R2"
+  },
+  "repair_design": {
+    "shared_module": "src/spotbot/research/atomic_output.py",
+    "temporary_location": "same directory as destination",
+    "temporary_name": "mkstemp with unique per-run suffix",
+    "serialization": "fully serialized and closed before replacement",
+    "replacement": "os.replace only after writer and validator handles close",
+    "collision_policy": "resolved absolute paths compared with Windows normcase",
+    "failure_policy": "unlink temporary output and preserve existing destination",
+    "parquet_policy": "deep materialization before write; optional reopen/validation before replace",
+    "json_policy": "deterministic serialization and temporary JSON parse validation",
+    "csv_policy": "UTF-8, newline='' and stable field order",
+    "manifest_policy": "manifest written last and temporary names never hashed"
+  },
+  "affected_runner_changes": [
+    "P1R2 CSV, JSON, Parquet and report writes use the shared utility",
+    "P1R2 supports --output-dir for isolated test/rebuild execution",
+    "P1R2 isolated manifests retain canonical logical paths",
+    "P2R2 CSV, JSON and report writes use the shared utility",
+    "P2S2 CSV, JSON and report writes use the shared utility"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "schema_version": "rd18-t0-failure-reproduction-v1",
+  "stage": "RD18_T0_WINDOWS_ATOMIC_OUTPUT_REPAIR",
+  "starting_commit": "aaa6592bb011b78f1fa50c376a3ed00673d9724a",
+  "historical_failure": {
+    "test_node": "tests/research/test_rd18_p1r2_panel_repair.py::test_runner_help_and_repaired_outputs",
+    "command": "python -m pytest tests/research/test_rd18_p1r2_panel_repair.py::test_runner_help_and_repaired_outputs -q -W error",
+    "error_type": "OSError",
+    "errno": 22,
+    "message": "Invalid argument",
+    "phase": "opening the existing final CSV destination for direct write",
+    "source_path": "scripts/research/run_rd18_p1r2_panel_repair.py",
+    "source_line_before_repair": 99,
+    "failing_statement_before_repair": "with path.open(\"w\", encoding=\"utf-8\", newline=\"\") as handle:",
+    "destination_path": "data/research/rd18_p1r2/corrected-weekly-rankings.csv",
+    "destination_size_bytes": 13127950,
+    "temporary_path": null,
+    "source_destination_resolve_to_same_path": false,
+    "destination_already_existed": true,
+    "destination_handle_open_at_failure": false,
+    "failure_operation": "write-open",
+    "full_stack_trace": "Traceback (most recent call last):\\n  ...\\n  File \"scripts/research/run_rd18_p1r2_panel_repair.py\", line 1282, in run\\n    write_csv(OUT / \"corrected-weekly-rankings.csv\", corrected_rank_rows, sorted(corrected_rank_rows[0]))\\n  File \"scripts/research/run_rd18_p1r2_panel_repair.py\", line 99, in write_csv\\n    with path.open(\"w\", encoding=\"utf-8\", newline=\"\") as handle:\\nOSError: [Errno 22] Invalid argument",
+    "capture_status": "recorded_from_the_prior_failed_run"
+  },
+  "fresh_isolated_reproduction": {
+    "worktree": ".rd18-t0-repro",
+    "runs": 2,
+    "passed_runs": 2,
+    "failed_runs": 0,
+    "exact_errno_22_reproduced": false,
+    "interpretation": "The historical error is environment/lifecycle-sensitive and did not recur in a clean isolated checkout."
+  },
+  "deterministic_regression": {
+    "test_node": "tests/research/test_rd18_t0_windows_output_repair.py::test_replacement_failure_cleans_temporary_file_and_preserves_destination",
+    "injected_error": "OSError(22, 'Invalid argument')",
+    "assertions": [
+      "destination remains byte-for-byte unchanged",
+      "same-directory temporary output is removed",
+      "no partial final output is exposed"
+    ],
+    "status": "implemented_and_passing"
+  },
+  "root_cause": "The affected runners serialized directly into final paths. There was no same-directory temporary file, no collision guard, and no failure-safe atomic replace boundary; an existing-destination Windows lifecycle failure therefore surfaced as Errno 22 before serialization completed."
+}

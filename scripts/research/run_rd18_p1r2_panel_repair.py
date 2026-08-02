@@ -16,13 +16,22 @@ import csv
 import hashlib
 import json
 from collections import defaultdict
+from collections.abc import Iterator
+from contextlib import contextmanager
 from datetime import UTC, datetime, timedelta
 from pathlib import Path
 from statistics import median
-from typing import Any
+from typing import Any, Literal
 
 import pandas as pd
 
+from spotbot.research.atomic_output import (
+    atomic_write_bytes,
+    atomic_write_csv,
+    atomic_write_json,
+    atomic_write_parquet,
+    atomic_write_text,
+)
 from spotbot.research.kucoin_rd18 import Kline
 from spotbot.research.kucoin_rd18_p1r import (
     RESEARCH_START,
@@ -46,6 +55,7 @@ from spotbot.research.kucoin_rd18_p1r2 import (
 
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / "data" / "research" / "rd18_p1r2"
+REPORTS = ROOT / "reports" / "research"
 P1R = ROOT / "data" / "research" / "rd18_p1r"
 P0B = ROOT / "data" / "research" / "rd18_p0b"
 P0 = ROOT / "data" / "research" / "rd18_p0"
@@ -88,19 +98,20 @@ def read_csv(path: Path) -> list[dict[str, str]]:
 
 
 def write_json(path: Path, value: object) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(
-        json.dumps(value, indent=2, sort_keys=True, ensure_ascii=False) + "\n", encoding="utf-8"
-    )
+    atomic_write_json(path, value)
 
 
 def write_csv(path: Path, rows: list[dict[str, object]], fields: list[str]) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
-    with path.open("w", encoding="utf-8", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=fields, extrasaction="ignore")
-        writer.writeheader()
-        for row in rows:
-            writer.writerow({field: row.get(field, "") for field in fields})
+    atomic_write_csv(path, rows, fields)
+
+
+def write_parquet(
+    path: Path,
+    frame: pd.DataFrame,
+    *,
+    compression: Literal["snappy", "gzip", "brotli", "lz4", "zstd"] = "zstd",
+) -> None:
+    atomic_write_parquet(path, frame, compression=compression)
 
 
 def iso(value: object) -> str:
@@ -913,7 +924,7 @@ def dependency_assessment() -> dict[str, object]:
 def write_reports(
     report: dict[str, Any], yearly: list[dict[str, object]], gates: dict[str, bool]
 ) -> None:
-    reports = ROOT / "reports" / "research"
+    reports = REPORTS
     reports.mkdir(parents=True, exist_ok=True)
     methodology = """# RD18-P1R2 methodology
 
@@ -932,7 +943,7 @@ hysteresis. Previous P1R, P2R, P2S, P2T, and P2U artifacts are historical
 inputs and are not edited. Their derived structural results are
 `SUPERSEDED_FOR_FUTURE_RESEARCH_BY_CORRECTED_P1R2_BASELINE`.
 """
-    (reports / "rd18-p1r2-methodology-v1.md").write_text(methodology, encoding="utf-8")
+    atomic_write_text(reports / "rd18-p1r2-methodology-v1.md", methodology)
     results = "\n".join(
         [
             "# RD18-P1R2 results",
@@ -957,7 +968,7 @@ inputs and are not edited. Their derived structural results are
             "No strategy returns, trades, signals, candidates, optimization, or new market-data requests were produced.",
         ]
     )
-    (reports / "rd18-p1r2-results-v1.md").write_text(results + "\n", encoding="utf-8")
+    atomic_write_text(reports / "rd18-p1r2-results-v1.md", results + "\n")
     decisions = f"""# RD18-P1R2 decision
 
 `{report["decision"]}`
@@ -979,7 +990,20 @@ inputs and are not edited. Their derived structural results are
 Prior RD18 decisions remain historical and unchanged. The corrected P1R2
 baseline is the only repaired input authorized for future structural research.
 """
-    (reports / "rd18-p1r2-decisions-v1.md").write_text(decisions, encoding="utf-8")
+    atomic_write_text(reports / "rd18-p1r2-decisions-v1.md", decisions)
+
+
+def _manifest_path(path: Path) -> str:
+    """Return stable logical paths for both default and isolated output roots."""
+
+    if OUT != ROOT / "data" / "research" / "rd18_p1r2":
+        if path.is_relative_to(OUT):
+            return str(Path("data") / "research" / "rd18_p1r2" / path.relative_to(OUT)).replace(
+                "\\", "/"
+            )
+        if path.is_relative_to(REPORTS):
+            return str(Path("reports") / "research" / path.relative_to(REPORTS)).replace("\\", "/")
+    return str(path.relative_to(ROOT)).replace("\\", "/")
 
 
 def write_output_manifest() -> None:
@@ -988,14 +1012,14 @@ def write_output_manifest() -> None:
     ]
     paths.extend(
         [
-            ROOT / "reports" / "research" / "rd18-p1r2-methodology-v1.md",
-            ROOT / "reports" / "research" / "rd18-p1r2-results-v1.md",
-            ROOT / "reports" / "research" / "rd18-p1r2-decisions-v1.md",
+            REPORTS / "rd18-p1r2-methodology-v1.md",
+            REPORTS / "rd18-p1r2-results-v1.md",
+            REPORTS / "rd18-p1r2-decisions-v1.md",
         ]
     )
     entries = [
         {
-            "path": str(path.relative_to(ROOT)).replace("\\", "/"),
+            "path": _manifest_path(path),
             "bytes": path.stat().st_size,
             "sha256": sha256_file(path),
         }
@@ -1013,7 +1037,33 @@ def write_output_manifest() -> None:
     )
 
 
-def run(*, offline: bool = True) -> dict[str, Any]:
+@contextmanager
+def _output_context(output_dir: Path | None) -> Iterator[None]:
+    """Temporarily redirect writes while keeping all immutable inputs fixed."""
+
+    global OUT, REPORTS
+    previous_out = OUT
+    previous_reports = REPORTS
+    if output_dir is not None:
+        OUT = output_dir.expanduser().resolve()
+        # Tests pass a repo-shaped ``data/research/rd18_p1r2`` directory.  For
+        # arbitrary callers, keep reports beside that isolated output root.
+        if (
+            len(OUT.parents) >= 3
+            and OUT.parent.name == "research"
+            and OUT.parent.parent.name == "data"
+        ):
+            REPORTS = OUT.parents[2] / "reports" / "research"
+        else:
+            REPORTS = OUT.parent / "reports" / "research"
+    try:
+        yield
+    finally:
+        OUT = previous_out
+        REPORTS = previous_reports
+
+
+def _run(*, offline: bool = True) -> dict[str, Any]:
     if not offline:
         raise P1R2Error("P1R2 is offline-only")
     protocol = read_json(PROTOCOL)
@@ -1021,6 +1071,8 @@ def run(*, offline: bool = True) -> dict[str, Any]:
         raise P1R2Error("P1R2 protocol source commit mismatch")
     reconciliation = reconcile_inputs()
     OUT.mkdir(parents=True, exist_ok=True)
+    if OUT != ROOT / "data" / "research" / "rd18_p1r2":
+        atomic_write_bytes(OUT / PROTOCOL.name, PROTOCOL.read_bytes())
     write_json(OUT / "input-reconciliation.json", reconciliation)
     if not reconciliation["passed"]:
         failed_report = {
@@ -1257,9 +1309,7 @@ def run(*, offline: bool = True) -> dict[str, Any]:
             "No strategy returns, trades, signals, candidates, or optimization were produced.",
         ],
     }
-    panel.to_parquet(
-        OUT / "corrected-daily-liquidity-panel.parquet", index=False, compression="zstd"
-    )
+    write_parquet(OUT / "corrected-daily-liquidity-panel.parquet", panel, compression="zstd")
     raw_inventory = sorted(raw_inventory, key=lambda row: str(row["pair"]))
     write_csv(OUT / "raw-inventory-classification.csv", raw_inventory, sorted(raw_inventory[0]))
     write_csv(OUT / "excluded-product-audit.csv", excluded_audit, sorted(excluded_audit[0]))
@@ -1319,6 +1369,13 @@ def run(*, offline: bool = True) -> dict[str, Any]:
     return report
 
 
+def run(*, offline: bool = True, output_dir: Path | None = None) -> dict[str, Any]:
+    """Run offline, optionally redirecting all writes to an isolated directory."""
+
+    with _output_context(output_dir):
+        return _run(offline=offline)
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(
         description="Run offline RD18-P1R2 KuCoin restricted-panel repair."
@@ -1326,8 +1383,14 @@ def main() -> int:
     parser.add_argument(
         "--offline", action="store_true", help="required zero-network execution mode"
     )
+    parser.add_argument(
+        "--output-dir",
+        type=Path,
+        default=None,
+        help="optional isolated output directory; immutable inputs remain in the repository",
+    )
     args = parser.parse_args()
-    report = run(offline=bool(args.offline) or True)
+    report = run(offline=bool(args.offline) or True, output_dir=args.output_dir)
     print(
         json.dumps(
             {

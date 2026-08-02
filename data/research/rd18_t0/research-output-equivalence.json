@@ -1,0 +1,18 @@
+{
+  "schema_version": "rd18-t0-research-output-equivalence-v1",
+  "comparison": "isolated P1R2 rebuilds versus committed P1R2 outputs",
+  "isolated_runs": 2,
+  "isolated_runs_passed": 2,
+  "generated_file_set_equal": true,
+  "generated_files_byte_equal": true,
+  "output_manifest_content_equal": true,
+  "output_manifest_deterministic_hash": "0cc3d273e55aa1d1425de97b47fb5cad7610c6c2c7da6aec348850a635947048",
+  "committed_output_manifest_file_sha256": "d0b4352298fc0e6907b7c3b4e8b06cf91897450c5f1506f312804f500dc3f65a",
+  "p1r2_output_manifest_preserved": true,
+  "p2r2_output_manifest_deterministic_hash": "4ff50cc2c209ea68e31b95467581a9b651a9b1a17b37c505a1de280902fb3ee3",
+  "p2s2_output_manifest_deterministic_hash": "5faeee9ac872fad360d4b56aad5a442224bebee24dae69a3f69ac59e236136de",
+  "p2r2_and_p2s2_recorded_outputs_modified": false,
+  "post_2024_observations": 0,
+  "network_requests": 0,
+  "notes": "The isolated output-dir option copies the immutable P1R2 protocol into the isolated output and preserves canonical manifest paths, allowing byte-for-byte comparison without writing the committed research directory."
+}

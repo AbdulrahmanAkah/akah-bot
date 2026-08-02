@@ -5,7 +5,6 @@
 from __future__ import annotations
 
 import argparse
-import csv
 import hashlib
 import json
 from collections import defaultdict
@@ -14,6 +13,7 @@ from typing import Any
 
 import pandas as pd
 
+from spotbot.research.atomic_output import atomic_write_csv, atomic_write_json, atomic_write_text
 from spotbot.research.kucoin_rd18_p1r import apply_hysteresis
 from spotbot.research.kucoin_rd18_p2r2 import (
     MEMBERSHIP_TYPES,
@@ -112,27 +112,19 @@ def read_csv(path: Path) -> pd.DataFrame:
 
 
 def write_json(path: Path, value: object) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(
-        json.dumps(value, indent=2, sort_keys=True, ensure_ascii=False) + "\n",
-        encoding="utf-8",
-    )
+    atomic_write_json(path, value)
 
 
 def write_rows(path: Path, rows: list[dict[str, object]]) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
     if not rows:
-        path.write_text("\n", encoding="utf-8")
+        atomic_write_text(path, "\n")
         return
     fields: list[str] = []
     for row in rows:
         for key in row:
             if key not in fields:
                 fields.append(key)
-    with path.open("w", encoding="utf-8", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=fields, extrasaction="ignore")
-        writer.writeheader()
-        writer.writerows({field: row.get(field, "") for field in fields} for row in rows)
+    atomic_write_csv(path, rows, fields)
 
 
 def split_channels(value: object) -> tuple[str, ...]:
@@ -1671,9 +1663,9 @@ The prior RD18-P2R and P2S decisions remain immutable historical records.  Only
 their derived numerical comparisons are superseded for future research by the
 corrected P1R2 baseline.
 """
-    (report_dir / "rd18-p2r2-methodology-v1.md").write_text(methodology, encoding="utf-8")
-    (report_dir / "rd18-p2r2-results-v1.md").write_text(results, encoding="utf-8")
-    (report_dir / "rd18-p2r2-decisions-v1.md").write_text(decisions, encoding="utf-8")
+    atomic_write_text(report_dir / "rd18-p2r2-methodology-v1.md", methodology)
+    atomic_write_text(report_dir / "rd18-p2r2-results-v1.md", results)
+    atomic_write_text(report_dir / "rd18-p2r2-decisions-v1.md", decisions)
 
 
 def run(*, offline: bool = True) -> dict[str, Any]:

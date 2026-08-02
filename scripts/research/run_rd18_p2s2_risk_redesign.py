@@ -10,7 +10,6 @@ intersection universe, constructs Variant E, or runs strategy logic.
 from __future__ import annotations
 
 import argparse
-import csv
 import hashlib
 import json
 import math
@@ -20,6 +19,7 @@ from typing import Any, cast
 
 import pandas as pd
 
+from spotbot.research.atomic_output import atomic_write_csv, atomic_write_json, atomic_write_text
 from spotbot.research.kucoin_rd18_p2s2 import (
     classify_boundary_opportunity,
     classify_liquidity_gap,
@@ -96,26 +96,19 @@ def read_csv(path: Path) -> pd.DataFrame:
 
 
 def write_json(path: Path, value: object) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(
-        json.dumps(value, indent=2, sort_keys=True, ensure_ascii=False) + "\n", encoding="utf-8"
-    )
+    atomic_write_json(path, value)
 
 
 def write_rows(path: Path, rows: list[dict[str, object]]) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
     fields: list[str] = []
     for row in rows:
         for key in row:
             if key not in fields:
                 fields.append(key)
     if not fields:
-        path.write_text("\n", encoding="utf-8")
+        atomic_write_text(path, "\n")
         return
-    with path.open("w", encoding="utf-8", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=fields, extrasaction="ignore")
-        writer.writeheader()
-        writer.writerows({field: row.get(field, "") for field in fields} for row in rows)
+    atomic_write_csv(path, rows, fields)
 
 
 def parse_bool(value: object) -> bool:
@@ -1107,9 +1100,9 @@ Authorization:
 ```
 """
     reports.mkdir(parents=True, exist_ok=True)
-    (reports / "rd18-p2s2-methodology-v1.md").write_text(methodology, encoding="utf-8")
-    (reports / "rd18-p2s2-results-v1.md").write_text(results, encoding="utf-8")
-    (reports / "rd18-p2s2-decisions-v1.md").write_text(decisions, encoding="utf-8")
+    atomic_write_text(reports / "rd18-p2s2-methodology-v1.md", methodology)
+    atomic_write_text(reports / "rd18-p2s2-results-v1.md", results)
+    atomic_write_text(reports / "rd18-p2s2-decisions-v1.md", decisions)
 
 
 def run() -> dict[str, Any]:
