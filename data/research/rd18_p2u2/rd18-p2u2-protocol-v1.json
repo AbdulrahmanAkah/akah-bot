@@ -1,0 +1,102 @@
+{
+  "schema_version": "rd18-p2u2-protocol-v1",
+  "stage": "RD18-P2U2_CORRECTED_CONFIDENCE_AWARE_UNIVERSE_DESIGN",
+  "source_commit": "ea5f7a5fcd15c838ee329f1afc990b5b64c51b00",
+  "execution_venue": "KuCoin Spot",
+  "restricted_claim": "RESTRICTED_TO_376_KLINE_CONFIRMED_HISTORICAL_KUCOIN_SPOT_PAIRS",
+  "input_hashes": {
+    "p1r": "3956041409448c3fb547d18917d46f423e07b88b8815961a1a61866fd4ab03b0",
+    "p1r2": "0cc3d273e55aa1d1425de97b47fb5cad7610c6c2c7da6aec348850a635947048",
+    "p2r": "5ef8deefaa512e07cac33150399a4cb3bdfa685e623d690e3a804bf3a9ef5b1a",
+    "p2s": "38e19370f3e98539b7d55502c6d5b97acf80829d3332df3c7c56a6232f3eccfd",
+    "p2t": "afcbabc0a5dbd77791adde75fe895d2d55386e51df568d391d9df77d007aa0bf",
+    "p2u": "583be92b9880364a53ecabcf53e5980350c2ef06b11da2c3612f78269feae551",
+    "p2r2": "4ff50cc2c209ea68e31b95467581a9b651a9b1a17b37c505a1de280902fb3ee3",
+    "p2s2": "5faeee9ac872fad360d4b56aad5a442224bebee24dae69a3f69ac59e236136de",
+    "t0": "4c2239cdd1fc71fe52aab06c5e8aa75770a48074a47be57e4db94e030b34f659"
+  },
+  "inventory_definitions": {
+    "c2": "all 364 corrected ordinary Spot pairs from the committed P1R2 C2 ranking",
+    "d2": "the 299 corrected Evidence-Strong pairs from the committed P2R2 provenance",
+    "e2": "C2 liquidity ranking with only registered 6/7 and 8/9 confidence tie-breaks",
+    "current_seed": "the 65 P2T TEMPORALLY_DISTINCT_ASSET pairs in C2 minus D2",
+    "excluded_products": "the 12 registered LEVERAGED_OR_SYNTHETIC_PRODUCT pairs, ineligible before ranking"
+  },
+  "windows": {
+    "research_period": "2019-01-01T00:00:00Z through 2024-12-31T23:59:59Z",
+    "primary_decisions": "301 post-warm-up Monday 00:00 UTC decisions",
+    "diagnostic_decisions": "313 registered weekly decisions"
+  },
+  "confidence_classes": [
+    "EVIDENCE_STRONG",
+    "CURRENT_SEED_KLINE_CONFIRMED",
+    "EXCLUDED_LEVERAGED_OR_SYNTHETIC"
+  ],
+  "primary_algorithm": {
+    "variant": "E10",
+    "threshold": 0.1,
+    "liquidity_metric": "trailing_28d_median_daily_quote_turnover_usdt",
+    "boundaries": ["ranks 6/7 entry", "ranks 8/9 retention"],
+    "relative_gap": "(upper liquidity - lower liquidity) / upper liquidity",
+    "allowed_swap": "adjacent only; at most one rank per asset; no iterative bubbling",
+    "diagnostic_variants": {
+      "E05": 0.05,
+      "E15": 0.15
+    }
+  },
+  "ranking_rules": {
+    "primary": "committed corrected C2 liquidity rank",
+    "tie_breaking": ["liquidity descending", "listing age descending", "canonical asset ID ascending"],
+    "top_n": [4, 6, 8, 10, 30],
+    "hysteresis": "raw rank <=6 entry, incumbent retained through rank 8"
+  },
+  "integrity_policy": {
+    "product_exclusion_before_ranking": true,
+    "no_intersection_universe": true,
+    "no_global_confidence_weight": true,
+    "no_current_metadata_membership": true,
+    "no_identity_or_liquidity_removal": true,
+    "no_network_requests": true,
+    "no_post_2024_observations": true,
+    "no_returns": true,
+    "no_trading": true,
+    "no_optimization": true,
+    "atomic_output_utility": "src/spotbot/research/atomic_output.py"
+  },
+  "acceptance_gates": {
+    "input_hashes_reconcile": true,
+    "counts_reconcile": true,
+    "exact_products_excluded": true,
+    "no_unresolved_top10_identity_or_liquidity": true,
+    "no_intersection_or_global_weighting": true,
+    "adjacent_only_and_one_rank_movement": true,
+    "top4_top10_top30_invariants": true,
+    "e10_top6_and_top8_complete": true,
+    "e10_retains_current_seed_assets": true,
+    "e10_not_equal_c2_or_d2": true,
+    "e10_top6_liquidity_retained_at_least_99_percent": true,
+    "mean_e05_e10_top6_jaccard_at_least_90_percent": true,
+    "mean_e10_e15_top6_jaccard_at_least_90_percent": true,
+    "hysteresis_operational_sanity": true,
+    "bchsv_case_study_confirmed": true,
+    "deterministic_two_run_rebuild": true,
+    "atomic_output_validation": true,
+    "zero_network_and_sealed_data": true,
+    "prior_artifacts_unchanged": true
+  },
+  "decisions": {
+    "success": "RD18_P2U2_CONFIDENCE_AWARE_UNIVERSE_DESIGN_CONFIRMED",
+    "success_next": "RD18_P3R_PREREGISTERED_THREE_UNIVERSE_REPLAY_PROTOCOL",
+    "nonoperative": "RD18_P2U2_CONFIDENCE_RULE_NONOPERATIVE",
+    "nonoperative_next": "RD18_BLOCKED_PENDING_THREE_UNIVERSE_POLICY_REVIEW",
+    "collapse": "RD18_P2U2_CONFIDENCE_DESIGN_COLLAPSES_TO_EVIDENCE_STRONG",
+    "sacrifice_failure": "RD18_P2U2_CONFIDENCE_LIQUIDITY_SACRIFICE_EXCESSIVE",
+    "threshold_failure": "RD18_P2U2_CONFIDENCE_THRESHOLD_UNSTABLE"
+  },
+  "authorization": {
+    "full_historical_inventory_claim": false,
+    "strategy_replay_authorized": false,
+    "candidate_generation_authorized": false,
+    "production_authorized": false
+  }
+}

@@ -1,0 +1,512 @@
+{
+  "authorization": {
+    "c2_research_scenario_authorized": true,
+    "candidate_generation_authorized": false,
+    "d2_research_scenario_authorized": true,
+    "e2_research_scenario_authorized": true,
+    "full_historical_inventory_claim": false,
+    "production_authorized": false,
+    "strategy_replay_authorized": false,
+    "three_universe_protocol_design_authorized": true
+  },
+  "bchsv_case_study": {
+    "announcement_evidence": "P0B final inventory and P0A current-seed provenance; no new archive or network evidence used",
+    "canonical_asset_id": "BCHSV",
+    "classification": "BCHSV_BOUNDARIES_CONFIRMED_WITH_NONBLOCKING_GAPS",
+    "daily_rows": 2147,
+    "diagnostic_omission_only": true,
+    "eligibility_loss_weeks": 0,
+    "eligibility_recovery_count": 0,
+    "eligible_post_warmup_weeks": 301,
+    "first_open_timestamp": "2019-01-01T00:00:00+00:00",
+    "identity": {
+      "bchsv_rows": 2147,
+      "bsv_pair_present": false,
+      "bsv_rows": 0,
+      "identity_status": "P2T_TEMPORALLY_DISTINCT_ASSET",
+      "overlap_days": 0
+    },
+    "intervention_rows_involving_bchsv": 13,
+    "intervention_rows_involving_bchsv_by_variant": {
+      "E05": 2,
+      "E10": 4,
+      "E15": 7
+    },
+    "last_open_timestamp": "2024-12-31T00:00:00+00:00",
+    "longest_top6_run": 37,
+    "maximum_missing_gap_days": 26,
+    "missing_gap_count": 3,
+    "pair": "BCHSV-USDT",
+    "schema_version": "rd18-p2u2-bchsv-case-study-v1",
+    "silent_gap_false_eligibility": false,
+    "top6_weeks": 65,
+    "tradable_bounds_source": "P0B full-daily-kline-boundaries.csv and committed P1R2 panel",
+    "zero_volume_rows": 0
+  },
+  "confidence_class_counts": {
+    "CURRENT_SEED_KLINE_CONFIRMED": 65,
+    "EVIDENCE_STRONG": 299
+  },
+  "current_seed_top10_slot_share": 0.1611295681063123,
+  "current_seed_top6_slot_share": 0.07918050941306755,
+  "decision": "RD18_P2U2_CONFIDENCE_AWARE_UNIVERSE_DESIGN_CONFIRMED",
+  "e10_metrics": {
+    "hysteresis_mean_jaccard_to_c2": 0.9677266255339345,
+    "max_intervention_gap": 0.09580986784263575,
+    "top6_exact_match_to_c2": 0.9368770764119602,
+    "top6_liquidity_retained": 0.9999189887610572,
+    "top6_mean_jaccard_to_c2": 0.9819648789748457,
+    "top8_mean_jaccard_to_c2": 0.9904023624953857
+  },
+  "e10_vs_d2": {
+    "top6_exact_match": 0.5382059800664452,
+    "top6_mean_jaccard": 0.8652112007593735
+  },
+  "entry_interventions": {
+    "E05": 10,
+    "E10": 19,
+    "E15": 32
+  },
+  "futures": 0,
+  "gates": {
+    "adjacent_only": true,
+    "atomic_output_validation": true,
+    "bchsv_case_confirmed": true,
+    "c2_d2_current_seed_counts": true,
+    "e10_aggregate_liquidity_at_least_99": true,
+    "e10_complete_top6_top8": true,
+    "e10_hysteresis_sanity": true,
+    "e10_max_gap_at_most_10": true,
+    "e10_not_c2_or_d2": true,
+    "e10_promotes_evidence_strong": true,
+    "e10_retains_current_seed": true,
+    "exact_products_excluded": true,
+    "input_hashes_reconcile": true,
+    "mean_e05_e10_jaccard_at_least_90": true,
+    "mean_e10_e15_jaccard_at_least_90": true,
+    "no_futures_margin_returns_trades": true,
+    "no_post_2024": true,
+    "no_unresolved_top10_identity": true,
+    "no_unresolved_top10_liquidity": true,
+    "prior_artifacts_unchanged": true,
+    "starts_from_c2_no_intersection": true,
+    "top4_top10_top30_invariants": true,
+    "zero_network": true
+  },
+  "input_reconciliation": {
+    "atomic_output_utility_active": true,
+    "counts": {
+      "c2_minus_d2_pairs": 65,
+      "c2_pairs": 364,
+      "c2_ranking_decisions": 310,
+      "c2_ranking_rows": 53088,
+      "current_seed_pairs": 65,
+      "d2_pairs": 299,
+      "excluded_products": 12,
+      "p2s2_boundary_rows": 602,
+      "post_warmup_decisions": 301,
+      "unresolved_identity_rows": 0,
+      "unresolved_liquidity_rows": 0,
+      "weekly_decisions": 313
+    },
+    "current_seed_reconciles_to_c2_minus_d2": true,
+    "expected_hashes": {
+      "p1r": "3956041409448c3fb547d18917d46f423e07b88b8815961a1a61866fd4ab03b0",
+      "p1r2": "0cc3d273e55aa1d1425de97b47fb5cad7610c6c2c7da6aec348850a635947048",
+      "p2r": "5ef8deefaa512e07cac33150399a4cb3bdfa685e623d690e3a804bf3a9ef5b1a",
+      "p2r2": "4ff50cc2c209ea68e31b95467581a9b651a9b1a17b37c505a1de280902fb3ee3",
+      "p2s": "38e19370f3e98539b7d55502c6d5b97acf80829d3332df3c7c56a6232f3eccfd",
+      "p2s2": "5faeee9ac872fad360d4b56aad5a442224bebee24dae69a3f69ac59e236136de",
+      "p2t": "afcbabc0a5dbd77791adde75fe895d2d55386e51df568d391d9df77d007aa0bf",
+      "p2u": "583be92b9880364a53ecabcf53e5980350c2ef06b11da2c3612f78269feae551",
+      "t0": "4c2239cdd1fc71fe52aab06c5e8aa75770a48074a47be57e4db94e030b34f659"
+    },
+    "hashes": {
+      "p1r": "3956041409448c3fb547d18917d46f423e07b88b8815961a1a61866fd4ab03b0",
+      "p1r2": "0cc3d273e55aa1d1425de97b47fb5cad7610c6c2c7da6aec348850a635947048",
+      "p2r": "5ef8deefaa512e07cac33150399a4cb3bdfa685e623d690e3a804bf3a9ef5b1a",
+      "p2r2": "4ff50cc2c209ea68e31b95467581a9b651a9b1a17b37c505a1de280902fb3ee3",
+      "p2s": "38e19370f3e98539b7d55502c6d5b97acf80829d3332df3c7c56a6232f3eccfd",
+      "p2s2": "5faeee9ac872fad360d4b56aad5a442224bebee24dae69a3f69ac59e236136de",
+      "p2t": "afcbabc0a5dbd77791adde75fe895d2d55386e51df568d391d9df77d007aa0bf",
+      "p2u": "583be92b9880364a53ecabcf53e5980350c2ef06b11da2c3612f78269feae551",
+      "t0": "4c2239cdd1fc71fe52aab06c5e8aa75770a48074a47be57e4db94e030b34f659"
+    },
+    "input_files": {
+      "p1r2_eligibility_sha256": "e1aee88885a479a0038b6574e7de7f01a47e274b330ef88d9cb1606bc2cb98ab",
+      "p1r2_hysteresis_sha256": "41b6b61e4a52f7e074f14413a980ad1c430eacdad82ab9e621f724854d8fddbc",
+      "p1r2_rankings_sha256": "da5bf7a416df988663d6357954096806531b8c08fc60680520afef0295b045ea",
+      "p1r2_topn_sha256": "e7d0faef21c681f11fad2bad38782ef2567130613b15dd8c16fb40bde86a71b5",
+      "p2r2_provenance_sha256": "e6e9e5b3aa230805efd119454db6a38a55d8b6d620b78d0ca40b4d62e9da5f50",
+      "p2s2_boundary_sha256": "ff2fd08ac2b1f3186139756afe15359814e3aff9c7ecd54eea9e20aa86e8f54e",
+      "p2s2_substitution_sha256": "d029e4a5d02ea6d872bdcb57ccca4dae0262f5c5e5209c03705af61e2bd26fa1",
+      "p2t_identity_sha256": "a72f298c8cdf04b06f7ad83eb19c51c482b5896d1894235200b043caa2b72f2f",
+      "p2t_liquidity_sha256": "3eb18aa0dacad1e80f997ae2d2710ae51bc729edd7d54440d8972d01782d0c24",
+      "t0_output_manifest_sha256": "6934528518848fec5500cd90de7d10b07097c22ce9c39f5cf5dee2520cfac422"
+    },
+    "passed": true,
+    "product_exclusion_integrity": {
+      "in_c2_eligibility": [],
+      "in_c2_hysteresis": [],
+      "in_c2_rankings": [],
+      "in_c2_topn": [],
+      "passed": true,
+      "products": [
+        "AGIX2L-USDT",
+        "AGIX2S-USDT",
+        "APT2L-USDT",
+        "APT2S-USDT",
+        "BLUR2L-USDT",
+        "BLUR2S-USDT",
+        "CFX2L-USDT",
+        "CFX2S-USDT",
+        "GRT2L-USDT",
+        "GRT2S-USDT",
+        "OP2L-USDT",
+        "OP2S-USDT"
+      ]
+    },
+    "read_only_prior_artifacts": true,
+    "restricted_claim": "RESTRICTED_TO_376_KLINE_CONFIRMED_HISTORICAL_KUCOIN_SPOT_PAIRS",
+    "schema_version": "rd18-p2u2-input-reconciliation-v1",
+    "source_commit": "ea5f7a5fcd15c838ee329f1afc990b5b64c51b00"
+  },
+  "intervention_summary": {
+    "E05": {
+      "annual_counts": {
+        "2019": 1,
+        "2020": 3,
+        "2021": 3,
+        "2023": 6,
+        "2024": 5
+      },
+      "entry": 10,
+      "longest_consecutive_intervention_run": 1,
+      "repeated_displaced_assets": {
+        "BCHSV-USDT": 2,
+        "GRAM-USDT": 5,
+        "KAS-USDT": 2,
+        "PEPE-USDT": 3,
+        "XLM-USDT": 2
+      },
+      "repeated_promoted_assets": {
+        "ADA-USDT": 3,
+        "DOGE-USDT": 2,
+        "INJ-USDT": 2,
+        "SHIB-USDT": 2,
+        "XRP-USDT": 3
+      },
+      "retention": 8,
+      "total": 18,
+      "unique_affected_weeks": 18,
+      "unique_displaced_assets": 9,
+      "unique_promoted_assets": 11
+    },
+    "E10": {
+      "annual_counts": {
+        "2019": 1,
+        "2020": 4,
+        "2021": 8,
+        "2023": 11,
+        "2024": 8
+      },
+      "entry": 19,
+      "longest_consecutive_intervention_run": 2,
+      "repeated_displaced_assets": {
+        "BCHSV-USDT": 4,
+        "GRAM-USDT": 9,
+        "KAS-USDT": 3,
+        "MANA-USDT": 2,
+        "PEPE-USDT": 6,
+        "VET-USDT": 3,
+        "XLM-USDT": 2
+      },
+      "repeated_promoted_assets": {
+        "ADA-USDT": 3,
+        "BNB-USDT": 3,
+        "DOGE-USDT": 3,
+        "DOT-USDT": 2,
+        "INJ-USDT": 2,
+        "LTC-USDT": 2,
+        "SHIB-USDT": 7,
+        "XRP-USDT": 4
+      },
+      "retention": 13,
+      "total": 32,
+      "unique_affected_weeks": 30,
+      "unique_displaced_assets": 10,
+      "unique_promoted_assets": 14
+    },
+    "E15": {
+      "annual_counts": {
+        "2019": 2,
+        "2020": 6,
+        "2021": 14,
+        "2023": 18,
+        "2024": 11
+      },
+      "entry": 32,
+      "longest_consecutive_intervention_run": 4,
+      "repeated_displaced_assets": {
+        "BCHSV-USDT": 7,
+        "GRAM-USDT": 11,
+        "KAS-USDT": 7,
+        "MANA-USDT": 2,
+        "PEPE-USDT": 8,
+        "SUI-USDT": 2,
+        "TEL-USDT": 2,
+        "VET-USDT": 7,
+        "XLM-USDT": 2
+      },
+      "repeated_promoted_assets": {
+        "ADA-USDT": 5,
+        "AVAX-USDT": 3,
+        "BNB-USDT": 4,
+        "DOGE-USDT": 4,
+        "DOT-USDT": 2,
+        "INJ-USDT": 3,
+        "KCS-USDT": 2,
+        "LTC-USDT": 6,
+        "SHIB-USDT": 8,
+        "TRX-USDT": 2,
+        "XRP-USDT": 5
+      },
+      "retention": 19,
+      "total": 51,
+      "unique_affected_weeks": 48,
+      "unique_displaced_assets": 12,
+      "unique_promoted_assets": 18
+    }
+  },
+  "interventions": {
+    "E05": 18,
+    "E10": 32,
+    "E15": 51
+  },
+  "limitations": [
+    "The E2 scenario remains restricted to the 376 Kline-confirmed historical-pair claim.",
+    "P2U2 is structural design only; no strategy replay or production authorization is provided.",
+    "The two adjacent boundaries cannot resolve large-liquidity-gap or absent-from-D2 disagreements outside their registered scope."
+  ],
+  "liquidity_sacrifice_summary": {
+    "E05": {
+      "bucket_counts": {
+        "0-1%": 5,
+        ">1-2%": 3,
+        ">2-5%": 10
+      },
+      "entry_top6_liquidity_retained": 0.9992600302544612,
+      "maximum": 0.042902784101401074,
+      "mean": 0.021756033232574527,
+      "median": 0.02122431999003836
+    },
+    "E10": {
+      "bucket_counts": {
+        "0-1%": 5,
+        ">1-2%": 3,
+        ">2-5%": 10,
+        ">5-10%": 14
+      },
+      "entry_top6_liquidity_retained": 0.9985953914090026,
+      "maximum": 0.09580986784263575,
+      "mean": 0.044997751171453035,
+      "median": 0.04074345523049765
+    },
+    "E15": {
+      "bucket_counts": {
+        "0-1%": 5,
+        ">1-2%": 3,
+        ">10-15%": 19,
+        ">2-5%": 10,
+        ">5-10%": 14
+      },
+      "entry_top6_liquidity_retained": 0.9972671482061521,
+      "maximum": 0.14619440653916754,
+      "mean": 0.07361645225169217,
+      "median": 0.07944288472203763
+    }
+  },
+  "margin": 0,
+  "network_requests": 0,
+  "next_stage": "RD18_P3R_PREREGISTERED_THREE_UNIVERSE_REPLAY_PROTOCOL",
+  "non_collapse": {
+    "both_classes_in_e10_top6": true,
+    "current_seed_remains_structurally_eligible": true,
+    "e10_globally_identical_to_c2": false,
+    "e10_globally_identical_to_d2": false,
+    "e10_has_evidence_strong_promotion": true,
+    "e10_raw_top6_differs_from_c2": true,
+    "e10_retains_current_seed_in_top6": true
+  },
+  "operational_hysteresis": {
+    "full_hysteresis_turnover": {
+      "changed_weeks": 61,
+      "mean_one_week_turnover": 0.38977635782747605,
+      "total_turnover": 122,
+      "zero_change_weeks": 252
+    },
+    "full_raw_top6_turnover": {
+      "changed_weeks": 136,
+      "mean_one_week_turnover": 0.9265175718849841,
+      "total_turnover": 290,
+      "zero_change_weeks": 177
+    },
+    "post_warmup_hysteresis_turnover": {
+      "changed_weeks": 59,
+      "mean_one_week_turnover": 0.4053156146179402,
+      "total_turnover": 122,
+      "zero_change_weeks": 242
+    },
+    "post_warmup_raw_top6_turnover": {
+      "changed_weeks": 134,
+      "mean_one_week_turnover": 0.9634551495016611,
+      "total_turnover": 290,
+      "zero_change_weeks": 167
+    }
+  },
+  "optimization": 0,
+  "p2t_unresolved_e10_top10_rows": 0,
+  "post_2024_observations": 0,
+  "post_warmup_boundary_opportunities": 32,
+  "prior_artifacts_unchanged": true,
+  "restricted_claim": "RESTRICTED_TO_376_KLINE_CONFIRMED_HISTORICAL_KUCOIN_SPOT_PAIRS",
+  "retention_interventions": {
+    "E05": 8,
+    "E10": 13,
+    "E15": 19
+  },
+  "returns": 0,
+  "schema_version": "rd18-p2u2-final-report-v1",
+  "scope_assessment": {
+    "absent_from_d2_records_untouched": 105,
+    "absent_from_d2_untouched_rate": 0.1598173515981735,
+    "e10_intervention_rate_of_inspected_boundaries": 0.053156146179401995,
+    "exact_e10_applied_interventions": 32,
+    "exact_e10_boundary_opportunities": 32,
+    "exact_e10_boundary_opportunity_rate": 0.053156146179401995,
+    "inspected_boundary_count": 602,
+    "large_gap_records_untouched": 417,
+    "large_gap_untouched_rate": 0.634703196347032,
+    "leaves_large_gap_disagreements_intact": true,
+    "modifies_only_boundary_subset": true,
+    "p2s2_disagreement_touched_rate": 0.0487062404870624,
+    "p2s2_near_cutoff_records": 43,
+    "p2s2_near_cutoff_touched_rate": 0.7441860465116279,
+    "p2s2_total_substitution_records": 657,
+    "schema_version": "rd18-p2u2-scope-assessment-v1",
+    "substitution_records_directly_affected": 32,
+    "substitution_records_structurally_outside_scope": 625,
+    "third_scenario_not_reconciliation": true
+  },
+  "signals": 0,
+  "source_commit": "ea5f7a5fcd15c838ee329f1afc990b5b64c51b00",
+  "stage": "RD18_P2U2_CORRECTED_CONFIDENCE_AWARE_UNIVERSE_DESIGN",
+  "threshold_sensitivity": [
+    {
+      "changed_weeks": 138,
+      "entry_interventions": 10,
+      "intervention_count": 18,
+      "post_warmup_hysteresis_changed_weeks": 58,
+      "post_warmup_hysteresis_exact_match_to_c2": 0.9501661129568106,
+      "post_warmup_hysteresis_liquidity_retained": 0.9999244697868259,
+      "post_warmup_hysteresis_maximum_membership_duration": 301,
+      "post_warmup_hysteresis_mean_current_seed_slot_share": 0.09136212624584718,
+      "post_warmup_hysteresis_mean_evidence_strong_slot_share": 0.9086378737541528,
+      "post_warmup_hysteresis_mean_jaccard_to_c2": 0.9857617465590888,
+      "post_warmup_hysteresis_mean_membership_duration": 28.666666666666668,
+      "post_warmup_hysteresis_median_membership_duration": 9.0,
+      "post_warmup_hysteresis_turnover": 120,
+      "post_warmup_top6_changed_weeks": 136,
+      "post_warmup_top6_exact_match_to_c2": 0.9667774086378738,
+      "post_warmup_top6_liquidity_retained": 0.9999756242688781,
+      "post_warmup_top6_maximum_membership_duration": 301,
+      "post_warmup_top6_mean_current_seed_slot_share": 0.08416389811738649,
+      "post_warmup_top6_mean_evidence_strong_slot_share": 0.9158361018826136,
+      "post_warmup_top6_mean_jaccard_to_c2": 0.9905078310393926,
+      "post_warmup_top6_mean_membership_duration": 12.04,
+      "post_warmup_top6_median_membership_duration": 4.0,
+      "post_warmup_top6_turnover": 294,
+      "post_warmup_top8_exact_match_to_c2": 0.973421926910299,
+      "post_warmup_top8_liquidity_retained": 0.9999934514431824,
+      "post_warmup_top8_mean_current_seed_slot_share": 0.1175249169435216,
+      "post_warmup_top8_mean_evidence_strong_slot_share": 0.8824750830564784,
+      "post_warmup_top8_mean_jaccard_to_c2": 0.994093761535622,
+      "retention_interventions": 8,
+      "threshold": 0.05,
+      "total_top6_turnover": 294,
+      "unique_affected_weeks": 18,
+      "variant": "E05"
+    },
+    {
+      "changed_weeks": 136,
+      "entry_interventions": 19,
+      "intervention_count": 32,
+      "post_warmup_hysteresis_changed_weeks": 59,
+      "post_warmup_hysteresis_exact_match_to_c2": 0.8870431893687708,
+      "post_warmup_hysteresis_liquidity_retained": 1.0001842978402173,
+      "post_warmup_hysteresis_maximum_membership_duration": 301,
+      "post_warmup_hysteresis_mean_current_seed_slot_share": 0.08084163898117387,
+      "post_warmup_hysteresis_mean_evidence_strong_slot_share": 0.9191583610188261,
+      "post_warmup_hysteresis_mean_jaccard_to_c2": 0.9677266255339345,
+      "post_warmup_hysteresis_mean_membership_duration": 28.21875,
+      "post_warmup_hysteresis_median_membership_duration": 7.5,
+      "post_warmup_hysteresis_turnover": 122,
+      "post_warmup_top6_changed_weeks": 134,
+      "post_warmup_top6_exact_match_to_c2": 0.9368770764119602,
+      "post_warmup_top6_liquidity_retained": 0.9999189887610572,
+      "post_warmup_top6_maximum_membership_duration": 301,
+      "post_warmup_top6_mean_current_seed_slot_share": 0.07918050941306755,
+      "post_warmup_top6_mean_evidence_strong_slot_share": 0.9208194905869325,
+      "post_warmup_top6_mean_jaccard_to_c2": 0.9819648789748457,
+      "post_warmup_top6_mean_membership_duration": 12.202702702702704,
+      "post_warmup_top6_median_membership_duration": 4.0,
+      "post_warmup_top6_turnover": 290,
+      "post_warmup_top8_exact_match_to_c2": 0.9568106312292359,
+      "post_warmup_top8_liquidity_retained": 0.9999338780624214,
+      "post_warmup_top8_mean_current_seed_slot_share": 0.11544850498338871,
+      "post_warmup_top8_mean_evidence_strong_slot_share": 0.8845514950166113,
+      "post_warmup_top8_mean_jaccard_to_c2": 0.9904023624953857,
+      "retention_interventions": 13,
+      "threshold": 0.1,
+      "total_top6_turnover": 290,
+      "unique_affected_weeks": 30,
+      "variant": "E10"
+    },
+    {
+      "changed_weeks": 142,
+      "entry_interventions": 32,
+      "intervention_count": 51,
+      "post_warmup_hysteresis_changed_weeks": 61,
+      "post_warmup_hysteresis_exact_match_to_c2": 0.8073089700996677,
+      "post_warmup_hysteresis_liquidity_retained": 0.9999255465869683,
+      "post_warmup_hysteresis_maximum_membership_duration": 301,
+      "post_warmup_hysteresis_mean_current_seed_slot_share": 0.08194905869324474,
+      "post_warmup_hysteresis_mean_evidence_strong_slot_share": 0.9180509413067552,
+      "post_warmup_hysteresis_mean_jaccard_to_c2": 0.9449454200284766,
+      "post_warmup_hysteresis_mean_membership_duration": 27.363636363636363,
+      "post_warmup_hysteresis_median_membership_duration": 7.0,
+      "post_warmup_hysteresis_turnover": 126,
+      "post_warmup_top6_changed_weeks": 140,
+      "post_warmup_top6_exact_match_to_c2": 0.893687707641196,
+      "post_warmup_top6_liquidity_retained": 0.9997241211762933,
+      "post_warmup_top6_maximum_membership_duration": 301,
+      "post_warmup_top6_mean_current_seed_slot_share": 0.07198228128460686,
+      "post_warmup_top6_mean_evidence_strong_slot_share": 0.9280177187153932,
+      "post_warmup_top6_mean_jaccard_to_c2": 0.9696250593260559,
+      "post_warmup_top6_mean_membership_duration": 11.727272727272727,
+      "post_warmup_top6_median_membership_duration": 3.0,
+      "post_warmup_top6_turnover": 302,
+      "post_warmup_top8_exact_match_to_c2": 0.9368770764119602,
+      "post_warmup_top8_liquidity_retained": 0.9999081765159552,
+      "post_warmup_top8_mean_current_seed_slot_share": 0.11295681063122924,
+      "post_warmup_top8_mean_evidence_strong_slot_share": 0.8870431893687708,
+      "post_warmup_top8_mean_jaccard_to_c2": 0.9859726836471022,
+      "retention_interventions": 19,
+      "threshold": 0.15,
+      "total_top6_turnover": 302,
+      "unique_affected_weeks": 48,
+      "variant": "E15"
+    }
+  ],
+  "trades": 0
+}
