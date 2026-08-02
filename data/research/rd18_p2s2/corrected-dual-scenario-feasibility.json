@@ -1,0 +1,108 @@
+{
+  "feasible": false,
+  "gates": {
+    "current_seed_liquidity_share": true,
+    "current_seed_top6_slot_share": true,
+    "hysteresis_at_most_one_substitution": true,
+    "maximum_year_current_seed_top6_slot_share": true,
+    "mean_hysteresis_jaccard": false,
+    "mean_top10_jaccard": true,
+    "mean_top6_jaccard": true,
+    "no_duplicate_canonical_asset": true,
+    "no_identity_failure_top10": true,
+    "no_liquidity_integrity_failure_top10": true,
+    "six_eligible_assets_95pct": true,
+    "structural_outputs_reproduce": true,
+    "ten_eligible_assets_90pct": true,
+    "top10_at_most_two_substitutions": false,
+    "top6_at_most_one_substitution": true
+  },
+  "observed": {
+    "c2_six_asset_coverage": 1.0,
+    "c2_ten_asset_coverage": 1.0,
+    "current_seed_liquidity_share": 0.0640928306762975,
+    "current_seed_top6_slot_share": 0.08970099667774087,
+    "current_seed_year_top6_slot_share": {
+      "2019": 0.1625,
+      "2020": 0.12179487179487179,
+      "2021": 0.09294871794871794,
+      "2022": 0.0,
+      "2023": 0.04807692307692308,
+      "2024": 0.1289308176100629
+    },
+    "d2_six_asset_coverage": 1.0,
+    "d2_ten_asset_coverage": 0.9136212624584718,
+    "distribution": {
+      "HYSTERESIS": {
+        "mean_substitutions": 0.6843853820598007,
+        "median_substitutions": 1.0,
+        "more_than_three_substitution_weeks": 0,
+        "one_substitution_weeks": 162,
+        "three_substitution_weeks": 0,
+        "total_weeks": 301,
+        "two_substitution_weeks": 22,
+        "zero_substitution_weeks": 117
+      },
+      "TOP_10": {
+        "mean_substitutions": 1.6345514950166113,
+        "median_substitutions": 1.0,
+        "more_than_three_substitution_weeks": 36,
+        "one_substitution_weeks": 83,
+        "three_substitution_weeks": 32,
+        "total_weeks": 301,
+        "two_substitution_weeks": 81,
+        "zero_substitution_weeks": 69
+      },
+      "TOP_30": {
+        "mean_substitutions": 7.016611295681063,
+        "median_substitutions": 5.0,
+        "more_than_three_substitution_weeks": 195,
+        "one_substitution_weeks": 25,
+        "three_substitution_weeks": 46,
+        "total_weeks": 301,
+        "two_substitution_weeks": 35,
+        "zero_substitution_weeks": 0
+      },
+      "TOP_4": {
+        "mean_substitutions": 0.1760797342192691,
+        "median_substitutions": 0.0,
+        "more_than_three_substitution_weeks": 0,
+        "one_substitution_weeks": 53,
+        "three_substitution_weeks": 0,
+        "total_weeks": 301,
+        "two_substitution_weeks": 0,
+        "zero_substitution_weeks": 248
+      },
+      "TOP_6": {
+        "mean_substitutions": 0.5382059800664452,
+        "median_substitutions": 1.0,
+        "more_than_three_substitution_weeks": 0,
+        "one_substitution_weeks": 144,
+        "three_substitution_weeks": 0,
+        "total_weeks": 301,
+        "two_substitution_weeks": 9,
+        "zero_substitution_weeks": 148
+      },
+      "TOP_8": {
+        "mean_substitutions": 0.9867109634551495,
+        "median_substitutions": 1.0,
+        "more_than_three_substitution_weeks": 2,
+        "one_substitution_weeks": 105,
+        "three_substitution_weeks": 4,
+        "total_weeks": 301,
+        "two_substitution_weeks": 86,
+        "zero_substitution_weeks": 104
+      }
+    },
+    "hysteresis_at_most_one_substitution_share": 0.9269102990033222,
+    "maximum_year_current_seed_top6_slot_share": 0.1625,
+    "mean_hysteresis_jaccard": 0.8096820123398196,
+    "mean_top10_jaccard": 0.7563751862755185,
+    "mean_top6_jaccard": 0.8483626008542953,
+    "post_warmup_decisions": 301,
+    "top10_at_most_two_substitution_share": 0.7740863787375415,
+    "top6_at_most_one_substitution_share": 0.9700996677740864,
+    "warning_flags": {}
+  },
+  "period": "POST_WARMUP_301"
+}

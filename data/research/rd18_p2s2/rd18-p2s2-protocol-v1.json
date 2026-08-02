@@ -1,0 +1,119 @@
+{
+  "schema_version": "rd18-p2s2-protocol-v1",
+  "stage": "RD18_P2S2_CORRECTED_UNIVERSE_RISK_REDESIGN",
+  "source_commit": "fa9cef2c210e72854bbccb6607f2ffb046f42678",
+  "restricted_claim": "RESTRICTED_TO_376_KLINE_CONFIRMED_HISTORICAL_KUCOIN_SPOT_PAIRS",
+  "input_hashes": {
+    "p1r": "3956041409448c3fb547d18917d46f423e07b88b8815961a1a61866fd4ab03b0",
+    "p1r2": "0cc3d273e55aa1d1425de97b47fb5cad7610c6c2c7da6aec348850a635947048",
+    "p2r": "5ef8deefaa512e07cac33150399a4cb3bdfa685e623d690e3a804bf3a9ef5b1a",
+    "p2s": "38e19370f3e98539b7d55502c6d5b97acf80829d3332df3c7c56a6232f3eccfd",
+    "p2t": "afcbabc0a5dbd77791adde75fe895d2d55386e51df568d391d9df77d007aa0bf",
+    "p2u": "583be92b9880364a53ecabcf53e5980350c2ef06b11da2c3612f78269feae551",
+    "p2r2": "4ff50cc2c209ea68e31b95467581a9b651a9b1a17b37c505a1de280902fb3ee3"
+  },
+  "variants": {
+    "C2": {
+      "name": "CORRECTED_RESTRICTED_KUCOIN_SPOT_LIQUIDITY_UNIVERSE",
+      "pairs": 364,
+      "source": "committed P1R2 corrected panel"
+    },
+    "D2": {
+      "name": "CORRECTED_EVIDENCE_STRONG_UNIVERSE",
+      "pairs": 299,
+      "source": "committed P1R2 provenance definition"
+    },
+    "C2_minus_D2": {
+      "pairs": 65,
+      "classification": "CURRENT_SEED_KLINE_CONFIRMED"
+    }
+  },
+  "comparison_windows": {
+    "full_decisions": 313,
+    "post_warmup_decisions": 301,
+    "warmup_decisions_excluded_from_feasibility": 12,
+    "primary_window": "POST_WARMUP_301",
+    "full_window_role": "DIAGNOSTIC_ONLY"
+  },
+  "metrics": {
+    "exact_match": "set equality, reported but not used alone",
+    "jaccard": "intersection divided by union",
+    "symmetric_difference": "members present in only one set",
+    "substitutions": "symmetric difference divided by two for equal-size sets",
+    "shared_slot_percentage": "intersection divided by registered Top-N size",
+    "rank_distance": "absolute rank displacement on common members",
+    "liquidity_gap_classes": {
+      "NEAR_CUTOFF": "relative difference <= 10%",
+      "MODERATE_GAP": "relative difference > 10% and <= 25%",
+      "LARGE_LIQUIDITY_GAP": "relative difference > 25%",
+      "ABSENT_FROM_VARIANT": "comparison value unavailable"
+    }
+  },
+  "top_n": [4, 6, 8, 10, 30],
+  "hysteresis": {
+    "entry_rank": 6,
+    "retention_rank": 8,
+    "comparison": "committed corrected P1R2 C2 and deterministic D2 reconstruction"
+  },
+  "dual_scenario_feasibility_gates": {
+    "mean_top6_jaccard_min": 0.8,
+    "mean_top10_jaccard_min": 0.7,
+    "top6_at_most_one_substitution_min": 0.85,
+    "top10_at_most_two_substitutions_min": 0.8,
+    "mean_hysteresis_jaccard_min": 0.85,
+    "hysteresis_at_most_one_substitution_min": 0.85,
+    "current_seed_top6_slot_share_max": 0.15,
+    "current_seed_year_top6_slot_share_max": 0.25,
+    "current_seed_liquidity_share_max": 0.15,
+    "post_warmup_six_asset_coverage_min": 0.95,
+    "post_warmup_ten_asset_coverage_min": 0.9
+  },
+  "confidence_aware_design_necessity_gates": {
+    "mean_top6_jaccard_min": 0.8,
+    "top6_at_most_one_substitution_min": 0.9,
+    "current_seed_top6_slot_share_max": 0.15,
+    "current_seed_year_top6_slot_share_max": 0.25,
+    "current_seed_liquidity_share_max": 0.15,
+    "c2_complete_top6": true,
+    "d2_complete_six_assets": true,
+    "meaningful_current_seed_top6_participation": true,
+    "near_cutoff_opportunity_required": true
+  },
+  "boundary_opportunity_thresholds": [0.05, 0.10, 0.15],
+  "warnings": [
+    "two_or_more_top6_substitutions",
+    "more_than_two_top10_substitutions",
+    "large_liquidity_gap_substitution",
+    "current_seed_top6_26_consecutive_weeks",
+    "year_mean_top6_jaccard_below_0_75",
+    "hysteresis_duration_increase",
+    "d2_fewer_than_ten_assets",
+    "extreme_flag_share_above_10_percent"
+  ],
+  "prohibitions": {
+    "no_network": true,
+    "no_new_market_data": true,
+    "no_post_2024_observations": true,
+    "no_futures": true,
+    "no_margin": true,
+    "no_returns": true,
+    "no_trading": true,
+    "no_signals": true,
+    "no_candidates": true,
+    "no_optimization": true,
+    "no_set_intersection_universe": true,
+    "no_variant_e_construction": true,
+    "no_p2u2_execution": true,
+    "production_authorized": false
+  },
+  "decisions": [
+    "RD18_P2S2_DUAL_UNIVERSE_REPLAY_DESIGN_CONFIRMED",
+    "RD18_P2S2_CONFIDENCE_AWARE_UNIVERSE_DESIGN_REQUIRED",
+    "RD18_P2S2_CORRECTED_UNIVERSE_UNCERTAINTY_REMAINS_UNACCEPTABLE",
+    "RD18_P2S2_INPUT_RECONCILIATION_FAILED",
+    "RD18_P2S2_EXCLUDED_PRODUCT_CONTAMINATION",
+    "RD18_P2S2_LIQUIDITY_INTEGRITY_UNRESOLVED",
+    "RD18_P2S2_STRUCTURAL_RECONSTRUCTION_FAILED"
+  ],
+  "output_hashes": {}
+}
