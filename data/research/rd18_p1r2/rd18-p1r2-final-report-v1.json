@@ -1,0 +1,403 @@
+{
+  "acceptance_gates": {
+    "c2_minus_d2_count_65": true,
+    "contiguous_deterministic_rankings": true,
+    "corrected_c2_count_364": true,
+    "corrected_d2_count_299": true,
+    "daily_coverage_at_least_95_percent": true,
+    "deterministic_hysteresis": true,
+    "exactly_12_products": true,
+    "excluded_before_aggregation": true,
+    "excluded_product_absent_from_corrected_eligibility": true,
+    "excluded_product_absent_from_corrected_hysteresis": true,
+    "excluded_product_absent_from_corrected_rankings": true,
+    "excluded_product_absent_from_corrected_top30": true,
+    "input_hashes_reconcile": true,
+    "no_forbidden_scope": true,
+    "no_post_2024_observations": true,
+    "prior_artifacts_unchanged": true,
+    "raw_inventory_exactly_376": true,
+    "six_assets_for_95_percent_post_warmup": true,
+    "six_delisted_pairs_retained": true,
+    "ten_assets_for_90_percent_post_warmup": true,
+    "zero_timing_violations": true,
+    "zero_unresolved_top10_identity": true
+  },
+  "authorization": {
+    "corrected_restricted_research_use_authorized": true,
+    "full_historical_inventory_claim": false,
+    "old_p1r_baseline_superseded_for_future_research": true,
+    "production_authorized": false,
+    "strategy_candidate_generation_authorized": false,
+    "strategy_replay_authorized": false
+  },
+  "contamination_impact": {
+    "affected_top_n_rows": 0,
+    "old_hysteresis_changed_decisions": 0,
+    "product_audit_rows": 12,
+    "weekly_displacement_rows": 321
+  },
+  "corrected_coverage": {
+    "applicable_pair_count": 364,
+    "covered_pair_days": 403468,
+    "expected_applicable_pair_days": 404346,
+    "mean_per_pair_coverage": 0.9988995949306168,
+    "post_warmup_weeks_at_least_10_rate": 1.0,
+    "post_warmup_weeks_at_least_30_rate": 0.8870431893687708,
+    "post_warmup_weeks_at_least_6_rate": 1.0,
+    "weekly_eligible_maximum": 364,
+    "weekly_eligible_minimum": 0,
+    "weighted_coverage_ratio": 0.9978285923441805
+  },
+  "corrected_preliminary_sensitivity": {
+    "comparisons": [
+      "A_P0_vs_C2",
+      "B_P0A_vs_C2",
+      "D2_vs_C2"
+    ],
+    "final_p2r2_decision_not_issued": true,
+    "rows": 5634
+  },
+  "corrected_topn_completeness": {
+    "top_10_complete_rate": 0.9680511182108626,
+    "top_30_complete_rate": 0.853035143769968,
+    "top_4_complete_rate": 0.9680511182108626,
+    "top_6_complete_rate": 0.9680511182108626,
+    "top_8_complete_rate": 0.9680511182108626
+  },
+  "corrected_yearly_summary": [
+    {
+      "average_eligible_assets": 16.076923076923077,
+      "decision_count": 52,
+      "mean_top10_liquidity_share": 0.934569265744053,
+      "mean_top6_liquidity_share": 0.9107407176777659,
+      "median_eligible_assets": 15.0,
+      "minimum_eligible_assets": 0,
+      "weeks_with_at_least_10": 42,
+      "weeks_with_at_least_30": 6,
+      "weeks_with_at_least_6": 42,
+      "year": "2019"
+    },
+    {
+      "average_eligible_assets": 37.51923076923077,
+      "decision_count": 52,
+      "mean_top10_liquidity_share": 0.9613921928418347,
+      "mean_top6_liquidity_share": 0.910393056100957,
+      "median_eligible_assets": 35.0,
+      "minimum_eligible_assets": 31,
+      "weeks_with_at_least_10": 52,
+      "weeks_with_at_least_30": 52,
+      "weeks_with_at_least_6": 52,
+      "year": "2020"
+    },
+    {
+      "average_eligible_assets": 96.51923076923077,
+      "decision_count": 52,
+      "mean_top10_liquidity_share": 0.8194619001772568,
+      "mean_top6_liquidity_share": 0.7397924485695007,
+      "median_eligible_assets": 93.5,
+      "minimum_eligible_assets": 57,
+      "weeks_with_at_least_10": 52,
+      "weeks_with_at_least_30": 52,
+      "weeks_with_at_least_6": 52,
+      "year": "2021"
+    },
+    {
+      "average_eligible_assets": 222.23076923076923,
+      "decision_count": 52,
+      "mean_top10_liquidity_share": 0.7477278093567866,
+      "mean_top6_liquidity_share": 0.6844658203285812,
+      "median_eligible_assets": 221.5,
+      "minimum_eligible_assets": 168,
+      "weeks_with_at_least_10": 52,
+      "weeks_with_at_least_30": 52,
+      "weeks_with_at_least_6": 52,
+      "year": "2022"
+    },
+    {
+      "average_eligible_assets": 289.11538461538464,
+      "decision_count": 52,
+      "mean_top10_liquidity_share": 0.6823873288304225,
+      "mean_top6_liquidity_share": 0.6148685810208726,
+      "median_eligible_assets": 287.5,
+      "minimum_eligible_assets": 258,
+      "weeks_with_at_least_10": 52,
+      "weeks_with_at_least_30": 52,
+      "weeks_with_at_least_6": 52,
+      "year": "2023"
+    },
+    {
+      "average_eligible_assets": 352.6792452830189,
+      "decision_count": 53,
+      "mean_top10_liquidity_share": 0.7001653480744073,
+      "mean_top6_liquidity_share": 0.6384913184494444,
+      "median_eligible_assets": 359,
+      "minimum_eligible_assets": 317,
+      "weeks_with_at_least_10": 53,
+      "weeks_with_at_least_30": 53,
+      "weeks_with_at_least_6": 53,
+      "year": "2024"
+    }
+  ],
+  "counts": {
+    "affected_weekly_decisions": 81,
+    "corrected_c2_minus_d2_pairs": 65,
+    "corrected_c2_pairs": 364,
+    "corrected_d2_pairs": 299,
+    "excluded_products": 12,
+    "old_contaminated_ranking_rows": 321,
+    "post_warmup_decisions": 301,
+    "raw_inventory_pairs": 376,
+    "weekly_decisions": 313
+  },
+  "decision": "RD18_P1R2_RESTRICTED_PANEL_REPAIRED",
+  "dependency_impact_assessment": {
+    "must_recompute": [
+      "C/D Top-N comparisons",
+      "exact-match brittleness",
+      "substitution distributions",
+      "current-seed slot influence",
+      "liquidity-gap substitutions",
+      "hysteresis comparisons",
+      "consensus diagnostics",
+      "P2R omission-risk classification",
+      "P2S dual-scenario feasibility",
+      "P2T current-seed impact rankings",
+      "Variant E design inputs"
+    ],
+    "no_prior_derived_numeric_conclusion_copied": true,
+    "old_derived_results_status": "SUPERSEDED_FOR_FUTURE_RESEARCH_BY_CORRECTED_P1R2_BASELINE",
+    "reusable_if_hashes_and_definitions_remain_independent": [
+      "raw KuCoin Kline evidence",
+      "pair boundaries",
+      "temporal identity classifications",
+      "P2T identity conclusions for 65 distinct assets",
+      "P2T product classifications",
+      "causal timing rules",
+      "no-post-2024 evidence"
+    ],
+    "schema_version": "rd18-p1r2-dependency-impact-v1"
+  },
+  "excluded_products": [
+    "AGIX2L-USDT",
+    "AGIX2S-USDT",
+    "APT2L-USDT",
+    "APT2S-USDT",
+    "BLUR2L-USDT",
+    "BLUR2S-USDT",
+    "CFX2L-USDT",
+    "CFX2S-USDT",
+    "GRT2L-USDT",
+    "GRT2S-USDT",
+    "OP2L-USDT",
+    "OP2S-USDT"
+  ],
+  "futures": 0,
+  "input_hashes": {
+    "p1r": "3956041409448c3fb547d18917d46f423e07b88b8815961a1a61866fd4ab03b0",
+    "p2r": "5ef8deefaa512e07cac33150399a4cb3bdfa685e623d690e3a804bf3a9ef5b1a",
+    "p2s": "38e19370f3e98539b7d55502c6d5b97acf80829d3332df3c7c56a6232f3eccfd",
+    "p2t": "afcbabc0a5dbd77791adde75fe895d2d55386e51df568d391d9df77d007aa0bf",
+    "p2u": "583be92b9880364a53ecabcf53e5980350c2ef06b11da2c3612f78269feae551"
+  },
+  "input_reconciliation": {
+    "counts": {
+      "c_minus_d_pairs": 77,
+      "p2t_products": 12,
+      "p2t_temporally_distinct": 65,
+      "p2t_unresolved": 0,
+      "p2u_contaminated_ranking_rows": 321,
+      "post_warmup_decisions": 301,
+      "product_policy_matches": 12,
+      "raw_inventory_pairs": 376,
+      "variant_d_pairs": 299,
+      "weekly_decisions": 313
+    },
+    "expected_hashes": {
+      "p1r": "3956041409448c3fb547d18917d46f423e07b88b8815961a1a61866fd4ab03b0",
+      "p2r": "5ef8deefaa512e07cac33150399a4cb3bdfa685e623d690e3a804bf3a9ef5b1a",
+      "p2s": "38e19370f3e98539b7d55502c6d5b97acf80829d3332df3c7c56a6232f3eccfd",
+      "p2t": "afcbabc0a5dbd77791adde75fe895d2d55386e51df568d391d9df77d007aa0bf",
+      "p2u": "583be92b9880364a53ecabcf53e5980350c2ef06b11da2c3612f78269feae551"
+    },
+    "hashes": {
+      "p1r": "3956041409448c3fb547d18917d46f423e07b88b8815961a1a61866fd4ab03b0",
+      "p2r": "5ef8deefaa512e07cac33150399a4cb3bdfa685e623d690e3a804bf3a9ef5b1a",
+      "p2s": "38e19370f3e98539b7d55502c6d5b97acf80829d3332df3c7c56a6232f3eccfd",
+      "p2t": "afcbabc0a5dbd77791adde75fe895d2d55386e51df568d391d9df77d007aa0bf",
+      "p2u": "583be92b9880364a53ecabcf53e5980350c2ef06b11da2c3612f78269feae551"
+    },
+    "no_network": true,
+    "p2t_product_pairs": [
+      "AGIX2L-USDT",
+      "AGIX2S-USDT",
+      "APT2L-USDT",
+      "APT2S-USDT",
+      "BLUR2L-USDT",
+      "BLUR2S-USDT",
+      "CFX2L-USDT",
+      "CFX2S-USDT",
+      "GRT2L-USDT",
+      "GRT2S-USDT",
+      "OP2L-USDT",
+      "OP2S-USDT"
+    ],
+    "p2u_product_rows": [
+      {
+        "appears_in_c_rankings": "True",
+        "c_decision_count": "14",
+        "c_ranking_row_count": "14",
+        "contamination": "True",
+        "identity_classification": "LEVERAGED_OR_SYNTHETIC_PRODUCT",
+        "pair": "AGIX2L-USDT",
+        "required_action": "repair P1R restricted panel before P2U can construct Variant E"
+      },
+      {
+        "appears_in_c_rankings": "True",
+        "c_decision_count": "14",
+        "c_ranking_row_count": "14",
+        "contamination": "True",
+        "identity_classification": "LEVERAGED_OR_SYNTHETIC_PRODUCT",
+        "pair": "AGIX2S-USDT",
+        "required_action": "repair P1R restricted panel before P2U can construct Variant E"
+      },
+      {
+        "appears_in_c_rankings": "True",
+        "c_decision_count": "14",
+        "c_ranking_row_count": "14",
+        "contamination": "True",
+        "identity_classification": "LEVERAGED_OR_SYNTHETIC_PRODUCT",
+        "pair": "APT2L-USDT",
+        "required_action": "repair P1R restricted panel before P2U can construct Variant E"
+      },
+      {
+        "appears_in_c_rankings": "True",
+        "c_decision_count": "14",
+        "c_ranking_row_count": "14",
+        "contamination": "True",
+        "identity_classification": "LEVERAGED_OR_SYNTHETIC_PRODUCT",
+        "pair": "APT2S-USDT",
+        "required_action": "repair P1R restricted panel before P2U can construct Variant E"
+      },
+      {
+        "appears_in_c_rankings": "True",
+        "c_decision_count": "13",
+        "c_ranking_row_count": "13",
+        "contamination": "True",
+        "identity_classification": "LEVERAGED_OR_SYNTHETIC_PRODUCT",
+        "pair": "BLUR2L-USDT",
+        "required_action": "repair P1R restricted panel before P2U can construct Variant E"
+      },
+      {
+        "appears_in_c_rankings": "True",
+        "c_decision_count": "13",
+        "c_ranking_row_count": "13",
+        "contamination": "True",
+        "identity_classification": "LEVERAGED_OR_SYNTHETIC_PRODUCT",
+        "pair": "BLUR2S-USDT",
+        "required_action": "repair P1R restricted panel before P2U can construct Variant E"
+      },
+      {
+        "appears_in_c_rankings": "True",
+        "c_decision_count": "79",
+        "c_ranking_row_count": "79",
+        "contamination": "True",
+        "identity_classification": "LEVERAGED_OR_SYNTHETIC_PRODUCT",
+        "pair": "CFX2L-USDT",
+        "required_action": "repair P1R restricted panel before P2U can construct Variant E"
+      },
+      {
+        "appears_in_c_rankings": "True",
+        "c_decision_count": "79",
+        "c_ranking_row_count": "79",
+        "contamination": "True",
+        "identity_classification": "LEVERAGED_OR_SYNTHETIC_PRODUCT",
+        "pair": "CFX2S-USDT",
+        "required_action": "repair P1R restricted panel before P2U can construct Variant E"
+      },
+      {
+        "appears_in_c_rankings": "True",
+        "c_decision_count": "14",
+        "c_ranking_row_count": "14",
+        "contamination": "True",
+        "identity_classification": "LEVERAGED_OR_SYNTHETIC_PRODUCT",
+        "pair": "GRT2L-USDT",
+        "required_action": "repair P1R restricted panel before P2U can construct Variant E"
+      },
+      {
+        "appears_in_c_rankings": "True",
+        "c_decision_count": "14",
+        "c_ranking_row_count": "14",
+        "contamination": "True",
+        "identity_classification": "LEVERAGED_OR_SYNTHETIC_PRODUCT",
+        "pair": "GRT2S-USDT",
+        "required_action": "repair P1R restricted panel before P2U can construct Variant E"
+      },
+      {
+        "appears_in_c_rankings": "True",
+        "c_decision_count": "27",
+        "c_ranking_row_count": "27",
+        "contamination": "True",
+        "identity_classification": "LEVERAGED_OR_SYNTHETIC_PRODUCT",
+        "pair": "OP2L-USDT",
+        "required_action": "repair P1R restricted panel before P2U can construct Variant E"
+      },
+      {
+        "appears_in_c_rankings": "True",
+        "c_decision_count": "26",
+        "c_ranking_row_count": "26",
+        "contamination": "True",
+        "identity_classification": "LEVERAGED_OR_SYNTHETIC_PRODUCT",
+        "pair": "OP2S-USDT",
+        "required_action": "repair P1R restricted panel before P2U can construct Variant E"
+      }
+    ],
+    "passed": true,
+    "prior_artifacts_read_only": true,
+    "prior_results_scope": "SUPERSEDED_FOR_FUTURE_RESEARCH_BY_CORRECTED_P1R2_BASELINE",
+    "schema_version": "rd18-p1r2-input-reconciliation-v1",
+    "source_commit": "0532254faf84dacb93b6a41a334e242abd39b96d",
+    "source_files": {
+      "p0b_inventory_sha256": "0dffdbba976a45de1ec6072cbe64600f3582edda016a2bc44dc3f9168af85253",
+      "p1r_hysteresis_sha256": "c9df3ac47ba9057b6e9d84d5cfa87e79a1239a6f25b003d995e97614a736a64b",
+      "p1r_membership_sha256": "32532520069988bc1005b5c2676ece0c55559dd8a1b74d85eb6492fff151fa73",
+      "p1r_panel_sha256": "ac4a5f4ba29be2c7d5554160dbee9df1fb5b8158e901fc93775ba0dcc542be75",
+      "p1r_rankings_sha256": "48ac68371dd6bc3804e54db387da1b8e550c4e45fe7b59bc3a3689c5d6548266",
+      "p2t_identity_sha256": "a72f298c8cdf04b06f7ad83eb19c51c482b5896d1894235200b043caa2b72f2f",
+      "p2u_exclusion_audit_sha256": "c7f151a18340e04b98f68acc9d9cc1400856ea728077786fed9ced6c6e4efc62"
+    }
+  },
+  "limitations": [
+    "The corrected panel remains restricted to 376 Kline-confirmed historical pairs and is not an exhaustive KuCoin inventory claim.",
+    "P1R2 repairs product eligibility only; P2R2 must recompute structural risk and all downstream provenance comparisons.",
+    "No strategy returns, trades, signals, candidates, or optimization were produced."
+  ],
+  "margin": 0,
+  "network_requests": 0,
+  "next_stage": "RD18_P2R2_CORRECTED_RESTRICTED_UNIVERSE_STRUCTURAL_COMPARISON",
+  "no_candidates": true,
+  "no_futures": true,
+  "no_margin": true,
+  "no_network": true,
+  "no_optimization": true,
+  "no_post_2024_observations": true,
+  "no_returns": true,
+  "no_signals": true,
+  "no_trading": true,
+  "old_vs_corrected_summary": {
+    "rows": 1878,
+    "top10_exact_match_rate": 0.9904153354632588,
+    "top6_exact_match_rate": 0.9904153354632588
+  },
+  "optimization": 0,
+  "post_2024_observations": 0,
+  "prior_decisions_unchanged": true,
+  "prior_derived_results_status": "SUPERSEDED_FOR_FUTURE_RESEARCH_BY_CORRECTED_P1R2_BASELINE",
+  "restricted_claim": "RESTRICTED_TO_376_KLINE_CONFIRMED_HISTORICAL_KUCOIN_SPOT_PAIRS",
+  "returns": 0,
+  "schema_version": "rd18-p1r2-final-report-v1",
+  "signals": 0,
+  "source_commit": "0532254faf84dacb93b6a41a334e242abd39b96d",
+  "stage": "RD18_P1R2_EXCLUDED_PRODUCT_RESTRICTED_PANEL_REPAIR",
+  "trades": 0
+}

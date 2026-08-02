@@ -1,0 +1,122 @@
+{
+  "schema_version": "rd18-p1r2-protocol-v1",
+  "stage": "RD18_P1R2_EXCLUDED_PRODUCT_RESTRICTED_PANEL_REPAIR",
+  "source_commit": "0532254faf84dacb93b6a41a334e242abd39b96d",
+  "input_hashes": {
+    "p1r_manifest": "3956041409448c3fb547d18917d46f423e07b88b8815961a1a61866fd4ab03b0",
+    "p2r_manifest": "5ef8deefaa512e07cac33150399a4cb3bdfa685e623d690e3a804bf3a9ef5b1a",
+    "p2s_manifest": "38e19370f3e98539b7d55502c6d5b97acf80829d3332df3c7c56a6232f3eccfd",
+    "p2t_manifest": "afcbabc0a5dbd77791adde75fe895d2d55386e51df568d391d9df77d007aa0bf",
+    "p2u_manifest": "583be92b9880364a53ecabcf53e5980350c2ef06b11da2c3612f78269feae551"
+  },
+  "raw_inventory": {
+    "name": "RAW_376_KLINE_CONFIRMED_HISTORICAL_PAIRS",
+    "source": "RD18-P0B final historical pair inventory",
+    "expected_unique_pairs": 376,
+    "provenance_retained": true,
+    "not_an_eligible_universe": true
+  },
+  "corrected_inventories": {
+    "C2": {
+      "name": "CORRECTED_RESTRICTED_KUCOIN_SPOT_LIQUIDITY_UNIVERSE",
+      "definition": "all raw pairs after the frozen product, identity and historical eligibility policy",
+      "expected_static_count": 364
+    },
+    "D2": {
+      "name": "CORRECTED_EVIDENCE_STRONG_UNIVERSE",
+      "definition": "Evidence-Strong provenance pairs after the same product policy",
+      "expected_static_count": 299
+    },
+    "C2_minus_D2_expected_current_seed_distinct": 65
+  },
+  "excluded_products": {
+    "timing": "before weekly eligibility, rolling metrics, rankings, Top-N and hysteresis",
+    "policy": "registered P2T products plus the frozen general leveraged/synthetic suffix audit",
+    "expected_count": 12
+  },
+  "causal_timing": {
+    "research_start": "2019-01-01T00:00:00Z",
+    "sealed_cutoff_exclusive": "2025-01-01T00:00:00Z",
+    "decision_schedule": "Monday 00:00 UTC",
+    "availability_delay": "24 hours after daily candle close",
+    "sunday_candle_excluded": true
+  },
+  "eligibility": {
+    "minimum_listing_age_calendar_days": 90,
+    "minimum_valid_days": 26,
+    "window_calendar_days": 28,
+    "quote_turnover_finite_nonnegative": true,
+    "resolved_identity_required": true
+  },
+  "ranking": {
+    "primary_metric": "trailing_28d_median_daily_quote_turnover_usdt",
+    "tie_breaking": [
+      "primary_metric_descending",
+      "listing_age_days_descending",
+      "canonical_asset_id_ascending"
+    ],
+    "top_n": [4, 6, 8, 10, 30],
+    "hysteresis": {
+      "entry_rank": 6,
+      "retention_rank": 8,
+      "vacancy_fill": "highest_ranked_eligible_non_member"
+    }
+  },
+  "contamination_impact_metrics": [
+    "old_vs_corrected_membership",
+    "weekly_displacement",
+    "corrected_coverage",
+    "corrected_turnover",
+    "corrected_concentration",
+    "corrected_cutoff_stability",
+    "preliminary_A_B_D2_sensitivity"
+  ],
+  "acceptance_gates": {
+    "input_hashes_reconcile": true,
+    "raw_inventory_exactly_376": true,
+    "exactly_12_products": true,
+    "excluded_before_aggregation": true,
+    "corrected_c2_count_364": true,
+    "corrected_d2_count_299": true,
+    "c2_minus_d2_count_65": true,
+    "corrected_coverage_minimum_95_percent": true,
+    "six_assets_for_95_percent_post_warmup": true,
+    "ten_assets_for_90_percent_post_warmup": true,
+    "zero_timing_violations": true,
+    "zero_unresolved_top10_identity": true,
+    "six_delisted_pairs_retained": true,
+    "contiguous_deterministic_rankings": true,
+    "deterministic_hysteresis": true,
+    "two_offline_hash_matches": true,
+    "zero_network_requests": true,
+    "no_post_2024_observations": true,
+    "no_forbidden_scope": true,
+    "prior_artifacts_unchanged": true
+  },
+  "stop_decisions": [
+    "RD18_P1R2_INPUT_RECONCILIATION_FAILED",
+    "RD18_P1R2_ADDITIONAL_PRODUCT_CONTAMINATION_FOUND",
+    "RD18_P1R2_CORRECTED_INVENTORY_RECONCILIATION_FAILED",
+    "RD18_P1R2_REPAIRED_PANEL_COVERAGE_INSUFFICIENT",
+    "RD18_P1R2_REPAIR_INTEGRITY_FAILED",
+    "RD18_P1R2_RESTRICTED_PANEL_REPAIRED"
+  ],
+  "prior_results": {
+    "derived_p1r_p2r_p2s_p2t_p2u_results": "SUPERSEDED_FOR_FUTURE_RESEARCH_BY_CORRECTED_P1R2_BASELINE",
+    "historical_decisions_unchanged": true
+  },
+  "declarations": {
+    "no_network": true,
+    "no_post_2024_market_observations": true,
+    "no_futures": true,
+    "no_margin": true,
+    "no_returns": true,
+    "no_trading": true,
+    "no_signals": true,
+    "no_candidates": true,
+    "no_optimization": true,
+    "full_historical_inventory_claim": false,
+    "production_authorized": false
+  },
+  "output_hashes": {}
+}
