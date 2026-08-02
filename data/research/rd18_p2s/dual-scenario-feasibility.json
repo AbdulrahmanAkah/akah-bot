@@ -1,0 +1,62 @@
+{
+  "all_gates_pass": false,
+  "consensus_complete": true,
+  "decision": "RD18_P2S_CONSENSUS_UNIVERSE_REDESIGN_REQUIRED",
+  "gates": {
+    "current_seed_liquidity_share": true,
+    "current_seed_top6_slot_share": true,
+    "deterministic_reproduction": true,
+    "hysteresis_at_most_one_substitution": true,
+    "maximum_year_current_seed_top6_slot_share": true,
+    "mean_hysteresis_jaccard": false,
+    "mean_top10_jaccard": true,
+    "mean_top6_jaccard": true,
+    "no_duplicate_canonical_asset": true,
+    "no_identity_failure_top10": true,
+    "no_timing_failure": true,
+    "six_eligible_assets_95pct": true,
+    "ten_eligible_assets_90pct": true,
+    "top10_at_most_two_substitutions": false,
+    "top6_at_most_one_substitution": true
+  },
+  "post_warmup_observed": {
+    "current_seed_liquidity_share": 0.06410783511494438,
+    "current_seed_top6_slot_share": 0.08970099667774087,
+    "hysteresis_at_most_one_substitution_share": 0.9269102990033222,
+    "large_liquidity_gap_substitution_count": 439,
+    "maximum_year_current_seed_top6_slot_share": 0.1625,
+    "mean_hysteresis_jaccard": 0.8096820123398196,
+    "mean_top10_jaccard": 0.7563751862755185,
+    "mean_top6_jaccard": 0.8483626008542953,
+    "post_warmup_decisions": 301,
+    "six_eligible_week_share": 1.0,
+    "ten_eligible_week_share": 0.9136212624584718,
+    "top10_at_most_two_substitution_share": 0.7740863787375415,
+    "top6_at_most_one_substitution_share": 0.9700996677740864,
+    "warning_flags": {
+      "calendar_year_mean_top6_jaccard_below_0_75": false,
+      "consensus_core_below_six": true,
+      "current_seed_only_top6_asset_26_consecutive_weeks": true,
+      "hysteresis_increases_disagreement": true,
+      "large_liquidity_gap_substitution": true,
+      "three_or_more_top6_substitutions": false
+    },
+    "year_current_seed_top6_slot_share": {
+      "2019": 0.1625,
+      "2020": 0.12179487179487179,
+      "2021": 0.09294871794871794,
+      "2022": 0.0,
+      "2023": 0.04807692307692308,
+      "2024": 0.1289308176100629
+    }
+  },
+  "schema_version": "rd18-p2s-dual-scenario-feasibility-v1",
+  "warnings": {
+    "calendar_year_mean_top6_jaccard_below_0_75": false,
+    "consensus_core_below_six": true,
+    "current_seed_only_top6_asset_26_consecutive_weeks": true,
+    "hysteresis_increases_disagreement": true,
+    "large_liquidity_gap_substitution": true,
+    "three_or_more_top6_substitutions": false
+  }
+}

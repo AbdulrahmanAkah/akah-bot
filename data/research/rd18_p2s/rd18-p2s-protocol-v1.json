@@ -1,0 +1,90 @@
+{
+  "schema_version": "rd18-p2s-protocol-v1",
+  "stage": "RD18_P2S_UNIVERSE_RISK_REDESIGN",
+  "source_commit": "cd64a5b952572e8a7604be2eec17550e84bae824",
+  "execution_venue": "KUCOIN_SPOT",
+  "restricted_claim": "RESTRICTED_TO_376_KLINE_CONFIRMED_HISTORICAL_KUCOIN_SPOT_PAIRS",
+  "recorded_p2r_decision": "RD18_P2R_RESTRICTED_UNIVERSE_STRUCTURAL_RISK_UNACCEPTABLE",
+  "recorded_p2r_next_stage": "RD18_BLOCKED_PENDING_UNIVERSE_RISK_REDESIGN",
+  "input_hashes": {
+    "p1r_output_manifest_deterministic_hash": "3956041409448c3fb547d18917d46f423e07b88b8815961a1a61866fd4ab03b0",
+    "p2r_output_manifest_deterministic_hash": "5ef8deefaa512e07cac33150399a4cb3bdfa685e623d690e3a804bf3a9ef5b1a",
+    "p2r_input_reconciliation": "6b22f4009db3ff9db82bd6d434bff19181267f349079c8a78d73c2eeff81feaa",
+    "p2r_variant_weekly_comparison": "298fe0f90863b9ccb12af037f508e2b8e7953a19302bf9efe46fed5774b3b5c",
+    "p2r_current_seed_influence": "5d35822a1451681f59a742751e9c8e50b29766858160ec473055992cfbe31810",
+    "p2r_cutoff_stability": "b0d3ff279ed9df5adfae470d1e26da5d3fbabb6187f3e674fbda698a3a5b1fd7",
+    "p2r_liquidity_concentration": "b0d3ff279ed9df5adfae470d1e26da5d3fbabb6187f3e674fbda698a3a5b1fd7",
+    "p2r_membership_persistence": "92362dfbc04b223022e60ff89f6bd4559f4659dd5740f3e254da6f640be852c2"
+  },
+  "variants": {
+    "C_P0B": {"pairs": 376, "purpose": "PRIMARY_RESTRICTED_RESEARCH_UNIVERSE"},
+    "D_EVIDENCE_STRONG": {"pairs": 299, "purpose": "SURVIVORSHIP_RISK_SENSITIVITY_UNIVERSE"}
+  },
+  "period": {
+    "start": "2019-01-01T00:00:00Z",
+    "end_exclusive": "2025-01-01T00:00:00Z",
+    "weekly_decisions": 313,
+    "post_warmup_decisions": 301,
+    "post_warmup_rule": "exclude the first 12 registered weekly decisions"
+  },
+  "metrics": {
+    "set_distance": ["intersection", "union", "symmetric_difference", "jaccard", "slot_share"],
+    "rank_distance": ["common_rank_displacement", "liquidity_difference", "cutoff_proximity"],
+    "hysteresis": "enter Top-6 and retain through Top-8",
+    "proximity_thresholds": {"near_cutoff_max_relative_gap": 0.1, "moderate_gap_max_relative_gap": 0.25},
+    "consensus_core": "C Top-10 intersection D Top-10",
+    "no_return_analysis": true,
+    "no_trading": true,
+    "no_optimization": true
+  },
+  "dual_scenario_feasibility_gates": {
+    "mean_top6_jaccard_min": 0.8,
+    "mean_top10_jaccard_min": 0.7,
+    "top6_at_most_one_substitution_min": 0.85,
+    "top10_at_most_two_substitutions_min": 0.8,
+    "mean_hysteresis_jaccard_min": 0.85,
+    "hysteresis_at_most_one_substitution_min": 0.85,
+    "current_seed_top6_slot_share_max": 0.15,
+    "maximum_year_current_seed_top6_slot_share_max": 0.25,
+    "current_seed_liquidity_share_max": 0.15,
+    "minimum_six_eligible_week_share": 0.95,
+    "minimum_ten_eligible_week_share": 0.9,
+    "no_identity_failure": true,
+    "no_timing_failure": true,
+    "no_duplicate_canonical_asset": true,
+    "deterministic_reproduction": true
+  },
+  "warning_flags": [
+    "three_or_more_top6_substitutions",
+    "current_seed_only_top6_asset_26_consecutive_weeks",
+    "large_liquidity_gap_substitution",
+    "calendar_year_mean_top6_jaccard_below_0_75",
+    "consensus_core_below_six",
+    "hysteresis_increases_disagreement"
+  ],
+  "future_replay_principles": [
+    "identical strategy code and parameters on C and D",
+    "identical fees, timing and risk controls",
+    "no per-universe tuning",
+    "worst-universe result controls advancement",
+    "report absolute and relative dispersion",
+    "reject theses dependent on current-seed-only assets",
+    "keep production authorization false",
+    "define performance gates before replay"
+  ],
+  "authorization_defaults": {
+    "full_inventory_claim": false,
+    "single_universe_research_authorized": false,
+    "dual_universe_replay_design_authorized": false,
+    "strategy_candidate_generation_authorized": false,
+    "production_authorized": false
+  },
+  "sealed_data_boundary": "No market observations on or after 2025-01-01 were read or introduced.",
+  "source_policy": "Offline reuse of committed P1R and P2R outputs; zero network requests; no archive search.",
+  "stop_decisions": [
+    "RD18_P2S_INPUT_RECONCILIATION_FAILED",
+    "RD18_P2S_DUAL_UNIVERSE_REPLAY_DESIGN_CONFIRMED",
+    "RD18_P2S_CONSENSUS_UNIVERSE_REDESIGN_REQUIRED",
+    "RD18_P2S_UNIVERSE_UNCERTAINTY_REMAINS_UNACCEPTABLE"
+  ]
+}
