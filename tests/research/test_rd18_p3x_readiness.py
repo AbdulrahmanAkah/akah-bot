@@ -3,6 +3,8 @@ from __future__ import annotations
 import csv
 import hashlib
 import json
+import subprocess
+import sys
 from pathlib import Path
 from typing import Any
 
@@ -234,23 +236,35 @@ def test_candidate_coverage_rejects_duplicates_and_invalid_decisions() -> None:
 
 
 def test_decision_classification_branches() -> None:
-    assert classify_decision(
-        c2_count=364, ready_source_pairs=364, generator_ready=True, feature_tokens_ready=True
-    )[0] == DECISION_READY
-    assert classify_decision(
-        c2_count=364, ready_source_pairs=6, generator_ready=True, feature_tokens_ready=True
-    )[0] == DECISION_DATA_REQUIRED
-    assert classify_decision(
-        c2_count=364, ready_source_pairs=364, generator_ready=False, feature_tokens_ready=True
-    )[0] == DECISION_GENERATOR_REQUIRED
+    assert (
+        classify_decision(
+            c2_count=364, ready_source_pairs=364, generator_ready=True, feature_tokens_ready=True
+        )[0]
+        == DECISION_READY
+    )
+    assert (
+        classify_decision(
+            c2_count=364, ready_source_pairs=6, generator_ready=True, feature_tokens_ready=True
+        )[0]
+        == DECISION_DATA_REQUIRED
+    )
+    assert (
+        classify_decision(
+            c2_count=364, ready_source_pairs=364, generator_ready=False, feature_tokens_ready=True
+        )[0]
+        == DECISION_GENERATOR_REQUIRED
+    )
     decision, next_stage = classify_decision(
         c2_count=364, ready_source_pairs=6, generator_ready=False, feature_tokens_ready=True
     )
     assert decision == DECISION_BOTH_REQUIRED
     assert next_stage == NEXT_BOTH
-    assert classify_decision(
-        c2_count=363, ready_source_pairs=363, generator_ready=True, feature_tokens_ready=True
-    )[0] == DECISION_INPUT_FAILED
+    assert (
+        classify_decision(
+            c2_count=363, ready_source_pairs=363, generator_ready=True, feature_tokens_ready=True
+        )[0]
+        == DECISION_INPUT_FAILED
+    )
 
 
 def test_summary_is_json_safe_and_never_authorizes_replay() -> None:
@@ -295,3 +309,50 @@ def test_input_manifest_reconciliation(tmp_path: Path) -> None:
     p3r = tmp_path / "data" / "research" / "rd18_p3r" / "output-manifest.json"
     p3r.write_text(json.dumps({"deterministic_hash": "wrong"}), encoding="utf-8")
     assert reconcile_input_manifests(tmp_path)["all_inputs_match"] is False
+
+
+def test_atomic_json_writer_does_not_import_pandas(tmp_path: Path) -> None:
+    root = Path(__file__).resolve().parents[2]
+    destination = tmp_path / "lazy-atomic-output.json"
+    script = """
+import builtins
+import json
+import sys
+from pathlib import Path
+
+sys.path.insert(0, sys.argv[1])
+
+real_import = builtins.__import__
+
+
+def guarded_import(name, *args, **kwargs):
+    if name == "pandas" or name.startswith("pandas."):
+        raise RuntimeError("pandas import was attempted")
+    return real_import(name, *args, **kwargs)
+
+
+builtins.__import__ = guarded_import
+
+from spotbot.research.atomic_output import atomic_write_json
+
+destination = Path(sys.argv[2])
+atomic_write_json(destination, {"ok": True})
+assert json.loads(destination.read_text(encoding="utf-8")) == {"ok": True}
+"""
+
+    result = subprocess.run(
+        [
+            sys.executable,
+            "-c",
+            script,
+            str(root / "src"),
+            str(destination),
+        ],
+        cwd=root,
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+
+    assert result.returncode == 0, result.stderr
+    assert destination.is_file()

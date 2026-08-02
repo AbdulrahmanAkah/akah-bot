@@ -60,6 +60,7 @@ def main() -> int:
         else repo / "data" / "research" / "rd18_p3x_runtime"
     )
     files = [
+        "src/spotbot/research/atomic_output.py",
         "src/spotbot/research/rd18_p3x_readiness.py",
         "scripts/research/run_rd18_p3x_readiness.py",
         "scripts/research/validate_rd18_p3x_readiness.py",
@@ -101,9 +102,7 @@ def main() -> int:
         commands.append([python, "-m", "pytest", "-q", "-W", "error", "tests/research"])
     commands.append(["git", "diff", "--check"])
     records = [execute(command, cwd=repo) for command in commands]
-    report = json.loads(
-        (output / "rd18-p3x-runtime-report-v1.json").read_text(encoding="utf-8")
-    )
+    report = json.loads((output / "rd18-p3x-runtime-report-v1.json").read_text(encoding="utf-8"))
     result = {
         "stage": STAGE,
         "passed": True,

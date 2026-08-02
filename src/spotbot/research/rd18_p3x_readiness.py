@@ -13,7 +13,7 @@ import json
 import re
 from collections.abc import Iterable, Mapping, Sequence
 from dataclasses import dataclass
-from datetime import datetime, timedelta, timezone
+from datetime import UTC, datetime, timedelta
 from pathlib import Path
 from typing import Any, Final
 
@@ -163,12 +163,12 @@ def parse_timestamp(value: object) -> datetime:
     except ValueError as exc:
         raise P3XReadinessError(f"invalid timestamp: {value!r}") from exc
     if parsed.tzinfo is None:
-        parsed = parsed.replace(tzinfo=timezone.utc)
-    return parsed.astimezone(timezone.utc)
+        parsed = parsed.replace(tzinfo=UTC)
+    return parsed.astimezone(UTC)
 
 
 def iso(value: datetime) -> str:
-    return value.astimezone(timezone.utc).isoformat()
+    return value.astimezone(UTC).isoformat()
 
 
 def pair_to_symbol(pair: str) -> str:
@@ -209,7 +209,6 @@ def load_json(path: Path) -> dict[str, Any]:
     return value
 
 
-
 def reconcile_input_manifests(repo_root: Path) -> dict[str, Any]:
     rows: dict[str, dict[str, object]] = {}
     for stage, relative in INPUT_MANIFEST_PATHS.items():
@@ -234,6 +233,7 @@ def reconcile_input_manifests(repo_root: Path) -> dict[str, Any]:
         "inputs": rows,
         "all_inputs_match": all(bool(row["match"]) for row in rows.values()),
     }
+
 
 def load_c2_requirements(path: Path) -> list[PairRequirement]:
     rows = load_csv(path)

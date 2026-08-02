@@ -7,6 +7,14 @@
     "strategy_replay_authorized": false,
     "three_universe_candidate_dry_run_authorized": false
   },
+  "authorizations": {
+    "full_c2_hourly_data_acquisition_authorized": true,
+    "production_authorized": false,
+    "raw_candidate_generator_extraction_authorized": true,
+    "return_calculation_authorized": false,
+    "strategy_replay_authorized": false,
+    "three_universe_candidate_dry_run_authorized": false
+  },
   "candidate_generator_finding": {
     "classification": "LEDGER_REGISTRATION_ONLY_GENERATOR_EXTRACTION_REQUIRED",
     "interpretation": "The retained Trend and Compression rules must be extracted into a raw-OHLCV candidate/no-signal generator and matched exactly on the original six-symbol control before broadening to C2.",
@@ -55,6 +63,18 @@
     "old_full_top6_candidate_coverage_fraction": 0.0
   },
   "returns_calculated": false,
+  "runtime_observation": {
+    "c2_required_pairs": 364,
+    "generator_classification": "LEDGER_REGISTRATION_ONLY_GENERATOR_EXTRACTION_REQUIRED",
+    "hourly_manifest_pairs": 6,
+    "minimum_feature_warmup_days": 210.0,
+    "minimum_feature_warmup_hours": 5040,
+    "raw_candidate_regeneration_capable": false,
+    "ready_pair_fraction": 0.005494505494505495,
+    "ready_pairs": 2,
+    "source_manifest_absent_pairs": 358,
+    "source_window_start_late_pairs": 4
+  },
   "schema_version": "rd18-p3x-preliminary-readiness-v1",
   "source_commit": "320dd784912950371a22cf18adc22a78391ee074",
   "stage": "RD18_P3X_FULL_UNIVERSE_CANDIDATE_PIPELINE_AND_DATA_READINESS",

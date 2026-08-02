@@ -14,9 +14,10 @@ import os
 import tempfile
 from collections.abc import Callable, Iterable, Mapping, Sequence
 from pathlib import Path
-from typing import Literal
+from typing import TYPE_CHECKING, Literal
 
-import pandas as pd
+if TYPE_CHECKING:
+    import pandas as pd
 
 
 class AtomicOutputError(ValueError):
@@ -186,6 +187,8 @@ def atomic_write_parquet(
 
     def validator(temporary: Path) -> None:
         if validate is not None:
+            import pandas as pd  # noqa: PLC0415
+
             checked = pd.read_parquet(temporary)
             try:
                 validate(checked)
