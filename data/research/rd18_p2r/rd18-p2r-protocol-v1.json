@@ -1,0 +1,74 @@
+{
+  "schema_version": "rd18-p2r-protocol-v1",
+  "stage": "RD18_P2R_RESTRICTED_UNIVERSE_STRUCTURAL_COMPARISON",
+  "source_commit": "a455032513bdaabe6d5b42d31249f8b2d1278c71",
+  "execution_venue": "KUCOIN_SPOT",
+  "restricted_claim": "RESTRICTED_TO_376_KLINE_CONFIRMED_HISTORICAL_KUCOIN_SPOT_PAIRS",
+  "comparison_period": {
+    "start": "2019-01-01T00:00:00Z",
+    "end_exclusive": "2025-01-01T00:00:00Z",
+    "weekly_decisions": 313,
+    "post_warmup_decisions": 301
+  },
+  "input_hashes": {
+    "p0_inventory": "b4d64d6d00d2d924b85f5e184a11e9e3d215f81cca1ebc4ef7fca144fbf74190",
+    "p0a_candidate_union": "368fed59f3a8d0517ffcffd29892cd2a8b5eab81de5209a7815478e812e10c59",
+    "p0b_inventory": "0dffdbba976a45de1ec6072cbe64600f3582edda016a2bc44dc3f9168af85253",
+    "p0b_boundaries": "c17fe972c06e8582aff6390d85aab972c6258e0fe5e9cc86d5e2653354e198f3",
+    "p1r_output_manifest_deterministic_hash": "3956041409448c3fb547d18917d46f423e07b88b8815961a1a61866fd4ab03b0",
+    "p1r_inventory_variants": "1f2962d9f62604cccd130392b500b421d8e9bd1700d2f30a08c6d7185d2ca760",
+    "p1r_weekly_rankings": "48ac68371dd6bc3804e54db387da1b8e550c4e45fe7b59bc3a3689c5d6548266",
+    "p1r_weekly_membership": "32532520069988bc1005b5c2676ece0c55559dd8a1b74d85eb6492fff151fa73",
+    "p1r_weekly_eligibility": "c6cc9f5aa5e20c71cd32dcb0ccfa8db87d43d9144f46c6d25b3847eda43f210b",
+    "p1r_hysteresis": "c9df3ac47ba9057b6e9d84d5cfa87e79a1239a6f25b003d995e97614a736a64b",
+    "p1r_delisted": "0d31cd601fb5d8f878e08fc37add056c22e97c8bcaf2d28b531fe5e7b92909d1",
+    "p1r_sensitivity": "d9b7f9aa76fb63a51dd102c8a7e2610fba1e9ad5b8ac3327e340483711c32274",
+    "p1r_materiality": "1ba82112ef44dd73b2532889a8bb6cbed0481133876af62f9e153285ef59a289",
+    "p1r_panel": "ac4a5f4ba29be2c7d5554160dbee9df1fb5b8158e901fc93775ba0dcc542be75",
+    "p1r_final_report": "ca06711233f88163ceae24a43cf49165172d5f94aa1c75cb840b8665ee21e26c",
+    "p1r_daily_coverage": "da0c1ce6e5e86f0e094bdac8b1e897ac088223737b945f2e38e8af943c4a3269",
+    "rd17_frozen_cmc_filtered_ranking": "74f575acb9725b759ba7392b36f4c2036a8f6bface129cde52cf76b7dc58e759",
+    "legacy_config_assets": "c6499309f147e3dad5fe798e327ce41b9694eed9724f380a43370313f2eb37d4"
+  },
+  "inventory_variants": {
+    "A_P0": {"size": 68, "purpose": "EARLY_INCOMPLETE_INVENTORY_DIAGNOSTIC"},
+    "B_P0A": {"size": 300, "purpose": "INTERMEDIATE_DISCOVERY_DIAGNOSTIC"},
+    "C_P0B": {"size": 376, "purpose": "PRIMARY_RESTRICTED_RESEARCH_UNIVERSE"},
+    "D_EVIDENCE_STRONG": {"size": 299, "purpose": "SURVIVORSHIP_RISK_SENSITIVITY_UNIVERSE"}
+  },
+  "metrics": {
+    "top_n": [4, 6, 8, 10, 30],
+    "primary_liquidity": "trailing_28d_median_daily_quote_turnover_usdt",
+    "hysteresis": "enter_top_6_retain_top_8",
+    "tie_break": ["liquidity_descending", "listing_age_descending", "canonical_asset_id_ascending"],
+    "rank_comparisons": "common_eligible_assets_only",
+    "no_return_analysis": true,
+    "no_trade_generation": true,
+    "no_optimization": true,
+    "zero_new_market_data_requests": true
+  },
+  "omission_risk_rules": {
+    "LOW": {"d_top6_exact_min": 0.95, "d_top10_exact_min": 0.90, "mean_top10_jaccard_min": 0.95, "current_seed_top6_share_max": 0.05, "year_share_max": 0.10, "rank6_rank7_margin_above_10_min": 0.90},
+    "MODERATE": {"d_top6_exact_min": 0.80, "mean_top10_jaccard_min": 0.85, "current_seed_top6_share_max": 0.15, "year_share_max": 0.25},
+    "HIGH": {"d_top6_exact_below": 0.80, "mean_top10_jaccard_below": 0.85, "current_seed_top6_share_above": 0.15, "year_share_above": 0.25},
+    "SEVERE": {"d_top6_exact_below": 0.50, "mean_top10_jaccard_below": 0.70, "current_seed_top6_share_above": 0.40, "identity_contamination": true, "non_reproducible": true}
+  },
+  "authorization_rules": {
+    "single_low": "RD18_P2R_SINGLE_RESTRICTED_UNIVERSE_ACCEPTABLE",
+    "dual_moderate_or_high": "RD18_P2R_DUAL_UNIVERSE_ROBUSTNESS_REQUIRED",
+    "structural_severe_or_integrity_failure": "RD18_P2R_RESTRICTED_UNIVERSE_STRUCTURAL_RISK_UNACCEPTABLE"
+  },
+  "sealed_data_boundary": "No market observations on or after 2025-01-01 were read or introduced.",
+  "provenance_policy": "Current-currency-only discovery is valid Kline-confirmed membership but is a separate higher-risk lineage; current lists never control historical membership.",
+  "source_policy": "Offline reuse of committed P1R outputs; no archive search and no network acquisition.",
+  "stop_decisions": [
+    "RD18_P2R_INPUT_RECONCILIATION_FAILED",
+    "RD18_P2R_RESTRICTED_UNIVERSE_STRUCTURAL_RISK_UNACCEPTABLE",
+    "RD18_P2R_DUAL_UNIVERSE_ROBUSTNESS_REQUIRED",
+    "RD18_P2R_SINGLE_RESTRICTED_UNIVERSE_ACCEPTABLE"
+  ],
+  "authorization_defaults": {
+    "strategy_candidate_generation_authorized": false,
+    "production_authorized": false
+  }
+}
