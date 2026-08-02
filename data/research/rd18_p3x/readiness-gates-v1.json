@@ -1,0 +1,21 @@
+{
+  "schema_version": "rd18-p3x-readiness-gates-v1",
+  "gates": [
+    {"id": "G01", "name": "corrected_c2_count", "operator": "eq", "threshold": 364, "blocking": true},
+    {"id": "G02", "name": "hourly_source_manifest_coverage", "operator": "eq", "threshold": 1.0, "blocking": true},
+    {"id": "G03", "name": "source_file_presence", "operator": "eq", "threshold": 1.0, "blocking": true},
+    {"id": "G04", "name": "source_hash_match", "operator": "eq", "threshold": 1.0, "blocking": true},
+    {"id": "G05", "name": "hourly_window_coverage", "operator": "eq", "threshold": 1.0, "blocking": true},
+    {"id": "G06", "name": "duplicate_hourly_timestamps", "operator": "eq", "threshold": 0, "blocking": true},
+    {"id": "G07", "name": "undocumented_missing_intervals", "operator": "eq", "threshold": 0, "blocking": true},
+    {"id": "G08", "name": "invalid_ohlcv_rows", "operator": "eq", "threshold": 0, "blocking": true},
+    {"id": "G09", "name": "future_context_violations", "operator": "eq", "threshold": 0, "blocking": true},
+    {"id": "G10", "name": "post_2024_observations", "operator": "eq", "threshold": 0, "blocking": true},
+    {"id": "G11", "name": "raw_ohlcv_candidate_generator", "operator": "eq", "threshold": true, "blocking": true},
+    {"id": "G12", "name": "six_symbol_control_candidate_parity", "operator": "eq", "threshold": 1.0, "blocking": true},
+    {"id": "G13", "name": "weekly_operational_member_decision_coverage", "operator": "eq", "threshold": 1.0, "blocking": true},
+    {"id": "G14", "name": "deterministic_two_run_match", "operator": "eq", "threshold": true, "blocking": true},
+    {"id": "G15", "name": "network_requests", "operator": "eq", "threshold": 0, "blocking": true}
+  ],
+  "gate_changes_after_results_allowed": false
+}

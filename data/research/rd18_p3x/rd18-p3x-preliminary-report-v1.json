@@ -1,0 +1,62 @@
+{
+  "authorization": {
+    "full_c2_hourly_data_acquisition_authorized": true,
+    "production_authorized": false,
+    "raw_candidate_generator_extraction_authorized": true,
+    "return_calculation_authorized": false,
+    "strategy_replay_authorized": false,
+    "three_universe_candidate_dry_run_authorized": false
+  },
+  "candidate_generator_finding": {
+    "classification": "LEDGER_REGISTRATION_ONLY_GENERATOR_EXTRACTION_REQUIRED",
+    "interpretation": "The retained Trend and Compression rules must be extracted into a raw-OHLCV candidate/no-signal generator and matched exactly on the original six-symbol control before broadening to C2.",
+    "raw_ohlcv_entrypoint_in_rd16l_architecture": false,
+    "rd16l_architecture_role": "register and reroute already prepared candidate, evaluated and trade ledgers"
+  },
+  "data_finding": {
+    "acquisition_scope": "all 364 corrected C2 pairs",
+    "exact_file_and_window_readiness_requires_local_runner": true,
+    "existing_sources": [
+      "AVAX/USDT",
+      "BTC/USDT",
+      "ETH/USDT",
+      "LINK/USDT",
+      "NEAR/USDT",
+      "SOL/USDT"
+    ],
+    "why_not_only_operational_union": "Full C2 scope is stronger, contains D2 and supports every possible E2 boundary member without membership-conditioned acquisition."
+  },
+  "decision": "RD18_P3X_DATA_AND_GENERATOR_BUILD_REQUIRED",
+  "feature_finding": {
+    "binding_minimum_feature_warmup_hours": 5040,
+    "binding_source": "30 completed weekly observations for weekly EMA40",
+    "missing_warmup_policy": "FEATURE_WARMUP_NOT_READY, never silent NO_SIGNAL"
+  },
+  "frozen_input_hashes": {
+    "P1R2": "0cc3d273e55aa1d1425de97b47fb5cad7610c6c2c7da6aec348850a635947048",
+    "P2U2": "f61ed396977e8b85faaad5e670e193d216a5d6e1c87bee8406301cbe0666b227",
+    "P3R": "df4644d52cbcf60b878d5b6f979846cc756139b329a23c58ed0f068dfd50e4cb"
+  },
+  "limitations": [
+    "The exact 364-row acquisition plan is generated locally because the large corrected C2 audit is not duplicated into this stage.",
+    "The six committed RD16B sources are not assumed to satisfy every pair-specific historical start window until the local audit runs.",
+    "No strategy economics are evaluated in P3X."
+  ],
+  "network_requests": 0,
+  "next_stage": "RD18_P3X_A1_FULL_C2_HOURLY_DATA_AND_GENERATOR_BUILD",
+  "optimization_performed": false,
+  "post_2024_observations": 0,
+  "preliminary_reconciliation": {
+    "committed_rd16b_hourly_source_symbols": 6,
+    "corrected_c2_pairs_required": 364,
+    "manifest_level_pair_coverage_fraction": 0.016483516483516484,
+    "manifest_level_pairs_without_hourly_source": 358,
+    "old_average_top6_candidate_coverage_fraction": 0.3807241746538871,
+    "old_full_top6_candidate_coverage_fraction": 0.0
+  },
+  "returns_calculated": false,
+  "schema_version": "rd18-p3x-preliminary-readiness-v1",
+  "source_commit": "320dd784912950371a22cf18adc22a78391ee074",
+  "stage": "RD18_P3X_FULL_UNIVERSE_CANDIDATE_PIPELINE_AND_DATA_READINESS",
+  "trades_generated": false
+}

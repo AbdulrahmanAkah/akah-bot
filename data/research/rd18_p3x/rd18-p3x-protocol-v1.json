@@ -1,0 +1,128 @@
+{
+  "candidate_decision_contract": {
+    "allowed_decisions": [
+      "CANDIDATE",
+      "NO_SIGNAL",
+      "FEATURE_WARMUP_NOT_READY",
+      "DATA_UNAVAILABLE_BLOCK"
+    ],
+    "duplicate_member_decisions_allowed": false,
+    "missing_data_as_no_signal_allowed": false,
+    "outcome_fields_allowed_in_generation": false,
+    "required_for_every_weekly_operational_member": true,
+    "weekly_member_evaluation_rate_required": 1.0
+  },
+  "control_parity": {
+    "candidate_ledger_exact": true,
+    "candidate_or_no_signal_decision_exact": true,
+    "control_symbols": [
+      "AVAX/USDT",
+      "BTC/USDT",
+      "ETH/USDT",
+      "LINK/USDT",
+      "NEAR/USDT",
+      "SOL/USDT"
+    ],
+    "economic_metrics_not_used_for_parity": true,
+    "engine_exact": true,
+    "reason_code_exact": true,
+    "required_before_breadth_expansion": true,
+    "routing_input_exact": true,
+    "timestamp_exact": true
+  },
+  "decision_policy": {
+    "combined_block": "RD18_P3X_DATA_AND_GENERATOR_BUILD_REQUIRED",
+    "data_only_block": "RD18_P3X_FULL_C2_HOURLY_DATA_ACQUISITION_REQUIRED",
+    "generator_only_block": "RD18_P3X_RAW_CANDIDATE_GENERATOR_EXTRACTION_REQUIRED",
+    "input_failure": "RD18_P3X_INPUT_RECONCILIATION_FAILED",
+    "ready": "RD18_P3X_FULL_UNIVERSE_INPUTS_READY_FOR_DRY_RUN"
+  },
+  "feature_warmup": {
+    "binding_minimum_days": 210,
+    "binding_minimum_hours": 5040,
+    "daily_ema200_minimum_hours": 2880,
+    "four_hour_ema50_hours": 200,
+    "policy": "Rows before feature maturity are explicit FEATURE_WARMUP_NOT_READY decisions; pre-2019 candles are not synthesized or required.",
+    "signal_ema50_hours": 50,
+    "weekly_ema40_minimum_hours": 5040
+  },
+  "frozen_input_hashes": {
+    "P1R2": "0cc3d273e55aa1d1425de97b47fb5cad7610c6c2c7da6aec348850a635947048",
+    "P2U2": "f61ed396977e8b85faaad5e670e193d216a5d6e1c87bee8406301cbe0666b227",
+    "P3R": "df4644d52cbcf60b878d5b6f979846cc756139b329a23c58ed0f068dfd50e4cb"
+  },
+  "frozen_strategy": {
+    "architecture_id": "COMPOSITE_ALPHA_V3",
+    "base_risk_per_trade_fraction": 0.005,
+    "compression_cooldown_hours": 24,
+    "compression_engine_id": "COMPRESSION_EXPANSION_SPECIALIST_V3",
+    "expanded_risk_per_trade_fraction": 0.0075,
+    "macro_timeframe": "1w",
+    "maximum_open_risk_fraction": 0.0225,
+    "maximum_positions": 5,
+    "normal_holding_bars": 48,
+    "regime_timeframe": "1d",
+    "signal_timeframe": "1h",
+    "source_variant_id": "STRONG_BULL_HOLD_96",
+    "strong_bull_holding_bars": 96,
+    "structure_timeframe": "4h",
+    "trend_cooldown_hours": 12,
+    "trend_engine_id": "TREND_CONTINUATION_CORE_V3"
+  },
+  "network_requests": 0,
+  "objective": "Prove that the frozen COMPOSITE_ALPHA_V3 strategy can be regenerated causally from local KuCoin 1h OHLCV for every corrected C2 asset, and therefore for D2 and E2, before any economic replay.",
+  "optimization_performed": false,
+  "production_authorized": false,
+  "prohibitions": {
+    "2025_access": true,
+    "2026_access": true,
+    "futures_margin_derivatives": true,
+    "leverage_shorting_borrowing": true,
+    "parameter_optimization": true,
+    "per_universe_tuning": true,
+    "performance_ranking": true,
+    "portfolio_pnl": true,
+    "production_authorization": true,
+    "strategy_returns": true,
+    "trade_generation": true
+  },
+  "readiness_gates": {
+    "all_c2_pairs_have_1h_source_manifest": true,
+    "all_source_files_exist": true,
+    "all_source_hashes_match": true,
+    "all_sources_cover_their_valid_historical_window_to_cutoff": true,
+    "c2_pair_count_exactly_364": true,
+    "causal_4h_1d_1w_derivation": true,
+    "every_operational_member_has_explicit_decision": true,
+    "raw_ohlcv_candidate_generator_exists": true,
+    "six_symbol_control_parity_exact": true,
+    "two_deterministic_runs_match": true,
+    "zero_duplicate_hourly_timestamps": true,
+    "zero_internal_missing_intervals_unless_documented_nontradability": true,
+    "zero_invalid_ohlcv_rows": true,
+    "zero_network_requests": true,
+    "zero_post_2024_candles": true
+  },
+  "returns_calculated": false,
+  "schema_version": "rd18-p3x-full-universe-readiness-v1",
+  "scope_policy": {
+    "acquisition_scope": "ALL_364_CORRECTED_C2_PAIRS",
+    "derivation_policy": "completed-bar causal aggregation only",
+    "derived_timeframes": [
+      "4h",
+      "1d",
+      "1w"
+    ],
+    "pre_2019_history_required": false,
+    "reason": "D2 is a subset of C2 and E2 is derived from C2; full C2 acquisition is stronger than the weekly operational union and prevents a later membership-dependent data gap.",
+    "required_exchange": "kucoin",
+    "required_timeframe": "1h",
+    "research_observation_start": "2019-01-01T00:00:00+00:00",
+    "sealed_cutoff": "2025-01-01T00:00:00+00:00"
+  },
+  "source_decision": "RD18_P3R_THREE_UNIVERSE_REPLAY_PROTOCOL_REGISTERED_INPUT_BUILD_REQUIRED",
+  "stage": "RD18_P3X_FULL_UNIVERSE_CANDIDATE_PIPELINE_AND_DATA_READINESS",
+  "starting_commit": "320dd784912950371a22cf18adc22a78391ee074",
+  "strategy_replay_authorized": false,
+  "trades_generated": false
+}

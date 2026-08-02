@@ -1,0 +1,21 @@
+{
+  "schema_version": "rd18-p3x-a1-requirements-v1",
+  "stage": "RD18_P3X_A1_FULL_C2_HOURLY_DATA_AND_GENERATOR_BUILD",
+  "requirements": [
+    "Use the locally generated 364-pair acquisition plan.",
+    "Acquire KuCoin Spot 1h OHLCV only through the sealed 2024 cutoff.",
+    "Preserve pair-specific first-valid boundaries; never synthesize pre-listing candles.",
+    "Record every request, response boundary, row count, file hash and retry.",
+    "Validate duplicates, gaps, OHLC consistency, nonnegative volume and cutoff.",
+    "Derive 4h, 1d and 1w context from completed 1h bars only.",
+    "Extract the frozen retained Trend and Compression engines without changing parameters.",
+    "Produce an explicit candidate/no-signal/warmup/data-block decision for every evaluated member.",
+    "Match the original six-symbol candidate ledger exactly before evaluating any new pair.",
+    "Run two deterministic offline reconstructions.",
+    "Do not calculate returns, trades or portfolio PnL.",
+    "Do not access 2025 or 2026 observations.",
+    "Do not authorize strategy replay until every P3X readiness gate passes."
+  ],
+  "strategy_replay_authorized": false,
+  "production_authorized": false
+}

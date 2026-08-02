@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RD18 P3X explicit weekly member candidate decision",
+  "type": "object",
+  "required": [
+    "universe_id",
+    "decision_timestamp",
+    "symbol",
+    "candidate_decision",
+    "feature_timestamp",
+    "engine_decisions",
+    "data_status"
+  ],
+  "properties": {
+    "universe_id": {"enum": ["C2", "D2", "E2"]},
+    "decision_timestamp": {"type": "string", "format": "date-time"},
+    "symbol": {"type": "string", "pattern": "^[A-Z0-9]+/USDT$"},
+    "candidate_decision": {
+      "enum": ["CANDIDATE", "NO_SIGNAL", "FEATURE_WARMUP_NOT_READY", "DATA_UNAVAILABLE_BLOCK"]
+    },
+    "feature_timestamp": {"type": ["string", "null"]},
+    "engine_decisions": {"type": "array"},
+    "data_status": {"type": "string"},
+    "return": false,
+    "net_pnl": false,
+    "future_outcome": false
+  },
+  "additionalProperties": true
+}
