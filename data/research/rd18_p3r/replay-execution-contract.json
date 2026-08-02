@@ -1,0 +1,114 @@
+{
+  "candidate_generation": {
+    "evaluate_every_selected_member_every_completed_signal_bar": true,
+    "evaluation_audit_coverage_required": 1.0,
+    "evaluation_reason_required_for_no_signal": true,
+    "generate_from_market_bars": true,
+    "legacy_control_exact_reproduction_required": true,
+    "minimum_full_top6_candidate_coverage_fraction": 0.95,
+    "reuse_fixed_six_asset_candidate_ledger_as_full_source": false
+  },
+  "execution": {
+    "base_risk_per_trade_fraction": 0.005,
+    "cost_multiplier_is_leverage": false,
+    "cost_multipliers": [
+      1.0,
+      2.0
+    ],
+    "entry": "next completed 1h candle open after signal close",
+    "exit_priority": "hard stop first, then frozen profit-floor and time-exit rules",
+    "expanded_risk_per_trade_fraction": 0.0075,
+    "fee_rate_per_side": 0.001,
+    "force_close_policy": "identical frozen engine end-of-period policy across all universes",
+    "initial_equity": 100000.0,
+    "maximum_open_risk_fraction": 0.0225,
+    "maximum_positions": 5,
+    "negative_cash_allowed": false,
+    "same_symbol_overlap_allowed": false,
+    "slippage_rate_per_side": 0.0
+  },
+  "market_data": {
+    "asset_union": "all assets entering raw Top-10 or operational hysteresis in C2, D2 or E2, sufficient for deterministic single-asset omission replacement",
+    "context_construction": "causal aggregation from completed 1h bars unless an immutable equivalent source is registered",
+    "delisted_assets_retained": true,
+    "exchange": "KuCoin",
+    "forward_fill_ohlcv_allowed": false,
+    "future_backfill_allowed": false,
+    "market": "Spot",
+    "quote_currency": "USDT",
+    "raw_request_and_content_hash_manifest_required": true,
+    "required_context_intervals": [
+      "4h",
+      "1d",
+      "1w"
+    ],
+    "signal_interval": "1h",
+    "synthetic_fill_allowed": false
+  },
+  "reporting": [
+    "net return, CAGR and geometric monthly return",
+    "profit factor, maximum drawdown and minimum cash",
+    "trade count, win rate and expectancy",
+    "annual and monthly performance",
+    "asset, engine, regime, exit and holding attribution",
+    "Current-Seed and Evidence-Strong PnL attribution",
+    "BCHSV and PEPE attribution",
+    "top-trade, top-asset and top-year concentration",
+    "C2/D2/E2 performance dispersion",
+    "conclusion reversal",
+    "1x and 2x cost stress",
+    "LOYO and LOAO"
+  ],
+  "required_runs": {
+    "base": 6,
+    "description": "3 universes x 2 transaction-cost multipliers",
+    "leave_one_asset_out": "every asset traded in any base run, rerun in each applicable universe; 1x and 2x",
+    "leave_one_year_out": "6 omitted years x 3 universes x 2 costs",
+    "named_omissions": [
+      "BCHSV-USDT",
+      "PEPE-USDT"
+    ]
+  },
+  "schema_version": "rd18-p3r-replay-execution-contract-v1",
+  "status": "PREREGISTERED_NOT_EXECUTED",
+  "strategy": {
+    "architecture_id": "COMPOSITE_ALPHA_V3",
+    "candidate_file": "data/research/rd18_p3r/frozen-strategy-candidate.json",
+    "outcome_based_routing_allowed": false,
+    "parameter_changes_allowed": false,
+    "per_universe_tuning_allowed": false,
+    "source_variant_id": "STRONG_BULL_HOLD_96"
+  },
+  "time": {
+    "2025_access": false,
+    "2026_access": false,
+    "end_exclusive": "2025-01-01T00:00:00+00:00",
+    "membership_decision": "Monday 00:00 UTC",
+    "membership_effective_interval": "[decision_time, next_decision_time)",
+    "pre_start_bars_allowed": "indicator warm-up only; no entries before primary start",
+    "primary_start_inclusive": "2019-04-01T00:00:00+00:00",
+    "timezone": "UTC"
+  },
+  "universes": [
+    {
+      "id": "C2",
+      "inventory": "CORRECTED_RESTRICTED_KUCOIN_SPOT_LIQUIDITY_UNIVERSE",
+      "materialization_requirement": "hash a canonical 301-decision membership file before replay",
+      "membership": "Top-6 entry / Top-8 retention hysteresis"
+    },
+    {
+      "id": "D2",
+      "inventory": "CORRECTED_EVIDENCE_STRONG_UNIVERSE",
+      "materialization_requirement": "reconstruct from corrected D2 ranking and hash before replay",
+      "membership": "same Top-6 entry / Top-8 retention hysteresis"
+    },
+    {
+      "id": "E2",
+      "inventory": "E10_CONFIDENCE_AWARE_LIQUIDITY_UNIVERSE",
+      "membership": "committed E10 Top-6 entry / Top-8 retention hysteresis",
+      "source_path": "data/research/rd18_p2u2/e10-hysteresis.csv",
+      "source_sha256": "511cb4ece84a1b550a6de6207601498d865bd1892e6d87dea65c46254a7b4358"
+    }
+  ],
+  "worst_universe_controls_advancement": true
+}

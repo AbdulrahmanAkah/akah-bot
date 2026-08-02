@@ -1,0 +1,151 @@
+{
+  "annual_reference": {
+    "2019": -0.045094742844927094,
+    "2020": 0.4873862765327506,
+    "2021": 0.2024832929911491,
+    "2022": -0.0022704908077674224,
+    "2023": 0.21201622201060966,
+    "2024": 0.007869476665559816
+  },
+  "architecture_id": "COMPOSITE_ALPHA_V3",
+  "baseline_reference_1x": {
+    "capital_feasible": true,
+    "maximum_drawdown": 0.11030602524673228,
+    "maximum_positions_observed": 3,
+    "minimum_cash": 4924.12494235066,
+    "monthly_geometric_return": 0.010232043860760598,
+    "net_return": 1.0815586314022658,
+    "profit_factor": 1.505786335911124,
+    "trade_count": 567
+  },
+  "baseline_reference_2x_transaction_cost": {
+    "capital_feasible": true,
+    "definition": "transaction-cost multiplier, not leverage",
+    "maximum_drawdown": 0.19001447234849034,
+    "minimum_cash": 3041.820393014721,
+    "net_return": 0.5946846385769569,
+    "profit_factor": 1.243486912246254
+  },
+  "candidate_selection_performed_in_p3r": false,
+  "concentration_reference": {
+    "net_return_without_top_1": 0.8537075499896086,
+    "net_return_without_top_10": -0.033535767914058816,
+    "net_return_without_top_3": 0.560590388846465,
+    "top_10_trade_profit_share": 0.3463102194570091,
+    "top_1_trade_profit_share": 0.07076276058413516,
+    "top_3_trade_profit_share": 0.16179493549626373,
+    "top_asset": "ETH/USDT",
+    "top_asset_profit_share": 0.3770845010720512
+  },
+  "economic_baseline_stage": "RD16M_FIXED_COMPOSITE_ALPHA_V3_BASELINE_EVALUATION_COMPLETED",
+  "engines": [
+    {
+      "cooldown_hours": 12,
+      "engine_id": "TREND_CONTINUATION_CORE_V3",
+      "family": "MTF_TREND_BREAKOUT",
+      "priority": 10,
+      "source_engine_id": "TREND_CONTINUATION_CORE_V2"
+    },
+    {
+      "cooldown_hours": 24,
+      "engine_id": "COMPRESSION_EXPANSION_SPECIALIST_V3",
+      "family": "MTF_COMPRESSION_EXPANSION",
+      "priority": 20,
+      "source_engine_id": "COMPRESSION_EXPANSION_SPECIALIST_V2"
+    }
+  ],
+  "fixed_configuration": {
+    "averaging_down": false,
+    "base_risk_per_trade_fraction": 0.005,
+    "dca": false,
+    "derivatives": false,
+    "entry_execution": "next completed 1h candle open after signal close",
+    "expanded_risk_per_trade_fraction": 0.0075,
+    "fee_rate_per_side": 0.001,
+    "hard_stop_priority": "stop-first conservative ambiguity handling",
+    "initial_equity": 100000.0,
+    "kelly": false,
+    "leverage": false,
+    "long_only": true,
+    "macro_timeframe": "1w",
+    "margin": false,
+    "maximum_open_risk_fraction": 0.0225,
+    "maximum_positions": 5,
+    "normal_holding_bars": 48,
+    "profit_floor_lock_r": 0.25,
+    "profit_floor_trigger_r": 1.5,
+    "pyramiding": false,
+    "regime_timeframe": "1d",
+    "risk_multipliers_compound": false,
+    "same_symbol_overlap_allowed": false,
+    "second_profit_lock_r": 1.0,
+    "second_profit_trigger_r": 2.5,
+    "separate_slippage_rate_per_side": 0.0,
+    "shorting": false,
+    "signal_timeframe": "1h",
+    "spot_only": true,
+    "strong_bull_holding_bars": 96,
+    "structure_timeframe": "4h"
+  },
+  "immutable_hashes": {
+    "candidates_content_sha256": "ab52853c5f78b87d61a66d63f5ed8e1d1357b7c343c4ba628ca3cd2e89c47622",
+    "evaluated_content_sha256": "8d06034b9305bf67fca1baf2f850bf50906538204e4dc8ef6c5d2b8b341dfd61",
+    "rd16m_annual_performance": "b5569d0ea486925e0b55ad68837f2b15ba4ec764744686bf28ecb0a930a2ac1f",
+    "rd16m_concentration": "c7ba05c89c69aa85552fe585285e49aee94983bccc116a5e78f5bdb2a48e529b",
+    "rd16m_cost_stress": "3f46cb36cf4a955b21392f4009e1791290686065729f2a370fb874adef46200a",
+    "rd16m_final_report": "45f22e3b45beb1b7ec7263a2743dd451a020fd307d1109f984fa6ce7f1d0a295",
+    "rd16m_protocol": "3a9aaafefecb6ea2925b1a882bd5f05c01443e550339989bdb644145d74bc2e5",
+    "rd16m_validation": "0c308779fa0a50222c22231006c6c792e1d5a84e44ae9454afcd6474ead1ea04",
+    "trades_content_sha256": "be1af238dfaac5b832fd5c3ca54188242cf02a785af4d268a33c0878c75ff862"
+  },
+  "implementation_freeze_requirement": {
+    "family_feature_modules": [
+      "src/spotbot/research/rd16c_common.py",
+      "src/spotbot/research/rd16c_features.py",
+      "src/spotbot/research/rd16c_families.py",
+      "src/spotbot/research/rd16c_smoke.py"
+    ],
+    "p3x_must_hash_complete_signal_lineage": true,
+    "p3x_must_reproduce_legacy_control_exactly": true,
+    "registration_module": "src/spotbot/research/rd16l_architecture.py",
+    "router_module": "src/spotbot/research/rd16i_architecture.py"
+  },
+  "later_candidate_search": {
+    "candidate_superseded": false,
+    "promising_variant_count": 0,
+    "retained_variant_count": 0,
+    "stage": "RD16P_MULTITIMEFRAME_STRUCTURE_AND_CROSS_SECTIONAL_PORTFOLIO_RESEARCH_COMPLETED"
+  },
+  "lineage": [
+    "RD16C registered 1h Spot Long-only families",
+    "RD16E retained Trend and Compression remediation components",
+    "RD16F COMPOSITE_ALPHA_V1 deterministic router",
+    "RD16H EVIDENCE_COMPOSITE_EXPANSION",
+    "RD16I COMPOSITE_ALPHA_V2",
+    "RD16K STRONG_BULL_HOLD_96",
+    "RD16L COMPOSITE_ALPHA_V3 registration",
+    "RD16M fixed economic baseline"
+  ],
+  "registered_ledger": {
+    "candidate_count": 688,
+    "candidate_universe_symbols": [
+      "AVAX",
+      "BTC",
+      "ETH",
+      "LINK",
+      "NEAR",
+      "SOL"
+    ],
+    "content_hashes": {
+      "candidates_content_sha256": "ab52853c5f78b87d61a66d63f5ed8e1d1357b7c343c4ba628ca3cd2e89c47622",
+      "evaluated_content_sha256": "8d06034b9305bf67fca1baf2f850bf50906538204e4dc8ef6c5d2b8b341dfd61",
+      "trades_content_sha256": "be1af238dfaac5b832fd5c3ca54188242cf02a785af4d268a33c0878c75ff862"
+    },
+    "trade_count": 567
+  },
+  "registration_stage": "RD16L_REGISTERED_COMPOSITE_ALPHA_V3_ARCHITECTURE_COMPLETED",
+  "schema_version": "rd18-p3r-frozen-strategy-candidate-v1",
+  "source_architecture_id": "COMPOSITE_ALPHA_V2",
+  "source_variant_id": "STRONG_BULL_HOLD_96",
+  "status": "FROZEN_CANDIDATE_IDENTIFIED"
+}

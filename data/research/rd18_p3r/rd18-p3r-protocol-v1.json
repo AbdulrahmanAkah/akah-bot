@@ -1,0 +1,64 @@
+{
+  "authorization": {
+    "frozen_strategy_candidate_confirmed": true,
+    "full_universe_input_build_authorized": true,
+    "market_data_acquisition_through_2024_authorized": true,
+    "new_strategy_candidate_generation_authorized": false,
+    "performance_replay_authorized": false,
+    "production_authorized": false,
+    "three_universe_protocol_registered": true
+  },
+  "branch": "research/rd18-p3r-preregistered-three-universe-replay-protocol-v1",
+  "candidate": {
+    "architecture_id": "COMPOSITE_ALPHA_V3",
+    "frozen_candidate_path": "data/research/rd18_p3r/frozen-strategy-candidate.json",
+    "source_variant_id": "STRONG_BULL_HOLD_96"
+  },
+  "candidate_generation_executed": false,
+  "cost_multipliers": [
+    1.0,
+    2.0
+  ],
+  "decision": "RD18_P3R_THREE_UNIVERSE_REPLAY_PROTOCOL_REGISTERED_INPUT_BUILD_REQUIRED",
+  "execution_contract": "data/research/rd18_p3r/replay-execution-contract.json",
+  "holdout_2026_accessed": false,
+  "next_stage": "RD18_P3X_FULL_UNIVERSE_CANDIDATE_PIPELINE_AND_DATA_READINESS",
+  "objective": "Freeze the candidate, universes, execution semantics and advancement gates before any C2/D2/E2 strategy return is observed.",
+  "optimization_performed": false,
+  "per_universe_tuning": false,
+  "performance_gate_registry": "data/research/rd18_p3r/performance-gate-registry.json",
+  "preexecution_readiness": "data/research/rd18_p3r/preexecution-readiness.json",
+  "primary_window": {
+    "end_exclusive": "2025-01-01T00:00:00+00:00",
+    "full_313_window": "diagnostic_only",
+    "post_warmup_decisions": 301,
+    "start_inclusive": "2019-04-01T00:00:00+00:00"
+  },
+  "production_authorized": false,
+  "prohibitions": [
+    "2025 access",
+    "2026 access",
+    "performance replay before P3X readiness confirmation",
+    "per-universe tuning",
+    "outcome-based routing",
+    "threshold changes after results",
+    "reuse of the six-asset ledger as a full-universe signal source",
+    "post-hoc trade deletion for LOYO or LOAO",
+    "leverage, margin, shorts, Futures, perpetuals, options or derivatives",
+    "DCA, Kelly sizing, pyramiding or averaging down",
+    "production authorization"
+  ],
+  "returns_calculated": false,
+  "schema_version": "rd18-p3r-preregistered-three-universe-replay-protocol-v1",
+  "source_commit": "98293ce37e583b487f8e3f0d5173f3e2605852ac",
+  "stage": "RD18_P3R_PREREGISTERED_THREE_UNIVERSE_REPLAY_PROTOCOL",
+  "strategy_replay_executed": false,
+  "test_2025_accessed": false,
+  "threshold_selection_after_results": false,
+  "universes": [
+    "C2",
+    "D2",
+    "E2"
+  ],
+  "worst_universe_controls_advancement": true
+}

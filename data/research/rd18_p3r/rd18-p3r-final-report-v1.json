@@ -1,0 +1,69 @@
+{
+  "authorization": {
+    "frozen_strategy_candidate_confirmed": true,
+    "full_universe_input_build_authorized": true,
+    "market_data_acquisition_through_2024_authorized": true,
+    "new_strategy_candidate_generation_authorized": false,
+    "performance_replay_authorized": false,
+    "production_authorized": false,
+    "three_universe_protocol_registered": true
+  },
+  "candidate": {
+    "architecture_id": "COMPOSITE_ALPHA_V3",
+    "later_retained_candidate_count": 0,
+    "source_variant_id": "STRONG_BULL_HOLD_96",
+    "status": "FROZEN_CANDIDATE_IDENTIFIED"
+  },
+  "decision": "RD18_P3R_THREE_UNIVERSE_REPLAY_PROTOCOL_REGISTERED_INPUT_BUILD_REQUIRED",
+  "legacy_candidate_coverage": {
+    "average_true_top6_candidate_coverage": 0.3807241746538871,
+    "full_top6_candidate_coverage_fraction": 0.0,
+    "symbol_count": 6
+  },
+  "limitations": [
+    "The KuCoin universe claim remains restricted to 376 Kline-confirmed historical pairs.",
+    "Current universe artifacts are daily membership evidence; COMPOSITE_ALPHA_V3 requires a validated 1h signal store.",
+    "The prior dynamic replay used only six registered candidate symbols and cannot establish full-market performance.",
+    "P3R registers the protocol but does not authorize performance replay."
+  ],
+  "next_stage": "RD18_P3X_FULL_UNIVERSE_CANDIDATE_PIPELINE_AND_DATA_READINESS",
+  "performance_gates_frozen": true,
+  "primary_decisions": 301,
+  "protocol_registered": true,
+  "readiness": {
+    "blocking_items": [
+      "Materialize and hash canonical C2, D2 and E2 operational membership files for all 301 decisions.",
+      "Audit and hash the complete RD16C\u2192RD16H\u2192RD16I\u2192RD16K\u2192RD16L signal-generation lineage.",
+      "Build a KuCoin Spot 1h OHLCV store through 2024 for the full operational asset union and required omission replacements.",
+      "Reproduce the frozen six-asset 688-candidate/567-trade control exactly from bars.",
+      "Prove at least 95% full Top-6 candidate coverage and 100% evaluated-member audit coverage.",
+      "Complete a no-performance dry run before opening any replay results."
+    ],
+    "candidate_identity_frozen": true,
+    "canonical_c2_membership_input_materialized": false,
+    "canonical_d2_membership_input_materialized": false,
+    "canonical_e2_membership_input_available": true,
+    "execution_contract_frozen": true,
+    "full_candidate_pipeline_control_parity_proven": false,
+    "full_signal_lineage_code_hash_manifest_available": false,
+    "full_universe_hourly_data_manifest_available": false,
+    "interpretation": "The strategy candidate is frozen, but current artifacts are insufficient for an honest full three-universe replay.",
+    "legacy_control_available": true,
+    "legacy_full_top6_candidate_coverage_fraction": 0.0,
+    "not_a_rejection_of_candidate": true,
+    "performance_gates_frozen": true,
+    "replay_execution_ready": false,
+    "schema_version": "rd18-p3r-preexecution-readiness-v1",
+    "universe_scenarios_frozen": true
+  },
+  "returns_calculated": false,
+  "schema_version": "rd18-p3r-final-report-v1",
+  "source_commit": "98293ce37e583b487f8e3f0d5173f3e2605852ac",
+  "stage": "RD18_P3R_PREREGISTERED_THREE_UNIVERSE_REPLAY_PROTOCOL",
+  "strategy_replay_executed": false,
+  "universe_scenarios": {
+    "C2": 364,
+    "D2": 299,
+    "E2": "E10 confidence-aware over C2"
+  }
+}

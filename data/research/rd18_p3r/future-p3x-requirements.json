@@ -1,0 +1,30 @@
+{
+  "dry_run_prohibitions": [
+    "no portfolio returns",
+    "no performance comparison across universes",
+    "no candidate or parameter selection",
+    "no 2025 or 2026 observations",
+    "no leverage, margin, Futures or derivatives",
+    "no synthetic OHLCV fill"
+  ],
+  "failure_decision": "RD18_P3X_REPLAY_INPUTS_INCOMPLETE",
+  "next_stage": "RD18_P3X_FULL_UNIVERSE_CANDIDATE_PIPELINE_AND_DATA_READINESS",
+  "objective": "Build and validate replay inputs without calculating strategy performance on C2, D2 or E2.",
+  "required_deliverables": [
+    "canonical C2/D2/E2 membership files and hashes",
+    "operational Top-10 asset-union census",
+    "complete strategy-lineage source hash manifest",
+    "frozen indicator lookback audit",
+    "KuCoin Spot 1h acquisition plan and immutable request manifest",
+    "hourly coverage and gap audit",
+    "causal 4h/1d/1w aggregation audit",
+    "legacy six-asset control parity",
+    "full selected-member evaluation coverage dry run",
+    "candidate/no-signal reason ledger",
+    "execution readiness decision"
+  ],
+  "schema_version": "rd18-p3r-future-p3x-requirements-v1",
+  "strategy_replay_authorized_after_p3r": false,
+  "success_decision": "RD18_P3X_THREE_UNIVERSE_REPLAY_INPUTS_READY",
+  "success_next_stage": "RD18_P3E_EXECUTE_PREREGISTERED_THREE_UNIVERSE_REPLAY"
+}

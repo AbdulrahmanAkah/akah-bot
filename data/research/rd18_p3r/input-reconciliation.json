@@ -1,0 +1,76 @@
+{
+  "branch": "research/rd18-p3r-preregistered-three-universe-replay-protocol-v1",
+  "candidate": {
+    "architecture_id": "COMPOSITE_ALPHA_V3",
+    "identified": true,
+    "later_retained_candidate_exists": false,
+    "source_variant_id": "STRONG_BULL_HOLD_96"
+  },
+  "counts": {
+    "c2_minus_d2_pairs": 65,
+    "c2_pairs": 364,
+    "d2_pairs": 299,
+    "e10_interventions": 32,
+    "excluded_products": 12,
+    "post_warmup_decisions": 301,
+    "raw_inventory_pairs": 376,
+    "weekly_decisions": 313
+  },
+  "hourly_data_readiness": {
+    "full_operational_asset_union_hourly_store_confirmed": false,
+    "preexecution_data_build_required": true,
+    "strategy_signal_interval": "1h",
+    "universe_research_panel_interval": "1d"
+  },
+  "network_requests": 0,
+  "passed": true,
+  "post_2024_accessed": false,
+  "prior_dynamic_replay_limitation": {
+    "average_true_top6_candidate_coverage": 0.3807241746538871,
+    "candidate_universe_symbol_count": 6,
+    "candidate_universe_symbols": [
+      "AVAX",
+      "BTC",
+      "ETH",
+      "LINK",
+      "NEAR",
+      "SOL"
+    ],
+    "full_dynamic_validation_claimed": false,
+    "full_top6_candidate_coverage_fraction": 0.0,
+    "implication": "The six-asset ledger cannot be reused as a full C2/D2/E2 signal source.",
+    "stage": "RD16_PIT_A2_DYNAMIC_V3_REPLAY"
+  },
+  "product_exclusion_integrity": true,
+  "returns_calculated_in_p3r": false,
+  "schema_version": "rd18-p3r-input-reconciliation-v1",
+  "source_commit": "98293ce37e583b487f8e3f0d5173f3e2605852ac",
+  "stage": "RD18_P3R_PREREGISTERED_THREE_UNIVERSE_REPLAY_PROTOCOL",
+  "strategy_replay_executed": false,
+  "universes": {
+    "C2": {
+      "inventory_pairs": 364,
+      "operational_membership": "Top-6 entry / Top-8 retention hysteresis",
+      "role": "broad corrected Kline-confirmed restricted scenario"
+    },
+    "D2": {
+      "inventory_pairs": 299,
+      "operational_membership": "same Top-6 entry / Top-8 retention hysteresis",
+      "role": "Evidence-Strong restricted scenario"
+    },
+    "E2": {
+      "inventory_pairs": 364,
+      "operational_membership": "committed E10 Top-6 entry / Top-8 retention hysteresis",
+      "role": "E10 confidence-aware restricted scenario"
+    }
+  },
+  "unresolved_identity_count": 0,
+  "unresolved_top10_liquidity_count": 0,
+  "upstream_hashes": {
+    "p1r2_output_manifest": "0cc3d273e55aa1d1425de97b47fb5cad7610c6c2c7da6aec348850a635947048",
+    "p2r2_output_manifest": "4ff50cc2c209ea68e31b95467581a9b651a9b1a17b37c505a1de280902fb3ee3",
+    "p2s2_output_manifest": "5faeee9ac872fad360d4b56aad5a442224bebee24dae69a3f69ac59e236136de",
+    "p2u2_output_manifest": "f61ed396977e8b85faaad5e670e193d216a5d6e1c87bee8406301cbe0666b227",
+    "t0_output_manifest": "4c2239cdd1fc71fe52aab06c5e8aa75770a48074a47be57e4db94e030b34f659"
+  }
+}
