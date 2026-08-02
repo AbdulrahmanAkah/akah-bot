@@ -1,0 +1,112 @@
+{
+  "schema_version": "rd18-p2r2-protocol-v1",
+  "stage": "RD18_P2R2_CORRECTED_RESTRICTED_UNIVERSE_STRUCTURAL_COMPARISON",
+  "source_commit": "55d33c941cb72b9c3e097720387b05b76ed6e3a7",
+  "input_hashes": {
+    "p1r_manifest": "3956041409448c3fb547d18917d46f423e07b88b8815961a1a61866fd4ab03b0",
+    "p2r_manifest": "5ef8deefaa512e07cac33150399a4cb3bdfa685e623d690e3a804bf3a9ef5b1a",
+    "p2s_manifest": "38e19370f3e98539b7d55502c6d5b97acf80829d3332df3c7c56a6232f3eccfd",
+    "p2t_manifest": "afcbabc0a5dbd77791adde75fe895d2d55386e51df568d391d9df77d007aa0bf",
+    "p2u_manifest": "583be92b9880364a53ecabcf53e5980350c2ef06b11da2c3612f78269feae551",
+    "p1r2_manifest": "0cc3d273e55aa1d1425de97b47fb5cad7610c6c2c7da6aec348850a635947048"
+  },
+  "corrected_inventory_variants": {
+    "A2": {
+      "source": "RD18-P0 original inventory",
+      "purpose": "EARLY_INCOMPLETE_INVENTORY_DIAGNOSTIC",
+      "product_policy_applied_before_ranking": true
+    },
+    "B2": {
+      "source": "RD18-P0A confirmed inventory",
+      "purpose": "INTERMEDIATE_DISCOVERY_DIAGNOSTIC",
+      "product_policy_applied_before_ranking": true
+    },
+    "C2": {
+      "name": "CORRECTED_RESTRICTED_KUCOIN_SPOT_LIQUIDITY_UNIVERSE",
+      "static_eligible_pairs": 364,
+      "primary": true
+    },
+    "D2": {
+      "name": "CORRECTED_EVIDENCE_STRONG_UNIVERSE",
+      "static_eligible_pairs": 299,
+      "primary": false
+    },
+    "C2_minus_D2": {
+      "count": 65,
+      "classification": "CURRENT_SEED_KLINE_CONFIRMED"
+    }
+  },
+  "comparison_window": {
+    "research_start": "2019-01-01T00:00:00Z",
+    "sealed_cutoff_exclusive": "2025-01-01T00:00:00Z",
+    "weekly_decisions": 313,
+    "post_warmup_decisions": 301,
+    "warmup_rule": "exclude the first 12 registered weekly decisions from post-warm-up rates",
+    "primary_omission_risk_scope": "FULL_313_DECISIONS",
+    "post_warmup_scope": "301_DECISIONS_REPORTED_SEPARATELY"
+  },
+  "frozen_metrics": {
+    "top_n": [4, 6, 8, 10, 30],
+    "membership_distance": ["exact_set", "jaccard", "symmetric_difference", "substitution_count", "rank_displacement", "spearman_common"],
+    "concentration": ["top_1_share", "top_3_share", "top_6_share", "top_10_share", "hhi", "effective_number_assets"],
+    "cutoff_margins": [0.01, 0.02, 0.05, 0.10, 0.20],
+    "liquidity_metric": "trailing_28d_median_daily_quote_turnover_usdt"
+  },
+  "provenance": {
+    "current_seed_only": "C2-minus-D2 pairs whose P2T evidence is TEMPORALLY_DISTINCT_ASSET",
+    "membership_proof": "official historical KuCoin Spot Kline confirmation already frozen in P1R2",
+    "legacy_list_classification": "CURRENT_OR_LEGACY_NON_CAUSAL_DIAGNOSTIC_ONLY"
+  },
+  "risk_thresholds": {
+    "low": {
+      "top6_exact_min": 0.95,
+      "top10_exact_min": 0.90,
+      "mean_top10_jaccard_min": 0.95,
+      "current_seed_top6_share_max": 0.05,
+      "max_year_current_seed_top6_share_max": 0.10,
+      "rank6_rank7_margin_above_10_min": 0.90
+    },
+    "moderate": {
+      "top6_exact_min": 0.80,
+      "mean_top10_jaccard_min": 0.85,
+      "current_seed_top6_share_max": 0.15,
+      "max_year_current_seed_top6_share_max": 0.25
+    },
+    "high": {
+      "top6_exact_below": 0.80,
+      "mean_top10_jaccard_below": 0.85,
+      "current_seed_top6_share_above": 0.15,
+      "max_year_current_seed_top6_share_above": 0.25
+    },
+    "severe": {
+      "top6_exact_below": 0.50,
+      "mean_top10_jaccard_below": 0.70,
+      "current_seed_top6_share_above": 0.40,
+      "unresolved_top10_or_liquidity_integrity": true,
+      "non_reproducible": true
+    }
+  },
+  "integrity_declarations": {
+    "no_new_market_data": true,
+    "zero_network_requests": true,
+    "no_post_2024_observations": true,
+    "no_futures": true,
+    "no_margin": true,
+    "no_returns": true,
+    "no_signals": true,
+    "no_trades": true,
+    "no_candidates": true,
+    "no_optimization": true,
+    "restricted_inventory_claim_only": true,
+    "p2s2_feasibility_decision_not_issued": true
+  },
+  "decision_rules": {
+    "low": "RD18_P2R2_SINGLE_CORRECTED_RESTRICTED_UNIVERSE_ACCEPTABLE",
+    "moderate_or_high": "RD18_P2R2_CORRECTED_UNIVERSE_ROBUSTNESS_REDESIGN_REQUIRED",
+    "severe": "RD18_P2R2_CORRECTED_STRUCTURAL_RISK_UNACCEPTABLE",
+    "input_failure": "RD18_P2R2_INPUT_RECONCILIATION_FAILED",
+    "product_contamination": "RD18_P2R2_EXCLUDED_PRODUCT_CONTAMINATION",
+    "liquidity_integrity_failure": "RD18_P2R2_LIQUIDITY_INTEGRITY_UNRESOLVED"
+  },
+  "output_hashes": {}
+}

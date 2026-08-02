@@ -1,0 +1,30 @@
+{
+  "inputs": {
+    "current_seed_top6_slot_share_full": 0.0873269435569755,
+    "current_seed_top6_slot_share_post_warmup": 0.08970099667774085,
+    "d2_vs_c2_mean_top10_jaccard_full": 0.7631595241818885,
+    "d2_vs_c2_mean_top10_jaccard_post_warmup": 0.7563751862755185,
+    "d2_vs_c2_top10_exact_full": 0.2523961661341853,
+    "d2_vs_c2_top10_exact_post_warmup": 0.2292358803986711,
+    "d2_vs_c2_top6_exact_full": 0.5047923322683706,
+    "d2_vs_c2_top6_exact_post_warmup": 0.49169435215946844,
+    "maximum_year_current_seed_top6_slot_share_full": 0.13141025641025642,
+    "maximum_year_current_seed_top6_slot_share_post_warmup": 0.1625,
+    "mean_hysteresis_jaccard_post_warmup": 0.8096820123398196,
+    "rank6_rank7_margin_above_10_share_full": 0.6195079086115993,
+    "rank6_rank7_margin_above_10_share_post_warmup": 0.6188380281690141,
+    "structural_outputs_reproducible": true,
+    "unresolved_liquidity_integrity_top10": false,
+    "unresolved_top10_identity": false
+  },
+  "interpretation": "Structural omission risk is not a probability estimate and the inventory remains restricted.",
+  "risk_classification": "HIGH",
+  "risk_scope": "FULL_313_DECISIONS",
+  "schema_version": "rd18-p2r2-corrected-omission-risk-v1",
+  "thresholds_source": "rd18-p2r2-protocol-v1.json; unchanged P2R thresholds",
+  "warning_flags": {
+    "current_seed_top6_asset_26_consecutive_weeks": false,
+    "large_liquidity_gap_or_cutoff_fragility": true,
+    "unresolved_liquidity_integrity_top10": false
+  }
+}
