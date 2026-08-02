@@ -1,0 +1,129 @@
+{
+  "schema_version": "rd18-p1r-protocol-v1",
+  "stage": "RD18_P1R_RESTRICTED_KUCOIN_LIQUIDITY_UNIVERSE",
+  "source_commit": "78b464f7f53f58fa45f2e6903c24d2b71976b581",
+  "execution_venue": "KUCOIN_SPOT",
+  "source": {
+    "provider": "KuCoin",
+    "host": "api.kucoin.com",
+    "endpoint": "/api/v1/market/candles",
+    "market_type": "classic_spot",
+    "pair_rule": "BASE-USDT",
+    "input_inventory": "data/research/rd18_p0b/final-historical-pair-inventory.csv",
+    "raw_evidence_reuse": "data/research/rd18_p0b/raw/klines/p0b-boundary-*.json"
+  },
+  "restricted_universe": {
+    "claim": "RESTRICTED_TO_376_KLINE_CONFIRMED_HISTORICAL_KUCOIN_SPOT_PAIRS",
+    "full_historical_inventory_claim": false,
+    "current_survivor_list_used": false,
+    "membership_proof": "official_classic_spot_kline",
+    "production_universe_authorized": false,
+    "strategy_candidate_generation_authorized": false
+  },
+  "research_period": {
+    "start": "2019-01-01T00:00:00Z",
+    "end_exclusive": "2025-01-01T00:00:00Z",
+    "observations_after_2024_allowed": false
+  },
+  "causal_timing": {
+    "decision_schedule": "Monday 00:00 UTC",
+    "availability_delay": "24 hours after daily candle close",
+    "usable_latest_weekly_candle": "Saturday",
+    "sunday_candle_excluded": true,
+    "rule": "causal_available_at = close_time + 24 hours; include only when causal_available_at <= decision_time"
+  },
+  "eligibility": {
+    "minimum_listing_age_calendar_days": 90,
+    "minimum_valid_days": 26,
+    "window_calendar_days": 28,
+    "window_excludes_decision_day": true,
+    "quote_turnover_finite_nonnegative": true,
+    "identity_resolved": true,
+    "excluded_products": [
+      "stablecoins_and_cash_equivalents",
+      "leveraged_tokens",
+      "wrapped_bridged_staking_or_duplicate_representations"
+    ]
+  },
+  "ranking": {
+    "primary_metric": "trailing_28d_median_daily_quote_turnover_usdt",
+    "diagnostics": [
+      "trailing_28d_sum_quote_turnover_usdt",
+      "trailing_28d_mean_quote_turnover_usdt",
+      "trailing_7d_median_quote_turnover_usdt",
+      "valid_day_count",
+      "missing_day_count",
+      "zero_turnover_count",
+      "largest_day_share",
+      "listing_age_days",
+      "days_since_last_usable_candle"
+    ],
+    "tie_breaking": [
+      "primary_metric_descending",
+      "listing_age_days_descending",
+      "canonical_asset_id_ascending"
+    ],
+    "top_n": [4, 6, 8, 10, 30],
+    "hysteresis": {
+      "entry_rank": 6,
+      "retention_rank": 8,
+      "vacancy_fill": "highest_ranked_eligible_non_member"
+    }
+  },
+  "inventory_variants": {
+    "A_P0": "data/research/rd18_p0/historical-pair-inventory.csv (68 registered pairs)",
+    "B_P0A": "data/research/rd18_p0a/candidate-union.csv (300 Kline-confirmed pairs)",
+    "C_P0B": "data/research/rd18_p0b/final-historical-pair-inventory.csv (376 Kline-confirmed pairs)",
+    "D_EVIDENCE_STRONG": "P0B pairs with discovery evidence beyond sole current-currency seeding"
+  },
+  "structural_sensitivity": {
+    "comparisons": ["A_vs_C", "B_vs_C", "D_vs_C"],
+    "metrics": [
+      "eligible_set_count",
+      "top6_exact_match",
+      "top10_exact_match",
+      "top30_overlap",
+      "top10_jaccard",
+      "added_members",
+      "removed_members",
+      "rank_displacement",
+      "hysteresis_membership_difference",
+      "turnover_difference",
+      "liquidity_concentration"
+    ],
+    "materiality_thresholds": {
+      "low": {"top6_exact_match_min": 0.95, "top10_exact_match_min": 0.9, "mean_top10_jaccard_min": 0.95},
+      "moderate": {"top6_exact_match_min": 0.8, "mean_top10_jaccard_min": 0.85},
+      "high": "anything below moderate"
+    }
+  },
+  "gates": {
+    "input_inventory_exactly_376": true,
+    "complete_registered_boundaries": true,
+    "restricted_pair_day_coverage_minimum": 0.95,
+    "weeks_with_six_assets_minimum": 0.95,
+    "weeks_with_ten_assets_minimum": 0.9,
+    "no_post_2024_observations": true,
+    "spot_only": true,
+    "no_current_survivor_filtering": true,
+    "deterministic_offline_rebuild": true,
+    "request_and_output_manifests_validate": true,
+    "restricted_claim_repeated_in_reports": true,
+    "no_strategy_returns_trades_or_optimization": true
+  },
+  "stop_decisions": {
+    "success": "RD18_P1R_KUCOIN_RESTRICTED_LIQUIDITY_UNIVERSE_CONFIRMED",
+    "next_stage": "RD18_P2R_RESTRICTED_UNIVERSE_STRUCTURAL_COMPARISON",
+    "coverage_failure": "RD18_P1R_RESTRICTED_PANEL_COVERAGE_INSUFFICIENT",
+    "timing_failure": "RD18_P1R_CAUSAL_TIMING_FAILED",
+    "identity_failure": "RD18_P1R_RESTRICTED_IDENTITY_INSUFFICIENT",
+    "input_failure": "RD18_P1R_INPUT_INVENTORY_RECONCILIATION_FAILED"
+  },
+  "declarations": {
+    "no_further_archive_search": true,
+    "no_trading": true,
+    "no_optimization": true,
+    "no_returns_analysis": true,
+    "no_2025_or_2026_market_observations": true
+  }
+}

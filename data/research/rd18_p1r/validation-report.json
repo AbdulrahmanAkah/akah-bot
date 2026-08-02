@@ -1,0 +1,48 @@
+{
+  "deterministic_offline_rebuild": true,
+  "gates": {
+    "causal_delay_and_sunday_exclusion": true,
+    "complete_registered_boundaries": true,
+    "delisted_pairs_retained": true,
+    "deterministic_offline_rebuild": true,
+    "input_inventory_exactly_376": true,
+    "ninety_day_age_enforced": true,
+    "no_current_survivor_filtering": true,
+    "no_duplicate_canonical_rankings": true,
+    "no_excluded_top10": true,
+    "no_futures_or_margin": true,
+    "no_post_2024_observations": true,
+    "no_strategy_returns_trades_or_optimization": true,
+    "no_unresolved_top10_identity": true,
+    "request_and_output_manifests_validate": true,
+    "restricted_claim_repeated": true,
+    "restricted_pair_day_coverage_minimum": true,
+    "spot_only": true,
+    "twenty_six_of_twenty_eight_enforced": true,
+    "weeks_with_six_assets_minimum": true,
+    "weeks_with_ten_assets_minimum": true
+  },
+  "input_reconciliation_pass": true,
+  "no_futures_or_margin": true,
+  "no_optimization": true,
+  "no_post_2024_observations": true,
+  "no_trading": true,
+  "panel_validation": {
+    "duplicate_pair_day_count": 0,
+    "invalid_row_count": 0,
+    "pass": true,
+    "post_2024_row_count": 0,
+    "row_count": 406793
+  },
+  "restricted_claim": "RESTRICTED_TO_376_KLINE_CONFIRMED_HISTORICAL_KUCOIN_SPOT_PAIRS",
+  "schema_version": "rd18-p1r-validation-report-v1",
+  "spot_only": true,
+  "timing_summary": {
+    "panel_rows": 406793,
+    "pass": true,
+    "post_2024_rows": 0,
+    "sunday_rows_in_panel": 58130,
+    "sunday_rows_used_in_weekly_windows": 0,
+    "timing_violations": 0
+  }
+}

@@ -1,0 +1,359 @@
+{
+  "branch": "research/rd18-p1r-restricted-kucoin-liquidity-universe-v1",
+  "causal_timing": {
+    "availability_delay": "24 hours after daily candle close",
+    "decision_schedule": "Monday 00:00 UTC",
+    "rule": "causal_available_at = close_time + 24 hours; include only when causal_available_at <= decision_time",
+    "sunday_candle_excluded": true,
+    "usable_latest_weekly_candle": "Saturday"
+  },
+  "daily_coverage": {
+    "aggregate_pair_day_coverage_ratio": 0.9978463025331701,
+    "mean_pair_coverage_ratio": 0.9989347142413418,
+    "minimum_pair_coverage_ratio": 0.8088503649635036,
+    "total_covered_pair_days": 406793,
+    "total_expected_pair_days": 407671,
+    "weeks_post_warmup": 301,
+    "weeks_with_at_least_10_ratio": 1.0,
+    "weeks_with_at_least_6_ratio": 1.0
+  },
+  "daily_panel_rows": 406793,
+  "decision": "RD18_P1R_KUCOIN_RESTRICTED_LIQUIDITY_UNIVERSE_CONFIRMED",
+  "delisted_pair_retention": {
+    "explicit_delisted_pair_count": 6,
+    "retained_pre_delisting_count": 6
+  },
+  "deterministic_offline_rebuild": true,
+  "full_historical_inventory_claim": false,
+  "gates": {
+    "causal_delay_and_sunday_exclusion": true,
+    "complete_registered_boundaries": true,
+    "delisted_pairs_retained": true,
+    "deterministic_offline_rebuild": true,
+    "input_inventory_exactly_376": true,
+    "ninety_day_age_enforced": true,
+    "no_current_survivor_filtering": true,
+    "no_duplicate_canonical_rankings": true,
+    "no_excluded_top10": true,
+    "no_futures_or_margin": true,
+    "no_post_2024_observations": true,
+    "no_strategy_returns_trades_or_optimization": true,
+    "no_unresolved_top10_identity": true,
+    "request_and_output_manifests_validate": true,
+    "restricted_claim_repeated": true,
+    "restricted_pair_day_coverage_minimum": true,
+    "spot_only": true,
+    "twenty_six_of_twenty_eight_enforced": true,
+    "weeks_with_six_assets_minimum": true,
+    "weeks_with_ten_assets_minimum": true
+  },
+  "identity_and_exclusion": {
+    "excluded_product_count": 0,
+    "identity_failure_count": 0,
+    "top10_identity_failures": 0
+  },
+  "input_inventory_reconciliation": {
+    "reconciliation": {
+      "boundary_exact_rows": 376,
+      "boundary_rows": 376,
+      "candidate_rows": 2269,
+      "confirmed_rows": 376,
+      "duplicate_canonical_assets": [],
+      "duplicate_pairs": [],
+      "passed": true,
+      "unique_canonical_assets": 376,
+      "unique_pairs": 376
+    },
+    "restricted_claim": "RESTRICTED_TO_376_KLINE_CONFIRMED_HISTORICAL_KUCOIN_SPOT_PAIRS",
+    "schema_version": "rd18-p1r-input-reconciliation-v1",
+    "source_boundary_sha256": "c17fe972c06e8582aff6390d85aab972c6258e0fe5e9cc86d5e2653354e198f3",
+    "source_inventory_sha256": "0dffdbba976a45de1ec6072cbe64600f3582edda016a2bc44dc3f9168af85253"
+  },
+  "inventory_expansion_sensitivity": {
+    "A_P0": {
+      "comparable_weeks": 313.0,
+      "materiality": "HIGH",
+      "mean_top10_jaccard": 0.3178932645691714,
+      "top10_exact_match_rate": 0.025559105431309903,
+      "top6_exact_match_rate": 0.025559105431309903
+    },
+    "B_P0A": {
+      "comparable_weeks": 313.0,
+      "materiality": "HIGH",
+      "mean_top10_jaccard": 0.760497117366127,
+      "top10_exact_match_rate": 0.24600638977635783,
+      "top6_exact_match_rate": 0.4984025559105431
+    },
+    "D_EVIDENCE_STRONG": {
+      "comparable_weeks": 313.0,
+      "materiality": "HIGH",
+      "mean_top10_jaccard": 0.760497117366127,
+      "top10_exact_match_rate": 0.24600638977635783,
+      "top6_exact_match_rate": 0.4984025559105431
+    }
+  },
+  "inventory_variant_sizes": {
+    "A_P0": 68,
+    "B_P0A": 300,
+    "C_P0B": 376,
+    "D_EVIDENCE_STRONG": 299
+  },
+  "limitations": [
+    "The 376-pair inventory is restricted and is not a claim of complete KuCoin historical inventory.",
+    "P0C Common Crawl bounded index-access failure was not retried in P1R.",
+    "No strategy returns, trades, or optimization are produced by this stage."
+  ],
+  "next_stage": "RD18_P2R_RESTRICTED_UNIVERSE_STRUCTURAL_COMPARISON",
+  "no_current_survivor_filtering": true,
+  "no_futures": true,
+  "no_margin": true,
+  "no_optimization": true,
+  "no_post_2024_observations": true,
+  "no_strategy_returns_or_trades": true,
+  "production_universe_authorized": false,
+  "research_period": {
+    "end_exclusive": "2025-01-01T00:00:00Z",
+    "observations_after_2024_allowed": false,
+    "start": "2019-01-01T00:00:00Z"
+  },
+  "restricted_claim": "RESTRICTED_TO_376_KLINE_CONFIRMED_HISTORICAL_KUCOIN_SPOT_PAIRS",
+  "restricted_research_use_authorized": true,
+  "schema_version": "rd18-p1r-final-report-v1",
+  "source_commit": "78b464f7f53f58fa45f2e6903c24d2b71976b581",
+  "spot_only": true,
+  "stage": "RD18_P1R_RESTRICTED_KUCOIN_LIQUIDITY_UNIVERSE",
+  "strategy_candidate_generation_authorized": false,
+  "timing_summary": {
+    "panel_rows": 406793,
+    "pass": true,
+    "post_2024_rows": 0,
+    "sunday_rows_in_panel": 58130,
+    "sunday_rows_used_in_weekly_windows": 0,
+    "timing_violations": 0
+  },
+  "top_n_completeness": {
+    "10": 1.0,
+    "30": 0.8870431893687708,
+    "4": 1.0,
+    "6": 1.0,
+    "8": 1.0
+  },
+  "weekly_eligible_universe_by_year": [
+    {
+      "decision_count": 52,
+      "mean_eligible_count": 5.038461538461538,
+      "variant": "A_P0",
+      "weeks_with_at_least_10": 12,
+      "weeks_with_at_least_30": 0,
+      "weeks_with_at_least_6": 14,
+      "year": 2019
+    },
+    {
+      "decision_count": 52,
+      "mean_eligible_count": 12.5,
+      "variant": "A_P0",
+      "weeks_with_at_least_10": 52,
+      "weeks_with_at_least_30": 0,
+      "weeks_with_at_least_6": 52,
+      "year": 2020
+    },
+    {
+      "decision_count": 52,
+      "mean_eligible_count": 17.076923076923077,
+      "variant": "A_P0",
+      "weeks_with_at_least_10": 52,
+      "weeks_with_at_least_30": 0,
+      "weeks_with_at_least_6": 52,
+      "year": 2021
+    },
+    {
+      "decision_count": 52,
+      "mean_eligible_count": 21.78846153846154,
+      "variant": "A_P0",
+      "weeks_with_at_least_10": 52,
+      "weeks_with_at_least_30": 0,
+      "weeks_with_at_least_6": 52,
+      "year": 2022
+    },
+    {
+      "decision_count": 52,
+      "mean_eligible_count": 24.307692307692307,
+      "variant": "A_P0",
+      "weeks_with_at_least_10": 52,
+      "weeks_with_at_least_30": 0,
+      "weeks_with_at_least_6": 52,
+      "year": 2023
+    },
+    {
+      "decision_count": 53,
+      "mean_eligible_count": 25.0,
+      "variant": "A_P0",
+      "weeks_with_at_least_10": 53,
+      "weeks_with_at_least_30": 0,
+      "weeks_with_at_least_6": 53,
+      "year": 2024
+    },
+    {
+      "decision_count": 52,
+      "mean_eligible_count": 7.980769230769231,
+      "variant": "B_P0A",
+      "weeks_with_at_least_10": 14,
+      "weeks_with_at_least_30": 0,
+      "weeks_with_at_least_6": 42,
+      "year": 2019
+    },
+    {
+      "decision_count": 52,
+      "mean_eligible_count": 21.23076923076923,
+      "variant": "B_P0A",
+      "weeks_with_at_least_10": 52,
+      "weeks_with_at_least_30": 5,
+      "weeks_with_at_least_6": 52,
+      "year": 2020
+    },
+    {
+      "decision_count": 52,
+      "mean_eligible_count": 73.03846153846153,
+      "variant": "B_P0A",
+      "weeks_with_at_least_10": 52,
+      "weeks_with_at_least_30": 52,
+      "weeks_with_at_least_6": 52,
+      "year": 2021
+    },
+    {
+      "decision_count": 52,
+      "mean_eligible_count": 189.25,
+      "variant": "B_P0A",
+      "weeks_with_at_least_10": 52,
+      "weeks_with_at_least_30": 52,
+      "weeks_with_at_least_6": 52,
+      "year": 2022
+    },
+    {
+      "decision_count": 52,
+      "mean_eligible_count": 247.25,
+      "variant": "B_P0A",
+      "weeks_with_at_least_10": 52,
+      "weeks_with_at_least_30": 52,
+      "weeks_with_at_least_6": 52,
+      "year": 2023
+    },
+    {
+      "decision_count": 53,
+      "mean_eligible_count": 293.79245283018867,
+      "variant": "B_P0A",
+      "weeks_with_at_least_10": 53,
+      "weeks_with_at_least_30": 53,
+      "weeks_with_at_least_6": 53,
+      "year": 2024
+    },
+    {
+      "decision_count": 52,
+      "mean_eligible_count": 16.25,
+      "variant": "C_P0B",
+      "weeks_with_at_least_10": 42,
+      "weeks_with_at_least_30": 6,
+      "weeks_with_at_least_6": 42,
+      "year": 2019
+    },
+    {
+      "decision_count": 52,
+      "mean_eligible_count": 37.51923076923077,
+      "variant": "C_P0B",
+      "weeks_with_at_least_10": 52,
+      "weeks_with_at_least_30": 52,
+      "weeks_with_at_least_6": 52,
+      "year": 2020
+    },
+    {
+      "decision_count": 52,
+      "mean_eligible_count": 96.51923076923077,
+      "variant": "C_P0B",
+      "weeks_with_at_least_10": 52,
+      "weeks_with_at_least_30": 52,
+      "weeks_with_at_least_6": 52,
+      "year": 2021
+    },
+    {
+      "decision_count": 52,
+      "mean_eligible_count": 222.23076923076923,
+      "variant": "C_P0B",
+      "weeks_with_at_least_10": 52,
+      "weeks_with_at_least_30": 52,
+      "weeks_with_at_least_6": 52,
+      "year": 2022
+    },
+    {
+      "decision_count": 52,
+      "mean_eligible_count": 293.4423076923077,
+      "variant": "C_P0B",
+      "weeks_with_at_least_10": 52,
+      "weeks_with_at_least_30": 52,
+      "weeks_with_at_least_6": 52,
+      "year": 2023
+    },
+    {
+      "decision_count": 53,
+      "mean_eligible_count": 354.49056603773585,
+      "variant": "C_P0B",
+      "weeks_with_at_least_10": 53,
+      "weeks_with_at_least_30": 53,
+      "weeks_with_at_least_6": 53,
+      "year": 2024
+    },
+    {
+      "decision_count": 52,
+      "mean_eligible_count": 7.980769230769231,
+      "variant": "D_EVIDENCE_STRONG",
+      "weeks_with_at_least_10": 14,
+      "weeks_with_at_least_30": 0,
+      "weeks_with_at_least_6": 42,
+      "year": 2019
+    },
+    {
+      "decision_count": 52,
+      "mean_eligible_count": 21.23076923076923,
+      "variant": "D_EVIDENCE_STRONG",
+      "weeks_with_at_least_10": 52,
+      "weeks_with_at_least_30": 5,
+      "weeks_with_at_least_6": 52,
+      "year": 2020
+    },
+    {
+      "decision_count": 52,
+      "mean_eligible_count": 72.26923076923077,
+      "variant": "D_EVIDENCE_STRONG",
+      "weeks_with_at_least_10": 52,
+      "weeks_with_at_least_30": 52,
+      "weeks_with_at_least_6": 52,
+      "year": 2021
+    },
+    {
+      "decision_count": 52,
+      "mean_eligible_count": 188.25,
+      "variant": "D_EVIDENCE_STRONG",
+      "weeks_with_at_least_10": 52,
+      "weeks_with_at_least_30": 52,
+      "weeks_with_at_least_6": 52,
+      "year": 2022
+    },
+    {
+      "decision_count": 52,
+      "mean_eligible_count": 246.25,
+      "variant": "D_EVIDENCE_STRONG",
+      "weeks_with_at_least_10": 52,
+      "weeks_with_at_least_30": 52,
+      "weeks_with_at_least_6": 52,
+      "year": 2023
+    },
+    {
+      "decision_count": 53,
+      "mean_eligible_count": 292.79245283018867,
+      "variant": "D_EVIDENCE_STRONG",
+      "weeks_with_at_least_10": 53,
+      "weeks_with_at_least_30": 53,
+      "weeks_with_at_least_6": 53,
+      "year": 2024
+    }
+  ]
+}
