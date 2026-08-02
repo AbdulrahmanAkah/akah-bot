@@ -1,0 +1,94 @@
+{
+  "schema_version": "rd18-p2t-protocol-v1",
+  "stage": "RD18_P2T_CURRENT_SEED_IDENTITY_AND_LIQUIDITY_INTEGRITY_AUDIT",
+  "source_commit": "c4c325f329bb88e08dcdfce8e6e989db2e66d6c8",
+  "execution_venue": "KUCOIN_SPOT",
+  "restricted_claim": "RESTRICTED_TO_376_KLINE_CONFIRMED_HISTORICAL_KUCOIN_SPOT_PAIRS",
+  "input_hashes": {
+    "p1r_output_manifest_file_sha256": "2b25c91e2cfd77039f21a54fa3565770ef901f4bfb27749a0bc5d668fcee3c18",
+    "p1r_output_manifest_deterministic_hash": "3956041409448c3fb547d18917d46f423e07b88b8815961a1a61866fd4ab03b0",
+    "p2r_output_manifest_file_sha256": "269ee44251410b0b9b6627c870a5b5b7ed31114ade360e42be20eee44e061dff",
+    "p2r_output_manifest_deterministic_hash": "5ef8deefaa512e07cac33150399a4cb3bdfa685e623d690e3a804bf3a9ef5b1a",
+    "p2s_output_manifest_file_sha256": "9477d918d98f1870415e8f4714eb40ff6bf5f1889237b76070ed0340d05af9da",
+    "p2s_final_report_sha256": "3d1f9bd44eaae6cfcaaff2acc80ffd4dea6b4a0ff4efaa816c75ecd26681be7f",
+    "p2s_current_seed_asset_impact_sha256": "69e09e485ab3d998ab4305f000fd8335bae47ee7c5ad2d5ce27881aa1ed134b2",
+    "p2s_substitution_liquidity_audit_sha256": "483d0deae37724017ccfc382587420191feecd2a816d48b5691077369ad23415",
+    "p1r_weekly_rankings_sha256": "48ac68371dd6bc3804e54db387da1b8e550c4e45fe7b59bc3a3689c5d6548266",
+    "p1r_daily_panel_sha256": "ac4a5f4ba29be2c7d5554160dbee9df1fb5b8158e901fc93775ba0dcc542be75",
+    "p1r_identity_audit_sha256": "fc3415e5e34633265d8899e47ea46ea8e47148e64d0dff46ddf9ff6a6b5cb7ee",
+    "p2r_provenance_sha256": "0a0314afaba49ea09b8c111b4b8d84178652702f4a824437eaa149393fe98c49"
+  },
+  "frozen_inputs": {
+    "variant_c_pairs": 376,
+    "variant_d_pairs": 299,
+    "current_seed_only_pairs": 77,
+    "weekly_decisions": 313,
+    "post_warmup_decisions": 301,
+    "research_period": "2019-01-01T00:00:00Z <= observation_time < 2025-01-01T00:00:00Z",
+    "p2s_final_commit": "c4c325f329bb88e08dcdfce8e6e989db2e66d6c8"
+  },
+  "current_seed_only_definition": "Pairs in Variant C whose committed discovery provenance is exactly current_currency_non_causal_seed and which are absent from Variant D.",
+  "identity_taxonomy": [
+    "TEMPORALLY_DISTINCT_ASSET",
+    "TEMPORAL_ALIAS_OF_EXISTING_ASSET",
+    "TOKEN_MIGRATION",
+    "REBRAND_WITH_CONTINUOUS_IDENTITY",
+    "CONTRACT_MIGRATION",
+    "DUPLICATE_REPRESENTATION",
+    "WRAPPED_OR_BRIDGED_REPRESENTATION",
+    "SYMBOL_COLLISION",
+    "LEVERAGED_OR_SYNTHETIC_PRODUCT",
+    "UNRESOLVED"
+  ],
+  "liquidity_audit_scope": [
+    "current-seed-only assets entering Top-10 or Top-6",
+    "assets involved in P2S LARGE_LIQUIDITY_GAP substitutions",
+    "current-seed-only assets with at least 26 Top-6 weeks",
+    "highest-impact current-seed-only assets from the committed P2S audit"
+  ],
+  "liquidity_rules": {
+    "data_source": "committed P1R KuCoin Classic Spot daily panel only",
+    "max_day_share": "max daily quote turnover divided by trailing 28-day median quote turnover",
+    "turnover_stability": "population coefficient of variation of valid trailing-window daily quote turnover",
+    "short_lived_spike": "post-entry median turnover at least 5x pre-entry median and fewer than 26 post-entry active days",
+    "extreme_single_day_concentration": "max_day_share greater than 10",
+    "price_range_volume_divergence": "highest-turnover day has a daily range below half the trailing-window median range while turnover is at least 5x the trailing median",
+    "repeated_volume_pattern": "at least half of non-zero trailing-window observations share one rounded turnover value",
+    "relative_volume_reference": "asset trailing median divided by the corresponding BTC-USDT and ETH-USDT trailing medians when both reference panels are available",
+    "sparse_activity": "fewer than 26 valid trailing-window days; the committed panel has no intraday observations, so absence of an intraday check does not itself create a flag",
+    "no_external_data": true,
+    "diagnostic_only": true
+  },
+  "liquidity_flags": [
+    "VOLUME_PATTERN_PLAUSIBLE",
+    "SHORT_LIVED_VOLUME_SPIKE",
+    "EXTREME_SINGLE_DAY_CONCENTRATION",
+    "PRICE_RANGE_VOLUME_DIVERGENCE",
+    "REPEATED_VOLUME_PATTERN",
+    "SPARSE_INTRADAY_ACTIVITY",
+    "UNRESOLVED_LIQUIDITY_INTEGRITY"
+  ],
+  "policies": {
+    "identity_corrections_do_not_remove_assets": true,
+    "no_universe_redesign": true,
+    "no_variant_e": true,
+    "no_network_requests": true,
+    "no_post_2024_observations": true,
+    "no_futures": true,
+    "no_margin": true,
+    "no_returns": true,
+    "no_trades": true,
+    "no_strategy_replay": true,
+    "no_optimization": true,
+    "no_parameter_tuning": true,
+    "no_production_authorization": true
+  },
+  "output_hashes": {},
+  "stop_decisions": [
+    "RD18_P2T_INPUT_RECONCILIATION_FAILED",
+    "RD18_P2T_TEMPORAL_IDENTITY_REMEDIATION_REQUIRED",
+    "RD18_P2T_LIQUIDITY_INTEGRITY_UNRESOLVED",
+    "RD18_P2T_IDENTITY_AND_LIQUIDITY_CONTAMINATION_MATERIAL",
+    "RD18_P2T_IDENTITY_AND_LIQUIDITY_INTEGRITY_CONFIRMED"
+  ]
+}

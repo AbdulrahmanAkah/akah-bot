@@ -1,0 +1,119 @@
+{
+  "assets_removed": 0,
+  "authorization": {
+    "new_universe_authorized": false,
+    "production_authorized": false,
+    "restricted_research_use_authorized": false,
+    "strategy_candidate_generation_authorized": false,
+    "strategy_replay_authorized": false
+  },
+  "blocking_liquidity_issue": false,
+  "current_seed_only_count": 77,
+  "decision": "RD18_P2T_IDENTITY_AND_LIQUIDITY_INTEGRITY_CONFIRMED",
+  "futures": 0,
+  "high_impact_unresolved_identity_count": 0,
+  "identity_classification_counts": {
+    "LEVERAGED_OR_SYNTHETIC_PRODUCT": 12,
+    "TEMPORALLY_DISTINCT_ASSET": 65
+  },
+  "identity_corrections": [],
+  "input_reconciliation": {
+    "counts": {
+      "current_seed_only_pairs": 77,
+      "post_warmup_decisions": 301,
+      "variant_c_pairs": 376,
+      "variant_d_pairs": 299,
+      "weekly_decisions": 313
+    },
+    "p1r_manifest_hash": "3956041409448c3fb547d18917d46f423e07b88b8815961a1a61866fd4ab03b0",
+    "p2r_manifest_hash": "5ef8deefaa512e07cac33150399a4cb3bdfa685e623d690e3a804bf3a9ef5b1a",
+    "p2s_decision": "RD18_P2S_CONSENSUS_UNIVERSE_REDESIGN_REQUIRED",
+    "p2s_final_commit": "c4c325f329bb88e08dcdfce8e6e989db2e66d6c8",
+    "p2s_source_commit": "cd64a5b952572e8a7604be2eec17550e84bae824",
+    "passed": true,
+    "schema_version": "rd18-p2t-input-reconciliation-v1",
+    "source_commit": "c4c325f329bb88e08dcdfce8e6e989db2e66d6c8",
+    "source_files": {
+      "p1r_daily_panel_sha256": "ac4a5f4ba29be2c7d5554160dbee9df1fb5b8158e901fc93775ba0dcc542be75",
+      "p1r_identity_audit_sha256": "fc3415e5e34633265d8899e47ea46ea8e47148e64d0dff46ddf9ff6a6b5cb7ee",
+      "p1r_output_manifest_file_sha256": "2b25c91e2cfd77039f21a54fa3565770ef901f4bfb27749a0bc5d668fcee3c18",
+      "p1r_variant_membership_sha256": "1f2962d9f62604cccd130392b500b421d8e9bd1700d2f30a08c6d7185d2ca760",
+      "p1r_weekly_rankings_sha256": "48ac68371dd6bc3804e54db387da1b8e550c4e45fe7b59bc3a3689c5d6548266",
+      "p2r_output_manifest_file_sha256": "269ee44251410b0b9b6627c870a5b5b7ed31114ade360e42be20eee44e061dff",
+      "p2r_provenance_sha256": "0a0314afaba49ea09b8c111b4b8d84178652702f4a824437eaa149393fe98c49",
+      "p2s_current_seed_impact_sha256": "69e09e485ab3d998ab4305f000fd8335bae47ee7c5ad2d5ce27881aa1ed134b2",
+      "p2s_final_report_sha256": "3d1f9bd44eaae6cfcaaff2acc80ffd4dea6b4a0ff4efaa816c75ecd26681be7f",
+      "p2s_input_reconciliation_sha256": "e8db0ad34950c00eec635c9176c0357d0af4dd8d695f29af98e7f8b7eb6514ec",
+      "p2s_substitution_audit_sha256": "483d0deae37724017ccfc382587420191feecd2a816d48b5691077369ad23415"
+    }
+  },
+  "limitations": [
+    "The 376-pair KuCoin panel remains restricted and is not an exhaustive historical inventory claim.",
+    "P2T performs no external identity lookup; aliases and migrations without committed evidence remain unresolved rather than inferred.",
+    "The committed daily panel contains no intraday observations, so intraday sanity checks are unavailable.",
+    "Liquidity flags are diagnostic and do not remove assets or create Variant E.",
+    "Prior P2R and P2S decisions remain unchanged."
+  ],
+  "liquidity_scope": {
+    "assets_with_top10_entry": 51,
+    "assets_with_top6_entry": 34,
+    "audited_asset_count": 58,
+    "audited_row_count": 11904,
+    "flags": {
+      "EXTREME_SINGLE_DAY_CONCENTRATION": 627,
+      "PRICE_RANGE_VOLUME_DIVERGENCE": 9,
+      "SPARSE_INTRADAY_ACTIVITY": 3,
+      "VOLUME_PATTERN_PLAUSIBLE": 11269
+    }
+  },
+  "margin": 0,
+  "network_requests": 0,
+  "next_stage": "RD18_P2U_CONFIDENCE_AWARE_UNIVERSE_DESIGN",
+  "no_futures": true,
+  "no_margin": true,
+  "no_network": true,
+  "no_optimization": true,
+  "no_post_2024_observations": true,
+  "no_returns": true,
+  "no_strategy_replay": true,
+  "no_trading": true,
+  "optimization": 0,
+  "p2s_final_commit": "c4c325f329bb88e08dcdfce8e6e989db2e66d6c8",
+  "post_2024_observations": 0,
+  "post_warmup_decisions": 301,
+  "restricted_claim": "RESTRICTED_TO_376_KLINE_CONFIRMED_HISTORICAL_KUCOIN_SPOT_PAIRS",
+  "returns": 0,
+  "schema_version": "rd18-p2t-final-report-v1",
+  "source_commit": "c4c325f329bb88e08dcdfce8e6e989db2e66d6c8",
+  "stage": "RD18_P2T_CURRENT_SEED_IDENTITY_AND_LIQUIDITY_INTEGRITY_AUDIT",
+  "structural_impact": {
+    "assets_removed": 0,
+    "blocking_liquidity_rows": 0,
+    "current_seed_only_corrected_count": 0,
+    "current_seed_only_count": 77,
+    "identity_correction_assets": [],
+    "identity_corrections_change_membership": false,
+    "liquidity_flag_counts": {
+      "EXTREME_SINGLE_DAY_CONCENTRATION": 627,
+      "PRICE_RANGE_VOLUME_DIVERGENCE": 9,
+      "SPARSE_INTRADAY_ACTIVITY": 3,
+      "VOLUME_PATTERN_PLAUSIBLE": 11269
+    },
+    "number_assets_affected": 0,
+    "number_identity_corrections": 0,
+    "number_weeks_affected": 0,
+    "possible_top10_changes": 0,
+    "possible_top6_changes": 0,
+    "schema_version": "rd18-p2t-structural-impact-v1",
+    "universe_redesigned": false,
+    "variant_e_created": false
+  },
+  "trades": 0,
+  "universe_redesigned": false,
+  "variant_e_created": false,
+  "variant_sizes": {
+    "C_P0B": 376,
+    "D_EVIDENCE_STRONG": 299
+  },
+  "weekly_decisions": 313
+}
