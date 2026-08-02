@@ -1,0 +1,103 @@
+{
+  "schema_version": "rd18-p2u-protocol-v1",
+  "stage": "RD18_P2U_CONFIDENCE_AWARE_LIQUIDITY_UNIVERSE_DESIGN",
+  "source_commit": "6d7ab112718749ed9379233c05f49b7b12f8190b",
+  "execution_venue": "KUCOIN_SPOT",
+  "input_hashes": {
+    "p1r_manifest": "3956041409448c3fb547d18917d46f423e07b88b8815961a1a61866fd4ab03b0",
+    "p2r_manifest": "5ef8deefaa512e07cac33150399a4cb3bdfa685e623d690e3a804bf3a9ef5b1a",
+    "p2s_manifest": "38e19370f3e98539b7d55502c6d5b97acf80829d3332df3c7c56a6232f3eccfd",
+    "p2t_manifest": "afcbabc0a5dbd77791adde75fe895d2d55386e51df568d391d9df77d007aa0bf"
+  },
+  "inventory_definitions": {
+    "variant_c": "376 Kline-confirmed historical KuCoin Spot BASE-USDT pairs",
+    "variant_d": "299 evidence-strong pairs",
+    "c_minus_d": 77,
+    "variant_e": "CONFIDENCE_AWARE_LIQUIDITY_UNIVERSE",
+    "variant_e_starting_point": "complete eligible Variant C weekly liquidity ranking"
+  },
+  "confidence_classes": [
+    "EVIDENCE_STRONG",
+    "CURRENT_SEED_KLINE_CONFIRMED",
+    "EXCLUDED_LEVERAGED_OR_SYNTHETIC"
+  ],
+  "research_period": "2019-01-01T00:00:00Z <= observation_time < 2025-01-01T00:00:00Z",
+  "primary_liquidity_metric": "trailing_28d_median_daily_quote_turnover_usdt",
+  "operational_cutoffs": {
+    "entry_boundary": [6, 7],
+    "retention_boundary": [8, 9],
+    "confidence_tiebreak_relative_gap": 0.10,
+    "relative_gap_definition": "(L_upper - L_lower) / L_upper",
+    "top_n_diagnostics": [6, 8, 10],
+    "hysteresis_entry_rank": 6,
+    "hysteresis_retention_rank": 8
+  },
+  "boundary_pair_algorithm": [
+    "Use the committed C ranking sorted by original liquidity rank.",
+    "At 6/7, swap only CURRENT_SEED_KLINE_CONFIRMED above EVIDENCE_STRONG when gap <= threshold.",
+    "Then at 8/9, apply the same single adjacent swap rule to the current ordering.",
+    "No non-adjacent swaps, bubbling, global confidence bonus, penalty, or intersection is allowed."
+  ],
+  "threshold_sensitivities": {
+    "E05": 0.05,
+    "E10": 0.10,
+    "E15": 0.15,
+    "primary": "E10"
+  },
+  "exclusion_policy": {
+    "leveraged_or_synthetic_products": "remain in raw provenance only and never enter eligibility, rankings, Top-N, or hysteresis",
+    "p2t_liquidity_flags": "diagnostic only; never change membership or confidence",
+    "unresolved_liquidity_in_top6": "stop with RD18_P2U_LIQUIDITY_INTEGRITY_INPUT_FAILED"
+  },
+  "acceptance_gates": {
+    "input_hashes_reconcile": true,
+    "all_12_products_absent_from_c_rankings": true,
+    "only_adjacent_boundary_swaps": true,
+    "maximum_one_rank_movement": true,
+    "swap_gap_at_most_10_percent": true,
+    "no_intersection": true,
+    "no_global_confidence_reordering": true,
+    "e_top6_complete": true,
+    "e_top8_complete": true,
+    "e_not_identical_to_d": true,
+    "current_seed_retained": true,
+    "liquidity_retained_at_least_99_percent": true,
+    "threshold_jaccard_gates": true,
+    "zero_network_requests": true,
+    "sealed_period": true,
+    "no_trading_or_returns": true
+  },
+  "stop_decisions": [
+    "RD18_P2U_INPUT_RECONCILIATION_FAILED",
+    "RD18_P2U_EXCLUDED_PRODUCT_CONTAMINATION",
+    "RD18_P2U_LIQUIDITY_INTEGRITY_INPUT_FAILED",
+    "RD18_P2U_CONFIDENCE_DESIGN_COLLAPSES_TO_EVIDENCE_STRONG",
+    "RD18_P2U_CONFIDENCE_RULE_NONOPERATIVE",
+    "RD18_P2U_CONFIDENCE_LIQUIDITY_SACRIFICE_EXCESSIVE",
+    "RD18_P2U_CONFIDENCE_THRESHOLD_UNSTABLE",
+    "RD18_P2U_CONFIDENCE_AWARE_LIQUIDITY_UNIVERSE_DESIGN_CONFIRMED"
+  ],
+  "future_three_universe_requirements": {
+    "universes": ["C_P0B", "D_EVIDENCE_STRONG", "E_CONFIDENCE_AWARE"],
+    "identical_strategy_and_parameters": true,
+    "worst_universe_controls_advancement": true,
+    "dispersion_required": true,
+    "production_authorized": false
+  },
+  "policies": {
+    "no_intersection_construction": true,
+    "no_global_confidence_reordering": true,
+    "no_new_market_data": true,
+    "no_network_requests": true,
+    "no_post_2024_observations": true,
+    "no_futures": true,
+    "no_margin": true,
+    "no_returns": true,
+    "no_signals": true,
+    "no_trades": true,
+    "no_strategy_candidates": true,
+    "no_optimization": true,
+    "no_production_authorization": true
+  },
+  "output_hashes": {}
+}
