@@ -1,0 +1,45 @@
+{
+  "authoritative_control_anchor": "data/research/rd16l/local-ledger-manifest-v1.json",
+  "classification": "P3R_LEDGER_HASH_METADATA_UNREPRODUCIBLE_FROM_DOCUMENTED_CONTRACT",
+  "documented_hash_function": "spotbot.research.rd16c_common.dataframe_content_hash",
+  "finding": "The three P3R ledger hashes do not equal the committed RD16L content hashes and could not be reproduced by the documented dataframe-content contract or the tested lexicographic-column variant. The regenerated ledgers nevertheless match the RD16L registered ledgers in row counts, complete columns, values, and the authoritative RD16L manifest hashes.",
+  "ledgers": {
+    "candidates": {
+      "complete_column_and_value_parity": true,
+      "p3r_recorded_content_sha256": "ab52853c5f78b87d61a66d63f5ed8e1d1357b7c343c4ba628ca3cd2e89c47622",
+      "p3r_recorded_hash_matches_rd16l": false,
+      "rd16l_manifest_content_sha256": "afead5a593297705d72aa62aa0ff70657cf3a31603832fa83c3e082b02a62251",
+      "regenerated_matches_rd16l_manifest": true,
+      "regenerated_rd16l_content_sha256": "afead5a593297705d72aa62aa0ff70657cf3a31603832fa83c3e082b02a62251",
+      "rows": 688
+    },
+    "evaluated": {
+      "complete_column_and_value_parity": true,
+      "p3r_recorded_content_sha256": "8d06034b9305bf67fca1baf2f850bf50906538204e4dc8ef6c5d2b8b341dfd61",
+      "p3r_recorded_hash_matches_rd16l": false,
+      "rd16l_manifest_content_sha256": "af5bd8b3ea9725609322932cb971173ba069dff4dfae300517885826a8777881",
+      "regenerated_matches_rd16l_manifest": true,
+      "regenerated_rd16l_content_sha256": "af5bd8b3ea9725609322932cb971173ba069dff4dfae300517885826a8777881",
+      "rows": 688
+    },
+    "trades": {
+      "complete_column_and_value_parity": true,
+      "p3r_recorded_content_sha256": "be1af238dfaac5b832fd5c3ca54188242cf02a785af4d268a33c0878c75ff862",
+      "p3r_recorded_hash_matches_rd16l": false,
+      "rd16l_manifest_content_sha256": "65843f606253866744285c860824ada0f8df03ab8e57526eafec83bb209ca7d3",
+      "regenerated_matches_rd16l_manifest": true,
+      "regenerated_rd16l_content_sha256": "65843f606253866744285c860824ada0f8df03ab8e57526eafec83bb209ca7d3",
+      "rows": 567
+    }
+  },
+  "resolution": {
+    "change_strategy_or_market_data": false,
+    "control_parity_authority": "RD16L manifest hash plus complete regenerated column/value parity",
+    "fail_if_rd16l_manifest_or_complete_value_parity_mismatch": true,
+    "modify_upstream_p3r_bundle": false,
+    "retain_p3r_hashes_as_non_authoritative_metadata": true
+  },
+  "schema_version": "rd18-p3x-a1-p3r-ledger-hash-erratum-v1",
+  "upstream_commit": "320dd784912950371a22cf18adc22a78391ee074",
+  "upstream_file": "data/research/rd18_p3r/frozen-strategy-candidate.json"
+}

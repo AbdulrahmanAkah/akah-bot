@@ -1,0 +1,53 @@
+{
+  "authorizations": {
+    "broad_c2_candidate_generation": false,
+    "offline_plan_generation": true,
+    "production": false,
+    "public_kucoin_spot_data_acquisition": true,
+    "return_calculation": false,
+    "six_symbol_control_parity": true,
+    "strategy_replay": false,
+    "three_universe_candidate_dry_run": false
+  },
+  "decision": "RD18_P3X_A1_C2_HOURLY_ACQUISITION_REQUIRED",
+  "decision_after_control": "RD18_P3X_A1_C2_HOURLY_ACQUISITION_REQUIRED",
+  "execution_completed": {
+    "broad_c2_generation": false,
+    "control_parity_against_local_parquet": true,
+    "network_acquisition": false,
+    "returns": false,
+    "trades_for_performance": false
+  },
+  "implemented": {
+    "asset_gate_fail_closed_block": true,
+    "bounded_pair_retries": true,
+    "checkpoint_hash_window_context_revalidation": true,
+    "current_vs_historical_market_classification": true,
+    "exact_six_symbol_lineage_builder": true,
+    "explicit_network_opt_in": true,
+    "full_c2_plan_rows": 364,
+    "late_history_explicit_historical_source_routing": true,
+    "legacy_control_ledger_comparison": true,
+    "lineage_source_hash_capture": true,
+    "resumable_pair_checkpoint": true,
+    "stdlib_only_planning_and_validation": true
+  },
+  "known_blocks": {
+    "data": "P3X observed 2 fully ready pairs, 4 late-start sources, and 358 pairs absent from the hourly source manifest.",
+    "generator_breadth": "RD16E ALLOWED_ASSETS is pilot-static and requires a preregistered causal generalization before C2 generation.",
+    "historical_markets": "Pairs absent from current KuCoin Spot inventory require an explicit historical-source path and are not silently discarded.",
+    "local_environment": "Local pandas and pyarrow imports passed; the prior Windows Application Control block is no longer present."
+  },
+  "next_stage": "RD18_P3X_A1_CONTROL_PARITY_AND_C2_DATA_EXECUTION",
+  "observed_control_parity": {
+    "authoritative_anchor": "data/research/rd16l/local-ledger-manifest-v1.json",
+    "candidates": 688,
+    "evaluated": 688,
+    "p3r_hash_metadata_erratum_recorded": true,
+    "passed": true,
+    "strategy_or_market_data_changed": false,
+    "trades": 567
+  },
+  "schema_version": "rd18-p3x-a1-preliminary-report-v1",
+  "stage": "RD18_P3X_A1_FULL_C2_HOURLY_DATA_AND_GENERATOR_BUILD"
+}

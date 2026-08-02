@@ -1,0 +1,80 @@
+{
+  "acquisition_contract": {
+    "bounded_retry": true,
+    "checkpoint_complete_requires_hash_window_and_context_revalidation": true,
+    "checkpoint_per_pair": true,
+    "current_market_absence_is_not_no_data": true,
+    "historical_market_source_gap_is_explicit": true,
+    "late_current_api_history_routes_to_historical_source": true,
+    "network_acknowledgement_required": true,
+    "network_default": "disabled",
+    "raw_parquet_committed": false,
+    "resume_without_restarting_complete_pairs": true,
+    "source": "KuCoin public Spot OHLCV through the existing CCXT adapter and provider"
+  },
+  "asset_gate_contract": {
+    "c2_breadth": "blocked",
+    "finding": "RD16E ALLOWED_ASSETS is a static six-symbol pilot gate embedded in retained components.",
+    "legacy_control": "preserve exactly",
+    "required_next_protocol": "RD18_P3X_A1B_CAUSAL_ASSET_GATE_GENERALIZATION_PROTOCOL",
+    "silent_disable_or_replacement": false
+  },
+  "control_parity_contract": {
+    "authoritative_hash_anchor": "data/research/rd16l/local-ledger-manifest-v1.json",
+    "broad_generation_before_parity": false,
+    "candidate_count": 688,
+    "comparison": "row count, complete column set, and canonical dataframe-content parity against local registered RD16L ledgers",
+    "evaluated_count": 688,
+    "lineage": [
+      "RD16C raw family candidates and exits",
+      "RD16D causal regime enrichment",
+      "RD16E retained Trend and Compression components",
+      "RD16H EVIDENCE_COMPOSITE_EXPANSION",
+      "RD16I COMPOSITE_ALPHA_V2 router",
+      "RD16K STRONG_BULL_HOLD_96",
+      "RD16L COMPOSITE_ALPHA_V3 registration"
+    ],
+    "p3r_hash_metadata_status": "UNREPRODUCIBLE_FROM_DOCUMENTED_CONTRACT_ERRATUM_RECORDED",
+    "p3r_hashes_are_control_gate": false,
+    "required_parity": "RD16L manifest hashes, row counts, complete column set, and complete regenerated value parity",
+    "strategy_or_market_data_changed_by_erratum": false,
+    "trade_count": 567,
+    "upstream_p3r_bundle_modified": false
+  },
+  "input_commit": "bfe7fa2c380f61f0737b1225a2bd93bbee45b18a",
+  "input_decision": "RD18_P3X_DATA_AND_GENERATOR_BUILD_REQUIRED",
+  "next_stage": "RD18_P3X_A1_CONTROL_PARITY_AND_C2_DATA_EXECUTION",
+  "objective": "Provide resumable full-C2 KuCoin Spot 1h acquisition tooling and exact six-symbol COMPOSITE_ALPHA_V3 raw-lineage parity tooling without calculating strategy returns or silently generalizing the pilot-only asset gate.",
+  "prohibitions": {
+    "futures_margin_leverage_derivatives": true,
+    "missing_data_as_no_signal": true,
+    "optimization": true,
+    "per_universe_tuning": true,
+    "post_2024_data": true,
+    "production_authorization": true,
+    "return_calculation": true,
+    "shorting": true,
+    "strategy_replay": true
+  },
+  "schema_version": "rd18-p3x-a1-protocol-v1",
+  "scope": {
+    "context_timeframes": [
+      "4h",
+      "1d",
+      "1w"
+    ],
+    "control_symbols": [
+      "BTC/USDT",
+      "ETH/USDT",
+      "SOL/USDT",
+      "LINK/USDT",
+      "AVAX/USDT",
+      "NEAR/USDT"
+    ],
+    "corrected_c2_pairs": 364,
+    "minimum_feature_warmup_hours": 5040,
+    "sealed_cutoff_exclusive": "2025-01-01T00:00:00+00:00",
+    "signal_timeframe": "1h"
+  },
+  "stage": "RD18_P3X_A1_FULL_C2_HOURLY_DATA_AND_GENERATOR_BUILD"
+}
