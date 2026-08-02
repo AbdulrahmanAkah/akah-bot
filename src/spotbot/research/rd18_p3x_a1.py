@@ -412,10 +412,17 @@ def build_acquisition_plan(
 
         hash_match = _file_hash_matches(data_path, evidence_hash)
         required_first_close = requirement.required_since_open + timedelta(hours=1)
-        window_complete = bool(
+        start_boundary_compatible = bool(
             evidence_first_close is not None
+            and (
+                evidence_first_close <= required_first_close
+                or (evidence_first_close - timedelta(hours=1)).date()
+                == requirement.required_since_open.date()
+            )
+        )
+        window_complete = bool(
+            start_boundary_compatible
             and evidence_last_close is not None
-            and evidence_first_close <= required_first_close
             and evidence_last_close >= requirement.required_until_exclusive
         )
 

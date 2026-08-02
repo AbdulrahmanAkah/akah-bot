@@ -5,7 +5,7 @@ import json
 import sys
 import time
 from collections.abc import Mapping
-from datetime import timedelta
+from datetime import UTC, datetime, timedelta
 from pathlib import Path
 from typing import Any
 
@@ -278,6 +278,57 @@ class HistoricalSourceRequiredError(RuntimeError):
     """Raised when current KuCoin history cannot satisfy the frozen start boundary."""
 
 
+DISCOVERY_PAGE_LIMIT = 1_000
+
+
+def _discover_current_api_first_open(
+    adapter: object,
+    *,
+    symbol: str,
+    since: datetime,
+    until: datetime,
+) -> datetime:
+    # Scan contiguous bounded windows; never jump over an unknown interval.
+    probe = since
+    step = timedelta(hours=DISCOVERY_PAGE_LIMIT)
+
+    while probe < until:
+        raw_rows = adapter.fetch_ohlcv(
+            symbol,
+            "1h",
+            since=int(probe.timestamp() * 1_000),
+            limit=DISCOVERY_PAGE_LIMIT,
+        )
+        if raw_rows:
+            timestamps: list[float] = []
+            for row in raw_rows:
+                if not isinstance(row, (list, tuple)) or not row:
+                    raise RuntimeError(f"Invalid history discovery row for {symbol}")
+                raw_timestamp = row[0]
+                if isinstance(raw_timestamp, bool) or not isinstance(
+                    raw_timestamp,
+                    (int, float),
+                ):
+                    raise RuntimeError(f"Invalid history discovery timestamp for {symbol}")
+                timestamps.append(float(raw_timestamp))
+
+            discovered = datetime.fromtimestamp(
+                min(timestamps) / 1_000,
+                tz=UTC,
+            )
+            if discovered < probe:
+                raise RuntimeError(f"History discovery moved before its probe for {symbol}")
+            if discovered >= until:
+                break
+            return discovered
+
+        probe += step
+
+    raise HistoricalSourceRequiredError(
+        f"{symbol} current API has no hourly history before {until.isoformat()}"
+    )
+
+
 def _now() -> str:
     from datetime import UTC, datetime
 
@@ -343,28 +394,46 @@ def _download_pairs(
         last_error = ""
         completed = False
         for attempt in range(1, retries + 1):
+            frame = None
+            acquisition = None
             try:
                 until = parse_timestamp(row["required_until_exclusive"])
+                required_since_open = parse_timestamp(row["required_since_open"])
+                discovered_first_open = _discover_current_api_first_open(
+                    adapter,
+                    symbol=symbol,
+                    since=required_since_open,
+                    until=until,
+                )
                 frame, acquisition = _acquire_hourly(
                     adapter=adapter,
                     provider=provider,
                     store=store,
                     exchange_id="kucoin",
                     symbol=symbol,
-                    since=parse_timestamp(row["required_since_open"]),
+                    since=discovered_first_open,
                     until=until,
                     download=True,
                 )
-                required_first_close = parse_timestamp(row["required_since_open"]) + timedelta(
-                    hours=1
-                )
+                required_first_close = required_since_open + timedelta(hours=1)
                 actual_first_close = parse_timestamp(frame.iloc[0]["timestamp"])
-                if actual_first_close > required_first_close:
+                actual_first_open = actual_first_close - timedelta(hours=1)
+                same_applicable_utc_day = actual_first_open.date() == required_since_open.date()
+                leading_inactive_hours = max(
+                    0,
+                    int((actual_first_open - required_since_open).total_seconds() // 3_600),
+                )
+                if actual_first_close > required_first_close and not same_applicable_utc_day:
                     raise HistoricalSourceRequiredError(
                         f"{symbol} current API history starts at "
                         f"{actual_first_close.isoformat()}, after required "
                         f"{required_first_close.isoformat()}"
                     )
+                boundary_status = (
+                    "EXACT_HOURLY_START"
+                    if actual_first_close <= required_first_close
+                    else ("INTRADAY_LISTING_WITHIN_DAILY_APPLICABLE_START")
+                )
                 analysis = analyze_hourly_frame(
                     symbol=symbol,
                     source=frame,
@@ -392,6 +461,10 @@ def _download_pairs(
                     "state": "COMPLETE",
                     "attempt": attempt,
                     "acquisition_status": acquisition["status"],
+                    "boundary_status": boundary_status,
+                    "required_since_open": required_since_open.isoformat(),
+                    "effective_since_open": actual_first_open.isoformat(),
+                    "leading_inactive_hours": leading_inactive_hours,
                     "rows": len(frame),
                     "first_close": str(frame.iloc[0]["timestamp"]),
                     "last_close": str(frame.iloc[-1]["timestamp"]),
@@ -413,20 +486,36 @@ def _download_pairs(
                 break
             except HistoricalSourceRequiredError as exc:
                 last_error = f"{type(exc).__name__}: {exc}"
-                result = {
+                result: dict[str, object] = {
                     "pair": pair,
                     "symbol": symbol,
                     "state": "HISTORICAL_SOURCE_REQUIRED",
                     "error": last_error,
-                    "partial_current_api": True,
-                    "rows": len(frame),
-                    "first_close": str(frame.iloc[0]["timestamp"]),
-                    "last_close": str(frame.iloc[-1]["timestamp"]),
-                    "sha256": acquisition["sha256"],
-                    "logical_path": str(row["logical_path"]),
-                    "discovered_first_open": acquisition["discovered_first_open"],
+                    "boundary_status": ("HISTORICAL_SOURCE_GAP_AFTER_APPLICABLE_DAY"),
+                    "required_since_open": str(row["required_since_open"]),
+                    "partial_current_api": False,
                     "updated_at": _now(),
                 }
+                if frame is not None and acquisition is not None:
+                    first_close = parse_timestamp(frame.iloc[0]["timestamp"])
+                    effective_open = first_close - timedelta(hours=1)
+                    required_open = parse_timestamp(row["required_since_open"])
+                    result.update(
+                        {
+                            "partial_current_api": True,
+                            "rows": len(frame),
+                            "first_close": str(frame.iloc[0]["timestamp"]),
+                            "last_close": str(frame.iloc[-1]["timestamp"]),
+                            "sha256": acquisition["sha256"],
+                            "logical_path": str(row["logical_path"]),
+                            "discovered_first_open": acquisition["discovered_first_open"],
+                            "effective_since_open": (effective_open.isoformat()),
+                            "leading_inactive_hours": max(
+                                0,
+                                int((effective_open - required_open).total_seconds() // 3_600),
+                            ),
+                        }
+                    )
                 _update_checkpoint(
                     paths["checkpoint"],
                     pair,

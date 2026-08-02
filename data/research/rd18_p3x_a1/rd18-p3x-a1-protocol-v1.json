@@ -4,12 +4,16 @@
     "checkpoint_complete_requires_hash_window_and_context_revalidation": true,
     "checkpoint_per_pair": true,
     "current_market_absence_is_not_no_data": true,
+    "daily_applicable_start_granularity": "UTC_DAY",
     "historical_market_source_gap_is_explicit": true,
+    "intraday_listing_within_applicable_start_day": "ACCEPT_AS_CAUSAL_START_BOUNDARY",
     "late_current_api_history_routes_to_historical_source": true,
+    "leading_prelisting_hours_are_missing_data": false,
     "network_acknowledgement_required": true,
     "network_default": "disabled",
     "raw_parquet_committed": false,
     "resume_without_restarting_complete_pairs": true,
+    "same_day_boundary_rule_applies_uniformly": true,
     "source": "KuCoin public Spot OHLCV through the existing CCXT adapter and provider"
   },
   "asset_gate_contract": {
@@ -18,6 +22,13 @@
     "legacy_control": "preserve exactly",
     "required_next_protocol": "RD18_P3X_A1B_CAUSAL_ASSET_GATE_GENERALIZATION_PROTOCOL",
     "silent_disable_or_replacement": false
+  },
+  "boundary_semantics_amendment": {
+    "classification": "DATA_GRANULARITY_CLARIFICATION",
+    "daily_source_field": "first_valid_open",
+    "hourly_rule": "The first available hourly open may occur after 00:00 UTC when it remains inside the same UTC applicable-start day.",
+    "optimization_or_strategy_change": false,
+    "scope": "ALL_C2_PAIRS_UNIFORMLY"
   },
   "control_parity_contract": {
     "authoritative_hash_anchor": "data/research/rd16l/local-ledger-manifest-v1.json",

@@ -477,3 +477,130 @@ def test_historical_download_checkpoint_preserves_partial_metadata() -> None:
     assert '"partial_current_api": True' in text
     assert '"discovered_first_open": acquisition[' in text
     assert '"sha256": acquisition["sha256"]' in text
+
+
+def test_a1_history_discovery_uses_contiguous_page_windows() -> None:
+    text = RUNNER.read_text(encoding="utf-8")
+
+    assert "DISCOVERY_PAGE_LIMIT = 1_000" in text
+    assert "step = timedelta(hours=DISCOVERY_PAGE_LIMIT)" in text
+    assert "limit=DISCOVERY_PAGE_LIMIT" in text
+    assert "timedelta(days=90)" not in text
+
+
+def test_a1_acquisition_starts_at_exact_discovered_boundary() -> None:
+    text = RUNNER.read_text(encoding="utf-8")
+
+    discovery_call = "_discover_current_api_first_open("
+    acquire_call = "frame, acquisition = _acquire_hourly("
+    assert discovery_call in text
+    assert acquire_call in text
+    assert text.index(discovery_call) < text.index(acquire_call)
+    assert "since=discovered_first_open" in text
+    assert "required_since_open + timedelta(hours=1)" in text
+
+
+def _write_checkpoint_ready_files(
+    repo: Path,
+    *,
+    pair: str,
+) -> tuple[str, dict[str, str]]:
+    logical_path = f"kucoin/{pair}/1h.parquet"
+    data_path = repo / "data/raw/rd16b" / logical_path
+    data_path.parent.mkdir(parents=True, exist_ok=True)
+    data_path.write_bytes(b"hourly")
+    derived: dict[str, str] = {}
+    for timeframe in ("4h", "1d", "1w"):
+        derived_path = repo / "data/raw/rd16b/kucoin" / pair / f"{timeframe}.parquet"
+        derived_path.write_bytes(timeframe.encode("ascii"))
+        derived[timeframe] = hashlib.sha256(derived_path.read_bytes()).hexdigest()
+    return (
+        hashlib.sha256(data_path.read_bytes()).hexdigest(),
+        derived,
+    )
+
+
+def test_same_day_intraday_start_is_window_compatible(
+    tmp_path: Path,
+) -> None:
+    repo = _make_repo(tmp_path)
+    requirements = load_c2_requirements(
+        repo / "data/research/rd18_p1r2/corrected-daily-coverage-audit.csv"
+    )
+    requirement = requirements[0]
+    source_hash, derived = _write_checkpoint_ready_files(
+        repo,
+        pair=requirement.pair,
+    )
+    checkpoint = {
+        requirement.pair: {
+            "state": "COMPLETE",
+            "logical_path": requirement.logical_path,
+            "sha256": source_hash,
+            "first_close": "2020-01-01T11:00:00+00:00",
+            "last_close": "2025-01-01T00:00:00+00:00",
+            "derived_sha256": derived,
+        }
+    }
+
+    rows = build_acquisition_plan(
+        repo,
+        requirements,
+        {},
+        checkpoint,
+        current_market_symbols={requirement.symbol},
+    )
+    row = next(item for item in rows if item["pair"] == requirement.pair)
+
+    assert row["source_window_complete"] is True
+    assert row["action"] == "READY_LOCAL"
+
+
+def test_next_day_start_is_not_window_compatible(
+    tmp_path: Path,
+) -> None:
+    repo = _make_repo(tmp_path)
+    requirements = load_c2_requirements(
+        repo / "data/research/rd18_p1r2/corrected-daily-coverage-audit.csv"
+    )
+    requirement = requirements[0]
+    source_hash, derived = _write_checkpoint_ready_files(
+        repo,
+        pair=requirement.pair,
+    )
+    checkpoint = {
+        requirement.pair: {
+            "state": "COMPLETE",
+            "logical_path": requirement.logical_path,
+            "sha256": source_hash,
+            "first_close": "2020-01-02T01:00:00+00:00",
+            "last_close": "2025-01-01T00:00:00+00:00",
+            "derived_sha256": derived,
+        }
+    }
+
+    rows = build_acquisition_plan(
+        repo,
+        requirements,
+        {},
+        checkpoint,
+        current_market_symbols={requirement.symbol},
+    )
+    row = next(item for item in rows if item["pair"] == requirement.pair)
+
+    assert row["source_window_complete"] is False
+    assert row["action"] == "CHECKPOINT_REVALIDATION_REQUIRED"
+
+
+def test_intraday_listing_boundary_is_explicitly_recorded() -> None:
+    runner_text = RUNNER.read_text(encoding="utf-8")
+    protocol = json.loads(
+        (ROOT / "data/research/rd18_p3x_a1/rd18-p3x-a1-protocol-v1.json").read_text(
+            encoding="utf-8"
+        )
+    )
+
+    assert "INTRADAY_LISTING_WITHIN_DAILY_APPLICABLE_START" in runner_text
+    assert '"leading_inactive_hours"' in runner_text
+    assert protocol["acquisition_contract"]["daily_applicable_start_granularity"] == "UTC_DAY"
+    assert protocol["boundary_semantics_amendment"]["optimization_or_strategy_change"] is False
