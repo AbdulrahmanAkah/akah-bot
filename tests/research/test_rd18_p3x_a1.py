@@ -604,3 +604,64 @@ def test_intraday_listing_boundary_is_explicitly_recorded() -> None:
     assert '"leading_inactive_hours"' in runner_text
     assert protocol["acquisition_contract"]["daily_applicable_start_granularity"] == "UTC_DAY"
     assert protocol["boundary_semantics_amendment"]["optimization_or_strategy_change"] is False
+
+
+def test_corporate_action_checkpoint_is_terminal_and_not_retried(
+    tmp_path: Path,
+) -> None:
+    repo = _make_repo(tmp_path)
+    requirements = load_c2_requirements(
+        repo / "data/research/rd18_p1r2/corrected-daily-coverage-audit.csv"
+    )
+    requirement = requirements[0]
+    checkpoint_path = tmp_path / "checkpoint.json"
+    write_json(
+        checkpoint_path,
+        {
+            "pairs": {
+                requirement.pair: {
+                    "state": "CORPORATE_ACTION_POLICY_REQUIRED",
+                    "error": "documented token swap boundary",
+                }
+            }
+        },
+    )
+    checkpoint = load_checkpoint(checkpoint_path)
+
+    rows = build_acquisition_plan(
+        repo,
+        requirements,
+        {},
+        checkpoint,
+        current_market_symbols={requirement.symbol},
+    )
+    row = next(item for item in rows if item["pair"] == requirement.pair)
+
+    assert row["checkpoint_state"] == "CORPORATE_ACTION_POLICY_REQUIRED"
+    assert row["action"] == "CORPORATE_ACTION_POLICY_REQUIRED"
+    assert "token swap" in str(row["blocking_reason"])
+
+
+def test_strax_corporate_action_registry_is_fail_closed() -> None:
+    registry = json.loads(
+        (ROOT / "data/research/rd18_p3x_a1/corporate-action-registry-v1.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    event = registry["events"]["STRAX-USDT"]
+    runner_text = RUNNER.read_text(encoding="utf-8")
+    protocol = json.loads(
+        (ROOT / "data/research/rd18_p3x_a1/rd18-p3x-a1-protocol-v1.json").read_text(
+            encoding="utf-8"
+        )
+    )
+
+    assert event["expected_integrity_report"]["missing"] == 817
+    assert event["strategy_use_authorized"] is False
+    assert event["normalization_authorized"] is False
+    assert event["raw_series_policy"] == "PRESERVE_GAP_AND_BLOCK_CONCATENATION"
+    assert "CORPORATE_ACTION_POLICY_REQUIRED" in runner_text
+    assert "_matches_registered_corporate_action" in runner_text
+    assert (
+        protocol["corporate_action_contract"]["strategy_or_return_calculation_authorized"] is False
+    )

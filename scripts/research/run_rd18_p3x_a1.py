@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import sys
 import time
 from collections.abc import Mapping
@@ -81,6 +82,9 @@ def _paths(repo_root: Path, output_dir: Path) -> dict[str, Path]:
         "coverage": repo_root / "data/research/rd18_p1r2/corrected-daily-coverage-audit.csv",
         "source_manifest": repo_root / "data/research/rd16b/source-manifest-v1.json",
         "checkpoint": output_dir / "acquisition-checkpoint.json",
+        "corporate_actions": (
+            repo_root / "data/research/rd18_p3x_a1/corporate-action-registry-v1.json"
+        ),
         "control_report": output_dir / "control/control-parity-report.json",
     }
 
@@ -278,6 +282,50 @@ class HistoricalSourceRequiredError(RuntimeError):
     """Raised when current KuCoin history cannot satisfy the frozen start boundary."""
 
 
+def _load_corporate_action_registry(
+    path: Path,
+) -> dict[str, dict[str, object]]:
+    payload = load_json(path)
+    if payload.get("schema_version") != "rd18-p3x-a1-corporate-action-registry-v1":
+        raise RuntimeError("unsupported corporate-action registry schema")
+    raw_events = payload.get("events")
+    if not isinstance(raw_events, dict):
+        raise RuntimeError("corporate-action registry events object is invalid")
+
+    events: dict[str, dict[str, object]] = {}
+    for raw_pair, raw_event in raw_events.items():
+        if not isinstance(raw_event, dict):
+            raise RuntimeError(f"invalid corporate-action event: {raw_pair}")
+        pair = symbol_to_pair(str(raw_pair))
+        events[pair] = dict(raw_event)
+    return events
+
+
+def _matches_registered_corporate_action(
+    exc: Exception,
+    event: Mapping[str, object],
+) -> bool:
+    raw_report = event.get("expected_integrity_report")
+    if not isinstance(raw_report, dict):
+        return False
+
+    message = str(exc)
+    observed: dict[str, int] = {}
+    for field in ("duplicates", "missing", "invalid"):
+        match = re.search(rf"\b{field}=(\d+)\b", message)
+        if match is None:
+            return False
+        observed[field] = int(match.group(1))
+
+    for field, value in observed.items():
+        expected = raw_report.get(field)
+        if isinstance(expected, bool) or not isinstance(expected, int):
+            return False
+        if value != expected:
+            return False
+    return True
+
+
 DISCOVERY_PAGE_LIMIT = 1_000
 
 
@@ -349,7 +397,7 @@ def _download_pairs(
         raise ValueError("--retries must be positive")
 
     from spotbot.data.ccxt_adapter import CCXTExchangeAdapter
-    from spotbot.data.provider import CCXTSpotDataProvider
+    from spotbot.data.provider import CCXTSpotDataProvider, DataIntegrityError
     from spotbot.data.store import ParquetCandleStore
     from spotbot.research.rd16b_hourly_readiness import (
         _acquire_hourly,
@@ -360,6 +408,7 @@ def _download_pairs(
     requirements = load_c2_requirements(paths["coverage"])
     sources = load_source_manifest(paths["source_manifest"])
     checkpoint = load_checkpoint(paths["checkpoint"])
+    corporate_actions = _load_corporate_action_registry(paths["corporate_actions"])
 
     adapter = CCXTExchangeAdapter("kucoin")
     current_symbols = _load_current_spot_symbols()
@@ -385,6 +434,7 @@ def _download_pairs(
     for row in eligible:
         pair = str(row["pair"])
         symbol = str(row["symbol"])
+        corporate_action = corporate_actions.get(pair)
         _update_checkpoint(
             paths["checkpoint"],
             pair,
@@ -479,6 +529,46 @@ def _download_pairs(
                     paths["checkpoint"],
                     pair,
                     state="COMPLETE",
+                    detail=result,
+                )
+                results.append(result)
+                completed = True
+                break
+
+            except DataIntegrityError as exc:
+                last_error = f"{type(exc).__name__}: {exc}"
+                if corporate_action is None or not _matches_registered_corporate_action(
+                    exc,
+                    corporate_action,
+                ):
+                    if attempt < retries:
+                        time.sleep(min(2 ** (attempt - 1), 8))
+                    continue
+
+                result = {
+                    "pair": pair,
+                    "symbol": symbol,
+                    "state": "CORPORATE_ACTION_POLICY_REQUIRED",
+                    "attempt": attempt,
+                    "error": last_error,
+                    "event_id": str(corporate_action.get("event_id", "")),
+                    "event_type": str(corporate_action.get("event_type", "")),
+                    "expected_missing_intervals": int(
+                        dict(corporate_action["expected_integrity_report"])["missing"]
+                    ),
+                    "raw_series_policy": str(corporate_action.get("raw_series_policy", "")),
+                    "strategy_use_authorized": False,
+                    "normalization_policy_status": "PREREGISTRATION_REQUIRED",
+                    "required_next_protocol": str(
+                        corporate_action.get("required_next_protocol", "")
+                    ),
+                    "registry_path": str(paths["corporate_actions"].relative_to(repo_root)),
+                    "updated_at": _now(),
+                }
+                _update_checkpoint(
+                    paths["checkpoint"],
+                    pair,
+                    state="CORPORATE_ACTION_POLICY_REQUIRED",
                     detail=result,
                 )
                 results.append(result)

@@ -3,6 +3,10 @@
     "bounded_retry": true,
     "checkpoint_complete_requires_hash_window_and_context_revalidation": true,
     "checkpoint_per_pair": true,
+    "corporate_action_gap_is_retryable_network_failure": false,
+    "corporate_action_raw_gap_filling": false,
+    "corporate_action_registry": "data/research/rd18_p3x_a1/corporate-action-registry-v1.json",
+    "corporate_action_strategy_use_before_policy": false,
     "current_market_absence_is_not_no_data": true,
     "daily_applicable_start_granularity": "UTC_DAY",
     "historical_market_source_gap_is_explicit": true,
@@ -51,6 +55,17 @@
     "strategy_or_market_data_changed_by_erratum": false,
     "trade_count": 567,
     "upstream_p3r_bundle_modified": false
+  },
+  "corporate_action_contract": {
+    "checkpoint_state": "CORPORATE_ACTION_POLICY_REQUIRED",
+    "classification": "DOCUMENTED_TOKEN_SWAP_BOUNDARY",
+    "plan_action": "CORPORATE_ACTION_POLICY_REQUIRED",
+    "raw_series_policy": "PRESERVE_GAP_AND_BLOCK_CONCATENATION",
+    "registered_pair": "STRAX-USDT",
+    "required_next_protocol": "RD18_P3X_A1C_CAUSAL_CORPORATE_ACTION_POLICY",
+    "scope": "REGISTERED_EVENTS_ONLY",
+    "silent_adjustment_or_forward_fill": false,
+    "strategy_or_return_calculation_authorized": false
   },
   "input_commit": "bfe7fa2c380f61f0737b1225a2bd93bbee45b18a",
   "input_decision": "RD18_P3X_DATA_AND_GENERATOR_BUILD_REQUIRED",

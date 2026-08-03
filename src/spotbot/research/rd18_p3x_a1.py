@@ -82,6 +82,7 @@ CHECKPOINT_STATES: Final = frozenset(
         "FAILED_PERMANENT",
         "CURRENT_API_MARKET_UNAVAILABLE",
         "HISTORICAL_SOURCE_REQUIRED",
+        "CORPORATE_ACTION_POLICY_REQUIRED",
         "ENVIRONMENT_BLOCKED",
     }
 )
@@ -467,6 +468,14 @@ def build_acquisition_plan(
             checkpoint_error = str(checkpoint_row.get("error", "")).strip()
             reason = checkpoint_error or (
                 "current KuCoin API cannot satisfy the frozen historical window"
+            )
+
+        if checkpoint_state == "CORPORATE_ACTION_POLICY_REQUIRED":
+            action = "CORPORATE_ACTION_POLICY_REQUIRED"
+            checkpoint_error = str(checkpoint_row.get("error", "")).strip()
+            reason = checkpoint_error or (
+                "a documented corporate action crosses the frozen data window; "
+                "strategy use is blocked pending a preregistered normalization policy"
             )
 
         if checkpoint_state == "COMPLETE" and action != "READY_LOCAL":
