@@ -6,6 +6,42 @@
     "unregistered_gap_classification": "FAILED_RETRYABLE"
   },
   "events": {
+    "ETN-USDT": {
+      "diagnostic_evidence": {
+        "file_name": "remaining-gap-diagnostic-summary.json",
+        "network_scope": "BOUNDED_PUBLIC_KUCOIN_SPOT_KLINES_DIAGNOSTIC",
+        "raw_market_data_written": false,
+        "sha256": "5eaf357c39e16a891bfb6e90075c08ef82381bfa1b6f531df59b12b030501395"
+      },
+      "event_id": "KUCOIN_ETN_DELIST_RELIST_SMART_CHAIN_SWAP_2023_09_22",
+      "event_type": "CHAIN_MIGRATION",
+      "expected_integrity_report": {
+        "duplicates": 0,
+        "invalid": 0,
+        "missing": 8570
+      },
+      "normalization_authorized": false,
+      "observed_boundary_prices": {
+        "after_close": 0.002802,
+        "after_close_div_before_close": 1.893115330045267,
+        "after_open": 0.00164,
+        "after_open_div_before_close": 1.1080332409972298,
+        "before_close": 0.0014801
+      },
+      "observed_first_open_after_gap": "2024-09-13T10:00:00+00:00",
+      "observed_last_close_before_gap": "2023-09-22T08:00:00+00:00",
+      "official_sources": [
+        "https://www.kucoin.com/uk/announcement/ph-st-kucoin-will-delist-certain-projects-20230921",
+        "https://www.kucoin.com/announcement/en-kucoin-will-support-the-electroneum-chain-etn-smart-chain-swap-20240912"
+      ],
+      "official_trading_closed_at": "2023-09-22T07:00:00+00:00",
+      "official_trading_reopened_at": "2024-09-13T10:00:00+00:00",
+      "raw_series_policy": "PRESERVE_GAP_AND_BLOCK_CONCATENATION",
+      "required_next_protocol": "RD18_P3X_A1C_CAUSAL_CORPORATE_ACTION_POLICY",
+      "strategy_use_authorized": false,
+      "symbol": "ETN/USDT",
+      "venue": "kucoin"
+    },
     "STRAX-USDT": {
       "diagnostic_evidence": {
         "file_name": "rd18-a1-strax-window-diagnostic-20260803-161225.json",

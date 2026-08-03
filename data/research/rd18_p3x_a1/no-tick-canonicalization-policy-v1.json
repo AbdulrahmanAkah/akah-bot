@@ -1,0 +1,136 @@
+{
+  "applicable_pairs": [
+    "ETC-USDT",
+    "KCS-USDT",
+    "LTC-USDT",
+    "NEO-USDT",
+    "ONT-USDT",
+    "SNX-USDT",
+    "TRX-USDT",
+    "VET-USDT",
+    "XLM-USDT",
+    "XRP-USDT"
+  ],
+  "authorizations": {
+    "post_2024_access": false,
+    "production": false,
+    "public_kucoin_spot_network": true,
+    "return_calculation": false,
+    "strategy_replay": false,
+    "update_checkpoint_after_full_pair_validation": true,
+    "write_local_raw_and_canonical_parquet": true
+  },
+  "canonicalization_contract": {
+    "audit_sidecar_required": true,
+    "corporate_action_overlap": "PROHIBITED",
+    "derived_close": "PREVIOUS_CANONICAL_CLOSE",
+    "derived_high": "PREVIOUS_CANONICAL_CLOSE",
+    "derived_low": "PREVIOUS_CANONICAL_CLOSE",
+    "derived_open": "PREVIOUS_CANONICAL_CLOSE",
+    "derived_rows_are_no_tick_state_bars": true,
+    "derived_rows_are_trades": false,
+    "derived_volume": 0.0,
+    "leading_interval_without_prior_observed_close": "DO_NOT_DERIVE",
+    "only_internal_missing_hourly_intervals": true,
+    "registered_pair_set_only": true,
+    "silent_derivation": false,
+    "source_series_preserved_separately": true
+  },
+  "classification": "PREREGISTERED_AUTHORITATIVE_NO_TICK_INTERVAL_DERIVATION",
+  "diagnostic_evidence": {
+    "checkpoint_modified": false,
+    "pair_count": 11,
+    "post_2024_access": false,
+    "raw_market_data_written": false,
+    "request_errors_present": false,
+    "sha256": "5eaf357c39e16a891bfb6e90075c08ef82381bfa1b6f531df59b12b030501395"
+  },
+  "excluded_pairs": {
+    "ETN-USDT": "Documented 2023 delisting and 2024 smart-chain-swap relisting; route to corporate-action policy.",
+    "STRAX-USDT": "Documented token swap; preserve the gap and block concatenation."
+  },
+  "expected_integrity_reports": {
+    "ETC-USDT": {
+      "duplicates": 0,
+      "invalid": 0,
+      "missing": 628,
+      "rows": 51980
+    },
+    "KCS-USDT": {
+      "duplicates": 0,
+      "invalid": 0,
+      "missing": 182,
+      "rows": 52425
+    },
+    "LTC-USDT": {
+      "duplicates": 0,
+      "invalid": 0,
+      "missing": 223,
+      "rows": 52385
+    },
+    "NEO-USDT": {
+      "duplicates": 0,
+      "invalid": 0,
+      "missing": 268,
+      "rows": 52339
+    },
+    "ONT-USDT": {
+      "duplicates": 0,
+      "invalid": 0,
+      "missing": 867,
+      "rows": 51732
+    },
+    "SNX-USDT": {
+      "duplicates": 0,
+      "invalid": 0,
+      "missing": 345,
+      "rows": 52263
+    },
+    "TRX-USDT": {
+      "duplicates": 0,
+      "invalid": 0,
+      "missing": 382,
+      "rows": 52226
+    },
+    "VET-USDT": {
+      "duplicates": 0,
+      "invalid": 0,
+      "missing": 511,
+      "rows": 52097
+    },
+    "XLM-USDT": {
+      "duplicates": 0,
+      "invalid": 0,
+      "missing": 627,
+      "rows": 51980
+    },
+    "XRP-USDT": {
+      "duplicates": 0,
+      "invalid": 1,
+      "missing": 502,
+      "rows": 52106
+    }
+  },
+  "invalid_hour_contract": {
+    "aggregation": {
+      "close": "LAST_OBSERVED_MINUTE_CLOSE",
+      "high": "MAX_OBSERVED_MINUTE_HIGH",
+      "low": "MIN_OBSERVED_MINUTE_LOW",
+      "open": "FIRST_OBSERVED_MINUTE_OPEN",
+      "volume": "SUM_OBSERVED_MINUTE_VOLUME"
+    },
+    "audit_original_and_replacement": true,
+    "expected_invalid_hourly_rows": 1,
+    "multiple_or_unregistered_invalid_hours": "FAIL_CLOSED",
+    "no_minute_rows": "FAIL_CLOSED",
+    "registered_invalid_pair": "XRP-USDT",
+    "repair_source": "AUTHORITATIVE_KUCOIN_SPOT_1MIN"
+  },
+  "objective": "Convert only KuCoin Spot hourly intervals omitted because no ticks were published into explicit flat zero-volume canonical bars, while preserving the sparse observed series and keeping corporate-action, delisting, and identity-change gaps fail-closed.",
+  "official_basis": {
+    "source": "https://www.kucoin.com/docs-new/rest/spot-trading/market-data/get-klines",
+    "statement": "Klines data may be incomplete. No data is published for intervals where there are no ticks."
+  },
+  "schema_version": "rd18-p3x-a1-no-tick-canonicalization-policy-v1",
+  "stage": "RD18_P3X_A1_NO_TICK_HOURLY_CANONICALIZATION"
+}

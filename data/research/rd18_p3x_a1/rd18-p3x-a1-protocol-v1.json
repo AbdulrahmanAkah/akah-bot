@@ -15,6 +15,11 @@
     "leading_prelisting_hours_are_missing_data": false,
     "network_acknowledgement_required": true,
     "network_default": "disabled",
+    "no_tick_canonicalization_policy": "data/research/rd18_p3x_a1/no-tick-canonicalization-policy-v1.json",
+    "no_tick_derivation_across_registered_event": false,
+    "no_tick_internal_hour_derivation": "PREVIOUS_CLOSE_FLAT_OHLC_ZERO_VOLUME_WITH_AUDIT",
+    "no_tick_observed_sparse_series_preserved": true,
+    "no_tick_silent_derivation": false,
     "raw_parquet_committed": false,
     "resume_without_restarting_complete_pairs": true,
     "same_day_boundary_rule_applies_uniformly": true,
@@ -58,10 +63,13 @@
   },
   "corporate_action_contract": {
     "checkpoint_state": "CORPORATE_ACTION_POLICY_REQUIRED",
-    "classification": "DOCUMENTED_TOKEN_SWAP_BOUNDARY",
+    "classification": "DOCUMENTED_TOKEN_IDENTITY_OR_TRADING_BOUNDARY",
     "plan_action": "CORPORATE_ACTION_POLICY_REQUIRED",
     "raw_series_policy": "PRESERVE_GAP_AND_BLOCK_CONCATENATION",
-    "registered_pair": "STRAX-USDT",
+    "registered_pairs": [
+      "ETN-USDT",
+      "STRAX-USDT"
+    ],
     "required_next_protocol": "RD18_P3X_A1C_CAUSAL_CORPORATE_ACTION_POLICY",
     "scope": "REGISTERED_EVENTS_ONLY",
     "silent_adjustment_or_forward_fill": false,
@@ -70,6 +78,29 @@
   "input_commit": "bfe7fa2c380f61f0737b1225a2bd93bbee45b18a",
   "input_decision": "RD18_P3X_DATA_AND_GENERATOR_BUILD_REQUIRED",
   "next_stage": "RD18_P3X_A1_CONTROL_PARITY_AND_C2_DATA_EXECUTION",
+  "no_tick_canonicalization_contract": {
+    "audit_sidecar_required": true,
+    "classification": "AUTHORITATIVE_EXCHANGE_NO_TICK_INTERVAL_DERIVATION",
+    "corporate_action_overlap": "PROHIBITED",
+    "derived_ohlc": "PREVIOUS_CANONICAL_CLOSE",
+    "derived_volume": 0.0,
+    "observed_sparse_series_preserved": true,
+    "official_kucoin_semantics": "No Kline data is published for intervals where there are no ticks.",
+    "registered_pairs": [
+      "ETC-USDT",
+      "KCS-USDT",
+      "LTC-USDT",
+      "NEO-USDT",
+      "ONT-USDT",
+      "SNX-USDT",
+      "TRX-USDT",
+      "VET-USDT",
+      "XLM-USDT",
+      "XRP-USDT"
+    ],
+    "strategy_or_return_calculation_authorized": false,
+    "xrp_invalid_hour_repair": "AUTHORITATIVE_KUCOIN_1MIN_AGGREGATION"
+  },
   "objective": "Provide resumable full-C2 KuCoin Spot 1h acquisition tooling and exact six-symbol COMPOSITE_ALPHA_V3 raw-lineage parity tooling without calculating strategy returns or silently generalizing the pilot-only asset gate.",
   "prohibitions": {
     "futures_margin_leverage_derivatives": true,
