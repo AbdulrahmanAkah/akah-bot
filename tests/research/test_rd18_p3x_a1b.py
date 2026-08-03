@@ -212,3 +212,101 @@ def test_report_prohibits_strategy_and_return_execution() -> None:
     assert authorizations["strategy_replay"] is False
     assert authorizations["return_calculation"] is False
     assert result.report["identical_rule_across_families"] is True
+
+
+def _load_a1b_runner_for_terminal_plan_test():
+    import importlib.util
+    from pathlib import Path
+
+    root = Path(__file__).resolve().parents[2]
+    path = root / "scripts/research/run_rd18_p3x_a1b.py"
+    spec = importlib.util.spec_from_file_location(
+        "rd18_p3x_a1b_runner_terminal_test",
+        path,
+    )
+    assert spec is not None
+    assert spec.loader is not None
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+def test_offline_probe_actions_require_terminal_checkpoint_evidence(
+    tmp_path,
+) -> None:
+    import json
+
+    runner = _load_a1b_runner_for_terminal_plan_test()
+    plan = pd.DataFrame(
+        [
+            {
+                "pair": "OLD-USDT",
+                "symbol": "OLD/USDT",
+                "action": "NETWORK_MARKET_PROBE_REQUIRED",
+                "blocking_reason": "",
+            },
+            {
+                "pair": "READY-USDT",
+                "symbol": "READY/USDT",
+                "action": "READY_LOCAL",
+                "blocking_reason": "",
+            },
+        ]
+    )
+    checkpoint = tmp_path / "checkpoint.json"
+    checkpoint.write_text(
+        json.dumps(
+            {
+                "pairs": {
+                    "OLD-USDT": {
+                        "state": "HISTORICAL_SOURCE_REQUIRED",
+                        "error": "current API cannot satisfy history",
+                    }
+                }
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    resolved = runner._terminalize_plan(plan, checkpoint)
+
+    assert resolved.loc[0, "action"] == ("HISTORICAL_MARKET_SOURCE_REQUIRED")
+    assert resolved.loc[0, "blocking_reason"] == ("current API cannot satisfy history")
+    assert resolved.loc[1, "action"] == "READY_LOCAL"
+
+
+def test_offline_probe_action_rejects_nonterminal_checkpoint(
+    tmp_path,
+) -> None:
+    import json
+
+    runner = _load_a1b_runner_for_terminal_plan_test()
+    plan = pd.DataFrame(
+        [
+            {
+                "pair": "WAIT-USDT",
+                "symbol": "WAIT/USDT",
+                "action": "NETWORK_MARKET_PROBE_REQUIRED",
+                "blocking_reason": "",
+            }
+        ]
+    )
+    checkpoint = tmp_path / "checkpoint.json"
+    checkpoint.write_text(
+        json.dumps(
+            {
+                "pairs": {
+                    "WAIT-USDT": {
+                        "state": "FAILED_RETRYABLE",
+                    }
+                }
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    with pytest.raises(
+        RuntimeError,
+        match="exact sealed terminal-count invariant",
+    ):
+        runner._terminalize_plan(plan, checkpoint)
