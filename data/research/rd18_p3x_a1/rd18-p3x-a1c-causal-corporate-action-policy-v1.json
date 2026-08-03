@@ -7,6 +7,15 @@
     "strategy_replay": false
   },
   "classification": "PREREGISTERED_FAIL_CLOSED_CORPORATE_ACTION_POLICY",
+  "completion_decision": {
+    "candidate_generation_in_a1c": false,
+    "decision": "RD18_P3X_A1C_COMPLETE_WITH_EXPLICIT_EXCLUSIONS",
+    "excluded_pairs": [
+      "ETN-USDT",
+      "STRAX-USDT"
+    ],
+    "next_stage": "RD18_P3X_A2_C2_GENERATOR_BUILD_WITH_A1B_GATE_AND_A1C_EXCLUSIONS"
+  },
   "decision_rules": {
     "documented_event_required": true,
     "event_registration_inputs": [
@@ -46,6 +55,14 @@
     },
     "unregistered_integrity_gap": "FAILED_RETRYABLE_PENDING_DIAGNOSIS"
   },
+  "etn_resolution": {
+    "event_id": "KUCOIN_ETN_DELIST_RELIST_SMART_CHAIN_SWAP_2023_09_22",
+    "pair": "ETN-USDT",
+    "policy": "PRESERVE_GAP_AND_BLOCK_CONCATENATION",
+    "required_missing_intervals": 8570,
+    "strategy_use_authorized": false,
+    "terminal_research_classification": "DOCUMENTED_CHAIN_MIGRATION_SEGMENTS_NOT_STRATEGY_READY"
+  },
   "event_types_in_scope": [
     "TOKEN_SWAP",
     "REDENOMINATION",
@@ -53,6 +70,23 @@
     "CONTRACT_MIGRATION",
     "SYMBOL_REASSIGNMENT"
   ],
+  "implementation": {
+    "completion": "scripts/research/complete_rd18_p3x_a1c.py",
+    "module": "src/spotbot/research/rd18_p3x_a1c_corporate_actions.py",
+    "network_requests": 0,
+    "normalization_execution": false,
+    "production": false,
+    "raw_market_data_writes": false,
+    "return_calculation": false,
+    "runner": "scripts/research/run_rd18_p3x_a1c.py",
+    "runtime_output": "data/research/rd18_p3x_a1c_runtime",
+    "status": "IMPLEMENTED_FAIL_CLOSED_EVENT_AND_SEGMENT_LEDGER",
+    "strategy_candidate_generation": false,
+    "strategy_replay": false,
+    "synthetic_candle_writes": false,
+    "tests": "tests/research/test_rd18_p3x_a1c.py",
+    "validator": "scripts/research/validate_rd18_p3x_a1c.py"
+  },
   "objective": "Define a general causal and fail-closed treatment for exchange-listed spot instruments whose raw history crosses a documented corporate or token-identity event, without filling gaps, silently back-adjusting prices, joining distinct identities, replaying strategies, or calculating returns.",
   "registry": "data/research/rd18_p3x_a1/corporate-action-registry-v1.json",
   "required_implementation_checks": [
