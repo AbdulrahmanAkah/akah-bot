@@ -1,0 +1,79 @@
+{
+  "authorizations": {
+    "broad_candidate_generation": false,
+    "normalization_execution": false,
+    "production": false,
+    "return_calculation": false,
+    "strategy_replay": false
+  },
+  "classification": "PREREGISTERED_FAIL_CLOSED_CORPORATE_ACTION_POLICY",
+  "decision_rules": {
+    "documented_event_required": true,
+    "event_registration_inputs": [
+      "venue",
+      "symbol",
+      "event_type",
+      "official announcement URLs",
+      "official suspension and reopening timestamps",
+      "conversion ratio when applicable",
+      "observed raw integrity report",
+      "bounded diagnostic evidence hash"
+    ],
+    "identity_policy": {
+      "default": "PRE_EVENT_AND_POST_EVENT_ARE_DISTINCT_ANALYTICAL_SEGMENTS",
+      "silent_identity_continuity": false,
+      "symbol_reuse_implies_identity_continuity": false
+    },
+    "normalization_policy": {
+      "default_authorized": false,
+      "price_back_adjustment": "PROHIBITED_IN_A1C_V1",
+      "ratio_known_after_event_may_not_be_applied_before_publication": true,
+      "silent_volume_adjustment": false,
+      "strategy_use_after_normalization": false
+    },
+    "raw_data_policy": {
+      "fill_suspended_hours": false,
+      "preserve_exchange_timestamps": true,
+      "preserve_observed_gap": true,
+      "stitch_pre_and_post_segments": false,
+      "write_synthetic_candles": false
+    },
+    "segment_eligibility": {
+      "minimum_feature_warmup_hours": 5040,
+      "required_window_must_be_satisfied_by_one_identity_segment": true,
+      "segments_cannot_share_warmup": true,
+      "strategy_ready_only_after_independent_integrity_validation": true
+    },
+    "unregistered_integrity_gap": "FAILED_RETRYABLE_PENDING_DIAGNOSIS"
+  },
+  "event_types_in_scope": [
+    "TOKEN_SWAP",
+    "REDENOMINATION",
+    "CHAIN_MIGRATION",
+    "CONTRACT_MIGRATION",
+    "SYMBOL_REASSIGNMENT"
+  ],
+  "objective": "Define a general causal and fail-closed treatment for exchange-listed spot instruments whose raw history crosses a documented corporate or token-identity event, without filling gaps, silently back-adjusting prices, joining distinct identities, replaying strategies, or calculating returns.",
+  "registry": "data/research/rd18_p3x_a1/corporate-action-registry-v1.json",
+  "required_implementation_checks": [
+    "registered event must match the observed duplicates, missing, and invalid counts exactly",
+    "no synthetic candle is written inside a documented suspension interval",
+    "pre-event and post-event rows remain distinguishable",
+    "raw pre-event and post-event data are not concatenated into strategy-ready input",
+    "unregistered or mismatched gaps remain retryable failures",
+    "no normalization factor is applied by A1C v1",
+    "sealed cutoff remains 2025-01-01T00:00:00+00:00",
+    "post-2024 access remains prohibited"
+  ],
+  "schema_version": "rd18-p3x-a1c-causal-corporate-action-policy-v1",
+  "stage": "RD18_P3X_A1C_CAUSAL_CORPORATE_ACTION_POLICY",
+  "strax_resolution": {
+    "event_id": "KUCOIN_STRAX_TOKEN_SWAP_2024_03_19",
+    "pair": "STRAX-USDT",
+    "policy": "PRESERVE_GAP_AND_BLOCK_CONCATENATION",
+    "required_missing_intervals": 817,
+    "strategy_use_authorized": false,
+    "terminal_research_classification": "DOCUMENTED_TOKEN_SWAP_SEGMENTS_NOT_STRATEGY_READY",
+    "token_swap_ratio": "1 old STRAX = 10 new STRAX"
+  }
+}

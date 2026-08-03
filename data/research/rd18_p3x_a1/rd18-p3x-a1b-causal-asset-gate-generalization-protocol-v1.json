@@ -1,0 +1,82 @@
+{
+  "authorizations": {
+    "broad_candidate_generation": false,
+    "production": false,
+    "return_calculation": false,
+    "strategy_replay": false,
+    "threshold_optimization": false
+  },
+  "classification": "PREREGISTERED_CAUSAL_TRADABILITY_GATE_REPLACING_PILOT_STATIC_ASSET_LISTS",
+  "current_problem": {
+    "legacy_constant": "src/spotbot/research/rd16e_components.py::ALLOWED_ASSETS",
+    "legacy_scope": "SIX_SYMBOL_PILOT_ONLY",
+    "legacy_use": "PRESERVE_EXACTLY_FOR_REGISTERED_SIX_SYMBOL_CONTROL_PARITY",
+    "silent_application_to_c2": false,
+    "silent_removal_from_c2": false
+  },
+  "gate_definition": {
+    "calculation_schedule": "UTC_MONTH_START_USING_DATA_THROUGH_PRIOR_UTC_MONTH_END",
+    "family_specific_asset_selection": false,
+    "features": {
+      "cross_sectional_liquidity": {
+        "field": "median_hourly_quote_turnover",
+        "minimum_percentile": 20,
+        "peer_set": "all corrected C2 KuCoin USDT Spot assets satisfying identity, warmup, and continuity checks at the calculation timestamp",
+        "trailing_hours": 720
+      },
+      "data_continuity": {
+        "minimum_valid_hour_fraction": 0.98,
+        "trailing_hours": 720
+      },
+      "listing_warmup": {
+        "minimum_prior_valid_hours": 5040
+      },
+      "nonzero_activity": {
+        "minimum_nonzero_quote_turnover_fraction": 0.9,
+        "trailing_hours": 720
+      },
+      "quote_turnover_formula": "close * base_volume"
+    },
+    "identical_rule_across_families": true,
+    "identity_requirements": {
+      "corporate_action_segment_strategy_ready": true,
+      "quote_asset": "USDT",
+      "spot_only": true,
+      "venue": "kucoin"
+    },
+    "lookahead_prohibited": true,
+    "missing_metric_policy": "INELIGIBLE_WITH_EXPLICIT_REASON",
+    "per_universe_tuning": false,
+    "performance_labels_used": false,
+    "selection_output": "monthly symbol eligibility ledger with input-window hashes and explicit rejection reasons"
+  },
+  "objective": "Replace the retained family-specific six-symbol ALLOWED_ASSETS lists with one broad, causal, venue-tradability gate that uses only information available before each eligibility month and does not use strategy outcomes, future listings, returns, or per-universe tuning.",
+  "required_audit_outputs": [
+    "monthly eligibility ledger",
+    "monthly cross-sectional threshold ledger",
+    "per-symbol rejection reason ledger",
+    "input window hashes",
+    "legacy six-symbol parity proof remains unchanged",
+    "zero strategy candidates and zero returns calculated during A1B"
+  ],
+  "required_tests": [
+    "future rows cannot change an earlier monthly eligibility decision",
+    "the same input snapshot produces the same eligibility ledger",
+    "all four strategy families receive the identical asset eligibility mask",
+    "assets with insufficient warmup are explicitly rejected",
+    "assets with unresolved corporate-action identity are explicitly rejected",
+    "missing data are not interpreted as no signal",
+    "cross-sectional percentile uses only contemporaneously eligible peers",
+    "sealed cutoff remains 2025-01-01T00:00:00+00:00",
+    "legacy six-symbol control continues to use the frozen ALLOWED_ASSETS constant"
+  ],
+  "schema_version": "rd18-p3x-a1b-causal-asset-gate-generalization-protocol-v1",
+  "stage": "RD18_P3X_A1B_CAUSAL_ASSET_GATE_GENERALIZATION_PROTOCOL",
+  "threshold_freeze": {
+    "liquidity_percentile": 20,
+    "minimum_nonzero_quote_turnover_fraction": 0.9,
+    "minimum_valid_hour_fraction": 0.98,
+    "trailing_hours": 720,
+    "warmup_hours": 5040
+  }
+}
