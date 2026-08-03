@@ -50,6 +50,29 @@
     "performance_labels_used": false,
     "selection_output": "monthly symbol eligibility ledger with input-window hashes and explicit rejection reasons"
   },
+  "implementation": {
+    "completion": "scripts/research/complete_rd18_p3x_a1b.py",
+    "module": "src/spotbot/research/rd18_p3x_a1b_asset_gate.py",
+    "production": false,
+    "return_calculation": false,
+    "runner": "scripts/research/run_rd18_p3x_a1b.py",
+    "runtime_output": "data/research/rd18_p3x_a1b_runtime",
+    "status": "IMPLEMENTED_CAUSAL_MONTHLY_LEDGER_BUILD",
+    "strategy_candidate_generation": false,
+    "strategy_replay": false,
+    "stream_ready_sources": true,
+    "tests": "tests/research/test_rd18_p3x_a1b.py",
+    "threshold_optimization": false,
+    "validator": "scripts/research/validate_rd18_p3x_a1b.py"
+  },
+  "implementation_contract": {
+    "corporate_action_identity_unresolved": "explicit monthly ineligibility reason",
+    "decision_information_boundary": "hourly closes known at or before month_start",
+    "family_mask": "identical symbol-month mask for all four families",
+    "frame_loading": "one READY_LOCAL symbol at a time",
+    "historical_source_missing": "explicit monthly ineligibility reason",
+    "month_schedule": "2019-01-01 through 2025-01-01 UTC month starts"
+  },
   "objective": "Replace the retained family-specific six-symbol ALLOWED_ASSETS lists with one broad, causal, venue-tradability gate that uses only information available before each eligibility month and does not use strategy outcomes, future listings, returns, or per-universe tuning.",
   "required_audit_outputs": [
     "monthly eligibility ledger",
