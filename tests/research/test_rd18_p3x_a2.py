@@ -316,3 +316,48 @@ def test_no_feature_rows_conflict_with_a1b_eligible_month(
             ),
             excluded_pairs=frozenset(),
         )
+
+
+def _load_a2_validator_for_regression():
+    import importlib.util
+    import sys
+    from pathlib import Path
+
+    root = Path(__file__).resolve().parents[2]
+    path = root / "scripts/research/validate_rd18_p3x_a2.py"
+    name = "rd18_p3x_a2_validator_regression"
+    spec = importlib.util.spec_from_file_location(name, path)
+    assert spec is not None
+    assert spec.loader is not None
+    module = importlib.util.module_from_spec(spec)
+    previous = sys.modules.get(name)
+    sys.modules[name] = module
+    try:
+        spec.loader.exec_module(module)
+    finally:
+        if previous is None:
+            sys.modules.pop(name, None)
+        else:
+            sys.modules[name] = previous
+    return module
+
+
+def test_validator_accepts_consistent_audit_selection_mapping() -> None:
+    candidates, audit = _classify(
+        [
+            _row(
+                family_id=TREND_FAMILY_ID,
+                fee_ready=True,
+                market_regime="STRONG_BULL",
+            )
+        ],
+        family_id=TREND_FAMILY_ID,
+    )
+    validator = _load_a2_validator_for_regression()
+
+    counts = validator._validate_audit_partition(
+        audit,
+        candidates,
+    )
+
+    assert sum(counts.values()) == len(audit)

@@ -313,7 +313,7 @@ def _validate_audit_partition(
 
     selected = _bool_series(audit["selected_pre_router"])
     reasons = audit["rejection_reason"].astype(str)
-    if bool(selected != (reasons == "SELECTED_PRE_ROUTER")).any():
+    if bool((selected != (reasons == "SELECTED_PRE_ROUTER")).any()):
         raise A2ValidationError("audit selected/reason mismatch")
 
     audit_selected_ids = set(audit.loc[selected, "candidate_id"].astype(str).tolist())
