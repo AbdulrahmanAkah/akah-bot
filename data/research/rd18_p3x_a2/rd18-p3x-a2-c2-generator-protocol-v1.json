@@ -1,0 +1,131 @@
+{
+  "authorizations": {
+    "local_runtime_writes": true,
+    "network_requests": false,
+    "normalization": false,
+    "post_2024_access": false,
+    "production": false,
+    "raw_market_data_writes": false,
+    "return_calculation": false,
+    "strategy_candidate_generation": true,
+    "strategy_replay": false,
+    "synthetic_candle_writes": false,
+    "threshold_optimization": false,
+    "trade_routing": false
+  },
+  "causal_contract": {
+    "corporate_actions": "ETN-USDT and STRAX-USDT are excluded before candidate selection; their pre/post identity segments are never concatenated.",
+    "entry_reference": "entry_price is the next completed 1h candle open; A2 does not simulate fills or exits.",
+    "future_context": "PROHIBITED",
+    "missing_decision": "FAIL_CLOSED",
+    "monthly_asset_gate": "Every signal joins to exactly one A1B symbol-month decision based only on information ending at that month start.",
+    "post_2024_access": "PROHIBITED",
+    "signal_execution": "A family signal is evaluated only from completed 1h data and completed higher-timeframe context at or before signal_close."
+  },
+  "decision_on_pass": "RD18_P3X_A2_GENERATOR_BUILD_COMPLETE",
+  "frozen_engine_rules": {
+    "COMPRESSION_EXPANSION_SPECIALIST_V3": {
+      "family_id": "MTF_COMPRESSION_EXPANSION",
+      "priority": 20,
+      "required_gates": [
+        "A1B_MONTHLY_ELIGIBILITY",
+        "A1C_IDENTITY_READY",
+        "FAMILY_REGIME_GATE",
+        "FAMILY_VOLATILITY_GATE",
+        "STRUCTURAL_CONFIRMATION",
+        "FEE_BUFFER",
+        "24H_SIGNAL_COOLDOWN"
+      ],
+      "router_cooldown": "24-hour signal cooldown is deterministic and independent of position outcomes, so it is executed during generation",
+      "source_rule": "FULL_REMEDIATION_STACK_PRE_ROUTER"
+    },
+    "TREND_CONTINUATION_CORE_V3": {
+      "family_id": "MTF_TREND_BREAKOUT",
+      "fee_buffer": "required outside STRONG_BULL and waived inside STRONG_BULL, matching the retained RD16H evidence-expansion source",
+      "priority": 10,
+      "required_gates": [
+        "A1B_MONTHLY_ELIGIBILITY",
+        "A1C_IDENTITY_READY",
+        "FAMILY_REGIME_GATE",
+        "FAMILY_VOLATILITY_GATE",
+        "STRUCTURAL_CONFIRMATION"
+      ],
+      "router_cooldown": "12 hours, recorded as pending and not executed in A2 because admission state belongs to sealed replay",
+      "source_rule": "EVIDENCE_EXPANSION_PRE_ROUTER"
+    }
+  },
+  "frozen_lineage": {
+    "a1b_module": "src/spotbot/research/rd18_p3x_a1b_asset_gate.py",
+    "a1c_module": "src/spotbot/research/rd18_p3x_a1c_corporate_actions.py",
+    "architecture_id": "COMPOSITE_ALPHA_V3",
+    "component_module": "src/spotbot/research/rd16e_components.py",
+    "family_module": "src/spotbot/research/rd16c_families.py",
+    "feature_module": "src/spotbot/research/rd16c_features.py",
+    "regime_module": "src/spotbot/research/rd16d_metrics.py",
+    "source_architecture_id": "COMPOSITE_ALPHA_V2",
+    "source_variant_id": "STRONG_BULL_HOLD_96"
+  },
+  "inputs": {
+    "a1_plan": "data/research/rd18_p3x_a1_runtime/full-c2-hourly-acquisition-plan.csv",
+    "a1b_eligibility": "data/research/rd18_p3x_a1b_runtime/monthly-asset-eligibility-ledger.csv",
+    "a1c_terminal_exclusions": "data/research/rd18_p3x_a1c_runtime/corporate-action-terminal-classification.csv",
+    "expected_pair_counts": {
+      "corporate_action_excluded": 2,
+      "historical_source_required": 21,
+      "ready_local": 341,
+      "total": 364
+    },
+    "local_store": "data/raw/rd16b",
+    "required_timeframes": [
+      "1h",
+      "4h",
+      "1d",
+      "1w"
+    ]
+  },
+  "next_stage": "RD18_P3X_A3_SEALED_REPLAY_AUTHORIZATION_REVIEW",
+  "objective": "Build deterministic pre-router signal candidates for the frozen COMPOSITE_ALPHA_V3 Trend and Compression engines across the corrected C2 universe, using only sealed local market data, the A1B causal monthly asset gate, and the A1C explicit corporate-action exclusions.",
+  "required_validation": [
+    "all 341 READY_LOCAL symbols are processed or resume-verified",
+    "candidate IDs are globally unique",
+    "every selected signal has an explicit eligible A1B symbol-month row",
+    "ETN-USDT and STRAX-USDT never appear in selected candidates",
+    "all higher-timeframe context timestamps are at or before signal_close",
+    "no signal or entry bar crosses the sealed cutoff",
+    "no exit, PnL, return, position, or router-outcome columns are written",
+    "candidate partitions equal the selected rows in their audit partitions",
+    "all output hashes and content hashes match the deterministic manifest"
+  ],
+  "runtime_outputs": {
+    "files": [
+      "generation-checkpoint.json",
+      "candidate-partition-index.csv",
+      "symbol-generation-summary.csv",
+      "monthly-candidate-summary.csv",
+      "monthly-rejection-summary.csv",
+      "rd18-p3x-a2-runtime-report-v1.json",
+      "output-manifest.json"
+    ],
+    "partitioning": "one candidate and one audit parquet per READY_LOCAL pair",
+    "root": "data/research/rd18_p3x_a2_runtime",
+    "runtime_data_committed": false
+  },
+  "schema_version": "rd18-p3x-a2-c2-generator-protocol-v1",
+  "scope_boundary": {
+    "candidate_generation": true,
+    "exit_replay": false,
+    "holding_period_replay": false,
+    "optimization": false,
+    "output_classification": "PRE_ROUTER_SIGNAL_CANDIDATES",
+    "position_capacity": false,
+    "production": false,
+    "ranking": false,
+    "return_calculation": false,
+    "risk_scaling": false,
+    "same_symbol_active_position_checks": false,
+    "trade_ledger": false,
+    "trade_routing": false
+  },
+  "sealed_cutoff": "2025-01-01T00:00:00+00:00",
+  "stage": "RD18_P3X_A2_C2_GENERATOR_BUILD"
+}
