@@ -1,0 +1,51 @@
+{
+  "default_policy": {
+    "normalization_authorized": false,
+    "raw_gap_filling_authorized": false,
+    "strategy_use_authorized": false,
+    "unregistered_gap_classification": "FAILED_RETRYABLE"
+  },
+  "events": {
+    "STRAX-USDT": {
+      "diagnostic_evidence": {
+        "file_name": "rd18-a1-strax-window-diagnostic-20260803-161225.json",
+        "network_scope": "TWO_BOUNDED_PUBLIC_KUCOIN_SPOT_REQUESTS",
+        "raw_market_data_written": false,
+        "sha256": "8be93ac675ff122a8b0642ab9d2c738ce92a819d7289e7ede93a723ef539b293"
+      },
+      "event_id": "KUCOIN_STRAX_TOKEN_SWAP_2024_03_19",
+      "event_type": "TOKEN_SWAP",
+      "expected_integrity_report": {
+        "duplicates": 0,
+        "invalid": 0,
+        "missing": 817
+      },
+      "normalization_authorized": false,
+      "observed_boundary_prices": {
+        "after_close": 0.09316,
+        "after_close_div_before_close": 0.06923820141211447,
+        "after_open": 0.075,
+        "after_open_div_before_close": 0.055741360089186176,
+        "before_close": 1.3455
+      },
+      "observed_first_close_after_gap": "2024-04-22T10:00:00+00:00",
+      "observed_last_close_before_gap": "2024-03-19T08:00:00+00:00",
+      "official_sources": [
+        "https://www.kucoin.com/announcement/en-kucoin-will-support-the-stratis-strax-token-swap-20240316/",
+        "https://www.kucoin.com/announcement/en-kucoin-has-completed-the-token-swap-of-stratis-strax-20240419"
+      ],
+      "official_trading_closed_at": "2024-03-19T07:00:00+00:00",
+      "official_trading_reopened_at": "2024-04-22T09:00:00+00:00",
+      "raw_series_policy": "PRESERVE_GAP_AND_BLOCK_CONCATENATION",
+      "required_next_protocol": "RD18_P3X_A1C_CAUSAL_CORPORATE_ACTION_POLICY",
+      "strategy_use_authorized": false,
+      "swap_ratio": {
+        "new_units": 10,
+        "old_units": 1
+      },
+      "symbol": "STRAX/USDT",
+      "venue": "kucoin"
+    }
+  },
+  "schema_version": "rd18-p3x-a1-corporate-action-registry-v1"
+}
