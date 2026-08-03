@@ -1,0 +1,37 @@
+{
+  "control_policy": {
+    "control_only_replay_executed": false,
+    "legacy_reference_candidates": 688,
+    "legacy_reference_trades": 567,
+    "reason": "Exact trade-ledger parity from bars is a bounded control replay and requires a separate explicit authorization."
+  },
+  "coverage_policy": {
+    "candidate_coverage": "Fraction of canonical Top-6 membership slots backed by an A2 GENERATED partition",
+    "completed_bar_audit": "Remains zero until every selected member and completed signal bar receives a signal or no-signal decision"
+  },
+  "membership_sources": {
+    "C2": "RD18 P1R2 corrected committed Top-6 entry / Top-8 retention hysteresis",
+    "D2": "RD18 P1R2 corrected weekly ranking filtered to the RD18 P2R2 Evidence-Strong inventory, reranked, then Top-6 entry / Top-8 retention",
+    "E2": "RD18 P2U2 committed E10 Top-6 entry / Top-8 retention hysteresis"
+  },
+  "objective": "Materialize canonical 301-decision C2, D2 and E2 operational memberships, quantify candidate coverage, resolve historical-gap exposure, and prove deterministic omission replacement readiness without executing replay or returns.",
+  "primary_window": {
+    "decision_time": "Monday 00:00 UTC",
+    "decisions": 301,
+    "end_exclusive": "2025-01-01T00:00:00+00:00",
+    "start_inclusive": "2019-04-01T00:00:00+00:00"
+  },
+  "prohibitions": {
+    "exit_simulation": false,
+    "network_requests": false,
+    "post_2024_access": false,
+    "production": false,
+    "return_calculation": false,
+    "strategy_replay": false,
+    "trade_routing": false
+  },
+  "schema_version": "rd18-p3x-a3a-membership-protocol-v1",
+  "stage": "RD18_P3X_A3A_CANONICAL_MEMBERSHIP_BUILD",
+  "starting_commit": "a5dd4022782a8806f7b04316b11684012ed2caf7",
+  "success_next": "RD18_P3X_A3B_CONTROL_AND_COMPLETED_BAR_AUDIT_AUTHORIZATION"
+}
