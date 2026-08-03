@@ -23,6 +23,13 @@
     "signal_execution": "A family signal is evaluated only from completed 1h data and completed higher-timeframe context at or before signal_close."
   },
   "decision_on_pass": "RD18_P3X_A2_GENERATOR_BUILD_COMPLETE",
+  "feature_warmup_policy": {
+    "classification": "NO_FEATURE_ROWS_AFTER_CAUSAL_WARMUP",
+    "condition": "RD16C causal feature construction leaves zero rows and every A1B month for the symbol is explicitly ineligible.",
+    "contradiction_policy": "Fail closed if any A1B month is eligible while no causal feature rows exist.",
+    "output": "Write deterministic zero-row candidate and audit partitions, retain the symbol in the 341 READY_LOCAL partition index, and record the status in symbol-generation-summary.csv.",
+    "reason": "NO_ROWS_AFTER_RD16C_CAUSAL_FEATURE_WARMUP"
+  },
   "frozen_engine_rules": {
     "COMPRESSION_EXPANSION_SPECIALIST_V3": {
       "family_id": "MTF_COMPRESSION_EXPANSION",
@@ -94,7 +101,8 @@
     "no signal or entry bar crosses the sealed cutoff",
     "no exit, PnL, return, position, or router-outcome columns are written",
     "candidate partitions equal the selected rows in their audit partitions",
-    "all output hashes and content hashes match the deterministic manifest"
+    "all output hashes and content hashes match the deterministic manifest",
+    "READY_LOCAL symbols with zero rows after causal feature warm-up are explicit zero-candidate partitions only when all A1B months are ineligible"
   ],
   "runtime_outputs": {
     "files": [

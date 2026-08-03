@@ -20,7 +20,10 @@ import pandas as pd
 
 from spotbot.research.rd16c_common import dataframe_content_hash
 from spotbot.research.rd16c_families import REGISTRY_BY_ID, build_candidate_frame
-from spotbot.research.rd16c_features import build_feature_frame
+from spotbot.research.rd16c_features import (
+    FeatureDataError,
+    build_feature_frame,
+)
 from spotbot.research.rd16d_metrics import (
     market_regime_from_row,
     volatility_regime_from_row,
@@ -136,6 +139,8 @@ SUMMARY_FIELDS: Final = (
     "last_signal_close",
     "candidate_content_sha256",
     "audit_content_sha256",
+    "generation_status",
+    "generation_reason",
 )
 
 
@@ -583,6 +588,48 @@ def classify_enriched_candidates(
     )
 
 
+def _no_feature_rows_result(
+    *,
+    symbol: str,
+    eligibility: pd.DataFrame,
+) -> SymbolGenerationResult:
+    if "eligible" not in eligibility.columns:
+        raise A2GeneratorError(f"{symbol}: A1B eligibility column is missing")
+    eligible = _boolean_series(
+        eligibility["eligible"],
+        column="eligible",
+    )
+    if bool(eligible.any()):
+        eligible_months = eligibility.loc[eligible, "month_start"].astype(str).tolist()
+        raise A2GeneratorError(
+            f"{symbol}: no causal feature rows remain, but A1B authorizes months: {eligible_months}"
+        )
+
+    candidates = _empty_frame(CANDIDATE_FIELDS)
+    audit = _empty_frame(AUDIT_FIELDS)
+    summary: dict[str, object] = {
+        "pair": symbol_to_pair(symbol),
+        "symbol": symbol,
+        "raw_signal_rows": 0,
+        "selected_candidate_rows": 0,
+        "trend_raw_rows": 0,
+        "trend_selected_rows": 0,
+        "compression_raw_rows": 0,
+        "compression_selected_rows": 0,
+        "first_signal_close": "",
+        "last_signal_close": "",
+        "candidate_content_sha256": dataframe_content_hash(candidates),
+        "audit_content_sha256": dataframe_content_hash(audit),
+        "generation_status": "NO_FEATURE_ROWS_AFTER_CAUSAL_WARMUP",
+        "generation_reason": "NO_ROWS_AFTER_RD16C_CAUSAL_FEATURE_WARMUP",
+    }
+    return SymbolGenerationResult(
+        candidates=candidates,
+        audit=audit,
+        summary=summary,
+    )
+
+
 def generate_symbol(
     frames: Mapping[str, pd.DataFrame],
     *,
@@ -595,7 +642,15 @@ def generate_symbol(
     if missing:
         raise A2GeneratorError(f"{symbol}: missing timeframes: {missing}")
 
-    feature_frame = build_feature_frame(frames, symbol=symbol)
+    try:
+        feature_frame = build_feature_frame(frames, symbol=symbol)
+    except FeatureDataError as error:
+        if "no rows remain after feature warm-up." not in str(error):
+            raise
+        return _no_feature_rows_result(
+            symbol=symbol,
+            eligibility=eligibility,
+        )
     candidate_parts: list[pd.DataFrame] = []
     audit_parts: list[pd.DataFrame] = []
 
@@ -677,6 +732,8 @@ def generate_symbol(
         ),
         "candidate_content_sha256": dataframe_content_hash(candidates),
         "audit_content_sha256": dataframe_content_hash(audit),
+        "generation_status": "GENERATED",
+        "generation_reason": "",
     }
     return SymbolGenerationResult(
         candidates=candidates,

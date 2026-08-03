@@ -25,6 +25,7 @@ from spotbot.research.rd18_p3x_a2_generator import (  # noqa: E402
     CANDIDATE_FIELDS,
     COMPRESSION_ENGINE_ID,
     FORBIDDEN_OUTCOME_COLUMNS,
+    SUMMARY_FIELDS,
     TREND_ENGINE_ID,
 )
 
@@ -388,6 +389,71 @@ def main() -> int:
             "production_blocked": authorizations.get("production") is False,
             "post_2024_blocked": authorizations.get("post_2024_access") is False,
         }
+    )
+
+    symbol_summary = _read_csv(output / "symbol-generation-summary.csv")
+    summary_missing = sorted(set(SUMMARY_FIELDS).difference(symbol_summary.columns))
+    summary_extra = sorted(set(symbol_summary.columns).difference(SUMMARY_FIELDS))
+    if summary_missing or summary_extra:
+        raise A2ValidationError(
+            f"symbol summary schema mismatch; missing={summary_missing}, extra={summary_extra}"
+        )
+    checks["symbol_summary_rows"] = len(symbol_summary) == EXPECTED_READY
+    checks["symbol_summary_pairs_unique"] = not bool(symbol_summary["pair"].duplicated().any())
+
+    statuses = symbol_summary["generation_status"].astype(str)
+    reasons = symbol_summary["generation_reason"].fillna("").astype(str)
+    valid_statuses = {
+        "GENERATED",
+        "NO_FEATURE_ROWS_AFTER_CAUSAL_WARMUP",
+    }
+    checks["generation_status_values"] = set(statuses).issubset(valid_statuses)
+    generated = statuses == "GENERATED"
+    no_feature = statuses == "NO_FEATURE_ROWS_AFTER_CAUSAL_WARMUP"
+    checks["generated_reason_empty"] = bool((reasons.loc[generated] == "").all())
+    checks["no_feature_reason_fixed"] = bool(
+        (reasons.loc[no_feature] == "NO_ROWS_AFTER_RD16C_CAUSAL_FEATURE_WARMUP").all()
+    )
+
+    count_columns = [
+        "raw_signal_rows",
+        "selected_candidate_rows",
+        "trend_raw_rows",
+        "trend_selected_rows",
+        "compression_raw_rows",
+        "compression_selected_rows",
+    ]
+    no_feature_counts = symbol_summary.loc[
+        no_feature,
+        count_columns,
+    ].apply(pd.to_numeric, errors="raise")
+    checks["no_feature_counts_zero"] = bool((no_feature_counts == 0).all().all())
+    checks["no_feature_signal_times_empty"] = bool(
+        symbol_summary.loc[
+            no_feature,
+            ["first_signal_close", "last_signal_close"],
+        ]
+        .fillna("")
+        .astype(str)
+        .eq("")
+        .all()
+        .all()
+    )
+
+    observed_status_counts = {
+        str(key): int(value) for key, value in statuses.value_counts().to_dict().items()
+    }
+    report_status_counts = report.get("generation_status_counts")
+    checks["generation_status_counts_match"] = isinstance(report_status_counts, dict) and dict(
+        sorted(observed_status_counts.items())
+    ) == {str(key): int(value) for key, value in sorted(report_status_counts.items())}
+    observed_no_feature_pairs = sorted(symbol_summary.loc[no_feature, "pair"].astype(str).tolist())
+    report_no_feature_pairs = report.get("no_feature_pairs")
+    checks["no_feature_pairs_match"] = isinstance(
+        report_no_feature_pairs, list
+    ) and observed_no_feature_pairs == sorted(str(value) for value in report_no_feature_pairs)
+    checks["no_feature_count_match"] = report.get("no_feature_symbol_count") == len(
+        observed_no_feature_pairs
     )
 
     index = _read_csv(output / "candidate-partition-index.csv")

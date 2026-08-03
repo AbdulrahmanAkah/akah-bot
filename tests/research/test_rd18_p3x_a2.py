@@ -3,6 +3,7 @@ from __future__ import annotations
 import pandas as pd
 import pytest
 
+from spotbot.research.rd16c_features import FeatureDataError
 from spotbot.research.rd18_p3x_a2_generator import (
     COMPRESSION_ENGINE_ID,
     COMPRESSION_FAMILY_ID,
@@ -11,6 +12,7 @@ from spotbot.research.rd18_p3x_a2_generator import (
     TREND_FAMILY_ID,
     A2GeneratorError,
     classify_enriched_candidates,
+    generate_symbol,
     validate_eligibility_ledger,
 )
 
@@ -249,4 +251,68 @@ def test_unknown_family_is_rejected() -> None:
             eligibility=_eligibility(),
             excluded_pairs=frozenset(),
             family_id="UNKNOWN",
+        )
+
+
+def _raise_no_feature_rows(
+    _frames,
+    *,
+    symbol: str,
+):
+    raise FeatureDataError(f"{symbol}: no rows remain after feature warm-up.")
+
+
+def test_no_feature_rows_are_explicit_when_a1b_rejects_all_months(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    monkeypatch.setattr(
+        "spotbot.research.rd18_p3x_a2_generator.build_feature_frame",
+        _raise_no_feature_rows,
+    )
+    result = generate_symbol(
+        {
+            "1h": pd.DataFrame(),
+            "4h": pd.DataFrame(),
+            "1d": pd.DataFrame(),
+            "1w": pd.DataFrame(),
+        },
+        symbol="LATE/USDT",
+        eligibility=_eligibility(
+            symbol="LATE/USDT",
+            eligible=False,
+            reason="INSUFFICIENT_WARMUP",
+        ),
+        excluded_pairs=frozenset(),
+    )
+
+    assert result.candidates.empty
+    assert result.audit.empty
+    assert result.summary["generation_status"] == ("NO_FEATURE_ROWS_AFTER_CAUSAL_WARMUP")
+    assert result.summary["generation_reason"] == ("NO_ROWS_AFTER_RD16C_CAUSAL_FEATURE_WARMUP")
+
+
+def test_no_feature_rows_conflict_with_a1b_eligible_month(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    monkeypatch.setattr(
+        "spotbot.research.rd18_p3x_a2_generator.build_feature_frame",
+        _raise_no_feature_rows,
+    )
+    with pytest.raises(
+        A2GeneratorError,
+        match="A1B authorizes months",
+    ):
+        generate_symbol(
+            {
+                "1h": pd.DataFrame(),
+                "4h": pd.DataFrame(),
+                "1d": pd.DataFrame(),
+                "1w": pd.DataFrame(),
+            },
+            symbol="LATE/USDT",
+            eligibility=_eligibility(
+                symbol="LATE/USDT",
+                eligible=True,
+            ),
+            excluded_pairs=frozenset(),
         )

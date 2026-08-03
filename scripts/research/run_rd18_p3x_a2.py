@@ -432,6 +432,8 @@ def _aggregate(
     rejection_counter: Counter[tuple[str, str, str]] = Counter()
     total_candidates = 0
     total_audit = 0
+    generation_status_counts: Counter[str] = Counter()
+    no_feature_pairs: list[str] = []
 
     for pair in sorted(completed):
         raw_entry = completed[pair]
@@ -442,6 +444,20 @@ def _aggregate(
         candidate_path = output / str(entry["candidate_path"])
         audit_path = output / str(entry["audit_path"])
         summary = load_json(summary_path)
+        status = str(summary.get("generation_status", ""))
+        reason = str(summary.get("generation_reason", ""))
+        if status not in {
+            "GENERATED",
+            "NO_FEATURE_ROWS_AFTER_CAUSAL_WARMUP",
+        }:
+            raise A2RunnerError(f"invalid generation status for {pair}: {status!r}")
+        if status == "GENERATED" and reason:
+            raise A2RunnerError(f"generated symbol has a rejection reason: {pair}")
+        if status == "NO_FEATURE_ROWS_AFTER_CAUSAL_WARMUP":
+            if reason != "NO_ROWS_AFTER_RD16C_CAUSAL_FEATURE_WARMUP":
+                raise A2RunnerError(f"no-feature reason differs for {pair}: {reason!r}")
+            no_feature_pairs.append(pair)
+        generation_status_counts[status] += 1
         symbol_rows.append(summary)
 
         candidates = pd.read_parquet(candidate_path)
@@ -594,6 +610,9 @@ def _aggregate(
         "expected_ready_symbols": EXPECTED_READY,
         "raw_signal_rows": total_audit,
         "selected_candidate_rows": total_candidates,
+        "generation_status_counts": dict(sorted(generation_status_counts.items())),
+        "no_feature_pairs": sorted(no_feature_pairs),
+        "no_feature_symbol_count": len(no_feature_pairs),
         "engine_candidate_counts": {
             TREND_ENGINE_ID: sum(
                 count
