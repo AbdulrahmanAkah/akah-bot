@@ -1,0 +1,32 @@
+{
+  "a3_authorized_decision": "RD18_P3X_A3_REPLAY_AUTHORIZED",
+  "a3_authorized_next_stage": "RD18_P3E_EXECUTE_PREREGISTERED_THREE_UNIVERSE_REPLAY",
+  "a3b_required_decision": "RD18_P3X_A3B_EVIDENCE_COMPLETE",
+  "a3b_required_next_stage": "RD18_P3X_A3_REAUTHORIZATION_REVIEW",
+  "base_commit": "7281dba02708ed98bb340c05a1ac155dfdf157b4",
+  "input_authority": {
+    "audit_coverage": 1.0,
+    "candidate_rows": 688,
+    "completed_bar_audit_rows": 825912,
+    "control_hash_authority": "RD16L_LOCAL_LEDGER_MANIFEST",
+    "evaluated_rows": 688,
+    "membership_rows": 5418,
+    "named_omissions_requiring_actual_replacements": [
+      "BCHSV-USDT",
+      "PEPE-USDT"
+    ],
+    "positive_domain_capacity_reduction_rows": 120,
+    "trade_rows": 567
+  },
+  "prohibitions": {
+    "exit_simulation": false,
+    "network_requests": false,
+    "portfolio_routing": false,
+    "post_2024_access": false,
+    "production": false,
+    "return_calculation": false,
+    "strategy_replay": false
+  },
+  "schema_version": "rd18-p3x-a3-a3b-reauthorization-integration-v1",
+  "stage": "RD18_P3X_A3_SEALED_REPLAY_AUTHORIZATION_REVIEW"
+}

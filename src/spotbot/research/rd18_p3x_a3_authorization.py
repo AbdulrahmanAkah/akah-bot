@@ -8,7 +8,7 @@ STAGE: Final = "RD18_P3X_A3_SEALED_REPLAY_AUTHORIZATION_REVIEW"
 DECISION_AUTHORIZED: Final = "RD18_P3X_A3_REPLAY_AUTHORIZED"
 DECISION_NOT_AUTHORIZED: Final = "RD18_P3X_A3_REPLAY_NOT_AUTHORIZED"
 DECISION_TECHNICALLY_INVALID: Final = "RD18_P3X_A3_AUTHORIZATION_REVIEW_TECHNICALLY_INVALID"
-NEXT_STAGE_BLOCKED: Final = "RD18_P3X_A3A_CANONICAL_MEMBERSHIP_AND_CONTROL_PARITY_BUILD"
+NEXT_STAGE_BLOCKED: Final = "RD18_P3X_A3B_CONTROL_AND_COMPLETED_BAR_AUDIT_AUTHORIZATION"
 NEXT_STAGE_AUTHORIZED: Final = "RD18_P3E_EXECUTE_PREREGISTERED_THREE_UNIVERSE_REPLAY"
 
 FULL_TOP6_COVERAGE_MINIMUM: Final = 0.95
@@ -21,6 +21,7 @@ BLOCKING_REQUIREMENTS: Final = (
     "A2_SEALED_CUTOFF",
     "P3R_CONTRACT_FROZEN",
     "LINEAGE_HASH_MANIFEST_COMPLETE",
+    "A3B_EVIDENCE_COMPLETE",
     "C2_CANONICAL_MEMBERSHIP_301",
     "D2_CANONICAL_MEMBERSHIP_301",
     "E2_CANONICAL_MEMBERSHIP_301",
@@ -125,6 +126,7 @@ def evaluate_authorization(
         evidence,
         "lineage_hash_manifest_complete",
     )
+    a3b_complete = _required_bool(evidence, "a3b_evidence_complete")
 
     c2_decisions = _required_int(evidence, "c2_membership_decisions")
     d2_decisions = _required_int(evidence, "d2_membership_decisions")
@@ -164,6 +166,14 @@ def evaluate_authorization(
         evidence,
         "strategy_replay_executed",
     )
+    routing_executed = _required_bool(
+        evidence,
+        "portfolio_routing_executed",
+    )
+    exits_executed = _required_bool(
+        evidence,
+        "exit_simulation_executed",
+    )
     returns_calculated = _required_bool(
         evidence,
         "return_calculation_executed",
@@ -176,6 +186,7 @@ def evaluate_authorization(
         evidence,
         "production_authorized",
     )
+    network_requests = _required_int(evidence, "network_requests")
 
     requirements = (
         _result(
@@ -206,7 +217,16 @@ def evaluate_authorization(
             "LINEAGE_HASH_MANIFEST_COMPLETE",
             passed=lineage_complete,
             value=lineage_complete,
-            detail="Every frozen signal, router, and hold-rule source must be hashed.",
+            detail="Every frozen signal, router, hold-rule, and A3B source must be hashed.",
+        ),
+        _result(
+            "A3B_EVIDENCE_COMPLETE",
+            passed=a3b_complete,
+            value=a3b_complete,
+            detail=(
+                "A3B control parity, dense completed-bar audit, gap resolution, "
+                "and deterministic omission resolution must validate offline."
+            ),
         ),
         _result(
             "C2_CANONICAL_MEMBERSHIP_301",
@@ -230,19 +250,19 @@ def evaluate_authorization(
             "LEGACY_CONTROL_CANDIDATE_HASH_MATCH",
             passed=candidate_match,
             value=candidate_match,
-            detail="The six-asset 688-candidate control hash must reproduce exactly.",
+            detail="The six-asset 688-candidate control must match RD16L authority.",
         ),
         _result(
             "LEGACY_CONTROL_EVALUATED_HASH_MATCH",
             passed=evaluated_match,
             value=evaluated_match,
-            detail="The six-asset evaluated-ledger hash must reproduce exactly.",
+            detail="The six-asset 688-row evaluated ledger must match RD16L authority.",
         ),
         _result(
             "LEGACY_CONTROL_TRADE_HASH_MATCH",
             passed=trade_match,
             value=trade_match,
-            detail="The six-asset 567-trade control hash must reproduce exactly.",
+            detail="The six-asset 567-trade ledger must match RD16L authority.",
         ),
         _result(
             "FULL_TOP6_CANDIDATE_COVERAGE",
@@ -254,35 +274,47 @@ def evaluate_authorization(
             "MEMBER_EVALUATION_AUDIT_COVERAGE",
             passed=(evaluation_coverage >= MEMBER_EVALUATION_COVERAGE_MINIMUM),
             value=evaluation_coverage,
-            detail="Every selected member and completed signal bar requires an audit decision.",
+            detail="Every completed causal member bar requires one audit decision.",
         ),
         _result(
             "HISTORICAL_GAP_MEMBERSHIP_RESOLUTION",
             passed=gap_resolution,
             value=gap_resolution,
-            detail=(
-                "The 21 historical-source gaps must be resolved "
-                "against all operational memberships."
-            ),
+            detail="Historical-source gaps must be resolved against operational memberships.",
         ),
         _result(
             "OMISSION_REPLACEMENT_READINESS",
             passed=omission_ready,
             value=omission_ready,
-            detail="LOAO and named omissions require deterministic replacement readiness.",
+            detail=(
+                "Every LOAO omission must have deterministic resolution; "
+                "BCHSV-USDT and PEPE-USDT require actual replacements."
+            ),
         ),
         _result(
             "NO_PROHIBITED_ACTIVITY",
             passed=not (
-                replay_executed or returns_calculated or post_2024_accessed or production_authorized
+                replay_executed
+                or routing_executed
+                or exits_executed
+                or returns_calculated
+                or post_2024_accessed
+                or production_authorized
+                or network_requests
             ),
             value={
                 "strategy_replay_executed": replay_executed,
+                "portfolio_routing_executed": routing_executed,
+                "exit_simulation_executed": exits_executed,
                 "return_calculation_executed": returns_calculated,
                 "post_2024_accessed": post_2024_accessed,
                 "production_authorized": production_authorized,
+                "network_requests": network_requests,
             },
-            detail="A3 review cannot execute replay, returns, post-2024 access, or production.",
+            detail=(
+                "A3 review cannot execute replay, routing, exits, returns, "
+                "network requests, post-2024 access, or production."
+            ),
         ),
     )
 
@@ -292,6 +324,7 @@ def evaluate_authorization(
         "A2_SEALED_CUTOFF",
         "P3R_CONTRACT_FROZEN",
         "LINEAGE_HASH_MANIFEST_COMPLETE",
+        "A3B_EVIDENCE_COMPLETE",
         "NO_PROHIBITED_ACTIVITY",
     }
     technical_valid = all(

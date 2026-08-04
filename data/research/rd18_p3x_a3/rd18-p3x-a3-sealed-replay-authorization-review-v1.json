@@ -1,33 +1,52 @@
 {
+  "a3a_membership_stage": {
+    "protocol": "data/research/rd18_p3x_a3a/rd18-p3x-a3a-membership-protocol-v1.json",
+    "return_calculation_executed": false,
+    "runtime_report": "data/research/rd18_p3x_a3a_runtime/rd18-p3x-a3a-runtime-report-v1.json",
+    "status": "COMPLETE",
+    "strategy_replay_executed": false
+  },
+  "a3b_evidence_stage": {
+    "authorization_decision": "data/research/rd18_p3x_a3b_runtime/a3b-authorization-decision.json",
+    "protocol": "data/research/rd18_p3x_a3b/rd18-p3x-a3b-control-and-completed-bar-audit-protocol-v1.json",
+    "remediation": "data/research/rd18_p3x_a3b/rd18-p3x-a3b-loao-capacity-remediation-v1.json",
+    "return_calculation_executed": false,
+    "runtime_report": "data/research/rd18_p3x_a3b_runtime/rd18-p3x-a3b-runtime-report-v1.json",
+    "status": "COMPLETE_AND_READY_FOR_A3_REAUTHORIZATION",
+    "strategy_replay_executed": false
+  },
   "authorized_next_stage": "RD18_P3E_EXECUTE_PREREGISTERED_THREE_UNIVERSE_REPLAY",
-  "blocked_next_stage": "RD18_P3X_A3A_CANONICAL_MEMBERSHIP_AND_CONTROL_PARITY_BUILD",
-  "expected_current_decision": "RD18_P3X_A3_REPLAY_NOT_AUTHORIZED",
+  "blocked_next_stage": null,
+  "expected_current_decision": "RD18_P3X_A3_REPLAY_AUTHORIZED",
   "frozen_candidate": {
     "architecture_id": "COMPOSITE_ALPHA_V3",
     "source_variant_id": "STRONG_BULL_HOLD_96"
   },
-  "objective": "Decide whether the preregistered C2/D2/E2 replay may start, without executing replay, routing, exits, returns, or post-2024 access.",
+  "objective": "Decide whether the preregistered C2/D2/E2 replay may start, without executing replay, routing, exits, returns, network requests, or post-2024 access.",
   "prohibitions": {
     "exit_simulation": false,
+    "network_requests": false,
     "post_2024_access": false,
     "production": false,
     "return_calculation": false,
     "strategy_replay": false,
     "trade_routing": false
   },
+  "reauthorization_base_commit": "7281dba02708ed98bb340c05a1ac155dfdf157b4",
   "required_evidence": [
     "A2 validator PASS over 341 partitions",
-    "complete frozen lineage hash manifest",
+    "complete frozen lineage hash manifest including A3B sources",
+    "A3B offline validator PASS and deterministic output manifest",
     "canonical 301-decision C2 membership",
     "canonical 301-decision D2 membership",
     "canonical 301-decision E2 membership",
-    "exact six-asset candidate/evaluated/trade control hashes",
-    "full Top-6 candidate coverage >= 0.95",
-    "selected-member evaluation audit coverage = 1.0",
+    "exact RD16L-authoritative six-asset candidate/evaluated/trade parity",
+    "full effective candidate coverage >= 0.95",
+    "selected-member completed-bar audit coverage = 1.0",
     "historical-gap operational-membership resolution",
-    "deterministic omission replacement readiness"
+    "deterministic LOAO resolution with actual BCHSV-USDT and PEPE-USDT replacements"
   ],
-  "schema_version": "rd18-p3x-a3-authorization-protocol-v1",
+  "schema_version": "rd18-p3x-a3-authorization-protocol-v2",
   "stage": "RD18_P3X_A3_SEALED_REPLAY_AUTHORIZATION_REVIEW",
   "starting_commit": "4d12470c8ac8896df4a4011600b47cb7dc5864c0"
 }
