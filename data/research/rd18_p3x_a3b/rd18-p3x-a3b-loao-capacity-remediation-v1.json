@@ -1,0 +1,47 @@
+{
+  "decision": "DETERMINISTIC_CAPACITY_REDUCTION_IS_READY_LOAO_RESOLUTION",
+  "diagnosis": "STRUCTURAL_LOAO_CAPACITY_GAP_IN_SPARSE_INTERVALS",
+  "diagnostic_evidence": {
+    "classification_counts": {
+      "GENERATED_NONMEMBERS_ALL_ZERO_BAR": 102,
+      "NO_RANKED_NONMEMBER": 18
+    },
+    "earliest_decision": "2019-08-05T00:00:00+00:00",
+    "latest_decision": "2019-12-16T00:00:00+00:00",
+    "named_omissions": {
+      "BCHSV-USDT": {
+        "actual_replacement_ready_rows": 121,
+        "selected_rows": 121,
+        "unready_rows": 0
+      },
+      "PEPE-USDT": {
+        "actual_replacement_ready_rows": 76,
+        "selected_rows": 76,
+        "unready_rows": 0
+      }
+    },
+    "universe": "D2",
+    "unready_rows": 120
+  },
+  "prohibitions": {
+    "exit_simulation": false,
+    "network_requests": false,
+    "portfolio_routing": false,
+    "post_2024_access": false,
+    "production": false,
+    "return_calculation": false,
+    "strategy_replay": false
+  },
+  "schema_version": "rd18-p3x-a3b-loao-capacity-remediation-v1",
+  "semantics": {
+    "capacity_rule": "When no interval-ready GENERATED nonmember exists, retain the omission and reduce capacity by one.",
+    "loao_objective": "Remove one selected asset and deterministically resolve the remaining operational set.",
+    "named_omission_rule": "BCHSV-USDT and PEPE-USDT must have actual interval-ready replacements; capacity reduction is not sufficient for named omissions.",
+    "readiness_rule": "A row is ready when either an actual replacement or a deterministic capacity reduction is materialized.",
+    "replacement_rule": "Use the highest-ranked interval-ready GENERATED nonmember when available.",
+    "zero_bar_rule": "Generated zero-bar intervals are valid empty audit domains and do not block authorization."
+  },
+  "stage": "RD18_P3X_A3B_LOAO_POLICY_OR_CAPACITY_REMEDIATION",
+  "starting_commit": "7281dba02708ed98bb340c05a1ac155dfdf157b4",
+  "success_next": "RD18_P3X_A3_REAUTHORIZATION_REVIEW"
+}

@@ -1,0 +1,96 @@
+{
+  "completed_bar_audit": {
+    "coverage_required": 1.0,
+    "decision_values": [
+      "SIGNAL",
+      "NO_SIGNAL"
+    ],
+    "domain": "Every completed hourly causal feature timestamp inside each effective operational membership interval.",
+    "signal_rule": "SIGNAL when at least one A2 selected_pre_router candidate exists at the completed bar; otherwise NO_SIGNAL.",
+    "sparse_candidate_only_audit_is_insufficient": true
+  },
+  "legacy_control": {
+    "expected_rows": {
+      "candidates": 688,
+      "evaluated": 688,
+      "trades": 567
+    },
+    "hash_authority": "RD16L_LOCAL_LEDGER_MANIFEST",
+    "p3r_hash_erratum": "P3R recorded ledger hashes are metadata-unreproducible from the documented contract; the committed erratum is accepted only when upstream P3R, strategy logic and market data are unchanged.",
+    "required_proof": [
+      "regenerated row count match",
+      "regenerated local content hash match",
+      "RD16L manifest content hash match",
+      "complete column and value parity"
+    ],
+    "symbols": [
+      "BTC/USDT",
+      "ETH/USDT",
+      "SOL/USDT",
+      "LINK/USDT",
+      "AVAX/USDT",
+      "NEAR/USDT"
+    ]
+  },
+  "membership_repair": {
+    "actual_unavailable_interval_policy": "Replace a selected member only when it lacks a GENERATED partition. A generated member with zero completed causal feature bars remains selected and contributes an empty audit domain; zero bars are not data unavailability.",
+    "amendment": "data/research/rd18_p3x_a3b/rd18-p3x-a3b-loao-capacity-remediation-v1.json",
+    "effective_pair_uniqueness_required": true,
+    "loao_capacity_conditioning": {
+      "actual_replacement_preferred": true,
+      "capacity_reduction_is_deterministic_resolution": true,
+      "capacity_reduction_when_no_interval_ready_nonmember": true,
+      "diagnostic_evidence": {
+        "date_range": [
+          "2019-08-05T00:00:00+00:00",
+          "2019-12-16T00:00:00+00:00"
+        ],
+        "generated_nonmembers_all_zero_bar": 102,
+        "named_omission_unready_rows": 0,
+        "no_ranked_nonmember": 18,
+        "universe": "D2",
+        "unready_rows_before_remediation": 120
+      },
+      "named_omissions_require_actual_replacement": [
+        "BCHSV-USDT",
+        "PEPE-USDT"
+      ]
+    },
+    "named_omissions": [
+      "BCHSV-USDT",
+      "PEPE-USDT"
+    ],
+    "single_omission_readiness_policy": "Resolve each LOAO omission deterministically. Use the highest-ranked interval-ready GENERATED nonmember when one exists; otherwise the counterfactual remains ready at reduced capacity. BCHSV-USDT and PEPE-USDT require actual interval-ready replacements."
+  },
+  "objective": "Adopt the already-passed bounded six-symbol control regeneration under the RD16L local-ledger hash authority, repair members lacking GENERATED partitions deterministically, and materialize exactly one SIGNAL or NO_SIGNAL decision for every completed causal feature bar of every effective C2, D2 and E2 member. Generated zero-bar membership intervals are valid empty audit domains.",
+  "prohibitions": {
+    "exit_simulation": false,
+    "network_requests": false,
+    "optimization": false,
+    "portfolio_routing": false,
+    "post_2024_access": false,
+    "production": false,
+    "return_calculation": false,
+    "three_universe_strategy_replay": false
+  },
+  "replay_authorized_by_a3b_itself": false,
+  "required_outputs": [
+    "legacy-control-candidate-parity.json",
+    "legacy-control-evaluated-parity.json",
+    "legacy-control-trade-parity.json",
+    "effective-operational-membership.csv",
+    "omission-replacement-readiness.csv",
+    "historical-gap-resolution.csv",
+    "selected-member-completed-bar-audit.parquet",
+    "selected-member-evaluation-coverage.json",
+    "historical-gap-membership-resolution.json",
+    "omission-replacement-readiness.json",
+    "a3b-authorization-decision.json",
+    "rd18-p3x-a3b-runtime-report-v1.json",
+    "output-manifest.json"
+  ],
+  "schema_version": "rd18-p3x-a3b-control-and-completed-bar-audit-protocol-v1",
+  "stage": "RD18_P3X_A3B_CONTROL_AND_COMPLETED_BAR_AUDIT_AUTHORIZATION",
+  "starting_commit": "7281dba02708ed98bb340c05a1ac155dfdf157b4",
+  "success_next": "RD18_P3X_A3_REAUTHORIZATION_REVIEW"
+}
