@@ -1,0 +1,199 @@
+{
+  "all_corrected_runs_cash_feasible": true,
+  "base_economic_gates_passed": false,
+  "base_run_count": 6,
+  "candidate_decision": "RD18_P3E_REJECTED_WORST_UNIVERSE_ECONOMIC_FAILURE",
+  "candidate_disposition": "REJECTED",
+  "corrected_base_classification": {
+    "base_advancement_eligible_pending_sensitivity": false,
+    "base_economic_gates_passed": false,
+    "classification": "BASE_WORST_UNIVERSE_ECONOMIC_FAILURE",
+    "cross_universe_robustness_passed": false,
+    "final_advancement_decision_deferred": true,
+    "next_stage": "RD18_P3E_LOYO_AND_LOAO_SENSITIVITY_EXECUTION",
+    "one_x_monthly_geometric_returns": {
+      "C2": 0.01005768147891306,
+      "D2": 0.010173695026640894,
+      "E2": 0.009133294849977824
+    },
+    "sensitivity_execution_required": true,
+    "strategic_monthly_target": 0.24,
+    "strategic_objective_met": false,
+    "worst_universe_monthly_geometric_return": 0.009133294849977824
+  },
+  "cross_universe_robustness": {
+    "checks": {
+      "all_three_universes_pass_worst_universe_gates": false,
+      "e2_required_to_lie_numerically_between_c2_and_d2": true,
+      "maximum_drawdown_spread_maximum": true,
+      "one_x_conclusion_reversal_allowed": false,
+      "one_x_worst_to_best_net_return_ratio_minimum": true,
+      "two_x_conclusion_reversal_allowed": true,
+      "two_x_worst_to_best_net_return_ratio_minimum": false
+    },
+    "one_x_conclusions": {
+      "C2": true,
+      "D2": false,
+      "E2": false
+    },
+    "passed": false,
+    "strong_return_retention_warning": false,
+    "two_x_conclusions": {
+      "C2": false,
+      "D2": false,
+      "E2": false
+    },
+    "values": {
+      "best_universe_one_x_net_return": 1.011794300443047,
+      "best_universe_two_x_net_return": -0.07342654232190882,
+      "one_x_maximum_drawdown_spread": 0.013338804942729987,
+      "one_x_worst_to_best_net_return_ratio": 0.8634242023535327,
+      "two_x_maximum_drawdown_spread": 0.01563073956492811,
+      "two_x_worst_to_best_net_return_ratio": 0.0,
+      "worst_universe_one_x_legacy_return_retention": 0.8077303083173917,
+      "worst_universe_one_x_net_return": 0.8736076868058884,
+      "worst_universe_two_x_net_return": -0.08366372530757293
+    }
+  },
+  "cross_universe_robustness_passed": false,
+  "decision": "RD18_P3E_FINAL_DECISION_PUBLISHED",
+  "decision_precedence_outcome": "WORST_UNIVERSE_ECONOMIC_FAILURE",
+  "execution_status": "COMPLETE",
+  "exit_simulation_executed_in_this_stage": false,
+  "final_advancement_eligible": false,
+  "final_decision_made": true,
+  "final_decision_ready": true,
+  "followup_constraint": "Do not tune, reinterpret, or advance the rejected P3E candidate after observing results.",
+  "holdout_2025_accessed": false,
+  "holdout_2026_accessed": false,
+  "loao_applicability_rows": 79,
+  "loao_run_count": 158,
+  "loyo_run_count": 36,
+  "network_requests": 0,
+  "next_stage": "RD18_P3E_CLOSED_NO_ADVANCEMENT",
+  "one_x_base_all_positive": true,
+  "p3e_closed": true,
+  "passed": true,
+  "per_universe_tuning": false,
+  "performance_reporting_executed_in_this_stage": false,
+  "portfolio_routing_executed_in_this_stage": false,
+  "post_2024_accessed": false,
+  "post_hoc_trade_deletion": false,
+  "prior_negative_cash_base_superseded": true,
+  "production_authorized": false,
+  "recommended_followup": "NEW_PREREGISTERED_CANDIDATE_REQUIRED",
+  "return_calculation_executed_in_this_stage": false,
+  "schema_version": "rd18-p3e-final-decision-report-v1",
+  "sensitivity_gate_evaluation": {
+    "checks": {
+      "bchsv_executed": true,
+      "loao_one_x_all_positive": true,
+      "loao_one_x_profit_factor_minimum": true,
+      "loyo_one_x_all_positive": true,
+      "loyo_one_x_profit_factor_minimum": true,
+      "named_omission_conclusion_reversal_absent": true,
+      "pepe_executed": true
+    },
+    "named_omission_reversal_rows": [
+      {
+        "base_conclusion": true,
+        "cost_multiplier": 1.0,
+        "omission_conclusion": true,
+        "pair": "BCHSV-USDT",
+        "reversal": false,
+        "universe_id": "C2"
+      },
+      {
+        "base_conclusion": false,
+        "cost_multiplier": 2.0,
+        "omission_conclusion": false,
+        "pair": "BCHSV-USDT",
+        "reversal": false,
+        "universe_id": "C2"
+      },
+      {
+        "base_conclusion": true,
+        "cost_multiplier": 1.0,
+        "omission_conclusion": true,
+        "pair": "PEPE-USDT",
+        "reversal": false,
+        "universe_id": "C2"
+      },
+      {
+        "base_conclusion": false,
+        "cost_multiplier": 2.0,
+        "omission_conclusion": false,
+        "pair": "PEPE-USDT",
+        "reversal": false,
+        "universe_id": "C2"
+      },
+      {
+        "base_conclusion": true,
+        "cost_multiplier": 1.0,
+        "omission_conclusion": true,
+        "pair": "BCHSV-USDT",
+        "reversal": false,
+        "universe_id": "E2"
+      },
+      {
+        "base_conclusion": false,
+        "cost_multiplier": 2.0,
+        "omission_conclusion": false,
+        "pair": "BCHSV-USDT",
+        "reversal": false,
+        "universe_id": "E2"
+      },
+      {
+        "base_conclusion": true,
+        "cost_multiplier": 1.0,
+        "omission_conclusion": true,
+        "pair": "PEPE-USDT",
+        "reversal": false,
+        "universe_id": "E2"
+      },
+      {
+        "base_conclusion": false,
+        "cost_multiplier": 2.0,
+        "omission_conclusion": false,
+        "pair": "PEPE-USDT",
+        "reversal": false,
+        "universe_id": "E2"
+      }
+    ],
+    "passed": true,
+    "two_x_loao_failures": 74,
+    "two_x_loyo_failures": 11
+  },
+  "sensitivity_gates_passed": true,
+  "stage": "RD18_P3E_FINAL_DECISION_AND_PUBLICATION",
+  "strategic_objective_met": false,
+  "strategy_replay_executed_in_this_stage": false,
+  "technical_checks": {
+    "base_parity_valid": true,
+    "cash_feasible": true,
+    "cash_remediation_valid": true,
+    "dry_run_valid": true,
+    "lineage_manifests_verified": true,
+    "no_per_universe_tuning": true,
+    "no_post_2024_access": true,
+    "no_post_hoc_trade_deletion": true,
+    "no_threshold_changes": true,
+    "sensitivity_execution_valid": true
+  },
+  "technical_valid": true,
+  "thresholds_changed_after_results": false,
+  "two_x_base_all_negative": true,
+  "upstream_hashes": {
+    "cash_manifest": "8836b397e594eaaa696523cf9c2dfc5b475ab3cbd81a2a7cf36e8b4a5c0bcca9",
+    "cash_report": "d918bf20c44e3ca2e422933b201105ae6b57b2e8fb8595be3fed7ecc837f74e4",
+    "dry_manifest": "dd24def921bf5bcc013d2cb38dd6e7fdde6b6cde7099560864f9ff4864f5bfca",
+    "dry_report": "9a51c375a9a59ea3d50328a38c518afce4645de378088650cb1286a50850b4fb",
+    "sensitivity_manifest": "d24bd028b7f3add5037c077417c8a3e90ac722fc97f2e378c5322ba72d5feb6b",
+    "sensitivity_report": "59edeca6b13511e724cac43709e45c2be3ffbc6041574d3525906ff299885697"
+  },
+  "upstream_manifest_deterministic_hashes": {
+    "cash": "19f92b4d4888ba585b12804517dddc768ebf43c15df276dd99de302793ce0090",
+    "dry": "0e41ea24f33948ab39a315f31b5db475b000ffc69788def1f184f5cf94d1380e",
+    "sensitivity": "be968d172fe009d81fa6b4d5bf6aa65bec92564526765cc9b2960b58ecb06321"
+  }
+}

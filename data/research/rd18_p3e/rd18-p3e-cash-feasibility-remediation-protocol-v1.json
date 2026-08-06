@@ -1,0 +1,37 @@
+{
+  "base_commit": "45794dc0cd0908cccd106ba9c591071f6836e1cd",
+  "deferred": [
+    "LOYO",
+    "LOAO",
+    "final advancement decision",
+    "production authorization"
+  ],
+  "evidence_policy": {
+    "cash_equity_reconciliation_required": true,
+    "corrected_six_runs_required": true,
+    "minimum_cash_must_be_nonnegative": true,
+    "prior_base_outputs_preserved": true,
+    "prior_base_superseded_for_advancement": true
+  },
+  "next_stage": "RD18_P3E_LOYO_AND_LOAO_SENSITIVITY_EXECUTION",
+  "remediation": {
+    "cost_specific_routing": [
+      1.0,
+      2.0
+    ],
+    "method": "Reroute every frozen V3 candidate chronologically with exit settlement before same-hour entries and reject an entry when notional plus cost-specific entry fee exceeds available cash.",
+    "new_router_decision": "REJECTED_INSUFFICIENT_CASH",
+    "parameter_changes": false,
+    "per_universe_tuning": false,
+    "position_rescaling": false,
+    "post_hoc_trade_deletion": false
+  },
+  "root_cause": "The frozen STRONG_BULL_HOLD_96 router enforced position and open-risk limits but did not enforce available spot cash.",
+  "schema_version": "rd18-p3e-cash-feasibility-remediation-protocol-v1",
+  "stage": "RD18_P3E_CASH_FEASIBILITY_REMEDIATION",
+  "trigger": {
+    "frozen_contract_negative_cash_allowed": false,
+    "prior_base_decision": "RD18_P3E_BASE_COST_AND_PERFORMANCE_EVALUATION_COMPLETE",
+    "prior_minimum_cash_negative_in_all_six_runs": true
+  }
+}

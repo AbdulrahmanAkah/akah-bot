@@ -1,0 +1,245 @@
+{
+  "all_universe_checks_passed": true,
+  "cost_stress_executed": false,
+  "decision": "RD18_P3E_TECHNICAL_DRY_RUN_COMPLETE",
+  "equity_curve_built": false,
+  "exit_simulation_executed": true,
+  "loao_executed": false,
+  "loyo_executed": false,
+  "network_requests": 0,
+  "next_stage": "RD18_P3E_BASE_COST_AND_PERFORMANCE_EVALUATION",
+  "passed": true,
+  "per_trade_pnl_fields_materialized": true,
+  "performance_metrics_reported": false,
+  "performance_reporting_executed": false,
+  "portfolio_return_calculation_executed": false,
+  "portfolio_routing_executed": true,
+  "post_2024_accessed": false,
+  "production_authorized": false,
+  "return_calculation_executed": true,
+  "schema_version": "rd18-p3e-technical-dry-run-report-v1",
+  "stage": "RD18_P3E_TECHNICAL_DRY_RUN",
+  "strategy_replay_executed": true,
+  "universe_count": 3,
+  "universes": [
+    {
+      "candidate_rows": 2184,
+      "checks": {
+        "admitted_trade_count_parity": true,
+        "admitted_trade_identity_parity": true,
+        "architecture_fixed": true,
+        "candidate_cutoff_respected": true,
+        "candidate_evaluated_identity_parity": true,
+        "candidate_ids_unique": true,
+        "candidates_nonempty": true,
+        "engine_cooldowns_respected": true,
+        "evaluated_cutoff_respected": true,
+        "evaluated_ids_unique": true,
+        "evaluated_nonempty": true,
+        "holding_policy_respected": true,
+        "long_only": true,
+        "maximum_open_risk_respected": true,
+        "maximum_positions_respected": true,
+        "positive_trade_size": true,
+        "router_decisions_present": true,
+        "same_symbol_overlap_absent": true,
+        "source_candidates_nonempty": true,
+        "source_cutoff_respected": true,
+        "source_start_respected": true,
+        "spot_only": true,
+        "trade_cutoff_respected": true,
+        "trade_identity_subset": true,
+        "trade_ids_unique": true,
+        "trades_nonempty": true
+      },
+      "engine_candidate_counts": {
+        "COMPRESSION_EXPANSION_SPECIALIST_V3": 906,
+        "TREND_CONTINUATION_CORE_V3": 1278
+      },
+      "engine_trade_counts": {
+        "COMPRESSION_EXPANSION_SPECIALIST_V3": 642,
+        "TREND_CONTINUATION_CORE_V3": 601
+      },
+      "equity_curve_built": false,
+      "evaluated_rows": 2184,
+      "exit_reason_counts": {
+        "HARD_STOP": 725,
+        "PROFIT_FLOOR": 434,
+        "TIME_EXIT": 84
+      },
+      "market_regime_trade_counts": {
+        "BEAR": 98,
+        "BULL": 62,
+        "STRONG_BULL": 1083
+      },
+      "maximum_open_risk_fraction_observed": 0.0225,
+      "maximum_positions_observed": 4,
+      "performance_metrics_reported": false,
+      "portfolio_return_calculation_executed": false,
+      "router_decision_counts": {
+        "ADMITTED": 1243,
+        "REJECTED_ENGINE_CONFLICT": 147,
+        "REJECTED_ENGINE_COOLDOWN": 59,
+        "REJECTED_MAX_OPEN_RISK": 179,
+        "REJECTED_SAME_SYMBOL_ACTIVE": 556
+      },
+      "schema_version": "rd18-p3e-technical-universe-summary-v1",
+      "source_candidate_rows": 2184,
+      "source_pair_count": 27,
+      "source_signal_end": "2024-12-31T14:00:00+00:00",
+      "source_signal_start": "2019-08-05T01:00:00+00:00",
+      "source_symbol_count": 27,
+      "strong_bull_extension_observed": true,
+      "trade_rows": 1243,
+      "universe_id": "C2"
+    },
+    {
+      "candidate_rows": 2158,
+      "checks": {
+        "admitted_trade_count_parity": true,
+        "admitted_trade_identity_parity": true,
+        "architecture_fixed": true,
+        "candidate_cutoff_respected": true,
+        "candidate_evaluated_identity_parity": true,
+        "candidate_ids_unique": true,
+        "candidates_nonempty": true,
+        "engine_cooldowns_respected": true,
+        "evaluated_cutoff_respected": true,
+        "evaluated_ids_unique": true,
+        "evaluated_nonempty": true,
+        "holding_policy_respected": true,
+        "long_only": true,
+        "maximum_open_risk_respected": true,
+        "maximum_positions_respected": true,
+        "positive_trade_size": true,
+        "router_decisions_present": true,
+        "same_symbol_overlap_absent": true,
+        "source_candidates_nonempty": true,
+        "source_cutoff_respected": true,
+        "source_start_respected": true,
+        "spot_only": true,
+        "trade_cutoff_respected": true,
+        "trade_identity_subset": true,
+        "trade_ids_unique": true,
+        "trades_nonempty": true
+      },
+      "engine_candidate_counts": {
+        "COMPRESSION_EXPANSION_SPECIALIST_V3": 885,
+        "TREND_CONTINUATION_CORE_V3": 1273
+      },
+      "engine_trade_counts": {
+        "COMPRESSION_EXPANSION_SPECIALIST_V3": 624,
+        "TREND_CONTINUATION_CORE_V3": 604
+      },
+      "equity_curve_built": false,
+      "evaluated_rows": 2158,
+      "exit_reason_counts": {
+        "HARD_STOP": 712,
+        "PROFIT_FLOOR": 431,
+        "TIME_EXIT": 85
+      },
+      "market_regime_trade_counts": {
+        "BEAR": 106,
+        "BULL": 58,
+        "STRONG_BULL": 1064
+      },
+      "maximum_open_risk_fraction_observed": 0.0225,
+      "maximum_positions_observed": 4,
+      "performance_metrics_reported": false,
+      "portfolio_return_calculation_executed": false,
+      "router_decision_counts": {
+        "ADMITTED": 1228,
+        "REJECTED_ENGINE_CONFLICT": 150,
+        "REJECTED_ENGINE_COOLDOWN": 51,
+        "REJECTED_MAX_OPEN_RISK": 182,
+        "REJECTED_SAME_SYMBOL_ACTIVE": 547
+      },
+      "schema_version": "rd18-p3e-technical-universe-summary-v1",
+      "source_candidate_rows": 2158,
+      "source_pair_count": 23,
+      "source_signal_end": "2024-12-31T14:00:00+00:00",
+      "source_signal_start": "2019-08-05T01:00:00+00:00",
+      "source_symbol_count": 23,
+      "strong_bull_extension_observed": true,
+      "trade_rows": 1228,
+      "universe_id": "D2"
+    },
+    {
+      "candidate_rows": 2210,
+      "checks": {
+        "admitted_trade_count_parity": true,
+        "admitted_trade_identity_parity": true,
+        "architecture_fixed": true,
+        "candidate_cutoff_respected": true,
+        "candidate_evaluated_identity_parity": true,
+        "candidate_ids_unique": true,
+        "candidates_nonempty": true,
+        "engine_cooldowns_respected": true,
+        "evaluated_cutoff_respected": true,
+        "evaluated_ids_unique": true,
+        "evaluated_nonempty": true,
+        "holding_policy_respected": true,
+        "long_only": true,
+        "maximum_open_risk_respected": true,
+        "maximum_positions_respected": true,
+        "positive_trade_size": true,
+        "router_decisions_present": true,
+        "same_symbol_overlap_absent": true,
+        "source_candidates_nonempty": true,
+        "source_cutoff_respected": true,
+        "source_start_respected": true,
+        "spot_only": true,
+        "trade_cutoff_respected": true,
+        "trade_identity_subset": true,
+        "trade_ids_unique": true,
+        "trades_nonempty": true
+      },
+      "engine_candidate_counts": {
+        "COMPRESSION_EXPANSION_SPECIALIST_V3": 915,
+        "TREND_CONTINUATION_CORE_V3": 1295
+      },
+      "engine_trade_counts": {
+        "COMPRESSION_EXPANSION_SPECIALIST_V3": 646,
+        "TREND_CONTINUATION_CORE_V3": 610
+      },
+      "equity_curve_built": false,
+      "evaluated_rows": 2210,
+      "exit_reason_counts": {
+        "HARD_STOP": 730,
+        "PROFIT_FLOOR": 441,
+        "TIME_EXIT": 85
+      },
+      "market_regime_trade_counts": {
+        "BEAR": 100,
+        "BULL": 61,
+        "STRONG_BULL": 1095
+      },
+      "maximum_open_risk_fraction_observed": 0.0225,
+      "maximum_positions_observed": 4,
+      "performance_metrics_reported": false,
+      "portfolio_return_calculation_executed": false,
+      "router_decision_counts": {
+        "ADMITTED": 1256,
+        "REJECTED_ENGINE_CONFLICT": 150,
+        "REJECTED_ENGINE_COOLDOWN": 58,
+        "REJECTED_MAX_OPEN_RISK": 185,
+        "REJECTED_SAME_SYMBOL_ACTIVE": 561
+      },
+      "schema_version": "rd18-p3e-technical-universe-summary-v1",
+      "source_candidate_rows": 2210,
+      "source_pair_count": 27,
+      "source_signal_end": "2024-12-31T14:00:00+00:00",
+      "source_signal_start": "2019-08-05T01:00:00+00:00",
+      "source_symbol_count": 27,
+      "strong_bull_extension_observed": true,
+      "trade_rows": 1256,
+      "universe_id": "E2"
+    }
+  ],
+  "upstream": {
+    "a3_decision": "RD18_P3X_A3_REPLAY_AUTHORIZED",
+    "build_decision": "RD18_P3E_IMPLEMENTATION_BUILD_COMPLETE",
+    "build_manifest_sha256": "ac07d150d241dea5efb1aa888522bdaeacc295dfd3f9b27dd1492d0f4b49b959",
+    "build_report_sha256": "40c3ebcbd0817542d93ce4be148f377e516d755118101e0200d718d44bca7ef8"
+  }
+}

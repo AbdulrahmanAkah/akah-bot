@@ -1,0 +1,32 @@
+{
+  "candidate_rows": 2158,
+  "checks": {
+    "cash_decision_present": true,
+    "cash_feasible": true,
+    "engine_cooldowns_respected": true,
+    "maximum_open_risk_respected": true,
+    "maximum_positions_respected": true,
+    "minimum_cash_nonnegative": true,
+    "same_symbol_overlap_absent": true
+  },
+  "cost_multiplier": 1.0,
+  "evaluated_rows": 2158,
+  "final_cash": 201179.43004430528,
+  "insufficient_cash_rejections": 78,
+  "maximum_open_notional_fraction_observed": 1.4985014985014986,
+  "maximum_open_risk_fraction_observed": 0.0225,
+  "maximum_positions_observed": 4,
+  "minimum_cash": 27.594472316683095,
+  "passed": true,
+  "router_decision_counts": {
+    "ADMITTED": 1194,
+    "REJECTED_ENGINE_CONFLICT": 150,
+    "REJECTED_ENGINE_COOLDOWN": 47,
+    "REJECTED_INSUFFICIENT_CASH": 78,
+    "REJECTED_MAX_OPEN_RISK": 162,
+    "REJECTED_SAME_SYMBOL_ACTIVE": 527
+  },
+  "schema_version": "rd18-p3e-cash-route-summary-v1",
+  "trade_rows": 1194,
+  "universe_id": "D2"
+}

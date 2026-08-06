@@ -1,0 +1,75 @@
+{
+  "base_commit": "45794dc0cd0908cccd106ba9c591071f6836e1cd",
+  "decision_policy": {
+    "corrected_base_failure_remains_precedent": true,
+    "decision_precedence": [
+      "technical invalidity",
+      "worst-universe economic failure",
+      "cross-universe robustness failure",
+      "sensitivity concentration failure",
+      "robust but strategic objective unmet",
+      "robust and strategic objective met"
+    ],
+    "execution_pass_is_separate_from_sensitivity_gate_pass": true,
+    "final_decision_deferred_to_publication_stage": true
+  },
+  "gates": {
+    "loao_one_x_all_positive": true,
+    "loao_one_x_profit_factor_minimum": 1.0,
+    "loyo_one_x_all_positive": true,
+    "loyo_one_x_profit_factor_minimum": 1.0,
+    "named_omission_conclusion_reversal_allowed": false,
+    "two_x_failure_interpretation": "Robustness warning unless the corrected base three-universe 2x gate also fails.",
+    "two_x_required_and_reported": true
+  },
+  "loao": {
+    "asset_scope": "Every asset traded in either corrected base cost run, in each applicable universe, plus registered BCHSV-USDT and PEPE-USDT omissions where membership applies.",
+    "capacity_reduction_when_no_ready_replacement": true,
+    "cost_multipliers": [
+      1.0,
+      2.0
+    ],
+    "method": "Use the authorized A3B per-decision omission ledger for original members. Remove effective operational replacements directly when applicable, select the highest-ranked interval-ready GENERATED nonmember, rebuild A2 membership selection and V3 candidate paths, and rerun cash-aware routing.",
+    "named_omissions": [
+      "BCHSV-USDT",
+      "PEPE-USDT"
+    ],
+    "post_hoc_trade_deletion": false
+  },
+  "loyo": {
+    "cost_multipliers": [
+      1.0,
+      2.0
+    ],
+    "method": "Disable new admissions whose signal_close is in the omitted calendar year. Preserve chronological routing and normal exits for positions admitted outside it.",
+    "omitted_years": [
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024
+    ],
+    "required_runs": 36,
+    "universes": [
+      "C2",
+      "D2",
+      "E2"
+    ]
+  },
+  "next_stage": "RD18_P3E_FINAL_DECISION_AND_PUBLICATION",
+  "objective": "Complete every preregistered leave-one-year-out and leave-one-asset-out sensitivity run using the corrected cash-aware Spot router.",
+  "prohibitions": {
+    "derivatives": false,
+    "leverage": false,
+    "margin": false,
+    "network_requests": false,
+    "parameter_changes": false,
+    "per_universe_tuning": false,
+    "post_2024_access": false,
+    "production": false
+  },
+  "schema_version": "rd18-p3e-loyo-loao-sensitivity-protocol-v1",
+  "stage": "RD18_P3E_LOYO_AND_LOAO_SENSITIVITY_EXECUTION",
+  "upstream_decision": "RD18_P3E_CASH_FEASIBILITY_REMEDIATION_COMPLETE"
+}

@@ -1,0 +1,32 @@
+{
+  "candidate_rows": 2210,
+  "checks": {
+    "cash_decision_present": true,
+    "cash_feasible": true,
+    "engine_cooldowns_respected": true,
+    "maximum_open_risk_respected": true,
+    "maximum_positions_respected": true,
+    "minimum_cash_nonnegative": true,
+    "same_symbol_overlap_absent": true
+  },
+  "cost_multiplier": 2.0,
+  "evaluated_rows": 2210,
+  "final_cash": 91633.62746924254,
+  "insufficient_cash_rejections": 498,
+  "maximum_open_notional_fraction_observed": 1.4985014985014986,
+  "maximum_open_risk_fraction_observed": 0.0225,
+  "maximum_positions_observed": 3,
+  "minimum_cash": 216.59079999178357,
+  "passed": true,
+  "router_decision_counts": {
+    "ADMITTED": 1006,
+    "REJECTED_ENGINE_CONFLICT": 150,
+    "REJECTED_ENGINE_COOLDOWN": 40,
+    "REJECTED_INSUFFICIENT_CASH": 498,
+    "REJECTED_MAX_OPEN_RISK": 65,
+    "REJECTED_SAME_SYMBOL_ACTIVE": 451
+  },
+  "schema_version": "rd18-p3e-cash-route-summary-v1",
+  "trade_rows": 1006,
+  "universe_id": "E2"
+}

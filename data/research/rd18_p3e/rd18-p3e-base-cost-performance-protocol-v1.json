@@ -1,0 +1,53 @@
+{
+  "base_commit": "45794dc0cd0908cccd106ba9c591071f6836e1cd",
+  "decision_policy": {
+    "execution_pass_is_separate_from_economic_gate_pass": true,
+    "final_advancement_decision_deferred": true,
+    "threshold_changes_after_results": false,
+    "worst_universe_controls_base_gate_status": true
+  },
+  "deferred": [
+    "LOYO",
+    "LOAO",
+    "final sensitivity concentration decision",
+    "production authorization"
+  ],
+  "execution": {
+    "cost_stress": [
+      1.0,
+      2.0
+    ],
+    "equity_curves": true,
+    "exit_simulation_reexecuted": false,
+    "performance_reporting": true,
+    "portfolio_returns": true,
+    "portfolio_routing_reexecuted": false,
+    "strategy_replay_reexecuted": false,
+    "strategy_replay_reused_from_technical_dry_run": true
+  },
+  "next_stage": "RD18_P3E_LOYO_AND_LOAO_SENSITIVITY_EXECUTION",
+  "objective": "Calculate and report the six preregistered base runs: C2, D2 and E2 at 1x and 2x transaction costs.",
+  "prohibitions": {
+    "leverage": false,
+    "network_requests": false,
+    "parameter_changes": false,
+    "per_universe_tuning": false,
+    "post_2024_access": false,
+    "production": false
+  },
+  "reporting": [
+    "net return, CAGR and geometric monthly return",
+    "profit factor, maximum drawdown and minimum cash",
+    "trade count, win rate and expectancy",
+    "annual and monthly performance",
+    "asset, engine, regime, exit and holding attribution",
+    "Current-Seed and Evidence-Strong attribution",
+    "BCHSV and PEPE attribution",
+    "top-trade, top-asset and top-year concentration",
+    "C2/D2/E2 performance dispersion",
+    "1x and 2x conclusion consistency"
+  ],
+  "schema_version": "rd18-p3e-base-cost-performance-protocol-v1",
+  "stage": "RD18_P3E_BASE_COST_AND_PERFORMANCE_EVALUATION",
+  "upstream_decision": "RD18_P3E_TECHNICAL_DRY_RUN_COMPLETE"
+}

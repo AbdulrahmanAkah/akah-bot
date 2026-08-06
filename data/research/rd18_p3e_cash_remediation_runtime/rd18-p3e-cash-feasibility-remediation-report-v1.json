@@ -1,0 +1,420 @@
+{
+  "cash_aware_routing_executed": true,
+  "corrected_base_classification": {
+    "base_advancement_eligible_pending_sensitivity": false,
+    "base_economic_gates_passed": false,
+    "classification": "BASE_WORST_UNIVERSE_ECONOMIC_FAILURE",
+    "cross_universe_robustness_passed": false,
+    "final_advancement_decision_deferred": true,
+    "next_stage": "RD18_P3E_LOYO_AND_LOAO_SENSITIVITY_EXECUTION",
+    "one_x_monthly_geometric_returns": {
+      "C2": 0.01005768147891306,
+      "D2": 0.010173695026640894,
+      "E2": 0.009133294849977824
+    },
+    "sensitivity_execution_required": true,
+    "strategic_monthly_target": 0.24,
+    "strategic_objective_met": false,
+    "worst_universe_monthly_geometric_return": 0.009133294849977824
+  },
+  "corrected_runs": 6,
+  "cost_specific_routing_executed": true,
+  "cross_universe_robustness": {
+    "checks": {
+      "all_three_universes_pass_worst_universe_gates": false,
+      "e2_required_to_lie_numerically_between_c2_and_d2": true,
+      "maximum_drawdown_spread_maximum": true,
+      "one_x_conclusion_reversal_allowed": false,
+      "one_x_worst_to_best_net_return_ratio_minimum": true,
+      "two_x_conclusion_reversal_allowed": true,
+      "two_x_worst_to_best_net_return_ratio_minimum": false
+    },
+    "one_x_conclusions": {
+      "C2": true,
+      "D2": false,
+      "E2": false
+    },
+    "passed": false,
+    "strong_return_retention_warning": false,
+    "two_x_conclusions": {
+      "C2": false,
+      "D2": false,
+      "E2": false
+    },
+    "values": {
+      "best_universe_one_x_net_return": 1.011794300443047,
+      "best_universe_two_x_net_return": -0.07342654232190882,
+      "one_x_maximum_drawdown_spread": 0.013338804942729987,
+      "one_x_worst_to_best_net_return_ratio": 0.8634242023535327,
+      "two_x_maximum_drawdown_spread": 0.01563073956492811,
+      "two_x_worst_to_best_net_return_ratio": 0.0,
+      "worst_universe_one_x_legacy_return_retention": 0.8077303083173917,
+      "worst_universe_one_x_net_return": 0.8736076868058884,
+      "worst_universe_two_x_net_return": -0.08366372530757293
+    }
+  },
+  "decision": "RD18_P3E_CASH_FEASIBILITY_REMEDIATION_COMPLETE",
+  "execution_status": "COMPLETE",
+  "exit_path_reexecution": false,
+  "final_advancement_decision_made": false,
+  "loao_executed": false,
+  "loyo_executed": false,
+  "network_requests": 0,
+  "next_stage": "RD18_P3E_LOYO_AND_LOAO_SENSITIVITY_EXECUTION",
+  "passed": true,
+  "per_universe_tuning": false,
+  "performance_reporting_executed": true,
+  "portfolio_return_calculation_executed": true,
+  "post_2024_accessed": false,
+  "prior_base_evidence": {
+    "hashes": {
+      "dry_manifest": "dd24def921bf5bcc013d2cb38dd6e7fdde6b6cde7099560864f9ff4864f5bfca",
+      "dry_report": "9a51c375a9a59ea3d50328a38c518afce4645de378088650cb1286a50850b4fb",
+      "prior_base_manifest": "010595e2fd8e31438bbc281383ee2d030eca295df2831fc891c0c53ad123b7f1",
+      "prior_base_report": "d09de5028a163c4ccc9aedec27049fb26014e7119daec505866b4a8a63f161a0"
+    },
+    "prior_base_superseded_for_advancement": true,
+    "prior_negative_cash_runs": [
+      {
+        "cost_multiplier": 1.0,
+        "minimum_cash": -64417.173599822214,
+        "universe_id": "C2"
+      },
+      {
+        "cost_multiplier": 2.0,
+        "minimum_cash": -68417.90185734731,
+        "universe_id": "C2"
+      },
+      {
+        "cost_multiplier": 1.0,
+        "minimum_cash": -64417.173599822214,
+        "universe_id": "D2"
+      },
+      {
+        "cost_multiplier": 2.0,
+        "minimum_cash": -68417.90185734731,
+        "universe_id": "D2"
+      },
+      {
+        "cost_multiplier": 1.0,
+        "minimum_cash": -64417.173599822214,
+        "universe_id": "E2"
+      },
+      {
+        "cost_multiplier": 2.0,
+        "minimum_cash": -68417.90185734731,
+        "universe_id": "E2"
+      }
+    ],
+    "supersession_reason": "The frozen spot contract disallows negative cash, but the prior base router did not enforce available cash."
+  },
+  "prior_base_superseded_for_advancement": true,
+  "production_authorized": false,
+  "route_summaries": [
+    {
+      "candidate_rows": 2184,
+      "checks": {
+        "cash_decision_present": true,
+        "cash_feasible": true,
+        "engine_cooldowns_respected": true,
+        "maximum_open_risk_respected": true,
+        "maximum_positions_respected": true,
+        "minimum_cash_nonnegative": true,
+        "same_symbol_overlap_absent": true
+      },
+      "cost_multiplier": 1.0,
+      "evaluated_rows": 2184,
+      "final_cash": 199590.09618708436,
+      "insufficient_cash_rejections": 96,
+      "maximum_open_notional_fraction_observed": 1.4985014985014986,
+      "maximum_open_risk_fraction_observed": 0.0225,
+      "maximum_positions_observed": 4,
+      "minimum_cash": 1061.285452441909,
+      "passed": true,
+      "router_decision_counts": {
+        "ADMITTED": 1206,
+        "REJECTED_ENGINE_CONFLICT": 147,
+        "REJECTED_ENGINE_COOLDOWN": 53,
+        "REJECTED_INSUFFICIENT_CASH": 96,
+        "REJECTED_MAX_OPEN_RISK": 156,
+        "REJECTED_SAME_SYMBOL_ACTIVE": 526
+      },
+      "schema_version": "rd18-p3e-cash-route-summary-v1",
+      "trade_rows": 1206,
+      "universe_id": "C2"
+    },
+    {
+      "candidate_rows": 2184,
+      "checks": {
+        "cash_decision_present": true,
+        "cash_feasible": true,
+        "engine_cooldowns_respected": true,
+        "maximum_open_risk_respected": true,
+        "maximum_positions_respected": true,
+        "minimum_cash_nonnegative": true,
+        "same_symbol_overlap_absent": true
+      },
+      "cost_multiplier": 2.0,
+      "evaluated_rows": 2184,
+      "final_cash": 92657.34576780877,
+      "insufficient_cash_rejections": 476,
+      "maximum_open_notional_fraction_observed": 1.4985014985014986,
+      "maximum_open_risk_fraction_observed": 0.0225,
+      "maximum_positions_observed": 3,
+      "minimum_cash": 216.59079999178357,
+      "passed": true,
+      "router_decision_counts": {
+        "ADMITTED": 1007,
+        "REJECTED_ENGINE_CONFLICT": 147,
+        "REJECTED_ENGINE_COOLDOWN": 42,
+        "REJECTED_INSUFFICIENT_CASH": 476,
+        "REJECTED_MAX_OPEN_RISK": 66,
+        "REJECTED_SAME_SYMBOL_ACTIVE": 446
+      },
+      "schema_version": "rd18-p3e-cash-route-summary-v1",
+      "trade_rows": 1007,
+      "universe_id": "C2"
+    },
+    {
+      "candidate_rows": 2158,
+      "checks": {
+        "cash_decision_present": true,
+        "cash_feasible": true,
+        "engine_cooldowns_respected": true,
+        "maximum_open_risk_respected": true,
+        "maximum_positions_respected": true,
+        "minimum_cash_nonnegative": true,
+        "same_symbol_overlap_absent": true
+      },
+      "cost_multiplier": 1.0,
+      "evaluated_rows": 2158,
+      "final_cash": 201179.43004430528,
+      "insufficient_cash_rejections": 78,
+      "maximum_open_notional_fraction_observed": 1.4985014985014986,
+      "maximum_open_risk_fraction_observed": 0.0225,
+      "maximum_positions_observed": 4,
+      "minimum_cash": 27.594472316683095,
+      "passed": true,
+      "router_decision_counts": {
+        "ADMITTED": 1194,
+        "REJECTED_ENGINE_CONFLICT": 150,
+        "REJECTED_ENGINE_COOLDOWN": 47,
+        "REJECTED_INSUFFICIENT_CASH": 78,
+        "REJECTED_MAX_OPEN_RISK": 162,
+        "REJECTED_SAME_SYMBOL_ACTIVE": 527
+      },
+      "schema_version": "rd18-p3e-cash-route-summary-v1",
+      "trade_rows": 1194,
+      "universe_id": "D2"
+    },
+    {
+      "candidate_rows": 2158,
+      "checks": {
+        "cash_decision_present": true,
+        "cash_feasible": true,
+        "engine_cooldowns_respected": true,
+        "maximum_open_risk_respected": true,
+        "maximum_positions_respected": true,
+        "minimum_cash_nonnegative": true,
+        "same_symbol_overlap_absent": true
+      },
+      "cost_multiplier": 2.0,
+      "evaluated_rows": 2158,
+      "final_cash": 92093.58381208703,
+      "insufficient_cash_rejections": 256,
+      "maximum_open_notional_fraction_observed": 1.4985014985014986,
+      "maximum_open_risk_fraction_observed": 0.0225,
+      "maximum_positions_observed": 4,
+      "minimum_cash": 45.17151602798549,
+      "passed": true,
+      "router_decision_counts": {
+        "ADMITTED": 1106,
+        "REJECTED_ENGINE_CONFLICT": 150,
+        "REJECTED_ENGINE_COOLDOWN": 43,
+        "REJECTED_INSUFFICIENT_CASH": 256,
+        "REJECTED_MAX_OPEN_RISK": 117,
+        "REJECTED_SAME_SYMBOL_ACTIVE": 486
+      },
+      "schema_version": "rd18-p3e-cash-route-summary-v1",
+      "trade_rows": 1106,
+      "universe_id": "D2"
+    },
+    {
+      "candidate_rows": 2210,
+      "checks": {
+        "cash_decision_present": true,
+        "cash_feasible": true,
+        "engine_cooldowns_respected": true,
+        "maximum_open_risk_respected": true,
+        "maximum_positions_respected": true,
+        "minimum_cash_nonnegative": true,
+        "same_symbol_overlap_absent": true
+      },
+      "cost_multiplier": 1.0,
+      "evaluated_rows": 2210,
+      "final_cash": 187360.76868058994,
+      "insufficient_cash_rejections": 96,
+      "maximum_open_notional_fraction_observed": 1.4985014985014986,
+      "maximum_open_risk_fraction_observed": 0.0225,
+      "maximum_positions_observed": 4,
+      "minimum_cash": 1061.285452441909,
+      "passed": true,
+      "router_decision_counts": {
+        "ADMITTED": 1219,
+        "REJECTED_ENGINE_CONFLICT": 150,
+        "REJECTED_ENGINE_COOLDOWN": 52,
+        "REJECTED_INSUFFICIENT_CASH": 96,
+        "REJECTED_MAX_OPEN_RISK": 162,
+        "REJECTED_SAME_SYMBOL_ACTIVE": 531
+      },
+      "schema_version": "rd18-p3e-cash-route-summary-v1",
+      "trade_rows": 1219,
+      "universe_id": "E2"
+    },
+    {
+      "candidate_rows": 2210,
+      "checks": {
+        "cash_decision_present": true,
+        "cash_feasible": true,
+        "engine_cooldowns_respected": true,
+        "maximum_open_risk_respected": true,
+        "maximum_positions_respected": true,
+        "minimum_cash_nonnegative": true,
+        "same_symbol_overlap_absent": true
+      },
+      "cost_multiplier": 2.0,
+      "evaluated_rows": 2210,
+      "final_cash": 91633.62746924254,
+      "insufficient_cash_rejections": 498,
+      "maximum_open_notional_fraction_observed": 1.4985014985014986,
+      "maximum_open_risk_fraction_observed": 0.0225,
+      "maximum_positions_observed": 3,
+      "minimum_cash": 216.59079999178357,
+      "passed": true,
+      "router_decision_counts": {
+        "ADMITTED": 1006,
+        "REJECTED_ENGINE_CONFLICT": 150,
+        "REJECTED_ENGINE_COOLDOWN": 40,
+        "REJECTED_INSUFFICIENT_CASH": 498,
+        "REJECTED_MAX_OPEN_RISK": 65,
+        "REJECTED_SAME_SYMBOL_ACTIVE": 451
+      },
+      "schema_version": "rd18-p3e-cash-route-summary-v1",
+      "trade_rows": 1006,
+      "universe_id": "E2"
+    }
+  ],
+  "schema_version": "rd18-p3e-cash-remediation-report-v1",
+  "stage": "RD18_P3E_CASH_FEASIBILITY_REMEDIATION",
+  "thresholds_changed_after_results": false,
+  "universe_gates": [
+    {
+      "checks": {
+        "both_engines_positive": true,
+        "maximum_open_risk_fraction_maximum": true,
+        "maximum_positions_maximum": true,
+        "minimum_profitable_assets": true,
+        "net_return_without_top_1_trade_strictly_positive": true,
+        "net_return_without_top_3_trades_strictly_positive": true,
+        "one_x_capital_feasible": true,
+        "one_x_maximum_drawdown_maximum": true,
+        "one_x_minimum_cash_minimum": true,
+        "one_x_minimum_trade_count": true,
+        "one_x_net_return_strictly_positive": true,
+        "one_x_positive_active_year_fraction_minimum": true,
+        "one_x_profit_factor_minimum": true,
+        "top_asset_profit_share_maximum": true,
+        "top_engine_profit_share_maximum": true,
+        "top_three_trade_profit_share_maximum": true,
+        "two_x_capital_feasible": true,
+        "two_x_maximum_drawdown_maximum": false,
+        "two_x_minimum_cash_minimum": true,
+        "two_x_net_return_strictly_positive": false,
+        "two_x_profit_factor_minimum": false
+      },
+      "one_x_conclusion_passed": true,
+      "passed": false,
+      "two_x_conclusion_passed": false,
+      "universe_id": "C2",
+      "values": {
+        "maximum_open_risk_fraction_observed": 0.0225,
+        "maximum_positions_observed": 4,
+        "positive_active_year_fraction": 0.6666666666666666,
+        "profitable_assets": 13,
+        "top_engine_profit_share": 0.7219971657576845
+      }
+    },
+    {
+      "checks": {
+        "both_engines_positive": false,
+        "maximum_open_risk_fraction_maximum": true,
+        "maximum_positions_maximum": true,
+        "minimum_profitable_assets": true,
+        "net_return_without_top_1_trade_strictly_positive": true,
+        "net_return_without_top_3_trades_strictly_positive": true,
+        "one_x_capital_feasible": true,
+        "one_x_maximum_drawdown_maximum": true,
+        "one_x_minimum_cash_minimum": true,
+        "one_x_minimum_trade_count": true,
+        "one_x_net_return_strictly_positive": true,
+        "one_x_positive_active_year_fraction_minimum": false,
+        "one_x_profit_factor_minimum": true,
+        "top_asset_profit_share_maximum": true,
+        "top_engine_profit_share_maximum": false,
+        "top_three_trade_profit_share_maximum": true,
+        "two_x_capital_feasible": true,
+        "two_x_maximum_drawdown_maximum": false,
+        "two_x_minimum_cash_minimum": true,
+        "two_x_net_return_strictly_positive": false,
+        "two_x_profit_factor_minimum": false
+      },
+      "one_x_conclusion_passed": false,
+      "passed": false,
+      "two_x_conclusion_passed": false,
+      "universe_id": "D2",
+      "values": {
+        "maximum_open_risk_fraction_observed": 0.0225,
+        "maximum_positions_observed": 4,
+        "positive_active_year_fraction": 0.3333333333333333,
+        "profitable_assets": 14,
+        "top_engine_profit_share": 1.0
+      }
+    },
+    {
+      "checks": {
+        "both_engines_positive": true,
+        "maximum_open_risk_fraction_maximum": true,
+        "maximum_positions_maximum": true,
+        "minimum_profitable_assets": true,
+        "net_return_without_top_1_trade_strictly_positive": true,
+        "net_return_without_top_3_trades_strictly_positive": true,
+        "one_x_capital_feasible": true,
+        "one_x_maximum_drawdown_maximum": true,
+        "one_x_minimum_cash_minimum": true,
+        "one_x_minimum_trade_count": true,
+        "one_x_net_return_strictly_positive": true,
+        "one_x_positive_active_year_fraction_minimum": true,
+        "one_x_profit_factor_minimum": false,
+        "top_asset_profit_share_maximum": true,
+        "top_engine_profit_share_maximum": false,
+        "top_three_trade_profit_share_maximum": true,
+        "two_x_capital_feasible": true,
+        "two_x_maximum_drawdown_maximum": false,
+        "two_x_minimum_cash_minimum": true,
+        "two_x_net_return_strictly_positive": false,
+        "two_x_profit_factor_minimum": false
+      },
+      "one_x_conclusion_passed": false,
+      "passed": false,
+      "two_x_conclusion_passed": false,
+      "universe_id": "E2",
+      "values": {
+        "maximum_open_risk_fraction_observed": 0.0225,
+        "maximum_positions_observed": 4,
+        "positive_active_year_fraction": 0.5,
+        "profitable_assets": 13,
+        "top_engine_profit_share": 0.8348531808655226
+      }
+    }
+  ]
+}

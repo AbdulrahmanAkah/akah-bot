@@ -1,0 +1,98 @@
+{
+  "a2": {
+    "audit_rows": 89117,
+    "candidate_rows": 21543,
+    "effective_pair_count": 35,
+    "generated_pairs": 339,
+    "manifest_checks": {
+      "candidate_generation": true,
+      "network_requests": true,
+      "normalization_executed": true,
+      "production": true,
+      "raw_market_data_written": true,
+      "return_calculation": true,
+      "schema_version": true,
+      "strategy_replay": true,
+      "synthetic_candles_written": true,
+      "threshold_optimization": true,
+      "trade_routing": true
+    },
+    "no_feature_pairs": 2,
+    "output_manifest_sha256": "a2fc151209178c20f0267b8423a80cbe68a77c3140a00b2b5ed3bd9540a18d49",
+    "partitions": 341,
+    "report_checks": {
+      "a1b_gate_applied": true,
+      "a1c_exclusions_applied": true,
+      "architecture_id": true,
+      "expected_ready_symbols": true,
+      "generation_status_counts": true,
+      "generator_scope": true,
+      "next_stage": true,
+      "no_feature_symbol_count": true,
+      "passed": true,
+      "raw_signal_rows": true,
+      "ready_symbols_processed": true,
+      "schema_version": true,
+      "sealed_cutoff": true,
+      "selected_candidate_rows": true,
+      "stage": true
+    },
+    "runtime_report_sha256": "9dcdd0bb83de6777eaa02e7f5c80de59c83eab8b489e7fdd9aa93e49514ea2e7"
+  },
+  "a3": {
+    "authorized": true,
+    "decision": "RD18_P3X_A3_REPLAY_AUTHORIZED",
+    "lineage_rows": 17
+  },
+  "a3b": {
+    "audit_rows": 825912,
+    "decision": "RD18_P3X_A3B_EVIDENCE_COMPLETE",
+    "membership_rows": 5418,
+    "omission_rows": 5418
+  },
+  "decision": "RD18_P3E_IMPLEMENTATION_BUILD_COMPLETE",
+  "exit_simulation_executed": false,
+  "implementation": {
+    "base_candidate_path_implemented": true,
+    "base_universe_selection_implemented": true,
+    "core_module": "src/spotbot/research/rd18_p3e_replay.py",
+    "cost_multiplier_transform_implemented": true,
+    "frozen_router_reused": true,
+    "loao_execution_implemented": false,
+    "loyo_execution_implemented": false,
+    "performance_gate_classification_implemented": false,
+    "strong_bull_96_path_implemented": true,
+    "v3_registration_reused": true
+  },
+  "network_requests": 0,
+  "next_stage": "RD18_P3E_TECHNICAL_DRY_RUN",
+  "p3r": {
+    "architecture_id": "COMPOSITE_ALPHA_V3",
+    "contract_status": "PREREGISTERED_NOT_EXECUTED",
+    "cost_multipliers": [
+      1.0,
+      2.0
+    ],
+    "hashes": {
+      "frozen-strategy-candidate.json": "b3748664aefa334c702c36a8e34ae8b0d339e265b15b0cdb99eeec06bb37a3b6",
+      "performance-gate-registry.json": "033a955c3d13826886692a20690bfb74b6029fedd7778dd7e7d25fea5dd50105",
+      "preexecution-readiness.json": "72b14e0703a1eb68bd504aad97cf4d4addc44a87c68dca0a6459cd9afae1ddd3",
+      "rd18-p3r-protocol-v1.json": "9754a96ecbeb8f0ff8e2ca7831731e156f43469844edd6835204f5461ec8ca3e",
+      "replay-execution-contract.json": "31ee2bf443332826bbd5a0b8b470bc4dec686d758d91f0d6328dddc7af6d967a"
+    },
+    "source_variant_id": "STRONG_BULL_HOLD_96",
+    "universes": [
+      "C2",
+      "D2",
+      "E2"
+    ]
+  },
+  "passed": true,
+  "portfolio_routing_executed": false,
+  "post_2024_accessed": false,
+  "production_authorized": false,
+  "return_calculation_executed": false,
+  "schema_version": "rd18-p3e-implementation-build-report-v1",
+  "stage": "RD18_P3E_IMPLEMENTATION_BUILD",
+  "strategy_replay_executed": false
+}
