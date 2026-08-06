@@ -1,0 +1,10 @@
+state,allowed_transition,condition,orders_allowed
+OFF,OBSERVE,Market-state gate becomes eligible.,False
+OBSERVE,CANDIDATE_OR_OFF,"Evaluate point-in-time membership, causal features and rank.",False
+CANDIDATE,QUEUED_OR_OBSERVE,Entry-quality and cost-hurdle checks pass or fail.,False
+QUEUED,OPEN_OR_CANDIDATE,Cash arbitration allocates the next eligible execution.,True
+OPEN,PROTECTED_OR_EXIT_PENDING,Initial protective stop is active; thesis may invalidate.,True
+PROTECTED,TRAILING_OR_EXIT_PENDING,Convex-exit activation condition is reached or exit occurs.,True
+TRAILING,EXIT_PENDING,"Structural trail, thesis invalidation or safeguard triggers.",True
+EXIT_PENDING,CLOSED,Exit executes at the next eligible causal bar.,True
+CLOSED,OBSERVE_OR_OFF,Position and cash ledgers reconcile.,False

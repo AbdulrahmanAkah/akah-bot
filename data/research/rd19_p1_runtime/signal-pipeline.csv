@@ -1,0 +1,10 @@
+order,component,contract
+1,UNIVERSE_ELIGIBILITY,Use the active point-in-time C2/D2/E2 membership snapshot without per-universe parameter changes.
+2,MARKET_STATE_GATE,"Allow an explicit OFF state. Market trend and breadth features may gate participation, but final thresholds are not selected in P1."
+3,ASSET_TREND_ELIGIBILITY,Require causal higher-timeframe trend agreement and minimum data sufficiency before ranking.
+4,CROSS_SECTIONAL_RANKING,Rank eligible assets at the same causal snapshot using relative trend strength and persistence components.
+5,ENTRY_QUALITY_FILTER,Use one preregistered entry family: confirmed pullback or volatility-contraction breakout. Do not chase already extended moves.
+6,COST_HURDLE,Reject entries whose expected gross move does not dominate modeled round-trip cost plus uncertainty.
+7,CASH_ARBITRATION,"When valid signals compete, allocate in deterministic rank order subject to cash and concentration limits."
+8,NEXT_BAR_EXECUTION,Signals formed on completed bars execute no earlier than the next eligible bar using the frozen cost model.
+9,PROTECTIVE_AND_CONVEX_EXIT,"Use an immutable initial protective stop, thesis invalidation and a structural trailing exit. No fixed profit cap and no automatic 96-hour ceiling in P1."

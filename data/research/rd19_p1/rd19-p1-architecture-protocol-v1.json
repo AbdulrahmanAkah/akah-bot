@@ -1,0 +1,44 @@
+{
+  "architecture_commitments": [
+    "single independently viable trend sleeve",
+    "spot-only long-only cash-only",
+    "point-in-time cross-sectional ranking",
+    "explicit no-trade state",
+    "entry-quality filter",
+    "pre-entry cost hurdle",
+    "deterministic cash arbitration",
+    "immutable protective stop",
+    "structural convex trailing exit",
+    "mandatory 1x and 2x cost evaluation",
+    "identical parameters across C2 D2 and E2"
+  ],
+  "candidate_id": "RD19_COST_AWARE_CROSS_SECTIONAL_TREND_CONVEXITY_V1",
+  "expected_decision": "RD19_P1_ARCHITECTURE_SPECIFICATION_COMPLETE",
+  "next_stage": "RD19_P2_LIMITED_DISCOVERY_PROTOCOL_AND_MATRIX_FREEZE",
+  "objective": "Specify the causal signal, portfolio, cost, risk and discovery architecture for the selected RD19 candidate without selecting final parameters, executing a candidate backtest or opening the post-2024 holdout.",
+  "p2_constraints": {
+    "maximum_candidate_variants": 12,
+    "per_universe_tuning": false,
+    "post_2024_access": false,
+    "post_hoc_asset_deletion": false,
+    "post_hoc_trade_deletion": false,
+    "post_hoc_year_deletion": false,
+    "secondary_sleeve_allowed": false,
+    "variant_matrix_frozen_before_execution": true
+  },
+  "parent_commit": "60d608028b1b83c4b9d4b6771d62feb914aedbf2",
+  "prohibitions": {
+    "candidate_backtest": false,
+    "exit_simulation": false,
+    "network_requests": false,
+    "parameter_freeze": false,
+    "portfolio_routing": false,
+    "post_2024_access": false,
+    "production": false,
+    "strategy_replay": false,
+    "threshold_selection": false
+  },
+  "schema_version": "rd19-p1-architecture-protocol-v1",
+  "stage": "RD19_P1_ARCHITECTURE_SPECIFICATION",
+  "upstream_decision": "RD19_P0_FAILURE_DIAGNOSIS_COMPLETE"
+}

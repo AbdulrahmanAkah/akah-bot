@@ -1,0 +1,249 @@
+{
+  "architecture_status": "SPECIFIED_NOT_TESTED",
+  "candidate_class": "SPARSE_COST_AWARE_CROSS_SECTIONAL_LONG_ONLY_TREND",
+  "candidate_id": "RD19_COST_AWARE_CROSS_SECTIONAL_TREND_CONVEXITY_V1",
+  "causal_data_contract": {
+    "completed_bars_only": true,
+    "future_membership_forbidden": true,
+    "higher_timeframe_features_lagged_until_complete": true,
+    "missing_data_state": "EXPLICIT_INELIGIBLE_WITH_REASON",
+    "point_in_time_universe_membership": true,
+    "post_2024_holdout_status": "SEALED",
+    "ranking_snapshot_is_causal": true,
+    "same_timestamp_cross_section_only": true,
+    "silent_missing_data_as_no_signal": false,
+    "survivorship_backfill_forbidden": true
+  },
+  "cost_contract": {
+    "cost_hurdle_multiplier_selected": false,
+    "cost_model_change_after_results": false,
+    "cost_multipliers": [
+      1.0,
+      2.0
+    ],
+    "cost_specific_routing_required": true,
+    "slippage_uncertainty_buffer_required": true,
+    "two_x_is_design_gate": true
+  },
+  "decision": "RD19_P1_ARCHITECTURE_SPECIFICATION_COMPLETE",
+  "discovery_contract": {
+    "all_variants_run_at_1x_and_2x_cost": true,
+    "all_variants_run_on_c2_d2_e2": true,
+    "all_variants_run_on_identical_data_partitions": true,
+    "final_parameter_selection_in_p1": false,
+    "maximum_candidate_variants": 12,
+    "per_universe_tuning": false,
+    "post_2024_access": false,
+    "post_hoc_asset_deletion": false,
+    "post_hoc_trade_deletion": false,
+    "post_hoc_year_deletion": false,
+    "secondary_sleeve_addition": false,
+    "variant_matrix_frozen_before_first_p2_run": true
+  },
+  "discovery_dimensions": [
+    {
+      "allowed_cardinality": 2,
+      "dimension": "RANKING_HORIZON_FAMILY",
+      "p2_requirement": "Freeze two causal horizon families before execution.",
+      "status": "UNSELECTED"
+    },
+    {
+      "allowed_cardinality": 2,
+      "dimension": "ENTRY_FAMILY",
+      "p2_requirement": "Choose from confirmed pullback and contraction breakout.",
+      "status": "UNSELECTED"
+    },
+    {
+      "allowed_cardinality": 2,
+      "dimension": "SELECTION_BREADTH",
+      "p2_requirement": "Freeze two sparse top-K choices before execution.",
+      "status": "UNSELECTED"
+    },
+    {
+      "allowed_cardinality": 2,
+      "dimension": "EXIT_CONVEXITY_FAMILY",
+      "p2_requirement": "Freeze two structural trailing families before execution.",
+      "status": "UNSELECTED"
+    },
+    {
+      "allowed_cardinality": 2,
+      "dimension": "MARKET_GATE_STRICTNESS",
+      "p2_requirement": "Freeze two causal market-state gate definitions.",
+      "status": "UNSELECTED"
+    },
+    {
+      "allowed_cardinality": 2,
+      "dimension": "COST_HURDLE_LEVEL",
+      "p2_requirement": "Freeze two cost-dominance levels before execution.",
+      "status": "UNSELECTED"
+    }
+  ],
+  "entry_contract": {
+    "allowed_entry_families_for_p2": [
+      "CONFIRMED_PULLBACK",
+      "VOLATILITY_CONTRACTION_BREAKOUT"
+    ],
+    "cost_hurdle_required": true,
+    "duplicate_position_forbidden": true,
+    "entry_family_selected": false,
+    "entry_on_incomplete_bar_forbidden": true,
+    "extension_guard_required": true
+  },
+  "exit_contract": {
+    "forced_short_holding_objective": false,
+    "initial_stop_may_be_removed": false,
+    "initial_stop_may_widen": false,
+    "initial_stop_required": true,
+    "maximum_holding_safeguard_domain_required": true,
+    "maximum_holding_value_selected": false,
+    "profit_cap_allowed": false,
+    "structural_trailing_required": true,
+    "thesis_invalidation_allowed": true
+  },
+  "next_stage": "RD19_P2_LIMITED_DISCOVERY_PROTOCOL_AND_MATRIX_FREEZE",
+  "p2_viability_requirements": [
+    {
+      "meaning": "The trend sleeve must stand alone; no second engine may mask a weak primary edge.",
+      "requirement": "PRIMARY_SLEEVE_INDEPENDENTLY_POSITIVE"
+    },
+    {
+      "meaning": "A discovery finalist must retain positive net return under 2x cost in C2, D2 and E2.",
+      "requirement": "ALL_UNIVERSES_POSITIVE_AT_2X"
+    },
+    {
+      "meaning": "Minimum cash must remain non-negative without leverage.",
+      "requirement": "CASH_FEASIBLE_IN_ALL_RUNS"
+    },
+    {
+      "meaning": "The conclusion must not depend on one favored universe.",
+      "requirement": "NO_WORST_UNIVERSE_REVERSAL"
+    },
+    {
+      "meaning": "The candidate must reduce turnover relative to P3E; the numeric gate is frozen in P2 before execution.",
+      "requirement": "TURNOVER_MATERIALLY_REDUCED"
+    },
+    {
+      "meaning": "Top-trade and top-asset dependence must be measured before any advancement decision.",
+      "requirement": "TAIL_AND_ASSET_CONCENTRATION_REPORTED"
+    }
+  ],
+  "portfolio_contract": {
+    "cash_aware_from_first_replay": true,
+    "concentration_limits_required": true,
+    "gross_exposure_cap_selected": false,
+    "maximum_positions_selected": false,
+    "negative_cash_allowed": false,
+    "per_position_risk_selected": false,
+    "rank_order_arbitration_required": true,
+    "reallocation_after_outcome_observation": false,
+    "signal_skipping_after_cash_exhaustion": "DETERMINISTIC_WITH_REASON_LEDGER",
+    "single_asset_cap_selected": false
+  },
+  "ranking_contract": {
+    "allowed_component_families": [
+      "RELATIVE_MOMENTUM",
+      "TREND_PERSISTENCE",
+      "BREAKOUT_PROXIMITY_OR_PULLBACK_QUALITY",
+      "LIQUIDITY_AND_EXECUTION_QUALITY"
+    ],
+    "component_weights_selected": false,
+    "deterministic_tie_break_required": true,
+    "lookback_values_selected": false,
+    "normalization_method_selected": false,
+    "per_universe_ranking_parameters": false,
+    "score_type": "CROSS_SECTIONAL_COMPOSITE",
+    "tie_break_order": [
+      "HIGHER_SCORE",
+      "BETTER_LIQUIDITY",
+      "LEXICOGRAPHIC_PAIR"
+    ],
+    "top_k_selected": false
+  },
+  "rejection_conditions": [
+    "ANY_POST_2024_ACCESS_BEFORE_P3_FREEZE",
+    "ANY_PER_UNIVERSE_PARAMETERIZATION",
+    "ANY_NEGATIVE_CASH_OR_LEVERAGE",
+    "ANY_SECONDARY_SLEEVE_USED_TO_RESCUE_PRIMARY",
+    "ANY_POST_HOC_ASSET_YEAR_OR_TRADE_REMOVAL",
+    "ANY_FINALIST_WITH_NONPOSITIVE_2X_RETURN_IN_ANY_UNIVERSE",
+    "ANY_VARIANT_MATRIX_CHANGE_AFTER_FIRST_RESULT"
+  ],
+  "research_constraints": {
+    "averaging_down": false,
+    "cash_only": true,
+    "dca": false,
+    "derivatives": false,
+    "kelly_sizing": false,
+    "leverage": false,
+    "long_only": true,
+    "margin": false,
+    "post_2024_access": false,
+    "production_authorized": false,
+    "pyramiding": false,
+    "shorting": false,
+    "spot_only": true
+  },
+  "schema_version": "rd19-p1-architecture-specification-v1",
+  "signal_pipeline": [
+    {
+      "component": "UNIVERSE_ELIGIBILITY",
+      "contract": "Use the active point-in-time C2/D2/E2 membership snapshot without per-universe parameter changes.",
+      "order": 1
+    },
+    {
+      "component": "MARKET_STATE_GATE",
+      "contract": "Allow an explicit OFF state. Market trend and breadth features may gate participation, but final thresholds are not selected in P1.",
+      "order": 2
+    },
+    {
+      "component": "ASSET_TREND_ELIGIBILITY",
+      "contract": "Require causal higher-timeframe trend agreement and minimum data sufficiency before ranking.",
+      "order": 3
+    },
+    {
+      "component": "CROSS_SECTIONAL_RANKING",
+      "contract": "Rank eligible assets at the same causal snapshot using relative trend strength and persistence components.",
+      "order": 4
+    },
+    {
+      "component": "ENTRY_QUALITY_FILTER",
+      "contract": "Use one preregistered entry family: confirmed pullback or volatility-contraction breakout. Do not chase already extended moves.",
+      "order": 5
+    },
+    {
+      "component": "COST_HURDLE",
+      "contract": "Reject entries whose expected gross move does not dominate modeled round-trip cost plus uncertainty.",
+      "order": 6
+    },
+    {
+      "component": "CASH_ARBITRATION",
+      "contract": "When valid signals compete, allocate in deterministic rank order subject to cash and concentration limits.",
+      "order": 7
+    },
+    {
+      "component": "NEXT_BAR_EXECUTION",
+      "contract": "Signals formed on completed bars execute no earlier than the next eligible bar using the frozen cost model.",
+      "order": 8
+    },
+    {
+      "component": "PROTECTIVE_AND_CONVEX_EXIT",
+      "contract": "Use an immutable initial protective stop, thesis invalidation and a structural trailing exit. No fixed profit cap and no automatic 96-hour ceiling in P1.",
+      "order": 9
+    }
+  ],
+  "single_sleeve_rule": {
+    "compression_engine_carried_forward": false,
+    "primary_sleeve": "CROSS_SECTIONAL_TREND_CONVEXITY",
+    "rationale": "The sealed P0 diagnosis found the trend engine positive at 2x cost in all universes, while the compression engine was negative at 2x cost in all universes.",
+    "secondary_sleeves_allowed_in_p2": false
+  },
+  "stage": "RD19_P1_ARCHITECTURE_SPECIFICATION",
+  "stage_authorization": {
+    "p2_execution_authorized_now": false,
+    "p2_protocol_and_matrix_freeze_authorized": true,
+    "p3_preregistration_authorized_now": false,
+    "post_2024_holdout_authorized_now": false,
+    "production_authorized": false,
+    "sealed_replay_authorized_now": false
+  }
+}
