@@ -1,0 +1,250 @@
+{
+  "hypotheses": [
+    {
+      "advantages": [
+        "Directly targets transaction-cost fragility.",
+        "Allocates scarce cash to the strongest relative signals.",
+        "Can preserve large trend winners with structural exits.",
+        "Uses the existing point-in-time universe infrastructure."
+      ],
+      "candidate_id": "RD19_COST_AWARE_CROSS_SECTIONAL_TREND_CONVEXITY_V1",
+      "core_claim": "A sparse, cost-aware cross-sectional trend portfolio can improve post-cost expectancy by ranking opportunities, reducing turnover and allowing convex winners.",
+      "expected_risks": [
+        "Lower trade count and slower statistical confirmation.",
+        "Concentration in a small number of assets.",
+        "Long inactive periods outside favorable regimes.",
+        "May still fall far short of the strategic return target."
+      ],
+      "p1_requirements": [
+        "Causal cross-sectional ranking.",
+        "Explicit no-trade state.",
+        "Cost hurdle before entry.",
+        "Cash-aware opportunity arbitration.",
+        "Concentration caps fixed before discovery.",
+        "Post-2024 holdout remains sealed."
+      ],
+      "rank": 1,
+      "status": "ADVANCE_TO_ARCHITECTURE_SPECIFICATION"
+    },
+    {
+      "advantages": [
+        "Simpler and easier to audit.",
+        "Naturally lower turnover.",
+        "Supports long-duration winners."
+      ],
+      "candidate_id": "RD19_REGIME_GATED_SWING_BREAKOUT_V1",
+      "core_claim": "A higher-timeframe breakout active only in favorable market breadth and trend regimes may reduce false entries.",
+      "expected_risks": [
+        "Low win rate and long losing streaks.",
+        "Late regime recognition.",
+        "Weak participation in sideways and bearish periods."
+      ],
+      "rank": 2,
+      "status": "RESERVE_ARCHITECTURE"
+    },
+    {
+      "advantages": [
+        "Potentially broader regime coverage.",
+        "Separate sleeve budgets improve attribution."
+      ],
+      "candidate_id": "RD19_INDEPENDENT_ALPHA_SLEEVES_V1",
+      "core_claim": "Independent trend and recovery sleeves may diversify regime dependence.",
+      "expected_risks": [
+        "Large overfitting surface.",
+        "Allocation rules can become hidden tuning.",
+        "A weak sleeve may dilute a valid primary edge."
+      ],
+      "rank": 3,
+      "status": "DEFER_UNTIL_PRIMARY_SLEEVE_PROVEN"
+    },
+    {
+      "advantages": [
+        "Potential complement to trend.",
+        "Can monetize sharp rebounds."
+      ],
+      "candidate_id": "RD19_SELECTIVE_PANIC_RECOVERY_V1",
+      "core_claim": "Rare confirmed recoveries after panic may provide a distinct short-duration edge.",
+      "expected_risks": [
+        "Catching structural declines.",
+        "High cost and slippage sensitivity.",
+        "Large definition and tuning surface."
+      ],
+      "rank": 4,
+      "status": "NOT_PRIMARY"
+    }
+  ],
+  "mechanisms": [
+    {
+      "design_implication": "Do not scale risk before proving a materially stronger post-cost edge.",
+      "evidence": {
+        "absolute_gap": 0.23086670515002217,
+        "strategic_monthly_target": 0.24,
+        "target_multiple_over_observed": 26.277482983107976,
+        "worst_universe_monthly_geometric_return": 0.009133294849977824
+      },
+      "mechanism_id": "STRATEGIC_RETURN_GAP",
+      "severity": "CRITICAL"
+    },
+    {
+      "design_implication": "Cost stress must be a design gate; reduce turnover and require expected move to dominate round-trip cost.",
+      "evidence": {
+        "all_two_x_base_returns_negative": true,
+        "one_x_turnover_maximum": 479.0921419201349,
+        "one_x_turnover_minimum": 474.5073169067181
+      },
+      "mechanism_id": "TRANSACTION_COST_FRAGILITY",
+      "severity": "CRITICAL"
+    },
+    {
+      "design_implication": "Improve selection quality rather than increasing signal frequency.",
+      "evidence": {
+        "all_one_x_median_r_negative": true,
+        "one_x_median_r_values": {
+          "C2": -0.7158395935822338,
+          "D2": -0.7066749207500469,
+          "E2": -0.7140502576542004
+        }
+      },
+      "mechanism_id": "NEGATIVE_TYPICAL_TRADE",
+      "severity": "HIGH"
+    },
+    {
+      "design_implication": "Begin with one independently viable trend sleeve; do not use a second sleeve to hide a weak engine.",
+      "evidence": {
+        "weak_one_x_engine_rows": 1,
+        "weak_rows": [
+          {
+            "average_holding_bars": 16.66611842105263,
+            "average_r": -0.036564525160706816,
+            "cost_multiplier": 1.0,
+            "engine_id": "COMPRESSION_EXPANSION_SPECIALIST_V3",
+            "gross_pnl": 36951.975873863645,
+            "implied_fees": 49846.75570289173,
+            "median_r": -0.6869592369303154,
+            "net_pnl": -12894.779829028063,
+            "positive_net_contribution": false,
+            "profit_factor": 0.9480619631362879,
+            "return_on_initial_equity": -0.12894779829028064,
+            "trade_count": 608,
+            "universe_id": "D2",
+            "win_rate": 0.36348684210526316
+          }
+        ]
+      },
+      "mechanism_id": "ENGINE_INSTABILITY",
+      "severity": "HIGH"
+    },
+    {
+      "design_implication": "Test slower entries and convex exits; do not assume short holding periods improve capital efficiency.",
+      "evidence": {
+        "short_bucket_net_pnl_across_one_x_runs": -1097893.5872098554,
+        "short_bucket_rows": [
+          {
+            "average_holding_bars": 3.29811320754717,
+            "average_r": -0.7523684686640577,
+            "cost_multiplier": 1.0,
+            "gross_pnl": -246603.40713173186,
+            "holding_bucket": "01_06_BARS",
+            "implied_fees": 41640.33050245723,
+            "median_r": -1.031494523747869,
+            "net_pnl": -288243.7376341891,
+            "positive_net_contribution": false,
+            "profit_factor": 0.049498436899077285,
+            "return_on_initial_equity": -2.882437376341891,
+            "trade_count": 530,
+            "universe_id": "C2",
+            "win_rate": 0.1490566037735849
+          },
+          {
+            "average_holding_bars": 9.252173913043478,
+            "average_r": -0.46163064858043323,
+            "cost_multiplier": 1.0,
+            "gross_pnl": -59145.88225514024,
+            "holding_bucket": "07_12_BARS",
+            "implied_fees": 17983.18213968807,
+            "median_r": -0.7794235528132946,
+            "net_pnl": -77129.06439482831,
+            "positive_net_contribution": false,
+            "profit_factor": 0.19770847950874143,
+            "return_on_initial_equity": -0.7712906439482831,
+            "trade_count": 230,
+            "universe_id": "C2",
+            "win_rate": 0.391304347826087
+          },
+          {
+            "average_holding_bars": 3.257575757575758,
+            "average_r": -0.7458905949148873,
+            "cost_multiplier": 1.0,
+            "gross_pnl": -242141.62548743078,
+            "holding_bucket": "01_06_BARS",
+            "implied_fees": 41893.901890923415,
+            "median_r": -1.0047210894823368,
+            "net_pnl": -284035.5273783542,
+            "positive_net_contribution": false,
+            "profit_factor": 0.05213872472983475,
+            "return_on_initial_equity": -2.8403552737835422,
+            "trade_count": 528,
+            "universe_id": "D2",
+            "win_rate": 0.15151515151515152
+          },
+          {
+            "average_holding_bars": 9.296943231441048,
+            "average_r": -0.4834272222747484,
+            "cost_multiplier": 1.0,
+            "gross_pnl": -62298.36002037464,
+            "holding_bucket": "07_12_BARS",
+            "implied_fees": 18180.675172964984,
+            "median_r": -0.822565887781993,
+            "net_pnl": -80479.03519333963,
+            "positive_net_contribution": false,
+            "profit_factor": 0.1841327641194435,
+            "return_on_initial_equity": -0.8047903519333963,
+            "trade_count": 229,
+            "universe_id": "D2",
+            "win_rate": 0.37117903930131
+          },
+          {
+            "average_holding_bars": 3.296641791044776,
+            "average_r": -0.751791504237835,
+            "cost_multiplier": 1.0,
+            "gross_pnl": -249170.43462969942,
+            "holding_bucket": "01_06_BARS",
+            "implied_fees": 42156.09222411693,
+            "median_r": -1.032897010230272,
+            "net_pnl": -291326.52685381635,
+            "positive_net_contribution": false,
+            "profit_factor": 0.04978890445207084,
+            "return_on_initial_equity": -2.9132652685381637,
+            "trade_count": 536,
+            "universe_id": "E2",
+            "win_rate": 0.15111940298507462
+          },
+          {
+            "average_holding_bars": 9.255411255411255,
+            "average_r": -0.45703848912337275,
+            "cost_multiplier": 1.0,
+            "gross_pnl": -58596.06369718179,
+            "holding_bucket": "07_12_BARS",
+            "implied_fees": 18083.632058146126,
+            "median_r": -0.7691975433222232,
+            "net_pnl": -76679.6957553279,
+            "positive_net_contribution": false,
+            "profit_factor": 0.20238278292308493,
+            "return_on_initial_equity": -0.766796957553279,
+            "trade_count": 231,
+            "universe_id": "E2",
+            "win_rate": 0.3939393939393939
+          }
+        ]
+      },
+      "mechanism_id": "SHORT_HOLDING_DRAG",
+      "severity": "MEDIUM"
+    }
+  ],
+  "parameters_frozen": false,
+  "post_2024_holdout_status": "SEALED",
+  "schema_version": "rd19-p0-candidate-hypothesis-ledger-v1",
+  "selected_candidate_id": "RD19_COST_AWARE_CROSS_SECTIONAL_TREND_CONVEXITY_V1",
+  "selected_rank": 1,
+  "thresholds_selected": false
+}
