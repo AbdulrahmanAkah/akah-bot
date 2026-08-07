@@ -1,0 +1,574 @@
+{
+  "candidate_backtest_executed": false,
+  "candidate_id": "RD19_COST_AWARE_CROSS_SECTIONAL_TREND_CONVEXITY_V1",
+  "common_parameters": {
+    "atr_window_bars": 24,
+    "averaging_down_allowed": false,
+    "bar_interval": "1h",
+    "completed_bars_only": true,
+    "cost_multipliers": [
+      1.0,
+      2.0
+    ],
+    "cost_specific_routing": true,
+    "entry_evaluation_frequency_hours": 1,
+    "initial_equity": 100000.0,
+    "leverage_allowed": false,
+    "maximum_gross_exposure_fraction": 0.9,
+    "maximum_single_asset_exposure_fraction": 0.4,
+    "minimum_cash": 0.0,
+    "negative_cash_allowed": false,
+    "next_bar_execution": true,
+    "open_position_exits_on_rank_decay": false,
+    "pair_reentry_cooldown_bars": 24,
+    "per_universe_parameters": false,
+    "post_2024_access": false,
+    "pyramiding_allowed": false,
+    "ranking_normalization": "CROSS_SECTIONAL_PERCENTILE_RANK",
+    "ranking_refresh_frequency_hours": 24,
+    "ranking_refresh_time_utc": "00:00",
+    "ranking_score_weights": {
+      "relative_momentum_fast": 0.5,
+      "relative_momentum_slow": 0.3,
+      "trend_persistence": 0.2
+    },
+    "ranking_tie_break": [
+      "HIGHER_SCORE",
+      "LOWER_ATR_PERCENT",
+      "LEXICOGRAPHIC_PAIR"
+    ],
+    "risk_per_position_fraction_of_equity": 0.005,
+    "thesis_invalidation": "CLOSE_BELOW_VARIANT_TREND_FAST_EMA",
+    "universes": [
+      "C2",
+      "D2",
+      "E2"
+    ]
+  },
+  "data_partitions": [
+    {
+      "access_order": 1,
+      "end": "2018-12-31T23:00:00Z",
+      "partition_id": "WARMUP",
+      "selection_use": "FEATURE_WARMUP_ONLY",
+      "start": "EARLIEST_AVAILABLE",
+      "variants_allowed": 0
+    },
+    {
+      "access_order": 2,
+      "end": "2021-12-31T23:00:00Z",
+      "partition_id": "DISCOVERY_CORE",
+      "selection_use": "PRIMARY_DISCOVERY",
+      "start": "2019-01-01T00:00:00Z",
+      "variants_allowed": 12
+    },
+    {
+      "access_order": 3,
+      "end": "2022-12-31T23:00:00Z",
+      "partition_id": "VALIDATION_2022",
+      "selection_use": "FIXED_MATRIX_VALIDATION",
+      "start": "2022-01-01T00:00:00Z",
+      "variants_allowed": 12
+    },
+    {
+      "access_order": 4,
+      "end": "2023-12-31T23:00:00Z",
+      "partition_id": "STRESS_2023",
+      "selection_use": "FIXED_MATRIX_STRESS",
+      "start": "2023-01-01T00:00:00Z",
+      "variants_allowed": 12
+    },
+    {
+      "access_order": 5,
+      "end": "2024-12-31T23:00:00Z",
+      "partition_id": "INTERNAL_CONFIRMATION_2024",
+      "selection_use": "ONLY_PRESELECTED_FINALISTS_AFTER_2019_2023_LOCK",
+      "start": "2024-01-01T00:00:00Z",
+      "variants_allowed": 2
+    },
+    {
+      "access_order": 6,
+      "end": "LATEST_AVAILABLE",
+      "partition_id": "EXTERNAL_HOLDOUT_POST_2024",
+      "selection_use": "SEALED_UNTIL_P3_PREREGISTRATION",
+      "start": "2025-01-01T00:00:00Z",
+      "variants_allowed": 0
+    }
+  ],
+  "decision": "RD19_P2_DISCOVERY_PROTOCOL_AND_MATRIX_FROZEN",
+  "design_type": "PLACKETT_BURMAN_12_RUN_MAIN_EFFECT_SCREEN",
+  "factor_count": 6,
+  "factor_order": [
+    "RANKING_HORIZON_FAMILY",
+    "ENTRY_FAMILY",
+    "SELECTION_BREADTH",
+    "EXIT_CONVEXITY_FAMILY",
+    "MARKET_GATE_STRICTNESS",
+    "COST_HURDLE_LEVEL"
+  ],
+  "finalist_ranking": [
+    {
+      "direction": "DESCENDING",
+      "metric": "WORST_UNIVERSE_2X_MONTHLY_GEOMETRIC_RETURN",
+      "rank_order": 1
+    },
+    {
+      "direction": "DESCENDING",
+      "metric": "WORST_UNIVERSE_2X_PROFIT_FACTOR",
+      "rank_order": 2
+    },
+    {
+      "direction": "ASCENDING",
+      "metric": "WORST_UNIVERSE_2X_MAXIMUM_DRAWDOWN",
+      "rank_order": 3
+    },
+    {
+      "direction": "ASCENDING",
+      "metric": "MAXIMUM_TURNOVER_ACROSS_RUNS",
+      "rank_order": 4
+    },
+    {
+      "direction": "ASCENDING",
+      "metric": "TOP_5_TRADE_SHARE_OF_POSITIVE_PNL",
+      "rank_order": 5
+    },
+    {
+      "direction": "LEXICOGRAPHIC_ASCENDING",
+      "metric": "VARIANT_ID",
+      "rank_order": 6
+    }
+  ],
+  "implementation_and_dry_run_authorized": true,
+  "internal_confirmation_gates": [
+    {
+      "gate_id": "2024_TECHNICAL_AND_CASH_VALID",
+      "gate_order": 1,
+      "operator": "EQUAL",
+      "scope": "ALL_FINALIST_RUNS",
+      "threshold": "TRUE"
+    },
+    {
+      "gate_id": "2024_TWO_X_NET_RETURN",
+      "gate_order": 2,
+      "operator": "GT",
+      "scope": "EACH_UNIVERSE",
+      "threshold": "0.0"
+    },
+    {
+      "gate_id": "2024_TWO_X_PROFIT_FACTOR",
+      "gate_order": 3,
+      "operator": "GTE",
+      "scope": "EACH_UNIVERSE",
+      "threshold": "1.0"
+    },
+    {
+      "gate_id": "2024_TWO_X_MAXIMUM_DRAWDOWN",
+      "gate_order": 4,
+      "operator": "LTE",
+      "scope": "EACH_UNIVERSE",
+      "threshold": "0.30"
+    },
+    {
+      "gate_id": "NO_PARAMETER_CHANGE_AFTER_2019_2023",
+      "gate_order": 5,
+      "operator": "EQUAL",
+      "scope": "FINALIST_DEFINITION",
+      "threshold": "TRUE"
+    }
+  ],
+  "matrix_deterministic_hash": "299a4424132a8c73659f1f4a27352afc6dcd98fcb78ba29314c4ae8085eebaba",
+  "matrix_frozen": true,
+  "maximum_finalists": 2,
+  "network_requests": 0,
+  "next_stage": "RD19_P2A_DISCOVERY_ENGINE_IMPLEMENTATION_AND_TECHNICAL_DRY_RUN",
+  "p2_execution_authorized_now": false,
+  "parameter_levels": {
+    "COST_HURDLE_LEVEL": {
+      "HIGH": {
+        "effective_cost_uncertainty_multiplier": 1.25,
+        "level_id": "COST_HURDLE_10X",
+        "minimum_atr_to_effective_round_trip_cost": 10.0
+      },
+      "LOW": {
+        "effective_cost_uncertainty_multiplier": 1.25,
+        "level_id": "COST_HURDLE_6X",
+        "minimum_atr_to_effective_round_trip_cost": 6.0
+      }
+    },
+    "ENTRY_FAMILY": {
+      "HIGH": {
+        "atr_reference_window_bars": 168,
+        "atr_window_bars": 24,
+        "breakout_lookback_bars": 24,
+        "entry_family": "VOLATILITY_CONTRACTION_BREAKOUT",
+        "level_id": "ENTRY_CONTRACTION_BREAKOUT",
+        "maximum_atr_to_reference_ratio": 0.75,
+        "maximum_extension_atr": 1.0
+      },
+      "LOW": {
+        "entry_family": "CONFIRMED_PULLBACK",
+        "level_id": "ENTRY_CONFIRMED_PULLBACK",
+        "maximum_extension_atr": 1.5,
+        "pullback_ema_bars": 24,
+        "pullback_lookback_bars": 12,
+        "recovery_requires_close_above_ema": true,
+        "recovery_requires_close_above_prior_close": true
+      }
+    },
+    "EXIT_CONVEXITY_FAMILY": {
+      "HIGH": {
+        "initial_stop_atr": 2.5,
+        "level_id": "EXIT_TRAIL_4ATR",
+        "maximum_holding_bars": 720,
+        "profit_cap": null,
+        "trail_activation_r": 1.5,
+        "trail_atr": 4.0
+      },
+      "LOW": {
+        "initial_stop_atr": 2.5,
+        "level_id": "EXIT_TRAIL_3ATR",
+        "maximum_holding_bars": 720,
+        "profit_cap": null,
+        "trail_activation_r": 1.0,
+        "trail_atr": 3.0
+      }
+    },
+    "MARKET_GATE_STRICTNESS": {
+      "HIGH": {
+        "breadth_ema_bars": 168,
+        "btc_ema_bars": 168,
+        "btc_ema_slope_lookback_bars": 24,
+        "level_id": "GATE_STRICT",
+        "minimum_breadth_fraction": 0.6,
+        "require_btc_above_ema": true,
+        "require_btc_ema_positive_slope": true,
+        "require_positive_median_168h_return": true
+      },
+      "LOW": {
+        "breadth_ema_bars": 168,
+        "btc_ema_bars": 168,
+        "level_id": "GATE_MODERATE",
+        "minimum_breadth_fraction": 0.5,
+        "require_btc_above_ema": true,
+        "require_btc_ema_positive_slope": false,
+        "require_positive_median_168h_return": true
+      }
+    },
+    "RANKING_HORIZON_FAMILY": {
+      "HIGH": {
+        "level_id": "RH_SLOW_336_1440",
+        "momentum_fast_bars": 336,
+        "momentum_skip_bars": 24,
+        "momentum_slow_bars": 1440,
+        "persistence_window_bars": 336,
+        "trend_fast_ema_bars": 336,
+        "trend_slow_ema_bars": 720
+      },
+      "LOW": {
+        "level_id": "RH_MEDIUM_168_720",
+        "momentum_fast_bars": 168,
+        "momentum_skip_bars": 24,
+        "momentum_slow_bars": 720,
+        "persistence_window_bars": 168,
+        "trend_fast_ema_bars": 168,
+        "trend_slow_ema_bars": 336
+      }
+    },
+    "SELECTION_BREADTH": {
+      "HIGH": {
+        "level_id": "TOP_K_3",
+        "maximum_positions": 3,
+        "top_k": 3
+      },
+      "LOW": {
+        "level_id": "TOP_K_2",
+        "maximum_positions": 2,
+        "top_k": 2
+      }
+    }
+  },
+  "parameters_frozen_for_p2": true,
+  "post_2024_accessed": false,
+  "post_2024_holdout_status": "SEALED",
+  "production_authorized": false,
+  "schema_version": "rd19-p2-discovery-matrix-freeze-v1",
+  "selection_gates": [
+    {
+      "failure_action": "REJECT_VARIANT",
+      "gate_id": "TECHNICAL_VALIDITY",
+      "gate_order": 1,
+      "operator": "EQUAL",
+      "scope": "ALL_2019_2023_RUNS",
+      "threshold": "TRUE"
+    },
+    {
+      "failure_action": "REJECT_VARIANT",
+      "gate_id": "CASH_FEASIBILITY",
+      "gate_order": 2,
+      "operator": "MINIMUM_GTE",
+      "scope": "ALL_UNIVERSES_ALL_COSTS_2019_2023",
+      "threshold": "0.0"
+    },
+    {
+      "failure_action": "REJECT_VARIANT",
+      "gate_id": "TWO_X_NET_RETURN",
+      "gate_order": 3,
+      "operator": "GT",
+      "scope": "EACH_UNIVERSE_COMBINED_2019_2023",
+      "threshold": "0.0"
+    },
+    {
+      "failure_action": "REJECT_VARIANT",
+      "gate_id": "TWO_X_PROFIT_FACTOR",
+      "gate_order": 4,
+      "operator": "GTE",
+      "scope": "EACH_UNIVERSE_COMBINED_2019_2023",
+      "threshold": "1.05"
+    },
+    {
+      "failure_action": "REJECT_VARIANT",
+      "gate_id": "TWO_X_MAXIMUM_DRAWDOWN",
+      "gate_order": 5,
+      "operator": "LTE",
+      "scope": "EACH_UNIVERSE_COMBINED_2019_2023",
+      "threshold": "0.30"
+    },
+    {
+      "failure_action": "REJECT_VARIANT",
+      "gate_id": "TURNOVER_MATERIAL_REDUCTION",
+      "gate_order": 6,
+      "operator": "LTE",
+      "scope": "EACH_UNIVERSE_EACH_COST_2019_2023",
+      "threshold": "240.0"
+    },
+    {
+      "failure_action": "REJECT_VARIANT",
+      "gate_id": "TWO_X_WORST_UNIVERSE_MONTHLY_RETURN",
+      "gate_order": 7,
+      "operator": "GTE",
+      "scope": "WORST_UNIVERSE_COMBINED_2019_2023",
+      "threshold": "0.02"
+    },
+    {
+      "failure_action": "REJECT_VARIANT",
+      "gate_id": "TWO_X_MINIMUM_TRADE_COUNT",
+      "gate_order": 8,
+      "operator": "GTE",
+      "scope": "EACH_UNIVERSE_COMBINED_2019_2023",
+      "threshold": "75"
+    },
+    {
+      "failure_action": "REJECT_VARIANT",
+      "gate_id": "TWO_X_POSITIVE_YEAR_COUNT",
+      "gate_order": 9,
+      "operator": "GTE",
+      "scope": "EACH_UNIVERSE_2019_2023",
+      "threshold": "3"
+    },
+    {
+      "failure_action": "INVALIDATE_DISCOVERY",
+      "gate_id": "NO_PER_UNIVERSE_PARAMETERIZATION",
+      "gate_order": 10,
+      "operator": "EQUAL",
+      "scope": "VARIANT_DEFINITION",
+      "threshold": "TRUE"
+    }
+  ],
+  "stage": "RD19_P2_LIMITED_DISCOVERY_PROTOCOL_AND_MATRIX_FREEZE",
+  "variant_count": 12,
+  "variant_matrix": [
+    {
+      "COST_HURDLE_LEVEL": "COST_HURDLE_10X",
+      "COST_HURDLE_LEVEL_SIGN": 1,
+      "ENTRY_FAMILY": "ENTRY_CONTRACTION_BREAKOUT",
+      "ENTRY_FAMILY_SIGN": 1,
+      "EXIT_CONVEXITY_FAMILY": "EXIT_TRAIL_4ATR",
+      "EXIT_CONVEXITY_FAMILY_SIGN": 1,
+      "MARKET_GATE_STRICTNESS": "GATE_STRICT",
+      "MARKET_GATE_STRICTNESS_SIGN": 1,
+      "RANKING_HORIZON_FAMILY": "RH_SLOW_336_1440",
+      "RANKING_HORIZON_FAMILY_SIGN": 1,
+      "SELECTION_BREADTH": "TOP_K_2",
+      "SELECTION_BREADTH_SIGN": -1,
+      "design_row": 1,
+      "variant_id": "RD19_P2_V01"
+    },
+    {
+      "COST_HURDLE_LEVEL": "COST_HURDLE_10X",
+      "COST_HURDLE_LEVEL_SIGN": 1,
+      "ENTRY_FAMILY": "ENTRY_CONTRACTION_BREAKOUT",
+      "ENTRY_FAMILY_SIGN": 1,
+      "EXIT_CONVEXITY_FAMILY": "EXIT_TRAIL_3ATR",
+      "EXIT_CONVEXITY_FAMILY_SIGN": -1,
+      "MARKET_GATE_STRICTNESS": "GATE_STRICT",
+      "MARKET_GATE_STRICTNESS_SIGN": 1,
+      "RANKING_HORIZON_FAMILY": "RH_MEDIUM_168_720",
+      "RANKING_HORIZON_FAMILY_SIGN": -1,
+      "SELECTION_BREADTH": "TOP_K_3",
+      "SELECTION_BREADTH_SIGN": 1,
+      "design_row": 2,
+      "variant_id": "RD19_P2_V02"
+    },
+    {
+      "COST_HURDLE_LEVEL": "COST_HURDLE_10X",
+      "COST_HURDLE_LEVEL_SIGN": 1,
+      "ENTRY_FAMILY": "ENTRY_CONFIRMED_PULLBACK",
+      "ENTRY_FAMILY_SIGN": -1,
+      "EXIT_CONVEXITY_FAMILY": "EXIT_TRAIL_4ATR",
+      "EXIT_CONVEXITY_FAMILY_SIGN": 1,
+      "MARKET_GATE_STRICTNESS": "GATE_MODERATE",
+      "MARKET_GATE_STRICTNESS_SIGN": -1,
+      "RANKING_HORIZON_FAMILY": "RH_SLOW_336_1440",
+      "RANKING_HORIZON_FAMILY_SIGN": 1,
+      "SELECTION_BREADTH": "TOP_K_3",
+      "SELECTION_BREADTH_SIGN": 1,
+      "design_row": 3,
+      "variant_id": "RD19_P2_V03"
+    },
+    {
+      "COST_HURDLE_LEVEL": "COST_HURDLE_6X",
+      "COST_HURDLE_LEVEL_SIGN": -1,
+      "ENTRY_FAMILY": "ENTRY_CONTRACTION_BREAKOUT",
+      "ENTRY_FAMILY_SIGN": 1,
+      "EXIT_CONVEXITY_FAMILY": "EXIT_TRAIL_4ATR",
+      "EXIT_CONVEXITY_FAMILY_SIGN": 1,
+      "MARKET_GATE_STRICTNESS": "GATE_STRICT",
+      "MARKET_GATE_STRICTNESS_SIGN": 1,
+      "RANKING_HORIZON_FAMILY": "RH_MEDIUM_168_720",
+      "RANKING_HORIZON_FAMILY_SIGN": -1,
+      "SELECTION_BREADTH": "TOP_K_2",
+      "SELECTION_BREADTH_SIGN": -1,
+      "design_row": 4,
+      "variant_id": "RD19_P2_V04"
+    },
+    {
+      "COST_HURDLE_LEVEL": "COST_HURDLE_10X",
+      "COST_HURDLE_LEVEL_SIGN": 1,
+      "ENTRY_FAMILY": "ENTRY_CONFIRMED_PULLBACK",
+      "ENTRY_FAMILY_SIGN": -1,
+      "EXIT_CONVEXITY_FAMILY": "EXIT_TRAIL_3ATR",
+      "EXIT_CONVEXITY_FAMILY_SIGN": -1,
+      "MARKET_GATE_STRICTNESS": "GATE_STRICT",
+      "MARKET_GATE_STRICTNESS_SIGN": 1,
+      "RANKING_HORIZON_FAMILY": "RH_MEDIUM_168_720",
+      "RANKING_HORIZON_FAMILY_SIGN": -1,
+      "SELECTION_BREADTH": "TOP_K_3",
+      "SELECTION_BREADTH_SIGN": 1,
+      "design_row": 5,
+      "variant_id": "RD19_P2_V05"
+    },
+    {
+      "COST_HURDLE_LEVEL": "COST_HURDLE_10X",
+      "COST_HURDLE_LEVEL_SIGN": 1,
+      "ENTRY_FAMILY": "ENTRY_CONFIRMED_PULLBACK",
+      "ENTRY_FAMILY_SIGN": -1,
+      "EXIT_CONVEXITY_FAMILY": "EXIT_TRAIL_4ATR",
+      "EXIT_CONVEXITY_FAMILY_SIGN": 1,
+      "MARKET_GATE_STRICTNESS": "GATE_MODERATE",
+      "MARKET_GATE_STRICTNESS_SIGN": -1,
+      "RANKING_HORIZON_FAMILY": "RH_MEDIUM_168_720",
+      "RANKING_HORIZON_FAMILY_SIGN": -1,
+      "SELECTION_BREADTH": "TOP_K_2",
+      "SELECTION_BREADTH_SIGN": -1,
+      "design_row": 6,
+      "variant_id": "RD19_P2_V06"
+    },
+    {
+      "COST_HURDLE_LEVEL": "COST_HURDLE_6X",
+      "COST_HURDLE_LEVEL_SIGN": -1,
+      "ENTRY_FAMILY": "ENTRY_CONFIRMED_PULLBACK",
+      "ENTRY_FAMILY_SIGN": -1,
+      "EXIT_CONVEXITY_FAMILY": "EXIT_TRAIL_3ATR",
+      "EXIT_CONVEXITY_FAMILY_SIGN": -1,
+      "MARKET_GATE_STRICTNESS": "GATE_STRICT",
+      "MARKET_GATE_STRICTNESS_SIGN": 1,
+      "RANKING_HORIZON_FAMILY": "RH_SLOW_336_1440",
+      "RANKING_HORIZON_FAMILY_SIGN": 1,
+      "SELECTION_BREADTH": "TOP_K_2",
+      "SELECTION_BREADTH_SIGN": -1,
+      "design_row": 7,
+      "variant_id": "RD19_P2_V07"
+    },
+    {
+      "COST_HURDLE_LEVEL": "COST_HURDLE_10X",
+      "COST_HURDLE_LEVEL_SIGN": 1,
+      "ENTRY_FAMILY": "ENTRY_CONTRACTION_BREAKOUT",
+      "ENTRY_FAMILY_SIGN": 1,
+      "EXIT_CONVEXITY_FAMILY": "EXIT_TRAIL_3ATR",
+      "EXIT_CONVEXITY_FAMILY_SIGN": -1,
+      "MARKET_GATE_STRICTNESS": "GATE_MODERATE",
+      "MARKET_GATE_STRICTNESS_SIGN": -1,
+      "RANKING_HORIZON_FAMILY": "RH_SLOW_336_1440",
+      "RANKING_HORIZON_FAMILY_SIGN": 1,
+      "SELECTION_BREADTH": "TOP_K_2",
+      "SELECTION_BREADTH_SIGN": -1,
+      "design_row": 8,
+      "variant_id": "RD19_P2_V08"
+    },
+    {
+      "COST_HURDLE_LEVEL": "COST_HURDLE_6X",
+      "COST_HURDLE_LEVEL_SIGN": -1,
+      "ENTRY_FAMILY": "ENTRY_CONTRACTION_BREAKOUT",
+      "ENTRY_FAMILY_SIGN": 1,
+      "EXIT_CONVEXITY_FAMILY": "EXIT_TRAIL_3ATR",
+      "EXIT_CONVEXITY_FAMILY_SIGN": -1,
+      "MARKET_GATE_STRICTNESS": "GATE_MODERATE",
+      "MARKET_GATE_STRICTNESS_SIGN": -1,
+      "RANKING_HORIZON_FAMILY": "RH_SLOW_336_1440",
+      "RANKING_HORIZON_FAMILY_SIGN": 1,
+      "SELECTION_BREADTH": "TOP_K_3",
+      "SELECTION_BREADTH_SIGN": 1,
+      "design_row": 9,
+      "variant_id": "RD19_P2_V09"
+    },
+    {
+      "COST_HURDLE_LEVEL": "COST_HURDLE_6X",
+      "COST_HURDLE_LEVEL_SIGN": -1,
+      "ENTRY_FAMILY": "ENTRY_CONTRACTION_BREAKOUT",
+      "ENTRY_FAMILY_SIGN": 1,
+      "EXIT_CONVEXITY_FAMILY": "EXIT_TRAIL_4ATR",
+      "EXIT_CONVEXITY_FAMILY_SIGN": 1,
+      "MARKET_GATE_STRICTNESS": "GATE_MODERATE",
+      "MARKET_GATE_STRICTNESS_SIGN": -1,
+      "RANKING_HORIZON_FAMILY": "RH_MEDIUM_168_720",
+      "RANKING_HORIZON_FAMILY_SIGN": -1,
+      "SELECTION_BREADTH": "TOP_K_3",
+      "SELECTION_BREADTH_SIGN": 1,
+      "design_row": 10,
+      "variant_id": "RD19_P2_V10"
+    },
+    {
+      "COST_HURDLE_LEVEL": "COST_HURDLE_6X",
+      "COST_HURDLE_LEVEL_SIGN": -1,
+      "ENTRY_FAMILY": "ENTRY_CONFIRMED_PULLBACK",
+      "ENTRY_FAMILY_SIGN": -1,
+      "EXIT_CONVEXITY_FAMILY": "EXIT_TRAIL_4ATR",
+      "EXIT_CONVEXITY_FAMILY_SIGN": 1,
+      "MARKET_GATE_STRICTNESS": "GATE_STRICT",
+      "MARKET_GATE_STRICTNESS_SIGN": 1,
+      "RANKING_HORIZON_FAMILY": "RH_SLOW_336_1440",
+      "RANKING_HORIZON_FAMILY_SIGN": 1,
+      "SELECTION_BREADTH": "TOP_K_3",
+      "SELECTION_BREADTH_SIGN": 1,
+      "design_row": 11,
+      "variant_id": "RD19_P2_V11"
+    },
+    {
+      "COST_HURDLE_LEVEL": "COST_HURDLE_6X",
+      "COST_HURDLE_LEVEL_SIGN": -1,
+      "ENTRY_FAMILY": "ENTRY_CONFIRMED_PULLBACK",
+      "ENTRY_FAMILY_SIGN": -1,
+      "EXIT_CONVEXITY_FAMILY": "EXIT_TRAIL_3ATR",
+      "EXIT_CONVEXITY_FAMILY_SIGN": -1,
+      "MARKET_GATE_STRICTNESS": "GATE_MODERATE",
+      "MARKET_GATE_STRICTNESS_SIGN": -1,
+      "RANKING_HORIZON_FAMILY": "RH_MEDIUM_168_720",
+      "RANKING_HORIZON_FAMILY_SIGN": -1,
+      "SELECTION_BREADTH": "TOP_K_2",
+      "SELECTION_BREADTH_SIGN": -1,
+      "design_row": 12,
+      "variant_id": "RD19_P2_V12"
+    }
+  ],
+  "variant_matrix_change_after_first_result": false
+}

@@ -1,0 +1,44 @@
+{
+  "candidate_id": "RD19_COST_AWARE_CROSS_SECTIONAL_TREND_CONVEXITY_V1",
+  "data_boundary": {
+    "all_variants_period": "2019-01-01 through 2023-12-31",
+    "internal_confirmation_period": "2024-01-01 through 2024-12-31",
+    "post_2024_holdout": "SEALED"
+  },
+  "design": {
+    "factors": 6,
+    "levels_per_factor": 2,
+    "maximum_finalists": 2,
+    "type": "PLACKETT_BURMAN_12_RUN_MAIN_EFFECT_SCREEN",
+    "variants": 12
+  },
+  "expected_decision": "RD19_P2_DISCOVERY_PROTOCOL_AND_MATRIX_FROZEN",
+  "hard_gates": [
+    "technical validity",
+    "non-negative cash",
+    "positive 2x return in C2 D2 and E2",
+    "2x profit factor at least 1.05",
+    "2x drawdown at most 30%",
+    "turnover at most 240x initial equity",
+    "worst-universe 2x monthly return at least 2%",
+    "minimum sample and positive-year coverage"
+  ],
+  "next_stage": "RD19_P2A_DISCOVERY_ENGINE_IMPLEMENTATION_AND_TECHNICAL_DRY_RUN",
+  "objective": "Freeze a balanced twelve-variant discovery matrix, exact parameter levels, data partitions, execution order, viability gates and finalist ranking before implementing or running the candidate.",
+  "parent_commit": "e1edac2b11a8301849587374b9f6861f608aefbe",
+  "prohibitions": {
+    "candidate_backtest": false,
+    "exit_simulation": false,
+    "matrix_change_after_results": false,
+    "network_requests": false,
+    "per_universe_tuning": false,
+    "portfolio_routing": false,
+    "post_2024_access": false,
+    "post_hoc_deletion": false,
+    "production": false,
+    "strategy_replay": false
+  },
+  "schema_version": "rd19-p2-discovery-freeze-protocol-v1",
+  "stage": "RD19_P2_LIMITED_DISCOVERY_PROTOCOL_AND_MATRIX_FREEZE",
+  "upstream_decision": "RD19_P1_ARCHITECTURE_SPECIFICATION_COMPLETE"
+}
