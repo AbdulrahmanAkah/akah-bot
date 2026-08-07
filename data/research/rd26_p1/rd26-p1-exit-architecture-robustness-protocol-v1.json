@@ -1,0 +1,145 @@
+{
+  "schema_version": "rd26-p1-exit-architecture-robustness-protocol-v1",
+  "stage": "RD26_EXIT_ARCHITECTURE_EXPOSED_ROBUSTNESS_2022_2023",
+  "starting_commit": "f40107fab876d709c353fc47b63d1347fabf2ada",
+  "research_question": "Can a small pre-registered exit state machine translate the RD25-confirmed Momentum Breakout and Relative Strength Rotation edge into a <=20% drawdown portfolio without changing signals, sizing, capacity, costs, or entry routing?",
+  "focus_families": [
+    "MOMENTUM_BREAKOUT",
+    "RELATIVE_STRENGTH_ROTATION"
+  ],
+  "signal_contract": {
+    "source": "EXACT_RD23_FOCUS_FAMILY_RULES",
+    "timeframe": "1H_COMPLETED_BARS",
+    "pre_freeze_equivalence_requirement": "REGENERATED_2019_2021_FOCUS_SIGNALS_MUST_MATCH_FROZEN_RD23_LEDGER_ON_EXACT_KEYS_AND_NUMERICS_WITH_1E_12_TOLERANCE",
+    "entry": "EXACT_NEXT_1H_OPEN_AFTER_SIGNAL",
+    "signal_retuning": false,
+    "score_retuning": false,
+    "market_regime_gate": null
+  },
+  "robustness_selection_data": {
+    "start": "2022-01-01T00:00:00Z",
+    "cutoff_exclusive": "2024-01-01T00:00:00Z",
+    "periods": {
+      "ROBUSTNESS_2022": [
+        "2022-01-01T00:00:00Z",
+        "2023-01-01T00:00:00Z"
+      ],
+      "ROBUSTNESS_2023": [
+        "2023-01-01T00:00:00Z",
+        "2024-01-01T00:00:00Z"
+      ]
+    },
+    "last_signal_rule": "REQUIRE_MAX_HOLD_EXIT_STRICTLY_BEFORE_2024_CUTOFF",
+    "2022_2023_used_for_architecture_selection": true,
+    "2024": "SEALED_CLEAN_INTERNAL_CONFIRMATION",
+    "post_2024": "SEALED_FINAL_HOLDOUT"
+  },
+  "portfolio_contract": {
+    "venue": "KUCOIN_SPOT",
+    "long_only": true,
+    "leverage": false,
+    "margin": false,
+    "derivatives": false,
+    "pyramiding": false,
+    "same_pair_concurrent_position": false,
+    "initial_equity": 100000.0,
+    "maximum_positions": 5,
+    "maximum_gross_exposure": 0.9,
+    "equal_slot_target_fraction": 0.18,
+    "capacity": {
+      "proxy": "TRAILING_24H_BASE_VOLUME_X_COMPLETED_CLOSE",
+      "maximum_entry_notional_fraction": 0.005,
+      "behavior": "CAP_NOTIONAL_DO_NOT_SUPPRESS_SIGNAL_UNLESS_CAPACITY_UNAVAILABLE"
+    },
+    "entry_priority": "BETTER_PIT_MEMBERSHIP_RANK_THEN_PAIR",
+    "duplicate_family_signal_rule": "ONE_TRADE_PER_UNIVERSE_TIMESTAMP_PAIR_WITH_ALL_SUPPORT_FAMILIES_RECORDED",
+    "negative_cash": false
+  },
+  "costs": {
+    "base_round_trip_fraction": 0.0025,
+    "stress_2x_round_trip_fraction": 0.005,
+    "allocation": "HALF_ENTRY_HALF_EXIT"
+  },
+  "exit_ablation": {
+    "design": "TWO_BY_TWO_COMPONENT_ABLATION",
+    "component_a_time_failure": {
+      "enabled_policy_ids": [
+        "TIME_FAIL_72_H168",
+        "TIME_FAIL_72_PLUS_PROFIT_TRAIL_ARM6_GAP4_H168"
+      ],
+      "check_time": "ENTRY_PLUS_72H_OPEN",
+      "information": "PRIOR_COMPLETED_1H_CLOSE_ONLY",
+      "condition": "PRIOR_COMPLETED_CLOSE_LE_ENTRY_PRICE",
+      "fill": "CURRENT_1H_OPEN",
+      "rationale": "RD25 showed strong separation at the pre-registered 72h checkpoint; this is tested out-of-sample rather than optimized on 2019-2021."
+    },
+    "component_b_profit_trail": {
+      "enabled_policy_ids": [
+        "PROFIT_TRAIL_ARM6_GAP4_H168",
+        "TIME_FAIL_72_PLUS_PROFIT_TRAIL_ARM6_GAP4_H168"
+      ],
+      "atr_source": "ATR24_PRIOR_FIXED_AT_SIGNAL",
+      "arm": "PRIOR_COMPLETED_HIGH_WATER_GTE_ENTRY_PLUS_6_ATR",
+      "floor": "PRIOR_COMPLETED_HIGH_WATER_MINUS_4_ATR",
+      "gap_behavior": "IF_CURRENT_OPEN_LE_FLOOR_EXIT_AT_OPEN",
+      "intrabar_behavior": "ELSE_IF_CURRENT_LOW_LE_FLOOR_EXIT_AT_FLOOR",
+      "causality": "CURRENT_BAR_NEW_HIGH_CANNOT_TIGHTEN_TRAIL_UNTIL_NEXT_BAR",
+      "rationale": "6 ATR is a coarse separation threshold above the RD25 loser median MFE range and below the winner median MFE range; 4 ATR gives room after arming and is not optimized as a grid."
+    },
+    "maximum_hold": {
+      "hours_from_entry": 168,
+      "fill": "OPEN_AT_ENTRY_PLUS_168H",
+      "applies_to_all_policies": true
+    },
+    "policies": [
+      "BASELINE_H168",
+      "TIME_FAIL_72_H168",
+      "PROFIT_TRAIL_ARM6_GAP4_H168",
+      "TIME_FAIL_72_PLUS_PROFIT_TRAIL_ARM6_GAP4_H168"
+    ],
+    "protective_stop": null,
+    "take_profit": null,
+    "partial_selling": false,
+    "adaptive_parameter_tuning": false
+  },
+  "hard_gates_each_policy_each_universe": [
+    "BASE_NET_RETURN_POSITIVE",
+    "STRESS_2X_NET_RETURN_POSITIVE",
+    "STRESS_2X_PROFIT_FACTOR_GTE_1_05",
+    "STRESS_2X_MAX_DRAWDOWN_LTE_20PCT",
+    "STRESS_2X_TRADES_GTE_75",
+    "BOTH_2022_2023_NET_PNL_POSITIVE",
+    "STRESS_2X_LARGEST_WINNER_REMOVAL_POSITIVE",
+    "STRESS_2X_LOAO_MIN_REMAINING_PNL_POSITIVE",
+    "STRESS_2X_LOYO_MIN_REMAINING_PNL_POSITIVE",
+    "PF1_BREAK_EVEN_COST_MULTIPLIER_GTE_2",
+    "CASH_FEASIBLE_BASE_AND_2X",
+    "MOMENTUM_BREAKOUT_STANDALONE_2X_POSITIVE",
+    "RELATIVE_STRENGTH_STANDALONE_2X_POSITIVE"
+  ],
+  "selection_rule": {
+    "eligible": "POLICY_MUST_PASS_EVERY_HARD_GATE_IN_C2_D2_E2",
+    "primary": "MAXIMIZE_WORST_UNIVERSE_2X_NET_RETURN",
+    "tie_break_1": "MAXIMIZE_WORST_UNIVERSE_2X_PROFIT_FACTOR",
+    "tie_break_2": "MINIMIZE_WORST_UNIVERSE_2X_MAXIMUM_DRAWDOWN",
+    "tie_break_3": "MINIMIZE_WORST_UNIVERSE_2X_TURNOVER",
+    "tie_break_4": "MINIMIZE_ACTIVE_EXIT_COMPONENT_COUNT",
+    "tie_break_5": "POLICY_ID_LEXICOGRAPHIC"
+  },
+  "concentration_review": {
+    "largest_trade_positive_pnl_share_trigger": 0.15,
+    "behavior": "BLOCK_2024_CONFIRMATION_AND_REQUIRE_CROSS_VENUE_CONTRIBUTION_REVIEW"
+  },
+  "prohibitions": {
+    "2024_access": false,
+    "post_2024_access": false,
+    "production_authorization": false,
+    "signal_parameter_changes": false,
+    "sizing_parameter_changes": false,
+    "capacity_parameter_changes": false,
+    "market_regime_tuning": false,
+    "post_result_exit_parameter_tuning": false
+  },
+  "success_next": "RD27_CLEAN_2024_INTERNAL_CONFIRMATION",
+  "failure_next": "RD27_RISK_SIZING_OR_CAPITAL_ROUTER_ARCHITECTURE_REQUIRED"
+}
