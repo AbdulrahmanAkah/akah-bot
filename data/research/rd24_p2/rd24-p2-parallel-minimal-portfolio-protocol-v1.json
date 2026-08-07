@@ -1,0 +1,122 @@
+{
+  "capacity": {
+    "behavior": "CAP_NOTIONAL_DO_NOT_SUPPRESS_SIGNAL_UNLESS_CAPACITY_UNAVAILABLE",
+    "information_boundary": "TRAILING_COMPLETED_24H_ENDING_AT_SIGNAL_CLOSE",
+    "lookback_hours": 24,
+    "maximum_entry_notional_fraction": 0.005,
+    "quote_turnover_proxy": "BASE_VOLUME_X_COMPLETED_BAR_CLOSE"
+  },
+  "concentration_review": {
+    "largest_trade_positive_pnl_share_cross_venue_trigger": 0.15,
+    "no_upside_cap": true,
+    "trigger_behavior": "BLOCK_RD25_UNTIL_CROSS_VENUE_CONTRIBUTION_REVIEW_IF_MULTIFAMILY_UNION_PASSES"
+  },
+  "costs": {
+    "allocation": "HALF_ENTRY_HALF_EXIT",
+    "base_round_trip_fraction": 0.0025,
+    "stress_2x_round_trip_fraction": 0.005
+  },
+  "execution": {
+    "adaptive_exit": false,
+    "entry": "EXACT_NEXT_1H_BAR_OPEN_AFTER_FROZEN_SIGNAL",
+    "entry_priority": "BETTER_PIT_MEMBERSHIP_RANK_THEN_PAIR",
+    "equal_slot_target_notional_fraction_of_equity": 0.18,
+    "exit": "OPEN_AT_SIGNAL_PLUS_169H_EQUALS_168H_FROM_ENTRY",
+    "family_priority": null,
+    "holding_hours": 168,
+    "long_only": true,
+    "maximum_gross_exposure_at_admission": 0.9,
+    "maximum_positions": 5,
+    "missing_entry_or_exit_bar": "REJECT_SIGNAL_NO_DELAYED_FILL",
+    "negative_cash": false,
+    "protective_stop": null,
+    "pyramiding": false,
+    "same_pair_concurrent_position": false,
+    "signal_regeneration": false,
+    "spot_only": true,
+    "take_profit": null,
+    "venue": "KUCOIN_SPOT"
+  },
+  "failure_next": "RD25_PORTFOLIO_TRANSLATION_DIAGNOSIS",
+  "family_horizon_hours": {
+    "MOMENTUM_ACCELERATION": 168,
+    "MOMENTUM_BREAKOUT": 168,
+    "RELATIVE_STRENGTH_ROTATION": 168,
+    "VOLATILITY_EXPANSION": 168
+  },
+  "partial_success_next": "RD25_INTEGRATION_ARCHITECTURE_REVIEW_PRE_2022_2023",
+  "portfolio_tests": {
+    "portfolio_qualified_family_rule": "ALL_STANDALONE_HARD_GATES_PASS_ALL_C2_D2_E2",
+    "qualified_union_leave_one_family_out": true,
+    "qualified_union_rule": "IF_AT_LEAST_2_STANDALONE_PORTFOLIOS_PASS_BUILD_UNION_OF_ALL_PASSERS",
+    "standalone": [
+      "MOMENTUM_BREAKOUT",
+      "VOLATILITY_EXPANSION",
+      "RELATIVE_STRENGTH_ROTATION",
+      "MOMENTUM_ACCELERATION"
+    ],
+    "union_all_raw_qualified": true,
+    "union_duplicate_event_rule": "ONE_TRADE_PER_UNIVERSE_TIMESTAMP_PAIR_WITH_ALL_SUPPORT_FAMILIES_RECORDED",
+    "union_family_attribution": "EQUAL_PNL_ATTRIBUTION_ACROSS_SUPPORTING_FAMILIES_DIAGNOSTIC_ONLY"
+  },
+  "prohibitions": {
+    "2022_2023_selection": false,
+    "2024_access": false,
+    "adaptive_exit": false,
+    "derivatives": false,
+    "leverage": false,
+    "margin": false,
+    "post_2024_access": false,
+    "post_result_parameter_tuning": false,
+    "production_authorization": false,
+    "shorts": false
+  },
+  "qualified_families": [
+    "MOMENTUM_BREAKOUT",
+    "VOLATILITY_EXPANSION",
+    "RELATIVE_STRENGTH_ROTATION",
+    "MOMENTUM_ACCELERATION"
+  ],
+  "qualified_union_additional_gate": "LEAVE_ONE_FAMILY_OUT_2X_NET_PNL_POSITIVE_ALL_UNIVERSES",
+  "rd23_inputs": {
+    "output_manifest_sha256": "4229056263041507265ee329addec71e518b88a8b80e91d9bf4e9df2131db777",
+    "qualified_family_freeze_sha256": "10707f5f381532f24d68f3264c6345de4eeadd0f356ae764f0c95e33f8b1c629",
+    "report_sha256": "e6ac534bff6b1a11517480987c31897c4c4cb21647fbb5c2c811282fe7424917",
+    "signal_events_sha256": "cdd6f078a5851a38be3f44722dcca7d6ccccb771b4647e9b467d14de3fc9d264"
+  },
+  "schema_version": "rd24-p2-parallel-minimal-portfolio-protocol-v1",
+  "selection_data": {
+    "2022_2023_used_for_selection": false,
+    "2024": "SEALED",
+    "cutoff_exclusive": "2022-01-01T00:00:00Z",
+    "periods": {
+      "DISCOVERY_2019_2020": [
+        "2019-01-01",
+        "2021-01-01"
+      ],
+      "TEMPORAL_REPLICATION_2021": [
+        "2021-01-01",
+        "2022-01-01"
+      ]
+    },
+    "post_2024": "SEALED",
+    "start": "2019-01-01T00:00:00Z"
+  },
+  "stage": "RD24_QUALIFIED_FAMILY_MINIMAL_PORTFOLIO_EVALUATION_PARALLEL",
+  "standalone_hard_gates_each_family_all_universes": [
+    "BASE_NET_RETURN_POSITIVE",
+    "STRESS_2X_NET_RETURN_POSITIVE",
+    "STRESS_2X_PROFIT_FACTOR_GTE_1_05",
+    "STRESS_2X_MAX_DRAWDOWN_LTE_20PCT",
+    "STRESS_2X_TRADES_GTE_75",
+    "BOTH_SELECTION_PERIODS_NET_PNL_POSITIVE",
+    "STRESS_2X_LARGEST_WINNER_REMOVAL_POSITIVE",
+    "STRESS_2X_LOAO_MIN_REMAINING_PNL_POSITIVE",
+    "STRESS_2X_LOYO_MIN_REMAINING_PNL_POSITIVE",
+    "PF1_BREAK_EVEN_COST_MULTIPLIER_GTE_2",
+    "CASH_FEASIBLE"
+  ],
+  "starting_commit": "f0120353dac3a3ac47ad44039c749c4e46cf2069",
+  "success_next": "RD25_EXPOSED_ROBUSTNESS_2022_2023",
+  "success_rule": "AT_LEAST_2_STANDALONE_FAMILIES_PASS_AND_THEIR_DETERMINISTIC_UNION_PASSES"
+}
