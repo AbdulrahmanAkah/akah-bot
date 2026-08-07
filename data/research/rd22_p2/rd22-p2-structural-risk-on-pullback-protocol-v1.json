@@ -1,0 +1,81 @@
+{
+  "candidate_family_id": "RD22_STRUCTURAL_RISK_ON_H168_PULLBACK_V1",
+  "decision_policy": {
+    "fail": "RD22_P2_STRUCTURAL_RISK_ON_PULLBACK_REJECTED_CLOSE_TREND_PULLBACK_FAMILY",
+    "fail_closes_current_trend_pullback_family": true,
+    "fail_next": "RD23_INDEPENDENT_SETUP_FAMILY_REQUIRED",
+    "pass": "RD22_P2_STRUCTURAL_RISK_ON_PULLBACK_FINALIST_SELECTED",
+    "pass_next": "RD22_P3_EXPOSED_2022_2023_ROBUSTNESS_AFTER_FINALIST_FREEZE"
+  },
+  "discovery_rationale": "RD21 H168 restored positive 2x economics but failed drawdown and concentration robustness. The next candidate adds one structural market regime hypothesis rather than changing score, sizing, stop, or horizon.",
+  "exposed_data_policy": {
+    "2022_2023": "NOT_USED_FOR_SELECTION_IN_THIS_STAGE",
+    "2024": "SEALED",
+    "2025_plus": "SEALED_FINAL_HOLDOUT"
+  },
+  "fixed_horizon_hours": 168,
+  "hard_gates": {
+    "BASE_NET_RETURN_POSITIVE_EACH_UNIVERSE": true,
+    "CASH_FEASIBLE_BASE_AND_2X": true,
+    "PF1_BREAK_EVEN_COST_MULTIPLIER_MINIMUM": 2.0,
+    "STRESS_2X_MAXIMUM_DRAWDOWN": 0.2,
+    "STRESS_2X_MINIMUM_POSITIVE_YEARS": 2,
+    "STRESS_2X_MINIMUM_PROFIT_FACTOR": 1.05,
+    "STRESS_2X_MINIMUM_TRADES": 75,
+    "STRESS_2X_NET_PNL_POSITIVE_AFTER_ANY_SINGLE_ASSET_REMOVAL": true,
+    "STRESS_2X_NET_PNL_POSITIVE_AFTER_ANY_SINGLE_YEAR_REMOVAL": true,
+    "STRESS_2X_NET_PNL_POSITIVE_AFTER_LARGEST_WINNER_REMOVAL": true,
+    "STRESS_2X_NET_RETURN_POSITIVE_EACH_UNIVERSE": true
+  },
+  "market_regime_gate": {
+    "availability_rule": "A UTC daily close and its EMA200 state become available only at the next UTC midnight; intraday partial daily data are never used.",
+    "daily_bar_rule": "Exactly 24 completed UTC hourly bars define one eligible daily close.",
+    "ema_adjust": false,
+    "ema_min_periods": 200,
+    "ema_span_days": 200,
+    "entry_authorization": "A frozen RD20 P2A-R1 signal may be routed only when the most recent available completed BTC daily close is strictly above EMA200.",
+    "id": "BTC_COMPLETED_DAILY_CLOSE_GT_EMA200",
+    "regime_off_policy": "REJECT_SIGNAL_NO_DELAYED_ENTRY",
+    "regime_unavailable_policy": "REJECT_SIGNAL_NO_DELAYED_ENTRY",
+    "source": "BTC-USDT 1h local raw candles aggregated to UTC daily closes",
+    "venue": "KUCOIN_SPOT"
+  },
+  "parent_candidate": "RD21_HORIZON_ALIGNED_TREND_PULLBACK_V1",
+  "parent_disposition": "RD21_P2_HORIZON_DISCOVERY_CLOSED_NO_FINALIST",
+  "prohibitions": {
+    "access_2022_2023_for_selection": false,
+    "access_2024": false,
+    "access_post_2024": false,
+    "horizon_search": false,
+    "parameter_search": false,
+    "production_authorization": false,
+    "risk_fraction_change": false,
+    "score_threshold_search": false,
+    "stop_change": false
+  },
+  "schema_version": "rd22-p2-structural-risk-on-pullback-protocol-v1",
+  "selection_data": "DISCOVERY_2019_2021_ONLY",
+  "stage": "RD22_P2_STRUCTURAL_RISK_ON_PULLBACK_DISCOVERY",
+  "starting_commit": "6dc05e52bdc8479e3b9b5328a72c3c1fb4ae4626",
+  "unchanged_from_rd21_h168": {
+    "adaptive_trailing": false,
+    "base_round_trip_cost_fraction": 0.0025,
+    "capital_replacement": false,
+    "entry": "NEXT_1H_BAR_OPEN",
+    "fixed_initial_risk_fraction": 0.005,
+    "initial_stop": "FROZEN_SIGNAL_INITIAL_STOP_REFERENCE",
+    "liquidity_capacity_fraction_of_trailing_24h_quote_turnover_proxy": 0.005,
+    "maximum_gross_exposure": 0.9,
+    "maximum_positions": 5,
+    "maximum_single_asset_notional_fraction": 0.4,
+    "negative_cash": false,
+    "partial_selling": false,
+    "score_logic": true,
+    "score_threshold": null,
+    "signal_ledger": true,
+    "signal_logic": true,
+    "static_stop_only_before_horizon": true,
+    "stress_2x_round_trip_cost_fraction": 0.005,
+    "take_profit": null
+  }
+}
