@@ -12,6 +12,7 @@ from spotbot.research.rd20_p2_minimal_pullback import (
     STRESS_2X_ROUND_TRIP_COST,
     MinimalPullbackError,
     evaluate_snapshot_hour,
+    fast_lookup,
     fixed_risk_notional,
     load_membership,
     percentile,
@@ -227,3 +228,27 @@ def test_effective_membership_accepts_top6_false_and_zero_completed_domain(
     assert len(snapshots) == 1
     assert len(snapshots[0].members) == 6
     assert ("PAIR6-USDT", 6) in snapshots[0].members
+
+
+def test_fast_lookup_normalizes_microsecond_timestamps_to_ns_keys() -> None:
+    raw = synthetic_bars()
+    raw["timestamp"] = raw["timestamp"].dt.as_unit("us")
+    featured = prepare_features(raw)
+
+    lookup = fast_lookup(featured)
+    target_index = 100
+    target = pd.Timestamp(featured.loc[target_index, "timestamp"])
+
+    assert target.value in lookup
+    assert lookup[target.value] == target_index
+
+
+def test_fast_lookup_keys_match_for_ns_and_us_sources() -> None:
+    raw_ns = synthetic_bars()
+    raw_us = raw_ns.copy()
+    raw_us["timestamp"] = raw_us["timestamp"].dt.as_unit("us")
+
+    keys_ns = set(fast_lookup(prepare_features(raw_ns)))
+    keys_us = set(fast_lookup(prepare_features(raw_us)))
+
+    assert keys_ns == keys_us

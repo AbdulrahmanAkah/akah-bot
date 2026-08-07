@@ -213,8 +213,13 @@ def prepare_features(raw: pd.DataFrame) -> pd.DataFrame:
 
 
 def fast_lookup(frame: pd.DataFrame) -> dict[int, int]:
-    timestamps = frame["timestamp"].astype("int64").to_numpy()
-    return {int(value): int(index) for index, value in enumerate(timestamps)}
+    timestamps = pd.to_datetime(
+        frame["timestamp"],
+        utc=True,
+        errors="raise",
+    ).dt.as_unit("ns")
+    keys = timestamps.astype("int64").to_numpy()
+    return {int(value): int(index) for index, value in enumerate(keys)}
 
 
 def load_membership(path: Path) -> list[MembershipSnapshot]:
