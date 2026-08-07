@@ -592,7 +592,17 @@ def diagnosis_payload(
     focus_metrics: pd.DataFrame,
     excursion_summary_frame: pd.DataFrame,
 ) -> dict[str, Any]:
-    dd_only = sorted(set(taxonomy.loc[taxonomy["dd_only_failure"], "family_id"].astype(str)))
+    family_dd_only = (
+        taxonomy.groupby("family_id", sort=True)["dd_only_failure"]
+        .agg(["count", "all"])
+        .reset_index()
+    )
+    dd_only = sorted(
+        family_dd_only.loc[
+            (family_dd_only["count"] == len(UNIVERSES)) & family_dd_only["all"],
+            "family_id",
+        ].astype(str)
+    )
     multi_failure = sorted(set((*FOCUS_FAMILIES, *SECONDARY_FAMILIES)).difference(dd_only))
     scaling_2x: dict[str, dict[str, float | None]] = {}
     for family in (*FOCUS_FAMILIES, "UNION_ALL_RAW_QUALIFIED"):
