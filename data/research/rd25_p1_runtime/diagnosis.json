@@ -1,0 +1,69 @@
+{
+  "2022_2023_accessed": false,
+  "2024_accessed": false,
+  "dd_only_failure_families": [
+    "MOMENTUM_ACCELERATION",
+    "MOMENTUM_BREAKOUT",
+    "RELATIVE_STRENGTH_ROTATION"
+  ],
+  "decision": "RD25_DIAGNOSIS_COMPLETE_ARCHITECTURE_PREREGISTRATION_REQUIRED",
+  "fixed_route_daily_close_max_scalar_meeting_20pct_dd": {
+    "MOMENTUM_BREAKOUT": {
+      "C2": 0.125,
+      "D2": 0.125,
+      "E2": 0.125
+    },
+    "RELATIVE_STRENGTH_ROTATION": {
+      "C2": 0.15,
+      "D2": 0.15,
+      "E2": 0.15
+    },
+    "UNION_ALL_RAW_QUALIFIED": {
+      "C2": 0.1,
+      "D2": 0.1,
+      "E2": 0.1
+    }
+  },
+  "focus_families": [
+    "MOMENTUM_BREAKOUT",
+    "RELATIVE_STRENGTH_ROTATION"
+  ],
+  "focus_pair_union_2x_metrics": {
+    "C2": {
+      "maximum_drawdown": 0.4276437154198134,
+      "net_return": 3.0684016093398716,
+      "profit_factor": 1.318550348146372,
+      "trade_count": 533
+    },
+    "D2": {
+      "maximum_drawdown": 0.3723223184620673,
+      "net_return": 3.7725127657400996,
+      "profit_factor": 1.418825127614384,
+      "trade_count": 534
+    },
+    "E2": {
+      "maximum_drawdown": 0.4276437154198134,
+      "net_return": 3.0684016093398716,
+      "profit_factor": 1.318550348146372,
+      "trade_count": 533
+    }
+  },
+  "focus_pair_union_status": "POST_RESULT_DIAGNOSTIC_NOT_CANDIDATE",
+  "interpretation_guardrails": [
+    "NO_RD25_COUNTERFACTUAL_IS_A_FINALIST",
+    "NO_ARCHITECTURE_PARAMETER_IS_SELECTED_IN_RD25",
+    "FOCUS_PAIR_UNION_IS_RESULT_INFORMED_DIAGNOSTIC_ONLY",
+    "FIXED_ROUTE_SCALING_DOES_NOT_REROUTE_OR_RESIZE_TRADES",
+    "TRADE_EXCURSIONS_DESCRIBE_EXISTING_RD24_TRADES_ONLY"
+  ],
+  "loser_excursion_summary_rows": 12,
+  "multi_failure_families": [
+    "VOLATILITY_EXPANSION"
+  ],
+  "next_stage": "RD26_ARCHITECTURE_PREREGISTRATION_PRE_2022_2023",
+  "post_2024_accessed": false,
+  "production_authorized": false,
+  "schema_version": "rd25-p1-portfolio-translation-diagnosis-v1",
+  "stage": "RD25_PORTFOLIO_TRANSLATION_DIAGNOSIS",
+  "winner_excursion_summary_rows": 12
+}
