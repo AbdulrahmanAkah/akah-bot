@@ -1,0 +1,100 @@
+{
+  "2022_2023_used_for_selection": false,
+  "2024_access_authorized": false,
+  "cross_family_overlap": "DIAGNOSTIC_ONLY_NOT_SELECTION_GATE",
+  "failure_next": "RD24_NEW_ALPHA_SOURCE_OR_FEATURE_RESEARCH_REQUIRED",
+  "families": {
+    "BASE_RANGE_BREAKOUT": {
+      "parameters": {
+        "base_lookback_hours": 48,
+        "fresh_crossing_required": true,
+        "maximum_base_width_atr": 5.0
+      },
+      "rule": "PRIOR_48H_RANGE_WIDTH_LTE_5X_PRIOR_ATR24_AND_FRESH_CURRENT_CLOSE_ABOVE_PRIOR_48H_HIGH"
+    },
+    "MOMENTUM_ACCELERATION": {
+      "parameters": {
+        "acceleration_multiple": 1.5,
+        "context_horizon_hours": 24,
+        "short_horizon_hours": 6
+      },
+      "rule": "FRESH_CURRENT_6H_RETURN_GTE_1_5X_PREVIOUS_6H_RETURN_WITH_BOTH_PREVIOUS_6H_AND_CURRENT_24H_POSITIVE"
+    },
+    "MOMENTUM_BREAKOUT": {
+      "parameters": {
+        "fresh_crossing_required": true,
+        "lookback_hours": 72
+      },
+      "rule": "FRESH_CURRENT_CLOSE_ABOVE_MAX_HIGH_OF_PRIOR_72_COMPLETED_1H_BARS"
+    },
+    "RELATIVE_STRENGTH_ROTATION": {
+      "parameters": {
+        "fresh_leader_required": true,
+        "ranking_horizon_hours": 72
+      },
+      "rule": "FRESH_CROSS_SECTIONAL_72H_RETURN_LEADER_WITHIN_SAME_EFFECTIVE_MEMBERSHIP_SNAPSHOT_AFTER_NOT_BEING_PRIOR_HOUR_LEADER_AND_RETURN_GT_0"
+    },
+    "STRUCTURAL_REVERSAL": {
+      "parameters": {
+        "sweep_lookback_hours": 24,
+        "weakness_lookback_hours": 72
+      },
+      "rule": "PAST_72H_RETURN_LT_0_AND_CURRENT_LOW_SWEEPS_PRIOR_24H_LOW_AND_CLOSE_RECLAIMS_THAT_LOW_AND_BAR_BULLISH"
+    },
+    "VOLATILITY_EXPANSION": {
+      "parameters": {
+        "close_location_minimum": 0.75,
+        "fresh_event_required": true,
+        "true_range_multiple": 2.0
+      },
+      "rule": "FRESH_BULLISH_TRUE_RANGE_GTE_2X_PRIOR_ATR24_AND_CLOSE_LOCATION_GTE_0_75"
+    }
+  },
+  "forward_evaluation": {
+    "base_round_trip_cost_fraction": 0.0025,
+    "cost_multipliers": [
+      1.0,
+      2.0
+    ],
+    "entry_reference": "NEXT_1H_BAR_OPEN",
+    "exit_reference": "COMPLETED_CLOSE_AT_SIGNAL_PLUS_HORIZON",
+    "horizons_hours": [
+      24,
+      72,
+      168
+    ]
+  },
+  "hard_gates_each_family_horizon_universe_period_at_2x": [
+    "EVENT_COUNT_GTE_75",
+    "PAIR_COUNT_GTE_3",
+    "SIGNAL_DAY_COUNT_GTE_30",
+    "MEAN_NET_FORWARD_RETURN_GT_0",
+    "SYMMETRIC_1PCT_TRIMMED_MEAN_NET_FORWARD_RETURN_GT_0",
+    "LEAVE_ONE_PAIR_OUT_MIN_MEAN_NET_RETURN_GT_0",
+    "RAW_MEAN_BREAK_EVEN_COST_MULTIPLIER_GTE_2"
+  ],
+  "higher_timeframe_context_active": false,
+  "higher_timeframe_context_policy": "DEFER_4H_1D_CONTEXT_AND_15M_4H_TIMEFRAME_ABLATION_UNTIL_RAW_EDGE_FAMILY_QUALIFIES",
+  "historical_exit_simulation_authorized": false,
+  "per_family_horizon_selection": "ALL_GATES_ALL_3_UNIVERSES_BOTH_PERIODS_THEN_MAX_WORST_TRIMMED_2X_THEN_MAX_WORST_BREAK_EVEN_THEN_SHORTER_HORIZON",
+  "portfolio_replay_authorized": false,
+  "position_sizing_authorized": false,
+  "post_2024_access_authorized": false,
+  "production_authorized": false,
+  "research_principle": "PARALLEL_FAMILY_TESTING_WITH_ISOLATED_ATTRIBUTION_BEFORE_PORTFOLIO_INTEGRATION",
+  "schema_version": "rd23-p2-multifamily-raw-edge-protocol-v1",
+  "selection_periods": {
+    "DISCOVERY_2019_2020": [
+      "2019-01-01",
+      "2021-01-01"
+    ],
+    "TEMPORAL_REPLICATION_2021": [
+      "2021-01-01",
+      "2022-01-01"
+    ]
+  },
+  "signal_timeframe": "1H_COMPLETED_BARS",
+  "stage": "RD23_P2_MULTIFAMILY_RAW_EDGE_TOURNAMENT",
+  "starting_commit": "b17d37416ff617202886629dd8154569a7427ddd",
+  "success_next": "RD24_QUALIFIED_FAMILY_MINIMAL_PORTFOLIO_EVALUATION_PARALLEL"
+}
