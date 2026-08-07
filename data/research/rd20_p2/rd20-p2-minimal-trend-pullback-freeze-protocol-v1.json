@@ -1,0 +1,61 @@
+{
+  "candidate_id": "RD20_MINIMAL_TREND_PULLBACK_V1",
+  "costs": {
+    "base_round_trip_fraction": 0.0025,
+    "break_even_cost_multiplier_required_in_p3": true,
+    "signal_cost_hurdle": false,
+    "stress_2x_round_trip_fraction": 0.005
+  },
+  "economic_replay_authorized": false,
+  "exit_baseline": {
+    "adaptive_trailing": false,
+    "initial_stop": "minimum low of current and prior 11 completed 1h bars",
+    "maximum_holding_period": null,
+    "partial_selling": false,
+    "stop_widening": false,
+    "take_profit": null,
+    "thesis_invalidation": "completed close below EMA24; execute next bar open"
+  },
+  "future_label_computation_authorized": false,
+  "historical_exit_simulation_authorized": false,
+  "historical_portfolio_routing_authorized": false,
+  "pre_pnl_signal_sufficiency": {
+    "minimum_candidate_events_per_partition_universe": 1,
+    "minimum_candidate_events_per_universe": 75
+  },
+  "risk": {
+    "fixed_initial_risk_fraction": 0.005,
+    "maximum_gross_exposure": 0.9,
+    "maximum_simultaneous_positions": 5,
+    "maximum_single_asset_notional": 0.4,
+    "negative_cash": false
+  },
+  "schema_version": "rd20-p2-minimal-trend-pullback-freeze-protocol-v1",
+  "score": {
+    "component_count": 2,
+    "top_k_signal_filter": null,
+    "weights": {
+      "RECOVERY_IMPULSE_PERCENTILE": 0.5,
+      "TREND_STRENGTH_PERCENTILE": 0.5
+    }
+  },
+  "sealed": {
+    "2024": true,
+    "2025_plus": true
+  },
+  "setup": {
+    "atr_hours": 24,
+    "binary_gate_count": 3,
+    "gates": [
+      "past_72h_return > 0",
+      "at least one prior completed bar among the preceding 12 has low <= EMA24",
+      "current completed close > EMA24 while prior completed close <= prior EMA24"
+    ],
+    "pullback_ema_hours": 24,
+    "pullback_touch_lookback_hours": 12,
+    "trend_lookback_hours": 72
+  },
+  "signal_generation_resolution": "1H",
+  "source_parent": "f7dd96c19c4e3f53f0a5c2cf5a3cf511c632dd9a",
+  "stage": "RD20_P2_MINIMAL_TREND_PULLBACK_CANDIDATE_FREEZE_AND_PRE_PNL_AUDIT"
+}

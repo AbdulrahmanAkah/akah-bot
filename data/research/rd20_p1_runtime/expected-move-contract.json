@@ -1,0 +1,24 @@
+{
+  "confirmed_prior_expected_move_alpha": false,
+  "contract_id": "RD20_EXPECTED_MOVE_AND_COST_ALIGNMENT_V1",
+  "cost_hurdle_used_for_signal_generation": false,
+  "economic_cost_evaluation": {
+    "actual_trade_holding_path_primary_for_cost_robustness": true,
+    "base_round_trip_fraction": 0.0025,
+    "break_even_cost_multiplier_required": true,
+    "stress_2x_round_trip_fraction": 0.005
+  },
+  "ex_ante_expected_move_hard_filter_authorized": false,
+  "future_labels_used_for_signal_generation": false,
+  "mandatory_evaluation_horizons_hours": [
+    24,
+    72,
+    168
+  ],
+  "method_reuse": {
+    "24h_72h_7d_labels": "DIAGNOSTIC_ONLY_AFTER_FREEZE",
+    "net_top_excess_proxy": "METHOD_ONLY_NOT_NUMERIC_COEFFICIENT"
+  },
+  "observation_timeframe": "1H_COMPLETED_BARS",
+  "reason": "RD05-RD08 confirmed no reusable public-market-data alpha. The old net_top_excess_proxy is an after-label diagnostic, not an ex-ante predictor."
+}

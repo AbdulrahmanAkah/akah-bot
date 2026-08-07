@@ -1,0 +1,5 @@
+artifact,reuse_class,authorized_for_scoring,authorized_as_alpha,rule
+net_top_excess_proxy,METHOD_ONLY,False,False,Reuse the accounting pattern gross opportunity minus turnover/cost proxy for diagnostics only. Do not reuse the old numeric 0.002 cost coefficient as the RD20 execution cost model.
+AGE_OR_TENURE,QUALITY_DIAGNOSTIC_ONLY,False,False,Do not use AGE_OR_TENURE as alpha. Its apparent association failed concentration and was later absorbed by quality controls.
+FORWARD_24H_72H_7D_LABEL_CONTRACTS,HORIZON_DIAGNOSTIC_METHOD,False,False,Reuse causal future-label semantics only for later evaluation after the candidate is frozen. Future labels never enter signal generation.
+IC_BOOTSTRAP_BH_ESS_CONCENTRATION,VALIDATION_METHOD,False,False,"Reuse statistical validation methods for component diagnostics and concentration checks, not historical outcomes as new alpha priors."

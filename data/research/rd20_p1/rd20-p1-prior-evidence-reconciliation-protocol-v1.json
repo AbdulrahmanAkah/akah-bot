@@ -1,0 +1,16 @@
+{
+  "expected_decision": "RD20_P1_PRIOR_EVIDENCE_RECONCILED_METHOD_ONLY_NO_PRIOR_ALPHA_REUSE",
+  "objective": "Reconcile committed RD05-RD09 evidence before any RD20 economic candidate uses prior signal or cost-horizon semantics.",
+  "rules": [
+    "Only committed Git evidence with verified blob identity is authoritative.",
+    "No RD05-RD09 signal is promoted to RD20 alpha unless prior final adjudication confirmed it.",
+    "AGE_OR_TENURE remains diagnostic only.",
+    "net_top_excess_proxy is reusable as an accounting methodology only; its old numeric cost coefficient is not reused.",
+    "24h, 72h, and 7d future labels may be reused only as post-freeze evaluation horizons.",
+    "No future label, expected-move proxy, or cost hurdle may enter RD20-P2 signal generation.",
+    "No return calculation, 2024 access, post-2024 access, or production authorization."
+  ],
+  "schema_version": "rd20-p1-prior-evidence-reconciliation-protocol-v1",
+  "source_parent": "f7dd96c19c4e3f53f0a5c2cf5a3cf511c632dd9a",
+  "stage": "RD20_P1_PRIOR_SIGNAL_EVIDENCE_RECONCILIATION"
+}

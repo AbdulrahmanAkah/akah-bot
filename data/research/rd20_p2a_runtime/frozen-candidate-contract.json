@@ -1,0 +1,62 @@
+{
+  "2024_access": false,
+  "adaptive_trailing": false,
+  "binary_setup_gate_count": 3,
+  "candidate_id": "RD20_MINIMAL_TREND_PULLBACK_V1",
+  "candidate_selection": "ALL_SETUP_PASSERS_RANKED_NO_TOP_K_SIGNAL_FILTER",
+  "capital_replacement": false,
+  "costs": {
+    "base_round_trip_fraction": 0.0025,
+    "cost_hurdle_in_signal_generation": false,
+    "stress_2x_round_trip_fraction": 0.005
+  },
+  "data_resolution": "1H",
+  "entry_execution": "NEXT_1H_BAR_OPEN",
+  "evaluation_horizons_hours": [
+    24,
+    72,
+    168
+  ],
+  "future_labels_in_signal_generation": false,
+  "initial_stop": "MIN_LOW_OF_CURRENT_AND_PRIOR_11_COMPLETED_1H_BARS",
+  "market_context": "DIAGNOSTIC_ONLY_NOT_GATE_NOT_SCORE",
+  "maximum_holding_period": null,
+  "partial_selling": false,
+  "post_2024_access": false,
+  "ranking_scope": "CURRENT_PIT_MEMBERSHIP_SNAPSHOT",
+  "reentry": "A fresh EMA24 reclaim event is required. Continuous above-EMA state cannot emit repeated entries without a new below/equal state.",
+  "risk": {
+    "fixed_initial_risk_fraction": 0.005,
+    "maximum_gross_exposure": 0.9,
+    "maximum_simultaneous_positions": 5,
+    "maximum_single_asset_notional": 0.4,
+    "negative_cash": false
+  },
+  "score_component_count": 2,
+  "score_components": [
+    {
+      "id": "TREND_STRENGTH_PERCENTILE",
+      "source": "PAST_72H_RETURN",
+      "weight": 0.5
+    },
+    {
+      "id": "RECOVERY_IMPULSE_PERCENTILE",
+      "source": "(CURRENT_CLOSE-PRIOR_CLOSE)/ATR24",
+      "weight": 0.5
+    }
+  ],
+  "setup_family": "TREND_PULLBACK_CONTINUATION",
+  "setup_gates": [
+    "PAST_72H_RETURN_GT_ZERO",
+    "PRIOR_12H_CONTAINS_LOW_AT_OR_BELOW_EMA24",
+    "CURRENT_CLOSE_RECLAIMS_EMA24_FROM_BELOW_OR_EQUAL"
+  ],
+  "stop_widening_after_entry": false,
+  "take_profit": null,
+  "thesis_invalidation": "COMPLETED_1H_CLOSE_BELOW_EMA24_EXECUTE_NEXT_BAR_OPEN",
+  "tie_break": [
+    "HIGHER_TOTAL_SCORE",
+    "BETTER_EXISTING_MEMBERSHIP_RANK",
+    "LEXICOGRAPHIC_PAIR"
+  ]
+}
