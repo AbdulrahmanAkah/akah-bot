@@ -1,0 +1,68 @@
+{
+  "2022_2023_access": false,
+  "2024_access": false,
+  "architecture_selection_authorized": false,
+  "diagnostics": {
+    "drawdown_episode_decomposition": true,
+    "failure_taxonomy": true,
+    "fixed_route_exposure_scaling": {
+      "candidate_status": "DIAGNOSTIC_ONLY_NOT_A_CANDIDATE",
+      "rerouting": false,
+      "scalars": [
+        0.1,
+        0.125,
+        0.15,
+        0.2,
+        0.25,
+        0.5,
+        1.0
+      ]
+    },
+    "focus_pair_union": {
+      "architecture": "EXACT_RD24_18PCT_SLOT_5_POSITION_90PCT_GROSS_168H",
+      "candidate_status": "POST_RESULT_DIAGNOSTIC_NOT_A_CANDIDATE",
+      "families": [
+        "MOMENTUM_BREAKOUT",
+        "RELATIVE_STRENGTH_ROTATION"
+      ]
+    },
+    "routing_pressure": true,
+    "trade_path_excursions": {
+      "cost_multiplier": 2.0,
+      "families": [
+        "MOMENTUM_BREAKOUT",
+        "RELATIVE_STRENGTH_ROTATION"
+      ],
+      "measures": [
+        "MAE_RETURN",
+        "MFE_RETURN",
+        "MAE_ATR24",
+        "MFE_ATR24",
+        "TIME_TO_MAE",
+        "TIME_TO_MFE",
+        "MFE_GIVEBACK_AT_168H",
+        "OPEN_RETURN_24H_72H_168H",
+        "HIT_PLUS_MINUS_1_2_3_ATR"
+      ]
+    }
+  },
+  "focus_basis": "These were the only RD24 families whose standalone hard-gate failures were exclusively the <=20% maximum-drawdown gate in all C2/D2/E2.",
+  "focus_families": [
+    "MOMENTUM_BREAKOUT",
+    "RELATIVE_STRENGTH_ROTATION"
+  ],
+  "new_exit_rule_authorized": false,
+  "new_sizing_rule_authorized": false,
+  "parameter_tuning_authorized": false,
+  "post_2024_access": false,
+  "production_authorized": false,
+  "purpose": "Diagnose why RD23 raw edge did not meet RD24 portfolio drawdown gates without selecting or tuning a new architecture.",
+  "schema_version": "rd25-p1-portfolio-translation-diagnosis-protocol-v1",
+  "secondary_families": [
+    "VOLATILITY_EXPANSION",
+    "MOMENTUM_ACCELERATION"
+  ],
+  "stage": "RD25_PORTFOLIO_TRANSLATION_DIAGNOSIS",
+  "starting_commit": "78592564dfd7a454c2842b096cb2bc54db320502",
+  "success_next": "RD26_ARCHITECTURE_PREREGISTRATION_PRE_2022_2023"
+}
