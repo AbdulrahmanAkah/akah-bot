@@ -1,0 +1,86 @@
+{
+  "advancement_rule": {
+    "2024_not_executed_here": true,
+    "maximum_finalists": 2,
+    "next_if_finalists": "RD19_P2D_INTERNAL_CONFIRMATION_AUTHORIZATION",
+    "next_if_none": "RD19_P2C_R1_NO_FINALISTS_DISCOVERY_REJECTION_REVIEW"
+  },
+  "candidate_id": "RD19_COST_AWARE_CROSS_SECTIONAL_TREND_CONVEXITY_V1",
+  "corrections": [
+    {
+      "class": "IMPLEMENTATION_DEFECT",
+      "repair_id": "PULLBACK_LOOKBACK_12_ENFORCED",
+      "semantics": "A pullback touch is satisfied when low <= the 24h entry EMA on any of the twelve completed bars preceding the recovery bar."
+    },
+    {
+      "class": "IMPLEMENTATION_DEFECT",
+      "repair_id": "CONTRACTION_MEASURED_PRE_BREAKOUT",
+      "semantics": "The 0.75 ATR contraction ratio is evaluated using ATR and its 168h reference from the completed bar before the breakout bar."
+    },
+    {
+      "class": "IMPLEMENTATION_CONFORMANCE",
+      "repair_id": "TOP_K_APPLIED_AFTER_ENTRY_AND_COST_FILTERS",
+      "semantics": "Daily cross-sectional ordering is frozen first; hourly trend, entry-quality and cost filters are then applied in rank order until frozen top-K breadth is filled."
+    },
+    {
+      "class": "IMPLEMENTATION_DEFECT",
+      "repair_id": "MARKET_GATE_NOT_DOUBLE_APPLIED_AT_DAILY_RANK_REFRESH",
+      "semantics": "Daily ranking refresh does not erase the day's ranking because the market gate is OFF at 00:00; the frozen market gate is evaluated at each hourly entry decision."
+    },
+    {
+      "class": "CAUSALITY_DEFECT",
+      "repair_id": "THESIS_AND_MAX_HOLD_EXIT_NEXT_BAR",
+      "semantics": "Thesis invalidation and maximum-holding signals formed on a completed bar execute at the next eligible bar open."
+    },
+    {
+      "class": "CAUSALITY_DEFECT",
+      "repair_id": "TRAIL_UPDATE_EFFECTIVE_NEXT_BAR",
+      "semantics": "The stop active during a bar is known before that bar; high/ATR from the current bar may tighten the trail only for the next bar."
+    },
+    {
+      "class": "EXECUTION_REALISM",
+      "repair_id": "GAP_THROUGH_STOP_FILLED_AT_OPEN",
+      "semantics": "If a bar opens below an active long protective stop, the fill is the bar open rather than the stale stop price."
+    }
+  ],
+  "data_scope": {
+    "2024_market_data_access": false,
+    "post_2024_access": false,
+    "replay_end": "2023-12-31T23:00:00Z",
+    "replay_start": "2019-01-01T00:00:00Z",
+    "warmup_before_2019": true
+  },
+  "explicit_nonchanges": [
+    "COST_HURDLE_6X and COST_HURDLE_10X thresholds unchanged",
+    "hourly ATR remains the frozen cost-hurdle numerator",
+    "maximum extension thresholds unchanged",
+    "trend EMA horizons unchanged",
+    "risk per position remains 0.5%",
+    "top-K remains 2 or 3 exactly as frozen",
+    "maximum holding remains 720 hours",
+    "C2/D2/E2 definitions unchanged",
+    "1x and 2x costs unchanged",
+    "all hard selection gates unchanged"
+  ],
+  "frozen_inputs": {
+    "execution_order_sha256": "84139d2c714b198b3324d47d45507c5e861131e47adbe4b574b8de9dada22150",
+    "hard_gate_changes": 0,
+    "matrix_changes": 0,
+    "p2_protocol_sha256": "b5a54bca6d9d918bb84934edd7b6512b026a0774c2abd001b2575698d459d7ab",
+    "parameter_changes": 0,
+    "run_count": 216,
+    "variant_count": 12
+  },
+  "original_p2c_disposition": "INVALIDATED_FOR_IMPLEMENTATION_NONCONFORMANCE",
+  "parent_commit": "d94a62f53dab8c7f8da5a030df76e70ec5feef85",
+  "performance_repairs": [
+    "Collapse twelve repeated feature builds into two immutable feature stores keyed by the only two distinct feature signatures.",
+    "Cache six daily ranking streams: two feature signatures by three PIT universes.",
+    "Precompute thirty-six variant/universe candidate plans for both cost multipliers before portfolio execution.",
+    "Remove pandas DataFrame construction and Series.to_dict calls from the portfolio hot loop.",
+    "Keep 1,512 full raw run artifacts local and hash-addressed; commit only compact summaries and the evidence hash manifest.",
+    "Use atomic run checkpoints so interruption can resume without recomputing completed runs."
+  ],
+  "schema_version": "rd19-p2c-r1-conformance-correction-protocol-v1",
+  "stage": "RD19_P2C_R1_CONFORMANCE_CORRECTION_REPLAY_2019_2023"
+}

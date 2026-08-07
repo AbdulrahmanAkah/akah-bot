@@ -1,0 +1,28 @@
+{
+  "2024_access_authorized": false,
+  "confirmed_defects": {
+    "contraction_uses_breakout_bar_atr": true,
+    "market_gate_applied_inside_daily_rank_refresh": true,
+    "pullback_lookback_parameter_not_used": true,
+    "thesis_invalidation_exits_same_bar_close": true,
+    "top_k_applied_before_hourly_entry_and_cost_filters": true,
+    "trail_updated_before_current_bar_low_stop_test": true
+  },
+  "hard_gate_changes": 0,
+  "matrix_changes": 0,
+  "original_commit": "d94a62f53dab8c7f8da5a030df76e70ec5feef85",
+  "original_result_disposition": "INVALIDATED_FOR_IMPLEMENTATION_NONCONFORMANCE",
+  "parameter_changes": 0,
+  "repair_ids": [
+    "PULLBACK_LOOKBACK_12_ENFORCED",
+    "CONTRACTION_MEASURED_PRE_BREAKOUT",
+    "TOP_K_APPLIED_AFTER_ENTRY_AND_COST_FILTERS",
+    "MARKET_GATE_NOT_DOUBLE_APPLIED_AT_DAILY_RANK_REFRESH",
+    "THESIS_AND_MAX_HOLD_EXIT_NEXT_BAR",
+    "TRAIL_UPDATE_EFFECTIVE_NEXT_BAR",
+    "GAP_THROUGH_STOP_FILLED_AT_OPEN",
+    "HOT_LOOP_PANDAS_SNAPSHOT_REMOVED",
+    "FEATURE_STORE_REUSED_BY_SIGNATURE",
+    "RAW_EVIDENCE_KEPT_LOCAL_NOT_COMMITTED"
+  ]
+}
