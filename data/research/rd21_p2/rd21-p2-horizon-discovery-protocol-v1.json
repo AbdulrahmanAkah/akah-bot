@@ -1,0 +1,86 @@
+{
+  "candidate_family_id": "RD21_HORIZON_ALIGNED_TREND_PULLBACK_V1",
+  "data_governance": {
+    "2019_2021": "AUTHORIZED_FOR_VARIANT_SELECTION",
+    "2022": "ALREADY_EXPOSED_BY_RD20_NOT_USED_FOR_RD21_VARIANT_SELECTION",
+    "2023": "ALREADY_EXPOSED_BY_RD20_NOT_USED_FOR_RD21_VARIANT_SELECTION",
+    "2024": "SEALED_CLEAN_INTERNAL_CONFIRMATION",
+    "2025_plus": "SEALED_FINAL_HOLDOUT"
+  },
+  "exit_contract": {
+    "before_horizon": "STATIC_FROZEN_INITIAL_STOP_ONLY",
+    "horizon_exit": "OPEN_AT_ENTRY_TIME_PLUS_HORIZON_HOURS",
+    "horizon_exit_precedes_that_hours_intrabar_path": true,
+    "research_boundary_liquidation": "LAST_2021_BAR_CLOSE_ACCOUNTING_ONLY",
+    "stop_widening": false,
+    "take_profit": null
+  },
+  "hard_gates_per_horizon_each_universe": {
+    "base_net_return_positive": true,
+    "cash_feasible_base_and_2x": true,
+    "largest_winner_removal_remains_positive_2x": true,
+    "leave_one_asset_out_remains_positive_2x": true,
+    "leave_one_year_out_remains_positive_2x": true,
+    "pf1_break_even_cost_multiplier_minimum": 2.0,
+    "stress_2x_maximum_drawdown": 0.2,
+    "stress_2x_minimum_positive_years_of_3": 2,
+    "stress_2x_minimum_trades": 75,
+    "stress_2x_net_return_positive": true,
+    "stress_2x_profit_factor_minimum": 1.05
+  },
+  "hypothesis": "RD20-P3 destroyed a slower-horizon pullback opportunity through an EMA24 thesis exit whose realized median hold was far shorter than the pre-registered 24h/72h/168h forward horizons, creating cost-heavy churn.",
+  "next_if_finalist": "RD21_P3_EXPOSED_2022_2023_ROBUSTNESS_AFTER_FINALIST_FREEZE",
+  "next_if_none": "RD21_NEW_CORE_SIGNAL_OR_REGIME_HYPOTHESIS_REQUIRED",
+  "objective": {
+    "high_monthly_growth": "ASPIRATION_NOT_HARD_GATE",
+    "primary": "TEST_HORIZON_ALIGNMENT_WITHOUT_SIGNAL_OR_SCORE_RETUNING",
+    "upside_cap": null
+  },
+  "only_screened_dimension": "FIXED_HORIZON_EXIT_HOURS",
+  "prohibitions": {
+    "access_2022_2023_for_variant_selection": false,
+    "access_2024": false,
+    "access_2025_plus": false,
+    "adaptive_exit": false,
+    "capacity_tuning": false,
+    "capital_arbitration": false,
+    "cost_model_tuning": false,
+    "market_gate_tuning": false,
+    "partial_selling": false,
+    "production": false,
+    "risk_tuning": false,
+    "score_tuning": false,
+    "signal_threshold_tuning": false
+  },
+  "schema_version": "rd21-p2-horizon-discovery-protocol-v1",
+  "selection_data": "DISCOVERY_2019_2021_ONLY",
+  "selection_rule": "Among horizons passing every hard gate in C2/D2/E2, maximize the worst-universe 2x net return; tie-break by worst 2x PF, lower worst 2x drawdown, lower worst 2x turnover, then shorter horizon.",
+  "source_candidate": "RD20_MINIMAL_TREND_PULLBACK_V1",
+  "stage": "RD21_P2_HORIZON_ALIGNED_PULLBACK_DISCOVERY",
+  "starting_commit": "24f3c8732e0c7bb968fe587753545694bae092d0",
+  "unchanged": {
+    "base_round_trip_cost_fraction": 0.0025,
+    "candidate_priority": "FROZEN_CANDIDATE_RANK_THEN_MEMBERSHIP_RANK_THEN_PAIR",
+    "entry": "NEXT_1H_BAR_OPEN",
+    "fixed_initial_risk_fraction": 0.005,
+    "initial_stop": "FROZEN_SIGNAL_INITIAL_STOP_REFERENCE",
+    "liquidity_capacity_fraction_trailing_24h_quote_turnover_proxy": 0.005,
+    "maximum_gross_exposure": 0.9,
+    "maximum_positions": 5,
+    "maximum_single_asset_notional_fraction": 0.4,
+    "no_adaptive_trailing": true,
+    "no_market_gate_addition": true,
+    "no_negative_cash": true,
+    "no_partial_selling": true,
+    "no_pyramiding": true,
+    "no_score_logic_change": true,
+    "signal_ledger": "RD20_P2A_R1_SIGNAL_EVENTS_FROZEN",
+    "stress_2x_round_trip_cost_fraction": 0.005
+  },
+  "variant_horizons_hours": [
+    24,
+    72,
+    168
+  ],
+  "variant_origin": "These three horizons were already preregistered in RD20 before P3 economic results; no new horizon value is introduced post-result."
+}

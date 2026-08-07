@@ -1,0 +1,98 @@
+{
+  "2022_2023_are_pristine_holdout": false,
+  "2022_2023_used_for_next_variant_selection": false,
+  "2024_accessed": false,
+  "already_exposed_2022_2x_forward_by_horizon": {
+    "168": {
+      "best_universe_mean_net_forward_return": -0.0405547676667472,
+      "mean_across_universes": -0.0405547676667472,
+      "worst_universe_mean_net_forward_return": -0.0405547676667472
+    },
+    "24": {
+      "best_universe_mean_net_forward_return": -0.0062409583562321,
+      "mean_across_universes": -0.0062409583562321,
+      "worst_universe_mean_net_forward_return": -0.0062409583562321
+    },
+    "72": {
+      "best_universe_mean_net_forward_return": -0.0184408641012496,
+      "mean_across_universes": -0.0184408641012496,
+      "worst_universe_mean_net_forward_return": -0.0184408641012496
+    }
+  },
+  "already_exposed_2023_2x_forward_by_horizon": {
+    "168": {
+      "best_universe_mean_net_forward_return": 0.0152747709167168,
+      "mean_across_universes": 0.0138933847999265,
+      "worst_universe_mean_net_forward_return": 0.01319852412335
+    },
+    "24": {
+      "best_universe_mean_net_forward_return": -0.002587253863052,
+      "mean_across_universes": -0.0027653956457649996,
+      "worst_universe_mean_net_forward_return": -0.0029894785127151
+    },
+    "72": {
+      "best_universe_mean_net_forward_return": 0.0032260282507069,
+      "mean_across_universes": 0.0025845696189375996,
+      "worst_universe_mean_net_forward_return": 0.0021567323863567
+    }
+  },
+  "base_gross_pnl_by_universe": {
+    "C2": 22775.51403494885,
+    "D2": 25059.90168241214,
+    "E2": 22195.893529644203
+  },
+  "base_net_return_by_universe": {
+    "C2": -0.931530622626061,
+    "D2": -0.9282642069905548,
+    "E2": -0.9347030281282884
+  },
+  "decision": "RD21_P0_HORIZON_COST_CHURN_DIAGNOSIS_COMPLETE",
+  "discovery_2019_2021_2x_forward_by_horizon": {
+    "168": {
+      "best_universe_mean_net_forward_return": 0.0168285683419291,
+      "mean_across_universes": 0.016271544347185234,
+      "worst_universe_mean_net_forward_return": 0.0159453202048591
+    },
+    "24": {
+      "best_universe_mean_net_forward_return": -0.0020171229540304,
+      "mean_across_universes": -0.0021158387799561002,
+      "worst_universe_mean_net_forward_return": -0.0022260155982694
+    },
+    "72": {
+      "best_universe_mean_net_forward_return": 0.0046878766630192,
+      "mean_across_universes": 0.004543631562354233,
+      "worst_universe_mean_net_forward_return": 0.0044160225358005
+    }
+  },
+  "interpretation": "RD20-P3 had positive gross-before-cost PnL on the base routed path in every universe, but approximately three-hour median holding, roughly ninety-percent EMA24 thesis exits, and PF=1 break-even cost below one-quarter of the frozen base cost. The preregistered forward diagnostics were materially stronger at 72h/168h in 2019-2021 than at 24h. RD21 therefore tests only horizon alignment using the already-registered 24h/72h/168h values. It does not add a market gate or retune the score.",
+  "mean_holding_hours_across_base_runs": 7.777696826191885,
+  "median_exit_capture_ratio_by_universe": {
+    "C2": -0.7113402061856124,
+    "D2": -0.6923363095238172,
+    "E2": -0.7112299465240993
+  },
+  "median_holding_hours_across_base_runs": 3.0,
+  "pf1_break_even_cost_multiplier_by_universe": {
+    "C2": 0.1964616038800543,
+    "D2": 0.2125768382299752,
+    "E2": 0.191896113397945
+  },
+  "post_2024_accessed": false,
+  "primary_failure": "EMA24_THESIS_EXIT_HORIZON_MISMATCH_AND_COST_CHURN",
+  "production_authorized": false,
+  "rd20_p3_disposition": "RD20_P3_CORE_EDGE_REJECTED_NO_ADVANCEMENT",
+  "schema_version": "rd21-p0-rd20-p3-failure-diagnosis-v1",
+  "score_disposition": "DO_NOT_RETUNE_SCORE_IN_RD21_HORIZON_TEST",
+  "score_rank_ic_max": 0.0345505263063721,
+  "score_rank_ic_min": -0.0541963640663737,
+  "score_rank_ic_negative_rows": 15,
+  "score_rank_ic_positive_rows": 12,
+  "secondary_warning": "RAW_EDGE_REGIME_INSTABILITY",
+  "selection_data_next": "DISCOVERY_2019_2021_ONLY",
+  "share_base_trades_holding_at_most_12h": 0.8113929238194982,
+  "share_base_trades_holding_at_most_3h": 0.5431902008105277,
+  "source_candidate": "RD20_MINIMAL_TREND_PULLBACK_V1",
+  "source_commit": "24f3c8732e0c7bb968fe587753545694bae092d0",
+  "stage": "RD21_P0_RD20_P3_FAILURE_DIAGNOSIS",
+  "thesis_exit_share_across_base_runs": 0.9044670096990118
+}
