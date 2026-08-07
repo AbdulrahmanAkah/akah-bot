@@ -1,0 +1,91 @@
+{
+  "2024_internal_confirmation_authorized": false,
+  "authorized_scope": {
+    "cost_multipliers": [
+      1.0,
+      2.0
+    ],
+    "execution_order": "EXACTLY_AS_FROZEN_CSV",
+    "expected_run_count": 216,
+    "partitions": [
+      {
+        "end": "2021-12-31T23:00:00Z",
+        "partition_id": "DISCOVERY_CORE",
+        "start": "2019-01-01T00:00:00Z"
+      },
+      {
+        "end": "2022-12-31T23:00:00Z",
+        "partition_id": "VALIDATION_2022",
+        "start": "2022-01-01T00:00:00Z"
+      },
+      {
+        "end": "2023-12-31T23:00:00Z",
+        "partition_id": "STRESS_2023",
+        "start": "2023-01-01T00:00:00Z"
+      }
+    ],
+    "universes": [
+      "C2",
+      "D2",
+      "E2"
+    ],
+    "variant_count": 12
+  },
+  "candidate_id": "RD19_COST_AWARE_CROSS_SECTIONAL_TREND_CONVEXITY_V1",
+  "decision": "RD19_P2B_DISCOVERY_EXECUTION_AUTHORIZED",
+  "execution_requirements": {
+    "cash_aware_from_first_run": true,
+    "completed_bars_only": true,
+    "cost_specific_routing": true,
+    "derivatives": false,
+    "leverage": false,
+    "long_only": true,
+    "margin": false,
+    "negative_cash_allowed": false,
+    "next_bar_execution": true,
+    "persist_candidate_ledger": true,
+    "persist_cash_ledger": true,
+    "persist_equity_curve": true,
+    "persist_evaluated_ledger": true,
+    "persist_gate_evaluation": true,
+    "persist_run_metrics": true,
+    "persist_trade_ledger": true,
+    "point_in_time_membership": true,
+    "resume_only_from_verified_checkpoint": true,
+    "same_parameters_across_universes": true,
+    "spot_only": true
+  },
+  "failure_policy": {
+    "missing_run": "INVALIDATE_DISCOVERY",
+    "negative_cash": "FAIL_RUN_AND_REJECT_VARIANT",
+    "non_deterministic_rerun": "INVALIDATE_DISCOVERY",
+    "source_hash_drift": "STOP_AND_PUBLISH_BLOCKER",
+    "technical_failure": "STOP_AND_PUBLISH_BLOCKER"
+  },
+  "forbidden_during_execution": {
+    "2024_access": true,
+    "failed_run_skipping": true,
+    "matrix_change": true,
+    "network_requests": true,
+    "parameter_change": true,
+    "per_universe_tuning": true,
+    "post_2024_access": true,
+    "post_hoc_asset_deletion": true,
+    "post_hoc_trade_deletion": true,
+    "post_hoc_year_deletion": true,
+    "production": true,
+    "run_order_change": true
+  },
+  "frozen_hashes": {
+    "execution_order_sha256": "84139d2c714b198b3324d47d45507c5e861131e47adbe4b574b8de9dada22150",
+    "membership_sha256": "f7d6012ce8cd691583b9b6276ddf36371bfe0bbd9b28f810b676ad0177fb559e",
+    "p2_matrix_deterministic_hash": "299a4424132a8c73659f1f4a27352afc6dcd98fcb78ba29314c4ae8085eebaba",
+    "p2a_engine_sha256": "ca9ac0a81c09a346e462295f75ae19c0a1e230fe3e670afff8f046d20339b70d"
+  },
+  "next_stage": "RD19_P2C_EXECUTE_FROZEN_DISCOVERY_MATRIX_2019_2023",
+  "post_2024_holdout_authorized": false,
+  "production_authorized": false,
+  "schema_version": "rd19-p2b-execution-contract-v1",
+  "stage": "RD19_P2B_DISCOVERY_EXECUTION_AUTHORIZATION",
+  "status": "AUTHORIZED_NOT_EXECUTED"
+}
