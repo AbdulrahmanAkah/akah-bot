@@ -1,0 +1,51 @@
+{
+  "architecture_id": "RD20_ADAPTIVE_OPPORTUNITY_CONVEXITY_ARCHITECTURE_V1",
+  "explicit_non_goals": [
+    "No trading backtest.",
+    "No return calculation.",
+    "No threshold optimization.",
+    "No adaptive position sizing implementation.",
+    "No five-state trailing implementation.",
+    "No dynamic partial selling implementation.",
+    "No capital replacement implementation.",
+    "No Momentum Breakout, Volatility Expansion, or Structural Reversal economic implementation.",
+    "No 2024 access.",
+    "No post-2024 access.",
+    "No production authorization."
+  ],
+  "first_economic_candidate_policy": {
+    "cost_tests": ["BASE", "2X"],
+    "exit": "MINIMAL_CAUSAL_BASELINE_TO_BE_PREREGISTERED",
+    "maximum_score_components": 3,
+    "position_sizing": "FIXED_RISK_BASELINE",
+    "setup_family": "TREND_PULLBACK_CONTINUATION"
+  },
+  "method": "ARCHITECTURE_FIRST_EVIDENCE_GATED_INCREMENTAL_ACTIVATION",
+  "mission": [
+    "Define the complete target architecture interfaces before economic implementation.",
+    "Audit committed RD05-RD09 evidence for exact reusable expected-move and horizon semantics.",
+    "Make pre-PnL conformance, horizon alignment, survival-funnel, cash, cost, and concentration contracts blocking.",
+    "Authorize only a minimal Trend Pullback family for the first future economic candidate.",
+    "Preserve 2019-2023 validation structure while keeping 2024 and 2025+ sealed."
+  ],
+  "objective_policy": {
+    "daily_growth_aspiration": "0.5%-1% average or higher when supported",
+    "daily_growth_hard_gate": false,
+    "forced_daily_trading": false,
+    "hard_maximum_drawdown": 0.2,
+    "monthly_growth_aspiration": "15%-30%+",
+    "monthly_growth_hard_gate": false,
+    "preferred_maximum_drawdown": 0.15,
+    "upside_cap": null
+  },
+  "schema_version": "rd20-p0-protocol-v1",
+  "source_closure_commit": "6611a7b719f4f6137dcc3908c76879776699714e",
+  "stage": "RD20_P0_ARCHITECTURE_EVIDENCE_GATED_FOUNDATION",
+  "validation": {
+    "discovery": "2019-2021",
+    "final_holdout_2025_plus": "SEALED",
+    "internal_confirmation_2024": "SEALED_UNTIL_FINALIST_FREEZE",
+    "stress": "2023",
+    "validation": "2022"
+  }
+}

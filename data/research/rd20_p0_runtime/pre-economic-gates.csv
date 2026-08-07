@@ -1,0 +1,13 @@
+gate_id,blocking,requirement
+CONTRACT_HASH_FROZEN,True,All candidate parameters and semantics are hashed before PnL is visible.
+PARAMETER_UTILIZATION_COMPLETE,True,Every frozen parameter affects an asserted execution path or is explicit non-economic metadata.
+ENGINE_EQUIVALENCE_OR_SINGLE_ENGINE,True,"Dry-run and historical engines are semantically equivalent, or one canonical engine is reused."
+COMPLETED_BAR_CAUSALITY,True,Signals use completed information only and next-bar execution semantics are explicit.
+INTRABAR_PATH_AMBIGUITY_REMOVED,True,Current-bar high/low ordering is never assumed for stop or trailing updates.
+HORIZON_ALIGNMENT_PASS,True,"Signal label, expected move, cost comparison, and holding horizon are dimensionally aligned."
+SURVIVAL_BUDGET_REPORTED,True,A pre-PnL funnel reports survival through every binary gate; economic quality prefers scoring over stacked filters.
+PIT_UNIVERSE_AND_IDENTITY_PASS,True,Universe membership and asset identity are causal and survivorship-resistant.
+CASH_FEASIBILITY_PASS,True,Synthetic and dry-run routing cannot create negative cash.
+COST_MODEL_DEFINED,True,Base and 2x execution cost assumptions are frozen before economic output.
+CONCENTRATION_DIAGNOSTICS_DEFINED,True,"Trade, asset, month, year, and leave-one-out contribution diagnostics are specified before PnL."
+SEALED_DATA_GUARD_PASS,True,2024 remains closed until a finalist is frozen; 2025+ remains sealed.

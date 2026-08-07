@@ -1,0 +1,6 @@
+item,rule
+SETUP_SIGNAL,Declare causal observation timeframe and intended prediction/holding horizon.
+EXPECTED_MOVE,Estimate move on an explicitly frozen horizon matching the candidate decision horizon.
+COST_COMPARISON,Compare round-trip cost with expected move on the same economic horizon; one-hour ATR cannot proxy a multi-day expected move without a preregistered horizon transform.
+EXIT_MODEL,Exit cadence and maximum holding assumptions must be compatible with the signal horizon.
+LABEL_OR_PROXY,Any reused RD05-RD09 predictive label/proxy retains its original horizon semantics until explicitly reconciled.
