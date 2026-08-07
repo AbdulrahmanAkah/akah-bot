@@ -1,0 +1,149 @@
+{
+  "candidate_id": "RD20_MINIMAL_TREND_PULLBACK_V1",
+  "candidate_input": {
+    "frozen_candidate_contract_sha256": "4991ec6db3a63f7af73471a86d4f45c7121af084429af2181a01ced6a520bb39",
+    "p2a_r1_report_sha256": "06e7ecf483f587edb15588908fe5a58bb13f8e95ef399dcf9221bb7d8fee789d",
+    "pre_pnl_signal_funnel_sha256": "678d9cf04c8d804d73c5ac6781c9e60142f48302eef8979f82e486624071879d",
+    "signal_events_sha256": "d501c80b4a0baaf42f543df793b5485d16eaf586cdb493ebe01362536d6cde13"
+  },
+  "capacity": {
+    "behavior": "CAP_NOTIONAL_DO_NOT_SUPPRESS_SIGNAL",
+    "information_boundary": "TRAILING_COMPLETED_24H_ENDING_AT_SIGNAL_CLOSE",
+    "limitation": "OHLCV_CAPACITY_PROXY_NOT_ORDER_BOOK_DEPTH",
+    "lookback_hours": 24,
+    "maximum_entry_notional_fraction_of_trailing_24h_quote_turnover_proxy": 0.005,
+    "quote_turnover_proxy": "BASE_VOLUME_X_COMPLETED_BAR_CLOSE",
+    "required_raw_field": "volume"
+  },
+  "concentration_review": {
+    "largest_trade_positive_pnl_share_cross_venue_trigger": 0.15,
+    "no_upside_cap": true,
+    "trigger_behavior": "BLOCK_P4_UNTIL_CROSS_VENUE_CONTRIBUTION_REVIEW"
+  },
+  "costs": {
+    "allocation": "HALF_AT_ENTRY_HALF_AT_EXIT_PROPORTIONAL_TO_SIDE_NOTIONAL",
+    "base_round_trip_fraction": 0.0025,
+    "signal_generation_cost_hurdle": false,
+    "stress_2x_round_trip_fraction": 0.005
+  },
+  "data": {
+    "evaluation_cutoff_exclusive": "2024-01-01T00:00:00Z",
+    "evaluation_start": "2019-01-01T00:00:00Z",
+    "internal_confirmation_2024": "SEALED",
+    "partitions": {
+      "DISCOVERY_2019_2021": [
+        "2019-01-01",
+        "2022-01-01"
+      ],
+      "STRESS_2023": [
+        "2023-01-01",
+        "2024-01-01"
+      ],
+      "VALIDATION_2022": [
+        "2022-01-01",
+        "2023-01-01"
+      ]
+    },
+    "post_2024": "SEALED",
+    "resolution": "1H",
+    "universes": [
+      "C2",
+      "D2",
+      "E2"
+    ],
+    "venue": "KUCOIN_SPOT"
+  },
+  "execution": {
+    "adaptive_trailing": false,
+    "capital_replacement": false,
+    "entry": "EXACT_NEXT_1H_BAR_OPEN_AFTER_FROZEN_SIGNAL",
+    "entry_priority": "FROZEN_CANDIDATE_RANK_THEN_MEMBERSHIP_RANK_THEN_PAIR",
+    "fixed_initial_risk_fraction": 0.005,
+    "initial_equity": 100000.0,
+    "initial_stop": "FROZEN_SIGNAL_INITIAL_STOP_REFERENCE",
+    "maximum_gross_exposure_at_admission": 0.9,
+    "maximum_holding_period": null,
+    "maximum_positions": 5,
+    "maximum_single_asset_notional_fraction": 0.4,
+    "missing_entry_bar": "REJECT_SIGNAL_NO_DELAYED_ENTRY",
+    "negative_cash": false,
+    "partial_selling": false,
+    "pyramiding": false,
+    "research_boundary_liquidation": "LAST_2019_2023_BAR_CLOSE_FOR_ACCOUNTING_ONLY",
+    "same_pair_concurrent_position": false,
+    "stop_gap_fill": "BAR_OPEN_IF_OPEN_AT_OR_BELOW_STOP_ELSE_STATIC_STOP",
+    "stop_widening": false,
+    "take_profit": null,
+    "thesis_exit": "COMPLETED_1H_CLOSE_BELOW_EMA24_THEN_NEXT_AVAILABLE_BAR_OPEN"
+  },
+  "hard_gates": {
+    "BASE_NET_RETURN_POSITIVE_EACH_UNIVERSE": true,
+    "CASH_FEASIBLE_BASE_AND_2X": true,
+    "PF1_BREAK_EVEN_COST_MULTIPLIER_MINIMUM": 2.0,
+    "STRESS_2X_MAXIMUM_DRAWDOWN": 0.2,
+    "STRESS_2X_MINIMUM_POSITIVE_CALENDAR_YEARS": 3,
+    "STRESS_2X_MINIMUM_PROFIT_FACTOR": 1.05,
+    "STRESS_2X_MINIMUM_TRADES": 75,
+    "STRESS_2X_NET_PNL_POSITIVE_AFTER_ANY_SINGLE_ASSET_REMOVAL": true,
+    "STRESS_2X_NET_PNL_POSITIVE_AFTER_ANY_SINGLE_YEAR_REMOVAL": true,
+    "STRESS_2X_NET_PNL_POSITIVE_AFTER_LARGEST_WINNER_REMOVAL": true,
+    "STRESS_2X_NET_RETURN_POSITIVE_EACH_UNIVERSE": true
+  },
+  "objective": {
+    "daily_equivalent_0_5_1pct": "ASPIRATION_NOT_HARD_GATE",
+    "hard_maximum_drawdown": 0.2,
+    "monthly_growth_15_30pct_plus": "ASPIRATION_NOT_HARD_GATE",
+    "preferred_maximum_drawdown": 0.15,
+    "primary": "MAXIMIZE_RISK_AND_COST_ADJUSTED_COMPOUNDED_GROWTH"
+  },
+  "prohibitions": {
+    "2024_access": false,
+    "averaging_down": false,
+    "dca": false,
+    "derivatives": false,
+    "leverage": false,
+    "margin": false,
+    "parameter_tuning_after_results": false,
+    "post_2024_access": false,
+    "production_authorization": false,
+    "pyramiding": false,
+    "shorts": false
+  },
+  "raw_edge_diagnostics": {
+    "entry_reference": "NEXT_1H_BAR_OPEN",
+    "exit_reference": "HORIZON_ENDPOINT_COMPLETED_CLOSE",
+    "forward_horizons_hours": [
+      24,
+      72,
+      168
+    ],
+    "hard_gate": false,
+    "metrics": [
+      "MEAN_MEDIAN_POSITIVE_SHARE",
+      "SCORE_RANK_IC",
+      "TOP_SCORE_QUINTILE_EXCESS"
+    ]
+  },
+  "required_diagnostics": [
+    "SIGNAL_EVENT_FEATURE_PARITY",
+    "SIGNAL_FUNNEL",
+    "FORWARD_24H_72H_168H_EDGE",
+    "BASE_AND_2X_COST_RESULTS",
+    "BREAK_EVEN_COST_MULTIPLIER_FOR_PF_1_FIXED_BASE_PATH",
+    "TRADE_CONTRIBUTION_CONCENTRATION",
+    "ASSET_CONTRIBUTION_CONCENTRATION",
+    "MONTH_CONTRIBUTION_CONCENTRATION",
+    "YEAR_CONTRIBUTION_CONCENTRATION",
+    "LEAVE_ONE_ASSET_OUT",
+    "LEAVE_ONE_YEAR_OUT",
+    "LARGEST_WINNER_REMOVAL",
+    "TURNOVER",
+    "MAXIMUM_DRAWDOWN",
+    "CASH_FEASIBILITY",
+    "MFE_MAE_EXIT_CAPTURE",
+    "ROLLING_30D_60D_90D_RETURNS"
+  ],
+  "schema_version": "rd20-p3-core-edge-economic-protocol-v1",
+  "stage": "RD20_P3_CORE_EDGE_ECONOMIC_EVALUATION",
+  "starting_commit": "2d35b39497916d63c4026f367b2257710a3e4d0c"
+}
