@@ -1,0 +1,130 @@
+{
+  "2022_2023_used_for_architecture_selection": true,
+  "2024_accessed": false,
+  "admission_diagnostic_parity": {
+    "baseline_delegate_reason": "RD30_DELEGATE_DID_NOT_EMIT_RD31_ADMISSION_CONTEXT_COUNTERS",
+    "baseline_delegate_rows_skipped": 18,
+    "cost_independent_diagnostic_ledger": true,
+    "passed": true,
+    "routing_rows_checked": 54
+  },
+  "baseline_parity_vs_rd30": {
+    "maximum_numeric_absolute_error": 1.4551915228366852e-11,
+    "passed": true,
+    "rd30_run_metrics_sha256": "ae2e688311a5940f313adeafe0a94ec209b92402f8f70f798940e11cb0101aea",
+    "row_count": 18,
+    "source_policy": "RD30_FAMILY_QUALITY_CONTROL_EXITS"
+  },
+  "candidate_parameters_changed_after_economic_execution": false,
+  "crisis_windows_are_diagnostic_only": true,
+  "decision": "RD31_MARKET_REGIME_ADMISSION_GOVERNOR_NO_FINALIST_REDESIGN_REQUIRED",
+  "design_principles": {
+    "freed_slot_feedback": "EARLY_EXIT_DOES_NOT_IMPLY_RISK_REDUCTION_WHEN_RELEASED_CAPITAL_CAN_BE_IMMEDIATELY_REUSED_BY_A_NEW_ENTRY",
+    "future_exit_research_requirement": "ANY_NEW_EARLY_EXIT_RESEARCH_MUST_EXPLICITLY_CONTROL_OR_ATTRIBUTE_FREED_SLOT_CAPITAL_REUSE",
+    "prediction_asymmetry": "MARKET_REGIME_ADMISSION_CLASSIFICATION_IS_TREATED_AS_LOWER_DIMENSION_AND_SLOWER_MOVING_THAN_OPEN_TRADE_OUTCOME_CLASSIFICATION"
+  },
+  "diagnostics_do_not_influence_hard_gates_or_selection": true,
+  "hysteresis_union_clock_occupancy": {
+    "C2": {
+      "CAUTION": 0.05582191780821918,
+      "LOCKED": 0.6787671232876712,
+      "OPEN": 0.2654109589041096
+    },
+    "D2": {
+      "CAUTION": 0.05410958904109589,
+      "LOCKED": 0.6859018264840183,
+      "OPEN": 0.2599885844748858
+    },
+    "E2": {
+      "CAUTION": 0.06261415525114156,
+      "LOCKED": 0.6829337899543378,
+      "OPEN": 0.25445205479452054
+    }
+  },
+  "membership_source_sha256": "f7d6012ce8cd691583b9b6276ddf36371bfe0bbd9b28f810b676ad0177fb559e",
+  "next_stage": "RD32_REGIME_OR_SIGNAL_FAMILY_ARCHITECTURE_REDESIGN_REQUIRED",
+  "p0_freeze_commit": "33945ebf2313140b8c9a9fa67708191aa1b3f45e",
+  "p0b_freeze_commit": "ef06ccd284951a6735a7540a738448b2e4abd6c0",
+  "p0c_freeze_commit": "66c05b48f9dbbb33f61f75eed91b524db7b65cac",
+  "policy_summaries": {
+    "FAMILY_QUALITY_CONTROL_EXITS": {
+      "minimum_2x_trade_count": 365,
+      "worst_universe_2x_maximum_drawdown": 0.3870329545351327,
+      "worst_universe_2x_net_return": 0.006331656758773008,
+      "worst_universe_2x_profit_factor": 1.005202811385666
+    },
+    "REGIME_HYSTERESIS_ADMISSION_GOVERNOR": {
+      "minimum_2x_trade_count": 169,
+      "worst_universe_2x_maximum_drawdown": 0.19669431372912596,
+      "worst_universe_2x_net_return": 0.12028481914278322,
+      "worst_universe_2x_profit_factor": 1.138721406757252
+    },
+    "STRESSED_CONTEXT_MB_EXCLUSION": {
+      "minimum_2x_trade_count": 351,
+      "worst_universe_2x_maximum_drawdown": 0.3689458037623157,
+      "worst_universe_2x_net_return": 0.028180376929772377,
+      "worst_universe_2x_profit_factor": 1.023147422878648
+    },
+    "SUPPORTIVE_ONLY_ALL_FAMILIES": {
+      "minimum_2x_trade_count": 162,
+      "worst_universe_2x_maximum_drawdown": 0.21601344020135577,
+      "worst_universe_2x_net_return": 0.10906836878632076,
+      "worst_universe_2x_profit_factor": 1.1271174638103123
+    }
+  },
+  "post_2024_accessed": false,
+  "production_authorized": false,
+  "regime_deterioration_attribution_is_diagnostic_only": true,
+  "required_pit_feature_pair_count": 21,
+  "research_aspirations": {
+    "daily_0_5pct_compounded_365d": {
+      "annual_compounded_net_return": 5.174652783431007,
+      "hard_gate": false,
+      "period_rate": 0.005,
+      "periods": 365
+    },
+    "monthly_24pct_compounded_12m": {
+      "annual_compounded_net_return": 12.214788658781796,
+      "hard_gate": false,
+      "period_rate": 0.24,
+      "periods": 12
+    }
+  },
+  "research_logic_changed_after_economic_execution": false,
+  "rs_supportive_semantics": {
+    "cases": [
+      {
+        "case_id": "SUPPORTIVE",
+        "expected_admit": true,
+        "expected_slot_fraction": 0.18
+      },
+      {
+        "case_id": "MIXED",
+        "expected_admit": false,
+        "expected_slot_fraction": 0.0
+      },
+      {
+        "case_id": "STRESSED",
+        "expected_admit": false,
+        "expected_slot_fraction": 0.0
+      },
+      {
+        "case_id": "UNAVAILABLE",
+        "expected_admit": false,
+        "expected_slot_fraction": 0.0
+      }
+    ],
+    "definition": "RS_ADMIT_IFF_BREADTH_READY_AND_MARKET_CONTEXT_SUPPORTIVE_SLOT_0_18",
+    "definition_changed_after_rd29_rd30": false,
+    "passed": true,
+    "source": "EXACT_RD30_FAMILY_QUALITY_CONTROL_EXITS"
+  },
+  "runner_freeze_commit": "bf5c69f64e47e5a90684954c7416d0f3d749c645",
+  "schema_version": "rd31-p1-market-regime-admission-governor-report-v1",
+  "selected_policy": null,
+  "signal_event_count_2022_2023": 7073,
+  "signal_source_sha256": "6462f576cee9681751368a7755d3ca51ebf945ced54ea7b7f18b47bc469ba725",
+  "stage": "RD31_MARKET_REGIME_ADMISSION_GOVERNOR_2022_2023",
+  "status": "PASS",
+  "universe_attribution_is_diagnostic_only": true
+}

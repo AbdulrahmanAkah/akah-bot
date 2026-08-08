@@ -1,0 +1,72 @@
+{
+  "2022_2023_used_for_architecture_selection": true,
+  "2024_accessed": false,
+  "baseline_parity_vs_rd30": {
+    "maximum_numeric_absolute_error": 1.4551915228366852e-11,
+    "passed": true,
+    "rd30_run_metrics_sha256": "ae2e688311a5940f313adeafe0a94ec209b92402f8f70f798940e11cb0101aea",
+    "row_count": 18,
+    "source_policy": "RD30_FAMILY_QUALITY_CONTROL_EXITS"
+  },
+  "diagnostics_do_not_influence_selection": true,
+  "policy_summaries": {
+    "FAMILY_QUALITY_CONTROL_EXITS": {
+      "minimum_2x_trade_count": 365,
+      "worst_universe_2x_maximum_drawdown": 0.3870329545351327,
+      "worst_universe_2x_net_return": 0.006331656758773008,
+      "worst_universe_2x_profit_factor": 1.005202811385666
+    },
+    "REGIME_HYSTERESIS_ADMISSION_GOVERNOR": {
+      "minimum_2x_trade_count": 169,
+      "worst_universe_2x_maximum_drawdown": 0.19669431372912596,
+      "worst_universe_2x_net_return": 0.12028481914278322,
+      "worst_universe_2x_profit_factor": 1.138721406757252
+    },
+    "STRESSED_CONTEXT_MB_EXCLUSION": {
+      "minimum_2x_trade_count": 351,
+      "worst_universe_2x_maximum_drawdown": 0.3689458037623157,
+      "worst_universe_2x_net_return": 0.028180376929772377,
+      "worst_universe_2x_profit_factor": 1.023147422878648
+    },
+    "SUPPORTIVE_ONLY_ALL_FAMILIES": {
+      "minimum_2x_trade_count": 162,
+      "worst_universe_2x_maximum_drawdown": 0.21601344020135577,
+      "worst_universe_2x_net_return": 0.10906836878632076,
+      "worst_universe_2x_profit_factor": 1.1271174638103123
+    }
+  },
+  "post_2024_accessed": false,
+  "production_authorized": false,
+  "rs_supportive_semantics": {
+    "cases": [
+      {
+        "case_id": "SUPPORTIVE",
+        "expected_admit": true,
+        "expected_slot_fraction": 0.18
+      },
+      {
+        "case_id": "MIXED",
+        "expected_admit": false,
+        "expected_slot_fraction": 0.0
+      },
+      {
+        "case_id": "STRESSED",
+        "expected_admit": false,
+        "expected_slot_fraction": 0.0
+      },
+      {
+        "case_id": "UNAVAILABLE",
+        "expected_admit": false,
+        "expected_slot_fraction": 0.0
+      }
+    ],
+    "definition": "RS_ADMIT_IFF_BREADTH_READY_AND_MARKET_CONTEXT_SUPPORTIVE_SLOT_0_18",
+    "definition_changed_after_rd29_rd30": false,
+    "passed": true,
+    "source": "EXACT_RD30_FAMILY_QUALITY_CONTROL_EXITS"
+  },
+  "runner_freeze_commit": "bf5c69f64e47e5a90684954c7416d0f3d749c645",
+  "schema_version": "rd31-p1-selected-regime-governor-policy-freeze-v1",
+  "selected_policy": null,
+  "selection_basis": "PASS_ALL_PREREGISTERED_HARD_GATES_THEN_FROZEN_RD31_TIE_BREAKS"
+}

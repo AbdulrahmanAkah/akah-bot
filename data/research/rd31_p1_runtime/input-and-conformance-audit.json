@@ -1,0 +1,167 @@
+{
+  "2022_2023_used_for_architecture_selection": true,
+  "2024_accessed": false,
+  "candidate_parameters_changed_after_economic_execution": false,
+  "crisis_windows": [
+    {
+      "anchor": "2022-05-09T00:00:00Z",
+      "crisis_id": "TERRA_UST_DEPEG",
+      "selection_influence": false,
+      "window_hours_each_side": 72
+    },
+    {
+      "anchor": "2022-06-27T00:00:00Z",
+      "crisis_id": "THREE_ARROWS_LIQUIDATION_ORDER",
+      "selection_influence": false,
+      "window_hours_each_side": 72
+    },
+    {
+      "anchor": "2022-11-11T00:00:00Z",
+      "crisis_id": "FTX_BANKRUPTCY",
+      "selection_influence": false,
+      "window_hours_each_side": 72
+    }
+  ],
+  "design_principles": {
+    "freed_slot_feedback": "EARLY_EXIT_DOES_NOT_IMPLY_RISK_REDUCTION_WHEN_RELEASED_CAPITAL_CAN_BE_IMMEDIATELY_REUSED_BY_A_NEW_ENTRY",
+    "future_exit_research_requirement": "ANY_NEW_EARLY_EXIT_RESEARCH_MUST_EXPLICITLY_CONTROL_OR_ATTRIBUTE_FREED_SLOT_CAPITAL_REUSE",
+    "prediction_asymmetry": "MARKET_REGIME_ADMISSION_CLASSIFICATION_IS_TREATED_AS_LOWER_DIMENSION_AND_SLOWER_MOVING_THAN_OPEN_TRADE_OUTCOME_CLASSIFICATION"
+  },
+  "diagnostics_do_not_influence_selection": true,
+  "economic_execution_performed": true,
+  "lineage": {
+    "design_principles": {
+      "freed_slot_feedback": "EARLY_EXIT_DOES_NOT_IMPLY_RISK_REDUCTION_WHEN_RELEASED_CAPITAL_CAN_BE_IMMEDIATELY_REUSED_BY_A_NEW_ENTRY",
+      "future_exit_research_requirement": "ANY_NEW_EARLY_EXIT_RESEARCH_MUST_EXPLICITLY_CONTROL_OR_ATTRIBUTE_FREED_SLOT_CAPITAL_REUSE",
+      "prediction_asymmetry": "MARKET_REGIME_ADMISSION_CLASSIFICATION_IS_TREATED_AS_LOWER_DIMENSION_AND_SLOWER_MOVING_THAN_OPEN_TRADE_OUTCOME_CLASSIFICATION"
+    },
+    "governor_sha256": "ab38e80c8bc9f99c7a6e262a1a7f648642e3ed628032fec3a137fb4e33a06368",
+    "governor_test_sha256": "ea0b32e75c77db573dd0ce7ba32c89bf8334a5546e3455043569273aee55bf5f",
+    "hard_gates": [
+      "BASE_NET_RETURN_POSITIVE",
+      "STRESS_2X_NET_RETURN_POSITIVE",
+      "STRESS_2X_PROFIT_FACTOR_GTE_1_05",
+      "STRESS_2X_MAX_DRAWDOWN_LTE_20PCT",
+      "STRESS_2X_TRADES_GTE_75",
+      "BOTH_2022_2023_NET_PNL_POSITIVE",
+      "STRESS_2X_LARGEST_WINNER_REMOVAL_POSITIVE",
+      "STRESS_2X_LOAO_MIN_REMAINING_PNL_POSITIVE",
+      "STRESS_2X_LOYO_MIN_REMAINING_PNL_POSITIVE",
+      "PF1_BREAK_EVEN_COST_MULTIPLIER_GTE_2",
+      "CASH_FEASIBLE_BASE_AND_2X",
+      "MOMENTUM_BREAKOUT_STANDALONE_2X_POSITIVE",
+      "RELATIVE_STRENGTH_STANDALONE_2X_POSITIVE",
+      "NO_2024_OR_POST_2024_ACCESS"
+    ],
+    "membership_sha256": "f7d6012ce8cd691583b9b6276ddf36371bfe0bbd9b28f810b676ad0177fb559e",
+    "p0_audit_sha256": "df5da9e53b6e0c49b725dbd9ea5fb61ee27c88160026d2ceb5891cbebe0d7880",
+    "p0_freeze_commit": "33945ebf2313140b8c9a9fa67708191aa1b3f45e",
+    "p0b_audit_sha256": "d0af978290369f9b91dc3f3ca57c62db3564cddff9aa6e5990ac13ea8f9882e1",
+    "p0b_freeze_commit": "ef06ccd284951a6735a7540a738448b2e4abd6c0",
+    "p0c_audit_sha256": "5aad12bd615fe2acb0ca656e50f349884363535e20c3d093cb524191e9034922",
+    "p0c_freeze_commit": "66c05b48f9dbbb33f61f75eed91b524db7b65cac",
+    "policies": [
+      "FAMILY_QUALITY_CONTROL_EXITS",
+      "STRESSED_CONTEXT_MB_EXCLUSION",
+      "SUPPORTIVE_ONLY_ALL_FAMILIES",
+      "REGIME_HYSTERESIS_ADMISSION_GOVERNOR"
+    ],
+    "protocol_sha256": "be8f308e6d16614247086fbe757e9e163b18f61270da02bb247e648f9b563eb1",
+    "rd30_run_metrics_blob": "dbb88b99f210c312c20fa69284a031b26f4b056c",
+    "replay_sha256": "cf979223bf53141ad715ff6d4e79ad394653a7a3e42e546b9e43424a42dc7f4c",
+    "replay_test_sha256": "46ce66ff1ef7f1eedda07c225d31e03891aebf612250e349364a4f77a87763b4",
+    "research_aspirations": {
+      "daily_0_5pct_compounded_365d": {
+        "annual_compounded_net_return": 5.174652783431007,
+        "hard_gate": false,
+        "period_rate": 0.005,
+        "periods": 365
+      },
+      "monthly_24pct_compounded_12m": {
+        "annual_compounded_net_return": 12.214788658781796,
+        "hard_gate": false,
+        "period_rate": 0.24,
+        "periods": 12
+      }
+    },
+    "rs_supportive_semantics": {
+      "cases": [
+        {
+          "case_id": "SUPPORTIVE",
+          "expected_admit": true,
+          "expected_slot_fraction": 0.18
+        },
+        {
+          "case_id": "MIXED",
+          "expected_admit": false,
+          "expected_slot_fraction": 0.0
+        },
+        {
+          "case_id": "STRESSED",
+          "expected_admit": false,
+          "expected_slot_fraction": 0.0
+        },
+        {
+          "case_id": "UNAVAILABLE",
+          "expected_admit": false,
+          "expected_slot_fraction": 0.0
+        }
+      ],
+      "definition": "RS_ADMIT_IFF_BREADTH_READY_AND_MARKET_CONTEXT_SUPPORTIVE_SLOT_0_18",
+      "definition_changed_after_rd29_rd30": false,
+      "passed": true,
+      "source": "EXACT_RD30_FAMILY_QUALITY_CONTROL_EXITS"
+    },
+    "runner_freeze_commit": "bf5c69f64e47e5a90684954c7416d0f3d749c645",
+    "signal_sha256": "6462f576cee9681751368a7755d3ca51ebf945ced54ea7b7f18b47bc469ba725"
+  },
+  "membership_signal_coverage": {
+    "mismatch_count": 0,
+    "signal_rows_checked": 7073
+  },
+  "membership_snapshot_count": 315,
+  "post_2024_accessed": false,
+  "production_authorized": false,
+  "required_pit_feature_pair_count": 21,
+  "required_pit_feature_pairs": [
+    "ADA-USDT",
+    "ATOM-USDT",
+    "AVAX-USDT",
+    "BTC-USDT",
+    "DOGE-USDT",
+    "DOT-USDT",
+    "ETH-USDT",
+    "GRAM-USDT",
+    "INJ-USDT",
+    "JASMY-USDT",
+    "KAS-USDT",
+    "LINK-USDT",
+    "LTC-USDT",
+    "LUNC-USDT",
+    "NEAR-USDT",
+    "OP-USDT",
+    "SAND-USDT",
+    "SHIB-USDT",
+    "SOL-USDT",
+    "XMR-USDT",
+    "XRP-USDT"
+  ],
+  "research_aspirations": {
+    "daily_0_5pct_compounded_365d": {
+      "annual_compounded_net_return": 5.174652783431007,
+      "hard_gate": false,
+      "period_rate": 0.005,
+      "periods": 365
+    },
+    "monthly_24pct_compounded_12m": {
+      "annual_compounded_net_return": 12.214788658781796,
+      "hard_gate": false,
+      "period_rate": 0.24,
+      "periods": 12
+    }
+  },
+  "research_logic_changed_after_economic_execution": false,
+  "schema_version": "rd31-p1-input-conformance-audit-v1",
+  "signal_event_count": 7073,
+  "stage": "RD31_MARKET_REGIME_ADMISSION_GOVERNOR_2022_2023"
+}
