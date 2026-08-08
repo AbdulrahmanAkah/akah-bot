@@ -1,0 +1,75 @@
+{
+  "2024_accessed": false,
+  "atomic_cash_replacement_implemented": false,
+  "candidate_parameters_changed": false,
+  "economic_execution_performed": false,
+  "frozen_state_contract": {
+    "family_quality_admission_source": "EXACT_RD29_ADMISSION_DECISION",
+    "global_slot_escrow": false,
+    "lifecycle_classes": [
+      "MB_SUPPORTED",
+      "RS_ONLY"
+    ],
+    "market_context_source": "EXACT_RD29_MARKET_CONTEXT_V2",
+    "maximum_hold_hours": 168,
+    "mb_replacement_degradation": false,
+    "mb_thesis_failure_exit": false,
+    "policy_count": 4,
+    "profit_arm_atr": 4.0,
+    "profit_giveback_atr": 3.0,
+    "replacement_forbidden_when_free_slot_exists": true,
+    "replacement_requires_prevalidated_incoming": true,
+    "replacement_selection_order": [
+      "OLDEST_DEGRADED_SINCE",
+      "OLDEST_ENTRY_TIME",
+      "PAIR_LEXICOGRAPHIC"
+    ],
+    "rs_degradation_checkpoints_hours": [
+      24,
+      48,
+      72,
+      96,
+      120,
+      144
+    ],
+    "rs_degradation_immediate_cash_exit": false,
+    "rs_thesis_source": "EXACT_RD29_RS_THESIS_STATUS",
+    "same_pair_cooldown": false,
+    "time_fail_age_hours": 72
+  },
+  "implementation": {
+    "engine_path": "src/spotbot/research/rd30_family_specialist_state.py",
+    "engine_sha256": "648536ceb36c01d0a759d99c142a8fe0e464e40996f1faaafe9300891790bdc1",
+    "test_path": "tests/research/test_rd30_family_specialist_state.py",
+    "test_sha256": "22b772652f1b70b2ae28570316a59d647ee8caa76386ec84a5c505736b83f5a1"
+  },
+  "lineage": {
+    "branch": "research/rd30-family-specialist-replacement-aware-lifecycle-v1",
+    "head": "7f462ef463b2da6640c867a344e7521bafd66fe5",
+    "p0_audit_sha256": "ed5eed1430ebd1c482c204f0010da72871fedb8705df06b3b716e6d2c988b6da",
+    "protocol_sha256": "844c674699d2397748069adee2691d2cf9341ce90e732239503e93229e1f0813",
+    "rd29_context_sha256": "53e189efd8eabe7b8f3560077e11c2d3dc9757229b6ec6553e501142ad90f2c4",
+    "remote_head": "7f462ef463b2da6640c867a344e7521bafd66fe5"
+  },
+  "new_2022_2023_economic_results_exposed_in_this_step": false,
+  "next_stage": "RD30_P0C_IMPLEMENT_AND_FREEZE_REPLACEMENT_AWARE_PORTFOLIO_REPLAY_PRE_ECONOMIC_EXECUTION",
+  "portfolio_replay_implemented": false,
+  "post_2024_accessed": false,
+  "production_authorized": false,
+  "real_market_data_loaded": false,
+  "research_logic_implemented": true,
+  "schema_version": "rd30-p0b-family-specialist-state-engine-audit-v1",
+  "signal_generation_changed": false,
+  "source_p0_commit": "7f462ef463b2da6640c867a344e7521bafd66fe5",
+  "stage": "RD30_P0B_FAMILY_SPECIALIST_STATE_ENGINE_PRE_ECONOMIC_EXECUTION",
+  "status": "PASS",
+  "target_branch": "research/rd30-family-specialist-replacement-aware-lifecycle-v1",
+  "verification": {
+    "new_synthetic_test_count": 33,
+    "py_compile_returncode": 0,
+    "pytest_returncode": 0,
+    "raw_market_data_loaded_by_tests": false,
+    "ruff_returncode": 0,
+    "tests_are_synthetic_only": true
+  }
+}
