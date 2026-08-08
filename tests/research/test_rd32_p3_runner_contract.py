@@ -259,3 +259,50 @@ def test_no_2024_output_flags() -> None:
     source = RUNNER.read_text(encoding="utf-8")
     assert '"2024_accessed": False' in source
     assert '"post_2024_accessed": False' in source
+
+
+def test_post_exposure_control_namespace_normalization() -> None:
+    module = _load()
+    trades = pd.DataFrame([{"policy_id": "REGIME_HYSTERESIS_ADMISSION_GOVERNOR", "net_pnl": 12.5}])
+    daily = pd.DataFrame([{"policy_id": "REGIME_HYSTERESIS_ADMISSION_GOVERNOR", "equity": 112.5}])
+    metrics = {"policy_id": "REGIME_HYSTERESIS_ADMISSION_GOVERNOR", "net_return": 0.125}
+    t, d, m = module.normalize_replay_policy_namespace(
+        requested_policy_id="RD31_REGIME_HYSTERESIS_CONTROL",
+        trades=trades,
+        daily=daily,
+        metrics=metrics,
+    )
+    assert t["policy_id"].tolist() == ["RD31_REGIME_HYSTERESIS_CONTROL"]
+    assert d["policy_id"].tolist() == ["RD31_REGIME_HYSTERESIS_CONTROL"]
+    assert m["policy_id"] == "RD31_REGIME_HYSTERESIS_CONTROL"
+    assert t["net_pnl"].tolist() == [12.5]
+    assert d["equity"].tolist() == [112.5]
+    assert m["net_return"] == 0.125
+
+
+def test_post_exposure_candidate_namespace_identity() -> None:
+    module = _load()
+    policy = "MB_BREADTH_ACCELERATION_CONFIRMATION"
+    trades = pd.DataFrame([{"policy_id": policy, "net_pnl": -3.25}])
+    daily = pd.DataFrame([{"policy_id": policy, "equity": 96.75}])
+    metrics = {"policy_id": policy, "net_return": -0.0325}
+    t, d, m = module.normalize_replay_policy_namespace(
+        requested_policy_id=policy,
+        trades=trades,
+        daily=daily,
+        metrics=metrics,
+    )
+    assert t.equals(trades)
+    assert d.equals(daily)
+    assert m == metrics
+
+
+def test_post_exposure_namespace_mismatch_fails_closed() -> None:
+    module = _load()
+    with pytest.raises(module.RunnerError, match="replay metric policy namespace drift"):
+        module.normalize_replay_policy_namespace(
+            requested_policy_id="RD31_REGIME_HYSTERESIS_CONTROL",
+            trades=pd.DataFrame(),
+            daily=pd.DataFrame(),
+            metrics={"policy_id": "WRONG_POLICY", "net_return": 0.0},
+        )

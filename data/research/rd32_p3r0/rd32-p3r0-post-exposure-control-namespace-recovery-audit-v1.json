@@ -1,0 +1,62 @@
+{
+  "2024_accessed": false,
+  "admission_logic_changed": false,
+  "all_72_replay_summaries_observed_attempt1": true,
+  "candidate_parameters_changed_after_observation": false,
+  "candidate_results_observed_attempt1": true,
+  "cost_model_changed": false,
+  "economic_execution_performed_attempt1": true,
+  "economic_formula_changed": false,
+  "exit_lifecycle_changed": false,
+  "failed_exposure": {
+    "candidate_results_observed": true,
+    "economic_replay_lines_observed": 72,
+    "failed_log_detected_encoding": "utf-16-le",
+    "failed_log_name": "rd32_p3_final_full.log",
+    "failed_log_sha256": "297bbf33a8dfa27b9c34b185aa074b235a0d99c2e076260cc7cfb1c9451861a5",
+    "failure_signature": "RD32 control parity vs RD31 Hysteresis row cardinality: 18 != 0 != 18",
+    "policy_replay_line_counts": {
+      "MB_BREADTH_ACCELERATION_CONFIRMATION": 18,
+      "MB_CROSS_SECTIONAL_BREAKOUT_LEADER": 18,
+      "MB_RELATIVE_STRENGTH_LEADER_CONFIRMATION": 18,
+      "RD31_REGIME_HYSTERESIS_CONTROL": 18
+    },
+    "replay_lines_sha256": "591950e623821d55ab3a15b5852b6c03d7e9e15eca52dc9d141dba04094740b9"
+  },
+  "failure_class": "CONTROL_POLICY_NAMESPACE_LABEL_MISMATCH",
+  "governor_logic_changed": false,
+  "hard_gates_changed": false,
+  "next_stage": "RD32_P3R1_REEXECUTE_EXACT_FROZEN_ECONOMICS_AFTER_CONTROL_NAMESPACE_RECOVERY",
+  "partial_runtime_cleared_for_exact_rerun": true,
+  "post_2024_accessed": false,
+  "preflight": {
+    "grandparent": "06b7e1ebc99abfed015f2d9676e5d1d2f409d6f1",
+    "great_grandparent": "c23659615c2e96c357cb4b3545a2b205b22e5a7a",
+    "head": "e0676665056979713bcedb7c61d0185b2fe3ff69",
+    "parent": "00449dc89029a41dd3d1dcc31d43e64b424f9594",
+    "partial_input_bytes": 4024,
+    "partial_input_sha256": "082088f448e0d91771ad70f4183c43b3b6e79bdbd9f612dea7e7d73a0f60fa73"
+  },
+  "preserved_attempt1_input_audit_path": "data/research/rd32_p3r0/attempt1-input-and-conformance-audit.json",
+  "preserved_attempt1_input_audit_sha256": "082088f448e0d91771ad70f4183c43b3b6e79bdbd9f612dea7e7d73a0f60fa73",
+  "production_authorized": false,
+  "pytest_stdout_tail": [
+    "........................................................................ [ 60%]",
+    "................................................                         [100%]",
+    "120 passed in 1.53s"
+  ],
+  "recovered_runner_sha256": "59a2716eab407438b1c10a3ed757c53d114d9ec76dd27ebb1c040f7eec6d0c3c",
+  "recovered_runner_test_sha256": "534ada82de7593db571739e64b6f08d7caad73161219b74586a9ffc9db750509",
+  "recovery_change_scope": "CONTROL_POLICY_NAMESPACE_OUTPUT_LABEL_NORMALIZATION_AND_LINEAGE_GUARD_ROBUSTNESS_ONLY",
+  "research_logic_changed_after_observation": false,
+  "runner_contract_test_count": 20,
+  "schema_version": "rd32-p3r0-post-exposure-control-namespace-recovery-audit-v1",
+  "selection_rule_changed": false,
+  "signal_generation_changed": false,
+  "sizing_changed": false,
+  "source_final_p2d_freeze_commit": "e0676665056979713bcedb7c61d0185b2fe3ff69",
+  "source_runner_sha256": "592818d3776470f76ac69292fb494700e1fcc884b8e4c92dd3c3415e524621df",
+  "source_runner_test_sha256": "e16170bfec39293227cf1157d8ef3b774b7a034c875ff400eb88316b627d518b",
+  "stage": "RD32_P3R0_POST_EXPOSURE_CONTROL_NAMESPACE_RECOVERY_FREEZE",
+  "status": "PASS"
+}

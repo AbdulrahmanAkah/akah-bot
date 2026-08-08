@@ -48,6 +48,7 @@ SCHEMA_VERSION = "rd32-mb-signal-quality-economic-runner-v1"
 P2C_FREEZE_COMMIT = "c23659615c2e96c357cb4b3545a2b205b22e5a7a"
 P2D_ORIGINAL_FREEZE_COMMIT = "06b7e1ebc99abfed015f2d9676e5d1d2f409d6f1"
 P2D_BLOB_RECOVERY_COMMIT = "00449dc89029a41dd3d1dcc31d43e64b424f9594"
+P2D_FINAL_FREEZE_COMMIT = "e0676665056979713bcedb7c61d0185b2fe3ff69"
 P2B_FREEZE_COMMIT = "119d9b9b34276ba52e1d5fe4ac914cda20c2ced5"
 P2_COMMIT = "1384aadda84623440d95c48998e16c227b048c2e"
 P1_RESULTS_COMMIT = "4df12b682108eddf8ecba0239bb26f1cb8392f79"
@@ -235,15 +236,16 @@ def verify_lineage(
     head = git(repo, "rev-parse", "HEAD")
     if head != expected_freeze_commit:
         raise RunnerError(f"RD32-P3 HEAD {head} != runner freeze {expected_freeze_commit}")
-    parent = git(repo, "rev-parse", "HEAD^")
-    grandparent = git(repo, "rev-parse", "HEAD^^")
-    great_grandparent = git(repo, "rev-parse", "HEAD^^^")
-    if parent != P2D_BLOB_RECOVERY_COMMIT:
-        raise RunnerError("RD32 final runner-freeze parent is not the frozen blob recovery")
-    if grandparent != P2D_ORIGINAL_FREEZE_COMMIT:
-        raise RunnerError("RD32 blob-recovery parent is not the original P2D freeze")
-    if great_grandparent != P2C_FREEZE_COMMIT:
-        raise RunnerError("RD32 original-P2D parent is not the frozen P2C replay")
+    final_parent = git(repo, "rev-parse", f"{P2D_FINAL_FREEZE_COMMIT}^")
+    final_grandparent = git(repo, "rev-parse", f"{P2D_FINAL_FREEZE_COMMIT}^^")
+    final_great_grandparent = git(repo, "rev-parse", f"{P2D_FINAL_FREEZE_COMMIT}^^^")
+    if final_parent != P2D_BLOB_RECOVERY_COMMIT:
+        raise RunnerError("RD32 final P2D historical parent is not blob recovery")
+    if final_grandparent != P2D_ORIGINAL_FREEZE_COMMIT:
+        raise RunnerError("RD32 final P2D historical grandparent is not original P2D")
+    if final_great_grandparent != P2C_FREEZE_COMMIT:
+        raise RunnerError("RD32 final P2D historical great-grandparent is not P2C")
+    git(repo, "merge-base", "--is-ancestor", P2D_FINAL_FREEZE_COMMIT, "HEAD")
 
     checks = (
         (P2_PROTOCOL, P2_PROTOCOL_SHA256, "P2 protocol"),
@@ -348,6 +350,43 @@ def verify_lineage(
     }
 
 
+def normalize_replay_policy_namespace(
+    *,
+    requested_policy_id: str,
+    trades: pd.DataFrame,
+    daily: pd.DataFrame,
+    metrics: dict[str, Any],
+) -> tuple[pd.DataFrame, pd.DataFrame, dict[str, Any]]:
+    """Normalize policy labels only; preserve all economic values."""
+    source_policy = (
+        "REGIME_HYSTERESIS_ADMISSION_GOVERNOR"
+        if requested_policy_id == RD31_REGIME_HYSTERESIS_CONTROL
+        else requested_policy_id
+    )
+    if str(metrics.get("policy_id")) != source_policy:
+        raise RunnerError(
+            f"replay metric policy namespace drift: {metrics.get('policy_id')} != {source_policy}"
+        )
+    out_metrics = dict(metrics)
+    out_metrics["policy_id"] = requested_policy_id
+
+    def relabel(frame: pd.DataFrame, label: str) -> pd.DataFrame:
+        if not len(frame):
+            return frame.copy()
+        if "policy_id" not in frame.columns:
+            raise RunnerError(f"{label} missing policy_id")
+        observed = set(frame["policy_id"].astype(str))
+        if observed != {source_policy}:
+            raise RunnerError(
+                f"{label} policy namespace drift: {sorted(observed)} != {[source_policy]}"
+            )
+        result = frame.copy()
+        result["policy_id"] = requested_policy_id
+        return result
+
+    return relabel(trades, "trade ledger"), relabel(daily, "daily equity"), out_metrics
+
+
 def run_all_portfolios(
     *,
     rd31: Any,
@@ -394,6 +433,12 @@ def run_all_portfolios(
                         frames=frames,
                         state_frame=state_frame,
                         membership=membership,
+                    )
+                    trades, daily, metrics = normalize_replay_policy_namespace(
+                        requested_policy_id=policy_id,
+                        trades=trades,
+                        daily=daily,
+                        metrics=metrics,
                     )
                     replay_count += 1
                     run_rows.append(metrics)
