@@ -1,0 +1,67 @@
+{
+  "2022_2023_used_for_architecture_selection": true,
+  "2024_accessed": false,
+  "control_parity_vs_rd29": {
+    "maximum_numeric_absolute_error": 1.4551915228366852e-11,
+    "passed": true,
+    "rd29_run_metrics_sha256": "f1600c573eea42e4de280de474f9adf4570303f2ef0db2eccacc987819fc57b0",
+    "row_count": 18,
+    "source": "RD29_ROUTER_TIME_FAIL_72_CONTROL"
+  },
+  "mb_control_lifecycle_parity": {
+    "comparisons": [
+      {
+        "maximum_numeric_absolute_error": 0.0,
+        "passed": true,
+        "policy_id": "FAMILY_QUALITY_CONTROL_EXITS",
+        "row_count": 6
+      },
+      {
+        "maximum_numeric_absolute_error": 0.0,
+        "passed": true,
+        "policy_id": "FAMILY_QUALITY_REPLACEMENT_AWARE_RS",
+        "row_count": 6
+      }
+    ],
+    "invariant": "MB_STANDALONE_UNCHANGED_FOR_CONTROL_EXIT_AND_RS_REPLACEMENT_ABLATIONS",
+    "maximum_numeric_absolute_error": 0.0,
+    "passed": true,
+    "policies": [
+      "FAMILY_QUALITY_CONTROL_EXITS",
+      "FAMILY_QUALITY_REPLACEMENT_AWARE_RS"
+    ],
+    "row_count": 12
+  },
+  "policy_summaries": {
+    "FAMILY_QUALITY_CONTROL_EXITS": {
+      "minimum_2x_trade_count": 365,
+      "worst_universe_2x_maximum_drawdown": 0.3870329545351327,
+      "worst_universe_2x_net_return": 0.006331656758773008,
+      "worst_universe_2x_profit_factor": 1.005202811385666
+    },
+    "FAMILY_QUALITY_REPLACEMENT_AWARE_RS": {
+      "minimum_2x_trade_count": 365,
+      "worst_universe_2x_maximum_drawdown": 0.3870329545351327,
+      "worst_universe_2x_net_return": 0.006331656758773008,
+      "worst_universe_2x_profit_factor": 1.005202811385666
+    },
+    "FULL_FAMILY_SPECIALIST_REPLACEMENT_BRAIN": {
+      "minimum_2x_trade_count": 545,
+      "worst_universe_2x_maximum_drawdown": 0.44583167995194073,
+      "worst_universe_2x_net_return": -0.36199628088587443,
+      "worst_universe_2x_profit_factor": 0.7199703352012544
+    },
+    "ROUTER_TIME_FAIL_72_CONTROL": {
+      "minimum_2x_trade_count": 422,
+      "worst_universe_2x_maximum_drawdown": 0.39295917451580825,
+      "worst_universe_2x_net_return": -0.013599146664610262,
+      "worst_universe_2x_profit_factor": 0.989963833311595
+    }
+  },
+  "post_2024_accessed": false,
+  "production_authorized": false,
+  "runner_freeze_commit": "4f48501ac17ee77782a835cc26f44ad94105206d",
+  "schema_version": "rd30-p1-selected-family-specialist-policy-freeze-v1",
+  "selected_policy": null,
+  "selection_basis": "PASS_ALL_PREREGISTERED_HARD_GATES_THEN_FROZEN_RD30_TIE_BREAKS"
+}
