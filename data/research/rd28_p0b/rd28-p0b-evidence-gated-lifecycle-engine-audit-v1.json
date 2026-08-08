@@ -1,0 +1,62 @@
+{
+  "2024_accessed": false,
+  "candidate_parameters_changed": false,
+  "economic_execution_performed": false,
+  "frozen_semantics": {
+    "all_evidence_exit_fills_current_open": true,
+    "backup_time_failure_exact_72h": true,
+    "current_bar_high_used": false,
+    "current_bar_low_used": false,
+    "early_exit_requires_age_gte_24h": true,
+    "early_exit_requires_prior_close_le_entry": true,
+    "family_aware_momentum_breakout_requires_risk_off": true,
+    "family_aware_relative_strength_requires_state_deterioration": true,
+    "generic_early_exit_requires_state_deterioration": true,
+    "maximum_hold_hours": 168,
+    "partial_selling": false,
+    "profit_lock_arm_atr": 4.0,
+    "profit_lock_giveback_atr": 3.0,
+    "profit_lock_uses_prior_completed_high_water": true,
+    "router_reuses_exact_rd27_sensor": true,
+    "slot_escrow_release_at_entry_plus_72h": true,
+    "slot_escrow_reserves_cash": false,
+    "slot_escrow_reserves_notional": false,
+    "state_rank": {
+      "RISK_OFF": 0,
+      "RISK_ON": 2,
+      "TRANSITION": 1
+    }
+  },
+  "implementation": {
+    "engine_path": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+    "engine_sha256": "cf5fc2ce83db12aec3a9f4d43039e628898f4cd70537e571a0367de62df1b510",
+    "test_path": "tests/research/test_rd28_evidence_gated_lifecycle.py",
+    "test_sha256": "6ce19509207733893d54c2aff156d3db7a6363fd52e35bf3e7dcaace2d7c537b"
+  },
+  "lineage": {
+    "branch": "research/rd28-evidence-gated-lifecycle-redesign-v1",
+    "head": "a002905d6ec9621e15e42b03edfa966a029241e9",
+    "p0_audit_sha256": "55d27fae956eed77237d2ff0759539b6d00f3b65a9ebd0e3d216af650c7d482a",
+    "protocol_sha256": "65ddf7ec98320d305d3dc59906539217821a4af935f672c5ea839a367f8c0df7",
+    "remote_head": "a002905d6ec9621e15e42b03edfa966a029241e9"
+  },
+  "new_2022_2023_economic_results_exposed_in_this_step": false,
+  "next_stage": "RD28_P0C_IMPLEMENT_AND_FREEZE_PORTFOLIO_REPLAY_PRE_ECONOMIC_EXECUTION",
+  "post_2024_accessed": false,
+  "production_authorized": false,
+  "real_market_data_loaded": false,
+  "research_logic_implemented": true,
+  "schema_version": "rd28-p0b-evidence-gated-lifecycle-engine-audit-v1",
+  "source_p0_commit": "a002905d6ec9621e15e42b03edfa966a029241e9",
+  "source_rd27_results_commit": "a89a45cea26bbbddbc62732cceed7256aace95a2",
+  "stage": "RD28_P0B_EVIDENCE_GATED_LIFECYCLE_PRE_ECONOMIC_EXECUTION",
+  "status": "PASS",
+  "target_branch": "research/rd28-evidence-gated-lifecycle-redesign-v1",
+  "verification": {
+    "py_compile_returncode": 0,
+    "pytest_returncode": 0,
+    "ruff_import_fix_returncode": 0,
+    "ruff_returncode": 0,
+    "tests_are_synthetic_only": true
+  }
+}
