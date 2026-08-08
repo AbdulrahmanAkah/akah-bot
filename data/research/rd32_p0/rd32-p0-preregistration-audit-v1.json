@@ -1,0 +1,53 @@
+{
+  "2024_accessed": false,
+  "attribution_execution_performed": false,
+  "economic_execution_performed": false,
+  "forced_exit_counterfactual_used_as_decision_evidence": false,
+  "frozen_primary_scope": {
+    "cost_multiplier": 2.0,
+    "period_id": "ROBUSTNESS_2022",
+    "policy_id": "REGIME_HYSTERESIS_ADMISSION_GOVERNOR",
+    "portfolio_id": "UNION_FOCUS",
+    "universes": [
+      "C2",
+      "D2",
+      "E2"
+    ]
+  },
+  "hard_gates_changed": false,
+  "new_market_data_loaded": false,
+  "next_stage": "RD32_P0B_IMPLEMENT_AND_TEST_RESIDUAL_LOSS_ATTRIBUTION_ENGINE_PRE_EXECUTION",
+  "post_2024_accessed": false,
+  "preflight": {
+    "remote_source_commit": "f95a165e3c0a17dc53b021740f4e0810148af28f",
+    "source_branch": "research/rd31-market-regime-admission-governor-v1",
+    "source_commit": "f95a165e3c0a17dc53b021740f4e0810148af28f",
+    "source_file_hashes_verified": {
+      "data/research/rd31_p1_runtime/governor-transition-ledger.csv": "46c36f91041912ebcfefdbe2d710bb090d73b3aeea65cabad2be71ad138e640b",
+      "data/research/rd31_p1_runtime/portfolio-period-metrics.csv": "4bbd2a1291507f22a503f3a4e19369b29bd8ccbf5045060995efa983ecf90510",
+      "data/research/rd31_p1_runtime/rd31-p1-market-regime-admission-governor-report-v1.json": "0afff069e6c8838e8944a93b2cbb0154c989eb6cb664e89cbf470060372f9e4d",
+      "data/research/rd31_p1_runtime/regime-deterioration-position-attribution.csv": "5ad6edc77b57a4c5dde852bc80213a88af303295b46c59e2b05df2744b117bb6",
+      "data/research/rd31_p1_runtime/trade-ledger.csv": "842bfbe6c93eb060a9cbd34e9fe730092e2ace73aef2f5a76d5ad8f2be5b725f"
+    },
+    "target_branch_absence_verified": true
+  },
+  "preregistered_derisking_route_thresholds": {
+    "all_universes_required": true,
+    "crossed_trade_count_gte": 10,
+    "median_post_lock_lt_zero": true,
+    "post_lock_damage_fraction_gte": 0.5,
+    "post_lock_sum_lt_zero": true
+  },
+  "production_authorized": false,
+  "protocol_path": "data/research/rd32_p0/rd32-p0-residual-loss-attribution-protocol-v1.json",
+  "protocol_sha256": "108645f298b036ee548cfd28b1087fa8adf40fbb3d7fba1b116c23fc1758a126",
+  "raw_market_data_loaded": false,
+  "rd31_source_mutated": false,
+  "schema_version": "rd32-p0-preregistration-audit-v1",
+  "signal_generation_changed": false,
+  "source_rd31_results_commit": "f95a165e3c0a17dc53b021740f4e0810148af28f",
+  "stage": "RD32_P0_RESIDUAL_LOSS_ATTRIBUTION_PREREGISTRATION",
+  "status": "PASS",
+  "strategy_parameter_changed": false,
+  "target_branch": "research/rd32-residual-loss-attribution-v1"
+}

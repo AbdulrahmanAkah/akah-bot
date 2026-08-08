@@ -1,0 +1,206 @@
+{
+  "accounting_decomposition": {
+    "final_trade_net_pnl": "EXACT_FROZEN_TRADE_LEDGER_NET_PNL",
+    "identity_required": "PRE_LOCK_NET_CONTRIBUTION_PLUS_POST_LOCK_NET_CONTRIBUTION_EQUALS_FINAL_TRADE_NET_PNL_WITH_ABSOLUTE_TOLERANCE_1E_9",
+    "interpretation": "ACCOUNTING_ATTRIBUTION_ONLY_NOT_A_COUNTERFACTUAL_PORTFOLIO_RETURN",
+    "post_lock_net_contribution": "EXACT_FROZEN_RD31_REGIME_DETERIORATION_LEDGER_VALUE_DEFINED_AS_QUANTITY_TIMES_EXIT_PRICE_MINUS_MARK_AT_FIRST_LOCK_OPEN_MINUS_EXIT_COST",
+    "pre_lock_net_contribution": "FINAL_TRADE_NET_PNL_MINUS_POST_LOCK_NET_CONTRIBUTION"
+  },
+  "classification": {
+    "CROSSED_TO_LOCKED": "A_PRIMARY_SCOPE_TRADE_WITH_EXACTLY_ONE_MATCHING_ROW_IN_THE_FROZEN_RD31_REGIME_DETERIORATION_ATTRIBUTION_LEDGER",
+    "NO_LOCK_CROSS": "A_PRIMARY_SCOPE_TRADE_WITH_NO_MATCHING_ROW_IN_THE_FROZEN_RD31_REGIME_DETERIORATION_ATTRIBUTION_LEDGER",
+    "duplicate_cross_match": "HARD_ERROR",
+    "join_key": [
+      "policy_id",
+      "portfolio_id",
+      "universe_id",
+      "cost_multiplier",
+      "pair",
+      "entry_time",
+      "exit_time"
+    ],
+    "unmatched_deterioration_row": "HARD_ERROR"
+  },
+  "counterfactual_policy": {
+    "allowed": "ACCOUNTING_ATTRIBUTION_OF_REALIZED_FROZEN_RD31_TRADES_ONLY",
+    "forced_exit_at_first_lock_counterfactual": "PROHIBITED_AS_DECISION_EVIDENCE",
+    "reason": "A_FORCED_EXIT_WOULD_FREE_CAPITAL_AND_CHANGE_LATER_PORTFOLIO_ADMISSIONS_SO_STATIC_TRADE_LEVEL_COUNTERFACTUALS_IGNORE_FREED_SLOT_FEEDBACK"
+  },
+  "frozen_source_files": {
+    "crisis_window_diagnostics": {
+      "path": "data/research/rd31_p1_runtime/crisis-window-diagnostics.csv",
+      "sha256": "8a83bf8fa317a1274db8d9d86e6bd4ab1fc19adfb87caf579a45992e0ed78ee6"
+    },
+    "entry_pnl_attribution": {
+      "path": "data/research/rd31_p1_runtime/entry-pnl-attribution.csv",
+      "sha256": "08c00fce444401d0d33be8a7360e63173c08669dd802e1b7eb8155dc05b24687"
+    },
+    "governor_clock_hour_occupancy": {
+      "path": "data/research/rd31_p1_runtime/governor-clock-hour-occupancy.csv",
+      "sha256": "634b0d316b4e6792971053e4907a554e3f50f6c79c60db87f8c3406b8f538985"
+    },
+    "governor_transition_ledger": {
+      "path": "data/research/rd31_p1_runtime/governor-transition-ledger.csv",
+      "sha256": "46c36f91041912ebcfefdbe2d710bb090d73b3aeea65cabad2be71ad138e640b"
+    },
+    "hard_gate_evaluation": {
+      "path": "data/research/rd31_p1_runtime/hard-gate-evaluation.csv",
+      "sha256": "2c6473f06de4e068bc097d755143146a8c88bc475c149819b54b68ce72cad044"
+    },
+    "policy_selection": {
+      "path": "data/research/rd31_p1_runtime/policy-selection.csv",
+      "sha256": "ec49ac36920d7ab97175c9833b2ae145f7734ff95ab229a356daed9de34e0b0d"
+    },
+    "portfolio_period_metrics": {
+      "path": "data/research/rd31_p1_runtime/portfolio-period-metrics.csv",
+      "sha256": "4bbd2a1291507f22a503f3a4e19369b29bd8ccbf5045060995efa983ecf90510"
+    },
+    "regime_deterioration_position_attribution": {
+      "path": "data/research/rd31_p1_runtime/regime-deterioration-position-attribution.csv",
+      "sha256": "5ad6edc77b57a4c5dde852bc80213a88af303295b46c59e2b05df2744b117bb6"
+    },
+    "report": {
+      "path": "data/research/rd31_p1_runtime/rd31-p1-market-regime-admission-governor-report-v1.json",
+      "sha256": "0afff069e6c8838e8944a93b2cbb0154c989eb6cb664e89cbf470060372f9e4d"
+    },
+    "trade_ledger": {
+      "path": "data/research/rd31_p1_runtime/trade-ledger.csv",
+      "sha256": "842bfbe6c93eb060a9cbd34e9fe730092e2ace73aef2f5a76d5ad8f2be5b725f"
+    },
+    "universe_attribution": {
+      "path": "data/research/rd31_p1_runtime/universe-attribution.csv",
+      "sha256": "6499adff7b13c2d90452bd43dd4f81cbe201adb74c8525fe0c99b4fad6ee4461"
+    }
+  },
+  "next_stage": "RD32_P0B_IMPLEMENT_AND_TEST_RESIDUAL_LOSS_ATTRIBUTION_ENGINE_PRE_EXECUTION",
+  "post_lock_damage_fraction_definition": "IF_TOTAL_2022_NET_PNL_LT_0_THEN_MAX_0_NEGATIVE_POST_LOCK_SUM_DIVIDED_BY_ABS_TOTAL_2022_NET_PNL_ELSE_NULL",
+  "preregistered_decision_rule": {
+    "all_universes_required": true,
+    "decision_id_if_not_supported": "RD32_RESIDUAL_LOSS_DOES_NOT_SUPPORT_PORTFOLIO_DERISKING_RETURN_TO_ADMISSION_OR_SIGNAL_FAMILY_REDESIGN",
+    "decision_id_if_supported": "RD32_RESIDUAL_LOSS_SUPPORTS_PORTFOLIO_DERISKING_RESEARCH",
+    "median_post_lock_requirement": "LT_0",
+    "minimum_crossed_trade_count": 10,
+    "no_threshold_tuning_after_attribution_execution": true,
+    "post_lock_damage_fraction_threshold": 0.5,
+    "supports_portfolio_derisking_iff_all_universes_pass_all": [
+      "TOTAL_2022_NET_PNL_LT_0",
+      "POST_LOCK_NET_CONTRIBUTION_SUM_LT_0",
+      "POST_LOCK_DAMAGE_FRACTION_OF_TOTAL_LOSS_GTE_0_50",
+      "CROSSED_TO_LOCKED_TRADE_COUNT_GTE_10",
+      "MEDIAN_POST_LOCK_NET_CONTRIBUTION_LT_0"
+    ]
+  },
+  "primary_scope": {
+    "cost_multiplier": 2.0,
+    "period_id": "ROBUSTNESS_2022",
+    "policy_id": "REGIME_HYSTERESIS_ADMISSION_GOVERNOR",
+    "portfolio_id": "UNION_FOCUS",
+    "source_trade_period_semantics": "USE_FROZEN_TRADE_LEDGER_PERIOD_ID_ASSIGNED_AT_SIGNAL_TIME_BY_THE_EXISTING_RD26_ROBUSTNESS_PERIOD_CONTRACT",
+    "universes": [
+      "C2",
+      "D2",
+      "E2"
+    ]
+  },
+  "required_primary_metrics_per_universe": [
+    "total_2022_net_pnl",
+    "total_2022_trade_count",
+    "crossed_to_locked_trade_count",
+    "no_lock_cross_trade_count",
+    "crossed_final_net_pnl_sum",
+    "no_lock_cross_final_net_pnl_sum",
+    "pre_lock_net_contribution_sum",
+    "post_lock_net_contribution_sum",
+    "median_post_lock_net_contribution",
+    "negative_post_lock_trade_count",
+    "positive_post_lock_trade_count",
+    "post_lock_damage_fraction_of_total_loss"
+  ],
+  "required_secondary_diagnostics": {
+    "entry_context_breakdown": true,
+    "entry_governor_state_breakdown": true,
+    "exit_reason_breakdown": true,
+    "family_bucket_breakdown": {
+      "enabled": true,
+      "mapping": {
+        "MOMENTUM_BREAKOUT": "MB",
+        "MOMENTUM_BREAKOUT|RELATIVE_STRENGTH_ROTATION": "OVERLAP",
+        "RELATIVE_STRENGTH_ROTATION": "RS"
+      },
+      "source": "FROZEN_TRADE_LEDGER_SUPPORT_FAMILIES",
+      "unknown_or_ambiguous_support_family": "HARD_ERROR"
+    },
+    "first_lock_transition_episode_breakdown": true,
+    "frozen_crisis_window_tags": {
+      "decision_influence": false,
+      "diagnostic_only": true,
+      "enabled": true,
+      "windows": [
+        {
+          "anchor": "2022-05-09T00:00:00Z",
+          "crisis_id": "TERRA_UST_DEPEG",
+          "hours_each_side": 72
+        },
+        {
+          "anchor": "2022-06-27T00:00:00Z",
+          "crisis_id": "THREE_ARROWS_LIQUIDATION_ORDER",
+          "hours_each_side": 72
+        },
+        {
+          "anchor": "2022-11-11T00:00:00Z",
+          "crisis_id": "FTX_BANKRUPTCY",
+          "hours_each_side": 72
+        }
+      ]
+    },
+    "pair_breakdown": true
+  },
+  "research_firewall": {
+    "no_2024_access": true,
+    "no_hard_gate_change": true,
+    "no_new_economic_replay_in_p0": true,
+    "no_new_market_data_load_in_p0": true,
+    "no_post_2024_access": true,
+    "no_production_authorization": true,
+    "no_raw_market_data_load_in_p0": true,
+    "no_rd31_source_mutation": true,
+    "no_signal_generation_change": true,
+    "no_strategy_parameter_change": true
+  },
+  "research_question": "HOW_MUCH_OF_RD31_HYSTERESIS_2022_RESIDUAL_LOSS_OCCURRED_AFTER_POSITIONS_ALREADY_OPEN_CROSSED_INTO_LOCKED_REGIME",
+  "schema_version": "rd32-p0-residual-loss-attribution-protocol-v1",
+  "source_conformance_requirements": {
+    "known_primary_period_net_pnl_reference": {
+      "C2": -15661.216799797408,
+      "D2": -15661.216799797408,
+      "E2": -15661.216799797408
+    },
+    "primary_period_net_pnl_must_be_negative_each_universe": true,
+    "primary_period_row_count": 3,
+    "rd31_2024_accessed": false,
+    "rd31_decision": "RD31_MARKET_REGIME_ADMISSION_GOVERNOR_NO_FINALIST_REDESIGN_REQUIRED",
+    "rd31_post_2024_accessed": false,
+    "rd31_production_authorized": false,
+    "rd31_report_status": "PASS",
+    "rd31_selected_policy": null,
+    "reference_values_are_conformance_checks_not_tuning_targets": true
+  },
+  "source_lineage": {
+    "rd31_output_manifest_deterministic_hash": "e4153c90339089ae19d596f86190786abf3c2f7469d8102ecb11c27f0774c3cc",
+    "source_branch": "research/rd31-market-regime-admission-governor-v1",
+    "source_decision": "RD31_MARKET_REGIME_ADMISSION_GOVERNOR_NO_FINALIST_REDESIGN_REQUIRED",
+    "source_next_stage": "RD32_REGIME_OR_SIGNAL_FAMILY_ARCHITECTURE_REDESIGN_REQUIRED",
+    "source_results_commit": "f95a165e3c0a17dc53b021740f4e0810148af28f",
+    "source_selected_policy": null,
+    "source_stage": "RD31_P1_MARKET_REGIME_ADMISSION_GOVERNOR_2022_2023"
+  },
+  "stage": "RD32_P0_RESIDUAL_LOSS_ATTRIBUTION_PREREGISTRATION",
+  "stage_plan": {
+    "p0": "PREREGISTER_ATTRIBUTION_ONLY",
+    "p0b": "IMPLEMENT_AND_TEST_RESIDUAL_LOSS_ATTRIBUTION_ENGINE_SYNTHETIC_ONLY",
+    "p1": "EXECUTE_FROZEN_ATTRIBUTION_AGAINST_RD31_RESULT_FILES_ONLY",
+    "post_p1_if_not_supported": "RD32_P2_ADMISSION_OR_SIGNAL_FAMILY_ARCHITECTURE_REDESIGN_REQUIRED",
+    "post_p1_if_supported": "RD32_P2_PREREGISTER_PORTFOLIO_LEVEL_DERISKING_WITHOUT_FORCED_EXIT"
+  },
+  "status": "FROZEN_PRE_EXECUTION"
+}
