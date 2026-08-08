@@ -1,0 +1,64 @@
+{
+  "2022_2023_research_economics_executed": false,
+  "2024_accessed": false,
+  "candidate_parameters_changed": false,
+  "causality_assertions_frozen": [
+    "ENTRY_STATE_USES_SIGNAL_CLOSE_NOT_NEXT_BAR",
+    "OPEN_POSITION_STATE_USES_PRIOR_COMPLETED_BAR_ONLY",
+    "CURRENT_BAR_HIGH_CANNOT_TIGHTEN_SAME_BAR_FLOOR",
+    "PROTECTION_FLOOR_CANNOT_LOOSEN",
+    "RISK_OFF_RECORDS_SIGNAL_BUT_SUPPRESSES_ADMISSION",
+    "RD26_TIME_FAIL_CONTROL_SYNTHETIC_PARITY"
+  ],
+  "economic_execution_performed": false,
+  "implementation": {
+    "engine_path": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+    "engine_sha256": "ee205cda74d70a530734bbfb4843c2dbfc8bf950122254aa2aceb8766a90f9ad",
+    "test_path": "tests/research/test_rd27_adaptive_lifecycle.py",
+    "test_sha256": "1b7b348f420d64543098bb7789e7f8969da9f5dc29fb968fb05ee5008f8667ff"
+  },
+  "lineage": {
+    "branch": "research/rd27-adaptive-position-lifecycle-brain-v1",
+    "head": "d2b79e5274566ffe63ab062813da4f21c7492999",
+    "p0_audit_sha256": "965dda2ac98c4175484d4c6d3648c3ab1edfbd0c0a6ab1095f0ccbf94b34bfd8",
+    "protocol_sha256": "82e19cd9f996f0592614f4b56de7dd1bbd13f96d6cf378ae182d2726b18e3143",
+    "remote_head": "d2b79e5274566ffe63ab062813da4f21c7492999"
+  },
+  "next_stage": "RD27_P1_EXECUTE_FROZEN_LIFECYCLE_ABLATION_2022_2023",
+  "post_2024_accessed": false,
+  "production_authorized": false,
+  "real_market_data_loaded": false,
+  "recovery": {
+    "candidate_parameters_changed": false,
+    "economic_results_exposed_before_recovery": false,
+    "failure_class": "PRE_FREEZE_RUFF_SIM108_AND_F841_ONLY",
+    "fixes": [
+      {
+        "change": "REWRITE_TIMEZONE_IF_ELSE_AS_EQUIVALENT_TERNARY_ONLY",
+        "path": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+        "rule": "SIM108"
+      },
+      {
+        "change": "REMOVE_UNUSED_TEST_LOCAL_CURRENT_HOUR_ONLY",
+        "path": "tests/research/test_rd27_adaptive_lifecycle.py",
+        "rule": "F841"
+      }
+    ],
+    "old_engine_sha256": "c659df9faa4b38620fb8b55409a9d0c0ec5a8461b982748643e7b4d182e8a514",
+    "old_test_sha256": "9f8e44ceea64fbb52c13f5686a9e909d88e2054a19348dcddad8373b625c56ce",
+    "research_logic_changed": false
+  },
+  "schema_version": "rd27-p0b-causal-state-engine-audit-v1",
+  "source_p0_commit": "d2b79e5274566ffe63ab062813da4f21c7492999",
+  "stage": "RD27_P0B_CAUSAL_STATE_ENGINE_PRE_ECONOMIC_EXECUTION",
+  "status": "PASS",
+  "target_branch": "research/rd27-adaptive-position-lifecycle-brain-v1",
+  "verification": {
+    "py_compile_returncode": 0,
+    "pytest_pass_count": 14,
+    "pytest_returncode": 0,
+    "rd26_control_parity_test_uses_synthetic_dataframe_only": true,
+    "ruff_returncode": 0,
+    "tests_are_synthetic_only": true
+  }
+}
