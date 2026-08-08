@@ -1,0 +1,236 @@
+{
+  "candidate_ablation": {
+    "candidate_parameters_may_change_after_first_rd28_economic_execution": false,
+    "design": "FOUR_POLICY_STRUCTURAL_LIFECYCLE_ABLATION",
+    "parameter_grid_search": false,
+    "policies": {
+      "EVIDENCE_GATED_LIFECYCLE_IMMEDIATE_RECYCLE": {
+        "evidence_exit": true,
+        "family_aware": false,
+        "slot_escrow": false,
+        "state_router": true
+      },
+      "EVIDENCE_GATED_LIFECYCLE_SLOT_ESCROW": {
+        "evidence_exit": true,
+        "family_aware": false,
+        "slot_escrow": true,
+        "state_router": true
+      },
+      "FAMILY_AWARE_EVIDENCE_LIFECYCLE_SLOT_ESCROW": {
+        "evidence_exit": true,
+        "family_aware": true,
+        "slot_escrow": true,
+        "state_router": true
+      },
+      "ROUTER_TIME_FAIL_72_CONTROL": {
+        "evidence_exit": false,
+        "exit": "RD27_STATIC_ROUTER_TIME_FAIL_72_CONTROL",
+        "family_aware": false,
+        "slot_escrow": false,
+        "state_router": true
+      }
+    }
+  },
+  "causality_contract": {
+    "calendar_year_feature": false,
+    "close_confirmed_exit_fill": "CURRENT_1H_OPEN",
+    "entry_fill": "NEXT_1H_OPEN",
+    "entry_state_cutoff": "SIGNAL_BAR_CLOSE",
+    "future_bars": false,
+    "future_membership": false,
+    "open_position_state_cutoff": "PRIOR_COMPLETED_BTC_BAR",
+    "profit_high_water_cutoff": "PRIOR_COMPLETED_ASSET_BARS_ONLY",
+    "trade_state_cutoff": "PRIOR_COMPLETED_ASSET_BAR"
+  },
+  "data_firewall": {
+    "2022_2023_already_exposed": true,
+    "2022_2023_may_be_used_for_rd28_selection": true,
+    "2024": "SEALED_CLEAN_INTERNAL_CONFIRMATION",
+    "2024_access_before_rd28_selection_freeze": false,
+    "development_cutoff_exclusive": "2024-01-01T00:00:00Z",
+    "development_start": "2022-01-01T00:00:00Z",
+    "post_2024": "SEALED_FINAL_HOLDOUT",
+    "post_2024_access_before_rd28_selection_freeze": false
+  },
+  "evidence_gated_exit_v2": {
+    "baseline_time_failure_backup": {
+      "checkpoint_hours": 72,
+      "condition": "PRIOR_COMPLETED_CLOSE_LE_ENTRY_PRICE",
+      "fill": "CURRENT_1H_OPEN"
+    },
+    "early_regime_trade_invalidation": {
+      "current_bar_high_used": false,
+      "current_bar_low_used": false,
+      "earliest_age_hours": 24,
+      "fill": "CURRENT_1H_OPEN",
+      "market_evidence": "CURRENT_STATE_RANK_LT_ENTRY_STATE_RANK",
+      "trade_weakness": "PRIOR_COMPLETED_CLOSE_LE_ENTRY_PRICE"
+    },
+    "maximum_hold_hours": 168,
+    "partial_selling": false,
+    "profit_giveback_lock": {
+      "arm_mfe_in_signal_atr": 4.0,
+      "condition": "PRIOR_HIGH_WATER_GE_ENTRY_PLUS_4_ATR_AND_PRIOR_CLOSE_LE_PRIOR_HIGH_WATER_MINUS_3_ATR",
+      "fill": "CURRENT_1H_OPEN",
+      "giveback_in_signal_atr": 3.0,
+      "same_bar_high_tightening": false
+    },
+    "removed_rd27_v1_components": [
+      "STATE_ONLY_24H_STAGNATION_TIMER",
+      "STATE_ONLY_48H_STAGNATION_TIMER",
+      "STATE_DEPENDENT_ADVERSE_INTRABAR_GUARD",
+      "STATE_DEPENDENT_INTRABAR_PROFIT_TRAIL"
+    ]
+  },
+  "failure_next": "RD29_FAMILY_AWARE_LIFECYCLE_OR_SIGNAL_QUALITY_MODEL_REDESIGN_REQUIRED",
+  "family_aware_variant": {
+    "MOMENTUM_BREAKOUT": {
+      "early_market_condition": "CURRENT_MARKET_STATE_EQ_RISK_OFF",
+      "trade_weakness": "PRIOR_COMPLETED_CLOSE_LE_ENTRY_PRICE"
+    },
+    "RELATIVE_STRENGTH_ROTATION": {
+      "early_market_condition": "CURRENT_STATE_RANK_LT_ENTRY_STATE_RANK",
+      "trade_weakness": "PRIOR_COMPLETED_CLOSE_LE_ENTRY_PRICE"
+    },
+    "common_168h_max_hold": true,
+    "common_72h_backup": true,
+    "common_earliest_age_hours": 24,
+    "common_profit_giveback_lock": true,
+    "signal_family_is_entry_time_metadata": true,
+    "signal_generation_changed": false
+  },
+  "guardrails": [
+    "ROUTER_IS_SENSOR_NOT_FINAL_PRODUCT",
+    "EARLY_EXIT_REQUIRES_TRADE_WEAKNESS_EVIDENCE",
+    "ENTRY_STATE_MEMORY_AND_STATE_TRANSITION_ARE_LIFECYCLE_INPUTS",
+    "SLOT_ESCROW_IS_AN_ABLATION_FOR_REENTRY_FEEDBACK",
+    "FAMILY_AWARENESS_MAY_CHANGE_EXIT_RESPONSE_NOT_SIGNAL_GENERATION",
+    "NO_POST_RESULT_PARAMETER_TUNING_IN_FIRST_RD28_EXECUTION",
+    "NO_FINALIST_UNLESS_ALL_GATES_PASS_ALL_UNIVERSES",
+    "NO_2024_OR_POST_2024_INFLUENCE"
+  ],
+  "hard_gates_each_policy_each_universe": [
+    "BASE_NET_RETURN_POSITIVE",
+    "STRESS_2X_NET_RETURN_POSITIVE",
+    "STRESS_2X_PROFIT_FACTOR_GTE_1_05",
+    "STRESS_2X_MAX_DRAWDOWN_LTE_20PCT",
+    "STRESS_2X_TRADES_GTE_75",
+    "BOTH_2022_2023_NET_PNL_POSITIVE",
+    "STRESS_2X_LARGEST_WINNER_REMOVAL_POSITIVE",
+    "STRESS_2X_LOAO_MIN_REMAINING_PNL_POSITIVE",
+    "STRESS_2X_LOYO_MIN_REMAINING_PNL_POSITIVE",
+    "PF1_BREAK_EVEN_COST_MULTIPLIER_GTE_2",
+    "CASH_FEASIBLE_BASE_AND_2X",
+    "MOMENTUM_BREAKOUT_STANDALONE_2X_POSITIVE",
+    "RELATIVE_STRENGTH_STANDALONE_2X_POSITIVE",
+    "NO_2024_OR_POST_2024_ACCESS"
+  ],
+  "implementation_next": "RD28_P0B_IMPLEMENT_AND_TEST_EVIDENCE_GATED_LIFECYCLE_PRE_ECONOMIC_EXECUTION",
+  "lineage": {
+    "focus_families": [
+      "MOMENTUM_BREAKOUT",
+      "RELATIVE_STRENGTH_ROTATION"
+    ],
+    "rd27_decision": "RD27_ADAPTIVE_LIFECYCLE_NO_FINALIST_REDESIGN_REQUIRED",
+    "rd27_manifest_sha256": "b078bed1b6250f2de2e38f147ffb1662ddba78ee739a91f889133affada4d318",
+    "rd27_report_sha256": "ead9f2fea56f0f904310b9335c4dc084c15bffcdc167ad27f7ad71c38c07ade5",
+    "rd27_signal_event_count": 7073,
+    "source_branch": "research/rd27-adaptive-position-lifecycle-brain-v1",
+    "source_commit": "a89a45cea26bbbddbc62732cceed7256aace95a2"
+  },
+  "preserved_contracts": {
+    "base_round_trip_cost_fraction": 0.0025,
+    "capacity_proxy": "TRAILING_24H_BASE_VOLUME_X_COMPLETED_CLOSE",
+    "derivatives": false,
+    "entry": "EXACT_NEXT_1H_OPEN_AFTER_SIGNAL",
+    "initial_equity": 100000.0,
+    "leverage": false,
+    "long_only": true,
+    "margin": false,
+    "maximum_entry_notional_fraction_of_capacity_proxy": 0.005,
+    "maximum_gross_exposure": 0.9,
+    "maximum_positions": 5,
+    "pyramiding": false,
+    "same_pair_concurrent_position": false,
+    "signal_parameters_changed": false,
+    "signal_scores_changed": false,
+    "signals": "EXACT_FROZEN_RD26_2022_2023_SIGNAL_EVENT_LEDGER",
+    "stress_2x_round_trip_cost_fraction": 0.005,
+    "venue": "KUCOIN_SPOT"
+  },
+  "prohibitions": {
+    "2024_access": false,
+    "capacity_changes": false,
+    "cost_changes": false,
+    "derivatives": false,
+    "entry_timing_changes": false,
+    "leverage": false,
+    "machine_learning": false,
+    "margin": false,
+    "parameter_grid_search": false,
+    "partial_selling": false,
+    "post_2024_access": false,
+    "production_authorization": false,
+    "pyramiding": false,
+    "signal_parameter_changes": false,
+    "signal_score_changes": false
+  },
+  "rd27_diagnosis_used_for_redesign": {
+    "adaptive_exit": "RD27 adaptive exit v1 materially destroyed expectancy.",
+    "family_asymmetry": "Under the static router, MOMENTUM_BREAKOUT was 2x positive across C2/D2/E2 while RELATIVE_STRENGTH_ROTATION remained 2x negative across C2/D2/E2.",
+    "feedback": "Early exits freed slots and materially increased admissions, creating churn/opportunity feedback.",
+    "remaining_problem": "Static routing still left 2022 negative and stress drawdown near 39%.",
+    "router": "STATIC_EXIT_STATE_ROUTER was the only directionally strong RD27 component."
+  },
+  "research_objective": "Build an adaptive lifecycle brain whose early exits require trade-level weakness plus causal market-state deterioration, and separate exit quality from immediate slot-recycling feedback.",
+  "research_question": "Can an evidence-gated lifecycle controller built on the RD27 state router pass the preserved robustness gates across 2022-2023 without changing signals, scores, entry timing, costs, capacity, or using 2024/post-2024 data?",
+  "schema_version": "rd28-p0-evidence-gated-lifecycle-redesign-protocol-v1",
+  "selection_rule": {
+    "eligible": "PASS_EVERY_HARD_GATE_IN_C2_D2_E2",
+    "primary": "MAXIMIZE_WORST_UNIVERSE_2X_NET_RETURN",
+    "tie_break_1": "MAXIMIZE_WORST_UNIVERSE_2X_PROFIT_FACTOR",
+    "tie_break_2": "MINIMIZE_WORST_UNIVERSE_2X_MAXIMUM_DRAWDOWN",
+    "tie_break_3": "MINIMIZE_WORST_UNIVERSE_2X_TURNOVER",
+    "tie_break_4": "MINIMIZE_ACTIVE_ADAPTIVE_COMPONENT_COUNT",
+    "tie_break_5": "POLICY_ID_LEXICOGRAPHIC"
+  },
+  "slot_escrow_v1": {
+    "applies_to": "ANY_EVIDENCE_OR_PROFIT_EXIT_BEFORE_ENTRY_PLUS_72H",
+    "cash_reserved": false,
+    "constraint": "OPEN_POSITIONS_PLUS_ESCROW_SLOTS_LTE_5",
+    "exit_at_or_after_72h_releases_immediately": true,
+    "notional_reserved": false,
+    "only_position_slot_reserved": true,
+    "purpose": "ISOLATE_EARLY_EXIT_QUALITY_FROM_IMMEDIATE_REENTRY_CHURN",
+    "virtual_slot_release_time": "ENTRY_TIME_PLUS_72H"
+  },
+  "stage": "RD28_EVIDENCE_GATED_LIFECYCLE_REDESIGN_PREREGISTRATION",
+  "state_router_anchor": {
+    "market_state_sensor": "EXACT_RD27_P0B_SENSOR",
+    "resize_open_positions": false,
+    "risk_off_behavior": "RECORD_SIGNAL_BUT_DO_NOT_ADMIT",
+    "role": "UPSTREAM_ADMISSION_SENSOR_NOT_FINAL_PRODUCT",
+    "slot_fraction_by_entry_state": {
+      "RISK_OFF": 0.0,
+      "RISK_ON": 0.18,
+      "TRANSITION": 0.09
+    }
+  },
+  "success_next": "RD29_CLEAN_2024_INTERNAL_CONFIRMATION",
+  "trade_state_memory_v2": {
+    "age_hours": true,
+    "current_market_state": "PRIOR_COMPLETED_BTC_BAR_ONLY",
+    "entry_market_state": true,
+    "entry_price": true,
+    "future_information": false,
+    "market_state_deteriorated": "CURRENT_STATE_RANK_LT_ENTRY_STATE_RANK",
+    "prior_completed_close": true,
+    "prior_completed_high_water": true,
+    "signal_atr24_fixed": true,
+    "state_rank": {
+      "RISK_OFF": 0,
+      "RISK_ON": 2,
+      "TRANSITION": 1
+    }
+  }
+}
