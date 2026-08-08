@@ -1,0 +1,52 @@
+{
+  "2024_accessed": false,
+  "candidate_parameters_changed": false,
+  "capital_router_logic_changed": false,
+  "corrections": [
+    {
+      "from": "p0b.research_logic_changed",
+      "to": "p0b.recovery.research_logic_changed",
+      "type": "SCHEMA_PATH_CORRECTION"
+    },
+    {
+      "new_parent_expectation": "47a65c2688566e7d580adff2eda4d0b2278c64d1",
+      "old_parent_expectation": "b61267adb69b058b9fbd9b11e45a42ebdeb0c333",
+      "reason": "THE_EXECUTABLE_FREEZE_NOW_INCLUDES_THIS_PRE_ECONOMIC_GUARD_CORRECTION_COMMIT_ON_TOP_OF_THE_INTEGRATION_FREEZE",
+      "type": "COMMIT_LINEAGE_CORRECTION"
+    }
+  ],
+  "cost_or_capacity_contract_changed": false,
+  "economic_execution_performed": false,
+  "entry_logic_changed": false,
+  "exit_logic_changed": false,
+  "failure_class": "PRE_ECONOMIC_LINEAGE_SCHEMA_PATH_GUARD_MISMATCH",
+  "lineage": {
+    "branch": "research/rd27-adaptive-position-lifecycle-brain-v1",
+    "head": "47a65c2688566e7d580adff2eda4d0b2278c64d1",
+    "p0b_audit_sha256": "1e3b68bf9cb9b50aaef4b1cf53e224a3634732e81d4fc74db999a5eac1fa3773",
+    "p0c_audit_sha256": "2433f8f6457a065aaf5d7418a61ed74978b3a974e36db022fbf2f1bd86a1b58d",
+    "remote_head": "47a65c2688566e7d580adff2eda4d0b2278c64d1",
+    "runner_pre_sha256": "b51ef8e01d87f065bd0bf7843f695f5fe69a60950eab6bda00e3c3e1a5d4e239"
+  },
+  "market_state_logic_changed": false,
+  "new_2022_2023_economic_results_exposed": false,
+  "next_stage": "RD27_P1_EXECUTE_FROZEN_LIFECYCLE_ABLATION_2022_2023",
+  "post_2024_accessed": false,
+  "production_authorized": false,
+  "real_market_data_loaded": false,
+  "research_logic_changed": false,
+  "root_cause": "RUNNER_READ_TOP_LEVEL_RESEARCH_LOGIC_CHANGED_BUT_P0B_AUDIT_STORES_THE_FIELD_AT_RECOVERY_RESEARCH_LOGIC_CHANGED",
+  "runner_post_sha256": "7dfc388f3bf8ef6efa16e0640cf924158999a9923674c7701b8919872755cbb5",
+  "runner_pre_sha256": "b51ef8e01d87f065bd0bf7843f695f5fe69a60950eab6bda00e3c3e1a5d4e239",
+  "schema_version": "rd27-p0d-lineage-guard-correction-audit-v1",
+  "signals_changed": false,
+  "source_integration_freeze_commit": "47a65c2688566e7d580adff2eda4d0b2278c64d1",
+  "source_p0b_freeze_commit": "b61267adb69b058b9fbd9b11e45a42ebdeb0c333",
+  "stage": "RD27_P0D_LINEAGE_GUARD_CORRECTION_PRE_ECONOMIC_EXECUTION",
+  "status": "PASS",
+  "verification": {
+    "py_compile_returncode": 0,
+    "pytest_returncode": 0,
+    "ruff_returncode": 0
+  }
+}

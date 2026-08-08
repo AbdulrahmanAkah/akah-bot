@@ -49,6 +49,7 @@ from spotbot.research.rd27_lifecycle_replay import (  # noqa: E402
 )
 
 P0B_FREEZE_COMMIT = "b61267adb69b058b9fbd9b11e45a42ebdeb0c333"
+P0C_INTEGRATION_FREEZE_COMMIT = "47a65c2688566e7d580adff2eda4d0b2278c64d1"
 PROTOCOL = Path(
     "data/research/rd27_p0/"
     "rd27-p0-adaptive-position-lifecycle-brain-protocol-v1.json"
@@ -162,8 +163,11 @@ def verify_lineage(repo: Path, expected_freeze_commit: str) -> dict[str, Any]:
             f"RD27-P1 HEAD {head} != integration freeze {expected_freeze_commit}"
         )
     parent = git(repo, "rev-parse", "HEAD^")
-    if parent != P0B_FREEZE_COMMIT:
-        raise RunnerError(f"RD27-P1 integration-freeze parent drifted: {parent}")
+    if parent != P0C_INTEGRATION_FREEZE_COMMIT:
+        raise RunnerError(
+            "RD27-P1 lineage-guard correction parent drifted: "
+            f"{parent} != {P0C_INTEGRATION_FREEZE_COMMIT}"
+        )
 
     checks = (
         (PROTOCOL, PROTOCOL_SHA256, "RD27 protocol"),
@@ -182,7 +186,10 @@ def verify_lineage(repo: Path, expected_freeze_commit: str) -> dict[str, Any]:
     p0b = load_json(repo / P0B_AUDIT)
     if p0b.get("status") != "PASS":
         raise RunnerError("RD27 P0B audit is not PASS")
-    if p0b.get("research_logic_changed") is not False:
+    recovery = p0b.get("recovery")
+    if not isinstance(recovery, dict):
+        raise RunnerError("RD27 P0B audit recovery block is missing")
+    if recovery.get("research_logic_changed") is not False:
         raise RunnerError("RD27 P0B audit indicates research logic changed")
     if p0b.get("candidate_parameters_changed") is not False:
         raise RunnerError("RD27 P0B audit indicates candidate parameters changed")
