@@ -1,0 +1,121 @@
+{
+  "2024_accessed": false,
+  "candidate_parameters_changed": false,
+  "design_principles": {
+    "freed_slot_feedback": "EARLY_EXIT_DOES_NOT_IMPLY_RISK_REDUCTION_WHEN_RELEASED_CAPITAL_CAN_BE_IMMEDIATELY_REUSED_BY_A_NEW_ENTRY",
+    "future_exit_research_requirement": "ANY_NEW_EARLY_EXIT_RESEARCH_MUST_EXPLICITLY_CONTROL_OR_ATTRIBUTE_FREED_SLOT_CAPITAL_REUSE",
+    "prediction_asymmetry": "MARKET_REGIME_ADMISSION_CLASSIFICATION_IS_TREATED_AS_LOWER_DIMENSION_AND_SLOWER_MOVING_THAN_OPEN_TRADE_OUTCOME_CLASSIFICATION"
+  },
+  "economic_execution_performed": false,
+  "economic_runner_implemented": true,
+  "frozen_execution_contract": {
+    "admission_attribution_required": true,
+    "baseline_parity_source": "RD30_FAMILY_QUALITY_CONTROL_EXITS",
+    "baseline_parity_vs_rd30_expected_rows": 18,
+    "baseline_policy": "FAMILY_QUALITY_CONTROL_EXITS",
+    "calendar_year_feature": false,
+    "candidate_lifecycle": "TIME_FAIL72_MAX168_NO_PROFIT_NO_REPLACEMENT_NO_THESIS_EXIT",
+    "clock_hour_occupancy_required": true,
+    "crisis_windows": [
+      {
+        "anchor": "2022-05-09T00:00:00Z",
+        "crisis_id": "TERRA_UST_DEPEG",
+        "diagnostic_only": true,
+        "selection_influence": false,
+        "window_hours_each_side": 72
+      },
+      {
+        "anchor": "2022-06-27T00:00:00Z",
+        "crisis_id": "THREE_ARROWS_LIQUIDATION_ORDER",
+        "diagnostic_only": true,
+        "selection_influence": false,
+        "window_hours_each_side": 72
+      },
+      {
+        "anchor": "2022-11-11T00:00:00Z",
+        "crisis_id": "FTX_BANKRUPTCY",
+        "diagnostic_only": true,
+        "selection_influence": false,
+        "window_hours_each_side": 72
+      }
+    ],
+    "diagnostics_influence_hard_gates": false,
+    "diagnostics_influence_selection": false,
+    "entry_pnl_attribution_required": true,
+    "existing_position_regime_deterioration_attribution_required": true,
+    "expected_economic_replays": 72,
+    "governor_transition_ledger_required": true,
+    "hard_gate_count": 14,
+    "hard_gates_changed_after_expert_review": false,
+    "loao_loyo_largest_winner_required_on_rd31": true,
+    "output_file_count_excluding_manifest": 22,
+    "output_file_count_including_manifest": 23,
+    "parameter_grid_search": false,
+    "policy_count": 4,
+    "policy_logic_changed_after_expert_review": false,
+    "rs_supportive_definition_changed": false,
+    "rs_supportive_only_definition": "ADMIT_IFF_BREADTH_READY_AND_MARKET_CONTEXT_SUPPORTIVE_SLOT_0_18",
+    "signal_time_occupancy_required": true,
+    "universe_attribution_required": true
+  },
+  "hard_gates_changed": false,
+  "implementation": {
+    "runner_path": "scripts/research/run_rd31_market_regime_admission_governor.py",
+    "runner_sha256": "3b6d938093b4f00883a3665399cbea01fd892e2b610fc7f4b2eba01f8f51457b",
+    "runner_test_path": "tests/research/test_rd31_p1_runner_contract.py",
+    "runner_test_sha256": "a1fdaa09bac218f20c10de91040c22a5b2c1c681c85a6799ff41ec7d015960b9"
+  },
+  "lineage": {
+    "branch": "research/rd31-market-regime-admission-governor-v1",
+    "governor_sha256": "ab38e80c8bc9f99c7a6e262a1a7f648642e3ed628032fec3a137fb4e33a06368",
+    "head": "66c05b48f9dbbb33f61f75eed91b524db7b65cac",
+    "p0b_audit_sha256": "d0af978290369f9b91dc3f3ca57c62db3564cddff9aa6e5990ac13ea8f9882e1",
+    "p0c_audit_sha256": "5aad12bd615fe2acb0ca656e50f349884363535e20c3d093cb524191e9034922",
+    "parent_p0b_commit": "ef06ccd284951a6735a7540a738448b2e4abd6c0",
+    "protocol_sha256": "be8f308e6d16614247086fbe757e9e163b18f61270da02bb247e648f9b563eb1",
+    "remote_head": "66c05b48f9dbbb33f61f75eed91b524db7b65cac",
+    "replay_sha256": "cf979223bf53141ad715ff6d4e79ad394653a7a3e42e546b9e43424a42dc7f4c",
+    "replay_test_sha256": "46ce66ff1ef7f1eedda07c225d31e03891aebf612250e349364a4f77a87763b4"
+  },
+  "new_2022_2023_economic_results_exposed_in_this_step": false,
+  "next_stage": "RD31_P1_EXECUTE_FROZEN_MARKET_REGIME_ADMISSION_GOVERNOR_2022_2023",
+  "portfolio_replay_implemented": true,
+  "post_2024_accessed": false,
+  "production_authorized": false,
+  "real_market_data_loaded": false,
+  "research_aspirations_not_hard_gates": {
+    "daily_0_5pct": {
+      "annual_compounded_net_return": 5.174652783431007,
+      "annual_compounded_return_percent": 517.4652783431007,
+      "hard_gate": false,
+      "period_rate": 0.005,
+      "periods_per_year": 365
+    },
+    "monthly_24pct": {
+      "annual_compounded_net_return": 12.214788658781796,
+      "annual_compounded_return_percent": 1221.4788658781797,
+      "hard_gate": false,
+      "period_rate": 0.24,
+      "periods_per_year": 12
+    }
+  },
+  "research_logic_implemented": true,
+  "schema_version": "rd31-p0d-regime-governor-economic-runner-freeze-audit-v1",
+  "signal_generation_changed": false,
+  "source_p0_commit": "33945ebf2313140b8c9a9fa67708191aa1b3f45e",
+  "source_p0b_commit": "ef06ccd284951a6735a7540a738448b2e4abd6c0",
+  "source_p0c_commit": "66c05b48f9dbbb33f61f75eed91b524db7b65cac",
+  "stage": "RD31_P0D_REGIME_GOVERNOR_ECONOMIC_RUNNER_PRE_EXECUTION",
+  "status": "PASS",
+  "target_branch": "research/rd31-market-regime-admission-governor-v1",
+  "verification": {
+    "expected_selected_pytest_count": 141,
+    "new_runner_test_function_count": 15,
+    "prior_selected_test_count": 126,
+    "py_compile_returncode": 0,
+    "pytest_returncode": 0,
+    "raw_market_data_loaded_by_tests": false,
+    "ruff_returncode": 0,
+    "tests_are_synthetic_only": true
+  }
+}
