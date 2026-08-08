@@ -1,0 +1,286 @@
+{
+  "2024_accessed": false,
+  "actual_attribution_execution_performed": true,
+  "decision": "RD32_RESIDUAL_LOSS_DOES_NOT_SUPPORT_PORTFOLIO_DERISKING_RETURN_TO_ADMISSION_OR_SIGNAL_FAMILY_REDESIGN",
+  "diagnostic_conservation": {
+    "crisis_tag": {
+      "maximum_final_net_pnl_absolute_error": 0.0,
+      "maximum_trade_count_absolute_error": 0.0,
+      "passed": true
+    },
+    "entry_governor_state": {
+      "maximum_final_net_pnl_absolute_error": 0.0,
+      "maximum_trade_count_absolute_error": 0.0,
+      "passed": true
+    },
+    "entry_market_context": {
+      "maximum_final_net_pnl_absolute_error": 0.0,
+      "maximum_trade_count_absolute_error": 0.0,
+      "passed": true
+    },
+    "exit_reason": {
+      "maximum_final_net_pnl_absolute_error": 0.0,
+      "maximum_trade_count_absolute_error": 0.0,
+      "passed": true
+    },
+    "family_bucket": {
+      "maximum_final_net_pnl_absolute_error": 1.8189894035458565e-12,
+      "maximum_trade_count_absolute_error": 0.0,
+      "passed": true
+    },
+    "first_lock_transition_episode": {
+      "maximum_final_net_pnl_absolute_error": 0.0,
+      "maximum_trade_count_absolute_error": 0.0,
+      "passed": true
+    },
+    "pair": {
+      "maximum_final_net_pnl_absolute_error": 0.0,
+      "maximum_trade_count_absolute_error": 0.0,
+      "passed": true
+    }
+  },
+  "economic_execution_performed": false,
+  "forced_exit_counterfactual_decision_evidence": false,
+  "freed_slot_feedback_preserved_as_design_constraint": true,
+  "gate_evaluation": [
+    {
+      "gate_id": "ALL_PREREGISTERED_DERISKING_ROUTE_GATES",
+      "passed": false,
+      "universe_id": "C2"
+    },
+    {
+      "gate_id": "CROSSED_TO_LOCKED_TRADE_COUNT_GTE_10",
+      "passed": true,
+      "universe_id": "C2"
+    },
+    {
+      "gate_id": "MEDIAN_POST_LOCK_NET_CONTRIBUTION_LT_0",
+      "passed": true,
+      "universe_id": "C2"
+    },
+    {
+      "gate_id": "POST_LOCK_DAMAGE_FRACTION_OF_TOTAL_LOSS_GTE_0_50",
+      "passed": false,
+      "universe_id": "C2"
+    },
+    {
+      "gate_id": "POST_LOCK_NET_CONTRIBUTION_SUM_LT_0",
+      "passed": true,
+      "universe_id": "C2"
+    },
+    {
+      "gate_id": "TOTAL_2022_NET_PNL_LT_0",
+      "passed": true,
+      "universe_id": "C2"
+    },
+    {
+      "gate_id": "ALL_PREREGISTERED_DERISKING_ROUTE_GATES",
+      "passed": false,
+      "universe_id": "D2"
+    },
+    {
+      "gate_id": "CROSSED_TO_LOCKED_TRADE_COUNT_GTE_10",
+      "passed": true,
+      "universe_id": "D2"
+    },
+    {
+      "gate_id": "MEDIAN_POST_LOCK_NET_CONTRIBUTION_LT_0",
+      "passed": true,
+      "universe_id": "D2"
+    },
+    {
+      "gate_id": "POST_LOCK_DAMAGE_FRACTION_OF_TOTAL_LOSS_GTE_0_50",
+      "passed": false,
+      "universe_id": "D2"
+    },
+    {
+      "gate_id": "POST_LOCK_NET_CONTRIBUTION_SUM_LT_0",
+      "passed": true,
+      "universe_id": "D2"
+    },
+    {
+      "gate_id": "TOTAL_2022_NET_PNL_LT_0",
+      "passed": true,
+      "universe_id": "D2"
+    },
+    {
+      "gate_id": "ALL_PREREGISTERED_DERISKING_ROUTE_GATES",
+      "passed": false,
+      "universe_id": "E2"
+    },
+    {
+      "gate_id": "CROSSED_TO_LOCKED_TRADE_COUNT_GTE_10",
+      "passed": true,
+      "universe_id": "E2"
+    },
+    {
+      "gate_id": "MEDIAN_POST_LOCK_NET_CONTRIBUTION_LT_0",
+      "passed": true,
+      "universe_id": "E2"
+    },
+    {
+      "gate_id": "POST_LOCK_DAMAGE_FRACTION_OF_TOTAL_LOSS_GTE_0_50",
+      "passed": false,
+      "universe_id": "E2"
+    },
+    {
+      "gate_id": "POST_LOCK_NET_CONTRIBUTION_SUM_LT_0",
+      "passed": true,
+      "universe_id": "E2"
+    },
+    {
+      "gate_id": "TOTAL_2022_NET_PNL_LT_0",
+      "passed": true,
+      "universe_id": "E2"
+    }
+  ],
+  "hard_gates_changed": false,
+  "interpretation": "ACCOUNTING_ATTRIBUTION_OF_FROZEN_RD31_REALIZED_TRADES_ONLY_NOT_A_COUNTERFACTUAL_PORTFOLIO_RETURN",
+  "new_market_data_loaded": false,
+  "next_stage": "RD32_P2_ADMISSION_OR_SIGNAL_FAMILY_ARCHITECTURE_REDESIGN_REQUIRED",
+  "period_metric_parity": {
+    "frozen_reference": "RD31_PORTFOLIO_PERIOD_METRICS_ROBUSTNESS_2022",
+    "maximum_net_pnl_absolute_error": 1.8189894035458565e-12,
+    "maximum_trade_count_absolute_error": 0.0,
+    "passed": true
+  },
+  "post_2024_accessed": false,
+  "primary_metrics": [
+    {
+      "crossed_final_net_pnl_sum": -9156.133996526089,
+      "crossed_to_locked_trade_count": 13,
+      "median_post_lock_net_contribution": -117.3598338330898,
+      "negative_post_lock_trade_count": 9,
+      "no_lock_cross_final_net_pnl_sum": -6505.082803271322,
+      "no_lock_cross_trade_count": 32,
+      "positive_post_lock_trade_count": 4,
+      "post_lock_damage_fraction_of_total_loss": 0.36129740807538824,
+      "post_lock_net_contribution_sum": -5658.357037073531,
+      "pre_lock_net_contribution_sum": -10002.859762723878,
+      "total_2022_net_pnl": -15661.21679979741,
+      "total_2022_trade_count": 45,
+      "universe_id": "C2"
+    },
+    {
+      "crossed_final_net_pnl_sum": -9156.133996526089,
+      "crossed_to_locked_trade_count": 13,
+      "median_post_lock_net_contribution": -117.3598338330898,
+      "negative_post_lock_trade_count": 9,
+      "no_lock_cross_final_net_pnl_sum": -6505.082803271322,
+      "no_lock_cross_trade_count": 32,
+      "positive_post_lock_trade_count": 4,
+      "post_lock_damage_fraction_of_total_loss": 0.36129740807538824,
+      "post_lock_net_contribution_sum": -5658.357037073531,
+      "pre_lock_net_contribution_sum": -10002.859762723878,
+      "total_2022_net_pnl": -15661.21679979741,
+      "total_2022_trade_count": 45,
+      "universe_id": "D2"
+    },
+    {
+      "crossed_final_net_pnl_sum": -9156.133996526089,
+      "crossed_to_locked_trade_count": 13,
+      "median_post_lock_net_contribution": -117.3598338330898,
+      "negative_post_lock_trade_count": 9,
+      "no_lock_cross_final_net_pnl_sum": -6505.082803271322,
+      "no_lock_cross_trade_count": 32,
+      "positive_post_lock_trade_count": 4,
+      "post_lock_damage_fraction_of_total_loss": 0.36129740807538824,
+      "post_lock_net_contribution_sum": -5658.357037073531,
+      "pre_lock_net_contribution_sum": -10002.859762723878,
+      "total_2022_net_pnl": -15661.21679979741,
+      "total_2022_trade_count": 45,
+      "universe_id": "E2"
+    }
+  ],
+  "primary_scope": {
+    "cost_multiplier": 2.0,
+    "period_id": "ROBUSTNESS_2022",
+    "policy_id": "REGIME_HYSTERESIS_ADMISSION_GOVERNOR",
+    "portfolio_id": "UNION_FOCUS",
+    "universes": [
+      "C2",
+      "D2",
+      "E2"
+    ]
+  },
+  "production_authorized": false,
+  "raw_market_data_loaded": false,
+  "rd31_source_mutated": false,
+  "schema_version": "rd32-p1-residual-loss-attribution-report-v1",
+  "signal_generation_changed": false,
+  "source_p0_commit": "b584b28df605873568935ec886267661d64b49b1",
+  "source_p0b_freeze_commit": "547d5597f37ff798a27c94af5408b19bcd6f618e",
+  "source_rd31_results_commit": "f95a165e3c0a17dc53b021740f4e0810148af28f",
+  "source_schema_adapter_audit": {
+    "2024_accessed": false,
+    "canonical_deterioration_rows": 39,
+    "canonical_trade_rows": 135,
+    "deterioration_adapter": {
+      "all_years_hysteresis_union_2x_deterioration_rows": 270,
+      "final_trade_pnl_parity_max_abs_error": 0.0,
+      "first_lock_context_action_delta_hours": 1,
+      "first_lock_time_mapping": "CANONICAL_FIRST_LOCK_TIME_EQUALS_FROZEN_FIRST_LOCK_ACTION_TIME",
+      "locked_transition_ledger_parity": true,
+      "period_assignment_method": "MATCH_DETERIORATION_JOIN_KEY_TO_FROZEN_RD31_TRADE_LEDGER_PERIOD_ID",
+      "primary_2022_deterioration_rows": 39,
+      "source_deterioration_rows": 1180
+    },
+    "economic_replay_performed": false,
+    "entry_pnl_aggregate_parity": {
+      "maximum_net_pnl_absolute_error": 1.8189894035458565e-12,
+      "maximum_trade_count_absolute_error": 0.0,
+      "meaning": "DERIVED_ENTRY_GOVERNOR_STATE_AND_FAMILY_BUCKET_EXACTLY_REPRODUCE_FROZEN_RD31_ENTRY_PNL_ATTRIBUTION_WITHIN_1E_6_PNL_TOLERANCE",
+      "passed": true,
+      "row_count": 12
+    },
+    "mapping_ambiguity_observed": false,
+    "new_market_data_loaded": false,
+    "post_2024_accessed": false,
+    "raw_market_data_loaded": false,
+    "schema_version": "rd32-p1-source-schema-adapter-audit-v1",
+    "semantic_redefinition_performed": false,
+    "source_files_are_frozen_rd31_results_only": true,
+    "source_rd31_results_commit": "f95a165e3c0a17dc53b021740f4e0810148af28f",
+    "source_schema_mapping": {
+      "deterioration_period_id": "JOIN_TO_EXACT_FROZEN_TRADE_KEY_THEN_USE_TRADE_PERIOD_ID",
+      "entry_governor_state": "DETERMINISTIC_RECONSTRUCTION_FROM_FROZEN_RD31_GOVERNOR_ADMISSION_SEMANTICS_THEN_EXACT_AGGREGATE_PARITY_CHECK",
+      "first_lock_time": "EXACT_RD31_FIRST_LOCK_ACTION_TIME_USED_FOR_MARK_AT_LOCK_OPEN",
+      "trade_fields": {
+        "cost_multiplier": "cost_multiplier",
+        "entry_market_context": "entry_market_context",
+        "entry_time": "entry_time",
+        "exit_reason": "exit_reason",
+        "exit_time": "exit_time",
+        "net_pnl": "net_pnl",
+        "pair": "pair",
+        "period_id": "period_id",
+        "policy_id": "policy_id",
+        "portfolio_id": "portfolio_id",
+        "support_families": "support_families",
+        "universe_id": "universe_id"
+      }
+    },
+    "status": "PASS",
+    "trade_adapter": {
+      "all_years_hysteresis_union_2x_rows": 512,
+      "derivation_basis": "FROZEN_RD31_TRANSITION_BEFORE_ADMISSION_AND_ACTUAL_EXECUTED_TRADE_SEMANTICS",
+      "entry_governor_state_derivation": {
+        "MIXED": "CAUTION",
+        "STRESSED": "PROHIBITED_EXECUTED_TRADE",
+        "SUPPORTIVE": "OPEN",
+        "UNAVAILABLE": "OPEN"
+      },
+      "primary_2022_rows": 135,
+      "source_trade_rows": 14884
+    }
+  },
+  "stage": "RD32_P1_RESIDUAL_LOSS_ATTRIBUTION_USING_RD31_RESULTS_ONLY",
+  "status": "PASS",
+  "strategy_parameter_changed": false,
+  "thresholds_changed_after_attribution_execution": false,
+  "universe_pass": {
+    "C2": false,
+    "D2": false,
+    "E2": false
+  }
+}
