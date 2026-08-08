@@ -1,0 +1,80 @@
+{
+  "2024_accessed": false,
+  "candidate_parameters_changed": false,
+  "economic_execution_performed": false,
+  "economic_runner_implemented": false,
+  "frozen_state_contract": {
+    "baseline_source": "EXACT_RD30_FAMILY_QUALITY_CONTROL_EXITS",
+    "calendar_year_feature": false,
+    "caution_mixed_stays_caution": true,
+    "caution_supportive_to_open": true,
+    "forced_regime_exit": false,
+    "governor_duration_parameter": false,
+    "governor_states": [
+      "OPEN",
+      "CAUTION",
+      "LOCKED"
+    ],
+    "governor_transition_before_admission": true,
+    "initial_governor_state": "OPEN",
+    "locked_mixed_stays_locked": true,
+    "locked_supportive_to_open": true,
+    "open_mixed_to_caution": true,
+    "parameter_grid_search": false,
+    "policy_count": 4,
+    "profit_giveback": false,
+    "replacement": false,
+    "rs_supportive_only_preserved": true,
+    "stressed_any_state_to_locked": true,
+    "thesis_failure_exit": false,
+    "unavailable_context_transition": "PERSIST_PRIOR_STATE"
+  },
+  "implementation": {
+    "engine_path": "src/spotbot/research/rd31_regime_admission_governor.py",
+    "engine_sha256": "ab38e80c8bc9f99c7a6e262a1a7f648642e3ed628032fec3a137fb4e33a06368",
+    "test_path": "tests/research/test_rd31_regime_admission_governor.py",
+    "test_sha256": "ea0b32e75c77db573dd0ce7ba32c89bf8334a5546e3455043569273aee55bf5f"
+  },
+  "lineage": {
+    "branch": "research/rd31-market-regime-admission-governor-v1",
+    "engine_pre_recovery_sha256": "c8714dbaeff75ebed45ef6bb2828d4ee9780c24ca244a988a5358bd77041d78b",
+    "head": "33945ebf2313140b8c9a9fa67708191aa1b3f45e",
+    "p0_audit_sha256": "df5da9e53b6e0c49b725dbd9ea5fb61ee27c88160026d2ceb5891cbebe0d7880",
+    "parent_rd30_results_commit": "f6c31541bf11f08819811d60a717038194a1369c",
+    "protocol_sha256": "be8f308e6d16614247086fbe757e9e163b18f61270da02bb247e648f9b563eb1",
+    "remote_head": "33945ebf2313140b8c9a9fa67708191aa1b3f45e",
+    "test_function_count": 39,
+    "test_pre_recovery_sha256": "ea0b32e75c77db573dd0ce7ba32c89bf8334a5546e3455043569273aee55bf5f"
+  },
+  "new_2022_2023_economic_results_exposed_in_this_step": false,
+  "next_stage": "RD31_P0C_IMPLEMENT_AND_FREEZE_REGIME_GOVERNED_PORTFOLIO_REPLAY_PRE_ECONOMIC_EXECUTION",
+  "portfolio_replay_implemented": false,
+  "post_2024_accessed": false,
+  "production_authorized": false,
+  "real_market_data_loaded": false,
+  "recovery": {
+    "candidate_parameters_changed": false,
+    "failure_class": "PRE_FREEZE_RUFF_F401_UNUSED_IMPORT_ONLY",
+    "patch_scope": "IMPORT_ONLY",
+    "removed_unused_import": "UNAVAILABLE",
+    "required": true,
+    "research_logic_changed": false
+  },
+  "research_logic_changed_by_recovery": false,
+  "research_logic_implemented": true,
+  "schema_version": "rd31-p0b-regime-admission-governor-audit-v1",
+  "signal_generation_changed": false,
+  "source_p0_commit": "33945ebf2313140b8c9a9fa67708191aa1b3f45e",
+  "source_rd30_results_commit": "f6c31541bf11f08819811d60a717038194a1369c",
+  "stage": "RD31_P0B_CAUSAL_REGIME_ADMISSION_GOVERNOR_PRE_ECONOMIC_EXECUTION",
+  "status": "PASS",
+  "target_branch": "research/rd31-market-regime-admission-governor-v1",
+  "verification": {
+    "new_synthetic_test_function_count": 39,
+    "py_compile_returncode": 0,
+    "pytest_returncode": 0,
+    "raw_market_data_loaded_by_tests": false,
+    "ruff_returncode": 0,
+    "tests_are_synthetic_only": true
+  }
+}
