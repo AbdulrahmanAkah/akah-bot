@@ -1,0 +1,165 @@
+{
+  "baseline_family_quality": {
+    "MB": {
+      "RISK_OFF": "SUPPRESS",
+      "RISK_ON_slot": 0.18,
+      "TRANSITION_slot": 0.09
+    },
+    "RS": {
+      "SUPPORTIVE_slot": 0.18,
+      "otherwise": "SUPPRESS"
+    }
+  },
+  "diagnosis": {
+    "best_rd30_2x": {
+      "C2_net_return": 0.006331656758773008,
+      "D2_net_return": 0.158564,
+      "E2_net_return": 0.118884,
+      "worst_drawdown": 0.3870329545351327
+    },
+    "best_rd30_policy": "FAMILY_QUALITY_CONTROL_EXITS",
+    "common_2022_loss": {
+      "mb_2x_net_pnl": -37215.09390323592,
+      "rs_2x_net_pnl": -14350.51366705237,
+      "union_2x_net_pnl": -37957.88418897809
+    },
+    "profit_giveback_rejected": true,
+    "replacement_atomic_count": 0,
+    "rs_quality_filter_2x": {
+      "C2_net_return": 0.147905,
+      "D2_net_return": 0.26565,
+      "E2_net_return": 0.19881
+    }
+  },
+  "failure_next": "RD32_REGIME_OR_SIGNAL_FAMILY_ARCHITECTURE_REDESIGN_REQUIRED",
+  "firewall": {
+    "2024_accessed": false,
+    "calendar_year_feature": false,
+    "development_cutoff_exclusive": "2024-01-01T00:00:00Z",
+    "development_start": "2022-01-01T00:00:00Z",
+    "post_2024_accessed": false
+  },
+  "hard_gates": [
+    "BASE_NET_RETURN_POSITIVE",
+    "STRESS_2X_NET_RETURN_POSITIVE",
+    "STRESS_2X_PROFIT_FACTOR_GTE_1_05",
+    "STRESS_2X_MAX_DRAWDOWN_LTE_20PCT",
+    "STRESS_2X_TRADES_GTE_75",
+    "BOTH_2022_2023_NET_PNL_POSITIVE",
+    "STRESS_2X_LARGEST_WINNER_REMOVAL_POSITIVE",
+    "STRESS_2X_LOAO_MIN_REMAINING_PNL_POSITIVE",
+    "STRESS_2X_LOYO_MIN_REMAINING_PNL_POSITIVE",
+    "PF1_BREAK_EVEN_COST_MULTIPLIER_GTE_2",
+    "CASH_FEASIBLE_BASE_AND_2X",
+    "MOMENTUM_BREAKOUT_STANDALONE_2X_POSITIVE",
+    "RELATIVE_STRENGTH_STANDALONE_2X_POSITIVE",
+    "NO_2024_OR_POST_2024_ACCESS"
+  ],
+  "lifecycle": {
+    "forced_regime_exit": false,
+    "maximum_hold_hours": 168,
+    "profit_giveback": false,
+    "replacement": false,
+    "thesis_failure_exit": false,
+    "time_fail_age_hours": 72,
+    "time_fail_condition": "PRIOR_COMPLETED_CLOSE_LE_ENTRY_PRICE"
+  },
+  "lineage": {
+    "rd30_decision": "RD30_FAMILY_SPECIALIST_REPLACEMENT_AWARE_NO_FINALIST_REDESIGN_REQUIRED",
+    "rd30_manifest_deterministic_hash": "26f0603077ed32a4de6e1dd0f970144f889e82f8d2593e8fd1d4c809620c1e6c",
+    "rd30_manifest_sha256": "a18be58155aa6c9902b5522ed39b4719b8cb64091f9dc0c66eae75654b6f24e6",
+    "rd30_report_sha256": "e54c2aaf96c5a8c327cae39e1945cc90c867a39c880e6145263562583593ee15",
+    "signal_event_count": 7073,
+    "source_branch": "research/rd30-family-specialist-replacement-aware-lifecycle-v1",
+    "source_commit": "f6c31541bf11f08819811d60a717038194a1369c"
+  },
+  "market_context": {
+    "MIXED": "ALL_OTHER_READY_CASES",
+    "STRESSED": "BTC_RISK_OFF_OR_(BTC_TRANSITION_AND_BREADTH_NONPOSITIVE)",
+    "SUPPORTIVE": "BTC_RISK_ON_AND_BREADTH_POSITIVE",
+    "UNAVAILABLE": "CONTEXT_INPUT_INCOMPLETE",
+    "source": "EXACT_RD30_RD29_MARKET_CONTEXT_V2",
+    "thresholds_changed": false
+  },
+  "next_stage": "RD31_P0B_IMPLEMENT_AND_TEST_CAUSAL_REGIME_ADMISSION_GOVERNOR_PRE_ECONOMIC_EXECUTION",
+  "policies": {
+    "FAMILY_QUALITY_CONTROL_EXITS": {
+      "admission": "EXACT_RD30_BASELINE"
+    },
+    "REGIME_HYSTERESIS_ADMISSION_GOVERNOR": {
+      "CAUTION": "MB_TRANSITION_MIXED_SLOT_0_09_RS_SUPPORTIVE_ONLY",
+      "LOCKED": "SUPPRESS_ALL_NEW_ADMISSIONS",
+      "OPEN": "EXACT_RD30_BASELINE",
+      "duration_parameter": false,
+      "initial_state": "OPEN",
+      "rules": [
+        "ANY_PLUS_STRESSED_TO_LOCKED",
+        "LOCKED_PLUS_MIXED_STAYS_LOCKED",
+        "LOCKED_PLUS_SUPPORTIVE_TO_OPEN",
+        "OPEN_PLUS_MIXED_TO_CAUTION",
+        "CAUTION_PLUS_MIXED_STAYS_CAUTION",
+        "CAUTION_PLUS_SUPPORTIVE_TO_OPEN"
+      ],
+      "states": [
+        "OPEN",
+        "CAUTION",
+        "LOCKED"
+      ]
+    },
+    "STRESSED_CONTEXT_MB_EXCLUSION": {
+      "MB_RISK_OFF": "SUPPRESS",
+      "MB_RISK_ON": "BASELINE",
+      "MB_TRANSITION_MIXED": "SLOT_0_09",
+      "MB_TRANSITION_STRESSED": "SUPPRESS",
+      "RS": "SUPPORTIVE_ONLY_SLOT_0_18"
+    },
+    "SUPPORTIVE_ONLY_ALL_FAMILIES": {
+      "MB": "SUPPORTIVE_ONLY_SLOT_0_18",
+      "RS": "SUPPORTIVE_ONLY_SLOT_0_18"
+    }
+  },
+  "preserved": {
+    "base_round_trip_cost": 0.0025,
+    "capacity_fraction": 0.005,
+    "cost_multipliers": [
+      1.0,
+      2.0
+    ],
+    "derivatives": false,
+    "entry_fill": "NEXT_1H_OPEN_AFTER_SIGNAL",
+    "initial_equity": 100000.0,
+    "leverage": false,
+    "long_only": true,
+    "margin": false,
+    "maximum_gross_exposure": 0.9,
+    "maximum_hold_hours": 168,
+    "maximum_positions": 5,
+    "pyramiding": false,
+    "signal_generation_changed": false,
+    "signal_parameters_changed": false,
+    "signal_scores_changed": false,
+    "spot_only": true
+  },
+  "prohibitions": {
+    "2024_access": false,
+    "calendar_year_feature": false,
+    "parameter_grid_search": false,
+    "post_2024_access": false,
+    "post_result_parameter_change": false,
+    "profit_giveback": false,
+    "replacement": false,
+    "thesis_failure_exit": false
+  },
+  "schema_version": "rd31-p0-market-regime-admission-governor-protocol-v1",
+  "selection": {
+    "eligible": "PASS_ALL_14_GATES_IN_C2_D2_E2",
+    "primary": "MAX_WORST_UNIVERSE_2X_NET_RETURN",
+    "tie_1": "MAX_WORST_UNIVERSE_2X_PROFIT_FACTOR",
+    "tie_2": "MIN_WORST_UNIVERSE_2X_DRAWDOWN",
+    "tie_3": "MIN_WORST_UNIVERSE_2X_TURNOVER",
+    "tie_4": "MIN_ACTIVE_ADAPTIVE_COMPONENT_COUNT",
+    "tie_5": "POLICY_ID_LEXICOGRAPHIC"
+  },
+  "stage": "RD31_MARKET_REGIME_ADMISSION_GOVERNOR_PREREGISTRATION",
+  "success_next": "RD32_CLEAN_2024_INTERNAL_CONFIRMATION"
+}
