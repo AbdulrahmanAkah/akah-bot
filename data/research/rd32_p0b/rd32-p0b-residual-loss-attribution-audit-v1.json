@@ -1,0 +1,108 @@
+{
+  "2024_accessed": false,
+  "actual_attribution_execution_performed": false,
+  "canonical_deterioration_schema": [
+    "policy_id",
+    "portfolio_id",
+    "universe_id",
+    "cost_multiplier",
+    "pair",
+    "entry_time",
+    "exit_time",
+    "post_lock_net_contribution",
+    "first_lock_time"
+  ],
+  "canonical_trade_schema": [
+    "policy_id",
+    "portfolio_id",
+    "universe_id",
+    "cost_multiplier",
+    "pair",
+    "entry_time",
+    "exit_time",
+    "period_id",
+    "net_pnl",
+    "support_families",
+    "entry_market_context",
+    "entry_governor_state",
+    "exit_reason"
+  ],
+  "crisis_window_endpoint_semantics": "INCLUSIVE_PLUS_MINUS_72H",
+  "economic_execution_performed": false,
+  "engine_path": "src/spotbot/research/rd32_residual_loss_attribution.py",
+  "engine_sha256": "387dff0381eec8751bce675171fcca1a051f967434a216239581d84fd32ce0b1",
+  "first_lock_transition_episode_semantics": "LOCK@<EXACT_UTC_FIRST_LOCK_TIME_ISO>",
+  "forced_exit_counterfactual_decision_evidence": false,
+  "hard_gates_changed": false,
+  "new_market_data_loaded": false,
+  "next_stage": "RD32_P1_EXECUTE_FROZEN_RESIDUAL_LOSS_ATTRIBUTION_USING_RD31_RESULTS_ONLY",
+  "no_cross_implementation_semantics": {
+    "crisis_tag": "NONE",
+    "first_lock_transition_episode": "NONE",
+    "post_lock_net_contribution": 0.0,
+    "pre_lock_net_contribution": "FINAL_TRADE_NET_PNL"
+  },
+  "post_2024_accessed": false,
+  "preflight": {
+    "branch": "research/rd32-residual-loss-attribution-v1",
+    "p0_audit_sha256": "4f80fddf191f1137057ffdbc39dd3e43c99b2ae751e836966ee44e7e93ee0f96",
+    "p0_protocol_sha256": "108645f298b036ee548cfd28b1087fa8adf40fbb3d7fba1b116c23fc1758a126",
+    "rd31_frozen_result_hashes_verified_without_parsing": {
+      "data/research/rd31_p1_runtime/entry-pnl-attribution.csv": "08c00fce444401d0d33be8a7360e63173c08669dd802e1b7eb8155dc05b24687",
+      "data/research/rd31_p1_runtime/governor-transition-ledger.csv": "46c36f91041912ebcfefdbe2d710bb090d73b3aeea65cabad2be71ad138e640b",
+      "data/research/rd31_p1_runtime/portfolio-period-metrics.csv": "4bbd2a1291507f22a503f3a4e19369b29bd8ccbf5045060995efa983ecf90510",
+      "data/research/rd31_p1_runtime/rd31-p1-market-regime-admission-governor-report-v1.json": "0afff069e6c8838e8944a93b2cbb0154c989eb6cb664e89cbf470060372f9e4d",
+      "data/research/rd31_p1_runtime/regime-deterioration-position-attribution.csv": "5ad6edc77b57a4c5dde852bc80213a88af303295b46c59e2b05df2744b117bb6",
+      "data/research/rd31_p1_runtime/trade-ledger.csv": "842bfbe6c93eb060a9cbd34e9fe730092e2ace73aef2f5a76d5ad8f2be5b725f"
+    },
+    "recovery_existing_untracked_paths": [
+      "src/spotbot/research/rd32_residual_loss_attribution.py",
+      "tests/research/test_rd32_residual_loss_attribution.py"
+    ],
+    "remote_commit": "b584b28df605873568935ec886267661d64b49b1",
+    "source_commit": "b584b28df605873568935ec886267661d64b49b1",
+    "source_parent": "f95a165e3c0a17dc53b021740f4e0810148af28f"
+  },
+  "preregistered_thresholds_unchanged": {
+    "all_universes_required": true,
+    "median_post_lock_lt_zero": true,
+    "minimum_crossed_trade_count": 10,
+    "post_lock_damage_fraction_gte": 0.5
+  },
+  "production_authorized": false,
+  "pytest_command_paths": [
+    "tests/research/test_rd31_regime_admission_governor.py",
+    "tests/research/test_rd30_family_specialist_state.py",
+    "tests/research/test_rd29_thesis_context.py",
+    "tests/research/test_rd32_residual_loss_attribution.py"
+  ],
+  "pytest_stdout_tail": [
+    "  C:\\SIRAJ\\Repositories\\spot-speculation-bot\\src\\spotbot\\research\\rd32_residual_loss_attribution.py:106: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.",
+    "    parsed = pd.to_datetime(series, utc=True, errors=\"raise\")",
+    "",
+    "-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html",
+    "161 passed, 2 warnings in 13.28s"
+  ],
+  "raw_market_data_loaded": false,
+  "rd31_result_ledgers_parsed": false,
+  "recovery_allows_only_untracked_engine_and_test_overwrite": true,
+  "recovery_wrapper_version": "V2_AFTER_PRECOMMIT_RUFF_FAILURE",
+  "schema_version": "rd32-p0b-residual-loss-attribution-audit-v1",
+  "signal_generation_changed": false,
+  "source_p0_commit": "b584b28df605873568935ec886267661d64b49b1",
+  "source_rd31_results_commit": "f95a165e3c0a17dc53b021740f4e0810148af28f",
+  "source_schema_adapter": {
+    "mapping_must_be_unambiguous": true,
+    "must_use_only_frozen_rd31_result_files": true,
+    "p0b_does_not_parse_rd31_result_ledgers": true,
+    "semantic_redefinition_prohibited": true,
+    "stage": "RD32_P1_ONLY"
+  },
+  "stage": "RD32_P0B_RESIDUAL_LOSS_ATTRIBUTION_ENGINE_PRE_EXECUTION",
+  "status": "PASS",
+  "strategy_parameter_changed": false,
+  "synthetic_only": true,
+  "synthetic_test_function_count": 52,
+  "test_path": "tests/research/test_rd32_residual_loss_attribution.py",
+  "test_sha256": "b85ba967468c0ee9ea9d62f4bfd2b0ae1aa6b8a87bf9e93e5021cd2632f837f0"
+}
