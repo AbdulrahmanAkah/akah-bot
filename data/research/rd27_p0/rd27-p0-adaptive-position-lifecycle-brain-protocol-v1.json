@@ -1,0 +1,230 @@
+{
+  "adaptive_exit_state_machine_v1": {
+    "adaptive_adverse_guard": {
+      "distance_from_entry_in_signal_atr_by_current_state": {
+        "RISK_OFF": 3.0,
+        "RISK_ON": 5.0,
+        "TRANSITION": 4.0
+      },
+      "floor_monotonic": "ONCE_AN_ADVERSE_PROTECTION_FLOOR_TIGHTENS_IT_MAY_NOT_LOOSEN",
+      "gap_behavior": "IF_CURRENT_OPEN_LE_FLOOR_EXIT_AT_CURRENT_OPEN",
+      "intrabar_behavior": "ELSE_IF_CURRENT_LOW_LE_FLOOR_EXIT_AT_PREBAR_FLOOR"
+    },
+    "adaptive_profit_protection": {
+      "arm_mfe_in_signal_atr": 4.0,
+      "floor_monotonic": true,
+      "gap_behavior": "IF_CURRENT_OPEN_LE_FLOOR_EXIT_AT_CURRENT_OPEN",
+      "high_water_source": "PRIOR_COMPLETED_BARS_ONLY",
+      "intrabar_behavior": "ELSE_IF_CURRENT_LOW_LE_FLOOR_EXIT_AT_PREBAR_FLOOR",
+      "trail_gap_in_signal_atr_by_current_state": {
+        "RISK_OFF": 2.0,
+        "RISK_ON": 4.0,
+        "TRANSITION": 3.0
+      }
+    },
+    "adaptive_stagnation_failure": {
+      "condition": "PRIOR_COMPLETED_CLOSE_LE_ENTRY_PRICE",
+      "fill": "CURRENT_1H_OPEN",
+      "hours_by_current_state": {
+        "RISK_OFF": 24,
+        "RISK_ON": 72,
+        "TRANSITION": 48
+      }
+    },
+    "maximum_hold": {
+      "fill": "OPEN_AT_ENTRY_PLUS_168H",
+      "hours": 168
+    },
+    "parameter_grid_search": false,
+    "partial_selling": false,
+    "same_bar_new_high_tightens_floor": false
+  },
+  "candidate_ablation": {
+    "candidate_parameters_may_change_after_first_rd27_economic_execution": false,
+    "component_a": "STATE_AWARE_CAPITAL_ROUTER",
+    "component_b": "ADAPTIVE_EXIT_STATE_MACHINE",
+    "design": "TWO_BY_TWO_LIFECYCLE_COMPONENT_ABLATION",
+    "policies": {
+      "ADAPTIVE_EXIT_FIXED_CAPITAL": {
+        "adaptive_exit_state_machine": true,
+        "slot_fraction": 0.18,
+        "state_aware_capital_router": false
+      },
+      "CONTROL_TIME_FAIL_72_FIXED_CAPITAL": {
+        "adaptive_exit_state_machine": false,
+        "exit": "RD26_TIME_FAIL_72_H168_CONTROL",
+        "slot_fraction": 0.18,
+        "state_aware_capital_router": false
+      },
+      "FULL_ADAPTIVE_LIFECYCLE_BRAIN": {
+        "adaptive_exit_state_machine": true,
+        "state_aware_capital_router": true
+      },
+      "STATIC_EXIT_STATE_ROUTER": {
+        "adaptive_exit_state_machine": false,
+        "exit": "RD26_TIME_FAIL_72_H168_CONTROL",
+        "state_aware_capital_router": true
+      }
+    }
+  },
+  "capital_router_v1": {
+    "parameter_grid_search": false,
+    "purpose": "Control how much new capital is admitted while preserving the same underlying signal event. This is an upstream risk input to the exit brain, not a replacement for the exit brain.",
+    "resize_open_positions_when_state_changes": false,
+    "risk_off_behavior": "RECORD_SIGNAL_BUT_DO_NOT_ADMIT_NEW_POSITION",
+    "target_slot_fraction_by_state": {
+      "RISK_OFF": 0.0,
+      "RISK_ON": 0.18,
+      "TRANSITION": 0.09
+    }
+  },
+  "causality_contract": {
+    "entry_state_information_cutoff": "SIGNAL_BAR_CLOSE; ENTRY OCCURS AT NEXT_1H_OPEN",
+    "future_bars_for_state_decisions": false,
+    "future_membership_for_state_decisions": false,
+    "intrabar_exit_rule": "AN INTRABAR STOP_OR_TRAIL MAY FILL INSIDE THE CURRENT BAR ONLY IF ITS FLOOR WAS FIXED BEFORE THAT BAR OPEN; CURRENT_BAR_NEW_HIGH MAY NOT TIGHTEN THE SAME BAR FLOOR",
+    "open_position_state_information_cutoff": "ONLY BARS COMPLETED BEFORE THE CURRENT 1H OPEN"
+  },
+  "data_firewall": {
+    "2022_2023_already_exposed_by_rd26": true,
+    "2022_2023_may_be_used_for_rd27_architecture_selection": true,
+    "2024": "SEALED_CLEAN_INTERNAL_CONFIRMATION",
+    "2024_access_before_rd27_selection_freeze": false,
+    "architecture_development_cutoff_exclusive": "2024-01-01T00:00:00Z",
+    "architecture_development_start": "2022-01-01T00:00:00Z",
+    "post_2024": "SEALED_FINAL_HOLDOUT",
+    "post_2024_access_before_rd27_selection_freeze": false
+  },
+  "failure_next": "RD28_ADAPTIVE_SIGNAL_REGIME_OR_LIFECYCLE_MODEL_REDESIGN_REQUIRED",
+  "hard_gates_each_policy_each_universe": [
+    "BASE_NET_RETURN_POSITIVE",
+    "STRESS_2X_NET_RETURN_POSITIVE",
+    "STRESS_2X_PROFIT_FACTOR_GTE_1_05",
+    "STRESS_2X_MAX_DRAWDOWN_LTE_20PCT",
+    "STRESS_2X_TRADES_GTE_75",
+    "BOTH_2022_2023_NET_PNL_POSITIVE",
+    "STRESS_2X_LARGEST_WINNER_REMOVAL_POSITIVE",
+    "STRESS_2X_LOAO_MIN_REMAINING_PNL_POSITIVE",
+    "STRESS_2X_LOYO_MIN_REMAINING_PNL_POSITIVE",
+    "PF1_BREAK_EVEN_COST_MULTIPLIER_GTE_2",
+    "CASH_FEASIBLE_BASE_AND_2X",
+    "MOMENTUM_BREAKOUT_STANDALONE_2X_POSITIVE",
+    "RELATIVE_STRENGTH_STANDALONE_2X_POSITIVE",
+    "NO_2024_OR_POST_2024_ACCESS"
+  ],
+  "implementation_next": "RD27_P0B_IMPLEMENT_AND_TEST_CAUSAL_STATE_ENGINE_PRE_ECONOMIC_EXECUTION",
+  "interpretation_guardrails": [
+    "THE_CAPITAL_ROUTER_IS_A_RISK_INPUT_TO_THE_LIFECYCLE_BRAIN_NOT_THE_FINAL_PRODUCT",
+    "THE_LONG_TERM_TARGET_IS_AN_ADAPTIVE_EXIT_AND_POSITION_MANAGEMENT_INTELLIGENCE",
+    "NO_POLICY_IS_A_FINALIST_UNTIL_ALL_HARD_GATES_PASS_ACROSS_C2_D2_E2",
+    "NO_2024_RESULT_MAY_INFLUENCE_RD27_SELECTION",
+    "NO_YEAR_OR_CALENDAR_LABEL_MAY_STAND_IN_FOR_MARKET_STATE",
+    "NO_POST_RESULT_PARAMETER_TUNING_WITHIN_THE_FIRST_RD27_EXECUTION"
+  ],
+  "lineage": {
+    "focus_families": [
+      "MOMENTUM_BREAKOUT",
+      "RELATIVE_STRENGTH_ROTATION"
+    ],
+    "rd26_control_anchor": "TIME_FAIL_72_H168",
+    "rd26_control_anchor_status": "DEVELOPMENT_REFERENCE_ONLY_NOT_FINALIST_NOT_PRODUCTION_AUTHORIZED",
+    "required_rd26_decision": "RD26_EXIT_ARCHITECTURE_NO_FINALIST_RISK_OR_ROUTER_REDESIGN_REQUIRED",
+    "source_commit": "fd0d6f0376caf7ac42b82875daa7310e881236af",
+    "source_stage": "RD26_EXIT_ARCHITECTURE_EXPOSED_ROBUSTNESS_2022_2023"
+  },
+  "market_state_sensor_v1": {
+    "benchmark_pair": "BTC-USDT",
+    "ema_hours": 720,
+    "ema_slope_lookback_hours": 168,
+    "inputs": {
+      "momentum": "BTC_72H_RETURN_GT_0",
+      "slow_trend": "BTC_COMPLETED_CLOSE_VS_EMA720",
+      "slow_trend_slope": "EMA720_NOW_VS_EMA720_168H_AGO",
+      "volatility": "BTC_ATR24_PCT_VS_1_5X_TRAILING_720H_MEDIAN_ATR24_PCT"
+    },
+    "machine_learning": false,
+    "momentum_lookback_hours": 72,
+    "purpose": "Global crypto risk-state sensor. It informs the lifecycle controller; it is not a year label and is not a standalone trading signal.",
+    "states": {
+      "RISK_OFF": "(CLOSE_LT_EMA720 AND RETURN_72H_LT_0) OR (VOLATILITY_SHOCK AND CLOSE_LT_EMA720)",
+      "RISK_ON": "CLOSE_GT_EMA720 AND EMA720_GT_EMA720_168H_AGO AND RETURN_72H_GT_0 AND NOT_VOLATILITY_SHOCK",
+      "TRANSITION": "ALL_OTHER_CAUSAL_STATES"
+    },
+    "threshold_optimization_grid": false,
+    "volatility_atr_hours": 24,
+    "volatility_baseline_hours": 720,
+    "volatility_shock_multiple": 1.5
+  },
+  "portfolio_contract_preserved_from_rd26": {
+    "base_equal_slot_target_fraction": 0.18,
+    "base_round_trip_cost_fraction": 0.0025,
+    "capacity_proxy": "TRAILING_24H_BASE_VOLUME_X_COMPLETED_CLOSE",
+    "derivatives": false,
+    "initial_equity": 100000.0,
+    "leverage": false,
+    "long_only": true,
+    "margin": false,
+    "maximum_entry_notional_fraction_of_capacity_proxy": 0.005,
+    "maximum_gross_exposure": 0.9,
+    "maximum_positions": 5,
+    "negative_cash": false,
+    "pyramiding": false,
+    "same_pair_concurrent_position": false,
+    "stress_2x_round_trip_cost_fraction": 0.005,
+    "venue": "KUCOIN_SPOT"
+  },
+  "prohibitions": {
+    "2024_access": false,
+    "calendar_year_regime_feature": false,
+    "cost_assumption_changes": false,
+    "derivatives": false,
+    "entry_timing_changes": false,
+    "leverage": false,
+    "liquidity_capacity_assumption_changes": false,
+    "machine_learning_in_v1": false,
+    "margin": false,
+    "parameter_grid_search": false,
+    "partial_selling_in_v1": false,
+    "post_2024_access": false,
+    "production_authorization": false,
+    "pyramiding": false,
+    "signal_parameter_changes": false,
+    "signal_score_changes": false
+  },
+  "research_objective": "Build a causal adaptive position-lifecycle brain for spot crypto that changes capital admission and exit behavior from observable market state and trade state, so the eventual exit intelligence can operate across bull, transition, and stressed market regimes rather than relying on one fixed exit rule.",
+  "research_question": "Can a pre-registered causal state machine combining market-state capital routing with adaptive exit protection convert the RD26 focus-family edge into a robust <=20% drawdown portfolio across 2022-2023 without changing the underlying signals, signal scores, entry timing, costs, liquidity capacity assumptions, or using 2024/post-2024 data?",
+  "schema_version": "rd27-p0-adaptive-position-lifecycle-brain-protocol-v1",
+  "selection_rule": {
+    "eligible": "POLICY_MUST_PASS_EVERY_HARD_GATE_IN_C2_D2_E2",
+    "primary": "MAXIMIZE_WORST_UNIVERSE_2X_NET_RETURN",
+    "tie_break_1": "MAXIMIZE_WORST_UNIVERSE_2X_PROFIT_FACTOR",
+    "tie_break_2": "MINIMIZE_WORST_UNIVERSE_2X_MAXIMUM_DRAWDOWN",
+    "tie_break_3": "MINIMIZE_WORST_UNIVERSE_2X_TURNOVER",
+    "tie_break_4": "MINIMIZE_ACTIVE_ADAPTIVE_COMPONENT_COUNT",
+    "tie_break_5": "POLICY_ID_LEXICOGRAPHIC"
+  },
+  "signal_contract": {
+    "calendar_or_year_feature": false,
+    "entry": "EXACT_NEXT_1H_OPEN_AFTER_SIGNAL",
+    "hardcoded_2022_or_2023_regime_labels": false,
+    "score_retuning": false,
+    "signal_family_changes": false,
+    "signal_parameter_changes": false,
+    "source": "EXACT_RD23_FOCUS_FAMILY_RULES_AS_REGENERATED_AND_AUDITED_IN_RD26",
+    "timeframe": "1H_COMPLETED_BARS"
+  },
+  "stage": "RD27_ADAPTIVE_POSITION_LIFECYCLE_BRAIN_PREREGISTRATION",
+  "starting_commit": "fd0d6f0376caf7ac42b82875daa7310e881236af",
+  "success_next": "RD28_CLEAN_2024_INTERNAL_CONFIRMATION",
+  "trade_state_sensor_v1": {
+    "atr_source": "ATR24_PRIOR_FIXED_AT_OR_BEFORE_SIGNAL",
+    "future_information": false,
+    "inputs": [
+      "AGE_HOURS",
+      "PRIOR_COMPLETED_CLOSE_VS_ENTRY_IN_SIGNAL_ATR",
+      "PRIOR_COMPLETED_HIGH_WATER_VS_ENTRY_IN_SIGNAL_ATR",
+      "GIVEBACK_FROM_PRIOR_HIGH_WATER_IN_SIGNAL_ATR",
+      "CURRENT_MARKET_STATE"
+    ]
+  }
+}
