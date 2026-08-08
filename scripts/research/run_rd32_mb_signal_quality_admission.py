@@ -46,6 +46,8 @@ from spotbot.research.rd32_mb_signal_quality_replay import (  # noqa: E402
 SCHEMA_VERSION = "rd32-mb-signal-quality-economic-runner-v1"
 
 P2C_FREEZE_COMMIT = "c23659615c2e96c357cb4b3545a2b205b22e5a7a"
+P2D_ORIGINAL_FREEZE_COMMIT = "06b7e1ebc99abfed015f2d9676e5d1d2f409d6f1"
+P2D_BLOB_RECOVERY_COMMIT = "00449dc89029a41dd3d1dcc31d43e64b424f9594"
 P2B_FREEZE_COMMIT = "119d9b9b34276ba52e1d5fe4ac914cda20c2ced5"
 P2_COMMIT = "1384aadda84623440d95c48998e16c227b048c2e"
 P1_RESULTS_COMMIT = "4df12b682108eddf8ecba0239bb26f1cb8392f79"
@@ -233,8 +235,15 @@ def verify_lineage(
     head = git(repo, "rev-parse", "HEAD")
     if head != expected_freeze_commit:
         raise RunnerError(f"RD32-P3 HEAD {head} != runner freeze {expected_freeze_commit}")
-    if git(repo, "rev-parse", "HEAD^") != P2C_FREEZE_COMMIT:
-        raise RunnerError("RD32 runner-freeze parent is not P2C")
+    parent = git(repo, "rev-parse", "HEAD^")
+    grandparent = git(repo, "rev-parse", "HEAD^^")
+    great_grandparent = git(repo, "rev-parse", "HEAD^^^")
+    if parent != P2D_BLOB_RECOVERY_COMMIT:
+        raise RunnerError("RD32 final runner-freeze parent is not the frozen blob recovery")
+    if grandparent != P2D_ORIGINAL_FREEZE_COMMIT:
+        raise RunnerError("RD32 blob-recovery parent is not the original P2D freeze")
+    if great_grandparent != P2C_FREEZE_COMMIT:
+        raise RunnerError("RD32 original-P2D parent is not the frozen P2C replay")
 
     checks = (
         (P2_PROTOCOL, P2_PROTOCOL_SHA256, "P2 protocol"),
@@ -323,6 +332,8 @@ def verify_lineage(
 
     return {
         "runner_freeze_commit": expected_freeze_commit,
+        "p2d_blob_recovery_commit": P2D_BLOB_RECOVERY_COMMIT,
+        "p2d_original_freeze_commit": P2D_ORIGINAL_FREEZE_COMMIT,
         "p2c_freeze_commit": P2C_FREEZE_COMMIT,
         "p2b_freeze_commit": P2B_FREEZE_COMMIT,
         "p2_commit": P2_COMMIT,
