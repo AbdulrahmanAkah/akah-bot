@@ -1,0 +1,82 @@
+{
+  "2024_accessed": false,
+  "candidate_parameters_changed": false,
+  "economic_execution_performed": false,
+  "economic_runner_implemented": false,
+  "frozen_replay_contract": {
+    "baseline_delegate": "EXACT_RD30_FAMILY_QUALITY_CONTROL_EXITS",
+    "calendar_year_feature": false,
+    "candidate_lifecycle": "EXACT_RD30_TIME_FAIL72_MAX168_NO_PROFIT_NO_REPLACEMENT",
+    "current_bar_high_used_for_exit": false,
+    "current_bar_low_used_for_exit": false,
+    "entry_context_cutoff": "SIGNAL_BAR_CLOSE",
+    "entry_fill": "NEXT_1H_OPEN_AFTER_SIGNAL",
+    "forced_regime_exit": false,
+    "governor_initial_state": "OPEN",
+    "governor_states": [
+      "OPEN",
+      "CAUTION",
+      "LOCKED"
+    ],
+    "governor_update": "AT_SIGNAL_TIME_BEFORE_ADMISSION",
+    "parameter_grid_search": false,
+    "policy_count": 4,
+    "profit_giveback": false,
+    "replacement": false,
+    "same_pair_check_after_governor_update": true,
+    "same_timestamp_repeated_context_is_idempotent": true,
+    "scheduled_exit_fill": "CURRENT_1H_OPEN",
+    "scheduled_exit_state_cutoff": "PRIOR_COMPLETED_HOUR",
+    "thesis_failure_exit": false
+  },
+  "implementation": {
+    "replay_path": "src/spotbot/research/rd31_regime_governed_replay.py",
+    "replay_sha256": "cf979223bf53141ad715ff6d4e79ad394653a7a3e42e546b9e43424a42dc7f4c",
+    "test_path": "tests/research/test_rd31_regime_governed_replay.py",
+    "test_sha256": "46ce66ff1ef7f1eedda07c225d31e03891aebf612250e349364a4f77a87763b4"
+  },
+  "implementation_invariants": {
+    "baseline_exact_rd30_delegate": true,
+    "governor_changes_admission_only": true,
+    "governor_state_updates_even_if_same_pair_later_rejected": true,
+    "no_forced_regime_exit": true,
+    "no_profit_state": true,
+    "no_replacement_path": true,
+    "rd30_exit_evaluator_reused": true,
+    "rd30_sizing_reused": true
+  },
+  "lineage": {
+    "branch": "research/rd31-market-regime-admission-governor-v1",
+    "governor_sha256": "ab38e80c8bc9f99c7a6e262a1a7f648642e3ed628032fec3a137fb4e33a06368",
+    "governor_test_sha256": "ea0b32e75c77db573dd0ce7ba32c89bf8334a5546e3455043569273aee55bf5f",
+    "head": "ef06ccd284951a6735a7540a738448b2e4abd6c0",
+    "p0b_audit_sha256": "d0af978290369f9b91dc3f3ca57c62db3564cddff9aa6e5990ac13ea8f9882e1",
+    "parent_p0_commit": "33945ebf2313140b8c9a9fa67708191aa1b3f45e",
+    "protocol_sha256": "be8f308e6d16614247086fbe757e9e163b18f61270da02bb247e648f9b563eb1",
+    "rd30_replay_sha256": "169521bf5a684e10fe17000463fc7a816ef9a5917a5313af5dd6509d0aa47606",
+    "remote_head": "ef06ccd284951a6735a7540a738448b2e4abd6c0"
+  },
+  "new_2022_2023_economic_results_exposed_in_this_step": false,
+  "next_stage": "RD31_P0D_FREEZE_REGIME_GOVERNOR_ECONOMIC_RUNNER_PRE_EXECUTION",
+  "portfolio_replay_implemented": true,
+  "post_2024_accessed": false,
+  "production_authorized": false,
+  "real_market_data_loaded": false,
+  "research_logic_implemented": true,
+  "schema_version": "rd31-p0c-regime-governed-portfolio-replay-audit-v1",
+  "signal_generation_changed": false,
+  "source_p0_commit": "33945ebf2313140b8c9a9fa67708191aa1b3f45e",
+  "source_p0b_commit": "ef06ccd284951a6735a7540a738448b2e4abd6c0",
+  "stage": "RD31_P0C_REGIME_GOVERNED_PORTFOLIO_REPLAY_PRE_ECONOMIC_EXECUTION",
+  "status": "PASS",
+  "target_branch": "research/rd31-market-regime-admission-governor-v1",
+  "verification": {
+    "new_p0c_test_function_count": 19,
+    "p0b_test_function_count_preserved": 39,
+    "py_compile_returncode": 0,
+    "pytest_returncode": 0,
+    "raw_market_data_loaded_by_tests": false,
+    "ruff_returncode": 0,
+    "tests_are_synthetic_only": true
+  }
+}
