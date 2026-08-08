@@ -1,0 +1,352 @@
+{
+  "candidate_ablation": {
+    "candidate_parameters_may_change_after_first_rd30_economic_execution": false,
+    "design": "FOUR_POLICY_FAMILY_SPECIALIST_REPLACEMENT_AWARE_ABLATION",
+    "parameter_grid_search": false,
+    "policies": {
+      "FAMILY_QUALITY_CONTROL_EXITS": {
+        "MB_supported_exit": "EXACT_CONTROL_TIME_FAIL72_MAX168",
+        "RS_only_exit": "EXACT_CONTROL_TIME_FAIL72_MAX168",
+        "family_quality_admission": true,
+        "profit_state": false,
+        "replacement_state": false
+      },
+      "FAMILY_QUALITY_REPLACEMENT_AWARE_RS": {
+        "MB_supported_exit": "EXACT_CONTROL_TIME_FAIL72_MAX168",
+        "RS_only_replacement_state": true,
+        "RS_only_scheduled_exit": "EXACT_CONTROL_TIME_FAIL72_MAX168",
+        "family_quality_admission": true,
+        "immediate_thesis_cash_exit": false,
+        "profit_state": false
+      },
+      "FULL_FAMILY_SPECIALIST_REPLACEMENT_BRAIN": {
+        "MB_supported_exit": "PROFIT_STATE_THEN_CONTROL_TIME_FAIL72_MAX168",
+        "RS_only_replacement_state": true,
+        "RS_only_scheduled_exit": "PROFIT_STATE_THEN_CONTROL_TIME_FAIL72_MAX168",
+        "family_quality_admission": true,
+        "immediate_thesis_cash_exit": false,
+        "profit_state": true
+      },
+      "ROUTER_TIME_FAIL_72_CONTROL": {
+        "family_quality_admission": false,
+        "profit_state": false,
+        "replacement_state": false,
+        "source": "EXACT_RD29_CONTROL"
+      }
+    }
+  },
+  "causality_contract": {
+    "cross_sectional_features": "COMPLETED_BARS_ONLY",
+    "current_bar_high_used_for_exit": false,
+    "current_bar_low_used_for_exit": false,
+    "entry_fill": "NEXT_1H_OPEN",
+    "future_bars": false,
+    "future_membership": false,
+    "market_state_cutoff": "PRIOR_COMPLETED_BTC_BAR",
+    "pit_membership_cutoff": "LATEST_CAUSALLY_EFFECTIVE_MEMBERSHIP_SNAPSHOT",
+    "replacement_entry_fill": "SAME_CURRENT_1H_OPEN_AFTER_ATOMIC_INCUMBENT_EXIT",
+    "replacement_exit_fill": "CURRENT_1H_OPEN",
+    "scheduled_exit_fill": "CURRENT_1H_OPEN",
+    "trade_state_cutoff": "PRIOR_COMPLETED_ASSET_BAR"
+  },
+  "control_exit_contract": {
+    "maximum_hold_age_hours": 168,
+    "maximum_hold_fill": "CURRENT_1H_OPEN",
+    "source": "EXACT_RD29_ROUTER_TIME_FAIL_72_CONTROL",
+    "time_fail_age_hours": 72,
+    "time_fail_condition": "PRIOR_COMPLETED_CLOSE_LE_ENTRY_PRICE",
+    "time_fail_fill": "CURRENT_1H_OPEN"
+  },
+  "data_firewall": {
+    "2022_2023_already_exposed": true,
+    "2022_2023_may_be_used_for_rd30_selection": true,
+    "2024": "SEALED_CLEAN_INTERNAL_CONFIRMATION",
+    "2024_access_before_rd30_selection_freeze": false,
+    "development_cutoff_exclusive": "2024-01-01T00:00:00Z",
+    "development_start": "2022-01-01T00:00:00Z",
+    "post_2024": "SEALED_FINAL_HOLDOUT",
+    "post_2024_access_before_rd30_selection_freeze": false
+  },
+  "diagnostics_required": [
+    "ADMITTED_ENTRIES_BY_FAMILY_AND_CONTEXT",
+    "RS_ONLY_DEGRADED_SET_COUNT",
+    "RS_ONLY_DEGRADED_CLEAR_COUNT",
+    "ATOMIC_REPLACEMENT_COUNT",
+    "ATOMIC_REPLACEMENT_INCOMING_FAMILY",
+    "DEGRADED_POSITIONS_HELD_WITHOUT_REPLACEMENT_COUNT",
+    "PROFIT_GIVEBACK_EXIT_COUNT_AND_NET_PNL",
+    "TIME_FAIL_EXIT_COUNT_AND_NET_PNL",
+    "MAX_HOLD_EXIT_COUNT_AND_NET_PNL",
+    "MB_STANDALONE_PARITY_FOR_POLICIES_WITH_CONTROL_MB_LIFECYCLE",
+    "YEAR_SPLIT_2022_2023",
+    "LOAO_LOYO_LARGEST_WINNER",
+    "BREAK_EVEN_COST_MULTIPLIER",
+    "CASH_FEASIBILITY"
+  ],
+  "exit_priority": {
+    "FAMILY_QUALITY_CONTROL_EXITS": [
+      "MAX_HOLD_168H",
+      "TIME_FAIL_72H",
+      "HOLD"
+    ],
+    "FAMILY_QUALITY_REPLACEMENT_AWARE_RS": [
+      "MAX_HOLD_168H",
+      "TIME_FAIL_72H",
+      "ATOMIC_REPLACEMENT_IF_REQUIRED_BY_INCOMING_ENTRY",
+      "HOLD"
+    ],
+    "FULL_FAMILY_SPECIALIST_REPLACEMENT_BRAIN": [
+      "MAX_HOLD_168H",
+      "PROFIT_GIVEBACK_4ATR_ARM_3ATR_GIVEBACK",
+      "TIME_FAIL_72H",
+      "ATOMIC_REPLACEMENT_IF_REQUIRED_BY_INCOMING_ENTRY",
+      "HOLD"
+    ]
+  },
+  "failure_next": "RD31_REPLACEMENT_AWARE_OR_SIGNAL_FAMILY_MODEL_REDESIGN_REQUIRED",
+  "family_entry_quality": {
+    "MOMENTUM_BREAKOUT": {
+      "RISK_OFF_slot_fraction": 0.0,
+      "RISK_ON_slot_fraction": 0.18,
+      "TRANSITION_slot_fraction": 0.09,
+      "admission": "EXACT_RD27_ROUTER",
+      "new_quality_gate": false
+    },
+    "OVERLAP_MB_RS": {
+      "admit_if": "ANY_SUPPORTING_FAMILY_ADMISSIBLE",
+      "lifecycle_class": "MB_SUPPORTED",
+      "preserve_all_support_metadata": true,
+      "slot_fraction": "MAX_ADMISSIBLE_SUPPORTING_FAMILY_SLOT_FRACTION"
+    },
+    "RELATIVE_STRENGTH_ROTATION": {
+      "admission": "MARKET_CONTEXT_EQ_SUPPORTIVE_ONLY",
+      "otherwise": "RECORD_SIGNAL_BUT_DO_NOT_ADMIT",
+      "slot_fraction": 0.18,
+      "threshold_changed_from_rd29": false
+    }
+  },
+  "guardrails": [
+    "EXIT_BRAIN_REMAINS_THE_PRIMARY_RESEARCH_OBJECTIVE",
+    "ROUTER_AND_FAMILY_QUALITY_ARE_UPSTREAM_INPUTS_NOT_THE_FINAL_PRODUCT",
+    "MB_TREND_CAPTURE_MUST_NOT_BE_KILLED_BY_RD29_BREAKOUT_REFERENCE_INVALIDATION",
+    "RS_QUALITY_FILTER_IS_RETAINED_WITHOUT_THRESHOLD_TUNING",
+    "THESIS_DEGRADATION_IS_A_CAPITAL_REPLACEMENT_STATE_NOT_AN_AUTOMATIC_CASH_EXIT",
+    "REPLACEMENT_MUST_BE_ATOMIC_AND_OPPORTUNITY_BACKED",
+    "NO_FINALIST_UNLESS_ALL_GATES_PASS_ALL_UNIVERSES",
+    "NO_2024_OR_POST_2024_INFLUENCE"
+  ],
+  "hard_gates_each_policy_each_universe": [
+    "BASE_NET_RETURN_POSITIVE",
+    "STRESS_2X_NET_RETURN_POSITIVE",
+    "STRESS_2X_PROFIT_FACTOR_GTE_1_05",
+    "STRESS_2X_MAX_DRAWDOWN_LTE_20PCT",
+    "STRESS_2X_TRADES_GTE_75",
+    "BOTH_2022_2023_NET_PNL_POSITIVE",
+    "STRESS_2X_LARGEST_WINNER_REMOVAL_POSITIVE",
+    "STRESS_2X_LOAO_MIN_REMAINING_PNL_POSITIVE",
+    "STRESS_2X_LOYO_MIN_REMAINING_PNL_POSITIVE",
+    "PF1_BREAK_EVEN_COST_MULTIPLIER_GTE_2",
+    "CASH_FEASIBLE_BASE_AND_2X",
+    "MOMENTUM_BREAKOUT_STANDALONE_2X_POSITIVE",
+    "RELATIVE_STRENGTH_STANDALONE_2X_POSITIVE",
+    "NO_2024_OR_POST_2024_ACCESS"
+  ],
+  "implementation_invariants": [
+    "FAMILY_QUALITY_CONTROL_EXITS_MB_STANDALONE_MUST_EQUAL_CONTROL_MB_STANDALONE_FOR_ALL_C2_D2_E2_AND_1X_2X",
+    "FAMILY_QUALITY_REPLACEMENT_AWARE_RS_MB_STANDALONE_MUST_EQUAL_CONTROL_MB_STANDALONE_FOR_ALL_C2_D2_E2_AND_1X_2X",
+    "NO_MB_THESIS_FAILURE_EXIT_OR_REPLACEMENT_FLAG_IN_ANY_RD30_CANDIDATE",
+    "NO_REPLACEMENT_EXIT_WITHOUT_A_PREVALIDATED_INCOMING_ENTRY",
+    "NO_REPLACEMENT_WHEN_A_FREE_SLOT_EXISTS",
+    "NO_GLOBAL_SLOT_ESCROW",
+    "NO_SAME_PAIR_COOLDOWN",
+    "NO_POST_RESULT_PARAMETER_CHANGE",
+    "NO_2024_OR_POST_2024_ACCESS"
+  ],
+  "implementation_next": "RD30_P0B_IMPLEMENT_AND_TEST_FAMILY_SPECIALIST_STATE_ENGINE_PRE_ECONOMIC_EXECUTION",
+  "lineage": {
+    "focus_families": [
+      "MOMENTUM_BREAKOUT",
+      "RELATIVE_STRENGTH_ROTATION"
+    ],
+    "membership_sha256": "f7d6012ce8cd691583b9b6276ddf36371bfe0bbd9b28f810b676ad0177fb559e",
+    "rd29_decision": "RD29_THESIS_CONFIDENCE_LIFECYCLE_NO_FINALIST_REDESIGN_REQUIRED",
+    "rd29_manifest_deterministic_hash": "038f7269a41313db5b8888ad54a90ba5458f0064643fae6d8177cd64070f3ccb",
+    "rd29_manifest_sha256": "54c30ac3eee94d32a825c701133b86e6386d722b6e40a5863f022b9ed2e35766",
+    "rd29_p0d_freeze_commit": "84b2d34bfac906f2bc7d849a77f5e1570b74f2b5",
+    "rd29_report_sha256": "11988240dc20f467328dd6792be9697b9c2e68ea2f890598b299e87805545f0c",
+    "rd29_runner_sha256": "aecedde051c0f4c25882591fb441a3ab69ee2fa22af0253789e7b1b3667ec434",
+    "signal_event_count": 7073,
+    "source_branch": "research/rd29-thesis-confidence-lifecycle-v1",
+    "source_commit": "c1fcb8c058a43656a2433542519d634aed78b0a1"
+  },
+  "market_context": {
+    "breadth_statistic": "MEDIAN_MEMBER_RETURN_72H",
+    "btc_state_sensor": "EXACT_RD27_P0B_SENSOR",
+    "mixed": "ALL_OTHER_READY_CASES",
+    "pit_breadth_source": "CURRENT_CAUSAL_PIT_UNIVERSE_MEMBERS_USING_RETURN_72H",
+    "source": "EXACT_RD29_MARKET_CONTEXT_V2",
+    "stressed": "BTC_STATE_EQ_RISK_OFF_OR_(BTC_STATE_EQ_TRANSITION_AND_MEDIAN_MEMBER_RETURN_72H_LE_0)",
+    "supportive": "BTC_STATE_EQ_RISK_ON_AND_MEDIAN_MEMBER_RETURN_72H_GT_0",
+    "threshold_grid": false,
+    "year_label_used": false
+  },
+  "position_lifecycle_classes": {
+    "MB_SUPPORTED": {
+      "definition": "MOMENTUM_BREAKOUT_IN_ENTRY_SUPPORT_FAMILIES",
+      "includes_overlap": true,
+      "mb_thesis_failure_exit": false,
+      "mb_thesis_failure_replacement_flag": false,
+      "reason": "RD29 proved MB breakout-reference failure destroys MB expectancy."
+    },
+    "RS_ONLY": {
+      "definition": "ENTRY_SUPPORT_FAMILIES_EQ_RELATIVE_STRENGTH_ROTATION_ONLY",
+      "rs_failed": "CURRENT_RETURN_72H_LE_0_OR_CURRENT_RANK_GT_2_OR_MEMBERSHIP_LOSS",
+      "rs_retained": "CURRENT_RETURN_72H_GT_0_AND_CURRENT_RANK_LE_2",
+      "rs_thesis_memory": "EXACT_RD29_RS_RETURN72_AND_CAUSAL_PIT_RANK"
+    }
+  },
+  "preserved_contracts": {
+    "base_round_trip_cost_fraction": 0.0025,
+    "capacity_proxy": "TRAILING_24H_BASE_VOLUME_X_COMPLETED_CLOSE",
+    "derivatives": false,
+    "entry": "EXACT_NEXT_1H_OPEN_AFTER_SIGNAL",
+    "initial_equity": 100000.0,
+    "leverage": false,
+    "long_only": true,
+    "margin": false,
+    "maximum_entry_notional_fraction_of_capacity_proxy": 0.005,
+    "maximum_gross_exposure": 0.9,
+    "maximum_hold_hours": 168,
+    "maximum_positions": 5,
+    "pyramiding": false,
+    "same_pair_concurrent_position": false,
+    "signal_parameters_changed": false,
+    "signal_scores_changed": false,
+    "signals": "EXACT_FROZEN_RD26_2022_2023_SIGNAL_EVENT_LEDGER",
+    "stress_2x_round_trip_cost_fraction": 0.005,
+    "venue": "KUCOIN_SPOT"
+  },
+  "profit_state": {
+    "arm_mfe_in_signal_atr": 4.0,
+    "condition": "PRIOR_HIGH_WATER_GE_ENTRY_PLUS_4_ATR_AND_PRIOR_CLOSE_LE_PRIOR_HIGH_WATER_MINUS_3_ATR",
+    "fill": "CURRENT_1H_OPEN",
+    "giveback_in_signal_atr": 3.0,
+    "parameter_changed_from_rd29": false,
+    "same_bar_high_used": false,
+    "source": "EXACT_RD29_PROFIT_STATE_V1"
+  },
+  "prohibitions": {
+    "2024_access": false,
+    "calendar_year_feature": false,
+    "capacity_changes": false,
+    "cost_changes": false,
+    "derivatives": false,
+    "entry_timing_changes": false,
+    "leverage": false,
+    "machine_learning": false,
+    "margin": false,
+    "parameter_grid_search": false,
+    "partial_selling": false,
+    "post_2024_access": false,
+    "production_authorization": false,
+    "pyramiding": false,
+    "signal_parameter_changes": false,
+    "signal_score_changes": false
+  },
+  "rd29_diagnosis_used_for_redesign": {
+    "control_closest_to_viability": {
+      "policy": "ROUTER_TIME_FAIL_72_CONTROL",
+      "worst_universe_2x_maximum_drawdown": 0.39295917451580825,
+      "worst_universe_2x_net_return": -0.013599146664610262,
+      "worst_universe_2x_profit_factor": 0.989963833311595
+    },
+    "freed_slot_feedback": {
+      "D2_control_union_admitted_entries": 425,
+      "D2_full_family_union_trade_count": 558,
+      "D2_pair_cooldown_union_admitted_entries": 653,
+      "D2_thesis_lifecycle_union_admitted_entries": 690,
+      "conclusion": "Early exits increase replacement admissions materially. RD30 makes thesis deterioration a replacement eligibility state rather than an automatic cash exit."
+    },
+    "momentum_breakout": {
+      "D2_full_family_profit_giveback_net_pnl_2x": 89294.99306230794,
+      "D2_full_family_thesis_failure_net_pnl_2x": -112628.6925369513,
+      "conclusion": "MB thesis invalidation is not a valid early-exit classifier. RD30 candidate policies must not use MB breakout-reference failure as an immediate or replacement degradation trigger.",
+      "control_2x_net_return_C2": 0.06794875168005528,
+      "control_2x_net_return_D2": 0.0819250613135416,
+      "control_2x_net_return_E2": 0.1362740178350443,
+      "full_family_quality_2x_net_return_C2": -0.240684,
+      "full_family_quality_2x_net_return_D2": -0.241978,
+      "full_family_quality_2x_net_return_E2": -0.226576
+    },
+    "relative_strength": {
+      "conclusion": "SUPPORTIVE-only admission is directionally validated for RS but not robust across E2; retain it as a family-specific admission rule and redesign lifecycle interaction rather than tuning its threshold.",
+      "control_2x_net_return_C2": -0.06301915693923855,
+      "control_2x_net_return_D2": -0.010008105154621335,
+      "control_2x_net_return_E2": -0.06235534734011173,
+      "full_family_quality_2x_net_return_C2": 0.013179,
+      "full_family_quality_2x_net_return_D2": 0.0066,
+      "full_family_quality_2x_net_return_E2": -0.068778,
+      "full_family_quality_pf1_break_even_cost_multiplier_C2": 2.315223213815408,
+      "full_family_quality_pf1_break_even_cost_multiplier_D2": 2.190219802515333,
+      "full_family_quality_pf1_break_even_cost_multiplier_E2": 0.6652566913918607
+    },
+    "thesis_lifecycle_failure": {
+      "FULL_FAMILY_QUALITY_THESIS_BRAIN_worst_2x_net_return": -0.2886408936145388,
+      "THESIS_CONFIDENCE_LIFECYCLE_worst_2x_net_return": -0.29116661223737117,
+      "THESIS_CONFIDENCE_PAIR_COOLDOWN_worst_2x_net_return": -0.2750206857642913,
+      "conclusion": "Immediate thesis-failure exits and the resulting freed-slot feedback destroyed expectancy; same-pair cooldown reduced but did not remove the churn mechanism."
+    },
+    "year_asymmetry": "2022 remains strongly negative while 2023 remains positive under the tested architectures; calendar-year labels are prohibited and may not be used as features."
+  },
+  "replacement_state_machine": {
+    "applies_to": "RS_ONLY_POSITIONS_ONLY",
+    "atomic_order": [
+      "PREVALIDATE_INCOMING_ENTRY_FEASIBILITY_WITHOUT_MUTATING_PORTFOLIO",
+      "SELECT_DEGRADED_RS_ONLY_INCUMBENT",
+      "EXIT_INCUMBENT_AT_CURRENT_1H_OPEN",
+      "CREDIT_EXIT_CASH_NET_OF_COST",
+      "ENTER_INCOMING_AT_SAME_CURRENT_1H_OPEN_USING_NORMAL_FROZEN_SIZING"
+    ],
+    "between_checkpoints": "PERSIST_LAST_CHECKPOINT_DEGRADED_STATE",
+    "degraded_cleared_when": "AT_NEXT_CHECKPOINT_RS_THESIS_RETAINED_OR_CONTEXT_NOT_STRESSED",
+    "degraded_set_when": "RS_THESIS_FAILED_AND_MARKET_CONTEXT_EQ_STRESSED_AT_CHECKPOINT",
+    "evaluation_ages_hours": [
+      24,
+      48,
+      72,
+      96,
+      120,
+      144
+    ],
+    "global_slot_escrow": false,
+    "if_replacement_entry_cannot_be_completed": "DO_NOT_EXIT_INCUMBENT",
+    "immediate_cash_exit_on_degradation": false,
+    "replacement_is_not_signal_generation": true,
+    "replacement_only_when": [
+      "INCOMING_SIGNAL_IS_FAMILY_ADMISSIBLE",
+      "INCOMING_ENTRY_BAR_AND_CAPACITY_PRECHECKS_PASS",
+      "PORTFOLIO_HAS_NO_FREE_POSITION_SLOT",
+      "AT_LEAST_ONE_RS_ONLY_POSITION_IS_CURRENTLY_DEGRADED"
+    ],
+    "replacement_selection": [
+      "OLDEST_DEGRADED_SINCE_FIRST",
+      "THEN_OLDEST_ENTRY_TIME",
+      "THEN_PAIR_LEXICOGRAPHIC"
+    ],
+    "same_pair_cooldown": false
+  },
+  "research_objective": "Build a family-specialist adaptive position-lifecycle brain that preserves momentum-breakout trend/tail expectancy, applies the validated supportive-context quality filter to relative-strength entries, and converts relative-strength thesis deterioration from an immediate cash exit into a capital-aware replacement state.",
+  "research_question": "Can replacement-aware family specialization preserve the control's momentum-breakout expectancy and the RD29 relative-strength quality improvement while reducing bad-regime losses, churn, concentration fragility, and stress drawdown without changing frozen signals, costs, capacity, entry timing, or accessing 2024/post-2024?",
+  "schema_version": "rd30-p0-family-specialist-replacement-aware-lifecycle-protocol-v1",
+  "selection_rule": {
+    "eligible": "PASS_EVERY_HARD_GATE_IN_C2_D2_E2",
+    "primary": "MAXIMIZE_WORST_UNIVERSE_2X_NET_RETURN",
+    "tie_break_1": "MAXIMIZE_WORST_UNIVERSE_2X_PROFIT_FACTOR",
+    "tie_break_2": "MINIMIZE_WORST_UNIVERSE_2X_MAXIMUM_DRAWDOWN",
+    "tie_break_3": "MINIMIZE_WORST_UNIVERSE_2X_TURNOVER",
+    "tie_break_4": "MINIMIZE_ACTIVE_ADAPTIVE_COMPONENT_COUNT",
+    "tie_break_5": "POLICY_ID_LEXICOGRAPHIC"
+  },
+  "stage": "RD30_FAMILY_SPECIALIST_REPLACEMENT_AWARE_LIFECYCLE_PREREGISTRATION",
+  "success_next": "RD31_CLEAN_2024_INTERNAL_CONFIRMATION"
+}
