@@ -1,0 +1,69 @@
+{
+  "2022_2023_used_for_architecture_selection": true,
+  "2024_accessed": false,
+  "candidate_parameters_changed_after_economic_execution": false,
+  "economic_execution_performed": true,
+  "lineage": {
+    "integration_freeze_commit": "42d51fc0670f34ea90293451297707511d03d4f8",
+    "p0b_audit_sha256": "1e3b68bf9cb9b50aaef4b1cf53e224a3634732e81d4fc74db999a5eac1fa3773",
+    "p0b_freeze_commit": "b61267adb69b058b9fbd9b11e45a42ebdeb0c333",
+    "policies": [
+      "CONTROL_TIME_FAIL_72_FIXED_CAPITAL",
+      "ADAPTIVE_EXIT_FIXED_CAPITAL",
+      "STATIC_EXIT_STATE_ROUTER",
+      "FULL_ADAPTIVE_LIFECYCLE_BRAIN"
+    ],
+    "protocol_sha256": "82e19cd9f996f0592614f4b56de7dd1bbd13f96d6cf378ae182d2726b18e3143",
+    "rd26_signal_events_sha256": "6462f576cee9681751368a7755d3ca51ebf945ced54ea7b7f18b47bc469ba725",
+    "state_engine_sha256": "ee205cda74d70a530734bbfb4843c2dbfc8bf950122254aa2aceb8766a90f9ad"
+  },
+  "pair_count": 21,
+  "pairs": [
+    "ADA-USDT",
+    "ATOM-USDT",
+    "AVAX-USDT",
+    "BTC-USDT",
+    "DOGE-USDT",
+    "DOT-USDT",
+    "ETH-USDT",
+    "GRAM-USDT",
+    "INJ-USDT",
+    "JASMY-USDT",
+    "KAS-USDT",
+    "LINK-USDT",
+    "LTC-USDT",
+    "LUNC-USDT",
+    "NEAR-USDT",
+    "OP-USDT",
+    "SAND-USDT",
+    "SHIB-USDT",
+    "SOL-USDT",
+    "XMR-USDT",
+    "XRP-USDT"
+  ],
+  "post_2024_accessed": false,
+  "production_authorized": false,
+  "schema_version": "rd27-p1-input-conformance-audit-v1",
+  "selection_periods": {
+    "ROBUSTNESS_2022": [
+      "2022-01-01T00:00:00+00:00",
+      "2023-01-01T00:00:00+00:00"
+    ],
+    "ROBUSTNESS_2023": [
+      "2023-01-01T00:00:00+00:00",
+      "2024-01-01T00:00:00+00:00"
+    ]
+  },
+  "signal_event_count": 7073,
+  "signal_source_path": "data/research/rd26_p1_runtime/signal-events-2022-2023.csv",
+  "signal_source_sha256": "6462f576cee9681751368a7755d3ca51ebf945ced54ea7b7f18b47bc469ba725",
+  "stage": "RD27_ADAPTIVE_LIFECYCLE_ABLATION_2022_2023",
+  "state_coverage": {
+    "covered_signal_events": 7073,
+    "entry_state_event_counts": {
+      "RISK_OFF": 923,
+      "RISK_ON": 2232,
+      "TRANSITION": 3918
+    }
+  }
+}

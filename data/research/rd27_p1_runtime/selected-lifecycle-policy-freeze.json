@@ -1,0 +1,43 @@
+{
+  "2022_2023_used_for_architecture_selection": true,
+  "2024_accessed": false,
+  "control_parity_vs_rd26_time_fail": {
+    "maximum_numeric_absolute_error": 1.4551915228366852e-11,
+    "passed": true,
+    "rd26_run_metrics_sha256": "3d94a0076b3079de7bb9dc47c1a48e90c0345e83fd489a7a731868649ceb0390",
+    "row_count": 18
+  },
+  "freeze_commit": "42d51fc0670f34ea90293451297707511d03d4f8",
+  "policy_summaries": {
+    "ADAPTIVE_EXIT_FIXED_CAPITAL": {
+      "minimum_2x_trade_count": 920,
+      "worst_universe_2x_maximum_drawdown": 0.6547244621551235,
+      "worst_universe_2x_net_return": -0.5771956242125751,
+      "worst_universe_2x_profit_factor": 0.7336651757179902
+    },
+    "CONTROL_TIME_FAIL_72_FIXED_CAPITAL": {
+      "minimum_2x_trade_count": 455,
+      "worst_universe_2x_maximum_drawdown": 0.5072965627011601,
+      "worst_universe_2x_net_return": -0.11534723125517488,
+      "worst_universe_2x_profit_factor": 0.9414824423398611
+    },
+    "FULL_ADAPTIVE_LIFECYCLE_BRAIN": {
+      "minimum_2x_trade_count": 799,
+      "worst_universe_2x_maximum_drawdown": 0.43922130084640887,
+      "worst_universe_2x_net_return": -0.35954400408922205,
+      "worst_universe_2x_profit_factor": 0.7533974823600634
+    },
+    "STATIC_EXIT_STATE_ROUTER": {
+      "minimum_2x_trade_count": 422,
+      "worst_universe_2x_maximum_drawdown": 0.39295917451580825,
+      "worst_universe_2x_net_return": -0.013599146664610262,
+      "worst_universe_2x_profit_factor": 0.989963833311595
+    }
+  },
+  "post_2024_accessed": false,
+  "production_authorized": false,
+  "schema_version": "rd27-p1-selected-lifecycle-policy-freeze-v1",
+  "selected_policy": null,
+  "selection_basis": "PASS_ALL_PREREGISTERED_HARD_GATES_THEN_FROZEN_RD27_TIE_BREAKS",
+  "stage": "RD27_ADAPTIVE_LIFECYCLE_ABLATION_2022_2023"
+}
