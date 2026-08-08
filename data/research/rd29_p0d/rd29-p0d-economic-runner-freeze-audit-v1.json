@@ -1,0 +1,89 @@
+{
+  "2024_accessed": false,
+  "candidate_parameters_changed": false,
+  "economic_execution_performed": false,
+  "frozen_execution_contract": {
+    "btc_state_builder": "EXACT_RD27_BUILD_MARKET_STATE_FRAME",
+    "control_parity_expected_rows": 18,
+    "control_parity_required": true,
+    "control_source": "RD28_ROUTER_TIME_FAIL_72_CONTROL",
+    "cost_multipliers": [
+      1.0,
+      2.0
+    ],
+    "development_cutoff_exclusive": "2024-01-01T00:00:00Z",
+    "development_start": "2022-01-01T00:00:00Z",
+    "feature_builder": "EXACT_RD26_PREPARE_FEATURES",
+    "feature_pair_scope": "SIGNAL_PAIRS_UNION_ALL_SELECTION_PIT_MEMBERS",
+    "hard_gate_count": 14,
+    "membership_source": "EXACT_FROZEN_EFFECTIVE_OPERATIONAL_PIT_MEMBERSHIP",
+    "policy_count": 4,
+    "portfolios": [
+      "UNION_FOCUS",
+      "MOMENTUM_BREAKOUT",
+      "RELATIVE_STRENGTH_ROTATION"
+    ],
+    "selection_tie_breaks_preserved_from_protocol": true,
+    "signal_event_count_expected": 7073,
+    "signal_source": "EXACT_RD26_FROZEN_SIGNAL_EVENT_LEDGER",
+    "universes": [
+      "C2",
+      "D2",
+      "E2"
+    ]
+  },
+  "implementation": {
+    "runner_path": "scripts/research/run_rd29_thesis_confidence_lifecycle.py",
+    "runner_sha256": "aecedde051c0f4c25882591fb441a3ab69ee2fa22af0253789e7b1b3667ec434",
+    "runner_test_path": "tests/research/test_rd29_p1_runner_contract.py",
+    "runner_test_sha256": "58e8dd2a06f1ba822ca7e1a20f2104fc6432b04305a6026a7cbf337cc4d4d71d"
+  },
+  "lineage": {
+    "branch": "research/rd29-thesis-confidence-lifecycle-v1",
+    "head": "24c66ea786e19f6acb8b5a167579197938fbc871",
+    "remote_head": "24c66ea786e19f6acb8b5a167579197938fbc871",
+    "runner_pre_sha256": "210650dd384b91597661400872cc10f57c3b1a557cd83897d830a8fd33b32954",
+    "runner_test_pre_sha256": "58e8dd2a06f1ba822ca7e1a20f2104fc6432b04305a6026a7cbf337cc4d4d71d"
+  },
+  "new_2022_2023_economic_results_exposed_in_this_step": false,
+  "next_stage": "RD29_P1_EXECUTE_FROZEN_THESIS_CONFIDENCE_2022_2023",
+  "post_2024_accessed": false,
+  "production_authorized": false,
+  "real_market_data_loaded": false,
+  "recovery": {
+    "candidate_parameters_changed": false,
+    "original_failure_class": "PRE_FREEZE_RUFF_F401_AND_B023_ONLY",
+    "patch_summary": {
+      "bound_loop_variables": [
+        "policy_id",
+        "universe"
+      ],
+      "candidate_parameters_changed": false,
+      "nested_body_ast_equal_after_name_normalization": true,
+      "patch_mode": "AST_LOCATED_TOKEN_AWARE_STRUCTURAL_PATCH",
+      "research_logic_changed": false,
+      "unused_import_removed": "FOCUS_FAMILIES"
+    },
+    "pre_recovery_runner_sha256": "210650dd384b91597661400872cc10f57c3b1a557cd83897d830a8fd33b32954",
+    "pre_recovery_runner_test_sha256": "58e8dd2a06f1ba822ca7e1a20f2104fc6432b04305a6026a7cbf337cc4d4d71d",
+    "recovery_v1_failure_class": "RECOVERY_GUARD_FALSE_POSITIVE_WORD_COUNT_ONLY",
+    "recovery_v2_failure_class": "RECOVERY_TEXT_BLOCK_FORMAT_MISMATCH_ONLY",
+    "required": true,
+    "research_logic_changed": false
+  },
+  "research_logic_changed": false,
+  "schema_version": "rd29-p0d-economic-runner-freeze-audit-v1",
+  "signal_generation_changed": false,
+  "source_p0b_commit": "b58d1beabc5c1ca47d00d5a5c62bfce2e5da8bf6",
+  "source_p0c_commit": "24c66ea786e19f6acb8b5a167579197938fbc871",
+  "stage": "RD29_P0D_ECONOMIC_RUNNER_FREEZE_PRE_EXECUTION",
+  "status": "PASS",
+  "target_branch": "research/rd29-thesis-confidence-lifecycle-v1",
+  "verification": {
+    "py_compile_returncode": 0,
+    "pytest_returncode": 0,
+    "raw_market_data_loaded_by_tests": false,
+    "ruff_returncode": 0,
+    "tests_are_synthetic_only": true
+  }
+}
