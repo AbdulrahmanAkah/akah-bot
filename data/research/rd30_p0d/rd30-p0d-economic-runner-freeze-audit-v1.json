@@ -1,0 +1,90 @@
+{
+  "2024_accessed": false,
+  "candidate_parameters_changed": false,
+  "economic_execution_performed": false,
+  "frozen_execution_contract": {
+    "atomic_replacement": true,
+    "btc_state_builder": "EXACT_RD27_BUILD_MARKET_STATE_FRAME",
+    "control_parity_expected_rows": 18,
+    "control_parity_required": true,
+    "control_source": "EXACT_RD29_ROUTER_TIME_FAIL_72_CONTROL",
+    "cost_multipliers": [
+      1.0,
+      2.0
+    ],
+    "development_cutoff_exclusive": "2024-01-01T00:00:00Z",
+    "development_start": "2022-01-01T00:00:00Z",
+    "expected_economic_replays": 72,
+    "feature_builder": "EXACT_RD26_PREPARE_FEATURES",
+    "feature_pair_scope": "SIGNAL_PAIRS_UNION_ALL_SELECTION_PIT_MEMBERS",
+    "hard_gate_count": 14,
+    "mb_control_lifecycle_parity_expected_rows": 12,
+    "mb_control_lifecycle_parity_required": true,
+    "mb_parity_policies": [
+      "FAMILY_QUALITY_CONTROL_EXITS",
+      "FAMILY_QUALITY_REPLACEMENT_AWARE_RS"
+    ],
+    "mb_replacement_degradation": false,
+    "mb_thesis_failure_exit": false,
+    "membership_source": "EXACT_FROZEN_EFFECTIVE_OPERATIONAL_PIT_MEMBERSHIP",
+    "output_names_excluding_manifest": 15,
+    "policy_count": 4,
+    "portfolios": [
+      "UNION_FOCUS",
+      "MOMENTUM_BREAKOUT",
+      "RELATIVE_STRENGTH_ROTATION"
+    ],
+    "replacement_forbidden_when_free_slot_exists": true,
+    "replacement_requires_prevalidated_incoming": true,
+    "replacement_scope": "DEGRADED_RS_ONLY_INCUMBENTS",
+    "replay_source": "EXACT_RD30_P0C_REPLACEMENT_AWARE_REPLAY",
+    "selection_tie_breaks_preserved_from_protocol": true,
+    "signal_event_count_expected": 7073,
+    "signal_source": "EXACT_RD26_FROZEN_SIGNAL_EVENT_LEDGER",
+    "universes": [
+      "C2",
+      "D2",
+      "E2"
+    ]
+  },
+  "implementation": {
+    "runner_path": "scripts/research/run_rd30_family_specialist_replacement_aware.py",
+    "runner_sha256": "c6cdef9f0c3a086fd1091e4a9168f6949e28b0a3e16ab8e80e3d6f12b76ca561",
+    "runner_test_path": "tests/research/test_rd30_p1_runner_contract.py",
+    "runner_test_sha256": "d39eb8b6182fd7d5cab59f4ad495ec1ad5318b399511dcc2f56ef052cad5d6ef"
+  },
+  "lineage": {
+    "branch": "research/rd30-family-specialist-replacement-aware-lifecycle-v1",
+    "head": "7ac7f88097b91f8dab3429e1d0289cc2e8be8a71",
+    "p0c_audit_sha256": "432128432ed8a7a958e1c2f713bca6316c4204da545f296227f1393d5a74e7ef",
+    "parent_p0b_commit": "02ca17455f10cd8e3c7326aa6bd19a1ea39a5058",
+    "protocol_sha256": "844c674699d2397748069adee2691d2cf9341ce90e732239503e93229e1f0813",
+    "remote_head": "7ac7f88097b91f8dab3429e1d0289cc2e8be8a71",
+    "replay_sha256": "169521bf5a684e10fe17000463fc7a816ef9a5917a5313af5dd6509d0aa47606",
+    "replay_test_sha256": "8b13e9b66c189f90e883ebd4f0daa8f0fcf63723da9e373b8dfe6e07a07fafac",
+    "state_engine_sha256": "648536ceb36c01d0a759d99c142a8fe0e464e40996f1faaafe9300891790bdc1"
+  },
+  "new_2022_2023_economic_results_exposed_in_this_step": false,
+  "next_stage": "RD30_P1_EXECUTE_FROZEN_FAMILY_SPECIALIST_REPLACEMENT_AWARE_2022_2023",
+  "post_2024_accessed": false,
+  "production_authorized": false,
+  "real_market_data_loaded": false,
+  "research_logic_changed": false,
+  "schema_version": "rd30-p0d-economic-runner-freeze-audit-v1",
+  "signal_generation_changed": false,
+  "source_p0b_commit": "02ca17455f10cd8e3c7326aa6bd19a1ea39a5058",
+  "source_p0c_commit": "7ac7f88097b91f8dab3429e1d0289cc2e8be8a71",
+  "stage": "RD30_P0D_ECONOMIC_RUNNER_FREEZE_PRE_EXECUTION",
+  "status": "PASS",
+  "target_branch": "research/rd30-family-specialist-replacement-aware-lifecycle-v1",
+  "verification": {
+    "expected_selected_test_count": 93,
+    "new_runner_contract_test_count": 10,
+    "p0c_selected_test_count_preserved": 83,
+    "py_compile_returncode": 0,
+    "pytest_returncode": 0,
+    "raw_market_data_loaded_by_tests": false,
+    "ruff_returncode": 0,
+    "tests_are_synthetic_only": true
+  }
+}
