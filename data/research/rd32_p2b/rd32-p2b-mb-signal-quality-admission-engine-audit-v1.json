@@ -1,0 +1,83 @@
+{
+  "2024_accessed": false,
+  "actual_candidate_signal_filter_execution_performed": false,
+  "calendar_year_feature": false,
+  "candidate_mb_admission_subset_of_rd31": true,
+  "candidate_new_pair_time_admission_possible": false,
+  "candidate_results_observed": false,
+  "candidate_slot_increase_possible": false,
+  "control_delegates_exact_rd31_hysteresis": true,
+  "cost_model_changed": false,
+  "economic_execution_performed": false,
+  "economic_matrix_rows_frozen_for_later_execution": 72,
+  "economic_runner_implemented": false,
+  "engine_path": "src/spotbot/research/rd32_mb_signal_quality_admission.py",
+  "engine_sha256": "c8c2d02412356c0afc6194f5a61be945996a7e731a07edc691a2fa00be25f5b6",
+  "exit_lifecycle_changed": false,
+  "forced_exit_added": false,
+  "governor_transition_recomputed_after_veto": false,
+  "hard_gate_count_frozen_for_later_economics": 16,
+  "next_stage": "RD32_P2C_IMPLEMENT_AND_FREEZE_MB_SIGNAL_QUALITY_PORTFOLIO_REPLAY_PRE_ECONOMIC_EXECUTION",
+  "numeric_threshold_fitted_from_2022": false,
+  "overlap_rs_retained_if_independently_rd31_admissible": true,
+  "pair_blacklist": false,
+  "parameter_grid_search": false,
+  "policy_count": 4,
+  "portfolio_replay_implemented": false,
+  "post_2024_accessed": false,
+  "preflight": {
+    "branch": "research/rd32-residual-loss-attribution-v1",
+    "dependency_blobs": {
+      "src/spotbot/research/rd26_exit_architecture.py": "f00adb9825b0f6d8483b069045dcf82b029d6a29",
+      "src/spotbot/research/rd29_thesis_context.py": "60b7338c76c3d93deb9ec07aeff08473109dfc97",
+      "src/spotbot/research/rd31_regime_admission_governor.py": "60840054dbaf06c4ae226ab15742fa862326ac99"
+    },
+    "protocol": {
+      "audit_sha256": "fee5c705b220005c75804a14d52f4a970a3054ebdd887f8d2672da1d374f0f3d",
+      "economic_matrix_rows_later": 72,
+      "hard_gate_count": 16,
+      "policy_count": 4,
+      "protocol_sha256": "88fea5c729bef3e815a6a8f731b1614720e9fc402e7e550c4288ae6e39ef4292"
+    },
+    "recovery_existing_untracked_paths": [
+      "src/spotbot/research/rd32_mb_signal_quality_admission.py",
+      "tests/research/test_rd32_mb_signal_quality_admission.py"
+    ],
+    "remote_p2_commit": "1384aadda84623440d95c48998e16c227b048c2e",
+    "source_p1_results_commit": "4df12b682108eddf8ecba0239bb26f1cb8392f79",
+    "source_p2_commit": "1384aadda84623440d95c48998e16c227b048c2e"
+  },
+  "production_authorized": false,
+  "profit_giveback_added": false,
+  "pytest_paths": [
+    "tests/research/test_rd29_thesis_context.py",
+    "tests/research/test_rd30_family_specialist_state.py",
+    "tests/research/test_rd31_regime_admission_governor.py",
+    "tests/research/test_rd32_mb_signal_quality_admission.py"
+  ],
+  "pytest_stdout_tail": [
+    "........................................................................ [ 39%]",
+    "........................................................................ [ 79%]",
+    "......................................                                   [100%]",
+    "182 passed in 1.99s"
+  ],
+  "raw_market_data_loaded": false,
+  "rd31_governor_runs_once_before_mb_veto": true,
+  "real_market_data_loaded": false,
+  "recovery_change_scope": "SYNTHETIC_RS_LEADER_NONPOSITIVE_FIXTURE_ONLY_ENGINE_LOGIC_UNCHANGED",
+  "recovery_wrapper_version": "V2_AFTER_SYNTHETIC_TEST_FIXTURE_FAILURE",
+  "replacement_added": false,
+  "rs_only_path_unchanged": true,
+  "schema_version": "rd32-p2b-mb-signal-quality-admission-engine-audit-v1",
+  "sizing_changed": false,
+  "source_p1_results_commit": "4df12b682108eddf8ecba0239bb26f1cb8392f79",
+  "source_p2_commit": "1384aadda84623440d95c48998e16c227b048c2e",
+  "stage": "RD32_P2B_MB_SIGNAL_QUALITY_ADMISSION_ENGINE_PRE_ECONOMIC_EXECUTION",
+  "status": "PASS",
+  "synthetic_only": true,
+  "synthetic_test_function_count": 40,
+  "test_path": "tests/research/test_rd32_mb_signal_quality_admission.py",
+  "test_sha256": "0f5cc81e89c138f6ec5e3c1ecfbd599b387e35d4384871ea90bc30e7c00eff65",
+  "thesis_exit_added": false,
+  "year_feature": false
+}
