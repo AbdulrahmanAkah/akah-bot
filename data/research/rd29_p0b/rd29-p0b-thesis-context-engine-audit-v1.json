@@ -1,0 +1,80 @@
+{
+  "2024_accessed": false,
+  "candidate_parameters_changed": false,
+  "economic_execution_performed": false,
+  "frozen_semantics": {
+    "breadth_missing_data_admission_behavior": "FAIL_CLOSED",
+    "breadth_requires_all_current_members_observable": true,
+    "breadth_statistic": "MEDIAN_CURRENT_PIT_MEMBER_RETURN_72H",
+    "btc_state_source": "EXACT_RD27_P0B_SENSOR",
+    "checkpoints_exact": [
+      24,
+      48,
+      72,
+      96,
+      120,
+      144
+    ],
+    "current_bar_high_used": false,
+    "current_bar_low_used": false,
+    "exit_priority": [
+      "MAX_HOLD",
+      "PROFIT_GIVEBACK",
+      "THESIS_FAILURE_AT_CHECKPOINT",
+      "HOLD"
+    ],
+    "family_quality_mb_exact_rd27_router": true,
+    "family_quality_rs_supportive_only_slot_fraction": 0.18,
+    "global_slot_escrow": false,
+    "mb_retained": "PRIOR_CLOSE_GT_ENTRY_BREAKOUT_REFERENCE",
+    "membership_loss_counts_as_family_thesis_failure": true,
+    "overlap_admission_any_family_max_slot": true,
+    "overlap_requires_all_supporting_theses_failed": true,
+    "profit_exit_creates_cooldown": false,
+    "profit_lock_arm_atr": 4.0,
+    "profit_lock_giveback_atr": 3.0,
+    "profit_lock_separate_from_thesis_failure": true,
+    "rs_rank_tie_break": "HIGHER_RETURN_THEN_BETTER_MEMBERSHIP_RANK_THEN_PAIR",
+    "rs_retained": "RETURN_72H_GT_0_AND_CURRENT_RANK_LE_2",
+    "same_pair_cooldown_only": true,
+    "same_pair_cooldown_release_at_entry_plus_72h": true,
+    "stressed_context": "BTC_RISK_OFF_OR_TRANSITION_WITH_NONPOSITIVE_BREADTH",
+    "supportive_context": "BTC_RISK_ON_AND_POSITIVE_MEDIAN_PIT_BREADTH",
+    "thesis_exit_requires_stressed_context": true,
+    "thesis_missing_data_exit_behavior": "FAIL_OPEN_HOLD",
+    "unconditional_candidate_time_fail_72_removed": true
+  },
+  "implementation": {
+    "engine_path": "src/spotbot/research/rd29_thesis_context.py",
+    "engine_sha256": "53e189efd8eabe7b8f3560077e11c2d3dc9757229b6ec6553e501142ad90f2c4",
+    "test_path": "tests/research/test_rd29_thesis_context.py",
+    "test_sha256": "aa0f556209bfa86b4240461dbbe06ebe26828905cc467c989be7dfd6b9fe2dab"
+  },
+  "lineage": {
+    "branch": "research/rd29-thesis-confidence-lifecycle-v1",
+    "head": "0e736639a42ab094b20c24d1155ab6879761e5fe",
+    "p0_audit_sha256": "946048e43213860af815913a2f0beb62a348ef815f8c820b0f675dfae2312aef",
+    "protocol_sha256": "ad30538caf437aa67b803263795eb06185bc23073ba5de1c7eb59ce6710c41c1",
+    "remote_head": "0e736639a42ab094b20c24d1155ab6879761e5fe"
+  },
+  "new_2022_2023_economic_results_exposed_in_this_step": false,
+  "next_stage": "RD29_P0C_IMPLEMENT_AND_FREEZE_THESIS_PORTFOLIO_REPLAY_PRE_ECONOMIC_EXECUTION",
+  "post_2024_accessed": false,
+  "production_authorized": false,
+  "real_market_data_loaded": false,
+  "research_logic_implemented": true,
+  "schema_version": "rd29-p0b-thesis-context-engine-audit-v1",
+  "signal_generation_changed": false,
+  "source_p0_commit": "0e736639a42ab094b20c24d1155ab6879761e5fe",
+  "source_rd28_results_commit": "2ec43cfdab0a72ec10b9197c5a8dfb579595fe4b",
+  "stage": "RD29_P0B_THESIS_CONTEXT_ENGINE_PRE_ECONOMIC_EXECUTION",
+  "status": "PASS",
+  "target_branch": "research/rd29-thesis-confidence-lifecycle-v1",
+  "verification": {
+    "py_compile_returncode": 0,
+    "pytest_returncode": 0,
+    "real_market_files_read_by_tests": false,
+    "ruff_returncode": 0,
+    "tests_are_synthetic_only": true
+  }
+}
