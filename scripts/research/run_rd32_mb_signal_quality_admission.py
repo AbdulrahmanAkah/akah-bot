@@ -73,7 +73,7 @@ P2C_AUDIT_SHA256 = "6303c812c7fa2bfe907ea8037e9c1b24e904b07ece9b427e338574d5155e
 RD31_RUNNER = Path("scripts/research/run_rd31_market_regime_admission_governor.py")
 RD31_RUNNER_BLOB_SHA = "3b5c6916e34be6c9642702fe2807e42e445ee083"
 RD31_RUN_METRICS = Path("data/research/rd31_p1_runtime/portfolio-run-metrics.csv")
-RD31_RUN_METRICS_BLOB_SHA = "2f00efdeca2dcf17c5d21bbd17601bd11c86496b"
+RD31_RUN_METRICS_BLOB_SHA = "5bf3d95677876442d622088309d78e1e727355ba"
 RD31_REPORT = Path(
     "data/research/rd31_p1_runtime/rd31-p1-market-regime-admission-governor-report-v1.json"
 )
