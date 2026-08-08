@@ -1,0 +1,46 @@
+{
+  "2022_2023_used_for_architecture_selection": true,
+  "2024_accessed": false,
+  "control_parity_vs_rd27_static_router": {
+    "maximum_numeric_absolute_error": 1.4551915228366852e-11,
+    "passed": true,
+    "rd27_run_metrics_sha256": "aec993cd2e8bad250ac03b0eebdd776d43eca6e0e4d55d54f0bc35cbd84aa088",
+    "rd28_policy_label": "ROUTER_TIME_FAIL_72_CONTROL",
+    "row_count": 18,
+    "source_policy": "STATIC_EXIT_STATE_ROUTER"
+  },
+  "family_overlap_rule": "ALL_SUPPORTING_FAMILIES_MUST_INVALIDATE",
+  "policy_summaries": {
+    "EVIDENCE_GATED_LIFECYCLE_IMMEDIATE_RECYCLE": {
+      "minimum_2x_trade_count": 695,
+      "worst_universe_2x_maximum_drawdown": 0.3433880765379637,
+      "worst_universe_2x_net_return": -0.214011140430298,
+      "worst_universe_2x_profit_factor": 0.8469254633500513
+    },
+    "EVIDENCE_GATED_LIFECYCLE_SLOT_ESCROW": {
+      "minimum_2x_trade_count": 587,
+      "worst_universe_2x_maximum_drawdown": 0.3320052292772074,
+      "worst_universe_2x_net_return": -0.21305731904557035,
+      "worst_universe_2x_profit_factor": 0.8220358355836023
+    },
+    "FAMILY_AWARE_EVIDENCE_LIFECYCLE_SLOT_ESCROW": {
+      "minimum_2x_trade_count": 573,
+      "worst_universe_2x_maximum_drawdown": 0.3220768795190509,
+      "worst_universe_2x_net_return": -0.19469122730234245,
+      "worst_universe_2x_profit_factor": 0.8409427090670258
+    },
+    "ROUTER_TIME_FAIL_72_CONTROL": {
+      "minimum_2x_trade_count": 422,
+      "worst_universe_2x_maximum_drawdown": 0.39295917451580825,
+      "worst_universe_2x_net_return": -0.013599146664610262,
+      "worst_universe_2x_profit_factor": 0.989963833311595
+    }
+  },
+  "post_2024_accessed": false,
+  "production_authorized": false,
+  "runner_freeze_commit": "ff186c24e93c7ce05a048fc669217bafefed4969",
+  "schema_version": "rd28-p1-selected-evidence-gated-lifecycle-policy-freeze-v1",
+  "selected_policy": null,
+  "selection_basis": "PASS_ALL_PREREGISTERED_HARD_GATES_THEN_FROZEN_RD28_TIE_BREAKS",
+  "stage": "RD28_EVIDENCE_GATED_LIFECYCLE_ABLATION_2022_2023"
+}
