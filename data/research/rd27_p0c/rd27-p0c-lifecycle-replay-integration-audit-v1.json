@@ -1,0 +1,47 @@
+{
+  "2024_accessed": false,
+  "economic_execution_performed": false,
+  "integration_contract": {
+    "adaptive_adverse_guard_active_from_entry_bar": true,
+    "adaptive_open_position_state_uses_prior_completed_btc_bar": true,
+    "control_delegates_exactly_to_rd26_time_fail": true,
+    "parameters_changed": false,
+    "same_bar_high_cannot_tighten_same_bar_profit_trail": true,
+    "signals_source_is_exact_frozen_rd26_ledger": true,
+    "state_router_uses_signal_close_state": true
+  },
+  "new_2022_2023_economic_results_exposed": false,
+  "next_stage": "RD27_P1_EXECUTE_FROZEN_LIFECYCLE_ABLATION_2022_2023",
+  "post_2024_accessed": false,
+  "production_authorized": false,
+  "protocol_sha256": "82e19cd9f996f0592614f4b56de7dd1bbd13f96d6cf378ae182d2726b18e3143",
+  "recovery": {
+    "candidate_parameters_changed": false,
+    "economic_results_exposed_before_recovery": false,
+    "failure_class": "PRE_FREEZE_RUFF_I001_GUARD_FALSE_POSITIVE_AFTER_SUCCESSFUL_FIX",
+    "non_import_ast_unchanged": true,
+    "pre_recovery_replay_sha256": "1868c5e21d45cd29156e084ae047b3462de0f123736e2bfa05d4c2c7ef70ccaf",
+    "pre_recovery_runner_sha256": "b51ef8e01d87f065bd0bf7843f695f5fe69a60950eab6bda00e3c3e1a5d4e239",
+    "pre_recovery_test_sha256": "32b18625f867cedad53b25ac0ea3508822294ef4b796a73f454bef02cfe76c95",
+    "research_logic_changed": false,
+    "ruff_import_fix_returncode": 0,
+    "semantic_import_guard_passed": true
+  },
+  "replay_path": "src/spotbot/research/rd27_lifecycle_replay.py",
+  "replay_sha256": "82e2bf09e1a74a101580c625e0f71987484a9368f597fdd7515e4b31f4e0b425",
+  "runner_path": "scripts/research/run_rd27_lifecycle_ablation.py",
+  "runner_sha256": "b51ef8e01d87f065bd0bf7843f695f5fe69a60950eab6bda00e3c3e1a5d4e239",
+  "schema_version": "rd27-p0c-lifecycle-replay-integration-audit-v1",
+  "source_p0b_commit": "b61267adb69b058b9fbd9b11e45a42ebdeb0c333",
+  "stage": "RD27_P0C_LIFECYCLE_REPLAY_INTEGRATION_FREEZE",
+  "state_engine_sha256": "ee205cda74d70a530734bbfb4843c2dbfc8bf950122254aa2aceb8766a90f9ad",
+  "status": "PASS",
+  "test_path": "tests/research/test_rd27_lifecycle_replay.py",
+  "test_sha256": "289c0940236ef9ee4aa7a36fcb678102d6e0997edab92c4cf425be83d2478a7b",
+  "verification": {
+    "py_compile_returncode": 0,
+    "pytest_pass_count": 23,
+    "pytest_returncode": 0,
+    "ruff_returncode": 0
+  }
+}
