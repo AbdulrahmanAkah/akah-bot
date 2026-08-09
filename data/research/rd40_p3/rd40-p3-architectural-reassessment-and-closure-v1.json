@@ -1,0 +1,136 @@
+{
+  "architectural_findings": {
+    "finding_1": {
+      "id": "WEAKNESS_AND_PATH_DETERIORATION_NOT_SUFFICIENT",
+      "statement": "Neither static weakness, transition deterioration, nor post-peak recovery failure produced robust negative 24h evidence across both 2022 and 2023."
+    },
+    "finding_2": {
+      "2022_trade_conditioned_exposure_per_universe": {
+        "CAUTION": 70,
+        "LOCKED": 305,
+        "OPEN": 1686,
+        "TOTAL": 2061
+      },
+      "id": "ADMISSION_GOVERNOR_IS_NOT_AN_INDEPENDENT_EXIT_CONTEXT",
+      "interpretation_boundary": "THIS_IS_A_SELECTION_RISK_DIAGNOSIS,NOT_A_CLAIM_THAT_THE_GOVERNOR_ITSELF_IS_INVALID",
+      "statement": "RD31 governor state is causally valid but is coupled to admission. Mature-trade decision-hour exposure can be strongly different from clock-hour occupancy; therefore it must not be treated as an independent binary exit permission variable without explicit cohort-selection controls."
+    },
+    "finding_3": {
+      "id": "LOCKED_MEASURES_RELATIVE_SEVERITY_NOT_ABSOLUTE_EXIT_SIGN",
+      "statement": "In 2023 all 9 preregistered LOCKED-vs-OPEN mean contrasts passed, yet every LOCKED 24h mean in those contrasts remained positive and no LOCKED negative family qualified. The governor therefore carried relative severity information but did not provide robust absolute negative remaining-value evidence."
+    },
+    "finding_4": {
+      "id": "RECOVERY_VETO_IS_ALSO_REGIME_DEPENDENT",
+      "statement": "FAST_POST_PEAK_RECLAIM_CONTROL was 0-of-3 qualified in 2022 and 3-of-3 qualified in 2023; it is not robust enough to serve as a universal veto."
+    },
+    "finding_5": {
+      "id": "FIXED_24H_MARKOUT_IS_NOT_ACTION_ALIGNED_FOR_IRREVERSIBLE_EXIT",
+      "statement": "A fixed 24h sign target is useful for information diagnostics but is not sufficient as the primary target for an irreversible exit whose counterfactual holding period extends to the frozen control exit."
+    }
+  },
+  "architecture_rejected_for_next_stage": {
+    "binary_negative_signal_times_admission_governor_permission": true,
+    "direct_full_liquidation_from_24h_signal": true,
+    "new_weakness_trigger_search_without_target_reframing": true,
+    "posthoc_merge_of_caution_and_locked": true,
+    "posthoc_threshold_search": true,
+    "universal_recovery_veto_from_current_rd40_control": true
+  },
+  "closed_results": {
+    "advancing_negative_evidence": [],
+    "global_negative_evidence_robust_across_2022_2023": false,
+    "locked_conditioned_negative_evidence_robust_across_2022_2023": false,
+    "recovery_veto_candidate_qualified": false,
+    "sensitivity_merge_used_for_rescue": false,
+    "threshold_relaxation_used": false,
+    "winner_selection_used": false
+  },
+  "decision": "RD40_CLOSED_BINARY_TRANSITION_X_ADMISSION_GOVERNOR_ARCHITECTURE_UNQUALIFIED",
+  "family_outcome_classification": {
+    "FAST_POST_PEAK_RECLAIM_CONTROL": "2022_GLOBAL_NO_DIRECTIONAL_EDGE_0_OF_3;2023_GLOBAL_QUALIFIED_POSITIVE_3_OF_3;NOT_A_ROBUST_RECOVERY_VETO",
+    "PERSISTENT_LOWER_HIGH_GIVEBACK": "2022_GLOBAL_NO_DIRECTIONAL_EDGE;2023_GLOBAL_REVERSED_DIRECTION_3_OF_3;LOCKED_NOT_QUALIFIED",
+    "STALE_PEAK_FRESH_DECAY": "2022_GLOBAL_QUALIFIED_3_OF_3;2023_GLOBAL_NO_DIRECTIONAL_EDGE_0_OF_3;LOCKED_NOT_QUALIFIED",
+    "TROUGH_RECOVERY_FAILURE": "REGIME_DIRECTION_REVERSAL;2022_GLOBAL_QUALIFIED_3_OF_3;2023_GLOBAL_REVERSED_DIRECTION_3_OF_3;LOCKED_NOT_QUALIFIED"
+  },
+  "lineage": {
+    "2022_mature_trade_hour_exposure_per_universe": {
+      "CAUTION": 70,
+      "LOCKED": 305,
+      "OPEN": 1686,
+      "eligible": 2061,
+      "evaluable": 2061,
+      "evaluable_share": 1.0
+    },
+    "2023_mature_trade_hour_exposure": {
+      "C2": {
+        "caution": 1624,
+        "eligible": 5884,
+        "evaluable": 5884,
+        "locked": 905,
+        "open": 3355
+      },
+      "D2": {
+        "caution": 1628,
+        "eligible": 5887,
+        "evaluable": 5887,
+        "locked": 834,
+        "open": 3425
+      },
+      "E2": {
+        "caution": 1732,
+        "eligible": 5886,
+        "evaluable": 5886,
+        "locked": 886,
+        "open": 3268
+      }
+    },
+    "lifecycle_hours_sha256": "f0ab4183baafaed64e66acef9f112b4ea5fe1b7ddc92491bfa928ac0bcac4d01",
+    "locked_open_contrast_sha256": "75006297d908ff8ec350908fc7c635130fe1c374b119ceb1ef5e95313d3fa17c",
+    "negative_qualification_sha256": "3d92605af2e11130f99eb6a054573a420790ad77cb1adaf32caf2e372e96cbbf",
+    "qualified_freeze_sha256": "a3245eca7d68c0a91c2ee39118d8357be542b90a6db610741f0b3e023d10762d",
+    "rd40_lifecycle_hours_git_blob": "a2852c15f7750ea176f76999a964681711edd3d1",
+    "rd40_locked_open_contrast_git_blob": "7ffce61a0088c13e52fc2debcba35d671cb99929",
+    "rd40_negative_qualification_git_blob": "b96f3dba94b61e38a55bf7b5d2dad3eac065d07c",
+    "rd40_p1_freeze_commit": "f24387521076622b1d13334b3c30d9a7ee2e42d1",
+    "rd40_p2_freeze_commit": "afaa18645452aaeacfd020635f394f840ea380bf",
+    "rd40_p2_qualified_freeze_git_blob": "d83370dd2a9cfd65e97fbf22a2ded78a86ef4cce",
+    "rd40_p2_report_git_blob": "bc645ba56dd10268af73cad4b546fdb1c4c1c1e1",
+    "rd40_p2_results_commit": "a9cba2267b1dde52a3ece97b9ca141caf9502629",
+    "rd40_recovery_veto_git_blob": "8421f35498faa4b6e2620d3979699d14e609a522",
+    "recovery_veto_sha256": "0fff0d0ef6f77bac1af8a16360deb7ec3b8573b56a7c046eed5f0b2c238e8fea",
+    "report_sha256": "20c283a586c3852dc9aca0ae445d3638b0c38714e9d0821212596548a75396fe"
+  },
+  "next_stage": "RD41_PREREGISTER_REMAINING_CONTROL_VALUE_AND_TERMINAL_OUTCOME_HAZARD_DIAGNOSTIC",
+  "rd41_required_reframing": {
+    "archival_component_rule": "OLD_COMPONENTS_REJECTED_ONLY_INSIDE_COMPOUND_POLICIES_MAY_BE_REVISITED_ONLY_VIA_NEW_PREREGISTERED_ISOLATED_ATTRIBUTION;NO_ARCHIVAL_IDEA_IS_REACTIVATED_BY_THIS_CLOSURE",
+    "full_liquidation_evidence_requirement": "MUST_BE_TIED_TO_ROBUST_NEGATIVE_REMAINING_CONTROL_VALUE_OR_AN_EXPLICIT_LATER_UTILITY_RULE;A_SHORT_HORIZON_NEGATIVE_FORECAST_ALONE_IS_INSUFFICIENT",
+    "governor_role": "MAY_ENTER_LATER_AS_A_CONTEXT_FEATURE_OR_SEVERITY_MODIFIER;MUST_NOT_BE_ASSUMED_TO_BE_AN_INDEPENDENT_BINARY_EXIT_PERMISSION_WITHOUT_COHORT_SELECTION_CONTROLS",
+    "partial_derisk_role": "MAY_BE_STUDIED_LATER_AS_A_SEPARATE_PREREGISTERED_ACTION_MAPPING_PROBLEM;NO_FRACTION_IS_SELECTED_IN_RD40_P3",
+    "primary_target_family": "REMAINING_CONTROL_VALUE",
+    "remaining_control_value_concept": "VALUE_OF_HOLDING_FROM_DECISION_OPEN_t_TO_THE_FROZEN_CONTROL_EXIT,USING_ONLY_FUTURE_INFORMATION_AS_TARGET_NOT_FEATURE",
+    "research_question": "CAN_POINT_IN_TIME_TRADE_AND_CONTEXT_INFORMATION_PREDICT_THE_MARGINAL_VALUE_OF_CONTINUING_FROM_DECISION_t_TO_THE_FROZEN_CONTROL_EXIT_AND_THE_HAZARD_OF_TERMINAL_CONTROL_FAILURE_ROBUSTLY_ACROSS_2022_AND_2023",
+    "secondary_target_family": "TERMINAL_CONTROL_OUTCOME_HAZARD",
+    "terminal_outcome_hazard_concept": "FUTURE_CONTROL_EXIT_ARCHETYPE_OR_FAILURE_OUTCOME_USED_ONLY_AS_TARGET_NOT_AS_FEATURE",
+    "why_this_is_architecturally_new": "THE_TARGET_HORIZON_IS_ALIGNED_WITH_THE_COUNTERFACTUAL_ACTION;IT_ASKS_WHETHER_CONTINUING_THE_EXISTING_POSITION_ADDS_VALUE_UNTIL_ITS_CONTROL_EXIT_RATHER_THAN_ONLY_WHETHER_THE_NEXT_24H_ARE_NEGATIVE"
+  },
+  "research_firewall": {
+    "2024_accessed": false,
+    "capital_reuse_performed": false,
+    "economic_execution_performed": false,
+    "new_events_observed": false,
+    "new_forward_returns_computed": false,
+    "new_market_data_loaded": false,
+    "new_path_features_computed": false,
+    "new_trade_rows_loaded_for_research": false,
+    "parameter_search_used": false,
+    "portfolio_accounting_performed": false,
+    "post_2024_accessed": false,
+    "production_authorized": false,
+    "shadow_pnl_computed": false,
+    "threshold_optimization_used": false,
+    "winner_selection_used": false
+  },
+  "schema_version": "rd40-p3-architectural-reassessment-and-closure-v1",
+  "stage": "RD40_P3_ARCHITECTURAL_REASSESSMENT_AND_CLOSURE",
+  "status": "PASS"
+}
