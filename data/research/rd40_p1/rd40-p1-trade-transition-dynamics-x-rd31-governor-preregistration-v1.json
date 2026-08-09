@@ -1,0 +1,335 @@
+{
+  "action_mapping_firewall": {
+    "first_economic_shadow_freed_slot_reuse": "FORBIDDEN",
+    "full_liquidation_from_information_signal": "FORBIDDEN_WITHOUT_LATER_EXPLICIT_ACTION_MAPPING_FREEZE",
+    "p1_or_p2_direct_exit_mapping": "FORBIDDEN",
+    "partial_derisk_fraction": "NOT_DEFINED_IN_P1_OR_P2_AND_MUST_NOT_BE_OPTIMIZED_FROM_DIAGNOSTIC_RESULTS",
+    "pending_action_confirmation_window": "NOT_DEFINED_IN_P1_OR_P2_AND_MUST_BE_FROZEN_BEFORE_ECONOMICS",
+    "production_authorized": false,
+    "recovery_veto_mapping": "NOT_EXECUTED_IN_P1_OR_P2",
+    "slot_escrow_until_original_control_exit": "REQUIRED_FOR_FIRST_ECONOMIC_SHADOW"
+  },
+  "candidate_families": [
+    {
+      "conditions": [
+        "holding_age_hours >= 48",
+        "peak_gain_from_entry > 0",
+        "hours_since_peak >= 24",
+        "giveback_fraction_of_peak_gain >= 0.50",
+        "close_return_12h < 0"
+      ],
+      "expected_forward_direction": "NEGATIVE",
+      "family_id": "STALE_PEAK_FRESH_DECAY",
+      "role": "PRIMARY_NEGATIVE_EVIDENCE"
+    },
+    {
+      "conditions": [
+        "holding_age_hours >= 48",
+        "peak_gain_from_entry > 0",
+        "giveback_fraction_of_peak_gain >= 0.50",
+        "last12_high < prior12_high",
+        "close_return_12h < 0"
+      ],
+      "expected_forward_direction": "NEGATIVE",
+      "family_id": "PERSISTENT_LOWER_HIGH_GIVEBACK",
+      "role": "PRIMARY_NEGATIVE_EVIDENCE"
+    },
+    {
+      "conditions": [
+        "holding_age_hours >= 48",
+        "peak_gain_from_entry > 0",
+        "giveback_fraction_of_peak_gain >= 0.50",
+        "recovery_from_last12_low_toward_peak <= 0.25",
+        "last12_positive_close_step_share <= 0.50"
+      ],
+      "expected_forward_direction": "NEGATIVE",
+      "family_id": "TROUGH_RECOVERY_FAILURE",
+      "role": "PRIMARY_NEGATIVE_EVIDENCE"
+    },
+    {
+      "conditions": [
+        "holding_age_hours >= 48",
+        "peak_gain_from_entry > 0",
+        "hours_since_peak >= 12",
+        "giveback_fraction_of_peak_gain <= 0.25",
+        "close_return_12h > 0",
+        "last12_positive_close_step_share > 0.50"
+      ],
+      "direct_exit_selection_eligible": false,
+      "expected_forward_direction": "POSITIVE",
+      "family_id": "FAST_POST_PEAK_RECLAIM_CONTROL",
+      "role": "POSITIVE_RECOVERY_VETO_CANDIDATE"
+    }
+  ],
+  "causal_price_clock": {
+    "control_exit_reason_in_features": "FORBIDDEN",
+    "decision_clock": "KUCOIN_SPOT_1H_OPEN_t",
+    "future_control_exit_information_in_features": "FORBIDDEN",
+    "latest_feature_bar": "COMPLETED_BAR_t_minus_1",
+    "lookahead": "FORBIDDEN",
+    "same_bar_high_low_close_use": "FORBIDDEN"
+  },
+  "cell_outcome_taxonomy": {
+    "INSUFFICIENT_SUPPORT": "ANY_SUPPORT_GATE_FAILS",
+    "NO_DIRECTIONAL_EDGE": "SUPPORT_PASSES_BUT_NEITHER_DIRECTION_IS_JOINTLY_SATISFIED",
+    "QUALIFIED_EXPECTED_DIRECTION": "SUPPORT_PASSES_AND_MEAN_MEDIAN_AND_LOPO_ALL_HAVE_THE_PREREGISTERED_DIRECTION",
+    "REVERSED_DIRECTION": "SUPPORT_PASSES_AND_MEAN_MEDIAN_AND_LOPO_ALL_HAVE_THE_OPPOSITE_DIRECTION"
+  },
+  "data_quality_standard": {
+    "backfill": "FORBIDDEN",
+    "classes": [
+      "OBSERVED_VALID",
+      "ZERO_ACTIVITY_DURING_KNOWN_HALT",
+      "MISSING"
+    ],
+    "field_name": "data_completeness_class",
+    "forward_fill": "FORBIDDEN",
+    "imputation": "FORBIDDEN",
+    "missing_rule": "MISSING_IS_DISTINCT_FROM_ZERO_ACTIVITY_AND_MUST_NOT_BE_IMPUTED_FOR_PATH_FEATURES",
+    "synthetic_bar_creation": "FORBIDDEN",
+    "zero_activity_rule": "ZERO_ACTIVITY_DURING_KNOWN_HALT_REQUIRES_DIRECT_ACTIVITY_EVIDENCE_OR_DOCUMENTED_SOURCE_SEMANTICS;DO_NOT_INFER_ZERO_ACTIVITY_FROM_FLAT_OHLC_ALONE"
+  },
+  "design_role": "TRADE_TRANSITION_DYNAMICS_WITH_REGIME_PERMISSION_AND_RECOVERY_VETO_EVIDENCE_FOR_FUTURE_ADAPTIVE_EXIT_BRAIN",
+  "diagnostic_lanes_preregistered_simultaneously": {
+    "CAUTION": {
+      "insufficient_support_is_valid_terminal_outcome": true,
+      "low_support_expected_before_execution": true,
+      "purpose": "STANDALONE_LOW_OCCUPANCY_DIAGNOSTIC",
+      "qualification_eligible": false,
+      "threshold_relaxation_if_low_support": "FORBIDDEN"
+    },
+    "CAUTION_OR_LOCKED_SENSITIVITY": {
+      "may_rescue_any_failure": false,
+      "qualification_eligible": false
+    },
+    "GLOBAL": {
+      "purpose": "TEST_REGIME_INVARIANT_TRANSITION_EDGE",
+      "qualification_eligible": true
+    },
+    "LOCKED": {
+      "purpose": "TEST_NEGATIVE_TRANSITION_EDGE_WHEN_RD31_GOVERNOR_PERMITS_DEFENSIVE_INTERPRETATION",
+      "qualification_eligible": true
+    },
+    "OPEN": {
+      "purpose": "PERMISSIVE_REGIME_CONTROL_AND_LOCKED_VS_OPEN_CONTRAST",
+      "qualification_eligible": false
+    },
+    "OPEN_OR_CAUTION_SENSITIVITY": {
+      "may_rescue_any_failure": false,
+      "qualification_eligible": false
+    }
+  },
+  "eligibility": {
+    "control_exit_reason_not_used_in_feature_logic": true,
+    "control_exit_time_used_only_as_eligibility_boundary": true,
+    "event_window": "entry_time+48h <= decision_time <= control_exit_time-24h",
+    "minimum_holding_age_hours": 48,
+    "periods": [
+      "ROBUSTNESS_2022",
+      "ROBUSTNESS_2023"
+    ],
+    "primary_event_must_have_24h_remaining_before_control_exit": true,
+    "primary_markout_horizon_hours": 24,
+    "universes": [
+      "C2",
+      "D2",
+      "E2"
+    ]
+  },
+  "event_semantics": {
+    "conditioned_event": "FALSE_TO_TRUE_ENTRY_OF_COMPOSITE_(FAMILY_TRUE_AND_GOVERNOR_STATE_EQUALS_LANE)",
+    "conditioned_event_can_be_created_by_governor_transition_while_family_remains_true": true,
+    "continuous_true_hours_in_same_lane_count_as_new_events": false,
+    "global_event": "FALSE_TO_TRUE_ENTRY_OF_RAW_FAMILY_STATE",
+    "initial_true_without_observed_false": "NOT_AN_EVENT",
+    "unobserved_or_ineligible_hour": "RESETS_STATE_TO_UNKNOWN"
+  },
+  "global_negative_family_qualification": {
+    "cell_primary_24h": [
+      "support_gates_pass",
+      "mean_forward_return_24h < 0",
+      "median_forward_return_24h < 0",
+      "leave_one_pair_out_worst_mean_24h < 0"
+    ],
+    "cross_universe_rule": "AT_LEAST_2_OF_3_UNIVERSES_PASS_IN_2022_AND_AT_LEAST_2_OF_3_UNIVERSES_PASS_IN_2023"
+  },
+  "governor_causal_clock": {
+    "calendar_year_used_as_governor_feature": false,
+    "future_action_time_transition_use": "FORBIDDEN",
+    "governor_state_reestimated_or_refit": false,
+    "initial_state": "OPEN",
+    "state_at_decision_open_t": "LATEST_next_state_WITH_action_time_LE_t_FOR_THE_SAME_UNIVERSE_AND_UNION_FOCUS;OPEN_BEFORE_FIRST_TRANSITION",
+    "transition_source_fields": [
+      "context_time",
+      "action_time",
+      "prior_state",
+      "next_state",
+      "market_context",
+      "transition_reason"
+    ]
+  },
+  "lineage": {
+    "rd31_governor_clock_occupancy_sha256": "634b0d316b4e6792971053e4907a554e3f50f6c79c60db87f8c3406b8f538985",
+    "rd31_governor_engine_git_blob": "60840054dbaf06c4ae226ab15742fa862326ac99",
+    "rd31_governor_transition_ledger_sha256": "46c36f91041912ebcfefdbe2d710bb090d73b3aeea65cabad2be71ad138e640b",
+    "rd31_output_manifest_git_blob": "d99201d401581340f6f56080bda8ae3ef20afca8",
+    "rd32_control_trade_ledger_frozen_sha256": "07f49e0e9235f736f54ee9dd59142c16fc4e7b99e83781b1ee26b9338def117e",
+    "rd32_control_trade_ledger_git_blob": "6749de85cb14733388e0f76a6557124d3212398b",
+    "rd39_family_freeze_git_blob": "44a9f0c5b512f7a4fe42a80c4e5d8bf077ce1095",
+    "rd39_family_qualification_git_blob": "77a855fe5e5d36da50fe7d639c9e059b20b20847",
+    "rd39_p2_freeze_commit": "d8b5f1e2e26f76b2a46abaf4e014787f1705846d",
+    "rd39_p2_results_commit": "7440c17daf89a7dc6ef79a0ab29c955f2ce96fdd",
+    "rd39_report_git_blob": "015225b2129cd00b5f604ad620ab471df52cc78f"
+  },
+  "locked_conditioned_negative_family_qualification": {
+    "caution_lane_cannot_rescue_locked_failure": true,
+    "conditioned_qualification_requires_both": [
+      "LOCKED_NEGATIVE_QUALIFICATION",
+      "LOCKED_VS_OPEN_CONTRAST_GATE"
+    ],
+    "locked_cell_primary_24h": [
+      "support_gates_pass",
+      "mean_forward_return_24h < 0",
+      "median_forward_return_24h < 0",
+      "leave_one_pair_out_worst_mean_24h < 0"
+    ],
+    "locked_cross_universe_rule": "AT_LEAST_2_OF_3_UNIVERSES_PASS_IN_2022_AND_AT_LEAST_2_OF_3_UNIVERSES_PASS_IN_2023",
+    "locked_vs_open_contrast_gate": "WHERE_BOTH_LANES_PASS_SUPPORT,mean_24h_LOCKED < mean_24h_OPEN_IN_AT_LEAST_2_OF_3_UNIVERSES_IN_2022_AND_AT_LEAST_2_OF_3_IN_2023",
+    "open_lane_cannot_authorize_exit_mapping": true,
+    "sensitivity_merges_cannot_rescue_locked_failure": true
+  },
+  "next_stage": "RD40_P2_FREEZE_AND_RUN_TRANSITION_DYNAMICS_X_RD31_GOVERNOR_DIAGNOSTIC_2022_2023_ONCE",
+  "p1_observation_flags": {
+    "2024_accessed": false,
+    "control_trade_rows_loaded": false,
+    "economic_execution_performed": false,
+    "forward_returns_computed": false,
+    "global_events_observed": false,
+    "governor_conditioned_events_observed": false,
+    "parameter_search_used": false,
+    "post_2024_accessed": false,
+    "production_authorized": false,
+    "raw_market_data_loaded": false,
+    "rd31_transition_rows_loaded_for_analysis": false,
+    "shadow_pnl_computed": false,
+    "temporal_path_features_computed": false,
+    "threshold_optimization_used": false,
+    "winner_selection_used": false
+  },
+  "predeclared_2022_2023_pattern_handling": {
+    "if_locked_conditioned_also_fails": "RD40_CLOSES_WITHOUT_POSTHOC_RESCUE_AND_REQUIRES_ARCHITECTURAL_REASSESSMENT_BEFORE_RD41",
+    "if_pattern_occurs": "DO_NOT_CREATE_A_NEW_INFORMATION_SOURCE_AS_A_RESCUE;READ_THE_ALREADY_PREREGISTERED_LOCKED_CONDITIONED_RESULT",
+    "regime_direction_reversal_pattern": "GLOBAL_NEGATIVE_PASS_IN_AT_LEAST_2_OF_3_UNIVERSES_IN_2022_AND_GLOBAL_REVERSED_DIRECTION_IN_AT_LEAST_2_OF_3_UNIVERSES_IN_2023"
+  },
+  "prohibitions": {
+    "2024_access_in_p1_or_p2": true,
+    "best_governor_lane_selection": true,
+    "best_universe_selection": true,
+    "best_year_selection": true,
+    "caution_merge_selection_after_results": true,
+    "economic_execution_in_p1_or_p2": true,
+    "freed_capital_reuse_in_first_shadow": true,
+    "parameter_grid_search": true,
+    "portfolio_replay_in_p1_or_p2": true,
+    "post_2024_access": true,
+    "rd39_failed_family_rescue": true,
+    "return_ranking_for_winner_selection": true,
+    "threshold_optimization": true
+  },
+  "recovery_veto_candidate_qualification": {
+    "cross_universe_rule": "AT_LEAST_2_OF_3_UNIVERSES_PASS_IN_2022_AND_AT_LEAST_2_OF_3_UNIVERSES_PASS_IN_2023",
+    "direct_exit_selection_eligible": false,
+    "family_id": "FAST_POST_PEAK_RECLAIM_CONTROL",
+    "global_primary_24h": [
+      "support_gates_pass",
+      "mean_forward_return_24h > 0",
+      "median_forward_return_24h > 0",
+      "leave_one_pair_out_worst_mean_24h > 0"
+    ],
+    "later_mapping_role_if_qualified": "MAY_VETO_OR_CANCEL_A_PENDING_DE_RISK_ACTION;MUST_NOT_CREATE_NEW_ENTRY_OR_ADD_NOTIONAL"
+  },
+  "research_governance_lessons_frozen_before_rd40": {
+    "archival_rejection_reinspection_rule": "AN_OLD_IDEA_REJECTED_ONLY_INSIDE_A_COMPOUND_POLICY_MAY_BE_REOPENED_ONLY_VIA_A_NEW_PREREGISTERED_ISOLATED_TEST",
+    "compound_policy_failure_rule": "COMPOUND_POLICY_FAILURE_DOES_NOT_REJECT_A_COMPONENT_WITHOUT_ISOLATED_ATTRIBUTION",
+    "forecast_horizon_action_irreversibility_rule": "PREDICTING_TEMPORARY_DOWNSIDE_DOES_NOT_BY_ITSELF_JUSTIFY_IRREVERSIBLE_FULL_LIQUIDATION",
+    "rd30_profit_state_historical_interpretation": "NOT_CLEANLY_REJECTED_AS_A_STANDALONE_INFORMATION_SIGNAL;ITS_COMPOUND_POLICY_FAILURE_WAS_CONFOUNDED_BY_PORTFOLIO_FEEDBACK_AND_FREED_SLOT_REUSE",
+    "rd39_adverse_path_dominance_classification": "REVERSED_DIRECTION",
+    "rd39_profit_giveback_classification": "REGIME_DIRECTION_REVERSAL",
+    "rd39_unrecovered_entry_failure_classification": "REVERSED_DIRECTION",
+    "weakness_alone_is_exit_evidence": false
+  },
+  "schema_version": "rd40-p1-trade-transition-dynamics-x-rd31-governor-preregistration-v1",
+  "source_contract": {
+    "allowed_raw_price_fields": [
+      "timestamp",
+      "open",
+      "high",
+      "low",
+      "close"
+    ],
+    "binance_data": "FORBIDDEN",
+    "derivatives_data": "FORBIDDEN",
+    "diagnostic_cost_multiplier": 1.0,
+    "governor_states": [
+      "OPEN",
+      "CAUTION",
+      "LOCKED"
+    ],
+    "market_context_labels_are_not_governor_states": true,
+    "portfolio_id": "UNION_FOCUS",
+    "rd31_governor_policy": "REGIME_HYSTERESIS_ADMISSION_GOVERNOR",
+    "rd31_governor_state_source": "FROZEN_RD31_P1_GOVERNOR_TRANSITION_LEDGER",
+    "rd39_event_ledger_loaded": false,
+    "rd39_family_flags_used_as_rd40_inputs": false,
+    "resolution": "1h",
+    "target_venue": "KUCOIN_SPOT",
+    "trade_context_source": "FROZEN_RD32_RD31_REGIME_HYSTERESIS_CONTROL_UNION_FOCUS_TRADE_LEDGER"
+  },
+  "stage": "RD40_P1_PREREGISTER_TRANSITION_DYNAMICS_X_FROZEN_RD31_GOVERNOR",
+  "status": "FROZEN_PRE_DATA_DIAGNOSTIC",
+  "support_gates": {
+    "caution_low_occupancy_does_not_lower_gates": true,
+    "minimum_event_count_per_universe_period_lane_24h": 20,
+    "minimum_pair_count_per_universe_period_lane_24h": 5,
+    "minimum_signal_day_count_per_universe_period_lane_24h": 10,
+    "same_gates_apply_to_global_locked_open_and_caution": true
+  },
+  "target_markout_plan": {
+    "6h_and_48h": "SHAPE_DIAGNOSTICS_ONLY;CANNOT_RESCUE_24H_FAILURE",
+    "horizons_hours": [
+      6,
+      24,
+      48
+    ],
+    "primary_horizon_hours": 24,
+    "target_horizon_must_end_before_or_at_control_exit": true,
+    "target_return_formula": "open_(t+H) / open_t - 1",
+    "target_return_start": "KUCOIN_SPOT_1H_OPEN_t"
+  },
+  "threshold_origin": {
+    "12h_recent_window": "HALF_DAY_STRUCTURAL_RECOVERY_WINDOW",
+    "24h_stale_peak": "ONE_FULL_DAY_WITHOUT_NEW_PEAK",
+    "48h_minimum_age": "TWO_FULL_DAY_STRUCTURAL_LIFECYCLE_REQUIREMENT",
+    "giveback_0p50": "STRUCTURAL_HALF_OF_ACHIEVED_PEAK_GAIN",
+    "parameter_search": "FORBIDDEN",
+    "positive_step_share_0p50": "STRUCTURAL_DIRECTIONAL_MAJORITY_BOUNDARY",
+    "reclaim_giveback_0p25": "STRUCTURAL_UPPER_THREE_QUARTERS_OF_PEAK_GAIN_RETAINED",
+    "recovery_0p25": "STRUCTURAL_LOWER_QUARTER_OF_TROUGH_TO_PEAK_RANGE",
+    "threshold_optimization": "FORBIDDEN",
+    "thresholds_selected_after_rd40_results": false
+  },
+  "transition_feature_primitives": {
+    "close_return_12h": "close_(t-1) / close_(t-13) - 1",
+    "current_close_return_from_entry": "close_(t-1) / entry_price - 1",
+    "giveback_fraction_of_peak_gain": "(peak_price - close_(t-1)) / (peak_price - entry_price), valid only if peak_price > entry_price",
+    "hours_since_peak": "completed hours from peak_time through t-1",
+    "last12_high": "max(high over completed bars t-12 through t-1)",
+    "last12_low": "min(low over completed bars t-12 through t-1)",
+    "last12_positive_close_step_share": "fraction of the 11 adjacent completed close-to-close steps inside t-12..t-1 that are positive",
+    "peak_gain_from_entry": "peak_price / entry_price - 1",
+    "peak_price": "max(high from entry through completed t-1)",
+    "peak_time": "earliest completed hourly bar whose high equals peak_price",
+    "prior12_high": "max(high over completed bars t-24 through t-13)",
+    "recovery_from_last12_low_toward_peak": "(close_(t-1) - last12_low) / (peak_price - last12_low), valid only if peak_price > last12_low"
+  }
+}
