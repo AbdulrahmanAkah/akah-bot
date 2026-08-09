@@ -1,0 +1,165 @@
+{
+  "2024_accessed": false,
+  "candidate_order": [
+    "PARTICIPATION_SHOCK_CONTINUATION",
+    "BREADTH_THRUST_LEADER",
+    "CAPITULATION_PARTICIPATION_RECLAIM"
+  ],
+  "candidate_results_observed": false,
+  "candidates": [
+    {
+      "event_rule": [
+        "turnover_ratio >= 2.0",
+        "return_6h > 0",
+        "close > open",
+        "close_location >= 0.75",
+        "emit only on first completed bar of a contiguous true condition"
+      ],
+      "family_id": "PARTICIPATION_SHOCK_CONTINUATION",
+      "information_source": "WITHIN_ASSET_RELATIVE_QUOTE_TURNOVER_SHOCK",
+      "parameter_origin": "2.0 is a single preregistered participation-shock multiple; 0.75 reuses the existing fixed strong-close convention. No threshold grid is permitted.",
+      "signal_strength": "turnover_ratio"
+    },
+    {
+      "event_rule": [
+        "at least 2 feature-ready PIT members at t and t-1",
+        "breadth_24h(t) = fraction of PIT members with return_24h > 0",
+        "breadth_24h(t) > 0.50",
+        "breadth_24h(t-1) <= 0.50",
+        "select exactly one current leader by descending return_24h, then membership_rank, then pair",
+        "selected leader return_24h > 0"
+      ],
+      "family_id": "BREADTH_THRUST_LEADER",
+      "information_source": "POINT_IN_TIME_CROSS_SECTIONAL_BREADTH_TRANSITION",
+      "parameter_origin": "0.50 is the natural majority boundary, not an optimized threshold.",
+      "signal_strength": "breadth_24h(t) - breadth_24h(t-1)"
+    },
+    {
+      "event_rule": [
+        "return_72h < 0",
+        "low < prior_24h_low",
+        "close > prior_24h_low",
+        "close > open",
+        "turnover_ratio >= 2.0",
+        "emit only on first completed bar of a contiguous true condition"
+      ],
+      "family_id": "CAPITULATION_PARTICIPATION_RECLAIM",
+      "information_source": "DOWNTREND_LIQUIDITY_SWEEP_PLUS_WITHIN_ASSET_PARTICIPATION_SHOCK",
+      "parameter_origin": "This is not the old STRUCTURAL_REVERSAL definition: relative turnover shock is mandatory and is the new information source.",
+      "signal_strength": "(close-prior_24h_low) normalized by prior causal ATR24 when available; turnover_ratio is retained as a diagnostic field"
+    }
+  ],
+  "cell_qualification": {
+    "family_qualification": "all seven gates must pass in every C2/D2/E2 x ROBUSTNESS_2022/ROBUSTNESS_2023 cell",
+    "minimum_events": 20,
+    "minimum_pairs": 3,
+    "minimum_signal_days": 15,
+    "required_gates": [
+      "EVENT_COUNT_GTE_20",
+      "PAIR_COUNT_GTE_3",
+      "SIGNAL_DAY_COUNT_GTE_15",
+      "NET_72H_MEAN_GT_0",
+      "NET_72H_MEDIAN_GT_0",
+      "NET_168H_MEAN_GT_0",
+      "LOPO_72H_MIN_MEAN_GT_0"
+    ]
+  },
+  "data_contract": {
+    "2024_access_allowed": false,
+    "bar_timeframe": "1h",
+    "membership": "EXACT_EXISTING_POINT_IN_TIME_EFFECTIVE_MEMBERSHIP",
+    "periods": {
+      "ROBUSTNESS_2022": [
+        "2022-01-01T00:00:00Z",
+        "2023-01-01T00:00:00Z"
+      ],
+      "ROBUSTNESS_2023": [
+        "2023-01-01T00:00:00Z",
+        "2024-01-01T00:00:00Z"
+      ]
+    },
+    "post_2024_access_allowed": false,
+    "raw_inputs": "EXISTING_KUCOIN_1H_OHLCV_ONLY",
+    "selection_cutoff_exclusive": "2024-01-01T00:00:00Z",
+    "selection_start_inclusive": "2022-01-01T00:00:00Z",
+    "universes": [
+      "C2",
+      "D2",
+      "E2"
+    ]
+  },
+  "diagnostic_contract": {
+    "all_candidates_evaluated": true,
+    "base_round_trip_cost": 0.0025,
+    "cost_accounting": "replay-consistent entry-side and exit-side notional cost accounting",
+    "cost_multiplier": 2.0,
+    "historical_exit_simulation_executed": false,
+    "hypothetical_entry": "t+1h open",
+    "markout_horizons_hours_from_entry": [
+      24,
+      72,
+      168
+    ],
+    "portfolio_economics_executed": false,
+    "position_sizing_executed": false,
+    "signal_decision_clock": "completed 1h bar t"
+  },
+  "diagnostic_executed": false,
+  "economic_execution_performed": false,
+  "future_economic_contract": {
+    "2024_remains_final_clean_internal_confirmation": true,
+    "legacy_MB_RS_cannot_be_used_to_rescue_a_new_source_failure": true,
+    "not_authorized_in_rd35_discovery": true,
+    "qualified_new_sources_must_be_tested_standalone_before_any_union_with_legacy_MB_RS": true
+  },
+  "motivation": {
+    "historical_reuse_guard": "Do not relabel or re-open exact RD23 family definitions. RD23/RD25 already evaluated MOMENTUM_BREAKOUT, VOLATILITY_EXPANSION, STRUCTURAL_REVERSAL, RELATIVE_STRENGTH_ROTATION, MOMENTUM_ACCELERATION, and BASE_RANGE_BREAKOUT.",
+    "rd34_2023_all_rule_cells_qualified": true,
+    "rd34_common_failure_year": 2022,
+    "rd34_decision": "RD34_NEW_ALPHA_SOURCE_REQUIRED",
+    "rd34_selected_mb_rule": null,
+    "rd34_selected_rs_rule": null
+  },
+  "next_stage": "RD35_P1_IMPLEMENT_AND_TEST_NEW_ALPHA_SOURCE_ENGINE_PRE_DIAGNOSTIC_EXECUTION",
+  "post_2024_accessed": false,
+  "production_authorized": false,
+  "prohibited_candidate_mutations": [
+    "no parameter grid",
+    "no threshold sweep",
+    "no pair whitelist or blacklist",
+    "no calendar/year-specific rule",
+    "no candidate deletion after observing results",
+    "no candidate addition after observing results",
+    "no exit tuning",
+    "no sizing tuning",
+    "no portfolio routing in this discovery diagnostic",
+    "no leverage, margin, derivatives, or shorting",
+    "no 2024 or later access"
+  ],
+  "raw_market_data_loaded": false,
+  "research_question": "Can genuinely new causal OHLCV/PIT information sources produce positive post-cost forward edge in every C2/D2/E2 x 2022/2023 cell after MB/RS persistence failed uniformly in 2022?",
+  "schema_version": "rd35-p0-new-alpha-source-discovery-protocol-v1",
+  "selection_contract": {
+    "carry_forward": "ALL_AND_ONLY_QUALIFIED_NEW_SOURCE_FAMILIES",
+    "if_none_qualify": "RD36_EXTERNAL_OR_ADDITIONAL_DATA_ALPHA_SOURCE_REQUIRED",
+    "if_one_or_more_qualify": "RD35_FREEZE_QUALIFIED_NEW_ALPHA_SOURCES_PRE_ECONOMIC_REPLAY",
+    "minimum_qualified_families_for_progression": 1,
+    "return_ranking_used": false,
+    "winner_selection_used": false
+  },
+  "shared_causal_features": {
+    "close_location": "(close-low)/(high-low), or 0.5 when high==low",
+    "feature_ready": "all features required by a candidate are available and finite; turnover median must be >0",
+    "prior_24h_low": "low.shift(1).rolling(24).min()",
+    "prior_24h_turnover_median": "quote_turnover_proxy.shift(1).rolling(24).median()",
+    "prior_close": "close.shift(1)",
+    "quote_turnover_proxy": "close * volume",
+    "return_24h": "close / close.shift(24) - 1",
+    "return_6h": "close / close.shift(6) - 1",
+    "return_72h": "close / close.shift(72) - 1",
+    "turnover_ratio": "quote_turnover_proxy / prior_24h_turnover_median"
+  },
+  "source_rd34_results_commit": "b19dad77109975882576e17aad87abfda9785315",
+  "stage": "RD35_P0_NEW_ALPHA_SOURCE_DISCOVERY_PREREGISTRATION",
+  "status": "FROZEN_PRE_IMPLEMENTATION"
+}
