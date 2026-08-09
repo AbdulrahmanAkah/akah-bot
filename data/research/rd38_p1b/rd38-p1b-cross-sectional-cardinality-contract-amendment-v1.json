@@ -1,0 +1,77 @@
+{
+  "defect": {
+    "classification": "PRE_DATA_INTERNAL_CONTRACT_INCONSISTENCY",
+    "consequence_if_unamended": "Every C2/D2/E2 decision-hour cross section would be mechanically unevaluable because 10 valid members can never exist in a six-member snapshot.",
+    "frozen_membership_interface": "Each universe snapshot contains exactly six effective members by construction.",
+    "original_value": {
+      "missing_data_semantics.minimum_valid_cross_section_members": 10
+    }
+  },
+  "effective_amendment": {
+    "cross_section_completeness_rule": "ALL_SIX_PIT_MEMBERS_MUST_HAVE_VALID_REQUIRED_HISTORY; OTHERWISE_THE_DECISION_HOUR_IS_UNEVALUABLE_FOR_THAT_UNIVERSE",
+    "missing_data_semantics.minimum_valid_cross_section_members": 6,
+    "partial_cross_section_ranking": "FORBIDDEN",
+    "rank_denominator": 6,
+    "rank_ties": "AVERAGE_PERCENTILE_RANK"
+  },
+  "membership_loader_git_blob": "904a02ccec3db8c2c23a30200ba63a3a84cb4524",
+  "membership_loader_path": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+  "next_stage": "RD38_P2_FREEZE_AND_RUN_KUCOIN_NATIVE_CROSS_SECTIONAL_RESILIENCE_DIAGNOSTIC_2022_2023_ONCE",
+  "research_integrity": {
+    "2024_accessed": false,
+    "economic_execution_performed": false,
+    "events_observed": false,
+    "features_computed": false,
+    "forward_returns_computed": false,
+    "kucoin_prices_loaded": false,
+    "parameter_search_used": false,
+    "post_2024_accessed": false,
+    "production_authorized": false,
+    "raw_market_data_loaded": false,
+    "return_ranking_used": false,
+    "shadow_pnl_computed": false,
+    "threshold_optimization_used": false,
+    "winner_selection_used": false
+  },
+  "schema_version": "rd38-p1b-cross-sectional-cardinality-contract-amendment-v1",
+  "source_p1_freeze_commit": "0f7818c6d2794275be0109403e1410b410ce3d52",
+  "source_p1_protocol_git_blob": "17e38ddf8c693d7d634be4df7166b40dbf440549",
+  "source_p1_protocol_path": "data/research/rd38_p1/rd38-p1-kucoin-native-cross-sectional-resilience-information-source-preregistration-v1.json",
+  "source_p1_protocol_sha256": "2d9875180b0d21e113e8c136ad787298d4a4b6423d8f3ec6a10c5e2a17e0c313",
+  "stage": "RD38_P1B_PRE_DATA_CROSS_SECTIONAL_CARDINALITY_CONTRACT_AMENDMENT",
+  "status": "FROZEN_PRE_DATA_DIAGNOSTIC_AMENDMENT",
+  "unchanged_contract": {
+    "best_universe_cherry_picking": "FORBIDDEN",
+    "diagnostic_horizons_hours": [
+      6,
+      24,
+      72
+    ],
+    "event_semantics": "FALSE_TO_TRUE_STATE_ENTRY_ONLY",
+    "family_order": [
+      "PERSISTENT_RELATIVE_WEAKNESS",
+      "LEADERSHIP_BREAKDOWN",
+      "BREADTH_CONFIRMED_LAGGARD",
+      "RELATIVE_STRENGTH_RECLAIM_CONTROL"
+    ],
+    "negative_breadth_threshold": 0.6666666666666666,
+    "negative_cross_universe_rule": "AT_LEAST_2_OF_3_UNIVERSES_IN_2022_AND_AT_LEAST_2_OF_3_UNIVERSES_IN_2023",
+    "parameter_search": "FORBIDDEN",
+    "primary_horizon_hours": 24,
+    "rank_quartile_thresholds": [
+      0.25,
+      0.75
+    ],
+    "rd37_family_rescue": "FORBIDDEN",
+    "support_event_count": 30,
+    "support_pair_count": 10,
+    "support_signal_day_count": 20,
+    "threshold_optimization": "FORBIDDEN",
+    "trailing_return_horizons_hours": [
+      6,
+      24,
+      72
+    ],
+    "winner_selection_by_return": "FORBIDDEN"
+  }
+}
