@@ -1,0 +1,51 @@
+{
+  "all_gates_passed": false,
+  "decision": "RD37_BINANCE_SPOT_1M_MICROSTRUCTURE_SOURCE_INFEASIBLE",
+  "gate_count": 10,
+  "gates": [
+    {
+      "gate": "ALL_48_MONTHLY_ARCHIVES_PRESENT",
+      "passed": true
+    },
+    {
+      "gate": "ALL_48_ARCHIVE_CHECKSUMS_VERIFIED",
+      "passed": true
+    },
+    {
+      "gate": "ALL_ROWS_PARSE_TO_EXPECTED_1M_KLINE_SCHEMA",
+      "passed": false
+    },
+    {
+      "gate": "TIMESTAMPS_STRICTLY_INCREASING_PER_SYMBOL",
+      "passed": true
+    },
+    {
+      "gate": "NO_DUPLICATE_OPEN_TIMES_PER_SYMBOL",
+      "passed": true
+    },
+    {
+      "gate": "NO_NEGATIVE_REQUIRED_FLOW_FIELDS",
+      "passed": true
+    },
+    {
+      "gate": "BTC_CLOCK_COVERAGE_GTE_99P9_PCT",
+      "passed": true
+    },
+    {
+      "gate": "ETH_CLOCK_COVERAGE_GTE_99P9_PCT",
+      "passed": true
+    },
+    {
+      "gate": "ALL_GAPS_EXPLICITLY_LEDGERED",
+      "passed": true
+    },
+    {
+      "gate": "NO_2024_OR_POST_2024_MARKET_DATA_ACCESSED",
+      "passed": true
+    }
+  ],
+  "next_stage": "RD38_PREREGISTER_NEXT_SPOT_ONLY_ADAPTIVE_EXIT_INFORMATION_SOURCE",
+  "passed_gate_count": 9,
+  "schema_version": "rd37-p1-feasibility-gates-v1",
+  "stage": "RD37_P1_BINANCE_SPOT_1M_MICROSTRUCTURE_SOURCE_FEASIBILITY"
+}
