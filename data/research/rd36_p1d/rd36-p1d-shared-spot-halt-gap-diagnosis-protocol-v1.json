@@ -1,0 +1,81 @@
+{
+  "2024_accessed": false,
+  "alpha_feature_computation_allowed": false,
+  "alpha_results_observed": false,
+  "diagnosis_gates": [
+    "P1_FAILED_EXACTLY_TWO_CONTINUITY_GATES",
+    "P1_OTHER_EIGHT_GATES_PASS",
+    "BOTH_SYMBOLS_HAVE_EXACTLY_17519_HOURS",
+    "ONLY_2023_03_MONTH_HAS_ONE_ROW_DEFICIT_PER_SYMBOL",
+    "EACH_SYMBOL_HAS_EXACTLY_ONE_MISSING_MARCH_HOUR",
+    "MISSING_HOUR_IDENTICAL_ACROSS_BTC_ETH",
+    "MISSING_HOUR_INTERVAL_OVERLAPS_DOCUMENTED_SPOT_HALT",
+    "LOCAL_MARCH_ARCHIVES_MATCH_P1_VERIFIED_SHA256",
+    "NO_OTHER_MARCH_DUPLICATES_OR_OUT_OF_RANGE_TIMESTAMPS",
+    "NO_2024_OR_LATER_ACCESS"
+  ],
+  "diagnostic_question": "Are the two P1 continuity failures explained by one identical exchange-wide March 2023 missing hour in BTCUSDT and ETHUSDT that overlaps the documented Binance Spot halt, rather than independent archive corruption?",
+  "documented_external_event_window": {
+    "end_utc": "2023-03-24T14:00:00Z",
+    "evidence": [
+      {
+        "description": "Reported Binance spot markets suspended at 11:38 UTC on 2023-03-24 due to a software/matching-engine bug.",
+        "publisher": "CoinDesk",
+        "url": "https://www.coindesk.com/business/2023/03/24/binance-temporarily-suspends-spot-trading"
+      },
+      {
+        "description": "Reported Binance temporarily suspended spot trading on 2023-03-24 and later resumed after the glitch.",
+        "publisher": "TechCrunch",
+        "url": "https://techcrunch.com/2023/03/24/crypto-giant-binance-temporarily-suspends-spot-trading/"
+      }
+    ],
+    "start_utc": "2023-03-24T11:38:00Z"
+  },
+  "economic_execution_performed": false,
+  "economic_replay_allowed": false,
+  "exact_missing_timestamp_observed": false,
+  "forward_return_computation_allowed": false,
+  "future_gap_semantics_if_pass": {
+    "carry_forward_flow": "FORBIDDEN",
+    "feature_warmup_rule": "A feature with lookback L requires L consecutive observed Binance bars after any source gap before becoming valid.",
+    "forward_fill": "FORBIDDEN",
+    "imputation": "FORBIDDEN",
+    "missing_hour_state": "BINANCE_INFO_UNAVAILABLE",
+    "same_bar_cross_venue_use": "FORBIDDEN",
+    "target_execution_venue": "KUCOIN_SPOT"
+  },
+  "if_fail": "RD36_ALTERNATE_SPOT_MICROSTRUCTURE_SOURCE_FEASIBILITY_REQUIRED",
+  "if_pass": "RD36_SHARED_BINANCE_SPOT_HALT_GAP_CONFIRMED_SOURCE_USABLE_WITH_EXPLICIT_UNAVAILABLE_CLOCK",
+  "if_pass_next_stage": "RD36_P2_PREREGISTER_CROSS_VENUE_BINANCE_SPOT_FLOW_KUCOIN_NATIVE_ALPHA_ARCHITECTURE_WITH_GAP_SEMANTICS",
+  "inputs_allowed": [
+    "existing committed RD36 P1 feasibility artifacts",
+    "existing locally downloaded BTCUSDT 2023-03 Spot 1h archive",
+    "existing locally downloaded ETHUSDT 2023-03 Spot 1h archive",
+    "timestamps/open_time only from the raw archives"
+  ],
+  "known_before_exact_gap_diagnosis": {
+    "BTCUSDT_2023_03_rows": 743,
+    "BTCUSDT_full_period_rows": 17519,
+    "ETHUSDT_2023_03_rows": 743,
+    "ETHUSDT_full_period_rows": 17519,
+    "all_archives_checksums_and_schema_passed": true,
+    "expected_2023_03_rows": 744,
+    "p1_failed_gates": [
+      "EACH_SYMBOL_EXACT_17520_UNIQUE_HOURLY_OPEN_TIMES",
+      "NO_DUPLICATE_OR_NON_HOURLY_OPEN_TIMES"
+    ],
+    "p1_gate_count": 10,
+    "p1_passed_gate_count": 8
+  },
+  "network_access_allowed": false,
+  "network_access_performed": false,
+  "p1_result_remains": "RD36_ALTERNATE_SPOT_MICROSTRUCTURE_SOURCE_FEASIBILITY_REQUIRED",
+  "pass_requires_all_diagnosis_gates": true,
+  "post_2024_accessed": false,
+  "production_authorized": false,
+  "schema_version": "rd36-p1d-shared-spot-halt-gap-diagnosis-protocol-v1",
+  "source_p1_results_commit": "c117e31c0bc42fbdc3ea2381894f42d1bc45e1f4",
+  "source_p1_runner_freeze_commit": "bb07a5784467da64a13533f4b477d70b8209a444",
+  "stage": "RD36_P1D_SHARED_SPOT_HALT_GAP_DIAGNOSIS_PREREGISTRATION",
+  "status": "FROZEN_PRE_EXACT_GAP_DIAGNOSIS"
+}
