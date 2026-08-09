@@ -1,0 +1,118 @@
+{
+  "all_gates_passed": false,
+  "anomaly_count_per_symbol": {
+    "BTCUSDT": 1,
+    "ETHUSDT": 1
+  },
+  "anomaly_pattern_identical_btc_eth": false,
+  "close_time_failures": [
+    {
+      "month": "2023-03",
+      "symbol": "BTCUSDT"
+    },
+    {
+      "month": "2023-03",
+      "symbol": "ETHUSDT"
+    }
+  ],
+  "decision": "RD37_BINANCE_SPOT_1M_SOURCE_REJECTED_AFTER_MAINTENANCE_DIAGNOSIS",
+  "documented_maintenance_window": {
+    "end_utc_exclusive": "2023-03-24T14:00:00+00:00",
+    "source": "FROZEN_RD36_P1D_DIAGNOSIS",
+    "start_utc": "2023-03-24T11:38:00+00:00"
+  },
+  "gate_order": [
+    "P1_FAILED_EXACTLY_SCHEMA_NAMED_GATE",
+    "P1_OTHER_NINE_GATES_PASS",
+    "ALL_48_ARCHIVES_HAVE_TRUE_SCHEMA_PASS",
+    "CLOSE_TIME_FAILURE_CONFINED_TO_BTC_ETH_2023_03",
+    "SHARED_80_MINUTE_GAP_IDENTICAL_BTC_ETH",
+    "LOCAL_MARCH_ARCHIVES_MATCH_P1_VERIFIED_SHA256",
+    "CLOSE_TIME_ANOMALIES_IDENTICAL_BTC_ETH",
+    "CLOSE_TIME_ANOMALIES_CONFINED_TO_DOCUMENTED_MAINTENANCE_WINDOW",
+    "NO_OTHER_MARCH_CLOCK_OR_SCHEMA_CORRUPTION",
+    "NO_2024_OR_LATER_ACCESS"
+  ],
+  "gates": {
+    "ALL_48_ARCHIVES_HAVE_TRUE_SCHEMA_PASS": true,
+    "CLOSE_TIME_ANOMALIES_CONFINED_TO_DOCUMENTED_MAINTENANCE_WINDOW": true,
+    "CLOSE_TIME_ANOMALIES_IDENTICAL_BTC_ETH": false,
+    "CLOSE_TIME_FAILURE_CONFINED_TO_BTC_ETH_2023_03": true,
+    "LOCAL_MARCH_ARCHIVES_MATCH_P1_VERIFIED_SHA256": true,
+    "NO_2024_OR_LATER_ACCESS": true,
+    "NO_OTHER_MARCH_CLOCK_OR_SCHEMA_CORRUPTION": true,
+    "P1_FAILED_EXACTLY_SCHEMA_NAMED_GATE": true,
+    "P1_OTHER_NINE_GATES_PASS": true,
+    "SHARED_80_MINUTE_GAP_IDENTICAL_BTC_ETH": true
+  },
+  "march_checks": {
+    "BTCUSDT": {
+      "anomaly_count": 1,
+      "archive_sha256": "5591171a15f210af647a2fb68ab8cbad45a3a595cfe9a0eec9d06e5e84928bec",
+      "archive_sha_matches_p1": true,
+      "duplicate_count": 0,
+      "extra_open_count": 0,
+      "missing_first": "2023-03-24T12:40:00+00:00",
+      "missing_last": "2023-03-24T13:59:00+00:00",
+      "missing_open_count": 80,
+      "negative_flow_count": 0,
+      "non_increasing_count": 0,
+      "out_of_range_count": 0,
+      "p1_archive_sha256": "5591171a15f210af647a2fb68ab8cbad45a3a595cfe9a0eec9d06e5e84928bec",
+      "parse_error_count": 0,
+      "row_count": 44560,
+      "schema_error_count": 0,
+      "symbol": "BTCUSDT",
+      "unique_open_count": 44560
+    },
+    "ETHUSDT": {
+      "anomaly_count": 1,
+      "archive_sha256": "e2552c2298f4b67027bfa1f7da364b0d398e96a76dae8fa2085dddf357f60a69",
+      "archive_sha_matches_p1": true,
+      "duplicate_count": 0,
+      "extra_open_count": 0,
+      "missing_first": "2023-03-24T12:40:00+00:00",
+      "missing_last": "2023-03-24T13:59:00+00:00",
+      "missing_open_count": 80,
+      "negative_flow_count": 0,
+      "non_increasing_count": 0,
+      "out_of_range_count": 0,
+      "p1_archive_sha256": "e2552c2298f4b67027bfa1f7da364b0d398e96a76dae8fa2085dddf357f60a69",
+      "parse_error_count": 0,
+      "row_count": 44560,
+      "schema_error_count": 0,
+      "symbol": "ETHUSDT",
+      "unique_open_count": 44560
+    }
+  },
+  "next_stage": "RD38_PREREGISTER_NEXT_SPOT_ONLY_ADAPTIVE_EXIT_INFORMATION_SOURCE",
+  "p1_failed_gates": [
+    "ALL_ROWS_PARSE_TO_EXPECTED_1M_KLINE_SCHEMA"
+  ],
+  "p1_gate_count": 10,
+  "p1_passed_gate_count": 9,
+  "schema_version": "rd37-p1d-shared-maintenance-window-diagnosis-v1",
+  "shared_gap": {
+    "btc_source_range_end": "2023-03-24T13:59:00+00:00",
+    "btc_source_range_start": "2023-03-24T12:40:00+00:00",
+    "eth_source_range_end": "2023-03-24T13:59:00+00:00",
+    "eth_source_range_start": "2023-03-24T12:40:00+00:00",
+    "exact_range_match": "True",
+    "shared_gap_end": "2023-03-24T13:59:00+00:00",
+    "shared_gap_start": "2023-03-24T12:40:00+00:00",
+    "shared_missing_minute_count": "80"
+  },
+  "source_p1_results_commit": "4aa19f0bbe9323b345ebb5510537e4a798bdec06",
+  "source_semantics_if_pass": {
+    "backfill": "FORBIDDEN",
+    "carry_forward": "FORBIDDEN",
+    "forward_fill": "FORBIDDEN",
+    "future_feature_warmup": "Feature lookback L requires L consecutive observed post-maintenance 1m bars after 14:00 UTC.",
+    "imputation": "FORBIDDEN",
+    "observed_rows_inside_window_usable": false,
+    "same_bar_cross_venue_use": "FORBIDDEN",
+    "state": "BINANCE_INFO_UNAVAILABLE",
+    "unavailable_end_utc_exclusive": "2023-03-24T14:00:00+00:00",
+    "unavailable_start_utc": "2023-03-24T11:38:00+00:00"
+  }
+}
