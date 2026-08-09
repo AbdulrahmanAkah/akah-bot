@@ -1,0 +1,218 @@
+{
+  "candidate_families": [
+    {
+      "conditions": [
+        "return_24h < 0",
+        "percentile_rank_24h <= 0.25",
+        "percentile_rank_72h <= 0.25"
+      ],
+      "expected_future_direction": "NEGATIVE",
+      "family_id": "PERSISTENT_RELATIVE_WEAKNESS",
+      "role": "PRIMARY_NEGATIVE_EXIT_EVIDENCE"
+    },
+    {
+      "conditions": [
+        "percentile_rank_72h >= 0.75",
+        "percentile_rank_6h <= 0.25",
+        "return_6h < 0"
+      ],
+      "expected_future_direction": "NEGATIVE",
+      "family_id": "LEADERSHIP_BREAKDOWN",
+      "role": "PRIMARY_NEGATIVE_EXIT_EVIDENCE"
+    },
+    {
+      "conditions": [
+        "negative_breadth_24h >= 0.6666666666666666",
+        "return_24h < 0",
+        "percentile_rank_24h <= 0.25"
+      ],
+      "expected_future_direction": "NEGATIVE",
+      "family_id": "BREADTH_CONFIRMED_LAGGARD",
+      "role": "PRIMARY_NEGATIVE_EXIT_EVIDENCE"
+    },
+    {
+      "conditions": [
+        "percentile_rank_24h <= 0.25",
+        "percentile_rank_6h >= 0.75",
+        "return_6h > 0"
+      ],
+      "expected_future_direction": "POSITIVE",
+      "family_id": "RELATIVE_STRENGTH_RECLAIM_CONTROL",
+      "role": "POSITIVE_DIRECTIONAL_CONTROL_ONLY",
+      "selection_eligible": false
+    }
+  ],
+  "causal_clock": {
+    "decision_clock": "KUCOIN_SPOT_1H_OPEN_t",
+    "feature_snapshot_rule": "At decision open t, all return and rank features are computed only from bars closed no later than t-1 and from the PIT universe effective at t.",
+    "future_membership_use": "FORBIDDEN",
+    "latest_feature_bar": "COMPLETED_BAR_t_minus_1",
+    "lookahead": "FORBIDDEN",
+    "same_bar_close_use": "FORBIDDEN"
+  },
+  "design_role": "ASSET_SPECIFIC_RESILIENCE_EVIDENCE_LAYER_FOR_FUTURE_ADAPTIVE_EXIT_BRAIN;NOT_A_DIRECT_PRODUCTION_EXIT_RULE",
+  "diagnostic_plan": {
+    "economic_replay": "FORBIDDEN",
+    "entry_or_admission_changes": "FORBIDDEN",
+    "forward_return_formula": "open_(t+H) / open_t - 1",
+    "forward_return_start": "DECISION_OPEN_t_AFTER_FEATURES_END_AT_COMPLETED_t_minus_1",
+    "periods": [
+      "ROBUSTNESS_2022",
+      "ROBUSTNESS_2023"
+    ],
+    "portfolio_accounting": "FORBIDDEN",
+    "primary_horizon_hours": 24,
+    "target_exit_at_or_after_2024": "OMIT_MARKOUT",
+    "target_horizons_hours": [
+      6,
+      24,
+      72
+    ],
+    "target_venue": "KUCOIN_SPOT",
+    "universes": [
+      "C2",
+      "D2",
+      "E2"
+    ]
+  },
+  "event_semantics": {
+    "event_definition": "FALSE_TO_TRUE_STATE_ENTRY_ONLY",
+    "persistent_true_hours_count_as_new_events": false,
+    "same_pair_same_family_reentry": "ALLOWED_ONLY_AFTER_STATE_RETURNS_FALSE_THEN_TRUE"
+  },
+  "family_order": [
+    "PERSISTENT_RELATIVE_WEAKNESS",
+    "LEADERSHIP_BREAKDOWN",
+    "BREADTH_CONFIRMED_LAGGARD",
+    "RELATIVE_STRENGTH_RECLAIM_CONTROL"
+  ],
+  "feature_primitives": {
+    "cross_sectional_percentile_rank": {
+      "direction": "HIGHER_RETURN_EQUALS_HIGHER_RANK",
+      "domain": "[0,1]",
+      "horizons_hours": [
+        6,
+        24,
+        72
+      ],
+      "membership": "PIT_UNIVERSE_EFFECTIVE_AT_DECISION_t",
+      "ties": "AVERAGE_PERCENTILE_RANK"
+    },
+    "leadership_collapse_score": {
+      "formula": "percentile_rank_6h - percentile_rank_72h",
+      "interpretation": "strongly negative means recent leadership collapsed relative to the asset's medium-horizon standing"
+    },
+    "negative_breadth_24h": {
+      "domain": "[0,1]",
+      "formula": "fraction of valid PIT members with trailing 24h return < 0"
+    },
+    "trailing_returns": {
+      "formula": "r_H(t) = close_(t-1) / close_(t-1-H) - 1",
+      "horizons_hours": [
+        6,
+        24,
+        72
+      ]
+    }
+  },
+  "future_exit_brain_boundary": {
+    "diagnostic_success_required_before_shadow_ablation": true,
+    "freed_capital_reuse_in_first_shadow_test": "FORBIDDEN",
+    "p1_integration": "FORBIDDEN",
+    "production_authorization": false,
+    "qualified_family_mapping_to_exit_action": "MUST_BE_FROZEN_IN_A_LATER_STAGE_BEFORE_ANY_SHADOW_PNL"
+  },
+  "information_source": {
+    "allowed_raw_fields": [
+      "timestamp",
+      "open",
+      "high",
+      "low",
+      "close"
+    ],
+    "binance_data": "FORBIDDEN",
+    "data_frequency": "1h",
+    "derivatives_data": "FORBIDDEN",
+    "funding_rates": "FORBIDDEN",
+    "liquidation_data": "FORBIDDEN",
+    "membership_source": "FROZEN_POINT_IN_TIME_OPERATIONAL_UNIVERSE_MEMBERSHIP",
+    "network_access_in_p1": false,
+    "open_interest": "FORBIDDEN",
+    "source_type": "POINT_IN_TIME_CROSS_SECTIONAL_RELATIVE_RESILIENCE",
+    "venue": "KUCOIN_SPOT"
+  },
+  "lineage": {
+    "rd37_p5_decision": "RD37_UNION_STRESS_EXIT_SHADOW_FAILS_NO_FAMILY_WINNER_PICKING",
+    "rd37_p5_freeze_commit": "840b2b322e6917d8ebb9054ced2c91b242de0f68",
+    "rd37_p5_qualification_git_blob": "b108792f7018ad1ea150d4e7eafd08f22f6208c6",
+    "rd37_p5_report_git_blob": "ff70a87420746887191295037ce0785097e5e189",
+    "rd37_p5_results_commit": "00038552687ac26e734eb53897a14425d3d89aea",
+    "rd37_p5_selection_git_blob": "e0e19b77a0302482dd7e8a64618f0a8cb46196db"
+  },
+  "missing_data_semantics": {
+    "backfill": "FORBIDDEN",
+    "forward_fill": "FORBIDDEN",
+    "imputation": "FORBIDDEN",
+    "minimum_valid_cross_section_members": 10,
+    "rank_if_member_history_missing": "UNEVALUABLE",
+    "synthetic_zero_return": "FORBIDDEN"
+  },
+  "next_stage": "RD38_P2_FREEZE_AND_RUN_KUCOIN_NATIVE_CROSS_SECTIONAL_RESILIENCE_DIAGNOSTIC_2022_2023_ONCE",
+  "p1_observation_flags": {
+    "2024_accessed": false,
+    "economic_execution_performed": false,
+    "events_observed": false,
+    "features_computed": false,
+    "forward_returns_computed": false,
+    "kucoin_prices_loaded": false,
+    "parameter_search_used": false,
+    "post_2024_accessed": false,
+    "production_authorized": false,
+    "raw_market_data_loaded": false,
+    "return_ranking_used": false,
+    "shadow_pnl_computed": false,
+    "threshold_optimization_used": false,
+    "winner_selection_used": false
+  },
+  "positive_control_qualification": {
+    "cannot_advance_to_exit_integration": true,
+    "family_id": "RELATIVE_STRENGTH_RECLAIM_CONTROL",
+    "primary_24h_expectation": [
+      "mean_forward_return_24h > 0",
+      "median_forward_return_24h > 0"
+    ]
+  },
+  "primary_negative_family_qualification": {
+    "best_universe_cherry_picking": "FORBIDDEN",
+    "cross_universe_rule": "At least 2 of C2/D2/E2 must pass in 2022 and at least 2 of C2/D2/E2 must pass in 2023.",
+    "failed_family_rescue": "FORBIDDEN",
+    "per_universe_period_primary_24h": [
+      "mean_forward_return_24h < 0",
+      "median_forward_return_24h < 0",
+      "leave_one_pair_out_24h_mean_remains_below_0_for_every_eligible_pair_omission"
+    ],
+    "secondary_horizons": "6h and 72h are shape/stability diagnostics only and cannot rescue primary 24h failure.",
+    "winner_selection_by_return": "FORBIDDEN"
+  },
+  "research_reason": {
+    "individual_rd37_family_winner_picking": "FORBIDDEN",
+    "problem": "RD37 marketwide microstructure stress was not regime-stable as an unconditional early-exit trigger. The next source must measure whether the held asset itself is losing leadership inside the point-in-time spot universe rather than merely reacting to broad transient stress.",
+    "rd37_family_rescue": "FORBIDDEN",
+    "rd37_reuse_in_feature_logic": "FORBIDDEN",
+    "rd37_threshold_reuse_or_retuning": "FORBIDDEN"
+  },
+  "schema_version": "rd38-p1-kucoin-native-cross-sectional-resilience-information-source-preregistration-v1",
+  "stage": "RD38_P1_PREREGISTER_KUCOIN_NATIVE_CROSS_SECTIONAL_RESILIENCE_INFORMATION_SOURCE",
+  "status": "FROZEN_PRE_DATA_DIAGNOSTIC",
+  "support_gates": {
+    "minimum_event_count_per_universe_period": 30,
+    "minimum_pair_count_per_universe_period": 10,
+    "minimum_signal_day_count_per_universe_period": 20
+  },
+  "threshold_origin": {
+    "breadth_two_thirds": "STRUCTURAL_SUPERMAJORITY_CONTEXT_PREDECLARED_BEFORE_RESULTS",
+    "parameter_search": "FORBIDDEN",
+    "quartile_cutoffs": "STRUCTURAL_CROSS_SECTIONAL_QUARTILES_PREDECLARED_BEFORE_RESULTS",
+    "threshold_optimization": "FORBIDDEN"
+  }
+}
