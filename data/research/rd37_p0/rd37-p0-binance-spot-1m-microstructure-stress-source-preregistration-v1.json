@@ -1,0 +1,180 @@
+{
+  "allowed_source_fields": [
+    "open_time",
+    "open",
+    "high",
+    "low",
+    "close",
+    "quote_asset_volume",
+    "number_of_trades",
+    "taker_buy_quote_asset_volume"
+  ],
+  "candidate_information_families_pre_feasibility": [
+    {
+      "concept": "Within-hour downside semivariance / realized-volatility imbalance and negative jump concentration.",
+      "exact_thresholds_frozen_now": false,
+      "family_id": "INTRAHOUR_DOWNSIDE_STRESS",
+      "inputs": [
+        "1m_ohlc"
+      ],
+      "selection_influence_in_p1": false
+    },
+    {
+      "concept": "Short-horizon acceleration of taker-sell quote flow relative to its own strictly prior baseline.",
+      "exact_thresholds_frozen_now": false,
+      "family_id": "SELL_FLOW_IMPULSE",
+      "inputs": [
+        "1m_quote_asset_volume",
+        "1m_taker_buy_quote_asset_volume"
+      ],
+      "selection_influence_in_p1": false
+    },
+    {
+      "concept": "Robust strictly-prior standardized burst in spot volume and trade intensity.",
+      "exact_thresholds_frozen_now": false,
+      "family_id": "PARTICIPATION_BURST",
+      "inputs": [
+        "1m_quote_asset_volume",
+        "1m_number_of_trades"
+      ],
+      "selection_influence_in_p1": false
+    },
+    {
+      "concept": "Price-path failure to recover after an intrahour downside impulse while sell-side taker pressure remains elevated.",
+      "exact_thresholds_frozen_now": false,
+      "family_id": "FAILED_INTRAHOUR_RECOVERY",
+      "inputs": [
+        "1m_ohlc",
+        "1m_taker_flow"
+      ],
+      "selection_influence_in_p1": false
+    }
+  ],
+  "future_post_feasibility_rule": {
+    "if_p1_fails": "Reject this source architecture without threshold search and move to the next spot-only adaptive-exit information source.",
+    "if_p1_passes": "Preregister exact causal 1m-to-hour stress transforms, thresholds, state-entry semantics, and KuCoin t+1h target mapping before observing any target returns."
+  },
+  "lineage": {
+    "rd36_p3_decision": "RD36_CROSS_VENUE_FLOW_ALPHA_UNQUALIFIED_NEXT_SOURCE_REQUIRED",
+    "rd36_p3_freeze_commit": "385e762df528f1734fcda30a79551a8e8b7c0267",
+    "rd36_p3_report_git_blob": "a89536435050ef3c922c346f5560e4cb0dabbe1c",
+    "rd36_p3_report_path": "data/research/rd36_p3_runtime/rd36-p3-cross-venue-flow-state-diagnostic-report-v1.json",
+    "rd36_p3_results_commit": "b51bb98cab0487a47a27a922e97770af5577cd57"
+  },
+  "next_stage": "RD37_P1_DOWNLOAD_AND_AUDIT_BINANCE_SPOT_1M_MICROSTRUCTURE_SOURCE_2022_2023",
+  "p1_feasibility_contract": {
+    "2024_market_data_allowed": false,
+    "alpha_results_allowed": false,
+    "archives_expected": 48,
+    "checksum_sidecars_required": true,
+    "download_only_from_official_binance_public_archive": true,
+    "duplicate_open_times_allowed": false,
+    "economic_replay_allowed": false,
+    "feature_computation_allowed": false,
+    "forward_returns_allowed": false,
+    "gap_backfill": "FORBIDDEN",
+    "gap_forward_fill": "FORBIDDEN",
+    "gap_imputation": "FORBIDDEN",
+    "interval": "1m",
+    "market_data_download_allowed": true,
+    "minimum_symbol_clock_coverage_ratio": 0.999,
+    "months": 24,
+    "negative_volume_or_trade_fields_allowed": false,
+    "post_2024_market_data_allowed": false,
+    "production_authorization": false,
+    "shared_gap_detection_required": true,
+    "source_gaps_must_be_explicitly_ledgered": true,
+    "stage": "RD37_P1_DOWNLOAD_AND_AUDIT_BINANCE_SPOT_1M_MICROSTRUCTURE_SOURCE_2022_2023",
+    "symbols": [
+      "BTCUSDT",
+      "ETHUSDT"
+    ],
+    "timestamps_strictly_increasing": true
+  },
+  "p1_feasibility_gates": [
+    "ALL_48_MONTHLY_ARCHIVES_PRESENT",
+    "ALL_48_ARCHIVE_CHECKSUMS_VERIFIED",
+    "ALL_ROWS_PARSE_TO_EXPECTED_1M_KLINE_SCHEMA",
+    "TIMESTAMPS_STRICTLY_INCREASING_PER_SYMBOL",
+    "NO_DUPLICATE_OPEN_TIMES_PER_SYMBOL",
+    "NO_NEGATIVE_REQUIRED_FLOW_FIELDS",
+    "BTC_CLOCK_COVERAGE_GTE_99P9_PCT",
+    "ETH_CLOCK_COVERAGE_GTE_99P9_PCT",
+    "ALL_GAPS_EXPLICITLY_LEDGERED",
+    "NO_2024_OR_POST_2024_MARKET_DATA_ACCESSED"
+  ],
+  "prohibited_source_inputs": [
+    "futures",
+    "perpetual_funding",
+    "open_interest",
+    "liquidations",
+    "options",
+    "margin_account_data",
+    "private_user_data",
+    "unarchived_historical_book_ticker"
+  ],
+  "rd36_failure_learned_without_reuse": {
+    "interpretation": "RD36 frozen hourly state definitions were too sparse for qualification. RD37 does not relax, retune, rescue, or reuse those failed thresholds.",
+    "qualified_control_family_count": 0,
+    "qualified_primary_family_count": 0,
+    "rd36_family_rescue": "FORBIDDEN",
+    "rd36_threshold_reoptimization": "FORBIDDEN",
+    "source_state_count": 6
+  },
+  "research_integrity": {
+    "2024_access_in_p0": false,
+    "alpha_results_observed_in_p0": false,
+    "economic_execution_in_p0": false,
+    "feature_computation_in_p0": false,
+    "forward_return_computation_in_p0": false,
+    "parameter_search_in_p0": false,
+    "post_2024_access_in_p0": false,
+    "production_authorized": false,
+    "winner_selection_in_p0": false
+  },
+  "research_objective": "Evaluate whether higher-frequency spot-only microstructure-stress information can provide a sufficiently frequent and causal state layer for the future adaptive KuCoin Spot exit brain after the RD36 hourly BTC/ETH flow state was rejected for insufficient qualified support.",
+  "schema_version": "rd37-p0-binance-spot-1m-microstructure-stress-source-preregistration-v1",
+  "source_selection": {
+    "dataset": "KLINES",
+    "interval": "1m",
+    "market": "SPOT",
+    "monthly_archive_count_expected": 48,
+    "official_archive_checksum_required": true,
+    "period_end_exclusive": "2024-01-01T00:00:00Z",
+    "period_start": "2022-01-01T00:00:00Z",
+    "provider": "BINANCE_PUBLIC_DATA",
+    "reason": "1m Spot klines provide OHLC, quote-volume, trade-count, and taker-buy flow fields at a materially faster clock than RD36 while remaining spot-only and compact enough for deterministic 2022-2023 research.",
+    "symbols": [
+      "BTCUSDT",
+      "ETHUSDT"
+    ]
+  },
+  "stage": "RD37_P0_BINANCE_SPOT_1M_MICROSTRUCTURE_STRESS_SOURCE_PREREGISTRATION",
+  "status": "FROZEN_PRE_SOURCE_DOWNLOAD",
+  "venue_separation": {
+    "binance_may_not_supply": [
+      "target_execution_price",
+      "target_forward_return",
+      "target_cost_model",
+      "target_universe_membership",
+      "portfolio_pnl",
+      "position_accounting"
+    ],
+    "binance_may_supply": [
+      "high_frequency_spot_stress_state",
+      "spot_taker_flow_state",
+      "spot_participation_state",
+      "spot_price_path_stress_state"
+    ],
+    "information_venue": "BINANCE_SPOT",
+    "kucoin_only_roles": [
+      "point_in_time_universe_membership",
+      "target_reference_price",
+      "forward_returns",
+      "cost_model",
+      "economic_replay",
+      "portfolio_accounting"
+    ],
+    "target_venue": "KUCOIN_SPOT"
+  }
+}
