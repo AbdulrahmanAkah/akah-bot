@@ -1,0 +1,82 @@
+{
+  "all_gates_passed": true,
+  "decision": "RD36_SHARED_BINANCE_SPOT_HALT_GAP_CONFIRMED_SOURCE_USABLE_WITH_EXPLICIT_UNAVAILABLE_CLOCK",
+  "documented_outage_window": {
+    "end_utc": "2023-03-24T14:00:00+00:00",
+    "source_basis": [
+      {
+        "event": "Binance suspended spot markets at 11:38 UTC on 2023-03-24",
+        "publisher": "CoinDesk"
+      },
+      {
+        "event": "Binance spot trading outage caused by matching-engine bug on 2023-03-24",
+        "publisher": "TechCrunch"
+      }
+    ],
+    "start_utc": "2023-03-24T11:38:00+00:00"
+  },
+  "gate_order": [
+    "P1_FAILED_EXACTLY_TWO_CONTINUITY_GATES",
+    "P1_OTHER_EIGHT_GATES_PASS",
+    "BOTH_SYMBOLS_HAVE_EXACTLY_17519_HOURS",
+    "ONLY_2023_03_MONTH_HAS_ONE_ROW_DEFICIT_PER_SYMBOL",
+    "EACH_SYMBOL_HAS_EXACTLY_ONE_MISSING_MARCH_HOUR",
+    "MISSING_HOUR_IDENTICAL_ACROSS_BTC_ETH",
+    "MISSING_HOUR_INTERVAL_OVERLAPS_DOCUMENTED_SPOT_HALT",
+    "LOCAL_MARCH_ARCHIVES_MATCH_P1_VERIFIED_SHA256",
+    "NO_OTHER_MARCH_DUPLICATES_OR_OUT_OF_RANGE_TIMESTAMPS",
+    "NO_2024_OR_LATER_ACCESS"
+  ],
+  "gates": {
+    "BOTH_SYMBOLS_HAVE_EXACTLY_17519_HOURS": true,
+    "EACH_SYMBOL_HAS_EXACTLY_ONE_MISSING_MARCH_HOUR": true,
+    "LOCAL_MARCH_ARCHIVES_MATCH_P1_VERIFIED_SHA256": true,
+    "MISSING_HOUR_IDENTICAL_ACROSS_BTC_ETH": true,
+    "MISSING_HOUR_INTERVAL_OVERLAPS_DOCUMENTED_SPOT_HALT": true,
+    "NO_2024_OR_LATER_ACCESS": true,
+    "NO_OTHER_MARCH_DUPLICATES_OR_OUT_OF_RANGE_TIMESTAMPS": true,
+    "ONLY_2023_03_MONTH_HAS_ONE_ROW_DEFICIT_PER_SYMBOL": true,
+    "P1_FAILED_EXACTLY_TWO_CONTINUITY_GATES": true,
+    "P1_OTHER_EIGHT_GATES_PASS": true
+  },
+  "next_stage": "RD36_P2_PREREGISTER_CROSS_VENUE_BINANCE_SPOT_FLOW_KUCOIN_NATIVE_ALPHA_ARCHITECTURE_WITH_GAP_SEMANTICS",
+  "p1_failed_gates": [
+    "EACH_SYMBOL_EXACT_17520_UNIQUE_HOURLY_OPEN_TIMES",
+    "NO_DUPLICATE_OR_NON_HOURLY_OPEN_TIMES"
+  ],
+  "schema_version": "rd36-p1d-shared-gap-diagnosis-v1",
+  "shared_missing_open_time": "2023-03-24T13:00:00+00:00",
+  "source_p1_results_commit": "c117e31c0bc42fbdc3ea2381894f42d1bc45e1f4",
+  "symbols": {
+    "BTCUSDT": {
+      "local_archive_matches_p1_sha256": true,
+      "local_archive_sha256": "7f2afb8e0179a57ac31eab5205660298ba5eb77039ac2e21aef9b715ff3d06ce",
+      "march_duplicate_count": 0,
+      "march_extra_timestamps": [],
+      "march_missing_timestamps": [
+        "2023-03-24T13:00:00+00:00"
+      ],
+      "march_observed_rows": 743,
+      "march_unique_rows": 743,
+      "p1_full_period_row_count": 17519,
+      "p1_march_archive_row_count": 743,
+      "p1_march_expected_hours": 744,
+      "p1_verified_archive_sha256": "7f2afb8e0179a57ac31eab5205660298ba5eb77039ac2e21aef9b715ff3d06ce"
+    },
+    "ETHUSDT": {
+      "local_archive_matches_p1_sha256": true,
+      "local_archive_sha256": "90d268be1e0d39f7411f88ca3c0f21fe110fee7ff3c1dd054555e1fea6e22d8d",
+      "march_duplicate_count": 0,
+      "march_extra_timestamps": [],
+      "march_missing_timestamps": [
+        "2023-03-24T13:00:00+00:00"
+      ],
+      "march_observed_rows": 743,
+      "march_unique_rows": 743,
+      "p1_full_period_row_count": 17519,
+      "p1_march_archive_row_count": 743,
+      "p1_march_expected_hours": 744,
+      "p1_verified_archive_sha256": "90d268be1e0d39f7411f88ca3c0f21fe110fee7ff3c1dd054555e1fea6e22d8d"
+    }
+  }
+}

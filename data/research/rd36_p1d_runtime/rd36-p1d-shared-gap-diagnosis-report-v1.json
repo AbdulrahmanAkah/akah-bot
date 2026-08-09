@@ -1,0 +1,31 @@
+{
+  "2024_accessed": false,
+  "alpha_features_computed": false,
+  "alpha_results_observed": false,
+  "binance_forward_returns_observed": false,
+  "decision": "RD36_SHARED_BINANCE_SPOT_HALT_GAP_CONFIRMED_SOURCE_USABLE_WITH_EXPLICIT_UNAVAILABLE_CLOCK",
+  "diagnosis_passed": true,
+  "economic_execution_performed": false,
+  "gate_count": 10,
+  "kucoin_forward_returns_observed": false,
+  "network_access_performed": false,
+  "next_stage": "RD36_P2_PREREGISTER_CROSS_VENUE_BINANCE_SPOT_FLOW_KUCOIN_NATIVE_ALPHA_ARCHITECTURE_WITH_GAP_SEMANTICS",
+  "passed_gate_count": 10,
+  "post_2024_accessed": false,
+  "production_authorized": false,
+  "runner_freeze_commit": "6c384e80cd7ec6ddb246c374754cb5145df23e67",
+  "schema_version": "rd36-p1d-shared-gap-diagnosis-report-v1",
+  "shared_missing_open_time": "2023-03-24T13:00:00+00:00",
+  "source_gap_semantics_if_pass": {
+    "carry_forward_flow": "FORBIDDEN",
+    "forward_fill": "FORBIDDEN",
+    "future_feature_warmup": "A feature with lookback L requires L consecutive observed Binance bars after any source gap before becoming valid.",
+    "imputation": "FORBIDDEN",
+    "kucoin_target_execution_venue": "KUCOIN_SPOT",
+    "missing_binance_hour_state": "BINANCE_INFO_UNAVAILABLE",
+    "same_bar_cross_venue_use": "FORBIDDEN"
+  },
+  "source_p1_results_commit": "c117e31c0bc42fbdc3ea2381894f42d1bc45e1f4",
+  "stage": "RD36_P1D_SHARED_SPOT_HALT_GAP_DIAGNOSIS",
+  "status": "PASS"
+}
