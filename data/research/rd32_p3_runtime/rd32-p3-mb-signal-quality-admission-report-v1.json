@@ -1,0 +1,155 @@
+{
+  "2022_2023_used_for_architecture_selection": true,
+  "2024_accessed": false,
+  "candidate_parameters_changed_after_economic_execution": false,
+  "control_parity_vs_rd31": {
+    "current_policy": "RD31_REGIME_HYSTERESIS_CONTROL",
+    "maximum_numeric_absolute_error": 1.4551915228366852e-11,
+    "passed": true,
+    "row_count": 18,
+    "source_policy": "REGIME_HYSTERESIS_ADMISSION_GOVERNOR"
+  },
+  "decision": "RD32_MB_SIGNAL_QUALITY_ADMISSION_NO_FINALIST_SIGNAL_FAMILY_ARCHITECTURE_REDESIGN_REQUIRED",
+  "hard_gate_count": 16,
+  "mb_2x_period_net_pnl": {
+    "MB_BREADTH_ACCELERATION_CONFIRMATION": {
+      "C2": {
+        "ROBUSTNESS_2022": -12022.057302779755,
+        "ROBUSTNESS_2023": 33978.21133595537
+      },
+      "D2": {
+        "ROBUSTNESS_2022": -12022.057302779755,
+        "ROBUSTNESS_2023": 38208.30949879402
+      },
+      "E2": {
+        "ROBUSTNESS_2022": -12022.057302779755,
+        "ROBUSTNESS_2023": 46529.73493556415
+      }
+    },
+    "MB_CROSS_SECTIONAL_BREAKOUT_LEADER": {
+      "C2": {
+        "ROBUSTNESS_2022": -18897.375631529627,
+        "ROBUSTNESS_2023": 31784.396993988208
+      },
+      "D2": {
+        "ROBUSTNESS_2022": -18897.375631529627,
+        "ROBUSTNESS_2023": 33942.26996139992
+      },
+      "E2": {
+        "ROBUSTNESS_2022": -18897.375631529627,
+        "ROBUSTNESS_2023": 37436.92644450963
+      }
+    },
+    "MB_RELATIVE_STRENGTH_LEADER_CONFIRMATION": {
+      "C2": {
+        "ROBUSTNESS_2022": -10948.320059536083,
+        "ROBUSTNESS_2023": 35628.53439488757
+      },
+      "D2": {
+        "ROBUSTNESS_2022": -10948.320059536083,
+        "ROBUSTNESS_2023": 33649.60149386377
+      },
+      "E2": {
+        "ROBUSTNESS_2022": -10948.320059536083,
+        "ROBUSTNESS_2023": 33003.13787522919
+      }
+    },
+    "RD31_REGIME_HYSTERESIS_CONTROL": {
+      "C2": {
+        "ROBUSTNESS_2022": -18701.587533997932,
+        "ROBUSTNESS_2023": 32260.904045993855
+      },
+      "D2": {
+        "ROBUSTNESS_2022": -18701.587533997932,
+        "ROBUSTNESS_2023": 36110.25313207597
+      },
+      "E2": {
+        "ROBUSTNESS_2022": -18701.587533997932,
+        "ROBUSTNESS_2023": 38134.665858602944
+      }
+    }
+  },
+  "next_stage": "RD33_SIGNAL_FAMILY_ARCHITECTURE_REDESIGN_REQUIRED",
+  "p2c_freeze_commit": "c23659615c2e96c357cb4b3545a2b205b22e5a7a",
+  "policy_summaries": {
+    "MB_BREADTH_ACCELERATION_CONFIRMATION": {
+      "minimum_2x_trade_count": 157,
+      "worst_universe_2x_maximum_drawdown": 0.16689410265887106,
+      "worst_universe_2x_net_return": 0.16666481698233593,
+      "worst_universe_2x_profit_factor": 1.2011969624317815
+    },
+    "MB_CROSS_SECTIONAL_BREAKOUT_LEADER": {
+      "minimum_2x_trade_count": 160,
+      "worst_universe_2x_maximum_drawdown": 0.1655108424551275,
+      "worst_universe_2x_net_return": 0.17642061878159243,
+      "worst_universe_2x_profit_factor": 1.21500126964617
+    },
+    "MB_RELATIVE_STRENGTH_LEADER_CONFIRMATION": {
+      "minimum_2x_trade_count": 109,
+      "worst_universe_2x_maximum_drawdown": 0.21900660784843778,
+      "worst_universe_2x_net_return": 0.22201605056535034,
+      "worst_universe_2x_profit_factor": 1.3916158689301654
+    },
+    "RD31_REGIME_HYSTERESIS_CONTROL": {
+      "minimum_2x_trade_count": 169,
+      "worst_universe_2x_maximum_drawdown": 0.19669431372912596,
+      "worst_universe_2x_net_return": 0.12028481914278322,
+      "worst_universe_2x_profit_factor": 1.138721406757252
+    }
+  },
+  "post_2024_accessed": false,
+  "production_authorized": false,
+  "required_pit_feature_pair_count": 21,
+  "research_logic_changed_after_economic_execution": false,
+  "rs_only_invariance": {
+    "metric_comparison_rows": 18,
+    "metric_comparisons": [
+      {
+        "maximum_numeric_absolute_error": 0.0,
+        "passed": true,
+        "policy_id": "MB_CROSS_SECTIONAL_BREAKOUT_LEADER",
+        "row_count": 6
+      },
+      {
+        "maximum_numeric_absolute_error": 0.0,
+        "passed": true,
+        "policy_id": "MB_BREADTH_ACCELERATION_CONFIRMATION",
+        "row_count": 6
+      },
+      {
+        "maximum_numeric_absolute_error": 0.0,
+        "passed": true,
+        "policy_id": "MB_RELATIVE_STRENGTH_LEADER_CONFIRMATION",
+        "row_count": 6
+      }
+    ],
+    "passed": true,
+    "rs_path_changed": false,
+    "trade_comparisons": [
+      {
+        "maximum_numeric_absolute_error": 0.0,
+        "passed": true,
+        "policy_id": "MB_CROSS_SECTIONAL_BREAKOUT_LEADER",
+        "trade_row_count": 608
+      },
+      {
+        "maximum_numeric_absolute_error": 0.0,
+        "passed": true,
+        "policy_id": "MB_BREADTH_ACCELERATION_CONFIRMATION",
+        "trade_row_count": 608
+      },
+      {
+        "maximum_numeric_absolute_error": 0.0,
+        "passed": true,
+        "policy_id": "MB_RELATIVE_STRENGTH_LEADER_CONFIRMATION",
+        "trade_row_count": 608
+      }
+    ]
+  },
+  "runner_freeze_commit": "d94a9a101efd3fce58b6a1881381c9e8cfad1512",
+  "schema_version": "rd32-p3-mb-signal-quality-admission-report-v1",
+  "selected_policy": null,
+  "signal_event_count_2022_2023": 7073,
+  "stage": "RD32_P3_MB_SIGNAL_QUALITY_ADMISSION_2022_2023",
+  "status": "PASS"
+}
