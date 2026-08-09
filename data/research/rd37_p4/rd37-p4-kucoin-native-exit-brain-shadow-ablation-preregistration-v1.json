@@ -1,0 +1,241 @@
+{
+  "control": {
+    "admissions_fixed": true,
+    "cost_multipliers": [
+      1.0,
+      2.0
+    ],
+    "entries_fixed": true,
+    "entry_costs_fixed": true,
+    "entry_prices_fixed": true,
+    "exit_reasons": [
+      "TIME_FAILURE_72H_CLOSE_NOT_ABOVE_ENTRY",
+      "MAX_HOLD_168H"
+    ],
+    "periods": [
+      "ROBUSTNESS_2022",
+      "ROBUSTNESS_2023"
+    ],
+    "policy_id": "RD31_REGIME_HYSTERESIS_CONTROL",
+    "portfolio_id": "UNION_FOCUS",
+    "profit_state_enabled": false,
+    "quantities_fixed": true,
+    "signal_generation_fixed": true,
+    "trade_set_fixed": true,
+    "universes": [
+      "C2",
+      "D2",
+      "E2"
+    ]
+  },
+  "freed_slot_control": {
+    "cash_redeployment": "FORBIDDEN",
+    "compounding_from_early_exit": "FORBIDDEN",
+    "control_future_trade_set_changed": false,
+    "new_entries_created": false,
+    "notional_resizing": "FORBIDDEN",
+    "purpose": "ISOLATE_EXIT_TIMING_VALUE_BEFORE_FULL_DYNAMIC_REPLAY",
+    "slot_escrow_until": "ORIGINAL_CONTROL_EXIT_TIME"
+  },
+  "lineage": {
+    "rd30_exit_engine_git_blob": "285caf6b4a2a17903c2d0584229802ac15871d85",
+    "rd31_replay_git_blob": "0a8a56904b0dc200ad516666a0749c3472e59e91",
+    "rd32_results_commit": "bac6c7ba6ddf63a58676b5e18b516061d1969bb1",
+    "rd32_trade_ledger_frozen_sha256": "07f49e0e9235f736f54ee9dd59142c16fc4e7b99e83781b1ee26b9338def117e",
+    "rd32_trade_ledger_git_blob": "6749de85cb14733388e0f76a6557124d3212398b",
+    "rd32_trade_ledger_path": "data/research/rd32_p3_runtime/trade-ledger.csv",
+    "rd33_control_parity_git_blob": "8df58c1f7ea451f7c891f7fc3444d5f330d7852a",
+    "rd37_p2_freeze_commit": "8fedf7a7b42678daca132b7b3956a9dc6323cb7d",
+    "rd37_p3_episode_ledger_git_blob": "f02a2bf0cd9211db9656df630afd9773f951b3f6",
+    "rd37_p3_freeze_commit": "602dbc3e39db52ba95357b39a24e2b844850562a",
+    "rd37_p3_qualified_git_blob": "d8c842c6b5a4479f2562fd7052837c833818148a",
+    "rd37_p3_report_git_blob": "2487d464f360aa255592e269c88fa04fd6e6c447",
+    "rd37_p3_results_commit": "0ecb07a494a1b67cf545821bd928593e10b86a5f"
+  },
+  "next_stage": "RD37_P5_FREEZE_AND_RUN_KUCOIN_NATIVE_EXIT_BRAIN_SHADOW_ABLATION_2022_2023_ONCE",
+  "objective": "Measure pure KuCoin-native exit-timing value from the three qualified RD37 microstructure stress families without changing the frozen control entry path, admission path, sizing, quantities, or freed-slot capital reuse.",
+  "p4_observation_flags": {
+    "2024_accessed": false,
+    "capital_reuse_executed": false,
+    "economic_execution_performed": false,
+    "kucoin_prices_loaded": false,
+    "p5_results_observed": false,
+    "parameter_search_used": false,
+    "post_2024_accessed": false,
+    "production_authorized": false,
+    "raw_market_data_loaded": false,
+    "return_ranking_used": false,
+    "shadow_pnl_computed": false,
+    "threshold_optimization_used": false,
+    "winner_selection_used": false
+  },
+  "p5_boundaries": {
+    "2024_access": false,
+    "capital_reuse": false,
+    "full_dynamic_portfolio_replay": false,
+    "kucoin_local_price_access": true,
+    "network_access": false,
+    "parameter_search": false,
+    "post_2024_access": false,
+    "production_authorization": false,
+    "raw_binance_reload": false,
+    "rd37_episode_recomputation": false,
+    "rd37_feature_recomputation": false,
+    "return_ranking": false,
+    "shadow_economic_counterfactual": true,
+    "threshold_optimization": false,
+    "winner_selection": false
+  },
+  "p5_primary_union_gates": {
+    "cross_universe_rule": "All three universes must pass the overall gates and both years must pass the frozen 2-of-3 period rule at both cost multipliers.",
+    "failure_decision": "RD37_UNION_STRESS_EXIT_SHADOW_FAILS_NO_FAMILY_WINNER_PICKING",
+    "failure_next_stage": "RD38_PREREGISTER_NEXT_SPOT_ONLY_ADAPTIVE_EXIT_INFORMATION_SOURCE",
+    "individual_family_variants_cannot_rescue_failure": true,
+    "minimum_triggered_trades_per_universe_per_period": {
+      "1x": 20,
+      "2x": 20
+    },
+    "only_primary_variant_can_advance": "RD37_QUALIFIED_STRESS_UNION_SHADOW",
+    "overall_each_universe_requires": [
+      "TOTAL_DELTA_NET_PNL_1X_GT_0",
+      "TOTAL_DELTA_NET_PNL_2X_GT_0",
+      "MINIMUM_LOAO_TOTAL_DELTA_NET_PNL_1X_GT_0",
+      "MINIMUM_LOAO_TOTAL_DELTA_NET_PNL_2X_GT_0"
+    ],
+    "participation_context_cannot_rescue_failure": true,
+    "period_rule": "For each of 2022 and 2023, total delta net pnl must be > 0 in at least 2 of C2/D2/E2 at 1x and at least 2 of C2/D2/E2 at 2x.",
+    "success_decision": "RD37_UNION_STRESS_EXIT_SHADOW_ADDS_ROBUST_VALUE_PRE_FULL_REPLAY",
+    "success_next_stage": "RD37_P6_PREREGISTER_CAPITAL_REUSE_AWARE_FULL_EXIT_POLICY_REPLAY"
+  },
+  "p5_reporting": {
+    "attribution_slices": [
+      "PERIOD",
+      "UNIVERSE",
+      "COST_MULTIPLIER",
+      "SUPPORT_FAMILY_BUCKET",
+      "CONTROL_EXIT_REASON",
+      "TRIGGER_FAMILY",
+      "PARTICIPATION_CONTEXT_DESCRIPTIVE_ONLY"
+    ],
+    "primary_variant": "RD37_QUALIFIED_STRESS_UNION_SHADOW",
+    "run_metrics": [
+      "control_trade_count",
+      "triggered_trade_count",
+      "triggered_trade_share",
+      "total_control_net_pnl",
+      "total_shadow_net_pnl",
+      "total_delta_net_pnl",
+      "mean_triggered_delta_net_pnl",
+      "median_triggered_delta_net_pnl",
+      "positive_triggered_delta_share",
+      "p10_triggered_delta_net_pnl",
+      "loss_pool_reduction",
+      "positive_pnl_pool_change",
+      "largest_single_trade_delta_share_of_positive_delta_pool",
+      "minimum_leave_one_asset_out_total_delta_net_pnl"
+    ],
+    "trade_metrics": [
+      "trigger_family_set",
+      "shadow_exit_time",
+      "control_exit_time",
+      "exit_advance_hours",
+      "control_net_pnl",
+      "shadow_net_pnl",
+      "delta_net_pnl",
+      "participation_burst_at_trigger",
+      "support_families",
+      "control_exit_reason"
+    ],
+    "variants": [
+      "CONTROL_NO_RD37_EXIT",
+      "RD37_DOWNSIDE_STRESS_SHADOW",
+      "RD37_SELL_FLOW_IMPULSE_SHADOW",
+      "RD37_FAILED_RECOVERY_SHADOW",
+      "RD37_QUALIFIED_STRESS_UNION_SHADOW"
+    ]
+  },
+  "qualified_information": {
+    "context_only_family": "PARTICIPATION_BURST",
+    "episode_semantics": "EPISODE_ENTRY_ONLY",
+    "episode_source": "data/research/rd37_p3_runtime/episode-ledger.csv",
+    "families": [
+      "INTRAHOUR_DOWNSIDE_STRESS",
+      "SELL_FLOW_IMPULSE",
+      "FAILED_INTRAHOUR_RECOVERY"
+    ],
+    "family_priority": "NONE",
+    "family_weights": "NONE",
+    "feature_recomputation": "FORBIDDEN",
+    "participation_burst_role": "ANNOTATION_ONLY",
+    "return_ranking": "FORBIDDEN",
+    "threshold_recomputation": "FORBIDDEN",
+    "winner_selection": "FORBIDDEN"
+  },
+  "schema_version": "rd37-p4-kucoin-native-exit-brain-shadow-ablation-preregistration-v1",
+  "shadow_pnl_formula": {
+    "delta_net_pnl": "shadow_net_pnl - control_net_pnl",
+    "shadow_exit_cost": "shadow_exit_notional * side_cost",
+    "shadow_exit_notional": "control_quantity * shadow_exit_price",
+    "shadow_gross_pnl": "shadow_exit_notional - control_entry_notional",
+    "shadow_net_pnl": "shadow_gross_pnl - control_entry_cost - shadow_exit_cost",
+    "side_cost": "BASE_ROUND_TRIP_COST * control_cost_multiplier / 2",
+    "untriggered_delta_net_pnl": 0.0
+  },
+  "stage": "RD37_P4_FREEZE_KUCOIN_NATIVE_EXIT_BRAIN_SHADOW_ABLATION_WITH_QUALIFIED_STRESS_STATES",
+  "status": "FROZEN_PRE_ECONOMIC_ABLATION",
+  "trigger_contract": {
+    "eligible_interval": "control_entry_time < episode.reference_time < control_exit_time",
+    "episode_at_control_exit_time": "CONTROL_EXIT_WINS",
+    "episode_at_entry_time": "IGNORE_TO_PRESERVE_ENTRY_DECISION",
+    "missing_fill": "UNEVALUABLE_NO_IMPUTATION_NO_FORWARD_FILL_NO_BACKFILL",
+    "multiple_times": "EARLIEST_REFERENCE_TIME_WINS",
+    "same_time_multiple_families": "RECORD_ALL_WITH_NO_PRIORITY",
+    "shadow_fill": "EXACT_KUCOIN_SPOT_1H_OPEN_AT_EPISODE_REFERENCE_TIME",
+    "untriggered_trade": "EXACT_CONTROL_EXIT"
+  },
+  "variants": [
+    {
+      "role": "CONTROL",
+      "selection_eligible": false,
+      "trigger_families": [],
+      "variant_id": "CONTROL_NO_RD37_EXIT"
+    },
+    {
+      "role": "MECHANISTIC_ATTRIBUTION_ONLY",
+      "selection_eligible": false,
+      "trigger_families": [
+        "INTRAHOUR_DOWNSIDE_STRESS"
+      ],
+      "variant_id": "RD37_DOWNSIDE_STRESS_SHADOW"
+    },
+    {
+      "role": "MECHANISTIC_ATTRIBUTION_ONLY",
+      "selection_eligible": false,
+      "trigger_families": [
+        "SELL_FLOW_IMPULSE"
+      ],
+      "variant_id": "RD37_SELL_FLOW_IMPULSE_SHADOW"
+    },
+    {
+      "role": "MECHANISTIC_ATTRIBUTION_ONLY",
+      "selection_eligible": false,
+      "trigger_families": [
+        "FAILED_INTRAHOUR_RECOVERY"
+      ],
+      "variant_id": "RD37_FAILED_RECOVERY_SHADOW"
+    },
+    {
+      "combination_rule": "EARLIEST_ELIGIBLE_EPISODE_FROM_ANY_QUALIFIED_FAMILY",
+      "family_priority": "NONE",
+      "family_weights": "NONE",
+      "role": "PREDECLARED_PRIMARY_INTEGRATION_CANDIDATE",
+      "selection_eligible": true,
+      "trigger_families": [
+        "INTRAHOUR_DOWNSIDE_STRESS",
+        "SELL_FLOW_IMPULSE",
+        "FAILED_INTRAHOUR_RECOVERY"
+      ],
+      "variant_id": "RD37_QUALIFIED_STRESS_UNION_SHADOW"
+    }
+  ]
+}
