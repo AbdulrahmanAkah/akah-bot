@@ -1,0 +1,215 @@
+{
+  "candidate_families": [
+    {
+      "conditions": [
+        "holding_age_hours >= 24",
+        "entry_relative_close_return < 0",
+        "last_12_completed_closes_above_entry_count == 0"
+      ],
+      "expected_future_direction": "NEGATIVE",
+      "family_id": "UNRECOVERED_ENTRY_FAILURE",
+      "role": "PRIMARY_NEGATIVE_EXIT_EVIDENCE"
+    },
+    {
+      "conditions": [
+        "holding_age_hours >= 24",
+        "entry_relative_close_return < 0",
+        "path_position <= 0.25",
+        "abs(mae_return) >= max(mfe_return, 0)"
+      ],
+      "expected_future_direction": "NEGATIVE",
+      "family_id": "ADVERSE_PATH_DOMINANCE",
+      "role": "PRIMARY_NEGATIVE_EXIT_EVIDENCE"
+    },
+    {
+      "conditions": [
+        "holding_age_hours >= 24",
+        "mfe_return > 0",
+        "entry_relative_close_return > 0",
+        "retained_mfe_fraction <= 0.25",
+        "path_position <= 0.50"
+      ],
+      "expected_future_direction": "NEGATIVE",
+      "family_id": "PROFIT_GIVEBACK_FROM_PATH_PEAK",
+      "role": "PRIMARY_NEGATIVE_EXIT_EVIDENCE"
+    },
+    {
+      "conditions": [
+        "holding_age_hours >= 24",
+        "entry_relative_close_return > 0",
+        "last_12_completed_closes_below_entry_count >= 1",
+        "path_position >= 0.75"
+      ],
+      "expected_future_direction": "POSITIVE",
+      "family_id": "ENTRY_RECLAIM_WITH_HIGH_PATH_POSITION_CONTROL",
+      "role": "POSITIVE_DIRECTIONAL_CONTROL_ONLY",
+      "selection_eligible": false
+    }
+  ],
+  "causal_clock": {
+    "decision_clock": "KUCOIN_SPOT_1H_OPEN_t",
+    "future_control_exit_information_in_features": "FORBIDDEN",
+    "latest_path_bar": "COMPLETED_BAR_t_minus_1",
+    "lookahead": "FORBIDDEN",
+    "path_start": "CONTROL_TRADE_ENTRY_TIME",
+    "same_bar_close_or_high_or_low_use": "FORBIDDEN"
+  },
+  "design_role": "TRADE_CONDITIONED_PATH_MEMORY_LAYER_FOR_FUTURE_ADAPTIVE_EXIT_BRAIN;NOT_A_DIRECT_PRODUCTION_EXIT_RULE",
+  "diagnostic_plan": {
+    "capital_reuse": "FORBIDDEN",
+    "economic_replay": "FORBIDDEN",
+    "events_after_control_exit": "FORBIDDEN",
+    "portfolio_accounting": "FORBIDDEN",
+    "primary_horizon_hours": 24,
+    "shadow_exit_execution": "FORBIDDEN",
+    "target_horizon_must_end_before_or_at_control_exit": true,
+    "target_horizons_hours": [
+      6,
+      24,
+      48
+    ],
+    "target_return_formula": "open_(t+H) / open_t - 1",
+    "target_return_start": "KUCOIN_SPOT_1H_OPEN_t"
+  },
+  "eligibility": {
+    "control_exit_reason_not_used_in_feature_logic": true,
+    "control_policy": "RD31_REGIME_HYSTERESIS_CONTROL",
+    "control_trade_exit_time_used_only_as_eligibility_boundary": true,
+    "event_window": "entry_time+24h <= decision_time <= control_exit_time-24h",
+    "minimum_holding_age_hours": 24,
+    "periods": [
+      "ROBUSTNESS_2022",
+      "ROBUSTNESS_2023"
+    ],
+    "portfolio_id": "UNION_FOCUS",
+    "primary_event_must_have_24h_remaining_before_control_exit": true,
+    "primary_markout_horizon_hours": 24,
+    "universes": [
+      "C2",
+      "D2",
+      "E2"
+    ]
+  },
+  "event_semantics": {
+    "continuous_true_hours_count_as_new_events": false,
+    "event_definition": "FALSE_TO_TRUE_STATE_ENTRY_ONLY",
+    "initial_true_without_observed_false": "NOT_AN_EVENT",
+    "same_trade_same_family_reentry": "ALLOWED_ONLY_AFTER_OBSERVED_FALSE_THEN_TRUE",
+    "unobserved_or_ineligible_hour": "RESETS_STATE_TO_UNKNOWN"
+  },
+  "family_order": [
+    "UNRECOVERED_ENTRY_FAILURE",
+    "ADVERSE_PATH_DOMINANCE",
+    "PROFIT_GIVEBACK_FROM_PATH_PEAK",
+    "ENTRY_RECLAIM_WITH_HIGH_PATH_POSITION_CONTROL"
+  ],
+  "feature_primitives": {
+    "entry_relative_close_return": "close_(t-1) / entry_price - 1",
+    "last_12_completed_closes_above_entry_count": "count of close > entry_price in completed bars t-12..t-1",
+    "last_12_completed_closes_below_entry_count": "count of close < entry_price in completed bars t-12..t-1",
+    "mae_return": "min(low from entry through completed t-1) / entry_price - 1",
+    "mfe_return": "max(high from entry through completed t-1) / entry_price - 1",
+    "path_position": "(current_return - mae_return) / (mfe_return - mae_return), only when path range > 0",
+    "retained_mfe_fraction": "current_return / mfe_return, only when mfe_return > 0"
+  },
+  "future_exit_brain_boundary": {
+    "first_shadow_ablation_freed_capital_reuse": "FORBIDDEN",
+    "p1_or_p2_direct_exit_mapping": "FORBIDDEN",
+    "production_authorization": false,
+    "qualified_family_mapping_requires_later_preregistration": true
+  },
+  "lineage": {
+    "rd32_control_trade_ledger_frozen_sha256": "07f49e0e9235f736f54ee9dd59142c16fc4e7b99e83781b1ee26b9338def117e",
+    "rd32_control_trade_ledger_git_blob": "6749de85cb14733388e0f76a6557124d3212398b",
+    "rd38_family_freeze_git_blob": "62ec8dfb7fccaab3ada4dafefc8747060bd1704b",
+    "rd38_original_p2_freeze_commit": "3e6cef3c3580fd9d00d4a4c1842f9de8c9a8c807",
+    "rd38_p2_results_commit": "d08580556062e9012f32f92ddf51dc3d996fcaa7",
+    "rd38_p2r_recovery_freeze_commit": "16ef9bcd3638961fdde34c67fac116923543ecbc",
+    "rd38_qualification_git_blob": "b3ba30778c1428d14404d549f1c981295c60f2d4",
+    "rd38_report_git_blob": "52eafa0364baad76df8e809043fb4d3606c3abe6"
+  },
+  "next_stage": "RD39_P2_FREEZE_AND_RUN_TRADE_CONDITIONED_LIFECYCLE_PATH_DIAGNOSTIC_2022_2023_ONCE",
+  "p1_observation_flags": {
+    "2024_accessed": false,
+    "control_trade_rows_loaded": false,
+    "economic_execution_performed": false,
+    "events_observed": false,
+    "forward_returns_computed": false,
+    "parameter_search_used": false,
+    "path_features_computed": false,
+    "post_2024_accessed": false,
+    "production_authorized": false,
+    "raw_market_data_loaded": false,
+    "return_ranking_used": false,
+    "shadow_pnl_computed": false,
+    "threshold_optimization_used": false,
+    "winner_selection_used": false
+  },
+  "positive_control_qualification": {
+    "family_id": "ENTRY_RECLAIM_WITH_HIGH_PATH_POSITION_CONTROL",
+    "primary_24h_expectation": [
+      "support_gates_pass",
+      "mean_forward_return_24h > 0",
+      "median_forward_return_24h > 0"
+    ],
+    "selection_eligible": false
+  },
+  "primary_negative_family_qualification": {
+    "6h_and_48h": "SHAPE_AND_STABILITY_DIAGNOSTICS_ONLY; CANNOT_RESCUE_24H_FAILURE",
+    "cross_universe_rule": "At least 2 of C2/D2/E2 pass in ROBUSTNESS_2022 and at least 2 of C2/D2/E2 pass in ROBUSTNESS_2023.",
+    "failed_family_rescue": "FORBIDDEN",
+    "per_universe_period_primary_24h": [
+      "support_gates_pass",
+      "mean_forward_return_24h < 0",
+      "median_forward_return_24h < 0",
+      "leave_one_pair_out_24h_mean_remains_below_0_for_every_eligible_pair_omission"
+    ],
+    "winner_selection_by_return": "FORBIDDEN"
+  },
+  "research_reason": {
+    "posthoc_threshold_reuse": "FORBIDDEN",
+    "rd37_failure": "Marketwide microstructure stress was not stable across 2022 and 2023 when mapped to unconditional early exits.",
+    "rd37_or_rd38_family_rescue": "FORBIDDEN",
+    "rd38_failure": "Cross-sectional weakness was negative in all three universes in 2022 but reversed positive in all three universes in 2023.",
+    "rd39_shift": "Move from unconditional market/universe state to the held trade's own lifecycle path since entry."
+  },
+  "schema_version": "rd39-p1-kucoin-native-trade-conditioned-lifecycle-path-information-source-preregistration-v1",
+  "source_contract": {
+    "allowed_raw_fields": [
+      "timestamp",
+      "open",
+      "high",
+      "low",
+      "close"
+    ],
+    "binance_data": "FORBIDDEN",
+    "control_exit_changed_in_p1_or_p2": false,
+    "derivatives_data": "FORBIDDEN",
+    "diagnostic_cost_multiplier": 1.0,
+    "entry_admission_changed": false,
+    "entry_price_changed": false,
+    "entry_time_changed": false,
+    "quantity_changed": false,
+    "reason_for_single_cost_copy": "Path-state information is price/lifecycle based and does not depend on transaction-cost multiplier; use the frozen 1x control copy to avoid duplicate event counting.",
+    "resolution": "1h",
+    "signal_generation_changed": false,
+    "trade_context_source": "FROZEN_RD32_RD31_REGIME_HYSTERESIS_CONTROL_UNION_FOCUS_TRADE_LEDGER",
+    "venue": "KUCOIN_SPOT"
+  },
+  "stage": "RD39_P1_PREREGISTER_TRADE_CONDITIONED_LIFECYCLE_PATH_INFORMATION_SOURCE",
+  "status": "FROZEN_PRE_DATA_DIAGNOSTIC",
+  "support_gates": {
+    "minimum_event_count_per_universe_period_24h": 20,
+    "minimum_pair_count_per_universe_period_24h": 5,
+    "minimum_signal_day_count_per_universe_period_24h": 10
+  },
+  "threshold_origin": {
+    "12h_recovery_window": "HALF_DAY_STRUCTURAL_RECENCY_WINDOW",
+    "24h_minimum_age": "ONE_FULL_DAY_STRUCTURAL_LIFECYCLE_CHECKPOINT",
+    "parameter_search": "FORBIDDEN",
+    "path_position_0p25_0p75": "STRUCTURAL_PATH_QUARTILES",
+    "path_position_0p50": "STRUCTURAL_PATH_MIDPOINT",
+    "retained_mfe_0p25": "STRUCTURAL_ONE_QUARTER_RETAINED_PEAK_FRACTION",
+    "threshold_optimization": "FORBIDDEN"
+  }
+}
