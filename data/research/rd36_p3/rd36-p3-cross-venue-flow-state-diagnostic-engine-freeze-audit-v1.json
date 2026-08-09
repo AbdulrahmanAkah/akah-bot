@@ -1,0 +1,60 @@
+{
+  "2024_accessed": false,
+  "alpha_features_computed": false,
+  "alpha_results_observed": false,
+  "cross_universe_minimum_qualified": 2,
+  "economic_execution_performed": false,
+  "engine_path": "src/spotbot/research/rd36_cross_venue_flow_state.py",
+  "engine_sha256": "0e4225f7372000f756e2bc3198f7834b43a28a8b3492129b92954c9c7770b48c",
+  "family_order": [
+    "CONSENSUS_FLOW_RISK_OFF",
+    "ACCELERATING_FLOW_RISK_OFF",
+    "BUY_FLOW_EXHAUSTION",
+    "SELL_FLOW_EXHAUSTION_CONTROL"
+  ],
+  "forward_returns_computed": false,
+  "gap_imputation": "FORBIDDEN",
+  "gap_state": "BINANCE_INFO_UNAVAILABLE",
+  "network_market_data_access_performed": false,
+  "next_action": "EXECUTE_FROZEN_RD36_P3_DIAGNOSTIC_2022_2023_ONCE",
+  "post_2024_accessed": false,
+  "primary_horizon_hours": 24,
+  "production_authorized": false,
+  "qualification_minimum_support": {
+    "event_count_per_period": 30,
+    "pair_count_per_period": 10,
+    "signal_day_count_per_period": 20
+  },
+  "raw_market_data_loaded": false,
+  "runner_path": "scripts/research/run_rd36_cross_venue_flow_state_diagnostic.py",
+  "runner_requires_explicit_execute": true,
+  "runner_sha256": "a4aff91472bbb134ec44d04988ba41992b951798a338e9f9b7ab7b91eddb18f5",
+  "same_bar_cross_venue_use": "FORBIDDEN",
+  "schema_version": "rd36-p3-cross-venue-flow-state-diagnostic-engine-freeze-audit-v1",
+  "source_p2_audit_git_blob": "6d4159314282ddbe4a2f5c9be29c7dc2a14dc8fb",
+  "source_p2_audit_sha256": "2e17cc9dfa0b95921d8a883ee2a8528d551f35e13d7511e0b537790124489132",
+  "source_p2_freeze_commit": "31f08d7a2bc438f1a420cd9834e451ff90ff8ba6",
+  "source_p2_protocol_git_blob": "d8a19f97413b016e1cb2b610b4fb778393c605dc",
+  "source_p2_protocol_sha256": "8fe423b7af921d6592fb06c96f77b2905e7c2a78178facc581a13e8075f7f859",
+  "source_state_event_semantics": "FALSE_TO_TRUE_ENTRY_ONLY",
+  "source_to_target_delay_hours": 1,
+  "stage": "RD36_P3_CROSS_VENUE_FLOW_STATE_DIAGNOSTIC_ENGINE_FREEZE",
+  "status": "PASS",
+  "target_horizons_hours": [
+    6,
+    24,
+    72
+  ],
+  "target_reference_price": "KUCOIN_1H_OPEN_AT_T_PLUS_1H",
+  "test_fixture_recovery": {
+    "alpha_results_observed_before_freeze": false,
+    "engine_logic_changed": false,
+    "forward_returns_observed_before_freeze": false,
+    "reason": "The synthetic warm-up test fixture ended with only 70 post-gap rows while the frozen 72h warm-up assertion correctly requires row index 71. Fixture length was extended from 420 to 500 hours before freeze.",
+    "runner_logic_changed": false
+  },
+  "test_path": "tests/research/test_rd36_cross_venue_flow_state.py",
+  "test_sha256": "0c84dfc684c345ed36e848e7f73b9eb57610c4510bf5c96ab75fcb8806c67265",
+  "unrelated_untracked_artifacts_policy": "PRESERVE_AND_IGNORE; ONLY RD36-P3 PATHS ARE STAGED",
+  "validate_only_supported": true
+}
