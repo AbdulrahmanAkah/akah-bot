@@ -42,6 +42,7 @@ from spotbot.research.rd38_cross_sectional_resilience import (  # noqa: E402
 )
 
 P1B_FREEZE_COMMIT = "497ac1cd79f703d461894e77bfbf7dc0200f3033"
+ORIGINAL_P2_FREEZE_COMMIT = "3e6cef3c3580fd9d00d4a4c1842f9de8c9a8c807"
 P1_FREEZE_COMMIT = "0f7818c6d2794275be0109403e1410b410ce3d52"
 
 P1_PROTOCOL = Path(
@@ -213,9 +214,9 @@ def verify_lineage(
             "rev-parse",
             "HEAD^",
         )
-        != P1B_FREEZE_COMMIT
+        != ORIGINAL_P2_FREEZE_COMMIT
     ):
-        raise RunnerError("P2 engine-freeze parent is not P1B")
+        raise RunnerError("P2 recovery-freeze parent is not original P2 freeze")
 
     for path, blob, label in (
         (
@@ -301,7 +302,12 @@ def load_membership_loader(
     if spec is None or spec.loader is None:
         raise RunnerError("cannot load frozen membership loader")
     module = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(module)
+    sys.modules[spec.name] = module
+    try:
+        spec.loader.exec_module(module)
+    except Exception:
+        sys.modules.pop(spec.name, None)
+        raise
     return module
 
 
