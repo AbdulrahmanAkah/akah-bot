@@ -1,0 +1,42 @@
+{
+  "2024_accessed": false,
+  "alpha_results_observed": false,
+  "baseline_adjusted_diagnostic_required": true,
+  "baseline_definition": "FAMILY_EVALUABLE_HOURS_UNCONDITIONAL_ON_FAMILY_STATE",
+  "context_only_family": "PARTICIPATION_BURST",
+  "economic_execution_performed": false,
+  "engine_path": "src/spotbot/research/rd37_microstructure_stress.py",
+  "engine_sha256": "6a7c17b46e73e80c026ba588381629c47d2c77986037a5e0ef8c98acdfef5996",
+  "feature_computation_performed": false,
+  "forward_returns_computed": false,
+  "maintenance_blackout_state": "BINANCE_INFO_UNAVAILABLE",
+  "network_market_data_access_performed": false,
+  "next_action": "EXECUTE_FROZEN_RD37_P3_2022_2023_ONCE",
+  "post_2024_accessed": false,
+  "primary_families": [
+    "INTRAHOUR_DOWNSIDE_STRESS",
+    "SELL_FLOW_IMPULSE",
+    "FAILED_INTRAHOUR_RECOVERY"
+  ],
+  "primary_horizon_hours": 6,
+  "production_authorized": false,
+  "qualification_event": "EPISODE_ENTRY_ONLY",
+  "raw_market_data_loaded": false,
+  "runner_path": "scripts/research/run_rd37_microstructure_stress_diagnostic.py",
+  "runner_requires_explicit_execute": true,
+  "runner_sha256": "eb7864f46098538cf94e8ecf231099ee606af2b83920f7ae7b625d17289173a2",
+  "schema_version": "rd37-p3-microstructure-stress-diagnostic-engine-freeze-audit-v1",
+  "source_p2_audit_sha256": "896b62a707e650e6339c5b395fba73b9415a415dff9efff11fcbd08895e3de23",
+  "source_p2_freeze_commit": "8fedf7a7b42678daca132b7b3956a9dc6323cb7d",
+  "source_p2_protocol_sha256": "9d4318ce924f2177bcc70d1b1ccf91602883defd1c8bb6f007efcf5bcd1b578c",
+  "stage": "RD37_P3_MICROSTRUCTURE_STRESS_DIAGNOSTIC_ENGINE_FREEZE",
+  "status": "PASS",
+  "target_horizons_hours": [
+    1,
+    6,
+    24
+  ],
+  "test_path": "tests/research/test_rd37_microstructure_stress.py",
+  "test_sha256": "135a544aba3ffcf03a706d51974e4c47a105b165c77481a917788ade8c57c533",
+  "validate_only_supported": true
+}
