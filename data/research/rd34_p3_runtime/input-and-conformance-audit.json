@@ -1,0 +1,103 @@
+{
+  "2024_accessed": false,
+  "admission_policy": "REGIME_HYSTERESIS_ADMISSION_GOVERNOR",
+  "admission_portfolio": "UNION_FOCUS",
+  "diagnostic_execution_performed": true,
+  "economic_execution_performed": false,
+  "lineage": {
+    "admission_policy": "REGIME_HYSTERESIS_ADMISSION_GOVERNOR",
+    "admission_portfolio": "UNION_FOCUS",
+    "families": [
+      "MOMENTUM_BREAKOUT",
+      "RELATIVE_STRENGTH_ROTATION"
+    ],
+    "horizons_hours": [
+      24,
+      72,
+      168
+    ],
+    "p0_freeze_commit": "378464f9ebadd7979b3a94dae252222e8f3a8cca",
+    "p1_freeze_commit": "9b1db409e10aa505c4402485d01d008a1553d62a",
+    "periods": [
+      "ROBUSTNESS_2022",
+      "ROBUSTNESS_2023"
+    ],
+    "qualification_gates": [
+      "EVENT_COUNT_GTE_20",
+      "NET_72H_MEAN_GT_0",
+      "NET_72H_MEDIAN_GT_0",
+      "NET_168H_MEAN_GT_0"
+    ],
+    "rd31_runner_blob": "3b5c6916e34be6c9642702fe2807e42e445ee083",
+    "rd33_results_commit": "766eea6a25a2f773c20cf48447f6ef3e7f94f376",
+    "rules": [
+      "MB_TWO_BAR_BREAKOUT_PERSISTENCE",
+      "MB_TWO_BAR_BREAKOUT_PERSISTENCE_ACCELERATION",
+      "RS_TWO_BAR_LEADER_PERSISTENCE",
+      "RS_TWO_BAR_LEADER_PERSISTENCE_ACCELERATION"
+    ],
+    "runner_freeze_commit": "15850f3fc3d398a516a7d83bca75aeac77bb4a0f",
+    "universes": [
+      "C2",
+      "D2",
+      "E2"
+    ],
+    "verified_sources": {
+      "data/research/rd34_p0/rd34-p0-dual-family-persistence-diagnostic-protocol-v1.json": {
+        "git_blob": "9c788d5345bf907b6db7dd128b7db85131a6f5d3",
+        "sha256": "3a212bb0b1b65731e8f86f51d001beb4a56a628bfab7dbec607643c375c033f3"
+      },
+      "data/research/rd34_p0/rd34-p0-preregistration-audit-v1.json": {
+        "git_blob": "949d18dbd9298ea057eb5b617e1d3b2c4ff6c99c",
+        "sha256": "ddb584f04026543606bce64954a075c6a2cda8fbdb96ac533d188eef23e7fdf3"
+      },
+      "data/research/rd34_p1/rd34-p1-dual-family-persistence-engine-freeze-audit-v1.json": {
+        "git_blob": "ba53bb7aeb8d634fa6351c4a7f0288d9b78b2438",
+        "sha256": "d49ac152f5ef3bc866d8051c883579c60db405826886a7f37b3d8652ddf76cdd"
+      },
+      "src/spotbot/research/rd34_dual_family_persistence.py": {
+        "git_blob": "9f96404e737a5a106744032c248faef9f00e55c9",
+        "sha256": "dd6fb3d0b452b9afd0cf3a80b887141e2563c356398828049bd241faace783ce"
+      },
+      "tests/research/test_rd34_dual_family_persistence.py": {
+        "git_blob": "f9668d20e7410e34da87039f40a228196b6b96cc",
+        "sha256": "c6f540f8bc357e2e0d874b8c99a8bd9766f1565d161b79410cfe5eec811c8059"
+      }
+    }
+  },
+  "membership_signal_coverage": {
+    "mismatch_count": 0,
+    "signal_rows_checked": 7073
+  },
+  "membership_snapshot_count": 315,
+  "portfolio_economics_executed": false,
+  "post_2024_accessed": false,
+  "production_authorized": false,
+  "required_pit_feature_pair_count": 21,
+  "required_pit_feature_pairs": [
+    "ADA-USDT",
+    "ATOM-USDT",
+    "AVAX-USDT",
+    "BTC-USDT",
+    "DOGE-USDT",
+    "DOT-USDT",
+    "ETH-USDT",
+    "GRAM-USDT",
+    "INJ-USDT",
+    "JASMY-USDT",
+    "KAS-USDT",
+    "LINK-USDT",
+    "LTC-USDT",
+    "LUNC-USDT",
+    "NEAR-USDT",
+    "OP-USDT",
+    "SAND-USDT",
+    "SHIB-USDT",
+    "SOL-USDT",
+    "XMR-USDT",
+    "XRP-USDT"
+  ],
+  "schema_version": "rd34-p3-input-conformance-audit-v1",
+  "signal_event_count": 7073,
+  "stage": "RD34_P3_DUAL_FAMILY_PERSISTENCE_DIAGNOSTIC_2022_2023"
+}
