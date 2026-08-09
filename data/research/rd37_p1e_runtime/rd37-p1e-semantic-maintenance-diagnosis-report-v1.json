@@ -1,0 +1,33 @@
+{
+  "2024_accessed": false,
+  "alpha_results_observed": false,
+  "decision": "RD37_BINANCE_SPOT_1M_SOURCE_USABLE_WITH_EXPLICIT_MAINTENANCE_BLACKOUT_SEMANTICS",
+  "diagnosis_passed": true,
+  "economic_execution_performed": false,
+  "failed_gates": [],
+  "feature_computation_performed": false,
+  "final_rd37_source_integrity_diagnosis": true,
+  "forward_returns_computed": false,
+  "gate_count": 10,
+  "maintenance_blackout_end_exclusive": "2023-03-24T14:00:00+00:00",
+  "maintenance_blackout_start": "2023-03-24T11:38:00+00:00",
+  "network_access_performed": false,
+  "next_stage": "RD37_P2_PREREGISTER_CAUSAL_1M_TO_HOUR_STRESS_TRANSFORMS_AND_THRESHOLDS_WITH_GAP_SEMANTICS",
+  "passed_gate_count": 10,
+  "post_2024_accessed": false,
+  "production_authorized": false,
+  "schema_version": "rd37-p1e-semantic-maintenance-diagnosis-report-v1",
+  "source_p1d_results_commit": "f8279dfdd3ce78ec51bbb2b9b35912490f9f9730",
+  "source_semantics_if_pass": {
+    "backfill": "FORBIDDEN",
+    "carry_forward": "FORBIDDEN",
+    "feature_warmup": "Lookback L requires L consecutive observed post-blackout 1m bars beginning at or after 14:00 UTC.",
+    "forward_fill": "FORBIDDEN",
+    "imputation": "FORBIDDEN",
+    "observed_rows_inside_blackout_usable": false,
+    "same_bar_cross_venue_use": "FORBIDDEN",
+    "state": "BINANCE_INFO_UNAVAILABLE"
+  },
+  "stage": "RD37_P1E_SEMANTIC_MAINTENANCE_DIAGNOSIS",
+  "status": "PASS"
+}

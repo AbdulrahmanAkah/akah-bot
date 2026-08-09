@@ -1,0 +1,81 @@
+{
+  "all_gates_passed": true,
+  "anomaly_rows": [
+    {
+      "close_extension_ms": "-18353",
+      "close_time": "2023-03-24T12:39:41.646000+00:00",
+      "expected_close_time": "2023-03-24T12:39:59.999000+00:00",
+      "inside_documented_maintenance": "True",
+      "number_of_trades": "0",
+      "open_time": "2023-03-24T12:39:00+00:00",
+      "quote_volume": "0.0",
+      "symbol": "BTCUSDT",
+      "taker_buy_quote_volume": "0.0"
+    },
+    {
+      "close_extension_ms": "-16938",
+      "close_time": "2023-03-24T12:39:43.061000+00:00",
+      "expected_close_time": "2023-03-24T12:39:59.999000+00:00",
+      "inside_documented_maintenance": "True",
+      "number_of_trades": "0",
+      "open_time": "2023-03-24T12:39:00+00:00",
+      "quote_volume": "0.0",
+      "symbol": "ETHUSDT",
+      "taker_buy_quote_volume": "0.0"
+    }
+  ],
+  "decision": "RD37_BINANCE_SPOT_1M_SOURCE_USABLE_WITH_EXPLICIT_MAINTENANCE_BLACKOUT_SEMANTICS",
+  "expected_zero_activity_window": {
+    "expected_observed_minute_count_per_symbol": 62,
+    "last_observed_open_utc": "2023-03-24T12:39:00+00:00",
+    "start_utc": "2023-03-24T11:38:00+00:00"
+  },
+  "gates": {
+    "ALL_OBSERVED_MAINTENANCE_ROWS_1138_1239_HAVE_ZERO_ACTIVITY": true,
+    "ANOMALIES_SHARE_SAME_1239_OPEN_MINUTE": true,
+    "BOTH_ANOMALIES_ARE_TRUNCATED_WITHIN_SAME_1239_MINUTE": true,
+    "BOTH_ANOMALY_ROWS_HAVE_ZERO_MARKET_ACTIVITY": true,
+    "BOTH_SYMBOLS_MISSING_EXACTLY_1240_THROUGH_1359": true,
+    "BOTH_SYMBOLS_RESUME_AT_1400": true,
+    "EACH_SYMBOL_HAS_EXACTLY_ONE_CLOSE_TIME_ANOMALY": true,
+    "FIRST_1400_ROWS_HAVE_STANDARD_ONE_MINUTE_CLOSE": true,
+    "NO_2024_OR_LATER_ACCESS": true,
+    "P1D_FAILED_EXACTLY_LITERAL_CLOSE_TIME_IDENTITY_GATE": true
+  },
+  "maintenance_observed_row_count": {
+    "BTCUSDT": 62,
+    "ETHUSDT": 62
+  },
+  "next_stage": "RD37_P2_PREREGISTER_CAUSAL_1M_TO_HOUR_STRESS_TRANSFORMS_AND_THRESHOLDS_WITH_GAP_SEMANTICS",
+  "p1d_failed_gates": [
+    "CLOSE_TIME_ANOMALIES_IDENTICAL_BTC_ETH"
+  ],
+  "raw_archive_sha256": {
+    "BTCUSDT": "5591171a15f210af647a2fb68ab8cbad45a3a595cfe9a0eec9d06e5e84928bec",
+    "ETHUSDT": "e2552c2298f4b67027bfa1f7da364b0d398e96a76dae8fa2085dddf357f60a69"
+  },
+  "resume_open_utc": "2023-03-24T14:00:00+00:00",
+  "resume_rows": {
+    "BTCUSDT": {
+      "close_time": "2023-03-24T14:00:59.999000+00:00",
+      "number_of_trades": 7682,
+      "quote_volume": 8205314.819723,
+      "standard_close": true
+    },
+    "ETHUSDT": {
+      "close_time": "2023-03-24T14:00:59.999000+00:00",
+      "number_of_trades": 8250,
+      "quote_volume": 6439507.449596,
+      "standard_close": true
+    }
+  },
+  "schema_version": "rd37-p1e-semantic-maintenance-evidence-v1",
+  "shared_missing_window": {
+    "btc_missing_count": 80,
+    "end_utc_inclusive": "2023-03-24T13:59:00+00:00",
+    "eth_missing_count": 80,
+    "expected_missing_minutes_per_symbol": 80,
+    "start_utc": "2023-03-24T12:40:00+00:00"
+  },
+  "source_p1d_results_commit": "f8279dfdd3ce78ec51bbb2b9b35912490f9f9730"
+}
