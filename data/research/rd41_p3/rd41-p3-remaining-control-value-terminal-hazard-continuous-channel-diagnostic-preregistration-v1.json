@@ -1,0 +1,242 @@
+{
+  "action_mapping_firewall": {
+    "confirmation_window": "NOT_DEFINED",
+    "economic_shadow": "FORBIDDEN",
+    "freed_slot_reuse": "FORBIDDEN",
+    "full_exit_rule": "NOT_DEFINED",
+    "partial_derisk_fraction": "NOT_DEFINED",
+    "portfolio_replay": "FORBIDDEN",
+    "production_authorized": false
+  },
+  "census_facts_frozen_before_target_diagnostic": {
+    "all_global_age_support_cells_pass": true,
+    "boundary_extension_position_count": 0,
+    "full_control_position_count": 512,
+    "resolved_control_position_count": 512,
+    "right_censored_position_count": 0
+  },
+  "continuous_information_channels": {
+    "ENTRY_MARGIN": {
+      "binary_threshold": "FORBIDDEN",
+      "expected_rcv_direction": "POSITIVE",
+      "expected_time_failure_direction": "NEGATIVE",
+      "formula": "close_t_minus_1/entry_price_MINUS_1"
+    },
+    "PATH_POSITION": {
+      "binary_threshold": "FORBIDDEN",
+      "expected_rcv_direction": "POSITIVE",
+      "expected_time_failure_direction": "NEGATIVE",
+      "formula": "(close_t_minus_1-path_low_entry_through_t_minus_1)/(path_high_entry_through_t_minus_1-path_low_entry_through_t_minus_1)",
+      "zero_path_range": "UNEVALUABLE_CHANNEL_ONLY"
+    },
+    "RECENT_12H_RETURN": {
+      "binary_threshold": "FORBIDDEN",
+      "expected_rcv_direction": "POSITIVE",
+      "expected_time_failure_direction": "NEGATIVE",
+      "formula": "close_t_minus_1/close_t_minus_13_MINUS_1"
+    }
+  },
+  "cross_universe_year_qualification": {
+    "all_qualifying_feature_landmark_pairs_advance": true,
+    "best_feature_selection": "FORBIDDEN",
+    "best_landmark_selection": "FORBIDDEN",
+    "cell_outcomes": [
+      "QUALIFIED_EXPECTED_DIRECTION",
+      "REVERSED_DIRECTION",
+      "NO_DIRECTIONAL_EDGE",
+      "INSUFFICIENT_SUPPORT",
+      "UNEVALUABLE_CHANNEL"
+    ],
+    "failed_channel_rescue": "FORBIDDEN",
+    "hazard_qualification": "AT_LEAST_2_OF_3_UNIVERSES_PASS_IN_2022_AND_AT_LEAST_2_OF_3_UNIVERSES_PASS_IN_2023",
+    "per_feature_per_landmark": true,
+    "rcv_qualification": "AT_LEAST_2_OF_3_UNIVERSES_PASS_IN_2022_AND_AT_LEAST_2_OF_3_UNIVERSES_PASS_IN_2023",
+    "reversed_direction_can_advance": false,
+    "single_year_success_can_advance": false
+  },
+  "failure_if_none_qualify": "RD41_CLOSE_SIMPLE_CONTINUOUS_TRADE_STATE_CHANNELS_UNQUALIFIED_AND_REASSESS_INFORMATION_ARCHITECTURE",
+  "feature_clock_and_missingness": {
+    "backfill": "FORBIDDEN",
+    "decision_clock": "KUCOIN_SPOT_1H_OPEN_t",
+    "forward_fill": "FORBIDDEN",
+    "future_control_exit_as_feature": "FORBIDDEN",
+    "imputation": "FORBIDDEN",
+    "latest_feature_bar": "t_minus_1",
+    "missing_required_path_hour": "UNEVALUABLE_DECISION_CHANNEL",
+    "path_begins_at_control_entry": true,
+    "required_path_hours_must_be_contiguous": true,
+    "same_bar_high_low_close_as_feature": "FORBIDDEN"
+  },
+  "governor_role_in_p4_diagnostic": {
+    "binary_exit_permission": false,
+    "causal_effect_claim": "FORBIDDEN",
+    "descriptive_same_risk_set_attribution_only": true,
+    "governor_state_encoding": {
+      "CAUTION": 1,
+      "LOCKED": 2,
+      "OPEN": 0
+    },
+    "governor_state_recorded_at_same_landmark": true,
+    "incremental_model_test": "DEFERRED_UNTIL_AFTER_ANY_CONTINUOUS_TRADE_CHANNEL_QUALIFIES",
+    "locked_only_qualification": "FORBIDDEN",
+    "reason": "P2_CONFIRMED_SEVERE_GOVERNOR_STATE_SAMPLE_IMBALANCE_ESPECIALLY_2022_LOCKED",
+    "standalone_selection_eligible": false
+  },
+  "hazard_channel_cell_test": {
+    "expected_direction": "LOWER_CHANNEL_VALUE_HIGHER_TIME_FAILURE_PROBABILITY",
+    "metrics": [
+      "AUC_OF_NEGATIVE_CHANNEL_FOR_TIME_FAILURE",
+      "NON_EVENT_MINUS_EVENT_MEDIAN_CHANNEL_SPREAD",
+      "LEAVE_ONE_PAIR_OUT_MINIMUM_AUC"
+    ],
+    "p_value_gate": false,
+    "pass_rule": "SUPPORT_PASS_AND_AUC_GT_0_5_AND_MAX_HOLD_MEDIAN_CHANNEL_MINUS_TIME_FAILURE_MEDIAN_CHANNEL_GT_0_AND_EVERY_LEAVE_ONE_PAIR_OUT_AUC_GT_0_5"
+  },
+  "lineage": {
+    "rd30_lifecycle_state_git_blob": "285caf6b4a2a17903c2d0584229802ac15871d85",
+    "rd41_p1_freeze_commit": "3752c04f1377050d2df6edaa584abc6d75184d3b",
+    "rd41_p2_age_support_git_blob": "c8165284aea23c7667b6b8e1390fd7e55ba5c863",
+    "rd41_p2_age_support_sha256": "aefa17eb86f210ec4c319110d7bfcb4be501e11165920e591b0279a568964b40",
+    "rd41_p2_freeze_commit": "7e724a4bd5a1ca9995a330e550e4fe909f185d43",
+    "rd41_p2_governor_support_git_blob": "d67a215a66876ff6b5398c9d6e12a4c876765a5b",
+    "rd41_p2_governor_support_sha256": "4867ce113ba9706da5624c5b3288bb80072efbb1a78a154103a88843650956d5",
+    "rd41_p2_manifest_deterministic_hash": "728be3bb4c182d39717196ea5691bcf9f8b99d8fce9a9813460ea4ffc209b6c0",
+    "rd41_p2_manifest_git_blob": "ee4694e73d97f906c4ea97744b2e7d8e027d998f",
+    "rd41_p2_report_git_blob": "6efb8b9bbb9be2591c2f4e557705c7bbed28523a",
+    "rd41_p2_report_sha256": "129f20de69c40b47ef413652b99775dd54f63cec189a618e10dd0e913dfa57e7",
+    "rd41_p2_results_commit": "774d7d9b66dd2580359ee28a76c4819da4b29ced",
+    "rd41_p2_risk_set_git_blob": "12ead9da3c3f1d0df4eb33ca2e03f06f207ccbd8",
+    "rd41_p2_risk_set_sha256": "790329e9f596c9012fbe58d90489c39671682f0951273261182f45952c5b78d2",
+    "rd41_p2_terminal_summary_git_blob": "ceda135a8ffcf8441bc8e139c8c0d2cc225eb6f3",
+    "rd41_p2_terminal_summary_sha256": "8cdc14652f70173bfcc04fa0db74276cbc0dd83c59f3981d8aea27d3bb6d17ff"
+  },
+  "next_stage": "RD41_P4_FREEZE_AND_RUN_REMAINING_CONTROL_VALUE_TERMINAL_HAZARD_CONTINUOUS_CHANNEL_DIAGNOSTIC_ONCE",
+  "p4_outputs_required": [
+    "target-ledger",
+    "feature-ledger",
+    "rcv-cell-evaluation",
+    "rcv-feature-landmark-qualification",
+    "hazard-cell-evaluation",
+    "hazard-feature-landmark-qualification",
+    "governor-descriptive-attribution",
+    "qualified-continuous-evidence-freeze",
+    "diagnostic-report",
+    "output-manifest"
+  ],
+  "rcv_channel_cell_test": {
+    "expected_direction": "HIGHER_CHANNEL_VALUE_HIGHER_RCV",
+    "median_split_uses_feature_only_not_target": true,
+    "metrics": [
+      "SPEARMAN_RHO",
+      "FEATURE_MEDIAN_SPLIT_MEAN_RCV_SPREAD",
+      "LEAVE_ONE_PAIR_OUT_MINIMUM_MEAN_RCV_SPREAD"
+    ],
+    "p_value_gate": false,
+    "pass_rule": "SUPPORT_PASS_AND_SPEARMAN_RHO_GT_0_AND_UPPER_FEATURE_HALF_MEAN_RCV_MINUS_LOWER_HALF_MEAN_RCV_GT_0_AND_EVERY_LEAVE_ONE_PAIR_OUT_MEAN_SPREAD_GT_0"
+  },
+  "research_firewall": {
+    "2024_accessed": false,
+    "feature_values_computed_in_p3": false,
+    "governor_predictive_results_observed_in_p3": false,
+    "hazard_results_observed_in_p3": false,
+    "parameter_search_used": false,
+    "post_2024_accessed": false,
+    "production_authorized": false,
+    "raw_market_data_loaded_in_p3": false,
+    "rcv_results_observed_in_p3": false,
+    "target_values_computed_in_p3": false,
+    "threshold_optimization_used": false,
+    "winner_selection_used": false
+  },
+  "research_question": "DO_SIMPLE_POINT_IN_TIME_CONTINUOUS_TRADE_STATE_CHANNELS_PREDICT_REMAINING_CONTROL_VALUE_AND_PRE_72H_TIME_FAILURE_RISK_WITH_THE_SAME_EXPECTED_DIRECTION_ACROSS_2022_AND_2023",
+  "schema_version": "rd41-p3-remaining-control-value-terminal-hazard-continuous-channel-diagnostic-preregistration-v1",
+  "stage": "RD41_P3_PREREGISTER_REMAINING_CONTROL_VALUE_TERMINAL_HAZARD_CONTINUOUS_CHANNEL_DIAGNOSTIC",
+  "status": "FROZEN_PRE_TARGET_PRE_FEATURE_DIAGNOSTIC",
+  "success_if_any_evidence_qualifies": "FREEZE_ALL_QUALIFYING_FEATURE_LANDMARK_PAIRS_FOR_LATER_MULTIVARIATE_AND_ACTION_MAPPING_PREREGISTRATION",
+  "support_gates": {
+    "gates_may_be_relaxed_after_results": false,
+    "hazard_cell": {
+      "minimum_max_hold_non_events": 10,
+      "minimum_time_failure_events": 10,
+      "minimum_unique_pairs": 5,
+      "minimum_unique_positions": 20,
+      "minimum_unique_signal_days": 10
+    },
+    "insufficient_support_is_not_no_edge": true,
+    "rcv_cell": {
+      "minimum_unique_pairs": 5,
+      "minimum_unique_positions": 20,
+      "minimum_unique_signal_days": 10
+    }
+  },
+  "target_1_remaining_control_value": {
+    "capital_reuse_value_included": false,
+    "control_exit_time_price_reason_are_target_side_only": true,
+    "decision_fill_reference": "KUCOIN_SPOT_1H_OPEN_t",
+    "decision_time": "ENTRY_TIME_PLUS_LANDMARK_AGE",
+    "descriptive_secondary_target": "RCV_DOLLARS",
+    "dollar_target_selection_influence": false,
+    "eligible_landmark_ages_hours": [
+      24,
+      48,
+      72,
+      96,
+      120,
+      144
+    ],
+    "entry_cost_treatment": "SUNK_AT_DECISION_t_AND_CANCELS",
+    "feature_information_cutoff": "COMPLETED_BAR_t_minus_1",
+    "freed_slot_opportunity_value_included": false,
+    "frozen_control_exit_net_liquidation_value_formula": "quantity*control_exit_price*(1-exit_side_cost)",
+    "future_redeployment_value_included": false,
+    "id": "REMAINING_CONTROL_VALUE",
+    "immediate_net_liquidation_value_formula": "quantity*open_t*(1-exit_side_cost)",
+    "position_must_be_open_strictly_at_decision_time": true,
+    "primary_target": "RCV_RETURN",
+    "rcv_dollars_formula": "FROZEN_CONTROL_EXIT_NET_LIQUIDATION_VALUE_MINUS_IMMEDIATE_NET_LIQUIDATION_VALUE_AT_OPEN_t",
+    "rcv_return_formula": "FROZEN_CONTROL_EXIT_NET_LIQUIDATION_VALUE/IMMEDIATE_NET_LIQUIDATION_VALUE_AT_OPEN_t_MINUS_1",
+    "reason": "P3_MEASURES_INTRINSIC_VALUE_OF_CONTINUING_THE_EXISTING_POSITION;FREED_SLOT_FEEDBACK_REMAINS_SEPARATE",
+    "right_censored_full_horizon_label": "UNAVAILABLE_RIGHT_CENSORED",
+    "under_fixed_proportional_exit_cost_identity": "RCV_RETURN_EQUALS_control_exit_price/open_t_MINUS_1"
+  },
+  "target_2_terminal_hazard": {
+    "binary_current_sample_allowed_because_censoring_is_zero": true,
+    "competing_non_event_reason": "MAX_HOLD_168H",
+    "current_census_right_censored_count": 0,
+    "eligible_landmark_ages_hours": [
+      24,
+      48
+    ],
+    "event_label": 1,
+    "event_reason": "TIME_FAILURE_72H_CLOSE_NOT_ABOVE_ENTRY",
+    "id": "TIME_FAILURE_72H_TERMINAL_HAZARD",
+    "if_runtime_censoring_differs_from_frozen_p2": "STOP_BEFORE_DIAGNOSTIC",
+    "landmark_72h_and_later": "NOT_AT_RISK_FOR_FUTURE_TIME_FAILURE_EVENT",
+    "lifecycle_event_clock": "TIME_FAILURE_CAN_TRIGGER_ONLY_WHEN_POSITION_AGE_EQUALS_72H",
+    "non_event_label": 0,
+    "survival_semantics_retained_for_future_windows": true
+  },
+  "tombstone_firewall": {
+    "binary_family_reuse_forbidden": [
+      "UNRECOVERED_ENTRY_FAILURE",
+      "ADVERSE_PATH_DOMINANCE",
+      "PROFIT_GIVEBACK_FROM_PATH_PEAK",
+      "PERSISTENT_LOWER_HIGH_GIVEBACK",
+      "TROUGH_RECOVERY_FAILURE",
+      "STALE_PEAK_FRESH_DECAY"
+    ],
+    "current_continuous_channels_are_not_binary_family_retests": true,
+    "hours_since_peak_used": false,
+    "lower_high_flag_used": false,
+    "retained_mfe_fraction_used": false,
+    "threshold_variants_of_tombstones_forbidden": true,
+    "trough_recovery_flag_used": false
+  },
+  "unit_of_inference": {
+    "one_position_contributes_at_most_one_row_per_landmark": true,
+    "pool_C2_D2_E2_for_nominal_sample_inflation": "FORBIDDEN",
+    "primary_cluster_id": "control_position_id",
+    "raw_hourly_rows_as_independent_observations": "FORBIDDEN",
+    "universe_variants_are_robustness_views_not_independent_pooled_rows": true
+  }
+}
