@@ -1,0 +1,62 @@
+{
+  "2024_accessed": false,
+  "admission_policy": "REGIME_HYSTERESIS_ADMISSION_GOVERNOR",
+  "admission_portfolio": "UNION_FOCUS",
+  "candidate_results_observed": false,
+  "diagnostic_executed": false,
+  "diagnostic_runner_implemented": true,
+  "economic_execution_performed": false,
+  "expected_family_selection_rows": 2,
+  "expected_qualification_rows": 24,
+  "failed_attempt_class": "RUFF_SIM108_STYLE_ONLY_PRE_DIAGNOSTIC",
+  "failed_attempt_reached_diagnostic_execution": false,
+  "failed_attempt_reached_economic_execution": false,
+  "markout_horizons_hours": [
+    24,
+    72,
+    168
+  ],
+  "mb_rule_count": 2,
+  "mechanical_recovery": {
+    "protocol_change": false,
+    "research_logic_change": false,
+    "scope": "TWO_TZ_NORMALIZATION_IF_ELSE_BLOCKS_ONLY",
+    "semantic_change": false,
+    "sim108_blocks_patched": 2
+  },
+  "next_stage": "RD34_P3_EXECUTE_FROZEN_DUAL_FAMILY_PERSISTENCE_DIAGNOSTIC_2022_2023",
+  "partial_files_before_recovery": {
+    "scripts/research/run_rd34_dual_family_persistence_diagnostic.py": {
+      "exists": true,
+      "sha256_before": "18b59a6efb3cee20eafc1d204ef6950c1d6204c07106426b7806e74c7894e715",
+      "tracked": false
+    },
+    "tests/research/test_rd34_p2_runner_contract.py": {
+      "exists": true,
+      "sha256_before": "3f9bc33932f917391ce3e80e943f4be4ba922303276f50710862896859317bdc",
+      "tracked": false
+    }
+  },
+  "post_2024_accessed": false,
+  "production_authorized": false,
+  "qualification_gate_count": 4,
+  "raw_market_data_loaded": false,
+  "rs_rule_count": 2,
+  "runner_path": "scripts/research/run_rd34_dual_family_persistence_diagnostic.py",
+  "runner_requires_explicit_execute": true,
+  "runner_runs_portfolio_economics": false,
+  "runner_sha256": "630d7e6186a841f29d579da97ab56e39cb67c8bdf0a28197c741a83955fbcf02",
+  "schema_version": "rd34-p2-recovered-dual-family-diagnostic-runner-freeze-audit-v1",
+  "source_p0_freeze_commit": "378464f9ebadd7979b3a94dae252222e8f3a8cca",
+  "source_p1_audit_sha256": "d49ac152f5ef3bc866d8051c883579c60db405826886a7f37b3d8652ddf76cdd",
+  "source_p1_engine_sha256": "dd6fb3d0b452b9afd0cf3a80b887141e2563c356398828049bd241faace783ce",
+  "source_p1_freeze_commit": "9b1db409e10aa505c4402485d01d008a1553d62a",
+  "source_p1_test_sha256": "c6f540f8bc357e2e0d874b8c99a8bd9766f1565d161b79410cfe5eec811c8059",
+  "source_protocol_sha256": "3a212bb0b1b65731e8f86f51d001beb4a56a628bfab7dbec607643c375c033f3",
+  "source_rd31_runner_git_blob": "3b5c6916e34be6c9642702fe2807e42e445ee083",
+  "stage": "RD34_P2_DUAL_FAMILY_PERSISTENCE_DIAGNOSTIC_RUNNER_FREEZE",
+  "status": "PASS",
+  "test_path": "tests/research/test_rd34_p2_runner_contract.py",
+  "test_sha256": "3f9bc33932f917391ce3e80e943f4be4ba922303276f50710862896859317bdc",
+  "validate_only_supported": true
+}
