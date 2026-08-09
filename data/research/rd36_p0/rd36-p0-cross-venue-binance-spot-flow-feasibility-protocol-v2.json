@@ -1,0 +1,166 @@
+{
+  "2024_accessed": false,
+  "acquisition_contract": {
+    "2024_or_later_url_forbidden": true,
+    "checksum_verification_required_before_parse": true,
+    "directory_listing_forbidden": true,
+    "download_only_constructed_2022_2023_urls": true,
+    "future_stage_only": true,
+    "no_forward_fill": true,
+    "no_imputation": true,
+    "no_source_gap_repair_from_other_exchanges": true,
+    "normalized_output_format": "parquet",
+    "normalized_timestamp": "UTC hourly open_time",
+    "output_root": "data/raw/rd36/binance_spot_flow",
+    "preserve_original_zip_bytes": true
+  },
+  "alpha_features_computed": false,
+  "alpha_results_observed": false,
+  "binance_forward_returns_observed": false,
+  "cross_venue_contract": {
+    "binance_asset_admission_substitution": "FORBIDDEN",
+    "binance_entry_exit_price_substitution": "FORBIDDEN",
+    "binance_forward_returns_for_selection": "FORBIDDEN",
+    "binance_portfolio_pnl_for_selection": "FORBIDDEN",
+    "binance_tradable_universe_substitution": "FORBIDDEN",
+    "binance_transaction_cost_substitution": "FORBIDDEN",
+    "causal_timing_rule": "A Binance 1h bar labeled t may be consumed only after that bar is fully completed. Its information may affect a KuCoin admission or signal at t+1h or later, never on the KuCoin bar at t.",
+    "external_information_role": "EXOGENOUS_MARKET_STATE_INFORMATION_ONLY",
+    "external_information_venue": "BINANCE_SPOT",
+    "future_economic_test_rule": "Any future Binance-derived information signal must be evaluated against KuCoin-native entries, exits, forward returns, costs, trade ledgers, and portfolio PnL.",
+    "same_bar_cross_venue_use": "FORBIDDEN",
+    "target_entry_exit_price_source": "KUCOIN_SPOT",
+    "target_execution_venue": "KUCOIN_SPOT",
+    "target_forward_return_source": "KUCOIN_SPOT",
+    "target_portfolio_economics_source": "KUCOIN_SPOT",
+    "target_tradable_universe_source": "EXISTING_KUCOIN_POINT_IN_TIME_EFFECTIVE_MEMBERSHIP",
+    "target_transaction_cost_model": "EXISTING_FROZEN_KUCOIN_SPOT_MODEL"
+  },
+  "decision_contract": {
+    "if_fail": "RD36_ALTERNATE_SPOT_MICROSTRUCTURE_SOURCE_FEASIBILITY_REQUIRED",
+    "if_pass": "RD36_P2_PREREGISTER_CROSS_VENUE_BINANCE_SPOT_FLOW_KUCOIN_NATIVE_ALPHA_ARCHITECTURE",
+    "pass_requires_all_feasibility_gates": true
+  },
+  "diagnostic_executed": false,
+  "economic_execution_performed": false,
+  "external_source_contract": {
+    "archive_pattern": "data/spot/monthly/klines/{symbol}/1h/{symbol}-1h-{YYYY-MM}.zip",
+    "checksum_pattern": "data/spot/monthly/klines/{symbol}/1h/{symbol}-1h-{YYYY-MM}.zip.CHECKSUM",
+    "dataset": "monthly spot klines",
+    "expected_archive_count": 48,
+    "expected_checksum_count": 48,
+    "expected_columns_in_order": [
+      "open_time",
+      "open",
+      "high",
+      "low",
+      "close",
+      "volume",
+      "close_time",
+      "quote_asset_volume",
+      "number_of_trades",
+      "taker_buy_base_asset_volume",
+      "taker_buy_quote_asset_volume",
+      "ignore"
+    ],
+    "expected_hours_per_symbol": 17520,
+    "interval": "1h",
+    "market": "SPOT",
+    "months_inclusive": {
+      "end": "2023-12",
+      "start": "2022-01"
+    },
+    "new_information_fields": [
+      "quote_asset_volume",
+      "number_of_trades",
+      "taker_buy_base_asset_volume",
+      "taker_buy_quote_asset_volume"
+    ],
+    "official_public_archive_root": "https://data.binance.vision",
+    "official_public_data_repository": "https://github.com/binance/binance-public-data",
+    "provider": "Binance",
+    "selection_cutoff_exclusive": "2024-01-01T00:00:00Z",
+    "selection_start_inclusive": "2022-01-01T00:00:00Z",
+    "symbols": [
+      "BTCUSDT",
+      "ETHUSDT"
+    ]
+  },
+  "feasibility_gates": [
+    "ALL_48_ARCHIVES_PRESENT",
+    "ALL_48_CHECKSUMS_PRESENT_AND_MATCH",
+    "CSV_SCHEMA_EXACT_12_COLUMNS",
+    "EACH_SYMBOL_EXACT_17520_UNIQUE_HOURLY_OPEN_TIMES",
+    "NO_TIMESTAMP_GTE_2024_01_01",
+    "NO_DUPLICATE_OR_NON_HOURLY_OPEN_TIMES",
+    "NUMBER_OF_TRADES_NONNEGATIVE_INTEGER",
+    "QUOTE_AND_TAKER_VOLUMES_FINITE_NONNEGATIVE",
+    "TAKER_BUY_QUOTE_LTE_QUOTE_VOLUME",
+    "NO_HTTP_ZIP_OR_PARSE_FAILURES"
+  ],
+  "future_feature_scope_if_source_passes": {
+    "allowed_binance_information_fields_only": [
+      "quote_asset_volume",
+      "number_of_trades",
+      "taker_buy_base_asset_volume",
+      "taker_buy_quote_asset_volume"
+    ],
+    "binance_forward_return_target": "FORBIDDEN",
+    "binance_ohlc_return_alpha_selection": "FORBIDDEN",
+    "candidate_feature_classes_to_preregister_later": [
+      "taker_buy_quote_share",
+      "signed_taker_quote_flow",
+      "trade_count_intensity",
+      "average_trade_quote_size",
+      "BTC_ETH_joint_spot_flow_state"
+    ],
+    "legacy_rd35_threshold_reuse": "FORBIDDEN",
+    "not_yet_authorized_to_compute": true,
+    "return_conditioned_feature_selection": "FORBIDDEN"
+  },
+  "kucoin_forward_returns_observed_in_rd36_feasibility": false,
+  "kucoin_target_contract": {
+    "entry_prices": "KUCOIN_SPOT_ONLY",
+    "exit_prices": "KUCOIN_SPOT_ONLY",
+    "final_2024_confirmation": "KUCOIN_NATIVE_AND_STILL_SEALED",
+    "forward_markouts": "KUCOIN_SPOT_ONLY",
+    "pit_universe": "EXACT_EXISTING_KUCOIN_POINT_IN_TIME_EFFECTIVE_MEMBERSHIP",
+    "portfolio_replay": "KUCOIN_SPOT_ONLY",
+    "strategy_assets": "KUCOIN_SPOT_ONLY",
+    "transaction_costs": "EXISTING_FROZEN_KUCOIN_SPOT_COST_MODEL_ONLY"
+  },
+  "motivation": {
+    "interpretation": "RD35 produced ample samples from new OHLCV-derived sources but no qualified family. RD36 therefore changes the information layer without changing the KuCoin target venue or economic backtest.",
+    "rd35_candidate_event_count": 11371,
+    "rd35_complete_markout_row_count": 33843,
+    "rd35_decision": "RD36_EXTERNAL_OR_ADDITIONAL_DATA_ALPHA_SOURCE_REQUIRED",
+    "rd35_qualified_family_count": 0
+  },
+  "network_access_performed": false,
+  "next_stage": "RD36_P1_EXECUTE_BINANCE_SPOT_FLOW_SOURCE_FEASIBILITY_2022_2023",
+  "post_2024_accessed": false,
+  "production_authorized": false,
+  "prohibited_in_rd36_p0_and_p1_feasibility": [
+    "no alpha event generation",
+    "no Binance forward-return markouts",
+    "no KuCoin forward-return markouts",
+    "no portfolio replay",
+    "no transaction-cost optimization",
+    "no threshold sweep",
+    "no winner ranking",
+    "no Binance tradable-universe substitution",
+    "no Binance execution-price substitution",
+    "no Binance cost-model substitution",
+    "no same-bar cross-venue signal use",
+    "no 2024 or post-2024 data access",
+    "no derivatives or futures data",
+    "no leverage, margin, shorting, or derivatives trading"
+  ],
+  "raw_market_data_loaded": false,
+  "research_question": "Can Binance official public Spot 1h microstructure data provide a causal exogenous market-state information layer for a KuCoin-native strategy, while keeping all tradable-universe, execution-price, cost, forward-return, and portfolio-economics measurements KuCoin-native?",
+  "schema_version": "rd36-p0-cross-venue-binance-spot-flow-feasibility-protocol-v2",
+  "source_availability_observed": false,
+  "source_rd35_results_commit": "286d31a5abde73ae28ccb9bc715dc7d1969ef43c",
+  "stage": "RD36_P0_CROSS_VENUE_SPOT_FLOW_SOURCE_FEASIBILITY_PREREGISTRATION",
+  "status": "FROZEN_PRE_ACQUISITION"
+}
