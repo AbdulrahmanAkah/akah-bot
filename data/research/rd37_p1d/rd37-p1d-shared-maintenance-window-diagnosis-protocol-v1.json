@@ -1,0 +1,67 @@
+{
+  "diagnostic_gates": [
+    "P1_FAILED_EXACTLY_SCHEMA_NAMED_GATE",
+    "P1_OTHER_NINE_GATES_PASS",
+    "ALL_48_ARCHIVES_HAVE_TRUE_SCHEMA_PASS",
+    "CLOSE_TIME_FAILURE_CONFINED_TO_BTC_ETH_2023_03",
+    "SHARED_80_MINUTE_GAP_IDENTICAL_BTC_ETH",
+    "LOCAL_MARCH_ARCHIVES_MATCH_P1_VERIFIED_SHA256",
+    "CLOSE_TIME_ANOMALIES_IDENTICAL_BTC_ETH",
+    "CLOSE_TIME_ANOMALIES_CONFINED_TO_DOCUMENTED_MAINTENANCE_WINDOW",
+    "NO_OTHER_MARCH_CLOCK_OR_SCHEMA_CORRUPTION",
+    "NO_2024_OR_LATER_ACCESS"
+  ],
+  "diagnostic_scope": {
+    "2024_access_allowed": false,
+    "alpha_results_allowed": false,
+    "economic_replay_allowed": false,
+    "feature_computation_allowed": false,
+    "forward_returns_allowed": false,
+    "network_access_allowed": false,
+    "production_authorized": false,
+    "raw_month": "2023-03",
+    "symbols": [
+      "BTCUSDT",
+      "ETHUSDT"
+    ]
+  },
+  "documented_maintenance_window": {
+    "end_utc_exclusive": "2023-03-24T14:00:00+00:00",
+    "source": "FROZEN_RD36_P1D_DIAGNOSIS",
+    "start_utc": "2023-03-24T11:38:00+00:00"
+  },
+  "failure_next_stage": "RD38_PREREGISTER_NEXT_SPOT_ONLY_ADAPTIVE_EXIT_INFORMATION_SOURCE",
+  "observed_shared_gap": {
+    "end_utc_inclusive": "2023-03-24T13:59:00+00:00",
+    "missing_minutes_per_symbol": 80,
+    "start_utc": "2023-03-24T12:40:00+00:00"
+  },
+  "problem_statement": "P1 passed 9/10 gates. The failed gate was named ALL_ROWS_PARSE_TO_EXPECTED_1M_KLINE_SCHEMA, while per-file schema_pass remained true and only close_time_pass failed for BTCUSDT/ETHUSDT 2023-03.",
+  "research_integrity": {
+    "2024_access": false,
+    "alpha_results": false,
+    "economic_execution": false,
+    "feature_computation": false,
+    "forward_returns": false,
+    "p0_contract_relaxation": false,
+    "production_authorized": false,
+    "threshold_reoptimization": false
+  },
+  "schema_version": "rd37-p1d-shared-maintenance-window-diagnosis-protocol-v1",
+  "semantics_if_pass": {
+    "backfill": "FORBIDDEN",
+    "carry_forward": "FORBIDDEN",
+    "forward_fill": "FORBIDDEN",
+    "future_feature_warmup": "Lookback L requires L consecutive observed post-maintenance 1m bars after 14:00 UTC.",
+    "imputation": "FORBIDDEN",
+    "observed_rows_inside_window_usable": false,
+    "same_bar_cross_venue_use": "FORBIDDEN",
+    "state": "BINANCE_INFO_UNAVAILABLE",
+    "unavailable_end_utc_exclusive": "2023-03-24T14:00:00+00:00",
+    "unavailable_start_utc": "2023-03-24T11:38:00+00:00"
+  },
+  "source_p1_results_commit": "4aa19f0bbe9323b345ebb5510537e4a798bdec06",
+  "stage": "RD37_P1D_SHARED_MAINTENANCE_WINDOW_DIAGNOSIS",
+  "status": "FROZEN_PRE_DIAGNOSIS",
+  "success_next_stage": "RD37_P2_PREREGISTER_CAUSAL_1M_TO_HOUR_STRESS_TRANSFORMS_AND_THRESHOLDS_WITH_GAP_SEMANTICS"
+}
