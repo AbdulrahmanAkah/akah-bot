@@ -1,0 +1,228 @@
+{
+  "base_source_transforms": {
+    "flow_acceleration": {
+      "formula": "acceleration_t = pressure_6_t - pressure_24_t",
+      "interpretation": "positive means recent taker flow is more buy-skewed than the 24h state; negative means deterioration toward sell flow"
+    },
+    "flow_pressure": {
+      "formula": "pressure_L_t = arithmetic_mean(imbalance over the last L consecutive observed source bars, including t)",
+      "lookbacks_hours": [
+        6,
+        24,
+        72
+      ]
+    },
+    "participation_quote_shock": {
+      "input": "log1p(quote_volume_t)",
+      "invalid_when": "168 prior consecutive source bars unavailable OR MAD <= 0",
+      "normalizer": "robust_z against the immediately preceding 168 consecutive observed source bars, excluding t",
+      "robust_z_formula": "(x_t - median(history)) / (1.4826 * median(abs(history - median(history))))"
+    },
+    "participation_shock": {
+      "formula": "0.5 * participation_quote_shock + 0.5 * trade_count_shock"
+    },
+    "taker_buy_quote_imbalance": {
+      "clipping": "numerical_guard_only_to_[-1,1]",
+      "domain": "[-1, 1]",
+      "invalid_when": "quote_volume_t <= 0 OR source bar unavailable",
+      "symbol_level_formula": "imbalance_t = 2 * taker_buy_quote_volume_t / quote_volume_t - 1"
+    },
+    "trade_count_shock": {
+      "input": "log1p(number_of_trades_t)",
+      "invalid_when": "168 prior consecutive source bars unavailable OR MAD <= 0",
+      "normalizer": "same 168h prior-only robust_z rule as participation_quote_shock"
+    }
+  },
+  "clock_semantics": {
+    "earliest_kucoin_use": "t+1h",
+    "lookahead": "FORBIDDEN",
+    "same_bar_cross_venue_use": "FORBIDDEN",
+    "same_timestamp_target_start": "FORBIDDEN",
+    "source_bar_definition": "A Binance 1h bar with open time t is information only after that bar is fully closed.",
+    "target_reference_clock": "For later diagnostics, source bar t may first map to KuCoin reference time t+1h; any forward target starts from that KuCoin-native reference clock."
+  },
+  "cross_symbol_aggregation": {
+    "aggregation_requires_both_symbols_valid": true,
+    "consensus_negative": "BTCUSDT.pressure_24 < 0 AND ETHUSDT.pressure_24 < 0",
+    "consensus_positive": "BTCUSDT.pressure_24 > 0 AND ETHUSDT.pressure_24 > 0",
+    "flow_dispersion_24": "abs(BTCUSDT.pressure_24 - ETHUSDT.pressure_24)",
+    "market_acceleration": "0.5 * BTCUSDT.acceleration + 0.5 * ETHUSDT.acceleration",
+    "market_participation_shock": "0.5 * BTCUSDT.participation_shock + 0.5 * ETHUSDT.participation_shock",
+    "market_pressure_24": "0.5 * BTCUSDT.pressure_24 + 0.5 * ETHUSDT.pressure_24",
+    "market_pressure_6": "0.5 * BTCUSDT.pressure_6 + 0.5 * ETHUSDT.pressure_6",
+    "market_pressure_72": "0.5 * BTCUSDT.pressure_72 + 0.5 * ETHUSDT.pressure_72"
+  },
+  "design_role": "EXOGENOUS_STATE_LAYER_FOR_FUTURE_ADAPTIVE_EXIT_BRAIN;NOT_A_DIRECT_PRODUCTION_EXIT_RULE",
+  "frozen_state_families": [
+    {
+      "definition": "BTCUSDT.pressure_24 <= -0.10 AND ETHUSDT.pressure_24 <= -0.10",
+      "expected_target_direction": "NEGATIVE",
+      "family_id": "CONSENSUS_FLOW_RISK_OFF",
+      "future_exit_brain_role": "RISK_REDUCTION_EVIDENCE",
+      "priority": 1
+    },
+    {
+      "definition": "CONSENSUS_FLOW_RISK_OFF AND market_acceleration <= -0.05",
+      "expected_target_direction": "NEGATIVE",
+      "family_id": "ACCELERATING_FLOW_RISK_OFF",
+      "future_exit_brain_role": "URGENT_RISK_REDUCTION_EVIDENCE",
+      "priority": 2
+    },
+    {
+      "definition": "market_pressure_24 >= 0.10 AND market_pressure_6 <= 0",
+      "expected_target_direction": "NEGATIVE",
+      "family_id": "BUY_FLOW_EXHAUSTION",
+      "future_exit_brain_role": "TREND_EXHAUSTION_OR_PROFIT_PROTECTION_EVIDENCE",
+      "priority": 3
+    },
+    {
+      "definition": "market_pressure_24 <= -0.10 AND market_pressure_6 >= 0",
+      "expected_target_direction": "POSITIVE",
+      "family_id": "SELL_FLOW_EXHAUSTION_CONTROL",
+      "future_exit_brain_role": "EXIT_PRESSURE_RELEASE_CONTROL_NOT_PRIMARY_EXIT_TRIGGER",
+      "priority": 4
+    }
+  ],
+  "future_diagnostic_design": {
+    "2024_access": false,
+    "all_families_must_be_reported": true,
+    "economic_replay": false,
+    "feature_weight_optimization": false,
+    "parameter_search": false,
+    "periods": [
+      "ROBUSTNESS_2022",
+      "ROBUSTNESS_2023"
+    ],
+    "post_2024_access": false,
+    "production_use": false,
+    "return_ranking_used_for_family_selection": false,
+    "source_to_target_minimum_delay_hours": 1,
+    "stage": "RD36_P3_CROSS_VENUE_FLOW_STATE_DIAGNOSTIC_2022_2023",
+    "target_horizons_hours": [
+      6,
+      24,
+      72
+    ],
+    "target_return_definition": "KuCoin-native forward return beginning at the first eligible KuCoin reference clock t+1h; exact target bar mapping must be frozen in the P3 runner before observing results.",
+    "target_venue": "KUCOIN_SPOT",
+    "threshold_optimization": false,
+    "universes": [
+      "C2",
+      "D2",
+      "E2"
+    ],
+    "winner_selection_by_return": false
+  },
+  "future_diagnostic_minimum_support": {
+    "event_count_per_period_gte": 30,
+    "pair_count_per_period_gte": 10,
+    "signal_day_count_per_period_gte": 20
+  },
+  "future_directional_qualification": {
+    "cross_universe_rule": "A primary family may advance only if it satisfies its frozen directional rule in at least 2 of C2/D2/E2 in both 2022 and 2023; no best-universe cherry-picking.",
+    "positive_control_family_requires": [
+      "2022 mean KuCoin-native 24h forward return > 0",
+      "2023 mean KuCoin-native 24h forward return > 0"
+    ],
+    "primary_horizon_hours": 24,
+    "risk_off_or_exhaustion_negative_family_requires": [
+      "2022 mean KuCoin-native 24h forward return < 0",
+      "2022 median KuCoin-native 24h forward return < 0",
+      "2023 mean KuCoin-native 24h forward return < 0",
+      "2023 median KuCoin-native 24h forward return < 0",
+      "leave-one-pair-out 24h mean must remain < 0 for every eligible pair omission within the qualifying universe"
+    ],
+    "secondary_horizons": "6h and 72h are reported for shape/stability only and cannot override failure at the frozen 24h primary horizon."
+  },
+  "future_exit_brain_integration_rule": {
+    "if_any_primary_family_qualifies": "Freeze a later shadow exit-policy ablation comparing the existing KuCoin-native exit controller against the identical controller augmented only by the qualified lagged Binance state. Portfolio economics remain KuCoin-native.",
+    "if_no_primary_family_qualifies": "Do not integrate Binance flow into the exit brain; record RD36 cross-venue flow alpha as unqualified and move to the next preregistered research source.",
+    "integration_not_allowed_in_p2": true,
+    "integration_not_allowed_in_p3_diagnostic": true,
+    "production_authorization": false
+  },
+  "gap_semantics": {
+    "backfill": "FORBIDDEN",
+    "carry_forward_flow": "FORBIDDEN",
+    "feature_warmup_rule": "Every feature requiring L consecutive Binance observations is invalid until L new consecutive observed source bars have appeared after a Binance information gap.",
+    "forward_fill": "FORBIDDEN",
+    "imputation": "FORBIDDEN",
+    "known_shared_gap": "2023-03-24T13:00:00+00:00",
+    "missing_binance_hour_state": "BINANCE_INFO_UNAVAILABLE",
+    "same_bar_cross_venue_use": "FORBIDDEN",
+    "synthetic_zero_flow": "FORBIDDEN"
+  },
+  "lineage": {
+    "rd35_results_commit": "286d31a5abde73ae28ccb9bc715dc7d1969ef43c",
+    "rd36_p1_results_commit": "c117e31c0bc42fbdc3ea2381894f42d1bc45e1f4",
+    "rd36_p1d_decision": "RD36_SHARED_BINANCE_SPOT_HALT_GAP_CONFIRMED_SOURCE_USABLE_WITH_EXPLICIT_UNAVAILABLE_CLOCK",
+    "rd36_p1d_freeze_commit": "6c384e80cd7ec6ddb246c374754cb5145df23e67",
+    "rd36_p1d_report_git_blob": "194ef78aeef8160a225928d2fbebf797799789e3",
+    "rd36_p1d_report_path": "data/research/rd36_p1d_runtime/rd36-p1d-shared-gap-diagnosis-report-v1.json",
+    "rd36_p1d_results_commit": "90a56b8e6babcc0569a7cfc6a479da18a1c323b5",
+    "rd36_p1d_shared_missing_open_time": "2023-03-24T13:00:00+00:00"
+  },
+  "next_stage": "RD36_P3_FREEZE_CROSS_VENUE_FLOW_STATE_DIAGNOSTIC_ENGINE_THEN_RUN_2022_2023_ONCE",
+  "p2_observation_flags": {
+    "2024_accessed": false,
+    "alpha_features_computed": false,
+    "alpha_results_observed": false,
+    "economic_execution_performed": false,
+    "forward_returns_computed": false,
+    "post_2024_accessed": false,
+    "production_authorized": false,
+    "raw_market_data_loaded": false
+  },
+  "participation_context": {
+    "elevated_threshold": 1.0,
+    "rule": "market_participation_shock >= 1.0 is a preregistered context flag. It may be reported as a stratification layer but must not be used post hoc to rescue a failed primary family."
+  },
+  "prohibited_in_p2": {
+    "access_2024": true,
+    "access_post_2024": true,
+    "authorize_production": true,
+    "compute_features": true,
+    "compute_forward_returns": true,
+    "load_raw_binance_market_data": true,
+    "load_raw_kucoin_market_data": true,
+    "observe_alpha_results": true,
+    "rank_families_by_return": true,
+    "run_portfolio_economics": true,
+    "select_winner": true
+  },
+  "research_objective": "Test whether lagged Binance BTCUSDT/ETHUSDT spot-flow state contains incremental exogenous information that can improve a future adaptive KuCoin Spot exit/risk controller without using Binance for target prices, target returns, costs, fills, universe membership, or portfolio economics.",
+  "schema_version": "rd36-p2-cross-venue-binance-flow-kucoin-native-alpha-architecture-preregistration-v1",
+  "stage": "RD36_P2_CROSS_VENUE_BINANCE_SPOT_FLOW_KUCOIN_NATIVE_ALPHA_ARCHITECTURE_PREREGISTRATION",
+  "status": "FROZEN_PRE_FEATURE_COMPUTATION",
+  "venue_separation": {
+    "binance_ohlc_used_for_target_economics": false,
+    "binance_roles_forbidden": [
+      "target_execution_price",
+      "target_forward_return",
+      "target_cost_model",
+      "target_universe",
+      "portfolio_pnl",
+      "position_accounting"
+    ],
+    "information_fields_allowed": [
+      "quote_volume",
+      "number_of_trades",
+      "taker_buy_quote_volume"
+    ],
+    "information_interval": "1h",
+    "information_symbols": [
+      "BTCUSDT",
+      "ETHUSDT"
+    ],
+    "information_venue": "BINANCE_SPOT",
+    "kucoin_roles_only": [
+      "point_in_time_universe_membership",
+      "target_reference_price",
+      "forward_returns",
+      "cost_model",
+      "economic_replay",
+      "portfolio_accounting"
+    ],
+    "target_venue": "KUCOIN_SPOT"
+  }
+}
