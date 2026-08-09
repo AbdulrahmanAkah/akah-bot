@@ -1,0 +1,199 @@
+{
+  "action_mapping_firewall": {
+    "confirmation_window": "NOT_DEFINED",
+    "first_later_economic_shadow_slot_escrow": "REQUIRED_IF_EARLY_ACTION_TESTED",
+    "full_liquidation_rule": "NOT_DEFINED",
+    "p1_or_p2_action_mapping": "FORBIDDEN",
+    "partial_derisk_fraction": "NOT_DEFINED",
+    "slot_escrow_does_not_solve": "ACTION_IRREVERSIBILITY_OR_ACTION_SEVERITY_MAPPING",
+    "slot_escrow_solves": "FREED_SLOT_AND_CAPITAL_REUSE_FEEDBACK_ONLY"
+  },
+  "administrative_boundary_contract": {
+    "classification": "ADMINISTRATIVE_PRE_TRUNCATION_NOT_PROOF_OF_ZERO_CENSORING_IN_UNTRUNCATED_CAUSAL_RISK_SET",
+    "historical_rd31_behavior": "SIGNAL_EVENTS_PRE_FILTERED_SO_ENTRY_PLUS_168H_WAS_STRICTLY_BEFORE_2024_CUTOFF",
+    "rd41_requirement": "RECONSTRUCT_FULL_CAUSAL_CONTROL_RISK_SET_THROUGH_2023_WITHOUT_MAX168_COMPLETION_PREFILTER_FOR_CENSUS"
+  },
+  "architecture_change": {
+    "admission_governor_is_binary_exit_permission": false,
+    "continuous_value_before_binary_action": true,
+    "fixed_24h_negative_return_is_primary_exit_target": false,
+    "short_horizon_negative_forecast_sufficient_for_full_exit": false
+  },
+  "censoring_semantics": {
+    "assign_success_or_failure_to_censored": false,
+    "remaining_control_value_for_right_censored": "UNAVAILABLE_RIGHT_CENSORED",
+    "right_censored_kept_in_survival_risk_history": true,
+    "terminal_hazard_censored_flag": 1,
+    "terminal_hazard_event_at_censoring": 0,
+    "use_last_available_price_as_terminal_exit": false
+  },
+  "frozen_control_identity": {
+    "diagnostic_cost_multiplier": 1.0,
+    "forced_regime_exit_enabled": false,
+    "lifecycle": "EXACT_RD30_TIME_FAIL72_MAX168_NO_PROFIT_NO_REPLACEMENT",
+    "maximum_hold_exit": "MAX_HOLD_168H",
+    "policy_id": "RD31_REGIME_HYSTERESIS_CONTROL",
+    "portfolio_id": "UNION_FOCUS",
+    "profit_state_enabled": false,
+    "replacement_enabled": false,
+    "time_failure_exit": "TIME_FAILURE_72H_CLOSE_NOT_ABOVE_ENTRY"
+  },
+  "full_risk_set_contract": {
+    "administrative_cutoff_exclusive": "2024-01-01T00:00:00Z",
+    "censor_time": "2024-01-01T00:00:00Z",
+    "exclude_signal_because_potential_max_hold_crosses_cutoff": false,
+    "force_close_at_cutoff": "FORBIDDEN",
+    "observation_start": "2022-01-01T00:00:00Z",
+    "prices_at_or_after_cutoff": "FORBIDDEN",
+    "row_classes": [
+      "RESOLVED_CONTROL_OUTCOME",
+      "RIGHT_CENSORED_AT_CUTOFF",
+      "EXCLUDED_CONTRACT_VIOLATION"
+    ],
+    "same_frozen_rd31_admission_portfolio_and_lifecycle_logic": true,
+    "silent_drop_at_cutoff": "FORBIDDEN"
+  },
+  "governor_role": {
+    "allowed_role": "CONTEXT_FEATURE_OR_SEVERITY_MODIFIER",
+    "binary_exit_permission": false,
+    "causal_effect_claim": "FORBIDDEN",
+    "cohort_selection_warning": true,
+    "future_incremental_test": "SAME_RISK_SET_BASE_TRADE_INFORMATION_VS_BASE_PLUS_GOVERNOR_CONTEXT",
+    "locked_vs_open_as_randomized_cohorts": "FORBIDDEN"
+  },
+  "landmark_contract": {
+    "grid_selected_after_p2_counts": false,
+    "landmark_ages_hours": [
+      24,
+      48,
+      72,
+      96,
+      120,
+      144
+    ],
+    "landmark_at_or_after_control_exit": "NOT_AT_RISK",
+    "position_must_be_open_strictly_at_landmark": true,
+    "right_censored_position_contributes_until_censor_time": true
+  },
+  "lineage": {
+    "pit_membership_sha256": "f7d6012ce8cd691583b9b6276ddf36371bfe0bbd9b28f810b676ad0177fb559e",
+    "rd26_signal_ledger_sha256": "6462f576cee9681751368a7755d3ca51ebf945ced54ea7b7f18b47bc469ba725",
+    "rd31_governor_git_blob": "60840054dbaf06c4ae226ab15742fa862326ac99",
+    "rd31_replay_git_blob": "0a8a56904b0dc200ad516666a0749c3472e59e91",
+    "rd31_runner_git_blob": "3b5c6916e34be6c9642702fe2807e42e445ee083",
+    "rd31_transition_ledger_sha256": "46c36f91041912ebcfefdbe2d710bb090d73b3aeea65cabad2be71ad138e640b",
+    "rd32_closed_trade_ledger_sha256": "07f49e0e9235f736f54ee9dd59142c16fc4e7b99e83781b1ee26b9338def117e",
+    "rd40_closure_git_blob": "7ec091e8e8051a36d4bc9a37a7bd245a46d17df3",
+    "rd40_closure_sha256": "770fbf9eb7c85b2e63884e2e41fae95253d175f79fb47c42aa9a53ac9126a978",
+    "rd40_p2_results_commit": "a9cba2267b1dde52a3ece97b9ca141caf9502629",
+    "rd40_p3_closure_commit": "325c03bdd3aab6b50692fdb7875958fcc4af72a8"
+  },
+  "next_stage": "RD41_P2_FREEZE_AND_RUN_FULL_RISK_SET_CENSORING_RECONCILIATION_2022_2023_ONCE",
+  "p1_observation_flags": {
+    "2024_accessed": false,
+    "censoring_counts_observed": false,
+    "control_replay_executed": false,
+    "economic_action_executed": false,
+    "full_risk_set_reconstructed": false,
+    "membership_rows_loaded": false,
+    "parameter_search_used": false,
+    "post_2024_accessed": false,
+    "predictive_features_computed": false,
+    "production_authorized": false,
+    "raw_market_data_loaded": false,
+    "remaining_control_value_computed": false,
+    "signal_rows_loaded": false,
+    "terminal_archetype_counts_observed": false,
+    "terminal_hazard_computed": false,
+    "threshold_optimization_used": false,
+    "trade_rows_loaded": false,
+    "winner_selection_used": false
+  },
+  "primary_target_family": {
+    "control_exit_time_price_reason_are_target_side_future_information_only": true,
+    "decision_clock": "KUCOIN_SPOT_1H_OPEN_t",
+    "feature_cutoff": "COMPLETED_BAR_t_minus_1",
+    "gross_definition": "FROZEN_CONTROL_EXIT_FILL_VALUE_RELATIVE_TO_DECISION_t_IMMEDIATE_LIQUIDATION_VALUE_BEFORE_COSTS",
+    "id": "REMAINING_CONTROL_VALUE",
+    "net_definition": "FROZEN_CONTROL_EXIT_NET_LIQUIDATION_VALUE_RELATIVE_TO_DECISION_t_NET_IMMEDIATE_LIQUIDATION_VALUE_USING_EXACT_FROZEN_CONTROL_COST_MODEL",
+    "type": "CONTINUOUS_COUNTERFACTUAL_VALUE"
+  },
+  "pseudo_replication_firewall": {
+    "minimum_unique_pairs_per_universe_year_landmark": 5,
+    "minimum_unique_positions_per_universe_year_landmark": 20,
+    "minimum_unique_signal_days_per_universe_year_landmark": 10,
+    "multiple_decision_times_same_trade_are_independent": false,
+    "primary_cluster_id": "control_position_id",
+    "raw_row_count_is_support_metric": false,
+    "required_sample_diagnostics": [
+      "decision_row_count",
+      "unique_control_position_count",
+      "unique_pair_count",
+      "unique_signal_day_count",
+      "resolved_target_count",
+      "right_censored_target_count"
+    ],
+    "support_gates_may_be_relaxed_after_counts_seen": false
+  },
+  "rd41_p2_reconciliation_contract": {
+    "if_overlap_parity_fails": "STOP_RD41_BEFORE_TARGET_COMPUTATION",
+    "late_boundary_extension_may_add_right_censored_positions": true,
+    "late_boundary_extension_may_change_historical_resolved_overlap": false,
+    "must_reproduce_original_resolved_overlap_exactly": true,
+    "parity_fields": [
+      "pair",
+      "entry_time",
+      "entry_price",
+      "exit_time",
+      "exit_price",
+      "exit_reason",
+      "universe_id"
+    ],
+    "purpose": "COHORT_CENSORING_AND_TERMINAL_ARCHETYPE_CENSUS_ONLY_NO_ALPHA_OR_TARGET_DIAGNOSTIC",
+    "required_outputs": [
+      "full-control-risk-set-ledger",
+      "censoring-summary",
+      "resolved-overlap-parity",
+      "terminal-outcome-archetype-summary",
+      "risk-set-by-year-universe-age",
+      "risk-set-by-year-universe-governor-state",
+      "exclusion-reason-summary"
+    ],
+    "resolved_overlap_reference": "FROZEN_RD32_1X_RD31_REGIME_HYSTERESIS_CONTROL_UNION_FOCUS_TRADE_SET"
+  },
+  "research_question": "CAN_POINT_IN_TIME_INFORMATION_AT_DECISION_t_PREDICT_THE_MARGINAL_VALUE_OF_CONTINUING_THE_EXISTING_POSITION_TO_ITS_FROZEN_CONTROL_EXIT_AND_THE_HAZARD_OF_TERMINAL_CONTROL_FAILURE_ROBUSTLY_ACROSS_2022_AND_2023",
+  "robustness_contract": {
+    "2024_access": "FORBIDDEN",
+    "calendar_year_as_feature": "FORBIDDEN",
+    "periods": [
+      "ROBUSTNESS_2022",
+      "ROBUSTNESS_2023"
+    ],
+    "single_year_success_is_sufficient": false,
+    "year_direction_reversal": "REGIME_DIRECTION_REVERSAL_NOT_A_WINNER"
+  },
+  "schema_version": "rd41-p1-remaining-control-value-terminal-hazard-target-censoring-preregistration-v1",
+  "secondary_target_family": {
+    "competing_terminal_nonfailure": "MAX_HOLD_168H",
+    "id": "TERMINAL_CONTROL_OUTCOME_HAZARD",
+    "primary_failure_event": "TIME_FAILURE_72H_CLOSE_NOT_ABOVE_ENTRY",
+    "right_censoring": "ADMINISTRATIVE_AT_2024_CUTOFF",
+    "type": "RIGHT_CENSORED_TIME_TO_EVENT",
+    "unexpected_exit_reason": "CONTRACT_VIOLATION_STOP_BEFORE_HAZARD_DIAGNOSTIC"
+  },
+  "stage": "RD41_P1_PREREGISTER_REMAINING_CONTROL_VALUE_TERMINAL_HAZARD_AND_CENSORING_CONTRACT",
+  "status": "FROZEN_PRE_COHORT_RECONCILIATION_PRE_TARGET",
+  "tombstone_registry": {
+    "ADVERSE_PATH_DOMINANCE": "REVERSED_DIRECTION_TOMBSTONE",
+    "PERSISTENT_LOWER_HIGH_GIVEBACK": "REVERSED_DIRECTION_TOMBSTONE",
+    "STALE_PEAK_FRESH_DECAY": "NON_ROBUST_DIAGNOSTIC_ONLY",
+    "TROUGH_RECOVERY_FAILURE": "REGIME_DIRECTION_REVERSAL_TOMBSTONE",
+    "UNRECOVERED_ENTRY_FAILURE": "REVERSED_DIRECTION_TOMBSTONE"
+  },
+  "tombstone_rules": {
+    "direct_reuse": "FORBIDDEN",
+    "renamed_near_equivalent_retest": "FORBIDDEN",
+    "stale_peak_continuous_primitives_require_new_preregistered_hypothesis": true,
+    "threshold_variant_rescue": "FORBIDDEN"
+  }
+}
