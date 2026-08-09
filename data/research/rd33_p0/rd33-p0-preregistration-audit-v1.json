@@ -1,0 +1,36 @@
+{
+  "2024_accessed": false,
+  "candidate_count": 3,
+  "candidate_policy_order": [
+    "MB_ONE_BAR_BREAKOUT_LEVEL_HOLD",
+    "MB_ONE_BAR_POST_BREAKOUT_CONTINUATION",
+    "MB_FIRST_RETEST_RECLAIM_WITHIN_FROZEN_72H"
+  ],
+  "candidate_results_observed": false,
+  "control_policy": "RD31_REGIME_HYSTERESIS_CONTROL",
+  "delayed_confirmation_architecture_only": true,
+  "economic_execution_performed": false,
+  "expected_future_economic_replays": 72,
+  "governor_transition_clock_frozen_to_control": true,
+  "hard_gate_count": 16,
+  "next_stage": "RD33_P0B_IMPLEMENT_AND_TEST_TEMPORAL_MB_ARCHITECTURE_ENGINE_PRE_ECONOMIC_EXECUTION",
+  "post_2024_accessed": false,
+  "production_authorized": false,
+  "protocol_path": "data/research/rd33_p0/rd33-p0-signal-family-architecture-redesign-protocol-v1.json",
+  "protocol_sha256": "9b75c6bcaa1ad6acb0646b6b674fe16adb0b1546848efb2971030d0d9c182236",
+  "raw_market_data_loaded": false,
+  "research_question": "CAN_CAUSAL_TEMPORALLY_CONFIRMED_MB_ARCHITECTURES_REPLACE_SAME_BAR_BREAKOUT_ENTRY_AND_MAKE_2022_MB_AND_UNION_ROBUST_WITHOUT_CHANGING_RD31_GOVERNOR_RS_EXIT_SIZING_OR_COST_SEMANTICS",
+  "rs_path_frozen_unchanged": true,
+  "same_16_hard_gates_as_rd32": true,
+  "schema_version": "rd33-p0-preregistration-audit-v1",
+  "source_branch": "research/rd32-residual-loss-attribution-v1",
+  "source_rd32_results_commit": "bac6c7ba6ddf63a58676b5e18b516061d1969bb1",
+  "stage": "RD33_P0_SIGNAL_FAMILY_ARCHITECTURE_REDESIGN_PREREGISTRATION",
+  "status": "PASS",
+  "target_branch": "research/rd33-signal-family-architecture-redesign-v1",
+  "verified_rd32_sha256": {
+    "data/research/rd32_p3_runtime/output-manifest.json": "3ec7963f2ec93b1921b63c3c9be3cebfc7745212a52b631dbc0936fd94866d6d",
+    "data/research/rd32_p3_runtime/rd32-p3-mb-signal-quality-admission-report-v1.json": "f33148c574ebd0a0fa7cb443d8416f8e5d3aad3ba5e9199d908d73c27ca096fb",
+    "data/research/rd32_p3r1/rd32-p3r1-structured-replay-parity-and-results-recovery-audit-v2.json": "4fc3a332be03084039017f3ee1b251bc0523c92e75d702391f54adf440d0abec"
+  }
+}
