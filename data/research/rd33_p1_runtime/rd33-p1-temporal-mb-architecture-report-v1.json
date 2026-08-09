@@ -1,0 +1,671 @@
+{
+  "2022_2023_used_for_architecture_selection": true,
+  "2024_accessed": false,
+  "candidate_parameters_changed_after_economic_execution": false,
+  "causality_gate_count": 8,
+  "causality_mapping_audit": {
+    "2024_accessed": false,
+    "candidate_mb_trade_rows": 4128,
+    "confirmation_timing_mismatch_sample": [],
+    "gates": {
+      "CONTROL_PARITY_18_ROWS_VS_RD32_FINAL_CONTROL": true,
+      "EVERY_CANDIDATE_MB_PENDING_MAPS_TO_ONE_FROZEN_RAW_MB_EVENT": true,
+      "EVERY_CANDIDATE_MB_TRADE_MAPS_TO_ONE_CONTROL_ADMITTED_MB_ORIGIN": true,
+      "GOVERNOR_TRANSITION_LEDGER_EXACT_PARITY_VS_CONTROL": true,
+      "NO_2024_OR_POST_2024_ACCESS": true,
+      "NO_CANDIDATE_ENTRY_PRECEDES_ITS_REQUIRED_COMPLETED_CONFIRMATION": true,
+      "RS_METRIC_INVARIANCE_18_ROWS_ACROSS_ALL_CANDIDATES": true,
+      "RS_TRADE_LEDGER_INVARIANCE_ACROSS_ALL_CANDIDATES": true
+    },
+    "passed": true,
+    "pending_raw_mapping_mismatch_sample": [],
+    "post_2024_accessed": false,
+    "registered_candidate_pending_rows": 101202,
+    "schema_version": "rd33-p1-causality-mapping-audit-v1",
+    "trade_control_origin_mismatch_sample": []
+  },
+  "control_parity_vs_rd32": {
+    "current_policy": "RD31_REGIME_HYSTERESIS_CONTROL",
+    "maximum_numeric_absolute_error": 1.4551915228366852e-11,
+    "passed": true,
+    "row_count": 18,
+    "source_policy": "RD31_REGIME_HYSTERESIS_CONTROL",
+    "source_results_commit": "bac6c7ba6ddf63a58676b5e18b516061d1969bb1"
+  },
+  "decision": "RD33_TEMPORAL_MB_ARCHITECTURE_NO_FINALIST_MULTI_FAMILY_SIGNAL_ARCHITECTURE_OR_NEW_ALPHA_SOURCE_REQUIRED",
+  "governor_transition_parity": {
+    "candidate_confirmation_triggered_second_transition": false,
+    "comparison_count": 54,
+    "comparisons": [
+      {
+        "cost_multiplier": 1.0,
+        "maximum_numeric_absolute_error": 0.0,
+        "passed": true,
+        "policy_id": "MB_ONE_BAR_BREAKOUT_LEVEL_HOLD",
+        "portfolio_id": "UNION_FOCUS",
+        "row_count": 2249,
+        "universe_id": "C2"
+      },
+      {
+        "cost_multiplier": 1.0,
+        "maximum_numeric_absolute_error": 0.0,
+        "passed": true,
+        "policy_id": "MB_ONE_BAR_POST_BREAKOUT_CONTINUATION",
+        "portfolio_id": "UNION_FOCUS",
+        "row_count": 2249,
+        "universe_id": "C2"
+      },
+      {
+        "cost_multiplier": 1.0,
+        "maximum_numeric_absolute_error": 0.0,
+        "passed": true,
+        "policy_id": "MB_FIRST_RETEST_RECLAIM_WITHIN_FROZEN_72H",
+        "portfolio_id": "UNION_FOCUS",
+        "row_count": 2249,
+        "universe_id": "C2"
+      },
+      {
+        "cost_multiplier": 2.0,
+        "maximum_numeric_absolute_error": 0.0,
+        "passed": true,
+        "policy_id": "MB_ONE_BAR_BREAKOUT_LEVEL_HOLD",
+        "portfolio_id": "UNION_FOCUS",
+        "row_count": 2249,
+        "universe_id": "C2"
+      },
+      {
+        "cost_multiplier": 2.0,
+        "maximum_numeric_absolute_error": 0.0,
+        "passed": true,
+        "policy_id": "MB_ONE_BAR_POST_BREAKOUT_CONTINUATION",
+        "portfolio_id": "UNION_FOCUS",
+        "row_count": 2249,
+        "universe_id": "C2"
+      },
+      {
+        "cost_multiplier": 2.0,
+        "maximum_numeric_absolute_error": 0.0,
+        "passed": true,
+        "policy_id": "MB_FIRST_RETEST_RECLAIM_WITHIN_FROZEN_72H",
+        "portfolio_id": "UNION_FOCUS",
+        "row_count": 2249,
+        "universe_id": "C2"
+      },
+      {
+        "cost_multiplier": 1.0,
+        "maximum_numeric_absolute_error": 0.0,
+        "passed": true,
+        "policy_id": "MB_ONE_BAR_BREAKOUT_LEVEL_HOLD",
+        "portfolio_id": "UNION_FOCUS",
+        "row_count": 2306,
+        "universe_id": "D2"
+      },
+      {
+        "cost_multiplier": 1.0,
+        "maximum_numeric_absolute_error": 0.0,
+        "passed": true,
+        "policy_id": "MB_ONE_BAR_POST_BREAKOUT_CONTINUATION",
+        "portfolio_id": "UNION_FOCUS",
+        "row_count": 2306,
+        "universe_id": "D2"
+      },
+      {
+        "cost_multiplier": 1.0,
+        "maximum_numeric_absolute_error": 0.0,
+        "passed": true,
+        "policy_id": "MB_FIRST_RETEST_RECLAIM_WITHIN_FROZEN_72H",
+        "portfolio_id": "UNION_FOCUS",
+        "row_count": 2306,
+        "universe_id": "D2"
+      },
+      {
+        "cost_multiplier": 2.0,
+        "maximum_numeric_absolute_error": 0.0,
+        "passed": true,
+        "policy_id": "MB_ONE_BAR_BREAKOUT_LEVEL_HOLD",
+        "portfolio_id": "UNION_FOCUS",
+        "row_count": 2306,
+        "universe_id": "D2"
+      },
+      {
+        "cost_multiplier": 2.0,
+        "maximum_numeric_absolute_error": 0.0,
+        "passed": true,
+        "policy_id": "MB_ONE_BAR_POST_BREAKOUT_CONTINUATION",
+        "portfolio_id": "UNION_FOCUS",
+        "row_count": 2306,
+        "universe_id": "D2"
+      },
+      {
+        "cost_multiplier": 2.0,
+        "maximum_numeric_absolute_error": 0.0,
+        "passed": true,
+        "policy_id": "MB_FIRST_RETEST_RECLAIM_WITHIN_FROZEN_72H",
+        "portfolio_id": "UNION_FOCUS",
+        "row_count": 2306,
+        "universe_id": "D2"
+      },
+      {
+        "cost_multiplier": 1.0,
+        "maximum_numeric_absolute_error": 0.0,
+        "passed": true,
+        "policy_id": "MB_ONE_BAR_BREAKOUT_LEVEL_HOLD",
+        "portfolio_id": "UNION_FOCUS",
+        "row_count": 2289,
+        "universe_id": "E2"
+      },
+      {
+        "cost_multiplier": 1.0,
+        "maximum_numeric_absolute_error": 0.0,
+        "passed": true,
+        "policy_id": "MB_ONE_BAR_POST_BREAKOUT_CONTINUATION",
+        "portfolio_id": "UNION_FOCUS",
+        "row_count": 2289,
+        "universe_id": "E2"
+      },
+      {
+        "cost_multiplier": 1.0,
+        "maximum_numeric_absolute_error": 0.0,
+        "passed": true,
+        "policy_id": "MB_FIRST_RETEST_RECLAIM_WITHIN_FROZEN_72H",
+        "portfolio_id": "UNION_FOCUS",
+        "row_count": 2289,
+        "universe_id": "E2"
+      },
+      {
+        "cost_multiplier": 2.0,
+        "maximum_numeric_absolute_error": 0.0,
+        "passed": true,
+        "policy_id": "MB_ONE_BAR_BREAKOUT_LEVEL_HOLD",
+        "portfolio_id": "UNION_FOCUS",
+        "row_count": 2289,
+        "universe_id": "E2"
+      },
+      {
+        "cost_multiplier": 2.0,
+        "maximum_numeric_absolute_error": 0.0,
+        "passed": true,
+        "policy_id": "MB_ONE_BAR_POST_BREAKOUT_CONTINUATION",
+        "portfolio_id": "UNION_FOCUS",
+        "row_count": 2289,
+        "universe_id": "E2"
+      },
+      {
+        "cost_multiplier": 2.0,
+        "maximum_numeric_absolute_error": 0.0,
+        "passed": true,
+        "policy_id": "MB_FIRST_RETEST_RECLAIM_WITHIN_FROZEN_72H",
+        "portfolio_id": "UNION_FOCUS",
+        "row_count": 2289,
+        "universe_id": "E2"
+      },
+      {
+        "cost_multiplier": 1.0,
+        "maximum_numeric_absolute_error": 0.0,
+        "passed": true,
+        "policy_id": "MB_ONE_BAR_BREAKOUT_LEVEL_HOLD",
+        "portfolio_id": "MOMENTUM_BREAKOUT",
+        "row_count": 1279,
+        "universe_id": "C2"
+      },
+      {
+        "cost_multiplier": 1.0,
+        "maximum_numeric_absolute_error": 0.0,
+        "passed": true,
+        "policy_id": "MB_ONE_BAR_POST_BREAKOUT_CONTINUATION",
+        "portfolio_id": "MOMENTUM_BREAKOUT",
+        "row_count": 1279,
+        "universe_id": "C2"
+      },
+      {
+        "cost_multiplier": 1.0,
+        "maximum_numeric_absolute_error": 0.0,
+        "passed": true,
+        "policy_id": "MB_FIRST_RETEST_RECLAIM_WITHIN_FROZEN_72H",
+        "portfolio_id": "MOMENTUM_BREAKOUT",
+        "row_count": 1279,
+        "universe_id": "C2"
+      },
+      {
+        "cost_multiplier": 2.0,
+        "maximum_numeric_absolute_error": 0.0,
+        "passed": true,
+        "policy_id": "MB_ONE_BAR_BREAKOUT_LEVEL_HOLD",
+        "portfolio_id": "MOMENTUM_BREAKOUT",
+        "row_count": 1279,
+        "universe_id": "C2"
+      },
+      {
+        "cost_multiplier": 2.0,
+        "maximum_numeric_absolute_error": 0.0,
+        "passed": true,
+        "policy_id": "MB_ONE_BAR_POST_BREAKOUT_CONTINUATION",
+        "portfolio_id": "MOMENTUM_BREAKOUT",
+        "row_count": 1279,
+        "universe_id": "C2"
+      },
+      {
+        "cost_multiplier": 2.0,
+        "maximum_numeric_absolute_error": 0.0,
+        "passed": true,
+        "policy_id": "MB_FIRST_RETEST_RECLAIM_WITHIN_FROZEN_72H",
+        "portfolio_id": "MOMENTUM_BREAKOUT",
+        "row_count": 1279,
+        "universe_id": "C2"
+      },
+      {
+        "cost_multiplier": 1.0,
+        "maximum_numeric_absolute_error": 0.0,
+        "passed": true,
+        "policy_id": "MB_ONE_BAR_BREAKOUT_LEVEL_HOLD",
+        "portfolio_id": "MOMENTUM_BREAKOUT",
+        "row_count": 1303,
+        "universe_id": "D2"
+      },
+      {
+        "cost_multiplier": 1.0,
+        "maximum_numeric_absolute_error": 0.0,
+        "passed": true,
+        "policy_id": "MB_ONE_BAR_POST_BREAKOUT_CONTINUATION",
+        "portfolio_id": "MOMENTUM_BREAKOUT",
+        "row_count": 1303,
+        "universe_id": "D2"
+      },
+      {
+        "cost_multiplier": 1.0,
+        "maximum_numeric_absolute_error": 0.0,
+        "passed": true,
+        "policy_id": "MB_FIRST_RETEST_RECLAIM_WITHIN_FROZEN_72H",
+        "portfolio_id": "MOMENTUM_BREAKOUT",
+        "row_count": 1303,
+        "universe_id": "D2"
+      },
+      {
+        "cost_multiplier": 2.0,
+        "maximum_numeric_absolute_error": 0.0,
+        "passed": true,
+        "policy_id": "MB_ONE_BAR_BREAKOUT_LEVEL_HOLD",
+        "portfolio_id": "MOMENTUM_BREAKOUT",
+        "row_count": 1303,
+        "universe_id": "D2"
+      },
+      {
+        "cost_multiplier": 2.0,
+        "maximum_numeric_absolute_error": 0.0,
+        "passed": true,
+        "policy_id": "MB_ONE_BAR_POST_BREAKOUT_CONTINUATION",
+        "portfolio_id": "MOMENTUM_BREAKOUT",
+        "row_count": 1303,
+        "universe_id": "D2"
+      },
+      {
+        "cost_multiplier": 2.0,
+        "maximum_numeric_absolute_error": 0.0,
+        "passed": true,
+        "policy_id": "MB_FIRST_RETEST_RECLAIM_WITHIN_FROZEN_72H",
+        "portfolio_id": "MOMENTUM_BREAKOUT",
+        "row_count": 1303,
+        "universe_id": "D2"
+      },
+      {
+        "cost_multiplier": 1.0,
+        "maximum_numeric_absolute_error": 0.0,
+        "passed": true,
+        "policy_id": "MB_ONE_BAR_BREAKOUT_LEVEL_HOLD",
+        "portfolio_id": "MOMENTUM_BREAKOUT",
+        "row_count": 1292,
+        "universe_id": "E2"
+      },
+      {
+        "cost_multiplier": 1.0,
+        "maximum_numeric_absolute_error": 0.0,
+        "passed": true,
+        "policy_id": "MB_ONE_BAR_POST_BREAKOUT_CONTINUATION",
+        "portfolio_id": "MOMENTUM_BREAKOUT",
+        "row_count": 1292,
+        "universe_id": "E2"
+      },
+      {
+        "cost_multiplier": 1.0,
+        "maximum_numeric_absolute_error": 0.0,
+        "passed": true,
+        "policy_id": "MB_FIRST_RETEST_RECLAIM_WITHIN_FROZEN_72H",
+        "portfolio_id": "MOMENTUM_BREAKOUT",
+        "row_count": 1292,
+        "universe_id": "E2"
+      },
+      {
+        "cost_multiplier": 2.0,
+        "maximum_numeric_absolute_error": 0.0,
+        "passed": true,
+        "policy_id": "MB_ONE_BAR_BREAKOUT_LEVEL_HOLD",
+        "portfolio_id": "MOMENTUM_BREAKOUT",
+        "row_count": 1292,
+        "universe_id": "E2"
+      },
+      {
+        "cost_multiplier": 2.0,
+        "maximum_numeric_absolute_error": 0.0,
+        "passed": true,
+        "policy_id": "MB_ONE_BAR_POST_BREAKOUT_CONTINUATION",
+        "portfolio_id": "MOMENTUM_BREAKOUT",
+        "row_count": 1292,
+        "universe_id": "E2"
+      },
+      {
+        "cost_multiplier": 2.0,
+        "maximum_numeric_absolute_error": 0.0,
+        "passed": true,
+        "policy_id": "MB_FIRST_RETEST_RECLAIM_WITHIN_FROZEN_72H",
+        "portfolio_id": "MOMENTUM_BREAKOUT",
+        "row_count": 1292,
+        "universe_id": "E2"
+      },
+      {
+        "cost_multiplier": 1.0,
+        "maximum_numeric_absolute_error": 0.0,
+        "passed": true,
+        "policy_id": "MB_ONE_BAR_BREAKOUT_LEVEL_HOLD",
+        "portfolio_id": "RELATIVE_STRENGTH_ROTATION",
+        "row_count": 1047,
+        "universe_id": "C2"
+      },
+      {
+        "cost_multiplier": 1.0,
+        "maximum_numeric_absolute_error": 0.0,
+        "passed": true,
+        "policy_id": "MB_ONE_BAR_POST_BREAKOUT_CONTINUATION",
+        "portfolio_id": "RELATIVE_STRENGTH_ROTATION",
+        "row_count": 1047,
+        "universe_id": "C2"
+      },
+      {
+        "cost_multiplier": 1.0,
+        "maximum_numeric_absolute_error": 0.0,
+        "passed": true,
+        "policy_id": "MB_FIRST_RETEST_RECLAIM_WITHIN_FROZEN_72H",
+        "portfolio_id": "RELATIVE_STRENGTH_ROTATION",
+        "row_count": 1047,
+        "universe_id": "C2"
+      },
+      {
+        "cost_multiplier": 2.0,
+        "maximum_numeric_absolute_error": 0.0,
+        "passed": true,
+        "policy_id": "MB_ONE_BAR_BREAKOUT_LEVEL_HOLD",
+        "portfolio_id": "RELATIVE_STRENGTH_ROTATION",
+        "row_count": 1047,
+        "universe_id": "C2"
+      },
+      {
+        "cost_multiplier": 2.0,
+        "maximum_numeric_absolute_error": 0.0,
+        "passed": true,
+        "policy_id": "MB_ONE_BAR_POST_BREAKOUT_CONTINUATION",
+        "portfolio_id": "RELATIVE_STRENGTH_ROTATION",
+        "row_count": 1047,
+        "universe_id": "C2"
+      },
+      {
+        "cost_multiplier": 2.0,
+        "maximum_numeric_absolute_error": 0.0,
+        "passed": true,
+        "policy_id": "MB_FIRST_RETEST_RECLAIM_WITHIN_FROZEN_72H",
+        "portfolio_id": "RELATIVE_STRENGTH_ROTATION",
+        "row_count": 1047,
+        "universe_id": "C2"
+      },
+      {
+        "cost_multiplier": 1.0,
+        "maximum_numeric_absolute_error": 0.0,
+        "passed": true,
+        "policy_id": "MB_ONE_BAR_BREAKOUT_LEVEL_HOLD",
+        "portfolio_id": "RELATIVE_STRENGTH_ROTATION",
+        "row_count": 1079,
+        "universe_id": "D2"
+      },
+      {
+        "cost_multiplier": 1.0,
+        "maximum_numeric_absolute_error": 0.0,
+        "passed": true,
+        "policy_id": "MB_ONE_BAR_POST_BREAKOUT_CONTINUATION",
+        "portfolio_id": "RELATIVE_STRENGTH_ROTATION",
+        "row_count": 1079,
+        "universe_id": "D2"
+      },
+      {
+        "cost_multiplier": 1.0,
+        "maximum_numeric_absolute_error": 0.0,
+        "passed": true,
+        "policy_id": "MB_FIRST_RETEST_RECLAIM_WITHIN_FROZEN_72H",
+        "portfolio_id": "RELATIVE_STRENGTH_ROTATION",
+        "row_count": 1079,
+        "universe_id": "D2"
+      },
+      {
+        "cost_multiplier": 2.0,
+        "maximum_numeric_absolute_error": 0.0,
+        "passed": true,
+        "policy_id": "MB_ONE_BAR_BREAKOUT_LEVEL_HOLD",
+        "portfolio_id": "RELATIVE_STRENGTH_ROTATION",
+        "row_count": 1079,
+        "universe_id": "D2"
+      },
+      {
+        "cost_multiplier": 2.0,
+        "maximum_numeric_absolute_error": 0.0,
+        "passed": true,
+        "policy_id": "MB_ONE_BAR_POST_BREAKOUT_CONTINUATION",
+        "portfolio_id": "RELATIVE_STRENGTH_ROTATION",
+        "row_count": 1079,
+        "universe_id": "D2"
+      },
+      {
+        "cost_multiplier": 2.0,
+        "maximum_numeric_absolute_error": 0.0,
+        "passed": true,
+        "policy_id": "MB_FIRST_RETEST_RECLAIM_WITHIN_FROZEN_72H",
+        "portfolio_id": "RELATIVE_STRENGTH_ROTATION",
+        "row_count": 1079,
+        "universe_id": "D2"
+      },
+      {
+        "cost_multiplier": 1.0,
+        "maximum_numeric_absolute_error": 0.0,
+        "passed": true,
+        "policy_id": "MB_ONE_BAR_BREAKOUT_LEVEL_HOLD",
+        "portfolio_id": "RELATIVE_STRENGTH_ROTATION",
+        "row_count": 1073,
+        "universe_id": "E2"
+      },
+      {
+        "cost_multiplier": 1.0,
+        "maximum_numeric_absolute_error": 0.0,
+        "passed": true,
+        "policy_id": "MB_ONE_BAR_POST_BREAKOUT_CONTINUATION",
+        "portfolio_id": "RELATIVE_STRENGTH_ROTATION",
+        "row_count": 1073,
+        "universe_id": "E2"
+      },
+      {
+        "cost_multiplier": 1.0,
+        "maximum_numeric_absolute_error": 0.0,
+        "passed": true,
+        "policy_id": "MB_FIRST_RETEST_RECLAIM_WITHIN_FROZEN_72H",
+        "portfolio_id": "RELATIVE_STRENGTH_ROTATION",
+        "row_count": 1073,
+        "universe_id": "E2"
+      },
+      {
+        "cost_multiplier": 2.0,
+        "maximum_numeric_absolute_error": 0.0,
+        "passed": true,
+        "policy_id": "MB_ONE_BAR_BREAKOUT_LEVEL_HOLD",
+        "portfolio_id": "RELATIVE_STRENGTH_ROTATION",
+        "row_count": 1073,
+        "universe_id": "E2"
+      },
+      {
+        "cost_multiplier": 2.0,
+        "maximum_numeric_absolute_error": 0.0,
+        "passed": true,
+        "policy_id": "MB_ONE_BAR_POST_BREAKOUT_CONTINUATION",
+        "portfolio_id": "RELATIVE_STRENGTH_ROTATION",
+        "row_count": 1073,
+        "universe_id": "E2"
+      },
+      {
+        "cost_multiplier": 2.0,
+        "maximum_numeric_absolute_error": 0.0,
+        "passed": true,
+        "policy_id": "MB_FIRST_RETEST_RECLAIM_WITHIN_FROZEN_72H",
+        "portfolio_id": "RELATIVE_STRENGTH_ROTATION",
+        "row_count": 1073,
+        "universe_id": "E2"
+      }
+    ],
+    "passed": true
+  },
+  "hard_gate_count": 16,
+  "mb_2x_period_net_pnl": {
+    "MB_FIRST_RETEST_RECLAIM_WITHIN_FROZEN_72H": {
+      "C2": {
+        "ROBUSTNESS_2022": -12544.19767266849,
+        "ROBUSTNESS_2023": 37613.74148634343
+      },
+      "D2": {
+        "ROBUSTNESS_2022": -12544.19767266849,
+        "ROBUSTNESS_2023": 41421.45082841908
+      },
+      "E2": {
+        "ROBUSTNESS_2022": -12544.19767266849,
+        "ROBUSTNESS_2023": 43967.84307266152
+      }
+    },
+    "MB_ONE_BAR_BREAKOUT_LEVEL_HOLD": {
+      "C2": {
+        "ROBUSTNESS_2022": -14756.549611225679,
+        "ROBUSTNESS_2023": 37284.84589199274
+      },
+      "D2": {
+        "ROBUSTNESS_2022": -14756.549611225679,
+        "ROBUSTNESS_2023": 40643.9239624176
+      },
+      "E2": {
+        "ROBUSTNESS_2022": -14756.549611225679,
+        "ROBUSTNESS_2023": 41549.41923264742
+      }
+    },
+    "MB_ONE_BAR_POST_BREAKOUT_CONTINUATION": {
+      "C2": {
+        "ROBUSTNESS_2022": -6073.706106247262,
+        "ROBUSTNESS_2023": 38567.87277638908
+      },
+      "D2": {
+        "ROBUSTNESS_2022": -6073.706106247262,
+        "ROBUSTNESS_2023": 38093.63490201382
+      },
+      "E2": {
+        "ROBUSTNESS_2022": -6073.706106247262,
+        "ROBUSTNESS_2023": 41846.4869281143
+      }
+    },
+    "RD31_REGIME_HYSTERESIS_CONTROL": {
+      "C2": {
+        "ROBUSTNESS_2022": -18701.587533997932,
+        "ROBUSTNESS_2023": 32260.904045993855
+      },
+      "D2": {
+        "ROBUSTNESS_2022": -18701.587533997932,
+        "ROBUSTNESS_2023": 36110.25313207597
+      },
+      "E2": {
+        "ROBUSTNESS_2022": -18701.587533997932,
+        "ROBUSTNESS_2023": 38134.665858602944
+      }
+    }
+  },
+  "next_stage": "RD34_MULTI_FAMILY_SIGNAL_ARCHITECTURE_OR_NEW_ALPHA_SOURCE_REQUIRED",
+  "p0c_freeze_commit": "03a850ad3eef5dc8f77f2e02662ce4b510d74b96",
+  "policy_summaries": {
+    "MB_FIRST_RETEST_RECLAIM_WITHIN_FROZEN_72H": {
+      "minimum_2x_trade_count": 158,
+      "worst_universe_2x_maximum_drawdown": 0.14758674207799602,
+      "worst_universe_2x_net_return": 0.32780042823691513,
+      "worst_universe_2x_profit_factor": 1.4121667521497345
+    },
+    "MB_ONE_BAR_BREAKOUT_LEVEL_HOLD": {
+      "minimum_2x_trade_count": 156,
+      "worst_universe_2x_maximum_drawdown": 0.15471508511174709,
+      "worst_universe_2x_net_return": 0.23170135609320797,
+      "worst_universe_2x_profit_factor": 1.2964697703920285
+    },
+    "MB_ONE_BAR_POST_BREAKOUT_CONTINUATION": {
+      "minimum_2x_trade_count": 137,
+      "worst_universe_2x_maximum_drawdown": 0.1543136847783506,
+      "worst_universe_2x_net_return": 0.23034242503138103,
+      "worst_universe_2x_profit_factor": 1.3248845043648156
+    },
+    "RD31_REGIME_HYSTERESIS_CONTROL": {
+      "minimum_2x_trade_count": 169,
+      "worst_universe_2x_maximum_drawdown": 0.19669431372912596,
+      "worst_universe_2x_net_return": 0.12028481914278322,
+      "worst_universe_2x_profit_factor": 1.138721406757252
+    }
+  },
+  "post_2024_accessed": false,
+  "production_authorized": false,
+  "required_pit_feature_pair_count": 21,
+  "research_logic_changed_after_economic_execution": false,
+  "rs_only_invariance": {
+    "metric_comparison_rows": 18,
+    "metric_comparisons": [
+      {
+        "maximum_numeric_absolute_error": 0.0,
+        "passed": true,
+        "policy_id": "MB_ONE_BAR_BREAKOUT_LEVEL_HOLD",
+        "row_count": 6
+      },
+      {
+        "maximum_numeric_absolute_error": 0.0,
+        "passed": true,
+        "policy_id": "MB_ONE_BAR_POST_BREAKOUT_CONTINUATION",
+        "row_count": 6
+      },
+      {
+        "maximum_numeric_absolute_error": 0.0,
+        "passed": true,
+        "policy_id": "MB_FIRST_RETEST_RECLAIM_WITHIN_FROZEN_72H",
+        "row_count": 6
+      }
+    ],
+    "passed": true,
+    "rs_path_changed": false,
+    "trade_comparisons": [
+      {
+        "maximum_numeric_absolute_error": 0.0,
+        "passed": true,
+        "policy_id": "MB_ONE_BAR_BREAKOUT_LEVEL_HOLD",
+        "trade_row_count": 608
+      },
+      {
+        "maximum_numeric_absolute_error": 0.0,
+        "passed": true,
+        "policy_id": "MB_ONE_BAR_POST_BREAKOUT_CONTINUATION",
+        "trade_row_count": 608
+      },
+      {
+        "maximum_numeric_absolute_error": 0.0,
+        "passed": true,
+        "policy_id": "MB_FIRST_RETEST_RECLAIM_WITHIN_FROZEN_72H",
+        "trade_row_count": 608
+      }
+    ]
+  },
+  "runner_freeze_commit": "44aff4cd064d6f604017b11765199d0d37b1a41b",
+  "schema_version": "rd33-p1-temporal-mb-architecture-report-v1",
+  "selected_policy": null,
+  "signal_event_count_2022_2023": 7073,
+  "stage": "RD33_P1_TEMPORAL_MB_ARCHITECTURE_2022_2023",
+  "status": "PASS"
+}
