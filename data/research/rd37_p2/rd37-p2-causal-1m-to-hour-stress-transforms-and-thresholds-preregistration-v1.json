@@ -1,0 +1,281 @@
+{
+  "completed_source_hour_contract": {
+    "blackout_overlap": "Any source hour containing any minute in the maintenance blackout is invalid in full.",
+    "both_symbols_required": true,
+    "earliest_information_time": "h+1h",
+    "earliest_kucoin_target_reference": "KUCOIN_OPEN_AT_h+1h",
+    "hour_id": "UTC hour identified by its opening timestamp h.",
+    "required_minutes": "Exactly the 60 expected 1m open times h through h+59m must be observed for both BTCUSDT and ETHUSDT.",
+    "same_source_hour_target_use": "FORBIDDEN",
+    "source_hour_partial_use": "FORBIDDEN"
+  },
+  "cross_symbol_aggregation": {
+    "both_symbols_must_be_valid": true,
+    "market_downside_share": "0.5*BTC.downside_share + 0.5*ETH.downside_share",
+    "market_flow_acceleration": "0.5*BTC.flow_accel + 0.5*ETH.flow_accel",
+    "market_hour_return": "0.5*BTC.hour_return + 0.5*ETH.hour_return",
+    "market_imbalance_15": "0.5*BTC.imbalance_15 + 0.5*ETH.imbalance_15",
+    "market_imbalance_60": "0.5*BTC.imbalance_60 + 0.5*ETH.imbalance_60",
+    "market_max_drawdown": "0.5*BTC.max_drawdown + 0.5*ETH.max_drawdown",
+    "market_participation_z": "0.5*BTC.participation_z + 0.5*ETH.participation_z",
+    "market_realized_volatility_z": "0.5*BTC.realized_volatility_z + 0.5*ETH.realized_volatility_z",
+    "market_recovery_fraction": "0.5*BTC.recovery_fraction + 0.5*ETH.recovery_fraction",
+    "method": "EQUAL_WEIGHT_BTC_ETH_ARITHMETIC_MEAN"
+  },
+  "design_principles": {
+    "decision_frequency": "1h",
+    "higher_frequency_role": "Detect fast deterioration within a completed hour rather than reuse sparse hourly consensus thresholds from RD36.",
+    "information_venue": "BINANCE_SPOT",
+    "parameter_search": false,
+    "rd36_failed_family_rescue": false,
+    "rd36_threshold_reuse": false,
+    "source_frequency": "1m",
+    "spot_only": true,
+    "target_and_economic_venue": "KUCOIN_SPOT",
+    "winner_selection": false
+  },
+  "event_semantics": {
+    "active_state_reporting": true,
+    "evaluation_clock": "EACH_ELIGIBLE_COMPLETED_SOURCE_HOUR",
+    "first_valid_hour_after_gap": "May start a new episode only after all family-specific warmup requirements are satisfied.",
+    "gap_or_blackout_breaks_episode_chain": true,
+    "overlapping_active_hours_are_not_separate_qualification_events": true,
+    "qualification_event": "EPISODE_ENTRY_ONLY: family is true at hour h and was false at the immediately preceding eligible source hour."
+  },
+  "frozen_state_families": [
+    {
+      "definition": "market_hour_return <= -0.003 AND market_downside_share >= 0.60 AND market_realized_volatility_z >= 1.00",
+      "expected_target_direction": "NEGATIVE",
+      "family_id": "INTRAHOUR_DOWNSIDE_STRESS",
+      "role": "PRIMARY_EXIT_RISK_EVIDENCE",
+      "thresholds": {
+        "market_downside_share_gte": 0.6,
+        "market_hour_return_lte": -0.003,
+        "market_realized_volatility_z_gte": 1.0
+      }
+    },
+    {
+      "definition": "market_imbalance_15 <= -0.08 AND market_flow_acceleration <= -0.04",
+      "expected_target_direction": "NEGATIVE",
+      "family_id": "SELL_FLOW_IMPULSE",
+      "role": "PRIMARY_EXIT_RISK_EVIDENCE",
+      "thresholds": {
+        "market_flow_acceleration_lte": -0.04,
+        "market_imbalance_15_lte": -0.08
+      }
+    },
+    {
+      "definition": "market_participation_z >= 1.50",
+      "expected_target_direction": "NONE",
+      "family_id": "PARTICIPATION_BURST",
+      "may_rescue_failed_primary_family": false,
+      "role": "CONTEXT_AMPLIFIER_ONLY",
+      "standalone_exit_candidate": false,
+      "thresholds": {
+        "market_participation_z_gte": 1.5
+      }
+    },
+    {
+      "definition": "market_max_drawdown <= -0.004 AND market_recovery_fraction <= 0.35 AND market_imbalance_15 <= -0.04",
+      "expected_target_direction": "NEGATIVE",
+      "family_id": "FAILED_INTRAHOUR_RECOVERY",
+      "role": "PRIMARY_EXIT_RISK_EVIDENCE",
+      "thresholds": {
+        "market_imbalance_15_lte": -0.04,
+        "market_max_drawdown_lte": -0.004,
+        "market_recovery_fraction_lte": 0.35
+      }
+    }
+  ],
+  "future_exit_brain_integration": {
+    "if_no_primary_family_qualifies": "Reject RD37 microstructure stress alpha and proceed to the next preregistered adaptive-exit information source.",
+    "if_one_or_more_primary_families_qualify": "Freeze a later KuCoin-native shadow exit-policy ablation using only the qualified families as additional risk-state evidence. No family is selected by best return.",
+    "integration_in_p2": "FORBIDDEN",
+    "integration_in_p3": "FORBIDDEN",
+    "production_authorization": false
+  },
+  "future_p3_diagnostic": {
+    "2024_access": false,
+    "all_primary_families_reported": true,
+    "baseline_adjustment": {
+      "baseline": "Same period, same universe, same horizon unconditional eligible-hour KuCoin forward-return mean, computed without using Binance family state.",
+      "baseline_used_for_parameter_selection": false,
+      "required": true,
+      "signal_excess_return": "family event mean forward return - unconditional eligible-hour baseline mean forward return"
+    },
+    "economic_replay": false,
+    "feature_weight_optimization": false,
+    "parameter_search": false,
+    "participation_burst_reported": true,
+    "participation_interaction_reporting": "For each primary family, report the subset where PARTICIPATION_BURST is also active. This subset cannot rescue a failed primary family.",
+    "periods": [
+      "ROBUSTNESS_2022",
+      "ROBUSTNESS_2023"
+    ],
+    "post_2024_access": false,
+    "primary_horizon_hours": 6,
+    "production_use": false,
+    "secondary_horizons": {
+      "1": "IMMEDIATE_EXIT_RISK_SHAPE",
+      "24": "PERSISTENCE_SHAPE"
+    },
+    "stage": "RD37_P3_FREEZE_AND_RUN_1M_STRESS_STATE_DIAGNOSTIC_2022_2023_ONCE",
+    "target_horizons_hours": [
+      1,
+      6,
+      24
+    ],
+    "target_reference": "KuCoin 1h open at h+1h after the completed Binance source hour h.",
+    "target_return_formula": "KuCoin open(reference+horizon) / KuCoin open(reference) - 1",
+    "target_venue": "KUCOIN_SPOT",
+    "threshold_optimization": false,
+    "universes": [
+      "C2",
+      "D2",
+      "E2"
+    ],
+    "winner_selection_by_return": false
+  },
+  "future_p3_minimum_support": {
+    "episode_event_count_per_period_gte": 30,
+    "pair_count_per_period_gte": 10,
+    "rationale": "Retains RD36 minimum evidence standard while using materially denser 1m-derived states.",
+    "signal_day_count_per_period_gte": 20
+  },
+  "future_p3_primary_qualification": {
+    "cross_universe_rule": "A primary family advances only if its cell qualifies in at least 2 of C2/D2/E2 in 2022 and at least 2 of C2/D2/E2 in 2023.",
+    "participation_context_cannot_rescue_primary_failure": true,
+    "per_period_universe_cell_requires": [
+      "minimum support thresholds pass",
+      "mean KuCoin-native 6h forward return < 0",
+      "median KuCoin-native 6h forward return < 0",
+      "mean 6h signal excess return versus unconditional same-period/same-universe baseline < 0",
+      "leave-one-pair-out 6h mean forward return remains < 0 for every eligible pair omission"
+    ],
+    "primary_families": [
+      "INTRAHOUR_DOWNSIDE_STRESS",
+      "SELL_FLOW_IMPULSE",
+      "FAILED_INTRAHOUR_RECOVERY"
+    ],
+    "primary_horizon_hours": 6,
+    "secondary_horizons_cannot_rescue_primary_failure": true
+  },
+  "lineage": {
+    "rd37_p1d_results_commit": "f8279dfdd3ce78ec51bbb2b9b35912490f9f9730",
+    "rd37_p1e_decision": "RD37_BINANCE_SPOT_1M_SOURCE_USABLE_WITH_EXPLICIT_MAINTENANCE_BLACKOUT_SEMANTICS",
+    "rd37_p1e_evidence_git_blob": "8ac2608898a3719056eab014a7b41dfaf5a83ab7",
+    "rd37_p1e_evidence_path": "data/research/rd37_p1e_runtime/semantic-maintenance-evidence.json",
+    "rd37_p1e_freeze_commit": "2ded2fc7ac0e5e39a45ed7472af4614b9b243d47",
+    "rd37_p1e_report_git_blob": "0834e78c56e816799fb4f58c9a28fe718c54be66",
+    "rd37_p1e_report_path": "data/research/rd37_p1e_runtime/rd37-p1e-semantic-maintenance-diagnosis-report-v1.json",
+    "rd37_p1e_results_commit": "cb47052fc79868e77bc56797a5340614e3aa2bce"
+  },
+  "maintenance_blackout_semantics": {
+    "backfill": "FORBIDDEN",
+    "carry_forward": "FORBIDDEN",
+    "end_utc_exclusive": "2023-03-24T14:00:00+00:00",
+    "feature_warmup": "Any transform requiring L consecutive 1m observations is invalid until L consecutive observed post-blackout minutes exist. Any robust baseline requiring H eligible completed source hours is invalid until H consecutive eligible post-blackout source hours exist.",
+    "forward_fill": "FORBIDDEN",
+    "imputation": "FORBIDDEN",
+    "observed_rows_inside_blackout_usable": false,
+    "same_bar_cross_venue_use": "FORBIDDEN",
+    "start_utc": "2023-03-24T11:38:00+00:00",
+    "state": "BINANCE_INFO_UNAVAILABLE"
+  },
+  "next_stage": "RD37_P3_FREEZE_AND_RUN_1M_STRESS_STATE_DIAGNOSTIC_2022_2023_ONCE",
+  "p2_observation_flags": {
+    "2024_accessed": false,
+    "alpha_results_observed": false,
+    "economic_execution_performed": false,
+    "feature_computation_performed": false,
+    "forward_returns_computed": false,
+    "post_2024_accessed": false,
+    "production_authorized": false,
+    "raw_market_data_loaded": false
+  },
+  "prohibited_in_p2": {
+    "access_2024": true,
+    "access_post_2024": true,
+    "authorize_production": true,
+    "compute_1m_features": true,
+    "compute_forward_returns": true,
+    "compute_hourly_features": true,
+    "load_raw_binance_market_data": true,
+    "load_raw_kucoin_market_data": true,
+    "observe_alpha_results": true,
+    "rank_families_by_return": true,
+    "run_portfolio_economics": true,
+    "select_winner": true
+  },
+  "research_objective": "Convert Binance Spot BTCUSDT/ETHUSDT 1m public-data fields into strictly causal completed-hour stress states that may later serve as exogenous evidence for an adaptive KuCoin Spot exit controller. Freeze all transforms, thresholds, clock semantics, event semantics, diagnostic horizons, and qualification rules before observing any target returns.",
+  "schema_version": "rd37-p2-causal-1m-to-hour-stress-transforms-and-thresholds-preregistration-v1",
+  "stage": "RD37_P2_CAUSAL_1M_TO_HOUR_STRESS_TRANSFORMS_AND_THRESHOLDS_PREREGISTRATION",
+  "status": "FROZEN_PRE_FEATURE_COMPUTATION",
+  "strictly_prior_normalization": {
+    "baseline_hours": 168,
+    "current_hour_excluded": true,
+    "invalid_when": "168 immediately preceding eligible completed source hours are not consecutive OR MAD <= 0",
+    "normalized_fields": [
+      "realized_volatility_z",
+      "quote_volume_z",
+      "trade_count_z"
+    ],
+    "participation_z": {
+      "formula": "participation_z = 0.5*quote_volume_z + 0.5*trade_count_z"
+    },
+    "requires_consecutive_eligible_source_hours": true,
+    "robust_z_formula": "z_h = (x_h - median(previous_168)) / (1.4826 * median(abs(previous_168 - median(previous_168))))",
+    "transform_before_normalization": {
+      "hour_quote_volume": "log1p(hour_quote_volume_h)",
+      "hour_trade_count": "log1p(hour_trade_count_h)",
+      "realized_volatility": "log1p(rv_h)"
+    }
+  },
+  "symbol_level_transforms": {
+    "downside_semivariance_share": {
+      "formula": "downside_share_h = sum(min(r_m,0)^2) / sum(r_m^2)",
+      "invalid_when": "sum(r_m^2) <= 0",
+      "range": "[0,1]"
+    },
+    "hour_max_drawdown": {
+      "expected_sign": "<=0",
+      "formula": "max_drawdown_h = min(low_m / open_h - 1)"
+    },
+    "hour_quote_volume": {
+      "formula": "sum(quote_volume over 60 minutes)"
+    },
+    "hour_return": {
+      "formula": "hour_return_h = close_(h+59m) / open_h - 1"
+    },
+    "hour_trade_count": {
+      "formula": "sum(number_of_trades over 60 minutes)"
+    },
+    "minute_return": {
+      "formula": "r_m = ln(close_m / open_m)",
+      "requires_positive_ohlc": true
+    },
+    "realized_volatility": {
+      "formula": "rv_h = sqrt(sum(r_m^2 for all 60 minutes in h))"
+    },
+    "recovery_fraction": {
+      "formula": "recovery_h = clip((close_(h+59m) - hour_low) / (open_h - hour_low), 0, 1)",
+      "interpretation": "0 = closes at the hour low; 1 = fully recovers to the hour open or above.",
+      "invalid_when": "hour_low >= open_h"
+    },
+    "sell_flow_acceleration": {
+      "formula": "flow_accel_h = imbalance_15_h - imbalance_60_h",
+      "interpretation": "More negative values mean taker flow deteriorated toward selling in the final 15 minutes."
+    },
+    "taker_imbalance_15m": {
+      "formula": "imbalance_15_h = 2*sum(taker_buy_quote_volume_last15m) / sum(quote_volume_last15m) - 1",
+      "invalid_when": "sum(quote_volume_last15m) <= 0",
+      "range": "[-1,1]",
+      "window": "last 15 minutes h+45m through h+59m"
+    },
+    "taker_imbalance_60m": {
+      "formula": "imbalance_60_h = 2*sum(taker_buy_quote_volume_60m) / sum(quote_volume_60m) - 1",
+      "invalid_when": "sum(quote_volume_60m) <= 0",
+      "range": "[-1,1]"
+    }
+  }
+}

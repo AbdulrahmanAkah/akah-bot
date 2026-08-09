@@ -1,0 +1,53 @@
+{
+  "2024_accessed": false,
+  "alpha_results_observed": false,
+  "baseline_adjusted_diagnostic_required": true,
+  "context_only_families": [
+    "PARTICIPATION_BURST"
+  ],
+  "decision_frequency": "1h",
+  "economic_execution_performed": false,
+  "family_order": [
+    "INTRAHOUR_DOWNSIDE_STRESS",
+    "SELL_FLOW_IMPULSE",
+    "PARTICIPATION_BURST",
+    "FAILED_INTRAHOUR_RECOVERY"
+  ],
+  "feature_computation_performed": false,
+  "forward_returns_computed": false,
+  "maintenance_blackout_end_exclusive": "2023-03-24T14:00:00+00:00",
+  "maintenance_blackout_start": "2023-03-24T11:38:00+00:00",
+  "maintenance_blackout_state": "BINANCE_INFO_UNAVAILABLE",
+  "next_stage": "RD37_P3_FREEZE_AND_RUN_1M_STRESS_STATE_DIAGNOSTIC_2022_2023_ONCE",
+  "parameter_search_used": false,
+  "post_2024_accessed": false,
+  "primary_families": [
+    "INTRAHOUR_DOWNSIDE_STRESS",
+    "SELL_FLOW_IMPULSE",
+    "FAILED_INTRAHOUR_RECOVERY"
+  ],
+  "primary_horizon_hours": 6,
+  "production_authorized": false,
+  "protocol_path": "data/research/rd37_p2/rd37-p2-causal-1m-to-hour-stress-transforms-and-thresholds-preregistration-v1.json",
+  "protocol_sha256": "9d4318ce924f2177bcc70d1b1ccf91602883defd1c8bb6f007efcf5bcd1b578c",
+  "qualification_event": "EPISODE_ENTRY_ONLY",
+  "raw_market_data_loaded": false,
+  "robust_baseline_hours": 168,
+  "schema_version": "rd37-p2-preregistration-audit-v1",
+  "source_frequency": "1m",
+  "source_p1d_results_commit": "f8279dfdd3ce78ec51bbb2b9b35912490f9f9730",
+  "source_p1e_evidence_git_blob": "8ac2608898a3719056eab014a7b41dfaf5a83ab7",
+  "source_p1e_freeze_commit": "2ded2fc7ac0e5e39a45ed7472af4614b9b243d47",
+  "source_p1e_report_git_blob": "0834e78c56e816799fb4f58c9a28fe718c54be66",
+  "source_p1e_results_commit": "cb47052fc79868e77bc56797a5340614e3aa2bce",
+  "stage": "RD37_P2_CAUSAL_1M_TO_HOUR_STRESS_TRANSFORMS_AND_THRESHOLDS_FREEZE",
+  "status": "PASS",
+  "target_horizons_hours": [
+    1,
+    6,
+    24
+  ],
+  "threshold_optimization_used": false,
+  "unrelated_untracked_policy": "PRESERVE_AND_IGNORE; ONLY RD37-P2 PATHS ARE STAGED",
+  "winner_selection_used": false
+}
