@@ -1386,8 +1386,8 @@ def validate_outputs(repo: Path) -> dict[str, Any]:
     causality = load_json(output / "causality-mapping-audit.json")
     if not causality.get("passed"):
         raise RunnerError("RD33 causality mapping audit failed")
-    if tuple(causality.get("gates", {})) != CAUSALITY_GATES:
-        raise RunnerError("RD33 causality gate ordering drifted")
+    if set(causality.get("gates", {})) != set(CAUSALITY_GATES):
+        raise RunnerError("RD33 causality gate registry drifted")
     if not all(bool(value) for value in causality.get("gates", {}).values()):
         raise RunnerError("RD33 one or more causality gates failed")
 

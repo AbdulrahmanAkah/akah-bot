@@ -128,3 +128,10 @@ def test_no_2024_loader_or_confirmation_execution_in_freeze_stage() -> None:
     assert "DATA_CUTOFF" in source
     assert "post_2024_accessed" in source
     assert "production_authorized" in source
+
+
+def test_causality_json_validation_is_order_insensitive() -> None:
+    source = RUNNER_PATH.read_text(encoding="utf-8")
+    assert 'if set(causality.get("gates", {})) != set(CAUSALITY_GATES):' in source
+    assert 'tuple(causality.get("gates", {})) != CAUSALITY_GATES' not in source
+    assert 'raise RunnerError("RD33 causality gate registry drifted")' in source
