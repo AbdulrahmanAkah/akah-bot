@@ -1,0 +1,243 @@
+{
+  "2024_accessed": false,
+  "common_clock": {
+    "earliest_hypothetical_entry": "t_plus_3h_open",
+    "first_completed_confirmation_bar": "t_plus_1h_close",
+    "reason": "ALL_RULES_USE_ONLY_INFORMATION_COMPLETED_BEFORE_THE_COMMON_T_PLUS_3H_ENTRY_ANCHOR",
+    "second_completed_confirmation_bar": "t_plus_2h_close",
+    "signal_time": "t"
+  },
+  "diagnostic_markouts": {
+    "cost_basis": "APPLY_FROZEN_2X_ROUND_TRIP_COST_PROXY_TO_EACH_MARKOUT",
+    "entry_anchor": "T_PLUS_3H_OPEN",
+    "grouping": [
+      "family",
+      "rule_id",
+      "universe_id",
+      "period_id",
+      "horizon_hours"
+    ],
+    "horizons_hours": [
+      24,
+      72,
+      168
+    ],
+    "reported_metrics": [
+      "event_count",
+      "mean_net_markout",
+      "median_net_markout",
+      "positive_share",
+      "p10_net_markout"
+    ]
+  },
+  "future_dual_family_economic_contract_if_both_rules_qualify": {
+    "candidate_count": 1,
+    "candidate_definition": "DETERMINISTICALLY_SELECTED_MB_RULE_PLUS_DETERMINISTICALLY_SELECTED_RS_RULE",
+    "control_reference": "MB_FIRST_RETEST_RECLAIM_WITHIN_FROZEN_72H",
+    "cost_multipliers": [
+      1.0,
+      2.0
+    ],
+    "expected_replays": 36,
+    "hard_gate_count": 18,
+    "hard_gates": [
+      "BASE_NET_RETURN_POSITIVE",
+      "STRESS_2X_NET_RETURN_POSITIVE",
+      "STRESS_2X_PROFIT_FACTOR_GTE_1_05",
+      "STRESS_2X_MAX_DRAWDOWN_LTE_20PCT",
+      "STRESS_2X_TRADES_GTE_75",
+      "BOTH_2022_2023_NET_PNL_POSITIVE",
+      "STRESS_2X_LARGEST_WINNER_REMOVAL_POSITIVE",
+      "STRESS_2X_LOAO_MIN_REMAINING_PNL_POSITIVE",
+      "STRESS_2X_LOYO_MIN_REMAINING_PNL_POSITIVE",
+      "PF1_BREAK_EVEN_COST_MULTIPLIER_GTE_2",
+      "CASH_FEASIBLE_BASE_AND_2X",
+      "MOMENTUM_BREAKOUT_STANDALONE_2X_POSITIVE",
+      "RELATIVE_STRENGTH_STANDALONE_2X_POSITIVE",
+      "NO_2024_OR_POST_2024_ACCESS",
+      "MOMENTUM_BREAKOUT_2022_2X_NET_PNL_POSITIVE",
+      "MOMENTUM_BREAKOUT_2023_2X_NET_PNL_POSITIVE",
+      "RELATIVE_STRENGTH_2022_2X_NET_PNL_POSITIVE",
+      "RELATIVE_STRENGTH_2023_2X_NET_PNL_POSITIVE"
+    ],
+    "portfolio_ids": [
+      "UNION_FOCUS",
+      "MOMENTUM_BREAKOUT",
+      "RELATIVE_STRENGTH_ROTATION"
+    ],
+    "selection": "NO_POLICY_RANKING_ONE_PREREGISTERED_DUAL_FAMILY_CANDIDATE_MUST_PASS_ALL_18_GATES_IN_C2_D2_E2",
+    "strengthening_vs_rd33": [
+      "ADD_RELATIVE_STRENGTH_2022_2X_NET_PNL_POSITIVE",
+      "ADD_RELATIVE_STRENGTH_2023_2X_NET_PNL_POSITIVE"
+    ],
+    "universes": [
+      "C2",
+      "D2",
+      "E2"
+    ]
+  },
+  "mb_rule_order": [
+    {
+      "definition": "CLOSE_T_PLUS_1_GT_SIGNAL_BREAKOUT_REFERENCE_AND_CLOSE_T_PLUS_2_GT_SIGNAL_BREAKOUT_REFERENCE",
+      "extra_numeric_thresholds": 0,
+      "rule_id": "MB_TWO_BAR_BREAKOUT_PERSISTENCE"
+    },
+    {
+      "definition": "MB_TWO_BAR_BREAKOUT_PERSISTENCE_AND_CLOSE_T_PLUS_2_GTE_CLOSE_T_PLUS_1",
+      "extra_numeric_thresholds": 0,
+      "rule_id": "MB_TWO_BAR_BREAKOUT_PERSISTENCE_ACCELERATION"
+    }
+  ],
+  "observed_rd33_premises": {
+    "candidate_failure_sets": {
+      "MB_FIRST_RETEST_RECLAIM_WITHIN_FROZEN_72H": {
+        "C2": [
+          "BOTH_2022_2023_NET_PNL_POSITIVE",
+          "STRESS_2X_LOYO_MIN_REMAINING_PNL_POSITIVE",
+          "MOMENTUM_BREAKOUT_2022_2X_NET_PNL_POSITIVE"
+        ],
+        "D2": [
+          "BOTH_2022_2023_NET_PNL_POSITIVE",
+          "STRESS_2X_LOYO_MIN_REMAINING_PNL_POSITIVE",
+          "MOMENTUM_BREAKOUT_2022_2X_NET_PNL_POSITIVE"
+        ],
+        "E2": [
+          "BOTH_2022_2023_NET_PNL_POSITIVE",
+          "STRESS_2X_LOYO_MIN_REMAINING_PNL_POSITIVE",
+          "MOMENTUM_BREAKOUT_2022_2X_NET_PNL_POSITIVE"
+        ]
+      },
+      "MB_ONE_BAR_BREAKOUT_LEVEL_HOLD": {
+        "C2": [
+          "BOTH_2022_2023_NET_PNL_POSITIVE",
+          "STRESS_2X_LOYO_MIN_REMAINING_PNL_POSITIVE",
+          "MOMENTUM_BREAKOUT_2022_2X_NET_PNL_POSITIVE"
+        ],
+        "D2": [
+          "BOTH_2022_2023_NET_PNL_POSITIVE",
+          "STRESS_2X_LOYO_MIN_REMAINING_PNL_POSITIVE",
+          "MOMENTUM_BREAKOUT_2022_2X_NET_PNL_POSITIVE"
+        ],
+        "E2": [
+          "BOTH_2022_2023_NET_PNL_POSITIVE",
+          "STRESS_2X_LOYO_MIN_REMAINING_PNL_POSITIVE",
+          "MOMENTUM_BREAKOUT_2022_2X_NET_PNL_POSITIVE"
+        ]
+      },
+      "MB_ONE_BAR_POST_BREAKOUT_CONTINUATION": {
+        "C2": [
+          "BOTH_2022_2023_NET_PNL_POSITIVE",
+          "STRESS_2X_LOYO_MIN_REMAINING_PNL_POSITIVE",
+          "MOMENTUM_BREAKOUT_2022_2X_NET_PNL_POSITIVE"
+        ],
+        "D2": [
+          "BOTH_2022_2023_NET_PNL_POSITIVE",
+          "STRESS_2X_LOYO_MIN_REMAINING_PNL_POSITIVE",
+          "MOMENTUM_BREAKOUT_2022_2X_NET_PNL_POSITIVE"
+        ],
+        "E2": [
+          "BOTH_2022_2023_NET_PNL_POSITIVE",
+          "STRESS_2X_LOYO_MIN_REMAINING_PNL_POSITIVE",
+          "MOMENTUM_BREAKOUT_2022_2X_NET_PNL_POSITIVE"
+        ]
+      }
+    },
+    "causality_gates_passed": 8,
+    "continuation_mb_2022_loss_reduction_fraction_vs_control": 0.675230453286077,
+    "observed_2022_2x_net_pnl": {
+      "continuation_mb_2022_2x": -6073.706106247262,
+      "continuation_union_2022_2x": -11530.22139335075,
+      "control_mb_2022_2x": -18701.587533997932,
+      "control_union_2022_2x": -15661.21679979741,
+      "level_hold_mb_2022_2x": -14756.549611225679,
+      "level_hold_union_2022_2x": -13139.429823957918,
+      "retest_mb_2022_2x": -12544.19767266849,
+      "retest_union_2022_2x": -9865.924713688859,
+      "rs_2022_2x": -14350.51366705237
+    },
+    "rd33_decision": "RD33_TEMPORAL_MB_ARCHITECTURE_NO_FINALIST_MULTI_FAMILY_SIGNAL_ARCHITECTURE_OR_NEW_ALPHA_SOURCE_REQUIRED",
+    "rd33_next_stage": "RD34_MULTI_FAMILY_SIGNAL_ARCHITECTURE_OR_NEW_ALPHA_SOURCE_REQUIRED",
+    "retest_union_2022_loss_reduction_fraction_vs_control": 0.37004098469433855,
+    "root_cause_statement": "PERSISTENT_2022_FAMILY_WIDE_WEAKNESS_REMAINS_AFTER_MB_ONLY_TEMPORAL_CONFIRMATION_AND_RS_IS_ALSO_NEGATIVE_IN_2022"
+  },
+  "post_2024_accessed": false,
+  "production_authorized": false,
+  "prohibited": [
+    "PARAMETER_GRID_SEARCH",
+    "THRESHOLD_OPTIMIZATION",
+    "RETURN_RANKING_BETWEEN_QUALIFIED_RULES",
+    "PAIR_BLACKLIST",
+    "CALENDAR_OR_YEAR_FEATURE",
+    "2022_SPECIFIC_RULE",
+    "2023_SPECIFIC_RULE",
+    "EXIT_CHANGE",
+    "POSITION_SIZING_CHANGE",
+    "COST_MODEL_CHANGE",
+    "RD31_GOVERNOR_CHANGE",
+    "PORTFOLIO_ECONOMIC_REPLAY_IN_DIAGNOSTIC_STAGE",
+    "2024_ACCESS",
+    "POST_2024_ACCESS"
+  ],
+  "research_question": "CAN_PARAMETER_FREE_TWO_HOUR_SIGNAL_PERSISTENCE_DISTINGUISH_ROBUST_MB_AND_RS_ADMISSIONS_IN_BOTH_2022_AND_2023_BEFORE_BUILDING_ANOTHER_PORTFOLIO_ARCHITECTURE",
+  "rs_rule_order": [
+    {
+      "definition": "SAME_PAIR_IS_CAUSAL_RETURN72_RANK1_AT_T_PLUS_1_AND_T_PLUS_2_AMONG_PIT_MEMBERS_AND_RETURN72_GT_0_AT_BOTH",
+      "extra_numeric_thresholds": 0,
+      "rule_id": "RS_TWO_BAR_LEADER_PERSISTENCE"
+    },
+    {
+      "definition": "RS_TWO_BAR_LEADER_PERSISTENCE_AND_RETURN72_T_PLUS_2_GTE_RETURN72_T_PLUS_1",
+      "extra_numeric_thresholds": 0,
+      "rule_id": "RS_TWO_BAR_LEADER_PERSISTENCE_ACCELERATION"
+    }
+  ],
+  "rule_qualification": {
+    "all_conditions_required_for_every_universe_and_both_years": [
+      "EVENT_COUNT_GTE_20",
+      "NET_72H_MEAN_GT_0",
+      "NET_72H_MEDIAN_GT_0",
+      "NET_168H_MEAN_GT_0"
+    ],
+    "evaluated_independently_per_family": true,
+    "fixed_priority": "TAKE_FIRST_QUALIFIED_RULE_IN_PREREGISTERED_RULE_ORDER_DO_NOT_RANK_BY_RETURN",
+    "if_both_families_have_a_rule": "FREEZE_EXACT_SELECTED_MB_AND_RS_RULES_BEFORE_ANY_PORTFOLIO_ECONOMIC_REPLAY",
+    "if_no_mb_rule_qualifies": "RD34_NEW_ALPHA_SOURCE_REQUIRED",
+    "if_no_rs_rule_qualifies": "RD34_NEW_ALPHA_SOURCE_REQUIRED",
+    "mb_priority": [
+      "MB_TWO_BAR_BREAKOUT_PERSISTENCE",
+      "MB_TWO_BAR_BREAKOUT_PERSISTENCE_ACCELERATION"
+    ],
+    "rs_priority": [
+      "RS_TWO_BAR_LEADER_PERSISTENCE",
+      "RS_TWO_BAR_LEADER_PERSISTENCE_ACCELERATION"
+    ]
+  },
+  "schema_version": "rd34-p0-dual-family-persistence-diagnostic-protocol-v1",
+  "scope": {
+    "2024_access_allowed": false,
+    "admission_basis": "EXACT_RD31_HYSTERESIS_GOVERNOR_DECISION_ON_ORIGINAL_SIGNAL_CLOCK_BEFORE_PORTFOLIO_CAPACITY_CONSTRAINTS",
+    "data_cutoff_exclusive": "2024-01-01T00:00:00Z",
+    "data_start": "2022-01-01T00:00:00Z",
+    "development_periods": [
+      "ROBUSTNESS_2022",
+      "ROBUSTNESS_2023"
+    ],
+    "families": [
+      "MOMENTUM_BREAKOUT",
+      "RELATIVE_STRENGTH_ROTATION"
+    ],
+    "portfolio_economics_in_this_diagnostic": false,
+    "post_2024_access_allowed": false,
+    "universes": [
+      "C2",
+      "D2",
+      "E2"
+    ]
+  },
+  "source_rd33_p0d_freeze_commit": "44aff4cd064d6f604017b11765199d0d37b1a41b",
+  "source_rd33_recovery_commit": "f8ba13c2efa28c3856792da1f33fcb3be0024eb2",
+  "source_rd33_results_commit": "766eea6a25a2f773c20cf48447f6ef3e7f94f376",
+  "stage": "RD34_P0_DUAL_FAMILY_PERSISTENCE_DIAGNOSTIC_PREREGISTRATION",
+  "status": "FROZEN_PRE_DIAGNOSTIC_EXECUTION",
+  "success_route": "RD34_P1_IMPLEMENT_DUAL_FAMILY_PERSISTENCE_DIAGNOSTIC_ENGINE"
+}
