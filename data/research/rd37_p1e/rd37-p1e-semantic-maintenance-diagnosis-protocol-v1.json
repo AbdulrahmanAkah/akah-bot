@@ -1,0 +1,45 @@
+{
+  "diagnostic_gates": [
+    "P1D_FAILED_EXACTLY_LITERAL_CLOSE_TIME_IDENTITY_GATE",
+    "EACH_SYMBOL_HAS_EXACTLY_ONE_CLOSE_TIME_ANOMALY",
+    "ANOMALIES_SHARE_SAME_1239_OPEN_MINUTE",
+    "BOTH_ANOMALY_ROWS_HAVE_ZERO_MARKET_ACTIVITY",
+    "BOTH_ANOMALIES_ARE_TRUNCATED_WITHIN_SAME_1239_MINUTE",
+    "ALL_OBSERVED_MAINTENANCE_ROWS_1138_1239_HAVE_ZERO_ACTIVITY",
+    "BOTH_SYMBOLS_MISSING_EXACTLY_1240_THROUGH_1359",
+    "BOTH_SYMBOLS_RESUME_AT_1400",
+    "FIRST_1400_ROWS_HAVE_STANDARD_ONE_MINUTE_CLOSE",
+    "NO_2024_OR_LATER_ACCESS"
+  ],
+  "failure_is_final_for_rd37_source": true,
+  "failure_next_stage": "RD38_PREREGISTER_NEXT_SPOT_ONLY_ADAPTIVE_EXIT_INFORMATION_SOURCE",
+  "reason_for_final_diagnosis": "P1D failed only because BTCUSDT and ETHUSDT did not have bit-identical close timestamps on their single anomalous 12:39 UTC rows. P1E tests whether those rows are semantically equivalent maintenance artifacts without introducing any alpha, return, or parameter evidence.",
+  "research_integrity": {
+    "2024_access": false,
+    "alpha_results": false,
+    "economic_execution": false,
+    "feature_computation": false,
+    "forward_returns": false,
+    "network_access": false,
+    "p0_contract_relaxation": false,
+    "production_authorized": false,
+    "threshold_reoptimization": false
+  },
+  "schema_version": "rd37-p1e-semantic-maintenance-diagnosis-protocol-v1",
+  "source_p1d_results_commit": "f8279dfdd3ce78ec51bbb2b9b35912490f9f9730",
+  "stage": "RD37_P1E_SEMANTIC_MAINTENANCE_DIAGNOSIS",
+  "status": "FROZEN_PRE_DIAGNOSIS",
+  "success_next_stage": "RD37_P2_PREREGISTER_CAUSAL_1M_TO_HOUR_STRESS_TRANSFORMS_AND_THRESHOLDS_WITH_GAP_SEMANTICS",
+  "success_semantics": {
+    "backfill": "FORBIDDEN",
+    "carry_forward": "FORBIDDEN",
+    "feature_warmup": "Lookback L requires L consecutive observed post-blackout 1m bars beginning at or after 14:00 UTC.",
+    "forward_fill": "FORBIDDEN",
+    "imputation": "FORBIDDEN",
+    "maintenance_blackout_end_exclusive": "2023-03-24T14:00:00+00:00",
+    "maintenance_blackout_start": "2023-03-24T11:38:00+00:00",
+    "observed_rows_inside_blackout_usable": false,
+    "same_bar_cross_venue_use": "FORBIDDEN",
+    "state": "BINANCE_INFO_UNAVAILABLE"
+  }
+}
