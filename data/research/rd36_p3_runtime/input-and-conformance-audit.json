@@ -1,0 +1,102 @@
+{
+  "2024_accessed": false,
+  "binance_fields_loaded": [
+    "timestamp",
+    "quote_volume",
+    "number_of_trades",
+    "taker_buy_quote_volume"
+  ],
+  "binance_ohlc_loaded": false,
+  "binance_source_audit": {
+    "archive_count_verified": 48,
+    "network_access_performed": false,
+    "symbols": {
+      "BTCUSDT": {
+        "first_timestamp": "2022-01-01T00:00:00+00:00",
+        "last_timestamp": "2023-12-31T23:00:00+00:00",
+        "missing_clock": "2023-03-24T13:00:00+00:00",
+        "rows": 17519
+      },
+      "ETHUSDT": {
+        "first_timestamp": "2022-01-01T00:00:00+00:00",
+        "last_timestamp": "2023-12-31T23:00:00+00:00",
+        "missing_clock": "2023-03-24T13:00:00+00:00",
+        "rows": 17519
+      }
+    }
+  },
+  "economic_execution_performed": false,
+  "gap_state": "BINANCE_INFO_UNAVAILABLE",
+  "known_gap": "2023-03-24T13:00:00+00:00",
+  "lineage": {
+    "p1d_results_commit": "90a56b8e6babcc0569a7cfc6a479da18a1c323b5",
+    "p2_freeze_commit": "31f08d7a2bc438f1a420cd9834e451ff90ff8ba6",
+    "rd31_runner_blob": "3b5c6916e34be6c9642702fe2807e42e445ee083",
+    "runner_freeze_commit": "385e762df528f1734fcda30a79551a8e8b7c0267",
+    "verified_sources": {
+      "data/research/rd36_p2/rd36-p2-cross-venue-binance-flow-kucoin-native-alpha-architecture-preregistration-v1.json": {
+        "git_blob": "d8a19f97413b016e1cb2b610b4fb778393c605dc",
+        "sha256": "8fe423b7af921d6592fb06c96f77b2905e7c2a78178facc581a13e8075f7f859"
+      },
+      "data/research/rd36_p2/rd36-p2-preregistration-audit-v1.json": {
+        "git_blob": "6d4159314282ddbe4a2f5c9be29c7dc2a14dc8fb",
+        "sha256": "2e17cc9dfa0b95921d8a883ee2a8528d551f35e13d7511e0b537790124489132"
+      }
+    }
+  },
+  "network_access_performed": false,
+  "periods": [
+    "ROBUSTNESS_2022",
+    "ROBUSTNESS_2023"
+  ],
+  "pit_membership_snapshot_count": 315,
+  "post_2024_accessed": false,
+  "post_gap_first_valid_feature_times": {
+    "market_participation_shock": "2023-03-31T14:00:00+00:00",
+    "market_pressure_24": "2023-03-25T13:00:00+00:00",
+    "market_pressure_6": "2023-03-24T19:00:00+00:00",
+    "market_pressure_72": "2023-03-27T13:00:00+00:00"
+  },
+  "production_authorized": false,
+  "raw_market_data_loaded": true,
+  "schema_version": "rd36-p3-input-and-conformance-audit-v1",
+  "source_state_event_semantics": "FALSE_TO_TRUE_ENTRY_ONLY",
+  "source_to_target_delay_hours": 1,
+  "stage": "RD36_P3_CROSS_VENUE_FLOW_STATE_DIAGNOSTIC_2022_2023",
+  "target_exit_price": "KUCOIN_1H_OPEN_AT_REFERENCE_PLUS_HORIZON",
+  "target_horizons_hours": [
+    6,
+    24,
+    72
+  ],
+  "target_pair_count": 21,
+  "target_pairs": [
+    "ADA-USDT",
+    "ATOM-USDT",
+    "AVAX-USDT",
+    "BTC-USDT",
+    "DOGE-USDT",
+    "DOT-USDT",
+    "ETH-USDT",
+    "GRAM-USDT",
+    "INJ-USDT",
+    "JASMY-USDT",
+    "KAS-USDT",
+    "LINK-USDT",
+    "LTC-USDT",
+    "LUNC-USDT",
+    "NEAR-USDT",
+    "OP-USDT",
+    "SAND-USDT",
+    "SHIB-USDT",
+    "SOL-USDT",
+    "XMR-USDT",
+    "XRP-USDT"
+  ],
+  "target_reference_price": "KUCOIN_1H_OPEN_AT_T_PLUS_1H",
+  "universes": [
+    "C2",
+    "D2",
+    "E2"
+  ]
+}
