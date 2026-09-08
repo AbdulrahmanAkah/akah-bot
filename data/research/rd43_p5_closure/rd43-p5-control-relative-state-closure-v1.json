@@ -1,0 +1,101 @@
+{
+  "architectural_conclusions": [
+    {
+      "finding": "THE_TWO_DIMENSION_STATIC_CONTROL_RELATIVE_STATE_REPRESENTATION_DID_NOT_PRODUCE_ANY_JOINTLY_QUALIFIED_UNIVERSE_CELL_IN_EITHER_TEMPORAL_DIRECTION",
+      "id": "STATIC_GEOMETRY_NOT_DIRECT_UTILITY"
+    },
+    {
+      "finding": "ZERO_LANDMARKS_QUALIFIED_BEFORE_TEMPORAL_PERSISTENCE_WAS_EVEN_APPLIED",
+      "id": "PERSISTENCE_NOT_THE_PRIMARY_FAILURE"
+    },
+    {
+      "finding": "AT_96H_ALL_THREE_FORWARD_UNIVERSES_PASSED_POINT_LEVEL_CONTINUOUS_AND_CLASSIFICATION_TESTS_BUT_CONTINUOUS_LOPO_FAILED_IN_ALL_THREE_AND_THE_NEGATIVE_UTILITY_SUBSET_FAILED_THE_FULL_GATE_IN_ALL_THREE",
+      "id": "FORWARD_96H_SIGNAL_IS_DIAGNOSTIC_ONLY"
+    },
+    {
+      "finding": "THE_STATIC_STATE_MODEL_COULD_SHOW_PARTIAL_RANKING_OR_CLASSIFICATION_STRUCTURE_WITHOUT_ROBUSTLY_IDENTIFYING_A_SUBSET_WHOSE_ACTUAL_REMAINING_CONTROL_VALUE_IS_NEGATIVE_ACROSS_UNIVERSES_AND_PAIRS",
+      "id": "NEGATIVE_UTILITY_IDENTIFICATION_IS_THE_CORE_GAP"
+    },
+    {
+      "finding": "NO_EXIT_RULE_DERISK_RULE_CONFIRMATION_WINDOW_PORTFOLIO_REPLAY_OR_CAPITAL_REUSE_IS_AUTHORIZED_FROM_RD43",
+      "id": "NO_ACTION_MAPPING"
+    }
+  ],
+  "closure_decision": "RD43_CLOSED_STATIC_CONTROL_RELATIVE_STATE_DOES_NOT_PROVIDE_ROBUST_DIRECT_EXIT_UTILITY",
+  "frozen_p4_facts": {
+    "forward_96h_classification_point_pass_universes": 3,
+    "forward_96h_continuous_lopo_pass_universes": 0,
+    "forward_96h_continuous_point_pass_universes": 3,
+    "forward_96h_d2_e2_negative_subset_mean_rcv_sign": "POSITIVE",
+    "forward_96h_negative_subset_gate_pass_universes": 0,
+    "forward_96h_negative_subset_point_pass_universes": 1,
+    "forward_classification_gate_pass_cell_count": 2,
+    "forward_continuous_gate_pass_cell_count": 0,
+    "forward_joint_qualified_cell_count": 0,
+    "forward_negative_subset_gate_pass_cell_count": 0,
+    "forward_persistent_pair_count": 0,
+    "forward_qualified_landmark_count": 0,
+    "joined_row_count": 1996,
+    "manifest_deterministic_hash": "9b54e8fc96d01dd95ca9b6a0fef439cced39ebdc813a493cb8053aa0450865da",
+    "reverse_classification_gate_pass_cell_count": 0,
+    "reverse_continuous_gate_pass_cell_count": 4,
+    "reverse_joint_qualified_cell_count": 0,
+    "reverse_negative_subset_gate_pass_cell_count": 0,
+    "reverse_persistent_pair_count": 0,
+    "reverse_qualified_landmark_count": 0,
+    "target_evaluable_row_count": 1996
+  },
+  "next_information_architecture": {
+    "candidate_list_is_authorization_to_compute": false,
+    "candidate_source_family_for_preregistration_only": [
+      "TIME_SINCE_COMPLETED_HIGH_WATER_HOURS",
+      "RECENT_PULLBACK_CHANGE_ATR",
+      "RECENT_MARK_RECOVERY_FROM_PULLBACK_ATR",
+      "RECENT_HIGH_WATER_INCREMENT_ATR",
+      "NEW_HIGH_EVENT_COUNT_OR_RATE",
+      "TRAIL_ARMED_DURATION_HOURS"
+    ],
+    "must_be_preregistered_before_target_exposure": true,
+    "must_minimize_redundant_deterministic_channels": true,
+    "must_not_reuse_rd43_failed_thresholds_or_landmark_winner": true,
+    "must_not_use_2024": true,
+    "must_not_use_future_control_exit_reason_or_price": true,
+    "must_use_information_available_through_t_minus_1": true,
+    "name": "CONTROL_RELATIVE_DYNAMICS",
+    "purpose": "ADD_CAUSALLY_AVAILABLE_TEMPORAL_PATH_INFORMATION_ABOUT_HOW_THE_POSITION_REACHED_ITS_CURRENT_CONTROL_RELATIVE_STATE_RATHER_THAN_REUSING_THE_STATIC_STATE_COORDINATES"
+  },
+  "next_stage": "RD44_PREREGISTER_CONTROL_RELATIVE_DYNAMICS_DIRECT_UTILITY_INFORMATION_SOURCE_PRE_TARGET_EXPOSURE",
+  "research_firewall": {
+    "2024_accessed": false,
+    "action_mapping_executed": false,
+    "capital_reuse_performed": false,
+    "economic_action_executed": false,
+    "new_features_computed": false,
+    "new_market_data_loaded": false,
+    "new_model_fit_performed": false,
+    "new_targets_computed": false,
+    "parameter_search_used": false,
+    "portfolio_replay_performed": false,
+    "post_2024_accessed": false,
+    "production_authorized": false,
+    "threshold_optimization_used": false,
+    "winner_selection_used": false
+  },
+  "schema_version": "rd43-p5-control-relative-state-closure-v1",
+  "source_p3_freeze_commit": "f0c981d64c2b181f0a57c254ceb147986a871d65",
+  "source_p4_freeze_commit": "ef98c0bcdd625dfd37ade1827a49d4a58270573e",
+  "source_p4_results_commit": "fd4d85f2d4353f95da50d43d8f8a3be2e8c6a346",
+  "stage": "RD43_FORMAL_STATIC_CONTROL_RELATIVE_STATE_CLOSURE",
+  "status": "PASS",
+  "tombstones": {
+    "ADD_DETERMINISTIC_STATIC_DERIVATIVES_AS_NEW_INFORMATION_RESCUE": "FORBIDDEN",
+    "BEST_LANDMARK_SELECTION_FROM_RD43_P4": "FORBIDDEN",
+    "BEST_UNIVERSE_SELECTION_FROM_RD43_P4": "FORBIDDEN",
+    "FORWARD_96H_ONLY_SELECTION": "FORBIDDEN",
+    "FORWARD_96H_POINT_SIGNAL_AS_EXIT_RULE": "FORBIDDEN",
+    "POST_HOC_CONTEXT_SELECTION_FROM_RD43_P4": "FORBIDDEN",
+    "PREDICTED_RCV_ZERO_THRESHOLD_REOPTIMIZATION": "FORBIDDEN",
+    "REMOVE_OR_RELAX_LOPO_TO_RESCUE_96H": "FORBIDDEN",
+    "STATIC_HIGH_WATER_GAIN_ATR_PLUS_PULLBACK_STATE_AS_DIRECT_UTILITY_SOURCE": "CLOSED_NO_ACTION_MAPPING"
+  }
+}
