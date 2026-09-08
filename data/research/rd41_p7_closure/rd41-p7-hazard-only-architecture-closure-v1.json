@@ -1,0 +1,92 @@
+{
+  "architectural_conclusions": [
+    {
+      "finding": "THE_EQUAL_WEIGHT_ADVERSE_SCORE_ROBUSTLY_PREDICTS_THE_FROZEN_TIME_FAILURE_CONTROL_ARCHETYPE_AT_24H_AND_48H",
+      "id": "HAZARD_TRANSPORT_ROBUST"
+    },
+    {
+      "finding": "ROBUST_TIME_FAILURE_CLASSIFICATION_DOES_NOT_IMPLY_NEGATIVE_REMAINING_CONTROL_VALUE_OR_BENEFICIAL_EARLY_EXIT",
+      "id": "HAZARD_IS_NOT_EXIT_UTILITY"
+    },
+    {
+      "finding": "THE_ADVERSE_SCORE_TO_RCV_RELATION_PARTIALLY_ALIGNS_IN_2023_BUT_REVERSES_3_OF_3_UNIVERSES_IN_2022_AT_BOTH_24H_AND_48H",
+      "id": "RCV_RELATION_REGIME_REVERSAL"
+    },
+    {
+      "finding": "NO_HIGH_ADVERSE_SCORE_TAIL_QUALIFIES_AS_ROBUSTLY_NEGATIVE_REMAINING_CONTROL_VALUE",
+      "id": "NO_ROBUST_NEGATIVE_RCV_TAIL"
+    },
+    {
+      "finding": "IN_2023_THE_HIGH_ADVERSE_SCORE_TAIL_HAS_POSITIVE_MEAN_AND_MEDIAN_REMAINING_CONTROL_VALUE_AT_BOTH_LANDMARKS",
+      "id": "FORWARD_HIGH_HAZARD_TAIL_STILL_POSITIVE_VALUE"
+    },
+    {
+      "finding": "NO_FULL_EXIT_PARTIAL_DERISK_OR_CONFIRMATION_RULE_MAY_BE_DERIVED_FROM_RD41_HAZARD_RESULTS",
+      "id": "NO_ACTION_MAPPING"
+    }
+  ],
+  "closure_decision": "RD41_CLOSED_HAZARD_IS_CONTROL_OUTCOME_PREDICTOR_NOT_EXIT_UTILITY",
+  "frozen_result_facts": {
+    "forward_high_adverse_tail_mean_rcv_maximum": 0.05423193949800269,
+    "forward_high_adverse_tail_mean_rcv_minimum": 0.007920732267329141,
+    "forward_high_adverse_tail_median_rcv_maximum": 0.0222623684882238,
+    "forward_high_adverse_tail_median_rcv_minimum": 0.00122003966034805,
+    "forward_negative_tail_qualified_universes_each_landmark": 0,
+    "forward_rcv_qualified_universes_each_landmark": 2,
+    "hazard_transport_auc_maximum": 0.8401515151515152,
+    "hazard_transport_auc_minimum": 0.6825396825396826,
+    "hazard_transport_cell_count": 12,
+    "hazard_transport_lopo_min_auc_minimum": 0.6470588235294118,
+    "hazard_transport_qualified_cell_count": 12,
+    "reverse_24h_tail_class": "INSUFFICIENT_SUPPORT",
+    "reverse_48h_tail_lopo_maximum_rcv_max": 0.002862416589964578,
+    "reverse_48h_tail_mean_rcv": -0.008023863169953875,
+    "reverse_48h_tail_median_rcv": -0.0186687472872701,
+    "reverse_negative_tail_qualified_universes_each_landmark": 0,
+    "reverse_rcv_reversed_universes_each_landmark": 3
+  },
+  "next_stage": "RD42_PREREGISTER_DIRECT_REMAINING_CONTROL_UTILITY_WITH_CAUSAL_CONTEXT_CONDITIONING_AND_TEMPORAL_TRANSPORT",
+  "rd42_architecture_direction": {
+    "2024_access": "SEALED",
+    "action_mapping_gate": "FORBIDDEN_UNTIL_DIRECT_RCV_UTILITY_EVIDENCE_IS_ROBUST_AND_IDENTIFIES_A_ROBUST_NEGATIVE_VALUE_SUBSET",
+    "capital_reuse_before_original_control_exit": "FORBIDDEN",
+    "economically_canonical_secondary_outcome": "RCV_RETURN_LT_ZERO",
+    "future_feature_design": "MUST_BE_PREREGISTERED_BEFORE_RD42_TARGET_EXPOSURE",
+    "governor_role": "NOT_AN_INDEPENDENT_BINARY_EXIT_PERMISSION;ANY_FUTURE_USE_MUST_CONTROL_FOR_COHORT_SELECTION",
+    "market_context_role": "CAUSAL_CONTEXT_MODIFIER_NOT_BINARY_EXIT_PERMISSION",
+    "primary_continuous_outcome": "RCV_RETURN",
+    "primary_target": "DIRECT_REMAINING_CONTROL_UTILITY",
+    "slot_escrow_if_future_shadow_occurs": "MANDATORY",
+    "temporal_transport": "PAST_TO_FUTURE_PRIMARY_WITH_REVERSE_ONLY_AS_ROBUSTNESS_DIAGNOSTIC_WHERE_METHODologically_ALLOWED",
+    "time_failure_hazard_role": "AUXILIARY_DIAGNOSTIC_ONLY_NOT_PRIMARY_TARGET"
+  },
+  "research_firewall": {
+    "2024_accessed": false,
+    "capital_reuse_performed": false,
+    "economic_action_executed": false,
+    "new_features_computed": false,
+    "new_market_data_loaded": false,
+    "new_model_fit": false,
+    "new_targets_computed": false,
+    "new_threshold_tested": false,
+    "new_trade_rows_constructed": false,
+    "parameter_search_used": false,
+    "portfolio_replay_performed": false,
+    "post_2024_accessed": false,
+    "production_authorized": false,
+    "winner_selection_used": false
+  },
+  "schema_version": "rd41-p7-hazard-only-architecture-closure-v1",
+  "source_p5_freeze_commit": "c8abd1915ebe4bae0545dc82da24ee9f12f48276",
+  "source_p6_freeze_commit": "b9f0e7044b4868e7db84d6b10ac3aa97451a51c6",
+  "source_p6_results_commit": "44d8414a835093ddb823a4a973a322c04ed25230",
+  "stage": "RD41_FORMAL_CLOSURE_AND_EXIT_UTILITY_ARCHITECTURE_REASSESSMENT",
+  "status": "PASS",
+  "tombstones": {
+    "BINARY_HAZARD_TO_EXIT_MAPPING": "FORBIDDEN",
+    "GOVERNOR_AS_BINARY_EXIT_PERMISSION": "FORBIDDEN",
+    "HAZARD_SCORE_THRESHOLD_RESCUE": "FORBIDDEN",
+    "P6_HIGH_ADVERSE_TAIL_0_75_AS_FINAL_EXIT_THRESHOLD": "FORBIDDEN",
+    "TIME_FAILURE_HAZARD_AS_EXIT_PROXY": "CLOSED_NO_ACTION_MAPPING"
+  }
+}
