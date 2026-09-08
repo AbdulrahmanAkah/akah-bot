@@ -1,0 +1,180 @@
+{
+  "action_mapping_firewall": {
+    "capital_reuse_before_original_control_exit": "FORBIDDEN",
+    "confirmation_window": "NOT_DEFINED",
+    "economic_shadow": "FORBIDDEN_IN_P1_P2",
+    "full_liquidation_rule": "NOT_DEFINED",
+    "partial_derisk_fraction": "NOT_DEFINED",
+    "portfolio_replay": "FORBIDDEN_IN_P1_P2",
+    "production_authorized": false,
+    "slot_escrow_if_later_shadow_occurs": "MANDATORY"
+  },
+  "causal_market_context_contract": {
+    "context_id": "RD29_MARKET_CONTEXT",
+    "context_is_causal_effect_claim": false,
+    "context_is_exit_permission": false,
+    "context_role": "STATE_MODIFIER_AND_STRATIFICATION_VARIABLE_ONLY",
+    "decision_time_assignment": "CONTEXT_MUST_BE_RECONSTRUCTED_CAUSALLY_AT_EACH_DECISION_OPEN_t_USING_ONLY_INFORMATION_AVAILABLE_THROUGH_t_MINUS_1",
+    "frozen_semantic_authority": "RD29_CAUSAL_CONTEXT_MACHINERY_AS_USED_BY_RD31",
+    "no_context_backfill": true,
+    "no_context_forward_fill_across_unobserved_boundary": true,
+    "no_synthetic_context": true,
+    "states": [
+      "SUPPORTIVE",
+      "MIXED",
+      "STRESSED",
+      "UNAVAILABLE"
+    ],
+    "unavailable_context_can_qualify_exit_utility": false,
+    "unavailable_context_role": "DESCRIPTIVE_AND_DATA_QUALITY_ONLY"
+  },
+  "future_direct_utility_feature_design_firewall": {
+    "feature_set_is_not_selected_in_p1": true,
+    "may_use_p2_rcv_values_or_associations_to_design_features": false,
+    "may_use_p2_support_counts_to_avoid_impossible_cells": true,
+    "old_tombstoned_threshold_family_rescue": "FORBIDDEN",
+    "p6_tail_threshold_0_75_reuse_as_exit_threshold": "FORBIDDEN",
+    "rd41_hazard_score_as_primary_feature": "FORBIDDEN",
+    "reason": "P2_IS_SUPPORT_AND_CONTEXT_RECONCILIATION_ONLY_AND_MAY_NOT_EXPOSE_RCV_ASSOCIATIONS;FEATURE_HYPOTHESES_MUST_BE_PREREGISTERED_AFTER_P2_SUPPORT_CENSUS_AND_BEFORE_P3_TARGET_EXPOSURE",
+    "time_failure_label_as_primary_target": "FORBIDDEN"
+  },
+  "governor_contract": {
+    "cohort_selection_warning": "RD31_ADMISSION_GOVERNOR_CAN_CHANGE_WHICH_TRADES_EXIST_AND_THEREFORE_CANNOT_BE_TREATED_AS_RANDOMIZED_EXIT_CONTEXT",
+    "future_governor_incremental_test_requires_same_risk_set_ablation": true,
+    "governor_state_can_be_reported_descriptively": true,
+    "governor_state_is_binary_exit_permission": false,
+    "governor_state_is_primary_predictor": false
+  },
+  "inherited_tombstones": {
+    "ADVERSE_PATH_DOMINANCE": "REVERSED_DIRECTION_TOMBSTONE",
+    "BINARY_HAZARD_TO_EXIT_MAPPING": "FORBIDDEN",
+    "GOVERNOR_AS_BINARY_EXIT_PERMISSION": "FORBIDDEN",
+    "HAZARD_SCORE_THRESHOLD_RESCUE": "FORBIDDEN",
+    "P6_HIGH_ADVERSE_TAIL_0_75_AS_FINAL_EXIT_THRESHOLD": "FORBIDDEN",
+    "PERSISTENT_LOWER_HIGH_GIVEBACK": "REVERSED_DIRECTION_TOMBSTONE",
+    "STALE_PEAK_FRESH_DECAY": "NON_ROBUST_DIAGNOSTIC_ONLY",
+    "TIME_FAILURE_HAZARD_AS_EXIT_PROXY": "CLOSED_NO_ACTION_MAPPING",
+    "TROUGH_RECOVERY_FAILURE": "REGIME_DIRECTION_REVERSAL_TOMBSTONE",
+    "UNRECOVERED_ENTRY_FAILURE": "REVERSED_DIRECTION_TOMBSTONE"
+  },
+  "lineage": {
+    "rd31_governor_git_blob": "60840054dbaf06c4ae226ab15742fa862326ac99",
+    "rd31_manifest_git_blob": "d99201d401581340f6f56080bda8ae3ef20afca8",
+    "rd31_runner_git_blob": "3b5c6916e34be6c9642702fe2807e42e445ee083",
+    "rd31_transition_ledger_sha256": "46c36f91041912ebcfefdbe2d710bb090d73b3aeea65cabad2be71ad138e640b",
+    "rd41_closure_audit_git_blob": "f11f9bc167ba7a152cdb836389a70b20c6d297dc",
+    "rd41_closure_commit": "f99607f695ef182ce2a031dad94e076932abd5b3",
+    "rd41_closure_report_git_blob": "760883667f45c253350ca6ba08be059f5fb04033",
+    "rd41_closure_report_sha256": "4aeee7f2868f18100d0fa5e0a48a5c000307ec0492630c3549e1f964b7efb80d",
+    "rd41_p6_results_commit": "44d8414a835093ddb823a4a973a322c04ed25230",
+    "rd41_target_ledger_sha256": "857881f3a7268b4c68293707045e84f8d358316736f2b4d9ff5e780f0b8af9e6"
+  },
+  "next_stage": "RD42_P2_FREEZE_AND_RUN_CAUSAL_CONTEXT_RECONCILIATION_AND_SUPPORT_CENSUS_2022_2023_ONCE",
+  "p2_context_reconciliation_contract": {
+    "model_fit_allowed": false,
+    "new_feature_outcome_association_allowed": false,
+    "new_rcv_statistics_allowed": false,
+    "parity_failure_action": "STOP_BEFORE_ANY_RCV_CONTEXT_DIAGNOSTIC",
+    "parity_requirement": "LANDMARK_POSITION_COUNTS_MUST_MATCH_THE_FROZEN_RD41_RISK_SET_FOR_THE_OVERLAPPING_RESOLVED_AND_CENSORED_POPULATION",
+    "purpose": "RECONSTRUCT_CAUSAL_CONTEXT_AT_FROZEN_LANDMARK_ROWS_AND_MEASURE_SUPPORT_ONLY_BEFORE_ANY_NEW_RCV_DIAGNOSTIC",
+    "required_outputs": [
+      "context-assignment-ledger.csv",
+      "context-support-census.csv",
+      "context-data-quality-summary.csv",
+      "landmark-risk-set-parity.csv",
+      "right-censoring-by-context-summary.csv",
+      "output-manifest.json"
+    ],
+    "threshold_search_allowed": false,
+    "winner_selection_allowed": false
+  },
+  "primary_target": {
+    "capital_reuse_value_in_target": false,
+    "decision_clock": "KUCOIN_SPOT_1H_OPEN_t",
+    "definition": "FROZEN_CONTROL_EXIT_NET_LIQUIDATION_VALUE_RELATIVE_TO_DECISION_TIME_NET_IMMEDIATE_LIQUIDATION_VALUE",
+    "entry_cost_is_sunk": true,
+    "feature_cutoff": "LATEST_COMPLETED_INFORMATION_THROUGH_t_MINUS_1",
+    "freed_slot_opportunity_value_in_target": false,
+    "future_control_exit_information_is_target_side_only": true,
+    "higher_is_better_to_continue": true,
+    "id": "RCV_RETURN",
+    "name": "DIRECT_REMAINING_CONTROL_UTILITY",
+    "negative_means_immediate_liquidation_dominates_frozen_control_hold": true
+  },
+  "research_exposure_flags": {
+    "2024_accessed": false,
+    "context_counts_seen_in_p1": false,
+    "economic_action_executed": false,
+    "model_fit_in_p1": false,
+    "new_features_computed_in_p1": false,
+    "new_targets_computed_in_p1": false,
+    "parameter_search_used": false,
+    "post_2024_accessed": false,
+    "production_authorized": false,
+    "raw_market_data_loaded_in_p1": false,
+    "rcv_by_context_seen_in_p1": false,
+    "rd31_transition_rows_loaded_in_p1": false,
+    "rd41_target_rows_loaded_in_p1": false,
+    "threshold_optimization_used": false,
+    "winner_selection_used": false
+  },
+  "research_question": "CAN_DIRECT_REMAINING_CONTROL_UTILITY_BE_IDENTIFIED_IN_A_TEMPORALLY_TRANSPORTABLE_WAY_WHEN_TRADE_STATE_IS_INTERPRETED_CONDITIONALLY_ON_CAUSALLY_AVAILABLE_MARKET_CONTEXT_RATHER_THAN_USING_TIME_FAILURE_HAZARD_AS_AN_EXIT_PROXY",
+  "risk_set": {
+    "2024_access": "FORBIDDEN",
+    "data_cutoff_exclusive": "2024-01-01T00:00:00Z",
+    "landmark_age_hours": [
+      24,
+      48,
+      72,
+      96,
+      120,
+      144
+    ],
+    "landmarks_frozen_before_context_counts": true,
+    "no_force_close_at_cutoff": true,
+    "periods": [
+      "ROBUSTNESS_2022",
+      "ROBUSTNESS_2023"
+    ],
+    "position_must_be_open_strictly_at_landmark": true,
+    "resolved_control_outcome_required_for_rcv_target": true,
+    "right_censored_positions_are_excluded_from_rcv_value_analysis": true,
+    "right_censored_positions_are_not_imputed": true,
+    "right_censored_positions_remain_in_structural_census_until_censor_time": true,
+    "universes": [
+      "C2",
+      "D2",
+      "E2"
+    ]
+  },
+  "schema_version": "rd42-p1-direct-remaining-control-utility-causal-context-temporal-transport-preregistration-v1",
+  "secondary_target": {
+    "definition": "RCV_RETURN_LT_ZERO",
+    "id": "RCV_NEGATIVE",
+    "role": "ECONOMICALLY_CANONICAL_BINARY_SUMMARY_OF_DIRECT_UTILITY_NOT_A_REPLACEMENT_FOR_THE_CONTINUOUS_PRIMARY_TARGET",
+    "threshold": 0.0,
+    "threshold_is_economic_identity_not_optimized": true
+  },
+  "stage": "RD42_P1_PREREGISTER_DIRECT_REMAINING_CONTROL_UTILITY_WITH_CAUSAL_CONTEXT_CONDITIONING_AND_TEMPORAL_TRANSPORT",
+  "status": "FROZEN_PRE_CONTEXT_CENSUS_PRE_TARGET_DIAGNOSTIC",
+  "support_gates_frozen_before_counts": {
+    "adjacent_context_merge_for_primary_qualification": "FORBIDDEN",
+    "cannot_relax_after_p2_counts": true,
+    "minimum_unique_control_positions": 20,
+    "minimum_unique_pairs": 5,
+    "minimum_unique_signal_days": 10,
+    "sensitivity_merge_can_rescue_primary_failure": false,
+    "unit": "YEAR_X_UNIVERSE_X_LANDMARK_X_MARKET_CONTEXT",
+    "unsupported_context_cell_class": "INSUFFICIENT_SUPPORT"
+  },
+  "temporal_transport_contract": {
+    "calendar_year_as_feature": "FORBIDDEN",
+    "future_production_calibration_must_use_past_only": true,
+    "pooling_2022_2023_for_training": "FORBIDDEN",
+    "primary_direction": "CALIBRATE_2022_EVALUATE_2023",
+    "reverse_direction": "CALIBRATE_2023_EVALUATE_2022",
+    "reverse_role": "REGIME_ROBUSTNESS_DIAGNOSTIC_ONLY",
+    "sign_reversal_is_qualification": false,
+    "single_year_success_is_sufficient": false
+  }
+}
