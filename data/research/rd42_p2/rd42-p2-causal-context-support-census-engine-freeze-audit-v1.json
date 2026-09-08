@@ -1,0 +1,64 @@
+{
+  "2024_accessed": false,
+  "context_semantics_changed": false,
+  "economic_action_executed": false,
+  "engine_changed_by_recovery": false,
+  "engine_path": "src/spotbot/research/rd42_context_support_census.py",
+  "engine_sha256": "ac5b7a4fc90407f43f5a0c9df7dbc0d25260584be1eaa10148e666b672a2f21f",
+  "failure": {
+    "corrected_expected": [
+      24,
+      48,
+      72
+    ],
+    "erroneous_expected": [
+      24,
+      48
+    ],
+    "observed": [
+      24,
+      48,
+      72
+    ],
+    "reason": "ENTRY_2023_12_28T01Z_TO_CENSOR_2024_01_01T00Z_IS_95_HOURS_SO_72H_IS_STRICTLY_BEFORE_CENSOR_TIME",
+    "test": "test_landmark_rows_use_strict_open_semantics"
+  },
+  "landmarks_changed": false,
+  "mechanical_recovery_only": true,
+  "model_fit_performed": false,
+  "original_context_census_started": false,
+  "original_failure_stage": "PRE_FREEZE_TARGETED_PYTEST",
+  "original_freeze_commit_created": false,
+  "original_runtime_created": false,
+  "patch": {
+    "engine_sha_unchanged": "ac5b7a4fc90407f43f5a0c9df7dbc0d25260584be1eaa10148e666b672a2f21f",
+    "new_expectation": "[24, 48, 72]",
+    "old_expectation": "[24, 48]",
+    "research_logic_changed": false,
+    "runner_sha_unchanged": "38ae63a9ffd9e5b5ed4de6e16df0288ebe208c549be9d245218df6571a55125c",
+    "test_sha_after_patch": "816d9db9bfa67870541e215441448124be692c12672d826ae8a38f745ca63e58",
+    "test_sha_before": "b5eb3cd9a69e651ffe943af96415c03cbbe0da602b7e7f113ea5aae656d738cb"
+  },
+  "production_authorized": false,
+  "rcv_statistics_computed": false,
+  "rcv_values_loaded": false,
+  "research_exposure_before_recovery": false,
+  "risk_set_semantics_changed": false,
+  "runner_changed_by_recovery": false,
+  "runner_path": "scripts/research/run_rd42_context_support_census.py",
+  "runner_sha256": "38ae63a9ffd9e5b5ed4de6e16df0288ebe208c549be9d245218df6571a55125c",
+  "schema_version": "rd42-p2-pre-freeze-test-expectation-recovery-audit-v1",
+  "source_p1_audit_git_blob": "e30df97805df8accd62d46667b087e4254633e17",
+  "source_p1_freeze_commit": "e52c4c650f8690f3f114f7e9daba17671c2332db",
+  "source_p1_protocol_git_blob": "a95171a82f0047160bdbd86c877aa638b91589fb",
+  "source_p1_protocol_sha256": "6ae9a78b60226133e0388db97c27e7f1abc47d7244db7dca7d5d80059014ccf0",
+  "stage": "RD42_P2_CAUSAL_CONTEXT_SUPPORT_CENSUS_PRE_FREEZE_TEST_EXPECTATION_RECOVERY",
+  "status": "PASS",
+  "support_gates_changed": false,
+  "target_exposure_allowed": false,
+  "test_changed_by_recovery": true,
+  "test_path": "tests/research/test_rd42_context_support_census.py",
+  "test_sha256": "816d9db9bfa67870541e215441448124be692c12672d826ae8a38f745ca63e58",
+  "unrelated_untracked_count": 29,
+  "unrelated_untracked_preserved": true
+}
