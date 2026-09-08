@@ -1,0 +1,273 @@
+{
+  "action_firewall": {
+    "p4_action_mapping_executed": false,
+    "p4_capital_reuse_before_control_exit": false,
+    "p4_confirmation_window_created": false,
+    "p4_economic_action_executed": false,
+    "p4_exit_rule_created": false,
+    "p4_full_liquidation_rule_created": false,
+    "p4_partial_derisk_rule_created": false,
+    "p4_portfolio_replay_executed": false,
+    "p4_slot_escrow_executed": false,
+    "production_authorized": false
+  },
+  "base_support_gate": {
+    "minimum_unique_pairs": 5,
+    "minimum_unique_positions": 20,
+    "minimum_unique_signal_days": 10,
+    "no_relaxation_after_rcv_exposure": true,
+    "required_in_training_and_evaluation": true
+  },
+  "canonical_dynamic_axes": [
+    "TIME_SINCE_COMPLETED_HIGH_WATER_HOURS",
+    "RECENT_12H_HIGH_WATER_INCREMENT_ATR",
+    "RECENT_12H_PULLBACK_CHANGE_ATR"
+  ],
+  "canonical_dynamic_axis_count": 3,
+  "continuous_rcv_gate": {
+    "all_leave_one_pair_out_runs_must_pass": true,
+    "evaluation_metric_1": "SPEARMAN_PREDICTED_RCV_VS_ACTUAL_RCV_GT_ZERO",
+    "evaluation_metric_2": "PREDICTED_TOP_HALF_ACTUAL_MEAN_RCV_GT_PREDICTED_BOTTOM_HALF_ACTUAL_MEAN_RCV",
+    "p_value_gate": false,
+    "prediction_half_split": "SORT_BY_PREDICTION_THEN_DECISION_ID_STABLE_HALF_SPLIT"
+  },
+  "dynamic_window_hours": 12,
+  "holdout_firewall": {
+    "2024_accessed": false,
+    "2024_remains_sealed_after_p4": true,
+    "post_2024_accessed": false
+  },
+  "information_source": "CONTROL_RELATIVE_DYNAMICS",
+  "join_contract": {
+    "duplicate_decision_id_allowed": false,
+    "expected_state_decision_registry_size": 1996,
+    "partial_registry_join_allowed": false,
+    "primary_key": "decision_id",
+    "required_parity_fields": [
+      "control_position_id",
+      "universe_id",
+      "period_id",
+      "pair",
+      "decision_time",
+      "landmark_age_hours"
+    ],
+    "right_censored_target_imputation_allowed": false,
+    "state_data_quality_required": "RECONSTRUCTED_VALID"
+  },
+  "joint_qualification_contract": {
+    "best_universe_selection_allowed": false,
+    "cross_universe_gate_stitching_allowed": false,
+    "landmark_qualified_when_joint_cells_pass_in_at_least_universes": 2,
+    "qualification_unit": "UNIVERSE_X_LANDMARK_X_DIRECTION",
+    "same_cell_must_pass": [
+      "CONTINUOUS_RCV_GATE",
+      "NEGATIVE_RCV_CLASSIFICATION_GATE",
+      "NEGATIVE_UTILITY_SUBSET_GATE"
+    ],
+    "universe_count": 3
+  },
+  "landmarks_hours": [
+    24,
+    48,
+    72,
+    96,
+    120,
+    144
+  ],
+  "leave_one_pair_out_contract": {
+    "for_each_removed_pair": [
+      "REMOVE_PAIR_FROM_TRAINING",
+      "REMOVE_PAIR_FROM_EVALUATION",
+      "REBUILD_TRAINING_ECDF_REFERENCES",
+      "REFIT_THE_FIXED_FOUR_COEFFICIENT_OLS",
+      "REEVALUATE_ALL_THREE_GATES"
+    ],
+    "minimum_evaluation_pairs_after_removal": 4,
+    "minimum_evaluation_rows_after_removal": 12,
+    "minimum_training_pairs_after_removal": 4,
+    "minimum_training_rows_after_removal": 12,
+    "pair_registry": "UNION_OF_TRAINING_AND_EVALUATION_PAIR_IDENTIFIERS",
+    "scope": "WITHIN_EACH_UNIVERSE_X_LANDMARK_X_DIRECTION_CELL",
+    "support_failure_behavior": "LOPO_FAIL_NO_RESCUE"
+  },
+  "lineage": {
+    "eventual_target_ledger_git_blob": "c05773164b753aca2b1eb07d668888e1d05b0dae",
+    "p2_dynamics_ledger_git_blob": "4bba74cac990d9c747497ba15b8c275995dc4a49",
+    "p2_engine_freeze_audit_git_blob": "82f8c9338ee350ab85fa5d19749e963ad8095c3c",
+    "p2_identity_parity_git_blob": "46caf034c9e28e62e5a34188fac9592d3759430d",
+    "p2_manifest_deterministic_hash": "96732e70f6b594882bdb4de5ab10248a3a56ab552b61a1eb9aa4988e341ed967",
+    "p2_manifest_git_blob": "5a3b3ee386adfc9a5147ba62aa77a77bd9610e4b",
+    "p2_support_freeze_git_blob": "f42f5f8fbdc4de531778f1a12c0ce11e6b62bb58",
+    "source_p1_freeze_commit": "8d5064640c3c075d99ef581b60dc167c26b719d4",
+    "source_p2_freeze_commit": "f0a9dd46ee2c1925a9f9214243deb514cc802cf0",
+    "source_p2_results_commit": "0a7883b49995540937895aa2f99ca44547662b16"
+  },
+  "model_contract": {
+    "capacity_comparison_note": "FOUR_COEFFICIENT_CAPACITY_MATCHES_RD43_P4_TO_ISOLATE_THE_INFORMATION_SOURCE_CHANGE_RATHER_THAN_MODEL_CAPACITY",
+    "cdf_tie_method": "RIGHT_COUNT_LESS_THAN_OR_EQUAL",
+    "coefficient_signs_are_advancement_gates": false,
+    "evaluation_transform_uses_training_distribution_only": true,
+    "feature_subset_selection_allowed": false,
+    "feature_weight_search_allowed": false,
+    "fit_unit": "UNIVERSE_X_LANDMARK_X_TRANSPORT_DIRECTION",
+    "formula": "RCV_RETURN = B0 + B1*F_TIME_SINCE_HIGH_WATER + B2*F_RECENT_HIGH_WATER_INCREMENT + B3*F_RECENT_PULLBACK_CHANGE",
+    "full_design_rank_required": 4,
+    "hyperparameter_search_allowed": false,
+    "interaction_search_allowed": false,
+    "interaction_terms": [],
+    "model_basis": [
+      "INTERCEPT",
+      "TRAINING_ECDF_TIME_SINCE_COMPLETED_HIGH_WATER_HOURS",
+      "TRAINING_ECDF_RECENT_12H_HIGH_WATER_INCREMENT_ATR",
+      "TRAINING_ECDF_RECENT_12H_PULLBACK_CHANGE_ATR"
+    ],
+    "model_basis_dimension": 4,
+    "model_family": "LOW_CAPACITY_OLS",
+    "model_family_search_allowed": false,
+    "nonlinear_basis_search_allowed": false,
+    "parameter_search_allowed": false,
+    "rank_failure_behavior": "CELL_FAIL_NO_RESCUE",
+    "recent_mark_change_added_to_model": false,
+    "regularization_search_allowed": false,
+    "regularization_used": false,
+    "static_rd43_axes_added_to_model": false,
+    "training_empirical_cdf_definition": "COUNT(TRAINING_FEATURE_VALUE_LE_X)/TRAINING_N"
+  },
+  "negative_rcv_classification_gate": {
+    "adverse_score": "NEGATIVE_PREDICTED_RCV",
+    "all_leave_one_pair_out_auc_runs_must_exceed_0_5": true,
+    "evaluation_metric_1": "AUC_ADVERSE_SCORE_GT_0_5",
+    "evaluation_metric_2": "MEDIAN_PREDICTED_RCV_NEGATIVE_EVENTS_LT_MEDIAN_PREDICTED_RCV_NONNEGATIVE_EVENTS",
+    "event_definition": "RCV_RETURN_LT_ZERO",
+    "minimum_negative_events": 10,
+    "minimum_nonnegative_events": 10,
+    "p_value_gate": false
+  },
+  "negative_utility_subset_gate": {
+    "all_leave_one_pair_out_runs_require": [
+      "SUBSET_SUPPORT_PASS",
+      "SUBSET_ACTUAL_MEAN_RCV_LT_ZERO",
+      "SUBSET_ACTUAL_NEGATIVE_RCV_FRACTION_GT_0_5"
+    ],
+    "evaluation_metric_1": "SUBSET_ACTUAL_MEAN_RCV_LT_ZERO",
+    "evaluation_metric_2": "SUBSET_ACTUAL_MEDIAN_RCV_LT_ZERO",
+    "evaluation_metric_3": "SUBSET_ACTUAL_NEGATIVE_RCV_FRACTION_GT_0_5",
+    "evaluation_metric_4": "SUBSET_ACTUAL_MEAN_RCV_LT_NONNEGATIVE_PREDICTION_COMPLEMENT_ACTUAL_MEAN_RCV",
+    "minimum_subset_pairs": 5,
+    "minimum_subset_rows": 10,
+    "minimum_subset_signal_days": 10,
+    "percentile_tail_rescue_allowed": false,
+    "subset_definition": "PREDICTED_RCV_LT_ZERO",
+    "threshold": 0.0,
+    "threshold_search_allowed": false,
+    "threshold_source": "ECONOMIC_IDENTITY_NOT_OPTIMIZED"
+  },
+  "next_stage": "RD44_P4_FREEZE_AND_RUN_CONTROL_RELATIVE_DYNAMICS_DIRECT_UTILITY_TEMPORAL_TRANSPORT_ONCE",
+  "p3_research_firewall": {
+    "2024_accessed": false,
+    "action_mapping_executed": false,
+    "capital_reuse_performed": false,
+    "context_selection_used": false,
+    "economic_action_executed": false,
+    "landmark_selection_used": false,
+    "model_fit_performed": false,
+    "parameter_search_used": false,
+    "portfolio_replay_performed": false,
+    "post_2024_accessed": false,
+    "production_authorized": false,
+    "rcv_associations_computed": false,
+    "rcv_values_loaded": false,
+    "target_rows_loaded": false,
+    "threshold_optimization_used": false,
+    "winner_selection_used": false
+  },
+  "p4_decision_contract": {
+    "forward_persistent_but_no_matching_reverse_pair": {
+      "decision": "RD44_FORWARD_DIRECT_UTILITY_EXISTS_WITH_REGIME_DEPENDENCE_REQUIRE_CAUSAL_CONTEXT_CONDITIONING",
+      "next_stage": "RD44_P5_PREREGISTER_CAUSAL_CONTEXT_CONDITIONING_OF_CONTROL_RELATIVE_DYNAMICS_BEFORE_ACTION_MAPPING"
+    },
+    "matching_forward_and_reverse_persistent_pair_exists": {
+      "decision": "RD44_CONTROL_RELATIVE_DYNAMICS_DIRECT_UTILITY_BIDIRECTIONALLY_PERSISTENT",
+      "next_stage": "RD44_P5_PREREGISTER_ISOLATED_ACTION_MAPPING_WITH_SLOT_ESCROW_AND_NO_EARLY_CAPITAL_REUSE"
+    },
+    "no_forward_persistent_pair": {
+      "decision": "RD44_CONTROL_RELATIVE_DYNAMICS_DIRECT_UTILITY_UNQUALIFIED_REASSESS_INFORMATION_ARCHITECTURE",
+      "next_stage": "RD44_CLOSE_OR_PREREGISTER_DISTINCT_DIRECT_UTILITY_INFORMATION_SOURCE_WITHOUT_THRESHOLD_RESCUE"
+    }
+  },
+  "rd43_tombstones_carried_forward": {
+    "ADD_DETERMINISTIC_STATIC_DERIVATIVES_AS_NEW_INFORMATION_RESCUE": "FORBIDDEN",
+    "BEST_LANDMARK_SELECTION_FROM_RD43_P4": "FORBIDDEN",
+    "BEST_UNIVERSE_SELECTION_FROM_RD43_P4": "FORBIDDEN",
+    "FORWARD_96H_ONLY_SELECTION": "FORBIDDEN",
+    "FORWARD_96H_POINT_SIGNAL_AS_EXIT_RULE": "FORBIDDEN",
+    "POST_HOC_CONTEXT_SELECTION_FROM_RD43_P4": "FORBIDDEN",
+    "PREDICTED_RCV_ZERO_THRESHOLD_REOPTIMIZATION": "FORBIDDEN",
+    "REMOVE_OR_RELAX_LOPO_TO_RESCUE_96H": "FORBIDDEN"
+  },
+  "research_question": "DOES_THE_FROZEN_THREE_AXIS_CONTROL_RELATIVE_DYNAMICS_BASIS_TRANSPORT_DIRECT_REMAINING_CONTROL_UTILITY_FROM_2022_TO_2023_WITH_PAIR_ROBUSTNESS_AND_ECONOMICALLY_NEGATIVE_PREDICTED_UTILITY_SUBSETS",
+  "schema_version": "rd44-p3-control-relative-dynamics-direct-utility-evaluation-preregistration-v1",
+  "stage": "RD44_PREREGISTER_CONTROL_RELATIVE_DYNAMICS_DIRECT_UTILITY_EVALUATION_PRE_RCV_EXPOSURE",
+  "status": "FROZEN_PRE_RCV_ASSOCIATION",
+  "target_contract": {
+    "capital_reuse_value_in_target": false,
+    "entry_cost_treatment": "SUNK_AT_DECISION_TIME",
+    "higher_rcv_means": "CONTINUING_CONTROL_WAS_BETTER",
+    "negative_rcv_means": "IMMEDIATE_LIQUIDATION_AT_DECISION_TIME_DOMINATED_CONTINUING_THE_FROZEN_CONTROL",
+    "opportunity_value_in_target": false,
+    "primary_target": "RCV_RETURN",
+    "rcv_values_loaded_in_p3": false,
+    "secondary_identity_target": "RCV_RETURN_LT_ZERO",
+    "target_interpretation": "FROZEN_CONTROL_EXIT_NET_LIQUIDATION_VALUE_RELATIVE_TO_DECISION_TIME_IMMEDIATE_NET_LIQUIDATION_VALUE",
+    "target_rows_loaded_in_p3": false,
+    "target_source_git_blob": "c05773164b753aca2b1eb07d668888e1d05b0dae",
+    "target_source_path": "data/research/rd41_p4_runtime/target-ledger.csv",
+    "zero_threshold_source": "ECONOMIC_IDENTITY_NOT_OPTIMIZED"
+  },
+  "temporal_persistence_contract": {
+    "adjacent_landmark_pairs": [
+      [
+        24,
+        48
+      ],
+      [
+        48,
+        72
+      ],
+      [
+        72,
+        96
+      ],
+      [
+        96,
+        120
+      ],
+      [
+        120,
+        144
+      ]
+    ],
+    "all_qualifying_pairs_preserved": true,
+    "best_landmark_selection_allowed": false,
+    "best_persistent_pair_selection_allowed": false,
+    "forward_persistence_requires_both_landmarks_qualified": true,
+    "isolated_single_landmark_success_insufficient": true
+  },
+  "temporal_transport": {
+    "both_directions_run_once_in_p4": true,
+    "primary_direction": "CALIBRATE_2022_EVALUATE_2023",
+    "primary_evaluation_period": "ROBUSTNESS_2023",
+    "primary_training_period": "ROBUSTNESS_2022",
+    "reverse_direction": "CALIBRATE_2023_EVALUATE_2022",
+    "reverse_direction_role": "REGIME_DEPENDENCE_DIAGNOSTIC_NOT_PRIMARY_ADVANCEMENT_GATE",
+    "reverse_evaluation_period": "ROBUSTNESS_2022",
+    "reverse_training_period": "ROBUSTNESS_2023",
+    "same_year_cross_validation_as_primary_evidence_allowed": false,
+    "year_pooling_allowed": false
+  },
+  "universes": [
+    "C2",
+    "D2",
+    "E2"
+  ]
+}
