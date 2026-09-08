@@ -1,0 +1,295 @@
+{
+  "all_supported_landmarks_must_be_tested": true,
+  "best_landmark_selection_allowed": false,
+  "canonical_axes": [
+    "HIGH_WATER_GAIN_ATR",
+    "PULLBACK_FROM_HIGH_WATER_ATR"
+  ],
+  "cell_gates": {
+    "continuous_rcv_gate": {
+      "evaluation_spearman_predicted_vs_actual_gt": 0.0,
+      "every_leave_one_pair_out_bottom_minus_top_mean_lt": 0.0,
+      "every_leave_one_pair_out_spearman_gt": 0.0,
+      "predicted_bottom_half_actual_mean_lt_top_half": true,
+      "required": true
+    },
+    "joint_cell_qualification": "ALL_THREE_GATES_MUST_PASS_IN_THE_SAME_UNIVERSE_CELL",
+    "negative_rcv_classification_gate": {
+      "actual_negative_event_median_prediction_lt_non_event": true,
+      "evaluation_auc_gt": 0.5,
+      "event": "RCV_RETURN_LT_ZERO",
+      "every_leave_one_pair_out_auc_gt": 0.5,
+      "required": true,
+      "score": "NEGATIVE_PREDICTED_RCV_RETURN"
+    },
+    "negative_utility_subset_gate": {
+      "actual_subset_mean_lt_complement_mean": true,
+      "actual_subset_mean_rcv_lt": 0.0,
+      "actual_subset_median_rcv_lt": 0.0,
+      "actual_subset_negative_fraction_gt": 0.5,
+      "every_leave_one_pair_out_negative_fraction_gt": 0.5,
+      "every_leave_one_pair_out_subset_mean_rcv_lt": 0.0,
+      "required": true,
+      "subset_definition": "PREDICTED_RCV_RETURN_LT_ZERO",
+      "subset_threshold_source": "ECONOMIC_IDENTITY_ZERO",
+      "threshold_optimization": false
+    }
+  },
+  "data_firewall": {
+    "2024_access_allowed": false,
+    "p2_state_must_be_used_as_frozen": true,
+    "post_2024_access_allowed": false,
+    "raw_market_data_needed_in_p4": false,
+    "target_ledger_must_be_used_as_frozen": true
+  },
+  "decision_tree": {
+    "forward_persistent_but_no_matching_reverse_persistent_pair": {
+      "action_mapping_authorized": false,
+      "decision": "RD43_FORWARD_DIRECT_UTILITY_EXISTS_WITH_REGIME_DEPENDENCE_REQUIRE_CAUSAL_CONTEXT_CONDITIONING",
+      "next_stage": "RD43_P5_PREREGISTER_CAUSAL_CONTEXT_CONDITIONING_OF_CONTROL_RELATIVE_STATE_BEFORE_ACTION_MAPPING"
+    },
+    "matching_forward_and_reverse_persistent_pair_exists": {
+      "action_mapping_authorized_in_p4": false,
+      "decision": "RD43_CONTROL_RELATIVE_STATE_DIRECT_UTILITY_BIDIRECTIONALLY_PERSISTENT",
+      "next_stage": "RD43_P5_PREREGISTER_ISOLATED_ACTION_MAPPING_WITH_SLOT_ESCROW_AND_NO_EARLY_CAPITAL_REUSE"
+    },
+    "no_forward_persistent_pair": {
+      "action_mapping_authorized": false,
+      "decision": "RD43_CONTROL_RELATIVE_STATE_DIRECT_UTILITY_UNQUALIFIED_REASSESS_INFORMATION_ARCHITECTURE",
+      "next_stage": "RD43_CLOSE_OR_PREREGISTER_DISTINCT_DIRECT_UTILITY_INFORMATION_SOURCE_WITHOUT_THRESHOLD_RESCUE"
+    }
+  },
+  "derived_observables_as_additional_predictors": false,
+  "feature_subset_selection_allowed": false,
+  "feature_weight_search_allowed": false,
+  "information_source": "CONTROL_RELATIVE_STATE",
+  "interaction_search_allowed": false,
+  "join_contract": {
+    "exact_decision_registry_parity_required": true,
+    "forbidden_target_columns_as_model_inputs": [
+      "control_exit_time",
+      "control_exit_reason",
+      "control_exit_price",
+      "rcv_dollars",
+      "time_failure_event",
+      "governor_state",
+      "net_pnl",
+      "gross_pnl"
+    ],
+    "p2_allowed_columns": [
+      "decision_id",
+      "control_position_id",
+      "universe_id",
+      "period_id",
+      "pair",
+      "signal_time",
+      "decision_time",
+      "landmark_age_hours",
+      "data_quality_class",
+      "high_water_gain_atr",
+      "pullback_from_high_water_atr"
+    ],
+    "primary_key": "decision_id",
+    "required_parity_columns": [
+      "control_position_id",
+      "universe_id",
+      "period_id",
+      "pair",
+      "decision_time",
+      "landmark_age_hours"
+    ],
+    "target_allowed_columns": [
+      "decision_id",
+      "control_position_id",
+      "universe_id",
+      "period_id",
+      "pair",
+      "decision_time",
+      "landmark_age_hours",
+      "target_evaluable",
+      "rcv_return",
+      "right_censored"
+    ]
+  },
+  "landmark_qualification": {
+    "forward_landmark_qualified_if": "AT_LEAST_2_OF_3_UNIVERSES_JOINTLY_QUALIFY_IN_CALIBRATE_2022_EVALUATE_2023",
+    "qualified_universes_required": 2,
+    "reverse_landmark_qualified_if": "AT_LEAST_2_OF_3_UNIVERSES_JOINTLY_QUALIFY_IN_CALIBRATE_2023_EVALUATE_2022",
+    "same_universe_must_pass_all_three_gates": true,
+    "universe_count": 3
+  },
+  "landmarks_hours": [
+    24,
+    48,
+    72,
+    96,
+    120,
+    144
+  ],
+  "lineage": {
+    "frozen_target_ledger_git_blob": "c05773164b753aca2b1eb07d668888e1d05b0dae",
+    "p1_freeze_commit": "85db27407590d1bdf1c4cc552eb18142eae40aab",
+    "p2_engine_freeze_audit_git_blob": "ffea7653b3b01928aa28ca7e7adb3eb3781815d3",
+    "p2_freeze_commit": "d0e98991529ad954be1569558eac8fa02cd390c6",
+    "p2_identity_parity_git_blob": "6ac7f54f0fefd1a22e2045ea15445c4ea7e4953a",
+    "p2_manifest_deterministic_hash": "ccab18dc070e7d4843c04aa6443bfc1e7a85bd0c65dbacc3da1d1d94ee928d5c",
+    "p2_manifest_git_blob": "a73befcc3c76f68056c7b6da4985e50dd9059432",
+    "p2_results_commit": "ac62871a5f4a534208e13c5f74a62febd272592f",
+    "p2_state_ledger_git_blob": "1ef29d5155d6f5081543d40abec904e5941fb145",
+    "p2_support_freeze_git_blob": "300bba493134305309e22e7104ce984d010904df"
+  },
+  "model": {
+    "basis": [
+      "INTERCEPT",
+      "CDF_HIGH_WATER_GAIN_ATR",
+      "CDF_PULLBACK_FROM_HIGH_WATER_ATR",
+      "CDF_HIGH_WATER_GAIN_ATR_X_CDF_PULLBACK_FROM_HIGH_WATER_ATR"
+    ],
+    "coefficient_count": 4,
+    "family": "LOW_CAPACITY_OLS",
+    "fit_scope": "SEPARATE_PER_UNIVERSE_X_LANDMARK_X_DIRECTION",
+    "full_design_matrix_rank_required": true,
+    "hyperparameter_search": false,
+    "neural_model": false,
+    "polynomial_degree_search": false,
+    "prediction": "PREDICTED_RCV_RETURN",
+    "regularization": "NONE",
+    "spline_search": false,
+    "tree_model": false
+  },
+  "multiplicity_and_rescue_firewall": {
+    "cdf_variant_search": "FORBIDDEN",
+    "classification_threshold_search": "FORBIDDEN",
+    "feature_subset_search": "FORBIDDEN",
+    "feature_weight_search": "FORBIDDEN",
+    "hazard_score_as_predictor": "FORBIDDEN",
+    "interaction_search": "FORBIDDEN",
+    "model_family_search": "FORBIDDEN",
+    "post_hoc_context_selection": "FORBIDDEN_IN_P4",
+    "predicted_rcv_threshold_search": "FORBIDDEN",
+    "rd42_feature_rescue": "FORBIDDEN",
+    "regularization_search": "FORBIDDEN",
+    "single_best_landmark_winner_selection": "FORBIDDEN",
+    "single_best_universe_winner_selection": "FORBIDDEN",
+    "support_gate_relaxation": "FORBIDDEN",
+    "time_failure_as_target": "FORBIDDEN"
+  },
+  "next_stage": "RD43_P4_FREEZE_AND_RUN_CONTROL_RELATIVE_STATE_DIRECT_UTILITY_TEMPORAL_TRANSPORT_ONCE",
+  "p4_action_firewall": {
+    "capital_reuse_before_control_exit": false,
+    "confirmation_window_created": false,
+    "economic_shadow_executed": false,
+    "exit_rule_created": false,
+    "full_liquidation_rule_created": false,
+    "partial_derisk_rule_created": false,
+    "portfolio_replay_executed": false,
+    "production_authorized": false,
+    "slot_escrow_executed": false
+  },
+  "p4_required_outputs": [
+    "joined-control-state-rcv-ledger.csv",
+    "control-state-model-coefficients.csv",
+    "continuous-rcv-cell-evaluation.csv",
+    "negative-rcv-classification-cell-evaluation.csv",
+    "negative-utility-subset-cell-evaluation.csv",
+    "leave-one-pair-out-evaluation.csv",
+    "landmark-qualification.csv",
+    "temporal-persistence-qualification.json",
+    "qualified-direct-utility-evidence-freeze.json",
+    "rd43-p4-direct-utility-report-v1.json",
+    "output-manifest.json"
+  ],
+  "pair_robustness": {
+    "insufficient_lopo_support_is_failure": true,
+    "method": "LEAVE_ONE_PAIR_OUT",
+    "model_refit_after_removal": true,
+    "pair_removed_from_training": true,
+    "same_pair_removed_from_evaluation": true,
+    "skip_failed_pair": false,
+    "training_cdfs_recomputed_after_removal": true
+  },
+  "preprocessing": {
+    "axis_transform": "TRAINING_EMPIRICAL_CDF",
+    "cdf_definition": "F_TRAIN_X_EQUALS_COUNT_OF_TRAIN_VALUES_LESS_THAN_OR_EQUAL_TO_X_DIVIDED_BY_TRAIN_ROW_COUNT",
+    "evaluation_values_use_training_cdf_only": true,
+    "lopo_recomputes_training_cdf_after_pair_removal": true,
+    "outcome_used_in_preprocessing": false,
+    "scope": "PER_UNIVERSE_X_LANDMARK_X_DIRECTION",
+    "standardization_search": false,
+    "training_only": true,
+    "winsorization": false
+  },
+  "research_question": "DO_THE_TWO_MINIMAL_CONTROL_RELATIVE_STATE_AXES_JOINTLY_PREDICT_REMAINING_CONTROL_VALUE_OUT_OF_SAMPLE_IN_THE_FORWARD_TEMPORAL_DIRECTION_AND_IDENTIFY_A_ROBUST_SUBSET_WHOSE_CONTINUATION_VALUE_IS_NEGATIVE",
+  "schema_version": "rd43-p3-control-relative-state-direct-utility-evaluation-preregistration-v1",
+  "stage": "RD43_P3_PREREGISTER_CONTROL_RELATIVE_STATE_DIRECT_UTILITY_EVALUATION_PRE_RCV_EXPOSURE",
+  "status": "FROZEN_PRE_CONTROL_STATE_RCV_ASSOCIATION",
+  "target_contract": {
+    "economic_zero_threshold_optimized": false,
+    "higher_rcv_means": "CONTINUING_CONTROL_IS_BETTER",
+    "negative_rcv_means": "IMMEDIATE_LIQUIDATION_DOMINATES_FROZEN_CONTROL_HOLD",
+    "primary_target": "RCV_RETURN",
+    "right_censored_targets_imputed": false,
+    "secondary_identity_target": "RCV_RETURN_LT_ZERO",
+    "structural_non_evaluable_rows_remain_in_census": true,
+    "target_definition": "FROZEN_CONTROL_EXIT_NET_LIQUIDATION_VALUE_RELATIVE_TO_IMMEDIATE_DECISION_TIME_NET_LIQUIDATION_VALUE",
+    "target_evaluable_rows_only_for_value_model": true
+  },
+  "target_evaluable_support_gates": {
+    "classification_min_actual_negative_rows": 10,
+    "classification_min_actual_nonnegative_rows": 10,
+    "evaluation_min_unique_pairs": 5,
+    "evaluation_min_unique_positions": 20,
+    "evaluation_min_unique_signal_days": 10,
+    "insufficient_support_behavior": "CELL_FAIL_CLOSED",
+    "lopo_min_evaluation_rows": 12,
+    "lopo_min_evaluation_unique_pairs": 4,
+    "lopo_min_training_rows": 12,
+    "lopo_min_training_unique_pairs": 4,
+    "predicted_negative_subset_min_rows": 10,
+    "predicted_negative_subset_min_unique_pairs": 5,
+    "predicted_negative_subset_min_unique_signal_days": 10,
+    "support_threshold_relaxation_after_exposure": false,
+    "training_min_unique_pairs": 5,
+    "training_min_unique_positions": 20,
+    "training_min_unique_signal_days": 10
+  },
+  "temporal_persistence_gate": {
+    "adjacent_landmark_pairs": [
+      [
+        24,
+        48
+      ],
+      [
+        48,
+        72
+      ],
+      [
+        72,
+        96
+      ],
+      [
+        96,
+        120
+      ],
+      [
+        120,
+        144
+      ]
+    ],
+    "all_persistent_pairs_reported": true,
+    "best_persistent_pair_selection_allowed": false,
+    "forward_persistent_pair_definition": "BOTH_ADJACENT_LANDMARKS_FORWARD_QUALIFIED",
+    "isolated_single_landmark_success_is_insufficient": true,
+    "required_for_information_source_advancement": true,
+    "reverse_persistent_pair_definition": "BOTH_ADJACENT_LANDMARKS_REVERSE_QUALIFIED"
+  },
+  "temporal_transport": {
+    "calendar_year_as_feature": false,
+    "future_information_in_training": false,
+    "pool_2022_and_2023_for_training": false,
+    "primary_direction": "CALIBRATE_2022_EVALUATE_2023",
+    "primary_direction_role": "ADVANCEMENT_AUTHORITY",
+    "reverse_direction": "CALIBRATE_2023_EVALUATE_2022",
+    "reverse_direction_role": "REGIME_DEPENDENCE_DIAGNOSTIC_NOT_PRIMARY_ADVANCEMENT_GATE"
+  }
+}
