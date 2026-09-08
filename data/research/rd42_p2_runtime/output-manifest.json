@@ -1,0 +1,90 @@
+{
+  "2024_accessed": false,
+  "context_assignment_row_count": 1996,
+  "context_counts": {
+    "MIXED": 426,
+    "STRESSED": 482,
+    "SUPPORTIVE": 1088,
+    "UNAVAILABLE": 0
+  },
+  "decision": "RD42_CAUSAL_CONTEXT_SUPPORT_CENSUS_PASS_READY_FOR_SUPPORTED_CONTEXT_FEATURE_PREREGISTRATION",
+  "deterministic_hash": "c394027c93cb66b540fbc6ca3f038da57bbb1a713cb848125c1bb5e42c5fc97d",
+  "economic_action_executed": false,
+  "file_count": 5,
+  "files": {
+    "context-assignment-ledger.csv": {
+      "bytes": 529400,
+      "sha256": "5fc3401fb369a6c8d54a4156cb63a1dac7d583723aebec239a3f6150b4426673"
+    },
+    "context-data-quality-summary.csv": {
+      "bytes": 1950,
+      "sha256": "f0dc065b2e95b51a7d0dbe70a83c3a7e8b20995b6c8b64a064db3df0b52c5667"
+    },
+    "context-support-census.csv": {
+      "bytes": 10530,
+      "sha256": "9d1b94ddbc9f7b0790aed1b7d436a396db01a5c595cfa5161b23b3e79244f063"
+    },
+    "landmark-risk-set-parity.csv": {
+      "bytes": 3248,
+      "sha256": "b892c0aaf9d769dd91c05aa500128363924985955f7c8c15b05b0eac8e227d96"
+    },
+    "right-censoring-by-context-summary.csv": {
+      "bytes": 1313,
+      "sha256": "087ddf30b240d3ec0d8d9fc8e10c790e10f1ccd71aa5fb77dd79fb7ae1f37c12"
+    }
+  },
+  "landmark_parity_pass": true,
+  "lineage": {
+    "membership_sha256": "f7d6012ce8cd691583b9b6276ddf36371bfe0bbd9b28f810b676ad0177fb559e",
+    "p1_audit_git_blob": "e30df97805df8accd62d46667b087e4254633e17",
+    "p1_freeze_commit": "e52c4c650f8690f3f114f7e9daba17671c2332db",
+    "p1_protocol_git_blob": "a95171a82f0047160bdbd86c877aa638b91589fb",
+    "p1_protocol_sha256": "6ae9a78b60226133e0388db97c27e7f1abc47d7244db7dca7d5d80059014ccf0",
+    "rd20_membership_loader_git_blob": "904a02ccec3db8c2c23a30200ba63a3a84cb4524",
+    "rd26_engine_git_blob": "f00adb9825b0f6d8483b069045dcf82b029d6a29",
+    "rd27_replay_git_blob": "fb306060f3a6dfbf81c54423458c055239fe9b00",
+    "rd27_state_git_blob": "134daae001a0fcfad0ff8c2a9bd359ac2a8ebc3f",
+    "rd29_context_git_blob": "60b7338c76c3d93deb9ec07aeff08473109dfc97",
+    "rd29_replay_git_blob": "d4a021f844f38e87a17341596df8c739933e8c2c",
+    "rd41_age_census_sha256": "aefa17eb86f210ec4c319110d7bfcb4be501e11165920e591b0279a568964b40",
+    "rd41_risk_set_sha256": "790329e9f596c9012fbe58d90489c39671682f0951273261182f45952c5b78d2",
+    "rd41_target_ledger_sha256_verified_not_loaded": "857881f3a7268b4c68293707045e84f8d358316736f2b4d9ff5e780f0b8af9e6",
+    "runner_freeze_commit": "e2f92550d0a2115d05d8d34a5395c436c7b8b190"
+  },
+  "model_fit_performed": false,
+  "new_feature_outcome_association_computed": false,
+  "next_stage": "RD42_P3_PREREGISTER_DIRECT_UTILITY_FEATURE_HYPOTHESES_WITH_SUPPORTED_CAUSAL_CONTEXT_STRATA",
+  "portfolio_replay_performed": false,
+  "post_2024_accessed": false,
+  "primary_supported_cell_counts": {
+    "MIXED": 10,
+    "STRESSED": 9,
+    "SUPPORTIVE": 22,
+    "UNAVAILABLE": 0
+  },
+  "production_authorized": false,
+  "rcv_statistics_computed": false,
+  "rcv_values_loaded": false,
+  "rd41_target_ledger_loaded": false,
+  "schema_version": "rd42-p2-output-manifest-v1",
+  "status": "PASS",
+  "threshold_search_used": false,
+  "transport_eligible_context_landmark_count": 2,
+  "transport_eligible_context_landmarks": [
+    {
+      "landmark_age_hours": 24,
+      "market_context": "SUPPORTIVE",
+      "supported_universes_2022": 3,
+      "supported_universes_2023": 3,
+      "transport_support_eligible": true
+    },
+    {
+      "landmark_age_hours": 48,
+      "market_context": "SUPPORTIVE",
+      "supported_universes_2022": 3,
+      "supported_universes_2023": 3,
+      "transport_support_eligible": true
+    }
+  ],
+  "winner_selection_used": false
+}
