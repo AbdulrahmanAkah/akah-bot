@@ -1,0 +1,106 @@
+{
+  "2024_accessed": false,
+  "action_mapping_executed": false,
+  "canonical_independent_axes": [
+    {
+      "axis_id": "PAIR_VS_PIT_PEER_MEDIAN_LOG_24H_QUOTE_TURNOVER",
+      "definition": "ln(Q24_pair(t-1) / median_j(Q24_j(t-1)))",
+      "meaning": "pair current 24h participation level relative to PIT peer median"
+    },
+    {
+      "axis_id": "PAIR_VS_PIT_PEER_MEDIAN_12H_LOG_TURNOVER_CHANGE",
+      "definition": "ln(Q24_pair(t-1)/Q24_pair(t-13h)) - median_j[ln(Q24_j(t-1)/Q24_j(t-13h))]",
+      "meaning": "pair 12h change in 24h participation relative to PIT peer change"
+    }
+  ],
+  "canonical_independent_axis_count": 2,
+  "causal_boundary": {
+    "2024_or_later_allowed": false,
+    "completed_information_time": "t-1h",
+    "decision_bar_t_allowed": false,
+    "decision_time": "t",
+    "future_bars_allowed": false,
+    "held_pair_must_be_in_peer_set": true,
+    "membership": "FROZEN_PIT_MEMBERSHIP_APPLICABLE_AT_t_minus_1",
+    "missing_peer_policy": "FAIL_ROW_CLOSED_NO_PARTIAL_MEDIAN_NO_IMPUTATION",
+    "peer_set": "ALL_SAME_UNIVERSE_PIT_MEMBERS_AT_t_minus_1"
+  },
+  "distinctness_contract": {
+    "causal_context_rescue": "FORBIDDEN",
+    "new_domain": "QUOTE_TURNOVER_PARTICIPATION_LEVEL_AND_CHANGE_RELATIVE_TO_PIT_PEERS",
+    "post_hoc_landmark_or_threshold_rescue": "FORBIDDEN",
+    "rd26_turnover_existing_role": "ENTRY_CAPACITY_CONSTRAINT_ONLY_NOT_EXIT_UTILITY_PREDICTOR",
+    "rd29_existing": "RELATIVE_STRENGTH_72H_RETURN_AND_RANK",
+    "rd42_closed": "PREEXISTING_TRADE_STATE",
+    "rd43_closed": "STATIC_CONTROL_RELATIVE_STATE",
+    "rd44_closed": "CONTROL_RELATIVE_DYNAMICS",
+    "repackage_price_return_or_rank": "FORBIDDEN",
+    "repackage_rd43_or_rd44_axes": "FORBIDDEN"
+  },
+  "economic_action_executed": false,
+  "information_source": "MARKET_PARTICIPATION_STATE",
+  "landmarks_hours": [
+    24,
+    48,
+    72,
+    96,
+    120,
+    144
+  ],
+  "model_fit_performed": false,
+  "new_features_computed": false,
+  "new_market_data_loaded": false,
+  "next_stage": "RD45_P2_FREEZE_AND_RUN_MARKET_PARTICIPATION_STATE_RECONSTRUCTION_AND_SUPPORT_CENSUS_2022_2023_ONCE",
+  "p2_contract": {
+    "all_six_landmarks_enter": true,
+    "model_fit_allowed": false,
+    "parameter_threshold_winner_context_search_allowed": false,
+    "required_outputs": [
+      "market-participation-state-ledger.csv",
+      "market-participation-data-quality-summary.csv",
+      "market-participation-support-census.csv",
+      "landmark-risk-set-parity.csv",
+      "peer-membership-parity.json",
+      "qualified-market-participation-support-freeze.json",
+      "output-manifest.json"
+    ],
+    "support_gate": {
+      "minimum_unique_pairs": 5,
+      "minimum_unique_positions": 20,
+      "minimum_unique_signal_days": 10
+    },
+    "target_blind": true,
+    "target_ledger_hash_verify_only": true,
+    "target_or_rcv_load_allowed": false,
+    "transport_support": "advance landmark only if supported in >=2/3 universes in BOTH 2022 and 2023"
+  },
+  "periods": [
+    "ROBUSTNESS_2022",
+    "ROBUSTNESS_2023"
+  ],
+  "production_authorized": false,
+  "raw_measurement": {
+    "Q24_strictly_positive_required": true,
+    "hourly_quote_turnover_proxy": "volume * close",
+    "rolling_Q24_at_s": "SUM(volume*close) over completed bars [s-23h,s] inclusive"
+  },
+  "rcv_associations_computed": false,
+  "rcv_values_loaded": false,
+  "schema_version": "rd45-p1-market-participation-state-information-source-preregistration-v1",
+  "scientific_question": "DOES_PAIR_SPECIFIC_LIQUIDITY_PARTICIPATION_RELATIVE_TO_CONTEMPORANEOUS_PIT_PEERS_IDENTIFY_DIRECT_REMAINING_CONTROL_UTILITY",
+  "source_rd44_closure_commit": "ee1ad8d246ce251738dbe46340cc7e29fc9dd705",
+  "status": "FROZEN_PRE_NEW_FEATURE_COMPUTATION_PRE_RCV_ASSOCIATION",
+  "target_contract": {
+    "2024_sealed": true,
+    "economic_zero": "RCV_RETURN<0 means immediate liquidation dominates frozen Control hold",
+    "primary_target": "RCV_RETURN"
+  },
+  "target_rows_loaded": false,
+  "threshold_optimization_used": false,
+  "universes": [
+    "C2",
+    "D2",
+    "E2"
+  ],
+  "winner_selection_used": false
+}
