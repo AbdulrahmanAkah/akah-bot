@@ -1,0 +1,196 @@
+{
+  "action_mapping_firewall": {
+    "capital_reuse": "FORBIDDEN",
+    "confirmation_window": "NOT_DEFINED",
+    "economic_shadow": "FORBIDDEN",
+    "freed_slot_reuse": "FORBIDDEN",
+    "full_exit_rule": "NOT_DEFINED",
+    "partial_derisk_fraction": "NOT_DEFINED",
+    "portfolio_replay": "FORBIDDEN",
+    "production_authorized": false,
+    "slot_escrow_if_later_shadow_occurs": "MANDATORY"
+  },
+  "adverse_score_construction": {
+    "composite_formula": "MEAN_OF_THE_THREE_FEATURE_ADVERSE_PERCENTILES",
+    "feature_direction": "LOWER_RAW_CHANNEL_VALUE_EQUALS_HIGHER_ADVERSE_STATE",
+    "feature_weights": {
+      "ENTRY_MARGIN": 0.3333333333333333,
+      "PATH_POSITION": 0.3333333333333333,
+      "RECENT_12H_RETURN": 0.3333333333333333
+    },
+    "governor_used_for_score_construction": false,
+    "id": "EQUAL_WEIGHT_TRAINING_CDF_ADVERSE_SCORE",
+    "missing_any_required_feature": "UNEVALUABLE_COMPOSITE_ROW",
+    "parameter_search": "FORBIDDEN",
+    "per_feature_training_empirical_cdf": true,
+    "per_landmark": true,
+    "per_universe": true,
+    "rcv_used_for_score_construction": false,
+    "target_used_for_score_construction": false,
+    "test_value_adverse_percentile_formula": "COUNT_TRAINING_FEATURE_VALUES_GREATER_THAN_OR_EQUAL_TO_x/TRAINING_FEATURE_COUNT"
+  },
+  "architectural_guardrail": {
+    "economic_alignment_required_before_action_mapping": true,
+    "hazard_discrimination_without_rcv_alignment": "CLASSIFICATION_ONLY_NO_ACTION_MAPPING",
+    "reason": "TIME_FAILURE_IS_A_FROZEN_CONTROL_EXIT_ARCHETYPE_NOT_A_DIRECT_MEASURE_OF_ECONOMIC_UTILITY_OF_EXITING_EARLY",
+    "time_failure_prediction_is_exit_evidence_by_itself": false
+  },
+  "composite_advancement_rule": {
+    "all_three_gates_required_in_both_transport_directions": true,
+    "best_landmark_selection": "FORBIDDEN",
+    "failed_gate_rescue": "FORBIDDEN",
+    "hazard_only_success": "CLASSIFICATION_ONLY_NO_ACTION_MAPPING",
+    "per_landmark": true,
+    "qualified_landmarks_all_advance": true,
+    "rcv_alignment_without_hazard_transport": "NO_ADVANCEMENT",
+    "requires_continuous_rcv_alignment_gate": true,
+    "requires_hazard_transport_gate": true,
+    "requires_negative_remaining_value_tail_gate": true
+  },
+  "continuous_rcv_alignment_gate": {
+    "cell_pass_rule": "SUPPORT_PASS_AND_SPEARMAN_RHO_LT_0_AND_HIGHER_SCORE_HALF_MEAN_RCV_MINUS_LOWER_SCORE_HALF_MEAN_RCV_LT_0_AND_EVERY_LOPO_RCV_SPREAD_LT_0",
+    "expected_direction": "HIGHER_ADVERSE_SCORE_LOWER_RCV",
+    "metrics": [
+      "SPEARMAN_RHO_ADVERSE_SCORE_VS_RCV",
+      "HIGHER_SCORE_HALF_MINUS_LOWER_SCORE_HALF_MEAN_RCV_SPREAD",
+      "LEAVE_ONE_PAIR_OUT_MAXIMUM_RCV_SPREAD"
+    ],
+    "minimum_signal_days": 10,
+    "minimum_unique_pairs": 5,
+    "minimum_unique_positions": 20,
+    "score_half_split_threshold": 0.5,
+    "split_threshold_is_fixed_not_fitted": true,
+    "target": "RCV_RETURN",
+    "transport_pass_rule": "AT_LEAST_2_OF_3_UNIVERSES_PASS_FOR_EACH_LANDMARK_IN_BOTH_TRANSPORT_DIRECTIONS"
+  },
+  "cross_period_transport": {
+    "both_directions_required_for_advancement": true,
+    "future_production_calibration_if_ever_authorized": "PAST_ONLY_CALIBRATION_REQUIRED",
+    "pool_2022_and_2023_for_calibration": "FORBIDDEN",
+    "pool_C2_D2_E2_for_nominal_sample_inflation": "FORBIDDEN",
+    "primary_transport": "CALIBRATE_2022_EVALUATE_2023",
+    "purpose_of_reverse_transport": "SYMMETRIC_REGIME_ROBUSTNESS_DIAGNOSTIC_ONLY",
+    "reverse_transport_diagnostic": "CALIBRATE_2023_EVALUATE_2022",
+    "reverse_transport_is_deployment_causal_model": false
+  },
+  "failure_decision": "RD41_MULTIVARIATE_HAZARD_INTEGRATION_UNQUALIFIED_NO_ACTION_MAPPING",
+  "governor_role": {
+    "binary_exit_permission": false,
+    "descriptive_attribution_may_be_reported": true,
+    "future_incremental_test_allowed_only_after_composite_economic_alignment_qualifies": true,
+    "incremental_model_test_in_p6": false,
+    "primary_composite_input": false,
+    "reason": "DO_NOT_STRENGTHEN_A_HAZARD_CLASSIFIER_WITH_GOVERNOR_CONTEXT_BEFORE_ECONOMIC_ALIGNMENT_IS_ESTABLISHED",
+    "selection_eligible": false
+  },
+  "hazard_only_decision": "RD41_MULTIVARIATE_HAZARD_TRANSPORTS_BUT_ECONOMIC_ALIGNMENT_FAILS_NO_ACTION_MAPPING",
+  "hazard_transport_gate": {
+    "cell_pass_rule": "SUPPORT_PASS_AND_AUC_GT_0_5_AND_TIME_FAILURE_MEDIAN_SCORE_MINUS_MAX_HOLD_MEDIAN_SCORE_GT_0_AND_EVERY_LOPO_AUC_GT_0_5",
+    "metrics": [
+      "AUC",
+      "EVENT_MINUS_NONEVENT_MEDIAN_ADVERSE_SCORE_SPREAD",
+      "LEAVE_ONE_PAIR_OUT_MINIMUM_AUC"
+    ],
+    "minimum_events": 10,
+    "minimum_nonevents": 10,
+    "minimum_signal_days": 10,
+    "minimum_unique_pairs": 5,
+    "minimum_unique_positions": 20,
+    "score_direction": "HIGHER_ADVERSE_SCORE_HIGHER_EVENT_RISK",
+    "target": "TIME_FAILURE_72H_CLOSE_NOT_ABOVE_ENTRY",
+    "transport_pass_rule": "AT_LEAST_2_OF_3_UNIVERSES_PASS_FOR_EACH_LANDMARK_IN_BOTH_TRANSPORT_DIRECTIONS"
+  },
+  "integration_units": {
+    "best_model_selection": "FORBIDDEN",
+    "feature_set_at_each_landmark": [
+      "ENTRY_MARGIN",
+      "RECENT_12H_RETURN",
+      "PATH_POSITION"
+    ],
+    "feature_subset_selection": "FORBIDDEN",
+    "feature_weight_search": "FORBIDDEN",
+    "landmark_selection": "FORBIDDEN",
+    "landmarks_hours": [
+      24,
+      48
+    ],
+    "landmarks_kept_separate": true
+  },
+  "lineage": {
+    "rd41_p3_freeze_commit": "a3456ef22d31b8762056e10915ee651bdee3df47",
+    "rd41_p4_feature_ledger_sha256": "e6a31cc14c07866818cf695b883e4e665ed3212a517226dd539357e179b6b4ba",
+    "rd41_p4_freeze_commit": "692b1a2212b1d127c4ac785f034d30b062bb5ddb",
+    "rd41_p4_hazard_qualification_git_blob": "285b9d3d3065e15317a9378e995ed59b423d7c82",
+    "rd41_p4_hazard_qualification_sha256": "5542351bdca7956fd18c84074a2e7ef0d9ec9b545e508e50a94a8efa52eedeff",
+    "rd41_p4_manifest_deterministic_hash": "a83fc330f4054a6b9a24fe52c845af8f59ed60d0b179a4155035d2b5d430ba5e",
+    "rd41_p4_manifest_git_blob": "142c25327657a8ae68e519b69911ffdf34c5ca22",
+    "rd41_p4_qualified_freeze_git_blob": "21dc9240296c6c6a1e9d755a29012fee63141794",
+    "rd41_p4_qualified_freeze_sha256": "3d76053fdad64b60100fe9bedb947a9eb2a096c34af9ce7b579c8242a10be60e",
+    "rd41_p4_rcv_qualification_git_blob": "5f764a6c9884ff4a6300b5f1bc72c099ab372910",
+    "rd41_p4_rcv_qualification_sha256": "a298e2ba759f649f885dfeea3db2eeb982119ff1d6be5dd50dbb32fd8d2fb995",
+    "rd41_p4_report_git_blob": "11d8a42180c09c244fcfde356268f4721a5bdd95",
+    "rd41_p4_report_sha256": "45b4df7851f38b642a6e632a5d8b093e63aa60e09db2d036a12817b53081c772",
+    "rd41_p4_results_commit": "7742df5f780040ce51cc00481881ed1e47e8cb8e",
+    "rd41_p4_target_ledger_sha256": "857881f3a7268b4c68293707045e84f8d358316736f2b4d9ff5e780f0b8af9e6"
+  },
+  "negative_remaining_value_tail_gate": {
+    "cell_pass_rule": "SUPPORT_PASS_AND_MEAN_RCV_LT_0_AND_MEDIAN_RCV_LT_0_AND_EVERY_LEAVE_ONE_PAIR_OUT_MEAN_RCV_LT_0",
+    "cell_support": {
+      "minimum_signal_days": 5,
+      "minimum_unique_pairs": 3,
+      "minimum_unique_positions": 10
+    },
+    "diagnostic_tail_is_final_exit_threshold": false,
+    "high_adverse_tail_threshold": 0.75,
+    "purpose": "REQUIRE_ACTION_RELEVANT_NEGATIVE_REMAINING_VALUE_NOT_ONLY_RELATIVE_RANKING",
+    "tail_membership": "ADVERSE_SCORE_GREATER_THAN_OR_EQUAL_TO_0_75",
+    "threshold_is_fixed_not_optimized": true,
+    "transport_pass_rule": "AT_LEAST_2_OF_3_UNIVERSES_PASS_FOR_EACH_LANDMARK_IN_BOTH_TRANSPORT_DIRECTIONS"
+  },
+  "next_stage": "RD41_P6_FREEZE_AND_RUN_MULTIVARIATE_HAZARD_TRANSPORT_ECONOMIC_ALIGNMENT_DIAGNOSTIC_ONCE",
+  "next_stage_if_failure": "RD41_CLOSE_AND_REASSESS_INFORMATION_ARCHITECTURE_BEFORE_RD42",
+  "next_stage_if_hazard_only": "RD41_CLOSE_HAZARD_AS_CONTROL_OUTCOME_PREDICTOR_ONLY_REASSESS_EXIT_UTILITY_ARCHITECTURE",
+  "next_stage_if_success": "RD41_P7_PREREGISTER_ACTION_MAPPING_WITH_SLOT_ESCROW_AND_NO_CAPITAL_REUSE",
+  "p4_frozen_findings": {
+    "hazard_features": [
+      "ENTRY_MARGIN",
+      "RECENT_12H_RETURN",
+      "PATH_POSITION"
+    ],
+    "hazard_landmarks_hours": [
+      24,
+      48
+    ],
+    "interpretation": "P4_PROVED_ROBUST_PREDICTION_OF_FUTURE_TIME_FAILURE_ARCHETYPE_BUT_DID_NOT_PROVE_ROBUST_MONOTONIC_PREDICTION_OF_REMAINING_CONTROL_VALUE",
+    "qualified_hazard_feature_landmark_pair_count": 6,
+    "qualified_rcv_feature_landmark_pair_count": 0
+  },
+  "pseudo_replication_firewall": {
+    "landmarks_evaluated_separately": true,
+    "lopo_unit": "PAIR",
+    "primary_observation": "CONTROL_POSITION_AT_ONE_LANDMARK",
+    "same_position_multiple_landmarks_are_independent": false,
+    "universe_variants_are_independent_pooled_samples": false
+  },
+  "research_firewall": {
+    "2024_accessed": false,
+    "economic_action_executed": false,
+    "governor_incremental_results_observed_in_p5": false,
+    "hazard_transport_results_observed_in_p5": false,
+    "multivariate_scores_computed_in_p5": false,
+    "negative_tail_results_observed_in_p5": false,
+    "p4_feature_rows_loaded_in_p5": false,
+    "p4_target_rows_loaded_in_p5": false,
+    "parameter_search_used": false,
+    "post_2024_accessed": false,
+    "production_authorized": false,
+    "rcv_alignment_results_observed_in_p5": false,
+    "threshold_optimization_used": false,
+    "winner_selection_used": false
+  },
+  "research_question": "CAN_ALL_THREE_FROZEN_HAZARD_CHANNELS_BE_INTEGRATED_WITHOUT_FEATURE_OR_LANDMARK_SELECTION_INTO_A_TRANSPORTABLE_ADVERSE_STATE_SCORE_THAT_BOTH_PREDICTS_TIME_FAILURE_AND_IS_ECONOMICALLY_ALIGNED_WITH_LOWER_REMAINING_CONTROL_VALUE_BEFORE_ANY_EXIT_ACTION_IS_DEFINED",
+  "schema_version": "rd41-p5-multivariate-hazard-integration-economic-alignment-preregistration-v1",
+  "stage": "RD41_P5_PREREGISTER_MULTIVARIATE_HAZARD_INTEGRATION_AND_ECONOMIC_ALIGNMENT_PRE_ACTION_MAPPING",
+  "status": "FROZEN_PRE_MULTIVARIATE_PRE_ECONOMIC_ALIGNMENT",
+  "success_decision": "RD41_MULTIVARIATE_HAZARD_SCORE_ECONOMICALLY_ALIGNED_PRE_ACTION_MAPPING"
+}
