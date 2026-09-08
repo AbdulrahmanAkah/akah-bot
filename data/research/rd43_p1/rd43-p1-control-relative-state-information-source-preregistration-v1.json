@@ -1,0 +1,222 @@
+{
+  "canonical_independent_state": [
+    {
+      "expected_domain": "GREATER_THAN_OR_EQUAL_TO_ZERO",
+      "feature_id": "HIGH_WATER_GAIN_ATR",
+      "formula": "(H - E) / A",
+      "independent_axis": true,
+      "semantic_role": "FAVORABLE_EXCURSION_RELATIVE_TO_ENTRY"
+    },
+    {
+      "expected_domain": "GREATER_THAN_OR_EQUAL_TO_ZERO",
+      "feature_id": "PULLBACK_FROM_HIGH_WATER_ATR",
+      "formula": "(H - M) / A",
+      "independent_axis": true,
+      "semantic_role": "GIVEBACK_FROM_COMPLETED_HIGH_WATER"
+    }
+  ],
+  "control_constants": {
+    "max_hold_hours": 168,
+    "profit_trail_arm_atr": 6.0,
+    "profit_trail_gap_atr": 4.0,
+    "time_failure_hours": 72
+  },
+  "control_state_reconstruction": {
+    "atr_must_be_positive": true,
+    "bar_interval": "1H",
+    "completed_high_water_definition": "MAX_OF_ENTRY_PRICE_AND_ALL_COMPLETED_1H_BAR_HIGHS_FROM_ENTRY_TIME_THROUGH_COMPLETED_INFORMATION_TIME_INCLUSIVE",
+    "completed_high_water_symbol": "H",
+    "completed_mark_definition": "CLOSE_OF_1H_BAR_AT_COMPLETED_INFORMATION_TIME",
+    "completed_mark_symbol": "M",
+    "entry_price_definition": "FROZEN_CONTROL_POSITION_ENTRY_PRICE_KNOWN_AT_ENTRY",
+    "entry_price_symbol": "E",
+    "raw_cutoff_exclusive": "2024-01-01T00:00:00Z",
+    "raw_source_template": "data/raw/rd16b/kucoin/<PAIR>/1h.parquet",
+    "signal_atr_definition": "FROZEN_ATR24_AT_SIGNAL_STORED_ON_CONTROL_POSITION",
+    "signal_atr_symbol": "A",
+    "why_high_not_close": "FROZEN_CONTROL_ENGINE_UPDATES_POSITION_HIGH_WATER_WITH_EACH_COMPLETED_BAR_HIGH_AT_END_OF_THE_HOUR"
+  },
+  "derived_observables_not_independent_hypotheses": [
+    {
+      "identity": "HIGH_WATER_GAIN_ATR - PULLBACK_FROM_HIGH_WATER_ATR",
+      "may_count_as_independent_hypothesis": false,
+      "observable_id": "CURRENT_MARK_ENTRY_DISTANCE_ATR",
+      "original_closure_candidate": true
+    },
+    {
+      "identity": "6.0 - HIGH_WATER_GAIN_ATR",
+      "may_count_as_independent_hypothesis": false,
+      "observable_id": "PROFIT_TRAIL_ARM_DISTANCE_ATR",
+      "original_closure_candidate": true
+    },
+    {
+      "identity": "HIGH_WATER_GAIN_ATR >= 6.0",
+      "may_count_as_independent_hypothesis": false,
+      "observable_id": "TRAIL_ARMED_STATE",
+      "original_closure_candidate": true
+    },
+    {
+      "defined_only_when": "TRAIL_ARMED_STATE_IS_TRUE",
+      "identity": "4.0 - PULLBACK_FROM_HIGH_WATER_ATR",
+      "may_count_as_independent_hypothesis": false,
+      "observable_id": "PROFIT_TRAIL_FLOOR_DISTANCE_ATR_WHEN_ARMED",
+      "original_closure_candidate": true,
+      "sign_convention": "POSITIVE_MEANS_COMPLETED_MARK_IS_ABOVE_FROZEN_TRAIL_FLOOR"
+    }
+  ],
+  "information_source": {
+    "name": "CONTROL_RELATIVE_STATE",
+    "not_action_rule": true,
+    "not_exit_threshold": true,
+    "not_model": true,
+    "not_rd42_rescue": true,
+    "role": "NEW_DIRECT_UTILITY_INFORMATION_SOURCE"
+  },
+  "landmark_eligibility_authority": {
+    "do_not_reconstruct_terminal_eligibility_from_exit_reason": true,
+    "semantics": "STRICT_OPEN_DECISION_TIME_LT_TERMINAL_TIME",
+    "source": "FROZEN_FULL_CONTROL_RISK_SET",
+    "structural_engine": "RD42_BUILD_LANDMARK_RISK_ROWS_SEMANTICS"
+  },
+  "landmarks_hours": [
+    24,
+    48,
+    72,
+    96,
+    120,
+    144
+  ],
+  "lineage": {
+    "control_engine_git_blob": "f00adb9825b0f6d8483b069045dcf82b029d6a29",
+    "control_runner_git_blob": "af34e34c7ea0bf24367afb773ea3dad791dfd2e5",
+    "full_control_risk_set_git_blob": "12ead9da3c3f1d0df4eb33ca2e03f06f207ccbd8",
+    "rd42_closure_audit_git_blob": "fcef39588479311306e1d74c54c0db60578d40aa",
+    "rd42_closure_commit": "e98e316800a6fd90998c22d76f008132348b7f82",
+    "rd42_closure_report_git_blob": "33b0dddbed93eacd87bcbeebac9bb23c87a279bc",
+    "rd42_closure_report_sha256": "c2274ebf70be93ac5e3bc763b2b8ab111475f1d3a582fdf3240a969a086f7821",
+    "rd42_p4_results_commit": "fbd237a8ea3b15b27e3f58d3beeaa4f559e68663",
+    "risk_set_age_census_git_blob": "c8165284aea23c7667b6b8e1390fd7e55ba5c863",
+    "structural_landmark_engine_git_blob": "60fb1de69445a8239d1200058e20f3ad4fe4ab84"
+  },
+  "next_stage": "RD43_P2_FREEZE_AND_RUN_CONTROL_RELATIVE_STATE_RECONSTRUCTION_AND_SUPPORT_CENSUS_2022_2023_ONCE",
+  "p2_allowed_inputs": {
+    "age_census_for_structural_parity": true,
+    "full_control_risk_set_columns": [
+      "control_position_id",
+      "universe_id",
+      "period_id",
+      "pair",
+      "signal_time",
+      "entry_time",
+      "exit_time",
+      "risk_set_class",
+      "censor_time",
+      "entry_price",
+      "atr24_at_signal"
+    ],
+    "raw_bar_columns": [
+      "timestamp",
+      "high",
+      "close"
+    ]
+  },
+  "p2_forbidden_inputs": [
+    "RCV_RETURN",
+    "RCV_DOLLARS",
+    "RD41_TARGET_LEDGER",
+    "RD42_P4_SCORE_LEDGER",
+    "RD42_P4_CELL_EVALUATIONS",
+    "CONTROL_EXIT_PRICE",
+    "CONTROL_EXIT_REASON",
+    "HIGH_WATER_AT_EXIT",
+    "NET_PNL",
+    "GROSS_PNL",
+    "2024_OR_LATER_BARS"
+  ],
+  "p2_required_outputs": [
+    "control-relative-state-ledger.csv",
+    "control-relative-state-data-quality-summary.csv",
+    "control-relative-state-support-census.csv",
+    "landmark-risk-set-parity.csv",
+    "derived-identity-parity.json",
+    "qualified-control-relative-state-support-freeze.json",
+    "output-manifest.json"
+  ],
+  "p2_required_reconstruction_checks": [
+    "LANDMARK_RISK_SET_PARITY_TO_FROZEN_AGE_CENSUS",
+    "EXACT_COMPLETED_INFORMATION_TIME_BAR_PRESENT",
+    "ALL_REQUIRED_ENTRY_TO_T_MINUS_1_HOURLY_BARS_PRESENT",
+    "ENTRY_PRICE_POSITIVE",
+    "ATR24_AT_SIGNAL_POSITIVE",
+    "H_GREATER_THAN_OR_EQUAL_TO_E",
+    "H_GREATER_THAN_OR_EQUAL_TO_M",
+    "HIGH_WATER_GAIN_ATR_NONNEGATIVE",
+    "PULLBACK_FROM_HIGH_WATER_ATR_NONNEGATIVE",
+    "DERIVED_IDENTITY_CURRENT_MARK_ENTRY_DISTANCE_EXACT",
+    "DERIVED_IDENTITY_ARM_DISTANCE_EXACT",
+    "DERIVED_IDENTITY_ARMED_STATE_EXACT",
+    "DERIVED_IDENTITY_TRAIL_FLOOR_DISTANCE_EXACT_WHEN_ARMED",
+    "NO_2024_ACCESS"
+  ],
+  "p2_support_census": {
+    "all_supported_landmarks_advance": true,
+    "best_landmark_selection": "FORBIDDEN",
+    "both_2022_and_2023_required": true,
+    "minimum_unique_pairs": 5,
+    "minimum_unique_positions": 20,
+    "minimum_unique_signal_days": 10,
+    "minimum_universes_for_temporal_support": 2,
+    "support_uses_feature_outcome_association": false,
+    "support_uses_rcv": false,
+    "unit": "PERIOD_X_UNIVERSE_X_LANDMARK",
+    "unsupported_landmark_may_advance_to_rcv_exposure": false
+  },
+  "p3_contract_if_p2_passes": {
+    "action_mapping": "FORBIDDEN",
+    "feature_subset_selection_from_outcomes": "FORBIDDEN",
+    "p3_must_freeze_before_any_new_source_rcv_association": true,
+    "purpose": "PREREGISTER_DIRECT_RCV_EVALUATION_OR_MODEL_ARCHITECTURE_USING_ONLY_P2_TARGET_BLIND_SUPPORT_AND_GEOMETRY",
+    "rcv_may_be_loaded_in_p3": false,
+    "threshold_search_from_outcomes": "FORBIDDEN"
+  },
+  "rd42_tombstones_carried_forward": [
+    "NO_RD42_THRESHOLD_RESCUE",
+    "NO_BEST_RD42_FEATURE_SELECTION",
+    "NO_BEST_RD42_LANDMARK_SELECTION",
+    "NO_RD42_QUARTILE_EXIT_RULE",
+    "NO_SUPPORTIVE_CONTEXT_AS_SUFFICIENT_RESCUE"
+  ],
+  "research_firewall": {
+    "2024_accessed": false,
+    "action_mapping_computed": false,
+    "age_census_rows_loaded": false,
+    "capital_reuse_computed": false,
+    "economic_action_computed": false,
+    "model_fit_computed": false,
+    "new_control_relative_features_computed": false,
+    "new_market_data_loaded": false,
+    "parameter_search_computed": false,
+    "portfolio_replay_computed": false,
+    "post_2024_accessed": false,
+    "production_authorized": false,
+    "rcv_associations_computed": false,
+    "rcv_values_loaded": false,
+    "risk_set_rows_loaded": false,
+    "threshold_optimization_computed": false
+  },
+  "research_question": "CAN_A_MINIMAL_CAUSALLY_AVAILABLE_STATE_REPRESENTATION_RELATIVE_TO_THE_FROZEN_CONTROL_POLICY_GEOMETRY_PROVIDE_A_NEW_DIRECT_UTILITY_INFORMATION_SOURCE_WITHOUT_REUSING_THE_FAILED_RD42_GENERIC_TRADE_STATE_CHANNELS",
+  "schema_version": "rd43-p1-control-relative-state-information-source-preregistration-v1",
+  "stage": "RD43_P1_PREREGISTER_CONTROL_RELATIVE_STATE_INFORMATION_SOURCE_PRE_TARGET_EXPOSURE",
+  "status": "FROZEN_PRE_NEW_FEATURE_COMPUTATION_AND_PRE_RCV_EXPOSURE",
+  "time_semantics": {
+    "2024_or_later_allowed": false,
+    "completed_information_time": "DECISION_TIME_MINUS_1_HOUR",
+    "current_decision_bar_high_low_close_allowed": false,
+    "current_decision_bar_open_allowed_as_feature_input": false,
+    "decision_time": "ENTRY_TIME_PLUS_LANDMARK_AGE_HOURS",
+    "future_bar_allowed": false,
+    "future_control_exit_price_allowed": false,
+    "future_control_exit_reason_allowed": false,
+    "information_boundary": "COMPLETED_1H_BARS_THROUGH_T_MINUS_1_ONLY"
+  }
+}
