@@ -1,0 +1,290 @@
+{
+  "binance_completed_hour_contract": {
+    "backfill": "FORBIDDEN",
+    "carry_forward": "FORBIDDEN",
+    "forward_fill": "FORBIDDEN",
+    "hour_close": "CLOSE_OF_MINUTE_h+59m",
+    "imputation": "FORBIDDEN",
+    "maintenance_blackout_end_exclusive_utc": "2023-03-24T14:00:00+00:00",
+    "maintenance_blackout_overlap": "INVALIDATE_WHOLE_SOURCE_HOUR",
+    "maintenance_blackout_start_utc": "2023-03-24T11:38:00+00:00",
+    "partial_hour_use": "FORBIDDEN",
+    "partial_symbol_use": "FORBIDDEN",
+    "positive_close_required": true,
+    "raw_root_expected_for_future_p2": "data/raw/rd37/binance_spot_1m",
+    "raw_source": "RD37_VERIFIED_BINANCE_SPOT_1M_ARCHIVES",
+    "required_minute_opens": "h THROUGH h+59m INCLUSIVE",
+    "required_minutes_per_symbol": 60,
+    "strict_minute_completeness_required": true,
+    "symbols": [
+      "BTCUSDT",
+      "ETHUSDT"
+    ]
+  },
+  "canonical_independent_axes": [
+    {
+      "axis_id": "BTC_ETH_MEAN_SIGNED_CROSS_VENUE_LOG_CLOSE_PRICE_BASIS",
+      "definition": "0.5*(PB_BTC(h)+PB_ETH(h))",
+      "interpretation": "SIGNED_COMMON_BINANCE_MINUS_KUCOIN_RELATIVE_COMPLETED_HOUR_CLOSE_PRICE_LEVEL_BASIS"
+    },
+    {
+      "axis_id": "BTC_ETH_CROSS_VENUE_LOG_CLOSE_PRICE_BASIS_DISPERSION",
+      "definition": "ABS(PB_BTC(h)-PB_ETH(h))",
+      "interpretation": "CROSS_SYMBOL_DISPERSION_OF_BINANCE_MINUS_KUCOIN_RELATIVE_COMPLETED_HOUR_CLOSE_PRICE_LEVEL_BASIS"
+    }
+  ],
+  "canonical_independent_axis_count": 2,
+  "causal_clock_contract": {
+    "all_source_measurements_must_be_completed_before_decision": true,
+    "decision_bar_t_use": "FORBIDDEN",
+    "decision_time": "t",
+    "earliest_feature_availability": "t",
+    "feature_source_hour_interval": "[t-1h,t)",
+    "feature_source_hour_open": "h=t-1h",
+    "future_bar_use": "FORBIDDEN",
+    "same_completed_hour_across_source_venues": "REQUIRED"
+  },
+  "distinctness_contract": {
+    "RD36_CROSS_VENUE_FLOW_STATE": "CLOSED_OR_UNQUALIFIED_NOT_REPACKAGED;_NO_QUOTE_VOLUME_TRADE_COUNT_OR_TAKER_FLOW_USED",
+    "RD37_BINANCE_MICROSTRUCTURE_STRESS": "NOT_REPACKAGED;_NO_BINANCE_ONLY_STRESS_TRAILING_NORMALIZATION_OR_DOWNSIDE_STATE_USED",
+    "RD38_KUCOIN_CROSS_SECTIONAL_RESILIENCE": "NOT_REPACKAGED;_NO_CROSS_SECTIONAL_RETURN_RANK_OR_BREADTH_STATE_USED",
+    "RD42_PREEXISTING_TRADE_STATE": "CLOSED_NOT_REPACKAGED",
+    "RD43_CONTROL_RELATIVE_STATE": "CLOSED_NOT_REPACKAGED",
+    "RD44_CONTROL_RELATIVE_DYNAMICS": "CLOSED_NOT_REPACKAGED",
+    "RD45_MARKET_PARTICIPATION_STATE": "CLOSED_NOT_REPACKAGED",
+    "RD46_CROSS_VENUE_RETURN_DISAGREEMENT_STATE": "CLOSED_NOT_REPACKAGED;_NO_OPEN_TO_CLOSE_RETURN_GAP_MEAN_SIGNED_RETURN_GAP_OR_RETURN_GAP_DISPERSION_USED",
+    "RD47_CROSS_VENUE_CANDLE_GEOMETRY_DISAGREEMENT_STATE": "CLOSED_NOT_REPACKAGED;_NO_HIGH_LOW_RANGE_CLOSE_LOCATION_OR_CANDLE_GEOMETRY_FEATURE_USED",
+    "axis_addition_after_target_exposure": "FORBIDDEN",
+    "axis_removal_after_target_exposure": "FORBIDDEN",
+    "new_information_domain": "SAME_SYMBOL_SAME_COMPLETED_HOUR_CROSS_VENUE_RELATIVE_PRICE_LEVEL_DISAGREEMENT",
+    "post_hoc_context_rescue": "FORBIDDEN",
+    "post_hoc_lag_alignment_search": "FORBIDDEN",
+    "post_hoc_landmark_rescue": "FORBIDDEN",
+    "post_hoc_model_rescue": "FORBIDDEN",
+    "post_hoc_symbol_weight_search": "FORBIDDEN",
+    "post_hoc_threshold_rescue": "FORBIDDEN",
+    "post_hoc_universe_rescue": "FORBIDDEN",
+    "post_hoc_window_rescue": "FORBIDDEN",
+    "rd48_level_basis_is_not_rd46_return_gap": "LEVEL_RATIO_AT_COMPLETED_HOUR_CLOSE_ONLY;_NO_OPEN_PRICE_OR_OPEN_TO_CLOSE_RETURN_USED",
+    "rd48_level_basis_is_not_rd47_geometry": "RELATIVE_CLOSE_PRICE_LEVEL_ACROSS_VENUES_ONLY;_NO_WITHIN_CANDLE_POSITION_OR_RANGE_USED"
+  },
+  "future_p2_decision_contract": {
+    "if_at_least_one_landmark_support_qualified": {
+      "decision": "RD48_CROSS_VENUE_PRICE_LEVEL_BASIS_SUPPORT_QUALIFIED_READY_FOR_TARGET_ASSOCIATION_PREREGISTRATION",
+      "next_stage": "RD48_P3_PREREGISTER_AND_FREEZE_CROSS_VENUE_PRICE_LEVEL_BASIS_DIRECT_UTILITY_TRANSPORT_PRE_RCV_EXPOSURE"
+    },
+    "if_no_landmark_support_qualified": {
+      "decision": "RD48_CROSS_VENUE_PRICE_LEVEL_BASIS_INSUFFICIENT_TRANSPORT_SUPPORT_CLOSE_PRE_TARGET",
+      "next_stage": "RD48_CLOSE_CROSS_VENUE_PRICE_LEVEL_BASIS_INSUFFICIENT_SUPPORT_NO_RCV_EXPOSURE"
+    }
+  },
+  "future_p2_target_blind_reconstruction_contract": {
+    "age_census_source": "data/research/rd41_p2_runtime/risk-set-by-year-universe-age.csv",
+    "all_six_landmarks_enter": true,
+    "axis_search": "FORBIDDEN",
+    "base_support_gate_per_universe_period_landmark": {
+      "minimum_unique_pairs": 5,
+      "minimum_unique_positions": 20,
+      "minimum_unique_signal_days": 10
+    },
+    "context_search": "FORBIDDEN",
+    "expected_risk_decision_row_count": 1996,
+    "feature_row_validity": "ALL_FOUR_CLOSE_COMPONENTS_BTC_ETH_X_BINANCE_KUCOIN_FOR_THE_SAME_COMPLETED_HOUR_MUST_BE_CAUSALLY_VALID_AND_POSITIVE_OR_ROW_FAILS_CLOSED",
+    "invalid_row_imputation": "FORBIDDEN",
+    "lag_search": "FORBIDDEN",
+    "landmark_search": "FORBIDDEN",
+    "model_fit": "FORBIDDEN",
+    "parameter_search": "FORBIDDEN",
+    "partial_symbol_use": "FORBIDDEN",
+    "partial_venue_use": "FORBIDDEN",
+    "raw_source_network_download": "FORBIDDEN",
+    "rcv_value_loading": "FORBIDDEN",
+    "required_outputs_exactly": [
+      "cross-venue-price-level-basis-ledger.csv",
+      "cross-venue-price-level-basis-data-quality-summary.csv",
+      "cross-venue-price-level-basis-support-census.csv",
+      "landmark-risk-set-parity.csv",
+      "source-hour-parity.json",
+      "qualified-cross-venue-price-level-basis-support-freeze.json",
+      "output-manifest.json"
+    ],
+    "risk_set_source": "data/research/rd41_p2_runtime/full-control-risk-set-ledger.csv",
+    "stage": "RD48_P2_FREEZE_AND_RUN_CROSS_VENUE_PRICE_LEVEL_BASIS_RECONSTRUCTION_AND_SUPPORT_CENSUS_2022_2023_ONCE",
+    "symbol_weight_search": "FORBIDDEN",
+    "target_ledger_hash_verify_only": true,
+    "target_ledger_loading": "FORBIDDEN",
+    "threshold_search": "FORBIDDEN",
+    "transport_support_rule": "LANDMARK_ADVANCES_ONLY_IF_SUPPORT_PASS_IN_AT_LEAST_2_OF_3_UNIVERSES_IN_BOTH_2022_AND_2023",
+    "window_search": "FORBIDDEN",
+    "winner_selection": "FORBIDDEN"
+  },
+  "future_target_contract": {
+    "2024_access": false,
+    "economic_zero_semantics": "RCV_RETURN<0_MEANS_IMMEDIATE_LIQUIDATION_DOMINATES_CONTINUING_THE_FROZEN_CONTROL_AT_DECISION_TIME",
+    "post_2024_access": false,
+    "target": "RCV_RETURN",
+    "target_exposure_in_p1": false,
+    "target_exposure_in_p2": false,
+    "target_source_git_blob": "c05773164b753aca2b1eb07d668888e1d05b0dae",
+    "target_source_path": "data/research/rd41_p4_runtime/target-ledger.csv"
+  },
+  "information_source": "CROSS_VENUE_PRICE_LEVEL_BASIS_STATE",
+  "kucoin_completed_hour_contract": {
+    "backfill": "FORBIDDEN",
+    "carry_forward": "FORBIDDEN",
+    "duplicate_timestamp_policy": "KEEP_LAST_AS_FROZEN_RD26_NORMALIZER",
+    "forward_fill": "FORBIDDEN",
+    "imputation": "FORBIDDEN",
+    "partial_source_set_use": "FORBIDDEN",
+    "positive_close_required": true,
+    "raw_root_expected_for_future_p2": "data/raw/rd16b/kucoin",
+    "raw_source": "KUCOIN_SPOT_1H",
+    "required_bar_timestamp": "h=t-1h",
+    "required_fields": [
+      "timestamp",
+      "close"
+    ],
+    "symbols": [
+      "BTC-USDT",
+      "ETH-USDT"
+    ]
+  },
+  "landmarks_hours": [
+    24,
+    48,
+    72,
+    96,
+    120,
+    144
+  ],
+  "lineage": {
+    "age_census_git_blob": "c8165284aea23c7667b6b8e1390fd7e55ba5c863",
+    "eventual_target_ledger_git_blob_verified_not_loaded": "c05773164b753aca2b1eb07d668888e1d05b0dae",
+    "local_p0_evidence_zip_sha256": "57db52a5e087775fe3bd40f6e8e92a99cc10eb2ae1c4e36fd6f855914008c41e",
+    "local_p0_report_sha256": "92319fb6c29cf4ed3957208351323ea75fb6c5d4a0586ad76162c522b17fdde1",
+    "rd26_kucoin_bar_semantics_git_blob": "f00adb9825b0f6d8483b069045dcf82b029d6a29",
+    "rd37_causal_source_protocol_git_blob": "bcd576f1ae737c796279bbdfe2d13e6182e256ac",
+    "rd37_causal_source_protocol_sha256": "9d4318ce924f2177bcc70d1b1ccf91602883defd1c8bb6f007efcf5bcd1b578c",
+    "rd37_maintenance_evidence_git_blob": "8ac2608898a3719056eab014a7b41dfaf5a83ab7",
+    "rd37_source_file_audit_git_blob": "da9fbf2b70cd4f648d7acf71be31f5efdc9eb77a",
+    "risk_set_git_blob": "12ead9da3c3f1d0df4eb33ca2e03f06f207ccbd8",
+    "source_rd47_closure_audit_git_blob": "46e5eaea776a0572c09bd74ed23e6046bffbb8ce",
+    "source_rd47_closure_commit": "2d2cb4d6cb19d46f43b96caaa4875085eb17bb42",
+    "source_rd47_closure_git_blob": "531a36f5dca6eb7590ff364144fc6cebd22f7ceb",
+    "source_rd47_closure_sha256": "d87c6ec8468c2628e96032b337b4196aee500c7d25803a7695291e744d67455c",
+    "source_rd47_p3_protocol_git_blob": "cc102ade29a5188e3d1536e1d50b4746aa4ed87d"
+  },
+  "new_information_domain": "SAME_SYMBOL_SAME_COMPLETED_HOUR_CROSS_VENUE_RELATIVE_PRICE_LEVEL_DISAGREEMENT",
+  "next_stage": "RD48_P2_FREEZE_AND_RUN_CROSS_VENUE_PRICE_LEVEL_BASIS_RECONSTRUCTION_AND_SUPPORT_CENSUS_2022_2023_ONCE",
+  "no_candle_geometry_in_source_definition": true,
+  "no_open_to_close_return_gap_in_source_definition": true,
+  "no_rolling_normalization_in_source_definition": true,
+  "no_source_window_parameter": true,
+  "no_threshold_event_semantics": true,
+  "p1_firewall": {
+    "2024_accessed": false,
+    "action_mapping_executed": false,
+    "context_selection_used": false,
+    "economic_action_executed": false,
+    "lag_selection_used": false,
+    "landmark_selection_used": false,
+    "model_family_selection_used": false,
+    "model_fit_performed": false,
+    "new_features_computed": false,
+    "new_market_data_loaded": false,
+    "parameter_search_used": false,
+    "post_2024_accessed": false,
+    "production_authorized": false,
+    "raw_binance_archives_opened": false,
+    "raw_kucoin_bars_opened": false,
+    "rcv_associations_computed": false,
+    "rcv_values_loaded": false,
+    "symbol_weight_selection_used": false,
+    "target_rows_loaded": false,
+    "threshold_optimization_used": false,
+    "universe_selection_used": false,
+    "window_selection_used": false,
+    "winner_selection_used": false
+  },
+  "periods": [
+    "ROBUSTNESS_2022",
+    "ROBUSTNESS_2023"
+  ],
+  "pretarget_candidate_provenance": {
+    "audit_decision": "RD48_DISTINCT_SOURCE_AUDIT_SUPPORTS_PRETARGET_PREREGISTRATION_OF_CROSS_VENUE_PRICE_LEVEL_BASIS_STATE",
+    "candidate_axes": [
+      "BTC_ETH_MEAN_SIGNED_CROSS_VENUE_LOG_CLOSE_PRICE_BASIS",
+      "BTC_ETH_CROSS_VENUE_LOG_CLOSE_PRICE_BASIS_DISPERSION"
+    ],
+    "candidate_domain": "SAME_SYMBOL_SAME_COMPLETED_HOUR_CROSS_VENUE_RELATIVE_PRICE_LEVEL_DISAGREEMENT",
+    "candidate_information_source": "CROSS_VENUE_PRICE_LEVEL_BASIS_STATE",
+    "candidate_named_before_rd47_rcv_exposure": true,
+    "candidate_selected_from_rd47_p4_near_miss_diagnostics": false,
+    "canonical_binance_archive_count": 48,
+    "evidence_zip_filename": "RD48_P0_DISTINCT_SOURCE_AUDIT_V4_20260910T213846Z.zip",
+    "evidence_zip_sha256": "57db52a5e087775fe3bd40f6e8e92a99cc10eb2ae1c4e36fd6f855914008c41e",
+    "extra_noncanonical_binance_archives_opened": false,
+    "extra_noncanonical_binance_zip_count": 48,
+    "kucoin_symbol_file_count": 2,
+    "p0_was_read_only": true,
+    "rcv_values_loaded": false,
+    "report_member": "rd48-p0-distinct-source-audit-v4.json",
+    "report_sha256": "92319fb6c29cf4ed3957208351323ea75fb6c5d4a0586ad76162c522b17fdde1",
+    "repository_mutation": false,
+    "target_rows_loaded": false
+  },
+  "rd47_tombstone_continuity": {
+    "REPACKAGE_RD47_CONSTITUENT_COMPONENTS_AS_A_NEW_SOURCE": "STILL_FORBIDDEN",
+    "SELECT_FORWARD_JOINT_NEAR_MISS_CELLS_AS_EXIT_RULE": "STILL_FORBIDDEN",
+    "SELECT_LANDMARK_AFTER_P4": "STILL_FORBIDDEN",
+    "SELECT_UNIVERSE_AFTER_P4": "STILL_FORBIDDEN",
+    "USE_2024_FOR_RD47_RESCUE": "STILL_FORBIDDEN",
+    "USE_RD47_CELL_LEVEL_RCV_DIAGNOSTICS_TO_DESIGN_RD48_FEATURES": "STILL_FORBIDDEN"
+  },
+  "research_role": "NEW_DIRECT_UTILITY_INFORMATION_SOURCE_FOR_ADAPTIVE_EXIT_BRAIN",
+  "schema_version": "rd48-p1-cross-venue-price-level-basis-information-source-preregistration-v1",
+  "scientific_question": "DOES_SAME_COMPLETED_HOUR_BINANCE_VS_KUCOIN_SPOT_RELATIVE_CLOSE_PRICE_LEVEL_BASIS_ON_BTC_AND_ETH_IDENTIFY_DIRECT_REMAINING_CONTROL_UTILITY",
+  "source_symbols": {
+    "BINANCE_SPOT": [
+      "BTCUSDT",
+      "ETHUSDT"
+    ],
+    "KUCOIN_SPOT": [
+      "BTC-USDT",
+      "ETH-USDT"
+    ]
+  },
+  "source_venues": {
+    "external_information_venue": "BINANCE_SPOT",
+    "futures_data_used": false,
+    "margin_data_used": false,
+    "options_data_used": false,
+    "perpetual_data_used": false,
+    "spot_only": true,
+    "target_and_economic_venue": "KUCOIN_SPOT"
+  },
+  "stage": "RD48_AUDIT_AND_PREREGISTER_CROSS_VENUE_PRICE_LEVEL_BASIS_DIRECT_UTILITY_INFORMATION_SOURCE_PRE_TARGET_EXPOSURE",
+  "status": "FROZEN_PRE_NEW_FEATURE_COMPUTATION_PRE_RCV_ASSOCIATION",
+  "symbol_level_definition": {
+    "candle_close_location_used": false,
+    "candle_range_used": false,
+    "for_each_symbol_s_in_BTC_ETH": {
+      "price_basis": "PB_s(h)=LN(CLOSE_BINANCE_s(h)/CLOSE_KUCOIN_s(h))"
+    },
+    "high_price_used": false,
+    "low_price_used": false,
+    "open_price_used": false,
+    "open_to_close_return_used": false,
+    "price_validity": "CLOSE_BINANCE_s(h)>0_AND_CLOSE_KUCOIN_s(h)>0",
+    "rolling_normalization_used": false,
+    "sign_convention": "PB_s(h)>0_MEANS_BINANCE_CLOSE_ABOVE_KUCOIN_CLOSE;PB_s(h)<0_MEANS_BINANCE_CLOSE_BELOW_KUCOIN_CLOSE",
+    "taker_flow_used": false,
+    "trade_count_used": false,
+    "volume_used": false
+  },
+  "universes": [
+    "C2",
+    "D2",
+    "E2"
+  ]
+}
