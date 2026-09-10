@@ -1,0 +1,40 @@
+{
+  "maintenance_blackout_end_exclusive_utc": "2023-03-24T14:00:00+00:00",
+  "maintenance_blackout_start_utc": "2023-03-24T11:38:00+00:00",
+  "period_parity": [
+    {
+      "BINANCE_BTC_available_required_hour_count": 133,
+      "BINANCE_BTC_geometry_valid_required_hour_count": 133,
+      "BINANCE_ETH_available_required_hour_count": 133,
+      "BINANCE_ETH_geometry_valid_required_hour_count": 133,
+      "KUCOIN_BTC_available_required_hour_count": 133,
+      "KUCOIN_BTC_geometry_valid_required_hour_count": 133,
+      "KUCOIN_ETH_available_required_hour_count": 133,
+      "KUCOIN_ETH_geometry_valid_required_hour_count": 133,
+      "all_four_components_available_required_hour_count": 133,
+      "all_four_components_geometry_valid_required_hour_count": 133,
+      "all_four_components_invalid_or_missing_required_hour_count": 0,
+      "period_id": "ROBUSTNESS_2022",
+      "unique_required_source_hour_count": 133
+    },
+    {
+      "BINANCE_BTC_available_required_hour_count": 510,
+      "BINANCE_BTC_geometry_valid_required_hour_count": 510,
+      "BINANCE_ETH_available_required_hour_count": 510,
+      "BINANCE_ETH_geometry_valid_required_hour_count": 510,
+      "KUCOIN_BTC_available_required_hour_count": 511,
+      "KUCOIN_BTC_geometry_valid_required_hour_count": 511,
+      "KUCOIN_ETH_available_required_hour_count": 511,
+      "KUCOIN_ETH_geometry_valid_required_hour_count": 511,
+      "all_four_components_available_required_hour_count": 510,
+      "all_four_components_geometry_valid_required_hour_count": 510,
+      "all_four_components_invalid_or_missing_required_hour_count": 1,
+      "period_id": "ROBUSTNESS_2023",
+      "unique_required_source_hour_count": 511
+    }
+  ],
+  "same_completed_hour_across_all_four_components_required": true,
+  "schema_version": "rd47-p2-source-hour-parity-v1",
+  "source_hour_definition": "[t-1h,t)",
+  "zero_range_close_location_row": "FAIL_CLOSED"
+}
