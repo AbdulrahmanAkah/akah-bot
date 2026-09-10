@@ -1,0 +1,131 @@
+{
+  "2024_accessed": false,
+  "action_mapping_authorized": false,
+  "action_mapping_executed": false,
+  "closed_independent_axes": [
+    "BTC_ETH_MEAN_SIGNED_CROSS_VENUE_CLOSE_LOCATION_GAP",
+    "BTC_ETH_MEAN_ABSOLUTE_CROSS_VENUE_LOG_RANGE_GAP"
+  ],
+  "closed_information_source": "CROSS_VENUE_CANDLE_GEOMETRY_DISAGREEMENT_STATE",
+  "closure_decision": "RD47_CLOSED_CROSS_VENUE_CANDLE_GEOMETRY_STATE_DOES_NOT_PROVIDE_ROBUST_DIRECT_EXIT_UTILITY",
+  "context_selection_used": false,
+  "diagnostic_information_present": true,
+  "diagnostic_localization": {
+    "forward_classification_pass_cells": [
+      "C2@120h",
+      "D2@120h",
+      "E2@120h",
+      "C2@144h",
+      "D2@144h",
+      "E2@144h"
+    ],
+    "forward_continuous_pass_cells": [
+      "C2@120h",
+      "D2@120h",
+      "E2@120h",
+      "C2@144h",
+      "E2@144h"
+    ],
+    "forward_joint_pass_cells": [
+      "C2@120h",
+      "E2@120h"
+    ],
+    "forward_negative_subset_pass_cells": [
+      "C2@120h",
+      "E2@120h"
+    ],
+    "forward_persistent_pairs": [],
+    "forward_qualified_landmarks": [
+      120
+    ],
+    "reverse_classification_pass_cells": [],
+    "reverse_continuous_pass_cells": [
+      "C2@120h",
+      "D2@120h",
+      "E2@120h",
+      "C2@144h",
+      "D2@144h",
+      "E2@144h"
+    ],
+    "reverse_joint_pass_cells": [],
+    "reverse_negative_subset_pass_cells": [],
+    "reverse_persistent_pairs": [],
+    "reverse_qualified_landmarks": []
+  },
+  "direct_exit_utility_qualified": false,
+  "economic_action_executed": false,
+  "failure_localization": {
+    "forward_classification_gate_pass_cell_count": 6,
+    "forward_continuous_gate_pass_cell_count": 5,
+    "forward_joint_qualified_cell_count": 2,
+    "forward_negative_subset_gate_pass_cell_count": 2,
+    "reverse_classification_gate_pass_cell_count": 0,
+    "reverse_continuous_gate_pass_cell_count": 6,
+    "reverse_joint_qualified_cell_count": 0,
+    "reverse_negative_subset_gate_pass_cell_count": 0
+  },
+  "important_near_miss_not_actionable": {
+    "action_use": "FORBIDDEN_DIAGNOSTIC_ONLY",
+    "forward_pattern": "TWO_FORWARD_CELLS_PASS_ALL_THREE_GATES_BUT_NO_ADJACENT_FORWARD_LANDMARK_PAIR_SURVIVES_THE_FROZEN_TWO_OF_THREE_UNIVERSE_QUALIFICATION_AND_PERSISTENCE_CONTRACT",
+    "reverse_pattern": "SIX_REVERSE_CONTINUOUS_CELLS_PASS_BUT_ZERO_REVERSE_CLASSIFICATION_ZERO_REVERSE_NEGATIVE_SUBSET_AND_ZERO_REVERSE_JOINT_CELLS_PASS"
+  },
+  "landmark_selection_used": false,
+  "model_family_selection_used": false,
+  "new_features_computed": false,
+  "new_model_fit_performed": false,
+  "new_rcv_associations_computed": false,
+  "next_stage": "RD48_AUDIT_AND_PREREGISTER_DISTINCT_DIRECT_UTILITY_INFORMATION_SOURCE_PRE_TARGET_EXPOSURE",
+  "next_stage_constraint": "RD48_MUST_USE_A_GENUINELY_DISTINCT_INFORMATION_DOMAIN_DEFINED_WITHOUT_USING_RD47_CELL_LEVEL_RCV_NEAR_MISSES_AS_FEATURE_DESIGN_SIGNAL_AND_MUST_NOT_REPACKAGE_CLOSED_RD42_RD43_RD44_RD45_RD46_OR_RD47_DIRECT_UTILITY_DOMAINS",
+  "post_2024_accessed": false,
+  "production_authorized": false,
+  "raw_binance_archives_opened_during_closure": false,
+  "raw_kucoin_bars_opened_during_closure": false,
+  "schema_version": "rd47-p5-cross-venue-candle-geometry-state-closure-v1",
+  "scientific_interpretation": "SAME_COMPLETED_HOUR_BINANCE_VS_KUCOIN_CANDLE_GEOMETRY_DISAGREEMENT_CONTAINS_PARTIAL_CELL_LEVEL_DIRECT_UTILITY_INFORMATION_BUT_FAILS_THE_PREREGISTERED_TEMPORAL_PERSISTENCE_REQUIREMENT_AND_HAS_NO_REVERSE_JOINT_QUALIFICATION;IT_DOES_NOT_SUPPORT_ROBUST_DIRECT_EXIT_UTILITY",
+  "source_classification_git_blob": "c32095b29ad11084c4ce5126595aed3f009bd1c3",
+  "source_coefficients_git_blob": "a776faac0576e245ab887eed8679b97a48382afc",
+  "source_continuous_git_blob": "d3a3de29003e58cfa178b7d07f74dc5601d018ac",
+  "source_horizon_selection_used": false,
+  "source_joined_ledger_git_blob": "be7c2ca7659a1c1ced5b39bdb3fc6bea31d2d2df",
+  "source_landmark_qualification_git_blob": "8bc2d3112ccdcfea008e1ff972f02878fae8aa6f",
+  "source_lopo_git_blob": "6736f90cdc55fcc78f48ffd8f7c98aef3bdb4208",
+  "source_negative_subset_git_blob": "3457d82510bddd7f5777065706a2b105ec518d35",
+  "source_p3_freeze_commit": "3ec39f8f840cb775843c12940d4343bf8415cd19",
+  "source_p3_protocol_git_blob": "cc102ade29a5188e3d1536e1d50b4746aa4ed87d",
+  "source_p3_protocol_sha256": "20e49e2825f9722c0e24fd074aaef2f6c083222390a02f23c4ecf55b751eb034",
+  "source_p4_engine_freeze_audit_git_blob": "5f4218bcc7ad8f9e0f10aae94531c718a0d9c85f",
+  "source_p4_engine_freeze_commit": "e7e408746413a3f37caa8851ebc425ed42342ded",
+  "source_p4_results_commit": "756966052bdef81669d8e47c082cb5edc1ccb395",
+  "source_qualified_evidence_git_blob": "beba9bc138d9907b9eac39f782c1131f1656da5f",
+  "source_report_git_blob": "792c5af02894e25b54169e1218e78e276dba7e4a",
+  "source_report_sha256": "2a9c453db172142606d9aaec9b4664de15b8cb08014da61b52bd927d2508dfd8",
+  "source_temporal_persistence_git_blob": "c27f8981c26ae7f062139542d775efeba482380b",
+  "status": "PASS",
+  "symbol_selection_used": false,
+  "target_ledger_opened_during_closure": false,
+  "threshold_optimization_used": false,
+  "tombstones": {
+    "ADD_CONTEXT_POST_HOC_TO_RD47": "FORBIDDEN",
+    "ADD_INTERACTION_OR_RATIO_OF_RD47_AXES_POST_RCV": "FORBIDDEN",
+    "ADVANCE_RD47_TO_ACTION_MAPPING": "FORBIDDEN",
+    "CHANGE_ABSOLUTE_RANGE_GAP_DEFINITION_POST_RCV": "FORBIDDEN",
+    "CHANGE_MODEL_FAMILY_OR_CAPACITY_POST_HOC": "FORBIDDEN",
+    "COMBINE_RD47_WITH_RD42_RD43_RD44_RD45_RD46_AS_RESCUE": "FORBIDDEN",
+    "INVERT_CLOSE_LOCATION_GAP_SIGN_POST_RCV": "FORBIDDEN",
+    "OPTIMIZE_PREDICTED_RCV_THRESHOLD_AFTER_P4": "FORBIDDEN",
+    "RELAX_OR_REMOVE_LOPO": "FORBIDDEN",
+    "REPACKAGE_RD47_CONSTITUENT_COMPONENTS_AS_A_NEW_SOURCE": "FORBIDDEN",
+    "REWEIGHT_BTC_ETH_POST_RCV": "FORBIDDEN",
+    "SELECT_FORWARD_JOINT_NEAR_MISS_CELLS_AS_EXIT_RULE": "FORBIDDEN",
+    "SELECT_LANDMARK_AFTER_P4": "FORBIDDEN",
+    "SELECT_ONLY_BTC_COMPONENT_POST_RCV": "FORBIDDEN",
+    "SELECT_ONLY_ETH_COMPONENT_POST_RCV": "FORBIDDEN",
+    "SELECT_UNIVERSE_AFTER_P4": "FORBIDDEN",
+    "USE_2024_FOR_RD47_RESCUE": "FORBIDDEN",
+    "USE_PERCENTILE_TAIL_RESCUE": "FORBIDDEN",
+    "USE_RD47_CELL_LEVEL_RCV_DIAGNOSTICS_TO_DESIGN_RD48_FEATURES": "FORBIDDEN"
+  },
+  "universe_selection_used": false,
+  "venue_selection_used": false,
+  "winner_selection_used": false
+}
