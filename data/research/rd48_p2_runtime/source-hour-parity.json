@@ -1,0 +1,35 @@
+{
+  "candle_geometry_used": false,
+  "high_price_used": false,
+  "low_price_used": false,
+  "maintenance_blackout_end_exclusive_utc": "2023-03-24T14:00:00+00:00",
+  "maintenance_blackout_start_utc": "2023-03-24T11:38:00+00:00",
+  "open_price_used": false,
+  "open_to_close_return_used": false,
+  "period_parity": [
+    {
+      "BINANCE_BTC_valid_required_hour_count": 133,
+      "BINANCE_ETH_valid_required_hour_count": 133,
+      "KUCOIN_BTC_valid_required_hour_count": 133,
+      "KUCOIN_ETH_valid_required_hour_count": 133,
+      "all_four_components_invalid_or_missing_required_hour_count": 0,
+      "all_four_components_valid_required_hour_count": 133,
+      "period_id": "ROBUSTNESS_2022",
+      "unique_required_source_hour_count": 133
+    },
+    {
+      "BINANCE_BTC_valid_required_hour_count": 510,
+      "BINANCE_ETH_valid_required_hour_count": 510,
+      "KUCOIN_BTC_valid_required_hour_count": 511,
+      "KUCOIN_ETH_valid_required_hour_count": 511,
+      "all_four_components_invalid_or_missing_required_hour_count": 1,
+      "all_four_components_valid_required_hour_count": 510,
+      "period_id": "ROBUSTNESS_2023",
+      "unique_required_source_hour_count": 511
+    }
+  ],
+  "required_component_semantics": "POSITIVE_COMPLETED_HOUR_CLOSE_ONLY",
+  "same_completed_hour_across_all_four_components_required": true,
+  "schema_version": "rd48-p2-source-hour-parity-v1",
+  "source_hour_definition": "[t-1h,t)"
+}
