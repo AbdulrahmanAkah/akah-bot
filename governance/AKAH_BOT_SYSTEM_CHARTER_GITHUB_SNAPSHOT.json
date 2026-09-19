@@ -424,7 +424,7 @@
     "preinstall_head": "b3142d0135d393088ab3fe55c53b0e28ec7574cb"
   },
   "charter_id": "AKAH_BOT_SYSTEM_CHARTER",
-  "charter_revision": 278,
+  "charter_revision": 279,
   "constitutional_core": {
     "amendment_rule": "The constitutional core may change only after explicit user authorization. Ordinary task closeout may update current_state, bottleneck, evidence summary, priority ordering, and task history but may not silently alter core principles.",
     "core_version": 1,
@@ -576,7 +576,7 @@
     "counterfactual_profit_claim": false,
     "cross_universe_classification": "UNIVERSE_STRATA_CONTAIN_DIVERGENT_REPLAY_INFORMATION",
     "cross_universe_exact": false,
-    "current_bottleneck": "ABC_PRE2024_TEMPORAL_SOURCE_AUTHORITY_REMEDIATION_V2",
+    "current_bottleneck": "ABC_2019_2023_FIVE_YEAR_EXECUTION_AUTHORIZATION_GATE",
     "dynamic_roles_all_bound": false,
     "economic_analysis": false,
     "economic_interpretation_performed": false,
@@ -1626,29 +1626,25 @@
   },
   "last_completed_task": {
     "alignment": "ALIGNED_WITH_SCOPE_UPDATE",
-    "axis": "ABC_PRE2024_MARKET_SOURCE_AUTHORITY_AND_MAX_HOLD_REMEDIATION",
-    "completed_at_utc": "2026-09-19T21:59:38+00:00",
-    "completed_charter_revision": 278,
+    "axis": "ABC_PRE2024_RD23_LINEAGE_TEMPORAL_SOURCE_AUTHORITY",
+    "completed_at_utc": "2026-09-19T22:08:03+00:00",
+    "completed_charter_revision": 279,
     "evidence": [
       {
-        "path": "governance/abc_pre2024_market_source_authority_and_max_hold_remediation_v1/pre2024_temporal_source_authority.json",
-        "sha256": "A4FD9E037148C966C118CA7BF3AF9F4D5AEC5A4A73D8C6ECB4CC60EDDA765BDA"
+        "path": "governance/abc_pre2024_temporal_source_authority_remediation_v2/rd23_temporal_source_authority.json",
+        "sha256": "EA80CC7420B2B486E9A037F24EE2CDE20AA0E3EC3069D39E034B4614A1D90498"
       },
       {
-        "path": "governance/abc_pre2024_market_source_authority_and_max_hold_remediation_v1/pair_readiness_recomputed.json",
-        "sha256": "7F2AE63EDAD43980A03FF46D1DB4E4FE8D85890AF53E3E8E315716A619D037A5"
+        "path": "governance/abc_pre2024_temporal_source_authority_remediation_v2/pair_specific_readiness_windows.json",
+        "sha256": "B29037F87E94F3952F9EEDA83D9227633A94EE4A996D3E32CCD0DDC25C51EE9E"
       },
       {
-        "path": "governance/abc_pre2024_market_source_authority_and_max_hold_remediation_v1/max_hold_168h_authority_reconciliation.json",
-        "sha256": "D238B552A5A9AE827099B65D9BFE5DA71BF914C945D3677EF41442E364242CB8"
+        "path": "governance/abc_pre2024_temporal_source_authority_remediation_v2/execution_safety_audit.json",
+        "sha256": "1F3C20B5F703C871D09E6C84BEF99CBE86F36CD21D767D1C620D432EB599E13D"
       },
       {
-        "path": "governance/abc_pre2024_market_source_authority_and_max_hold_remediation_v1/remediation_audit.json",
-        "sha256": "EFFD1570A6BBFF162D4553B85ADA0ED0DFDC92A00136806F5058C24832454B43"
-      },
-      {
-        "path": "governance/abc_pre2024_market_source_authority_and_max_hold_remediation_v1/canonical_result.json",
-        "sha256": "BCE5E7A38626C5919682BEEA8FE117988D4E383DE454ACBEE311E894440F6F2D"
+        "path": "governance/abc_pre2024_temporal_source_authority_remediation_v2/canonical_result.json",
+        "sha256": "A3DE164037F81F35521747203D8E996B3F8E534A48BE9AB5198D528E7708B1E0"
       }
     ],
     "governance_declarations": {
@@ -1660,25 +1656,24 @@
       "2025_market_data_accessed": false,
       "abc_candidate_results_computed": false,
       "lookahead_or_future_information_used": false,
-      "max_hold_semantics_changed": false,
       "pair_or_event_identity_used_as_runtime_rule": false,
       "posthoc_outcome_threshold_search_used": false,
       "pre2019_trades_or_pnl_computed": false,
       "pre2019_warmup_accessed": true,
       "production_changed": false
     },
-    "next_bottleneck": "ABC_PRE2024_TEMPORAL_SOURCE_AUTHORITY_REMEDIATION_V2",
-    "north_star_effect": "ABC pre-2024 source-authority and MAX_HOLD remediation completed: data_readiness=BLOCKED, max_hold_168h=PROVEN. No A/B/C candidate result was opened.",
-    "objective": "Close the two preregistration blockers before any A/B/C result: (1) recover authoritative pre-2024 temporal source bounds for the existing 1H/4H market files without opening unresolved files that may contain 2024/2025 rows, then recompute 2019-2023 per-pair T0 and warmup readiness; (2) reconcile the frozen Rev273 MAX_HOLD=168h semantics with the already-proven native source enforcement and passing tests from Rev277. No candidate outcome execution.",
+    "next_bottleneck": "ABC_2019_2023_FIVE_YEAR_EXECUTION_AUTHORIZATION_GATE",
+    "north_star_effect": "RD23 historical lineage bound as the authoritative 2019-2021 source; pair-specific causal readiness windows computed without Jan-1 false blocking. Five-year execution authorization ready=True. No A/B/C result opened.",
+    "objective": "Replace the false-negative filename/manifest temporal-source discovery with the exact historical RD23 source lineage that already evaluated 2019-2020 and temporally replicated 2021 from data/raw/rd16b/kucoin/<PAIR>/1h.parquet using pyarrow timestamp predicate pushdown. Bind that source authority, compute pair-specific causal ATR22/Donchian10 readiness windows through 2023, reuse already-proven 2022/2023 readiness and MAX_HOLD=168h authority, and determine whether the five-year execution authorization gate is now ready. No A/B/C outcome is opened.",
     "outcome": "PASS",
-    "pre_closeout_head": "f7e35f6db3e389e11a2beca5826d66e41a5a6efc",
-    "result_ref": "governance/abc_pre2024_market_source_authority_and_max_hold_remediation_v1/canonical_result.json",
-    "result_sha256": "BCE5E7A38626C5919682BEEA8FE117988D4E383DE454ACBEE311E894440F6F2D",
-    "started_at_utc": "2026-09-19T21:59:13+00:00",
-    "starting_charter_revision": 277,
-    "starting_head": "35d0822ccf25b991a45403d943908e81972f3b50",
-    "summary": "ABC pre-2024 source-authority and MAX_HOLD remediation completed: data_readiness=BLOCKED, max_hold_168h=PROVEN. No A/B/C candidate result was opened.",
-    "task_id": "ABC_DATA_READINESS_AND_MAX_HOLD_REMEDIATION_BEFORE_FIVE_YEAR_EXECUTION",
+    "pre_closeout_head": "b77dac27e55c7fb384be1938f5b0718c2efa6765",
+    "result_ref": "governance/abc_pre2024_temporal_source_authority_remediation_v2/canonical_result.json",
+    "result_sha256": "A3DE164037F81F35521747203D8E996B3F8E534A48BE9AB5198D528E7708B1E0",
+    "started_at_utc": "2026-09-19T22:06:53+00:00",
+    "starting_charter_revision": 278,
+    "starting_head": "0aa8cb5031dba9314b93fd9a7672e0851cb6f735",
+    "summary": "RD23 historical lineage bound as the authoritative 2019-2021 source; pair-specific causal readiness windows computed without Jan-1 false blocking. Five-year execution authorization ready=True. No A/B/C result opened.",
+    "task_id": "ABC_PRE2024_TEMPORAL_SOURCE_AUTHORITY_REMEDIATION_V2",
     "vision_impact": "ADVANCES"
   },
   "last_execution_event": {
@@ -1887,8 +1882,8 @@
     "task_id": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_PRE_PROGRESS_THESIS_NON_CONFIRMATION_COUNTERFACTUAL_PORTFOLIO_REPLAY_V1",
     "task_start_head": "1cef008128d6da19d9b09ac2b73801d68a2e0e0d"
   },
-  "last_updated_at_utc": "2026-09-19T21:59:38+00:00",
-  "last_updated_by_task": "ABC_DATA_READINESS_AND_MAX_HOLD_REMEDIATION_BEFORE_FIVE_YEAR_EXECUTION",
+  "last_updated_at_utc": "2026-09-19T22:08:03+00:00",
+  "last_updated_by_task": "ABC_PRE2024_TEMPORAL_SOURCE_AUTHORITY_REMEDIATION_V2",
   "latest_async_ready_state_control_denominator_authority_audit": {
     "actionability_inference_authorized": false,
     "audit_path": "C:\\Users\\abdul\\Downloads\\CAUSAL_EXIT_MECHANISM_PROFIT_ARM_COUNTERFACTUAL_EAG_PERSISTENCE_ASYNC_READY_STATE_CONTROL_DENOMINATOR_AUTHORITY_AUDIT_V1_AUDIT_20260916_171856.json",
@@ -3889,41 +3884,6 @@
     {
       "alignment": "ALIGNED_WITH_SCOPE_UPDATE",
       "axis": "TRANSITION_ADMISSION_ONLY_2023_TEMPORAL_REPLICATION",
-      "completed_at_utc": "2026-09-19T13:56:46+00:00",
-      "completed_charter_revision": 259,
-      "evidence": [
-        {
-          "path": "governance/p38_2023_replication_fail_closed/failure.json",
-          "sha256": "859EE033D2DC3F57ABD71578CC21879F177AD4BB4B7EF0FFE45DE8E19DAE9135"
-        }
-      ],
-      "governance_declarations": {
-        "2023_new_raw_or_replay_accessed": true,
-        "2024_used_as_fresh_holdout": false,
-        "2024_used_to_define_new_runtime_rule": false,
-        "2025_accessed": false,
-        "lookahead_or_future_information_used": false,
-        "pair_or_event_identity_used_as_runtime_rule": false,
-        "posthoc_outcome_threshold_search_used": false,
-        "production_changed": false
-      },
-      "next_bottleneck": "FINAL_EXIT_BRAIN_PRE_2024_ARCHITECTURE_P38_TRANSITION_ADMISSION_ONLY_2023_TEMPORAL_REPLICATION_EXECUTION_V1_RETRY_V1",
-      "north_star_effect": "Preserves the pre-registered replication contract.",
-      "objective": "Execute the P36/P37 pre-registered TRANSITION admission-only temporal replication on ROBUSTNESS_2023 with the frozen candidate, exact period-bound observer, no tuning/search, frozen four-gate adjudication, and required mechanism decomposition. No 2024/2025 access or production change.",
-      "outcome": "FAIL_CLOSED",
-      "pre_closeout_head": "fdd646fe2f8a82dc9740e37f1fd8b95c508897e7",
-      "result_ref": "governance/p38_2023_replication_fail_closed/failure.json",
-      "result_sha256": "859EE033D2DC3F57ABD71578CC21879F177AD4BB4B7EF0FFE45DE8E19DAE9135",
-      "started_at_utc": "2026-09-19T13:56:37+00:00",
-      "starting_charter_revision": 258,
-      "starting_head": "e3de7e399c3141d61fb11a979fc71af5f4b815cb",
-      "summary": "P38 failed closed technically/parity-wise; no scientific replication conclusion recorded.",
-      "task_id": "FINAL_EXIT_BRAIN_PRE_2024_ARCHITECTURE_P38_TRANSITION_ADMISSION_ONLY_2023_TEMPORAL_REPLICATION_EXECUTION_V1",
-      "vision_impact": "PRESERVES"
-    },
-    {
-      "alignment": "ALIGNED_WITH_SCOPE_UPDATE",
-      "axis": "TRANSITION_ADMISSION_ONLY_2023_TEMPORAL_REPLICATION",
       "completed_at_utc": "2026-09-19T14:57:44+00:00",
       "completed_charter_revision": 260,
       "evidence": [
@@ -4756,6 +4716,58 @@
       "summary": "ABC pre-2024 source-authority and MAX_HOLD remediation completed: data_readiness=BLOCKED, max_hold_168h=PROVEN. No A/B/C candidate result was opened.",
       "task_id": "ABC_DATA_READINESS_AND_MAX_HOLD_REMEDIATION_BEFORE_FIVE_YEAR_EXECUTION",
       "vision_impact": "ADVANCES"
+    },
+    {
+      "alignment": "ALIGNED_WITH_SCOPE_UPDATE",
+      "axis": "ABC_PRE2024_RD23_LINEAGE_TEMPORAL_SOURCE_AUTHORITY",
+      "completed_at_utc": "2026-09-19T22:08:03+00:00",
+      "completed_charter_revision": 279,
+      "evidence": [
+        {
+          "path": "governance/abc_pre2024_temporal_source_authority_remediation_v2/rd23_temporal_source_authority.json",
+          "sha256": "EA80CC7420B2B486E9A037F24EE2CDE20AA0E3EC3069D39E034B4614A1D90498"
+        },
+        {
+          "path": "governance/abc_pre2024_temporal_source_authority_remediation_v2/pair_specific_readiness_windows.json",
+          "sha256": "B29037F87E94F3952F9EEDA83D9227633A94EE4A996D3E32CCD0DDC25C51EE9E"
+        },
+        {
+          "path": "governance/abc_pre2024_temporal_source_authority_remediation_v2/execution_safety_audit.json",
+          "sha256": "1F3C20B5F703C871D09E6C84BEF99CBE86F36CD21D767D1C620D432EB599E13D"
+        },
+        {
+          "path": "governance/abc_pre2024_temporal_source_authority_remediation_v2/canonical_result.json",
+          "sha256": "A3DE164037F81F35521747203D8E996B3F8E534A48BE9AB5198D528E7708B1E0"
+        }
+      ],
+      "governance_declarations": {
+        "2023_new_raw_or_replay_accessed": true,
+        "2024_market_data_accessed": false,
+        "2024_used_as_fresh_holdout": false,
+        "2024_used_to_define_new_runtime_rule": false,
+        "2025_accessed": false,
+        "2025_market_data_accessed": false,
+        "abc_candidate_results_computed": false,
+        "lookahead_or_future_information_used": false,
+        "pair_or_event_identity_used_as_runtime_rule": false,
+        "posthoc_outcome_threshold_search_used": false,
+        "pre2019_trades_or_pnl_computed": false,
+        "pre2019_warmup_accessed": true,
+        "production_changed": false
+      },
+      "next_bottleneck": "ABC_2019_2023_FIVE_YEAR_EXECUTION_AUTHORIZATION_GATE",
+      "north_star_effect": "RD23 historical lineage bound as the authoritative 2019-2021 source; pair-specific causal readiness windows computed without Jan-1 false blocking. Five-year execution authorization ready=True. No A/B/C result opened.",
+      "objective": "Replace the false-negative filename/manifest temporal-source discovery with the exact historical RD23 source lineage that already evaluated 2019-2020 and temporally replicated 2021 from data/raw/rd16b/kucoin/<PAIR>/1h.parquet using pyarrow timestamp predicate pushdown. Bind that source authority, compute pair-specific causal ATR22/Donchian10 readiness windows through 2023, reuse already-proven 2022/2023 readiness and MAX_HOLD=168h authority, and determine whether the five-year execution authorization gate is now ready. No A/B/C outcome is opened.",
+      "outcome": "PASS",
+      "pre_closeout_head": "b77dac27e55c7fb384be1938f5b0718c2efa6765",
+      "result_ref": "governance/abc_pre2024_temporal_source_authority_remediation_v2/canonical_result.json",
+      "result_sha256": "A3DE164037F81F35521747203D8E996B3F8E534A48BE9AB5198D528E7708B1E0",
+      "started_at_utc": "2026-09-19T22:06:53+00:00",
+      "starting_charter_revision": 278,
+      "starting_head": "0aa8cb5031dba9314b93fd9a7672e0851cb6f735",
+      "summary": "RD23 historical lineage bound as the authoritative 2019-2021 source; pair-specific causal readiness windows computed without Jan-1 false blocking. Five-year execution authorization ready=True. No A/B/C result opened.",
+      "task_id": "ABC_PRE2024_TEMPORAL_SOURCE_AUTHORITY_REMEDIATION_V2",
+      "vision_impact": "ADVANCES"
     }
   ],
   "schema_version": "akah-bot-system-charter-v1",
@@ -4802,18 +4814,18 @@
   "github_sync_metadata": {
     "schema_version": "akah-bot-github-governance-snapshot-v3",
     "snapshot_semantics": "CURRENT_CANONICAL_GOVERNANCE_STATE_WITH_RECENT_EXECUTION_HISTORY_EXTERNALIZED",
-    "charter_revision": 278,
+    "charter_revision": 279,
     "source_branch": "research/rd48-cross-venue-price-level-basis-direct-utility-v1",
-    "source_head": "0aa8cb5031dba9314b93fd9a7672e0851cb6f735",
+    "source_head": "c497455cd42c0158439fe6d6e08b146d81ab3bf5",
     "canonical_local_charter_path": "governance/AKAH_BOT_SYSTEM_CHARTER.json",
-    "canonical_local_charter_size_bytes": 213150245,
-    "canonical_local_charter_sha256": "9B3B5CDF6DAA56CD369D57B2E4775A3656EA18C813EA2FED9F0758AF53688235",
+    "canonical_local_charter_size_bytes": 213151513,
+    "canonical_local_charter_sha256": "879061C7A0419445106206F9BB43B054556DCA058DB26F6819C2AA8164B986E8",
     "externalized_top_level_key": "recent_execution_history",
-    "full_archive_repo_path": "governance/archive/AKAH_BOT_SYSTEM_CHARTER_REV278_FULL.json.gz",
-    "full_archive_size_bytes": 16814435,
-    "full_archive_sha256": "70DC0432A56D72D72C5564DD0C9100FA050CA989595CD2E8E674F67F489D93A9",
-    "latest_task_id": "ABC_DATA_READINESS_AND_MAX_HOLD_REMEDIATION_BEFORE_FIVE_YEAR_EXECUTION",
-    "current_bottleneck": "ABC_PRE2024_TEMPORAL_SOURCE_AUTHORITY_REMEDIATION_V2",
+    "full_archive_repo_path": "governance/archive/AKAH_BOT_SYSTEM_CHARTER_REV279_FULL.json.gz",
+    "full_archive_size_bytes": 16814972,
+    "full_archive_sha256": "70C7ED0DCBCE21951B3F38E5F56A1F3CAF8202D6C8D2639E3D4E91A325DF926B",
+    "latest_task_id": "ABC_PRE2024_TEMPORAL_SOURCE_AUTHORITY_REMEDIATION_V2",
+    "current_bottleneck": "ABC_2019_2023_FIVE_YEAR_EXECUTION_AUTHORIZATION_GATE",
     "governance_sync_status": "SYNCHRONIZED_TO_LATEST_EXECUTION_EVENT"
   }
 }
