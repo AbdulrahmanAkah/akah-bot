@@ -424,7 +424,7 @@
     "preinstall_head": "b3142d0135d393088ab3fe55c53b0e28ec7574cb"
   },
   "charter_id": "AKAH_BOT_SYSTEM_CHARTER",
-  "charter_revision": 274,
+  "charter_revision": 275,
   "constitutional_core": {
     "amendment_rule": "The constitutional core may change only after explicit user authorization. Ordinary task closeout may update current_state, bottleneck, evidence summary, priority ordering, and task history but may not silently alter core principles.",
     "core_version": 1,
@@ -576,7 +576,7 @@
     "counterfactual_profit_claim": false,
     "cross_universe_classification": "UNIVERSE_STRATA_CONTAIN_DIVERGENT_REPLAY_INFORMATION",
     "cross_universe_exact": false,
-    "current_bottleneck": "ABC_2019_2023_AUTHORITY_DATA_READINESS_AUDIT_V1",
+    "current_bottleneck": "ABC_2019_2023_AUTHORITY_DATA_READINESS_AUDIT_V1_RETRY_V1",
     "dynamic_roles_all_bound": false,
     "economic_analysis": false,
     "economic_interpretation_performed": false,
@@ -1626,44 +1626,45 @@
   },
   "last_completed_task": {
     "alignment": "ALIGNED_WITH_SCOPE_UPDATE",
-    "axis": "PRE2019_WARMUP_DATA_ACCESS_AUTHORIZATION",
-    "completed_at_utc": "2026-09-19T21:39:08+00:00",
-    "completed_charter_revision": 274,
+    "axis": "ABC_2019_2023_AUTHORITY_DATA_READINESS",
+    "completed_at_utc": "2026-09-19T21:46:42+00:00",
+    "completed_charter_revision": 275,
     "evidence": [
       {
-        "path": "governance/abc_pre2019_warmup_data_access_authorization_v1/authorization.json",
-        "sha256": "87133C576D7BE31F92F0091763ECACEA23B0749744289AF38133365CA560EC8D"
+        "path": "governance/abc_2019_2023_authority_data_readiness_v1_failed_run_recovery_v1/canonical_result.json",
+        "sha256": "72D3BAAC030020740BF133B5A83800951B289F7765CAF8E3A339FB6989C41BE6"
       },
       {
-        "path": "governance/abc_pre2019_warmup_data_access_authorization_v1/canonical_result.json",
-        "sha256": "87133C576D7BE31F92F0091763ECACEA23B0749744289AF38133365CA560EC8D"
+        "path": "governance/batch_fail_closed/abc_2019_2023_authority_data_readiness_audit_v1/failure.json",
+        "sha256": "CB8CE3ADB59281ED3B4824DE4B9C0E8E68FC9D43125CA20D6C3D3D327A06EA43"
       }
     ],
     "governance_declarations": {
-      "2023_new_raw_or_replay_accessed": false,
+      "2023_new_raw_or_replay_accessed": true,
       "2024_used_as_fresh_holdout": false,
       "2024_used_to_define_new_runtime_rule": false,
       "2025_accessed": false,
+      "failed_run_scientific_output_authoritative": false,
       "lookahead_or_future_information_used": false,
       "pair_or_event_identity_used_as_runtime_rule": false,
       "posthoc_outcome_threshold_search_used": false,
-      "pre2019_warmup_access_authorized": true,
-      "pre2019_warmup_accessed": false,
+      "pre2019_trades_or_pnl_computed": false,
+      "pre2019_warmup_accessed": true,
       "production_changed": false
     },
-    "next_bottleneck": "ABC_2019_2023_AUTHORITY_DATA_READINESS_AUDIT_V1",
-    "north_star_effect": "Pre-2019 access authorized only for causal warmup/readiness; no trades or outcomes.",
-    "objective": "Authorize read-only pre-2019 market data solely for T0 and warmup/readiness of ATR22, Donchian10 and native state engine. No pre-2019 trades, PnL, outcomes, tuning or optimization.",
-    "outcome": "PASS",
-    "pre_closeout_head": "403742948b5c6d6d288f045a5fa793c5372b275d",
-    "result_ref": "governance/abc_pre2019_warmup_data_access_authorization_v1/canonical_result.json",
-    "result_sha256": "87133C576D7BE31F92F0091763ECACEA23B0749744289AF38133365CA560EC8D",
-    "started_at_utc": "2026-09-19T21:39:05+00:00",
-    "starting_charter_revision": 273,
-    "starting_head": "0d7926a22787fb2992af36bd119283215ee7c710",
-    "summary": "Pre-2019 access authorized only for causal warmup/readiness; no trades or outcomes.",
-    "task_id": "ABC_PRE2019_WARMUP_DATA_ACCESS_AUTHORIZATION_V1",
-    "vision_impact": "ADVANCES"
+    "next_bottleneck": "ABC_2019_2023_AUTHORITY_DATA_READINESS_AUDIT_V1_RETRY_V1",
+    "north_star_effect": "Task4 failed after BEGIN because its governance declaration omitted the mandatory 2023_new_raw_or_replay_accessed key. All failed-run readiness artifacts are explicitly non-authoritative; no scientific conclusion is retained.",
+    "objective": "Using separately authorized pre-2019 warmup scope, bind per-pair T0, first valid date, ATR22 readiness, Donchian10 readiness, annual readiness, late-listing status and native state-engine source authority; do not compute A/B/C outcomes.",
+    "outcome": "FAIL_CLOSED",
+    "pre_closeout_head": "2a755deedb11b6bd550469232e8b26c2ac3dcfef",
+    "result_ref": "governance/abc_2019_2023_authority_data_readiness_v1_failed_run_recovery_v1/canonical_result.json",
+    "result_sha256": "72D3BAAC030020740BF133B5A83800951B289F7765CAF8E3A339FB6989C41BE6",
+    "started_at_utc": "2026-09-19T21:40:03+00:00",
+    "starting_charter_revision": 274,
+    "starting_head": "06a13f83e6fe4c386345907e9a7c48e7df3b7aa8",
+    "summary": "Task4 failed after BEGIN because its governance declaration omitted the mandatory 2023_new_raw_or_replay_accessed key. All failed-run readiness artifacts are explicitly non-authoritative; no scientific conclusion is retained.",
+    "task_id": "ABC_2019_2023_AUTHORITY_DATA_READINESS_AUDIT_V1",
+    "vision_impact": "PRESERVES"
   },
   "last_execution_event": {
     "alignment": "ALIGNED_WITH_SCOPE_UPDATE",
@@ -1871,8 +1872,8 @@
     "task_id": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_PRE_PROGRESS_THESIS_NON_CONFIRMATION_COUNTERFACTUAL_PORTFOLIO_REPLAY_V1",
     "task_start_head": "1cef008128d6da19d9b09ac2b73801d68a2e0e0d"
   },
-  "last_updated_at_utc": "2026-09-19T21:39:08+00:00",
-  "last_updated_by_task": "ABC_PRE2019_WARMUP_DATA_ACCESS_AUTHORIZATION_V1",
+  "last_updated_at_utc": "2026-09-19T21:46:42+00:00",
+  "last_updated_by_task": "ABC_2019_2023_AUTHORITY_DATA_READINESS_AUDIT_V1",
   "latest_async_ready_state_control_denominator_authority_audit": {
     "actionability_inference_authorized": false,
     "audit_path": "C:\\Users\\abdul\\Downloads\\CAUSAL_EXIT_MECHANISM_PROFIT_ARM_COUNTERFACTUAL_EAG_PERSISTENCE_ASYNC_READY_STATE_CONTROL_DENOMINATOR_AUTHORITY_AUDIT_V1_AUDIT_20260916_171856.json",
@@ -3872,49 +3873,6 @@
   "recent_task_history": [
     {
       "alignment": "ALIGNED_WITH_SCOPE_UPDATE",
-      "axis": "TRANSITION_ADMISSION_CAUSAL_AUTHORITY",
-      "completed_at_utc": "2026-09-19T13:19:39+00:00",
-      "completed_charter_revision": 255,
-      "evidence": [
-        {
-          "path": "governance/final_exit_brain_pre_2024_architecture_p34_transition_admission_authority_audit_and_reuse_adjudication_v1/authority_chain_audit.json",
-          "sha256": "C63B902D021DDE87A2A1C7AF8A18A553AE1E9637A98ECE1EAABE7E9A37DF03E7"
-        },
-        {
-          "path": "governance/final_exit_brain_pre_2024_architecture_p34_transition_admission_authority_audit_and_reuse_adjudication_v1/canonical_result.json",
-          "sha256": "552410D04DFE2B70234680B6B98E7D56B23B1A571431F1894BC60ED9A538DD99"
-        },
-        {
-          "path": "governance/final_exit_brain_pre_2024_architecture_p34_transition_admission_authority_audit_and_reuse_adjudication_v1/scientific_gate_adjudication.json",
-          "sha256": "3E7FF69832FA7F13A0BC464ED39DC3276462117E874908E395B333BC16739A37"
-        }
-      ],
-      "governance_declarations": {
-        "2023_new_raw_or_replay_accessed": false,
-        "2024_used_as_fresh_holdout": false,
-        "2024_used_to_define_new_runtime_rule": false,
-        "2025_accessed": false,
-        "lookahead_or_future_information_used": false,
-        "pair_or_event_identity_used_as_runtime_rule": false,
-        "posthoc_outcome_threshold_search_used": false,
-        "production_changed": false
-      },
-      "next_bottleneck": "TRANSITION_ADMISSION_CAUSAL_MECHANISM_ATTRIBUTION_BEFORE_SIZING",
-      "north_star_effect": "Resolves whether the strong P19 TRANSITION signal can be reused causally without replay, preventing both duplicate computation and invalid causal promotion.",
-      "objective": "Audit whether the existing P19 2022 TRANSITION admission ablation is a causally reusable admission-only counterfactual relative to P13, and, when source equivalence is proven, adjudicate the existing P19 result without new market replay; otherwise freeze one exact admission-only candidate.",
-      "outcome": "PASS",
-      "pre_closeout_head": "0960a71834b3b78cd04740d4816a3b7c0b9c0355",
-      "result_ref": "governance/final_exit_brain_pre_2024_architecture_p34_transition_admission_authority_audit_and_reuse_adjudication_v1/canonical_result.json",
-      "result_sha256": "552410D04DFE2B70234680B6B98E7D56B23B1A571431F1894BC60ED9A538DD99",
-      "started_at_utc": "2026-09-19T13:19:35+00:00",
-      "starting_charter_revision": 254,
-      "starting_head": "5684b2183f480b7724df4546ccd419e93e771d95",
-      "summary": "Completed P34 transition-admission authority audit. Classification=SUPPORTED_PRE_2024_TRANSITION_ADMISSION_ONLY_HYPOTHESIS_P19_CAUSAL_REUSE_ALL_FROZEN_GATES_PASS_NO_2023_PROMOTION. P19 reusable as 2022 exploratory admission-only counterfactual=True. P13 net PnL=-4248.200575640512; P19 net PnL=1015.4422232383076; delta=5263.64279887882. No new market replay or parameter search occurred.",
-      "task_id": "FINAL_EXIT_BRAIN_PRE_2024_ARCHITECTURE_P34_TRANSITION_ADMISSION_AUTHORITY_AUDIT_AND_REUSE_ADJUDICATION_V1",
-      "vision_impact": "ADVANCES"
-    },
-    {
-      "alignment": "ALIGNED_WITH_SCOPE_UPDATE",
       "axis": "TRANSITION_ADMISSION_CAUSAL_MECHANISM",
       "completed_at_utc": "2026-09-19T13:28:11+00:00",
       "completed_charter_revision": 256,
@@ -4725,6 +4683,48 @@
       "summary": "Pre-2019 access authorized only for causal warmup/readiness; no trades or outcomes.",
       "task_id": "ABC_PRE2019_WARMUP_DATA_ACCESS_AUTHORIZATION_V1",
       "vision_impact": "ADVANCES"
+    },
+    {
+      "alignment": "ALIGNED_WITH_SCOPE_UPDATE",
+      "axis": "ABC_2019_2023_AUTHORITY_DATA_READINESS",
+      "completed_at_utc": "2026-09-19T21:46:42+00:00",
+      "completed_charter_revision": 275,
+      "evidence": [
+        {
+          "path": "governance/abc_2019_2023_authority_data_readiness_v1_failed_run_recovery_v1/canonical_result.json",
+          "sha256": "72D3BAAC030020740BF133B5A83800951B289F7765CAF8E3A339FB6989C41BE6"
+        },
+        {
+          "path": "governance/batch_fail_closed/abc_2019_2023_authority_data_readiness_audit_v1/failure.json",
+          "sha256": "CB8CE3ADB59281ED3B4824DE4B9C0E8E68FC9D43125CA20D6C3D3D327A06EA43"
+        }
+      ],
+      "governance_declarations": {
+        "2023_new_raw_or_replay_accessed": true,
+        "2024_used_as_fresh_holdout": false,
+        "2024_used_to_define_new_runtime_rule": false,
+        "2025_accessed": false,
+        "failed_run_scientific_output_authoritative": false,
+        "lookahead_or_future_information_used": false,
+        "pair_or_event_identity_used_as_runtime_rule": false,
+        "posthoc_outcome_threshold_search_used": false,
+        "pre2019_trades_or_pnl_computed": false,
+        "pre2019_warmup_accessed": true,
+        "production_changed": false
+      },
+      "next_bottleneck": "ABC_2019_2023_AUTHORITY_DATA_READINESS_AUDIT_V1_RETRY_V1",
+      "north_star_effect": "Task4 failed after BEGIN because its governance declaration omitted the mandatory 2023_new_raw_or_replay_accessed key. All failed-run readiness artifacts are explicitly non-authoritative; no scientific conclusion is retained.",
+      "objective": "Using separately authorized pre-2019 warmup scope, bind per-pair T0, first valid date, ATR22 readiness, Donchian10 readiness, annual readiness, late-listing status and native state-engine source authority; do not compute A/B/C outcomes.",
+      "outcome": "FAIL_CLOSED",
+      "pre_closeout_head": "2a755deedb11b6bd550469232e8b26c2ac3dcfef",
+      "result_ref": "governance/abc_2019_2023_authority_data_readiness_v1_failed_run_recovery_v1/canonical_result.json",
+      "result_sha256": "72D3BAAC030020740BF133B5A83800951B289F7765CAF8E3A339FB6989C41BE6",
+      "started_at_utc": "2026-09-19T21:40:03+00:00",
+      "starting_charter_revision": 274,
+      "starting_head": "06a13f83e6fe4c386345907e9a7c48e7df3b7aa8",
+      "summary": "Task4 failed after BEGIN because its governance declaration omitted the mandatory 2023_new_raw_or_replay_accessed key. All failed-run readiness artifacts are explicitly non-authoritative; no scientific conclusion is retained.",
+      "task_id": "ABC_2019_2023_AUTHORITY_DATA_READINESS_AUDIT_V1",
+      "vision_impact": "PRESERVES"
     }
   ],
   "schema_version": "akah-bot-system-charter-v1",
@@ -4771,18 +4771,18 @@
   "github_sync_metadata": {
     "schema_version": "akah-bot-github-governance-snapshot-v3",
     "snapshot_semantics": "CURRENT_CANONICAL_GOVERNANCE_STATE_WITH_RECENT_EXECUTION_HISTORY_EXTERNALIZED",
-    "charter_revision": 274,
+    "charter_revision": 275,
     "source_branch": "research/rd48-cross-venue-price-level-basis-direct-utility-v1",
-    "source_head": "06a13f83e6fe4c386345907e9a7c48e7df3b7aa8",
+    "source_head": "d0f6cbae8cf156296b937eadf034d834eae28f4a",
     "canonical_local_charter_path": "governance/AKAH_BOT_SYSTEM_CHARTER.json",
-    "canonical_local_charter_size_bytes": 213149993,
-    "canonical_local_charter_sha256": "0BAA6474D5CD29383FFD1A8D03B0DB528CE4DD5424E690452A5761A98F6AD37F",
+    "canonical_local_charter_size_bytes": 213149989,
+    "canonical_local_charter_sha256": "8474215FB0858BD3325EDB9353DD7330AA6EB0CCD0F1E8A9E77D9A9EE82B8C6A",
     "externalized_top_level_key": "recent_execution_history",
-    "full_archive_repo_path": "governance/archive/AKAH_BOT_SYSTEM_CHARTER_REV274_FULL.json.gz",
-    "full_archive_size_bytes": 16814604,
-    "full_archive_sha256": "66069AB39CE6E129DDB483E4876C4789B6A828EBD8B90A7767F94F54ED27BF4C",
-    "latest_task_id": "ABC_PRE2019_WARMUP_DATA_ACCESS_AUTHORIZATION_V1",
-    "current_bottleneck": "ABC_2019_2023_AUTHORITY_DATA_READINESS_AUDIT_V1",
+    "full_archive_repo_path": "governance/archive/AKAH_BOT_SYSTEM_CHARTER_REV275_FULL.json.gz",
+    "full_archive_size_bytes": 16814430,
+    "full_archive_sha256": "994F06B5A7BBC8948B7E9CC40ACE82B184329220E6446F16DC7D4A17DAFEFCC9",
+    "latest_task_id": "ABC_2019_2023_AUTHORITY_DATA_READINESS_AUDIT_V1",
+    "current_bottleneck": "ABC_2019_2023_AUTHORITY_DATA_READINESS_AUDIT_V1_RETRY_V1",
     "governance_sync_status": "SYNCHRONIZED_TO_LATEST_EXECUTION_EVENT"
   }
 }
