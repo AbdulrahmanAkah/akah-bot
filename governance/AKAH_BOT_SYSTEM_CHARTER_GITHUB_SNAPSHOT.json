@@ -424,7 +424,7 @@
     "preinstall_head": "b3142d0135d393088ab3fe55c53b0e28ec7574cb"
   },
   "charter_id": "AKAH_BOT_SYSTEM_CHARTER",
-  "charter_revision": 279,
+  "charter_revision": 280,
   "constitutional_core": {
     "amendment_rule": "The constitutional core may change only after explicit user authorization. Ordinary task closeout may update current_state, bottleneck, evidence summary, priority ordering, and task history but may not silently alter core principles.",
     "core_version": 1,
@@ -576,7 +576,7 @@
     "counterfactual_profit_claim": false,
     "cross_universe_classification": "UNIVERSE_STRATA_CONTAIN_DIVERGENT_REPLAY_INFORMATION",
     "cross_universe_exact": false,
-    "current_bottleneck": "ABC_2019_2023_FIVE_YEAR_EXECUTION_AUTHORIZATION_GATE",
+    "current_bottleneck": "ABC_2019_2023_FIVE_YEAR_EXECUTION_V1",
     "dynamic_roles_all_bound": false,
     "economic_analysis": false,
     "economic_interpretation_performed": false,
@@ -1626,54 +1626,45 @@
   },
   "last_completed_task": {
     "alignment": "ALIGNED_WITH_SCOPE_UPDATE",
-    "axis": "ABC_PRE2024_RD23_LINEAGE_TEMPORAL_SOURCE_AUTHORITY",
-    "completed_at_utc": "2026-09-19T22:08:03+00:00",
-    "completed_charter_revision": 279,
+    "axis": "ABC_2019_2023_FIVE_YEAR_EXECUTION_AUTHORIZATION",
+    "completed_at_utc": "2026-09-19T22:11:30+00:00",
+    "completed_charter_revision": 280,
     "evidence": [
       {
-        "path": "governance/abc_pre2024_temporal_source_authority_remediation_v2/rd23_temporal_source_authority.json",
-        "sha256": "EA80CC7420B2B486E9A037F24EE2CDE20AA0E3EC3069D39E034B4614A1D90498"
+        "path": "governance/abc_2019_2023_five_year_execution_authorization_gate_v1/execution_authorization_manifest.json",
+        "sha256": "CC0066109D71A8A5647C803FFFADED18936E2215288D60FD95434243B9000D96"
       },
       {
-        "path": "governance/abc_pre2024_temporal_source_authority_remediation_v2/pair_specific_readiness_windows.json",
-        "sha256": "B29037F87E94F3952F9EEDA83D9227633A94EE4A996D3E32CCD0DDC25C51EE9E"
-      },
-      {
-        "path": "governance/abc_pre2024_temporal_source_authority_remediation_v2/execution_safety_audit.json",
-        "sha256": "1F3C20B5F703C871D09E6C84BEF99CBE86F36CD21D767D1C620D432EB599E13D"
-      },
-      {
-        "path": "governance/abc_pre2024_temporal_source_authority_remediation_v2/canonical_result.json",
-        "sha256": "A3DE164037F81F35521747203D8E996B3F8E534A48BE9AB5198D528E7708B1E0"
+        "path": "governance/abc_2019_2023_five_year_execution_authorization_gate_v1/canonical_result.json",
+        "sha256": "54F7D0D4811F26E717F6E28FD1168C2E2ECE09ED2345D16A705830AD2B1C6388"
       }
     ],
     "governance_declarations": {
-      "2023_new_raw_or_replay_accessed": true,
-      "2024_market_data_accessed": false,
+      "2023_new_raw_or_replay_accessed": false,
       "2024_used_as_fresh_holdout": false,
       "2024_used_to_define_new_runtime_rule": false,
       "2025_accessed": false,
-      "2025_market_data_accessed": false,
       "abc_candidate_results_computed": false,
+      "candidate_replay_executed": false,
       "lookahead_or_future_information_used": false,
+      "market_data_accessed": false,
       "pair_or_event_identity_used_as_runtime_rule": false,
       "posthoc_outcome_threshold_search_used": false,
-      "pre2019_trades_or_pnl_computed": false,
-      "pre2019_warmup_accessed": true,
+      "pre2019_warmup_accessed": false,
       "production_changed": false
     },
-    "next_bottleneck": "ABC_2019_2023_FIVE_YEAR_EXECUTION_AUTHORIZATION_GATE",
-    "north_star_effect": "RD23 historical lineage bound as the authoritative 2019-2021 source; pair-specific causal readiness windows computed without Jan-1 false blocking. Five-year execution authorization ready=True. No A/B/C result opened.",
-    "objective": "Replace the false-negative filename/manifest temporal-source discovery with the exact historical RD23 source lineage that already evaluated 2019-2020 and temporally replicated 2021 from data/raw/rd16b/kucoin/<PAIR>/1h.parquet using pyarrow timestamp predicate pushdown. Bind that source authority, compute pair-specific causal ATR22/Donchian10 readiness windows through 2023, reuse already-proven 2022/2023 readiness and MAX_HOLD=168h authority, and determine whether the five-year execution authorization gate is now ready. No A/B/C outcome is opened.",
+    "next_bottleneck": "ABC_2019_2023_FIVE_YEAR_EXECUTION_V1",
+    "north_star_effect": "All pre-execution scientific and data-authority blockers are closed; the next task is the frozen 2019-2023 C->A->B execution batch.",
+    "objective": "Authorize exactly one preregistered five-year A/B/C execution batch after proving source authority, pair-specific readiness, native-state warmup authority, MAX_HOLD=168h, transition closure, and frozen A/B/C semantics. Freeze the execution manifest and hashes without opening market data, replaying a candidate, or revealing any A/B/C result.",
     "outcome": "PASS",
-    "pre_closeout_head": "b77dac27e55c7fb384be1938f5b0718c2efa6765",
-    "result_ref": "governance/abc_pre2024_temporal_source_authority_remediation_v2/canonical_result.json",
-    "result_sha256": "A3DE164037F81F35521747203D8E996B3F8E534A48BE9AB5198D528E7708B1E0",
-    "started_at_utc": "2026-09-19T22:06:53+00:00",
-    "starting_charter_revision": 278,
-    "starting_head": "0aa8cb5031dba9314b93fd9a7672e0851cb6f735",
-    "summary": "RD23 historical lineage bound as the authoritative 2019-2021 source; pair-specific causal readiness windows computed without Jan-1 false blocking. Five-year execution authorization ready=True. No A/B/C result opened.",
-    "task_id": "ABC_PRE2024_TEMPORAL_SOURCE_AUTHORITY_REMEDIATION_V2",
+    "pre_closeout_head": "8283d41d4ce5f9d0f8fae8e7d7b9b46bd7d894dd",
+    "result_ref": "governance/abc_2019_2023_five_year_execution_authorization_gate_v1/canonical_result.json",
+    "result_sha256": "54F7D0D4811F26E717F6E28FD1168C2E2ECE09ED2345D16A705830AD2B1C6388",
+    "started_at_utc": "2026-09-19T22:11:26+00:00",
+    "starting_charter_revision": 279,
+    "starting_head": "c497455cd42c0158439fe6d6e08b146d81ab3bf5",
+    "summary": "The preregistered five-year A/B/C batch is authorized for one execution under the frozen manifest. No A/B/C result was opened by this gate.",
+    "task_id": "ABC_2019_2023_FIVE_YEAR_EXECUTION_AUTHORIZATION_GATE",
     "vision_impact": "ADVANCES"
   },
   "last_execution_event": {
@@ -1882,8 +1873,8 @@
     "task_id": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_PRE_PROGRESS_THESIS_NON_CONFIRMATION_COUNTERFACTUAL_PORTFOLIO_REPLAY_V1",
     "task_start_head": "1cef008128d6da19d9b09ac2b73801d68a2e0e0d"
   },
-  "last_updated_at_utc": "2026-09-19T22:08:03+00:00",
-  "last_updated_by_task": "ABC_PRE2024_TEMPORAL_SOURCE_AUTHORITY_REMEDIATION_V2",
+  "last_updated_at_utc": "2026-09-19T22:11:30+00:00",
+  "last_updated_by_task": "ABC_2019_2023_FIVE_YEAR_EXECUTION_AUTHORIZATION_GATE",
   "latest_async_ready_state_control_denominator_authority_audit": {
     "actionability_inference_authorized": false,
     "audit_path": "C:\\Users\\abdul\\Downloads\\CAUSAL_EXIT_MECHANISM_PROFIT_ARM_COUNTERFACTUAL_EAG_PERSISTENCE_ASYNC_READY_STATE_CONTROL_DENOMINATOR_AUTHORITY_AUDIT_V1_AUDIT_20260916_171856.json",
@@ -3884,41 +3875,6 @@
     {
       "alignment": "ALIGNED_WITH_SCOPE_UPDATE",
       "axis": "TRANSITION_ADMISSION_ONLY_2023_TEMPORAL_REPLICATION",
-      "completed_at_utc": "2026-09-19T14:57:44+00:00",
-      "completed_charter_revision": 260,
-      "evidence": [
-        {
-          "path": "governance/p38_2023_replication_retry_v1_fail_closed/failure.json",
-          "sha256": "042878B6D8B318ECE9409EF921EDFE7C20ACA02386ABF992CCA64E698498E385"
-        }
-      ],
-      "governance_declarations": {
-        "2023_new_raw_or_replay_accessed": true,
-        "2024_used_as_fresh_holdout": false,
-        "2024_used_to_define_new_runtime_rule": false,
-        "2025_accessed": false,
-        "lookahead_or_future_information_used": false,
-        "pair_or_event_identity_used_as_runtime_rule": false,
-        "posthoc_outcome_threshold_search_used": false,
-        "production_changed": false
-      },
-      "next_bottleneck": "FINAL_EXIT_BRAIN_PRE_2024_ARCHITECTURE_P38_TRANSITION_ADMISSION_ONLY_2023_TEMPORAL_REPLICATION_EXECUTION_V1_RETRY_V1_RETRY_V1",
-      "north_star_effect": "Preserves the pre-registered replication contract.",
-      "objective": "Execute the P36/P37 pre-registered TRANSITION admission-only temporal replication on ROBUSTNESS_2023 with the frozen candidate, exact period-bound observer, no tuning/search, frozen four-gate adjudication, and required mechanism decomposition. No 2024/2025 access or production change.",
-      "outcome": "FAIL_CLOSED",
-      "pre_closeout_head": "d2af140d94cb4bc54691e01a6bcefe7d419a7dc7",
-      "result_ref": "governance/p38_2023_replication_retry_v1_fail_closed/failure.json",
-      "result_sha256": "042878B6D8B318ECE9409EF921EDFE7C20ACA02386ABF992CCA64E698498E385",
-      "started_at_utc": "2026-09-19T14:57:14+00:00",
-      "starting_charter_revision": 259,
-      "starting_head": "71e7efef9636a3c2559bf70bcff8499091b6b8c1",
-      "summary": "P38 failed closed technically/parity-wise; no scientific replication conclusion recorded.",
-      "task_id": "FINAL_EXIT_BRAIN_PRE_2024_ARCHITECTURE_P38_TRANSITION_ADMISSION_ONLY_2023_TEMPORAL_REPLICATION_EXECUTION_V1_RETRY_V1",
-      "vision_impact": "PRESERVES"
-    },
-    {
-      "alignment": "ALIGNED_WITH_SCOPE_UPDATE",
-      "axis": "TRANSITION_ADMISSION_ONLY_2023_TEMPORAL_REPLICATION",
       "completed_at_utc": "2026-09-19T15:04:28+00:00",
       "completed_charter_revision": 261,
       "evidence": [
@@ -4768,6 +4724,49 @@
       "summary": "RD23 historical lineage bound as the authoritative 2019-2021 source; pair-specific causal readiness windows computed without Jan-1 false blocking. Five-year execution authorization ready=True. No A/B/C result opened.",
       "task_id": "ABC_PRE2024_TEMPORAL_SOURCE_AUTHORITY_REMEDIATION_V2",
       "vision_impact": "ADVANCES"
+    },
+    {
+      "alignment": "ALIGNED_WITH_SCOPE_UPDATE",
+      "axis": "ABC_2019_2023_FIVE_YEAR_EXECUTION_AUTHORIZATION",
+      "completed_at_utc": "2026-09-19T22:11:30+00:00",
+      "completed_charter_revision": 280,
+      "evidence": [
+        {
+          "path": "governance/abc_2019_2023_five_year_execution_authorization_gate_v1/execution_authorization_manifest.json",
+          "sha256": "CC0066109D71A8A5647C803FFFADED18936E2215288D60FD95434243B9000D96"
+        },
+        {
+          "path": "governance/abc_2019_2023_five_year_execution_authorization_gate_v1/canonical_result.json",
+          "sha256": "54F7D0D4811F26E717F6E28FD1168C2E2ECE09ED2345D16A705830AD2B1C6388"
+        }
+      ],
+      "governance_declarations": {
+        "2023_new_raw_or_replay_accessed": false,
+        "2024_used_as_fresh_holdout": false,
+        "2024_used_to_define_new_runtime_rule": false,
+        "2025_accessed": false,
+        "abc_candidate_results_computed": false,
+        "candidate_replay_executed": false,
+        "lookahead_or_future_information_used": false,
+        "market_data_accessed": false,
+        "pair_or_event_identity_used_as_runtime_rule": false,
+        "posthoc_outcome_threshold_search_used": false,
+        "pre2019_warmup_accessed": false,
+        "production_changed": false
+      },
+      "next_bottleneck": "ABC_2019_2023_FIVE_YEAR_EXECUTION_V1",
+      "north_star_effect": "All pre-execution scientific and data-authority blockers are closed; the next task is the frozen 2019-2023 C->A->B execution batch.",
+      "objective": "Authorize exactly one preregistered five-year A/B/C execution batch after proving source authority, pair-specific readiness, native-state warmup authority, MAX_HOLD=168h, transition closure, and frozen A/B/C semantics. Freeze the execution manifest and hashes without opening market data, replaying a candidate, or revealing any A/B/C result.",
+      "outcome": "PASS",
+      "pre_closeout_head": "8283d41d4ce5f9d0f8fae8e7d7b9b46bd7d894dd",
+      "result_ref": "governance/abc_2019_2023_five_year_execution_authorization_gate_v1/canonical_result.json",
+      "result_sha256": "54F7D0D4811F26E717F6E28FD1168C2E2ECE09ED2345D16A705830AD2B1C6388",
+      "started_at_utc": "2026-09-19T22:11:26+00:00",
+      "starting_charter_revision": 279,
+      "starting_head": "c497455cd42c0158439fe6d6e08b146d81ab3bf5",
+      "summary": "The preregistered five-year A/B/C batch is authorized for one execution under the frozen manifest. No A/B/C result was opened by this gate.",
+      "task_id": "ABC_2019_2023_FIVE_YEAR_EXECUTION_AUTHORIZATION_GATE",
+      "vision_impact": "ADVANCES"
     }
   ],
   "schema_version": "akah-bot-system-charter-v1",
@@ -4814,18 +4813,18 @@
   "github_sync_metadata": {
     "schema_version": "akah-bot-github-governance-snapshot-v3",
     "snapshot_semantics": "CURRENT_CANONICAL_GOVERNANCE_STATE_WITH_RECENT_EXECUTION_HISTORY_EXTERNALIZED",
-    "charter_revision": 279,
+    "charter_revision": 280,
     "source_branch": "research/rd48-cross-venue-price-level-basis-direct-utility-v1",
-    "source_head": "c497455cd42c0158439fe6d6e08b146d81ab3bf5",
+    "source_head": "17a34e2f929c1880c98f39e76f27e628ccd0e5ac",
     "canonical_local_charter_path": "governance/AKAH_BOT_SYSTEM_CHARTER.json",
-    "canonical_local_charter_size_bytes": 213151513,
-    "canonical_local_charter_sha256": "879061C7A0419445106206F9BB43B054556DCA058DB26F6819C2AA8164B986E8",
+    "canonical_local_charter_size_bytes": 213151109,
+    "canonical_local_charter_sha256": "CC247E2DB5217DA04B8627E81785D9A0BBE2B21ED0494216F47782A53A058678",
     "externalized_top_level_key": "recent_execution_history",
-    "full_archive_repo_path": "governance/archive/AKAH_BOT_SYSTEM_CHARTER_REV279_FULL.json.gz",
-    "full_archive_size_bytes": 16814972,
-    "full_archive_sha256": "70C7ED0DCBCE21951B3F38E5F56A1F3CAF8202D6C8D2639E3D4E91A325DF926B",
-    "latest_task_id": "ABC_PRE2024_TEMPORAL_SOURCE_AUTHORITY_REMEDIATION_V2",
-    "current_bottleneck": "ABC_2019_2023_FIVE_YEAR_EXECUTION_AUTHORIZATION_GATE",
+    "full_archive_repo_path": "governance/archive/AKAH_BOT_SYSTEM_CHARTER_REV280_FULL.json.gz",
+    "full_archive_size_bytes": 16815125,
+    "full_archive_sha256": "F1BEF158C162F5BE83FF9B02AA4034D1A271851AE276E68B70BFAD08DFAE62C7",
+    "latest_task_id": "ABC_2019_2023_FIVE_YEAR_EXECUTION_AUTHORIZATION_GATE",
+    "current_bottleneck": "ABC_2019_2023_FIVE_YEAR_EXECUTION_V1",
     "governance_sync_status": "SYNCHRONIZED_TO_LATEST_EXECUTION_EVENT"
   }
 }
