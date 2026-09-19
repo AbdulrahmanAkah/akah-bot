@@ -1,41 +1,61 @@
 {
   "schema_version": "akah-bot-github-governance-sync-manifest-v3",
   "charter_id": "AKAH_BOT_SYSTEM_CHARTER",
-  "charter_revision": 270,
+  "charter_revision": 271,
   "constitutional_core_sha256": "3FB4AAC711B9F8D52F68457D99B0434BCECB32B773155BA8BB1A4FFB85BE0219",
   "source_branch": "research/rd48-cross-venue-price-level-basis-direct-utility-v1",
-  "source_head": "4dbe411bae15508c428ef4b0414f525afc7202a1",
+  "source_head": "97c58757121ec27cc73458a6ce03fde36b207888",
   "canonical_local_charter": {
     "path": "governance/AKAH_BOT_SYSTEM_CHARTER.json",
-    "sha256": "2EDFD328941734AC6F20DA08010BEF6EED15B19678A1C47F42003287034DCF9F",
-    "size_bytes": 213157051
+    "sha256": "2F79DB5CFEC807EF133E020B2B8CB6BB6EBF7C29541305EA9CCB76869D0B9A42",
+    "size_bytes": 213158229
   },
   "github_snapshot": {
     "path": "governance/AKAH_BOT_SYSTEM_CHARTER_GITHUB_SNAPSHOT.json",
-    "sha256": "D36A6C40ABB5160D62484BAF39252B5E9776CE8BEAEA7B53B59ABAABE971D02D",
-    "size_bytes": 302113,
+    "sha256": "71610E478A4B5613F13D13B63821647B216EAC44C795C449961A57AE36F4900D",
+    "size_bytes": 303259,
     "externalized_top_level_key": "recent_execution_history"
   },
   "full_history_archive": {
-    "path": "governance/archive/AKAH_BOT_SYSTEM_CHARTER_REV270_FULL.json.gz",
-    "sha256": "C986C0F65FDB3B51372F838F0AC687E138617290DCD5C0EC82AAFBC6EC444E37",
-    "size_bytes": 16815390,
+    "path": "governance/archive/AKAH_BOT_SYSTEM_CHARTER_REV271_FULL.json.gz",
+    "sha256": "2E0AA1E7736EF2A5B8091786A5B5DB975631C6D7E9017E014B3D08FA6747F594",
+    "size_bytes": 16815942,
     "compression": "gzip",
     "contains_complete_original_charter_bytes": true
   },
   "latest_completed_task": {
     "alignment": "ALIGNED",
-    "axis": "TRANSITION_EVENT_LEVEL_DIAGNOSTIC_AUTHORITY",
-    "completed_at_utc": "2026-09-19T21:11:58+00:00",
-    "completed_charter_revision": 270,
+    "axis": "TRANSITION_EVENT_LEVEL_CROSS_YEAR_DIAGNOSIS",
+    "completed_at_utc": "2026-09-19T21:25:32+00:00",
+    "completed_charter_revision": 271,
     "evidence": [
       {
-        "path": "governance/p43_transition_exact_authority/canonical_result.json",
-        "sha256": "8bbb8fb176dc5f3a36fdb25e07a54219a786951e5cf97c37a1314c3612c31cee"
+        "path": "governance\\transition_event_diagnosis_v1\\diagnostic_measurements.json",
+        "sha256": "D51E7B85F387B5884F010249FC1272C82D139C740240E29F10DA109E611B1ECB"
+      },
+      {
+        "path": "governance\\transition_event_diagnosis_v1\\parity.json",
+        "sha256": "E0CDA99F0475559B0EEAE2D5437858427C27856C70C6CBE0F72F0FF31E24ADFA"
+      },
+      {
+        "path": "governance\\transition_event_diagnosis_v1\\execution_contract.json",
+        "sha256": "B2A7C71B5E82B5EDB07C5EA3CB76F29C697A5EE5B7A0E9981EC4AA80B6CD1C77"
+      },
+      {
+        "path": "governance\\transition_event_diagnosis_v1\\protocol.json",
+        "sha256": "3AA56D3ABF2C5BD2ECD87378A39A88C209D8C7832CB7A78CE2887E8880111A0C"
+      },
+      {
+        "path": "governance\\transition_event_diagnosis_v1\\summary.md",
+        "sha256": "51DDC96FCA329E961A50DD0922F5BDAA1C40B9B85CB3FED547C24CB51B453A29"
+      },
+      {
+        "path": "governance/transition_event_diagnosis_v1/artifact_manifest.json",
+        "sha256": "6698420c5905da4162884ea392d17efcde950105900b7d4372c06634f9216aa3"
       }
     ],
     "governance_declarations": {
-      "2023_new_raw_or_replay_accessed": false,
+      "2023_new_raw_or_replay_accessed": true,
       "2024_used_as_fresh_holdout": false,
       "2024_used_to_define_new_runtime_rule": false,
       "2025_accessed": false,
@@ -44,20 +64,20 @@
       "posthoc_outcome_threshold_search_used": false,
       "production_changed": false
     },
-    "next_bottleneck": "TRANSITION_2023_EVENT_LEVEL_EXPORT_REPLAY_AND_CROSS_YEAR_DIAGNOSIS_V1",
-    "north_star_effect": "Closes schema ambiguity without changing admission logic; authorizes only frozen P38 event export and descriptive diagnosis.",
-    "objective": "Prove P13 composite identity and exact P19 direct set; adjudicate missing P38 event exports without replay.",
+    "next_bottleneck": "TRANSITION_EVENT_LEVEL_DIAGNOSIS_MANDATORY_HUMAN_REVIEW_V1",
+    "north_star_effect": "Completes closed-candidate diagnosis without new runtime rules; distinguishes descriptive attribution from unproven entry-state causation.",
+    "objective": "Execute one unchanged frozen P38 2023 control/treatment export with exact parity, then complete cross-year direct TRANSITION descriptive diagnosis under the frozen protocol.",
     "outcome": "PASS",
-    "pre_closeout_head": "e517ea0fe95d5513c8dfab79842b5c582827a86e",
-    "result_ref": "governance/p43_transition_exact_authority/canonical_result.json",
-    "result_sha256": "8BBB8FB176DC5F3A36FDB25E07A54219A786951E5CF97C37A1314C3612C31CEE",
-    "started_at_utc": "2026-09-19T21:10:53+00:00",
-    "starting_charter_revision": 269,
-    "starting_head": "29b369ef4dddfc50cfa408c1f9855d849c568001",
-    "summary": "P13 composite identity proven; exact P19 direct 173 trades reconciled; P38 event exports absent within bounded evidence census.",
-    "task_id": "FINAL_EXIT_BRAIN_PRE_2024_ARCHITECTURE_P43_PREEXISTING_EVENT_LEVEL_TRANSITION_AUTHORITY_SCHEMA_ADJUDICATION_V1_RETRY_V1",
+    "pre_closeout_head": "2b5efbd6f8c2a36f6286bd6bc04e3e3a67caeed1",
+    "result_ref": "governance/transition_event_diagnosis_v1/canonical_result.json",
+    "result_sha256": "F09F73713A295140895E154821EA1F1540C27E71D85E4E9D5B465F34B635E0ED",
+    "started_at_utc": "2026-09-19T21:17:14+00:00",
+    "starting_charter_revision": 270,
+    "starting_head": "4dbe411bae15508c428ef4b0414f525afc7202a1",
+    "summary": "Exact P38 export parity and direct sets 173/131 proven. Mixed mechanism: higher win fraction and smaller average loss; 2023 positive sign depends on largest winner. Portfolio-path amplification separately reconciled.",
+    "task_id": "TRANSITION_2023_EVENT_LEVEL_EXPORT_REPLAY_AND_CROSS_YEAR_DIAGNOSIS_V1",
     "vision_impact": "ADVANCES"
   },
-  "current_bottleneck": "TRANSITION_2023_EVENT_LEVEL_EXPORT_REPLAY_AND_CROSS_YEAR_DIAGNOSIS_V1",
+  "current_bottleneck": "TRANSITION_EVENT_LEVEL_DIAGNOSIS_MANDATORY_HUMAN_REVIEW_V1",
   "governance_sync_contract_version": "AKAH_BOT_CHARTER_SYNCHRONIZATION_CONTRACT_V1"
 }
