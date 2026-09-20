@@ -424,7 +424,7 @@
     "preinstall_head": "b3142d0135d393088ab3fe55c53b0e28ec7574cb"
   },
   "charter_id": "AKAH_BOT_SYSTEM_CHARTER",
-  "charter_revision": 297,
+  "charter_revision": 298,
   "constitutional_core": {
     "amendment_rule": "The constitutional core may change only after explicit user authorization. Ordinary task closeout may update current_state, bottleneck, evidence summary, priority ordering, and task history but may not silently alter core principles.",
     "core_version": 1,
@@ -576,7 +576,7 @@
     "counterfactual_profit_claim": false,
     "cross_universe_classification": "UNIVERSE_STRATA_CONTAIN_DIVERGENT_REPLAY_INFORMATION",
     "cross_universe_exact": false,
-    "current_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_OBSERVABILITY_SOURCE_GAP_REVIEW_V1",
+    "current_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_OBSERVABILITY_PROTOCOL_AMENDMENT_REVIEW_V1",
     "dynamic_roles_all_bound": false,
     "economic_analysis": false,
     "economic_interpretation_performed": false,
@@ -1626,33 +1626,33 @@
   },
   "last_completed_task": {
     "alignment": "ALIGNED_WITH_SCOPE_UPDATE",
-    "axis": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_OBSERVABILITY_SOURCE_CAPABILITY_AUDIT",
-    "completed_at_utc": "2026-09-20T12:02:35+00:00",
-    "completed_charter_revision": 297,
+    "axis": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_OBSERVABILITY_SOURCE_GAP_REVIEW",
+    "completed_at_utc": "2026-09-20T12:09:06+00:00",
+    "completed_charter_revision": 298,
     "evidence": [
       {
-        "path": "governance/abc_lifecycle_state_machine_persistent_state_observability_source_capability_audit_v1/canonical_result.json",
-        "sha256": "0D286CF7C74540861826056B200CDED37C29DBF833E3B5EF2B830D8F24E935E9"
+        "path": "governance/abc_lifecycle_state_machine_persistent_state_observability_source_gap_review_v1/canonical_result.json",
+        "sha256": "5F875E889BE2D60044BAD9CA66110CFA1B390CAE8192A001E4F34AB896D67CB3"
       },
       {
-        "path": "governance/abc_lifecycle_state_machine_persistent_state_observability_source_capability_audit_v1/capability_audit.json",
-        "sha256": "A9865101FB1679C99AFFF1ABAD9FDC4DF1B982F80DB719532E69821124448D7A"
+        "path": "governance/abc_lifecycle_state_machine_persistent_state_observability_source_gap_review_v1/source_gap_review.json",
+        "sha256": "C3A1117FBEA40D7FF9F5D248505C43FB34ACF495FC1D39D225EABBB8B6DCE968"
       },
       {
-        "path": "governance/abc_lifecycle_state_machine_persistent_state_observability_source_capability_audit_v1/observable_source_capability_matrix.csv",
-        "sha256": "481EB90637508DE61B2388F3D4468C86AF8FAF5547E185AC39A0F58726F9135E"
+        "path": "governance/abc_lifecycle_state_machine_persistent_state_observability_source_gap_review_v1/authority_component_matrix.csv",
+        "sha256": "FA235D9F36A7EB01914B6C0D9B503F38DF9E607E2A0B19689804B1952B26AB00"
       },
       {
-        "path": "governance/abc_lifecycle_state_machine_persistent_state_observability_source_capability_audit_v1/required_source_code_bindings.json",
-        "sha256": "177F018D185C395B005A4D037083B4614204CE18161F9DF47E84107063297363"
+        "path": "governance/abc_lifecycle_state_machine_persistent_state_observability_source_gap_review_v1/observable_gap_disposition.csv",
+        "sha256": "D7FB129EDDE54E539C19718B9718E34CAF5861ED0C9095CCCAAB85A266A495F0"
       },
       {
-        "path": "governance/abc_lifecycle_state_machine_persistent_state_observability_source_capability_audit_v1/raw_reconstruction_need_summary.json",
-        "sha256": "CE72ADDAEB5CA47423148D5496D5D4F807416BAAB775786A753216F37260F1B8"
+        "path": "governance/abc_lifecycle_state_machine_persistent_state_observability_source_gap_review_v1/source_gap_evidence.json",
+        "sha256": "64D17011F4DFB8CC1A77EEF3E6D501D3F2FB92C0038C1DFF62F9C90C558B517B"
       },
       {
-        "path": "governance/abc_lifecycle_state_machine_persistent_state_observability_source_capability_audit_v1/output_manifest.json",
-        "sha256": "2F80A2FEECB4AF42F7CFEF0BFBF1FA5C705030B7BAA08635745809D4BE205925"
+        "path": "governance/abc_lifecycle_state_machine_persistent_state_observability_source_gap_review_v1/output_manifest.json",
+        "sha256": "49AB9A0050954F163FF2E1A8A6F02F3F15DEDE1CAE3CCBBFAB455B9E16EA8E96"
       }
     ],
     "governance_declarations": {
@@ -1666,6 +1666,7 @@
       "exit_action_authorized": false,
       "exit_arbiter_authorized": false,
       "lookahead_or_future_information_used": false,
+      "market_data_file_metadata_accessed": true,
       "market_data_rows_accessed": false,
       "market_data_values_accessed": false,
       "new_threshold_created": false,
@@ -1679,18 +1680,18 @@
       "runtime_state_machine_authorized": false,
       "state_defined": false
     },
-    "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_OBSERVABILITY_SOURCE_GAP_REVIEW_V1",
-    "north_star_effect": "Completed source capability audit for 42 frozen observables without reading market-data rows or PnL. Capability counts={'DERIVABLE_FROM_EXISTING_FROZEN_OUTPUTS_WITHOUT_MARKET_DATA': 9, 'DIRECTLY_AVAILABLE_IN_EXISTING_FROZEN_OUTPUT': 11, 'NOT_CURRENTLY_DERIVABLE_WITH_PROVEN_AUTHORITY': 22}. Routing=ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_OBSERVABILITY_SOURCE_GAP_REVIEW_V1 because UNPROVEN_OBSERVABLE_CAPABILITY_PRESENT. No observable values, persistence definitions, thresholds or runtime behavior were created.",
-    "objective": "Audit source capability for every frozen persistent-state observable without reading market-data rows or PnL. Inspect only frozen output headers/metadata, tracked source-code text and frozen protocol authorities. Classify each observable as directly available, derivable from existing frozen outputs without market data, causally reconstructable from frozen pre-2024 market data with proven semantics/code authority, or not currently derivable with proven authority. Produce exact source bindings and route to materialization, reconstruction protocol freeze, or source-gap review.",
+    "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_OBSERVABILITY_PROTOCOL_AMENDMENT_REVIEW_V1",
+    "north_star_effect": "Reviewed all 22 unresolved observability source gaps without reading market-data rows or PnL. Reconstruction-ready=0, binding-gaps=16, semantic-gaps=6. Routing=ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_OBSERVABILITY_PROTOCOL_AMENDMENT_REVIEW_V1 because ONE_OR_MORE_OBSERVABLES_LACK_FROZEN_SEMANTIC_AUTHORITY.",
+    "objective": "Review the 22 unresolved persistent-state observability source gaps without reading any market-data row or PnL. Decompose whether the prior audit failed because semantic authority, raw-source authority, executable loader/aggregation/filtering bindings, or merely discovery/binding evidence was missing. Use the frozen ABC/LSM/trace authorities, exact filesystem metadata for the known pre-2024 raw root and membership source, and tracked source/governance text. Decide only whether causal feature reconstruction protocol work is justified, source-authority binding remediation is required, or the observability protocol itself needs amendment.",
     "outcome": "PASS",
-    "pre_closeout_head": "e5eadd82334ec68ada3c2653fbe997882b1179d6",
-    "result_ref": "governance/abc_lifecycle_state_machine_persistent_state_observability_source_capability_audit_v1/canonical_result.json",
-    "result_sha256": "0D286CF7C74540861826056B200CDED37C29DBF833E3B5EF2B830D8F24E935E9",
-    "started_at_utc": "2026-09-20T12:02:14+00:00",
-    "starting_charter_revision": 296,
-    "starting_head": "0b985b4e74c124a12508fef09cc86f1fad5b2cc9",
-    "summary": "Completed source capability audit for 42 frozen observables without reading market-data rows or PnL. Capability counts={'DERIVABLE_FROM_EXISTING_FROZEN_OUTPUTS_WITHOUT_MARKET_DATA': 9, 'DIRECTLY_AVAILABLE_IN_EXISTING_FROZEN_OUTPUT': 11, 'NOT_CURRENTLY_DERIVABLE_WITH_PROVEN_AUTHORITY': 22}. Routing=ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_OBSERVABILITY_SOURCE_GAP_REVIEW_V1 because UNPROVEN_OBSERVABLE_CAPABILITY_PRESENT. No observable values, persistence definitions, thresholds or runtime behavior were created.",
-    "task_id": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_OBSERVABILITY_SOURCE_CAPABILITY_AUDIT_V1",
+    "pre_closeout_head": "09f03c212ae8389c7ba8803116b1002f0243842b",
+    "result_ref": "governance/abc_lifecycle_state_machine_persistent_state_observability_source_gap_review_v1/canonical_result.json",
+    "result_sha256": "5F875E889BE2D60044BAD9CA66110CFA1B390CAE8192A001E4F34AB896D67CB3",
+    "started_at_utc": "2026-09-20T12:08:57+00:00",
+    "starting_charter_revision": 297,
+    "starting_head": "347a7f8b8adf522b7a62a46070bff4e75722feb2",
+    "summary": "Reviewed all 22 unresolved observability source gaps without reading market-data rows or PnL. Reconstruction-ready=0, binding-gaps=16, semantic-gaps=6. Routing=ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_OBSERVABILITY_PROTOCOL_AMENDMENT_REVIEW_V1 because ONE_OR_MORE_OBSERVABLES_LACK_FROZEN_SEMANTIC_AUTHORITY.",
+    "task_id": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_OBSERVABILITY_SOURCE_GAP_REVIEW_V1",
     "vision_impact": "ADVANCES"
   },
   "last_execution_event": {
@@ -1899,8 +1900,8 @@
     "task_id": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_PRE_PROGRESS_THESIS_NON_CONFIRMATION_COUNTERFACTUAL_PORTFOLIO_REPLAY_V1",
     "task_start_head": "1cef008128d6da19d9b09ac2b73801d68a2e0e0d"
   },
-  "last_updated_at_utc": "2026-09-20T12:02:35+00:00",
-  "last_updated_by_task": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_OBSERVABILITY_SOURCE_CAPABILITY_AUDIT_V1",
+  "last_updated_at_utc": "2026-09-20T12:09:06+00:00",
+  "last_updated_by_task": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_OBSERVABILITY_SOURCE_GAP_REVIEW_V1",
   "latest_async_ready_state_control_denominator_authority_audit": {
     "actionability_inference_authorized": false,
     "audit_path": "C:\\Users\\abdul\\Downloads\\CAUSAL_EXIT_MECHANISM_PROFIT_ARM_COUNTERFACTUAL_EAG_PERSISTENCE_ASYNC_READY_STATE_CONTROL_DENOMINATOR_AUTHORITY_AUDIT_V1_AUDIT_20260916_171856.json",
@@ -3900,63 +3901,6 @@
   "recent_task_history": [
     {
       "alignment": "ALIGNED_WITH_SCOPE_UPDATE",
-      "axis": "ABC_PRE2024_MARKET_SOURCE_AUTHORITY_AND_MAX_HOLD_REMEDIATION",
-      "completed_at_utc": "2026-09-19T21:59:38+00:00",
-      "completed_charter_revision": 278,
-      "evidence": [
-        {
-          "path": "governance/abc_pre2024_market_source_authority_and_max_hold_remediation_v1/pre2024_temporal_source_authority.json",
-          "sha256": "A4FD9E037148C966C118CA7BF3AF9F4D5AEC5A4A73D8C6ECB4CC60EDDA765BDA"
-        },
-        {
-          "path": "governance/abc_pre2024_market_source_authority_and_max_hold_remediation_v1/pair_readiness_recomputed.json",
-          "sha256": "7F2AE63EDAD43980A03FF46D1DB4E4FE8D85890AF53E3E8E315716A619D037A5"
-        },
-        {
-          "path": "governance/abc_pre2024_market_source_authority_and_max_hold_remediation_v1/max_hold_168h_authority_reconciliation.json",
-          "sha256": "D238B552A5A9AE827099B65D9BFE5DA71BF914C945D3677EF41442E364242CB8"
-        },
-        {
-          "path": "governance/abc_pre2024_market_source_authority_and_max_hold_remediation_v1/remediation_audit.json",
-          "sha256": "EFFD1570A6BBFF162D4553B85ADA0ED0DFDC92A00136806F5058C24832454B43"
-        },
-        {
-          "path": "governance/abc_pre2024_market_source_authority_and_max_hold_remediation_v1/canonical_result.json",
-          "sha256": "BCE5E7A38626C5919682BEEA8FE117988D4E383DE454ACBEE311E894440F6F2D"
-        }
-      ],
-      "governance_declarations": {
-        "2023_new_raw_or_replay_accessed": true,
-        "2024_market_data_accessed": false,
-        "2024_used_as_fresh_holdout": false,
-        "2024_used_to_define_new_runtime_rule": false,
-        "2025_accessed": false,
-        "2025_market_data_accessed": false,
-        "abc_candidate_results_computed": false,
-        "lookahead_or_future_information_used": false,
-        "max_hold_semantics_changed": false,
-        "pair_or_event_identity_used_as_runtime_rule": false,
-        "posthoc_outcome_threshold_search_used": false,
-        "pre2019_trades_or_pnl_computed": false,
-        "pre2019_warmup_accessed": true,
-        "production_changed": false
-      },
-      "next_bottleneck": "ABC_PRE2024_TEMPORAL_SOURCE_AUTHORITY_REMEDIATION_V2",
-      "north_star_effect": "ABC pre-2024 source-authority and MAX_HOLD remediation completed: data_readiness=BLOCKED, max_hold_168h=PROVEN. No A/B/C candidate result was opened.",
-      "objective": "Close the two preregistration blockers before any A/B/C result: (1) recover authoritative pre-2024 temporal source bounds for the existing 1H/4H market files without opening unresolved files that may contain 2024/2025 rows, then recompute 2019-2023 per-pair T0 and warmup readiness; (2) reconcile the frozen Rev273 MAX_HOLD=168h semantics with the already-proven native source enforcement and passing tests from Rev277. No candidate outcome execution.",
-      "outcome": "PASS",
-      "pre_closeout_head": "f7e35f6db3e389e11a2beca5826d66e41a5a6efc",
-      "result_ref": "governance/abc_pre2024_market_source_authority_and_max_hold_remediation_v1/canonical_result.json",
-      "result_sha256": "BCE5E7A38626C5919682BEEA8FE117988D4E383DE454ACBEE311E894440F6F2D",
-      "started_at_utc": "2026-09-19T21:59:13+00:00",
-      "starting_charter_revision": 277,
-      "starting_head": "35d0822ccf25b991a45403d943908e81972f3b50",
-      "summary": "ABC pre-2024 source-authority and MAX_HOLD remediation completed: data_readiness=BLOCKED, max_hold_168h=PROVEN. No A/B/C candidate result was opened.",
-      "task_id": "ABC_DATA_READINESS_AND_MAX_HOLD_REMEDIATION_BEFORE_FIVE_YEAR_EXECUTION",
-      "vision_impact": "ADVANCES"
-    },
-    {
-      "alignment": "ALIGNED_WITH_SCOPE_UPDATE",
       "axis": "ABC_PRE2024_RD23_LINEAGE_TEMPORAL_SOURCE_AUTHORITY",
       "completed_at_utc": "2026-09-19T22:08:03+00:00",
       "completed_charter_revision": 279,
@@ -5172,6 +5116,76 @@
       "summary": "Completed source capability audit for 42 frozen observables without reading market-data rows or PnL. Capability counts={'DERIVABLE_FROM_EXISTING_FROZEN_OUTPUTS_WITHOUT_MARKET_DATA': 9, 'DIRECTLY_AVAILABLE_IN_EXISTING_FROZEN_OUTPUT': 11, 'NOT_CURRENTLY_DERIVABLE_WITH_PROVEN_AUTHORITY': 22}. Routing=ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_OBSERVABILITY_SOURCE_GAP_REVIEW_V1 because UNPROVEN_OBSERVABLE_CAPABILITY_PRESENT. No observable values, persistence definitions, thresholds or runtime behavior were created.",
       "task_id": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_OBSERVABILITY_SOURCE_CAPABILITY_AUDIT_V1",
       "vision_impact": "ADVANCES"
+    },
+    {
+      "alignment": "ALIGNED_WITH_SCOPE_UPDATE",
+      "axis": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_OBSERVABILITY_SOURCE_GAP_REVIEW",
+      "completed_at_utc": "2026-09-20T12:09:06+00:00",
+      "completed_charter_revision": 298,
+      "evidence": [
+        {
+          "path": "governance/abc_lifecycle_state_machine_persistent_state_observability_source_gap_review_v1/canonical_result.json",
+          "sha256": "5F875E889BE2D60044BAD9CA66110CFA1B390CAE8192A001E4F34AB896D67CB3"
+        },
+        {
+          "path": "governance/abc_lifecycle_state_machine_persistent_state_observability_source_gap_review_v1/source_gap_review.json",
+          "sha256": "C3A1117FBEA40D7FF9F5D248505C43FB34ACF495FC1D39D225EABBB8B6DCE968"
+        },
+        {
+          "path": "governance/abc_lifecycle_state_machine_persistent_state_observability_source_gap_review_v1/authority_component_matrix.csv",
+          "sha256": "FA235D9F36A7EB01914B6C0D9B503F38DF9E607E2A0B19689804B1952B26AB00"
+        },
+        {
+          "path": "governance/abc_lifecycle_state_machine_persistent_state_observability_source_gap_review_v1/observable_gap_disposition.csv",
+          "sha256": "D7FB129EDDE54E539C19718B9718E34CAF5861ED0C9095CCCAAB85A266A495F0"
+        },
+        {
+          "path": "governance/abc_lifecycle_state_machine_persistent_state_observability_source_gap_review_v1/source_gap_evidence.json",
+          "sha256": "64D17011F4DFB8CC1A77EEF3E6D501D3F2FB92C0038C1DFF62F9C90C558B517B"
+        },
+        {
+          "path": "governance/abc_lifecycle_state_machine_persistent_state_observability_source_gap_review_v1/output_manifest.json",
+          "sha256": "49AB9A0050954F163FF2E1A8A6F02F3F15DEDE1CAE3CCBBFAB455B9E16EA8E96"
+        }
+      ],
+      "governance_declarations": {
+        "2023_new_raw_or_replay_accessed": false,
+        "2024_used_as_fresh_holdout": false,
+        "2024_used_to_define_new_runtime_rule": false,
+        "2025_accessed": false,
+        "adaptive_logic_authorized": false,
+        "candidate_replay_executed": false,
+        "economic_outcomes_read": false,
+        "exit_action_authorized": false,
+        "exit_arbiter_authorized": false,
+        "lookahead_or_future_information_used": false,
+        "market_data_file_metadata_accessed": true,
+        "market_data_rows_accessed": false,
+        "market_data_values_accessed": false,
+        "new_threshold_created": false,
+        "observable_values_materialized": false,
+        "pair_or_event_identity_used_as_runtime_rule": false,
+        "persistence_horizon_selected": false,
+        "pnl_columns_read": false,
+        "portfolio_replay_executed": false,
+        "posthoc_outcome_threshold_search_used": false,
+        "production_changed": false,
+        "runtime_state_machine_authorized": false,
+        "state_defined": false
+      },
+      "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_OBSERVABILITY_PROTOCOL_AMENDMENT_REVIEW_V1",
+      "north_star_effect": "Reviewed all 22 unresolved observability source gaps without reading market-data rows or PnL. Reconstruction-ready=0, binding-gaps=16, semantic-gaps=6. Routing=ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_OBSERVABILITY_PROTOCOL_AMENDMENT_REVIEW_V1 because ONE_OR_MORE_OBSERVABLES_LACK_FROZEN_SEMANTIC_AUTHORITY.",
+      "objective": "Review the 22 unresolved persistent-state observability source gaps without reading any market-data row or PnL. Decompose whether the prior audit failed because semantic authority, raw-source authority, executable loader/aggregation/filtering bindings, or merely discovery/binding evidence was missing. Use the frozen ABC/LSM/trace authorities, exact filesystem metadata for the known pre-2024 raw root and membership source, and tracked source/governance text. Decide only whether causal feature reconstruction protocol work is justified, source-authority binding remediation is required, or the observability protocol itself needs amendment.",
+      "outcome": "PASS",
+      "pre_closeout_head": "09f03c212ae8389c7ba8803116b1002f0243842b",
+      "result_ref": "governance/abc_lifecycle_state_machine_persistent_state_observability_source_gap_review_v1/canonical_result.json",
+      "result_sha256": "5F875E889BE2D60044BAD9CA66110CFA1B390CAE8192A001E4F34AB896D67CB3",
+      "started_at_utc": "2026-09-20T12:08:57+00:00",
+      "starting_charter_revision": 297,
+      "starting_head": "347a7f8b8adf522b7a62a46070bff4e75722feb2",
+      "summary": "Reviewed all 22 unresolved observability source gaps without reading market-data rows or PnL. Reconstruction-ready=0, binding-gaps=16, semantic-gaps=6. Routing=ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_OBSERVABILITY_PROTOCOL_AMENDMENT_REVIEW_V1 because ONE_OR_MORE_OBSERVABLES_LACK_FROZEN_SEMANTIC_AUTHORITY.",
+      "task_id": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_OBSERVABILITY_SOURCE_GAP_REVIEW_V1",
+      "vision_impact": "ADVANCES"
     }
   ],
   "schema_version": "akah-bot-system-charter-v1",
@@ -5218,18 +5232,18 @@
   "github_sync_metadata": {
     "schema_version": "akah-bot-github-governance-snapshot-v3",
     "snapshot_semantics": "CURRENT_CANONICAL_GOVERNANCE_STATE_WITH_RECENT_EXECUTION_HISTORY_EXTERNALIZED",
-    "charter_revision": 297,
+    "charter_revision": 298,
     "source_branch": "research/rd48-cross-venue-price-level-basis-direct-utility-v1",
-    "source_head": "347a7f8b8adf522b7a62a46070bff4e75722feb2",
+    "source_head": "819ccede408dd984dd8ee83154400b875cacc876",
     "canonical_local_charter_path": "governance/AKAH_BOT_SYSTEM_CHARTER.json",
-    "canonical_local_charter_size_bytes": 213184312,
-    "canonical_local_charter_sha256": "CACF50B0DA04E4B56E0A49146FA0BE499BF49408692753058463CADB5D011168",
+    "canonical_local_charter_size_bytes": 213185224,
+    "canonical_local_charter_sha256": "EC636B552043D79103E72F38C6D99420656552D78743E974A504FC26F4E1BD47",
     "externalized_top_level_key": "recent_execution_history",
-    "full_archive_repo_path": "governance/archive/AKAH_BOT_SYSTEM_CHARTER_REV297_FULL.json.gz",
-    "full_archive_size_bytes": 16818543,
-    "full_archive_sha256": "526834BB39BBFC3FD5289EDB5260F7717D1417128E8AE9831B587A6E94532886",
-    "latest_task_id": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_OBSERVABILITY_SOURCE_CAPABILITY_AUDIT_V1",
-    "current_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_OBSERVABILITY_SOURCE_GAP_REVIEW_V1",
+    "full_archive_repo_path": "governance/archive/AKAH_BOT_SYSTEM_CHARTER_REV298_FULL.json.gz",
+    "full_archive_size_bytes": 16818570,
+    "full_archive_sha256": "D144D71B680B031F890D1239BF8B8DD216FD141E5558E930997CD06F8BDD7524",
+    "latest_task_id": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_OBSERVABILITY_SOURCE_GAP_REVIEW_V1",
+    "current_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_OBSERVABILITY_PROTOCOL_AMENDMENT_REVIEW_V1",
     "governance_sync_status": "SYNCHRONIZED_TO_LATEST_EXECUTION_EVENT"
   }
 }
