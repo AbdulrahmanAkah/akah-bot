@@ -424,7 +424,7 @@
     "preinstall_head": "b3142d0135d393088ab3fe55c53b0e28ec7574cb"
   },
   "charter_id": "AKAH_BOT_SYSTEM_CHARTER",
-  "charter_revision": 288,
+  "charter_revision": 289,
   "constitutional_core": {
     "amendment_rule": "The constitutional core may change only after explicit user authorization. Ordinary task closeout may update current_state, bottleneck, evidence summary, priority ordering, and task history but may not silently alter core principles.",
     "core_version": 1,
@@ -576,7 +576,7 @@
     "counterfactual_profit_claim": false,
     "cross_universe_classification": "UNIVERSE_STRATA_CONTAIN_DIVERGENT_REPLAY_INFORMATION",
     "cross_universe_exact": false,
-    "current_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_OBSERVATIONAL_TRACE_MANDATORY_REVIEW_V1",
+    "current_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_EVIDENCE_STATE_PREDICATE_PROTOCOL_FREEZE_V1",
     "dynamic_roles_all_bound": false,
     "economic_analysis": false,
     "economic_interpretation_performed": false,
@@ -1626,93 +1626,71 @@
   },
   "last_completed_task": {
     "alignment": "ALIGNED_WITH_SCOPE_UPDATE",
-    "axis": "ABC_LIFECYCLE_STATE_MACHINE_OBSERVATIONAL_TRACE_EXECUTION",
-    "completed_at_utc": "2026-09-20T10:25:47+00:00",
-    "completed_charter_revision": 288,
+    "axis": "ABC_LIFECYCLE_STATE_MACHINE_OBSERVATIONAL_TRACE_MANDATORY_REVIEW",
+    "completed_at_utc": "2026-09-20T10:30:26+00:00",
+    "completed_charter_revision": 289,
     "evidence": [
+      {
+        "path": "governance/abc_lifecycle_state_machine_observational_trace_mandatory_review_v1/mandatory_review.json",
+        "sha256": "93588DAF53B21C9E1035CC0B9F7D764163B5621019D842265F381DA7355AFEC5"
+      },
+      {
+        "path": "governance/abc_lifecycle_state_machine_observational_trace_mandatory_review_v1/canonical_result.json",
+        "sha256": "FC29B3C53641CFFC2CD0166AEB6C5CB4E4C1FB0F137904F61402CAEECE8BD366"
+      },
+      {
+        "path": "governance/abc_lifecycle_state_machine_observational_trace_mandatory_review_v1/memory_partition_review.csv",
+        "sha256": "E939C1CE9887F3D9FCA97BD5E53DA3BEB0AAA798C3C6F6E271BC560A8D95DA08"
+      },
+      {
+        "path": "governance/abc_lifecycle_state_machine_observational_trace_mandatory_review_v1/evidence_channel_state_review.csv",
+        "sha256": "E7D3686458863C826536CB6F7D4E45E14DC450234646030F06317ACE82AAAA8C"
+      },
+      {
+        "path": "governance/abc_lifecycle_state_machine_observational_trace_mandatory_review_v1/native_exit_state_review.csv",
+        "sha256": "CC86C224143745F30815EE512EAED11D058C50245FA3AAD6EEB8CCA9AA973C9D"
+      },
       {
         "path": "governance/abc_lifecycle_state_machine_observational_trace_v1/canonical_result.json",
         "sha256": "48FE5760D7975FF6EA652CCEE62905CF456A2532B8EBE7F37305A21A1720DF45"
       },
       {
-        "path": "governance/abc_lifecycle_state_machine_observational_trace_v1/execution_report.json",
-        "sha256": "D9F0703FE6AF6442296CF9BC5FA41E39E966D954CAAE229F4867E12C6E3C64CB"
-      },
-      {
         "path": "governance/abc_lifecycle_state_machine_observational_trace_v1/trace_completeness_and_causality_audit.json",
         "sha256": "5348D6681D18B7B9E4E34963317D5C58D56903A36F51AE30693D380A8BE5E875"
-      },
-      {
-        "path": "governance/abc_lifecycle_state_machine_observational_trace_v1/output_manifest.json",
-        "sha256": "C860AF80280CD7FA0594B39180BFE08B938AEC7BCCE8B833599311829BA4ECDE"
-      },
-      {
-        "path": "governance/abc_lifecycle_state_machine_observational_trace_v1/base_state_occupancy_by_year.csv",
-        "sha256": "5B3672141C30A5B8AA8919EF03EE4225D148655BD7208E212CC0330D2E14B3DC"
-      },
-      {
-        "path": "governance/abc_lifecycle_state_machine_observational_trace_v1/memory_incidence_by_year.csv",
-        "sha256": "FFFA7717B4EBBB76D076F397F699BB174D2915C62A678575DE3A5EFF2F5E2036"
-      },
-      {
-        "path": "governance/abc_lifecycle_state_machine_observational_trace_v1/C_event_base_state_crosstab.csv",
-        "sha256": "7BE82E0C9CCE0BF2493B46022192928AE0FF6615F52D733B394C8FAD69B4323E"
-      },
-      {
-        "path": "governance/abc_lifecycle_state_machine_observational_trace_v1/A_event_base_state_crosstab.csv",
-        "sha256": "1F0767A4D194AE99FA1AD73E4532147A8D7312987CB557CB7ED589B6A22D4662"
-      },
-      {
-        "path": "governance/abc_lifecycle_state_machine_observational_trace_v1/B_event_base_state_crosstab.csv",
-        "sha256": "9FC0F97F3612F8FA386591AB2EA56E654CD6273937FF06F9D4DCD12C5B734F70"
-      },
-      {
-        "path": "governance/abc_lifecycle_state_machine_observational_trace_v1/A_before_after_memory.csv",
-        "sha256": "379CFFF8293B3C970279ED1EEFBF1AA278A30FAB84221608118EE00616452F8B"
-      },
-      {
-        "path": "governance/abc_lifecycle_state_machine_observational_trace_v1/event_chronology_counts.csv",
-        "sha256": "7A812D3A288B98D9254F3036CC02DBAC0584A785E65E98247AF8371567DC699A"
-      },
-      {
-        "path": "governance/abc_lifecycle_state_machine_observational_trace_v1/native_exit_base_state_crosstab.csv",
-        "sha256": "B4C39DA3EABAD9A567DE6E8E4B67059E9A07FD11B36E8261240D679DE8750988"
       }
     ],
     "governance_declarations": {
-      "2023_new_raw_or_replay_accessed": true,
-      "2024_market_data_accessed": false,
+      "2023_new_raw_or_replay_accessed": false,
       "2024_used_as_fresh_holdout": false,
       "2024_used_to_define_new_runtime_rule": false,
       "2025_accessed": false,
-      "2025_market_data_accessed": false,
+      "adaptive_logic_authorized": false,
       "candidate_combination_tested": false,
       "candidate_replay_executed": false,
       "economic_outcomes_read": false,
       "exit_arbiter_authorized": false,
       "lookahead_or_future_information_used": false,
-      "market_data_accessed": true,
+      "market_data_accessed": false,
       "new_threshold_created": false,
       "pair_or_event_identity_used_as_runtime_rule": false,
       "pnl_columns_read": false,
       "portfolio_replay_executed": false,
       "posthoc_outcome_threshold_search_used": false,
-      "pre2019_warmup_accessed": true,
       "production_changed": false,
       "runtime_state_machine_authorized": false
     },
-    "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_OBSERVATIONAL_TRACE_MANDATORY_REVIEW_V1",
-    "north_star_effect": "Executed the frozen non-economic lifecycle observational trace across 2019-2023 Control lifecycles. Memory-derived UNCONFIRMED/EARLY_PROGRESS/CONFIRMED states and frozen C/A/B evidence timestamps were reconciled with all causal invariants passing. Only identity/timing trade columns and pre-2024 OHLCV were read; no PnL, candidate replay, portfolio replay, runtime exit action, adaptive logic or Exit Arbiter was authorized.",
-    "objective": "Execute the frozen non-economic lifecycle-state observational trace protocol over frozen 2019-2023 Control lifecycles. Read only trade identity/timing columns plus pre-2024 causal OHLCV. Reconstruct Memory-derived UNCONFIRMED/EARLY_PROGRESS/CONFIRMED decision-grid states, project frozen C/A/B signal times as evidence channels, audit all frozen invariants, and publish occupancy/chronology/state-context summaries without reading PnL, replaying candidate exits or portfolios, creating thresholds, or authorizing runtime behavior.",
+    "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_EVIDENCE_STATE_PREDICATE_PROTOCOL_FREEZE_V1",
+    "north_star_effect": "Mandatory lifecycle observational trace review completed from frozen outputs only. Memory forms a non-degenerate pre/post-progress partition in all five years; C is exclusively UNCONFIRMED and B exclusively CONFIRMED, while A remains a descriptive structural evidence channel. No runtime state mapping or exit logic is authorized. Only evidence-state predicate protocol freeze is authorized next.",
+    "objective": "Perform the mandatory output-only review of the completed non-economic lifecycle observational traces. Reconcile all manifest-bound trace summaries, verify that Memory creates a real pre/post-progress partition, confirm frozen C and B phase placement, describe A phase distribution and native-exit state context, and decide only whether additional evidence-state predicate protocol work is justified. Do not read market data or PnL, create thresholds, replay exits, combine candidates, activate a runtime state machine, authorize adaptive logic, or construct an Exit Arbiter.",
     "outcome": "PASS",
-    "pre_closeout_head": "c5a8e7db7958948fdc7099267567aebf0085aa4b",
-    "result_ref": "governance/abc_lifecycle_state_machine_observational_trace_v1/canonical_result.json",
-    "result_sha256": "48FE5760D7975FF6EA652CCEE62905CF456A2532B8EBE7F37305A21A1720DF45",
-    "started_at_utc": "2026-09-20T10:15:25+00:00",
-    "starting_charter_revision": 287,
-    "starting_head": "bf6d153c496c9fd284d365dc1791515f4921e589",
-    "summary": "Executed the frozen non-economic lifecycle observational trace across 2019-2023 Control lifecycles. Memory-derived UNCONFIRMED/EARLY_PROGRESS/CONFIRMED states and frozen C/A/B evidence timestamps were reconciled with all causal invariants passing. Only identity/timing trade columns and pre-2024 OHLCV were read; no PnL, candidate replay, portfolio replay, runtime exit action, adaptive logic or Exit Arbiter was authorized.",
-    "task_id": "ABC_LIFECYCLE_STATE_MACHINE_OBSERVATIONAL_TRACE_EXECUTION_V1_RETRY_V1",
+    "pre_closeout_head": "ac6ee5256d604262b5057c05adf4dfde2ea53690",
+    "result_ref": "governance/abc_lifecycle_state_machine_observational_trace_mandatory_review_v1/canonical_result.json",
+    "result_sha256": "FC29B3C53641CFFC2CD0166AEB6C5CB4E4C1FB0F137904F61402CAEECE8BD366",
+    "started_at_utc": "2026-09-20T10:30:22+00:00",
+    "starting_charter_revision": 288,
+    "starting_head": "af1c9451080c128f17bd93b248c77f343edff58f",
+    "summary": "Mandatory lifecycle observational trace review completed from frozen outputs only. Memory forms a non-degenerate pre/post-progress partition in all five years; C is exclusively UNCONFIRMED and B exclusively CONFIRMED, while A remains a descriptive structural evidence channel. No runtime state mapping or exit logic is authorized. Only evidence-state predicate protocol freeze is authorized next.",
+    "task_id": "ABC_LIFECYCLE_STATE_MACHINE_OBSERVATIONAL_TRACE_MANDATORY_REVIEW_V1",
     "vision_impact": "ADVANCES"
   },
   "last_execution_event": {
@@ -1921,8 +1899,8 @@
     "task_id": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_PRE_PROGRESS_THESIS_NON_CONFIRMATION_COUNTERFACTUAL_PORTFOLIO_REPLAY_V1",
     "task_start_head": "1cef008128d6da19d9b09ac2b73801d68a2e0e0d"
   },
-  "last_updated_at_utc": "2026-09-20T10:25:47+00:00",
-  "last_updated_by_task": "ABC_LIFECYCLE_STATE_MACHINE_OBSERVATIONAL_TRACE_EXECUTION_V1_RETRY_V1",
+  "last_updated_at_utc": "2026-09-20T10:30:26+00:00",
+  "last_updated_by_task": "ABC_LIFECYCLE_STATE_MACHINE_OBSERVATIONAL_TRACE_MANDATORY_REVIEW_V1",
   "latest_async_ready_state_control_denominator_authority_audit": {
     "actionability_inference_authorized": false,
     "audit_path": "C:\\Users\\abdul\\Downloads\\CAUSAL_EXIT_MECHANISM_PROFIT_ARM_COUNTERFACTUAL_EAG_PERSISTENCE_ASYNC_READY_STATE_CONTROL_DENOMINATOR_AUTHORITY_AUDIT_V1_AUDIT_20260916_171856.json",
@@ -3921,53 +3899,6 @@
   },
   "recent_task_history": [
     {
-      "alignment": "ALIGNED_WITH_SCOPE_UPDATE",
-      "axis": "DOCUMENTATION_AND_ARCHITECTURE_REFERENCE",
-      "completed_at_utc": "2026-09-19T17:57:55+00:00",
-      "completed_charter_revision": 269,
-      "evidence": [
-        {
-          "path": "governance/architecture/akah_exit_brain_research_doctrine_v1/AKAH_EXIT_BRAIN_RESEARCH_DOCTRINE_V1.md",
-          "sha256": "1E0FAD5B25FAEC609A178312CA3BDA193C4B0A84F268F1B3C9A7331F3FB7D24D"
-        },
-        {
-          "path": "governance/architecture/akah_exit_brain_research_doctrine_v1/AKAH_EXIT_BRAIN_RESEARCH_DOCTRINE_V1.json",
-          "sha256": "E2AA276C65BC92AB385BCAB2D8477F8224CEBCD0878E13E94B37CA47604AF571"
-        },
-        {
-          "path": "governance/architecture/akah_exit_brain_research_doctrine_v1/canonical_result.json",
-          "sha256": "119944D9CAEB8DC977DD62865E6F7658E06D357C3156B0FDBA5688A708B2124E"
-        },
-        {
-          "path": "governance/AKAH_EXIT_BRAIN_RESEARCH_DOCTRINE_CURRENT.json",
-          "sha256": "B3F0F632446C7BCEE4B4BEC27CACDECD9EF6562B568872153186E69B1E00B8D9"
-        }
-      ],
-      "governance_declarations": {
-        "2023_new_raw_or_replay_accessed": false,
-        "2024_used_as_fresh_holdout": false,
-        "2024_used_to_define_new_runtime_rule": false,
-        "2025_accessed": false,
-        "lookahead_or_future_information_used": false,
-        "pair_or_event_identity_used_as_runtime_rule": false,
-        "posthoc_outcome_threshold_search_used": false,
-        "production_changed": false
-      },
-      "next_bottleneck": "FINAL_EXIT_BRAIN_PRE_2024_ARCHITECTURE_P43_PREEXISTING_EVENT_LEVEL_TRANSITION_AUTHORITY_SCHEMA_ADJUDICATION_V1_RETRY_V1",
-      "north_star_effect": "Preserves long-term direction toward interpretable lifecycle-aware adaptive exit intelligence and prevents accidental drift toward either simplistic rules or unjustified complexity.",
-      "objective": "Freeze a permanent architecture/reference doctrine explaining the AKAH exit-brain North Star, why A/B/C are simple causal probes rather than the final architecture, the lifecycle-state-machine direction, future adaptive layers, portfolio-context separation, exit-arbiter direction, anti-overfit laws, and the canonical recovery sequence to use when research becomes scattered. Documentation only: no market data, replay, candidate test, runtime-rule authorization, or production change.",
-      "outcome": "PASS",
-      "pre_closeout_head": "e817c2363a90d1e2e72af741a5e50fe4a858de3f",
-      "result_ref": "governance/architecture/akah_exit_brain_research_doctrine_v1/canonical_result.json",
-      "result_sha256": "119944D9CAEB8DC977DD62865E6F7658E06D357C3156B0FDBA5688A708B2124E",
-      "started_at_utc": "2026-09-19T17:57:51+00:00",
-      "starting_charter_revision": 268,
-      "starting_head": "fdcf500e8356f84bbee8e722dd3039b2d28a9e37",
-      "summary": "Frozen AKAH_EXIT_BRAIN_RESEARCH_DOCTRINE_V1 as the permanent architecture compass: simple A/B/C causal probes -> causal proof -> overlap/redundancy -> lifecycle state machine -> adaptive logic -> portfolio context -> exit arbiter -> unused/prospective validation. No scientific bottleneck or runtime rule changed.",
-      "task_id": "AKAH_EXIT_BRAIN_RESEARCH_DOCTRINE_AND_ARCHITECTURE_COMPASS_FREEZE_V1",
-      "vision_impact": "PRESERVES"
-    },
-    {
       "alignment": "ALIGNED",
       "axis": "TRANSITION_EVENT_LEVEL_DIAGNOSTIC_AUTHORITY",
       "completed_at_utc": "2026-09-19T21:11:58+00:00",
@@ -4932,6 +4863,75 @@
       "summary": "Executed the frozen non-economic lifecycle observational trace across 2019-2023 Control lifecycles. Memory-derived UNCONFIRMED/EARLY_PROGRESS/CONFIRMED states and frozen C/A/B evidence timestamps were reconciled with all causal invariants passing. Only identity/timing trade columns and pre-2024 OHLCV were read; no PnL, candidate replay, portfolio replay, runtime exit action, adaptive logic or Exit Arbiter was authorized.",
       "task_id": "ABC_LIFECYCLE_STATE_MACHINE_OBSERVATIONAL_TRACE_EXECUTION_V1_RETRY_V1",
       "vision_impact": "ADVANCES"
+    },
+    {
+      "alignment": "ALIGNED_WITH_SCOPE_UPDATE",
+      "axis": "ABC_LIFECYCLE_STATE_MACHINE_OBSERVATIONAL_TRACE_MANDATORY_REVIEW",
+      "completed_at_utc": "2026-09-20T10:30:26+00:00",
+      "completed_charter_revision": 289,
+      "evidence": [
+        {
+          "path": "governance/abc_lifecycle_state_machine_observational_trace_mandatory_review_v1/mandatory_review.json",
+          "sha256": "93588DAF53B21C9E1035CC0B9F7D764163B5621019D842265F381DA7355AFEC5"
+        },
+        {
+          "path": "governance/abc_lifecycle_state_machine_observational_trace_mandatory_review_v1/canonical_result.json",
+          "sha256": "FC29B3C53641CFFC2CD0166AEB6C5CB4E4C1FB0F137904F61402CAEECE8BD366"
+        },
+        {
+          "path": "governance/abc_lifecycle_state_machine_observational_trace_mandatory_review_v1/memory_partition_review.csv",
+          "sha256": "E939C1CE9887F3D9FCA97BD5E53DA3BEB0AAA798C3C6F6E271BC560A8D95DA08"
+        },
+        {
+          "path": "governance/abc_lifecycle_state_machine_observational_trace_mandatory_review_v1/evidence_channel_state_review.csv",
+          "sha256": "E7D3686458863C826536CB6F7D4E45E14DC450234646030F06317ACE82AAAA8C"
+        },
+        {
+          "path": "governance/abc_lifecycle_state_machine_observational_trace_mandatory_review_v1/native_exit_state_review.csv",
+          "sha256": "CC86C224143745F30815EE512EAED11D058C50245FA3AAD6EEB8CCA9AA973C9D"
+        },
+        {
+          "path": "governance/abc_lifecycle_state_machine_observational_trace_v1/canonical_result.json",
+          "sha256": "48FE5760D7975FF6EA652CCEE62905CF456A2532B8EBE7F37305A21A1720DF45"
+        },
+        {
+          "path": "governance/abc_lifecycle_state_machine_observational_trace_v1/trace_completeness_and_causality_audit.json",
+          "sha256": "5348D6681D18B7B9E4E34963317D5C58D56903A36F51AE30693D380A8BE5E875"
+        }
+      ],
+      "governance_declarations": {
+        "2023_new_raw_or_replay_accessed": false,
+        "2024_used_as_fresh_holdout": false,
+        "2024_used_to_define_new_runtime_rule": false,
+        "2025_accessed": false,
+        "adaptive_logic_authorized": false,
+        "candidate_combination_tested": false,
+        "candidate_replay_executed": false,
+        "economic_outcomes_read": false,
+        "exit_arbiter_authorized": false,
+        "lookahead_or_future_information_used": false,
+        "market_data_accessed": false,
+        "new_threshold_created": false,
+        "pair_or_event_identity_used_as_runtime_rule": false,
+        "pnl_columns_read": false,
+        "portfolio_replay_executed": false,
+        "posthoc_outcome_threshold_search_used": false,
+        "production_changed": false,
+        "runtime_state_machine_authorized": false
+      },
+      "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_EVIDENCE_STATE_PREDICATE_PROTOCOL_FREEZE_V1",
+      "north_star_effect": "Mandatory lifecycle observational trace review completed from frozen outputs only. Memory forms a non-degenerate pre/post-progress partition in all five years; C is exclusively UNCONFIRMED and B exclusively CONFIRMED, while A remains a descriptive structural evidence channel. No runtime state mapping or exit logic is authorized. Only evidence-state predicate protocol freeze is authorized next.",
+      "objective": "Perform the mandatory output-only review of the completed non-economic lifecycle observational traces. Reconcile all manifest-bound trace summaries, verify that Memory creates a real pre/post-progress partition, confirm frozen C and B phase placement, describe A phase distribution and native-exit state context, and decide only whether additional evidence-state predicate protocol work is justified. Do not read market data or PnL, create thresholds, replay exits, combine candidates, activate a runtime state machine, authorize adaptive logic, or construct an Exit Arbiter.",
+      "outcome": "PASS",
+      "pre_closeout_head": "ac6ee5256d604262b5057c05adf4dfde2ea53690",
+      "result_ref": "governance/abc_lifecycle_state_machine_observational_trace_mandatory_review_v1/canonical_result.json",
+      "result_sha256": "FC29B3C53641CFFC2CD0166AEB6C5CB4E4C1FB0F137904F61402CAEECE8BD366",
+      "started_at_utc": "2026-09-20T10:30:22+00:00",
+      "starting_charter_revision": 288,
+      "starting_head": "af1c9451080c128f17bd93b248c77f343edff58f",
+      "summary": "Mandatory lifecycle observational trace review completed from frozen outputs only. Memory forms a non-degenerate pre/post-progress partition in all five years; C is exclusively UNCONFIRMED and B exclusively CONFIRMED, while A remains a descriptive structural evidence channel. No runtime state mapping or exit logic is authorized. Only evidence-state predicate protocol freeze is authorized next.",
+      "task_id": "ABC_LIFECYCLE_STATE_MACHINE_OBSERVATIONAL_TRACE_MANDATORY_REVIEW_V1",
+      "vision_impact": "ADVANCES"
     }
   ],
   "schema_version": "akah-bot-system-charter-v1",
@@ -4978,18 +4978,18 @@
   "github_sync_metadata": {
     "schema_version": "akah-bot-github-governance-snapshot-v3",
     "snapshot_semantics": "CURRENT_CANONICAL_GOVERNANCE_STATE_WITH_RECENT_EXECUTION_HISTORY_EXTERNALIZED",
-    "charter_revision": 288,
+    "charter_revision": 289,
     "source_branch": "research/rd48-cross-venue-price-level-basis-direct-utility-v1",
-    "source_head": "af1c9451080c128f17bd93b248c77f343edff58f",
+    "source_head": "c5a1f9a9b33333f6a1bb77d77eaeea02c164b90f",
     "canonical_local_charter_path": "governance/AKAH_BOT_SYSTEM_CHARTER.json",
-    "canonical_local_charter_size_bytes": 213160238,
-    "canonical_local_charter_sha256": "8FC280D254E1F600123262D946B79515C255D77220FEA2F1083B558873BE020B",
+    "canonical_local_charter_size_bytes": 213160758,
+    "canonical_local_charter_sha256": "EE8DDD9567EBBF8AB5D434B2593E164663A070FC1EEBED669044C5B18CE50AE1",
     "externalized_top_level_key": "recent_execution_history",
-    "full_archive_repo_path": "governance/archive/AKAH_BOT_SYSTEM_CHARTER_REV288_FULL.json.gz",
-    "full_archive_size_bytes": 16815724,
-    "full_archive_sha256": "C53C1F356BBAA42A5ECDDED13558F8B5532B0ED6FF03B3A86E06926CDC4F632D",
-    "latest_task_id": "ABC_LIFECYCLE_STATE_MACHINE_OBSERVATIONAL_TRACE_EXECUTION_V1_RETRY_V1",
-    "current_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_OBSERVATIONAL_TRACE_MANDATORY_REVIEW_V1",
+    "full_archive_repo_path": "governance/archive/AKAH_BOT_SYSTEM_CHARTER_REV289_FULL.json.gz",
+    "full_archive_size_bytes": 16816011,
+    "full_archive_sha256": "824434AD45326D45A00307C5E2D8E59077BC8A8526EE6A8EEC315DA6940FD50C",
+    "latest_task_id": "ABC_LIFECYCLE_STATE_MACHINE_OBSERVATIONAL_TRACE_MANDATORY_REVIEW_V1",
+    "current_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_EVIDENCE_STATE_PREDICATE_PROTOCOL_FREEZE_V1",
     "governance_sync_status": "SYNCHRONIZED_TO_LATEST_EXECUTION_EVENT"
   }
 }
