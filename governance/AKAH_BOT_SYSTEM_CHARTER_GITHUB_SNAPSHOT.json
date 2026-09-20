@@ -424,7 +424,7 @@
     "preinstall_head": "b3142d0135d393088ab3fe55c53b0e28ec7574cb"
   },
   "charter_id": "AKAH_BOT_SYSTEM_CHARTER",
-  "charter_revision": 295,
+  "charter_revision": 296,
   "constitutional_core": {
     "amendment_rule": "The constitutional core may change only after explicit user authorization. Ordinary task closeout may update current_state, bottleneck, evidence summary, priority ordering, and task history but may not silently alter core principles.",
     "core_version": 1,
@@ -576,7 +576,7 @@
     "counterfactual_profit_claim": false,
     "cross_universe_classification": "UNIVERSE_STRATA_CONTAIN_DIVERGENT_REPLAY_INFORMATION",
     "cross_universe_exact": false,
-    "current_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_OBSERVABILITY_PROTOCOL_FREEZE_V1",
+    "current_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_OBSERVABILITY_SOURCE_CAPABILITY_AUDIT_V1",
     "dynamic_roles_all_bound": false,
     "economic_analysis": false,
     "economic_interpretation_performed": false,
@@ -1626,45 +1626,37 @@
   },
   "last_completed_task": {
     "alignment": "ALIGNED_WITH_SCOPE_UPDATE",
-    "axis": "ABC_LIFECYCLE_STATE_MACHINE_EVIDENCE_SEQUENCE_MANDATORY_REVIEW",
-    "completed_at_utc": "2026-09-20T11:47:55+00:00",
-    "completed_charter_revision": 295,
+    "axis": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_OBSERVABILITY_PROTOCOL_FREEZE",
+    "completed_at_utc": "2026-09-20T11:55:51+00:00",
+    "completed_charter_revision": 296,
     "evidence": [
       {
-        "path": "governance/abc_lifecycle_state_machine_evidence_sequence_mandatory_review_v1/mandatory_review.json",
-        "sha256": "15745E2CEDB2572FFA8696AC0446E0B66292F3AD641895B049F917FBB74D8FEE"
+        "path": "governance/abc_lifecycle_state_machine_persistent_state_observability_protocol_v1/canonical_result.json",
+        "sha256": "12AB05BDDD1B3D260F1C82E272EC5F4EA5CDDF6539AB650641A80FF31DC9823B"
+      },
+      {
+        "path": "governance/abc_lifecycle_state_machine_persistent_state_observability_protocol_v1/protocol.json",
+        "sha256": "9DA4404781476E07D42F421BB422B44D2A24553E86E6C8E674D4A270BB764D7F"
+      },
+      {
+        "path": "governance/abc_lifecycle_state_machine_persistent_state_observability_protocol_v1/observability_catalog.json",
+        "sha256": "12DF152B4191916DFD9F7E5EABE5F6AB62AE3DDA8A8D58237F4E1C69EA73BF29"
+      },
+      {
+        "path": "governance/abc_lifecycle_state_machine_persistent_state_observability_protocol_v1/source_capability_requirements.json",
+        "sha256": "BEDE872AD3C4C047CCB79985D9D15CA0550230985FD3103D130E7D849BFE422D"
       },
       {
         "path": "governance/abc_lifecycle_state_machine_evidence_sequence_mandatory_review_v1/canonical_result.json",
         "sha256": "D4E50253A5124F5DAD79BC2C4F40098D2A9CD3CD3AA02EFA39C83D6FB03E8867"
       },
       {
-        "path": "governance/abc_lifecycle_state_machine_evidence_sequence_mandatory_review_v1/pairwise_order_review.csv",
-        "sha256": "3DDD5EA818953CAF29A8598CADF93CE948C2DEB60B1C8399F2962FC5ACBA1747"
-      },
-      {
-        "path": "governance/abc_lifecycle_state_machine_evidence_sequence_mandatory_review_v1/sequence_signature_review.csv",
-        "sha256": "DC32726AC1A4A60C3BA9CCE1E15873635BA235DFB96CA2865B5D9EAB883C0D4C"
-      },
-      {
-        "path": "governance/abc_lifecycle_state_machine_evidence_sequence_mandatory_review_v1/adjacent_transition_review.csv",
-        "sha256": "5385B4DBDC22EC77FEDF5B4FA146EF94496863ABA1DBEDD31F7C4BF3468B78C0"
-      },
-      {
-        "path": "governance/abc_lifecycle_state_machine_evidence_sequence_mandatory_review_v1/gap_descriptive_review.csv",
-        "sha256": "BB186C16A3AA5E63E3324B69D9317857B7A77D4ABB5D1129E18B9F8DC43EE07E"
-      },
-      {
         "path": "governance/abc_lifecycle_state_machine_evidence_sequence_observational_materialization_v1/canonical_result.json",
         "sha256": "D70DDE12C8234C2F26E8E94903C6D0B242215DFE6CE9CD50AED7584DFAAD89AD"
       },
       {
-        "path": "governance/abc_lifecycle_state_machine_evidence_sequence_observational_materialization_v1/sequence_completeness_audit.json",
-        "sha256": "3AABA2594C0E38B33F604B0D343142DAF52D938A783BA27DBC9CB4B4034DF133"
-      },
-      {
-        "path": "governance/abc_lifecycle_state_machine_evidence_sequence_observational_materialization_v1/sequence_noninterpretation_audit.json",
-        "sha256": "D32BA0922EC3A559DF515CAE194D15E233CC21F27EC768FF0EA75A348176035B"
+        "path": "governance/abc_lifecycle_state_machine_evidence_state_predicate_observational_materialization_v1/canonical_result.json",
+        "sha256": "636EAB1819744573CC1C54621AF147100FEFB002983EE0F48406EEF272B5AC6D"
       }
     ],
     "governance_declarations": {
@@ -1677,33 +1669,34 @@
       "economic_outcomes_read": false,
       "exit_action_authorized": false,
       "exit_arbiter_authorized": false,
+      "gap_statistic_rule_created": false,
       "lookahead_or_future_information_used": false,
       "market_data_accessed": false,
       "new_threshold_created": false,
       "pair_or_event_identity_used_as_runtime_rule": false,
       "persistence_horizon_selected": false,
-      "persistent_state_authorized": false,
+      "persistent_state_defined": false,
       "pnl_columns_read": false,
       "portfolio_replay_executed": false,
       "posthoc_outcome_threshold_search_used": false,
       "production_changed": false,
+      "run_length_cutoff_selected": false,
       "runtime_state_machine_authorized": false,
-      "sequence_ranking_created": false,
-      "state_duration_rule_created": false,
-      "time_gap_bins_created": false
+      "sequence_frequency_rule_created": false,
+      "state_duration_rule_created": false
     },
-    "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_OBSERVABILITY_PROTOCOL_FREEZE_V1",
-    "north_star_effect": "Mandatory review accepted the full 2020-lifecycle evidence chronology as a faithful non-economic sequence representation. The review found 32 distinct sequence signatures and preserved causal order, zero-decision and zero-duration lifecycles, but explicitly rejected using sequence frequency or observed gap statistics as persistence rules. A separately preregistered persistent-state observability protocol is authorized next; no persistent state or runtime behavior is authorized.",
-    "objective": "Perform the mandatory output-only review of the frozen lifecycle evidence-sequence materialization. Reconcile the full 2020-lifecycle population, event-set and adjacent-transition counts, sequence signatures, pairwise order relations, unbinned time-gap summaries, causal-order audits and noninterpretation audit. Determine only whether the observed chronology is structurally sufficient to justify a separately preregistered persistent-state observability protocol. Do not infer any persistent state, select a persistence horizon or duration threshold, rank sequences, use sequence frequency or gap medians as a rule, read market data or PnL, replay exits/portfolios, or authorize runtime transitions, adaptive logic, exit actions or an Exit Arbiter.",
+    "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_OBSERVABILITY_SOURCE_CAPABILITY_AUDIT_V1",
+    "north_star_effect": "Frozen a persistent-state observability protocol over consecutive causal 4H decision rows. The protocol specifies phase clocks, structural-progress cadence, pre-progress age, continuous A/B boundary margins, causal run lengths, immediate deltas and recovery-event observables as measurements only. It selects no horizon/cutoff/state and routes next to a schema/source-code capability audit before any market-data reconstruction or materialization.",
+    "objective": "Freeze the persistent-state observability protocol only. Define the causal row-level measurements required to study persistence, recovery, deterioration and eventual failure semantics across consecutive completed 4H decision rows, without defining any persistent state. Freeze observation unit, causal lag/counter semantics, continuous boundary-margin requirements for the already-frozen progress/A/B channels, and an explicit source-capability audit gate. Do not select a persistence horizon, duration threshold, run-length cutoff, gap-statistic rule, sequence-frequency rule, state transition, runtime class, exit action, adaptive logic or Exit Arbiter. Do not access market data or PnL in this freeze.",
     "outcome": "PASS",
-    "pre_closeout_head": "529bde9d5e7e0c5e59a6e495a0b0591b2a497a2d",
-    "result_ref": "governance/abc_lifecycle_state_machine_evidence_sequence_mandatory_review_v1/canonical_result.json",
-    "result_sha256": "D4E50253A5124F5DAD79BC2C4F40098D2A9CD3CD3AA02EFA39C83D6FB03E8867",
-    "started_at_utc": "2026-09-20T11:47:46+00:00",
-    "starting_charter_revision": 294,
-    "starting_head": "1a212302e7c03ce9007624c136fa667609b87f35",
-    "summary": "Mandatory review accepted the full 2020-lifecycle evidence chronology as a faithful non-economic sequence representation. The review found 32 distinct sequence signatures and preserved causal order, zero-decision and zero-duration lifecycles, but explicitly rejected using sequence frequency or observed gap statistics as persistence rules. A separately preregistered persistent-state observability protocol is authorized next; no persistent state or runtime behavior is authorized.",
-    "task_id": "ABC_LIFECYCLE_STATE_MACHINE_EVIDENCE_SEQUENCE_MANDATORY_REVIEW_V1",
+    "pre_closeout_head": "cabbd1da4b6560b9f2ccea781df318a51f7fa476",
+    "result_ref": "governance/abc_lifecycle_state_machine_persistent_state_observability_protocol_v1/canonical_result.json",
+    "result_sha256": "12AB05BDDD1B3D260F1C82E272EC5F4EA5CDDF6539AB650641A80FF31DC9823B",
+    "started_at_utc": "2026-09-20T11:55:47+00:00",
+    "starting_charter_revision": 295,
+    "starting_head": "31a21681cb39fd4944eb05abc72b8675ba66fbcc",
+    "summary": "Frozen a persistent-state observability protocol over consecutive causal 4H decision rows. The protocol specifies phase clocks, structural-progress cadence, pre-progress age, continuous A/B boundary margins, causal run lengths, immediate deltas and recovery-event observables as measurements only. It selects no horizon/cutoff/state and routes next to a schema/source-code capability audit before any market-data reconstruction or materialization.",
+    "task_id": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_OBSERVABILITY_PROTOCOL_FREEZE_V1",
     "vision_impact": "ADVANCES"
   },
   "last_execution_event": {
@@ -1912,8 +1905,8 @@
     "task_id": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_PRE_PROGRESS_THESIS_NON_CONFIRMATION_COUNTERFACTUAL_PORTFOLIO_REPLAY_V1",
     "task_start_head": "1cef008128d6da19d9b09ac2b73801d68a2e0e0d"
   },
-  "last_updated_at_utc": "2026-09-20T11:47:55+00:00",
-  "last_updated_by_task": "ABC_LIFECYCLE_STATE_MACHINE_EVIDENCE_SEQUENCE_MANDATORY_REVIEW_V1",
+  "last_updated_at_utc": "2026-09-20T11:55:51+00:00",
+  "last_updated_by_task": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_OBSERVABILITY_PROTOCOL_FREEZE_V1",
   "latest_async_ready_state_control_denominator_authority_audit": {
     "actionability_inference_authorized": false,
     "audit_path": "C:\\Users\\abdul\\Downloads\\CAUSAL_EXIT_MECHANISM_PROFIT_ARM_COUNTERFACTUAL_EAG_PERSISTENCE_ASYNC_READY_STATE_CONTROL_DENOMINATOR_AUTHORITY_AUDIT_V1_AUDIT_20260916_171856.json",
@@ -3913,57 +3906,6 @@
   "recent_task_history": [
     {
       "alignment": "ALIGNED_WITH_SCOPE_UPDATE",
-      "axis": "ABC_2019_2023_AUTHORITY_DATA_READINESS_RETRY",
-      "completed_at_utc": "2026-09-19T21:47:41+00:00",
-      "completed_charter_revision": 276,
-      "evidence": [
-        {
-          "path": "governance/abc_2019_2023_authority_data_readiness_v1_retry_v1/pair_readiness.json",
-          "sha256": "8E36DE5BD5F35506FB1B8FE3D9C826577CF765BB9C3ED8D82CE583897F2B3317"
-        },
-        {
-          "path": "governance/abc_2019_2023_authority_data_readiness_v1_retry_v1/source_authority_inventory.json",
-          "sha256": "AB739D81E59F2B3290D1869566BF2EEE3E70FD69E345FAF8126547DDEBFE8335"
-        },
-        {
-          "path": "governance/abc_2019_2023_authority_data_readiness_v1_retry_v1/temporal_access_guard.json",
-          "sha256": "B63DB9873A554E27EC33A82AAD2C390CE4239AF19395427369E7F9A95DFFD097"
-        },
-        {
-          "path": "governance/abc_2019_2023_authority_data_readiness_v1_retry_v1/canonical_result.json",
-          "sha256": "D970A97E0BF96F324E2D9F011C595341A1396758B2DE68BFA944BA35C98327E4"
-        }
-      ],
-      "governance_declarations": {
-        "2023_new_raw_or_replay_accessed": true,
-        "2023_raw_market_data_accessed_for_readiness": true,
-        "2024_used_as_fresh_holdout": false,
-        "2024_used_to_define_new_runtime_rule": false,
-        "2025_accessed": false,
-        "abc_candidate_results_computed": false,
-        "lookahead_or_future_information_used": false,
-        "pair_or_event_identity_used_as_runtime_rule": false,
-        "posthoc_outcome_threshold_search_used": false,
-        "pre2019_trades_or_pnl_computed": false,
-        "pre2019_warmup_accessed": true,
-        "production_changed": false
-      },
-      "next_bottleneck": "ABC_NATIVE_MAX_HOLD_168H_RUNTIME_PROOF_V1",
-      "north_star_effect": "Corrected A/B/C data-readiness audit completed with classification BLOCKED. No candidate outcomes were computed; 2024/2025 were not used.",
-      "objective": "Repeat the A/B/C 2019-2023 authority/data readiness audit after the failed governed run. Open only explicitly year-partitioned <=2023 market files; never use 2024/2025; bind per-pair T0, first valid data, ATR22 warmup readiness, Donchian10 contiguous readiness, late-listing status, and native state-engine warmup source authority. Compute no A/B/C outcomes.",
-      "outcome": "PASS",
-      "pre_closeout_head": "05066b0f52367c298dd1189104c8b67391f4a278",
-      "result_ref": "governance/abc_2019_2023_authority_data_readiness_v1_retry_v1/canonical_result.json",
-      "result_sha256": "D970A97E0BF96F324E2D9F011C595341A1396758B2DE68BFA944BA35C98327E4",
-      "started_at_utc": "2026-09-19T21:47:29+00:00",
-      "starting_charter_revision": 275,
-      "starting_head": "d0f6cbae8cf156296b937eadf034d834eae28f4a",
-      "summary": "Corrected A/B/C data-readiness audit completed with classification BLOCKED. No candidate outcomes were computed; 2024/2025 were not used.",
-      "task_id": "ABC_2019_2023_AUTHORITY_DATA_READINESS_AUDIT_V1_RETRY_V1",
-      "vision_impact": "ADVANCES"
-    },
-    {
-      "alignment": "ALIGNED_WITH_SCOPE_UPDATE",
       "axis": "ABC_NATIVE_MAX_HOLD_168H_RUNTIME_PROOF",
       "completed_at_utc": "2026-09-19T21:49:02+00:00",
       "completed_charter_revision": 277,
@@ -5137,6 +5079,81 @@
       "summary": "Mandatory review accepted the full 2020-lifecycle evidence chronology as a faithful non-economic sequence representation. The review found 32 distinct sequence signatures and preserved causal order, zero-decision and zero-duration lifecycles, but explicitly rejected using sequence frequency or observed gap statistics as persistence rules. A separately preregistered persistent-state observability protocol is authorized next; no persistent state or runtime behavior is authorized.",
       "task_id": "ABC_LIFECYCLE_STATE_MACHINE_EVIDENCE_SEQUENCE_MANDATORY_REVIEW_V1",
       "vision_impact": "ADVANCES"
+    },
+    {
+      "alignment": "ALIGNED_WITH_SCOPE_UPDATE",
+      "axis": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_OBSERVABILITY_PROTOCOL_FREEZE",
+      "completed_at_utc": "2026-09-20T11:55:51+00:00",
+      "completed_charter_revision": 296,
+      "evidence": [
+        {
+          "path": "governance/abc_lifecycle_state_machine_persistent_state_observability_protocol_v1/canonical_result.json",
+          "sha256": "12AB05BDDD1B3D260F1C82E272EC5F4EA5CDDF6539AB650641A80FF31DC9823B"
+        },
+        {
+          "path": "governance/abc_lifecycle_state_machine_persistent_state_observability_protocol_v1/protocol.json",
+          "sha256": "9DA4404781476E07D42F421BB422B44D2A24553E86E6C8E674D4A270BB764D7F"
+        },
+        {
+          "path": "governance/abc_lifecycle_state_machine_persistent_state_observability_protocol_v1/observability_catalog.json",
+          "sha256": "12DF152B4191916DFD9F7E5EABE5F6AB62AE3DDA8A8D58237F4E1C69EA73BF29"
+        },
+        {
+          "path": "governance/abc_lifecycle_state_machine_persistent_state_observability_protocol_v1/source_capability_requirements.json",
+          "sha256": "BEDE872AD3C4C047CCB79985D9D15CA0550230985FD3103D130E7D849BFE422D"
+        },
+        {
+          "path": "governance/abc_lifecycle_state_machine_evidence_sequence_mandatory_review_v1/canonical_result.json",
+          "sha256": "D4E50253A5124F5DAD79BC2C4F40098D2A9CD3CD3AA02EFA39C83D6FB03E8867"
+        },
+        {
+          "path": "governance/abc_lifecycle_state_machine_evidence_sequence_observational_materialization_v1/canonical_result.json",
+          "sha256": "D70DDE12C8234C2F26E8E94903C6D0B242215DFE6CE9CD50AED7584DFAAD89AD"
+        },
+        {
+          "path": "governance/abc_lifecycle_state_machine_evidence_state_predicate_observational_materialization_v1/canonical_result.json",
+          "sha256": "636EAB1819744573CC1C54621AF147100FEFB002983EE0F48406EEF272B5AC6D"
+        }
+      ],
+      "governance_declarations": {
+        "2023_new_raw_or_replay_accessed": false,
+        "2024_used_as_fresh_holdout": false,
+        "2024_used_to_define_new_runtime_rule": false,
+        "2025_accessed": false,
+        "adaptive_logic_authorized": false,
+        "candidate_replay_executed": false,
+        "economic_outcomes_read": false,
+        "exit_action_authorized": false,
+        "exit_arbiter_authorized": false,
+        "gap_statistic_rule_created": false,
+        "lookahead_or_future_information_used": false,
+        "market_data_accessed": false,
+        "new_threshold_created": false,
+        "pair_or_event_identity_used_as_runtime_rule": false,
+        "persistence_horizon_selected": false,
+        "persistent_state_defined": false,
+        "pnl_columns_read": false,
+        "portfolio_replay_executed": false,
+        "posthoc_outcome_threshold_search_used": false,
+        "production_changed": false,
+        "run_length_cutoff_selected": false,
+        "runtime_state_machine_authorized": false,
+        "sequence_frequency_rule_created": false,
+        "state_duration_rule_created": false
+      },
+      "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_OBSERVABILITY_SOURCE_CAPABILITY_AUDIT_V1",
+      "north_star_effect": "Frozen a persistent-state observability protocol over consecutive causal 4H decision rows. The protocol specifies phase clocks, structural-progress cadence, pre-progress age, continuous A/B boundary margins, causal run lengths, immediate deltas and recovery-event observables as measurements only. It selects no horizon/cutoff/state and routes next to a schema/source-code capability audit before any market-data reconstruction or materialization.",
+      "objective": "Freeze the persistent-state observability protocol only. Define the causal row-level measurements required to study persistence, recovery, deterioration and eventual failure semantics across consecutive completed 4H decision rows, without defining any persistent state. Freeze observation unit, causal lag/counter semantics, continuous boundary-margin requirements for the already-frozen progress/A/B channels, and an explicit source-capability audit gate. Do not select a persistence horizon, duration threshold, run-length cutoff, gap-statistic rule, sequence-frequency rule, state transition, runtime class, exit action, adaptive logic or Exit Arbiter. Do not access market data or PnL in this freeze.",
+      "outcome": "PASS",
+      "pre_closeout_head": "cabbd1da4b6560b9f2ccea781df318a51f7fa476",
+      "result_ref": "governance/abc_lifecycle_state_machine_persistent_state_observability_protocol_v1/canonical_result.json",
+      "result_sha256": "12AB05BDDD1B3D260F1C82E272EC5F4EA5CDDF6539AB650641A80FF31DC9823B",
+      "started_at_utc": "2026-09-20T11:55:47+00:00",
+      "starting_charter_revision": 295,
+      "starting_head": "31a21681cb39fd4944eb05abc72b8675ba66fbcc",
+      "summary": "Frozen a persistent-state observability protocol over consecutive causal 4H decision rows. The protocol specifies phase clocks, structural-progress cadence, pre-progress age, continuous A/B boundary margins, causal run lengths, immediate deltas and recovery-event observables as measurements only. It selects no horizon/cutoff/state and routes next to a schema/source-code capability audit before any market-data reconstruction or materialization.",
+      "task_id": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_OBSERVABILITY_PROTOCOL_FREEZE_V1",
+      "vision_impact": "ADVANCES"
     }
   ],
   "schema_version": "akah-bot-system-charter-v1",
@@ -5183,18 +5200,18 @@
   "github_sync_metadata": {
     "schema_version": "akah-bot-github-governance-snapshot-v3",
     "snapshot_semantics": "CURRENT_CANONICAL_GOVERNANCE_STATE_WITH_RECENT_EXECUTION_HISTORY_EXTERNALIZED",
-    "charter_revision": 295,
+    "charter_revision": 296,
     "source_branch": "research/rd48-cross-venue-price-level-basis-direct-utility-v1",
-    "source_head": "31a21681cb39fd4944eb05abc72b8675ba66fbcc",
+    "source_head": "0b985b4e74c124a12508fef09cc86f1fad5b2cc9",
     "canonical_local_charter_path": "governance/AKAH_BOT_SYSTEM_CHARTER.json",
-    "canonical_local_charter_size_bytes": 213179904,
-    "canonical_local_charter_sha256": "6884D7D5338F3B5D69E83F9DB978CA1FE4F6A2B08ECF8A680F485E167C3D7578",
+    "canonical_local_charter_size_bytes": 213181820,
+    "canonical_local_charter_sha256": "6A27E41A160B1CE14B677316B8BB465A949627CC68F006965D9203CF22244B26",
     "externalized_top_level_key": "recent_execution_history",
-    "full_archive_repo_path": "governance/archive/AKAH_BOT_SYSTEM_CHARTER_REV295_FULL.json.gz",
-    "full_archive_size_bytes": 16817607,
-    "full_archive_sha256": "E2A630C90598053B4039FFA53BC1D6D048C4A668454DEFAD369AAFB1B7764819",
-    "latest_task_id": "ABC_LIFECYCLE_STATE_MACHINE_EVIDENCE_SEQUENCE_MANDATORY_REVIEW_V1",
-    "current_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_OBSERVABILITY_PROTOCOL_FREEZE_V1",
+    "full_archive_repo_path": "governance/archive/AKAH_BOT_SYSTEM_CHARTER_REV296_FULL.json.gz",
+    "full_archive_size_bytes": 16817939,
+    "full_archive_sha256": "70E6F3550EFEAE8F0679F586582C4A21D7386201C2ECE91989661D39ABB772B6",
+    "latest_task_id": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_OBSERVABILITY_PROTOCOL_FREEZE_V1",
+    "current_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_OBSERVABILITY_SOURCE_CAPABILITY_AUDIT_V1",
     "governance_sync_status": "SYNCHRONIZED_TO_LATEST_EXECUTION_EVENT"
   }
 }
