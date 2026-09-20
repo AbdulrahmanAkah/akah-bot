@@ -424,7 +424,7 @@
     "preinstall_head": "b3142d0135d393088ab3fe55c53b0e28ec7574cb"
   },
   "charter_id": "AKAH_BOT_SYSTEM_CHARTER",
-  "charter_revision": 309,
+  "charter_revision": 310,
   "constitutional_core": {
     "amendment_rule": "The constitutional core may change only after explicit user authorization. Ordinary task closeout may update current_state, bottleneck, evidence summary, priority ordering, and task history but may not silently alter core principles.",
     "core_version": 1,
@@ -576,7 +576,7 @@
     "counterfactual_profit_claim": false,
     "cross_universe_classification": "UNIVERSE_STRATA_CONTAIN_DIVERGENT_REPLAY_INFORMATION",
     "cross_universe_exact": false,
-    "current_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_CAUSAL_FEATURE_RECONSTRUCTION_EXECUTION_V1",
+    "current_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_CAUSAL_FEATURE_RECONSTRUCTION_MANDATORY_REVIEW_V1",
     "dynamic_roles_all_bound": false,
     "economic_analysis": false,
     "economic_interpretation_performed": false,
@@ -1626,29 +1626,37 @@
   },
   "last_completed_task": {
     "alignment": "ALIGNED_WITH_SCOPE_UPDATE",
-    "axis": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_CAUSAL_FEATURE_RECONSTRUCTION_EXECUTION_PREFLIGHT",
-    "completed_at_utc": "2026-09-20T15:50:16+00:00",
-    "completed_charter_revision": 309,
+    "axis": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_CAUSAL_FEATURE_RECONSTRUCTION_EXECUTION",
+    "completed_at_utc": "2026-09-20T17:13:48+00:00",
+    "completed_charter_revision": 310,
     "evidence": [
       {
-        "path": "governance/abc_lifecycle_state_machine_persistent_state_causal_feature_reconstruction_execution_preflight_v1/canonical_result.json",
-        "sha256": "2867DDC07C257535EA68302BA2C7D08836E37A6A1B9DCDA19EAD15FAC49383FE"
+        "path": "governance/abc_lifecycle_state_machine_persistent_state_causal_feature_reconstruction_execution_v1/decision_grid_reconstructed_features.csv",
+        "sha256": "15707D9D66E466FD1706646ADDFCFD2316E6210186EF3C1B4A735D9DF7880F42"
       },
       {
-        "path": "governance/abc_lifecycle_state_machine_persistent_state_causal_feature_reconstruction_execution_preflight_v1/execution_preflight_report.json",
-        "sha256": "6DE25EB448CE1FDF333B62C574A166159402BA99D67A6C1D86903AA4D09CBEEA"
+        "path": "governance/abc_lifecycle_state_machine_persistent_state_causal_feature_reconstruction_execution_v1/lifecycle_reconstruction_summary.csv",
+        "sha256": "2EA3DC9AF5C5CF15820164C106E10058685675155B33E300E808A53616533323"
       },
       {
-        "path": "governance/abc_lifecycle_state_machine_persistent_state_causal_feature_reconstruction_execution_preflight_v1/execution_authorization.json",
-        "sha256": "77A9AA22F36F5604D77FBC4A3365D4F80EB19F0FD097C6B424E970526F385E47"
+        "path": "governance/abc_lifecycle_state_machine_persistent_state_causal_feature_reconstruction_execution_v1/raw_market_access_audit.json",
+        "sha256": "E76C41D16B3E5DDE98E874DECFA65E2F2496BF475C787EA62F9042D74EC105C2"
       },
       {
-        "path": "governance/abc_lifecycle_state_machine_persistent_state_causal_feature_reconstruction_execution_preflight_v1/output_manifest.json",
-        "sha256": "B99B4B2404E97693C27ECE2620993E3823134A4ADAAC3A471781C648F7D2C10C"
+        "path": "governance/abc_lifecycle_state_machine_persistent_state_causal_feature_reconstruction_execution_v1/acceptance_report.json",
+        "sha256": "CF378F2078A9A0305C92ED973E46C26BBB95544BA8A8E4F7F9BA3AAD8B6CF84F"
+      },
+      {
+        "path": "governance/abc_lifecycle_state_machine_persistent_state_causal_feature_reconstruction_execution_v1/canonical_result.json",
+        "sha256": "1887C6A105FA7D02B1805BA632654D2913FB333BB0EC8C08CEA80F815974960A"
+      },
+      {
+        "path": "governance/abc_lifecycle_state_machine_persistent_state_causal_feature_reconstruction_execution_v1/output_manifest.json",
+        "sha256": "E298D30B3B1A13BB37F126E1F2F802994B732210D06703120874D4EED22EA086"
       }
     ],
     "governance_declarations": {
-      "2023_new_raw_or_replay_accessed": false,
+      "2023_new_raw_or_replay_accessed": true,
       "2024_used_as_fresh_holdout": false,
       "2024_used_to_define_new_runtime_rule": false,
       "2025_accessed": false,
@@ -1657,13 +1665,14 @@
       "economic_outcomes_read": false,
       "exit_action_authorized": false,
       "exit_arbiter_authorized": false,
-      "historical_reconstruction_executed": false,
+      "historical_reconstruction_executed": true,
       "lookahead_or_future_information_used": false,
-      "market_data_file_metadata_accessed": true,
-      "market_data_rows_accessed": false,
-      "market_data_values_accessed": false,
+      "market_data_access_scope": "PRE2024_ONLY_28_FROZEN_PAIRS_TIMESTAMP_LT_2024_PREDICATE",
+      "market_data_accessed": true,
+      "market_data_rows_accessed": true,
+      "market_data_values_accessed": true,
       "new_threshold_created": false,
-      "observable_values_materialized": false,
+      "observable_values_materialized": true,
       "pair_or_event_identity_used_as_runtime_rule": false,
       "persistence_horizon_selected": false,
       "persistent_state_defined": false,
@@ -1672,18 +1681,18 @@
       "production_changed": false,
       "runtime_state_machine_authorized": false
     },
-    "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_CAUSAL_FEATURE_RECONSTRUCTION_EXECUTION_V1",
-    "north_star_effect": "Completed the corrected exact execution preflight after literal repository authority closure. The frozen Control population is proven as 2020 total lifecycles = 1782 decision-represented + 238 zero-eligible, with exact per-lifecycle decision counts totaling 14059. The authoritative control-trades file matches all 2020 lifecycle identities 1:1 and provides finite positive entry_price values under mapping SHA 83CC850A1D6D26EE5F7B60EBDFEE1EB78C91542C210CF041FB40E62B057CCE56. All 28 raw pair files and required schemas are present, and prior literal source authority proves timestamp-filtered Parquet loading. The next task is authorized to read only timestamp<2024-01-01 UTC rows for those 28 pairs using predicate pushdown with no lower bound so frozen T0 ATR/Donchian warmup is preserved, and to materialize exactly the existing 14059 decision rows. The 238 zero-decision lifecycles remain population-summary-only. No market rows were read in this preflight; PnL/economic outcomes, 2024/2025, threshold/horizon selection, persistent states, runtime logic and exit actions remain forbidden.",
-    "objective": "Freeze the exact execution authorization for the already-implemented 22-observable causal feature reconstruction after literal repository authority closure. Prove the full Control population contract 2020 = 1782 decision-represented + 238 zero-eligible lifecycles, exact per-lifecycle decision-row counts totaling 14059, the 1:1 authoritative control-trades entry-price mapping, all 28 required raw pair files and schemas, and literal prior evidence of timestamp-filtered Parquet loading. Authorize the next task only to load timestamp<2024-01-01 UTC rows for those 28 pairs using Parquet predicate pushdown, preserve T0 indicator continuity, materialize exactly the existing 14059 decision rows, and retain 238 zero-decision lifecycles in population summaries only. Do not read raw market rows in this preflight, PnL/economic outcomes, 2024/2025 rows, select thresholds/horizons, define persistent states, or authorize runtime/exit behavior.",
+    "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_CAUSAL_FEATURE_RECONSTRUCTION_MANDATORY_REVIEW_V1",
+    "north_star_effect": "Executed the frozen deterministic reconstruction of all 22 target observables over exactly 14059 existing completed-4H decision rows from 1782 decision-represented Control lifecycles, while retaining 238 zero-eligible lifecycles only in the population summary. Loaded only the 28 frozen raw pair files with Parquet predicate timestamp<2024-01-01 UTC and no lower bound, preserving T0 ATR22/Donchian10 continuity. The authoritative 2020-row control-trades identity+entry_price mapping was used without reading PnL/economic columns. Actual-data parity passed for every memory_now/memory_seen row, C timing, first A condition versus legacy A event, first B condition versus legacy B event, decision identity/order, per-lifecycle row counts and all frozen totals. No 2024/2025 rows, thresholds, horizons, persistent-state definitions, runtime/adaptive logic or exit actions were used. Mandatory human/scientific review is required before any persistent-state definition work.",
+    "objective": "Execute the already-frozen deterministic reconstruction of the 22 persistent-state observability features over exactly the existing 14059 completed-4H decision rows belonging to 1782 decision-represented Control lifecycles, while retaining the other 238 zero-eligible lifecycles only in population summaries. Use the authoritative 2020-row control-trades identity+entry_price mapping and load only the 28 frozen raw pair files with Parquet predicate timestamp<2024-01-01 UTC before materialization, with no lower bound so frozen T0 ATR22/Donchian10 continuity is preserved. Verify actual-data parity for memory_now/memory_seen, C timing, first A condition versus legacy A event, first B condition versus legacy B event, row identities/order, and all frozen trace counts. Do not read PnL/economic outcomes, access 2024/2025 rows, define persistent states, select thresholds/horizons, authorize runtime/adaptive behavior, or execute exits.",
     "outcome": "PASS",
-    "pre_closeout_head": "e640d86f2d98d861a1404f6f299bed5818c2c606",
-    "result_ref": "governance/abc_lifecycle_state_machine_persistent_state_causal_feature_reconstruction_execution_preflight_v1/canonical_result.json",
-    "result_sha256": "2867DDC07C257535EA68302BA2C7D08836E37A6A1B9DCDA19EAD15FAC49383FE",
-    "started_at_utc": "2026-09-20T15:50:12+00:00",
-    "starting_charter_revision": 308,
-    "starting_head": "b8017564f383a5f0b0f91f4b4b6bafc22d436547",
-    "summary": "Completed the corrected exact execution preflight after literal repository authority closure. The frozen Control population is proven as 2020 total lifecycles = 1782 decision-represented + 238 zero-eligible, with exact per-lifecycle decision counts totaling 14059. The authoritative control-trades file matches all 2020 lifecycle identities 1:1 and provides finite positive entry_price values under mapping SHA 83CC850A1D6D26EE5F7B60EBDFEE1EB78C91542C210CF041FB40E62B057CCE56. All 28 raw pair files and required schemas are present, and prior literal source authority proves timestamp-filtered Parquet loading. The next task is authorized to read only timestamp<2024-01-01 UTC rows for those 28 pairs using predicate pushdown with no lower bound so frozen T0 ATR/Donchian warmup is preserved, and to materialize exactly the existing 14059 decision rows. The 238 zero-decision lifecycles remain population-summary-only. No market rows were read in this preflight; PnL/economic outcomes, 2024/2025, threshold/horizon selection, persistent states, runtime logic and exit actions remain forbidden.",
-    "task_id": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_CAUSAL_FEATURE_RECONSTRUCTION_EXECUTION_PREFLIGHT_V1",
+    "pre_closeout_head": "9b9928a6f7999fe8c2465a83e470ec8fc5616444",
+    "result_ref": "governance/abc_lifecycle_state_machine_persistent_state_causal_feature_reconstruction_execution_v1/canonical_result.json",
+    "result_sha256": "1887C6A105FA7D02B1805BA632654D2913FB333BB0EC8C08CEA80F815974960A",
+    "started_at_utc": "2026-09-20T16:12:34+00:00",
+    "starting_charter_revision": 309,
+    "starting_head": "9f6a0219155f47b2757754864d2157bc20bd88a6",
+    "summary": "Executed the frozen deterministic reconstruction of all 22 target observables over exactly 14059 existing completed-4H decision rows from 1782 decision-represented Control lifecycles, while retaining 238 zero-eligible lifecycles only in the population summary. Loaded only the 28 frozen raw pair files with Parquet predicate timestamp<2024-01-01 UTC and no lower bound, preserving T0 ATR22/Donchian10 continuity. The authoritative 2020-row control-trades identity+entry_price mapping was used without reading PnL/economic columns. Actual-data parity passed for every memory_now/memory_seen row, C timing, first A condition versus legacy A event, first B condition versus legacy B event, decision identity/order, per-lifecycle row counts and all frozen totals. No 2024/2025 rows, thresholds, horizons, persistent-state definitions, runtime/adaptive logic or exit actions were used. Mandatory human/scientific review is required before any persistent-state definition work.",
+    "task_id": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_CAUSAL_FEATURE_RECONSTRUCTION_EXECUTION_V1",
     "vision_impact": "ADVANCES"
   },
   "last_execution_event": {
@@ -1892,8 +1901,8 @@
     "task_id": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_PRE_PROGRESS_THESIS_NON_CONFIRMATION_COUNTERFACTUAL_PORTFOLIO_REPLAY_V1",
     "task_start_head": "1cef008128d6da19d9b09ac2b73801d68a2e0e0d"
   },
-  "last_updated_at_utc": "2026-09-20T15:50:16+00:00",
-  "last_updated_by_task": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_CAUSAL_FEATURE_RECONSTRUCTION_EXECUTION_PREFLIGHT_V1",
+  "last_updated_at_utc": "2026-09-20T17:13:48+00:00",
+  "last_updated_by_task": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_CAUSAL_FEATURE_RECONSTRUCTION_EXECUTION_V1",
   "latest_async_ready_state_control_denominator_authority_audit": {
     "actionability_inference_authorized": false,
     "audit_path": "C:\\Users\\abdul\\Downloads\\CAUSAL_EXIT_MECHANISM_PROFIT_ARM_COUNTERFACTUAL_EAG_PERSISTENCE_ASYNC_READY_STATE_CONTROL_DENOMINATOR_AUTHORITY_AUDIT_V1_AUDIT_20260916_171856.json",
@@ -3893,68 +3902,6 @@
   "recent_task_history": [
     {
       "alignment": "ALIGNED_WITH_SCOPE_UPDATE",
-      "axis": "ABC_LIFECYCLE_STATE_MACHINE_EVIDENCE_STATE_PREDICATE_PROTOCOL_FREEZE",
-      "completed_at_utc": "2026-09-20T11:01:31+00:00",
-      "completed_charter_revision": 290,
-      "evidence": [
-        {
-          "path": "governance/abc_lifecycle_state_machine_evidence_state_predicate_protocol_v1/predicate_catalog.json",
-          "sha256": "EAB8573521DD94F36C0632CC809CF1D3DFD35C9B9B6FEE52681838BBC1A77DD0"
-        },
-        {
-          "path": "governance/abc_lifecycle_state_machine_evidence_state_predicate_protocol_v1/protocol.json",
-          "sha256": "BAE6B423905CA22EB039910FF2540739A37DED9C7874BED3440DEEB34550EC81"
-        },
-        {
-          "path": "governance/abc_lifecycle_state_machine_evidence_state_predicate_protocol_v1/canonical_result.json",
-          "sha256": "BB71BFB70AA010856E8F5E3025192D39B1E75054257146CCCAFCAE4B5641229B"
-        },
-        {
-          "path": "governance/abc_lifecycle_state_machine_observational_trace_mandatory_review_v1/canonical_result.json",
-          "sha256": "FC29B3C53641CFFC2CD0166AEB6C5CB4E4C1FB0F137904F61402CAEECE8BD366"
-        },
-        {
-          "path": "governance/abc_lifecycle_state_machine_observational_trace_v1/canonical_result.json",
-          "sha256": "48FE5760D7975FF6EA652CCEE62905CF456A2532B8EBE7F37305A21A1720DF45"
-        }
-      ],
-      "governance_declarations": {
-        "2023_new_raw_or_replay_accessed": false,
-        "2024_used_as_fresh_holdout": false,
-        "2024_used_to_define_new_runtime_rule": false,
-        "2025_accessed": false,
-        "adaptive_logic_authorized": false,
-        "candidate_combination_tested": false,
-        "candidate_replay_executed": false,
-        "economic_outcomes_read": false,
-        "exit_action_authorized": false,
-        "exit_arbiter_authorized": false,
-        "lookahead_or_future_information_used": false,
-        "market_data_accessed": false,
-        "new_threshold_created": false,
-        "pair_or_event_identity_used_as_runtime_rule": false,
-        "pnl_columns_read": false,
-        "portfolio_replay_executed": false,
-        "posthoc_outcome_threshold_search_used": false,
-        "production_changed": false,
-        "runtime_state_machine_authorized": false
-      },
-      "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_EVIDENCE_STATE_PREDICATE_OBSERVATIONAL_MATERIALIZATION_V1",
-      "north_star_effect": "Frozen three event-local non-economic evidence overlays using only existing C/A/B predicates: STALLED candidate evidence from C in UNCONFIRMED, STRUCTURAL_BREAK candidate evidence from A, and VOLATILITY_DAMAGE candidate evidence from B in CONFIRMED. Overlays do not persist, latch, replace base phases, create transitions, or authorize runtime exit behavior. Next is output-only observational materialization.",
-      "objective": "Freeze a non-economic evidence-state predicate protocol after the successful lifecycle trace review. Reuse only already-frozen C/A/B predicates and base-state context: C in UNCONFIRMED as a STALLED evidence candidate, A in any base phase as STRUCTURAL_BREAK evidence candidate, and B in CONFIRMED as VOLATILITY_DAMAGE evidence candidate. All overlays are event-local observational labels only: no persistence, latch, priority, state transition, exit action, adaptive logic, candidate combination, new threshold, economic evaluation, market-data access, 2024/2025 access, or production change.",
-      "outcome": "PASS",
-      "pre_closeout_head": "5a5d0d749a79ab8df03ff2bfeef365ea12a9d044",
-      "result_ref": "governance/abc_lifecycle_state_machine_evidence_state_predicate_protocol_v1/canonical_result.json",
-      "result_sha256": "BB71BFB70AA010856E8F5E3025192D39B1E75054257146CCCAFCAE4B5641229B",
-      "started_at_utc": "2026-09-20T11:01:27+00:00",
-      "starting_charter_revision": 289,
-      "starting_head": "c5a1f9a9b33333f6a1bb77d77eaeea02c164b90f",
-      "summary": "Frozen three event-local non-economic evidence overlays using only existing C/A/B predicates: STALLED candidate evidence from C in UNCONFIRMED, STRUCTURAL_BREAK candidate evidence from A, and VOLATILITY_DAMAGE candidate evidence from B in CONFIRMED. Overlays do not persist, latch, replace base phases, create transitions, or authorize runtime exit behavior. Next is output-only observational materialization.",
-      "task_id": "ABC_LIFECYCLE_STATE_MACHINE_EVIDENCE_STATE_PREDICATE_PROTOCOL_FREEZE_V1",
-      "vision_impact": "ADVANCES"
-    },
-    {
-      "alignment": "ALIGNED_WITH_SCOPE_UPDATE",
       "axis": "ABC_LIFECYCLE_STATE_MACHINE_EVIDENCE_STATE_PREDICATE_OBSERVATIONAL_MATERIALIZATION",
       "completed_at_utc": "2026-09-20T11:06:59+00:00",
       "completed_charter_revision": 291,
@@ -5203,6 +5150,77 @@
       "summary": "Completed the corrected exact execution preflight after literal repository authority closure. The frozen Control population is proven as 2020 total lifecycles = 1782 decision-represented + 238 zero-eligible, with exact per-lifecycle decision counts totaling 14059. The authoritative control-trades file matches all 2020 lifecycle identities 1:1 and provides finite positive entry_price values under mapping SHA 83CC850A1D6D26EE5F7B60EBDFEE1EB78C91542C210CF041FB40E62B057CCE56. All 28 raw pair files and required schemas are present, and prior literal source authority proves timestamp-filtered Parquet loading. The next task is authorized to read only timestamp<2024-01-01 UTC rows for those 28 pairs using predicate pushdown with no lower bound so frozen T0 ATR/Donchian warmup is preserved, and to materialize exactly the existing 14059 decision rows. The 238 zero-decision lifecycles remain population-summary-only. No market rows were read in this preflight; PnL/economic outcomes, 2024/2025, threshold/horizon selection, persistent states, runtime logic and exit actions remain forbidden.",
       "task_id": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_CAUSAL_FEATURE_RECONSTRUCTION_EXECUTION_PREFLIGHT_V1",
       "vision_impact": "ADVANCES"
+    },
+    {
+      "alignment": "ALIGNED_WITH_SCOPE_UPDATE",
+      "axis": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_CAUSAL_FEATURE_RECONSTRUCTION_EXECUTION",
+      "completed_at_utc": "2026-09-20T17:13:48+00:00",
+      "completed_charter_revision": 310,
+      "evidence": [
+        {
+          "path": "governance/abc_lifecycle_state_machine_persistent_state_causal_feature_reconstruction_execution_v1/decision_grid_reconstructed_features.csv",
+          "sha256": "15707D9D66E466FD1706646ADDFCFD2316E6210186EF3C1B4A735D9DF7880F42"
+        },
+        {
+          "path": "governance/abc_lifecycle_state_machine_persistent_state_causal_feature_reconstruction_execution_v1/lifecycle_reconstruction_summary.csv",
+          "sha256": "2EA3DC9AF5C5CF15820164C106E10058685675155B33E300E808A53616533323"
+        },
+        {
+          "path": "governance/abc_lifecycle_state_machine_persistent_state_causal_feature_reconstruction_execution_v1/raw_market_access_audit.json",
+          "sha256": "E76C41D16B3E5DDE98E874DECFA65E2F2496BF475C787EA62F9042D74EC105C2"
+        },
+        {
+          "path": "governance/abc_lifecycle_state_machine_persistent_state_causal_feature_reconstruction_execution_v1/acceptance_report.json",
+          "sha256": "CF378F2078A9A0305C92ED973E46C26BBB95544BA8A8E4F7F9BA3AAD8B6CF84F"
+        },
+        {
+          "path": "governance/abc_lifecycle_state_machine_persistent_state_causal_feature_reconstruction_execution_v1/canonical_result.json",
+          "sha256": "1887C6A105FA7D02B1805BA632654D2913FB333BB0EC8C08CEA80F815974960A"
+        },
+        {
+          "path": "governance/abc_lifecycle_state_machine_persistent_state_causal_feature_reconstruction_execution_v1/output_manifest.json",
+          "sha256": "E298D30B3B1A13BB37F126E1F2F802994B732210D06703120874D4EED22EA086"
+        }
+      ],
+      "governance_declarations": {
+        "2023_new_raw_or_replay_accessed": true,
+        "2024_used_as_fresh_holdout": false,
+        "2024_used_to_define_new_runtime_rule": false,
+        "2025_accessed": false,
+        "adaptive_logic_authorized": false,
+        "control_trade_identity_and_entry_price_only_accessed": true,
+        "economic_outcomes_read": false,
+        "exit_action_authorized": false,
+        "exit_arbiter_authorized": false,
+        "historical_reconstruction_executed": true,
+        "lookahead_or_future_information_used": false,
+        "market_data_access_scope": "PRE2024_ONLY_28_FROZEN_PAIRS_TIMESTAMP_LT_2024_PREDICATE",
+        "market_data_accessed": true,
+        "market_data_rows_accessed": true,
+        "market_data_values_accessed": true,
+        "new_threshold_created": false,
+        "observable_values_materialized": true,
+        "pair_or_event_identity_used_as_runtime_rule": false,
+        "persistence_horizon_selected": false,
+        "persistent_state_defined": false,
+        "pnl_columns_read": false,
+        "posthoc_outcome_threshold_search_used": false,
+        "production_changed": false,
+        "runtime_state_machine_authorized": false
+      },
+      "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_CAUSAL_FEATURE_RECONSTRUCTION_MANDATORY_REVIEW_V1",
+      "north_star_effect": "Executed the frozen deterministic reconstruction of all 22 target observables over exactly 14059 existing completed-4H decision rows from 1782 decision-represented Control lifecycles, while retaining 238 zero-eligible lifecycles only in the population summary. Loaded only the 28 frozen raw pair files with Parquet predicate timestamp<2024-01-01 UTC and no lower bound, preserving T0 ATR22/Donchian10 continuity. The authoritative 2020-row control-trades identity+entry_price mapping was used without reading PnL/economic columns. Actual-data parity passed for every memory_now/memory_seen row, C timing, first A condition versus legacy A event, first B condition versus legacy B event, decision identity/order, per-lifecycle row counts and all frozen totals. No 2024/2025 rows, thresholds, horizons, persistent-state definitions, runtime/adaptive logic or exit actions were used. Mandatory human/scientific review is required before any persistent-state definition work.",
+      "objective": "Execute the already-frozen deterministic reconstruction of the 22 persistent-state observability features over exactly the existing 14059 completed-4H decision rows belonging to 1782 decision-represented Control lifecycles, while retaining the other 238 zero-eligible lifecycles only in population summaries. Use the authoritative 2020-row control-trades identity+entry_price mapping and load only the 28 frozen raw pair files with Parquet predicate timestamp<2024-01-01 UTC before materialization, with no lower bound so frozen T0 ATR22/Donchian10 continuity is preserved. Verify actual-data parity for memory_now/memory_seen, C timing, first A condition versus legacy A event, first B condition versus legacy B event, row identities/order, and all frozen trace counts. Do not read PnL/economic outcomes, access 2024/2025 rows, define persistent states, select thresholds/horizons, authorize runtime/adaptive behavior, or execute exits.",
+      "outcome": "PASS",
+      "pre_closeout_head": "9b9928a6f7999fe8c2465a83e470ec8fc5616444",
+      "result_ref": "governance/abc_lifecycle_state_machine_persistent_state_causal_feature_reconstruction_execution_v1/canonical_result.json",
+      "result_sha256": "1887C6A105FA7D02B1805BA632654D2913FB333BB0EC8C08CEA80F815974960A",
+      "started_at_utc": "2026-09-20T16:12:34+00:00",
+      "starting_charter_revision": 309,
+      "starting_head": "9f6a0219155f47b2757754864d2157bc20bd88a6",
+      "summary": "Executed the frozen deterministic reconstruction of all 22 target observables over exactly 14059 existing completed-4H decision rows from 1782 decision-represented Control lifecycles, while retaining 238 zero-eligible lifecycles only in the population summary. Loaded only the 28 frozen raw pair files with Parquet predicate timestamp<2024-01-01 UTC and no lower bound, preserving T0 ATR22/Donchian10 continuity. The authoritative 2020-row control-trades identity+entry_price mapping was used without reading PnL/economic columns. Actual-data parity passed for every memory_now/memory_seen row, C timing, first A condition versus legacy A event, first B condition versus legacy B event, decision identity/order, per-lifecycle row counts and all frozen totals. No 2024/2025 rows, thresholds, horizons, persistent-state definitions, runtime/adaptive logic or exit actions were used. Mandatory human/scientific review is required before any persistent-state definition work.",
+      "task_id": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_CAUSAL_FEATURE_RECONSTRUCTION_EXECUTION_V1",
+      "vision_impact": "ADVANCES"
     }
   ],
   "schema_version": "akah-bot-system-charter-v1",
@@ -5249,18 +5267,18 @@
   "github_sync_metadata": {
     "schema_version": "akah-bot-github-governance-snapshot-v3",
     "snapshot_semantics": "CURRENT_CANONICAL_GOVERNANCE_STATE_WITH_RECENT_EXECUTION_HISTORY_EXTERNALIZED",
-    "charter_revision": 309,
+    "charter_revision": 310,
     "source_branch": "research/rd48-cross-venue-price-level-basis-direct-utility-v1",
-    "source_head": "9f6a0219155f47b2757754864d2157bc20bd88a6",
+    "source_head": "1b733d0baa3a7d8f62e6b53b2e37cb09a386a8a0",
     "canonical_local_charter_path": "governance/AKAH_BOT_SYSTEM_CHARTER.json",
-    "canonical_local_charter_size_bytes": 213195485,
-    "canonical_local_charter_sha256": "0969636EFAEBEB27C063A9ED67868B36181F0EE225FCABCB39A45C848A4A590A",
+    "canonical_local_charter_size_bytes": 213198036,
+    "canonical_local_charter_sha256": "FE6B2F67C3F0FA201CE8D0E9D849E5F575CB355C6386C31C85490B42B85F3A2B",
     "externalized_top_level_key": "recent_execution_history",
-    "full_archive_repo_path": "governance/archive/AKAH_BOT_SYSTEM_CHARTER_REV309_FULL.json.gz",
-    "full_archive_size_bytes": 16818750,
-    "full_archive_sha256": "A2F312CBB23E74119C0F063D0EA37E2F17573215B95F8B723A408EE5A7771713",
-    "latest_task_id": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_CAUSAL_FEATURE_RECONSTRUCTION_EXECUTION_PREFLIGHT_V1",
-    "current_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_CAUSAL_FEATURE_RECONSTRUCTION_EXECUTION_V1",
+    "full_archive_repo_path": "governance/archive/AKAH_BOT_SYSTEM_CHARTER_REV310_FULL.json.gz",
+    "full_archive_size_bytes": 16819104,
+    "full_archive_sha256": "58982C7E6847E8D243611262F273EC8E94C04CAC6FDF541E40534B554B84C1D7",
+    "latest_task_id": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_CAUSAL_FEATURE_RECONSTRUCTION_EXECUTION_V1",
+    "current_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_CAUSAL_FEATURE_RECONSTRUCTION_MANDATORY_REVIEW_V1",
     "governance_sync_status": "SYNCHRONIZED_TO_LATEST_EXECUTION_EVENT"
   }
 }
