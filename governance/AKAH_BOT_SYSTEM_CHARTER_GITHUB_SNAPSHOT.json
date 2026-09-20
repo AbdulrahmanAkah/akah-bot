@@ -424,7 +424,7 @@
     "preinstall_head": "b3142d0135d393088ab3fe55c53b0e28ec7574cb"
   },
   "charter_id": "AKAH_BOT_SYSTEM_CHARTER",
-  "charter_revision": 293,
+  "charter_revision": 294,
   "constitutional_core": {
     "amendment_rule": "The constitutional core may change only after explicit user authorization. Ordinary task closeout may update current_state, bottleneck, evidence summary, priority ordering, and task history but may not silently alter core principles.",
     "core_version": 1,
@@ -576,7 +576,7 @@
     "counterfactual_profit_claim": false,
     "cross_universe_classification": "UNIVERSE_STRATA_CONTAIN_DIVERGENT_REPLAY_INFORMATION",
     "cross_universe_exact": false,
-    "current_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_EVIDENCE_SEQUENCE_OBSERVATIONAL_MATERIALIZATION_V1",
+    "current_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_EVIDENCE_SEQUENCE_MANDATORY_REVIEW_V1",
     "dynamic_roles_all_bound": false,
     "economic_analysis": false,
     "economic_interpretation_performed": false,
@@ -1626,33 +1626,41 @@
   },
   "last_completed_task": {
     "alignment": "ALIGNED_WITH_SCOPE_UPDATE",
-    "axis": "ABC_LIFECYCLE_STATE_MACHINE_EVIDENCE_SEQUENCE_PROTOCOL_FREEZE",
-    "completed_at_utc": "2026-09-20T11:36:20+00:00",
-    "completed_charter_revision": 293,
+    "axis": "ABC_LIFECYCLE_STATE_MACHINE_EVIDENCE_SEQUENCE_OBSERVATIONAL_MATERIALIZATION",
+    "completed_at_utc": "2026-09-20T11:43:05+00:00",
+    "completed_charter_revision": 294,
     "evidence": [
       {
-        "path": "governance/abc_lifecycle_state_machine_evidence_sequence_protocol_v1/canonical_result.json",
-        "sha256": "D8C541FFDBA4A51E20A7B28D35AC3075C69524B336E34C19C30FB6BCC74A6C3B"
+        "path": "governance/abc_lifecycle_state_machine_evidence_sequence_observational_materialization_v1/canonical_result.json",
+        "sha256": "D70DDE12C8234C2F26E8E94903C6D0B242215DFE6CE9CD50AED7584DFAAD89AD"
       },
       {
-        "path": "governance/abc_lifecycle_state_machine_evidence_sequence_protocol_v1/protocol.json",
-        "sha256": "062CB9F6F9AC58441CE5E0188C643F52BBBF40815F1F0B5538F07E4FAFC47729"
+        "path": "governance/abc_lifecycle_state_machine_evidence_sequence_observational_materialization_v1/sequence_completeness_audit.json",
+        "sha256": "3AABA2594C0E38B33F604B0D343142DAF52D938A783BA27DBC9CB4B4034DF133"
       },
       {
-        "path": "governance/abc_lifecycle_state_machine_evidence_sequence_protocol_v1/sequence_event_catalog.json",
-        "sha256": "006D100C86F1466702B8107B747AAE915CD23D500C812FF4FBBA96A6FEEDAD47"
+        "path": "governance/abc_lifecycle_state_machine_evidence_sequence_observational_materialization_v1/sequence_noninterpretation_audit.json",
+        "sha256": "D32BA0922EC3A559DF515CAE194D15E233CC21F27EC768FF0EA75A348176035B"
       },
       {
-        "path": "governance/abc_lifecycle_state_machine_evidence_state_predicate_mandatory_review_v1/canonical_result.json",
-        "sha256": "C2D6787F95895C701C711CC240ACF917EC5222A77DD8D1639104724895C4F2AC"
+        "path": "governance/abc_lifecycle_state_machine_evidence_sequence_observational_materialization_v1/output_manifest.json",
+        "sha256": "E7B53A721F50CEDE20B08A5A74557A37EBFBC04EC01E0B08D005C2D33A45EDD8"
       },
       {
-        "path": "governance/abc_lifecycle_state_machine_evidence_state_predicate_observational_materialization_v1/canonical_result.json",
-        "sha256": "636EAB1819744573CC1C54621AF147100FEFB002983EE0F48406EEF272B5AC6D"
+        "path": "governance/abc_lifecycle_state_machine_evidence_sequence_observational_materialization_v1/sequence_signature_counts.csv",
+        "sha256": "8C1E04972031CE63B72EA092E7B207808D45D59EBD55CC70BD10DBECA20F29A4"
       },
       {
-        "path": "governance/abc_lifecycle_state_machine_observational_trace_v1/canonical_result.json",
-        "sha256": "48FE5760D7975FF6EA652CCEE62905CF456A2532B8EBE7F37305A21A1720DF45"
+        "path": "governance/abc_lifecycle_state_machine_evidence_sequence_observational_materialization_v1/adjacent_event_set_transition_counts.csv",
+        "sha256": "AB77CD3C7444926AEAAAEC630384A6DEB3667346480F66BAD38DA71AE7CC9BA2"
+      },
+      {
+        "path": "governance/abc_lifecycle_state_machine_evidence_sequence_observational_materialization_v1/pairwise_event_order_relations.csv",
+        "sha256": "C63A34BFD219F68FF87DE1919AE3767D19D786FC4F6E6D0CE8A38F9513468683"
+      },
+      {
+        "path": "governance/abc_lifecycle_state_machine_evidence_sequence_observational_materialization_v1/consecutive_event_set_gap_summary.csv",
+        "sha256": "B91FD135386FE8FA7A06FBED72551527793388D60000C48A400CEA8D3976515F"
       }
     ],
     "governance_declarations": {
@@ -1675,20 +1683,22 @@
       "posthoc_outcome_threshold_search_used": false,
       "production_changed": false,
       "runtime_state_machine_authorized": false,
-      "state_duration_rule_created": false
+      "sequence_ranking_created": false,
+      "state_duration_rule_created": false,
+      "time_gap_bins_created": false
     },
-    "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_EVIDENCE_SEQUENCE_OBSERVATIONAL_MATERIALIZATION_V1",
-    "north_star_effect": "Frozen an output-only non-economic evidence-sequence protocol across all 2020 Control lifecycles. The protocol groups simultaneous events without priority and freezes chronology, pairwise order relations, adjacent event-set transitions and unbinned descriptive event gaps using existing timestamps only. No persistence, duration rule, ranking, runtime transition or exit behavior is authorized.",
-    "objective": "Freeze an output-only non-economic evidence-sequence protocol using only the accepted lifecycle base phases and event-local evidence overlays. Define deterministic lifecycle chronology for ENTRY, FIRST_MEMORY, CONFIRMED_PHASE_ENTRY, STALLED_EVIDENCE, STRUCTURAL_BREAK_EVIDENCE, VOLATILITY_DAMAGE_EVIDENCE and NATIVE_EXIT. Simultaneous events must be represented as unordered event sets with canonical serialization but no priority. Freeze exact ordering, pairwise temporal relations, adjacent event-set transitions and descriptive time-gap outputs only. Do not create persistence, state duration rules, thresholds, ranking, economic evaluation, replay, runtime transitions, adaptive logic, exit actions or an Exit Arbiter.",
+    "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_EVIDENCE_SEQUENCE_MANDATORY_REVIEW_V1",
+    "north_star_effect": "Materialized the frozen non-economic lifecycle evidence sequence for all 2020 Control lifecycles. Simultaneous events were grouped as unordered event sets; exact sequence signatures, adjacent event-set transitions, pairwise order relations and unbinned descriptive time gaps passed parity and causal-order audits. No persistence, state-duration rule, ranking, market data, PnL, replay or runtime behavior was introduced.",
+    "objective": "Materialize the frozen non-economic lifecycle evidence-sequence protocol on all 2020 frozen Control lifecycles using only existing lifecycle_summary and materialized decision-grid outputs. Build exact event sets for ENTRY, FIRST_MEMORY, CONFIRMED_PHASE_ENTRY, STALLED_EVIDENCE, STRUCTURAL_BREAK_EVIDENCE, VOLATILITY_DAMAGE_EVIDENCE and NATIVE_EXIT; group identical timestamps without priority; emit deterministic sequence signatures, adjacent event-set transition counts, pairwise order relations and unbinned descriptive time gaps. Audit exact event parity and causal ordering. Do not read market data or PnL, infer persistence, create duration rules or thresholds, rank sequences, replay candidates/portfolios, authorize runtime transitions, adaptive logic, exit actions or an Exit Arbiter.",
     "outcome": "PASS",
-    "pre_closeout_head": "3735b7bc0a1a49118557ddca6d22d26ab6d76d2b",
-    "result_ref": "governance/abc_lifecycle_state_machine_evidence_sequence_protocol_v1/canonical_result.json",
-    "result_sha256": "D8C541FFDBA4A51E20A7B28D35AC3075C69524B336E34C19C30FB6BCC74A6C3B",
-    "started_at_utc": "2026-09-20T11:36:15+00:00",
-    "starting_charter_revision": 292,
-    "starting_head": "9e7b0b62ac535c6c9ea26f32ccea1d22cfda852d",
-    "summary": "Frozen an output-only non-economic evidence-sequence protocol across all 2020 Control lifecycles. The protocol groups simultaneous events without priority and freezes chronology, pairwise order relations, adjacent event-set transitions and unbinned descriptive event gaps using existing timestamps only. No persistence, duration rule, ranking, runtime transition or exit behavior is authorized.",
-    "task_id": "ABC_LIFECYCLE_STATE_MACHINE_EVIDENCE_SEQUENCE_PROTOCOL_FREEZE_V1",
+    "pre_closeout_head": "b7d6de316d488ba8f0d2496148cf665de3aa7417",
+    "result_ref": "governance/abc_lifecycle_state_machine_evidence_sequence_observational_materialization_v1/canonical_result.json",
+    "result_sha256": "D70DDE12C8234C2F26E8E94903C6D0B242215DFE6CE9CD50AED7584DFAAD89AD",
+    "started_at_utc": "2026-09-20T11:42:23+00:00",
+    "starting_charter_revision": 293,
+    "starting_head": "118bdde80f835ceae7ba0f1d6a04d616821dcd74",
+    "summary": "Materialized the frozen non-economic lifecycle evidence sequence for all 2020 Control lifecycles. Simultaneous events were grouped as unordered event sets; exact sequence signatures, adjacent event-set transitions, pairwise order relations and unbinned descriptive time gaps passed parity and causal-order audits. No persistence, state-duration rule, ranking, market data, PnL, replay or runtime behavior was introduced.",
+    "task_id": "ABC_LIFECYCLE_STATE_MACHINE_EVIDENCE_SEQUENCE_OBSERVATIONAL_MATERIALIZATION_V1",
     "vision_impact": "ADVANCES"
   },
   "last_execution_event": {
@@ -1897,8 +1907,8 @@
     "task_id": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_PRE_PROGRESS_THESIS_NON_CONFIRMATION_COUNTERFACTUAL_PORTFOLIO_REPLAY_V1",
     "task_start_head": "1cef008128d6da19d9b09ac2b73801d68a2e0e0d"
   },
-  "last_updated_at_utc": "2026-09-20T11:36:20+00:00",
-  "last_updated_by_task": "ABC_LIFECYCLE_STATE_MACHINE_EVIDENCE_SEQUENCE_PROTOCOL_FREEZE_V1",
+  "last_updated_at_utc": "2026-09-20T11:43:05+00:00",
+  "last_updated_by_task": "ABC_LIFECYCLE_STATE_MACHINE_EVIDENCE_SEQUENCE_OBSERVATIONAL_MATERIALIZATION_V1",
   "latest_async_ready_state_control_denominator_authority_audit": {
     "actionability_inference_authorized": false,
     "audit_path": "C:\\Users\\abdul\\Downloads\\CAUSAL_EXIT_MECHANISM_PROFIT_ARM_COUNTERFACTUAL_EAG_PERSISTENCE_ASYNC_READY_STATE_CONTROL_DENOMINATOR_AUTHORITY_AUDIT_V1_AUDIT_20260916_171856.json",
@@ -3898,47 +3908,6 @@
   "recent_task_history": [
     {
       "alignment": "ALIGNED_WITH_SCOPE_UPDATE",
-      "axis": "PRE2019_WARMUP_DATA_ACCESS_AUTHORIZATION",
-      "completed_at_utc": "2026-09-19T21:39:08+00:00",
-      "completed_charter_revision": 274,
-      "evidence": [
-        {
-          "path": "governance/abc_pre2019_warmup_data_access_authorization_v1/authorization.json",
-          "sha256": "87133C576D7BE31F92F0091763ECACEA23B0749744289AF38133365CA560EC8D"
-        },
-        {
-          "path": "governance/abc_pre2019_warmup_data_access_authorization_v1/canonical_result.json",
-          "sha256": "87133C576D7BE31F92F0091763ECACEA23B0749744289AF38133365CA560EC8D"
-        }
-      ],
-      "governance_declarations": {
-        "2023_new_raw_or_replay_accessed": false,
-        "2024_used_as_fresh_holdout": false,
-        "2024_used_to_define_new_runtime_rule": false,
-        "2025_accessed": false,
-        "lookahead_or_future_information_used": false,
-        "pair_or_event_identity_used_as_runtime_rule": false,
-        "posthoc_outcome_threshold_search_used": false,
-        "pre2019_warmup_access_authorized": true,
-        "pre2019_warmup_accessed": false,
-        "production_changed": false
-      },
-      "next_bottleneck": "ABC_2019_2023_AUTHORITY_DATA_READINESS_AUDIT_V1",
-      "north_star_effect": "Pre-2019 access authorized only for causal warmup/readiness; no trades or outcomes.",
-      "objective": "Authorize read-only pre-2019 market data solely for T0 and warmup/readiness of ATR22, Donchian10 and native state engine. No pre-2019 trades, PnL, outcomes, tuning or optimization.",
-      "outcome": "PASS",
-      "pre_closeout_head": "403742948b5c6d6d288f045a5fa793c5372b275d",
-      "result_ref": "governance/abc_pre2019_warmup_data_access_authorization_v1/canonical_result.json",
-      "result_sha256": "87133C576D7BE31F92F0091763ECACEA23B0749744289AF38133365CA560EC8D",
-      "started_at_utc": "2026-09-19T21:39:05+00:00",
-      "starting_charter_revision": 273,
-      "starting_head": "0d7926a22787fb2992af36bd119283215ee7c710",
-      "summary": "Pre-2019 access authorized only for causal warmup/readiness; no trades or outcomes.",
-      "task_id": "ABC_PRE2019_WARMUP_DATA_ACCESS_AUTHORIZATION_V1",
-      "vision_impact": "ADVANCES"
-    },
-    {
-      "alignment": "ALIGNED_WITH_SCOPE_UPDATE",
       "axis": "ABC_2019_2023_AUTHORITY_DATA_READINESS",
       "completed_at_utc": "2026-09-19T21:46:42+00:00",
       "completed_charter_revision": 275,
@@ -5046,6 +5015,83 @@
       "summary": "Frozen an output-only non-economic evidence-sequence protocol across all 2020 Control lifecycles. The protocol groups simultaneous events without priority and freezes chronology, pairwise order relations, adjacent event-set transitions and unbinned descriptive event gaps using existing timestamps only. No persistence, duration rule, ranking, runtime transition or exit behavior is authorized.",
       "task_id": "ABC_LIFECYCLE_STATE_MACHINE_EVIDENCE_SEQUENCE_PROTOCOL_FREEZE_V1",
       "vision_impact": "ADVANCES"
+    },
+    {
+      "alignment": "ALIGNED_WITH_SCOPE_UPDATE",
+      "axis": "ABC_LIFECYCLE_STATE_MACHINE_EVIDENCE_SEQUENCE_OBSERVATIONAL_MATERIALIZATION",
+      "completed_at_utc": "2026-09-20T11:43:05+00:00",
+      "completed_charter_revision": 294,
+      "evidence": [
+        {
+          "path": "governance/abc_lifecycle_state_machine_evidence_sequence_observational_materialization_v1/canonical_result.json",
+          "sha256": "D70DDE12C8234C2F26E8E94903C6D0B242215DFE6CE9CD50AED7584DFAAD89AD"
+        },
+        {
+          "path": "governance/abc_lifecycle_state_machine_evidence_sequence_observational_materialization_v1/sequence_completeness_audit.json",
+          "sha256": "3AABA2594C0E38B33F604B0D343142DAF52D938A783BA27DBC9CB4B4034DF133"
+        },
+        {
+          "path": "governance/abc_lifecycle_state_machine_evidence_sequence_observational_materialization_v1/sequence_noninterpretation_audit.json",
+          "sha256": "D32BA0922EC3A559DF515CAE194D15E233CC21F27EC768FF0EA75A348176035B"
+        },
+        {
+          "path": "governance/abc_lifecycle_state_machine_evidence_sequence_observational_materialization_v1/output_manifest.json",
+          "sha256": "E7B53A721F50CEDE20B08A5A74557A37EBFBC04EC01E0B08D005C2D33A45EDD8"
+        },
+        {
+          "path": "governance/abc_lifecycle_state_machine_evidence_sequence_observational_materialization_v1/sequence_signature_counts.csv",
+          "sha256": "8C1E04972031CE63B72EA092E7B207808D45D59EBD55CC70BD10DBECA20F29A4"
+        },
+        {
+          "path": "governance/abc_lifecycle_state_machine_evidence_sequence_observational_materialization_v1/adjacent_event_set_transition_counts.csv",
+          "sha256": "AB77CD3C7444926AEAAAEC630384A6DEB3667346480F66BAD38DA71AE7CC9BA2"
+        },
+        {
+          "path": "governance/abc_lifecycle_state_machine_evidence_sequence_observational_materialization_v1/pairwise_event_order_relations.csv",
+          "sha256": "C63A34BFD219F68FF87DE1919AE3767D19D786FC4F6E6D0CE8A38F9513468683"
+        },
+        {
+          "path": "governance/abc_lifecycle_state_machine_evidence_sequence_observational_materialization_v1/consecutive_event_set_gap_summary.csv",
+          "sha256": "B91FD135386FE8FA7A06FBED72551527793388D60000C48A400CEA8D3976515F"
+        }
+      ],
+      "governance_declarations": {
+        "2023_new_raw_or_replay_accessed": false,
+        "2024_used_as_fresh_holdout": false,
+        "2024_used_to_define_new_runtime_rule": false,
+        "2025_accessed": false,
+        "adaptive_logic_authorized": false,
+        "candidate_replay_executed": false,
+        "economic_outcomes_read": false,
+        "exit_action_authorized": false,
+        "exit_arbiter_authorized": false,
+        "lookahead_or_future_information_used": false,
+        "market_data_accessed": false,
+        "new_threshold_created": false,
+        "pair_or_event_identity_used_as_runtime_rule": false,
+        "persistence_horizon_created": false,
+        "pnl_columns_read": false,
+        "portfolio_replay_executed": false,
+        "posthoc_outcome_threshold_search_used": false,
+        "production_changed": false,
+        "runtime_state_machine_authorized": false,
+        "sequence_ranking_created": false,
+        "state_duration_rule_created": false,
+        "time_gap_bins_created": false
+      },
+      "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_EVIDENCE_SEQUENCE_MANDATORY_REVIEW_V1",
+      "north_star_effect": "Materialized the frozen non-economic lifecycle evidence sequence for all 2020 Control lifecycles. Simultaneous events were grouped as unordered event sets; exact sequence signatures, adjacent event-set transitions, pairwise order relations and unbinned descriptive time gaps passed parity and causal-order audits. No persistence, state-duration rule, ranking, market data, PnL, replay or runtime behavior was introduced.",
+      "objective": "Materialize the frozen non-economic lifecycle evidence-sequence protocol on all 2020 frozen Control lifecycles using only existing lifecycle_summary and materialized decision-grid outputs. Build exact event sets for ENTRY, FIRST_MEMORY, CONFIRMED_PHASE_ENTRY, STALLED_EVIDENCE, STRUCTURAL_BREAK_EVIDENCE, VOLATILITY_DAMAGE_EVIDENCE and NATIVE_EXIT; group identical timestamps without priority; emit deterministic sequence signatures, adjacent event-set transition counts, pairwise order relations and unbinned descriptive time gaps. Audit exact event parity and causal ordering. Do not read market data or PnL, infer persistence, create duration rules or thresholds, rank sequences, replay candidates/portfolios, authorize runtime transitions, adaptive logic, exit actions or an Exit Arbiter.",
+      "outcome": "PASS",
+      "pre_closeout_head": "b7d6de316d488ba8f0d2496148cf665de3aa7417",
+      "result_ref": "governance/abc_lifecycle_state_machine_evidence_sequence_observational_materialization_v1/canonical_result.json",
+      "result_sha256": "D70DDE12C8234C2F26E8E94903C6D0B242215DFE6CE9CD50AED7584DFAAD89AD",
+      "started_at_utc": "2026-09-20T11:42:23+00:00",
+      "starting_charter_revision": 293,
+      "starting_head": "118bdde80f835ceae7ba0f1d6a04d616821dcd74",
+      "summary": "Materialized the frozen non-economic lifecycle evidence sequence for all 2020 Control lifecycles. Simultaneous events were grouped as unordered event sets; exact sequence signatures, adjacent event-set transitions, pairwise order relations and unbinned descriptive time gaps passed parity and causal-order audits. No persistence, state-duration rule, ranking, market data, PnL, replay or runtime behavior was introduced.",
+      "task_id": "ABC_LIFECYCLE_STATE_MACHINE_EVIDENCE_SEQUENCE_OBSERVATIONAL_MATERIALIZATION_V1",
+      "vision_impact": "ADVANCES"
     }
   ],
   "schema_version": "akah-bot-system-charter-v1",
@@ -5092,18 +5138,18 @@
   "github_sync_metadata": {
     "schema_version": "akah-bot-github-governance-snapshot-v3",
     "snapshot_semantics": "CURRENT_CANONICAL_GOVERNANCE_STATE_WITH_RECENT_EXECUTION_HISTORY_EXTERNALIZED",
-    "charter_revision": 293,
+    "charter_revision": 294,
     "source_branch": "research/rd48-cross-venue-price-level-basis-direct-utility-v1",
-    "source_head": "118bdde80f835ceae7ba0f1d6a04d616821dcd74",
+    "source_head": "1a212302e7c03ce9007624c136fa667609b87f35",
     "canonical_local_charter_path": "governance/AKAH_BOT_SYSTEM_CHARTER.json",
-    "canonical_local_charter_size_bytes": 213171937,
-    "canonical_local_charter_sha256": "46C9861B59079DC879977BA6CD57A93F2C27D51E65AC2AE7F824B25EE7E42EFE",
+    "canonical_local_charter_size_bytes": 213176359,
+    "canonical_local_charter_sha256": "75532C001AD2BE19CB49E0FC53311F4637C395FB72EA5D8CF1917285038A0663",
     "externalized_top_level_key": "recent_execution_history",
-    "full_archive_repo_path": "governance/archive/AKAH_BOT_SYSTEM_CHARTER_REV293_FULL.json.gz",
-    "full_archive_size_bytes": 16817055,
-    "full_archive_sha256": "2084B210A8E6BDB82A449A2DF297A80F9B7AE58B0B5B1E747440CFAF48AA3405",
-    "latest_task_id": "ABC_LIFECYCLE_STATE_MACHINE_EVIDENCE_SEQUENCE_PROTOCOL_FREEZE_V1",
-    "current_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_EVIDENCE_SEQUENCE_OBSERVATIONAL_MATERIALIZATION_V1",
+    "full_archive_repo_path": "governance/archive/AKAH_BOT_SYSTEM_CHARTER_REV294_FULL.json.gz",
+    "full_archive_size_bytes": 16817313,
+    "full_archive_sha256": "568C03460F7D8FD2E5502DDB3F45B26E3D9EA3FBC23BEC1A0A3E89B45EBCB361",
+    "latest_task_id": "ABC_LIFECYCLE_STATE_MACHINE_EVIDENCE_SEQUENCE_OBSERVATIONAL_MATERIALIZATION_V1",
+    "current_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_EVIDENCE_SEQUENCE_MANDATORY_REVIEW_V1",
     "governance_sync_status": "SYNCHRONIZED_TO_LATEST_EXECUTION_EVENT"
   }
 }
