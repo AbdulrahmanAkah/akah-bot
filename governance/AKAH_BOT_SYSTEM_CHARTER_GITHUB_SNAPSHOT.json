@@ -424,7 +424,7 @@
     "preinstall_head": "b3142d0135d393088ab3fe55c53b0e28ec7574cb"
   },
   "charter_id": "AKAH_BOT_SYSTEM_CHARTER",
-  "charter_revision": 291,
+  "charter_revision": 292,
   "constitutional_core": {
     "amendment_rule": "The constitutional core may change only after explicit user authorization. Ordinary task closeout may update current_state, bottleneck, evidence summary, priority ordering, and task history but may not silently alter core principles.",
     "core_version": 1,
@@ -576,7 +576,7 @@
     "counterfactual_profit_claim": false,
     "cross_universe_classification": "UNIVERSE_STRATA_CONTAIN_DIVERGENT_REPLAY_INFORMATION",
     "cross_universe_exact": false,
-    "current_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_EVIDENCE_STATE_PREDICATE_MANDATORY_REVIEW_V1",
+    "current_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_EVIDENCE_SEQUENCE_PROTOCOL_FREEZE_V1",
     "dynamic_roles_all_bound": false,
     "economic_analysis": false,
     "economic_interpretation_performed": false,
@@ -1626,10 +1626,30 @@
   },
   "last_completed_task": {
     "alignment": "ALIGNED_WITH_SCOPE_UPDATE",
-    "axis": "ABC_LIFECYCLE_STATE_MACHINE_EVIDENCE_STATE_PREDICATE_OBSERVATIONAL_MATERIALIZATION",
-    "completed_at_utc": "2026-09-20T11:06:59+00:00",
-    "completed_charter_revision": 291,
+    "axis": "ABC_LIFECYCLE_STATE_MACHINE_EVIDENCE_STATE_PREDICATE_MANDATORY_REVIEW",
+    "completed_at_utc": "2026-09-20T11:17:05+00:00",
+    "completed_charter_revision": 292,
     "evidence": [
+      {
+        "path": "governance/abc_lifecycle_state_machine_evidence_state_predicate_mandatory_review_v1/mandatory_review.json",
+        "sha256": "E41A6BFA0B285E4F1A0D212A6984E58A062D725C941F73BE7831425E0ACA48EA"
+      },
+      {
+        "path": "governance/abc_lifecycle_state_machine_evidence_state_predicate_mandatory_review_v1/canonical_result.json",
+        "sha256": "C2D6787F95895C701C711CC240ACF917EC5222A77DD8D1639104724895C4F2AC"
+      },
+      {
+        "path": "governance/abc_lifecycle_state_machine_evidence_state_predicate_mandatory_review_v1/overlay_phase_review.csv",
+        "sha256": "CE5791DF9CAA75D2A5B46A67E5E6692C010B957C3A9124D378A1C862919EEE69"
+      },
+      {
+        "path": "governance/abc_lifecycle_state_machine_evidence_state_predicate_mandatory_review_v1/overlay_cooccurrence_review.csv",
+        "sha256": "12A6F0D8B2175252DC2CBC18821D80117769E188201FB7FE4C3F741017F71C9A"
+      },
+      {
+        "path": "governance/abc_lifecycle_state_machine_evidence_state_predicate_mandatory_review_v1/overlay_lifecycle_coverage_review.csv",
+        "sha256": "78944AF51E0311266511A424C319C23FF9C1F7154560E8F54EEB8DBC0D43921C"
+      },
       {
         "path": "governance/abc_lifecycle_state_machine_evidence_state_predicate_observational_materialization_v1/canonical_result.json",
         "sha256": "636EAB1819744573CC1C54621AF147100FEFB002983EE0F48406EEF272B5AC6D"
@@ -1645,26 +1665,6 @@
       {
         "path": "governance/abc_lifecycle_state_machine_evidence_state_predicate_observational_materialization_v1/source_signal_parity_audit.json",
         "sha256": "D22FCF75D3207C6A982D6FB4E818C08B78F09858118BB146FDC84372E144504D"
-      },
-      {
-        "path": "governance/abc_lifecycle_state_machine_evidence_state_predicate_observational_materialization_v1/output_manifest.json",
-        "sha256": "9BAA35325B5D05BF9C984D869C37956695CBE2856ED74E5AF87182D6E05660FA"
-      },
-      {
-        "path": "governance/abc_lifecycle_state_machine_evidence_state_predicate_observational_materialization_v1/overlay_counts_by_year_and_base_state.csv",
-        "sha256": "59722229E65ED954CB72DF06A8A155C33146B3CD720A741458DC123C8E78DB11"
-      },
-      {
-        "path": "governance/abc_lifecycle_state_machine_evidence_state_predicate_observational_materialization_v1/overlay_cooccurrence_counts.csv",
-        "sha256": "B36E26908A70EA6CF5A1197D08AC1FCC62AD149C4FE647DEF91CFB03D91C3FDB"
-      },
-      {
-        "path": "governance/abc_lifecycle_state_machine_evidence_state_predicate_observational_materialization_v1/overlay_signature_counts.csv",
-        "sha256": "E9FC3FEEBA7103289F954214EE135FF42B64E80F3307A49E900B19F6614DBA2F"
-      },
-      {
-        "path": "governance/abc_lifecycle_state_machine_evidence_state_predicate_observational_materialization_v1/lifecycle_with_any_overlay_counts.csv",
-        "sha256": "679DDF542AA700BB43B1F485715A5269B33EA9DD4ACC031B554DD7AA7D7F3DAA"
       }
     ],
     "governance_declarations": {
@@ -1680,27 +1680,26 @@
       "lookahead_or_future_information_used": false,
       "market_data_accessed": false,
       "new_threshold_created": false,
-      "overlay_latch_created": false,
       "pair_or_event_identity_used_as_runtime_rule": false,
-      "persistence_horizon_created": false,
+      "persistent_state_authorized": false,
       "pnl_columns_read": false,
       "portfolio_replay_executed": false,
       "posthoc_outcome_threshold_search_used": false,
       "production_changed": false,
       "runtime_state_machine_authorized": false
     },
-    "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_EVIDENCE_STATE_PREDICATE_MANDATORY_REVIEW_V1",
-    "north_star_effect": "Materialized the three frozen event-local evidence overlays on all 14,059 existing non-economic 4H decision-grid rows. Source-signal parity, base-state parity, row identity parity and no-persistence semantics all passed. No market data, PnL, replay, persistent state, adaptive action or Exit Arbiter logic was introduced.",
-    "objective": "Materialize the frozen event-local evidence overlays on the existing non-economic 4H decision-grid trace only. Derive STALLED candidate evidence exactly as C_signal AND UNCONFIRMED, STRUCTURAL_BREAK candidate evidence exactly as A_signal, and VOLATILITY_DAMAGE candidate evidence exactly as B_signal AND CONFIRMED. Preserve base_state and row identity exactly, audit event locality and source parity, summarize overlay counts/co-occurrences/signatures/lifecycle coverage, and perform no market-data access, PnL read, economic adjudication, persistence, latch, state transition, replay, adaptive logic or Exit Arbiter work.",
+    "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_EVIDENCE_SEQUENCE_PROTOCOL_FREEZE_V1",
+    "north_star_effect": "Mandatory review accepted the three event-local evidence overlays as faithful lifecycle evidence labels. STALLED remains pre-progress, VOLATILITY_DAMAGE post-progress, and STRUCTURAL_BREAK is phase-crossing; same-row overlaps are limited. The evidence does not establish persistence, recovery or runtime transition semantics. Only an output-only evidence-sequence protocol is authorized next.",
+    "objective": "Perform the mandatory output-only review of the event-local evidence overlay materialization. Verify manifest-bound parity, exact overlay counts, phase placement, same-row co-occurrence, lifecycle coverage, event locality and no-persistence semantics. Determine only whether the overlays provide interpretable lifecycle evidence and whether a separately frozen non-economic evidence-sequence protocol is justified. Do not infer persistent states, create thresholds, rank candidates, read market data or PnL, replay exits or portfolios, authorize runtime state transitions, adaptive logic, exit actions or an Exit Arbiter.",
     "outcome": "PASS",
-    "pre_closeout_head": "432690daec0ae1322b409e38d4efd4cb38cf21e0",
-    "result_ref": "governance/abc_lifecycle_state_machine_evidence_state_predicate_observational_materialization_v1/canonical_result.json",
-    "result_sha256": "636EAB1819744573CC1C54621AF147100FEFB002983EE0F48406EEF272B5AC6D",
-    "started_at_utc": "2026-09-20T11:06:49+00:00",
-    "starting_charter_revision": 290,
-    "starting_head": "d48be8aaa6d5c9bfa1598779f0fde83b8cd88f34",
-    "summary": "Materialized the three frozen event-local evidence overlays on all 14,059 existing non-economic 4H decision-grid rows. Source-signal parity, base-state parity, row identity parity and no-persistence semantics all passed. No market data, PnL, replay, persistent state, adaptive action or Exit Arbiter logic was introduced.",
-    "task_id": "ABC_LIFECYCLE_STATE_MACHINE_EVIDENCE_STATE_PREDICATE_OBSERVATIONAL_MATERIALIZATION_V1",
+    "pre_closeout_head": "e707c36a2e0801e8c48fb802533b065bf1dfac3d",
+    "result_ref": "governance/abc_lifecycle_state_machine_evidence_state_predicate_mandatory_review_v1/canonical_result.json",
+    "result_sha256": "C2D6787F95895C701C711CC240ACF917EC5222A77DD8D1639104724895C4F2AC",
+    "started_at_utc": "2026-09-20T11:17:00+00:00",
+    "starting_charter_revision": 291,
+    "starting_head": "4f9ef7b0e774628bc67d447652e3e205f240bc47",
+    "summary": "Mandatory review accepted the three event-local evidence overlays as faithful lifecycle evidence labels. STALLED remains pre-progress, VOLATILITY_DAMAGE post-progress, and STRUCTURAL_BREAK is phase-crossing; same-row overlaps are limited. The evidence does not establish persistence, recovery or runtime transition semantics. Only an output-only evidence-sequence protocol is authorized next.",
+    "task_id": "ABC_LIFECYCLE_STATE_MACHINE_EVIDENCE_STATE_PREDICATE_MANDATORY_REVIEW_V1",
     "vision_impact": "ADVANCES"
   },
   "last_execution_event": {
@@ -1909,8 +1908,8 @@
     "task_id": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_PRE_PROGRESS_THESIS_NON_CONFIRMATION_COUNTERFACTUAL_PORTFOLIO_REPLAY_V1",
     "task_start_head": "1cef008128d6da19d9b09ac2b73801d68a2e0e0d"
   },
-  "last_updated_at_utc": "2026-09-20T11:06:59+00:00",
-  "last_updated_by_task": "ABC_LIFECYCLE_STATE_MACHINE_EVIDENCE_STATE_PREDICATE_OBSERVATIONAL_MATERIALIZATION_V1",
+  "last_updated_at_utc": "2026-09-20T11:17:05+00:00",
+  "last_updated_by_task": "ABC_LIFECYCLE_STATE_MACHINE_EVIDENCE_STATE_PREDICATE_MANDATORY_REVIEW_V1",
   "latest_async_ready_state_control_denominator_authority_audit": {
     "actionability_inference_authorized": false,
     "audit_path": "C:\\Users\\abdul\\Downloads\\CAUSAL_EXIT_MECHANISM_PROFIT_ARM_COUNTERFACTUAL_EAG_PERSISTENCE_ASYNC_READY_STATE_CONTROL_DENOMINATOR_AUTHORITY_AUDIT_V1_AUDIT_20260916_171856.json",
@@ -3910,42 +3909,6 @@
   "recent_task_history": [
     {
       "alignment": "ALIGNED_WITH_SCOPE_UPDATE",
-      "axis": "TRANSITION_EVENT_LEVEL_DIAGNOSIS_HUMAN_REVIEW",
-      "completed_at_utc": "2026-09-19T21:37:22+00:00",
-      "completed_charter_revision": 272,
-      "evidence": [
-        {
-          "path": "governance/transition_event_diagnosis_human_review_v1/canonical_result.json",
-          "sha256": "AB0D9C75B0FD603FF88C1A24E622E1AFFF9EC391D2355617126B1F5FB80D6558"
-        }
-      ],
-      "governance_declarations": {
-        "2023_new_raw_or_replay_accessed": false,
-        "2024_used_as_fresh_holdout": false,
-        "2024_used_to_define_new_runtime_rule": false,
-        "2025_accessed": false,
-        "lookahead_or_future_information_used": false,
-        "pair_or_event_identity_used_as_runtime_rule": false,
-        "posthoc_outcome_threshold_search_used": false,
-        "pre2019_warmup_accessed": false,
-        "production_changed": false
-      },
-      "next_bottleneck": "ABC_EXIT_PRIMITIVES_PREREGISTRATION_FREEZE_V1",
-      "north_star_effect": "Human review accepts MIXED_MECHANISM; TRANSITION standalone gate remains unauthorized and old candidate closed.",
-      "objective": "Record human acceptance of MIXED_MECHANISM; keep the old TRANSITION candidate closed and forbid TRANSITION as a standalone runtime gate.",
-      "outcome": "PASS",
-      "pre_closeout_head": "0f4a237dab084c2b523bed234638fa627218aa2a",
-      "result_ref": "governance/transition_event_diagnosis_human_review_v1/canonical_result.json",
-      "result_sha256": "AB0D9C75B0FD603FF88C1A24E622E1AFFF9EC391D2355617126B1F5FB80D6558",
-      "started_at_utc": "2026-09-19T21:37:18+00:00",
-      "starting_charter_revision": 271,
-      "starting_head": "97c58757121ec27cc73458a6ce03fde36b207888",
-      "summary": "Human review accepts MIXED_MECHANISM; TRANSITION standalone gate remains unauthorized and old candidate closed.",
-      "task_id": "TRANSITION_EVENT_LEVEL_DIAGNOSIS_MANDATORY_HUMAN_REVIEW_V1",
-      "vision_impact": "ADVANCES"
-    },
-    {
-      "alignment": "ALIGNED_WITH_SCOPE_UPDATE",
       "axis": "ABC_EXIT_PRIMITIVES_PREREGISTRATION",
       "completed_at_utc": "2026-09-19T21:38:15+00:00",
       "completed_charter_revision": 273,
@@ -4993,6 +4956,84 @@
       "summary": "Materialized the three frozen event-local evidence overlays on all 14,059 existing non-economic 4H decision-grid rows. Source-signal parity, base-state parity, row identity parity and no-persistence semantics all passed. No market data, PnL, replay, persistent state, adaptive action or Exit Arbiter logic was introduced.",
       "task_id": "ABC_LIFECYCLE_STATE_MACHINE_EVIDENCE_STATE_PREDICATE_OBSERVATIONAL_MATERIALIZATION_V1",
       "vision_impact": "ADVANCES"
+    },
+    {
+      "alignment": "ALIGNED_WITH_SCOPE_UPDATE",
+      "axis": "ABC_LIFECYCLE_STATE_MACHINE_EVIDENCE_STATE_PREDICATE_MANDATORY_REVIEW",
+      "completed_at_utc": "2026-09-20T11:17:05+00:00",
+      "completed_charter_revision": 292,
+      "evidence": [
+        {
+          "path": "governance/abc_lifecycle_state_machine_evidence_state_predicate_mandatory_review_v1/mandatory_review.json",
+          "sha256": "E41A6BFA0B285E4F1A0D212A6984E58A062D725C941F73BE7831425E0ACA48EA"
+        },
+        {
+          "path": "governance/abc_lifecycle_state_machine_evidence_state_predicate_mandatory_review_v1/canonical_result.json",
+          "sha256": "C2D6787F95895C701C711CC240ACF917EC5222A77DD8D1639104724895C4F2AC"
+        },
+        {
+          "path": "governance/abc_lifecycle_state_machine_evidence_state_predicate_mandatory_review_v1/overlay_phase_review.csv",
+          "sha256": "CE5791DF9CAA75D2A5B46A67E5E6692C010B957C3A9124D378A1C862919EEE69"
+        },
+        {
+          "path": "governance/abc_lifecycle_state_machine_evidence_state_predicate_mandatory_review_v1/overlay_cooccurrence_review.csv",
+          "sha256": "12A6F0D8B2175252DC2CBC18821D80117769E188201FB7FE4C3F741017F71C9A"
+        },
+        {
+          "path": "governance/abc_lifecycle_state_machine_evidence_state_predicate_mandatory_review_v1/overlay_lifecycle_coverage_review.csv",
+          "sha256": "78944AF51E0311266511A424C319C23FF9C1F7154560E8F54EEB8DBC0D43921C"
+        },
+        {
+          "path": "governance/abc_lifecycle_state_machine_evidence_state_predicate_observational_materialization_v1/canonical_result.json",
+          "sha256": "636EAB1819744573CC1C54621AF147100FEFB002983EE0F48406EEF272B5AC6D"
+        },
+        {
+          "path": "governance/abc_lifecycle_state_machine_evidence_state_predicate_observational_materialization_v1/event_locality_audit.json",
+          "sha256": "6140590C53BA8812202662B8A1976BEC0013BC51DBE5FC0BCB9C92EB55BF3C76"
+        },
+        {
+          "path": "governance/abc_lifecycle_state_machine_evidence_state_predicate_observational_materialization_v1/no_persistence_audit.json",
+          "sha256": "D0FB9A101D12A85B528D57CD97F80CFAD33BD2C8FCDA7C1FBBFD3676E716AD16"
+        },
+        {
+          "path": "governance/abc_lifecycle_state_machine_evidence_state_predicate_observational_materialization_v1/source_signal_parity_audit.json",
+          "sha256": "D22FCF75D3207C6A982D6FB4E818C08B78F09858118BB146FDC84372E144504D"
+        }
+      ],
+      "governance_declarations": {
+        "2023_new_raw_or_replay_accessed": false,
+        "2024_used_as_fresh_holdout": false,
+        "2024_used_to_define_new_runtime_rule": false,
+        "2025_accessed": false,
+        "adaptive_logic_authorized": false,
+        "candidate_replay_executed": false,
+        "economic_outcomes_read": false,
+        "exit_action_authorized": false,
+        "exit_arbiter_authorized": false,
+        "lookahead_or_future_information_used": false,
+        "market_data_accessed": false,
+        "new_threshold_created": false,
+        "pair_or_event_identity_used_as_runtime_rule": false,
+        "persistent_state_authorized": false,
+        "pnl_columns_read": false,
+        "portfolio_replay_executed": false,
+        "posthoc_outcome_threshold_search_used": false,
+        "production_changed": false,
+        "runtime_state_machine_authorized": false
+      },
+      "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_EVIDENCE_SEQUENCE_PROTOCOL_FREEZE_V1",
+      "north_star_effect": "Mandatory review accepted the three event-local evidence overlays as faithful lifecycle evidence labels. STALLED remains pre-progress, VOLATILITY_DAMAGE post-progress, and STRUCTURAL_BREAK is phase-crossing; same-row overlaps are limited. The evidence does not establish persistence, recovery or runtime transition semantics. Only an output-only evidence-sequence protocol is authorized next.",
+      "objective": "Perform the mandatory output-only review of the event-local evidence overlay materialization. Verify manifest-bound parity, exact overlay counts, phase placement, same-row co-occurrence, lifecycle coverage, event locality and no-persistence semantics. Determine only whether the overlays provide interpretable lifecycle evidence and whether a separately frozen non-economic evidence-sequence protocol is justified. Do not infer persistent states, create thresholds, rank candidates, read market data or PnL, replay exits or portfolios, authorize runtime state transitions, adaptive logic, exit actions or an Exit Arbiter.",
+      "outcome": "PASS",
+      "pre_closeout_head": "e707c36a2e0801e8c48fb802533b065bf1dfac3d",
+      "result_ref": "governance/abc_lifecycle_state_machine_evidence_state_predicate_mandatory_review_v1/canonical_result.json",
+      "result_sha256": "C2D6787F95895C701C711CC240ACF917EC5222A77DD8D1639104724895C4F2AC",
+      "started_at_utc": "2026-09-20T11:17:00+00:00",
+      "starting_charter_revision": 291,
+      "starting_head": "4f9ef7b0e774628bc67d447652e3e205f240bc47",
+      "summary": "Mandatory review accepted the three event-local evidence overlays as faithful lifecycle evidence labels. STALLED remains pre-progress, VOLATILITY_DAMAGE post-progress, and STRUCTURAL_BREAK is phase-crossing; same-row overlaps are limited. The evidence does not establish persistence, recovery or runtime transition semantics. Only an output-only evidence-sequence protocol is authorized next.",
+      "task_id": "ABC_LIFECYCLE_STATE_MACHINE_EVIDENCE_STATE_PREDICATE_MANDATORY_REVIEW_V1",
+      "vision_impact": "ADVANCES"
     }
   ],
   "schema_version": "akah-bot-system-charter-v1",
@@ -5039,18 +5080,18 @@
   "github_sync_metadata": {
     "schema_version": "akah-bot-github-governance-snapshot-v3",
     "snapshot_semantics": "CURRENT_CANONICAL_GOVERNANCE_STATE_WITH_RECENT_EXECUTION_HISTORY_EXTERNALIZED",
-    "charter_revision": 291,
+    "charter_revision": 292,
     "source_branch": "research/rd48-cross-venue-price-level-basis-direct-utility-v1",
-    "source_head": "4f9ef7b0e774628bc67d447652e3e205f240bc47",
+    "source_head": "9e7b0b62ac535c6c9ea26f32ccea1d22cfda852d",
     "canonical_local_charter_path": "governance/AKAH_BOT_SYSTEM_CHARTER.json",
-    "canonical_local_charter_size_bytes": 213166565,
-    "canonical_local_charter_sha256": "A586ADF0AB8FCB8EE0CD38C2C2B2C26F22F88951BEDB244A7D5B8E24FA9AF43C",
+    "canonical_local_charter_size_bytes": 213170121,
+    "canonical_local_charter_sha256": "1AF8D048EBB2F2F0595DAA29F3F3042D22C959DCECE9B6F621F90ABFF9DC6B10",
     "externalized_top_level_key": "recent_execution_history",
-    "full_archive_repo_path": "governance/archive/AKAH_BOT_SYSTEM_CHARTER_REV291_FULL.json.gz",
-    "full_archive_size_bytes": 16816171,
-    "full_archive_sha256": "7D6E7C5A387043D8DACF400697FC61869E14C4E47915BDD3E902F2043CEB27CD",
-    "latest_task_id": "ABC_LIFECYCLE_STATE_MACHINE_EVIDENCE_STATE_PREDICATE_OBSERVATIONAL_MATERIALIZATION_V1",
-    "current_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_EVIDENCE_STATE_PREDICATE_MANDATORY_REVIEW_V1",
+    "full_archive_repo_path": "governance/archive/AKAH_BOT_SYSTEM_CHARTER_REV292_FULL.json.gz",
+    "full_archive_size_bytes": 16816490,
+    "full_archive_sha256": "F64387C53F960E78EEE2A47F337B72ED861D650DE2A2B4CC204F44F183770CBE",
+    "latest_task_id": "ABC_LIFECYCLE_STATE_MACHINE_EVIDENCE_STATE_PREDICATE_MANDATORY_REVIEW_V1",
+    "current_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_EVIDENCE_SEQUENCE_PROTOCOL_FREEZE_V1",
     "governance_sync_status": "SYNCHRONIZED_TO_LATEST_EXECUTION_EVENT"
   }
 }
