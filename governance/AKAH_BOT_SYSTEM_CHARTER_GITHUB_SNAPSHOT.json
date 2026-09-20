@@ -424,7 +424,7 @@
     "preinstall_head": "b3142d0135d393088ab3fe55c53b0e28ec7574cb"
   },
   "charter_id": "AKAH_BOT_SYSTEM_CHARTER",
-  "charter_revision": 307,
+  "charter_revision": 308,
   "constitutional_core": {
     "amendment_rule": "The constitutional core may change only after explicit user authorization. Ordinary task closeout may update current_state, bottleneck, evidence summary, priority ordering, and task history but may not silently alter core principles.",
     "core_version": 1,
@@ -576,7 +576,7 @@
     "counterfactual_profit_claim": false,
     "cross_universe_classification": "UNIVERSE_STRATA_CONTAIN_DIVERGENT_REPLAY_INFORMATION",
     "cross_universe_exact": false,
-    "current_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_CAUSAL_FEATURE_RECONSTRUCTION_IMPLEMENTATION_V1",
+    "current_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_CAUSAL_FEATURE_RECONSTRUCTION_EXECUTION_PREFLIGHT_V1",
     "dynamic_roles_all_bound": false,
     "economic_analysis": false,
     "economic_interpretation_performed": false,
@@ -1626,29 +1626,29 @@
   },
   "last_completed_task": {
     "alignment": "ALIGNED_WITH_SCOPE_UPDATE",
-    "axis": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_CAUSAL_FEATURE_RECONSTRUCTION_PROTOCOL_FREEZE",
-    "completed_at_utc": "2026-09-20T14:20:22+00:00",
-    "completed_charter_revision": 307,
+    "axis": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_CAUSAL_FEATURE_RECONSTRUCTION_IMPLEMENTATION",
+    "completed_at_utc": "2026-09-20T15:02:02+00:00",
+    "completed_charter_revision": 308,
     "evidence": [
       {
-        "path": "governance/abc_lifecycle_state_machine_persistent_state_causal_feature_reconstruction_protocol_v1/canonical_result.json",
-        "sha256": "63C82B10233EC18FF04434A89FBF2512B4E26DA588E59CABC480A8258F723334"
+        "path": "governance/abc_lifecycle_state_machine_persistent_state_causal_feature_reconstruction_implementation_v1/canonical_result.json",
+        "sha256": "8DDE75B88DF1CF7AB7E5CB28EF69AA27C9A7AFFFF4E9A8902B98A175E5C728EC"
       },
       {
-        "path": "governance/abc_lifecycle_state_machine_persistent_state_causal_feature_reconstruction_protocol_v1/protocol.json",
-        "sha256": "080B99D1FCB534CEBF8C32E1E8D34A41B750D6EAA9DD9A5402DC8A1E392838AF"
+        "path": "governance/abc_lifecycle_state_machine_persistent_state_causal_feature_reconstruction_implementation_v1/pre_begin_validation_report.json",
+        "sha256": "0437B0ADF7ED3859FEC308575CA97FE816B2635CD6E92911FB66A47A8523635D"
       },
       {
-        "path": "governance/abc_lifecycle_state_machine_persistent_state_causal_feature_reconstruction_protocol_v1/target_observable_inventory.csv",
-        "sha256": "0C847F5BEEEB873A61E09A208D1A555E5DE99CDB0D9D49DF572D04E000496395"
+        "path": "governance/abc_lifecycle_state_machine_persistent_state_causal_feature_reconstruction_implementation_v1/output_manifest.json",
+        "sha256": "B166BA7640AA51B2D37A6C0A065A8EE8B2B6A988EC9831CBFCE2EA96F393109E"
       },
       {
-        "path": "governance/abc_lifecycle_state_machine_persistent_state_causal_feature_reconstruction_protocol_v1/pre_begin_authority_report.json",
-        "sha256": "0B19C8EBEF23BA600AD084002E6A4B8BAD0DE487A54A1A6AE2CD440F2ABA399A"
+        "path": "src/spotbot/research/abc_persistent_state_feature_reconstruction_v1.py",
+        "sha256": "EEBB00249D549C6354A79228D5E674890FA25203469530FFD3E3E1FF8C9E7F81"
       },
       {
-        "path": "governance/abc_lifecycle_state_machine_persistent_state_causal_feature_reconstruction_protocol_v1/output_manifest.json",
-        "sha256": "EA8CCF9ADCBE6C2D832F3976BAC09A55AC7436F746725EB58ABB8E2A34C929C7"
+        "path": "tests/research/test_abc_persistent_state_feature_reconstruction_v1.py",
+        "sha256": "9060BEF7B400B0A6FCE79D3DE0E56060FD51FD735E55FE1597E596266C12CBE3"
       }
     ],
     "governance_declarations": {
@@ -1661,7 +1661,6 @@
       "exit_action_authorized": false,
       "exit_arbiter_authorized": false,
       "lookahead_or_future_information_used": false,
-      "market_data_file_metadata_accessed": false,
       "market_data_rows_accessed": false,
       "market_data_values_accessed": false,
       "new_threshold_created": false,
@@ -1672,21 +1671,22 @@
       "pnl_columns_read": false,
       "posthoc_outcome_threshold_search_used": false,
       "production_changed": false,
-      "reconstruction_implemented": false,
-      "runtime_state_machine_authorized": false
+      "reconstruction_implemented": true,
+      "runtime_state_machine_authorized": false,
+      "synthetic_fixtures_only": true
     },
-    "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_CAUSAL_FEATURE_RECONSTRUCTION_IMPLEMENTATION_V1",
-    "north_star_effect": "Frozen the causal feature reconstruction protocol for the 22 source-gap observables. The protocol binds Rev306 recovered authority, the frozen observability/ABC/LSM definitions, strict causal timing, raw-source authority, 1:1 14059-row Control trace alignment, readiness/null rules, measurement-only B shadow continuation, and later parity gates. No raw market rows, PnL or economic outcomes were read; no feature values, persistent states, runtime logic or exits were created. Only deterministic reconstruction implementation work is authorized next.",
-    "objective": "Freeze the exact causal feature reconstruction protocol for the persistent-state observability layer before any raw market-data row access. Bind the 22 unresolved-at-capability-audit observable targets from the authoritative source-gap disposition, the frozen observability/ABC/LSM protocols, the recovered prior causal trace authority, raw-source/membership authority, strict causal timing, null/readiness rules, shadow observational continuation, 1:1 frozen trace-row alignment, and later reconstruction parity gates. Do not read market-data rows or PnL, implement reconstruction, select thresholds/horizons, define persistent states, or authorize runtime/adaptive/exit logic.",
+    "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_CAUSAL_FEATURE_RECONSTRUCTION_EXECUTION_PREFLIGHT_V1",
+    "north_star_effect": "Implemented the frozen 22-observable causal feature reconstruction layer as deterministic pure code plus synthetic tests. The exact committed bytes passed py_compile, ruff and pytest before BEGIN and are bound to the frozen ABC source/test hashes, exact five-column decision-row identity, frozen 1H-to-completed-4H builder, previous-stop B semantics, shadow observational continuation, readiness/null behavior and within-lifecycle lag rules. No raw market rows, historical feature values, PnL or economic outcomes were accessed. Only execution-preflight work is authorized next; raw market-row access remains unauthorized.",
+    "objective": "Implement the frozen persistent-state causal feature reconstruction layer as deterministic pure code plus synthetic tests only. Bind the exact frozen ABC source/test hashes, exact five-column trace identity, and 22-observable protocol. Pre-BEGIN validation must py_compile, ruff-check and pytest the exact bytes later committed. Do not read raw market-data rows, materialize historical feature values, read PnL/economic outcomes, select thresholds/horizons, define persistent states, or authorize runtime/adaptive/exit behavior.",
     "outcome": "PASS",
-    "pre_closeout_head": "79045159417bca053cac2d28498357026f3e93e1",
-    "result_ref": "governance/abc_lifecycle_state_machine_persistent_state_causal_feature_reconstruction_protocol_v1/canonical_result.json",
-    "result_sha256": "63C82B10233EC18FF04434A89FBF2512B4E26DA588E59CABC480A8258F723334",
-    "started_at_utc": "2026-09-20T14:20:17+00:00",
-    "starting_charter_revision": 306,
-    "starting_head": "77f8a906a96ae3f54f42c368a705976a63b6a6c3",
-    "summary": "Frozen the causal feature reconstruction protocol for the 22 source-gap observables. The protocol binds Rev306 recovered authority, the frozen observability/ABC/LSM definitions, strict causal timing, raw-source authority, 1:1 14059-row Control trace alignment, readiness/null rules, measurement-only B shadow continuation, and later parity gates. No raw market rows, PnL or economic outcomes were read; no feature values, persistent states, runtime logic or exits were created. Only deterministic reconstruction implementation work is authorized next.",
-    "task_id": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_CAUSAL_FEATURE_RECONSTRUCTION_PROTOCOL_FREEZE_V1",
+    "pre_closeout_head": "3b658e3d7c98b36fbd0e182b525c0f824a8c849c",
+    "result_ref": "governance/abc_lifecycle_state_machine_persistent_state_causal_feature_reconstruction_implementation_v1/canonical_result.json",
+    "result_sha256": "8DDE75B88DF1CF7AB7E5CB28EF69AA27C9A7AFFFF4E9A8902B98A175E5C728EC",
+    "started_at_utc": "2026-09-20T15:01:58+00:00",
+    "starting_charter_revision": 307,
+    "starting_head": "a00abbd03283f8c5ef2bd5c35770278d00209648",
+    "summary": "Implemented the frozen 22-observable causal feature reconstruction layer as deterministic pure code plus synthetic tests. The exact committed bytes passed py_compile, ruff and pytest before BEGIN and are bound to the frozen ABC source/test hashes, exact five-column decision-row identity, frozen 1H-to-completed-4H builder, previous-stop B semantics, shadow observational continuation, readiness/null behavior and within-lifecycle lag rules. No raw market rows, historical feature values, PnL or economic outcomes were accessed. Only execution-preflight work is authorized next; raw market-row access remains unauthorized.",
+    "task_id": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_CAUSAL_FEATURE_RECONSTRUCTION_IMPLEMENTATION_V1",
     "vision_impact": "ADVANCES"
   },
   "last_execution_event": {
@@ -1895,8 +1895,8 @@
     "task_id": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_PRE_PROGRESS_THESIS_NON_CONFIRMATION_COUNTERFACTUAL_PORTFOLIO_REPLAY_V1",
     "task_start_head": "1cef008128d6da19d9b09ac2b73801d68a2e0e0d"
   },
-  "last_updated_at_utc": "2026-09-20T14:20:22+00:00",
-  "last_updated_by_task": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_CAUSAL_FEATURE_RECONSTRUCTION_PROTOCOL_FREEZE_V1",
+  "last_updated_at_utc": "2026-09-20T15:02:02+00:00",
+  "last_updated_by_task": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_CAUSAL_FEATURE_RECONSTRUCTION_IMPLEMENTATION_V1",
   "latest_async_ready_state_control_denominator_authority_audit": {
     "actionability_inference_authorized": false,
     "audit_path": "C:\\Users\\abdul\\Downloads\\CAUSAL_EXIT_MECHANISM_PROFIT_ARM_COUNTERFACTUAL_EAG_PERSISTENCE_ASYNC_READY_STATE_CONTROL_DENOMINATOR_AUTHORITY_AUDIT_V1_AUDIT_20260916_171856.json",
@@ -3896,97 +3896,6 @@
   "recent_task_history": [
     {
       "alignment": "ALIGNED_WITH_SCOPE_UPDATE",
-      "axis": "ABC_LIFECYCLE_STATE_MACHINE_OBSERVATIONAL_TRACE_EXECUTION",
-      "completed_at_utc": "2026-09-20T10:25:47+00:00",
-      "completed_charter_revision": 288,
-      "evidence": [
-        {
-          "path": "governance/abc_lifecycle_state_machine_observational_trace_v1/canonical_result.json",
-          "sha256": "48FE5760D7975FF6EA652CCEE62905CF456A2532B8EBE7F37305A21A1720DF45"
-        },
-        {
-          "path": "governance/abc_lifecycle_state_machine_observational_trace_v1/execution_report.json",
-          "sha256": "D9F0703FE6AF6442296CF9BC5FA41E39E966D954CAAE229F4867E12C6E3C64CB"
-        },
-        {
-          "path": "governance/abc_lifecycle_state_machine_observational_trace_v1/trace_completeness_and_causality_audit.json",
-          "sha256": "5348D6681D18B7B9E4E34963317D5C58D56903A36F51AE30693D380A8BE5E875"
-        },
-        {
-          "path": "governance/abc_lifecycle_state_machine_observational_trace_v1/output_manifest.json",
-          "sha256": "C860AF80280CD7FA0594B39180BFE08B938AEC7BCCE8B833599311829BA4ECDE"
-        },
-        {
-          "path": "governance/abc_lifecycle_state_machine_observational_trace_v1/base_state_occupancy_by_year.csv",
-          "sha256": "5B3672141C30A5B8AA8919EF03EE4225D148655BD7208E212CC0330D2E14B3DC"
-        },
-        {
-          "path": "governance/abc_lifecycle_state_machine_observational_trace_v1/memory_incidence_by_year.csv",
-          "sha256": "FFFA7717B4EBBB76D076F397F699BB174D2915C62A678575DE3A5EFF2F5E2036"
-        },
-        {
-          "path": "governance/abc_lifecycle_state_machine_observational_trace_v1/C_event_base_state_crosstab.csv",
-          "sha256": "7BE82E0C9CCE0BF2493B46022192928AE0FF6615F52D733B394C8FAD69B4323E"
-        },
-        {
-          "path": "governance/abc_lifecycle_state_machine_observational_trace_v1/A_event_base_state_crosstab.csv",
-          "sha256": "1F0767A4D194AE99FA1AD73E4532147A8D7312987CB557CB7ED589B6A22D4662"
-        },
-        {
-          "path": "governance/abc_lifecycle_state_machine_observational_trace_v1/B_event_base_state_crosstab.csv",
-          "sha256": "9FC0F97F3612F8FA386591AB2EA56E654CD6273937FF06F9D4DCD12C5B734F70"
-        },
-        {
-          "path": "governance/abc_lifecycle_state_machine_observational_trace_v1/A_before_after_memory.csv",
-          "sha256": "379CFFF8293B3C970279ED1EEFBF1AA278A30FAB84221608118EE00616452F8B"
-        },
-        {
-          "path": "governance/abc_lifecycle_state_machine_observational_trace_v1/event_chronology_counts.csv",
-          "sha256": "7A812D3A288B98D9254F3036CC02DBAC0584A785E65E98247AF8371567DC699A"
-        },
-        {
-          "path": "governance/abc_lifecycle_state_machine_observational_trace_v1/native_exit_base_state_crosstab.csv",
-          "sha256": "B4C39DA3EABAD9A567DE6E8E4B67059E9A07FD11B36E8261240D679DE8750988"
-        }
-      ],
-      "governance_declarations": {
-        "2023_new_raw_or_replay_accessed": true,
-        "2024_market_data_accessed": false,
-        "2024_used_as_fresh_holdout": false,
-        "2024_used_to_define_new_runtime_rule": false,
-        "2025_accessed": false,
-        "2025_market_data_accessed": false,
-        "candidate_combination_tested": false,
-        "candidate_replay_executed": false,
-        "economic_outcomes_read": false,
-        "exit_arbiter_authorized": false,
-        "lookahead_or_future_information_used": false,
-        "market_data_accessed": true,
-        "new_threshold_created": false,
-        "pair_or_event_identity_used_as_runtime_rule": false,
-        "pnl_columns_read": false,
-        "portfolio_replay_executed": false,
-        "posthoc_outcome_threshold_search_used": false,
-        "pre2019_warmup_accessed": true,
-        "production_changed": false,
-        "runtime_state_machine_authorized": false
-      },
-      "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_OBSERVATIONAL_TRACE_MANDATORY_REVIEW_V1",
-      "north_star_effect": "Executed the frozen non-economic lifecycle observational trace across 2019-2023 Control lifecycles. Memory-derived UNCONFIRMED/EARLY_PROGRESS/CONFIRMED states and frozen C/A/B evidence timestamps were reconciled with all causal invariants passing. Only identity/timing trade columns and pre-2024 OHLCV were read; no PnL, candidate replay, portfolio replay, runtime exit action, adaptive logic or Exit Arbiter was authorized.",
-      "objective": "Execute the frozen non-economic lifecycle-state observational trace protocol over frozen 2019-2023 Control lifecycles. Read only trade identity/timing columns plus pre-2024 causal OHLCV. Reconstruct Memory-derived UNCONFIRMED/EARLY_PROGRESS/CONFIRMED decision-grid states, project frozen C/A/B signal times as evidence channels, audit all frozen invariants, and publish occupancy/chronology/state-context summaries without reading PnL, replaying candidate exits or portfolios, creating thresholds, or authorizing runtime behavior.",
-      "outcome": "PASS",
-      "pre_closeout_head": "c5a8e7db7958948fdc7099267567aebf0085aa4b",
-      "result_ref": "governance/abc_lifecycle_state_machine_observational_trace_v1/canonical_result.json",
-      "result_sha256": "48FE5760D7975FF6EA652CCEE62905CF456A2532B8EBE7F37305A21A1720DF45",
-      "started_at_utc": "2026-09-20T10:15:25+00:00",
-      "starting_charter_revision": 287,
-      "starting_head": "bf6d153c496c9fd284d365dc1791515f4921e589",
-      "summary": "Executed the frozen non-economic lifecycle observational trace across 2019-2023 Control lifecycles. Memory-derived UNCONFIRMED/EARLY_PROGRESS/CONFIRMED states and frozen C/A/B evidence timestamps were reconciled with all causal invariants passing. Only identity/timing trade columns and pre-2024 OHLCV were read; no PnL, candidate replay, portfolio replay, runtime exit action, adaptive logic or Exit Arbiter was authorized.",
-      "task_id": "ABC_LIFECYCLE_STATE_MACHINE_OBSERVATIONAL_TRACE_EXECUTION_V1_RETRY_V1",
-      "vision_impact": "ADVANCES"
-    },
-    {
-      "alignment": "ALIGNED_WITH_SCOPE_UPDATE",
       "axis": "ABC_LIFECYCLE_STATE_MACHINE_OBSERVATIONAL_TRACE_MANDATORY_REVIEW",
       "completed_at_utc": "2026-09-20T10:30:26+00:00",
       "completed_charter_revision": 289,
@@ -5239,6 +5148,71 @@
       "summary": "Frozen the causal feature reconstruction protocol for the 22 source-gap observables. The protocol binds Rev306 recovered authority, the frozen observability/ABC/LSM definitions, strict causal timing, raw-source authority, 1:1 14059-row Control trace alignment, readiness/null rules, measurement-only B shadow continuation, and later parity gates. No raw market rows, PnL or economic outcomes were read; no feature values, persistent states, runtime logic or exits were created. Only deterministic reconstruction implementation work is authorized next.",
       "task_id": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_CAUSAL_FEATURE_RECONSTRUCTION_PROTOCOL_FREEZE_V1",
       "vision_impact": "ADVANCES"
+    },
+    {
+      "alignment": "ALIGNED_WITH_SCOPE_UPDATE",
+      "axis": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_CAUSAL_FEATURE_RECONSTRUCTION_IMPLEMENTATION",
+      "completed_at_utc": "2026-09-20T15:02:02+00:00",
+      "completed_charter_revision": 308,
+      "evidence": [
+        {
+          "path": "governance/abc_lifecycle_state_machine_persistent_state_causal_feature_reconstruction_implementation_v1/canonical_result.json",
+          "sha256": "8DDE75B88DF1CF7AB7E5CB28EF69AA27C9A7AFFFF4E9A8902B98A175E5C728EC"
+        },
+        {
+          "path": "governance/abc_lifecycle_state_machine_persistent_state_causal_feature_reconstruction_implementation_v1/pre_begin_validation_report.json",
+          "sha256": "0437B0ADF7ED3859FEC308575CA97FE816B2635CD6E92911FB66A47A8523635D"
+        },
+        {
+          "path": "governance/abc_lifecycle_state_machine_persistent_state_causal_feature_reconstruction_implementation_v1/output_manifest.json",
+          "sha256": "B166BA7640AA51B2D37A6C0A065A8EE8B2B6A988EC9831CBFCE2EA96F393109E"
+        },
+        {
+          "path": "src/spotbot/research/abc_persistent_state_feature_reconstruction_v1.py",
+          "sha256": "EEBB00249D549C6354A79228D5E674890FA25203469530FFD3E3E1FF8C9E7F81"
+        },
+        {
+          "path": "tests/research/test_abc_persistent_state_feature_reconstruction_v1.py",
+          "sha256": "9060BEF7B400B0A6FCE79D3DE0E56060FD51FD735E55FE1597E596266C12CBE3"
+        }
+      ],
+      "governance_declarations": {
+        "2023_new_raw_or_replay_accessed": false,
+        "2024_used_as_fresh_holdout": false,
+        "2024_used_to_define_new_runtime_rule": false,
+        "2025_accessed": false,
+        "adaptive_logic_authorized": false,
+        "economic_outcomes_read": false,
+        "exit_action_authorized": false,
+        "exit_arbiter_authorized": false,
+        "lookahead_or_future_information_used": false,
+        "market_data_rows_accessed": false,
+        "market_data_values_accessed": false,
+        "new_threshold_created": false,
+        "observable_values_materialized": false,
+        "pair_or_event_identity_used_as_runtime_rule": false,
+        "persistence_horizon_selected": false,
+        "persistent_state_defined": false,
+        "pnl_columns_read": false,
+        "posthoc_outcome_threshold_search_used": false,
+        "production_changed": false,
+        "reconstruction_implemented": true,
+        "runtime_state_machine_authorized": false,
+        "synthetic_fixtures_only": true
+      },
+      "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_CAUSAL_FEATURE_RECONSTRUCTION_EXECUTION_PREFLIGHT_V1",
+      "north_star_effect": "Implemented the frozen 22-observable causal feature reconstruction layer as deterministic pure code plus synthetic tests. The exact committed bytes passed py_compile, ruff and pytest before BEGIN and are bound to the frozen ABC source/test hashes, exact five-column decision-row identity, frozen 1H-to-completed-4H builder, previous-stop B semantics, shadow observational continuation, readiness/null behavior and within-lifecycle lag rules. No raw market rows, historical feature values, PnL or economic outcomes were accessed. Only execution-preflight work is authorized next; raw market-row access remains unauthorized.",
+      "objective": "Implement the frozen persistent-state causal feature reconstruction layer as deterministic pure code plus synthetic tests only. Bind the exact frozen ABC source/test hashes, exact five-column trace identity, and 22-observable protocol. Pre-BEGIN validation must py_compile, ruff-check and pytest the exact bytes later committed. Do not read raw market-data rows, materialize historical feature values, read PnL/economic outcomes, select thresholds/horizons, define persistent states, or authorize runtime/adaptive/exit behavior.",
+      "outcome": "PASS",
+      "pre_closeout_head": "3b658e3d7c98b36fbd0e182b525c0f824a8c849c",
+      "result_ref": "governance/abc_lifecycle_state_machine_persistent_state_causal_feature_reconstruction_implementation_v1/canonical_result.json",
+      "result_sha256": "8DDE75B88DF1CF7AB7E5CB28EF69AA27C9A7AFFFF4E9A8902B98A175E5C728EC",
+      "started_at_utc": "2026-09-20T15:01:58+00:00",
+      "starting_charter_revision": 307,
+      "starting_head": "a00abbd03283f8c5ef2bd5c35770278d00209648",
+      "summary": "Implemented the frozen 22-observable causal feature reconstruction layer as deterministic pure code plus synthetic tests. The exact committed bytes passed py_compile, ruff and pytest before BEGIN and are bound to the frozen ABC source/test hashes, exact five-column decision-row identity, frozen 1H-to-completed-4H builder, previous-stop B semantics, shadow observational continuation, readiness/null behavior and within-lifecycle lag rules. No raw market rows, historical feature values, PnL or economic outcomes were accessed. Only execution-preflight work is authorized next; raw market-row access remains unauthorized.",
+      "task_id": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_CAUSAL_FEATURE_RECONSTRUCTION_IMPLEMENTATION_V1",
+      "vision_impact": "ADVANCES"
     }
   ],
   "schema_version": "akah-bot-system-charter-v1",
@@ -5285,18 +5259,18 @@
   "github_sync_metadata": {
     "schema_version": "akah-bot-github-governance-snapshot-v3",
     "snapshot_semantics": "CURRENT_CANONICAL_GOVERNANCE_STATE_WITH_RECENT_EXECUTION_HISTORY_EXTERNALIZED",
-    "charter_revision": 307,
+    "charter_revision": 308,
     "source_branch": "research/rd48-cross-venue-price-level-basis-direct-utility-v1",
-    "source_head": "a00abbd03283f8c5ef2bd5c35770278d00209648",
+    "source_head": "b8017564f383a5f0b0f91f4b4b6bafc22d436547",
     "canonical_local_charter_path": "governance/AKAH_BOT_SYSTEM_CHARTER.json",
-    "canonical_local_charter_size_bytes": 213193562,
-    "canonical_local_charter_sha256": "5D4BF764E463870BEDE6E301F2B16C20BD81230B84A5746ED44D806E3174D125",
+    "canonical_local_charter_size_bytes": 213192590,
+    "canonical_local_charter_sha256": "4BEF71EB1F7DAB2EEB522F2BB2749C83526C35B3149966CF01D958FF7AEB80B5",
     "externalized_top_level_key": "recent_execution_history",
-    "full_archive_repo_path": "governance/archive/AKAH_BOT_SYSTEM_CHARTER_REV307_FULL.json.gz",
-    "full_archive_size_bytes": 16818784,
-    "full_archive_sha256": "89E8119917E4AB708569FE3D15129597C57344C006DDEBD79D95D85B98339DDC",
-    "latest_task_id": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_CAUSAL_FEATURE_RECONSTRUCTION_PROTOCOL_FREEZE_V1",
-    "current_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_CAUSAL_FEATURE_RECONSTRUCTION_IMPLEMENTATION_V1",
+    "full_archive_repo_path": "governance/archive/AKAH_BOT_SYSTEM_CHARTER_REV308_FULL.json.gz",
+    "full_archive_size_bytes": 16818606,
+    "full_archive_sha256": "24B8D7C92782A75B87EB1D86B2B7F41E44137C3BD971EA3DDA89B919601E93D0",
+    "latest_task_id": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_CAUSAL_FEATURE_RECONSTRUCTION_IMPLEMENTATION_V1",
+    "current_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_CAUSAL_FEATURE_RECONSTRUCTION_EXECUTION_PREFLIGHT_V1",
     "governance_sync_status": "SYNCHRONIZED_TO_LATEST_EXECUTION_EVENT"
   }
 }
