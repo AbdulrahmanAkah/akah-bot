@@ -424,7 +424,7 @@
     "preinstall_head": "b3142d0135d393088ab3fe55c53b0e28ec7574cb"
   },
   "charter_id": "AKAH_BOT_SYSTEM_CHARTER",
-  "charter_revision": 301,
+  "charter_revision": 302,
   "constitutional_core": {
     "amendment_rule": "The constitutional core may change only after explicit user authorization. Ordinary task closeout may update current_state, bottleneck, evidence summary, priority ordering, and task history but may not silently alter core principles.",
     "core_version": 1,
@@ -576,7 +576,7 @@
     "counterfactual_profit_claim": false,
     "cross_universe_classification": "UNIVERSE_STRATA_CONTAIN_DIVERGENT_REPLAY_INFORMATION",
     "cross_universe_exact": false,
-    "current_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_SOURCE_AUTHORITY_TARGETED_RECOVERY_V1",
+    "current_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_SOURCE_AUTHORITY_TARGETED_RECOVERY_V1_RETRY_V1",
     "dynamic_roles_all_bound": false,
     "economic_analysis": false,
     "economic_interpretation_performed": false,
@@ -1626,33 +1626,13 @@
   },
   "last_completed_task": {
     "alignment": "ALIGNED_WITH_SCOPE_UPDATE",
-    "axis": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_SOURCE_AUTHORITY_BINDING_GAP_REVIEW",
-    "completed_at_utc": "2026-09-20T12:30:38+00:00",
-    "completed_charter_revision": 301,
+    "axis": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_SOURCE_AUTHORITY_TARGETED_RECOVERY",
+    "completed_at_utc": "2026-09-20T12:58:04+00:00",
+    "completed_charter_revision": 302,
     "evidence": [
       {
-        "path": "governance/abc_lifecycle_state_machine_persistent_state_source_authority_binding_gap_review_v1/canonical_result.json",
-        "sha256": "2ED2E2145AB951ABD3FED9362C2CD78AE16EC5F18B08428BE264BCE2767F155D"
-      },
-      {
-        "path": "governance/abc_lifecycle_state_machine_persistent_state_source_authority_binding_gap_review_v1/binding_gap_review.json",
-        "sha256": "7AB42304981E373BC35AF21530A5B8C50A43E5AC158017A154727EFB6388BE6C"
-      },
-      {
-        "path": "governance/abc_lifecycle_state_machine_persistent_state_source_authority_binding_gap_review_v1/binding_component_root_cause.csv",
-        "sha256": "D416AE54354D1AAFCA9A811A76878121D46F9F04090953D916D1094EDC1D334D"
-      },
-      {
-        "path": "governance/abc_lifecycle_state_machine_persistent_state_source_authority_binding_gap_review_v1/observable_binding_gap_review.csv",
-        "sha256": "A95E9CC80F5B01548B90EEA083243173E0844A16ACED6978F42873306147F636"
-      },
-      {
-        "path": "governance/abc_lifecycle_state_machine_persistent_state_source_authority_binding_gap_review_v1/prior_trace_authority_reconciliation.json",
-        "sha256": "8008F98D0554818051F40B32BE4A555CF800E21ED7E1951A8A065A439A1099C3"
-      },
-      {
-        "path": "governance/abc_lifecycle_state_machine_persistent_state_source_authority_binding_gap_review_v1/output_manifest.json",
-        "sha256": "FC3FAE820BC9F7028F65FBB9ABC90C0E27D600F9094CEA3F042EF0DD0E1EFD27"
+        "path": "governance/abc_lifecycle_state_machine_persistent_state_source_authority_targeted_recovery_v1_fail_closed/failure.json",
+        "sha256": "EFB738D0081BD72E37607C68C7CD4895ED5DC47BA7E7E86330F0DB9146FEB47D"
       }
     ],
     "governance_declarations": {
@@ -1665,7 +1645,6 @@
       "exit_action_authorized": false,
       "exit_arbiter_authorized": false,
       "lookahead_or_future_information_used": false,
-      "market_data_file_metadata_accessed": false,
       "market_data_rows_accessed": false,
       "market_data_values_accessed": false,
       "new_threshold_created": false,
@@ -1679,19 +1658,19 @@
       "reconstruction_implemented": false,
       "runtime_state_machine_authorized": false
     },
-    "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_SOURCE_AUTHORITY_TARGETED_RECOVERY_V1",
-    "north_star_effect": "Reviewed all 16 unresolved binding gaps. Authority-critical missing after reconciliation=1; unknown components=0. Causal reconstruction protocol work authorized=False. Routing=ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_SOURCE_AUTHORITY_TARGETED_RECOVERY_V1 because ONE_OR_MORE_AUTHORITY_CRITICAL_OR_UNKNOWN_COMPONENTS_REMAIN_UNPROVEN.",
-    "objective": "Review the 16 unresolved source-authority binding gaps after remediation. Reconcile the exact missing components per observable and determine whether they are authority-critical gaps or merely absent pre-existing implementation bindings. Re-establish prior trace causal-reconstruction authority from frozen trace canonical/audit facts, semantic-amendment closure, raw-root/membership/parquet-schema authority and frozen ABC/LSM semantics. If all authority-critical requirements are proven and only implementation bindings are absent, authorize causal feature reconstruction protocol work so a new deterministic reconstruction implementation can be preregistered. Do not read market-data rows/PnL, materialize observables, define states, or implement reconstruction in this task.",
-    "outcome": "PASS",
-    "pre_closeout_head": "ce5007b00bfc98423436ed50830d2b96bb2fb6c2",
-    "result_ref": "governance/abc_lifecycle_state_machine_persistent_state_source_authority_binding_gap_review_v1/canonical_result.json",
-    "result_sha256": "2ED2E2145AB951ABD3FED9362C2CD78AE16EC5F18B08428BE264BCE2767F155D",
-    "started_at_utc": "2026-09-20T12:30:32+00:00",
-    "starting_charter_revision": 300,
-    "starting_head": "5611ee0c74d08b1353d755ac961b4294796ef2b6",
-    "summary": "Reviewed all 16 unresolved binding gaps. Authority-critical missing after reconciliation=1; unknown components=0. Causal reconstruction protocol work authorized=False. Routing=ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_SOURCE_AUTHORITY_TARGETED_RECOVERY_V1 because ONE_OR_MORE_AUTHORITY_CRITICAL_OR_UNKNOWN_COMPONENTS_REMAIN_UNPROVEN.",
-    "task_id": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_SOURCE_AUTHORITY_BINDING_GAP_REVIEW_V1",
-    "vision_impact": "ADVANCES"
+    "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_SOURCE_AUTHORITY_TARGETED_RECOVERY_V1_RETRY_V1",
+    "north_star_effect": "Targeted recovery of prior causal trace authority failed technically or at authoritative hash/history checks. No reconstruction authorization is accepted.",
+    "objective": "Recover the single remaining authority-critical blocker by proving prior causal lifecycle-trace reconstruction authority from authoritative governance history and exact local artifact hashes rather than brittle text-marker heuristics. Require the Rev288 trace execution task to be PASS with all causal invariants described as passing, require Rev289 mandatory trace review PASS, reconcile their evidence hashes to the exact local trace/review artifacts, and verify the frozen 2020-lifecycle/14059-row/1270-memory structure. Do not read market-data rows or PnL, materialize new observable values, implement reconstruction, define persistent states, or authorize runtime logic.",
+    "outcome": "FAIL_CLOSED",
+    "pre_closeout_head": "423ee160912d979341fea5d841098d6fd5f46dec",
+    "result_ref": "governance/abc_lifecycle_state_machine_persistent_state_source_authority_targeted_recovery_v1_fail_closed/failure.json",
+    "result_sha256": "EFB738D0081BD72E37607C68C7CD4895ED5DC47BA7E7E86330F0DB9146FEB47D",
+    "started_at_utc": "2026-09-20T12:57:20+00:00",
+    "starting_charter_revision": 301,
+    "starting_head": "8375b135dc094a110b7903addd38c7a3c8de731a",
+    "summary": "Targeted recovery of prior causal trace authority failed technically or at authoritative hash/history checks. No reconstruction authorization is accepted.",
+    "task_id": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_SOURCE_AUTHORITY_TARGETED_RECOVERY_V1",
+    "vision_impact": "PRESERVES"
   },
   "last_execution_event": {
     "alignment": "ALIGNED_WITH_SCOPE_UPDATE",
@@ -1899,8 +1878,8 @@
     "task_id": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_PRE_PROGRESS_THESIS_NON_CONFIRMATION_COUNTERFACTUAL_PORTFOLIO_REPLAY_V1",
     "task_start_head": "1cef008128d6da19d9b09ac2b73801d68a2e0e0d"
   },
-  "last_updated_at_utc": "2026-09-20T12:30:38+00:00",
-  "last_updated_by_task": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_SOURCE_AUTHORITY_BINDING_GAP_REVIEW_V1",
+  "last_updated_at_utc": "2026-09-20T12:58:04+00:00",
+  "last_updated_by_task": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_SOURCE_AUTHORITY_TARGETED_RECOVERY_V1",
   "latest_async_ready_state_control_denominator_authority_audit": {
     "actionability_inference_authorized": false,
     "audit_path": "C:\\Users\\abdul\\Downloads\\CAUSAL_EXIT_MECHANISM_PROFIT_ARM_COUNTERFACTUAL_EAG_PERSISTENCE_ASYNC_READY_STATE_CONTROL_DENOMINATOR_AUTHORITY_AUDIT_V1_AUDIT_20260916_171856.json",
@@ -3900,67 +3879,6 @@
   "recent_task_history": [
     {
       "alignment": "ALIGNED_WITH_SCOPE_UPDATE",
-      "axis": "ABC_2019_2023_MANDATORY_CAUSAL_REVIEW",
-      "completed_at_utc": "2026-09-20T09:36:33+00:00",
-      "completed_charter_revision": 282,
-      "evidence": [
-        {
-          "path": "governance/abc_2019_2023_mandatory_causal_review_v1/causal_review.json",
-          "sha256": "F6C87A2CB3CCBBE6B39AFED8C2BC78CD51C86EADC1690648AC4CD8A8F315509F"
-        },
-        {
-          "path": "governance/abc_2019_2023_mandatory_causal_review_v1/canonical_result.json",
-          "sha256": "E55BAFB31DDE51622D37FB2075C3D123A95EF4BD08DA118D595C101A6ACA9052"
-        },
-        {
-          "path": "governance/abc_2019_2023_mandatory_causal_review_v1/yearly_causal_review.csv",
-          "sha256": "1331B3B04542936214D8A08F8B9D6EACA37DD2B2889EDD133383C37BDCE65BD7"
-        },
-        {
-          "path": "governance/abc_2019_2023_mandatory_causal_review_v1/intervention_outcome_review.csv",
-          "sha256": "133D0718A1D85F05E12D130223FBE91EE6CF964FD81AB849C122C344B2D6EA38"
-        },
-        {
-          "path": "governance/abc_2019_2023_mandatory_causal_review_v1/portfolio_path_entry_review.csv",
-          "sha256": "E7C10174B645B37BA9593C97E8222942F39EA7085722D4071249A1355CDE9048"
-        },
-        {
-          "path": "governance/abc_2019_2023_mandatory_causal_review_v1/native_preemption_review.csv",
-          "sha256": "3B617A71689F15FCA13D0975F5517F0156F2EB7A92C53F7BE8C9AC2C8DC4549B"
-        }
-      ],
-      "governance_declarations": {
-        "2023_new_raw_or_replay_accessed": false,
-        "2024_used_as_fresh_holdout": false,
-        "2024_used_to_define_new_runtime_rule": false,
-        "2025_accessed": false,
-        "candidate_combination_tested": false,
-        "candidate_replay_executed": false,
-        "candidate_to_candidate_overlap_tested": false,
-        "lookahead_or_future_information_used": false,
-        "market_data_accessed": false,
-        "new_candidate_threshold_created": false,
-        "pair_or_event_identity_used_as_runtime_rule": false,
-        "posthoc_outcome_threshold_search_used": false,
-        "production_changed": false,
-        "ranking_performed": false
-      },
-      "next_bottleneck": "ABC_OVERLAP_AND_REDUNDANCY_PROTOCOL_FREEZE_V1",
-      "north_star_effect": "Mandatory C/A/B causal review completed from frozen five-year outputs only. All three primitives show net-negative five-year DirectEffect with mixed yearly behavior; portfolio-path effects materially offset or amplify local effects. No standalone primitive, new threshold, combination, ranking or production rule is authorized. Next is a separately frozen overlap/redundancy protocol.",
-      "objective": "Perform the preregistered mandatory causal review of the completed 2019-2023 C/A/B batch using only the frozen execution outputs. Separate local DirectEffect from TotalEffect and PortfolioPathResidual; measure yearly sign behavior, positive versus negative direct interventions, native preemption, lead time, symbol/temporal concentration, and portfolio entry-path changes. Do not rank candidates, create new acceptance thresholds, retune, combine candidates, measure candidate-to-candidate overlap, open new market data, or authorize production.",
-      "outcome": "PASS",
-      "pre_closeout_head": "3d61d9a2e092039f9003a2830cae2df39dd00adf",
-      "result_ref": "governance/abc_2019_2023_mandatory_causal_review_v1/canonical_result.json",
-      "result_sha256": "E55BAFB31DDE51622D37FB2075C3D123A95EF4BD08DA118D595C101A6ACA9052",
-      "started_at_utc": "2026-09-20T09:36:19+00:00",
-      "starting_charter_revision": 281,
-      "starting_head": "2e720cb6acc744f340add7dbce54a7f05d408661",
-      "summary": "Mandatory C/A/B causal review completed from frozen five-year outputs only. All three primitives show net-negative five-year DirectEffect with mixed yearly behavior; portfolio-path effects materially offset or amplify local effects. No standalone primitive, new threshold, combination, ranking or production rule is authorized. Next is a separately frozen overlap/redundancy protocol.",
-      "task_id": "ABC_2019_2023_MANDATORY_CAUSAL_REVIEW_V1",
-      "vision_impact": "ADVANCES"
-    },
-    {
-      "alignment": "ALIGNED_WITH_SCOPE_UPDATE",
       "axis": "ABC_OVERLAP_REDUNDANCY_PROTOCOL_FREEZE",
       "completed_at_utc": "2026-09-20T09:46:00+00:00",
       "completed_charter_revision": 283,
@@ -5239,6 +5157,54 @@
       "summary": "Reviewed all 16 unresolved binding gaps. Authority-critical missing after reconciliation=1; unknown components=0. Causal reconstruction protocol work authorized=False. Routing=ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_SOURCE_AUTHORITY_TARGETED_RECOVERY_V1 because ONE_OR_MORE_AUTHORITY_CRITICAL_OR_UNKNOWN_COMPONENTS_REMAIN_UNPROVEN.",
       "task_id": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_SOURCE_AUTHORITY_BINDING_GAP_REVIEW_V1",
       "vision_impact": "ADVANCES"
+    },
+    {
+      "alignment": "ALIGNED_WITH_SCOPE_UPDATE",
+      "axis": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_SOURCE_AUTHORITY_TARGETED_RECOVERY",
+      "completed_at_utc": "2026-09-20T12:58:04+00:00",
+      "completed_charter_revision": 302,
+      "evidence": [
+        {
+          "path": "governance/abc_lifecycle_state_machine_persistent_state_source_authority_targeted_recovery_v1_fail_closed/failure.json",
+          "sha256": "EFB738D0081BD72E37607C68C7CD4895ED5DC47BA7E7E86330F0DB9146FEB47D"
+        }
+      ],
+      "governance_declarations": {
+        "2023_new_raw_or_replay_accessed": false,
+        "2024_used_as_fresh_holdout": false,
+        "2024_used_to_define_new_runtime_rule": false,
+        "2025_accessed": false,
+        "adaptive_logic_authorized": false,
+        "economic_outcomes_read": false,
+        "exit_action_authorized": false,
+        "exit_arbiter_authorized": false,
+        "lookahead_or_future_information_used": false,
+        "market_data_rows_accessed": false,
+        "market_data_values_accessed": false,
+        "new_threshold_created": false,
+        "observable_values_materialized": false,
+        "pair_or_event_identity_used_as_runtime_rule": false,
+        "persistence_horizon_selected": false,
+        "persistent_state_defined": false,
+        "pnl_columns_read": false,
+        "posthoc_outcome_threshold_search_used": false,
+        "production_changed": false,
+        "reconstruction_implemented": false,
+        "runtime_state_machine_authorized": false
+      },
+      "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_SOURCE_AUTHORITY_TARGETED_RECOVERY_V1_RETRY_V1",
+      "north_star_effect": "Targeted recovery of prior causal trace authority failed technically or at authoritative hash/history checks. No reconstruction authorization is accepted.",
+      "objective": "Recover the single remaining authority-critical blocker by proving prior causal lifecycle-trace reconstruction authority from authoritative governance history and exact local artifact hashes rather than brittle text-marker heuristics. Require the Rev288 trace execution task to be PASS with all causal invariants described as passing, require Rev289 mandatory trace review PASS, reconcile their evidence hashes to the exact local trace/review artifacts, and verify the frozen 2020-lifecycle/14059-row/1270-memory structure. Do not read market-data rows or PnL, materialize new observable values, implement reconstruction, define persistent states, or authorize runtime logic.",
+      "outcome": "FAIL_CLOSED",
+      "pre_closeout_head": "423ee160912d979341fea5d841098d6fd5f46dec",
+      "result_ref": "governance/abc_lifecycle_state_machine_persistent_state_source_authority_targeted_recovery_v1_fail_closed/failure.json",
+      "result_sha256": "EFB738D0081BD72E37607C68C7CD4895ED5DC47BA7E7E86330F0DB9146FEB47D",
+      "started_at_utc": "2026-09-20T12:57:20+00:00",
+      "starting_charter_revision": 301,
+      "starting_head": "8375b135dc094a110b7903addd38c7a3c8de731a",
+      "summary": "Targeted recovery of prior causal trace authority failed technically or at authoritative hash/history checks. No reconstruction authorization is accepted.",
+      "task_id": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_SOURCE_AUTHORITY_TARGETED_RECOVERY_V1",
+      "vision_impact": "PRESERVES"
     }
   ],
   "schema_version": "akah-bot-system-charter-v1",
@@ -5285,18 +5251,18 @@
   "github_sync_metadata": {
     "schema_version": "akah-bot-github-governance-snapshot-v3",
     "snapshot_semantics": "CURRENT_CANONICAL_GOVERNANCE_STATE_WITH_RECENT_EXECUTION_HISTORY_EXTERNALIZED",
-    "charter_revision": 301,
+    "charter_revision": 302,
     "source_branch": "research/rd48-cross-venue-price-level-basis-direct-utility-v1",
-    "source_head": "8375b135dc094a110b7903addd38c7a3c8de731a",
+    "source_head": "bb6908c7f8be3b95e20ee6bf33f75afd61ff2629",
     "canonical_local_charter_path": "governance/AKAH_BOT_SYSTEM_CHARTER.json",
-    "canonical_local_charter_size_bytes": 213190657,
-    "canonical_local_charter_sha256": "4479ED1793AC53A519F0BC53FA6D5B0BABFBD1D2CE3E4A1D000FFA032E8C6F29",
+    "canonical_local_charter_size_bytes": 213188049,
+    "canonical_local_charter_sha256": "D0453770C988279D04E3865A80CE27079F999DD6C4FFD8C7D905E81AB5EE7905",
     "externalized_top_level_key": "recent_execution_history",
-    "full_archive_repo_path": "governance/archive/AKAH_BOT_SYSTEM_CHARTER_REV301_FULL.json.gz",
-    "full_archive_size_bytes": 16818885,
-    "full_archive_sha256": "89866E72E7C0BB0E8A1B71FFB91A8438A01E8FC84D22417EF058CF342F865ED4",
-    "latest_task_id": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_SOURCE_AUTHORITY_BINDING_GAP_REVIEW_V1",
-    "current_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_SOURCE_AUTHORITY_TARGETED_RECOVERY_V1",
+    "full_archive_repo_path": "governance/archive/AKAH_BOT_SYSTEM_CHARTER_REV302_FULL.json.gz",
+    "full_archive_size_bytes": 16818775,
+    "full_archive_sha256": "DBD0689423637D8DDFD90E611871441AF95C85B7F1E6AEDC1A0BF27CF373A36D",
+    "latest_task_id": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_SOURCE_AUTHORITY_TARGETED_RECOVERY_V1",
+    "current_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_SOURCE_AUTHORITY_TARGETED_RECOVERY_V1_RETRY_V1",
     "governance_sync_status": "SYNCHRONIZED_TO_LATEST_EXECUTION_EVENT"
   }
 }
