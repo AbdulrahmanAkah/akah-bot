@@ -1,53 +1,57 @@
 {
   "schema_version": "akah-bot-github-governance-sync-manifest-v3",
   "charter_id": "AKAH_BOT_SYSTEM_CHARTER",
-  "charter_revision": 774,
+  "charter_revision": 775,
   "constitutional_core_sha256": "3FB4AAC711B9F8D52F68457D99B0434BCECB32B773155BA8BB1A4FFB85BE0219",
   "source_branch": "research/rd48-cross-venue-price-level-basis-direct-utility-v1",
-  "source_head": "70bdbe5e16f0c25cc66d67414c126fffa75669b3",
+  "source_head": "8566875a736b87dcc13e59c2331652cb7119e7c3",
   "canonical_local_charter": {
     "path": "governance/AKAH_BOT_SYSTEM_CHARTER.json",
-    "sha256": "01E87A4C7FAA89840B61FB9047D2C694D2B42284BBC4A8245E8EF27E1F40B8A1",
-    "size_bytes": 213196756
+    "sha256": "15AE72617A20284D9FD5D8D8AFDB42D49B2520168112F2903A15C52807C0182A",
+    "size_bytes": 213194249
   },
   "github_snapshot": {
     "path": "governance/AKAH_BOT_SYSTEM_CHARTER_GITHUB_SNAPSHOT.json",
-    "sha256": "75DEF0DBCC6C6F0D172F0320F59C60A68FF5AE8841C5B6A43DD2BE21D88EF641",
-    "size_bytes": 341213,
+    "sha256": "51B0726C261E08BD66F712C7617285D0AA39B5B5FABFB65487A6B1E77A5F84A7",
+    "size_bytes": 338738,
     "externalized_top_level_key": "recent_execution_history"
   },
   "full_history_archive": {
-    "path": "governance/archive/AKAH_BOT_SYSTEM_CHARTER_REV774_FULL.json.gz",
-    "sha256": "4EA68CAA3107B81725B32A79DEB1D231839346D1FA67BECD27A23A221CA46004",
-    "size_bytes": 16825910,
+    "path": "governance/archive/AKAH_BOT_SYSTEM_CHARTER_REV775_FULL.json.gz",
+    "sha256": "81DF7FAF213B8F00FAB5436F7EB89CD4BF45F8DFC885F26F3419C61E4E9F81E2",
+    "size_bytes": 16825605,
     "compression": "gzip",
     "contains_complete_original_charter_bytes": true
   },
   "latest_completed_task": {
-    "alignment": "ALIGNED_WITH_SCOPE_UPDATE",
+    "alignment": "ALIGNED",
     "axis": "SELECTIVE_LIFECYCLE_POLICY_VALUE_QUALIFICATION",
-    "completed_at_utc": "2026-10-02T22:12:33+00:00",
-    "completed_charter_revision": 774,
+    "completed_at_utc": "2026-10-02T22:45:26+00:00",
+    "completed_charter_revision": 775,
     "evidence": [
       {
-        "path": "governance/final_gate2_to_gate3_replay_ready_mega_v3/canonical_result.json",
-        "sha256": "5937BD72A501569ED1CEB327DE722372C5948832AD3D68B2817A6BE8879CA7AC"
+        "path": "governance/gate3_single_frozen_economic_replay_v3/canonical_result.json",
+        "sha256": "07B803CEFD20607695ACFABAD43BE9BE48AAC6FB1B1D75DC8029F0DCAF649DF4"
       },
       {
-        "path": "governance/final_gate2_to_gate3_replay_ready_mega_v3/15_GATE3_FROZEN_HASH_MANIFEST.json",
-        "sha256": "A653C0FB0D369C09754853A45641A529CFEC571463F77B506788CEDB37A6084F"
+        "path": "governance/gate3_single_frozen_economic_replay_v3/TECHNICAL_FAIL.json",
+        "sha256": "BE9010D51EC73822E8B250201B8DCA71F17E73ACDE42E6E5497E2680FBF8D385"
       },
       {
-        "path": "governance/final_gate2_to_gate3_replay_ready_mega_v3/ict_checkpoint_source_audit.json",
-        "sha256": "6E6BBA3A86BC167245DAA8E473F503D2381815B841163FD3500DE99AD402470B"
+        "path": "governance/gate3_single_frozen_economic_replay_v3/synthetic_serialization_forensic.json",
+        "sha256": "8118CCEE2D4F580CD65E14A8EAD91B81BE4A39F1C5A49A00E1BB854490433D0F"
       },
       {
-        "path": "governance/final_gate2_to_gate3_replay_ready_mega_v3/03_SUPPLEMENTAL_DUAL_REVIEW_RECONCILIATION.json",
-        "sha256": "2C1438F54AD593DB2C523DE73AAD2D0820577701B4C10CF3745E417253A5F97F"
+        "path": "governance/gate3_single_frozen_economic_replay_v3/launch_receipt.json",
+        "sha256": "C336749D8DAF8F513149334E8E1E0140BC1941AC7115E4241695409CD6A25A55"
       },
       {
-        "path": "governance/final_gate2_to_gate3_replay_ready_mega_v3/01_AUTHORITY_AND_SYNC_PREFLIGHT.json",
-        "sha256": "0837F44ADF6B7DD1D5F77617D45C4B6B3DCCEFE7964A16CCD28EB7F586EB5403"
+        "path": "governance/gate3_single_frozen_economic_replay_v3/output_manifest.json",
+        "sha256": "020EDB52A544E910987FCB2DD0E9D25970A09E3DCF8288B6C8F7F4869E26FB2E"
+      },
+      {
+        "path": "governance/gate3_single_frozen_economic_replay_v3/pre_begin_governance_sync_receipt.json",
+        "sha256": "0494013383EECDA5EA1D0BC16D095D40CB584D542838EEF5983E3A3601E4F692"
       }
     ],
     "governance_declarations": {
@@ -60,20 +64,20 @@
       "posthoc_outcome_threshold_search_used": false,
       "production_changed": false
     },
-    "next_bottleneck": "AKAH_SINGLE_FROZEN_GATE3_ECONOMIC_REPLAY_V3_EXPLICIT_AUTHORIZATION",
-    "north_star_effect": "Engineering readiness only, no profitability conclusion. Owned causal source/evidence, current MTM accounting and protected data boundary verified without economic replay.",
-    "objective": "Close complete source-supported Gate2 funded scope and arm hash-frozen Gate3 runner; no economics, protected market rows or production",
-    "outcome": "PASS",
-    "pre_closeout_head": "b95ca1332832b0a5acbfde1bdf8eb3f6cf7c7e35",
-    "result_ref": "governance/final_gate2_to_gate3_replay_ready_mega_v3/canonical_result.json",
-    "result_sha256": "5937BD72A501569ED1CEB327DE722372C5948832AD3D68B2817A6BE8879CA7AC",
-    "started_at_utc": "2026-10-02T21:13:26+00:00",
-    "starting_charter_revision": 773,
-    "starting_head": "97cd98583f4b426811ce2eb47677f64bc163d29e",
-    "summary": "Ready for one explicitly authorized Gate3 replay: ICT-only complete funded scope, 76 synthetic tests and actual CLI preflight PASS; no economics. Other schools/hybrids quarantined; prospective quantity assumptions disclosed; research remote sync exception frozen.",
-    "task_id": "AKAH_FINAL_GATE2_TO_GATE3_REPLAY_READY_MEGA_V3",
-    "vision_impact": "ADVANCES"
+    "next_bottleneck": "AKAH_GATE3_EVENT_SERIALIZATION_REPAIR_AND_REFREEZE_BEFORE_NEW_AUTHORIZED_REPLAY",
+    "north_star_effect": "Identified a mechanical producer-to-adapter timestamp serialization defect and a gap in the prior synthetic integration fixture. This is not evidence for or against ICT profitability. Protected market boundary and single-attempt guard preserved.",
+    "objective": "Execute the single hash-frozen ICT-only Gate3 replay and precommitted qualification on 2022-2023, 1X and 2X costs; no protected rows, retuning, automatic rerun or production. REV774 remote charter synchronization verified.",
+    "outcome": "FAIL_CLOSED",
+    "pre_closeout_head": "bba57029488089c72077def5002a5dc56eb36019",
+    "result_ref": "governance/gate3_single_frozen_economic_replay_v3/canonical_result.json",
+    "result_sha256": "07B803CEFD20607695ACFABAD43BE9BE48AAC6FB1B1D75DC8029F0DCAF649DF4",
+    "started_at_utc": "2026-10-02T22:35:51+00:00",
+    "starting_charter_revision": 774,
+    "starting_head": "70bdbe5e16f0c25cc66d67414c126fffa75669b3",
+    "summary": "Single authorized hash-frozen Gate3 attempt failed in event staging before any funded portfolio arm: pandas.Timestamp is not JSON serializable. Actual producer-schema mismatch reproduced synthetically. No frozen policy change, qualification or automatic replay; no scientific profitability conclusion.",
+    "task_id": "AKAH_SINGLE_FROZEN_GATE3_ECONOMIC_REPLAY_V3",
+    "vision_impact": "INCONCLUSIVE"
   },
-  "current_bottleneck": "AKAH_SINGLE_FROZEN_GATE3_ECONOMIC_REPLAY_V3_EXPLICIT_AUTHORIZATION",
+  "current_bottleneck": "AKAH_GATE3_EVENT_SERIALIZATION_REPAIR_AND_REFREEZE_BEFORE_NEW_AUTHORIZED_REPLAY",
   "governance_sync_contract_version": "AKAH_BOT_CHARTER_SYNCHRONIZATION_CONTRACT_V1"
 }

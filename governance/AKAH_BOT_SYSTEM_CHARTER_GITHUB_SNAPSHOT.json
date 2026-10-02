@@ -424,7 +424,7 @@
     "preinstall_head": "b3142d0135d393088ab3fe55c53b0e28ec7574cb"
   },
   "charter_id": "AKAH_BOT_SYSTEM_CHARTER",
-  "charter_revision": 774,
+  "charter_revision": 775,
   "constitutional_core": {
     "amendment_rule": "The constitutional core may change only after explicit user authorization. Ordinary task closeout may update current_state, bottleneck, evidence summary, priority ordering, and task history but may not silently alter core principles.",
     "core_version": 1,
@@ -576,7 +576,7 @@
     "counterfactual_profit_claim": false,
     "cross_universe_classification": "UNIVERSE_STRATA_CONTAIN_DIVERGENT_REPLAY_INFORMATION",
     "cross_universe_exact": false,
-    "current_bottleneck": "AKAH_SINGLE_FROZEN_GATE3_ECONOMIC_REPLAY_V3_EXPLICIT_AUTHORIZATION",
+    "current_bottleneck": "AKAH_GATE3_EVENT_SERIALIZATION_REPAIR_AND_REFREEZE_BEFORE_NEW_AUTHORIZED_REPLAY",
     "dynamic_roles_all_bound": false,
     "economic_analysis": false,
     "economic_interpretation_performed": false,
@@ -1625,30 +1625,34 @@
     "version": "AKAH_BOT_CHARTER_SYNCHRONIZATION_CONTRACT_V1"
   },
   "last_completed_task": {
-    "alignment": "ALIGNED_WITH_SCOPE_UPDATE",
+    "alignment": "ALIGNED",
     "axis": "SELECTIVE_LIFECYCLE_POLICY_VALUE_QUALIFICATION",
-    "completed_at_utc": "2026-10-02T22:12:33+00:00",
-    "completed_charter_revision": 774,
+    "completed_at_utc": "2026-10-02T22:45:26+00:00",
+    "completed_charter_revision": 775,
     "evidence": [
       {
-        "path": "governance/final_gate2_to_gate3_replay_ready_mega_v3/canonical_result.json",
-        "sha256": "5937BD72A501569ED1CEB327DE722372C5948832AD3D68B2817A6BE8879CA7AC"
+        "path": "governance/gate3_single_frozen_economic_replay_v3/canonical_result.json",
+        "sha256": "07B803CEFD20607695ACFABAD43BE9BE48AAC6FB1B1D75DC8029F0DCAF649DF4"
       },
       {
-        "path": "governance/final_gate2_to_gate3_replay_ready_mega_v3/15_GATE3_FROZEN_HASH_MANIFEST.json",
-        "sha256": "A653C0FB0D369C09754853A45641A529CFEC571463F77B506788CEDB37A6084F"
+        "path": "governance/gate3_single_frozen_economic_replay_v3/TECHNICAL_FAIL.json",
+        "sha256": "BE9010D51EC73822E8B250201B8DCA71F17E73ACDE42E6E5497E2680FBF8D385"
       },
       {
-        "path": "governance/final_gate2_to_gate3_replay_ready_mega_v3/ict_checkpoint_source_audit.json",
-        "sha256": "6E6BBA3A86BC167245DAA8E473F503D2381815B841163FD3500DE99AD402470B"
+        "path": "governance/gate3_single_frozen_economic_replay_v3/synthetic_serialization_forensic.json",
+        "sha256": "8118CCEE2D4F580CD65E14A8EAD91B81BE4A39F1C5A49A00E1BB854490433D0F"
       },
       {
-        "path": "governance/final_gate2_to_gate3_replay_ready_mega_v3/03_SUPPLEMENTAL_DUAL_REVIEW_RECONCILIATION.json",
-        "sha256": "2C1438F54AD593DB2C523DE73AAD2D0820577701B4C10CF3745E417253A5F97F"
+        "path": "governance/gate3_single_frozen_economic_replay_v3/launch_receipt.json",
+        "sha256": "C336749D8DAF8F513149334E8E1E0140BC1941AC7115E4241695409CD6A25A55"
       },
       {
-        "path": "governance/final_gate2_to_gate3_replay_ready_mega_v3/01_AUTHORITY_AND_SYNC_PREFLIGHT.json",
-        "sha256": "0837F44ADF6B7DD1D5F77617D45C4B6B3DCCEFE7964A16CCD28EB7F586EB5403"
+        "path": "governance/gate3_single_frozen_economic_replay_v3/output_manifest.json",
+        "sha256": "020EDB52A544E910987FCB2DD0E9D25970A09E3DCF8288B6C8F7F4869E26FB2E"
+      },
+      {
+        "path": "governance/gate3_single_frozen_economic_replay_v3/pre_begin_governance_sync_receipt.json",
+        "sha256": "0494013383EECDA5EA1D0BC16D095D40CB584D542838EEF5983E3A3601E4F692"
       }
     ],
     "governance_declarations": {
@@ -1661,19 +1665,19 @@
       "posthoc_outcome_threshold_search_used": false,
       "production_changed": false
     },
-    "next_bottleneck": "AKAH_SINGLE_FROZEN_GATE3_ECONOMIC_REPLAY_V3_EXPLICIT_AUTHORIZATION",
-    "north_star_effect": "Engineering readiness only, no profitability conclusion. Owned causal source/evidence, current MTM accounting and protected data boundary verified without economic replay.",
-    "objective": "Close complete source-supported Gate2 funded scope and arm hash-frozen Gate3 runner; no economics, protected market rows or production",
-    "outcome": "PASS",
-    "pre_closeout_head": "b95ca1332832b0a5acbfde1bdf8eb3f6cf7c7e35",
-    "result_ref": "governance/final_gate2_to_gate3_replay_ready_mega_v3/canonical_result.json",
-    "result_sha256": "5937BD72A501569ED1CEB327DE722372C5948832AD3D68B2817A6BE8879CA7AC",
-    "started_at_utc": "2026-10-02T21:13:26+00:00",
-    "starting_charter_revision": 773,
-    "starting_head": "97cd98583f4b426811ce2eb47677f64bc163d29e",
-    "summary": "Ready for one explicitly authorized Gate3 replay: ICT-only complete funded scope, 76 synthetic tests and actual CLI preflight PASS; no economics. Other schools/hybrids quarantined; prospective quantity assumptions disclosed; research remote sync exception frozen.",
-    "task_id": "AKAH_FINAL_GATE2_TO_GATE3_REPLAY_READY_MEGA_V3",
-    "vision_impact": "ADVANCES"
+    "next_bottleneck": "AKAH_GATE3_EVENT_SERIALIZATION_REPAIR_AND_REFREEZE_BEFORE_NEW_AUTHORIZED_REPLAY",
+    "north_star_effect": "Identified a mechanical producer-to-adapter timestamp serialization defect and a gap in the prior synthetic integration fixture. This is not evidence for or against ICT profitability. Protected market boundary and single-attempt guard preserved.",
+    "objective": "Execute the single hash-frozen ICT-only Gate3 replay and precommitted qualification on 2022-2023, 1X and 2X costs; no protected rows, retuning, automatic rerun or production. REV774 remote charter synchronization verified.",
+    "outcome": "FAIL_CLOSED",
+    "pre_closeout_head": "bba57029488089c72077def5002a5dc56eb36019",
+    "result_ref": "governance/gate3_single_frozen_economic_replay_v3/canonical_result.json",
+    "result_sha256": "07B803CEFD20607695ACFABAD43BE9BE48AAC6FB1B1D75DC8029F0DCAF649DF4",
+    "started_at_utc": "2026-10-02T22:35:51+00:00",
+    "starting_charter_revision": 774,
+    "starting_head": "70bdbe5e16f0c25cc66d67414c126fffa75669b3",
+    "summary": "Single authorized hash-frozen Gate3 attempt failed in event staging before any funded portfolio arm: pandas.Timestamp is not JSON serializable. Actual producer-schema mismatch reproduced synthetically. No frozen policy change, qualification or automatic replay; no scientific profitability conclusion.",
+    "task_id": "AKAH_SINGLE_FROZEN_GATE3_ECONOMIC_REPLAY_V3",
+    "vision_impact": "INCONCLUSIVE"
   },
   "last_execution_event": {
     "alignment": "ALIGNED_WITH_SCOPE_UPDATE",
@@ -1881,8 +1885,8 @@
     "task_id": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_PRE_PROGRESS_THESIS_NON_CONFIRMATION_COUNTERFACTUAL_PORTFOLIO_REPLAY_V1",
     "task_start_head": "1cef008128d6da19d9b09ac2b73801d68a2e0e0d"
   },
-  "last_updated_at_utc": "2026-10-02T22:12:33+00:00",
-  "last_updated_by_task": "AKAH_FINAL_GATE2_TO_GATE3_REPLAY_READY_MEGA_V3",
+  "last_updated_at_utc": "2026-10-02T22:45:26+00:00",
+  "last_updated_by_task": "AKAH_SINGLE_FROZEN_GATE3_ECONOMIC_REPLAY_V3",
   "latest_async_ready_state_control_denominator_authority_audit": {
     "actionability_inference_authorized": false,
     "audit_path": "C:\\Users\\abdul\\Downloads\\CAUSAL_EXIT_MECHANISM_PROFIT_ARM_COUNTERFACTUAL_EAG_PERSISTENCE_ASYNC_READY_STATE_CONTROL_DENOMINATOR_AUTHORITY_AUDIT_V1_AUDIT_20260916_171856.json",
@@ -3882,97 +3886,6 @@
   "recent_task_history": [
     {
       "alignment": "ALIGNED_WITH_SCOPE_UPDATE",
-      "axis": "REPLACEMENT_VALUE_LEARNABILITY_AUTOPSY",
-      "completed_at_utc": "2026-09-28T20:34:03+00:00",
-      "completed_charter_revision": 755,
-      "evidence": [
-        {
-          "path": "governance/abc_lifecycle_state_machine_replacement_value_learnability_autopsy_mega_v1/target_contract.json",
-          "sha256": "23CED3AC2D16D26F99F62AD8056C4FA7E5C379A4D47612A82A8997FD5890F63A"
-        },
-        {
-          "path": "governance/abc_lifecycle_state_machine_replacement_value_learnability_autopsy_mega_v1/head_coefficients.json",
-          "sha256": "FFC39EBB1CDD19CB7BEBB4EF22025FB6D1730827B0AEB04AA201D1268B6482BB"
-        },
-        {
-          "path": "governance/abc_lifecycle_state_machine_replacement_value_learnability_autopsy_mega_v1/walkforward_fold_audit.csv",
-          "sha256": "A5473C8E236E223968AE3AC8AF771D27E54176B62A7B52792813D261F82ECAB5"
-        },
-        {
-          "path": "governance/abc_lifecycle_state_machine_replacement_value_learnability_autopsy_mega_v1/replay_complete_checkpoint.json",
-          "sha256": "3C91C3A435DFF3A45DC579BB118ED75B914F818E26002E0776F92418F81F4575"
-        },
-        {
-          "path": "governance/abc_lifecycle_state_machine_replacement_value_learnability_autopsy_mega_v1/calibration_sample.csv.gz",
-          "sha256": "5F5F5B94D10BF7E3E5FEFD60ACB939CD917F504A04067D48A9A3A4836987F51A"
-        },
-        {
-          "path": "governance/abc_lifecycle_state_machine_replacement_value_learnability_autopsy_mega_v1/head_metrics.csv",
-          "sha256": "C1C704BCC2F5DF78F73E3140F44E83DFB480DA62479A5ACFDAA7B922E2195963"
-        },
-        {
-          "path": "governance/abc_lifecycle_state_machine_replacement_value_learnability_autopsy_mega_v1/decision_report.json",
-          "sha256": "0BAF50DFFF3246DE8BDDBB4DD4211904601407B70484AB14EEDF4AC1EDC4AC8B"
-        },
-        {
-          "path": "governance/abc_lifecycle_state_machine_replacement_value_learnability_autopsy_mega_v1/baseline_parity_audit.json",
-          "sha256": "6A516025A40631B31D5652F70E1F827FB50703E8241D7A3B7AC0BD399E7673E6"
-        },
-        {
-          "path": "governance/abc_lifecycle_state_machine_replacement_value_learnability_autopsy_mega_v1/target_distribution.csv",
-          "sha256": "4DA25861D70428D8EF19E0EFD7FD452535065756538F73BD3B71F2CA118F00B2"
-        },
-        {
-          "path": "governance/abc_lifecycle_state_machine_replacement_value_learnability_autopsy_mega_v1/authority_audit.json",
-          "sha256": "6D86B09A5DE900CBE28D5A3F87F797B72744F77D533A95D897F32F24ACCAA2DE"
-        },
-        {
-          "path": "governance/abc_lifecycle_state_machine_replacement_value_learnability_autopsy_mega_v1/feature_contract.json",
-          "sha256": "65A6444458CA5B31D398BD94D5CCD6B31B4AC53CC7D4061C67755D541AA07755"
-        },
-        {
-          "path": "governance/abc_lifecycle_state_machine_replacement_value_learnability_autopsy_mega_v1/summary.md",
-          "sha256": "D261A837E49D5D340CE381C8BACBC3B7E1D2998B66C1210556B123098F143143"
-        },
-        {
-          "path": "governance/abc_lifecycle_state_machine_replacement_value_learnability_autopsy_mega_v1/canonical_result.json",
-          "sha256": "96A0203B17B5571C25D705BF9F54669D27AF9800E81C433AA06B12DBE40D923E"
-        },
-        {
-          "path": "governance/abc_lifecycle_state_machine_replacement_value_learnability_autopsy_mega_v1/research_protocol.json",
-          "sha256": "B4F8EC383CBC02542A82A6D4E832850DE2925DB0C65229AB53BBC6406B418D50"
-        },
-        {
-          "path": "governance/abc_lifecycle_state_machine_replacement_value_learnability_autopsy_mega_v1/output_manifest.json",
-          "sha256": "530BA1A63324CA0732526C5AF7A17E1E962ABAFABB08F8CE028FC0471F037DF1"
-        }
-      ],
-      "governance_declarations": {
-        "2023_new_raw_or_replay_accessed": true,
-        "2024_used_as_fresh_holdout": false,
-        "2024_used_to_define_new_runtime_rule": false,
-        "2025_accessed": false,
-        "lookahead_or_future_information_used": false,
-        "pair_or_event_identity_used_as_runtime_rule": false,
-        "posthoc_outcome_threshold_search_used": false,
-        "production_changed": false
-      },
-      "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_REPLACEMENT_VALUE_LEARNABILITY_AUTOPSY_MEGA_HUMAN_REVIEW_V1",
-      "north_star_effect": "Locates which economic component of the REV749 replacement oracle gap is or is not represented in the current causal state before any further runtime-policy construction.",
-      "objective": "Run one diagnostic-only Replacement-Value Learnability Autopsy on the exact F10 2x baseline trajectory. Decompose oracle replacement delta exactly into candidate incremental value minus incumbent continuation value. Fit three fixed standardized ridge heads per purged walk-forward year: candidate head on candidate-only causal features, incumbent head on incumbent-only causal features, and direct-delta control on the existing 36-feature surface. Measure OOT RMSE, MAE, Pearson, sampled Spearman, sign accuracy, positive precision/recall and sampled top-decile positive precision. No portfolio policy replay, threshold search, model selection, posthoc winner certification, admission/ranking/governor/sizing mutation, 2024 access, production change or push.",
-      "outcome": "PASS",
-      "pre_closeout_head": "cfd7447d4e6eac73b3512df433e6aba2d03a8a53",
-      "result_ref": "governance/abc_lifecycle_state_machine_replacement_value_learnability_autopsy_mega_v1/canonical_result.json",
-      "result_sha256": "96A0203B17B5571C25D705BF9F54669D27AF9800E81C433AA06B12DBE40D923E",
-      "started_at_utc": "2026-09-28T20:14:08+00:00",
-      "starting_charter_revision": 754,
-      "starting_head": "7e5308b01b332e882a497a9b04fcb9c0d910204d",
-      "summary": "Completed a diagnostic-only purged OOT learnability autopsy that exactly decomposed replacement value into candidate incremental value and incumbent continuation value, measured each fixed head plus a direct-delta control, and preserved exact F10 2x trade parity.",
-      "task_id": "ABC_LIFECYCLE_STATE_MACHINE_REPLACEMENT_VALUE_LEARNABILITY_AUTOPSY_MEGA_V1",
-      "vision_impact": "ADVANCES"
-    },
-    {
-      "alignment": "ALIGNED_WITH_SCOPE_UPDATE",
       "axis": "FEATURE_INFORMATION_AUDIT_NONLINEAR_LEARNABILITY_BOUND",
       "completed_at_utc": "2026-09-28T21:03:49+00:00",
       "completed_charter_revision": 756,
@@ -5384,6 +5297,61 @@
       "summary": "Ready for one explicitly authorized Gate3 replay: ICT-only complete funded scope, 76 synthetic tests and actual CLI preflight PASS; no economics. Other schools/hybrids quarantined; prospective quantity assumptions disclosed; research remote sync exception frozen.",
       "task_id": "AKAH_FINAL_GATE2_TO_GATE3_REPLAY_READY_MEGA_V3",
       "vision_impact": "ADVANCES"
+    },
+    {
+      "alignment": "ALIGNED",
+      "axis": "SELECTIVE_LIFECYCLE_POLICY_VALUE_QUALIFICATION",
+      "completed_at_utc": "2026-10-02T22:45:26+00:00",
+      "completed_charter_revision": 775,
+      "evidence": [
+        {
+          "path": "governance/gate3_single_frozen_economic_replay_v3/canonical_result.json",
+          "sha256": "07B803CEFD20607695ACFABAD43BE9BE48AAC6FB1B1D75DC8029F0DCAF649DF4"
+        },
+        {
+          "path": "governance/gate3_single_frozen_economic_replay_v3/TECHNICAL_FAIL.json",
+          "sha256": "BE9010D51EC73822E8B250201B8DCA71F17E73ACDE42E6E5497E2680FBF8D385"
+        },
+        {
+          "path": "governance/gate3_single_frozen_economic_replay_v3/synthetic_serialization_forensic.json",
+          "sha256": "8118CCEE2D4F580CD65E14A8EAD91B81BE4A39F1C5A49A00E1BB854490433D0F"
+        },
+        {
+          "path": "governance/gate3_single_frozen_economic_replay_v3/launch_receipt.json",
+          "sha256": "C336749D8DAF8F513149334E8E1E0140BC1941AC7115E4241695409CD6A25A55"
+        },
+        {
+          "path": "governance/gate3_single_frozen_economic_replay_v3/output_manifest.json",
+          "sha256": "020EDB52A544E910987FCB2DD0E9D25970A09E3DCF8288B6C8F7F4869E26FB2E"
+        },
+        {
+          "path": "governance/gate3_single_frozen_economic_replay_v3/pre_begin_governance_sync_receipt.json",
+          "sha256": "0494013383EECDA5EA1D0BC16D095D40CB584D542838EEF5983E3A3601E4F692"
+        }
+      ],
+      "governance_declarations": {
+        "2023_new_raw_or_replay_accessed": true,
+        "2024_used_as_fresh_holdout": false,
+        "2024_used_to_define_new_runtime_rule": false,
+        "2025_accessed": false,
+        "lookahead_or_future_information_used": false,
+        "pair_or_event_identity_used_as_runtime_rule": false,
+        "posthoc_outcome_threshold_search_used": false,
+        "production_changed": false
+      },
+      "next_bottleneck": "AKAH_GATE3_EVENT_SERIALIZATION_REPAIR_AND_REFREEZE_BEFORE_NEW_AUTHORIZED_REPLAY",
+      "north_star_effect": "Identified a mechanical producer-to-adapter timestamp serialization defect and a gap in the prior synthetic integration fixture. This is not evidence for or against ICT profitability. Protected market boundary and single-attempt guard preserved.",
+      "objective": "Execute the single hash-frozen ICT-only Gate3 replay and precommitted qualification on 2022-2023, 1X and 2X costs; no protected rows, retuning, automatic rerun or production. REV774 remote charter synchronization verified.",
+      "outcome": "FAIL_CLOSED",
+      "pre_closeout_head": "bba57029488089c72077def5002a5dc56eb36019",
+      "result_ref": "governance/gate3_single_frozen_economic_replay_v3/canonical_result.json",
+      "result_sha256": "07B803CEFD20607695ACFABAD43BE9BE48AAC6FB1B1D75DC8029F0DCAF649DF4",
+      "started_at_utc": "2026-10-02T22:35:51+00:00",
+      "starting_charter_revision": 774,
+      "starting_head": "70bdbe5e16f0c25cc66d67414c126fffa75669b3",
+      "summary": "Single authorized hash-frozen Gate3 attempt failed in event staging before any funded portfolio arm: pandas.Timestamp is not JSON serializable. Actual producer-schema mismatch reproduced synthetically. No frozen policy change, qualification or automatic replay; no scientific profitability conclusion.",
+      "task_id": "AKAH_SINGLE_FROZEN_GATE3_ECONOMIC_REPLAY_V3",
+      "vision_impact": "INCONCLUSIVE"
     }
   ],
   "schema_version": "akah-bot-system-charter-v1",
@@ -5429,11 +5397,11 @@
   },
   "github_sync_metadata": {
     "schema_version": "akah-bot-github-governance-snapshot-v3",
-    "source_head": "70bdbe5e16f0c25cc66d67414c126fffa75669b3",
+    "source_head": "8566875a736b87dcc13e59c2331652cb7119e7c3",
     "source_branch": "research/rd48-cross-venue-price-level-basis-direct-utility-v1",
-    "canonical_local_charter_sha256": "01E87A4C7FAA89840B61FB9047D2C694D2B42284BBC4A8245E8EF27E1F40B8A1",
+    "canonical_local_charter_sha256": "15AE72617A20284D9FD5D8D8AFDB42D49B2520168112F2903A15C52807C0182A",
     "externalized_top_level_key": "recent_execution_history",
-    "full_archive_repo_path": "governance/archive/AKAH_BOT_SYSTEM_CHARTER_REV774_FULL.json.gz",
-    "full_archive_sha256": "4EA68CAA3107B81725B32A79DEB1D231839346D1FA67BECD27A23A221CA46004"
+    "full_archive_repo_path": "governance/archive/AKAH_BOT_SYSTEM_CHARTER_REV775_FULL.json.gz",
+    "full_archive_sha256": "81DF7FAF213B8F00FAB5436F7EB89CD4BF45F8DFC885F26F3419C61E4E9F81E2"
   }
 }
