@@ -1,73 +1,41 @@
 {
   "schema_version": "akah-bot-github-governance-sync-manifest-v3",
   "charter_id": "AKAH_BOT_SYSTEM_CHARTER",
-  "charter_revision": 787,
+  "charter_revision": 788,
   "constitutional_core_sha256": "3FB4AAC711B9F8D52F68457D99B0434BCECB32B773155BA8BB1A4FFB85BE0219",
   "source_branch": "research/rd48-cross-venue-price-level-basis-direct-utility-v1",
-  "source_head": "841455262a2fa9108407daa636cf55b86b452b3e",
+  "source_head": "9d9e61a7b18f8dea4a597188570b7e8680320549",
   "canonical_local_charter": {
     "path": "governance/AKAH_BOT_SYSTEM_CHARTER.json",
-    "sha256": "1A349DF8E43C829A0F38E0794F4C612ED19D05244EBD9BF3F532B95D3C4FE2FA",
-    "size_bytes": 213176796
+    "sha256": "445C7BA3363F640B619E9FA7055DC6D64098ED7339C5534379D9FF5BE7116E6E",
+    "size_bytes": 213174655
   },
   "github_snapshot": {
     "path": "governance/AKAH_BOT_SYSTEM_CHARTER_GITHUB_SNAPSHOT.json",
-    "sha256": "638D7B2E361A5457504233C2A1C778DC2BDAFCE472E505C6818F25F57D715C5C",
-    "size_bytes": 321300,
+    "sha256": "0555CE632989E707CA5F6DF2D02EE9C759B25B11325099223DBB49AB4E3651CF",
+    "size_bytes": 319191,
     "externalized_top_level_key": "recent_execution_history"
   },
   "full_history_archive": {
-    "path": "governance/archive/AKAH_BOT_SYSTEM_CHARTER_REV787_FULL.json.gz",
-    "sha256": "3287BFEB4AA80427F4859A36469FD3742F807E59A8938AF92CCDA392D36995BD",
-    "size_bytes": 16823317,
+    "path": "governance/archive/AKAH_BOT_SYSTEM_CHARTER_REV788_FULL.json.gz",
+    "sha256": "B683E92C2C4AF60D40AC9CA2B8094CC5B2DF9936B3545B879E5C88151F9DC859",
+    "size_bytes": 16823709,
     "compression": "gzip",
     "contains_complete_original_charter_bytes": true
   },
   "latest_completed_task": {
-    "alignment": "ALIGNED_WITH_SCOPE_UPDATE",
+    "alignment": "ALIGNED",
     "axis": "SELECTIVE_LIFECYCLE_POLICY_VALUE_QUALIFICATION",
-    "completed_at_utc": "2026-10-04T22:46:20+00:00",
-    "completed_charter_revision": 787,
+    "completed_at_utc": "2026-10-09T10:25:59+00:00",
+    "completed_charter_revision": 788,
     "evidence": [
       {
-        "path": "governance/all_nine_eighteen_arm_readiness_v15/canonical_result.json",
-        "sha256": "64D97889BB92CBFF984AA81E665DCF19ACF1ED536A6192E585C9B148BA924DCB"
+        "path": "governance/v15_replay_stopped_handoff/canonical_result.json",
+        "sha256": "5D3F31C387D13054EA22FB505E86C74AB0B154E47C35CEB1F6E25D29C4140A51"
       },
       {
-        "path": "governance/all_nine_eighteen_arm_readiness_v15/evidence_snapshot.json",
-        "sha256": "A9732D9CC91E94FD06FDC692CEF892D93D9E325F71AF41CE26069554F35CCED7"
-      },
-      {
-        "path": "governance/all_nine_eighteen_arm_readiness_v15/readiness_certificate.json",
-        "sha256": "048E52AD2DDD03669F7F962F42169E10F2D21D718862A4BA929E227E881D11A9"
-      },
-      {
-        "path": "governance/all_nine_eighteen_arm_readiness_v15/gate3_precommit.json",
-        "sha256": "948D4356F704E45B8751A286E7DCEC1526D40EACA2A6A2EB7EC3B1AD09FB8BC4"
-      },
-      {
-        "path": "governance/all_nine_eighteen_arm_readiness_v15/mechanical_smoke.json",
-        "sha256": "C5067067648EB1270913E85BFF7289C7332F0B35D9D108A2488F8BE99AF4743E"
-      },
-      {
-        "path": "governance/all_nine_eighteen_arm_readiness_v15/synthetic_results.xml",
-        "sha256": "B21ECB191C29C1F09CF312768DA529B9A8C7A6E5C23668A64E6D2AE37842BAFC"
-      },
-      {
-        "path": "governance/all_nine_eighteen_arm_readiness_v15/regression_results.xml",
-        "sha256": "138D3E91379BD1A2F5B9AE868C5D512F3B26AD4BB3A82BA808B483D6DA57E4B6"
-      },
-      {
-        "path": "governance/all_nine_eighteen_arm_readiness_v15/e2e_receipts.json",
-        "sha256": "D78193D14E21E3D4BEB2F3148F0807936F49DA2022252F2EB0658B3D07104FB5"
-      },
-      {
-        "path": "governance/all_nine_eighteen_arm_readiness_v15/frozen_source_archive_manifest.json",
-        "sha256": "5D436F532A105D251B1F7EFB936BEFF691080937D1D0F2CCB75FD5679E8F57D7"
-      },
-      {
-        "path": "governance/all_nine_eighteen_arm_readiness_v15/frozen_source_authority.zip",
-        "sha256": "AAA419396B86B207180A32AFF1ABCF7F2F737670835D600D182EEC70BE03800C"
+        "path": "governance/v15_replay_stopped_handoff/evidence_snapshot.json",
+        "sha256": "810C573BF53A38908731E1D5FBE51CC39846B5760E423BFA072D265A10EBB500"
       }
     ],
     "governance_declarations": {
@@ -80,20 +48,20 @@
       "posthoc_outcome_threshold_search_used": false,
       "production_changed": false
     },
-    "next_bottleneck": "AKAH_SINGLE_FROZEN_ALL_NINE_GATE3_REPLAY_V15",
-    "north_star_effect": "Closes the executable source-to-accounting path for the requested six schools and three hybrids without claiming profitability, independent fidelity certification, or historical exchange certification.",
-    "objective": "Prepare exactly six schools plus three hybrids times two costs, source-bound new prospective engineering contracts and synthetic/causal mechanical readiness only, no economic replay",
-    "outcome": "PASS",
-    "pre_closeout_head": "385be8c21c9b1330d32455df0ee2dd7b3ea80db2",
-    "result_ref": "governance/all_nine_eighteen_arm_readiness_v15/canonical_result.json",
-    "result_sha256": "64D97889BB92CBFF984AA81E665DCF19ACF1ED536A6192E585C9B148BA924DCB",
-    "started_at_utc": "2026-10-04T17:45:39+00:00",
-    "starting_charter_revision": 786,
-    "starting_head": "044042ef0a7b635bea4ddab60c044aefa08d0108",
-    "summary": "Exactly nine prospective source-bound profiles and eighteen cost arms are ready; 741 retained core tests passed, both full-universe source-only windows completed, no economic replay in preparation. Latest direct user authorization received for the separate frozen economic task immediately after governance synchronization.",
-    "task_id": "AKAH_ALL_NINE_SYSTEMS_EIGHTEEN_ARM_REPLAY_READINESS_V15",
-    "vision_impact": "ADVANCES"
+    "next_bottleneck": "V15_REPLAY_DISK_GROWTH_AND_LONG_HORIZON_PERFORMANCE_MANUAL_REVIEW",
+    "north_star_effect": "No economic conclusion or policy promotion. Preserve source repairs, exact test evidence and last durable checkpoint; manual investigation required before any replay restart.",
+    "objective": "Execute once the exact V15 six-school plus three-hybrid frozen eighteen-arm replay at 1X/2X costs on 2022-2023; retain every campaign, decision, fill, mark and technical failure; no policy tuning, protected-year access or production change.",
+    "outcome": "FAIL_CLOSED",
+    "pre_closeout_head": "b8bdaacbe87f81991b0f0e2cf5a2e58d57e2f84f",
+    "result_ref": "governance/v15_replay_stopped_handoff/canonical_result.json",
+    "result_sha256": "5D3F31C387D13054EA22FB505E86C74AB0B154E47C35CEB1F6E25D29C4140A51",
+    "started_at_utc": "2026-10-04T22:48:21+00:00",
+    "starting_charter_revision": 787,
+    "starting_head": "841455262a2fa9108407daa636cf55b86b452b3e",
+    "summary": "User stopped further replay attempts and requested full code/evidence GitHub handoff. No completed economic arm. Checkpoint save failed with disk full; runtime speed and resource bounds remain unproven.",
+    "task_id": "AKAH_SINGLE_FROZEN_ALL_NINE_GATE3_REPLAY_V15",
+    "vision_impact": "INCONCLUSIVE"
   },
-  "current_bottleneck": "AKAH_SINGLE_FROZEN_ALL_NINE_GATE3_REPLAY_V15",
+  "current_bottleneck": "V15_REPLAY_DISK_GROWTH_AND_LONG_HORIZON_PERFORMANCE_MANUAL_REVIEW",
   "governance_sync_contract_version": "AKAH_BOT_CHARTER_SYNCHRONIZATION_CONTRACT_V1"
 }
