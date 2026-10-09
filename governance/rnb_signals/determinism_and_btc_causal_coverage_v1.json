@@ -1,0 +1,82 @@
+{
+  "authority_id": "AKAH_BOT_RNB_2022_SIGNAL_DETERMINISM_AND_BTC_CAUSAL_COVERAGE_V1",
+  "btc_causal_coverage": {
+    "binding": {
+      "method": "ISOLATED_ROOT_SCAN",
+      "path": "data/research/reconstructed_native_baseline_pre2023/native-1h-2022-v1/kucoin/BTC-USDT/1h.parquet",
+      "sha256": "27ED5001364FE7CF91F6B52088D29600F09469E309EBE9BD026D6FD369453F75"
+    },
+    "btc_max_time": "2022-12-31 23:00:00+00:00",
+    "btc_min_time": "2022-01-01 01:00:00+00:00",
+    "btc_row_count": 8759,
+    "btc_time_column": "timestamp",
+    "causal_coverage_pass": true,
+    "exact_same_timestamp_count": 3294,
+    "exact_same_timestamp_missing_count": 0,
+    "future_bar_used": false,
+    "latest_completed_at_or_before_count": 3294,
+    "latest_completed_missing_count": 0,
+    "max_latest_completed_age_hours": 0.0,
+    "signal_count": 3294,
+    "status": "PASS"
+  },
+  "current_mixed_native_root_read": false,
+  "economic_analysis": false,
+  "full_dataset_determinism": {
+    "all_equal": true,
+    "canonical_overwrite": false,
+    "canonical_sha256": "A1932E30C8C39AB33A6513529ADCC96418451B51038722AA7898D2882EA34467",
+    "network_hard_blocked": true,
+    "rebuild_1": {
+      "patched_globals": {},
+      "signal_sha256": "A1932E30C8C39AB33A6513529ADCC96418451B51038722AA7898D2882EA34467",
+      "signal_size": 528716,
+      "tag": "one",
+      "temp_audit_created": true,
+      "temp_report_created": false
+    },
+    "rebuild_2": {
+      "patched_globals": {},
+      "signal_sha256": "A1932E30C8C39AB33A6513529ADCC96418451B51038722AA7898D2882EA34467",
+      "signal_size": 528716,
+      "tag": "two",
+      "temp_audit_created": true,
+      "temp_report_created": false
+    },
+    "temp_rebuild_1_sha256": "A1932E30C8C39AB33A6513529ADCC96418451B51038722AA7898D2882EA34467",
+    "temp_rebuild_2_sha256": "A1932E30C8C39AB33A6513529ADCC96418451B51038722AA7898D2882EA34467"
+  },
+  "native_replay_executed": false,
+  "network_calls": 0,
+  "nine_strata_state_input_authority": {
+    "hits": [
+      {
+        "length": 9,
+        "path": "strata"
+      }
+    ],
+    "literal": false,
+    "status": "PASS"
+  },
+  "protected_year_rows_read": false,
+  "quality": {
+    "pytest": "PASS",
+    "pytest_stdout_tail": "...                                                                      [100%]\n3 passed in 0.80s\n",
+    "ruff": "PASS"
+  },
+  "signal_audit": {
+    "forbidden_outcome_fields": [],
+    "max_time": "2022-12-22 21:00:00+00:00",
+    "min_time": "2022-01-04 14:00:00+00:00",
+    "pair_column": "pair",
+    "pair_count": 15,
+    "path": "data/research/reconstructed_native_baseline_pre2023/signal-events-2022-v1.csv",
+    "pre2022_rows": 0,
+    "protected_rows": 0,
+    "row_count": 3294,
+    "sha256": "A1932E30C8C39AB33A6513529ADCC96418451B51038722AA7898D2882EA34467",
+    "time_column": "timestamp"
+  },
+  "status": "PASS",
+  "task_id": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_2022_SIGNAL_AND_STATE_INPUT_CONSTRUCTION_V1"
+}

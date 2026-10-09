@@ -1,0 +1,10 @@
+{
+  "schema_version": "abc-lifecycle-evidence-overlay-no-persistence-audit-v1",
+  "status": "PASS",
+  "overlay_persistence": false,
+  "overlay_latch": false,
+  "persistence_horizon": null,
+  "carry_forward_logic_present": false,
+  "row_local_formula_only": true,
+  "statement": "Every overlay value is recomputed solely from the same decision row's frozen base_state and C/A/B signal flags; no prior-row overlay value is an input."
+}

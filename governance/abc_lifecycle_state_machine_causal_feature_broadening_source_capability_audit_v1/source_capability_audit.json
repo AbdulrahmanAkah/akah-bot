@@ -1,0 +1,98 @@
+{
+  "2024_access": false,
+  "all_years_have_ohlc": true,
+  "control_pnl_read": false,
+  "full_feature_count_preregistered": 44,
+  "schema_version": "abc-causal-feature-broadening-source-capability-audit-v1",
+  "source_bindings": {
+    "governance/abc_lifecycle_state_machine_state_conditioned_action_hypothesis_eligibility_materialization_v1/action_hypothesis_eligibility_grid.csv": "F989B216B163F3CFD9315FA61BA64EC138D5826F51F9D62344E5118CCF89F146",
+    "scripts/research/run_abc_exit_primitives_2019_2023_v1.py": "C6E92E4980C50526263B7B0D4E22747E96B49FDA2118529DAC5DA7A81EF1364C",
+    "src/spotbot/research/abc_exit_primitives_v1.py": "AE8623E32D7E13F7CB9DB6E22E643060054D84BEFC7D29C465CA84D97C887634"
+  },
+  "status": "PASS",
+  "volume_available_years": [
+    2019,
+    2020,
+    2021,
+    2022,
+    2023
+  ],
+  "volume_feature_may_be_missing_without_invalidating_other_features": true,
+  "years": {
+    "2019": {
+      "features_container_type": "dict",
+      "pair_frame_count": 7,
+      "sample_columns": [
+        "timestamp",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume"
+      ],
+      "sample_pair": "BTC-USDT",
+      "sample_row_count": 8759,
+      "volume_available": true
+    },
+    "2020": {
+      "features_container_type": "dict",
+      "pair_frame_count": 9,
+      "sample_columns": [
+        "timestamp",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume"
+      ],
+      "sample_pair": "ADA-USDT",
+      "sample_row_count": 13117,
+      "volume_available": true
+    },
+    "2021": {
+      "features_container_type": "dict",
+      "pair_frame_count": 15,
+      "sample_columns": [
+        "timestamp",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume"
+      ],
+      "sample_pair": "ADA-USDT",
+      "sample_row_count": 21877,
+      "volume_available": true
+    },
+    "2022": {
+      "features_container_type": "dict",
+      "pair_frame_count": 15,
+      "sample_columns": [
+        "timestamp",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume"
+      ],
+      "sample_pair": "ADA-USDT",
+      "sample_row_count": 30637,
+      "volume_available": true
+    },
+    "2023": {
+      "features_container_type": "dict",
+      "pair_frame_count": 14,
+      "sample_columns": [
+        "timestamp",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume"
+      ],
+      "sample_pair": "AVAX-USDT",
+      "sample_row_count": 24757,
+      "volume_available": true
+    }
+  }
+}

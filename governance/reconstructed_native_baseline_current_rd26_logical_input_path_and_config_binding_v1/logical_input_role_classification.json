@@ -1,0 +1,28 @@
+{
+  "other_input_count": 0,
+  "payload_input_count": 2,
+  "roles": [
+    {
+      "logical_path": "data/raw/rd16b/kucoin/<pair>/1h.parquet",
+      "logical_role": "PAYLOAD_NATIVE_1H_SOURCE_TEMPLATE",
+      "path_binding_ready": true
+    },
+    {
+      "logical_path": "data/research/rd18_p3x_a3b_runtime/effective-operational-membership.csv",
+      "logical_role": "PAYLOAD_MEMBERSHIP_SOURCE",
+      "path_binding_ready": true
+    },
+    {
+      "logical_path": "data/research/rd25_p1_runtime/diagnosis.json",
+      "logical_role": "VALIDATION_FREEZE_AUTHORITY_SOURCE",
+      "path_binding_ready": true
+    },
+    {
+      "logical_path": "data/research/rd26_p0_runtime/rd23-focus-signal-equivalence-audit-v1.json",
+      "logical_role": "VALIDATION_AUTHORITY_SOURCE",
+      "path_binding_ready": true
+    }
+  ],
+  "status": "PASS",
+  "validation_authority_input_count": 2
+}

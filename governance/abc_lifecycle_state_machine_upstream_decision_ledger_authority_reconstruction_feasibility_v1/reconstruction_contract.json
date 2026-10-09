@@ -1,0 +1,22 @@
+{
+  "decision_value_definition": "Y_t = (NetCash(HOLD one legal step then pi0) - NetCash(EXIT now)) / CurrentNotional",
+  "derived_export_not_executed": true,
+  "reconstruction_not_executed": true,
+  "schema_version": "akah-upstream-decision-ledger-reconstruction-contract-v1",
+  "target_columns": [
+    "lifecycle_id_or_canonical_trade_identity",
+    "pair",
+    "entry_time_if_required_for_identity",
+    "decision_time",
+    "pi0_action",
+    "current_notional_or_exact_cash_base",
+    "exit_now_net_cash",
+    "hold_one_legal_step_then_pi0_net_cash",
+    "decision_value_y",
+    "exit_cost_components",
+    "hold_step_cost_components",
+    "pit_validity_and_information_timestamp",
+    "source_authority_refs_and_sha256"
+  ],
+  "target_only_future_fields_forbidden_at_runtime": true
+}

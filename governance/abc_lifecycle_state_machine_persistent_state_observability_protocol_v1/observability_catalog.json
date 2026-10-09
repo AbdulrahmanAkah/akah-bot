@@ -1,0 +1,268 @@
+{
+  "schema_version": "abc-lifecycle-persistent-state-observability-catalog-v1",
+  "catalog_id": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_OBSERVABILITY_CATALOG_V1",
+  "observation_unit": {
+    "unit": "ONE_EXISTING_COMPLETED_4H_DECISION_ROW_WITHIN_FROZEN_CONTROL_LIFECYCLE",
+    "ordering": "STRICT_DECISION_TIME_ASCENDING_WITHIN_LIFECYCLE",
+    "lag_policy": "IMMEDIATE_PREVIOUS_EXISTING_DECISION_ROW_ONLY",
+    "future_rows_allowed": false,
+    "fixed_horizon": null,
+    "rolling_future_window": null
+  },
+  "observable_groups": [
+    {
+      "group_id": "LIFECYCLE_PHASE_CLOCKS",
+      "purpose": "Measure causal age and phase position without classifying persistence.",
+      "observables": [
+        {
+          "id": "decision_row_index",
+          "definition": "0-based index among existing completed 4H decision rows within lifecycle"
+        },
+        {
+          "id": "eligible_decision_count_to_date",
+          "definition": "1-based count of observed completed 4H decision rows through current row"
+        },
+        {
+          "id": "hours_since_entry",
+          "definition": "current decision timestamp minus entry timestamp"
+        },
+        {
+          "id": "base_state",
+          "definition": "frozen UNCONFIRMED/EARLY_PROGRESS/CONFIRMED value"
+        },
+        {
+          "id": "base_state_changed_from_prev",
+          "definition": "current base_state differs from immediate prior decision row; false on first row"
+        },
+        {
+          "id": "unconfirmed_age_rows_to_date",
+          "definition": "count of decision rows observed while base_state remains UNCONFIRMED through current row"
+        },
+        {
+          "id": "post_first_memory_age_rows_to_date",
+          "definition": "count of decision rows from FIRST_MEMORY through current row; null before FIRST_MEMORY"
+        }
+      ]
+    },
+    {
+      "group_id": "STRUCTURAL_PROGRESS_OBSERVABILITY",
+      "purpose": "Measure ongoing progress cadence and distance from the frozen structural reference.",
+      "observables": [
+        {
+          "id": "memory_now",
+          "definition": "frozen row-local structural progress event truth"
+        },
+        {
+          "id": "memory_seen",
+          "definition": "frozen one-way progress latch"
+        },
+        {
+          "id": "progress_event_count_to_date",
+          "definition": "cumulative count of memory_now true through current row"
+        },
+        {
+          "id": "rows_since_last_progress_event",
+          "definition": "number of later decision rows since most recent memory_now; null before first progress event"
+        },
+        {
+          "id": "R_before_t",
+          "definition": "frozen structural reference immediately before current decision"
+        },
+        {
+          "id": "R_after_t",
+          "definition": "structural reference after applying current row update"
+        },
+        {
+          "id": "close_minus_R_before_t",
+          "definition": "current completed-4H close minus R_before_t"
+        },
+        {
+          "id": "high_minus_R_before_t",
+          "definition": "current completed-4H high minus R_before_t"
+        },
+        {
+          "id": "R_delta_from_prev_decision",
+          "definition": "R_before_t minus prior decision row R_before_t"
+        }
+      ]
+    },
+    {
+      "group_id": "PRE_PROGRESS_NONCONFIRMATION_CLOCK",
+      "purpose": "Observe stall pressure continuously without turning the frozen C event threshold into a persistent state rule.",
+      "observables": [
+        {
+          "id": "preprogress_age_rows",
+          "definition": "eligible completed 4H decision rows since entry while memory_seen remains false"
+        },
+        {
+          "id": "c_signal_event",
+          "definition": "frozen C event marker carried for audit only"
+        },
+        {
+          "id": "rows_after_c_event",
+          "definition": "descriptive row offset after C event until lifecycle end; null before/absent C"
+        }
+      ]
+    },
+    {
+      "group_id": "STRUCTURAL_BREAK_BOUNDARY",
+      "purpose": "Observe truth and severity relative to the already-frozen A boundary on every eligible row.",
+      "observables": [
+        {
+          "id": "donchian_prev10_low",
+          "definition": "minimum low of previous ten completed 4H bars, current row excluded"
+        },
+        {
+          "id": "close_minus_donchian_prev10_low",
+          "definition": "current completed-4H close minus frozen A boundary"
+        },
+        {
+          "id": "a_condition_now",
+          "definition": "current close < donchian_prev10_low using frozen A semantics"
+        },
+        {
+          "id": "a_condition_true_run_length",
+          "definition": "consecutive current/past decision rows with a_condition_now true; resets to 0 when false"
+        },
+        {
+          "id": "a_margin_delta_from_prev",
+          "definition": "current close_minus_donchian_prev10_low minus immediate prior-row value"
+        },
+        {
+          "id": "a_signal_event",
+          "definition": "existing frozen A event marker carried for audit only"
+        }
+      ]
+    },
+    {
+      "group_id": "VOLATILITY_DAMAGE_BOUNDARY",
+      "purpose": "Observe truth and severity relative to the already-frozen B ratchet boundary on every eligible post-progress row.",
+      "observables": [
+        {
+          "id": "atr22_current",
+          "definition": "frozen causal Wilder ATR22 including current completed 4H TR"
+        },
+        {
+          "id": "ratchet_stop_before_t",
+          "definition": "frozen B stop value entering current decision; null before B readiness"
+        },
+        {
+          "id": "close_minus_ratchet_stop_before_t",
+          "definition": "current close minus prior ratchet stop; null before readiness"
+        },
+        {
+          "id": "b_condition_now",
+          "definition": "frozen B damage condition truth at current row, excluding first-memory same-bar candidacy"
+        },
+        {
+          "id": "b_condition_true_run_length",
+          "definition": "consecutive current/past ready decision rows with b_condition_now true; resets when false/not-ready"
+        },
+        {
+          "id": "b_margin_delta_from_prev",
+          "definition": "current close_minus_ratchet_stop_before_t minus immediate prior ready-row value"
+        },
+        {
+          "id": "b_signal_event",
+          "definition": "existing frozen B event marker carried for audit only"
+        }
+      ]
+    },
+    {
+      "group_id": "IMMEDIATE_RECOVERY_AND_DETERIORATION_DELTAS",
+      "purpose": "Expose direction of change between consecutive causal observations without defining recovery or deterioration states.",
+      "observables": [
+        {
+          "id": "close_delta_from_prev_decision",
+          "definition": "current completed-4H close minus prior decision-row close"
+        },
+        {
+          "id": "progress_margin_delta_from_prev",
+          "definition": "change in close_minus_R_before_t from prior decision row"
+        },
+        {
+          "id": "structural_break_margin_delta_from_prev",
+          "definition": "same as a_margin_delta_from_prev"
+        },
+        {
+          "id": "volatility_damage_margin_delta_from_prev",
+          "definition": "same as b_margin_delta_from_prev when both rows ready"
+        },
+        {
+          "id": "a_condition_recovered_now",
+          "definition": "prior row a_condition_now true and current row false; descriptive event only"
+        },
+        {
+          "id": "b_condition_recovered_now",
+          "definition": "prior ready row b_condition_now true and current ready row false; descriptive event only"
+        }
+      ]
+    },
+    {
+      "group_id": "EXISTING_EVENT_AND_SEQUENCE_AUDIT_LINKS",
+      "purpose": "Bind observability rows back to accepted event-local/sequence outputs without using them as state definitions.",
+      "observables": [
+        {
+          "id": "stalled_evidence_candidate",
+          "definition": "accepted event-local STALLED candidate overlay"
+        },
+        {
+          "id": "structural_break_evidence_candidate",
+          "definition": "accepted event-local STRUCTURAL_BREAK candidate overlay"
+        },
+        {
+          "id": "volatility_damage_evidence_candidate",
+          "definition": "accepted event-local VOLATILITY_DAMAGE candidate overlay"
+        },
+        {
+          "id": "sequence_signature",
+          "definition": "accepted descriptive lifecycle sequence signature; not a runtime class"
+        }
+      ]
+    }
+  ],
+  "doctrine_state_observability_targets": {
+    "HEALTHY_TREND": [
+      "progress_event_count_to_date",
+      "rows_since_last_progress_event",
+      "R_delta_from_prev_decision",
+      "close_minus_R_before_t"
+    ],
+    "STALLED": [
+      "preprogress_age_rows",
+      "rows_since_last_progress_event",
+      "close_minus_R_before_t",
+      "c_signal_event"
+    ],
+    "DETERIORATING": [
+      "progress_margin_delta_from_prev",
+      "structural_break_margin_delta_from_prev",
+      "volatility_damage_margin_delta_from_prev",
+      "a_condition_now",
+      "b_condition_now"
+    ],
+    "STRUCTURAL_BREAK": [
+      "close_minus_donchian_prev10_low",
+      "a_condition_now",
+      "a_condition_true_run_length",
+      "a_condition_recovered_now"
+    ],
+    "VOLATILITY_DAMAGE": [
+      "close_minus_ratchet_stop_before_t",
+      "b_condition_now",
+      "b_condition_true_run_length",
+      "b_condition_recovered_now"
+    ],
+    "FAILED": [
+      "a_condition_true_run_length",
+      "b_condition_true_run_length",
+      "rows_since_last_progress_event",
+      "a_condition_recovered_now",
+      "b_condition_recovered_now"
+    ]
+  },
+  "target_mapping_is_state_definition": false,
+  "target_mapping_is_runtime_rule": false,
+  "run_lengths_are_measurements_not_cutoffs": true,
+  "immediate_deltas_are_measurements_not_thresholds": true
+}

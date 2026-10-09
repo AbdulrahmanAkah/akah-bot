@@ -1,0 +1,55 @@
+{
+  "candidate_none_guard_seen": true,
+  "canonical_runner_callsites": [
+    {
+      "candidate_arg": "None",
+      "line": 181,
+      "source": "replay_overlay(\n            candidate_id=None,events=events,frames=features,state_frame=state,four_hour=h4,\n            replay_start=ys,replay_cutoff=ye,\n        )"
+    },
+    {
+      "candidate_arg": "candidate",
+      "line": 217,
+      "source": "replay_overlay(\n                candidate_id=candidate,events=events,frames=features,state_frame=state,\n                four_hour=h4,replay_start=ys,replay_cutoff=ye,\n            )"
+    }
+  ],
+  "economic_rows_read": false,
+  "external_signal_parameter_present": false,
+  "internal_evaluate_completed_4h_call": true,
+  "internal_validate_candidate_id_call": true,
+  "module_path": "src/spotbot/research/abc_exit_primitives_v1.py",
+  "module_sha256": "B04F4EA4E95A1DA324036C14C5889F334702A30D0AF5AA66C4B7F6993C8395B2",
+  "portfolio_replay_executed": false,
+  "replay_overlay_function_source_sha256": "4722514EFDCF1701F2F7BBF242467C74B028756F2426C89E558AC68C8BA00E43",
+  "replay_overlay_signature": {
+    "kw_defaults": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "'UNION_FOCUS'",
+      "'C2'",
+      "1.0"
+    ],
+    "kwarg": null,
+    "kwonly": [
+      "candidate_id",
+      "events",
+      "frames",
+      "state_frame",
+      "four_hour",
+      "replay_start",
+      "replay_cutoff",
+      "portfolio_id",
+      "universe_id",
+      "cost_multiplier"
+    ],
+    "positional": [],
+    "return_annotation": "tuple[pd.DataFrame, pd.DataFrame, dict[str, Any], dict[str, int], pd.DataFrame]",
+    "vararg": null
+  },
+  "runner_path": "scripts/research/run_abc_exit_primitives_2019_2023_v1.py",
+  "runner_sha256": "C6E92E4980C50526263B7B0D4E22747E96B49FDA2118529DAC5DA7A81EF1364C"
+}

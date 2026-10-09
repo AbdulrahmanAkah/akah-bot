@@ -1,0 +1,35 @@
+{
+  "2024_access": false,
+  "admission_change": false,
+  "architecture": {
+    "fusion": "equal sum of within-hour percentile ranks of the three head predictions",
+    "positive_head": "logistic -> I(h0_net_return_2x > 0)",
+    "value_head": "ridge -> h0_net_return_2x",
+    "xsec_rank_head": "ridge -> within-entry-hour percentile rank of h0_net_return_2x"
+  },
+  "authorized_axis": "THREE_HEAD_OPPORTUNITY_VALUE_BRAIN_SAME_F10_GATE_PURGED_WALKFORWARD",
+  "authorized_next": "ABC_LIFECYCLE_STATE_MACHINE_OPPORTUNITY_VALUE_RANKING_BRAIN_RECONSTRUCTION_MEGA_V1",
+  "capture_gap_evidence": {
+    "admission_gap_under_f10_ranking_terminal_wealth_delta": -0.5005335515223532,
+    "f10_2x_wealth": 2.1755985217179195,
+    "perfect_positive_admission_ranking_gap_vs_f10": 5.842542518826331,
+    "ranking_gap_same_gate_terminal_wealth_delta": 1.233058048477174
+  },
+  "created_at_utc": "2026-09-28T10:49:05.718920+00:00",
+  "hard_cutoff_exclusive": "2024-01-01T00:00:00Z",
+  "isolation": {
+    "admission_gate": "EXACT_F10_GATE",
+    "governor": "BINARY_VOL",
+    "h0": "FROZEN",
+    "liquidity": "CANONICAL",
+    "max_positions": "UNCHANGED",
+    "position_cap": "UNCHANGED",
+    "sizing": "UNIFORM"
+  },
+  "model_zoo": false,
+  "reviewed_revision": 739,
+  "schema_version": "akah-rev739-opportunity-value-brain-human-review-v1",
+  "source_disposition": "OPPORTUNITY_CAPTURE_GAP_DECOMPOSITION_COMPLETE_DIAGNOSTIC_ONLY",
+  "status": "PASS_BRAIN_RECONSTRUCTION_AUTHORIZED",
+  "threshold_search": false
+}

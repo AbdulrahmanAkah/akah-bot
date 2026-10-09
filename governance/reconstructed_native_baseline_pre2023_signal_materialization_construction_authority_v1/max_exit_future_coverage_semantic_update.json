@@ -1,0 +1,26 @@
+{
+  "authority_id": "AKAH_BOT_MAX_EXIT_FUTURE_COVERAGE_SEMANTIC_UPDATE_V1",
+  "status": "ADMINISTRATIVE_ONLY_STATIC_SEMANTICS_BOUND_COVERAGE_PROOF_PENDING",
+  "classification": "ADMINISTRATIVE_COVERAGE_REQUIREMENT_NOT_CAUSAL_SIGNAL",
+  "future_information_leakage": false,
+  "source_paths": [
+    {
+      "path": "src/spotbot/research/rd27_lifecycle_replay.py",
+      "sha256": "7DFC388F3BF8EF6EFA16E0640CF924158999A9923674C7701B8919872755CBB5",
+      "evidence": "The replay schedules max_exit_time and checks _bar_at(max_exit_time) before admission; the future bar values are not passed to native policy state or signal features."
+    },
+    {
+      "path": "src/spotbot/research/rd26_exit_architecture.py",
+      "sha256": "1290748EA7E8A0343C1A15CEDFC1220AA423F04C11FDD558311B06AC7DA90359",
+      "evidence": "filter_robustness_events excludes records lacking administrative horizon coverage through DATA_CUTOFF; this is outside native policy decision inputs."
+    }
+  ],
+  "causal_firewall": {
+    "future_bar_existence_may_filter_study_or_replay_coverage": true,
+    "future_ohlcv_values_may_enter_policy": false,
+    "future_bar_existence_may_change_memory_or_v2": false,
+    "future_bar_existence_may_select_policy_branch": false
+  },
+  "empirical_selected_pair_timestamp_coverage": "PENDING_AUTHORIZED_SIGNAL_MATERIALIZATION_AND_PAIR_BINDING",
+  "economic_analysis": false
+}

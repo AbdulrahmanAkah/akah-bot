@@ -1,0 +1,45 @@
+{
+  "accepted_disposition": "MEGA_COMPOSITE_FEATURE_AUTHORITY_INCOMPLETE",
+  "accepted_frozen_pass_groups": [
+    "age",
+    "drawdown",
+    "trend",
+    "volatility"
+  ],
+  "accepted_missing_groups": [
+    "breadth",
+    "current_return",
+    "execution_quality",
+    "relative_strength"
+  ],
+  "authorization": {
+    "2024": false,
+    "2025": false,
+    "backward_only_asof": true,
+    "conditional_fixed_m1_m2": true,
+    "cross_sectional_c2_breadth_relative_strength": true,
+    "current_return_certified_cash_algebra": true,
+    "execution_quality_direct_or_proven_liquidity_rank": true,
+    "feature_search_by_outcome": false,
+    "group_specific_join_semantics": true,
+    "model3": false,
+    "new_replay": false,
+    "production": false,
+    "push": false,
+    "raw": false,
+    "reuse_certified_ledger": true,
+    "threshold_search": false
+  },
+  "created_at_utc": "2026-09-26T18:20:54.192211+00:00",
+  "definitions": {
+    "breadth": "equal-weight fraction of active C2 members with completed 24h return > 0",
+    "current_return": "(certified_exit_now_net_cash - native_entry_notional - native_entry_cost) / native_entry_notional",
+    "execution_quality": "direct causal liquidity/activity/staleness; fallback negative effective liquidity rank only with source semantic proof",
+    "relative_strength": "pair completed 24h return - equal-weight mean active C2 completed 24h return"
+  },
+  "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_GROUP_SEMANTIC_FEATURE_RECOVERY_M1_M2_MEGA_V1",
+  "reviewed_revision": 713,
+  "schema_version": "akah-rev713-group-semantic-feature-recovery-m1-m2-human-review-v1",
+  "status": "PASS_REV713_GROUP_SEMANTIC_FEATURE_RECOVERY_M1_M2_AUTHORIZED",
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_COMPOSITE_PIT_FEATURE_AUTHORITY_M1_M2_MEGA_HUMAN_REVIEW_V1"
+}

@@ -1,0 +1,211 @@
+{
+  "cost2x_stress": {
+    "overall_mean_x1": 0.0026851690470738763,
+    "overall_mean_x2": 0.0026818083849373623,
+    "rows": 2593,
+    "sign_concordance_x1_x2": 1.0,
+    "status": "PASS_DIAGNOSTIC",
+    "threshold_tuned": false,
+    "years": {
+      "2022": {
+        "mean_x1": -0.0050651723735110525,
+        "mean_x2": -0.005058832983807033,
+        "positive_share_x1": 0.30960264900662254,
+        "positive_share_x2": 0.30960264900662254,
+        "rows": 1208
+      },
+      "2023": {
+        "mean_x1": 0.0094450336218512,
+        "mean_x2": 0.00943321255348843,
+        "positive_share_x1": 0.45126353790613716,
+        "positive_share_x2": 0.45126353790613716,
+        "rows": 1385
+      }
+    }
+  },
+  "direction_volatility_status": "PROMOTE_HYPOTHESIS_FROM_FROZEN_FACTORIAL_ONLY",
+  "entry_x_continuation_status": "DEFER_NO_TARGET",
+  "ledger_summary": {
+    "exit_now_reason_counts": {
+      "ADAPTIVE_PROTECTION_GAP": 3,
+      "ADAPTIVE_PROTECTION_TOUCH": 66,
+      "ADAPTIVE_STAGNATION_24H_CLOSE_NOT_ABOVE_ENTRY": 6,
+      "ADAPTIVE_STAGNATION_48H_CLOSE_NOT_ABOVE_ENTRY": 5,
+      "ADAPTIVE_STAGNATION_72H_CLOSE_NOT_ABOVE_ENTRY": 2,
+      "RESEARCH_EXIT_NOW_FIRST_LEGAL_OPEN": 2511
+    },
+    "hold_then_pi0_reason_counts": {
+      "ADAPTIVE_PROTECTION_GAP": 217,
+      "ADAPTIVE_PROTECTION_TOUCH": 1351,
+      "ADAPTIVE_STAGNATION_24H_CLOSE_NOT_ABOVE_ENTRY": 282,
+      "ADAPTIVE_STAGNATION_48H_CLOSE_NOT_ABOVE_ENTRY": 614,
+      "ADAPTIVE_STAGNATION_72H_CLOSE_NOT_ABOVE_ENTRY": 88,
+      "MAX_HOLD_168H": 41
+    },
+    "mandatory_exit_observations_total": 1609,
+    "optional_exit_suppressions_total": 101,
+    "overall": {
+      "mean_x1": 0.002685169047073876,
+      "mean_x2": 0.002681808384937362,
+      "median_x1": -0.00463773911024562,
+      "median_x2": -0.0046319346808211675,
+      "p10_x1": -0.03293386865665688,
+      "p90_x1": 0.05058928022288903,
+      "positive_share_x1": 0.3852680293096799,
+      "positive_share_x2": 0.3852680293096799,
+      "rows": 2593
+    },
+    "years": {
+      "2019": {
+        "mean_x1": null,
+        "mean_x2": null,
+        "median_x1": null,
+        "median_x2": null,
+        "p10_x1": null,
+        "p90_x1": null,
+        "positive_share_x1": null,
+        "positive_share_x2": null,
+        "rows": 0
+      },
+      "2020": {
+        "mean_x1": null,
+        "mean_x2": null,
+        "median_x1": null,
+        "median_x2": null,
+        "p10_x1": null,
+        "p90_x1": null,
+        "positive_share_x1": null,
+        "positive_share_x2": null,
+        "rows": 0
+      },
+      "2021": {
+        "mean_x1": null,
+        "mean_x2": null,
+        "median_x1": null,
+        "median_x2": null,
+        "p10_x1": null,
+        "p90_x1": null,
+        "positive_share_x1": null,
+        "positive_share_x2": null,
+        "rows": 0
+      },
+      "2022": {
+        "mean_x1": -0.0050651723735110525,
+        "mean_x2": -0.005058832983807033,
+        "median_x1": -0.009526160885631931,
+        "median_x2": -0.00951423828126945,
+        "p10_x1": -0.03882825391538369,
+        "p90_x1": 0.036811236946822,
+        "positive_share_x1": 0.30960264900662254,
+        "positive_share_x2": 0.30960264900662254,
+        "rows": 1208
+      },
+      "2023": {
+        "mean_x1": 0.0094450336218512,
+        "mean_x2": 0.009433212553488429,
+        "median_x1": -0.001020812841936474,
+        "median_x2": -0.0010195352288678984,
+        "p10_x1": -0.025946716399122077,
+        "p90_x1": 0.05788119614357247,
+        "positive_share_x1": 0.45126353790613716,
+        "positive_share_x2": 0.45126353790613716,
+        "rows": 1385
+      }
+    }
+  },
+  "model_diagnosis": {
+    "diagnosis": "DEVELOPMENT_SUPPORT_GAP",
+    "explanation": "The exact target exists, but fixed-model development support is below the preregistered minimum. Review support/coverage without tuning.",
+    "feature_count": 4,
+    "features": [
+      "continuation_advantage",
+      "progress_margin_delta_from_prev",
+      "atr22_current",
+      "hold_optional_exits_suppressed"
+    ],
+    "model_status": "INSUFFICIENT_FOR_FIXED_MODEL",
+    "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_CONTINUATION_VALUE_DEVELOPMENT_SUPPORT_REVIEW_V1",
+    "sign_stable_forward_pass": null,
+    "train_rows": 0,
+    "year_results": {}
+  },
+  "shadow_policy_authorized": false,
+  "source_bindings": [
+    {
+      "path": "governance/abc_lifecycle_state_machine_exact_one_step_continuation_value_mega_v1/canonical_result.json",
+      "sha256": "5F0DE05C71232F2D8CFEF887C655A46167826E43B6812880FBCAAD6C752EF5B2",
+      "size_bytes": 13834
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_exact_one_step_continuation_value_mega_v1/decision_matrix.csv",
+      "sha256": "68867B5B53D08FA3BD44AD28795440BF3A3807E44FD81FEE8E187E85327756D2",
+      "size_bytes": 1790
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_exact_one_step_continuation_value_mega_v1/exact_two_sided_continuation_ledger.csv",
+      "sha256": "3FCA5959BA38B95D5F8F2D42B41D6A2AA6E2ECC8AD0E5C0B2B4E6E1057C49139",
+      "size_bytes": 3290497
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_exact_one_step_continuation_value_mega_v1/baseline_trade_parity.csv",
+      "sha256": "F6FD68DCE2845124BC704485573A3ECCD6763862AA2BC5F2742250A31A54A2CB",
+      "size_bytes": 60856
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_exact_one_step_continuation_value_mega_v1/raw_scope_and_parity_audit.json",
+      "sha256": "3D127D840F1E607790D2F8195206996B42409932ED151653E468AA2E8CC6B77F",
+      "size_bytes": 5448
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_exact_one_step_continuation_value_mega_v1/continuation_value_model_forward_uncertainty.json",
+      "sha256": "F5A5084AD564096FFF498A042312AAB3773C74E087DD607B63D1C559CB214A19",
+      "size_bytes": 715
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_exact_one_step_continuation_value_mega_v1/tenure_conditioned_continuation.json",
+      "sha256": "C094351C3B23184267BE0974A62BF50CA560964C459D4EA9D83F5CF7B95E7981",
+      "size_bytes": 37
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_exact_one_step_continuation_value_mega_v1/direction_volatility_conditioned_continuation.json",
+      "sha256": "4D1DC1E086EA6354E6E992BA6FFA0E7527654107D531684AB2776245A273928A",
+      "size_bytes": 364
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_exact_one_step_continuation_value_mega_v1/continuation_cost2x_stress.json",
+      "sha256": "D9DB4489973BFB435E52333A1CAF0841E1BA1D775067902326FCCBD8FAED74FA",
+      "size_bytes": 668
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_exact_one_step_continuation_value_mega_v1/conservative_one_step_shadow_policy.json",
+      "sha256": "B028AEA431D8E41698E6806F694EE7FD853A931781129BD21F958299A63084A3",
+      "size_bytes": 177
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_exact_one_step_continuation_value_mega_v1/entry_x_continuation_diagnostic.json",
+      "sha256": "C094351C3B23184267BE0974A62BF50CA560964C459D4EA9D83F5CF7B95E7981",
+      "size_bytes": 37
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_exact_one_step_continuation_value_mega_v1/value_aware_sizing_feasibility.json",
+      "sha256": "429584AE371819223E458CD9753DBC69792A13EE5F9088AAD72C711C6FED5122",
+      "size_bytes": 184
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_exact_one_step_continuation_value_mega_v1/shadow_queue_capacity_disposition.json",
+      "sha256": "674EEBB6FE3D9C1F1D5F55D8FC0B59723A04D3271EB2021CC09143BDDEA0203B",
+      "size_bytes": 109
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_exact_one_step_continuation_value_mega_v1/post168_disposition.json",
+      "sha256": "0FCE8A034ECB47BFAA3B11B2A44979DB6CDB58DEABD4A88AE7FCF37DE98FCE69",
+      "size_bytes": 91
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_exact_one_step_continuation_value_mega_v1/output_manifest.json",
+      "sha256": "812507959BF5C332DC31590947F06B371D7D47B645E7031BD1451353D5FBB349",
+      "size_bytes": 4039
+    }
+  ],
+  "tenure_status": "DEFER_NO_TARGET"
+}

@@ -1,0 +1,21 @@
+{
+  "authority_id": "AKAH_BOT_RD27_TURNOVER_24H_CONTINUITY_CONTRACT_V1",
+  "status": "FORMULA_BOUND_CONTINUITY_UNVERIFIED",
+  "source": {
+    "path": "src/spotbot/research/rd26_exit_architecture.py",
+    "sha256": "1290748EA7E8A0343C1A15CEDFC1220AA423F04C11FDD558311B06AC7DA90359",
+    "lines": "180-183"
+  },
+  "formula": "quote_turnover_proxy = volume * close; trailing_24h_quote_turnover_proxy = rolling(24, min_periods=24).sum()",
+  "native_use": "signal_bar['trailing_24h_quote_turnover_proxy'] is read during admission",
+  "required_continuity_law": {
+    "one_row_per_pair_timestamp": true,
+    "timestamps_sorted_ascending": true,
+    "spacing_seconds": 3600,
+    "no_missing_hour_inside_any_24_row_window": true,
+    "no_duplicate_timestamp": true,
+    "minimum_observations": 24,
+    "values_not_read_in_this_mission": true
+  },
+  "current_source_limit": "rolling row count alone does not prove contiguous 24 hours; no continuity audit was run because the authorized pair manifest is not bound"
+}

@@ -1,0 +1,82 @@
+{
+  "2024_access": false,
+  "governor_preflight": {
+    "probes": [
+      {
+        "binary_no_vol": 0.0,
+        "binary_vol": 0.0,
+        "time": "2019-01-01T00:00:00+00:00",
+        "vol_only": 0.0
+      },
+      {
+        "binary_no_vol": 0.0,
+        "binary_vol": 0.0,
+        "time": "2020-01-01T00:00:00+00:00",
+        "vol_only": 0.3773722154837429
+      },
+      {
+        "binary_no_vol": 0.9,
+        "binary_vol": 0.307422860879827,
+        "time": "2021-01-01T00:00:00+00:00",
+        "vol_only": 0.30742286087982706
+      },
+      {
+        "binary_no_vol": 0.0,
+        "binary_vol": 0.0,
+        "time": "2022-01-01T00:00:00+00:00",
+        "vol_only": 0.3424160810144105
+      },
+      {
+        "binary_no_vol": 0.0,
+        "binary_vol": 0.0,
+        "time": "2023-01-01T00:00:00+00:00",
+        "vol_only": 0.534120281876222
+      },
+      {
+        "binary_no_vol": 0.9,
+        "binary_vol": 0.4359750055549138,
+        "time": "2023-12-31T23:00:00+00:00",
+        "vol_only": 0.43597500555491386
+      }
+    ],
+    "vol_only": {
+      "algebra": "gross_budget_fraction = scale * v  [m removed]",
+      "effective_cap_max": 0.9,
+      "effective_cap_min": 0.13431525464959945,
+      "factor_identity_proof": {
+        "gross_max": 0.9,
+        "gross_min": 0.0,
+        "identity": "gross_budget_fraction = scale * m * v",
+        "m_max": 1.0,
+        "m_min": 0.0,
+        "max_abs_error": 8.326672684688674e-17,
+        "rows_proven": 1626,
+        "scale": 0.9,
+        "v_max": 1.0,
+        "v_min": 0.1492391718328883
+      },
+      "max_abs_delta_vs_selected_binary_vol": 0.9,
+      "result_path": "governance/abc_lifecycle_state_machine_governor_structural_factorial_fast_v1/governor_factorial_result.json",
+      "result_sha256": "AE30EB872D4FA600F959D696238E9C868E56A91DFA2A8B4976009EF3DC34378E",
+      "row_count": 1626,
+      "selected_governor": "VOL_ONLY",
+      "source": "RECONSTRUCTED_FROM_FROZEN_SELECTED_BINARY_VOL_FACTOR_COLUMNS",
+      "time_column": "action_time",
+      "timeline_path": "governance/abc_lifecycle_state_machine_governor_structural_factorial_fast_v1/selected_development_governor_timeline.csv",
+      "timeline_sha256": "6532B4501F2734EDE3F1D66DB931231C7915235AEEA3B8E654845A6F24341E2B",
+      "variant_declared_in_arms": true,
+      "variant_declared_in_candidate_rows": true
+    }
+  },
+  "rev731_authority": "PASS",
+  "rev759_canonical_sha256": "D23A66D4F21A344852D1A030FC46703F33BE91620BA5601DAC8B06A2AE5B2CFA",
+  "rev759_feature_contract_sha256": "33F21F54CE08B87DAC533FD04E70DD4DFF153750670D9677AD02BBDD9361BB52",
+  "rev759_model_coefficients_sha256": "760976657AED50E6EAA87A36D3B7CC4FF0D288E20652211997DC8CDA472B9DAE",
+  "rev759_target_contract_sha256": "47F09F9B8CFCE5F92735DCFE48B3BD5D06CBA38C4ADD71DFEDE6C36187FC3A02",
+  "schema_version": "akah-recert-authority-audit-v1",
+  "transaction_cost_audit": {
+    "median_entry_cost_fraction": 0.00125,
+    "sample_count": 1000,
+    "source": "control-trades.csv"
+  }
+}

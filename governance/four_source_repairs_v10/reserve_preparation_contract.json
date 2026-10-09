@@ -1,0 +1,38 @@
+{
+  "audit_identity_is_runtime_rule": false,
+  "blind_view": "completed prefix only; no future/PnL/engine decision/reviewer labels",
+  "blockers": [
+    "V10_HISTORICAL_SEMANTIC_PRODUCER_CERTIFICATION_MISSING",
+    "V10_FRESH_UNUSED_MARKET_PREFIX_FRAME_NOT_MATERIALIZED",
+    "EXACT_VERSION_INDEPENDENT_RESERVE_REVIEW_NOT_EXECUTED"
+  ],
+  "deterministic_sampling_not_outcome_selected": true,
+  "eligible_period": [
+    "2022-01-01T00:00:00Z",
+    "2024-01-01T00:00:00Z"
+  ],
+  "end_exclusive": true,
+  "exclusion": "All old primary, supplemental and reviewed reserve prefixes; no relabelled duplicates",
+  "forbid_2024_2025": true,
+  "forbidden_substitution": "Synthetic mechanics or old charts do not certify fresh market fidelity",
+  "freeze_before_sampling": true,
+  "lineage_required": [
+    "source authority SHA256",
+    "source version SHA256",
+    "asset/checkpoint audit identity",
+    "prefix content SHA256",
+    "detector known_at/evidence parents",
+    "owner/stop proof/invalidation",
+    "router context",
+    "complete native management scope"
+  ],
+  "no_forced_positive_cases": true,
+  "numeric_quota": "NOT_REDEFINED_IN_THIS_REPAIR_MISSION",
+  "observed_market_rows_read": 0,
+  "pair_checkpoint_and_prefix_hash_overlap_check": true,
+  "require_current_semantic_certified_producer": true,
+  "reserve_reviewer_metadata": "Preserve real AI/human identity; no false independent human attestation",
+  "source_version_sha256": "45E1C289156D2360841B000510F2F7CF23E4B87B6958B6B45F111867404E4D8D",
+  "stage": "PREPARATION_ONLY_NOT_REVIEWABLE_MARKET_CORPUS",
+  "stop_condition": "No chart packet claimed ready before upstream exact-version authorities exist"
+}

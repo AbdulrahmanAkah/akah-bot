@@ -1,0 +1,67 @@
+{
+  "authority_id": "AKAH_BOT_RD23_SIGNAL_OCCURRENCE_ROLE_CLASSIFICATION_V1",
+  "target": "data/research/rd23_p2_runtime/signal-events.csv",
+  "status": "PASS_BOUNDED_SOURCE_SURFACE_CLASSIFIED",
+  "occurrences": [
+    {
+      "path": "scripts/research/run_rd23_multifamily_raw_edge.py",
+      "line": 43,
+      "expression": "OUTPUT_NAMES includes signal-events.csv",
+      "role": "PRODUCER_WRAPPER",
+      "classification": "Output contract declaration for the true producer."
+    },
+    {
+      "path": "scripts/research/run_rd23_multifamily_raw_edge.py",
+      "line": 312,
+      "expression": "events.to_csv(output / signal-events.csv)",
+      "role": "TRUE_WRITER",
+      "classification": "Unique writer for the target directory when output is data/research/rd23_p2_runtime."
+    },
+    {
+      "path": "scripts/research/validate_rd23_multifamily_raw_edge.py",
+      "line": 29,
+      "expression": "OUTPUT_NAMES includes signal-events.csv",
+      "role": "TEST",
+      "classification": "Validator expected-output declaration."
+    },
+    {
+      "path": "scripts/research/validate_rd23_multifamily_raw_edge.py",
+      "line": 121,
+      "expression": "pd.read_csv(output / signal-events.csv)",
+      "role": "CONSUMER",
+      "classification": "Validator/readback only; not a producer."
+    },
+    {
+      "path": "scripts/research/run_rd24_parallel_minimal_portfolio.py",
+      "line": 38,
+      "expression": "RD23_SIGNAL_EVENTS = Path(target)",
+      "role": "CONSUMER",
+      "classification": "Downstream portfolio input with explicit SHA binding; not a producer."
+    },
+    {
+      "path": "scripts/research/run_rd25_portfolio_translation_diagnosis.py",
+      "line": 32,
+      "expression": "RD23_SIGNALS = Path(target)",
+      "role": "CONSUMER",
+      "classification": "Downstream diagnosis input; not a producer."
+    },
+    {
+      "path": "scripts/research/run_rd26_exit_architecture.py",
+      "line": 50,
+      "expression": "RD23_SIGNAL_EVENTS = Path(target)",
+      "role": "REFERENCE_ONLY",
+      "classification": "Frozen equivalence/preflight reference; RD26 writes its own mixed signal ledger."
+    },
+    {
+      "path": "scripts/research/run_rd26_exit_architecture.py",
+      "line": 51,
+      "expression": "RD23_SIGNAL_EVENTS_SHA256",
+      "role": "REFERENCE_ONLY",
+      "classification": "Integrity constant for the preflight reference artifact."
+    }
+  ],
+  "true_writer_count": 1,
+  "true_writer": "scripts/research/run_rd23_multifamily_raw_edge.py:main:312",
+  "governance_references_are_not_writers": true,
+  "protected_year_rows_read": false
+}

@@ -1,0 +1,44 @@
+{
+  "2024_access": false,
+  "baseline_parity": "PASS_2X_METRIC_AND_EXACT_TRADE",
+  "decomposition_max_abs_error": 2.7755575615628914e-17,
+  "head_summary": {
+    "candidate_increment": {
+      "rows": 1697985,
+      "weighted_pearson": -0.034591796138557666,
+      "weighted_positive_precision": 0.3123759624335652,
+      "weighted_sign_accuracy": 0.5870652567602187,
+      "years": 3
+    },
+    "decomposed_delta": {
+      "rows": 1697985,
+      "weighted_pearson": 0.006451239883901474,
+      "weighted_positive_precision": 0.4600579046426206,
+      "weighted_sign_accuracy": 0.49778649399140745,
+      "years": 3
+    },
+    "direct_delta": {
+      "rows": 1697985,
+      "weighted_pearson": 0.005402994148996567,
+      "weighted_positive_precision": 0.45706234037508114,
+      "weighted_sign_accuracy": 0.4989413922973407,
+      "years": 3
+    },
+    "incumbent_continuation": {
+      "rows": 1697985,
+      "weighted_pearson": 0.014267954344896855,
+      "weighted_positive_precision": 0.3034489584221223,
+      "weighted_sign_accuracy": 0.46738163175764214,
+      "years": 3
+    }
+  },
+  "model_selection": false,
+  "next_interpretation": "Use the OOT head metrics to identify whether candidate value, incumbent continuation value, or only their difference lacks causal learnability. Do not choose a runtime threshold or policy from this diagnostic. Human review must authorize any next architecture.",
+  "pair_rows": 1700665,
+  "portfolio_policy_replay": false,
+  "posthoc_winner_certified": false,
+  "runtime_future_information": false,
+  "schema_version": "akah-replacement-value-learnability-autopsy-decision-v1",
+  "status": "PASS_DIAGNOSTIC_COMPLETE",
+  "threshold_search": false
+}

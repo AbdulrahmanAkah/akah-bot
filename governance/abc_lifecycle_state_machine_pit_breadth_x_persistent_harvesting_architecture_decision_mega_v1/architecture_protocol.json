@@ -1,0 +1,59 @@
+{
+  "2024_access": false,
+  "H0": {
+    "fixed_take_profit": false,
+    "invalidation": "two consecutive completed 4H closes below frozen break level",
+    "max_hold_168h": false,
+    "pivot": "low strictly below previous2 and following2; information available after following2 complete",
+    "support": "nondecreasing max of eligible confirmed pivots",
+    "timeframe": "4H"
+  },
+  "allocation": {
+    "active_replacement": false,
+    "gross_governor": "FROZEN_BINARY_VOL_TIMELINE",
+    "liquidity": {
+      "daily_participation": 0.001,
+      "hourly_participation": 0.01
+    },
+    "max_positions": 20,
+    "per_position_risk_budget": 0.0075,
+    "position_weight_cap": 0.05
+  },
+  "architecture_id": "PIT_BREADTH_X_PERSISTENT_HARVESTING_V1",
+  "factorial": {
+    "A": {
+      "exit": "NATIVE",
+      "scope": "NARROW"
+    },
+    "B": {
+      "exit": "H0",
+      "scope": "NARROW"
+    },
+    "C": {
+      "exit": "NATIVE",
+      "scope": "WIDE"
+    },
+    "D": {
+      "exit": "H0",
+      "scope": "WIDE"
+    }
+  },
+  "hard_cutoff_exclusive": "2024-01-01T00:00:00Z",
+  "primary_candidate": "D_WIDE_H0",
+  "qualification": {
+    "D_must_beat_A_years_2020_2023": 3,
+    "D_must_beat_B_2x": true,
+    "D_to_A_terminal_wealth_2x_min": 1.5,
+    "mdd_floor": -0.2,
+    "worst_year_floor": -0.1
+  },
+  "ranking": {
+    "r7": "log(close[d-1]/close[d-8])",
+    "requires_r7_gt_0": true,
+    "rs7": "r7 - median cross-sectional r7",
+    "score": "rs7/sigma20",
+    "top_n": 20
+  },
+  "research_status": "EXPOSED_2019_2023_ARCHITECTURE_EVIDENCE_ONLY",
+  "schema_version": "akah-pit-breadth-x-persistent-harvesting-protocol-v1"
+}

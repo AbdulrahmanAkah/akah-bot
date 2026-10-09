@@ -1,0 +1,295 @@
+{
+  "frames": {
+    "helper_count": 8,
+    "helpers": [
+      {
+        "bindings": {
+          "cutoff": "<DATA_CUTOFF>",
+          "pairs": "<pairs>",
+          "raw_root": "data/raw/rd16b/kucoin"
+        },
+        "end_line": 208,
+        "function": "load_feature_frames",
+        "kind": "PROJECT_HELPER",
+        "line": 187,
+        "module": "scripts/research/run_rd26_exit_architecture.py",
+        "module_sha256": "9C096C6E7C4784D9B91A7EFC55FA85F46755B2D850B78E7A5E90980294DC9ACE",
+        "provenance": "main.frames@592->scripts/research/run_rd26_exit_architecture.py::load_feature_frames"
+      },
+      {
+        "bindings": {
+          "expected_freeze_commit": "None",
+          "raw_root": "data/raw/rd16b/kucoin",
+          "repo": "<args.repo_root>"
+        },
+        "end_line": 293,
+        "function": "verify_execution_inputs",
+        "kind": "PROJECT_HELPER",
+        "line": 267,
+        "module": "scripts/research/run_rd26_exit_architecture.py",
+        "module_sha256": "9C096C6E7C4784D9B91A7EFC55FA85F46755B2D850B78E7A5E90980294DC9ACE",
+        "provenance": "main.frames@592->main.pairs@587->scripts/research/run_rd26_exit_architecture.py::verify_execution_inputs"
+      },
+      {
+        "bindings": {
+          "path": "<args.repo_root>/data/research/rd26_p0_runtime/rd23-focus-signal-equivalence-audit-v1.json"
+        },
+        "end_line": 119,
+        "function": "load_json",
+        "kind": "PROJECT_HELPER",
+        "line": 115,
+        "module": "scripts/research/run_rd26_exit_architecture.py",
+        "module_sha256": "9C096C6E7C4784D9B91A7EFC55FA85F46755B2D850B78E7A5E90980294DC9ACE",
+        "provenance": "main.frames@592->main.pairs@587->scripts/research/run_rd26_exit_architecture.py::verify_execution_inputs->scripts/research/run_rd26_exit_architecture.py::load_json"
+      },
+      {
+        "bindings": {
+          "path": "<args.repo_root>/data/research/rd18_p3x_a3b_runtime/effective-operational-membership.csv"
+        },
+        "end_line": 312,
+        "function": "load_membership",
+        "kind": "PROJECT_HELPER",
+        "line": 225,
+        "module": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+        "module_sha256": "1AA0596DC0B18097D71E1CDB127D2355FC806ECD4A8824A983BA038FA2DD9BC4",
+        "provenance": "main.frames@592->main.pairs@587->scripts/research/run_rd26_exit_architecture.py::verify_execution_inputs->src/spotbot/research/rd20_p2_minimal_pullback.py::load_membership"
+      },
+      {
+        "bindings": {},
+        "end_line": 89,
+        "function": "parser",
+        "kind": "PROJECT_HELPER",
+        "line": 81,
+        "module": "scripts/research/run_rd26_exit_architecture.py",
+        "module_sha256": "9C096C6E7C4784D9B91A7EFC55FA85F46755B2D850B78E7A5E90980294DC9ACE",
+        "provenance": "main.frames@592->main.pairs@587->main.args@563->scripts/research/run_rd26_exit_architecture.py::parser"
+      },
+      {
+        "binding": "<args.repo_root>",
+        "function": "verify_execution_inputs",
+        "kind": "PARAMETER_BINDING",
+        "module": "scripts/research/run_rd26_exit_architecture.py",
+        "parameter": "repo",
+        "provenance": "main.frames@592->main.pairs@587->scripts/research/run_rd26_exit_architecture.py::verify_execution_inputs->return@293->verify_execution_inputs.lineage@273"
+      },
+      {
+        "binding": "<args.repo_root>/data/research/rd26_p0_runtime/rd23-focus-signal-equivalence-audit-v1.json",
+        "function": "load_json",
+        "kind": "PARAMETER_BINDING",
+        "module": "scripts/research/run_rd26_exit_architecture.py",
+        "parameter": "path",
+        "provenance": "main.frames@592->main.pairs@587->scripts/research/run_rd26_exit_architecture.py::verify_execution_inputs->scripts/research/run_rd26_exit_architecture.py::load_json->return@119->load_json.value@116"
+      },
+      {
+        "bindings": {
+          "repo": "<args.repo_root>"
+        },
+        "end_line": 184,
+        "function": "verify_lineage",
+        "kind": "PROJECT_HELPER",
+        "line": 144,
+        "module": "scripts/research/run_rd26_exit_architecture.py",
+        "module_sha256": "9C096C6E7C4784D9B91A7EFC55FA85F46755B2D850B78E7A5E90980294DC9ACE",
+        "provenance": "main.frames@592->main.pairs@587->scripts/research/run_rd26_exit_architecture.py::verify_execution_inputs->return@293->verify_execution_inputs.lineage@273->scripts/research/run_rd26_exit_architecture.py::verify_lineage"
+      },
+      {
+        "binding": "<args.repo_root>",
+        "function": "verify_execution_inputs",
+        "kind": "PARAMETER_BINDING",
+        "module": "scripts/research/run_rd26_exit_architecture.py",
+        "parameter": "repo",
+        "provenance": "main.frames@592->main.pairs@587->scripts/research/run_rd26_exit_architecture.py::verify_execution_inputs->return@293->verify_execution_inputs.membership@286->verify_execution_inputs.membership_path@283"
+      },
+      {
+        "bindings": {
+          "membership_path": "<args.repo_root>/data/research/rd18_p3x_a3b_runtime/effective-operational-membership.csv"
+        },
+        "end_line": 141,
+        "function": "raw_pairs",
+        "kind": "PROJECT_HELPER",
+        "line": 139,
+        "module": "scripts/research/run_rd26_exit_architecture.py",
+        "module_sha256": "9C096C6E7C4784D9B91A7EFC55FA85F46755B2D850B78E7A5E90980294DC9ACE",
+        "provenance": "main.frames@592->main.pairs@587->scripts/research/run_rd26_exit_architecture.py::verify_execution_inputs->return@293->verify_execution_inputs.pairs@287->scripts/research/run_rd26_exit_architecture.py::raw_pairs"
+      },
+      {
+        "binding": "<args.repo_root>",
+        "function": "verify_execution_inputs",
+        "kind": "PARAMETER_BINDING",
+        "module": "scripts/research/run_rd26_exit_architecture.py",
+        "parameter": "repo",
+        "provenance": "main.frames@592->main.pairs@587->scripts/research/run_rd26_exit_architecture.py::verify_execution_inputs->return@293->verify_execution_inputs.pairs@287->verify_execution_inputs.membership_path@283"
+      },
+      {
+        "bindings": {
+          "path": "<args.repo_root>/data/research/rd25_p1_runtime/diagnosis.json"
+        },
+        "end_line": 119,
+        "function": "load_json",
+        "kind": "PROJECT_HELPER",
+        "line": 115,
+        "module": "scripts/research/run_rd26_exit_architecture.py",
+        "module_sha256": "9C096C6E7C4784D9B91A7EFC55FA85F46755B2D850B78E7A5E90980294DC9ACE",
+        "provenance": "main.frames@592->main.pairs@587->scripts/research/run_rd26_exit_architecture.py::verify_execution_inputs->return@293->verify_execution_inputs.lineage@273->scripts/research/run_rd26_exit_architecture.py::verify_lineage->scripts/research/run_rd26_exit_architecture.py::load_json"
+      },
+      {
+        "binding": "<args.repo_root>/data/research/rd18_p3x_a3b_runtime/effective-operational-membership.csv",
+        "function": "raw_pairs",
+        "kind": "PARAMETER_BINDING",
+        "module": "scripts/research/run_rd26_exit_architecture.py",
+        "parameter": "membership_path",
+        "provenance": "main.frames@592->main.pairs@587->scripts/research/run_rd26_exit_architecture.py::verify_execution_inputs->return@293->verify_execution_inputs.pairs@287->scripts/research/run_rd26_exit_architecture.py::raw_pairs->return@141->raw_pairs.membership@140"
+      },
+      {
+        "binding": "<args.repo_root>/data/research/rd25_p1_runtime/diagnosis.json",
+        "function": "load_json",
+        "kind": "PARAMETER_BINDING",
+        "module": "scripts/research/run_rd26_exit_architecture.py",
+        "parameter": "path",
+        "provenance": "main.frames@592->main.pairs@587->scripts/research/run_rd26_exit_architecture.py::verify_execution_inputs->return@293->verify_execution_inputs.lineage@273->scripts/research/run_rd26_exit_architecture.py::verify_lineage->scripts/research/run_rd26_exit_architecture.py::load_json->return@119->load_json.value@116"
+      }
+    ],
+    "unresolved": [],
+    "unresolved_count": 0
+  },
+  "membership": {
+    "helper_count": 7,
+    "helpers": [
+      {
+        "bindings": {
+          "expected_freeze_commit": "None",
+          "raw_root": "data/raw/rd16b/kucoin",
+          "repo": "<args.repo_root>"
+        },
+        "end_line": 293,
+        "function": "verify_execution_inputs",
+        "kind": "PROJECT_HELPER",
+        "line": 267,
+        "module": "scripts/research/run_rd26_exit_architecture.py",
+        "module_sha256": "9C096C6E7C4784D9B91A7EFC55FA85F46755B2D850B78E7A5E90980294DC9ACE",
+        "provenance": "main.membership@587->scripts/research/run_rd26_exit_architecture.py::verify_execution_inputs"
+      },
+      {
+        "bindings": {
+          "path": "<args.repo_root>/data/research/rd26_p0_runtime/rd23-focus-signal-equivalence-audit-v1.json"
+        },
+        "end_line": 119,
+        "function": "load_json",
+        "kind": "PROJECT_HELPER",
+        "line": 115,
+        "module": "scripts/research/run_rd26_exit_architecture.py",
+        "module_sha256": "9C096C6E7C4784D9B91A7EFC55FA85F46755B2D850B78E7A5E90980294DC9ACE",
+        "provenance": "main.membership@587->scripts/research/run_rd26_exit_architecture.py::verify_execution_inputs->scripts/research/run_rd26_exit_architecture.py::load_json"
+      },
+      {
+        "bindings": {
+          "path": "<args.repo_root>/data/research/rd18_p3x_a3b_runtime/effective-operational-membership.csv"
+        },
+        "end_line": 312,
+        "function": "load_membership",
+        "kind": "PROJECT_HELPER",
+        "line": 225,
+        "module": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+        "module_sha256": "1AA0596DC0B18097D71E1CDB127D2355FC806ECD4A8824A983BA038FA2DD9BC4",
+        "provenance": "main.membership@587->scripts/research/run_rd26_exit_architecture.py::verify_execution_inputs->src/spotbot/research/rd20_p2_minimal_pullback.py::load_membership"
+      },
+      {
+        "bindings": {},
+        "end_line": 89,
+        "function": "parser",
+        "kind": "PROJECT_HELPER",
+        "line": 81,
+        "module": "scripts/research/run_rd26_exit_architecture.py",
+        "module_sha256": "9C096C6E7C4784D9B91A7EFC55FA85F46755B2D850B78E7A5E90980294DC9ACE",
+        "provenance": "main.membership@587->main.args@563->scripts/research/run_rd26_exit_architecture.py::parser"
+      },
+      {
+        "binding": "<args.repo_root>",
+        "function": "verify_execution_inputs",
+        "kind": "PARAMETER_BINDING",
+        "module": "scripts/research/run_rd26_exit_architecture.py",
+        "parameter": "repo",
+        "provenance": "main.membership@587->scripts/research/run_rd26_exit_architecture.py::verify_execution_inputs->return@293->verify_execution_inputs.lineage@273"
+      },
+      {
+        "binding": "<args.repo_root>/data/research/rd26_p0_runtime/rd23-focus-signal-equivalence-audit-v1.json",
+        "function": "load_json",
+        "kind": "PARAMETER_BINDING",
+        "module": "scripts/research/run_rd26_exit_architecture.py",
+        "parameter": "path",
+        "provenance": "main.membership@587->scripts/research/run_rd26_exit_architecture.py::verify_execution_inputs->scripts/research/run_rd26_exit_architecture.py::load_json->return@119->load_json.value@116"
+      },
+      {
+        "bindings": {
+          "repo": "<args.repo_root>"
+        },
+        "end_line": 184,
+        "function": "verify_lineage",
+        "kind": "PROJECT_HELPER",
+        "line": 144,
+        "module": "scripts/research/run_rd26_exit_architecture.py",
+        "module_sha256": "9C096C6E7C4784D9B91A7EFC55FA85F46755B2D850B78E7A5E90980294DC9ACE",
+        "provenance": "main.membership@587->scripts/research/run_rd26_exit_architecture.py::verify_execution_inputs->return@293->verify_execution_inputs.lineage@273->scripts/research/run_rd26_exit_architecture.py::verify_lineage"
+      },
+      {
+        "binding": "<args.repo_root>",
+        "function": "verify_execution_inputs",
+        "kind": "PARAMETER_BINDING",
+        "module": "scripts/research/run_rd26_exit_architecture.py",
+        "parameter": "repo",
+        "provenance": "main.membership@587->scripts/research/run_rd26_exit_architecture.py::verify_execution_inputs->return@293->verify_execution_inputs.membership@286->verify_execution_inputs.membership_path@283"
+      },
+      {
+        "bindings": {
+          "membership_path": "<args.repo_root>/data/research/rd18_p3x_a3b_runtime/effective-operational-membership.csv"
+        },
+        "end_line": 141,
+        "function": "raw_pairs",
+        "kind": "PROJECT_HELPER",
+        "line": 139,
+        "module": "scripts/research/run_rd26_exit_architecture.py",
+        "module_sha256": "9C096C6E7C4784D9B91A7EFC55FA85F46755B2D850B78E7A5E90980294DC9ACE",
+        "provenance": "main.membership@587->scripts/research/run_rd26_exit_architecture.py::verify_execution_inputs->return@293->verify_execution_inputs.pairs@287->scripts/research/run_rd26_exit_architecture.py::raw_pairs"
+      },
+      {
+        "binding": "<args.repo_root>",
+        "function": "verify_execution_inputs",
+        "kind": "PARAMETER_BINDING",
+        "module": "scripts/research/run_rd26_exit_architecture.py",
+        "parameter": "repo",
+        "provenance": "main.membership@587->scripts/research/run_rd26_exit_architecture.py::verify_execution_inputs->return@293->verify_execution_inputs.pairs@287->verify_execution_inputs.membership_path@283"
+      },
+      {
+        "bindings": {
+          "path": "<args.repo_root>/data/research/rd25_p1_runtime/diagnosis.json"
+        },
+        "end_line": 119,
+        "function": "load_json",
+        "kind": "PROJECT_HELPER",
+        "line": 115,
+        "module": "scripts/research/run_rd26_exit_architecture.py",
+        "module_sha256": "9C096C6E7C4784D9B91A7EFC55FA85F46755B2D850B78E7A5E90980294DC9ACE",
+        "provenance": "main.membership@587->scripts/research/run_rd26_exit_architecture.py::verify_execution_inputs->return@293->verify_execution_inputs.lineage@273->scripts/research/run_rd26_exit_architecture.py::verify_lineage->scripts/research/run_rd26_exit_architecture.py::load_json"
+      },
+      {
+        "binding": "<args.repo_root>/data/research/rd18_p3x_a3b_runtime/effective-operational-membership.csv",
+        "function": "raw_pairs",
+        "kind": "PARAMETER_BINDING",
+        "module": "scripts/research/run_rd26_exit_architecture.py",
+        "parameter": "membership_path",
+        "provenance": "main.membership@587->scripts/research/run_rd26_exit_architecture.py::verify_execution_inputs->return@293->verify_execution_inputs.pairs@287->scripts/research/run_rd26_exit_architecture.py::raw_pairs->return@141->raw_pairs.membership@140"
+      },
+      {
+        "binding": "<args.repo_root>/data/research/rd25_p1_runtime/diagnosis.json",
+        "function": "load_json",
+        "kind": "PARAMETER_BINDING",
+        "module": "scripts/research/run_rd26_exit_architecture.py",
+        "parameter": "path",
+        "provenance": "main.membership@587->scripts/research/run_rd26_exit_architecture.py::verify_execution_inputs->return@293->verify_execution_inputs.lineage@273->scripts/research/run_rd26_exit_architecture.py::verify_lineage->scripts/research/run_rd26_exit_architecture.py::load_json->return@119->load_json.value@116"
+      }
+    ],
+    "unresolved": [],
+    "unresolved_count": 0
+  },
+  "status": "PASS"
+}

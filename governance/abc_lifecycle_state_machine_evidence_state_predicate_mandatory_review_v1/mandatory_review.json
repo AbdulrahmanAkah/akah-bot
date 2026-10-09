@@ -1,0 +1,94 @@
+{
+  "schema_version": "abc-lifecycle-evidence-state-predicate-mandatory-review-v1",
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_EVIDENCE_STATE_PREDICATE_MANDATORY_REVIEW_V1",
+  "status": "PASS_REVIEW_COMPLETE",
+  "source_materialization": {
+    "canonical_sha256": "636EAB1819744573CC1C54621AF147100FEFB002983EE0F48406EEF272B5AC6D",
+    "manifest_sha256": "9BAA35325B5D05BF9C984D869C37956695CBE2856ED74E5AF87182D6E05660FA",
+    "materialized_grid_sha256": "D4BFD3F6CD16EAAE65479DB25CB3757AFEDC77E6E5D3D138B4FA51A009016472",
+    "event_locality_audit_sha256": "6140590C53BA8812202662B8A1976BEC0013BC51DBE5FC0BCB9C92EB55BF3C76",
+    "no_persistence_audit_sha256": "D0FB9A101D12A85B528D57CD97F80CFAD33BD2C8FCDA7C1FBBFD3676E716AD16",
+    "source_signal_parity_audit_sha256": "D22FCF75D3207C6A982D6FB4E818C08B78F09858118BB146FDC84372E144504D"
+  },
+  "exact_observed_facts": {
+    "overlay_totals": {
+      "STALLED": 74,
+      "STRUCTURAL_BREAK": 135,
+      "VOLATILITY_DAMAGE": 31
+    },
+    "same_row_cooccurrence": {
+      "STALLED__STRUCTURAL_BREAK": 1,
+      "STALLED__VOLATILITY_DAMAGE": 0,
+      "STRUCTURAL_BREAK__VOLATILITY_DAMAGE": 5,
+      "TRIPLE": 0
+    },
+    "signature_counts": {
+      "NONE": 13825,
+      "STALLED": 73,
+      "STALLED+STRUCTURAL_BREAK": 1,
+      "STRUCTURAL_BREAK": 129,
+      "STRUCTURAL_BREAK+VOLATILITY_DAMAGE": 5,
+      "VOLATILITY_DAMAGE": 26
+    },
+    "lifecycle_coverage": {
+      "lifecycle_count": 1782,
+      "lifecycle_with_any_overlay_count": 220,
+      "lifecycle_with_stalled_evidence_count": 74,
+      "lifecycle_with_structural_break_evidence_count": 135,
+      "lifecycle_with_volatility_damage_evidence_count": 31
+    },
+    "phase_counts": {
+      "STALLED": {
+        "UNCONFIRMED": 74,
+        "EARLY_PROGRESS": 0,
+        "CONFIRMED": 0
+      },
+      "STRUCTURAL_BREAK": {
+        "UNCONFIRMED": 51,
+        "EARLY_PROGRESS": 0,
+        "CONFIRMED": 84
+      },
+      "VOLATILITY_DAMAGE": {
+        "UNCONFIRMED": 0,
+        "EARLY_PROGRESS": 0,
+        "CONFIRMED": 31
+      }
+    },
+    "structural_break_observed_phases": [
+      "UNCONFIRMED",
+      "CONFIRMED"
+    ],
+    "signature_row_total": 14059
+  },
+  "interpretation": {
+    "event_local_overlays_valid": true,
+    "stalled_evidence_interpretation": "C-derived STALLED candidate evidence remains confined to UNCONFIRMED and is a valid event-local pre-progress non-confirmation label.",
+    "structural_break_evidence_interpretation": "A-derived STRUCTURAL_BREAK candidate evidence is structurally distinct and may occur across base phases; its observed phase placement is descriptive, not a persistent-state rule.",
+    "volatility_damage_evidence_interpretation": "B-derived VOLATILITY_DAMAGE candidate evidence remains confined to CONFIRMED and is a valid event-local post-progress damage label.",
+    "cooccurrence_interpretation": "Same-row overlap is limited and preserves distinct evidence channels: STALLED+STRUCTURAL_BREAK occurs once, STRUCTURAL_BREAK+VOLATILITY_DAMAGE occurs five times, STALLED+VOLATILITY_DAMAGE and triple overlap are zero.",
+    "persistent_state_limit": "This materialization contains event-local first-hit evidence and explicitly no carry-forward semantics. It therefore cannot establish how long STALLED, STRUCTURAL_BREAK or VOLATILITY_DAMAGE should persist, recover, reverse or transition."
+  },
+  "architecture_decision": {
+    "event_local_evidence_representation_accepted": true,
+    "evidence_sequence_protocol_work_authorized": true,
+    "persistent_state_protocol_work_authorized_now": false,
+    "runtime_state_machine_authorized": false,
+    "adaptive_logic_authorized": false,
+    "exit_action_authorized": false,
+    "exit_arbiter_authorized": false,
+    "candidate_combination_trading_logic_authorized": false,
+    "reason": "The overlays are faithful, phase-aware evidence markers with limited same-row overlap, but event-local materialization alone does not justify persistence or transition semantics. The next bounded step is to freeze an output-only sequence protocol for ordering and chronology among existing base-phase transitions and evidence events, with no new thresholds or economic outcomes."
+  },
+  "review_constraints": {
+    "market_data_accessed": false,
+    "economic_outcomes_read": false,
+    "pnl_columns_read": false,
+    "candidate_replay_executed": false,
+    "portfolio_replay_executed": false,
+    "new_threshold_created": false,
+    "persistent_state_inferred": false,
+    "2024_accessed": false,
+    "2025_accessed": false
+  },
+  "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_EVIDENCE_SEQUENCE_PROTOCOL_FREEZE_V1"
+}

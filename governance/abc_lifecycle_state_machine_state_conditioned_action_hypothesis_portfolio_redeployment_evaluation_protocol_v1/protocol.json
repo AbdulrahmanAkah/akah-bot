@@ -1,0 +1,141 @@
+{
+  "development_economic_period": [
+    2019,
+    2020,
+    2021,
+    2022
+  ],
+  "direct_effect_reference": {
+    "function": "direct_effect",
+    "function_source_sha256": "BE4BF3A0629CD80F4A34FA6E21235D134F99FFBA91AEEEB1D9C709FB96351D0B",
+    "signature": {
+      "kwarg": null,
+      "kwonly": [
+        "candidate_id",
+        "control_trades",
+        "hourly_by_pair",
+        "four_hour_by_pair",
+        "cost_multiplier"
+      ],
+      "kwonly_defaults_source": [
+        null,
+        null,
+        null,
+        null,
+        "1.0"
+      ],
+      "positional": [],
+      "positional_defaults_source": [],
+      "return_annotation_source": "tuple[pd.DataFrame, dict[str, Any]]",
+      "vararg": null
+    }
+  },
+  "economic_rows_read_during_protocol_freeze": false,
+  "execution_order": "DEVELOPMENT_PORTFOLIO_REPLAY_FIRST; REVIEW; THEN_SEPARATELY_FREEZE_2023_PORTFOLIO_VALIDATION_BEFORE_2023_PORTFOLIO_REPLAY",
+  "execution_semantics": [
+    "USE_FROZEN_REPLAY_OVERLAY_IMPLEMENTATION_UNCHANGED",
+    "ONE_HYPOTHESIS_OVERLAY_AT_A_TIME",
+    "USE_EXISTING_FIRST_ELIGIBLE_HYPOTHESIS_EVENT_SEMANTICS",
+    "NO_NEW_CASH_RULE",
+    "NO_NEW_CAPACITY_RULE",
+    "NO_NEW_ENTRY_ORDER_RULE",
+    "NO_NEW_EXIT_ORDER_RULE",
+    "NO_REIMPLEMENTATION_OF_PORTFOLIO_ENGINE"
+  ],
+  "forbidden": [
+    "HYPOTHESIS_RANKING",
+    "WINNER_SELECTION",
+    "ACTION_PROMOTION",
+    "RUNTIME_ACTION_MAPPING",
+    "POSTHOC_THRESHOLD",
+    "RETUNING",
+    "2024_ACCESS",
+    "2025_ACCESS",
+    "PRODUCTION_CHANGE",
+    "PUSH"
+  ],
+  "hypotheses": [
+    "H1_WATCH_STALLED",
+    "H2_WATCH_DAMAGE_ACTIVE",
+    "H3_PROTECT_DAMAGE_ONSET",
+    "H4_PROTECT_DAMAGE_CONTINUATION",
+    "H5_EXIT_CONFLUENT_DAMAGE",
+    "H6_DEESCALATE_DAMAGE_CLEAR"
+  ],
+  "next_if_pass": "ABC_LIFECYCLE_STATE_MACHINE_STATE_CONDITIONED_ACTION_HYPOTHESIS_PORTFOLIO_REDEPLOYMENT_EVALUATION_PROTOCOL_MANDATORY_REVIEW_V1",
+  "portfolio_authority": {
+    "function": "replay_overlay",
+    "function_source_sha256": "4722514EFDCF1701F2F7BBF242467C74B028756F2426C89E558AC68C8BA00E43",
+    "module": "src/spotbot/research/abc_exit_primitives_v1.py",
+    "module_sha256": "B04F4EA4E95A1DA324036C14C5889F334702A30D0AF5AA66C4B7F6993C8395B2",
+    "signature": {
+      "kwarg": null,
+      "kwonly": [
+        "candidate_id",
+        "events",
+        "frames",
+        "state_frame",
+        "four_hour",
+        "replay_start",
+        "replay_cutoff",
+        "portfolio_id",
+        "universe_id",
+        "cost_multiplier"
+      ],
+      "kwonly_defaults_source": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        "'UNION_FOCUS'",
+        "'C2'",
+        "1.0"
+      ],
+      "positional": [],
+      "positional_defaults_source": [],
+      "return_annotation_source": "tuple[pd.DataFrame, pd.DataFrame, dict[str, Any], dict[str, int], pd.DataFrame]",
+      "vararg": null
+    }
+  },
+  "portfolio_replay_executed_during_protocol_freeze": false,
+  "reported_output_contract": [
+    "PER_HYPOTHESIS_REPLAY_OUTPUT_AS_RETURNED_BY_CANONICAL_REPLAY_OVERLAY",
+    "CONTROL_VS_OVERLAY_PORTFOLIO_EFFECT_USING_EXISTING_DIRECT_EFFECT_AUTHORITY",
+    "COVERAGE_AND_REPLAY_AUDIT"
+  ],
+  "schema_version": "abc-action-hypothesis-portfolio-redeployment-evaluation-protocol-v1",
+  "source_bindings": [
+    {
+      "path": "src/spotbot/research/abc_exit_primitives_v1.py",
+      "sha256": "B04F4EA4E95A1DA324036C14C5889F334702A30D0AF5AA66C4B7F6993C8395B2"
+    },
+    {
+      "path": "data/research/abc_exit_primitives_2019_2023_v1/control-trades.csv",
+      "sha256": "BA2CF871453DDFAC53DD53494C5B47D29C20BC1777370928135A8FB2D01E8ABE"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_state_conditioned_action_hypothesis_eligibility_materialization_v1/action_hypothesis_eligibility_grid.csv",
+      "sha256": "F989B216B163F3CFD9315FA61BA64EC138D5826F51F9D62344E5118CCF89F146"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_state_conditioned_action_hypothesis_cross_period_robustness_synthesis_materialization_v1/cross_period_robustness_synthesis.csv",
+      "sha256": "2ED305EBC4F7F8F05408F4DC5701BD8F3738CCE3734D5AB06CD286C754502BD7"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_state_conditioned_action_hypothesis_cross_period_robustness_synthesis_mandatory_review_v1/mandatory_review.json",
+      "sha256": "313368C84DE74903C938BBA276136060EC87829E1CA76202A635E95CEA5C8415"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_state_conditioned_action_hypothesis_cross_period_robustness_synthesis_mandatory_review_v1/canonical_result.json",
+      "sha256": "20D4CF09CC0BEC14EBABE49389EA833691F00D56E7B37AEB2177FDD82ACD1C5C"
+    }
+  ],
+  "status": "FROZEN_BEFORE_PORTFOLIO_REPLAY",
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_STATE_CONDITIONED_ACTION_HYPOTHESIS_PORTFOLIO_REDEPLOYMENT_EVALUATION_PROTOCOL_FREEZE_V1",
+  "temporal_validation_period": [
+    2023
+  ]
+}

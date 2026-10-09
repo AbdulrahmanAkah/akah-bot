@@ -1,0 +1,119 @@
+{
+  "2024_access": false,
+  "action_selection": false,
+  "baseline_feature_count": 44,
+  "configs": {
+    "BASELINE44": {
+      "feature_count": 44,
+      "interaction_count": 0
+    },
+    "BASELINE44_PLUS_ADX_DMI": {
+      "feature_count": 49,
+      "interaction_count": 0
+    },
+    "BASELINE44_PLUS_ALL_INDICATORS": {
+      "feature_count": 88,
+      "interaction_count": 0
+    },
+    "BASELINE44_PLUS_ALL_INDICATORS_PLUS_INTERACTIONS": {
+      "feature_count": 88,
+      "interaction_count": 12
+    },
+    "BASELINE44_PLUS_BOLLINGER_VOLATILITY": {
+      "feature_count": 49,
+      "interaction_count": 0
+    },
+    "BASELINE44_PLUS_MACD": {
+      "feature_count": 50,
+      "interaction_count": 0
+    },
+    "BASELINE44_PLUS_MOMENTUM_EXHAUSTION": {
+      "feature_count": 57,
+      "interaction_count": 0
+    },
+    "BASELINE44_PLUS_TREND_EMA": {
+      "feature_count": 53,
+      "interaction_count": 0
+    },
+    "BASELINE44_PLUS_VOLUME_LIQUIDITY_PROXY": {
+      "feature_count": 50,
+      "interaction_count": 0
+    },
+    "INDICATORS44_ONLY": {
+      "feature_count": 44,
+      "interaction_count": 0
+    }
+  },
+  "evaluation_target": "RAW_EXECUTABLE_EXIT_DELTA_NET",
+  "feature_promotion": false,
+  "hyperparameter_tuning": false,
+  "indicator_feature_count": 44,
+  "interaction_pairs": [
+    [
+      "rsi14",
+      "atr24h_price_fraction"
+    ],
+    [
+      "rsi14",
+      "realized_vol_72h"
+    ],
+    [
+      "rsi14",
+      "mfe_return_so_far"
+    ],
+    [
+      "rsi14",
+      "giveback_fraction_of_mfe"
+    ],
+    [
+      "macd_hist_atr",
+      "realized_vol_72h"
+    ],
+    [
+      "macd_hist_delta1_atr",
+      "realized_vol_72h"
+    ],
+    [
+      "macd_hist_atr",
+      "mfe_return_so_far"
+    ],
+    [
+      "macd_hist_atr",
+      "giveback_fraction_of_mfe"
+    ],
+    [
+      "adx14",
+      "realized_vol_72h"
+    ],
+    [
+      "adx14",
+      "b_current_run_decisions"
+    ],
+    [
+      "price_ema21_atr",
+      "b_current_run_decisions"
+    ],
+    [
+      "bb_percent_b20",
+      "giveback_fraction_of_mfe"
+    ]
+  ],
+  "model": "RIDGE_LINEAR_DIAGNOSTIC",
+  "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_TECHNICAL_INDICATOR_UNIVARIATE_DIAGNOSTIC_V1",
+  "primary_incremental_metric": "DELTA_CROSSFIT_SPEARMAN_VS_BASELINE44",
+  "reviewed_artifact_bindings": {
+    "governance/abc_lifecycle_state_machine_causal_feature_broadening_executable_continuation_diagnostic_materialization_v1/executable_continuation_target.csv": "B48D268663099F3D4792800DDE64814169EA3BAA3140E5B36F08EB6CAB15A065",
+    "governance/abc_lifecycle_state_machine_causal_feature_broadening_feature_reconstruction_materialization_v1/broad_causal_feature_grid.csv": "32C7E6602C6A8239D568FD2832F455E975AA75F83A431F66C1B2E7B8B680E454"
+  },
+  "ridge_alpha": 10.0,
+  "schema_version": "abc-technical-indicator-incremental-model-protocol-v1",
+  "schemes": [
+    "LEAVE_ONE_YEAR_OUT_2019_2023",
+    "FORWARD_CHAIN_2020_2023"
+  ],
+  "secondary_metric": "DELTA_CROSSFIT_Q5_MINUS_Q1_MEAN_EXIT_DELTA_VS_BASELINE44",
+  "status": "FROZEN_BEFORE_TARGET_PARSE",
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_TECHNICAL_INDICATOR_INCREMENTAL_MODEL_PROTOCOL_FREEZE_V1",
+  "train_feature_preprocessing": "TRAIN_MEDIAN_IMPUTE_THEN_TRAIN_ZSCORE; DROP_TRAIN_ALL_MISSING_OR_ZERO_VARIANCE",
+  "train_target": "WITHIN_TRAIN_PERCENTILE_RANK_MINUS_0_5"
+}

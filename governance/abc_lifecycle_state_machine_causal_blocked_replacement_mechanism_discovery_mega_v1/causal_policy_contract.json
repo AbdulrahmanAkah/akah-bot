@@ -1,0 +1,58 @@
+{
+  "candidate_priority": "frozen F10 score",
+  "certification": "DISCOVERY_ONLY",
+  "frozen": [
+    "H0 exits",
+    "BINARY_VOL",
+    "canonical sizing",
+    "canonical liquidity",
+    "MAX_POSITIONS",
+    "POSITION_WEIGHT_CAP",
+    "transaction costs"
+  ],
+  "incumbent_runtime_fields": [
+    "entry_f10_score",
+    "executable_unrealized_net_return_after_exit_cost",
+    "completed_holding_age_hours"
+  ],
+  "model_fit": false,
+  "oracle_labels_used_for_runtime": false,
+  "pair_or_event_identity_rule": false,
+  "policies": [
+    {
+      "description": "Exact F10 baseline; no replacement",
+      "id": "R00_F10_ACTUAL",
+      "mode": "NONE"
+    },
+    {
+      "description": "Blocked candidate may replace the incumbent with the lowest entry F10 score when candidate F10 score is strictly higher",
+      "id": "R01_SCORE_GAP",
+      "mode": "SCORE_GAP"
+    },
+    {
+      "description": "R01 plus incumbent executable unrealized net return must be <= 0",
+      "id": "R02_SCORE_GAP_LOSER",
+      "mode": "SCORE_GAP_LOSER"
+    },
+    {
+      "description": "R01 plus incumbent age must be >= 24 completed hours",
+      "id": "R03_SCORE_GAP_STALE24",
+      "mode": "SCORE_GAP_STALE24"
+    },
+    {
+      "description": "R01 plus incumbent is nonpositive OR at least 24 completed hours old",
+      "id": "R04_SCORE_GAP_LOSER_OR_STALE24",
+      "mode": "SCORE_GAP_LOSER_OR_STALE24"
+    },
+    {
+      "description": "R01 plus incumbent is nonpositive AND at least 24 completed hours old",
+      "id": "R05_SCORE_GAP_LOSER_AND_STALE24",
+      "mode": "SCORE_GAP_LOSER_AND_STALE24"
+    }
+  ],
+  "replacement_execution": "one-for-one only if hypothetical close frees enough canonical capital for MIN_NOTIONAL candidate entry",
+  "runtime_future_information": false,
+  "schema_version": "akah-causal-blocked-replacement-policy-contract-v1",
+  "threshold_search": false,
+  "trigger": "candidate blocked by MAX_POSITIONS or capital capacity only"
+}

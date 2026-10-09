@@ -1,0 +1,55 @@
+{
+  "2024_access": false,
+  "action_selection": false,
+  "compressed_sensor_count": 17,
+  "compressed_sensors": [
+    "atr14_4h_price_fraction",
+    "bb_percent_b20",
+    "bb_width20",
+    "bb_width_delta3",
+    "ema21_50_spread_atr",
+    "ema21_slope3_atr",
+    "ema50_slope3_atr",
+    "ema9_21_spread_atr",
+    "ema9_slope3_atr",
+    "ema_alignment_score",
+    "macd_hist_atr",
+    "macd_hist_delta1_atr",
+    "macd_hist_drawdown_from_peak5_atr",
+    "macd_hist_slope3_atr",
+    "macd_signal_atr",
+    "price_ema21_atr",
+    "price_ema9_atr"
+  ],
+  "cross_family_interactions": "ALL_PAIRWISE_PRODUCTS_AMONG_COMPRESSED_TECH_SENSORS_FROM_DIFFERENT_TECH_FAMILIES_ONLY",
+  "evaluation": [
+    "HELDOUT_SPEARMAN_VS_RAW_EXIT_DELTA",
+    "HELDOUT_PREDICTION_Q5_MINUS_Q1_RAW_EXIT_DELTA"
+  ],
+  "hinge_knots_z": [
+    -1.0,
+    0.0,
+    1.0
+  ],
+  "hyperparameter_tuning": false,
+  "model_configs": [
+    "BASELINE44",
+    "BASELINE44_PLUS_COMPRESSED_LINEAR",
+    "BASELINE44_PLUS_COMPRESSED_NONLINEAR",
+    "BASELINE44_PLUS_COMPRESSED_NONLINEAR_XFAMILY",
+    "COMPRESSED_TECH_ONLY_NONLINEAR"
+  ],
+  "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_NONLINEAR_RESPONSE_SURFACE_LOYO_DIAGNOSTIC_V1",
+  "nonlinear_success_test": "NONLINEAR_DELTA_SPEARMAN_VS_COMPRESSED_LINEAR_POSITIVE_IN_BOTH_SCHEMES",
+  "ridge_alpha": 10.0,
+  "schema_version": "abc-nonlinear-response-surface-protocol-v1",
+  "schemes": [
+    "LOYO_2019_2023",
+    "FORWARD_CHAIN_2020_2023"
+  ],
+  "standardization": "TRAIN_ONLY_MEDIAN_IMPUTE_AND_ZSCORE",
+  "status": "FROZEN",
+  "target_training_transform": "TRAIN_PERCENTILE_RANK_MINUS_0_5",
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_NONLINEAR_RESPONSE_SURFACE_PROTOCOL_FREEZE_V1",
+  "z_clip": 6.0
+}

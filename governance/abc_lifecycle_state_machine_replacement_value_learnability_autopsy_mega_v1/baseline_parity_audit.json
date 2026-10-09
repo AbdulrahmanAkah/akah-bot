@@ -1,0 +1,44 @@
+{
+  "checks": [
+    {
+      "abs_diff": 0.0,
+      "metric": "terminal_wealth",
+      "new": 2.1755985217179195,
+      "reference": 2.1755985217179195,
+      "status": "PASS"
+    },
+    {
+      "metric": "trade_count",
+      "new": 4343,
+      "reference": 4343,
+      "status": "PASS"
+    },
+    {
+      "metric": "open_positions_at_cutoff",
+      "new": 20,
+      "reference": 20,
+      "status": "PASS"
+    },
+    {
+      "abs_diff": 0.0,
+      "metric": "total_cost",
+      "new": 31715.52537963624,
+      "reference": 31715.52537963624,
+      "status": "PASS"
+    },
+    {
+      "cost_multiplier": 2.0,
+      "numeric_max_abs_diff": {
+        "entry_notional": 1.8189894035458565e-12,
+        "entry_price": 0.0,
+        "entry_score": 4.440892098500626e-16,
+        "exit_price": 0.0,
+        "net_pnl": 1.8189894035458565e-12
+      },
+      "status": "PASS",
+      "trade_count": 4343
+    }
+  ],
+  "schema_version": "akah-autopsy-baseline-parity-v1",
+  "status": "PASS_2X_METRIC_AND_EXACT_TRADE"
+}

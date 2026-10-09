@@ -1,0 +1,79 @@
+{
+  "task": "AKAH_SIX_SCHOOL_HYBRID_REPAIR_AND_REPLAY_MEGA_V5",
+  "scope": "PROSPECTIVE_RESEARCH_ADAPTATIONS_ALL_NINE_NOT_FULL_SCHOOL_CERTIFICATION",
+  "period": [
+    "2022-01-01 00:00:00+00:00",
+    "2023-12-31 22:00:00+00:00"
+  ],
+  "grammars": [
+    "FS_WYCKOFF_FULL_LONG",
+    "FS_ICT_2022_CORE_CRYPTO_LONG",
+    "FS_HARMONIC_FULL_LONG",
+    "FS_CLASSICAL_FULL_LONG",
+    "FS_ELLIOTT_FULL_LONG",
+    "FS_DOW_CRYPTO_ADAPTED_LONG",
+    "HYB_MARKUP_CONTINUATION",
+    "HYB_FAILED_AUCTION_REVERSAL",
+    "HYB_CORRECTIVE_COMPLETION_RESUMPTION"
+  ],
+  "source": "SHA-bound V4 causal intents/events/bars; bounded warmup readers only to recover original pivot indices and completed D",
+  "controls": "V4 immutable; 2022/2023 already exposed, not fresh validation; no outcome-directed repair after freeze",
+  "costs": {
+    "1X": 0.0025,
+    "2X": 0.005
+  },
+  "initial_equity": 100000,
+  "risk": {
+    "campaign_B0": ".005 current MTM equity at entry; never recycled",
+    "total_stop_risk": 0.025,
+    "gross": 0.9,
+    "asset_MTM": 0.18,
+    "distinct_assets": 5,
+    "cluster": "all spot longs one market-risk cluster; no diversification credit",
+    "staged": "spring 50% B0; at most one source-owned LPS add, remaining 50%; no new cause",
+    "gap": "actual next open, realized loss may exceed B0; reported not concealed",
+    "risk_reduction": "continuous common lambda, retained quantities floor to 1e-8 with two-lot numerical safeguard; no GCD liquidation artefact"
+  },
+  "quantity": "CONTINUOUS_PRICE_EXPERIMENT; identity price, computational quantity floor 1e-12, minimum entry 50 USDT. NOT historical tick/lot authority",
+  "capacity": "V4 .005 prior completed 24h turnover; entry quantity also bounded by half of min(current capacity, minimum observed capacity over prior 24h). Current buy/sell share capacity. No future-liquidity guarantee",
+  "geometry": "At executable open AFTER price normalization: finite final objective must have strictly positive net-per-unit after both fees. Non-economic TGT1 omitted; no RR threshold search",
+  "classical": "Trade stop=acceptance-bar low for THROWBACK, or latest post-breakout confirmed 4H low for HIGHER_LOW; frozen base support remains context invalidation. No stop replacement when that source is missing",
+  "campaign_mode": "CL TREND only if source prior_trend UP and completed 1D/4H trend UP at entry; H1 TREND. EL W3/W5 TREND. H3 TREND with count owner stop, not mixed min objectives/max stops. Others finite except WY/DO native trend",
+  "trend_management": "Objective is checkpoint, not liquidation. Only confirmed post-entry higher H followed by later higher L earns stop ratchet; owner timeframe, nondecreasing, low must exceed prior L and old stop and be below completed close. No MFE profit threshold. Confirmed protected structure failure exits; hard stop first",
+  "harmonic": "Existing classify_harmonic family rules evaluated at observed completed D=min low from terminal through confirmation. Later close above terminal-bar HIGH required as new structural-confirmation research grammar. Unbound FIVE_ZERO/SHARK abstain. Type-II uses its actual later retest low, not old D",
+  "harmonic_management": "Finite 50/50 planned exits only if TGT1 net-positive; otherwise 100% TGT2. After TGT1, campaign BE=(total buy outlay-net realized sales)/(remaining quantity*(1-exit_fee)); ratchet only if BE below observed price, applies next bar",
+  "elliott": "Existing chosen count remains diagnostic. W3/W5 source pivot sequence recovered exactly; W3 trade stop W2, W5 W4. First completed close above W1/W3 while local low unbroken activates, no count resurrection. Count invalidation stored separately. Parent-child doctrine UNRESOLVED",
+  "wyckoff": "Require observed current-cause B range with support<resistance, source readiness, live owned evidence and no subsequent RESET. No inherited reaccumulation cause, no loosening readiness. New cause doctrine remains UNRESOLVED",
+  "ict": "Preserve raid->later MSS/FVG->later retracement and native NY16/bearish MSS. No automatic removal of intraday expiry. ICT-trigger trend owner deferred until a separately bound higher-structure grammar exists",
+  "dow": "Experimental standalone adapter, not orthodox claim: source broad confirmation held asof latest weekly checkpoint, primary/secondary updates at each completed 4H; stop latest confirmed BTC H4 L, primary reversal exit",
+  "hybrids": {
+    "H1": "Live WY markup + source CL trigger, CL local structure owns trend management",
+    "H2": "Live source base + ICT failed-auction trigger, finite ICT owner, never silently promoted",
+    "H3": "Same-checkpoint corrective count + revalidated harmonic location + terminal-high confirmation; count stop owns campaign, conflict with observed D rejects"
+  },
+  "selector": "same-asset current owner preserved; multiple different owners at checkpoint all rejected; descending causal capacity then deterministic lineage digest; no score/outcome/year/pair alpha",
+  "clock": "decision at completed close, first following 1H open; stop-before-target on intrabar collision; standing gap targets at OPEN; close-generated stops next bar only; OPEN+CLOSE MTM; terminal OPEN no forced liquidation",
+  "outputs": [
+    "campaigns.csv",
+    "fills.csv",
+    "position_decisions.csv.gz",
+    "accepted_intents.csv",
+    "candidate_intents.csv.gz",
+    "rejections.csv.gz",
+    "hourly_equity.csv.gz",
+    "metrics.json"
+  ],
+  "unresolved": {
+    "historical_tick_lot": "UNRESOLVED",
+    "WY_reaccumulation_cause": "UNRESOLVED",
+    "HA_full_matrix": "UNRESOLVED; source-classified regular families only in this adaptation",
+    "EL_parent_child": "DIAGNOSTIC_ONLY",
+    "DO_school_fidelity": "DIAGNOSTIC_ONLY",
+    "independent_reserve_review": "NOT_EXECUTED; all economics experimental"
+  },
+  "2024_access": false,
+  "2025_access": false,
+  "production_change": false,
+  "threshold_search": false,
+  "profit_guarantee": false
+}

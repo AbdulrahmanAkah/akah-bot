@@ -1,0 +1,25 @@
+{
+  "authority_id": "AKAH_BOT_MIXED_SIGNAL_TRUE_PRODUCER_CHAIN_V1",
+  "status": "BOUND_FOR_EXISTING_MIXED_ARTIFACT_SEMANTICS",
+  "producer": {
+    "path": "scripts/research/run_rd26_exit_architecture.py",
+    "function": "main",
+    "writer_line": 651,
+    "sha256": "9C096C6E7C4784D9B91A7EFC55FA85F46755B2D850B78E7A5E90980294DC9ACE",
+    "output": "data/research/rd26_p1_runtime/signal-events-2022-2023.csv"
+  },
+  "chain": [
+    {"step": 1, "call": "load_membership", "source": "scripts/research/run_rd26_exit_architecture.py", "line": 595, "role": "PIT membership input"},
+    {"step": 2, "call": "raw_pairs/load_feature_frames", "source": "scripts/research/run_rd26_exit_architecture.py", "lines": "226-249,595", "role": "pair-keyed 1H feature input from raw_root/<pair>/1h.parquet"},
+    {"step": 3, "call": "scan_focus_signals", "source": "src/spotbot/research/rd26_exit_architecture.py", "lines": "322-390", "role": "causal feature-derived signal event construction for the two frozen focus families"},
+    {"step": 4, "call": "filter_robustness_events", "source": "src/spotbot/research/rd26_exit_architecture.py", "lines": "519-530", "role": "2022-2023 window and administrative horizon filter"},
+    {"step": 5, "call": "events.to_csv", "source": "scripts/research/run_rd26_exit_architecture.py", "line": 651, "role": "mixed artifact writer"}
+  ],
+  "pre2023_derivation_contract": {
+    "semantic_producer": "same RD26 scan_focus_signals/filter_robustness_events chain with data_start=2022-01-01T00:00:00Z and data_cutoff=2023-01-01T00:00:00Z",
+    "existing_entrypoint_has_pre2023_mode": false,
+    "required_new_materialization_entrypoint": "bounded, separately authorized construction task; no implementation in this mission",
+    "current_raw_source_isolation": "blocked because current 1H Parquet has no <=2022-only row group"
+  },
+  "decision": "Existing mixed producer is semantically identified; lawful pre-2023 execution remains blocked by physical source isolation."
+}

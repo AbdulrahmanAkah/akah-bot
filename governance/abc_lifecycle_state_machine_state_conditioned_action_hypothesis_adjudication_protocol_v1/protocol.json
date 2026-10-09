@@ -1,0 +1,65 @@
+{
+  "combined_evidence_rows_read": false,
+  "next_if_pass": "ABC_LIFECYCLE_STATE_MACHINE_STATE_CONDITIONED_ACTION_HYPOTHESIS_ADJUDICATION_MATERIALIZATION_V1",
+  "numeric_thresholds": false,
+  "ranking": false,
+  "rules": {
+    "classification_rules": [
+      [
+        "DIRECT_POSITIVE",
+        "PORTFOLIO_POSITIVE",
+        "DUAL_CONSISTENT_EXIT_SUPPORT",
+        "PROMOTE"
+      ],
+      [
+        "DIRECT_NEGATIVE",
+        "PORTFOLIO_NEGATIVE",
+        "DUAL_CONSISTENT_CONTINUATION_SUPPORT",
+        "DO_NOT_PROMOTE"
+      ],
+      [
+        "DIRECT_POSITIVE",
+        "OTHER",
+        "DIRECT_ONLY_EXIT_SUPPORT",
+        "DO_NOT_PROMOTE"
+      ],
+      [
+        "OTHER",
+        "PORTFOLIO_POSITIVE",
+        "PORTFOLIO_ONLY_EXIT_SUPPORT",
+        "DO_NOT_PROMOTE"
+      ],
+      [
+        "ANY_OTHER",
+        "ANY_OTHER",
+        "MIXED_OR_UNSTABLE",
+        "DO_NOT_PROMOTE"
+      ]
+    ],
+    "direct_negative": "CONSISTENT_NATIVE_CONTINUATION_ADVANTAGE",
+    "direct_positive": "CONSISTENT_DIRECT_EXIT_ADVANTAGE",
+    "inputs": {
+      "direct_classification_column": "cross_period_classification",
+      "portfolio_classification_column": "portfolio_cross_period_classification"
+    },
+    "numeric_thresholds": false,
+    "portfolio_negative": "CONSISTENT_PORTFOLIO_NATIVE_CONTINUATION_ADVANTAGE",
+    "portfolio_positive": "CONSISTENT_PORTFOLIO_EXIT_ADVANTAGE",
+    "promotion_can_return_zero_one_or_many": true,
+    "promotion_rule": "PROMOTE_IF_AND_ONLY_IF_DIRECT_POSITIVE_AND_PORTFOLIO_POSITIVE",
+    "ranking": false,
+    "schema_version": "abc-action-hypothesis-adjudication-rules-v1",
+    "winner_selection": false
+  },
+  "schema_version": "abc-action-hypothesis-adjudication-protocol-v1",
+  "source_bindings": {
+    "governance/abc_lifecycle_state_machine_state_conditioned_action_hypothesis_direct_and_portfolio_evidence_synthesis_mandatory_review_v1/mandatory_review.json": "A64D9700D87A2111F6112710230BE248FCFFC78DAA1A3DB0BA803235CF0A9A9E",
+    "governance/abc_lifecycle_state_machine_state_conditioned_action_hypothesis_direct_and_portfolio_evidence_synthesis_v1/direct_and_portfolio_evidence_synthesis.csv": "759856868AEBA9135262A962ABF7AC034F7FFD3DE2764CF9BCD1E90A4DBA899F",
+    "governance/abc_lifecycle_state_machine_state_conditioned_action_hypothesis_eligibility_materialization_v1/action_hypothesis_eligibility_grid.csv": "F989B216B163F3CFD9315FA61BA64EC138D5826F51F9D62344E5118CCF89F146",
+    "governance/abc_lifecycle_state_machine_state_conditioned_action_hypothesis_portfolio_external_signal_adapter_implementation_and_parity_v1/canonical_result.json": "B11DCE7654FB2CAEA95331BFEDC26BD75406ABEC4419939CADCAC36559DE0B49",
+    "src/spotbot/research/abc_exit_primitives_v1.py": "70148C2A1254E1A05C9820FAFA0F6302166C6BE653D27D8FBAF0859FA03D56E1"
+  },
+  "status": "FROZEN_BEFORE_EVIDENCE_ROW_READ",
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_STATE_CONDITIONED_ACTION_HYPOTHESIS_ADJUDICATION_PROTOCOL_FREEZE_V1",
+  "winner_selection": false
+}

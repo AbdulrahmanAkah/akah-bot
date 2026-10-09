@@ -1,0 +1,988 @@
+{
+  "missing_fields": [
+    "hold_cost",
+    "pi0_action"
+  ],
+  "next_action": "Human review of the exact unresolved semantic proof. Do not repeat broad source scans; raw access remains unauthorized.",
+  "raw_required_not_proven": true,
+  "schema_version": "akah-remaining-semantic-authority-gap-v1",
+  "semantic_closure_audit": {
+    "attempts": {
+      "current_notional": {
+        "derived_attempts": [
+          {
+            "bad": 0,
+            "coverage": 1.0,
+            "missing": 0,
+            "path": "governance/abc_lifecycle_state_machine_exact_one_step_continuation_value_mega_v1/exact_two_sided_continuation_ledger.csv",
+            "price_field": "current_mark_price"
+          }
+        ],
+        "explicit_candidate_count": 0
+      },
+      "hold_cost": {
+        "derived_attempts": [],
+        "explicit_candidate_count": 0
+      },
+      "pi0_action": {
+        "derived_attempt": {
+          "aligned_lifecycles": 82,
+          "documented_delay_hit_count": 8,
+          "documented_delay_hours": 1.0,
+          "explicit_attempts": [
+            {
+              "bad": 2593,
+              "coverage": 0.0,
+              "field": "R_delta_from_prev_decision",
+              "missing": 0,
+              "path": "governance/abc_lifecycle_state_machine_exact_one_step_continuation_value_mega_v1/exact_two_sided_continuation_ledger.csv",
+              "route": "EXPLICIT_ACTION_FIELD"
+            },
+            {
+              "bad": 2593,
+              "coverage": 0.0,
+              "field": "close_delta_from_prev_decision",
+              "missing": 0,
+              "path": "governance/abc_lifecycle_state_machine_exact_one_step_continuation_value_mega_v1/exact_two_sided_continuation_ledger.csv",
+              "route": "EXPLICIT_ACTION_FIELD"
+            },
+            {
+              "bad": 2593,
+              "coverage": 0.0,
+              "field": "R_delta_from_prev_decision",
+              "missing": 0,
+              "path": "governance/abc_lifecycle_state_machine_persistent_state_causal_feature_reconstruction_execution_v1/decision_grid_reconstructed_features.csv",
+              "route": "EXPLICIT_ACTION_FIELD"
+            },
+            {
+              "bad": 2593,
+              "coverage": 0.0,
+              "field": "close_delta_from_prev_decision",
+              "missing": 0,
+              "path": "governance/abc_lifecycle_state_machine_persistent_state_causal_feature_reconstruction_execution_v1/decision_grid_reconstructed_features.csv",
+              "route": "EXPLICIT_ACTION_FIELD"
+            }
+          ],
+          "issues": [
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2023-01-28T20:00:00+00:00",
+              "life": [
+                "SOL-USDT",
+                "2023-01-26 15:00:00+00:00"
+              ],
+              "native_exit": "2023-01-28T23:00:00+00:00",
+              "observed_hours": 3.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2023-11-20T16:00:00+00:00",
+              "life": [
+                "SOL-USDT",
+                "2023-11-17 19:00:00+00:00"
+              ],
+              "native_exit": "2023-11-20T20:00:00+00:00",
+              "observed_hours": 4.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2022-12-09T20:00:00+00:00",
+              "life": [
+                "ETH-USDT",
+                "2022-12-08 20:00:00+00:00"
+              ],
+              "native_exit": "2022-12-09T22:00:00+00:00",
+              "observed_hours": 2.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2023-06-14T16:00:00+00:00",
+              "life": [
+                "SOL-USDT",
+                "2023-06-13 08:00:00+00:00"
+              ],
+              "native_exit": "2023-06-14T20:00:00+00:00",
+              "observed_hours": 4.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2022-02-16T12:00:00+00:00",
+              "life": [
+                "ETH-USDT",
+                "2022-02-15 03:00:00+00:00"
+              ],
+              "native_exit": "2022-02-16T14:00:00+00:00",
+              "observed_hours": 2.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2023-02-09T00:00:00+00:00",
+              "life": [
+                "ETH-USDT",
+                "2023-02-08 01:00:00+00:00"
+              ],
+              "native_exit": "2023-02-09T04:00:00+00:00",
+              "observed_hours": 4.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2023-10-09T08:00:00+00:00",
+              "life": [
+                "XMR-USDT",
+                "2023-10-05 01:00:00+00:00"
+              ],
+              "native_exit": "2023-10-09T10:00:00+00:00",
+              "observed_hours": 2.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2023-12-22T04:00:00+00:00",
+              "life": [
+                "SOL-USDT",
+                "2023-12-19 02:00:00+00:00"
+              ],
+              "native_exit": "2023-12-22T08:00:00+00:00",
+              "observed_hours": 4.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2023-11-02T12:00:00+00:00",
+              "life": [
+                "XRP-USDT",
+                "2023-10-31 12:00:00+00:00"
+              ],
+              "native_exit": "2023-11-02T14:00:00+00:00",
+              "observed_hours": 2.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2023-06-29T04:00:00+00:00",
+              "life": [
+                "XMR-USDT",
+                "2023-06-27 08:00:00+00:00"
+              ],
+              "native_exit": "2023-06-29T08:00:00+00:00",
+              "observed_hours": 4.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2023-09-30T16:00:00+00:00",
+              "life": [
+                "SOL-USDT",
+                "2023-09-29 00:00:00+00:00"
+              ],
+              "native_exit": "2023-09-30T19:00:00+00:00",
+              "observed_hours": 3.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2022-11-25T00:00:00+00:00",
+              "life": [
+                "XRP-USDT",
+                "2022-11-24 03:00:00+00:00"
+              ],
+              "native_exit": "2022-11-25T02:00:00+00:00",
+              "observed_hours": 2.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2022-12-01T16:00:00+00:00",
+              "life": [
+                "LUNC-USDT",
+                "2022-12-01 00:00:00+00:00"
+              ],
+              "native_exit": "2022-12-01T19:00:00+00:00",
+              "observed_hours": 3.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2023-02-04T20:00:00+00:00",
+              "life": [
+                "ETH-USDT",
+                "2023-02-02 02:00:00+00:00"
+              ],
+              "native_exit": "2023-02-04T22:00:00+00:00",
+              "observed_hours": 2.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2022-03-25T20:00:00+00:00",
+              "life": [
+                "XRP-USDT",
+                "2022-03-22 23:00:00+00:00"
+              ],
+              "native_exit": "2022-03-25T23:00:00+00:00",
+              "observed_hours": 3.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2022-02-02T12:00:00+00:00",
+              "life": [
+                "ETH-USDT",
+                "2022-01-28 18:00:00+00:00"
+              ],
+              "native_exit": "2022-02-02T16:00:00+00:00",
+              "observed_hours": 4.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2023-04-01T04:00:00+00:00",
+              "life": [
+                "SOL-USDT",
+                "2023-03-29 08:00:00+00:00"
+              ],
+              "native_exit": "2023-04-01T08:00:00+00:00",
+              "observed_hours": 4.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2022-02-27T00:00:00+00:00",
+              "life": [
+                "ATOM-USDT",
+                "2022-02-25 22:00:00+00:00"
+              ],
+              "native_exit": "2022-02-27T02:00:00+00:00",
+              "observed_hours": 2.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2023-04-26T16:00:00+00:00",
+              "life": [
+                "XRP-USDT",
+                "2023-04-25 10:00:00+00:00"
+              ],
+              "native_exit": "2023-04-26T20:00:00+00:00",
+              "observed_hours": 4.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2022-04-04T12:00:00+00:00",
+              "life": [
+                "SOL-USDT",
+                "2022-04-01 16:00:00+00:00"
+              ],
+              "native_exit": "2022-04-04T16:00:00+00:00",
+              "observed_hours": 4.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2023-12-04T08:00:00+00:00",
+              "life": [
+                "BTC-USDT",
+                "2023-11-28 19:00:00+00:00"
+              ],
+              "native_exit": "2023-12-04T12:00:00+00:00",
+              "observed_hours": 4.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2022-12-10T20:00:00+00:00",
+              "life": [
+                "XRP-USDT",
+                "2022-12-09 00:00:00+00:00"
+              ],
+              "native_exit": "2022-12-11T00:00:00+00:00",
+              "observed_hours": 4.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2023-08-10T16:00:00+00:00",
+              "life": [
+                "ETH-USDT",
+                "2023-08-08 18:00:00+00:00"
+              ],
+              "native_exit": "2023-08-10T18:00:00+00:00",
+              "observed_hours": 2.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2022-03-30T00:00:00+00:00",
+              "life": [
+                "BTC-USDT",
+                "2022-03-24 16:00:00+00:00"
+              ],
+              "native_exit": "2022-03-30T02:00:00+00:00",
+              "observed_hours": 2.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2023-04-29T16:00:00+00:00",
+              "life": [
+                "SOL-USDT",
+                "2023-04-28 09:00:00+00:00"
+              ],
+              "native_exit": "2023-04-29T18:00:00+00:00",
+              "observed_hours": 2.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2022-12-02T00:00:00+00:00",
+              "life": [
+                "ETH-USDT",
+                "2022-11-30 02:00:00+00:00"
+              ],
+              "native_exit": "2022-12-02T03:00:00+00:00",
+              "observed_hours": 3.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2023-05-06T00:00:00+00:00",
+              "life": [
+                "ETH-USDT",
+                "2023-05-04 00:00:00+00:00"
+              ],
+              "native_exit": "2023-05-06T04:00:00+00:00",
+              "observed_hours": 4.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2023-04-01T08:00:00+00:00",
+              "life": [
+                "BTC-USDT",
+                "2023-03-29 10:00:00+00:00"
+              ],
+              "native_exit": "2023-04-01T10:00:00+00:00",
+              "observed_hours": 2.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2022-03-11T04:00:00+00:00",
+              "life": [
+                "ATOM-USDT",
+                "2022-03-10 06:00:00+00:00"
+              ],
+              "native_exit": "2022-03-11T06:00:00+00:00",
+              "observed_hours": 2.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2023-04-01T16:00:00+00:00",
+              "life": [
+                "SHIB-USDT",
+                "2023-04-01 11:00:00+00:00"
+              ],
+              "native_exit": "2023-04-01T19:00:00+00:00",
+              "observed_hours": 3.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2022-03-02T16:00:00+00:00",
+              "life": [
+                "BTC-USDT",
+                "2022-02-28 17:00:00+00:00"
+              ],
+              "native_exit": "2022-03-02T19:00:00+00:00",
+              "observed_hours": 3.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2022-10-06T12:00:00+00:00",
+              "life": [
+                "ETH-USDT",
+                "2022-10-04 08:00:00+00:00"
+              ],
+              "native_exit": "2022-10-06T15:00:00+00:00",
+              "observed_hours": 3.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2022-10-01T16:00:00+00:00",
+              "life": [
+                "BTC-USDT",
+                "2022-09-29 20:00:00+00:00"
+              ],
+              "native_exit": "2022-10-01T18:00:00+00:00",
+              "observed_hours": 2.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2022-03-25T12:00:00+00:00",
+              "life": [
+                "SOL-USDT",
+                "2022-03-23 15:00:00+00:00"
+              ],
+              "native_exit": "2022-03-25T16:00:00+00:00",
+              "observed_hours": 4.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2022-12-01T12:00:00+00:00",
+              "life": [
+                "BTC-USDT",
+                "2022-11-30 02:00:00+00:00"
+              ],
+              "native_exit": "2022-12-01T14:00:00+00:00",
+              "observed_hours": 2.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2023-07-24T00:00:00+00:00",
+              "life": [
+                "BTC-USDT",
+                "2023-07-23 19:00:00+00:00"
+              ],
+              "native_exit": "2023-07-24T03:00:00+00:00",
+              "observed_hours": 3.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2023-09-08T08:00:00+00:00",
+              "life": [
+                "BTC-USDT",
+                "2023-09-07 23:00:00+00:00"
+              ],
+              "native_exit": "2023-09-08T11:00:00+00:00",
+              "observed_hours": 3.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2022-08-24T20:00:00+00:00",
+              "life": [
+                "ADA-USDT",
+                "2022-08-23 15:00:00+00:00"
+              ],
+              "native_exit": "2022-08-25T00:00:00+00:00",
+              "observed_hours": 4.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2022-04-04T12:00:00+00:00",
+              "life": [
+                "ETH-USDT",
+                "2022-04-01 19:00:00+00:00"
+              ],
+              "native_exit": "2022-04-04T16:00:00+00:00",
+              "observed_hours": 4.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2022-03-16T00:00:00+00:00",
+              "life": [
+                "BTC-USDT",
+                "2022-03-14 22:00:00+00:00"
+              ],
+              "native_exit": "2022-03-16T04:00:00+00:00",
+              "observed_hours": 4.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2022-11-07T04:00:00+00:00",
+              "life": [
+                "BTC-USDT",
+                "2022-11-04 16:00:00+00:00"
+              ],
+              "native_exit": "2022-11-07T08:00:00+00:00",
+              "observed_hours": 4.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2023-01-22T20:00:00+00:00",
+              "life": [
+                "ETH-USDT",
+                "2023-01-20 22:00:00+00:00"
+              ],
+              "native_exit": "2023-01-22T22:00:00+00:00",
+              "observed_hours": 2.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2022-08-30T12:00:00+00:00",
+              "life": [
+                "SOL-USDT",
+                "2022-08-30 01:00:00+00:00"
+              ],
+              "native_exit": "2022-08-30T15:00:00+00:00",
+              "observed_hours": 3.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2023-10-29T20:00:00+00:00",
+              "life": [
+                "XMR-USDT",
+                "2023-10-28 17:00:00+00:00"
+              ],
+              "native_exit": "2023-10-30T00:00:00+00:00",
+              "observed_hours": 4.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2023-12-04T08:00:00+00:00",
+              "life": [
+                "KAS-USDT",
+                "2023-12-01 21:00:00+00:00"
+              ],
+              "native_exit": "2023-12-04T12:00:00+00:00",
+              "observed_hours": 4.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2022-12-14T16:00:00+00:00",
+              "life": [
+                "XRP-USDT",
+                "2022-12-13 15:00:00+00:00"
+              ],
+              "native_exit": "2022-12-14T20:00:00+00:00",
+              "observed_hours": 4.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2022-02-17T12:00:00+00:00",
+              "life": [
+                "BTC-USDT",
+                "2022-02-15 03:00:00+00:00"
+              ],
+              "native_exit": "2022-02-17T15:00:00+00:00",
+              "observed_hours": 3.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2022-10-25T16:00:00+00:00",
+              "life": [
+                "ADA-USDT",
+                "2022-10-24 00:00:00+00:00"
+              ],
+              "native_exit": "2022-10-25T20:00:00+00:00",
+              "observed_hours": 4.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2022-12-21T20:00:00+00:00",
+              "life": [
+                "BTC-USDT",
+                "2022-12-20 16:00:00+00:00"
+              ],
+              "native_exit": "2022-12-22T00:00:00+00:00",
+              "observed_hours": 4.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2023-08-08T12:00:00+00:00",
+              "life": [
+                "BTC-USDT",
+                "2023-08-07 20:00:00+00:00"
+              ],
+              "native_exit": "2023-08-08T15:00:00+00:00",
+              "observed_hours": 3.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2022-06-26T12:00:00+00:00",
+              "life": [
+                "ETH-USDT",
+                "2022-06-24 13:00:00+00:00"
+              ],
+              "native_exit": "2022-06-26T14:00:00+00:00",
+              "observed_hours": 2.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2023-10-09T08:00:00+00:00",
+              "life": [
+                "SOL-USDT",
+                "2023-10-07 06:00:00+00:00"
+              ],
+              "native_exit": "2023-10-09T10:00:00+00:00",
+              "observed_hours": 2.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2023-07-09T20:00:00+00:00",
+              "life": [
+                "SOL-USDT",
+                "2023-07-07 16:00:00+00:00"
+              ],
+              "native_exit": "2023-07-09T23:00:00+00:00",
+              "observed_hours": 3.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2023-12-24T04:00:00+00:00",
+              "life": [
+                "BTC-USDT",
+                "2023-12-20 06:00:00+00:00"
+              ],
+              "native_exit": "2023-12-24T06:00:00+00:00",
+              "observed_hours": 2.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2023-05-04T12:00:00+00:00",
+              "life": [
+                "DOGE-USDT",
+                "2023-05-04 00:00:00+00:00"
+              ],
+              "native_exit": "2023-05-04T14:00:00+00:00",
+              "observed_hours": 2.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2022-07-31T20:00:00+00:00",
+              "life": [
+                "ETH-USDT",
+                "2022-07-29 18:00:00+00:00"
+              ],
+              "native_exit": "2022-08-01T00:00:00+00:00",
+              "observed_hours": 4.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2023-12-24T20:00:00+00:00",
+              "life": [
+                "LINK-USDT",
+                "2023-12-19 01:00:00+00:00"
+              ],
+              "native_exit": "2023-12-24T23:00:00+00:00",
+              "observed_hours": 3.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2022-03-23T08:00:00+00:00",
+              "life": [
+                "BTC-USDT",
+                "2022-03-16 12:00:00+00:00"
+              ],
+              "native_exit": "2022-03-23T12:00:00+00:00",
+              "observed_hours": 4.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2022-07-29T08:00:00+00:00",
+              "life": [
+                "ETH-USDT",
+                "2022-07-28 00:00:00+00:00"
+              ],
+              "native_exit": "2022-07-29T12:00:00+00:00",
+              "observed_hours": 4.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2023-07-02T16:00:00+00:00",
+              "life": [
+                "ETH-USDT",
+                "2023-06-30 19:00:00+00:00"
+              ],
+              "native_exit": "2023-07-02T19:00:00+00:00",
+              "observed_hours": 3.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2023-04-02T00:00:00+00:00",
+              "life": [
+                "OP-USDT",
+                "2023-03-31 01:00:00+00:00"
+              ],
+              "native_exit": "2023-04-02T04:00:00+00:00",
+              "observed_hours": 4.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2023-05-28T00:00:00+00:00",
+              "life": [
+                "SOL-USDT",
+                "2023-05-27 08:00:00+00:00"
+              ],
+              "native_exit": "2023-05-28T03:00:00+00:00",
+              "observed_hours": 3.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2022-11-26T20:00:00+00:00",
+              "life": [
+                "ETH-USDT",
+                "2022-11-24 03:00:00+00:00"
+              ],
+              "native_exit": "2022-11-27T00:00:00+00:00",
+              "observed_hours": 4.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2023-10-29T00:00:00+00:00",
+              "life": [
+                "SHIB-USDT",
+                "2023-10-26 22:00:00+00:00"
+              ],
+              "native_exit": "2023-10-29T02:00:00+00:00",
+              "observed_hours": 2.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2023-10-08T12:00:00+00:00",
+              "life": [
+                "XRP-USDT",
+                "2023-10-06 16:00:00+00:00"
+              ],
+              "native_exit": "2023-10-08T16:00:00+00:00",
+              "observed_hours": 4.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2022-04-20T12:00:00+00:00",
+              "life": [
+                "AVAX-USDT",
+                "2022-04-19 13:00:00+00:00"
+              ],
+              "native_exit": "2022-04-20T14:00:00+00:00",
+              "observed_hours": 2.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2023-02-16T04:00:00+00:00",
+              "life": [
+                "BTC-USDT",
+                "2023-02-14 16:00:00+00:00"
+              ],
+              "native_exit": "2023-02-16T08:00:00+00:00",
+              "observed_hours": 4.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2023-06-22T20:00:00+00:00",
+              "life": [
+                "XMR-USDT",
+                "2023-06-20 08:00:00+00:00"
+              ],
+              "native_exit": "2023-06-22T22:00:00+00:00",
+              "observed_hours": 2.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2022-07-23T08:00:00+00:00",
+              "life": [
+                "ADA-USDT",
+                "2022-07-21 09:00:00+00:00"
+              ],
+              "native_exit": "2022-07-23T10:00:00+00:00",
+              "observed_hours": 2.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2023-09-16T08:00:00+00:00",
+              "life": [
+                "ETH-USDT",
+                "2023-09-14 02:00:00+00:00"
+              ],
+              "native_exit": "2023-09-16T10:00:00+00:00",
+              "observed_hours": 2.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2023-04-09T08:00:00+00:00",
+              "life": [
+                "XRP-USDT",
+                "2023-04-07 11:00:00+00:00"
+              ],
+              "native_exit": "2023-04-09T11:00:00+00:00",
+              "observed_hours": 3.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2023-02-04T20:00:00+00:00",
+              "life": [
+                "XRP-USDT",
+                "2023-02-02 20:00:00+00:00"
+              ],
+              "native_exit": "2023-02-04T22:00:00+00:00",
+              "observed_hours": 2.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2023-02-22T00:00:00+00:00",
+              "life": [
+                "SOL-USDT",
+                "2023-02-20 04:00:00+00:00"
+              ],
+              "native_exit": "2023-02-22T03:00:00+00:00",
+              "observed_hours": 3.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2023-05-23T12:00:00+00:00",
+              "life": [
+                "BTC-USDT",
+                "2023-05-22 15:00:00+00:00"
+              ],
+              "native_exit": "2023-05-23T14:00:00+00:00",
+              "observed_hours": 2.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2023-05-18T16:00:00+00:00",
+              "life": [
+                "INJ-USDT",
+                "2023-05-17 20:00:00+00:00"
+              ],
+              "native_exit": "2023-05-18T18:00:00+00:00",
+              "observed_hours": 2.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2022-02-16T12:00:00+00:00",
+              "life": [
+                "AVAX-USDT",
+                "2022-02-15 09:00:00+00:00"
+              ],
+              "native_exit": "2022-02-16T14:00:00+00:00",
+              "observed_hours": 2.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2023-06-20T08:00:00+00:00",
+              "life": [
+                "LTC-USDT",
+                "2023-06-18 10:00:00+00:00"
+              ],
+              "native_exit": "2023-06-20T10:00:00+00:00",
+              "observed_hours": 2.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2023-11-09T12:00:00+00:00",
+              "life": [
+                "BTC-USDT",
+                "2023-11-07 22:00:00+00:00"
+              ],
+              "native_exit": "2023-11-09T16:00:00+00:00",
+              "observed_hours": 4.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2023-01-30T08:00:00+00:00",
+              "life": [
+                "BTC-USDT",
+                "2023-01-29 20:00:00+00:00"
+              ],
+              "native_exit": "2023-01-30T12:00:00+00:00",
+              "observed_hours": 4.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            },
+            {
+              "documented_hours": 1.0,
+              "last_checkpoint": "2022-09-25T16:00:00+00:00",
+              "life": [
+                "SOL-USDT",
+                "2022-09-23 23:00:00+00:00"
+              ],
+              "native_exit": "2022-09-25T18:00:00+00:00",
+              "observed_hours": 2.0,
+              "reason": "FINAL_CHECKPOINT_TO_NATIVE_EXECUTION_DELAY_MISMATCH"
+            }
+          ],
+          "lifecycle_count": 340,
+          "observed_offset_values": [
+            1.0,
+            2.0,
+            3.0,
+            4.0
+          ],
+          "status": "NOT_PROVEN"
+        },
+        "explicit_candidate_count": 0
+      }
+    },
+    "control_audit": {
+      "duplicates": 0,
+      "native_exit_field": "exit_time",
+      "quantity_field": "quantity",
+      "rows": 2020,
+      "status": "PASS"
+    },
+    "missing_fields": [
+      "hold_cost",
+      "pi0_action"
+    ],
+    "proofs": {
+      "current_notional": {
+        "coverage": 1.0,
+        "method": "DERIVED_QUANTITY_X_DECISION_MARK_PRICE",
+        "path": "governance/abc_lifecycle_state_machine_exact_one_step_continuation_value_mega_v1/exact_two_sided_continuation_ledger.csv",
+        "price_field": "current_mark_price",
+        "source_sha256": "3FCA5959BA38B95D5F8F2D42B41D6A2AA6E2ECC8AD0E5C0B2B4E6E1057C49139",
+        "status": "PASS"
+      }
+    },
+    "replay_executed": true,
+    "replay_fields": [
+      "current_notional"
+    ],
+    "status": "BLOCKED"
+  },
+  "status": "BLOCKED_NO_RAW_ACCESSED"
+}

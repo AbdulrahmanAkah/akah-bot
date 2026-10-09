@@ -1,0 +1,42 @@
+{
+  "classification": {
+    "CONSISTENT_DIRECT_EXIT_ADVANTAGE": "development aggregate sign positive AND 2023 sign positive",
+    "CONSISTENT_NATIVE_CONTINUATION_ADVANTAGE": "development aggregate sign negative AND 2023 sign negative",
+    "DIRECTION_REVERSAL": "development aggregate and 2023 signs are opposite",
+    "ZERO_BOUNDARY_OR_NO_COVERAGE": "either side has zero sign or zero evaluable lifecycle count"
+  },
+  "development_period": [
+    2019,
+    2020,
+    2021,
+    2022
+  ],
+  "hypotheses": [
+    "H1_WATCH_STALLED",
+    "H2_WATCH_DAMAGE_ACTIVE",
+    "H3_PROTECT_DAMAGE_ONSET",
+    "H4_PROTECT_DAMAGE_CONTINUATION",
+    "H5_EXIT_CONFLUENT_DAMAGE",
+    "H6_DEESCALATE_DAMAGE_CLEAR"
+  ],
+  "next_if_pass": "ABC_LIFECYCLE_STATE_MACHINE_STATE_CONDITIONED_ACTION_HYPOTHESIS_CROSS_PERIOD_ROBUSTNESS_SYNTHESIS_MATERIALIZATION_V1",
+  "no_action_promotion": true,
+  "no_hypothesis_ranking": true,
+  "no_numeric_acceptance_threshold": true,
+  "no_portfolio_replay": true,
+  "no_winner_selection": true,
+  "primary_direction_metric": "SIGN_OF_SUM_DIRECT_EXIT_DELTA_NET",
+  "schema_version": "abc-action-hypothesis-cross-period-robustness-synthesis-protocol-v1",
+  "secondary_descriptors": [
+    "mean_direct_exit_delta_net",
+    "immediate_exit_better_count",
+    "native_continuation_better_count",
+    "tie_count",
+    "annual_sign_sequence_2019_2023"
+  ],
+  "status": "FROZEN_BEFORE_SYNTHESIS_MATERIALIZATION",
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_STATE_CONDITIONED_ACTION_HYPOTHESIS_CROSS_PERIOD_ROBUSTNESS_SYNTHESIS_PROTOCOL_FREEZE_V1",
+  "temporal_validation_period": [
+    2023
+  ]
+}

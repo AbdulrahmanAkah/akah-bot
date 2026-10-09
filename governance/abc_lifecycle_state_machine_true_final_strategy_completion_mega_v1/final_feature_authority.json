@@ -1,0 +1,378 @@
+{
+  "2024_accessed": false,
+  "current_return": {
+    "algebra": "(exit_now_net_cash - entry_notional - entry_cost) / entry_notional",
+    "bad": 0,
+    "control_entry_basis": {
+      "bad": 0,
+      "duplicates": 0,
+      "policies": [
+        "FULL_ADAPTIVE_LIFECYCLE_BRAIN"
+      ],
+      "rows": 2020,
+      "sha256": "BA2CF871453DDFAC53DD53494C5B47D29C20BC1777370928135A8FB2D01E8ABE",
+      "status": "PASS"
+    },
+    "coverage": 1.0,
+    "method": "CERTIFIED_EXIT_NOW_NET_CASH_MINUS_NATIVE_ENTRY_BASIS_OVER_ENTRY_NOTIONAL",
+    "missing": 0,
+    "status": "PASS",
+    "uses_decision_value_y": false,
+    "uses_future_information": false
+  },
+  "feature_search_by_outcome": false,
+  "final_raw_three_features": {
+    "2024_accessed": false,
+    "bad_examples": [],
+    "bad_rows": 0,
+    "coverage": 1.0,
+    "definitions": {
+      "breadth": "fraction_active_C2_members_with_completed_24h_return_gt_0",
+      "execution_quality": "log1p_trailing_24_completed_hour_quote_turnover_proxy",
+      "relative_strength": "held_pair_completed_24h_return_minus_active_C2_equal_weight_mean"
+    },
+    "ledger_rows": 2593,
+    "lookahead_used": false,
+    "membership": {
+      "c2_snapshot_count": 301,
+      "first_start_utc": "2019-04-01T00:00:00+00:00",
+      "last_end_utc": "2025-01-01T00:00:00+00:00",
+      "last_start_utc": "2024-12-30T00:00:00+00:00",
+      "non_c2_rows": 3612,
+      "rows": 5418,
+      "sha256": "F7D6012CE8CD691583B9B6276DDF36371BFE0BBD9B28F810B676AD0177FB559E",
+      "status": "PASS"
+    },
+    "method": "HASH_BOUND_MEMBERSHIP_PLUS_BOUNDED_PRE2024_RAW_COMPLETED_HOURS",
+    "pair_audits": [
+      {
+        "covered_decisions": 275,
+        "decision_count": 275,
+        "missing_decisions": 0,
+        "missing_examples": [],
+        "pair": "ADA-USDT",
+        "read_end_exclusive_utc": "2022-11-17T13:00:00+00:00",
+        "read_start_utc": "2022-06-23T06:00:00+00:00",
+        "rows_read": 3535,
+        "status": "PASS"
+      },
+      {
+        "covered_decisions": 228,
+        "decision_count": 228,
+        "missing_decisions": 0,
+        "missing_examples": [],
+        "pair": "ATOM-USDT",
+        "read_end_exclusive_utc": "2022-04-06T01:00:00+00:00",
+        "read_start_utc": "2022-01-25T10:00:00+00:00",
+        "rows_read": 1695,
+        "status": "PASS"
+      },
+      {
+        "covered_decisions": 520,
+        "decision_count": 520,
+        "missing_decisions": 0,
+        "missing_examples": [],
+        "pair": "AVAX-USDT",
+        "read_end_exclusive_utc": "2022-09-25T17:00:00+00:00",
+        "read_start_utc": "2021-12-31T22:00:00+00:00",
+        "rows_read": 6427,
+        "status": "PASS"
+      },
+      {
+        "covered_decisions": 1529,
+        "decision_count": 1529,
+        "missing_decisions": 0,
+        "missing_examples": [],
+        "pair": "BTC-USDT",
+        "read_end_exclusive_utc": "2023-12-24T21:00:00+00:00",
+        "read_start_utc": "2021-12-31T22:00:00+00:00",
+        "rows_read": 17351,
+        "status": "PASS"
+      },
+      {
+        "covered_decisions": 313,
+        "decision_count": 313,
+        "missing_decisions": 0,
+        "missing_examples": [],
+        "pair": "DOGE-USDT",
+        "read_end_exclusive_utc": "2023-05-07T21:00:00+00:00",
+        "read_start_utc": "2022-11-23T06:00:00+00:00",
+        "rows_read": 3975,
+        "status": "PASS"
+      },
+      {
+        "covered_decisions": 66,
+        "decision_count": 66,
+        "missing_decisions": 0,
+        "missing_examples": [],
+        "pair": "DOT-USDT",
+        "read_end_exclusive_utc": "2022-02-11T01:00:00+00:00",
+        "read_start_utc": "2022-01-16T10:00:00+00:00",
+        "rows_read": 615,
+        "status": "PASS"
+      },
+      {
+        "covered_decisions": 1529,
+        "decision_count": 1529,
+        "missing_decisions": 0,
+        "missing_examples": [],
+        "pair": "ETH-USDT",
+        "read_end_exclusive_utc": "2023-12-24T21:00:00+00:00",
+        "read_start_utc": "2021-12-31T22:00:00+00:00",
+        "rows_read": 17351,
+        "status": "PASS"
+      },
+      {
+        "covered_decisions": 64,
+        "decision_count": 64,
+        "missing_decisions": 0,
+        "missing_examples": [],
+        "pair": "GRAM-USDT",
+        "read_end_exclusive_utc": "2023-05-28T21:00:00+00:00",
+        "read_start_utc": "2023-04-15T22:00:00+00:00",
+        "rows_read": 1031,
+        "status": "PASS"
+      },
+      {
+        "covered_decisions": 9,
+        "decision_count": 9,
+        "missing_decisions": 0,
+        "missing_examples": [],
+        "pair": "INJ-USDT",
+        "read_end_exclusive_utc": "2023-05-18T17:00:00+00:00",
+        "read_start_utc": "2023-05-14T06:00:00+00:00",
+        "rows_read": 107,
+        "status": "PASS"
+      },
+      {
+        "covered_decisions": 41,
+        "decision_count": 41,
+        "missing_decisions": 0,
+        "missing_examples": [],
+        "pair": "JASMY-USDT",
+        "read_end_exclusive_utc": "2022-05-16T13:00:00+00:00",
+        "read_start_utc": "2022-04-14T02:00:00+00:00",
+        "rows_read": 779,
+        "status": "PASS"
+      },
+      {
+        "covered_decisions": 100,
+        "decision_count": 100,
+        "missing_decisions": 0,
+        "missing_examples": [],
+        "pair": "KAS-USDT",
+        "read_end_exclusive_utc": "2023-12-24T21:00:00+00:00",
+        "read_start_utc": "2023-11-27T22:00:00+00:00",
+        "rows_read": 647,
+        "status": "PASS"
+      },
+      {
+        "covered_decisions": 137,
+        "decision_count": 137,
+        "missing_decisions": 0,
+        "missing_examples": [],
+        "pair": "LINK-USDT",
+        "read_end_exclusive_utc": "2023-12-24T21:00:00+00:00",
+        "read_start_utc": "2023-11-16T22:00:00+00:00",
+        "rows_read": 911,
+        "status": "PASS"
+      },
+      {
+        "covered_decisions": 346,
+        "decision_count": 346,
+        "missing_decisions": 0,
+        "missing_examples": [],
+        "pair": "LTC-USDT",
+        "read_end_exclusive_utc": "2023-09-10T17:00:00+00:00",
+        "read_start_utc": "2022-12-04T06:00:00+00:00",
+        "rows_read": 6731,
+        "status": "PASS"
+      },
+      {
+        "covered_decisions": 125,
+        "decision_count": 125,
+        "missing_decisions": 0,
+        "missing_examples": [],
+        "pair": "LUNC-USDT",
+        "read_end_exclusive_utc": "2022-12-02T01:00:00+00:00",
+        "read_start_utc": "2022-09-26T06:00:00+00:00",
+        "rows_read": 1603,
+        "status": "PASS"
+      },
+      {
+        "covered_decisions": 112,
+        "decision_count": 112,
+        "missing_decisions": 0,
+        "missing_examples": [],
+        "pair": "NEAR-USDT",
+        "read_end_exclusive_utc": "2022-06-09T01:00:00+00:00",
+        "read_start_utc": "2022-01-29T22:00:00+00:00",
+        "rows_read": 3123,
+        "status": "PASS"
+      },
+      {
+        "covered_decisions": 101,
+        "decision_count": 101,
+        "missing_decisions": 0,
+        "missing_examples": [],
+        "pair": "OP-USDT",
+        "read_end_exclusive_utc": "2023-04-09T09:00:00+00:00",
+        "read_start_utc": "2023-03-11T22:00:00+00:00",
+        "rows_read": 683,
+        "status": "PASS"
+      },
+      {
+        "covered_decisions": 30,
+        "decision_count": 30,
+        "missing_decisions": 0,
+        "missing_examples": [],
+        "pair": "SAND-USDT",
+        "read_end_exclusive_utc": "2022-01-13T21:00:00+00:00",
+        "read_start_utc": "2021-12-31T22:00:00+00:00",
+        "rows_read": 311,
+        "status": "PASS"
+      },
+      {
+        "covered_decisions": 440,
+        "decision_count": 440,
+        "missing_decisions": 0,
+        "missing_examples": [],
+        "pair": "SHIB-USDT",
+        "read_end_exclusive_utc": "2023-11-26T17:00:00+00:00",
+        "read_start_utc": "2021-12-31T22:00:00+00:00",
+        "rows_read": 16675,
+        "status": "PASS"
+      },
+      {
+        "covered_decisions": 1433,
+        "decision_count": 1433,
+        "missing_decisions": 0,
+        "missing_examples": [],
+        "pair": "SOL-USDT",
+        "read_end_exclusive_utc": "2023-12-24T21:00:00+00:00",
+        "read_start_utc": "2022-02-14T02:00:00+00:00",
+        "rows_read": 16291,
+        "status": "PASS"
+      },
+      {
+        "covered_decisions": 319,
+        "decision_count": 319,
+        "missing_decisions": 0,
+        "missing_examples": [],
+        "pair": "XMR-USDT",
+        "read_end_exclusive_utc": "2023-11-09T17:00:00+00:00",
+        "read_start_utc": "2023-06-03T10:00:00+00:00",
+        "rows_read": 3823,
+        "status": "PASS"
+      },
+      {
+        "covered_decisions": 1458,
+        "decision_count": 1458,
+        "missing_decisions": 0,
+        "missing_examples": [],
+        "pair": "XRP-USDT",
+        "read_end_exclusive_utc": "2023-12-24T21:00:00+00:00",
+        "read_start_utc": "2021-12-31T22:00:00+00:00",
+        "rows_read": 17351,
+        "status": "PASS"
+      }
+    ],
+    "pair_count": 21,
+    "raw_accessed": true,
+    "raw_columns": [
+      "timestamp",
+      "close",
+      "volume"
+    ],
+    "raw_cutoff_exclusive": "2024-01-01T00:00:00+00:00",
+    "raw_root": "data/raw/rd16b/kucoin",
+    "status": "PASS",
+    "total_rows_read": 121015
+  },
+  "frozen_pass_groups": {
+    "age": {
+      "coverage": 1.0,
+      "source": "REV711_LEDGER",
+      "status": "PASS"
+    },
+    "drawdown": {
+      "core_rows": 2593,
+      "coverage": 1.0,
+      "covered_rows": 2593,
+      "duplicate_core_keys": 0,
+      "nonfinite_core_values": 0,
+      "source_rows_scanned": 14059,
+      "status": "PASS"
+    },
+    "trend": {
+      "core_rows": 2593,
+      "coverage": 1.0,
+      "covered_rows": 2593,
+      "duplicate_core_keys": 0,
+      "nonfinite_core_values": 0,
+      "source_rows_scanned": 14059,
+      "status": "PASS"
+    },
+    "volatility": {
+      "core_rows": 2593,
+      "coverage": 1.0,
+      "covered_rows": 2593,
+      "duplicate_core_keys": 0,
+      "nonfinite_core_values": 0,
+      "source_rows_scanned": 14059,
+      "status": "PASS"
+    }
+  },
+  "lineage": {
+    "age": {
+      "coverage": 1.0,
+      "field": "checkpoint_age_hours",
+      "method": "CERTIFIED_LEDGER_FIELD",
+      "path": "governance/abc_lifecycle_state_machine_independent_decision_ledger_pi0_native_action_full_pipeline_mega_v1/independent_decision_ledger.csv.gz",
+      "sha256": "4D731BC300DA520A01175C76B437293BB4BCCBEE19CF386F953B427F99234F75"
+    },
+    "breadth": {
+      "coverage": 1.0,
+      "method": "HASH_BOUND_MEMBERSHIP_PLUS_BOUNDED_PRE2024_RAW_COMPLETED_HOURS"
+    },
+    "current_return": {
+      "coverage": 1.0,
+      "method": "CERTIFIED_EXIT_NOW_NET_CASH_MINUS_NATIVE_ENTRY_BASIS_OVER_ENTRY_NOTIONAL"
+    },
+    "drawdown": {
+      "coverage": 1.0,
+      "field": "macd_hist_drawdown_from_peak5_atr",
+      "method": "REV713_FROZEN_TRACKED_PIT_BINDING",
+      "path": "governance/abc_lifecycle_state_machine_technical_indicator_sensor_materialization_v1/technical_indicator_sensor_grid.csv",
+      "sha256": "03DE5B800F1018441632BD29C4157CDEEF688FD51FD38158ACCC9592B8BDAEA2"
+    },
+    "execution_quality": {
+      "coverage": 1.0,
+      "method": "HASH_BOUND_MEMBERSHIP_PLUS_BOUNDED_PRE2024_RAW_COMPLETED_HOURS"
+    },
+    "relative_strength": {
+      "coverage": 1.0,
+      "method": "HASH_BOUND_MEMBERSHIP_PLUS_BOUNDED_PRE2024_RAW_COMPLETED_HOURS"
+    },
+    "trend": {
+      "coverage": 1.0,
+      "field": "dmi_spread14",
+      "method": "REV713_FROZEN_TRACKED_PIT_BINDING",
+      "path": "governance/abc_lifecycle_state_machine_technical_indicator_sensor_materialization_v1/technical_indicator_sensor_grid.csv",
+      "sha256": "03DE5B800F1018441632BD29C4157CDEEF688FD51FD38158ACCC9592B8BDAEA2"
+    },
+    "volatility": {
+      "coverage": 1.0,
+      "field": "atr14_4h_price_fraction",
+      "method": "REV713_FROZEN_TRACKED_PIT_BINDING",
+      "path": "governance/abc_lifecycle_state_machine_technical_indicator_sensor_materialization_v1/technical_indicator_sensor_grid.csv",
+      "sha256": "03DE5B800F1018441632BD29C4157CDEEF688FD51FD38158ACCC9592B8BDAEA2"
+    }
+  },
+  "lookahead_used": false,
+  "missing_groups": [],
+  "raw_accessed": true,
+  "status": "PASS",
+  "surface_path": "governance/abc_lifecycle_state_machine_true_final_strategy_completion_mega_v1/true_final_runtime_feature_surface.csv.gz",
+  "surface_sha256": "EEF17E33F07723B80036514F887102576308921868A04C76EA9B7854E5C42F0F"
+}

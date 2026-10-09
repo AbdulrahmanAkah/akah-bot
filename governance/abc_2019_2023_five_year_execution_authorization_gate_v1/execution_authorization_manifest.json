@@ -1,0 +1,303 @@
+{
+  "schema_version": "abc-2019-2023-five-year-execution-authorization-manifest-v1",
+  "authorization_id": "ABC_2019_2023_FIVE_YEAR_EXECUTION_V1",
+  "authorization_status": "AUTHORIZED_ONCE_UNDER_EXACT_FROZEN_MANIFEST",
+  "starting_charter_revision": 279,
+  "starting_head": "c497455cd42c0158439fe6d6e08b146d81ab3bf5",
+  "years": [
+    2019,
+    2020,
+    2021,
+    2022,
+    2023
+  ],
+  "candidate_execution_order": [
+    "C",
+    "A",
+    "B"
+  ],
+  "control": {
+    "identity": "FROZEN_NATIVE_CONTROL",
+    "max_hold_hours": 168,
+    "annual_run_label": "ANNUAL_ENTRY_WINDOW_WITH_NATIVE_COMPLETION_BUFFER"
+  },
+  "candidate_ids": {
+    "C": "NO_STRUCTURAL_PROGRESS_AFTER_12_BARS_V1",
+    "A": "DONCHIAN_CLOSE_BREAK_10_V1",
+    "B": "POST_MEMORY_ATR_RATCHET_22_3_V1"
+  },
+  "shared_execution_contract": {
+    "spot_long_only": true,
+    "candidate_arms_run_separately": true,
+    "do_not_combine_abc_in_first_round": true,
+    "decision_frame": "COMPLETED_4H_BARS_UTC_00_04_08_12_16_20",
+    "execution": "FIRST_1H_OPEN_STRICTLY_AFTER_DECISION_TIME",
+    "execute_at_actual_simulated_execution_price": true,
+    "stale_threshold_fill_forbidden": true,
+    "partial_exits": false,
+    "pyramiding": false,
+    "special_reentry": false,
+    "native_close_preempts_candidate": true,
+    "native_tie_priority": true,
+    "candidate_order_after_signal_is_not_repriced": true,
+    "missing_unusable_is_not_no_signal": true,
+    "state_is_per_lifecycle": true,
+    "same_pair_reentry_creates_new_state": true,
+    "state_carry_between_lifecycles": false
+  },
+  "eligible_trade_bar": {
+    "formula": "bar_open_time >= entry_time AND bar_close_time <= decision_time AND valid_completed_4h_bar",
+    "entry_inside_bar": "EXCLUDE_ENTRY_SPANNING_BAR_PERMANENTLY_FROM_TRADE_STATE",
+    "entry_exact_bar_open": "BAR_ELIGIBLE_AFTER_ITS_CLOSE",
+    "entry_exact_bar_close": "JUST_CLOSED_BAR_INELIGIBLE; NEW_BAR_STARTING_AT_ENTRY_ELIGIBLE_AFTER_CLOSE",
+    "r_before": "max(entry_price, highs of eligible bars with bar_close_time < current.bar_close_time)",
+    "memory_now": "current.close > R_before",
+    "duplicate_snapshot": "IDENTICAL_SNAPSHOT_PROCESSED_ONCE_ONLY"
+  },
+  "strategy_C": {
+    "id": "NO_STRUCTURAL_PROGRESS_AFTER_12_BARS_V1",
+    "eligible_bar_limit": 12,
+    "ordering": [
+      "memory_now = close > structural_high_previous",
+      "memory_seen = memory_seen OR memory_now",
+      "structural_high = max(structural_high_previous, high)",
+      "eligible_bar_count += 1",
+      "candidate = eligible_bar_count == 12 AND NOT memory_seen"
+    ],
+    "memory_on_bar_12_prevents_exit": true,
+    "any_prior_memory_disables_C_permanently": true,
+    "pnl_condition": false,
+    "atr_condition": false,
+    "regime_condition": false
+  },
+  "strategy_A": {
+    "id": "DONCHIAN_CLOSE_BREAK_10_V1",
+    "lookback": 10,
+    "formula": "D_t=min(L[t-10],...,L[t-1]); candidate=C_t<D_t",
+    "current_low_excluded": true,
+    "equality_is_not_exit": true,
+    "wick_below_close_above_is_not_exit": true,
+    "market_series_not_trade_reset": true,
+    "pre_entry_market_history_allowed": true,
+    "requires_10_contiguous_valid_4h_bars": true
+  },
+  "strategy_B": {
+    "id": "POST_MEMORY_ATR_RATCHET_22_3_V1",
+    "atr_period": 22,
+    "atr_multiplier": 3,
+    "atr_type": "WILDER",
+    "atr_series": "PAIR_LEVEL_CONTINUOUS_MARKET_SERIES_FROM_FROZEN_T0",
+    "atr_reset_at_entry": false,
+    "atr_reset_at_year": false,
+    "tr0": "High_0-Low_0",
+    "tr_later": "max(H-L,abs(H-C_prev),abs(L-C_prev))",
+    "atr_seed": "mean(first_22_TR_values)",
+    "atr_recursive": "(21*ATR_previous+TR_t)/22",
+    "first_memory": {
+      "hpeak": "max(entry_price, eligible highs through activation bar)",
+      "stop_init": "Hpeak-3*ATR_current",
+      "exit_on_activation_bar": false
+    },
+    "later_ordering": [
+      "candidate=close_t<S_previous",
+      "if no candidate: Hpeak_t=max(Hpeak_previous,high_t)",
+      "if no candidate: S_t=max(S_previous,Hpeak_t-3*ATR_t)",
+      "S_t becomes test level only at next eligible 4h close"
+    ],
+    "ratchet_never_loosens": true,
+    "intrabar_stop_touch": false
+  },
+  "market_series_initialization": {
+    "T0_per_pair": "FROZEN_FROM_DATA_AUTHORITY_AND_AVAILABILITY_BEFORE_RESULTS",
+    "pre2019_warmup_has_no_trades_or_pnl": true,
+    "annual_runs_reset_portfolio_state_and_capital_only": true,
+    "indicator_series_do_not_reset_at_year": true,
+    "checkpoint_and_recompute_from_T0_must_match_at_same_timestamp": true,
+    "warmup_requirements": [
+      "ATR_22",
+      "DONCHIAN_10",
+      "ALL_NATIVE_STATE_ENGINE_REQUIREMENTS"
+    ],
+    "late_listed_assets_record_availability_and_readiness": true
+  },
+  "annual_boundary": {
+    "Y_start": "Jan 1 y 00:00 UTC",
+    "Y_end": "Jan 1 y+1 00:00 UTC",
+    "admission_rule": "entry_time>=Y_start AND entry_time+168h<Y_end",
+    "same_rule_control_A_B_C": true,
+    "check_before_admission": true,
+    "forced_year_end_liquidation": false,
+    "posthoc_cross_year_trade_deletion": false,
+    "2023_follow_into_2024": false,
+    "native_runtime_must_prove_close_by_entry_plus_168h": true,
+    "open_trade_at_Y_end": "FAIL_CLOSED",
+    "continuous_run_uses_same_annual_admission_mask": true
+  },
+  "direct_effect": {
+    "control_entry_list_fixed": true,
+    "control_quantity_fixed": true,
+    "candidate_exit_realized_at_actual_execution_after_costs": true,
+    "net_sale_proceeds_reserved_until_control_release_time": true,
+    "reserved_proceeds_remain_in_equity": true,
+    "reserved_proceeds_have_no_asset_price_exposure": true,
+    "reserved_proceeds_no_interest": true,
+    "other_trades_and_sizes_unchanged": true,
+    "formula": "sum(NetPnL_modified_exit-NetPnL_control)",
+    "funding_changes_do_not_modify_fixed_entry_direct_effect": true
+  },
+  "signal_execution_logging": {
+    "native_preempts_candidate_execution": true,
+    "preempted_candidate_direct_effect_contribution": 0,
+    "native_tie_reason": "NATIVE_TIE_PRIORITY",
+    "separate_reasons": [
+      "NATIVE_PREEMPTED",
+      "NATIVE_TIE_PRIORITY",
+      "NO_VALID_EXECUTION_PRICE",
+      "DATA_UNAVAILABLE",
+      "POSITION_ALREADY_CLOSED"
+    ]
+  },
+  "first_round_adjudication": {
+    "order": [
+      "VALIDITY_GATE",
+      "INSUFFICIENT_EVALUABLE_OPPORTUNITY",
+      "REDUNDANT",
+      "REJECT",
+      "RETAIN_FOR_CAUSAL_REVIEW"
+    ],
+    "invalid": "causality/data/execution/determinism failure => INVALID/BLOCKED",
+    "insufficient": "no evaluable opportunities",
+    "redundant": "valid evaluable opportunities exist but zero executed interventions preceding native across study",
+    "reject_negative_dominance": "for every year DeltaPnL<=0 AND DeltaMDD>=0 with at least one strict deterioration",
+    "retain": "valid non-redundant candidate not rejected; not production success",
+    "ranking": false,
+    "composite_score": false,
+    "automatic_winner": false,
+    "mandatory_causal_review": [
+      "DirectEffect",
+      "PortfolioPathResidual",
+      "year_by_year_sign_stability",
+      "evaluable_opportunities",
+      "executed_interventions",
+      "lead_time_vs_native",
+      "native_overlap",
+      "temporal_concentration",
+      "asset_concentration",
+      "year_specific_behavior",
+      "return_risk_tradeoff_without_posthoc_weights"
+    ]
+  },
+  "forbidden_first_round_actions": [
+    "THRESHOLD_SEARCH",
+    "PARAMETER_SEARCH",
+    "MODEL_FIT",
+    "YEAR_IDENTITY_RUNTIME_RULE",
+    "PAIR_IDENTITY_RUNTIME_RULE",
+    "POSTHOC_REGIME_SWITCHING",
+    "ABC_COMBINATION",
+    "ARBITER",
+    "PRODUCTION_CHANGE",
+    "2024_ACCESS",
+    "2025_ACCESS"
+  ],
+  "readiness": {
+    "historical_2019_2021_data_authority": "PROVEN_RD23_LINEAGE",
+    "year_summary": {
+      "2019": {
+        "membership_pair_count": 7,
+        "evaluable_pair_count": 7,
+        "not_evaluable_pair_count": 0
+      },
+      "2020": {
+        "membership_pair_count": 9,
+        "evaluable_pair_count": 9,
+        "not_evaluable_pair_count": 0
+      },
+      "2021": {
+        "membership_pair_count": 16,
+        "evaluable_pair_count": 16,
+        "not_evaluable_pair_count": 0
+      },
+      "2022": {
+        "membership_pair_count": 15,
+        "evaluable_pair_count": 49,
+        "not_evaluable_pair_count": 0,
+        "source": "REV278_PROVEN_SAFE_READINESS",
+        "source_sha256": "7F2AE63EDAD43980A03FF46D1DB4E4FE8D85890AF53E3E8E315716A619D037A5"
+      },
+      "2023": {
+        "membership_pair_count": 14,
+        "evaluable_pair_count": 53,
+        "not_evaluable_pair_count": 0,
+        "source": "REV278_PROVEN_SAFE_READINESS",
+        "source_sha256": "7F2AE63EDAD43980A03FF46D1DB4E4FE8D85890AF53E3E8E315716A619D037A5"
+      }
+    },
+    "native_state_engine_warmup_authority": "PROVEN",
+    "max_hold_168h": "PROVEN",
+    "blockers": []
+  },
+  "authority_bindings": [
+    {
+      "path": "governance/abc_exit_primitives_preregistration_v1/protocol.json",
+      "sha256": "0D33547991D394C3CDEF1F03500EFD49DCEE1E8FEF41C8BD02007792CBFA3BD1"
+    },
+    {
+      "path": "governance/abc_exit_primitives_preregistration_v1/canonical_result.json",
+      "sha256": "231583E86A634F57164B9EF9A93535A5ECCE4219700CBFAE968266BD3497ACDC"
+    },
+    {
+      "path": "governance/abc_pre2024_temporal_source_authority_remediation_v2/canonical_result.json",
+      "sha256": "A3DE164037F81F35521747203D8E996B3F8E534A48BE9AB5198D528E7708B1E0"
+    },
+    {
+      "path": "governance/abc_pre2024_temporal_source_authority_remediation_v2/rd23_temporal_source_authority.json",
+      "sha256": "EA80CC7420B2B486E9A037F24EE2CDE20AA0E3EC3069D39E034B4614A1D90498"
+    },
+    {
+      "path": "governance/abc_pre2024_temporal_source_authority_remediation_v2/pair_specific_readiness_windows.json",
+      "sha256": "B29037F87E94F3952F9EEDA83D9227633A94EE4A996D3E32CCD0DDC25C51EE9E"
+    },
+    {
+      "path": "governance/abc_pre2024_temporal_source_authority_remediation_v2/execution_safety_audit.json",
+      "sha256": "1F3C20B5F703C871D09E6C84BEF99CBE86F36CD21D767D1C620D432EB599E13D"
+    },
+    {
+      "path": "governance/abc_pre2024_market_source_authority_and_max_hold_remediation_v1/max_hold_168h_authority_reconciliation.json",
+      "sha256": "D238B552A5A9AE827099B65D9BFE5DA71BF914C945D3677EF41442E364242CB8"
+    },
+    {
+      "path": "governance/transition_event_diagnosis_human_review_v1/canonical_result.json",
+      "sha256": "AB0D9C75B0FD603FF88C1A24E622E1AFFF9EC391D2355617126B1F5FB80D6558"
+    }
+  ],
+  "source_bindings": {
+    "rd23_runner": {
+      "path": "scripts/research/run_rd23_multifamily_raw_edge.py",
+      "sha256": "7B31BB16FCDECA633D3BEA2951BECA049A8FEEC5158EA634F5ADE48B650CAAB7"
+    },
+    "rd23_engine": {
+      "path": "src/spotbot/research/rd23_multifamily_raw_edge.py",
+      "sha256": "6F23405F56BEC0B828130DA6BD57B606659F354892AF4278C9EC18DEEC704AF8"
+    },
+    "pit_membership": {
+      "path": "data/research/rd18_p3x_a3b_runtime/effective-operational-membership.csv",
+      "sha256": "F7D6012CE8CD691583B9B6276DDF36371BFE0BBD9B28F810B676AD0177FB559E"
+    }
+  },
+  "result_opening_policy": {
+    "all_A_B_C_semantics_frozen_before_first_result": true,
+    "execution_order_C_then_A_then_B": true,
+    "no_candidate_semantic_change_after_first_result": true,
+    "publish_full_five_year_matrix_for_all_three_before_any_new_semantic_version": true,
+    "no_ranking_or_automatic_winner": true,
+    "mandatory_causal_review_after_batch": true
+  },
+  "this_gate": {
+    "market_data_accessed": false,
+    "candidate_replay_executed": false,
+    "candidate_results_opened": false,
+    "2024_accessed": false,
+    "2025_accessed": false
+  }
+}

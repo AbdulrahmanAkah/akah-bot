@@ -1,0 +1,33 @@
+{
+  "max_abs_forward_spearman": 0.09925046338406603,
+  "model": {
+    "block_bootstrap_reps_completed": 48,
+    "features": [
+      "hours_since_entry",
+      "progress_margin_delta_from_prev",
+      "atr22_current"
+    ],
+    "model_tuned": false,
+    "ridge_alpha": 1.0,
+    "sign_stable_forward_pass": true,
+    "status": "FIT_FIXED_RIDGE",
+    "train_rows": 7660,
+    "train_target_mean": 0.005373899995526805,
+    "year_results": {
+      "2022": {
+        "predicted_high_minus_low_actual_mean": 0.0017115308818409563,
+        "rows": 2065,
+        "spearman": 0.09925046338406603,
+        "target_mean": -0.003465823348379279
+      },
+      "2023": {
+        "predicted_high_minus_low_actual_mean": 0.0038742191653664644,
+        "rows": 2565,
+        "spearman": 0.07107486958799096,
+        "target_mean": 0.00952807941207391
+      }
+    }
+  },
+  "passed": true,
+  "status": "PASS"
+}

@@ -1,0 +1,31 @@
+{
+  "task_id": "TRANSITION_2023_EVENT_LEVEL_EXPORT_REPLAY_AND_CROSS_YEAR_DIAGNOSIS_V1",
+  "purpose": "One exact frozen P38 2023 replay/export, then complete descriptive cross-year attribution of the directly ablated Control trades.",
+  "source_authority": "P38 V1R11, historical source b3142d0135d393088ab3fe55c53b0e28ec7574cb; exact execution observer SHA E96298B1E68F0BA4585BE2958E2E9EA984F4877902AC5E7669DB7ABB2B358096",
+  "replay_change": "Output-only capture after existing external_full_adaptive_replay returns; unchanged return object and trading function AST.",
+  "market_access": "Frozen P38 scope only: pre-2024 source history for warmup and ROBUSTNESS_2023 signals. PyArrow timestamp < 2024-01-01 UTC selector. No 2024/2025 rows materialized or analyzed.",
+  "whole_replay_parity_before_subset": {
+    "control_trades": 237,
+    "control_net_pnl": 15663.044356264174,
+    "control_mdd": 0.08898912235451983,
+    "treatment_trades": 130,
+    "treatment_net_pnl": 5472.129346390837,
+    "treatment_mdd": 0.08507892745471297,
+    "delta": -10190.915009873337,
+    "absolute_serialization_tolerance": 1e-7
+  },
+  "direct_set": "Control event_key intersect treatment trace decision TRANSITION_ADMISSION_ABLATED, then assert entry_market_state TRANSITION. Never select by realized outcome or exit state.",
+  "identity": ["pair", "entry_time"],
+  "lineage": ["period_id", "UTC signal_time", "pair"],
+  "descriptive_metrics": ["count", "sum", "mean", "median", "win_rate", "profit_factor", "PnL P10/P25/P50/P75/P90", "winner/loser contributions", "top/bottom 1/3/5 contributions", "holding distribution", "calendar UTC month/quarter", "symbol concentration", "common/exclusive symbols", "exit reason", "exit market state descriptive only", "available entry ATR/support/membership/context fields"],
+  "accounting_decompositions": [
+    "Total PnL change = (n23-n22)*mean22 + n23*(mean23-mean22)",
+    "Mean PnL = win_probability*mean_win + (1-win_probability)*mean_nonwin. Symmetric Shapley decomposition across these three descriptive factors; zeros count as nonwins.",
+    "Common symbols: symmetric count and within-symbol mean decomposition; exclusive symbols reported separately. Descriptive composition accounting, not proof of market causal effects."
+  ],
+  "limitations": ["Direct set is frozen path-dependent P19 intervention mapping, not all TRANSITION entries", "Cash PnL depends on sizing; normalized net_pnl/entry_notional reported as diagnostic only", "No independent entry-component causal effect is inferred from association", "No MFE/MAE reconstruction unless already frozen and valid", "No row-level external news/macro attribution"],
+  "failure": "Any replay/parity failure: FAIL_CLOSED, NO_SCIENTIFIC_CONCLUSION, no alternate replay semantics.",
+  "classification": "Evidence-supported families from user taxonomy; no invented numerical cutoff for a family, no scoring or runtime rule.",
+  "next_after_diagnosis": "TRANSITION_EVENT_LEVEL_DIAGNOSIS_MANDATORY_HUMAN_REVIEW_V1",
+  "forbidden": ["new candidate", "candidate reopening", "threshold search", "model fitting", "production changes", "pair/year as runtime rule", "A/B/C tests", "2024 access", "2025 access"]
+}

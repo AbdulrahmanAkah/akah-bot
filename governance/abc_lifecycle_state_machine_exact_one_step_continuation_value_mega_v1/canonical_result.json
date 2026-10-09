@@ -1,0 +1,393 @@
+{
+  "2024_access": false,
+  "authority_bindings": [
+    {
+      "path": "data/research/abc_exit_primitives_2019_2023_v1/control-trades.csv",
+      "sha256": "BA2CF871453DDFAC53DD53494C5B47D29C20BC1777370928135A8FB2D01E8ABE"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_persistent_state_causal_feature_reconstruction_execution_v1/decision_grid_reconstructed_features.csv",
+      "sha256": "15707D9D66E466FD1706646ADDFCFD2316E6210186EF3C1B4A735D9DF7880F42"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_governor_structural_factorial_fast_v1/selected_development_governor_timeline.csv",
+      "sha256": "6532B4501F2734EDE3F1D66DB931231C7915235AEEA3B8E654845A6F24341E2B"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_governor_structural_factorial_fast_v1/governor_factorial_result.json",
+      "sha256": "AE30EB872D4FA600F959D696238E9C868E56A91DFA2A8B4976009EF3DC34378E"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_context_winner_horizon_entry_event_universe_v1/entry_event_universe_2019_2023.csv",
+      "sha256": "E68B2658B19596D96ADF7E1AC71BB03E4C071C0829AF5D16F18FB14A63717DEE"
+    },
+    {
+      "path": "src/spotbot/research/abc_exit_primitives_v1.py",
+      "sha256": "EE6C74F098ABDA63213E40CB6D0CC57F6BA012D35F90475361F7A25B94621284"
+    },
+    {
+      "path": "scripts/research/run_abc_exit_primitives_2019_2023_v1.py",
+      "sha256": "C6E92E4980C50526263B7B0D4E22747E96B49FDA2118529DAC5DA7A81EF1364C"
+    },
+    {
+      "path": "data/research/rd18_p3x_a3b_runtime/effective-operational-membership.csv",
+      "sha256": "F7D6012CE8CD691583B9B6276DDF36371BFE0BBD9B28F810B676AD0177FB559E"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_checkpoint_sign_independent_execution_certificate_v1/strict_execution_trades.csv",
+      "sha256": "54ABFD835E10A141BCCE49033F68131D2A95FD76A7D4AB11CAFE110C53915F71"
+    }
+  ],
+  "canonical_step": {
+    "decision_time_column": "decision_time_4h",
+    "distribution": {
+      "4.0": 12277
+    },
+    "mode_share": 1.0,
+    "positive_diff_count": 12277,
+    "step_hours": 4
+  },
+  "capacity": {
+    "preemption_authorized": false,
+    "replacement_authorized": false,
+    "status": "DESCRIPTIVE_ONLY"
+  },
+  "cost2x_stress": {
+    "overall_mean_x1": 0.0026851690470738763,
+    "overall_mean_x2": 0.0026818083849373623,
+    "rows": 2593,
+    "sign_concordance_x1_x2": 1.0,
+    "status": "PASS_DIAGNOSTIC",
+    "threshold_tuned": false,
+    "years": {
+      "2022": {
+        "mean_x1": -0.0050651723735110525,
+        "mean_x2": -0.005058832983807033,
+        "positive_share_x1": 0.30960264900662254,
+        "positive_share_x2": 0.30960264900662254,
+        "rows": 1208
+      },
+      "2023": {
+        "mean_x1": 0.0094450336218512,
+        "mean_x2": 0.00943321255348843,
+        "positive_share_x1": 0.45126353790613716,
+        "positive_share_x2": 0.45126353790613716,
+        "rows": 1385
+      }
+    }
+  },
+  "decision_counts": {
+    "DEFER": 7,
+    "KILL": 0,
+    "PROMOTE": 3
+  },
+  "direction_volatility": {
+    "frozen_factorial": {
+      "binary_no_vol_mdd": -0.4027348330702034,
+      "binary_no_vol_risk_pass": false,
+      "binary_no_vol_wealth_x1": 11.452797397397804,
+      "binary_vol_mdd": -0.19079247606398098,
+      "binary_vol_risk_pass": true,
+      "binary_vol_wealth_x1": 3.6589449042130644
+    },
+    "status": "PROMOTE_HYPOTHESIS_FROM_FROZEN_FACTORIAL_ONLY"
+  },
+  "entry_x_continuation": {
+    "status": "DEFER_NO_TARGET"
+  },
+  "frozen_core": "CURRENT_DYNAMIC_TOP6",
+  "frozen_governor": "BINARY_VOL",
+  "full_lsm": false,
+  "max_hold_hours": 168,
+  "model": {
+    "feature_catalog": {
+      "concept_mapping": {
+        "age": "continuation_advantage",
+        "optional_exit_intent": "hold_optional_exits_suppressed",
+        "progress": "progress_margin_delta_from_prev",
+        "volatility": "atr22_current"
+      },
+      "interactions": []
+    },
+    "features": [
+      "continuation_advantage",
+      "progress_margin_delta_from_prev",
+      "atr22_current",
+      "hold_optional_exits_suppressed"
+    ],
+    "model_tuned": false,
+    "parameters": null,
+    "ridge_alpha": 1.0,
+    "status": "INSUFFICIENT_FOR_FIXED_MODEL",
+    "target_exactness": "EXACT_TWO_SIDED_CURRENT_DYNAMIC_TOP6_STATE_ACTION_VALUE_WITH_FROZEN_BINARY_VOL_CONTEXT",
+    "train_rows": 0,
+    "year_results": {}
+  },
+  "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_EXACT_ONE_STEP_CONTINUATION_VALUE_MEGA_HUMAN_REVIEW_V1",
+  "offline_rl": false,
+  "population_authority": {
+    "base_control_rows": 2020,
+    "base_cost_rows": 2020,
+    "control_identity_columns": [
+      "policy_id",
+      "portfolio_id",
+      "universe_id"
+    ],
+    "control_identity_combos": [
+      {
+        "policy_id": "FULL_ADAPTIVE_LIFECYCLE_BRAIN",
+        "portfolio_id": "UNION_FOCUS",
+        "universe_id": "C2"
+      }
+    ],
+    "cost_authority": {
+      "available_cost_multipliers": [
+        1.0
+      ],
+      "cost_multiplier_column_present": true,
+      "selected_cost_multiplier": 1.0
+    },
+    "frozen_governor": "BINARY_VOL",
+    "governor_timeline_sha256": "6532B4501F2734EDE3F1D66DB931231C7915235AEEA3B8E654845A6F24341E2B",
+    "population_exactness": "CURRENT_DYNAMIC_TOP6_INTERSECT_STRICT_EXECUTION_IDENTITY;FROZEN_BINARY_VOL_CONTEXT_BOUND;STRICT_LEDGER_NOT_ASSUMED_TO_PROVE_BINARY_VOL_OCCUPANCY",
+    "strict_execution_identity_bound": true,
+    "strict_rows": 2092,
+    "strict_sha256": "54ABFD835E10A141BCCE49033F68131D2A95FD76A7D4AB11CAFE110C53915F71",
+    "top6_after_strict_intersection": 402,
+    "top6_before_strict_intersection": 1813,
+    "top6_rows": 1813,
+    "top6_rule": "membership_rank<=6"
+  },
+  "population_claim": "DIRECT_STATE_ACTION_VALUE_ON_CURRENT_DYNAMIC_TOP6_IDENTITIES_WITH_FROZEN_BINARY_VOL_CONTEXT;NOT_A_CLAIM_OF_BINARY_VOL_PORTFOLIO_OCCUPANCY_UNLESS_SEPARATELY_PROVEN",
+  "post168": {
+    "extension_authorized": false,
+    "max_hold_hours": 168,
+    "status": "KEEP_168H"
+  },
+  "production_changed": false,
+  "push": false,
+  "raw_authority": {
+    "authority": "SHA_BOUND_ABC_RUNNER_RAW_ROOT_LITERAL",
+    "full_pair_coverage": 20,
+    "path": "C:\\SIRAJ\\Repositories\\spot-speculation-bot\\data\\raw\\rd16b\\kucoin",
+    "repo_relative": "data/raw/rd16b/kucoin",
+    "required_pair_count": 20,
+    "runner_sha256": "C6E92E4980C50526263B7B0D4E22747E96B49FDA2118529DAC5DA7A81EF1364C"
+  },
+  "schema_version": "akah-rev554-two-sided-exact-continuation-mega-v1",
+  "shadow_policy": {
+    "authorized": false,
+    "production_authorized": false,
+    "rule": "LCB>0=>HOLD_ONE_STEP; UCB<0=>EXIT_NOW; otherwise=>PI0",
+    "threshold_tuned": false,
+    "years": {}
+  },
+  "sizing": {
+    "authorized": false,
+    "reason": "Entry realizable value remains unproven; continuation target alone cannot authorize sizing.",
+    "status": "FEASIBILITY_ONLY_NO_MULTIPLIER"
+  },
+  "status": "PASS_EXACT_ONE_STEP_CONTINUATION_MEGA_COMPLETE",
+  "surface_sha256": "56139B4FBEAF789B03368BBD73ED667C3C876527A33E6BDFE470778EC6B03FD0",
+  "target": {
+    "baseline_parity": {
+      "baseline_trade_parity_pass": true,
+      "baseline_trade_parity_pass_count": 340,
+      "baseline_trade_parity_total": 340,
+      "pair_audits": [
+        {
+          "2024_rows_materialized": 0,
+          "decision_rows": 33,
+          "first_raw": "2019-07-04 11:00:00+00:00",
+          "last_raw": "2023-12-31 23:00:00+00:00",
+          "pair": "ADA-USDT",
+          "prepared_rows": 39397,
+          "raw_rows": 39397
+        },
+        {
+          "2024_rows_materialized": 0,
+          "decision_rows": 53,
+          "first_raw": "2019-05-24 11:00:00+00:00",
+          "last_raw": "2023-12-31 23:00:00+00:00",
+          "pair": "ATOM-USDT",
+          "prepared_rows": 40381,
+          "raw_rows": 40381
+        },
+        {
+          "2024_rows_materialized": 0,
+          "decision_rows": 99,
+          "first_raw": "2021-03-05 11:00:00+00:00",
+          "last_raw": "2023-12-31 23:00:00+00:00",
+          "pair": "AVAX-USDT",
+          "prepared_rows": 24757,
+          "raw_rows": 24757
+        },
+        {
+          "2024_rows_materialized": 0,
+          "decision_rows": 620,
+          "first_raw": "2019-01-01 01:00:00+00:00",
+          "last_raw": "2023-12-31 23:00:00+00:00",
+          "pair": "BTC-USDT",
+          "prepared_rows": 43823,
+          "raw_rows": 43823
+        },
+        {
+          "2024_rows_materialized": 0,
+          "decision_rows": 69,
+          "first_raw": "2021-02-09 04:00:00+00:00",
+          "last_raw": "2023-12-31 23:00:00+00:00",
+          "pair": "DOGE-USDT",
+          "prepared_rows": 25340,
+          "raw_rows": 25340
+        },
+        {
+          "2024_rows_materialized": 0,
+          "decision_rows": 11,
+          "first_raw": "2020-08-21 18:00:00+00:00",
+          "last_raw": "2023-12-31 23:00:00+00:00",
+          "pair": "DOT-USDT",
+          "prepared_rows": 29454,
+          "raw_rows": 29454
+        },
+        {
+          "2024_rows_materialized": 0,
+          "decision_rows": 585,
+          "first_raw": "2019-01-01 01:00:00+00:00",
+          "last_raw": "2023-12-31 23:00:00+00:00",
+          "pair": "ETH-USDT",
+          "prepared_rows": 43823,
+          "raw_rows": 43823
+        },
+        {
+          "2024_rows_materialized": 0,
+          "decision_rows": 6,
+          "first_raw": "2022-10-27 11:00:00+00:00",
+          "last_raw": "2023-12-31 23:00:00+00:00",
+          "pair": "GRAM-USDT",
+          "prepared_rows": 10333,
+          "raw_rows": 10333
+        },
+        {
+          "2024_rows_materialized": 0,
+          "decision_rows": 5,
+          "first_raw": "2021-10-20 11:00:00+00:00",
+          "last_raw": "2023-12-31 23:00:00+00:00",
+          "pair": "INJ-USDT",
+          "prepared_rows": 19261,
+          "raw_rows": 19261
+        },
+        {
+          "2024_rows_materialized": 0,
+          "decision_rows": 8,
+          "first_raw": "2021-10-27 09:00:00+00:00",
+          "last_raw": "2023-12-31 23:00:00+00:00",
+          "pair": "JASMY-USDT",
+          "prepared_rows": 19095,
+          "raw_rows": 19095
+        },
+        {
+          "2024_rows_materialized": 0,
+          "decision_rows": 14,
+          "first_raw": "2023-05-06 11:00:00+00:00",
+          "last_raw": "2023-12-31 23:00:00+00:00",
+          "pair": "KAS-USDT",
+          "prepared_rows": 5749,
+          "raw_rows": 5749
+        },
+        {
+          "2024_rows_materialized": 0,
+          "decision_rows": 60,
+          "first_raw": "2020-08-20 11:00:00+00:00",
+          "last_raw": "2023-12-31 23:00:00+00:00",
+          "pair": "LINK-USDT",
+          "prepared_rows": 29485,
+          "raw_rows": 29485
+        },
+        {
+          "2024_rows_materialized": 0,
+          "decision_rows": 46,
+          "first_raw": "2019-01-01 01:00:00+00:00",
+          "last_raw": "2023-12-31 23:00:00+00:00",
+          "pair": "LTC-USDT",
+          "prepared_rows": 43823,
+          "raw_rows": 43823
+        },
+        {
+          "2024_rows_materialized": 0,
+          "decision_rows": 25,
+          "first_raw": "2022-05-26 18:00:00+00:00",
+          "last_raw": "2023-12-31 23:00:00+00:00",
+          "pair": "LUNC-USDT",
+          "prepared_rows": 14022,
+          "raw_rows": 14022
+        },
+        {
+          "2024_rows_materialized": 0,
+          "decision_rows": 16,
+          "first_raw": "2021-07-09 11:00:00+00:00",
+          "last_raw": "2023-12-31 23:00:00+00:00",
+          "pair": "NEAR-USDT",
+          "prepared_rows": 21733,
+          "raw_rows": 21733
+        },
+        {
+          "2024_rows_materialized": 0,
+          "decision_rows": 17,
+          "first_raw": "2022-05-31 18:00:00+00:00",
+          "last_raw": "2023-12-31 23:00:00+00:00",
+          "pair": "OP-USDT",
+          "prepared_rows": 13902,
+          "raw_rows": 13902
+        },
+        {
+          "2024_rows_materialized": 0,
+          "decision_rows": 38,
+          "first_raw": "2021-05-10 08:00:00+00:00",
+          "last_raw": "2023-12-31 23:00:00+00:00",
+          "pair": "SHIB-USDT",
+          "prepared_rows": 23176,
+          "raw_rows": 23176
+        },
+        {
+          "2024_rows_materialized": 0,
+          "decision_rows": 480,
+          "first_raw": "2021-08-04 11:00:00+00:00",
+          "last_raw": "2023-12-31 23:00:00+00:00",
+          "pair": "SOL-USDT",
+          "prepared_rows": 21109,
+          "raw_rows": 21109
+        },
+        {
+          "2024_rows_materialized": 0,
+          "decision_rows": 125,
+          "first_raw": "2021-03-24 09:00:00+00:00",
+          "last_raw": "2023-12-31 23:00:00+00:00",
+          "pair": "XMR-USDT",
+          "prepared_rows": 24303,
+          "raw_rows": 24303
+        },
+        {
+          "2024_rows_materialized": 0,
+          "decision_rows": 283,
+          "first_raw": "2019-01-01 01:00:00+00:00",
+          "last_raw": "2023-12-31 23:00:00+00:00",
+          "pair": "XRP-USDT",
+          "prepared_rows": 43823,
+          "raw_rows": 43823
+        }
+      ],
+      "state_cache_entries": 6947,
+      "status": "PASS",
+      "target_rows": 2593,
+      "target_trade_count": 340
+    },
+    "exactness": "EXACT_TWO_SIDED_CURRENT_DYNAMIC_TOP6_STATE_ACTION_VALUE_WITH_FROZEN_BINARY_VOL_CONTEXT",
+    "formula": "(hold_then_pi0_net_cash-exit_now_net_cash)/current_position_notional",
+    "rows": 2593
+  },
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_EXACT_ONE_STEP_CONTINUATION_VALUE_MEGA_V1",
+  "tenure": {
+    "status": "DEFER_NO_TARGET"
+  },
+  "threshold_search": false
+}

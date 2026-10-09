@@ -1,0 +1,34 @@
+{
+  "actual_exit_authority": false,
+  "decision": "IMPLEMENT_SELECTED_TRIGGER_V2_SHADOW_ONLY",
+  "economic_test_authorized": false,
+  "execution_sha256": "1562FEFAF3DF9ECF5D01550CA4DB011D54BABDA8F8DCB7E5AAC2AFA10999EB09",
+  "memory_predicate_changed": false,
+  "protocol_sha256": "0CD441CA95BD3393BB19DC3B8867856D082E9579E6442441BE9B2FE9331CB252",
+  "selected_formula": "after first memory, first strictly-later completed 4H close < the prior_structural_high that the first memory bar broke",
+  "selected_trigger_v2": "FAILED_BREAKOUT_REFERENCE",
+  "selection_rule_applied": {
+    "if_no_survivor": "CAUSAL_EXIT_BRAIN_LATER_TRIGGER_SELECTIVITY_REDESIGN_PROTOCOL_V2",
+    "if_survivor": "CAUSAL_EXIT_BRAIN_LATER_TRIGGER_V2_IMPLEMENTATION_V1",
+    "priority_is_frozen_before_results": true,
+    "priority_order": [
+      "FAILED_BREAKOUT_REFERENCE",
+      "MEMORY_BAR_LOW_BREAK",
+      "FIRST_LOWER_HIGH_THEN_BREAK",
+      "ENTRY_PRICE_FAILURE"
+    ],
+    "reason": "Only exact boundary behavior is adjudicated: zero means inert and equality with the memory denominator means no lifecycle-level filtering. No arbitrary percentage threshold is introduced.",
+    "survivor_definition": "0 < candidate_lifecycles < memory_lifecycles",
+    "winner_rule": "select the first survivor in frozen semantic priority order; do not rank or choose by lowest incidence"
+  },
+  "status": "PASS",
+  "survivors_in_frozen_priority_order": [
+    "FAILED_BREAKOUT_REFERENCE",
+    "MEMORY_BAR_LOW_BREAK",
+    "FIRST_LOWER_HIGH_THEN_BREAK",
+    "ENTRY_PRICE_FAILURE"
+  ],
+  "task_id": "CAUSAL_EXIT_BRAIN_LATER_TRIGGER_SELECTIVITY_REDESIGN_ADJUDICATION_V1",
+  "trigger_v1_source_changed": false,
+  "why_selection_is_not_incidence_optimization": "Eligibility was exact-boundary only (nonzero and non-universal) and winner order was frozen semantically before execution; candidate incidence was not used to rank survivors."
+}

@@ -1,0 +1,35 @@
+{
+  "schema_version": "abc-lifecycle-trace-causality-audit-v1",
+  "status": "PASS",
+  "control_lifecycle_count": 2020,
+  "trace_lifecycle_count": 2020,
+  "decision_grid_row_count": 14059,
+  "event_row_count": 5550,
+  "lifecycles_with_zero_eligible_4h_decisions": 238,
+  "zero_duration_lifecycle_count": 30,
+  "zero_duration_semantics": "ENTRY and NATIVE_EXIT may share one timestamp; zero eligible 4H decisions, no Memory event, no C/A/B signal, bookkeeping exit state UNCONFIRMED",
+  "signal_expected": {
+    "C": 74,
+    "A": 135,
+    "B": 31
+  },
+  "signal_observed": {
+    "C": 74,
+    "A": 135,
+    "B": 31
+  },
+  "signal_alignment_pass": true,
+  "INV_C_PRE_MEMORY_failures": 0,
+  "INV_B_POST_MEMORY_failures": 0,
+  "INV_EARLY_PROGRESS_SINGLE_MARKER_failures": 0,
+  "memory_latch_monotonic_pass": true,
+  "base_state_order_monotonic_pass": true,
+  "partial_entry_bar_excluded_pass": true,
+  "native_market_state_context_missing_count": 0,
+  "economic_columns_read": [],
+  "candidate_replay_executed": false,
+  "portfolio_replay_executed": false,
+  "occupancy_hours_definition": "decision_grid_occupancy_hours = eligible completed 4H decision rows * 4; not continuous wall-clock state duration",
+  "2024_accessed": false,
+  "2025_accessed": false
+}

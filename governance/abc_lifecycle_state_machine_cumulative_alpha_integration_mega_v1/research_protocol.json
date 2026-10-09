@@ -1,0 +1,174 @@
+{
+  "2024": false,
+  "2025": false,
+  "general_slot_bypass": false,
+  "governor_authoritative": true,
+  "h0_authoritative": true,
+  "hypotheses_registered": 64,
+  "model_refit": false,
+  "parameter_search": false,
+  "production": false,
+  "project_north_star": "AKAH is not bounded by F10 or by the historical 11.23x clairvoyant diagnostic. The project now integrates cumulative causal evidence across the governance history: keep H0 and the risk governor as protection; reduce avoidable execution friction; allocate more capital selectively to strong opportunities; renew ownership of persistent winners through pyramiding/reacquisition rather than blind holding; use replacement only when a candidate is strong, an incumbent is weak, and the frozen replacement model is positive; and test narrowly-gated escape routes for large trends missed by the F10 gate. 2024 remains permanently sealed.",
+  "push": false,
+  "runtime_promotion": false,
+  "schema_version": "akah-rev767-cumulative-alpha-integration-protocol-v1",
+  "source_revision": 767,
+  "variants": [
+    {
+      "cost_multiplier": 2.0,
+      "flags": {},
+      "variant": "I00_F10_BASELINE_2X"
+    },
+    {
+      "cost_multiplier": 1.0,
+      "flags": {},
+      "variant": "I01_F10_BASELINE_1X"
+    },
+    {
+      "cost_multiplier": 2.0,
+      "flags": {
+        "upsize": true
+      },
+      "variant": "I02_UPSIZE_ONLY_2X"
+    },
+    {
+      "cost_multiplier": 1.0,
+      "flags": {
+        "upsize": true
+      },
+      "variant": "I03_UPSIZE_ONLY_1X"
+    },
+    {
+      "cost_multiplier": 2.0,
+      "flags": {
+        "pyramid": true
+      },
+      "variant": "I04_PYRAMID_RENEW_2X"
+    },
+    {
+      "cost_multiplier": 1.0,
+      "flags": {
+        "pyramid": true
+      },
+      "variant": "I05_PYRAMID_RENEW_1X"
+    },
+    {
+      "cost_multiplier": 2.0,
+      "flags": {
+        "reacquire": true
+      },
+      "variant": "I06_REACQUIRE_WINNER_2X"
+    },
+    {
+      "cost_multiplier": 1.0,
+      "flags": {
+        "reacquire": true
+      },
+      "variant": "I07_REACQUIRE_WINNER_1X"
+    },
+    {
+      "cost_multiplier": 2.0,
+      "flags": {
+        "replace": true
+      },
+      "variant": "I08_REPLACE_STRONG_WEAK_2X"
+    },
+    {
+      "cost_multiplier": 1.0,
+      "flags": {
+        "replace": true
+      },
+      "variant": "I09_REPLACE_STRONG_WEAK_1X"
+    },
+    {
+      "cost_multiplier": 2.0,
+      "flags": {
+        "pyramid": true,
+        "upsize": true
+      },
+      "variant": "I10_UPSIZE_PYRAMID_2X"
+    },
+    {
+      "cost_multiplier": 1.0,
+      "flags": {
+        "pyramid": true,
+        "upsize": true
+      },
+      "variant": "I11_UPSIZE_PYRAMID_1X"
+    },
+    {
+      "cost_multiplier": 2.0,
+      "flags": {
+        "pyramid": true,
+        "reacquire": true,
+        "upsize": true
+      },
+      "variant": "I12_UPSIZE_PYRAMID_REACQ_2X"
+    },
+    {
+      "cost_multiplier": 1.0,
+      "flags": {
+        "pyramid": true,
+        "reacquire": true,
+        "upsize": true
+      },
+      "variant": "I13_UPSIZE_PYRAMID_REACQ_1X"
+    },
+    {
+      "cost_multiplier": 2.0,
+      "flags": {
+        "pyramid": true,
+        "reacquire": true,
+        "replace": true,
+        "upsize": true
+      },
+      "variant": "I14_FULL_ROUTER_2X"
+    },
+    {
+      "cost_multiplier": 1.0,
+      "flags": {
+        "pyramid": true,
+        "reacquire": true,
+        "replace": true,
+        "upsize": true
+      },
+      "variant": "I15_FULL_ROUTER_1X"
+    },
+    {
+      "cost_multiplier": 2.0,
+      "flags": {
+        "escape": true
+      },
+      "variant": "I16_GATE_ESCAPE_TOP1_ONLY_2X"
+    },
+    {
+      "cost_multiplier": 1.0,
+      "flags": {
+        "escape": true
+      },
+      "variant": "I17_GATE_ESCAPE_TOP1_ONLY_1X"
+    },
+    {
+      "cost_multiplier": 2.0,
+      "flags": {
+        "escape": true,
+        "pyramid": true,
+        "reacquire": true,
+        "replace": true,
+        "upsize": true
+      },
+      "variant": "I18_FULL_ROUTER_ESCAPE_TOP1_2X"
+    },
+    {
+      "cost_multiplier": 1.0,
+      "flags": {
+        "escape": true,
+        "pyramid": true,
+        "reacquire": true,
+        "replace": true,
+        "upsize": true
+      },
+      "variant": "I19_FULL_ROUTER_ESCAPE_TOP1_1X"
+    }
+  ]
+}

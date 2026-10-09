@@ -1,0 +1,8 @@
+variant,description,hours,candidate_events,hours_with_candidates,funded_entries,normal_entries,oracle_replacements,oracle_prunes,replacement_from_max_positions,replacement_from_capacity_block,replacement_from_underallocation,position_hours,max_positions_hours,gross_cap_forced_exits
+C00_F10_ACTUAL,Exact F10 incumbent; no oracle action,35064,289108,29224,4358,4358,0,0,0,0,0,395719,12615,575
+C00_F10_ACTUAL,Exact F10 incumbent; no oracle action,35064,289108,29224,4363,4363,0,0,0,0,0,395772,12617,577
+C01_BLOCKED_REPLACEMENT_ORACLE,F10 order/gate; oracle one-for-one replacement only when candidate would otherwise be unfunded,35064,289108,29224,13942,3065,10877,0,10844,33,0,398648,13862,472
+C02_NEGATIVE_CONTINUATION_RELEASE_ORACLE,F10 order/gate; oracle early release of incumbents whose future H0 continuation is worse than selling now,35064,289108,29224,46438,46438,0,46104,0,0,0,213137,2016,299
+C03_FULL_REALLOCATION_ORACLE,F10 order/gate; oracle negative-continuation release plus capital reallocation to candidates when locally superior,35064,289108,29224,52558,13713,38845,13405,4222,136,83,224614,4584,288
+C04_SAME_GATE_ORACLE_RANK_REALLOC,Same F10 gate; oracle candidate ordering plus full oracle reallocation,35064,289108,29224,49178,14271,34907,13956,2706,27,51,224566,4588,300
+C05_ALL_ADMISSION_ORACLE_RANK_REALLOC,All opportunities; oracle candidate ordering plus full oracle reallocation under canonical liquidity/governor,35064,354210,32255,59582,15803,43779,15450,3456,49,61,254396,5700,333

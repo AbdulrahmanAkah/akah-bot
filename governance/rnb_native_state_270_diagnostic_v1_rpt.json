@@ -1,0 +1,58 @@
+{
+  "authority_bindings": {
+    "fast_capture_sha256": "F0B07504AAF9C65A8B8B1FA5FC031828F04714FE1D963346F1A6F211D47D1D6F",
+    "fast_decision_sha256": "203B99943C2F4F769CE907CF9E0E1AA2C6434FDA3D106DEE6CA20B2570392D74",
+    "fast_missing_sha256": "292432B93D848F366DFB4E18F4A899D5D91F96E6ED70FED7759895A1118B86FA",
+    "fast_source_binding_sha256": "B1F9FF752CF1F6A428CFA811C15E48BED8F30B1B43D8D3DCF6E83599E231FBC8"
+  },
+  "branch": "research/rd48-cross-venue-price-level-basis-direct-utility-v1",
+  "evidence": [
+    {
+      "path": "governance/rnb_native_state_270_diagnostic_v1/fast_source_binding.json",
+      "sha256": "B1F9FF752CF1F6A428CFA811C15E48BED8F30B1B43D8D3DCF6E83599E231FBC8"
+    },
+    {
+      "path": "governance/rnb_native_state_270_diagnostic_v1/fast_print_hook_capture.json",
+      "sha256": "F0B07504AAF9C65A8B8B1FA5FC031828F04714FE1D963346F1A6F211D47D1D6F"
+    },
+    {
+      "path": "governance/rnb_native_state_270_diagnostic_v1/fast_missing_270.json",
+      "sha256": "292432B93D848F366DFB4E18F4A899D5D91F96E6ED70FED7759895A1118B86FA"
+    },
+    {
+      "path": "governance/rnb_native_state_270_diagnostic_v1/fast_decision.json",
+      "sha256": "203B99943C2F4F769CE907CF9E0E1AA2C6434FDA3D106DEE6CA20B2570392D74"
+    },
+    {
+      "path": "governance/rnb_native_state_270_fast_recovery_v1.json",
+      "sha256": "836D7BA88E51D8A34A664A1A4EA91FA95C8F76A66FF2E67BC44F8C68A21032CB"
+    }
+  ],
+  "firewall": {
+    "canonical_signal_mutation": false,
+    "cohort_freeze": false,
+    "drop_signals": false,
+    "economic_analysis": false,
+    "native_replay_executed": false,
+    "network": false,
+    "push": false,
+    "rebuild_1h": false
+  },
+  "governed_schema_version": "akah-provenance-phase-governed-v1",
+  "next_bottleneck": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_NATIVE_STATE_SIGNAL_COVERAGE_EXACT_RESIDUAL_V1",
+  "north_star_effect": "Prevents freezing a biased reconstructed cohort until every native-state coverage miss is causally classified.",
+  "objective": "Diagnose the reproducible 270/3294 native-state signal coverage misses exactly before freezing the reconstructed cohort, using the native runner's own runtime state and no post-hoc row dropping.",
+  "resolution_class": "NATIVE_STATE_MISSING_270_RUNTIME_PAYLOAD_CAPTURED",
+  "state_updates": {
+    "cohort_frozen": false,
+    "native_state_expected_missing_count": 270,
+    "native_state_recovered_missing_count": 270,
+    "roadmap_position": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_NATIVE_STATE_SIGNAL_COVERAGE_EXACT_RESIDUAL_V1",
+    "signals_dropped": 0
+  },
+  "status": "PASS",
+  "summary": "Fast print-hook recovery completed; expected native-state misses=270, recovered=270. No signal dropped; cohort not frozen.",
+  "task_id": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_RECONSTRUCTED_COHORT_FREEZE_V1",
+  "task_start_head": "12e781f8e52dd07e4b28a5352ccb95fa61833ec3",
+  "task_start_revision": 225
+}

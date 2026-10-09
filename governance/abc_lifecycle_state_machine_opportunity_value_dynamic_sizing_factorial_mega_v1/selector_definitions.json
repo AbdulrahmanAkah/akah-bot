@@ -1,0 +1,21 @@
+{
+  "schema_version": "akah-dynamic-sizing-selectors-v1",
+  "selection_is_frozen": true,
+  "selectors": [
+    {
+      "description": "2*Trend rank + ADX/DMI quality rank",
+      "id": "SEL_F10_ADX",
+      "source_ranker": "F10_RANK_2T_ADX"
+    },
+    {
+      "description": "2*Trend rank + ADX/DMI + tail rank",
+      "id": "SEL_F16_ADX_TAIL",
+      "source_ranker": "F16_RANK_2T_ADX_TAIL"
+    },
+    {
+      "description": "Trend MU - 0.50*downside + 0.50*market MU",
+      "id": "SEL_F07_D50_MARKET50",
+      "source_ranker": "F07_TREND_D50_MARKET50"
+    }
+  ]
+}

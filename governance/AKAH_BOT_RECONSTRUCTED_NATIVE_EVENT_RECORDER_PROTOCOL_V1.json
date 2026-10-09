@@ -1,0 +1,62 @@
+{
+  "authority_id": "AKAH_BOT_RECONSTRUCTED_NATIVE_EVENT_RECORDER_PROTOCOL_V1",
+  "event_types": [
+    "ENTRY",
+    "FIRST_MEMORY",
+    "FIRST_V2",
+    "NATIVE_TERMINAL",
+    "ADMINISTRATIVE_END",
+    "COVERAGE_LOSS"
+  ],
+  "forbidden_analysis_payload": [
+    "exit_price",
+    "exit_reason",
+    "gross_pnl",
+    "net_pnl",
+    "return_fraction",
+    "mfe",
+    "mae"
+  ],
+  "implementation_authorized": false,
+  "mandatory_tests": [
+    "RECORDER_OFF_VS_ON_NATIVE_OUTPUT_PARITY",
+    "ALL_NATIVE_CLOSE_PATHS",
+    "MEMORY_THEN_V2",
+    "V2_AFTER_NATIVE_CLOSE_MUST_NOT_ENTER_PRIMARY_LIFETIME",
+    "SAME_TIMESTAMP_ORDERING",
+    "IDENTITY_RESET_AND_LIFECYCLE_ISOLATION",
+    "POLICY_CLOSE_VS_ADMINISTRATIVE_END",
+    "NO_RECORDER_TO_EXIT_DECISION_INFORMATION_FLOW"
+  ],
+  "memory_event_fields": [
+    "frozen_reference_identity",
+    "frozen_reference_time"
+  ],
+  "native_behavior_mutation_authorized": false,
+  "purpose": "Create a runtime-native causal event ledger for reconstructed baseline lifecycles without granting any recorder output authority over ExitDecision.",
+  "required_fields": [
+    "run_id",
+    "lifecycle_id",
+    "event_type",
+    "event_time",
+    "information_available_time",
+    "runtime_sequence_index",
+    "source_identity",
+    "config_identity",
+    "input_identity"
+  ],
+  "status": "FROZEN_PROTOCOL_ONLY_NOT_IMPLEMENTED",
+  "terminal_law": [
+    "NATIVE_TERMINAL_IS_A_COMPETING_TERMINAL_EVENT",
+    "ADMINISTRATIVE_END_IS_NOT_NATIVE_TERMINAL",
+    "COVERAGE_LOSS_IS_DISTINCT_FROM_ADMINISTRATIVE_END",
+    "NO_POST_NATIVE_CLOSE_DATA_IN_PRIMARY_DENOMINATOR"
+  ],
+  "timing_law": [
+    "BAR_TIMESTAMP_IS_NOT_AUTOMATICALLY_INFORMATION_AVAILABLE_TIME",
+    "COMPLETED_BAR_LOW_OR_CLOSE_BECOMES_AVAILABLE_ONLY_WHEN_THE_RUNTIME_CAN_OBSERVE_IT",
+    "NO_WITHIN_BAR_ORDER_INFERENCE_FROM_OHLC_ALONE",
+    "SAME_TIMESTAMP_V2_VS_NATIVE_TERMINAL_USES_RUNTIME_SEQUENCE_IF_PROVABLE",
+    "UNPROVABLE_SAME_TIME_ORDER_IS_RECORDED_UNRESOLVED"
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "control": "data/research/abc_exit_primitives_2019_2023_v1/control-trades.csv",
+  "control_identity_rows": 2020,
+  "duplicate_primary_keys": 0,
+  "economic_anchor": "governance/abc_lifecycle_state_machine_exact_one_step_continuation_value_mega_v1/exact_two_sided_continuation_ledger.csv",
+  "feature_anchor": "governance/abc_lifecycle_state_machine_persistent_state_causal_feature_reconstruction_execution_v1/decision_grid_reconstructed_features.csv",
+  "feature_rows": 14059,
+  "formula_max_abs_error": 0.0,
+  "invalid_rows": 0,
+  "ledger_path": "governance/abc_lifecycle_state_machine_independent_decision_ledger_pi0_native_action_full_pipeline_mega_v1/independent_decision_ledger.csv.gz",
+  "ledger_sha256": "4D731BC300DA520A01175C76B437293BB4BCCBEE19CF386F953B427F99234F75",
+  "legal_4h_step_violations": 0,
+  "missing_feature_keys": 0,
+  "pi0_native_action_authority": {
+    "after_exit_contradiction_count": 0,
+    "control_audit": {
+      "bad_exit_time": 0,
+      "duplicates": 0,
+      "exit_reason_counts": {
+        "ADAPTIVE_PROTECTION_GAP": 152,
+        "ADAPTIVE_PROTECTION_TOUCH": 1485,
+        "ADAPTIVE_STAGNATION_24H_CLOSE_NOT_ABOVE_ENTRY": 108,
+        "ADAPTIVE_STAGNATION_48H_CLOSE_NOT_ABOVE_ENTRY": 230,
+        "ADAPTIVE_STAGNATION_72H_CLOSE_NOT_ABOVE_ENTRY": 39,
+        "MAX_HOLD_168H": 6
+      },
+      "policies": [
+        "FULL_ADAPTIVE_LIFECYCLE_BRAIN"
+      ],
+      "rows": 2020,
+      "status": "PASS"
+    },
+    "coverage": 1.0,
+    "examples": {
+      "after": [],
+      "equal": [],
+      "missing": []
+    },
+    "exit_count": 0,
+    "hold_count": 2593,
+    "lifecycle_count": 340,
+    "method": "NATIVE_IMMEDIATE_EXIT_CONTRACT_PLUS_CONTROL_EXIT_TRACE",
+    "missing_count": 0,
+    "multi_exit_lifecycle_count": 0,
+    "row_count": 2593,
+    "runtime_firewall": "native_exit_time is target/authority reconstruction evidence only and is not exported as a runtime model feature",
+    "semantic_rule": {
+      "EXIT": "decision_time == native_exit_time",
+      "HOLD": "decision_time < native_exit_time",
+      "basis": "tracked native replay source proves immediate close at the same hourly timestamp when decision.should_exit is true",
+      "contradiction": "decision_time > native_exit_time"
+    },
+    "source_contract": {
+      "all_source_evidence": [
+        {
+          "all_required": true,
+          "checks": {
+            "decision_should_exit": true,
+            "evaluate_adaptive_exit": true,
+            "full_adaptive_policy": true,
+            "native_priority": true,
+            "same_timestamp_close": true,
+            "survivor_update": true
+          },
+          "path": "src/spotbot/research/rd27_lifecycle_replay.py",
+          "sha256": "E3944A4655DDDF21C394FE1DB541F2645F529C00BD8390B22D652BD8EF5BBF83"
+        },
+        {
+          "all_required": true,
+          "checks": {
+            "decision_should_exit": true,
+            "evaluate_adaptive_exit": true,
+            "full_adaptive_policy": true,
+            "native_priority": true,
+            "same_timestamp_close": true,
+            "survivor_update": true
+          },
+          "path": "src/spotbot/research/abc_exit_primitives_v1.py",
+          "sha256": "EE6C74F098ABDA63213E40CB6D0CC57F6BA012D35F90475361F7A25B94621284"
+        }
+      ],
+      "contract": "FOR_EACH_OPEN_POSITION_AT_EACH_HOURLY_TIMESTAMP_EVALUATE_NATIVE_POLICY;_IF_SHOULD_EXIT_CLOSE_AT_SAME_TIMESTAMP;OTHERWISE_SURVIVE_AND_UPDATE_STATE",
+      "selected_source": {
+        "all_required": true,
+        "checks": {
+          "decision_should_exit": true,
+          "evaluate_adaptive_exit": true,
+          "full_adaptive_policy": true,
+          "native_priority": true,
+          "same_timestamp_close": true,
+          "survivor_update": true
+        },
+        "path": "src/spotbot/research/rd27_lifecycle_replay.py",
+        "sha256": "E3944A4655DDDF21C394FE1DB541F2645F529C00BD8390B22D652BD8EF5BBF83"
+      },
+      "status": "PASS"
+    },
+    "status": "PASS"
+  },
+  "rows": 2593,
+  "schema_version": "akah-independent-decision-ledger-pi0-native-action-certificate-v1",
+  "status": "PASS",
+  "valid_rows": 2593
+}

@@ -1,0 +1,14 @@
+{
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_SOURCE_AUTHORITY_TARGETED_RECOVERY_V1",
+  "status": "TECHNICAL_OR_AUTHORITY_FAILURE_FAIL_CLOSED_NO_SCIENTIFIC_CONCLUSION",
+  "error_type": "RuntimeError",
+  "error": "GOVERNANCE_SNAPSHOT_RECENT_EXECUTION_HISTORY_MISSING",
+  "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\abdul\\AppData\\Local\\Temp\\akah_prior_trace_authority_recovery_1dda90ef38d34b60b29cca0500096d36\\recovery.py\", line 479, in main\n    governance = reconcile_governance_authority()\n  File \"C:\\Users\\abdul\\AppData\\Local\\Temp\\akah_prior_trace_authority_recovery_1dda90ef38d34b60b29cca0500096d36\\recovery.py\", line 274, in reconcile_governance_authority\n    trace_event = find_history_event(snapshot, TRACE_TASK)\n  File \"C:\\Users\\abdul\\AppData\\Local\\Temp\\akah_prior_trace_authority_recovery_1dda90ef38d34b60b29cca0500096d36\\recovery.py\", line 251, in find_history_event\n    die(\"GOVERNANCE_SNAPSHOT_RECENT_EXECUTION_HISTORY_MISSING\")\n    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\abdul\\AppData\\Local\\Temp\\akah_prior_trace_authority_recovery_1dda90ef38d34b60b29cca0500096d36\\recovery.py\", line 74, in die\n    raise RuntimeError(msg)\nRuntimeError: GOVERNANCE_SNAPSHOT_RECENT_EXECUTION_HISTORY_MISSING\n",
+  "market_data_rows_accessed": false,
+  "market_data_values_accessed": false,
+  "economic_outcomes_read": false,
+  "pnl_columns_read": false,
+  "reconstruction_implemented": false,
+  "2024_accessed": false,
+  "2025_accessed": false
+}

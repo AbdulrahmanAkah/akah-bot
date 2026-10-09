@@ -1,0 +1,592 @@
+{
+  "inputs": [
+    {
+      "bytes": 14,
+      "path": "src/spotbot/research/multi_school_fidelity/integration_v12/.gitattributes",
+      "sha256": "A79691A93B46E49CE460C26EF22AFCC03D6ECA1E63BF2EDBC20E96159510F6C9"
+    },
+    {
+      "bytes": 81,
+      "path": "src/spotbot/research/multi_school_fidelity/integration_v12/__init__.py",
+      "sha256": "E9DDA7E1EFF2E2EBD736D881520C590D2BC1E0F0393DF6C1D1AB323B982AC7CA"
+    },
+    {
+      "bytes": 563,
+      "path": "src/spotbot/research/multi_school_fidelity/integration_v12/pipeline.py",
+      "sha256": "77590DAD2209AD73F62D74B3E6194ECB0AB7C339243FF23D32CEBF1EE471EAC3"
+    },
+    {
+      "bytes": 4161,
+      "path": "src/spotbot/research/multi_school_fidelity/integration_v12/producers.py",
+      "sha256": "3D5A0A1F334D247CEED54FDD028B2DF39BE745BF2FF26B1E82282087B7E3A1E2"
+    },
+    {
+      "bytes": 14,
+      "path": "tests/research/integration_v12/.gitattributes",
+      "sha256": "A79691A93B46E49CE460C26EF22AFCC03D6ECA1E63BF2EDBC20E96159510F6C9"
+    },
+    {
+      "bytes": 14469,
+      "path": "tests/research/integration_v12/test_lineage.py",
+      "sha256": "3228AA632CD601A24746910FA66EFE71FBCBA26DF88D7CF2145581A20C6CBDD5"
+    },
+    {
+      "bytes": 14,
+      "path": "scripts/research/integration_v12/.gitattributes",
+      "sha256": "A79691A93B46E49CE460C26EF22AFCC03D6ECA1E63BF2EDBC20E96159510F6C9"
+    },
+    {
+      "bytes": 11358,
+      "path": "scripts/research/integration_v12/certify.py",
+      "sha256": "4D28D2E7664A7C4AEA266D6211F683DF4E0268024C483AE2D49E6C5FEDEB7664"
+    },
+    {
+      "bytes": 3006,
+      "path": "scripts/research/integration_v12/closeout.py",
+      "sha256": "E366CF7EBEBA69F8F6613E8895802A511974FD2B1AF815A07FC02109F7E8C393"
+    },
+    {
+      "bytes": 4032,
+      "path": "scripts/research/integration_v12/export_verify.py",
+      "sha256": "0F0D9E5D7835E20316F08D551775FFE108AE426087AFBDAEF2A8C746EDE1ECCD"
+    },
+    {
+      "bytes": 515,
+      "path": "scripts/research/integration_v12/isolated_tests.py",
+      "sha256": "E3CAE06F306DD6F50B15D4115B76E6CE12A9B587218E313E12D326927B0F3492"
+    },
+    {
+      "bytes": 4532,
+      "path": "scripts/research/integration_v12/package_review.py",
+      "sha256": "5FB8919784BEF4E2B2CA46E87EB8E0B023A84CBAAF894619DA21F7226FDB8AC3"
+    },
+    {
+      "bytes": 1531,
+      "path": "governance/causal_lineage_closure_v12/research_protocol.json",
+      "sha256": "8DF6A45028E5BF117CE6B6D205D3961D1D01DBEFA0EC6C32BBC789B79FFF05AC"
+    },
+    {
+      "bytes": 3483,
+      "path": "governance/causal_lineage_closure_v12/IMPLEMENTATION_CONTRACT.md",
+      "sha256": "EF9ADC4584EFA9DB7CA151B4A56FE207C0FEEACE99173D1DD3ACBD1F67A6CC42"
+    },
+    {
+      "bytes": 1930,
+      "path": "governance/causal_lineage_closure_v12/REVIEW_TASK.md",
+      "sha256": "414BA66F0D75139072FEBA5F864086DC9B0E9C5105D213F05EA8BE73F271A08E"
+    },
+    {
+      "bytes": 1071,
+      "path": "governance/causal_lineage_closure_v12/SUMMARY.md",
+      "sha256": "A4510D57AC3F1B98237406443E22666365E27099BF09882B9A2292C817DCD989"
+    },
+    {
+      "bytes": 55,
+      "path": "governance/causal_lineage_closure_v12/.gitattributes",
+      "sha256": "EBE2ED21B71DFE50860E29616A3EFDAD0F38C26B0C67057B99FFD61F87172117"
+    }
+  ],
+  "preserved_sources_and_authorities": [
+    {
+      "bytes": 14,
+      "path": "src/spotbot/research/multi_school_fidelity/integration_v11/.gitattributes",
+      "sha256": "A79691A93B46E49CE460C26EF22AFCC03D6ECA1E63BF2EDBC20E96159510F6C9"
+    },
+    {
+      "bytes": 77,
+      "path": "src/spotbot/research/multi_school_fidelity/integration_v11/__init__.py",
+      "sha256": "C54B3448AB9E845477126AA5F3D4CA77AF712EF5513BD6783B8422DC835994A1"
+    },
+    {
+      "bytes": 10260,
+      "path": "src/spotbot/research/multi_school_fidelity/integration_v11/contracts.py",
+      "sha256": "AC3A19DD0509E6D415E4F15FF0CC861AB327410D8C6C07AE1544C3A675213B74"
+    },
+    {
+      "bytes": 2602,
+      "path": "src/spotbot/research/multi_school_fidelity/integration_v11/execution.py",
+      "sha256": "FD368E8FE3F27A8C02D6F05F4F867B8E8D9BAD4909950960E77A907784BE5828"
+    },
+    {
+      "bytes": 4043,
+      "path": "src/spotbot/research/multi_school_fidelity/integration_v11/pipeline.py",
+      "sha256": "20661BEFF366261F7392E2434CC7157BC9953411876B64DF966B1917D3C7367D"
+    },
+    {
+      "bytes": 6840,
+      "path": "src/spotbot/research/multi_school_fidelity/integration_v11/producers.py",
+      "sha256": "7D1A8BC30737C367CEA609A9955E4EAE51672E49A49D84D0628D52DFC7506A62"
+    },
+    {
+      "bytes": 14,
+      "path": "tests/research/integration_v11/.gitattributes",
+      "sha256": "A79691A93B46E49CE460C26EF22AFCC03D6ECA1E63BF2EDBC20E96159510F6C9"
+    },
+    {
+      "bytes": 21010,
+      "path": "tests/research/integration_v11/test_integrity.py",
+      "sha256": "887EB4D6F5E995BD16C6C74F41981E75F60366C126E1756EAC36E20D02D36A58"
+    },
+    {
+      "bytes": 14,
+      "path": "scripts/research/integration_v11/.gitattributes",
+      "sha256": "A79691A93B46E49CE460C26EF22AFCC03D6ECA1E63BF2EDBC20E96159510F6C9"
+    },
+    {
+      "bytes": 11144,
+      "path": "scripts/research/integration_v11/certify.py",
+      "sha256": "733BF2834ADEB06D8C95215F75094AE24D504DDA2DE5A0A3F1AE96309EE71A43"
+    },
+    {
+      "bytes": 3013,
+      "path": "scripts/research/integration_v11/closeout.py",
+      "sha256": "AE614F23D70B163E67A8CD13F0989A6FD5A4627C74B35571AB1BF99F0540AB1F"
+    },
+    {
+      "bytes": 5686,
+      "path": "scripts/research/integration_v11/export_verify.py",
+      "sha256": "178DEEB86A3B2B0A8A5CADA5DC077D475787C6539257A0C0FADCE6D259EA081F"
+    },
+    {
+      "bytes": 3527,
+      "path": "scripts/research/integration_v11/isolated_tests.py",
+      "sha256": "063D8404F3F2C25F7AE84F1B749AB66B2010426CBADCFB76062E4452FDFC7299"
+    },
+    {
+      "bytes": 5343,
+      "path": "scripts/research/integration_v11/package_review.py",
+      "sha256": "F880777BAFBA121C9B1FE2C1047AAF1AA5F76C8CFFE2650C4A0835680625D789"
+    },
+    {
+      "bytes": 1253,
+      "path": "governance/source_integrity_closure_v11/research_protocol.json",
+      "sha256": "322CF4B72B89255451EFE85DC81C9B320C8A504EA6FE89D79F20CBD99D5129D4"
+    },
+    {
+      "bytes": 4399,
+      "path": "governance/source_integrity_closure_v11/IMPLEMENTATION_CONTRACT.md",
+      "sha256": "79CFA64D7EA4CB599747A99BA3F00CF8C505D0B58079821AF91744999C3E4F18"
+    },
+    {
+      "bytes": 1940,
+      "path": "governance/source_integrity_closure_v11/REVIEW_TASK.md",
+      "sha256": "8B991393D3309FAAFFDC9891D39DF3F8BD0923DE8BF44D5B8FD22015B4835440"
+    },
+    {
+      "bytes": 1623,
+      "path": "governance/source_integrity_closure_v11/SUMMARY.md",
+      "sha256": "513A4683A045D532DB4E1E4A6C89125D3512A1F3EB429E67CDD2BCEAA8EEEF24"
+    },
+    {
+      "bytes": 14,
+      "path": "governance/source_integrity_closure_v11/.gitattributes",
+      "sha256": "A79691A93B46E49CE460C26EF22AFCC03D6ECA1E63BF2EDBC20E96159510F6C9"
+    },
+    {
+      "bytes": 14,
+      "path": "src/spotbot/research/multi_school_fidelity/integration_v10/.gitattributes",
+      "sha256": "A79691A93B46E49CE460C26EF22AFCC03D6ECA1E63BF2EDBC20E96159510F6C9"
+    },
+    {
+      "bytes": 76,
+      "path": "src/spotbot/research/multi_school_fidelity/integration_v10/__init__.py",
+      "sha256": "1F6B816F89A3A1FAE8D924DC77CC1758BD11C72CDBA0D6CD5C4E988B9E9157DD"
+    },
+    {
+      "bytes": 1411,
+      "path": "src/spotbot/research/multi_school_fidelity/integration_v10/elliott_scope.py",
+      "sha256": "38C59776C5DA8DFE81624FC16C3D68CB50C0FDAFDDF466FD318FC0ABFC1AAFBB"
+    },
+    {
+      "bytes": 11860,
+      "path": "src/spotbot/research/multi_school_fidelity/integration_v10/execution.py",
+      "sha256": "1ED5BF96B284241FBB8916FE1E5DC79BE64AD3289F3EFA7063270EBC72470FCA"
+    },
+    {
+      "bytes": 18551,
+      "path": "src/spotbot/research/multi_school_fidelity/integration_v10/pipeline.py",
+      "sha256": "8F792B05810DF8F8CE473F486786C316E7FE87318A935273C0A0F31BFBFD584C"
+    },
+    {
+      "bytes": 19237,
+      "path": "src/spotbot/research/multi_school_fidelity/integration_v10/producers.py",
+      "sha256": "690D0455EEE394A6828CC4675C96D2C3454CC961924E4D494F65E3E1B0893CF7"
+    },
+    {
+      "bytes": 4721,
+      "path": "src/spotbot/research/multi_school_fidelity/integration_v10/stop_provenance.py",
+      "sha256": "05A339B97616734C7A25F3B14942A18005F5CF64B83FED7F822DDFB7B0AD5382"
+    },
+    {
+      "bytes": 14,
+      "path": "tests/research/integration_v10/.gitattributes",
+      "sha256": "A79691A93B46E49CE460C26EF22AFCC03D6ECA1E63BF2EDBC20E96159510F6C9"
+    },
+    {
+      "bytes": 25505,
+      "path": "tests/research/integration_v10/test_repairs.py",
+      "sha256": "47C97445B797438F41D36C39283A1F1F9FDE8D43D76760B52501406C385A6534"
+    },
+    {
+      "bytes": 14,
+      "path": "scripts/research/integration_v10/.gitattributes",
+      "sha256": "A79691A93B46E49CE460C26EF22AFCC03D6ECA1E63BF2EDBC20E96159510F6C9"
+    },
+    {
+      "bytes": 14656,
+      "path": "scripts/research/integration_v10/certify.py",
+      "sha256": "F232657CF7847A20796259646698B04AA7F15F79138FA183BAE72577ECCC55B2"
+    },
+    {
+      "bytes": 3248,
+      "path": "scripts/research/integration_v10/closeout.py",
+      "sha256": "3CF800CE70C0F8563762A6B5CCCF556810D8DC9D4CA13C53DB14EE180BE54358"
+    },
+    {
+      "bytes": 1426,
+      "path": "governance/four_source_repairs_v10/research_protocol.json",
+      "sha256": "D1ABD56D5E12BC08ACCE1E533EA9205A5263534B7AF180B9E5B6E49054892A71"
+    },
+    {
+      "bytes": 4562,
+      "path": "governance/four_source_repairs_v10/IMPLEMENTATION_CONTRACT.md",
+      "sha256": "69DC20797B7A5423535B118A21E596AC91075603C48D1EC4F1DC38F7E9EBFC59"
+    },
+    {
+      "bytes": 931,
+      "path": "governance/four_source_repairs_v10/SUMMARY.md",
+      "sha256": "4239E9BC0E4734917EDCE58DB504CBC5374F7C33B3E36D91B6A15C4BEA71053C"
+    },
+    {
+      "bytes": 14,
+      "path": "governance/four_source_repairs_v10/.gitattributes",
+      "sha256": "A79691A93B46E49CE460C26EF22AFCC03D6ECA1E63BF2EDBC20E96159510F6C9"
+    },
+    {
+      "bytes": 14,
+      "path": "src/spotbot/research/multi_school_fidelity/integration_v9/.gitattributes",
+      "sha256": "A79691A93B46E49CE460C26EF22AFCC03D6ECA1E63BF2EDBC20E96159510F6C9"
+    },
+    {
+      "bytes": 87,
+      "path": "src/spotbot/research/multi_school_fidelity/integration_v9/__init__.py",
+      "sha256": "1E4CAB98F5D28C09CC181998AB111C17A6261C44E4179784122AC0A31DC867B3"
+    },
+    {
+      "bytes": 11519,
+      "path": "src/spotbot/research/multi_school_fidelity/integration_v9/execution.py",
+      "sha256": "CA3B6B992198644C8F2A51C98F3713E37C7F47EFB19F5834B83976055376D5A7"
+    },
+    {
+      "bytes": 13653,
+      "path": "src/spotbot/research/multi_school_fidelity/integration_v9/pipeline.py",
+      "sha256": "643612349B0F47375A61DA3441F1308D97BB78EB9665680C63AF79A3BC4D410B"
+    },
+    {
+      "bytes": 14595,
+      "path": "src/spotbot/research/multi_school_fidelity/integration_v9/producers.py",
+      "sha256": "048FB1AA145A26E6BA6CFD926C489669C244B7EF77D14B11DCCABFB54949DDB1"
+    },
+    {
+      "bytes": 12437,
+      "path": "src/spotbot/research/multi_school_fidelity/integration_v9/sources.py",
+      "sha256": "9BED646D7060EDD620D93BE3E2A6B71FF66092D6DAC91A2348ED6E26FD9F8C75"
+    },
+    {
+      "bytes": 14,
+      "path": "tests/research/integration_v9/.gitattributes",
+      "sha256": "A79691A93B46E49CE460C26EF22AFCC03D6ECA1E63BF2EDBC20E96159510F6C9"
+    },
+    {
+      "bytes": 34114,
+      "path": "tests/research/integration_v9/test_producer_integration_v9.py",
+      "sha256": "9ED74665D7BC4B57E6B835789C0E7AC92FAC436BF892146D3FCD54906E239FDA"
+    },
+    {
+      "bytes": 14,
+      "path": "scripts/research/integration_v9/.gitattributes",
+      "sha256": "A79691A93B46E49CE460C26EF22AFCC03D6ECA1E63BF2EDBC20E96159510F6C9"
+    },
+    {
+      "bytes": 9378,
+      "path": "scripts/research/integration_v9/certify.py",
+      "sha256": "F388CFF54ADDC9A1FACF080C3A0FC8F0CC50854A1E69A87270B8E8E66F8E51F3"
+    },
+    {
+      "bytes": 3396,
+      "path": "scripts/research/integration_v9/closeout.py",
+      "sha256": "CD958623B5F7E0B0CD0B611B3B06024906170D996BF65EB9D03A64C8AF051D24"
+    },
+    {
+      "bytes": 14,
+      "path": "governance/producer_integration_bundle_v9/.gitattributes",
+      "sha256": "A79691A93B46E49CE460C26EF22AFCC03D6ECA1E63BF2EDBC20E96159510F6C9"
+    },
+    {
+      "bytes": 2035,
+      "path": "governance/producer_integration_bundle_v9/research_protocol.json",
+      "sha256": "B437F5C44B84FB83B054C1C796E14B25A6409150A614BBD1127C3EE0264718B8"
+    },
+    {
+      "bytes": 7769,
+      "path": "governance/producer_integration_bundle_v9/IMPLEMENTATION_CONTRACT.md",
+      "sha256": "F307F79C83D1AFA3AC619D514EF060CAADF825CD68FE1919CC01E7BA6AF30885"
+    },
+    {
+      "bytes": 848,
+      "path": "governance/producer_integration_bundle_v9/SUMMARY.md",
+      "sha256": "5A28D4B3A2F99A3A77204B0FD314855CF89ED9892154B0BD4B5892C9756512CA"
+    },
+    {
+      "blob": "bcf0349819e06b883130c1bbcc94ecedffdbe4d8",
+      "bytes": 87,
+      "path": "src/spotbot/research/multi_school_fidelity/__init__.py",
+      "sha256": "C0B64D21119AECD96CF8D3511EEB3AEECD66CEDCDEEC654001583CE2CB7260AB"
+    },
+    {
+      "blob": "2577e9a7a902c9994ef1fc218999526db1793140",
+      "bytes": 13296,
+      "path": "src/spotbot/research/multi_school_fidelity/akah_census_fastpath_v1.py",
+      "sha256": "12647B1F7533FB387B9F670E8B5A5EB9C50C3CF90964FE1DCB7DCBC908A451DD"
+    },
+    {
+      "blob": "1fbf6db0d51bbcd6a11dc6497cb39853a32ff6c1",
+      "bytes": 6542,
+      "path": "src/spotbot/research/multi_school_fidelity/akah_foundation_core_v1r1.py",
+      "sha256": "9976F95E0B10450347AA563FE90304763416CC5E7829BDD573F226ED32A64AA7"
+    },
+    {
+      "blob": "fe9d6fb9409cc28565d8e3552f271a63a63f698b",
+      "bytes": 75098,
+      "path": "src/spotbot/research/multi_school_fidelity/akah_full_fidelity_runtime_v1.py",
+      "sha256": "56AA01E1721A6929D639D8F18B3CD2FF7F81B168B24940CF35F2227C2AEEF6C8"
+    },
+    {
+      "blob": "7eb3eeebaec1d4086a87740b7776e49cbc0703f1",
+      "bytes": 11192,
+      "path": "src/spotbot/research/multi_school_fidelity/akah_native_management_adapters_v1.py",
+      "sha256": "307C4CF33D9520FD01695EB64F2229733E98D3F914A1FB2CCCA31DFFC19CBA1E"
+    },
+    {
+      "blob": "7b25fccd2a1ab5b88482e73abe5e93a7783974be",
+      "bytes": 36794,
+      "path": "src/spotbot/research/multi_school_fidelity/akah_native_replay_engine_v1.py",
+      "sha256": "EF59B7AA706B2272BBC99C678DC037C5C98675D4BEDCCA72735238F6EF14B33D"
+    },
+    {
+      "blob": "5cd96d2497d2647579e4d681473b1c22a1cb8842",
+      "bytes": 65014,
+      "path": "src/spotbot/research/multi_school_fidelity/akah_replay_ready_detectors_v1.py",
+      "sha256": "9FDDF1C0103914C60FE9EC2C3E6B369E8DF08451962F2FA3AC9869BE6454BE6B"
+    },
+    {
+      "blob": "c6b7548c5cf3d19232e615c4e0c9fc5820c4f00a",
+      "bytes": 7838,
+      "path": "src/spotbot/research/multi_school_fidelity/akah_thesis_engine_foundation_v1.py",
+      "sha256": "2002A58AADA03AA56E53B7DC86CCC02001B623B7008BCB4A5AC863CF6BF8DA98"
+    },
+    {
+      "blob": "f6895c709662e7e4a97b3876e9b79c501d1c6e4e",
+      "bytes": 6904,
+      "path": "src/spotbot/research/multi_school_fidelity/blind_review.py",
+      "sha256": "65E0A33619C54CCA2E2C1404BD22AC0571B79B48F24884CF9E110C17C6711653"
+    },
+    {
+      "blob": "a033c8468780e6d6277fc1d30c08b511090b5da0",
+      "bytes": 1785,
+      "path": "src/spotbot/research/multi_school_fidelity/bound_hybrid.py",
+      "sha256": "DCAC225BFFB77E188C30A5A4C305F2F6B370A45325D93BEF3CD7BFE49868454B"
+    },
+    {
+      "blob": "8d0964eabee1c1ae94f6417fb4cf4539821953d0",
+      "bytes": 15993,
+      "path": "src/spotbot/research/multi_school_fidelity/campaign_execution_v7.py",
+      "sha256": "18AA0A863C95C3E5CB21903CE2874A5BE74C92485BF59F0AA6BC134B0F10FC50"
+    },
+    {
+      "blob": "e0c4cde3008c31db6a85ba1023746fcff232e295",
+      "bytes": 12136,
+      "path": "src/spotbot/research/multi_school_fidelity/elliott_contract_v8.py",
+      "sha256": "1B5B8CCC8E2A863D62D53572B8B4D48A58465A0F1D98C7409A466978F1AD0674"
+    },
+    {
+      "blob": "f3e62c1d52aae3312dcd39879ddf7f6b7e4b9442",
+      "bytes": 14461,
+      "path": "src/spotbot/research/multi_school_fidelity/event_execution_bridge.py",
+      "sha256": "D11D77652C2F8C0599FDEC4079B2DDF4665C8AA6956EF9826F828B974EDD860F"
+    },
+    {
+      "blob": "105444a514cc56b83602407c2c30042eb7d9bf0c",
+      "bytes": 4829,
+      "path": "src/spotbot/research/multi_school_fidelity/evidence_selector.py",
+      "sha256": "6AF10F3BE578119B799F6EC085091F31E0BAE957AD8373AB4B7C2989519D65C3"
+    },
+    {
+      "blob": "ab9348fa855a56205032d02e25b6d65c4ced2245",
+      "bytes": 9653,
+      "path": "src/spotbot/research/multi_school_fidelity/fidelity_pipeline.py",
+      "sha256": "92623F62F423F21F738D4BE067BA6DDBDF78761ED49E75E0129AC14B46B0A19B"
+    },
+    {
+      "blob": "8d39757c45d33132419b2022f341a5180ba16a9d",
+      "bytes": 49270,
+      "path": "src/spotbot/research/multi_school_fidelity/full_replay_v4.py",
+      "sha256": "9EA2BEA774B0CB2C519EB1F0FF6A9B24D420ACD2FC8DFCC6B495389CF36A9A28"
+    },
+    {
+      "blob": "3efe6966c5b0ac37dad14ef5dc42ed02480e4508",
+      "bytes": 41689,
+      "path": "src/spotbot/research/multi_school_fidelity/full_replay_v5.py",
+      "sha256": "BE91ABF0F6631A02BB5C818E6C660BFF2D957069FDFF7D1C583CDFA24C06FCBE"
+    },
+    {
+      "blob": "6abfe01fc14ca7746e59c3c8df4cc56b86807278",
+      "bytes": 20893,
+      "path": "src/spotbot/research/multi_school_fidelity/gate3_market_v3.py",
+      "sha256": "A8F2632F43889D644535C34BE1A74270F6584182DA0CFC5AA802B9F44D5DF7CE"
+    },
+    {
+      "blob": "d31d568d4ee2b5507f5aa31c899e423b5803ceab",
+      "bytes": 6340,
+      "path": "src/spotbot/research/multi_school_fidelity/gate3_precommit.py",
+      "sha256": "6F700B8FD486FF80C8474CAE0DA099BAB72CC4D36FE24DC1D7581AA0081645C5"
+    },
+    {
+      "blob": "6b9d03742f278427616dfc4afd84d402297a5b8a",
+      "bytes": 12487,
+      "path": "src/spotbot/research/multi_school_fidelity/harmonic_contract_v8.py",
+      "sha256": "1B8BAE2F5FCB632384FB604A8252289C707FDF9F9E176C0DB93B7EA36E9BE64C"
+    },
+    {
+      "blob": "9867e3533cb766bbd42d0e694de8ce3c572bc8d8",
+      "bytes": 11947,
+      "path": "src/spotbot/research/multi_school_fidelity/ict_h2_contract_v8.py",
+      "sha256": "023FCA77A3986EEF52CCC9C664D99926430A24F587B6F233E73DD0AF8890D6F4"
+    },
+    {
+      "blob": "23d6e2de40dd2e2348b35e1c6ff10f6b08b1ec62",
+      "bytes": 13073,
+      "path": "src/spotbot/research/multi_school_fidelity/lifecycle_execution_v6.py",
+      "sha256": "ACDA1053D0D8A3BA4242487455E719ED58AA564DAE01D2673D34EB214136754A"
+    },
+    {
+      "blob": "17c74ac0865470652d3a009f65e309f84df6402f",
+      "bytes": 3396,
+      "path": "src/spotbot/research/multi_school_fidelity/live_dow_context_v7.py",
+      "sha256": "15CD1A379DE2BE1AC6D7960602AE710F21CA548C7021D465744FD35F13C97D18"
+    },
+    {
+      "blob": "25ec77dd0a9f231aa8ccc2c720c441ff58365564",
+      "bytes": 7614,
+      "path": "src/spotbot/research/multi_school_fidelity/operational_ai_review.py",
+      "sha256": "FD33DB4560597A36A3E02813334E98DCA81E44ECCD66A8B5BC14E74649DD41B0"
+    },
+    {
+      "blob": "0b4a283ed45c13aeb439e593b9bb698f138e50b6",
+      "bytes": 15923,
+      "path": "src/spotbot/research/multi_school_fidelity/owned_event_pipeline_v7.py",
+      "sha256": "7B7BC5584B659AF30146ACA966325B7A5186F9A3E0310D2A49205E1680B82387"
+    },
+    {
+      "blob": "ddcfbd2989a93277faa51bee2a38becb541b0e65",
+      "bytes": 4063,
+      "path": "src/spotbot/research/multi_school_fidelity/owned_runtime_v3.py",
+      "sha256": "064F7F480FCA6B1AEF6BDEF330A8339F4D1590103AE9E3220D802E36AB519FAF"
+    },
+    {
+      "blob": "a7bb643920a5b727e03677eb0f74b1ea1909e91e",
+      "bytes": 9040,
+      "path": "src/spotbot/research/multi_school_fidelity/portfolio_kernel.py",
+      "sha256": "AFCD72DAD32194D85F89AFA26DC8472FA97F4AF0C5334F5E1A57AE581096F710"
+    },
+    {
+      "blob": "984c02f6dea50f77eb32a6bea59c31a55991bc0c",
+      "bytes": 3542,
+      "path": "src/spotbot/research/multi_school_fidelity/qualification_uncertainty.py",
+      "sha256": "B9D3C908BD7959E4AAEE317067988353477019A2B17E1A9F7764C815D198AE04"
+    },
+    {
+      "blob": "c5d763bb823890e7428ae69c3390a7a7c69c4cad",
+      "bytes": 5646,
+      "path": "src/spotbot/research/multi_school_fidelity/review_validation.py",
+      "sha256": "6C44BAB4A72B82AC3515797EC4D3738E2F46DB64A2280C16EFCD29FC42F46B95"
+    },
+    {
+      "blob": "262e22eb3a4fbf36f4ada70b81d3212d67882b56",
+      "bytes": 6006,
+      "path": "src/spotbot/research/multi_school_fidelity/school_contract_common_v8.py",
+      "sha256": "20D36EAD37C20813481FF4E9BEAED9829A090A556C33ABEB3B745CF9D41C53AD"
+    },
+    {
+      "blob": "783e6a4b5dcf600f2c51d2ce1b0e7385769c22d8",
+      "bytes": 1555,
+      "path": "src/spotbot/research/multi_school_fidelity/source_router.py",
+      "sha256": "F34E6229DBDE7EEB84ECD3401B18FC21D235143D9D5526CA5F7D4103C2EC58AB"
+    },
+    {
+      "blob": "23bbe8f84916ce1cf738ffcc57196f1a1dad6566",
+      "bytes": 23897,
+      "path": "src/spotbot/research/multi_school_fidelity/structural_lifecycle_v6.py",
+      "sha256": "3A497DD77546BA35A3D3B17264EB4B1ADBB5EFA894EEFA533E9DD06917E170EA"
+    },
+    {
+      "blob": "07704bb35eadbd8368b1b98c6b5f376fea5ef12a",
+      "bytes": 17207,
+      "path": "src/spotbot/research/multi_school_fidelity/wyckoff_contract_v8.py",
+      "sha256": "7B4ABA2BB34104F5274CC998FE0D211F4ABA6A547FD8A4882DCB14EAB7F2BE14"
+    },
+    {
+      "bytes": 1981,
+      "path": "governance/school_ownership_bundle_v8/canonical_result.json",
+      "sha256": "F56727140DC503F4DE96BB6DE71C8F6532E20E67E784B4306615929B1E47D938"
+    },
+    {
+      "bytes": 1102,
+      "path": "governance/school_ownership_bundle_v8/profile_binding.json",
+      "sha256": "07248BC781CA36E9CFCEB5AF5D60E38A393C71CBED62EB470A33523C5D5819AC"
+    },
+    {
+      "bytes": 7393,
+      "path": "governance/structural_gap_closure_v7/gap_adjudication.json",
+      "sha256": "08870D437AEAEA3EE1047B00440717BD47AD5BE27B98D292379049E0913EAA5B"
+    },
+    {
+      "bytes": 5968,
+      "path": "governance/final_gate2_to_gate3_replay_ready_mega_v3/05_GATE2_RESERVE_RECERTIFICATION.json",
+      "sha256": "58A3FBAB124A4E6BB0A3BCC1C55316E6A09B7CCBEF5A8D57B0E6A1C379C63BCC"
+    },
+    {
+      "bytes": 1671,
+      "path": "governance/final_gate2_to_gate3_replay_ready_mega_v3/09_HISTORICAL_QUANTITY_AUTHORITY_MANIFEST.json",
+      "sha256": "B3AD5ED0C6DF5A52472E8432057795A4DDEA476CF0017FAC49DDA727A973E168"
+    },
+    {
+      "bytes": 20036,
+      "path": "governance/source_integrity_closure_v11/input_authority_manifest.json",
+      "sha256": "A1B1CE8DCD81A978B10D1405C7E56C9CC631CD1BEF2FD78558267A23BB951A66"
+    },
+    {
+      "bytes": 4298,
+      "path": "governance/source_integrity_closure_v11/canonical_result.json",
+      "sha256": "A7C11EFE8E83C4873B8E80C19A9E85E4FFF96708C6EE930CD157158A4A948F5E"
+    }
+  ],
+  "review_archive": {
+    "bytes": 7569,
+    "path": "C:\\Users\\abdul\\Downloads\\AKAH_REV783_V11_INDEPENDENT_REVIEW_RESULT.zip",
+    "sha256": "D9B94E84AC1F5B363E3776B1B5FD7AC7D93E6077A74C513FC1F7DC859A264148"
+  },
+  "review_members": [
+    {
+      "bytes": 9763,
+      "path": "AKAH_REV783_V11_INDEPENDENT_LOCKED_REVIEW.json",
+      "sha256": "35897D967F93FFEB1967BD47CF58A4FA0A56B20729F839273CD0FB6A1ADF72ED"
+    },
+    {
+      "bytes": 6352,
+      "path": "AKAH_REV783_V11_INDEPENDENT_REVIEW_REPORT_AR.md",
+      "sha256": "BE746C0DE06FF82A5834C5B2276373940A5BE1D67136AC719CA849D3755142D1"
+    }
+  ],
+  "source_version_sha256": "1B8DE073E435437D0373F83AECE8E648D7AAD0FF5022B237FDF622BE1BD016D6"
+}

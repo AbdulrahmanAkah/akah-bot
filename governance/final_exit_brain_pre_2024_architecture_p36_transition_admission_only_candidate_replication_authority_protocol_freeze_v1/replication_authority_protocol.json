@@ -1,0 +1,136 @@
+{
+  "schema_version": "final-exit-brain-pre-2024-architecture-p36-transition-admission-only-candidate-replication-authority-protocol-freeze-v1",
+  "protocol_id": "AKAH_P36_TRANSITION_ADMISSION_ONLY_REPLICATION_PROTOCOL_V1",
+  "task_id": "FINAL_EXIT_BRAIN_PRE_2024_ARCHITECTURE_P36_TRANSITION_ADMISSION_ONLY_CANDIDATE_REPLICATION_AUTHORITY_PROTOCOL_FREEZE_V1",
+  "status": "FROZEN_NO_REPLICATION_EXECUTED",
+  "scientific_purpose": "Pre-register the exact future temporal-replication test for the P35-frozen TRANSITION admission-only candidate before any later-period data is accessed.",
+  "candidate": {
+    "candidate_id": "PRE_2024_P13_TRANSITION_ADMISSION_ONLY_ABLATION_V1",
+    "state_authority": "ENTRY_MARKET_STATE_ONLY",
+    "single_runtime_change": "TRANSITION_ENTRY_ADMISSION_DISABLED",
+    "RISK_ON": "IDENTICAL_TO_P13",
+    "RISK_OFF": "IDENTICAL_TO_P13",
+    "TRANSITION": "DO_NOT_ADMIT_POSITION"
+  },
+  "control": {
+    "architecture": "P13_CAUSAL_STATIC_SHADOW_SAME_PAIR_GUARD",
+    "semantics": "EXACT_P13_CONTROL_SEMANTICS_ON_REPLICATION_PERIOD"
+  },
+  "frozen_nonchanges": [
+    "entry signal generation",
+    "market-state construction",
+    "RISK_ON admission semantics",
+    "RISK_OFF admission semantics",
+    "target slot sizing",
+    "cash sizing",
+    "gross exposure sizing",
+    "capacity sizing",
+    "actual same-pair open guard",
+    "synthetic shadow semantics for admitted entries",
+    "shadow release rules",
+    "adaptive lifecycle",
+    "exit logic",
+    "cost model",
+    "holding horizons"
+  ],
+  "replication_period": {
+    "period_id": "ROBUSTNESS_2023",
+    "start_utc": "2023-01-01T00:00:00Z",
+    "end_utc_exclusive": "2024-01-01T00:00:00Z",
+    "access_in_p36": false,
+    "execution_in_p36": false,
+    "future_access_requires_separate_authorized_task": true
+  },
+  "execution_identity_gates": [
+    "Control and treatment use the same frozen signal/event authority for the replication period.",
+    "Control reproduces exact P13 architecture semantics; no source or parameter drift.",
+    "Treatment source/AST differs from control only by one TRANSITION admission suppression.",
+    "Treatment admitted TRANSITION trade count equals zero.",
+    "RISK_ON and RISK_OFF runtime semantics are byte/AST-equivalent to control after removing the single treatment switch.",
+    "Same-pair guard, synthetic shadow, release, lifecycle, exit, sizing, cost, and horizon semantics remain identical.",
+    "No threshold, subfilter, sizing, parameter, model, or candidate search occurs."
+  ],
+  "primary_endpoint": {
+    "name": "FINAL_PORTFOLIO_NET_PNL_TREATMENT_MINUS_CONTROL",
+    "formula": "candidate_net_pnl - control_net_pnl",
+    "direction": "GREATER_THAN_ZERO_SUPPORTS_REPLICATION",
+    "threshold_search": false
+  },
+  "frozen_primary_support_gates": {
+    "CANDIDATE_NET_PNL_MINUS_CONTROL_NET_PNL_GT_0": true,
+    "CANDIDATE_NET_PNL_GT_0": true,
+    "CANDIDATE_MAX_DRAWDOWN_LE_CONTROL_MAX_DRAWDOWN": true,
+    "TRANSITION_ADMISSION_ZERO_AND_SINGLE_COMPONENT_CONTRACT": true
+  },
+  "required_mechanism_attribution": {
+    "must_decompose_endpoint": true,
+    "terms": [
+      "common_trade_pnl_delta",
+      "control_only_net_pnl",
+      "treatment_only_net_pnl",
+      "directly_ablated_transition_control_trade_pnl",
+      "residual_control_only_pnl",
+      "net_indirect_portfolio_path_effect"
+    ],
+    "direct_transition_removal_benefit_must_be_reported": true,
+    "indirect_portfolio_path_effect_must_be_reported": true,
+    "mechanism_reconciliation_tolerance": 1e-07,
+    "mechanism_consistency_is_reported_separately_from_primary_replication_support": true
+  },
+  "frozen_classification_logic": {
+    "ALL_PRIMARY_GATES_PASS": "SUPPORTED_TEMPORAL_REPLICATION_TRANSITION_ADMISSION_ONLY_ALL_FROZEN_GATES_PASS_NO_PRODUCTION_PROMOTION",
+    "PRIMARY_DELTA_POSITIVE_BUT_ONE_OR_MORE_NONPRIMARY_GATES_FAIL": "PARTIAL_TEMPORAL_REPLICATION_SUPPORT_PRIMARY_DELTA_POSITIVE_NONPRIMARY_GATE_FAIL_NO_PROMOTION",
+    "PRIMARY_DELTA_NONPOSITIVE": "TEMPORAL_REPLICATION_NOT_SUPPORTED_PRIMARY_DELTA_NONPOSITIVE_CLOSE_CANDIDATE",
+    "TECHNICAL_OR_PARITY_FAILURE": "TECHNICAL_OR_PARITY_FAILURE_FAIL_CLOSED_NO_SCIENTIFIC_CONCLUSION"
+  },
+  "interpretation_boundaries": {
+    "replication_support_does_not_equal_production_authorization": true,
+    "replication_support_does_not_authorize_2024_access": true,
+    "replication_support_does_not_authorize_2025_access": true,
+    "no_posthoc_rule_refinement_after_replication_result": true,
+    "no_sizing_search_from_replication_result_without_separate_governed_mission": true
+  },
+  "explicitly_prohibited_in_future_replication_task": [
+    "candidate search",
+    "threshold search",
+    "TRANSITION subfilter search",
+    "sizing search",
+    "parameter optimization",
+    "model fit",
+    "pair/event identity runtime rules",
+    "lookahead or future information",
+    "2024 access",
+    "2025 access",
+    "production change"
+  ],
+  "p35_mechanism_anchor": {
+    "classification": "DIRECT_TRANSITION_LOSS_REMOVAL_IS_PRIMARY_POSITIVE_MECHANISM_DOWNSTREAM_PORTFOLIO_PATH_EFFECT_NET_ADVERSE_FREEZE_ADMISSION_ONLY_CANDIDATE_FOR_REPLICATION_PROTOCOL",
+    "endpoint": 5263.64279887882,
+    "direct_transition_removal_benefit": 8163.217282531882,
+    "net_indirect_portfolio_path_effect": -2899.5744836531676,
+    "candidate_id": "PRE_2024_P13_TRANSITION_ADMISSION_ONLY_ABLATION_V1"
+  },
+  "authority": {
+    "starting_revision": 256,
+    "starting_head": "683971b70e338188eb46cc630246f5b53d535db8",
+    "github_revision_256_sync_commit": "00bb5fde54a1e89be6331cfbe0a2282027b3ae9a",
+    "p35_result_path": "governance/final_exit_brain_pre_2024_architecture_p35_transition_admission_causal_mechanism_attribution_and_candidate_freeze_v1/canonical_result.json",
+    "p35_worktree_sha256": "638CC7BC1925F0CE0D1A833A25DC3710926FD53907B7C2E70E5F3E70E6CBFDDD",
+    "p35_git_blob_sha256": "4F6CD02E990DEACBE00347EF26F32FABC6A8DB292C3C070118A0EBEB81B4BDF3"
+  },
+  "p36_execution_boundaries": {
+    "2023_access": false,
+    "2023_replay": false,
+    "2024_access": false,
+    "2025_access": false,
+    "market_data_access": false,
+    "new_replay": false,
+    "candidate_search": false,
+    "threshold_search": false,
+    "sizing_search": false,
+    "parameter_search": false,
+    "model_fit": false,
+    "production_change": false
+  },
+  "next_bottleneck": "TRANSITION_ADMISSION_ONLY_2023_REPLICATION_EXECUTION_AUTHORIZATION_GATE"
+}

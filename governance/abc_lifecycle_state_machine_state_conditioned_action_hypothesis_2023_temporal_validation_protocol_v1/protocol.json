@@ -1,0 +1,43 @@
+{
+  "2023_economic_values_read_during_protocol_freeze": false,
+  "all_hypotheses_validated_without_selection": true,
+  "cost_accounting_semantics": "UNCHANGED",
+  "decision_close_semantics": "UNCHANGED",
+  "diagnostic_semantics": "IDENTICAL_TO_COUNTERFACTUAL_DIRECT_CONTINUATION_VALUE_PROTOCOL_V1",
+  "event_selection": "FIRST_ELIGIBLE_DECISION_ROW_PER_HYPOTHESIS_PER_LIFECYCLE",
+  "forbidden": [
+    "HYPOTHESIS_SELECTION",
+    "WINNER_SELECTION",
+    "THRESHOLD_CHANGE",
+    "RETUNING",
+    "RESCUE_RULE",
+    "PORTFOLIO_REPLAY",
+    "2024_ACCESS",
+    "2025_ACCESS",
+    "PRODUCTION_CHANGE",
+    "RUNTIME_ACTION_MAPPING"
+  ],
+  "hypotheses": [
+    "H1_WATCH_STALLED",
+    "H2_WATCH_DAMAGE_ACTIVE",
+    "H3_PROTECT_DAMAGE_ONSET",
+    "H4_PROTECT_DAMAGE_CONTINUATION",
+    "H5_EXIT_CONFLUENT_DAMAGE",
+    "H6_DEESCALATE_DAMAGE_CLEAR"
+  ],
+  "next_if_pass": "ABC_LIFECYCLE_STATE_MACHINE_STATE_CONDITIONED_ACTION_HYPOTHESIS_2023_TEMPORAL_VALIDATION_EXECUTION_V1",
+  "reported_metrics": [
+    "evaluable_lifecycle_count",
+    "sum_direct_exit_delta_net",
+    "mean_direct_exit_delta_net",
+    "sum_continuation_value_net",
+    "mean_continuation_value_net",
+    "immediate_exit_better_count",
+    "native_continuation_better_count",
+    "tie_count"
+  ],
+  "schema_version": "abc-action-hypothesis-2023-temporal-validation-protocol-v1",
+  "status": "FROZEN_BEFORE_2023_ECONOMIC_READ",
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_STATE_CONDITIONED_ACTION_HYPOTHESIS_2023_TEMPORAL_VALIDATION_PROTOCOL_FREEZE_V1",
+  "validation_year": 2023
+}

@@ -1,0 +1,5 @@
+variant,description,hours,candidate_events,hours_with_candidates,funded_entries,normal_entries,learned_replacements,replacement_from_max_positions,replacement_from_capacity_block,position_hours,max_positions_hours,gross_cap_forced_exits,model_candidate_incumbent_evaluations,chosen_oracle_positive,chosen_oracle_negative_or_zero,chosen_oracle_label_missing
+B00_F10_BASELINE,Exact F10 baseline; no learned replacement,35064,289108,29224,4358,4358,0,0,0,395719,12615,575,0,0,0,0
+B00_F10_BASELINE,Exact F10 baseline; no learned replacement,35064,289108,29224,4363,4363,0,0,0,395772,12617,577,0,0,0,0
+B01_RVB_MEAN_POSITIVE,Replace only when direct predicted incremental replacement value is > 0,35064,289108,29224,25182,4086,21096,20650,446,396748,12748,1113,1649288,9885,11211,0
+B02_RVB_LCB1_POSITIVE,Replace only when predicted value minus one fixed model standard error is > 0,35064,289108,29224,19582,4022,15560,15436,124,396601,12801,983,1657928,7254,8306,0

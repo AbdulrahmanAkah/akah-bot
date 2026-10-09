@@ -1,0 +1,135 @@
+{
+  "schema_version": "final-exit-brain-pre-2024-architecture-p34-transition-admission-authority-audit-and-reuse-adjudication-v1",
+  "task_id": "FINAL_EXIT_BRAIN_PRE_2024_ARCHITECTURE_P34_TRANSITION_ADMISSION_AUTHORITY_AUDIT_AND_REUSE_ADJUDICATION_V1",
+  "status": "PASS_P34_COMPLETED",
+  "classification": "SUPPORTED_PRE_2024_TRANSITION_ADMISSION_ONLY_HYPOTHESIS_P19_CAUSAL_REUSE_ALL_FROZEN_GATES_PASS_NO_2023_PROMOTION",
+  "scientific_question": "Can canonical P19 be reused as the 2022 causal counterfactual for the single TRANSITION-admission component ablation relative to P13, without new market replay?",
+  "p19_reusable_as_2022_transition_admission_only_counterfactual": true,
+  "authority_chain": {
+    "p13": {
+      "result_sha256": "AD0CB6CF1B10EF160C3D753E7A4B81728C228F70E17769BA3B29875D6C78EC5B",
+      "net_pnl": -4248.200575640512,
+      "maximum_drawdown": 0.13409920777004478,
+      "trade_count": 215
+    },
+    "p18": {
+      "schema_version": "eaa-exit-brain-p18-transition-admission-component-ablation-protocol-freeze-v1",
+      "protocol_sha256": "3A3847DE62F1D7450374533C8A392725E7D7F837F8ECD109A46736C6980A48EA",
+      "protocol_id": "EAA_EXIT_BRAIN_TRANSITION_ADMISSION_COMPONENT_ABLATION_2022_V1",
+      "candidate_count": 1,
+      "parameter_free_component_ablation": true,
+      "intended_component_difference": "TRANSITION_ADMISSION_ONLY",
+      "single_transition_switch_required": true,
+      "exact_p13_control_required": true
+    },
+    "p19": {
+      "result_sha256": "221CC3BCF5E062CE36CE2BEE10E3A9EE22448A8A8E4EF54F01DAF331E8B52DE7",
+      "schema_version": "eaa-exit-brain-p19-2022-transition-admission-component-ablation-result-v1",
+      "observer_sha256": "1CB8F15E04A2A7A19C7003024B2F56743EBCF23256CE0E1C2FAAB70CE82405CC",
+      "p13_result_sha256_binding": "AD0CB6CF1B10EF160C3D753E7A4B81728C228F70E17769BA3B29875D6C78EC5B",
+      "p18_protocol_sha256_binding": "3A3847DE62F1D7450374533C8A392725E7D7F837F8ECD109A46736C6980A48EA",
+      "control_parity": {
+        "control_id": "FULL_ADAPTIVE_PLUS_CAUSAL_STATIC_SHADOW_SAME_PAIR_OCCUPANCY_GUARD_V1",
+        "exact_p13_candidate_trades_csv_sha": true,
+        "exact_p13_counters": true,
+        "exact_p13_metrics": true,
+        "exact_p13_release_csv_sha": true,
+        "exact_p13_suppression_csv_sha": true,
+        "exact_p13_trace_csv_sha": true,
+        "final_equity": 95751.79942435949,
+        "net_pnl": -4248.200575640512,
+        "trade_count": 215
+      },
+      "treatment_component_difference": "TRANSITION_ADMISSION_ONLY",
+      "admitted_transition_trade_count": 0,
+      "transition_admission_suppressed_count": 668,
+      "primary_endpoint": {
+        "name": "FINAL_PORTFOLIO_NET_PNL_TREATMENT_MINUS_CONTROL",
+        "significance_threshold_used": false,
+        "support_direction": "GREATER_THAN_ZERO",
+        "supported_exploratory": true,
+        "treatment_net_pnl_above_zero": true,
+        "value": 5263.64279887882
+      },
+      "exact_effect_decomposition": {
+        "common_control_net_pnl": 6900.530239380617,
+        "common_delta_interpretation": "SIZING_PATH_EFFECT_ONLY",
+        "common_entry_time_price_exact": true,
+        "common_exit_time_reason_price_exact": true,
+        "common_normalized_return_parity": true,
+        "common_trade_count": 31,
+        "common_trade_pnl_delta": 62.59861172806268,
+        "common_treatment_net_pnl": 6963.12885110868,
+        "control_only_net_pnl": -11148.730815021034,
+        "control_only_trade_count": 184,
+        "reconciliation_error": -1.0550138540565968e-10,
+        "reconstructed_endpoint": 5263.6427988787145,
+        "treatment_only_net_pnl": -5947.686627870382,
+        "treatment_only_trade_count": 17
+      },
+      "risk_on_common_trade_diagnostic": {
+        "common_risk_on_trade_count": 31,
+        "common_transition_trade_count": 0,
+        "treatment_all_admitted_trades_risk_on": true
+      }
+    },
+    "p33": {
+      "classification": "PRE_2024_HYPOTHESIS_NOT_SUPPORTED_PRIMARY_DELTA_NONPOSITIVE_CLOSE_CANDIDATE",
+      "next_bottleneck": "ADMISSION_OR_SIZING_ONLY_REDESIGN",
+      "result_sha256": "9DC66F35FD0A116DDC8D0D2560E07A3C405F5AD5CDDCA6EC9D6B7B668E632771"
+    },
+    "causal_reuse_scope": "2022_EXPLORATORY_COMPONENT_ABLATION_ONLY;NOT_CONFIRMATORY_VALIDATION;NO_2023_PROMOTION;NO_PRODUCTION_PROMOTION"
+  },
+  "metrics": {
+    "p13_net_pnl": -4248.200575640512,
+    "p19_treatment_net_pnl": 1015.4422232383076,
+    "net_pnl_delta": 5263.64279887882,
+    "p13_maximum_drawdown": 0.13409920777004478,
+    "p19_treatment_maximum_drawdown": 0.06937009339939092,
+    "p13_trade_count": 215,
+    "p19_treatment_trade_count": 48,
+    "p19_primary_endpoint": 5263.64279887882
+  },
+  "gates": {
+    "P19_CAUSAL_REUSE_AUTHORITY_CHAIN_PASS": true,
+    "P19_2022_NET_PNL_GT_0": true,
+    "P19_2022_MAX_DRAWDOWN_LE_P13_2022_MAX_DRAWDOWN": true,
+    "P19_2022_NET_PNL_MINUS_P13_2022_NET_PNL_GT_0": true,
+    "P19_TRANSITION_ADMISSION_ZERO_AND_SINGLE_COMPONENT_CONTRACT": true
+  },
+  "interpretation": {
+    "p19_is_2022_exploratory_component_ablation": true,
+    "p19_is_not_confirmatory_validation": true,
+    "p19_does_not_authorize_2023": true,
+    "p19_does_not_authorize_2024": true,
+    "p19_does_not_authorize_production": true,
+    "no_threshold_or_parameter_search_performed": true,
+    "no_new_market_replay_performed": true
+  },
+  "next_bottleneck": "TRANSITION_ADMISSION_CAUSAL_MECHANISM_ATTRIBUTION_BEFORE_SIZING",
+  "boundaries": {
+    "new_market_replay": false,
+    "2023_access": false,
+    "2024_access": false,
+    "2025_access": false,
+    "candidate_search": false,
+    "threshold_search": false,
+    "parameter_search": false,
+    "model_fit": false,
+    "production_change": false
+  },
+  "artifacts": {
+    "authority_chain_audit.json": {
+      "path": "governance/final_exit_brain_pre_2024_architecture_p34_transition_admission_authority_audit_and_reuse_adjudication_v1/authority_chain_audit.json",
+      "sha256": "C63B902D021DDE87A2A1C7AF8A18A553AE1E9637A98ECE1EAABE7E9A37DF03E7"
+    },
+    "canonical_result.json": {
+      "path": "governance/final_exit_brain_pre_2024_architecture_p34_transition_admission_authority_audit_and_reuse_adjudication_v1/canonical_result.json",
+      "sha256": "E36226682EDDE9992721B8D679A03FBFC0B17AF243CECCB12F24DEA0AA3981A4"
+    },
+    "scientific_gate_adjudication.json": {
+      "path": "governance/final_exit_brain_pre_2024_architecture_p34_transition_admission_authority_audit_and_reuse_adjudication_v1/scientific_gate_adjudication.json",
+      "sha256": "3E7FF69832FA7F13A0BC464ED39DC3276462117E874908E395B333BC16739A37"
+    }
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "2024_access": false,
+  "admission_changed": false,
+  "architecture": {
+    "execution_arms": [
+      {
+        "description": "Exact F10 baseline; no learned replacement",
+        "id": "B00_F10_BASELINE",
+        "mode": "NONE"
+      },
+      {
+        "description": "Replace only when direct predicted incremental replacement value is > 0",
+        "id": "B01_RVB_MEAN_POSITIVE",
+        "mode": "MEAN_POSITIVE"
+      },
+      {
+        "description": "Replace only when predicted value minus one fixed model standard error is > 0",
+        "id": "B02_RVB_LCB1_POSITIVE",
+        "mode": "LCB1_POSITIVE"
+      }
+    ],
+    "lambda": 10.0,
+    "model": "single direct standardized ridge replacement-value regressor",
+    "purge_rule": "event_time < test_year_start AND label_end < test_year_start",
+    "target": "oracle incremental local replacement terminal delta / current equity, training only",
+    "walkforward_test_years": [
+      2021,
+      2022,
+      2023
+    ]
+  },
+  "authorized_axis": "CAUSAL_REPLACEMENT_VALUE_BRAIN",
+  "authorized_next": "ABC_LIFECYCLE_STATE_MACHINE_CAUSAL_REPLACEMENT_VALUE_BRAIN_MEGA_V1",
+  "created_at_utc": "2026-09-28T18:23:37.476173+00:00",
+  "fixed_policy_evidence": {
+    "any_causal_dual_improvement": false,
+    "any_causal_wealth_improvement": false,
+    "f10_2x": {
+      "continuous_mtm_mdd": -0.26758260156638225,
+      "cost_multiplier": 2.0,
+      "day_ge_0p5_fraction": 0.1375770020533881,
+      "mean_gross_fraction": 0.10531620405429827,
+      "open_positions_at_cutoff": 20,
+      "positive_day_fraction": 0.3648186173853525,
+      "ranker": "R00_F10_ACTUAL",
+      "rejections": "{'SIZE_OR_CAPACITY_TOO_SMALL': 171048, 'SAME_PAIR_OPEN': 28923, 'RISK_GOVERNOR_FORCED_EXIT': 577, 'MAX_POSITIONS': 84774}",
+      "terminal_equity": 217559.85217179195,
+      "terminal_wealth": 2.1755985217179195,
+      "total_cost": 31715.52537963624,
+      "trade_count": 4343,
+      "variant": "R00_F10_ACTUAL"
+    }
+  },
+  "hard_cutoff_exclusive": "2024-01-01T00:00:00Z",
+  "hyperparameter_search": false,
+  "model_zoo": false,
+  "oracle_reference": {
+    "rev749_blocked_replacement_2x": {
+      "action_mode": "BLOCKED_REPLACE",
+      "continuous_mtm_mdd": -0.06208325924796709,
+      "cost_multiplier": 2.0,
+      "day_ge_0p5_fraction": 0.13552361396303902,
+      "mean_gross_fraction": 0.06402132160913308,
+      "open_positions_at_cutoff": 20,
+      "positive_day_fraction": 0.46885694729637234,
+      "ranker": "C01_BLOCKED_REPLACEMENT_ORACLE",
+      "rejections": "{'SIZE_OR_CAPACITY_TOO_SMALL': 170007, 'SAME_PAIR_OPEN': 33784, 'RISK_GOVERNOR_FORCED_EXIT': 472, 'MAX_POSITIONS': 71375}",
+      "terminal_equity": 1123290.3086935668,
+      "terminal_wealth": 11.232903086935668,
+      "total_cost": 101034.15286802592,
+      "trade_count": 13922,
+      "variant": "C01_BLOCKED_REPLACEMENT_ORACLE"
+    },
+    "runtime_rule": false
+  },
+  "pair_or_event_identity_feature": false,
+  "reviewed_revision": 751,
+  "runtime_future_information": false,
+  "schema_version": "akah-rev751-causal-replacement-value-brain-human-review-v1",
+  "source_disposition": "CAUSAL_BLOCKED_REPLACEMENT_MECHANISM_DISCOVERY_COMPLETE_NO_POSTHOC_CERTIFICATION",
+  "status": "PASS_RVB_AUTHORIZED",
+  "threshold_search": false,
+  "year_identity_feature": false
+}

@@ -1,0 +1,14 @@
+{
+  "hard_producer_hit_limit": 5000,
+  "hard_total_node_limit": 3000,
+  "rules": [
+    "No fresh repository-wide inventory.",
+    "Frontier is derived from REV697 ancestral nodes plus same-commit exact-core files, historical exact-core references, and prior frozen seeds only.",
+    "Producer/reference evidence is evaluated at the exact-core creation commit, excluding post-core descendants.",
+    "INDEPENDENT_DECISION_LEDGER_AUTHORITY_CONFIRMED is forbidden unless frontier_exhausted=true and truncation_remaining=false.",
+    "Structured CSV/JSON role evidence is required for EXISTING_DERIVED_AUTHORITY_RECOVERABLE.",
+    "Code/protocol role evidence may support SPECIFIC_UPSTREAM_DERIVED_EXPORT_REQUIRED but does not count as an already materialized ledger.",
+    "No reconstruction, export, replay, model training, raw, 2024 or 2025 access."
+  ],
+  "schema_version": "akah-upstream-saturation-resolution-protocol-v1"
+}

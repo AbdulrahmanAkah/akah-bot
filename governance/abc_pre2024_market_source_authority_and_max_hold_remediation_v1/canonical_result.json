@@ -1,0 +1,25 @@
+{
+  "schema_version": "abc-pre2024-source-and-maxhold-remediation-v1",
+  "task_id": "ABC_DATA_READINESS_AND_MAX_HOLD_REMEDIATION_BEFORE_FIVE_YEAR_EXECUTION",
+  "classification": "MAX_HOLD_PROVEN_DATA_READINESS_BLOCKED",
+  "data_readiness": "BLOCKED",
+  "data_readiness_blockers": [
+    "UNRESOLVED_1H_4H_MARKET_SOURCES_WITHOUT_EXACT_PRE2024_TEMPORAL_AUTHORITY",
+    "PRE2024_TEMPORAL_AUTHORITY_CONTRADICTED_BY_FILE_CONTENT",
+    "NO_PAIR_ATR22_DONCHIAN10_READY_AT_2019_YEAR_START",
+    "NO_PAIR_ATR22_DONCHIAN10_READY_AT_2020_YEAR_START",
+    "NO_PAIR_ATR22_DONCHIAN10_READY_AT_2021_YEAR_START"
+  ],
+  "ready_pairs_by_year": {
+    "2019": 0,
+    "2020": 0,
+    "2021": 0,
+    "2022": 49,
+    "2023": 53
+  },
+  "max_hold_168h": "PROVEN_NATIVE_MAX_HOLD_168H_RUNTIME_CONTRACT",
+  "abc_results_opened": false,
+  "2024_market_data_accessed": false,
+  "2025_market_data_accessed": false,
+  "next_bottleneck": "ABC_PRE2024_TEMPORAL_SOURCE_AUTHORITY_REMEDIATION_V2"
+}

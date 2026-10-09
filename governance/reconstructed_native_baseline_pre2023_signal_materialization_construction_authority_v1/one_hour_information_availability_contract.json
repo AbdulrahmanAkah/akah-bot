@@ -1,0 +1,22 @@
+{
+  "authority_id": "AKAH_BOT_RD16B_ONE_HOUR_INFORMATION_AVAILABILITY_CONTRACT_V1",
+  "status": "BOUND",
+  "timestamp_column": "timestamp",
+  "timestamp_semantic": "BAR_CLOSE_TIME",
+  "timezone": "UTC",
+  "causal_law": "A 1H record with timestamp T may contribute its complete OHLCV fields only at or after T.",
+  "field_availability": {
+    "open": "AT_OR_AFTER_BAR_CLOSE_TIME",
+    "high": "AT_OR_AFTER_BAR_CLOSE_TIME",
+    "low": "AT_OR_AFTER_BAR_CLOSE_TIME",
+    "close": "AT_OR_AFTER_BAR_CLOSE_TIME",
+    "volume": "AT_OR_AFTER_BAR_CLOSE_TIME"
+  },
+  "incomplete_bar_policy": "PRODUCER_DROPS_ROWS_WHEN_CLOSE_TIME_EXCEEDS_REQUESTED_AS_OF_TIME",
+  "within_bar_ordering": "FORBIDDEN_TO_INFER",
+  "future_row_policy": "A_ROW_WITH_TIMESTAMP_GREATER_THAN_DECISION_TIME_IS_UNAVAILABLE",
+  "duplicate_policy": "KEEP_LAST_DURING_MERGE_THEN_VALIDATOR_REQUIRES_ZERO_REMAINING_DUPLICATES",
+  "continuity_precondition": "A 24-observation rolling feature is valid as a true trailing 24-hour feature only after timestamp uniqueness, ascending order, and 3600-second spacing are proven.",
+  "market_rows_read": false,
+  "protected_year_rows_read": false
+}

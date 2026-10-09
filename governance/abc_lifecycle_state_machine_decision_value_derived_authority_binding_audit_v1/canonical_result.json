@@ -1,0 +1,64 @@
+{
+  "contract": {
+    "bounded_export_executed": false,
+    "pit_requirement": "Every runtime state/action/notional/cost field must be observable or defined at decision time; realized Y is target-only.",
+    "portfolio_replay_executed": false,
+    "required_authorities": [
+      "decision_value_Y_or_equivalent",
+      "pi0_or_native_action",
+      "current_notional_or_exact_cash_base",
+      "cost_semantics_for_EXIT_and_HOLD_step",
+      "lifecycle_identity",
+      "decision_timestamp"
+    ],
+    "single_override_policy_executed": false
+  },
+  "coverage_audited_source_count": 12,
+  "created_at_utc": "2026-09-25T20:01:30.341197+00:00",
+  "disposition": "BINDING_NOT_PROVEN",
+  "disposition_detail": [],
+  "disposition_reason": "The exact-core target is authoritative, but tracked pre-2024 derived artifacts do not establish sufficient lifecycle/time join authority for action, notional and costs. No export or model training is authorized.",
+  "exact_core": {
+    "path": "governance/abc_lifecycle_state_machine_continuation_value_exact_target_algebra_temporal_alignment_forensic_v1/clean_target_primitive_ledger.csv",
+    "semantics": {
+      "baseline_action": [],
+      "cost": [],
+      "decision_time": [
+        "decision_time_exact"
+      ],
+      "lifecycle": [
+        "__trade_id"
+      ],
+      "notional": [],
+      "pair": [
+        "pair"
+      ],
+      "value": [
+        "__p1_immediate_bridge_advantage"
+      ]
+    },
+    "sha256": "84C2870D6549EA09C40B39AF03EC61FF15DD1FCD1DEA0424E0DA5ED7BA2134EF"
+  },
+  "join_source_count": 40,
+  "next_action_by_disposition": {
+    "BINDING_NOT_PROVEN": "Do not train. Human review must decide whether a narrower source-binding audit is justified.",
+    "BINDING_READY": "Human review may authorize protocol freeze for the two-candidate M1/M2 selective single-override pilot; no automatic training.",
+    "BOUNDED_DERIVED_EXPORT_REQUIRED": "Human review may authorize exactly one bounded derived export of only missing fields from already-authorized pre-2024 sources, followed by parity/PIT checks; no raw reopening."
+  },
+  "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_DECISION_VALUE_DERIVED_AUTHORITY_BINDING_AUDIT_HUMAN_REVIEW_V1",
+  "prohibitions": {
+    "2024_access": true,
+    "2025_access": true,
+    "d2_expansion": true,
+    "feature_search": true,
+    "m1_m2_training": true,
+    "new_replay": true,
+    "production_change": true,
+    "push": true,
+    "raw_reopening": true,
+    "threshold_search": true
+  },
+  "schema_version": "akah-decision-value-derived-authority-binding-audit-v1",
+  "status": "PASS_DECISION_VALUE_DERIVED_AUTHORITY_BINDING_AUDIT_COMPLETE",
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_DECISION_VALUE_DERIVED_AUTHORITY_BINDING_AUDIT_V1"
+}

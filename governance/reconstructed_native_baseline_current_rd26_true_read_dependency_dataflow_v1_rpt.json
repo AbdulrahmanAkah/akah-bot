@@ -1,0 +1,79 @@
+{
+  "authority_bindings": {
+    "contract_sha256": "30FD3F1C0279176272990E0552892F3574A204620FE4F66CCB89F7E3C5D5BAB0",
+    "dataflow_sha256": "C8CDCFFFB7DE72E176D7B089797ACA45E1FE86C7AAD918179E4FE6FD4B2DCACD",
+    "decision_sha256": "BCD73DF928396C6B700DBB1245F60B9204E02F50C5297B2571D31A3F5E817BC3",
+    "paths_sha256": "FDB8E9B52D91E47963E95CA392D061685D061B8463C6B1CE546FCBD22966473D",
+    "preopen_sha256": "59332197EDC7D994D9E3594F7CB06EDD6CD7A9A9AF852B5CC3BEDF764087F198",
+    "study_contract_sha256": "A0FA387D5A3E1978E5BED9372F3CC42CE91DC1A5C5BD63C61ADDB0387D524C7B",
+    "true_reads_sha256": "23AF19BFB809FD2EAF2875D50B87128D6D74E7FC0152C1C1187D4FF2AB238226",
+    "writer_binding_sha256": "E78FFDF515E8CC3A6C99CC5113F7CA951A81787060064A14EC4CACA2776A08D2"
+  },
+  "branch": "research/rd48-cross-venue-price-level-basis-direct-utility-v1",
+  "evidence": [
+    {
+      "path": "governance/reconstructed_native_baseline_current_rd26_true_read_dependency_dataflow_v1/true_writer_binding.json",
+      "sha256": "E78FFDF515E8CC3A6C99CC5113F7CA951A81787060064A14EC4CACA2776A08D2"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_current_rd26_true_read_dependency_dataflow_v1/written_object_backward_dataflow.json",
+      "sha256": "C8CDCFFFB7DE72E176D7B089797ACA45E1FE86C7AAD918179E4FE6FD4B2DCACD"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_current_rd26_true_read_dependency_dataflow_v1/true_upstream_read_dependencies.json",
+      "sha256": "23AF19BFB809FD2EAF2875D50B87128D6D74E7FC0152C1C1187D4FF2AB238226"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_current_rd26_true_read_dependency_dataflow_v1/symbolic_path_resolution.json",
+      "sha256": "FDB8E9B52D91E47963E95CA392D061685D061B8463C6B1CE546FCBD22966473D"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_current_rd26_true_read_dependency_dataflow_v1/true_read_preopen_2022_authority_audit.json",
+      "sha256": "59332197EDC7D994D9E3594F7CB06EDD6CD7A9A9AF852B5CC3BEDF764087F198"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_current_rd26_true_read_dependency_dataflow_v1/reconstruction_input_authority_contract.json",
+      "sha256": "30FD3F1C0279176272990E0552892F3574A204620FE4F66CCB89F7E3C5D5BAB0"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_current_rd26_true_read_dependency_dataflow_v1/exact_residual_decision.json",
+      "sha256": "BCD73DF928396C6B700DBB1245F60B9204E02F50C5297B2571D31A3F5E817BC3"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_current_rd26_true_read_dependency_dataflow_v1.json",
+      "sha256": "461D7846300494065EC2A26CECFF15AD769E6591784AA7E683031F4ED08523DE"
+    }
+  ],
+  "firewall": {
+    "economic_analysis": false,
+    "market_rows_read": false,
+    "mixed_csv_data_rows_read": false,
+    "native_replay_executed": false,
+    "network": false,
+    "protected_year_rows_read": false,
+    "push": false,
+    "source_code_mutation": false,
+    "v2_incidence_used": false
+  },
+  "governed_schema_version": "akah-provenance-phase-governed-v1",
+  "next_bottleneck": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_CURRENT_RD26_PRODUCER_TRUE_READ_PATH_BINDING_V1",
+  "north_star_effect": "Removes false output/report literals from the reconstruction dependency graph and exposes only causal producer reads that must be authorized before pre-2023 reconstruction.",
+  "objective": "Replace rev214 path-literal over-approximation with an exact backward dataflow slice from the object written to the mixed RD26 signal artifact; bind only true upstream read dependencies, resolve their path expressions symbolically, and classify pre-open <=2022 authority.",
+  "resolution_class": "TRUE_READ_DEPENDENCY_EXTRACTION_INCOMPLETE",
+  "state_updates": {
+    "economic_analysis": false,
+    "native_replay_executed": false,
+    "path_binding_blocked_count": 0,
+    "preopen_authority_blocked_count": 0,
+    "ready_input_count": 0,
+    "reconstruction_execution_contract_ready": false,
+    "rev214_false_literal_input_model_superseded": true,
+    "roadmap_position": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_CURRENT_RD26_PRODUCER_TRUE_READ_PATH_BINDING_V1",
+    "true_read_dependency_count": 0
+  },
+  "status": "PASS",
+  "summary": "Superseded the rev214 16-literal input over-approximation. Bound 0 true read dependencies from the written-object backward slice; 0 are ready, 0 need path binding, and 0 need pre-open authority.",
+  "task_id": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_CURRENT_RD26_PRODUCER_PRE2023_RECONSTRUCTION_INPUT_EXACT_RESIDUAL_V1",
+  "task_start_head": "8b3ecd6f634f3ba4813b3933edbc9bbb06148276",
+  "task_start_revision": 214
+}

@@ -1,0 +1,55 @@
+{
+  "authority_bindings": {
+    "native_loss_exposure_sha256": "66E3E1F2B82DFC5F8826AF29081C534163ECAE90EB4FBF4030FB97C61FCDA118",
+    "shadow_events_sha256": "0241C3C61E5BB8038596F5129648D8195B82422842EB4CDCA573FC4176E07627",
+    "timing_paths_sha256": "0F2235D0BF0822074E69914110F32B0FFDF04063982723532B8EBDAB066B7C5B",
+    "timing_summary_sha256": "8713E09F780F7CE0C270C5EABF7F582C2240CFDF7DC481C859945F24A9A08A28"
+  },
+  "branch": "research/rd48-cross-venue-price-level-basis-direct-utility-v1",
+  "evidence": [
+    {
+      "path": "governance/rnb_shadow_timing_attribution_v1/timing_summary.json",
+      "sha256": "8713E09F780F7CE0C270C5EABF7F582C2240CFDF7DC481C859945F24A9A08A28"
+    },
+    {
+      "path": "governance/rnb_shadow_timing_attribution_v1/timing_by_native_exit_path.json",
+      "sha256": "0F2235D0BF0822074E69914110F32B0FFDF04063982723532B8EBDAB066B7C5B"
+    },
+    {
+      "path": "governance/rnb_shadow_timing_attribution_v1/native_loss_exposure_by_shadow_timing.json",
+      "sha256": "66E3E1F2B82DFC5F8826AF29081C534163ECAE90EB4FBF4030FB97C61FCDA118"
+    },
+    {
+      "path": "data/research/reconstructed_native_baseline_pre2023/shadow-runtime-instrumentation-v1/shadow-events.csv",
+      "sha256": "0241C3C61E5BB8038596F5129648D8195B82422842EB4CDCA573FC4176E07627"
+    }
+  ],
+  "firewall": {
+    "native_exit_mutation": false,
+    "network": false,
+    "optimization": false,
+    "protected_year_rows_read": false,
+    "push": false,
+    "retuning": false
+  },
+  "governed_schema_version": "akah-provenance-phase-governed-v1",
+  "next_bottleneck": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_SHADOW_ACTION_CONTRACT_FREEZE_V1",
+  "north_star_effect": "Expose causal shadow timing relative to unchanged native exits without fitting or exit mutation.",
+  "objective": "Attribute frozen Memory/V2 timing relative to unchanged native exits and native loss paths without counterfactual PnL claims.",
+  "resolution_class": "SHADOW_MEMORY_V2_NATIVE_EXIT_TIMING_ATTRIBUTION_COMPLETE",
+  "state_updates": {
+    "counterfactual_profit_claim": false,
+    "memory_while_native_open_rate": 0.6149732620320856,
+    "native_absolute_loss_share_with_memory_before_exit": 0.3493252148180556,
+    "native_absolute_loss_share_with_v2_before_exit": 0.33088977685131277,
+    "retuning": false,
+    "roadmap_position": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_SHADOW_ACTION_CONTRACT_FREEZE_V1",
+    "shadow_timing_attribution_complete": true,
+    "v2_while_native_open_rate": 0.3409090909090909
+  },
+  "status": "PASS",
+  "summary": "Attributed Memory/V2 incidence and lead time relative to unchanged native exits across 748 unique trades and native loss paths. No recoverable-PnL assumption, tuning, or native exit mutation was made.",
+  "task_id": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_SHADOW_TIMING_ATTRIBUTION_V1",
+  "task_start_head": "d0d419c1c42ab20ffecb46b2cab39ba022201ee5",
+  "task_start_revision": 235
+}

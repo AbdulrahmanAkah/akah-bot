@@ -1,0 +1,155 @@
+{
+  "2024_access": false,
+  "age_bins_hours": [
+    0,
+    24,
+    48,
+    72,
+    96,
+    120,
+    144,
+    168.000001
+  ],
+  "binary_state_columns": [
+    "memory_now",
+    "memory_seen",
+    "C_signal",
+    "A_signal",
+    "B_signal",
+    "a_condition_now",
+    "b_condition_now",
+    "a_condition_recovered_now",
+    "b_condition_recovered_now"
+  ],
+  "block_eval_bootstrap_reps": 320,
+  "categorical_state_columns": [
+    "base_state",
+    "native_market_state_context"
+  ],
+  "context_keys": [
+    {
+      "columns": [
+        "base_state",
+        "native_market_state_context",
+        "memory_seen"
+      ],
+      "name": "CORE_CONTEXT"
+    },
+    {
+      "columns": [
+        "a_condition_now",
+        "b_condition_now",
+        "memory_seen"
+      ],
+      "name": "EVIDENCE_CONTEXT"
+    },
+    {
+      "columns": [
+        "A_signal",
+        "B_signal",
+        "C_signal"
+      ],
+      "name": "LEGACY_SIGNAL_CONTEXT"
+    }
+  ],
+  "declared_state_columns": [
+    "base_state",
+    "native_market_state_context",
+    "memory_now",
+    "memory_seen",
+    "C_signal",
+    "A_signal",
+    "B_signal",
+    "a_condition_now",
+    "b_condition_now",
+    "a_condition_recovered_now",
+    "b_condition_recovered_now",
+    "a_condition_true_run_length",
+    "b_condition_true_run_length",
+    "hours_since_entry",
+    "hours_since_first_memory_or_null",
+    "progress_margin_delta_from_prev",
+    "structural_break_margin_delta_from_prev",
+    "volatility_damage_margin_delta_from_prev",
+    "a_margin_delta_from_prev",
+    "b_margin_delta_from_prev",
+    "close_delta_from_prev_decision",
+    "R_delta_from_prev_decision",
+    "atr22_current"
+  ],
+  "delta_sign_columns": [
+    "progress_margin_delta_from_prev",
+    "structural_break_margin_delta_from_prev",
+    "volatility_damage_margin_delta_from_prev",
+    "a_margin_delta_from_prev",
+    "b_margin_delta_from_prev",
+    "close_delta_from_prev_decision",
+    "R_delta_from_prev_decision"
+  ],
+  "exact_target_reused": true,
+  "feature_search": false,
+  "fixed_model": "existing fixed ridge and alpha from maxev_core",
+  "forward_years": [
+    2022,
+    2023
+  ],
+  "max_model_features": 48,
+  "missing_state_columns": [],
+  "model_basis_rule": "all present preregistered causal state columns + train-only one-hot levels + fixed interactions; no outcome-based selection",
+  "model_family_search": false,
+  "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_CONTINUATION_VALUE_STATE_CONDITIONED_ATTRIBUTION_EXECUTION_V1",
+  "numeric_state_columns": [
+    "hours_since_entry",
+    "hours_since_first_memory_or_null",
+    "progress_margin_delta_from_prev",
+    "structural_break_margin_delta_from_prev",
+    "volatility_damage_margin_delta_from_prev",
+    "a_margin_delta_from_prev",
+    "b_margin_delta_from_prev",
+    "close_delta_from_prev_decision",
+    "R_delta_from_prev_decision",
+    "atr22_current"
+  ],
+  "ordinal_state_columns": [
+    "a_condition_true_run_length",
+    "b_condition_true_run_length"
+  ],
+  "present_state_columns": [
+    "base_state",
+    "native_market_state_context",
+    "memory_now",
+    "memory_seen",
+    "C_signal",
+    "A_signal",
+    "B_signal",
+    "a_condition_now",
+    "b_condition_now",
+    "a_condition_recovered_now",
+    "b_condition_recovered_now",
+    "a_condition_true_run_length",
+    "b_condition_true_run_length",
+    "hours_since_entry",
+    "hours_since_first_memory_or_null",
+    "progress_margin_delta_from_prev",
+    "structural_break_margin_delta_from_prev",
+    "volatility_damage_margin_delta_from_prev",
+    "a_margin_delta_from_prev",
+    "b_margin_delta_from_prev",
+    "close_delta_from_prev_decision",
+    "R_delta_from_prev_decision",
+    "atr22_current"
+  ],
+  "production_authorized": false,
+  "run_length_buckets": "0,1,2,3_PLUS",
+  "schema_version": "akah-rev564-state-conditioned-continuation-maximum-evidence-mega-v1-state-attribution-protocol",
+  "source_decision_grid": "governance/abc_lifecycle_state_machine_persistent_state_causal_feature_reconstruction_execution_v1/decision_grid_reconstructed_features.csv",
+  "stable_context_rule": "same non-zero target-mean sign in TRAIN_2019_2021, 2022, 2023 and same sign under 2x costs; descriptive only, not a runtime threshold",
+  "stable_context_support": {
+    "each_forward_year": 20,
+    "train": 30
+  },
+  "status": "PASS_PROTOCOL_FROZEN",
+  "target_rows_expected": 12290,
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_CONTINUATION_VALUE_STATE_CONDITIONED_ATTRIBUTION_PROTOCOL_FREEZE_V1",
+  "threshold_search": false
+}

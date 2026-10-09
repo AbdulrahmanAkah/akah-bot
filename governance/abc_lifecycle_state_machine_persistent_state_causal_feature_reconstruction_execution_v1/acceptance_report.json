@@ -1,0 +1,69 @@
+{
+  "actual_data_parity": {
+    "A_first_true_lifecycle_count": 135,
+    "A_first_true_vs_legacy_event_mismatch_lifecycle_count": 0,
+    "B_first_true_lifecycle_count": 31,
+    "B_first_true_vs_legacy_event_mismatch_lifecycle_count": 0,
+    "C_signal_mismatch_count": 0,
+    "all_actual_data_parity_checks_pass": true,
+    "memory_now_mismatch_count": 0,
+    "memory_seen_mismatch_count": 0,
+    "reconstructed_memory_observed_lifecycle_count": 1270
+  },
+  "decision_identity_and_order_preserved": true,
+  "entry_price_mapping_sha256": "83CC850A1D6D26EE5F7B60EBDFEE1EB78C91542C210CF041FB40E62B057CCE56",
+  "feature_column_count": 22,
+  "feature_columns": [
+    "R_after_t",
+    "R_before_t",
+    "R_delta_from_prev_decision",
+    "a_condition_now",
+    "a_condition_recovered_now",
+    "a_condition_true_run_length",
+    "a_margin_delta_from_prev",
+    "atr22_current",
+    "b_condition_now",
+    "b_condition_recovered_now",
+    "b_condition_true_run_length",
+    "b_margin_delta_from_prev",
+    "close_delta_from_prev_decision",
+    "close_minus_R_before_t",
+    "close_minus_donchian_prev10_low",
+    "close_minus_ratchet_stop_before_t",
+    "donchian_prev10_low",
+    "high_minus_R_before_t",
+    "progress_margin_delta_from_prev",
+    "ratchet_stop_before_t",
+    "structural_break_margin_delta_from_prev",
+    "volatility_damage_margin_delta_from_prev"
+  ],
+  "forbidden_surfaces": {
+    "2024_rows_accessed": false,
+    "2025_rows_accessed": false,
+    "exit_action": false,
+    "exit_arbiter": false,
+    "horizon_selection": false,
+    "persistent_state_definition": false,
+    "pnl_or_economic_outcomes_read": false,
+    "runtime_logic": false,
+    "threshold_selection": false
+  },
+  "legacy_counts": {
+    "A_signals": 135,
+    "B_signals": 31,
+    "C_signals": 74,
+    "memory_observed_lifecycles": 1270
+  },
+  "original_trace_columns_preserved_exactly_after_serialization": true,
+  "per_lifecycle_materialized_row_count_equals_frozen_eligible_count": true,
+  "population": {
+    "decision_represented_lifecycles": 1782,
+    "decision_rows": 14059,
+    "partition": "2020=1782+238",
+    "total_control_lifecycles": 2020,
+    "zero_eligible_lifecycles": 238
+  },
+  "schema_version": "abc-persistent-state-causal-feature-reconstruction-acceptance-v1",
+  "status": "PASS",
+  "zero_eligible_lifecycles_materialized_feature_rows": 0
+}

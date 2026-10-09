@@ -1,0 +1,12 @@
+{
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_OBSERVATIONAL_TRACE_EXECUTION_V1",
+  "status": "TECHNICAL_OR_PARITY_FAILURE_FAIL_CLOSED_NO_SCIENTIFIC_CONCLUSION",
+  "error_type": "RuntimeError",
+  "error": "CONTROL_LIFECYCLE_OUTSIDE_YEAR_BUFFER=2019|KCS-USDT|2019-04-02T06:00:00+00:00|2019-04-02T06:00:00+00:00",
+  "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\abdul\\AppData\\Local\\Temp\\akah_lsm_trace_c5ac8d769e044ca9aa8bfab350a7cc81\\trace.py\", line 632, in main\n    trace, events, lifecycles, chronology_counter = execute_trace(control, signals)\n                                                    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\abdul\\AppData\\Local\\Temp\\akah_lsm_trace_c5ac8d769e044ca9aa8bfab350a7cc81\\trace.py\", line 367, in execute_trace\n    die(f\"CONTROL_LIFECYCLE_OUTSIDE_YEAR_BUFFER={key}\")\n    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\abdul\\AppData\\Local\\Temp\\akah_lsm_trace_c5ac8d769e044ca9aa8bfab350a7cc81\\trace.py\", line 60, in die\n    raise RuntimeError(msg)\nRuntimeError: CONTROL_LIFECYCLE_OUTSIDE_YEAR_BUFFER=2019|KCS-USDT|2019-04-02T06:00:00+00:00|2019-04-02T06:00:00+00:00\n",
+  "market_data_accessed_before_failure": true,
+  "economic_outcomes_read": false,
+  "pnl_columns_read": false,
+  "2024_accessed": false,
+  "2025_accessed": false
+}

@@ -1,0 +1,95 @@
+{
+  "authority_bindings": {
+    "daily_sha256": "9ED3DC2CED3BFA8838637703856BB6A53B01954E8891B0AF839A5BE6F9B9B494",
+    "input_audit_sha256": "97B5E70EF1F43F7343604AF12FA95E14F677E50FE6047DB7C4ACA273AB307397",
+    "layout_audit_sha256": "C76EAEAD78E9C98428AD81FDA63518B13E2877CFCA68D097D614945427F0CA83",
+    "manifest_sha256": "62D79BCAEB9E4E8181D32A1D1ED445A4F884D020C9738C6D7EA14D0B8ACECA60",
+    "partial_recovery_audit_sha256": "06E1B4FB8BAF634CAFABE18E52238950DD25170989AECCC0D7503F1AE45677FC",
+    "replay_audit_sha256": "ADB1C511ED89B24EFC5BAF8B9591EDA84C1DE879B5DC46B5F8E7941F076CB991",
+    "source_audit_sha256": "49D86114732BDC9EA1665141EBC5552BE52DACD487A0220930DB76E32FF09EC6",
+    "state_guard_audit_sha256": "451CE666B26BDC0F222E3FEE119AB7E5856A228B930D7FD516079E0C196EED1C",
+    "trades_sha256": "D3A2B564E7C660060851BDD0F093D97018787F5EA922C6F99D5CF811CD678F20"
+  },
+  "branch": "research/rd48-cross-venue-price-level-basis-direct-utility-v1",
+  "evidence": [
+    {
+      "path": "governance/rnb_first_native_replay_v1/partial_recovery_audit.json",
+      "sha256": "06E1B4FB8BAF634CAFABE18E52238950DD25170989AECCC0D7503F1AE45677FC"
+    },
+    {
+      "path": "governance/rnb_first_native_replay_v1/isolated_layout_compatibility_audit.json",
+      "sha256": "C76EAEAD78E9C98428AD81FDA63518B13E2877CFCA68D097D614945427F0CA83"
+    },
+    {
+      "path": "governance/rnb_first_native_replay_v1/state_guard_cohort_causal_audit.json",
+      "sha256": "451CE666B26BDC0F222E3FEE119AB7E5856A228B930D7FD516079E0C196EED1C"
+    },
+    {
+      "path": "governance/rnb_first_native_replay_v1/source_and_interface_audit.json",
+      "sha256": "49D86114732BDC9EA1665141EBC5552BE52DACD487A0220930DB76E32FF09EC6"
+    },
+    {
+      "path": "governance/rnb_first_native_replay_v1/input_audit.json",
+      "sha256": "97B5E70EF1F43F7343604AF12FA95E14F677E50FE6047DB7C4ACA273AB307397"
+    },
+    {
+      "path": "governance/rnb_first_native_replay_v1/replay_audit.json",
+      "sha256": "ADB1C511ED89B24EFC5BAF8B9591EDA84C1DE879B5DC46B5F8E7941F076CB991"
+    },
+    {
+      "path": "governance/rnb_first_native_replay_v1.json",
+      "sha256": "4E30CA61C14B582FC77D043629FBE62660D7842EA26007663E6C51DC5757D77D"
+    },
+    {
+      "path": "data/research/reconstructed_native_baseline_pre2023/first-native-replay-v1/trades.csv",
+      "sha256": "D3A2B564E7C660060851BDD0F093D97018787F5EA922C6F99D5CF811CD678F20"
+    },
+    {
+      "path": "data/research/reconstructed_native_baseline_pre2023/first-native-replay-v1/daily.csv",
+      "sha256": "9ED3DC2CED3BFA8838637703856BB6A53B01954E8891B0AF839A5BE6F9B9B494"
+    },
+    {
+      "path": "data/research/reconstructed_native_baseline_pre2023/first-native-replay-v1/strata.json",
+      "sha256": "BDEF7610BBE60CCE55007B12DE11954497C689B42C02BCF573DD41ACB83F8027"
+    },
+    {
+      "path": "data/research/reconstructed_native_baseline_pre2023/first-native-replay-v1/metrics.json",
+      "sha256": "8B7A6B7B41F4CEA33AB73E5C6A293C19F4EB928A35B611D43E6CC691E212B140"
+    },
+    {
+      "path": "data/research/reconstructed_native_baseline_pre2023/first-native-replay-v1/counters.json",
+      "sha256": "883948232C5D5ED657B0A1BD560821674398CA9C6DB566F587C6B1431C9C7788"
+    },
+    {
+      "path": "data/research/reconstructed_native_baseline_pre2023/first-native-replay-v1/manifest.json",
+      "sha256": "62D79BCAEB9E4E8181D32A1D1ED445A4F884D020C9738C6D7EA14D0B8ACECA60"
+    }
+  ],
+  "firewall": {
+    "2023plus_rows": false,
+    "memory_v2_native_mutation": false,
+    "network": false,
+    "outcome_filtering": false,
+    "policy_mutation": false,
+    "push": false
+  },
+  "governed_schema_version": "akah-provenance-phase-governed-v1",
+  "next_bottleneck": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_FIRST_NATIVE_REPLAY_RESULT_AUDIT_V1",
+  "north_star_effect": "Produces the first causally reconstructed native replay result without protected-year data, retuning, or outcome-based cohort selection.",
+  "objective": "Execute the first reconstructed 2022 native RD27 replay on the frozen 3024-row native-state-eligible cohort across the frozen 9 study strata.",
+  "resolution_class": "FIRST_RECONSTRUCTED_NATIVE_RD27_REPLAY_EXECUTED",
+  "state_updates": {
+    "causal_state_coverage_count": 3024,
+    "economic_interpretation_performed": false,
+    "first_native_replay_executed": true,
+    "replay_cohort_count": 3024,
+    "replay_trade_count": 2244,
+    "roadmap_position": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_FIRST_NATIVE_REPLAY_RESULT_AUDIT_V1",
+    "study_strata_count": 9
+  },
+  "status": "PASS",
+  "summary": "Executed first native RD27 replay using canonical state computed by loader and cohort-level causal readiness proof; 2244 raw trade rows across 9 strata.",
+  "task_id": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_FIRST_NATIVE_REPLAY_V1",
+  "task_start_head": "7efcefdc497c030dbe73bfeac5bc1b5f8a323c26",
+  "task_start_revision": 229
+}

@@ -1,0 +1,838 @@
+{
+  "file_count": 3,
+  "files": [
+    {
+      "path": "src/spotbot/research/abc_exit_primitives_v1.py",
+      "sha256": "EE6C74F098ABDA63213E40CB6D0CC57F6BA012D35F90475361F7A25B94621284",
+      "size": 41694,
+      "snippets": [
+        {
+          "line": 49,
+          "matched": [
+            "hold"
+          ],
+          "snippet": "00046: A_ID = \"DONCHIAN_CLOSE_BREAK_10_V1\"\n00047: B_ID = \"POST_MEMORY_ATR_RATCHET_22_3_V1\"\n00048: \n00049: MAX_HOLD_HOURS = 168\n00050: ATR_PERIOD = 22\n00051: ATR_MULTIPLIER = 3.0\n00052: DONCHIAN_LOOKBACK = 10\n00053: C_BAR_LIMIT = 12"
+        },
+        {
+          "line": 277,
+          "matched": [
+            "quantity"
+          ],
+          "snippet": "00274: \n00275: \n00276: def _marked_equity(cash: float, positions: dict[str, ReplayPosition]) -> tuple[float, float]:\n00277:     gross = sum(p.quantity * p.last_mark for p in positions.values())\n00278:     return cash + gross, gross\n00279: \n00280: \n00281: def _close_record("
+        },
+        {
+          "line": 292,
+          "matched": [
+            "cost_multiplier"
+          ],
+          "snippet": "00289:     policy_id: str,\n00290:     portfolio_id: str,\n00291:     universe_id: str,\n00292:     cost_multiplier: float,\n00293: ) -> tuple[dict[str, Any], float]:\n00294:     exit_notional = position.quantity * exit_price\n00295:     exit_cost = exit_notional * side_cost\n00296:     gross_pnl = exit_notional - position.entry_notional"
+        },
+        {
+          "line": 294,
+          "matched": [
+            "exit_notional",
+            "quantity"
+          ],
+          "snippet": "00291:     universe_id: str,\n00292:     cost_multiplier: float,\n00293: ) -> tuple[dict[str, Any], float]:\n00294:     exit_notional = position.quantity * exit_price\n00295:     exit_cost = exit_notional * side_cost\n00296:     gross_pnl = exit_notional - position.entry_notional\n00297:     net_pnl = gross_pnl - position.entry_cost - exit_cost\n00298:     cash_credit = exit_notional - exit_cost"
+        },
+        {
+          "line": 295,
+          "matched": [
+            "exit_cost",
+            "exit_notional"
+          ],
+          "snippet": "00292:     cost_multiplier: float,\n00293: ) -> tuple[dict[str, Any], float]:\n00294:     exit_notional = position.quantity * exit_price\n00295:     exit_cost = exit_notional * side_cost\n00296:     gross_pnl = exit_notional - position.entry_notional\n00297:     net_pnl = gross_pnl - position.entry_cost - exit_cost\n00298:     cash_credit = exit_notional - exit_cost\n00299:     holding_hours = int((_utc(timestamp) - position.entry_time).total_seconds() / 3600.0)"
+        },
+        {
+          "line": 296,
+          "matched": [
+            "exit_notional"
+          ],
+          "snippet": "00293: ) -> tuple[dict[str, Any], float]:\n00294:     exit_notional = position.quantity * exit_price\n00295:     exit_cost = exit_notional * side_cost\n00296:     gross_pnl = exit_notional - position.entry_notional\n00297:     net_pnl = gross_pnl - position.entry_cost - exit_cost\n00298:     cash_credit = exit_notional - exit_cost\n00299:     holding_hours = int((_utc(timestamp) - position.entry_time).total_seconds() / 3600.0)\n00300:     return {"
+        },
+        {
+          "line": 297,
+          "matched": [
+            "exit_cost",
+            "entry_cost"
+          ],
+          "snippet": "00294:     exit_notional = position.quantity * exit_price\n00295:     exit_cost = exit_notional * side_cost\n00296:     gross_pnl = exit_notional - position.entry_notional\n00297:     net_pnl = gross_pnl - position.entry_cost - exit_cost\n00298:     cash_credit = exit_notional - exit_cost\n00299:     holding_hours = int((_utc(timestamp) - position.entry_time).total_seconds() / 3600.0)\n00300:     return {\n00301:         \"policy_id\": policy_id,"
+        },
+        {
+          "line": 298,
+          "matched": [
+            "exit_cost",
+            "exit_notional"
+          ],
+          "snippet": "00295:     exit_cost = exit_notional * side_cost\n00296:     gross_pnl = exit_notional - position.entry_notional\n00297:     net_pnl = gross_pnl - position.entry_cost - exit_cost\n00298:     cash_credit = exit_notional - exit_cost\n00299:     holding_hours = int((_utc(timestamp) - position.entry_time).total_seconds() / 3600.0)\n00300:     return {\n00301:         \"policy_id\": policy_id,\n00302:         \"portfolio_id\": portfolio_id,"
+        },
+        {
+          "line": 299,
+          "matched": [
+            "hold"
+          ],
+          "snippet": "00296:     gross_pnl = exit_notional - position.entry_notional\n00297:     net_pnl = gross_pnl - position.entry_cost - exit_cost\n00298:     cash_credit = exit_notional - exit_cost\n00299:     holding_hours = int((_utc(timestamp) - position.entry_time).total_seconds() / 3600.0)\n00300:     return {\n00301:         \"policy_id\": policy_id,\n00302:         \"portfolio_id\": portfolio_id,\n00303:         \"universe_id\": universe_id,"
+        },
+        {
+          "line": 304,
+          "matched": [
+            "cost_multiplier"
+          ],
+          "snippet": "00301:         \"policy_id\": policy_id,\n00302:         \"portfolio_id\": portfolio_id,\n00303:         \"universe_id\": universe_id,\n00304:         \"cost_multiplier\": cost_multiplier,\n00305:         \"pair\": position.pair,\n00306:         \"signal_time\": position.signal_time,\n00307:         \"entry_time\": position.entry_time,\n00308:         \"exit_time\": _utc(timestamp),"
+        },
+        {
+          "line": 308,
+          "matched": [
+            "exit_time"
+          ],
+          "snippet": "00305:         \"pair\": position.pair,\n00306:         \"signal_time\": position.signal_time,\n00307:         \"entry_time\": position.entry_time,\n00308:         \"exit_time\": _utc(timestamp),\n00309:         \"holding_hours\": holding_hours,\n00310:         \"exit_reason\": exit_reason,\n00311:         \"entry_price\": position.entry_price,\n00312:         \"exit_price\": exit_price,"
+        },
+        {
+          "line": 309,
+          "matched": [
+            "hold"
+          ],
+          "snippet": "00306:         \"signal_time\": position.signal_time,\n00307:         \"entry_time\": position.entry_time,\n00308:         \"exit_time\": _utc(timestamp),\n00309:         \"holding_hours\": holding_hours,\n00310:         \"exit_reason\": exit_reason,\n00311:         \"entry_price\": position.entry_price,\n00312:         \"exit_price\": exit_price,\n00313:         \"quantity\": position.quantity,"
+        },
+        {
+          "line": 313,
+          "matched": [
+            "quantity"
+          ],
+          "snippet": "00310:         \"exit_reason\": exit_reason,\n00311:         \"entry_price\": position.entry_price,\n00312:         \"exit_price\": exit_price,\n00313:         \"quantity\": position.quantity,\n00314:         \"entry_notional\": position.entry_notional,\n00315:         \"exit_notional\": exit_notional,\n00316:         \"entry_cost\": position.entry_cost,\n00317:         \"exit_cost\": exit_cost,"
+        },
+        {
+          "line": 315,
+          "matched": [
+            "exit_notional"
+          ],
+          "snippet": "00312:         \"exit_price\": exit_price,\n00313:         \"quantity\": position.quantity,\n00314:         \"entry_notional\": position.entry_notional,\n00315:         \"exit_notional\": exit_notional,\n00316:         \"entry_cost\": position.entry_cost,\n00317:         \"exit_cost\": exit_cost,\n00318:         \"gross_pnl\": gross_pnl,\n00319:         \"net_pnl\": net_pnl,"
+        },
+        {
+          "line": 316,
+          "matched": [
+            "entry_cost"
+          ],
+          "snippet": "00313:         \"quantity\": position.quantity,\n00314:         \"entry_notional\": position.entry_notional,\n00315:         \"exit_notional\": exit_notional,\n00316:         \"entry_cost\": position.entry_cost,\n00317:         \"exit_cost\": exit_cost,\n00318:         \"gross_pnl\": gross_pnl,\n00319:         \"net_pnl\": net_pnl,\n00320:         \"period_id\": position.period_id,"
+        },
+        {
+          "line": 317,
+          "matched": [
+            "exit_cost"
+          ],
+          "snippet": "00314:         \"entry_notional\": position.entry_notional,\n00315:         \"exit_notional\": exit_notional,\n00316:         \"entry_cost\": position.entry_cost,\n00317:         \"exit_cost\": exit_cost,\n00318:         \"gross_pnl\": gross_pnl,\n00319:         \"net_pnl\": net_pnl,\n00320:         \"period_id\": position.period_id,\n00321:         \"membership_rank\": position.membership_rank,"
+        },
+        {
+          "line": 343,
+          "matched": [
+            "cost_multiplier"
+          ],
+          "snippet": "00340:     replay_cutoff: pd.Timestamp,\n00341:     portfolio_id: str = \"UNION_FOCUS\",\n00342:     universe_id: str = \"C2\",\n00343:     cost_multiplier: float = 1.0,\n00344:     external_signal_schedule: dict[str, set[tuple[int, int]]] | None = None,\n00345: ) -> tuple[pd.DataFrame, pd.DataFrame, dict[str, Any], dict[str, int], pd.DataFrame]:\n00346:     \"\"\"Full portfolio replay. candidate_id=None must parity-match native FULL_ADAPTIVE_LIFECYCLE_BRAIN.\"\"\"\n00347:     if candidate_id is not None:"
+        },
+        {
+          "line": 354,
+          "matched": [
+            "continuation"
+          ],
+          "snippet": "00351:             \"H1_WATCH_STALLED\",\n00352:             \"H2_WATCH_DAMAGE_ACTIVE\",\n00353:             \"H3_PROTECT_DAMAGE_ONSET\",\n00354:             \"H4_PROTECT_DAMAGE_CONTINUATION\",\n00355:             \"H5_EXIT_CONFLUENT_DAMAGE\",\n00356:             \"H6_DEESCALATE_DAMAGE_CLEAR\",\n00357:             \"R1_CONFIRMED_STRUCTURAL_BREAK_ONLY\",\n00358:             \"R2_CONFIRMED_VOLATILITY_DAMAGE_ONLY\","
+        },
+        {
+          "line": 365,
+          "matched": [
+            "continuation"
+          ],
+          "snippet": "00362:             \"R6_UNCONFIRMED_STRUCTURAL_BREAK_NO_STALL\",\n00363:             \"R7_CONFIRMED_ONSET_STRUCTURAL_BREAK_ONLY\",\n00364:             \"R8_CONFIRMED_ONSET_WITH_VOLATILITY_DAMAGE\",\n00365:             \"R9_CONFIRMED_CONTINUATION_STRUCTURAL_BREAK_ONLY\",\n00366:             \"R10_CONFIRMED_CONTINUATION_WITH_VOLATILITY_DAMAGE\",\n00367:             \"EB1_CAUSAL_TECH_LINEAR_EDGE\",\n00368:         }:\n00369:             raise ABCExecutionError(f\"unsupported external hypothesis id: {candidate_id}\")"
+        },
+        {
+          "line": 366,
+          "matched": [
+            "continuation"
+          ],
+          "snippet": "00363:             \"R7_CONFIRMED_ONSET_STRUCTURAL_BREAK_ONLY\",\n00364:             \"R8_CONFIRMED_ONSET_WITH_VOLATILITY_DAMAGE\",\n00365:             \"R9_CONFIRMED_CONTINUATION_STRUCTURAL_BREAK_ONLY\",\n00366:             \"R10_CONFIRMED_CONTINUATION_WITH_VOLATILITY_DAMAGE\",\n00367:             \"EB1_CAUSAL_TECH_LINEAR_EDGE\",\n00368:         }:\n00369:             raise ABCExecutionError(f\"unsupported external hypothesis id: {candidate_id}\")\n00370:     elif external_signal_schedule is not None:"
+        },
+        {
+          "line": 388,
+          "matched": [
+            "cost_multiplier"
+          ],
+          "snippet": "00385:     lookups = {p: fast_lookup(f) for p, f in frames.items()}\n00386:     state_lookup = build_state_lookup(state_frame)\n00387:     h4_lookup = {p: four_hour_close_lookup(b) for p, b in four_hour.items()}\n00388:     side_cost = BASE_ROUND_TRIP_COST * cost_multiplier / 2.0\n00389: \n00390:     scheduled: dict[int, list[dict[str, Any]]] = {}\n00391:     for raw in events.to_dict(orient=\"records\"):\n00392:         signal_time = _utc(raw[\"timestamp\"])"
+        },
+        {
+          "line": 394,
+          "matched": [
+            "exit_time",
+            "hold"
+          ],
+          "snippet": "00391:     for raw in events.to_dict(orient=\"records\"):\n00392:         signal_time = _utc(raw[\"timestamp\"])\n00393:         entry_time = signal_time + pd.Timedelta(hours=1)\n00394:         max_exit_time = entry_time + pd.Timedelta(hours=MAX_HOLD_HOURS)\n00395:         if entry_time < replay_start or not (max_exit_time < replay_cutoff):\n00396:             continue\n00397:         scheduled.setdefault(int(entry_time.value), []).append(\n00398:             {**raw, \"signal_time\": signal_time, \"entry_time\": entry_time, \"max_exit_time\": max_exit_time}"
+        },
+        {
+          "line": 395,
+          "matched": [
+            "exit_time"
+          ],
+          "snippet": "00392:         signal_time = _utc(raw[\"timestamp\"])\n00393:         entry_time = signal_time + pd.Timedelta(hours=1)\n00394:         max_exit_time = entry_time + pd.Timedelta(hours=MAX_HOLD_HOURS)\n00395:         if entry_time < replay_start or not (max_exit_time < replay_cutoff):\n00396:             continue\n00397:         scheduled.setdefault(int(entry_time.value), []).append(\n00398:             {**raw, \"signal_time\": signal_time, \"entry_time\": entry_time, \"max_exit_time\": max_exit_time}\n00399:         )"
+        },
+        {
+          "line": 398,
+          "matched": [
+            "exit_time"
+          ],
+          "snippet": "00395:         if entry_time < replay_start or not (max_exit_time < replay_cutoff):\n00396:             continue\n00397:         scheduled.setdefault(int(entry_time.value), []).append(\n00398:             {**raw, \"signal_time\": signal_time, \"entry_time\": entry_time, \"max_exit_time\": max_exit_time}\n00399:         )\n00400: \n00401:     policy_id = FULL_ADAPTIVE_LIFECYCLE_BRAIN if candidate_id is None else f\"{FULL_ADAPTIVE_LIFECYCLE_BRAIN}__ABC_{candidate_id}\"\n00402:     cash = INITIAL_EQUITY"
+        },
+        {
+          "line": 424,
+          "matched": [
+            "hold"
+          ],
+          "snippet": "00421:         \"admitted_entries\": 0,\n00422:         \"risk_off_suppressed_entries\": 0,\n00423:         \"entry_bar_adaptive_exits\": 0,\n00424:         \"max_hold_exits\": 0,\n00425:         \"adaptive_stagnation_exits\": 0,\n00426:         \"adaptive_protection_gap_exits\": 0,\n00427:         \"adaptive_protection_touch_exits\": 0,\n00428:         \"candidate_signals\": 0,"
+        },
+        {
+          "line": 480,
+          "matched": [
+            "native_exit",
+            "exit_time"
+          ],
+          "snippet": "00477:                             \"candidate_executed\": False,\n00478:                             \"native_preempted\": True,\n00479:                             \"preemption_reason\": why,\n00480:                             \"native_exit_time\": timestamp,\n00481:                         }\n00482:                     )\n00483:                     pending.pop(pair, None)\n00484:                 reason = str(decision.exit_reason)"
+        },
+        {
+          "line": 485,
+          "matched": [
+            "hold"
+          ],
+          "snippet": "00482:                     )\n00483:                     pending.pop(pair, None)\n00484:                 reason = str(decision.exit_reason)\n00485:                 if reason == \"MAX_HOLD_168H\": counters[\"max_hold_exits\"] += 1\n00486:                 elif reason == \"ADAPTIVE_PROTECTION_GAP\": counters[\"adaptive_protection_gap_exits\"] += 1\n00487:                 elif reason == \"ADAPTIVE_PROTECTION_TOUCH\": counters[\"adaptive_protection_touch_exits\"] += 1\n00488:                 elif reason.startswith(\"ADAPTIVE_STAGNATION_\"): counters[\"adaptive_stagnation_exits\"] += 1\n00489:                 record, credit = _close_record("
+        },
+        {
+          "line": 493,
+          "matched": [
+            "cost_multiplier"
+          ],
+          "snippet": "00490:                     position=position, timestamp=timestamp, exit_price=float(decision.exit_price),\n00491:                     exit_reason=reason, exit_market_state=current_state, side_cost=side_cost,\n00492:                     policy_id=policy_id, portfolio_id=portfolio_id, universe_id=universe_id,\n00493:                     cost_multiplier=cost_multiplier,\n00494:                 )\n00495:                 cash += credit\n00496:                 trades.append(record)\n00497:                 positions.pop(pair, None)"
+        },
+        {
+          "line": 519,
+          "matched": [
+            "native_exit",
+            "exit_time"
+          ],
+          "snippet": "00516:                             \"candidate_scheduled_execution_time\": timestamp,\n00517:                             \"candidate_executable\": False, \"candidate_executed\": False,\n00518:                             \"native_preempted\": False, \"preemption_reason\": \"NO_VALID_EXECUTION_PRICE\",\n00519:                             \"native_exit_time\": None,\n00520:                         }\n00521:                     )\n00522:                     pending.pop(pair, None)\n00523:                     continue"
+        },
+        {
+          "line": 529,
+          "matched": [
+            "cost_multiplier"
+          ],
+          "snippet": "00526:                     position=position, timestamp=timestamp, exit_price=float(bar[\"open\"]),\n00527:                     exit_reason=f\"ABC_{candidate_id}_CANDIDATE_EXIT\", exit_market_state=current_state,\n00528:                     side_cost=side_cost, policy_id=policy_id, portfolio_id=portfolio_id,\n00529:                     universe_id=universe_id, cost_multiplier=cost_multiplier,\n00530:                 )\n00531:                 cash += credit\n00532:                 trades.append(record)\n00533:                 counters[\"candidate_executed\"] += 1"
+        },
+        {
+          "line": 541,
+          "matched": [
+            "native_exit",
+            "exit_time"
+          ],
+          "snippet": "00538:                         \"candidate_scheduled_execution_time\": timestamp,\n00539:                         \"candidate_executable\": True, \"candidate_executed\": True,\n00540:                         \"native_preempted\": False, \"preemption_reason\": None,\n00541:                         \"native_exit_time\": None,\n00542:                     }\n00543:                 )\n00544:                 positions.pop(pair, None)\n00545:                 cstates.pop(pair, None)"
+        },
+        {
+          "line": 577,
+          "matched": [
+            "exit_time"
+          ],
+          "snippet": "00574:                 continue\n00575: \n00576:             entry_bar = _bar_at(pair, timestamp, frames, lookups)\n00577:             exit_bar = _bar_at(pair, _utc(item[\"max_exit_time\"]), frames, lookups)\n00578:             signal_bar = _bar_at(pair, signal_time, frames, lookups)\n00579:             if entry_bar is None:\n00580:                 counters[\"missing_entry_bar\"] += 1\n00581:                 continue"
+        },
+        {
+          "line": 616,
+          "matched": [
+            "quantity"
+          ],
+          "snippet": "00613:                 continue\n00614: \n00615:             entry_price = float(entry_bar[\"open\"])\n00616:             quantity = notional / entry_price\n00617:             entry_cost = notional * side_cost\n00618:             cash -= notional + entry_cost\n00619:             if cash < -1e-7:\n00620:                 raise ABCExecutionError(\"negative cash after entry\")"
+        },
+        {
+          "line": 617,
+          "matched": [
+            "entry_cost"
+          ],
+          "snippet": "00614: \n00615:             entry_price = float(entry_bar[\"open\"])\n00616:             quantity = notional / entry_price\n00617:             entry_cost = notional * side_cost\n00618:             cash -= notional + entry_cost\n00619:             if cash < -1e-7:\n00620:                 raise ABCExecutionError(\"negative cash after entry\")\n00621:             cash = max(cash, 0.0)"
+        },
+        {
+          "line": 618,
+          "matched": [
+            "entry_cost"
+          ],
+          "snippet": "00615:             entry_price = float(entry_bar[\"open\"])\n00616:             quantity = notional / entry_price\n00617:             entry_cost = notional * side_cost\n00618:             cash -= notional + entry_cost\n00619:             if cash < -1e-7:\n00620:                 raise ABCExecutionError(\"negative cash after entry\")\n00621:             cash = max(cash, 0.0)\n00622:             support = tuple(sorted(x for x in str(item[\"support_families\"]).split(\"|\") if x))"
+        },
+        {
+          "line": 629,
+          "matched": [
+            "exit_time"
+          ],
+          "snippet": "00626:             )\n00627:             position = ReplayPosition(\n00628:                 pair=pair, signal_time=signal_time, entry_time=timestamp,\n00629:                 max_exit_time=_utc(item[\"max_exit_time\"]), entry_price=entry_price,\n00630:                 quantity=quantity, entry_notional=notional, entry_cost=entry_cost,\n00631:                 membership_rank=int(item[\"membership_rank\"]), support_families=support,\n00632:                 period_id=str(item[\"period_id\"]), atr24_at_signal=atr_signal,\n00633:                 lifecycle=lifecycle, entry_market_state=entry_state, last_mark=entry_price,"
+        },
+        {
+          "line": 630,
+          "matched": [
+            "entry_cost",
+            "quantity"
+          ],
+          "snippet": "00627:             position = ReplayPosition(\n00628:                 pair=pair, signal_time=signal_time, entry_time=timestamp,\n00629:                 max_exit_time=_utc(item[\"max_exit_time\"]), entry_price=entry_price,\n00630:                 quantity=quantity, entry_notional=notional, entry_cost=entry_cost,\n00631:                 membership_rank=int(item[\"membership_rank\"]), support_families=support,\n00632:                 period_id=str(item[\"period_id\"]), atr24_at_signal=atr_signal,\n00633:                 lifecycle=lifecycle, entry_market_state=entry_state, last_mark=entry_price,\n00634:             )"
+        },
+        {
+          "line": 653,
+          "matched": [
+            "hold"
+          ],
+          "snippet": "00650:                     raise ABCExecutionError(\"native entry-bar exit missing fill\")\n00651:                 counters[\"entry_bar_adaptive_exits\"] += 1\n00652:                 reason = str(decision.exit_reason)\n00653:                 if reason == \"MAX_HOLD_168H\": counters[\"max_hold_exits\"] += 1\n00654:                 elif reason == \"ADAPTIVE_PROTECTION_GAP\": counters[\"adaptive_protection_gap_exits\"] += 1\n00655:                 elif reason == \"ADAPTIVE_PROTECTION_TOUCH\": counters[\"adaptive_protection_touch_exits\"] += 1\n00656:                 elif reason.startswith(\"ADAPTIVE_STAGNATION_\"): counters[\"adaptive_stagnation_exits\"] += 1\n00657:                 record, credit = _close_record("
+        },
+        {
+          "line": 661,
+          "matched": [
+            "cost_multiplier"
+          ],
+          "snippet": "00658:                     position=position, timestamp=timestamp, exit_price=float(decision.exit_price),\n00659:                     exit_reason=reason, exit_market_state=entry_state, side_cost=side_cost,\n00660:                     policy_id=policy_id, portfolio_id=portfolio_id, universe_id=universe_id,\n00661:                     cost_multiplier=cost_multiplier,\n00662:                 )\n00663:                 cash += credit\n00664:                 trades.append(record)\n00665:                 positions.pop(pair, None)"
+        },
+        {
+          "line": 685,
+          "matched": [
+            "decision_time"
+          ],
+          "snippet": "00682: \n00683:         # Candidate observes completed 4H bar at its close. Fill is first 1H open strictly after close.\n00684:         if candidate_id is not None:\n00685:             decision_time = timestamp + pd.Timedelta(hours=1)\n00686:             if decision_time.hour % 4 == 0:\n00687:                 for pair in sorted(list(positions)):\n00688:                     if pair in pending:\n00689:                         continue"
+        },
+        {
+          "line": 686,
+          "matched": [
+            "decision_time"
+          ],
+          "snippet": "00683:         # Candidate observes completed 4H bar at its close. Fill is first 1H open strictly after close.\n00684:         if candidate_id is not None:\n00685:             decision_time = timestamp + pd.Timedelta(hours=1)\n00686:             if decision_time.hour % 4 == 0:\n00687:                 for pair in sorted(list(positions)):\n00688:                     if pair in pending:\n00689:                         continue\n00690:                     row = h4_lookup.get(pair, {}).get(int(decision_time.value))"
+        },
+        {
+          "line": 690,
+          "matched": [
+            "decision_time"
+          ],
+          "snippet": "00687:                 for pair in sorted(list(positions)):\n00688:                     if pair in pending:\n00689:                         continue\n00690:                     row = h4_lookup.get(pair, {}).get(int(decision_time.value))\n00691:                     if row is None:\n00692:                         continue\n00693:                     st = cstates[pair]\n00694:                     if external_signal_schedule is None:"
+        },
+        {
+          "line": 705,
+          "matched": [
+            "decision_time"
+          ],
+          "snippet": "00702:                     else:\n00703:                         lifecycle_key = (\n00704:                             int(_utc(positions[pair].entry_time).value),\n00705:                             int(decision_time.value),\n00706:                         )\n00707:                         signal = lifecycle_key in external_signal_schedule.get(pair, set())\n00708:                         reason = (\n00709:                             \"EXTERNAL_STATE_CONDITIONED_HYPOTHESIS_SIGNAL\""
+        },
+        {
+          "line": 716,
+          "matched": [
+            "decision_time"
+          ],
+          "snippet": "00713:                     if signal:\n00714:                         counters[\"candidate_signals\"] += 1\n00715:                         pending[pair] = {\n00716:                             \"signal_time\": decision_time,\n00717:                             \"execution_time\": decision_time + pd.Timedelta(hours=1),\n00718:                             \"reason\": reason,\n00719:                         }\n00720: "
+        },
+        {
+          "line": 717,
+          "matched": [
+            "decision_time"
+          ],
+          "snippet": "00714:                         counters[\"candidate_signals\"] += 1\n00715:                         pending[pair] = {\n00716:                             \"signal_time\": decision_time,\n00717:                             \"execution_time\": decision_time + pd.Timedelta(hours=1),\n00718:                             \"reason\": reason,\n00719:                         }\n00720: \n00721:         equity_close, gross_close = _marked_equity(cash, positions)"
+        },
+        {
+          "line": 729,
+          "matched": [
+            "cost_multiplier"
+          ],
+          "snippet": "00726:             daily_rows.append(\n00727:                 {\n00728:                     \"policy_id\": policy_id, \"portfolio_id\": portfolio_id,\n00729:                     \"universe_id\": universe_id, \"cost_multiplier\": cost_multiplier,\n00730:                     \"timestamp\": timestamp, \"equity\": equity_close, \"cash\": cash,\n00731:                     \"gross_exposure\": gross_close,\n00732:                     \"gross_exposure_fraction\": gross_close / equity_close if equity_close > 0 else math.nan,\n00733:                     \"open_positions\": len(positions),"
+        },
+        {
+          "line": 754,
+          "matched": [
+            "cost_multiplier"
+          ],
+          "snippet": "00751:     metrics.update(\n00752:         {\n00753:             \"policy_id\": policy_id, \"portfolio_id\": portfolio_id,\n00754:             \"universe_id\": universe_id, \"cost_multiplier\": cost_multiplier,\n00755:             \"minimum_cash\": float(daily_frame[\"cash\"].min()) if len(daily_frame) else INITIAL_EQUITY,\n00756:         }\n00757:     )\n00758:     return trade_frame, daily_frame, metrics, counters, intervention_frame"
+        },
+        {
+          "line": 771,
+          "matched": [
+            "native_exit",
+            "exit_time"
+          ],
+          "snippet": "00768: ) -> dict[str, Any]:\n00769:     validate_candidate_id(candidate_id)\n00770:     entry_time = _utc(trade[\"entry_time\"])\n00771:     native_exit = _utc(trade[\"exit_time\"])\n00772:     entry_price = float(trade[\"entry_price\"])\n00773:     state = new_candidate_state(entry_time, entry_price)\n00774:     rows = h4.loc[\n00775:         (pd.to_datetime(h4[\"bar_open_time\"], utc=True) >= entry_time)"
+        },
+        {
+          "line": 776,
+          "matched": [
+            "native_exit"
+          ],
+          "snippet": "00773:     state = new_candidate_state(entry_time, entry_price)\n00774:     rows = h4.loc[\n00775:         (pd.to_datetime(h4[\"bar_open_time\"], utc=True) >= entry_time)\n00776:         & (pd.to_datetime(h4[\"bar_close_time\"], utc=True) <= native_exit)\n00777:     ]\n00778:     candidate_signal_time = None\n00779:     scheduled = None\n00780:     readiness_seen = 0"
+        },
+        {
+          "line": 797,
+          "matched": [
+            "native_exit",
+            "exit_time"
+          ],
+          "snippet": "00794:     executed = False\n00795:     preempted = False\n00796:     preemption_reason = None\n00797:     modified_exit_time = native_exit\n00798:     modified_exit_price = float(trade[\"exit_price\"])\n00799: \n00800:     if scheduled is not None:\n00801:         if native_exit < scheduled:"
+        },
+        {
+          "line": 801,
+          "matched": [
+            "native_exit"
+          ],
+          "snippet": "00798:     modified_exit_price = float(trade[\"exit_price\"])\n00799: \n00800:     if scheduled is not None:\n00801:         if native_exit < scheduled:\n00802:             preempted = True\n00803:             preemption_reason = \"NATIVE_PREEMPTED\"\n00804:         elif native_exit == scheduled:\n00805:             preempted = True"
+        },
+        {
+          "line": 804,
+          "matched": [
+            "native_exit"
+          ],
+          "snippet": "00801:         if native_exit < scheduled:\n00802:             preempted = True\n00803:             preemption_reason = \"NATIVE_PREEMPTED\"\n00804:         elif native_exit == scheduled:\n00805:             preempted = True\n00806:             preemption_reason = \"NATIVE_TIE_PRIORITY\"\n00807:         else:\n00808:             hour = hourly.loc[pd.to_datetime(hourly[\"timestamp\"], utc=True) == scheduled]"
+        },
+        {
+          "line": 814,
+          "matched": [
+            "exit_time"
+          ],
+          "snippet": "00811:             else:\n00812:                 executable = True\n00813:                 executed = True\n00814:                 modified_exit_time = scheduled\n00815:                 modified_exit_price = float(hour.iloc[0][\"open\"])\n00816: \n00817:     quantity = float(trade[\"quantity\"])\n00818:     entry_notional = float(trade[\"entry_notional\"])"
+        },
+        {
+          "line": 817,
+          "matched": [
+            "quantity"
+          ],
+          "snippet": "00814:                 modified_exit_time = scheduled\n00815:                 modified_exit_price = float(hour.iloc[0][\"open\"])\n00816: \n00817:     quantity = float(trade[\"quantity\"])\n00818:     entry_notional = float(trade[\"entry_notional\"])\n00819:     entry_cost = float(trade[\"entry_cost\"])\n00820:     modified_exit_notional = quantity * modified_exit_price\n00821:     modified_exit_cost = modified_exit_notional * side_cost"
+        },
+        {
+          "line": 819,
+          "matched": [
+            "entry_cost"
+          ],
+          "snippet": "00816: \n00817:     quantity = float(trade[\"quantity\"])\n00818:     entry_notional = float(trade[\"entry_notional\"])\n00819:     entry_cost = float(trade[\"entry_cost\"])\n00820:     modified_exit_notional = quantity * modified_exit_price\n00821:     modified_exit_cost = modified_exit_notional * side_cost\n00822:     modified_net_pnl = modified_exit_notional - entry_notional - entry_cost - modified_exit_cost\n00823:     control_net_pnl = float(trade[\"net_pnl\"])"
+        },
+        {
+          "line": 820,
+          "matched": [
+            "exit_notional",
+            "quantity"
+          ],
+          "snippet": "00817:     quantity = float(trade[\"quantity\"])\n00818:     entry_notional = float(trade[\"entry_notional\"])\n00819:     entry_cost = float(trade[\"entry_cost\"])\n00820:     modified_exit_notional = quantity * modified_exit_price\n00821:     modified_exit_cost = modified_exit_notional * side_cost\n00822:     modified_net_pnl = modified_exit_notional - entry_notional - entry_cost - modified_exit_cost\n00823:     control_net_pnl = float(trade[\"net_pnl\"])\n00824:     delta = modified_net_pnl - control_net_pnl"
+        },
+        {
+          "line": 821,
+          "matched": [
+            "exit_cost",
+            "exit_notional"
+          ],
+          "snippet": "00818:     entry_notional = float(trade[\"entry_notional\"])\n00819:     entry_cost = float(trade[\"entry_cost\"])\n00820:     modified_exit_notional = quantity * modified_exit_price\n00821:     modified_exit_cost = modified_exit_notional * side_cost\n00822:     modified_net_pnl = modified_exit_notional - entry_notional - entry_cost - modified_exit_cost\n00823:     control_net_pnl = float(trade[\"net_pnl\"])\n00824:     delta = modified_net_pnl - control_net_pnl\n00825: "
+        },
+        {
+          "line": 822,
+          "matched": [
+            "exit_cost",
+            "entry_cost",
+            "exit_notional"
+          ],
+          "snippet": "00819:     entry_cost = float(trade[\"entry_cost\"])\n00820:     modified_exit_notional = quantity * modified_exit_price\n00821:     modified_exit_cost = modified_exit_notional * side_cost\n00822:     modified_net_pnl = modified_exit_notional - entry_notional - entry_cost - modified_exit_cost\n00823:     control_net_pnl = float(trade[\"net_pnl\"])\n00824:     delta = modified_net_pnl - control_net_pnl\n00825: \n00826:     return {"
+        },
+        {
+          "line": 830,
+          "matched": [
+            "native_exit",
+            "exit_time"
+          ],
+          "snippet": "00827:         \"candidate_id\": candidate_id,\n00828:         \"pair\": str(trade[\"pair\"]),\n00829:         \"entry_time\": entry_time,\n00830:         \"control_exit_time\": native_exit,\n00831:         \"control_exit_reason\": str(trade[\"exit_reason\"]),\n00832:         \"candidate_signal_time\": candidate_signal_time,\n00833:         \"candidate_scheduled_execution_time\": scheduled,\n00834:         \"candidate_executable\": executable,"
+        },
+        {
+          "line": 838,
+          "matched": [
+            "exit_time"
+          ],
+          "snippet": "00835:         \"candidate_executed\": executed,\n00836:         \"native_preempted\": preempted,\n00837:         \"preemption_reason\": preemption_reason,\n00838:         \"modified_exit_time\": modified_exit_time,\n00839:         \"modified_exit_price\": modified_exit_price,\n00840:         \"control_net_pnl\": control_net_pnl,\n00841:         \"modified_net_pnl\": modified_net_pnl,\n00842:         \"direct_effect_delta_pnl\": delta,"
+        },
+        {
+          "line": 844,
+          "matched": [
+            "native_exit",
+            "exit_time"
+          ],
+          "snippet": "00841:         \"modified_net_pnl\": modified_net_pnl,\n00842:         \"direct_effect_delta_pnl\": delta,\n00843:         \"lead_hours_vs_native\": (\n00844:             (native_exit - modified_exit_time).total_seconds() / 3600.0 if executed else 0.0\n00845:         ),\n00846:         \"eligible_4h_bars_seen\": state.eligible_bars_seen,\n00847:         \"indicator_ready_bars_seen\": state.indicator_ready_bars_seen,\n00848:         \"not_ready_observations\": unavailable_seen,"
+        },
+        {
+          "line": 860,
+          "matched": [
+            "cost_multiplier"
+          ],
+          "snippet": "00857:     control_trades: pd.DataFrame,\n00858:     hourly_by_pair: dict[str, pd.DataFrame],\n00859:     four_hour_by_pair: dict[str, pd.DataFrame],\n00860:     cost_multiplier: float = 1.0,\n00861: ) -> tuple[pd.DataFrame, dict[str, Any]]:\n00862:     side_cost = BASE_ROUND_TRIP_COST * cost_multiplier / 2.0\n00863:     rows = []\n00864:     for _, trade in control_trades.iterrows():"
+        },
+        {
+          "line": 862,
+          "matched": [
+            "cost_multiplier"
+          ],
+          "snippet": "00859:     four_hour_by_pair: dict[str, pd.DataFrame],\n00860:     cost_multiplier: float = 1.0,\n00861: ) -> tuple[pd.DataFrame, dict[str, Any]]:\n00862:     side_cost = BASE_ROUND_TRIP_COST * cost_multiplier / 2.0\n00863:     rows = []\n00864:     for _, trade in control_trades.iterrows():\n00865:         pair = str(trade[\"pair\"])\n00866:         if pair not in hourly_by_pair or pair not in four_hour_by_pair:"
+        },
+        {
+          "line": 898,
+          "matched": [
+            "hold"
+          ],
+          "snippet": "00895: ) -> dict[str, Any]:\n00896:     metric_fields = [\n00897:         \"trade_count\", \"final_equity\", \"net_return\", \"net_pnl\", \"profit_factor\",\n00898:         \"win_rate\", \"maximum_drawdown\", \"turnover\", \"mean_holding_hours\", \"minimum_cash\",\n00899:     ]\n00900:     diffs = []\n00901:     for k in metric_fields:\n00902:         a, b = native_metrics.get(k), overlay_metrics.get(k)"
+        },
+        {
+          "line": 911,
+          "matched": [
+            "exit_time"
+          ],
+          "snippet": "00908:             diffs.append({\"field\": k, \"native\": a, \"overlay\": b})\n00909: \n00910:     core = [\n00911:         \"pair\", \"entry_time\", \"exit_time\", \"exit_reason\", \"entry_price\", \"exit_price\",\n00912:         \"quantity\", \"entry_notional\", \"entry_cost\", \"exit_cost\", \"net_pnl\",\n00913:         \"entry_market_state\", \"exit_market_state\",\n00914:     ]\n00915:     if len(native_trades) != len(overlay_trades):"
+        },
+        {
+          "line": 912,
+          "matched": [
+            "exit_cost",
+            "entry_cost",
+            "quantity"
+          ],
+          "snippet": "00909: \n00910:     core = [\n00911:         \"pair\", \"entry_time\", \"exit_time\", \"exit_reason\", \"entry_price\", \"exit_price\",\n00912:         \"quantity\", \"entry_notional\", \"entry_cost\", \"exit_cost\", \"net_pnl\",\n00913:         \"entry_market_state\", \"exit_market_state\",\n00914:     ]\n00915:     if len(native_trades) != len(overlay_trades):\n00916:         diffs.append({\"field\": \"trade_row_count\", \"native\": len(native_trades), \"overlay\": len(overlay_trades)})"
+        },
+        {
+          "line": 924,
+          "matched": [
+            "exit_cost",
+            "entry_cost",
+            "quantity"
+          ],
+          "snippet": "00921:             if col not in n.columns or col not in o.columns:\n00922:                 diffs.append({\"field\": f\"missing_column:{col}\"})\n00923:                 continue\n00924:             if col in {\"entry_price\",\"exit_price\",\"quantity\",\"entry_notional\",\"entry_cost\",\"exit_cost\",\"net_pnl\"}:\n00925:                 if not np.allclose(\n00926:                     pd.to_numeric(n[col], errors=\"raise\"),\n00927:                     pd.to_numeric(o[col], errors=\"raise\"),\n00928:                     rtol=1e-11, atol=1e-8, equal_nan=True,"
+        },
+        {
+          "line": 945,
+          "matched": [
+            "exit_time"
+          ],
+          "snippet": "00942:         return {\"executed_count\": 0}\n00943:     pnl = pd.to_numeric(executed[\"direct_effect_delta_pnl\"], errors=\"raise\").astype(float)\n00944:     by_pair = executed.assign(_delta=pnl).groupby(\"pair\", sort=True)[\"_delta\"].sum().sort_values(ascending=False)\n00945:     months = pd.to_datetime(executed[\"modified_exit_time\"], utc=True).dt.to_period(\"M\").astype(str)\n00946:     by_month = executed.assign(_delta=pnl, _month=months).groupby(\"_month\", sort=True)[\"_delta\"].sum()\n00947:     return {\n00948:         \"executed_count\": len(executed),\n00949:         \"top_pair_delta_pnl\": by_pair.head(5).to_dict(),"
+        }
+      ]
+    },
+    {
+      "path": "scripts/research/run_abc_exit_primitives_2019_2023_v1.py",
+      "sha256": "C6E92E4980C50526263B7B0D4E22747E96B49FDA2118529DAC5DA7A81EF1364C",
+      "size": 15129,
+      "snippets": [
+        {
+          "line": 72,
+          "matched": [
+            "decision_time"
+          ],
+          "snippet": "00069:     for s in membership:\n00070:         if str(s.universe_id)!=\"C2\":\n00071:             continue\n00072:         if pd.Timestamp(s.effective_end)<=ys or pd.Timestamp(s.decision_time)>=ye:\n00073:             continue\n00074:         pairs.update(pair for pair,_ in s.members)\n00075:     return sorted(pairs)\n00076: "
+        },
+        {
+          "line": 130,
+          "matched": [
+            "exit_time"
+          ],
+          "snippet": "00127: def canonical_trade_sort(df: pd.DataFrame):\n00128:     if df.empty:\n00129:         return df.copy()\n00130:     return df.sort_values([\"entry_time\",\"pair\",\"exit_time\"],kind=\"stable\").reset_index(drop=True)\n00131: \n00132: \n00133: def candidate_status(rows):\n00134:     # rows = list of yearly matrix records for one candidate."
+        },
+        {
+          "line": 177,
+          "matched": [
+            "cost_multiplier"
+          ],
+          "snippet": "00174:             raise RunnerError(f\"no annual events {year}\")\n00175:         native_t,native_d,native_m,native_c=replay_lifecycle_policy(\n00176:             policy_id=FULL_ADAPTIVE_LIFECYCLE_BRAIN,\n00177:             portfolio_id=\"UNION_FOCUS\",universe_id=\"C2\",cost_multiplier=1.0,\n00178:             events=events,frames=features,state_frame=state,\n00179:             replay_start=ys,replay_cutoff=ye,\n00180:         )\n00181:         overlay_t,overlay_d,overlay_m,overlay_c,_=replay_overlay("
+        },
+        {
+          "line": 223,
+          "matched": [
+            "cost_multiplier"
+          ],
+          "snippet": "00220:             )\n00221:             direct_rows,direct_summary=direct_effect(\n00222:                 candidate_id=candidate,control_trades=control_t,\n00223:                 hourly_by_pair=raw,four_hour_by_pair=h4,cost_multiplier=1.0,\n00224:             )\n00225:             total=float(cand_m[\"net_pnl\"])-float(control_m[\"net_pnl\"])\n00226:             direct=float(direct_summary[\"direct_effect\"])\n00227:             residual=total-direct"
+        },
+        {
+          "line": 294,
+          "matched": [
+            "exit_time"
+          ],
+          "snippet": "00291:     matrix_df=pd.DataFrame(matrix)\n00292:     matrix_df.to_csv(output/\"yearly-matrix.csv\",index=False,lineterminator=\"\\n\")\n00293:     pd.concat(all_control,ignore_index=True).drop_duplicates(\n00294:         subset=[\"year\",\"portfolio_id\",\"pair\",\"entry_time\",\"exit_time\"]\n00295:     ).to_csv(output/\"control-trades.csv\",index=False,lineterminator=\"\\n\")\n00296:     pd.concat(all_candidate,ignore_index=True).to_csv(output/\"candidate-portfolio-trades.csv\",index=False,lineterminator=\"\\n\")\n00297:     pd.concat(all_direct,ignore_index=True).to_csv(output/\"direct-effect-attribution.csv\",index=False,lineterminator=\"\\n\")\n00298:     if all_interventions:"
+        }
+      ]
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_two_sided_one_step_execution_surface_v1/two_sided_research_sidecar_v1.py",
+      "sha256": "56139B4FBEAF789B03368BBD73ED667C3C876527A33E6BDFE470778EC6B03FD0",
+      "size": 10761,
+      "snippets": [
+        {
+          "line": 12,
+          "matched": [
+            "hold"
+          ],
+          "snippet": "00009: import pandas as pd\n00010: \n00011: MANDATORY_EXACT = {\n00012:     \"MAX_HOLD_168H\",\n00013:     \"ADAPTIVE_PROTECTION_GAP\",\n00014:     \"ADAPTIVE_PROTECTION_TOUCH\",\n00015: }\n00016: OPTIONAL_PREFIXES = (\"ADAPTIVE_STAGNATION_\",)"
+        },
+        {
+          "line": 58,
+          "matched": [
+            "exit_time"
+          ],
+          "snippet": "00055: @dataclass(frozen=True)\n00056: class BranchExit:\n00057:     branch: str\n00058:     exit_time: pd.Timestamp\n00059:     exit_price: float\n00060:     exit_reason: str\n00061:     net_sale_proceeds: float\n00062:     mandatory_exit: bool"
+        },
+        {
+          "line": 73,
+          "matched": [
+            "quantity"
+          ],
+          "snippet": "00070:     return bar_lookup[key]\n00071: \n00072: \n00073: def _net_sale(quantity: float, price: float, exit_side_cost: float) -> float:\n00074:     gross = float(quantity) * float(price)\n00075:     return gross - gross * float(exit_side_cost)\n00076: \n00077: "
+        },
+        {
+          "line": 74,
+          "matched": [
+            "quantity"
+          ],
+          "snippet": "00071: \n00072: \n00073: def _net_sale(quantity: float, price: float, exit_side_cost: float) -> float:\n00074:     gross = float(quantity) * float(price)\n00075:     return gross - gross * float(exit_side_cost)\n00076: \n00077: \n00078: def _evaluate("
+        },
+        {
+          "line": 111,
+          "matched": [
+            "decision_time"
+          ],
+          "snippet": "00108:     *,\n00109:     rd27: Any,\n00110:     lifecycle_snapshot: Any,\n00111:     decision_time: pd.Timestamp,\n00112:     bar_lookup: dict[int, dict[str, float]],\n00113:     market_state_at: Callable[[pd.Timestamp], str],\n00114:     quantity: float,\n00115:     exit_side_cost: float,"
+        },
+        {
+          "line": 114,
+          "matched": [
+            "quantity"
+          ],
+          "snippet": "00111:     decision_time: pd.Timestamp,\n00112:     bar_lookup: dict[int, dict[str, float]],\n00113:     market_state_at: Callable[[pd.Timestamp], str],\n00114:     quantity: float,\n00115:     exit_side_cost: float,\n00116:     candidate_execution_lag_hours: int = 1,\n00117: ) -> BranchExit:\n00118:     \"\"\"EXIT_NOW with native pi0 precedence until the first legal candidate execution open.\"\"\""
+        },
+        {
+          "line": 120,
+          "matched": [
+            "decision_time"
+          ],
+          "snippet": "00117: ) -> BranchExit:\n00118:     \"\"\"EXIT_NOW with native pi0 precedence until the first legal candidate execution open.\"\"\"\n00119:     lifecycle = copy.deepcopy(lifecycle_snapshot)\n00120:     dt = utc(decision_time)\n00121:     execute_at = dt + pd.Timedelta(hours=int(candidate_execution_lag_hours))\n00122:     ts = dt\n00123:     while ts <= execute_at:\n00124:         decision, bar = _evaluate(rd27, lifecycle, ts, bar_lookup, market_state_at)"
+        },
+        {
+          "line": 135,
+          "matched": [
+            "exit_time"
+          ],
+          "snippet": "00132:             px = float(decision.exit_price)\n00133:             return BranchExit(\n00134:                 branch=\"EXIT_NOW\",\n00135:                 exit_time=ts,\n00136:                 exit_price=px,\n00137:                 exit_reason=reason,\n00138:                 net_sale_proceeds=_net_sale(quantity, px, exit_side_cost),\n00139:                 mandatory_exit=(cls == \"MANDATORY\"),"
+        },
+        {
+          "line": 138,
+          "matched": [
+            "quantity"
+          ],
+          "snippet": "00135:                 exit_time=ts,\n00136:                 exit_price=px,\n00137:                 exit_reason=reason,\n00138:                 net_sale_proceeds=_net_sale(quantity, px, exit_side_cost),\n00139:                 mandatory_exit=(cls == \"MANDATORY\"),\n00140:                 optional_exit=(cls == \"OPTIONAL\"),\n00141:             )\n00142:         if ts == execute_at:"
+        },
+        {
+          "line": 146,
+          "matched": [
+            "exit_time"
+          ],
+          "snippet": "00143:             px = float(bar[\"open\"])\n00144:             return BranchExit(\n00145:                 branch=\"EXIT_NOW\",\n00146:                 exit_time=ts,\n00147:                 exit_price=px,\n00148:                 exit_reason=\"RESEARCH_EXIT_NOW_FIRST_LEGAL_OPEN\",\n00149:                 net_sale_proceeds=_net_sale(quantity, px, exit_side_cost),\n00150:                 mandatory_exit=False,"
+        },
+        {
+          "line": 149,
+          "matched": [
+            "quantity"
+          ],
+          "snippet": "00146:                 exit_time=ts,\n00147:                 exit_price=px,\n00148:                 exit_reason=\"RESEARCH_EXIT_NOW_FIRST_LEGAL_OPEN\",\n00149:                 net_sale_proceeds=_net_sale(quantity, px, exit_side_cost),\n00150:                 mandatory_exit=False,\n00151:                 optional_exit=False,\n00152:             )\n00153:         lifecycle = _survivor_update(rd27, lifecycle, decision, bar)"
+        },
+        {
+          "line": 158,
+          "matched": [
+            "hold",
+            "one_step"
+          ],
+          "snippet": "00155:     raise TwoSidedSurfaceError(\"EXIT_NOW_UNREACHABLE\")\n00156: \n00157: \n00158: def simulate_hold_one_step_then_pi0(\n00159:     *,\n00160:     rd27: Any,\n00161:     lifecycle_snapshot: Any,\n00162:     decision_time: pd.Timestamp,"
+        },
+        {
+          "line": 162,
+          "matched": [
+            "decision_time"
+          ],
+          "snippet": "00159:     *,\n00160:     rd27: Any,\n00161:     lifecycle_snapshot: Any,\n00162:     decision_time: pd.Timestamp,\n00163:     step_hours: int,\n00164:     max_exit_time: pd.Timestamp,\n00165:     bar_lookup: dict[int, dict[str, float]],\n00166:     market_state_at: Callable[[pd.Timestamp], str],"
+        },
+        {
+          "line": 164,
+          "matched": [
+            "exit_time"
+          ],
+          "snippet": "00161:     lifecycle_snapshot: Any,\n00162:     decision_time: pd.Timestamp,\n00163:     step_hours: int,\n00164:     max_exit_time: pd.Timestamp,\n00165:     bar_lookup: dict[int, dict[str, float]],\n00166:     market_state_at: Callable[[pd.Timestamp], str],\n00167:     quantity: float,\n00168:     exit_side_cost: float,"
+        },
+        {
+          "line": 167,
+          "matched": [
+            "quantity"
+          ],
+          "snippet": "00164:     max_exit_time: pd.Timestamp,\n00165:     bar_lookup: dict[int, dict[str, float]],\n00166:     market_state_at: Callable[[pd.Timestamp], str],\n00167:     quantity: float,\n00168:     exit_side_cost: float,\n00169: ) -> tuple[BranchExit, dict[str, int]]:\n00170:     \"\"\"Suppress only optional pi0 exits for exactly one canonical decision step.\"\"\"\n00171:     if int(step_hours) <= 0:"
+        },
+        {
+          "line": 174,
+          "matched": [
+            "decision_time"
+          ],
+          "snippet": "00171:     if int(step_hours) <= 0:\n00172:         raise TwoSidedSurfaceError(\"INVALID_STEP_HOURS\")\n00173:     lifecycle = copy.deepcopy(lifecycle_snapshot)\n00174:     dt = utc(decision_time)\n00175:     hold_until = dt + pd.Timedelta(hours=int(step_hours))\n00176:     hard_end = utc(max_exit_time)\n00177:     ts = dt\n00178:     suppressed = 0"
+        },
+        {
+          "line": 175,
+          "matched": [
+            "hold"
+          ],
+          "snippet": "00172:         raise TwoSidedSurfaceError(\"INVALID_STEP_HOURS\")\n00173:     lifecycle = copy.deepcopy(lifecycle_snapshot)\n00174:     dt = utc(decision_time)\n00175:     hold_until = dt + pd.Timedelta(hours=int(step_hours))\n00176:     hard_end = utc(max_exit_time)\n00177:     ts = dt\n00178:     suppressed = 0\n00179:     mandatory_seen = 0"
+        },
+        {
+          "line": 176,
+          "matched": [
+            "exit_time"
+          ],
+          "snippet": "00173:     lifecycle = copy.deepcopy(lifecycle_snapshot)\n00174:     dt = utc(decision_time)\n00175:     hold_until = dt + pd.Timedelta(hours=int(step_hours))\n00176:     hard_end = utc(max_exit_time)\n00177:     ts = dt\n00178:     suppressed = 0\n00179:     mandatory_seen = 0\n00180:     while ts <= hard_end:"
+        },
+        {
+          "line": 194,
+          "matched": [
+            "hold",
+            "one_step"
+          ],
+          "snippet": "00191:                 px = float(decision.exit_price)\n00192:                 return (\n00193:                     BranchExit(\n00194:                         branch=\"HOLD_ONE_STEP_THEN_PI0\",\n00195:                         exit_time=ts,\n00196:                         exit_price=px,\n00197:                         exit_reason=reason,\n00198:                         net_sale_proceeds=_net_sale(quantity, px, exit_side_cost),"
+        },
+        {
+          "line": 195,
+          "matched": [
+            "exit_time"
+          ],
+          "snippet": "00192:                 return (\n00193:                     BranchExit(\n00194:                         branch=\"HOLD_ONE_STEP_THEN_PI0\",\n00195:                         exit_time=ts,\n00196:                         exit_price=px,\n00197:                         exit_reason=reason,\n00198:                         net_sale_proceeds=_net_sale(quantity, px, exit_side_cost),\n00199:                         mandatory_exit=True,"
+        },
+        {
+          "line": 198,
+          "matched": [
+            "quantity"
+          ],
+          "snippet": "00195:                         exit_time=ts,\n00196:                         exit_price=px,\n00197:                         exit_reason=reason,\n00198:                         net_sale_proceeds=_net_sale(quantity, px, exit_side_cost),\n00199:                         mandatory_exit=True,\n00200:                         optional_exit=False,\n00201:                     ),\n00202:                     {\"optional_exits_suppressed\": suppressed, \"mandatory_exits_seen\": mandatory_seen},"
+        },
+        {
+          "line": 204,
+          "matched": [
+            "hold"
+          ],
+          "snippet": "00201:                     ),\n00202:                     {\"optional_exits_suppressed\": suppressed, \"mandatory_exits_seen\": mandatory_seen},\n00203:                 )\n00204:             if ts < hold_until:\n00205:                 suppressed += 1\n00206:                 survivor_decision = suppress_optional_decision(decision)\n00207:                 lifecycle = _survivor_update(rd27, lifecycle, survivor_decision, bar)\n00208:                 ts += pd.Timedelta(hours=1)"
+        },
+        {
+          "line": 213,
+          "matched": [
+            "hold",
+            "one_step"
+          ],
+          "snippet": "00210:             px = float(decision.exit_price)\n00211:             return (\n00212:                 BranchExit(\n00213:                     branch=\"HOLD_ONE_STEP_THEN_PI0\",\n00214:                     exit_time=ts,\n00215:                     exit_price=px,\n00216:                     exit_reason=reason,\n00217:                     net_sale_proceeds=_net_sale(quantity, px, exit_side_cost),"
+        },
+        {
+          "line": 214,
+          "matched": [
+            "exit_time"
+          ],
+          "snippet": "00211:             return (\n00212:                 BranchExit(\n00213:                     branch=\"HOLD_ONE_STEP_THEN_PI0\",\n00214:                     exit_time=ts,\n00215:                     exit_price=px,\n00216:                     exit_reason=reason,\n00217:                     net_sale_proceeds=_net_sale(quantity, px, exit_side_cost),\n00218:                     mandatory_exit=False,"
+        },
+        {
+          "line": 217,
+          "matched": [
+            "quantity"
+          ],
+          "snippet": "00214:                     exit_time=ts,\n00215:                     exit_price=px,\n00216:                     exit_reason=reason,\n00217:                     net_sale_proceeds=_net_sale(quantity, px, exit_side_cost),\n00218:                     mandatory_exit=False,\n00219:                     optional_exit=True,\n00220:                 ),\n00221:                 {\"optional_exits_suppressed\": suppressed, \"mandatory_exits_seen\": mandatory_seen},"
+        },
+        {
+          "line": 225,
+          "matched": [
+            "hold"
+          ],
+          "snippet": "00222:             )\n00223:         lifecycle = _survivor_update(rd27, lifecycle, decision, bar)\n00224:         ts += pd.Timedelta(hours=1)\n00225:     raise TwoSidedSurfaceError(\"HOLD_BRANCH_REACHED_END_WITHOUT_EXIT\")\n00226: \n00227: \n00228: def self_test() -> None:\n00229:     assert classify_exit_reason(\"MAX_HOLD_168H\") == \"MANDATORY\""
+        },
+        {
+          "line": 229,
+          "matched": [
+            "hold"
+          ],
+          "snippet": "00226: \n00227: \n00228: def self_test() -> None:\n00229:     assert classify_exit_reason(\"MAX_HOLD_168H\") == \"MANDATORY\"\n00230:     assert classify_exit_reason(\"ADAPTIVE_PROTECTION_GAP\") == \"MANDATORY\"\n00231:     assert classify_exit_reason(\"ADAPTIVE_PROTECTION_TOUCH\") == \"MANDATORY\"\n00232:     assert classify_exit_reason(\"ADAPTIVE_STAGNATION_24H\") == \"OPTIONAL\"\n00233:     assert classify_exit_reason(\"SOMETHING_NEW\") == \"UNKNOWN\""
+        },
+        {
+          "line": 245,
+          "matched": [
+            "hold"
+          ],
+          "snippet": "00242:         age_hours: int = 1\n00243:         effective_floor: float = 0.0\n00244:         floor_source: str = \"TEST\"\n00245:         stagnation_threshold_hours: int = 24\n00246: \n00247:     class _R:\n00248:         def __init__(self, reasons: dict[int, str]):\n00249:             self.reasons = reasons"
+        },
+        {
+          "line": 266,
+          "matched": [
+            "hold",
+            "one_step"
+          ],
+          "snippet": "00263:         bars[int(ts.value)] = {\"open\": 100.0 + h, \"high\": 101.0 + h, \"low\": 99.0 + h, \"close\": 100.5 + h}\n00264:     state = lambda _ts: \"RISK_ON\"\n00265:     rd = _R({4: \"ADAPTIVE_STAGNATION_24H\", 6: \"ADAPTIVE_PROTECTION_TOUCH\"})\n00266:     hold, audit = simulate_hold_one_step_then_pi0(\n00267:         rd27=rd, lifecycle_snapshot={\"x\": 1}, decision_time=start, step_hours=4,\n00268:         max_exit_time=start + pd.Timedelta(hours=8), bar_lookup=bars,\n00269:         market_state_at=state, quantity=1.0, exit_side_cost=0.0,\n00270:     )"
+        },
+        {
+          "line": 267,
+          "matched": [
+            "decision_time"
+          ],
+          "snippet": "00264:     state = lambda _ts: \"RISK_ON\"\n00265:     rd = _R({4: \"ADAPTIVE_STAGNATION_24H\", 6: \"ADAPTIVE_PROTECTION_TOUCH\"})\n00266:     hold, audit = simulate_hold_one_step_then_pi0(\n00267:         rd27=rd, lifecycle_snapshot={\"x\": 1}, decision_time=start, step_hours=4,\n00268:         max_exit_time=start + pd.Timedelta(hours=8), bar_lookup=bars,\n00269:         market_state_at=state, quantity=1.0, exit_side_cost=0.0,\n00270:     )\n00271:     assert audit[\"optional_exits_suppressed\"] == 1"
+        },
+        {
+          "line": 268,
+          "matched": [
+            "exit_time"
+          ],
+          "snippet": "00265:     rd = _R({4: \"ADAPTIVE_STAGNATION_24H\", 6: \"ADAPTIVE_PROTECTION_TOUCH\"})\n00266:     hold, audit = simulate_hold_one_step_then_pi0(\n00267:         rd27=rd, lifecycle_snapshot={\"x\": 1}, decision_time=start, step_hours=4,\n00268:         max_exit_time=start + pd.Timedelta(hours=8), bar_lookup=bars,\n00269:         market_state_at=state, quantity=1.0, exit_side_cost=0.0,\n00270:     )\n00271:     assert audit[\"optional_exits_suppressed\"] == 1\n00272:     assert hold.exit_reason == \"ADAPTIVE_PROTECTION_TOUCH\" and hold.mandatory_exit"
+        },
+        {
+          "line": 269,
+          "matched": [
+            "quantity"
+          ],
+          "snippet": "00266:     hold, audit = simulate_hold_one_step_then_pi0(\n00267:         rd27=rd, lifecycle_snapshot={\"x\": 1}, decision_time=start, step_hours=4,\n00268:         max_exit_time=start + pd.Timedelta(hours=8), bar_lookup=bars,\n00269:         market_state_at=state, quantity=1.0, exit_side_cost=0.0,\n00270:     )\n00271:     assert audit[\"optional_exits_suppressed\"] == 1\n00272:     assert hold.exit_reason == \"ADAPTIVE_PROTECTION_TOUCH\" and hold.mandatory_exit\n00273:     rd2 = _R({8: \"ADAPTIVE_STAGNATION_24H\"})"
+        },
+        {
+          "line": 272,
+          "matched": [
+            "hold"
+          ],
+          "snippet": "00269:         market_state_at=state, quantity=1.0, exit_side_cost=0.0,\n00270:     )\n00271:     assert audit[\"optional_exits_suppressed\"] == 1\n00272:     assert hold.exit_reason == \"ADAPTIVE_PROTECTION_TOUCH\" and hold.mandatory_exit\n00273:     rd2 = _R({8: \"ADAPTIVE_STAGNATION_24H\"})\n00274:     hold2, audit2 = simulate_hold_one_step_then_pi0(\n00275:         rd27=rd2, lifecycle_snapshot={\"x\": 1}, decision_time=start, step_hours=4,\n00276:         max_exit_time=start + pd.Timedelta(hours=8), bar_lookup=bars,"
+        },
+        {
+          "line": 274,
+          "matched": [
+            "hold",
+            "one_step"
+          ],
+          "snippet": "00271:     assert audit[\"optional_exits_suppressed\"] == 1\n00272:     assert hold.exit_reason == \"ADAPTIVE_PROTECTION_TOUCH\" and hold.mandatory_exit\n00273:     rd2 = _R({8: \"ADAPTIVE_STAGNATION_24H\"})\n00274:     hold2, audit2 = simulate_hold_one_step_then_pi0(\n00275:         rd27=rd2, lifecycle_snapshot={\"x\": 1}, decision_time=start, step_hours=4,\n00276:         max_exit_time=start + pd.Timedelta(hours=8), bar_lookup=bars,\n00277:         market_state_at=state, quantity=1.0, exit_side_cost=0.0,\n00278:     )"
+        },
+        {
+          "line": 275,
+          "matched": [
+            "decision_time"
+          ],
+          "snippet": "00272:     assert hold.exit_reason == \"ADAPTIVE_PROTECTION_TOUCH\" and hold.mandatory_exit\n00273:     rd2 = _R({8: \"ADAPTIVE_STAGNATION_24H\"})\n00274:     hold2, audit2 = simulate_hold_one_step_then_pi0(\n00275:         rd27=rd2, lifecycle_snapshot={\"x\": 1}, decision_time=start, step_hours=4,\n00276:         max_exit_time=start + pd.Timedelta(hours=8), bar_lookup=bars,\n00277:         market_state_at=state, quantity=1.0, exit_side_cost=0.0,\n00278:     )\n00279:     assert hold2.exit_time == start + pd.Timedelta(hours=4)"
+        },
+        {
+          "line": 276,
+          "matched": [
+            "exit_time"
+          ],
+          "snippet": "00273:     rd2 = _R({8: \"ADAPTIVE_STAGNATION_24H\"})\n00274:     hold2, audit2 = simulate_hold_one_step_then_pi0(\n00275:         rd27=rd2, lifecycle_snapshot={\"x\": 1}, decision_time=start, step_hours=4,\n00276:         max_exit_time=start + pd.Timedelta(hours=8), bar_lookup=bars,\n00277:         market_state_at=state, quantity=1.0, exit_side_cost=0.0,\n00278:     )\n00279:     assert hold2.exit_time == start + pd.Timedelta(hours=4)\n00280:     assert hold2.exit_reason == \"ADAPTIVE_STAGNATION_24H\""
+        },
+        {
+          "line": 277,
+          "matched": [
+            "quantity"
+          ],
+          "snippet": "00274:     hold2, audit2 = simulate_hold_one_step_then_pi0(\n00275:         rd27=rd2, lifecycle_snapshot={\"x\": 1}, decision_time=start, step_hours=4,\n00276:         max_exit_time=start + pd.Timedelta(hours=8), bar_lookup=bars,\n00277:         market_state_at=state, quantity=1.0, exit_side_cost=0.0,\n00278:     )\n00279:     assert hold2.exit_time == start + pd.Timedelta(hours=4)\n00280:     assert hold2.exit_reason == \"ADAPTIVE_STAGNATION_24H\"\n00281:     assert audit2[\"optional_exits_suppressed\"] == 0"
+        },
+        {
+          "line": 279,
+          "matched": [
+            "exit_time",
+            "hold"
+          ],
+          "snippet": "00276:         max_exit_time=start + pd.Timedelta(hours=8), bar_lookup=bars,\n00277:         market_state_at=state, quantity=1.0, exit_side_cost=0.0,\n00278:     )\n00279:     assert hold2.exit_time == start + pd.Timedelta(hours=4)\n00280:     assert hold2.exit_reason == \"ADAPTIVE_STAGNATION_24H\"\n00281:     assert audit2[\"optional_exits_suppressed\"] == 0\n00282: \n00283: "
+        },
+        {
+          "line": 280,
+          "matched": [
+            "hold"
+          ],
+          "snippet": "00277:         market_state_at=state, quantity=1.0, exit_side_cost=0.0,\n00278:     )\n00279:     assert hold2.exit_time == start + pd.Timedelta(hours=4)\n00280:     assert hold2.exit_reason == \"ADAPTIVE_STAGNATION_24H\"\n00281:     assert audit2[\"optional_exits_suppressed\"] == 0\n00282: \n00283: \n00284: if __name__ == \"__main__\":"
+        }
+      ]
+    }
+  ],
+  "status": "PASS_TRACE_MATERIALIZED"
+}

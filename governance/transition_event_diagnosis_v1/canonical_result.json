@@ -1,0 +1,213 @@
+{
+  "task_id": "TRANSITION_2023_EVENT_LEVEL_EXPORT_REPLAY_AND_CROSS_YEAR_DIAGNOSIS_V1",
+  "status": "PASS",
+  "classification": "MIXED_MECHANISM",
+  "primary_event_level_driver": "HIGHER_WIN_FRACTION_AND_SMALLER_AVERAGE_LOSS",
+  "secondary_driver": "OUTLIER_WINNER_DEPENDENCE_OF_2023_POSITIVE_SIGN",
+  "descriptive_families": [
+    "OUTLIER_WINNER_DEPENDENCE",
+    "HOLDING_OR_EXIT_INTERACTION_SHIFT",
+    "TEMPORAL_SUBREGIME_COMPOSITION_SHIFT"
+  ],
+  "2022_direct_event_set_proven": true,
+  "2023_direct_event_set_proven": true,
+  "direct_2022_count": 173,
+  "direct_2023_count": 131,
+  "direct_2022_pnl": -8163.217282531882,
+  "direct_2023_pnl": 1489.0311650100994,
+  "mean_2022": -47.186227066658276,
+  "mean_2023": 11.366650114580912,
+  "count_quality_accounting": {
+    "delta": 9652.24844754198,
+    "count_at_2022_mean": 1981.8215367996477,
+    "quality_at_2023_count": 7670.426910742334
+  },
+  "mean_pnl_shapley_accounting": {
+    "win_probability": 53.91280788328102,
+    "mean_win": -27.900913074067695,
+    "mean_nonwin": 32.54098237202585
+  },
+  "portfolio_path_accounting": {
+    "2022": {
+      "direct_ablation_effect": 8163.217282531882,
+      "path_residual": -2899.5744836531676,
+      "indirect_lost_control_pnl": -2985.5135324891517,
+      "common_sizing_delta": 62.59861172806268,
+      "treatment_only_pnl": -5947.686627870382,
+      "frozen_lineage": {
+        "control_only_by_entry_market_state": {
+          "RISK_ON": {
+            "event_count": 8,
+            "mean_realized_pnl": -346.068631603822,
+            "sum_realized_pnl": -2768.549052830576
+          },
+          "TRANSITION": {
+            "event_count": 176,
+            "mean_realized_pnl": -47.61466910335487,
+            "sum_realized_pnl": -8380.181762190457
+          }
+        },
+        "control_only_by_treatment_blocker": {
+          "SAME_PAIR_OPEN": {
+            "event_count": 7,
+            "mean_realized_pnl": -501.0467546126283,
+            "sum_realized_pnl": -3507.3272822883982
+          },
+          "SHADOW_STATIC_SAME_PAIR_OPEN_SUPPRESSED": {
+            "event_count": 4,
+            "mean_realized_pnl": 130.45343744981164,
+            "sum_realized_pnl": 521.8137497992466
+          },
+          "TRANSITION_ADMISSION_ABLATED": {
+            "event_count": 173,
+            "mean_realized_pnl": -47.186227066658276,
+            "sum_realized_pnl": -8163.217282531882
+          }
+        },
+        "directly_ablated_control_trade_count": 173,
+        "directly_ablated_control_trade_pnl": -8163.217282531882,
+        "downstream_portfolio_state_effects_allowed_in_endpoint": true,
+        "transition_suppressed_signal_count": 668,
+        "treatment_only_by_control_blocker": {
+          "POSITION_SLOTS_FULL": {
+            "event_count": 1,
+            "mean_realized_pnl": -335.6048844975713,
+            "sum_realized_pnl": -335.6048844975713
+          },
+          "SAME_PAIR_OPEN": {
+            "event_count": 3,
+            "mean_realized_pnl": -394.1095118183436,
+            "sum_realized_pnl": -1182.3285354550308
+          },
+          "SHADOW_STATIC_SAME_PAIR_OPEN_SUPPRESSED": {
+            "event_count": 13,
+            "mean_realized_pnl": -340.75024676290616,
+            "sum_realized_pnl": -4429.75320791778
+          }
+        },
+        "treatment_only_by_entry_market_state": {
+          "RISK_ON": {
+            "event_count": 17,
+            "mean_realized_pnl": -349.86391928649306,
+            "sum_realized_pnl": -5947.686627870382
+          }
+        }
+      }
+    },
+    "2023": {
+      "direct_ablation_effect": -1489.0311650100994,
+      "path_residual": -8701.883844863276,
+      "indirect_lost_control_pnl": 13937.723042959791,
+      "common_sizing_delta": -177.62850191447325,
+      "treatment_only_pnl": 5413.467700010988,
+      "frozen_lineage": {
+        "control_only_by_entry_market_state": {
+          "RISK_ON": {
+            "event_count": 16,
+            "mean_realized_pnl": 749.4762201878367,
+            "sum_realized_pnl": 11991.619523005387
+          },
+          "TRANSITION": {
+            "event_count": 136,
+            "mean_realized_pnl": 25.258343271797823,
+            "sum_realized_pnl": 3435.134684964504
+          }
+        },
+        "control_only_by_treatment_blocker": {
+          "SAME_PAIR_OPEN": {
+            "event_count": 5,
+            "mean_realized_pnl": 261.0076806608874,
+            "sum_realized_pnl": 1305.038403304437
+          },
+          "SHADOW_STATIC_SAME_PAIR_OPEN_SUPPRESSED": {
+            "event_count": 16,
+            "mean_realized_pnl": 789.5427899784596,
+            "sum_realized_pnl": 12632.684639655354
+          },
+          "TRANSITION_ADMISSION_ABLATED": {
+            "event_count": 131,
+            "mean_realized_pnl": 11.366650114580912,
+            "sum_realized_pnl": 1489.0311650100994
+          }
+        },
+        "directly_ablated_control_trade_count": 131,
+        "directly_ablated_control_trade_pnl": 1489.0311650100994,
+        "downstream_portfolio_state_effects_allowed_in_endpoint": true,
+        "transition_suppressed_signal_count": 437,
+        "treatment_only_by_control_blocker": {
+          "SAME_PAIR_OPEN": {
+            "event_count": 20,
+            "mean_realized_pnl": 132.6655024396833,
+            "sum_realized_pnl": 2653.3100487936663
+          },
+          "SHADOW_STATIC_SAME_PAIR_OPEN_SUPPRESSED": {
+            "event_count": 25,
+            "mean_realized_pnl": 110.40630604869285,
+            "sum_realized_pnl": 2760.1576512173215
+          }
+        },
+        "treatment_only_by_entry_market_state": {
+          "RISK_ON": {
+            "event_count": 45,
+            "mean_realized_pnl": 120.29928222246639,
+            "sum_realized_pnl": 5413.467700010988
+          }
+        }
+      }
+    }
+  },
+  "event_level_evidence_sufficient": true,
+  "sufficiency_scope": "DESCRIPTIVE_AND_ACCOUNTING_ATTRIBUTION_ONLY",
+  "unique_ex_ante_market_cause_identified": false,
+  "missing_entry_causal_components": [
+    "entry component scores",
+    "entry liquidity/spread",
+    "independent entry momentum/relative-strength measures",
+    "frozen MFE",
+    "frozen MAE"
+  ],
+  "transition_as_standalone_admission_rule_supported": false,
+  "candidate_remains_closed": true,
+  "new_runtime_rule_authorized": false,
+  "replay_count": {
+    "control": 1,
+    "treatment": 1
+  },
+  "replay_parity": "PASS",
+  "offline_diagnostic_determinism": "PASS",
+  "targeted_pytest": "6 passed",
+  "ruff": "PASS",
+  "governance": {
+    "lookahead_or_future_information_used": false,
+    "pair_or_event_identity_used_as_runtime_rule": false,
+    "posthoc_outcome_threshold_search_used": false,
+    "2023_new_raw_or_replay_accessed": true,
+    "2024_used_as_fresh_holdout": false,
+    "2024_used_to_define_new_runtime_rule": false,
+    "2025_accessed": false,
+    "production_changed": false
+  },
+  "next_bottleneck": "TRANSITION_EVENT_LEVEL_DIAGNOSIS_MANDATORY_HUMAN_REVIEW_V1",
+  "evidence": [
+    {
+      "path": "governance\\transition_event_diagnosis_v1\\diagnostic_measurements.json",
+      "sha256": "D51E7B85F387B5884F010249FC1272C82D139C740240E29F10DA109E611B1ECB"
+    },
+    {
+      "path": "governance\\transition_event_diagnosis_v1\\parity.json",
+      "sha256": "E0CDA99F0475559B0EEAE2D5437858427C27856C70C6CBE0F72F0FF31E24ADFA"
+    },
+    {
+      "path": "governance\\transition_event_diagnosis_v1\\execution_contract.json",
+      "sha256": "B2A7C71B5E82B5EDB07C5EA3CB76F29C697A5EE5B7A0E9981EC4AA80B6CD1C77"
+    },
+    {
+      "path": "governance\\transition_event_diagnosis_v1\\protocol.json",
+      "sha256": "3AA56D3ABF2C5BD2ECD87378A39A88C209D8C7832CB7A78CE2887E8880111A0C"
+    },
+    {
+      "path": "governance\\transition_event_diagnosis_v1\\summary.md",
+      "sha256": "51DDC96FCA329E961A50DD0922F5BDAA1C40B9B85CB3FED547C24CB51B453A29"
+    }
+  ]
+}

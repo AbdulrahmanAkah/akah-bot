@@ -1,0 +1,91 @@
+{
+  "authority_bindings": {
+    "contract_sha256": "149F7757069DB330C575CB0570294C6EE9208DF0116E90BB9289CF91FDF79D8D",
+    "decision_sha256": "19574234BDF9E61AF8989892D6922886BDDDAB01E7955A83EA756F37F4BA7AE4",
+    "helpers_sha256": "280155A395F457E3F92DB272E4B62214DA746368F88D1E1E51368E9A4FF73152",
+    "lifecycle_sha256": "6D2D5C3B3221ECD383F059790378908EDDCD82FD92CD79FE4FBAC8D32F4B99E4",
+    "paths_sha256": "023F03B81AB80D3961C086AE7B4BFFCDF7EA7E79B0F2508B3AED2FE87FDA1F35",
+    "preopen_sha256": "730462E4AF07500176E8951CF1D5E03075F62E62D584C5AB90B57779C0BF5DAC",
+    "primary_sha256": "7BF3306ED696236021D1CC6AB4CA37D10D5992931B20B86B6D10E0F22A79CD90",
+    "reads_sha256": "E7CECF7C59A58B3342468F368576A30027DC0D8B0D0118FE93F7E97758A73D6C",
+    "study_contract_sha256": "EBA9151434191979F873C0FAA14659DE91232A986834311D4327064C24974EB4"
+  },
+  "branch": "research/rd48-cross-venue-price-level-basis-direct-utility-v1",
+  "evidence": [
+    {
+      "path": "governance/reconstructed_native_baseline_current_rd26_events_lifecycle_interprocedural_read_binding_v1/events_lifecycle_sites.json",
+      "sha256": "6D2D5C3B3221ECD383F059790378908EDDCD82FD92CD79FE4FBAC8D32F4B99E4"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_current_rd26_events_lifecycle_interprocedural_read_binding_v1/events_alias_and_mutation_graph.json",
+      "sha256": "7F8BDE17DD385661EEA29F813E98DAD09EE87704A9C74226E9B0379331A7B9D6"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_current_rd26_events_lifecycle_interprocedural_read_binding_v1/events_primary_producer_binding.json",
+      "sha256": "7BF3306ED696236021D1CC6AB4CA37D10D5992931B20B86B6D10E0F22A79CD90"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_current_rd26_events_lifecycle_interprocedural_read_binding_v1/interprocedural_helper_trace.json",
+      "sha256": "280155A395F457E3F92DB272E4B62214DA746368F88D1E1E51368E9A4FF73152"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_current_rd26_events_lifecycle_interprocedural_read_binding_v1/true_read_dependencies.json",
+      "sha256": "E7CECF7C59A58B3342468F368576A30027DC0D8B0D0118FE93F7E97758A73D6C"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_current_rd26_events_lifecycle_interprocedural_read_binding_v1/true_read_symbolic_path_binding.json",
+      "sha256": "023F03B81AB80D3961C086AE7B4BFFCDF7EA7E79B0F2508B3AED2FE87FDA1F35"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_current_rd26_events_lifecycle_interprocedural_read_binding_v1/true_read_preopen_authority_audit.json",
+      "sha256": "730462E4AF07500176E8951CF1D5E03075F62E62D584C5AB90B57779C0BF5DAC"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_current_rd26_events_lifecycle_interprocedural_read_binding_v1/reconstruction_input_authority_contract.json",
+      "sha256": "149F7757069DB330C575CB0570294C6EE9208DF0116E90BB9289CF91FDF79D8D"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_current_rd26_events_lifecycle_interprocedural_read_binding_v1/exact_binding_decision.json",
+      "sha256": "19574234BDF9E61AF8989892D6922886BDDDAB01E7955A83EA756F37F4BA7AE4"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_current_rd26_events_lifecycle_interprocedural_read_binding_v1.json",
+      "sha256": "5483EF7B50B5A803672B49A79A3A300A75D305BE7FF8E241AC76A6CEBF0FAA42"
+    }
+  ],
+  "firewall": {
+    "economic_analysis": false,
+    "market_rows_read": false,
+    "mixed_csv_data_rows_read": false,
+    "native_replay_executed": false,
+    "network": false,
+    "protected_year_rows_read": false,
+    "push": false,
+    "source_code_mutation": false,
+    "v2_incidence_used": false
+  },
+  "governed_schema_version": "akah-provenance-phase-governed-v1",
+  "next_bottleneck": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_CURRENT_RD26_PRODUCER_EVENTS_PRIMARY_HELPER_EXACT_BINDING_V1",
+  "north_star_effect": "Exposes only causal producer inputs needed to reconstruct the current RD26 signal contract under the pre-2023 firewall.",
+  "objective": "Resolve the rev215 zero-read slicer gap by binding the complete lifecycle of the written `events` object, its aliases/mutations/final producer calls, and a bounded interprocedural helper trace to the actual read/load dependencies and their symbolic paths.",
+  "resolution_class": "EVENTS_PRIMARY_PRODUCER_BOUND_INTERPROCEDURAL_READ_TRACE_STILL_EMPTY",
+  "state_updates": {
+    "economic_analysis": false,
+    "events_alias_count": 1,
+    "events_lifecycle_site_count": 2,
+    "events_primary_producer_site_count": 2,
+    "helper_count": 10,
+    "native_replay_executed": false,
+    "preopen_authority_blocked_count": 0,
+    "reconstruction_execution_contract_ready": false,
+    "roadmap_position": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_CURRENT_RD26_PRODUCER_EVENTS_PRIMARY_HELPER_EXACT_BINDING_V1",
+    "root_producer_call_count": 2,
+    "true_read_dependency_count": 0,
+    "unresolved_path_count": 0
+  },
+  "status": "PASS",
+  "summary": "Bound 2 lifecycle sites and 1 aliases for the written events object, identified 2 primary producer definition site(s), traced 10 project helper(s), and bound 0 true read dependency(ies).",
+  "task_id": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_CURRENT_RD26_PRODUCER_TRUE_READ_PATH_BINDING_V1",
+  "task_start_head": "3323a21922491919ef4c07e5e19bd8cf6c820c82",
+  "task_start_revision": 215
+}

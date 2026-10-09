@@ -1,0 +1,46 @@
+{
+  "authority_id": "AKAH_BOT_RD23_VS_RD26_SIGNAL_SEMANTIC_COMPARISON_V1",
+  "status": "PASS_RELATIONSHIP_CLASSIFIED",
+  "relationship": "SEMANTICALLY_ADJACENT_REFERENCE_ONLY_NOT_UPSTREAM",
+  "comparison": {
+    "producer": {
+      "rd23": "scripts/research/run_rd23_multifamily_raw_edge.py -> src/spotbot/research/rd23_multifamily_raw_edge.py:scan_signals",
+      "rd26": "scripts/research/run_rd26_exit_architecture.py -> src/spotbot/research/rd26_exit_architecture.py:scan_focus_signals"
+    },
+    "time_scope": {
+      "rd23": "2019-01-01 inclusive to 2022-01-01 exclusive",
+      "rd26": "2022-01-01 inclusive to 2024-01-01 exclusive mixed ledger"
+    },
+    "families": {
+      "rd23": ["MOMENTUM_BREAKOUT", "VOLATILITY_EXPANSION", "STRUCTURAL_REVERSAL", "RELATIVE_STRENGTH_ROTATION", "MOMENTUM_ACCELERATION", "BASE_RANGE_BREAKOUT"],
+      "rd26": ["MOMENTUM_BREAKOUT", "RELATIVE_STRENGTH_ROTATION"],
+      "current_nine_strata": ["UNION_FOCUS", "MOMENTUM_BREAKOUT", "RELATIVE_STRENGTH_ROTATION"]
+    },
+    "constructors": {
+      "rd23": "scan_signals directly emits family rows; no union_events/standalone_events constructor contract",
+      "rd26": "standalone_events and union_events consume normalized focus events",
+      "current_authority": "UNION_FOCUS->union_events; two family rows->standalone_events across C2/D2/E2"
+    },
+    "schema": {
+      "rd23_event_fields": ["universe_id", "period_id", "timestamp", "candidate_rank", "family_id", "pair", "membership_rank", "signal_strength", "decision_close", "return_72h", "aux_value"],
+      "rd26_constructor_required_fields": ["universe_id", "period_id", "timestamp", "candidate_rank", "family_id", "pair", "membership_rank", "signal_strength", "decision_close", "return_72h", "aux_value"],
+      "rd26_union_additional_requirement": "atr24_at_signal",
+      "rd23_atr24_at_signal": false,
+      "schema_equivalence": false
+    },
+    "universe": {
+      "rd23": "membership snapshots expose C2/D2/E2 identifiers in source loops; row presence not opened",
+      "rd26": "same effective membership source path is used for its own scan",
+      "row_level_identity_equivalence": "NOT_PROVEN"
+    },
+    "pit": {
+      "rd23": "decision_time/effective_end and completed feature timestamps bound scan loop; source contract is for RD23 raw-edge diagnostics",
+      "rd26": "separate focus-event and administrative horizon contract",
+      "current_nine_strata_pit_equivalence": false
+    },
+    "pair_normalization": "Both source contracts use membership pair keys and raw_root/<pair>/1h.parquet; exact row-level equality is not claimed."
+  },
+  "rd26_use_of_rd23": "RD23 artifact is a frozen preflight/equivalence reference; RD26 does not use it as the writer input for signal-events-2022-2023.csv.",
+  "protected_year_rows_read": false,
+  "economic_comparison": false
+}

@@ -1,0 +1,44 @@
+{
+  "2024": false,
+  "2025": false,
+  "fixed_horizons_hours": [
+    24,
+    72,
+    168
+  ],
+  "hypotheses_registered": 36,
+  "legacy_v84_use": "PRIMITIVES_ONLY_NO_THRESHOLDS_NO_OLD_RESULTS",
+  "lifecycle_variants": [
+    "L00_F10_BASELINE_REUSED",
+    "L01_H0_PARTIAL50_ALL_72H_MTF_WEAKNESS",
+    "L02_H0_PARTIAL50_ALL_168H_MTF_WEAKNESS",
+    "L03_H0_PARTIAL50_STRONG_168H_MTF_WEAKNESS",
+    "L04_H0_FULL_DEFER_STRONG_168H_MTF_WEAKNESS",
+    "L05_H0_PARTIAL50_STRONG_168H_TIME_ONLY",
+    "L06_H0_PARTIAL50_STRONG_168H_MTF_WEAKNESS_1X_COST",
+    "L07_H0_PARTIAL50_STRONG_168H_MTF_WEAKNESS_RELAXED_CAPS",
+    "L08_H0_PARTIAL50_STRONG_168H_MTF_WEAKNESS_STRICT_LIQ_STRESS",
+    "L09_H0_FULL_DEFER_STRONG_168H_TIME_ONLY"
+  ],
+  "model_refit": false,
+  "mtf_branch_actions": [
+    "ADD_SLOT_IF_CAND_MTF_STRONG",
+    "REPLACE_MTF_WEAKEST",
+    "REPLACE_PREDICTED_IF_INC_MTF_WEAK",
+    "REPLACE_PREDICTED_IF_CAND_STRONG_INC_WEAK",
+    "REPLACE_MAX_DRAWDOWN_FROM_MFE",
+    "REPLACE_NEGATIVE_AND_MTF_WEAK"
+  ],
+  "parameter_search": false,
+  "production": false,
+  "project_north_star": "AKAH is not constrained by F10 or by the historical 11.23x clairvoyant diagnostic. The project seeks material causal capture of large trends, better entry selection, winner preservation, rational weakening exits and allocation without emotion, while keeping execution and risk discipline.",
+  "push": false,
+  "reversal_stages": [
+    "DIVERGENCE_CAUSAL",
+    "DIVERGENCE_CONFIRM",
+    "DIVERGENCE_CONFIRM_MSB"
+  ],
+  "runtime_promotion": false,
+  "schema_version": "akah-lifecycle-trend-harvest-entry-protocol-v1",
+  "source_revision": 763
+}

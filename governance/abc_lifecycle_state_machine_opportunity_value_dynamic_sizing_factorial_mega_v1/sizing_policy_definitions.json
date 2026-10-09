@@ -1,0 +1,56 @@
+{
+  "adaptive_formula": {
+    "quality": "selected contemporaneous percentile rank or arithmetic mean of ranks",
+    "quality_range": [
+      0.0,
+      1.0
+    ],
+    "risk_budget_multiplier": "0.5 + quality",
+    "risk_budget_multiplier_range": [
+      0.5,
+      1.5
+    ],
+    "uniform": "risk=1.0, weight=1.0",
+    "weight_cap_multiplier": "0.5 + 0.5*quality",
+    "weight_cap_multiplier_range": [
+      0.5,
+      1.0
+    ]
+  },
+  "hard_rule": "adaptive sizing never raises POSITION_WEIGHT_CAP above existing value",
+  "policies": [
+    {
+      "description": "Uniform legacy size; exact REV733 reference",
+      "id": "SZ00_UNIFORM"
+    },
+    {
+      "description": "Continuous downside-safety sizing",
+      "id": "SZ01_SAFE"
+    },
+    {
+      "description": "Continuous ADX/DMI quality sizing",
+      "id": "SZ02_ADX"
+    },
+    {
+      "description": "Continuous tail-winner sizing",
+      "id": "SZ03_TAIL"
+    },
+    {
+      "description": "Continuous market-context sizing",
+      "id": "SZ04_MARKET"
+    },
+    {
+      "description": "Mean downside-safety + ADX/DMI sizing",
+      "id": "SZ05_SAFE_ADX"
+    },
+    {
+      "description": "Mean downside-safety + ADX/DMI + tail sizing",
+      "id": "SZ06_SAFE_ADX_TAIL"
+    },
+    {
+      "description": "Mean downside-safety + ADX/DMI + tail + market sizing",
+      "id": "SZ07_ALL4"
+    }
+  ],
+  "schema_version": "akah-dynamic-sizing-policies-v1"
+}

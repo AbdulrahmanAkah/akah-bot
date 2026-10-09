@@ -1,0 +1,103 @@
+{
+  "2024_access": false,
+  "clean_component_identity_max_abs_error": 5.065392549852277e-16,
+  "component_summary": {
+    "__downstream_residual": {
+      "CORE_AGE": {
+        "component_signal_proven": false,
+        "null_median_abs_spearman": 0.1415721714231235,
+        "null_rolling_pass": false,
+        "real_median_spearman": 0.2423586274940775,
+        "real_rolling_pass": true
+      },
+      "DAMAGE_AGE": {
+        "component_signal_proven": false,
+        "null_median_abs_spearman": 0.037124051060098,
+        "null_rolling_pass": false,
+        "real_median_spearman": -0.12999589377575918,
+        "real_rolling_pass": false
+      },
+      "EVIDENCE_AGE": {
+        "component_signal_proven": false,
+        "null_median_abs_spearman": 0.2378032699008244,
+        "null_rolling_pass": false,
+        "real_median_spearman": 0.1927698689811578,
+        "real_rolling_pass": true
+      }
+    },
+    "__immediate_bridge_advantage": {
+      "CORE_AGE": {
+        "component_signal_proven": false,
+        "null_median_abs_spearman": 0.106680392326749,
+        "null_rolling_pass": false,
+        "real_median_spearman": 0.11568132817397436,
+        "real_rolling_pass": true
+      },
+      "DAMAGE_AGE": {
+        "component_signal_proven": false,
+        "null_median_abs_spearman": 0.15860228470314003,
+        "null_rolling_pass": false,
+        "real_median_spearman": 0.06203405219863652,
+        "real_rolling_pass": false
+      },
+      "EVIDENCE_AGE": {
+        "component_signal_proven": false,
+        "null_median_abs_spearman": 0.11866762309398109,
+        "null_rolling_pass": false,
+        "real_median_spearman": -0.007492642082424796,
+        "real_rolling_pass": false
+      }
+    },
+    "continuation_advantage": {
+      "CORE_AGE": {
+        "component_signal_proven": false,
+        "null_median_abs_spearman": 0.11787667000230598,
+        "null_rolling_pass": false,
+        "real_median_spearman": 0.22434851963155023,
+        "real_rolling_pass": true
+      },
+      "DAMAGE_AGE": {
+        "component_signal_proven": false,
+        "null_median_abs_spearman": 0.08488581745267126,
+        "null_rolling_pass": false,
+        "real_median_spearman": 0.11979709544147396,
+        "real_rolling_pass": true
+      },
+      "EVIDENCE_AGE": {
+        "component_signal_proven": false,
+        "null_median_abs_spearman": 0.23508002382424759,
+        "null_rolling_pass": false,
+        "real_median_spearman": 0.20385302919870021,
+        "real_rolling_pass": true
+      }
+    }
+  },
+  "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_CONTINUATION_VALUE_STATE_REPRESENTATION_TARGET_SEPARATION_V6_RECONCILIATION_V1",
+  "schema_version": "akah-rev638-raw-representation-target-separation-v6-fast-proof-mega-v1-component-join",
+  "status": "PASS_CLEAN_TARGET_COMPONENT_AND_SENSOR_JOIN_PREFLIGHT",
+  "target_redesign_executed": false,
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_CONTINUATION_VALUE_CLEAN_TARGET_COMPONENT_AND_TECHNICAL_SENSOR_JOIN_PREFLIGHT_V1",
+  "technical_sensor_join_preflight": {
+    "2024_access": false,
+    "all_17_sensor_columns_present": true,
+    "candidate_extra_key_rows": 1769,
+    "candidate_path": "governance/abc_lifecycle_state_machine_technical_indicator_sensor_materialization_v1/technical_indicator_sensor_grid.csv",
+    "candidate_sha256": "03DE5B800F1018441632BD29C4157CDEEF688FD51FD38158ACCC9592B8BDAEA2",
+    "join_keys_present": true,
+    "key_rows_read": 14059,
+    "matched_model_key_rows": 12290,
+    "model_key_coverage": 1.0,
+    "model_key_rows": 12290,
+    "operational_join_key_binding_resolved": true,
+    "provenance_binding_resolved": true,
+    "required_join_keys": [
+      "pair",
+      "entry_time",
+      "decision_time_4h"
+    ],
+    "sensor_key_duplicate_rows": 0,
+    "sensor_value_columns_read": [],
+    "status": "PROVENANCE_BOUND_OPERATIONAL_JOIN_READY"
+  },
+  "technical_sensor_values_read": false
+}

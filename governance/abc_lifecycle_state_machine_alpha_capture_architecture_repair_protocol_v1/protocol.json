@@ -1,0 +1,52 @@
+{
+  "2024_access": false,
+  "architecture_modes": [
+    "STATIC24",
+    "STATIC72",
+    "STATIC168",
+    "CHECKPOINT_SIGN",
+    "CHECKPOINT_ACCEL",
+    "REGIME_HORIZON_ONLY",
+    "REGIME_ADAPTIVE_TIER"
+  ],
+  "capital_tiers": {
+    "moderate_stable": 0.09,
+    "strong_stable": 0.18,
+    "unstable_or_negative": 0.0
+  },
+  "checkpoint_accel": "24h<=0 EXIT24; else 72h<=24h cumulative return EXIT72; else EXIT168",
+  "checkpoint_sign": "24h<=0 EXIT24; else 72h<=0 EXIT72; else EXIT168",
+  "development_selection": "ALL_DEV_YEARS_POSITIVE_IF_AVAILABLE_THEN_MAX_WORST_RETURN_THEN_GEOMETRIC_MEAN_THEN_TOTAL",
+  "development_years": [
+    2019,
+    2020,
+    2021
+  ],
+  "fixed_forward_years": [
+    2022,
+    2023
+  ],
+  "forward_selection_or_retuning": false,
+  "leverage": "NONE",
+  "max_gross_exposure": 0.9,
+  "max_positions": 5,
+  "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_ALL_OBSERVED_UNIVERSE_EXPANSION_AND_SIGNAL_MATERIALIZATION_V1",
+  "production_change": false,
+  "ranking_modes": [
+    "MFE5",
+    "MFE10",
+    "COMPOSITE_EQUAL_WEIGHT"
+  ],
+  "regime_map_selection": "2019_2021_ONLY_MAX_WORST_YEAR_MEAN_RETURN_THEN_AGGREGATE",
+  "regime_support": {
+    "minimum_total_rows": 60,
+    "minimum_year_rows": 10,
+    "minimum_years_supported": 2
+  },
+  "schema_version": "abc-alpha-capture-architecture-repair-protocol-v1",
+  "simulator_role": "RESEARCH_ARCHITECTURE_REPLAY_FROM_EXACT_CACHED_HOURLY_OPEN_CHECKPOINT_RETURNS_NOT_PRODUCTION_ENGINE",
+  "universe_modes": [
+    "CURRENT",
+    "EXPANDED_ALL_OBSERVED_PRE_TOP6_IF_SUPPORTED"
+  ]
+}

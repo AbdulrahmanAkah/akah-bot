@@ -1,0 +1,66 @@
+{
+  "authority_bindings": {
+    "contract_sha256": "1276980ADCF920E61A1734FFFA1D1F2336B2837534062A25275C6707B3A3C0A6",
+    "decision_sha256": "13069D1164D9394C1F3CEEEDF7D5FC773359E0A5E157298E7402807A7AD76DEE",
+    "producer_chain_sha256": "58FC7755C7481031AC16048420A2C1C5E4053D85C1947389018862CE5CE5B86E",
+    "study_contract_sha256": "95FB1EB02E5EF3B4A2D0AAD8D12F9AF4E8B13185052B6FFC1B332D01180FD4AE",
+    "time_bound_sha256": "5D4703915C5FCAAD1B030538143F6B99E000AF1E993C0D36315E060D45CF7594",
+    "writers_sha256": "ACF57CF3F65862643BDFF52B3D01C67966DBD51C346676263492E64B641FF8FE"
+  },
+  "branch": "research/rd48-cross-venue-price-level-basis-direct-utility-v1",
+  "evidence": [
+    {
+      "path": "governance/reconstructed_native_baseline_native_1h_upstream_rematerialization_authority_v1/native_1h_writer_occurrence_classification.json",
+      "sha256": "ACF57CF3F65862643BDFF52B3D01C67966DBD51C346676263492E64B641FF8FE"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_native_1h_upstream_rematerialization_authority_v1/native_1h_producer_chain_binding.json",
+      "sha256": "58FC7755C7481031AC16048420A2C1C5E4053D85C1947389018862CE5CE5B86E"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_native_1h_upstream_rematerialization_authority_v1/upstream_time_bound_capability_audit.json",
+      "sha256": "5D4703915C5FCAAD1B030538143F6B99E000AF1E993C0D36315E060D45CF7594"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_native_1h_upstream_rematerialization_authority_v1/pre2023_native_1h_rematerialization_contract.json",
+      "sha256": "1276980ADCF920E61A1734FFFA1D1F2336B2837534062A25275C6707B3A3C0A6"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_native_1h_upstream_rematerialization_authority_v1/upstream_rematerialization_authority_decision.json",
+      "sha256": "13069D1164D9394C1F3CEEEDF7D5FC773359E0A5E157298E7402807A7AD76DEE"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_native_1h_upstream_rematerialization_authority_v1.json",
+      "sha256": "02616FBB15A8A4A7D80FCC64A51428CD8873AA6314918ABB14B6E1F3C31FE8AF"
+    }
+  ],
+  "firewall": {
+    "economic_analysis": false,
+    "market_rows_read": false,
+    "mixed_csv_rows_read": false,
+    "native_replay_executed": false,
+    "network": false,
+    "protected_year_rows_read": false,
+    "push": false,
+    "source_code_mutation": false
+  },
+  "governed_schema_version": "akah-provenance-phase-governed-v1",
+  "next_bottleneck": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_PRE2023_SIGNAL_RECONSTRUCTION_EXECUTION_CONTRACT_V1",
+  "north_star_effect": "Bind the exact native 1H writer/producer surfaces and determine from source code only whether the upstream provider can request a <=2022 time-bounded dataset before protected-year rows are fetched or opened.",
+  "objective": "Bind the exact native 1H writer/producer surfaces and determine from source code only whether the upstream provider can request a <=2022 time-bounded dataset before protected-year rows are fetched or opened.",
+  "resolution_class": "NATIVE_1H_UPSTREAM_PREOPEN_TIME_BOUND_CAPABILITY_IDENTIFIED_EXECUTION_CONTRACT_PENDING",
+  "state_updates": {
+    "economic_analysis": false,
+    "membership_static_pit_authority_ready": true,
+    "native_1h_upstream_preopen_time_bound_capability_ready": true,
+    "native_1h_writer_occurrence_count": 0,
+    "native_replay_executed": false,
+    "provider_time_bound_candidate_count": 6,
+    "roadmap_position": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_PRE2023_SIGNAL_RECONSTRUCTION_EXECUTION_CONTRACT_V1"
+  },
+  "status": "PASS",
+  "summary": "Bound 0 native 1H writer occurrence(s) and 6 upstream provider time-bound candidate(s) without network calls or market-row reads.",
+  "task_id": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_NATIVE_1H_PRE2023_UPSTREAM_REMATERIALIZATION_AUTHORITY_V1",
+  "task_start_head": "705de6074b653c0055c1d46eb6800cdc3f76f078",
+  "task_start_revision": 220
+}

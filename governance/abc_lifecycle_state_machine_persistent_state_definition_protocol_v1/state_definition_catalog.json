@@ -1,0 +1,67 @@
+{
+  "base_phase_authority": {
+    "mutated": false,
+    "replaced_by_overlay": false,
+    "states": [
+      "UNCONFIRMED",
+      "EARLY_PROGRESS",
+      "CONFIRMED"
+    ]
+  },
+  "catalog_id": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_DEFINITION_CATALOG_V1",
+  "coexistence": {
+    "A_AND_B_DOES_NOT_SYNTHESIZE_FAILED": true,
+    "multiple_overlays_allowed": true,
+    "mutual_exclusivity": false,
+    "priority_order": "NONE"
+  },
+  "deferred_doctrine_states": {
+    "DETERIORATING": "DEFERRED_NOT_OPERATIONALIZED: directional deltas remain observations; no combination threshold is frozen.",
+    "FAILED": "DEFERRED_NOT_OPERATIONALIZED: no causal failure predicate is frozen; A+B coexistence is not promoted to FAILED.",
+    "HEALTHY_TREND": "DEFERRED_NOT_OPERATIONALIZED: absence of damage is not positive trend evidence."
+  },
+  "lifecycle_scope": "STATE_RESETS_AT_NEW_LIFECYCLE_NO_CARRY_BETWEEN_LIFECYCLES",
+  "persistent_overlays": [
+    {
+      "activation": "C_signal == true AND base_state == UNCONFIRMED",
+      "clearing": "Clear at the first later decision row where memory_seen == true; lifecycle end terminates observation without synthesizing a recovery event.",
+      "doctrine_target": "STALLED",
+      "exit_action": "NONE",
+      "horizon": null,
+      "new_threshold": false,
+      "persistence": "Once activated within a lifecycle, remain active on later eligible decision rows while memory_seen == false.",
+      "priority": null,
+      "runtime_authorized": false,
+      "source_native_only": true,
+      "state_id": "STALLED_ACTIVE_V1"
+    },
+    {
+      "activation": "a_condition_now == true",
+      "clearing": "Inactive when a_condition_now becomes false; a_condition_recovered_now records the source-native recovery boundary when available.",
+      "doctrine_target": "STRUCTURAL_BREAK",
+      "exit_action": "NONE",
+      "horizon": null,
+      "new_threshold": false,
+      "persistence": "Active on every consecutive eligible decision row where a_condition_now remains true. a_condition_true_run_length is descriptive only and has no cutoff.",
+      "priority": null,
+      "runtime_authorized": false,
+      "source_native_only": true,
+      "state_id": "STRUCTURAL_BREAK_ACTIVE_V1"
+    },
+    {
+      "activation": "b_condition_now == true",
+      "clearing": "Inactive when b_condition_now becomes false; b_condition_recovered_now records the source-native recovery boundary when available.",
+      "doctrine_target": "VOLATILITY_DAMAGE",
+      "exit_action": "NONE",
+      "horizon": null,
+      "new_threshold": false,
+      "persistence": "Active on every consecutive eligible decision row where b_condition_now remains true. b_condition_true_run_length is descriptive only and has no cutoff.",
+      "priority": null,
+      "runtime_authorized": false,
+      "source_native_only": true,
+      "state_id": "VOLATILITY_DAMAGE_ACTIVE_V1"
+    }
+  ],
+  "representation": "BASE_PHASE_PLUS_INDEPENDENT_PERSISTENT_OVERLAYS",
+  "schema_version": "abc-persistent-state-definition-catalog-v1"
+}

@@ -1,0 +1,48 @@
+{
+  "causal_timing": "ONLY_AGGREGATED_BARS_WITH_COMPLETION_TIME_LE_ENTRY_TIME",
+  "components": {
+    "ALIGN": "mean(C4T,C1T)",
+    "ALL_MTF": "mean(C4T,C1T,C4S,C4A,CLIQ)",
+    "C1T": "mean contemporaneous percentile rank of 1D returns, efficiency, persistence, HH/HL and EMA state",
+    "C4A": "mean rank of 4H recent-vs-prior acceleration and short/long realized-vol ratio",
+    "C4S": "mean rank of 4H HH/HL, 20-bar range position and prior-high breakout",
+    "C4T": "mean contemporaneous percentile rank of 4H returns, efficiency, persistence, HH/HL and EMA state",
+    "CLIQ": "mean rank of 4H and 1D quote-turnover expansion",
+    "MTF_STRUCTURE": "mean(C4T,C1T,C4S)"
+  },
+  "daily": {
+    "aggregation": "UTC completed daily bars; exactly 24 hourly bars required",
+    "features": [
+      "mtf1d_ret3",
+      "mtf1d_ret7",
+      "mtf1d_eff7",
+      "mtf1d_posfrac7",
+      "mtf1d_hhhl7",
+      "mtf1d_ema5_20",
+      "mtf1d_ema20_slope3",
+      "mtf1d_position20",
+      "mtf1d_vol_ratio5_20",
+      "mtf1d_turnover_ratio3_7"
+    ]
+  },
+  "four_hour": {
+    "aggregation": "UTC-aligned completed 4H bars; exactly 4 hourly bars required",
+    "features": [
+      "mtf4_ret3",
+      "mtf4_ret6",
+      "mtf4_eff6",
+      "mtf4_posfrac6",
+      "mtf4_hhhl6",
+      "mtf4_ema6_18",
+      "mtf4_ema18_slope3",
+      "mtf4_position20",
+      "mtf4_breakout20",
+      "mtf4_accel3",
+      "mtf4_vol_ratio6_18",
+      "mtf4_turnover_ratio3_12"
+    ]
+  },
+  "missing_history_policy": "NEUTRAL_COMPONENT_RANK_0.5; NEVER_DROP_F10_ELIGIBLE_EVENT",
+  "raw_source": "PRE2024_1H_OHLCV",
+  "schema_version": "akah-mtf-state-feature-definitions-v1"
+}

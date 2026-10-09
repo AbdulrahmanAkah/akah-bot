@@ -1,0 +1,45 @@
+{
+  "alias_count": 1,
+  "aliases": [
+    "events"
+  ],
+  "lifecycle_sites": [
+    {
+      "call_names": [
+        "scan_focus_signals"
+      ],
+      "expr": "scan_focus_signals(\n        membership=membership,\n        features=frames,\n        periods=ROBUSTNESS_PERIODS,\n        data_start=DATA_START,\n        data_cutoff=DATA_CUTOFF,\n        guard_each_period_hours=None,\n    )",
+      "kind": "ASSIGN",
+      "line": 597,
+      "loaded_names": [
+        "DATA_CUTOFF",
+        "DATA_START",
+        "ROBUSTNESS_PERIODS",
+        "frames",
+        "membership",
+        "scan_focus_signals"
+      ],
+      "targets": [
+        "events",
+        "funnel"
+      ]
+    },
+    {
+      "call_names": [
+        "filter_robustness_events"
+      ],
+      "expr": "filter_robustness_events(events)",
+      "kind": "ASSIGN",
+      "line": 605,
+      "loaded_names": [
+        "events",
+        "filter_robustness_events"
+      ],
+      "targets": [
+        "events"
+      ]
+    }
+  ],
+  "mutation_site_count": 0,
+  "status": "PASS"
+}

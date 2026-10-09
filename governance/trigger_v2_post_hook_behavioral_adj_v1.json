@@ -1,0 +1,40 @@
+{
+  "adjudication": {
+    "actual_exit_authority": false,
+    "economic_test_authorized": false,
+    "next_research_direction": "LATER_TRIGGER_V3_SELECTIVITY_REDESIGN",
+    "v2_retained_as_research_reference": true,
+    "verdict": "DO_NOT_ADVANCE_TO_ECONOMICS"
+  },
+  "behavioral_evidence": {
+    "candidate_free_after_memory": 2,
+    "candidate_free_given_memory": 0.08,
+    "candidate_given_memory": 0.92,
+    "candidate_overall": 0.696969696969697,
+    "candidate_time_mismatches": 0,
+    "eligible_lifecycles": 33,
+    "memory_lifecycles": 25,
+    "memory_time_mismatches": 0,
+    "native_hook_actual_exit_authority": false,
+    "native_hook_default_enabled": false,
+    "native_hook_position_mutation": false,
+    "v2_candidate_lifecycles": 23
+  },
+  "firewall": {
+    "2023_economics": false,
+    "2024_access": false,
+    "2025_access": false,
+    "actual_exit_authority": false,
+    "production_activation": false
+  },
+  "reasoning": {
+    "economic_ranking_used": false,
+    "new_market_replay_used": false,
+    "numeric_acceptance_threshold_introduced": false,
+    "outcome_fields_used": false,
+    "parameter_tuning_used": false,
+    "rationale": "FAILED_BREAKOUT_REFERENCE is implemented correctly and is causally distinct, but after Memory it still fires in 23 of 25 lifecycles. It excludes only 2 post-memory lifecycles, so the Later Trigger remains behaviorally broad. Testing PnL now would introduce outcome pressure before sufficient trigger discrimination has been established."
+  },
+  "status": "PASS",
+  "task_id": "CAUSAL_EXIT_BRAIN_LATER_TRIGGER_V2_POST_HOOK_BEHAVIORAL_ADJUDICATION_V1"
+}

@@ -1,0 +1,113 @@
+{
+  "2024_access": false,
+  "candidate_selection": false,
+  "crossfit_entry_scores_for_recovery": "LEAVE_ONE_DISCOVERY_YEAR_OUT_FOR_2019_2021; FIXED_2019_2021_MODEL_FOR_2022_2023",
+  "entry_mutation": false,
+  "entry_retention_fractions": [
+    0.4,
+    0.6,
+    0.8,
+    1.0
+  ],
+  "entry_snapshot_rule": "LAST_COMPLETE_4H_BLOCK_END_LE_ENTRY_TIME",
+  "entry_targets": {
+    "MFE_GE_10PCT": 0.1,
+    "MFE_GE_5PCT": 0.05
+  },
+  "exit_mutation": false,
+  "forward_years": [
+    2022,
+    2023
+  ],
+  "indicator_families": {
+    "ADX_DMI": [
+      "adx14",
+      "plus_di14",
+      "minus_di14",
+      "dmi_spread14",
+      "adx_delta3"
+    ],
+    "BOLLINGER_VOLATILITY": [
+      "bb_width20",
+      "bb_percent_b20",
+      "bb_z20",
+      "bb_width_delta3",
+      "atr14_4h_price_fraction"
+    ],
+    "MACD": [
+      "macd_line_atr",
+      "macd_signal_atr",
+      "macd_hist_atr",
+      "macd_hist_delta1_atr",
+      "macd_hist_slope3_atr",
+      "macd_hist_drawdown_from_peak5_atr"
+    ],
+    "MOMENTUM_EXHAUSTION": [
+      "rsi14",
+      "rsi7",
+      "rsi14_delta1",
+      "rsi14_delta3",
+      "rsi14_distance_50",
+      "rsi14_peak5",
+      "rsi14_drawdown_from_peak5",
+      "stoch_k14",
+      "stoch_d3",
+      "williams_r14",
+      "roc3",
+      "roc6",
+      "cci20"
+    ],
+    "TREND_EMA": [
+      "price_ema9_atr",
+      "price_ema21_atr",
+      "price_ema50_atr",
+      "ema9_21_spread_atr",
+      "ema21_50_spread_atr",
+      "ema9_slope3_atr",
+      "ema21_slope3_atr",
+      "ema50_slope3_atr",
+      "ema_alignment_score"
+    ],
+    "VOLUME_LIQUIDITY_PROXY": [
+      "mfi14",
+      "obv_change5_norm",
+      "cmf20",
+      "volume_roc5",
+      "volume_z20",
+      "dollar_volume_z20"
+    ]
+  },
+  "indicator_feature_count": 44,
+  "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_INDICATOR_AUGMENTED_ENTRY_RECOVERY_SNAPSHOT_MATERIALIZATION_V1",
+  "production_cutoff_selection": false,
+  "recovery_causal_features": [
+    "a_active_now",
+    "b_active_now",
+    "a_current_run_decisions",
+    "b_current_run_decisions",
+    "current_return_from_entry",
+    "mfe_return_so_far",
+    "mae_return_so_far",
+    "giveback_fraction_of_mfe",
+    "retained_mfe_fraction",
+    "path_efficiency_signed",
+    "return_4h",
+    "return_8h",
+    "return_12h",
+    "lower_high_count_last3x4h",
+    "lower_low_count_last3x4h",
+    "atr24h_price_fraction",
+    "realized_vol_24h",
+    "realized_vol_72h"
+  ],
+  "recovery_snapshot_rule": "LAST_COMPLETE_4H_BLOCK_END_LE_FIRST_HALF_GIVEBACK_EVENT_TIME",
+  "ridge_alpha": 10.0,
+  "schema_version": "abc-indicator-augmented-entry-winner-protocol-v1",
+  "status": "FROZEN",
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_INDICATOR_AUGMENTED_ENTRY_WINNER_PROTOCOL_FREEZE_V1",
+  "train_years": [
+    2019,
+    2020,
+    2021
+  ]
+}

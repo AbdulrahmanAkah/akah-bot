@@ -1,0 +1,322 @@
+{
+  "callsites": [
+    {
+      "line": 240,
+      "path": "scripts/research/run_eaa_same_pair_secondary_shadow_parity.py",
+      "relevance": "AMBIGUOUS_COULD_INCLUDE_BASELINE",
+      "roles": {
+        "events": {
+          "kind": "LOCAL_ASSIGNMENT",
+          "name": "subset",
+          "rhs": "signals[signals['period_id'] == period_id].copy()",
+          "upstream": {
+            "call": "copy",
+            "defs": 0,
+            "expr": "signals[signals['period_id'] == period_id].copy()",
+            "kind": "UNRESOLVED_CALL_NONUNIQUE_OR_UNKNOWN",
+            "literal_paths": []
+          }
+        },
+        "frames": {
+          "kind": "UNRESOLVED_NAME",
+          "name": "frames"
+        }
+      }
+    },
+    {
+      "line": 420,
+      "path": "scripts/research/run_rd27_lifecycle_ablation.py",
+      "relevance": "AMBIGUOUS_COULD_INCLUDE_BASELINE",
+      "roles": {
+        "events": {
+          "kind": "UNRESOLVED_NAME",
+          "name": "portfolio_events"
+        },
+        "frames": {
+          "branches": [
+            {
+              "caller_line": 631,
+              "caller_path": "scripts/research/run_rd26_exit_architecture.py",
+              "expr": "frames",
+              "upstream": {
+                "kind": "LOCAL_ASSIGNMENT",
+                "name": "frames",
+                "rhs": "load_feature_frames(raw_root=raw_root, pairs=pairs, cutoff=DATA_CUTOFF)",
+                "upstream": {
+                  "call": "load_feature_frames",
+                  "defs": 9,
+                  "expr": "load_feature_frames(raw_root=raw_root, pairs=pairs, cutoff=DATA_CUTOFF)",
+                  "kind": "UNRESOLVED_CALL_NONUNIQUE_OR_UNKNOWN",
+                  "literal_paths": []
+                }
+              }
+            },
+            {
+              "caller_line": 853,
+              "caller_path": "scripts/research/run_rd27_lifecycle_ablation.py",
+              "expr": "frames",
+              "upstream": {
+                "kind": "LOCAL_ASSIGNMENT",
+                "name": "frames",
+                "rhs": "load_feature_frames(raw_root=raw_root, pairs=pairs)",
+                "upstream": {
+                  "call": "load_feature_frames",
+                  "defs": 9,
+                  "expr": "load_feature_frames(raw_root=raw_root, pairs=pairs)",
+                  "kind": "UNRESOLVED_CALL_NONUNIQUE_OR_UNKNOWN",
+                  "literal_paths": []
+                }
+              }
+            },
+            {
+              "caller_line": 989,
+              "caller_path": "scripts/research/run_rd28_evidence_gated_lifecycle.py",
+              "expr": "frames",
+              "upstream": {
+                "kind": "LOCAL_ASSIGNMENT",
+                "name": "frames",
+                "rhs": "load_feature_frames(raw_root=raw_root, pairs=pairs)",
+                "upstream": {
+                  "call": "load_feature_frames",
+                  "defs": 9,
+                  "expr": "load_feature_frames(raw_root=raw_root, pairs=pairs)",
+                  "kind": "UNRESOLVED_CALL_NONUNIQUE_OR_UNKNOWN",
+                  "literal_paths": []
+                }
+              }
+            },
+            {
+              "caller_line": 973,
+              "caller_path": "scripts/research/run_rd29_thesis_confidence_lifecycle.py",
+              "expr": "frames",
+              "upstream": {
+                "kind": "LOCAL_ASSIGNMENT",
+                "name": "frames",
+                "rhs": "load_feature_frames(raw_root=raw_root, pairs=pairs)",
+                "upstream": {
+                  "call": "load_feature_frames",
+                  "defs": 9,
+                  "expr": "load_feature_frames(raw_root=raw_root, pairs=pairs)",
+                  "kind": "UNRESOLVED_CALL_NONUNIQUE_OR_UNKNOWN",
+                  "literal_paths": []
+                }
+              }
+            },
+            {
+              "caller_line": 1322,
+              "caller_path": "scripts/research/run_rd30_family_specialist_replacement_aware.py",
+              "expr": "frames",
+              "upstream": {
+                "kind": "LOCAL_ASSIGNMENT",
+                "name": "frames",
+                "rhs": "load_feature_frames(raw_root=raw_root, pairs=pairs)",
+                "upstream": {
+                  "call": "load_feature_frames",
+                  "defs": 9,
+                  "expr": "load_feature_frames(raw_root=raw_root, pairs=pairs)",
+                  "kind": "UNRESOLVED_CALL_NONUNIQUE_OR_UNKNOWN",
+                  "literal_paths": []
+                }
+              }
+            },
+            {
+              "caller_line": 2192,
+              "caller_path": "scripts/research/run_rd31_market_regime_admission_governor.py",
+              "expr": "frames",
+              "upstream": {
+                "kind": "LOCAL_ASSIGNMENT",
+                "name": "frames",
+                "rhs": "load_feature_frames(raw_root=raw_root, pairs=pairs)",
+                "upstream": {
+                  "call": "load_feature_frames",
+                  "defs": 9,
+                  "expr": "load_feature_frames(raw_root=raw_root, pairs=pairs)",
+                  "kind": "UNRESOLVED_CALL_NONUNIQUE_OR_UNKNOWN",
+                  "literal_paths": []
+                }
+              }
+            },
+            {
+              "caller_line": 1210,
+              "caller_path": "scripts/research/run_rd32_mb_signal_quality_admission.py",
+              "expr": "frames",
+              "upstream": {
+                "kind": "LOCAL_ASSIGNMENT",
+                "name": "frames",
+                "rhs": "rd31.load_feature_frames(raw_root=raw_root, pairs=pairs)",
+                "upstream": {
+                  "call": "load_feature_frames",
+                  "defs": 9,
+                  "expr": "rd31.load_feature_frames(raw_root=raw_root, pairs=pairs)",
+                  "kind": "UNRESOLVED_CALL_NONUNIQUE_OR_UNKNOWN",
+                  "literal_paths": []
+                }
+              }
+            },
+            {
+              "caller_line": 1602,
+              "caller_path": "scripts/research/run_rd33_temporal_mb_architecture.py",
+              "expr": "frames",
+              "upstream": {
+                "kind": "LOCAL_ASSIGNMENT",
+                "name": "frames",
+                "rhs": "rd31.load_feature_frames(raw_root=raw_root, pairs=pairs)",
+                "upstream": {
+                  "call": "load_feature_frames",
+                  "defs": 9,
+                  "expr": "rd31.load_feature_frames(raw_root=raw_root, pairs=pairs)",
+                  "kind": "UNRESOLVED_CALL_NONUNIQUE_OR_UNKNOWN",
+                  "literal_paths": []
+                }
+              }
+            }
+          ],
+          "kind": "FUNCTION_PARAMETER_CALLER_BRANCHES",
+          "name": "frames"
+        }
+      }
+    },
+    {
+      "line": 248,
+      "path": "src/spotbot/research/a10_selective_protection_asymmetry.py",
+      "relevance": "AMBIGUOUS_COULD_INCLUDE_BASELINE",
+      "roles": {
+        "events": {
+          "branches": [
+            {
+              "caller_line": 302,
+              "caller_path": "src/spotbot/research/a10_selective_protection_asymmetry.py",
+              "expr": "events",
+              "upstream": {
+                "kind": "UNRESOLVED_FUNCTION_PARAMETER_NO_CALLERS",
+                "name": "events"
+              }
+            },
+            {
+              "caller_line": 329,
+              "caller_path": "src/spotbot/research/a10_selective_protection_asymmetry.py",
+              "expr": "events",
+              "upstream": {
+                "kind": "UNRESOLVED_FUNCTION_PARAMETER_NO_CALLERS",
+                "name": "events"
+              }
+            }
+          ],
+          "kind": "FUNCTION_PARAMETER_CALLER_BRANCHES",
+          "name": "events"
+        },
+        "frames": {
+          "branches": [
+            {
+              "caller_line": 302,
+              "caller_path": "src/spotbot/research/a10_selective_protection_asymmetry.py",
+              "expr": "frames",
+              "upstream": {
+                "kind": "UNRESOLVED_FUNCTION_PARAMETER_NO_CALLERS",
+                "name": "frames"
+              }
+            },
+            {
+              "caller_line": 329,
+              "caller_path": "src/spotbot/research/a10_selective_protection_asymmetry.py",
+              "expr": "frames",
+              "upstream": {
+                "kind": "UNRESOLVED_FUNCTION_PARAMETER_NO_CALLERS",
+                "name": "frames"
+              }
+            }
+          ],
+          "kind": "FUNCTION_PARAMETER_CALLER_BRANCHES",
+          "name": "frames"
+        }
+      }
+    },
+    {
+      "line": 132,
+      "path": "src/spotbot/research/a4r1_reversible_floor_replay.py",
+      "relevance": "AMBIGUOUS_COULD_INCLUDE_BASELINE",
+      "roles": {
+        "events": {
+          "kind": "UNRESOLVED_FUNCTION_PARAMETER_NO_CALLERS",
+          "name": "events"
+        },
+        "frames": {
+          "kind": "UNRESOLVED_FUNCTION_PARAMETER_NO_CALLERS",
+          "name": "frames"
+        }
+      }
+    },
+    {
+      "line": 203,
+      "path": "src/spotbot/research/eaa_same_pair_secondary_shadow.py",
+      "relevance": "AMBIGUOUS_COULD_INCLUDE_BASELINE",
+      "roles": {
+        "events": {
+          "branches": [
+            {
+              "caller_line": 241,
+              "caller_path": "scripts/research/run_eaa_same_pair_secondary_shadow_parity.py",
+              "expr": "subset",
+              "upstream": {
+                "kind": "LOCAL_ASSIGNMENT",
+                "name": "subset",
+                "rhs": "signals[signals['period_id'] == period_id].copy()",
+                "upstream": {
+                  "call": "copy",
+                  "defs": 0,
+                  "expr": "signals[signals['period_id'] == period_id].copy()",
+                  "kind": "UNRESOLVED_CALL_NONUNIQUE_OR_UNKNOWN",
+                  "literal_paths": []
+                }
+              }
+            },
+            {
+              "caller_line": 251,
+              "caller_path": "scripts/research/run_eaa_same_pair_secondary_shadow_parity.py",
+              "expr": "subset",
+              "upstream": {
+                "kind": "LOCAL_ASSIGNMENT",
+                "name": "subset",
+                "rhs": "signals[signals['period_id'] == period_id].copy()",
+                "upstream": {
+                  "call": "copy",
+                  "defs": 0,
+                  "expr": "signals[signals['period_id'] == period_id].copy()",
+                  "kind": "UNRESOLVED_CALL_NONUNIQUE_OR_UNKNOWN",
+                  "literal_paths": []
+                }
+              }
+            }
+          ],
+          "kind": "FUNCTION_PARAMETER_CALLER_BRANCHES",
+          "name": "events"
+        },
+        "frames": {
+          "branches": [
+            {
+              "caller_line": 241,
+              "caller_path": "scripts/research/run_eaa_same_pair_secondary_shadow_parity.py",
+              "expr": "frames",
+              "upstream": {
+                "kind": "UNRESOLVED_NAME",
+                "name": "frames"
+              }
+            },
+            {
+              "caller_line": 251,
+              "caller_path": "scripts/research/run_eaa_same_pair_secondary_shadow_parity.py",
+              "expr": "frames",
+              "upstream": {
+                "kind": "UNRESOLVED_NAME",
+                "name": "frames"
+              }
+            }
+          ],
+          "kind": "FUNCTION_PARAMETER_CALLER_BRANCHES",
+          "name": "frames"
+        }
+      }
+    }
+  ],
+  "status": "PASS"
+}

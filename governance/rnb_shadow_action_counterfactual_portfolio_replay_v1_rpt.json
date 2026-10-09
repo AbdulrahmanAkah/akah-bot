@@ -1,0 +1,90 @@
+{
+  "authority_bindings": {
+    "control_parity_sha256": "3936FB22AAF07A14BE2F2AD51BACCB56D2397182FC8B0677DD7F276C06521F63",
+    "counterfactual_daily_sha256": "21EE9F3B26BC89F6B95BD7E2AD841C89DC00BFB5E69FECC51408252372BE968B",
+    "counterfactual_trades_sha256": "33908D37A330C182B315B98F04232490ED660670DA4D294598474C2915BC5A13",
+    "delta_sha256": "39DD21E181698190160422E599BC6E651E1006786025F8D1AC9FC37452C2DAA5",
+    "manifest_sha256": "C57A3F02436A0C6B3E38399053BE5D5031AF1BEE992CB1E9EEB2681A89D37799",
+    "mechanism_rows_sha256": "963AA751A7443FC0405A73CDA290A4C2EA10EDAE1D8F2FD2D9B322B811C1EE25",
+    "result_sha256": "982699986C2609AEFDDF90AFC05C0EC1B59697D08D510397A1A8999CF87F6007",
+    "shadow_parity_sha256": "2801933EF7B3AB5763DD3987D9BBB0F88B9777CC4DC2D2118BA6E8DD6935A35C"
+  },
+  "branch": "research/rd48-cross-venue-price-level-basis-direct-utility-v1",
+  "evidence": [
+    {
+      "path": "governance/rnb_shadow_action_counterfactual_portfolio_replay_v1/control_parity.json",
+      "sha256": "3936FB22AAF07A14BE2F2AD51BACCB56D2397182FC8B0677DD7F276C06521F63"
+    },
+    {
+      "path": "governance/rnb_shadow_action_counterfactual_portfolio_replay_v1/shadow_authority_parity.json",
+      "sha256": "2801933EF7B3AB5763DD3987D9BBB0F88B9777CC4DC2D2118BA6E8DD6935A35C"
+    },
+    {
+      "path": "governance/rnb_shadow_action_counterfactual_portfolio_replay_v1/counterfactual_result.json",
+      "sha256": "982699986C2609AEFDDF90AFC05C0EC1B59697D08D510397A1A8999CF87F6007"
+    },
+    {
+      "path": "governance/rnb_shadow_action_counterfactual_portfolio_replay_v1/counterfactual_delta.json",
+      "sha256": "39DD21E181698190160422E599BC6E651E1006786025F8D1AC9FC37452C2DAA5"
+    },
+    {
+      "path": "governance/rnb_shadow_action_counterfactual_portfolio_replay_v1/manifest.json",
+      "sha256": "C57A3F02436A0C6B3E38399053BE5D5031AF1BEE992CB1E9EEB2681A89D37799"
+    },
+    {
+      "path": "governance/rnb_shadow_action_counterfactual_portfolio_replay_v1/source_and_precedence_audit.json",
+      "sha256": "65DF1F04ED380BF99292DE51607E940286F895CCC7E17B3E9F7D6EE621DC2CFE"
+    },
+    {
+      "path": "data/research/reconstructed_native_baseline_pre2023/shadow-action-counterfactual-portfolio-replay-v1/trades.csv",
+      "sha256": "33908D37A330C182B315B98F04232490ED660670DA4D294598474C2915BC5A13"
+    },
+    {
+      "path": "data/research/reconstructed_native_baseline_pre2023/shadow-action-counterfactual-portfolio-replay-v1/daily.csv",
+      "sha256": "21EE9F3B26BC89F6B95BD7E2AD841C89DC00BFB5E69FECC51408252372BE968B"
+    },
+    {
+      "path": "data/research/reconstructed_native_baseline_pre2023/shadow-action-counterfactual-portfolio-replay-v1/metrics.json",
+      "sha256": "C45A3ECCAA75334D198D9852A9DBCDEFFC9B6BDAD19F909E2395C6E6D7EF15BA"
+    },
+    {
+      "path": "data/research/reconstructed_native_baseline_pre2023/shadow-action-counterfactual-portfolio-replay-v1/counters.json",
+      "sha256": "7F46499D3717DB0ED5E17A2839E556AD095B5961E9C717781FE3E489E8B289D3"
+    },
+    {
+      "path": "data/research/reconstructed_native_baseline_pre2023/shadow-action-counterfactual-portfolio-replay-v1/mechanism_rows.csv",
+      "sha256": "963AA751A7443FC0405A73CDA290A4C2EA10EDAE1D8F2FD2D9B322B811C1EE25"
+    }
+  ],
+  "firewall": {
+    "network": false,
+    "optimization": false,
+    "production_authorized": false,
+    "protected_year_rows_read": false,
+    "push": false,
+    "retuning": false
+  },
+  "governed_schema_version": "akah-provenance-phase-governed-v1",
+  "next_bottleneck": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_SHADOW_ACTION_COUNTERFACTUAL_MECHANISM_ATTRIBUTION_V1",
+  "north_star_effect": "Measures the portfolio-level effect of one predeclared post-progress deterioration action while preserving native admission, sizing, costs, safety, and causal timing.",
+  "objective": "Execute the frozen post-progress V2 action contract as a full causal portfolio counterfactual with exact native-control and shadow-authority parity gates.",
+  "resolution_class": "MIXED_OR_ADVERSE_COUNTERFACTUAL_EFFECT",
+  "state_updates": {
+    "all_maximum_drawdowns_not_worse": false,
+    "all_net_returns_improved": false,
+    "all_profit_factors_improved": false,
+    "control_counters_parity": true,
+    "control_native_parity": true,
+    "counterfactual_classification": "MIXED_OR_ADVERSE_COUNTERFACTUAL_EFFECT",
+    "counterfactual_portfolio_replay_complete": true,
+    "production_authorized": false,
+    "retuning": false,
+    "roadmap_position": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_SHADOW_ACTION_COUNTERFACTUAL_MECHANISM_ATTRIBUTION_V1",
+    "shadow_authority_parity": true
+  },
+  "status": "PASS",
+  "summary": "Executed the frozen V2 post-progress action as a full portfolio counterfactual after exact native-control and shadow-event parity gates. Admissions, sizing, costs, and open-time native safety precedence remained causal and unchanged except for cash/slot path effects caused by shadow exits.",
+  "task_id": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_SHADOW_ACTION_COUNTERFACTUAL_PORTFOLIO_REPLAY_V1",
+  "task_start_head": "66f9fba15f3722d2c59e1aac5057a3de671e9e08",
+  "task_start_revision": 237
+}

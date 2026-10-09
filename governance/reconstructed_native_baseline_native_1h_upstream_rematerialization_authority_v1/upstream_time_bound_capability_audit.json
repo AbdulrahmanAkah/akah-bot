@@ -1,0 +1,286 @@
+{
+  "evidence": [
+    {
+      "filter_tokens": [],
+      "function": "ExchangeClient",
+      "line": 34,
+      "module": "src/spotbot/data/provider.py",
+      "network_tokens": [
+        "fetch_ohlcv"
+      ],
+      "parameters_text": "self,",
+      "source_sha256": "073AB788B1DFEC07DF26EE9F9C9837EB1032165E546BFAFC71B1F316EA5902C5",
+      "time_bound_tokens": [
+        "since"
+      ]
+    },
+    {
+      "filter_tokens": [],
+      "function": "HistoryResult",
+      "line": 53,
+      "module": "src/spotbot/data/provider.py",
+      "network_tokens": [],
+      "parameters_text": "self",
+      "source_sha256": "9E443030EB90C9A55FF40A1C8DC908811F6AE59626CF6B42C9CBD5D201E081D1",
+      "time_bound_tokens": [
+        "since",
+        "until"
+      ]
+    },
+    {
+      "filter_tokens": [
+        "timestamp"
+      ],
+      "function": "normalize_ohlcv_rows",
+      "line": 133,
+      "module": "src/spotbot/data/provider.py",
+      "network_tokens": [],
+      "parameters_text": "rows: Sequence[OHLCVRow],\n    *,\n    timeframe: str,\n    since: datetime,\n    until: datetime,",
+      "source_sha256": "7A3132E64666D74BC2A59C437BA427678AFC7834C03F75298B23C6BA1BFF2A3B",
+      "time_bound_tokens": [
+        "end",
+        "since",
+        "until"
+      ]
+    },
+    {
+      "filter_tokens": [
+        "between",
+        "timestamp"
+      ],
+      "function": "CCXTSpotDataProvider",
+      "line": 223,
+      "module": "src/spotbot/data/provider.py",
+      "network_tokens": [
+        "ccxt",
+        "fetch_ohlcv"
+      ],
+      "parameters_text": "self,\n        exchange: ExchangeClient,\n        *,\n        max_pages: int = 10_000,",
+      "source_sha256": "873723DD2724A9C56612B0F5F384BB1BFD8C581D8E746BF8B2FB4E38D7631C9B",
+      "time_bound_tokens": [
+        "end",
+        "since",
+        "until"
+      ]
+    },
+    {
+      "filter_tokens": [
+        "timestamp"
+      ],
+      "function": "_discover_first_open",
+      "line": 177,
+      "module": "src/spotbot/research/rd16b_hourly_readiness.py",
+      "network_tokens": [
+        "ccxt",
+        "fetch_ohlcv"
+      ],
+      "parameters_text": "adapter: CCXTExchangeAdapter,\n    *,\n    symbol: str,\n    since: datetime,\n    until: datetime,",
+      "source_sha256": "1397C4BA703BF4DCDF25606ACF3CFEB8A0DC1BFE24B669C32FD330DF2B5B8C51",
+      "time_bound_tokens": [
+        "cutoff",
+        "since",
+        "until"
+      ]
+    },
+    {
+      "filter_tokens": [
+        "timestamp"
+      ],
+      "function": "_acquire_hourly",
+      "line": 211,
+      "module": "src/spotbot/research/rd16b_hourly_readiness.py",
+      "network_tokens": [
+        "ccxt",
+        "download"
+      ],
+      "parameters_text": "*,\n    adapter: CCXTExchangeAdapter | None,\n    provider: CCXTSpotDataProvider | None,\n    store: ParquetCandleStore,\n    exchange_id: str,\n    symbol: str,\n    since: datetime,\n    until: datetime,\n    download: bool,",
+      "source_sha256": "FC236DA9D22F319A0F269365170357EE51A1A2C7FEF5A5BE70244CCBBA3D7C4A",
+      "time_bound_tokens": [
+        "cutoff",
+        "since",
+        "until"
+      ]
+    },
+    {
+      "filter_tokens": [
+        "timestamp"
+      ],
+      "function": "analyze_hourly_frame",
+      "line": 369,
+      "module": "src/spotbot/research/rd16b_hourly_readiness.py",
+      "network_tokens": [],
+      "parameters_text": "*,\n    symbol: str,\n    source: pd.DataFrame,\n    cutoff: datetime,\n    minimum_coverage_days: float = 0.0,",
+      "source_sha256": "070B34198F752306EF72666478C2A100635AFF78EA9DC12605AC390EF337F8C3",
+      "time_bound_tokens": [
+        "cutoff",
+        "end"
+      ]
+    },
+    {
+      "filter_tokens": [
+        "timestamp"
+      ],
+      "function": "_empty_readiness",
+      "line": 549,
+      "module": "src/spotbot/research/rd16b_hourly_readiness.py",
+      "network_tokens": [],
+      "parameters_text": "symbol: str,\n    error: Exception,",
+      "source_sha256": "3B3C422C6761C7731698B940AEE76197EF8BAD371968DEE422DBF98F6C14CF14",
+      "time_bound_tokens": [
+        "cutoff"
+      ]
+    },
+    {
+      "filter_tokens": [],
+      "function": "_write_outputs",
+      "line": 576,
+      "module": "src/spotbot/research/rd16b_hourly_readiness.py",
+      "network_tokens": [
+        "download"
+      ],
+      "parameters_text": "*,\n    readiness_rows: list[dict[str, Any]],\n    aggregation_rows: list[dict[str, Any]],\n    causal_rows: list[dict[str, Any]],\n    availability_rows: list[dict[str, Any]],\n    source_manifest: dict[str, Any],\n    derived_manifest: dict[str, Any],\n    frozen_hashes: dict[str, str],\n    frozen_unchanged: bool,\n    replay_match: bool,\n    download: bool,\n    since: datetime,\n    until: datetime,",
+      "source_sha256": "BE2258E9BD00226DA6B09B6E6DB742779862E728A88ACF5BBAF40992DC8B0A52",
+      "time_bound_tokens": [
+        "cutoff",
+        "since",
+        "start",
+        "until"
+      ]
+    },
+    {
+      "filter_tokens": [
+        "timestamp"
+      ],
+      "function": "run_rd16b",
+      "line": 718,
+      "module": "src/spotbot/research/rd16b_hourly_readiness.py",
+      "network_tokens": [
+        "ccxt",
+        "download"
+      ],
+      "parameters_text": "*,\n    store_root: Path = LOCAL_STORE_ROOT,\n    since: datetime = DEFAULT_SINCE,\n    until: datetime = SEALED_CUTOFF,\n    download: bool = True,",
+      "source_sha256": "F9935F77DA6B96499A7AA64BAAC0BF3FB95E43BC221AF2DE7EDE1E9722BE5098",
+      "time_bound_tokens": [
+        "cutoff",
+        "end",
+        "since",
+        "until"
+      ]
+    }
+  ],
+  "network_calls_executed": 0,
+  "preopen_remote_or_upstream_time_bound_capability_ready": true,
+  "provider_time_bound_candidate_count": 6,
+  "provider_time_bound_candidates": [
+    {
+      "filter_tokens": [],
+      "function": "ExchangeClient",
+      "line": 34,
+      "module": "src/spotbot/data/provider.py",
+      "network_tokens": [
+        "fetch_ohlcv"
+      ],
+      "parameters_text": "self,",
+      "source_sha256": "073AB788B1DFEC07DF26EE9F9C9837EB1032165E546BFAFC71B1F316EA5902C5",
+      "time_bound_tokens": [
+        "since"
+      ]
+    },
+    {
+      "filter_tokens": [
+        "between",
+        "timestamp"
+      ],
+      "function": "CCXTSpotDataProvider",
+      "line": 223,
+      "module": "src/spotbot/data/provider.py",
+      "network_tokens": [
+        "ccxt",
+        "fetch_ohlcv"
+      ],
+      "parameters_text": "self,\n        exchange: ExchangeClient,\n        *,\n        max_pages: int = 10_000,",
+      "source_sha256": "873723DD2724A9C56612B0F5F384BB1BFD8C581D8E746BF8B2FB4E38D7631C9B",
+      "time_bound_tokens": [
+        "end",
+        "since",
+        "until"
+      ]
+    },
+    {
+      "filter_tokens": [
+        "timestamp"
+      ],
+      "function": "_discover_first_open",
+      "line": 177,
+      "module": "src/spotbot/research/rd16b_hourly_readiness.py",
+      "network_tokens": [
+        "ccxt",
+        "fetch_ohlcv"
+      ],
+      "parameters_text": "adapter: CCXTExchangeAdapter,\n    *,\n    symbol: str,\n    since: datetime,\n    until: datetime,",
+      "source_sha256": "1397C4BA703BF4DCDF25606ACF3CFEB8A0DC1BFE24B669C32FD330DF2B5B8C51",
+      "time_bound_tokens": [
+        "cutoff",
+        "since",
+        "until"
+      ]
+    },
+    {
+      "filter_tokens": [
+        "timestamp"
+      ],
+      "function": "_acquire_hourly",
+      "line": 211,
+      "module": "src/spotbot/research/rd16b_hourly_readiness.py",
+      "network_tokens": [
+        "ccxt",
+        "download"
+      ],
+      "parameters_text": "*,\n    adapter: CCXTExchangeAdapter | None,\n    provider: CCXTSpotDataProvider | None,\n    store: ParquetCandleStore,\n    exchange_id: str,\n    symbol: str,\n    since: datetime,\n    until: datetime,\n    download: bool,",
+      "source_sha256": "FC236DA9D22F319A0F269365170357EE51A1A2C7FEF5A5BE70244CCBBA3D7C4A",
+      "time_bound_tokens": [
+        "cutoff",
+        "since",
+        "until"
+      ]
+    },
+    {
+      "filter_tokens": [],
+      "function": "_write_outputs",
+      "line": 576,
+      "module": "src/spotbot/research/rd16b_hourly_readiness.py",
+      "network_tokens": [
+        "download"
+      ],
+      "parameters_text": "*,\n    readiness_rows: list[dict[str, Any]],\n    aggregation_rows: list[dict[str, Any]],\n    causal_rows: list[dict[str, Any]],\n    availability_rows: list[dict[str, Any]],\n    source_manifest: dict[str, Any],\n    derived_manifest: dict[str, Any],\n    frozen_hashes: dict[str, str],\n    frozen_unchanged: bool,\n    replay_match: bool,\n    download: bool,\n    since: datetime,\n    until: datetime,",
+      "source_sha256": "BE2258E9BD00226DA6B09B6E6DB742779862E728A88ACF5BBAF40992DC8B0A52",
+      "time_bound_tokens": [
+        "cutoff",
+        "since",
+        "start",
+        "until"
+      ]
+    },
+    {
+      "filter_tokens": [
+        "timestamp"
+      ],
+      "function": "run_rd16b",
+      "line": 718,
+      "module": "src/spotbot/research/rd16b_hourly_readiness.py",
+      "network_tokens": [
+        "ccxt",
+        "download"
+      ],
+      "parameters_text": "*,\n    store_root: Path = LOCAL_STORE_ROOT,\n    since: datetime = DEFAULT_SINCE,\n    until: datetime = SEALED_CUTOFF,\n    download: bool = True,",
+      "source_sha256": "F9935F77DA6B96499A7AA64BAAC0BF3FB95E43BC221AF2DE7EDE1E9722BE5098",
+      "time_bound_tokens": [
+        "cutoff",
+        "end",
+        "since",
+        "until"
+      ]
+    }
+  ],
+  "status": "PASS"
+}

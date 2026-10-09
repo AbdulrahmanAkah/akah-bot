@@ -1,0 +1,36 @@
+{
+  "authority_id": "AKAH_BOT_TERMINAL_POST_MATERIALIZATION_VERIFICATION_CONTRACT_V1",
+  "status": "READY_PENDING_AUTHORIZED_PRE2023_SIGNAL_INPUT",
+  "terminal_steps": [
+    "Open only the authorized immutable <=2022 signal artifact or pre-open-isolated source.",
+    "Verify artifact SHA256 and exact seven-field schema before deriving pairs.",
+    "Derive the sorted unique pair set across all nine frozen strata; add BTC-USDT as the sensor if absent.",
+    "Bind each selected pair to data/raw/rd16b/kucoin/<pair>/1h.parquet.",
+    "Enumerate missing and extraneous files without reading market rows.",
+    "Hash each selected 1H file and inspect Parquet schema/footer metadata before timestamp access.",
+    "Read timestamp only after file metadata proves the selected file is authorized for the verification window.",
+    "Verify UTC typing, ascending order, duplicate timestamps, 3600-second spacing, missing hours, rolling-24 continuity, study-window coverage, and max-exit administrative horizon coverage."
+  ],
+  "signal_input": {
+    "required_columns": ["timestamp", "universe_id", "period_id", "family_id", "pair", "membership_rank", "atr24_at_signal"],
+    "date_start_inclusive": "2022-01-01T00:00:00Z",
+    "date_end_exclusive": "2023-01-01T00:00:00Z",
+    "protected_year_rows_allowed": false,
+    "outcome_columns_allowed": false
+  },
+  "one_hour_input": {
+    "raw_root": "data/raw/rd16b/kucoin",
+    "path_template": "data/raw/rd16b/kucoin/<pair>/1h.parquet",
+    "timestamp_column": "timestamp",
+    "timestamp_semantic": "BAR_CLOSE_TIME",
+    "timezone": "UTC",
+    "required_spacing_seconds": 3600,
+    "duplicate_policy": "FAIL_CLOSED_AFTER_SOURCE_MERGE_VALIDATION",
+    "readable_columns": ["timestamp"],
+    "forbidden_columns": ["open", "high", "low", "close", "volume", "trailing_24h_quote_turnover_proxy", "returns", "exit_price", "exit_reason", "exit_time", "gross_pnl", "net_pnl", "holding_hours", "mae", "mfe", "return_fraction"]
+  },
+  "causal_law": "A complete 1H OHLCV row is available at or after its stored close-time timestamp; no within-bar ordering may be inferred.",
+  "future_coverage_law": "Max-exit coverage is an administrative eligibility check only and may not enter policy state or decision logic.",
+  "execution_authorized_now": false,
+  "reason_not_ready": "Selected pair set and lawful immutable pre-2023 signal input are not yet bound."
+}

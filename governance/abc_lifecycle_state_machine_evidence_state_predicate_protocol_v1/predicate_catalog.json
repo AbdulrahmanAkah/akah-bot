@@ -1,0 +1,60 @@
+{
+  "schema_version": "abc-lifecycle-evidence-state-predicate-catalog-v1",
+  "catalog_id": "ABC_LIFECYCLE_EVIDENCE_STATE_PREDICATE_CATALOG_V1",
+  "representation_type": "EVENT_LOCAL_OBSERVATIONAL_OVERLAY",
+  "predicates": [
+    {
+      "predicate_id": "STALLED_EVIDENCE_CANDIDATE_V1",
+      "doctrine_state_target": "STALLED",
+      "source_evidence": "C",
+      "source_primitive_id": "NO_STRUCTURAL_PROGRESS_AFTER_12_BARS_V1",
+      "required_base_state": "UNCONFIRMED",
+      "activation": "C_signal == true AND base_state == UNCONFIRMED",
+      "underlying_threshold_policy": "REUSE_FROZEN_C_THRESHOLD_ONLY_NO_NEW_THRESHOLD",
+      "event_local_only": true,
+      "persists_after_event": false,
+      "latches": false,
+      "creates_state_transition": false,
+      "exit_action": "NONE",
+      "runtime_authorized": false,
+      "scientific_meaning": "At this decision point the trade remains pre-progress and satisfies the previously frozen C non-confirmation condition. This is evidence compatible with a stalled interpretation, not proof of a persistent STALLED state."
+    },
+    {
+      "predicate_id": "STRUCTURAL_BREAK_EVIDENCE_CANDIDATE_V1",
+      "doctrine_state_target": "STRUCTURAL_BREAK",
+      "source_evidence": "A",
+      "source_primitive_id": "DONCHIAN_CLOSE_BREAK_10_V1",
+      "required_base_state": "ANY_OF_UNCONFIRMED_EARLY_PROGRESS_CONFIRMED",
+      "activation": "A_signal == true",
+      "underlying_threshold_policy": "REUSE_FROZEN_A_DONCHIAN_10_ONLY_NO_NEW_THRESHOLD",
+      "event_local_only": true,
+      "persists_after_event": false,
+      "latches": false,
+      "creates_state_transition": false,
+      "exit_action": "NONE",
+      "runtime_authorized": false,
+      "scientific_meaning": "At this decision point price closes below the previously frozen structural-break reference. The event is carried with its contemporaneous base phase and does not replace that base phase."
+    },
+    {
+      "predicate_id": "VOLATILITY_DAMAGE_EVIDENCE_CANDIDATE_V1",
+      "doctrine_state_target": "VOLATILITY_DAMAGE",
+      "source_evidence": "B",
+      "source_primitive_id": "POST_MEMORY_ATR_RATCHET_22_3_V1",
+      "required_base_state": "CONFIRMED",
+      "activation": "B_signal == true AND base_state == CONFIRMED",
+      "underlying_threshold_policy": "REUSE_FROZEN_B_ATR22_MULTIPLIER3_ONLY_NO_NEW_THRESHOLD",
+      "event_local_only": true,
+      "persists_after_event": false,
+      "latches": false,
+      "creates_state_transition": false,
+      "exit_action": "NONE",
+      "runtime_authorized": false,
+      "scientific_meaning": "At this post-progress decision point the trade satisfies the frozen ATR-ratchet damage condition. This is evidence compatible with volatility damage, not proof of a persistent VOLATILITY_DAMAGE state."
+    }
+  ],
+  "doctrine_states_deliberately_unmapped_in_v1": {
+    "HEALTHY_TREND": "ABSENCE_OF_DAMAGE_IS_NOT_SUFFICIENT_EVIDENCE_AND_NO_PERSISTENCE_HORIZON_IS_FROZEN",
+    "DETERIORATING": "WOULD_REQUIRE_SEQUENCE_OR_PERSISTENCE_SEMANTICS_NOT_YET_FROZEN",
+    "FAILED": "NO_CAUSAL_FAILURE_PREDICATE_FROZEN"
+  }
+}

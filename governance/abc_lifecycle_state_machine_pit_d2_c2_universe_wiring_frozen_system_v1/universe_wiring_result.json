@@ -1,0 +1,83 @@
+{
+  "2024_access": false,
+  "all_workers_pass": false,
+  "benchmark_period_rows": 0,
+  "outcome_selected_membership": false,
+  "schema_version": "abc-pit-d2-c2-universe-wiring-frozen-system-v1",
+  "summary_rows": 0,
+  "system_frozen": true,
+  "trade_rows": 0,
+  "worker_count": 10,
+  "worker_failures": [
+    {
+      "mode": "D2",
+      "returncode": 1,
+      "stderr_tail": "Traceback (most recent call last):\n  File \"C:\\Users\\abdul\\Downloads\\AKAH_REV524_FULL_ARCHITECTURE_ECONOMIC_CERTIFICATION_MEGA_V1\\akah_rev524_universe_year_worker_v1.py\", line 75, in <module>\n    raise SystemExit(main())\n                     ~~~~^^\n  File \"C:\\Users\\abdul\\Downloads\\AKAH_REV524_FULL_ARCHITECTURE_ECONOMIC_CERTIFICATION_MEGA_V1\\akah_rev524_universe_year_worker_v1.py\", line 22, in main\n    events,frames,membership,audit=rt.materialize_signal_year(ns.mode,ns.year)\n                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\abdul\\Downloads\\AKAH_REV524_FULL_ARCHITECTURE_ECONOMIC_CERTIFICATION_MEGA_V1\\akah_rev524_economic_runtime_v1.py\", line 326, in materialize_signal_year\n    membership,membership_raw,maudit=build_pit_membership(mode)\n                                     ~~~~~~~~~~~~~~~~~~~~^^^^^^\n  File \"C:\\Users\\abdul\\Downloads\\AKAH_REV524_FULL_ARCHITECTURE_ECONOMIC_CERTIFICATION_MEGA_V1\\akah_rev524_economic_runtime_v1.py\", line 314, in build_pit_membership\n    membership=runner.load_membership(path)\n  File \"C:\\SIRAJ\\Repositories\\spot-speculation-bot\\src\\spotbot\\research\\rd20_p2_minimal_pullback.py\", line 289, in load_membership\n    raise MinimalPullbackError(\n        \"effective membership snapshot must contain exactly six rows\"\n    )\nspotbot.research.rd20_p2_minimal_pullback.MinimalPullbackError: effective membership snapshot must contain exactly six rows\n",
+      "stdout_tail": "",
+      "year": 2019
+    },
+    {
+      "mode": "D2",
+      "returncode": 1,
+      "stderr_tail": "Traceback (most recent call last):\n  File \"C:\\Users\\abdul\\Downloads\\AKAH_REV524_FULL_ARCHITECTURE_ECONOMIC_CERTIFICATION_MEGA_V1\\akah_rev524_universe_year_worker_v1.py\", line 75, in <module>\n    raise SystemExit(main())\n                     ~~~~^^\n  File \"C:\\Users\\abdul\\Downloads\\AKAH_REV524_FULL_ARCHITECTURE_ECONOMIC_CERTIFICATION_MEGA_V1\\akah_rev524_universe_year_worker_v1.py\", line 22, in main\n    events,frames,membership,audit=rt.materialize_signal_year(ns.mode,ns.year)\n                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\abdul\\Downloads\\AKAH_REV524_FULL_ARCHITECTURE_ECONOMIC_CERTIFICATION_MEGA_V1\\akah_rev524_economic_runtime_v1.py\", line 326, in materialize_signal_year\n    membership,membership_raw,maudit=build_pit_membership(mode)\n                                     ~~~~~~~~~~~~~~~~~~~~^^^^^^\n  File \"C:\\Users\\abdul\\Downloads\\AKAH_REV524_FULL_ARCHITECTURE_ECONOMIC_CERTIFICATION_MEGA_V1\\akah_rev524_economic_runtime_v1.py\", line 314, in build_pit_membership\n    membership=runner.load_membership(path)\n  File \"C:\\SIRAJ\\Repositories\\spot-speculation-bot\\src\\spotbot\\research\\rd20_p2_minimal_pullback.py\", line 289, in load_membership\n    raise MinimalPullbackError(\n        \"effective membership snapshot must contain exactly six rows\"\n    )\nspotbot.research.rd20_p2_minimal_pullback.MinimalPullbackError: effective membership snapshot must contain exactly six rows\n",
+      "stdout_tail": "",
+      "year": 2020
+    },
+    {
+      "mode": "D2",
+      "returncode": 1,
+      "stderr_tail": "Traceback (most recent call last):\n  File \"C:\\Users\\abdul\\Downloads\\AKAH_REV524_FULL_ARCHITECTURE_ECONOMIC_CERTIFICATION_MEGA_V1\\akah_rev524_universe_year_worker_v1.py\", line 75, in <module>\n    raise SystemExit(main())\n                     ~~~~^^\n  File \"C:\\Users\\abdul\\Downloads\\AKAH_REV524_FULL_ARCHITECTURE_ECONOMIC_CERTIFICATION_MEGA_V1\\akah_rev524_universe_year_worker_v1.py\", line 22, in main\n    events,frames,membership,audit=rt.materialize_signal_year(ns.mode,ns.year)\n                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\abdul\\Downloads\\AKAH_REV524_FULL_ARCHITECTURE_ECONOMIC_CERTIFICATION_MEGA_V1\\akah_rev524_economic_runtime_v1.py\", line 326, in materialize_signal_year\n    membership,membership_raw,maudit=build_pit_membership(mode)\n                                     ~~~~~~~~~~~~~~~~~~~~^^^^^^\n  File \"C:\\Users\\abdul\\Downloads\\AKAH_REV524_FULL_ARCHITECTURE_ECONOMIC_CERTIFICATION_MEGA_V1\\akah_rev524_economic_runtime_v1.py\", line 314, in build_pit_membership\n    membership=runner.load_membership(path)\n  File \"C:\\SIRAJ\\Repositories\\spot-speculation-bot\\src\\spotbot\\research\\rd20_p2_minimal_pullback.py\", line 289, in load_membership\n    raise MinimalPullbackError(\n        \"effective membership snapshot must contain exactly six rows\"\n    )\nspotbot.research.rd20_p2_minimal_pullback.MinimalPullbackError: effective membership snapshot must contain exactly six rows\n",
+      "stdout_tail": "",
+      "year": 2021
+    },
+    {
+      "mode": "D2",
+      "returncode": 1,
+      "stderr_tail": "Traceback (most recent call last):\n  File \"C:\\Users\\abdul\\Downloads\\AKAH_REV524_FULL_ARCHITECTURE_ECONOMIC_CERTIFICATION_MEGA_V1\\akah_rev524_universe_year_worker_v1.py\", line 75, in <module>\n    raise SystemExit(main())\n                     ~~~~^^\n  File \"C:\\Users\\abdul\\Downloads\\AKAH_REV524_FULL_ARCHITECTURE_ECONOMIC_CERTIFICATION_MEGA_V1\\akah_rev524_universe_year_worker_v1.py\", line 22, in main\n    events,frames,membership,audit=rt.materialize_signal_year(ns.mode,ns.year)\n                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\abdul\\Downloads\\AKAH_REV524_FULL_ARCHITECTURE_ECONOMIC_CERTIFICATION_MEGA_V1\\akah_rev524_economic_runtime_v1.py\", line 326, in materialize_signal_year\n    membership,membership_raw,maudit=build_pit_membership(mode)\n                                     ~~~~~~~~~~~~~~~~~~~~^^^^^^\n  File \"C:\\Users\\abdul\\Downloads\\AKAH_REV524_FULL_ARCHITECTURE_ECONOMIC_CERTIFICATION_MEGA_V1\\akah_rev524_economic_runtime_v1.py\", line 314, in build_pit_membership\n    membership=runner.load_membership(path)\n  File \"C:\\SIRAJ\\Repositories\\spot-speculation-bot\\src\\spotbot\\research\\rd20_p2_minimal_pullback.py\", line 289, in load_membership\n    raise MinimalPullbackError(\n        \"effective membership snapshot must contain exactly six rows\"\n    )\nspotbot.research.rd20_p2_minimal_pullback.MinimalPullbackError: effective membership snapshot must contain exactly six rows\n",
+      "stdout_tail": "",
+      "year": 2022
+    },
+    {
+      "mode": "D2",
+      "returncode": 1,
+      "stderr_tail": "Traceback (most recent call last):\n  File \"C:\\Users\\abdul\\Downloads\\AKAH_REV524_FULL_ARCHITECTURE_ECONOMIC_CERTIFICATION_MEGA_V1\\akah_rev524_universe_year_worker_v1.py\", line 75, in <module>\n    raise SystemExit(main())\n                     ~~~~^^\n  File \"C:\\Users\\abdul\\Downloads\\AKAH_REV524_FULL_ARCHITECTURE_ECONOMIC_CERTIFICATION_MEGA_V1\\akah_rev524_universe_year_worker_v1.py\", line 22, in main\n    events,frames,membership,audit=rt.materialize_signal_year(ns.mode,ns.year)\n                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\abdul\\Downloads\\AKAH_REV524_FULL_ARCHITECTURE_ECONOMIC_CERTIFICATION_MEGA_V1\\akah_rev524_economic_runtime_v1.py\", line 326, in materialize_signal_year\n    membership,membership_raw,maudit=build_pit_membership(mode)\n                                     ~~~~~~~~~~~~~~~~~~~~^^^^^^\n  File \"C:\\Users\\abdul\\Downloads\\AKAH_REV524_FULL_ARCHITECTURE_ECONOMIC_CERTIFICATION_MEGA_V1\\akah_rev524_economic_runtime_v1.py\", line 314, in build_pit_membership\n    membership=runner.load_membership(path)\n  File \"C:\\SIRAJ\\Repositories\\spot-speculation-bot\\src\\spotbot\\research\\rd20_p2_minimal_pullback.py\", line 289, in load_membership\n    raise MinimalPullbackError(\n        \"effective membership snapshot must contain exactly six rows\"\n    )\nspotbot.research.rd20_p2_minimal_pullback.MinimalPullbackError: effective membership snapshot must contain exactly six rows\n",
+      "stdout_tail": "",
+      "year": 2023
+    },
+    {
+      "mode": "C2",
+      "returncode": 1,
+      "stderr_tail": "Traceback (most recent call last):\n  File \"C:\\Users\\abdul\\Downloads\\AKAH_REV524_FULL_ARCHITECTURE_ECONOMIC_CERTIFICATION_MEGA_V1\\akah_rev524_universe_year_worker_v1.py\", line 75, in <module>\n    raise SystemExit(main())\n                     ~~~~^^\n  File \"C:\\Users\\abdul\\Downloads\\AKAH_REV524_FULL_ARCHITECTURE_ECONOMIC_CERTIFICATION_MEGA_V1\\akah_rev524_universe_year_worker_v1.py\", line 22, in main\n    events,frames,membership,audit=rt.materialize_signal_year(ns.mode,ns.year)\n                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\abdul\\Downloads\\AKAH_REV524_FULL_ARCHITECTURE_ECONOMIC_CERTIFICATION_MEGA_V1\\akah_rev524_economic_runtime_v1.py\", line 326, in materialize_signal_year\n    membership,membership_raw,maudit=build_pit_membership(mode)\n                                     ~~~~~~~~~~~~~~~~~~~~^^^^^^\n  File \"C:\\Users\\abdul\\Downloads\\AKAH_REV524_FULL_ARCHITECTURE_ECONOMIC_CERTIFICATION_MEGA_V1\\akah_rev524_economic_runtime_v1.py\", line 314, in build_pit_membership\n    membership=runner.load_membership(path)\n  File \"C:\\SIRAJ\\Repositories\\spot-speculation-bot\\src\\spotbot\\research\\rd20_p2_minimal_pullback.py\", line 289, in load_membership\n    raise MinimalPullbackError(\n        \"effective membership snapshot must contain exactly six rows\"\n    )\nspotbot.research.rd20_p2_minimal_pullback.MinimalPullbackError: effective membership snapshot must contain exactly six rows\n",
+      "stdout_tail": "",
+      "year": 2019
+    },
+    {
+      "mode": "C2",
+      "returncode": 1,
+      "stderr_tail": "Traceback (most recent call last):\n  File \"C:\\Users\\abdul\\Downloads\\AKAH_REV524_FULL_ARCHITECTURE_ECONOMIC_CERTIFICATION_MEGA_V1\\akah_rev524_universe_year_worker_v1.py\", line 75, in <module>\n    raise SystemExit(main())\n                     ~~~~^^\n  File \"C:\\Users\\abdul\\Downloads\\AKAH_REV524_FULL_ARCHITECTURE_ECONOMIC_CERTIFICATION_MEGA_V1\\akah_rev524_universe_year_worker_v1.py\", line 22, in main\n    events,frames,membership,audit=rt.materialize_signal_year(ns.mode,ns.year)\n                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\abdul\\Downloads\\AKAH_REV524_FULL_ARCHITECTURE_ECONOMIC_CERTIFICATION_MEGA_V1\\akah_rev524_economic_runtime_v1.py\", line 326, in materialize_signal_year\n    membership,membership_raw,maudit=build_pit_membership(mode)\n                                     ~~~~~~~~~~~~~~~~~~~~^^^^^^\n  File \"C:\\Users\\abdul\\Downloads\\AKAH_REV524_FULL_ARCHITECTURE_ECONOMIC_CERTIFICATION_MEGA_V1\\akah_rev524_economic_runtime_v1.py\", line 314, in build_pit_membership\n    membership=runner.load_membership(path)\n  File \"C:\\SIRAJ\\Repositories\\spot-speculation-bot\\src\\spotbot\\research\\rd20_p2_minimal_pullback.py\", line 289, in load_membership\n    raise MinimalPullbackError(\n        \"effective membership snapshot must contain exactly six rows\"\n    )\nspotbot.research.rd20_p2_minimal_pullback.MinimalPullbackError: effective membership snapshot must contain exactly six rows\n",
+      "stdout_tail": "",
+      "year": 2020
+    },
+    {
+      "mode": "C2",
+      "returncode": 1,
+      "stderr_tail": "Traceback (most recent call last):\n  File \"C:\\Users\\abdul\\Downloads\\AKAH_REV524_FULL_ARCHITECTURE_ECONOMIC_CERTIFICATION_MEGA_V1\\akah_rev524_universe_year_worker_v1.py\", line 75, in <module>\n    raise SystemExit(main())\n                     ~~~~^^\n  File \"C:\\Users\\abdul\\Downloads\\AKAH_REV524_FULL_ARCHITECTURE_ECONOMIC_CERTIFICATION_MEGA_V1\\akah_rev524_universe_year_worker_v1.py\", line 22, in main\n    events,frames,membership,audit=rt.materialize_signal_year(ns.mode,ns.year)\n                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\abdul\\Downloads\\AKAH_REV524_FULL_ARCHITECTURE_ECONOMIC_CERTIFICATION_MEGA_V1\\akah_rev524_economic_runtime_v1.py\", line 326, in materialize_signal_year\n    membership,membership_raw,maudit=build_pit_membership(mode)\n                                     ~~~~~~~~~~~~~~~~~~~~^^^^^^\n  File \"C:\\Users\\abdul\\Downloads\\AKAH_REV524_FULL_ARCHITECTURE_ECONOMIC_CERTIFICATION_MEGA_V1\\akah_rev524_economic_runtime_v1.py\", line 314, in build_pit_membership\n    membership=runner.load_membership(path)\n  File \"C:\\SIRAJ\\Repositories\\spot-speculation-bot\\src\\spotbot\\research\\rd20_p2_minimal_pullback.py\", line 289, in load_membership\n    raise MinimalPullbackError(\n        \"effective membership snapshot must contain exactly six rows\"\n    )\nspotbot.research.rd20_p2_minimal_pullback.MinimalPullbackError: effective membership snapshot must contain exactly six rows\n",
+      "stdout_tail": "",
+      "year": 2021
+    },
+    {
+      "mode": "C2",
+      "returncode": 1,
+      "stderr_tail": "Traceback (most recent call last):\n  File \"C:\\Users\\abdul\\Downloads\\AKAH_REV524_FULL_ARCHITECTURE_ECONOMIC_CERTIFICATION_MEGA_V1\\akah_rev524_universe_year_worker_v1.py\", line 75, in <module>\n    raise SystemExit(main())\n                     ~~~~^^\n  File \"C:\\Users\\abdul\\Downloads\\AKAH_REV524_FULL_ARCHITECTURE_ECONOMIC_CERTIFICATION_MEGA_V1\\akah_rev524_universe_year_worker_v1.py\", line 22, in main\n    events,frames,membership,audit=rt.materialize_signal_year(ns.mode,ns.year)\n                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\abdul\\Downloads\\AKAH_REV524_FULL_ARCHITECTURE_ECONOMIC_CERTIFICATION_MEGA_V1\\akah_rev524_economic_runtime_v1.py\", line 326, in materialize_signal_year\n    membership,membership_raw,maudit=build_pit_membership(mode)\n                                     ~~~~~~~~~~~~~~~~~~~~^^^^^^\n  File \"C:\\Users\\abdul\\Downloads\\AKAH_REV524_FULL_ARCHITECTURE_ECONOMIC_CERTIFICATION_MEGA_V1\\akah_rev524_economic_runtime_v1.py\", line 314, in build_pit_membership\n    membership=runner.load_membership(path)\n  File \"C:\\SIRAJ\\Repositories\\spot-speculation-bot\\src\\spotbot\\research\\rd20_p2_minimal_pullback.py\", line 289, in load_membership\n    raise MinimalPullbackError(\n        \"effective membership snapshot must contain exactly six rows\"\n    )\nspotbot.research.rd20_p2_minimal_pullback.MinimalPullbackError: effective membership snapshot must contain exactly six rows\n",
+      "stdout_tail": "",
+      "year": 2022
+    },
+    {
+      "mode": "C2",
+      "returncode": 1,
+      "stderr_tail": "Traceback (most recent call last):\n  File \"C:\\Users\\abdul\\Downloads\\AKAH_REV524_FULL_ARCHITECTURE_ECONOMIC_CERTIFICATION_MEGA_V1\\akah_rev524_universe_year_worker_v1.py\", line 75, in <module>\n    raise SystemExit(main())\n                     ~~~~^^\n  File \"C:\\Users\\abdul\\Downloads\\AKAH_REV524_FULL_ARCHITECTURE_ECONOMIC_CERTIFICATION_MEGA_V1\\akah_rev524_universe_year_worker_v1.py\", line 22, in main\n    events,frames,membership,audit=rt.materialize_signal_year(ns.mode,ns.year)\n                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\abdul\\Downloads\\AKAH_REV524_FULL_ARCHITECTURE_ECONOMIC_CERTIFICATION_MEGA_V1\\akah_rev524_economic_runtime_v1.py\", line 326, in materialize_signal_year\n    membership,membership_raw,maudit=build_pit_membership(mode)\n                                     ~~~~~~~~~~~~~~~~~~~~^^^^^^\n  File \"C:\\Users\\abdul\\Downloads\\AKAH_REV524_FULL_ARCHITECTURE_ECONOMIC_CERTIFICATION_MEGA_V1\\akah_rev524_economic_runtime_v1.py\", line 314, in build_pit_membership\n    membership=runner.load_membership(path)\n  File \"C:\\SIRAJ\\Repositories\\spot-speculation-bot\\src\\spotbot\\research\\rd20_p2_minimal_pullback.py\", line 289, in load_membership\n    raise MinimalPullbackError(\n        \"effective membership snapshot must contain exactly six rows\"\n    )\nspotbot.research.rd20_p2_minimal_pullback.MinimalPullbackError: effective membership snapshot must contain exactly six rows\n",
+      "stdout_tail": "",
+      "year": 2023
+    }
+  ]
+}

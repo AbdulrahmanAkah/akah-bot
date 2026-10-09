@@ -1,0 +1,150 @@
+{
+  "helper_count": 10,
+  "helpers": [
+    {
+      "bindings": {
+        "data_cutoff": "<DATA_CUTOFF>",
+        "data_start": "<DATA_START>",
+        "features": "<call:load_feature_frames>",
+        "guard_each_period_hours": "None",
+        "membership": "<membership>",
+        "periods": "<ROBUSTNESS_PERIODS>"
+      },
+      "depth": 0,
+      "end_line": 413,
+      "function": "scan_focus_signals",
+      "line": 322,
+      "module": "src/spotbot/research/rd26_exit_architecture.py",
+      "module_sha256": "1290748EA7E8A0343C1A15CEDFC1220AA423F04C11FDD558311B06AC7DA90359",
+      "provenance": "EVENTS_PRIMARY_PRODUCER"
+    },
+    {
+      "bindings": {
+        "events": "<events>"
+      },
+      "depth": 0,
+      "end_line": 530,
+      "function": "filter_robustness_events",
+      "line": 515,
+      "module": "src/spotbot/research/rd26_exit_architecture.py",
+      "module_sha256": "1290748EA7E8A0343C1A15CEDFC1220AA423F04C11FDD558311B06AC7DA90359",
+      "provenance": "EVENTS_PRIMARY_PRODUCER"
+    },
+    {
+      "bindings": {},
+      "depth": 1,
+      "end_line": 118,
+      "function": "validate_constants",
+      "line": 101,
+      "module": "src/spotbot/research/rd26_exit_architecture.py",
+      "module_sha256": "1290748EA7E8A0343C1A15CEDFC1220AA423F04C11FDD558311B06AC7DA90359",
+      "provenance": "EVENTS_PRIMARY_PRODUCER->src/spotbot/research/rd26_exit_architecture.py::scan_focus_signals"
+    },
+    {
+      "bindings": {
+        "frame": "<frame>"
+      },
+      "depth": 1,
+      "end_line": 190,
+      "function": "fast_lookup",
+      "line": 187,
+      "module": "src/spotbot/research/rd26_exit_architecture.py",
+      "module_sha256": "1290748EA7E8A0343C1A15CEDFC1220AA423F04C11FDD558311B06AC7DA90359",
+      "provenance": "EVENTS_PRIMARY_PRODUCER->src/spotbot/research/rd26_exit_architecture.py::scan_focus_signals"
+    },
+    {
+      "bindings": {
+        "periods": "<ROBUSTNESS_PERIODS>",
+        "timestamp": "<timestamp>"
+      },
+      "depth": 1,
+      "end_line": 215,
+      "function": "_period_for",
+      "line": 208,
+      "module": "src/spotbot/research/rd26_exit_architecture.py",
+      "module_sha256": "1290748EA7E8A0343C1A15CEDFC1220AA423F04C11FDD558311B06AC7DA90359",
+      "provenance": "EVENTS_PRIMARY_PRODUCER->src/spotbot/research/rd26_exit_architecture.py::scan_focus_signals"
+    },
+    {
+      "bindings": {
+        "allow_relative_strength": "timestamp > start",
+        "features": "<call:load_feature_frames>",
+        "lookups": "<lookups>",
+        "members": "<snapshot>.members",
+        "timestamp": "<timestamp>"
+      },
+      "depth": 1,
+      "end_line": 319,
+      "function": "evaluate_hour",
+      "line": 261,
+      "module": "src/spotbot/research/rd26_exit_architecture.py",
+      "module_sha256": "1290748EA7E8A0343C1A15CEDFC1220AA423F04C11FDD558311B06AC7DA90359",
+      "provenance": "EVENTS_PRIMARY_PRODUCER->src/spotbot/research/rd26_exit_architecture.py::scan_focus_signals"
+    },
+    {
+      "bindings": {
+        "features": "<call:load_feature_frames>",
+        "lookups": "<lookups>",
+        "pair": "<pair>",
+        "timestamp": "<timestamp>"
+      },
+      "depth": 2,
+      "end_line": 205,
+      "function": "_row_at",
+      "line": 193,
+      "module": "src/spotbot/research/rd26_exit_architecture.py",
+      "module_sha256": "1290748EA7E8A0343C1A15CEDFC1220AA423F04C11FDD558311B06AC7DA90359",
+      "provenance": "EVENTS_PRIMARY_PRODUCER->src/spotbot/research/rd26_exit_architecture.py::scan_focus_signals->src/spotbot/research/rd26_exit_architecture.py::evaluate_hour"
+    },
+    {
+      "bindings": {
+        "features": "<call:load_feature_frames>",
+        "lookups": "<lookups>",
+        "members": "<snapshot>.members",
+        "timestamp": "<timestamp>"
+      },
+      "depth": 2,
+      "end_line": 258,
+      "function": "_relative_strength_event",
+      "line": 218,
+      "module": "src/spotbot/research/rd26_exit_architecture.py",
+      "module_sha256": "1290748EA7E8A0343C1A15CEDFC1220AA423F04C11FDD558311B06AC7DA90359",
+      "provenance": "EVENTS_PRIMARY_PRODUCER->src/spotbot/research/rd26_exit_architecture.py::scan_focus_signals->src/spotbot/research/rd26_exit_architecture.py::evaluate_hour"
+    },
+    {
+      "bindings": {
+        "features": "<call:load_feature_frames>",
+        "lookups": "<lookups>",
+        "pair": "<current_pair>",
+        "timestamp": "<timestamp>"
+      },
+      "depth": 3,
+      "end_line": 205,
+      "function": "_row_at",
+      "line": 193,
+      "module": "src/spotbot/research/rd26_exit_architecture.py",
+      "module_sha256": "1290748EA7E8A0343C1A15CEDFC1220AA423F04C11FDD558311B06AC7DA90359",
+      "provenance": "EVENTS_PRIMARY_PRODUCER->src/spotbot/research/rd26_exit_architecture.py::scan_focus_signals->src/spotbot/research/rd26_exit_architecture.py::evaluate_hour->src/spotbot/research/rd26_exit_architecture.py::_relative_strength_event"
+    },
+    {
+      "bindings": {
+        "features": "<call:load_feature_frames>",
+        "lookups": "<lookups>",
+        "pair": "<pair>",
+        "timestamp": "timestamp - pd.Timedelta(hours=1)"
+      },
+      "depth": 3,
+      "end_line": 205,
+      "function": "_row_at",
+      "line": 193,
+      "module": "src/spotbot/research/rd26_exit_architecture.py",
+      "module_sha256": "1290748EA7E8A0343C1A15CEDFC1220AA423F04C11FDD558311B06AC7DA90359",
+      "provenance": "EVENTS_PRIMARY_PRODUCER->src/spotbot/research/rd26_exit_architecture.py::scan_focus_signals->src/spotbot/research/rd26_exit_architecture.py::evaluate_hour->src/spotbot/research/rd26_exit_architecture.py::_relative_strength_event"
+    }
+  ],
+  "read_count": 0,
+  "reads": [],
+  "status": "PASS",
+  "unresolved": [],
+  "unresolved_count": 0
+}

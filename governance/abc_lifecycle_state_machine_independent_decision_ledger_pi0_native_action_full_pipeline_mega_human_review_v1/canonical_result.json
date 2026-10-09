@@ -1,0 +1,76 @@
+{
+  "accepted_closed_authorities": [
+    "current_notional",
+    "hold_cost",
+    "pi0_action"
+  ],
+  "accepted_disposition": "MEGA_DECISION_LEDGER_CERTIFIED_FEASIBILITY_COMPLETE_MODEL_PILOT_SKIPPED",
+  "accepted_feasibility": "PASS",
+  "accepted_ledger_certificate": "PASS",
+  "accepted_model_skip": "SKIPPED_FEATURE_AUTHORITY_INCOMPLETE",
+  "authorization": {
+    "2024": false,
+    "2025": false,
+    "composite_multi_source_pit_binding": true,
+    "conditional_fixed_m1_m2": true,
+    "deterministic_semantic_priority": true,
+    "feature_search": false,
+    "full_core_coverage_required": true,
+    "model3": false,
+    "new_replay": false,
+    "production": false,
+    "push": false,
+    "raw": false,
+    "reuse_certified_ledger": true,
+    "targeted_header_augmentation_safe_roots_only": true,
+    "threshold_search": false
+  },
+  "created_at_utc": "2026-09-26T17:42:44.348503+00:00",
+  "frozen_feature_groups": [
+    "age",
+    "current_return",
+    "drawdown",
+    "trend",
+    "volatility",
+    "breadth",
+    "relative_strength",
+    "execution_quality"
+  ],
+  "leakage_firewall": {
+    "forbidden_tokens": [
+      "future",
+      "oracle",
+      "target",
+      "label",
+      "mfe",
+      "mae",
+      "best_open",
+      "best_return",
+      "pnl",
+      "decision_value",
+      "outcome",
+      "winner",
+      "right_censored",
+      "ret_168h",
+      "ret_72h_open",
+      "ret_24h_open"
+    ],
+    "future_or_oracle_features": false,
+    "outcome_rank_or_correlation_selection": false,
+    "pair_identity_runtime_feature": false,
+    "year_identity_runtime_feature": false
+  },
+  "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_COMPOSITE_PIT_FEATURE_AUTHORITY_M1_M2_MEGA_V1",
+  "performance_contract": {
+    "below_normal": true,
+    "compressed_outputs": true,
+    "native_threads": 1,
+    "repository_rescan": false,
+    "single_process": true,
+    "targeted_feature_file_cap": 128
+  },
+  "reviewed_revision": 711,
+  "schema_version": "akah-rev711-composite-pit-feature-authority-m1-m2-human-review-v1",
+  "status": "PASS_REV711_COMPOSITE_PIT_FEATURE_AUTHORITY_M1_M2_MEGA_AUTHORIZED",
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_INDEPENDENT_DECISION_LEDGER_PI0_NATIVE_ACTION_FULL_PIPELINE_MEGA_HUMAN_REVIEW_V1"
+}

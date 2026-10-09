@@ -1,0 +1,728 @@
+{
+  "2024_access": false,
+  "authority_bindings": {
+    "count": 17,
+    "files": [
+      {
+        "path": "governance/abc_lifecycle_state_machine_policy_conditioned_value_mega_discovery_v1/canonical_result.json",
+        "sha256": "99DCAB9D258AAE43F2F5B4286C0EA12EF4D979CAEDE1C0F1DA8E3E71720365B5",
+        "size_bytes": 31666
+      },
+      {
+        "path": "governance/abc_lifecycle_state_machine_policy_conditioned_value_mega_discovery_v1/decision_matrix.csv",
+        "sha256": "746F84C2A82FFFCA77559D347E3CF8F1850B9EE7CF4A46FE1BF8775FD6B80BA3",
+        "size_bytes": 2866
+      },
+      {
+        "path": "src/spotbot/research/abc_exit_primitives_v1.py",
+        "sha256": "EE6C74F098ABDA63213E40CB6D0CC57F6BA012D35F90475361F7A25B94621284",
+        "size_bytes": 41694
+      },
+      {
+        "path": "scripts/research/run_abc_exit_primitives_2019_2023_v1.py",
+        "sha256": "C6E92E4980C50526263B7B0D4E22747E96B49FDA2118529DAC5DA7A81EF1364C",
+        "size_bytes": 15129
+      },
+      {
+        "path": "data/research/abc_exit_primitives_2019_2023_v1/control-trades.csv",
+        "sha256": "BA2CF871453DDFAC53DD53494C5B47D29C20BC1777370928135A8FB2D01E8ABE",
+        "size_bytes": 854955
+      },
+      {
+        "path": "governance/abc_lifecycle_state_machine_hourly_trade_path_opportunity_materialization_v1/trade_opportunity_paths_2019_2023.csv",
+        "sha256": "9010B010E187924D22B045797AB2E66558793E06AA3ED0858A7E466EAFEC2731",
+        "size_bytes": 1851084
+      },
+      {
+        "path": "governance/abc_lifecycle_state_machine_context_winner_horizon_entry_event_universe_v1/entry_event_universe_2019_2023.csv",
+        "sha256": "E68B2658B19596D96ADF7E1AC71BB03E4C071C0829AF5D16F18FB14A63717DEE",
+        "size_bytes": 5295104
+      },
+      {
+        "path": "governance/abc_lifecycle_state_machine_persistent_state_causal_feature_reconstruction_execution_v1/decision_grid_reconstructed_features.csv",
+        "sha256": "15707D9D66E466FD1706646ADDFCFD2316E6210186EF3C1B4A735D9DF7880F42",
+        "size_bytes": 5924635
+      },
+      {
+        "path": "governance/abc_lifecycle_state_machine_state_conditioned_action_hypothesis_eligibility_materialization_v1/action_hypothesis_eligibility_grid.csv",
+        "sha256": "F989B216B163F3CFD9315FA61BA64EC138D5826F51F9D62344E5118CCF89F146",
+        "size_bytes": 5475510
+      },
+      {
+        "path": "governance/abc_lifecycle_state_machine_state_conditioned_action_hypothesis_counterfactual_direct_continuation_value_execution_v1/direct_continuation_value_summary.csv",
+        "sha256": "654520900F39723485C44DBD8591AFD8BDA5D19B0610E926F7A74919A9821D80",
+        "size_bytes": 3645
+      },
+      {
+        "path": "governance/abc_lifecycle_state_machine_state_conditioned_action_hypothesis_counterfactual_direct_continuation_value_execution_v1/execution_audit.json",
+        "sha256": "6C297EFF05134060B60CE1415CD2B1E6F7716E8022F235360EA96495B0949757",
+        "size_bytes": 661
+      },
+      {
+        "path": "governance/abc_lifecycle_state_machine_state_conditioned_action_hypothesis_counterfactual_direct_continuation_value_execution_v1/canonical_result.json",
+        "sha256": "114698577B3C49398D5AAA8E32E8F32575B536C361BA915B5CAF08F54EDFD697",
+        "size_bytes": 1019
+      },
+      {
+        "path": "governance/abc_lifecycle_state_machine_governor_structural_factorial_fast_v1/selected_development_governor_timeline.csv",
+        "sha256": "6532B4501F2734EDE3F1D66DB931231C7915235AEEA3B8E654845A6F24341E2B",
+        "size_bytes": 318821
+      },
+      {
+        "path": "governance/abc_lifecycle_state_machine_governor_structural_factorial_fast_v1/governor_factorial_result.json",
+        "sha256": "AE30EB872D4FA600F959D696238E9C868E56A91DFA2A8B4976009EF3DC34378E",
+        "size_bytes": 3219
+      },
+      {
+        "path": "governance/abc_lifecycle_state_machine_multi_school_regime_horizon_single_school_entry_attribution_v1/entry_architecture_models.json",
+        "sha256": "2FBB2ECEDA1CA80E90E84896F496600DF1B88CF926D322B9EB2E6DEBF02B6296",
+        "size_bytes": 1087551
+      },
+      {
+        "path": "governance/abc_lifecycle_state_machine_canonical_external_arbiter_first_divergence_repair_v1/external_arbiter_repair_result.json",
+        "sha256": "928CE67C17C7D037EE160EBDD905E8FE7C003CEA43062A9B9CD2377F8EC94258",
+        "size_bytes": 3683
+      },
+      {
+        "path": "governance/abc_lifecycle_state_machine_canonical_external_arbiter_first_divergence_repair_v1/canonical_integration_patch_contract.json",
+        "sha256": "A5B132DC5F248AACCBC2F717B5EC9FC5E0772AE8EBEDF72198F0922BB49F34A6",
+        "size_bytes": 436
+      }
+    ]
+  },
+  "capacity": {
+    "continuation_shadow_policy_authorized": false,
+    "preemption_authorized": false,
+    "replacement_authorized": false,
+    "rev552_shadow_queue": {
+      "active_replacement": false,
+      "capacity_metrics": [
+        [
+          "capture_funnel[0].accepted_trade_hourly_open_oracle_pnl",
+          65640.87181993107
+        ],
+        [
+          "capture_funnel[0].accepted_trade_oracle_multiple_vs_abs_native",
+          8.721116639709024
+        ],
+        [
+          "capture_funnel[0].average_deployed_fraction_of_initial_equity",
+          0.0730419173856961
+        ],
+        [
+          "capture_funnel[0].average_utilization_of_90pct_gross_cap",
+          0.0811576859841068
+        ],
+        [
+          "capture_funnel[0].control_net_pnl",
+          -7526.659088706001
+        ],
+        [
+          "capture_funnel[0].control_trade_count",
+          314.0
+        ],
+        [
+          "capture_funnel[0].control_trade_unique_pairs",
+          7.0
+        ],
+        [
+          "capture_funnel[0].entry_event_count",
+          959.0
+        ],
+        [
+          "capture_funnel[0].entry_event_unique_pairs",
+          7.0
+        ],
+        [
+          "capture_funnel[0].idle_fraction_vs_90pct_cap",
+          0.9188423140158932
+        ],
+        [
+          "capture_funnel[0].median_observed_candidate_pairs_per_snapshot",
+          7.0
+        ],
+        [
+          "capture_funnel[0].median_selected_pairs_per_snapshot",
+          6.0
+        ],
+        [
+          "capture_funnel[0].median_selection_fraction",
+          1.0
+        ],
+        [
+          "capture_funnel[0].membership_snapshot_count",
+          40.0
+        ],
+        [
+          "capture_funnel[0].selected_unique_pairs",
+          7.0
+        ],
+        [
+          "capture_funnel[0].signal_fixed_168h_capacity_pnl",
+          1801.6457853881693
+        ],
+        [
+          "capture_funnel[0].signal_fixed_24h_capacity_pnl",
+          2499.5542179822496
+        ],
+        [
+          "capture_funnel[0].signal_fixed_72h_capacity_pnl",
+          903.1489529327446
+        ],
+        [
+          "capture_funnel[0].signal_independent_oracle_upper_pnl",
+          1628082.711585646
+        ],
+        [
+          "capture_funnel[0].signal_to_trade_admission_fraction",
+          0.32742440041710114
+        ],
+        [
+          "capture_funnel[0].year",
+          2019.0
+        ],
+        [
+          "capture_funnel[1].accepted_trade_hourly_open_oracle_pnl",
+          179878.63222703018
+        ],
+        [
+          "capture_funnel[1].accepted_trade_oracle_multiple_vs_abs_native",
+          8.26579875335439
+        ],
+        [
+          "capture_funnel[1].average_deployed_fraction_of_initial_equity",
+          0.1932998846205939
+        ],
+        [
+          "capture_funnel[1].average_utilization_of_90pct_gross_cap",
+          0.2147776495784377
+        ],
+        [
+          "capture_funnel[1].control_net_pnl",
+          21761.796723399853
+        ],
+        [
+          "capture_funnel[1].control_trade_count",
+          473.0
+        ],
+        [
+          "capture_funnel[1].control_trade_unique_pairs",
+          9.0
+        ],
+        [
+          "capture_funnel[1].entry_event_count",
+          1544.0
+        ],
+        [
+          "capture_funnel[1].entry_event_unique_pairs",
+          9.0
+        ],
+        [
+          "capture_funnel[1].idle_fraction_vs_90pct_cap",
+          0.7852223504215623
+        ],
+        [
+          "capture_funnel[1].median_observed_candidate_pairs_per_snapshot",
+          6.0
+        ],
+        [
+          "capture_funnel[1].median_selected_pairs_per_snapshot",
+          6.0
+        ],
+        [
+          "capture_funnel[1].median_selection_fraction",
+          0.8571428571428571
+        ],
+        [
+          "capture_funnel[1].membership_snapshot_count",
+          52.0
+        ],
+        [
+          "capture_funnel[1].selected_unique_pairs",
+          9.0
+        ],
+        [
+          "capture_funnel[1].signal_fixed_168h_capacity_pnl",
+          118392.5681865885
+        ],
+        [
+          "capture_funnel[1].signal_fixed_24h_capacity_pnl",
+          43720.43127937273
+        ],
+        [
+          "capture_funnel[1].signal_fixed_72h_capacity_pnl",
+          102742.09096090814
+        ],
+        [
+          "capture_funnel[1].signal_independent_oracle_upper_pnl",
+          3118787.9409511955
+        ],
+        [
+          "capture_funnel[1].signal_to_trade_admission_fraction",
+          0.30634715025906734
+        ],
+        [
+          "capture_funnel[1].year",
+          2020.0
+        ],
+        [
+          "capture_funnel[2].accepted_trade_hourly_open_oracle_pnl",
+          322601.7716179397
+        ],
+        [
+          "capture_funnel[2].accepted_trade_oracle_multiple_vs_abs_native",
+          358.36016939714085
+        ],
+        [
+          "capture_funnel[2].average_deployed_fraction_of_initial_equity",
+          0.2596950352889011
+        ],
+        [
+          "capture_funnel[2].average_utilization_of_90pct_gross_cap",
+          0.2885500392098902
+        ],
+        [
+          "capture_funnel[2].control_net_pnl",
+          900.2165953896147
+        ],
+        [
+          "capture_funnel[2].control_trade_count",
+          441.0
+        ],
+        [
+          "capture_funnel[2].control_trade_unique_pairs",
+          14.0
+        ],
+        [
+          "capture_funnel[2].entry_event_count",
+          1449.0
+        ]
+      ],
+      "preemption": false,
+      "shadow_only": true,
+      "source": "governance/abc_lifecycle_state_machine_market_capture_gap_return_ceiling_synthesis_v1/market_capture_return_ceiling_synthesis.json",
+      "source_sha256": "FE22C0C48AB502B9A6E4879B67C79E47ED07E8BC0F1E7B558115E57BF2C66926",
+      "status": "DESCRIPTIVE_ONLY"
+    },
+    "status": "DEFER_DESCRIPTIVE_ONLY"
+  },
+  "continuation_model": {
+    "status": "DEFER_NO_TARGET"
+  },
+  "decision_counts": {
+    "DEFER": 8,
+    "KILL": 0,
+    "PROMOTE": 2
+  },
+  "decision_matrix_path": "governance/abc_lifecycle_state_machine_policy_conditioned_continuation_maximum_evidence_mega_v1/decision_matrix.csv",
+  "direction_volatility": {
+    "frozen_factorial": {
+      "binary_no_vol_mdd": -0.4027348330702034,
+      "binary_no_vol_risk_pass": false,
+      "binary_no_vol_wealth_x1": 11.452797397397804,
+      "binary_vol_mdd": -0.19079247606398098,
+      "binary_vol_risk_pass": true,
+      "binary_vol_wealth_x1": 3.6589449042130644
+    },
+    "status": "PROMOTE_HYPOTHESIS_FROM_FROZEN_FACTORIAL_ONLY"
+  },
+  "entry_x_continuation": {
+    "status": "DEFER_NO_CONTINUATION_TARGET"
+  },
+  "frozen_core": "CURRENT_DYNAMIC_TOP6",
+  "frozen_governor": "BINARY_VOL",
+  "full_lsm": false,
+  "max_hold_hours": 168,
+  "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_POLICY_CONDITIONED_CONTINUATION_MAXIMUM_EVIDENCE_HUMAN_REVIEW_V1",
+  "offline_rl": false,
+  "post168": {
+    "max_hold_hours": 168,
+    "new_horizon_search": false,
+    "post168_adoption_authorized": false,
+    "rev552_post168": {
+      "2024_access": false,
+      "artifact_count": 12,
+      "candidate_horizon_artifacts": [
+        {
+          "horizons_seen": [
+            240
+          ],
+          "path": "governance/abc_lifecycle_state_machine_context_winner_horizon_240_portfolio_capability_v1/canonical_result.json",
+          "sha256": "F89677D92EB0CC28B41ED74BCF6CA8C1C8E841769DDC1E46720253449E6723EE"
+        },
+        {
+          "horizons_seen": [
+            240
+          ],
+          "path": "governance/abc_lifecycle_state_machine_context_winner_horizon_240_portfolio_capability_v1/output_manifest.json",
+          "sha256": "FF4A57584AD908EBCA943B2B2A433D587E424DF6E5F986212DEC5913E5E64CD0"
+        },
+        {
+          "horizons_seen": [
+            240
+          ],
+          "path": "governance/abc_lifecycle_state_machine_context_winner_horizon_240_portfolio_replay_v1/canonical_result.json",
+          "sha256": "1CF656EBE9EBD11690C4F8508EB8303D7DC2AB9A35F4735947B466E1437337BF"
+        },
+        {
+          "horizons_seen": [
+            168,
+            240
+          ],
+          "path": "governance/abc_lifecycle_state_machine_context_winner_horizon_240_portfolio_replay_v1/output_manifest.json",
+          "sha256": "F53A0FE41B1E37BD27825EBE43CA84365CD53B126A90E68A5B699589CC8761C0"
+        },
+        {
+          "horizons_seen": [
+            240
+          ],
+          "path": "governance/abc_lifecycle_state_machine_context_winner_horizon_combined_policy_forward_replay_v1/canonical_result.json",
+          "sha256": "492AADD76F3C8CF369B3897D14B1D3D793E15E0FF18E432D0D7CAAA8B1D21470"
+        },
+        {
+          "horizons_seen": [
+            168,
+            240
+          ],
+          "path": "governance/abc_lifecycle_state_machine_context_winner_horizon_economic_decision_protocol_v1/protocol.json",
+          "sha256": "8F0F36ACBEE60A80E399F22A3A578CF6BD2092A7B96807037FD0C0984FC9EE07"
+        },
+        {
+          "horizons_seen": [
+            240
+          ],
+          "path": "governance/abc_lifecycle_state_machine_context_winner_horizon_economic_synthesis_v1/economic_decision_synthesis.json",
+          "sha256": "997F7A294003111EC33C4494D3EDD60236A68688CCACD4AF628ACABCA2B94A96"
+        },
+        {
+          "horizons_seen": [
+            240
+          ],
+          "path": "governance/abc_lifecycle_state_machine_context_winner_horizon_full_analysis_human_review_v1/human_review.json",
+          "sha256": "9EB6443DA226F8C228F114A30152EFB32CE056ACFCE8E22C499B02766E4856FF"
+        },
+        {
+          "horizons_seen": [
+            168,
+            240
+          ],
+          "path": "governance/abc_lifecycle_state_machine_multi_school_regime_horizon_full_synthesis_v1/full_architecture_synthesis.json",
+          "sha256": "9CA01E18F00946A3A7387E8707955272EB50D81F8E907431518B0F46A0AE9865"
+        },
+        {
+          "horizons_seen": [
+            240,
+            336,
+            504,
+            720,
+            1008
+          ],
+          "path": "governance/abc_lifecycle_state_machine_multi_school_regime_horizon_opportunity_and_capacity_diagnostic_v1/horizon_trade_level_survivors.json",
+          "sha256": "07CF0CDF23B22DB93C0F94A3DF87FE1D160C9F60C8D2F15D07CD9E5175420DD4"
+        },
+        {
+          "horizons_seen": [
+            168,
+            240,
+            336,
+            504,
+            720,
+            1008
+          ],
+          "path": "governance/abc_lifecycle_state_machine_multi_school_regime_horizon_post168_extended_path_materialization_v1/year_audits.json",
+          "sha256": "CEA1E9B3A18A0CAD4E532CF7642CDC8B80DE140D417C9188CF9C71485914B01B"
+        },
+        {
+          "horizons_seen": [
+            168,
+            240
+          ],
+          "path": "governance/abc_lifecycle_state_machine_multi_school_regime_horizon_survivor_economic_replay_v1/economic_replay_scope.json",
+          "sha256": "4F994089C18D29252194A1D384845E9E8C9966179CF9FC7C0ACF9C3593453A67"
+        }
+      ],
+      "exact_240_supported_false_seen": false,
+      "exact_240_supported_true_seen": false,
+      "horizon_selection": false,
+      "new_post168_replay": false
+    },
+    "status": "DEFER_KEEP_168H"
+  },
+  "production_changed": false,
+  "push": false,
+  "schema_version": "akah-rev552-continuation-value-maximum-evidence-mega-v1",
+  "shadow_policy": {
+    "authorized": false,
+    "status": "DEFER_NO_MODEL_PREDICTIONS"
+  },
+  "sizing_feasibility": {
+    "deployment_authorized": false,
+    "status": "DEFER_NO_CONTINUATION_VALUE_SURFACE"
+  },
+  "source_capability": {
+    "candidate_continuation_csv_count": 9,
+    "candidate_continuation_csvs": [
+      {
+        "columns": [
+          "year",
+          "pair",
+          "entry_time",
+          "native_exit_time",
+          "decision_time_4h",
+          "scheduled_execution_time",
+          "target_status",
+          "counterfactual_exit_price",
+          "counterfactual_net_pnl",
+          "native_net_pnl",
+          "executable_exit_delta_net",
+          "continuation_value_net"
+        ],
+        "explicit_exit": false,
+        "explicit_hold": false,
+        "notional": false,
+        "path": "governance/abc_lifecycle_state_machine_causal_feature_broadening_executable_continuation_diagnostic_materialization_v1/executable_continuation_target.csv",
+        "size_bytes": 2933294
+      },
+      {
+        "columns": [
+          "feature",
+          "family",
+          "nonmissing_executable_rows",
+          "missing_executable_rows",
+          "spearman_rho",
+          "abs_spearman_rho",
+          "q4_minus_q1_mean_exit_delta",
+          "q1_count",
+          "q4_count",
+          "spearman_2019",
+          "spearman_2020",
+          "spearman_2021",
+          "spearman_2022",
+          "spearman_2023",
+          "annual_rho_sign_sequence",
+          "annual_same_sign_count",
+          "spearman_unconfirmed",
+          "spearman_early_progress",
+          "spearman_confirmed",
+          "within_phase_weighted_spearman",
+          "diagnostic_rank"
+        ],
+        "explicit_exit": false,
+        "explicit_hold": false,
+        "notional": false,
+        "path": "governance/abc_lifecycle_state_machine_causal_feature_broadening_executable_continuation_diagnostic_materialization_v1/feature_attribution.csv",
+        "size_bytes": 14157
+      },
+      {
+        "columns": [
+          "family",
+          "feature_count",
+          "median_abs_spearman_rho",
+          "max_abs_spearman_rho",
+          "features_with_4plus_same_annual_signs"
+        ],
+        "explicit_exit": false,
+        "explicit_hold": false,
+        "notional": false,
+        "path": "governance/abc_lifecycle_state_machine_causal_feature_broadening_executable_continuation_diagnostic_materialization_v1/feature_family_summary.csv",
+        "size_bytes": 393
+      },
+      {
+        "columns": [
+          "hypothesis",
+          "status",
+          "evidence_quality",
+          "exactness",
+          "main_metric",
+          "reason",
+          "next_action"
+        ],
+        "explicit_exit": false,
+        "explicit_hold": false,
+        "notional": false,
+        "path": "governance/abc_lifecycle_state_machine_policy_conditioned_value_mega_discovery_v1/decision_matrix.csv",
+        "size_bytes": 2866
+      },
+      {
+        "columns": [
+          "pair",
+          "run_count",
+          "median_snapshots",
+          "max_snapshots",
+          "total_snapshots"
+        ],
+        "explicit_exit": false,
+        "explicit_hold": false,
+        "notional": false,
+        "path": "governance/abc_lifecycle_state_machine_policy_conditioned_value_mega_discovery_v1/maturity_tenure_by_pair.csv",
+        "size_bytes": 686
+      },
+      {
+        "columns": [
+          "decision_time",
+          "entries",
+          "exits",
+          "members"
+        ],
+        "explicit_exit": false,
+        "explicit_hold": false,
+        "notional": false,
+        "path": "governance/abc_lifecycle_state_machine_policy_conditioned_value_mega_discovery_v1/maturity_turnover_by_snapshot.csv",
+        "size_bytes": 8221
+      },
+      {
+        "columns": [
+          "year",
+          "pair",
+          "entry_time",
+          "native_exit_time",
+          "decision_time_4h",
+          "interpretation_context_key",
+          "decision_time_dt",
+          "hypothesis_id",
+          "decision_exit_price",
+          "entry_time_norm",
+          "native_exit_time_norm",
+          "entry_price",
+          "quantity",
+          "entry_notional",
+          "entry_cost",
+          "net_pnl",
+          "side_cost_rate",
+          "counterfactual_exit_notional",
+          "counterfactual_exit_cost",
+          "counterfactual_gross_pnl",
+          "counterfactual_net_pnl",
+          "direct_exit_delta_net",
+          "continuation_value_net"
+        ],
+        "explicit_exit": false,
+        "explicit_hold": false,
+        "notional": true,
+        "path": "governance/abc_lifecycle_state_machine_state_conditioned_action_hypothesis_2023_temporal_validation_execution_v1/validation_2023_direct_continuation_value_ledger.csv",
+        "size_bytes": 50698
+      },
+      {
+        "columns": [
+          "year",
+          "pair",
+          "entry_time",
+          "native_exit_time",
+          "decision_time_4h",
+          "interpretation_context_key",
+          "decision_time_dt",
+          "hypothesis_id",
+          "decision_exit_price",
+          "entry_time_norm",
+          "native_exit_time_norm",
+          "entry_price",
+          "quantity",
+          "entry_notional",
+          "entry_cost",
+          "net_pnl",
+          "side_cost_rate",
+          "counterfactual_exit_notional",
+          "counterfactual_exit_cost",
+          "counterfactual_gross_pnl",
+          "counterfactual_net_pnl",
+          "direct_exit_delta_net",
+          "continuation_value_net"
+        ],
+        "explicit_exit": false,
+        "explicit_hold": false,
+        "notional": true,
+        "path": "governance/abc_lifecycle_state_machine_state_conditioned_action_hypothesis_counterfactual_direct_continuation_value_execution_v1/direct_continuation_value_ledger.csv",
+        "size_bytes": 230443
+      },
+      {
+        "columns": [
+          "hypothesis_id",
+          "year",
+          "evaluable_lifecycle_count",
+          "sum_direct_exit_delta_net",
+          "mean_direct_exit_delta_net",
+          "sum_continuation_value_net",
+          "mean_continuation_value_net",
+          "immediate_exit_better_count",
+          "native_continuation_better_count",
+          "tie_count"
+        ],
+        "explicit_exit": false,
+        "explicit_hold": false,
+        "notional": false,
+        "path": "governance/abc_lifecycle_state_machine_state_conditioned_action_hypothesis_counterfactual_direct_continuation_value_execution_v1/direct_continuation_value_summary.csv",
+        "size_bytes": 3645
+      }
+    ],
+    "current_engine_source_sha256": "EE6C74F098ABDA63213E40CB6D0CC57F6BA012D35F90475361F7A25B94621284",
+    "engine_tokens": {
+      "adaptive_protection_present": true,
+      "adaptive_stagnation_present": true,
+      "external_exit_schedule_surface": true,
+      "external_trade_arbiter_surface": false,
+      "max_hold_168_present": true,
+      "native_optional_exit_suppression_surface": false
+    },
+    "exact_two_sided_engine_surface": false,
+    "interpretation": "CURRENT_ENGINE_HAS_EXTERNAL_EXIT_SCHEDULE_BUT_NO_PROVEN_NATIVE_OPTIONAL_EXIT_HOLD_SUPPRESSION_SURFACE",
+    "schema_version": "akah-rev552-continuation-value-maximum-evidence-mega-v1-source-capability-audit"
+  },
+  "status": "PASS_MAXIMUM_EVIDENCE_COMPLETE",
+  "target_resolution": {
+    "exact_candidate_reason": "NO_EXPLICIT_CURRENT_PI0_HOLD_EXIT_TARGET_FOUND",
+    "exactness": "UNRESOLVED",
+    "execution_surface_gap": true,
+    "expert_target": "(net_cash_HOLD_then_pi0-net_cash_EXIT)/current_position_notional",
+    "mandatory_safety_disabled": false,
+    "max_horizon_hours": 168,
+    "pi0": "CURRENT_DYNAMIC_TOP6+BINARY_VOL+CURRENT_EXECUTION_RULES",
+    "reason": "No explicit current-pi0 hold-vs-exit target and no usable legacy diagnostic target were found.",
+    "rows": 0,
+    "schema_version": "akah-rev552-continuation-value-maximum-evidence-mega-v1-target-resolution",
+    "status": "DEFER_EXACT_EXECUTION_SURFACE_GAP"
+  },
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_POLICY_CONDITIONED_CONTINUATION_MAXIMUM_EVIDENCE_MEGA_V1",
+  "tenure": {
+    "status": "DEFER_NO_TARGET"
+  },
+  "threshold_search": false,
+  "two_sided_execution_surface_contract": {
+    "canonical_engine_mutation_authorized": false,
+    "full_arbiter_integration_required": false,
+    "gap_confirmed": true,
+    "minimal_implementation": [
+      "Expose a research-only optional-native-exit suppression override for exactly one canonical decision step.",
+      "Do not suppress mandatory protection, gap protection, invalid-price safety, or max-hold safety.",
+      "Run both actions from an identical causal state snapshot and identical cash/position state.",
+      "After the one-step HOLD branch, remove the override and execute pi0 unchanged.",
+      "Emit both legal execution timestamps/prices, fees, net cash, current notional, and normalized advantage."
+    ],
+    "observed_current_surface": "CURRENT_ENGINE_HAS_EXTERNAL_EXIT_SCHEDULE_BUT_NO_PROVEN_NATIVE_OPTIONAL_EXIT_HOLD_SUPPRESSION_SURFACE",
+    "production_authorized": false,
+    "purpose": "Materialize the exact expert target without building a full arbiter, LSM, or RL policy.",
+    "required_parity_tests": [
+      "OVERRIDE_OFF_BYTE_OR_VALUE_PARITY_WITH_CURRENT_PI0",
+      "EXIT_NOW_BRANCH_MATCHES_FIRST_LEGAL_EXIT_EXECUTION",
+      "HOLD_BRANCH_DIFFERS_ONLY_BY_ONE_OPTIONAL_EXIT_DEFERRAL",
+      "MANDATORY_SAFETY_CAN_NEVER_BE_DEFERRED",
+      "NO_DECISION_USES_2024_ROWS",
+      "PREFIX_INVARIANCE_BEFORE_INTERVENTION"
+    ],
+    "required_research_only_surface": {
+      "action_set": [
+        "EXIT_NOW",
+        "HOLD_ONE_CANONICAL_DECISION_STEP_THEN_PI0"
+      ],
+      "after_hold_step": "REVERT_EXACTLY_TO_PI0",
+      "entry_admission": "UNMODIFIED",
+      "fees_prices_marks": "CANONICAL_EXISTING_AUTHORITIES",
+      "mandatory_safety_precedence": "UNMODIFIED_AND_ALWAYS_HIGHER_PRIORITY_THAN_HOLD",
+      "max_horizon_hours": 168,
+      "pi0": "CURRENT_DYNAMIC_TOP6+BINARY_VOL+CURRENT_EXECUTION_RULES",
+      "position_sizing": "UNMODIFIED",
+      "target": "(net_cash_HOLD_then_pi0-net_cash_EXIT)/current_position_notional"
+    },
+    "schema_version": "akah-rev552-continuation-value-maximum-evidence-mega-v1-two-sided-execution-surface-contract",
+    "status": "READY_FOR_HUMAN_REVIEW_IF_GAP_CONFIRMED"
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "boundaries": {
+    "2024_2025_access": false,
+    "market_replay_executed": false,
+    "market_rows_read": false,
+    "original_package_modified": false,
+    "pnl_read": false,
+    "production_changed": false
+  },
+  "created_at_utc": "2026-10-03T22:43:11.232782+00:00",
+  "findings": [
+    {
+      "classification": "IMPLEMENTATION_BUG",
+      "evidence": "wyckoff_add derives stop_floor from readiness.lps, but Produced.add_instruction is a mutable dict. Pipeline.bind trusts add['stop_floor'] to construct AddEvidence. No equality is enforced against readiness.lps.bar.low or a source-graph claim. Adversarial synthetic proof changed the source-derived 118 stop floor to 100.0; the add was admitted and campaign protection became 100.0.",
+      "id": "F1",
+      "locations": [
+        "src/spotbot/research/multi_school_fidelity/integration_v10/producers.py:342-385",
+        "src/spotbot/research/multi_school_fidelity/integration_v10/pipeline.py:225-238",
+        "src/spotbot/research/multi_school_fidelity/campaign_execution_v7.py:53-71,121-179"
+      ],
+      "required_correction": "Replace mutable scalar handoff with an explicit source-bound add-stop claim/proof. Bind the actual LPS bar ID, deterministic derivation and expected price; verify at bind and immediately before fill that add_evidence.lps_low == max(original_stage_stop, live_LPS_bar.low). Make Produced/add payload immutable or integrity-hashed.",
+      "revealing_test": "Create valid spring stage + actual kernel receipt + later LPS. Mutate any add stop-floor scalar after producer emission. Bind/execution must fail STOP/ADD_PROVENANCE_PARITY rather than admit.",
+      "severity": "CRITICAL",
+      "title": "Wyckoff staged-add stop floor is mutable and not bound to the actual LPS source"
+    },
+    {
+      "classification": "SOURCE_AUTHORITY_BINDING_BUG",
+      "evidence": "ContractProducer._emit accepts pit_eligible as a plain bool and event_row stores it as broad_eligible. Pipeline.bind does not parity-check that field against immutable producer/source evidence. bind_producer_event turns the mutable event value directly into row.pit_eligible. Adversarial proof changed False to True before bind; the candidate was admitted and filled in synthetic mode.",
+      "id": "F2",
+      "locations": [
+        "src/spotbot/research/multi_school_fidelity/integration_v10/producers.py:59-93",
+        "src/spotbot/research/multi_school_fidelity/integration_v10/pipeline.py:131-164",
+        "src/spotbot/research/multi_school_fidelity/owned_event_pipeline_v7.py:118-126"
+      ],
+      "required_correction": "Represent PIT membership as a Known/source-graph claim with pair/checkpoint/source hash/availability; include its event ID in required evidence and in immutable producer integrity. Pipeline must derive pit_eligible from that live claim, never from a caller-editable event field.",
+      "revealing_test": "Emit a PIT-ineligible thesis with a bound membership claim=false; mutate event broad_eligible to true. Binding must reject. Terminating the membership source before next open must also reject.",
+      "severity": "HIGH",
+      "title": "PIT membership is a mutable caller boolean, not source-bound evidence"
+    },
+    {
+      "classification": "IMMUTABILITY_GAP",
+      "evidence": "Produced is a frozen dataclass, but event and add_instruction are mutable dictionaries. self.emitted stores a deep copy, yet normal Pipeline.bind does not verify the supplied Produced object against that emission record. H3 does such an emitted-object check, demonstrating the missing invariant on ordinary routes.",
+      "id": "F3",
+      "locations": [
+        "src/spotbot/research/multi_school_fidelity/integration_v10/producers.py:29-37,59-98"
+      ],
+      "required_correction": "Use immutable mappings/typed dataclasses for event authority and add instructions, or add a producer-issued immutable emission digest/claim and verify it on every Pipeline.bind path. Broad eligibility, add stop floor, timestamps, owner and source payload must all be covered.",
+      "revealing_test": "Mutate every pre-bind mutable field one at a time after _emit. Any semantic mutation must fail; only non-semantic presentation fields, if any, may differ.",
+      "severity": "HIGH",
+      "title": "Frozen Produced wrapper still contains mutable dict payloads before binding"
+    }
+  ],
+  "other_assessments": {
+    "H3_ownership": "PASS_SYNTHETIC_SCOPE_ONLY: Elliott count retains stop/management; Harmonic remains location evidence and its source death can block entry.",
+    "fresh_reserve_boundary": "PASS: package truthfully reports fresh V10 market reserve NOT_READY and excludes old reviewed packets.",
+    "gate3_ready": false,
+    "historical_producer_certification": "OPEN_BLOCKER_BY_DESIGN",
+    "historical_quantity_authority": "OPEN_BLOCKER_BY_DESIGN"
+  },
+  "overall_decision": "REJECT_TECHNICAL_CLOSURE",
+  "overall_reason": "R1/R3/R4 are materially improved, but R2 is not fully closed and the source-to-kernel authority surface still permits PIT membership tampering. canonical_result.four_repairs_closed=true is therefore too strong for independent acceptance.",
+  "package": "AKAH_V10_FOUR_REPAIRS_AND_RESERVE_PREPARATION_REV782_20261004.zip",
+  "package_sha256": "AC65AAF8D13B58795D3234679FCE1902EAF8339F2F466B8EF547849A371AC7B6",
+  "repair_assessment": {
+    "R1_EXPLICIT_STOP_PROVENANCE": {
+      "decision": "ACCEPT_WITH_SCOPE",
+      "reason": "Entry stop derivation is typed, recomputed from live graph sources, and metadata/thesis/binding parity is checked. No parents[0] inference remains for the V10 owner paths reviewed."
+    },
+    "R2_WYCKOFF_LIVE_DEPENDENCIES_AND_STAGE_LINKAGE": {
+      "decision": "REJECT",
+      "reason": "Initial readiness/source graph is substantially repaired, but staged-add LPS protection is carried in a mutable add_instruction dict and is not cryptographically/semantically tied back to the actual LPS bar at bind/execution time."
+    },
+    "R3_PREBATCH_FEASIBILITY": {
+      "decision": "ACCEPT_WITH_SCOPE",
+      "reason": "The pipeline previews the same admission method on an isolated deep copy before same-asset arbitration, while preserving final sequential admission checks."
+    },
+    "R4_ELLIOTT_NONTRUNCATED_SCOPE": {
+      "decision": "ACCEPT",
+      "reason": "The existing non-truncated restriction is now declared explicitly as NONTRUNCATED_IMPULSE_PROFILE; truncated fifths are unsupported diagnostic-only rather than silently invalid doctrine."
+    }
+  },
+  "review_id": "AKAH_REV782_V10_INDEPENDENT_TECHNICAL_REVIEW_V1",
+  "scope": "STATIC_AND_SYNTHETIC_TECHNICAL_REVIEW_NO_MARKET_REPLAY",
+  "verification": {
+    "custom_adversarial_checks": [
+      {
+        "id": "ADV_WYCKOFF_ADD_STOP_TAMPER",
+        "proof": "source LPS low=118; mutable add_instruction.stop_floor changed to 100.0 before bind; pipeline admitted add; both campaign stops became 100.0",
+        "result": "FAIL_CLOSED_EXPECTATION_VIOLATED"
+      },
+      {
+        "id": "ADV_PIT_MEMBERSHIP_TAMPER",
+        "proof": "producer-like broad_eligible=False changed to True before bind; bound pit_eligible=True; candidate admitted and filled",
+        "result": "FAIL_CLOSED_EXPECTATION_VIOLATED"
+      }
+    ],
+    "full_exported_test_tree": "395/397 PASS; 2 environmental/export-dependency failures (arch missing; spotbot.data omitted from handoff), not treated as V10 logic regressions",
+    "integration_v10_subset": "58/58 PASS"
+  }
+}

@@ -1,0 +1,205 @@
+{
+  "schema_version": "abc-lifecycle-observational-trace-mandatory-review-v1",
+  "source_trace": {
+    "canonical_sha256": "48FE5760D7975FF6EA652CCEE62905CF456A2532B8EBE7F37305A21A1720DF45",
+    "report_sha256": "D9F0703FE6AF6442296CF9BC5FA41E39E966D954CAAE229F4867E12C6E3C64CB",
+    "audit_sha256": "5348D6681D18B7B9E4E34963317D5C58D56903A36F51AE30693D380A8BE5E875",
+    "manifest_sha256": "C860AF80280CD7FA0594B39180BFE08B938AEC7BCCE8B833599311829BA4ECDE",
+    "protocol_sha256": "A628F07CE417339B1547BC8C1E1E9AD9D8360451CD0996E366C9C474A3167B0F"
+  },
+  "review_constraints": {
+    "market_data_accessed": false,
+    "economic_outcomes_read": false,
+    "pnl_columns_read": false,
+    "candidate_replay_executed": false,
+    "portfolio_replay_executed": false,
+    "new_threshold_created": false,
+    "candidate_combination_tested": false,
+    "runtime_state_machine_authorized": false,
+    "adaptive_logic_authorized": false,
+    "exit_arbiter_authorized": false
+  },
+  "exact_observed_facts": {
+    "control_lifecycle_count": 2020,
+    "decision_grid_row_count": 14059,
+    "memory_observed_lifecycle_count": 1270,
+    "no_memory_lifecycle_count": 750,
+    "memory_partition_nontrivial_overall": true,
+    "memory_by_year": {
+      "2019": {
+        "lifecycle_count": 314,
+        "memory_count": 190,
+        "no_memory_count": 124,
+        "incidence": 0.6050955414012739,
+        "nontrivial_partition": true
+      },
+      "2020": {
+        "lifecycle_count": 473,
+        "memory_count": 319,
+        "no_memory_count": 154,
+        "incidence": 0.6744186046511628,
+        "nontrivial_partition": true
+      },
+      "2021": {
+        "lifecycle_count": 441,
+        "memory_count": 280,
+        "no_memory_count": 161,
+        "incidence": 0.6349206349206349,
+        "nontrivial_partition": true
+      },
+      "2022": {
+        "lifecycle_count": 358,
+        "memory_count": 216,
+        "no_memory_count": 142,
+        "incidence": 0.6033519553072626,
+        "nontrivial_partition": true
+      },
+      "2023": {
+        "lifecycle_count": 434,
+        "memory_count": 265,
+        "no_memory_count": 169,
+        "incidence": 0.6105990783410138,
+        "nontrivial_partition": true
+      }
+    },
+    "C_signal_count": 74,
+    "A_signal_count": 135,
+    "B_signal_count": 31,
+    "C_base_state_counts": {
+      "UNCONFIRMED": 74,
+      "EARLY_PROGRESS": 0,
+      "CONFIRMED": 0
+    },
+    "A_base_state_counts": {
+      "UNCONFIRMED": 51,
+      "EARLY_PROGRESS": 0,
+      "CONFIRMED": 84
+    },
+    "B_base_state_counts": {
+      "UNCONFIRMED": 0,
+      "EARLY_PROGRESS": 0,
+      "CONFIRMED": 31
+    },
+    "C_exclusively_pre_memory_unconfirmed": true,
+    "B_exclusively_post_memory_confirmed": true,
+    "A_observed_base_states": [
+      "UNCONFIRMED",
+      "CONFIRMED"
+    ],
+    "A_cross_phase_observed": true,
+    "A_relative_to_first_memory_counts": {
+      "AFTER_FIRST_MEMORY": 84,
+      "BEFORE_FIRST_MEMORY": 7,
+      "NO_MEMORY_OBSERVED": 44
+    },
+    "native_exit_base_state_counts": {
+      "CONFIRMED": 1145,
+      "EARLY_PROGRESS": 125,
+      "UNCONFIRMED": 750
+    },
+    "zero_duration_lifecycle_count": 30,
+    "zero_eligible_decision_lifecycle_count": 238,
+    "top_chronology_signatures": [
+      {
+        "chronology_signature": "ENTRY>FIRST_MEMORY>NATIVE_EXIT",
+        "lifecycle_count": 1121
+      },
+      {
+        "chronology_signature": "ENTRY>NATIVE_EXIT",
+        "lifecycle_count": 626
+      },
+      {
+        "chronology_signature": "ENTRY>FIRST_MEMORY>A_SIGNAL>NATIVE_EXIT",
+        "lifecycle_count": 64
+      },
+      {
+        "chronology_signature": "ENTRY>C_SIGNAL>NATIVE_EXIT",
+        "lifecycle_count": 39
+      },
+      {
+        "chronology_signature": "ENTRY>A_SIGNAL>NATIVE_EXIT",
+        "lifecycle_count": 31
+      },
+      {
+        "chronology_signature": "ENTRY+NATIVE_EXIT",
+        "lifecycle_count": 30
+      },
+      {
+        "chronology_signature": "ENTRY>FIRST_MEMORY+NATIVE_EXIT",
+        "lifecycle_count": 23
+      },
+      {
+        "chronology_signature": "ENTRY>FIRST_MEMORY>B_SIGNAL>NATIVE_EXIT",
+        "lifecycle_count": 16
+      },
+      {
+        "chronology_signature": "ENTRY>C_SIGNAL+NATIVE_EXIT",
+        "lifecycle_count": 11
+      },
+      {
+        "chronology_signature": "ENTRY>C_SIGNAL>FIRST_MEMORY>NATIVE_EXIT",
+        "lifecycle_count": 11
+      },
+      {
+        "chronology_signature": "ENTRY>FIRST_MEMORY>A_SIGNAL+NATIVE_EXIT",
+        "lifecycle_count": 10
+      },
+      {
+        "chronology_signature": "ENTRY>A_SIGNAL+NATIVE_EXIT",
+        "lifecycle_count": 6
+      },
+      {
+        "chronology_signature": "ENTRY>FIRST_MEMORY>B_SIGNAL+NATIVE_EXIT",
+        "lifecycle_count": 6
+      },
+      {
+        "chronology_signature": "ENTRY>A_SIGNAL>FIRST_MEMORY>NATIVE_EXIT",
+        "lifecycle_count": 4
+      },
+      {
+        "chronology_signature": "ENTRY>FIRST_MEMORY>A_SIGNAL+B_SIGNAL>NATIVE_EXIT",
+        "lifecycle_count": 4
+      },
+      {
+        "chronology_signature": "ENTRY>A_SIGNAL>C_SIGNAL>NATIVE_EXIT",
+        "lifecycle_count": 3
+      },
+      {
+        "chronology_signature": "ENTRY>C_SIGNAL>A_SIGNAL>NATIVE_EXIT",
+        "lifecycle_count": 3
+      },
+      {
+        "chronology_signature": "ENTRY>FIRST_MEMORY>A_SIGNAL>B_SIGNAL>NATIVE_EXIT",
+        "lifecycle_count": 3
+      },
+      {
+        "chronology_signature": "ENTRY>A_SIGNAL>C_SIGNAL>FIRST_MEMORY>NATIVE_EXIT",
+        "lifecycle_count": 2
+      },
+      {
+        "chronology_signature": "ENTRY>C_SIGNAL>FIRST_MEMORY+NATIVE_EXIT",
+        "lifecycle_count": 2
+      }
+    ]
+  },
+  "causal_interpretation": {
+    "memory_partition": "Memory creates a non-degenerate pre/post-progress partition in every reviewed year; both memory and no-memory lifecycles exist.",
+    "C": "All frozen C events occur in UNCONFIRMED under the observational trace, exactly as required by C's pre-progress semantics.",
+    "B": "All frozen B events occur in CONFIRMED under the observational trace, exactly as required by B's post-Memory semantics.",
+    "A": "A is reviewed as a structural evidence channel. Its observed distribution across base states is descriptive only and does not automatically create or rename a state.",
+    "zero_duration": "Zero-duration Control lifecycles are bookkeeping-valid terminal cases with no eligible 4H decision grid; they do not create Memory or evidence-channel state semantics."
+  },
+  "architecture_decision": {
+    "base_phase_representation_supported": true,
+    "C_to_STALLED_runtime_mapping_authorized": false,
+    "A_to_STRUCTURAL_BREAK_runtime_mapping_authorized": false,
+    "B_to_VOLATILITY_DAMAGE_runtime_mapping_authorized": false,
+    "evidence_state_predicate_protocol_work_authorized": true,
+    "runtime_state_machine_authorized": false,
+    "adaptive_logic_authorized": false,
+    "exit_action_authorized": false,
+    "exit_arbiter_authorized": false,
+    "reason": "The non-economic trace validates phase separation and preserves C/A/B as distinct evidence channels. The next scientific step is to freeze, before any economic evaluation, candidate observational predicates for additional doctrine states such as STALLED, STRUCTURAL_BREAK and VOLATILITY_DAMAGE. This is protocol work only."
+  },
+  "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_EVIDENCE_STATE_PREDICATE_PROTOCOL_FREEZE_V1"
+}

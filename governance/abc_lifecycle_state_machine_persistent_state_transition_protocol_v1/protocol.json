@@ -1,0 +1,84 @@
+{
+  "forbidden_actions": [
+    "NO_NEW_THRESHOLD",
+    "NO_DURATION_RULE",
+    "NO_TIME_GAP_BIN",
+    "NO_TRANSITION_SCORE",
+    "NO_TRANSITION_RANKING",
+    "NO_COMPOSITE_FAILED_STATE",
+    "NO_RUNTIME_EXECUTION",
+    "NO_ADAPTIVE_LOGIC",
+    "NO_EXIT_ACTION",
+    "NO_EXIT_ARBITER",
+    "NO_PNL_READ",
+    "NO_ECONOMIC_OUTCOME_READ",
+    "NO_MARKET_DATA_ACCESS",
+    "NO_2024_ACCESS",
+    "NO_2025_ACCESS"
+  ],
+  "granularity": "ONE_RECORD_PER_ADJACENT_EXISTING_DECISION_ROW_PAIR_WITHIN_SAME_LIFECYCLE",
+  "mandatory_invariants": [
+    "NO_CROSS_LIFECYCLE_EDGE",
+    "EXACT_ADJACENT_EDGE_COUNT_ROWS_MINUS_REPRESENTED_LIFECYCLES",
+    "OVERLAY_TRANSITIONS_DERIVED_ONLY_FROM_PREVIOUS_AND_CURRENT_FROZEN_ACTIVE_FLAGS",
+    "BASE_PHASE_TRANSITIONS_REMAIN_MONOTONIC_UNCONFIRMED_TO_EARLY_PROGRESS_TO_CONFIRMED",
+    "SIMULTANEOUS_OVERLAY_CHANGES_HAVE_NO_PRIORITY",
+    "NO_SYNTHETIC_INITIAL_OR_TERMINAL_TRANSITION"
+  ],
+  "ordering": "EXISTING_DECISION_TIME_ORDER_ONLY_NO_INTERPOLATION",
+  "post_materialization_gate": {
+    "next_if_valid": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_TRANSITION_MANDATORY_REVIEW_V1",
+    "runtime_state_tracker_protocol_authorized_now": false
+  },
+  "protocol_id": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_TRANSITION_PROTOCOL_V1",
+  "required_outputs": [
+    "adjacent_transition_ledger.csv",
+    "base_phase_transition_counts.csv",
+    "overlay_transition_counts.csv",
+    "joint_overlay_transition_signature_counts.csv",
+    "transition_completeness_audit.json",
+    "canonical_result.json",
+    "output_manifest.json"
+  ],
+  "schema_version": "abc-persistent-state-transition-protocol-v1",
+  "source_bindings": [
+    {
+      "path": "governance/abc_lifecycle_state_machine_persistent_state_definition_protocol_v1/protocol.json",
+      "sha256": "3C8381B372EEB947C8E483D7109EAECEDA73392056DAB679011B214F3721D33C"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_persistent_state_definition_protocol_v1/state_definition_catalog.json",
+      "sha256": "F399071B310E7D49D8B642BFB4929215305C7D774E023DE4099E4C94511BBDC1"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_persistent_state_definition_protocol_v1/canonical_result.json",
+      "sha256": "7235313912A0E89F595C176A134C19EEEC12A5BFDCD495C230D599F408DA4D7E"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_persistent_state_definition_observational_materialization_v1/materialized_persistent_state_grid.csv",
+      "sha256": "B1032616A730F84D2A4D1AB84D9333DE9B164ECD1A8AA8732D8757A3C1CEB907"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_persistent_state_definition_observational_materialization_v1/persistent_state_episode_ledger.csv",
+      "sha256": "B06FE8D7973C78D29D2E04005B615B94CB3E7668E3580342E28ED6218DF82C2F"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_persistent_state_definition_observational_materialization_v1/recovery_audit.json",
+      "sha256": "25F50657428109B6AA3BB8B3F0B57C76A6128262E7168816E799A2E8BCF26D53"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_persistent_state_definition_observational_materialization_v1/canonical_result.json",
+      "sha256": "493F4000CAE688EFFBFA3E092A91D9047CB18FFF2F7E02B0E51A1D41A43337E9"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_persistent_state_definition_mandatory_review_v1/mandatory_review.json",
+      "sha256": "7CF3668E5CAB36BA7D0D394676F3422DB7A3A7EE9B6DC18349A2743C265ACF60"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_persistent_state_definition_mandatory_review_v1/canonical_result.json",
+      "sha256": "0B01D2F966BE33EDDB3E46E61A0F26B48B01B1CA331F68463C5D641ED3FA618D"
+    }
+  ],
+  "status": "FROZEN_BEFORE_OBSERVATIONAL_MATERIALIZATION",
+  "transition_catalog_sha256": "14BAB86519AEF25BAE6FF9BFFDB4D2BC160C7E02DD5E40F170384A5030F2AE4F"
+}

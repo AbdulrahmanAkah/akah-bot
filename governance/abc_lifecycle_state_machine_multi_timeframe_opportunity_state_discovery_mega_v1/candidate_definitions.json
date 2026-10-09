@@ -1,0 +1,54 @@
+{
+  "candidates": [
+    {
+      "component": "INCUMBENT",
+      "description": "Exact frozen F10: 2*Trend rank + ADX/DMI rank",
+      "id": "M00_F10_INCUMBENT"
+    },
+    {
+      "component": "C4T",
+      "description": "F10 + 4H trend persistence",
+      "id": "M01_F10_PLUS_4H_TREND"
+    },
+    {
+      "component": "C1T",
+      "description": "F10 + 1D trend regime",
+      "id": "M02_F10_PLUS_1D_TREND"
+    },
+    {
+      "component": "C4S",
+      "description": "F10 + 4H structure/location quality",
+      "id": "M03_F10_PLUS_4H_STRUCTURE"
+    },
+    {
+      "component": "C4A",
+      "description": "F10 + 4H acceleration/volatility expansion",
+      "id": "M04_F10_PLUS_4H_ACCEL"
+    },
+    {
+      "component": "CLIQ",
+      "description": "F10 + multi-horizon activity expansion",
+      "id": "M05_F10_PLUS_LIQ_ACTIVITY"
+    },
+    {
+      "component": "ALIGN",
+      "description": "F10 + 4H/1D trend alignment",
+      "id": "M06_F10_PLUS_4H_1D_ALIGNMENT"
+    },
+    {
+      "component": "MTF_STRUCTURE",
+      "description": "F10 + aligned trend + 4H structure",
+      "id": "M07_F10_PLUS_MTF_STRUCTURE"
+    },
+    {
+      "component": "ALL_MTF",
+      "description": "F10 + all preregistered MTF state components",
+      "id": "M08_F10_PLUS_ALL_MTF"
+    }
+  ],
+  "gate_rule": "EXACT_F10_GATE_FOR_ALL_CANDIDATES",
+  "governor": "BINARY_VOL_ONLY",
+  "schema_version": "akah-mtf-candidate-definitions-v1",
+  "score_rule": "M00 exact F10; others F10 score + one preregistered component in [0,1]",
+  "sizing": "UNIFORM_ONLY"
+}

@@ -1,0 +1,61 @@
+{
+  "2023_post168_policy": "RIGHT_CENSOR_AT_2024_BOUNDARY",
+  "2024_access": false,
+  "4h_harmonic_materialization_capable": true,
+  "4h_smc_materialization_capable": true,
+  "4h_wave_materialization_capable": true,
+  "candidate_selection": false,
+  "cross_year_horizon_source_pairs": {
+    "2019_to_2020": true,
+    "2022_to_2023": true,
+    "2023_to_2024": false
+  },
+  "daily_regime_materialization_capable": true,
+  "economic_outcomes_computed": false,
+  "entry_required_columns_pass": true,
+  "entry_snapshot_columns": 65,
+  "hourly_ohlcv_volume_year_capability": {
+    "2019": {
+      "max_hourly_rows_per_pair": 8759,
+      "min_hourly_rows_per_pair": 8758,
+      "pair_count": 7,
+      "pairs_with_volume": 7,
+      "year": 2019,
+      "year_end": "2020-01-01 00:00:00+00:00",
+      "year_start": "2019-01-01 00:00:00+00:00"
+    },
+    "2020": {
+      "max_hourly_rows_per_pair": 17543,
+      "min_hourly_rows_per_pair": 13117,
+      "pair_count": 9,
+      "pairs_with_volume": 9,
+      "year": 2020,
+      "year_end": "2021-01-01 00:00:00+00:00",
+      "year_start": "2020-01-01 00:00:00+00:00"
+    },
+    "2022": {
+      "max_hourly_rows_per_pair": 35063,
+      "min_hourly_rows_per_pair": 5262,
+      "pair_count": 15,
+      "pairs_with_volume": 15,
+      "year": 2022,
+      "year_end": "2023-01-01 00:00:00+00:00",
+      "year_start": "2022-01-01 00:00:00+00:00"
+    },
+    "2023": {
+      "max_hourly_rows_per_pair": 43823,
+      "min_hourly_rows_per_pair": 5749,
+      "pair_count": 14,
+      "pairs_with_volume": 14,
+      "year": 2023,
+      "year_end": "2024-01-01 00:00:00+00:00",
+      "year_start": "2023-01-01 00:00:00+00:00"
+    }
+  },
+  "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_MULTI_SCHOOL_REGIME_HORIZON_EXECUTION_MANIFEST_FREEZE_V1",
+  "recovery_required_columns_pass": true,
+  "recovery_snapshot_columns": 73,
+  "schema_version": "abc-multi-school-regime-horizon-source-capability-audit-v1",
+  "status": "PASS_CAPABILITY_AUDIT_COMPLETE",
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_MULTI_SCHOOL_REGIME_HORIZON_SOURCE_CAPABILITY_AUDIT_V1"
+}

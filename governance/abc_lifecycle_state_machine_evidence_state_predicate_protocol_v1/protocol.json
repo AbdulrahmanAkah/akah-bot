@@ -1,0 +1,160 @@
+{
+  "schema_version": "abc-lifecycle-evidence-state-predicate-protocol-v1",
+  "protocol_id": "ABC_LIFECYCLE_STATE_MACHINE_EVIDENCE_STATE_PREDICATE_PROTOCOL_V1",
+  "status": "FROZEN_BEFORE_OBSERVATIONAL_MATERIALIZATION",
+  "research_stage": "LIFECYCLE_STATE_MACHINE_EVIDENCE_OVERLAYS",
+  "source_bindings": [
+    {
+      "path": "governance/AKAH_EXIT_BRAIN_RESEARCH_DOCTRINE_CURRENT.json",
+      "sha256": "B3F0F632446C7BCEE4B4BEC27CACDECD9EF6562B568872153186E69B1E00B8D9"
+    },
+    {
+      "path": "governance/abc_exit_primitives_preregistration_v1/protocol.json",
+      "sha256": "0D33547991D394C3CDEF1F03500EFD49DCEE1E8FEF41C8BD02007792CBFA3BD1"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_protocol_v1/protocol.json",
+      "sha256": "A628F07CE417339B1547BC8C1E1E9AD9D8360451CD0996E366C9C474A3167B0F"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_observational_trace_v1/canonical_result.json",
+      "sha256": "48FE5760D7975FF6EA652CCEE62905CF456A2532B8EBE7F37305A21A1720DF45"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_observational_trace_v1/trace_completeness_and_causality_audit.json",
+      "sha256": "5348D6681D18B7B9E4E34963317D5C58D56903A36F51AE30693D380A8BE5E875"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_observational_trace_v1/output_manifest.json",
+      "sha256": "C860AF80280CD7FA0594B39180BFE08B938AEC7BCCE8B833599311829BA4ECDE"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_observational_trace_v1/decision_grid_trace.csv",
+      "sha256": "FCD1F134B0140724D9FBDE5955B4031D8BC79934935916100ABEA040C7CF65F1"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_observational_trace_mandatory_review_v1/canonical_result.json",
+      "sha256": "FC29B3C53641CFFC2CD0166AEB6C5CB4E4C1FB0F137904F61402CAEECE8BD366"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_observational_trace_mandatory_review_v1/mandatory_review.json",
+      "sha256": "93588DAF53B21C9E1035CC0B9F7D764163B5621019D842265F381DA7355AFEC5"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_observational_trace_mandatory_review_v1/evidence_channel_state_review.csv",
+      "sha256": "E7D3686458863C826536CB6F7D4E45E14DC450234646030F06317ACE82AAAA8C"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_observational_trace_mandatory_review_v1/memory_partition_review.csv",
+      "sha256": "E939C1CE9887F3D9FCA97BD5E53DA3BEB0AAA798C3C6F6E271BC560A8D95DA08"
+    }
+  ],
+  "predicate_catalog_sha256": "EAB8573521DD94F36C0632CC809CF1D3DFD35C9B9B6FEE52681838BBC1A77DD0",
+  "base_phase_authority": {
+    "states": [
+      "UNCONFIRMED",
+      "EARLY_PROGRESS",
+      "CONFIRMED"
+    ],
+    "transition_semantics": "UNCHANGED_FROM_LSM_PROTOCOL_V1",
+    "replacement_by_evidence_overlay": false
+  },
+  "evidence_overlay_semantics": {
+    "representation": "ORTHOGONAL_EVENT_LOCAL_OVERLAY",
+    "same_decision_multiple_overlays_allowed": true,
+    "overlay_replaces_base_state": false,
+    "overlay_persistence": "NONE_IN_V1",
+    "overlay_latch": false,
+    "priority_order": "NONE",
+    "mutual_exclusivity": false,
+    "state_transition_authority": false,
+    "exit_authority": false,
+    "runtime_authority": false
+  },
+  "same_timestamp_policy": {
+    "simultaneous_memory_and_A": "ALLOWED_AND_RECORDED_WITHOUT_PRIORITY",
+    "simultaneous_A_and_B": "ALLOWED_AND_RECORDED_WITHOUT_PRIORITY",
+    "simultaneous_C_and_A": "ALLOWED_AND_RECORDED_WITHOUT_PRIORITY_IF_FROZEN_SIGNALS_SAY_SO",
+    "simultaneous_C_and_B": "EXPECTED_IMPOSSIBLE_UNDER_CURRENT_FROZEN_PHASE_INVARIANTS_BUT_NOT_ENCODED_AS_TRADING_RULE"
+  },
+  "observational_materialization_contract": {
+    "input": "governance/abc_lifecycle_state_machine_observational_trace_v1/decision_grid_trace.csv",
+    "input_role": "FROZEN_NON_ECONOMIC_DECISION_GRID_TRACE_ONLY",
+    "market_data_access": false,
+    "pnl_or_economic_columns_read": false,
+    "candidate_replay": false,
+    "portfolio_replay": false,
+    "new_thresholds": false,
+    "output_row_granularity": "ONE_ROW_PER_EXISTING_DECISION_GRID_ROW",
+    "required_derived_columns": [
+      "stalled_evidence_candidate",
+      "structural_break_evidence_candidate",
+      "volatility_damage_evidence_candidate",
+      "evidence_overlay_count",
+      "evidence_overlay_signature"
+    ],
+    "required_summaries": [
+      "OVERLAY_COUNTS_BY_YEAR_AND_BASE_STATE",
+      "OVERLAY_COOCCURRENCE_COUNTS",
+      "OVERLAY_SIGNATURE_COUNTS",
+      "LIFECYCLE_WITH_ANY_OVERLAY_COUNTS",
+      "EVENT_LOCALITY_AUDIT",
+      "NO_PERSISTENCE_AUDIT",
+      "SOURCE_SIGNAL_PARITY_AUDIT"
+    ]
+  },
+  "mandatory_invariants": [
+    {
+      "id": "INV_STALLED_EQUALS_C_IN_UNCONFIRMED",
+      "statement": "stalled_evidence_candidate iff C_signal and base_state UNCONFIRMED"
+    },
+    {
+      "id": "INV_STRUCTURAL_BREAK_EQUALS_A",
+      "statement": "structural_break_evidence_candidate iff A_signal"
+    },
+    {
+      "id": "INV_VOL_DAMAGE_EQUALS_B_IN_CONFIRMED",
+      "statement": "volatility_damage_evidence_candidate iff B_signal and base_state CONFIRMED"
+    },
+    {
+      "id": "INV_OVERLAYS_EVENT_LOCAL",
+      "statement": "No overlay carries forward to a later decision row unless its frozen source signal is true again on that row."
+    },
+    {
+      "id": "INV_BASE_STATE_UNCHANGED",
+      "statement": "Materialization must not mutate UNCONFIRMED/EARLY_PROGRESS/CONFIRMED base_state."
+    },
+    {
+      "id": "INV_ROW_COUNT_PARITY",
+      "statement": "Output decision-grid row count must equal frozen input trace row count exactly."
+    }
+  ],
+  "forbidden_actions": [
+    "NO_NEW_THRESHOLD",
+    "NO_PERSISTENCE_HORIZON",
+    "NO_OVERLAY_LATCH",
+    "NO_PRIORITY_ORDER",
+    "NO_STATE_TRANSITION_FROM_OVERLAY",
+    "NO_RUNTIME_STATE_MACHINE",
+    "NO_EXIT_ACTION_FROM_OVERLAY",
+    "NO_CANDIDATE_COMBINATION_REPLAY",
+    "NO_OR_AND_TRADING_LOGIC",
+    "NO_ADAPTIVE_LOGIC",
+    "NO_EXIT_ARBITER",
+    "NO_MARKET_DATA_ACCESS",
+    "NO_PNL_READ",
+    "NO_ECONOMIC_ADJUDICATION",
+    "NO_PAIR_YEAR_EVENT_IDENTITY_RUNTIME_RULE",
+    "NO_2024_ACCESS",
+    "NO_2025_ACCESS",
+    "NO_PRODUCTION_CHANGE"
+  ],
+  "post_materialization_gate": {
+    "next_if_valid": "ABC_LIFECYCLE_STATE_MACHINE_EVIDENCE_STATE_PREDICATE_MANDATORY_REVIEW_V1",
+    "review_scope": "Review whether event-local evidence overlays add interpretable lifecycle structure without inventing persistence or economic meaning. Any persistent state semantics, sequence logic, adaptive action, or exit behavior requires a later separately frozen protocol.",
+    "persistent_state_authorized_now": false,
+    "runtime_state_machine_authorized_now": false,
+    "adaptive_logic_authorized_now": false,
+    "exit_arbiter_authorized_now": false
+  }
+}

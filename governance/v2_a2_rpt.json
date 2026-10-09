@@ -1,0 +1,216 @@
+{
+  "authority_bindings": {
+    "data/research/rd04/kucoin-spot-usdt-adjudicated-v1/ams-rd04-d0c-kucoin-adjudicated-4h.parquet": "1C72416F889137B68FF48008C5760E809D0A94A5647569BAB631E96904CEBD72",
+    "governance/AKAH_BOT_EXIT_BRAIN_RESEARCH_DIRECTION_V1.json": "7CC2058A75C5B9F959E1176DD7B47E066C45A6BDF4B19278F339ED6BD97E20A5",
+    "governance/AKAH_BOT_V2_COHORT_OBSERVATION_REFERENCE_DIAGNOSTIC_PROTOCOL_V1.json": "6A64B7600261CC105064F250A3D5E6E794A90432C08C9218FC6A9A234B25BFD7",
+    "governance/AKAH_BOT_V2_PHASE_A_COHORT_COVERAGE_AUDIT_PROTOCOL_V1.json": "CF713ABE14F6B4085B95BEFE06A4508BF71BFD300BF6CEAC64ACDFEE1F7CACD4",
+    "governance/AKAH_BOT_V2_PHASE_B_OBSERVATION_OPPORTUNITY_PROTOCOL_V1.json": "FC805957ECC389EACA3DDD8F9F640F4960AB8DA027A6C2C5FC275F5619DB3DD4",
+    "governance/AKAH_BOT_V2_PHASE_C_TIMING_REFERENCE_DEPENDENCE_PROTOCOL_V1.json": "B6BA4548C7BD6E955682FAA00C58784317ED0F8CAD5AB3B486FCB6142C837C1A",
+    "governance/spec_exec_v1_input.json": "6F6A90B00C3F6B61A4D24D7A6F94A11703789AA4E8D82F9CD7A351D6CE5EF8E2",
+    "governance/spec_exec_v1_lifecycles.csv": "D7E12EBE33599F6F42030DFFC52FEA677B3990B8FB16B5C017915ADF30B502CF",
+    "governance/spec_exec_v1_result.json": "2518A9E9FE46CE8D2EDA97D594AAF0AE1EAB6ABF86B82206ED80C7E92A9F26F3",
+    "governance/spec_exec_v1_roster.csv": "4B1B594A3F26E5465F42A32997AFF44E055D57A794B350D55778E43DEB34C12B",
+    "governance/spec_exec_v1_rpt.json": "96D9005054E1BFA5F4C15F708B5628D0B7CF2316FA26B64ABC585EE99FCADFBA",
+    "governance/trigger_v2_shadow_parity_v1.json": "9572B41908809B26D8846484147C85FD3037CABFC6E8A8BAE47DAF3F1FF001D7",
+    "governance/trigger_v2_shadow_parity_v1_rows.csv": "47618557A5B55C1B3BE8FE57173B5B3C02BC89C271396C19A94B94979D54650C",
+    "governance/trigger_v2_shadow_parity_v1_rpt.json": "64D9B33E2A44999799DC45BCEC250D05373C670781240740869AF80AD83172BD",
+    "reports/research/ams-rd04-d5c1-labelled-pit-control-trades-v1.csv": "782CEA4D8037E6D2C72FBE7B37FF69F10E66DC728396E6B4B58C28559BEEB225"
+  },
+  "branch": "research/rd48-cross-venue-price-level-basis-direct-utility-v1",
+  "error": "NATIVE_TERMINAL_BOUNDARY_NOT_BOUND_BY_AUTHORIZED_INPUTS",
+  "error_type": "RuntimeError",
+  "event_type": "V2_PHASE_A_COHORT_COVERAGE_RECOVERY",
+  "evidence": [
+    {
+      "path": "governance/v2_a2_exec.py",
+      "sha256": "2024D8592843FAD8B7EE70E2D8EBB35994784E25076BECBE4D036E1B457DE83B"
+    },
+    {
+      "path": "tests/research/test_v2_phase_a_recovery.py",
+      "sha256": "7752FD8C456DA58148BF2A0ADE30D03E856C61785431AAFE1AE8D05ACAC03877"
+    },
+    {
+      "path": "governance/v2_a2_run.log",
+      "sha256": "9C1E78F3ACAA2B5283828B6F672151083B0724E474550340B04C34799BFC3BA3"
+    },
+    {
+      "path": "governance/v2_a2_boundary.json",
+      "sha256": "7E292FEF01930EFDA68D58883296C56EA3D995B29E1A9849894B8EB489196554"
+    },
+    {
+      "path": "governance/v2_a2_audit.csv",
+      "sha256": "611AB5185EF1425CA0101D12611B30938F830B9C5E975C1D6ABF68B629F43760"
+    },
+    {
+      "path": "governance/v2_a2_coverage.csv",
+      "sha256": "7FC6DEE1A0D4C224E01A8FDF575EAC024C73E28D565675F47CDD02ADFC47D22C"
+    },
+    {
+      "path": "governance/v2_a2_events.csv",
+      "sha256": "49EC61395988544E54A424120B3D5CC4161112A56D34A55911DC63041B51A7BC"
+    },
+    {
+      "path": "governance/v2_a2_reconcile.json",
+      "sha256": "0506256122DBDD193FF441011B3B50543DA77BF06E222DBD3FF8AEB7A66F64AF"
+    },
+    {
+      "path": "governance/v2_a2_schema.json",
+      "sha256": "5812ABDA91C55F6082DA80F89149154F9B5350464CBFAD11D9E521F06DE2F202"
+    }
+  ],
+  "firewall": {
+    "2023_new_raw_or_replay_accessed": false,
+    "2025_accessed": false,
+    "economic_test": false,
+    "native_replay_executed": false,
+    "outcome_fields_read": false,
+    "production_changed": false,
+    "source_mutation": true,
+    "mutation_scope": "Standalone governance audit executor and its synthetic tests only; no trading source or formula mutation",
+    "2024_accessed": false,
+    "2023_market_rows_read": false,
+    "push": false
+  },
+  "validation": {
+    "ruff": "PASS",
+    "pytest": "PASS",
+    "pytest_pass_count": 51,
+    "synthetic_only_tests": true,
+    "test_files": [
+      "tests/research/test_v2_phase_a_recovery.py",
+      "tests/research/test_rd27_observable_later_trigger_v2.py",
+      "tests/research/test_rd27_later_trigger_v2_shadow_replay.py"
+    ],
+    "initial_lint_findings_fixed_before_execution": "Seven E501 formatting issues and two B008 test-default issues; no research semantics changed",
+    "arrow_filter_type_compatibility": "PASS",
+    "arrow_open_type": "timestamp[us, tz=UTC]",
+    "arrow_close_type": "timestamp[ms, tz=UTC]",
+    "audit_rows": 153,
+    "historical_coverage_rows": 1386,
+    "historical_valid_coverage_rows": 1386,
+    "historical_memory_count": 25,
+    "historical_v2_count": 23,
+    "historical_reconstruction_time_mismatches": 0,
+    "primary_native_eligibility_certified": false
+  },
+  "failure_classification": "SCIENTIFIC_AUTHORITY_GATE_NOT_TECHNICAL_TIMEZONE_FAILURE",
+  "phase_b": "NOT_ADMITTED_NOT_EXECUTED",
+  "phase_c": "NOT_ADMITTED_NOT_EXECUTED",
+  "boundary_review": "governance/v2_a2_boundary.json",
+  "next_bottleneck": "CAUSAL_EXIT_BRAIN_V2_PHASE_A_NATIVE_TERMINAL_BOUNDARY_AUTHORITY_REVIEW_V1",
+  "north_star_effect": "Preserves causal validity; historical window parity is not native lifecycle authority.",
+  "objective": "Schema-aware timezone recovery and exact 153-identity Phase A coverage audit; fail closed on unresolved native lifecycle or cohort authority.",
+  "phase_a": {
+    "audited_eligible": null,
+    "audited_eligible_status": "NATIVE_BOUNDARY_UNCERTIFIED",
+    "audited_only_identities": [],
+    "canonical_roster": 153,
+    "exact_33_identity_reproduction": true,
+    "historical_coverage_eligible_identities": [
+      "TRADE-2346c45dc8c0d4207126",
+      "TRADE-28a111a97c496f50aa77",
+      "TRADE-29f635d5627ed7e4e1ef",
+      "TRADE-33b155edc1dd5b1f46fe",
+      "TRADE-40f7a4b136b0b65ddebf",
+      "TRADE-4f4cf053757e1d79d844",
+      "TRADE-51b766a6fda789aa749e",
+      "TRADE-525a6748f4d40e23094b",
+      "TRADE-53bd80f3ac2b48b16e3b",
+      "TRADE-607e948389968de962ac",
+      "TRADE-7973feeded4a17aa31f0",
+      "TRADE-97f1a796280602da35ee",
+      "TRADE-9a54a6bfd747dacaad5e",
+      "TRADE-a8166c232d36c988efdc",
+      "TRADE-adecdac4ce8522ace7d2",
+      "TRADE-c297468b80572a75b4c7",
+      "TRADE-c941579497432892cb94",
+      "TRADE-c976f0f780a1e7ead7bd",
+      "TRADE-cd2ed521f23a74ddabc9",
+      "TRADE-cd4796eda028d8091490",
+      "TRADE-ce4d071150e0a612be0c",
+      "TRADE-cf32df5763cfe6780d11",
+      "TRADE-d066b9ecda2f7a861ff3",
+      "TRADE-d268a6e000721d132e18",
+      "TRADE-d39ec2f204e85b07e45a",
+      "TRADE-db6336b05ed9ecf11fa8",
+      "TRADE-db856fb32e9fa6ea7e79",
+      "TRADE-ddea250cd84b3e1d2bbb",
+      "TRADE-e90ae7099f2cb957ca9e",
+      "TRADE-ec92bc6918c7216bf015",
+      "TRADE-f0dddc26306079812c05",
+      "TRADE-f748c8ff0c6d0f78c3ba",
+      "TRADE-fe6607614cf0d6659676"
+    ],
+    "historical_window_coverage_eligible": 33,
+    "identity_reproduction_scope": "PREVIOUS_HISTORICAL_WINDOW_COHORT_ONLY",
+    "no_native_close_inferred_from_max_hold": true,
+    "parity_memory_mismatch_count": 0,
+    "parity_v2_mismatch_count": 0,
+    "previous_eligible": 33,
+    "previous_memory": 25,
+    "previous_only_identities": [],
+    "previous_v2": 23,
+    "primary_exclusion_reason_counts": {
+      "OUTSIDE_AUTHORIZED_SCOPE": 120
+    },
+    "reconstruction_mismatches": [],
+    "source_years_returned": [
+      2022
+    ],
+    "unresolved_native_boundary_identities": [
+      "TRADE-2346c45dc8c0d4207126",
+      "TRADE-28a111a97c496f50aa77",
+      "TRADE-29f635d5627ed7e4e1ef",
+      "TRADE-33b155edc1dd5b1f46fe",
+      "TRADE-40f7a4b136b0b65ddebf",
+      "TRADE-4f4cf053757e1d79d844",
+      "TRADE-51b766a6fda789aa749e",
+      "TRADE-525a6748f4d40e23094b",
+      "TRADE-53bd80f3ac2b48b16e3b",
+      "TRADE-607e948389968de962ac",
+      "TRADE-7973feeded4a17aa31f0",
+      "TRADE-97f1a796280602da35ee",
+      "TRADE-9a54a6bfd747dacaad5e",
+      "TRADE-a8166c232d36c988efdc",
+      "TRADE-adecdac4ce8522ace7d2",
+      "TRADE-c297468b80572a75b4c7",
+      "TRADE-c941579497432892cb94",
+      "TRADE-c976f0f780a1e7ead7bd",
+      "TRADE-cd2ed521f23a74ddabc9",
+      "TRADE-cd4796eda028d8091490",
+      "TRADE-ce4d071150e0a612be0c",
+      "TRADE-cf32df5763cfe6780d11",
+      "TRADE-d066b9ecda2f7a861ff3",
+      "TRADE-d268a6e000721d132e18",
+      "TRADE-d39ec2f204e85b07e45a",
+      "TRADE-db6336b05ed9ecf11fa8",
+      "TRADE-db856fb32e9fa6ea7e79",
+      "TRADE-ddea250cd84b3e1d2bbb",
+      "TRADE-e90ae7099f2cb957ca9e",
+      "TRADE-ec92bc6918c7216bf015",
+      "TRADE-f0dddc26306079812c05",
+      "TRADE-f748c8ff0c6d0f78c3ba",
+      "TRADE-fe6607614cf0d6659676"
+    ]
+  },
+  "resolution_class": "NATIVE_TERMINAL_BOUNDARY_NOT_BOUND_BY_AUTHORIZED_INPUTS",
+  "state_updates": {
+    "economics_authorized": false,
+    "roadmap_position": "PHASE_A_FAIL_CLOSED_NATIVE_TERMINAL_BOUNDARY_UNCERTIFIED",
+    "v2_phase_a_timezone_filter_recovery": "PASS",
+    "v2_phase_a_canonical_roster_accounted": 153,
+    "v2_phase_a_historical_window_eligible": 33,
+    "v2_phase_a_exact_previous_identity_reproduction": true,
+    "v2_phase_a_audited_native_eligible": null,
+    "v2_phase_a_native_eligibility_certification": "BLOCKED_TERMINAL_AUTHORITY",
+    "v2_phase_a_audit": "FAIL_CLOSED",
+    "v2_phase_a_recovery_v2": "FAIL_CLOSED",
+    "v2_phase_b_admitted": false,
+    "v2_phase_c_admitted": false
+  },
+  "status": "FAIL_CLOSED",
+  "summary": "Timezone recovery PASS; 153 identities accounted, previous 33 identities exactly reproduced with 1386 valid bars, 25 Memory and 23 V2 times unchanged. Phase A FAIL_CLOSED: historical entry-plus-168h windows do not establish actual native terminal boundaries. Native eligibility remains uncertified; B/C not admitted.",
+  "task_id": "CAUSAL_EXIT_BRAIN_V2_PHASE_A_COHORT_COVERAGE_AUDIT_RECOVERY_V2",
+  "task_start_head": "6d464b2b9837f88acfadfe1f2629e669f4fa26ab",
+  "task_start_revision": 182
+}

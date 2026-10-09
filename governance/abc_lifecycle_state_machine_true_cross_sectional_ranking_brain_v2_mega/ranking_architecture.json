@@ -1,0 +1,27 @@
+{
+  "admission_gate": "EXACT_F10_GATE_FOR_ALL_VARIANTS",
+  "architecture_id": "TCSRB_V2_PAIRWISE_POSITIVE_FRONTIER",
+  "fusion": "within-hour-rank(PAIRWISE_ALL)+within-hour-rank(PAIRWISE_POSITIVE_FRONTIER)",
+  "fusion_weights": [
+    1.0,
+    1.0
+  ],
+  "heads": {
+    "PAIRWISE_ALL": {
+      "lambda": 10.0,
+      "objective": "weighted direct within-hour pairwise positive-margin ridge",
+      "pair_scope": "all non-tied within-hour pairs",
+      "weight": "abs(H0_i-H0_j), normalized to sum 1 within each hour"
+    },
+    "PAIRWISE_POSITIVE_FRONTIER": {
+      "lambda": 10.0,
+      "objective": "weighted direct within-hour pairwise positive-margin ridge",
+      "pair_scope": "only pairs with one H0>0 and the other H0<=0",
+      "weight": "abs(H0_i-H0_j), normalized to sum 1 within each hour"
+    }
+  },
+  "hyperparameter_search": false,
+  "model_zoo": false,
+  "schema_version": "akah-true-cross-sectional-ranking-brain-v2",
+  "zero_frontier_reason": "Economically natural sign boundary; no posthoc threshold selection"
+}

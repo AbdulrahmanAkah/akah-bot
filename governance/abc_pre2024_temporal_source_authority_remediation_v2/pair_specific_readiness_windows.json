@@ -1,0 +1,465 @@
+{
+  "schema_version": "abc-pair-specific-readiness-windows-v2",
+  "policy_correction": "Do not require every pair to be ATR/Donchian ready at Jan 1. The frozen expert protocol explicitly requires recording availability/readiness for later-listed/later-ready assets. A pair becomes evaluable only after causal indicator readiness and membership availability, subject to the 168h annual completion buffer.",
+  "year_summary": {
+    "2019": {
+      "membership_pair_count": 7,
+      "evaluable_pair_count": 7,
+      "not_evaluable_pair_count": 0
+    },
+    "2020": {
+      "membership_pair_count": 9,
+      "evaluable_pair_count": 9,
+      "not_evaluable_pair_count": 0
+    },
+    "2021": {
+      "membership_pair_count": 16,
+      "evaluable_pair_count": 16,
+      "not_evaluable_pair_count": 0
+    },
+    "2022": {
+      "membership_pair_count": 15,
+      "evaluable_pair_count": 49,
+      "not_evaluable_pair_count": 0,
+      "source": "REV278_PROVEN_SAFE_READINESS",
+      "source_sha256": "7F2AE63EDAD43980A03FF46D1DB4E4FE8D85890AF53E3E8E315716A619D037A5"
+    },
+    "2023": {
+      "membership_pair_count": 14,
+      "evaluable_pair_count": 53,
+      "not_evaluable_pair_count": 0,
+      "source": "REV278_PROVEN_SAFE_READINESS",
+      "source_sha256": "7F2AE63EDAD43980A03FF46D1DB4E4FE8D85890AF53E3E8E315716A619D037A5"
+    }
+  },
+  "per_pair_2019_2021": {
+    "ADA-USDT": {
+      "2020": {
+        "T0": "2019-07-04T12:00:00+00:00",
+        "first_ready": "2019-07-08T04:00:00+00:00",
+        "gap_count": 0,
+        "complete_4h": 3279,
+        "pre2019_bars": 0,
+        "first_membership_time": "2020-06-15T00:00:00+00:00",
+        "first_causal_abc_evaluable_time": "2020-06-15T00:00:00+00:00",
+        "annual_last_admissible_entry_strictly_before": "2020-12-25T00:00:00+00:00",
+        "evaluable_window_exists": true,
+        "readiness_policy": "PAIR_SPECIFIC_CAUSAL_AVAILABILITY_WINDOW_NOT_BLIND_JAN1_REQUIREMENT"
+      },
+      "2021": {
+        "T0": "2019-07-04T12:00:00+00:00",
+        "first_ready": "2019-07-08T04:00:00+00:00",
+        "gap_count": 0,
+        "complete_4h": 5469,
+        "pre2019_bars": 0,
+        "first_membership_time": "2021-01-01T00:00:00+00:00",
+        "first_causal_abc_evaluable_time": "2021-01-01T00:00:00+00:00",
+        "annual_last_admissible_entry_strictly_before": "2021-12-25T00:00:00+00:00",
+        "evaluable_window_exists": true,
+        "readiness_policy": "PAIR_SPECIFIC_CAUSAL_AVAILABILITY_WINDOW_NOT_BLIND_JAN1_REQUIREMENT"
+      }
+    },
+    "ATOM-USDT": {
+      "2020": {
+        "T0": "2019-05-24T12:00:00+00:00",
+        "first_ready": "2019-05-28T04:00:00+00:00",
+        "gap_count": 0,
+        "complete_4h": 3525,
+        "pre2019_bars": 0,
+        "first_membership_time": "2020-07-20T00:00:00+00:00",
+        "first_causal_abc_evaluable_time": "2020-07-20T00:00:00+00:00",
+        "annual_last_admissible_entry_strictly_before": "2020-12-25T00:00:00+00:00",
+        "evaluable_window_exists": true,
+        "readiness_policy": "PAIR_SPECIFIC_CAUSAL_AVAILABILITY_WINDOW_NOT_BLIND_JAN1_REQUIREMENT"
+      },
+      "2021": {
+        "T0": "2019-05-24T12:00:00+00:00",
+        "first_ready": "2019-05-28T04:00:00+00:00",
+        "gap_count": 0,
+        "complete_4h": 5715,
+        "pre2019_bars": 0,
+        "first_membership_time": "2021-09-27T00:00:00+00:00",
+        "first_causal_abc_evaluable_time": "2021-09-27T00:00:00+00:00",
+        "annual_last_admissible_entry_strictly_before": "2021-12-25T00:00:00+00:00",
+        "evaluable_window_exists": true,
+        "readiness_policy": "PAIR_SPECIFIC_CAUSAL_AVAILABILITY_WINDOW_NOT_BLIND_JAN1_REQUIREMENT"
+      }
+    },
+    "AVAX-USDT": {
+      "2021": {
+        "T0": "2021-03-05T12:00:00+00:00",
+        "first_ready": "2021-03-09T04:00:00+00:00",
+        "gap_count": 0,
+        "complete_4h": 1809,
+        "pre2019_bars": 0,
+        "first_membership_time": "2021-12-06T00:00:00+00:00",
+        "first_causal_abc_evaluable_time": "2021-12-06T00:00:00+00:00",
+        "annual_last_admissible_entry_strictly_before": "2021-12-25T00:00:00+00:00",
+        "evaluable_window_exists": true,
+        "readiness_policy": "PAIR_SPECIFIC_CAUSAL_AVAILABILITY_WINDOW_NOT_BLIND_JAN1_REQUIREMENT"
+      }
+    },
+    "BNB-USDT": {
+      "2021": {
+        "T0": "2019-06-19T12:00:00+00:00",
+        "first_ready": "2019-06-23T04:00:00+00:00",
+        "gap_count": 0,
+        "complete_4h": 5559,
+        "pre2019_bars": 0,
+        "first_membership_time": "2021-05-10T00:00:00+00:00",
+        "first_causal_abc_evaluable_time": "2021-05-10T00:00:00+00:00",
+        "annual_last_admissible_entry_strictly_before": "2021-12-25T00:00:00+00:00",
+        "evaluable_window_exists": true,
+        "readiness_policy": "PAIR_SPECIFIC_CAUSAL_AVAILABILITY_WINDOW_NOT_BLIND_JAN1_REQUIREMENT"
+      }
+    },
+    "BTC-USDT": {
+      "2019": {
+        "T0": "2019-01-01T04:00:00+00:00",
+        "first_ready": "2019-01-04T20:00:00+00:00",
+        "gap_count": 0,
+        "complete_4h": 2189,
+        "pre2019_bars": 0,
+        "first_membership_time": "2019-04-01T00:00:00+00:00",
+        "first_causal_abc_evaluable_time": "2019-04-01T00:00:00+00:00",
+        "annual_last_admissible_entry_strictly_before": "2019-12-25T00:00:00+00:00",
+        "evaluable_window_exists": true,
+        "readiness_policy": "PAIR_SPECIFIC_CAUSAL_AVAILABILITY_WINDOW_NOT_BLIND_JAN1_REQUIREMENT"
+      },
+      "2020": {
+        "T0": "2019-01-01T04:00:00+00:00",
+        "first_ready": "2019-01-04T20:00:00+00:00",
+        "gap_count": 0,
+        "complete_4h": 4385,
+        "pre2019_bars": 0,
+        "first_membership_time": "2020-01-01T00:00:00+00:00",
+        "first_causal_abc_evaluable_time": "2020-01-01T00:00:00+00:00",
+        "annual_last_admissible_entry_strictly_before": "2020-12-25T00:00:00+00:00",
+        "evaluable_window_exists": true,
+        "readiness_policy": "PAIR_SPECIFIC_CAUSAL_AVAILABILITY_WINDOW_NOT_BLIND_JAN1_REQUIREMENT"
+      },
+      "2021": {
+        "T0": "2019-01-01T04:00:00+00:00",
+        "first_ready": "2019-01-04T20:00:00+00:00",
+        "gap_count": 0,
+        "complete_4h": 6575,
+        "pre2019_bars": 0,
+        "first_membership_time": "2021-01-01T00:00:00+00:00",
+        "first_causal_abc_evaluable_time": "2021-01-01T00:00:00+00:00",
+        "annual_last_admissible_entry_strictly_before": "2021-12-25T00:00:00+00:00",
+        "evaluable_window_exists": true,
+        "readiness_policy": "PAIR_SPECIFIC_CAUSAL_AVAILABILITY_WINDOW_NOT_BLIND_JAN1_REQUIREMENT"
+      }
+    },
+    "DOGE-USDT": {
+      "2021": {
+        "T0": "2021-02-09T04:00:00+00:00",
+        "first_ready": "2021-02-12T20:00:00+00:00",
+        "gap_count": 0,
+        "complete_4h": 1955,
+        "pre2019_bars": 0,
+        "first_membership_time": "2021-05-17T00:00:00+00:00",
+        "first_causal_abc_evaluable_time": "2021-05-17T00:00:00+00:00",
+        "annual_last_admissible_entry_strictly_before": "2021-12-25T00:00:00+00:00",
+        "evaluable_window_exists": true,
+        "readiness_policy": "PAIR_SPECIFIC_CAUSAL_AVAILABILITY_WINDOW_NOT_BLIND_JAN1_REQUIREMENT"
+      }
+    },
+    "DOT-USDT": {
+      "2021": {
+        "T0": "2020-08-21T20:00:00+00:00",
+        "first_ready": "2020-08-25T12:00:00+00:00",
+        "gap_count": 0,
+        "complete_4h": 2983,
+        "pre2019_bars": 0,
+        "first_membership_time": "2021-08-16T00:00:00+00:00",
+        "first_causal_abc_evaluable_time": "2021-08-16T00:00:00+00:00",
+        "annual_last_admissible_entry_strictly_before": "2021-12-25T00:00:00+00:00",
+        "evaluable_window_exists": true,
+        "readiness_policy": "PAIR_SPECIFIC_CAUSAL_AVAILABILITY_WINDOW_NOT_BLIND_JAN1_REQUIREMENT"
+      }
+    },
+    "ETH-USDT": {
+      "2019": {
+        "T0": "2019-01-01T04:00:00+00:00",
+        "first_ready": "2019-01-04T20:00:00+00:00",
+        "gap_count": 0,
+        "complete_4h": 2189,
+        "pre2019_bars": 0,
+        "first_membership_time": "2019-04-01T00:00:00+00:00",
+        "first_causal_abc_evaluable_time": "2019-04-01T00:00:00+00:00",
+        "annual_last_admissible_entry_strictly_before": "2019-12-25T00:00:00+00:00",
+        "evaluable_window_exists": true,
+        "readiness_policy": "PAIR_SPECIFIC_CAUSAL_AVAILABILITY_WINDOW_NOT_BLIND_JAN1_REQUIREMENT"
+      },
+      "2020": {
+        "T0": "2019-01-01T04:00:00+00:00",
+        "first_ready": "2019-01-04T20:00:00+00:00",
+        "gap_count": 0,
+        "complete_4h": 4385,
+        "pre2019_bars": 0,
+        "first_membership_time": "2020-01-01T00:00:00+00:00",
+        "first_causal_abc_evaluable_time": "2020-01-01T00:00:00+00:00",
+        "annual_last_admissible_entry_strictly_before": "2020-12-25T00:00:00+00:00",
+        "evaluable_window_exists": true,
+        "readiness_policy": "PAIR_SPECIFIC_CAUSAL_AVAILABILITY_WINDOW_NOT_BLIND_JAN1_REQUIREMENT"
+      },
+      "2021": {
+        "T0": "2019-01-01T04:00:00+00:00",
+        "first_ready": "2019-01-04T20:00:00+00:00",
+        "gap_count": 0,
+        "complete_4h": 6575,
+        "pre2019_bars": 0,
+        "first_membership_time": "2021-01-01T00:00:00+00:00",
+        "first_causal_abc_evaluable_time": "2021-01-01T00:00:00+00:00",
+        "annual_last_admissible_entry_strictly_before": "2021-12-25T00:00:00+00:00",
+        "evaluable_window_exists": true,
+        "readiness_policy": "PAIR_SPECIFIC_CAUSAL_AVAILABILITY_WINDOW_NOT_BLIND_JAN1_REQUIREMENT"
+      }
+    },
+    "KCS-USDT": {
+      "2019": {
+        "T0": "2019-01-01T04:00:00+00:00",
+        "first_ready": "2019-01-04T20:00:00+00:00",
+        "gap_count": 0,
+        "complete_4h": 2189,
+        "pre2019_bars": 0,
+        "first_membership_time": "2019-04-01T00:00:00+00:00",
+        "first_causal_abc_evaluable_time": "2019-04-01T00:00:00+00:00",
+        "annual_last_admissible_entry_strictly_before": "2019-12-25T00:00:00+00:00",
+        "evaluable_window_exists": true,
+        "readiness_policy": "PAIR_SPECIFIC_CAUSAL_AVAILABILITY_WINDOW_NOT_BLIND_JAN1_REQUIREMENT"
+      },
+      "2020": {
+        "T0": "2019-01-01T04:00:00+00:00",
+        "first_ready": "2019-01-04T20:00:00+00:00",
+        "gap_count": 0,
+        "complete_4h": 4385,
+        "pre2019_bars": 0,
+        "first_membership_time": "2020-01-01T00:00:00+00:00",
+        "first_causal_abc_evaluable_time": "2020-01-01T00:00:00+00:00",
+        "annual_last_admissible_entry_strictly_before": "2020-12-25T00:00:00+00:00",
+        "evaluable_window_exists": true,
+        "readiness_policy": "PAIR_SPECIFIC_CAUSAL_AVAILABILITY_WINDOW_NOT_BLIND_JAN1_REQUIREMENT"
+      },
+      "2021": {
+        "T0": "2019-01-01T04:00:00+00:00",
+        "first_ready": "2019-01-04T20:00:00+00:00",
+        "gap_count": 0,
+        "complete_4h": 6575,
+        "pre2019_bars": 0,
+        "first_membership_time": "2021-01-01T00:00:00+00:00",
+        "first_causal_abc_evaluable_time": "2021-01-01T00:00:00+00:00",
+        "annual_last_admissible_entry_strictly_before": "2021-12-25T00:00:00+00:00",
+        "evaluable_window_exists": true,
+        "readiness_policy": "PAIR_SPECIFIC_CAUSAL_AVAILABILITY_WINDOW_NOT_BLIND_JAN1_REQUIREMENT"
+      }
+    },
+    "LTC-USDT": {
+      "2019": {
+        "T0": "2019-01-01T04:00:00+00:00",
+        "first_ready": "2019-01-04T20:00:00+00:00",
+        "gap_count": 0,
+        "complete_4h": 2189,
+        "pre2019_bars": 0,
+        "first_membership_time": "2019-04-01T00:00:00+00:00",
+        "first_causal_abc_evaluable_time": "2019-04-01T00:00:00+00:00",
+        "annual_last_admissible_entry_strictly_before": "2019-12-25T00:00:00+00:00",
+        "evaluable_window_exists": true,
+        "readiness_policy": "PAIR_SPECIFIC_CAUSAL_AVAILABILITY_WINDOW_NOT_BLIND_JAN1_REQUIREMENT"
+      },
+      "2020": {
+        "T0": "2019-01-01T04:00:00+00:00",
+        "first_ready": "2019-01-04T20:00:00+00:00",
+        "gap_count": 0,
+        "complete_4h": 4385,
+        "pre2019_bars": 0,
+        "first_membership_time": "2020-01-01T00:00:00+00:00",
+        "first_causal_abc_evaluable_time": "2020-01-01T00:00:00+00:00",
+        "annual_last_admissible_entry_strictly_before": "2020-12-25T00:00:00+00:00",
+        "evaluable_window_exists": true,
+        "readiness_policy": "PAIR_SPECIFIC_CAUSAL_AVAILABILITY_WINDOW_NOT_BLIND_JAN1_REQUIREMENT"
+      },
+      "2021": {
+        "T0": "2019-01-01T04:00:00+00:00",
+        "first_ready": "2019-01-04T20:00:00+00:00",
+        "gap_count": 0,
+        "complete_4h": 6575,
+        "pre2019_bars": 0,
+        "first_membership_time": "2021-01-01T00:00:00+00:00",
+        "first_causal_abc_evaluable_time": "2021-01-01T00:00:00+00:00",
+        "annual_last_admissible_entry_strictly_before": "2021-12-25T00:00:00+00:00",
+        "evaluable_window_exists": true,
+        "readiness_policy": "PAIR_SPECIFIC_CAUSAL_AVAILABILITY_WINDOW_NOT_BLIND_JAN1_REQUIREMENT"
+      }
+    },
+    "MANA-USDT": {
+      "2021": {
+        "T0": "2021-03-17T12:00:00+00:00",
+        "first_ready": "2021-03-21T04:00:00+00:00",
+        "gap_count": 0,
+        "complete_4h": 1737,
+        "pre2019_bars": 0,
+        "first_membership_time": "2021-11-29T00:00:00+00:00",
+        "first_causal_abc_evaluable_time": "2021-11-29T00:00:00+00:00",
+        "annual_last_admissible_entry_strictly_before": "2021-12-25T00:00:00+00:00",
+        "evaluable_window_exists": true,
+        "readiness_policy": "PAIR_SPECIFIC_CAUSAL_AVAILABILITY_WINDOW_NOT_BLIND_JAN1_REQUIREMENT"
+      }
+    },
+    "NEO-USDT": {
+      "2019": {
+        "T0": "2019-01-01T04:00:00+00:00",
+        "first_ready": "2019-01-04T20:00:00+00:00",
+        "gap_count": 0,
+        "complete_4h": 2189,
+        "pre2019_bars": 0,
+        "first_membership_time": "2019-04-01T00:00:00+00:00",
+        "first_causal_abc_evaluable_time": "2019-04-01T00:00:00+00:00",
+        "annual_last_admissible_entry_strictly_before": "2019-12-25T00:00:00+00:00",
+        "evaluable_window_exists": true,
+        "readiness_policy": "PAIR_SPECIFIC_CAUSAL_AVAILABILITY_WINDOW_NOT_BLIND_JAN1_REQUIREMENT"
+      }
+    },
+    "SAND-USDT": {
+      "2021": {
+        "T0": "2021-04-01T12:00:00+00:00",
+        "first_ready": "2021-04-05T04:00:00+00:00",
+        "gap_count": 0,
+        "complete_4h": 1647,
+        "pre2019_bars": 0,
+        "first_membership_time": "2021-11-29T00:00:00+00:00",
+        "first_causal_abc_evaluable_time": "2021-11-29T00:00:00+00:00",
+        "annual_last_admissible_entry_strictly_before": "2021-12-25T00:00:00+00:00",
+        "evaluable_window_exists": true,
+        "readiness_policy": "PAIR_SPECIFIC_CAUSAL_AVAILABILITY_WINDOW_NOT_BLIND_JAN1_REQUIREMENT"
+      }
+    },
+    "SHIB-USDT": {
+      "2021": {
+        "T0": "2021-05-10T08:00:00+00:00",
+        "first_ready": "2021-05-14T00:00:00+00:00",
+        "gap_count": 0,
+        "complete_4h": 1414,
+        "pre2019_bars": 0,
+        "first_membership_time": "2021-10-25T00:00:00+00:00",
+        "first_causal_abc_evaluable_time": "2021-10-25T00:00:00+00:00",
+        "annual_last_admissible_entry_strictly_before": "2021-12-25T00:00:00+00:00",
+        "evaluable_window_exists": true,
+        "readiness_policy": "PAIR_SPECIFIC_CAUSAL_AVAILABILITY_WINDOW_NOT_BLIND_JAN1_REQUIREMENT"
+      }
+    },
+    "TRX-USDT": {
+      "2019": {
+        "T0": "2019-01-01T04:00:00+00:00",
+        "first_ready": "2019-01-04T20:00:00+00:00",
+        "gap_count": 0,
+        "complete_4h": 2189,
+        "pre2019_bars": 0,
+        "first_membership_time": "2019-04-01T00:00:00+00:00",
+        "first_causal_abc_evaluable_time": "2019-04-01T00:00:00+00:00",
+        "annual_last_admissible_entry_strictly_before": "2019-12-25T00:00:00+00:00",
+        "evaluable_window_exists": true,
+        "readiness_policy": "PAIR_SPECIFIC_CAUSAL_AVAILABILITY_WINDOW_NOT_BLIND_JAN1_REQUIREMENT"
+      },
+      "2020": {
+        "T0": "2019-01-01T04:00:00+00:00",
+        "first_ready": "2019-01-04T20:00:00+00:00",
+        "gap_count": 0,
+        "complete_4h": 4385,
+        "pre2019_bars": 0,
+        "first_membership_time": "2020-01-01T00:00:00+00:00",
+        "first_causal_abc_evaluable_time": "2020-01-01T00:00:00+00:00",
+        "annual_last_admissible_entry_strictly_before": "2020-12-25T00:00:00+00:00",
+        "evaluable_window_exists": true,
+        "readiness_policy": "PAIR_SPECIFIC_CAUSAL_AVAILABILITY_WINDOW_NOT_BLIND_JAN1_REQUIREMENT"
+      },
+      "2021": {
+        "T0": "2019-01-01T04:00:00+00:00",
+        "first_ready": "2019-01-04T20:00:00+00:00",
+        "gap_count": 0,
+        "complete_4h": 6575,
+        "pre2019_bars": 0,
+        "first_membership_time": "2021-04-19T00:00:00+00:00",
+        "first_causal_abc_evaluable_time": "2021-04-19T00:00:00+00:00",
+        "annual_last_admissible_entry_strictly_before": "2021-12-25T00:00:00+00:00",
+        "evaluable_window_exists": true,
+        "readiness_policy": "PAIR_SPECIFIC_CAUSAL_AVAILABILITY_WINDOW_NOT_BLIND_JAN1_REQUIREMENT"
+      }
+    },
+    "VET-USDT": {
+      "2021": {
+        "T0": "2019-01-01T04:00:00+00:00",
+        "first_ready": "2019-01-04T20:00:00+00:00",
+        "gap_count": 0,
+        "complete_4h": 6575,
+        "pre2019_bars": 0,
+        "first_membership_time": "2021-04-19T00:00:00+00:00",
+        "first_causal_abc_evaluable_time": "2021-04-19T00:00:00+00:00",
+        "annual_last_admissible_entry_strictly_before": "2021-12-25T00:00:00+00:00",
+        "evaluable_window_exists": true,
+        "readiness_policy": "PAIR_SPECIFIC_CAUSAL_AVAILABILITY_WINDOW_NOT_BLIND_JAN1_REQUIREMENT"
+      }
+    },
+    "XRP-USDT": {
+      "2019": {
+        "T0": "2019-01-01T04:00:00+00:00",
+        "first_ready": "2019-01-04T20:00:00+00:00",
+        "gap_count": 0,
+        "complete_4h": 2189,
+        "pre2019_bars": 0,
+        "first_membership_time": "2019-04-01T00:00:00+00:00",
+        "first_causal_abc_evaluable_time": "2019-04-01T00:00:00+00:00",
+        "annual_last_admissible_entry_strictly_before": "2019-12-25T00:00:00+00:00",
+        "evaluable_window_exists": true,
+        "readiness_policy": "PAIR_SPECIFIC_CAUSAL_AVAILABILITY_WINDOW_NOT_BLIND_JAN1_REQUIREMENT"
+      },
+      "2020": {
+        "T0": "2019-01-01T04:00:00+00:00",
+        "first_ready": "2019-01-04T20:00:00+00:00",
+        "gap_count": 0,
+        "complete_4h": 4385,
+        "pre2019_bars": 0,
+        "first_membership_time": "2020-01-01T00:00:00+00:00",
+        "first_causal_abc_evaluable_time": "2020-01-01T00:00:00+00:00",
+        "annual_last_admissible_entry_strictly_before": "2020-12-25T00:00:00+00:00",
+        "evaluable_window_exists": true,
+        "readiness_policy": "PAIR_SPECIFIC_CAUSAL_AVAILABILITY_WINDOW_NOT_BLIND_JAN1_REQUIREMENT"
+      },
+      "2021": {
+        "T0": "2019-01-01T04:00:00+00:00",
+        "first_ready": "2019-01-04T20:00:00+00:00",
+        "gap_count": 0,
+        "complete_4h": 6575,
+        "pre2019_bars": 0,
+        "first_membership_time": "2021-01-01T00:00:00+00:00",
+        "first_causal_abc_evaluable_time": "2021-01-01T00:00:00+00:00",
+        "annual_last_admissible_entry_strictly_before": "2021-12-25T00:00:00+00:00",
+        "evaluable_window_exists": true,
+        "readiness_policy": "PAIR_SPECIFIC_CAUSAL_AVAILABILITY_WINDOW_NOT_BLIND_JAN1_REQUIREMENT"
+      }
+    },
+    "XTZ-USDT": {
+      "2020": {
+        "T0": "2019-06-28T12:00:00+00:00",
+        "first_ready": "2019-07-02T04:00:00+00:00",
+        "gap_count": 0,
+        "complete_4h": 3315,
+        "pre2019_bars": 0,
+        "first_membership_time": "2020-03-23T00:00:00+00:00",
+        "first_causal_abc_evaluable_time": "2020-03-23T00:00:00+00:00",
+        "annual_last_admissible_entry_strictly_before": "2020-12-25T00:00:00+00:00",
+        "evaluable_window_exists": true,
+        "readiness_policy": "PAIR_SPECIFIC_CAUSAL_AVAILABILITY_WINDOW_NOT_BLIND_JAN1_REQUIREMENT"
+      }
+    }
+  },
+  "2022_2023_readiness_authority": {
+    "path": "governance/abc_pre2024_market_source_authority_and_max_hold_remediation_v1/pair_readiness_recomputed.json",
+    "sha256": "7F2AE63EDAD43980A03FF46D1DB4E4FE8D85890AF53E3E8E315716A619D037A5"
+  },
+  "native_state_engine_warmup_authority_proven": true,
+  "max_hold_168h_proven": true,
+  "blockers": [],
+  "classification": "READY"
+}

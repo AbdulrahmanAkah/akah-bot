@@ -1,0 +1,52 @@
+{
+  "2024_access": false,
+  "candidate_count": 20,
+  "candidate_ids": [
+    "F00_TREND_REF",
+    "F01_TREND_D25",
+    "F02_TREND_D50",
+    "F03_TREND_D100",
+    "F04_TREND_TAIL50",
+    "F05_TREND_D50_TAIL50",
+    "F06_TREND_MARKET50",
+    "F07_TREND_D50_MARKET50",
+    "F08_TREND_TAIL50_MARKET25",
+    "F09_TREND_D50_TAIL50_MARKET25",
+    "F10_RANK_2T_ADX",
+    "F11_RANK_2T_SAFE",
+    "F12_RANK_2T_TAIL",
+    "F13_RANK_2T_MARKET",
+    "F14_RANK_2T_SAFE_TAIL",
+    "F15_RANK_2T_ADX_SAFE",
+    "F16_RANK_2T_ADX_TAIL",
+    "F17_RANK_2T_SAFE_TAIL_MARKET",
+    "F18_RANK_2T_ADX_SAFE_TAIL",
+    "F19_RANK_2T_ADX_SAFE_TAIL_MARKET"
+  ],
+  "cost_multipliers": [
+    1.0,
+    2.0
+  ],
+  "discovery_only": true,
+  "frozen_h0": true,
+  "governors": [
+    "BINARY_VOL",
+    "BINARY_NO_VOL"
+  ],
+  "hard_cutoff_exclusive": "2024-01-01T00:00:00Z",
+  "memory_policy": {
+    "all_candidate_event_cache": false,
+    "all_pair_dataframe_dictionary": false,
+    "candidate_event_caches_resident_max": 1,
+    "candidate_scores": "MATERIALIZE_ONE_AT_A_TIME",
+    "large_run_outputs": "STREAM_TO_GZIP_PER_RUN",
+    "prediction_columns": "FOCUSED_USECOLS_ONLY"
+  },
+  "new_feature_search": false,
+  "new_model_refit": false,
+  "portfolio_runs": 80,
+  "posthoc_certification": false,
+  "reference_parity_required": true,
+  "reuse_rev731_oot_predictions": true,
+  "schema_version": "akah-trend-alpha-risk-harvesting-factorial-protocol-v1r1-bounded-memory"
+}

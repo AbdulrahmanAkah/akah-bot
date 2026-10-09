@@ -1,0 +1,60 @@
+{
+  "schema_version": "akah-v2-phase-a-native-boundary-certification-gap-v1",
+  "scope": "Phase A certification gate only; Phase B was not admitted or executed",
+  "finding": "HISTORICAL_WINDOW_REPRODUCED_NATIVE_LIFECYCLE_BOUNDARY_UNCERTIFIED",
+  "historical_window_authority": {
+    "path": "governance/spec_exec_v1_input.json",
+    "sha256": "6F6A90B00C3F6B61A4D24D7A6F94A11703789AA4E8D82F9CD7A351D6CE5EF8E2",
+    "json_path": "$.observation_censoring_convention",
+    "value": "ENTRY_PLUS_NATIVE_RD27_MAX_HOLD_HOURS",
+    "hours_json_path": "$.native_rd27_max_hold_hours",
+    "hours_value": 168,
+    "native_terminal_event_claim": false
+  },
+  "runtime_source_review": [
+    {
+      "path": "src/spotbot/research/rd27_lifecycle_replay.py",
+      "sha256": "E3944A4655DDDF21C394FE1DB541F2645F529C00BD8390B22D652BD8EF5BBF83",
+      "scope": "replay_lifecycle_policy",
+      "observe_lines": [444, 447],
+      "close_notification_lines": [[517, 520], [702, 705]],
+      "native_position_deletion_lines": [521, 706],
+      "finding": "Source exposes a runtime observation-before-close ordering, but is not an execution-event artifact for the 33 canonical identities. Native policy can terminate before the max-hold ceiling."
+    },
+    {
+      "path": "src/spotbot/research/rd27_later_trigger_v2_native_hook.py",
+      "sha256": "E149C5C354B08801920CA87F61F397C9C7969EA7E6BE7C081AFF865CF9168EFD",
+      "scope": "NativeV2ShadowHook.close_position / diagnostics",
+      "finding": "The hook accepts closed_at and archives replay results in memory; aggregate diagnostics do not supply SHA-bound per-trade native terminal records or runtime sequence indices. Code availability is not proof that this cohort was observed through actual native closes."
+    }
+  ],
+  "hook_validation_authority": {
+    "path": "governance/trigger_v2_native_hook_recovery_v3.json",
+    "sha256": "EBC8AEC479D3EF64512C7C52ACD8CC412376FE624E61E9B7F08EFAEBE216CFE8",
+    "json_path": "$.firewall.real_market_replay",
+    "value": false,
+    "interpretation": "Native-hook synthetic parity does not establish actual close events for the historical cohort."
+  },
+  "controlling_gate": {
+    "path": "governance/AKAH_BOT_V2_PHASE_A_COHORT_COVERAGE_AUDIT_PROTOCOL_V1.json",
+    "json_path": "$.fail_or_stop_conditions[2]",
+    "value": "Native terminal boundary required for analysis but unavailable under current authorization.",
+    "pass_criterion_json_path": "$.pass_criteria[5]",
+    "pass_criterion_value": "Lifecycle terminal ordering that affects the denominator is either resolved or explicitly blocks certification."
+  },
+  "affected_identity_count": 33,
+  "affected_identities_reference": "governance/v2_a2_reconcile.json#unresolved_native_boundary_identities",
+  "first_missing_binding": "Authorized per-canonical-lifecycle native terminal event (or verifiable still-open-through boundary), with immutable execution identity, information-available time and runtime order.",
+  "global_repository_absence_claimed": false,
+  "phase_b_terminal_authority_search_performed": false,
+  "outcome_exit_time_read": false,
+  "max_hold_substituted_for_native_close": false,
+  "historical_window_events_are_primary_native_events": false,
+  "partial_output_limitations": [
+    "All 153 identities are accounted for, and all 1386 expected bars for the prior 33 have valid coverage under the old fixed-window definition.",
+    "The event ledger contains 1386 completed-bar evaluations, 25 first-memory events and 23 first-V2 events scoped explicitly to historical windows, not certified native lifecycles.",
+    "The partial event ledger has no ENTRY, NATIVE_CLOSE or COVERAGE_LOSS records; it is not a complete primary-study event stream.",
+    "No native incidence, opportunity, competing-risk or reference-age inference is authorized from these partial outputs.",
+    "Phase B and C were not executed. Unknown native eligibility is null, not zero, and the historical count of 33 is not substituted for it."
+  ]
+}

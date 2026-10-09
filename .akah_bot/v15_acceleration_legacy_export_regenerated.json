@@ -1,0 +1,708 @@
+{
+  "FS_CLASSICAL_FULL_LONG": {
+    "graph": {
+      "config_sha256": "C93A65888AE1110874D47FABA1EBB2BFEF9F46CEED8E2F1EE68D4ED1337F44BC",
+      "receipts": [
+        {
+          "available_at": "2023-01-01T01:00:00+00:00",
+          "checkpoint": "2023-01-01T01:00:00+00:00",
+          "config_sha256": "C93A65888AE1110874D47FABA1EBB2BFEF9F46CEED8E2F1EE68D4ED1337F44BC",
+          "kind": "SOURCE_EVIDENCE",
+          "parents": [],
+          "payload_json": "{\"dow\":\"DowPermission(direction='UP', complete=True, members_sha256='ec2f5c87cdadffac7fbc9b2db28cc56017c6616d8834f58782b2f8f1f8cb4c69', available_at=datetime.datetime(2023, 1, 1, 1, 0, tzinfo=datetime.timezone.utc), valid_until=datetime.datetime(2023, 1, 1, 2, 0, tzinfo=datetime.timezone.utc), reason='COMPLETE_FRAME')\",\"required_evidence_ids\":[],\"source_emission\":\"61A23A577DA19D6FE872C7DA78A09425FC94A4EC0049FE1210276FA5A318A1D9\",\"source_issue_sha\":\"41da1012e8e990ce602ca2a722fb6a0e64dc602c04a9307aaf5f3124c60d2311\",\"source_sha\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\"}",
+          "payload_sha256": "6d0f5aace794305fa750528222e4dcc95e7919e709d40432c94cf5a7d6e1006c",
+          "receipt_id": "57e1e7ec89e611d43de1896a24616cc3aa1575a1e9b43336d154ea62c12cedd0",
+          "source_sha256": "626B0CD628E3642490C04B1247F85FA643F7E8D1D20B1F23D63CD576DBCA1C68"
+        },
+        {
+          "available_at": "2023-01-01T01:00:00+00:00",
+          "checkpoint": "2023-01-01T01:00:00+00:00",
+          "config_sha256": "C93A65888AE1110874D47FABA1EBB2BFEF9F46CEED8E2F1EE68D4ED1337F44BC",
+          "kind": "SEMANTIC_PRODUCER",
+          "parents": [
+            "57e1e7ec89e611d43de1896a24616cc3aa1575a1e9b43336d154ea62c12cedd0"
+          ],
+          "payload_json": "{\"grammar\":\"FS_CLASSICAL_FULL_LONG\",\"structure\":\"s\"}",
+          "payload_sha256": "0d9408dd14f64e8aae73cdbca78e0cb9382dbbe9abd8c24ff60f129734a71afc",
+          "receipt_id": "cdd7a81f1ff39799bc6a17abfff04fd505b983760e92abb56650d81980ce9796",
+          "source_sha256": "626B0CD628E3642490C04B1247F85FA643F7E8D1D20B1F23D63CD576DBCA1C68"
+        },
+        {
+          "available_at": "2023-01-01T01:00:00+00:00",
+          "checkpoint": "2023-01-01T01:00:00+00:00",
+          "config_sha256": "C93A65888AE1110874D47FABA1EBB2BFEF9F46CEED8E2F1EE68D4ED1337F44BC",
+          "kind": "EMISSION_SEAL",
+          "parents": [
+            "cdd7a81f1ff39799bc6a17abfff04fd505b983760e92abb56650d81980ce9796"
+          ],
+          "payload_json": "{\"issue_sha\":\"41da1012e8e990ce602ca2a722fb6a0e64dc602c04a9307aaf5f3124c60d2311\"}",
+          "payload_sha256": "c8437c6cb448f059f063f95b165b39686db27a1ce76b64226f4518c8b618df70",
+          "receipt_id": "d901da04abf23030011b03b64e6c6edb5c1dd684d4e298cb1c0af82076ac3c85",
+          "source_sha256": "626B0CD628E3642490C04B1247F85FA643F7E8D1D20B1F23D63CD576DBCA1C68"
+        },
+        {
+          "available_at": "2023-01-01T01:00:00+00:00",
+          "checkpoint": "2023-01-01T01:00:00+00:00",
+          "config_sha256": "C93A65888AE1110874D47FABA1EBB2BFEF9F46CEED8E2F1EE68D4ED1337F44BC",
+          "kind": "BOUND_ADMISSION_REQUEST",
+          "parents": [
+            "d901da04abf23030011b03b64e6c6edb5c1dd684d4e298cb1c0af82076ac3c85"
+          ],
+          "payload_json": "{\"binding\":\"0989ce1d840e8e63187f7d0a7f901383a6dd31f59ffef31368012fcb797d96f6\",\"identity\":\"6e0eb5faedbfa6faf7d9805bc0dd30167ed0280f97ce7e0cd79f08e6a789810d\"}",
+          "payload_sha256": "09b8ebe87715f147c46a0a090d5db206df22512c02608d660bf9eeddc21d6517",
+          "receipt_id": "23f1028358bba11981c5c3c0d3ae7f7f5129135a103a8016755e8150e40cfb4f",
+          "source_sha256": "626B0CD628E3642490C04B1247F85FA643F7E8D1D20B1F23D63CD576DBCA1C68"
+        },
+        {
+          "available_at": "2023-01-01T01:00:00+00:00",
+          "checkpoint": "2023-01-01T01:00:00+00:00",
+          "config_sha256": "C93A65888AE1110874D47FABA1EBB2BFEF9F46CEED8E2F1EE68D4ED1337F44BC",
+          "kind": "SELECTOR_ADMISSION",
+          "parents": [
+            "23f1028358bba11981c5c3c0d3ae7f7f5129135a103a8016755e8150e40cfb4f"
+          ],
+          "payload_json": "{\"binding_sha\":\"0989ce1d840e8e63187f7d0a7f901383a6dd31f59ffef31368012fcb797d96f6\",\"grammar\":\"FS_CLASSICAL_FULL_LONG\",\"identity\":\"6e0eb5faedbfa6faf7d9805bc0dd30167ed0280f97ce7e0cd79f08e6a789810d\",\"mode\":\"ACTUAL_SELECTED_KERNEL_ATTEMPT_NOT_PREVIEW\",\"selected\":true,\"selector\":\"Inherited feasibility/ADD priority/FIFO/capacity/digest\"}",
+          "payload_sha256": "ed9e3e12af69e4a7bafb4531ea9e42e76b29debb85a6d878d69252a1e93d3cb3",
+          "receipt_id": "19b3ee9dea8fb848f028c64b67e395a6e1aada79654b56cfb39729b3c6113a16",
+          "source_sha256": "626B0CD628E3642490C04B1247F85FA643F7E8D1D20B1F23D63CD576DBCA1C68"
+        },
+        {
+          "available_at": "2023-01-01T01:00:00+00:00",
+          "checkpoint": "2023-01-01T01:00:00+00:00",
+          "config_sha256": "C93A65888AE1110874D47FABA1EBB2BFEF9F46CEED8E2F1EE68D4ED1337F44BC",
+          "kind": "EXECUTION_FILL",
+          "parents": [
+            "19b3ee9dea8fb848f028c64b67e395a6e1aada79654b56cfb39729b3c6113a16"
+          ],
+          "payload_json": "{\"campaign_id\":\"6e0eb5faedbfa6faf7d9805bc0dd30167ed0280f97ce7e0cd79f08e6a789810d\",\"cash_delta\":-9547.619047619048,\"execution_phase\":\"OPEN\",\"fee\":23.809523809523814,\"identity\":\"6e0eb5faedbfa6faf7d9805bc0dd30167ed0280f97ce7e0cd79f08e6a789810d\",\"pair\":\"X-USDT\",\"price\":105,\"qty\":90.702947845805,\"reason\":\"ENTRY\",\"side\":\"BUY\",\"time\":\"2023-01-01 01:00:00+00:00\"}",
+          "payload_sha256": "d95d323b42d9c9f24b0e580ba350d911623e372a52e8a79cb0b7695c22a17121",
+          "receipt_id": "08fc393249b42b379cac896ba57f2df38b508923c6a1ade56f398056770d7831",
+          "source_sha256": "626B0CD628E3642490C04B1247F85FA643F7E8D1D20B1F23D63CD576DBCA1C68"
+        },
+        {
+          "available_at": "2023-01-01T02:00:00+00:00",
+          "checkpoint": "2023-01-01T02:00:00+00:00",
+          "config_sha256": "C93A65888AE1110874D47FABA1EBB2BFEF9F46CEED8E2F1EE68D4ED1337F44BC",
+          "kind": "OWNER_UPDATE",
+          "parents": [
+            "08fc393249b42b379cac896ba57f2df38b508923c6a1ade56f398056770d7831"
+          ],
+          "payload_json": "{\"binding_sha\":\"0989ce1d840e8e63187f7d0a7f901383a6dd31f59ffef31368012fcb797d96f6\",\"completed_owner_update\":false,\"identity\":\"6e0eb5faedbfa6faf7d9805bc0dd30167ed0280f97ce7e0cd79f08e6a789810d\",\"owner_checked\":true,\"policy\":\"NO_INVENTED_OWNER_BAR;HOURLY_PROTECTION_REMAINS_ACTIVE\"}",
+          "payload_sha256": "6a728cd3cbe7c732a82fa4b2afeb379261d06bbbc3e4fbbf1d29c3e414c3c585",
+          "receipt_id": "452619ba002ab146acafb5e265ad455fd1c170bdf7330acb2ef88d8d47b97108",
+          "source_sha256": "626B0CD628E3642490C04B1247F85FA643F7E8D1D20B1F23D63CD576DBCA1C68"
+        },
+        {
+          "available_at": "2023-01-01T02:00:00+00:00",
+          "checkpoint": "2023-01-01T02:00:00+00:00",
+          "config_sha256": "C93A65888AE1110874D47FABA1EBB2BFEF9F46CEED8E2F1EE68D4ED1337F44BC",
+          "kind": "LIFECYCLE_EXECUTION",
+          "parents": [
+            "452619ba002ab146acafb5e265ad455fd1c170bdf7330acb2ef88d8d47b97108"
+          ],
+          "payload_json": "{\"campaign_id\":\"6e0eb5faedbfa6faf7d9805bc0dd30167ed0280f97ce7e0cd79f08e6a789810d\",\"cash_delta\":9047.619047619048,\"execution_phase\":\"INTRABAR_OR_COMPLETED_CLOSE\",\"fee\":22.67573696145125,\"identity\":\"6e0eb5faedbfa6faf7d9805bc0dd30167ed0280f97ce7e0cd79f08e6a789810d\",\"pair\":\"X-USDT\",\"price\":100.0,\"qty\":90.702947845805,\"reason\":\"HARD_STRUCTURAL_STOP\",\"side\":\"SELL\",\"time\":\"2023-01-01 02:00:00+00:00\"}",
+          "payload_sha256": "cc937f62b44b2a93ffca3de93d9421eb3c381d8dcc9495fe1d090ed7ddf34e5e",
+          "receipt_id": "080f0ae8143629b277e099c90f5131de88caa0061937b6ff99b5f6588b5506e6",
+          "source_sha256": "626B0CD628E3642490C04B1247F85FA643F7E8D1D20B1F23D63CD576DBCA1C68"
+        },
+        {
+          "available_at": "2023-01-01T02:00:00+00:00",
+          "checkpoint": "2023-01-01T02:00:00+00:00",
+          "config_sha256": "C93A65888AE1110874D47FABA1EBB2BFEF9F46CEED8E2F1EE68D4ED1337F44BC",
+          "kind": "ACCOUNTING_OUTPUT",
+          "parents": [
+            "080f0ae8143629b277e099c90f5131de88caa0061937b6ff99b5f6588b5506e6"
+          ],
+          "payload_json": "{\"campaigns_sha\":\"7c65e7a09a10937727715b6063aad53fbd4da2eeddbcc8a332a3f91c70167649\",\"cash\":99500.0,\"disposition\":\"SYNTHETIC_MECHANICS_ONLY\",\"fills_sha\":\"2b6f81aacd9f68e6637dae44e522b132fe0548cc50fa7a278c3ba017c7ecf8c2\",\"marks_sha\":\"8ede21b744622af23fc0622bdceeb2e0db99693bef7516a3b195c3f2a299f06b\"}",
+          "payload_sha256": "faaa106771250abf6e72612debca5829f6b401864ccddca504c858932ea294d0",
+          "receipt_id": "aee979c33603b90576d414025fa837bb543c5a1b2c37374acf20bbed8e4b3ae1",
+          "source_sha256": "626B0CD628E3642490C04B1247F85FA643F7E8D1D20B1F23D63CD576DBCA1C68"
+        }
+      ],
+      "source_sha256": "626B0CD628E3642490C04B1247F85FA643F7E8D1D20B1F23D63CD576DBCA1C68",
+      "terminated": []
+    },
+    "terminal_receipt": "aee979c33603b90576d414025fa837bb543c5a1b2c37374acf20bbed8e4b3ae1"
+  },
+  "FS_ICT_SESSION_OWNER_V8": {
+    "graph": {
+      "config_sha256": "C93A65888AE1110874D47FABA1EBB2BFEF9F46CEED8E2F1EE68D4ED1337F44BC",
+      "receipts": [
+        {
+          "available_at": "2023-01-01T05:00:00+00:00",
+          "checkpoint": "2023-01-01T05:00:00+00:00",
+          "config_sha256": "C93A65888AE1110874D47FABA1EBB2BFEF9F46CEED8E2F1EE68D4ED1337F44BC",
+          "kind": "SOURCE_EVIDENCE",
+          "parents": [],
+          "payload_json": "{\"dow\":\"DowPermission(direction='UP', complete=True, members_sha256='ec2f5c87cdadffac7fbc9b2db28cc56017c6616d8834f58782b2f8f1f8cb4c69', available_at=datetime.datetime(2023, 1, 1, 5, 0, tzinfo=datetime.timezone.utc), valid_until=datetime.datetime(2023, 1, 1, 6, 0, tzinfo=datetime.timezone.utc), reason='COMPLETE_FRAME')\",\"required_evidence_ids\":[],\"source_emission\":\"7D329355F0471394A646E025663E8D2A6DC269A616C8075F66991D4BF0A960E2\",\"source_issue_sha\":\"8c1480140c2aee7a2fbcc3ad6858b5a46f6f54a0b51736263af80368a197d7b9\",\"source_sha\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\"}",
+          "payload_sha256": "4655207265017fb4564765440cd53d7993ed46d7d4215a520874bb0ff3aef210",
+          "receipt_id": "8029bb8aaee796cb040af355e4415ed4882e3b31d3f1ad4f56b35c4ccc49a54b",
+          "source_sha256": "626B0CD628E3642490C04B1247F85FA643F7E8D1D20B1F23D63CD576DBCA1C68"
+        },
+        {
+          "available_at": "2023-01-01T05:00:00+00:00",
+          "checkpoint": "2023-01-01T05:00:00+00:00",
+          "config_sha256": "C93A65888AE1110874D47FABA1EBB2BFEF9F46CEED8E2F1EE68D4ED1337F44BC",
+          "kind": "SEMANTIC_PRODUCER",
+          "parents": [
+            "8029bb8aaee796cb040af355e4415ed4882e3b31d3f1ad4f56b35c4ccc49a54b"
+          ],
+          "payload_json": "{\"grammar\":\"FS_ICT_SESSION_OWNER_V8\",\"structure\":\"s\"}",
+          "payload_sha256": "c6485ad192db3ecd651d3e0d36666ad2f4f38217ca49f89d015ce87f4f56ea0b",
+          "receipt_id": "281879f3802c3437e539c1e9ade50f4506bc3f247618608f7d741b0944242b25",
+          "source_sha256": "626B0CD628E3642490C04B1247F85FA643F7E8D1D20B1F23D63CD576DBCA1C68"
+        },
+        {
+          "available_at": "2023-01-01T05:00:00+00:00",
+          "checkpoint": "2023-01-01T05:00:00+00:00",
+          "config_sha256": "C93A65888AE1110874D47FABA1EBB2BFEF9F46CEED8E2F1EE68D4ED1337F44BC",
+          "kind": "EMISSION_SEAL",
+          "parents": [
+            "281879f3802c3437e539c1e9ade50f4506bc3f247618608f7d741b0944242b25"
+          ],
+          "payload_json": "{\"issue_sha\":\"8c1480140c2aee7a2fbcc3ad6858b5a46f6f54a0b51736263af80368a197d7b9\"}",
+          "payload_sha256": "033cd9edb6075f39e1f376d0ff325d8b66d7adf6c336befaea3dda8fe1f63f15",
+          "receipt_id": "0a58e7106e81c33c1ba725a4ddba192612669a376d24bc78fd1c5eb0d16ae17f",
+          "source_sha256": "626B0CD628E3642490C04B1247F85FA643F7E8D1D20B1F23D63CD576DBCA1C68"
+        },
+        {
+          "available_at": "2023-01-01T05:00:00+00:00",
+          "checkpoint": "2023-01-01T05:00:00+00:00",
+          "config_sha256": "C93A65888AE1110874D47FABA1EBB2BFEF9F46CEED8E2F1EE68D4ED1337F44BC",
+          "kind": "BOUND_ADMISSION_REQUEST",
+          "parents": [
+            "0a58e7106e81c33c1ba725a4ddba192612669a376d24bc78fd1c5eb0d16ae17f"
+          ],
+          "payload_json": "{\"binding\":\"a43eb6e47e537bdbd1c1cfb45e857cd475ba90df69fa919f7f352366ebdb3cec\",\"identity\":\"4f0b342c0a8f19271c9197db8485d3f4268c03c7e80f6b7f98831ebb64a43c34\"}",
+          "payload_sha256": "cb3b7b786fed1604438af122cd36ac697fda0c82b89832f09fa9b1876c3c9276",
+          "receipt_id": "473c3cdeebe55726853fc4467150df3a57fe3fe22f3930f15608f9f9cc702781",
+          "source_sha256": "626B0CD628E3642490C04B1247F85FA643F7E8D1D20B1F23D63CD576DBCA1C68"
+        },
+        {
+          "available_at": "2023-01-01T05:00:00+00:00",
+          "checkpoint": "2023-01-01T05:00:00+00:00",
+          "config_sha256": "C93A65888AE1110874D47FABA1EBB2BFEF9F46CEED8E2F1EE68D4ED1337F44BC",
+          "kind": "SELECTOR_ADMISSION",
+          "parents": [
+            "473c3cdeebe55726853fc4467150df3a57fe3fe22f3930f15608f9f9cc702781"
+          ],
+          "payload_json": "{\"binding_sha\":\"a43eb6e47e537bdbd1c1cfb45e857cd475ba90df69fa919f7f352366ebdb3cec\",\"grammar\":\"FS_ICT_SESSION_OWNER_V8\",\"identity\":\"4f0b342c0a8f19271c9197db8485d3f4268c03c7e80f6b7f98831ebb64a43c34\",\"mode\":\"ACTUAL_SELECTED_KERNEL_ATTEMPT_NOT_PREVIEW\",\"selected\":true,\"selector\":\"Inherited feasibility/ADD priority/FIFO/capacity/digest\"}",
+          "payload_sha256": "865cf83ff6a2947d7644274c6871061021189ca31c066b863b2cc5d43a31200f",
+          "receipt_id": "d29c3c073ddb2c0b91ffdb1024c01219a94a398601fc2a6389608c7060f435bd",
+          "source_sha256": "626B0CD628E3642490C04B1247F85FA643F7E8D1D20B1F23D63CD576DBCA1C68"
+        },
+        {
+          "available_at": "2023-01-01T05:00:00+00:00",
+          "checkpoint": "2023-01-01T05:00:00+00:00",
+          "config_sha256": "C93A65888AE1110874D47FABA1EBB2BFEF9F46CEED8E2F1EE68D4ED1337F44BC",
+          "kind": "EXECUTION_FILL",
+          "parents": [
+            "d29c3c073ddb2c0b91ffdb1024c01219a94a398601fc2a6389608c7060f435bd"
+          ],
+          "payload_json": "{\"campaign_id\":\"4f0b342c0a8f19271c9197db8485d3f4268c03c7e80f6b7f98831ebb64a43c34\",\"cash_delta\":-4403.953674121326,\"execution_phase\":\"OPEN\",\"fee\":10.982428115015775,\"identity\":\"4f0b342c0a8f19271c9197db8485d3f4268c03c7e80f6b7f98831ebb64a43c34\",\"pair\":\"X-USDT\",\"price\":110,\"qty\":39.936102236421,\"reason\":\"ENTRY\",\"side\":\"BUY\",\"time\":\"2023-01-01 05:00:00+00:00\"}",
+          "payload_sha256": "2d17d0fba1edb9677f9a9ed80c3c0a5ca159f63cfc363e3c6b3284cb0926c1b3",
+          "receipt_id": "2dce445e79ba878ec205351e6c7cfe6d19821c66386eeffebab6d1f89701457c",
+          "source_sha256": "626B0CD628E3642490C04B1247F85FA643F7E8D1D20B1F23D63CD576DBCA1C68"
+        },
+        {
+          "available_at": "2023-01-01T06:00:00+00:00",
+          "checkpoint": "2023-01-01T06:00:00+00:00",
+          "config_sha256": "C93A65888AE1110874D47FABA1EBB2BFEF9F46CEED8E2F1EE68D4ED1337F44BC",
+          "kind": "OWNER_UPDATE",
+          "parents": [
+            "2dce445e79ba878ec205351e6c7cfe6d19821c66386eeffebab6d1f89701457c"
+          ],
+          "payload_json": "{\"binding_sha\":\"a43eb6e47e537bdbd1c1cfb45e857cd475ba90df69fa919f7f352366ebdb3cec\",\"completed_owner_update\":false,\"identity\":\"4f0b342c0a8f19271c9197db8485d3f4268c03c7e80f6b7f98831ebb64a43c34\",\"owner_checked\":true,\"policy\":\"NO_INVENTED_OWNER_BAR;HOURLY_PROTECTION_REMAINS_ACTIVE\"}",
+          "payload_sha256": "7f4ad0a0d31c98830d06f083518b388c04091b4fe94bdcc1720eb73a8e21d24f",
+          "receipt_id": "e159d36d6f66f257e910dd0938bd9e3477f28f921125f3c2d2efa9928bafdc26",
+          "source_sha256": "626B0CD628E3642490C04B1247F85FA643F7E8D1D20B1F23D63CD576DBCA1C68"
+        },
+        {
+          "available_at": "2023-01-01T06:00:00+00:00",
+          "checkpoint": "2023-01-01T06:00:00+00:00",
+          "config_sha256": "C93A65888AE1110874D47FABA1EBB2BFEF9F46CEED8E2F1EE68D4ED1337F44BC",
+          "kind": "LIFECYCLE_EXECUTION",
+          "parents": [
+            "e159d36d6f66f257e910dd0938bd9e3477f28f921125f3c2d2efa9928bafdc26"
+          ],
+          "payload_json": "{\"campaign_id\":\"4f0b342c0a8f19271c9197db8485d3f4268c03c7e80f6b7f98831ebb64a43c34\",\"cash_delta\":3903.953674121335,\"execution_phase\":\"INTRABAR_OR_COMPLETED_CLOSE\",\"fee\":9.784345047923146,\"identity\":\"4f0b342c0a8f19271c9197db8485d3f4268c03c7e80f6b7f98831ebb64a43c34\",\"pair\":\"X-USDT\",\"price\":98.0,\"qty\":39.936102236421,\"reason\":\"HARD_STRUCTURAL_STOP\",\"side\":\"SELL\",\"time\":\"2023-01-01 06:00:00+00:00\"}",
+          "payload_sha256": "1477edd39ae4a6d3e14557f43fe03af5fe5646480fd9f05347d1a7c6291e29b5",
+          "receipt_id": "c9f613d4e852ae85528b0d448464ffc542e98225f9cc52420a34ab0b8048564a",
+          "source_sha256": "626B0CD628E3642490C04B1247F85FA643F7E8D1D20B1F23D63CD576DBCA1C68"
+        },
+        {
+          "available_at": "2023-01-01T06:00:00+00:00",
+          "checkpoint": "2023-01-01T06:00:00+00:00",
+          "config_sha256": "C93A65888AE1110874D47FABA1EBB2BFEF9F46CEED8E2F1EE68D4ED1337F44BC",
+          "kind": "ACCOUNTING_OUTPUT",
+          "parents": [
+            "c9f613d4e852ae85528b0d448464ffc542e98225f9cc52420a34ab0b8048564a"
+          ],
+          "payload_json": "{\"campaigns_sha\":\"e9278c39ad35183ff6d30b52d53b2b87f9e30a7177f76e094eff54ac9a53f23b\",\"cash\":99500.00000000001,\"disposition\":\"SYNTHETIC_MECHANICS_ONLY\",\"fills_sha\":\"8784f6f01c0c798063ad7fae0601c365559adb450cbb870213dc1ec26fa5b6f7\",\"marks_sha\":\"81cd263172be94828f5ea9094e03b54315a826436fa3e16c9812d9c64de53fea\"}",
+          "payload_sha256": "745265ac5b37a2283c648e848654e6edab395805d48b0ff4e708ff0056b6af68",
+          "receipt_id": "04fa1d383c653ee7c4952c5205e5f64378fb5d4fbb6bf2bf387cf4bb0e586087",
+          "source_sha256": "626B0CD628E3642490C04B1247F85FA643F7E8D1D20B1F23D63CD576DBCA1C68"
+        }
+      ],
+      "source_sha256": "626B0CD628E3642490C04B1247F85FA643F7E8D1D20B1F23D63CD576DBCA1C68",
+      "terminated": []
+    },
+    "terminal_receipt": "04fa1d383c653ee7c4952c5205e5f64378fb5d4fbb6bf2bf387cf4bb0e586087"
+  },
+  "HYB_FAILED_AUCTION_HTF_OWNER_V8": {
+    "graph": {
+      "config_sha256": "C93A65888AE1110874D47FABA1EBB2BFEF9F46CEED8E2F1EE68D4ED1337F44BC",
+      "receipts": [
+        {
+          "available_at": "2023-01-01T08:00:00+00:00",
+          "checkpoint": "2023-01-01T08:00:00+00:00",
+          "config_sha256": "C93A65888AE1110874D47FABA1EBB2BFEF9F46CEED8E2F1EE68D4ED1337F44BC",
+          "kind": "SOURCE_EVIDENCE",
+          "parents": [],
+          "payload_json": "{\"dow\":\"DowPermission(direction='UP', complete=True, members_sha256='ec2f5c87cdadffac7fbc9b2db28cc56017c6616d8834f58782b2f8f1f8cb4c69', available_at=datetime.datetime(2023, 1, 1, 8, 0, tzinfo=datetime.timezone.utc), valid_until=datetime.datetime(2023, 1, 1, 9, 0, tzinfo=datetime.timezone.utc), reason='COMPLETE_FRAME')\",\"required_evidence_ids\":[],\"source_emission\":\"CB8B41B5B0782C13A13966823C47FFB6925BA22D3D57731FEA90CD27E775D99F\",\"source_issue_sha\":\"3516bea7a1b1696ea3d35152f0841c13dfd2e85ef07f8aee090cef21c1885427\",\"source_sha\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\"}",
+          "payload_sha256": "9064b301a5df3927cff93278364a2a3802e54a3615a229447622ba9b3545fd69",
+          "receipt_id": "229ee287a57c170aa98971808568f9b2a73d4bc3b4075a95feb1f6cfb4d8db06",
+          "source_sha256": "626B0CD628E3642490C04B1247F85FA643F7E8D1D20B1F23D63CD576DBCA1C68"
+        },
+        {
+          "available_at": "2023-01-01T08:00:00+00:00",
+          "checkpoint": "2023-01-01T08:00:00+00:00",
+          "config_sha256": "C93A65888AE1110874D47FABA1EBB2BFEF9F46CEED8E2F1EE68D4ED1337F44BC",
+          "kind": "SEMANTIC_PRODUCER",
+          "parents": [
+            "229ee287a57c170aa98971808568f9b2a73d4bc3b4075a95feb1f6cfb4d8db06"
+          ],
+          "payload_json": "{\"grammar\":\"HYB_FAILED_AUCTION_HTF_OWNER_V8\",\"structure\":\"s\"}",
+          "payload_sha256": "6c405497f5f297d0fd751541298974f37e6a62de29a3d62f7514b5add654b320",
+          "receipt_id": "a41fc1d0dacac3268502030116791b96066a36d25ef690ccfe8e79b48aa980b6",
+          "source_sha256": "626B0CD628E3642490C04B1247F85FA643F7E8D1D20B1F23D63CD576DBCA1C68"
+        },
+        {
+          "available_at": "2023-01-01T08:00:00+00:00",
+          "checkpoint": "2023-01-01T08:00:00+00:00",
+          "config_sha256": "C93A65888AE1110874D47FABA1EBB2BFEF9F46CEED8E2F1EE68D4ED1337F44BC",
+          "kind": "EMISSION_SEAL",
+          "parents": [
+            "a41fc1d0dacac3268502030116791b96066a36d25ef690ccfe8e79b48aa980b6"
+          ],
+          "payload_json": "{\"issue_sha\":\"3516bea7a1b1696ea3d35152f0841c13dfd2e85ef07f8aee090cef21c1885427\"}",
+          "payload_sha256": "df708709afa3eaec5684f62cf29eeb0baf31bf04e6d26ab07a37eed75db950fa",
+          "receipt_id": "ef96fa1d8bbaa13731ec51c9c99ffd4fea71979e9a49768468a5fdaaa569dd3a",
+          "source_sha256": "626B0CD628E3642490C04B1247F85FA643F7E8D1D20B1F23D63CD576DBCA1C68"
+        },
+        {
+          "available_at": "2023-01-01T08:00:00+00:00",
+          "checkpoint": "2023-01-01T08:00:00+00:00",
+          "config_sha256": "C93A65888AE1110874D47FABA1EBB2BFEF9F46CEED8E2F1EE68D4ED1337F44BC",
+          "kind": "BOUND_ADMISSION_REQUEST",
+          "parents": [
+            "ef96fa1d8bbaa13731ec51c9c99ffd4fea71979e9a49768468a5fdaaa569dd3a"
+          ],
+          "payload_json": "{\"binding\":\"a7e17e5cb07b8fe439d90f7309c7d18aae04229a289d3f056f49fa86ed1c05f4\",\"identity\":\"5c1220dfe569f046217b360a3f56c25dc6bc2d90c6380a82d642eed9c195d04a\"}",
+          "payload_sha256": "52865fbf9af3a5ca20056687a33aeef9c8d5040877b14c6611a9bc64bbff7baa",
+          "receipt_id": "a3bada8be2c4dd7344e45d1e6cc0914ae9322487cb05cfcf5f0cedd611f7d8d8",
+          "source_sha256": "626B0CD628E3642490C04B1247F85FA643F7E8D1D20B1F23D63CD576DBCA1C68"
+        },
+        {
+          "available_at": "2023-01-01T08:00:00+00:00",
+          "checkpoint": "2023-01-01T08:00:00+00:00",
+          "config_sha256": "C93A65888AE1110874D47FABA1EBB2BFEF9F46CEED8E2F1EE68D4ED1337F44BC",
+          "kind": "SELECTOR_ADMISSION",
+          "parents": [
+            "a3bada8be2c4dd7344e45d1e6cc0914ae9322487cb05cfcf5f0cedd611f7d8d8"
+          ],
+          "payload_json": "{\"binding_sha\":\"a7e17e5cb07b8fe439d90f7309c7d18aae04229a289d3f056f49fa86ed1c05f4\",\"grammar\":\"HYB_FAILED_AUCTION_HTF_OWNER_V8\",\"identity\":\"5c1220dfe569f046217b360a3f56c25dc6bc2d90c6380a82d642eed9c195d04a\",\"mode\":\"ACTUAL_SELECTED_KERNEL_ATTEMPT_NOT_PREVIEW\",\"selected\":true,\"selector\":\"Inherited feasibility/ADD priority/FIFO/capacity/digest\"}",
+          "payload_sha256": "659617030c995b1aced984c6ce228753c4c1127d951a364bde280287e3d1515d",
+          "receipt_id": "b9a0675338cb9c9247cedfca362eab900a66fe7cff294c029f959bf4a898a428",
+          "source_sha256": "626B0CD628E3642490C04B1247F85FA643F7E8D1D20B1F23D63CD576DBCA1C68"
+        },
+        {
+          "available_at": "2023-01-01T08:00:00+00:00",
+          "checkpoint": "2023-01-01T08:00:00+00:00",
+          "config_sha256": "C93A65888AE1110874D47FABA1EBB2BFEF9F46CEED8E2F1EE68D4ED1337F44BC",
+          "kind": "EXECUTION_FILL",
+          "parents": [
+            "b9a0675338cb9c9247cedfca362eab900a66fe7cff294c029f959bf4a898a428"
+          ],
+          "payload_json": "{\"campaign_id\":\"5c1220dfe569f046217b360a3f56c25dc6bc2d90c6380a82d642eed9c195d04a\",\"cash_delta\":-4442.215568862195,\"execution_phase\":\"OPEN\",\"fee\":11.077844311377046,\"identity\":\"5c1220dfe569f046217b360a3f56c25dc6bc2d90c6380a82d642eed9c195d04a\",\"pair\":\"X-USDT\",\"price\":111,\"qty\":39.920159680638,\"reason\":\"ENTRY\",\"side\":\"BUY\",\"time\":\"2023-01-01 08:00:00+00:00\"}",
+          "payload_sha256": "8eb96bd8fe8c766737ac13e4bd95c31194ac1487fa7fa53190da1d36085b6e3c",
+          "receipt_id": "a1253aa5b7ae6480a11b29e50e577bc8c59493834b33247f97d08a1e212383a5",
+          "source_sha256": "626B0CD628E3642490C04B1247F85FA643F7E8D1D20B1F23D63CD576DBCA1C68"
+        },
+        {
+          "available_at": "2023-01-01T09:00:00+00:00",
+          "checkpoint": "2023-01-01T09:00:00+00:00",
+          "config_sha256": "C93A65888AE1110874D47FABA1EBB2BFEF9F46CEED8E2F1EE68D4ED1337F44BC",
+          "kind": "OWNER_UPDATE",
+          "parents": [
+            "a1253aa5b7ae6480a11b29e50e577bc8c59493834b33247f97d08a1e212383a5"
+          ],
+          "payload_json": "{\"binding_sha\":\"a7e17e5cb07b8fe439d90f7309c7d18aae04229a289d3f056f49fa86ed1c05f4\",\"completed_owner_update\":false,\"identity\":\"5c1220dfe569f046217b360a3f56c25dc6bc2d90c6380a82d642eed9c195d04a\",\"owner_checked\":true,\"policy\":\"NO_INVENTED_OWNER_BAR;HOURLY_PROTECTION_REMAINS_ACTIVE\"}",
+          "payload_sha256": "20f0ebb611bec8fa8809c78809a1803536e690b150f9c4484bf819788a236a22",
+          "receipt_id": "b5eb42675a64157037e78a5dbf7f16e15f378626e8301eab2b5999d747705042",
+          "source_sha256": "626B0CD628E3642490C04B1247F85FA643F7E8D1D20B1F23D63CD576DBCA1C68"
+        },
+        {
+          "available_at": "2023-01-01T09:00:00+00:00",
+          "checkpoint": "2023-01-01T09:00:00+00:00",
+          "config_sha256": "C93A65888AE1110874D47FABA1EBB2BFEF9F46CEED8E2F1EE68D4ED1337F44BC",
+          "kind": "LIFECYCLE_EXECUTION",
+          "parents": [
+            "b5eb42675a64157037e78a5dbf7f16e15f378626e8301eab2b5999d747705042"
+          ],
+          "payload_json": "{\"campaign_id\":\"5c1220dfe569f046217b360a3f56c25dc6bc2d90c6380a82d642eed9c195d04a\",\"cash_delta\":3942.2155688622042,\"execution_phase\":\"INTRABAR_OR_COMPLETED_CLOSE\",\"fee\":9.880239520957906,\"identity\":\"5c1220dfe569f046217b360a3f56c25dc6bc2d90c6380a82d642eed9c195d04a\",\"pair\":\"X-USDT\",\"price\":99.0,\"qty\":39.920159680638,\"reason\":\"HARD_STRUCTURAL_STOP\",\"side\":\"SELL\",\"time\":\"2023-01-01 09:00:00+00:00\"}",
+          "payload_sha256": "1508c4307471639ee5287f5dd97cf5291237e1fd8bed4079fc80d3e117d31f94",
+          "receipt_id": "2248986d99f1b238b6c111c001a13d398d850e7e946a0e5fa5658e080096427a",
+          "source_sha256": "626B0CD628E3642490C04B1247F85FA643F7E8D1D20B1F23D63CD576DBCA1C68"
+        },
+        {
+          "available_at": "2023-01-01T09:00:00+00:00",
+          "checkpoint": "2023-01-01T09:00:00+00:00",
+          "config_sha256": "C93A65888AE1110874D47FABA1EBB2BFEF9F46CEED8E2F1EE68D4ED1337F44BC",
+          "kind": "ACCOUNTING_OUTPUT",
+          "parents": [
+            "2248986d99f1b238b6c111c001a13d398d850e7e946a0e5fa5658e080096427a"
+          ],
+          "payload_json": "{\"campaigns_sha\":\"51bc662f2fefd0d72358cc757648f2b12d603e162a6744adc410947fc95ad331\",\"cash\":99500.0,\"disposition\":\"SYNTHETIC_MECHANICS_ONLY\",\"fills_sha\":\"079a7a9259579a718379be43bd09d6ee97363c69e2ebf463120875c9c077d04c\",\"marks_sha\":\"1d497af558b6897225429aa7f999c0ea9d77dee7a076c105d85ff592f3be537e\"}",
+          "payload_sha256": "dec6b2106f36f1b9b53a0f68b7429e4c94b0bf02ec2143bfbbf176d83fdc307a",
+          "receipt_id": "2797eca349e216856fae0a4423a3427ce292d59388be1ba1ecea4805ec69125f",
+          "source_sha256": "626B0CD628E3642490C04B1247F85FA643F7E8D1D20B1F23D63CD576DBCA1C68"
+        }
+      ],
+      "source_sha256": "626B0CD628E3642490C04B1247F85FA643F7E8D1D20B1F23D63CD576DBCA1C68",
+      "terminated": []
+    },
+    "terminal_receipt": "2797eca349e216856fae0a4423a3427ce292d59388be1ba1ecea4805ec69125f"
+  },
+  "MULTI_ARM": {
+    "graph": {
+      "config_sha256": "C93A65888AE1110874D47FABA1EBB2BFEF9F46CEED8E2F1EE68D4ED1337F44BC",
+      "receipts": [
+        {
+          "available_at": "2023-01-01T01:00:00+00:00",
+          "checkpoint": "2023-01-01T01:00:00+00:00",
+          "config_sha256": "C93A65888AE1110874D47FABA1EBB2BFEF9F46CEED8E2F1EE68D4ED1337F44BC",
+          "kind": "SOURCE_EVIDENCE",
+          "parents": [],
+          "payload_json": "{\"dow\":\"DowPermission(direction='UP', complete=True, members_sha256='ec2f5c87cdadffac7fbc9b2db28cc56017c6616d8834f58782b2f8f1f8cb4c69', available_at=datetime.datetime(2023, 1, 1, 1, 0, tzinfo=datetime.timezone.utc), valid_until=datetime.datetime(2023, 1, 1, 2, 0, tzinfo=datetime.timezone.utc), reason='COMPLETE_FRAME')\",\"required_evidence_ids\":[],\"source_emission\":\"61A23A577DA19D6FE872C7DA78A09425FC94A4EC0049FE1210276FA5A318A1D9\",\"source_issue_sha\":\"41da1012e8e990ce602ca2a722fb6a0e64dc602c04a9307aaf5f3124c60d2311\",\"source_sha\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\"}",
+          "payload_sha256": "6d0f5aace794305fa750528222e4dcc95e7919e709d40432c94cf5a7d6e1006c",
+          "receipt_id": "57e1e7ec89e611d43de1896a24616cc3aa1575a1e9b43336d154ea62c12cedd0",
+          "source_sha256": "626B0CD628E3642490C04B1247F85FA643F7E8D1D20B1F23D63CD576DBCA1C68"
+        },
+        {
+          "available_at": "2023-01-01T01:00:00+00:00",
+          "checkpoint": "2023-01-01T01:00:00+00:00",
+          "config_sha256": "C93A65888AE1110874D47FABA1EBB2BFEF9F46CEED8E2F1EE68D4ED1337F44BC",
+          "kind": "SEMANTIC_PRODUCER",
+          "parents": [
+            "57e1e7ec89e611d43de1896a24616cc3aa1575a1e9b43336d154ea62c12cedd0"
+          ],
+          "payload_json": "{\"grammar\":\"FS_CLASSICAL_FULL_LONG\",\"structure\":\"s\"}",
+          "payload_sha256": "0d9408dd14f64e8aae73cdbca78e0cb9382dbbe9abd8c24ff60f129734a71afc",
+          "receipt_id": "cdd7a81f1ff39799bc6a17abfff04fd505b983760e92abb56650d81980ce9796",
+          "source_sha256": "626B0CD628E3642490C04B1247F85FA643F7E8D1D20B1F23D63CD576DBCA1C68"
+        },
+        {
+          "available_at": "2023-01-01T01:00:00+00:00",
+          "checkpoint": "2023-01-01T01:00:00+00:00",
+          "config_sha256": "C93A65888AE1110874D47FABA1EBB2BFEF9F46CEED8E2F1EE68D4ED1337F44BC",
+          "kind": "EMISSION_SEAL",
+          "parents": [
+            "cdd7a81f1ff39799bc6a17abfff04fd505b983760e92abb56650d81980ce9796"
+          ],
+          "payload_json": "{\"issue_sha\":\"41da1012e8e990ce602ca2a722fb6a0e64dc602c04a9307aaf5f3124c60d2311\"}",
+          "payload_sha256": "c8437c6cb448f059f063f95b165b39686db27a1ce76b64226f4518c8b618df70",
+          "receipt_id": "d901da04abf23030011b03b64e6c6edb5c1dd684d4e298cb1c0af82076ac3c85",
+          "source_sha256": "626B0CD628E3642490C04B1247F85FA643F7E8D1D20B1F23D63CD576DBCA1C68"
+        },
+        {
+          "available_at": "2023-01-01T01:00:00+00:00",
+          "checkpoint": "2023-01-01T01:00:00+00:00",
+          "config_sha256": "C93A65888AE1110874D47FABA1EBB2BFEF9F46CEED8E2F1EE68D4ED1337F44BC",
+          "kind": "BOUND_ADMISSION_REQUEST",
+          "parents": [
+            "d901da04abf23030011b03b64e6c6edb5c1dd684d4e298cb1c0af82076ac3c85"
+          ],
+          "payload_json": "{\"binding\":\"0989ce1d840e8e63187f7d0a7f901383a6dd31f59ffef31368012fcb797d96f6\",\"identity\":\"6e0eb5faedbfa6faf7d9805bc0dd30167ed0280f97ce7e0cd79f08e6a789810d\"}",
+          "payload_sha256": "09b8ebe87715f147c46a0a090d5db206df22512c02608d660bf9eeddc21d6517",
+          "receipt_id": "23f1028358bba11981c5c3c0d3ae7f7f5129135a103a8016755e8150e40cfb4f",
+          "source_sha256": "626B0CD628E3642490C04B1247F85FA643F7E8D1D20B1F23D63CD576DBCA1C68"
+        },
+        {
+          "available_at": "2023-01-01T01:00:00+00:00",
+          "checkpoint": "2023-01-01T01:00:00+00:00",
+          "config_sha256": "C93A65888AE1110874D47FABA1EBB2BFEF9F46CEED8E2F1EE68D4ED1337F44BC",
+          "kind": "SELECTOR_ADMISSION",
+          "parents": [
+            "23f1028358bba11981c5c3c0d3ae7f7f5129135a103a8016755e8150e40cfb4f"
+          ],
+          "payload_json": "{\"binding_sha\":\"0989ce1d840e8e63187f7d0a7f901383a6dd31f59ffef31368012fcb797d96f6\",\"grammar\":\"FS_CLASSICAL_FULL_LONG\",\"identity\":\"6e0eb5faedbfa6faf7d9805bc0dd30167ed0280f97ce7e0cd79f08e6a789810d\",\"mode\":\"ACTUAL_SELECTED_KERNEL_ATTEMPT_NOT_PREVIEW\",\"selected\":true,\"selector\":\"Inherited feasibility/ADD priority/FIFO/capacity/digest\"}",
+          "payload_sha256": "ed9e3e12af69e4a7bafb4531ea9e42e76b29debb85a6d878d69252a1e93d3cb3",
+          "receipt_id": "19b3ee9dea8fb848f028c64b67e395a6e1aada79654b56cfb39729b3c6113a16",
+          "source_sha256": "626B0CD628E3642490C04B1247F85FA643F7E8D1D20B1F23D63CD576DBCA1C68"
+        },
+        {
+          "available_at": "2023-01-01T01:00:00+00:00",
+          "checkpoint": "2023-01-01T01:00:00+00:00",
+          "config_sha256": "C93A65888AE1110874D47FABA1EBB2BFEF9F46CEED8E2F1EE68D4ED1337F44BC",
+          "kind": "EXECUTION_FILL",
+          "parents": [
+            "19b3ee9dea8fb848f028c64b67e395a6e1aada79654b56cfb39729b3c6113a16"
+          ],
+          "payload_json": "{\"campaign_id\":\"6e0eb5faedbfa6faf7d9805bc0dd30167ed0280f97ce7e0cd79f08e6a789810d\",\"cash_delta\":-9547.619047619048,\"execution_phase\":\"OPEN\",\"fee\":23.809523809523814,\"identity\":\"6e0eb5faedbfa6faf7d9805bc0dd30167ed0280f97ce7e0cd79f08e6a789810d\",\"pair\":\"X-USDT\",\"price\":105,\"qty\":90.702947845805,\"reason\":\"ENTRY\",\"side\":\"BUY\",\"time\":\"2023-01-01 01:00:00+00:00\"}",
+          "payload_sha256": "d95d323b42d9c9f24b0e580ba350d911623e372a52e8a79cb0b7695c22a17121",
+          "receipt_id": "08fc393249b42b379cac896ba57f2df38b508923c6a1ade56f398056770d7831",
+          "source_sha256": "626B0CD628E3642490C04B1247F85FA643F7E8D1D20B1F23D63CD576DBCA1C68"
+        },
+        {
+          "available_at": "2023-01-01T02:00:00+00:00",
+          "checkpoint": "2023-01-01T02:00:00+00:00",
+          "config_sha256": "C93A65888AE1110874D47FABA1EBB2BFEF9F46CEED8E2F1EE68D4ED1337F44BC",
+          "kind": "OWNER_UPDATE",
+          "parents": [
+            "08fc393249b42b379cac896ba57f2df38b508923c6a1ade56f398056770d7831"
+          ],
+          "payload_json": "{\"binding_sha\":\"0989ce1d840e8e63187f7d0a7f901383a6dd31f59ffef31368012fcb797d96f6\",\"completed_owner_update\":false,\"identity\":\"6e0eb5faedbfa6faf7d9805bc0dd30167ed0280f97ce7e0cd79f08e6a789810d\",\"owner_checked\":true,\"policy\":\"NO_INVENTED_OWNER_BAR;HOURLY_PROTECTION_REMAINS_ACTIVE\"}",
+          "payload_sha256": "6a728cd3cbe7c732a82fa4b2afeb379261d06bbbc3e4fbbf1d29c3e414c3c585",
+          "receipt_id": "452619ba002ab146acafb5e265ad455fd1c170bdf7330acb2ef88d8d47b97108",
+          "source_sha256": "626B0CD628E3642490C04B1247F85FA643F7E8D1D20B1F23D63CD576DBCA1C68"
+        },
+        {
+          "available_at": "2023-01-01T02:00:00+00:00",
+          "checkpoint": "2023-01-01T02:00:00+00:00",
+          "config_sha256": "C93A65888AE1110874D47FABA1EBB2BFEF9F46CEED8E2F1EE68D4ED1337F44BC",
+          "kind": "LIFECYCLE_EXECUTION",
+          "parents": [
+            "452619ba002ab146acafb5e265ad455fd1c170bdf7330acb2ef88d8d47b97108"
+          ],
+          "payload_json": "{\"campaign_id\":\"6e0eb5faedbfa6faf7d9805bc0dd30167ed0280f97ce7e0cd79f08e6a789810d\",\"cash_delta\":9047.619047619048,\"execution_phase\":\"INTRABAR_OR_COMPLETED_CLOSE\",\"fee\":22.67573696145125,\"identity\":\"6e0eb5faedbfa6faf7d9805bc0dd30167ed0280f97ce7e0cd79f08e6a789810d\",\"pair\":\"X-USDT\",\"price\":100.0,\"qty\":90.702947845805,\"reason\":\"HARD_STRUCTURAL_STOP\",\"side\":\"SELL\",\"time\":\"2023-01-01 02:00:00+00:00\"}",
+          "payload_sha256": "cc937f62b44b2a93ffca3de93d9421eb3c381d8dcc9495fe1d090ed7ddf34e5e",
+          "receipt_id": "080f0ae8143629b277e099c90f5131de88caa0061937b6ff99b5f6588b5506e6",
+          "source_sha256": "626B0CD628E3642490C04B1247F85FA643F7E8D1D20B1F23D63CD576DBCA1C68"
+        },
+        {
+          "available_at": "2023-01-01T05:00:00+00:00",
+          "checkpoint": "2023-01-01T05:00:00+00:00",
+          "config_sha256": "C93A65888AE1110874D47FABA1EBB2BFEF9F46CEED8E2F1EE68D4ED1337F44BC",
+          "kind": "SOURCE_EVIDENCE",
+          "parents": [],
+          "payload_json": "{\"dow\":\"DowPermission(direction='UP', complete=True, members_sha256='ec2f5c87cdadffac7fbc9b2db28cc56017c6616d8834f58782b2f8f1f8cb4c69', available_at=datetime.datetime(2023, 1, 1, 5, 0, tzinfo=datetime.timezone.utc), valid_until=datetime.datetime(2023, 1, 1, 6, 0, tzinfo=datetime.timezone.utc), reason='COMPLETE_FRAME')\",\"required_evidence_ids\":[],\"source_emission\":\"7D329355F0471394A646E025663E8D2A6DC269A616C8075F66991D4BF0A960E2\",\"source_issue_sha\":\"8c1480140c2aee7a2fbcc3ad6858b5a46f6f54a0b51736263af80368a197d7b9\",\"source_sha\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\"}",
+          "payload_sha256": "4655207265017fb4564765440cd53d7993ed46d7d4215a520874bb0ff3aef210",
+          "receipt_id": "8029bb8aaee796cb040af355e4415ed4882e3b31d3f1ad4f56b35c4ccc49a54b",
+          "source_sha256": "626B0CD628E3642490C04B1247F85FA643F7E8D1D20B1F23D63CD576DBCA1C68"
+        },
+        {
+          "available_at": "2023-01-01T05:00:00+00:00",
+          "checkpoint": "2023-01-01T05:00:00+00:00",
+          "config_sha256": "C93A65888AE1110874D47FABA1EBB2BFEF9F46CEED8E2F1EE68D4ED1337F44BC",
+          "kind": "SEMANTIC_PRODUCER",
+          "parents": [
+            "8029bb8aaee796cb040af355e4415ed4882e3b31d3f1ad4f56b35c4ccc49a54b"
+          ],
+          "payload_json": "{\"grammar\":\"FS_ICT_SESSION_OWNER_V8\",\"structure\":\"s\"}",
+          "payload_sha256": "c6485ad192db3ecd651d3e0d36666ad2f4f38217ca49f89d015ce87f4f56ea0b",
+          "receipt_id": "281879f3802c3437e539c1e9ade50f4506bc3f247618608f7d741b0944242b25",
+          "source_sha256": "626B0CD628E3642490C04B1247F85FA643F7E8D1D20B1F23D63CD576DBCA1C68"
+        },
+        {
+          "available_at": "2023-01-01T05:00:00+00:00",
+          "checkpoint": "2023-01-01T05:00:00+00:00",
+          "config_sha256": "C93A65888AE1110874D47FABA1EBB2BFEF9F46CEED8E2F1EE68D4ED1337F44BC",
+          "kind": "EMISSION_SEAL",
+          "parents": [
+            "281879f3802c3437e539c1e9ade50f4506bc3f247618608f7d741b0944242b25"
+          ],
+          "payload_json": "{\"issue_sha\":\"8c1480140c2aee7a2fbcc3ad6858b5a46f6f54a0b51736263af80368a197d7b9\"}",
+          "payload_sha256": "033cd9edb6075f39e1f376d0ff325d8b66d7adf6c336befaea3dda8fe1f63f15",
+          "receipt_id": "0a58e7106e81c33c1ba725a4ddba192612669a376d24bc78fd1c5eb0d16ae17f",
+          "source_sha256": "626B0CD628E3642490C04B1247F85FA643F7E8D1D20B1F23D63CD576DBCA1C68"
+        },
+        {
+          "available_at": "2023-01-01T05:00:00+00:00",
+          "checkpoint": "2023-01-01T05:00:00+00:00",
+          "config_sha256": "C93A65888AE1110874D47FABA1EBB2BFEF9F46CEED8E2F1EE68D4ED1337F44BC",
+          "kind": "BOUND_ADMISSION_REQUEST",
+          "parents": [
+            "0a58e7106e81c33c1ba725a4ddba192612669a376d24bc78fd1c5eb0d16ae17f"
+          ],
+          "payload_json": "{\"binding\":\"a43eb6e47e537bdbd1c1cfb45e857cd475ba90df69fa919f7f352366ebdb3cec\",\"identity\":\"4f0b342c0a8f19271c9197db8485d3f4268c03c7e80f6b7f98831ebb64a43c34\"}",
+          "payload_sha256": "cb3b7b786fed1604438af122cd36ac697fda0c82b89832f09fa9b1876c3c9276",
+          "receipt_id": "473c3cdeebe55726853fc4467150df3a57fe3fe22f3930f15608f9f9cc702781",
+          "source_sha256": "626B0CD628E3642490C04B1247F85FA643F7E8D1D20B1F23D63CD576DBCA1C68"
+        },
+        {
+          "available_at": "2023-01-01T05:00:00+00:00",
+          "checkpoint": "2023-01-01T05:00:00+00:00",
+          "config_sha256": "C93A65888AE1110874D47FABA1EBB2BFEF9F46CEED8E2F1EE68D4ED1337F44BC",
+          "kind": "SELECTOR_ADMISSION",
+          "parents": [
+            "473c3cdeebe55726853fc4467150df3a57fe3fe22f3930f15608f9f9cc702781"
+          ],
+          "payload_json": "{\"binding_sha\":\"a43eb6e47e537bdbd1c1cfb45e857cd475ba90df69fa919f7f352366ebdb3cec\",\"grammar\":\"FS_ICT_SESSION_OWNER_V8\",\"identity\":\"4f0b342c0a8f19271c9197db8485d3f4268c03c7e80f6b7f98831ebb64a43c34\",\"mode\":\"ACTUAL_SELECTED_KERNEL_ATTEMPT_NOT_PREVIEW\",\"selected\":true,\"selector\":\"Inherited feasibility/ADD priority/FIFO/capacity/digest\"}",
+          "payload_sha256": "865cf83ff6a2947d7644274c6871061021189ca31c066b863b2cc5d43a31200f",
+          "receipt_id": "d29c3c073ddb2c0b91ffdb1024c01219a94a398601fc2a6389608c7060f435bd",
+          "source_sha256": "626B0CD628E3642490C04B1247F85FA643F7E8D1D20B1F23D63CD576DBCA1C68"
+        },
+        {
+          "available_at": "2023-01-01T05:00:00+00:00",
+          "checkpoint": "2023-01-01T05:00:00+00:00",
+          "config_sha256": "C93A65888AE1110874D47FABA1EBB2BFEF9F46CEED8E2F1EE68D4ED1337F44BC",
+          "kind": "EXECUTION_FILL",
+          "parents": [
+            "d29c3c073ddb2c0b91ffdb1024c01219a94a398601fc2a6389608c7060f435bd"
+          ],
+          "payload_json": "{\"campaign_id\":\"4f0b342c0a8f19271c9197db8485d3f4268c03c7e80f6b7f98831ebb64a43c34\",\"cash_delta\":-4381.9339057507295,\"execution_phase\":\"OPEN\",\"fee\":10.927515974440723,\"identity\":\"4f0b342c0a8f19271c9197db8485d3f4268c03c7e80f6b7f98831ebb64a43c34\",\"pair\":\"X-USDT\",\"price\":110,\"qty\":39.736421725239,\"reason\":\"ENTRY\",\"side\":\"BUY\",\"time\":\"2023-01-01 05:00:00+00:00\"}",
+          "payload_sha256": "e711f33742548696d7988a748dab8c4baaa6978cf236f26174604c355f6624d7",
+          "receipt_id": "ad53258e033fcbf422656c12b2ce8a1264ff110027c6dd3e065154c1c66a9440",
+          "source_sha256": "626B0CD628E3642490C04B1247F85FA643F7E8D1D20B1F23D63CD576DBCA1C68"
+        },
+        {
+          "available_at": "2023-01-01T06:00:00+00:00",
+          "checkpoint": "2023-01-01T06:00:00+00:00",
+          "config_sha256": "C93A65888AE1110874D47FABA1EBB2BFEF9F46CEED8E2F1EE68D4ED1337F44BC",
+          "kind": "OWNER_UPDATE",
+          "parents": [
+            "ad53258e033fcbf422656c12b2ce8a1264ff110027c6dd3e065154c1c66a9440"
+          ],
+          "payload_json": "{\"binding_sha\":\"a43eb6e47e537bdbd1c1cfb45e857cd475ba90df69fa919f7f352366ebdb3cec\",\"completed_owner_update\":false,\"identity\":\"4f0b342c0a8f19271c9197db8485d3f4268c03c7e80f6b7f98831ebb64a43c34\",\"owner_checked\":true,\"policy\":\"NO_INVENTED_OWNER_BAR;HOURLY_PROTECTION_REMAINS_ACTIVE\"}",
+          "payload_sha256": "7f4ad0a0d31c98830d06f083518b388c04091b4fe94bdcc1720eb73a8e21d24f",
+          "receipt_id": "4e15ee14db4b7a2ddc15d9567f5d4940b4bcbcfc4195150d956d167f04841729",
+          "source_sha256": "626B0CD628E3642490C04B1247F85FA643F7E8D1D20B1F23D63CD576DBCA1C68"
+        },
+        {
+          "available_at": "2023-01-01T06:00:00+00:00",
+          "checkpoint": "2023-01-01T06:00:00+00:00",
+          "config_sha256": "C93A65888AE1110874D47FABA1EBB2BFEF9F46CEED8E2F1EE68D4ED1337F44BC",
+          "kind": "LIFECYCLE_EXECUTION",
+          "parents": [
+            "4e15ee14db4b7a2ddc15d9567f5d4940b4bcbcfc4195150d956d167f04841729"
+          ],
+          "payload_json": "{\"campaign_id\":\"4f0b342c0a8f19271c9197db8485d3f4268c03c7e80f6b7f98831ebb64a43c34\",\"cash_delta\":3884.4339057507386,\"execution_phase\":\"INTRABAR_OR_COMPLETED_CLOSE\",\"fee\":9.735423322683555,\"identity\":\"4f0b342c0a8f19271c9197db8485d3f4268c03c7e80f6b7f98831ebb64a43c34\",\"pair\":\"X-USDT\",\"price\":98.0,\"qty\":39.736421725239,\"reason\":\"HARD_STRUCTURAL_STOP\",\"side\":\"SELL\",\"time\":\"2023-01-01 06:00:00+00:00\"}",
+          "payload_sha256": "bd6a8d9c94b4c6b14c77ac9fb3bf7e0e72979859046230cc719c048fec5b7b21",
+          "receipt_id": "2a6f7ba211298fb96bcbad6f663fb5f0522bd9be843577bd656f005c8f13092a",
+          "source_sha256": "626B0CD628E3642490C04B1247F85FA643F7E8D1D20B1F23D63CD576DBCA1C68"
+        },
+        {
+          "available_at": "2023-01-01T08:00:00+00:00",
+          "checkpoint": "2023-01-01T08:00:00+00:00",
+          "config_sha256": "C93A65888AE1110874D47FABA1EBB2BFEF9F46CEED8E2F1EE68D4ED1337F44BC",
+          "kind": "SOURCE_EVIDENCE",
+          "parents": [],
+          "payload_json": "{\"dow\":\"DowPermission(direction='UP', complete=True, members_sha256='ec2f5c87cdadffac7fbc9b2db28cc56017c6616d8834f58782b2f8f1f8cb4c69', available_at=datetime.datetime(2023, 1, 1, 8, 0, tzinfo=datetime.timezone.utc), valid_until=datetime.datetime(2023, 1, 1, 9, 0, tzinfo=datetime.timezone.utc), reason='COMPLETE_FRAME')\",\"required_evidence_ids\":[],\"source_emission\":\"CB8B41B5B0782C13A13966823C47FFB6925BA22D3D57731FEA90CD27E775D99F\",\"source_issue_sha\":\"3516bea7a1b1696ea3d35152f0841c13dfd2e85ef07f8aee090cef21c1885427\",\"source_sha\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\"}",
+          "payload_sha256": "9064b301a5df3927cff93278364a2a3802e54a3615a229447622ba9b3545fd69",
+          "receipt_id": "229ee287a57c170aa98971808568f9b2a73d4bc3b4075a95feb1f6cfb4d8db06",
+          "source_sha256": "626B0CD628E3642490C04B1247F85FA643F7E8D1D20B1F23D63CD576DBCA1C68"
+        },
+        {
+          "available_at": "2023-01-01T08:00:00+00:00",
+          "checkpoint": "2023-01-01T08:00:00+00:00",
+          "config_sha256": "C93A65888AE1110874D47FABA1EBB2BFEF9F46CEED8E2F1EE68D4ED1337F44BC",
+          "kind": "SEMANTIC_PRODUCER",
+          "parents": [
+            "229ee287a57c170aa98971808568f9b2a73d4bc3b4075a95feb1f6cfb4d8db06"
+          ],
+          "payload_json": "{\"grammar\":\"HYB_FAILED_AUCTION_HTF_OWNER_V8\",\"structure\":\"s\"}",
+          "payload_sha256": "6c405497f5f297d0fd751541298974f37e6a62de29a3d62f7514b5add654b320",
+          "receipt_id": "a41fc1d0dacac3268502030116791b96066a36d25ef690ccfe8e79b48aa980b6",
+          "source_sha256": "626B0CD628E3642490C04B1247F85FA643F7E8D1D20B1F23D63CD576DBCA1C68"
+        },
+        {
+          "available_at": "2023-01-01T08:00:00+00:00",
+          "checkpoint": "2023-01-01T08:00:00+00:00",
+          "config_sha256": "C93A65888AE1110874D47FABA1EBB2BFEF9F46CEED8E2F1EE68D4ED1337F44BC",
+          "kind": "EMISSION_SEAL",
+          "parents": [
+            "a41fc1d0dacac3268502030116791b96066a36d25ef690ccfe8e79b48aa980b6"
+          ],
+          "payload_json": "{\"issue_sha\":\"3516bea7a1b1696ea3d35152f0841c13dfd2e85ef07f8aee090cef21c1885427\"}",
+          "payload_sha256": "df708709afa3eaec5684f62cf29eeb0baf31bf04e6d26ab07a37eed75db950fa",
+          "receipt_id": "ef96fa1d8bbaa13731ec51c9c99ffd4fea71979e9a49768468a5fdaaa569dd3a",
+          "source_sha256": "626B0CD628E3642490C04B1247F85FA643F7E8D1D20B1F23D63CD576DBCA1C68"
+        },
+        {
+          "available_at": "2023-01-01T08:00:00+00:00",
+          "checkpoint": "2023-01-01T08:00:00+00:00",
+          "config_sha256": "C93A65888AE1110874D47FABA1EBB2BFEF9F46CEED8E2F1EE68D4ED1337F44BC",
+          "kind": "BOUND_ADMISSION_REQUEST",
+          "parents": [
+            "ef96fa1d8bbaa13731ec51c9c99ffd4fea71979e9a49768468a5fdaaa569dd3a"
+          ],
+          "payload_json": "{\"binding\":\"a7e17e5cb07b8fe439d90f7309c7d18aae04229a289d3f056f49fa86ed1c05f4\",\"identity\":\"5c1220dfe569f046217b360a3f56c25dc6bc2d90c6380a82d642eed9c195d04a\"}",
+          "payload_sha256": "52865fbf9af3a5ca20056687a33aeef9c8d5040877b14c6611a9bc64bbff7baa",
+          "receipt_id": "a3bada8be2c4dd7344e45d1e6cc0914ae9322487cb05cfcf5f0cedd611f7d8d8",
+          "source_sha256": "626B0CD628E3642490C04B1247F85FA643F7E8D1D20B1F23D63CD576DBCA1C68"
+        },
+        {
+          "available_at": "2023-01-01T08:00:00+00:00",
+          "checkpoint": "2023-01-01T08:00:00+00:00",
+          "config_sha256": "C93A65888AE1110874D47FABA1EBB2BFEF9F46CEED8E2F1EE68D4ED1337F44BC",
+          "kind": "SELECTOR_ADMISSION",
+          "parents": [
+            "a3bada8be2c4dd7344e45d1e6cc0914ae9322487cb05cfcf5f0cedd611f7d8d8"
+          ],
+          "payload_json": "{\"binding_sha\":\"a7e17e5cb07b8fe439d90f7309c7d18aae04229a289d3f056f49fa86ed1c05f4\",\"grammar\":\"HYB_FAILED_AUCTION_HTF_OWNER_V8\",\"identity\":\"5c1220dfe569f046217b360a3f56c25dc6bc2d90c6380a82d642eed9c195d04a\",\"mode\":\"ACTUAL_SELECTED_KERNEL_ATTEMPT_NOT_PREVIEW\",\"selected\":true,\"selector\":\"Inherited feasibility/ADD priority/FIFO/capacity/digest\"}",
+          "payload_sha256": "659617030c995b1aced984c6ce228753c4c1127d951a364bde280287e3d1515d",
+          "receipt_id": "b9a0675338cb9c9247cedfca362eab900a66fe7cff294c029f959bf4a898a428",
+          "source_sha256": "626B0CD628E3642490C04B1247F85FA643F7E8D1D20B1F23D63CD576DBCA1C68"
+        },
+        {
+          "available_at": "2023-01-01T08:00:00+00:00",
+          "checkpoint": "2023-01-01T08:00:00+00:00",
+          "config_sha256": "C93A65888AE1110874D47FABA1EBB2BFEF9F46CEED8E2F1EE68D4ED1337F44BC",
+          "kind": "EXECUTION_FILL",
+          "parents": [
+            "b9a0675338cb9c9247cedfca362eab900a66fe7cff294c029f959bf4a898a428"
+          ],
+          "payload_json": "{\"campaign_id\":\"5c1220dfe569f046217b360a3f56c25dc6bc2d90c6380a82d642eed9c195d04a\",\"cash_delta\":-4397.904468562835,\"execution_phase\":\"OPEN\",\"fee\":10.967342814371161,\"identity\":\"5c1220dfe569f046217b360a3f56c25dc6bc2d90c6380a82d642eed9c195d04a\",\"pair\":\"X-USDT\",\"price\":111,\"qty\":39.521956087824,\"reason\":\"ENTRY\",\"side\":\"BUY\",\"time\":\"2023-01-01 08:00:00+00:00\"}",
+          "payload_sha256": "ded9f636259dd159bcb11a3a76671056ab2b9b9cf880961ae14e86fd4094b2d3",
+          "receipt_id": "68a2f639fb0522c0f99c6d133eff54caefd6627b5991ee053a95a40c0982015d",
+          "source_sha256": "626B0CD628E3642490C04B1247F85FA643F7E8D1D20B1F23D63CD576DBCA1C68"
+        },
+        {
+          "available_at": "2023-01-01T09:00:00+00:00",
+          "checkpoint": "2023-01-01T09:00:00+00:00",
+          "config_sha256": "C93A65888AE1110874D47FABA1EBB2BFEF9F46CEED8E2F1EE68D4ED1337F44BC",
+          "kind": "OWNER_UPDATE",
+          "parents": [
+            "68a2f639fb0522c0f99c6d133eff54caefd6627b5991ee053a95a40c0982015d"
+          ],
+          "payload_json": "{\"binding_sha\":\"a7e17e5cb07b8fe439d90f7309c7d18aae04229a289d3f056f49fa86ed1c05f4\",\"completed_owner_update\":false,\"identity\":\"5c1220dfe569f046217b360a3f56c25dc6bc2d90c6380a82d642eed9c195d04a\",\"owner_checked\":true,\"policy\":\"NO_INVENTED_OWNER_BAR;HOURLY_PROTECTION_REMAINS_ACTIVE\"}",
+          "payload_sha256": "20f0ebb611bec8fa8809c78809a1803536e690b150f9c4484bf819788a236a22",
+          "receipt_id": "9a1afeacfc80929e352a529f86696b731b61cb959cb933ef388495c7e99855cd",
+          "source_sha256": "626B0CD628E3642490C04B1247F85FA643F7E8D1D20B1F23D63CD576DBCA1C68"
+        },
+        {
+          "available_at": "2023-01-01T09:00:00+00:00",
+          "checkpoint": "2023-01-01T09:00:00+00:00",
+          "config_sha256": "C93A65888AE1110874D47FABA1EBB2BFEF9F46CEED8E2F1EE68D4ED1337F44BC",
+          "kind": "LIFECYCLE_EXECUTION",
+          "parents": [
+            "9a1afeacfc80929e352a529f86696b731b61cb959cb933ef388495c7e99855cd"
+          ],
+          "payload_json": "{\"campaign_id\":\"5c1220dfe569f046217b360a3f56c25dc6bc2d90c6380a82d642eed9c195d04a\",\"cash_delta\":3902.89196856284,\"execution_phase\":\"INTRABAR_OR_COMPLETED_CLOSE\",\"fee\":9.78168413173644,\"identity\":\"5c1220dfe569f046217b360a3f56c25dc6bc2d90c6380a82d642eed9c195d04a\",\"pair\":\"X-USDT\",\"price\":99.0,\"qty\":39.521956087824,\"reason\":\"HARD_STRUCTURAL_STOP\",\"side\":\"SELL\",\"time\":\"2023-01-01 09:00:00+00:00\"}",
+          "payload_sha256": "333969a2a3e0baeb8b5acc85a34ee32b504f35b82dd900eea573b126a70d9b3b",
+          "receipt_id": "c7d10a543f6dadc13e22c582df8859ddf80aca2959f26aeff550d3d7f25d1a1c",
+          "source_sha256": "626B0CD628E3642490C04B1247F85FA643F7E8D1D20B1F23D63CD576DBCA1C68"
+        },
+        {
+          "available_at": "2023-01-01T09:00:00+00:00",
+          "checkpoint": "2023-01-01T09:00:00+00:00",
+          "config_sha256": "C93A65888AE1110874D47FABA1EBB2BFEF9F46CEED8E2F1EE68D4ED1337F44BC",
+          "kind": "ACCOUNTING_OUTPUT",
+          "parents": [
+            "080f0ae8143629b277e099c90f5131de88caa0061937b6ff99b5f6588b5506e6",
+            "2a6f7ba211298fb96bcbad6f663fb5f0522bd9be843577bd656f005c8f13092a",
+            "c7d10a543f6dadc13e22c582df8859ddf80aca2959f26aeff550d3d7f25d1a1c"
+          ],
+          "payload_json": "{\"campaigns_sha\":\"6c7647014d84262e4c0879afcf8ad1b0c37aca0fe3f1679c2d1eb25634fc859b\",\"cash\":98507.4875,\"disposition\":\"SYNTHETIC_MECHANICS_ONLY\",\"fills_sha\":\"68b75b9e0e04698768fbfa0459e2b65d8c0e67c62d7dc249dbaccaf3483bde94\",\"marks_sha\":\"8ae4409ab15290d7f227b1a145f244695fd1e08f1562babff3113aa3abc17233\"}",
+          "payload_sha256": "7ff0d3066589a7ffa03317313bf3b04bcdb3c2e7c2f9fed8421de66f68d7f698",
+          "receipt_id": "4b48ad4843996b21beeb029b5e692670837bbb636d99c52e98143ca2adc55c54",
+          "source_sha256": "626B0CD628E3642490C04B1247F85FA643F7E8D1D20B1F23D63CD576DBCA1C68"
+        }
+      ],
+      "source_sha256": "626B0CD628E3642490C04B1247F85FA643F7E8D1D20B1F23D63CD576DBCA1C68",
+      "terminated": []
+    },
+    "terminal_receipt": "4b48ad4843996b21beeb029b5e692670837bbb636d99c52e98143ca2adc55c54"
+  }
+}

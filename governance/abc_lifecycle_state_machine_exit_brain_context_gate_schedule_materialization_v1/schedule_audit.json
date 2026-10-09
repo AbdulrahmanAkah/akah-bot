@@ -1,0 +1,45 @@
+{
+  "2024_access": false,
+  "model_refit": false,
+  "outcomes_used_to_materialize_schedule": false,
+  "policy_count": 6,
+  "policy_definitions": {
+    "EB3A_A_ONSET_SEVERE_GIVEBACK": {
+      "description": "score>0 AND A active AND A run decision=1 AND giveback_fraction_of_mfe>=0.50",
+      "mechanism": "STRUCTURAL_BREAK_ONSET_AFTER_HALF_MFE_GIVEBACK"
+    },
+    "EB3B_A_CONT_BEARISH_STRUCTURE": {
+      "description": "score>0 AND A active AND A run decision>=2 AND lower_high_count_last3x4h>=2 AND lower_low_count_last3x4h>=2",
+      "mechanism": "PERSISTENT_STRUCTURAL_BREAK_WITH_2_OF_3_LOWER_HIGHS_AND_LOWER_LOWS"
+    },
+    "EB3C_B_ONSET_SEVERE_GIVEBACK": {
+      "description": "score>0 AND B active AND B run decision=1 AND giveback_fraction_of_mfe>=0.50",
+      "mechanism": "VOLATILITY_DAMAGE_ONSET_AFTER_HALF_MFE_GIVEBACK"
+    },
+    "EB3D_CONFIRMED_DAMAGE_NEG_MOMENTUM": {
+      "description": "score>0 AND CONFIRMED AND (A OR B) AND return_4h<0 AND return_8h<0",
+      "mechanism": "CONFIRMED_DAMAGE_WITH_MULTI_HORIZON_NEGATIVE_MOMENTUM"
+    },
+    "EB3E_CONFIRMED_WINNER_GIVEBACK": {
+      "description": "score>0 AND CONFIRMED AND (A OR B) AND mfe_return_so_far>0 AND giveback_fraction_of_mfe>=0.50 AND current_return_from_entry>0",
+      "mechanism": "PROTECT_CONFIRMED_WINNER_AFTER_HALF_MFE_GIVEBACK"
+    },
+    "EB3F_DAMAGED_LOSER_THESIS_FAILURE": {
+      "description": "score>0 AND (A OR B) AND current_return_from_entry<=0 AND path_efficiency_signed<=0",
+      "mechanism": "CUT_DAMAGED_NONPROGRESSING_LOSER"
+    }
+  },
+  "policy_ids": [
+    "EB3A_A_ONSET_SEVERE_GIVEBACK",
+    "EB3B_A_CONT_BEARISH_STRUCTURE",
+    "EB3C_B_ONSET_SEVERE_GIVEBACK",
+    "EB3D_CONFIRMED_DAMAGE_NEG_MOMENTUM",
+    "EB3E_CONFIRMED_WINNER_GIVEBACK",
+    "EB3F_DAMAGED_LOSER_THESIS_FAILURE"
+  ],
+  "policy_thresholds_preregistered": true,
+  "schema_version": "abc-exit-brain-context-gate-schedule-audit-v1",
+  "score_source": "FROZEN_EB1",
+  "score_threshold_changed": false,
+  "total_schedule_rows": 186
+}

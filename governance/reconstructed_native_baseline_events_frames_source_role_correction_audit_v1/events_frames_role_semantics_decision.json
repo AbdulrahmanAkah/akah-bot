@@ -1,0 +1,204 @@
+{
+  "all_dynamic_input_role_semantics_and_lineage_ready": false,
+  "events_semantics_corrected": false,
+  "frames_upstream_lineage_complete": false,
+  "next_bottleneck": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_EVENTS_FRAMES_UPSTREAM_PRODUCER_ROLE_AUDIT_CLOSURE_V1",
+  "previous_human_candidate_set_disposition": "REJECTED_AS_NOT_PROVEN_UPSTREAM_PRODUCER_AUTHORITY",
+  "rejected_previous_candidates": {
+    "events": [
+      {
+        "family_id": "src/spotbot/research/eaa_same_pair_secondary_shadow.py::replay_same_pair_secondary_shadow@193",
+        "path": "src/spotbot/research/eaa_same_pair_secondary_shadow.py",
+        "reason": "SCHEMA_REFERENCE_OR_REPLAY_CONSUMER_IS_NOT_UPSTREAM_ARGUMENT_PRODUCER_AUTHORITY",
+        "symbol": "replay_same_pair_secondary_shadow"
+      },
+      {
+        "family_id": "src/spotbot/research/rd27_lifecycle_replay.py::replay_lifecycle_policy@247",
+        "path": "src/spotbot/research/rd27_lifecycle_replay.py",
+        "reason": "SCHEMA_REFERENCE_OR_REPLAY_CONSUMER_IS_NOT_UPSTREAM_ARGUMENT_PRODUCER_AUTHORITY",
+        "symbol": "replay_lifecycle_policy"
+      }
+    ],
+    "frames": [
+      {
+        "family_id": "src/spotbot/research/rd27_lifecycle_replay.py::replay_lifecycle_policy@247",
+        "path": "src/spotbot/research/rd27_lifecycle_replay.py",
+        "reason": "SCHEMA_REFERENCE_OR_REPLAY_CONSUMER_IS_NOT_UPSTREAM_ARGUMENT_PRODUCER_AUTHORITY",
+        "symbol": "replay_lifecycle_policy"
+      },
+      {
+        "family_id": "src/spotbot/research/rd33_temporal_mb_replay.py::replay_rd33_policy@614",
+        "path": "src/spotbot/research/rd33_temporal_mb_replay.py",
+        "reason": "SCHEMA_REFERENCE_OR_REPLAY_CONSUMER_IS_NOT_UPSTREAM_ARGUMENT_PRODUCER_AUTHORITY",
+        "symbol": "replay_rd33_policy"
+      }
+    ]
+  },
+  "roles": {
+    "events": {
+      "consumer_fields": [
+        "adaptive_protection_gap_exits",
+        "adaptive_protection_touch_exits",
+        "adaptive_stagnation_exits",
+        "admitted_entries",
+        "capacity_capped_entries",
+        "capacity_unavailable",
+        "cash_capped_entries",
+        "entry_bar_adaptive_exits",
+        "gross_limit_rejection",
+        "max_hold_exits",
+        "missing_entry_bar",
+        "missing_exit_bar_precheck",
+        "position_slots_full",
+        "risk_off_suppressed_entries",
+        "same_pair_open",
+        "time_failure_exits"
+      ],
+      "file_or_data_loader_leaf_count": 0,
+      "leaf_count": 4,
+      "leaves": [
+        {
+          "call": "copy",
+          "callsite_line": 240,
+          "callsite_path": "scripts/research/run_eaa_same_pair_secondary_shadow_parity.py",
+          "definition_count": 0,
+          "expression": "signals[signals['period_id'] == period_id].copy()",
+          "kind": "CALL_UNRESOLVED_OR_NONUNIQUE",
+          "literal_path_candidates": []
+        },
+        {
+          "callsite_line": 420,
+          "callsite_path": "scripts/research/run_rd27_lifecycle_ablation.py",
+          "kind": "NAME_UNRESOLVED",
+          "name": "portfolio_events"
+        },
+        {
+          "call": "copy",
+          "callsite_line": 203,
+          "callsite_path": "src/spotbot/research/eaa_same_pair_secondary_shadow.py",
+          "definition_count": 0,
+          "expression": "signals[signals['period_id'] == period_id].copy()",
+          "kind": "CALL_UNRESOLVED_OR_NONUNIQUE",
+          "literal_path_candidates": []
+        },
+        {
+          "call": "copy",
+          "callsite_line": 203,
+          "callsite_path": "src/spotbot/research/eaa_same_pair_secondary_shadow.py",
+          "definition_count": 0,
+          "expression": "signals[signals['period_id'] == period_id].copy()",
+          "kind": "CALL_UNRESOLVED_OR_NONUNIQUE",
+          "literal_path_candidates": []
+        }
+      ],
+      "local_exact_schema_initializer_count": 0,
+      "mutated_by_replay": false,
+      "role": "events",
+      "semantic_role": "READ_ONLY_UPSTREAM_INPUT",
+      "source_binding_status": "UPSTREAM_SOURCE_OR_INITIALIZATION_LINEAGE_INCOMPLETE",
+      "unresolved_leaf_count": 4
+    },
+    "frames": {
+      "consumer_fields": [
+        "close",
+        "high",
+        "low",
+        "open",
+        "trailing_24h_quote_turnover_proxy"
+      ],
+      "file_or_data_loader_leaf_count": 8,
+      "leaf_count": 11,
+      "leaves": [
+        {
+          "callsite_line": 240,
+          "callsite_path": "scripts/research/run_eaa_same_pair_secondary_shadow_parity.py",
+          "kind": "NAME_UNRESOLVED",
+          "name": "frames"
+        },
+        {
+          "call": "load_feature_frames",
+          "callsite_line": 420,
+          "callsite_path": "scripts/research/run_rd27_lifecycle_ablation.py",
+          "expression": "load_feature_frames(raw_root=raw_root, pairs=pairs, cutoff=DATA_CUTOFF)",
+          "kind": "FILE_OR_DATA_LOADER_CALL",
+          "literal_path_candidates": []
+        },
+        {
+          "call": "load_feature_frames",
+          "callsite_line": 420,
+          "callsite_path": "scripts/research/run_rd27_lifecycle_ablation.py",
+          "expression": "load_feature_frames(raw_root=raw_root, pairs=pairs)",
+          "kind": "FILE_OR_DATA_LOADER_CALL",
+          "literal_path_candidates": []
+        },
+        {
+          "call": "load_feature_frames",
+          "callsite_line": 420,
+          "callsite_path": "scripts/research/run_rd27_lifecycle_ablation.py",
+          "expression": "load_feature_frames(raw_root=raw_root, pairs=pairs)",
+          "kind": "FILE_OR_DATA_LOADER_CALL",
+          "literal_path_candidates": []
+        },
+        {
+          "call": "load_feature_frames",
+          "callsite_line": 420,
+          "callsite_path": "scripts/research/run_rd27_lifecycle_ablation.py",
+          "expression": "load_feature_frames(raw_root=raw_root, pairs=pairs)",
+          "kind": "FILE_OR_DATA_LOADER_CALL",
+          "literal_path_candidates": []
+        },
+        {
+          "call": "load_feature_frames",
+          "callsite_line": 420,
+          "callsite_path": "scripts/research/run_rd27_lifecycle_ablation.py",
+          "expression": "load_feature_frames(raw_root=raw_root, pairs=pairs)",
+          "kind": "FILE_OR_DATA_LOADER_CALL",
+          "literal_path_candidates": []
+        },
+        {
+          "call": "load_feature_frames",
+          "callsite_line": 420,
+          "callsite_path": "scripts/research/run_rd27_lifecycle_ablation.py",
+          "expression": "load_feature_frames(raw_root=raw_root, pairs=pairs)",
+          "kind": "FILE_OR_DATA_LOADER_CALL",
+          "literal_path_candidates": []
+        },
+        {
+          "call": "load_feature_frames",
+          "callsite_line": 420,
+          "callsite_path": "scripts/research/run_rd27_lifecycle_ablation.py",
+          "expression": "rd31.load_feature_frames(raw_root=raw_root, pairs=pairs)",
+          "kind": "FILE_OR_DATA_LOADER_CALL",
+          "literal_path_candidates": []
+        },
+        {
+          "call": "load_feature_frames",
+          "callsite_line": 420,
+          "callsite_path": "scripts/research/run_rd27_lifecycle_ablation.py",
+          "expression": "rd31.load_feature_frames(raw_root=raw_root, pairs=pairs)",
+          "kind": "FILE_OR_DATA_LOADER_CALL",
+          "literal_path_candidates": []
+        },
+        {
+          "callsite_line": 203,
+          "callsite_path": "src/spotbot/research/eaa_same_pair_secondary_shadow.py",
+          "kind": "NAME_UNRESOLVED",
+          "name": "frames"
+        },
+        {
+          "callsite_line": 203,
+          "callsite_path": "src/spotbot/research/eaa_same_pair_secondary_shadow.py",
+          "kind": "NAME_UNRESOLVED",
+          "name": "frames"
+        }
+      ],
+      "local_exact_schema_initializer_count": 0,
+      "mutated_by_replay": false,
+      "role": "frames",
+      "semantic_role": "READ_ONLY_UPSTREAM_INPUT",
+      "source_binding_status": "UPSTREAM_SOURCE_OR_INITIALIZATION_LINEAGE_INCOMPLETE",
+      "unresolved_leaf_count": 3
+    }
+  },
+  "status": "PASS"
+}

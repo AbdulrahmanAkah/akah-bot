@@ -1,0 +1,52 @@
+{
+  "accepted_disposition": "TRUE_FINAL_MODEL_PILOT_INCOMPLETE",
+  "accepted_feature_authority": "PASS",
+  "accepted_membership_authority": "PASS",
+  "accepted_model_readiness": "PASS",
+  "accepted_model_skip": "SKIPPED_INSUFFICIENT_CHRONOLOGY",
+  "authorization": {
+    "2024": false,
+    "2025": false,
+    "by_test_block_and_year": true,
+    "feature_search": false,
+    "final_1x_2x_economics": true,
+    "fixed_m1_m2": true,
+    "model3": false,
+    "new_raw_or_replay": false,
+    "production": false,
+    "push": false,
+    "reuse_rev719_features": true,
+    "threshold_search": false
+  },
+  "chronology_protocol": {
+    "calendar_only": true,
+    "lifecycle_purged": true,
+    "min_test_rows": 10,
+    "min_train_rows": 50,
+    "min_valid_blocks": 3,
+    "outcome_tuned": false,
+    "target_embargo_hours": 4,
+    "test_block_days": 56,
+    "warmup_days": 364
+  },
+  "created_at_utc": "2026-09-26T22:07:06.732205+00:00",
+  "frozen_feature_surface": {
+    "path": "governance/abc_lifecycle_state_machine_true_final_strategy_completion_mega_v1/true_final_runtime_feature_surface.csv.gz",
+    "sha256": "EEF17E33F07723B80036514F887102576308921868A04C76EA9B7854E5C42F0F"
+  },
+  "model_corrections": {
+    "downside_target": "max(-Y,0)",
+    "m1_interface": [
+      "mu",
+      "downside"
+    ],
+    "model_capacity_change": false,
+    "new_model_added": false,
+    "trade_equal_weights": "TRAINING_BLOCK_LIFECYCLE_COUNTS_ONLY"
+  },
+  "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_MODEL_CHRONOLOGY_AND_FINAL_ECONOMICS_MEGA_V1",
+  "reviewed_revision": 719,
+  "schema_version": "akah-rev719-model-chronology-final-economics-human-review-v1",
+  "status": "PASS_REV719_MODEL_CHRONOLOGY_FINAL_ECONOMICS_AUTHORIZED",
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_TRUE_FINAL_STRATEGY_COMPLETION_MEGA_HUMAN_REVIEW_V1"
+}

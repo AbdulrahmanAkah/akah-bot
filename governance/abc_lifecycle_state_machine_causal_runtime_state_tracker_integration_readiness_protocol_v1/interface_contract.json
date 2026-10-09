@@ -1,0 +1,45 @@
+{
+  "adaptive_policy": "NONE",
+  "checkpoint_fields": [
+    "lifecycle_key",
+    "stalled_active",
+    "prev_snapshot"
+  ],
+  "checkpoint_restore_required": true,
+  "downstream_mutation_of_tracker_state": "FORBIDDEN",
+  "economic_inputs": "FORBIDDEN",
+  "exit_action": "NONE",
+  "first_decision_transition": "ABSENT",
+  "input_fields": [
+    "year",
+    "pair",
+    "entry_time",
+    "native_exit_time",
+    "decision_time_4h",
+    "base_state",
+    "memory_seen",
+    "C_signal",
+    "a_condition_now",
+    "b_condition_now"
+  ],
+  "interface_id": "ABC_CAUSAL_RUNTIME_TRACKER_INTEGRATION_INTERFACE_V1",
+  "lifecycle_identity_role": "RESET_AND_ISOLATION_ONLY_NOT_DECISION_LOGIC",
+  "production_import": "FORBIDDEN",
+  "schema_version": "abc-causal-runtime-tracker-integration-interface-contract-v1",
+  "scope": "RESEARCH_SHADOW_ONLY",
+  "state_packet_fields": [
+    "base_state",
+    "stalled_active",
+    "structural_break_active",
+    "volatility_damage_active",
+    "persistent_overlay_count",
+    "persistent_overlay_signature"
+  ],
+  "transition_packet_fields": [
+    "base_phase_transition",
+    "stalled_active_transition",
+    "structural_break_active_transition",
+    "volatility_damage_active_transition",
+    "overlay_transition_signature"
+  ]
+}

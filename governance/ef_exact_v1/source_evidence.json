@@ -1,0 +1,837 @@
+{
+  "data_rows_read": false,
+  "input_artifacts": [
+    {
+      "path": "governance/reconstructed_native_baseline_events_frames_source_role_correction_audit_v1/replay_argument_usage_profile.json",
+      "sha256": "B02E07860D8AF9BC2C82250082B8A67240331C4E02633744AAF66C3BD6681C25"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_events_frames_source_role_correction_audit_v1/replay_argument_callsites.json",
+      "sha256": "2F973594D479B1246B00E973BB26F633B716940C6C594AC15934A337058C2E1C"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_events_frames_source_role_correction_audit_v1/events_frames_argument_lineage.json",
+      "sha256": "124839DDE9C37890E462E48AEA7399D6E97C174CEFC3BAF3E4EE0DF8F041ED63"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_events_frames_source_role_correction_audit_v1/events_frames_role_semantics_decision.json",
+      "sha256": "7C9C5186259C76CCE30ED978070CA21BE2C5E7CFFCCEF6893B51C2D80FDF4672"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_events_frames_source_role_correction_audit_v1/corrected_events_frames_source_contract.json",
+      "sha256": "A45E6BBCB57C43F35CE44AC79ABD857824BBD85DD46EDF0DDAB9A155CB33873C"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_events_frames_source_role_correction_audit_v1/corrected_input_contract.json",
+      "sha256": "AE8853919722C04AAB5F98F1673B7A31E8DC0EB262DDE30F2F1E14C090D32194"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_events_frames_source_role_correction_audit_v1.json",
+      "sha256": "8B01456FB5C21A8979B278DDF1E7B2400A6EAB42602C0DF0EEA3CD84CBC5FB3C"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_events_frames_upstream_producer_role_audit_closure_v1/baseline_replay_callsite_filter.json",
+      "sha256": "6A8D079768A3EFABCAB9EE161AF4BFDF42294EF4EDD7173835A630AAB12BE95F"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_events_frames_upstream_producer_role_audit_closure_v1/transitive_argument_mutation_audit.json",
+      "sha256": "15F7C76543B78BD54EE04A7F59F2E0A3F34C39253EE796A8A6F7634AAC216802"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_events_frames_upstream_producer_role_audit_closure_v1/bounded_exact_argument_lineage_closure.json",
+      "sha256": "77A04C1A33601831B22BD9D16A43A1E5725928E673BBA04F8E3564BE7F6232F9"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_events_frames_upstream_producer_role_audit_closure_v1/frames_loader_authority_audit.json",
+      "sha256": "AFDDA81CFE54104FB2745202A62CD725486F5865AFA8208C2DBAFA93B5DF61B4"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_events_frames_upstream_producer_role_audit_closure_v1/upstream_role_audit_closure_decision.json",
+      "sha256": "D99245B152B9B0748BDA2E99F53C15B6DE2226D485C739834220A4CC289BD0F1"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_events_frames_upstream_producer_role_audit_closure_v1/upstream_bound_or_partial_source_contract.json",
+      "sha256": "DD200F6374AEB13103DD46AAC5148330215F1CB18CF53A4F2DFD48029D110008"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_events_frames_upstream_producer_role_audit_closure_v1/upstream_role_closure_updated_input_contract.json",
+      "sha256": "27DFBA2EA0EBBEA224EA4FFB1F92DBC08E36B87D895F7060058E9260F7100FCB"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_events_frames_upstream_producer_role_audit_closure_v1.json",
+      "sha256": "140517173317B3A933DD0C8FD42EA00BE3B3C39552AA99394768ACA36F474282"
+    },
+    {
+      "path": "governance/AKAH_BOT_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_DIRECTION_V1.json",
+      "sha256": "177532749DEE1987A40FA408190C9DBD6BD6328FDC3BC1F3D50181F23199B663"
+    },
+    {
+      "path": "governance/AKAH_BOT_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_ROADMAP_V1.json",
+      "sha256": "F15E0DEB7BF6DC1B5660D5476E348F837548D8A9C097B7A6B919A32D89CA2DBE"
+    },
+    {
+      "path": "governance/AKAH_BOT_RECONSTRUCTED_NATIVE_EVENT_RECORDER_PROTOCOL_V1.json",
+      "sha256": "3EBD673458E1B4EFA21A9568BD58E4EA8F3D255ACA366339182A62592DDC52D6"
+    },
+    {
+      "path": "governance/AKAH_BOT_RECONSTRUCTED_NATIVE_BASELINE_STUDY_CONTRACT_V1.json",
+      "sha256": "77D3AB8A5E48DD3183E8FFB9F9AF891CEB2DD9907B6A3DDFC60B7C3199AF5D0C"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_prospective_scalar_human_decision_v1/human_scalar_decision.json",
+      "sha256": "9DC675D8A75AC343B80CDB6DA3B1B0DD3F72C9418586114F8E32D9958F8605E8"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_prospective_scalar_human_decision_v1/human_selected_scalar_contract.json",
+      "sha256": "9F3AEA1429366C2CC96FACA62A9C5F3201AB1D26A0EB66181DE99AC1DC675002"
+    }
+  ],
+  "snippets": {
+    "scripts/research/run_eaa_same_pair_secondary_shadow_parity.py:150-165": {
+      "end_line": 165,
+      "path": "scripts/research/run_eaa_same_pair_secondary_shadow_parity.py",
+      "snippet_sha256_lf_no_final_newline": "60D7B43E5C724C034421227B639E3DED6CD0CDD89A105F2A7D3D5306610149CE",
+      "source_sha256": "8438DE5BA561867528E8D0996CAC83D36C0F60B19603287D996DCA32909E3D27",
+      "source_text": "def load_signals(path: Path) -> pd.DataFrame:\n    columns = [\"timestamp\", \"pair\", \"membership_rank\", \"period_id\", \"support_families\", \"support_count\", \"atr24_at_signal\"]\n    frame = pd.read_csv(path, usecols=columns, low_memory=False)\n    if len(frame) != 3962:\n        raise ProofError(f\"signal row count drift: {len(frame)}\")\n    frame[\"timestamp\"] = pd.to_datetime(frame[\"timestamp\"], utc=True, errors=\"raise\")\n    frame[\"membership_rank\"] = pd.to_numeric(frame[\"membership_rank\"], errors=\"raise\").astype(int)\n    frame[\"atr24_at_signal\"] = pd.to_numeric(frame[\"atr24_at_signal\"], errors=\"raise\").astype(float)\n    frame[\"pair\"] = frame[\"pair\"].astype(str); frame[\"period_id\"] = frame[\"period_id\"].astype(str); frame[\"support_families\"] = frame[\"support_families\"].astype(str)\n    if bool((frame[\"timestamp\"] >= CUT).any()):\n        raise ProofError(\"signal ledger crossed sealed pre-2022 cutoff\")\n    for period_id, (start, end) in PERIODS.items():\n        subset = frame[frame[\"period_id\"] == period_id]\n        if len(subset) != PERIOD_SIGNAL_COUNTS[period_id] or bool((subset[\"timestamp\"] < start).any()) or bool((subset[\"timestamp\"] >= end).any()):\n            raise ProofError(f\"signal period authority drift: {period_id}\")\n    return frame.sort_values([\"period_id\", \"timestamp\", \"membership_rank\", \"pair\"], kind=\"stable\").reset_index(drop=True)",
+      "start_line": 150
+    },
+    "scripts/research/run_eaa_same_pair_secondary_shadow_parity.py:168-187": {
+      "end_line": 187,
+      "path": "scripts/research/run_eaa_same_pair_secondary_shadow_parity.py",
+      "snippet_sha256_lf_no_final_newline": "664DBB58BFDAFECA45165D516CF151CFC2BD854381F2B61A65221765A7CAF95C",
+      "source_sha256": "8438DE5BA561867528E8D0996CAC83D36C0F60B19603287D996DCA32909E3D27",
+      "source_text": "def market_authority(*, raw_root: Path, pairs: list[str], rd26: Any, state: Any) -> tuple[dict[str, pd.DataFrame], pd.DataFrame, list[dict[str, Any]]]:\n    frames: dict[str, pd.DataFrame] = {}; audit: list[dict[str, Any]] = []; cutoff = CUT.to_pydatetime()\n    for index, pair in enumerate(pairs, start=1):\n        path = raw_root / pair / \"1h.parquet\"\n        if not path.is_file():\n            raise ProofError(f\"raw source missing: {path}\")\n        raw = pd.read_parquet(path, engine=\"pyarrow\", filters=[(\"timestamp\", \"<\", cutoff)])\n        timestamps = pd.to_datetime(raw[\"timestamp\"], utc=True, errors=\"raise\")\n        if raw.empty or bool((timestamps >= CUT).any()):\n            raise ProofError(f\"raw cutoff pushdown failed: {pair}\")\n        feature = rd26.prepare_features(raw, cutoff=CUT); frames[pair] = feature\n        audit.append({\"pair\": pair, \"row_count_materialized\": len(feature), \"first_timestamp\": utc(feature[\"timestamp\"].iloc[0]).isoformat(), \"last_timestamp\": utc(feature[\"timestamp\"].iloc[-1]).isoformat(), \"cutoff_exclusive\": CUT.isoformat()})\n        print(f\"RAW_PRE2022={index}/{len(pairs)}:{pair}:{len(feature)}\", flush=True)\n    btc_raw = pd.read_parquet(raw_root / \"BTC-USDT\" / \"1h.parquet\", engine=\"pyarrow\", filters=[(\"timestamp\", \"<\", cutoff)])\n    if bool((pd.to_datetime(btc_raw[\"timestamp\"], utc=True, errors=\"raise\") >= CUT).any()):\n        raise ProofError(\"BTC state source crossed pre-2022 cutoff\")\n    state_frame = state.build_market_state_frame(btc_raw, cutoff=CUT)\n    if bool((pd.to_datetime(state_frame[\"timestamp\"], utc=True, errors=\"raise\") >= CUT).any()):\n        raise ProofError(\"state frame crossed pre-2022 cutoff\")\n    return frames, state_frame, audit",
+      "start_line": 168
+    },
+    "scripts/research/run_eaa_same_pair_secondary_shadow_parity.py:216-223": {
+      "end_line": 223,
+      "path": "scripts/research/run_eaa_same_pair_secondary_shadow_parity.py",
+      "snippet_sha256_lf_no_final_newline": "42E6723F0291C7A1687D3EC5E2F24112A29663387EA3F163C2F77748C6724D19",
+      "source_sha256": "8438DE5BA561867528E8D0996CAC83D36C0F60B19603287D996DCA32909E3D27",
+      "source_text": "def main() -> int:\n    parser = argparse.ArgumentParser()\n    for name in (\"repo-root\", \"raw-root\", \"signals\", \"p0-json\", \"protocol-json\", \"p4p4r-json\", \"p4p5r-json\", \"output-dir\"):\n        parser.add_argument(\"--\" + name, type=Path, required=True)\n    args = parser.parse_args()\n    for attr in (\"repo_root\", \"raw_root\", \"signals\", \"p0_json\", \"protocol_json\", \"p4p4r_json\", \"p4p5r_json\", \"output_dir\"):\n        setattr(args, attr, getattr(args, attr).resolve())\n    print(\"STAGE=EAA_REALLOCATION_POST_P4_P5R_SHADOW_IMPLEMENTATION_AND_PARITY_PROOF\")",
+      "start_line": 216
+    },
+    "scripts/research/run_eaa_same_pair_secondary_shadow_parity.py:229-240": {
+      "end_line": 240,
+      "path": "scripts/research/run_eaa_same_pair_secondary_shadow_parity.py",
+      "snippet_sha256_lf_no_final_newline": "3F5AAC31086776CCECE598A704A5C01D3758B031CB2604E25479C6FA2859F1C0",
+      "source_sha256": "8438DE5BA561867528E8D0996CAC83D36C0F60B19603287D996DCA32909E3D27",
+      "source_text": "    from spotbot.research import rd26_exit_architecture as rd26\n    from spotbot.research import rd27_adaptive_lifecycle as state\n    from spotbot.research import rd27_lifecycle_replay as rd27\n    shadow.validate_shadow_constants()\n    signals = load_signals(args.signals); pairs = sorted(set(signals[\"pair\"].astype(str)))\n    frames, state_frame, raw_audit = market_authority(raw_root=args.raw_root, pairs=pairs, rd26=rd26, state=state)\n    proof: dict[str, Any] = {}\n    for cost_multiplier, authority in ((1.0, p4p4r), (2.0, p4p5r)):\n        cost_key = \"1x\" if cost_multiplier == 1.0 else \"2x\"; proof[cost_key] = {}\n        for period_id, (start, end) in PERIODS.items():\n            subset = signals[signals[\"period_id\"] == period_id].copy(); print(f\"PARITY_START={cost_key}:{period_id}\", flush=True)\n            native = rd27.replay_lifecycle_policy(policy_id=rd27.STATIC_EXIT_STATE_ROUTER, portfolio_id=\"EAA_SHADOW_PARITY_NATIVE\", universe_id=\"PRE2022_UNION\", cost_multiplier=cost_multiplier, events=subset, frames=frames, state_frame=state_frame, replay_start=start, replay_cutoff=end)",
+      "start_line": 229
+    },
+    "scripts/research/run_eaa_same_pair_secondary_shadow_parity.py:229-251": {
+      "end_line": 251,
+      "path": "scripts/research/run_eaa_same_pair_secondary_shadow_parity.py",
+      "snippet_sha256_lf_no_final_newline": "7884A0F70B7298612F2CB80AE7E50ABF50C545EC5315D80F3A70E31D8506F375",
+      "source_sha256": "8438DE5BA561867528E8D0996CAC83D36C0F60B19603287D996DCA32909E3D27",
+      "source_text": "    from spotbot.research import rd26_exit_architecture as rd26\n    from spotbot.research import rd27_adaptive_lifecycle as state\n    from spotbot.research import rd27_lifecycle_replay as rd27\n    shadow.validate_shadow_constants()\n    signals = load_signals(args.signals); pairs = sorted(set(signals[\"pair\"].astype(str)))\n    frames, state_frame, raw_audit = market_authority(raw_root=args.raw_root, pairs=pairs, rd26=rd26, state=state)\n    proof: dict[str, Any] = {}\n    for cost_multiplier, authority in ((1.0, p4p4r), (2.0, p4p5r)):\n        cost_key = \"1x\" if cost_multiplier == 1.0 else \"2x\"; proof[cost_key] = {}\n        for period_id, (start, end) in PERIODS.items():\n            subset = signals[signals[\"period_id\"] == period_id].copy(); print(f\"PARITY_START={cost_key}:{period_id}\", flush=True)\n            native = rd27.replay_lifecycle_policy(policy_id=rd27.STATIC_EXIT_STATE_ROUTER, portfolio_id=\"EAA_SHADOW_PARITY_NATIVE\", universe_id=\"PRE2022_UNION\", cost_multiplier=cost_multiplier, events=subset, frames=frames, state_frame=state_frame, replay_start=start, replay_cutoff=end)\n            disabled = shadow.replay_same_pair_secondary_shadow(portfolio_id=\"EAA_SHADOW_PARITY_NATIVE\", universe_id=\"PRE2022_UNION\", cost_multiplier=cost_multiplier, events=subset, frames=frames, state_frame=state_frame, replay_start=start, replay_cutoff=end, shadow_enabled=False)\n            native_trades, native_daily, native_metrics, native_counters = native\n            compare_frame(f\"{cost_key}.{period_id}.disabled_trades\", disabled.trades, native_trades); compare_frame(f\"{cost_key}.{period_id}.disabled_daily\", disabled.daily, native_daily)\n            if disabled.metrics != native_metrics or disabled.counters != native_counters:\n                raise ProofError(f\"{cost_key}.{period_id}.default-disabled semantic parity drift\")\n            sealed_baseline = sealed_baseline_payload(authority, period_id, cost_multiplier)\n            require_close(f\"{cost_key}.{period_id}.native_final_equity\", float(native_metrics[\"final_equity\"]), float(sealed_baseline[\"final_equity\"]))\n            if len(native_trades) != int(sealed_baseline[\"trade_count\"]):\n                raise ProofError(f\"{cost_key}.{period_id}.native trade-count drift\")\n            compare_counter_subset(f\"{cost_key}.{period_id}.native_counters\", native_counters, sealed_baseline[\"counters\"])\n            enabled = shadow.replay_same_pair_secondary_shadow(portfolio_id=\"EAA_SHADOW_POLICY\", universe_id=\"PRE2022_UNION\", cost_multiplier=cost_multiplier, events=subset, frames=frames, state_frame=state_frame, replay_start=start, replay_cutoff=end, shadow_enabled=True)",
+      "start_line": 229
+    },
+    "scripts/research/run_eaa_same_pair_secondary_shadow_parity.py:233-234": {
+      "end_line": 234,
+      "path": "scripts/research/run_eaa_same_pair_secondary_shadow_parity.py",
+      "snippet_sha256_lf_no_final_newline": "D4C9907926C4390C7B223AB8AB3931E99D9CF72D07A558C8D5BCB091124CF1A3",
+      "source_sha256": "8438DE5BA561867528E8D0996CAC83D36C0F60B19603287D996DCA32909E3D27",
+      "source_text": "    signals = load_signals(args.signals); pairs = sorted(set(signals[\"pair\"].astype(str)))\n    frames, state_frame, raw_audit = market_authority(raw_root=args.raw_root, pairs=pairs, rd26=rd26, state=state)",
+      "start_line": 233
+    },
+    "scripts/research/run_eaa_same_pair_secondary_shadow_parity.py:240-240": {
+      "end_line": 240,
+      "path": "scripts/research/run_eaa_same_pair_secondary_shadow_parity.py",
+      "snippet_sha256_lf_no_final_newline": "AD40EB6F04CB5CD536C24CF23A48B15106D4D0FD330D26189601814D26099CF0",
+      "source_sha256": "8438DE5BA561867528E8D0996CAC83D36C0F60B19603287D996DCA32909E3D27",
+      "source_text": "            native = rd27.replay_lifecycle_policy(policy_id=rd27.STATIC_EXIT_STATE_ROUTER, portfolio_id=\"EAA_SHADOW_PARITY_NATIVE\", universe_id=\"PRE2022_UNION\", cost_multiplier=cost_multiplier, events=subset, frames=frames, state_frame=state_frame, replay_start=start, replay_cutoff=end)",
+      "start_line": 240
+    },
+    "scripts/research/run_rd26_exit_architecture.py:187-208": {
+      "end_line": 208,
+      "path": "scripts/research/run_rd26_exit_architecture.py",
+      "snippet_sha256_lf_no_final_newline": "F2DDB17ADD5D9569F4AAFE69F103DE5A3227B5C87B796AC426C9D80B96099013",
+      "source_sha256": "9C096C6E7C4784D9B91A7EFC55FA85F46755B2D850B78E7A5E90980294DC9ACE",
+      "source_text": "def load_feature_frames(\n    *,\n    raw_root: Path,\n    pairs: list[str],\n    cutoff: pd.Timestamp,\n) -> dict[str, pd.DataFrame]:\n    frames: dict[str, pd.DataFrame] = {}\n    cutoff_value = cutoff.to_pydatetime()\n    for index, pair in enumerate(pairs, start=1):\n        path = raw_root / pair / \"1h.parquet\"\n        raw = pd.read_parquet(\n            path,\n            engine=\"pyarrow\",\n            filters=[(\"timestamp\", \"<\", cutoff_value)],\n        )\n        frame = prepare_features(raw, cutoff=cutoff)\n        frames[pair] = frame\n        print(\n            f\"RD26_FEATURE_SOURCE={index}/{len(pairs)}:{pair}:{len(frame)}:cutoff={cutoff.date()}\",\n            flush=True,\n        )\n    return frames",
+      "start_line": 187
+    },
+    "scripts/research/run_rd26_exit_architecture.py:19-45": {
+      "end_line": 45,
+      "path": "scripts/research/run_rd26_exit_architecture.py",
+      "snippet_sha256_lf_no_final_newline": "BC2E5965531CD3923BE030D7743A7972F68B9BCFC83161BA60B3D1C13F52778F",
+      "source_sha256": "9C096C6E7C4784D9B91A7EFC55FA85F46755B2D850B78E7A5E90980294DC9ACE",
+      "source_text": "from spotbot.research.rd26_exit_architecture import (  # noqa: E402\n    CONCENTRATION_TRIGGER,\n    COST_MULTIPLIERS,\n    DATA_CUTOFF,\n    DATA_START,\n    FAMILY_MOMENTUM_BREAKOUT,\n    FAMILY_RELATIVE_STRENGTH_ROTATION,\n    FOCUS_FAMILIES,\n    POLICIES,\n    PREFLIGHT_CUTOFF,\n    PREFLIGHT_PERIODS,\n    PREFLIGHT_START,\n    ROBUSTNESS_PERIODS,\n    compare_focus_signal_equivalence,\n    concentration_diagnostics,\n    evaluate_policy_hard_gates,\n    exit_reason_summary,\n    filter_robustness_events,\n    fixed_path_pf1_break_even_multiplier,\n    period_metrics,\n    prepare_features,\n    replay_policy,\n    scan_focus_signals,\n    standalone_events,\n    union_events,\n    validate_constants,\n)",
+      "start_line": 19
+    },
+    "scripts/research/run_rd26_exit_architecture.py:296-395": {
+      "end_line": 395,
+      "path": "scripts/research/run_rd26_exit_architecture.py",
+      "snippet_sha256_lf_no_final_newline": "C939D539688EC408ED6A09F5F0F6120BC57C2F9FDF67EB22AA2B0CE3D2A3A859",
+      "source_sha256": "9C096C6E7C4784D9B91A7EFC55FA85F46755B2D850B78E7A5E90980294DC9ACE",
+      "source_text": "def run_all_portfolios(\n    *,\n    events: pd.DataFrame,\n    frames: dict[str, pd.DataFrame],\n) -> tuple[\n    pd.DataFrame,\n    pd.DataFrame,\n    pd.DataFrame,\n    pd.DataFrame,\n    pd.DataFrame,\n    pd.DataFrame,\n]:\n    run_rows: list[dict[str, Any]] = []\n    trade_sets: list[pd.DataFrame] = []\n    daily_sets: list[pd.DataFrame] = []\n    routing_rows: list[dict[str, Any]] = []\n    concentration_rows: list[dict[str, Any]] = []\n    break_even_rows: list[dict[str, Any]] = []\n\n    for policy_id in POLICIES:\n        for universe in (\"C2\", \"D2\", \"E2\"):\n            portfolios = {\n                \"UNION_FOCUS\": union_events(events, universe_id=universe),\n                FAMILY_MOMENTUM_BREAKOUT: standalone_events(\n                    events,\n                    universe_id=universe,\n                    family_id=FAMILY_MOMENTUM_BREAKOUT,\n                ),\n                FAMILY_RELATIVE_STRENGTH_ROTATION: standalone_events(\n                    events,\n                    universe_id=universe,\n                    family_id=FAMILY_RELATIVE_STRENGTH_ROTATION,\n                ),\n            }\n            for portfolio_id, portfolio_events in portfolios.items():\n                base_trade_for_be: pd.DataFrame | None = None\n                for cost_multiplier in COST_MULTIPLIERS:\n                    trades, daily, metrics, counters = replay_policy(\n                        policy_id=policy_id,\n                        portfolio_id=portfolio_id,\n                        universe_id=universe,\n                        cost_multiplier=cost_multiplier,\n                        events=portfolio_events,\n                        frames=frames,\n                    )\n                    run_rows.append(metrics)\n                    if len(trades):\n                        trade_sets.append(trades)\n                    if len(daily):\n                        daily_sets.append(daily)\n                    routing_rows.append(\n                        {\n                            \"policy_id\": policy_id,\n                            \"portfolio_id\": portfolio_id,\n                            \"universe_id\": universe,\n                            \"cost_multiplier\": cost_multiplier,\n                            **counters,\n                        }\n                    )\n                    concentration_rows.append(\n                        {\n                            \"policy_id\": policy_id,\n                            \"portfolio_id\": portfolio_id,\n                            \"universe_id\": universe,\n                            \"cost_multiplier\": cost_multiplier,\n                            **concentration_diagnostics(trades),\n                        }\n                    )\n                    if cost_multiplier == 1.0:\n                        base_trade_for_be = trades.copy()\n                    print(\n                        \"RD26_PORTFOLIO=\"\n                        f\"{policy_id}:{portfolio_id}:{universe}:{cost_multiplier}x:\"\n                        f\"net={metrics['net_return']:.6f}:\"\n                        f\"pf={metrics['profit_factor']:.6f}:\"\n                        f\"dd={metrics['maximum_drawdown']:.6f}:\"\n                        f\"trades={metrics['trade_count']}\",\n                        flush=True,\n                    )\n                if base_trade_for_be is None:\n                    raise RunnerError(\"base-cost trade ledger missing\")\n                break_even_rows.append(\n                    {\n                        \"policy_id\": policy_id,\n                        \"portfolio_id\": portfolio_id,\n                        \"universe_id\": universe,\n                        \"pf1_break_even_cost_multiplier\": (\n                            fixed_path_pf1_break_even_multiplier(base_trade_for_be)\n                        ),\n                        \"method\": (\"BASE_ROUTED_QUANTITIES_AND_FILLS_FIXED_COST_SCALED_UNTIL_PF_1\"),\n                    }\n                )\n\n    run_metrics = pd.DataFrame.from_records(run_rows)\n    trades = pd.concat(trade_sets, ignore_index=True) if trade_sets else pd.DataFrame()\n    daily = pd.concat(daily_sets, ignore_index=True) if daily_sets else pd.DataFrame()\n    routing = pd.DataFrame.from_records(routing_rows)\n    concentrations = pd.DataFrame.from_records(concentration_rows)\n    break_even = pd.DataFrame.from_records(break_even_rows)\n    return run_metrics, trades, daily, routing, concentrations, break_even",
+      "start_line": 296
+    },
+    "scripts/research/run_rd26_exit_architecture.py:565-569": {
+      "end_line": 569,
+      "path": "scripts/research/run_rd26_exit_architecture.py",
+      "snippet_sha256_lf_no_final_newline": "AA3FAA1746DB709AF65A6BCE9162EF2C7E8547CF19098EDDDC0F9AA8F12421F2",
+      "source_sha256": "9C096C6E7C4784D9B91A7EFC55FA85F46755B2D850B78E7A5E90980294DC9ACE",
+      "source_text": "    raw_root = (\n        args.raw_root.resolve()\n        if args.raw_root is not None\n        else (repo / DEFAULT_RAW_ROOT).resolve()\n    )",
+      "start_line": 565
+    },
+    "scripts/research/run_rd26_exit_architecture.py:592-596": {
+      "end_line": 596,
+      "path": "scripts/research/run_rd26_exit_architecture.py",
+      "snippet_sha256_lf_no_final_newline": "B5F9E1C4EF4F33BC014ED404EAB0BF89E8311B9FE8765AAAA85B0463328F395D",
+      "source_sha256": "9C096C6E7C4784D9B91A7EFC55FA85F46755B2D850B78E7A5E90980294DC9ACE",
+      "source_text": "    frames = load_feature_frames(\n        raw_root=raw_root,\n        pairs=pairs,\n        cutoff=DATA_CUTOFF,\n    )",
+      "start_line": 592
+    },
+    "scripts/research/run_rd26_exit_architecture.py:592-605": {
+      "end_line": 605,
+      "path": "scripts/research/run_rd26_exit_architecture.py",
+      "snippet_sha256_lf_no_final_newline": "5438047F65A25A2C76BDAA59F837135F1FDDE37293981C16F1BC92A2326E5950",
+      "source_sha256": "9C096C6E7C4784D9B91A7EFC55FA85F46755B2D850B78E7A5E90980294DC9ACE",
+      "source_text": "    frames = load_feature_frames(\n        raw_root=raw_root,\n        pairs=pairs,\n        cutoff=DATA_CUTOFF,\n    )\n    events, funnel = scan_focus_signals(\n        membership=membership,\n        features=frames,\n        periods=ROBUSTNESS_PERIODS,\n        data_start=DATA_START,\n        data_cutoff=DATA_CUTOFF,\n        guard_each_period_hours=None,\n    )\n    events = filter_robustness_events(events)",
+      "start_line": 592
+    },
+    "scripts/research/run_rd26_exit_architecture.py:649-653": {
+      "end_line": 653,
+      "path": "scripts/research/run_rd26_exit_architecture.py",
+      "snippet_sha256_lf_no_final_newline": "EEF2E6E5E61C3E3C5F2357C692A2185E52253C1E2B83F1566D9DA091A1E27458",
+      "source_sha256": "9C096C6E7C4784D9B91A7EFC55FA85F46755B2D850B78E7A5E90980294DC9ACE",
+      "source_text": "\n    events.to_csv(\n        output / \"signal-events-2022-2023.csv\",\n        index=False,\n        lineterminator=\"\\n\",",
+      "start_line": 649
+    },
+    "scripts/research/run_rd27_lifecycle_ablation.py:19-39": {
+      "end_line": 39,
+      "path": "scripts/research/run_rd27_lifecycle_ablation.py",
+      "snippet_sha256_lf_no_final_newline": "B9FC7350C5A43811CFE75C000BA9CC702ED6E14EEC38043B7F2D526E08920FA8",
+      "source_sha256": "7DFC388F3BF8EF6EFA16E0640CF924158999A9923674C7701B8919872755CBB5",
+      "source_text": "from spotbot.research.rd26_exit_architecture import (  # noqa: E402\n    COST_MULTIPLIERS,\n    DATA_CUTOFF,\n    DATA_START,\n    FAMILY_MOMENTUM_BREAKOUT,\n    FAMILY_RELATIVE_STRENGTH_ROTATION,\n    FOCUS_FAMILIES,\n    MAXIMUM_DRAWDOWN_HARD,\n    MINIMUM_BREAK_EVEN_COST_MULTIPLIER,\n    MINIMUM_PROFIT_FACTOR_2X,\n    MINIMUM_TRADES,\n    ROBUSTNESS_PERIODS,\n    concentration_diagnostics,\n    exit_reason_summary,\n    filter_robustness_events,\n    fixed_path_pf1_break_even_multiplier,\n    period_metrics,\n    prepare_features,\n    standalone_events,\n    union_events,\n)",
+      "start_line": 19
+    },
+    "scripts/research/run_rd27_lifecycle_ablation.py:19-48": {
+      "end_line": 48,
+      "path": "scripts/research/run_rd27_lifecycle_ablation.py",
+      "snippet_sha256_lf_no_final_newline": "33DA16C0A7FEA32E49A5B5E7D39435B645C2B59E8DE16E44546C9C683DC345FB",
+      "source_sha256": "7DFC388F3BF8EF6EFA16E0640CF924158999A9923674C7701B8919872755CBB5",
+      "source_text": "from spotbot.research.rd26_exit_architecture import (  # noqa: E402\n    COST_MULTIPLIERS,\n    DATA_CUTOFF,\n    DATA_START,\n    FAMILY_MOMENTUM_BREAKOUT,\n    FAMILY_RELATIVE_STRENGTH_ROTATION,\n    FOCUS_FAMILIES,\n    MAXIMUM_DRAWDOWN_HARD,\n    MINIMUM_BREAK_EVEN_COST_MULTIPLIER,\n    MINIMUM_PROFIT_FACTOR_2X,\n    MINIMUM_TRADES,\n    ROBUSTNESS_PERIODS,\n    concentration_diagnostics,\n    exit_reason_summary,\n    filter_robustness_events,\n    fixed_path_pf1_break_even_multiplier,\n    period_metrics,\n    prepare_features,\n    standalone_events,\n    union_events,\n)\nfrom spotbot.research.rd27_adaptive_lifecycle import (  # noqa: E402\n    build_market_state_frame,\n)\nfrom spotbot.research.rd27_lifecycle_replay import (  # noqa: E402\n    POLICIES,\n    active_component_count,\n    build_state_lookup,\n    replay_lifecycle_policy,\n    validate_policy_constants,",
+      "start_line": 19
+    },
+    "scripts/research/run_rd27_lifecycle_ablation.py:225-239": {
+      "end_line": 239,
+      "path": "scripts/research/run_rd27_lifecycle_ablation.py",
+      "snippet_sha256_lf_no_final_newline": "87808B597F36FA7DD6646F42BE680723669D8C692285814418969057B8FBA2E2",
+      "source_sha256": "7DFC388F3BF8EF6EFA16E0640CF924158999A9923674C7701B8919872755CBB5",
+      "source_text": "def load_signal_events(repo: Path) -> pd.DataFrame:\n    events = pd.read_csv(repo / RD26_SIGNAL_EVENTS, low_memory=False)\n    events[\"timestamp\"] = pd.to_datetime(events[\"timestamp\"], utc=True, errors=\"raise\")\n    if len(events) != EXPECTED_SIGNAL_EVENT_COUNT:\n        raise RunnerError(\n            f\"RD26 signal event count drifted: {len(events)} != {EXPECTED_SIGNAL_EVENT_COUNT}\"\n        )\n    if bool((events[\"timestamp\"] < DATA_START).any()):\n        raise RunnerError(\"RD27 signal ledger contains pre-2022 event\")\n    if bool((events[\"timestamp\"] >= DATA_CUTOFF).any()):\n        raise RunnerError(\"RD27 signal ledger crossed sealed 2024 cutoff\")\n    events = filter_robustness_events(events)\n    if events.empty:\n        raise RunnerError(\"RD27 robustness signal ledger is empty\")\n    return events",
+      "start_line": 225
+    },
+    "scripts/research/run_rd27_lifecycle_ablation.py:242-265": {
+      "end_line": 265,
+      "path": "scripts/research/run_rd27_lifecycle_ablation.py",
+      "snippet_sha256_lf_no_final_newline": "9E14CE53EBE61FBC61B8F5D0B7C7FB06FB2FF024E3803A697B5D1A859631530E",
+      "source_sha256": "7DFC388F3BF8EF6EFA16E0640CF924158999A9923674C7701B8919872755CBB5",
+      "source_text": "def load_feature_frames(\n    *,\n    raw_root: Path,\n    pairs: list[str],\n) -> dict[str, pd.DataFrame]:\n    frames: dict[str, pd.DataFrame] = {}\n    cutoff_value = DATA_CUTOFF.to_pydatetime()\n    for index, pair in enumerate(pairs, start=1):\n        path = raw_root / pair / \"1h.parquet\"\n        if not path.is_file():\n            raise RunnerError(f\"raw 1h source missing: {path}\")\n        raw = pd.read_parquet(\n            path,\n            engine=\"pyarrow\",\n            filters=[(\"timestamp\", \"<\", cutoff_value)],\n        )\n        frame = prepare_features(raw, cutoff=DATA_CUTOFF)\n        frames[pair] = frame\n        print(\n            f\"RD27_FEATURE_SOURCE={index}/{len(pairs)}:{pair}:{len(frame)}:\"\n            f\"cutoff={DATA_CUTOFF.date()}\",\n            flush=True,\n        )\n    return frames",
+      "start_line": 242
+    },
+    "scripts/research/run_rd27_lifecycle_ablation.py:382-485": {
+      "end_line": 485,
+      "path": "scripts/research/run_rd27_lifecycle_ablation.py",
+      "snippet_sha256_lf_no_final_newline": "5AA6457E300F3C356F08BC2B8A7C7EA22CFAC2CB00736AB6F0BFB17C7E727DF8",
+      "source_sha256": "7DFC388F3BF8EF6EFA16E0640CF924158999A9923674C7701B8919872755CBB5",
+      "source_text": "def run_all_portfolios(\n    *,\n    events: pd.DataFrame,\n    frames: dict[str, pd.DataFrame],\n    state_frame: pd.DataFrame,\n) -> tuple[\n    pd.DataFrame,\n    pd.DataFrame,\n    pd.DataFrame,\n    pd.DataFrame,\n    pd.DataFrame,\n    pd.DataFrame,\n]:\n    run_rows: list[dict[str, Any]] = []\n    trade_sets: list[pd.DataFrame] = []\n    daily_sets: list[pd.DataFrame] = []\n    routing_rows: list[dict[str, Any]] = []\n    concentration_rows: list[dict[str, Any]] = []\n    break_even_rows: list[dict[str, Any]] = []\n\n    for policy_id in POLICIES:\n        for universe in (\"C2\", \"D2\", \"E2\"):\n            portfolios = {\n                \"UNION_FOCUS\": union_events(events, universe_id=universe),\n                FAMILY_MOMENTUM_BREAKOUT: standalone_events(\n                    events,\n                    universe_id=universe,\n                    family_id=FAMILY_MOMENTUM_BREAKOUT,\n                ),\n                FAMILY_RELATIVE_STRENGTH_ROTATION: standalone_events(\n                    events,\n                    universe_id=universe,\n                    family_id=FAMILY_RELATIVE_STRENGTH_ROTATION,\n                ),\n            }\n            for portfolio_id, portfolio_events in portfolios.items():\n                base_trade_for_be: pd.DataFrame | None = None\n                for cost_multiplier in COST_MULTIPLIERS:\n                    trades, daily, metrics, counters = replay_lifecycle_policy(\n                        policy_id=policy_id,\n                        portfolio_id=portfolio_id,\n                        universe_id=universe,\n                        cost_multiplier=cost_multiplier,\n                        events=portfolio_events,\n                        frames=frames,\n                        state_frame=state_frame,\n                    )\n                    run_rows.append(metrics)\n                    if len(trades):\n                        trade_sets.append(trades)\n                    if len(daily):\n                        daily_sets.append(daily)\n                    routing_rows.append(\n                        {\n                            \"policy_id\": policy_id,\n                            \"portfolio_id\": portfolio_id,\n                            \"universe_id\": universe,\n                            \"cost_multiplier\": cost_multiplier,\n                            **counters,\n                        }\n                    )\n                    concentration_rows.append(\n                        {\n                            \"policy_id\": policy_id,\n                            \"portfolio_id\": portfolio_id,\n                            \"universe_id\": universe,\n                            \"cost_multiplier\": cost_multiplier,\n                            **concentration_diagnostics(trades),\n                        }\n                    )\n                    if cost_multiplier == 1.0:\n                        base_trade_for_be = trades.copy()\n                    print(\n                        \"RD27_PORTFOLIO=\"\n                        f\"{policy_id}:{portfolio_id}:{universe}:{cost_multiplier}x:\"\n                        f\"net={metrics['net_return']:.6f}:\"\n                        f\"pf={metrics['profit_factor']:.6f}:\"\n                        f\"dd={metrics['maximum_drawdown']:.6f}:\"\n                        f\"trades={metrics['trade_count']}\",\n                        flush=True,\n                    )\n                if base_trade_for_be is None:\n                    raise RunnerError(\"base-cost trade ledger missing\")\n                break_even_rows.append(\n                    {\n                        \"policy_id\": policy_id,\n                        \"portfolio_id\": portfolio_id,\n                        \"universe_id\": universe,\n                        \"pf1_break_even_cost_multiplier\": (\n                            fixed_path_pf1_break_even_multiplier(base_trade_for_be)\n                        ),\n                        \"method\": (\n                            \"BASE_ROUTED_QUANTITIES_AND_FILLS_FIXED_COST_SCALED_UNTIL_PF_1\"\n                        ),\n                    }\n                )\n\n    run_metrics = pd.DataFrame.from_records(run_rows)\n    trades = pd.concat(trade_sets, ignore_index=True) if trade_sets else pd.DataFrame()\n    daily = pd.concat(daily_sets, ignore_index=True) if daily_sets else pd.DataFrame()\n    routing = pd.DataFrame.from_records(routing_rows)\n    concentrations = pd.DataFrame.from_records(concentration_rows)\n    break_even = pd.DataFrame.from_records(break_even_rows)\n    return run_metrics, trades, daily, routing, concentrations, break_even",
+      "start_line": 382
+    },
+    "scripts/research/run_rd27_lifecycle_ablation.py:402-428": {
+      "end_line": 428,
+      "path": "scripts/research/run_rd27_lifecycle_ablation.py",
+      "snippet_sha256_lf_no_final_newline": "FBC605A17ED3B6B949FACB2468C5B7C9AF91723F6EE02E3C46000B9BE76CF9DB",
+      "source_sha256": "7DFC388F3BF8EF6EFA16E0640CF924158999A9923674C7701B8919872755CBB5",
+      "source_text": "    for policy_id in POLICIES:\n        for universe in (\"C2\", \"D2\", \"E2\"):\n            portfolios = {\n                \"UNION_FOCUS\": union_events(events, universe_id=universe),\n                FAMILY_MOMENTUM_BREAKOUT: standalone_events(\n                    events,\n                    universe_id=universe,\n                    family_id=FAMILY_MOMENTUM_BREAKOUT,\n                ),\n                FAMILY_RELATIVE_STRENGTH_ROTATION: standalone_events(\n                    events,\n                    universe_id=universe,\n                    family_id=FAMILY_RELATIVE_STRENGTH_ROTATION,\n                ),\n            }\n            for portfolio_id, portfolio_events in portfolios.items():\n                base_trade_for_be: pd.DataFrame | None = None\n                for cost_multiplier in COST_MULTIPLIERS:\n                    trades, daily, metrics, counters = replay_lifecycle_policy(\n                        policy_id=policy_id,\n                        portfolio_id=portfolio_id,\n                        universe_id=universe,\n                        cost_multiplier=cost_multiplier,\n                        events=portfolio_events,\n                        frames=frames,\n                        state_frame=state_frame,\n                    )",
+      "start_line": 402
+    },
+    "scripts/research/run_rd27_lifecycle_ablation.py:420-428": {
+      "end_line": 428,
+      "path": "scripts/research/run_rd27_lifecycle_ablation.py",
+      "snippet_sha256_lf_no_final_newline": "7F22BF59272FFAB3AA5DFCCBAB6490155DDDCA202F59CFBF27AD2BBE1D18184F",
+      "source_sha256": "7DFC388F3BF8EF6EFA16E0640CF924158999A9923674C7701B8919872755CBB5",
+      "source_text": "                    trades, daily, metrics, counters = replay_lifecycle_policy(\n                        policy_id=policy_id,\n                        portfolio_id=portfolio_id,\n                        universe_id=universe,\n                        cost_multiplier=cost_multiplier,\n                        events=portfolio_events,\n                        frames=frames,\n                        state_frame=state_frame,\n                    )",
+      "start_line": 420
+    },
+    "scripts/research/run_rd27_lifecycle_ablation.py:66-68": {
+      "end_line": 68,
+      "path": "scripts/research/run_rd27_lifecycle_ablation.py",
+      "snippet_sha256_lf_no_final_newline": "E7AFE254138EFA07068FB8AD1D79EBEDC5E3B05B6632AABBB05FC0E7010BC2EA",
+      "source_sha256": "7DFC388F3BF8EF6EFA16E0640CF924158999A9923674C7701B8919872755CBB5",
+      "source_text": "RD26_SIGNAL_EVENTS = Path(\"data/research/rd26_p1_runtime/signal-events-2022-2023.csv\")\nRD26_SIGNAL_EVENTS_SHA256 = \"6462f576cee9681751368a7755d3ca51ebf945ced54ea7b7f18b47bc469ba725\"\nEXPECTED_SIGNAL_EVENT_COUNT = 7073",
+      "start_line": 66
+    },
+    "scripts/research/run_rd27_lifecycle_ablation.py:66-71": {
+      "end_line": 71,
+      "path": "scripts/research/run_rd27_lifecycle_ablation.py",
+      "snippet_sha256_lf_no_final_newline": "574DC510ADB85C0280452610775BEB24516AD7DA085B79BD48EE68B00EB9BC8D",
+      "source_sha256": "7DFC388F3BF8EF6EFA16E0640CF924158999A9923674C7701B8919872755CBB5",
+      "source_text": "RD26_SIGNAL_EVENTS = Path(\"data/research/rd26_p1_runtime/signal-events-2022-2023.csv\")\nRD26_SIGNAL_EVENTS_SHA256 = \"6462f576cee9681751368a7755d3ca51ebf945ced54ea7b7f18b47bc469ba725\"\nEXPECTED_SIGNAL_EVENT_COUNT = 7073\nRD26_RUN_METRICS = Path(\"data/research/rd26_p1_runtime/portfolio-run-metrics.csv\")\n\nDEFAULT_RAW_ROOT = Path(\"data/raw/rd16b/kucoin\")",
+      "start_line": 66
+    },
+    "scripts/research/run_rd27_lifecycle_ablation.py:805-809": {
+      "end_line": 809,
+      "path": "scripts/research/run_rd27_lifecycle_ablation.py",
+      "snippet_sha256_lf_no_final_newline": "AA3FAA1746DB709AF65A6BCE9162EF2C7E8547CF19098EDDDC0F9AA8F12421F2",
+      "source_sha256": "7DFC388F3BF8EF6EFA16E0640CF924158999A9923674C7701B8919872755CBB5",
+      "source_text": "    raw_root = (\n        args.raw_root.resolve()\n        if args.raw_root is not None\n        else (repo / DEFAULT_RAW_ROOT).resolve()\n    )",
+      "start_line": 805
+    },
+    "scripts/research/run_rd27_lifecycle_ablation.py:819-822": {
+      "end_line": 822,
+      "path": "scripts/research/run_rd27_lifecycle_ablation.py",
+      "snippet_sha256_lf_no_final_newline": "705DAB3A0E6C6FF5C09FE31AA718682C166D5A6938D6AB3A416E5C0545D27EFF",
+      "source_sha256": "7DFC388F3BF8EF6EFA16E0640CF924158999A9923674C7701B8919872755CBB5",
+      "source_text": "    lineage = verify_lineage(repo, args.expected_freeze_commit)\n    events = load_signal_events(repo)\n    pairs = sorted(set(events[\"pair\"].astype(str)))\n    frames = load_feature_frames(raw_root=raw_root, pairs=pairs)",
+      "start_line": 819
+    },
+    "scripts/research/run_rd27_lifecycle_ablation.py:822-822": {
+      "end_line": 822,
+      "path": "scripts/research/run_rd27_lifecycle_ablation.py",
+      "snippet_sha256_lf_no_final_newline": "2830F3DD88A5A007187E0E3250AF43B664A53820AA52251F94FD0BDF97153C20",
+      "source_sha256": "7DFC388F3BF8EF6EFA16E0640CF924158999A9923674C7701B8919872755CBB5",
+      "source_text": "    frames = load_feature_frames(raw_root=raw_root, pairs=pairs)",
+      "start_line": 822
+    },
+    "scripts/research/run_rd28_evidence_gated_lifecycle.py:19-39": {
+      "end_line": 39,
+      "path": "scripts/research/run_rd28_evidence_gated_lifecycle.py",
+      "snippet_sha256_lf_no_final_newline": "B9FC7350C5A43811CFE75C000BA9CC702ED6E14EEC38043B7F2D526E08920FA8",
+      "source_sha256": "2DB133BDD7E4ED8E7BB763842E9FD4D4CEEF4BD92027E195A92031399FA3FEAF",
+      "source_text": "from spotbot.research.rd26_exit_architecture import (  # noqa: E402\n    COST_MULTIPLIERS,\n    DATA_CUTOFF,\n    DATA_START,\n    FAMILY_MOMENTUM_BREAKOUT,\n    FAMILY_RELATIVE_STRENGTH_ROTATION,\n    FOCUS_FAMILIES,\n    MAXIMUM_DRAWDOWN_HARD,\n    MINIMUM_BREAK_EVEN_COST_MULTIPLIER,\n    MINIMUM_PROFIT_FACTOR_2X,\n    MINIMUM_TRADES,\n    ROBUSTNESS_PERIODS,\n    concentration_diagnostics,\n    exit_reason_summary,\n    filter_robustness_events,\n    fixed_path_pf1_break_even_multiplier,\n    period_metrics,\n    prepare_features,\n    standalone_events,\n    union_events,\n)",
+      "start_line": 19
+    },
+    "scripts/research/run_rd28_evidence_gated_lifecycle.py:289-312": {
+      "end_line": 312,
+      "path": "scripts/research/run_rd28_evidence_gated_lifecycle.py",
+      "snippet_sha256_lf_no_final_newline": "028502661D806BB27DA084D91C67ECBB3540AA27F69EDBF4417C910F3515F14D",
+      "source_sha256": "2DB133BDD7E4ED8E7BB763842E9FD4D4CEEF4BD92027E195A92031399FA3FEAF",
+      "source_text": "def load_feature_frames(\n    *,\n    raw_root: Path,\n    pairs: list[str],\n) -> dict[str, pd.DataFrame]:\n    frames: dict[str, pd.DataFrame] = {}\n    cutoff_value = DATA_CUTOFF.to_pydatetime()\n    for index, pair in enumerate(pairs, start=1):\n        path = raw_root / pair / \"1h.parquet\"\n        if not path.is_file():\n            raise RunnerError(f\"raw 1h source missing: {path}\")\n        raw = pd.read_parquet(\n            path,\n            engine=\"pyarrow\",\n            filters=[(\"timestamp\", \"<\", cutoff_value)],\n        )\n        frame = prepare_features(raw, cutoff=DATA_CUTOFF)\n        frames[pair] = frame\n        print(\n            f\"RD28_FEATURE_SOURCE={index}/{len(pairs)}:{pair}:{len(frame)}:\"\n            f\"cutoff={DATA_CUTOFF.date()}\",\n            flush=True,\n        )\n    return frames",
+      "start_line": 289
+    },
+    "scripts/research/run_rd28_evidence_gated_lifecycle.py:473-575": {
+      "end_line": 575,
+      "path": "scripts/research/run_rd28_evidence_gated_lifecycle.py",
+      "snippet_sha256_lf_no_final_newline": "72290ACA02A9E30EB56D8DDD208898C0F86D0366D24EB7B7E159AC11028C8348",
+      "source_sha256": "2DB133BDD7E4ED8E7BB763842E9FD4D4CEEF4BD92027E195A92031399FA3FEAF",
+      "source_text": "def run_all_portfolios(\n    *,\n    events: pd.DataFrame,\n    frames: dict[str, pd.DataFrame],\n    state_frame: pd.DataFrame,\n) -> tuple[\n    pd.DataFrame,\n    pd.DataFrame,\n    pd.DataFrame,\n    pd.DataFrame,\n    pd.DataFrame,\n    pd.DataFrame,\n]:\n    run_rows: list[dict[str, Any]] = []\n    trade_sets: list[pd.DataFrame] = []\n    daily_sets: list[pd.DataFrame] = []\n    routing_rows: list[dict[str, Any]] = []\n    concentration_rows: list[dict[str, Any]] = []\n    break_even_rows: list[dict[str, Any]] = []\n\n    for policy_id in POLICIES:\n        for universe in (\"C2\", \"D2\", \"E2\"):\n            portfolios = {\n                \"UNION_FOCUS\": union_events(events, universe_id=universe),\n                FAMILY_MOMENTUM_BREAKOUT: standalone_events(\n                    events,\n                    universe_id=universe,\n                    family_id=FAMILY_MOMENTUM_BREAKOUT,\n                ),\n                FAMILY_RELATIVE_STRENGTH_ROTATION: standalone_events(\n                    events,\n                    universe_id=universe,\n                    family_id=FAMILY_RELATIVE_STRENGTH_ROTATION,\n                ),\n            }\n            for portfolio_id, portfolio_events in portfolios.items():\n                base_trade_for_be: pd.DataFrame | None = None\n                for cost_multiplier in COST_MULTIPLIERS:\n                    trades, daily, metrics, counters = replay_with_rd28_label(\n                        policy_id=policy_id,\n                        portfolio_id=portfolio_id,\n                        universe_id=universe,\n                        cost_multiplier=cost_multiplier,\n                        events=portfolio_events,\n                        frames=frames,\n                        state_frame=state_frame,\n                    )\n                    run_rows.append(metrics)\n                    if len(trades):\n                        trade_sets.append(trades)\n                    if len(daily):\n                        daily_sets.append(daily)\n                    routing_rows.append(\n                        {\n                            \"policy_id\": policy_id,\n                            \"portfolio_id\": portfolio_id,\n                            \"universe_id\": universe,\n                            \"cost_multiplier\": cost_multiplier,\n                            **counters,\n                        }\n                    )\n                    concentration_rows.append(\n                        {\n                            \"policy_id\": policy_id,\n                            \"portfolio_id\": portfolio_id,\n                            \"universe_id\": universe,\n                            \"cost_multiplier\": cost_multiplier,\n                            **concentration_diagnostics(trades),\n                        }\n                    )\n                    if cost_multiplier == 1.0:\n                        base_trade_for_be = trades.copy()\n                    print(\n                        \"RD28_PORTFOLIO=\"\n                        f\"{policy_id}:{portfolio_id}:{universe}:\"\n                        f\"{cost_multiplier}x:\"\n                        f\"net={metrics['net_return']:.6f}:\"\n                        f\"pf={metrics['profit_factor']:.6f}:\"\n                        f\"dd={metrics['maximum_drawdown']:.6f}:\"\n                        f\"trades={metrics['trade_count']}\",\n                        flush=True,\n                    )\n                if base_trade_for_be is None:\n                    raise RunnerError(\"base-cost trade ledger missing\")\n                break_even_rows.append(\n                    {\n                        \"policy_id\": policy_id,\n                        \"portfolio_id\": portfolio_id,\n                        \"universe_id\": universe,\n                        \"pf1_break_even_cost_multiplier\": (\n                            fixed_path_pf1_break_even_multiplier(base_trade_for_be)\n                        ),\n                        \"method\": (\"BASE_ROUTED_QUANTITIES_AND_FILLS_FIXED_COST_SCALED_UNTIL_PF_1\"),\n                    }\n                )\n\n    run_metrics = pd.DataFrame.from_records(run_rows)\n    trades = pd.concat(trade_sets, ignore_index=True) if trade_sets else pd.DataFrame()\n    daily = pd.concat(daily_sets, ignore_index=True) if daily_sets else pd.DataFrame()\n    routing = pd.DataFrame.from_records(routing_rows)\n    concentrations = pd.DataFrame.from_records(concentration_rows)\n    break_even = pd.DataFrame.from_records(break_even_rows)\n    return run_metrics, trades, daily, routing, concentrations, break_even",
+      "start_line": 473
+    },
+    "scripts/research/run_rd28_evidence_gated_lifecycle.py:920-924": {
+      "end_line": 924,
+      "path": "scripts/research/run_rd28_evidence_gated_lifecycle.py",
+      "snippet_sha256_lf_no_final_newline": "AA3FAA1746DB709AF65A6BCE9162EF2C7E8547CF19098EDDDC0F9AA8F12421F2",
+      "source_sha256": "2DB133BDD7E4ED8E7BB763842E9FD4D4CEEF4BD92027E195A92031399FA3FEAF",
+      "source_text": "    raw_root = (\n        args.raw_root.resolve()\n        if args.raw_root is not None\n        else (repo / DEFAULT_RAW_ROOT).resolve()\n    )",
+      "start_line": 920
+    },
+    "scripts/research/run_rd28_evidence_gated_lifecycle.py:941-944": {
+      "end_line": 944,
+      "path": "scripts/research/run_rd28_evidence_gated_lifecycle.py",
+      "snippet_sha256_lf_no_final_newline": "1EFEB493E2AC8BA4B177C41F7525B4E0CB658D290D24A22C6800D55D94918F02",
+      "source_sha256": "2DB133BDD7E4ED8E7BB763842E9FD4D4CEEF4BD92027E195A92031399FA3FEAF",
+      "source_text": "    frames = load_feature_frames(\n        raw_root=raw_root,\n        pairs=pairs,\n    )",
+      "start_line": 941
+    },
+    "scripts/research/run_rd29_thesis_confidence_lifecycle.py:23-42": {
+      "end_line": 42,
+      "path": "scripts/research/run_rd29_thesis_confidence_lifecycle.py",
+      "snippet_sha256_lf_no_final_newline": "586A9E50029190C5350830717EB9D153C2E2DC0D31808F785E4ACA5C437082D1",
+      "source_sha256": "AECEDDE051C0F4C25882591FB441A3AB69EE2FA22AF0253789E7B1B3667EC434",
+      "source_text": "from spotbot.research.rd26_exit_architecture import (  # noqa: E402\n    COST_MULTIPLIERS,\n    DATA_CUTOFF,\n    DATA_START,\n    FAMILY_MOMENTUM_BREAKOUT,\n    FAMILY_RELATIVE_STRENGTH_ROTATION,\n    MAXIMUM_DRAWDOWN_HARD,\n    MINIMUM_BREAK_EVEN_COST_MULTIPLIER,\n    MINIMUM_PROFIT_FACTOR_2X,\n    MINIMUM_TRADES,\n    ROBUSTNESS_PERIODS,\n    concentration_diagnostics,\n    exit_reason_summary,\n    filter_robustness_events,\n    fixed_path_pf1_break_even_multiplier,\n    period_metrics,\n    prepare_features,\n    standalone_events,\n    union_events,\n)",
+      "start_line": 23
+    },
+    "scripts/research/run_rd29_thesis_confidence_lifecycle.py:365-388": {
+      "end_line": 388,
+      "path": "scripts/research/run_rd29_thesis_confidence_lifecycle.py",
+      "snippet_sha256_lf_no_final_newline": "2CDAECBF22D4A8AC5823F19E652CD822126B6D05365F07B33F94B7F271A65082",
+      "source_sha256": "AECEDDE051C0F4C25882591FB441A3AB69EE2FA22AF0253789E7B1B3667EC434",
+      "source_text": "def load_feature_frames(\n    *,\n    raw_root: Path,\n    pairs: list[str],\n) -> dict[str, pd.DataFrame]:\n    frames: dict[str, pd.DataFrame] = {}\n    cutoff = DATA_CUTOFF.to_pydatetime()\n    for index, pair in enumerate(pairs, start=1):\n        path = raw_root / pair / \"1h.parquet\"\n        if not path.is_file():\n            raise RunnerError(f\"raw 1h source missing: {path}\")\n        raw = pd.read_parquet(\n            path,\n            engine=\"pyarrow\",\n            filters=[(\"timestamp\", \"<\", cutoff)],\n        )\n        frame = prepare_features(raw, cutoff=DATA_CUTOFF)\n        frames[pair] = frame\n        print(\n            f\"RD29_FEATURE_SOURCE={index}/{len(pairs)}:{pair}:\"\n            f\"{len(frame)}:cutoff={DATA_CUTOFF.date()}\",\n            flush=True,\n        )\n    return frames",
+      "start_line": 365
+    },
+    "scripts/research/run_rd29_thesis_confidence_lifecycle.py:444-545": {
+      "end_line": 545,
+      "path": "scripts/research/run_rd29_thesis_confidence_lifecycle.py",
+      "snippet_sha256_lf_no_final_newline": "D59EC4F00828BDEFEDA71889C601E1FDDD22B4285ED344CF5A03B7AB132A2347",
+      "source_sha256": "AECEDDE051C0F4C25882591FB441A3AB69EE2FA22AF0253789E7B1B3667EC434",
+      "source_text": "def run_all_portfolios(\n    *,\n    events: pd.DataFrame,\n    frames: dict[str, pd.DataFrame],\n    state_frame: pd.DataFrame,\n    membership: list[MembershipSnapshot],\n):\n    run_rows: list[dict[str, Any]] = []\n    trade_sets: list[pd.DataFrame] = []\n    daily_sets: list[pd.DataFrame] = []\n    routing_rows: list[dict[str, Any]] = []\n    concentration_rows: list[dict[str, Any]] = []\n    break_even_rows: list[dict[str, Any]] = []\n\n    for policy_id in POLICIES:\n        for universe in (\"C2\", \"D2\", \"E2\"):\n            portfolios = {\n                \"UNION_FOCUS\": union_events(\n                    events,\n                    universe_id=universe,\n                ),\n                FAMILY_MOMENTUM_BREAKOUT: standalone_events(\n                    events,\n                    universe_id=universe,\n                    family_id=FAMILY_MOMENTUM_BREAKOUT,\n                ),\n                FAMILY_RELATIVE_STRENGTH_ROTATION: standalone_events(\n                    events,\n                    universe_id=universe,\n                    family_id=FAMILY_RELATIVE_STRENGTH_ROTATION,\n                ),\n            }\n            for portfolio_id, portfolio_events in portfolios.items():\n                base_trades: pd.DataFrame | None = None\n                for cost_multiplier in COST_MULTIPLIERS:\n                    trades, daily, metrics, counters = replay_rd29_policy(\n                        policy_id=policy_id,\n                        portfolio_id=portfolio_id,\n                        universe_id=universe,\n                        cost_multiplier=cost_multiplier,\n                        events=portfolio_events,\n                        frames=frames,\n                        state_frame=state_frame,\n                        membership=membership,\n                    )\n                    run_rows.append(metrics)\n                    if len(trades):\n                        trade_sets.append(trades)\n                    if len(daily):\n                        daily_sets.append(daily)\n                    routing_rows.append(\n                        {\n                            \"policy_id\": policy_id,\n                            \"portfolio_id\": portfolio_id,\n                            \"universe_id\": universe,\n                            \"cost_multiplier\": cost_multiplier,\n                            **counters,\n                        }\n                    )\n                    concentration_rows.append(\n                        {\n                            \"policy_id\": policy_id,\n                            \"portfolio_id\": portfolio_id,\n                            \"universe_id\": universe,\n                            \"cost_multiplier\": cost_multiplier,\n                            **concentration_diagnostics(trades),\n                        }\n                    )\n                    if cost_multiplier == 1.0:\n                        base_trades = trades.copy()\n                    print(\n                        \"RD29_PORTFOLIO=\"\n                        f\"{policy_id}:{portfolio_id}:{universe}:\"\n                        f\"{cost_multiplier}x:\"\n                        f\"net={metrics['net_return']:.6f}:\"\n                        f\"pf={metrics['profit_factor']:.6f}:\"\n                        f\"dd={metrics['maximum_drawdown']:.6f}:\"\n                        f\"trades={metrics['trade_count']}\",\n                        flush=True,\n                    )\n                if base_trades is None:\n                    raise RunnerError(\"base-cost trade ledger missing\")\n                break_even_rows.append(\n                    {\n                        \"policy_id\": policy_id,\n                        \"portfolio_id\": portfolio_id,\n                        \"universe_id\": universe,\n                        \"pf1_break_even_cost_multiplier\": (\n                            fixed_path_pf1_break_even_multiplier(base_trades)\n                        ),\n                        \"method\": (\"BASE_ROUTED_QUANTITIES_AND_FILLS_FIXED_COST_SCALED_UNTIL_PF_1\"),\n                    }\n                )\n\n    return (\n        pd.DataFrame.from_records(run_rows),\n        (pd.concat(trade_sets, ignore_index=True) if trade_sets else pd.DataFrame()),\n        (pd.concat(daily_sets, ignore_index=True) if daily_sets else pd.DataFrame()),\n        pd.DataFrame.from_records(routing_rows),\n        pd.DataFrame.from_records(concentration_rows),\n        pd.DataFrame.from_records(break_even_rows),\n    )",
+      "start_line": 444
+    },
+    "scripts/research/run_rd29_thesis_confidence_lifecycle.py:913-917": {
+      "end_line": 917,
+      "path": "scripts/research/run_rd29_thesis_confidence_lifecycle.py",
+      "snippet_sha256_lf_no_final_newline": "AA3FAA1746DB709AF65A6BCE9162EF2C7E8547CF19098EDDDC0F9AA8F12421F2",
+      "source_sha256": "AECEDDE051C0F4C25882591FB441A3AB69EE2FA22AF0253789E7B1B3667EC434",
+      "source_text": "    raw_root = (\n        args.raw_root.resolve()\n        if args.raw_root is not None\n        else (repo / DEFAULT_RAW_ROOT).resolve()\n    )",
+      "start_line": 913
+    },
+    "scripts/research/run_rd29_thesis_confidence_lifecycle.py:937-937": {
+      "end_line": 937,
+      "path": "scripts/research/run_rd29_thesis_confidence_lifecycle.py",
+      "snippet_sha256_lf_no_final_newline": "2830F3DD88A5A007187E0E3250AF43B664A53820AA52251F94FD0BDF97153C20",
+      "source_sha256": "AECEDDE051C0F4C25882591FB441A3AB69EE2FA22AF0253789E7B1B3667EC434",
+      "source_text": "    frames = load_feature_frames(raw_root=raw_root, pairs=pairs)",
+      "start_line": 937
+    },
+    "scripts/research/run_rd30_family_specialist_replacement_aware.py:1239-1243": {
+      "end_line": 1243,
+      "path": "scripts/research/run_rd30_family_specialist_replacement_aware.py",
+      "snippet_sha256_lf_no_final_newline": "AA3FAA1746DB709AF65A6BCE9162EF2C7E8547CF19098EDDDC0F9AA8F12421F2",
+      "source_sha256": "C6CDEF9F0C3A086FD1091E4A9168F6949E28B0A3E16AB8E80E3D6F12B76CA561",
+      "source_text": "    raw_root = (\n        args.raw_root.resolve()\n        if args.raw_root is not None\n        else (repo / DEFAULT_RAW_ROOT).resolve()\n    )",
+      "start_line": 1239
+    },
+    "scripts/research/run_rd30_family_specialist_replacement_aware.py:1276-1279": {
+      "end_line": 1279,
+      "path": "scripts/research/run_rd30_family_specialist_replacement_aware.py",
+      "snippet_sha256_lf_no_final_newline": "1EFEB493E2AC8BA4B177C41F7525B4E0CB658D290D24A22C6800D55D94918F02",
+      "source_sha256": "C6CDEF9F0C3A086FD1091E4A9168F6949E28B0A3E16AB8E80E3D6F12B76CA561",
+      "source_text": "    frames = load_feature_frames(\n        raw_root=raw_root,\n        pairs=pairs,\n    )",
+      "start_line": 1276
+    },
+    "scripts/research/run_rd30_family_specialist_replacement_aware.py:23-42": {
+      "end_line": 42,
+      "path": "scripts/research/run_rd30_family_specialist_replacement_aware.py",
+      "snippet_sha256_lf_no_final_newline": "586A9E50029190C5350830717EB9D153C2E2DC0D31808F785E4ACA5C437082D1",
+      "source_sha256": "C6CDEF9F0C3A086FD1091E4A9168F6949E28B0A3E16AB8E80E3D6F12B76CA561",
+      "source_text": "from spotbot.research.rd26_exit_architecture import (  # noqa: E402\n    COST_MULTIPLIERS,\n    DATA_CUTOFF,\n    DATA_START,\n    FAMILY_MOMENTUM_BREAKOUT,\n    FAMILY_RELATIVE_STRENGTH_ROTATION,\n    MAXIMUM_DRAWDOWN_HARD,\n    MINIMUM_BREAK_EVEN_COST_MULTIPLIER,\n    MINIMUM_PROFIT_FACTOR_2X,\n    MINIMUM_TRADES,\n    ROBUSTNESS_PERIODS,\n    concentration_diagnostics,\n    exit_reason_summary,\n    filter_robustness_events,\n    fixed_path_pf1_break_even_multiplier,\n    period_metrics,\n    prepare_features,\n    standalone_events,\n    union_events,\n)",
+      "start_line": 23
+    },
+    "scripts/research/run_rd30_family_specialist_replacement_aware.py:445-472": {
+      "end_line": 472,
+      "path": "scripts/research/run_rd30_family_specialist_replacement_aware.py",
+      "snippet_sha256_lf_no_final_newline": "BBDAD34B24EEBA828D7957BBCE11077887BD9C6FA28005D510A159599E8CD477",
+      "source_sha256": "C6CDEF9F0C3A086FD1091E4A9168F6949E28B0A3E16AB8E80E3D6F12B76CA561",
+      "source_text": "def load_feature_frames(\n    *,\n    raw_root: Path,\n    pairs: list[str],\n) -> dict[str, pd.DataFrame]:\n    frames: dict[str, pd.DataFrame] = {}\n    cutoff = DATA_CUTOFF.to_pydatetime()\n    for index, pair in enumerate(pairs, start=1):\n        path = raw_root / pair / \"1h.parquet\"\n        if not path.is_file():\n            raise RunnerError(f\"raw 1h source missing: {path}\")\n        raw = pd.read_parquet(\n            path,\n            engine=\"pyarrow\",\n            filters=[(\"timestamp\", \"<\", cutoff)],\n        )\n        frame = prepare_features(\n            raw,\n            cutoff=DATA_CUTOFF,\n        )\n        frames[pair] = frame\n        print(\n            f\"RD30_FEATURE_SOURCE=\"\n            f\"{index}/{len(pairs)}:{pair}:\"\n            f\"{len(frame)}:cutoff={DATA_CUTOFF.date()}\",\n            flush=True,\n        )\n    return frames",
+      "start_line": 445
+    },
+    "scripts/research/run_rd30_family_specialist_replacement_aware.py:570-695": {
+      "end_line": 695,
+      "path": "scripts/research/run_rd30_family_specialist_replacement_aware.py",
+      "snippet_sha256_lf_no_final_newline": "A9A8BDEAF8D8609A242EAF879A050FE52D28652FFC3C65E399251C3057ACE9D6",
+      "source_sha256": "C6CDEF9F0C3A086FD1091E4A9168F6949E28B0A3E16AB8E80E3D6F12B76CA561",
+      "source_text": "def run_all_portfolios(\n    *,\n    events: pd.DataFrame,\n    frames: dict[str, pd.DataFrame],\n    state_frame: pd.DataFrame,\n    membership: list[MembershipSnapshot],\n):\n    run_rows: list[dict[str, Any]] = []\n    trade_sets: list[pd.DataFrame] = []\n    daily_sets: list[pd.DataFrame] = []\n    routing_rows: list[dict[str, Any]] = []\n    concentration_rows: list[dict[str, Any]] = []\n    break_even_rows: list[dict[str, Any]] = []\n\n    for policy_id in POLICIES:\n        for universe in (\"C2\", \"D2\", \"E2\"):\n            portfolios = {\n                \"UNION_FOCUS\": union_events(\n                    events,\n                    universe_id=universe,\n                ),\n                FAMILY_MOMENTUM_BREAKOUT: standalone_events(\n                    events,\n                    universe_id=universe,\n                    family_id=FAMILY_MOMENTUM_BREAKOUT,\n                ),\n                FAMILY_RELATIVE_STRENGTH_ROTATION: standalone_events(\n                    events,\n                    universe_id=universe,\n                    family_id=FAMILY_RELATIVE_STRENGTH_ROTATION,\n                ),\n            }\n            for (\n                portfolio_id,\n                portfolio_events,\n            ) in portfolios.items():\n                base_trades: pd.DataFrame | None = None\n                for cost_multiplier in COST_MULTIPLIERS:\n                    (\n                        trades,\n                        daily,\n                        metrics,\n                        counters,\n                    ) = replay_rd30_policy(\n                        policy_id=policy_id,\n                        portfolio_id=portfolio_id,\n                        universe_id=universe,\n                        cost_multiplier=cost_multiplier,\n                        events=portfolio_events,\n                        frames=frames,\n                        state_frame=state_frame,\n                        membership=membership,\n                    )\n                    run_rows.append(metrics)\n                    if len(trades):\n                        trade_sets.append(trades)\n                    if len(daily):\n                        daily_sets.append(daily)\n                    routing_rows.append(\n                        {\n                            \"policy_id\": policy_id,\n                            \"portfolio_id\": portfolio_id,\n                            \"universe_id\": universe,\n                            \"cost_multiplier\": (cost_multiplier),\n                            **counters,\n                        }\n                    )\n                    concentration_rows.append(\n                        {\n                            \"policy_id\": policy_id,\n                            \"portfolio_id\": portfolio_id,\n                            \"universe_id\": universe,\n                            \"cost_multiplier\": (cost_multiplier),\n                            **concentration_diagnostics(trades),\n                        }\n                    )\n                    if cost_multiplier == 1.0:\n                        base_trades = trades.copy()\n                    print(\n                        \"RD30_PORTFOLIO=\"\n                        f\"{policy_id}:\"\n                        f\"{portfolio_id}:\"\n                        f\"{universe}:\"\n                        f\"{cost_multiplier}x:\"\n                        f\"net={metrics['net_return']:.6f}:\"\n                        f\"pf={metrics['profit_factor']:.6f}:\"\n                        f\"dd={metrics['maximum_drawdown']:.6f}:\"\n                        f\"trades={metrics['trade_count']}\",\n                        flush=True,\n                    )\n                if base_trades is None:\n                    raise RunnerError(\"base-cost trade ledger missing\")\n                break_even_rows.append(\n                    {\n                        \"policy_id\": policy_id,\n                        \"portfolio_id\": portfolio_id,\n                        \"universe_id\": universe,\n                        \"pf1_break_even_cost_multiplier\": (\n                            fixed_path_pf1_break_even_multiplier(base_trades)\n                        ),\n                        \"method\": (\"BASE_ROUTED_QUANTITIES_AND_FILLS_FIXED_COST_SCALED_UNTIL_PF_1\"),\n                    }\n                )\n\n    return (\n        pd.DataFrame.from_records(run_rows),\n        (\n            pd.concat(\n                trade_sets,\n                ignore_index=True,\n            )\n            if trade_sets\n            else pd.DataFrame()\n        ),\n        (\n            pd.concat(\n                daily_sets,\n                ignore_index=True,\n            )\n            if daily_sets\n            else pd.DataFrame()\n        ),\n        pd.DataFrame.from_records(routing_rows),\n        pd.DataFrame.from_records(concentration_rows),\n        pd.DataFrame.from_records(break_even_rows),\n    )",
+      "start_line": 570
+    },
+    "scripts/research/run_rd31_market_regime_admission_governor.py:1480-1598": {
+      "end_line": 1598,
+      "path": "scripts/research/run_rd31_market_regime_admission_governor.py",
+      "snippet_sha256_lf_no_final_newline": "02A82F7AC2744775CC79E9BD98735EC17F9310E13E0F13E93FCD2F838B78FD0D",
+      "source_sha256": "3B6D938093B4F00883A3665399CBEA01FD892E2B610FC7F4B2EBA01F8F51457B",
+      "source_text": "def run_all_portfolios(\n    *,\n    events: pd.DataFrame,\n    frames: dict[str, pd.DataFrame],\n    state_frame: pd.DataFrame,\n    membership: list[MembershipSnapshot],\n):\n    run_rows: list[dict[str, Any]] = []\n    trade_sets: list[pd.DataFrame] = []\n    daily_sets: list[pd.DataFrame] = []\n    routing_rows: list[dict[str, Any]] = []\n    concentration_rows: list[dict[str, Any]] = []\n    break_even_rows: list[dict[str, Any]] = []\n\n    replay_count = 0\n    for policy_id in POLICIES:\n        for universe in EXPECTED_UNIVERSES:\n            portfolios = _portfolio_events(\n                events,\n                universe,\n            )\n            for (\n                portfolio_id,\n                portfolio_events,\n            ) in portfolios.items():\n                base_trades: pd.DataFrame | None = None\n                for cost_multiplier in COST_MULTIPLIERS:\n                    (\n                        trades,\n                        daily,\n                        metrics,\n                        counters,\n                    ) = replay_rd31_policy(\n                        policy_id=policy_id,\n                        portfolio_id=portfolio_id,\n                        universe_id=universe,\n                        cost_multiplier=cost_multiplier,\n                        events=portfolio_events,\n                        frames=frames,\n                        state_frame=state_frame,\n                        membership=membership,\n                    )\n                    replay_count += 1\n                    run_rows.append(metrics)\n                    if len(trades):\n                        trade_sets.append(trades)\n                    if len(daily):\n                        daily_sets.append(daily)\n                    routing_rows.append(\n                        {\n                            \"policy_id\": policy_id,\n                            \"portfolio_id\": portfolio_id,\n                            \"universe_id\": universe,\n                            \"cost_multiplier\": (cost_multiplier),\n                            **counters,\n                        }\n                    )\n                    concentration_rows.append(\n                        {\n                            \"policy_id\": policy_id,\n                            \"portfolio_id\": portfolio_id,\n                            \"universe_id\": universe,\n                            \"cost_multiplier\": (cost_multiplier),\n                            **concentration_diagnostics(trades),\n                        }\n                    )\n                    if cost_multiplier == 1.0:\n                        base_trades = trades.copy()\n                    print(\n                        \"RD31_PORTFOLIO=\"\n                        f\"{policy_id}:\"\n                        f\"{portfolio_id}:\"\n                        f\"{universe}:\"\n                        f\"{cost_multiplier}x:\"\n                        f\"net={metrics['net_return']:.6f}:\"\n                        f\"pf={metrics['profit_factor']:.6f}:\"\n                        f\"dd={metrics['maximum_drawdown']:.6f}:\"\n                        f\"trades={metrics['trade_count']}\",\n                        flush=True,\n                    )\n                if base_trades is None:\n                    raise RunnerError(\"base-cost trade ledger missing\")\n                break_even_rows.append(\n                    {\n                        \"policy_id\": policy_id,\n                        \"portfolio_id\": portfolio_id,\n                        \"universe_id\": universe,\n                        \"pf1_break_even_cost_multiplier\": (\n                            fixed_path_pf1_break_even_multiplier(base_trades)\n                        ),\n                        \"method\": (\"BASE_ROUTED_QUANTITIES_AND_FILLS_FIXED_COST_SCALED_UNTIL_PF_1\"),\n                    }\n                )\n\n    if replay_count != EXPECTED_ECONOMIC_REPLAYS:\n        raise RunnerError(f\"economic replay count {replay_count} != {EXPECTED_ECONOMIC_REPLAYS}\")\n\n    return (\n        pd.DataFrame.from_records(run_rows),\n        (\n            pd.concat(\n                trade_sets,\n                ignore_index=True,\n            )\n            if trade_sets\n            else pd.DataFrame()\n        ),\n        (\n            pd.concat(\n                daily_sets,\n                ignore_index=True,\n            )\n            if daily_sets\n            else pd.DataFrame()\n        ),\n        pd.DataFrame.from_records(routing_rows),\n        pd.DataFrame.from_records(concentration_rows),\n        pd.DataFrame.from_records(break_even_rows),\n    )",
+      "start_line": 1480
+    },
+    "scripts/research/run_rd31_market_regime_admission_governor.py:2110-2114": {
+      "end_line": 2114,
+      "path": "scripts/research/run_rd31_market_regime_admission_governor.py",
+      "snippet_sha256_lf_no_final_newline": "AA3FAA1746DB709AF65A6BCE9162EF2C7E8547CF19098EDDDC0F9AA8F12421F2",
+      "source_sha256": "3B6D938093B4F00883A3665399CBEA01FD892E2B610FC7F4B2EBA01F8F51457B",
+      "source_text": "    raw_root = (\n        args.raw_root.resolve()\n        if args.raw_root is not None\n        else (repo / DEFAULT_RAW_ROOT).resolve()\n    )",
+      "start_line": 2110
+    },
+    "scripts/research/run_rd31_market_regime_admission_governor.py:2147-2150": {
+      "end_line": 2150,
+      "path": "scripts/research/run_rd31_market_regime_admission_governor.py",
+      "snippet_sha256_lf_no_final_newline": "1EFEB493E2AC8BA4B177C41F7525B4E0CB658D290D24A22C6800D55D94918F02",
+      "source_sha256": "3B6D938093B4F00883A3665399CBEA01FD892E2B610FC7F4B2EBA01F8F51457B",
+      "source_text": "    frames = load_feature_frames(\n        raw_root=raw_root,\n        pairs=pairs,\n    )",
+      "start_line": 2147
+    },
+    "scripts/research/run_rd31_market_regime_admission_governor.py:24-43": {
+      "end_line": 43,
+      "path": "scripts/research/run_rd31_market_regime_admission_governor.py",
+      "snippet_sha256_lf_no_final_newline": "586A9E50029190C5350830717EB9D153C2E2DC0D31808F785E4ACA5C437082D1",
+      "source_sha256": "3B6D938093B4F00883A3665399CBEA01FD892E2B610FC7F4B2EBA01F8F51457B",
+      "source_text": "from spotbot.research.rd26_exit_architecture import (  # noqa: E402\n    COST_MULTIPLIERS,\n    DATA_CUTOFF,\n    DATA_START,\n    FAMILY_MOMENTUM_BREAKOUT,\n    FAMILY_RELATIVE_STRENGTH_ROTATION,\n    MAXIMUM_DRAWDOWN_HARD,\n    MINIMUM_BREAK_EVEN_COST_MULTIPLIER,\n    MINIMUM_PROFIT_FACTOR_2X,\n    MINIMUM_TRADES,\n    ROBUSTNESS_PERIODS,\n    concentration_diagnostics,\n    exit_reason_summary,\n    filter_robustness_events,\n    fixed_path_pf1_break_even_multiplier,\n    period_metrics,\n    prepare_features,\n    standalone_events,\n    union_events,\n)",
+      "start_line": 24
+    },
+    "scripts/research/run_rd31_market_regime_admission_governor.py:640-667": {
+      "end_line": 667,
+      "path": "scripts/research/run_rd31_market_regime_admission_governor.py",
+      "snippet_sha256_lf_no_final_newline": "CA78B2B78EBABF8C87BB7D9E6FAC17A94C939A7EA07F16E841E9C36B8D30D59C",
+      "source_sha256": "3B6D938093B4F00883A3665399CBEA01FD892E2B610FC7F4B2EBA01F8F51457B",
+      "source_text": "def load_feature_frames(\n    *,\n    raw_root: Path,\n    pairs: list[str],\n) -> dict[str, pd.DataFrame]:\n    frames: dict[str, pd.DataFrame] = {}\n    cutoff = DATA_CUTOFF.to_pydatetime()\n    for index, pair in enumerate(pairs, start=1):\n        path = raw_root / pair / \"1h.parquet\"\n        if not path.is_file():\n            raise RunnerError(f\"raw 1h source missing: {path}\")\n        raw = pd.read_parquet(\n            path,\n            engine=\"pyarrow\",\n            filters=[(\"timestamp\", \"<\", cutoff)],\n        )\n        frame = prepare_features(\n            raw,\n            cutoff=DATA_CUTOFF,\n        )\n        frames[pair] = frame\n        print(\n            \"RD31_FEATURE_SOURCE=\"\n            f\"{index}/{len(pairs)}:{pair}:\"\n            f\"{len(frame)}:cutoff={DATA_CUTOFF.date()}\",\n            flush=True,\n        )\n    return frames",
+      "start_line": 640
+    },
+    "scripts/research/run_rd32_mb_signal_quality_admission.py:1159-1163": {
+      "end_line": 1163,
+      "path": "scripts/research/run_rd32_mb_signal_quality_admission.py",
+      "snippet_sha256_lf_no_final_newline": "AA3FAA1746DB709AF65A6BCE9162EF2C7E8547CF19098EDDDC0F9AA8F12421F2",
+      "source_sha256": "59A2716EAB407438B1C10A3ED757C53D114D9EC76DD27EBB1C040F7EEC6D0C3C",
+      "source_text": "    raw_root = (\n        args.raw_root.resolve()\n        if args.raw_root is not None\n        else (repo / DEFAULT_RAW_ROOT).resolve()\n    )",
+      "start_line": 1159
+    },
+    "scripts/research/run_rd32_mb_signal_quality_admission.py:1174-1177": {
+      "end_line": 1177,
+      "path": "scripts/research/run_rd32_mb_signal_quality_admission.py",
+      "snippet_sha256_lf_no_final_newline": "A67C3084D1C83ECD0E2EDDCBCC9D509B383C5A1DF4058E59F2A38B9E9217F5A3",
+      "source_sha256": "59A2716EAB407438B1C10A3ED757C53D114D9EC76DD27EBB1C040F7EEC6D0C3C",
+      "source_text": "    frames = rd31.load_feature_frames(\n        raw_root=raw_root,\n        pairs=pairs,\n    )",
+      "start_line": 1174
+    },
+    "scripts/research/run_rd32_mb_signal_quality_admission.py:214-224": {
+      "end_line": 224,
+      "path": "scripts/research/run_rd32_mb_signal_quality_admission.py",
+      "snippet_sha256_lf_no_final_newline": "5F6811BF02DAC12034593AAC2AFD30FCE00F63014447BC1A008FFC0E716F17A1",
+      "source_sha256": "59A2716EAB407438B1C10A3ED757C53D114D9EC76DD27EBB1C040F7EEC6D0C3C",
+      "source_text": "def load_rd31_runner() -> Any:\n    path = ROOT / RD31_RUNNER\n    spec = importlib.util.spec_from_file_location(\n        \"_rd31_frozen_economic_runner\",\n        path,\n    )\n    if spec is None or spec.loader is None:\n        raise RunnerError(\"cannot load frozen RD31 runner\")\n    module = importlib.util.module_from_spec(spec)\n    spec.loader.exec_module(module)\n    return module",
+      "start_line": 214
+    },
+    "scripts/research/run_rd32_mb_signal_quality_admission.py:390-503": {
+      "end_line": 503,
+      "path": "scripts/research/run_rd32_mb_signal_quality_admission.py",
+      "snippet_sha256_lf_no_final_newline": "2F2487EF2E5417646B8E822EFAD7F711556BB6E7D1E9287007FDDFD127E2DD81",
+      "source_sha256": "59A2716EAB407438B1C10A3ED757C53D114D9EC76DD27EBB1C040F7EEC6D0C3C",
+      "source_text": "def run_all_portfolios(\n    *,\n    rd31: Any,\n    events: pd.DataFrame,\n    frames: dict[str, pd.DataFrame],\n    state_frame: pd.DataFrame,\n    membership: list[Any],\n) -> tuple[\n    pd.DataFrame,\n    pd.DataFrame,\n    pd.DataFrame,\n    pd.DataFrame,\n    pd.DataFrame,\n    pd.DataFrame,\n]:\n    run_rows: list[dict[str, Any]] = []\n    trade_sets: list[pd.DataFrame] = []\n    daily_sets: list[pd.DataFrame] = []\n    routing_rows: list[dict[str, Any]] = []\n    concentration_rows: list[dict[str, Any]] = []\n    break_even_rows: list[dict[str, Any]] = []\n\n    replay_count = 0\n    for policy_id in EXPECTED_POLICIES:\n        for universe in EXPECTED_UNIVERSES:\n            portfolios = rd31._portfolio_events(events, universe)\n            for portfolio_id, portfolio_events in portfolios.items():\n                if portfolio_id not in EXPECTED_PORTFOLIOS:\n                    raise RunnerError(f\"unexpected portfolio: {portfolio_id}\")\n                base_trades: pd.DataFrame | None = None\n                for cost_multiplier in COST_MULTIPLIERS:\n                    (\n                        trades,\n                        daily,\n                        metrics,\n                        counters,\n                    ) = replay_rd32_policy(\n                        policy_id=policy_id,\n                        portfolio_id=portfolio_id,\n                        universe_id=universe,\n                        cost_multiplier=cost_multiplier,\n                        events=portfolio_events,\n                        raw_focus_events=events,\n                        frames=frames,\n                        state_frame=state_frame,\n                        membership=membership,\n                    )\n                    trades, daily, metrics = normalize_replay_policy_namespace(\n                        requested_policy_id=policy_id,\n                        trades=trades,\n                        daily=daily,\n                        metrics=metrics,\n                    )\n                    replay_count += 1\n                    run_rows.append(metrics)\n                    if len(trades):\n                        trade_sets.append(trades)\n                    if len(daily):\n                        daily_sets.append(daily)\n                    routing_rows.append(\n                        {\n                            \"policy_id\": policy_id,\n                            \"portfolio_id\": portfolio_id,\n                            \"universe_id\": universe,\n                            \"cost_multiplier\": cost_multiplier,\n                            **counters,\n                        }\n                    )\n                    concentration_rows.append(\n                        {\n                            \"policy_id\": policy_id,\n                            \"portfolio_id\": portfolio_id,\n                            \"universe_id\": universe,\n                            \"cost_multiplier\": cost_multiplier,\n                            **concentration_diagnostics(trades),\n                        }\n                    )\n                    if cost_multiplier == 1.0:\n                        base_trades = trades.copy()\n                    print(\n                        \"RD32_PORTFOLIO=\"\n                        f\"{policy_id}:{portfolio_id}:{universe}:\"\n                        f\"{cost_multiplier}x:\"\n                        f\"net={metrics['net_return']:.6f}:\"\n                        f\"pf={metrics['profit_factor']:.6f}:\"\n                        f\"dd={metrics['maximum_drawdown']:.6f}:\"\n                        f\"trades={metrics['trade_count']}\",\n                        flush=True,\n                    )\n                if base_trades is None:\n                    raise RunnerError(\"base-cost trade ledger missing\")\n                break_even_rows.append(\n                    {\n                        \"policy_id\": policy_id,\n                        \"portfolio_id\": portfolio_id,\n                        \"universe_id\": universe,\n                        \"pf1_break_even_cost_multiplier\": (\n                            fixed_path_pf1_break_even_multiplier(base_trades)\n                        ),\n                        \"method\": (\"BASE_ROUTED_QUANTITIES_AND_FILLS_FIXED_COST_SCALED_UNTIL_PF_1\"),\n                    }\n                )\n\n    if replay_count != EXPECTED_ECONOMIC_REPLAYS:\n        raise RunnerError(f\"economic replay count {replay_count} != {EXPECTED_ECONOMIC_REPLAYS}\")\n\n    return (\n        pd.DataFrame.from_records(run_rows),\n        pd.concat(trade_sets, ignore_index=True) if trade_sets else pd.DataFrame(),\n        pd.concat(daily_sets, ignore_index=True) if daily_sets else pd.DataFrame(),\n        pd.DataFrame.from_records(routing_rows),\n        pd.DataFrame.from_records(concentration_rows),\n        pd.DataFrame.from_records(break_even_rows),\n    )",
+      "start_line": 390
+    },
+    "scripts/research/run_rd33_temporal_mb_architecture.py:1549-1553": {
+      "end_line": 1553,
+      "path": "scripts/research/run_rd33_temporal_mb_architecture.py",
+      "snippet_sha256_lf_no_final_newline": "AA3FAA1746DB709AF65A6BCE9162EF2C7E8547CF19098EDDDC0F9AA8F12421F2",
+      "source_sha256": "98D2D6FA3961B4DB69DFD70059BFA912E58EFA63A081C404BCFD94B42375DC2D",
+      "source_text": "    raw_root = (\n        args.raw_root.resolve()\n        if args.raw_root is not None\n        else (repo / DEFAULT_RAW_ROOT).resolve()\n    )",
+      "start_line": 1549
+    },
+    "scripts/research/run_rd33_temporal_mb_architecture.py:1564-1567": {
+      "end_line": 1567,
+      "path": "scripts/research/run_rd33_temporal_mb_architecture.py",
+      "snippet_sha256_lf_no_final_newline": "A67C3084D1C83ECD0E2EDDCBCC9D509B383C5A1DF4058E59F2A38B9E9217F5A3",
+      "source_sha256": "98D2D6FA3961B4DB69DFD70059BFA912E58EFA63A081C404BCFD94B42375DC2D",
+      "source_text": "    frames = rd31.load_feature_frames(\n        raw_root=raw_root,\n        pairs=pairs,\n    )",
+      "start_line": 1564
+    },
+    "scripts/research/run_rd33_temporal_mb_architecture.py:233-243": {
+      "end_line": 243,
+      "path": "scripts/research/run_rd33_temporal_mb_architecture.py",
+      "snippet_sha256_lf_no_final_newline": "61D74B748AC76DADA1AAB39C7DAD59849B8FD330D9ACEC8A9900602322123378",
+      "source_sha256": "98D2D6FA3961B4DB69DFD70059BFA912E58EFA63A081C404BCFD94B42375DC2D",
+      "source_text": "def load_rd31_runner() -> Any:\n    path = ROOT / RD31_RUNNER\n    spec = importlib.util.spec_from_file_location(\n        \"_rd31_frozen_economic_runner_for_rd33\",\n        path,\n    )\n    if spec is None or spec.loader is None:\n        raise RunnerError(\"cannot load frozen RD31 runner\")\n    module = importlib.util.module_from_spec(spec)\n    spec.loader.exec_module(module)\n    return module",
+      "start_line": 233
+    },
+    "scripts/research/run_rd33_temporal_mb_architecture.py:433-561": {
+      "end_line": 561,
+      "path": "scripts/research/run_rd33_temporal_mb_architecture.py",
+      "snippet_sha256_lf_no_final_newline": "1EB77287AD68FC4253D2D4412E430211BA3D3C4D849431D1FCC54140FBC1BD6E",
+      "source_sha256": "98D2D6FA3961B4DB69DFD70059BFA912E58EFA63A081C404BCFD94B42375DC2D",
+      "source_text": "def run_all_portfolios(\n    *,\n    rd31: Any,\n    events: pd.DataFrame,\n    frames: dict[str, pd.DataFrame],\n    state_frame: pd.DataFrame,\n    membership: list[Any],\n) -> tuple[\n    pd.DataFrame,\n    pd.DataFrame,\n    pd.DataFrame,\n    pd.DataFrame,\n    pd.DataFrame,\n    pd.DataFrame,\n    pd.DataFrame,\n    pd.DataFrame,\n]:\n    run_rows: list[dict[str, Any]] = []\n    trade_sets: list[pd.DataFrame] = []\n    daily_sets: list[pd.DataFrame] = []\n    routing_rows: list[dict[str, Any]] = []\n    concentration_rows: list[dict[str, Any]] = []\n    break_even_rows: list[dict[str, Any]] = []\n    governor_sets: list[pd.DataFrame] = []\n    pending_sets: list[pd.DataFrame] = []\n\n    replay_count = 0\n    for policy_id in EXPECTED_POLICIES:\n        for universe in EXPECTED_UNIVERSES:\n            portfolios = rd31._portfolio_events(events, universe)\n            for portfolio_id, portfolio_events in portfolios.items():\n                if portfolio_id not in EXPECTED_PORTFOLIOS:\n                    raise RunnerError(f\"unexpected portfolio: {portfolio_id}\")\n                base_trades: pd.DataFrame | None = None\n                for cost_multiplier in COST_MULTIPLIERS:\n                    (\n                        trades,\n                        daily,\n                        metrics,\n                        counters,\n                        diagnostics,\n                    ) = replay_rd33_policy(\n                        policy_id=policy_id,\n                        portfolio_id=portfolio_id,\n                        universe_id=universe,\n                        cost_multiplier=cost_multiplier,\n                        events=portfolio_events,\n                        frames=frames,\n                        state_frame=state_frame,\n                        membership=membership,\n                    )\n                    replay_count += 1\n                    run_rows.append(metrics)\n                    if len(trades):\n                        trade_sets.append(trades)\n                    if len(daily):\n                        daily_sets.append(daily)\n\n                    routing_rows.append(\n                        {\n                            \"policy_id\": policy_id,\n                            \"portfolio_id\": portfolio_id,\n                            \"universe_id\": universe,\n                            \"cost_multiplier\": cost_multiplier,\n                            **counters,\n                        }\n                    )\n                    concentration_rows.append(\n                        {\n                            \"policy_id\": policy_id,\n                            \"portfolio_id\": portfolio_id,\n                            \"universe_id\": universe,\n                            \"cost_multiplier\": cost_multiplier,\n                            **concentration_diagnostics(trades),\n                        }\n                    )\n\n                    governor = diagnostics.governor_transition_ledger.copy()\n                    governor.insert(0, \"policy_id\", policy_id)\n                    governor.insert(1, \"portfolio_id\", portfolio_id)\n                    governor.insert(3, \"cost_multiplier\", cost_multiplier)\n                    governor_sets.append(governor)\n\n                    pending = diagnostics.pending_lifecycle_ledger.copy()\n                    if len(pending):\n                        pending[\"cost_multiplier\"] = cost_multiplier\n                        pending_sets.append(pending)\n\n                    if cost_multiplier == 1.0:\n                        base_trades = trades.copy()\n\n                    print(\n                        \"RD33_PORTFOLIO=\"\n                        f\"{policy_id}:{portfolio_id}:{universe}:\"\n                        f\"{cost_multiplier}x:\"\n                        f\"net={metrics['net_return']:.6f}:\"\n                        f\"pf={metrics['profit_factor']:.6f}:\"\n                        f\"dd={metrics['maximum_drawdown']:.6f}:\"\n                        f\"trades={metrics['trade_count']}\",\n                        flush=True,\n                    )\n\n                if base_trades is None:\n                    raise RunnerError(\"base-cost trade ledger missing\")\n                break_even_rows.append(\n                    {\n                        \"policy_id\": policy_id,\n                        \"portfolio_id\": portfolio_id,\n                        \"universe_id\": universe,\n                        \"pf1_break_even_cost_multiplier\": (\n                            fixed_path_pf1_break_even_multiplier(base_trades)\n                        ),\n                        \"method\": (\"BASE_ROUTED_QUANTITIES_AND_FILLS_FIXED_COST_SCALED_UNTIL_PF_1\"),\n                    }\n                )\n\n    if replay_count != EXPECTED_ECONOMIC_REPLAYS:\n        raise RunnerError(f\"economic replay count {replay_count} != {EXPECTED_ECONOMIC_REPLAYS}\")\n\n    return (\n        pd.DataFrame.from_records(run_rows),\n        (pd.concat(trade_sets, ignore_index=True) if trade_sets else pd.DataFrame()),\n        (pd.concat(daily_sets, ignore_index=True) if daily_sets else pd.DataFrame()),\n        pd.DataFrame.from_records(routing_rows),\n        pd.DataFrame.from_records(concentration_rows),\n        pd.DataFrame.from_records(break_even_rows),\n        (pd.concat(governor_sets, ignore_index=True) if governor_sets else pd.DataFrame()),\n        (pd.concat(pending_sets, ignore_index=True) if pending_sets else pd.DataFrame()),\n    )",
+      "start_line": 433
+    },
+    "src/spotbot/research/a10_selective_protection_asymmetry.py:244-268": {
+      "end_line": 268,
+      "path": "src/spotbot/research/a10_selective_protection_asymmetry.py",
+      "snippet_sha256_lf_no_final_newline": "88FC7723BC934E84FC964B148A02B8439373D973750E2B2E128F93FCEB6628BB",
+      "source_sha256": "BF4794A3F42A547A3D20D80D0ACD7A9132973B68BA3FFB2738B3EF29ECD0AB0F",
+      "source_text": "    try:\n        rd27.evaluate_adaptive_exit = treatment_evaluate\n        rd27.apply_completed_bar_update = treatment_update\n\n        trades, daily, metrics, counters = rd27.replay_lifecycle_policy(\n            policy_id=rd27.FULL_ADAPTIVE_LIFECYCLE_BRAIN,\n            portfolio_id=portfolio_id,\n            universe_id=universe_id,\n            cost_multiplier=cost_multiplier,\n            events=events,\n            frames=frames,\n            state_frame=state_frame,\n            replay_start=replay_start,\n            replay_cutoff=replay_cutoff,\n        )\n    finally:\n        rd27.evaluate_adaptive_exit = original_evaluate\n        rd27.apply_completed_bar_update = original_update\n        diagnostics[\"patch_restored\"] = (\n            rd27.evaluate_adaptive_exit is original_evaluate\n            and rd27.apply_completed_bar_update is original_update\n        )\n\n    if not diagnostics[\"patch_restored\"]:\n        raise RuntimeError(\"RD27_PATCH_RESTORE_FAILED\")",
+      "start_line": 244
+    },
+    "src/spotbot/research/a10_selective_protection_asymmetry.py:248-258": {
+      "end_line": 258,
+      "path": "src/spotbot/research/a10_selective_protection_asymmetry.py",
+      "snippet_sha256_lf_no_final_newline": "E88458999AD452269BDBE4AEF7A3CC08907DF63C7D1CD44FA6BA45890C1AC2D6",
+      "source_sha256": "BF4794A3F42A547A3D20D80D0ACD7A9132973B68BA3FFB2738B3EF29ECD0AB0F",
+      "source_text": "        trades, daily, metrics, counters = rd27.replay_lifecycle_policy(\n            policy_id=rd27.FULL_ADAPTIVE_LIFECYCLE_BRAIN,\n            portfolio_id=portfolio_id,\n            universe_id=universe_id,\n            cost_multiplier=cost_multiplier,\n            events=events,\n            frames=frames,\n            state_frame=state_frame,\n            replay_start=replay_start,\n            replay_cutoff=replay_cutoff,\n        )",
+      "start_line": 248
+    },
+    "src/spotbot/research/a4r1_reversible_floor_replay.py:129-152": {
+      "end_line": 152,
+      "path": "src/spotbot/research/a4r1_reversible_floor_replay.py",
+      "snippet_sha256_lf_no_final_newline": "E3C78B31312610ACFC63A6A4BA0947E62BABBED34AB984CDFACA285326CBC822",
+      "source_sha256": "161B7680A2098BBE97E4B9BE3A9BA7F0A918AAD04926CBA6F783CED7B97FE16E",
+      "source_text": "    try:\n        rd27.evaluate_adaptive_exit = treatment_evaluate\n        rd27.apply_completed_bar_update = treatment_update\n        trades, daily, metrics, counters = rd27.replay_lifecycle_policy(\n            policy_id=rd27.FULL_ADAPTIVE_LIFECYCLE_BRAIN,\n            portfolio_id=portfolio_id,\n            universe_id=universe_id,\n            cost_multiplier=cost_multiplier,\n            events=events,\n            frames=frames,\n            state_frame=state_frame,\n            replay_start=replay_start,\n            replay_cutoff=replay_cutoff,\n        )\n    finally:\n        rd27.evaluate_adaptive_exit = original_evaluate\n        rd27.apply_completed_bar_update = original_update\n        diagnostics[\"patch_restored\"] = (\n            rd27.evaluate_adaptive_exit is original_evaluate\n            and rd27.apply_completed_bar_update is original_update\n        )\n\n    if not diagnostics[\"patch_restored\"]:\n        raise RuntimeError(\"RD27_PATCH_RESTORE_FAILED\")",
+      "start_line": 129
+    },
+    "src/spotbot/research/a4r1_reversible_floor_replay.py:132-142": {
+      "end_line": 142,
+      "path": "src/spotbot/research/a4r1_reversible_floor_replay.py",
+      "snippet_sha256_lf_no_final_newline": "E88458999AD452269BDBE4AEF7A3CC08907DF63C7D1CD44FA6BA45890C1AC2D6",
+      "source_sha256": "161B7680A2098BBE97E4B9BE3A9BA7F0A918AAD04926CBA6F783CED7B97FE16E",
+      "source_text": "        trades, daily, metrics, counters = rd27.replay_lifecycle_policy(\n            policy_id=rd27.FULL_ADAPTIVE_LIFECYCLE_BRAIN,\n            portfolio_id=portfolio_id,\n            universe_id=universe_id,\n            cost_multiplier=cost_multiplier,\n            events=events,\n            frames=frames,\n            state_frame=state_frame,\n            replay_start=replay_start,\n            replay_cutoff=replay_cutoff,\n        )",
+      "start_line": 132
+    },
+    "src/spotbot/research/eaa_same_pair_secondary_shadow.py:193-215": {
+      "end_line": 215,
+      "path": "src/spotbot/research/eaa_same_pair_secondary_shadow.py",
+      "snippet_sha256_lf_no_final_newline": "44C27733A76DBD8D1688F413771438E0461BD7C4386B2C1D27496B4901A3ED14",
+      "source_sha256": "1096CD43E814A08E8F6BB969CD2722FA883C04D54C9462AFD461489AE3E76390",
+      "source_text": "def replay_same_pair_secondary_shadow(*, portfolio_id: str, universe_id: str, cost_multiplier: float, events: pd.DataFrame, frames: dict[str, pd.DataFrame], state_frame: pd.DataFrame, replay_start: pd.Timestamp, replay_cutoff: pd.Timestamp, shadow_enabled: bool = DEFAULT_SHADOW_ENABLED) -> ShadowReplayResult:\n    \"\"\"Replay the bounded shadow; disabled mode is exact native RD27 delegation.\"\"\"\n    validate_shadow_constants()\n    if cost_multiplier not in COST_MULTIPLIERS:\n        raise SamePairSecondaryShadowError(\"unsupported cost multiplier\")\n    replay_start, replay_cutoff = _utc(replay_start), _utc(replay_cutoff)\n    if replay_start >= replay_cutoff:\n        raise SamePairSecondaryShadowError(\"invalid replay window\")\n\n    if not shadow_enabled:\n        trades, daily, metrics, counters = rd27.replay_lifecycle_policy(\n            policy_id=rd27.STATIC_EXIT_STATE_ROUTER,\n            portfolio_id=portfolio_id,\n            universe_id=universe_id,\n            cost_multiplier=cost_multiplier,\n            events=events,\n            frames=frames,\n            state_frame=state_frame,\n            replay_start=replay_start,\n            replay_cutoff=replay_cutoff,\n        )\n        return ShadowReplayResult(trades, daily, metrics, counters, _empty_diagnostics())\n",
+      "start_line": 193
+    },
+    "src/spotbot/research/eaa_same_pair_secondary_shadow.py:203-213": {
+      "end_line": 213,
+      "path": "src/spotbot/research/eaa_same_pair_secondary_shadow.py",
+      "snippet_sha256_lf_no_final_newline": "242F66084086722A6B752FE0C9F54A716F2F12C2CD7AD3C6284B8EDA12683CE7",
+      "source_sha256": "1096CD43E814A08E8F6BB969CD2722FA883C04D54C9462AFD461489AE3E76390",
+      "source_text": "        trades, daily, metrics, counters = rd27.replay_lifecycle_policy(\n            policy_id=rd27.STATIC_EXIT_STATE_ROUTER,\n            portfolio_id=portfolio_id,\n            universe_id=universe_id,\n            cost_multiplier=cost_multiplier,\n            events=events,\n            frames=frames,\n            state_frame=state_frame,\n            replay_start=replay_start,\n            replay_cutoff=replay_cutoff,\n        )",
+      "start_line": 203
+    },
+    "src/spotbot/research/rd26_exit_architecture.py:121-141": {
+      "end_line": 141,
+      "path": "src/spotbot/research/rd26_exit_architecture.py",
+      "snippet_sha256_lf_no_final_newline": "28D322EA0C08A327106DB9DD2749186E27A17872492E30AECEAF026B5A7FDA89",
+      "source_sha256": "1290748EA7E8A0343C1A15CEDFC1220AA423F04C11FDD558311B06AC7DA90359",
+      "source_text": "def normalize_bars(raw: pd.DataFrame, *, cutoff: pd.Timestamp) -> pd.DataFrame:\n    required = {\"timestamp\", \"open\", \"high\", \"low\", \"close\", \"volume\"}\n    missing = sorted(required.difference(raw.columns))\n    if missing:\n        raise RD26Error(f\"raw bars missing columns: {missing}\")\n    frame = raw.loc[:, [\"timestamp\", \"open\", \"high\", \"low\", \"close\", \"volume\"]].copy()\n    frame[\"timestamp\"] = pd.to_datetime(frame[\"timestamp\"], utc=True, errors=\"raise\")\n    for column in (\"open\", \"high\", \"low\", \"close\", \"volume\"):\n        frame[column] = pd.to_numeric(frame[column], errors=\"raise\").astype(float)\n    frame = (\n        frame.sort_values(\"timestamp\", kind=\"stable\")\n        .drop_duplicates(\"timestamp\", keep=\"last\")\n        .reset_index(drop=True)\n    )\n    if len(frame) and frame[\"timestamp\"].max() >= cutoff:\n        raise RD26Error(f\"bar at or beyond sealed cutoff entered memory: {cutoff}\")\n    if bool((frame[[\"open\", \"high\", \"low\", \"close\"]] <= 0.0).any().any()):\n        raise RD26Error(\"non-positive OHLC value observed\")\n    if bool((frame[\"volume\"] < 0.0).any()):\n        raise RD26Error(\"negative volume observed\")\n    return frame",
+      "start_line": 121
+    },
+    "src/spotbot/research/rd26_exit_architecture.py:144-184": {
+      "end_line": 184,
+      "path": "src/spotbot/research/rd26_exit_architecture.py",
+      "snippet_sha256_lf_no_final_newline": "D975D9D05B37FFBFF479512BACD28ADA50A6A59D22FE7596CC21857B23E564A9",
+      "source_sha256": "1290748EA7E8A0343C1A15CEDFC1220AA423F04C11FDD558311B06AC7DA90359",
+      "source_text": "def prepare_features(raw: pd.DataFrame, *, cutoff: pd.Timestamp) -> pd.DataFrame:\n    \"\"\"Exact RD23 focus-family feature semantics, with a caller-supplied cutoff.\"\"\"\n    frame = normalize_bars(raw, cutoff=cutoff)\n    close = frame[\"close\"]\n    high = frame[\"high\"]\n    low = frame[\"low\"]\n    prior_close = close.shift(1)\n\n    true_range = pd.concat(\n        [\n            high - low,\n            (high - prior_close).abs(),\n            (low - prior_close).abs(),\n        ],\n        axis=1,\n    ).max(axis=1)\n    atr24_prior = true_range.shift(1).rolling(24, min_periods=24).mean()\n\n    frame[\"prior_close\"] = prior_close\n    frame[\"atr24_prior\"] = atr24_prior\n    frame[\"return_72h\"] = close / close.shift(72) - 1.0\n    frame[\"prior_72h_high\"] = high.shift(1).rolling(72, min_periods=72).max()\n    frame[\"previous_prior_72h_high\"] = frame[\"prior_72h_high\"].shift(1)\n    frame[\"momentum_breakout\"] = (close > frame[\"prior_72h_high\"]) & (\n        prior_close <= frame[\"previous_prior_72h_high\"]\n    )\n    frame[\"feature_ready\"] = frame[\n        [\n            \"prior_close\",\n            \"atr24_prior\",\n            \"return_72h\",\n            \"prior_72h_high\",\n            \"previous_prior_72h_high\",\n        ]\n    ].notna().all(axis=1) & (frame[\"atr24_prior\"] > 0.0)\n\n    frame[\"quote_turnover_proxy\"] = frame[\"volume\"] * frame[\"close\"]\n    frame[\"trailing_24h_quote_turnover_proxy\"] = (\n        frame[\"quote_turnover_proxy\"].rolling(24, min_periods=24).sum()\n    )\n    return frame",
+      "start_line": 144
+    },
+    "src/spotbot/research/rd26_exit_architecture.py:180-184": {
+      "end_line": 184,
+      "path": "src/spotbot/research/rd26_exit_architecture.py",
+      "snippet_sha256_lf_no_final_newline": "5194B7C2AB925D2AEA7FB7C0CED18CBE529E83839A9C21A3755DE92ACE9B6B89",
+      "source_sha256": "1290748EA7E8A0343C1A15CEDFC1220AA423F04C11FDD558311B06AC7DA90359",
+      "source_text": "    frame[\"quote_turnover_proxy\"] = frame[\"volume\"] * frame[\"close\"]\n    frame[\"trailing_24h_quote_turnover_proxy\"] = (\n        frame[\"quote_turnover_proxy\"].rolling(24, min_periods=24).sum()\n    )\n    return frame",
+      "start_line": 180
+    },
+    "src/spotbot/research/rd26_exit_architecture.py:187-190": {
+      "end_line": 190,
+      "path": "src/spotbot/research/rd26_exit_architecture.py",
+      "snippet_sha256_lf_no_final_newline": "14D9F0D42F2B4C7CF6DD0265C0C783D58D5C3F7EFE93553E26F43C03275E54C9",
+      "source_sha256": "1290748EA7E8A0343C1A15CEDFC1220AA423F04C11FDD558311B06AC7DA90359",
+      "source_text": "def fast_lookup(frame: pd.DataFrame) -> dict[int, int]:\n    timestamps = pd.to_datetime(frame[\"timestamp\"], utc=True, errors=\"raise\").dt.as_unit(\"ns\")\n    values = timestamps.astype(\"int64\").to_numpy()\n    return {int(value): int(index) for index, value in enumerate(values)}",
+      "start_line": 187
+    },
+    "src/spotbot/research/rd26_exit_architecture.py:218-258": {
+      "end_line": 258,
+      "path": "src/spotbot/research/rd26_exit_architecture.py",
+      "snippet_sha256_lf_no_final_newline": "E0DD7529BDB3C21EF7D9792EBB83603400B16332922F23B274C42F6E8989DCC7",
+      "source_sha256": "1290748EA7E8A0343C1A15CEDFC1220AA423F04C11FDD558311B06AC7DA90359",
+      "source_text": "def _relative_strength_event(\n    *,\n    timestamp: pd.Timestamp,\n    members: tuple[tuple[str, int], ...],\n    features: dict[str, pd.DataFrame],\n    lookups: dict[str, dict[int, int]],\n) -> dict[str, Any] | None:\n    now: list[tuple[float, int, str]] = []\n    previous: list[tuple[float, int, str]] = []\n    previous_time = timestamp - pd.Timedelta(hours=1)\n\n    for pair, membership_rank in members:\n        current_row = _row_at(pair, timestamp, features, lookups)\n        previous_row = _row_at(pair, previous_time, features, lookups)\n        if current_row is not None and bool(current_row[\"feature_ready\"]):\n            now.append((float(current_row[\"return_72h\"]), membership_rank, pair))\n        if previous_row is not None and bool(previous_row[\"feature_ready\"]):\n            previous.append((float(previous_row[\"return_72h\"]), membership_rank, pair))\n\n    if len(now) < 2 or len(previous) < 2:\n        return None\n    now.sort(key=lambda item: (-item[0], item[1], item[2]))\n    previous.sort(key=lambda item: (-item[0], item[1], item[2]))\n    current_return, membership_rank, current_pair = now[0]\n    previous_pair = previous[0][2]\n    if current_return <= 0.0 or current_pair == previous_pair:\n        return None\n    second_return = now[1][0]\n    row = _row_at(current_pair, timestamp, features, lookups)\n    if row is None:\n        return None\n    return {\n        \"family_id\": FAMILY_RELATIVE_STRENGTH_ROTATION,\n        \"pair\": current_pair,\n        \"membership_rank\": int(membership_rank),\n        \"signal_strength\": float(current_return - second_return),\n        \"decision_close\": float(row[\"close\"]),\n        \"return_72h\": float(current_return),\n        \"aux_value\": float(second_return),\n        \"atr24_at_signal\": float(row[\"atr24_prior\"]),\n    }",
+      "start_line": 218
+    },
+    "src/spotbot/research/rd26_exit_architecture.py:261-319": {
+      "end_line": 319,
+      "path": "src/spotbot/research/rd26_exit_architecture.py",
+      "snippet_sha256_lf_no_final_newline": "DC987564E1FA97CFACBE0F2717A5464FD0FCE671679CA64860226D77F82D392A",
+      "source_sha256": "1290748EA7E8A0343C1A15CEDFC1220AA423F04C11FDD558311B06AC7DA90359",
+      "source_text": "def evaluate_hour(\n    *,\n    timestamp: pd.Timestamp,\n    members: tuple[tuple[str, int], ...],\n    features: dict[str, pd.DataFrame],\n    lookups: dict[str, dict[int, int]],\n    allow_relative_strength: bool,\n) -> tuple[list[dict[str, Any]], dict[str, int]]:\n    events: list[dict[str, Any]] = []\n    counters = {\n        \"asset_checks\": len(members),\n        \"feature_ready_pass\": 0,\n        f\"events_{FAMILY_MOMENTUM_BREAKOUT}\": 0,\n        f\"events_{FAMILY_RELATIVE_STRENGTH_ROTATION}\": 0,\n    }\n\n    for pair, membership_rank in members:\n        row = _row_at(pair, timestamp, features, lookups)\n        if row is None or not bool(row[\"feature_ready\"]):\n            continue\n        counters[\"feature_ready_pass\"] += 1\n        if bool(row[\"momentum_breakout\"]):\n            counters[f\"events_{FAMILY_MOMENTUM_BREAKOUT}\"] += 1\n            events.append(\n                {\n                    \"family_id\": FAMILY_MOMENTUM_BREAKOUT,\n                    \"pair\": pair,\n                    \"membership_rank\": int(membership_rank),\n                    \"signal_strength\": float(\n                        (row[\"close\"] - row[\"prior_72h_high\"]) / row[\"atr24_prior\"]\n                    ),\n                    \"decision_close\": float(row[\"close\"]),\n                    \"return_72h\": float(row[\"return_72h\"]),\n                    \"aux_value\": float(row[\"prior_72h_high\"]),\n                    \"atr24_at_signal\": float(row[\"atr24_prior\"]),\n                }\n            )\n\n    relative = None\n    if allow_relative_strength:\n        relative = _relative_strength_event(\n            timestamp=timestamp,\n            members=members,\n            features=features,\n            lookups=lookups,\n        )\n    if relative is not None:\n        counters[f\"events_{FAMILY_RELATIVE_STRENGTH_ROTATION}\"] += 1\n        events.append(relative)\n\n    events.sort(\n        key=lambda row: (\n            str(row[\"family_id\"]),\n            -float(row[\"signal_strength\"]),\n            int(row[\"membership_rank\"]),\n            str(row[\"pair\"]),\n        )\n    )\n    return events, counters",
+      "start_line": 261
+    },
+    "src/spotbot/research/rd26_exit_architecture.py:322-413": {
+      "end_line": 413,
+      "path": "src/spotbot/research/rd26_exit_architecture.py",
+      "snippet_sha256_lf_no_final_newline": "0BE537C43E599BBCF5B509F3FECB7773B36DAFAB0A0103E7D934C2D5E4FFDA57",
+      "source_sha256": "1290748EA7E8A0343C1A15CEDFC1220AA423F04C11FDD558311B06AC7DA90359",
+      "source_text": "def scan_focus_signals(\n    *,\n    membership: list[Any],\n    features: dict[str, pd.DataFrame],\n    periods: dict[str, tuple[pd.Timestamp, pd.Timestamp]],\n    data_start: pd.Timestamp,\n    data_cutoff: pd.Timestamp,\n    guard_each_period_hours: int | None,\n) -> tuple[pd.DataFrame, pd.DataFrame]:\n    validate_constants()\n    lookups = {pair: fast_lookup(frame) for pair, frame in features.items()}\n    event_rows: list[dict[str, Any]] = []\n    funnel: dict[tuple[str, str], dict[str, int]] = {}\n\n    for snapshot in membership:\n        start = max(snapshot.decision_time, data_start).ceil(\"h\")\n        end = min(snapshot.effective_end, data_cutoff)\n        if start >= end:\n            continue\n        for timestamp in pd.date_range(start, end, freq=\"h\", inclusive=\"left\"):\n            period = _period_for(timestamp, periods)\n            period_end = periods[period][1]\n            key = (snapshot.universe_id, period)\n            counter = funnel.setdefault(\n                key,\n                {\n                    \"snapshot_hours\": 0,\n                    \"asset_checks\": 0,\n                    \"feature_ready_pass\": 0,\n                    f\"events_{FAMILY_MOMENTUM_BREAKOUT}\": 0,\n                    f\"events_{FAMILY_RELATIVE_STRENGTH_ROTATION}\": 0,\n                },\n            )\n            counter[\"snapshot_hours\"] += 1\n            if guard_each_period_hours is not None:\n                guard = pd.Timedelta(hours=guard_each_period_hours)\n                if timestamp + guard >= period_end:\n                    continue\n            hour_events, hour_counts = evaluate_hour(\n                timestamp=timestamp,\n                members=snapshot.members,\n                features=features,\n                lookups=lookups,\n                allow_relative_strength=timestamp > start,\n            )\n            for name, value in hour_counts.items():\n                counter[name] += int(value)\n            ranks: dict[str, int] = {}\n            for row in hour_events:\n                family = str(row[\"family_id\"])\n                ranks[family] = ranks.get(family, 0) + 1\n                event_rows.append(\n                    {\n                        \"universe_id\": snapshot.universe_id,\n                        \"period_id\": period,\n                        \"timestamp\": timestamp,\n                        \"candidate_rank\": ranks[family],\n                        **row,\n                    }\n                )\n\n    funnel_rows: list[dict[str, Any]] = []\n    for universe in (\"C2\", \"D2\", \"E2\"):\n        for period in periods:\n            counts = funnel.get(\n                (universe, period),\n                {\n                    \"snapshot_hours\": 0,\n                    \"asset_checks\": 0,\n                    \"feature_ready_pass\": 0,\n                    f\"events_{FAMILY_MOMENTUM_BREAKOUT}\": 0,\n                    f\"events_{FAMILY_RELATIVE_STRENGTH_ROTATION}\": 0,\n                },\n            )\n            for family in FOCUS_FAMILIES:\n                ready = int(counts[\"feature_ready_pass\"])\n                events = int(counts[f\"events_{family}\"])\n                funnel_rows.append(\n                    {\n                        \"universe_id\": universe,\n                        \"period_id\": period,\n                        \"family_id\": family,\n                        \"snapshot_hours\": int(counts[\"snapshot_hours\"]),\n                        \"asset_checks\": int(counts[\"asset_checks\"]),\n                        \"feature_ready_pass\": ready,\n                        \"candidate_events\": events,\n                        \"candidate_survival_fraction_of_feature_ready\": (\n                            events / ready if ready else 0.0\n                        ),\n                    }\n                )\n    return pd.DataFrame.from_records(event_rows), pd.DataFrame.from_records(funnel_rows)",
+      "start_line": 322
+    },
+    "src/spotbot/research/rd26_exit_architecture.py:533-546": {
+      "end_line": 546,
+      "path": "src/spotbot/research/rd26_exit_architecture.py",
+      "snippet_sha256_lf_no_final_newline": "90C1D59D671940AF83446FDAC3D510F24AF87CCD36CE5EBA6D3576A2DEBCC3F9",
+      "source_sha256": "1290748EA7E8A0343C1A15CEDFC1220AA423F04C11FDD558311B06AC7DA90359",
+      "source_text": "def standalone_events(\n    events: pd.DataFrame,\n    *,\n    universe_id: str,\n    family_id: str,\n) -> pd.DataFrame:\n    frame = events.loc[\n        (events[\"universe_id\"] == universe_id) & (events[\"family_id\"] == family_id)\n    ].copy()\n    frame[\"support_families\"] = family_id\n    return frame.sort_values(\n        [\"timestamp\", \"membership_rank\", \"pair\"],\n        kind=\"stable\",\n    ).reset_index(drop=True)",
+      "start_line": 533
+    },
+    "src/spotbot/research/rd26_exit_architecture.py:549-596": {
+      "end_line": 596,
+      "path": "src/spotbot/research/rd26_exit_architecture.py",
+      "snippet_sha256_lf_no_final_newline": "BED0CDD00B0306CB7670ECFA7A5058DCB5DD1CBC24B4380209DA371A774685E3",
+      "source_sha256": "1290748EA7E8A0343C1A15CEDFC1220AA423F04C11FDD558311B06AC7DA90359",
+      "source_text": "def union_events(\n    events: pd.DataFrame,\n    *,\n    universe_id: str,\n) -> pd.DataFrame:\n    frame = events.loc[events[\"universe_id\"] == universe_id].copy()\n    rows: list[dict[str, Any]] = []\n    grouped = frame.groupby([\"timestamp\", \"pair\"], sort=True)\n    for (timestamp, pair), group in grouped:\n        family_set = tuple(sorted(set(group[\"family_id\"].astype(str))))\n        ranks = pd.to_numeric(group[\"membership_rank\"], errors=\"raise\").astype(int)\n        periods = sorted(set(group[\"period_id\"].astype(str)))\n        atrs = pd.to_numeric(group[\"atr24_at_signal\"], errors=\"raise\").astype(float)\n        if len(periods) != 1:\n            raise RD26Error(\"union event spans multiple period labels\")\n        if float(atrs.max() - atrs.min()) > 1e-12:\n            raise RD26Error(\"same pair-time union event has inconsistent ATR\")\n        rows.append(\n            {\n                \"timestamp\": pd.Timestamp(timestamp),\n                \"pair\": str(pair),\n                \"membership_rank\": int(ranks.min()),\n                \"period_id\": periods[0],\n                \"support_families\": \"|\".join(family_set),\n                \"support_count\": len(family_set),\n                \"atr24_at_signal\": float(atrs.iloc[0]),\n            }\n        )\n    if not rows:\n        return pd.DataFrame(\n            columns=[\n                \"timestamp\",\n                \"pair\",\n                \"membership_rank\",\n                \"period_id\",\n                \"support_families\",\n                \"support_count\",\n                \"atr24_at_signal\",\n            ]\n        )\n    return (\n        pd.DataFrame.from_records(rows)\n        .sort_values(\n            [\"timestamp\", \"membership_rank\", \"pair\"],\n            kind=\"stable\",\n        )\n        .reset_index(drop=True)\n    )",
+      "start_line": 549
+    },
+    "src/spotbot/research/rd26_exit_architecture.py:599-611": {
+      "end_line": 611,
+      "path": "src/spotbot/research/rd26_exit_architecture.py",
+      "snippet_sha256_lf_no_final_newline": "6794EC1C3BDE21AEA8522C7B03A76222E94ADA2E8C9E9D417055206A796BC94F",
+      "source_sha256": "1290748EA7E8A0343C1A15CEDFC1220AA423F04C11FDD558311B06AC7DA90359",
+      "source_text": "def _bar_at(\n    pair: str,\n    timestamp: pd.Timestamp,\n    frames: dict[str, pd.DataFrame],\n    lookups: dict[str, dict[int, int]],\n) -> pd.Series | None:\n    frame = frames.get(pair)\n    if frame is None:\n        return None\n    index = lookups.get(pair, {}).get(int(timestamp.value))\n    if index is None:\n        return None\n    return frame.iloc[index]",
+      "start_line": 599
+    },
+    "src/spotbot/research/rd26_exit_architecture.py:681-964": {
+      "end_line": 964,
+      "path": "src/spotbot/research/rd26_exit_architecture.py",
+      "snippet_sha256_lf_no_final_newline": "4EDF2F3A35F83175291E7A2D1DBE97EFC6D4E559CBA18596E59E31E203678B68",
+      "source_sha256": "1290748EA7E8A0343C1A15CEDFC1220AA423F04C11FDD558311B06AC7DA90359",
+      "source_text": "def replay_policy(\n    *,\n    policy_id: str,\n    portfolio_id: str,\n    universe_id: str,\n    cost_multiplier: float,\n    events: pd.DataFrame,\n    frames: dict[str, pd.DataFrame],\n) -> tuple[pd.DataFrame, pd.DataFrame, dict[str, Any], dict[str, int]]:\n    validate_constants()\n    time_failure_enabled, profit_trail_enabled = policy_components(policy_id)\n    if cost_multiplier not in COST_MULTIPLIERS:\n        raise RD26Error(\"unsupported cost multiplier\")\n\n    lookups = {pair: fast_lookup(frame) for pair, frame in frames.items()}\n    side_cost = BASE_ROUND_TRIP_COST * cost_multiplier / 2.0\n    scheduled: dict[int, list[dict[str, Any]]] = {}\n    for raw in events.to_dict(orient=\"records\"):\n        signal_time = pd.Timestamp(raw[\"timestamp\"])\n        entry_time = signal_time + pd.Timedelta(hours=1)\n        max_exit_time = entry_time + pd.Timedelta(hours=MAX_HOLD_HOURS)\n        if max_exit_time >= DATA_CUTOFF:\n            continue\n        item = {\n            **raw,\n            \"signal_time\": signal_time,\n            \"entry_time\": entry_time,\n            \"max_exit_time\": max_exit_time,\n        }\n        scheduled.setdefault(int(entry_time.value), []).append(item)\n\n    cash = INITIAL_EQUITY\n    positions: dict[str, Position] = {}\n    trades: list[dict[str, Any]] = []\n    daily_rows: list[dict[str, Any]] = []\n    hourly_equity_values: list[float] = []\n    counters = {\n        \"signal_events\": len(events),\n        \"missing_entry_bar\": 0,\n        \"missing_exit_bar_precheck\": 0,\n        \"same_pair_open\": 0,\n        \"position_slots_full\": 0,\n        \"gross_limit_rejection\": 0,\n        \"capacity_unavailable\": 0,\n        \"capacity_capped_entries\": 0,\n        \"cash_capped_entries\": 0,\n        \"admitted_entries\": 0,\n        \"max_hold_exits\": 0,\n        \"time_failure_exits\": 0,\n        \"profit_trail_gap_exits\": 0,\n        \"profit_trail_touch_exits\": 0,\n    }\n\n    for timestamp in pd.date_range(DATA_START, DATA_CUTOFF, freq=\"h\", inclusive=\"left\"):\n        for pair in sorted(list(positions)):\n            position = positions[pair]\n            bar = _bar_at(pair, timestamp, frames, lookups)\n            if bar is None:\n                raise RD26Error(f\"open-position bar missing: {pair} {timestamp}\")\n\n            exit_price: float | None = None\n            exit_reason: str | None = None\n            if timestamp == position.max_exit_time:\n                exit_price = float(bar[\"open\"])\n                exit_reason = \"MAX_HOLD_168H\"\n                counters[\"max_hold_exits\"] += 1\n            elif time_failure_enabled and timestamp == position.entry_time + pd.Timedelta(\n                hours=TIME_FAILURE_HOURS\n            ):\n                prior_bar = _bar_at(\n                    pair,\n                    timestamp - pd.Timedelta(hours=1),\n                    frames,\n                    lookups,\n                )\n                if prior_bar is None:\n                    raise RD26Error(\"time-failure prior completed bar missing\")\n                if float(prior_bar[\"close\"]) <= position.entry_price:\n                    exit_price = float(bar[\"open\"])\n                    exit_reason = \"TIME_FAILURE_72H_CLOSE_NOT_ABOVE_ENTRY\"\n                    counters[\"time_failure_exits\"] += 1\n\n            if exit_price is None and profit_trail_enabled:\n                arm_level = position.entry_price + PROFIT_TRAIL_ARM_ATR * position.atr24_at_signal\n                if position.high_water >= arm_level:\n                    floor = position.high_water - PROFIT_TRAIL_GAP_ATR * position.atr24_at_signal\n                    if float(bar[\"open\"]) <= floor:\n                        exit_price = float(bar[\"open\"])\n                        exit_reason = \"PROFIT_TRAIL_GAP\"\n                        counters[\"profit_trail_gap_exits\"] += 1\n                    elif float(bar[\"low\"]) <= floor:\n                        exit_price = floor\n                        exit_reason = \"PROFIT_TRAIL_TOUCH\"\n                        counters[\"profit_trail_touch_exits\"] += 1\n\n            if exit_price is not None and exit_reason is not None:\n                record, credit = _close_position(\n                    position=position,\n                    timestamp=timestamp,\n                    exit_price=exit_price,\n                    exit_reason=exit_reason,\n                    side_cost=side_cost,\n                    portfolio_id=portfolio_id,\n                    universe_id=universe_id,\n                    cost_multiplier=cost_multiplier,\n                )\n                cash += credit\n                trades.append(record)\n                del positions[pair]\n\n        for pair, position in positions.items():\n            bar = _bar_at(pair, timestamp, frames, lookups)\n            if bar is not None:\n                position.last_mark = float(bar[\"open\"])\n\n        equity_open, gross_open = _marked_equity(cash=cash, positions=positions)\n        entries = sorted(\n            scheduled.get(int(timestamp.value), []),\n            key=lambda item: (int(item[\"membership_rank\"]), str(item[\"pair\"])),\n        )\n        for item in entries:\n            pair = str(item[\"pair\"])\n            if pair in positions:\n                counters[\"same_pair_open\"] += 1\n                continue\n            if len(positions) >= MAXIMUM_POSITIONS:\n                counters[\"position_slots_full\"] += 1\n                continue\n\n            entry_bar = _bar_at(pair, timestamp, frames, lookups)\n            if entry_bar is None:\n                counters[\"missing_entry_bar\"] += 1\n                continue\n            exit_bar = _bar_at(\n                pair,\n                pd.Timestamp(item[\"max_exit_time\"]),\n                frames,\n                lookups,\n            )\n            if exit_bar is None:\n                counters[\"missing_exit_bar_precheck\"] += 1\n                continue\n            signal_bar = _bar_at(\n                pair,\n                pd.Timestamp(item[\"signal_time\"]),\n                frames,\n                lookups,\n            )\n            if signal_bar is None:\n                raise RD26Error(\"signal bar missing during admission\")\n            capacity_source = float(signal_bar[\"trailing_24h_quote_turnover_proxy\"])\n            if not math.isfinite(capacity_source) or capacity_source <= 0.0:\n                counters[\"capacity_unavailable\"] += 1\n                continue\n\n            equity_open, gross_open = _marked_equity(\n                cash=cash,\n                positions=positions,\n            )\n            if equity_open <= 0.0:\n                continue\n            gross_numerator = equity_open * MAXIMUM_GROSS_EXPOSURE - gross_open\n            gross_room = max(\n                0.0,\n                gross_numerator / (1.0 + MAXIMUM_GROSS_EXPOSURE * side_cost),\n            )\n            if gross_room <= 0.0:\n                counters[\"gross_limit_rejection\"] += 1\n                continue\n\n            target_notional = equity_open * TARGET_SLOT_NOTIONAL_FRACTION\n            capacity_notional = capacity_source * LIQUIDITY_CAPACITY_FRACTION_24H\n            notional = min(target_notional, gross_room, capacity_notional)\n            if notional < target_notional - 1e-9 and capacity_notional <= min(\n                target_notional, gross_room\n            ):\n                counters[\"capacity_capped_entries\"] += 1\n\n            max_cash_notional = cash / (1.0 + side_cost)\n            if max_cash_notional <= 0.0:\n                continue\n            if notional > max_cash_notional:\n                counters[\"cash_capped_entries\"] += 1\n                notional = max_cash_notional\n            if notional <= 0.0:\n                continue\n\n            entry_price = float(entry_bar[\"open\"])\n            quantity = notional / entry_price\n            entry_cost = notional * side_cost\n            cash -= notional + entry_cost\n            if cash < -1e-7:\n                raise RD26Error(\"negative cash after entry\")\n            cash = max(cash, 0.0)\n            support = tuple(\n                sorted(family for family in str(item[\"support_families\"]).split(\"|\") if family)\n            )\n            atr = float(item[\"atr24_at_signal\"])\n            if not math.isfinite(atr) or atr <= 0.0:\n                raise RD26Error(\"invalid frozen signal ATR at admission\")\n            positions[pair] = Position(\n                pair=pair,\n                signal_time=pd.Timestamp(item[\"signal_time\"]),\n                entry_time=timestamp,\n                max_exit_time=pd.Timestamp(item[\"max_exit_time\"]),\n                entry_price=entry_price,\n                quantity=quantity,\n                entry_notional=notional,\n                entry_cost=entry_cost,\n                membership_rank=int(item[\"membership_rank\"]),\n                support_families=support,\n                period_id=str(item[\"period_id\"]),\n                atr24_at_signal=atr,\n                high_water=entry_price,\n                last_mark=entry_price,\n            )\n            counters[\"admitted_entries\"] += 1\n\n        for pair, position in positions.items():\n            bar = _bar_at(pair, timestamp, frames, lookups)\n            if bar is not None:\n                position.high_water = max(\n                    position.high_water,\n                    float(bar[\"high\"]),\n                )\n                position.last_mark = float(bar[\"close\"])\n        equity_close, gross_close = _marked_equity(\n            cash=cash,\n            positions=positions,\n        )\n        if equity_close < -1e-7:\n            raise RD26Error(\"negative equity observed\")\n        hourly_equity_values.append(equity_close)\n        if timestamp.hour == 23:\n            daily_rows.append(\n                {\n                    \"policy_id\": policy_id,\n                    \"portfolio_id\": portfolio_id,\n                    \"universe_id\": universe_id,\n                    \"cost_multiplier\": cost_multiplier,\n                    \"timestamp\": timestamp,\n                    \"equity\": equity_close,\n                    \"cash\": cash,\n                    \"gross_exposure\": gross_close,\n                    \"gross_exposure_fraction\": (\n                        gross_close / equity_close if equity_close > 0.0 else math.nan\n                    ),\n                    \"open_positions\": len(positions),\n                }\n            )\n\n    if positions:\n        raise RD26Error(\"open positions remained at 2024 sealed cutoff\")\n    trade_frame = pd.DataFrame.from_records(trades)\n    if len(trade_frame):\n        trade_frame.insert(0, \"policy_id\", policy_id)\n    daily_frame = pd.DataFrame.from_records(daily_rows)\n\n    equity = np.asarray(hourly_equity_values, dtype=float)\n    running_peak = np.maximum.accumulate(equity)\n    drawdowns = np.divide(\n        running_peak - equity,\n        running_peak,\n        out=np.zeros_like(equity),\n        where=running_peak > 0.0,\n    )\n    final_equity = float(equity[-1]) if len(equity) else INITIAL_EQUITY\n    metrics = performance_metrics(\n        trade_frame=trade_frame,\n        final_equity=final_equity,\n        maximum_drawdown=float(drawdowns.max()) if len(drawdowns) else 0.0,\n    )\n    metrics.update(\n        {\n            \"policy_id\": policy_id,\n            \"portfolio_id\": portfolio_id,\n            \"universe_id\": universe_id,\n            \"cost_multiplier\": cost_multiplier,\n            \"minimum_cash\": (\n                float(daily_frame[\"cash\"].min()) if len(daily_frame) else INITIAL_EQUITY\n            ),\n        }\n    )\n    return trade_frame, daily_frame, metrics, counters",
+      "start_line": 681
+    },
+    "src/spotbot/research/rd26_exit_architecture.py:695-695": {
+      "end_line": 695,
+      "path": "src/spotbot/research/rd26_exit_architecture.py",
+      "snippet_sha256_lf_no_final_newline": "18CB8831CD10D142001871399450F7989C178BF200044F3B2EF355EC59909E3E",
+      "source_sha256": "1290748EA7E8A0343C1A15CEDFC1220AA423F04C11FDD558311B06AC7DA90359",
+      "source_text": "    lookups = {pair: fast_lookup(frame) for pair, frame in frames.items()}",
+      "start_line": 695
+    },
+    "src/spotbot/research/rd26_exit_architecture.py:698-698": {
+      "end_line": 698,
+      "path": "src/spotbot/research/rd26_exit_architecture.py",
+      "snippet_sha256_lf_no_final_newline": "2D2A02CA7FB449EAD7A466A4D31B23831624EE1A4D6B57B5B6CEE28463A5C44F",
+      "source_sha256": "1290748EA7E8A0343C1A15CEDFC1220AA423F04C11FDD558311B06AC7DA90359",
+      "source_text": "    for raw in events.to_dict(orient=\"records\"):",
+      "start_line": 698
+    },
+    "src/spotbot/research/rd26_exit_architecture.py:718-718": {
+      "end_line": 718,
+      "path": "src/spotbot/research/rd26_exit_architecture.py",
+      "snippet_sha256_lf_no_final_newline": "F31368640FAEB507CC9FCD9508F1B9245F9285E9A4157B0BAED99834E0BA4B10",
+      "source_sha256": "1290748EA7E8A0343C1A15CEDFC1220AA423F04C11FDD558311B06AC7DA90359",
+      "source_text": "        \"signal_events\": len(events),",
+      "start_line": 718
+    },
+    "src/spotbot/research/rd27_lifecycle_replay.py:171-183": {
+      "end_line": 183,
+      "path": "src/spotbot/research/rd27_lifecycle_replay.py",
+      "snippet_sha256_lf_no_final_newline": "02DD3DB7580E1846CA69914ED7452BFEBEEDDD7455CABBA5AC8D43A7BAC5B36A",
+      "source_sha256": "E3944A4655DDDF21C394FE1DB541F2645F529C00BD8390B22D652BD8EF5BBF83",
+      "source_text": "def _bar_at(\n    pair: str,\n    timestamp: pd.Timestamp,\n    frames: dict[str, pd.DataFrame],\n    lookups: dict[str, dict[int, int]],\n) -> pd.Series | None:\n    frame = frames.get(pair)\n    if frame is None:\n        return None\n    index = lookups.get(pair, {}).get(int(pd.Timestamp(timestamp).value))\n    if index is None:\n        return None\n    return frame.iloc[index]",
+      "start_line": 171
+    },
+    "src/spotbot/research/rd27_lifecycle_replay.py:27-29": {
+      "end_line": 29,
+      "path": "src/spotbot/research/rd27_lifecycle_replay.py",
+      "snippet_sha256_lf_no_final_newline": "B830D57A6EECF27ECDA33ABB97086E3FF7C795E05AF2712A03DD14F14C727AEC",
+      "source_sha256": "E3944A4655DDDF21C394FE1DB541F2645F529C00BD8390B22D652BD8EF5BBF83",
+      "source_text": "from spotbot.research.rd26_exit_architecture import (\n    replay_policy as rd26_replay_policy,\n)",
+      "start_line": 27
+    },
+    "src/spotbot/research/rd27_lifecycle_replay.py:388-388": {
+      "end_line": 388,
+      "path": "src/spotbot/research/rd27_lifecycle_replay.py",
+      "snippet_sha256_lf_no_final_newline": "18CB8831CD10D142001871399450F7989C178BF200044F3B2EF355EC59909E3E",
+      "source_sha256": "E3944A4655DDDF21C394FE1DB541F2645F529C00BD8390B22D652BD8EF5BBF83",
+      "source_text": "    lookups = {pair: fast_lookup(frame) for pair, frame in frames.items()}",
+      "start_line": 388
+    },
+    "src/spotbot/research/rd27_lifecycle_replay.py:388-409": {
+      "end_line": 409,
+      "path": "src/spotbot/research/rd27_lifecycle_replay.py",
+      "snippet_sha256_lf_no_final_newline": "F71209241AD7F8EF8206897987DCC5714B2BD017719747DC042D7B1F5EA7366D",
+      "source_sha256": "E3944A4655DDDF21C394FE1DB541F2645F529C00BD8390B22D652BD8EF5BBF83",
+      "source_text": "    lookups = {pair: fast_lookup(frame) for pair, frame in frames.items()}\n    state_lookup = build_state_lookup(state_frame)\n    side_cost = BASE_ROUND_TRIP_COST * cost_multiplier / 2.0\n\n    scheduled: dict[int, list[dict[str, Any]]] = {}\n    for raw in events.to_dict(orient=\"records\"):\n        signal_time = _utc_timestamp(raw[\"timestamp\"])\n        entry_time = signal_time + pd.Timedelta(hours=1)\n        max_exit_time = entry_time + pd.Timedelta(hours=168)\n        if entry_time < replay_start or max_exit_time >= replay_cutoff:\n            continue\n        scheduled.setdefault(int(entry_time.value), []).append(\n            {\n                **raw,\n                \"signal_time\": signal_time,\n                \"entry_time\": entry_time,\n                \"max_exit_time\": max_exit_time,\n            }\n        )\n\n    cash = INITIAL_EQUITY\n    positions: dict[str, ReplayPosition] = {}",
+      "start_line": 388
+    },
+    "src/spotbot/research/rd27_lifecycle_replay.py:393-393": {
+      "end_line": 393,
+      "path": "src/spotbot/research/rd27_lifecycle_replay.py",
+      "snippet_sha256_lf_no_final_newline": "2D2A02CA7FB449EAD7A466A4D31B23831624EE1A4D6B57B5B6CEE28463A5C44F",
+      "source_sha256": "E3944A4655DDDF21C394FE1DB541F2645F529C00BD8390B22D652BD8EF5BBF83",
+      "source_text": "    for raw in events.to_dict(orient=\"records\"):",
+      "start_line": 393
+    },
+    "src/spotbot/research/rd27_lifecycle_replay.py:393-407": {
+      "end_line": 407,
+      "path": "src/spotbot/research/rd27_lifecycle_replay.py",
+      "snippet_sha256_lf_no_final_newline": "2E4C9D5247CA9C0E65895B484DA2B28E5A0464DD3788D5454EC49D390386287A",
+      "source_sha256": "E3944A4655DDDF21C394FE1DB541F2645F529C00BD8390B22D652BD8EF5BBF83",
+      "source_text": "    for raw in events.to_dict(orient=\"records\"):\n        signal_time = _utc_timestamp(raw[\"timestamp\"])\n        entry_time = signal_time + pd.Timedelta(hours=1)\n        max_exit_time = entry_time + pd.Timedelta(hours=168)\n        if entry_time < replay_start or max_exit_time >= replay_cutoff:\n            continue\n        scheduled.setdefault(int(entry_time.value), []).append(\n            {\n                **raw,\n                \"signal_time\": signal_time,\n                \"entry_time\": entry_time,\n                \"max_exit_time\": max_exit_time,\n            }\n        )\n",
+      "start_line": 393
+    },
+    "src/spotbot/research/rd27_lifecycle_replay.py:415-435": {
+      "end_line": 435,
+      "path": "src/spotbot/research/rd27_lifecycle_replay.py",
+      "snippet_sha256_lf_no_final_newline": "9166C673F14831D551B10B81EF97E0A236AD5B1E866D9D29BA4396B2CDBEC16B",
+      "source_sha256": "E3944A4655DDDF21C394FE1DB541F2645F529C00BD8390B22D652BD8EF5BBF83",
+      "source_text": "    counters = {\n        \"signal_events\": len(events),\n        \"missing_entry_bar\": 0,\n        \"missing_exit_bar_precheck\": 0,\n        \"same_pair_open\": 0,\n        \"position_slots_full\": 0,\n        \"gross_limit_rejection\": 0,\n        \"capacity_unavailable\": 0,\n        \"capacity_capped_entries\": 0,\n        \"cash_capped_entries\": 0,\n        \"admitted_entries\": 0,\n        \"risk_off_suppressed_entries\": 0,\n        \"entry_bar_adaptive_exits\": 0,\n        \"max_hold_exits\": 0,\n        \"time_failure_exits\": 0,\n        \"adaptive_stagnation_exits\": 0,\n        \"adaptive_protection_gap_exits\": 0,\n        \"adaptive_protection_touch_exits\": 0,\n    }\n    for state in MARKET_STATES:\n        counters[f\"entry_state_{state}\"] = 0",
+      "start_line": 415
+    },
+    "src/spotbot/research/rd27_lifecycle_replay.py:416-416": {
+      "end_line": 416,
+      "path": "src/spotbot/research/rd27_lifecycle_replay.py",
+      "snippet_sha256_lf_no_final_newline": "F31368640FAEB507CC9FCD9508F1B9245F9285E9A4157B0BAED99834E0BA4B10",
+      "source_sha256": "E3944A4655DDDF21C394FE1DB541F2645F529C00BD8390B22D652BD8EF5BBF83",
+      "source_text": "        \"signal_events\": len(events),",
+      "start_line": 416
+    },
+    "src/spotbot/research/rd27_lifecycle_replay.py:448-478": {
+      "end_line": 478,
+      "path": "src/spotbot/research/rd27_lifecycle_replay.py",
+      "snippet_sha256_lf_no_final_newline": "86D6A19121D07741BBE7E9CA49841B1BECC205981931E75755F831487C40360F",
+      "source_sha256": "E3944A4655DDDF21C394FE1DB541F2645F529C00BD8390B22D652BD8EF5BBF83",
+      "source_text": "            bar = _bar_at(pair, timestamp, frames, lookups)\n            if bar is None:\n                raise RD27ReplayError(f\"open-position bar missing: {pair} {timestamp}\")\n            prior_bar = _bar_at(\n                pair,\n                timestamp - pd.Timedelta(hours=1),\n                frames,\n                lookups,\n            )\n            if prior_bar is None:\n                raise RD27ReplayError(f\"prior asset bar missing: {pair} {timestamp}\")\n\n            current_state = _state_at(\n                state_lookup,\n                timestamp - pd.Timedelta(hours=1),\n            )\n            exit_price: float | None = None\n            exit_reason: str | None = None\n\n            if adaptive_exit_enabled:\n                decision = evaluate_adaptive_exit(\n                    position.lifecycle,\n                    current_open_time=timestamp,\n                    current_open=float(bar[\"open\"]),\n                    current_low=float(bar[\"low\"]),\n                    prior_asset_close=float(prior_bar[\"close\"]),\n                    market_state=current_state,\n                )\n                if decision.should_exit:\n                    exit_price = decision.exit_price\n                    exit_reason = decision.exit_reason",
+      "start_line": 448
+    },
+    "src/spotbot/research/rd27_lifecycle_replay.py:555-566": {
+      "end_line": 566,
+      "path": "src/spotbot/research/rd27_lifecycle_replay.py",
+      "snippet_sha256_lf_no_final_newline": "874322D66402C2347D821060BB0E85E9BE010AC5EDC8A407F39381844E1ED6A5",
+      "source_sha256": "E3944A4655DDDF21C394FE1DB541F2645F529C00BD8390B22D652BD8EF5BBF83",
+      "source_text": "            entry_bar = _bar_at(pair, timestamp, frames, lookups)\n            if entry_bar is None:\n                counters[\"missing_entry_bar\"] += 1\n                continue\n            exit_bar = _bar_at(\n                pair,\n                pd.Timestamp(item[\"max_exit_time\"]),\n                frames,\n                lookups,\n            )\n            if exit_bar is None:\n                counters[\"missing_exit_bar_precheck\"] += 1",
+      "start_line": 555
+    },
+    "src/spotbot/research/rd27_lifecycle_replay.py:568-574": {
+      "end_line": 574,
+      "path": "src/spotbot/research/rd27_lifecycle_replay.py",
+      "snippet_sha256_lf_no_final_newline": "2EA32B1296A6AC3C82453308B883053057E526E3873D0DD8F66D1C7E6A4E308C",
+      "source_sha256": "E3944A4655DDDF21C394FE1DB541F2645F529C00BD8390B22D652BD8EF5BBF83",
+      "source_text": "            signal_bar = _bar_at(pair, signal_time, frames, lookups)\n            if signal_bar is None:\n                raise RD27ReplayError(\"signal bar missing during admission\")\n            capacity_source = float(signal_bar[\"trailing_24h_quote_turnover_proxy\"])\n            if not math.isfinite(capacity_source) or capacity_source <= 0.0:\n                counters[\"capacity_unavailable\"] += 1\n                continue",
+      "start_line": 568
+    },
+    "src/spotbot/research/rd27_lifecycle_replay.py:65-81": {
+      "end_line": 81,
+      "path": "src/spotbot/research/rd27_lifecycle_replay.py",
+      "snippet_sha256_lf_no_final_newline": "3026C412610F8E09AAE5F172CE6EAADC27B7159327426518AA0BE26685A59718",
+      "source_sha256": "E3944A4655DDDF21C394FE1DB541F2645F529C00BD8390B22D652BD8EF5BBF83",
+      "source_text": "\nCONTROL_TIME_FAIL_72_FIXED_CAPITAL: Final = \"CONTROL_TIME_FAIL_72_FIXED_CAPITAL\"\nADAPTIVE_EXIT_FIXED_CAPITAL: Final = \"ADAPTIVE_EXIT_FIXED_CAPITAL\"\nSTATIC_EXIT_STATE_ROUTER: Final = \"STATIC_EXIT_STATE_ROUTER\"\nFULL_ADAPTIVE_LIFECYCLE_BRAIN: Final = \"FULL_ADAPTIVE_LIFECYCLE_BRAIN\"\n\nPOLICIES: Final = (\n    CONTROL_TIME_FAIL_72_FIXED_CAPITAL,\n    ADAPTIVE_EXIT_FIXED_CAPITAL,\n    STATIC_EXIT_STATE_ROUTER,\n    FULL_ADAPTIVE_LIFECYCLE_BRAIN,\n)\n\n\nclass RD27ReplayError(RuntimeError):\n    \"\"\"Raised when frozen RD27 portfolio replay semantics are violated.\"\"\"\n",
+      "start_line": 65
+    }
+  },
+  "sources": [
+    {
+      "path": "scripts/research/run_eaa_same_pair_secondary_shadow_parity.py",
+      "sha256": "8438DE5BA561867528E8D0996CAC83D36C0F60B19603287D996DCA32909E3D27"
+    },
+    {
+      "path": "scripts/research/run_rd26_exit_architecture.py",
+      "sha256": "9C096C6E7C4784D9B91A7EFC55FA85F46755B2D850B78E7A5E90980294DC9ACE"
+    },
+    {
+      "path": "scripts/research/run_rd27_lifecycle_ablation.py",
+      "sha256": "7DFC388F3BF8EF6EFA16E0640CF924158999A9923674C7701B8919872755CBB5"
+    },
+    {
+      "path": "scripts/research/run_rd28_evidence_gated_lifecycle.py",
+      "sha256": "2DB133BDD7E4ED8E7BB763842E9FD4D4CEEF4BD92027E195A92031399FA3FEAF"
+    },
+    {
+      "path": "scripts/research/run_rd29_thesis_confidence_lifecycle.py",
+      "sha256": "AECEDDE051C0F4C25882591FB441A3AB69EE2FA22AF0253789E7B1B3667EC434"
+    },
+    {
+      "path": "scripts/research/run_rd30_family_specialist_replacement_aware.py",
+      "sha256": "C6CDEF9F0C3A086FD1091E4A9168F6949E28B0A3E16AB8E80E3D6F12B76CA561"
+    },
+    {
+      "path": "scripts/research/run_rd31_market_regime_admission_governor.py",
+      "sha256": "3B6D938093B4F00883A3665399CBEA01FD892E2B610FC7F4B2EBA01F8F51457B"
+    },
+    {
+      "path": "scripts/research/run_rd32_mb_signal_quality_admission.py",
+      "sha256": "59A2716EAB407438B1C10A3ED757C53D114D9EC76DD27EBB1C040F7EEC6D0C3C"
+    },
+    {
+      "path": "scripts/research/run_rd33_temporal_mb_architecture.py",
+      "sha256": "98D2D6FA3961B4DB69DFD70059BFA912E58EFA63A081C404BCFD94B42375DC2D"
+    },
+    {
+      "path": "src/spotbot/research/a10_selective_protection_asymmetry.py",
+      "sha256": "BF4794A3F42A547A3D20D80D0ACD7A9132973B68BA3FFB2738B3EF29ECD0AB0F"
+    },
+    {
+      "path": "src/spotbot/research/a4r1_reversible_floor_replay.py",
+      "sha256": "161B7680A2098BBE97E4B9BE3A9BA7F0A918AAD04926CBA6F783CED7B97FE16E"
+    },
+    {
+      "path": "src/spotbot/research/eaa_same_pair_secondary_shadow.py",
+      "sha256": "1096CD43E814A08E8F6BB969CD2722FA883C04D54C9462AFD461489AE3E76390"
+    },
+    {
+      "path": "src/spotbot/research/rd26_exit_architecture.py",
+      "sha256": "1290748EA7E8A0343C1A15CEDFC1220AA423F04C11FDD558311B06AC7DA90359"
+    },
+    {
+      "path": "src/spotbot/research/rd27_lifecycle_replay.py",
+      "sha256": "E3944A4655DDDF21C394FE1DB541F2645F529C00BD8390B22D652BD8EF5BBF83"
+    }
+  ]
+}

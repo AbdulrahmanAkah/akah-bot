@@ -1,0 +1,150 @@
+{
+  "2024_2025_market_data_accessed": false,
+  "dependency_and_isolation": {
+    "declared_arch": "8.0.0",
+    "declared_python": "3.13.14 Windows x64",
+    "dependency_lock_policy": "FAIL_CLOSED_NO_SUBSTITUTE",
+    "independent_full_465_isolated_rerun": "NOT_REPRODUCED_LOCAL_ENVIRONMENT_MISSING_ARCH_8_0_0_AND_NETWORK_UNAVAILABLE",
+    "independent_integration_v11_tests": "68/68 PASS",
+    "independent_local_arch_available": false,
+    "independent_selected_non_arch_regressions": "438/438 PASS",
+    "note": "The missing local arch dependency is treated as an environment limitation, not permission to substitute an estimator. Supplied 465-pass artifacts were hash-verified but are not falsely labeled as independently rerun.",
+    "provided_isolated_export_result": "465 PASSED / 0 FAILED / 0 ERROR / 0 SKIPPED",
+    "provided_isolation_editable_source_fallback": false,
+    "provided_isolation_market_rows_read": false,
+    "provided_isolation_network_access": false
+  },
+  "economic_conclusion": "NONE",
+  "export_verdict": "PASS_SOURCE_EXPORT_INTEGRITY_WITH_LOCAL_DEPENDENCY_REPRODUCTION_LIMITATION",
+  "git_mutation": false,
+  "human_attestation": false,
+  "independent_adversarial_reproductions": [
+    {
+      "error": "PIT_EVENT_PARITY",
+      "id": "ADV_F2_FALSE_TO_TRUE_PIT",
+      "result": "DENIED"
+    },
+    {
+      "error": "EMISSION_PAYLOAD_INTEGRITY_PARITY",
+      "id": "ADV_F1_ADD_STOP_118_TO_100",
+      "result": "DENIED"
+    },
+    {
+      "error": "EMISSION_PAYLOAD_INTEGRITY_PARITY",
+      "id": "ADV_F1_ADD_STOP_118_TO_119",
+      "result": "DENIED"
+    },
+    {
+      "error": "PIT_PAIR_CHECKPOINT_PERIOD_OR_SOURCE_PARITY",
+      "id": "ADV_F3_EVENT_PAIR_REPLACEMENT",
+      "result": "DENIED"
+    },
+    {
+      "error": "EMISSION_PAYLOAD_INTEGRITY_PARITY",
+      "id": "ADV_F3_EVENT_SYSTEM_ID_REPLACEMENT",
+      "result": "DENIED"
+    },
+    {
+      "error": "UNBOUND_MUTATED_OR_INVALIDATED_SOURCE",
+      "id": "ADV_POST_PREVIEW_MEMBERSHIP_SOURCE_DEATH",
+      "result": "DENIED_AT_ACTUAL_ADMISSION"
+    }
+  ],
+  "limitations": [
+    "No market data, PnL, outcomes, replay, threshold search or model fit was used.",
+    "The full 465-test isolated suite could not be independently rerun in this sandbox because arch==8.0.0 is not installed and network package installation is unavailable. No substitute estimator was used.",
+    "Provided isolated test XML/stdout and dependency locks were hash-verified, but remain supplied evidence rather than an independently reproduced arch-dependent run.",
+    "This review does not certify historical semantic producers, unused reserve fidelity, historical exchange quantity rules, economics or production readiness."
+  ],
+  "locked": true,
+  "locked_at": "2026-10-04T10:13:35.042093+00:00",
+  "manifest_verification": {
+    "EXPORT_INPUT_MANIFEST.json_entries": 86,
+    "EXPORT_INPUT_MANIFEST.json_mismatches": 0,
+    "MANIFEST.json_entries": 107,
+    "MANIFEST.json_mismatches": 0,
+    "verdict": "PASS"
+  },
+  "market_replay_executed": false,
+  "market_rows_read": false,
+  "new_remaining_findings": [
+    {
+      "classification": "IMPLEMENTATION_BUG_CAUSAL_LINEAGE",
+      "id": "F4_H3_PARENT_EMISSION_SEAL_LINEAGE",
+      "locations": [
+        "src/spotbot/research/multi_school_fidelity/integration_v11/producers.py:141-146",
+        "src/spotbot/research/multi_school_fidelity/integration_v10/producers.py:402-421"
+      ],
+      "problem": "V11 verifies the Elliott count issue and Harmonic location issue seals when composing H3, but the resulting H3 issue carries their underlying evidence_ids and not the two parent emission_ids. Therefore the exact parent issue seals are not part of H3 causal lineage through fill.",
+      "repair": "Include count_intent.emission_id and location_intent.emission_id as explicit H3 historical/live parent dependencies in the composed issue seal/evidence set, or introduce typed parent-issue edges with explicit historical-prerequisite semantics. Add death/revocation tests for each parent seal after H3 bind and before fill.",
+      "reproduction": "After binding a valid H3, terminating either the count parent emission seal or the Harmonic-location parent emission seal still allowed H3 to fill. In both independent reproductions: selected=True, denied={}, fills=1.",
+      "scope": "H3_ISOLATED_COMPOSITION_ONLY_CURRENTLY_UNFUNDED",
+      "severity": "HIGH",
+      "why_material": "The review mission requires source->producer->seal->bind->kernel tracing and parent evidence through actual fill. H3's new seal proves the composed payload but does not preserve which exact sealed parent issues authorized the composition."
+    },
+    {
+      "classification": "IMPLEMENTATION_BUG_CAUSAL_LINEAGE",
+      "id": "F5_HARMONIC_TYPEII_COMPLETION_RECEIPT_LINEAGE",
+      "locations": [
+        "src/spotbot/research/multi_school_fidelity/integration_v10/pipeline.py:425-454",
+        "src/spotbot/research/multi_school_fidelity/integration_v10/producers.py:119-163",
+        "src/spotbot/research/multi_school_fidelity/harmonic_contract_v8.py:253-262,298-304"
+      ],
+      "problem": "The actual Type-I kernel closure receipt is required to mutate HarmonicContract into TYPE_I_COMPLETE, but that receipt ID is not retained in the later Type-II thesis/evidence graph. Type-II can therefore no longer prove the exact execution acknowledgement that made it legally reachable.",
+      "repair": "Persist the exact Type-I completion receipt in producer state and include it in every Type-II emission as a source dependency (typed historical prerequisite or live requirement according to the evidence model). Seal it and test its lineage at bind/admission. Do not infer completion merely from mutable contract state.",
+      "reproduction": "A real synthetic Type-I campaign was filled and closed, the kernel closure was acknowledged, then a valid retest/confirmation produced Type-II. The Type-I completion receipt was absent from Type-II thesis.parents/evidence_ids. After terminating that receipt before Type-II open, V11 still selected and filled the Type-II campaign.",
+      "scope": "HARMONIC_TYPE_II_LIFECYCLE",
+      "severity": "HIGH",
+      "why_material": "This is a causal-lineage gap, not a profitability issue: Type-II is explicitly conditioned on execution-acknowledged Type-I completion."
+    }
+  ],
+  "original_v10_findings": {
+    "F1_PREBIND_ADD_STOP_SCALAR_UNBOUND": {
+      "evidence": [
+        "integration_v11/contracts.py L116-L150 defines typed LpsAddProof over actual completed LPS bar, original stage-stop proof and actual fill receipt.",
+        "integration_v11/producers.py L81-L139 recomputes stop_floor from proof and source graph before sealing.",
+        "integration_v11/contracts.py L234-L263 revalidates add provenance and exact parent set.",
+        "integration_v11/execution.py L32-L40 re-evaluates the LPS-derived stop at actual kernel admission.",
+        "Independent adversarial replay of the old 118->100 and 118->119 scalar substitutions was denied with EMISSION_PAYLOAD_INTEGRITY_PARITY."
+      ],
+      "verdict": "PASS_CLOSED_TECHNICALLY"
+    },
+    "F2_PREBIND_PIT_BOOLEAN_CAN_BE_FLIPPED": {
+      "evidence": [
+        "integration_v11/contracts.py L87-L113 requires typed PitMembership bound as SUPPLIED_SEMANTIC_PRODUCER evidence.",
+        "integration_v11/producers.py L26-L79 derives broad_eligible from the typed claim rather than trusting a caller bool.",
+        "integration_v11/contracts.py L208-L233 and execution.py L22-L43 recheck the membership source through bind/fill.",
+        "Independent false->true broad_eligible replacement was denied with PIT_EVENT_PARITY."
+      ],
+      "limitation": "This proves source binding mechanics only; it does not certify the truth of the historical membership producer.",
+      "verdict": "PASS_CLOSED_TECHNICALLY"
+    },
+    "F3_SHALLOW_FROZEN_PRODUCED_MUTABLE_DICTIONARIES": {
+      "evidence": [
+        "integration_v11/contracts.py L17-L65 recursively freezes mappings/lists.",
+        "Produced.event and add_instruction are FrozenMap.",
+        "EmissionSeal fingerprint covers event, thesis, staging, instruction, stop proof, membership/add proof and evidence IDs.",
+        "Pipeline and kernel both call verify_issue; semantic replacements of event/thesis/add payloads were denied independently."
+      ],
+      "qualification": "The original mutable-dictionary attack is closed. Two separate lineage findings remain below and prevent a broader FULL_SOURCE_INTEGRITY acceptance.",
+      "verdict": "PASS_ORIGINAL_DEFECT_CLOSED_TECHNICALLY"
+    }
+  },
+  "packet": "AKAH_REV783_V11_INDEPENDENT_REVIEW.zip",
+  "packet_sha256": "1E0A1178A6DE98778E7E3E3546910EAE5CB2D371AAF87D9CC17B94F2063E9850",
+  "pnl_read": false,
+  "production_changed": false,
+  "remaining_non_code_blockers_acknowledged": [
+    "EXACT_VERSION_HISTORICAL_SEMANTIC_PRODUCERS_NOT_RECERTIFIED",
+    "FRESH_UNUSED_MARKET_RESERVE_NOT_MATERIALIZED_OR_REVIEWED",
+    "HISTORICAL_EXCHANGE_RULE_SOURCE_COVERAGE_NOT_CERTIFIED",
+    "NO_GRAMMAR_FUNDED",
+    "GATE3_NOT_READY"
+  ],
+  "reserve_certification": false,
+  "review_id": "AKAH_REV783_V11_INDEPENDENT_SOURCE_INTEGRITY_REVIEW_V1",
+  "reviewer_id": "CHATGPT_GPT_5_6_SOL",
+  "reviewer_type": "AI_INDEPENDENT_CODE_SPEC_REVIEWER",
+  "technical_review_reason": "The three specific V10 attacks F1/F2/F3 are closed in V11, and the exported source/manifest is internally consistent. However two additional causal-lineage gaps were independently reproduced in H3 parent-issue seals and Harmonic Type-II execution-completion authority. Therefore I do not accept a broad claim that source integrity is fully closed across the reviewed runtime.",
+  "technical_review_verdict": "REJECT_FULL_SOURCE_INTEGRITY_CLOSURE_PENDING_F4_F5"
+}

@@ -1,0 +1,33 @@
+{
+  "accepted": {
+    "baseline_parity": true,
+    "development_population_repair": true,
+    "exact_2019_2023_target": true,
+    "model_promotion": false,
+    "shadow_policy_promotion": false
+  },
+  "hard_freezes": [
+    "CURRENT_DYNAMIC_TOP6",
+    "BINARY_VOL_CONTEXT",
+    "168H",
+    "NO_SIZING",
+    "NO_REPLACEMENT",
+    "NO_PRODUCTION",
+    "NO_2024",
+    "NO_PUSH"
+  ],
+  "near_perfect_forward_rank_anomaly": true,
+  "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_CONTINUATION_VALUE_FEATURE_PROVENANCE_LEAKAGE_AUDIT_V1",
+  "reason": "Near-perfect forward Spearman requires independent feature provenance verification before model or shadow-policy promotion. Population and exact target are accepted independently.",
+  "schema_version": "akah-rev561-continuation-leakage-repair-maximum-evidence-mega-v1-human-review",
+  "source_model_features": [
+    "continuation_advantage",
+    "progress_margin_delta_from_prev",
+    "atr22_current",
+    "hold_optional_exits_suppressed"
+  ],
+  "source_model_status": "FIT_FIXED_RIDGE",
+  "source_target_rows": 12290,
+  "status": "PASS_REVIEW_MODEL_PROMOTION_SUSPENDED_PENDING_PROVENANCE_AUDIT",
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_CONTINUATION_VALUE_DEVELOPMENT_EXPANSION_MEGA_HUMAN_REVIEW_V1"
+}

@@ -1,0 +1,60 @@
+{
+  "max_abs_forward_spearman": 0.10227728357838567,
+  "model": {
+    "block_bootstrap_reps_completed": 48,
+    "features": [
+      "hours_since_entry",
+      "hours_since_first_memory_or_null",
+      "hours_since_first_memory_or_null__missing",
+      "progress_margin_delta_from_prev",
+      "structural_break_margin_delta_from_prev",
+      "a_margin_delta_from_prev",
+      "close_delta_from_prev_decision",
+      "R_delta_from_prev_decision",
+      "atr22_current",
+      "a_condition_true_run_length",
+      "__bin_memory_now",
+      "__bin_memory_seen",
+      "__bin_C_signal",
+      "__bin_A_signal",
+      "__bin_B_signal",
+      "__bin_a_condition_now",
+      "__bin_a_condition_recovered_now",
+      "__cat_base_state__CONFIRMED",
+      "__cat_base_state__EARLY_PROGRESS",
+      "__cat_base_state__UNCONFIRMED",
+      "__cat_native_market_state_context__RISK_OFF",
+      "__cat_native_market_state_context__RISK_ON",
+      "__cat_native_market_state_context__TRANSITION",
+      "__ix_progress_x_atr",
+      "__ix_structural_x_atr",
+      "__ix_memory_x_progress",
+      "__ix_memory_x_age",
+      "__ix_market_RISK_OFF_x_progress",
+      "__ix_market_RISK_ON_x_progress",
+      "__ix_market_TRANSITION_x_progress"
+    ],
+    "model_tuned": false,
+    "ridge_alpha": 1.0,
+    "sign_stable_forward_pass": true,
+    "status": "FIT_FIXED_RIDGE",
+    "train_rows": 7660,
+    "train_target_mean": 0.005373899995526805,
+    "year_results": {
+      "2022": {
+        "predicted_high_minus_low_actual_mean": 0.009190797855690264,
+        "rows": 2065,
+        "spearman": 0.10227728357838567,
+        "target_mean": -0.003465823348379279
+      },
+      "2023": {
+        "predicted_high_minus_low_actual_mean": 0.009148992030471977,
+        "rows": 2565,
+        "spearman": 0.09579099632732595,
+        "target_mean": 0.00952807941207391
+      }
+    }
+  },
+  "passed": true,
+  "status": "PASS"
+}

@@ -1,0 +1,11 @@
+{
+  "feature_loader_signature": "(*, raw_root: 'Path', pairs: 'list[str]') -> 'dict[str, pd.DataFrame]'",
+  "layout_audit_sha256": "C76EAEAD78E9C98428AD81FDA63518B13E2877CFCA68D097D614945427F0CA83",
+  "policy_value": "FULL_ADAPTIVE_LIFECYCLE_BRAIN",
+  "replay_signature": "(*, policy_id: 'str', portfolio_id: 'str', universe_id: 'str', cost_multiplier: 'float', events: 'pd.DataFrame', frames: 'dict[str, pd.DataFrame]', state_frame: 'pd.DataFrame', replay_start: 'pd.Timestamp' = Timestamp('2022-01-01 00:00:00+0000', tz='UTC'), replay_cutoff: 'pd.Timestamp' = Timestamp('2024-01-01 00:00:00+0000', tz='UTC'), async_memory_shadow_enabled: 'bool' = False, async_memory_observations: 'Sequence[AsyncMemoryObservation]' = (), async_memory_diagnostics: 'dict[str, Any] | None' = None, observable_adapter_enabled: 'bool' = False, observable_primitive_rows: 'PrimitiveRows' = (), observable_symbol_bindings: 'Mapping[str, str] | None' = None, observable_policy: 'ObservablePolicy' = <function no_observation_policy at 0x00000244F0B91300>, observable_adapter_diagnostics: 'dict[str, Any] | None' = None, observable_memory_predicate_enabled: 'bool' = False, observable_memory_predicate_diagnostics: 'dict[str, Any] | None' = None, observable_later_trigger_predicate_enabled: 'bool' = False, observable_later_trigger_predicate_diagnostics: 'dict[str, Any] | None' = None, async_exit_candidate_shadow_enabled: 'bool' = False, async_exit_candidate_diagnostics: 'dict[str, Any] | None' = None, later_trigger_v2_shadow_hook: 'Any | None' = None) -> 'tuple[pd.DataFrame, pd.DataFrame, dict[str, Any], dict[str, int]]'",
+  "runner_path": "scripts/research/run_rd27_lifecycle_ablation.py",
+  "runner_sha256": "7DFC388F3BF8EF6EFA16E0640CF924158999A9923674C7701B8919872755CBB5",
+  "state_guard_audit_sha256": "451CE666B26BDC0F222E3FEE119AB7E5856A228B930D7FD516079E0C196EED1C",
+  "state_loader_signature": "(raw_root: 'Path') -> 'pd.DataFrame'",
+  "status": "PASS"
+}

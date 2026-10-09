@@ -1,0 +1,948 @@
+{
+  "authority_ready_count": 0,
+  "callsite_lineage_count": 5,
+  "callsites": [
+    {
+      "all_required_roles_bound_in_call": true,
+      "all_role_expressions_statically_resolved": false,
+      "authority_ready_without_additional_binding": false,
+      "dynamic_external_roles": [],
+      "enclosing_function": "main",
+      "executable_surface": true,
+      "lineno": 240,
+      "network_surface": false,
+      "path": "scripts/research/run_eaa_same_pair_secondary_shadow_parity.py",
+      "protected_year_surface": true,
+      "roles": {
+        "cost_multiplier": {
+          "binding_surface": "KEYWORD",
+          "dynamic_external_root_detected": false,
+          "expression": "cost_multiplier",
+          "flags": {
+            "call_names": [],
+            "dynamic_markers": [],
+            "protected_year_path_literals": [],
+            "unresolved_markers": [
+              "UNRESOLVED_NAME_SOURCE"
+            ]
+          },
+          "lineage": {
+            "dynamic_markers": [],
+            "expression": "cost_multiplier",
+            "file_path_literals": [],
+            "name": "cost_multiplier",
+            "protected_year_path_literals": [],
+            "status": "UNRESOLVED_NAME_SOURCE"
+          },
+          "protected_year_dependency_detected": false,
+          "static_expression_resolved": false
+        },
+        "events": {
+          "binding_surface": "KEYWORD",
+          "dynamic_external_root_detected": false,
+          "expression": "subset",
+          "flags": {
+            "call_names": [
+              "copy"
+            ],
+            "dynamic_markers": [],
+            "protected_year_path_literals": [],
+            "unresolved_markers": []
+          },
+          "lineage": {
+            "assignment_expression": "signals[signals['period_id'] == period_id].copy()",
+            "assignment_lineage": {
+              "call_expression": "signals[signals['period_id'] == period_id].copy()",
+              "call_name": "copy",
+              "dynamic_markers": [],
+              "expression": "signals[signals['period_id'] == period_id].copy()",
+              "file_path_literals": [],
+              "protected_year_path_literals": [],
+              "status": "BOUND_CALL_EXPRESSION"
+            },
+            "dynamic_markers": [],
+            "expression": "subset",
+            "file_path_literals": [],
+            "name": "subset",
+            "protected_year_path_literals": [],
+            "status": "BOUND_NAME_ASSIGNMENT"
+          },
+          "protected_year_dependency_detected": false,
+          "static_expression_resolved": true
+        },
+        "frames": {
+          "binding_surface": "KEYWORD",
+          "dynamic_external_root_detected": false,
+          "expression": "frames",
+          "flags": {
+            "call_names": [],
+            "dynamic_markers": [],
+            "protected_year_path_literals": [],
+            "unresolved_markers": []
+          },
+          "lineage": {
+            "assignment_expression": "{}",
+            "assignment_lineage": {
+              "dynamic_markers": [],
+              "expression": "{}",
+              "file_path_literals": [],
+              "node_type": "Dict",
+              "protected_year_path_literals": [],
+              "status": "BOUND_COMPLEX_EXPRESSION"
+            },
+            "dynamic_markers": [],
+            "expression": "frames",
+            "file_path_literals": [],
+            "name": "frames",
+            "protected_year_path_literals": [],
+            "status": "BOUND_NAME_ASSIGNMENT"
+          },
+          "protected_year_dependency_detected": false,
+          "static_expression_resolved": true
+        },
+        "policy_id": {
+          "binding_surface": "KEYWORD",
+          "dynamic_external_root_detected": false,
+          "expression": "rd27.STATIC_EXIT_STATE_ROUTER",
+          "flags": {
+            "call_names": [],
+            "dynamic_markers": [],
+            "protected_year_path_literals": [],
+            "unresolved_markers": []
+          },
+          "lineage": {
+            "dynamic_markers": [],
+            "expression": "rd27.STATIC_EXIT_STATE_ROUTER",
+            "file_path_literals": [],
+            "protected_year_path_literals": [],
+            "status": "BOUND_ATTRIBUTE_EXPRESSION"
+          },
+          "protected_year_dependency_detected": false,
+          "static_expression_resolved": true
+        },
+        "portfolio_id": {
+          "binding_surface": "KEYWORD",
+          "dynamic_external_root_detected": false,
+          "expression": "'EAA_SHADOW_PARITY_NATIVE'",
+          "flags": {
+            "call_names": [],
+            "dynamic_markers": [],
+            "protected_year_path_literals": [],
+            "unresolved_markers": []
+          },
+          "lineage": {
+            "dynamic_markers": [],
+            "expression": "'EAA_SHADOW_PARITY_NATIVE'",
+            "file_path_literals": [],
+            "literal_type": "str",
+            "literal_value": "EAA_SHADOW_PARITY_NATIVE",
+            "protected_year_path_literals": [],
+            "status": "BOUND_LITERAL"
+          },
+          "protected_year_dependency_detected": false,
+          "static_expression_resolved": true
+        },
+        "state_frame": {
+          "binding_surface": "KEYWORD",
+          "dynamic_external_root_detected": false,
+          "expression": "state_frame",
+          "flags": {
+            "call_names": [
+              "build_market_state_frame"
+            ],
+            "dynamic_markers": [],
+            "protected_year_path_literals": [],
+            "unresolved_markers": []
+          },
+          "lineage": {
+            "assignment_expression": "state.build_market_state_frame(btc_raw, cutoff=CUT)",
+            "assignment_lineage": {
+              "call_expression": "state.build_market_state_frame(btc_raw, cutoff=CUT)",
+              "call_name": "build_market_state_frame",
+              "dynamic_markers": [],
+              "expression": "state.build_market_state_frame(btc_raw, cutoff=CUT)",
+              "file_path_literals": [],
+              "protected_year_path_literals": [],
+              "status": "BOUND_CALL_EXPRESSION"
+            },
+            "dynamic_markers": [],
+            "expression": "state_frame",
+            "file_path_literals": [],
+            "name": "state_frame",
+            "protected_year_path_literals": [],
+            "status": "BOUND_NAME_ASSIGNMENT"
+          },
+          "protected_year_dependency_detected": false,
+          "static_expression_resolved": true
+        },
+        "universe_id": {
+          "binding_surface": "KEYWORD",
+          "dynamic_external_root_detected": false,
+          "expression": "'PRE2022_UNION'",
+          "flags": {
+            "call_names": [],
+            "dynamic_markers": [],
+            "protected_year_path_literals": [],
+            "unresolved_markers": []
+          },
+          "lineage": {
+            "dynamic_markers": [],
+            "expression": "'PRE2022_UNION'",
+            "file_path_literals": [],
+            "literal_type": "str",
+            "literal_value": "PRE2022_UNION",
+            "protected_year_path_literals": [],
+            "status": "BOUND_LITERAL"
+          },
+          "protected_year_dependency_detected": false,
+          "static_expression_resolved": true
+        }
+      },
+      "sha256": "8438DE5BA561867528E8D0996CAC83D36C0F60B19603287D996DCA32909E3D27",
+      "structurally_complete_for_prospective_use": false,
+      "unresolved_roles": [
+        "cost_multiplier"
+      ]
+    },
+    {
+      "all_required_roles_bound_in_call": true,
+      "all_role_expressions_statically_resolved": false,
+      "authority_ready_without_additional_binding": false,
+      "dynamic_external_roles": [],
+      "enclosing_function": "run_all_portfolios",
+      "executable_surface": true,
+      "lineno": 420,
+      "network_surface": false,
+      "path": "scripts/research/run_rd27_lifecycle_ablation.py",
+      "protected_year_surface": true,
+      "roles": {
+        "cost_multiplier": {
+          "binding_surface": "KEYWORD",
+          "dynamic_external_root_detected": false,
+          "expression": "cost_multiplier",
+          "flags": {
+            "call_names": [],
+            "dynamic_markers": [],
+            "protected_year_path_literals": [],
+            "unresolved_markers": [
+              "UNRESOLVED_NAME_SOURCE"
+            ]
+          },
+          "lineage": {
+            "dynamic_markers": [],
+            "expression": "cost_multiplier",
+            "file_path_literals": [],
+            "name": "cost_multiplier",
+            "protected_year_path_literals": [],
+            "status": "UNRESOLVED_NAME_SOURCE"
+          },
+          "protected_year_dependency_detected": false,
+          "static_expression_resolved": false
+        },
+        "events": {
+          "binding_surface": "KEYWORD",
+          "dynamic_external_root_detected": false,
+          "expression": "portfolio_events",
+          "flags": {
+            "call_names": [],
+            "dynamic_markers": [],
+            "protected_year_path_literals": [],
+            "unresolved_markers": [
+              "UNRESOLVED_NAME_SOURCE"
+            ]
+          },
+          "lineage": {
+            "dynamic_markers": [],
+            "expression": "portfolio_events",
+            "file_path_literals": [],
+            "name": "portfolio_events",
+            "protected_year_path_literals": [],
+            "status": "UNRESOLVED_NAME_SOURCE"
+          },
+          "protected_year_dependency_detected": false,
+          "static_expression_resolved": false
+        },
+        "frames": {
+          "binding_surface": "KEYWORD",
+          "dynamic_external_root_detected": false,
+          "expression": "frames",
+          "flags": {
+            "call_names": [],
+            "dynamic_markers": [],
+            "protected_year_path_literals": [],
+            "unresolved_markers": []
+          },
+          "lineage": {
+            "assignment_expression": "{}",
+            "assignment_lineage": {
+              "dynamic_markers": [],
+              "expression": "{}",
+              "file_path_literals": [],
+              "node_type": "Dict",
+              "protected_year_path_literals": [],
+              "status": "BOUND_COMPLEX_EXPRESSION"
+            },
+            "dynamic_markers": [],
+            "expression": "frames",
+            "file_path_literals": [],
+            "name": "frames",
+            "protected_year_path_literals": [],
+            "status": "BOUND_NAME_ASSIGNMENT"
+          },
+          "protected_year_dependency_detected": false,
+          "static_expression_resolved": true
+        },
+        "policy_id": {
+          "binding_surface": "KEYWORD",
+          "dynamic_external_root_detected": false,
+          "expression": "policy_id",
+          "flags": {
+            "call_names": [],
+            "dynamic_markers": [],
+            "protected_year_path_literals": [],
+            "unresolved_markers": [
+              "UNRESOLVED_NAME_SOURCE"
+            ]
+          },
+          "lineage": {
+            "dynamic_markers": [],
+            "expression": "policy_id",
+            "file_path_literals": [],
+            "name": "policy_id",
+            "protected_year_path_literals": [],
+            "status": "UNRESOLVED_NAME_SOURCE"
+          },
+          "protected_year_dependency_detected": false,
+          "static_expression_resolved": false
+        },
+        "portfolio_id": {
+          "binding_surface": "KEYWORD",
+          "dynamic_external_root_detected": false,
+          "expression": "portfolio_id",
+          "flags": {
+            "call_names": [],
+            "dynamic_markers": [],
+            "protected_year_path_literals": [],
+            "unresolved_markers": [
+              "UNRESOLVED_NAME_SOURCE"
+            ]
+          },
+          "lineage": {
+            "dynamic_markers": [],
+            "expression": "portfolio_id",
+            "file_path_literals": [],
+            "name": "portfolio_id",
+            "protected_year_path_literals": [],
+            "status": "UNRESOLVED_NAME_SOURCE"
+          },
+          "protected_year_dependency_detected": false,
+          "static_expression_resolved": false
+        },
+        "state_frame": {
+          "binding_surface": "KEYWORD",
+          "dynamic_external_root_detected": false,
+          "expression": "state_frame",
+          "flags": {
+            "call_names": [],
+            "dynamic_markers": [],
+            "protected_year_path_literals": [],
+            "unresolved_markers": [
+              "UNRESOLVED_NAME_SOURCE"
+            ]
+          },
+          "lineage": {
+            "dynamic_markers": [],
+            "expression": "state_frame",
+            "file_path_literals": [],
+            "name": "state_frame",
+            "protected_year_path_literals": [],
+            "status": "UNRESOLVED_NAME_SOURCE"
+          },
+          "protected_year_dependency_detected": false,
+          "static_expression_resolved": false
+        },
+        "universe_id": {
+          "binding_surface": "KEYWORD",
+          "dynamic_external_root_detected": false,
+          "expression": "universe",
+          "flags": {
+            "call_names": [],
+            "dynamic_markers": [],
+            "protected_year_path_literals": [],
+            "unresolved_markers": [
+              "UNRESOLVED_NAME_SOURCE"
+            ]
+          },
+          "lineage": {
+            "dynamic_markers": [],
+            "expression": "universe",
+            "file_path_literals": [],
+            "name": "universe",
+            "protected_year_path_literals": [],
+            "status": "UNRESOLVED_NAME_SOURCE"
+          },
+          "protected_year_dependency_detected": false,
+          "static_expression_resolved": false
+        }
+      },
+      "sha256": "7DFC388F3BF8EF6EFA16E0640CF924158999A9923674C7701B8919872755CBB5",
+      "structurally_complete_for_prospective_use": false,
+      "unresolved_roles": [
+        "policy_id",
+        "portfolio_id",
+        "universe_id",
+        "cost_multiplier",
+        "events",
+        "state_frame"
+      ]
+    },
+    {
+      "all_required_roles_bound_in_call": true,
+      "all_role_expressions_statically_resolved": false,
+      "authority_ready_without_additional_binding": false,
+      "dynamic_external_roles": [],
+      "enclosing_function": "_replay_selective",
+      "executable_surface": false,
+      "lineno": 248,
+      "network_surface": false,
+      "path": "src/spotbot/research/a10_selective_protection_asymmetry.py",
+      "protected_year_surface": false,
+      "roles": {
+        "cost_multiplier": {
+          "binding_surface": "KEYWORD",
+          "dynamic_external_root_detected": false,
+          "expression": "cost_multiplier",
+          "flags": {
+            "call_names": [],
+            "dynamic_markers": [],
+            "protected_year_path_literals": [],
+            "unresolved_markers": [
+              "UNRESOLVED_NAME_SOURCE"
+            ]
+          },
+          "lineage": {
+            "dynamic_markers": [],
+            "expression": "cost_multiplier",
+            "file_path_literals": [],
+            "name": "cost_multiplier",
+            "protected_year_path_literals": [],
+            "status": "UNRESOLVED_NAME_SOURCE"
+          },
+          "protected_year_dependency_detected": false,
+          "static_expression_resolved": false
+        },
+        "events": {
+          "binding_surface": "KEYWORD",
+          "dynamic_external_root_detected": false,
+          "expression": "events",
+          "flags": {
+            "call_names": [],
+            "dynamic_markers": [],
+            "protected_year_path_literals": [],
+            "unresolved_markers": [
+              "UNRESOLVED_NAME_SOURCE"
+            ]
+          },
+          "lineage": {
+            "dynamic_markers": [],
+            "expression": "events",
+            "file_path_literals": [],
+            "name": "events",
+            "protected_year_path_literals": [],
+            "status": "UNRESOLVED_NAME_SOURCE"
+          },
+          "protected_year_dependency_detected": false,
+          "static_expression_resolved": false
+        },
+        "frames": {
+          "binding_surface": "KEYWORD",
+          "dynamic_external_root_detected": false,
+          "expression": "frames",
+          "flags": {
+            "call_names": [],
+            "dynamic_markers": [],
+            "protected_year_path_literals": [],
+            "unresolved_markers": [
+              "UNRESOLVED_NAME_SOURCE"
+            ]
+          },
+          "lineage": {
+            "dynamic_markers": [],
+            "expression": "frames",
+            "file_path_literals": [],
+            "name": "frames",
+            "protected_year_path_literals": [],
+            "status": "UNRESOLVED_NAME_SOURCE"
+          },
+          "protected_year_dependency_detected": false,
+          "static_expression_resolved": false
+        },
+        "policy_id": {
+          "binding_surface": "KEYWORD",
+          "dynamic_external_root_detected": false,
+          "expression": "rd27.FULL_ADAPTIVE_LIFECYCLE_BRAIN",
+          "flags": {
+            "call_names": [],
+            "dynamic_markers": [],
+            "protected_year_path_literals": [],
+            "unresolved_markers": []
+          },
+          "lineage": {
+            "dynamic_markers": [],
+            "expression": "rd27.FULL_ADAPTIVE_LIFECYCLE_BRAIN",
+            "file_path_literals": [],
+            "protected_year_path_literals": [],
+            "status": "BOUND_ATTRIBUTE_EXPRESSION"
+          },
+          "protected_year_dependency_detected": false,
+          "static_expression_resolved": true
+        },
+        "portfolio_id": {
+          "binding_surface": "KEYWORD",
+          "dynamic_external_root_detected": false,
+          "expression": "portfolio_id",
+          "flags": {
+            "call_names": [],
+            "dynamic_markers": [],
+            "protected_year_path_literals": [],
+            "unresolved_markers": [
+              "UNRESOLVED_NAME_SOURCE"
+            ]
+          },
+          "lineage": {
+            "dynamic_markers": [],
+            "expression": "portfolio_id",
+            "file_path_literals": [],
+            "name": "portfolio_id",
+            "protected_year_path_literals": [],
+            "status": "UNRESOLVED_NAME_SOURCE"
+          },
+          "protected_year_dependency_detected": false,
+          "static_expression_resolved": false
+        },
+        "state_frame": {
+          "binding_surface": "KEYWORD",
+          "dynamic_external_root_detected": false,
+          "expression": "state_frame",
+          "flags": {
+            "call_names": [],
+            "dynamic_markers": [],
+            "protected_year_path_literals": [],
+            "unresolved_markers": [
+              "UNRESOLVED_NAME_SOURCE"
+            ]
+          },
+          "lineage": {
+            "dynamic_markers": [],
+            "expression": "state_frame",
+            "file_path_literals": [],
+            "name": "state_frame",
+            "protected_year_path_literals": [],
+            "status": "UNRESOLVED_NAME_SOURCE"
+          },
+          "protected_year_dependency_detected": false,
+          "static_expression_resolved": false
+        },
+        "universe_id": {
+          "binding_surface": "KEYWORD",
+          "dynamic_external_root_detected": false,
+          "expression": "universe_id",
+          "flags": {
+            "call_names": [],
+            "dynamic_markers": [],
+            "protected_year_path_literals": [],
+            "unresolved_markers": [
+              "UNRESOLVED_NAME_SOURCE"
+            ]
+          },
+          "lineage": {
+            "dynamic_markers": [],
+            "expression": "universe_id",
+            "file_path_literals": [],
+            "name": "universe_id",
+            "protected_year_path_literals": [],
+            "status": "UNRESOLVED_NAME_SOURCE"
+          },
+          "protected_year_dependency_detected": false,
+          "static_expression_resolved": false
+        }
+      },
+      "sha256": "BF4794A3F42A547A3D20D80D0ACD7A9132973B68BA3FFB2738B3EF29ECD0AB0F",
+      "structurally_complete_for_prospective_use": false,
+      "unresolved_roles": [
+        "portfolio_id",
+        "universe_id",
+        "cost_multiplier",
+        "events",
+        "frames",
+        "state_frame"
+      ]
+    },
+    {
+      "all_required_roles_bound_in_call": true,
+      "all_role_expressions_statically_resolved": false,
+      "authority_ready_without_additional_binding": false,
+      "dynamic_external_roles": [],
+      "enclosing_function": "replay_reversible_floor_candidate",
+      "executable_surface": false,
+      "lineno": 132,
+      "network_surface": false,
+      "path": "src/spotbot/research/a4r1_reversible_floor_replay.py",
+      "protected_year_surface": false,
+      "roles": {
+        "cost_multiplier": {
+          "binding_surface": "KEYWORD",
+          "dynamic_external_root_detected": false,
+          "expression": "cost_multiplier",
+          "flags": {
+            "call_names": [],
+            "dynamic_markers": [],
+            "protected_year_path_literals": [],
+            "unresolved_markers": [
+              "UNRESOLVED_NAME_SOURCE"
+            ]
+          },
+          "lineage": {
+            "dynamic_markers": [],
+            "expression": "cost_multiplier",
+            "file_path_literals": [],
+            "name": "cost_multiplier",
+            "protected_year_path_literals": [],
+            "status": "UNRESOLVED_NAME_SOURCE"
+          },
+          "protected_year_dependency_detected": false,
+          "static_expression_resolved": false
+        },
+        "events": {
+          "binding_surface": "KEYWORD",
+          "dynamic_external_root_detected": false,
+          "expression": "events",
+          "flags": {
+            "call_names": [],
+            "dynamic_markers": [],
+            "protected_year_path_literals": [],
+            "unresolved_markers": [
+              "UNRESOLVED_NAME_SOURCE"
+            ]
+          },
+          "lineage": {
+            "dynamic_markers": [],
+            "expression": "events",
+            "file_path_literals": [],
+            "name": "events",
+            "protected_year_path_literals": [],
+            "status": "UNRESOLVED_NAME_SOURCE"
+          },
+          "protected_year_dependency_detected": false,
+          "static_expression_resolved": false
+        },
+        "frames": {
+          "binding_surface": "KEYWORD",
+          "dynamic_external_root_detected": false,
+          "expression": "frames",
+          "flags": {
+            "call_names": [],
+            "dynamic_markers": [],
+            "protected_year_path_literals": [],
+            "unresolved_markers": [
+              "UNRESOLVED_NAME_SOURCE"
+            ]
+          },
+          "lineage": {
+            "dynamic_markers": [],
+            "expression": "frames",
+            "file_path_literals": [],
+            "name": "frames",
+            "protected_year_path_literals": [],
+            "status": "UNRESOLVED_NAME_SOURCE"
+          },
+          "protected_year_dependency_detected": false,
+          "static_expression_resolved": false
+        },
+        "policy_id": {
+          "binding_surface": "KEYWORD",
+          "dynamic_external_root_detected": false,
+          "expression": "rd27.FULL_ADAPTIVE_LIFECYCLE_BRAIN",
+          "flags": {
+            "call_names": [],
+            "dynamic_markers": [],
+            "protected_year_path_literals": [],
+            "unresolved_markers": []
+          },
+          "lineage": {
+            "dynamic_markers": [],
+            "expression": "rd27.FULL_ADAPTIVE_LIFECYCLE_BRAIN",
+            "file_path_literals": [],
+            "protected_year_path_literals": [],
+            "status": "BOUND_ATTRIBUTE_EXPRESSION"
+          },
+          "protected_year_dependency_detected": false,
+          "static_expression_resolved": true
+        },
+        "portfolio_id": {
+          "binding_surface": "KEYWORD",
+          "dynamic_external_root_detected": false,
+          "expression": "portfolio_id",
+          "flags": {
+            "call_names": [],
+            "dynamic_markers": [],
+            "protected_year_path_literals": [],
+            "unresolved_markers": [
+              "UNRESOLVED_NAME_SOURCE"
+            ]
+          },
+          "lineage": {
+            "dynamic_markers": [],
+            "expression": "portfolio_id",
+            "file_path_literals": [],
+            "name": "portfolio_id",
+            "protected_year_path_literals": [],
+            "status": "UNRESOLVED_NAME_SOURCE"
+          },
+          "protected_year_dependency_detected": false,
+          "static_expression_resolved": false
+        },
+        "state_frame": {
+          "binding_surface": "KEYWORD",
+          "dynamic_external_root_detected": false,
+          "expression": "state_frame",
+          "flags": {
+            "call_names": [],
+            "dynamic_markers": [],
+            "protected_year_path_literals": [],
+            "unresolved_markers": [
+              "UNRESOLVED_NAME_SOURCE"
+            ]
+          },
+          "lineage": {
+            "dynamic_markers": [],
+            "expression": "state_frame",
+            "file_path_literals": [],
+            "name": "state_frame",
+            "protected_year_path_literals": [],
+            "status": "UNRESOLVED_NAME_SOURCE"
+          },
+          "protected_year_dependency_detected": false,
+          "static_expression_resolved": false
+        },
+        "universe_id": {
+          "binding_surface": "KEYWORD",
+          "dynamic_external_root_detected": false,
+          "expression": "universe_id",
+          "flags": {
+            "call_names": [],
+            "dynamic_markers": [],
+            "protected_year_path_literals": [],
+            "unresolved_markers": [
+              "UNRESOLVED_NAME_SOURCE"
+            ]
+          },
+          "lineage": {
+            "dynamic_markers": [],
+            "expression": "universe_id",
+            "file_path_literals": [],
+            "name": "universe_id",
+            "protected_year_path_literals": [],
+            "status": "UNRESOLVED_NAME_SOURCE"
+          },
+          "protected_year_dependency_detected": false,
+          "static_expression_resolved": false
+        }
+      },
+      "sha256": "161B7680A2098BBE97E4B9BE3A9BA7F0A918AAD04926CBA6F783CED7B97FE16E",
+      "structurally_complete_for_prospective_use": false,
+      "unresolved_roles": [
+        "portfolio_id",
+        "universe_id",
+        "cost_multiplier",
+        "events",
+        "frames",
+        "state_frame"
+      ]
+    },
+    {
+      "all_required_roles_bound_in_call": true,
+      "all_role_expressions_statically_resolved": false,
+      "authority_ready_without_additional_binding": false,
+      "dynamic_external_roles": [],
+      "enclosing_function": "replay_same_pair_secondary_shadow",
+      "executable_surface": false,
+      "lineno": 203,
+      "network_surface": false,
+      "path": "src/spotbot/research/eaa_same_pair_secondary_shadow.py",
+      "protected_year_surface": false,
+      "roles": {
+        "cost_multiplier": {
+          "binding_surface": "KEYWORD",
+          "dynamic_external_root_detected": false,
+          "expression": "cost_multiplier",
+          "flags": {
+            "call_names": [],
+            "dynamic_markers": [],
+            "protected_year_path_literals": [],
+            "unresolved_markers": [
+              "UNRESOLVED_NAME_SOURCE"
+            ]
+          },
+          "lineage": {
+            "dynamic_markers": [],
+            "expression": "cost_multiplier",
+            "file_path_literals": [],
+            "name": "cost_multiplier",
+            "protected_year_path_literals": [],
+            "status": "UNRESOLVED_NAME_SOURCE"
+          },
+          "protected_year_dependency_detected": false,
+          "static_expression_resolved": false
+        },
+        "events": {
+          "binding_surface": "KEYWORD",
+          "dynamic_external_root_detected": false,
+          "expression": "events",
+          "flags": {
+            "call_names": [],
+            "dynamic_markers": [],
+            "protected_year_path_literals": [],
+            "unresolved_markers": [
+              "UNRESOLVED_NAME_SOURCE"
+            ]
+          },
+          "lineage": {
+            "dynamic_markers": [],
+            "expression": "events",
+            "file_path_literals": [],
+            "name": "events",
+            "protected_year_path_literals": [],
+            "status": "UNRESOLVED_NAME_SOURCE"
+          },
+          "protected_year_dependency_detected": false,
+          "static_expression_resolved": false
+        },
+        "frames": {
+          "binding_surface": "KEYWORD",
+          "dynamic_external_root_detected": false,
+          "expression": "frames",
+          "flags": {
+            "call_names": [],
+            "dynamic_markers": [],
+            "protected_year_path_literals": [],
+            "unresolved_markers": [
+              "UNRESOLVED_NAME_SOURCE"
+            ]
+          },
+          "lineage": {
+            "dynamic_markers": [],
+            "expression": "frames",
+            "file_path_literals": [],
+            "name": "frames",
+            "protected_year_path_literals": [],
+            "status": "UNRESOLVED_NAME_SOURCE"
+          },
+          "protected_year_dependency_detected": false,
+          "static_expression_resolved": false
+        },
+        "policy_id": {
+          "binding_surface": "KEYWORD",
+          "dynamic_external_root_detected": false,
+          "expression": "rd27.STATIC_EXIT_STATE_ROUTER",
+          "flags": {
+            "call_names": [],
+            "dynamic_markers": [],
+            "protected_year_path_literals": [],
+            "unresolved_markers": []
+          },
+          "lineage": {
+            "dynamic_markers": [],
+            "expression": "rd27.STATIC_EXIT_STATE_ROUTER",
+            "file_path_literals": [],
+            "protected_year_path_literals": [],
+            "status": "BOUND_ATTRIBUTE_EXPRESSION"
+          },
+          "protected_year_dependency_detected": false,
+          "static_expression_resolved": true
+        },
+        "portfolio_id": {
+          "binding_surface": "KEYWORD",
+          "dynamic_external_root_detected": false,
+          "expression": "portfolio_id",
+          "flags": {
+            "call_names": [],
+            "dynamic_markers": [],
+            "protected_year_path_literals": [],
+            "unresolved_markers": [
+              "UNRESOLVED_NAME_SOURCE"
+            ]
+          },
+          "lineage": {
+            "dynamic_markers": [],
+            "expression": "portfolio_id",
+            "file_path_literals": [],
+            "name": "portfolio_id",
+            "protected_year_path_literals": [],
+            "status": "UNRESOLVED_NAME_SOURCE"
+          },
+          "protected_year_dependency_detected": false,
+          "static_expression_resolved": false
+        },
+        "state_frame": {
+          "binding_surface": "KEYWORD",
+          "dynamic_external_root_detected": false,
+          "expression": "state_frame",
+          "flags": {
+            "call_names": [],
+            "dynamic_markers": [],
+            "protected_year_path_literals": [],
+            "unresolved_markers": [
+              "UNRESOLVED_NAME_SOURCE"
+            ]
+          },
+          "lineage": {
+            "dynamic_markers": [],
+            "expression": "state_frame",
+            "file_path_literals": [],
+            "name": "state_frame",
+            "protected_year_path_literals": [],
+            "status": "UNRESOLVED_NAME_SOURCE"
+          },
+          "protected_year_dependency_detected": false,
+          "static_expression_resolved": false
+        },
+        "universe_id": {
+          "binding_surface": "KEYWORD",
+          "dynamic_external_root_detected": false,
+          "expression": "universe_id",
+          "flags": {
+            "call_names": [],
+            "dynamic_markers": [],
+            "protected_year_path_literals": [],
+            "unresolved_markers": [
+              "UNRESOLVED_NAME_SOURCE"
+            ]
+          },
+          "lineage": {
+            "dynamic_markers": [],
+            "expression": "universe_id",
+            "file_path_literals": [],
+            "name": "universe_id",
+            "protected_year_path_literals": [],
+            "status": "UNRESOLVED_NAME_SOURCE"
+          },
+          "protected_year_dependency_detected": false,
+          "static_expression_resolved": false
+        }
+      },
+      "sha256": "1096CD43E814A08E8F6BB969CD2722FA883C04D54C9462AFD461489AE3E76390",
+      "structurally_complete_for_prospective_use": false,
+      "unresolved_roles": [
+        "portfolio_id",
+        "universe_id",
+        "cost_multiplier",
+        "events",
+        "frames",
+        "state_frame"
+      ]
+    }
+  ],
+  "status": "PASS",
+  "structurally_complete_count": 0
+}

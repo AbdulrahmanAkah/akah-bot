@@ -1,0 +1,28 @@
+{
+  "historical_producer_binding_changed": false,
+  "new_task_started": false,
+  "package_execution_issue": {
+    "closeout": "missing north_star_effect in FAIL_CLOSED report",
+    "primary": "HISTORICAL_PRODUCER_SCORE_TIE before replay execution",
+    "secondary": "subprocess cp1252 decode noise"
+  },
+  "previous_gov_sha256": "14FC43F232FDAA31C270D411B5B6C6F2407406C404567853D8ABB1159EB32BF0",
+  "previous_report_sha256": "F7B17E90311D5667161F1951CA54A1D506A621912600316DF05E28C8F1780A3E",
+  "reason": "phase_close complete failed after FAIL_CLOSED artifact commit because report lacked mandatory north_star_effect",
+  "repair": {
+    "added_report_field": "north_star_effect",
+    "north_star_effect": "Preserve the recovered exact historical producer authority while recording that terminal-ledger replay did not execute because the V1 package attempted a heuristic executable selection and hit an ambiguity before replay. The next recovery must use the accepted historical binding semantics directly, not producer scoring, and must not infer terminal timestamps or reopen economics.",
+    "phase_close_complete_required": true,
+    "phase_close_prepare_rerun_required": true,
+    "phase_close_verify_required": true
+  },
+  "repair_id": "AKAH_V2_PHASE_A_NTL_REPLAY_RECOVERY_V1_CLOSEOUT_REPAIR",
+  "repaired_report_sha256": "9ED25EA5FD25E447AA261FC4FE1553D8D27CA08E249E8BE0CE6A8EF90517B049",
+  "reprepared_gov_sha256": "98862398838A338F924D9CF271E8CA40AC214EE5C5AA9EB23146EA53DC84E4DD",
+  "research_result_changed": false,
+  "starting_head": "6f71619e5dabb74b2e604d22040d559cd5b4c429",
+  "starting_revision": 189,
+  "task_id": "CAUSAL_EXIT_BRAIN_V2_PHASE_A_NATIVE_TERMINAL_LEDGER_REPLAY_RECOVERY_V1",
+  "terminal_ledger_created": false,
+  "terminal_replay_executed": false
+}

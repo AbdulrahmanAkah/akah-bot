@@ -1,0 +1,39 @@
+{
+  "raw_root": "data/raw/rd16b/kucoin",
+  "raw_root_exists": true,
+  "membership": "data/research/rd18_p3x_a3b_runtime/effective-operational-membership.csv",
+  "membership_exists": true,
+  "parquet_file_count": 342,
+  "schema_signature_count": 1,
+  "schema_signatures": [
+    {
+      "columns": [
+        "timestamp",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume"
+      ],
+      "file_count": 342,
+      "sample_paths": [
+        "data/raw/rd16b/kucoin/1INCH-USDT/1h.parquet",
+        "data/raw/rd16b/kucoin/AAVE-USDT/1h.parquet",
+        "data/raw/rd16b/kucoin/ACH-USDT/1h.parquet",
+        "data/raw/rd16b/kucoin/ACS-USDT/1h.parquet",
+        "data/raw/rd16b/kucoin/ADA-USDT/1h.parquet"
+      ]
+    }
+  ],
+  "required_schema_roles_proven": true,
+  "market_data_rows_accessed": false,
+  "market_data_values_accessed": false,
+  "footer_schema_metadata_only": true,
+  "required_role_presence_all_schemas": {
+    "timestamp": true,
+    "open": true,
+    "high": true,
+    "low": true,
+    "close": true
+  }
+}

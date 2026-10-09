@@ -1,0 +1,28 @@
+{
+  "schema_version": "abc-lifecycle-state-machine-protocol-freeze-canonical-v1",
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_PROTOCOL_FREEZE_V1",
+  "status": "PASS_PROTOCOL_FROZEN_BEFORE_OBSERVATIONAL_TRACE",
+  "protocol_id": "ABC_LIFECYCLE_STATE_MACHINE_PROTOCOL_V1",
+  "protocol_path": "governance/abc_lifecycle_state_machine_protocol_v1/protocol.json",
+  "protocol_sha256": "A628F07CE417339B1547BC8C1E1E9AD9D8360451CD0996E366C9C474A3167B0F",
+  "operational_base_states": [
+    "UNCONFIRMED",
+    "EARLY_PROGRESS",
+    "CONFIRMED"
+  ],
+  "evidence_channels": [
+    "C_PRE_PROGRESS_NONCONFIRMATION",
+    "A_STRUCTURAL_BREAK",
+    "B_POST_PROGRESS_VOLATILITY_DAMAGE"
+  ],
+  "conceptual_states_not_operationalized_count": 6,
+  "runtime_state_machine_authorized": false,
+  "exit_action_authorized": false,
+  "candidate_combination_authorized": false,
+  "exit_arbiter_authorized": false,
+  "economic_analysis_authorized": false,
+  "market_data_accessed_in_freeze": false,
+  "2024_accessed": false,
+  "2025_accessed": false,
+  "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_OBSERVATIONAL_TRACE_EXECUTION_V1"
+}

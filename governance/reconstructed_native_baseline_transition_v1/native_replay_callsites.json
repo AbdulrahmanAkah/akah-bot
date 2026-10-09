@@ -1,0 +1,162 @@
+{
+  "direct_callsite_count": 5,
+  "direct_callsites": [
+    {
+      "enclosing_function": "main",
+      "expressions": {
+        "cost_multiplier": "cost_multiplier",
+        "events": "subset",
+        "frames": "frames",
+        "policy_id": "rd27.STATIC_EXIT_STATE_ROUTER",
+        "portfolio_id": "'EAA_SHADOW_PARITY_NATIVE'",
+        "replay_cutoff": "end",
+        "replay_start": "start",
+        "state_frame": "state_frame",
+        "universe_id": "'PRE2022_UNION'"
+      },
+      "file_sha256": "8438DE5BA561867528E8D0996CAC83D36C0F60B19603287D996DCA32909E3D27",
+      "has_kwargs_expansion": false,
+      "has_main": true,
+      "is_test": false,
+      "keyword_args": [
+        "cost_multiplier",
+        "events",
+        "frames",
+        "policy_id",
+        "portfolio_id",
+        "replay_cutoff",
+        "replay_start",
+        "state_frame",
+        "universe_id"
+      ],
+      "lineno": 240,
+      "path": "scripts/research/run_eaa_same_pair_secondary_shadow_parity.py",
+      "positional_arg_count": 0
+    },
+    {
+      "enclosing_function": "run_all_portfolios",
+      "expressions": {
+        "cost_multiplier": "cost_multiplier",
+        "events": "portfolio_events",
+        "frames": "frames",
+        "policy_id": "policy_id",
+        "portfolio_id": "portfolio_id",
+        "state_frame": "state_frame",
+        "universe_id": "universe"
+      },
+      "file_sha256": "7DFC388F3BF8EF6EFA16E0640CF924158999A9923674C7701B8919872755CBB5",
+      "has_kwargs_expansion": false,
+      "has_main": true,
+      "is_test": false,
+      "keyword_args": [
+        "cost_multiplier",
+        "events",
+        "frames",
+        "policy_id",
+        "portfolio_id",
+        "state_frame",
+        "universe_id"
+      ],
+      "lineno": 420,
+      "path": "scripts/research/run_rd27_lifecycle_ablation.py",
+      "positional_arg_count": 0
+    },
+    {
+      "enclosing_function": "_replay_selective",
+      "expressions": {
+        "cost_multiplier": "cost_multiplier",
+        "events": "events",
+        "frames": "frames",
+        "policy_id": "rd27.FULL_ADAPTIVE_LIFECYCLE_BRAIN",
+        "portfolio_id": "portfolio_id",
+        "replay_cutoff": "replay_cutoff",
+        "replay_start": "replay_start",
+        "state_frame": "state_frame",
+        "universe_id": "universe_id"
+      },
+      "file_sha256": "BF4794A3F42A547A3D20D80D0ACD7A9132973B68BA3FFB2738B3EF29ECD0AB0F",
+      "has_kwargs_expansion": false,
+      "has_main": false,
+      "is_test": false,
+      "keyword_args": [
+        "cost_multiplier",
+        "events",
+        "frames",
+        "policy_id",
+        "portfolio_id",
+        "replay_cutoff",
+        "replay_start",
+        "state_frame",
+        "universe_id"
+      ],
+      "lineno": 248,
+      "path": "src/spotbot/research/a10_selective_protection_asymmetry.py",
+      "positional_arg_count": 0
+    },
+    {
+      "enclosing_function": "replay_reversible_floor_candidate",
+      "expressions": {
+        "cost_multiplier": "cost_multiplier",
+        "events": "events",
+        "frames": "frames",
+        "policy_id": "rd27.FULL_ADAPTIVE_LIFECYCLE_BRAIN",
+        "portfolio_id": "portfolio_id",
+        "replay_cutoff": "replay_cutoff",
+        "replay_start": "replay_start",
+        "state_frame": "state_frame",
+        "universe_id": "universe_id"
+      },
+      "file_sha256": "161B7680A2098BBE97E4B9BE3A9BA7F0A918AAD04926CBA6F783CED7B97FE16E",
+      "has_kwargs_expansion": false,
+      "has_main": false,
+      "is_test": false,
+      "keyword_args": [
+        "cost_multiplier",
+        "events",
+        "frames",
+        "policy_id",
+        "portfolio_id",
+        "replay_cutoff",
+        "replay_start",
+        "state_frame",
+        "universe_id"
+      ],
+      "lineno": 132,
+      "path": "src/spotbot/research/a4r1_reversible_floor_replay.py",
+      "positional_arg_count": 0
+    },
+    {
+      "enclosing_function": "replay_same_pair_secondary_shadow",
+      "expressions": {
+        "cost_multiplier": "cost_multiplier",
+        "events": "events",
+        "frames": "frames",
+        "policy_id": "rd27.STATIC_EXIT_STATE_ROUTER",
+        "portfolio_id": "portfolio_id",
+        "replay_cutoff": "replay_cutoff",
+        "replay_start": "replay_start",
+        "state_frame": "state_frame",
+        "universe_id": "universe_id"
+      },
+      "file_sha256": "1096CD43E814A08E8F6BB969CD2722FA883C04D54C9462AFD461489AE3E76390",
+      "has_kwargs_expansion": false,
+      "has_main": false,
+      "is_test": false,
+      "keyword_args": [
+        "cost_multiplier",
+        "events",
+        "frames",
+        "policy_id",
+        "portfolio_id",
+        "replay_cutoff",
+        "replay_start",
+        "state_frame",
+        "universe_id"
+      ],
+      "lineno": 203,
+      "path": "src/spotbot/research/eaa_same_pair_secondary_shadow.py",
+      "positional_arg_count": 0
+    }
+  ],
+  "status": "PASS"
+}

@@ -1,0 +1,30 @@
+{
+  "schema_version": "akah-research-sync-preflight-v3",
+  "starting_head": "97cd98583f4b426811ce2eb47677f64bc163d29e",
+  "starting_revision": 773,
+  "starting_branch": "research/rd48-cross-venue-price-level-basis-direct-utility-v1",
+  "tracked_worktree_and_index_clean": true,
+  "unrelated_untracked_preserved": true,
+  "fetch_origin": "PASS",
+  "remote_research_head_verified": "b3142d0135d393088ab3fe55c53b0e28ec7574cb",
+  "ahead_behind": [1405, 0],
+  "push_attempt": {
+    "command": "git push origin HEAD:refs/heads/research/rd48-cross-venue-price-level-basis-direct-utility-v1",
+    "exit_code": 1,
+    "errors": ["fatal: the remote end hung up unexpectedly", "send-pack: unexpected disconnect while reading sideband packet", "error: failed to push some refs"],
+    "retry": "git -c http.version=HTTP/1.1 push origin HEAD:refs/heads/research/rd48-cross-venue-price-level-basis-direct-utility-v1",
+    "retry_result": "Session interrupted; success not asserted; subsequent ls-remote still at original remote head"
+  },
+  "remote_sync_occurred": false,
+  "continuation_exception": {
+    "id": "USER_AUTHORIZED_LOCAL_CONTINUATION_SYNC_DEFERRED_V1",
+    "authority": "Explicit user V3 mission sections 0/4/20",
+    "scope": "This one research engineering mission only; no production and no false synchronization assertion",
+    "governance_compatibility": "Current immutable task protocol requires BEGIN and local charter closeout commits, permits no accepted completion without them, and contains no prohibition on the user's explicit research-only deferred-sync exception. Constitutional core unchanged.",
+    "required_final_action": "Retry authorized research sync; if it still fails preserve exact error and truthful deferred status"
+  },
+  "2024_rows_accessed": false,
+  "2025_rows_accessed": false,
+  "pnl_read": false,
+  "economic_replay_executed": false
+}

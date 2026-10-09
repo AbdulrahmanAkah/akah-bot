@@ -1,0 +1,32 @@
+{
+  "authority_id": "AKAH_BOT_PREOPEN_2022_ISOLATION_AUDIT_V1",
+  "status": "PREOPEN_2022_ISOLATION_NOT_AVAILABLE_IN_CURRENT_RAW_ROOT",
+  "cutoff_exclusive": "2023-01-01T00:00:00Z",
+  "raw_root": "data/raw/rd16b/kucoin",
+  "method": "PYARROW_PARQUET_FOOTER_AND_ROW_GROUP_METADATA_ONLY",
+  "physical_inventory": {
+    "parquet_file_count": 342,
+    "row_group_count": 342,
+    "timestamp_statistics_missing_count": 0,
+    "pre2023_isolated_row_group_count": 0,
+    "row_groups_crossing_cutoff_count": 255,
+    "future_only_row_group_count": 87
+  },
+  "sample_metadata": {
+    "path": "data/raw/rd16b/kucoin/BTC-USDT/1h.parquet",
+    "schema_timestamp": "timestamp[ms, tz=UTC]",
+    "row_group_count": 1,
+    "timestamp_min": "2019-01-01T01:00:00Z",
+    "timestamp_max": "2025-01-01T00:00:00Z",
+    "value_count": 52608
+  },
+  "interpretation": {
+    "logical_filter": "timestamp < 2023-01-01T00:00:00Z",
+    "logical_filter_is_preopen_certified": false,
+    "reason": "The current physical row groups cross the protected-year cutoff; filtering after opening a crossing group would not prove that protected rows were never opened.",
+    "required_safe_alternative": "An immutable pre-2023-only artifact, physically isolated partition/file, or source selector whose isolation is proven before row access."
+  },
+  "protected_year_rows_read": false,
+  "market_rows_read": false,
+  "source_mutated": false
+}

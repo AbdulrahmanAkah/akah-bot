@@ -1,0 +1,88 @@
+{
+  "authority_id": "RNB_STRICT_PREOPEN_REMOTE_BOUNDARY_V1",
+  "status": "PASS",
+  "scope": "Research-only request construction; cohort replay not executed",
+  "native_chain": [
+    {
+      "module": "src/spotbot/research/rd16b_hourly_readiness.py",
+      "function": "run_rd16b",
+      "line": 718,
+      "arguments": "CCXTExchangeAdapter(exchange) -> CCXTSpotDataProvider(same adapter); _acquire_hourly(adapter, provider, since, until, ...)",
+      "sha256": "62C4139AC2E4F5CE7C852F582CB829398935A9CEE78155617B13B657325F4F37"
+    },
+    {
+      "module": "src/spotbot/research/rd16b_hourly_readiness.py",
+      "function": "_acquire_hourly",
+      "line": 211,
+      "arguments": "provider.fetch_history(symbol=pair.replace('-', '/'), timeframe='1h', since=fetch_since, until=until, page_limit=1000)",
+      "limitation": "Discovery and provider requests do not propagate upper bound to remote; run_rd16b hardcodes 2025 sealed cutoff. Do not execute."
+    },
+    {
+      "module": "src/spotbot/data/provider.py",
+      "function": "CCXTSpotDataProvider.fetch_history",
+      "line": 274,
+      "arguments": "self.exchange.fetch_ohlcv(symbol, timeframe, since=cursor_ms, limit=page_limit)",
+      "sha256": "60BEE0AF8DB2C4EF0E74ED793A3A079D6ED021AE684B99119F7A25EA93F1D343",
+      "until": "Only loop/normalization; absent at adapter call"
+    },
+    {
+      "module": "src/spotbot/data/ccxt_adapter.py",
+      "function": "CCXTExchangeAdapter.fetch_ohlcv",
+      "line": 90,
+      "arguments": "self._exchange.fetch_ohlcv(symbol, timeframe=timeframe, since=since, limit=limit)",
+      "sha256": "91AB2D66146B60AB48C6BED6B62019886AADF78F014DB73F82405C7871AD90B9"
+    },
+    {
+      "module": ".venv/Lib/site-packages/ccxt/kucoin.py",
+      "function": "fetch_spot_ohlcv",
+      "line": 3320,
+      "arguments": "startAt=floor(since/1000); endAt=floor((since+limit*duration)/1000); publicGetMarketCandles(request)",
+      "sha256": "64669A25AC88AB497B4E18CF4D156ED0E23C0030DBCD833B9F063A5DA881A63C",
+      "endpoint": "https://api.kucoin.com/api/v1/market/candles"
+    }
+  ],
+  "remote_supports": {
+    "since": true,
+    "until": true,
+    "limit": "CCXT limit becomes endAt; raw endpoint maximum 1500, research windows <=1000"
+  },
+  "replacement": {
+    "module": "src/spotbot/research/rnb_bounded_2022.py",
+    "sha256": "22B8C4BA07FBDA1813FCD3BCE7A28D0A9842E5A47AFD5180D83A95533804CABE",
+    "entrypoint": "fetch_page",
+    "request": "publicGetMarketCandles({symbol:pair,type:'1hour',startAt:cursor,endAt:next_cursor-1})",
+    "next_cursor": "min(cursor + 1000*3600, 1672531200-3600)",
+    "last_allowed_open": "2022-12-31T22:00:00Z",
+    "last_allowed_close": "2022-12-31T23:00:00Z",
+    "first_open": "2022-01-01T00:00:00Z",
+    "first_close": "2022-01-01T01:00:00Z",
+    "boundary_note": "No pre-2022 open requested. Close at Jan 1 00:00 absent intentionally. All admitted closes inside user window.",
+    "guarantee": "Server request interval excludes forbidden candles under endpoint semantics. Any response violation fails closed, never filtered as acceptable."
+  },
+  "strict_preopen_remote_boundary_ready": true,
+  "can_last_request_request_2023_rows": false,
+  "acquisition_handoff": {
+    "root": "data/research/reconstructed_native_baseline_pre2023/native-1h-2022-v1",
+    "layout": "<root>/kucoin/<pair>/1h.parquet",
+    "reason": "Native ParquetCandleStore layout is root/exchange/pair/timeframe.parquet",
+    "membership_path": "data/research/rd18_p3x_a3b_runtime/effective-operational-membership.csv",
+    "membership_sha256": "F7D6012CE8CD691583B9B6276DDF36371BFE0BBD9B28F810B676AD0177FB559E",
+    "pair_scope": "Derive from native membership loader and scan_focus_signals membership semantics; freeze exact list before network; include BTC-USDT state sensor",
+    "preflight": [
+      "Target absent or empty",
+      "Current raw root state captured",
+      "Membership hash verified",
+      "Pair scope frozen",
+      "Explicit server bounds for every request"
+    ],
+    "no_overwrite": true,
+    "current_raw_root_mutation": false
+  },
+  "validation": {
+    "ruff": "PASS",
+    "pytest": "17 passed",
+    "network_calls": 0,
+    "market_rows_read": 0,
+    "native_replay_executed": false
+  }
+}

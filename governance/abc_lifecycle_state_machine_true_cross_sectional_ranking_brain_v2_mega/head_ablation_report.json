@@ -1,0 +1,109 @@
+{
+  "2x": [
+    {
+      "continuous_mtm_mdd": -0.26758260156638225,
+      "cost_multiplier": 2.0,
+      "day_ge_0p5_fraction": 0.1375770020533881,
+      "description": null,
+      "dominates_f10_descriptive": false,
+      "head": "F10",
+      "mdd_improvement_vs_f10": 0.0,
+      "mean_gross_fraction": 0.10531620405429827,
+      "open_positions_at_cutoff": 20,
+      "positive_day_fraction": 0.3648186173853525,
+      "ranker": "V00_F10_INCUMBENT",
+      "rejections": "{'SIZE_OR_CAPACITY_TOO_SMALL': 115259, 'SAME_PAIR_OPEN': 28923, 'RISK_GOVERNOR_FORCED_EXIT': 577, 'MAX_POSITIONS': 140563}",
+      "terminal_equity": 217559.85217179195,
+      "terminal_wealth": 2.1755985217179195,
+      "total_cost": 31715.52537963624,
+      "trade_count": 4343,
+      "variant": "V00_F10_INCUMBENT",
+      "wealth_delta_vs_f10": 0.0,
+      "worst_year_2x": -0.11771935704255765
+    },
+    {
+      "continuous_mtm_mdd": -0.27061617959776174,
+      "cost_multiplier": 2.0,
+      "day_ge_0p5_fraction": 0.12251882272416154,
+      "description": "Direct weighted all-pairs within-hour ranking head",
+      "dominates_f10_descriptive": false,
+      "head": "PAIRWISE_ALL",
+      "mdd_improvement_vs_f10": -0.0030335780313794913,
+      "mean_gross_fraction": 0.11008006571937491,
+      "open_positions_at_cutoff": 20,
+      "positive_day_fraction": 0.3600273785078713,
+      "ranker": "V01_PAIRWISE_ALL",
+      "rejections": "{'SIZE_OR_CAPACITY_TOO_SMALL': 116228, 'SAME_PAIR_OPEN': 29350, 'RISK_GOVERNOR_FORCED_EXIT': 645, 'MAX_POSITIONS': 139027}",
+      "terminal_equity": 210796.59150430263,
+      "terminal_wealth": 2.1079659150430263,
+      "total_cost": 34320.505989933554,
+      "trade_count": 4483,
+      "variant": "V01_PAIRWISE_ALL",
+      "wealth_delta_vs_f10": -0.06763260667489313,
+      "worst_year_2x": -0.11770298790075284
+    },
+    {
+      "continuous_mtm_mdd": -0.319573272279971,
+      "cost_multiplier": 2.0,
+      "day_ge_0p5_fraction": 0.14099931553730322,
+      "description": "Direct ranking of positive-H0 opportunities above non-positive opportunities within the same hour",
+      "dominates_f10_descriptive": false,
+      "head": "PAIRWISE_POSITIVE_FRONTIER",
+      "mdd_improvement_vs_f10": -0.05199067071358876,
+      "mean_gross_fraction": 0.1174214657469745,
+      "open_positions_at_cutoff": 20,
+      "positive_day_fraction": 0.3607118412046543,
+      "ranker": "V02_PAIRWISE_POSITIVE_FRONTIER",
+      "rejections": "{'SIZE_OR_CAPACITY_TOO_SMALL': 116072, 'SAME_PAIR_OPEN': 29126, 'RISK_GOVERNOR_FORCED_EXIT': 741, 'MAX_POSITIONS': 139406}",
+      "terminal_equity": 161588.66833091775,
+      "terminal_wealth": 1.6158866833091774,
+      "total_cost": 31692.239075396727,
+      "trade_count": 4484,
+      "variant": "V02_PAIRWISE_POSITIVE_FRONTIER",
+      "wealth_delta_vs_f10": -0.5597118384087421,
+      "worst_year_2x": -0.15723480160980685
+    },
+    {
+      "continuous_mtm_mdd": -0.30424354514977814,
+      "cost_multiplier": 2.0,
+      "day_ge_0p5_fraction": 0.13483915126625598,
+      "description": "Equal within-hour rank fusion of the two pairwise heads",
+      "dominates_f10_descriptive": false,
+      "head": "FUSION",
+      "mdd_improvement_vs_f10": -0.03666094358339589,
+      "mean_gross_fraction": 0.11821832115570474,
+      "open_positions_at_cutoff": 20,
+      "positive_day_fraction": 0.35660506502395617,
+      "ranker": "V03_PAIRWISE_FUSION",
+      "rejections": "{'SIZE_OR_CAPACITY_TOO_SMALL': 116656, 'SAME_PAIR_OPEN': 29144, 'RISK_GOVERNOR_FORCED_EXIT': 735, 'MAX_POSITIONS': 138747}",
+      "terminal_equity": 161017.4740804335,
+      "terminal_wealth": 1.6101747408043348,
+      "total_cost": 31862.092452921315,
+      "trade_count": 4541,
+      "variant": "V03_PAIRWISE_FUSION",
+      "wealth_delta_vs_f10": -0.5654237809135847,
+      "worst_year_2x": -0.13024484904853084
+    }
+  ],
+  "fusion_mean_fraction_f10_regret_closed": -0.17800596163454266,
+  "hourly_oracle_regret": {
+    "V00_F10_INCUMBENT": {
+      "mean_regret_vs_oracle": 0.1128236562439745,
+      "median_regret_vs_oracle": 0.0
+    },
+    "V01_PAIRWISE_ALL": {
+      "mean_regret_vs_oracle": 0.1120850477601364,
+      "median_regret_vs_oracle": 0.0
+    },
+    "V02_PAIRWISE_POSITIVE_FRONTIER": {
+      "mean_regret_vs_oracle": 0.11244726336582306,
+      "median_regret_vs_oracle": 0.0
+    },
+    "V03_PAIRWISE_FUSION": {
+      "mean_regret_vs_oracle": 0.112617166033105,
+      "median_regret_vs_oracle": 0.0
+    }
+  },
+  "interpretation": "Both pairwise heads are fixed parts of one architecture; no winner is certified.",
+  "schema_version": "akah-v2-head-ablation-report-v1"
+}

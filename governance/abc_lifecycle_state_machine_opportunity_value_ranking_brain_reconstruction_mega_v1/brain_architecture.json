@@ -1,0 +1,30 @@
+{
+  "admission_gate": "EXACT_F10_GATE_FOR_ALL_VARIANTS",
+  "architecture_id": "OVRB_V1_THREE_HEAD_LINEAR",
+  "fusion": "within-hour-rank(VALUE)+within-hour-rank(POSITIVE)+within-hour-rank(XSEC_RANK)",
+  "fusion_weights": [
+    1.0,
+    1.0,
+    1.0
+  ],
+  "heads": {
+    "POSITIVE": {
+      "lambda": 10.0,
+      "model": "logistic",
+      "target": "I(h0_net_return_2x > 0)"
+    },
+    "VALUE": {
+      "lambda": 10.0,
+      "model": "ridge",
+      "target": "h0_net_return_2x"
+    },
+    "XSEC_RANK": {
+      "lambda": 10.0,
+      "model": "ridge",
+      "target": "within-entry-hour percentile rank(h0_net_return_2x)"
+    }
+  },
+  "hyperparameter_search": false,
+  "model_zoo": false,
+  "schema_version": "akah-opportunity-value-brain-v1"
+}

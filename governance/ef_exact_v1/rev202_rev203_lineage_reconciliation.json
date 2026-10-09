@@ -1,0 +1,1380 @@
+{
+  "additional_old_evidence_error": "SEVEN_CROSS_MODULE_CALLER_EDGES_ARE_INVALID_IN_BOTH_TRACES",
+  "difference_class": "TRACER_CAPABILITY_DIFFERENCE_AND_TERMINAL_ACCOUNTING_DIFFERENCE",
+  "direct_callsite_set_changed": false,
+  "program_semantic_contradiction_between_revisions": false,
+  "rev202_frames_loader_leaves": 8,
+  "rev202_reported_events_unresolved": 4,
+  "rev202_reported_frames_unresolved": 3,
+  "rev202_unreported_empty_parameter_leaves_per_role": 3,
+  "rev203_events_unresolved": 7,
+  "rev203_frames_unresolved": 14,
+  "rows": [
+    {
+      "actual_argument_expression": "subset",
+      "difference_class": "OTHER_EXPLICIT_REASON",
+      "enclosing_function": "main",
+      "exact_source_construct": "Attribute(Call): pandas filtered DataFrame.copy(), not a free function named copy.",
+      "full_rev202_lineage_path": [
+        {
+          "json_path": "$.callsites[0].roles.events",
+          "node": {
+            "kind": "LOCAL_NAME_ASSIGNMENT",
+            "name": "subset",
+            "rhs": "signals[signals['period_id'] == period_id].copy()",
+            "upstream": {
+              "call": "copy",
+              "definition_count": 0,
+              "expression": "signals[signals['period_id'] == period_id].copy()",
+              "kind": "CALL_UNRESOLVED_OR_NONUNIQUE",
+              "literal_path_candidates": []
+            }
+          }
+        },
+        {
+          "json_path": "$.callsites[0].roles.events.upstream",
+          "node": {
+            "call": "copy",
+            "definition_count": 0,
+            "expression": "signals[signals['period_id'] == period_id].copy()",
+            "kind": "CALL_UNRESOLVED_OR_NONUNIQUE",
+            "literal_path_candidates": []
+          }
+        }
+      ],
+      "leaf_id": "events:$.callsites[0].roles.events.upstream",
+      "line_number": 240,
+      "originating_replay_callsite": {
+        "function": "main",
+        "line": 240,
+        "path": "scripts/research/run_eaa_same_pair_secondary_shadow_parity.py"
+      },
+      "rev202_counted_in_role_summary": true,
+      "rev202_json_path": "$.callsites[0].roles.events.upstream",
+      "rev202_terminal": {
+        "call": "copy",
+        "definition_count": 0,
+        "expression": "signals[signals['period_id'] == period_id].copy()",
+        "kind": "CALL_UNRESOLVED_OR_NONUNIQUE",
+        "literal_path_candidates": []
+      },
+      "rev202_terminal_kind": "CALL_UNRESOLVED_OR_NONUNIQUE",
+      "rev203_json_path": "$.callsites[0].roles.events.upstream",
+      "rev203_lost_loader_recognition": false,
+      "rev203_lost_previously_bound_artifact_authority": false,
+      "rev203_terminal": {
+        "call": "copy",
+        "defs": 0,
+        "expr": "signals[signals['period_id'] == period_id].copy()",
+        "kind": "UNRESOLVED_CALL_NONUNIQUE_OR_UNKNOWN",
+        "literal_paths": []
+      },
+      "rev203_terminal_kind": "UNRESOLVED_CALL_NONUNIQUE_OR_UNKNOWN",
+      "role": "events",
+      "source_evidence": {
+        "evidence_id": "scripts/research/run_eaa_same_pair_secondary_shadow_parity.py:240-240",
+        "source_sha256": "8438DE5BA561867528E8D0996CAC83D36C0F60B19603287D996DCA32909E3D27"
+      },
+      "source_file": "scripts/research/run_eaa_same_pair_secondary_shadow_parity.py",
+      "source_program_drift": false
+    },
+    {
+      "actual_argument_expression": "frames",
+      "difference_class": "OTHER_EXPLICIT_REASON",
+      "enclosing_function": "main",
+      "exact_source_construct": "Tuple assignment frames, state_frame, raw_audit = market_authority(...); first return element is frames.",
+      "full_rev202_lineage_path": [
+        {
+          "json_path": "$.callsites[0].roles.frames",
+          "node": {
+            "kind": "NAME_UNRESOLVED",
+            "name": "frames"
+          }
+        }
+      ],
+      "leaf_id": "frames:$.callsites[0].roles.frames",
+      "line_number": 240,
+      "originating_replay_callsite": {
+        "function": "main",
+        "line": 240,
+        "path": "scripts/research/run_eaa_same_pair_secondary_shadow_parity.py"
+      },
+      "rev202_counted_in_role_summary": true,
+      "rev202_json_path": "$.callsites[0].roles.frames",
+      "rev202_terminal": {
+        "kind": "NAME_UNRESOLVED",
+        "name": "frames"
+      },
+      "rev202_terminal_kind": "NAME_UNRESOLVED",
+      "rev203_json_path": "$.callsites[0].roles.frames",
+      "rev203_lost_loader_recognition": false,
+      "rev203_lost_previously_bound_artifact_authority": false,
+      "rev203_terminal": {
+        "kind": "UNRESOLVED_NAME",
+        "name": "frames"
+      },
+      "rev203_terminal_kind": "UNRESOLVED_NAME",
+      "role": "frames",
+      "source_evidence": {
+        "evidence_id": "scripts/research/run_eaa_same_pair_secondary_shadow_parity.py:240-240",
+        "source_sha256": "8438DE5BA561867528E8D0996CAC83D36C0F60B19603287D996DCA32909E3D27"
+      },
+      "source_file": "scripts/research/run_eaa_same_pair_secondary_shadow_parity.py",
+      "source_program_drift": false
+    },
+    {
+      "actual_argument_expression": "portfolio_events",
+      "difference_class": "OTHER_EXPLICIT_REASON",
+      "enclosing_function": "run_all_portfolios",
+      "exact_source_construct": "For tuple target (portfolio_id, portfolio_events) bound by portfolios.items(); portfolios is a literal dictionary of constructor calls.",
+      "full_rev202_lineage_path": [
+        {
+          "json_path": "$.callsites[1].roles.events",
+          "node": {
+            "kind": "NAME_UNRESOLVED",
+            "name": "portfolio_events"
+          }
+        }
+      ],
+      "leaf_id": "events:$.callsites[1].roles.events",
+      "line_number": 420,
+      "originating_replay_callsite": {
+        "function": "run_all_portfolios",
+        "line": 420,
+        "path": "scripts/research/run_rd27_lifecycle_ablation.py"
+      },
+      "rev202_counted_in_role_summary": true,
+      "rev202_json_path": "$.callsites[1].roles.events",
+      "rev202_terminal": {
+        "kind": "NAME_UNRESOLVED",
+        "name": "portfolio_events"
+      },
+      "rev202_terminal_kind": "NAME_UNRESOLVED",
+      "rev203_json_path": "$.callsites[1].roles.events",
+      "rev203_lost_loader_recognition": false,
+      "rev203_lost_previously_bound_artifact_authority": false,
+      "rev203_terminal": {
+        "kind": "UNRESOLVED_NAME",
+        "name": "portfolio_events"
+      },
+      "rev203_terminal_kind": "UNRESOLVED_NAME",
+      "role": "events",
+      "source_evidence": {
+        "evidence_id": "scripts/research/run_rd27_lifecycle_ablation.py:420-428",
+        "source_sha256": "7DFC388F3BF8EF6EFA16E0640CF924158999A9923674C7701B8919872755CBB5"
+      },
+      "source_file": "scripts/research/run_rd27_lifecycle_ablation.py",
+      "source_program_drift": false
+    },
+    {
+      "actual_argument_expression": "frames",
+      "difference_class": "TRACER_CAPABILITY_DIFFERENCE",
+      "edge_reason": "Each listed script binds run_all_portfolios to its OWN module-local function, not the RD27 definition.",
+      "enclosing_function": "main",
+      "exact_source_construct": "Module-local FunctionDef load_feature_frames or qualified rd31.load_feature_frames; rev203 reports defs=9 from unqualified-name ambiguity. That is not Python lexical binding.",
+      "full_rev202_lineage_path": [
+        {
+          "caller_binding": {
+            "caller_function": "main",
+            "caller_line": 631,
+            "caller_path": "scripts/research/run_rd26_exit_architecture.py",
+            "expression": "frames"
+          },
+          "json_path": "$.callsites[1].roles.frames",
+          "parameter": "frames"
+        },
+        {
+          "json_path": "$.callsites[1].roles.frames.callers[0].upstream",
+          "node": {
+            "kind": "LOCAL_NAME_ASSIGNMENT",
+            "name": "frames",
+            "rhs": "load_feature_frames(raw_root=raw_root, pairs=pairs, cutoff=DATA_CUTOFF)",
+            "upstream": {
+              "call": "load_feature_frames",
+              "expression": "load_feature_frames(raw_root=raw_root, pairs=pairs, cutoff=DATA_CUTOFF)",
+              "kind": "FILE_OR_DATA_LOADER_CALL",
+              "literal_path_candidates": []
+            }
+          }
+        },
+        {
+          "json_path": "$.callsites[1].roles.frames.callers[0].upstream.upstream",
+          "node": {
+            "call": "load_feature_frames",
+            "expression": "load_feature_frames(raw_root=raw_root, pairs=pairs, cutoff=DATA_CUTOFF)",
+            "kind": "FILE_OR_DATA_LOADER_CALL",
+            "literal_path_candidates": []
+          }
+        }
+      ],
+      "leaf_id": "frames:$.callsites[1].roles.frames.callers[0].upstream.upstream",
+      "line_number": 631,
+      "originating_replay_callsite": {
+        "function": "run_all_portfolios",
+        "line": 420,
+        "path": "scripts/research/run_rd27_lifecycle_ablation.py"
+      },
+      "rev202_counted_in_role_summary": true,
+      "rev202_json_path": "$.callsites[1].roles.frames.callers[0].upstream.upstream",
+      "rev202_terminal": {
+        "call": "load_feature_frames",
+        "expression": "load_feature_frames(raw_root=raw_root, pairs=pairs, cutoff=DATA_CUTOFF)",
+        "kind": "FILE_OR_DATA_LOADER_CALL",
+        "literal_path_candidates": []
+      },
+      "rev202_terminal_kind": "FILE_OR_DATA_LOADER_CALL",
+      "rev202_upstream_edge_adjudication": "INVALID_CROSS_MODULE_RUN_ALL_PORTFOLIOS_NAME_COLLISION",
+      "rev203_json_path": "$.callsites[1].roles.frames.branches[0].upstream.upstream",
+      "rev203_lost_loader_recognition": true,
+      "rev203_lost_previously_bound_artifact_authority": false,
+      "rev203_terminal": {
+        "call": "load_feature_frames",
+        "defs": 9,
+        "expr": "load_feature_frames(raw_root=raw_root, pairs=pairs, cutoff=DATA_CUTOFF)",
+        "kind": "UNRESOLVED_CALL_NONUNIQUE_OR_UNKNOWN",
+        "literal_paths": []
+      },
+      "rev203_terminal_kind": "UNRESOLVED_CALL_NONUNIQUE_OR_UNKNOWN",
+      "role": "frames",
+      "source_evidence": {
+        "evidence_id": "scripts/research/run_rd27_lifecycle_ablation.py:420-428",
+        "source_sha256": "7DFC388F3BF8EF6EFA16E0640CF924158999A9923674C7701B8919872755CBB5"
+      },
+      "source_file": "scripts/research/run_rd26_exit_architecture.py",
+      "source_program_drift": false
+    },
+    {
+      "actual_argument_expression": "frames",
+      "difference_class": "TRACER_CAPABILITY_DIFFERENCE",
+      "edge_reason": "Each listed script binds run_all_portfolios to its OWN module-local function, not the RD27 definition.",
+      "enclosing_function": "main",
+      "exact_source_construct": "Module-local FunctionDef load_feature_frames or qualified rd31.load_feature_frames; rev203 reports defs=9 from unqualified-name ambiguity. That is not Python lexical binding.",
+      "full_rev202_lineage_path": [
+        {
+          "caller_binding": {
+            "caller_function": "main",
+            "caller_line": 853,
+            "caller_path": "scripts/research/run_rd27_lifecycle_ablation.py",
+            "expression": "frames"
+          },
+          "json_path": "$.callsites[1].roles.frames",
+          "parameter": "frames"
+        },
+        {
+          "json_path": "$.callsites[1].roles.frames.callers[1].upstream",
+          "node": {
+            "kind": "LOCAL_NAME_ASSIGNMENT",
+            "name": "frames",
+            "rhs": "load_feature_frames(raw_root=raw_root, pairs=pairs)",
+            "upstream": {
+              "call": "load_feature_frames",
+              "expression": "load_feature_frames(raw_root=raw_root, pairs=pairs)",
+              "kind": "FILE_OR_DATA_LOADER_CALL",
+              "literal_path_candidates": []
+            }
+          }
+        },
+        {
+          "json_path": "$.callsites[1].roles.frames.callers[1].upstream.upstream",
+          "node": {
+            "call": "load_feature_frames",
+            "expression": "load_feature_frames(raw_root=raw_root, pairs=pairs)",
+            "kind": "FILE_OR_DATA_LOADER_CALL",
+            "literal_path_candidates": []
+          }
+        }
+      ],
+      "leaf_id": "frames:$.callsites[1].roles.frames.callers[1].upstream.upstream",
+      "line_number": 853,
+      "originating_replay_callsite": {
+        "function": "run_all_portfolios",
+        "line": 420,
+        "path": "scripts/research/run_rd27_lifecycle_ablation.py"
+      },
+      "rev202_counted_in_role_summary": true,
+      "rev202_json_path": "$.callsites[1].roles.frames.callers[1].upstream.upstream",
+      "rev202_terminal": {
+        "call": "load_feature_frames",
+        "expression": "load_feature_frames(raw_root=raw_root, pairs=pairs)",
+        "kind": "FILE_OR_DATA_LOADER_CALL",
+        "literal_path_candidates": []
+      },
+      "rev202_terminal_kind": "FILE_OR_DATA_LOADER_CALL",
+      "rev202_upstream_edge_adjudication": "VALID_RD27_LOCAL_CALL",
+      "rev203_json_path": "$.callsites[1].roles.frames.branches[1].upstream.upstream",
+      "rev203_lost_loader_recognition": true,
+      "rev203_lost_previously_bound_artifact_authority": false,
+      "rev203_terminal": {
+        "call": "load_feature_frames",
+        "defs": 9,
+        "expr": "load_feature_frames(raw_root=raw_root, pairs=pairs)",
+        "kind": "UNRESOLVED_CALL_NONUNIQUE_OR_UNKNOWN",
+        "literal_paths": []
+      },
+      "rev203_terminal_kind": "UNRESOLVED_CALL_NONUNIQUE_OR_UNKNOWN",
+      "role": "frames",
+      "source_evidence": {
+        "evidence_id": "scripts/research/run_rd27_lifecycle_ablation.py:420-428",
+        "source_sha256": "7DFC388F3BF8EF6EFA16E0640CF924158999A9923674C7701B8919872755CBB5"
+      },
+      "source_file": "scripts/research/run_rd27_lifecycle_ablation.py",
+      "source_program_drift": false
+    },
+    {
+      "actual_argument_expression": "frames",
+      "difference_class": "TRACER_CAPABILITY_DIFFERENCE",
+      "edge_reason": "Each listed script binds run_all_portfolios to its OWN module-local function, not the RD27 definition.",
+      "enclosing_function": "main",
+      "exact_source_construct": "Module-local FunctionDef load_feature_frames or qualified rd31.load_feature_frames; rev203 reports defs=9 from unqualified-name ambiguity. That is not Python lexical binding.",
+      "full_rev202_lineage_path": [
+        {
+          "caller_binding": {
+            "caller_function": "main",
+            "caller_line": 989,
+            "caller_path": "scripts/research/run_rd28_evidence_gated_lifecycle.py",
+            "expression": "frames"
+          },
+          "json_path": "$.callsites[1].roles.frames",
+          "parameter": "frames"
+        },
+        {
+          "json_path": "$.callsites[1].roles.frames.callers[2].upstream",
+          "node": {
+            "kind": "LOCAL_NAME_ASSIGNMENT",
+            "name": "frames",
+            "rhs": "load_feature_frames(raw_root=raw_root, pairs=pairs)",
+            "upstream": {
+              "call": "load_feature_frames",
+              "expression": "load_feature_frames(raw_root=raw_root, pairs=pairs)",
+              "kind": "FILE_OR_DATA_LOADER_CALL",
+              "literal_path_candidates": []
+            }
+          }
+        },
+        {
+          "json_path": "$.callsites[1].roles.frames.callers[2].upstream.upstream",
+          "node": {
+            "call": "load_feature_frames",
+            "expression": "load_feature_frames(raw_root=raw_root, pairs=pairs)",
+            "kind": "FILE_OR_DATA_LOADER_CALL",
+            "literal_path_candidates": []
+          }
+        }
+      ],
+      "leaf_id": "frames:$.callsites[1].roles.frames.callers[2].upstream.upstream",
+      "line_number": 989,
+      "originating_replay_callsite": {
+        "function": "run_all_portfolios",
+        "line": 420,
+        "path": "scripts/research/run_rd27_lifecycle_ablation.py"
+      },
+      "rev202_counted_in_role_summary": true,
+      "rev202_json_path": "$.callsites[1].roles.frames.callers[2].upstream.upstream",
+      "rev202_terminal": {
+        "call": "load_feature_frames",
+        "expression": "load_feature_frames(raw_root=raw_root, pairs=pairs)",
+        "kind": "FILE_OR_DATA_LOADER_CALL",
+        "literal_path_candidates": []
+      },
+      "rev202_terminal_kind": "FILE_OR_DATA_LOADER_CALL",
+      "rev202_upstream_edge_adjudication": "INVALID_CROSS_MODULE_RUN_ALL_PORTFOLIOS_NAME_COLLISION",
+      "rev203_json_path": "$.callsites[1].roles.frames.branches[2].upstream.upstream",
+      "rev203_lost_loader_recognition": true,
+      "rev203_lost_previously_bound_artifact_authority": false,
+      "rev203_terminal": {
+        "call": "load_feature_frames",
+        "defs": 9,
+        "expr": "load_feature_frames(raw_root=raw_root, pairs=pairs)",
+        "kind": "UNRESOLVED_CALL_NONUNIQUE_OR_UNKNOWN",
+        "literal_paths": []
+      },
+      "rev203_terminal_kind": "UNRESOLVED_CALL_NONUNIQUE_OR_UNKNOWN",
+      "role": "frames",
+      "source_evidence": {
+        "evidence_id": "scripts/research/run_rd27_lifecycle_ablation.py:420-428",
+        "source_sha256": "7DFC388F3BF8EF6EFA16E0640CF924158999A9923674C7701B8919872755CBB5"
+      },
+      "source_file": "scripts/research/run_rd28_evidence_gated_lifecycle.py",
+      "source_program_drift": false
+    },
+    {
+      "actual_argument_expression": "frames",
+      "difference_class": "TRACER_CAPABILITY_DIFFERENCE",
+      "edge_reason": "Each listed script binds run_all_portfolios to its OWN module-local function, not the RD27 definition.",
+      "enclosing_function": "main",
+      "exact_source_construct": "Module-local FunctionDef load_feature_frames or qualified rd31.load_feature_frames; rev203 reports defs=9 from unqualified-name ambiguity. That is not Python lexical binding.",
+      "full_rev202_lineage_path": [
+        {
+          "caller_binding": {
+            "caller_function": "main",
+            "caller_line": 973,
+            "caller_path": "scripts/research/run_rd29_thesis_confidence_lifecycle.py",
+            "expression": "frames"
+          },
+          "json_path": "$.callsites[1].roles.frames",
+          "parameter": "frames"
+        },
+        {
+          "json_path": "$.callsites[1].roles.frames.callers[3].upstream",
+          "node": {
+            "kind": "LOCAL_NAME_ASSIGNMENT",
+            "name": "frames",
+            "rhs": "load_feature_frames(raw_root=raw_root, pairs=pairs)",
+            "upstream": {
+              "call": "load_feature_frames",
+              "expression": "load_feature_frames(raw_root=raw_root, pairs=pairs)",
+              "kind": "FILE_OR_DATA_LOADER_CALL",
+              "literal_path_candidates": []
+            }
+          }
+        },
+        {
+          "json_path": "$.callsites[1].roles.frames.callers[3].upstream.upstream",
+          "node": {
+            "call": "load_feature_frames",
+            "expression": "load_feature_frames(raw_root=raw_root, pairs=pairs)",
+            "kind": "FILE_OR_DATA_LOADER_CALL",
+            "literal_path_candidates": []
+          }
+        }
+      ],
+      "leaf_id": "frames:$.callsites[1].roles.frames.callers[3].upstream.upstream",
+      "line_number": 973,
+      "originating_replay_callsite": {
+        "function": "run_all_portfolios",
+        "line": 420,
+        "path": "scripts/research/run_rd27_lifecycle_ablation.py"
+      },
+      "rev202_counted_in_role_summary": true,
+      "rev202_json_path": "$.callsites[1].roles.frames.callers[3].upstream.upstream",
+      "rev202_terminal": {
+        "call": "load_feature_frames",
+        "expression": "load_feature_frames(raw_root=raw_root, pairs=pairs)",
+        "kind": "FILE_OR_DATA_LOADER_CALL",
+        "literal_path_candidates": []
+      },
+      "rev202_terminal_kind": "FILE_OR_DATA_LOADER_CALL",
+      "rev202_upstream_edge_adjudication": "INVALID_CROSS_MODULE_RUN_ALL_PORTFOLIOS_NAME_COLLISION",
+      "rev203_json_path": "$.callsites[1].roles.frames.branches[3].upstream.upstream",
+      "rev203_lost_loader_recognition": true,
+      "rev203_lost_previously_bound_artifact_authority": false,
+      "rev203_terminal": {
+        "call": "load_feature_frames",
+        "defs": 9,
+        "expr": "load_feature_frames(raw_root=raw_root, pairs=pairs)",
+        "kind": "UNRESOLVED_CALL_NONUNIQUE_OR_UNKNOWN",
+        "literal_paths": []
+      },
+      "rev203_terminal_kind": "UNRESOLVED_CALL_NONUNIQUE_OR_UNKNOWN",
+      "role": "frames",
+      "source_evidence": {
+        "evidence_id": "scripts/research/run_rd27_lifecycle_ablation.py:420-428",
+        "source_sha256": "7DFC388F3BF8EF6EFA16E0640CF924158999A9923674C7701B8919872755CBB5"
+      },
+      "source_file": "scripts/research/run_rd29_thesis_confidence_lifecycle.py",
+      "source_program_drift": false
+    },
+    {
+      "actual_argument_expression": "frames",
+      "difference_class": "TRACER_CAPABILITY_DIFFERENCE",
+      "edge_reason": "Each listed script binds run_all_portfolios to its OWN module-local function, not the RD27 definition.",
+      "enclosing_function": "main",
+      "exact_source_construct": "Module-local FunctionDef load_feature_frames or qualified rd31.load_feature_frames; rev203 reports defs=9 from unqualified-name ambiguity. That is not Python lexical binding.",
+      "full_rev202_lineage_path": [
+        {
+          "caller_binding": {
+            "caller_function": "main",
+            "caller_line": 1322,
+            "caller_path": "scripts/research/run_rd30_family_specialist_replacement_aware.py",
+            "expression": "frames"
+          },
+          "json_path": "$.callsites[1].roles.frames",
+          "parameter": "frames"
+        },
+        {
+          "json_path": "$.callsites[1].roles.frames.callers[4].upstream",
+          "node": {
+            "kind": "LOCAL_NAME_ASSIGNMENT",
+            "name": "frames",
+            "rhs": "load_feature_frames(raw_root=raw_root, pairs=pairs)",
+            "upstream": {
+              "call": "load_feature_frames",
+              "expression": "load_feature_frames(raw_root=raw_root, pairs=pairs)",
+              "kind": "FILE_OR_DATA_LOADER_CALL",
+              "literal_path_candidates": []
+            }
+          }
+        },
+        {
+          "json_path": "$.callsites[1].roles.frames.callers[4].upstream.upstream",
+          "node": {
+            "call": "load_feature_frames",
+            "expression": "load_feature_frames(raw_root=raw_root, pairs=pairs)",
+            "kind": "FILE_OR_DATA_LOADER_CALL",
+            "literal_path_candidates": []
+          }
+        }
+      ],
+      "leaf_id": "frames:$.callsites[1].roles.frames.callers[4].upstream.upstream",
+      "line_number": 1322,
+      "originating_replay_callsite": {
+        "function": "run_all_portfolios",
+        "line": 420,
+        "path": "scripts/research/run_rd27_lifecycle_ablation.py"
+      },
+      "rev202_counted_in_role_summary": true,
+      "rev202_json_path": "$.callsites[1].roles.frames.callers[4].upstream.upstream",
+      "rev202_terminal": {
+        "call": "load_feature_frames",
+        "expression": "load_feature_frames(raw_root=raw_root, pairs=pairs)",
+        "kind": "FILE_OR_DATA_LOADER_CALL",
+        "literal_path_candidates": []
+      },
+      "rev202_terminal_kind": "FILE_OR_DATA_LOADER_CALL",
+      "rev202_upstream_edge_adjudication": "INVALID_CROSS_MODULE_RUN_ALL_PORTFOLIOS_NAME_COLLISION",
+      "rev203_json_path": "$.callsites[1].roles.frames.branches[4].upstream.upstream",
+      "rev203_lost_loader_recognition": true,
+      "rev203_lost_previously_bound_artifact_authority": false,
+      "rev203_terminal": {
+        "call": "load_feature_frames",
+        "defs": 9,
+        "expr": "load_feature_frames(raw_root=raw_root, pairs=pairs)",
+        "kind": "UNRESOLVED_CALL_NONUNIQUE_OR_UNKNOWN",
+        "literal_paths": []
+      },
+      "rev203_terminal_kind": "UNRESOLVED_CALL_NONUNIQUE_OR_UNKNOWN",
+      "role": "frames",
+      "source_evidence": {
+        "evidence_id": "scripts/research/run_rd27_lifecycle_ablation.py:420-428",
+        "source_sha256": "7DFC388F3BF8EF6EFA16E0640CF924158999A9923674C7701B8919872755CBB5"
+      },
+      "source_file": "scripts/research/run_rd30_family_specialist_replacement_aware.py",
+      "source_program_drift": false
+    },
+    {
+      "actual_argument_expression": "frames",
+      "difference_class": "TRACER_CAPABILITY_DIFFERENCE",
+      "edge_reason": "Each listed script binds run_all_portfolios to its OWN module-local function, not the RD27 definition.",
+      "enclosing_function": "main",
+      "exact_source_construct": "Module-local FunctionDef load_feature_frames or qualified rd31.load_feature_frames; rev203 reports defs=9 from unqualified-name ambiguity. That is not Python lexical binding.",
+      "full_rev202_lineage_path": [
+        {
+          "caller_binding": {
+            "caller_function": "main",
+            "caller_line": 2192,
+            "caller_path": "scripts/research/run_rd31_market_regime_admission_governor.py",
+            "expression": "frames"
+          },
+          "json_path": "$.callsites[1].roles.frames",
+          "parameter": "frames"
+        },
+        {
+          "json_path": "$.callsites[1].roles.frames.callers[5].upstream",
+          "node": {
+            "kind": "LOCAL_NAME_ASSIGNMENT",
+            "name": "frames",
+            "rhs": "load_feature_frames(raw_root=raw_root, pairs=pairs)",
+            "upstream": {
+              "call": "load_feature_frames",
+              "expression": "load_feature_frames(raw_root=raw_root, pairs=pairs)",
+              "kind": "FILE_OR_DATA_LOADER_CALL",
+              "literal_path_candidates": []
+            }
+          }
+        },
+        {
+          "json_path": "$.callsites[1].roles.frames.callers[5].upstream.upstream",
+          "node": {
+            "call": "load_feature_frames",
+            "expression": "load_feature_frames(raw_root=raw_root, pairs=pairs)",
+            "kind": "FILE_OR_DATA_LOADER_CALL",
+            "literal_path_candidates": []
+          }
+        }
+      ],
+      "leaf_id": "frames:$.callsites[1].roles.frames.callers[5].upstream.upstream",
+      "line_number": 2192,
+      "originating_replay_callsite": {
+        "function": "run_all_portfolios",
+        "line": 420,
+        "path": "scripts/research/run_rd27_lifecycle_ablation.py"
+      },
+      "rev202_counted_in_role_summary": true,
+      "rev202_json_path": "$.callsites[1].roles.frames.callers[5].upstream.upstream",
+      "rev202_terminal": {
+        "call": "load_feature_frames",
+        "expression": "load_feature_frames(raw_root=raw_root, pairs=pairs)",
+        "kind": "FILE_OR_DATA_LOADER_CALL",
+        "literal_path_candidates": []
+      },
+      "rev202_terminal_kind": "FILE_OR_DATA_LOADER_CALL",
+      "rev202_upstream_edge_adjudication": "INVALID_CROSS_MODULE_RUN_ALL_PORTFOLIOS_NAME_COLLISION",
+      "rev203_json_path": "$.callsites[1].roles.frames.branches[5].upstream.upstream",
+      "rev203_lost_loader_recognition": true,
+      "rev203_lost_previously_bound_artifact_authority": false,
+      "rev203_terminal": {
+        "call": "load_feature_frames",
+        "defs": 9,
+        "expr": "load_feature_frames(raw_root=raw_root, pairs=pairs)",
+        "kind": "UNRESOLVED_CALL_NONUNIQUE_OR_UNKNOWN",
+        "literal_paths": []
+      },
+      "rev203_terminal_kind": "UNRESOLVED_CALL_NONUNIQUE_OR_UNKNOWN",
+      "role": "frames",
+      "source_evidence": {
+        "evidence_id": "scripts/research/run_rd27_lifecycle_ablation.py:420-428",
+        "source_sha256": "7DFC388F3BF8EF6EFA16E0640CF924158999A9923674C7701B8919872755CBB5"
+      },
+      "source_file": "scripts/research/run_rd31_market_regime_admission_governor.py",
+      "source_program_drift": false
+    },
+    {
+      "actual_argument_expression": "frames",
+      "difference_class": "TRACER_CAPABILITY_DIFFERENCE",
+      "edge_reason": "Each listed script binds run_all_portfolios to its OWN module-local function, not the RD27 definition.",
+      "enclosing_function": "main",
+      "exact_source_construct": "Module-local FunctionDef load_feature_frames or qualified rd31.load_feature_frames; rev203 reports defs=9 from unqualified-name ambiguity. That is not Python lexical binding.",
+      "full_rev202_lineage_path": [
+        {
+          "caller_binding": {
+            "caller_function": "main",
+            "caller_line": 1210,
+            "caller_path": "scripts/research/run_rd32_mb_signal_quality_admission.py",
+            "expression": "frames"
+          },
+          "json_path": "$.callsites[1].roles.frames",
+          "parameter": "frames"
+        },
+        {
+          "json_path": "$.callsites[1].roles.frames.callers[6].upstream",
+          "node": {
+            "kind": "LOCAL_NAME_ASSIGNMENT",
+            "name": "frames",
+            "rhs": "rd31.load_feature_frames(raw_root=raw_root, pairs=pairs)",
+            "upstream": {
+              "call": "load_feature_frames",
+              "expression": "rd31.load_feature_frames(raw_root=raw_root, pairs=pairs)",
+              "kind": "FILE_OR_DATA_LOADER_CALL",
+              "literal_path_candidates": []
+            }
+          }
+        },
+        {
+          "json_path": "$.callsites[1].roles.frames.callers[6].upstream.upstream",
+          "node": {
+            "call": "load_feature_frames",
+            "expression": "rd31.load_feature_frames(raw_root=raw_root, pairs=pairs)",
+            "kind": "FILE_OR_DATA_LOADER_CALL",
+            "literal_path_candidates": []
+          }
+        }
+      ],
+      "leaf_id": "frames:$.callsites[1].roles.frames.callers[6].upstream.upstream",
+      "line_number": 1210,
+      "originating_replay_callsite": {
+        "function": "run_all_portfolios",
+        "line": 420,
+        "path": "scripts/research/run_rd27_lifecycle_ablation.py"
+      },
+      "rev202_counted_in_role_summary": true,
+      "rev202_json_path": "$.callsites[1].roles.frames.callers[6].upstream.upstream",
+      "rev202_terminal": {
+        "call": "load_feature_frames",
+        "expression": "rd31.load_feature_frames(raw_root=raw_root, pairs=pairs)",
+        "kind": "FILE_OR_DATA_LOADER_CALL",
+        "literal_path_candidates": []
+      },
+      "rev202_terminal_kind": "FILE_OR_DATA_LOADER_CALL",
+      "rev202_upstream_edge_adjudication": "INVALID_CROSS_MODULE_RUN_ALL_PORTFOLIOS_NAME_COLLISION",
+      "rev203_json_path": "$.callsites[1].roles.frames.branches[6].upstream.upstream",
+      "rev203_lost_loader_recognition": true,
+      "rev203_lost_previously_bound_artifact_authority": false,
+      "rev203_terminal": {
+        "call": "load_feature_frames",
+        "defs": 9,
+        "expr": "rd31.load_feature_frames(raw_root=raw_root, pairs=pairs)",
+        "kind": "UNRESOLVED_CALL_NONUNIQUE_OR_UNKNOWN",
+        "literal_paths": []
+      },
+      "rev203_terminal_kind": "UNRESOLVED_CALL_NONUNIQUE_OR_UNKNOWN",
+      "role": "frames",
+      "source_evidence": {
+        "evidence_id": "scripts/research/run_rd27_lifecycle_ablation.py:420-428",
+        "source_sha256": "7DFC388F3BF8EF6EFA16E0640CF924158999A9923674C7701B8919872755CBB5"
+      },
+      "source_file": "scripts/research/run_rd32_mb_signal_quality_admission.py",
+      "source_program_drift": false
+    },
+    {
+      "actual_argument_expression": "frames",
+      "difference_class": "TRACER_CAPABILITY_DIFFERENCE",
+      "edge_reason": "Each listed script binds run_all_portfolios to its OWN module-local function, not the RD27 definition.",
+      "enclosing_function": "main",
+      "exact_source_construct": "Module-local FunctionDef load_feature_frames or qualified rd31.load_feature_frames; rev203 reports defs=9 from unqualified-name ambiguity. That is not Python lexical binding.",
+      "full_rev202_lineage_path": [
+        {
+          "caller_binding": {
+            "caller_function": "main",
+            "caller_line": 1602,
+            "caller_path": "scripts/research/run_rd33_temporal_mb_architecture.py",
+            "expression": "frames"
+          },
+          "json_path": "$.callsites[1].roles.frames",
+          "parameter": "frames"
+        },
+        {
+          "json_path": "$.callsites[1].roles.frames.callers[7].upstream",
+          "node": {
+            "kind": "LOCAL_NAME_ASSIGNMENT",
+            "name": "frames",
+            "rhs": "rd31.load_feature_frames(raw_root=raw_root, pairs=pairs)",
+            "upstream": {
+              "call": "load_feature_frames",
+              "expression": "rd31.load_feature_frames(raw_root=raw_root, pairs=pairs)",
+              "kind": "FILE_OR_DATA_LOADER_CALL",
+              "literal_path_candidates": []
+            }
+          }
+        },
+        {
+          "json_path": "$.callsites[1].roles.frames.callers[7].upstream.upstream",
+          "node": {
+            "call": "load_feature_frames",
+            "expression": "rd31.load_feature_frames(raw_root=raw_root, pairs=pairs)",
+            "kind": "FILE_OR_DATA_LOADER_CALL",
+            "literal_path_candidates": []
+          }
+        }
+      ],
+      "leaf_id": "frames:$.callsites[1].roles.frames.callers[7].upstream.upstream",
+      "line_number": 1602,
+      "originating_replay_callsite": {
+        "function": "run_all_portfolios",
+        "line": 420,
+        "path": "scripts/research/run_rd27_lifecycle_ablation.py"
+      },
+      "rev202_counted_in_role_summary": true,
+      "rev202_json_path": "$.callsites[1].roles.frames.callers[7].upstream.upstream",
+      "rev202_terminal": {
+        "call": "load_feature_frames",
+        "expression": "rd31.load_feature_frames(raw_root=raw_root, pairs=pairs)",
+        "kind": "FILE_OR_DATA_LOADER_CALL",
+        "literal_path_candidates": []
+      },
+      "rev202_terminal_kind": "FILE_OR_DATA_LOADER_CALL",
+      "rev202_upstream_edge_adjudication": "INVALID_CROSS_MODULE_RUN_ALL_PORTFOLIOS_NAME_COLLISION",
+      "rev203_json_path": "$.callsites[1].roles.frames.branches[7].upstream.upstream",
+      "rev203_lost_loader_recognition": true,
+      "rev203_lost_previously_bound_artifact_authority": false,
+      "rev203_terminal": {
+        "call": "load_feature_frames",
+        "defs": 9,
+        "expr": "rd31.load_feature_frames(raw_root=raw_root, pairs=pairs)",
+        "kind": "UNRESOLVED_CALL_NONUNIQUE_OR_UNKNOWN",
+        "literal_paths": []
+      },
+      "rev203_terminal_kind": "UNRESOLVED_CALL_NONUNIQUE_OR_UNKNOWN",
+      "role": "frames",
+      "source_evidence": {
+        "evidence_id": "scripts/research/run_rd27_lifecycle_ablation.py:420-428",
+        "source_sha256": "7DFC388F3BF8EF6EFA16E0640CF924158999A9923674C7701B8919872755CBB5"
+      },
+      "source_file": "scripts/research/run_rd33_temporal_mb_architecture.py",
+      "source_program_drift": false
+    },
+    {
+      "actual_argument_expression": "events",
+      "difference_class": "OTHER_EXPLICIT_REASON",
+      "enclosing_function": "replay_winner_retention_candidate",
+      "exact_source_construct": "Empty FUNCTION_PARAMETER.callers=[] was omitted from rev202 role-summary leaf counts; rev203 counts it.",
+      "full_rev202_lineage_path": [
+        {
+          "caller_binding": {
+            "caller_function": "replay_winner_retention_candidate",
+            "caller_line": 302,
+            "caller_path": "src/spotbot/research/a10_selective_protection_asymmetry.py",
+            "expression": "events"
+          },
+          "json_path": "$.callsites[2].roles.events",
+          "parameter": "events"
+        },
+        {
+          "json_path": "$.callsites[2].roles.events.callers[0].upstream",
+          "node": {
+            "caller_binding_count": 0,
+            "callers": [],
+            "kind": "FUNCTION_PARAMETER",
+            "name": "events"
+          }
+        }
+      ],
+      "leaf_id": "events:$.callsites[2].roles.events.callers[0].upstream",
+      "line_number": 302,
+      "originating_replay_callsite": {
+        "function": "_replay_selective",
+        "line": 248,
+        "path": "src/spotbot/research/a10_selective_protection_asymmetry.py"
+      },
+      "rev202_counted_in_role_summary": false,
+      "rev202_json_path": "$.callsites[2].roles.events.callers[0].upstream",
+      "rev202_terminal": {
+        "caller_binding_count": 0,
+        "callers": [],
+        "kind": "FUNCTION_PARAMETER",
+        "name": "events"
+      },
+      "rev202_terminal_kind": "FUNCTION_PARAMETER",
+      "rev203_json_path": "$.callsites[2].roles.events.branches[0].upstream",
+      "rev203_lost_loader_recognition": false,
+      "rev203_lost_previously_bound_artifact_authority": false,
+      "rev203_terminal": {
+        "kind": "UNRESOLVED_FUNCTION_PARAMETER_NO_CALLERS",
+        "name": "events"
+      },
+      "rev203_terminal_kind": "UNRESOLVED_FUNCTION_PARAMETER_NO_CALLERS",
+      "role": "events",
+      "source_evidence": {
+        "evidence_id": "src/spotbot/research/a10_selective_protection_asymmetry.py:248-258",
+        "source_sha256": "BF4794A3F42A547A3D20D80D0ACD7A9132973B68BA3FFB2738B3EF29ECD0AB0F"
+      },
+      "source_file": "src/spotbot/research/a10_selective_protection_asymmetry.py",
+      "source_program_drift": false
+    },
+    {
+      "actual_argument_expression": "events",
+      "difference_class": "OTHER_EXPLICIT_REASON",
+      "enclosing_function": "replay_loser_rescue_diagnostic",
+      "exact_source_construct": "Empty FUNCTION_PARAMETER.callers=[] was omitted from rev202 role-summary leaf counts; rev203 counts it.",
+      "full_rev202_lineage_path": [
+        {
+          "caller_binding": {
+            "caller_function": "replay_loser_rescue_diagnostic",
+            "caller_line": 329,
+            "caller_path": "src/spotbot/research/a10_selective_protection_asymmetry.py",
+            "expression": "events"
+          },
+          "json_path": "$.callsites[2].roles.events",
+          "parameter": "events"
+        },
+        {
+          "json_path": "$.callsites[2].roles.events.callers[1].upstream",
+          "node": {
+            "caller_binding_count": 0,
+            "callers": [],
+            "kind": "FUNCTION_PARAMETER",
+            "name": "events"
+          }
+        }
+      ],
+      "leaf_id": "events:$.callsites[2].roles.events.callers[1].upstream",
+      "line_number": 329,
+      "originating_replay_callsite": {
+        "function": "_replay_selective",
+        "line": 248,
+        "path": "src/spotbot/research/a10_selective_protection_asymmetry.py"
+      },
+      "rev202_counted_in_role_summary": false,
+      "rev202_json_path": "$.callsites[2].roles.events.callers[1].upstream",
+      "rev202_terminal": {
+        "caller_binding_count": 0,
+        "callers": [],
+        "kind": "FUNCTION_PARAMETER",
+        "name": "events"
+      },
+      "rev202_terminal_kind": "FUNCTION_PARAMETER",
+      "rev203_json_path": "$.callsites[2].roles.events.branches[1].upstream",
+      "rev203_lost_loader_recognition": false,
+      "rev203_lost_previously_bound_artifact_authority": false,
+      "rev203_terminal": {
+        "kind": "UNRESOLVED_FUNCTION_PARAMETER_NO_CALLERS",
+        "name": "events"
+      },
+      "rev203_terminal_kind": "UNRESOLVED_FUNCTION_PARAMETER_NO_CALLERS",
+      "role": "events",
+      "source_evidence": {
+        "evidence_id": "src/spotbot/research/a10_selective_protection_asymmetry.py:248-258",
+        "source_sha256": "BF4794A3F42A547A3D20D80D0ACD7A9132973B68BA3FFB2738B3EF29ECD0AB0F"
+      },
+      "source_file": "src/spotbot/research/a10_selective_protection_asymmetry.py",
+      "source_program_drift": false
+    },
+    {
+      "actual_argument_expression": "frames",
+      "difference_class": "OTHER_EXPLICIT_REASON",
+      "enclosing_function": "replay_winner_retention_candidate",
+      "exact_source_construct": "Empty FUNCTION_PARAMETER.callers=[] was omitted from rev202 role-summary leaf counts; rev203 counts it.",
+      "full_rev202_lineage_path": [
+        {
+          "caller_binding": {
+            "caller_function": "replay_winner_retention_candidate",
+            "caller_line": 302,
+            "caller_path": "src/spotbot/research/a10_selective_protection_asymmetry.py",
+            "expression": "frames"
+          },
+          "json_path": "$.callsites[2].roles.frames",
+          "parameter": "frames"
+        },
+        {
+          "json_path": "$.callsites[2].roles.frames.callers[0].upstream",
+          "node": {
+            "caller_binding_count": 0,
+            "callers": [],
+            "kind": "FUNCTION_PARAMETER",
+            "name": "frames"
+          }
+        }
+      ],
+      "leaf_id": "frames:$.callsites[2].roles.frames.callers[0].upstream",
+      "line_number": 302,
+      "originating_replay_callsite": {
+        "function": "_replay_selective",
+        "line": 248,
+        "path": "src/spotbot/research/a10_selective_protection_asymmetry.py"
+      },
+      "rev202_counted_in_role_summary": false,
+      "rev202_json_path": "$.callsites[2].roles.frames.callers[0].upstream",
+      "rev202_terminal": {
+        "caller_binding_count": 0,
+        "callers": [],
+        "kind": "FUNCTION_PARAMETER",
+        "name": "frames"
+      },
+      "rev202_terminal_kind": "FUNCTION_PARAMETER",
+      "rev203_json_path": "$.callsites[2].roles.frames.branches[0].upstream",
+      "rev203_lost_loader_recognition": false,
+      "rev203_lost_previously_bound_artifact_authority": false,
+      "rev203_terminal": {
+        "kind": "UNRESOLVED_FUNCTION_PARAMETER_NO_CALLERS",
+        "name": "frames"
+      },
+      "rev203_terminal_kind": "UNRESOLVED_FUNCTION_PARAMETER_NO_CALLERS",
+      "role": "frames",
+      "source_evidence": {
+        "evidence_id": "src/spotbot/research/a10_selective_protection_asymmetry.py:248-258",
+        "source_sha256": "BF4794A3F42A547A3D20D80D0ACD7A9132973B68BA3FFB2738B3EF29ECD0AB0F"
+      },
+      "source_file": "src/spotbot/research/a10_selective_protection_asymmetry.py",
+      "source_program_drift": false
+    },
+    {
+      "actual_argument_expression": "frames",
+      "difference_class": "OTHER_EXPLICIT_REASON",
+      "enclosing_function": "replay_loser_rescue_diagnostic",
+      "exact_source_construct": "Empty FUNCTION_PARAMETER.callers=[] was omitted from rev202 role-summary leaf counts; rev203 counts it.",
+      "full_rev202_lineage_path": [
+        {
+          "caller_binding": {
+            "caller_function": "replay_loser_rescue_diagnostic",
+            "caller_line": 329,
+            "caller_path": "src/spotbot/research/a10_selective_protection_asymmetry.py",
+            "expression": "frames"
+          },
+          "json_path": "$.callsites[2].roles.frames",
+          "parameter": "frames"
+        },
+        {
+          "json_path": "$.callsites[2].roles.frames.callers[1].upstream",
+          "node": {
+            "caller_binding_count": 0,
+            "callers": [],
+            "kind": "FUNCTION_PARAMETER",
+            "name": "frames"
+          }
+        }
+      ],
+      "leaf_id": "frames:$.callsites[2].roles.frames.callers[1].upstream",
+      "line_number": 329,
+      "originating_replay_callsite": {
+        "function": "_replay_selective",
+        "line": 248,
+        "path": "src/spotbot/research/a10_selective_protection_asymmetry.py"
+      },
+      "rev202_counted_in_role_summary": false,
+      "rev202_json_path": "$.callsites[2].roles.frames.callers[1].upstream",
+      "rev202_terminal": {
+        "caller_binding_count": 0,
+        "callers": [],
+        "kind": "FUNCTION_PARAMETER",
+        "name": "frames"
+      },
+      "rev202_terminal_kind": "FUNCTION_PARAMETER",
+      "rev203_json_path": "$.callsites[2].roles.frames.branches[1].upstream",
+      "rev203_lost_loader_recognition": false,
+      "rev203_lost_previously_bound_artifact_authority": false,
+      "rev203_terminal": {
+        "kind": "UNRESOLVED_FUNCTION_PARAMETER_NO_CALLERS",
+        "name": "frames"
+      },
+      "rev203_terminal_kind": "UNRESOLVED_FUNCTION_PARAMETER_NO_CALLERS",
+      "role": "frames",
+      "source_evidence": {
+        "evidence_id": "src/spotbot/research/a10_selective_protection_asymmetry.py:248-258",
+        "source_sha256": "BF4794A3F42A547A3D20D80D0ACD7A9132973B68BA3FFB2738B3EF29ECD0AB0F"
+      },
+      "source_file": "src/spotbot/research/a10_selective_protection_asymmetry.py",
+      "source_program_drift": false
+    },
+    {
+      "actual_argument_expression": "events",
+      "difference_class": "OTHER_EXPLICIT_REASON",
+      "enclosing_function": "replay_reversible_floor_candidate",
+      "exact_source_construct": "Empty FUNCTION_PARAMETER.callers=[] was omitted from rev202 role-summary leaf counts; rev203 counts it.",
+      "full_rev202_lineage_path": [
+        {
+          "json_path": "$.callsites[3].roles.events",
+          "node": {
+            "caller_binding_count": 0,
+            "callers": [],
+            "kind": "FUNCTION_PARAMETER",
+            "name": "events"
+          }
+        }
+      ],
+      "leaf_id": "events:$.callsites[3].roles.events",
+      "line_number": 132,
+      "originating_replay_callsite": {
+        "function": "replay_reversible_floor_candidate",
+        "line": 132,
+        "path": "src/spotbot/research/a4r1_reversible_floor_replay.py"
+      },
+      "rev202_counted_in_role_summary": false,
+      "rev202_json_path": "$.callsites[3].roles.events",
+      "rev202_terminal": {
+        "caller_binding_count": 0,
+        "callers": [],
+        "kind": "FUNCTION_PARAMETER",
+        "name": "events"
+      },
+      "rev202_terminal_kind": "FUNCTION_PARAMETER",
+      "rev203_json_path": "$.callsites[3].roles.events",
+      "rev203_lost_loader_recognition": false,
+      "rev203_lost_previously_bound_artifact_authority": false,
+      "rev203_terminal": {
+        "kind": "UNRESOLVED_FUNCTION_PARAMETER_NO_CALLERS",
+        "name": "events"
+      },
+      "rev203_terminal_kind": "UNRESOLVED_FUNCTION_PARAMETER_NO_CALLERS",
+      "role": "events",
+      "source_evidence": {
+        "evidence_id": "src/spotbot/research/a4r1_reversible_floor_replay.py:132-142",
+        "source_sha256": "161B7680A2098BBE97E4B9BE3A9BA7F0A918AAD04926CBA6F783CED7B97FE16E"
+      },
+      "source_file": "src/spotbot/research/a4r1_reversible_floor_replay.py",
+      "source_program_drift": false
+    },
+    {
+      "actual_argument_expression": "frames",
+      "difference_class": "OTHER_EXPLICIT_REASON",
+      "enclosing_function": "replay_reversible_floor_candidate",
+      "exact_source_construct": "Empty FUNCTION_PARAMETER.callers=[] was omitted from rev202 role-summary leaf counts; rev203 counts it.",
+      "full_rev202_lineage_path": [
+        {
+          "json_path": "$.callsites[3].roles.frames",
+          "node": {
+            "caller_binding_count": 0,
+            "callers": [],
+            "kind": "FUNCTION_PARAMETER",
+            "name": "frames"
+          }
+        }
+      ],
+      "leaf_id": "frames:$.callsites[3].roles.frames",
+      "line_number": 132,
+      "originating_replay_callsite": {
+        "function": "replay_reversible_floor_candidate",
+        "line": 132,
+        "path": "src/spotbot/research/a4r1_reversible_floor_replay.py"
+      },
+      "rev202_counted_in_role_summary": false,
+      "rev202_json_path": "$.callsites[3].roles.frames",
+      "rev202_terminal": {
+        "caller_binding_count": 0,
+        "callers": [],
+        "kind": "FUNCTION_PARAMETER",
+        "name": "frames"
+      },
+      "rev202_terminal_kind": "FUNCTION_PARAMETER",
+      "rev203_json_path": "$.callsites[3].roles.frames",
+      "rev203_lost_loader_recognition": false,
+      "rev203_lost_previously_bound_artifact_authority": false,
+      "rev203_terminal": {
+        "kind": "UNRESOLVED_FUNCTION_PARAMETER_NO_CALLERS",
+        "name": "frames"
+      },
+      "rev203_terminal_kind": "UNRESOLVED_FUNCTION_PARAMETER_NO_CALLERS",
+      "role": "frames",
+      "source_evidence": {
+        "evidence_id": "src/spotbot/research/a4r1_reversible_floor_replay.py:132-142",
+        "source_sha256": "161B7680A2098BBE97E4B9BE3A9BA7F0A918AAD04926CBA6F783CED7B97FE16E"
+      },
+      "source_file": "src/spotbot/research/a4r1_reversible_floor_replay.py",
+      "source_program_drift": false
+    },
+    {
+      "actual_argument_expression": "events",
+      "difference_class": "OTHER_EXPLICIT_REASON",
+      "enclosing_function": "main",
+      "exact_source_construct": "Attribute(Call): pandas filtered DataFrame.copy(), not a free function named copy.",
+      "full_rev202_lineage_path": [
+        {
+          "caller_binding": {
+            "caller_function": "main",
+            "caller_line": 241,
+            "caller_path": "scripts/research/run_eaa_same_pair_secondary_shadow_parity.py",
+            "expression": "subset"
+          },
+          "json_path": "$.callsites[4].roles.events",
+          "parameter": "events"
+        },
+        {
+          "json_path": "$.callsites[4].roles.events.callers[0].upstream",
+          "node": {
+            "kind": "LOCAL_NAME_ASSIGNMENT",
+            "name": "subset",
+            "rhs": "signals[signals['period_id'] == period_id].copy()",
+            "upstream": {
+              "call": "copy",
+              "definition_count": 0,
+              "expression": "signals[signals['period_id'] == period_id].copy()",
+              "kind": "CALL_UNRESOLVED_OR_NONUNIQUE",
+              "literal_path_candidates": []
+            }
+          }
+        },
+        {
+          "json_path": "$.callsites[4].roles.events.callers[0].upstream.upstream",
+          "node": {
+            "call": "copy",
+            "definition_count": 0,
+            "expression": "signals[signals['period_id'] == period_id].copy()",
+            "kind": "CALL_UNRESOLVED_OR_NONUNIQUE",
+            "literal_path_candidates": []
+          }
+        }
+      ],
+      "leaf_id": "events:$.callsites[4].roles.events.callers[0].upstream.upstream",
+      "line_number": 241,
+      "originating_replay_callsite": {
+        "function": "replay_same_pair_secondary_shadow",
+        "line": 203,
+        "path": "src/spotbot/research/eaa_same_pair_secondary_shadow.py"
+      },
+      "rev202_counted_in_role_summary": true,
+      "rev202_json_path": "$.callsites[4].roles.events.callers[0].upstream.upstream",
+      "rev202_terminal": {
+        "call": "copy",
+        "definition_count": 0,
+        "expression": "signals[signals['period_id'] == period_id].copy()",
+        "kind": "CALL_UNRESOLVED_OR_NONUNIQUE",
+        "literal_path_candidates": []
+      },
+      "rev202_terminal_kind": "CALL_UNRESOLVED_OR_NONUNIQUE",
+      "rev203_json_path": "$.callsites[4].roles.events.branches[0].upstream.upstream",
+      "rev203_lost_loader_recognition": false,
+      "rev203_lost_previously_bound_artifact_authority": false,
+      "rev203_terminal": {
+        "call": "copy",
+        "defs": 0,
+        "expr": "signals[signals['period_id'] == period_id].copy()",
+        "kind": "UNRESOLVED_CALL_NONUNIQUE_OR_UNKNOWN",
+        "literal_paths": []
+      },
+      "rev203_terminal_kind": "UNRESOLVED_CALL_NONUNIQUE_OR_UNKNOWN",
+      "role": "events",
+      "source_evidence": {
+        "evidence_id": "src/spotbot/research/eaa_same_pair_secondary_shadow.py:203-213",
+        "source_sha256": "1096CD43E814A08E8F6BB969CD2722FA883C04D54C9462AFD461489AE3E76390"
+      },
+      "source_file": "scripts/research/run_eaa_same_pair_secondary_shadow_parity.py",
+      "source_program_drift": false
+    },
+    {
+      "actual_argument_expression": "events",
+      "difference_class": "OTHER_EXPLICIT_REASON",
+      "enclosing_function": "main",
+      "exact_source_construct": "Attribute(Call): pandas filtered DataFrame.copy(), not a free function named copy.",
+      "full_rev202_lineage_path": [
+        {
+          "caller_binding": {
+            "caller_function": "main",
+            "caller_line": 251,
+            "caller_path": "scripts/research/run_eaa_same_pair_secondary_shadow_parity.py",
+            "expression": "subset"
+          },
+          "json_path": "$.callsites[4].roles.events",
+          "parameter": "events"
+        },
+        {
+          "json_path": "$.callsites[4].roles.events.callers[1].upstream",
+          "node": {
+            "kind": "LOCAL_NAME_ASSIGNMENT",
+            "name": "subset",
+            "rhs": "signals[signals['period_id'] == period_id].copy()",
+            "upstream": {
+              "call": "copy",
+              "definition_count": 0,
+              "expression": "signals[signals['period_id'] == period_id].copy()",
+              "kind": "CALL_UNRESOLVED_OR_NONUNIQUE",
+              "literal_path_candidates": []
+            }
+          }
+        },
+        {
+          "json_path": "$.callsites[4].roles.events.callers[1].upstream.upstream",
+          "node": {
+            "call": "copy",
+            "definition_count": 0,
+            "expression": "signals[signals['period_id'] == period_id].copy()",
+            "kind": "CALL_UNRESOLVED_OR_NONUNIQUE",
+            "literal_path_candidates": []
+          }
+        }
+      ],
+      "leaf_id": "events:$.callsites[4].roles.events.callers[1].upstream.upstream",
+      "line_number": 251,
+      "originating_replay_callsite": {
+        "function": "replay_same_pair_secondary_shadow",
+        "line": 203,
+        "path": "src/spotbot/research/eaa_same_pair_secondary_shadow.py"
+      },
+      "rev202_counted_in_role_summary": true,
+      "rev202_json_path": "$.callsites[4].roles.events.callers[1].upstream.upstream",
+      "rev202_terminal": {
+        "call": "copy",
+        "definition_count": 0,
+        "expression": "signals[signals['period_id'] == period_id].copy()",
+        "kind": "CALL_UNRESOLVED_OR_NONUNIQUE",
+        "literal_path_candidates": []
+      },
+      "rev202_terminal_kind": "CALL_UNRESOLVED_OR_NONUNIQUE",
+      "rev203_json_path": "$.callsites[4].roles.events.branches[1].upstream.upstream",
+      "rev203_lost_loader_recognition": false,
+      "rev203_lost_previously_bound_artifact_authority": false,
+      "rev203_terminal": {
+        "call": "copy",
+        "defs": 0,
+        "expr": "signals[signals['period_id'] == period_id].copy()",
+        "kind": "UNRESOLVED_CALL_NONUNIQUE_OR_UNKNOWN",
+        "literal_paths": []
+      },
+      "rev203_terminal_kind": "UNRESOLVED_CALL_NONUNIQUE_OR_UNKNOWN",
+      "role": "events",
+      "source_evidence": {
+        "evidence_id": "src/spotbot/research/eaa_same_pair_secondary_shadow.py:203-213",
+        "source_sha256": "1096CD43E814A08E8F6BB969CD2722FA883C04D54C9462AFD461489AE3E76390"
+      },
+      "source_file": "scripts/research/run_eaa_same_pair_secondary_shadow_parity.py",
+      "source_program_drift": false
+    },
+    {
+      "actual_argument_expression": "frames",
+      "difference_class": "OTHER_EXPLICIT_REASON",
+      "enclosing_function": "main",
+      "exact_source_construct": "Tuple assignment frames, state_frame, raw_audit = market_authority(...); first return element is frames.",
+      "full_rev202_lineage_path": [
+        {
+          "caller_binding": {
+            "caller_function": "main",
+            "caller_line": 241,
+            "caller_path": "scripts/research/run_eaa_same_pair_secondary_shadow_parity.py",
+            "expression": "frames"
+          },
+          "json_path": "$.callsites[4].roles.frames",
+          "parameter": "frames"
+        },
+        {
+          "json_path": "$.callsites[4].roles.frames.callers[0].upstream",
+          "node": {
+            "kind": "NAME_UNRESOLVED",
+            "name": "frames"
+          }
+        }
+      ],
+      "leaf_id": "frames:$.callsites[4].roles.frames.callers[0].upstream",
+      "line_number": 241,
+      "originating_replay_callsite": {
+        "function": "replay_same_pair_secondary_shadow",
+        "line": 203,
+        "path": "src/spotbot/research/eaa_same_pair_secondary_shadow.py"
+      },
+      "rev202_counted_in_role_summary": true,
+      "rev202_json_path": "$.callsites[4].roles.frames.callers[0].upstream",
+      "rev202_terminal": {
+        "kind": "NAME_UNRESOLVED",
+        "name": "frames"
+      },
+      "rev202_terminal_kind": "NAME_UNRESOLVED",
+      "rev203_json_path": "$.callsites[4].roles.frames.branches[0].upstream",
+      "rev203_lost_loader_recognition": false,
+      "rev203_lost_previously_bound_artifact_authority": false,
+      "rev203_terminal": {
+        "kind": "UNRESOLVED_NAME",
+        "name": "frames"
+      },
+      "rev203_terminal_kind": "UNRESOLVED_NAME",
+      "role": "frames",
+      "source_evidence": {
+        "evidence_id": "src/spotbot/research/eaa_same_pair_secondary_shadow.py:203-213",
+        "source_sha256": "1096CD43E814A08E8F6BB969CD2722FA883C04D54C9462AFD461489AE3E76390"
+      },
+      "source_file": "scripts/research/run_eaa_same_pair_secondary_shadow_parity.py",
+      "source_program_drift": false
+    },
+    {
+      "actual_argument_expression": "frames",
+      "difference_class": "OTHER_EXPLICIT_REASON",
+      "enclosing_function": "main",
+      "exact_source_construct": "Tuple assignment frames, state_frame, raw_audit = market_authority(...); first return element is frames.",
+      "full_rev202_lineage_path": [
+        {
+          "caller_binding": {
+            "caller_function": "main",
+            "caller_line": 251,
+            "caller_path": "scripts/research/run_eaa_same_pair_secondary_shadow_parity.py",
+            "expression": "frames"
+          },
+          "json_path": "$.callsites[4].roles.frames",
+          "parameter": "frames"
+        },
+        {
+          "json_path": "$.callsites[4].roles.frames.callers[1].upstream",
+          "node": {
+            "kind": "NAME_UNRESOLVED",
+            "name": "frames"
+          }
+        }
+      ],
+      "leaf_id": "frames:$.callsites[4].roles.frames.callers[1].upstream",
+      "line_number": 251,
+      "originating_replay_callsite": {
+        "function": "replay_same_pair_secondary_shadow",
+        "line": 203,
+        "path": "src/spotbot/research/eaa_same_pair_secondary_shadow.py"
+      },
+      "rev202_counted_in_role_summary": true,
+      "rev202_json_path": "$.callsites[4].roles.frames.callers[1].upstream",
+      "rev202_terminal": {
+        "kind": "NAME_UNRESOLVED",
+        "name": "frames"
+      },
+      "rev202_terminal_kind": "NAME_UNRESOLVED",
+      "rev203_json_path": "$.callsites[4].roles.frames.branches[1].upstream",
+      "rev203_lost_loader_recognition": false,
+      "rev203_lost_previously_bound_artifact_authority": false,
+      "rev203_terminal": {
+        "kind": "UNRESOLVED_NAME",
+        "name": "frames"
+      },
+      "rev203_terminal_kind": "UNRESOLVED_NAME",
+      "role": "frames",
+      "source_evidence": {
+        "evidence_id": "src/spotbot/research/eaa_same_pair_secondary_shadow.py:203-213",
+        "source_sha256": "1096CD43E814A08E8F6BB969CD2722FA883C04D54C9462AFD461489AE3E76390"
+      },
+      "source_file": "scripts/research/run_eaa_same_pair_secondary_shadow_parity.py",
+      "source_program_drift": false
+    }
+  ],
+  "status": "PASS",
+  "tracer_implementation_not_invented": "Behavior adjudicated from exact governed nodes and Python lexical source binding; prior tracer code not reimplemented."
+}

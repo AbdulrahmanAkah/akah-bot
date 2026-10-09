@@ -1,0 +1,27 @@
+{
+  "task_id": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_ISOLATED_2022_ACQUISITION_V1",
+  "task_start_revision": 223,
+  "task_start_head": "2144788af0cccf17d56a796d1842e0609d3743fe",
+  "branch": "research/rd48-cross-venue-price-level-basis-direct-utility-v1",
+  "objective": "Freeze native membership pair scope and acquire only explicitly server-bounded 2022 candles into an immutable isolated research root; verify schema, chronology and coverage without replay.",
+  "status": "PASS",
+  "resolution_class": "ISOLATED_2022_ACQUISITION_AND_CONTINUITY_VERIFIED",
+  "next_bottleneck": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_2022_SIGNAL_AND_STATE_INPUT_CONSTRUCTION_V1",
+  "summary": "15 pairs, 127888 lawful 2022 close-time rows from 135 explicitly bounded requests; no duplicates/internal gaps or protected rows. LUNC partial prefix predates membership by 2934h; listing cause not inferred. Native raw filesystem metadata unchanged. 22 safety tests PASS; no replay.",
+  "north_star_effect": "Prepare reproducible isolated native inputs without protected-year access.",
+  "state_updates": {"isolated_2022_1h_data_ready": true, "ready_for_native_replay": false},
+  "evidence": ["governance/rnb_acquisition/preflight.json", "governance/rnb_acquisition/acquisition_result.json", "governance/rnb_acquisition/verified_manifest.json", "governance/rnb_acquisition/current_raw_state_before.json", "governance/rnb_acquisition/current_raw_state_after.json", "tests/research/test_rnb_acquisition.py"],
+  "firewall": {
+    "lookahead_or_future_information_used": false,
+    "pair_or_event_identity_used_as_runtime_rule": false,
+    "posthoc_outcome_threshold_search_used": false,
+    "2023_new_raw_or_replay_accessed": false,
+    "2024_used_as_fresh_holdout": false,
+    "2024_used_to_define_new_runtime_rule": false,
+    "2025_accessed": false,
+    "production_changed": false,
+    "native_replay_executed": false,
+    "economic_analysis": false,
+    "push": false
+  }
+}

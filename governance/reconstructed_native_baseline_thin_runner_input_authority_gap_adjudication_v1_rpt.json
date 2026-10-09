@@ -1,0 +1,96 @@
+{
+  "authority_bindings": {
+    "direction_sha256": "177532749DEE1987A40FA408190C9DBD6BD6328FDC3BC1F3D50181F23199B663",
+    "previous_input_contract_sha256": "055E9FD7C4E6CFFEAB37F9E7225C61F75292E609356B324BA60D3E3B307E4D77",
+    "recorder_protocol_sha256": "3EBD673458E1B4EFA21A9568BD58E4EA8F3D255ACA366339182A62592DDC52D6",
+    "roadmap_sha256": "F15E0DEB7BF6DC1B5660D5476E348F837548D8A9C097B7A6B919A32D89CA2DBE",
+    "study_contract_path": "governance/AKAH_BOT_RECONSTRUCTED_NATIVE_BASELINE_STUDY_CONTRACT_V1.json",
+    "study_contract_sha256": "58878E770CAFD36F15DC10EBEDB71EFA3E2EE2537B4139FD73E7DF62B0AE3364",
+    "updated_input_contract_path": "governance/reconstructed_native_baseline_thin_runner_input_authority_gap_adjudication_v1/updated_thin_runner_input_contract.json",
+    "updated_input_contract_sha256": "C3009979C4D4635565B9ABEC18B2251928BF199F8C5189E9AAE98D44B3D553B8"
+  },
+  "branch": "research/rd48-cross-venue-price-level-basis-direct-utility-v1",
+  "evidence": [
+    {
+      "path": "governance/reconstructed_native_baseline_thin_runner_input_authority_gap_adjudication_v1/source_symbol_and_call_index.json",
+      "sha256": "034DF211DB9A5D807237428A7438755A363A022FF9F218FF41278DA40C1D85A3"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_thin_runner_input_authority_gap_adjudication_v1/scalar_authority_trace.json",
+      "sha256": "17801959514C9F22604C5DC4E70EDFF0CB6651E37E9E659F1CC3198F5994272B"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_thin_runner_input_authority_gap_adjudication_v1/dynamic_authority_trace.json",
+      "sha256": "89E52F7D5460B7DA3C193B50350EA47988A10CF486BF917BA2F9A37F862797F9"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_thin_runner_input_authority_gap_adjudication_v1/dynamic_pit_semantic_trace.json",
+      "sha256": "C3D267CA15A763DE7B516A5BBAA64B13B80FE0F285807813A5DD7BE174483746"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_thin_runner_input_authority_gap_adjudication_v1/role_by_role_gap_adjudication.json",
+      "sha256": "4A5D88982C317B8E081E8D066C69A3D13ED530A8038372D47F99FBEBB9C9A62E"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_thin_runner_input_authority_gap_adjudication_v1/updated_thin_runner_input_contract.json",
+      "sha256": "C3009979C4D4635565B9ABEC18B2251928BF199F8C5189E9AAE98D44B3D553B8"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_thin_runner_input_authority_gap_adjudication_v1.json",
+      "sha256": "B65FD50965A12BE2398E16A50A7E9CA4E1DC78973C95A538502B011E8DB1DAEB"
+    }
+  ],
+  "firewall": {
+    "economic_analysis": false,
+    "git_fetch": false,
+    "historical_executable_search_reopened": false,
+    "market_rows_read": false,
+    "native_replay_executed": false,
+    "network": false,
+    "protected_years_opened": false,
+    "push": false,
+    "source_mutation": false
+  },
+  "governed_schema_version": "akah-provenance-phase-governed-v1",
+  "next_bottleneck": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_THIN_RUNNER_INPUT_AUTHORITY_GAP_CLOSURE_V1",
+  "north_star_effect": "Attempts to eliminate the final non-bookkeeping input ambiguities before thin-runner implementation, while preserving the reconstructed-study direction and avoiding historical provenance or synthetic inputs.",
+  "objective": "Adjudicate the four remaining prospective thin-runner input gaps using current source and governance evidence. Trace scalar authority beyond literals, trace events/frames interprocedurally through caller chains to concrete producer definitions, and test PIT semantics without reading market rows.",
+  "resolution_class": "RECONSTRUCTED_NATIVE_THIN_RUNNER_INPUT_AUTHORITY_GAP_ADJUDICATION_COMPLETE",
+  "state_updates": {
+    "actual_exit_authority": false,
+    "all_target_roles_bound": false,
+    "economics_authorized": false,
+    "historical_executable_provenance_search": "CLOSED",
+    "input_gap_adjudication": "COMPLETE",
+    "native_replay_executed": false,
+    "reconstructed_native_direction": "FROZEN",
+    "remaining_input_authority_gap_count": 4,
+    "remaining_input_authority_gaps": [
+      {
+        "blocker": "UNRESOLVED_MULTIPLE_CORROBORATED_AUTHORITIES",
+        "role": "policy_id"
+      },
+      {
+        "blocker": "UNRESOLVED_MULTIPLE_CORROBORATED_AUTHORITIES",
+        "role": "cost_multiplier"
+      },
+      {
+        "blocker": "NO_UNIQUE_PRODUCER_REACHED_BY_INTERPROCEDURAL_TRACE",
+        "role": "events"
+      },
+      {
+        "blocker": "NO_UNIQUE_PRODUCER_REACHED_BY_INTERPROCEDURAL_TRACE",
+        "role": "frames"
+      }
+    ],
+    "roadmap_position": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_THIN_RUNNER_INPUT_AUTHORITY_GAP_CLOSURE_V1",
+    "study_contract_status": "PARTIAL_FREEZE_INPUT_AUTHORITY_GAPS_REMAIN",
+    "thin_runner_implemented": false,
+    "thin_runner_required": true
+  },
+  "status": "PASS",
+  "summary": "Adjudicated policy_id, cost_multiplier, events, and frames using static current-source and governance evidence, including interprocedural caller tracing for dynamic inputs. Remaining blockers, if any, are now explicit and role-specific.",
+  "task_id": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_THIN_RUNNER_INPUT_AUTHORITY_GAP_ADJUDICATION_V1",
+  "task_start_head": "dc98d0837a97c912c293dd72acdcd0a1e11bc80e",
+  "task_start_revision": 195
+}

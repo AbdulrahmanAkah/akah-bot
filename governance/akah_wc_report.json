@@ -1,0 +1,131 @@
+{
+  "schema_version": "akah-wildcard-resolution-review-v1",
+  "task_id": "CAUSAL_EXIT_MECHANISM_PROFIT_ARM_COUNTERFACTUAL_EAG_PERSISTENCE_ASYNC_READY_STATE_CONTROL_UPSTREAM_HOURLY_RECONSTRUCTION_SOURCE_ARTIFACT_WILDCARD_RESOLUTION_REVIEW_V1",
+  "status": "PASS",
+  "resolution_class": "WILDCARD_RESOLVED_NO_AUTHORITY_CANDIDATE",
+  "task_start_charter_revision": 133,
+  "task_start_head": "61d2a4c291db80c95f68e5ae00b54fb1f3e91792",
+  "source_binding": {
+    "path": "scripts/research/run_rd04_final_adjudication.py",
+    "sha256": "64EB6A6C3CCFD28CE90BC2CE4FF557A24328D5BCC463EE3B4FC6757E73263E15",
+    "statement_span": [
+      485,
+      487
+    ],
+    "statement": "discovered = {\n        path.name for path in REPORTS.glob(\"ams-rd04-*.json\") if path.name != REPORT_JSON.name\n    }",
+    "statement_sha256": "544864F854D955F96EF573FB05BFA28453A8B7FFEDF70897B53AF81002CA803C",
+    "statement_hash_encoding": "UTF8_LF_AST_SOURCE_SEGMENT_NO_TERMINAL_NEWLINE",
+    "ast": "Assign(targets=[Name(id='discovered', ctx=Store())], value=SetComp(elt=Attribute(value=Name(id='path', ctx=Load()), attr='name', ctx=Load()), generators=[comprehension(target=Name(id='path', ctx=Store()), iter=Call(func=Attribute(value=Name(id='REPORTS', ctx=Load()), attr='glob', ctx=Load()), args=[Constant(value='ams-rd04-*.json')]), ifs=[Compare(left=Attribute(value=Name(id='path', ctx=Load()), attr='name', ctx=Load()), ops=[NotEq()], comparators=[Attribute(value=Name(id='REPORT_JSON', ctx=Load()), attr='name', ctx=Load())])], is_async=0)]))",
+    "scope": "run",
+    "literal": "ams-rd04-*.json",
+    "mechanism": "pathlib.Path.glob NONRECURSIVE",
+    "root_expression": "Path(__file__).resolve().parents[2] / \"reports\" / \"research\"",
+    "root": "C:\\SIRAJ\\Repositories\\spot-speculation-bot\\reports\\research",
+    "exclusion": "path.name != REPORT_JSON.name",
+    "excluded_name": "ams-rd04-final-adjudication-v1.json",
+    "deduplication": "set of path.name",
+    "sorting": "only unknown = sorted(discovered.difference(expected_paths))",
+    "usage": "filename set compared with STAGE_SPECS report_name; raises on unregistered names; no wildcard-member content loading",
+    "context_span": [
+      473,
+      491
+    ]
+  },
+  "counts": {
+    "raw_current_matches": 23,
+    "source_filtered_current_matches": 22,
+    "unique_raw_sha256": 23,
+    "unique_filtered_sha256": 22,
+    "historical_valid": 22,
+    "source_excluded": 1,
+    "proven_later": 0,
+    "ambiguous_membership": 0
+  },
+  "classification_counts": {
+    "REPORTING_ONLY": 7,
+    "PROVENANCE_ONLY": 9,
+    "DATA_WITHOUT_DEFINITION_AUTHORITY": 6,
+    "EXACT_HOURLY_STATE_ARTIFACT_CANDIDATE": 0,
+    "EXACT_PREDICATE_DEFINITION_AUTHORITY_CANDIDATE": 0,
+    "UPSTREAM_PRODUCER_SOURCE_CANDIDATE": 0,
+    "UNRESOLVED": 0,
+    "IRRELEVANT_TO_TARGET_PREDICATES": 0
+  },
+  "wildcard_hop_fully_resolved": true,
+  "historical_evidence": {
+    "final_report_sha256": "E92FBE11A4B1D4DD365E57361704E5212ABC16E9813F2BDEAC3D3D2A68A04F66",
+    "final_report_source_commit": "e58b850b3e5f4f920eb90629da1592b88101506b",
+    "final_report_generated_at_utc": "2026-07-28T15:00:25.368838Z",
+    "final_report_reconciliation": {
+      "d4_experiment_order_pass": true,
+      "d5f_terminal_closure_pass": true,
+      "failure_count": 0,
+      "no_unregistered_stage_reports": true
+    },
+    "stage_ledger_sha256": "11DC51366B07DD731475E88C12D8238579F0DCD2DA5E63CA1B810541F38B8F7F",
+    "ledger_count": 22,
+    "historical_source_matches_current": true,
+    "historical_git_glob_names": [
+      "ams-rd04-d0-pit-universe-readiness-v1.json",
+      "ams-rd04-d0a-investable-universe-normalization-v1.json",
+      "ams-rd04-d0b-expanded-dataset-registration-v1.json",
+      "ams-rd04-d0b-pit-venue-data-expansion-v1.json",
+      "ams-rd04-d0c-adjudicated-dataset-registration-v1.json",
+      "ams-rd04-d0c-source-integrity-adjudication-v1.json",
+      "ams-rd04-d1-pit-universe-replay-v1.json",
+      "ams-rd04-d2-universe-membership-attribution-v1.json",
+      "ams-rd04-d3-membership-failure-diagnostics-v1.json",
+      "ams-rd04-d4-hypothesis-registry-v1.json",
+      "ams-rd04-d5a-liquidity-floor-v1.json",
+      "ams-rd04-d5a-turnover-dataset-registration-v1.json",
+      "ams-rd04-d5b0-v5r1-atr-grid-recovery-v1.json",
+      "ams-rd04-d5b1-stop-protocol-adjudication-v1.json",
+      "ams-rd04-d5b2-structural-stop-evaluation-v1.json",
+      "ams-rd04-d5c0-external-event-source-freeze-v1.json",
+      "ams-rd04-d5c1-idiosyncratic-tail-label-join-v1.json",
+      "ams-rd04-d5d0-bf01-protocol-recovery-v1.json",
+      "ams-rd04-d5d1-bf01-protocol-adjudication-v1.json",
+      "ams-rd04-d5d2-pit-equal-weight-benchmark-v1.json",
+      "ams-rd04-d5e0-midweek-pullback-diagnostic-v1.json",
+      "ams-rd04-d5f-membership-exit-path-diagnostic-v1.json"
+    ],
+    "historical_evidence_limit": "committed source tree and exact downstream ledger hashes; no filesystem enumeration log is present"
+  },
+  "table_path": "governance/akah_wc_table.json",
+  "table_sha256": "566618010741F3FE98ED4AA964F80C60D3EFC8C97C09C5B7571D71A2DBBE0BB1",
+  "all_22_included_sha_previously_audited": true,
+  "direct_authority_path_status": "DIRECT_AUTHORITY_PATH_NOT_EXPOSED",
+  "first_remaining_provenance_hop": {
+    "source_sha256": "F550E07F8713A83F018E14E3855DC076F919570E54AFA440FBAAC6E50DD367DE",
+    "json_path": "$.prior_authority.prior_report_sha256",
+    "target_sha256": "E4A846E2B9F1E0D1EF1999A2D0FB604AE66111DD8AD005B33EB723B5A19F242D",
+    "target_paths": [
+      "C:\\Users\\abdul\\Downloads\\CAUSAL_EXIT_MECHANISM_PROFIT_ARM_COUNTERFACTUAL_EAG_PERSISTENCE_ASYNC_READY_STATE_CONTROL_HOURLY_EVIDENCE_AUTHORITY_GAP_CLOSURE_V2_REPORT_20260916_173431.json"
+    ],
+    "target_governed_sha256": "314E00175B332968F74F21FD2A1072391D130288B1CC756A8276CCC6CF558C4A",
+    "status": "EXPLICIT_PARENT_EDGE_NOT_AUDITED_IN_THIS_TASK",
+    "missing_authority": "Parent evidence explaining the canonical control-hourly state/source provenance before the RD04 artifact-location lineage; no direct state producer binding is established.",
+    "next_task_scope": "Inspect this exact parent report and its governed structured bindings only; no raw rows or transitive source expansion."
+  },
+  "next_bottleneck": "CAUSAL_EXIT_MECHANISM_PROFIT_ARM_COUNTERFACTUAL_EAG_PERSISTENCE_ASYNC_READY_STATE_CONTROL_HOURLY_EVIDENCE_V2_PARENT_PROVENANCE_REBASE_REVIEW_V1",
+  "scientific_interpretation": "The glob performs a report-name registration guard. Its 22 historical members are already SHA-bound in the prior governed inventory; none supplies new exact E/A/G/EAG/P authority. The excluded final report is used only as the downstream historical-membership witness.",
+  "remaining_steps": "Number unknown; parent provenance resolution and strict canonical authority adjudication remain prerequisites, followed by separately admitted reconstruction.",
+  "prior_A_binding_carried_forward": false,
+  "producer_anchor_layer_exhausted": true,
+  "firewall": {
+    "source_mutation": false,
+    "raw_market_rows_read": false,
+    "outcome_values_inspected": false,
+    "market_replay": false,
+    "predicate_adoption": false,
+    "state_reconstruction": false,
+    "transitive_source_expansion": false,
+    "2024_access": false,
+    "2025_access": false,
+    "push": false
+  },
+  "alignment": "ALIGNED",
+  "vision_impact": "ADVANCES",
+  "north_star_effect": "Closes a provenance ambiguity without creating unsupported predicate authority; preserves the path to valid specificity measurement.",
+  "created_at_utc": "2026-09-16T22:55:59.006696+00:00"
+}

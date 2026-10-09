@@ -1,0 +1,40 @@
+{
+  "authority_bindings": {
+    "4h_sha256": "1C72416F889137B68FF48008C5760E809D0A94A5647569BAB631E96904CEBD72",
+    "control_sha256": "782CEA4D8037E6D2C72FBE7B37FF69F10E66DC728396E6B4B58C28559BEEB225",
+    "redesign_rows_sha256": "621E4506BEEABBF87EA183DDB19CAB072D60EF1ED85F6651A5581DF7FD2E4C11",
+    "shadow_replay_module_sha256": "AC8E88D9C49F811190F7158CE75159C0E546ED6C8FAB51A2E5F011740C6BD9DB"
+  },
+  "branch": "research/rd48-cross-venue-price-level-basis-direct-utility-v1",
+  "evidence": [
+    {
+      "path": "governance/trigger_v2_shadow_parity_v1.json",
+      "sha256": "9572B41908809B26D8846484147C85FD3037CABFC6E8A8BAE47DAF3F1FF001D7"
+    },
+    {
+      "path": "governance/trigger_v2_shadow_parity_v1_rows.csv",
+      "sha256": "47618557A5B55C1B3BE8FE57173B5B3C02BC89C271396C19A94B94979D54650C"
+    }
+  ],
+  "firewall": {},
+  "governed_schema_version": "akah-provenance-phase-governed-v1",
+  "next_bottleneck": "CAUSAL_EXIT_BRAIN_LATER_TRIGGER_V2_NATIVE_LIFECYCLE_REPLAY_HOOK_V1",
+  "north_star_effect": "Proves implementation fidelity on real causal data before native lifecycle replay mutation.",
+  "objective": "Replay the governed 33-lifecycle 2022 cohort through the recovered V2 shadow replay and require exact parity with the frozen redesign artifact.",
+  "resolution_class": "V2_SHADOW_REPLAY_REAL_COHORT_PARITY_COMPLETE",
+  "state_updates": {
+    "actual_exit_authority": false,
+    "economic_test_authorized": false,
+    "later_trigger_v2_candidate_given_memory": 0.92,
+    "later_trigger_v2_native_lifecycle_replay_mutated": false,
+    "later_trigger_v2_real_candidates": 23,
+    "later_trigger_v2_real_eligible": 33,
+    "later_trigger_v2_real_memory": 25,
+    "later_trigger_v2_shadow_replay_empirical_parity": "PASS"
+  },
+  "status": "PASS",
+  "summary": "Recovered V2 shadow replay reproduced the governed 2022 cohort exactly: 33 eligible, 25 memory, 23 V2 candidates, with zero memory-time and candidate-time mismatches.",
+  "task_id": "CAUSAL_EXIT_BRAIN_LATER_TRIGGER_V2_SHADOW_REPLAY_EMPIRICAL_PARITY_V1",
+  "task_start_head": "832061a01d8465fc27f0e41b85f0cd3fd7e23b05",
+  "task_start_revision": 172
+}

@@ -1,0 +1,261 @@
+{
+  "2024": false,
+  "2025": false,
+  "automatic_history_analysis": false,
+  "entry_clock": "4H_BOUNDARY_NEXT_OPEN",
+  "learned_ranker": false,
+  "manual_evidence_ledger_sha256": "FED14636EEDA86B9F330A5447E5ACE6AE0D82E0478F9B660809A0E4CB4C89E94",
+  "model_refit": false,
+  "parameter_search": false,
+  "production": false,
+  "project_north_star": "MANUAL HISTORICAL SYNTHESIS: the assistant, not the terminal, reviewed the historical GitHub evidence and authored the strategy recipes before execution. Test whether a simple causal trend-convexity engine can produce positive net trade expectancy across pre-2024 regimes. Primary engine: sparse trend/momentum setups with regime, relative strength, structure, volume and liquidity confluence; runner exits with immutable stop and structural trailing. Secondary reversal sleeve is deliberately small. No learned ranker, no automatic strategy selection, no posthoc threshold search.",
+  "push": false,
+  "recipes": [
+    {
+      "cost_hurdle": false,
+      "exit": "DECAY",
+      "family": "HYBRID",
+      "id": "M01_V4_HYBRID_DECAY_P01",
+      "profile": "P01",
+      "soft_dd": false,
+      "soft_fib": true,
+      "strict_regime": false
+    },
+    {
+      "cost_hurdle": false,
+      "exit": "CONVEX",
+      "family": "HYBRID",
+      "id": "M02_V4_HYBRID_CONVEX_P01",
+      "profile": "P01",
+      "soft_dd": false,
+      "soft_fib": true,
+      "strict_regime": false
+    },
+    {
+      "cost_hurdle": false,
+      "exit": "DECAY",
+      "family": "HYBRID",
+      "id": "M03_V4_HYBRID_DECAY_P02",
+      "profile": "P02",
+      "soft_dd": false,
+      "soft_fib": true,
+      "strict_regime": false
+    },
+    {
+      "cost_hurdle": false,
+      "exit": "CONVEX",
+      "family": "HYBRID",
+      "id": "M04_V4_HYBRID_CONVEX_P02",
+      "profile": "P02",
+      "soft_dd": false,
+      "soft_fib": true,
+      "strict_regime": false
+    },
+    {
+      "cost_hurdle": false,
+      "exit": "CONVEX",
+      "family": "BREAKOUT",
+      "id": "M05_BREAKOUT_CONVEX_P02",
+      "profile": "P02",
+      "soft_dd": false,
+      "soft_fib": true,
+      "strict_regime": false
+    },
+    {
+      "cost_hurdle": false,
+      "exit": "CONVEX",
+      "family": "PULLBACK",
+      "id": "M06_PULLBACK_CONVEX_P02",
+      "profile": "P02",
+      "soft_dd": false,
+      "soft_fib": true,
+      "strict_regime": false
+    },
+    {
+      "cost_hurdle": false,
+      "exit": "CONVEX",
+      "family": "REACCEL",
+      "id": "M07_REACCEL_CONVEX_P02",
+      "profile": "P02",
+      "soft_dd": false,
+      "soft_fib": true,
+      "strict_regime": false
+    },
+    {
+      "cost_hurdle": false,
+      "exit": "CONVEX",
+      "family": "HYBRID_REACCEL",
+      "id": "M08_HYBRID_REACCEL_CONVEX_P02",
+      "profile": "P02",
+      "soft_dd": false,
+      "soft_fib": true,
+      "strict_regime": false
+    },
+    {
+      "cost_hurdle": true,
+      "exit": "CONVEX",
+      "family": "HYBRID_REACCEL",
+      "id": "M09_HYBRID_REACCEL_COST_HURDLE_P02",
+      "profile": "P02",
+      "soft_dd": false,
+      "soft_fib": true,
+      "strict_regime": false
+    },
+    {
+      "cost_hurdle": false,
+      "exit": "CONVEX",
+      "family": "HYBRID_REACCEL",
+      "id": "M10_HYBRID_REACCEL_STRICT_REGIME_P02",
+      "profile": "P02",
+      "soft_dd": true,
+      "soft_fib": true,
+      "strict_regime": true
+    },
+    {
+      "cost_hurdle": true,
+      "exit": "REVERSAL",
+      "family": "REVERSAL",
+      "id": "M11_LIQUIDITY_SWEEP_REVERSAL_SMALL",
+      "profile": "REV",
+      "soft_dd": false,
+      "soft_fib": false,
+      "strict_regime": false
+    },
+    {
+      "cost_hurdle": true,
+      "exit": "CONVEX",
+      "family": "ROUTER",
+      "id": "M12_REGIME_ROUTER_TREND_PLUS_REVERSAL",
+      "profile": "P02",
+      "soft_dd": false,
+      "soft_fib": true,
+      "strict_regime": false
+    }
+  ],
+  "runtime_promotion": false,
+  "schema_version": "akah-rev770-manual-historical-synthesis-protocol-v1",
+  "score_threshold": 55,
+  "threshold_origin": "MANUALLY_FROZEN_FROM_HISTORICAL_PROTOCOL_PRIMITIVES_BEFORE_THIS_RUN",
+  "variants": [
+    {
+      "cost_multiplier": 2.0,
+      "recipe_id": "M01_V4_HYBRID_DECAY_P01",
+      "variant": "M01_V4_HYBRID_DECAY_P01_2X"
+    },
+    {
+      "cost_multiplier": 1.0,
+      "recipe_id": "M01_V4_HYBRID_DECAY_P01",
+      "variant": "M01_V4_HYBRID_DECAY_P01_1X"
+    },
+    {
+      "cost_multiplier": 2.0,
+      "recipe_id": "M02_V4_HYBRID_CONVEX_P01",
+      "variant": "M02_V4_HYBRID_CONVEX_P01_2X"
+    },
+    {
+      "cost_multiplier": 1.0,
+      "recipe_id": "M02_V4_HYBRID_CONVEX_P01",
+      "variant": "M02_V4_HYBRID_CONVEX_P01_1X"
+    },
+    {
+      "cost_multiplier": 2.0,
+      "recipe_id": "M03_V4_HYBRID_DECAY_P02",
+      "variant": "M03_V4_HYBRID_DECAY_P02_2X"
+    },
+    {
+      "cost_multiplier": 1.0,
+      "recipe_id": "M03_V4_HYBRID_DECAY_P02",
+      "variant": "M03_V4_HYBRID_DECAY_P02_1X"
+    },
+    {
+      "cost_multiplier": 2.0,
+      "recipe_id": "M04_V4_HYBRID_CONVEX_P02",
+      "variant": "M04_V4_HYBRID_CONVEX_P02_2X"
+    },
+    {
+      "cost_multiplier": 1.0,
+      "recipe_id": "M04_V4_HYBRID_CONVEX_P02",
+      "variant": "M04_V4_HYBRID_CONVEX_P02_1X"
+    },
+    {
+      "cost_multiplier": 2.0,
+      "recipe_id": "M05_BREAKOUT_CONVEX_P02",
+      "variant": "M05_BREAKOUT_CONVEX_P02_2X"
+    },
+    {
+      "cost_multiplier": 1.0,
+      "recipe_id": "M05_BREAKOUT_CONVEX_P02",
+      "variant": "M05_BREAKOUT_CONVEX_P02_1X"
+    },
+    {
+      "cost_multiplier": 2.0,
+      "recipe_id": "M06_PULLBACK_CONVEX_P02",
+      "variant": "M06_PULLBACK_CONVEX_P02_2X"
+    },
+    {
+      "cost_multiplier": 1.0,
+      "recipe_id": "M06_PULLBACK_CONVEX_P02",
+      "variant": "M06_PULLBACK_CONVEX_P02_1X"
+    },
+    {
+      "cost_multiplier": 2.0,
+      "recipe_id": "M07_REACCEL_CONVEX_P02",
+      "variant": "M07_REACCEL_CONVEX_P02_2X"
+    },
+    {
+      "cost_multiplier": 1.0,
+      "recipe_id": "M07_REACCEL_CONVEX_P02",
+      "variant": "M07_REACCEL_CONVEX_P02_1X"
+    },
+    {
+      "cost_multiplier": 2.0,
+      "recipe_id": "M08_HYBRID_REACCEL_CONVEX_P02",
+      "variant": "M08_HYBRID_REACCEL_CONVEX_P02_2X"
+    },
+    {
+      "cost_multiplier": 1.0,
+      "recipe_id": "M08_HYBRID_REACCEL_CONVEX_P02",
+      "variant": "M08_HYBRID_REACCEL_CONVEX_P02_1X"
+    },
+    {
+      "cost_multiplier": 2.0,
+      "recipe_id": "M09_HYBRID_REACCEL_COST_HURDLE_P02",
+      "variant": "M09_HYBRID_REACCEL_COST_HURDLE_P02_2X"
+    },
+    {
+      "cost_multiplier": 1.0,
+      "recipe_id": "M09_HYBRID_REACCEL_COST_HURDLE_P02",
+      "variant": "M09_HYBRID_REACCEL_COST_HURDLE_P02_1X"
+    },
+    {
+      "cost_multiplier": 2.0,
+      "recipe_id": "M10_HYBRID_REACCEL_STRICT_REGIME_P02",
+      "variant": "M10_HYBRID_REACCEL_STRICT_REGIME_P02_2X"
+    },
+    {
+      "cost_multiplier": 1.0,
+      "recipe_id": "M10_HYBRID_REACCEL_STRICT_REGIME_P02",
+      "variant": "M10_HYBRID_REACCEL_STRICT_REGIME_P02_1X"
+    },
+    {
+      "cost_multiplier": 2.0,
+      "recipe_id": "M11_LIQUIDITY_SWEEP_REVERSAL_SMALL",
+      "variant": "M11_LIQUIDITY_SWEEP_REVERSAL_SMALL_2X"
+    },
+    {
+      "cost_multiplier": 1.0,
+      "recipe_id": "M11_LIQUIDITY_SWEEP_REVERSAL_SMALL",
+      "variant": "M11_LIQUIDITY_SWEEP_REVERSAL_SMALL_1X"
+    },
+    {
+      "cost_multiplier": 2.0,
+      "recipe_id": "M12_REGIME_ROUTER_TREND_PLUS_REVERSAL",
+      "variant": "M12_REGIME_ROUTER_TREND_PLUS_REVERSAL_2X"
+    },
+    {
+      "cost_multiplier": 1.0,
+      "recipe_id": "M12_REGIME_ROUTER_TREND_PLUS_REVERSAL",
+      "variant": "M12_REGIME_ROUTER_TREND_PLUS_REVERSAL_1X"
+    }
+  ]
+}

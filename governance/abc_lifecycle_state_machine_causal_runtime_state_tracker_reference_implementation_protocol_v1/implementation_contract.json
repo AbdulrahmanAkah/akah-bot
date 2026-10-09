@@ -1,0 +1,30 @@
+{
+  "economic_information": "FORBIDDEN",
+  "future_information": "FORBIDDEN",
+  "input_granularity": "ORDERED_DECISION_ROWS_ONE_LIFECYCLE_AT_A_TIME",
+  "language": "PYTHON_STDLIB_ONLY",
+  "parity": "EXACT_WITH_ACCEPTED_SHADOW_STATE_AND_TRANSITION_TRACES",
+  "production_import": "FORBIDDEN",
+  "required_input_fields": [
+    "year",
+    "pair",
+    "entry_time",
+    "native_exit_time",
+    "decision_time_4h",
+    "base_state",
+    "memory_seen",
+    "C_signal",
+    "a_condition_now",
+    "b_condition_now"
+  ],
+  "schema_version": "abc-runtime-reference-contract-v1",
+  "stalled_memory": "ONE_BOOLEAN_LATCH_PER_LIFECYCLE",
+  "state_vector": [
+    "base_state",
+    "stalled_active",
+    "structural_break_active",
+    "volatility_damage_active"
+  ],
+  "structural_memory": "NONE_CURRENT_ROW_ONLY",
+  "volatility_memory": "NONE_CURRENT_ROW_ONLY"
+}

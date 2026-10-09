@@ -1,0 +1,82 @@
+{
+  "schema_version": "abc-lifecycle-evidence-sequence-mandatory-review-v1",
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_EVIDENCE_SEQUENCE_MANDATORY_REVIEW_V1",
+  "status": "PASS_REVIEW_COMPLETE",
+  "source_materialization": {
+    "canonical_sha256": "D70DDE12C8234C2F26E8E94903C6D0B242215DFE6CE9CD50AED7584DFAAD89AD",
+    "manifest_sha256": "E7B53A721F50CEDE20B08A5A74557A37EBFBC04EC01E0B08D005C2D33A45EDD8",
+    "lifecycle_sequence_ledger_sha256": "B235DA84F3512808766517E1571634D3EA9CF546180F0A48943BA85260775CAB",
+    "event_set_ledger_sha256": "99B52C99D5D4168F257E386F5130F6A44B166AEB0FC745D61C0E73C7870DF85F",
+    "sequence_signature_counts_sha256": "8C1E04972031CE63B72EA092E7B207808D45D59EBD55CC70BD10DBECA20F29A4",
+    "adjacent_event_set_transition_counts_sha256": "AB77CD3C7444926AEAAAEC630384A6DEB3667346480F66BAD38DA71AE7CC9BA2",
+    "pairwise_event_order_relations_sha256": "C63A34BFD219F68FF87DE1919AE3767D19D786FC4F6E6D0CE8A38F9513468683",
+    "gap_hours_sha256": "8E9C072DD986E19ACD0B951795997C922096EC478FE810AA30F045369A6FCEF8",
+    "gap_summary_sha256": "B91FD135386FE8FA7A06FBED72551527793388D60000C48A400CEA8D3976515F",
+    "completeness_audit_sha256": "3AABA2594C0E38B33F604B0D343142DAF52D938A783BA27DBC9CB4B4034DF133",
+    "noninterpretation_audit_sha256": "D32BA0922EC3A559DF515CAE194D15E233CC21F27EC768FF0EA75A348176035B"
+  },
+  "observed_structure": {
+    "control_lifecycle_count": 2020,
+    "total_event_set_count": 6559,
+    "total_adjacent_transition_count": 4539,
+    "unique_sequence_signature_count": 32,
+    "first_memory_lifecycle_count": 1270,
+    "confirmed_phase_entry_lifecycle_count": 1145,
+    "memory_without_later_confirmed_decision_count": 125,
+    "zero_decision_lifecycle_count": 238,
+    "zero_duration_lifecycle_count": 30,
+    "evidence_event_counts": {
+      "STALLED_EVIDENCE": 74,
+      "STRUCTURAL_BREAK_EVIDENCE": 135,
+      "VOLATILITY_DAMAGE_EVIDENCE": 31
+    },
+    "overall_consecutive_event_set_gap_hours": {
+      "count": 4539,
+      "min_gap_hours": 1.0,
+      "median_gap_hours": 6.0,
+      "max_gap_hours": 158.0
+    }
+  },
+  "interpretation": {
+    "chronology_representation_valid": true,
+    "sequence_heterogeneity_observed": true,
+    "sequence_heterogeneity_is_not_a_ranking_signal": true,
+    "memory_to_confirmed_is_not_universal": true,
+    "zero_decision_and_zero_duration_lifecycles_are_preserved": true,
+    "event_once_semantics_limit_persistence_inference": "The frozen evidence events are event-local and at most once per lifecycle. Sequence chronology can show order and spacing, but cannot establish how long an evidence condition remains active after its event or when it recovers.",
+    "gap_statistics_limit": "Observed min/median/max consecutive-event gaps are descriptive only and must not be reused as persistence horizons, duration thresholds, state boundaries or runtime rules.",
+    "frequency_limit": "Counts of signatures and adjacent transitions describe observed pathways only; frequent pathways are not better and rare pathways are not failures."
+  },
+  "architecture_decision": {
+    "sequence_representation_accepted": true,
+    "persistent_state_observability_protocol_work_authorized": true,
+    "persistent_state_protocol_scope": "Define causal row-level observability requirements for persistence, recovery and deterioration using preregistered non-economic variables. The next protocol may define what must be measured and how observations align in time, but may not select a persistence horizon, state duration threshold, economic target, runtime transition or exit action.",
+    "persistent_state_definition_authorized_now": false,
+    "persistence_horizon_selection_authorized": false,
+    "state_duration_rule_authorized": false,
+    "runtime_state_machine_authorized": false,
+    "adaptive_logic_authorized": false,
+    "exit_action_authorized": false,
+    "exit_arbiter_authorized": false,
+    "sequence_to_runtime_class_mapping_authorized": false,
+    "sequence_frequency_rule_authorized": false,
+    "gap_statistic_rule_authorized": false,
+    "reason": "The chronology is complete, causally ordered and nontrivially heterogeneous across the full frozen lifecycle population. That is sufficient to justify specifying observability for persistence as a separate preregistered research layer, but insufficient to define any persistent state because current evidence events are instantaneous/first-hit markers rather than duration measurements."
+  },
+  "review_constraints": {
+    "market_data_accessed": false,
+    "economic_outcomes_read": false,
+    "pnl_columns_read": false,
+    "candidate_replay_executed": false,
+    "portfolio_replay_executed": false,
+    "new_threshold_created": false,
+    "time_gap_bins_created": false,
+    "persistence_horizon_selected": false,
+    "state_duration_rule_created": false,
+    "sequence_ranking_created": false,
+    "persistent_state_inferred": false,
+    "2024_accessed": false,
+    "2025_accessed": false
+  },
+  "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_OBSERVABILITY_PROTOCOL_FREEZE_V1"
+}

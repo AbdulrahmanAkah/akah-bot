@@ -1,0 +1,71 @@
+{
+  "2024_access": false,
+  "action_rule_selection": false,
+  "entry_features": [
+    "pre_return_24h",
+    "pre_return_72h",
+    "pre_realized_vol_24h",
+    "pre_realized_vol_72h",
+    "pre_atr24h_price_fraction",
+    "pre_range24h_price_fraction",
+    "pre_range72h_price_fraction",
+    "pre_position_in_24h_range",
+    "pre_distance_above_24h_high_fraction",
+    "pre_ema9_21_spread_fraction",
+    "pre_ema21_50_spread_fraction",
+    "pre_ema21_slope6_fraction",
+    "pre_volume_last4_vs_prior20",
+    "entry_gap_vs_prev_close"
+  ],
+  "entry_mutation": false,
+  "exit_mutation": false,
+  "forward_years": [
+    2022,
+    2023
+  ],
+  "half_giveback_semantics": "FIRST_HOURLY_CLOSE_AT_OR_BELOW_HALF_OF_PRIOR_RUNNING_CLOSE_PEAK_AFTER_PEAK_GE_2PCT",
+  "mfe_milestones": [
+    0.01,
+    0.02,
+    0.05,
+    0.1,
+    0.2
+  ],
+  "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_WINNER_MILESTONE_PATH_MATERIALIZATION_V1",
+  "opportunity_classes": [
+    "NEVER_PROGRESS_2PCT",
+    "SMALL_OPPORTUNITY_2_TO_5",
+    "MATERIAL_WINNER_5_TO_10",
+    "EXPLOSIVE_WINNER_10_PLUS"
+  ],
+  "opportunity_targets": {
+    "MFE_GE_10PCT": 0.1,
+    "MFE_GE_2PCT": 0.02,
+    "MFE_GE_5PCT": 0.05
+  },
+  "recovery_semantics": "LATER_HOURLY_CLOSE_AT_OR_ABOVE_THE_PRIOR_PEAK_CAPTURED_AT_FIRST_HALF_GIVEBACK",
+  "retention_fractions": [
+    0.2,
+    0.4,
+    0.6,
+    0.8,
+    1.0
+  ],
+  "ridge_alpha": 10.0,
+  "schema_version": "abc-winner-lifecycle-reconstruction-protocol-v1",
+  "status": "FROZEN",
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_WINNER_LIFECYCLE_RECONSTRUCTION_PROTOCOL_FREEZE_V1",
+  "threshold_optimization": false,
+  "train_years": [
+    2019,
+    2020,
+    2021
+  ],
+  "years": [
+    2019,
+    2020,
+    2021,
+    2022,
+    2023
+  ]
+}

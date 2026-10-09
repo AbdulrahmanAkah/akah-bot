@@ -1,0 +1,133 @@
+{
+  "bound_count": 1,
+  "paths": [
+    {
+      "argument_root": "membership",
+      "call": "load_json(repo / PREFLIGHT_AUDIT)",
+      "caller": "scripts/research/run_rd26_exit_architecture.py:277",
+      "path_binding_status": "UNRESOLVED",
+      "path_expression": "repo / PREFLIGHT_AUDIT",
+      "symbolic_path": "<args.repo_root>/data/research/rd26_p0_runtime/rd23-focus-signal-equivalence-audit-v1.json",
+      "symbolic_path_canonical": "<args.repo_root>/data/research/rd26_p0_runtime/rd23-focus-signal-equivalence-audit-v1.json"
+    },
+    {
+      "argument_root": "membership",
+      "call": "load_membership(membership_path)",
+      "caller": "scripts/research/run_rd26_exit_architecture.py:286",
+      "path_binding_status": "UNRESOLVED",
+      "path_expression": "membership_path",
+      "symbolic_path": "<args.repo_root>/data/research/rd18_p3x_a3b_runtime/effective-operational-membership.csv",
+      "symbolic_path_canonical": "<args.repo_root>/data/research/rd18_p3x_a3b_runtime/effective-operational-membership.csv"
+    },
+    {
+      "argument_root": "membership",
+      "call": "path.read_text(encoding=\"utf-8-sig\")",
+      "caller": "scripts/research/run_rd26_exit_architecture.py:116",
+      "path_binding_status": "UNRESOLVED",
+      "path_expression": "",
+      "symbolic_path": "",
+      "symbolic_path_canonical": ""
+    },
+    {
+      "argument_root": "membership",
+      "call": "pd.read_csv(path, low_memory=False)",
+      "caller": "src/spotbot/research/rd20_p2_minimal_pullback.py:226",
+      "path_binding_status": "UNRESOLVED",
+      "path_expression": "path",
+      "symbolic_path": "<args.repo_root>/data/research/rd18_p3x_a3b_runtime/effective-operational-membership.csv",
+      "symbolic_path_canonical": "<args.repo_root>/data/research/rd18_p3x_a3b_runtime/effective-operational-membership.csv"
+    },
+    {
+      "argument_root": "membership",
+      "call": "load_json(diagnosis_path)",
+      "caller": "scripts/research/run_rd26_exit_architecture.py:151",
+      "path_binding_status": "UNRESOLVED",
+      "path_expression": "diagnosis_path",
+      "symbolic_path": "<args.repo_root>/data/research/rd25_p1_runtime/diagnosis.json",
+      "symbolic_path_canonical": "<args.repo_root>/data/research/rd25_p1_runtime/diagnosis.json"
+    },
+    {
+      "argument_root": "membership",
+      "call": "load_membership(membership_path)",
+      "caller": "scripts/research/run_rd26_exit_architecture.py:140",
+      "path_binding_status": "UNRESOLVED",
+      "path_expression": "membership_path",
+      "symbolic_path": "<args.repo_root>/data/research/rd18_p3x_a3b_runtime/effective-operational-membership.csv",
+      "symbolic_path_canonical": "<args.repo_root>/data/research/rd18_p3x_a3b_runtime/effective-operational-membership.csv"
+    },
+    {
+      "argument_root": "frames",
+      "call": "load_feature_frames(\n        raw_root=raw_root,\n        pairs=pairs,\n        cutoff=DATA_CUTOFF,\n    )",
+      "caller": "scripts/research/run_rd26_exit_architecture.py:592",
+      "path_binding_status": "UNRESOLVED",
+      "path_expression": "raw_root",
+      "symbolic_path": "data/raw/rd16b/kucoin",
+      "symbolic_path_canonical": "data/raw/rd16b/kucoin"
+    },
+    {
+      "argument_root": "frames",
+      "call": "pd.read_parquet(\n            path,\n            engine=\"pyarrow\",\n            filters=[(\"timestamp\", \"<\", cutoff_value)],\n        )",
+      "caller": "scripts/research/run_rd26_exit_architecture.py:197",
+      "path_binding_status": "BOUND_SYMBOLIC_TEMPLATE",
+      "path_expression": "path",
+      "symbolic_path": "data/raw/rd16b/kucoin/<pair>/1h.parquet",
+      "symbolic_path_canonical": "data/raw/rd16b/kucoin/<pair>/1h.parquet"
+    },
+    {
+      "argument_root": "frames",
+      "call": "load_json(repo / PREFLIGHT_AUDIT)",
+      "caller": "scripts/research/run_rd26_exit_architecture.py:277",
+      "path_binding_status": "UNRESOLVED",
+      "path_expression": "repo / PREFLIGHT_AUDIT",
+      "symbolic_path": "<args.repo_root>/data/research/rd26_p0_runtime/rd23-focus-signal-equivalence-audit-v1.json",
+      "symbolic_path_canonical": "<args.repo_root>/data/research/rd26_p0_runtime/rd23-focus-signal-equivalence-audit-v1.json"
+    },
+    {
+      "argument_root": "frames",
+      "call": "load_membership(membership_path)",
+      "caller": "scripts/research/run_rd26_exit_architecture.py:286",
+      "path_binding_status": "UNRESOLVED",
+      "path_expression": "membership_path",
+      "symbolic_path": "<args.repo_root>/data/research/rd18_p3x_a3b_runtime/effective-operational-membership.csv",
+      "symbolic_path_canonical": "<args.repo_root>/data/research/rd18_p3x_a3b_runtime/effective-operational-membership.csv"
+    },
+    {
+      "argument_root": "frames",
+      "call": "path.read_text(encoding=\"utf-8-sig\")",
+      "caller": "scripts/research/run_rd26_exit_architecture.py:116",
+      "path_binding_status": "UNRESOLVED",
+      "path_expression": "",
+      "symbolic_path": "",
+      "symbolic_path_canonical": ""
+    },
+    {
+      "argument_root": "frames",
+      "call": "pd.read_csv(path, low_memory=False)",
+      "caller": "src/spotbot/research/rd20_p2_minimal_pullback.py:226",
+      "path_binding_status": "UNRESOLVED",
+      "path_expression": "path",
+      "symbolic_path": "<args.repo_root>/data/research/rd18_p3x_a3b_runtime/effective-operational-membership.csv",
+      "symbolic_path_canonical": "<args.repo_root>/data/research/rd18_p3x_a3b_runtime/effective-operational-membership.csv"
+    },
+    {
+      "argument_root": "frames",
+      "call": "load_json(diagnosis_path)",
+      "caller": "scripts/research/run_rd26_exit_architecture.py:151",
+      "path_binding_status": "UNRESOLVED",
+      "path_expression": "diagnosis_path",
+      "symbolic_path": "<args.repo_root>/data/research/rd25_p1_runtime/diagnosis.json",
+      "symbolic_path_canonical": "<args.repo_root>/data/research/rd25_p1_runtime/diagnosis.json"
+    },
+    {
+      "argument_root": "frames",
+      "call": "load_membership(membership_path)",
+      "caller": "scripts/research/run_rd26_exit_architecture.py:140",
+      "path_binding_status": "UNRESOLVED",
+      "path_expression": "membership_path",
+      "symbolic_path": "<args.repo_root>/data/research/rd18_p3x_a3b_runtime/effective-operational-membership.csv",
+      "symbolic_path_canonical": "<args.repo_root>/data/research/rd18_p3x_a3b_runtime/effective-operational-membership.csv"
+    }
+  ],
+  "status": "PASS",
+  "unresolved_count": 13
+}

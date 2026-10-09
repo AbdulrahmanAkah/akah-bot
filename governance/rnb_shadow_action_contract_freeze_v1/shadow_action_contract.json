@@ -1,0 +1,57 @@
+{
+  "contract_id": "AKAH_RNB_POST_PROGRESS_V2_DIAGNOSTIC_ACTION_V1",
+  "development_year_only": true,
+  "forbidden": {
+    "exit_reason_filter_search": true,
+    "lead_time_threshold_search": true,
+    "market_state_filter_search": true,
+    "memory_as_exit": true,
+    "posthoc_action_selection": true,
+    "protected_year_access": true,
+    "threshold_search": true,
+    "winner_loss_label_filtering": true
+  },
+  "independent_validation_required_before_generalization": true,
+  "memory": {
+    "action": "STATE_TRANSITION_ONLY_NO_EXIT",
+    "does_not_exit": true,
+    "reference_semantics": "Use frozen Memory reference from shadow instrumentation authority."
+  },
+  "next_bottleneck": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_SHADOW_ACTION_COUNTERFACTUAL_PORTFOLIO_REPLAY_V1",
+  "portfolio_semantics": {
+    "cost_model": "SAME_NATIVE_SIDE_COST",
+    "early_shadow_exit_releases_cash_for_later_native_admission": true,
+    "entry_logic": "UNCHANGED_NATIVE_ADMISSION_AND_ENTRY",
+    "full_portfolio_replay_required": true,
+    "position_size": "UNCHANGED_NATIVE_QUANTITY_UNTIL_SHADOW_EXIT"
+  },
+  "precedence": {
+    "native_exit_at_or_before_shadow_fill": "NATIVE_EXIT_WINS",
+    "native_safety_semantics_preserved": true,
+    "same_timestamp_or_later_information_cannot_retroactively_preempt_native_exit": true
+  },
+  "production_authorized": false,
+  "retuning_authorized": false,
+  "scientific_role": "Test the frozen V2 FAILED_BREAKOUT_REFERENCE event as a post-progress continuation-deterioration action. This is not the final exit brain.",
+  "scope": "RECONSTRUCTED_NATIVE_BASELINE_2022_DEVELOPMENT_DIAGNOSTIC_ONLY",
+  "state_machine": {
+    "POST_PROGRESS": {
+      "native_exit_rules": "UNCHANGED_UNTIL_SHADOW_FILL",
+      "v2_event": "EXIT_AT_FIRST_1H_OPEN_AFTER_V2_COMPLETED_4H_CLOSE"
+    },
+    "PRE_PROGRESS": {
+      "memory_event": "STATE_TRANSITION_ONLY_NO_EXIT",
+      "native_exit_rules": "UNCHANGED"
+    }
+  },
+  "status": "FROZEN_FOR_DIAGNOSTIC_COUNTERFACTUAL_REPLAY",
+  "v2": {
+    "action": "EXIT_AT_FIRST_1H_OPEN_AFTER_V2_COMPLETED_4H_CLOSE",
+    "event": "FAILED_BREAKOUT_REFERENCE",
+    "fill_price": "open of that next 1H bar",
+    "fill_time": "first 1H open strictly after the completed V2 4H close",
+    "observation_time": "completed causal UTC 4H close",
+    "requires_memory": true,
+    "strictly_later_than_memory": true
+  }
+}

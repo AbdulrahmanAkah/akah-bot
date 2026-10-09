@@ -1,0 +1,104 @@
+{
+  "actual_semantic_role": "READ_ONLY_PRE_ADMISSION_SIGNAL_EVENT_DATAFRAME",
+  "baseline_relevant_lineage_code_resolved": true,
+  "constructor_alternatives": [
+    {
+      "end_line": 596,
+      "evidence_id": "src/spotbot/research/rd26_exit_architecture.py:549-596",
+      "function": "union_events",
+      "line": 549,
+      "source_sha256": "1290748EA7E8A0343C1A15CEDFC1220AA423F04C11FDD558311B06AC7DA90359"
+    },
+    {
+      "end_line": 546,
+      "evidence_id": "src/spotbot/research/rd26_exit_architecture.py:533-546",
+      "function": "standalone_events",
+      "line": 533,
+      "source_sha256": "1290748EA7E8A0343C1A15CEDFC1220AA423F04C11FDD558311B06AC7DA90359"
+    }
+  ],
+  "declared_hash_authority": {
+    "evidence_id": "scripts/research/run_rd27_lifecycle_ablation.py:66-68",
+    "source_sha256": "7DFC388F3BF8EF6EFA16E0640CF924158999A9923674C7701B8919872755CBB5"
+  },
+  "declared_source_path": "data/research/rd26_p1_runtime/signal-events-2022-2023.csv",
+  "declared_source_sha256_not_read_or_reverified": "6462F576CEE9681751368A7755D3CA51EBF945CED54EA7B7F18B47BC469BA725",
+  "different_callsite_semantics": "EAA is pre2022 already-combined signals for STATIC policy; RD27 constructor branches select distinct family/universe populations. A10/A4R1 are treatment passthroughs, not sources.",
+  "execution_authorized": false,
+  "minimum_fields_consumed": [
+    "timestamp",
+    "pair",
+    "membership_rank",
+    "period_id",
+    "support_families",
+    "atr24_at_signal"
+  ],
+  "not_runtime_counter_accumulator": true,
+  "optional_constructor_field": "support_count",
+  "pit_contract": {
+    "admission_schedule": "signal_time + 1 hour",
+    "complete_source_pit_certified": false,
+    "evidence": {
+      "evidence_id": "src/spotbot/research/rd27_lifecycle_replay.py:388-409",
+      "source_sha256": "E3944A4655DDDF21C394FE1DB541F2645F529C00BD8390B22D652BD8EF5BBF83"
+    },
+    "no_forward_price_in_signal_expression": true,
+    "signal_timestamp": "The hourly feature-row timestamp; scanner uses its completed close and prior ATR.",
+    "unproven_requirements": [
+      "Actual input timestamp bar-open convention and completed availability",
+      "Membership source decision/effective interval authority for selected universe",
+      "Authorized window/projection instead of legacy mixed 2022-2023 read_csv"
+    ]
+  },
+  "prior_16_field_schema": {
+    "actual_owner": "local counters dict",
+    "disposition": "REJECTED_COUNTERS_NOT_EVENTS",
+    "evidence": {
+      "evidence_id": "src/spotbot/research/rd27_lifecycle_replay.py:415-435",
+      "source_sha256": "E3944A4655DDDF21C394FE1DB541F2645F529C00BD8390B22D652BD8EF5BBF83"
+    }
+  },
+  "prospective_source_fully_bound": false,
+  "signal_generation": [
+    {
+      "end_line": 319,
+      "evidence_id": "src/spotbot/research/rd26_exit_architecture.py:261-319",
+      "function": "evaluate_hour",
+      "line": 261,
+      "source_sha256": "1290748EA7E8A0343C1A15CEDFC1220AA423F04C11FDD558311B06AC7DA90359"
+    },
+    {
+      "end_line": 258,
+      "evidence_id": "src/spotbot/research/rd26_exit_architecture.py:218-258",
+      "function": "_relative_strength_event",
+      "line": 218,
+      "source_sha256": "1290748EA7E8A0343C1A15CEDFC1220AA423F04C11FDD558311B06AC7DA90359"
+    }
+  ],
+  "status": "SOURCE_CODE_CONSTRUCTOR_BOUND_PROSPECTIVE_SELECTION_AND_PIT_NOT_BOUND",
+  "transitive_mutation_status": "PROVEN_NO_TRANSITIVE_MUTATION",
+  "upstream_constructor": {
+    "end_line": 413,
+    "evidence_id": "src/spotbot/research/rd26_exit_architecture.py:322-413",
+    "function": "scan_focus_signals",
+    "line": 322,
+    "source_sha256": "1290748EA7E8A0343C1A15CEDFC1220AA423F04C11FDD558311B06AC7DA90359"
+  },
+  "upstream_loader": {
+    "end_line": 239,
+    "evidence_id": "scripts/research/run_rd27_lifecycle_ablation.py:225-239",
+    "function": "load_signal_events",
+    "line": 225,
+    "source_sha256": "7DFC388F3BF8EF6EFA16E0640CF924158999A9923674C7701B8919872755CBB5"
+  },
+  "writer_code_relation_not_execution_claim": [
+    {
+      "evidence_id": "scripts/research/run_rd26_exit_architecture.py:592-605",
+      "source_sha256": "9C096C6E7C4784D9B91A7EFC55FA85F46755B2D850B78E7A5E90980294DC9ACE"
+    },
+    {
+      "evidence_id": "scripts/research/run_rd26_exit_architecture.py:649-653",
+      "source_sha256": "9C096C6E7C4784D9B91A7EFC55FA85F46755B2D850B78E7A5E90980294DC9ACE"
+    }
+  ]
+}

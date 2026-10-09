@@ -1,0 +1,38 @@
+{
+  "decision": "DO_NOT_ADVANCE_TO_ECONOMICS_DIAGNOSE_TRIGGER_SELECTIVITY",
+  "facts": {
+    "candidate_incidence": 0.7575757575757576,
+    "candidate_lifecycles": 25,
+    "conditional_candidate_incidence_after_memory": 1.0,
+    "eligible_lifecycles": 33,
+    "latched_trigger_lifecycles": 25,
+    "memory_lifecycles": 25,
+    "raw_trigger_incidence": 1.0,
+    "raw_trigger_lifecycles": 33,
+    "trigger_before_memory_incidence": 0.42424242424242425
+  },
+  "scope_limits": {
+    "canonical_roster": 153,
+    "claim_outside_measured_2022_eligible_cohort": false,
+    "coverage_excluded": 0,
+    "economics_used": false,
+    "measured_eligible_population": 33,
+    "out_of_window": 120,
+    "outcome_fields_used": false
+  },
+  "source_execution_task": "CAUSAL_EXIT_BRAIN_SHADOW_EXIT_CANDIDATE_BEHAVIORAL_SPECIFICITY_EXECUTION_V1",
+  "source_input_sha256": "6F6A90B00C3F6B61A4D24D7A6F94A11703789AA4E8D82F9CD7A351D6CE5EF8E2",
+  "source_result_path": "governance/spec_exec_v1_result.json",
+  "source_result_sha256": "2518A9E9FE46CE8D2EDA97D594AAF0AE1EAB6ABF86B82206ED80C7E92A9F26F3",
+  "status": "PASS",
+  "structural_adjudication": {
+    "activate_exit_authority": false,
+    "advance_to_economic_test": false,
+    "memory_is_current_lifecycle_gate": true,
+    "post_memory_lifecycle_discrimination": "NONE_IN_MEASURED_MEMORY_COHORT",
+    "raw_trigger_lifecycle_discrimination": "NONE_IN_MEASURED_ELIGIBLE_COHORT",
+    "reason": "Every eligible lifecycle produced at least one raw trigger and every memory-established lifecycle progressed to a one-shot candidate. Therefore Trigger V1 added no lifecycle-level filtering after memory in the measured cohort. No numerical cutoff is used for this conclusion.",
+    "trigger_current_role": "TIMING_CONFIRMATION_WITHOUT_OBSERVED_LIFECYCLE_FILTERING"
+  },
+  "task_id": "CAUSAL_EXIT_BRAIN_SHADOW_EXIT_CANDIDATE_BEHAVIORAL_SPECIFICITY_HUMAN_ADJUDICATION_V1"
+}

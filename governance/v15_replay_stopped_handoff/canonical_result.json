@@ -1,0 +1,80 @@
+{
+  "task_id": "AKAH_SINGLE_FROZEN_ALL_NINE_GATE3_REPLAY_V15",
+  "classification": "TECHNICAL_OR_PARITY_FAILURE_FAIL_CLOSED_NO_SCIENTIFIC_CONCLUSION",
+  "outcome": "FAIL_CLOSED",
+  "scientific_conclusion": null,
+  "user_requested_stop_and_manual_github_handoff": true,
+  "replay_restart_authorized_or_executed_by_this_handoff": false,
+  "observed_supervisor_status": {
+    "arm": "FS_ICT_SESSION_OWNER_V8|1X",
+    "index": 3,
+    "requested": 18,
+    "completed": [],
+    "failures": {
+      "FS_WYCKOFF_FRESH_CAUSE_V8|1X": {
+        "status": "INCOMPLETE_OPERATIONAL_OR_TECHNICAL_STOP_NOT_ECONOMIC_RESULT",
+        "receipt": {
+          "os_exit_code": 1,
+          "worker_pid": 26084,
+          "wrapper_pid": 22444,
+          "allocation_policy": "HOST_PRESSURE_NO_FIXED_PRIVATE_CEILING",
+          "guardian_pid": 2520,
+          "pauses": 136,
+          "paused_seconds": 4995.421094099933,
+          "budget_mib": null,
+          "bootstrap_allowance_mib": 128,
+          "peak_sampled_private_bytes": 1205469184,
+          "peak_sampled_rss_bytes": 1134182400,
+          "wall_seconds": 20100.230521899997,
+          "forced_working_set_trim": false,
+          "resume_reserve": "512MiB plus conservative private resident displacement if native counter valid; unsupported uses old total-RSS bound; commit>=1GiB",
+          "stdout": "C:\\SIRAJ\\Repositories\\spot-speculation-bot\\.akah_bot\\economic-guarded-20261008T220827\\arm-01\\stdout.log",
+          "stderr": "C:\\SIRAJ\\Repositories\\spot-speculation-bot\\.akah_bot\\economic-guarded-20261008T220827\\arm-01\\stderr.log",
+          "other_apps_controlled": false,
+          "kill_on_guardian_loss_job_bound": true
+        }
+      },
+      "FS_WYCKOFF_FRESH_CAUSE_V8|2X": {
+        "status": "INCOMPLETE_OPERATIONAL_OR_TECHNICAL_STOP_NOT_ECONOMIC_RESULT",
+        "receipt": {
+          "os_exit_code": 1,
+          "worker_pid": 8940,
+          "wrapper_pid": 28100,
+          "allocation_policy": "HOST_PRESSURE_NO_FIXED_PRIVATE_CEILING",
+          "guardian_pid": 2520,
+          "pauses": 0,
+          "paused_seconds": 0.0,
+          "budget_mib": null,
+          "bootstrap_allowance_mib": 128,
+          "peak_sampled_private_bytes": 98664448,
+          "peak_sampled_rss_bytes": 112738304,
+          "wall_seconds": 20.535699100000784,
+          "forced_working_set_trim": false,
+          "resume_reserve": "512MiB plus conservative private resident displacement if native counter valid; unsupported uses old total-RSS bound; commit>=1GiB",
+          "stdout": "C:\\SIRAJ\\Repositories\\spot-speculation-bot\\.akah_bot\\economic-guarded-20261008T220827\\arm-02\\stdout.log",
+          "stderr": "C:\\SIRAJ\\Repositories\\spot-speculation-bot\\.akah_bot\\economic-guarded-20261008T220827\\arm-02\\stderr.log",
+          "other_apps_controlled": false,
+          "kill_on_guardian_loss_job_bound": true
+        }
+      }
+    },
+    "status": "ARM_START_REQUESTED_NOT_COMPLETED"
+  },
+  "completed_arms": 0,
+  "requested_arms": 18,
+  "primary_observed_failure": "OSError: [Errno 28] No space left on device during checkpoint save",
+  "last_durable_checkpoints": [
+    {
+      "pointer": ".akah_bot/v15_recoverable_session/FS_WYCKOFF_FRESH_CAUSE_V8_1X_checkpoint.json",
+      "receipt": "C:\\SIRAJ\\Repositories\\spot-speculation-bot\\.akah_bot\\v15_recoverable_session\\FS_WYCKOFF_FRESH_CAUSE_V8_1X\\checkpoint-z7n_7m3_\\receipt.json",
+      "sha256": "824BA5B824B46D3CACBC56EE663D6D1FE4FD87E6DD9430250B27FD8584A340E1",
+      "cursor": "2021-12-03 08:00:00+00:00"
+    }
+  ],
+  "runtime_certificate_sha256": "1B125A981071E2D5B57E07F9777856B0B40AD526F62B28E90A4A0F126408E606",
+  "evidence_snapshot_sha256": "810C573BF53A38908731E1D5FBE51CC39846B5760E423BFA072D265A10EBB500",
+  "2024_access": false,
+  "2025_access": false,
+  "production_changed": false,
+  "utc": "2026-10-09T10:20:46.024595+00:00"
+}

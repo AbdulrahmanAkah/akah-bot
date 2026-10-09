@@ -1,0 +1,62 @@
+{
+  "authority_id": "AKAH_BOT_RD23_SIGNAL_TRUE_PRODUCER_CHAIN_V1",
+  "status": "BOUND_FOR_RD23_ARTIFACT_SEMANTICS_NOT_CURRENT_RD27_AUTHORITY",
+  "producer": {
+    "path": "scripts/research/run_rd23_multifamily_raw_edge.py",
+    "function": "main",
+    "lines": "249-312",
+    "sha256": "7B31BB16FCDECA633D3BEA2951BECA049A8FEEC5158EA634F5ADE48B650CAAB7",
+    "writer": "events.to_csv(output / 'signal-events.csv', index=False, lineterminator='\\n')",
+    "target_output": "data/research/rd23_p2_runtime/signal-events.csv"
+  },
+  "chain": [
+    {
+      "step": 1,
+      "call": "load_membership",
+      "source": "scripts/research/run_rd23_multifamily_raw_edge.py:117",
+      "input": "data/research/rd18_p3x_a3b_runtime/effective-operational-membership.csv",
+      "input_sha256": "F7D6012CE8CD691583B9B6276DDF36371BFE0BBD9B28F810B676AD0177FB559E",
+      "role": "PIT_MEMBERSHIP_AND_UNIVERSE_SOURCE"
+    },
+    {
+      "step": 2,
+      "call": "load_features",
+      "source": "scripts/research/run_rd23_multifamily_raw_edge.py:169-187",
+      "input": "data/raw/rd16b/kucoin/<pair>/1h.parquet",
+      "selector": "pyarrow filter timestamp < DATA_CUTOFF where DATA_CUTOFF=2022-01-01T00:00:00Z",
+      "role": "1H_FEATURE_INPUT"
+    },
+    {
+      "step": 3,
+      "call": "scan_signals",
+      "source": "src/spotbot/research/rd23_multifamily_raw_edge.py:376-428",
+      "source_sha256": "6F23405F56BEC0B828130DA6BD57B606659F354892AF4278C9EC18DEEC704AF8",
+      "role": "SIX_FAMILY_SIGNAL_CONSTRUCTION"
+    },
+    {
+      "step": 4,
+      "call": "post_load_timestamp_assertion",
+      "source": "scripts/research/run_rd23_multifamily_raw_edge.py:269-271",
+      "role": "REJECTS_OUTPUT_EVENTS_AT_OR_AFTER_2022_CUTOFF"
+    },
+    {
+      "step": 5,
+      "call": "events.to_csv",
+      "source": "scripts/research/run_rd23_multifamily_raw_edge.py:312",
+      "role": "IMMUTABLE_TRACKED_ARTIFACT_WRITER"
+    }
+  ],
+  "source_contract": {
+    "data_start": "2019-01-01T00:00:00Z",
+    "data_cutoff_exclusive": "2022-01-01T00:00:00Z",
+    "families": ["MOMENTUM_BREAKOUT", "VOLATILITY_EXPANSION", "STRUCTURAL_REVERSAL", "RELATIVE_STRENGTH_ROTATION", "MOMENTUM_ACCELERATION", "BASE_RANGE_BREAKOUT"],
+    "event_schema": ["universe_id", "period_id", "timestamp", "candidate_rank", "family_id", "pair", "membership_rank", "signal_strength", "decision_close", "return_72h", "aux_value"],
+    "sort_order": "stable_event_construction_then_artifact_writer_order",
+    "duplicate_policy": "source_normalize_bars_drops_duplicate_timestamp_keep_last; event-level uniqueness not separately authorized",
+    "pit_logic": "membership decision_time/effective_end and completed feature timestamp are used by scan_signals",
+    "atr24_at_signal_emitted": false
+  },
+  "rd26_relationship": "RD23 artifact is a preflight/reference input to RD26; RD26 constructs its own focus events and writes a separate mixed ledger.",
+  "protected_year_rows_read": false,
+  "native_replay_executed": false
+}

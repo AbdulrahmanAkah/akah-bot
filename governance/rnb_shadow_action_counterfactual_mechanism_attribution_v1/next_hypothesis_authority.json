@@ -1,0 +1,27 @@
+{
+  "constraints": {
+    "market_state_filter_search": false,
+    "memory_as_exit": false,
+    "new_time_threshold_search": false,
+    "outcome_optimized_rule": false,
+    "protected_year_access": false,
+    "reuse_existing_frozen_state_time_semantics_before_introducing_new_thresholds": true,
+    "v2_direct_exit": false
+  },
+  "hypothesis_id": "AKAH_RNB_PRE_PROGRESS_THESIS_NON_CONFIRMATION_V1",
+  "motivation": {
+    "descriptive_evidence_only": {
+      "memory_only_native_net_pnl_from_prior_freeze": 83195.29130736887,
+      "no_memory_native_net_pnl_from_prior_freeze": -104532.01000853031,
+      "warning": "These outcomes motivate path prioritization only and must not be used to fit a time threshold."
+    },
+    "semantic": "A position that has not demonstrated structural progress should be evaluated separately from a position that progressed and later deteriorated."
+  },
+  "next_bottleneck": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_PRE_PROGRESS_THESIS_NON_CONFIRMATION_ACTION_CONTRACT_FREEZE_V1",
+  "next_task": "Freeze one semantically defined pre-progress non-confirmation action contract using existing frozen lifecycle/state thresholds where possible, before economic replay.",
+  "state_boundary": {
+    "POST_PROGRESS": "First causal Memory event has occurred.",
+    "PRE_PROGRESS": "No Memory event has occurred since entry."
+  },
+  "status": "DIRECTION_FROZEN_NOT_YET_ACTION_CONTRACT"
+}

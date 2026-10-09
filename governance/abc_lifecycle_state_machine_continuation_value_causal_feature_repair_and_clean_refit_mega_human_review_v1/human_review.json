@@ -1,0 +1,48 @@
+{
+  "accepted": {
+    "development_population_repair": true,
+    "exact_target": true,
+    "legacy_leakage_finding": true,
+    "provenance_lock": true
+  },
+  "clean_features": [
+    "hours_since_entry",
+    "progress_margin_delta_from_prev",
+    "atr22_current"
+  ],
+  "clean_forward_pass": false,
+  "clean_year_results": {
+    "2022": {
+      "predicted_high_minus_low_actual_mean": -0.0035873313434622695,
+      "rows": 2065,
+      "spearman": -0.1042680898122972,
+      "target_mean": -0.003465823348379279
+    },
+    "2023": {
+      "predicted_high_minus_low_actual_mean": -0.006578731666710638,
+      "rows": 2565,
+      "spearman": -0.06785275051859531,
+      "target_mean": 0.00952807941207391
+    }
+  },
+  "cost2x_status": "DEFER_COST2X_FORWARD_FAILURE",
+  "hard_freezes": [
+    "CURRENT_DYNAMIC_TOP6",
+    "BINARY_VOL_CONTEXT",
+    "168H",
+    "NO_SIZING",
+    "NO_REPLACEMENT",
+    "NO_PRODUCTION",
+    "NO_2024",
+    "NO_PUSH"
+  ],
+  "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_CONTINUATION_VALUE_STATE_CONDITIONED_ATTRIBUTION_PROTOCOL_FREEZE_V1",
+  "rejected": {
+    "clean_three_feature_model_as_value_authority": true,
+    "legacy_leaked_model": true,
+    "shadow_runtime_policy": true
+  },
+  "schema_version": "akah-rev564-state-conditioned-continuation-maximum-evidence-mega-v1-human-review",
+  "status": "PASS_CLEAN_THREE_FEATURE_MODEL_REJECTED_STATE_ATTRIBUTION_AUTHORIZED",
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_CONTINUATION_VALUE_CAUSAL_FEATURE_REPAIR_AND_CLEAN_REFIT_MEGA_HUMAN_REVIEW_V1"
+}

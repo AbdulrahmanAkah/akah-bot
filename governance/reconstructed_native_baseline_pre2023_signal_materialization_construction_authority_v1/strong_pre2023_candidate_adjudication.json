@@ -1,0 +1,60 @@
+{
+  "authority_id": "AKAH_BOT_PRE2023_STRONG_SIGNAL_CANDIDATE_ADJUDICATION_V1",
+  "status": "PASS_EXACT_CANDIDATES_ADJUDICATED",
+  "strong_candidate_count": 2,
+  "protected_year_rows_read": false,
+  "mixed_signal_rows_read": false,
+  "candidates": [
+    {
+      "path": "data/research/rd23_p2_runtime/signal-events.csv",
+      "file_type": "CSV",
+      "exists": true,
+      "tracked": true,
+      "size_bytes": 6984154,
+      "sha256": "CDD6F078A5851A38BE3F44722DCCA7D6CCCCB771B4647E9B467D14DE3FC9D264",
+      "path_year_tokens": [],
+      "governance_mentions": [
+        {
+          "path": "governance/reconstructed_native_baseline_rd26_signal_source_and_1h_manifest_exact_gap_closure_v1/signal_2022_materialization_search.json",
+          "sha256": "04B2A78409F8169473768D15C78E447E729E37B707B13BABC5A1946695973DDA"
+        }
+      ],
+      "previous_strong_classifier_basis": "Metadata candidate scanner found a tracked signal-events artifact with explicit pre-2023/protected-firewall governance language; no content rows were read.",
+      "producer_or_source_role": "RD23 P2 multifamily signal artifact produced by scripts/research/run_rd23_multifamily_raw_edge.py; its input audit binds data_cutoff_exclusive=2022-01-01T00:00:00Z.",
+      "immutable_status": "TRACKED_AND_OUTPUT_MANIFEST_HASHED",
+      "schema_authority": "scripts/research/run_rd23_multifamily_raw_edge.py output contract plus data/research/rd23_p2_runtime/output-manifest.json; row content not opened in this task.",
+      "pit_semantics_documented": "PARTIAL",
+      "required_current_nine_strata_fields_authorized": "PARTIAL",
+      "timestamp_semantics": "CAUSAL_SIGNAL_TIMESTAMP_SOURCE_CONTRACTED_BUT_CURRENT_NINE_STRATA_INPUT_INSTANCE_NOT_BOUND",
+      "temporal_scope_evidence": "The source audit is explicitly pre-2022 with data_cutoff_exclusive=2022-01-01T00:00:00Z; it is not an authorized 2022 signal materialization for the current nine-strata prospective baseline.",
+      "classification": "PROMISING_BUT_AUTHORITY_INCOMPLETE",
+      "blocking_reason": "It is an earlier pre-2022 artifact and does not establish the required current 2022-only signal artifact for FULL_EXISTING_NATIVE_MATRIX_AS_STUDY_STRATA; its presence cannot authorize opening the mixed 2022-2023 file."
+    },
+    {
+      "path": "data/research/rd26_p0_runtime/rd23-focus-signal-equivalence-audit-v1.json",
+      "file_type": "JSON",
+      "exists": true,
+      "tracked": true,
+      "size_bytes": 2511,
+      "sha256": "F66534F27F1AF96F5F1317F95EEB5C0B5FF6A3A935CBBE424E961A1096A0AEC9",
+      "path_year_tokens": [],
+      "governance_mentions": [
+        {
+          "path": "governance/reconstructed_native_baseline_rd26_signal_source_and_1h_manifest_exact_gap_closure_v1/signal_2022_materialization_search.json",
+          "sha256": "04B2A78409F8169473768D15C78E447E729E37B707B13BABC5A1946695973DDA"
+        }
+      ],
+      "previous_strong_classifier_basis": "Metadata candidate scanner classified it strongly because it is a pre-2022 governed equivalence artifact adjacent to the signal producer.",
+      "producer_or_source_role": "RD26 P0 audit/equivalence evidence; it is not an event ledger and does not contain the signal input rows.",
+      "immutable_status": "TRACKED_GOVERNANCE_ARTIFACT",
+      "schema_authority": "Audit JSON schema only; no signal-event schema authority.",
+      "pit_semantics_documented": "NOT_APPLICABLE_AS_SIGNAL_INPUT",
+      "required_current_nine_strata_fields_authorized": "FALSE",
+      "timestamp_semantics": "NOT_APPLICABLE_AS_SIGNAL_INPUT",
+      "temporal_scope_evidence": "The audit records preflight equivalence and a cutoff; it is not a materialized event source.",
+      "classification": "NOT_A_SIGNAL_INPUT",
+      "blocking_reason": "An audit report cannot substitute for an immutable signal artifact."
+    }
+  ],
+  "decision": "NO_EXISTING_STRONG_CANDIDATE_IS_AUTHORIZED_FOR_THE_CURRENT_PRE2023_NINE_STRATA_INPUT"
+}

@@ -1,0 +1,27 @@
+{
+  "authority_id": "AKAH_BOT_POST_SIGNAL_AUTHORIZATION_TERMINAL_VERIFICATION_CONTRACT_V1",
+  "status": "READY_PENDING_SIGNAL_AUTHORIZATION",
+  "steps": [
+    "Open only the authorized immutable <=2022 signal artifact.",
+    "Verify SHA256, exact seven-field schema, UTC timestamps, and maximum timestamp under the already-authorized access model.",
+    "Instantiate all nine frozen strata without changing constructor mappings.",
+    "Derive sorted unique pairs and add BTC-USDT as state sensor if absent.",
+    "Bind each selected pair to data/raw/rd16b/kucoin/<pair>/1h.parquet and enumerate missing/extraneous files.",
+    "Hash selected 1H files and inspect Parquet footer metadata before any timestamp-column read.",
+    "Read timestamp only; verify UTC, ordering, duplicates, exact 3600-second spacing, missing hours, rolling-24 continuity, study-window coverage, and max-exit administrative coverage."
+  ],
+  "signal_readable_columns": ["timestamp", "universe_id", "period_id", "family_id", "pair", "membership_rank", "atr24_at_signal"],
+  "one_hour_readable_columns": ["timestamp"],
+  "forbidden_columns": ["open", "high", "low", "close", "volume", "trailing_24h_quote_turnover_proxy", "returns", "exit_price", "exit_reason", "exit_time", "gross_pnl", "net_pnl", "holding_hours", "mae", "mfe", "return_fraction"],
+  "one_hour_contract": {
+    "raw_root": "data/raw/rd16b/kucoin",
+    "timestamp_column": "timestamp",
+    "timestamp_semantic": "BAR_CLOSE_TIME",
+    "timezone": "UTC",
+    "information_available_at": "stored timestamp",
+    "spacing_seconds": 3600
+  },
+  "future_coverage": "ADMINISTRATIVE_COVERAGE_REQUIREMENT_NOT_CAUSAL_SIGNAL",
+  "execution_authorized_now": false,
+  "blocking_authority": "PREOPEN_2022_SOURCE_OR_CURRENT_NINE_STRATA_COMPATIBLE_IMMUTABLE_ARTIFACT"
+}

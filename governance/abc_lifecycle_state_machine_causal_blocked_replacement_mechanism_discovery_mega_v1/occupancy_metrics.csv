@@ -1,0 +1,8 @@
+variant,description,hours,candidate_events,hours_with_candidates,funded_entries,normal_entries,causal_replacements,replacement_from_max_positions,replacement_from_capacity_block,position_hours,max_positions_hours,gross_cap_forced_exits
+R00_F10_ACTUAL,Exact F10 baseline; no replacement,35064,289108,29224,4358,4358,0,0,0,395719,12615,575
+R00_F10_ACTUAL,Exact F10 baseline; no replacement,35064,289108,29224,4363,4363,0,0,0,395772,12617,577
+R01_SCORE_GAP,Blocked candidate may replace the incumbent with the lowest entry F10 score when candidate F10 score is strictly higher,35064,289108,29224,9493,4066,5427,5383,44,396948,12695,761
+R02_SCORE_GAP_LOSER,R01 plus incumbent executable unrealized net return must be <= 0,35064,289108,29224,8503,3866,4637,4607,30,397856,12885,725
+R03_SCORE_GAP_STALE24,R01 plus incumbent age must be >= 24 completed hours,35064,289108,29224,7512,3883,3629,3620,9,397454,12871,709
+R04_SCORE_GAP_LOSER_OR_STALE24,R01 plus incumbent is nonpositive OR at least 24 completed hours old,35064,289108,29224,8890,4016,4874,4839,35,397382,12741,763
+R05_SCORE_GAP_LOSER_AND_STALE24,R01 plus incumbent is nonpositive AND at least 24 completed hours old,35064,289108,29224,5939,3767,2172,2163,9,397810,12985,635

@@ -1,0 +1,64 @@
+{
+  "2024_access": false,
+  "accepted": {
+    "exact_target": true,
+    "leakage_cleanup": true,
+    "population_repair": true,
+    "shadow_policy": false,
+    "state_attribution": true,
+    "state_basis_model_as_value_authority": false
+  },
+  "decision": "FAILURE_REQUIRES_TARGET_MECHANISM_AND_REPRESENTATION_ATTRIBUTION_NO_RETUNING",
+  "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_CONTINUATION_VALUE_TARGET_MECHANISM_DECOMPOSITION_PROTOCOL_FREEZE_V1",
+  "oracle_headroom": {
+    "2022": {
+      "always_hold_mean": -0.003465823348379279,
+      "cost2x_always_hold_mean": -0.0034614856470671597,
+      "cost2x_perfect_sign_oracle_increment_vs_exit": 0.011835273666556703,
+      "perfect_sign_oracle_increment_vs_exit": 0.011850104836564915,
+      "positive_share": 0.3336561743341404,
+      "rows": 2065
+    },
+    "2023": {
+      "always_hold_mean": 0.00952807941207391,
+      "cost2x_always_hold_mean": 0.009516154406551907,
+      "cost2x_perfect_sign_oracle_increment_vs_exit": 0.019596682017881867,
+      "perfect_sign_oracle_increment_vs_exit": 0.019621239263518307,
+      "positive_share": 0.4409356725146199,
+      "rows": 2565
+    },
+    "TRAIN_2019_2021": {
+      "always_hold_mean": 0.005373899995526805,
+      "cost2x_always_hold_mean": 0.005367174213304621,
+      "cost2x_perfect_sign_oracle_increment_vs_exit": 0.02023795264060959,
+      "perfect_sign_oracle_increment_vs_exit": 0.020263313483517616,
+      "positive_share": 0.41932114882506527,
+      "rows": 7660
+    }
+  },
+  "production_changed": false,
+  "push": false,
+  "schema_version": "akah-rev568-continuation-mechanism-bellman-maximum-evidence-mega-v1-human-review",
+  "state_basis_model": {
+    "block_forward_pass": false,
+    "cost2x_pass": false,
+    "features": 30,
+    "forward_pass": false,
+    "year_results": {
+      "2022": {
+        "predicted_high_minus_low_actual_mean": 0.0007765418464243572,
+        "rows": 2065,
+        "spearman": -0.014521096643045238,
+        "target_mean": -0.003465823348379279
+      },
+      "2023": {
+        "predicted_high_minus_low_actual_mean": 0.000713691782791296,
+        "rows": 2565,
+        "spearman": 0.026189844636657852,
+        "target_mean": 0.00952807941207391
+      }
+    }
+  },
+  "status": "PASS_HUMAN_REVIEW",
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_CONTINUATION_VALUE_STATE_BASIS_LOW_CAPACITY_MODEL_MEGA_HUMAN_REVIEW_V1"
+}

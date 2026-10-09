@@ -1,0 +1,33 @@
+{
+  "2024_access": false,
+  "2025_access": false,
+  "hard_cutoff_exclusive": "2024-01-01T00:00:00Z",
+  "model_selection": false,
+  "model_zoo": false,
+  "nonlinear_probe": {
+    "dim": 64,
+    "fixed_map": "x/(1+abs(x))",
+    "gamma_rule": "1/P",
+    "lambda": 10.0,
+    "seeds": {
+      "candidate": 75501,
+      "direct": 75503,
+      "incumbent": 75502
+    },
+    "training_sample_cap_per_head_year": 50000,
+    "type": "RFF_RIDGE"
+  },
+  "opportunity_source_revision": 731,
+  "oracle_reference_revision": 749,
+  "portfolio_policy_replay": false,
+  "production_changed": false,
+  "push": false,
+  "schema_version": "akah-feature-information-nonlinear-bound-protocol-v1",
+  "source_revision": 755,
+  "test_years": [
+    2021,
+    2022,
+    2023
+  ],
+  "threshold_search": false
+}

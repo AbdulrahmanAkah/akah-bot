@@ -1,0 +1,33 @@
+{
+  "2023_rows_must_not_be_opened": true,
+  "authority_id": "AKAH_BOT_CURRENT_RD26_TRUE_READ_RECONSTRUCTION_INPUT_AUTHORITY_V1",
+  "future_information_leakage": false,
+  "mixed_output_must_not_be_read_as_input": true,
+  "native_1h_timestamp_semantic": "BAR_CLOSE_TIME",
+  "path_binding_blocked_count": 0,
+  "preopen_authority_blocked_count": 0,
+  "ready_input_count": 0,
+  "required_output_columns": [
+    "timestamp",
+    "universe_id",
+    "period_id",
+    "family_id",
+    "pair",
+    "membership_rank",
+    "atr24_at_signal"
+  ],
+  "status": "BLOCKED",
+  "target_output": "data/research/rd26_p1_runtime/signal-events-2022-2023.csv",
+  "true_inputs": [],
+  "true_read_dependency_count": 0,
+  "true_writer": {
+    "module": "scripts/research/run_rd26_exit_architecture.py",
+    "module_sha256": "9C096C6E7C4784D9B91A7EFC55FA85F46755B2D850B78E7A5E90980294DC9ACE",
+    "receiver_expr": "events",
+    "writer_call": "events.to_csv(\n        output / \"signal-events-2022-2023.csv\",\n        index=False,\n        lineterminator=\"\\n\",\n    )",
+    "writer_call_line": 650,
+    "writer_function": "main",
+    "writer_function_end_line": 722,
+    "writer_function_line": 562
+  }
+}

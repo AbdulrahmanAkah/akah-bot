@@ -1,0 +1,29 @@
+{
+  "schema_version": "abc-lifecycle-evidence-sequence-completeness-audit-v1",
+  "status": "PASS",
+  "control_lifecycle_count": 2020,
+  "materialized_decision_grid_row_count": 14059,
+  "total_event_set_count": 6559,
+  "total_adjacent_transition_count": 4539,
+  "first_memory_lifecycle_count": 1270,
+  "confirmed_phase_entry_lifecycle_count": 1145,
+  "zero_duration_lifecycle_count": 30,
+  "zero_decision_lifecycle_count": 238,
+  "evidence_event_counts": {
+    "STRUCTURAL_BREAK_EVIDENCE": 135,
+    "STALLED_EVIDENCE": 74,
+    "VOLATILITY_DAMAGE_EVIDENCE": 31
+  },
+  "unique_sequence_signature_count": 32,
+  "all_2020_control_lifecycles_present": true,
+  "entry_and_native_exit_exactly_once_per_lifecycle": true,
+  "event_timestamps_from_frozen_outputs_only": true,
+  "simultaneous_events_grouped_without_priority": true,
+  "evidence_event_parity_pass": true,
+  "pairwise_population_parity_pass": true,
+  "adjacent_transition_gap_parity_pass": true,
+  "memory_confirmed_causal_order_pass": true,
+  "stalled_pre_memory_order_pass": true,
+  "volatility_damage_confirmed_phase_order_pass": true,
+  "native_exit_not_before_entry_pass": true
+}

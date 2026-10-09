@@ -1,0 +1,161 @@
+{
+  "task_id": "FINAL_EXIT_BRAIN_PRE_2024_ARCHITECTURE_P43_PREEXISTING_EVENT_LEVEL_TRANSITION_AUTHORITY_SCHEMA_ADJUDICATION_V1_RETRY_V1",
+  "status": "PASS",
+  "identity": [
+    "pair",
+    "entry_time"
+  ],
+  "lineage_join_key": [
+    "period_id",
+    "signal_time_utc_iso",
+    "pair"
+  ],
+  "identity_role": "RESEARCH_LINEAGE_ONLY",
+  "identity_nulls": 0,
+  "duplicate_identity": 0,
+  "schema": [
+    "policy_id",
+    "portfolio_id",
+    "universe_id",
+    "cost_multiplier",
+    "pair",
+    "signal_time",
+    "entry_time",
+    "exit_time",
+    "holding_hours",
+    "exit_reason",
+    "entry_price",
+    "exit_price",
+    "quantity",
+    "entry_notional",
+    "exit_notional",
+    "entry_cost",
+    "exit_cost",
+    "gross_pnl",
+    "net_pnl",
+    "period_id",
+    "membership_rank",
+    "support_families",
+    "support_count",
+    "atr24_at_signal",
+    "high_water_at_exit",
+    "entry_market_state",
+    "exit_market_state",
+    "protection_floor_at_exit"
+  ],
+  "pnl_column": "net_pnl",
+  "pnl_reconciliation_abs_tolerance": 1e-08,
+  "p13_count": 215,
+  "p13_net_pnl": -4248.200575640417,
+  "all_entry_transition_count": 176,
+  "all_entry_transition_pnl": -8380.181762190457,
+  "direct_count": 173,
+  "direct_pnl": -8163.217282531882,
+  "direct_definition": "P19 treatment decision TRANSITION_ADMISSION_ABLATED intersect control event keys; require entry_market_state TRANSITION",
+  "excluded_transition_rows": [
+    {
+      "pair": "ADA-USDT",
+      "entry_time": "2022-07-23 22:00:00+00:00",
+      "signal_time": "2022-07-23 21:00:00+00:00",
+      "net_pnl": 375.74760900520994,
+      "treatment_decision": "SHADOW_STATIC_SAME_PAIR_OPEN_SUPPRESSED"
+    },
+    {
+      "pair": "ETH-USDT",
+      "entry_time": "2022-10-30 06:00:00+00:00",
+      "signal_time": "2022-10-30 05:00:00+00:00",
+      "net_pnl": -180.0146043495654,
+      "treatment_decision": "SAME_PAIR_OPEN"
+    },
+    {
+      "pair": "ADA-USDT",
+      "entry_time": "2022-11-01 08:00:00+00:00",
+      "signal_time": "2022-11-01 07:00:00+00:00",
+      "net_pnl": -412.6974843142201,
+      "treatment_decision": "SHADOW_STATIC_SAME_PAIR_OPEN_SUPPRESSED"
+    }
+  ],
+  "2022_direct_set_proven": true,
+  "2023_direct_set_proven": false,
+  "2023_recorded_export_paths": {
+    "common_trade_effect": {
+      "path": "C:\\Users\\abdul\\Downloads\\akah_p38_preflight_x1tkxztf\\observer_output_2023\\EAA_EXIT_BRAIN_P19_2022_COMMON_TRADE_EFFECT_20260919_154405.csv",
+      "row_count": 85,
+      "sha256": "408D4865FBC47088F93C76F750A758E7CB29A479EB6DBC13251E6C549C2D950D",
+      "exists": false
+    },
+    "divergent_trade_lineage": {
+      "path": "C:\\Users\\abdul\\Downloads\\akah_p38_preflight_x1tkxztf\\observer_output_2023\\EAA_EXIT_BRAIN_P19_2022_DIVERGENT_TRADE_LINEAGE_20260919_154405.csv",
+      "row_count": 197,
+      "sha256": "2D271E8A479F2977EA762520FC179379A475BAEA60A835753736D64E4F5571AF",
+      "exists": false
+    },
+    "treatment_event_trace": {
+      "path": "C:\\Users\\abdul\\Downloads\\akah_p38_preflight_x1tkxztf\\observer_output_2023\\EAA_EXIT_BRAIN_P19_2022_TRANSITION_ABLATED_EVENT_TRACE_20260919_154405.csv",
+      "row_count": 1223,
+      "sha256": "94EAD40CAA4E13BF2644ABF6958C304EAC7AA0FB5427B69384918DA9AC2FECB9",
+      "exists": false
+    },
+    "treatment_trades": {
+      "path": "C:\\Users\\abdul\\Downloads\\akah_p38_preflight_x1tkxztf\\observer_output_2023\\EAA_EXIT_BRAIN_P19_2022_TRANSITION_ABLATED_TREATMENT_TRADES_20260919_154405.csv",
+      "row_count": 130,
+      "sha256": "98D5EC83F55BC47DABE56E42929DBEDDB2FB6380C50C36643F67F40F09B913F8",
+      "exists": false
+    }
+  },
+  "2023_control_rowset_in_full_p42_census": [],
+  "p38_export_hash_matches_in_full_p42_census": [],
+  "p42_rowsets_checked": 13402,
+  "absence_claim_scope": "P38 recorded paths and complete existing P42 derived-artifact census",
+  "scientific_conclusion": "NONE_CROSS_YEAR_DIAGNOSIS_REQUIRES_2023_EXPORT",
+  "minimum_export": [
+    "control trades",
+    "treatment trades",
+    "treatment event trace"
+  ],
+  "export_requirement": "Frozen P38 observer control/treatment plus exact P38 metrics parity; do not alter decisions",
+  "authorities": [
+    {
+      "path": "C:\\Users\\abdul\\Downloads\\AKAH_P33_RETRY_V3_P31_SANDBOX\\p13_baseline_replay_capture\\candidate_trades.csv",
+      "sha256": "AC2EBBB85692CBE0E4692BB045755A6C703A4B809682FFBB0B875E9FF24BA67A"
+    },
+    {
+      "path": "C:\\Users\\abdul\\Downloads\\EAA_EXIT_BRAIN_P19_2022_TRANSITION_ADMISSION_COMPONENT_ABLATION_CANONICAL_RESULT_20260914_010117.json",
+      "sha256": "221CC3BCF5E062CE36CE2BEE10E3A9EE22448A8A8E4EF54F01DAF331E8B52DE7"
+    },
+    {
+      "path": "C:\\Users\\abdul\\Downloads\\EAA_EXIT_BRAIN_P19_2022_TRANSITION_ADMISSION_ABLATION_OBSERVER_20260914_040044.py",
+      "sha256": "1CB8F15E04A2A7A19C7003024B2F56743EBCF23256CE0E1C2FAAB70CE82405CC"
+    },
+    {
+      "path": "C:\\Users\\abdul\\Downloads\\EAA_EXIT_BRAIN_P19_2022_TRANSITION_ABLATED_EVENT_TRACE_20260914_010117.csv",
+      "sha256": "D58205F56A9DDD39ED3B3AF3E5CDD3AF03F49E1BF4DB517E8D3705C1BC3F3F9B"
+    },
+    {
+      "path": "C:\\SIRAJ\\Repositories\\spot-speculation-bot\\governance\\final_exit_brain_pre_2024_architecture_p38_transition_admission_only_2023_temporal_replication_execution_retry_v1_retry_v1_retry_v1_retry_v1\\source_2023_replication_result.json",
+      "sha256": "2C18FDD45FBD4DD4163689DDC3CC27425479ABD95D5B722513BFAFF3548E2F7B"
+    },
+    {
+      "path": "C:\\SIRAJ\\Repositories\\spot-speculation-bot\\governance\\final_exit_brain_pre_2024_architecture_p42_preexisting_event_level_transition_diagnostic_authority_audit_v1\\canonical_result.json",
+      "sha256": "C52E2031D46E51C3349DA28913C0D6781D9EAF1BA69966D6B88C0A427BBEF973"
+    }
+  ],
+  "replay_executed": false,
+  "market_rows_read": false,
+  "2024_access": false,
+  "2025_access": false,
+  "artifacts": [
+    {
+      "path": "governance\\p43_transition_exact_authority\\direct_2022.csv",
+      "sha256": "CD9EEEE0131EFAC5B8CCAEF15A474A0ED751BFFFD0BFB881507572C43C4ECF4D"
+    },
+    {
+      "path": "governance\\p43_transition_exact_authority\\p13_control_trades.csv",
+      "sha256": "AC2EBBB85692CBE0E4692BB045755A6C703A4B809682FFBB0B875E9FF24BA67A"
+    },
+    {
+      "path": "governance\\p43_transition_exact_authority\\treatment_trace_2022.csv",
+      "sha256": "FA1138C4726890170B04750CA79E8AC0DA02E3107ECEC910090F9410C3A2F3DF"
+    }
+  ]
+}

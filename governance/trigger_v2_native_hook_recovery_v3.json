@@ -1,0 +1,81 @@
+{
+  "firewall": {
+    "actual_exit_authority": false,
+    "economics_read": false,
+    "production_activation": false,
+    "real_market_replay": false
+  },
+  "native_hook": {
+    "actual_exit_authority": false,
+    "default_enabled": false,
+    "native_position_mutation": false,
+    "path": "src/spotbot/research/rd27_later_trigger_v2_native_hook.py",
+    "sha256": "E149C5C354B08801920CA87F61F397C9C7969EA7E6BE7C081AFF865CF9168EFD"
+  },
+  "patch": {
+    "after_sha256": "E3944A4655DDDF21C394FE1DB541F2645F529C00BD8390B22D652BD8EF5BBF83",
+    "before_sha256": "B0F138D7ED4A60EB36F742767B9B514DDE6B60BC88375A1C2ED823ADBDF4DC4B",
+    "close_sites": 2,
+    "observe_sites": 1,
+    "signature_method": "AST_LINE_RANGE_INSERTION",
+    "sync_sites": 1
+  },
+  "previous_failure_summary": "Native V2 hook Recovery V2 failed closed: RuntimeError:RUFF_FAILED",
+  "source_facts": {
+    "args": [
+      "policy_id",
+      "portfolio_id",
+      "universe_id",
+      "cost_multiplier",
+      "events",
+      "frames",
+      "state_frame",
+      "replay_start",
+      "replay_cutoff",
+      "async_memory_shadow_enabled",
+      "async_memory_observations",
+      "async_memory_diagnostics",
+      "observable_adapter_enabled",
+      "observable_primitive_rows",
+      "observable_symbol_bindings",
+      "observable_policy",
+      "observable_adapter_diagnostics",
+      "observable_memory_predicate_enabled",
+      "observable_memory_predicate_diagnostics",
+      "observable_later_trigger_predicate_enabled",
+      "observable_later_trigger_predicate_diagnostics",
+      "async_exit_candidate_shadow_enabled",
+      "async_exit_candidate_diagnostics"
+    ],
+    "first_body_lineno": 275,
+    "function_lineno": 247,
+    "position_delete_count": 2,
+    "position_load_count": 1,
+    "position_store_count": 1
+  },
+  "status": "PASS",
+  "task_id": "CAUSAL_EXIT_BRAIN_LATER_TRIGGER_V2_NATIVE_LIFECYCLE_REPLAY_HOOK_RECOVERY_V3",
+  "test_fix": "zip(..., strict=True) at both parity comparisons",
+  "validation": {
+    "ruff": "PASS",
+    "signature_gate": "PASS",
+    "targeted_pytest": "PASS",
+    "targeted_tail": [
+      "........................................................................ [ 77%]",
+      ".....................                                                    [100%]",
+      "93 passed in 21.09s"
+    ],
+    "v2_protected_source_parity": "PASS",
+    "wide_rd27_pytest": "PASS",
+    "wide_tail": [
+      "........................................................................ [ 14%]",
+      "........................................................................ [ 29%]",
+      "........................................................................ [ 44%]",
+      "........................................................................ [ 59%]",
+      "........................................................................ [ 74%]",
+      "........................................................................ [ 88%]",
+      "......................................................                   [100%]",
+      "486 passed, 1919 deselected in 21.95s"
+    ]
+  }
+}

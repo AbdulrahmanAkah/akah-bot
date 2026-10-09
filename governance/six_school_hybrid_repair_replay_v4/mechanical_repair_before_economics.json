@@ -1,0 +1,21 @@
+{
+  "original_manifest_sha": "75ABA5340EE0C45B794B84FC5E65D47F094B022C4AF738ED1C42369FDDE4EDCD",
+  "defect": "TGT1 retries sold half of remaining rather than fixed initial half when participation constrained",
+  "discovery": "source inspection BEFORE any economic output",
+  "repair": "retain original quantity target; ledger cumulative actual fills",
+  "outcome_or_parameter_selection": false,
+  "previous_START_preserved": true,
+  "correction_kind_repair": "W3/W5 are motive, never corrective; explicit existing runtime correction-kind set",
+  "other_pre_economic_mechanical_repairs": [
+    "typed Timestamp serialization",
+    "ns/us causal asof parity",
+    "BTC veto precedence",
+    "Decimal quantity residual accounting",
+    "capacity blocked TGT1 is not a full exit",
+    "OPEN and CLOSE MTM accounting",
+    "indexed confirmed-pivot and causal RS lookup parity",
+    "structural cached OHLC/capacity validation",
+    "dependent hybrid source-coverage propagation"
+  ],
+  "resume": "reuse complete causal pair caches; regenerate H3 for pre-repair caches; unfinished pairs recomputed; no old replay data reused"
+}

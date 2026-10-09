@@ -1,0 +1,338 @@
+{
+  "all_close_position_calls": [
+    {
+      "args": [
+        "pair",
+        "timestamp",
+        "exit_reason"
+      ],
+      "callee": "async_shadow.close_position",
+      "excerpt": "513:                cash += credit\n514:                trades.append(record)\n515:                if async_shadow is not None:\n516:                    async_shadow.close_position(pair, timestamp, exit_reason)\n517:                if later_trigger_v2_shadow_hook is not None:\n518:                    later_trigger_v2_shadow_hook.close_position(\n519:                        pair=pair, closed_at=timestamp",
+      "function": "replay_lifecycle_policy",
+      "kwargs": {},
+      "line": 516
+    },
+    {
+      "args": [],
+      "callee": "later_trigger_v2_shadow_hook.close_position",
+      "excerpt": "515:                if async_shadow is not None:\n516:                    async_shadow.close_position(pair, timestamp, exit_reason)\n517:                if later_trigger_v2_shadow_hook is not None:\n518:                    later_trigger_v2_shadow_hook.close_position(\n519:                        pair=pair, closed_at=timestamp\n520:                    )\n521:                del positions[pair]\n522:                pending_updates.pop(pair, None)\n523:",
+      "function": "replay_lifecycle_policy",
+      "kwargs": {
+        "closed_at": "timestamp",
+        "pair": "pair"
+      },
+      "line": 518
+    },
+    {
+      "args": [
+        "pair",
+        "timestamp",
+        "reason"
+      ],
+      "callee": "async_shadow.close_position",
+      "excerpt": "698:                    cash += credit\n699:                    trades.append(record)\n700:                    if async_shadow is not None:\n701:                        async_shadow.close_position(pair, timestamp, reason)\n702:                    if later_trigger_v2_shadow_hook is not None:\n703:                        later_trigger_v2_shadow_hook.close_position(\n704:                            pair=pair, closed_at=timestamp",
+      "function": "replay_lifecycle_policy",
+      "kwargs": {},
+      "line": 701
+    },
+    {
+      "args": [],
+      "callee": "later_trigger_v2_shadow_hook.close_position",
+      "excerpt": "700:                    if async_shadow is not None:\n701:                        async_shadow.close_position(pair, timestamp, reason)\n702:                    if later_trigger_v2_shadow_hook is not None:\n703:                        later_trigger_v2_shadow_hook.close_position(\n704:                            pair=pair, closed_at=timestamp\n705:                        )\n706:                    del positions[pair]\n707:                else:\n708:                    pending_updates[pair] = decision",
+      "function": "replay_lifecycle_policy",
+      "kwargs": {
+        "closed_at": "timestamp",
+        "pair": "pair"
+      },
+      "line": 703
+    }
+  ],
+  "all_position_removal_events": [
+    {
+      "excerpt": "518:                    later_trigger_v2_shadow_hook.close_position(\n519:                        pair=pair, closed_at=timestamp\n520:                    )\n521:                del positions[pair]\n522:                pending_updates.pop(pair, None)\n523:\n524:        for pair, position in positions.items():",
+      "function": "replay_lifecycle_policy",
+      "kind": "POSITION_DELETE",
+      "line": 521,
+      "targets": [
+        "positions[pair]"
+      ]
+    },
+    {
+      "excerpt": "703:                        later_trigger_v2_shadow_hook.close_position(\n704:                            pair=pair, closed_at=timestamp\n705:                        )\n706:                    del positions[pair]\n707:                else:\n708:                    pending_updates[pair] = decision\n709:",
+      "function": "replay_lifecycle_policy",
+      "kind": "POSITION_DELETE",
+      "line": 706,
+      "targets": [
+        "positions[pair]"
+      ]
+    }
+  ],
+  "functions": [
+    {
+      "args": [],
+      "kwarg": null,
+      "kwonlyargs": [],
+      "line": 102,
+      "name": "validate_policy_constants",
+      "vararg": null
+    },
+    {
+      "args": [
+        "policy_id"
+      ],
+      "kwarg": null,
+      "kwonlyargs": [],
+      "line": 114,
+      "name": "policy_components",
+      "vararg": null
+    },
+    {
+      "args": [
+        "policy_id"
+      ],
+      "kwarg": null,
+      "kwonlyargs": [],
+      "line": 126,
+      "name": "active_component_count",
+      "vararg": null
+    },
+    {
+      "args": [
+        "state_frame"
+      ],
+      "kwarg": null,
+      "kwonlyargs": [],
+      "line": 131,
+      "name": "build_state_lookup",
+      "vararg": null
+    },
+    {
+      "args": [
+        "value"
+      ],
+      "kwarg": null,
+      "kwonlyargs": [],
+      "line": 155,
+      "name": "_utc_timestamp",
+      "vararg": null
+    },
+    {
+      "args": [
+        "lookup",
+        "timestamp"
+      ],
+      "kwarg": null,
+      "kwonlyargs": [],
+      "line": 164,
+      "name": "_state_at",
+      "vararg": null
+    },
+    {
+      "args": [
+        "pair",
+        "timestamp",
+        "frames",
+        "lookups"
+      ],
+      "kwarg": null,
+      "kwonlyargs": [],
+      "line": 171,
+      "name": "_bar_at",
+      "vararg": null
+    },
+    {
+      "args": [],
+      "kwarg": null,
+      "kwonlyargs": [
+        "cash",
+        "positions"
+      ],
+      "line": 186,
+      "name": "_marked_equity",
+      "vararg": null
+    },
+    {
+      "args": [],
+      "kwarg": null,
+      "kwonlyargs": [
+        "position",
+        "timestamp",
+        "exit_price",
+        "exit_reason",
+        "exit_market_state",
+        "side_cost",
+        "policy_id",
+        "portfolio_id",
+        "universe_id",
+        "cost_multiplier"
+      ],
+      "line": 195,
+      "name": "_close_position",
+      "vararg": null
+    },
+    {
+      "args": [],
+      "kwarg": null,
+      "kwonlyargs": [
+        "policy_id",
+        "portfolio_id",
+        "universe_id",
+        "cost_multiplier",
+        "events",
+        "frames",
+        "state_frame",
+        "replay_start",
+        "replay_cutoff",
+        "async_memory_shadow_enabled",
+        "async_memory_observations",
+        "async_memory_diagnostics",
+        "observable_adapter_enabled",
+        "observable_primitive_rows",
+        "observable_symbol_bindings",
+        "observable_policy",
+        "observable_adapter_diagnostics",
+        "observable_memory_predicate_enabled",
+        "observable_memory_predicate_diagnostics",
+        "observable_later_trigger_predicate_enabled",
+        "observable_later_trigger_predicate_diagnostics",
+        "async_exit_candidate_shadow_enabled",
+        "async_exit_candidate_diagnostics",
+        "later_trigger_v2_shadow_hook"
+      ],
+      "line": 247,
+      "name": "replay_lifecycle_policy",
+      "vararg": null
+    }
+  ],
+  "functions_with_terminal_evidence": [
+    {
+      "close_position_calls": [
+        {
+          "args": [
+            "pair",
+            "timestamp",
+            "exit_reason"
+          ],
+          "callee": "async_shadow.close_position",
+          "excerpt": "513:                cash += credit\n514:                trades.append(record)\n515:                if async_shadow is not None:\n516:                    async_shadow.close_position(pair, timestamp, exit_reason)\n517:                if later_trigger_v2_shadow_hook is not None:\n518:                    later_trigger_v2_shadow_hook.close_position(\n519:                        pair=pair, closed_at=timestamp",
+          "kwargs": {},
+          "line": 516
+        },
+        {
+          "args": [],
+          "callee": "later_trigger_v2_shadow_hook.close_position",
+          "excerpt": "515:                if async_shadow is not None:\n516:                    async_shadow.close_position(pair, timestamp, exit_reason)\n517:                if later_trigger_v2_shadow_hook is not None:\n518:                    later_trigger_v2_shadow_hook.close_position(\n519:                        pair=pair, closed_at=timestamp\n520:                    )\n521:                del positions[pair]\n522:                pending_updates.pop(pair, None)\n523:",
+          "kwargs": {
+            "closed_at": "timestamp",
+            "pair": "pair"
+          },
+          "line": 518
+        },
+        {
+          "args": [
+            "pair",
+            "timestamp",
+            "reason"
+          ],
+          "callee": "async_shadow.close_position",
+          "excerpt": "698:                    cash += credit\n699:                    trades.append(record)\n700:                    if async_shadow is not None:\n701:                        async_shadow.close_position(pair, timestamp, reason)\n702:                    if later_trigger_v2_shadow_hook is not None:\n703:                        later_trigger_v2_shadow_hook.close_position(\n704:                            pair=pair, closed_at=timestamp",
+          "kwargs": {},
+          "line": 701
+        },
+        {
+          "args": [],
+          "callee": "later_trigger_v2_shadow_hook.close_position",
+          "excerpt": "700:                    if async_shadow is not None:\n701:                        async_shadow.close_position(pair, timestamp, reason)\n702:                    if later_trigger_v2_shadow_hook is not None:\n703:                        later_trigger_v2_shadow_hook.close_position(\n704:                            pair=pair, closed_at=timestamp\n705:                        )\n706:                    del positions[pair]\n707:                else:\n708:                    pending_updates[pair] = decision",
+          "kwargs": {
+            "closed_at": "timestamp",
+            "pair": "pair"
+          },
+          "line": 703
+        }
+      ],
+      "forbidden_outcome_names": [
+        "exit_price",
+        "exit_reason"
+      ],
+      "function": {
+        "args": [],
+        "kwarg": null,
+        "kwonlyargs": [
+          "policy_id",
+          "portfolio_id",
+          "universe_id",
+          "cost_multiplier",
+          "events",
+          "frames",
+          "state_frame",
+          "replay_start",
+          "replay_cutoff",
+          "async_memory_shadow_enabled",
+          "async_memory_observations",
+          "async_memory_diagnostics",
+          "observable_adapter_enabled",
+          "observable_primitive_rows",
+          "observable_symbol_bindings",
+          "observable_policy",
+          "observable_adapter_diagnostics",
+          "observable_memory_predicate_enabled",
+          "observable_memory_predicate_diagnostics",
+          "observable_later_trigger_predicate_enabled",
+          "observable_later_trigger_predicate_diagnostics",
+          "async_exit_candidate_shadow_enabled",
+          "async_exit_candidate_diagnostics",
+          "later_trigger_v2_shadow_hook"
+        ],
+        "line": 247,
+        "name": "replay_lifecycle_policy",
+        "vararg": null
+      },
+      "identity_names_in_scope": [
+        "MAXIMUM_POSITIONS",
+        "ReplayPosition",
+        "_close_position",
+        "admit_position",
+        "close_position",
+        "new_lifecycle_position",
+        "observe_position",
+        "open_position",
+        "position",
+        "positions",
+        "sync_native_position"
+      ],
+      "position_removal_evidence": [
+        {
+          "excerpt": "518:                    later_trigger_v2_shadow_hook.close_position(\n519:                        pair=pair, closed_at=timestamp\n520:                    )\n521:                del positions[pair]\n522:                pending_updates.pop(pair, None)\n523:\n524:        for pair, position in positions.items():",
+          "kind": "POSITION_DELETE",
+          "line": 521,
+          "targets": [
+            "positions[pair]"
+          ]
+        },
+        {
+          "excerpt": "703:                        later_trigger_v2_shadow_hook.close_position(\n704:                            pair=pair, closed_at=timestamp\n705:                        )\n706:                    del positions[pair]\n707:                else:\n708:                    pending_updates[pair] = decision\n709:",
+          "kind": "POSITION_DELETE",
+          "line": 706,
+          "targets": [
+            "positions[pair]"
+          ]
+        }
+      ],
+      "time_names_in_scope": [
+        "CONTROL_TIME_FAIL_72_FIXED_CAPITAL",
+        "POLICY_TIME_FAIL",
+        "Timedelta",
+        "Timestamp",
+        "_utc_timestamp",
+        "begin_timestamp",
+        "end_timestamp",
+        "entry_time",
+        "max_exit_time",
+        "signal_time",
+        "timestamp"
+      ]
+    }
+  ],
+  "path": "src/spotbot/research/rd27_lifecycle_replay.py",
+  "sha256": "E3944A4655DDDF21C394FE1DB541F2645F529C00BD8390B22D652BD8EF5BBF83"
+}

@@ -1,0 +1,251 @@
+{
+  "schema_version": "abc-lifecycle-state-machine-protocol-v1",
+  "protocol_id": "ABC_LIFECYCLE_STATE_MACHINE_PROTOCOL_V1",
+  "status": "FROZEN_BEFORE_OBSERVATIONAL_TRACE_EXECUTION",
+  "research_stage": "LIFECYCLE_STATE_MACHINE",
+  "north_star_role": "Convert isolated causal primitives into an interpretable lifecycle representation before adaptive logic, portfolio context, or Exit Arbiter work.",
+  "source_bindings": [
+    {
+      "path": "governance/AKAH_EXIT_BRAIN_RESEARCH_DOCTRINE_CURRENT.json",
+      "sha256": "B3F0F632446C7BCEE4B4BEC27CACDECD9EF6562B568872153186E69B1E00B8D9"
+    },
+    {
+      "path": "governance/abc_exit_primitives_preregistration_v1/protocol.json",
+      "sha256": "0D33547991D394C3CDEF1F03500EFD49DCEE1E8FEF41C8BD02007792CBFA3BD1"
+    },
+    {
+      "path": "governance/abc_2019_2023_mandatory_causal_review_v1/canonical_result.json",
+      "sha256": "E55BAFB31DDE51622D37FB2075C3D123A95EF4BD08DA118D595C101A6ACA9052"
+    },
+    {
+      "path": "governance/abc_overlap_and_redundancy_mandatory_review_v1/canonical_result.json",
+      "sha256": "8FBC21C510A561B11C3CB6319D30CE12FBC909AE0B8DFB2C0531909F93F97C51"
+    },
+    {
+      "path": "governance/abc_overlap_and_redundancy_mandatory_review_v1/mandatory_review.json",
+      "sha256": "2FAEAAD1BB8F7176D586BA5FE881E980C54037C906F0EA4E4BAC748E3EE5B917"
+    },
+    {
+      "path": "data/research/abc_exit_primitives_2019_2023_v1/control-trades.csv",
+      "sha256": "BA2CF871453DDFAC53DD53494C5B47D29C20BC1777370928135A8FB2D01E8ABE"
+    },
+    {
+      "path": "src/spotbot/research/abc_exit_primitives_v1.py",
+      "sha256": "B04F4EA4E95A1DA324036C14C5889F334702A30D0AF5AA66C4B7F6993C8395B2"
+    }
+  ],
+  "conceptual_state_vocabulary_from_doctrine": [
+    "UNCONFIRMED",
+    "EARLY_PROGRESS",
+    "CONFIRMED",
+    "HEALTHY_TREND",
+    "STALLED",
+    "DETERIORATING",
+    "STRUCTURAL_BREAK",
+    "VOLATILITY_DAMAGE",
+    "FAILED"
+  ],
+  "v1_operational_base_states": {
+    "UNCONFIRMED": {
+      "definition": "From entry until the first eligible completed 4H bar whose close is strictly above the prior post-entry structural high. Memory_seen is false.",
+      "source_semantics": "FROZEN_MEMORY_SEMANTICS_FROM_ABC_PROTOCOL",
+      "economic_meaning": "NONE",
+      "exit_action": "NONE"
+    },
+    "EARLY_PROGRESS": {
+      "definition": "Exactly the decision point of the first eligible completed 4H bar on which Memory_now becomes true. This is a one-decision-point transition marker, not a duration threshold.",
+      "source_semantics": "FROZEN_MEMORY_SEMANTICS_FROM_ABC_PROTOCOL",
+      "economic_meaning": "NONE",
+      "exit_action": "NONE"
+    },
+    "CONFIRMED": {
+      "definition": "All later eligible completed 4H decision points after the first Memory_now event, while the native Control lifecycle remains open. Memory_seen is true.",
+      "source_semantics": "FROZEN_MEMORY_SEMANTICS_FROM_ABC_PROTOCOL",
+      "economic_meaning": "NONE",
+      "exit_action": "NONE"
+    }
+  },
+  "conceptual_states_not_operationalized_in_v1": {
+    "HEALTHY_TREND": "NO_FROZEN_CAUSAL_PREDICATE_YET",
+    "STALLED": "NO_NEW_STALL_THRESHOLD_ALLOWED_IN_THIS_PROTOCOL",
+    "DETERIORATING": "NO_FROZEN_CAUSAL_STATE_PREDICATE_YET",
+    "STRUCTURAL_BREAK": "A_IS_EVIDENCE_CHANNEL_ONLY_NOT_AUTOMATIC_STATE_ASSIGNMENT",
+    "VOLATILITY_DAMAGE": "B_IS_EVIDENCE_CHANNEL_ONLY_NOT_AUTOMATIC_STATE_ASSIGNMENT",
+    "FAILED": "NO_FROZEN_FAILURE_STATE_PREDICATE_YET"
+  },
+  "orthogonal_evidence_channels": {
+    "C_PRE_PROGRESS_NONCONFIRMATION": {
+      "source_id": "NO_STRUCTURAL_PROGRESS_AFTER_12_BARS_V1",
+      "semantic_role": "EVIDENCE_CHANNEL_ONLY",
+      "expected_base_phase_by_frozen_semantics": "UNCONFIRMED",
+      "state_transition_authority": false,
+      "exit_authority": false
+    },
+    "A_STRUCTURAL_BREAK": {
+      "source_id": "DONCHIAN_CLOSE_BREAK_10_V1",
+      "semantic_role": "EVIDENCE_CHANNEL_ONLY",
+      "expected_base_phase": "UNCONSTRAINED_BY_PROTOCOL",
+      "state_transition_authority": false,
+      "exit_authority": false
+    },
+    "B_POST_PROGRESS_VOLATILITY_DAMAGE": {
+      "source_id": "POST_MEMORY_ATR_RATCHET_22_3_V1",
+      "semantic_role": "EVIDENCE_CHANNEL_ONLY",
+      "expected_base_phase_by_frozen_semantics": "CONFIRMED_OR_LATER",
+      "state_transition_authority": false,
+      "exit_authority": false
+    }
+  },
+  "base_state_transition_graph": [
+    {
+      "from": "ENTRY",
+      "to": "UNCONFIRMED",
+      "condition": "TRADE_OPENED",
+      "reversible": false
+    },
+    {
+      "from": "UNCONFIRMED",
+      "to": "EARLY_PROGRESS",
+      "condition": "FIRST_MEMORY_NOW_TRUE_ON_ELIGIBLE_COMPLETED_4H_BAR",
+      "reversible": false
+    },
+    {
+      "from": "EARLY_PROGRESS",
+      "to": "CONFIRMED",
+      "condition": "NEXT_ELIGIBLE_COMPLETED_4H_DECISION_POINT_IF_NATIVE_CONTROL_STILL_OPEN",
+      "reversible": false
+    },
+    {
+      "from": "ANY_OPEN_BASE_STATE",
+      "to": "NATIVE_CLOSED_OBSERVATION",
+      "condition": "FROZEN_NATIVE_CONTROL_EXIT",
+      "reversible": false,
+      "note": "NATIVE_CLOSED_OBSERVATION is terminal bookkeeping, not one of the doctrine's nine lifecycle states."
+    }
+  ],
+  "memory_semantics": {
+    "eligible_bar_rule": "bar_open_time >= entry_time AND bar_close_time <= decision_time; partial entry-spanning 4H bar excluded",
+    "structural_reference_before_current": "R_before_t = max(entry_price, prior eligible completed 4H highs)",
+    "memory_now": "current_completed_4H_close > R_before_t",
+    "update_order": [
+      "COMPUTE_MEMORY_NOW_AGAINST_PRIOR_STRUCTURAL_REFERENCE",
+      "UPDATE_MEMORY_SEEN",
+      "UPDATE_STRUCTURAL_HIGH"
+    ],
+    "one_way_latch": true
+  },
+  "observational_trace_execution_contract": {
+    "population": "FROZEN_CONTROL_LIFECYCLES_2019_2023",
+    "years": [
+      2019,
+      2020,
+      2021,
+      2022,
+      2023
+    ],
+    "market_data_role": "CAUSAL_OBSERVATIONAL_FEATURE_RECONSTRUCTION_ONLY",
+    "allowed_market_data": "PRE2024_ONLY_USING_ALREADY_PROVEN_TEMPORAL_SOURCE_AUTHORITY",
+    "candidate_exit_replay": false,
+    "portfolio_replay": false,
+    "economic_outcomes_read": false,
+    "pnl_columns_read": false,
+    "mdd_or_profit_factor_computed": false,
+    "trade_size_used_for_state_definition": false,
+    "pair_identity_used_for_runtime_rule": false,
+    "required_trace_fields": [
+      "year",
+      "pair",
+      "entry_time",
+      "native_exit_time",
+      "decision_time_4h",
+      "base_state",
+      "memory_now",
+      "memory_seen",
+      "C_signal",
+      "A_signal",
+      "B_signal",
+      "hours_since_entry",
+      "hours_since_first_memory_or_null",
+      "native_market_state_context"
+    ],
+    "required_event_rows": [
+      "ENTRY",
+      "FIRST_MEMORY",
+      "C_SIGNAL",
+      "A_SIGNAL",
+      "B_SIGNAL",
+      "NATIVE_EXIT"
+    ],
+    "required_aggregate_outputs": [
+      "BASE_STATE_OCCUPANCY_BARS_BY_YEAR",
+      "BASE_STATE_OCCUPANCY_HOURS_BY_YEAR",
+      "MEMORY_INCIDENCE_BY_YEAR",
+      "TIME_TO_FIRST_MEMORY_DISTRIBUTION",
+      "C_EVENT_BASE_STATE_CROSSTAB",
+      "A_EVENT_BASE_STATE_CROSSTAB",
+      "B_EVENT_BASE_STATE_CROSSTAB",
+      "A_BEFORE_VS_AFTER_FIRST_MEMORY_COUNTS",
+      "EVENT_CHRONOLOGY_COUNTS",
+      "NATIVE_EXIT_BASE_STATE_CROSSTAB",
+      "TRACE_COMPLETENESS_AND_CAUSALITY_AUDIT"
+    ]
+  },
+  "protocol_invariants_to_test": [
+    {
+      "id": "INV_C_PRE_MEMORY",
+      "statement": "Every C signal must occur before any Memory event on that lifecycle under frozen C semantics.",
+      "failure_class": "SEMANTIC_OR_IMPLEMENTATION_CONTRADICTION"
+    },
+    {
+      "id": "INV_B_POST_MEMORY",
+      "statement": "Every B signal must occur only after Memory has activated under frozen B semantics.",
+      "failure_class": "SEMANTIC_OR_IMPLEMENTATION_CONTRADICTION"
+    },
+    {
+      "id": "INV_MEMORY_MONOTONIC",
+      "statement": "Memory_seen never returns from true to false.",
+      "failure_class": "STATE_TRACE_CONTRADICTION"
+    },
+    {
+      "id": "INV_BASE_STATE_MONOTONIC",
+      "statement": "Base-state order is UNCONFIRMED -> EARLY_PROGRESS -> CONFIRMED with no reverse transition.",
+      "failure_class": "STATE_TRACE_CONTRADICTION"
+    },
+    {
+      "id": "INV_NO_PARTIAL_ENTRY_BAR",
+      "statement": "The 4H bar spanning entry is never eligible for Memory or A/B/C lifecycle evaluation.",
+      "failure_class": "CAUSALITY_CONTRADICTION"
+    }
+  ],
+  "interpretation_guardrails": [
+    "A signal in a base state is evidence observed in that phase, not proof that the base state should be renamed.",
+    "C, A, and B retain their original frozen semantics; this protocol does not modify their thresholds or exit fills.",
+    "No state may be assigned because it later produced profit or loss.",
+    "No state may use pair identity, year identity, or event identity as a runtime condition.",
+    "No economic ranking of base states or evidence channels is permitted in the observational execution.",
+    "No candidate combination is permitted.",
+    "No Exit Arbiter is permitted."
+  ],
+  "forbidden_actions": [
+    "NO_RUNTIME_STATE_MACHINE_ACTIVATION",
+    "NO_EXIT_ACTION_FROM_STATE",
+    "NO_CANDIDATE_COMBINATION",
+    "NO_PRIORITY_ORDER_BETWEEN_C_A_B",
+    "NO_OR_AND_LOGIC",
+    "NO_EXIT_ARBITER",
+    "NO_NEW_THRESHOLD",
+    "NO_RETUNING",
+    "NO_ECONOMIC_ADJUDICATION",
+    "NO_PNL_DEPENDENT_STATE_DEFINITION",
+    "NO_PAIR_YEAR_EVENT_IDENTITY_RUNTIME_RULE",
+    "NO_2024_ACCESS",
+    "NO_2025_ACCESS",
+    "NO_PRODUCTION_CHANGE"
+  ],
+  "post_execution_gate": {
+    "next_if_valid": "ABC_LIFECYCLE_STATE_MACHINE_OBSERVATIONAL_TRACE_MANDATORY_REVIEW_V1",
+    "review_question": "Do the non-economic traces support the doctrine's phase separation and expose sufficient causal structure to preregister operational predicates for additional states without outcome-conditioned threshold search?",
+    "adaptive_logic_authorized_now": false,
+    "exit_arbiter_authorized_now": false
+  }
+}

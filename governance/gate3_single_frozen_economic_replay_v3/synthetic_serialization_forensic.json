@@ -1,0 +1,12 @@
+{
+  "real_producer": "akah_replay_ready_detectors_v1.event_row",
+  "producer_timestamp_type": "Timestamp",
+  "consumer": "gate3_market_v3.stage_market: json.dumps(e)",
+  "reproduced_error": "Object of type Timestamp is not JSON serializable",
+  "explicit_string_encoding_synthetic_demonstration": "PASS",
+  "demonstration_is_not_a_runtime_patch": true,
+  "source_changed": false,
+  "market_rows_read": false,
+  "economic_rerun": false,
+  "test_coverage_gap": "The staging integration fixture's timestamp was already str; the actual producer returns pandas.Timestamp."
+}

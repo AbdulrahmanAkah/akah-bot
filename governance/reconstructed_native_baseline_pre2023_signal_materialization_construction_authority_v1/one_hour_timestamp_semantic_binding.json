@@ -1,0 +1,35 @@
+{
+  "authority_id": "AKAH_BOT_RD16B_ONE_HOUR_TIMESTAMP_SEMANTIC_BINDING_V1",
+  "status": "BOUND",
+  "timestamp_column": "timestamp",
+  "semantic": "BAR_CLOSE_TIME",
+  "timezone": "UTC",
+  "interval": "1h",
+  "source_evidence": [
+    {
+      "path": "src/spotbot/data/provider.py",
+      "function": "normalize_ohlcv_rows",
+      "lines": "160-180",
+      "sha256": "60BEE0AF8DB2C4EF0E74ED793A3A079D6ED021AE684B99119F7A25EA93F1D343",
+      "statement": "The input numeric timestamp is treated as open_ms and the stored timestamp is close_ms = open_ms + duration_ms, localized to UTC."
+    },
+    {
+      "path": "src/spotbot/data/sync.py",
+      "function": "sync_symbol",
+      "lines": "276-277",
+      "sha256": "320D8AB78CDA3AC0B9790F0480FC7320A4C7757450BC496073E98FE3E6C9FE0E",
+      "statement": "The source comment explicitly identifies candle timestamps as close time and uses the last close as the next missing candle open."
+    },
+    {
+      "path": "data/research/rd16b/source-manifest-v1.json",
+      "sha256": "A3B1D70C96E8B804C747DF2B5E788459C34D1F81E901F1BCD0DF5AD7A29B92DD",
+      "statement": "The manifest names first_close and last_close fields for the stored source."
+    }
+  ],
+  "producer_timestamp_mapping": "exchange_open_time -> stored_close_time",
+  "information_available_at": "stored_timestamp",
+  "within_bar_ordering": "NOT_ASSUMED",
+  "classification": "BAR_CLOSE_TIME",
+  "market_rows_read": false,
+  "protected_year_rows_read": false
+}

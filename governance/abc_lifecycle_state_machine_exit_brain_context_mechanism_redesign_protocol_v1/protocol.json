@@ -1,0 +1,59 @@
+{
+  "2024_access": false,
+  "aggregate_rescue": false,
+  "discovery_attribution_years": [
+    2019,
+    2020,
+    2021
+  ],
+  "model_refit": false,
+  "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_EXIT_BRAIN_CONTEXT_FAILURE_ATTRIBUTION_2019_2021_V1",
+  "policies": {
+    "EB3A_A_ONSET_SEVERE_GIVEBACK": {
+      "description": "score>0 AND A active AND A run decision=1 AND giveback_fraction_of_mfe>=0.50",
+      "mechanism": "STRUCTURAL_BREAK_ONSET_AFTER_HALF_MFE_GIVEBACK"
+    },
+    "EB3B_A_CONT_BEARISH_STRUCTURE": {
+      "description": "score>0 AND A active AND A run decision>=2 AND lower_high_count_last3x4h>=2 AND lower_low_count_last3x4h>=2",
+      "mechanism": "PERSISTENT_STRUCTURAL_BREAK_WITH_2_OF_3_LOWER_HIGHS_AND_LOWER_LOWS"
+    },
+    "EB3C_B_ONSET_SEVERE_GIVEBACK": {
+      "description": "score>0 AND B active AND B run decision=1 AND giveback_fraction_of_mfe>=0.50",
+      "mechanism": "VOLATILITY_DAMAGE_ONSET_AFTER_HALF_MFE_GIVEBACK"
+    },
+    "EB3D_CONFIRMED_DAMAGE_NEG_MOMENTUM": {
+      "description": "score>0 AND CONFIRMED AND (A OR B) AND return_4h<0 AND return_8h<0",
+      "mechanism": "CONFIRMED_DAMAGE_WITH_MULTI_HORIZON_NEGATIVE_MOMENTUM"
+    },
+    "EB3E_CONFIRMED_WINNER_GIVEBACK": {
+      "description": "score>0 AND CONFIRMED AND (A OR B) AND mfe_return_so_far>0 AND giveback_fraction_of_mfe>=0.50 AND current_return_from_entry>0",
+      "mechanism": "PROTECT_CONFIRMED_WINNER_AFTER_HALF_MFE_GIVEBACK"
+    },
+    "EB3F_DAMAGED_LOSER_THESIS_FAILURE": {
+      "description": "score>0 AND (A OR B) AND current_return_from_entry<=0 AND path_efficiency_signed<=0",
+      "mechanism": "CUT_DAMAGED_NONPROGRESSING_LOSER"
+    }
+  },
+  "policy_count": 6,
+  "policy_ids": [
+    "EB3A_A_ONSET_SEVERE_GIVEBACK",
+    "EB3B_A_CONT_BEARISH_STRUCTURE",
+    "EB3C_B_ONSET_SEVERE_GIVEBACK",
+    "EB3D_CONFIRMED_DAMAGE_NEG_MOMENTUM",
+    "EB3E_CONFIRMED_WINNER_GIVEBACK",
+    "EB3F_DAMAGED_LOSER_THESIS_FAILURE"
+  ],
+  "ranking": false,
+  "schema_version": "abc-exit-brain-context-mechanism-redesign-protocol-v1",
+  "score_threshold_changed": false,
+  "source_score": "FROZEN_EB1_CAUSAL_TECH_LINEAR_EDGE",
+  "status": "FROZEN_BEFORE_DETAILED_ATTRIBUTION",
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_EXIT_BRAIN_CONTEXT_MECHANISM_REDESIGN_PROTOCOL_FREEZE_V1",
+  "temporal_stability_years": [
+    2022,
+    2023
+  ],
+  "temporal_stability_years_are_not_pristine_final_holdout": true,
+  "threshold_mining": false,
+  "thresholds_are_semantic_preregistered_boundaries": true
+}

@@ -1,0 +1,56 @@
+Traceback (most recent call last):
+  File "C:\SIRAJ\Repositories\spot-speculation-bot\.akah_bot\v15_point_index_entry.py", line 15, in <module>
+    runpy.run_path(str(target), run_name='__main__')
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 294, in run_path
+  File "<frozen runpy>", line 98, in _run_module_code
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\SIRAJ\Repositories\spot-speculation-bot\.akah_bot\v15_point_index_worker.py", line 15, in <module>
+    runpy.run_path(str(Path(__file__).with_name('v15_paged_recoverable_worker.py')), run_name='__main__')
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 294, in run_path
+  File "<frozen runpy>", line 98, in _run_module_code
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\SIRAJ\Repositories\spot-speculation-bot\.akah_bot\v15_paged_recoverable_worker.py", line 12, in <module>
+    runpy.run_path(str(Path(__file__).with_name('v15_io_recoverable_worker.py')), run_name='__main__')
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 294, in run_path
+  File "<frozen runpy>", line 98, in _run_module_code
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\SIRAJ\Repositories\spot-speculation-bot\.akah_bot\v15_io_recoverable_worker.py", line 28, in <module>
+    else: prepare_arm(worker, cert, args.arm); gc.collect(); worker.main(args.arm)
+                                                             ~~~~~~~~~~~^^^^^^^^^^
+  File "C:\SIRAJ\Repositories\spot-speculation-bot\.akah_bot\v15_recoverable_worker.py", line 181, in main
+    result=ResumableScheduler(streams).run(consumer,restored=restored,checkpoint=checkpoint)
+  File "C:\SIRAJ\Repositories\spot-speculation-bot\.akah_bot\v15_io_recoverable_worker.py", line 23, in cached_run
+    return run(self, driver, **kwargs)
+  File "C:\SIRAJ\Repositories\spot-speculation-bot\.akah_bot\v15_incremental_recoverable_worker.py", line 54, in run
+    return super().run(driver, checkpoint=retained, **kwargs)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\SIRAJ\Repositories\spot-speculation-bot\.akah_bot\v15_resumable_scheduler.py", line 65, in run
+    checkpoint(driver,state)
+    ~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\SIRAJ\Repositories\spot-speculation-bot\.akah_bot\v15_incremental_recoverable_worker.py", line 53, in retained
+    checkpoint(d, state)
+    ~~~~~~~~~~^^^^^^^^^^
+  File "C:\SIRAJ\Repositories\spot-speculation-bot\.akah_bot\v15_recoverable_worker.py", line 176, in checkpoint
+    path=write_checkpoint(session/key,{'driver':driver,'scheduler':state},authority)
+  File "C:\SIRAJ\Repositories\spot-speculation-bot\.akah_bot\v15_packed_checkpoints.py", line 198, in write_checkpoint
+    encoder = PackedPickler(stream, root, store); encoder.dump(state)
+                                                  ~~~~~~~~~~~~^^^^^^^
+  File "C:\SIRAJ\Repositories\spot-speculation-bot\.akah_bot\v15_packed_checkpoints.py", line 188, in reducer_override
+    return super().reducer_override(value)
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\SIRAJ\Repositories\spot-speculation-bot\.akah_bot\v15_incremental_checkpoints.py", line 91, in reducer_override
+    manifest = self.capture(value.store.path, 'seen', value.store.connection)
+  File "C:\SIRAJ\Repositories\spot-speculation-bot\.akah_bot\v15_packed_checkpoints.py", line 179, in capture
+    content = self.store.capture(snapshot, vector)
+  File "C:\SIRAJ\Repositories\spot-speculation-bot\.akah_bot\v15_paged_checkpoints.py", line 84, in capture
+    chunks.append(self.put(data)); full.update(data); total += len(data)
+                  ~~~~~~~~^^^^^^
+  File "C:\SIRAJ\Repositories\spot-speculation-bot\.akah_bot\v15_paged_checkpoints.py", line 67, in put
+    result = super().put(data)
+  File "C:\SIRAJ\Repositories\spot-speculation-bot\.akah_bot\v15_packed_checkpoints.py", line 111, in put
+    self.stream.write(data)
+    ~~~~~~~~~~~~~~~~~^^^^^^
+OSError: [Errno 28] No space left on device

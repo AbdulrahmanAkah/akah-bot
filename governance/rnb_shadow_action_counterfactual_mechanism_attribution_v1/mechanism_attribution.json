@@ -1,0 +1,115 @@
+{
+  "additive_identity": "CF total trade net PnL - native total trade net PnL = common shadow V2 delta + common nonshadow/path-size delta + CF-only admissions PnL - omitted native admissions PnL",
+  "aggregate": {
+    "admission_path_net_delta": -9624.332396792312,
+    "all_three_direct_shadow_channels_adverse": false,
+    "all_three_total_effects_adverse": true,
+    "cf_extra_admissions_delta": -12441.826257262674,
+    "common_nonshadow_path_and_size_delta": 1028.0061084675665,
+    "common_shadow_v2_direct_delta": 3306.1277308522504,
+    "native_omitted_admissions_delta": 2817.4938604703625,
+    "portfolios_with_adverse_admission_path": 3,
+    "total_trade_pnl_delta": -5290.198557472504
+  },
+  "by_portfolio": {
+    "MOMENTUM_BREAKOUT": {
+      "actual_trade_pnl_delta": -1739.1998846931056,
+      "admission_path_adverse": true,
+      "admission_path_net_delta": -3965.113816025725,
+      "cf_extra_admission_count": 28,
+      "channel_counts": {
+        "CF_EXTRA_ADMISSIONS": 28,
+        "COMMON_NONSHADOW_PATH_AND_SIZE": 166,
+        "COMMON_SHADOW_V2_DIRECT": 63,
+        "NATIVE_OMITTED_ADMISSIONS": 4
+      },
+      "channel_pnl_delta": {
+        "CF_EXTRA_ADMISSIONS": -4562.638726464819,
+        "COMMON_NONSHADOW_PATH_AND_SIZE": 199.5756168901004,
+        "COMMON_SHADOW_V2_DIRECT": 2026.3383144425227,
+        "NATIVE_OMITTED_ADMISSIONS": 597.5249104390941
+      },
+      "common_entry_count": 229,
+      "common_shadow_changed_quantity_count": 62,
+      "common_shadow_changed_quantity_pnl_delta": 1493.515681338846,
+      "common_shadow_same_quantity_count": 1,
+      "common_shadow_same_quantity_pnl_delta": 532.8226331036775,
+      "counterfactual_trade_count": 257,
+      "counterfactual_trade_pnl_total": -16482.238692020164,
+      "decomposed_trade_pnl_delta": -1739.199884693102,
+      "decomposition_residual": -3.637978807091713e-12,
+      "direct_shadow_channel_adverse": false,
+      "native_omitted_admission_count": 4,
+      "native_trade_count": 233,
+      "native_trade_pnl_total": -14743.038807327059,
+      "portfolio": "MOMENTUM_BREAKOUT"
+    },
+    "RELATIVE_STRENGTH_ROTATION": {
+      "actual_trade_pnl_delta": -1202.6472769600769,
+      "admission_path_adverse": true,
+      "admission_path_net_delta": -2162.083293222866,
+      "cf_extra_admission_count": 9,
+      "channel_counts": {
+        "CF_EXTRA_ADMISSIONS": 9,
+        "COMMON_NONSHADOW_PATH_AND_SIZE": 125,
+        "COMMON_SHADOW_V2_DIRECT": 63,
+        "NATIVE_OMITTED_ADMISSIONS": 1
+      },
+      "channel_pnl_delta": {
+        "CF_EXTRA_ADMISSIONS": -2266.4744853784186,
+        "COMMON_NONSHADOW_PATH_AND_SIZE": 267.878023539302,
+        "COMMON_SHADOW_V2_DIRECT": 691.5579927234894,
+        "NATIVE_OMITTED_ADMISSIONS": 104.39119215555274
+      },
+      "common_entry_count": 188,
+      "common_shadow_changed_quantity_count": 62,
+      "common_shadow_changed_quantity_pnl_delta": 146.12068153519064,
+      "common_shadow_same_quantity_count": 1,
+      "common_shadow_same_quantity_pnl_delta": 545.4373111882995,
+      "counterfactual_trade_count": 197,
+      "counterfactual_trade_pnl_total": -13585.691955642837,
+      "decomposed_trade_pnl_delta": -1202.6472769600746,
+      "decomposition_residual": -2.2737367544323206e-12,
+      "direct_shadow_channel_adverse": false,
+      "native_omitted_admission_count": 1,
+      "native_trade_count": 189,
+      "native_trade_pnl_total": -12383.04467868276,
+      "portfolio": "RELATIVE_STRENGTH_ROTATION"
+    },
+    "UNION_FOCUS": {
+      "actual_trade_pnl_delta": -2348.3513958193216,
+      "admission_path_adverse": true,
+      "admission_path_net_delta": -3497.13528754372,
+      "cf_extra_admission_count": 43,
+      "channel_counts": {
+        "CF_EXTRA_ADMISSIONS": 43,
+        "COMMON_NONSHADOW_PATH_AND_SIZE": 222,
+        "COMMON_SHADOW_V2_DIRECT": 94,
+        "NATIVE_OMITTED_ADMISSIONS": 10
+      },
+      "channel_pnl_delta": {
+        "CF_EXTRA_ADMISSIONS": -5612.713045419436,
+        "COMMON_NONSHADOW_PATH_AND_SIZE": 560.5524680381642,
+        "COMMON_SHADOW_V2_DIRECT": 588.2314236862384,
+        "NATIVE_OMITTED_ADMISSIONS": 2115.5777578757156
+      },
+      "common_entry_count": 316,
+      "common_shadow_changed_quantity_count": 93,
+      "common_shadow_changed_quantity_pnl_delta": 55.40879058256076,
+      "common_shadow_same_quantity_count": 1,
+      "common_shadow_same_quantity_pnl_delta": 532.8226331036775,
+      "counterfactual_trade_count": 359,
+      "counterfactual_trade_pnl_total": -26668.342103290255,
+      "decomposed_trade_pnl_delta": -2348.3513958193175,
+      "decomposition_residual": -4.092726157978177e-12,
+      "direct_shadow_channel_adverse": false,
+      "native_omitted_admission_count": 10,
+      "native_trade_count": 326,
+      "native_trade_pnl_total": -24319.990707470934,
+      "portfolio": "UNION_FOCUS"
+    }
+  },
+  "rows_sha256": "C4CAF7916488FB1A09B5858653B2C142D891CAAAC73E3F3F03D647FD915DE4CE",
+  "status": "PASS",
+  "tolerance": 1e-07
+}

@@ -1,0 +1,22 @@
+{
+  "authority_id": "AKAH_BOT_PRE2023_SIGNAL_MATERIALIZATION_EXECUTION_CONTRACT_V1",
+  "status": "NOT_EXECUTABLE_PENDING_AUTHORIZED_SOURCE",
+  "purpose": "Future terminal construction only after a physically pre-open-isolated source or already-authorized immutable artifact is supplied.",
+  "required_upstream_paths": ["AUTHORIZED_PRE2023_SIGNAL_SOURCE_REQUIRED", "AUTHORIZED_PREOPEN_1H_SOURCE_REQUIRED"],
+  "required_upstream_hashes": "MUST_BE_BOUND_BEFORE_EXECUTION",
+  "preopen_selector": "MUST_SELECT_ONLY_PHYSICAL_FILES/PARTITIONS/ROW_GROUPS_WITH_MAX_TIMESTAMP_BEFORE_2023-01-01_OR_USE_AN_AUTHORIZED_SOURCE_DATE_SELECTOR",
+  "max_allowed_signal_timestamp": "2022-12-31T23:59:59.999999999Z",
+  "output_path": "TO_BE_BOUND_AFTER_SOURCE_AUTHORITY",
+  "output_format": "IMMUTABLE_CSV_OR_PARQUET_ONLY_AFTER_GOVERNED_EXECUTION_DECISION",
+  "output_schema": ["timestamp", "universe_id", "period_id", "family_id", "pair", "membership_rank", "atr24_at_signal"],
+  "sort_keys": ["timestamp", "universe_id", "period_id", "family_id", "membership_rank", "pair"],
+  "duplicate_policy": "FAIL_CLOSED_UNLESS_SOURCE_AUTHORITY_EXPLICITLY_BINDS_DEDUPLICATION",
+  "timezone": "UTC",
+  "pit_availability": "signal values must be available at signal timestamp; native entry scheduling remains one hour later",
+  "universe_semantics": "all nine frozen C2/D2/E2 strata",
+  "family_semantics": "UNION_FOCUS via union_events; MOMENTUM_BREAKOUT and RELATIVE_STRENGTH_ROTATION via standalone_events",
+  "provenance_fields": ["source paths", "source SHA256s", "selector", "schema", "bounds", "producer/source commit", "protected-year rows opened flag", "output SHA256"],
+  "output_sha_requirement": "REQUIRED",
+  "protected_year_rows_opened": false,
+  "execution_performed": false
+}

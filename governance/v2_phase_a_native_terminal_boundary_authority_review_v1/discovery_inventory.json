@@ -1,0 +1,92 @@
+{
+  "candidate_count": 2,
+  "candidates": [
+    {
+      "events": [],
+      "forbidden": [],
+      "ids": [
+        "lifecycle_id"
+      ],
+      "path": "governance/v2_a2_audit.csv",
+      "producers": [],
+      "schema": [
+        "canonical_trade_id",
+        "lifecycle_id",
+        "canonical_symbol",
+        "fold_id",
+        "portfolio_mode",
+        "universe_mode",
+        "identity_binding_status",
+        "roster_sha256",
+        "input_manifest_id",
+        "entry_time_utc",
+        "entry_price",
+        "study_window_start",
+        "study_window_end",
+        "entry_inside_authorized_window",
+        "entry_spanning_bar_identity",
+        "first_full_post_entry_bar_close",
+        "first_causal_evaluation_time",
+        "last_verified_causal_evaluation_time",
+        "source_artifact_identity",
+        "first_available_bar_close",
+        "last_available_bar_close",
+        "expected_completed_bar_count",
+        "available_valid_completed_bar_count",
+        "missing_bar_count",
+        "conflicting_duplicate_count",
+        "first_coverage_gap_time",
+        "complete_entry_to_observation_end_coverage",
+        "coverage_status",
+        "original_eligibility_status",
+        "audited_eligibility_status",
+        "primary_exclusion_reason",
+        "additional_reason_flags",
+        "memory_evaluable_bar_count",
+        "first_memory_time",
+        "post_memory_evaluable_bar_count",
+        "first_post_memory_evaluation_time",
+        "first_v2_time",
+        "terminal_status",
+        "terminal_time",
+        "evidence_reference",
+        "window_semantics",
+        "native_lifecycle_eligibility_certified",
+        "identical_duplicates",
+        "event_scope"
+      ],
+      "sha256": "611AB5185EF1425CA0101D12611B30938F830B9C5E975C1D6ABF68B629F43760",
+      "times": [
+        "terminal_time"
+      ]
+    },
+    {
+      "events": [
+        "event_type"
+      ],
+      "forbidden": [],
+      "ids": [
+        "lifecycle_id"
+      ],
+      "path": "governance/v2_a2_events.csv",
+      "producers": [],
+      "schema": [
+        "lifecycle_id",
+        "event_type",
+        "event_time",
+        "snapshot_identity",
+        "snapshot_close_time",
+        "information_available_time",
+        "runtime_sequence_index",
+        "historical_snapshot_index",
+        "evidence_reference",
+        "event_scope"
+      ],
+      "sha256": "49EC61395988544E54A424120B3D5CC4161112A56D34A55911DC63041B51A7BC",
+      "times": [
+        "event_time",
+        "information_available_time"
+      ]
+    }
+  ]
+}

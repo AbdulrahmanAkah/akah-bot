@@ -1,0 +1,49 @@
+{
+  "2024_access": false,
+  "2025_access": false,
+  "candidate_id": "REGIME_CONDITIONED_TAIL_VALUE_POLICY_V1",
+  "chronology": "frozen 52w warmup / 8w nonoverlap OOT / lifecycle purge / 4h embargo",
+  "diagnostics_can_change_candidate": false,
+  "gate": "1x+2x M1 sign + M2 sign agree, symmetric tail dominance, first pi0 disagreement only",
+  "hard_cutoff_exclusive_utc": "2024-01-01T00:00:00Z",
+  "m1_base_features": [
+    "age",
+    "current_return",
+    "drawdown",
+    "trend",
+    "volatility",
+    "breadth",
+    "relative_strength",
+    "execution_quality"
+  ],
+  "m1_existing_interactions": [
+    "drawdown_x_trend",
+    "trend_x_breadth"
+  ],
+  "m1_new_interactions": [
+    "regime_x_trend",
+    "regime_x_drawdown",
+    "regime_x_relative_strength",
+    "regime_x_execution_quality"
+  ],
+  "m1_outputs": [
+    "mu_1x",
+    "downside_1x",
+    "mu_2x",
+    "downside_2x",
+    "expected_remaining_hours"
+  ],
+  "m2": "unchanged frozen base weighted logistic",
+  "qualification": {
+    "all_overrides_early_exit_vs_pi0_hold": true,
+    "cvar10_not_worse_than_rev723": true,
+    "median_all_valid_blocks_1x_positive": true,
+    "median_all_valid_blocks_2x_positive": true,
+    "minimum_positive_blocks_each_cost": 4,
+    "selected_override_2x_informative": true,
+    "total_1x_positive": true,
+    "total_2x_positive": true
+  },
+  "regime_score": "z_train(breadth)-z_train(volatility)",
+  "schema_version": "akah-pre2024-regime-conditioned-candidate-protocol-v1"
+}

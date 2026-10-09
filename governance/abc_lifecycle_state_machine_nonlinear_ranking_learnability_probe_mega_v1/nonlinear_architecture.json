@@ -1,0 +1,29 @@
+{
+  "N01": {
+    "objective": "economically weighted direct pairwise margin ridge",
+    "score": "within-hour rank of nonlinear score"
+  },
+  "N02": {
+    "base": "within-hour percentile rank of exact tracked F10 score",
+    "final": "F10_rank + RFF_rank",
+    "nonlinear_component": "within-hour percentile rank of N01 RFF score",
+    "weights": [
+      1.0,
+      1.0
+    ]
+  },
+  "admission_gate": "EXACT_F10_GATE",
+  "architecture_id": "NLRP_V1_RFF_PAIRWISE_F10_FUSION",
+  "embedding": {
+    "dimension": 64,
+    "gamma_formula": "1 / standardized_feature_count",
+    "seed": 743,
+    "type": "RBF_RANDOM_FOURIER_FEATURES"
+  },
+  "external_ml_dependency": false,
+  "hyperparameter_search": false,
+  "model_zoo": false,
+  "pair_weight": "abs(H0_i-H0_j) normalized within hour",
+  "ridge_lambda": 10.0,
+  "schema_version": "akah-nonlinear-ranking-architecture-v1"
+}

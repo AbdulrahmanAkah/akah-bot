@@ -1,0 +1,55 @@
+{
+  "authority_bindings": {
+    "original_fail_summary": "Source-aware native V2 hook implementation failed closed: RuntimeError:RUFF_FAILED",
+    "replay_source_facts": {
+      "args": [
+        "policy_id",
+        "portfolio_id",
+        "universe_id",
+        "cost_multiplier",
+        "events",
+        "frames",
+        "state_frame",
+        "replay_start",
+        "replay_cutoff",
+        "async_memory_shadow_enabled",
+        "async_memory_observations",
+        "async_memory_diagnostics",
+        "observable_adapter_enabled",
+        "observable_primitive_rows",
+        "observable_symbol_bindings",
+        "observable_policy",
+        "observable_adapter_diagnostics",
+        "observable_memory_predicate_enabled",
+        "observable_memory_predicate_diagnostics",
+        "observable_later_trigger_predicate_enabled",
+        "observable_later_trigger_predicate_diagnostics",
+        "async_exit_candidate_shadow_enabled",
+        "async_exit_candidate_diagnostics"
+      ],
+      "function_lineno": 247,
+      "has_any": true,
+      "position_delete_count": 2,
+      "position_load_count": 1,
+      "position_store_count": 1
+    }
+  },
+  "branch": "research/rd48-cross-venue-price-level-basis-direct-utility-v1",
+  "evidence": [],
+  "firewall": {},
+  "governed_schema_version": "akah-provenance-phase-governed-v1",
+  "next_bottleneck": "CAUSAL_EXIT_BRAIN_LATER_TRIGGER_V2_NATIVE_LIFECYCLE_REPLAY_HOOK_RECOVERY_V2",
+  "north_star_effect": "Puts V2 observation on native lifecycle timing while retaining native exit authority.",
+  "objective": "Recover the closed native V2 hook task using the exact current RD27 replay surface, a default-disabled observational hook, and exact enabled/disabled synthetic output parity.",
+  "resolution_class": "NATIVE_HOOK_RECOVERY_V1_FAIL_CLOSED",
+  "state_updates": {
+    "actual_exit_authority": false,
+    "economic_test_authorized": false,
+    "later_trigger_v2_native_hook_recovery_v1": "FAIL_CLOSED"
+  },
+  "status": "FAIL_CLOSED",
+  "summary": "Native V2 hook Recovery V1 failed closed: RuntimeError:SIGNATURE_ANCHOR_COUNT:0",
+  "task_id": "CAUSAL_EXIT_BRAIN_LATER_TRIGGER_V2_NATIVE_LIFECYCLE_REPLAY_HOOK_RECOVERY_V1",
+  "task_start_head": "dfa6a14df546ec9e77fa24753a3f377ee62d38bf",
+  "task_start_revision": 174
+}

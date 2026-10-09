@@ -1,0 +1,91 @@
+{
+  "architecture": {
+    "actual_exit_authority": false,
+    "later_trigger_may_use_already_observed_memory_evidence": true,
+    "one_shot_candidate": true,
+    "parameters_tuned": 0,
+    "same_time_forbidden": true,
+    "strictly_later_than_first_memory_required": true
+  },
+  "baseline_trigger": {
+    "formula": "current completed close < immediately previous eligible completed bar low",
+    "id": "BASELINE_V1_PREVIOUS_BAR_LOW_BREAK",
+    "selection_eligible": false
+  },
+  "execution_population": {
+    "eligibility_artifact": "governance/spec_exec_v1_roster.csv",
+    "exact_governed_eligible_lifecycles": 33,
+    "exact_memory_cohort": 25,
+    "lifecycle_artifact": "governance/spec_exec_v1_lifecycles.csv",
+    "no_redefinition_after_results": true,
+    "years": [
+      2022
+    ]
+  },
+  "firewall": {
+    "2023_2024_2025_rows": false,
+    "economic_metrics": false,
+    "formula_mutation_after_execution": false,
+    "future_data": false,
+    "mfe_mae": false,
+    "outcome_fields": false,
+    "source_code_mutation": false,
+    "threshold_search": false
+  },
+  "preserved_memory_predicate": "completed_4h_close > max(entry_price, prior eligible post-entry highs)",
+  "protocol_id": "CAUSAL_EXIT_BRAIN_LATER_TRIGGER_SELECTIVITY_REDESIGN_PROTOCOL_V1",
+  "redesign_hypotheses": [
+    {
+      "formula": "after first memory, first strictly-later completed 4H close < the prior_structural_high that the first memory bar broke",
+      "id": "FAILED_BREAKOUT_REFERENCE",
+      "interpretation": "confirmed failed hold of the exact breakout level",
+      "parameter_count": 0,
+      "priority": 1,
+      "uses_memory_evidence": true
+    },
+    {
+      "formula": "after first memory, first strictly-later completed 4H close < low of the first memory bar",
+      "id": "MEMORY_BAR_LOW_BREAK",
+      "interpretation": "confirmed full breakdown beneath the bar that established memory",
+      "parameter_count": 0,
+      "priority": 2,
+      "uses_memory_evidence": true
+    },
+    {
+      "formula": "after first memory, freeze the first strictly-later completed bar whose high < immediately previous eligible completed bar high; then require a still-later completed close < that witness bar low",
+      "id": "FIRST_LOWER_HIGH_THEN_BREAK",
+      "interpretation": "two-stage lower-high then confirmed support break",
+      "parameter_count": 0,
+      "priority": 3,
+      "uses_memory_evidence": false
+    },
+    {
+      "formula": "after first memory, first strictly-later completed 4H close < entry_price",
+      "id": "ENTRY_PRICE_FAILURE",
+      "interpretation": "favorable structure ultimately fails back beneath entry",
+      "parameter_count": 0,
+      "priority": 4,
+      "uses_memory_evidence": false
+    }
+  ],
+  "selection_rule": {
+    "if_no_survivor": "CAUSAL_EXIT_BRAIN_LATER_TRIGGER_SELECTIVITY_REDESIGN_PROTOCOL_V2",
+    "if_survivor": "CAUSAL_EXIT_BRAIN_LATER_TRIGGER_V2_IMPLEMENTATION_V1",
+    "priority_is_frozen_before_results": true,
+    "priority_order": [
+      "FAILED_BREAKOUT_REFERENCE",
+      "MEMORY_BAR_LOW_BREAK",
+      "FIRST_LOWER_HIGH_THEN_BREAK",
+      "ENTRY_PRICE_FAILURE"
+    ],
+    "reason": "Only exact boundary behavior is adjudicated: zero means inert and equality with the memory denominator means no lifecycle-level filtering. No arbitrary percentage threshold is introduced.",
+    "survivor_definition": "0 < candidate_lifecycles < memory_lifecycles",
+    "winner_rule": "select the first survivor in frozen semantic priority order; do not rank or choose by lowest incidence"
+  },
+  "source_diagnosis": {
+    "finding": "LATER_TRIGGER_V1_IS_SELECTIVITY_FAILURE_STAGE",
+    "path": "governance/spec_diag_v1.json",
+    "sha256": "B62636ED1632509089B0C09AC49BB8A3A279B790C506A683D7A0D1A6AAB1A047"
+  },
+  "status": "FROZEN"
+}

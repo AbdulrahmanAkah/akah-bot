@@ -1,0 +1,1602 @@
+{
+  "authority_id": "AKAH_BOT_RECONSTRUCTED_NATIVE_BASELINE_THIN_RUNNER_INPUT_CONTRACT_SPEC_V1",
+  "implementation_authorized": false,
+  "input_authority_requirements": {
+    "cost_multiplier": {
+      "must_bind_exact_source": true,
+      "must_bind_source_sha256_or_config_identity": true,
+      "must_define_information_available_time": false,
+      "must_not_require_protected_years": true,
+      "prior_governance_evidence_index": [
+        {
+          "authority_terms_present": [
+            "authority",
+            "frozen"
+          ],
+          "path": "governance/AKAH_BOT_RECONSTRUCTED_NATIVE_BASELINE_STUDY_CONTRACT_V1.json",
+          "pit_terms_present": [
+            "causal",
+            "information_available"
+          ],
+          "sha256": "F9C3A2FC7B588C5D4EA18C41417ACE78FCAE9EA751D4E0AD842B00119D43CDC7"
+        },
+        {
+          "authority_terms_present": [
+            "pass"
+          ],
+          "path": "governance/reconstructed_native_baseline_transition_v1/native_replay_callsites.json",
+          "pit_terms_present": [],
+          "sha256": "889EFD18995BC7D7148E94A0E098333C0D669CE8B25E8C43F3F6C45ACFA9CCF8"
+        },
+        {
+          "authority_terms_present": [
+            "bound",
+            "authority"
+          ],
+          "path": "governance/reconstructed_native_baseline_transition_v1/prospective_runner_candidates.json",
+          "pit_terms_present": [],
+          "sha256": "3ACCDE55F427D0C5DB87EE58FBF1E79A7DCFC5F8D9F39FE8A00F1A9F445C052E"
+        },
+        {
+          "authority_terms_present": [
+            "pass"
+          ],
+          "path": "governance/reconstructed_native_baseline_transition_v1/rd27_native_replay_source_contract.json",
+          "pit_terms_present": [],
+          "sha256": "EE43221936614EF39008A621F17446CC77C375A66917A52EA1C30A8CB4F72F14"
+        },
+        {
+          "authority_terms_present": [
+            "authority"
+          ],
+          "path": "governance/trigger_v2_native_hook_recovery_v1_rpt.json",
+          "pit_terms_present": [
+            "causal"
+          ],
+          "sha256": "10AA891B01701BE31630A9F73733C9C4D03FED7583A8FF5B70F3CE15FE6CAF92"
+        },
+        {
+          "authority_terms_present": [
+            "authority"
+          ],
+          "path": "governance/trigger_v2_native_hook_recovery_v2_rpt.json",
+          "pit_terms_present": [
+            "causal"
+          ],
+          "sha256": "C4EF32CA2DD97A598CB0850AAC8B560CA2474C6A6EEF219113231B445543F876"
+        },
+        {
+          "authority_terms_present": [
+            "authority",
+            "pass"
+          ],
+          "path": "governance/trigger_v2_native_hook_recovery_v3.json",
+          "pit_terms_present": [
+            "causal"
+          ],
+          "sha256": "EBC8AEC479D3EF64512C7C52ACD8CC412376FE624E61E9B7F08EFAEBE216CFE8"
+        },
+        {
+          "authority_terms_present": [
+            "authority"
+          ],
+          "path": "governance/trigger_v2_native_hook_v1_rpt.json",
+          "pit_terms_present": [
+            "causal"
+          ],
+          "sha256": "929A1CC70E7B3CFBBE193CEDD0D35B8E437A43BAD1D52EA88C5409F7A74311E2"
+        },
+        {
+          "authority_terms_present": [
+            "bound",
+            "authority"
+          ],
+          "path": "governance/v2_phase_a_native_replay_input_authority_decision_v1/input_authority_decision.json",
+          "pit_terms_present": [
+            "pit"
+          ],
+          "sha256": "624150780341A2372E8E7C17CD1B1231125152B1AC429EB8077412752910394A"
+        },
+        {
+          "authority_terms_present": [
+            "bound",
+            "authority",
+            "frozen"
+          ],
+          "path": "governance/v2_phase_a_native_replay_input_authority_decision_v1/replay_lifecycle_policy_callsites.json",
+          "pit_terms_present": [
+            "pit",
+            "decision_time"
+          ],
+          "sha256": "9A4CC6DD85B7A111AC9A35240D7C3E0371921E7D3BB3049F5473003AAC34B3E2"
+        },
+        {
+          "authority_terms_present": [],
+          "path": "governance/v2_phase_a_native_replay_input_authority_decision_v1/replay_lifecycle_policy_signature.json",
+          "pit_terms_present": [],
+          "sha256": "5941C83C78A5566C87BAEB0729568FF7C43133F8B58423C197AB0923F1D6736B"
+        },
+        {
+          "authority_terms_present": [
+            "authority"
+          ],
+          "path": "governance/v2_phase_a_native_replay_input_authority_gap_adjudication_v1/historical_native_producer_adjudication.json",
+          "pit_terms_present": [
+            "pit"
+          ],
+          "sha256": "FFD3E569467343DA5E5B56093E55C301028B411B54D4C8BF0DCF60ECDD63AE16"
+        },
+        {
+          "authority_terms_present": [
+            "authority"
+          ],
+          "path": "governance/v2_phase_a_native_replay_input_authority_gap_adjudication_v1/historical_native_producer_candidates.json",
+          "pit_terms_present": [
+            "pit"
+          ],
+          "sha256": "4022F2BFB5DCE01AB69FDF189ABB238EE49F59C37C048D4A7FBE5269218AB99C"
+        },
+        {
+          "authority_terms_present": [
+            "authority"
+          ],
+          "path": "governance/v2_phase_a_native_terminal_source_authority_recovery_v1/native_terminal_test_evidence.json",
+          "pit_terms_present": [
+            "pit",
+            "causal"
+          ],
+          "sha256": "7DEF8CE5D33A510ADB42B92BAA43BA5F9FF44F7E1C0945952E5C96A63E9279CC"
+        },
+        {
+          "authority_terms_present": [],
+          "path": "governance/v2_phase_a_native_terminal_source_authority_recovery_v1/rd27_replay_terminal_path_analysis.json",
+          "pit_terms_present": [
+            "pit"
+          ],
+          "sha256": "35E1FE327DDF2C99559F1E9E586227D566AA1225FFA45B5D8CB85E64366E8B5F"
+        }
+      ]
+    },
+    "events": {
+      "must_bind_exact_source": true,
+      "must_bind_source_sha256_or_config_identity": true,
+      "must_define_information_available_time": true,
+      "must_not_require_protected_years": true,
+      "prior_governance_evidence_index": [
+        {
+          "authority_terms_present": [
+            "bound",
+            "authority",
+            "pass",
+            "frozen"
+          ],
+          "path": "governance/AKAH_BOT_RD27_NATIVE_TERMINAL_SOURCE_AUTHORITY_V1.json",
+          "pit_terms_present": [
+            "pit",
+            "causal"
+          ],
+          "sha256": "A7430573E2D55362CC7E85C9DB606D048734DFDA8584240811FEE1B876BAB31F"
+        },
+        {
+          "authority_terms_present": [
+            "authority",
+            "frozen"
+          ],
+          "path": "governance/AKAH_BOT_RECONSTRUCTED_NATIVE_BASELINE_STUDY_CONTRACT_V1.json",
+          "pit_terms_present": [
+            "causal",
+            "information_available"
+          ],
+          "sha256": "F9C3A2FC7B588C5D4EA18C41417ACE78FCAE9EA751D4E0AD842B00119D43CDC7"
+        },
+        {
+          "authority_terms_present": [
+            "authority",
+            "pass",
+            "frozen"
+          ],
+          "path": "governance/AKAH_BOT_V2_COHORT_OBSERVATION_REFERENCE_DIAGNOSTIC_PROTOCOL_V1.json",
+          "pit_terms_present": [
+            "causal"
+          ],
+          "sha256": "6A64B7600261CC105064F250A3D5E6E794A90432C08C9218FC6A9A234B25BFD7"
+        },
+        {
+          "authority_terms_present": [
+            "pass",
+            "frozen"
+          ],
+          "path": "governance/AKAH_BOT_V2_PHASE_C_TIMING_REFERENCE_DEPENDENCE_PROTOCOL_V1.json",
+          "pit_terms_present": [
+            "pit",
+            "causal"
+          ],
+          "sha256": "B6BA4548C7BD6E955682FAA00C58784317ED0F8CAD5AB3B486FCB6142C837C1A"
+        },
+        {
+          "authority_terms_present": [
+            "authority",
+            "pass",
+            "frozen"
+          ],
+          "path": "governance/akah_parent_report.json",
+          "pit_terms_present": [
+            "causal"
+          ],
+          "sha256": "9FFF2F3863DB3816F8797639A26E83EC3FD4E8F032AF5E823E69EF4C09B7CA4D"
+        },
+        {
+          "authority_terms_present": [
+            "bound",
+            "authority",
+            "pass",
+            "frozen"
+          ],
+          "path": "governance/akah_upstream_audit_graph_v1.json",
+          "pit_terms_present": [
+            "pit",
+            "causal",
+            "decision_time"
+          ],
+          "sha256": "427A24C375E4497567933C9BC3FC0C447590EB537E93F001190B23B20FEEC581"
+        },
+        {
+          "authority_terms_present": [
+            "bound",
+            "authority",
+            "pass",
+            "frozen"
+          ],
+          "path": "governance/akah_wc_table.json",
+          "pit_terms_present": [
+            "pit",
+            "causal"
+          ],
+          "sha256": "566618010741F3FE98ED4AA964F80C60D3EFC8C97C09C5B7571D71A2DBBE0BB1"
+        },
+        {
+          "authority_terms_present": [
+            "authority",
+            "pass",
+            "frozen"
+          ],
+          "path": "governance/async_v1.json",
+          "pit_terms_present": [
+            "pit",
+            "causal",
+            "decision_time"
+          ],
+          "sha256": "FA4B2D18BB7EA99CAB8991A560EFF527C9133A012D10857E30DFF6DB0B32ECC2"
+        },
+        {
+          "authority_terms_present": [
+            "authority",
+            "pass",
+            "frozen"
+          ],
+          "path": "governance/exit_brain_direction_roadmap_freeze_recovery_v1_rpt.json",
+          "pit_terms_present": [
+            "causal"
+          ],
+          "sha256": "0D1E6A0347AEF6947D95A21A137DD19DFA6A82910DCD7931CFB2AAD759FBA03B"
+        },
+        {
+          "authority_terms_present": [
+            "bound",
+            "authority",
+            "pass",
+            "frozen"
+          ],
+          "path": "governance/exit_cand_v1.json",
+          "pit_terms_present": [
+            "pit",
+            "causal"
+          ],
+          "sha256": "F749F922C486D9D196D4B8ACBDBA98C4C9B4FE4E23E3BA7DEA27CBE18AFE8E64"
+        },
+        {
+          "authority_terms_present": [
+            "bound",
+            "authority",
+            "pass"
+          ],
+          "path": "governance/memory_pred_v1.json",
+          "pit_terms_present": [
+            "pit",
+            "causal",
+            "decision_time"
+          ],
+          "sha256": "2296C6F7EE2AC8CA79A47FD2287A3E6350D74710EB1CB86FC4F3D927E3BE4974"
+        },
+        {
+          "authority_terms_present": [
+            "pass"
+          ],
+          "path": "governance/reconstructed_native_baseline_transition_v1/native_replay_callsites.json",
+          "pit_terms_present": [],
+          "sha256": "889EFD18995BC7D7148E94A0E098333C0D669CE8B25E8C43F3F6C45ACFA9CCF8"
+        },
+        {
+          "authority_terms_present": [
+            "bound",
+            "authority"
+          ],
+          "path": "governance/reconstructed_native_baseline_transition_v1/prospective_runner_candidates.json",
+          "pit_terms_present": [],
+          "sha256": "3ACCDE55F427D0C5DB87EE58FBF1E79A7DCFC5F8D9F39FE8A00F1A9F445C052E"
+        },
+        {
+          "authority_terms_present": [
+            "pass"
+          ],
+          "path": "governance/reconstructed_native_baseline_transition_v1/rd27_native_replay_source_contract.json",
+          "pit_terms_present": [],
+          "sha256": "EE43221936614EF39008A621F17446CC77C375A66917A52EA1C30A8CB4F72F14"
+        },
+        {
+          "authority_terms_present": [
+            "authority",
+            "pass",
+            "frozen"
+          ],
+          "path": "governance/spec_adj_v1_rpt.json",
+          "pit_terms_present": [
+            "causal"
+          ],
+          "sha256": "B0EF6EFE7935EB23555817BC295D531D2250FA7C0C59BCC916E1F30A691F5D6D"
+        },
+        {
+          "authority_terms_present": [
+            "bound",
+            "authority",
+            "pass",
+            "frozen"
+          ],
+          "path": "governance/spec_exec_v1_result.json",
+          "pit_terms_present": [
+            "pit",
+            "causal"
+          ],
+          "sha256": "2518A9E9FE46CE8D2EDA97D594AAF0AE1EAB6ABF86B82206ED80C7E92A9F26F3"
+        },
+        {
+          "authority_terms_present": [
+            "bound",
+            "authority",
+            "pass",
+            "frozen"
+          ],
+          "path": "governance/spec_proto_rpt.json",
+          "pit_terms_present": [
+            "pit",
+            "causal"
+          ],
+          "sha256": "7AD075E50CB22FF3769CC6F3BA212E9AC0520830108275BBA5C8D58B4F46274A"
+        },
+        {
+          "authority_terms_present": [
+            "bound",
+            "authority",
+            "pass",
+            "frozen"
+          ],
+          "path": "governance/spec_proto_v1.json",
+          "pit_terms_present": [
+            "pit",
+            "causal"
+          ],
+          "sha256": "3574E70F11F80C7F97FF9CD0DFE76A82172E76B9413A5D0A6FB42F7B8B5601C9"
+        },
+        {
+          "authority_terms_present": [
+            "bound",
+            "authority",
+            "pass"
+          ],
+          "path": "governance/trigger_pred_v1.json",
+          "pit_terms_present": [
+            "pit",
+            "causal",
+            "decision_time"
+          ],
+          "sha256": "3D86A563A48F3ED132F3640A2A52E6A55AE09DD17FCED824FBA328CAA8B75EFE"
+        },
+        {
+          "authority_terms_present": [
+            "authority"
+          ],
+          "path": "governance/trigger_v2_native_hook_recovery_v1_rpt.json",
+          "pit_terms_present": [
+            "causal"
+          ],
+          "sha256": "10AA891B01701BE31630A9F73733C9C4D03FED7583A8FF5B70F3CE15FE6CAF92"
+        },
+        {
+          "authority_terms_present": [
+            "authority"
+          ],
+          "path": "governance/trigger_v2_native_hook_recovery_v2_rpt.json",
+          "pit_terms_present": [
+            "causal"
+          ],
+          "sha256": "C4EF32CA2DD97A598CB0850AAC8B560CA2474C6A6EEF219113231B445543F876"
+        },
+        {
+          "authority_terms_present": [
+            "authority",
+            "pass"
+          ],
+          "path": "governance/trigger_v2_native_hook_recovery_v3.json",
+          "pit_terms_present": [
+            "causal"
+          ],
+          "sha256": "EBC8AEC479D3EF64512C7C52ACD8CC412376FE624E61E9B7F08EFAEBE216CFE8"
+        },
+        {
+          "authority_terms_present": [
+            "authority"
+          ],
+          "path": "governance/trigger_v2_native_hook_v1_rpt.json",
+          "pit_terms_present": [
+            "causal"
+          ],
+          "sha256": "929A1CC70E7B3CFBBE193CEDD0D35B8E437A43BAD1D52EA88C5409F7A74311E2"
+        },
+        {
+          "authority_terms_present": [
+            "bound",
+            "authority",
+            "pass"
+          ],
+          "path": "governance/trigger_v2_post_hook_behavioral_adj_v1_rpt.json",
+          "pit_terms_present": [
+            "causal"
+          ],
+          "sha256": "75C32E7226262C5414D1041260705BD646726179357F232D0E19A983B83104D4"
+        },
+        {
+          "authority_terms_present": [
+            "authority",
+            "frozen"
+          ],
+          "path": "governance/trigger_v2_shadow_integration_v1_rpt.json",
+          "pit_terms_present": [
+            "causal"
+          ],
+          "sha256": "05CACB483B3F3C042398DEE65626DEAB0081C11232C31C0E6DE3B6A9D3BB1D7B"
+        },
+        {
+          "authority_terms_present": [
+            "bound",
+            "authority",
+            "pass"
+          ],
+          "path": "governance/v2_a2_boundary.json",
+          "pit_terms_present": [],
+          "sha256": "7E292FEF01930EFDA68D58883296C56EA3D995B29E1A9849894B8EB489196554"
+        },
+        {
+          "authority_terms_present": [
+            "bound",
+            "authority",
+            "pass"
+          ],
+          "path": "governance/v2_a2_rpt.json",
+          "pit_terms_present": [
+            "pit",
+            "causal"
+          ],
+          "sha256": "DB96508649946F0BE1CA22453296CE132452ACEE522BD130C4C4DBB1515E955B"
+        },
+        {
+          "authority_terms_present": [
+            "bound",
+            "authority",
+            "pass",
+            "frozen"
+          ],
+          "path": "governance/v2_ntl_input_gate.json",
+          "pit_terms_present": [
+            "pit",
+            "causal"
+          ],
+          "sha256": "C709B42C309783FF451491DC5745983B2F88E0CD1AF80D27B262C09129535769"
+        },
+        {
+          "authority_terms_present": [
+            "bound",
+            "authority",
+            "pass"
+          ],
+          "path": "governance/v2_ntl_rpt.json",
+          "pit_terms_present": [
+            "causal"
+          ],
+          "sha256": "464D042D45506765A9A20985D895DB342C5D2C2B90BCA3054C5E8E9F2695BE6F"
+        },
+        {
+          "authority_terms_present": [
+            "bound",
+            "authority",
+            "pass"
+          ],
+          "path": "governance/v2_phase_a_historical_producer_executable_authority_decision_v1_rpt.json",
+          "pit_terms_present": [
+            "causal"
+          ],
+          "sha256": "5DFA774A96F3A140D9EA5F1BDA7A8E5D33DF26E2A061C86379216B271A7A0268"
+        },
+        {
+          "authority_terms_present": [
+            "bound",
+            "authority"
+          ],
+          "path": "governance/v2_phase_a_native_replay_input_authority_decision_v1/governed_historical_binding_inventory.json",
+          "pit_terms_present": [
+            "pit"
+          ],
+          "sha256": "B8E6BE45EB78AE8F1816906D79008CECD10B4DFA6C4275583BB2C894F17C9BCF"
+        },
+        {
+          "authority_terms_present": [
+            "bound",
+            "authority"
+          ],
+          "path": "governance/v2_phase_a_native_replay_input_authority_decision_v1/input_authority_decision.json",
+          "pit_terms_present": [
+            "pit"
+          ],
+          "sha256": "624150780341A2372E8E7C17CD1B1231125152B1AC429EB8077412752910394A"
+        },
+        {
+          "authority_terms_present": [
+            "bound",
+            "authority",
+            "frozen"
+          ],
+          "path": "governance/v2_phase_a_native_replay_input_authority_decision_v1/replay_lifecycle_policy_callsites.json",
+          "pit_terms_present": [
+            "pit",
+            "decision_time"
+          ],
+          "sha256": "9A4CC6DD85B7A111AC9A35240D7C3E0371921E7D3BB3049F5473003AAC34B3E2"
+        },
+        {
+          "authority_terms_present": [],
+          "path": "governance/v2_phase_a_native_replay_input_authority_decision_v1/replay_lifecycle_policy_signature.json",
+          "pit_terms_present": [],
+          "sha256": "5941C83C78A5566C87BAEB0729568FF7C43133F8B58423C197AB0923F1D6736B"
+        },
+        {
+          "authority_terms_present": [
+            "bound",
+            "authority",
+            "pass"
+          ],
+          "path": "governance/v2_phase_a_native_replay_input_authority_decision_v1_rpt.json",
+          "pit_terms_present": [
+            "causal"
+          ],
+          "sha256": "F82CAA018DF2E9A6C7609BF27F4B135EC9C4DEA706B67888A5439C1C31690092"
+        },
+        {
+          "authority_terms_present": [
+            "authority"
+          ],
+          "path": "governance/v2_phase_a_native_replay_input_authority_gap_adjudication_v1/historical_native_producer_adjudication.json",
+          "pit_terms_present": [
+            "pit"
+          ],
+          "sha256": "FFD3E569467343DA5E5B56093E55C301028B411B54D4C8BF0DCF60ECDD63AE16"
+        },
+        {
+          "authority_terms_present": [
+            "authority"
+          ],
+          "path": "governance/v2_phase_a_native_replay_input_authority_gap_adjudication_v1/historical_native_producer_candidates.json",
+          "pit_terms_present": [
+            "pit"
+          ],
+          "sha256": "4022F2BFB5DCE01AB69FDF189ABB238EE49F59C37C048D4A7FBE5269218AB99C"
+        },
+        {
+          "authority_terms_present": [
+            "bound",
+            "authority",
+            "pass"
+          ],
+          "path": "governance/v2_phase_a_native_replay_input_authority_gap_adjudication_v1_rpt.json",
+          "pit_terms_present": [
+            "causal"
+          ],
+          "sha256": "B152367B19EB48A79A7236E0F290445C2ECFEC0BB95B1EF5E8B0ADCBE6FF11D1"
+        },
+        {
+          "authority_terms_present": [],
+          "path": "governance/v2_phase_a_native_terminal_boundary_authority_review_v1/discovery_inventory.json",
+          "pit_terms_present": [
+            "causal",
+            "information_available"
+          ],
+          "sha256": "B2D31FFDF30194D892D8F64C0F57C66CEE0527A3BF4060D4F4AF5474B86A74F6"
+        },
+        {
+          "authority_terms_present": [
+            "bound"
+          ],
+          "path": "governance/v2_phase_a_native_terminal_boundary_authority_review_v1/native_terminal_authority.json",
+          "pit_terms_present": [],
+          "sha256": "6F03F9D3D9C9D7A5C77F418FB596F5E896CCD0CCD26AF41A73F2D43D02998503"
+        },
+        {
+          "authority_terms_present": [
+            "authority"
+          ],
+          "path": "governance/v2_phase_a_native_terminal_source_authority_recovery_v1/native_terminal_test_evidence.json",
+          "pit_terms_present": [
+            "pit",
+            "causal"
+          ],
+          "sha256": "7DEF8CE5D33A510ADB42B92BAA43BA5F9FF44F7E1C0945952E5C96A63E9279CC"
+        },
+        {
+          "authority_terms_present": [],
+          "path": "governance/v2_phase_a_native_terminal_source_authority_recovery_v1/rd27_replay_terminal_path_analysis.json",
+          "pit_terms_present": [
+            "pit"
+          ],
+          "sha256": "35E1FE327DDF2C99559F1E9E586227D566AA1225FFA45B5D8CB85E64366E8B5F"
+        }
+      ]
+    },
+    "frames": {
+      "must_bind_exact_source": true,
+      "must_bind_source_sha256_or_config_identity": true,
+      "must_define_information_available_time": true,
+      "must_not_require_protected_years": true,
+      "prior_governance_evidence_index": [
+        {
+          "authority_terms_present": [
+            "authority",
+            "frozen"
+          ],
+          "path": "governance/AKAH_BOT_RECONSTRUCTED_NATIVE_BASELINE_STUDY_CONTRACT_V1.json",
+          "pit_terms_present": [
+            "causal",
+            "information_available"
+          ],
+          "sha256": "F9C3A2FC7B588C5D4EA18C41417ACE78FCAE9EA751D4E0AD842B00119D43CDC7"
+        },
+        {
+          "authority_terms_present": [
+            "bound",
+            "authority",
+            "pass",
+            "frozen"
+          ],
+          "path": "governance/akah_upstream_audit_graph_v1.json",
+          "pit_terms_present": [
+            "pit",
+            "causal",
+            "decision_time"
+          ],
+          "sha256": "427A24C375E4497567933C9BC3FC0C447590EB537E93F001190B23B20FEEC581"
+        },
+        {
+          "authority_terms_present": [
+            "bound",
+            "authority",
+            "pass",
+            "frozen"
+          ],
+          "path": "governance/akah_wc_table.json",
+          "pit_terms_present": [
+            "pit",
+            "causal"
+          ],
+          "sha256": "566618010741F3FE98ED4AA964F80C60D3EFC8C97C09C5B7571D71A2DBBE0BB1"
+        },
+        {
+          "authority_terms_present": [
+            "bound",
+            "authority",
+            "pass"
+          ],
+          "path": "governance/async_replay_v1.json",
+          "pit_terms_present": [
+            "pit",
+            "causal"
+          ],
+          "sha256": "C3871577BCF196DC245E04D7FB3125332DC0964BD4D9B045FF1981E4D64A21DD"
+        },
+        {
+          "authority_terms_present": [
+            "bound",
+            "authority",
+            "pass",
+            "frozen"
+          ],
+          "path": "governance/exit_cand_v1.json",
+          "pit_terms_present": [
+            "pit",
+            "causal"
+          ],
+          "sha256": "F749F922C486D9D196D4B8ACBDBA98C4C9B4FE4E23E3BA7DEA27CBE18AFE8E64"
+        },
+        {
+          "authority_terms_present": [
+            "bound",
+            "authority",
+            "pass"
+          ],
+          "path": "governance/memory_pred_v1.json",
+          "pit_terms_present": [
+            "pit",
+            "causal",
+            "decision_time"
+          ],
+          "sha256": "2296C6F7EE2AC8CA79A47FD2287A3E6350D74710EB1CB86FC4F3D927E3BE4974"
+        },
+        {
+          "authority_terms_present": [
+            "bound",
+            "authority",
+            "pass"
+          ],
+          "path": "governance/phase_a.json",
+          "pit_terms_present": [
+            "pit",
+            "causal"
+          ],
+          "sha256": "93C394ABBB68A4419FB6D8478A4C3C15D16065AB6015DFC279CDD25101081D97"
+        },
+        {
+          "authority_terms_present": [
+            "pass"
+          ],
+          "path": "governance/reconstructed_native_baseline_transition_v1/native_replay_callsites.json",
+          "pit_terms_present": [],
+          "sha256": "889EFD18995BC7D7148E94A0E098333C0D669CE8B25E8C43F3F6C45ACFA9CCF8"
+        },
+        {
+          "authority_terms_present": [
+            "bound",
+            "authority"
+          ],
+          "path": "governance/reconstructed_native_baseline_transition_v1/prospective_runner_candidates.json",
+          "pit_terms_present": [],
+          "sha256": "3ACCDE55F427D0C5DB87EE58FBF1E79A7DCFC5F8D9F39FE8A00F1A9F445C052E"
+        },
+        {
+          "authority_terms_present": [
+            "pass"
+          ],
+          "path": "governance/reconstructed_native_baseline_transition_v1/rd27_native_replay_source_contract.json",
+          "pit_terms_present": [],
+          "sha256": "EE43221936614EF39008A621F17446CC77C375A66917A52EA1C30A8CB4F72F14"
+        },
+        {
+          "authority_terms_present": [
+            "bound",
+            "authority",
+            "pass"
+          ],
+          "path": "governance/trigger_pred_v1.json",
+          "pit_terms_present": [
+            "pit",
+            "causal",
+            "decision_time"
+          ],
+          "sha256": "3D86A563A48F3ED132F3640A2A52E6A55AE09DD17FCED824FBA328CAA8B75EFE"
+        },
+        {
+          "authority_terms_present": [
+            "authority"
+          ],
+          "path": "governance/trigger_v2_native_hook_recovery_v1_rpt.json",
+          "pit_terms_present": [
+            "causal"
+          ],
+          "sha256": "10AA891B01701BE31630A9F73733C9C4D03FED7583A8FF5B70F3CE15FE6CAF92"
+        },
+        {
+          "authority_terms_present": [
+            "authority"
+          ],
+          "path": "governance/trigger_v2_native_hook_recovery_v2_rpt.json",
+          "pit_terms_present": [
+            "causal"
+          ],
+          "sha256": "C4EF32CA2DD97A598CB0850AAC8B560CA2474C6A6EEF219113231B445543F876"
+        },
+        {
+          "authority_terms_present": [
+            "authority",
+            "pass"
+          ],
+          "path": "governance/trigger_v2_native_hook_recovery_v3.json",
+          "pit_terms_present": [
+            "causal"
+          ],
+          "sha256": "EBC8AEC479D3EF64512C7C52ACD8CC412376FE624E61E9B7F08EFAEBE216CFE8"
+        },
+        {
+          "authority_terms_present": [
+            "authority"
+          ],
+          "path": "governance/trigger_v2_native_hook_v1_rpt.json",
+          "pit_terms_present": [
+            "causal"
+          ],
+          "sha256": "929A1CC70E7B3CFBBE193CEDD0D35B8E437A43BAD1D52EA88C5409F7A74311E2"
+        },
+        {
+          "authority_terms_present": [
+            "bound",
+            "authority",
+            "pass",
+            "frozen"
+          ],
+          "path": "governance/v2_ntl_input_gate.json",
+          "pit_terms_present": [
+            "pit",
+            "causal"
+          ],
+          "sha256": "C709B42C309783FF451491DC5745983B2F88E0CD1AF80D27B262C09129535769"
+        },
+        {
+          "authority_terms_present": [
+            "bound",
+            "authority"
+          ],
+          "path": "governance/v2_phase_a_native_replay_input_authority_decision_v1/input_authority_decision.json",
+          "pit_terms_present": [
+            "pit"
+          ],
+          "sha256": "624150780341A2372E8E7C17CD1B1231125152B1AC429EB8077412752910394A"
+        },
+        {
+          "authority_terms_present": [
+            "bound",
+            "authority",
+            "frozen"
+          ],
+          "path": "governance/v2_phase_a_native_replay_input_authority_decision_v1/replay_lifecycle_policy_callsites.json",
+          "pit_terms_present": [
+            "pit",
+            "decision_time"
+          ],
+          "sha256": "9A4CC6DD85B7A111AC9A35240D7C3E0371921E7D3BB3049F5473003AAC34B3E2"
+        },
+        {
+          "authority_terms_present": [],
+          "path": "governance/v2_phase_a_native_replay_input_authority_decision_v1/replay_lifecycle_policy_signature.json",
+          "pit_terms_present": [],
+          "sha256": "5941C83C78A5566C87BAEB0729568FF7C43133F8B58423C197AB0923F1D6736B"
+        },
+        {
+          "authority_terms_present": [
+            "authority"
+          ],
+          "path": "governance/v2_phase_a_native_replay_input_authority_gap_adjudication_v1/historical_native_producer_adjudication.json",
+          "pit_terms_present": [
+            "pit"
+          ],
+          "sha256": "FFD3E569467343DA5E5B56093E55C301028B411B54D4C8BF0DCF60ECDD63AE16"
+        },
+        {
+          "authority_terms_present": [
+            "authority"
+          ],
+          "path": "governance/v2_phase_a_native_replay_input_authority_gap_adjudication_v1/historical_native_producer_candidates.json",
+          "pit_terms_present": [
+            "pit"
+          ],
+          "sha256": "4022F2BFB5DCE01AB69FDF189ABB238EE49F59C37C048D4A7FBE5269218AB99C"
+        },
+        {
+          "authority_terms_present": [],
+          "path": "governance/v2_phase_a_native_terminal_source_authority_recovery_v1/rd27_replay_terminal_path_analysis.json",
+          "pit_terms_present": [
+            "pit"
+          ],
+          "sha256": "35E1FE327DDF2C99559F1E9E586227D566AA1225FFA45B5D8CB85E64366E8B5F"
+        }
+      ]
+    },
+    "policy_id": {
+      "must_bind_exact_source": true,
+      "must_bind_source_sha256_or_config_identity": true,
+      "must_define_information_available_time": false,
+      "must_not_require_protected_years": true,
+      "prior_governance_evidence_index": [
+        {
+          "authority_terms_present": [
+            "authority",
+            "frozen"
+          ],
+          "path": "governance/AKAH_BOT_RECONSTRUCTED_NATIVE_BASELINE_STUDY_CONTRACT_V1.json",
+          "pit_terms_present": [
+            "causal",
+            "information_available"
+          ],
+          "sha256": "F9C3A2FC7B588C5D4EA18C41417ACE78FCAE9EA751D4E0AD842B00119D43CDC7"
+        },
+        {
+          "authority_terms_present": [
+            "pass"
+          ],
+          "path": "governance/reconstructed_native_baseline_transition_v1/native_replay_callsites.json",
+          "pit_terms_present": [],
+          "sha256": "889EFD18995BC7D7148E94A0E098333C0D669CE8B25E8C43F3F6C45ACFA9CCF8"
+        },
+        {
+          "authority_terms_present": [
+            "bound",
+            "authority"
+          ],
+          "path": "governance/reconstructed_native_baseline_transition_v1/prospective_runner_candidates.json",
+          "pit_terms_present": [],
+          "sha256": "3ACCDE55F427D0C5DB87EE58FBF1E79A7DCFC5F8D9F39FE8A00F1A9F445C052E"
+        },
+        {
+          "authority_terms_present": [
+            "pass"
+          ],
+          "path": "governance/reconstructed_native_baseline_transition_v1/rd27_native_replay_source_contract.json",
+          "pit_terms_present": [],
+          "sha256": "EE43221936614EF39008A621F17446CC77C375A66917A52EA1C30A8CB4F72F14"
+        },
+        {
+          "authority_terms_present": [
+            "authority"
+          ],
+          "path": "governance/trigger_v2_native_hook_recovery_v1_rpt.json",
+          "pit_terms_present": [
+            "causal"
+          ],
+          "sha256": "10AA891B01701BE31630A9F73733C9C4D03FED7583A8FF5B70F3CE15FE6CAF92"
+        },
+        {
+          "authority_terms_present": [
+            "authority"
+          ],
+          "path": "governance/trigger_v2_native_hook_recovery_v2_rpt.json",
+          "pit_terms_present": [
+            "causal"
+          ],
+          "sha256": "C4EF32CA2DD97A598CB0850AAC8B560CA2474C6A6EEF219113231B445543F876"
+        },
+        {
+          "authority_terms_present": [
+            "authority",
+            "pass"
+          ],
+          "path": "governance/trigger_v2_native_hook_recovery_v3.json",
+          "pit_terms_present": [
+            "causal"
+          ],
+          "sha256": "EBC8AEC479D3EF64512C7C52ACD8CC412376FE624E61E9B7F08EFAEBE216CFE8"
+        },
+        {
+          "authority_terms_present": [
+            "authority"
+          ],
+          "path": "governance/trigger_v2_native_hook_v1_rpt.json",
+          "pit_terms_present": [
+            "causal"
+          ],
+          "sha256": "929A1CC70E7B3CFBBE193CEDD0D35B8E437A43BAD1D52EA88C5409F7A74311E2"
+        },
+        {
+          "authority_terms_present": [
+            "bound",
+            "authority",
+            "pass",
+            "frozen"
+          ],
+          "path": "governance/v2_ntl_input_gate.json",
+          "pit_terms_present": [
+            "pit",
+            "causal"
+          ],
+          "sha256": "C709B42C309783FF451491DC5745983B2F88E0CD1AF80D27B262C09129535769"
+        },
+        {
+          "authority_terms_present": [
+            "bound",
+            "authority"
+          ],
+          "path": "governance/v2_phase_a_native_replay_input_authority_decision_v1/input_authority_decision.json",
+          "pit_terms_present": [
+            "pit"
+          ],
+          "sha256": "624150780341A2372E8E7C17CD1B1231125152B1AC429EB8077412752910394A"
+        },
+        {
+          "authority_terms_present": [
+            "bound",
+            "authority",
+            "frozen"
+          ],
+          "path": "governance/v2_phase_a_native_replay_input_authority_decision_v1/replay_lifecycle_policy_callsites.json",
+          "pit_terms_present": [
+            "pit",
+            "decision_time"
+          ],
+          "sha256": "9A4CC6DD85B7A111AC9A35240D7C3E0371921E7D3BB3049F5473003AAC34B3E2"
+        },
+        {
+          "authority_terms_present": [],
+          "path": "governance/v2_phase_a_native_replay_input_authority_decision_v1/replay_lifecycle_policy_signature.json",
+          "pit_terms_present": [],
+          "sha256": "5941C83C78A5566C87BAEB0729568FF7C43133F8B58423C197AB0923F1D6736B"
+        },
+        {
+          "authority_terms_present": [
+            "authority"
+          ],
+          "path": "governance/v2_phase_a_native_replay_input_authority_gap_adjudication_v1/historical_native_producer_adjudication.json",
+          "pit_terms_present": [
+            "pit"
+          ],
+          "sha256": "FFD3E569467343DA5E5B56093E55C301028B411B54D4C8BF0DCF60ECDD63AE16"
+        },
+        {
+          "authority_terms_present": [
+            "authority"
+          ],
+          "path": "governance/v2_phase_a_native_replay_input_authority_gap_adjudication_v1/historical_native_producer_candidates.json",
+          "pit_terms_present": [
+            "pit"
+          ],
+          "sha256": "4022F2BFB5DCE01AB69FDF189ABB238EE49F59C37C048D4A7FBE5269218AB99C"
+        },
+        {
+          "authority_terms_present": [
+            "authority"
+          ],
+          "path": "governance/v2_phase_a_native_terminal_source_authority_recovery_v1/native_terminal_test_evidence.json",
+          "pit_terms_present": [
+            "pit",
+            "causal"
+          ],
+          "sha256": "7DEF8CE5D33A510ADB42B92BAA43BA5F9FF44F7E1C0945952E5C96A63E9279CC"
+        },
+        {
+          "authority_terms_present": [],
+          "path": "governance/v2_phase_a_native_terminal_source_authority_recovery_v1/rd27_replay_terminal_path_analysis.json",
+          "pit_terms_present": [
+            "pit"
+          ],
+          "sha256": "35E1FE327DDF2C99559F1E9E586227D566AA1225FFA45B5D8CB85E64366E8B5F"
+        }
+      ]
+    },
+    "portfolio_id": {
+      "must_bind_exact_source": true,
+      "must_bind_source_sha256_or_config_identity": true,
+      "must_define_information_available_time": false,
+      "must_not_require_protected_years": true,
+      "prior_governance_evidence_index": [
+        {
+          "authority_terms_present": [
+            "authority",
+            "frozen"
+          ],
+          "path": "governance/AKAH_BOT_RECONSTRUCTED_NATIVE_BASELINE_STUDY_CONTRACT_V1.json",
+          "pit_terms_present": [
+            "causal",
+            "information_available"
+          ],
+          "sha256": "F9C3A2FC7B588C5D4EA18C41417ACE78FCAE9EA751D4E0AD842B00119D43CDC7"
+        },
+        {
+          "authority_terms_present": [
+            "pass"
+          ],
+          "path": "governance/reconstructed_native_baseline_transition_v1/native_replay_callsites.json",
+          "pit_terms_present": [],
+          "sha256": "889EFD18995BC7D7148E94A0E098333C0D669CE8B25E8C43F3F6C45ACFA9CCF8"
+        },
+        {
+          "authority_terms_present": [
+            "bound",
+            "authority"
+          ],
+          "path": "governance/reconstructed_native_baseline_transition_v1/prospective_runner_candidates.json",
+          "pit_terms_present": [],
+          "sha256": "3ACCDE55F427D0C5DB87EE58FBF1E79A7DCFC5F8D9F39FE8A00F1A9F445C052E"
+        },
+        {
+          "authority_terms_present": [
+            "pass"
+          ],
+          "path": "governance/reconstructed_native_baseline_transition_v1/rd27_native_replay_source_contract.json",
+          "pit_terms_present": [],
+          "sha256": "EE43221936614EF39008A621F17446CC77C375A66917A52EA1C30A8CB4F72F14"
+        },
+        {
+          "authority_terms_present": [
+            "authority"
+          ],
+          "path": "governance/trigger_v2_native_hook_recovery_v1_rpt.json",
+          "pit_terms_present": [
+            "causal"
+          ],
+          "sha256": "10AA891B01701BE31630A9F73733C9C4D03FED7583A8FF5B70F3CE15FE6CAF92"
+        },
+        {
+          "authority_terms_present": [
+            "authority"
+          ],
+          "path": "governance/trigger_v2_native_hook_recovery_v2_rpt.json",
+          "pit_terms_present": [
+            "causal"
+          ],
+          "sha256": "C4EF32CA2DD97A598CB0850AAC8B560CA2474C6A6EEF219113231B445543F876"
+        },
+        {
+          "authority_terms_present": [
+            "authority",
+            "pass"
+          ],
+          "path": "governance/trigger_v2_native_hook_recovery_v3.json",
+          "pit_terms_present": [
+            "causal"
+          ],
+          "sha256": "EBC8AEC479D3EF64512C7C52ACD8CC412376FE624E61E9B7F08EFAEBE216CFE8"
+        },
+        {
+          "authority_terms_present": [
+            "authority"
+          ],
+          "path": "governance/trigger_v2_native_hook_v1_rpt.json",
+          "pit_terms_present": [
+            "causal"
+          ],
+          "sha256": "929A1CC70E7B3CFBBE193CEDD0D35B8E437A43BAD1D52EA88C5409F7A74311E2"
+        },
+        {
+          "authority_terms_present": [
+            "bound",
+            "authority"
+          ],
+          "path": "governance/v2_phase_a_native_replay_input_authority_decision_v1/input_authority_decision.json",
+          "pit_terms_present": [
+            "pit"
+          ],
+          "sha256": "624150780341A2372E8E7C17CD1B1231125152B1AC429EB8077412752910394A"
+        },
+        {
+          "authority_terms_present": [
+            "bound",
+            "authority",
+            "frozen"
+          ],
+          "path": "governance/v2_phase_a_native_replay_input_authority_decision_v1/replay_lifecycle_policy_callsites.json",
+          "pit_terms_present": [
+            "pit",
+            "decision_time"
+          ],
+          "sha256": "9A4CC6DD85B7A111AC9A35240D7C3E0371921E7D3BB3049F5473003AAC34B3E2"
+        },
+        {
+          "authority_terms_present": [],
+          "path": "governance/v2_phase_a_native_replay_input_authority_decision_v1/replay_lifecycle_policy_signature.json",
+          "pit_terms_present": [],
+          "sha256": "5941C83C78A5566C87BAEB0729568FF7C43133F8B58423C197AB0923F1D6736B"
+        },
+        {
+          "authority_terms_present": [
+            "authority"
+          ],
+          "path": "governance/v2_phase_a_native_replay_input_authority_gap_adjudication_v1/historical_native_producer_adjudication.json",
+          "pit_terms_present": [
+            "pit"
+          ],
+          "sha256": "FFD3E569467343DA5E5B56093E55C301028B411B54D4C8BF0DCF60ECDD63AE16"
+        },
+        {
+          "authority_terms_present": [
+            "authority"
+          ],
+          "path": "governance/v2_phase_a_native_replay_input_authority_gap_adjudication_v1/historical_native_producer_candidates.json",
+          "pit_terms_present": [
+            "pit"
+          ],
+          "sha256": "4022F2BFB5DCE01AB69FDF189ABB238EE49F59C37C048D4A7FBE5269218AB99C"
+        },
+        {
+          "authority_terms_present": [
+            "authority"
+          ],
+          "path": "governance/v2_phase_a_native_terminal_source_authority_recovery_v1/native_terminal_test_evidence.json",
+          "pit_terms_present": [
+            "pit",
+            "causal"
+          ],
+          "sha256": "7DEF8CE5D33A510ADB42B92BAA43BA5F9FF44F7E1C0945952E5C96A63E9279CC"
+        },
+        {
+          "authority_terms_present": [],
+          "path": "governance/v2_phase_a_native_terminal_source_authority_recovery_v1/rd27_replay_terminal_path_analysis.json",
+          "pit_terms_present": [
+            "pit"
+          ],
+          "sha256": "35E1FE327DDF2C99559F1E9E586227D566AA1225FFA45B5D8CB85E64366E8B5F"
+        }
+      ]
+    },
+    "state_frame": {
+      "must_bind_exact_source": true,
+      "must_bind_source_sha256_or_config_identity": true,
+      "must_define_information_available_time": true,
+      "must_not_require_protected_years": true,
+      "prior_governance_evidence_index": [
+        {
+          "authority_terms_present": [
+            "authority",
+            "frozen"
+          ],
+          "path": "governance/AKAH_BOT_RECONSTRUCTED_NATIVE_BASELINE_STUDY_CONTRACT_V1.json",
+          "pit_terms_present": [
+            "causal",
+            "information_available"
+          ],
+          "sha256": "F9C3A2FC7B588C5D4EA18C41417ACE78FCAE9EA751D4E0AD842B00119D43CDC7"
+        },
+        {
+          "authority_terms_present": [
+            "pass"
+          ],
+          "path": "governance/reconstructed_native_baseline_transition_v1/native_replay_callsites.json",
+          "pit_terms_present": [],
+          "sha256": "889EFD18995BC7D7148E94A0E098333C0D669CE8B25E8C43F3F6C45ACFA9CCF8"
+        },
+        {
+          "authority_terms_present": [
+            "bound",
+            "authority"
+          ],
+          "path": "governance/reconstructed_native_baseline_transition_v1/prospective_runner_candidates.json",
+          "pit_terms_present": [],
+          "sha256": "3ACCDE55F427D0C5DB87EE58FBF1E79A7DCFC5F8D9F39FE8A00F1A9F445C052E"
+        },
+        {
+          "authority_terms_present": [
+            "pass"
+          ],
+          "path": "governance/reconstructed_native_baseline_transition_v1/rd27_native_replay_source_contract.json",
+          "pit_terms_present": [],
+          "sha256": "EE43221936614EF39008A621F17446CC77C375A66917A52EA1C30A8CB4F72F14"
+        },
+        {
+          "authority_terms_present": [
+            "authority"
+          ],
+          "path": "governance/trigger_v2_native_hook_recovery_v1_rpt.json",
+          "pit_terms_present": [
+            "causal"
+          ],
+          "sha256": "10AA891B01701BE31630A9F73733C9C4D03FED7583A8FF5B70F3CE15FE6CAF92"
+        },
+        {
+          "authority_terms_present": [
+            "authority"
+          ],
+          "path": "governance/trigger_v2_native_hook_recovery_v2_rpt.json",
+          "pit_terms_present": [
+            "causal"
+          ],
+          "sha256": "C4EF32CA2DD97A598CB0850AAC8B560CA2474C6A6EEF219113231B445543F876"
+        },
+        {
+          "authority_terms_present": [
+            "authority",
+            "pass"
+          ],
+          "path": "governance/trigger_v2_native_hook_recovery_v3.json",
+          "pit_terms_present": [
+            "causal"
+          ],
+          "sha256": "EBC8AEC479D3EF64512C7C52ACD8CC412376FE624E61E9B7F08EFAEBE216CFE8"
+        },
+        {
+          "authority_terms_present": [
+            "authority"
+          ],
+          "path": "governance/trigger_v2_native_hook_v1_rpt.json",
+          "pit_terms_present": [
+            "causal"
+          ],
+          "sha256": "929A1CC70E7B3CFBBE193CEDD0D35B8E437A43BAD1D52EA88C5409F7A74311E2"
+        },
+        {
+          "authority_terms_present": [
+            "bound",
+            "authority",
+            "pass",
+            "frozen"
+          ],
+          "path": "governance/v2_ntl_input_gate.json",
+          "pit_terms_present": [
+            "pit",
+            "causal"
+          ],
+          "sha256": "C709B42C309783FF451491DC5745983B2F88E0CD1AF80D27B262C09129535769"
+        },
+        {
+          "authority_terms_present": [
+            "bound",
+            "authority"
+          ],
+          "path": "governance/v2_phase_a_native_replay_input_authority_decision_v1/governed_historical_binding_inventory.json",
+          "pit_terms_present": [
+            "pit"
+          ],
+          "sha256": "B8E6BE45EB78AE8F1816906D79008CECD10B4DFA6C4275583BB2C894F17C9BCF"
+        },
+        {
+          "authority_terms_present": [
+            "bound",
+            "authority"
+          ],
+          "path": "governance/v2_phase_a_native_replay_input_authority_decision_v1/input_authority_decision.json",
+          "pit_terms_present": [
+            "pit"
+          ],
+          "sha256": "624150780341A2372E8E7C17CD1B1231125152B1AC429EB8077412752910394A"
+        },
+        {
+          "authority_terms_present": [
+            "authority"
+          ],
+          "path": "governance/v2_phase_a_native_replay_input_authority_decision_v1/input_authority_matrix.json",
+          "pit_terms_present": [
+            "pit"
+          ],
+          "sha256": "ACF04B52C7B6560C5CE318FAC3DE163364414FCC7175C5A6D0DB97C28B724A98"
+        },
+        {
+          "authority_terms_present": [
+            "bound",
+            "authority",
+            "frozen"
+          ],
+          "path": "governance/v2_phase_a_native_replay_input_authority_decision_v1/replay_lifecycle_policy_callsites.json",
+          "pit_terms_present": [
+            "pit",
+            "decision_time"
+          ],
+          "sha256": "9A4CC6DD85B7A111AC9A35240D7C3E0371921E7D3BB3049F5473003AAC34B3E2"
+        },
+        {
+          "authority_terms_present": [],
+          "path": "governance/v2_phase_a_native_replay_input_authority_decision_v1/replay_lifecycle_policy_signature.json",
+          "pit_terms_present": [],
+          "sha256": "5941C83C78A5566C87BAEB0729568FF7C43133F8B58423C197AB0923F1D6736B"
+        },
+        {
+          "authority_terms_present": [
+            "authority"
+          ],
+          "path": "governance/v2_phase_a_native_replay_input_authority_gap_adjudication_v1/historical_native_producer_adjudication.json",
+          "pit_terms_present": [
+            "pit"
+          ],
+          "sha256": "FFD3E569467343DA5E5B56093E55C301028B411B54D4C8BF0DCF60ECDD63AE16"
+        },
+        {
+          "authority_terms_present": [
+            "authority"
+          ],
+          "path": "governance/v2_phase_a_native_replay_input_authority_gap_adjudication_v1/historical_native_producer_candidates.json",
+          "pit_terms_present": [
+            "pit"
+          ],
+          "sha256": "4022F2BFB5DCE01AB69FDF189ABB238EE49F59C37C048D4A7FBE5269218AB99C"
+        },
+        {
+          "authority_terms_present": [
+            "authority"
+          ],
+          "path": "governance/v2_phase_a_native_terminal_source_authority_recovery_v1/native_terminal_test_evidence.json",
+          "pit_terms_present": [
+            "pit",
+            "causal"
+          ],
+          "sha256": "7DEF8CE5D33A510ADB42B92BAA43BA5F9FF44F7E1C0945952E5C96A63E9279CC"
+        },
+        {
+          "authority_terms_present": [],
+          "path": "governance/v2_phase_a_native_terminal_source_authority_recovery_v1/rd27_replay_terminal_path_analysis.json",
+          "pit_terms_present": [
+            "pit"
+          ],
+          "sha256": "35E1FE327DDF2C99559F1E9E586227D566AA1225FFA45B5D8CB85E64366E8B5F"
+        }
+      ]
+    },
+    "universe_id": {
+      "must_bind_exact_source": true,
+      "must_bind_source_sha256_or_config_identity": true,
+      "must_define_information_available_time": false,
+      "must_not_require_protected_years": true,
+      "prior_governance_evidence_index": [
+        {
+          "authority_terms_present": [
+            "authority",
+            "frozen"
+          ],
+          "path": "governance/AKAH_BOT_RECONSTRUCTED_NATIVE_BASELINE_STUDY_CONTRACT_V1.json",
+          "pit_terms_present": [
+            "causal",
+            "information_available"
+          ],
+          "sha256": "F9C3A2FC7B588C5D4EA18C41417ACE78FCAE9EA751D4E0AD842B00119D43CDC7"
+        },
+        {
+          "authority_terms_present": [
+            "pass"
+          ],
+          "path": "governance/reconstructed_native_baseline_transition_v1/native_replay_callsites.json",
+          "pit_terms_present": [],
+          "sha256": "889EFD18995BC7D7148E94A0E098333C0D669CE8B25E8C43F3F6C45ACFA9CCF8"
+        },
+        {
+          "authority_terms_present": [
+            "bound",
+            "authority"
+          ],
+          "path": "governance/reconstructed_native_baseline_transition_v1/prospective_runner_candidates.json",
+          "pit_terms_present": [],
+          "sha256": "3ACCDE55F427D0C5DB87EE58FBF1E79A7DCFC5F8D9F39FE8A00F1A9F445C052E"
+        },
+        {
+          "authority_terms_present": [
+            "pass"
+          ],
+          "path": "governance/reconstructed_native_baseline_transition_v1/rd27_native_replay_source_contract.json",
+          "pit_terms_present": [],
+          "sha256": "EE43221936614EF39008A621F17446CC77C375A66917A52EA1C30A8CB4F72F14"
+        },
+        {
+          "authority_terms_present": [
+            "authority"
+          ],
+          "path": "governance/trigger_v2_native_hook_recovery_v1_rpt.json",
+          "pit_terms_present": [
+            "causal"
+          ],
+          "sha256": "10AA891B01701BE31630A9F73733C9C4D03FED7583A8FF5B70F3CE15FE6CAF92"
+        },
+        {
+          "authority_terms_present": [
+            "authority"
+          ],
+          "path": "governance/trigger_v2_native_hook_recovery_v2_rpt.json",
+          "pit_terms_present": [
+            "causal"
+          ],
+          "sha256": "C4EF32CA2DD97A598CB0850AAC8B560CA2474C6A6EEF219113231B445543F876"
+        },
+        {
+          "authority_terms_present": [
+            "authority",
+            "pass"
+          ],
+          "path": "governance/trigger_v2_native_hook_recovery_v3.json",
+          "pit_terms_present": [
+            "causal"
+          ],
+          "sha256": "EBC8AEC479D3EF64512C7C52ACD8CC412376FE624E61E9B7F08EFAEBE216CFE8"
+        },
+        {
+          "authority_terms_present": [
+            "authority"
+          ],
+          "path": "governance/trigger_v2_native_hook_v1_rpt.json",
+          "pit_terms_present": [
+            "causal"
+          ],
+          "sha256": "929A1CC70E7B3CFBBE193CEDD0D35B8E437A43BAD1D52EA88C5409F7A74311E2"
+        },
+        {
+          "authority_terms_present": [
+            "bound",
+            "authority"
+          ],
+          "path": "governance/v2_phase_a_native_replay_input_authority_decision_v1/input_authority_decision.json",
+          "pit_terms_present": [
+            "pit"
+          ],
+          "sha256": "624150780341A2372E8E7C17CD1B1231125152B1AC429EB8077412752910394A"
+        },
+        {
+          "authority_terms_present": [
+            "bound",
+            "authority",
+            "frozen"
+          ],
+          "path": "governance/v2_phase_a_native_replay_input_authority_decision_v1/replay_lifecycle_policy_callsites.json",
+          "pit_terms_present": [
+            "pit",
+            "decision_time"
+          ],
+          "sha256": "9A4CC6DD85B7A111AC9A35240D7C3E0371921E7D3BB3049F5473003AAC34B3E2"
+        },
+        {
+          "authority_terms_present": [],
+          "path": "governance/v2_phase_a_native_replay_input_authority_decision_v1/replay_lifecycle_policy_signature.json",
+          "pit_terms_present": [],
+          "sha256": "5941C83C78A5566C87BAEB0729568FF7C43133F8B58423C197AB0923F1D6736B"
+        },
+        {
+          "authority_terms_present": [
+            "authority"
+          ],
+          "path": "governance/v2_phase_a_native_replay_input_authority_gap_adjudication_v1/historical_native_producer_adjudication.json",
+          "pit_terms_present": [
+            "pit"
+          ],
+          "sha256": "FFD3E569467343DA5E5B56093E55C301028B411B54D4C8BF0DCF60ECDD63AE16"
+        },
+        {
+          "authority_terms_present": [
+            "authority"
+          ],
+          "path": "governance/v2_phase_a_native_replay_input_authority_gap_adjudication_v1/historical_native_producer_candidates.json",
+          "pit_terms_present": [
+            "pit"
+          ],
+          "sha256": "4022F2BFB5DCE01AB69FDF189ABB238EE49F59C37C048D4A7FBE5269218AB99C"
+        },
+        {
+          "authority_terms_present": [
+            "authority"
+          ],
+          "path": "governance/v2_phase_a_native_terminal_source_authority_recovery_v1/native_terminal_test_evidence.json",
+          "pit_terms_present": [
+            "pit",
+            "causal"
+          ],
+          "sha256": "7DEF8CE5D33A510ADB42B92BAA43BA5F9FF44F7E1C0945952E5C96A63E9279CC"
+        },
+        {
+          "authority_terms_present": [],
+          "path": "governance/v2_phase_a_native_terminal_source_authority_recovery_v1/rd27_replay_terminal_path_analysis.json",
+          "pit_terms_present": [
+            "pit"
+          ],
+          "sha256": "35E1FE327DDF2C99559F1E9E586227D566AA1225FFA45B5D8CB85E64366E8B5F"
+        }
+      ]
+    }
+  },
+  "purpose": "Provide a minimal prospective executable wrapper around replay_lifecycle_policy without changing RD27 policy semantics, Memory, V2, or native exit logic.",
+  "real_replay_authorized": false,
+  "required_runtime_roles": [
+    "policy_id",
+    "portfolio_id",
+    "universe_id",
+    "cost_multiplier",
+    "events",
+    "frames",
+    "state_frame"
+  ],
+  "runner_requirements": [
+    "EXPLICIT_KEYWORD_BINDING_FOR_EVERY_REQUIRED_RUNTIME_ROLE",
+    "NO_KWARGS_EXPANSION_AT_NATIVE_REPLAY_CALL",
+    "NO_NETWORK",
+    "NO_PROTECTED_YEAR_INPUT",
+    "NO_SYNTHETIC_SUBSTITUTE_FOR_MISSING_INPUT",
+    "ALL_INPUT_AUTHORITIES_FROZEN_BEFORE_REAL_REPLAY",
+    "ALL_INPUTS_HAVE_PIT_AVAILABILITY_CONTRACT",
+    "NEW_RUN_ID_AND_LIFECYCLE_ID",
+    "RECORDER_DISABLED_BY_DEFAULT_UNTIL_M2_IMPLEMENTATION",
+    "NO_MEMORY_OR_V2_MUTATION",
+    "NO_NATIVE_POLICY_MUTATION"
+  ],
+  "status": "REQUIRED_NOT_IMPLEMENTED"
+}

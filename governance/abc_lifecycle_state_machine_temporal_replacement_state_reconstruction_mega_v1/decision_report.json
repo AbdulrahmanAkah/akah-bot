@@ -1,0 +1,149 @@
+{
+  "2024_access": false,
+  "baseline_parity": "PASS_2X_METRIC_AND_EXACT_TRADE",
+  "comparison": [
+    {
+      "head": "candidate_increment",
+      "new_feature_surface": "REV759_TEMPORAL_AUGMENTED_RFF",
+      "new_positive_precision": 0.31859584990123363,
+      "new_rows": 1697985,
+      "new_sign_accuracy": 0.5761487881223921,
+      "new_top_decile_positive_precision": 0.3222892987865028,
+      "new_weighted_pearson": -0.028020088972911462,
+      "old_feature_surface": "REV757_CURRENT_STATE_RFF",
+      "old_positive_precision": 0.31845581960585867,
+      "old_rows": 1697985,
+      "old_sign_accuracy": 0.5914015730409868,
+      "old_top_decile_positive_precision": 0.3203605729732595,
+      "old_weighted_pearson": -0.023605047564003293,
+      "pearson_delta": -0.004415041408908169
+    },
+    {
+      "head": "decomposed_delta",
+      "new_feature_surface": "REV759_TEMPORAL_AUGMENTED_RFF",
+      "new_positive_precision": 0.5038009078429929,
+      "new_rows": 1697985,
+      "new_sign_accuracy": 0.5037977367291231,
+      "new_top_decile_positive_precision": 0.5221467504129895,
+      "new_weighted_pearson": -0.011570556323726243,
+      "old_feature_surface": "REV757_CURRENT_STATE_RFF",
+      "old_positive_precision": 0.5058144182157545,
+      "old_rows": 1697985,
+      "old_sign_accuracy": 0.5033678153811724,
+      "old_top_decile_positive_precision": 0.5159183281948898,
+      "old_weighted_pearson": -0.013571355814470056,
+      "pearson_delta": 0.002000799490743813
+    },
+    {
+      "head": "direct_delta",
+      "new_feature_surface": "REV759_TEMPORAL_AUGMENTED_RFF",
+      "new_positive_precision": 0.5356386644832758,
+      "new_rows": 1697985,
+      "new_sign_accuracy": 0.5134338642567514,
+      "new_top_decile_positive_precision": 0.5518689299375437,
+      "new_weighted_pearson": -0.008621756638697419,
+      "old_feature_surface": "REV757_CURRENT_STATE_RFF",
+      "old_positive_precision": 0.5238987351258808,
+      "old_rows": 1697985,
+      "old_sign_accuracy": 0.5091187495767041,
+      "old_top_decile_positive_precision": 0.5248906071019473,
+      "old_weighted_pearson": -0.010643180462196963,
+      "pearson_delta": 0.0020214238234995442
+    },
+    {
+      "head": "incumbent_continuation",
+      "new_feature_surface": "REV759_TEMPORAL_AUGMENTED_RFF",
+      "new_positive_precision": 0.3093594862241644,
+      "new_rows": 1697985,
+      "new_sign_accuracy": 0.3941619036681714,
+      "new_top_decile_positive_precision": 0.35000241904374896,
+      "new_weighted_pearson": -0.009636725560005487,
+      "old_feature_surface": "REV757_CURRENT_STATE_RFF",
+      "old_positive_precision": 0.3054411226154272,
+      "old_rows": 1697985,
+      "old_sign_accuracy": 0.3839421431873662,
+      "old_top_decile_positive_precision": 0.3332741690886551,
+      "old_weighted_pearson": -0.017167155234093383,
+      "pearson_delta": 0.0075304296740878966
+    }
+  ],
+  "decomposition_max_abs_error": 2.7755575615628914e-17,
+  "model_selection": false,
+  "model_zoo": false,
+  "next_interpretation": "Human review should decide from preregistered OOT signal lift whether temporal state materially restores replacement-value learnability. This task does not certify a runtime rule.",
+  "old_rff_summary": {
+    "candidate_increment": {
+      "rows": 1697985,
+      "weighted_pearson": -0.023605047564003293,
+      "weighted_positive_precision": 0.31845581960585867,
+      "weighted_sign_accuracy": 0.5914015730409868,
+      "weighted_spearman_sample": 0.09847961403682177,
+      "weighted_top_decile_positive_precision": 0.3203605729732595
+    },
+    "decomposed_delta": {
+      "rows": 1697985,
+      "weighted_pearson": -0.013571355814470056,
+      "weighted_positive_precision": 0.5058144182157545,
+      "weighted_sign_accuracy": 0.5033678153811724,
+      "weighted_spearman_sample": 0.05782563626139421,
+      "weighted_top_decile_positive_precision": 0.5159183281948898
+    },
+    "direct_delta": {
+      "rows": 1697985,
+      "weighted_pearson": -0.010643180462196963,
+      "weighted_positive_precision": 0.5238987351258808,
+      "weighted_sign_accuracy": 0.5091187495767041,
+      "weighted_spearman_sample": 0.0673464157779682,
+      "weighted_top_decile_positive_precision": 0.5248906071019473
+    },
+    "incumbent_continuation": {
+      "rows": 1697985,
+      "weighted_pearson": -0.017167155234093383,
+      "weighted_positive_precision": 0.3054411226154272,
+      "weighted_sign_accuracy": 0.3839421431873662,
+      "weighted_spearman_sample": -0.045086803732231576,
+      "weighted_top_decile_positive_precision": 0.3332741690886551
+    }
+  },
+  "pair_rows": 1700665,
+  "portfolio_policy_replay": false,
+  "posthoc_winner_certified": false,
+  "runtime_future_information": false,
+  "schema_version": "akah-temporal-replacement-state-decision-v1",
+  "status": "PASS_DIAGNOSTIC_COMPLETE",
+  "temporal_rff_summary": {
+    "candidate_increment": {
+      "rows": 1697985,
+      "weighted_pearson": -0.028020088972911462,
+      "weighted_positive_precision": 0.31859584990123363,
+      "weighted_sign_accuracy": 0.5761487881223921,
+      "weighted_spearman_sample": 0.07949045924728591,
+      "weighted_top_decile_positive_precision": 0.3222892987865028
+    },
+    "decomposed_delta": {
+      "rows": 1697985,
+      "weighted_pearson": -0.011570556323726243,
+      "weighted_positive_precision": 0.5038009078429929,
+      "weighted_sign_accuracy": 0.5037977367291231,
+      "weighted_spearman_sample": 0.0505276653482761,
+      "weighted_top_decile_positive_precision": 0.5221467504129895
+    },
+    "direct_delta": {
+      "rows": 1697985,
+      "weighted_pearson": -0.008621756638697419,
+      "weighted_positive_precision": 0.5356386644832758,
+      "weighted_sign_accuracy": 0.5134338642567514,
+      "weighted_spearman_sample": 0.06940897590856047,
+      "weighted_top_decile_positive_precision": 0.5518689299375437
+    },
+    "incumbent_continuation": {
+      "rows": 1697985,
+      "weighted_pearson": -0.009636725560005487,
+      "weighted_positive_precision": 0.3093594862241644,
+      "weighted_sign_accuracy": 0.3941619036681714,
+      "weighted_spearman_sample": -0.03057259678297488,
+      "weighted_top_decile_positive_precision": 0.35000241904374896
+    }
+  },
+  "threshold_search": false
+}

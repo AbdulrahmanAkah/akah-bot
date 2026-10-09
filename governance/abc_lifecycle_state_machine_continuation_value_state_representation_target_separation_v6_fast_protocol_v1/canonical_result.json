@@ -1,0 +1,85 @@
+{
+  "2022_2023": "EXPOSED_DIAGNOSTIC_ONLY",
+  "clean_target_components": [
+    "__immediate_bridge_advantage",
+    "__downstream_residual",
+    "continuation_advantage"
+  ],
+  "feature_search": false,
+  "indicator_search": false,
+  "model_family_search": false,
+  "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_CONTINUATION_VALUE_RAW_CAUSAL_REPRESENTATION_SCHEMA_FAST_AUDIT_V1",
+  "primary_null": {
+    "branch_max_abs_delta_auc": 0.03,
+    "branch_max_positive_brier_lift": 0.015,
+    "min_changed_share": 0.3,
+    "salts": [
+      "A",
+      "B"
+    ],
+    "strata": [
+      "AGE",
+      "ORDINAL",
+      "CALENDAR_QUARTER"
+    ],
+    "value_max_abs_residual_spearman": 0.1
+  },
+  "raw": false,
+  "raw_family_specs": {
+    "CORE_AGE": {
+      "binary": [
+        "memory_seen"
+      ],
+      "categorical": [
+        "base_state",
+        "native_market_state_context"
+      ],
+      "numeric": []
+    },
+    "DAMAGE_AGE": {
+      "binary": [],
+      "categorical": [],
+      "numeric": [
+        "progress_margin_delta_from_prev",
+        "structural_break_margin_delta_from_prev",
+        "volatility_damage_margin_delta_from_prev"
+      ]
+    },
+    "EVIDENCE_AGE": {
+      "binary": [
+        "a_condition_now",
+        "b_condition_now",
+        "memory_seen"
+      ],
+      "categorical": [],
+      "numeric": []
+    },
+    "SIGNAL_MARKET": {
+      "binary": [
+        "A_signal",
+        "B_signal",
+        "C_signal"
+      ],
+      "categorical": [
+        "native_market_state_context"
+      ],
+      "numeric": []
+    }
+  },
+  "raw_vs_signature": "SAME_UNDERLYING_CAUSAL_OBSERVABLES_DAMAGE_USES_PREBIN_CONTINUOUS_MARGINS",
+  "real_gate": "BOTH_ROLLING_DEVELOPMENT_FOLDS_POSITIVE_INCREMENTAL_SIGNAL",
+  "replay": false,
+  "representation": "TRAIN_ONLY_STANDARDIZATION_PLUS_FIXED_ONE_HOT_PLUS_ADDITIVE_RIDGE",
+  "ridge_alpha": 100.0,
+  "schema_version": "akah-rev638-raw-representation-target-separation-v6-fast-proof-mega-v1-protocol",
+  "status": "PASS_PROTOCOL_FROZEN",
+  "structural_baseline": [
+    "AGE",
+    "ORDINAL",
+    "CALENDAR_QUARTER",
+    "AGE_X_ORDINAL"
+  ],
+  "target_redesign": false,
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_CONTINUATION_VALUE_STATE_REPRESENTATION_TARGET_SEPARATION_V6_FAST_PROTOCOL_FREEZE_V1",
+  "technical_sensor_values_read": false
+}

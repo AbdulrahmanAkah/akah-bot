@@ -1,0 +1,14 @@
+hypothesis,status,evidence_quality,metric,reason,next_action
+DEVELOPMENT_POPULATION_REPAIR,PROMOTE,HIGH,12290 exact target rows preserved,REV558-561 population repair remains valid and independent of feature leakage.,CLOSED
+EXACT_ONE_STEP_CONTINUATION_TARGET,PROMOTE,HIGH,target_rows=12290,Exact EXIT-vs-HOLD target remains valid; this task performs no new raw replay.,CLOSED
+LEGACY_REV561_VALUE_MODEL,KILL,HIGH,unsafe_features=2;near_perfect=True,Legacy model cannot be authority if any post-decision feature entered; otherwise anomaly remains unresolved.,DO_NOT_USE
+PROVENANCE_LOCKED_CAUSAL_FEATURE_CATALOG,PROMOTE,HIGH,features=3,Every direct feature is sourced from the frozen causal decision grid; interactions depend only on approved direct features.,FREEZE_FOR_HUMAN_REVIEW
+CLEAN_LOW_CAPACITY_CONTINUATION_VALUE_MODEL,DEFER,HIGH,forward=False;sanity=True;max_single=0.088623;near_perfect=False,"Promotion requires forward pass plus provenance, negative-control, identity and anomaly gates.",FAILURE_OR_ANOMALY_ATTRIBUTION
+COST2X_CONTINUATION_ROBUSTNESS,DEFER,MEDIUM_HIGH,DEFER_COST2X_FORWARD_FAILURE,2x cost target is evaluated with unchanged clean-model predictions; no refit.,KEEP_AS_ROBUSTNESS_EVIDENCE
+CONSERVATIVE_ONE_STEP_SHADOW_SIGN_DIRECT_EFFECT,DEFER,MEDIUM_HIGH,DIAGNOSTIC_ONLY_MODEL_NOT_AUTHORIZED,Research-only sign/coverage evidence from exact target; no portfolio replay or production action.,HUMAN_REVIEW
+TENURE_AS_CONTINUATION_STATE,PROMOTE,MEDIUM_HIGH,PASS_DIAGNOSTIC,Causal state feature only; no tenure threshold selected.,KEEP_NO_THRESHOLD
+DIRECTION_X_VOLATILITY_INTERACTION,PROMOTE,MEDIUM_HIGH,PROMOTE_HYPOTHESIS_BUT_DEFER_CONTINUATION_INTERACTION_FEATURE_GAP,BINARY_VOL remains frozen; interaction remains a conditional value hypothesis.,KEEP_IN_RESEARCH_SURFACE
+ENTRY_X_CONTINUATION,DEFER,MEDIUM,PASS_DIAGNOSTIC_ONLY_ENTRY_PARENT_NOT_VALUE_AUTHORITY,Entry realizable-value parent remains unproven.,WAIT
+VALUE_AWARE_SIZING,DEFER,MEDIUM,no_multiplier,No sizing until both entry and continuation value authorities are validated.,WAIT
+SHADOW_QUEUE_REPLACEMENT_PREEMPTION,DEFER,MEDIUM,no_runtime_action,No replacement/preemption before value and capacity authority.,WAIT
+POST168_EARNED_HORIZON,DEFER,MEDIUM,168h frozen,No horizon extension in this chain.,KEEP_168H

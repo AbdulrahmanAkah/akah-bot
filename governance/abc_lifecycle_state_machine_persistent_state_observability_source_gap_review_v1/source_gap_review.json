@@ -1,0 +1,57 @@
+{
+  "schema_version": "abc-persistent-state-observability-source-gap-review-v1",
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_OBSERVABILITY_SOURCE_GAP_REVIEW_V1",
+  "status": "PASS_SOURCE_GAP_REVIEW_COMPLETE",
+  "prior_audit": {
+    "direct_count": 11,
+    "derivable_without_market_count": 9,
+    "raw_reconstruction_count": 0,
+    "unproven_count": 22
+  },
+  "review_summary": {
+    "raw_source_metadata_proven": true,
+    "base_executable_reconstruction_authority_proven": false,
+    "reconstruction_ready_count": 0,
+    "binding_gap_count": 16,
+    "semantic_gap_count": 6,
+    "reconstruction_ready_observables": [],
+    "binding_gap_observables": [
+      "a_condition_now",
+      "a_condition_recovered_now",
+      "a_condition_true_run_length",
+      "a_margin_delta_from_prev",
+      "atr22_current",
+      "b_condition_now",
+      "b_condition_recovered_now",
+      "b_condition_true_run_length",
+      "b_margin_delta_from_prev",
+      "close_delta_from_prev_decision",
+      "close_minus_donchian_prev10_low",
+      "close_minus_ratchet_stop_before_t",
+      "donchian_prev10_low",
+      "ratchet_stop_before_t",
+      "structural_break_margin_delta_from_prev",
+      "volatility_damage_margin_delta_from_prev"
+    ],
+    "semantic_gap_observables": [
+      "R_after_t",
+      "R_before_t",
+      "R_delta_from_prev_decision",
+      "close_minus_R_before_t",
+      "high_minus_R_before_t",
+      "progress_margin_delta_from_prev"
+    ],
+    "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_OBSERVABILITY_PROTOCOL_AMENDMENT_REVIEW_V1",
+    "route_reason": "ONE_OR_MORE_OBSERVABLES_LACK_FROZEN_SEMANTIC_AUTHORITY"
+  },
+  "interpretation": {
+    "unproven_does_not_mean_scientifically_invalid": true,
+    "source_gap_is_authority_or_binding_question": true,
+    "no_market_row_read_was_needed_for_review": true,
+    "no_persistence_state_was_defined": true
+  },
+  "routing_decision": {
+    "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_OBSERVABILITY_PROTOCOL_AMENDMENT_REVIEW_V1",
+    "reason": "ONE_OR_MORE_OBSERVABLES_LACK_FROZEN_SEMANTIC_AUTHORITY"
+  }
+}

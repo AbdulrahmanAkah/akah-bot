@@ -1,0 +1,76 @@
+{
+  "authority_bindings": {
+    "binding_decision_sha256": "14B66EE495ADF452034021A48E03997D3EAEE2AFB7CC2EC94969ACD6E6C902F4",
+    "composition_search_sha256": "A5F5AB19BA8DA9511DE568370F12A7E115A5AB8EEFBDF143891B9BAF9F38616E",
+    "consumer_contract_sha256": "B09252E8B9B591F0D676D96A252FFFFAD34A697778B577B5831428892E1ED0D7",
+    "family_index_sha256": "39A90AB185E7C12C69E83E23D69098F7F2DA7D7CE549617B5DDF8C04111CD9B3",
+    "field_index_sha256": "594014EC0916283C4FE58C48C643FBA67D47CEB6720555893401C3E10C8A74A9",
+    "scalar_decision_sha256": "9DC675D8A75AC343B80CDB6DA3B1B0DD3F72C9418586114F8E32D9958F8605E8",
+    "study_contract_sha256": "25085B6F3A9361BD9790694CDB02E19BE88CBD4CE90AACB1D0E199B3E0E2D01E",
+    "updated_input_contract_sha256": "9AB5F261C5CE857CA7A2BE022EC6E03DAF5C4539452EF80EFCC64D064754675F",
+    "updated_source_contract_sha256": "F1D52B726F8B5BC4CC63F2540E9162C1D9D214150AF2C62C65CD9C0AAD64DB60"
+  },
+  "branch": "research/rd48-cross-venue-price-level-basis-direct-utility-v1",
+  "evidence": [
+    {
+      "path": "governance/reconstructed_native_baseline_events_frames_prospective_source_binding_v1/source_family_binding_index.json",
+      "sha256": "39A90AB185E7C12C69E83E23D69098F7F2DA7D7CE549617B5DDF8C04111CD9B3"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_events_frames_prospective_source_binding_v1/source_composition_search.json",
+      "sha256": "A5F5AB19BA8DA9511DE568370F12A7E115A5AB8EEFBDF143891B9BAF9F38616E"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_events_frames_prospective_source_binding_v1/events_frames_prospective_source_binding_decision.json",
+      "sha256": "14B66EE495ADF452034021A48E03997D3EAEE2AFB7CC2EC94969ACD6E6C902F4"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_events_frames_prospective_source_binding_v1/source_composition_human_decision_packet.json",
+      "sha256": "9EA92D00B97575030A97ACE5C0CD7C2770A2364EB4D83241B9B3BED1BE70C68C"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_events_frames_prospective_source_binding_v1/bound_or_partial_source_contract.json",
+      "sha256": "F1D52B726F8B5BC4CC63F2540E9162C1D9D214150AF2C62C65CD9C0AAD64DB60"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_events_frames_prospective_source_binding_v1/prospective_source_binding_updated_input_contract.json",
+      "sha256": "9AB5F261C5CE857CA7A2BE022EC6E03DAF5C4539452EF80EFCC64D064754675F"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_events_frames_prospective_source_binding_v1.json",
+      "sha256": "922AC6AC957ADAA1350661DE615C148E080ABA716D4540EB466F27465765E8E8"
+    }
+  ],
+  "firewall": {
+    "economic_analysis": false,
+    "git_fetch": false,
+    "historical_executable_search_reopened": false,
+    "market_rows_read": false,
+    "native_replay_executed": false,
+    "network": false,
+    "protected_years_opened": false,
+    "push": false,
+    "source_mutation": false
+  },
+  "governed_schema_version": "akah-provenance-phase-governed-v1",
+  "next_bottleneck": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_EVENTS_FRAMES_SOURCE_COMPOSITION_HUMAN_DECISION_V1",
+  "north_star_effect": "Turns the frozen 16-field events and 5-field frames contracts into explicit reproducible upstream source compositions, the final dynamic-input prerequisite before bookkeeping and thin-runner construction.",
+  "objective": "Bind the frozen events/frames contracts prospectively by grouping field-level static authority into source families, extracting explicit identity/join and information-availability semantics, and accepting only a complete causal composition. No market rows, replay, economics, or historical executable recovery.",
+  "resolution_class": "RECONSTRUCTED_NATIVE_EVENTS_FRAMES_PROSPECTIVE_SOURCE_BINDING_COMPLETE",
+  "state_updates": {
+    "adapter_implemented": false,
+    "all_dynamic_sources_bound": false,
+    "economics_authorized": false,
+    "events_frames_prospective_source_binding": "COMPLETE",
+    "native_replay_executed": false,
+    "reconstructed_native_direction": "FROZEN",
+    "roadmap_position": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_EVENTS_FRAMES_SOURCE_COMPOSITION_HUMAN_DECISION_V1",
+    "study_contract_status": "PARTIAL_FREEZE_EVENTS_FRAMES_SOURCE_BINDING_PENDING",
+    "thin_runner_implemented": false
+  },
+  "status": "PASS",
+  "summary": "Grouped field-level evidence into source families, extracted explicit join-key and availability-time candidates, and searched for complete minimal causal compositions. A role is bound only when exactly one valid minimal composition exists; ambiguity or missing causal semantics remains fail-closed.",
+  "task_id": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_EVENTS_FRAMES_PROSPECTIVE_SOURCE_BINDING_V1",
+  "task_start_head": "c2c943c8b8991bce1ade4bff5e512d3d82ce257c",
+  "task_start_revision": 200
+}

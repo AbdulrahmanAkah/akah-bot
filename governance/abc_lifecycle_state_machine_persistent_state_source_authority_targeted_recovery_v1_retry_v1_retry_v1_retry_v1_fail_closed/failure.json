@@ -1,0 +1,12 @@
+{
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_SOURCE_AUTHORITY_TARGETED_RECOVERY_V1_RETRY_V1_RETRY_V1_RETRY_V1",
+  "status": "TECHNICAL_OR_AUTHORITY_FAILURE_FAIL_CLOSED_NO_SCIENTIFIC_CONCLUSION",
+  "error_type": "RuntimeError",
+  "error": "REV288_TRACE_UNIQUE_PASS_EVENT_MATCH_FAIL count=2",
+  "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\abdul\\AppData\\Local\\Temp\\akah_trace_authority_retry3_507c0a6233734403b57ba5f6ed621bd7\\retry3.py\", line 315, in main\n    trace_pos,trace_ctx,_=select_event_context(\n                          ~~~~~~~~~~~~~~~~~~~~^\n        contexts[trace_n],288,TRACE_TASK,\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    ...<2 lines>...\n        \"REV288_TRACE\"\n        ^^^^^^^^^^^^^^\n    )\n    ^\n  File \"C:\\Users\\abdul\\AppData\\Local\\Temp\\akah_trace_authority_retry3_507c0a6233734403b57ba5f6ed621bd7\\retry3.py\", line 274, in select_event_context\n    die(f\"{label}_UNIQUE_PASS_EVENT_MATCH_FAIL count={len(matches)}\")\n    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\abdul\\AppData\\Local\\Temp\\akah_trace_authority_retry3_507c0a6233734403b57ba5f6ed621bd7\\retry3.py\", line 71, in die\n    raise RuntimeError(msg)\nRuntimeError: REV288_TRACE_UNIQUE_PASS_EVENT_MATCH_FAIL count=2\n",
+  "market_data_rows_accessed": false,
+  "pnl_columns_read": false,
+  "reconstruction_implemented": false,
+  "2024_accessed": false,
+  "2025_accessed": false
+}

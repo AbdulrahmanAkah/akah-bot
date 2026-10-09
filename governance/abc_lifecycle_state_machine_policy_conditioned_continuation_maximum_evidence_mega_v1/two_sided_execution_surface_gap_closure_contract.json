@@ -1,0 +1,39 @@
+{
+  "canonical_engine_mutation_authorized": false,
+  "full_arbiter_integration_required": false,
+  "gap_confirmed": true,
+  "minimal_implementation": [
+    "Expose a research-only optional-native-exit suppression override for exactly one canonical decision step.",
+    "Do not suppress mandatory protection, gap protection, invalid-price safety, or max-hold safety.",
+    "Run both actions from an identical causal state snapshot and identical cash/position state.",
+    "After the one-step HOLD branch, remove the override and execute pi0 unchanged.",
+    "Emit both legal execution timestamps/prices, fees, net cash, current notional, and normalized advantage."
+  ],
+  "observed_current_surface": "CURRENT_ENGINE_HAS_EXTERNAL_EXIT_SCHEDULE_BUT_NO_PROVEN_NATIVE_OPTIONAL_EXIT_HOLD_SUPPRESSION_SURFACE",
+  "production_authorized": false,
+  "purpose": "Materialize the exact expert target without building a full arbiter, LSM, or RL policy.",
+  "required_parity_tests": [
+    "OVERRIDE_OFF_BYTE_OR_VALUE_PARITY_WITH_CURRENT_PI0",
+    "EXIT_NOW_BRANCH_MATCHES_FIRST_LEGAL_EXIT_EXECUTION",
+    "HOLD_BRANCH_DIFFERS_ONLY_BY_ONE_OPTIONAL_EXIT_DEFERRAL",
+    "MANDATORY_SAFETY_CAN_NEVER_BE_DEFERRED",
+    "NO_DECISION_USES_2024_ROWS",
+    "PREFIX_INVARIANCE_BEFORE_INTERVENTION"
+  ],
+  "required_research_only_surface": {
+    "action_set": [
+      "EXIT_NOW",
+      "HOLD_ONE_CANONICAL_DECISION_STEP_THEN_PI0"
+    ],
+    "after_hold_step": "REVERT_EXACTLY_TO_PI0",
+    "entry_admission": "UNMODIFIED",
+    "fees_prices_marks": "CANONICAL_EXISTING_AUTHORITIES",
+    "mandatory_safety_precedence": "UNMODIFIED_AND_ALWAYS_HIGHER_PRIORITY_THAN_HOLD",
+    "max_horizon_hours": 168,
+    "pi0": "CURRENT_DYNAMIC_TOP6+BINARY_VOL+CURRENT_EXECUTION_RULES",
+    "position_sizing": "UNMODIFIED",
+    "target": "(net_cash_HOLD_then_pi0-net_cash_EXIT)/current_position_notional"
+  },
+  "schema_version": "akah-rev552-continuation-value-maximum-evidence-mega-v1-two-sided-execution-surface-contract",
+  "status": "READY_FOR_HUMAN_REVIEW_IF_GAP_CONFIRMED"
+}

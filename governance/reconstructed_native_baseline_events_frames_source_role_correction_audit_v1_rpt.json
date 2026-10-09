@@ -1,0 +1,78 @@
+{
+  "authority_bindings": {
+    "consumer_contract_sha256": "B09252E8B9B591F0D676D96A252FFFFAD34A697778B577B5831428892E1ED0D7",
+    "corrected_source_contract_sha256": "A45E6BBCB57C43F35CE44AC79ABD857824BBD85DD46EDF0DDAB9A155CB33873C",
+    "lineage_sha256": "124839DDE9C37890E462E48AEA7399D6E97C174CEFC3BAF3E4EE0DF8F041ED63",
+    "previous_human_packet_sha256": "9EA92D00B97575030A97ACE5C0CD7C2770A2364EB4D83241B9B3BED1BE70C68C",
+    "replay_source_sha256": "E3944A4655DDDF21C394FE1DB541F2645F529C00BD8390B22D652BD8EF5BBF83",
+    "role_decision_sha256": "7C9C5186259C76CCE30ED978070CA21BE2C5E7CFFCCEF6893B51C2D80FDF4672",
+    "study_contract_sha256": "4B50A7AD3D7516E718C21561C240854C5D22D9CF350BB445B86CCD7740FDAB43",
+    "updated_input_contract_sha256": "AE8853919722C04AAB5F98F1673B7A31E8DC0EB262DDE30F2F1E14C090D32194",
+    "usage_profile_sha256": "B02E07860D8AF9BC2C82250082B8A67240331C4E02633744AAF66C3BD6681C25"
+  },
+  "branch": "research/rd48-cross-venue-price-level-basis-direct-utility-v1",
+  "evidence": [
+    {
+      "path": "governance/reconstructed_native_baseline_events_frames_source_role_correction_audit_v1/replay_argument_usage_profile.json",
+      "sha256": "B02E07860D8AF9BC2C82250082B8A67240331C4E02633744AAF66C3BD6681C25"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_events_frames_source_role_correction_audit_v1/replay_argument_callsites.json",
+      "sha256": "2F973594D479B1246B00E973BB26F633B716940C6C594AC15934A337058C2E1C"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_events_frames_source_role_correction_audit_v1/events_frames_argument_lineage.json",
+      "sha256": "124839DDE9C37890E462E48AEA7399D6E97C174CEFC3BAF3E4EE0DF8F041ED63"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_events_frames_source_role_correction_audit_v1/events_frames_role_semantics_decision.json",
+      "sha256": "7C9C5186259C76CCE30ED978070CA21BE2C5E7CFFCCEF6893B51C2D80FDF4672"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_events_frames_source_role_correction_audit_v1/corrected_events_frames_source_contract.json",
+      "sha256": "A45E6BBCB57C43F35CE44AC79ABD857824BBD85DD46EDF0DDAB9A155CB33873C"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_events_frames_source_role_correction_audit_v1/corrected_input_contract.json",
+      "sha256": "AE8853919722C04AAB5F98F1673B7A31E8DC0EB262DDE30F2F1E14C090D32194"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_events_frames_source_role_correction_audit_v1.json",
+      "sha256": "8B01456FB5C21A8979B278DDF1E7B2400A6EAB42602C0DF0EEA3CD84CBC5FB3C"
+    }
+  ],
+  "firewall": {
+    "economic_analysis": false,
+    "git_fetch": false,
+    "historical_executable_search_reopened": false,
+    "market_rows_read": false,
+    "native_replay_executed": false,
+    "network": false,
+    "protected_years_opened": false,
+    "push": false,
+    "source_mutation": false
+  },
+  "governed_schema_version": "akah-provenance-phase-governed-v1",
+  "next_bottleneck": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_EVENTS_FRAMES_UPSTREAM_PRODUCER_ROLE_AUDIT_CLOSURE_V1",
+  "north_star_effect": "Prevents a replay consumer from being mis-bound as its own upstream source and restores a causal prospective input contract before bookkeeping and implementation.",
+  "objective": "Resolve the human-composition decision by rejecting the previous E1/E2/F1/F2 candidate set as semantically circular unless it is proven to produce the actual arguments passed into replay_lifecycle_policy. Audit exact argument dataflow, classify events/frames consumer behavior, and freeze corrected role semantics without reading market rows or executing replay.",
+  "resolution_class": "RECONSTRUCTED_NATIVE_EVENTS_FRAMES_SOURCE_ROLE_CORRECTION_AUDIT_COMPLETE",
+  "state_updates": {
+    "adapter_implemented": false,
+    "economics_authorized": false,
+    "events_semantic_role": "READ_ONLY_UPSTREAM_INPUT",
+    "events_semantics_corrected": false,
+    "frames_semantic_role": "READ_ONLY_UPSTREAM_INPUT",
+    "frames_upstream_lineage_complete": false,
+    "native_replay_executed": false,
+    "roadmap_position": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_EVENTS_FRAMES_UPSTREAM_PRODUCER_ROLE_AUDIT_CLOSURE_V1",
+    "source_composition_human_decision": "DEFERRED_PREVIOUS_CANDIDATES_REJECTED",
+    "study_contract_status": "CORRECTED_EVENTS_FRAMES_ROLE_SEMANTICS_PENDING_LINEAGE_CLOSURE",
+    "thin_runner_implemented": false
+  },
+  "status": "PASS",
+  "summary": "Rejected the previous E1/E2/F1/F2 composition set as not proven upstream producer authority. Profiled replay argument mutation semantics and traced actual events/frames argument expressions backward through local assignments, parameters, callers, helper returns, and loader leaves.",
+  "task_id": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_EVENTS_FRAMES_SOURCE_COMPOSITION_HUMAN_DECISION_V1",
+  "task_start_head": "53ab4d8f5276d0fcbec8444bdcbee9ba97bf0794",
+  "task_start_revision": 201
+}

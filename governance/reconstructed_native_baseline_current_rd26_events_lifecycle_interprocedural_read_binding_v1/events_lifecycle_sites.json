@@ -1,0 +1,54 @@
+{
+  "lifecycle_site_count": 2,
+  "sites": [
+    {
+      "call_names": [
+        "scan_focus_signals"
+      ],
+      "expr": "scan_focus_signals(\n        membership=membership,\n        features=frames,\n        periods=ROBUSTNESS_PERIODS,\n        data_start=DATA_START,\n        data_cutoff=DATA_CUTOFF,\n        guard_each_period_hours=None,\n    )",
+      "kind": "ASSIGN",
+      "line": 597,
+      "loaded_names": [
+        "DATA_CUTOFF",
+        "DATA_START",
+        "ROBUSTNESS_PERIODS",
+        "frames",
+        "membership",
+        "scan_focus_signals"
+      ],
+      "targets": [
+        "events",
+        "funnel"
+      ]
+    },
+    {
+      "call_names": [
+        "filter_robustness_events"
+      ],
+      "expr": "filter_robustness_events(events)",
+      "kind": "ASSIGN",
+      "line": 605,
+      "loaded_names": [
+        "events",
+        "filter_robustness_events"
+      ],
+      "targets": [
+        "events"
+      ]
+    }
+  ],
+  "status": "PASS",
+  "writer": {
+    "function": "main",
+    "function_end_line": 722,
+    "function_line": 562,
+    "module": "scripts/research/run_rd26_exit_architecture.py",
+    "module_sha256": "9C096C6E7C4784D9B91A7EFC55FA85F46755B2D850B78E7A5E90980294DC9ACE",
+    "receiver": "events",
+    "receiver_root": "events",
+    "writer_call": "events.to_csv(\n        output / \"signal-events-2022-2023.csv\",\n        index=False,\n        lineterminator=\"\\n\",\n    )",
+    "writer_line": 650
+  },
+  "written_object": "events",
+  "written_object_root": "events"
+}

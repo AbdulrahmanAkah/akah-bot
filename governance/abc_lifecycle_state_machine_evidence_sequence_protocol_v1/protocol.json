@@ -1,0 +1,257 @@
+{
+  "schema_version": "abc-lifecycle-evidence-sequence-protocol-v1",
+  "protocol_id": "ABC_LIFECYCLE_STATE_MACHINE_EVIDENCE_SEQUENCE_PROTOCOL_V1",
+  "status": "FROZEN_BEFORE_OBSERVATIONAL_MATERIALIZATION",
+  "research_stage": "LIFECYCLE_EVIDENCE_SEQUENCE",
+  "sequence_event_catalog_sha256": "006D100C86F1466702B8107B747AAE915CD23D500C812FF4FBBA96A6FEEDAD47",
+  "source_bindings": [
+    {
+      "path": "governance/AKAH_EXIT_BRAIN_RESEARCH_DOCTRINE_CURRENT.json",
+      "sha256": "B3F0F632446C7BCEE4B4BEC27CACDECD9EF6562B568872153186E69B1E00B8D9"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_evidence_state_predicate_protocol_v1/protocol.json",
+      "sha256": "BAE6B423905CA22EB039910FF2540739A37DED9C7874BED3440DEEB34550EC81"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_evidence_state_predicate_protocol_v1/predicate_catalog.json",
+      "sha256": "EAB8573521DD94F36C0632CC809CF1D3DFD35C9B9B6FEE52681838BBC1A77DD0"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_evidence_state_predicate_protocol_v1/canonical_result.json",
+      "sha256": "BB71BFB70AA010856E8F5E3025192D39B1E75054257146CCCAFCAE4B5641229B"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_evidence_state_predicate_observational_materialization_v1/canonical_result.json",
+      "sha256": "636EAB1819744573CC1C54621AF147100FEFB002983EE0F48406EEF272B5AC6D"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_evidence_state_predicate_observational_materialization_v1/materialized_decision_grid.csv",
+      "sha256": "D4BFD3F6CD16EAAE65479DB25CB3757AFEDC77E6E5D3D138B4FA51A009016472"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_evidence_state_predicate_observational_materialization_v1/output_manifest.json",
+      "sha256": "9BAA35325B5D05BF9C984D869C37956695CBE2856ED74E5AF87182D6E05660FA"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_evidence_state_predicate_observational_materialization_v1/event_locality_audit.json",
+      "sha256": "6140590C53BA8812202662B8A1976BEC0013BC51DBE5FC0BCB9C92EB55BF3C76"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_evidence_state_predicate_observational_materialization_v1/no_persistence_audit.json",
+      "sha256": "D0FB9A101D12A85B528D57CD97F80CFAD33BD2C8FCDA7C1FBBFD3676E716AD16"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_evidence_state_predicate_observational_materialization_v1/source_signal_parity_audit.json",
+      "sha256": "D22FCF75D3207C6A982D6FB4E818C08B78F09858118BB146FDC84372E144504D"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_evidence_state_predicate_mandatory_review_v1/canonical_result.json",
+      "sha256": "C2D6787F95895C701C711CC240ACF917EC5222A77DD8D1639104724895C4F2AC"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_evidence_state_predicate_mandatory_review_v1/mandatory_review.json",
+      "sha256": "E41A6BFA0B285E4F1A0D212A6984E58A062D725C941F73BE7831425E0ACA48EA"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_observational_trace_v1/lifecycle_summary.csv",
+      "sha256": "550B812C487A513291FB214D8B306DD2AEC0AA56D648F62FC36DA0A01C1D9500"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_observational_trace_v1/canonical_result.json",
+      "sha256": "48FE5760D7975FF6EA652CCEE62905CF456A2532B8EBE7F37305A21A1720DF45"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_observational_trace_v1/output_manifest.json",
+      "sha256": "C860AF80280CD7FA0594B39180BFE08B938AEC7BCCE8B833599311829BA4ECDE"
+    }
+  ],
+  "population": {
+    "control_lifecycle_count": 2020,
+    "years": [
+      2019,
+      2020,
+      2021,
+      2022,
+      2023
+    ],
+    "lifecycle_identity": [
+      "year",
+      "pair",
+      "entry_time",
+      "native_exit_time"
+    ],
+    "identity_role": "RETROSPECTIVE_GROUPING_ONLY_NOT_RUNTIME_RULE",
+    "include_zero_decision_lifecycles": true,
+    "zero_duration_lifecycle_policy": "ENTRY_AND_NATIVE_EXIT_MAY_SHARE_ONE_TIMESTAMP_EVENT_SET"
+  },
+  "sequence_construction": {
+    "timestamp_authority": "EXISTING_FROZEN_OUTPUT_TIMESTAMPS_ONLY",
+    "timestamp_interpolation": false,
+    "event_set_rule": "ALL_EVENTS_WITH_IDENTICAL_TIMESTAMP_ARE_GROUPED_IN_ONE_SIMULTANEOUS_EVENT_SET",
+    "within_event_set_priority": "NONE",
+    "canonical_serialization_only": true,
+    "sequence_order": "STRICTLY_ASCENDING_DISTINCT_EVENT_SET_TIMESTAMP",
+    "sequence_signature": "EVENT_SET_1 > EVENT_SET_2 > ... > EVENT_SET_N",
+    "base_state_mutation": false,
+    "overlay_persistence": false,
+    "overlay_latch": false
+  },
+  "first_memory_and_confirmed_semantics": {
+    "FIRST_MEMORY": "EXACT_FROZEN_FIRST_MEMORY_TIMESTAMP_OR_ABSENT",
+    "CONFIRMED_PHASE_ENTRY": "EARLIEST_EXISTING_DECISION_TIME_4H_WITH_BASE_STATE_CONFIRMED; ABSENT IF NO SUCH DECISION_ROW",
+    "new_progress_threshold": false,
+    "new_confirmation_threshold": false
+  },
+  "required_observational_outputs": [
+    "lifecycle_sequence_ledger.csv",
+    "event_set_ledger.csv",
+    "sequence_signature_counts.csv",
+    "adjacent_event_set_transition_counts.csv",
+    "pairwise_event_order_relations.csv",
+    "consecutive_event_set_gap_hours.csv",
+    "consecutive_event_set_gap_summary.csv",
+    "sequence_completeness_audit.json",
+    "sequence_noninterpretation_audit.json",
+    "canonical_result.json",
+    "output_manifest.json"
+  ],
+  "pairwise_relation_vocabulary": [
+    "LEFT_BEFORE_RIGHT",
+    "RIGHT_BEFORE_LEFT",
+    "SAME_TIMESTAMP",
+    "LEFT_ONLY",
+    "RIGHT_ONLY",
+    "NEITHER"
+  ],
+  "pairwise_event_pairs": [
+    [
+      "FIRST_MEMORY",
+      "STALLED_EVIDENCE"
+    ],
+    [
+      "FIRST_MEMORY",
+      "STRUCTURAL_BREAK_EVIDENCE"
+    ],
+    [
+      "FIRST_MEMORY",
+      "VOLATILITY_DAMAGE_EVIDENCE"
+    ],
+    [
+      "STALLED_EVIDENCE",
+      "STRUCTURAL_BREAK_EVIDENCE"
+    ],
+    [
+      "STALLED_EVIDENCE",
+      "VOLATILITY_DAMAGE_EVIDENCE"
+    ],
+    [
+      "STRUCTURAL_BREAK_EVIDENCE",
+      "VOLATILITY_DAMAGE_EVIDENCE"
+    ],
+    [
+      "CONFIRMED_PHASE_ENTRY",
+      "STRUCTURAL_BREAK_EVIDENCE"
+    ],
+    [
+      "CONFIRMED_PHASE_ENTRY",
+      "VOLATILITY_DAMAGE_EVIDENCE"
+    ]
+  ],
+  "time_gap_semantics": {
+    "gap_definition": "HOURS_BETWEEN_CONSECUTIVE_DISTINCT_EVENT_SET_TIMESTAMPS",
+    "negative_gap_allowed": false,
+    "simultaneous_events_create_separate_gap": false,
+    "summary_statistics": [
+      "count",
+      "min",
+      "median",
+      "max"
+    ],
+    "bins": "NONE",
+    "threshold_selection": "NONE",
+    "state_duration_inference": false,
+    "persistence_inference": false
+  },
+  "mandatory_invariants": [
+    {
+      "id": "INV_ALL_2020_LIFECYCLES_PRESENT",
+      "statement": "Exactly 2020 frozen Control lifecycles must appear, including zero-decision lifecycles."
+    },
+    {
+      "id": "INV_ENTRY_AND_EXIT_EXACTLY_ONCE",
+      "statement": "Every lifecycle has exactly one ENTRY and one NATIVE_EXIT event."
+    },
+    {
+      "id": "INV_EVENT_TIMESTAMPS_FROM_FROZEN_OUTPUTS_ONLY",
+      "statement": "No event timestamp may be invented, shifted, interpolated or inferred between frozen timestamps."
+    },
+    {
+      "id": "INV_SIMULTANEOUS_EVENTS_GROUPED_NO_PRIORITY",
+      "statement": "Events sharing a timestamp form one unordered semantic event set; serialization order has no priority meaning."
+    },
+    {
+      "id": "INV_EVIDENCE_EVENT_PARITY",
+      "statement": "Pooled evidence event counts must remain STALLED=74, STRUCTURAL_BREAK=135, VOLATILITY_DAMAGE=31."
+    },
+    {
+      "id": "INV_EVIDENCE_MAX_ONCE_PER_LIFECYCLE",
+      "statement": "Each accepted evidence overlay occurs at most once per lifecycle under the frozen source materialization."
+    },
+    {
+      "id": "INV_MEMORY_AND_CONFIRMED_CAUSAL_ORDER",
+      "statement": "If CONFIRMED_PHASE_ENTRY exists, FIRST_MEMORY must exist and occur strictly before it."
+    },
+    {
+      "id": "INV_STALLED_PRE_MEMORY_PHASE",
+      "statement": "STALLED_EVIDENCE remains an UNCONFIRMED-phase event and cannot occur after FIRST_MEMORY."
+    },
+    {
+      "id": "INV_VOL_DAMAGE_CONFIRMED_PHASE",
+      "statement": "VOLATILITY_DAMAGE_EVIDENCE must not occur before CONFIRMED_PHASE_ENTRY."
+    },
+    {
+      "id": "INV_NATIVE_EXIT_NOT_BEFORE_ENTRY",
+      "statement": "NATIVE_EXIT timestamp must be greater than or equal to ENTRY timestamp."
+    }
+  ],
+  "interpretation_limits": {
+    "sequence_is_descriptive_not_prescriptive": true,
+    "frequent_sequence_is_not_better_sequence": true,
+    "rare_sequence_is_not_failure": true,
+    "time_gap_is_not_state_duration": true,
+    "event_order_is_not_transition_rule": true,
+    "absence_of_evidence_is_not_healthy_trend": true,
+    "sequence_signature_is_not_runtime_class": true
+  },
+  "forbidden_actions": [
+    "NO_NEW_THRESHOLD",
+    "NO_TIME_GAP_BIN_SELECTION",
+    "NO_PERSISTENCE_HORIZON",
+    "NO_STATE_DURATION_RULE",
+    "NO_SEQUENCE_RANKING",
+    "NO_SEQUENCE_SCORE",
+    "NO_SEQUENCE_TO_EXIT_MAPPING",
+    "NO_RUNTIME_STATE_TRANSITION",
+    "NO_CANDIDATE_COMBINATION_TRADING_LOGIC",
+    "NO_ADAPTIVE_LOGIC",
+    "NO_EXIT_ARBITER",
+    "NO_MARKET_DATA_ACCESS",
+    "NO_PNL_OR_ECONOMIC_OUTCOME_READ",
+    "NO_CANDIDATE_REPLAY",
+    "NO_PORTFOLIO_REPLAY",
+    "NO_PAIR_YEAR_EVENT_IDENTITY_RUNTIME_RULE",
+    "NO_2024_ACCESS",
+    "NO_2025_ACCESS",
+    "NO_PRODUCTION_CHANGE"
+  ],
+  "post_materialization_gate": {
+    "next_if_valid": "ABC_LIFECYCLE_STATE_MACHINE_EVIDENCE_SEQUENCE_MANDATORY_REVIEW_V1",
+    "review_question": "Do the frozen non-economic chronology outputs expose reproducible lifecycle pathways and causal ordering structure sufficient to justify a separately preregistered persistent-state observability protocol, without deriving persistence from frequency, time gaps or economic outcomes?",
+    "persistent_state_protocol_authorized_now": false,
+    "persistent_state_authorized_now": false,
+    "runtime_state_machine_authorized_now": false,
+    "adaptive_logic_authorized_now": false,
+    "exit_arbiter_authorized_now": false
+  }
+}

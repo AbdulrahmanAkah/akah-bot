@@ -1,0 +1,3206 @@
+{
+  "CURRENT": {
+    "adaptive_tier_map": {
+      "-1|-1": {
+        "exit_mode": "FIXED168",
+        "slot_fraction": 0.18
+      },
+      "-1|0": {
+        "exit_mode": "FIXED168",
+        "slot_fraction": 0.18
+      },
+      "-1|1": {
+        "exit_mode": "FIXED24",
+        "slot_fraction": 0.0
+      },
+      "0|-1": {
+        "exit_mode": "FIXED24",
+        "slot_fraction": 0.09
+      },
+      "0|0": {
+        "exit_mode": "FIXED24",
+        "slot_fraction": 0.0
+      },
+      "0|1": {
+        "exit_mode": "FIXED24",
+        "slot_fraction": 0.0
+      },
+      "1|-1": {
+        "exit_mode": "FIXED24",
+        "slot_fraction": 0.09
+      },
+      "1|0": {
+        "exit_mode": "CHECKPOINT_SIGN",
+        "slot_fraction": 0.09
+      },
+      "1|1": {
+        "exit_mode": "CHECKPOINT_SIGN",
+        "slot_fraction": 0.09
+      },
+      "2|-1": {
+        "exit_mode": "FIXED168",
+        "slot_fraction": 0.18
+      },
+      "2|0": {
+        "exit_mode": "FIXED168",
+        "slot_fraction": 0.18
+      },
+      "2|1": {
+        "exit_mode": "FIXED168",
+        "slot_fraction": 0.0
+      },
+      "nan": {
+        "exit_mode": "FIXED24",
+        "slot_fraction": 0.09
+      }
+    },
+    "development_years": [
+      2019,
+      2020,
+      2021
+    ],
+    "horizon_only_map": {
+      "-1|-1": {
+        "exit_mode": "FIXED168",
+        "slot_fraction": 0.18
+      },
+      "-1|0": {
+        "exit_mode": "FIXED168",
+        "slot_fraction": 0.18
+      },
+      "-1|1": {
+        "exit_mode": "FIXED24",
+        "slot_fraction": 0.18
+      },
+      "0|-1": {
+        "exit_mode": "FIXED24",
+        "slot_fraction": 0.18
+      },
+      "0|0": {
+        "exit_mode": "FIXED24",
+        "slot_fraction": 0.18
+      },
+      "0|1": {
+        "exit_mode": "FIXED24",
+        "slot_fraction": 0.18
+      },
+      "1|-1": {
+        "exit_mode": "FIXED24",
+        "slot_fraction": 0.18
+      },
+      "1|0": {
+        "exit_mode": "CHECKPOINT_SIGN",
+        "slot_fraction": 0.18
+      },
+      "1|1": {
+        "exit_mode": "CHECKPOINT_SIGN",
+        "slot_fraction": 0.18
+      },
+      "2|-1": {
+        "exit_mode": "FIXED168",
+        "slot_fraction": 0.18
+      },
+      "2|0": {
+        "exit_mode": "FIXED168",
+        "slot_fraction": 0.18
+      },
+      "2|1": {
+        "exit_mode": "FIXED168",
+        "slot_fraction": 0.18
+      },
+      "nan": {
+        "exit_mode": "FIXED24",
+        "slot_fraction": 0.18
+      }
+    },
+    "minimum_regime_mode_rows": 60,
+    "minimum_year_rows": 10,
+    "records": [
+      {
+        "adaptive_slot_fraction": 0.18,
+        "mode_stats": [
+          {
+            "aggregate_mean": -0.0009355640595183268,
+            "eligible": true,
+            "mode": "FIXED24",
+            "positive_years": 2,
+            "total_n": 141,
+            "worst_year_mean": -0.036561376906524626,
+            "year_counts": {
+              "2019": 76,
+              "2020": 57,
+              "2021": 8
+            },
+            "year_mean_net_returns": {
+              "2019": 0.000458913164656158,
+              "2020": 0.002205247058706051,
+              "2021": -0.036561376906524626
+            }
+          },
+          {
+            "aggregate_mean": -0.0010246557658055283,
+            "eligible": true,
+            "mode": "FIXED72",
+            "positive_years": 2,
+            "total_n": 141,
+            "worst_year_mean": -0.015524556880073145,
+            "year_counts": {
+              "2019": 76,
+              "2020": 57,
+              "2021": 8
+            },
+            "year_mean_net_returns": {
+              "2019": -0.015524556880073145,
+              "2020": 0.013721398411827146,
+              "2021": 0.03165876880410401
+            }
+          },
+          {
+            "aggregate_mean": 0.018792049859076097,
+            "eligible": true,
+            "mode": "FIXED168",
+            "positive_years": 3,
+            "total_n": 141,
+            "worst_year_mean": 0.008696691434534335,
+            "year_counts": {
+              "2019": 76,
+              "2020": 57,
+              "2021": 8
+            },
+            "year_mean_net_returns": {
+              "2019": 0.008696691434534335,
+              "2020": 0.010925687175395401,
+              "2021": 0.17074578901344784
+            }
+          },
+          {
+            "aggregate_mean": -0.0015584689785898406,
+            "eligible": true,
+            "mode": "CHECKPOINT_SIGN",
+            "positive_years": 1,
+            "total_n": 141,
+            "worst_year_mean": -0.006990740263493227,
+            "year_counts": {
+              "2019": 76,
+              "2020": 57,
+              "2021": 8
+            },
+            "year_mean_net_returns": {
+              "2019": -0.006990740263493227,
+              "2020": 0.006357414958411104,
+              "2021": -0.006352564823139381
+            }
+          },
+          {
+            "aggregate_mean": -0.0004817474764104226,
+            "eligible": true,
+            "mode": "CHECKPOINT_ACCEL",
+            "positive_years": 1,
+            "total_n": 141,
+            "worst_year_mean": -0.006352564823139381,
+            "year_counts": {
+              "2019": 76,
+              "2020": 57,
+              "2021": 8
+            },
+            "year_mean_net_returns": {
+              "2019": -0.005745280867223377,
+              "2020": 0.007360271409126705,
+              "2021": -0.006352564823139381
+            }
+          }
+        ],
+        "regime_key": "-1|-1",
+        "selected": {
+          "aggregate_mean": 0.018792049859076097,
+          "eligible": true,
+          "mode": "FIXED168",
+          "positive_years": 3,
+          "total_n": 141,
+          "worst_year_mean": 0.008696691434534335,
+          "year_counts": {
+            "2019": 76,
+            "2020": 57,
+            "2021": 8
+          },
+          "year_mean_net_returns": {
+            "2019": 0.008696691434534335,
+            "2020": 0.010925687175395401,
+            "2021": 0.17074578901344784
+          }
+        }
+      },
+      {
+        "adaptive_slot_fraction": 0.18,
+        "mode_stats": [
+          {
+            "aggregate_mean": 0.009287262511235479,
+            "eligible": true,
+            "mode": "FIXED24",
+            "positive_years": 2,
+            "total_n": 99,
+            "worst_year_mean": -0.007637015574491959,
+            "year_counts": {
+              "2019": 61,
+              "2020": 23,
+              "2021": 15
+            },
+            "year_mean_net_returns": {
+              "2019": 0.007149054394765091,
+              "2020": 0.025995734963000932,
+              "2021": -0.007637015574491959
+            }
+          },
+          {
+            "aggregate_mean": 0.021318225330846145,
+            "eligible": true,
+            "mode": "FIXED72",
+            "positive_years": 3,
+            "total_n": 99,
+            "worst_year_mean": 0.013060698275785397,
+            "year_counts": {
+              "2019": 61,
+              "2020": 23,
+              "2021": 15
+            },
+            "year_mean_net_returns": {
+              "2019": 0.013060698275785397,
+              "2020": 0.027255920617544536,
+              "2021": 0.045794369248489036
+            }
+          },
+          {
+            "aggregate_mean": 0.05213161796688582,
+            "eligible": true,
+            "mode": "FIXED168",
+            "positive_years": 3,
+            "total_n": 99,
+            "worst_year_mean": 0.04203505836786301,
+            "year_counts": {
+              "2019": 61,
+              "2020": 23,
+              "2021": 15
+            },
+            "year_mean_net_returns": {
+              "2019": 0.04305033998029861,
+              "2020": 0.04203505836786301,
+              "2021": 0.10454353983084202
+            }
+          },
+          {
+            "aggregate_mean": 0.029619049197797502,
+            "eligible": true,
+            "mode": "CHECKPOINT_SIGN",
+            "positive_years": 3,
+            "total_n": 99,
+            "worst_year_mean": 0.01942227274946743,
+            "year_counts": {
+              "2019": 61,
+              "2020": 23,
+              "2021": 15
+            },
+            "year_mean_net_returns": {
+              "2019": 0.01942227274946743,
+              "2020": 0.020520829296837358,
+              "2021": 0.08503654393581198
+            }
+          },
+          {
+            "aggregate_mean": 0.02703446791256212,
+            "eligible": true,
+            "mode": "CHECKPOINT_ACCEL",
+            "positive_years": 3,
+            "total_n": 99,
+            "worst_year_mean": 0.0158489686391004,
+            "year_counts": {
+              "2019": 61,
+              "2020": 23,
+              "2021": 15
+            },
+            "year_mean_net_returns": {
+              "2019": 0.0158489686391004,
+              "2020": 0.018872916405275875,
+              "2021": 0.08503654393581198
+            }
+          }
+        ],
+        "regime_key": "-1|0",
+        "selected": {
+          "aggregate_mean": 0.05213161796688582,
+          "eligible": true,
+          "mode": "FIXED168",
+          "positive_years": 3,
+          "total_n": 99,
+          "worst_year_mean": 0.04203505836786301,
+          "year_counts": {
+            "2019": 61,
+            "2020": 23,
+            "2021": 15
+          },
+          "year_mean_net_returns": {
+            "2019": 0.04305033998029861,
+            "2020": 0.04203505836786301,
+            "2021": 0.10454353983084202
+          }
+        }
+      },
+      {
+        "adaptive_slot_fraction": 0.0,
+        "mode_stats": [
+          {
+            "aggregate_mean": 0.008609703877034934,
+            "eligible": true,
+            "mode": "FIXED24",
+            "positive_years": 1,
+            "total_n": 115,
+            "worst_year_mean": -0.0032048498208237753,
+            "year_counts": {
+              "2019": 39,
+              "2020": 76,
+              "2021": 0
+            },
+            "year_mean_net_returns": {
+              "2019": -0.0032048498208237753,
+              "2020": 0.014672435379883483,
+              "2021": NaN
+            }
+          },
+          {
+            "aggregate_mean": 0.011753271597871536,
+            "eligible": true,
+            "mode": "FIXED72",
+            "positive_years": 1,
+            "total_n": 115,
+            "worst_year_mean": -0.006202314724363233,
+            "year_counts": {
+              "2019": 39,
+              "2020": 76,
+              "2021": 0
+            },
+            "year_mean_net_returns": {
+              "2019": -0.006202314724363233,
+              "2020": 0.020967322473755167,
+              "2021": NaN
+            }
+          },
+          {
+            "aggregate_mean": 0.03926864052396326,
+            "eligible": true,
+            "mode": "FIXED168",
+            "positive_years": 1,
+            "total_n": 115,
+            "worst_year_mean": -0.016787536127337074,
+            "year_counts": {
+              "2019": 39,
+              "2020": 76,
+              "2021": 0
+            },
+            "year_mean_net_returns": {
+              "2019": -0.016787536127337074,
+              "2020": 0.06803431012134108,
+              "2021": NaN
+            }
+          },
+          {
+            "aggregate_mean": 0.01740381379753693,
+            "eligible": true,
+            "mode": "CHECKPOINT_SIGN",
+            "positive_years": 1,
+            "total_n": 115,
+            "worst_year_mean": -0.013443678390156592,
+            "year_counts": {
+              "2019": 39,
+              "2020": 76,
+              "2021": 0
+            },
+            "year_mean_net_returns": {
+              "2019": -0.013443678390156592,
+              "2020": 0.033233447946484924,
+              "2021": NaN
+            }
+          },
+          {
+            "aggregate_mean": 0.017606514993380645,
+            "eligible": true,
+            "mode": "CHECKPOINT_ACCEL",
+            "positive_years": 1,
+            "total_n": 115,
+            "worst_year_mean": -0.007300249476877272,
+            "year_counts": {
+              "2019": 39,
+              "2020": 76,
+              "2021": 0
+            },
+            "year_mean_net_returns": {
+              "2019": -0.007300249476877272,
+              "2020": 0.030387617813644578,
+              "2021": NaN
+            }
+          }
+        ],
+        "regime_key": "-1|1",
+        "selected": {
+          "aggregate_mean": 0.008609703877034934,
+          "eligible": true,
+          "mode": "FIXED24",
+          "positive_years": 1,
+          "total_n": 115,
+          "worst_year_mean": -0.0032048498208237753,
+          "year_counts": {
+            "2019": 39,
+            "2020": 76,
+            "2021": 0
+          },
+          "year_mean_net_returns": {
+            "2019": -0.0032048498208237753,
+            "2020": 0.014672435379883483,
+            "2021": NaN
+          }
+        }
+      },
+      {
+        "adaptive_slot_fraction": 0.09,
+        "mode_stats": [
+          {
+            "aggregate_mean": 0.0040094972501029495,
+            "eligible": true,
+            "mode": "FIXED24",
+            "positive_years": 2,
+            "total_n": 343,
+            "worst_year_mean": -0.002467915330727712,
+            "year_counts": {
+              "2019": 90,
+              "2020": 155,
+              "2021": 98
+            },
+            "year_mean_net_returns": {
+              "2019": -0.002467915330727712,
+              "2020": 0.008090671313829812,
+              "2021": 0.0035032232949712737
+            }
+          },
+          {
+            "aggregate_mean": 0.01323412097408175,
+            "eligible": true,
+            "mode": "FIXED72",
+            "positive_years": 2,
+            "total_n": 343,
+            "worst_year_mean": -0.018937832237793006,
+            "year_counts": {
+              "2019": 90,
+              "2020": 155,
+              "2021": 98
+            },
+            "year_mean_net_returns": {
+              "2019": -0.018937832237793006,
+              "2020": 0.021458044154614716,
+              "2021": 0.029772566852511537
+            }
+          },
+          {
+            "aggregate_mean": 0.03734856042565645,
+            "eligible": true,
+            "mode": "FIXED168",
+            "positive_years": 2,
+            "total_n": 343,
+            "worst_year_mean": -0.03312506900278906,
+            "year_counts": {
+              "2019": 90,
+              "2020": 155,
+              "2021": 98
+            },
+            "year_mean_net_returns": {
+              "2019": -0.03312506900278906,
+              "2020": 0.0415538646349599,
+              "2021": 0.09541799405951422
+            }
+          },
+          {
+            "aggregate_mean": 0.0229777863637186,
+            "eligible": true,
+            "mode": "CHECKPOINT_SIGN",
+            "positive_years": 2,
+            "total_n": 343,
+            "worst_year_mean": -0.017525649323667118,
+            "year_counts": {
+              "2019": 90,
+              "2020": 155,
+              "2021": 98
+            },
+            "year_mean_net_returns": {
+              "2019": -0.017525649323667118,
+              "2020": 0.019924637409356214,
+              "2021": 0.06500377921872762
+            }
+          },
+          {
+            "aggregate_mean": 0.01959381211003611,
+            "eligible": true,
+            "mode": "CHECKPOINT_ACCEL",
+            "positive_years": 2,
+            "total_n": 343,
+            "worst_year_mean": -0.014924422163880976,
+            "year_counts": {
+              "2019": 90,
+              "2020": 155,
+              "2021": 98
+            },
+            "year_mean_net_returns": {
+              "2019": -0.014924422163880976,
+              "2020": 0.016012424549708984,
+              "2021": 0.05695867084986511
+            }
+          }
+        ],
+        "regime_key": "0|-1",
+        "selected": {
+          "aggregate_mean": 0.0040094972501029495,
+          "eligible": true,
+          "mode": "FIXED24",
+          "positive_years": 2,
+          "total_n": 343,
+          "worst_year_mean": -0.002467915330727712,
+          "year_counts": {
+            "2019": 90,
+            "2020": 155,
+            "2021": 98
+          },
+          "year_mean_net_returns": {
+            "2019": -0.002467915330727712,
+            "2020": 0.008090671313829812,
+            "2021": 0.0035032232949712737
+          }
+        }
+      },
+      {
+        "adaptive_slot_fraction": 0.0,
+        "mode_stats": [
+          {
+            "aggregate_mean": 0.0012844783105555274,
+            "eligible": true,
+            "mode": "FIXED24",
+            "positive_years": 1,
+            "total_n": 540,
+            "worst_year_mean": -0.010298904263873575,
+            "year_counts": {
+              "2019": 96,
+              "2020": 271,
+              "2021": 173
+            },
+            "year_mean_net_returns": {
+              "2019": -0.010298904263873575,
+              "2020": 0.006927780708505016,
+              "2021": -0.0011278351154509335
+            }
+          },
+          {
+            "aggregate_mean": 0.010619240796583083,
+            "eligible": true,
+            "mode": "FIXED72",
+            "positive_years": 1,
+            "total_n": 540,
+            "worst_year_mean": -0.013353603553579748,
+            "year_counts": {
+              "2019": 96,
+              "2020": 271,
+              "2021": 173
+            },
+            "year_mean_net_returns": {
+              "2019": -0.013353603553579748,
+              "2020": 0.02824161553982852,
+              "2021": -0.003682900809219702
+            }
+          },
+          {
+            "aggregate_mean": 0.007822475509648279,
+            "eligible": true,
+            "mode": "FIXED168",
+            "positive_years": 1,
+            "total_n": 540,
+            "worst_year_mean": -0.02478975628969386,
+            "year_counts": {
+              "2019": 96,
+              "2020": 271,
+              "2021": 173
+            },
+            "year_mean_net_returns": {
+              "2019": -0.02478975628969386,
+              "2020": 0.03336410950913334,
+              "2021": -0.014090868774303185
+            }
+          },
+          {
+            "aggregate_mean": 0.009096815404412484,
+            "eligible": true,
+            "mode": "CHECKPOINT_SIGN",
+            "positive_years": 2,
+            "total_n": 540,
+            "worst_year_mean": -0.013691777171950545,
+            "year_counts": {
+              "2019": 96,
+              "2020": 271,
+              "2021": 173
+            },
+            "year_mean_net_returns": {
+              "2019": -0.013691777171950545,
+              "2020": 0.015460764884393916,
+              "2021": 0.011773547070631456
+            }
+          },
+          {
+            "aggregate_mean": 0.008951472921126987,
+            "eligible": true,
+            "mode": "CHECKPOINT_ACCEL",
+            "positive_years": 2,
+            "total_n": 540,
+            "worst_year_mean": -0.010987390396488272,
+            "year_counts": {
+              "2019": 96,
+              "2020": 271,
+              "2021": 173
+            },
+            "year_mean_net_returns": {
+              "2019": -0.010987390396488272,
+              "2020": 0.016353745257422496,
+              "2021": 0.008420346189074876
+            }
+          }
+        ],
+        "regime_key": "0|0",
+        "selected": {
+          "aggregate_mean": 0.0012844783105555274,
+          "eligible": true,
+          "mode": "FIXED24",
+          "positive_years": 1,
+          "total_n": 540,
+          "worst_year_mean": -0.010298904263873575,
+          "year_counts": {
+            "2019": 96,
+            "2020": 271,
+            "2021": 173
+          },
+          "year_mean_net_returns": {
+            "2019": -0.010298904263873575,
+            "2020": 0.006927780708505016,
+            "2021": -0.0011278351154509335
+          }
+        }
+      },
+      {
+        "adaptive_slot_fraction": 0.0,
+        "mode_stats": [
+          {
+            "aggregate_mean": -0.0073542692442108955,
+            "eligible": true,
+            "mode": "FIXED24",
+            "positive_years": 1,
+            "total_n": 316,
+            "worst_year_mean": -0.018876611015676108,
+            "year_counts": {
+              "2019": 14,
+              "2020": 157,
+              "2021": 145
+            },
+            "year_mean_net_returns": {
+              "2019": -0.01884028640205212,
+              "2020": 0.004311614813574029,
+              "2021": -0.018876611015676108
+            }
+          },
+          {
+            "aggregate_mean": -0.006983977131515906,
+            "eligible": true,
+            "mode": "FIXED72",
+            "positive_years": 1,
+            "total_n": 316,
+            "worst_year_mean": -0.02371072128153002,
+            "year_counts": {
+              "2019": 14,
+              "2020": 157,
+              "2021": 145
+            },
+            "year_mean_net_returns": {
+              "2019": -0.02371072128153002,
+              "2020": 0.0042243515331136785,
+              "2021": -0.017504895629768653
+            }
+          },
+          {
+            "aggregate_mean": -0.003928080568209169,
+            "eligible": true,
+            "mode": "FIXED168",
+            "positive_years": 1,
+            "total_n": 316,
+            "worst_year_mean": -0.027633898788526814,
+            "year_counts": {
+              "2019": 14,
+              "2020": 157,
+              "2021": 145
+            },
+            "year_mean_net_returns": {
+              "2019": -0.027633898788526814,
+              "2020": -0.017488636471062094,
+              "2021": 0.013043565858220883
+            }
+          },
+          {
+            "aggregate_mean": -0.01023863209257075,
+            "eligible": true,
+            "mode": "CHECKPOINT_SIGN",
+            "positive_years": 1,
+            "total_n": 316,
+            "worst_year_mean": -0.03205751017763443,
+            "year_counts": {
+              "2019": 14,
+              "2020": 157,
+              "2021": 145
+            },
+            "year_mean_net_returns": {
+              "2019": -0.03205751017763443,
+              "2020": 0.003684047787156967,
+              "2021": -0.02320688345758013
+            }
+          },
+          {
+            "aggregate_mean": -0.0113143424216136,
+            "eligible": true,
+            "mode": "CHECKPOINT_ACCEL",
+            "positive_years": 1,
+            "total_n": 316,
+            "worst_year_mean": -0.03052918404075376,
+            "year_counts": {
+              "2019": 14,
+              "2020": 157,
+              "2021": 145
+            },
+            "year_mean_net_returns": {
+              "2019": -0.03052918404075376,
+              "2020": 0.006665580449686748,
+              "2021": -0.02892703282248389
+            }
+          }
+        ],
+        "regime_key": "0|1",
+        "selected": {
+          "aggregate_mean": -0.0073542692442108955,
+          "eligible": true,
+          "mode": "FIXED24",
+          "positive_years": 1,
+          "total_n": 316,
+          "worst_year_mean": -0.018876611015676108,
+          "year_counts": {
+            "2019": 14,
+            "2020": 157,
+            "2021": 145
+          },
+          "year_mean_net_returns": {
+            "2019": -0.01884028640205212,
+            "2020": 0.004311614813574029,
+            "2021": -0.018876611015676108
+          }
+        }
+      },
+      {
+        "adaptive_slot_fraction": 0.09,
+        "mode_stats": [
+          {
+            "aggregate_mean": 0.01327088953828273,
+            "eligible": true,
+            "mode": "FIXED24",
+            "positive_years": 2,
+            "total_n": 384,
+            "worst_year_mean": -0.019275497177149277,
+            "year_counts": {
+              "2019": 13,
+              "2020": 121,
+              "2021": 250
+            },
+            "year_mean_net_returns": {
+              "2019": -0.019275497177149277,
+              "2020": 0.012272462684461,
+              "2021": 0.015446540244734911
+            }
+          },
+          {
+            "aggregate_mean": 0.019225803357618615,
+            "eligible": true,
+            "mode": "FIXED72",
+            "positive_years": 2,
+            "total_n": 384,
+            "worst_year_mean": -0.0548060055733023,
+            "year_counts": {
+              "2019": 13,
+              "2020": 121,
+              "2021": 250
+            },
+            "year_mean_net_returns": {
+              "2019": -0.0548060055733023,
+              "2020": 0.02091290836727151,
+              "2021": 0.0222588985973545
+            }
+          },
+          {
+            "aggregate_mean": 0.03447923575546139,
+            "eligible": true,
+            "mode": "FIXED168",
+            "positive_years": 2,
+            "total_n": 384,
+            "worst_year_mean": -0.12755689143513102,
+            "year_counts": {
+              "2019": 13,
+              "2020": 121,
+              "2021": 250
+            },
+            "year_mean_net_returns": {
+              "2019": -0.12755689143513102,
+              "2020": 0.0255507921172734,
+              "2021": 0.04722648109025517
+            }
+          },
+          {
+            "aggregate_mean": 0.02837970256743409,
+            "eligible": true,
+            "mode": "CHECKPOINT_SIGN",
+            "positive_years": 2,
+            "total_n": 384,
+            "worst_year_mean": -0.033108642437939345,
+            "year_counts": {
+              "2019": 13,
+              "2020": 121,
+              "2021": 250
+            },
+            "year_mean_net_returns": {
+              "2019": -0.033108642437939345,
+              "2020": 0.021081107582102042,
+              "2021": 0.035109616480614204
+            }
+          },
+          {
+            "aggregate_mean": 0.02273211059135181,
+            "eligible": true,
+            "mode": "CHECKPOINT_ACCEL",
+            "positive_years": 2,
+            "total_n": 384,
+            "worst_year_mean": -0.033108642437939345,
+            "year_counts": {
+              "2019": 13,
+              "2020": 121,
+              "2021": 250
+            },
+            "year_mean_net_returns": {
+              "2019": -0.033108642437939345,
+              "2020": 0.01617627014225056,
+              "2021": 0.028808856526239927
+            }
+          }
+        ],
+        "regime_key": "1|-1",
+        "selected": {
+          "aggregate_mean": 0.01327088953828273,
+          "eligible": true,
+          "mode": "FIXED24",
+          "positive_years": 2,
+          "total_n": 384,
+          "worst_year_mean": -0.019275497177149277,
+          "year_counts": {
+            "2019": 13,
+            "2020": 121,
+            "2021": 250
+          },
+          "year_mean_net_returns": {
+            "2019": -0.019275497177149277,
+            "2020": 0.012272462684461,
+            "2021": 0.015446540244734911
+          }
+        }
+      },
+      {
+        "adaptive_slot_fraction": 0.09,
+        "mode_stats": [
+          {
+            "aggregate_mean": 0.01958860460948838,
+            "eligible": true,
+            "mode": "FIXED24",
+            "positive_years": 2,
+            "total_n": 494,
+            "worst_year_mean": -0.0212784353880974,
+            "year_counts": {
+              "2019": 3,
+              "2020": 200,
+              "2021": 291
+            },
+            "year_mean_net_returns": {
+              "2019": -0.0212784353880974,
+              "2020": 0.01971649845865253,
+              "2021": 0.019922014747495005
+            }
+          },
+          {
+            "aggregate_mean": 0.048630826354342856,
+            "eligible": true,
+            "mode": "FIXED72",
+            "positive_years": 2,
+            "total_n": 494,
+            "worst_year_mean": -0.052103207314280635,
+            "year_counts": {
+              "2019": 3,
+              "2020": 200,
+              "2021": 291
+            },
+            "year_mean_net_returns": {
+              "2019": -0.052103207314280635,
+              "2020": 0.041392632653665266,
+              "2021": 0.054644025121151754
+            }
+          },
+          {
+            "aggregate_mean": 0.11404925114358996,
+            "eligible": true,
+            "mode": "FIXED168",
+            "positive_years": 2,
+            "total_n": 494,
+            "worst_year_mean": -0.10360100377620263,
+            "year_counts": {
+              "2019": 3,
+              "2020": 200,
+              "2021": 291
+            },
+            "year_mean_net_returns": {
+              "2019": -0.10360100377620263,
+              "2020": 0.11317368434973421,
+              "2021": 0.11689483232410725
+            }
+          },
+          {
+            "aggregate_mean": 0.09609334929743935,
+            "eligible": true,
+            "mode": "CHECKPOINT_SIGN",
+            "positive_years": 2,
+            "total_n": 494,
+            "worst_year_mean": -0.0212784353880974,
+            "year_counts": {
+              "2019": 3,
+              "2020": 200,
+              "2021": 291
+            },
+            "year_mean_net_returns": {
+              "2019": -0.0212784353880974,
+              "2020": 0.08179464022528479,
+              "2021": 0.10713065915478477
+            }
+          },
+          {
+            "aggregate_mean": 0.07808092512960171,
+            "eligible": true,
+            "mode": "CHECKPOINT_ACCEL",
+            "positive_years": 2,
+            "total_n": 494,
+            "worst_year_mean": -0.0212784353880974,
+            "year_counts": {
+              "2019": 3,
+              "2020": 200,
+              "2021": 291
+            },
+            "year_mean_net_returns": {
+              "2019": -0.0212784353880974,
+              "2020": 0.05796134042114943,
+              "2021": 0.09293314170432183
+            }
+          }
+        ],
+        "regime_key": "1|0",
+        "selected": {
+          "aggregate_mean": 0.09609334929743935,
+          "eligible": true,
+          "mode": "CHECKPOINT_SIGN",
+          "positive_years": 2,
+          "total_n": 494,
+          "worst_year_mean": -0.0212784353880974,
+          "year_counts": {
+            "2019": 3,
+            "2020": 200,
+            "2021": 291
+          },
+          "year_mean_net_returns": {
+            "2019": -0.0212784353880974,
+            "2020": 0.08179464022528479,
+            "2021": 0.10713065915478477
+          }
+        }
+      },
+      {
+        "adaptive_slot_fraction": 0.09,
+        "mode_stats": [
+          {
+            "aggregate_mean": 0.00817357093449884,
+            "eligible": true,
+            "mode": "FIXED24",
+            "positive_years": 1,
+            "total_n": 266,
+            "worst_year_mean": -0.001849294521824539,
+            "year_counts": {
+              "2019": 0,
+              "2020": 97,
+              "2021": 169
+            },
+            "year_mean_net_returns": {
+              "2019": NaN,
+              "2020": -0.001849294521824539,
+              "2021": 0.013926339865051313
+            }
+          },
+          {
+            "aggregate_mean": 0.02030414497870739,
+            "eligible": true,
+            "mode": "FIXED72",
+            "positive_years": 1,
+            "total_n": 266,
+            "worst_year_mean": -0.012725667363527454,
+            "year_counts": {
+              "2019": 0,
+              "2020": 97,
+              "2021": 169
+            },
+            "year_mean_net_returns": {
+              "2019": NaN,
+              "2020": -0.012725667363527454,
+              "2021": 0.03926208460709071
+            }
+          },
+          {
+            "aggregate_mean": 0.03536292019668741,
+            "eligible": true,
+            "mode": "FIXED168",
+            "positive_years": 1,
+            "total_n": 266,
+            "worst_year_mean": -0.012064034357188287,
+            "year_counts": {
+              "2019": 0,
+              "2020": 97,
+              "2021": 169
+            },
+            "year_mean_net_returns": {
+              "2019": NaN,
+              "2020": -0.012064034357188287,
+              "2021": 0.06258430831340894
+            }
+          },
+          {
+            "aggregate_mean": 0.01761204845822999,
+            "eligible": true,
+            "mode": "CHECKPOINT_SIGN",
+            "positive_years": 2,
+            "total_n": 266,
+            "worst_year_mean": 0.01081317573720189,
+            "year_counts": {
+              "2019": 0,
+              "2020": 97,
+              "2021": 169
+            },
+            "year_mean_net_returns": {
+              "2019": NaN,
+              "2020": 0.01081317573720189,
+              "2021": 0.021514360020003506
+            }
+          },
+          {
+            "aggregate_mean": 0.020041257166820217,
+            "eligible": true,
+            "mode": "CHECKPOINT_ACCEL",
+            "positive_years": 2,
+            "total_n": 266,
+            "worst_year_mean": 0.010438759111866444,
+            "year_counts": {
+              "2019": 0,
+              "2020": 97,
+              "2021": 169
+            },
+            "year_mean_net_returns": {
+              "2019": NaN,
+              "2020": 0.010438759111866444,
+              "2021": 0.02555275013327298
+            }
+          }
+        ],
+        "regime_key": "1|1",
+        "selected": {
+          "aggregate_mean": 0.01761204845822999,
+          "eligible": true,
+          "mode": "CHECKPOINT_SIGN",
+          "positive_years": 2,
+          "total_n": 266,
+          "worst_year_mean": 0.01081317573720189,
+          "year_counts": {
+            "2019": 0,
+            "2020": 97,
+            "2021": 169
+          },
+          "year_mean_net_returns": {
+            "2019": NaN,
+            "2020": 0.01081317573720189,
+            "2021": 0.021514360020003506
+          }
+        }
+      },
+      {
+        "adaptive_slot_fraction": 0.18,
+        "mode_stats": [
+          {
+            "aggregate_mean": -0.004966033033815783,
+            "eligible": true,
+            "mode": "FIXED24",
+            "positive_years": 0,
+            "total_n": 376,
+            "worst_year_mean": -0.006379615658027756,
+            "year_counts": {
+              "2019": 76,
+              "2020": 181,
+              "2021": 119
+            },
+            "year_mean_net_returns": {
+              "2019": -0.004706632138617169,
+              "2020": -0.006379615658027756,
+              "2021": -0.0029816297821580297
+            }
+          },
+          {
+            "aggregate_mean": 0.016718686813056046,
+            "eligible": true,
+            "mode": "FIXED72",
+            "positive_years": 3,
+            "total_n": 376,
+            "worst_year_mean": 0.015393643572854679,
+            "year_counts": {
+              "2019": 76,
+              "2020": 181,
+              "2021": 119
+            },
+            "year_mean_net_returns": {
+              "2019": 0.019343093712124903,
+              "2020": 0.016487886930485498,
+              "2021": 0.015393643572854679
+            }
+          },
+          {
+            "aggregate_mean": 0.03752154311268486,
+            "eligible": true,
+            "mode": "FIXED168",
+            "positive_years": 3,
+            "total_n": 376,
+            "worst_year_mean": 0.015933818312686268,
+            "year_counts": {
+              "2019": 76,
+              "2020": 181,
+              "2021": 119
+            },
+            "year_mean_net_returns": {
+              "2019": 0.015933818312686268,
+              "2020": 0.043717371412583195,
+              "2021": 0.04188475456241844
+            }
+          },
+          {
+            "aggregate_mean": 0.014651825865237028,
+            "eligible": true,
+            "mode": "CHECKPOINT_SIGN",
+            "positive_years": 3,
+            "total_n": 376,
+            "worst_year_mean": 0.002207755536823596,
+            "year_counts": {
+              "2019": 76,
+              "2020": 181,
+              "2021": 119
+            },
+            "year_mean_net_returns": {
+              "2019": 0.002207755536823596,
+              "2020": 0.021093969149930586,
+              "2021": 0.012800745280614239
+            }
+          },
+          {
+            "aggregate_mean": 0.013141092877131727,
+            "eligible": true,
+            "mode": "CHECKPOINT_ACCEL",
+            "positive_years": 3,
+            "total_n": 376,
+            "worst_year_mean": 0.0023139801286255653,
+            "year_counts": {
+              "2019": 76,
+              "2020": 181,
+              "2021": 119
+            },
+            "year_mean_net_returns": {
+              "2019": 0.0023139801286255653,
+              "2020": 0.020284846979453618,
+              "2021": 0.009190177552478003
+            }
+          }
+        ],
+        "regime_key": "2|-1",
+        "selected": {
+          "aggregate_mean": 0.03752154311268486,
+          "eligible": true,
+          "mode": "FIXED168",
+          "positive_years": 3,
+          "total_n": 376,
+          "worst_year_mean": 0.015933818312686268,
+          "year_counts": {
+            "2019": 76,
+            "2020": 181,
+            "2021": 119
+          },
+          "year_mean_net_returns": {
+            "2019": 0.015933818312686268,
+            "2020": 0.043717371412583195,
+            "2021": 0.04188475456241844
+          }
+        }
+      },
+      {
+        "adaptive_slot_fraction": 0.18,
+        "mode_stats": [
+          {
+            "aggregate_mean": 0.0040996022822965906,
+            "eligible": true,
+            "mode": "FIXED24",
+            "positive_years": 3,
+            "total_n": 368,
+            "worst_year_mean": 0.001588917069122205,
+            "year_counts": {
+              "2019": 92,
+              "2020": 167,
+              "2021": 109
+            },
+            "year_mean_net_returns": {
+              "2019": 0.006095189658730021,
+              "2020": 0.001588917069122205,
+              "2021": 0.006261899456317211
+            }
+          },
+          {
+            "aggregate_mean": 0.02019393334542735,
+            "eligible": true,
+            "mode": "FIXED72",
+            "positive_years": 2,
+            "total_n": 368,
+            "worst_year_mean": -0.0018773789714988658,
+            "year_counts": {
+              "2019": 92,
+              "2020": 167,
+              "2021": 109
+            },
+            "year_mean_net_returns": {
+              "2019": 0.01959257557184763,
+              "2020": -0.0018773789714988658,
+              "2021": 0.054517181713280696
+            }
+          },
+          {
+            "aggregate_mean": 0.04274878830559535,
+            "eligible": true,
+            "mode": "FIXED168",
+            "positive_years": 3,
+            "total_n": 368,
+            "worst_year_mean": 0.006894982635241275,
+            "year_counts": {
+              "2019": 92,
+              "2020": 167,
+              "2021": 109
+            },
+            "year_mean_net_returns": {
+              "2019": 0.03542482246691983,
+              "2020": 0.006894982635241275,
+              "2021": 0.10386246173777225
+            }
+          },
+          {
+            "aggregate_mean": 0.020483217436956497,
+            "eligible": true,
+            "mode": "CHECKPOINT_SIGN",
+            "positive_years": 2,
+            "total_n": 368,
+            "worst_year_mean": -0.008083960614394673,
+            "year_counts": {
+              "2019": 92,
+              "2020": 167,
+              "2021": 109
+            },
+            "year_mean_net_returns": {
+              "2019": 0.022396946662107342,
+              "2020": -0.008083960614394673,
+              "2021": 0.06263602152743143
+            }
+          },
+          {
+            "aggregate_mean": 0.018002302277169802,
+            "eligible": true,
+            "mode": "CHECKPOINT_ACCEL",
+            "positive_years": 2,
+            "total_n": 368,
+            "worst_year_mean": -0.0062306525372720425,
+            "year_counts": {
+              "2019": 92,
+              "2020": 167,
+              "2021": 109
+            },
+            "year_mean_net_returns": {
+              "2019": 0.024626476749331924,
+              "2020": -0.0062306525372720425,
+              "2021": 0.04953881055765488
+            }
+          }
+        ],
+        "regime_key": "2|0",
+        "selected": {
+          "aggregate_mean": 0.04274878830559535,
+          "eligible": true,
+          "mode": "FIXED168",
+          "positive_years": 3,
+          "total_n": 368,
+          "worst_year_mean": 0.006894982635241275,
+          "year_counts": {
+            "2019": 92,
+            "2020": 167,
+            "2021": 109
+          },
+          "year_mean_net_returns": {
+            "2019": 0.03542482246691983,
+            "2020": 0.006894982635241275,
+            "2021": 0.10386246173777225
+          }
+        }
+      },
+      {
+        "adaptive_slot_fraction": 0.0,
+        "mode_stats": [
+          {
+            "aggregate_mean": 0.014015019858282617,
+            "eligible": false,
+            "mode": "FIXED24",
+            "positive_years": 3,
+            "total_n": 57,
+            "worst_year_mean": 0.008464603959328451,
+            "year_counts": {
+              "2019": 1,
+              "2020": 39,
+              "2021": 17
+            },
+            "year_mean_net_returns": {
+              "2019": 0.02939228360902943,
+              "2020": 0.008464603959328451,
+              "2021": 0.025843781994074718
+            }
+          },
+          {
+            "aggregate_mean": 0.08459836544210389,
+            "eligible": false,
+            "mode": "FIXED72",
+            "positive_years": 3,
+            "total_n": 57,
+            "worst_year_mean": 0.0454007507799346,
+            "year_counts": {
+              "2019": 1,
+              "2020": 39,
+              "2021": 17
+            },
+            "year_mean_net_returns": {
+              "2019": 0.07444504898647405,
+              "2020": 0.0454007507799346,
+              "2021": 0.17511955887035283
+            }
+          },
+          {
+            "aggregate_mean": 0.2069662529479687,
+            "eligible": false,
+            "mode": "FIXED168",
+            "positive_years": 3,
+            "total_n": 57,
+            "worst_year_mean": 0.01829415467692705,
+            "year_counts": {
+              "2019": 1,
+              "2020": 39,
+              "2021": 17
+            },
+            "year_mean_net_returns": {
+              "2019": 0.01829415467692705,
+              "2020": 0.04405310329333808,
+              "2021": 0.5918065432304179
+            }
+          },
+          {
+            "aggregate_mean": 0.18639651176226799,
+            "eligible": false,
+            "mode": "CHECKPOINT_SIGN",
+            "positive_years": 3,
+            "total_n": 57,
+            "worst_year_mean": 0.01829415467692705,
+            "year_counts": {
+              "2019": 1,
+              "2020": 39,
+              "2021": 17
+            },
+            "year_mean_net_returns": {
+              "2019": 0.01829415467692705,
+              "2020": 0.03942421856450396,
+              "2021": 0.5334566171621583
+            }
+          },
+          {
+            "aggregate_mean": 0.17142260537537438,
+            "eligible": false,
+            "mode": "CHECKPOINT_ACCEL",
+            "positive_years": 3,
+            "total_n": 57,
+            "worst_year_mean": 0.017539278460582567,
+            "year_counts": {
+              "2019": 1,
+              "2020": 39,
+              "2021": 17
+            },
+            "year_mean_net_returns": {
+              "2019": 0.01829415467692705,
+              "2020": 0.017539278460582567,
+              "2021": 0.5334566171621583
+            }
+          }
+        ],
+        "regime_key": "2|1",
+        "selected": {
+          "aggregate_mean": 0.2069662529479687,
+          "eligible": false,
+          "mode": "FIXED168",
+          "positive_years": 3,
+          "total_n": 57,
+          "worst_year_mean": 0.01829415467692705,
+          "year_counts": {
+            "2019": 1,
+            "2020": 39,
+            "2021": 17
+          },
+          "year_mean_net_returns": {
+            "2019": 0.01829415467692705,
+            "2020": 0.04405310329333808,
+            "2021": 0.5918065432304179
+          }
+        }
+      },
+      {
+        "adaptive_slot_fraction": 0.09,
+        "mode_stats": [
+          {
+            "aggregate_mean": 0.004733849202701209,
+            "eligible": true,
+            "mode": "FIXED24",
+            "positive_years": 2,
+            "total_n": 453,
+            "worst_year_mean": 0.004310615281033179,
+            "year_counts": {
+              "2019": 398,
+              "2020": 0,
+              "2021": 55
+            },
+            "year_mean_net_returns": {
+              "2019": 0.004792336302429203,
+              "2020": NaN,
+              "2021": 0.004310615281033179
+            }
+          },
+          {
+            "aggregate_mean": 0.003881946470941005,
+            "eligible": true,
+            "mode": "FIXED72",
+            "positive_years": 1,
+            "total_n": 453,
+            "worst_year_mean": -0.009542522530408059,
+            "year_counts": {
+              "2019": 398,
+              "2020": 0,
+              "2021": 55
+            },
+            "year_mean_net_returns": {
+              "2019": 0.005737086659569642,
+              "2020": NaN,
+              "2021": -0.009542522530408059
+            }
+          },
+          {
+            "aggregate_mean": -0.006706099275961442,
+            "eligible": true,
+            "mode": "FIXED168",
+            "positive_years": 0,
+            "total_n": 453,
+            "worst_year_mean": -0.04507116882331109,
+            "year_counts": {
+              "2019": 398,
+              "2020": 0,
+              "2021": 55
+            },
+            "year_mean_net_returns": {
+              "2019": -0.0014043936852472974,
+              "2020": NaN,
+              "2021": -0.04507116882331109
+            }
+          },
+          {
+            "aggregate_mean": 0.0006608860457633886,
+            "eligible": true,
+            "mode": "CHECKPOINT_SIGN",
+            "positive_years": 1,
+            "total_n": 453,
+            "worst_year_mean": -0.023191512036323986,
+            "year_counts": {
+              "2019": 398,
+              "2020": 0,
+              "2021": 55
+            },
+            "year_mean_net_returns": {
+              "2019": 0.003957071710373449,
+              "2020": NaN,
+              "2021": -0.023191512036323986
+            }
+          },
+          {
+            "aggregate_mean": 0.004363715024671537,
+            "eligible": true,
+            "mode": "CHECKPOINT_ACCEL",
+            "positive_years": 1,
+            "total_n": 453,
+            "worst_year_mean": -0.008525142455726888,
+            "year_counts": {
+              "2019": 398,
+              "2020": 0,
+              "2021": 55
+            },
+            "year_mean_net_returns": {
+              "2019": 0.006144838545832122,
+              "2020": NaN,
+              "2021": -0.008525142455726888
+            }
+          }
+        ],
+        "regime_key": "nan",
+        "selected": {
+          "aggregate_mean": 0.004733849202701209,
+          "eligible": true,
+          "mode": "FIXED24",
+          "positive_years": 2,
+          "total_n": 453,
+          "worst_year_mean": 0.004310615281033179,
+          "year_counts": {
+            "2019": 398,
+            "2020": 0,
+            "2021": 55
+          },
+          "year_mean_net_returns": {
+            "2019": 0.004792336302429203,
+            "2020": NaN,
+            "2021": 0.004310615281033179
+          }
+        }
+      }
+    ],
+    "schema_version": "akah-regime-capital-horizon-map-v1"
+  },
+  "EXPANDED": {
+    "adaptive_tier_map": {
+      "-1|-1": {
+        "exit_mode": "FIXED168",
+        "slot_fraction": 0.18
+      },
+      "-1|0": {
+        "exit_mode": "FIXED168",
+        "slot_fraction": 0.18
+      },
+      "-1|1": {
+        "exit_mode": "FIXED24",
+        "slot_fraction": 0.0
+      },
+      "0|-1": {
+        "exit_mode": "FIXED24",
+        "slot_fraction": 0.09
+      },
+      "0|0": {
+        "exit_mode": "FIXED24",
+        "slot_fraction": 0.0
+      },
+      "0|1": {
+        "exit_mode": "FIXED24",
+        "slot_fraction": 0.0
+      },
+      "1|-1": {
+        "exit_mode": "FIXED24",
+        "slot_fraction": 0.09
+      },
+      "1|0": {
+        "exit_mode": "CHECKPOINT_SIGN",
+        "slot_fraction": 0.09
+      },
+      "1|1": {
+        "exit_mode": "CHECKPOINT_SIGN",
+        "slot_fraction": 0.09
+      },
+      "2|-1": {
+        "exit_mode": "FIXED168",
+        "slot_fraction": 0.18
+      },
+      "2|0": {
+        "exit_mode": "FIXED168",
+        "slot_fraction": 0.18
+      },
+      "2|1": {
+        "exit_mode": "FIXED168",
+        "slot_fraction": 0.0
+      },
+      "nan": {
+        "exit_mode": "FIXED24",
+        "slot_fraction": 0.09
+      }
+    },
+    "development_years": [
+      2019,
+      2020,
+      2021
+    ],
+    "horizon_only_map": {
+      "-1|-1": {
+        "exit_mode": "FIXED168",
+        "slot_fraction": 0.18
+      },
+      "-1|0": {
+        "exit_mode": "FIXED168",
+        "slot_fraction": 0.18
+      },
+      "-1|1": {
+        "exit_mode": "FIXED24",
+        "slot_fraction": 0.18
+      },
+      "0|-1": {
+        "exit_mode": "FIXED24",
+        "slot_fraction": 0.18
+      },
+      "0|0": {
+        "exit_mode": "FIXED24",
+        "slot_fraction": 0.18
+      },
+      "0|1": {
+        "exit_mode": "FIXED24",
+        "slot_fraction": 0.18
+      },
+      "1|-1": {
+        "exit_mode": "FIXED24",
+        "slot_fraction": 0.18
+      },
+      "1|0": {
+        "exit_mode": "CHECKPOINT_SIGN",
+        "slot_fraction": 0.18
+      },
+      "1|1": {
+        "exit_mode": "CHECKPOINT_SIGN",
+        "slot_fraction": 0.18
+      },
+      "2|-1": {
+        "exit_mode": "FIXED168",
+        "slot_fraction": 0.18
+      },
+      "2|0": {
+        "exit_mode": "FIXED168",
+        "slot_fraction": 0.18
+      },
+      "2|1": {
+        "exit_mode": "FIXED168",
+        "slot_fraction": 0.18
+      },
+      "nan": {
+        "exit_mode": "FIXED24",
+        "slot_fraction": 0.18
+      }
+    },
+    "minimum_regime_mode_rows": 60,
+    "minimum_year_rows": 10,
+    "records": [
+      {
+        "adaptive_slot_fraction": 0.18,
+        "mode_stats": [
+          {
+            "aggregate_mean": -0.0009355640595183268,
+            "eligible": true,
+            "mode": "FIXED24",
+            "positive_years": 2,
+            "total_n": 141,
+            "worst_year_mean": -0.036561376906524626,
+            "year_counts": {
+              "2019": 76,
+              "2020": 57,
+              "2021": 8
+            },
+            "year_mean_net_returns": {
+              "2019": 0.000458913164656158,
+              "2020": 0.002205247058706051,
+              "2021": -0.036561376906524626
+            }
+          },
+          {
+            "aggregate_mean": -0.0010246557658055283,
+            "eligible": true,
+            "mode": "FIXED72",
+            "positive_years": 2,
+            "total_n": 141,
+            "worst_year_mean": -0.015524556880073145,
+            "year_counts": {
+              "2019": 76,
+              "2020": 57,
+              "2021": 8
+            },
+            "year_mean_net_returns": {
+              "2019": -0.015524556880073145,
+              "2020": 0.013721398411827146,
+              "2021": 0.03165876880410401
+            }
+          },
+          {
+            "aggregate_mean": 0.018792049859076097,
+            "eligible": true,
+            "mode": "FIXED168",
+            "positive_years": 3,
+            "total_n": 141,
+            "worst_year_mean": 0.008696691434534335,
+            "year_counts": {
+              "2019": 76,
+              "2020": 57,
+              "2021": 8
+            },
+            "year_mean_net_returns": {
+              "2019": 0.008696691434534335,
+              "2020": 0.010925687175395401,
+              "2021": 0.17074578901344784
+            }
+          },
+          {
+            "aggregate_mean": -0.0015584689785898406,
+            "eligible": true,
+            "mode": "CHECKPOINT_SIGN",
+            "positive_years": 1,
+            "total_n": 141,
+            "worst_year_mean": -0.006990740263493227,
+            "year_counts": {
+              "2019": 76,
+              "2020": 57,
+              "2021": 8
+            },
+            "year_mean_net_returns": {
+              "2019": -0.006990740263493227,
+              "2020": 0.006357414958411104,
+              "2021": -0.006352564823139381
+            }
+          },
+          {
+            "aggregate_mean": -0.0004817474764104226,
+            "eligible": true,
+            "mode": "CHECKPOINT_ACCEL",
+            "positive_years": 1,
+            "total_n": 141,
+            "worst_year_mean": -0.006352564823139381,
+            "year_counts": {
+              "2019": 76,
+              "2020": 57,
+              "2021": 8
+            },
+            "year_mean_net_returns": {
+              "2019": -0.005745280867223377,
+              "2020": 0.007360271409126705,
+              "2021": -0.006352564823139381
+            }
+          }
+        ],
+        "regime_key": "-1|-1",
+        "selected": {
+          "aggregate_mean": 0.018792049859076097,
+          "eligible": true,
+          "mode": "FIXED168",
+          "positive_years": 3,
+          "total_n": 141,
+          "worst_year_mean": 0.008696691434534335,
+          "year_counts": {
+            "2019": 76,
+            "2020": 57,
+            "2021": 8
+          },
+          "year_mean_net_returns": {
+            "2019": 0.008696691434534335,
+            "2020": 0.010925687175395401,
+            "2021": 0.17074578901344784
+          }
+        }
+      },
+      {
+        "adaptive_slot_fraction": 0.18,
+        "mode_stats": [
+          {
+            "aggregate_mean": 0.009287262511235479,
+            "eligible": true,
+            "mode": "FIXED24",
+            "positive_years": 2,
+            "total_n": 99,
+            "worst_year_mean": -0.007637015574491959,
+            "year_counts": {
+              "2019": 61,
+              "2020": 23,
+              "2021": 15
+            },
+            "year_mean_net_returns": {
+              "2019": 0.007149054394765091,
+              "2020": 0.025995734963000932,
+              "2021": -0.007637015574491959
+            }
+          },
+          {
+            "aggregate_mean": 0.021318225330846145,
+            "eligible": true,
+            "mode": "FIXED72",
+            "positive_years": 3,
+            "total_n": 99,
+            "worst_year_mean": 0.013060698275785397,
+            "year_counts": {
+              "2019": 61,
+              "2020": 23,
+              "2021": 15
+            },
+            "year_mean_net_returns": {
+              "2019": 0.013060698275785397,
+              "2020": 0.027255920617544536,
+              "2021": 0.045794369248489036
+            }
+          },
+          {
+            "aggregate_mean": 0.05213161796688582,
+            "eligible": true,
+            "mode": "FIXED168",
+            "positive_years": 3,
+            "total_n": 99,
+            "worst_year_mean": 0.04203505836786301,
+            "year_counts": {
+              "2019": 61,
+              "2020": 23,
+              "2021": 15
+            },
+            "year_mean_net_returns": {
+              "2019": 0.04305033998029861,
+              "2020": 0.04203505836786301,
+              "2021": 0.10454353983084202
+            }
+          },
+          {
+            "aggregate_mean": 0.029619049197797502,
+            "eligible": true,
+            "mode": "CHECKPOINT_SIGN",
+            "positive_years": 3,
+            "total_n": 99,
+            "worst_year_mean": 0.01942227274946743,
+            "year_counts": {
+              "2019": 61,
+              "2020": 23,
+              "2021": 15
+            },
+            "year_mean_net_returns": {
+              "2019": 0.01942227274946743,
+              "2020": 0.020520829296837358,
+              "2021": 0.08503654393581198
+            }
+          },
+          {
+            "aggregate_mean": 0.02703446791256212,
+            "eligible": true,
+            "mode": "CHECKPOINT_ACCEL",
+            "positive_years": 3,
+            "total_n": 99,
+            "worst_year_mean": 0.0158489686391004,
+            "year_counts": {
+              "2019": 61,
+              "2020": 23,
+              "2021": 15
+            },
+            "year_mean_net_returns": {
+              "2019": 0.0158489686391004,
+              "2020": 0.018872916405275875,
+              "2021": 0.08503654393581198
+            }
+          }
+        ],
+        "regime_key": "-1|0",
+        "selected": {
+          "aggregate_mean": 0.05213161796688582,
+          "eligible": true,
+          "mode": "FIXED168",
+          "positive_years": 3,
+          "total_n": 99,
+          "worst_year_mean": 0.04203505836786301,
+          "year_counts": {
+            "2019": 61,
+            "2020": 23,
+            "2021": 15
+          },
+          "year_mean_net_returns": {
+            "2019": 0.04305033998029861,
+            "2020": 0.04203505836786301,
+            "2021": 0.10454353983084202
+          }
+        }
+      },
+      {
+        "adaptive_slot_fraction": 0.0,
+        "mode_stats": [
+          {
+            "aggregate_mean": 0.008609703877034934,
+            "eligible": true,
+            "mode": "FIXED24",
+            "positive_years": 1,
+            "total_n": 115,
+            "worst_year_mean": -0.0032048498208237753,
+            "year_counts": {
+              "2019": 39,
+              "2020": 76,
+              "2021": 0
+            },
+            "year_mean_net_returns": {
+              "2019": -0.0032048498208237753,
+              "2020": 0.014672435379883483,
+              "2021": NaN
+            }
+          },
+          {
+            "aggregate_mean": 0.011753271597871536,
+            "eligible": true,
+            "mode": "FIXED72",
+            "positive_years": 1,
+            "total_n": 115,
+            "worst_year_mean": -0.006202314724363233,
+            "year_counts": {
+              "2019": 39,
+              "2020": 76,
+              "2021": 0
+            },
+            "year_mean_net_returns": {
+              "2019": -0.006202314724363233,
+              "2020": 0.020967322473755167,
+              "2021": NaN
+            }
+          },
+          {
+            "aggregate_mean": 0.03926864052396326,
+            "eligible": true,
+            "mode": "FIXED168",
+            "positive_years": 1,
+            "total_n": 115,
+            "worst_year_mean": -0.016787536127337074,
+            "year_counts": {
+              "2019": 39,
+              "2020": 76,
+              "2021": 0
+            },
+            "year_mean_net_returns": {
+              "2019": -0.016787536127337074,
+              "2020": 0.06803431012134108,
+              "2021": NaN
+            }
+          },
+          {
+            "aggregate_mean": 0.01740381379753693,
+            "eligible": true,
+            "mode": "CHECKPOINT_SIGN",
+            "positive_years": 1,
+            "total_n": 115,
+            "worst_year_mean": -0.013443678390156592,
+            "year_counts": {
+              "2019": 39,
+              "2020": 76,
+              "2021": 0
+            },
+            "year_mean_net_returns": {
+              "2019": -0.013443678390156592,
+              "2020": 0.033233447946484924,
+              "2021": NaN
+            }
+          },
+          {
+            "aggregate_mean": 0.017606514993380645,
+            "eligible": true,
+            "mode": "CHECKPOINT_ACCEL",
+            "positive_years": 1,
+            "total_n": 115,
+            "worst_year_mean": -0.007300249476877272,
+            "year_counts": {
+              "2019": 39,
+              "2020": 76,
+              "2021": 0
+            },
+            "year_mean_net_returns": {
+              "2019": -0.007300249476877272,
+              "2020": 0.030387617813644578,
+              "2021": NaN
+            }
+          }
+        ],
+        "regime_key": "-1|1",
+        "selected": {
+          "aggregate_mean": 0.008609703877034934,
+          "eligible": true,
+          "mode": "FIXED24",
+          "positive_years": 1,
+          "total_n": 115,
+          "worst_year_mean": -0.0032048498208237753,
+          "year_counts": {
+            "2019": 39,
+            "2020": 76,
+            "2021": 0
+          },
+          "year_mean_net_returns": {
+            "2019": -0.0032048498208237753,
+            "2020": 0.014672435379883483,
+            "2021": NaN
+          }
+        }
+      },
+      {
+        "adaptive_slot_fraction": 0.09,
+        "mode_stats": [
+          {
+            "aggregate_mean": 0.0040094972501029495,
+            "eligible": true,
+            "mode": "FIXED24",
+            "positive_years": 2,
+            "total_n": 343,
+            "worst_year_mean": -0.002467915330727712,
+            "year_counts": {
+              "2019": 90,
+              "2020": 155,
+              "2021": 98
+            },
+            "year_mean_net_returns": {
+              "2019": -0.002467915330727712,
+              "2020": 0.008090671313829812,
+              "2021": 0.0035032232949712737
+            }
+          },
+          {
+            "aggregate_mean": 0.01323412097408175,
+            "eligible": true,
+            "mode": "FIXED72",
+            "positive_years": 2,
+            "total_n": 343,
+            "worst_year_mean": -0.018937832237793006,
+            "year_counts": {
+              "2019": 90,
+              "2020": 155,
+              "2021": 98
+            },
+            "year_mean_net_returns": {
+              "2019": -0.018937832237793006,
+              "2020": 0.021458044154614716,
+              "2021": 0.029772566852511537
+            }
+          },
+          {
+            "aggregate_mean": 0.03734856042565645,
+            "eligible": true,
+            "mode": "FIXED168",
+            "positive_years": 2,
+            "total_n": 343,
+            "worst_year_mean": -0.03312506900278906,
+            "year_counts": {
+              "2019": 90,
+              "2020": 155,
+              "2021": 98
+            },
+            "year_mean_net_returns": {
+              "2019": -0.03312506900278906,
+              "2020": 0.0415538646349599,
+              "2021": 0.09541799405951422
+            }
+          },
+          {
+            "aggregate_mean": 0.0229777863637186,
+            "eligible": true,
+            "mode": "CHECKPOINT_SIGN",
+            "positive_years": 2,
+            "total_n": 343,
+            "worst_year_mean": -0.017525649323667118,
+            "year_counts": {
+              "2019": 90,
+              "2020": 155,
+              "2021": 98
+            },
+            "year_mean_net_returns": {
+              "2019": -0.017525649323667118,
+              "2020": 0.019924637409356214,
+              "2021": 0.06500377921872762
+            }
+          },
+          {
+            "aggregate_mean": 0.01959381211003611,
+            "eligible": true,
+            "mode": "CHECKPOINT_ACCEL",
+            "positive_years": 2,
+            "total_n": 343,
+            "worst_year_mean": -0.014924422163880976,
+            "year_counts": {
+              "2019": 90,
+              "2020": 155,
+              "2021": 98
+            },
+            "year_mean_net_returns": {
+              "2019": -0.014924422163880976,
+              "2020": 0.016012424549708984,
+              "2021": 0.05695867084986511
+            }
+          }
+        ],
+        "regime_key": "0|-1",
+        "selected": {
+          "aggregate_mean": 0.0040094972501029495,
+          "eligible": true,
+          "mode": "FIXED24",
+          "positive_years": 2,
+          "total_n": 343,
+          "worst_year_mean": -0.002467915330727712,
+          "year_counts": {
+            "2019": 90,
+            "2020": 155,
+            "2021": 98
+          },
+          "year_mean_net_returns": {
+            "2019": -0.002467915330727712,
+            "2020": 0.008090671313829812,
+            "2021": 0.0035032232949712737
+          }
+        }
+      },
+      {
+        "adaptive_slot_fraction": 0.0,
+        "mode_stats": [
+          {
+            "aggregate_mean": 0.0012844783105555274,
+            "eligible": true,
+            "mode": "FIXED24",
+            "positive_years": 1,
+            "total_n": 540,
+            "worst_year_mean": -0.010298904263873575,
+            "year_counts": {
+              "2019": 96,
+              "2020": 271,
+              "2021": 173
+            },
+            "year_mean_net_returns": {
+              "2019": -0.010298904263873575,
+              "2020": 0.006927780708505016,
+              "2021": -0.0011278351154509335
+            }
+          },
+          {
+            "aggregate_mean": 0.010619240796583083,
+            "eligible": true,
+            "mode": "FIXED72",
+            "positive_years": 1,
+            "total_n": 540,
+            "worst_year_mean": -0.013353603553579748,
+            "year_counts": {
+              "2019": 96,
+              "2020": 271,
+              "2021": 173
+            },
+            "year_mean_net_returns": {
+              "2019": -0.013353603553579748,
+              "2020": 0.02824161553982852,
+              "2021": -0.003682900809219702
+            }
+          },
+          {
+            "aggregate_mean": 0.007822475509648279,
+            "eligible": true,
+            "mode": "FIXED168",
+            "positive_years": 1,
+            "total_n": 540,
+            "worst_year_mean": -0.02478975628969386,
+            "year_counts": {
+              "2019": 96,
+              "2020": 271,
+              "2021": 173
+            },
+            "year_mean_net_returns": {
+              "2019": -0.02478975628969386,
+              "2020": 0.03336410950913334,
+              "2021": -0.014090868774303185
+            }
+          },
+          {
+            "aggregate_mean": 0.009096815404412484,
+            "eligible": true,
+            "mode": "CHECKPOINT_SIGN",
+            "positive_years": 2,
+            "total_n": 540,
+            "worst_year_mean": -0.013691777171950545,
+            "year_counts": {
+              "2019": 96,
+              "2020": 271,
+              "2021": 173
+            },
+            "year_mean_net_returns": {
+              "2019": -0.013691777171950545,
+              "2020": 0.015460764884393916,
+              "2021": 0.011773547070631456
+            }
+          },
+          {
+            "aggregate_mean": 0.008951472921126987,
+            "eligible": true,
+            "mode": "CHECKPOINT_ACCEL",
+            "positive_years": 2,
+            "total_n": 540,
+            "worst_year_mean": -0.010987390396488272,
+            "year_counts": {
+              "2019": 96,
+              "2020": 271,
+              "2021": 173
+            },
+            "year_mean_net_returns": {
+              "2019": -0.010987390396488272,
+              "2020": 0.016353745257422496,
+              "2021": 0.008420346189074876
+            }
+          }
+        ],
+        "regime_key": "0|0",
+        "selected": {
+          "aggregate_mean": 0.0012844783105555274,
+          "eligible": true,
+          "mode": "FIXED24",
+          "positive_years": 1,
+          "total_n": 540,
+          "worst_year_mean": -0.010298904263873575,
+          "year_counts": {
+            "2019": 96,
+            "2020": 271,
+            "2021": 173
+          },
+          "year_mean_net_returns": {
+            "2019": -0.010298904263873575,
+            "2020": 0.006927780708505016,
+            "2021": -0.0011278351154509335
+          }
+        }
+      },
+      {
+        "adaptive_slot_fraction": 0.0,
+        "mode_stats": [
+          {
+            "aggregate_mean": -0.0073542692442108955,
+            "eligible": true,
+            "mode": "FIXED24",
+            "positive_years": 1,
+            "total_n": 316,
+            "worst_year_mean": -0.018876611015676108,
+            "year_counts": {
+              "2019": 14,
+              "2020": 157,
+              "2021": 145
+            },
+            "year_mean_net_returns": {
+              "2019": -0.01884028640205212,
+              "2020": 0.004311614813574029,
+              "2021": -0.018876611015676108
+            }
+          },
+          {
+            "aggregate_mean": -0.006983977131515906,
+            "eligible": true,
+            "mode": "FIXED72",
+            "positive_years": 1,
+            "total_n": 316,
+            "worst_year_mean": -0.02371072128153002,
+            "year_counts": {
+              "2019": 14,
+              "2020": 157,
+              "2021": 145
+            },
+            "year_mean_net_returns": {
+              "2019": -0.02371072128153002,
+              "2020": 0.0042243515331136785,
+              "2021": -0.017504895629768653
+            }
+          },
+          {
+            "aggregate_mean": -0.003928080568209169,
+            "eligible": true,
+            "mode": "FIXED168",
+            "positive_years": 1,
+            "total_n": 316,
+            "worst_year_mean": -0.027633898788526814,
+            "year_counts": {
+              "2019": 14,
+              "2020": 157,
+              "2021": 145
+            },
+            "year_mean_net_returns": {
+              "2019": -0.027633898788526814,
+              "2020": -0.017488636471062094,
+              "2021": 0.013043565858220883
+            }
+          },
+          {
+            "aggregate_mean": -0.01023863209257075,
+            "eligible": true,
+            "mode": "CHECKPOINT_SIGN",
+            "positive_years": 1,
+            "total_n": 316,
+            "worst_year_mean": -0.03205751017763443,
+            "year_counts": {
+              "2019": 14,
+              "2020": 157,
+              "2021": 145
+            },
+            "year_mean_net_returns": {
+              "2019": -0.03205751017763443,
+              "2020": 0.003684047787156967,
+              "2021": -0.02320688345758013
+            }
+          },
+          {
+            "aggregate_mean": -0.0113143424216136,
+            "eligible": true,
+            "mode": "CHECKPOINT_ACCEL",
+            "positive_years": 1,
+            "total_n": 316,
+            "worst_year_mean": -0.03052918404075376,
+            "year_counts": {
+              "2019": 14,
+              "2020": 157,
+              "2021": 145
+            },
+            "year_mean_net_returns": {
+              "2019": -0.03052918404075376,
+              "2020": 0.006665580449686748,
+              "2021": -0.02892703282248389
+            }
+          }
+        ],
+        "regime_key": "0|1",
+        "selected": {
+          "aggregate_mean": -0.0073542692442108955,
+          "eligible": true,
+          "mode": "FIXED24",
+          "positive_years": 1,
+          "total_n": 316,
+          "worst_year_mean": -0.018876611015676108,
+          "year_counts": {
+            "2019": 14,
+            "2020": 157,
+            "2021": 145
+          },
+          "year_mean_net_returns": {
+            "2019": -0.01884028640205212,
+            "2020": 0.004311614813574029,
+            "2021": -0.018876611015676108
+          }
+        }
+      },
+      {
+        "adaptive_slot_fraction": 0.09,
+        "mode_stats": [
+          {
+            "aggregate_mean": 0.01327088953828273,
+            "eligible": true,
+            "mode": "FIXED24",
+            "positive_years": 2,
+            "total_n": 384,
+            "worst_year_mean": -0.019275497177149277,
+            "year_counts": {
+              "2019": 13,
+              "2020": 121,
+              "2021": 250
+            },
+            "year_mean_net_returns": {
+              "2019": -0.019275497177149277,
+              "2020": 0.012272462684461,
+              "2021": 0.015446540244734911
+            }
+          },
+          {
+            "aggregate_mean": 0.019225803357618615,
+            "eligible": true,
+            "mode": "FIXED72",
+            "positive_years": 2,
+            "total_n": 384,
+            "worst_year_mean": -0.0548060055733023,
+            "year_counts": {
+              "2019": 13,
+              "2020": 121,
+              "2021": 250
+            },
+            "year_mean_net_returns": {
+              "2019": -0.0548060055733023,
+              "2020": 0.02091290836727151,
+              "2021": 0.0222588985973545
+            }
+          },
+          {
+            "aggregate_mean": 0.03447923575546139,
+            "eligible": true,
+            "mode": "FIXED168",
+            "positive_years": 2,
+            "total_n": 384,
+            "worst_year_mean": -0.12755689143513102,
+            "year_counts": {
+              "2019": 13,
+              "2020": 121,
+              "2021": 250
+            },
+            "year_mean_net_returns": {
+              "2019": -0.12755689143513102,
+              "2020": 0.0255507921172734,
+              "2021": 0.04722648109025517
+            }
+          },
+          {
+            "aggregate_mean": 0.02837970256743409,
+            "eligible": true,
+            "mode": "CHECKPOINT_SIGN",
+            "positive_years": 2,
+            "total_n": 384,
+            "worst_year_mean": -0.033108642437939345,
+            "year_counts": {
+              "2019": 13,
+              "2020": 121,
+              "2021": 250
+            },
+            "year_mean_net_returns": {
+              "2019": -0.033108642437939345,
+              "2020": 0.021081107582102042,
+              "2021": 0.035109616480614204
+            }
+          },
+          {
+            "aggregate_mean": 0.02273211059135181,
+            "eligible": true,
+            "mode": "CHECKPOINT_ACCEL",
+            "positive_years": 2,
+            "total_n": 384,
+            "worst_year_mean": -0.033108642437939345,
+            "year_counts": {
+              "2019": 13,
+              "2020": 121,
+              "2021": 250
+            },
+            "year_mean_net_returns": {
+              "2019": -0.033108642437939345,
+              "2020": 0.01617627014225056,
+              "2021": 0.028808856526239927
+            }
+          }
+        ],
+        "regime_key": "1|-1",
+        "selected": {
+          "aggregate_mean": 0.01327088953828273,
+          "eligible": true,
+          "mode": "FIXED24",
+          "positive_years": 2,
+          "total_n": 384,
+          "worst_year_mean": -0.019275497177149277,
+          "year_counts": {
+            "2019": 13,
+            "2020": 121,
+            "2021": 250
+          },
+          "year_mean_net_returns": {
+            "2019": -0.019275497177149277,
+            "2020": 0.012272462684461,
+            "2021": 0.015446540244734911
+          }
+        }
+      },
+      {
+        "adaptive_slot_fraction": 0.09,
+        "mode_stats": [
+          {
+            "aggregate_mean": 0.01958860460948838,
+            "eligible": true,
+            "mode": "FIXED24",
+            "positive_years": 2,
+            "total_n": 494,
+            "worst_year_mean": -0.0212784353880974,
+            "year_counts": {
+              "2019": 3,
+              "2020": 200,
+              "2021": 291
+            },
+            "year_mean_net_returns": {
+              "2019": -0.0212784353880974,
+              "2020": 0.01971649845865253,
+              "2021": 0.019922014747495005
+            }
+          },
+          {
+            "aggregate_mean": 0.048630826354342856,
+            "eligible": true,
+            "mode": "FIXED72",
+            "positive_years": 2,
+            "total_n": 494,
+            "worst_year_mean": -0.052103207314280635,
+            "year_counts": {
+              "2019": 3,
+              "2020": 200,
+              "2021": 291
+            },
+            "year_mean_net_returns": {
+              "2019": -0.052103207314280635,
+              "2020": 0.041392632653665266,
+              "2021": 0.054644025121151754
+            }
+          },
+          {
+            "aggregate_mean": 0.11404925114358996,
+            "eligible": true,
+            "mode": "FIXED168",
+            "positive_years": 2,
+            "total_n": 494,
+            "worst_year_mean": -0.10360100377620263,
+            "year_counts": {
+              "2019": 3,
+              "2020": 200,
+              "2021": 291
+            },
+            "year_mean_net_returns": {
+              "2019": -0.10360100377620263,
+              "2020": 0.11317368434973421,
+              "2021": 0.11689483232410725
+            }
+          },
+          {
+            "aggregate_mean": 0.09609334929743935,
+            "eligible": true,
+            "mode": "CHECKPOINT_SIGN",
+            "positive_years": 2,
+            "total_n": 494,
+            "worst_year_mean": -0.0212784353880974,
+            "year_counts": {
+              "2019": 3,
+              "2020": 200,
+              "2021": 291
+            },
+            "year_mean_net_returns": {
+              "2019": -0.0212784353880974,
+              "2020": 0.08179464022528479,
+              "2021": 0.10713065915478477
+            }
+          },
+          {
+            "aggregate_mean": 0.07808092512960171,
+            "eligible": true,
+            "mode": "CHECKPOINT_ACCEL",
+            "positive_years": 2,
+            "total_n": 494,
+            "worst_year_mean": -0.0212784353880974,
+            "year_counts": {
+              "2019": 3,
+              "2020": 200,
+              "2021": 291
+            },
+            "year_mean_net_returns": {
+              "2019": -0.0212784353880974,
+              "2020": 0.05796134042114943,
+              "2021": 0.09293314170432183
+            }
+          }
+        ],
+        "regime_key": "1|0",
+        "selected": {
+          "aggregate_mean": 0.09609334929743935,
+          "eligible": true,
+          "mode": "CHECKPOINT_SIGN",
+          "positive_years": 2,
+          "total_n": 494,
+          "worst_year_mean": -0.0212784353880974,
+          "year_counts": {
+            "2019": 3,
+            "2020": 200,
+            "2021": 291
+          },
+          "year_mean_net_returns": {
+            "2019": -0.0212784353880974,
+            "2020": 0.08179464022528479,
+            "2021": 0.10713065915478477
+          }
+        }
+      },
+      {
+        "adaptive_slot_fraction": 0.09,
+        "mode_stats": [
+          {
+            "aggregate_mean": 0.00817357093449884,
+            "eligible": true,
+            "mode": "FIXED24",
+            "positive_years": 1,
+            "total_n": 266,
+            "worst_year_mean": -0.001849294521824539,
+            "year_counts": {
+              "2019": 0,
+              "2020": 97,
+              "2021": 169
+            },
+            "year_mean_net_returns": {
+              "2019": NaN,
+              "2020": -0.001849294521824539,
+              "2021": 0.013926339865051313
+            }
+          },
+          {
+            "aggregate_mean": 0.02030414497870739,
+            "eligible": true,
+            "mode": "FIXED72",
+            "positive_years": 1,
+            "total_n": 266,
+            "worst_year_mean": -0.012725667363527454,
+            "year_counts": {
+              "2019": 0,
+              "2020": 97,
+              "2021": 169
+            },
+            "year_mean_net_returns": {
+              "2019": NaN,
+              "2020": -0.012725667363527454,
+              "2021": 0.03926208460709071
+            }
+          },
+          {
+            "aggregate_mean": 0.03536292019668741,
+            "eligible": true,
+            "mode": "FIXED168",
+            "positive_years": 1,
+            "total_n": 266,
+            "worst_year_mean": -0.012064034357188287,
+            "year_counts": {
+              "2019": 0,
+              "2020": 97,
+              "2021": 169
+            },
+            "year_mean_net_returns": {
+              "2019": NaN,
+              "2020": -0.012064034357188287,
+              "2021": 0.06258430831340894
+            }
+          },
+          {
+            "aggregate_mean": 0.01761204845822999,
+            "eligible": true,
+            "mode": "CHECKPOINT_SIGN",
+            "positive_years": 2,
+            "total_n": 266,
+            "worst_year_mean": 0.01081317573720189,
+            "year_counts": {
+              "2019": 0,
+              "2020": 97,
+              "2021": 169
+            },
+            "year_mean_net_returns": {
+              "2019": NaN,
+              "2020": 0.01081317573720189,
+              "2021": 0.021514360020003506
+            }
+          },
+          {
+            "aggregate_mean": 0.020041257166820217,
+            "eligible": true,
+            "mode": "CHECKPOINT_ACCEL",
+            "positive_years": 2,
+            "total_n": 266,
+            "worst_year_mean": 0.010438759111866444,
+            "year_counts": {
+              "2019": 0,
+              "2020": 97,
+              "2021": 169
+            },
+            "year_mean_net_returns": {
+              "2019": NaN,
+              "2020": 0.010438759111866444,
+              "2021": 0.02555275013327298
+            }
+          }
+        ],
+        "regime_key": "1|1",
+        "selected": {
+          "aggregate_mean": 0.01761204845822999,
+          "eligible": true,
+          "mode": "CHECKPOINT_SIGN",
+          "positive_years": 2,
+          "total_n": 266,
+          "worst_year_mean": 0.01081317573720189,
+          "year_counts": {
+            "2019": 0,
+            "2020": 97,
+            "2021": 169
+          },
+          "year_mean_net_returns": {
+            "2019": NaN,
+            "2020": 0.01081317573720189,
+            "2021": 0.021514360020003506
+          }
+        }
+      },
+      {
+        "adaptive_slot_fraction": 0.18,
+        "mode_stats": [
+          {
+            "aggregate_mean": -0.004966033033815783,
+            "eligible": true,
+            "mode": "FIXED24",
+            "positive_years": 0,
+            "total_n": 376,
+            "worst_year_mean": -0.006379615658027756,
+            "year_counts": {
+              "2019": 76,
+              "2020": 181,
+              "2021": 119
+            },
+            "year_mean_net_returns": {
+              "2019": -0.004706632138617169,
+              "2020": -0.006379615658027756,
+              "2021": -0.0029816297821580297
+            }
+          },
+          {
+            "aggregate_mean": 0.016718686813056046,
+            "eligible": true,
+            "mode": "FIXED72",
+            "positive_years": 3,
+            "total_n": 376,
+            "worst_year_mean": 0.015393643572854679,
+            "year_counts": {
+              "2019": 76,
+              "2020": 181,
+              "2021": 119
+            },
+            "year_mean_net_returns": {
+              "2019": 0.019343093712124903,
+              "2020": 0.016487886930485498,
+              "2021": 0.015393643572854679
+            }
+          },
+          {
+            "aggregate_mean": 0.03752154311268486,
+            "eligible": true,
+            "mode": "FIXED168",
+            "positive_years": 3,
+            "total_n": 376,
+            "worst_year_mean": 0.015933818312686268,
+            "year_counts": {
+              "2019": 76,
+              "2020": 181,
+              "2021": 119
+            },
+            "year_mean_net_returns": {
+              "2019": 0.015933818312686268,
+              "2020": 0.043717371412583195,
+              "2021": 0.04188475456241844
+            }
+          },
+          {
+            "aggregate_mean": 0.014651825865237028,
+            "eligible": true,
+            "mode": "CHECKPOINT_SIGN",
+            "positive_years": 3,
+            "total_n": 376,
+            "worst_year_mean": 0.002207755536823596,
+            "year_counts": {
+              "2019": 76,
+              "2020": 181,
+              "2021": 119
+            },
+            "year_mean_net_returns": {
+              "2019": 0.002207755536823596,
+              "2020": 0.021093969149930586,
+              "2021": 0.012800745280614239
+            }
+          },
+          {
+            "aggregate_mean": 0.013141092877131727,
+            "eligible": true,
+            "mode": "CHECKPOINT_ACCEL",
+            "positive_years": 3,
+            "total_n": 376,
+            "worst_year_mean": 0.0023139801286255653,
+            "year_counts": {
+              "2019": 76,
+              "2020": 181,
+              "2021": 119
+            },
+            "year_mean_net_returns": {
+              "2019": 0.0023139801286255653,
+              "2020": 0.020284846979453618,
+              "2021": 0.009190177552478003
+            }
+          }
+        ],
+        "regime_key": "2|-1",
+        "selected": {
+          "aggregate_mean": 0.03752154311268486,
+          "eligible": true,
+          "mode": "FIXED168",
+          "positive_years": 3,
+          "total_n": 376,
+          "worst_year_mean": 0.015933818312686268,
+          "year_counts": {
+            "2019": 76,
+            "2020": 181,
+            "2021": 119
+          },
+          "year_mean_net_returns": {
+            "2019": 0.015933818312686268,
+            "2020": 0.043717371412583195,
+            "2021": 0.04188475456241844
+          }
+        }
+      },
+      {
+        "adaptive_slot_fraction": 0.18,
+        "mode_stats": [
+          {
+            "aggregate_mean": 0.0040996022822965906,
+            "eligible": true,
+            "mode": "FIXED24",
+            "positive_years": 3,
+            "total_n": 368,
+            "worst_year_mean": 0.001588917069122205,
+            "year_counts": {
+              "2019": 92,
+              "2020": 167,
+              "2021": 109
+            },
+            "year_mean_net_returns": {
+              "2019": 0.006095189658730021,
+              "2020": 0.001588917069122205,
+              "2021": 0.006261899456317211
+            }
+          },
+          {
+            "aggregate_mean": 0.02019393334542735,
+            "eligible": true,
+            "mode": "FIXED72",
+            "positive_years": 2,
+            "total_n": 368,
+            "worst_year_mean": -0.0018773789714988658,
+            "year_counts": {
+              "2019": 92,
+              "2020": 167,
+              "2021": 109
+            },
+            "year_mean_net_returns": {
+              "2019": 0.01959257557184763,
+              "2020": -0.0018773789714988658,
+              "2021": 0.054517181713280696
+            }
+          },
+          {
+            "aggregate_mean": 0.04274878830559535,
+            "eligible": true,
+            "mode": "FIXED168",
+            "positive_years": 3,
+            "total_n": 368,
+            "worst_year_mean": 0.006894982635241275,
+            "year_counts": {
+              "2019": 92,
+              "2020": 167,
+              "2021": 109
+            },
+            "year_mean_net_returns": {
+              "2019": 0.03542482246691983,
+              "2020": 0.006894982635241275,
+              "2021": 0.10386246173777225
+            }
+          },
+          {
+            "aggregate_mean": 0.020483217436956497,
+            "eligible": true,
+            "mode": "CHECKPOINT_SIGN",
+            "positive_years": 2,
+            "total_n": 368,
+            "worst_year_mean": -0.008083960614394673,
+            "year_counts": {
+              "2019": 92,
+              "2020": 167,
+              "2021": 109
+            },
+            "year_mean_net_returns": {
+              "2019": 0.022396946662107342,
+              "2020": -0.008083960614394673,
+              "2021": 0.06263602152743143
+            }
+          },
+          {
+            "aggregate_mean": 0.018002302277169802,
+            "eligible": true,
+            "mode": "CHECKPOINT_ACCEL",
+            "positive_years": 2,
+            "total_n": 368,
+            "worst_year_mean": -0.0062306525372720425,
+            "year_counts": {
+              "2019": 92,
+              "2020": 167,
+              "2021": 109
+            },
+            "year_mean_net_returns": {
+              "2019": 0.024626476749331924,
+              "2020": -0.0062306525372720425,
+              "2021": 0.04953881055765488
+            }
+          }
+        ],
+        "regime_key": "2|0",
+        "selected": {
+          "aggregate_mean": 0.04274878830559535,
+          "eligible": true,
+          "mode": "FIXED168",
+          "positive_years": 3,
+          "total_n": 368,
+          "worst_year_mean": 0.006894982635241275,
+          "year_counts": {
+            "2019": 92,
+            "2020": 167,
+            "2021": 109
+          },
+          "year_mean_net_returns": {
+            "2019": 0.03542482246691983,
+            "2020": 0.006894982635241275,
+            "2021": 0.10386246173777225
+          }
+        }
+      },
+      {
+        "adaptive_slot_fraction": 0.0,
+        "mode_stats": [
+          {
+            "aggregate_mean": 0.014015019858282617,
+            "eligible": false,
+            "mode": "FIXED24",
+            "positive_years": 3,
+            "total_n": 57,
+            "worst_year_mean": 0.008464603959328451,
+            "year_counts": {
+              "2019": 1,
+              "2020": 39,
+              "2021": 17
+            },
+            "year_mean_net_returns": {
+              "2019": 0.02939228360902943,
+              "2020": 0.008464603959328451,
+              "2021": 0.025843781994074718
+            }
+          },
+          {
+            "aggregate_mean": 0.08459836544210389,
+            "eligible": false,
+            "mode": "FIXED72",
+            "positive_years": 3,
+            "total_n": 57,
+            "worst_year_mean": 0.0454007507799346,
+            "year_counts": {
+              "2019": 1,
+              "2020": 39,
+              "2021": 17
+            },
+            "year_mean_net_returns": {
+              "2019": 0.07444504898647405,
+              "2020": 0.0454007507799346,
+              "2021": 0.17511955887035283
+            }
+          },
+          {
+            "aggregate_mean": 0.2069662529479687,
+            "eligible": false,
+            "mode": "FIXED168",
+            "positive_years": 3,
+            "total_n": 57,
+            "worst_year_mean": 0.01829415467692705,
+            "year_counts": {
+              "2019": 1,
+              "2020": 39,
+              "2021": 17
+            },
+            "year_mean_net_returns": {
+              "2019": 0.01829415467692705,
+              "2020": 0.04405310329333808,
+              "2021": 0.5918065432304179
+            }
+          },
+          {
+            "aggregate_mean": 0.18639651176226799,
+            "eligible": false,
+            "mode": "CHECKPOINT_SIGN",
+            "positive_years": 3,
+            "total_n": 57,
+            "worst_year_mean": 0.01829415467692705,
+            "year_counts": {
+              "2019": 1,
+              "2020": 39,
+              "2021": 17
+            },
+            "year_mean_net_returns": {
+              "2019": 0.01829415467692705,
+              "2020": 0.03942421856450396,
+              "2021": 0.5334566171621583
+            }
+          },
+          {
+            "aggregate_mean": 0.17142260537537438,
+            "eligible": false,
+            "mode": "CHECKPOINT_ACCEL",
+            "positive_years": 3,
+            "total_n": 57,
+            "worst_year_mean": 0.017539278460582567,
+            "year_counts": {
+              "2019": 1,
+              "2020": 39,
+              "2021": 17
+            },
+            "year_mean_net_returns": {
+              "2019": 0.01829415467692705,
+              "2020": 0.017539278460582567,
+              "2021": 0.5334566171621583
+            }
+          }
+        ],
+        "regime_key": "2|1",
+        "selected": {
+          "aggregate_mean": 0.2069662529479687,
+          "eligible": false,
+          "mode": "FIXED168",
+          "positive_years": 3,
+          "total_n": 57,
+          "worst_year_mean": 0.01829415467692705,
+          "year_counts": {
+            "2019": 1,
+            "2020": 39,
+            "2021": 17
+          },
+          "year_mean_net_returns": {
+            "2019": 0.01829415467692705,
+            "2020": 0.04405310329333808,
+            "2021": 0.5918065432304179
+          }
+        }
+      },
+      {
+        "adaptive_slot_fraction": 0.09,
+        "mode_stats": [
+          {
+            "aggregate_mean": 0.004733849202701209,
+            "eligible": true,
+            "mode": "FIXED24",
+            "positive_years": 2,
+            "total_n": 453,
+            "worst_year_mean": 0.004310615281033179,
+            "year_counts": {
+              "2019": 398,
+              "2020": 0,
+              "2021": 55
+            },
+            "year_mean_net_returns": {
+              "2019": 0.004792336302429203,
+              "2020": NaN,
+              "2021": 0.004310615281033179
+            }
+          },
+          {
+            "aggregate_mean": 0.003881946470941005,
+            "eligible": true,
+            "mode": "FIXED72",
+            "positive_years": 1,
+            "total_n": 453,
+            "worst_year_mean": -0.009542522530408059,
+            "year_counts": {
+              "2019": 398,
+              "2020": 0,
+              "2021": 55
+            },
+            "year_mean_net_returns": {
+              "2019": 0.005737086659569642,
+              "2020": NaN,
+              "2021": -0.009542522530408059
+            }
+          },
+          {
+            "aggregate_mean": -0.006706099275961442,
+            "eligible": true,
+            "mode": "FIXED168",
+            "positive_years": 0,
+            "total_n": 453,
+            "worst_year_mean": -0.04507116882331109,
+            "year_counts": {
+              "2019": 398,
+              "2020": 0,
+              "2021": 55
+            },
+            "year_mean_net_returns": {
+              "2019": -0.0014043936852472974,
+              "2020": NaN,
+              "2021": -0.04507116882331109
+            }
+          },
+          {
+            "aggregate_mean": 0.0006608860457633886,
+            "eligible": true,
+            "mode": "CHECKPOINT_SIGN",
+            "positive_years": 1,
+            "total_n": 453,
+            "worst_year_mean": -0.023191512036323986,
+            "year_counts": {
+              "2019": 398,
+              "2020": 0,
+              "2021": 55
+            },
+            "year_mean_net_returns": {
+              "2019": 0.003957071710373449,
+              "2020": NaN,
+              "2021": -0.023191512036323986
+            }
+          },
+          {
+            "aggregate_mean": 0.004363715024671537,
+            "eligible": true,
+            "mode": "CHECKPOINT_ACCEL",
+            "positive_years": 1,
+            "total_n": 453,
+            "worst_year_mean": -0.008525142455726888,
+            "year_counts": {
+              "2019": 398,
+              "2020": 0,
+              "2021": 55
+            },
+            "year_mean_net_returns": {
+              "2019": 0.006144838545832122,
+              "2020": NaN,
+              "2021": -0.008525142455726888
+            }
+          }
+        ],
+        "regime_key": "nan",
+        "selected": {
+          "aggregate_mean": 0.004733849202701209,
+          "eligible": true,
+          "mode": "FIXED24",
+          "positive_years": 2,
+          "total_n": 453,
+          "worst_year_mean": 0.004310615281033179,
+          "year_counts": {
+            "2019": 398,
+            "2020": 0,
+            "2021": 55
+          },
+          "year_mean_net_returns": {
+            "2019": 0.004792336302429203,
+            "2020": NaN,
+            "2021": 0.004310615281033179
+          }
+        }
+      }
+    ],
+    "schema_version": "akah-regime-capital-horizon-map-v1"
+  }
+}

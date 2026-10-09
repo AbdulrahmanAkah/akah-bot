@@ -1,0 +1,346 @@
+{
+  "categorical_training_levels": {
+    "base_state": [
+      "CONFIRMED",
+      "EARLY_PROGRESS",
+      "UNCONFIRMED"
+    ],
+    "native_market_state_context": [
+      "RISK_OFF",
+      "RISK_ON",
+      "TRANSITION"
+    ]
+  },
+  "dropped_by_input_support_gate": [
+    {
+      "feature": "volatility_damage_margin_delta_from_prev",
+      "reason": "FIXED_INPUT_SUPPORT_GATE",
+      "train_nonmissing_coverage": 0.5399477806788512,
+      "train_unique": 4112
+    },
+    {
+      "feature": "b_margin_delta_from_prev",
+      "reason": "FIXED_INPUT_SUPPORT_GATE",
+      "train_nonmissing_coverage": 0.5399477806788512,
+      "train_unique": 4112
+    },
+    {
+      "feature": "b_condition_true_run_length",
+      "reason": "FIXED_INPUT_SUPPORT_GATE",
+      "train_nonmissing_coverage": 0.6195822454308094,
+      "train_unique": 13
+    },
+    {
+      "feature": "__bin_b_condition_now",
+      "reason": "FIXED_INPUT_SUPPORT_GATE",
+      "train_nonmissing_coverage": 0.6195822454308094,
+      "train_unique": 2
+    },
+    {
+      "feature": "__bin_b_condition_recovered_now",
+      "reason": "FIXED_INPUT_SUPPORT_GATE",
+      "train_nonmissing_coverage": 0.5399477806788512,
+      "train_unique": 2
+    },
+    {
+      "feature": "__ix_voldamage_x_atr",
+      "reason": "FIXED_INPUT_SUPPORT_GATE",
+      "train_nonmissing_coverage": 0.5399477806788512,
+      "train_unique": 4135
+    },
+    {
+      "feature": "__ix_market_RISK_OFF_x_voldamage",
+      "reason": "FIXED_INPUT_SUPPORT_GATE",
+      "train_nonmissing_coverage": 0.5399477806788512,
+      "train_unique": 51
+    },
+    {
+      "feature": "__ix_market_RISK_ON_x_voldamage",
+      "reason": "FIXED_INPUT_SUPPORT_GATE",
+      "train_nonmissing_coverage": 0.5399477806788512,
+      "train_unique": 2420
+    },
+    {
+      "feature": "__ix_market_TRANSITION_x_voldamage",
+      "reason": "FIXED_INPUT_SUPPORT_GATE",
+      "train_nonmissing_coverage": 0.5399477806788512,
+      "train_unique": 1654
+    }
+  ],
+  "feature_count": 30,
+  "feature_search_performed": false,
+  "features": [
+    "hours_since_entry",
+    "hours_since_first_memory_or_null",
+    "hours_since_first_memory_or_null__missing",
+    "progress_margin_delta_from_prev",
+    "structural_break_margin_delta_from_prev",
+    "a_margin_delta_from_prev",
+    "close_delta_from_prev_decision",
+    "R_delta_from_prev_decision",
+    "atr22_current",
+    "a_condition_true_run_length",
+    "__bin_memory_now",
+    "__bin_memory_seen",
+    "__bin_C_signal",
+    "__bin_A_signal",
+    "__bin_B_signal",
+    "__bin_a_condition_now",
+    "__bin_a_condition_recovered_now",
+    "__cat_base_state__CONFIRMED",
+    "__cat_base_state__EARLY_PROGRESS",
+    "__cat_base_state__UNCONFIRMED",
+    "__cat_native_market_state_context__RISK_OFF",
+    "__cat_native_market_state_context__RISK_ON",
+    "__cat_native_market_state_context__TRANSITION",
+    "__ix_progress_x_atr",
+    "__ix_structural_x_atr",
+    "__ix_memory_x_progress",
+    "__ix_memory_x_age",
+    "__ix_market_RISK_OFF_x_progress",
+    "__ix_market_RISK_ON_x_progress",
+    "__ix_market_TRANSITION_x_progress"
+  ],
+  "input_support_gate": {
+    "min_train_nonmissing_coverage": 0.65,
+    "min_train_unique": 2
+  },
+  "interaction_catalog_frozen": true,
+  "outcome_based_selection": false,
+  "provenance": [
+    {
+      "feature": "hours_since_entry",
+      "kind": "DIRECT_NUMERIC_CAUSAL_STATE",
+      "source_column": "hours_since_entry"
+    },
+    {
+      "feature": "hours_since_first_memory_or_null",
+      "kind": "DIRECT_NUMERIC_CAUSAL_STATE",
+      "source_column": "hours_since_first_memory_or_null"
+    },
+    {
+      "feature": "hours_since_first_memory_or_null__missing",
+      "kind": "MISSINGNESS_INDICATOR",
+      "source_column": "hours_since_first_memory_or_null"
+    },
+    {
+      "feature": "progress_margin_delta_from_prev",
+      "kind": "DIRECT_NUMERIC_CAUSAL_STATE",
+      "source_column": "progress_margin_delta_from_prev"
+    },
+    {
+      "feature": "structural_break_margin_delta_from_prev",
+      "kind": "DIRECT_NUMERIC_CAUSAL_STATE",
+      "source_column": "structural_break_margin_delta_from_prev"
+    },
+    {
+      "feature": "volatility_damage_margin_delta_from_prev",
+      "kind": "DIRECT_NUMERIC_CAUSAL_STATE",
+      "source_column": "volatility_damage_margin_delta_from_prev"
+    },
+    {
+      "feature": "a_margin_delta_from_prev",
+      "kind": "DIRECT_NUMERIC_CAUSAL_STATE",
+      "source_column": "a_margin_delta_from_prev"
+    },
+    {
+      "feature": "b_margin_delta_from_prev",
+      "kind": "DIRECT_NUMERIC_CAUSAL_STATE",
+      "source_column": "b_margin_delta_from_prev"
+    },
+    {
+      "feature": "close_delta_from_prev_decision",
+      "kind": "DIRECT_NUMERIC_CAUSAL_STATE",
+      "source_column": "close_delta_from_prev_decision"
+    },
+    {
+      "feature": "R_delta_from_prev_decision",
+      "kind": "DIRECT_NUMERIC_CAUSAL_STATE",
+      "source_column": "R_delta_from_prev_decision"
+    },
+    {
+      "feature": "atr22_current",
+      "kind": "DIRECT_NUMERIC_CAUSAL_STATE",
+      "source_column": "atr22_current"
+    },
+    {
+      "feature": "a_condition_true_run_length",
+      "kind": "DIRECT_ORDINAL_CAUSAL_STATE",
+      "source_column": "a_condition_true_run_length"
+    },
+    {
+      "feature": "b_condition_true_run_length",
+      "kind": "DIRECT_ORDINAL_CAUSAL_STATE",
+      "source_column": "b_condition_true_run_length"
+    },
+    {
+      "feature": "__bin_memory_now",
+      "kind": "DIRECT_BINARY_CAUSAL_STATE",
+      "source_column": "memory_now"
+    },
+    {
+      "feature": "__bin_memory_seen",
+      "kind": "DIRECT_BINARY_CAUSAL_STATE",
+      "source_column": "memory_seen"
+    },
+    {
+      "feature": "__bin_C_signal",
+      "kind": "DIRECT_BINARY_CAUSAL_STATE",
+      "source_column": "C_signal"
+    },
+    {
+      "feature": "__bin_A_signal",
+      "kind": "DIRECT_BINARY_CAUSAL_STATE",
+      "source_column": "A_signal"
+    },
+    {
+      "feature": "__bin_B_signal",
+      "kind": "DIRECT_BINARY_CAUSAL_STATE",
+      "source_column": "B_signal"
+    },
+    {
+      "feature": "__bin_a_condition_now",
+      "kind": "DIRECT_BINARY_CAUSAL_STATE",
+      "source_column": "a_condition_now"
+    },
+    {
+      "feature": "__bin_b_condition_now",
+      "kind": "DIRECT_BINARY_CAUSAL_STATE",
+      "source_column": "b_condition_now"
+    },
+    {
+      "feature": "__bin_a_condition_recovered_now",
+      "kind": "DIRECT_BINARY_CAUSAL_STATE",
+      "source_column": "a_condition_recovered_now"
+    },
+    {
+      "feature": "__bin_b_condition_recovered_now",
+      "kind": "DIRECT_BINARY_CAUSAL_STATE",
+      "source_column": "b_condition_recovered_now"
+    },
+    {
+      "category": "CONFIRMED",
+      "feature": "__cat_base_state__CONFIRMED",
+      "kind": "TRAIN_CATEGORY_ONE_HOT",
+      "source_column": "base_state"
+    },
+    {
+      "category": "EARLY_PROGRESS",
+      "feature": "__cat_base_state__EARLY_PROGRESS",
+      "kind": "TRAIN_CATEGORY_ONE_HOT",
+      "source_column": "base_state"
+    },
+    {
+      "category": "UNCONFIRMED",
+      "feature": "__cat_base_state__UNCONFIRMED",
+      "kind": "TRAIN_CATEGORY_ONE_HOT",
+      "source_column": "base_state"
+    },
+    {
+      "category": "RISK_OFF",
+      "feature": "__cat_native_market_state_context__RISK_OFF",
+      "kind": "TRAIN_CATEGORY_ONE_HOT",
+      "source_column": "native_market_state_context"
+    },
+    {
+      "category": "RISK_ON",
+      "feature": "__cat_native_market_state_context__RISK_ON",
+      "kind": "TRAIN_CATEGORY_ONE_HOT",
+      "source_column": "native_market_state_context"
+    },
+    {
+      "category": "TRANSITION",
+      "feature": "__cat_native_market_state_context__TRANSITION",
+      "kind": "TRAIN_CATEGORY_ONE_HOT",
+      "source_column": "native_market_state_context"
+    },
+    {
+      "dependencies": [
+        "progress_margin_delta_from_prev",
+        "atr22_current"
+      ],
+      "feature": "__ix_progress_x_atr",
+      "kind": "PREREGISTERED_INTERACTION"
+    },
+    {
+      "dependencies": [
+        "structural_break_margin_delta_from_prev",
+        "atr22_current"
+      ],
+      "feature": "__ix_structural_x_atr",
+      "kind": "PREREGISTERED_INTERACTION"
+    },
+    {
+      "dependencies": [
+        "volatility_damage_margin_delta_from_prev",
+        "atr22_current"
+      ],
+      "feature": "__ix_voldamage_x_atr",
+      "kind": "PREREGISTERED_INTERACTION"
+    },
+    {
+      "dependencies": [
+        "__memory_seen_numeric",
+        "progress_margin_delta_from_prev"
+      ],
+      "feature": "__ix_memory_x_progress",
+      "kind": "PREREGISTERED_INTERACTION"
+    },
+    {
+      "dependencies": [
+        "__memory_seen_numeric",
+        "hours_since_entry"
+      ],
+      "feature": "__ix_memory_x_age",
+      "kind": "PREREGISTERED_INTERACTION"
+    },
+    {
+      "dependencies": [
+        "__cat_native_market_state_context__RISK_OFF",
+        "progress_margin_delta_from_prev"
+      ],
+      "feature": "__ix_market_RISK_OFF_x_progress",
+      "kind": "PREREGISTERED_INTERACTION"
+    },
+    {
+      "dependencies": [
+        "__cat_native_market_state_context__RISK_OFF",
+        "volatility_damage_margin_delta_from_prev"
+      ],
+      "feature": "__ix_market_RISK_OFF_x_voldamage",
+      "kind": "PREREGISTERED_INTERACTION"
+    },
+    {
+      "dependencies": [
+        "__cat_native_market_state_context__RISK_ON",
+        "progress_margin_delta_from_prev"
+      ],
+      "feature": "__ix_market_RISK_ON_x_progress",
+      "kind": "PREREGISTERED_INTERACTION"
+    },
+    {
+      "dependencies": [
+        "__cat_native_market_state_context__RISK_ON",
+        "volatility_damage_margin_delta_from_prev"
+      ],
+      "feature": "__ix_market_RISK_ON_x_voldamage",
+      "kind": "PREREGISTERED_INTERACTION"
+    },
+    {
+      "dependencies": [
+        "__cat_native_market_state_context__TRANSITION",
+        "progress_margin_delta_from_prev"
+      ],
+      "feature": "__ix_market_TRANSITION_x_progress",
+      "kind": "PREREGISTERED_INTERACTION"
+    },
+    {
+      "dependencies": [
+        "__cat_native_market_state_context__TRANSITION",
+        "volatility_damage_margin_delta_from_prev"
+      ],
+      "feature": "__ix_market_TRANSITION_x_voldamage",
+      "kind": "PREREGISTERED_INTERACTION"
+    }
+  ]
+}

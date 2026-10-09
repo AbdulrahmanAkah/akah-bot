@@ -1,0 +1,39 @@
+{
+  "authority_bindings": {
+    "failed_recovery_report_sha256": "C198547EFE1E881CB8C86FAF88AB0F0C1F5A97BCDE31ECE1B15E0011722EABF4",
+    "trigger_v2_sha256": "3CC049B5E38851A13B73CC7C0B36128EF906BE6A9AAFB97CCED85C36CCD9CE94"
+  },
+  "branch": "research/rd48-cross-venue-price-level-basis-direct-utility-v1",
+  "evidence": [
+    {
+      "path": "governance/trigger_v2_shadow_integration_recovery_v2.json",
+      "sha256": "755726A562DFE8565EF068C41B78BFD849CE1748C94CE2CA6BE6D37A3CDB91EC"
+    },
+    {
+      "path": "src/spotbot/research/rd27_later_trigger_v2_shadow_replay.py",
+      "sha256": "AC8E88D9C49F811190F7158CE75159C0E546ED6C8FAB51A2E5F011740C6BD9DB"
+    },
+    {
+      "path": "tests/research/test_rd27_later_trigger_v2_shadow_replay.py",
+      "sha256": "17105BEA6B2CA3CFFB9CBA71D4DD7AAA6BE4235DE0767E11392E1FE7BEDD6349"
+    }
+  ],
+  "firewall": {},
+  "governed_schema_version": "akah-provenance-phase-governed-v1",
+  "next_bottleneck": "CAUSAL_EXIT_BRAIN_LATER_TRIGGER_V2_SHADOW_REPLAY_EMPIRICAL_PARITY_V1",
+  "north_star_effect": "Validates the independent V2 shadow replay composition under the actual frozen memory contract and clears it for real-cohort parity.",
+  "objective": "Recover V2 shadow replay integration from the closed fixture-assumption failure by preserving the frozen memory contract, correcting only intended synthetic entry prices and import ordering, then requiring targeted and wide RD27 validation.",
+  "resolution_class": "V2_SHADOW_REPLAY_INTEGRATION_RECOVERED_V2",
+  "state_updates": {
+    "actual_exit_authority": false,
+    "economic_test_authorized": false,
+    "later_trigger_v2_native_lifecycle_replay_mutated": false,
+    "later_trigger_v2_shadow_replay_integration": "PASS_RECOVERED_V2",
+    "later_trigger_v2_shadow_replay_integration_recovery_v2": "PASS"
+  },
+  "status": "PASS",
+  "summary": "Recovery V2 corrected the synthetic fixture memory-timing assumption without changing Memory, Trigger V2 or shadow-replay logic. Ruff, targeted tests, wide RD27 regression and protected-source parity passed.",
+  "task_id": "CAUSAL_EXIT_BRAIN_LATER_TRIGGER_V2_SHADOW_REPLAY_INTEGRATION_RECOVERY_V2",
+  "task_start_head": "670c2153c394dcd2d9310cd0c931b4aba3cf92f8",
+  "task_start_revision": 171
+}

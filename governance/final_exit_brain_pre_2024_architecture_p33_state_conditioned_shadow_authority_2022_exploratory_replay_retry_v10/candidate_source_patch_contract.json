@@ -1,0 +1,284 @@
+{
+  "source_observer_path": "C:\\Users\\abdul\\Downloads\\EAA_EXIT_BRAIN_P13_2022_CAUSAL_STATIC_SHADOW_SAME_PAIR_GUARD_OBSERVER_20260914_033012.py",
+  "source_observer_sha256": "7EE2F3565D48C3ACCA02A3C242A57DDFDF649E2A8E230675F4F55574AEA7B445",
+  "baseline_observer_copy": "C:\\Users\\abdul\\Downloads\\AKAH_P33_RETRY_V10_P13_BASELINE_OBSERVER.py",
+  "baseline_observer_sha256": "7EE2F3565D48C3ACCA02A3C242A57DDFDF649E2A8E230675F4F55574AEA7B445",
+  "candidate_observer_copy": "C:\\Users\\abdul\\Downloads\\AKAH_P33_RETRY_V10_CANDIDATE_OBSERVER.py",
+  "candidate_observer_sha256": "BDF81467C48A0583A8FBF27D608E2A7BC1C5B7453346310C6788B248E9EE3F5A",
+  "sandbox_repo": "C:\\Users\\abdul\\Downloads\\AKAH_P33_RETRY_V10_P31_SANDBOX\\repo",
+  "sandbox_execution_head": "b3142d0135d393088ab3fe55c53b0e28ec7574cb",
+  "p31_authority_head": "b3142d0135d393088ab3fe55c53b0e28ec7574cb",
+  "historical_source_materialization": [
+    {
+      "path": "src/spotbot/research/rd26_exit_architecture.py",
+      "git_object_sha256": "1290748EA7E8A0343C1A15CEDFC1220AA423F04C11FDD558311B06AC7DA90359",
+      "sandbox_physical_sha256": "1290748EA7E8A0343C1A15CEDFC1220AA423F04C11FDD558311B06AC7DA90359",
+      "authority_sha256": "1290748EA7E8A0343C1A15CEDFC1220AA423F04C11FDD558311B06AC7DA90359",
+      "exact": true
+    },
+    {
+      "path": "src/spotbot/research/rd27_lifecycle_replay.py",
+      "git_object_sha256": "82E2BF09E1A74A101580C625E0F71987484A9368F597FDD7515E4B31F4E0B425",
+      "sandbox_physical_sha256": "82E2BF09E1A74A101580C625E0F71987484A9368F597FDD7515E4B31F4E0B425",
+      "authority_sha256": "82E2BF09E1A74A101580C625E0F71987484A9368F597FDD7515E4B31F4E0B425",
+      "exact": true
+    },
+    {
+      "path": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "git_object_sha256": "EE205CDA74D70A530734BBFB4843C2DBFC8BF950122254AA2ACEB8766A90F9AD",
+      "sandbox_physical_sha256": "EE205CDA74D70A530734BBFB4843C2DBFC8BF950122254AA2ACEB8766A90F9AD",
+      "authority_sha256": "EE205CDA74D70A530734BBFB4843C2DBFC8BF950122254AA2ACEB8766A90F9AD",
+      "exact": true
+    }
+  ],
+  "data_dependency_authority": {
+    "canonical_data_root": "C:\\SIRAJ\\Repositories\\spot-speculation-bot\\data",
+    "sandbox_data_root": "C:\\Users\\abdul\\Downloads\\AKAH_P33_RETRY_V10_P31_SANDBOX\\repo\\data",
+    "raw_root_preflight_path": "C:\\Users\\abdul\\Downloads\\AKAH_REV245_P33_RETRY_V2_RAW_ROOT_AUTHORITY_PREFLIGHT.json",
+    "raw_root_preflight_sha256": "966C5AF7E0C6755F9A3E4A254736835EC26503955CC00650297446F20B1B8420",
+    "required_paths": [
+      "C:\\SIRAJ\\Repositories\\spot-speculation-bot\\data\\raw\\rd16b\\kucoin",
+      "C:\\SIRAJ\\Repositories\\spot-speculation-bot\\data\\research\\rd18_p3x_a3b_runtime\\effective-operational-membership.csv"
+    ],
+    "top_level_child_count": 4,
+    "binding": "WINDOWS_DIRECTORY_JUNCTION_COMPLETE_DATA_TREE"
+  },
+  "function_name": "external_full_adaptive_replay",
+  "shadow_admission_invariant_line": 448,
+  "shadow_admission_invariant_source": "need(pair not in shadows, f'SHADOW_ALREADY_ACTIVE_ON_ADMISSION={pair}:{timestamp}')",
+  "pair_name": "pair",
+  "shadows_name": "shadows",
+  "entry_state_expression": "entry_state",
+  "entry_state_assignment_line": 335,
+  "entry_state_assignment_source": "entry_state = rd27._state_at(state_lookup, signal_time)",
+  "target_shadow_creation_if_line": 447,
+  "target_shadow_creation_if_test_before": "shadow_guard_enabled",
+  "target_shadow_creation_if_body_source": "need(pair not in shadows, f'SHADOW_ALREADY_ACTIVE_ON_ADMISSION={pair}:{timestamp}')\nshadows[pair] = {'pair': pair, 'entry_time': timestamp, 'entry_price': entry_price, 'max_exit_time': timestamp + pd.Timedelta(hours=168), 'source_event_key': event_key}",
+  "direct_shadow_creation_mutations": [
+    "shadows[pair] = {'pair': pair, 'entry_time': timestamp, 'entry_price': entry_price, 'max_exit_time': timestamp + pd.Timedelta(hours=168), 'source_event_key': event_key}"
+  ],
+  "direct_shadow_release_mutations": [],
+  "distance_from_admission_invariant": -1,
+  "eligible_creation_if_count": 1,
+  "all_creation_if_candidate_count": 1,
+  "shadow_creation_if_test_patch_count": 1,
+  "patched_shadow_creation_if_test": "shadow_guard_enabled and entry_state != 'TRANSITION'",
+  "candidate_semantic_change": "ONLY_EXISTING_P13_SHADOW_CREATION_AUTHORITY_IF_TEST_AND_ENTRY_STATE_NOT_TRANSITION",
+  "patch_selector_mode": "EXACT_SHADOW_CONTAINER_FROM_ADMISSION_INVARIANT_PLUS_DIRECT_CREATION_MUTATION",
+  "single_if_test_ast_delta_proof": true,
+  "target_if_body_ast_equivalent_before_after": true,
+  "direct_transition_admission_ablation_count_by_construction": 0,
+  "baseline_wrapper_binding": {
+    "phase": "P13_BASELINE_REPLAY",
+    "canonical_wrapper_path": "C:\\Users\\abdul\\Downloads\\EAA_EXIT_BRAIN_P13_2022_CAUSAL_STATIC_SHADOW_SAME_PAIR_GUARD_EXECUTION_V1.ps1",
+    "canonical_wrapper_sha256": "FB805EBA435F63E0B7DAA27A59CCA081D00A40DF3A6A5033769D4910FA64A4AC",
+    "wrapper_copy_path": "C:\\Users\\abdul\\Downloads\\AKAH_P33_RETRY_V10_P31_SANDBOX\\p13_baseline_wrapper_authority_bound.ps1",
+    "wrapper_copy_sha256": "604B5287D673D0575A7860B7F247FB398BA58C531872ACF4A916316CA32BB461",
+    "observer_target_path": "C:\\Users\\abdul\\Downloads\\AKAH_P33_RETRY_V10_P13_BASELINE_OBSERVER.py",
+    "observer_target_sha256_pre_execution": "7EE2F3565D48C3ACCA02A3C242A57DDFDF649E2A8E230675F4F55574AEA7B445",
+    "repo_authority_binding": {
+      "mode": "EXACT_CANONICAL_REPO_PATH_REPLACEMENT",
+      "canonical_repo": "C:\\SIRAJ\\Repositories\\spot-speculation-bot",
+      "sandbox_repo": "C:\\Users\\abdul\\Downloads\\AKAH_P33_RETRY_V10_P31_SANDBOX\\repo",
+      "replacement_count": 1
+    },
+    "embedded_observer": {
+      "embedded_observer_found": true,
+      "embedded_observer_replaced": true,
+      "quote_kind": "single"
+    },
+    "observer_binding_mode": "CANONICAL_WRAPPER_EMBEDDED_PYTHON_HERE_STRING",
+    "invocation_binding_mode": "CANONICAL_P13_WRAPPER_UNMODIFIED_EXCEPT_REPO_AUTHORITY_AND_OPTIONAL_EXPECTED_HEAD_ASSERTION",
+    "execution_head": "b3142d0135d393088ab3fe55c53b0e28ec7574cb",
+    "observer_cli_schema_flags": [
+      "--repo-root",
+      "--raw-root",
+      "--output-dir",
+      "--p9-primary",
+      "--pair-set-sha",
+      "--observer-sha"
+    ],
+    "expected_head_replacements": []
+  },
+  "candidate_wrapper_binding": {
+    "phase": "P33_CANDIDATE_REPLAY",
+    "canonical_wrapper_path": "C:\\Users\\abdul\\Downloads\\EAA_EXIT_BRAIN_P13_2022_CAUSAL_STATIC_SHADOW_SAME_PAIR_GUARD_EXECUTION_V1.ps1",
+    "canonical_wrapper_sha256": "FB805EBA435F63E0B7DAA27A59CCA081D00A40DF3A6A5033769D4910FA64A4AC",
+    "wrapper_copy_path": "C:\\Users\\abdul\\Downloads\\AKAH_P33_RETRY_V10_P31_SANDBOX\\p33_candidate_wrapper_authority_bound.ps1",
+    "wrapper_copy_sha256": "CA6F6BC807BC737B3728CB8581295F3264000B1ED8EA771D1B4E105D4A6F1921",
+    "observer_target_path": "C:\\Users\\abdul\\Downloads\\AKAH_P33_RETRY_V10_CANDIDATE_OBSERVER.py",
+    "observer_target_sha256_pre_execution": "BDF81467C48A0583A8FBF27D608E2A7BC1C5B7453346310C6788B248E9EE3F5A",
+    "repo_authority_binding": {
+      "mode": "EXACT_CANONICAL_REPO_PATH_REPLACEMENT",
+      "canonical_repo": "C:\\SIRAJ\\Repositories\\spot-speculation-bot",
+      "sandbox_repo": "C:\\Users\\abdul\\Downloads\\AKAH_P33_RETRY_V10_P31_SANDBOX\\repo",
+      "replacement_count": 1
+    },
+    "embedded_observer": {
+      "embedded_observer_found": true,
+      "embedded_observer_replaced": true,
+      "quote_kind": "single"
+    },
+    "observer_binding_mode": "CANONICAL_WRAPPER_EMBEDDED_PYTHON_HERE_STRING",
+    "invocation_binding_mode": "CANONICAL_P13_WRAPPER_UNMODIFIED_EXCEPT_REPO_AUTHORITY_AND_OPTIONAL_EXPECTED_HEAD_ASSERTION",
+    "execution_head": "b3142d0135d393088ab3fe55c53b0e28ec7574cb",
+    "observer_cli_schema_flags": [
+      "--repo-root",
+      "--raw-root",
+      "--output-dir",
+      "--p9-primary",
+      "--pair-set-sha",
+      "--observer-sha"
+    ],
+    "expected_head_replacements": []
+  },
+  "github_sync_revision_253_verified_remote_commit": "2e842ee12072cf46dab381ec9634cdb9fac10ce4",
+  "recovery_provenance": {
+    "recovery_source_task": "FINAL_EXIT_BRAIN_PRE_2024_ARCHITECTURE_P33_STATE_CONDITIONED_SHADOW_AUTHORITY_2022_EXPLORATORY_REPLAY_RETRY_V6",
+    "baseline_result_sha256": "B678C5F43ADF90788746FB4FDAA8E7E0D5535A294D276D6F56B31AEC95F05277",
+    "candidate_result_sha256": "28A4ED1DDD357535B53000BC1DAE86DF01E4F0D1F8A8C91A9F3CDD14ADC65FDB",
+    "baseline_capture_dir": "C:\\Users\\abdul\\Downloads\\AKAH_P33_RETRY_V6_P31_SANDBOX\\p13_baseline_replay_capture",
+    "candidate_capture_dir": "C:\\Users\\abdul\\Downloads\\AKAH_P33_RETRY_V6_P31_SANDBOX\\p33_candidate_replay_capture",
+    "baseline_observer_sha256": "7EE2F3565D48C3ACCA02A3C242A57DDFDF649E2A8E230675F4F55574AEA7B445",
+    "candidate_observer_sha256": "BDF81467C48A0583A8FBF27D608E2A7BC1C5B7453346310C6788B248E9EE3F5A",
+    "fresh_reconstruction_matches_v6_observers": true,
+    "primary_scientific_replay_reexecuted": false,
+    "recovery_mode": "EXACT_PRIOR_GOVERNED_REPLAY_CAPTURE_PLUS_PASSIVE_2022_DAILY_OCCUPANCY_INSTRUMENTATION",
+    "fresh_patch_report": {
+      "source_observer_path": "C:\\Users\\abdul\\Downloads\\EAA_EXIT_BRAIN_P13_2022_CAUSAL_STATIC_SHADOW_SAME_PAIR_GUARD_OBSERVER_20260914_033012.py",
+      "source_observer_sha256": "7EE2F3565D48C3ACCA02A3C242A57DDFDF649E2A8E230675F4F55574AEA7B445",
+      "baseline_observer_copy": "C:\\Users\\abdul\\Downloads\\AKAH_P33_RETRY_V10_P13_BASELINE_OBSERVER.py",
+      "baseline_observer_sha256": "7EE2F3565D48C3ACCA02A3C242A57DDFDF649E2A8E230675F4F55574AEA7B445",
+      "candidate_observer_copy": "C:\\Users\\abdul\\Downloads\\AKAH_P33_RETRY_V10_CANDIDATE_OBSERVER.py",
+      "candidate_observer_sha256": "BDF81467C48A0583A8FBF27D608E2A7BC1C5B7453346310C6788B248E9EE3F5A",
+      "sandbox_repo": "C:\\Users\\abdul\\Downloads\\AKAH_P33_RETRY_V10_P31_SANDBOX\\repo",
+      "sandbox_execution_head": "b3142d0135d393088ab3fe55c53b0e28ec7574cb",
+      "p31_authority_head": "b3142d0135d393088ab3fe55c53b0e28ec7574cb",
+      "historical_source_materialization": [
+        {
+          "path": "src/spotbot/research/rd26_exit_architecture.py",
+          "git_object_sha256": "1290748EA7E8A0343C1A15CEDFC1220AA423F04C11FDD558311B06AC7DA90359",
+          "sandbox_physical_sha256": "1290748EA7E8A0343C1A15CEDFC1220AA423F04C11FDD558311B06AC7DA90359",
+          "authority_sha256": "1290748EA7E8A0343C1A15CEDFC1220AA423F04C11FDD558311B06AC7DA90359",
+          "exact": true
+        },
+        {
+          "path": "src/spotbot/research/rd27_lifecycle_replay.py",
+          "git_object_sha256": "82E2BF09E1A74A101580C625E0F71987484A9368F597FDD7515E4B31F4E0B425",
+          "sandbox_physical_sha256": "82E2BF09E1A74A101580C625E0F71987484A9368F597FDD7515E4B31F4E0B425",
+          "authority_sha256": "82E2BF09E1A74A101580C625E0F71987484A9368F597FDD7515E4B31F4E0B425",
+          "exact": true
+        },
+        {
+          "path": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+          "git_object_sha256": "EE205CDA74D70A530734BBFB4843C2DBFC8BF950122254AA2ACEB8766A90F9AD",
+          "sandbox_physical_sha256": "EE205CDA74D70A530734BBFB4843C2DBFC8BF950122254AA2ACEB8766A90F9AD",
+          "authority_sha256": "EE205CDA74D70A530734BBFB4843C2DBFC8BF950122254AA2ACEB8766A90F9AD",
+          "exact": true
+        }
+      ],
+      "data_dependency_authority": {
+        "canonical_data_root": "C:\\SIRAJ\\Repositories\\spot-speculation-bot\\data",
+        "sandbox_data_root": "C:\\Users\\abdul\\Downloads\\AKAH_P33_RETRY_V10_P31_SANDBOX\\repo\\data",
+        "raw_root_preflight_path": "C:\\Users\\abdul\\Downloads\\AKAH_REV245_P33_RETRY_V2_RAW_ROOT_AUTHORITY_PREFLIGHT.json",
+        "raw_root_preflight_sha256": "966C5AF7E0C6755F9A3E4A254736835EC26503955CC00650297446F20B1B8420",
+        "required_paths": [
+          "C:\\SIRAJ\\Repositories\\spot-speculation-bot\\data\\raw\\rd16b\\kucoin",
+          "C:\\SIRAJ\\Repositories\\spot-speculation-bot\\data\\research\\rd18_p3x_a3b_runtime\\effective-operational-membership.csv"
+        ],
+        "top_level_child_count": 4,
+        "binding": "WINDOWS_DIRECTORY_JUNCTION_COMPLETE_DATA_TREE"
+      },
+      "function_name": "external_full_adaptive_replay",
+      "shadow_admission_invariant_line": 448,
+      "shadow_admission_invariant_source": "need(pair not in shadows, f'SHADOW_ALREADY_ACTIVE_ON_ADMISSION={pair}:{timestamp}')",
+      "pair_name": "pair",
+      "shadows_name": "shadows",
+      "entry_state_expression": "entry_state",
+      "entry_state_assignment_line": 335,
+      "entry_state_assignment_source": "entry_state = rd27._state_at(state_lookup, signal_time)",
+      "target_shadow_creation_if_line": 447,
+      "target_shadow_creation_if_test_before": "shadow_guard_enabled",
+      "target_shadow_creation_if_body_source": "need(pair not in shadows, f'SHADOW_ALREADY_ACTIVE_ON_ADMISSION={pair}:{timestamp}')\nshadows[pair] = {'pair': pair, 'entry_time': timestamp, 'entry_price': entry_price, 'max_exit_time': timestamp + pd.Timedelta(hours=168), 'source_event_key': event_key}",
+      "direct_shadow_creation_mutations": [
+        "shadows[pair] = {'pair': pair, 'entry_time': timestamp, 'entry_price': entry_price, 'max_exit_time': timestamp + pd.Timedelta(hours=168), 'source_event_key': event_key}"
+      ],
+      "direct_shadow_release_mutations": [],
+      "distance_from_admission_invariant": -1,
+      "eligible_creation_if_count": 1,
+      "all_creation_if_candidate_count": 1,
+      "shadow_creation_if_test_patch_count": 1,
+      "patched_shadow_creation_if_test": "shadow_guard_enabled and entry_state != 'TRANSITION'",
+      "candidate_semantic_change": "ONLY_EXISTING_P13_SHADOW_CREATION_AUTHORITY_IF_TEST_AND_ENTRY_STATE_NOT_TRANSITION",
+      "patch_selector_mode": "EXACT_SHADOW_CONTAINER_FROM_ADMISSION_INVARIANT_PLUS_DIRECT_CREATION_MUTATION",
+      "single_if_test_ast_delta_proof": true,
+      "target_if_body_ast_equivalent_before_after": true,
+      "direct_transition_admission_ablation_count_by_construction": 0,
+      "baseline_wrapper_binding": {
+        "phase": "P13_BASELINE_REPLAY",
+        "canonical_wrapper_path": "C:\\Users\\abdul\\Downloads\\EAA_EXIT_BRAIN_P13_2022_CAUSAL_STATIC_SHADOW_SAME_PAIR_GUARD_EXECUTION_V1.ps1",
+        "canonical_wrapper_sha256": "FB805EBA435F63E0B7DAA27A59CCA081D00A40DF3A6A5033769D4910FA64A4AC",
+        "wrapper_copy_path": "C:\\Users\\abdul\\Downloads\\AKAH_P33_RETRY_V10_P31_SANDBOX\\p13_baseline_wrapper_authority_bound.ps1",
+        "wrapper_copy_sha256": "604B5287D673D0575A7860B7F247FB398BA58C531872ACF4A916316CA32BB461",
+        "observer_target_path": "C:\\Users\\abdul\\Downloads\\AKAH_P33_RETRY_V10_P13_BASELINE_OBSERVER.py",
+        "observer_target_sha256_pre_execution": "7EE2F3565D48C3ACCA02A3C242A57DDFDF649E2A8E230675F4F55574AEA7B445",
+        "repo_authority_binding": {
+          "mode": "EXACT_CANONICAL_REPO_PATH_REPLACEMENT",
+          "canonical_repo": "C:\\SIRAJ\\Repositories\\spot-speculation-bot",
+          "sandbox_repo": "C:\\Users\\abdul\\Downloads\\AKAH_P33_RETRY_V10_P31_SANDBOX\\repo",
+          "replacement_count": 1
+        },
+        "embedded_observer": {
+          "embedded_observer_found": true,
+          "embedded_observer_replaced": true,
+          "quote_kind": "single"
+        },
+        "observer_binding_mode": "CANONICAL_WRAPPER_EMBEDDED_PYTHON_HERE_STRING",
+        "invocation_binding_mode": "CANONICAL_P13_WRAPPER_UNMODIFIED_EXCEPT_REPO_AUTHORITY_AND_OPTIONAL_EXPECTED_HEAD_ASSERTION",
+        "execution_head": "b3142d0135d393088ab3fe55c53b0e28ec7574cb",
+        "observer_cli_schema_flags": [
+          "--repo-root",
+          "--raw-root",
+          "--output-dir",
+          "--p9-primary",
+          "--pair-set-sha",
+          "--observer-sha"
+        ],
+        "expected_head_replacements": []
+      },
+      "candidate_wrapper_binding": {
+        "phase": "P33_CANDIDATE_REPLAY",
+        "canonical_wrapper_path": "C:\\Users\\abdul\\Downloads\\EAA_EXIT_BRAIN_P13_2022_CAUSAL_STATIC_SHADOW_SAME_PAIR_GUARD_EXECUTION_V1.ps1",
+        "canonical_wrapper_sha256": "FB805EBA435F63E0B7DAA27A59CCA081D00A40DF3A6A5033769D4910FA64A4AC",
+        "wrapper_copy_path": "C:\\Users\\abdul\\Downloads\\AKAH_P33_RETRY_V10_P31_SANDBOX\\p33_candidate_wrapper_authority_bound.ps1",
+        "wrapper_copy_sha256": "CA6F6BC807BC737B3728CB8581295F3264000B1ED8EA771D1B4E105D4A6F1921",
+        "observer_target_path": "C:\\Users\\abdul\\Downloads\\AKAH_P33_RETRY_V10_CANDIDATE_OBSERVER.py",
+        "observer_target_sha256_pre_execution": "BDF81467C48A0583A8FBF27D608E2A7BC1C5B7453346310C6788B248E9EE3F5A",
+        "repo_authority_binding": {
+          "mode": "EXACT_CANONICAL_REPO_PATH_REPLACEMENT",
+          "canonical_repo": "C:\\SIRAJ\\Repositories\\spot-speculation-bot",
+          "sandbox_repo": "C:\\Users\\abdul\\Downloads\\AKAH_P33_RETRY_V10_P31_SANDBOX\\repo",
+          "replacement_count": 1
+        },
+        "embedded_observer": {
+          "embedded_observer_found": true,
+          "embedded_observer_replaced": true,
+          "quote_kind": "single"
+        },
+        "observer_binding_mode": "CANONICAL_WRAPPER_EMBEDDED_PYTHON_HERE_STRING",
+        "invocation_binding_mode": "CANONICAL_P13_WRAPPER_UNMODIFIED_EXCEPT_REPO_AUTHORITY_AND_OPTIONAL_EXPECTED_HEAD_ASSERTION",
+        "execution_head": "b3142d0135d393088ab3fe55c53b0e28ec7574cb",
+        "observer_cli_schema_flags": [
+          "--repo-root",
+          "--raw-root",
+          "--output-dir",
+          "--p9-primary",
+          "--pair-set-sha",
+          "--observer-sha"
+        ],
+        "expected_head_replacements": []
+      },
+      "github_sync_revision_253_verified_remote_commit": "2e842ee12072cf46dab381ec9634cdb9fac10ce4"
+    }
+  }
+}

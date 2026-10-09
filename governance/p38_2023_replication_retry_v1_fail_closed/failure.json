@@ -1,0 +1,18 @@
+{
+  "schema_version": "akah-p38-technical-fail-closed-v1",
+  "task_id": "FINAL_EXIT_BRAIN_PRE_2024_ARCHITECTURE_P38_TRANSITION_ADMISSION_ONLY_2023_TEMPORAL_REPLICATION_EXECUTION_V1_RETRY_V1",
+  "status": "TECHNICAL_OR_PARITY_FAILURE_FAIL_CLOSED_NO_SCIENTIFIC_CONCLUSION",
+  "error_type": "RuntimeError",
+  "error": "P38_V1R8_HISTORICAL_SNAPSHOT_SHA_DRIFT=src/spotbot/research/rd27_lifecycle_replay.py:expected=82E2BF09E1A74A101580C625E0F71987484A9368F597FDD7515E4B31F4E0B425:actual=DD845A6A7B004B3C1E60515DBBEB254E179030F0F63E4D8C15334E726828F60E",
+  "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\abdul\\AppData\\Local\\Temp\\akah_p38_retry_v1r8_539976e0d5cd4375be98e16bfe11a5b7.py\", line 1697, in main\n    result, source_result_path, execution_audit, internal = execute_2023(\n                                                            ~~~~~~~~~~~~^\n        exec_path, prep_root, cli_binding\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"C:\\Users\\abdul\\AppData\\Local\\Temp\\akah_p38_retry_v1r8_539976e0d5cd4375be98e16bfe11a5b7.py\", line 1222, in execute_2023\n    hist_repo, source_audit = materialize_historical_source_snapshot(tmp)\n                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^\n  File \"C:\\Users\\abdul\\AppData\\Local\\Temp\\akah_p38_retry_v1r8_539976e0d5cd4375be98e16bfe11a5b7.py\", line 945, in materialize_historical_source_snapshot\n    die(\n    ~~~^\n        f\"P38_V1R8_HISTORICAL_SNAPSHOT_SHA_DRIFT={rel}:\"\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n        f\"expected={expected}:actual={actual}\"\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"C:\\Users\\abdul\\AppData\\Local\\Temp\\akah_p38_retry_v1r8_539976e0d5cd4375be98e16bfe11a5b7.py\", line 131, in die\n    raise RuntimeError(msg)\nRuntimeError: P38_V1R8_HISTORICAL_SNAPSHOT_SHA_DRIFT=src/spotbot/research/rd27_lifecycle_replay.py:expected=82E2BF09E1A74A101580C625E0F71987484A9368F597FDD7515E4B31F4E0B425:actual=DD845A6A7B004B3C1E60515DBBEB254E179030F0F63E4D8C15334E726828F60E\n",
+  "governance": {
+    "2023_new_raw_or_replay_accessed": true,
+    "2024_used_as_fresh_holdout": false,
+    "2024_used_to_define_new_runtime_rule": false,
+    "2025_accessed": false,
+    "lookahead_or_future_information_used": false,
+    "pair_or_event_identity_used_as_runtime_rule": false,
+    "posthoc_outcome_threshold_search_used": false,
+    "production_changed": false
+  }
+}

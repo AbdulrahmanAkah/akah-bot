@@ -1,0 +1,168 @@
+{
+  "cost": {
+    "median_entry_cost_fraction": 0.00125,
+    "sample_count": 1000,
+    "source": "control-trades.csv"
+  },
+  "governor": {
+    "binding_mode": "DIRECT_GROSS_FRACTION",
+    "effective_cap_max": 0.9,
+    "effective_cap_min": 0.0,
+    "exposure_column": "gross_budget_fraction",
+    "legacy_selected": {
+      "continuous_mtm_max_drawdown": -0.19079247606398098,
+      "development_gate_pass": true,
+      "excess_log_x1": 0.6471289382329076,
+      "excess_log_x2": 0.6198880926269715,
+      "excess_pass": true,
+      "final_wealth_x1": 3.6589449042130644,
+      "final_wealth_x2": 2.9794982149046993,
+      "risk_mode": "BINARY_VOL",
+      "risk_pass": true,
+      "worst_annual_return": -0.07644949091360065
+    },
+    "observed_raw_max": 0.9,
+    "observed_raw_min": 0.0,
+    "result_path": "governance/abc_lifecycle_state_machine_governor_structural_factorial_fast_v1/governor_factorial_result.json",
+    "result_sha256": "AE30EB872D4FA600F959D696238E9C868E56A91DFA2A8B4976009EF3DC34378E",
+    "selected_governor": "BINARY_VOL",
+    "selected_populated_row_count": 1626,
+    "source_row_count": 1826,
+    "time_column": "action_time",
+    "timeline_path": "governance/abc_lifecycle_state_machine_governor_structural_factorial_fast_v1/selected_development_governor_timeline.csv",
+    "timeline_sha256": "6532B4501F2734EDE3F1D66DB931231C7915235AEEA3B8E654845A6F24341E2B",
+    "variant_filter_applied": true
+  },
+  "hard_cutoff_exclusive": "2024-01-01T00:00:00Z",
+  "missing_daily_raw_pairs": [
+    "BCHSV-USDT",
+    "DCK-USDT",
+    "FITFI-USDT",
+    "ISP-USDT",
+    "MYRIA-USDT",
+    "NKN-USDT",
+    "SFUND-USDT",
+    "SKEY-USDT",
+    "STRAX-USDT",
+    "SWEAT-USDT",
+    "TIME-USDT",
+    "VAI-USDT",
+    "VERSE-USDT",
+    "WAX-USDT",
+    "XEM-USDT",
+    "XEN-USDT"
+  ],
+  "narrow": {
+    "binding": "LOCAL_EXACT_HASH",
+    "max_snapshot_size": 6,
+    "pair_count": 28,
+    "path": "data/research/rd18_p3x_a3b_runtime/effective-operational-membership.csv",
+    "sha256": "F7D6012CE8CD691583B9B6276DDF36371BFE0BBD9B28F810B676AD0177FB559E",
+    "snapshot_count": 248
+  },
+  "raw_root": "data/raw/rd16b/kucoin",
+  "rd23_source": {
+    "path": "src/spotbot/research/rd23_multifamily_raw_edge.py",
+    "sha256": "6F23405F56BEC0B828130DA6BD57B606659F354892AF4278C9EC18DEEC704AF8"
+  },
+  "repository_contract_preflight": {
+    "checks": {
+      "control_cost_columns": [
+        "year",
+        "policy_id",
+        "portfolio_id",
+        "universe_id",
+        "cost_multiplier",
+        "pair",
+        "signal_time",
+        "entry_time",
+        "exit_time",
+        "holding_hours",
+        "exit_reason",
+        "entry_price",
+        "exit_price",
+        "quantity",
+        "entry_notional",
+        "exit_notional",
+        "entry_cost",
+        "exit_cost",
+        "gross_pnl",
+        "net_pnl",
+        "period_id",
+        "membership_rank",
+        "support_families",
+        "support_count",
+        "atr24_at_signal",
+        "high_water_at_exit",
+        "entry_market_state",
+        "exit_market_state",
+        "protection_floor_at_exit"
+      ],
+      "narrow_snapshot_count": 248,
+      "raw_sample_checked": 6,
+      "raw_sample_pass": 6,
+      "rd23_source_sha256": "6F23405F56BEC0B828130DA6BD57B606659F354892AF4278C9EC18DEEC704AF8",
+      "rd27_signatures": {
+        "apply_completed_bar_update": "(position: 'LifecyclePosition', *, decision: 'ExitDecision', completed_high: 'float') -> 'LifecyclePosition'",
+        "build_market_state_frame": "(raw: 'pd.DataFrame', *, cutoff: 'pd.Timestamp | None' = None) -> 'pd.DataFrame'",
+        "evaluate_adaptive_exit": "(position: 'LifecyclePosition', *, current_open_time: 'pd.Timestamp', current_open: 'float', current_low: 'float', prior_asset_close: 'float', market_state: 'str') -> 'ExitDecision'",
+        "new_lifecycle_position": "(*, pair: 'str', entry_time: 'pd.Timestamp', entry_price: 'float', atr24_at_signal: 'float') -> 'LifecyclePosition'"
+      },
+      "wide_snapshot_count": 257
+    },
+    "problems": [],
+    "status": "PASS"
+  },
+  "signal_materialization": {
+    "entry_time_semantics": "NEXT_1H_BAR_OPEN",
+    "family_event_counts": {
+      "events_MOMENTUM_ACCELERATION": 36399,
+      "events_MOMENTUM_BREAKOUT": 13849,
+      "events_RELATIVE_STRENGTH_ROTATION": 6393,
+      "events_VOLATILITY_EXPANSION": 14756,
+      "events_total": 60664
+    },
+    "forward_return_cache_read": false,
+    "hard_cutoff_exclusive": "2024-01-01T00:00:00Z",
+    "outcome_columns_read": false,
+    "qualified_families": [
+      "MOMENTUM_BREAKOUT",
+      "VOLATILITY_EXPANSION",
+      "RELATIVE_STRENGTH_ROTATION",
+      "MOMENTUM_ACCELERATION"
+    ],
+    "rows": 60664,
+    "scope_counts": {
+      "NARROW": 10569,
+      "WIDE": 50095
+    },
+    "signal_time_semantics": "CURRENT_COMPLETED_1H_BAR_DECISION_TIME",
+    "source": {
+      "path": "src/spotbot/research/rd23_multifamily_raw_edge.py",
+      "semantic_fragments_verified": [
+        "frame[\"momentum_breakout\"]",
+        "frame[\"volatility_expansion\"]",
+        "frame[\"momentum_acceleration\"]",
+        "FAMILY_RELATIVE_STRENGTH_ROTATION",
+        "entry_time = signal_time + pd.Timedelta(hours=1)"
+      ],
+      "sha256": "6F23405F56BEC0B828130DA6BD57B606659F354892AF4278C9EC18DEEC704AF8"
+    },
+    "status": "PASS_EXACT_RULE_REGENERATION_PRE2024",
+    "top20_pair_count": 300,
+    "wide_member_pair_count": 317
+  },
+  "status": "PASS",
+  "wide": {
+    "eligibility_path": "data/research/rd18_p1r2/corrected-weekly-eligibility.csv",
+    "eligibility_sha256": "E1AEE88885A479A0038B6574E7DE7F01A47E274B330EF88D9CB1606BC2CB98AB",
+    "max_snapshot_size": 317,
+    "membership_tiebreak_rank_source": "CORRECTED_WEEKLY_RANKINGS.LIQUIDITY_RANK",
+    "pair_count": 317,
+    "ranking_column": "liquidity_rank",
+    "ranking_path": "data/research/rd18_p1r2/corrected-weekly-rankings.csv",
+    "ranking_sha256": "DA5BF7A416DF988663D6357954096806531B8C08FC60680520AFEF0295B045EA",
+    "snapshot_count": 257,
+    "trading_rank_source": "DAILY_CAUSAL_RS7_OVER_SIGMA20"
+  }
+}

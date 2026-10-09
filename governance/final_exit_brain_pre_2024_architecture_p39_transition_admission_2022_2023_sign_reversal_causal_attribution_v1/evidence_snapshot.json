@@ -1,0 +1,47 @@
+{
+  "p19_2022_sha256": "221CC3BCF5E062CE36CE2BEE10E3A9EE22448A8A8E4EF54F01DAF331E8B52DE7",
+  "p38_2023_canonical_sha256": "AEFBBF145DE3B771C439773EF356A18A17669A54C0B8F2AAC297049AB557F36C",
+  "p38_2023_source_sha256": "2C18FDD45FBD4DD4163689DDC3CC27425479ABD95D5B722513BFAFF3548E2F7B",
+  "periods": {
+    "2022": {
+      "label": "2022",
+      "primary_endpoint": 5263.64279887882,
+      "direct_transition_control_trade_pnl": -8163.217282531882,
+      "direct_transition_ablation_effect": 8163.217282531882,
+      "downstream_portfolio_path_effect": -2899.574483653062,
+      "directly_ablated_trade_count": 173,
+      "source_paths": {
+        "direct_transition_pnl": "transition_ablation_lineage.directly_ablated_control_trade_pnl",
+        "directly_ablated_count": "transition_ablation_lineage.directly_ablated_control_trade_count",
+        "transition_blocker_pnl": "transition_ablation_lineage.control_only_by_treatment_blocker.TRANSITION_ADMISSION_ABLATED.sum_realized_pnl",
+        "reconstructed_endpoint": "exact_effect_decomposition.reconstructed_endpoint",
+        "reconciliation_error": "exact_effect_decomposition.reconciliation_error"
+      },
+      "reconstructed_endpoint": 5263.6427988787145,
+      "reconciliation_error": -1.0550138540565968e-10,
+      "p19_accounting_identity_endpoint": 5263.6427988787145,
+      "transition_blocker_event_count": 173,
+      "transition_blocker_sum_realized_pnl": -8163.217282531882
+    },
+    "2023": {
+      "label": "2023",
+      "primary_endpoint": -10190.915009873337,
+      "direct_transition_control_trade_pnl": 1489.0311650100994,
+      "direct_transition_ablation_effect": -1489.0311650100994,
+      "downstream_portfolio_path_effect": -8701.883844863238,
+      "directly_ablated_trade_count": 131,
+      "source_paths": {
+        "direct_transition_pnl": "transition_ablation_lineage.directly_ablated_control_trade_pnl",
+        "directly_ablated_count": "transition_ablation_lineage.directly_ablated_control_trade_count",
+        "transition_blocker_pnl": "transition_ablation_lineage.control_only_by_treatment_blocker.TRANSITION_ADMISSION_ABLATED.sum_realized_pnl",
+        "reconstructed_endpoint": "exact_effect_decomposition.reconstructed_endpoint",
+        "reconciliation_error": "exact_effect_decomposition.reconciliation_error"
+      },
+      "reconstructed_endpoint": -10190.915009873377,
+      "reconciliation_error": -4.001776687800884e-11,
+      "p19_accounting_identity_endpoint": -10190.915009873377,
+      "transition_blocker_event_count": 131,
+      "transition_blocker_sum_realized_pnl": 1489.0311650100994
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "2024_access": false,
+  "experiment_A": {
+    "actual_bootstrap_draws": 4999,
+    "all_decision_rows": true,
+    "calendar_block_weeks": [
+      4,
+      8
+    ],
+    "calibration_bootstrap_draws": 399,
+    "calibration_reps": 500,
+    "paired_loss_references": [
+      "STRUCTURAL",
+      "TRAIN_MEAN"
+    ],
+    "power_min": 0.8,
+    "primary_mue_fraction_of_reference_mse": 0.05,
+    "target": "P0_SIGNED_PLUS_ABS_P0_PIPELINE_CONTROL",
+    "trade_estimand": "EQUAL_TOTAL_WEIGHT_PER_LIFECYCLE",
+    "type1_upper95_max": 0.08
+  },
+  "experiment_B": {
+    "extra_edf_budget": 6.0,
+    "hard_safety": "UNCHANGED",
+    "holm_alpha": 0.05,
+    "model_L": "NONREDUNDANT_CORE_EVIDENCE_PLUS_FROZEN17_CUR_LAG1_LAG2",
+    "model_N": "MODEL_L_PLUS_4_FROZEN_INTERACTIONS",
+    "targets": [
+      "Y_CONTINUATION_ADVANTAGE",
+      "Y_MINUS_MAX_NEGATIVE_Y_0"
+    ]
+  },
+  "experiment_C": {
+    "conditional": true,
+    "context_columns": [
+      "btc_return_24h",
+      "btc_realized_vol_24h",
+      "breadth_positive_24h",
+      "relative_strength_24h",
+      "volume_regime_24h"
+    ],
+    "must_be_preexisting_governed_or_materialization_required": true
+  },
+  "feature_search": false,
+  "model_zoo": false,
+  "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_INFERENCE_POWER_CALIBRATION_AND_P0_REANALYSIS_V1",
+  "raw": false,
+  "replay": false,
+  "rev680_status_preserved": "NOT_PROVEN_UNDER_REV680_PROTOCOL",
+  "schema_version": "akah-rev680-expert-guided-value-qualification-mega-v1-protocol",
+  "status": "PASS_EXPERT_GUIDED_VALUE_QUALIFICATION_PROTOCOL_FROZEN",
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_EXPERT_GUIDED_VALUE_QUALIFICATION_PROTOCOL_FREEZE_V1",
+  "threshold_search": false,
+  "time_shift_as_primary_gate": false
+}

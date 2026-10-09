@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import math
+from collections.abc import Mapping, Sequence
 from dataclasses import dataclass, replace
 from typing import Any, Final
 
@@ -34,6 +35,30 @@ from spotbot.research.rd27_adaptive_lifecycle import (
     capital_admission_decision,
     evaluate_adaptive_exit,
     new_lifecycle_position,
+)
+from spotbot.research.rd27_async_exit_candidate_shadow import (
+    DEFAULT_ASYNC_EXIT_CANDIDATE_SHADOW_ENABLED,
+    AsyncExitCandidateShadow,
+)
+from spotbot.research.rd27_async_memory_shadow import (
+    DEFAULT_ASYNC_MEMORY_SHADOW_ENABLED,
+    AsyncMemoryObservation,
+    AsyncMemoryReplayShadow,
+)
+from spotbot.research.rd27_observable_later_trigger_predicate import (
+    DEFAULT_OBSERVABLE_LATER_TRIGGER_PREDICATE_ENABLED,
+    ObservableLaterTriggerPredicatePolicy,
+)
+from spotbot.research.rd27_observable_memory_adapter import (
+    DEFAULT_OBSERVABLE_ADAPTER_ENABLED,
+    ObservableMemoryAdapter,
+    ObservablePolicy,
+    PrimitiveRows,
+    no_observation_policy,
+)
+from spotbot.research.rd27_observable_memory_predicate import (
+    DEFAULT_OBSERVABLE_MEMORY_PREDICATE_ENABLED,
+    ObservableMemoryPredicatePolicy,
 )
 
 SCHEMA_VERSION: Final = "rd27-lifecycle-portfolio-replay-v1"
@@ -230,14 +255,77 @@ def replay_lifecycle_policy(
     state_frame: pd.DataFrame,
     replay_start: pd.Timestamp = DATA_START,
     replay_cutoff: pd.Timestamp = DATA_CUTOFF,
+    async_memory_shadow_enabled: bool = DEFAULT_ASYNC_MEMORY_SHADOW_ENABLED,
+    async_memory_observations: Sequence[AsyncMemoryObservation] = (),
+    async_memory_diagnostics: dict[str, Any] | None = None,
+    observable_adapter_enabled: bool = DEFAULT_OBSERVABLE_ADAPTER_ENABLED,
+    observable_primitive_rows: PrimitiveRows = (),
+    observable_symbol_bindings: Mapping[str, str] | None = None,
+    observable_policy: ObservablePolicy = no_observation_policy,
+    observable_adapter_diagnostics: dict[str, Any] | None = None,
+    observable_memory_predicate_enabled: bool = DEFAULT_OBSERVABLE_MEMORY_PREDICATE_ENABLED,
+    observable_memory_predicate_diagnostics: dict[str, Any] | None = None,
+    observable_later_trigger_predicate_enabled: bool = (
+        DEFAULT_OBSERVABLE_LATER_TRIGGER_PREDICATE_ENABLED
+    ),
+    observable_later_trigger_predicate_diagnostics: dict[str, Any] | None = None,
+    async_exit_candidate_shadow_enabled: bool = DEFAULT_ASYNC_EXIT_CANDIDATE_SHADOW_ENABLED,
+    async_exit_candidate_diagnostics: dict[str, Any] | None = None,
+    later_trigger_v2_shadow_hook: Any | None = None,
 ) -> tuple[pd.DataFrame, pd.DataFrame, dict[str, Any], dict[str, int]]:
-    """Replay one frozen RD27 policy; the control delegates exactly to RD26 TIME_FAIL."""
+    """Native trading output is unchanged; optional shadow summaries use a separate sink.
+
+    At open t, explicit observations marked completed/available at t refer only
+    to already completed information, not the current unfinished OHLC row.
+    Existing positions observe before native exits. New positions observe after
+    admission, before entry-bar exits. Each native close resets its sidecar.
+    No shadow return value participates in a native decision or trade field.
+    Disabled mode neither consumes observations nor touches the diagnostics sink.
+    The separately enabled observable adapter requires shadow mode. It selects
+    only 4H bars closed by t, after explicit observations and before native exits.
+    Its default policy emits nothing. No automatic symbol conversion is allowed.
+    The separately disabled memory predicate uses actual admission price and full
+    post-entry 4H bars only. It emits memory booleans, never a trigger or exit.
+    A separate default-disabled trigger adapter independently observes previous
+    eligible lows. The shadow router delegates candidate readiness to the generic
+    trigger API; not-ready candidates are diagnostics only, with no backfilling.
+    A separately disabled conjunction observes only accepted generic latch
+    transitions. It never supplies a return value to native trading code.
+    """
+    if type(async_memory_shadow_enabled) is not bool:
+        raise RD27ReplayError("async memory shadow switch must be boolean")
+    if type(observable_adapter_enabled) is not bool:
+        raise RD27ReplayError("observable adapter switch must be boolean")
+    if observable_adapter_enabled and not async_memory_shadow_enabled:
+        raise RD27ReplayError("observable adapter requires explicitly enabled async memory shadow")
+    if type(observable_memory_predicate_enabled) is not bool:
+        raise RD27ReplayError("observable memory predicate switch must be boolean")
+    if observable_memory_predicate_enabled:
+        if not observable_adapter_enabled or not async_memory_shadow_enabled:
+            raise RD27ReplayError("memory predicate requires explicitly enabled adapter and shadow")
+        if observable_policy is not no_observation_policy:
+            raise RD27ReplayError(
+                "memory predicate cannot be combined with a custom adapter policy",
+            )
+    if type(observable_later_trigger_predicate_enabled) is not bool:
+        raise RD27ReplayError("observable later-trigger predicate switch must be boolean")
+    if observable_later_trigger_predicate_enabled:
+        if not observable_adapter_enabled or not async_memory_shadow_enabled:
+            raise RD27ReplayError("later trigger requires explicitly enabled adapter and shadow")
+        if observable_policy is not no_observation_policy:
+            raise RD27ReplayError("later trigger cannot be combined with a custom adapter policy")
+    if type(async_exit_candidate_shadow_enabled) is not bool:
+        raise RD27ReplayError("exit candidate shadow switch must be boolean")
+    if async_exit_candidate_shadow_enabled and not observable_later_trigger_predicate_enabled:
+        raise RD27ReplayError("exit candidate requires explicitly enabled observable trigger")
     validate_policy_constants()
     router_enabled, adaptive_exit_enabled = policy_components(policy_id)
     if cost_multiplier not in COST_MULTIPLIERS:
         raise RD27ReplayError("unsupported cost multiplier")
 
     if policy_id == CONTROL_TIME_FAIL_72_FIXED_CAPITAL:
+        if async_memory_shadow_enabled:
+            raise RD27ReplayError("async memory hooks do not cover delegated RD26 control")
         if replay_start != DATA_START or replay_cutoff != DATA_CUTOFF:
             raise RD27ReplayError("RD26 control delegation requires the frozen full window")
         trades, daily, metrics, counters = rd26_replay_policy(
@@ -261,6 +349,41 @@ def replay_lifecycle_policy(
     replay_cutoff = _utc_timestamp(replay_cutoff)
     if replay_start >= replay_cutoff:
         raise RD27ReplayError("invalid replay window")
+
+    memory_predicate = (
+        ObservableMemoryPredicatePolicy(symbol_bindings=observable_symbol_bindings or {})
+        if observable_memory_predicate_enabled else None
+    )
+    observable_adapter = (
+        ObservableMemoryAdapter(
+            observable_primitive_rows,
+            symbol_bindings=observable_symbol_bindings or {},
+            policy=memory_predicate if memory_predicate is not None else observable_policy,
+        ) if observable_adapter_enabled else None
+    )
+    later_trigger_predicate = (
+        ObservableLaterTriggerPredicatePolicy(symbol_bindings=observable_symbol_bindings or {})
+        if observable_later_trigger_predicate_enabled else None
+    )
+    later_trigger_adapter = (
+        ObservableMemoryAdapter(
+            observable_primitive_rows, symbol_bindings=observable_symbol_bindings or {},
+            policy=later_trigger_predicate,
+        ) if later_trigger_predicate is not None else None
+    )
+    exit_candidate_shadow = (
+        AsyncExitCandidateShadow() if async_exit_candidate_shadow_enabled else None
+    )
+    async_shadow = (
+        AsyncMemoryReplayShadow(
+            async_memory_observations, replay_start=replay_start, replay_cutoff=replay_cutoff,
+            observable_adapter=observable_adapter,
+            memory_predicate=memory_predicate,
+            later_trigger_adapter=later_trigger_adapter,
+            later_trigger_predicate=later_trigger_predicate,
+            exit_candidate_shadow=exit_candidate_shadow,
+        ) if async_memory_shadow_enabled else None
+    )
 
     lookups = {pair: fast_lookup(frame) for pair, frame in frames.items()}
     state_lookup = build_state_lookup(state_frame)
@@ -313,9 +436,15 @@ def replay_lifecycle_policy(
 
     for timestamp in pd.date_range(replay_start, replay_cutoff, freq="h", inclusive="left"):
         pending_updates.clear()
+        if async_shadow is not None:
+            async_shadow.begin_timestamp(timestamp)
 
         for pair in sorted(list(positions)):
             position = positions[pair]
+            if later_trigger_v2_shadow_hook is not None:
+                later_trigger_v2_shadow_hook.observe_position(
+                    pair=pair, decision_time=timestamp
+                )
             bar = _bar_at(pair, timestamp, frames, lookups)
             if bar is None:
                 raise RD27ReplayError(f"open-position bar missing: {pair} {timestamp}")
@@ -383,6 +512,12 @@ def replay_lifecycle_policy(
                 )
                 cash += credit
                 trades.append(record)
+                if async_shadow is not None:
+                    async_shadow.close_position(pair, timestamp, exit_reason)
+                if later_trigger_v2_shadow_hook is not None:
+                    later_trigger_v2_shadow_hook.close_position(
+                        pair=pair, closed_at=timestamp
+                    )
                 del positions[pair]
                 pending_updates.pop(pair, None)
 
@@ -508,7 +643,15 @@ def replay_lifecycle_policy(
                 last_mark=entry_price,
             )
             positions[pair] = position
+            if later_trigger_v2_shadow_hook is not None:
+                later_trigger_v2_shadow_hook.sync_native_position(
+                    pair=pair,
+                    position=position,
+                    fallback_observed_through=replay_cutoff,
+                )
             counters["admitted_entries"] += 1
+            if async_shadow is not None:
+                async_shadow.open_position(pair, timestamp, entry_price=entry_price)
 
             if adaptive_exit_enabled:
                 prior_bar = _bar_at(
@@ -554,9 +697,18 @@ def replay_lifecycle_policy(
                     )
                     cash += credit
                     trades.append(record)
+                    if async_shadow is not None:
+                        async_shadow.close_position(pair, timestamp, reason)
+                    if later_trigger_v2_shadow_hook is not None:
+                        later_trigger_v2_shadow_hook.close_position(
+                            pair=pair, closed_at=timestamp
+                        )
                     del positions[pair]
                 else:
                     pending_updates[pair] = decision
+
+        if async_shadow is not None:
+            async_shadow.end_timestamp()
 
         for pair, position in positions.items():
             bar = _bar_at(pair, timestamp, frames, lookups)
@@ -633,4 +785,24 @@ def replay_lifecycle_policy(
             ),
         }
     )
+    if async_shadow is not None:
+        diagnostics = async_shadow.diagnostics()
+        if async_memory_diagnostics is not None:
+            async_memory_diagnostics.clear()
+            async_memory_diagnostics.update(diagnostics)
+    if exit_candidate_shadow is not None and async_exit_candidate_diagnostics is not None:
+        async_exit_candidate_diagnostics.clear()
+        async_exit_candidate_diagnostics.update(exit_candidate_shadow.diagnostics())
+    if observable_adapter is not None and observable_adapter_diagnostics is not None:
+        observable_adapter_diagnostics.clear()
+        observable_adapter_diagnostics.update(observable_adapter.diagnostics())
+    if memory_predicate is not None and observable_memory_predicate_diagnostics is not None:
+        observable_memory_predicate_diagnostics.clear()
+        observable_memory_predicate_diagnostics.update(memory_predicate.diagnostics())
+    if (
+        later_trigger_predicate is not None
+        and observable_later_trigger_predicate_diagnostics is not None
+    ):
+        observable_later_trigger_predicate_diagnostics.clear()
+        observable_later_trigger_predicate_diagnostics.update(async_shadow.later_trigger_diagnostics())
     return trade_frame, daily_frame, metrics, counters

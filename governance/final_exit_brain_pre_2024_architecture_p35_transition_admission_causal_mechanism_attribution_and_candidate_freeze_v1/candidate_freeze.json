@@ -1,0 +1,43 @@
+{
+  "candidate_id": "PRE_2024_P13_TRANSITION_ADMISSION_ONLY_ABLATION_V1",
+  "status": "FROZEN_FOR_FUTURE_REPLICATION_PROTOCOL_ONLY",
+  "source_authority": {
+    "p19_result_sha256": "221CC3BCF5E062CE36CE2BEE10E3A9EE22448A8A8E4EF54F01DAF331E8B52DE7",
+    "p34_classification": "SUPPORTED_PRE_2024_TRANSITION_ADMISSION_ONLY_HYPOTHESIS_P19_CAUSAL_REUSE_ALL_FROZEN_GATES_PASS_NO_2023_PROMOTION",
+    "p35_mechanism_classification": "DIRECT_TRANSITION_LOSS_REMOVAL_IS_PRIMARY_POSITIVE_MECHANISM_DOWNSTREAM_PORTFOLIO_PATH_EFFECT_NET_ADVERSE_FREEZE_ADMISSION_ONLY_CANDIDATE_FOR_REPLICATION_PROTOCOL"
+  },
+  "runtime_semantics": {
+    "state_authority": "ENTRY_MARKET_STATE_ONLY",
+    "RISK_ON": "IDENTICAL_TO_P13",
+    "RISK_OFF": "IDENTICAL_TO_P13",
+    "TRANSITION": "DO_NOT_ADMIT_POSITION"
+  },
+  "must_remain_identical_to_p13": [
+    "entry signal generation",
+    "market-state construction",
+    "RISK_ON admission semantics",
+    "RISK_OFF admission semantics",
+    "target slot sizing",
+    "cash sizing",
+    "gross exposure sizing",
+    "capacity sizing",
+    "actual same-pair open guard",
+    "synthetic shadow semantics for admitted entries",
+    "shadow release rules",
+    "adaptive lifecycle",
+    "exit logic",
+    "cost model",
+    "holding horizons"
+  ],
+  "not_authorized": [
+    "2023 access or replay",
+    "2024 access or fresh holdout use",
+    "2025 access",
+    "threshold search",
+    "TRANSITION subfilter search",
+    "sizing search",
+    "parameter optimization",
+    "model fit",
+    "production promotion"
+  ]
+}

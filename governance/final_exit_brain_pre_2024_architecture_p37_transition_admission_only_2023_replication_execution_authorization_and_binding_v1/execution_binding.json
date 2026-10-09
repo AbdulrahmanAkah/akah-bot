@@ -1,0 +1,247 @@
+{
+  "schema_version": "akah-p37-2023-replication-execution-binding-v1",
+  "candidate_id": "PRE_2024_P13_TRANSITION_ADMISSION_ONLY_ABLATION_V1",
+  "source": {
+    "p19_observer_path": "C:\\Users\\abdul\\Downloads\\EAA_EXIT_BRAIN_P19_2022_TRANSITION_ADMISSION_ABLATION_OBSERVER_20260914_040044.py",
+    "p19_observer_sha256": "1CB8F15E04A2A7A19C7003024B2F56743EBCF23256CE0E1C2FAAB70CE82405CC",
+    "source_length_bytes": 51041,
+    "contains_external_full_adaptive_replay": true,
+    "function_inventory": [
+      {
+        "name": "need",
+        "lineno": 42,
+        "args": [
+          "condition",
+          "message"
+        ],
+        "kwonlyargs": []
+      },
+      {
+        "name": "sha256",
+        "lineno": 46,
+        "args": [
+          "path"
+        ],
+        "kwonlyargs": []
+      },
+      {
+        "name": "utc",
+        "lineno": 56,
+        "args": [
+          "value"
+        ],
+        "kwonlyargs": []
+      },
+      {
+        "name": "event_key_from_event",
+        "lineno": 60,
+        "args": [
+          "row"
+        ],
+        "kwonlyargs": []
+      },
+      {
+        "name": "event_key_from_trade",
+        "lineno": 63,
+        "args": [
+          "row"
+        ],
+        "kwonlyargs": []
+      },
+      {
+        "name": "pair_set_sha",
+        "lineno": 66,
+        "args": [
+          "pairs"
+        ],
+        "kwonlyargs": []
+      },
+      {
+        "name": "event_ledger_sha",
+        "lineno": 69,
+        "args": [
+          "events"
+        ],
+        "kwonlyargs": []
+      },
+      {
+        "name": "trade_key_set",
+        "lineno": 80,
+        "args": [
+          "frame"
+        ],
+        "kwonlyargs": []
+      },
+      {
+        "name": "jsonable",
+        "lineno": 83,
+        "args": [
+          "value"
+        ],
+        "kwonlyargs": []
+      },
+      {
+        "name": "dict_exact_nan_aware",
+        "lineno": 96,
+        "args": [
+          "a",
+          "b",
+          "label"
+        ],
+        "kwonlyargs": []
+      },
+      {
+        "name": "frame_exact",
+        "lineno": 104,
+        "args": [
+          "a",
+          "b",
+          "label"
+        ],
+        "kwonlyargs": []
+      },
+      {
+        "name": "trade_map",
+        "lineno": 117,
+        "args": [
+          "frame",
+          "label"
+        ],
+        "kwonlyargs": []
+      },
+      {
+        "name": "trace_map",
+        "lineno": 125,
+        "args": [
+          "rows",
+          "label"
+        ],
+        "kwonlyargs": []
+      },
+      {
+        "name": "canonical_csv_hash",
+        "lineno": 133,
+        "args": [
+          "frame",
+          "path"
+        ],
+        "kwonlyargs": []
+      },
+      {
+        "name": "grouped_divergent",
+        "lineno": 137,
+        "args": [
+          "rows",
+          "field"
+        ],
+        "kwonlyargs": []
+      },
+      {
+        "name": "parse_args",
+        "lineno": 154,
+        "args": [],
+        "kwonlyargs": []
+      },
+      {
+        "name": "external_full_adaptive_replay",
+        "lineno": 168,
+        "args": [],
+        "kwonlyargs": [
+          "rd27",
+          "state",
+          "events",
+          "frames",
+          "state_frame",
+          "policy_id",
+          "portfolio_id",
+          "shadow_guard_enabled",
+          "transition_admission_ablated"
+        ]
+      },
+      {
+        "name": "main",
+        "lineno": 627,
+        "args": [],
+        "kwonlyargs": []
+      }
+    ]
+  },
+  "period_binding": {
+    "source_period": "ROBUSTNESS_2022",
+    "target_period": "ROBUSTNESS_2023",
+    "ast_detected_period_rows": [
+      {
+        "kind": "str",
+        "value": "ROBUSTNESS_2022",
+        "lineno": 25
+      }
+    ],
+    "authorized_ast_literal_changes": [
+      {
+        "lineno": 23,
+        "from": "2022-01-01T00:00:00Z",
+        "to": "2023-01-01T00:00:00Z"
+      },
+      {
+        "lineno": 24,
+        "from": "2023-01-01T00:00:00Z",
+        "to": "2024-01-01T00:00:00Z"
+      },
+      {
+        "lineno": 25,
+        "from": "ROBUSTNESS_2022",
+        "to": "ROBUSTNESS_2023"
+      }
+    ],
+    "integer_year_binding_count": 0,
+    "reversible_to_exact_original_ast": true,
+    "patched_preview_sha256": "47344B9E88ED406EF35DF729F8CF1AB6A5459250B5E8F9371BA50F43E0FDC6F3",
+    "patched_preview_compiles": true
+  },
+  "execution_contract_for_next_task": {
+    "observer_authority": "P19_EXACT_OBSERVER_SHA",
+    "period_rebinding": "ONLY_AUTHORIZED_AST_LITERAL_CHANGES_FROM_THIS_BINDING",
+    "strategy_runtime_semantics_change": "NONE_BEYOND_PREEXISTING_P19_TRANSITION_ADMISSION_ABLATION",
+    "control_candidate_pair": "P13_CONTROL_VS_TRANSITION_ADMISSION_ONLY_TREATMENT",
+    "must_begin_governed_task_before_any_2023_DATA_ACCESS": true,
+    "2023_data_access_authorized_for_next_execution_task": true,
+    "2023_market_replay_authorized_for_next_execution_task": true,
+    "2024_access_authorized": false,
+    "2025_access_authorized": false,
+    "threshold_search_authorized": false,
+    "sizing_search_authorized": false,
+    "parameter_search_authorized": false,
+    "candidate_search_authorized": false,
+    "model_fit_authorized": false,
+    "production_change_authorized": false
+  },
+  "io_surface_observations": {
+    "path_home_reference_present": false,
+    "downloads_reference_present": false,
+    "data_reference_present": true
+  },
+  "p36_protocol_anchor": {
+    "classification": "TRANSITION_ADMISSION_ONLY_REPLICATION_PROTOCOL_FROZEN_NO_DATA_ACCESSED",
+    "candidate_id": "PRE_2024_P13_TRANSITION_ADMISSION_ONLY_ABLATION_V1",
+    "replication_period": {
+      "period_id": "ROBUSTNESS_2023",
+      "start_utc": "2023-01-01T00:00:00Z",
+      "end_utc_exclusive": "2024-01-01T00:00:00Z",
+      "access_in_p36": false,
+      "execution_in_p36": false,
+      "future_access_requires_separate_authorized_task": true
+    },
+    "primary_endpoint": {
+      "name": "FINAL_PORTFOLIO_NET_PNL_TREATMENT_MINUS_CONTROL",
+      "formula": "candidate_net_pnl - control_net_pnl",
+      "direction": "GREATER_THAN_ZERO_SUPPORTS_REPLICATION",
+      "threshold_search": false
+    },
+    "frozen_primary_support_gates": {
+      "CANDIDATE_NET_PNL_MINUS_CONTROL_NET_PNL_GT_0": true,
+      "CANDIDATE_NET_PNL_GT_0": true,
+      "CANDIDATE_MAX_DRAWDOWN_LE_CONTROL_MAX_DRAWDOWN": true,
+      "TRANSITION_ADMISSION_ZERO_AND_SINGLE_COMPONENT_CONTRACT": true
+    }
+  }
+}

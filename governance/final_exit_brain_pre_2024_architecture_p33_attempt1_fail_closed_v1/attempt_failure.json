@@ -1,0 +1,154 @@
+{
+  "schema_version": "akah-p33-attempt1-technical-fail-closed-v1",
+  "task_id": "FINAL_EXIT_BRAIN_PRE_2024_ARCHITECTURE_P33_STATE_CONDITIONED_SHADOW_AUTHORITY_2022_EXPLORATORY_REPLAY_V1",
+  "status": "TECHNICAL_OR_PARITY_FAILURE_FAIL_CLOSED_NO_SCIENTIFIC_CONCLUSION",
+  "gate_outcome": "FAIL_CLOSED",
+  "attempt": 1,
+  "failure_phase": "P13_EXACT_BASELINE_REPLAY_PRE_ARGUMENT_BINDING",
+  "failure_reason": "P13 baseline observer was invoked without its six required CLI arguments.",
+  "observed_error": "p13_baseline_observer.py requires --repo-root, --raw-root, --output-dir, --p9-primary, --pair-set-sha, and --observer-sha.",
+  "what_passed_before_failure": [
+    "P33_PRE_BEGIN_AUTHORITY=PASS",
+    "P33_SOURCE_CONTRACT_DISCOVERY=PASS",
+    "P33_PATCH_ENTRY_STATE_EXPR=entry_state",
+    "P33_PATCH_SHADOW_STATEMENT_COUNT=1",
+    "AKAH_BOT_TASK_BEGIN=PASS"
+  ],
+  "what_did_not_execute": {
+    "p13_baseline_replay_completed": false,
+    "candidate_replay_started": false,
+    "candidate_replay_completed": false,
+    "scientific_classification_made": false,
+    "support_gates_adjudicated": false,
+    "2023_accessed": false,
+    "2024_replayed": false,
+    "2025_accessed": false,
+    "threshold_search": false,
+    "parameter_search": false,
+    "model_fit": false,
+    "production_change": false
+  },
+  "market_data_scope": {
+    "observer_process_started": true,
+    "argparse_terminated_before_observer_main": true,
+    "2022_market_rows_materialized": false,
+    "raw_market_data_opened": false
+  },
+  "task_gate_outcome_contract": {
+    "module_path": "C:\\SIRAJ\\Repositories\\spot-speculation-bot\\src\\spotbot\\governance\\task_completion_gate.py",
+    "candidate_constants": {
+      "OUTCOMES": [
+        "BLOCKED",
+        "FAIL_CLOSED",
+        "NO_DECISION",
+        "PASS"
+      ]
+    },
+    "outcome_compare_literals": [
+      [
+        "PASS"
+      ],
+      [
+        "BLOCKED",
+        "FAIL_CLOSED",
+        "NO_DECISION",
+        "PASS"
+      ]
+    ],
+    "outcome_call_literals": [],
+    "source_contexts": [
+      {
+        "line": 19,
+        "before": [
+          "ALIGNMENTS = {\"ALIGNED\", \"ALIGNED_WITH_SCOPE_UPDATE\", \"DRIFT_BLOCKED\"}",
+          "VISION_IMPACTS = {\"ADVANCES\", \"PRESERVES\", \"INCONCLUSIVE\", \"CONTRADICTS\"}"
+        ],
+        "match": "OUTCOMES = {\"PASS\", \"FAIL_CLOSED\", \"BLOCKED\", \"NO_DECISION\"}",
+        "after": [
+          "",
+          "REQUIRED_GOVERNANCE_KEYS = {"
+        ]
+      },
+      {
+        "line": 24,
+        "before": [
+          "    \"lookahead_or_future_information_used\",",
+          "    \"pair_or_event_identity_used_as_runtime_rule\","
+        ],
+        "match": "    \"posthoc_outcome_threshold_search_used\",",
+        "after": [
+          "    \"2023_new_raw_or_replay_accessed\",",
+          "    \"2024_used_as_fresh_holdout\","
+        ]
+      },
+      {
+        "line": 35,
+        "before": [
+          "    \"lookahead_or_future_information_used\",",
+          "    \"pair_or_event_identity_used_as_runtime_rule\","
+        ],
+        "match": "    \"posthoc_outcome_threshold_search_used\",",
+        "after": [
+          "    \"2024_used_as_fresh_holdout\",",
+          "    \"2024_used_to_define_new_runtime_rule\","
+        ]
+      },
+      {
+        "line": 212,
+        "before": [
+          "    need(args.alignment in ALIGNMENTS, f\"BAD_ALIGNMENT:{args.alignment}\")",
+          "    need(args.vision_impact in VISION_IMPACTS, f\"BAD_VISION_IMPACT:{args.vision_impact}\")"
+        ],
+        "match": "    need(args.outcome in OUTCOMES, f\"BAD_OUTCOME:{args.outcome}\")",
+        "after": [
+          "    need(args.summary.strip(), \"SUMMARY_EMPTY\")",
+          "    need(args.north_star_effect.strip(), \"NORTH_STAR_EFFECT_EMPTY\")"
+        ]
+      },
+      {
+        "line": 229,
+        "before": [
+          "    )",
+          ""
+        ],
+        "match": "    if args.outcome == \"PASS\":",
+        "after": [
+          "        need(args.alignment != \"DRIFT_BLOCKED\", \"PASS_FORBIDDEN_WHEN_DRIFT_BLOCKED\")",
+          "        need(args.vision_impact != \"CONTRADICTS\", \"PASS_FORBIDDEN_WHEN_VISION_CONTRADICTED\")"
+        ]
+      },
+      {
+        "line": 253,
+        "before": [
+          "        \"started_at_utc\": active[\"started_at_utc\"],",
+          "        \"completed_at_utc\": completed_at,"
+        ],
+        "match": "        \"outcome\": args.outcome,",
+        "after": [
+          "        \"alignment\": args.alignment,",
+          "        \"vision_impact\": args.vision_impact,"
+        ]
+      },
+      {
+        "line": 352,
+        "before": [
+          "    c = sub.add_parser(\"complete\")",
+          "    c.add_argument(\"--task-id\", required=True)"
+        ],
+        "match": "    c.add_argument(\"--outcome\", required=True)",
+        "after": [
+          "    c.add_argument(\"--alignment\", required=True)",
+          "    c.add_argument(\"--vision-impact\", required=True)"
+        ]
+      }
+    ],
+    "allowed_candidates": [
+      "BLOCKED",
+      "FAIL_CLOSED",
+      "NO_DECISION",
+      "PASS"
+    ],
+    "selected_failure_outcome": "FAIL_CLOSED"
+  },
+  "next_required_action": "After governance synchronization, retry the same frozen P33 hypothesis using a new governed attempt that binds the six canonical P13 observer CLI arguments from the exact P13 wrapper before task admission and preserves the P31 historical source authority."
+}

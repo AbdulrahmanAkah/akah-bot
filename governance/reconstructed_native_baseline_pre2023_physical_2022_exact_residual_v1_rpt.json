@@ -1,0 +1,66 @@
+{
+  "authority_bindings": {
+    "decision_sha256": "E94BEEEA7EE66725FF42FD29C3F54EDC22F9176C4FD87F859AED92F62E203604",
+    "funnel_sha256": "69F9B10E83CF89C934022C932883715FF7C46572126575060AD66DA08FC9EC6C",
+    "nearest_sha256": "CB8149F3D54490A9802E38916793242CA8F28F48764557E53D9524FCC19F3889",
+    "source_binding_sha256": "A212A430F4453DEF5D51590A5E2731B159A17A1F0187FB90C5F9A4BB8B5144A4",
+    "study_contract_sha256": "763BA9332FD2D6EAD3D0B2A369A7574C1875DF08F9EE53653975CF8C93900F9B"
+  },
+  "branch": "research/rd48-cross-venue-price-level-basis-direct-utility-v1",
+  "evidence": [
+    {
+      "path": "governance/reconstructed_native_baseline_pre2023_physical_2022_exact_residual_v1/rev212_candidate_authority_source_binding.json",
+      "sha256": "A212A430F4453DEF5D51590A5E2731B159A17A1F0187FB90C5F9A4BB8B5144A4"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_pre2023_physical_2022_exact_residual_v1/candidate_rejection_funnel.json",
+      "sha256": "69F9B10E83CF89C934022C932883715FF7C46572126575060AD66DA08FC9EC6C"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_pre2023_physical_2022_exact_residual_v1/nearest_to_ready_candidates.json",
+      "sha256": "CB8149F3D54490A9802E38916793242CA8F28F48764557E53D9524FCC19F3889"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_pre2023_physical_2022_exact_residual_v1/nearest_candidate_exact_evidence.json",
+      "sha256": "65247C6AFFE490774B431EF5F8682C8C319E04D3A0880DEB2C71FD43B25433AA"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_pre2023_physical_2022_exact_residual_v1/exact_residual_decision.json",
+      "sha256": "E94BEEEA7EE66725FF42FD29C3F54EDC22F9176C4FD87F859AED92F62E203604"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_pre2023_physical_2022_exact_residual_v1.json",
+      "sha256": "15F30E60B4D15832510A79DB037976B2A99C326A3F5F8E119C85BCA0F423E308"
+    }
+  ],
+  "firewall": {
+    "economic_analysis": false,
+    "git_fetch": false,
+    "market_rows_read": false,
+    "mixed_csv_data_rows_read": false,
+    "native_replay_executed": false,
+    "network": false,
+    "protected_year_rows_read": false,
+    "push": false,
+    "source_code_mutation": false,
+    "v2_incidence_used": false
+  },
+  "governed_schema_version": "akah-provenance-phase-governed-v1",
+  "next_bottleneck": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_CURRENT_RD26_PRODUCER_PRE2023_RECONSTRUCTION_INPUT_AUTHORITY_V1",
+  "north_star_effect": "Convert the frozen rev212 168-candidate authority into an exact rejection funnel, identify nearest-to-ready candidates, and decide whether old-artifact search remains viable or the current RD26 producer must be reconstructed from pre-2023-isolated inputs.",
+  "objective": "Convert the frozen rev212 168-candidate authority into an exact rejection funnel, identify nearest-to-ready candidates, and decide whether old-artifact search remains viable or the current RD26 producer must be reconstructed from pre-2023-isolated inputs.",
+  "resolution_class": "NO_SCHEMA_AND_PREOPEN_CANDIDATE_OLD_ARTIFACT_SEARCH_CLOSED_MOVE_TO_CURRENT_RD26_PRODUCER_RECONSTRUCTION",
+  "state_updates": {
+    "candidate_count": 168,
+    "economic_analysis": false,
+    "native_replay_executed": false,
+    "old_artifact_search_exhausted": true,
+    "roadmap_position": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_CURRENT_RD26_PRODUCER_PRE2023_RECONSTRUCTION_INPUT_AUTHORITY_V1",
+    "schema_and_preopen_candidate_count": 0
+  },
+  "status": "PASS",
+  "summary": "Classified all 168 frozen rev212 candidates by seven non-economic readiness dimensions. Found 0 candidates satisfying both exact RD27 schema and pre-open physical isolation.",
+  "task_id": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_PRE2023_SIGNAL_MATERIALIZATION_PHYSICALLY_ISOLATED_2022_SOURCE_EXACT_RESIDUAL_V1",
+  "task_start_head": "167f78f450e13bcea37a04ba9e4a57c2c79a5cbf",
+  "task_start_revision": 212
+}

@@ -1,0 +1,25 @@
+{
+  "authority_id": "AKAH_BOT_RD26_SIGNAL_SOURCE_AND_1H_MANIFEST_EXACT_RESIDUAL_GAP_DECISION_V1",
+  "status": "PASS_EXACT_GAPS_NAMED_NO_EXECUTION_AUTHORITY",
+  "all_dynamic_input_authority_ready": false,
+  "resolved": [
+    "FULL_ADAPTIVE policy identity remains bound prospectively",
+    "cost_multiplier is bound as Python float 1.0",
+    "actual RD27 constructor branches and actual C2/D2/E2 universe values are source-bound",
+    "default raw_root literal is source-bound to data/raw/rd16b/kucoin",
+    "1H path template and unconditional BTC-USDT state-sensor requirement are source-bound",
+    "timestamp normalization, stable sorting, keep-last duplicate behavior, and rolling(24) formula are source-bound"
+  ],
+  "remaining_exact_gaps": [
+    {"id": "PROSPECTIVE_CONTEXT_SELECTION", "blocker": "source exposes multiple valid constructor/universe contexts and prior static-parity labels do not map to them"},
+    {"id": "AUTHORIZED_PRE2023_SIGNAL_INPUT", "blocker": "only mixed 2022-2023 CSV is available; no immutable 2022-only artifact or protected-row-safe selector is bound"},
+    {"id": "SELECTED_1H_MANIFEST", "blocker": "pair list depends on the authorized signal artifact; per-file identity cannot be fixed before that"},
+    {"id": "PIT_COMPLETION_AND_CONTINUITY", "blocker": "source does not declare timestamp open/close semantics or validate contiguous hourly spacing/conflicting duplicates"},
+    {"id": "MAX_EXIT_COVERAGE_SEMANTICS", "blocker": "current missing max-exit precheck can skip admission; administrative-only classification requires coverage proof"}
+  ],
+  "next_bottleneck": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_RD26_SIGNAL_SOURCE_AND_1H_MANIFEST_HUMAN_DECISION_V1",
+  "no_generic_provenance_search_authorized": true,
+  "no_source_mutation": true,
+  "no_replay": true,
+  "no_protected_year_rows": true
+}

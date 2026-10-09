@@ -1,0 +1,49 @@
+{
+  "2024_access": false,
+  "model_refit": false,
+  "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_DYNAMIC_TOP10_EXACT_RANK_SELECTOR_V1R1",
+  "portfolio": {
+    "K": 5,
+    "cost_multipliers": [
+      1.0,
+      2.0
+    ],
+    "exit": "CHECKPOINT_SIGN_NEXT_OPEN",
+    "governor": "BINARY_VOL",
+    "position_cap": 0.18
+  },
+  "schema_version": "abc-dynamic-top10-exact-rank-direct-remediation-protocol-v1",
+  "selector": {
+    "candidate_pool": "D2_EVIDENCE_STRONG_UNION_LEGACY_CURRENT",
+    "candidate_pool_rank_recomputed_after_filter": true,
+    "hysteresis_exit_rank": 14,
+    "mfe5_used": false,
+    "outcomes_used": false,
+    "ranking_authority": "data/research/rd18_p1r2/corrected-weekly-rankings.csv",
+    "ranking_column": "liquidity_rank",
+    "target_top_n": 10
+  },
+  "signal_materialization": {
+    "c2_signal_regeneration": false,
+    "cache_substitution": false,
+    "d2_signal_regeneration": false,
+    "entry_model": "MFE_GE_5PCT_ENTRY_BASE14_FROZEN",
+    "generator": "RD20_MINIMAL_TREND_PULLBACK_V1_DIRECT_TOP10_SCAN",
+    "missing_selected_raw_policy": "FAIL_CLOSED",
+    "warmup_days": 10
+  },
+  "technical_reasons": [
+    "D2_CURRENT_PAIR_LOCAL_CACHE_EQUIVALENCE_FAILED",
+    "COMMITTED_SELECTOR_USED_DERIVED_RANK_INSTEAD_OF_EXACT_RANKING_AUTHORITY"
+  ],
+  "threshold_search": false,
+  "top10_size_search": false,
+  "upgrade_gate": {
+    "benchmark_coverage_min": 0.9,
+    "benchmark_excess_x1_gt": 0.0,
+    "benchmark_excess_x2_gt": 0.0,
+    "continuous_mdd_floor": -0.25,
+    "wealth_gt_current_binary_vol_at_both_costs": true,
+    "worst_year_floor": -0.15
+  }
+}

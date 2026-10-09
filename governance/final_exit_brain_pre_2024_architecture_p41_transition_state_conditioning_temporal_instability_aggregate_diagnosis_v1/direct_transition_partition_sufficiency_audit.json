@@ -1,0 +1,64 @@
+{
+  "candidate_structural_partition_families": [
+    {
+      "family": "transition_ablation_lineage.control_only_by_entry_market_state",
+      "categories": [
+        "RISK_ON",
+        "TRANSITION"
+      ],
+      "category_count": 2,
+      "sum_event_count_2022": 184.0,
+      "sum_event_count_2023": 152.0,
+      "sum_realized_pnl_2022": -11148.730815021034,
+      "sum_realized_pnl_2023": 15426.75420796989,
+      "exact_direct_partition_both_years": false,
+      "nontrivial_exact_direct_partition": false
+    },
+    {
+      "family": "transition_ablation_lineage.control_only_by_treatment_blocker",
+      "categories": [
+        "SAME_PAIR_OPEN",
+        "SHADOW_STATIC_SAME_PAIR_OPEN_SUPPRESSED",
+        "TRANSITION_ADMISSION_ABLATED"
+      ],
+      "category_count": 3,
+      "sum_event_count_2022": 184.0,
+      "sum_event_count_2023": 152.0,
+      "sum_realized_pnl_2022": -11148.730815021034,
+      "sum_realized_pnl_2023": 15426.75420796989,
+      "exact_direct_partition_both_years": false,
+      "nontrivial_exact_direct_partition": false
+    },
+    {
+      "family": "transition_ablation_lineage.treatment_only_by_control_blocker",
+      "categories": [
+        "SAME_PAIR_OPEN",
+        "SHADOW_STATIC_SAME_PAIR_OPEN_SUPPRESSED"
+      ],
+      "category_count": 2,
+      "sum_event_count_2022": 16.0,
+      "sum_event_count_2023": 45.0,
+      "sum_realized_pnl_2022": -5612.081743372811,
+      "sum_realized_pnl_2023": 5413.467700010988,
+      "exact_direct_partition_both_years": false,
+      "nontrivial_exact_direct_partition": false
+    },
+    {
+      "family": "transition_ablation_lineage.treatment_only_by_entry_market_state",
+      "categories": [
+        "RISK_ON"
+      ],
+      "category_count": 1,
+      "sum_event_count_2022": 17.0,
+      "sum_event_count_2023": 45.0,
+      "sum_realized_pnl_2022": -5947.686627870382,
+      "sum_realized_pnl_2023": 5413.467700010988,
+      "exact_direct_partition_both_years": false,
+      "nontrivial_exact_direct_partition": false
+    }
+  ],
+  "nontrivial_exact_direct_partition_count": 0,
+  "nontrivial_exact_direct_partitions": [],
+  "aggregate_dimensions_sufficient_to_identify_within_transition_driver": false,
+  "criterion": "A sufficient aggregate partition must expose at least two sibling categories with event_count and sum_realized_pnl whose sums exactly reconcile to directly ablated TRANSITION count and PnL in BOTH years."
+}

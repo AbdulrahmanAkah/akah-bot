@@ -1,0 +1,40 @@
+{
+  "2024_access": false,
+  "2025_access": false,
+  "big_move_thresholds": [
+    0.25,
+    0.5,
+    1.0
+  ],
+  "branch_sample": {
+    "capital_capacity_quota": 50,
+    "deterministic_hash": true,
+    "max_positions_quota": 250,
+    "per_year_target": 300
+  },
+  "funded_variants": [
+    "F10_2X",
+    "MAX_POSITIONS_DISABLED_REUSED",
+    "POSITION_WEIGHT_CAP_RELAXED",
+    "PER_POSITION_RISK_BUDGET_RELAXED",
+    "WEIGHT_AND_RISK_CAPS_RELAXED",
+    "UNLIMITED_LIQUIDITY",
+    "BINARY_NO_VOL",
+    "ALL_ADMISSION_F10_RANK",
+    "H0_EXIT_DISABLED",
+    "GOVERNOR_FORCED_EXIT_DISABLED",
+    "F10_1X_COST"
+  ],
+  "horizons_hours": [
+    24,
+    72,
+    168
+  ],
+  "no_model_refit": true,
+  "no_parameter_search": true,
+  "production_changed": false,
+  "project_north_star": "AKAH is not a project for marginal F10 optimization and the historical REV749 11.23x clairvoyant result is not treated as a ceiling. The objective is to identify and remove structural entry, exit, sizing, liquidity, admission, governor and allocation bottlenecks that prevent causal capture of large market trends, while preserving disciplined risk and emotion-free execution.",
+  "push": false,
+  "schema_version": "akah-structural-alpha-capture-battery-protocol-v1",
+  "source_revision": 761
+}

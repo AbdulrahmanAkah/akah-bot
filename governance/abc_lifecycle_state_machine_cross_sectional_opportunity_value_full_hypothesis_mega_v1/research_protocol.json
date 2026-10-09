@@ -1,0 +1,240 @@
+{
+  "2024_access": false,
+  "certification": "NONE_DISCOVERY_ONLY_MULTIPLE_HYPOTHESES",
+  "execution_optimization": "FAST_EXACT_SHARED_IMMUTABLE_REPLAY_CACHE_REFERENCE_EQUIVALENCE_TESTED",
+  "feature_groups": {
+    "ALL": [
+      "fam_momentum_breakout",
+      "fam_volatility_expansion",
+      "fam_relative_strength_rotation",
+      "fam_momentum_acceleration",
+      "family_count",
+      "daily_r7",
+      "daily_r30",
+      "daily_sigma20",
+      "daily_rs7",
+      "daily_cs_rank_pct",
+      "membership_rank_pct",
+      "eligibility_age_days",
+      "ret6",
+      "ret24",
+      "ret72",
+      "ret168",
+      "rv24",
+      "rv72",
+      "ema9_21",
+      "ema21_50",
+      "ema21_slope6",
+      "adx14",
+      "dmi_spread",
+      "trend_quality",
+      "atr24_frac",
+      "close_location",
+      "base_width_atr",
+      "dist_above_24h_high",
+      "dist_above_72h_high",
+      "support_distance",
+      "btc_ret24",
+      "btc_ret72",
+      "btc_ret168",
+      "btc_rv24",
+      "breadth_r7_positive",
+      "dispersion_r7",
+      "median_sigma20",
+      "log_turnover24",
+      "volume_ratio_4_20"
+    ],
+    "FAMILY": [
+      "fam_momentum_breakout",
+      "fam_volatility_expansion",
+      "fam_relative_strength_rotation",
+      "fam_momentum_acceleration",
+      "family_count"
+    ],
+    "LIQ_TENURE": [
+      "log_turnover24",
+      "volume_ratio_4_20",
+      "membership_rank_pct",
+      "eligibility_age_days"
+    ],
+    "MARKET": [
+      "btc_ret24",
+      "btc_ret72",
+      "btc_ret168",
+      "btc_rv24",
+      "breadth_r7_positive",
+      "dispersion_r7",
+      "median_sigma20"
+    ],
+    "STRUCTURE": [
+      "atr24_frac",
+      "close_location",
+      "base_width_atr",
+      "dist_above_24h_high",
+      "dist_above_72h_high",
+      "support_distance"
+    ],
+    "TREND": [
+      "ret6",
+      "ret24",
+      "ret72",
+      "ret168",
+      "rv24",
+      "rv72",
+      "ema9_21",
+      "ema21_50",
+      "ema21_slope6",
+      "adx14",
+      "dmi_spread",
+      "trend_quality"
+    ],
+    "XSEC": [
+      "daily_r7",
+      "daily_r30",
+      "daily_sigma20",
+      "daily_rs7",
+      "daily_cs_rank_pct",
+      "membership_rank_pct",
+      "eligibility_age_days"
+    ]
+  },
+  "hard_cutoff_exclusive": "2024-01-01T00:00:00Z",
+  "models": {
+    "bin_additive": "train-quintile shrinkage, no tuned bins",
+    "logit_lambda": 10.0,
+    "ridge_lambda": 10.0
+  },
+  "overlays": {
+    "BINARY_NO_VOL": "full-vector sensitivity",
+    "CORR80_MAX2": {
+      "lookback_days": 90,
+      "max_similar_incumbents": 2,
+      "min_obs": 60,
+      "threshold": 0.8
+    }
+  },
+  "portfolio": {
+    "H0": "unchanged from REV729",
+    "active_replacement": false,
+    "costs": [
+      1.0,
+      2.0
+    ],
+    "max_positions": 20,
+    "per_position_risk_budget": 0.0075,
+    "position_weight_cap": 0.05
+  },
+  "production": false,
+  "push": false,
+  "rankers": [
+    {
+      "form": "BASELINE",
+      "group": "BASELINE",
+      "id": "R00_BASELINE_RS7_SIGMA20"
+    },
+    {
+      "form": "MU",
+      "group": "FAMILY",
+      "id": "R01_FAMILY_MU"
+    },
+    {
+      "form": "MU",
+      "group": "XSEC",
+      "id": "R02_XSEC_MU"
+    },
+    {
+      "form": "MU",
+      "group": "TREND",
+      "id": "R03_TREND_MU"
+    },
+    {
+      "form": "MU",
+      "group": "STRUCTURE",
+      "id": "R04_STRUCTURE_MU"
+    },
+    {
+      "form": "MU",
+      "group": "MARKET",
+      "id": "R05_MARKET_MU"
+    },
+    {
+      "form": "MU",
+      "group": "LIQ_TENURE",
+      "id": "R06_LIQ_TENURE_MU"
+    },
+    {
+      "form": "MU_NO_GATE",
+      "group": "ALL",
+      "id": "R07_ALL_MU_NO_GATE"
+    },
+    {
+      "form": "MU",
+      "group": "ALL",
+      "id": "R08_ALL_MU_POSITIVE"
+    },
+    {
+      "form": "DOWNSIDE",
+      "group": "ALL",
+      "id": "R09_ALL_DOWNSIDE_ADJ"
+    },
+    {
+      "form": "TAIL",
+      "group": "ALL",
+      "id": "R10_ALL_TAIL_EXPECTATION"
+    },
+    {
+      "form": "LCB",
+      "group": "ALL",
+      "id": "R11_ALL_LCB"
+    },
+    {
+      "form": "CAPEFF",
+      "group": "ALL",
+      "id": "R12_ALL_CAPITAL_EFFICIENCY"
+    },
+    {
+      "form": "FULL",
+      "group": "ALL",
+      "id": "R13_FULL_VECTOR"
+    },
+    {
+      "form": "FULL_DURATION",
+      "group": "ALL",
+      "id": "R14_FULL_VECTOR_DURATION"
+    },
+    {
+      "form": "TREND_P10",
+      "group": "TREND",
+      "id": "R15_TREND_P10"
+    },
+    {
+      "form": "RAW_ADX_DMI",
+      "group": "TREND",
+      "id": "R16_RAW_ADX_DMI"
+    },
+    {
+      "form": "BIN_ADDITIVE",
+      "group": "ALL",
+      "id": "R17_BIN_ADDITIVE_ALL"
+    }
+  ],
+  "schema_version": "akah-cross-sectional-opportunity-value-full-hypothesis-protocol-v1",
+  "status": "FROZEN_BEFORE_OUTCOMES",
+  "tail_targets": [
+    0.05,
+    0.1,
+    0.2
+  ],
+  "training": {
+    "expanding": true,
+    "primary_target": "h0_net_return_2x",
+    "purge": "label_end < test_year_start",
+    "targets_under": "FROZEN_H0",
+    "test_years": [
+      2020,
+      2021,
+      2022,
+      2023
+    ]
+  }
+}

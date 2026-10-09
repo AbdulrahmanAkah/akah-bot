@@ -1,0 +1,64 @@
+{
+  "task": "AKAH_SIX_SCHOOL_HYBRID_REPAIR_AND_REPLAY_MEGA_V4",
+  "scope": "EXPERIMENTAL_BOUNDED_IMPLEMENTATIONS_NOT_FULL_SCHOOL_CERTIFICATION",
+  "grammars": [
+    "FS_WYCKOFF_FULL_LONG",
+    "FS_ICT_2022_CORE_CRYPTO_LONG",
+    "FS_HARMONIC_FULL_LONG",
+    "FS_CLASSICAL_FULL_LONG",
+    "FS_ELLIOTT_FULL_LONG",
+    "FS_DOW_CRYPTO_ADAPTED_LONG",
+    "HYB_MARKUP_CONTINUATION",
+    "HYB_FAILED_AUCTION_REVERSAL",
+    "HYB_CORRECTIVE_COMPLETION_RESUMPTION"
+  ],
+  "period": [
+    "2022-01-01T00:00:00Z",
+    "2023-12-31T22:00:00Z"
+  ],
+  "raw_reader": "predicate bounded 2021-09-01 <= close_timestamp < 2024-01-01",
+  "initial_equity": 100000,
+  "cost_round_trip": {
+    "1X": 0.0025,
+    "2X": 0.005
+  },
+  "risk": {
+    "campaign_B0": ".005 current MTM equity at entry; never recycled",
+    "total_stop_risk": 0.025,
+    "gross": 0.9,
+    "asset_MTM": 0.18,
+    "distinct_assets": 5,
+    "cluster": "all spot longs one market-risk cluster; no diversification credit",
+    "staged": "spring 50% B0; at most one source-owned LPS add, remaining 50%; no new cause",
+    "gap": "actual next open, realized loss may exceed B0; reported not concealed",
+    "risk_reduction": "continuous common lambda, retained quantities floor to 1e-8 with two-lot numerical safeguard; no GCD liquidation artefact"
+  },
+  "quantity": "prospective 1e-8 tick/lot and 50 USDT entry minimum; NOT historical exchange certification",
+  "capacity": ".005 completed trailing 24h quote-turnover; per-hour shared buys/sells; partial exits if capacity constrained; TGT1 fixed quantity ledger, never a full pending exit",
+  "selection": "same-asset current owner preserved; multiple different owners at checkpoint all rejected; descending causal capacity then deterministic lineage digest; no score/outcome/year/pair alpha",
+  "execution": "decision at completed close, first following 1H open; stop-before-target on intrabar collision; standing gap targets at OPEN; close-generated stops next bar only; OPEN+CLOSE MTM; terminal OPEN no forced liquidation",
+  "router": "retain frozen completed 1D BTC/asset protected-structure veto; lower timeframe cannot override DOWN/UNKNOWN",
+  "management": {
+    "FS_WYCKOFF_FULL_LONG": "source structural stop + source LPS ratchet + asset distribution OR market distribution AND RS loss; P&F not take-profit",
+    "FS_ICT_2022_CORE_CRYPTO_LONG": "existing raid stop / opposing-liquidity target / bearish MSS / NY16 next-open",
+    "FS_CLASSICAL_FULL_LONG": "ClassicalRuntimeV3 frozen-support pre-entry invalidation; objective + objective-progress 75% HL ratchet + confirmed H4 DOWN",
+    "FS_HARMONIC_FULL_LONG": "existing bullish projected family grammar, finite stop below full PRZ required; 50% TGT1 and 50% TGT2; breakeven cost adjusted after TGT1 only from next bar; TypeII remains a distinct lifecycle",
+    "FS_ELLIOTT_FULL_LONG": "DIAGNOSTIC mechanical consensus adaptation: deterministic material bullish owner at highest degree/latest availability, all material opposite counts veto; stop/objective owned by SAME count; no claim of parent-child doctrine",
+    "FS_DOW_CRYPTO_ADAPTED_LONG": "DIAGNOSTIC crypto adaptation: source weekly broad-confirmation reconfirmed-bull; last confirmed H4 BTC low frozen protective stop; no price target; definite primary DOWN exit",
+    "HYB_MARKUP_CONTINUATION": "NEW_PROSPECTIVE role composition: live Wyckoff E_MARKUP + positive causal RS + Classical accepted breakout; Classical management owner",
+    "HYB_FAILED_AUCTION_REVERSAL": "NEW_PROSPECTIVE role composition: live Wyckoff B/C/D base and source range location + ICT raid/MSS/FVG/later retrace; ICT management owner",
+    "HYB_CORRECTIVE_COMPLETION_RESUMPTION": "NEW_PROSPECTIVE role composition: live material bullish corrective Elliott owner + Harmonic terminal/confirmation; stop max(count invalidation,harmonic stop), target2 min(count objective,harmonic target2); Harmonic management owner"
+  },
+  "unresolved": {
+    "FS_WYCKOFF_FULL_LONG": "reaccumulation cause/readiness doctrine; intentionally no inherited old base",
+    "FS_HARMONIC_FULL_LONG": "matrix doctrine and Shark/FiveZero/ABCD geometry not independently recertified; invalid projected stop geometry abstains, not silently repaired by ATR",
+    "FS_ELLIOTT_FULL_LONG": "full parent-child/owner doctrine unresolved; mechanical adaptation DIAGNOSTIC_ONLY",
+    "FS_DOW_CRYPTO_ADAPTED_LONG": "protective-stop is prospective research choice; orthodoxy/fidelity unresolved",
+    "ALL": "independent changed-version blind reserve fidelity not certified in this economic mission"
+  },
+  "qualification": "economic metrics for every arm; NOT Gate3 qualification or production promotion because fidelity remains unclosed",
+  "failure_policy": "mechanical repairs with failing regression fixtures allowed; no outcome-conditioned policy repair; isolate per-pair/per-grammar failures and continue all arms; incomplete coverage cannot qualify",
+  "protected_years_access": false,
+  "production_change": false,
+  "threshold_search": false
+}

@@ -1,0 +1,59 @@
+{
+  "2022_2023_fresh_holdout": false,
+  "2024_access": false,
+  "age_bins": [
+    "0_24",
+    "24_48",
+    "48_72",
+    "72_96",
+    "96_120",
+    "120_144",
+    "144_168"
+  ],
+  "causal_structural_baseline": [
+    "__age_bin"
+  ],
+  "feature_search": false,
+  "forbidden_from_residual_baseline": [
+    "__path_len",
+    "__position_frac"
+  ],
+  "future_derived_diagnostic_only": [
+    "__path_len",
+    "__position_frac"
+  ],
+  "indicator_search": false,
+  "model_family_search": false,
+  "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_CONTINUATION_VALUE_BRANCH_STRUCTURAL_RESIDUAL_FAST_AUDIT_V1",
+  "null_thresholds": {
+    "max_abs_branch_incremental_auc": 0.03,
+    "max_abs_value_residual_spearman": 0.1,
+    "max_positive_branch_brier_lift": 0.015,
+    "min_signature_changed_share": 0.3
+  },
+  "nulls": "DETERMINISTIC_STATE_SIGNATURE_OWNERSHIP_ROTATION_WITHIN_CAUSAL_AGE_BIN_A_AND_B",
+  "raw_access": false,
+  "real_signal_gate": "BOTH_ROLLING_DEVELOPMENT_FOLDS_POSITIVE_INCREMENT_OVER_AGE",
+  "replay": false,
+  "runtime_budget_intent": "FAST_PROOF_EXISTING_GOVERNED_TABLES_ONLY",
+  "schema_version": "akah-rev614-structural-residual-fast-proof-mega-v1-protocol",
+  "state_families": {
+    "branch": [
+      "CORE_AGE",
+      "EVIDENCE_AGE",
+      "DAMAGE_AGE"
+    ],
+    "clean": [
+      "CORE_AGE",
+      "EVIDENCE_AGE",
+      "DAMAGE_AGE"
+    ],
+    "intervention": [
+      "EVIDENCE_AGE",
+      "DAMAGE_AGE"
+    ]
+  },
+  "status": "PASS_PROTOCOL_FROZEN",
+  "target_redesign": false,
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_CONTINUATION_VALUE_STRUCTURAL_RESIDUAL_FAST_PROTOCOL_FREEZE_V1"
+}

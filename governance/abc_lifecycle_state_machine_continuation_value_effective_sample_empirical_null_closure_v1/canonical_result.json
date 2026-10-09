@@ -1,0 +1,60 @@
+{
+  "2024_access": false,
+  "development_clean_rows": 2135,
+  "development_clean_trades": 181,
+  "development_weeks": 108,
+  "historical_abs_null_gate": 0.1,
+  "historical_gate_below_empirical_noise_floor_all_cells": true,
+  "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_CONTINUATION_VALUE_ROOT_CAUSE_LOCALIZATION_V1",
+  "null_calibration_status": "ABSOLUTE_NULL_GATE_MISCALIBRATION_CONFIRMED",
+  "primitive_first_failure_locus": "ONE_STEP_MARKET_PRIMITIVE_HAS_NO_ROBUST_STATE_SIGNAL",
+  "rows": [
+    {
+      "family": "CORE_AGE",
+      "fold": "DEV_2019_2020_TO_2021",
+      "max_empirical_gate": 0.3162756779063762,
+      "median_empirical_gate": 0.2936671936286721,
+      "median_train_derange_q95": 0.1996253300458632,
+      "min_empirical_gate": 0.2732466271842942,
+      "old_gate": 0.1,
+      "old_gate_below_min_empirical_gate": true,
+      "test_trades_min": 76
+    },
+    {
+      "family": "EVIDENCE_AGE",
+      "fold": "DEV_2019_2020_TO_2021",
+      "max_empirical_gate": 0.3028363056945312,
+      "median_empirical_gate": 0.2853322537731989,
+      "median_train_derange_q95": 0.2445868882340252,
+      "min_empirical_gate": 0.2573743930655154,
+      "old_gate": 0.1,
+      "old_gate_below_min_empirical_gate": true,
+      "test_trades_min": 76
+    },
+    {
+      "family": "CORE_AGE",
+      "fold": "DEV_2019_TO_2020",
+      "max_empirical_gate": 0.3964626101267961,
+      "median_empirical_gate": 0.3186186731961244,
+      "median_train_derange_q95": 0.3391516438541759,
+      "min_empirical_gate": 0.2777404277888657,
+      "old_gate": 0.1,
+      "old_gate_below_min_empirical_gate": true,
+      "test_trades_min": 65
+    },
+    {
+      "family": "EVIDENCE_AGE",
+      "fold": "DEV_2019_TO_2020",
+      "max_empirical_gate": 0.3945558355279153,
+      "median_empirical_gate": 0.3177550947628521,
+      "median_train_derange_q95": 0.2779996497514417,
+      "min_empirical_gate": 0.2664181537212775,
+      "old_gate": 0.1,
+      "old_gate_below_min_empirical_gate": true,
+      "test_trades_min": 65
+    }
+  ],
+  "schema_version": "akah-rev662-diagnostic-closure-mega-v1-effective-sample",
+  "status": "FIXED_ABSOLUTE_NULL_GATE_BELOW_EMPIRICAL_NOISE_FLOOR",
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_CONTINUATION_VALUE_EFFECTIVE_SAMPLE_EMPIRICAL_NULL_CLOSURE_V1"
+}

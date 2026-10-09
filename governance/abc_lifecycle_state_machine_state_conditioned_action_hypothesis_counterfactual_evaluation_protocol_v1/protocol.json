@@ -1,0 +1,96 @@
+{
+  "aggregation": [
+    "hypothesis_id",
+    "year",
+    "ALL_DEV_YEARS"
+  ],
+  "continuation_value_net": "control_net_pnl-counterfactual_net_pnl",
+  "control_hypothesis": "H0_HOLD_CONTROL",
+  "counterfactual_entry_cost": "FROZEN_CONTROL_TRADE_ENTRY_COST",
+  "counterfactual_exit_cost": "COUNTERFACTUAL_EXIT_NOTIONAL_TIMES_VERIFIED_CANONICAL_SIDE_COST_RATE",
+  "counterfactual_exit_price": "CURRENT_COMPLETED_4H_DECISION_CLOSE_RECONSTRUCTED_AS_R_before_t_PLUS_close_minus_R_before_t",
+  "counterfactual_net_pnl": "(decision_close-entry_price)*quantity-entry_cost-counterfactual_exit_cost",
+  "counterfactual_quantity": "FROZEN_CONTROL_TRADE_QUANTITY",
+  "development_years": [
+    2019,
+    2020,
+    2021,
+    2022
+  ],
+  "diagnostic": "DIRECT_CONTINUATION_VALUE",
+  "direct_exit_delta_net": "counterfactual_net_pnl-control_net_pnl",
+  "event_selection": "FIRST_ELIGIBLE_DECISION_ROW_PER_HYPOTHESIS_PER_LIFECYCLE",
+  "forbidden": [
+    "HYPOTHESIS_RANKING",
+    "WINNER_SELECTION",
+    "POSTHOC_THRESHOLD",
+    "PORTFOLIO_REPLAY",
+    "2023_ECONOMIC_READ",
+    "2024_ACCESS",
+    "2025_ACCESS",
+    "RUNTIME_ACTION_MAPPING",
+    "PRODUCTION_CHANGE"
+  ],
+  "hypotheses_evaluated": [
+    "H1_WATCH_STALLED",
+    "H2_WATCH_DAMAGE_ACTIVE",
+    "H3_PROTECT_DAMAGE_ONSET",
+    "H4_PROTECT_DAMAGE_CONTINUATION",
+    "H5_EXIT_CONFLUENT_DAMAGE",
+    "H6_DEESCALATE_DAMAGE_CLEAR"
+  ],
+  "interpretation_only": {
+    "continuation_value_negative": "Immediate exit at the context would have produced more direct net trade value than native continuation.",
+    "continuation_value_positive": "Native continuation produced more direct net trade value than immediate exit at the context.",
+    "no_numeric_acceptance_threshold": true
+  },
+  "next_if_pass": "ABC_LIFECYCLE_STATE_MACHINE_STATE_CONDITIONED_ACTION_HYPOTHESIS_COUNTERFACTUAL_DIRECT_CONTINUATION_VALUE_EXECUTION_V1",
+  "protected_validation_year": 2023,
+  "reported_metrics": [
+    "evaluable_lifecycle_count",
+    "sum_direct_exit_delta_net",
+    "mean_direct_exit_delta_net",
+    "sum_continuation_value_net",
+    "mean_continuation_value_net",
+    "immediate_exit_better_count",
+    "native_continuation_better_count",
+    "tie_count"
+  ],
+  "schema_version": "abc-state-conditioned-action-hypothesis-counterfactual-evaluation-protocol-v1",
+  "source_bindings": [
+    {
+      "path": "governance/abc_lifecycle_state_machine_state_conditioned_action_hypothesis_protocol_v1/hypothesis_catalog.json",
+      "sha256": "5625E31F61BB30AE8387436D263EE4670A4184A804283EF6B2C2AA5CC3FFAA05"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_state_conditioned_action_hypothesis_eligibility_materialization_v1/action_hypothesis_eligibility_grid.csv",
+      "sha256": "F989B216B163F3CFD9315FA61BA64EC138D5826F51F9D62344E5118CCF89F146"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_state_conditioned_action_hypothesis_mandatory_review_v1/mandatory_review.json",
+      "sha256": "CB340DF04D1AEE792A96451C643283C822C8FE9DA799F874D3812FA3CC0A3317"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_state_conditioned_action_hypothesis_counterfactual_evaluation_source_capability_audit_v1/source_capability_audit.json",
+      "sha256": "39234284F90C5EC056301C93A0F659832AF0D81F550B45C0E881649DBA1E7BBA"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_state_conditioned_action_hypothesis_counterfactual_evaluation_source_capability_audit_v1/protocol_design_questions.json",
+      "sha256": "1493A56909CC7E633052B0C2D547C0567699FB234FF52B807DB0D0C21AC4B02E"
+    },
+    {
+      "path": "data/research/abc_exit_primitives_2019_2023_v1/control-trades.csv",
+      "sha256": "BA2CF871453DDFAC53DD53494C5B47D29C20BC1777370928135A8FB2D01E8ABE"
+    },
+    {
+      "path": "src/spotbot/research/abc_exit_primitives_v1.py",
+      "sha256": "B04F4EA4E95A1DA324036C14C5889F334702A30D0AF5AA66C4B7F6993C8395B2"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_persistent_state_causal_feature_reconstruction_execution_v1/decision_grid_reconstructed_features.csv",
+      "sha256": "15707D9D66E466FD1706646ADDFCFD2316E6210186EF3C1B4A735D9DF7880F42"
+    }
+  ],
+  "status": "FROZEN_BEFORE_ECONOMIC_ROW_ACCESS",
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_STATE_CONDITIONED_ACTION_HYPOTHESIS_COUNTERFACTUAL_EVALUATION_PROTOCOL_FREEZE_V1"
+}

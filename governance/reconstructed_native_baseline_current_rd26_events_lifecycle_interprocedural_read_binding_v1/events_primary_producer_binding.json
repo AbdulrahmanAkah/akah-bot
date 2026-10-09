@@ -1,0 +1,98 @@
+{
+  "primary_site_count": 2,
+  "primary_sites": [
+    {
+      "call_names": [
+        "scan_focus_signals"
+      ],
+      "expr": "scan_focus_signals(\n        membership=membership,\n        features=frames,\n        periods=ROBUSTNESS_PERIODS,\n        data_start=DATA_START,\n        data_cutoff=DATA_CUTOFF,\n        guard_each_period_hours=None,\n    )",
+      "kind": "ASSIGN",
+      "line": 597,
+      "loaded_names": [
+        "DATA_CUTOFF",
+        "DATA_START",
+        "ROBUSTNESS_PERIODS",
+        "frames",
+        "membership",
+        "scan_focus_signals"
+      ],
+      "targets": [
+        "events",
+        "funnel"
+      ]
+    },
+    {
+      "call_names": [
+        "filter_robustness_events"
+      ],
+      "expr": "filter_robustness_events(events)",
+      "kind": "ASSIGN",
+      "line": 605,
+      "loaded_names": [
+        "events",
+        "filter_robustness_events"
+      ],
+      "targets": [
+        "events"
+      ]
+    }
+  ],
+  "root_producer_call_count": 2,
+  "root_producer_calls": [
+    {
+      "call": "scan_focus_signals(\n        membership=membership,\n        features=frames,\n        periods=ROBUSTNESS_PERIODS,\n        data_start=DATA_START,\n        data_cutoff=DATA_CUTOFF,\n        guard_each_period_hours=None,\n    )",
+      "call_name": "scan_focus_signals",
+      "line": 597,
+      "module": "scripts/research/run_rd26_exit_architecture.py",
+      "symbolic_bindings": {
+        "DEFAULT_RAW_ROOT": "data/raw/rd16b/kucoin",
+        "EXPECTED_PARENT": "f40107fab876d709c353fc47b63d1347fabf2ada",
+        "MEMBERSHIP": "data/research/rd18_p3x_a3b_runtime/effective-operational-membership.csv",
+        "OUTPUT": "data/research/rd26_p1_runtime",
+        "PREFLIGHT_AUDIT": "data/research/rd26_p0_runtime/rd23-focus-signal-equivalence-audit-v1.json",
+        "PROTOCOL": "data/research/rd26_p1/rd26-p1-exit-architecture-robustness-protocol-v1.json",
+        "RD23_SIGNAL_EVENTS": "data/research/rd23_p2_runtime/signal-events.csv",
+        "RD23_SIGNAL_EVENTS_SHA256": "cdd6f078a5851a38be3f44722dcca7d6ccccb771b4647e9b467d14de3fc9d264",
+        "RD25_DIAGNOSIS": "data/research/rd25_p1_runtime/diagnosis.json",
+        "RD25_DIAGNOSIS_SHA256": "e9102397d6337801c163d4e78b5f365a7ea79f47b2db4469c67da04a537bc69e",
+        "SRC": "<ROOT>/src",
+        "args": "<call:parser().parse_args>",
+        "audit": "<call:run_preflight>",
+        "frames": "<call:load_feature_frames>",
+        "mode_count": "<call:sum>",
+        "raw_root": "data/raw/rd16b/kucoin",
+        "repo": "<call:parser().parse_args>.repo_root",
+        "repo_root": ".",
+        "root": "."
+      }
+    },
+    {
+      "call": "filter_robustness_events(events)",
+      "call_name": "filter_robustness_events",
+      "line": 605,
+      "module": "scripts/research/run_rd26_exit_architecture.py",
+      "symbolic_bindings": {
+        "DEFAULT_RAW_ROOT": "data/raw/rd16b/kucoin",
+        "EXPECTED_PARENT": "f40107fab876d709c353fc47b63d1347fabf2ada",
+        "MEMBERSHIP": "data/research/rd18_p3x_a3b_runtime/effective-operational-membership.csv",
+        "OUTPUT": "data/research/rd26_p1_runtime",
+        "PREFLIGHT_AUDIT": "data/research/rd26_p0_runtime/rd23-focus-signal-equivalence-audit-v1.json",
+        "PROTOCOL": "data/research/rd26_p1/rd26-p1-exit-architecture-robustness-protocol-v1.json",
+        "RD23_SIGNAL_EVENTS": "data/research/rd23_p2_runtime/signal-events.csv",
+        "RD23_SIGNAL_EVENTS_SHA256": "cdd6f078a5851a38be3f44722dcca7d6ccccb771b4647e9b467d14de3fc9d264",
+        "RD25_DIAGNOSIS": "data/research/rd25_p1_runtime/diagnosis.json",
+        "RD25_DIAGNOSIS_SHA256": "e9102397d6337801c163d4e78b5f365a7ea79f47b2db4469c67da04a537bc69e",
+        "SRC": "<ROOT>/src",
+        "args": "<call:parser().parse_args>",
+        "audit": "<call:run_preflight>",
+        "frames": "<call:load_feature_frames>",
+        "mode_count": "<call:sum>",
+        "raw_root": "data/raw/rd16b/kucoin",
+        "repo": "<call:parser().parse_args>.repo_root",
+        "repo_root": ".",
+        "root": "."
+      }
+    }
+  ],
+  "status": "PASS"
+}

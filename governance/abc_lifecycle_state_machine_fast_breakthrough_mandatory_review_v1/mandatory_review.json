@@ -1,0 +1,46 @@
+{
+  "2024_access": false,
+  "canonical_next_test": "FIRST_DIVERGENCE_PREFIX_REPLAY_THEN_TWO_FORWARD_YEARS_ONLY",
+  "canonical_parity_pass": false,
+  "canonical_root_cause": "EXIT_PATH_DIVERGENCE",
+  "development_architecture": "CURRENT_CORE_ONLY",
+  "development_architecture_upgrade": false,
+  "final_certification_allowed": false,
+  "heavy_wide_signal_generation_repeated": false,
+  "hybrid_certificate": {
+    "2024_access": false,
+    "benchmark_excess_pass": false,
+    "canonical_parity_still_required_for_final_certification": true,
+    "continuous_mtm_max_drawdown": -0.6928954482455965,
+    "development_upgrade_gate_pass": false,
+    "known_history_development_only": true,
+    "risk_gate_pass": false,
+    "rows": [
+      {
+        "benchmark_final_wealth": 3.414558076645873,
+        "candidate_final_wealth": 1.713860034538495,
+        "cost_multiplier": 1.0,
+        "excess_log_wealth": -0.6892999213911543,
+        "worst_annual_return": -0.1677086092390685
+      },
+      {
+        "benchmark_final_wealth": 2.8589147557163734,
+        "candidate_final_wealth": 1.0002124938258399,
+        "cost_multiplier": 2.0,
+        "excess_log_wealth": -1.0502296255246486,
+        "worst_annual_return": -0.319495725854785
+      }
+    ],
+    "schema_version": "akah-current-core-d2-challenger-development-certificate-v1",
+    "selected_governor": "BINARY_VOL"
+  },
+  "model_refit": false,
+  "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_FAST_BREAKTHROUGH_HUMAN_REVIEW_V1",
+  "next_engineering_bottleneck": "CANONICAL_EXTERNAL_ARBITER_FIRST_DIVERGENCE_REPAIR_V1",
+  "production_changed": false,
+  "reason_final_certification_blocked": "CANONICAL_PARITY_NOT_YET_CLOSED",
+  "selected_development_governor": "BINARY_VOL",
+  "status": "PASS_MANDATORY_REVIEW_COMPLETE",
+  "threshold_search": false,
+  "wide_architectural_implication": "DO_NOT_REPLACE_CURRENT_CORE_WITH_WIDE_POOL;TEST_WIDE_AS_PREEMPTIBLE_IDLE_CAPACITY_CHALLENGER"
+}

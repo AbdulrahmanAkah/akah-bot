@@ -1,0 +1,164 @@
+{
+  "rows": [
+    {
+      "cost_multiplier": 1.0,
+      "metric_checks": [
+        {
+          "abs_diff": 2.9103830456733704e-11,
+          "metric": "terminal_equity",
+          "new": 210372.21643260366,
+          "reference": 210372.2164326037,
+          "status": "PASS"
+        },
+        {
+          "abs_diff": 0.0,
+          "metric": "terminal_wealth",
+          "new": 2.1037221643260366,
+          "reference": 2.1037221643260366,
+          "status": "PASS"
+        },
+        {
+          "abs_diff": 5.551115123125783e-17,
+          "metric": "continuous_mtm_mdd",
+          "new": -0.24365683616204925,
+          "reference": -0.2436568361620492,
+          "status": "PASS"
+        },
+        {
+          "abs_diff": 0.0,
+          "metric": "total_cost",
+          "new": 17013.221967013124,
+          "reference": 17013.221967013124,
+          "status": "PASS"
+        },
+        {
+          "abs_diff": 1.3877787807814457e-17,
+          "metric": "mean_gross_fraction",
+          "new": 0.11017324557840372,
+          "reference": 0.1101732455784037,
+          "status": "PASS"
+        },
+        {
+          "abs_diff": 5.551115123125783e-17,
+          "metric": "positive_day_fraction",
+          "new": 0.36413415468856947,
+          "reference": 0.3641341546885694,
+          "status": "PASS"
+        },
+        {
+          "abs_diff": 8.326672684688674e-17,
+          "metric": "day_ge_0p5_fraction",
+          "new": 0.12388774811772758,
+          "reference": 0.1238877481177275,
+          "status": "PASS"
+        },
+        {
+          "metric": "trade_count",
+          "new": 4488,
+          "reference": 4488,
+          "status": "PASS"
+        },
+        {
+          "metric": "open_positions_at_cutoff",
+          "new": 20,
+          "reference": 20,
+          "status": "PASS"
+        }
+      ],
+      "status": "PASS",
+      "trade_check": {
+        "cost_multiplier": 1.0,
+        "numeric_max_abs_diff": {
+          "entry_notional": 1.8189894035458565e-12,
+          "entry_price": 0.0,
+          "entry_score": 1.1102230246251565e-16,
+          "exit_price": 0.0,
+          "net_pnl": 1.8189894035458565e-12
+        },
+        "status": "PASS",
+        "trade_count": 4488
+      }
+    },
+    {
+      "cost_multiplier": 2.0,
+      "metric_checks": [
+        {
+          "abs_diff": 0.0,
+          "metric": "terminal_equity",
+          "new": 210796.59150430263,
+          "reference": 210796.59150430263,
+          "status": "PASS"
+        },
+        {
+          "abs_diff": 0.0,
+          "metric": "terminal_wealth",
+          "new": 2.1079659150430263,
+          "reference": 2.1079659150430263,
+          "status": "PASS"
+        },
+        {
+          "abs_diff": 5.551115123125783e-17,
+          "metric": "continuous_mtm_mdd",
+          "new": -0.27061617959776174,
+          "reference": -0.2706161795977617,
+          "status": "PASS"
+        },
+        {
+          "abs_diff": 0.0,
+          "metric": "total_cost",
+          "new": 34320.505989933554,
+          "reference": 34320.505989933554,
+          "status": "PASS"
+        },
+        {
+          "abs_diff": 1.3877787807814457e-17,
+          "metric": "mean_gross_fraction",
+          "new": 0.11008006571937491,
+          "reference": 0.1100800657193749,
+          "status": "PASS"
+        },
+        {
+          "abs_diff": 0.0,
+          "metric": "positive_day_fraction",
+          "new": 0.3600273785078713,
+          "reference": 0.3600273785078713,
+          "status": "PASS"
+        },
+        {
+          "abs_diff": 4.163336342344337e-17,
+          "metric": "day_ge_0p5_fraction",
+          "new": 0.12251882272416154,
+          "reference": 0.1225188227241615,
+          "status": "PASS"
+        },
+        {
+          "metric": "trade_count",
+          "new": 4483,
+          "reference": 4483,
+          "status": "PASS"
+        },
+        {
+          "metric": "open_positions_at_cutoff",
+          "new": 20,
+          "reference": 20,
+          "status": "PASS"
+        }
+      ],
+      "status": "PASS",
+      "trade_check": {
+        "cost_multiplier": 2.0,
+        "numeric_max_abs_diff": {
+          "entry_notional": 1.8189894035458565e-12,
+          "entry_price": 0.0,
+          "entry_score": 1.1102230246251565e-16,
+          "exit_price": 0.0,
+          "net_pnl": 1.8189894035458565e-12
+        },
+        "status": "PASS",
+        "trade_count": 4483
+      }
+    }
+  ],
+  "schema_version": "akah-state-old39-pairwise-control-parity-v1",
+  "status": "PASS_2_OF_2_METRIC_AND_TRADE"
+}

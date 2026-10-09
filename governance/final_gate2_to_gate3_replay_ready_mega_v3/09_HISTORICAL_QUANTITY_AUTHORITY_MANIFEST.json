@@ -1,0 +1,26 @@
+{
+  "status": "PASS_DECLARED_EXECUTION_CONTRACT_ONLY",
+  "historical_PIT_exchange_authority_found": false,
+  "authority_kind": "PROSPECTIVE_DESIGN_CHOICE_NOT_HISTORICAL_EXCHANGE_RULE",
+  "design_choice_sha256": "B5711DE1E95E53BADBE92BB1B51DAD0658F49FD4D7447D950D0B24CD654347DB",
+  "rule_declaration_date": "2026-10-03",
+  "simulation_effective_window": [
+    "2022-01-01",
+    "2024-01-01 exclusive"
+  ],
+  "historical_exchange_executability_claim": "WITHDRAWN",
+  "search": [
+    "Current source/scripts/tests/governance quantity metadata paths",
+    "git log --all -G baseIncrement|priceIncrement|quantity_step|tick_size|lot_size|minFunds -- src/spotbot scripts tests (no producer authority found)",
+    "Frozen source-authority ledger/registry/handoff and previous quantity authority_search_scope",
+    "Acquisition manifests RD13/RD16PIT/RD18 historical checkpoint: no increment/minimum rule records; data/governance metadata path inventory and AKAH Downloads quantity/symbol/exchange-rule filename search: no usable authority",
+    "Local-ref metadata history path search for exchange-info/symbol/quantity/tick/lot rules: no usable authority",
+    "Official KuCoin Get Symbol/Get All Symbols documents: schema, not a 2022/23 effective-dated archive"
+  ],
+  "official_sources": [
+    "https://www.kucoin.com/docs-new/rest/spot-trading/market-data/get-symbol",
+    "https://www.kucoin.com/en-au/docs-new/rest/spot-trading/market-data/get-all-symbols"
+  ],
+  "present_day_metadata_or_OHLC_precision_used_as_history": false,
+  "pairs": "Every pair in bounded_market_input_manifest.json; same prospective contract, no outcome pair exclusions"
+}

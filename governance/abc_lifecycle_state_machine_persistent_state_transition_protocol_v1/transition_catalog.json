@@ -1,0 +1,34 @@
+{
+  "base_phase_allowed_adjacent_transitions": [
+    "UNCONFIRMED->UNCONFIRMED",
+    "UNCONFIRMED->EARLY_PROGRESS",
+    "EARLY_PROGRESS->CONFIRMED",
+    "CONFIRMED->CONFIRMED"
+  ],
+  "catalog_id": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_TRANSITION_CATALOG_V1",
+  "exit_action": "NONE",
+  "initial_row_policy": "DIRECT_STATE_SNAPSHOT_NO_SYNTHETIC_INCOMING_TRANSITION",
+  "overlay_transition_formula": {
+    "ACTIVATE": "false -> true",
+    "CLEAR": "true -> false",
+    "CONTINUE": "true -> true",
+    "STAY_INACTIVE": "false -> false"
+  },
+  "overlay_transition_vocabulary": [
+    "STAY_INACTIVE",
+    "ACTIVATE",
+    "CONTINUE",
+    "CLEAR"
+  ],
+  "runtime_authorized": false,
+  "schema_version": "abc-persistent-state-transition-catalog-v1",
+  "simultaneous_overlay_transitions": "ALLOWED_NO_PRIORITY_NO_COMPOSITE_CLASS",
+  "state_vector": [
+    "base_state",
+    "stalled_active",
+    "structural_break_active",
+    "volatility_damage_active"
+  ],
+  "terminal_row_policy": "NO_SYNTHETIC_CLEAR_AT_NATIVE_EXIT_OR_OBSERVATION_END",
+  "time_gap_semantics": "NOT_USED_FOR_TRANSITION_CLASSIFICATION"
+}

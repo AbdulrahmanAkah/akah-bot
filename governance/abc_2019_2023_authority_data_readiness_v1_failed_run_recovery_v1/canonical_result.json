@@ -1,0 +1,37 @@
+{
+  "schema_version": "abc-readiness-failed-run-recovery-v1",
+  "task_id": "ABC_2019_2023_AUTHORITY_DATA_READINESS_AUDIT_V1",
+  "status": "TECHNICAL_OR_PARITY_FAILURE_FAIL_CLOSED_NO_SCIENTIFIC_CONCLUSION",
+  "root_cause": "governance_json omitted mandatory key 2023_new_raw_or_replay_accessed; the first fail-close attempt repeated the same omission",
+  "scientific_conclusion": null,
+  "failed_run_local_commits_after_rev274_source_head": [
+    "8d36cc6a52b8d51e23c1c53b73a48213dc724ec8",
+    "d3648106f181a8b56782480f045c8ab8dc3b9bc0"
+  ],
+  "tracked_dirty_at_recovery_preflight": [],
+  "invalidated_failed_run_artifacts": [
+    {
+      "path": "governance/abc_2019_2023_authority_data_readiness_v1/canonical_result.json",
+      "sha256": "7ABE675A259D6E935FB830DE6C5534D5C4A60CBF05B9BAEE037F55F0688EFD75",
+      "authority": "INVALID_FAILED_RUN_NOT_SCIENTIFIC_AUTHORITY"
+    },
+    {
+      "path": "governance/abc_2019_2023_authority_data_readiness_v1/pair_readiness.json",
+      "sha256": "3956376883F51F9EFFA8D479010B58E886788F0E63F745771E1E2206DBF03555",
+      "authority": "INVALID_FAILED_RUN_NOT_SCIENTIFIC_AUTHORITY"
+    },
+    {
+      "path": "governance/abc_2019_2023_authority_data_readiness_v1/source_authority_inventory.json",
+      "sha256": "FB2EED39BC6E5DC1D584D65183154C5E85F28EE28504D880EB53C09100B396A1",
+      "authority": "INVALID_FAILED_RUN_NOT_SCIENTIFIC_AUTHORITY"
+    }
+  ],
+  "previous_failed_failclose_evidence": {
+    "path": "governance/batch_fail_closed/abc_2019_2023_authority_data_readiness_audit_v1/failure.json",
+    "sha256": "CB8CE3ADB59281ED3B4824DE4B9C0E8E68FC9D43125CA20D6C3D3D327A06EA43"
+  },
+  "2023_market_data_was_accessed_for_readiness_before_failure": true,
+  "2024_access_claim_from_failed_run_is_not_reused_as_scientific_evidence": true,
+  "retry_required": true,
+  "next_bottleneck": "ABC_2019_2023_AUTHORITY_DATA_READINESS_AUDIT_V1_RETRY_V1"
+}

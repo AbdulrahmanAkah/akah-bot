@@ -1,0 +1,560 @@
+{
+  "2024_access": false,
+  "DAMAGE_AGE_directional_pairs": [
+    {
+      "family": "DAMAGE_AGE",
+      "view_target": "CURRENT_STATE::continuation_advantage"
+    },
+    {
+      "family": "DAMAGE_AGE",
+      "view_target": "CURRENT_STATE::__downstream_residual"
+    },
+    {
+      "family": "DAMAGE_AGE",
+      "view_target": "CURRENT_STATE::continuation_advantage_cost2x"
+    },
+    {
+      "family": "DAMAGE_AGE",
+      "view_target": "CURRENT_STATE::__downstream_residual_cost2x"
+    },
+    {
+      "family": "DAMAGE_AGE",
+      "view_target": "NEXT_STATE::__downstream_residual"
+    },
+    {
+      "family": "DAMAGE_AGE",
+      "view_target": "NEXT_STATE::__downstream_residual_cost2x"
+    }
+  ],
+  "cost2x_robust_directional_pairs": [
+    {
+      "family": "CORE_AGE",
+      "state_view": "CURRENT_STATE",
+      "target_component": "continuation_advantage"
+    },
+    {
+      "family": "EVIDENCE_AGE",
+      "state_view": "CURRENT_STATE",
+      "target_component": "continuation_advantage"
+    },
+    {
+      "family": "DAMAGE_AGE",
+      "state_view": "CURRENT_STATE",
+      "target_component": "continuation_advantage"
+    },
+    {
+      "family": "CORE_AGE",
+      "state_view": "CURRENT_STATE",
+      "target_component": "__downstream_residual"
+    },
+    {
+      "family": "EVIDENCE_AGE",
+      "state_view": "CURRENT_STATE",
+      "target_component": "__downstream_residual"
+    },
+    {
+      "family": "DAMAGE_AGE",
+      "state_view": "CURRENT_STATE",
+      "target_component": "__downstream_residual"
+    },
+    {
+      "family": "CORE_AGE",
+      "state_view": "NEXT_STATE",
+      "target_component": "__downstream_residual"
+    },
+    {
+      "family": "EVIDENCE_AGE",
+      "state_view": "NEXT_STATE",
+      "target_component": "__downstream_residual"
+    },
+    {
+      "family": "DAMAGE_AGE",
+      "state_view": "NEXT_STATE",
+      "target_component": "__downstream_residual"
+    }
+  ],
+  "new_model_fit": false,
+  "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_CONTINUATION_VALUE_INTERVENED_BRANCH_MECHANISM_DECOMPOSITION_V1",
+  "next_state_residual_attribution_executed": true,
+  "rows": 3687,
+  "runtime_rule_selected": false,
+  "schema_version": "akah-rev573-dual-branch-continuation-maximum-evidence-mega-v1-clean-bellman-attribution",
+  "signature_summary": {
+    "CURRENT_STATE::__downstream_residual": {
+      "CORE_AGE": {
+        "columns": [
+          "base_state",
+          "native_market_state_context",
+          "memory_seen",
+          "__age_bin"
+        ],
+        "status": "PASS_FIXED_SIGNATURE_EXECUTED",
+        "train_signature_count": 12,
+        "train_within_signature_variance_ratio": 0.9632095749838019,
+        "two_year_directional_pass": true
+      },
+      "DAMAGE_AGE": {
+        "columns": [
+          "__sign_progress_margin_delta_from_prev",
+          "__sign_structural_break_margin_delta_from_prev",
+          "__sign_volatility_damage_margin_delta_from_prev",
+          "__age_bin"
+        ],
+        "status": "PASS_FIXED_SIGNATURE_EXECUTED",
+        "train_signature_count": 12,
+        "train_within_signature_variance_ratio": 0.988891877011592,
+        "two_year_directional_pass": true
+      },
+      "EVIDENCE_AGE": {
+        "columns": [
+          "a_condition_now",
+          "b_condition_now",
+          "memory_seen",
+          "__age_bin"
+        ],
+        "status": "PASS_FIXED_SIGNATURE_EXECUTED",
+        "train_signature_count": 8,
+        "train_within_signature_variance_ratio": 0.9259177815280255,
+        "two_year_directional_pass": true
+      },
+      "SIGNAL_MARKET": {
+        "columns": [
+          "A_signal",
+          "B_signal",
+          "C_signal",
+          "native_market_state_context"
+        ],
+        "status": "PASS_FIXED_SIGNATURE_EXECUTED",
+        "train_signature_count": 2,
+        "train_within_signature_variance_ratio": 0.9872478021624234,
+        "two_year_directional_pass": false
+      }
+    },
+    "CURRENT_STATE::__downstream_residual_cost2x": {
+      "CORE_AGE": {
+        "columns": [
+          "base_state",
+          "native_market_state_context",
+          "memory_seen",
+          "__age_bin"
+        ],
+        "status": "PASS_FIXED_SIGNATURE_EXECUTED",
+        "train_signature_count": 12,
+        "train_within_signature_variance_ratio": 0.9632095749838013,
+        "two_year_directional_pass": true
+      },
+      "DAMAGE_AGE": {
+        "columns": [
+          "__sign_progress_margin_delta_from_prev",
+          "__sign_structural_break_margin_delta_from_prev",
+          "__sign_volatility_damage_margin_delta_from_prev",
+          "__age_bin"
+        ],
+        "status": "PASS_FIXED_SIGNATURE_EXECUTED",
+        "train_signature_count": 12,
+        "train_within_signature_variance_ratio": 0.9888918770115918,
+        "two_year_directional_pass": true
+      },
+      "EVIDENCE_AGE": {
+        "columns": [
+          "a_condition_now",
+          "b_condition_now",
+          "memory_seen",
+          "__age_bin"
+        ],
+        "status": "PASS_FIXED_SIGNATURE_EXECUTED",
+        "train_signature_count": 8,
+        "train_within_signature_variance_ratio": 0.9259177815280247,
+        "two_year_directional_pass": true
+      },
+      "SIGNAL_MARKET": {
+        "columns": [
+          "A_signal",
+          "B_signal",
+          "C_signal",
+          "native_market_state_context"
+        ],
+        "status": "PASS_FIXED_SIGNATURE_EXECUTED",
+        "train_signature_count": 2,
+        "train_within_signature_variance_ratio": 0.9872478021624235,
+        "two_year_directional_pass": false
+      }
+    },
+    "CURRENT_STATE::__immediate_bridge_advantage": {
+      "CORE_AGE": {
+        "columns": [
+          "base_state",
+          "native_market_state_context",
+          "memory_seen",
+          "__age_bin"
+        ],
+        "status": "PASS_FIXED_SIGNATURE_EXECUTED",
+        "train_signature_count": 12,
+        "train_within_signature_variance_ratio": 1.008241458445467,
+        "two_year_directional_pass": false
+      },
+      "DAMAGE_AGE": {
+        "columns": [
+          "__sign_progress_margin_delta_from_prev",
+          "__sign_structural_break_margin_delta_from_prev",
+          "__sign_volatility_damage_margin_delta_from_prev",
+          "__age_bin"
+        ],
+        "status": "PASS_FIXED_SIGNATURE_EXECUTED",
+        "train_signature_count": 12,
+        "train_within_signature_variance_ratio": 1.0245630157412566,
+        "two_year_directional_pass": false
+      },
+      "EVIDENCE_AGE": {
+        "columns": [
+          "a_condition_now",
+          "b_condition_now",
+          "memory_seen",
+          "__age_bin"
+        ],
+        "status": "PASS_FIXED_SIGNATURE_EXECUTED",
+        "train_signature_count": 8,
+        "train_within_signature_variance_ratio": 0.9968469363792059,
+        "two_year_directional_pass": false
+      },
+      "SIGNAL_MARKET": {
+        "columns": [
+          "A_signal",
+          "B_signal",
+          "C_signal",
+          "native_market_state_context"
+        ],
+        "status": "PASS_FIXED_SIGNATURE_EXECUTED",
+        "train_signature_count": 2,
+        "train_within_signature_variance_ratio": 1.0084959894769567,
+        "two_year_directional_pass": false
+      }
+    },
+    "CURRENT_STATE::__immediate_bridge_advantage_cost2x": {
+      "CORE_AGE": {
+        "columns": [
+          "base_state",
+          "native_market_state_context",
+          "memory_seen",
+          "__age_bin"
+        ],
+        "status": "PASS_FIXED_SIGNATURE_EXECUTED",
+        "train_signature_count": 12,
+        "train_within_signature_variance_ratio": 1.0082414584454669,
+        "two_year_directional_pass": false
+      },
+      "DAMAGE_AGE": {
+        "columns": [
+          "__sign_progress_margin_delta_from_prev",
+          "__sign_structural_break_margin_delta_from_prev",
+          "__sign_volatility_damage_margin_delta_from_prev",
+          "__age_bin"
+        ],
+        "status": "PASS_FIXED_SIGNATURE_EXECUTED",
+        "train_signature_count": 12,
+        "train_within_signature_variance_ratio": 1.0245630157412569,
+        "two_year_directional_pass": false
+      },
+      "EVIDENCE_AGE": {
+        "columns": [
+          "a_condition_now",
+          "b_condition_now",
+          "memory_seen",
+          "__age_bin"
+        ],
+        "status": "PASS_FIXED_SIGNATURE_EXECUTED",
+        "train_signature_count": 8,
+        "train_within_signature_variance_ratio": 0.9968469363792054,
+        "two_year_directional_pass": false
+      },
+      "SIGNAL_MARKET": {
+        "columns": [
+          "A_signal",
+          "B_signal",
+          "C_signal",
+          "native_market_state_context"
+        ],
+        "status": "PASS_FIXED_SIGNATURE_EXECUTED",
+        "train_signature_count": 2,
+        "train_within_signature_variance_ratio": 1.0084959894769565,
+        "two_year_directional_pass": false
+      }
+    },
+    "CURRENT_STATE::continuation_advantage": {
+      "CORE_AGE": {
+        "columns": [
+          "base_state",
+          "native_market_state_context",
+          "memory_seen",
+          "__age_bin"
+        ],
+        "status": "PASS_FIXED_SIGNATURE_EXECUTED",
+        "train_signature_count": 12,
+        "train_within_signature_variance_ratio": 0.9336272382113965,
+        "two_year_directional_pass": true
+      },
+      "DAMAGE_AGE": {
+        "columns": [
+          "__sign_progress_margin_delta_from_prev",
+          "__sign_structural_break_margin_delta_from_prev",
+          "__sign_volatility_damage_margin_delta_from_prev",
+          "__age_bin"
+        ],
+        "status": "PASS_FIXED_SIGNATURE_EXECUTED",
+        "train_signature_count": 12,
+        "train_within_signature_variance_ratio": 0.9765887765287671,
+        "two_year_directional_pass": true
+      },
+      "EVIDENCE_AGE": {
+        "columns": [
+          "a_condition_now",
+          "b_condition_now",
+          "memory_seen",
+          "__age_bin"
+        ],
+        "status": "PASS_FIXED_SIGNATURE_EXECUTED",
+        "train_signature_count": 8,
+        "train_within_signature_variance_ratio": 0.8846108683984417,
+        "two_year_directional_pass": true
+      },
+      "SIGNAL_MARKET": {
+        "columns": [
+          "A_signal",
+          "B_signal",
+          "C_signal",
+          "native_market_state_context"
+        ],
+        "status": "PASS_FIXED_SIGNATURE_EXECUTED",
+        "train_signature_count": 2,
+        "train_within_signature_variance_ratio": 0.972491889297245,
+        "two_year_directional_pass": false
+      }
+    },
+    "CURRENT_STATE::continuation_advantage_cost2x": {
+      "CORE_AGE": {
+        "columns": [
+          "base_state",
+          "native_market_state_context",
+          "memory_seen",
+          "__age_bin"
+        ],
+        "status": "PASS_FIXED_SIGNATURE_EXECUTED",
+        "train_signature_count": 12,
+        "train_within_signature_variance_ratio": 0.9336272382113966,
+        "two_year_directional_pass": true
+      },
+      "DAMAGE_AGE": {
+        "columns": [
+          "__sign_progress_margin_delta_from_prev",
+          "__sign_structural_break_margin_delta_from_prev",
+          "__sign_volatility_damage_margin_delta_from_prev",
+          "__age_bin"
+        ],
+        "status": "PASS_FIXED_SIGNATURE_EXECUTED",
+        "train_signature_count": 12,
+        "train_within_signature_variance_ratio": 0.9765887765287671,
+        "two_year_directional_pass": true
+      },
+      "EVIDENCE_AGE": {
+        "columns": [
+          "a_condition_now",
+          "b_condition_now",
+          "memory_seen",
+          "__age_bin"
+        ],
+        "status": "PASS_FIXED_SIGNATURE_EXECUTED",
+        "train_signature_count": 8,
+        "train_within_signature_variance_ratio": 0.8846108683984417,
+        "two_year_directional_pass": true
+      },
+      "SIGNAL_MARKET": {
+        "columns": [
+          "A_signal",
+          "B_signal",
+          "C_signal",
+          "native_market_state_context"
+        ],
+        "status": "PASS_FIXED_SIGNATURE_EXECUTED",
+        "train_signature_count": 2,
+        "train_within_signature_variance_ratio": 0.9724918892972451,
+        "two_year_directional_pass": false
+      }
+    },
+    "NEXT_STATE::__downstream_residual": {
+      "CORE_AGE": {
+        "columns": [
+          "base_state",
+          "native_market_state_context",
+          "memory_seen",
+          "__age_bin"
+        ],
+        "status": "PASS_FIXED_SIGNATURE_EXECUTED",
+        "train_signature_count": 12,
+        "train_within_signature_variance_ratio": 0.9221499831881068,
+        "two_year_directional_pass": true
+      },
+      "DAMAGE_AGE": {
+        "columns": [
+          "__sign_progress_margin_delta_from_prev",
+          "__sign_structural_break_margin_delta_from_prev",
+          "__sign_volatility_damage_margin_delta_from_prev",
+          "__age_bin"
+        ],
+        "status": "PASS_FIXED_SIGNATURE_EXECUTED",
+        "train_signature_count": 11,
+        "train_within_signature_variance_ratio": 0.9699621561033982,
+        "two_year_directional_pass": true
+      },
+      "EVIDENCE_AGE": {
+        "columns": [
+          "a_condition_now",
+          "b_condition_now",
+          "memory_seen",
+          "__age_bin"
+        ],
+        "status": "PASS_FIXED_SIGNATURE_EXECUTED",
+        "train_signature_count": 7,
+        "train_within_signature_variance_ratio": 0.8837097232240396,
+        "two_year_directional_pass": true
+      },
+      "SIGNAL_MARKET": {
+        "columns": [
+          "A_signal",
+          "B_signal",
+          "C_signal",
+          "native_market_state_context"
+        ],
+        "status": "PASS_FIXED_SIGNATURE_EXECUTED",
+        "train_signature_count": 2,
+        "train_within_signature_variance_ratio": 0.9731169423860602,
+        "two_year_directional_pass": false
+      }
+    },
+    "NEXT_STATE::__downstream_residual_cost2x": {
+      "CORE_AGE": {
+        "columns": [
+          "base_state",
+          "native_market_state_context",
+          "memory_seen",
+          "__age_bin"
+        ],
+        "status": "PASS_FIXED_SIGNATURE_EXECUTED",
+        "train_signature_count": 12,
+        "train_within_signature_variance_ratio": 0.9221499831881065,
+        "two_year_directional_pass": true
+      },
+      "DAMAGE_AGE": {
+        "columns": [
+          "__sign_progress_margin_delta_from_prev",
+          "__sign_structural_break_margin_delta_from_prev",
+          "__sign_volatility_damage_margin_delta_from_prev",
+          "__age_bin"
+        ],
+        "status": "PASS_FIXED_SIGNATURE_EXECUTED",
+        "train_signature_count": 11,
+        "train_within_signature_variance_ratio": 0.969962156103398,
+        "two_year_directional_pass": true
+      },
+      "EVIDENCE_AGE": {
+        "columns": [
+          "a_condition_now",
+          "b_condition_now",
+          "memory_seen",
+          "__age_bin"
+        ],
+        "status": "PASS_FIXED_SIGNATURE_EXECUTED",
+        "train_signature_count": 7,
+        "train_within_signature_variance_ratio": 0.8837097232240394,
+        "two_year_directional_pass": true
+      },
+      "SIGNAL_MARKET": {
+        "columns": [
+          "A_signal",
+          "B_signal",
+          "C_signal",
+          "native_market_state_context"
+        ],
+        "status": "PASS_FIXED_SIGNATURE_EXECUTED",
+        "train_signature_count": 2,
+        "train_within_signature_variance_ratio": 0.9731169423860601,
+        "two_year_directional_pass": false
+      }
+    }
+  },
+  "status": "PASS_CLEAN_BELLMAN_COMPONENT_ATTRIBUTION_COMPLETE",
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_CONTINUATION_VALUE_CLEAN_BELLMAN_COMPONENT_ATTRIBUTION_V1",
+  "two_year_directional_pairs": [
+    {
+      "family": "CORE_AGE",
+      "view_target": "CURRENT_STATE::continuation_advantage"
+    },
+    {
+      "family": "EVIDENCE_AGE",
+      "view_target": "CURRENT_STATE::continuation_advantage"
+    },
+    {
+      "family": "DAMAGE_AGE",
+      "view_target": "CURRENT_STATE::continuation_advantage"
+    },
+    {
+      "family": "CORE_AGE",
+      "view_target": "CURRENT_STATE::__downstream_residual"
+    },
+    {
+      "family": "EVIDENCE_AGE",
+      "view_target": "CURRENT_STATE::__downstream_residual"
+    },
+    {
+      "family": "DAMAGE_AGE",
+      "view_target": "CURRENT_STATE::__downstream_residual"
+    },
+    {
+      "family": "CORE_AGE",
+      "view_target": "CURRENT_STATE::continuation_advantage_cost2x"
+    },
+    {
+      "family": "EVIDENCE_AGE",
+      "view_target": "CURRENT_STATE::continuation_advantage_cost2x"
+    },
+    {
+      "family": "DAMAGE_AGE",
+      "view_target": "CURRENT_STATE::continuation_advantage_cost2x"
+    },
+    {
+      "family": "CORE_AGE",
+      "view_target": "CURRENT_STATE::__downstream_residual_cost2x"
+    },
+    {
+      "family": "EVIDENCE_AGE",
+      "view_target": "CURRENT_STATE::__downstream_residual_cost2x"
+    },
+    {
+      "family": "DAMAGE_AGE",
+      "view_target": "CURRENT_STATE::__downstream_residual_cost2x"
+    },
+    {
+      "family": "CORE_AGE",
+      "view_target": "NEXT_STATE::__downstream_residual"
+    },
+    {
+      "family": "EVIDENCE_AGE",
+      "view_target": "NEXT_STATE::__downstream_residual"
+    },
+    {
+      "family": "DAMAGE_AGE",
+      "view_target": "NEXT_STATE::__downstream_residual"
+    },
+    {
+      "family": "CORE_AGE",
+      "view_target": "NEXT_STATE::__downstream_residual_cost2x"
+    },
+    {
+      "family": "EVIDENCE_AGE",
+      "view_target": "NEXT_STATE::__downstream_residual_cost2x"
+    },
+    {
+      "family": "DAMAGE_AGE",
+      "view_target": "NEXT_STATE::__downstream_residual_cost2x"
+    }
+  ]
+}

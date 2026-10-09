@@ -1,0 +1,84 @@
+{
+  "authority_id": "AKAH_BOT_RD23_SIGNAL_CANDIDATE_EXACT_AUTHORITY_V1",
+  "target": "data/research/rd23_p2_runtime/signal-events.csv",
+  "status": "PASS_CANDIDATE_NOT_AUTHORIZED",
+  "path_metadata": {
+    "exists": true,
+    "tracked": true,
+    "size_bytes": 6984154,
+    "sha256": "CDD6F078A5851A38BE3F44722DCCA7D6CCCCB771B4647E9B467D14DE3FC9D264",
+    "immutable_evidence": "TRACKED_AND_OUTPUT_MANIFEST_HASHED",
+    "output_manifest_sha256": "4229056263041507265EE329ADDEC71E518B88A8B80E91D9BF4E9DF2131DB777"
+  },
+  "producer": {
+    "script": "scripts/research/run_rd23_multifamily_raw_edge.py",
+    "function": "main",
+    "write_line": 312,
+    "source_sha256": "7B31BB16FCDECA633D3BEA2951BECA049A8FEEC5158EA634F5ADE48B650CAAB7",
+    "expression": "events.to_csv(output / 'signal-events.csv', index=False, lineterminator='\\n')"
+  },
+  "intended_temporal_scope": {
+    "data_start": "2019-01-01T00:00:00Z",
+    "data_cutoff_exclusive": "2022-01-01T00:00:00Z",
+    "periods": ["DISCOVERY_2019_2020", "TEMPORAL_REPLICATION_2021"],
+    "candidate_is_current_2022_input": false,
+    "candidate_is_pre2023_by_declared_cutoff": true,
+    "filter_enforcement": "SOURCE_FILTER_AND_POST_LOAD_ASSERTION",
+    "preopen_enforcement_proven": false
+  },
+  "source_schema_contract": {
+    "writer_event_fields": [
+      "universe_id",
+      "period_id",
+      "timestamp",
+      "candidate_rank",
+      "family_id",
+      "pair",
+      "membership_rank",
+      "signal_strength",
+      "decision_close",
+      "return_72h",
+      "aux_value"
+    ],
+    "required_current_rd27_fields": [
+      "timestamp",
+      "universe_id",
+      "period_id",
+      "family_id",
+      "pair",
+      "membership_rank",
+      "atr24_at_signal"
+    ],
+    "missing_current_required_field": "atr24_at_signal",
+    "schema_status": "INCOMPATIBLE_CURRENT_RD27_INPUT_CONTRACT"
+  },
+  "population_contract": {
+    "source_families": [
+      "MOMENTUM_BREAKOUT",
+      "VOLATILITY_EXPANSION",
+      "STRUCTURAL_REVERSAL",
+      "RELATIVE_STRENGTH_ROTATION",
+      "MOMENTUM_ACCELERATION",
+      "BASE_RANGE_BREAKOUT"
+    ],
+    "current_required_constructors": {
+      "UNION_FOCUS": "union_events",
+      "MOMENTUM_BREAKOUT": "standalone_events",
+      "RELATIVE_STRENGTH_ROTATION": "standalone_events"
+    },
+    "union_focus_population_present": false,
+    "c2_d2_e2_source_loop_semantics": "SOURCE_CODE_SUPPORTS_MEMBERSHIP_UNIVERSE_IDS_C2_D2_E2; ROW_PRESENCE_NOT_INSPECTED",
+    "current_nine_strata_compatibility": false
+  },
+  "pit_and_timestamp": {
+    "pit_status": "PARTIAL_SOURCE_DEFINED_NOT_AUTHORIZED_FOR_CURRENT_NINE_STRATA",
+    "signal_timestamp": "1H_COMPLETED_FRAME_TIMESTAMP",
+    "timestamp_semantic_authority": "BAR_CLOSE_TIME_UTC_FROM_FROZEN_RD16B_CONTRACT",
+    "membership_binding": "effective-operational-membership decision_time/effective_end source path",
+    "outcome_fields_used_for_authority": false
+  },
+  "classification": "NOT_SEMANTICALLY_COMPATIBLE",
+  "classification_reason": "The immutable RD23 artifact is an earlier six-family, pre-2022 raw-edge output whose writer schema lacks atr24_at_signal and does not implement the frozen FULL_EXISTING_NATIVE_MATRIX_AS_STUDY_STRATA constructor contract. Its upstream pre-open isolation is also not proven.",
+  "protected_year_rows_read": false,
+  "signal_rows_read": false
+}

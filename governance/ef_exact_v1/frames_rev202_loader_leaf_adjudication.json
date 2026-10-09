@@ -1,0 +1,552 @@
+{
+  "actual_distinct_loader_definitions": 6,
+  "interpretation": "All eight identify real loader call expressions; seven are not upstream of the specified RD27 run_all_portfolios. Existence is not baseline authority.",
+  "invalid_cross_module_caller_edges": 7,
+  "loader_leaves_preserved": 8,
+  "loaders": [
+    {
+      "actual_caller_binding": {
+        "end_line": 395,
+        "evidence_id": "scripts/research/run_rd26_exit_architecture.py:296-395",
+        "function": "run_all_portfolios",
+        "line": 296,
+        "source_sha256": "9C096C6E7C4784D9B91A7EFC55FA85F46755B2D850B78E7A5E90980294DC9ACE"
+      },
+      "actual_loader": {
+        "end_line": 208,
+        "evidence_id": "scripts/research/run_rd26_exit_architecture.py:187-208",
+        "function": "load_feature_frames",
+        "line": 187,
+        "path": "scripts/research/run_rd26_exit_architecture.py",
+        "source_sha256": "9C096C6E7C4784D9B91A7EFC55FA85F46755B2D850B78E7A5E90980294DC9ACE"
+      },
+      "actual_loader_call_expression": "load_feature_frames(raw_root=raw_root, pairs=pairs, cutoff=DATA_CUTOFF)",
+      "availability": "Completed OHLCV and rolling turnover for bar t only after that 1h bar completes; open distinct. Code uses timestamp, not bar_close_time.",
+      "bar_close_time_controls_loader": false,
+      "canonical_4h_binding": "NO_SOURCE_EDGE_TO_CANONICAL_4H_ARTIFACT",
+      "claimed_caller": {
+        "line": 631,
+        "path": "scripts/research/run_rd26_exit_architecture.py"
+      },
+      "concrete_artifact_sha256": null,
+      "concrete_study_file_set_bound": false,
+      "data_rows_read": false,
+      "default_raw_root": "data/raw/rd16b/kucoin",
+      "edge_adjudication": "INVALID_CROSS_MODULE_RUN_ALL_PORTFOLIOS_NAME_COLLISION",
+      "edge_to_rd27_run_all_portfolios_valid": false,
+      "feature_import_binding": {
+        "evidence_id": "scripts/research/run_rd26_exit_architecture.py:19-45",
+        "source_sha256": "9C096C6E7C4784D9B91A7EFC55FA85F46755B2D850B78E7A5E90980294DC9ACE"
+      },
+      "feature_producer": {
+        "end_line": 184,
+        "evidence_id": "src/spotbot/research/rd26_exit_architecture.py:144-184",
+        "function": "prepare_features",
+        "line": 144,
+        "source_sha256": "1290748EA7E8A0343C1A15CEDFC1220AA423F04C11FDD558311B06AC7DA90359"
+      },
+      "frames_assignment": {
+        "evidence_id": "scripts/research/run_rd26_exit_architecture.py:592-596",
+        "source_sha256": "9C096C6E7C4784D9B91A7EFC55FA85F46755B2D850B78E7A5E90980294DC9ACE"
+      },
+      "loader_filter": "timestamp < cutoff; study cutoff differs from legacy DATA_CUTOFF and must be authorized separately",
+      "originating_replay_callsite": {
+        "function": "run_all_portfolios",
+        "line": 420,
+        "path": "scripts/research/run_rd27_lifecycle_ablation.py"
+      },
+      "override": "args.raw_root",
+      "path_expression": "raw_root / pair / '1h.parquet'",
+      "path_kind": "PARAMETERIZED_WITH_CONFIG_OVERRIDE_AND_LITERAL_DEFAULT",
+      "pit_safe_status": "CONDITIONAL_REQUIRES_1H_TIMESTAMP_COMPLETENESS_AND_CONTIGUITY_AUTHORITY",
+      "raw_root_assignment": {
+        "evidence_id": "scripts/research/run_rd26_exit_architecture.py:565-569",
+        "source_sha256": "9C096C6E7C4784D9B91A7EFC55FA85F46755B2D850B78E7A5E90980294DC9ACE"
+      },
+      "rev202_leaf_id": "frames:$.callsites[1].roles.frames.callers[0].upstream.upstream",
+      "static_path_template_bound": true,
+      "wrapper_chain": [
+        "scripts/research/run_rd26_exit_architecture.py::main",
+        "scripts/research/run_rd26_exit_architecture.py::run_all_portfolios"
+      ]
+    },
+    {
+      "actual_caller_binding": {
+        "end_line": 485,
+        "evidence_id": "scripts/research/run_rd27_lifecycle_ablation.py:382-485",
+        "function": "run_all_portfolios",
+        "line": 382,
+        "source_sha256": "7DFC388F3BF8EF6EFA16E0640CF924158999A9923674C7701B8919872755CBB5"
+      },
+      "actual_loader": {
+        "end_line": 265,
+        "evidence_id": "scripts/research/run_rd27_lifecycle_ablation.py:242-265",
+        "function": "load_feature_frames",
+        "line": 242,
+        "path": "scripts/research/run_rd27_lifecycle_ablation.py",
+        "source_sha256": "7DFC388F3BF8EF6EFA16E0640CF924158999A9923674C7701B8919872755CBB5"
+      },
+      "actual_loader_call_expression": "load_feature_frames(raw_root=raw_root, pairs=pairs)",
+      "availability": "Completed OHLCV and rolling turnover for bar t only after that 1h bar completes; open distinct. Code uses timestamp, not bar_close_time.",
+      "bar_close_time_controls_loader": false,
+      "canonical_4h_binding": "NO_SOURCE_EDGE_TO_CANONICAL_4H_ARTIFACT",
+      "claimed_caller": {
+        "line": 853,
+        "path": "scripts/research/run_rd27_lifecycle_ablation.py"
+      },
+      "concrete_artifact_sha256": null,
+      "concrete_study_file_set_bound": false,
+      "data_rows_read": false,
+      "default_raw_root": "data/raw/rd16b/kucoin",
+      "edge_adjudication": "VALID_RD27_LOCAL_CALL",
+      "edge_to_rd27_run_all_portfolios_valid": true,
+      "feature_import_binding": {
+        "evidence_id": "scripts/research/run_rd27_lifecycle_ablation.py:19-39",
+        "source_sha256": "7DFC388F3BF8EF6EFA16E0640CF924158999A9923674C7701B8919872755CBB5"
+      },
+      "feature_producer": {
+        "end_line": 184,
+        "evidence_id": "src/spotbot/research/rd26_exit_architecture.py:144-184",
+        "function": "prepare_features",
+        "line": 144,
+        "source_sha256": "1290748EA7E8A0343C1A15CEDFC1220AA423F04C11FDD558311B06AC7DA90359"
+      },
+      "frames_assignment": {
+        "evidence_id": "scripts/research/run_rd27_lifecycle_ablation.py:822-822",
+        "source_sha256": "7DFC388F3BF8EF6EFA16E0640CF924158999A9923674C7701B8919872755CBB5"
+      },
+      "loader_filter": "timestamp < cutoff; study cutoff differs from legacy DATA_CUTOFF and must be authorized separately",
+      "originating_replay_callsite": {
+        "function": "run_all_portfolios",
+        "line": 420,
+        "path": "scripts/research/run_rd27_lifecycle_ablation.py"
+      },
+      "override": "args.raw_root",
+      "path_expression": "raw_root / pair / '1h.parquet'",
+      "path_kind": "PARAMETERIZED_WITH_CONFIG_OVERRIDE_AND_LITERAL_DEFAULT",
+      "pit_safe_status": "CONDITIONAL_REQUIRES_1H_TIMESTAMP_COMPLETENESS_AND_CONTIGUITY_AUTHORITY",
+      "raw_root_assignment": {
+        "evidence_id": "scripts/research/run_rd27_lifecycle_ablation.py:805-809",
+        "source_sha256": "7DFC388F3BF8EF6EFA16E0640CF924158999A9923674C7701B8919872755CBB5"
+      },
+      "rev202_leaf_id": "frames:$.callsites[1].roles.frames.callers[1].upstream.upstream",
+      "static_path_template_bound": true,
+      "wrapper_chain": [
+        "scripts/research/run_rd27_lifecycle_ablation.py::main",
+        "scripts/research/run_rd27_lifecycle_ablation.py::run_all_portfolios"
+      ]
+    },
+    {
+      "actual_caller_binding": {
+        "end_line": 575,
+        "evidence_id": "scripts/research/run_rd28_evidence_gated_lifecycle.py:473-575",
+        "function": "run_all_portfolios",
+        "line": 473,
+        "source_sha256": "2DB133BDD7E4ED8E7BB763842E9FD4D4CEEF4BD92027E195A92031399FA3FEAF"
+      },
+      "actual_loader": {
+        "end_line": 312,
+        "evidence_id": "scripts/research/run_rd28_evidence_gated_lifecycle.py:289-312",
+        "function": "load_feature_frames",
+        "line": 289,
+        "path": "scripts/research/run_rd28_evidence_gated_lifecycle.py",
+        "source_sha256": "2DB133BDD7E4ED8E7BB763842E9FD4D4CEEF4BD92027E195A92031399FA3FEAF"
+      },
+      "actual_loader_call_expression": "load_feature_frames(raw_root=raw_root, pairs=pairs)",
+      "availability": "Completed OHLCV and rolling turnover for bar t only after that 1h bar completes; open distinct. Code uses timestamp, not bar_close_time.",
+      "bar_close_time_controls_loader": false,
+      "canonical_4h_binding": "NO_SOURCE_EDGE_TO_CANONICAL_4H_ARTIFACT",
+      "claimed_caller": {
+        "line": 989,
+        "path": "scripts/research/run_rd28_evidence_gated_lifecycle.py"
+      },
+      "concrete_artifact_sha256": null,
+      "concrete_study_file_set_bound": false,
+      "data_rows_read": false,
+      "default_raw_root": "data/raw/rd16b/kucoin",
+      "edge_adjudication": "INVALID_CROSS_MODULE_RUN_ALL_PORTFOLIOS_NAME_COLLISION",
+      "edge_to_rd27_run_all_portfolios_valid": false,
+      "feature_import_binding": {
+        "evidence_id": "scripts/research/run_rd28_evidence_gated_lifecycle.py:19-39",
+        "source_sha256": "2DB133BDD7E4ED8E7BB763842E9FD4D4CEEF4BD92027E195A92031399FA3FEAF"
+      },
+      "feature_producer": {
+        "end_line": 184,
+        "evidence_id": "src/spotbot/research/rd26_exit_architecture.py:144-184",
+        "function": "prepare_features",
+        "line": 144,
+        "source_sha256": "1290748EA7E8A0343C1A15CEDFC1220AA423F04C11FDD558311B06AC7DA90359"
+      },
+      "frames_assignment": {
+        "evidence_id": "scripts/research/run_rd28_evidence_gated_lifecycle.py:941-944",
+        "source_sha256": "2DB133BDD7E4ED8E7BB763842E9FD4D4CEEF4BD92027E195A92031399FA3FEAF"
+      },
+      "loader_filter": "timestamp < cutoff; study cutoff differs from legacy DATA_CUTOFF and must be authorized separately",
+      "originating_replay_callsite": {
+        "function": "run_all_portfolios",
+        "line": 420,
+        "path": "scripts/research/run_rd27_lifecycle_ablation.py"
+      },
+      "override": "args.raw_root",
+      "path_expression": "raw_root / pair / '1h.parquet'",
+      "path_kind": "PARAMETERIZED_WITH_CONFIG_OVERRIDE_AND_LITERAL_DEFAULT",
+      "pit_safe_status": "CONDITIONAL_REQUIRES_1H_TIMESTAMP_COMPLETENESS_AND_CONTIGUITY_AUTHORITY",
+      "raw_root_assignment": {
+        "evidence_id": "scripts/research/run_rd28_evidence_gated_lifecycle.py:920-924",
+        "source_sha256": "2DB133BDD7E4ED8E7BB763842E9FD4D4CEEF4BD92027E195A92031399FA3FEAF"
+      },
+      "rev202_leaf_id": "frames:$.callsites[1].roles.frames.callers[2].upstream.upstream",
+      "static_path_template_bound": true,
+      "wrapper_chain": [
+        "scripts/research/run_rd28_evidence_gated_lifecycle.py::main",
+        "scripts/research/run_rd28_evidence_gated_lifecycle.py::run_all_portfolios"
+      ]
+    },
+    {
+      "actual_caller_binding": {
+        "end_line": 545,
+        "evidence_id": "scripts/research/run_rd29_thesis_confidence_lifecycle.py:444-545",
+        "function": "run_all_portfolios",
+        "line": 444,
+        "source_sha256": "AECEDDE051C0F4C25882591FB441A3AB69EE2FA22AF0253789E7B1B3667EC434"
+      },
+      "actual_loader": {
+        "end_line": 388,
+        "evidence_id": "scripts/research/run_rd29_thesis_confidence_lifecycle.py:365-388",
+        "function": "load_feature_frames",
+        "line": 365,
+        "path": "scripts/research/run_rd29_thesis_confidence_lifecycle.py",
+        "source_sha256": "AECEDDE051C0F4C25882591FB441A3AB69EE2FA22AF0253789E7B1B3667EC434"
+      },
+      "actual_loader_call_expression": "load_feature_frames(raw_root=raw_root, pairs=pairs)",
+      "availability": "Completed OHLCV and rolling turnover for bar t only after that 1h bar completes; open distinct. Code uses timestamp, not bar_close_time.",
+      "bar_close_time_controls_loader": false,
+      "canonical_4h_binding": "NO_SOURCE_EDGE_TO_CANONICAL_4H_ARTIFACT",
+      "claimed_caller": {
+        "line": 973,
+        "path": "scripts/research/run_rd29_thesis_confidence_lifecycle.py"
+      },
+      "concrete_artifact_sha256": null,
+      "concrete_study_file_set_bound": false,
+      "data_rows_read": false,
+      "default_raw_root": "data/raw/rd16b/kucoin",
+      "edge_adjudication": "INVALID_CROSS_MODULE_RUN_ALL_PORTFOLIOS_NAME_COLLISION",
+      "edge_to_rd27_run_all_portfolios_valid": false,
+      "feature_import_binding": {
+        "evidence_id": "scripts/research/run_rd29_thesis_confidence_lifecycle.py:23-42",
+        "source_sha256": "AECEDDE051C0F4C25882591FB441A3AB69EE2FA22AF0253789E7B1B3667EC434"
+      },
+      "feature_producer": {
+        "end_line": 184,
+        "evidence_id": "src/spotbot/research/rd26_exit_architecture.py:144-184",
+        "function": "prepare_features",
+        "line": 144,
+        "source_sha256": "1290748EA7E8A0343C1A15CEDFC1220AA423F04C11FDD558311B06AC7DA90359"
+      },
+      "frames_assignment": {
+        "evidence_id": "scripts/research/run_rd29_thesis_confidence_lifecycle.py:937-937",
+        "source_sha256": "AECEDDE051C0F4C25882591FB441A3AB69EE2FA22AF0253789E7B1B3667EC434"
+      },
+      "loader_filter": "timestamp < cutoff; study cutoff differs from legacy DATA_CUTOFF and must be authorized separately",
+      "originating_replay_callsite": {
+        "function": "run_all_portfolios",
+        "line": 420,
+        "path": "scripts/research/run_rd27_lifecycle_ablation.py"
+      },
+      "override": "args.raw_root",
+      "path_expression": "raw_root / pair / '1h.parquet'",
+      "path_kind": "PARAMETERIZED_WITH_CONFIG_OVERRIDE_AND_LITERAL_DEFAULT",
+      "pit_safe_status": "CONDITIONAL_REQUIRES_1H_TIMESTAMP_COMPLETENESS_AND_CONTIGUITY_AUTHORITY",
+      "raw_root_assignment": {
+        "evidence_id": "scripts/research/run_rd29_thesis_confidence_lifecycle.py:913-917",
+        "source_sha256": "AECEDDE051C0F4C25882591FB441A3AB69EE2FA22AF0253789E7B1B3667EC434"
+      },
+      "rev202_leaf_id": "frames:$.callsites[1].roles.frames.callers[3].upstream.upstream",
+      "static_path_template_bound": true,
+      "wrapper_chain": [
+        "scripts/research/run_rd29_thesis_confidence_lifecycle.py::main",
+        "scripts/research/run_rd29_thesis_confidence_lifecycle.py::run_all_portfolios"
+      ]
+    },
+    {
+      "actual_caller_binding": {
+        "end_line": 695,
+        "evidence_id": "scripts/research/run_rd30_family_specialist_replacement_aware.py:570-695",
+        "function": "run_all_portfolios",
+        "line": 570,
+        "source_sha256": "C6CDEF9F0C3A086FD1091E4A9168F6949E28B0A3E16AB8E80E3D6F12B76CA561"
+      },
+      "actual_loader": {
+        "end_line": 472,
+        "evidence_id": "scripts/research/run_rd30_family_specialist_replacement_aware.py:445-472",
+        "function": "load_feature_frames",
+        "line": 445,
+        "path": "scripts/research/run_rd30_family_specialist_replacement_aware.py",
+        "source_sha256": "C6CDEF9F0C3A086FD1091E4A9168F6949E28B0A3E16AB8E80E3D6F12B76CA561"
+      },
+      "actual_loader_call_expression": "load_feature_frames(raw_root=raw_root, pairs=pairs)",
+      "availability": "Completed OHLCV and rolling turnover for bar t only after that 1h bar completes; open distinct. Code uses timestamp, not bar_close_time.",
+      "bar_close_time_controls_loader": false,
+      "canonical_4h_binding": "NO_SOURCE_EDGE_TO_CANONICAL_4H_ARTIFACT",
+      "claimed_caller": {
+        "line": 1322,
+        "path": "scripts/research/run_rd30_family_specialist_replacement_aware.py"
+      },
+      "concrete_artifact_sha256": null,
+      "concrete_study_file_set_bound": false,
+      "data_rows_read": false,
+      "default_raw_root": "data/raw/rd16b/kucoin",
+      "edge_adjudication": "INVALID_CROSS_MODULE_RUN_ALL_PORTFOLIOS_NAME_COLLISION",
+      "edge_to_rd27_run_all_portfolios_valid": false,
+      "feature_import_binding": {
+        "evidence_id": "scripts/research/run_rd30_family_specialist_replacement_aware.py:23-42",
+        "source_sha256": "C6CDEF9F0C3A086FD1091E4A9168F6949E28B0A3E16AB8E80E3D6F12B76CA561"
+      },
+      "feature_producer": {
+        "end_line": 184,
+        "evidence_id": "src/spotbot/research/rd26_exit_architecture.py:144-184",
+        "function": "prepare_features",
+        "line": 144,
+        "source_sha256": "1290748EA7E8A0343C1A15CEDFC1220AA423F04C11FDD558311B06AC7DA90359"
+      },
+      "frames_assignment": {
+        "evidence_id": "scripts/research/run_rd30_family_specialist_replacement_aware.py:1276-1279",
+        "source_sha256": "C6CDEF9F0C3A086FD1091E4A9168F6949E28B0A3E16AB8E80E3D6F12B76CA561"
+      },
+      "loader_filter": "timestamp < cutoff; study cutoff differs from legacy DATA_CUTOFF and must be authorized separately",
+      "originating_replay_callsite": {
+        "function": "run_all_portfolios",
+        "line": 420,
+        "path": "scripts/research/run_rd27_lifecycle_ablation.py"
+      },
+      "override": "args.raw_root",
+      "path_expression": "raw_root / pair / '1h.parquet'",
+      "path_kind": "PARAMETERIZED_WITH_CONFIG_OVERRIDE_AND_LITERAL_DEFAULT",
+      "pit_safe_status": "CONDITIONAL_REQUIRES_1H_TIMESTAMP_COMPLETENESS_AND_CONTIGUITY_AUTHORITY",
+      "raw_root_assignment": {
+        "evidence_id": "scripts/research/run_rd30_family_specialist_replacement_aware.py:1239-1243",
+        "source_sha256": "C6CDEF9F0C3A086FD1091E4A9168F6949E28B0A3E16AB8E80E3D6F12B76CA561"
+      },
+      "rev202_leaf_id": "frames:$.callsites[1].roles.frames.callers[4].upstream.upstream",
+      "static_path_template_bound": true,
+      "wrapper_chain": [
+        "scripts/research/run_rd30_family_specialist_replacement_aware.py::main",
+        "scripts/research/run_rd30_family_specialist_replacement_aware.py::run_all_portfolios"
+      ]
+    },
+    {
+      "actual_caller_binding": {
+        "end_line": 1598,
+        "evidence_id": "scripts/research/run_rd31_market_regime_admission_governor.py:1480-1598",
+        "function": "run_all_portfolios",
+        "line": 1480,
+        "source_sha256": "3B6D938093B4F00883A3665399CBEA01FD892E2B610FC7F4B2EBA01F8F51457B"
+      },
+      "actual_loader": {
+        "end_line": 667,
+        "evidence_id": "scripts/research/run_rd31_market_regime_admission_governor.py:640-667",
+        "function": "load_feature_frames",
+        "line": 640,
+        "path": "scripts/research/run_rd31_market_regime_admission_governor.py",
+        "source_sha256": "3B6D938093B4F00883A3665399CBEA01FD892E2B610FC7F4B2EBA01F8F51457B"
+      },
+      "actual_loader_call_expression": "load_feature_frames(raw_root=raw_root, pairs=pairs)",
+      "availability": "Completed OHLCV and rolling turnover for bar t only after that 1h bar completes; open distinct. Code uses timestamp, not bar_close_time.",
+      "bar_close_time_controls_loader": false,
+      "canonical_4h_binding": "NO_SOURCE_EDGE_TO_CANONICAL_4H_ARTIFACT",
+      "claimed_caller": {
+        "line": 2192,
+        "path": "scripts/research/run_rd31_market_regime_admission_governor.py"
+      },
+      "concrete_artifact_sha256": null,
+      "concrete_study_file_set_bound": false,
+      "data_rows_read": false,
+      "default_raw_root": "data/raw/rd16b/kucoin",
+      "edge_adjudication": "INVALID_CROSS_MODULE_RUN_ALL_PORTFOLIOS_NAME_COLLISION",
+      "edge_to_rd27_run_all_portfolios_valid": false,
+      "feature_import_binding": {
+        "evidence_id": "scripts/research/run_rd31_market_regime_admission_governor.py:24-43",
+        "source_sha256": "3B6D938093B4F00883A3665399CBEA01FD892E2B610FC7F4B2EBA01F8F51457B"
+      },
+      "feature_producer": {
+        "end_line": 184,
+        "evidence_id": "src/spotbot/research/rd26_exit_architecture.py:144-184",
+        "function": "prepare_features",
+        "line": 144,
+        "source_sha256": "1290748EA7E8A0343C1A15CEDFC1220AA423F04C11FDD558311B06AC7DA90359"
+      },
+      "frames_assignment": {
+        "evidence_id": "scripts/research/run_rd31_market_regime_admission_governor.py:2147-2150",
+        "source_sha256": "3B6D938093B4F00883A3665399CBEA01FD892E2B610FC7F4B2EBA01F8F51457B"
+      },
+      "loader_filter": "timestamp < cutoff; study cutoff differs from legacy DATA_CUTOFF and must be authorized separately",
+      "originating_replay_callsite": {
+        "function": "run_all_portfolios",
+        "line": 420,
+        "path": "scripts/research/run_rd27_lifecycle_ablation.py"
+      },
+      "override": "args.raw_root",
+      "path_expression": "raw_root / pair / '1h.parquet'",
+      "path_kind": "PARAMETERIZED_WITH_CONFIG_OVERRIDE_AND_LITERAL_DEFAULT",
+      "pit_safe_status": "CONDITIONAL_REQUIRES_1H_TIMESTAMP_COMPLETENESS_AND_CONTIGUITY_AUTHORITY",
+      "raw_root_assignment": {
+        "evidence_id": "scripts/research/run_rd31_market_regime_admission_governor.py:2110-2114",
+        "source_sha256": "3B6D938093B4F00883A3665399CBEA01FD892E2B610FC7F4B2EBA01F8F51457B"
+      },
+      "rev202_leaf_id": "frames:$.callsites[1].roles.frames.callers[5].upstream.upstream",
+      "static_path_template_bound": true,
+      "wrapper_chain": [
+        "scripts/research/run_rd31_market_regime_admission_governor.py::main",
+        "scripts/research/run_rd31_market_regime_admission_governor.py::run_all_portfolios"
+      ]
+    },
+    {
+      "actual_caller_binding": {
+        "end_line": 503,
+        "evidence_id": "scripts/research/run_rd32_mb_signal_quality_admission.py:390-503",
+        "function": "run_all_portfolios",
+        "line": 390,
+        "source_sha256": "59A2716EAB407438B1C10A3ED757C53D114D9EC76DD27EBB1C040F7EEC6D0C3C"
+      },
+      "actual_loader": {
+        "end_line": 667,
+        "evidence_id": "scripts/research/run_rd31_market_regime_admission_governor.py:640-667",
+        "function": "load_feature_frames",
+        "line": 640,
+        "path": "scripts/research/run_rd31_market_regime_admission_governor.py",
+        "source_sha256": "3B6D938093B4F00883A3665399CBEA01FD892E2B610FC7F4B2EBA01F8F51457B"
+      },
+      "actual_loader_call_expression": "rd31.load_feature_frames(raw_root=raw_root, pairs=pairs)",
+      "availability": "Completed OHLCV and rolling turnover for bar t only after that 1h bar completes; open distinct. Code uses timestamp, not bar_close_time.",
+      "bar_close_time_controls_loader": false,
+      "canonical_4h_binding": "NO_SOURCE_EDGE_TO_CANONICAL_4H_ARTIFACT",
+      "claimed_caller": {
+        "line": 1210,
+        "path": "scripts/research/run_rd32_mb_signal_quality_admission.py"
+      },
+      "concrete_artifact_sha256": null,
+      "concrete_study_file_set_bound": false,
+      "data_rows_read": false,
+      "default_raw_root": "data/raw/rd16b/kucoin",
+      "edge_adjudication": "INVALID_CROSS_MODULE_RUN_ALL_PORTFOLIOS_NAME_COLLISION",
+      "edge_to_rd27_run_all_portfolios_valid": false,
+      "feature_import_binding": {
+        "evidence_id": "scripts/research/run_rd31_market_regime_admission_governor.py:24-43",
+        "source_sha256": "3B6D938093B4F00883A3665399CBEA01FD892E2B610FC7F4B2EBA01F8F51457B"
+      },
+      "feature_producer": {
+        "end_line": 184,
+        "evidence_id": "src/spotbot/research/rd26_exit_architecture.py:144-184",
+        "function": "prepare_features",
+        "line": 144,
+        "source_sha256": "1290748EA7E8A0343C1A15CEDFC1220AA423F04C11FDD558311B06AC7DA90359"
+      },
+      "frames_assignment": {
+        "evidence_id": "scripts/research/run_rd32_mb_signal_quality_admission.py:1174-1177",
+        "source_sha256": "59A2716EAB407438B1C10A3ED757C53D114D9EC76DD27EBB1C040F7EEC6D0C3C"
+      },
+      "loader_filter": "timestamp < cutoff; study cutoff differs from legacy DATA_CUTOFF and must be authorized separately",
+      "originating_replay_callsite": {
+        "function": "run_all_portfolios",
+        "line": 420,
+        "path": "scripts/research/run_rd27_lifecycle_ablation.py"
+      },
+      "override": "args.raw_root",
+      "path_expression": "raw_root / pair / '1h.parquet'",
+      "path_kind": "PARAMETERIZED_WITH_CONFIG_OVERRIDE_AND_LITERAL_DEFAULT",
+      "pit_safe_status": "CONDITIONAL_REQUIRES_1H_TIMESTAMP_COMPLETENESS_AND_CONTIGUITY_AUTHORITY",
+      "qualified_module_binding": {
+        "end_line": 224,
+        "evidence_id": "scripts/research/run_rd32_mb_signal_quality_admission.py:214-224",
+        "function": "load_rd31_runner",
+        "line": 214,
+        "source_sha256": "59A2716EAB407438B1C10A3ED757C53D114D9EC76DD27EBB1C040F7EEC6D0C3C"
+      },
+      "raw_root_assignment": {
+        "evidence_id": "scripts/research/run_rd32_mb_signal_quality_admission.py:1159-1163",
+        "source_sha256": "59A2716EAB407438B1C10A3ED757C53D114D9EC76DD27EBB1C040F7EEC6D0C3C"
+      },
+      "rev202_leaf_id": "frames:$.callsites[1].roles.frames.callers[6].upstream.upstream",
+      "static_path_template_bound": true,
+      "wrapper_chain": [
+        "scripts/research/run_rd32_mb_signal_quality_admission.py::main",
+        "scripts/research/run_rd32_mb_signal_quality_admission.py::run_all_portfolios"
+      ]
+    },
+    {
+      "actual_caller_binding": {
+        "end_line": 561,
+        "evidence_id": "scripts/research/run_rd33_temporal_mb_architecture.py:433-561",
+        "function": "run_all_portfolios",
+        "line": 433,
+        "source_sha256": "98D2D6FA3961B4DB69DFD70059BFA912E58EFA63A081C404BCFD94B42375DC2D"
+      },
+      "actual_loader": {
+        "end_line": 667,
+        "evidence_id": "scripts/research/run_rd31_market_regime_admission_governor.py:640-667",
+        "function": "load_feature_frames",
+        "line": 640,
+        "path": "scripts/research/run_rd31_market_regime_admission_governor.py",
+        "source_sha256": "3B6D938093B4F00883A3665399CBEA01FD892E2B610FC7F4B2EBA01F8F51457B"
+      },
+      "actual_loader_call_expression": "rd31.load_feature_frames(raw_root=raw_root, pairs=pairs)",
+      "availability": "Completed OHLCV and rolling turnover for bar t only after that 1h bar completes; open distinct. Code uses timestamp, not bar_close_time.",
+      "bar_close_time_controls_loader": false,
+      "canonical_4h_binding": "NO_SOURCE_EDGE_TO_CANONICAL_4H_ARTIFACT",
+      "claimed_caller": {
+        "line": 1602,
+        "path": "scripts/research/run_rd33_temporal_mb_architecture.py"
+      },
+      "concrete_artifact_sha256": null,
+      "concrete_study_file_set_bound": false,
+      "data_rows_read": false,
+      "default_raw_root": "data/raw/rd16b/kucoin",
+      "edge_adjudication": "INVALID_CROSS_MODULE_RUN_ALL_PORTFOLIOS_NAME_COLLISION",
+      "edge_to_rd27_run_all_portfolios_valid": false,
+      "feature_import_binding": {
+        "evidence_id": "scripts/research/run_rd31_market_regime_admission_governor.py:24-43",
+        "source_sha256": "3B6D938093B4F00883A3665399CBEA01FD892E2B610FC7F4B2EBA01F8F51457B"
+      },
+      "feature_producer": {
+        "end_line": 184,
+        "evidence_id": "src/spotbot/research/rd26_exit_architecture.py:144-184",
+        "function": "prepare_features",
+        "line": 144,
+        "source_sha256": "1290748EA7E8A0343C1A15CEDFC1220AA423F04C11FDD558311B06AC7DA90359"
+      },
+      "frames_assignment": {
+        "evidence_id": "scripts/research/run_rd33_temporal_mb_architecture.py:1564-1567",
+        "source_sha256": "98D2D6FA3961B4DB69DFD70059BFA912E58EFA63A081C404BCFD94B42375DC2D"
+      },
+      "loader_filter": "timestamp < cutoff; study cutoff differs from legacy DATA_CUTOFF and must be authorized separately",
+      "originating_replay_callsite": {
+        "function": "run_all_portfolios",
+        "line": 420,
+        "path": "scripts/research/run_rd27_lifecycle_ablation.py"
+      },
+      "override": "args.raw_root",
+      "path_expression": "raw_root / pair / '1h.parquet'",
+      "path_kind": "PARAMETERIZED_WITH_CONFIG_OVERRIDE_AND_LITERAL_DEFAULT",
+      "pit_safe_status": "CONDITIONAL_REQUIRES_1H_TIMESTAMP_COMPLETENESS_AND_CONTIGUITY_AUTHORITY",
+      "qualified_module_binding": {
+        "end_line": 243,
+        "evidence_id": "scripts/research/run_rd33_temporal_mb_architecture.py:233-243",
+        "function": "load_rd31_runner",
+        "line": 233,
+        "source_sha256": "98D2D6FA3961B4DB69DFD70059BFA912E58EFA63A081C404BCFD94B42375DC2D"
+      },
+      "raw_root_assignment": {
+        "evidence_id": "scripts/research/run_rd33_temporal_mb_architecture.py:1549-1553",
+        "source_sha256": "98D2D6FA3961B4DB69DFD70059BFA912E58EFA63A081C404BCFD94B42375DC2D"
+      },
+      "rev202_leaf_id": "frames:$.callsites[1].roles.frames.callers[7].upstream.upstream",
+      "static_path_template_bound": true,
+      "wrapper_chain": [
+        "scripts/research/run_rd33_temporal_mb_architecture.py::main",
+        "scripts/research/run_rd33_temporal_mb_architecture.py::run_all_portfolios"
+      ]
+    }
+  ],
+  "path_template_families": 1,
+  "valid_rd27_caller_edges": 1
+}

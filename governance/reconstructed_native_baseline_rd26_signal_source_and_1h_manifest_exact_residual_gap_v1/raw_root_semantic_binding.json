@@ -1,0 +1,28 @@
+{
+  "authority_id": "AKAH_BOT_RD27_RAW_ROOT_SEMANTIC_BINDING_V1",
+  "status": "BOUND_DEFAULT_LITERAL_OVERRIDE_MUST_BE_FORBIDDEN",
+  "source": {
+    "path": "scripts/research/run_rd27_lifecycle_ablation.py",
+    "sha256": "7DFC388F3BF8EF6EFA16E0640CF924158999A9923674C7701B8919872755CBB5",
+    "default_literal": "data/raw/rd16b/kucoin",
+    "literal_line": 71,
+    "resolution_lines": "805-809",
+    "consumer_lines": "242-265, 268-287"
+  },
+  "binding": {
+    "repository_relative_root": "data/raw/rd16b/kucoin",
+    "current_absolute_root": "C:/SIRAJ/Repositories/spot-speculation-bot/data/raw/rd16b/kucoin",
+    "exists_on_current_machine": true,
+    "top_level_pair_directory_count": 342,
+    "source_path_template": "<raw_root>/<pair>/1h.parquet",
+    "state_sensor_path_template": "<raw_root>/BTC-USDT/1h.parquet",
+    "content_rows_read": false,
+    "content_hashes_computed": false
+  },
+  "override_rule": {
+    "source_allows_cli_override": true,
+    "terminal_contract": "forbid --raw-root override unless it is explicitly bound to this same path identity and manifest",
+    "reason": "an arbitrary override would create an ungoverned source instance"
+  },
+  "manifest_dependency": "selected pair list is derived from the authorized signal materialization; the 342 existing directories are not the study universe"
+}

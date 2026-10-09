@@ -1,0 +1,1068 @@
+{
+  "native_replay_callsite_count": 57,
+  "native_replay_callsites": [
+    {
+      "callee": "replay_lifecycle_policy",
+      "classification": "SCRIPT",
+      "excerpt": "235:    proof: dict[str, Any] = {}\n236:    for cost_multiplier, authority in ((1.0, p4p4r), (2.0, p4p5r)):\n237:        cost_key = \"1x\" if cost_multiplier == 1.0 else \"2x\"; proof[cost_key] = {}\n238:        for period_id, (start, end) in PERIODS.items():\n239:            subset = signals[signals[\"period_id\"] == period_id].copy(); print(f\"PARITY_START={cost_key}:{period_id}\", flush=True)\n240:            native = rd27.replay_lifecycle_policy(policy_id=rd27.STATIC_EXIT_STATE_ROUTER, portfolio_id=\"EAA_SHADOW_PARITY_NATIVE\", universe_id=\"PRE2022_UNION\", cost_multiplier=cost_multiplier, events=subset, frames=frames, state_frame=state_frame, replay_start=start, replay_cutoff=end)\n241:            disabled = shadow.replay_same_pair_secondary_shadow(portfolio_id=\"EAA_SHADOW_PARITY_NATIVE\", universe_id=\"PRE2022_UNION\", cost_multiplier=cost_multiplier, events=subset, frames=frames, state_frame=state_frame, replay_start=start, replay_cutoff=end, shadow_enabled=False)\n242:            native_trades, native_daily, native_metrics, native_counters = native\n243:            compare_frame(f\"{cost_key}.{period_id}.disabled_trades\", disabled.trades, native_trades); compare_frame(f\"{cost_key}.{period_id}.disabled_daily\", disabled.daily, native_daily)\n244:            if disabled.metrics != native_metrics or disabled.counters != native_counters:\n245:                raise ProofError(f\"{cost_key}.{period_id}.default-disabled semantic parity drift\")",
+      "keyword_args": {
+        "cost_multiplier": "cost_multiplier",
+        "events": "subset",
+        "frames": "frames",
+        "policy_id": "rd27.STATIC_EXIT_STATE_ROUTER",
+        "portfolio_id": "\"EAA_SHADOW_PARITY_NATIVE\"",
+        "replay_cutoff": "end",
+        "replay_start": "start",
+        "state_frame": "state_frame",
+        "universe_id": "\"PRE2022_UNION\""
+      },
+      "line": 240,
+      "path": "scripts/research/run_eaa_same_pair_secondary_shadow_parity.py",
+      "positional_args": [],
+      "sha256": "8438DE5BA561867528E8D0996CAC83D36C0F60B19603287D996DCA32909E3D27"
+    },
+    {
+      "callee": "replay_lifecycle_policy",
+      "classification": "SCRIPT",
+      "excerpt": "415:                ),\n416:            }\n417:            for portfolio_id, portfolio_events in portfolios.items():\n418:                base_trade_for_be: pd.DataFrame | None = None\n419:                for cost_multiplier in COST_MULTIPLIERS:\n420:                    trades, daily, metrics, counters = replay_lifecycle_policy(\n421:                        policy_id=policy_id,\n422:                        portfolio_id=portfolio_id,\n423:                        universe_id=universe,\n424:                        cost_multiplier=cost_multiplier,\n425:                        events=portfolio_events,\n426:                        frames=frames,\n427:                        state_frame=state_frame,\n428:                    )\n429:                    run_rows.append(metrics)\n430:                    if len(trades):\n431:                        trade_sets.append(trades)\n432:                    if len(daily):\n433:                        daily_sets.append(daily)",
+      "keyword_args": {
+        "cost_multiplier": "cost_multiplier",
+        "events": "portfolio_events",
+        "frames": "frames",
+        "policy_id": "policy_id",
+        "portfolio_id": "portfolio_id",
+        "state_frame": "state_frame",
+        "universe_id": "universe"
+      },
+      "line": 420,
+      "path": "scripts/research/run_rd27_lifecycle_ablation.py",
+      "positional_args": [],
+      "sha256": "7DFC388F3BF8EF6EFA16E0640CF924158999A9923674C7701B8919872755CBB5"
+    },
+    {
+      "callee": "replay_lifecycle_policy",
+      "classification": "SOURCE",
+      "excerpt": "243:\n244:    try:\n245:        rd27.evaluate_adaptive_exit = treatment_evaluate\n246:        rd27.apply_completed_bar_update = treatment_update\n247:\n248:        trades, daily, metrics, counters = rd27.replay_lifecycle_policy(\n249:            policy_id=rd27.FULL_ADAPTIVE_LIFECYCLE_BRAIN,\n250:            portfolio_id=portfolio_id,\n251:            universe_id=universe_id,\n252:            cost_multiplier=cost_multiplier,\n253:            events=events,\n254:            frames=frames,\n255:            state_frame=state_frame,\n256:            replay_start=replay_start,\n257:            replay_cutoff=replay_cutoff,\n258:        )\n259:    finally:\n260:        rd27.evaluate_adaptive_exit = original_evaluate\n261:        rd27.apply_completed_bar_update = original_update\n262:        diagnostics[\"patch_restored\"] = (\n263:            rd27.evaluate_adaptive_exit is original_evaluate",
+      "keyword_args": {
+        "cost_multiplier": "cost_multiplier",
+        "events": "events",
+        "frames": "frames",
+        "policy_id": "rd27.FULL_ADAPTIVE_LIFECYCLE_BRAIN",
+        "portfolio_id": "portfolio_id",
+        "replay_cutoff": "replay_cutoff",
+        "replay_start": "replay_start",
+        "state_frame": "state_frame",
+        "universe_id": "universe_id"
+      },
+      "line": 248,
+      "path": "src/spotbot/research/a10_selective_protection_asymmetry.py",
+      "positional_args": [],
+      "sha256": "BF4794A3F42A547A3D20D80D0ACD7A9132973B68BA3FFB2738B3EF29ECD0AB0F"
+    },
+    {
+      "callee": "replay_lifecycle_policy",
+      "classification": "SOURCE",
+      "excerpt": "127:        )\n128:\n129:    try:\n130:        rd27.evaluate_adaptive_exit = treatment_evaluate\n131:        rd27.apply_completed_bar_update = treatment_update\n132:        trades, daily, metrics, counters = rd27.replay_lifecycle_policy(\n133:            policy_id=rd27.FULL_ADAPTIVE_LIFECYCLE_BRAIN,\n134:            portfolio_id=portfolio_id,\n135:            universe_id=universe_id,\n136:            cost_multiplier=cost_multiplier,\n137:            events=events,\n138:            frames=frames,\n139:            state_frame=state_frame,\n140:            replay_start=replay_start,\n141:            replay_cutoff=replay_cutoff,\n142:        )\n143:    finally:\n144:        rd27.evaluate_adaptive_exit = original_evaluate\n145:        rd27.apply_completed_bar_update = original_update\n146:        diagnostics[\"patch_restored\"] = (\n147:            rd27.evaluate_adaptive_exit is original_evaluate",
+      "keyword_args": {
+        "cost_multiplier": "cost_multiplier",
+        "events": "events",
+        "frames": "frames",
+        "policy_id": "rd27.FULL_ADAPTIVE_LIFECYCLE_BRAIN",
+        "portfolio_id": "portfolio_id",
+        "replay_cutoff": "replay_cutoff",
+        "replay_start": "replay_start",
+        "state_frame": "state_frame",
+        "universe_id": "universe_id"
+      },
+      "line": 132,
+      "path": "src/spotbot/research/a4r1_reversible_floor_replay.py",
+      "positional_args": [],
+      "sha256": "161B7680A2098BBE97E4B9BE3A9BA7F0A918AAD04926CBA6F783CED7B97FE16E"
+    },
+    {
+      "callee": "replay_lifecycle_policy",
+      "classification": "SOURCE",
+      "excerpt": "198:    replay_start, replay_cutoff = _utc(replay_start), _utc(replay_cutoff)\n199:    if replay_start >= replay_cutoff:\n200:        raise SamePairSecondaryShadowError(\"invalid replay window\")\n201:\n202:    if not shadow_enabled:\n203:        trades, daily, metrics, counters = rd27.replay_lifecycle_policy(\n204:            policy_id=rd27.STATIC_EXIT_STATE_ROUTER,\n205:            portfolio_id=portfolio_id,\n206:            universe_id=universe_id,\n207:            cost_multiplier=cost_multiplier,\n208:            events=events,\n209:            frames=frames,\n210:            state_frame=state_frame,\n211:            replay_start=replay_start,\n212:            replay_cutoff=replay_cutoff,\n213:        )\n214:        return ShadowReplayResult(trades, daily, metrics, counters, _empty_diagnostics())\n215:\n216:    lookups = {pair: fast_lookup(frame) for pair, frame in frames.items()}\n217:    state_lookup = rd27.build_state_lookup(state_frame)\n218:    side_cost = BASE_ROUND_TRIP_COST * cost_multiplier / 2.0",
+      "keyword_args": {
+        "cost_multiplier": "cost_multiplier",
+        "events": "events",
+        "frames": "frames",
+        "policy_id": "rd27.STATIC_EXIT_STATE_ROUTER",
+        "portfolio_id": "portfolio_id",
+        "replay_cutoff": "replay_cutoff",
+        "replay_start": "replay_start",
+        "state_frame": "state_frame",
+        "universe_id": "universe_id"
+      },
+      "line": 203,
+      "path": "src/spotbot/research/eaa_same_pair_secondary_shadow.py",
+      "positional_args": [],
+      "sha256": "1096CD43E814A08E8F6BB969CD2722FA883C04D54C9462AFD461489AE3E76390"
+    },
+    {
+      "callee": "replay_lifecycle_policy",
+      "classification": "TEST",
+      "excerpt": "232:\n233:\n234:def test_exact_control_parity_when_selective_relaxation_never_activates() -> None:\n235:    kwargs = _kwargs([\"TRANSITION\", \"TRANSITION\"])\n236:\n237:    control = rd27.replay_lifecycle_policy(\n238:        policy_id=rd27.FULL_ADAPTIVE_LIFECYCLE_BRAIN,\n239:        **kwargs,\n240:    )\n241:    primary = replay_winner_retention_candidate(**kwargs)\n242:\n243:    c_trades, c_daily, c_metrics, c_counters = control\n244:    p_trades, p_daily, p_metrics = _normalize_policy(\n245:        primary.trades,",
+      "keyword_args": {
+        "**": "kwargs",
+        "policy_id": "rd27.FULL_ADAPTIVE_LIFECYCLE_BRAIN"
+      },
+      "line": 237,
+      "path": "tests/research/test_a10_selective_protection_asymmetry.py",
+      "positional_args": [],
+      "sha256": "F6E98B188629DF54490B6F77213455F8A93E941EA8C2F416534E0C1F916C1C94"
+    },
+    {
+      "callee": "replay_lifecycle_policy",
+      "classification": "TEST",
+      "excerpt": "78:        frames=frames,\n79:        state_frame=states_frame,\n80:        replay_start=DATA_START,\n81:        replay_cutoff=DATA_START + pd.Timedelta(hours=180),\n82:    )\n83:    control = rd27.replay_lifecycle_policy(\n84:        policy_id=rd27.FULL_ADAPTIVE_LIFECYCLE_BRAIN,\n85:        **kwargs,\n86:    )\n87:    treatment = replay_reversible_floor_candidate(**kwargs)\n88:    return control, treatment\n89:\n90:\n91:def test_exact_parity_when_reversible_carry_never_activates() -> None:",
+      "keyword_args": {
+        "**": "kwargs",
+        "policy_id": "rd27.FULL_ADAPTIVE_LIFECYCLE_BRAIN"
+      },
+      "line": 83,
+      "path": "tests/research/test_a4r1_reversible_floor_replay.py",
+      "positional_args": [],
+      "sha256": "044D8F0CB8676D65AC522EC38C07BCD37F11E706BB43FCA63FC190B056DAD520"
+    },
+    {
+      "callee": "replay_lifecycle_policy",
+      "classification": "TEST",
+      "excerpt": "33:)\n34:\n35:\n36:def run_candidate(*, rows=None, memory=True, fixture=None, observations=(), bindings=None):\n37:    candidate, trigger, shadow = {}, {}, {}\n38:    result = replay.replay_lifecycle_policy(\n39:        **(inputs() if fixture is None else fixture), async_memory_shadow_enabled=True,\n40:        observable_adapter_enabled=True, observable_memory_predicate_enabled=memory,\n41:        observable_later_trigger_predicate_enabled=True, async_exit_candidate_shadow_enabled=True,\n42:        observable_primitive_rows=rows_for() if rows is None else rows,\n43:        observable_symbol_bindings={\"AAA-USDT\": \"AAA\"} if bindings is None else bindings,\n44:        async_memory_observations=observations, async_memory_diagnostics=shadow,\n45:        observable_later_trigger_predicate_diagnostics=trigger,\n46:        async_exit_candidate_diagnostics=candidate,\n47:    )\n48:    return result, candidate, trigger, shadow\n49:\n50:\n51:def accepted(*, position_id=\"A\", memory_hour=4, trigger_hour=8):\n52:    initial = new_async_memory_state(position_id=position_id, enabled=True)",
+      "keyword_args": {
+        "**": "inputs() if fixture is None else fixture",
+        "async_exit_candidate_diagnostics": "candidate",
+        "async_exit_candidate_shadow_enabled": "True",
+        "async_memory_diagnostics": "shadow",
+        "async_memory_observations": "observations",
+        "async_memory_shadow_enabled": "True",
+        "observable_adapter_enabled": "True",
+        "observable_later_trigger_predicate_diagnostics": "trigger",
+        "observable_later_trigger_predicate_enabled": "True",
+        "observable_memory_predicate_enabled": "memory",
+        "observable_primitive_rows": "rows_for() if rows is None else rows",
+        "observable_symbol_bindings": "{\"AAA-USDT\": \"AAA\"} if bindings is None else bindings"
+      },
+      "line": 38,
+      "path": "tests/research/test_rd27_async_exit_candidate_shadow.py",
+      "positional_args": [],
+      "sha256": "64657DAB456EE03780AC9D09997548487124AAC589BA2A4366C24BF07E6EEF4E"
+    },
+    {
+      "callee": "replay_lifecycle_policy",
+      "classification": "TEST",
+      "excerpt": "70:    def forbidden():\n71:        raise AssertionError(\"disabled candidate constructed\")\n72:\n73:    monkeypatch.setattr(replay, \"AsyncExitCandidateShadow\", forbidden)\n74:    sink = {\"untouched\": True}\n75:    native = replay.replay_lifecycle_policy(**inputs())\n76:    disabled = replay.replay_lifecycle_policy(**inputs(), async_exit_candidate_diagnostics=sink)\n77:    assert_native_equal(native, disabled)\n78:    assert sink == {\"untouched\": True}\n79:\n80:",
+      "keyword_args": {
+        "**": "inputs()"
+      },
+      "line": 75,
+      "path": "tests/research/test_rd27_async_exit_candidate_shadow.py",
+      "positional_args": [],
+      "sha256": "64657DAB456EE03780AC9D09997548487124AAC589BA2A4366C24BF07E6EEF4E"
+    },
+    {
+      "callee": "replay_lifecycle_policy",
+      "classification": "TEST",
+      "excerpt": "71:        raise AssertionError(\"disabled candidate constructed\")\n72:\n73:    monkeypatch.setattr(replay, \"AsyncExitCandidateShadow\", forbidden)\n74:    sink = {\"untouched\": True}\n75:    native = replay.replay_lifecycle_policy(**inputs())\n76:    disabled = replay.replay_lifecycle_policy(**inputs(), async_exit_candidate_diagnostics=sink)\n77:    assert_native_equal(native, disabled)\n78:    assert sink == {\"untouched\": True}\n79:\n80:\n81:def test_memory_then_trigger_emits_exact_evidence_once_and_retains_first_time():",
+      "keyword_args": {
+        "**": "inputs()",
+        "async_exit_candidate_diagnostics": "sink"
+      },
+      "line": 76,
+      "path": "tests/research/test_rd27_async_exit_candidate_shadow.py",
+      "positional_args": [],
+      "sha256": "64657DAB456EE03780AC9D09997548487124AAC589BA2A4366C24BF07E6EEF4E"
+    },
+    {
+      "callee": "replay_lifecycle_policy",
+      "classification": "TEST",
+      "excerpt": "170:@pytest.mark.parametrize(\"policy\", [replay.STATIC_EXIT_STATE_ROUTER,\n171:                                   replay.ADAPTIVE_EXIT_FIXED_CAPITAL,\n172:                                   replay.FULL_ADAPTIVE_LIFECYCLE_BRAIN])\n173:def test_all_four_modes_complete_native_parity_and_generic_state_unchanged(policy):\n174:    fixture = inputs() | {\"policy_id\": policy}\n175:    native = replay.replay_lifecycle_policy(**fixture)\n176:    memory_only = run_trigger(fixture=fixture, trigger=False)\n177:    both = run_trigger(fixture=fixture)\n178:    conjunction = run_candidate(fixture=fixture)\n179:    for output in (memory_only[0], both[0], conjunction[0]):\n180:        assert_native_equal(native, output)",
+      "keyword_args": {
+        "**": "fixture"
+      },
+      "line": 175,
+      "path": "tests/research/test_rd27_async_exit_candidate_shadow.py",
+      "positional_args": [],
+      "sha256": "64657DAB456EE03780AC9D09997548487124AAC589BA2A4366C24BF07E6EEF4E"
+    },
+    {
+      "callee": "replay_lifecycle_policy",
+      "classification": "TEST",
+      "excerpt": "211:def test_positions_and_later_lifecycles_isolated_and_archived():\n212:    fixture = inputs(pairs=(\"AAA-USDT\", \"BBB-USDT\"), signals=(0, 170), hours=345)\n213:    rows = rows_for() + [row(4, \"BBB\"), row(8, \"BBB\"), row(172, low=90, close=95)]\n214:    result, c, _, s = run_candidate(fixture=fixture, rows=rows,\n215:                                    bindings={\"AAA-USDT\": \"AAA\", \"BBB-USDT\": \"BBB\"})\n216:    assert_native_equal(replay.replay_lifecycle_policy(**fixture), result)\n217:    assert c[\"lifecycles_observed\"] == c[\"archived_candidate_states\"] == s[\"resets\"] == 4\n218:    assert c[\"active_candidate_states\"] == 0 and c[\"lifecycles_with_candidate\"] == 1\n219:    records = {r.position_id: r for r in c[\"position_records\"]}\n220:    assert records[identity()].candidate.candidate_time == at(16)\n221:    assert records[identity(\"BBB-USDT\")].candidate is None",
+      "keyword_args": {
+        "**": "fixture"
+      },
+      "line": 216,
+      "path": "tests/research/test_rd27_async_exit_candidate_shadow.py",
+      "positional_args": [],
+      "sha256": "64657DAB456EE03780AC9D09997548487124AAC589BA2A4366C24BF07E6EEF4E"
+    },
+    {
+      "callee": "replay_lifecycle_policy",
+      "classification": "TEST",
+      "excerpt": "230:    (replay.ADAPTIVE_EXIT_FIXED_CAPITAL, False, {1: {\"low\": 90}}),\n231:])\n232:def test_native_exit_cleanup_paths(policy, weak, overrides):\n233:    fixture = inputs(weak=weak, overrides=overrides) | {\"policy_id\": policy}\n234:    result, c, _, s = run_candidate(fixture=fixture)\n235:    assert_native_equal(replay.replay_lifecycle_policy(**fixture), result)\n236:    assert c[\"archived_candidate_states\"] == s[\"resets\"] == 1\n237:    assert c[\"active_candidate_states\"] == 0\n238:\n239:\n240:def test_immutable_records_are_not_exit_decisions_or_outcome_containers():",
+      "keyword_args": {
+        "**": "fixture"
+      },
+      "line": 235,
+      "path": "tests/research/test_rd27_async_exit_candidate_shadow.py",
+      "positional_args": [],
+      "sha256": "64657DAB456EE03780AC9D09997548487124AAC589BA2A4366C24BF07E6EEF4E"
+    },
+    {
+      "callee": "replay_lifecycle_policy",
+      "classification": "TEST",
+      "excerpt": "308:\n309:@pytest.mark.parametrize(\"flags\", [{\"async_exit_candidate_shadow_enabled\": 1},\n310:                                     {\"async_exit_candidate_shadow_enabled\": True}])\n311:def test_invalid_configuration_fails_closed(flags):\n312:    with pytest.raises(replay.RD27ReplayError):\n313:        replay.replay_lifecycle_policy(**inputs(), **flags)\n314:\n315:\n316:def test_no_snapshot_no_event_but_complete_lifecycle_accounting():\n317:    _, c, _, _ = run_candidate(rows=[])\n318:    assert c[\"shadow_exit_candidates_emitted\"] == c[\"memory_established_lifecycles\"] == 0",
+      "keyword_args": {
+        "**": "flags"
+      },
+      "line": 313,
+      "path": "tests/research/test_rd27_async_exit_candidate_shadow.py",
+      "positional_args": [],
+      "sha256": "64657DAB456EE03780AC9D09997548487124AAC589BA2A4366C24BF07E6EEF4E"
+    },
+    {
+      "callee": "replay_lifecycle_policy",
+      "classification": "TEST",
+      "excerpt": "323:    fixture = inputs(signals=(0, 170), hours=345)\n324:    shift = pd.Timedelta(hours=168)\n325:    later_rows = [{**r, \"bar_open_time\": r[\"bar_open_time\"] + shift,\n326:                   \"bar_close_time\": r[\"bar_close_time\"] + shift} for r in rows_for()]\n327:    result, c, _, _ = run_candidate(fixture=fixture, rows=rows_for() + later_rows)\n328:    assert_native_equal(replay.replay_lifecycle_policy(**fixture), result)\n329:    assert c[\"shadow_exit_candidates_emitted\"] == 2\n330:    first, second = c[\"candidate_events\"]\n331:    assert first.position_id == identity() and first.candidate_time == at(16)\n332:    assert second.position_id == identity(entry=171, sequence=2)\n333:    assert second.memory_first_seen_time == at(176) and second.candidate_time == at(184)",
+      "keyword_args": {
+        "**": "fixture"
+      },
+      "line": 328,
+      "path": "tests/research/test_rd27_async_exit_candidate_shadow.py",
+      "positional_args": [],
+      "sha256": "64657DAB456EE03780AC9D09997548487124AAC589BA2A4366C24BF07E6EEF4E"
+    },
+    {
+      "callee": "replay_lifecycle_policy",
+      "classification": "TEST",
+      "excerpt": "335:\n336:\n337:def test_failed_replay_does_not_publish_partial_candidate_sink():\n338:    sink = {\"untouched\": True}\n339:    with pytest.raises(RD27StateError, match=\"conflicting duplicate trigger\"):\n340:        replay.replay_lifecycle_policy(\n341:            **inputs(), async_memory_shadow_enabled=True, observable_adapter_enabled=True,\n342:            observable_memory_predicate_enabled=True,\n343:            observable_later_trigger_predicate_enabled=True,\n344:            async_exit_candidate_shadow_enabled=True, observable_primitive_rows=rows_for(),\n345:            observable_symbol_bindings={\"AAA-USDT\": \"AAA\"},\n346:            async_memory_observations=[observation(16, \"trigger\", False)],\n347:            async_exit_candidate_diagnostics=sink,\n348:        )\n349:    assert sink == {\"untouched\": True}",
+      "keyword_args": {
+        "**": "inputs()",
+        "async_exit_candidate_diagnostics": "sink",
+        "async_exit_candidate_shadow_enabled": "True",
+        "async_memory_observations": "[observation(16, \"trigger\", False)]",
+        "async_memory_shadow_enabled": "True",
+        "observable_adapter_enabled": "True",
+        "observable_later_trigger_predicate_enabled": "True",
+        "observable_memory_predicate_enabled": "True",
+        "observable_primitive_rows": "rows_for()",
+        "observable_symbol_bindings": "{\"AAA-USDT\": \"AAA\"}"
+      },
+      "line": 340,
+      "path": "tests/research/test_rd27_async_exit_candidate_shadow.py",
+      "positional_args": [],
+      "sha256": "64657DAB456EE03780AC9D09997548487124AAC589BA2A4366C24BF07E6EEF4E"
+    },
+    {
+      "callee": "replay_lifecycle_policy",
+      "classification": "TEST",
+      "excerpt": "67:\n68:def run(observations=(), *, fixture=None, **changes):\n69:    diagnostics = {}\n70:    kwargs = inputs() if fixture is None else fixture\n71:    kwargs = {**kwargs, **changes}\n72:    native = replay.replay_lifecycle_policy(\n73:        **kwargs, async_memory_shadow_enabled=True,\n74:        async_memory_observations=observations, async_memory_diagnostics=diagnostics,\n75:    )\n76:    return native, diagnostics\n77:\n78:\n79:def assert_native_equal(left, right) -> None:\n80:    # Compare complete native schemas/values, never compare strategy performance.",
+      "keyword_args": {
+        "**": "kwargs",
+        "async_memory_diagnostics": "diagnostics",
+        "async_memory_observations": "observations",
+        "async_memory_shadow_enabled": "True"
+      },
+      "line": 72,
+      "path": "tests/research/test_rd27_async_memory_shadow_replay.py",
+      "positional_args": [],
+      "sha256": "1DF5706AE3D140C07684CBF378115A39B9D8629410BB4C33CCC17F87579E232D"
+    },
+    {
+      "callee": "replay_lifecycle_policy",
+      "classification": "TEST",
+      "excerpt": "91:    ].default is False\n92:\n93:\n94:def test_disabled_path_does_not_instantiate_or_consume_shadow(monkeypatch) -> None:\n95:    fixture = inputs()\n96:    baseline = replay.replay_lifecycle_policy(**fixture)\n97:\n98:    class PoisonObservations:\n99:        def __iter__(self):\n100:            raise AssertionError(\"disabled path consumed observations\")\n101:",
+      "keyword_args": {
+        "**": "fixture"
+      },
+      "line": 96,
+      "path": "tests/research/test_rd27_async_memory_shadow_replay.py",
+      "positional_args": [],
+      "sha256": "1DF5706AE3D140C07684CBF378115A39B9D8629410BB4C33CCC17F87579E232D"
+    },
+    {
+      "callee": "replay_lifecycle_policy",
+      "classification": "TEST",
+      "excerpt": "102:    def forbidden(*args, **kwargs):\n103:        raise AssertionError(\"disabled path instantiated shadow\")\n104:\n105:    monkeypatch.setattr(replay, \"AsyncMemoryReplayShadow\", forbidden)\n106:    sink = {\"untouched\": True}\n107:    disabled = replay.replay_lifecycle_policy(\n108:        **fixture, async_memory_shadow_enabled=False,\n109:        async_memory_observations=PoisonObservations(), async_memory_diagnostics=sink,\n110:    )\n111:    assert_native_equal(baseline, disabled)\n112:    assert sink == {\"untouched\": True}\n113:\n114:\n115:@pytest.mark.parametrize(\"policy\", [replay.STATIC_EXIT_STATE_ROUTER,",
+      "keyword_args": {
+        "**": "fixture",
+        "async_memory_diagnostics": "sink",
+        "async_memory_observations": "PoisonObservations()",
+        "async_memory_shadow_enabled": "False"
+      },
+      "line": 107,
+      "path": "tests/research/test_rd27_async_memory_shadow_replay.py",
+      "positional_args": [],
+      "sha256": "1DF5706AE3D140C07684CBF378115A39B9D8629410BB4C33CCC17F87579E232D"
+    },
+    {
+      "callee": "replay_lifecycle_policy",
+      "classification": "TEST",
+      "excerpt": "115:@pytest.mark.parametrize(\"policy\", [replay.STATIC_EXIT_STATE_ROUTER,\n116:                                   replay.ADAPTIVE_EXIT_FIXED_CAPITAL,\n117:                                   replay.FULL_ADAPTIVE_LIFECYCLE_BRAIN])\n118:def test_enabled_shadow_has_full_native_trade_and_output_parity(policy: str) -> None:\n119:    fixture = {**inputs(), \"policy_id\": policy}\n120:    baseline = replay.replay_lifecycle_policy(**fixture)\n121:    result, diagnostics = run([observation(1), observation(2, \"trigger\")], fixture=fixture)\n122:    assert len(baseline[0]) == 1\n123:    assert_native_equal(baseline, result)\n124:    assert diagnostics[\"valid_later_triggers_latched\"] == 1\n125:    assert \"position_id\" not in result[0].columns",
+      "keyword_args": {
+        "**": "fixture"
+      },
+      "line": 120,
+      "path": "tests/research/test_rd27_async_memory_shadow_replay.py",
+      "positional_args": [],
+      "sha256": "1DF5706AE3D140C07684CBF378115A39B9D8629410BB4C33CCC17F87579E232D"
+    },
+    {
+      "callee": "replay_lifecycle_policy",
+      "classification": "TEST",
+      "excerpt": "222:    assert second[\"later_trigger_time\"] is None\n223:\n224:\n225:def test_native_same_pair_exclusion_is_unchanged() -> None:\n226:    fixture = inputs(signals=(0, 2))\n227:    native = replay.replay_lifecycle_policy(**fixture)\n228:    enabled, diagnostics = run(fixture=fixture)\n229:    assert_native_equal(native, enabled)\n230:    assert enabled[3][\"same_pair_open\"] == 1\n231:    assert diagnostics[\"sidecars_created\"] == 1\n232:",
+      "keyword_args": {
+        "**": "fixture"
+      },
+      "line": 227,
+      "path": "tests/research/test_rd27_async_memory_shadow_replay.py",
+      "positional_args": [],
+      "sha256": "1DF5706AE3D140C07684CBF378115A39B9D8629410BB4C33CCC17F87579E232D"
+    },
+    {
+      "callee": "replay_lifecycle_policy",
+      "classification": "TEST",
+      "excerpt": "303:\n304:\n305:def test_failed_run_does_not_publish_partial_diagnostics() -> None:\n306:    sink = {\"prior\": \"untouched\"}\n307:    with pytest.raises(RD27StateError):\n308:        replay.replay_lifecycle_policy(\n309:            **inputs(), async_memory_shadow_enabled=True,\n310:            async_memory_observations=[observation(2, \"trigger\")], async_memory_diagnostics=sink,\n311:        )\n312:    assert sink == {\"prior\": \"untouched\"}",
+      "keyword_args": {
+        "**": "inputs()",
+        "async_memory_diagnostics": "sink",
+        "async_memory_observations": "[observation(2, \"trigger\")]",
+        "async_memory_shadow_enabled": "True"
+      },
+      "line": 308,
+      "path": "tests/research/test_rd27_async_memory_shadow_replay.py",
+      "positional_args": [],
+      "sha256": "1DF5706AE3D140C07684CBF378115A39B9D8629410BB4C33CCC17F87579E232D"
+    },
+    {
+      "callee": "replay_lifecycle_policy",
+      "classification": "TEST",
+      "excerpt": "172:    assert diagnostics[\"candidate_count\"] == 1\n173:    assert diagnostics[\"actual_exit_authority\"] is False\n174:\n175:\n176:def test_native_explicit_none_is_exact_backward_compatible():\n177:    baseline = rd27.replay_lifecycle_policy(**native_kwargs())\n178:    explicit_none = rd27.replay_lifecycle_policy(\n179:        **native_kwargs(),\n180:        later_trigger_v2_shadow_hook=None,\n181:    )\n182:    for left, right in zip(baseline[:2], explicit_none[:2], strict=True):",
+      "keyword_args": {
+        "**": "native_kwargs()"
+      },
+      "line": 177,
+      "path": "tests/research/test_rd27_later_trigger_v2_native_hook.py",
+      "positional_args": [],
+      "sha256": "388D53B5CF5B8E91E5CDC4D0E85E226FF58749B2BD89CC01802D73313C512396"
+    },
+    {
+      "callee": "replay_lifecycle_policy",
+      "classification": "TEST",
+      "excerpt": "173:    assert diagnostics[\"actual_exit_authority\"] is False\n174:\n175:\n176:def test_native_explicit_none_is_exact_backward_compatible():\n177:    baseline = rd27.replay_lifecycle_policy(**native_kwargs())\n178:    explicit_none = rd27.replay_lifecycle_policy(\n179:        **native_kwargs(),\n180:        later_trigger_v2_shadow_hook=None,\n181:    )\n182:    for left, right in zip(baseline[:2], explicit_none[:2], strict=True):\n183:        pdt.assert_frame_equal(left, right, check_exact=True)\n184:    assert baseline[2] == explicit_none[2]\n185:    assert baseline[3] == explicit_none[3]\n186:",
+      "keyword_args": {
+        "**": "native_kwargs()",
+        "later_trigger_v2_shadow_hook": "None"
+      },
+      "line": 178,
+      "path": "tests/research/test_rd27_later_trigger_v2_native_hook.py",
+      "positional_args": [],
+      "sha256": "388D53B5CF5B8E91E5CDC4D0E85E226FF58749B2BD89CC01802D73313C512396"
+    },
+    {
+      "callee": "replay_lifecycle_policy",
+      "classification": "TEST",
+      "excerpt": "184:    assert baseline[2] == explicit_none[2]\n185:    assert baseline[3] == explicit_none[3]\n186:\n187:\n188:def test_native_recorder_hook_is_exact_output_parity():\n189:    baseline = rd27.replay_lifecycle_policy(**native_kwargs())\n190:    recorder = RecorderHook()\n191:    enabled = rd27.replay_lifecycle_policy(\n192:        **native_kwargs(),\n193:        later_trigger_v2_shadow_hook=recorder,\n194:    )",
+      "keyword_args": {
+        "**": "native_kwargs()"
+      },
+      "line": 189,
+      "path": "tests/research/test_rd27_later_trigger_v2_native_hook.py",
+      "positional_args": [],
+      "sha256": "388D53B5CF5B8E91E5CDC4D0E85E226FF58749B2BD89CC01802D73313C512396"
+    },
+    {
+      "callee": "replay_lifecycle_policy",
+      "classification": "TEST",
+      "excerpt": "186:\n187:\n188:def test_native_recorder_hook_is_exact_output_parity():\n189:    baseline = rd27.replay_lifecycle_policy(**native_kwargs())\n190:    recorder = RecorderHook()\n191:    enabled = rd27.replay_lifecycle_policy(\n192:        **native_kwargs(),\n193:        later_trigger_v2_shadow_hook=recorder,\n194:    )\n195:    for left, right in zip(baseline[:2], enabled[:2], strict=True):\n196:        pdt.assert_frame_equal(left, right, check_exact=True)\n197:    assert baseline[2] == enabled[2]\n198:    assert baseline[3] == enabled[3]\n199:    assert recorder.sync_calls == 1",
+      "keyword_args": {
+        "**": "native_kwargs()",
+        "later_trigger_v2_shadow_hook": "recorder"
+      },
+      "line": 191,
+      "path": "tests/research/test_rd27_later_trigger_v2_native_hook.py",
+      "positional_args": [],
+      "sha256": "388D53B5CF5B8E91E5CDC4D0E85E226FF58749B2BD89CC01802D73313C512396"
+    },
+    {
+      "callee": "replay_lifecycle_policy",
+      "classification": "TEST",
+      "excerpt": "76:    policy: str,\n77:    state: str,\n78:    *,\n79:    overrides: dict[int, dict[str, float]] | None = None,\n80:):\n81:    return replay_lifecycle_policy(\n82:        policy_id=policy,\n83:        portfolio_id=\"TEST\",\n84:        universe_id=\"C2\",\n85:        cost_multiplier=1.0,\n86:        events=event(),\n87:        frames={\"AAA-USDT\": asset_frame(overrides)},\n88:        state_frame=state_frame(state),\n89:        replay_start=DATA_START,\n90:        replay_cutoff=DATA_START + pd.Timedelta(hours=180),\n91:    )\n92:\n93:\n94:def test_component_registry_matches_preregistered_two_by_two() -> None:\n95:    assert active_component_count(CONTROL_TIME_FAIL_72_FIXED_CAPITAL) == 0\n96:    assert active_component_count(ADAPTIVE_EXIT_FIXED_CAPITAL) == 1",
+      "keyword_args": {
+        "cost_multiplier": "1.0",
+        "events": "event()",
+        "frames": "{\"AAA-USDT\": asset_frame(overrides)}",
+        "policy_id": "policy",
+        "portfolio_id": "\"TEST\"",
+        "replay_cutoff": "DATA_START + pd.Timedelta(hours=180)",
+        "replay_start": "DATA_START",
+        "state_frame": "state_frame(state)",
+        "universe_id": "\"C2\""
+      },
+      "line": 81,
+      "path": "tests/research/test_rd27_lifecycle_replay.py",
+      "positional_args": [],
+      "sha256": "289C0940236EF9EE4AA7A36FCB678102D6E0997EDAB92C4CF425BE83D2478A7B"
+    },
+    {
+      "callee": "replay_lifecycle_policy",
+      "classification": "TEST",
+      "excerpt": "191:        universe_id=\"C2\",\n192:        cost_multiplier=1.0,\n193:        events=event(),\n194:        frames=frames,\n195:    )\n196:    trades, _daily, metrics, _counters = replay_lifecycle_policy(\n197:        policy_id=CONTROL_TIME_FAIL_72_FIXED_CAPITAL,\n198:        portfolio_id=\"TEST\",\n199:        universe_id=\"C2\",\n200:        cost_multiplier=1.0,\n201:        events=event(),\n202:        frames=frames,\n203:        state_frame=state_frame(RISK_ON),\n204:        replay_start=DATA_START,\n205:        replay_cutoff=DATA_CUTOFF,\n206:    )\n207:    assert len(trades) == len(direct_trades) == 1\n208:    assert trades.iloc[0][\"exit_time\"] == direct_trades.iloc[0][\"exit_time\"]\n209:    assert trades.iloc[0][\"exit_price\"] == direct_trades.iloc[0][\"exit_price\"]\n210:    assert trades.iloc[0][\"net_pnl\"] == direct_trades.iloc[0][\"net_pnl\"]\n211:    assert metrics[\"net_return\"] == direct_metrics[\"net_return\"]",
+      "keyword_args": {
+        "cost_multiplier": "1.0",
+        "events": "event()",
+        "frames": "frames",
+        "policy_id": "CONTROL_TIME_FAIL_72_FIXED_CAPITAL",
+        "portfolio_id": "\"TEST\"",
+        "replay_cutoff": "DATA_CUTOFF",
+        "replay_start": "DATA_START",
+        "state_frame": "state_frame(RISK_ON)",
+        "universe_id": "\"C2\""
+      },
+      "line": 196,
+      "path": "tests/research/test_rd27_lifecycle_replay.py",
+      "positional_args": [],
+      "sha256": "289C0940236EF9EE4AA7A36FCB678102D6E0997EDAB92C4CF425BE83D2478A7B"
+    },
+    {
+      "callee": "replay_lifecycle_policy",
+      "classification": "TEST",
+      "excerpt": "74:        hour = 1 if scenario == \"entry_touch\" else 2\n75:        frame.loc[hour, \"low\"] = 94.0\n76:        if scenario == \"existing_gap\":\n77:            frame.loc[hour, \"open\"] = 94.0\n78:        expected = entry + pd.Timedelta(hours=hour - 1)\n79:    baseline = replay.replay_lifecycle_policy(**kwargs)\n80:    observer = IdentityClockObserver()\n81:    observed = replay.replay_lifecycle_policy(**kwargs, later_trigger_v2_shadow_hook=observer)\n82:    for off, on in zip(baseline[:2], observed[:2], strict=True):\n83:        assert_frame_equal(off, on, check_exact=True)\n84:    assert baseline[2:] == observed[2:]",
+      "keyword_args": {
+        "**": "kwargs"
+      },
+      "line": 79,
+      "path": "tests/research/test_rd27_native_terminal_source_authority.py",
+      "positional_args": [],
+      "sha256": "2EDCCD417894164351FD76C32C64F2A28FD6D7E5BE280F0B6D078FD30EA1E066"
+    },
+    {
+      "callee": "replay_lifecycle_policy",
+      "classification": "TEST",
+      "excerpt": "76:        if scenario == \"existing_gap\":\n77:            frame.loc[hour, \"open\"] = 94.0\n78:        expected = entry + pd.Timedelta(hours=hour - 1)\n79:    baseline = replay.replay_lifecycle_policy(**kwargs)\n80:    observer = IdentityClockObserver()\n81:    observed = replay.replay_lifecycle_policy(**kwargs, later_trigger_v2_shadow_hook=observer)\n82:    for off, on in zip(baseline[:2], observed[:2], strict=True):\n83:        assert_frame_equal(off, on, check_exact=True)\n84:    assert baseline[2:] == observed[2:]\n85:    terminals = [event for event in observer.events if event[0] == \"TERMINAL\"]\n86:    assert terminals == [(\"TERMINAL\", (\"AAA-USDT\", entry), expected)]",
+      "keyword_args": {
+        "**": "kwargs",
+        "later_trigger_v2_shadow_hook": "observer"
+      },
+      "line": 81,
+      "path": "tests/research/test_rd27_native_terminal_source_authority.py",
+      "positional_args": [],
+      "sha256": "2EDCCD417894164351FD76C32C64F2A28FD6D7E5BE280F0B6D078FD30EA1E066"
+    },
+    {
+      "callee": "replay_lifecycle_policy",
+      "classification": "TEST",
+      "excerpt": "67:\n68:def run_trigger(\n69:    *, rows=None, memory=True, trigger=True, fixture=None, observations=(), bindings=None,\n70:):\n71:    trigger_diag, memory_diag, shadow_diag = {}, {}, {}\n72:    result = replay.replay_lifecycle_policy(\n73:        **(inputs() if fixture is None else fixture), async_memory_shadow_enabled=True,\n74:        observable_adapter_enabled=True, observable_memory_predicate_enabled=memory,\n75:        observable_later_trigger_predicate_enabled=trigger,\n76:        observable_primitive_rows=rows_for() if rows is None else rows,\n77:        observable_symbol_bindings={\"AAA-USDT\": \"AAA\"} if bindings is None else bindings,\n78:        async_memory_observations=observations, async_memory_diagnostics=shadow_diag,\n79:        observable_memory_predicate_diagnostics=memory_diag,\n80:        observable_later_trigger_predicate_diagnostics=trigger_diag,\n81:    )\n82:    return result, trigger_diag, memory_diag, shadow_diag\n83:\n84:\n85:def test_default_disabled_and_zero_parameters():\n86:    assert DEFAULT_OBSERVABLE_LATER_TRIGGER_PREDICATE_ENABLED is False",
+      "keyword_args": {
+        "**": "inputs() if fixture is None else fixture",
+        "async_memory_diagnostics": "shadow_diag",
+        "async_memory_observations": "observations",
+        "async_memory_shadow_enabled": "True",
+        "observable_adapter_enabled": "True",
+        "observable_later_trigger_predicate_diagnostics": "trigger_diag",
+        "observable_later_trigger_predicate_enabled": "trigger",
+        "observable_memory_predicate_diagnostics": "memory_diag",
+        "observable_memory_predicate_enabled": "memory",
+        "observable_primitive_rows": "rows_for() if rows is None else rows",
+        "observable_symbol_bindings": "{\"AAA-USDT\": \"AAA\"} if bindings is None else bindings"
+      },
+      "line": 72,
+      "path": "tests/research/test_rd27_observable_later_trigger_predicate.py",
+      "positional_args": [],
+      "sha256": "D88EECA01CA142316CE4607738EF3419FDB795049041CEC18AEEA65C004F11D1"
+    },
+    {
+      "callee": "replay_lifecycle_policy",
+      "classification": "TEST",
+      "excerpt": "294:    def forbidden(**kwargs):\n295:        raise AssertionError(\"disabled trigger constructed\")\n296:\n297:    monkeypatch.setattr(replay, \"ObservableLaterTriggerPredicatePolicy\", forbidden)\n298:    sink = {\"untouched\": True}\n299:    result = replay.replay_lifecycle_policy(**inputs(),\n300:        observable_later_trigger_predicate_diagnostics=sink)\n301:    assert_native_equal(replay.replay_lifecycle_policy(**inputs()), result)\n302:    assert sink == {\"untouched\": True}\n303:\n304:\n305:@pytest.mark.parametrize(\"policy\", [replay.STATIC_EXIT_STATE_ROUTER,",
+      "keyword_args": {
+        "**": "inputs()",
+        "observable_later_trigger_predicate_diagnostics": "sink"
+      },
+      "line": 299,
+      "path": "tests/research/test_rd27_observable_later_trigger_predicate.py",
+      "positional_args": [],
+      "sha256": "D88EECA01CA142316CE4607738EF3419FDB795049041CEC18AEEA65C004F11D1"
+    },
+    {
+      "callee": "replay_lifecycle_policy",
+      "classification": "TEST",
+      "excerpt": "305:@pytest.mark.parametrize(\"policy\", [replay.STATIC_EXIT_STATE_ROUTER,\n306:                                   replay.ADAPTIVE_EXIT_FIXED_CAPITAL,\n307:                                   replay.FULL_ADAPTIVE_LIFECYCLE_BRAIN])\n308:def test_native_parity_all_disabled_memory_only_and_both_enabled(policy):\n309:    fixture = inputs() | {\"policy_id\": policy}\n310:    original = replay.replay_lifecycle_policy(**fixture)\n311:    a, ta, ma, _ = run_trigger(fixture=fixture, memory=False, trigger=False)\n312:    b, tb, mb, _ = run_trigger(fixture=fixture, trigger=False)\n313:    c, tc, mc, _ = run_trigger(fixture=fixture)\n314:    for result in (a, b, c):\n315:        assert_native_equal(original, result)",
+      "keyword_args": {
+        "**": "fixture"
+      },
+      "line": 310,
+      "path": "tests/research/test_rd27_observable_later_trigger_predicate.py",
+      "positional_args": [],
+      "sha256": "D88EECA01CA142316CE4607738EF3419FDB795049041CEC18AEEA65C004F11D1"
+    },
+    {
+      "callee": "replay_lifecycle_policy",
+      "classification": "TEST",
+      "excerpt": "296:\n297:    monkeypatch.setattr(replay, \"ObservableLaterTriggerPredicatePolicy\", forbidden)\n298:    sink = {\"untouched\": True}\n299:    result = replay.replay_lifecycle_policy(**inputs(),\n300:        observable_later_trigger_predicate_diagnostics=sink)\n301:    assert_native_equal(replay.replay_lifecycle_policy(**inputs()), result)\n302:    assert sink == {\"untouched\": True}\n303:\n304:\n305:@pytest.mark.parametrize(\"policy\", [replay.STATIC_EXIT_STATE_ROUTER,\n306:                                   replay.ADAPTIVE_EXIT_FIXED_CAPITAL,",
+      "keyword_args": {
+        "**": "inputs()"
+      },
+      "line": 301,
+      "path": "tests/research/test_rd27_observable_later_trigger_predicate.py",
+      "positional_args": [],
+      "sha256": "D88EECA01CA142316CE4607738EF3419FDB795049041CEC18AEEA65C004F11D1"
+    },
+    {
+      "callee": "replay_lifecycle_policy",
+      "classification": "TEST",
+      "excerpt": "360:\n361:\n362:@pytest.mark.parametrize(\"flags\", [{}, {\"async_memory_shadow_enabled\": True}])\n363:def test_explicit_parent_switches_required(flags):\n364:    with pytest.raises(replay.RD27ReplayError, match=\"explicitly enabled\"):\n365:        replay.replay_lifecycle_policy(**inputs(), **flags,\n366:                                       observable_later_trigger_predicate_enabled=True)\n367:\n368:\n369:def test_invalid_switch_and_custom_policy_fail_closed():\n370:    with pytest.raises(replay.RD27ReplayError, match=\"switch must be boolean\"):\n371:        replay.replay_lifecycle_policy(**inputs(), observable_later_trigger_predicate_enabled=1)",
+      "keyword_args": {
+        "**": "flags",
+        "observable_later_trigger_predicate_enabled": "True"
+      },
+      "line": 365,
+      "path": "tests/research/test_rd27_observable_later_trigger_predicate.py",
+      "positional_args": [],
+      "sha256": "D88EECA01CA142316CE4607738EF3419FDB795049041CEC18AEEA65C004F11D1"
+    },
+    {
+      "callee": "replay_lifecycle_policy",
+      "classification": "TEST",
+      "excerpt": "366:                                       observable_later_trigger_predicate_enabled=True)\n367:\n368:\n369:def test_invalid_switch_and_custom_policy_fail_closed():\n370:    with pytest.raises(replay.RD27ReplayError, match=\"switch must be boolean\"):\n371:        replay.replay_lifecycle_policy(**inputs(), observable_later_trigger_predicate_enabled=1)\n372:    with pytest.raises(replay.RD27ReplayError, match=\"custom adapter policy\"):\n373:        replay.replay_lifecycle_policy(\n374:            **inputs(), async_memory_shadow_enabled=True, observable_adapter_enabled=True,\n375:            observable_later_trigger_predicate_enabled=True, observable_policy=lambda **_: None,\n376:        )",
+      "keyword_args": {
+        "**": "inputs()",
+        "observable_later_trigger_predicate_enabled": "1"
+      },
+      "line": 371,
+      "path": "tests/research/test_rd27_observable_later_trigger_predicate.py",
+      "positional_args": [],
+      "sha256": "D88EECA01CA142316CE4607738EF3419FDB795049041CEC18AEEA65C004F11D1"
+    },
+    {
+      "callee": "replay_lifecycle_policy",
+      "classification": "TEST",
+      "excerpt": "368:\n369:def test_invalid_switch_and_custom_policy_fail_closed():\n370:    with pytest.raises(replay.RD27ReplayError, match=\"switch must be boolean\"):\n371:        replay.replay_lifecycle_policy(**inputs(), observable_later_trigger_predicate_enabled=1)\n372:    with pytest.raises(replay.RD27ReplayError, match=\"custom adapter policy\"):\n373:        replay.replay_lifecycle_policy(\n374:            **inputs(), async_memory_shadow_enabled=True, observable_adapter_enabled=True,\n375:            observable_later_trigger_predicate_enabled=True, observable_policy=lambda **_: None,\n376:        )\n377:\n378:\n379:def test_no_snapshot_registers_and_cleans_up_without_candidate():\n380:    _, t, _, s = run_trigger(rows=[])\n381:    assert t[\"eligible_trigger_evaluations\"] == t[\"true_trigger_candidates\"] == 0",
+      "keyword_args": {
+        "**": "inputs()",
+        "async_memory_shadow_enabled": "True",
+        "observable_adapter_enabled": "True",
+        "observable_later_trigger_predicate_enabled": "True",
+        "observable_policy": "lambda **_: None"
+      },
+      "line": 373,
+      "path": "tests/research/test_rd27_observable_later_trigger_predicate.py",
+      "positional_args": [],
+      "sha256": "D88EECA01CA142316CE4607738EF3419FDB795049041CEC18AEEA65C004F11D1"
+    },
+    {
+      "callee": "replay_lifecycle_policy",
+      "classification": "TEST",
+      "excerpt": "403:    (replay.ADAPTIVE_EXIT_FIXED_CAPITAL, False, {1: {\"low\": 90}}),\n404:])\n405:def test_trigger_cleanup_and_parity_for_existing_exit_paths(policy, weak, overrides):\n406:    fixture = inputs(weak=weak, overrides=overrides) | {\"policy_id\": policy}\n407:    result, t, _, s = run_trigger(fixture=fixture)\n408:    assert_native_equal(replay.replay_lifecycle_policy(**fixture), result)\n409:    assert t[\"positions_closed\"] == t[\"positions_created\"] == s[\"resets\"] == 1\n410:    assert t[\"active_position_count\"] == 0\n411:\n412:\n413:def test_gaps_use_previous_available_eligible_snapshot_without_lookback_parameter():",
+      "keyword_args": {
+        "**": "fixture"
+      },
+      "line": 408,
+      "path": "tests/research/test_rd27_observable_later_trigger_predicate.py",
+      "positional_args": [],
+      "sha256": "D88EECA01CA142316CE4607738EF3419FDB795049041CEC18AEEA65C004F11D1"
+    },
+    {
+      "callee": "replay_lifecycle_policy",
+      "classification": "TEST",
+      "excerpt": "441:\n442:\n443:def test_conflicting_source_does_not_publish_partial_diagnostics():\n444:    sink = {\"untouched\": True}\n445:    with pytest.raises(ConflictingSnapshotError):\n446:        replay.replay_lifecycle_policy(\n447:            **inputs(), async_memory_shadow_enabled=True, observable_adapter_enabled=True,\n448:            observable_later_trigger_predicate_enabled=True,\n449:            observable_primitive_rows=[row(4), row(4, close=100)],\n450:            observable_symbol_bindings={\"AAA-USDT\": \"AAA\"},\n451:            observable_later_trigger_predicate_diagnostics=sink,\n452:        )\n453:    assert sink == {\"untouched\": True}\n454:\n455:\n456:def test_same_symbol_two_candidate_policy_lifecycles_are_isolated():\n457:    policy = ObservableLaterTriggerPredicatePolicy(symbol_bindings={\"pair\": \"AAA\"})",
+      "keyword_args": {
+        "**": "inputs()",
+        "async_memory_shadow_enabled": "True",
+        "observable_adapter_enabled": "True",
+        "observable_later_trigger_predicate_diagnostics": "sink",
+        "observable_later_trigger_predicate_enabled": "True",
+        "observable_primitive_rows": "[row(4), row(4, close=100)]",
+        "observable_symbol_bindings": "{\"AAA-USDT\": \"AAA\"}"
+      },
+      "line": 446,
+      "path": "tests/research/test_rd27_observable_later_trigger_predicate.py",
+      "positional_args": [],
+      "sha256": "D88EECA01CA142316CE4607738EF3419FDB795049041CEC18AEEA65C004F11D1"
+    },
+    {
+      "callee": "replay_lifecycle_policy",
+      "classification": "TEST",
+      "excerpt": "58:    return new_async_memory_state(position_id=position_id or identity(), enabled=True)\n59:\n60:\n61:def run_adapter(*, fixture=None, rows=None, bindings=None, **kwargs):\n62:    adapter_diagnostics, shadow_diagnostics = {}, {}\n63:    result = replay.replay_lifecycle_policy(\n64:        **(inputs() if fixture is None else fixture), async_memory_shadow_enabled=True,\n65:        observable_adapter_enabled=True,\n66:        observable_primitive_rows=[row()] if rows is None else rows,\n67:        observable_symbol_bindings={\"AAA-USDT\": \"AAA\"} if bindings is None else bindings,\n68:        observable_adapter_diagnostics=adapter_diagnostics,\n69:        async_memory_diagnostics=shadow_diagnostics, **kwargs,\n70:    )\n71:    return result, adapter_diagnostics, shadow_diagnostics\n72:\n73:\n74:def test_exact_ten_field_schema_mapping_and_dataframe():\n75:    assert tuple(field.name for field in fields(Observable4HSnapshot)) == CANONICAL_FIELDS",
+      "keyword_args": {
+        "**": "kwargs",
+        "async_memory_diagnostics": "shadow_diagnostics",
+        "async_memory_shadow_enabled": "True",
+        "observable_adapter_diagnostics": "adapter_diagnostics",
+        "observable_adapter_enabled": "True",
+        "observable_primitive_rows": "[row()] if rows is None else rows",
+        "observable_symbol_bindings": "{\"AAA-USDT\": \"AAA\"} if bindings is None else bindings"
+      },
+      "line": 63,
+      "path": "tests/research/test_rd27_observable_memory_adapter.py",
+      "positional_args": [],
+      "sha256": "6696C736BE8E70043989E8B060417B2E6380DDA54B1AAA7A4C23073D9C267A39"
+    },
+    {
+      "callee": "replay_lifecycle_policy",
+      "classification": "TEST",
+      "excerpt": "270:        replay.replay_lifecycle_policy(**inputs(), observable_adapter_enabled=True)\n271:\n272:\n273:def test_disabled_path_ignores_adapter_inputs_policy_and_sink(monkeypatch):\n274:    fixture = inputs()\n275:    baseline = replay.replay_lifecycle_policy(**fixture)\n276:\n277:    def forbidden(*args, **kwargs):\n278:        raise AssertionError(\"disabled adapter executed\")\n279:\n280:    monkeypatch.setattr(replay, \"ObservableMemoryAdapter\", forbidden)",
+      "keyword_args": {
+        "**": "fixture"
+      },
+      "line": 275,
+      "path": "tests/research/test_rd27_observable_memory_adapter.py",
+      "positional_args": [],
+      "sha256": "6696C736BE8E70043989E8B060417B2E6380DDA54B1AAA7A4C23073D9C267A39"
+    },
+    {
+      "callee": "replay_lifecycle_policy",
+      "classification": "TEST",
+      "excerpt": "277:    def forbidden(*args, **kwargs):\n278:        raise AssertionError(\"disabled adapter executed\")\n279:\n280:    monkeypatch.setattr(replay, \"ObservableMemoryAdapter\", forbidden)\n281:    sink = {\"untouched\": True}\n282:    result = replay.replay_lifecycle_policy(\n283:        **fixture, observable_primitive_rows=object(), observable_symbol_bindings=object(),\n284:        observable_policy=forbidden, observable_adapter_diagnostics=sink,\n285:    )\n286:    assert_native_equal(baseline, result)\n287:    assert sink == {\"untouched\": True}\n288:\n289:\n290:@pytest.mark.parametrize(\"policy\", [replay.STATIC_EXIT_STATE_ROUTER,",
+      "keyword_args": {
+        "**": "fixture",
+        "observable_adapter_diagnostics": "sink",
+        "observable_policy": "forbidden",
+        "observable_primitive_rows": "object()",
+        "observable_symbol_bindings": "object()"
+      },
+      "line": 282,
+      "path": "tests/research/test_rd27_observable_memory_adapter.py",
+      "positional_args": [],
+      "sha256": "6696C736BE8E70043989E8B060417B2E6380DDA54B1AAA7A4C23073D9C267A39"
+    },
+    {
+      "callee": "replay_lifecycle_policy",
+      "classification": "TEST",
+      "excerpt": "290:@pytest.mark.parametrize(\"policy\", [replay.STATIC_EXIT_STATE_ROUTER,\n291:                                   replay.ADAPTIVE_EXIT_FIXED_CAPITAL,\n292:                                   replay.FULL_ADAPTIVE_LIFECYCLE_BRAIN])\n293:def test_enabled_noop_complete_native_parity(policy):\n294:    fixture = inputs() | {\"policy_id\": policy}\n295:    baseline = replay.replay_lifecycle_policy(**fixture)\n296:    result, diagnostics, shadow = run_adapter(fixture=fixture)\n297:    assert len(baseline[0]) == 1\n298:    assert_native_equal(baseline, result)  # ALL native columns incl exit price/reason\n299:    assert diagnostics[\"emitted_memory_observations\"] == 0\n300:    assert diagnostics[\"emitted_trigger_observations\"] == 0",
+      "keyword_args": {
+        "**": "fixture"
+      },
+      "line": 295,
+      "path": "tests/research/test_rd27_observable_memory_adapter.py",
+      "positional_args": [],
+      "sha256": "6696C736BE8E70043989E8B060417B2E6380DDA54B1AAA7A4C23073D9C267A39"
+    },
+    {
+      "callee": "replay_lifecycle_policy",
+      "classification": "TEST",
+      "excerpt": "339:        if position.decision_time == at(5):\n340:            return ObservablePolicyDecision(\"trigger\", True)\n341:        return None\n342:\n343:    fixture = inputs(pairs=(\"AAA-USDT\", \"BBB-USDT\"))\n344:    baseline = replay.replay_lifecycle_policy(**fixture)\n345:    result, diagnostics, shadow = run_adapter(\n346:        fixture=fixture, rows=[row(), row(0, \"BBB\")],\n347:        bindings={\"AAA-USDT\": \"AAA\", \"BBB-USDT\": \"BBB\"}, observable_policy=synthetic_policy,\n348:    )\n349:    assert_native_equal(baseline, result)",
+      "keyword_args": {
+        "**": "fixture"
+      },
+      "line": 344,
+      "path": "tests/research/test_rd27_observable_memory_adapter.py",
+      "positional_args": [],
+      "sha256": "6696C736BE8E70043989E8B060417B2E6380DDA54B1AAA7A4C23073D9C267A39"
+    },
+    {
+      "callee": "replay_lifecycle_policy",
+      "classification": "TEST",
+      "excerpt": "265:    assert DEFAULT_OBSERVABLE_ADAPTER_ENABLED is False\n266:    parameters = inspect.signature(replay.replay_lifecycle_policy).parameters\n267:    assert parameters[\"observable_adapter_enabled\"].default is False\n268:    assert parameters[\"observable_policy\"].default is no_observation_policy\n269:    with pytest.raises(replay.RD27ReplayError, match=\"explicitly enabled\"):\n270:        replay.replay_lifecycle_policy(**inputs(), observable_adapter_enabled=True)\n271:\n272:\n273:def test_disabled_path_ignores_adapter_inputs_policy_and_sink(monkeypatch):\n274:    fixture = inputs()\n275:    baseline = replay.replay_lifecycle_policy(**fixture)",
+      "keyword_args": {
+        "**": "inputs()",
+        "observable_adapter_enabled": "True"
+      },
+      "line": 270,
+      "path": "tests/research/test_rd27_observable_memory_adapter.py",
+      "positional_args": [],
+      "sha256": "6696C736BE8E70043989E8B060417B2E6380DDA54B1AAA7A4C23073D9C267A39"
+    },
+    {
+      "callee": "replay_lifecycle_policy",
+      "classification": "TEST",
+      "excerpt": "401:    assert shadow[\"resets\"] == 2\n402:\n403:\n404:def test_invalid_enabled_switch_is_not_coerced():\n405:    with pytest.raises(replay.RD27ReplayError, match=\"switch must be boolean\"):\n406:        replay.replay_lifecycle_policy(**inputs(), observable_adapter_enabled=1)\n407:\n408:\n409:def test_failed_replay_does_not_publish_diagnostics():\n410:    sink = {\"untouched\": True}\n411:    with pytest.raises(ObservableAdapterError):",
+      "keyword_args": {
+        "**": "inputs()",
+        "observable_adapter_enabled": "1"
+      },
+      "line": 406,
+      "path": "tests/research/test_rd27_observable_memory_adapter.py",
+      "positional_args": [],
+      "sha256": "6696C736BE8E70043989E8B060417B2E6380DDA54B1AAA7A4C23073D9C267A39"
+    },
+    {
+      "callee": "replay_lifecycle_policy",
+      "classification": "TEST",
+      "excerpt": "407:\n408:\n409:def test_failed_replay_does_not_publish_diagnostics():\n410:    sink = {\"untouched\": True}\n411:    with pytest.raises(ObservableAdapterError):\n412:        replay.replay_lifecycle_policy(\n413:            **inputs(), async_memory_shadow_enabled=True, observable_adapter_enabled=True,\n414:            observable_primitive_rows=[row(), row(close=100)],\n415:            observable_adapter_diagnostics=sink,\n416:        )\n417:    assert sink == {\"untouched\": True}\n418:\n419:\n420:def test_frozen_replace_revalidates_availability():\n421:    with pytest.raises(ObservableAdapterError, match=\"future\"):",
+      "keyword_args": {
+        "**": "inputs()",
+        "async_memory_shadow_enabled": "True",
+        "observable_adapter_diagnostics": "sink",
+        "observable_adapter_enabled": "True",
+        "observable_primitive_rows": "[row(), row(close=100)]"
+      },
+      "line": 412,
+      "path": "tests/research/test_rd27_observable_memory_adapter.py",
+      "positional_args": [],
+      "sha256": "6696C736BE8E70043989E8B060417B2E6380DDA54B1AAA7A4C23073D9C267A39"
+    },
+    {
+      "callee": "replay_lifecycle_policy",
+      "classification": "TEST",
+      "excerpt": "53:            row(12, high=106, close=103.5), row(16, high=108, close=106.5)]\n54:\n55:\n56:def run_predicate(*, fixture=None, rows=None, enabled=True, bindings=None):\n57:    predicate, shadow, adapter = {}, {}, {}\n58:    result = replay.replay_lifecycle_policy(\n59:        **(inputs() if fixture is None else fixture), async_memory_shadow_enabled=True,\n60:        observable_adapter_enabled=True, observable_memory_predicate_enabled=enabled,\n61:        observable_primitive_rows=primitive_rows() if rows is None else rows,\n62:        observable_symbol_bindings={\"AAA-USDT\": \"AAA\"} if bindings is None else bindings,\n63:        observable_memory_predicate_diagnostics=predicate, async_memory_diagnostics=shadow,\n64:        observable_adapter_diagnostics=adapter,\n65:    )\n66:    return result, predicate, shadow, adapter\n67:\n68:\n69:def test_default_disabled_and_adapter_default_still_noop():\n70:    params = inspect.signature(replay.replay_lifecycle_policy).parameters",
+      "keyword_args": {
+        "**": "inputs() if fixture is None else fixture",
+        "async_memory_diagnostics": "shadow",
+        "async_memory_shadow_enabled": "True",
+        "observable_adapter_diagnostics": "adapter",
+        "observable_adapter_enabled": "True",
+        "observable_memory_predicate_diagnostics": "predicate",
+        "observable_memory_predicate_enabled": "enabled",
+        "observable_primitive_rows": "primitive_rows() if rows is None else rows",
+        "observable_symbol_bindings": "{\"AAA-USDT\": \"AAA\"} if bindings is None else bindings"
+      },
+      "line": 58,
+      "path": "tests/research/test_rd27_observable_memory_predicate.py",
+      "positional_args": [],
+      "sha256": "03998BC98E222D5C728E3A34275508648643149FFEE58755FC1E30211966871A"
+    },
+    {
+      "callee": "replay_lifecycle_policy",
+      "classification": "TEST",
+      "excerpt": "257:    def forbidden(**kwargs):\n258:        raise AssertionError(\"disabled predicate instantiated\")\n259:\n260:    monkeypatch.setattr(replay, \"ObservableMemoryPredicatePolicy\", forbidden)\n261:    sink = {\"untouched\": True}\n262:    baseline = replay.replay_lifecycle_policy(**inputs())\n263:    result = replay.replay_lifecycle_policy(\n264:        **inputs(), async_memory_shadow_enabled=True, observable_adapter_enabled=True,\n265:        observable_primitive_rows=primitive_rows(), observable_symbol_bindings={\"AAA-USDT\": \"AAA\"},\n266:        observable_memory_predicate_diagnostics=sink,\n267:    )",
+      "keyword_args": {
+        "**": "inputs()"
+      },
+      "line": 262,
+      "path": "tests/research/test_rd27_observable_memory_predicate.py",
+      "positional_args": [],
+      "sha256": "03998BC98E222D5C728E3A34275508648643149FFEE58755FC1E30211966871A"
+    },
+    {
+      "callee": "replay_lifecycle_policy",
+      "classification": "TEST",
+      "excerpt": "258:        raise AssertionError(\"disabled predicate instantiated\")\n259:\n260:    monkeypatch.setattr(replay, \"ObservableMemoryPredicatePolicy\", forbidden)\n261:    sink = {\"untouched\": True}\n262:    baseline = replay.replay_lifecycle_policy(**inputs())\n263:    result = replay.replay_lifecycle_policy(\n264:        **inputs(), async_memory_shadow_enabled=True, observable_adapter_enabled=True,\n265:        observable_primitive_rows=primitive_rows(), observable_symbol_bindings={\"AAA-USDT\": \"AAA\"},\n266:        observable_memory_predicate_diagnostics=sink,\n267:    )\n268:    assert_native_equal(baseline, result)\n269:    assert sink == {\"untouched\": True}\n270:\n271:\n272:@pytest.mark.parametrize(\"policy\", [replay.STATIC_EXIT_STATE_ROUTER,",
+      "keyword_args": {
+        "**": "inputs()",
+        "async_memory_shadow_enabled": "True",
+        "observable_adapter_enabled": "True",
+        "observable_memory_predicate_diagnostics": "sink",
+        "observable_primitive_rows": "primitive_rows()",
+        "observable_symbol_bindings": "{\"AAA-USDT\": \"AAA\"}"
+      },
+      "line": 263,
+      "path": "tests/research/test_rd27_observable_memory_predicate.py",
+      "positional_args": [],
+      "sha256": "03998BC98E222D5C728E3A34275508648643149FFEE58755FC1E30211966871A"
+    },
+    {
+      "callee": "replay_lifecycle_policy",
+      "classification": "TEST",
+      "excerpt": "272:@pytest.mark.parametrize(\"policy\", [replay.STATIC_EXIT_STATE_ROUTER,\n273:                                   replay.ADAPTIVE_EXIT_FIXED_CAPITAL,\n274:                                   replay.FULL_ADAPTIVE_LIFECYCLE_BRAIN])\n275:def test_enabled_and_disabled_full_native_parity_and_exact_diagnostics(policy):\n276:    fixture = inputs() | {\"policy_id\": policy}\n277:    baseline = replay.replay_lifecycle_policy(**fixture)\n278:    disabled, dp, ds, da = run_predicate(fixture=fixture, enabled=False)\n279:    enabled, p, s, a = run_predicate(fixture=fixture)\n280:    assert len(enabled[0]) == 1\n281:    assert_native_equal(baseline, disabled)\n282:    assert_native_equal(baseline, enabled)",
+      "keyword_args": {
+        "**": "fixture"
+      },
+      "line": 277,
+      "path": "tests/research/test_rd27_observable_memory_predicate.py",
+      "positional_args": [],
+      "sha256": "03998BC98E222D5C728E3A34275508648643149FFEE58755FC1E30211966871A"
+    },
+    {
+      "callee": "replay_lifecycle_policy",
+      "classification": "TEST",
+      "excerpt": "356:    (replay.ADAPTIVE_EXIT_FIXED_CAPITAL, False, {10: {\"low\": 90}}),\n357:    (replay.ADAPTIVE_EXIT_FIXED_CAPITAL, False, {1: {\"low\": 90}}),\n358:])\n359:def test_cleanup_and_parity_on_existing_exit_paths(policy, weak, overrides):\n360:    fixture = inputs(weak=weak, overrides=overrides) | {\"policy_id\": policy}\n361:    baseline = replay.replay_lifecycle_policy(**fixture)\n362:    actual, p, s, _ = run_predicate(fixture=fixture)\n363:    assert_native_equal(baseline, actual)\n364:    assert p[\"positions_created\"] == p[\"positions_closed\"] == 1\n365:    assert p[\"active_position_count\"] == 0 and s[\"resets\"] == 1\n366:",
+      "keyword_args": {
+        "**": "fixture"
+      },
+      "line": 361,
+      "path": "tests/research/test_rd27_observable_memory_predicate.py",
+      "positional_args": [],
+      "sha256": "03998BC98E222D5C728E3A34275508648643149FFEE58755FC1E30211966871A"
+    },
+    {
+      "callee": "replay_lifecycle_policy",
+      "classification": "TEST",
+      "excerpt": "410:\n411:\n412:def test_native_actual_entry_price_is_structural_initial_reference():\n413:    fixture = inputs(overrides={hour: {\"open\": 105, \"high\": 107, \"low\": 104, \"close\": 106}\n414:                                for hour in range(200)})\n415:    baseline = replay.replay_lifecycle_policy(**fixture)\n416:    result, p, s, _ = run_predicate(fixture=fixture)\n417:    assert_native_equal(baseline, result)\n418:    record = p[\"position_records\"][0]\n419:    assert record[\"entry_price\"] == 105\n420:    assert p[\"true_predicate_observations\"] == 1 and p[\"false_predicate_observations\"] == 3",
+      "keyword_args": {
+        "**": "fixture"
+      },
+      "line": 415,
+      "path": "tests/research/test_rd27_observable_memory_predicate.py",
+      "positional_args": [],
+      "sha256": "03998BC98E222D5C728E3A34275508648643149FFEE58755FC1E30211966871A"
+    },
+    {
+      "callee": "replay_lifecycle_policy",
+      "classification": "TEST",
+      "excerpt": "243:        with pytest.raises(replay.RD27ReplayError, match=\"explicitly enabled\"):\n244:            replay.replay_lifecycle_policy(\n245:                **inputs(), **flags, observable_memory_predicate_enabled=True,\n246:            )\n247:    with pytest.raises(replay.RD27ReplayError, match=\"custom adapter policy\"):\n248:        replay.replay_lifecycle_policy(\n249:            **inputs(), async_memory_shadow_enabled=True, observable_adapter_enabled=True,\n250:            observable_memory_predicate_enabled=True, observable_policy=lambda **_: None,\n251:        )\n252:    with pytest.raises(replay.RD27ReplayError, match=\"switch must be boolean\"):\n253:        replay.replay_lifecycle_policy(**inputs(), observable_memory_predicate_enabled=1)\n254:\n255:\n256:def test_disabled_predicate_does_not_construct_or_touch_sink(monkeypatch):",
+      "keyword_args": {
+        "**": "inputs()",
+        "async_memory_shadow_enabled": "True",
+        "observable_adapter_enabled": "True",
+        "observable_memory_predicate_enabled": "True",
+        "observable_policy": "lambda **_: None"
+      },
+      "line": 248,
+      "path": "tests/research/test_rd27_observable_memory_predicate.py",
+      "positional_args": [],
+      "sha256": "03998BC98E222D5C728E3A34275508648643149FFEE58755FC1E30211966871A"
+    },
+    {
+      "callee": "replay_lifecycle_policy",
+      "classification": "TEST",
+      "excerpt": "248:        replay.replay_lifecycle_policy(\n249:            **inputs(), async_memory_shadow_enabled=True, observable_adapter_enabled=True,\n250:            observable_memory_predicate_enabled=True, observable_policy=lambda **_: None,\n251:        )\n252:    with pytest.raises(replay.RD27ReplayError, match=\"switch must be boolean\"):\n253:        replay.replay_lifecycle_policy(**inputs(), observable_memory_predicate_enabled=1)\n254:\n255:\n256:def test_disabled_predicate_does_not_construct_or_touch_sink(monkeypatch):\n257:    def forbidden(**kwargs):\n258:        raise AssertionError(\"disabled predicate instantiated\")",
+      "keyword_args": {
+        "**": "inputs()",
+        "observable_memory_predicate_enabled": "1"
+      },
+      "line": 253,
+      "path": "tests/research/test_rd27_observable_memory_predicate.py",
+      "positional_args": [],
+      "sha256": "03998BC98E222D5C728E3A34275508648643149FFEE58755FC1E30211966871A"
+    },
+    {
+      "callee": "replay_lifecycle_policy",
+      "classification": "TEST",
+      "excerpt": "424:\n425:\n426:def test_failed_predicate_replay_does_not_publish_diagnostic_sinks():\n427:    predicate, shadow, adapter = {\"untouched\": True}, {\"untouched\": True}, {\"untouched\": True}\n428:    with pytest.raises(ConflictingSnapshotError):\n429:        replay.replay_lifecycle_policy(\n430:            **inputs(), async_memory_shadow_enabled=True, observable_adapter_enabled=True,\n431:            observable_memory_predicate_enabled=True,\n432:            observable_primitive_rows=[row(4), row(4, close=100)],\n433:            observable_symbol_bindings={\"AAA-USDT\": \"AAA\"},\n434:            observable_memory_predicate_diagnostics=predicate,\n435:            async_memory_diagnostics=shadow, observable_adapter_diagnostics=adapter,\n436:        )\n437:    assert predicate == shadow == adapter == {\"untouched\": True}",
+      "keyword_args": {
+        "**": "inputs()",
+        "async_memory_diagnostics": "shadow",
+        "async_memory_shadow_enabled": "True",
+        "observable_adapter_diagnostics": "adapter",
+        "observable_adapter_enabled": "True",
+        "observable_memory_predicate_diagnostics": "predicate",
+        "observable_memory_predicate_enabled": "True",
+        "observable_primitive_rows": "[row(4), row(4, close=100)]",
+        "observable_symbol_bindings": "{\"AAA-USDT\": \"AAA\"}"
+      },
+      "line": 429,
+      "path": "tests/research/test_rd27_observable_memory_predicate.py",
+      "positional_args": [],
+      "sha256": "03998BC98E222D5C728E3A34275508648643149FFEE58755FC1E30211966871A"
+    },
+    {
+      "callee": "replay_lifecycle_policy",
+      "classification": "TEST",
+      "excerpt": "239:\n240:\n241:def test_flag_requires_both_existing_switches_and_rejects_custom_policy():\n242:    for flags in ({}, {\"async_memory_shadow_enabled\": True}):\n243:        with pytest.raises(replay.RD27ReplayError, match=\"explicitly enabled\"):\n244:            replay.replay_lifecycle_policy(\n245:                **inputs(), **flags, observable_memory_predicate_enabled=True,\n246:            )\n247:    with pytest.raises(replay.RD27ReplayError, match=\"custom adapter policy\"):\n248:        replay.replay_lifecycle_policy(\n249:            **inputs(), async_memory_shadow_enabled=True, observable_adapter_enabled=True,\n250:            observable_memory_predicate_enabled=True, observable_policy=lambda **_: None,\n251:        )",
+      "keyword_args": {
+        "**": "flags",
+        "observable_memory_predicate_enabled": "True"
+      },
+      "line": 244,
+      "path": "tests/research/test_rd27_observable_memory_predicate.py",
+      "positional_args": [],
+      "sha256": "03998BC98E222D5C728E3A34275508648643149FFEE58755FC1E30211966871A"
+    }
+  ],
+  "shadow_replay_callsite_count": 13,
+  "shadow_replay_callsites": [
+    {
+      "callee": "replay_v2_shadow_position",
+      "classification": "SOURCE",
+      "excerpt": "108:        decision_time = _utc(decision_time)\n109:        if decision_time < position.entry_time:\n110:            return\n111:\n112:        cutoff = min(decision_time, position.observed_through)\n113:        self._latest[pair] = replay_v2_shadow_position(\n114:            position_id=f\"{pair}@{position.entry_time.isoformat()}\",\n115:            symbol=position.symbol,\n116:            entry_time=position.entry_time,\n117:            entry_price=position.entry_price,\n118:            observed_through=cutoff,\n119:            primitive_rows=self._rows,\n120:        )\n121:        self._observe_calls += 1\n122:\n123:    def close_position(\n124:        self,\n125:        *,",
+      "keyword_args": {
+        "entry_price": "position.entry_price",
+        "entry_time": "position.entry_time",
+        "observed_through": "cutoff",
+        "position_id": "f\"{pair}@{position.entry_time.isoformat()}\"",
+        "primitive_rows": "self._rows",
+        "symbol": "position.symbol"
+      },
+      "line": 113,
+      "path": "src/spotbot/research/rd27_later_trigger_v2_native_hook.py",
+      "positional_args": [],
+      "sha256": "E149C5C354B08801920CA87F61F397C9C7969EA7E6BE7C081AFF865CF9168EFD"
+    },
+    {
+      "callee": "replay_v2_shadow_position",
+      "classification": "TEST",
+      "excerpt": "55:        row(0, 4, high=103, low=99, close=101),\n56:        row(4, 8, high=106, low=101, close=105),\n57:        row(8, 12, high=107, low=103, close=105),\n58:        row(12, 16, high=105, low=102, close=102.5),\n59:    ]\n60:    r = replay_v2_shadow_position(\n61:        position_id=\"p1\",\n62:        symbol=\"AAAUSDT\",\n63:        entry_time=ts(0),\n64:        entry_price=102,\n65:        observed_through=ts(16),\n66:        primitive_rows=rows,\n67:    )\n68:    assert r.first_memory_time == ts(8)\n69:    assert r.breakout_reference == 103\n70:    assert r.candidate_time == ts(16)\n71:    assert r.latched_trigger_time == ts(16)\n72:    assert r.raw_v2_trigger_times == (ts(16),)",
+      "keyword_args": {
+        "entry_price": "102",
+        "entry_time": "ts(0)",
+        "observed_through": "ts(16)",
+        "position_id": "\"p1\"",
+        "primitive_rows": "rows",
+        "symbol": "\"AAAUSDT\""
+      },
+      "line": 60,
+      "path": "tests/research/test_rd27_later_trigger_v2_shadow_replay.py",
+      "positional_args": [],
+      "sha256": "17105BEA6B2CA3CFFB9CBA71D4DD7AAA6BE4235DE0767E11392E1FE7BEDD6349"
+    },
+    {
+      "callee": "replay_v2_shadow_position",
+      "classification": "TEST",
+      "excerpt": "76:    rows = [\n77:        row(0, 4, high=102, low=98, close=99),\n78:        row(4, 8, high=103, low=98, close=100),\n79:        row(8, 12, high=104, low=99, close=100),\n80:    ]\n81:    r = replay_v2_shadow_position(\n82:        position_id=\"p1\",\n83:        symbol=\"AAAUSDT\",\n84:        entry_time=ts(0),\n85:        entry_price=110,\n86:        observed_through=ts(12),\n87:        primitive_rows=rows,\n88:    )\n89:    assert r.first_memory_time is None\n90:    assert r.candidate is None\n91:    assert r.raw_v2_trigger_times == ()\n92:\n93:",
+      "keyword_args": {
+        "entry_price": "110",
+        "entry_time": "ts(0)",
+        "observed_through": "ts(12)",
+        "position_id": "\"p1\"",
+        "primitive_rows": "rows",
+        "symbol": "\"AAAUSDT\""
+      },
+      "line": 81,
+      "path": "tests/research/test_rd27_later_trigger_v2_shadow_replay.py",
+      "positional_args": [],
+      "sha256": "17105BEA6B2CA3CFFB9CBA71D4DD7AAA6BE4235DE0767E11392E1FE7BEDD6349"
+    },
+    {
+      "callee": "replay_v2_shadow_position",
+      "classification": "TEST",
+      "excerpt": "96:        row(0, 4, high=103, low=99, close=101),\n97:        row(4, 8, high=106, low=101, close=105),\n98:        row(8, 12, high=108, low=103, close=106),\n99:        row(12, 16, high=109, low=104, close=105),\n100:    ]\n101:    r = replay_v2_shadow_position(\n102:        position_id=\"p1\",\n103:        symbol=\"AAAUSDT\",\n104:        entry_time=ts(0),\n105:        entry_price=102,\n106:        observed_through=ts(16),\n107:        primitive_rows=rows,\n108:    )\n109:    assert r.first_memory_time == ts(8)\n110:    assert r.breakout_reference == 103\n111:    assert r.candidate is None\n112:\n113:",
+      "keyword_args": {
+        "entry_price": "102",
+        "entry_time": "ts(0)",
+        "observed_through": "ts(16)",
+        "position_id": "\"p1\"",
+        "primitive_rows": "rows",
+        "symbol": "\"AAAUSDT\""
+      },
+      "line": 101,
+      "path": "tests/research/test_rd27_later_trigger_v2_shadow_replay.py",
+      "positional_args": [],
+      "sha256": "17105BEA6B2CA3CFFB9CBA71D4DD7AAA6BE4235DE0767E11392E1FE7BEDD6349"
+    },
+    {
+      "callee": "replay_v2_shadow_position",
+      "classification": "TEST",
+      "excerpt": "114:def test_same_memory_bar_does_not_trigger():\n115:    rows = [\n116:        row(0, 4, high=103, low=99, close=101),\n117:        row(4, 8, high=106, low=95, close=105),\n118:    ]\n119:    r = replay_v2_shadow_position(\n120:        position_id=\"p1\",\n121:        symbol=\"AAAUSDT\",\n122:        entry_time=ts(0),\n123:        entry_price=102,\n124:        observed_through=ts(8),\n125:        primitive_rows=rows,\n126:    )\n127:    assert r.first_memory_time == ts(8)\n128:    assert r.candidate is None\n129:\n130:\n131:def test_first_true_is_one_shot_candidate():",
+      "keyword_args": {
+        "entry_price": "102",
+        "entry_time": "ts(0)",
+        "observed_through": "ts(8)",
+        "position_id": "\"p1\"",
+        "primitive_rows": "rows",
+        "symbol": "\"AAAUSDT\""
+      },
+      "line": 119,
+      "path": "tests/research/test_rd27_later_trigger_v2_shadow_replay.py",
+      "positional_args": [],
+      "sha256": "17105BEA6B2CA3CFFB9CBA71D4DD7AAA6BE4235DE0767E11392E1FE7BEDD6349"
+    },
+    {
+      "callee": "replay_v2_shadow_position",
+      "classification": "TEST",
+      "excerpt": "133:        row(0, 4, high=103, low=99, close=101),\n134:        row(4, 8, high=106, low=101, close=105),\n135:        row(8, 12, high=104, low=99, close=102),\n136:        row(12, 16, high=103, low=98, close=101),\n137:    ]\n138:    r = replay_v2_shadow_position(\n139:        position_id=\"p1\",\n140:        symbol=\"AAAUSDT\",\n141:        entry_time=ts(0),\n142:        entry_price=102,\n143:        observed_through=ts(16),\n144:        primitive_rows=rows,\n145:    )\n146:    assert r.candidate_time == ts(12)\n147:    assert r.raw_v2_trigger_times == (ts(12), ts(16))\n148:\n149:\n150:def test_duplicate_rows_deduplicated():",
+      "keyword_args": {
+        "entry_price": "102",
+        "entry_time": "ts(0)",
+        "observed_through": "ts(16)",
+        "position_id": "\"p1\"",
+        "primitive_rows": "rows",
+        "symbol": "\"AAAUSDT\""
+      },
+      "line": 138,
+      "path": "tests/research/test_rd27_later_trigger_v2_shadow_replay.py",
+      "positional_args": [],
+      "sha256": "17105BEA6B2CA3CFFB9CBA71D4DD7AAA6BE4235DE0767E11392E1FE7BEDD6349"
+    },
+    {
+      "callee": "replay_v2_shadow_position",
+      "classification": "TEST",
+      "excerpt": "153:        x,\n154:        dict(x),\n155:        row(4, 8, high=106, low=101, close=105),\n156:        row(8, 12, high=104, low=99, close=102),\n157:    ]\n158:    r = replay_v2_shadow_position(\n159:        position_id=\"p1\",\n160:        symbol=\"AAAUSDT\",\n161:        entry_time=ts(0),\n162:        entry_price=102,\n163:        observed_through=ts(12),\n164:        primitive_rows=rows,\n165:    )\n166:    assert r.duplicates_deduplicated == 1\n167:    assert r.candidate_time == ts(12)\n168:\n169:\n170:def test_conflicting_duplicate_fails_closed():",
+      "keyword_args": {
+        "entry_price": "102",
+        "entry_time": "ts(0)",
+        "observed_through": "ts(12)",
+        "position_id": "\"p1\"",
+        "primitive_rows": "rows",
+        "symbol": "\"AAAUSDT\""
+      },
+      "line": 158,
+      "path": "tests/research/test_rd27_later_trigger_v2_shadow_replay.py",
+      "positional_args": [],
+      "sha256": "17105BEA6B2CA3CFFB9CBA71D4DD7AAA6BE4235DE0767E11392E1FE7BEDD6349"
+    },
+    {
+      "callee": "replay_v2_shadow_position",
+      "classification": "TEST",
+      "excerpt": "187:        row(0, 4, high=103, low=99, close=101),\n188:        row(4, 8, high=106, low=101, close=105),\n189:        row(8, 12, high=104, low=99, close=102),\n190:        row(0, 4, high=999, low=900, close=950, symbol=\"BBBUSDT\"),\n191:    ]\n192:    r = replay_v2_shadow_position(\n193:        position_id=\"p1\",\n194:        symbol=\"AAAUSDT\",\n195:        entry_time=ts(0),\n196:        entry_price=102,\n197:        observed_through=ts(12),\n198:        primitive_rows=rows,\n199:    )\n200:    assert r.candidate_time == ts(12)\n201:\n202:\n203:def test_cutoff_blocks_future_trigger():\n204:    rows = [",
+      "keyword_args": {
+        "entry_price": "102",
+        "entry_time": "ts(0)",
+        "observed_through": "ts(12)",
+        "position_id": "\"p1\"",
+        "primitive_rows": "rows",
+        "symbol": "\"AAAUSDT\""
+      },
+      "line": 192,
+      "path": "tests/research/test_rd27_later_trigger_v2_shadow_replay.py",
+      "positional_args": [],
+      "sha256": "17105BEA6B2CA3CFFB9CBA71D4DD7AAA6BE4235DE0767E11392E1FE7BEDD6349"
+    },
+    {
+      "callee": "replay_v2_shadow_position",
+      "classification": "TEST",
+      "excerpt": "204:    rows = [\n205:        row(0, 4, high=103, low=99, close=101),\n206:        row(4, 8, high=106, low=101, close=105),\n207:        row(8, 12, high=104, low=99, close=102),\n208:    ]\n209:    r = replay_v2_shadow_position(\n210:        position_id=\"p1\",\n211:        symbol=\"AAAUSDT\",\n212:        entry_time=ts(0),\n213:        entry_price=102,\n214:        observed_through=ts(8),\n215:        primitive_rows=rows,\n216:    )\n217:    assert r.candidate is None\n218:\n219:\n220:def test_entry_boundary_excluded():\n221:    rows = [",
+      "keyword_args": {
+        "entry_price": "102",
+        "entry_time": "ts(0)",
+        "observed_through": "ts(8)",
+        "position_id": "\"p1\"",
+        "primitive_rows": "rows",
+        "symbol": "\"AAAUSDT\""
+      },
+      "line": 209,
+      "path": "tests/research/test_rd27_later_trigger_v2_shadow_replay.py",
+      "positional_args": [],
+      "sha256": "17105BEA6B2CA3CFFB9CBA71D4DD7AAA6BE4235DE0767E11392E1FE7BEDD6349"
+    },
+    {
+      "callee": "replay_v2_shadow_position",
+      "classification": "TEST",
+      "excerpt": "221:    rows = [\n222:        row(0, 4, high=103, low=99, close=101),\n223:        row(4, 8, high=106, low=101, close=105),\n224:        row(8, 12, high=104, low=99, close=102),\n225:    ]\n226:    r = replay_v2_shadow_position(\n227:        position_id=\"p1\",\n228:        symbol=\"AAAUSDT\",\n229:        entry_time=ts(2),\n230:        entry_price=100,\n231:        observed_through=ts(12),\n232:        primitive_rows=rows,\n233:    )\n234:    assert r.snapshots_excluded_entry_boundary == 1\n235:\n236:\n237:def test_bad_observation_window_fails():\n238:    with pytest.raises(V2ShadowReplayError, match=\"OBSERVED_THROUGH_BEFORE_ENTRY\"):",
+      "keyword_args": {
+        "entry_price": "100",
+        "entry_time": "ts(2)",
+        "observed_through": "ts(12)",
+        "position_id": "\"p1\"",
+        "primitive_rows": "rows",
+        "symbol": "\"AAAUSDT\""
+      },
+      "line": 226,
+      "path": "tests/research/test_rd27_later_trigger_v2_shadow_replay.py",
+      "positional_args": [],
+      "sha256": "17105BEA6B2CA3CFFB9CBA71D4DD7AAA6BE4235DE0767E11392E1FE7BEDD6349"
+    },
+    {
+      "callee": "replay_v2_shadow_position",
+      "classification": "TEST",
+      "excerpt": "170:def test_conflicting_duplicate_fails_closed():\n171:    x = row(0, 4, high=103, low=99, close=101)\n172:    y = dict(x)\n173:    y[\"close\"] = 100\n174:    with pytest.raises(ConflictingSnapshotError):\n175:        replay_v2_shadow_position(\n176:            position_id=\"p1\",\n177:            symbol=\"AAAUSDT\",\n178:            entry_time=ts(0),\n179:            entry_price=100,\n180:            observed_through=ts(4),\n181:            primitive_rows=[x, y],\n182:        )\n183:\n184:\n185:def test_other_symbol_rows_ignored():\n186:    rows = [\n187:        row(0, 4, high=103, low=99, close=101),",
+      "keyword_args": {
+        "entry_price": "100",
+        "entry_time": "ts(0)",
+        "observed_through": "ts(4)",
+        "position_id": "\"p1\"",
+        "primitive_rows": "[x, y]",
+        "symbol": "\"AAAUSDT\""
+      },
+      "line": 175,
+      "path": "tests/research/test_rd27_later_trigger_v2_shadow_replay.py",
+      "positional_args": [],
+      "sha256": "17105BEA6B2CA3CFFB9CBA71D4DD7AAA6BE4235DE0767E11392E1FE7BEDD6349"
+    },
+    {
+      "callee": "replay_v2_shadow_position",
+      "classification": "TEST",
+      "excerpt": "234:    assert r.snapshots_excluded_entry_boundary == 1\n235:\n236:\n237:def test_bad_observation_window_fails():\n238:    with pytest.raises(V2ShadowReplayError, match=\"OBSERVED_THROUGH_BEFORE_ENTRY\"):\n239:        replay_v2_shadow_position(\n240:            position_id=\"p1\",\n241:            symbol=\"AAAUSDT\",\n242:            entry_time=ts(8),\n243:            entry_price=100,\n244:            observed_through=ts(4),\n245:            primitive_rows=[],\n246:        )\n247:\n248:\n249:def test_bad_entry_price_fails():\n250:    with pytest.raises(V2ShadowReplayError, match=\"ENTRY_PRICE_MUST_BE_POSITIVE\"):\n251:        replay_v2_shadow_position(",
+      "keyword_args": {
+        "entry_price": "100",
+        "entry_time": "ts(8)",
+        "observed_through": "ts(4)",
+        "position_id": "\"p1\"",
+        "primitive_rows": "[]",
+        "symbol": "\"AAAUSDT\""
+      },
+      "line": 239,
+      "path": "tests/research/test_rd27_later_trigger_v2_shadow_replay.py",
+      "positional_args": [],
+      "sha256": "17105BEA6B2CA3CFFB9CBA71D4DD7AAA6BE4235DE0767E11392E1FE7BEDD6349"
+    },
+    {
+      "callee": "replay_v2_shadow_position",
+      "classification": "TEST",
+      "excerpt": "246:        )\n247:\n248:\n249:def test_bad_entry_price_fails():\n250:    with pytest.raises(V2ShadowReplayError, match=\"ENTRY_PRICE_MUST_BE_POSITIVE\"):\n251:        replay_v2_shadow_position(\n252:            position_id=\"p1\",\n253:            symbol=\"AAAUSDT\",\n254:            entry_time=ts(0),\n255:            entry_price=0,\n256:            observed_through=ts(4),\n257:            primitive_rows=[],\n258:        )",
+      "keyword_args": {
+        "entry_price": "0",
+        "entry_time": "ts(0)",
+        "observed_through": "ts(4)",
+        "position_id": "\"p1\"",
+        "primitive_rows": "[]",
+        "symbol": "\"AAAUSDT\""
+      },
+      "line": 251,
+      "path": "tests/research/test_rd27_later_trigger_v2_shadow_replay.py",
+      "positional_args": [],
+      "sha256": "17105BEA6B2CA3CFFB9CBA71D4DD7AAA6BE4235DE0767E11392E1FE7BEDD6349"
+    }
+  ]
+}

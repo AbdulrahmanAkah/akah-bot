@@ -1,0 +1,103 @@
+{
+  "candidate_count": 2,
+  "candidates": [
+    {
+      "contract_complete_direct_calls": [
+        {
+          "enclosing_function": "main",
+          "expressions": {
+            "cost_multiplier": "cost_multiplier",
+            "events": "subset",
+            "frames": "frames",
+            "policy_id": "rd27.STATIC_EXIT_STATE_ROUTER",
+            "portfolio_id": "'EAA_SHADOW_PARITY_NATIVE'",
+            "replay_cutoff": "end",
+            "replay_start": "start",
+            "state_frame": "state_frame",
+            "universe_id": "'PRE2022_UNION'"
+          },
+          "file_sha256": "8438DE5BA561867528E8D0996CAC83D36C0F60B19603287D996DCA32909E3D27",
+          "has_kwargs_expansion": false,
+          "has_main": true,
+          "is_test": false,
+          "keyword_args": [
+            "cost_multiplier",
+            "events",
+            "frames",
+            "policy_id",
+            "portfolio_id",
+            "replay_cutoff",
+            "replay_start",
+            "state_frame",
+            "universe_id"
+          ],
+          "lineno": 240,
+          "missing_expected_runtime_roles_from_keywords": [],
+          "path": "scripts/research/run_eaa_same_pair_secondary_shadow_parity.py",
+          "positional_arg_count": 0
+        }
+      ],
+      "contract_incomplete_direct_calls": [],
+      "direct_call_count": 1,
+      "network_hits": [],
+      "outcome_identifier_hits": [],
+      "path": "scripts/research/run_eaa_same_pair_secondary_shadow_parity.py",
+      "prospective_safe_static": false,
+      "protected_year_literal_hits": [
+        "2023",
+        "2024"
+      ],
+      "sha256": "8438DE5BA561867528E8D0996CAC83D36C0F60B19603287D996DCA32909E3D27"
+    },
+    {
+      "contract_complete_direct_calls": [
+        {
+          "enclosing_function": "run_all_portfolios",
+          "expressions": {
+            "cost_multiplier": "cost_multiplier",
+            "events": "portfolio_events",
+            "frames": "frames",
+            "policy_id": "policy_id",
+            "portfolio_id": "portfolio_id",
+            "state_frame": "state_frame",
+            "universe_id": "universe"
+          },
+          "file_sha256": "7DFC388F3BF8EF6EFA16E0640CF924158999A9923674C7701B8919872755CBB5",
+          "has_kwargs_expansion": false,
+          "has_main": true,
+          "is_test": false,
+          "keyword_args": [
+            "cost_multiplier",
+            "events",
+            "frames",
+            "policy_id",
+            "portfolio_id",
+            "state_frame",
+            "universe_id"
+          ],
+          "lineno": 420,
+          "missing_expected_runtime_roles_from_keywords": [],
+          "path": "scripts/research/run_rd27_lifecycle_ablation.py",
+          "positional_arg_count": 0
+        }
+      ],
+      "contract_incomplete_direct_calls": [],
+      "direct_call_count": 1,
+      "network_hits": [],
+      "outcome_identifier_hits": [],
+      "path": "scripts/research/run_rd27_lifecycle_ablation.py",
+      "prospective_safe_static": false,
+      "protected_year_literal_hits": [
+        "2023",
+        "2024"
+      ],
+      "sha256": "7DFC388F3BF8EF6EFA16E0640CF924158999A9923674C7701B8919872755CBB5"
+    }
+  ],
+  "heuristic_score_used": false,
+  "historical_producer_claim": false,
+  "safe_candidate_count": 0,
+  "selected_runner": null,
+  "selection_rule": "Prospective, not historical: executable scripts/ file with __main__, direct replay_lifecycle_policy call, all expected runtime roles bound by explicit keywords, no kwargs expansion for that call, no network surface, and no protected-year literal in the file. Exactly one candidate is required for automatic freeze.",
+  "status": "PROSPECTIVE_RUNNER_AUTHORITY_UNRESOLVED"
+}

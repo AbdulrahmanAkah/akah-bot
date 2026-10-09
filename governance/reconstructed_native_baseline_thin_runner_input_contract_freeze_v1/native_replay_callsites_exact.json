@@ -1,0 +1,152 @@
+{
+  "callsites": [
+    {
+      "has_main": true,
+      "kwargs_expansion": false,
+      "lineno": 240,
+      "missing_roles": [],
+      "network_markers": [],
+      "path": "scripts/research/run_eaa_same_pair_secondary_shadow_parity.py",
+      "protected_year_literals": [
+        "2023",
+        "2024"
+      ],
+      "role_binding_surfaces": {
+        "cost_multiplier": "KEYWORD",
+        "events": "KEYWORD",
+        "frames": "KEYWORD",
+        "policy_id": "KEYWORD",
+        "portfolio_id": "KEYWORD",
+        "state_frame": "KEYWORD",
+        "universe_id": "KEYWORD"
+      },
+      "role_expressions": {
+        "cost_multiplier": "cost_multiplier",
+        "events": "subset",
+        "frames": "frames",
+        "policy_id": "rd27.STATIC_EXIT_STATE_ROUTER",
+        "portfolio_id": "'EAA_SHADOW_PARITY_NATIVE'",
+        "state_frame": "state_frame",
+        "universe_id": "'PRE2022_UNION'"
+      },
+      "sha256": "8438DE5BA561867528E8D0996CAC83D36C0F60B19603287D996DCA32909E3D27"
+    },
+    {
+      "has_main": true,
+      "kwargs_expansion": false,
+      "lineno": 420,
+      "missing_roles": [],
+      "network_markers": [],
+      "path": "scripts/research/run_rd27_lifecycle_ablation.py",
+      "protected_year_literals": [
+        "2023",
+        "2024"
+      ],
+      "role_binding_surfaces": {
+        "cost_multiplier": "KEYWORD",
+        "events": "KEYWORD",
+        "frames": "KEYWORD",
+        "policy_id": "KEYWORD",
+        "portfolio_id": "KEYWORD",
+        "state_frame": "KEYWORD",
+        "universe_id": "KEYWORD"
+      },
+      "role_expressions": {
+        "cost_multiplier": "cost_multiplier",
+        "events": "portfolio_events",
+        "frames": "frames",
+        "policy_id": "policy_id",
+        "portfolio_id": "portfolio_id",
+        "state_frame": "state_frame",
+        "universe_id": "universe"
+      },
+      "sha256": "7DFC388F3BF8EF6EFA16E0640CF924158999A9923674C7701B8919872755CBB5"
+    },
+    {
+      "has_main": false,
+      "kwargs_expansion": false,
+      "lineno": 248,
+      "missing_roles": [],
+      "network_markers": [],
+      "path": "src/spotbot/research/a10_selective_protection_asymmetry.py",
+      "protected_year_literals": [],
+      "role_binding_surfaces": {
+        "cost_multiplier": "KEYWORD",
+        "events": "KEYWORD",
+        "frames": "KEYWORD",
+        "policy_id": "KEYWORD",
+        "portfolio_id": "KEYWORD",
+        "state_frame": "KEYWORD",
+        "universe_id": "KEYWORD"
+      },
+      "role_expressions": {
+        "cost_multiplier": "cost_multiplier",
+        "events": "events",
+        "frames": "frames",
+        "policy_id": "rd27.FULL_ADAPTIVE_LIFECYCLE_BRAIN",
+        "portfolio_id": "portfolio_id",
+        "state_frame": "state_frame",
+        "universe_id": "universe_id"
+      },
+      "sha256": "BF4794A3F42A547A3D20D80D0ACD7A9132973B68BA3FFB2738B3EF29ECD0AB0F"
+    },
+    {
+      "has_main": false,
+      "kwargs_expansion": false,
+      "lineno": 132,
+      "missing_roles": [],
+      "network_markers": [],
+      "path": "src/spotbot/research/a4r1_reversible_floor_replay.py",
+      "protected_year_literals": [],
+      "role_binding_surfaces": {
+        "cost_multiplier": "KEYWORD",
+        "events": "KEYWORD",
+        "frames": "KEYWORD",
+        "policy_id": "KEYWORD",
+        "portfolio_id": "KEYWORD",
+        "state_frame": "KEYWORD",
+        "universe_id": "KEYWORD"
+      },
+      "role_expressions": {
+        "cost_multiplier": "cost_multiplier",
+        "events": "events",
+        "frames": "frames",
+        "policy_id": "rd27.FULL_ADAPTIVE_LIFECYCLE_BRAIN",
+        "portfolio_id": "portfolio_id",
+        "state_frame": "state_frame",
+        "universe_id": "universe_id"
+      },
+      "sha256": "161B7680A2098BBE97E4B9BE3A9BA7F0A918AAD04926CBA6F783CED7B97FE16E"
+    },
+    {
+      "has_main": false,
+      "kwargs_expansion": false,
+      "lineno": 203,
+      "missing_roles": [],
+      "network_markers": [],
+      "path": "src/spotbot/research/eaa_same_pair_secondary_shadow.py",
+      "protected_year_literals": [],
+      "role_binding_surfaces": {
+        "cost_multiplier": "KEYWORD",
+        "events": "KEYWORD",
+        "frames": "KEYWORD",
+        "policy_id": "KEYWORD",
+        "portfolio_id": "KEYWORD",
+        "state_frame": "KEYWORD",
+        "universe_id": "KEYWORD"
+      },
+      "role_expressions": {
+        "cost_multiplier": "cost_multiplier",
+        "events": "events",
+        "frames": "frames",
+        "policy_id": "rd27.STATIC_EXIT_STATE_ROUTER",
+        "portfolio_id": "portfolio_id",
+        "state_frame": "state_frame",
+        "universe_id": "universe_id"
+      },
+      "sha256": "1096CD43E814A08E8F6BB969CD2722FA883C04D54C9462AFD461489AE3E76390"
+    }
+  ],
+  "count": 5,
+  "status": "PASS"
+}

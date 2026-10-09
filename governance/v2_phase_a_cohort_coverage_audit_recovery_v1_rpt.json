@@ -1,0 +1,51 @@
+{
+  "authority_bindings": {
+    "bar4h_sha256": "1C72416F889137B68FF48008C5760E809D0A94A5647569BAB631E96904CEBD72",
+    "control_sha256": "782CEA4D8037E6D2C72FBE7B37FF69F10E66DC728396E6B4B58C28559BEEB225",
+    "direction_sha256": "7CC2058A75C5B9F959E1176DD7B47E066C45A6BDF4B19278F339ED6BD97E20A5",
+    "master_protocol_sha256": "6A64B7600261CC105064F250A3D5E6E794A90432C08C9218FC6A9A234B25BFD7",
+    "max_hold_authority": {
+      "all_matches": [
+        {
+          "constant": "MAX_HOLD_HOURS",
+          "hours": 168,
+          "path": "src/spotbot/research/rd27_adaptive_lifecycle.py"
+        }
+      ],
+      "constant": "MAX_HOLD_HOURS",
+      "hours": 168,
+      "path": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "sha256": "A2C0B25B0053CEEF1AA5C3AC5DB1442C1DCF333845F7345FB1F80A9AD3E1290E"
+    },
+    "phase_a_protocol_sha256": "CF713ABE14F6B4085B95BEFE06A4508BF71BFD300BF6CEAC64ACDFEE1F7CACD4"
+  },
+  "branch": "research/rd48-cross-venue-price-level-basis-direct-utility-v1",
+  "evidence": [],
+  "firewall": {
+    "2023_rows": false,
+    "2024_rows": false,
+    "2025_rows": false,
+    "actual_exit_authority": false,
+    "authorized_market_rows": "2022_ONLY",
+    "economics": false,
+    "outcome_fields": false,
+    "pnl": false,
+    "push": false,
+    "source_mutation": false
+  },
+  "governed_schema_version": "akah-provenance-phase-governed-v1",
+  "next_bottleneck": "CAUSAL_EXIT_BRAIN_V2_PHASE_A_COHORT_COVERAGE_AUDIT_RECOVERY_V2",
+  "north_star_effect": "Validates the denominator and observation surface before any V2 timing or decision interpretation.",
+  "objective": "Execute frozen Phase A cohort/coverage audit: account for all 153 canonical lifecycles, independently audit causal 4H coverage, and reconcile audited eligibility to the previous 33-member V2 parity cohort without using economic outcomes.",
+  "resolution_class": "V2_PHASE_A_COHORT_COVERAGE_AUDIT_RECOVERY_V1_FAIL_CLOSED",
+  "state_updates": {
+    "actual_exit_authority": false,
+    "economics_authorized": false,
+    "v2_phase_a_recovery_v1": "FAIL_CLOSED"
+  },
+  "status": "FAIL_CLOSED",
+  "summary": "Phase A cohort/coverage audit failed closed: ArrowInvalid:Cannot compare timestamp with timezone to timestamp without timezone, got: timestamp[us] and timestamp[us, tz=UTC]",
+  "task_id": "CAUSAL_EXIT_BRAIN_V2_PHASE_A_COHORT_COVERAGE_AUDIT_RECOVERY_V1",
+  "task_start_head": "425662c0cae0c61cbb897af544425552e77dc976",
+  "task_start_revision": 181
+}

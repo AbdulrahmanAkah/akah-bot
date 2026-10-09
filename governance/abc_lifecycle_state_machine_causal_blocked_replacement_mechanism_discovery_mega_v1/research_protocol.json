@@ -1,0 +1,47 @@
+{
+  "2024_access": false,
+  "admission_change": false,
+  "baseline_parity": "REQUIRED_1X_2X_METRIC_AND_EXACT_TRADE",
+  "baseline_policy": "R00_F10_ACTUAL",
+  "causal_cost_multiplier": 2.0,
+  "hard_cutoff_exclusive": "2024-01-01T00:00:00Z",
+  "model_fit": false,
+  "opportunity_source_revision": 731,
+  "policies": [
+    {
+      "description": "Exact F10 baseline; no replacement",
+      "id": "R00_F10_ACTUAL",
+      "mode": "NONE"
+    },
+    {
+      "description": "Blocked candidate may replace the incumbent with the lowest entry F10 score when candidate F10 score is strictly higher",
+      "id": "R01_SCORE_GAP",
+      "mode": "SCORE_GAP"
+    },
+    {
+      "description": "R01 plus incumbent executable unrealized net return must be <= 0",
+      "id": "R02_SCORE_GAP_LOSER",
+      "mode": "SCORE_GAP_LOSER"
+    },
+    {
+      "description": "R01 plus incumbent age must be >= 24 completed hours",
+      "id": "R03_SCORE_GAP_STALE24",
+      "mode": "SCORE_GAP_STALE24"
+    },
+    {
+      "description": "R01 plus incumbent is nonpositive OR at least 24 completed hours old",
+      "id": "R04_SCORE_GAP_LOSER_OR_STALE24",
+      "mode": "SCORE_GAP_LOSER_OR_STALE24"
+    },
+    {
+      "description": "R01 plus incumbent is nonpositive AND at least 24 completed hours old",
+      "id": "R05_SCORE_GAP_LOSER_AND_STALE24",
+      "mode": "SCORE_GAP_LOSER_AND_STALE24"
+    }
+  ],
+  "proactive_release": false,
+  "production_changed": false,
+  "schema_version": "akah-causal-blocked-replacement-discovery-protocol-v1",
+  "source_revision": 749,
+  "threshold_search": false
+}

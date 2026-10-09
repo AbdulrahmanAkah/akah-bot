@@ -1,0 +1,50 @@
+{
+  "accepted_disposition": "MEGA_THREE_FIELD_RECOVERY_INCOMPLETE",
+  "accepted_recovered_field": "current_notional",
+  "accepted_remaining_fields": [
+    "hold_cost",
+    "pi0_action"
+  ],
+  "authorization": {
+    "2024": false,
+    "2025": false,
+    "bounded_derived_replay_pre2024": true,
+    "conditional_feasibility": true,
+    "conditional_fixed_m1_m2": true,
+    "conditional_ledger_materialization_and_certificate": true,
+    "feature_search": false,
+    "hold_cost_exact_semantic_closure": true,
+    "model3": false,
+    "pi0_action_exact_semantic_closure": true,
+    "production": false,
+    "push": false,
+    "raw": false,
+    "reuse_rev703_source_inventory": true,
+    "threshold_search": false
+  },
+  "created_at_utc": "2026-09-26T14:19:33.224072+00:00",
+  "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_INDEPENDENT_DECISION_LEDGER_SEMANTIC_CLOSURE_FULL_PIPELINE_MEGA_V1",
+  "performance_contract": {
+    "compressed_outputs": true,
+    "native_threads": 1,
+    "repository_rescan": false,
+    "single_process": true
+  },
+  "proof_rules": {
+    "hold_cost": [
+      "explicit_hold_cost",
+      "hold_gross_or_exit_notional_minus_hold_net",
+      "hold_exit_price_x_canonical_quantity_minus_hold_net",
+      "paired_1x_2x_hold_net"
+    ],
+    "pi0_action": [
+      "explicit_action_or_exit_decision_field_100pct",
+      "documented_execution_delay_plus_100pct_native_exit_alignment"
+    ],
+    "posthoc_discovered_delay_without_documentation": "FORBIDDEN"
+  },
+  "reviewed_revision": 705,
+  "schema_version": "akah-rev705-semantic-closure-full-pipeline-human-review-v1",
+  "status": "PASS_REV705_SEMANTIC_CLOSURE_FULL_PIPELINE_MEGA_AUTHORIZED",
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_INDEPENDENT_DECISION_LEDGER_BOUNDED_REPLAY_FULL_VALUE_MEGA_HUMAN_REVIEW_V1"
+}

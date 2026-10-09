@@ -1,0 +1,948 @@
+{
+  "cases": [
+    {
+      "case_id": "G2-SV-0029",
+      "source_case_id": "G2-S-0005",
+      "pair": "ACH-USDT",
+      "checkpoint": "2023-09-28 19:00:00+00:00",
+      "kind": "POSITIVE",
+      "reserve": false,
+      "reconstructed_intents": [
+        {
+          "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+          "pair": "ACH-USDT",
+          "timestamp": "2023-09-28 19:00:00+00:00",
+          "event": "FVG",
+          "stage": "THESIS_INTENT",
+          "broad_eligible": true,
+          "metadata": "{\"bearish_mss_exit\": true, \"day_boundary\": \"NY_AFTERNOON\", \"execution_array\": \"FVG\", \"fvg_created_at\": \"2023-09-28 15:00:00+00:00\", \"mss_time\": \"2023-09-28 15:00:00+00:00\", \"order_block_diagnostic_only\": true, \"raid_time\": \"2023-09-28 14:00:00+00:00\", \"retrace_time\": \"2023-09-28 19:00:00+00:00\", \"smt_supporting_only\": true, \"stop\": 0.01515, \"target\": 0.01544}"
+        }
+      ],
+      "source_match": true,
+      "protected_rows_loaded": 0,
+      "causal_order": true,
+      "session_live": true,
+      "owning_events": [
+        {
+          "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+          "pair": "ACH-USDT",
+          "timestamp": "2023-09-28 14:00:00+00:00",
+          "event": "SELLSIDE_RAIDED",
+          "stage": "FAILED_AUCTION",
+          "broad_eligible": true,
+          "metadata": "{\"anchors\": {\"ny_0830_hourly_proxy\": 0.015163, \"ny_midnight\": 0.015053}, \"bias\": \"BULLISH_DRAW\", \"dealing\": \"DISCOUNT\", \"internal_high\": 0.015216, \"sell_level\": 0.015185, \"smt\": false, \"target\": 0.01544}"
+        },
+        {
+          "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+          "pair": "ACH-USDT",
+          "timestamp": "2023-09-28 15:00:00+00:00",
+          "event": "MSS_DISPLACEMENT_FVG",
+          "stage": "CONFIRMATION",
+          "broad_eligible": true,
+          "metadata": "{\"fvg\": [0.015228, 0.015232], \"order_block\": {\"high\": 0.015188, \"index\": 11787, \"low\": 0.015098, \"time\": \"2023-09-28 12:00:00+00:00\"}}"
+        },
+        {
+          "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+          "pair": "ACH-USDT",
+          "timestamp": "2023-09-28 15:00:00+00:00",
+          "event": "ORDER_BLOCK_VALIDATED",
+          "stage": "EXECUTION_ARRAY",
+          "broad_eligible": true,
+          "metadata": "{}"
+        }
+      ],
+      "frozen_parameters": {
+        "displacement": ".5 ATR20",
+        "retrace": "overlap frozen FVG and close > lower gap boundary",
+        "raid": "latest frozen external sell level, reclaim, own D1 UP, H4 UP/RANGE/DOWN bullish-transition; reclaim permits premium"
+      }
+    },
+    {
+      "case_id": "G2-SV-0027",
+      "source_case_id": "G2-S-0002",
+      "pair": "ADX-USDT",
+      "checkpoint": "2022-11-04 18:00:00+00:00",
+      "kind": "POSITIVE",
+      "reserve": false,
+      "reconstructed_intents": [
+        {
+          "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+          "pair": "ADX-USDT",
+          "timestamp": "2022-11-04 18:00:00+00:00",
+          "event": "FVG",
+          "stage": "THESIS_INTENT",
+          "broad_eligible": true,
+          "metadata": "{\"bearish_mss_exit\": true, \"day_boundary\": \"NY_AFTERNOON\", \"execution_array\": \"FVG\", \"fvg_created_at\": \"2022-11-04 15:00:00+00:00\", \"mss_time\": \"2022-11-04 15:00:00+00:00\", \"order_block_diagnostic_only\": true, \"raid_time\": \"2022-11-04 13:00:00+00:00\", \"retrace_time\": \"2022-11-04 18:00:00+00:00\", \"smt_supporting_only\": true, \"stop\": 0.1689, \"target\": 0.1715}"
+        }
+      ],
+      "source_match": true,
+      "protected_rows_loaded": 0,
+      "causal_order": true,
+      "session_live": true,
+      "owning_events": [
+        {
+          "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+          "pair": "ADX-USDT",
+          "timestamp": "2022-11-04 13:00:00+00:00",
+          "event": "SELLSIDE_RAIDED",
+          "stage": "FAILED_AUCTION",
+          "broad_eligible": true,
+          "metadata": "{\"anchors\": {\"ny_0830_hourly_proxy\": 0.1703, \"ny_midnight\": 0.1668}, \"bias\": \"TRANSITION_BULLISH\", \"dealing\": \"PREMIUM\", \"internal_high\": 0.1718, \"sell_level\": 0.1696, \"smt\": false, \"target\": 0.1715}"
+        },
+        {
+          "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+          "pair": "ADX-USDT",
+          "timestamp": "2022-11-04 15:00:00+00:00",
+          "event": "MSS_DISPLACEMENT_FVG",
+          "stage": "CONFIRMATION",
+          "broad_eligible": true,
+          "metadata": "{\"fvg\": [0.1705, 0.1706], \"order_block\": {\"high\": 0.1708, \"index\": 8449, \"low\": 0.1699, \"time\": \"2022-11-04 12:00:00+00:00\"}}"
+        },
+        {
+          "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+          "pair": "ADX-USDT",
+          "timestamp": "2022-11-04 15:00:00+00:00",
+          "event": "ORDER_BLOCK_VALIDATED",
+          "stage": "EXECUTION_ARRAY",
+          "broad_eligible": true,
+          "metadata": "{}"
+        }
+      ],
+      "frozen_parameters": {
+        "displacement": ".5 ATR20",
+        "retrace": "overlap frozen FVG and close > lower gap boundary",
+        "raid": "latest frozen external sell level, reclaim, own D1 UP, H4 UP/RANGE/DOWN bullish-transition; reclaim permits premium"
+      }
+    },
+    {
+      "case_id": "G2-R-0005",
+      "source_case_id": "G2-R-0005",
+      "pair": "ANKR-USDT",
+      "checkpoint": "2023-07-23 08:00:00+00:00",
+      "kind": "NO_INTENT",
+      "reserve": true,
+      "reconstructed_intents": [],
+      "source_match": true,
+      "protected_rows_loaded": 0,
+      "source_neutral_view_audit": "Neutral anchors enumerate all visible geometry, not the selected external liquidity/HTF-owned chain. Extra local geometry is not a funded source intent."
+    },
+    {
+      "case_id": "G2-P-0021",
+      "source_case_id": "G2-P-0021",
+      "pair": "AVAX-USDT",
+      "checkpoint": "2023-08-23 19:00:00+00:00",
+      "kind": "NO_INTENT",
+      "reserve": false,
+      "reconstructed_intents": [],
+      "source_match": true,
+      "protected_rows_loaded": 0,
+      "source_neutral_view_audit": "Neutral anchors enumerate all visible geometry, not the selected external liquidity/HTF-owned chain. Extra local geometry is not a funded source intent."
+    },
+    {
+      "case_id": "G2-P-0034",
+      "source_case_id": "G2-P-0034",
+      "pair": "AVAX-USDT",
+      "checkpoint": "2022-05-20 14:00:00+00:00",
+      "kind": "NO_INTENT",
+      "reserve": false,
+      "reconstructed_intents": [],
+      "source_match": true,
+      "protected_rows_loaded": 0,
+      "source_neutral_view_audit": "Neutral anchors enumerate all visible geometry, not the selected external liquidity/HTF-owned chain. Extra local geometry is not a funded source intent."
+    },
+    {
+      "case_id": "G2-P-0076",
+      "source_case_id": "G2-P-0076",
+      "pair": "AVAX-USDT",
+      "checkpoint": "2022-12-21 20:00:00+00:00",
+      "kind": "INTERMEDIATE",
+      "reserve": false,
+      "reconstructed_intents": [],
+      "source_match": true,
+      "protected_rows_loaded": 0,
+      "source_neutral_view_audit": "Neutral anchors enumerate all visible geometry, not the selected external liquidity/HTF-owned chain. Extra local geometry is not a funded source intent."
+    },
+    {
+      "case_id": "G2-R-0016",
+      "source_case_id": "G2-R-0016",
+      "pair": "AVAX-USDT",
+      "checkpoint": "2022-09-10 02:00:00+00:00",
+      "kind": "NO_INTENT",
+      "reserve": true,
+      "reconstructed_intents": [],
+      "source_match": true,
+      "protected_rows_loaded": 0,
+      "source_neutral_view_audit": "Neutral anchors enumerate all visible geometry, not the selected external liquidity/HTF-owned chain. Extra local geometry is not a funded source intent."
+    },
+    {
+      "case_id": "G2-R-0060",
+      "source_case_id": "G2-R-0060",
+      "pair": "AVAX-USDT",
+      "checkpoint": "2023-07-13 13:00:00+00:00",
+      "kind": "INTERMEDIATE",
+      "reserve": true,
+      "reconstructed_intents": [],
+      "source_match": true,
+      "protected_rows_loaded": 0,
+      "source_neutral_view_audit": "Neutral anchors enumerate all visible geometry, not the selected external liquidity/HTF-owned chain. Extra local geometry is not a funded source intent."
+    },
+    {
+      "case_id": "G2-SV-0008",
+      "source_case_id": "G2-P-0021",
+      "pair": "AVAX-USDT",
+      "checkpoint": "2023-08-23 19:00:00+00:00",
+      "kind": "NO_INTENT",
+      "reserve": false,
+      "reconstructed_intents": [],
+      "source_match": true,
+      "protected_rows_loaded": 0,
+      "source_neutral_view_audit": "Neutral anchors enumerate all visible geometry, not the selected external liquidity/HTF-owned chain. Extra local geometry is not a funded source intent."
+    },
+    {
+      "case_id": "G2-SV-0012",
+      "source_case_id": "G2-P-0034",
+      "pair": "AVAX-USDT",
+      "checkpoint": "2022-05-20 14:00:00+00:00",
+      "kind": "NO_INTENT",
+      "reserve": false,
+      "reconstructed_intents": [],
+      "source_match": true,
+      "protected_rows_loaded": 0,
+      "source_neutral_view_audit": "Neutral anchors enumerate all visible geometry, not the selected external liquidity/HTF-owned chain. Extra local geometry is not a funded source intent."
+    },
+    {
+      "case_id": "G2-SV-0020",
+      "source_case_id": "G2-P-0076",
+      "pair": "AVAX-USDT",
+      "checkpoint": "2022-12-21 20:00:00+00:00",
+      "kind": "INTERMEDIATE",
+      "reserve": false,
+      "reconstructed_intents": [],
+      "source_match": true,
+      "protected_rows_loaded": 0,
+      "source_neutral_view_audit": "Neutral anchors enumerate all visible geometry, not the selected external liquidity/HTF-owned chain. Extra local geometry is not a funded source intent."
+    },
+    {
+      "case_id": "G2-P-0020",
+      "source_case_id": "G2-P-0020",
+      "pair": "BAX-USDT",
+      "checkpoint": "2022-04-23 17:00:00+00:00",
+      "kind": "NO_INTENT",
+      "reserve": false,
+      "reconstructed_intents": [],
+      "source_match": true,
+      "protected_rows_loaded": 0,
+      "source_neutral_view_audit": "Neutral anchors enumerate all visible geometry, not the selected external liquidity/HTF-owned chain. Extra local geometry is not a funded source intent."
+    },
+    {
+      "case_id": "G2-SV-0007",
+      "source_case_id": "G2-P-0020",
+      "pair": "BAX-USDT",
+      "checkpoint": "2022-04-23 17:00:00+00:00",
+      "kind": "NO_INTENT",
+      "reserve": false,
+      "reconstructed_intents": [],
+      "source_match": true,
+      "protected_rows_loaded": 0,
+      "source_neutral_view_audit": "Neutral anchors enumerate all visible geometry, not the selected external liquidity/HTF-owned chain. Extra local geometry is not a funded source intent."
+    },
+    {
+      "case_id": "G2-P-0002",
+      "source_case_id": "G2-P-0002",
+      "pair": "BTC-USDT",
+      "checkpoint": "2023-10-28 21:00:00+00:00",
+      "kind": "NO_INTENT",
+      "reserve": false,
+      "reconstructed_intents": [],
+      "source_match": true,
+      "protected_rows_loaded": 0,
+      "source_neutral_view_audit": "Neutral anchors enumerate all visible geometry, not the selected external liquidity/HTF-owned chain. Extra local geometry is not a funded source intent."
+    },
+    {
+      "case_id": "G2-P-0030",
+      "source_case_id": "G2-P-0030",
+      "pair": "BTC-USDT",
+      "checkpoint": "2022-05-03 09:00:00+00:00",
+      "kind": "NO_INTENT",
+      "reserve": false,
+      "reconstructed_intents": [],
+      "source_match": true,
+      "protected_rows_loaded": 0,
+      "source_neutral_view_audit": "Neutral anchors enumerate all visible geometry, not the selected external liquidity/HTF-owned chain. Extra local geometry is not a funded source intent."
+    },
+    {
+      "case_id": "G2-P-0053",
+      "source_case_id": "G2-P-0053",
+      "pair": "BTC-USDT",
+      "checkpoint": "2023-04-04 14:00:00+00:00",
+      "kind": "INTERMEDIATE",
+      "reserve": false,
+      "reconstructed_intents": [],
+      "source_match": true,
+      "protected_rows_loaded": 0,
+      "source_neutral_view_audit": "Neutral anchors enumerate all visible geometry, not the selected external liquidity/HTF-owned chain. Extra local geometry is not a funded source intent."
+    },
+    {
+      "case_id": "G2-P-0054",
+      "source_case_id": "G2-P-0054",
+      "pair": "BTC-USDT",
+      "checkpoint": "2023-06-06 20:00:00+00:00",
+      "kind": "INTERMEDIATE",
+      "reserve": false,
+      "reconstructed_intents": [],
+      "source_match": true,
+      "protected_rows_loaded": 0,
+      "source_neutral_view_audit": "Neutral anchors enumerate all visible geometry, not the selected external liquidity/HTF-owned chain. Extra local geometry is not a funded source intent."
+    },
+    {
+      "case_id": "G2-P-0096",
+      "source_case_id": "G2-P-0096",
+      "pair": "BTC-USDT",
+      "checkpoint": "2023-08-14 18:00:00+00:00",
+      "kind": "POSITIVE",
+      "reserve": false,
+      "reconstructed_intents": [
+        {
+          "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+          "pair": "BTC-USDT",
+          "timestamp": "2023-08-14 18:00:00+00:00",
+          "event": "FVG",
+          "stage": "THESIS_INTENT",
+          "broad_eligible": true,
+          "metadata": "{\"bearish_mss_exit\": true, \"day_boundary\": \"NY_AFTERNOON\", \"execution_array\": \"FVG\", \"fvg_created_at\": \"2023-08-14 16:00:00+00:00\", \"mss_time\": \"2023-08-14 16:00:00+00:00\", \"order_block_diagnostic_only\": true, \"raid_time\": \"2023-08-14 14:00:00+00:00\", \"retrace_time\": \"2023-08-14 18:00:00+00:00\", \"smt_supporting_only\": true, \"stop\": 29333.4, \"target\": 29460.0}"
+        }
+      ],
+      "source_match": true,
+      "protected_rows_loaded": 0,
+      "causal_order": true,
+      "session_live": true,
+      "owning_events": [
+        {
+          "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+          "pair": "BTC-USDT",
+          "timestamp": "2023-08-14 14:00:00+00:00",
+          "event": "RAID_INVALIDATED",
+          "stage": "INVALIDATION",
+          "broad_eligible": true,
+          "metadata": "{\"raid_low\": 29345.0, \"raid_time\": \"2023-08-14 13:00:00+00:00\"}"
+        },
+        {
+          "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+          "pair": "BTC-USDT",
+          "timestamp": "2023-08-14 14:00:00+00:00",
+          "event": "SELLSIDE_RAIDED",
+          "stage": "FAILED_AUCTION",
+          "broad_eligible": true,
+          "metadata": "{\"anchors\": {\"ny_0830_hourly_proxy\": 29434.1, \"ny_midnight\": 29315.5}, \"bias\": \"TRANSITION_BULLISH\", \"dealing\": \"PREMIUM\", \"internal_high\": 29491.5, \"sell_level\": 29380.5, \"smt\": false, \"target\": 29460.0}"
+        },
+        {
+          "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+          "pair": "BTC-USDT",
+          "timestamp": "2023-08-14 16:00:00+00:00",
+          "event": "MSS_DISPLACEMENT_FVG",
+          "stage": "CONFIRMATION",
+          "broad_eligible": true,
+          "metadata": "{\"fvg\": [29396.1, 29480.4], \"order_block\": {\"high\": 29396.1, \"index\": 17102, \"low\": 29333.4, \"time\": \"2023-08-14 14:00:00+00:00\"}}"
+        },
+        {
+          "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+          "pair": "BTC-USDT",
+          "timestamp": "2023-08-14 16:00:00+00:00",
+          "event": "ORDER_BLOCK_VALIDATED",
+          "stage": "EXECUTION_ARRAY",
+          "broad_eligible": true,
+          "metadata": "{}"
+        }
+      ],
+      "frozen_parameters": {
+        "displacement": ".5 ATR20",
+        "retrace": "overlap frozen FVG and close > lower gap boundary",
+        "raid": "latest frozen external sell level, reclaim, own D1 UP, H4 UP/RANGE/DOWN bullish-transition; reclaim permits premium"
+      }
+    },
+    {
+      "case_id": "G2-R-0008",
+      "source_case_id": "G2-R-0008",
+      "pair": "BTC-USDT",
+      "checkpoint": "2023-05-11 21:00:00+00:00",
+      "kind": "NO_INTENT",
+      "reserve": true,
+      "reconstructed_intents": [],
+      "source_match": true,
+      "protected_rows_loaded": 0,
+      "source_neutral_view_audit": "Neutral anchors enumerate all visible geometry, not the selected external liquidity/HTF-owned chain. Extra local geometry is not a funded source intent."
+    },
+    {
+      "case_id": "G2-R-0070",
+      "source_case_id": "G2-R-0070",
+      "pair": "BTC-USDT",
+      "checkpoint": "2022-01-04 19:00:00+00:00",
+      "kind": "INTERMEDIATE",
+      "reserve": true,
+      "reconstructed_intents": [],
+      "source_match": true,
+      "protected_rows_loaded": 0,
+      "source_neutral_view_audit": "Neutral anchors enumerate all visible geometry, not the selected external liquidity/HTF-owned chain. Extra local geometry is not a funded source intent."
+    },
+    {
+      "case_id": "G2-SV-0001",
+      "source_case_id": "G2-P-0002",
+      "pair": "BTC-USDT",
+      "checkpoint": "2023-10-28 21:00:00+00:00",
+      "kind": "NO_INTENT",
+      "reserve": false,
+      "reconstructed_intents": [],
+      "source_match": true,
+      "protected_rows_loaded": 0,
+      "source_neutral_view_audit": "Neutral anchors enumerate all visible geometry, not the selected external liquidity/HTF-owned chain. Extra local geometry is not a funded source intent."
+    },
+    {
+      "case_id": "G2-SV-0011",
+      "source_case_id": "G2-P-0030",
+      "pair": "BTC-USDT",
+      "checkpoint": "2022-05-03 09:00:00+00:00",
+      "kind": "NO_INTENT",
+      "reserve": false,
+      "reconstructed_intents": [],
+      "source_match": true,
+      "protected_rows_loaded": 0,
+      "source_neutral_view_audit": "Neutral anchors enumerate all visible geometry, not the selected external liquidity/HTF-owned chain. Extra local geometry is not a funded source intent."
+    },
+    {
+      "case_id": "G2-SV-0013",
+      "source_case_id": "G2-P-0053",
+      "pair": "BTC-USDT",
+      "checkpoint": "2023-04-04 14:00:00+00:00",
+      "kind": "INTERMEDIATE",
+      "reserve": false,
+      "reconstructed_intents": [],
+      "source_match": true,
+      "protected_rows_loaded": 0,
+      "source_neutral_view_audit": "Neutral anchors enumerate all visible geometry, not the selected external liquidity/HTF-owned chain. Extra local geometry is not a funded source intent."
+    },
+    {
+      "case_id": "G2-SV-0014",
+      "source_case_id": "G2-P-0054",
+      "pair": "BTC-USDT",
+      "checkpoint": "2023-06-06 20:00:00+00:00",
+      "kind": "INTERMEDIATE",
+      "reserve": false,
+      "reconstructed_intents": [],
+      "source_match": true,
+      "protected_rows_loaded": 0,
+      "source_neutral_view_audit": "Neutral anchors enumerate all visible geometry, not the selected external liquidity/HTF-owned chain. Extra local geometry is not a funded source intent."
+    },
+    {
+      "case_id": "G2-P-0024",
+      "source_case_id": "G2-P-0024",
+      "pair": "ETC-USDT",
+      "checkpoint": "2023-10-27 06:00:00+00:00",
+      "kind": "NO_INTENT",
+      "reserve": false,
+      "reconstructed_intents": [],
+      "source_match": true,
+      "protected_rows_loaded": 0,
+      "source_neutral_view_audit": "Neutral anchors enumerate all visible geometry, not the selected external liquidity/HTF-owned chain. Extra local geometry is not a funded source intent."
+    },
+    {
+      "case_id": "G2-SV-0010",
+      "source_case_id": "G2-P-0024",
+      "pair": "ETC-USDT",
+      "checkpoint": "2023-10-27 06:00:00+00:00",
+      "kind": "NO_INTENT",
+      "reserve": false,
+      "reconstructed_intents": [],
+      "source_match": true,
+      "protected_rows_loaded": 0,
+      "source_neutral_view_audit": "Neutral anchors enumerate all visible geometry, not the selected external liquidity/HTF-owned chain. Extra local geometry is not a funded source intent."
+    },
+    {
+      "case_id": "G2-P-0097",
+      "source_case_id": "G2-P-0097",
+      "pair": "ETH-USDT",
+      "checkpoint": "2022-11-04 17:00:00+00:00",
+      "kind": "POSITIVE",
+      "reserve": false,
+      "reconstructed_intents": [
+        {
+          "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+          "pair": "ETH-USDT",
+          "timestamp": "2022-11-04 17:00:00+00:00",
+          "event": "FVG",
+          "stage": "THESIS_INTENT",
+          "broad_eligible": true,
+          "metadata": "{\"bearish_mss_exit\": true, \"day_boundary\": \"NY_AFTERNOON\", \"execution_array\": \"FVG\", \"fvg_created_at\": \"2022-11-04 15:00:00+00:00\", \"mss_time\": \"2022-11-04 15:00:00+00:00\", \"order_block_diagnostic_only\": true, \"raid_time\": \"2022-11-04 13:00:00+00:00\", \"retrace_time\": \"2022-11-04 17:00:00+00:00\", \"smt_supporting_only\": true, \"stop\": 1555.0, \"target\": 1613.43}"
+        }
+      ],
+      "source_match": true,
+      "protected_rows_loaded": 0,
+      "causal_order": true,
+      "session_live": true,
+      "owning_events": [
+        {
+          "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+          "pair": "ETH-USDT",
+          "timestamp": "2022-11-04 13:00:00+00:00",
+          "event": "SELLSIDE_RAIDED",
+          "stage": "FAILED_AUCTION",
+          "broad_eligible": true,
+          "metadata": "{\"anchors\": {\"ny_0830_hourly_proxy\": 1594.88, \"ny_midnight\": 1541.32}, \"bias\": \"BULLISH_DRAW\", \"dealing\": \"PREMIUM\", \"internal_high\": 1547.97, \"sell_level\": 1563.22, \"smt\": false, \"target\": 1613.43}"
+        },
+        {
+          "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+          "pair": "ETH-USDT",
+          "timestamp": "2022-11-04 15:00:00+00:00",
+          "event": "MSS_DISPLACEMENT_FVG",
+          "stage": "CONFIRMATION",
+          "broad_eligible": true,
+          "metadata": "{\"fvg\": [1611.13, 1613.91], \"order_block\": {\"high\": 1594.95, \"index\": 10308, \"low\": 1576.5, \"time\": \"2022-11-04 12:00:00+00:00\"}}"
+        },
+        {
+          "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+          "pair": "ETH-USDT",
+          "timestamp": "2022-11-04 15:00:00+00:00",
+          "event": "ORDER_BLOCK_VALIDATED",
+          "stage": "EXECUTION_ARRAY",
+          "broad_eligible": true,
+          "metadata": "{}"
+        }
+      ],
+      "frozen_parameters": {
+        "displacement": ".5 ATR20",
+        "retrace": "overlap frozen FVG and close > lower gap boundary",
+        "raid": "latest frozen external sell level, reclaim, own D1 UP, H4 UP/RANGE/DOWN bullish-transition; reclaim permits premium"
+      }
+    },
+    {
+      "case_id": "G2-R-0028",
+      "source_case_id": "G2-R-0028",
+      "pair": "LIKE-USDT",
+      "checkpoint": "2022-10-14 09:00:00+00:00",
+      "kind": "NO_INTENT",
+      "reserve": true,
+      "reconstructed_intents": [],
+      "source_match": true,
+      "protected_rows_loaded": 0,
+      "source_neutral_view_audit": "Neutral anchors enumerate all visible geometry, not the selected external liquidity/HTF-owned chain. Extra local geometry is not a funded source intent."
+    },
+    {
+      "case_id": "G2-R-0031",
+      "source_case_id": "G2-R-0031",
+      "pair": "LIKE-USDT",
+      "checkpoint": "2022-02-28 09:00:00+00:00",
+      "kind": "NO_INTENT",
+      "reserve": true,
+      "reconstructed_intents": [],
+      "source_match": true,
+      "protected_rows_loaded": 0,
+      "source_neutral_view_audit": "Neutral anchors enumerate all visible geometry, not the selected external liquidity/HTF-owned chain. Extra local geometry is not a funded source intent."
+    },
+    {
+      "case_id": "G2-SV-0030",
+      "source_case_id": "G2-S-0014",
+      "pair": "ORBS-USDT",
+      "checkpoint": "2022-06-27 19:00:00+00:00",
+      "kind": "POSITIVE",
+      "reserve": false,
+      "reconstructed_intents": [
+        {
+          "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+          "pair": "ORBS-USDT",
+          "timestamp": "2022-06-27 19:00:00+00:00",
+          "event": "FVG",
+          "stage": "THESIS_INTENT",
+          "broad_eligible": true,
+          "metadata": "{\"bearish_mss_exit\": true, \"day_boundary\": \"NY_AFTERNOON\", \"execution_array\": \"FVG\", \"fvg_created_at\": \"2022-06-27 17:00:00+00:00\", \"mss_time\": \"2022-06-27 17:00:00+00:00\", \"order_block_diagnostic_only\": true, \"raid_time\": \"2022-06-27 15:00:00+00:00\", \"retrace_time\": \"2022-06-27 19:00:00+00:00\", \"smt_supporting_only\": true, \"stop\": 0.0427, \"target\": 0.04389}"
+        }
+      ],
+      "source_match": true,
+      "protected_rows_loaded": 0,
+      "causal_order": true,
+      "session_live": true,
+      "owning_events": [
+        {
+          "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+          "pair": "ORBS-USDT",
+          "timestamp": "2022-06-27 15:00:00+00:00",
+          "event": "SELLSIDE_RAIDED",
+          "stage": "FAILED_AUCTION",
+          "broad_eligible": true,
+          "metadata": "{\"anchors\": {\"ny_0830_hourly_proxy\": 0.04316, \"ny_midnight\": 0.04314}, \"bias\": \"BULLISH_DRAW\", \"dealing\": \"PREMIUM\", \"internal_high\": 0.04319, \"sell_level\": 0.0428, \"smt\": false, \"target\": 0.04389}"
+        },
+        {
+          "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+          "pair": "ORBS-USDT",
+          "timestamp": "2022-06-27 17:00:00+00:00",
+          "event": "MSS_DISPLACEMENT_FVG",
+          "stage": "CONFIRMATION",
+          "broad_eligible": true,
+          "metadata": "{\"fvg\": [0.0434, 0.04341], \"order_block\": {\"high\": 0.04316, \"index\": 7188, \"low\": 0.04281, \"time\": \"2022-06-27 12:00:00+00:00\"}}"
+        },
+        {
+          "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+          "pair": "ORBS-USDT",
+          "timestamp": "2022-06-27 17:00:00+00:00",
+          "event": "ORDER_BLOCK_VALIDATED",
+          "stage": "EXECUTION_ARRAY",
+          "broad_eligible": true,
+          "metadata": "{}"
+        }
+      ],
+      "frozen_parameters": {
+        "displacement": ".5 ATR20",
+        "retrace": "overlap frozen FVG and close > lower gap boundary",
+        "raid": "latest frozen external sell level, reclaim, own D1 UP, H4 UP/RANGE/DOWN bullish-transition; reclaim permits premium"
+      }
+    },
+    {
+      "case_id": "G2-R-0012",
+      "source_case_id": "G2-R-0012",
+      "pair": "PIX-USDT",
+      "checkpoint": "2023-01-16 22:00:00+00:00",
+      "kind": "NO_INTENT",
+      "reserve": true,
+      "reconstructed_intents": [],
+      "source_match": true,
+      "protected_rows_loaded": 0,
+      "source_neutral_view_audit": "Neutral anchors enumerate all visible geometry, not the selected external liquidity/HTF-owned chain. Extra local geometry is not a funded source intent."
+    },
+    {
+      "case_id": "G2-SV-0023",
+      "source_case_id": "G2-S-0009",
+      "pair": "POLS-USDT",
+      "checkpoint": "2023-02-28 20:00:00+00:00",
+      "kind": "POSITIVE",
+      "reserve": false,
+      "reconstructed_intents": [
+        {
+          "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+          "pair": "POLS-USDT",
+          "timestamp": "2023-02-28 20:00:00+00:00",
+          "event": "FVG",
+          "stage": "THESIS_INTENT",
+          "broad_eligible": true,
+          "metadata": "{\"bearish_mss_exit\": true, \"day_boundary\": \"NY_AFTERNOON\", \"execution_array\": \"FVG\", \"fvg_created_at\": \"2023-02-28 18:00:00+00:00\", \"mss_time\": \"2023-02-28 18:00:00+00:00\", \"order_block_diagnostic_only\": true, \"raid_time\": \"2023-02-28 16:00:00+00:00\", \"retrace_time\": \"2023-02-28 20:00:00+00:00\", \"smt_supporting_only\": true, \"stop\": 0.5155, \"target\": 0.5449}"
+        }
+      ],
+      "source_match": true,
+      "protected_rows_loaded": 0,
+      "causal_order": true,
+      "session_live": true,
+      "owning_events": [
+        {
+          "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+          "pair": "POLS-USDT",
+          "timestamp": "2023-02-28 16:00:00+00:00",
+          "event": "SELLSIDE_RAIDED",
+          "stage": "FAILED_AUCTION",
+          "broad_eligible": true,
+          "metadata": "{\"anchors\": {\"ny_0830_hourly_proxy\": 0.5156, \"ny_midnight\": 0.5258}, \"bias\": \"BULLISH_DRAW\", \"dealing\": \"DISCOUNT\", \"internal_high\": 0.5208, \"sell_level\": 0.5167, \"smt\": true, \"target\": 0.5449}"
+        },
+        {
+          "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+          "pair": "POLS-USDT",
+          "timestamp": "2023-02-28 18:00:00+00:00",
+          "event": "MSS_DISPLACEMENT_FVG",
+          "stage": "CONFIRMATION",
+          "broad_eligible": true,
+          "metadata": "{\"fvg\": [0.5183, 0.5275], \"order_block\": {\"high\": 0.5183, \"index\": 13096, \"low\": 0.5155, \"time\": \"2023-02-28 16:00:00+00:00\"}}"
+        },
+        {
+          "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+          "pair": "POLS-USDT",
+          "timestamp": "2023-02-28 18:00:00+00:00",
+          "event": "ORDER_BLOCK_VALIDATED",
+          "stage": "EXECUTION_ARRAY",
+          "broad_eligible": true,
+          "metadata": "{}"
+        }
+      ],
+      "frozen_parameters": {
+        "displacement": ".5 ATR20",
+        "retrace": "overlap frozen FVG and close > lower gap boundary",
+        "raid": "latest frozen external sell level, reclaim, own D1 UP, H4 UP/RANGE/DOWN bullish-transition; reclaim permits premium"
+      }
+    },
+    {
+      "case_id": "G2-SV-0025",
+      "source_case_id": "G2-S-0010",
+      "pair": "POLS-USDT",
+      "checkpoint": "2022-08-01 19:00:00+00:00",
+      "kind": "POSITIVE",
+      "reserve": false,
+      "reconstructed_intents": [
+        {
+          "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+          "pair": "POLS-USDT",
+          "timestamp": "2022-08-01 19:00:00+00:00",
+          "event": "FVG",
+          "stage": "THESIS_INTENT",
+          "broad_eligible": true,
+          "metadata": "{\"bearish_mss_exit\": true, \"day_boundary\": \"NY_AFTERNOON\", \"execution_array\": \"FVG\", \"fvg_created_at\": \"2022-08-01 16:00:00+00:00\", \"mss_time\": \"2022-08-01 16:00:00+00:00\", \"order_block_diagnostic_only\": true, \"raid_time\": \"2022-08-01 14:00:00+00:00\", \"retrace_time\": \"2022-08-01 19:00:00+00:00\", \"smt_supporting_only\": true, \"stop\": 0.6041, \"target\": 0.6362}"
+        }
+      ],
+      "source_match": true,
+      "protected_rows_loaded": 0,
+      "causal_order": true,
+      "session_live": true,
+      "owning_events": [
+        {
+          "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+          "pair": "POLS-USDT",
+          "timestamp": "2022-08-01 14:00:00+00:00",
+          "event": "SELLSIDE_RAIDED",
+          "stage": "FAILED_AUCTION",
+          "broad_eligible": true,
+          "metadata": "{\"anchors\": {\"ny_0830_hourly_proxy\": 0.6078, \"ny_midnight\": 0.6301}, \"bias\": \"BULLISH_DRAW\", \"dealing\": \"DISCOUNT\", \"internal_high\": 0.6237, \"sell_level\": 0.6049, \"smt\": false, \"target\": 0.6362}"
+        },
+        {
+          "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+          "pair": "POLS-USDT",
+          "timestamp": "2022-08-01 16:00:00+00:00",
+          "event": "MSS_DISPLACEMENT_FVG",
+          "stage": "CONFIRMATION",
+          "broad_eligible": true,
+          "metadata": "{\"fvg\": [0.6136, 0.6235], \"order_block\": {\"high\": 0.6155, \"index\": 8029, \"low\": 0.6084, \"time\": \"2022-08-01 13:00:00+00:00\"}}"
+        },
+        {
+          "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+          "pair": "POLS-USDT",
+          "timestamp": "2022-08-01 16:00:00+00:00",
+          "event": "ORDER_BLOCK_VALIDATED",
+          "stage": "EXECUTION_ARRAY",
+          "broad_eligible": true,
+          "metadata": "{}"
+        }
+      ],
+      "frozen_parameters": {
+        "displacement": ".5 ATR20",
+        "retrace": "overlap frozen FVG and close > lower gap boundary",
+        "raid": "latest frozen external sell level, reclaim, own D1 UP, H4 UP/RANGE/DOWN bullish-transition; reclaim permits premium"
+      }
+    },
+    {
+      "case_id": "G2-SV-0032",
+      "source_case_id": "G2-S-0001",
+      "pair": "RVN-USDT",
+      "checkpoint": "2023-01-24 18:00:00+00:00",
+      "kind": "POSITIVE",
+      "reserve": false,
+      "reconstructed_intents": [
+        {
+          "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+          "pair": "RVN-USDT",
+          "timestamp": "2023-01-24 18:00:00+00:00",
+          "event": "FVG",
+          "stage": "THESIS_INTENT",
+          "broad_eligible": true,
+          "metadata": "{\"bearish_mss_exit\": true, \"day_boundary\": \"NY_AFTERNOON\", \"execution_array\": \"FVG\", \"fvg_created_at\": \"2023-01-24 17:00:00+00:00\", \"mss_time\": \"2023-01-24 17:00:00+00:00\", \"order_block_diagnostic_only\": true, \"raid_time\": \"2023-01-24 14:00:00+00:00\", \"retrace_time\": \"2023-01-24 18:00:00+00:00\", \"smt_supporting_only\": true, \"stop\": 0.02849, \"target\": 0.02958}"
+        }
+      ],
+      "source_match": true,
+      "protected_rows_loaded": 0,
+      "causal_order": true,
+      "session_live": true,
+      "owning_events": [
+        {
+          "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+          "pair": "RVN-USDT",
+          "timestamp": "2023-01-24 14:00:00+00:00",
+          "event": "SELLSIDE_RAIDED",
+          "stage": "FAILED_AUCTION",
+          "broad_eligible": true,
+          "metadata": "{\"anchors\": {\"ny_0830_hourly_proxy\": 0.0285, \"ny_midnight\": 0.0288}, \"bias\": \"BULLISH_DRAW\", \"dealing\": \"DISCOUNT\", \"internal_high\": 0.0291, \"sell_level\": 0.02853, \"smt\": true, \"target\": 0.02958}"
+        },
+        {
+          "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+          "pair": "RVN-USDT",
+          "timestamp": "2023-01-24 17:00:00+00:00",
+          "event": "MSS_DISPLACEMENT_FVG",
+          "stage": "CONFIRMATION",
+          "broad_eligible": true,
+          "metadata": "{\"fvg\": [0.02913, 0.02924], \"order_block\": {\"high\": 0.0289, \"index\": 3507, \"low\": 0.02849, \"time\": \"2023-01-24 14:00:00+00:00\"}}"
+        },
+        {
+          "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+          "pair": "RVN-USDT",
+          "timestamp": "2023-01-24 17:00:00+00:00",
+          "event": "ORDER_BLOCK_VALIDATED",
+          "stage": "EXECUTION_ARRAY",
+          "broad_eligible": true,
+          "metadata": "{}"
+        }
+      ],
+      "frozen_parameters": {
+        "displacement": ".5 ATR20",
+        "retrace": "overlap frozen FVG and close > lower gap boundary",
+        "raid": "latest frozen external sell level, reclaim, own D1 UP, H4 UP/RANGE/DOWN bullish-transition; reclaim permits premium"
+      }
+    },
+    {
+      "case_id": "G2-SV-0033",
+      "source_case_id": "G2-S-0011",
+      "pair": "SNX-USDT",
+      "checkpoint": "2022-12-09 16:00:00+00:00",
+      "kind": "POSITIVE",
+      "reserve": false,
+      "reconstructed_intents": [
+        {
+          "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+          "pair": "SNX-USDT",
+          "timestamp": "2022-12-09 16:00:00+00:00",
+          "event": "FVG",
+          "stage": "THESIS_INTENT",
+          "broad_eligible": true,
+          "metadata": "{\"bearish_mss_exit\": true, \"day_boundary\": \"POST_NY_0830\", \"execution_array\": \"FVG\", \"fvg_created_at\": \"2022-12-09 15:00:00+00:00\", \"mss_time\": \"2022-12-09 15:00:00+00:00\", \"order_block_diagnostic_only\": true, \"raid_time\": \"2022-12-09 14:00:00+00:00\", \"retrace_time\": \"2022-12-09 16:00:00+00:00\", \"smt_supporting_only\": true, \"stop\": 1.875842, \"target\": 1.976856}"
+        }
+      ],
+      "source_match": true,
+      "protected_rows_loaded": 0,
+      "causal_order": true,
+      "session_live": true,
+      "owning_events": [
+        {
+          "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+          "pair": "SNX-USDT",
+          "timestamp": "2022-12-09 14:00:00+00:00",
+          "event": "SELLSIDE_RAIDED",
+          "stage": "FAILED_AUCTION",
+          "broad_eligible": true,
+          "metadata": "{\"anchors\": {\"ny_0830_hourly_proxy\": 1.901867, \"ny_midnight\": 1.896783}, \"bias\": \"BULLISH_DRAW\", \"dealing\": \"DISCOUNT\", \"internal_high\": 1.925242, \"sell_level\": 1.884935, \"smt\": false, \"target\": 1.976856}"
+        },
+        {
+          "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+          "pair": "SNX-USDT",
+          "timestamp": "2022-12-09 15:00:00+00:00",
+          "event": "MSS_DISPLACEMENT_FVG",
+          "stage": "CONFIRMATION",
+          "broad_eligible": true,
+          "metadata": "{\"fvg\": [1.909008, 1.911509], \"order_block\": {\"high\": 1.909008, \"index\": 11149, \"low\": 1.88247, \"time\": \"2022-12-09 13:00:00+00:00\"}}"
+        },
+        {
+          "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+          "pair": "SNX-USDT",
+          "timestamp": "2022-12-09 15:00:00+00:00",
+          "event": "ORDER_BLOCK_VALIDATED",
+          "stage": "EXECUTION_ARRAY",
+          "broad_eligible": true,
+          "metadata": "{}"
+        }
+      ],
+      "frozen_parameters": {
+        "displacement": ".5 ATR20",
+        "retrace": "overlap frozen FVG and close > lower gap boundary",
+        "raid": "latest frozen external sell level, reclaim, own D1 UP, H4 UP/RANGE/DOWN bullish-transition; reclaim permits premium"
+      }
+    },
+    {
+      "case_id": "G2-SV-0031",
+      "source_case_id": "G2-S-0007",
+      "pair": "TURBOS-USDT",
+      "checkpoint": "2023-11-20 19:00:00+00:00",
+      "kind": "POSITIVE",
+      "reserve": false,
+      "reconstructed_intents": [
+        {
+          "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+          "pair": "TURBOS-USDT",
+          "timestamp": "2023-11-20 19:00:00+00:00",
+          "event": "FVG",
+          "stage": "THESIS_INTENT",
+          "broad_eligible": true,
+          "metadata": "{\"bearish_mss_exit\": true, \"day_boundary\": \"NY_AFTERNOON\", \"execution_array\": \"FVG\", \"fvg_created_at\": \"2023-11-20 18:00:00+00:00\", \"mss_time\": \"2023-11-20 18:00:00+00:00\", \"order_block_diagnostic_only\": true, \"raid_time\": \"2023-11-20 14:00:00+00:00\", \"retrace_time\": \"2023-11-20 19:00:00+00:00\", \"smt_supporting_only\": true, \"stop\": 0.001365, \"target\": 0.001456}"
+        }
+      ],
+      "source_match": true,
+      "protected_rows_loaded": 0,
+      "causal_order": true,
+      "session_live": true,
+      "owning_events": [
+        {
+          "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+          "pair": "TURBOS-USDT",
+          "timestamp": "2023-11-20 14:00:00+00:00",
+          "event": "SELLSIDE_RAIDED",
+          "stage": "FAILED_AUCTION",
+          "broad_eligible": true,
+          "metadata": "{\"anchors\": {\"ny_0830_hourly_proxy\": 0.001403, \"ny_midnight\": 0.001402}, \"bias\": \"BULLISH_DRAW\", \"dealing\": \"DISCOUNT\", \"internal_high\": 0.001456, \"sell_level\": 0.001391, \"smt\": false, \"target\": 0.001456}"
+        },
+        {
+          "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+          "pair": "TURBOS-USDT",
+          "timestamp": "2023-11-20 18:00:00+00:00",
+          "event": "MSS_DISPLACEMENT_FVG",
+          "stage": "CONFIRMATION",
+          "broad_eligible": true,
+          "metadata": "{\"fvg\": [0.00146, 0.001466], \"order_block\": {\"high\": 0.001411, \"index\": 4532, \"low\": 0.001383, \"time\": \"2023-11-20 07:00:00+00:00\"}}"
+        },
+        {
+          "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+          "pair": "TURBOS-USDT",
+          "timestamp": "2023-11-20 18:00:00+00:00",
+          "event": "ORDER_BLOCK_VALIDATED",
+          "stage": "EXECUTION_ARRAY",
+          "broad_eligible": true,
+          "metadata": "{}"
+        }
+      ],
+      "frozen_parameters": {
+        "displacement": ".5 ATR20",
+        "retrace": "overlap frozen FVG and close > lower gap boundary",
+        "raid": "latest frozen external sell level, reclaim, own D1 UP, H4 UP/RANGE/DOWN bullish-transition; reclaim permits premium"
+      }
+    },
+    {
+      "case_id": "G2-P-0075",
+      "source_case_id": "G2-P-0075",
+      "pair": "WOO-USDT",
+      "checkpoint": "2022-04-05 15:00:00+00:00",
+      "kind": "INTERMEDIATE",
+      "reserve": false,
+      "reconstructed_intents": [],
+      "source_match": true,
+      "protected_rows_loaded": 0,
+      "source_neutral_view_audit": "Neutral anchors enumerate all visible geometry, not the selected external liquidity/HTF-owned chain. Extra local geometry is not a funded source intent."
+    },
+    {
+      "case_id": "G2-R-0062",
+      "source_case_id": "G2-R-0062",
+      "pair": "WOO-USDT",
+      "checkpoint": "2023-01-06 21:00:00+00:00",
+      "kind": "INTERMEDIATE",
+      "reserve": true,
+      "reconstructed_intents": [],
+      "source_match": true,
+      "protected_rows_loaded": 0,
+      "source_neutral_view_audit": "Neutral anchors enumerate all visible geometry, not the selected external liquidity/HTF-owned chain. Extra local geometry is not a funded source intent."
+    },
+    {
+      "case_id": "G2-R-0066",
+      "source_case_id": "G2-R-0066",
+      "pair": "WOO-USDT",
+      "checkpoint": "2022-12-05 19:00:00+00:00",
+      "kind": "INTERMEDIATE",
+      "reserve": true,
+      "reconstructed_intents": [],
+      "source_match": true,
+      "protected_rows_loaded": 0,
+      "source_neutral_view_audit": "Neutral anchors enumerate all visible geometry, not the selected external liquidity/HTF-owned chain. Extra local geometry is not a funded source intent."
+    },
+    {
+      "case_id": "G2-SV-0019",
+      "source_case_id": "G2-P-0075",
+      "pair": "WOO-USDT",
+      "checkpoint": "2022-04-05 15:00:00+00:00",
+      "kind": "INTERMEDIATE",
+      "reserve": false,
+      "reconstructed_intents": [],
+      "source_match": true,
+      "protected_rows_loaded": 0,
+      "source_neutral_view_audit": "Neutral anchors enumerate all visible geometry, not the selected external liquidity/HTF-owned chain. Extra local geometry is not a funded source intent."
+    }
+  ],
+  "signal_semantics_changed": false,
+  "source_matches": 40,
+  "all_source_matches": true,
+  "detector_sha256": "011511851071E3F69D436084C70A0E19FDD9DD6488073D490B80642A4A8A251F",
+  "no_economics": true
+}

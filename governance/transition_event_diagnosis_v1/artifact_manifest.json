@@ -1,0 +1,453 @@
+[
+  {
+    "path": "governance\\transition_event_diagnosis_v1\\.gitattributes",
+    "sha256": "705FD4D6451A31D36B3DF7DE96F83F30AC976C9B4A6D1E51671D8E2F33E2D0DA",
+    "size": 8
+  },
+  {
+    "path": "governance\\transition_event_diagnosis_v1\\canonical_result.json",
+    "sha256": "F09F73713A295140895E154821EA1F1540C27E71D85E4E9D5B465F34B635E0ED",
+    "size": 8014
+  },
+  {
+    "path": "governance\\transition_event_diagnosis_v1\\control_shadow_release_rows_2023.csv",
+    "sha256": "243A04F16A837BDAAA9011AC17F6D55F16DC1BFB3BEFC747F93C7363F9053417",
+    "size": 38632,
+    "row_count": 237,
+    "schema": [
+      "pair",
+      "shadow_entry_time",
+      "shadow_entry_price",
+      "shadow_source_event_key",
+      "release_time",
+      "release_reason"
+    ],
+    "identity_contract": null,
+    "selection_contract": "Complete returned frozen authority rowset"
+  },
+  {
+    "path": "governance\\transition_event_diagnosis_v1\\control_shadow_suppression_rows_2023.csv",
+    "sha256": "E6DAA7DDD109143E43E9475CDE38A40527A1AC95E19880C3C921D066CA8D66DC",
+    "size": 126404,
+    "row_count": 536,
+    "schema": [
+      "event_key",
+      "pair",
+      "signal_time",
+      "entry_time",
+      "shadow_source_event_key",
+      "shadow_entry_time",
+      "shadow_entry_price",
+      "shadow_age_hours",
+      "shadow_max_exit_time"
+    ],
+    "identity_contract": [
+      "event_key"
+    ],
+    "duplicate_identity_count": 0,
+    "entry_period": {
+      "min": "2023-01-02 09:00:00+00:00",
+      "max": "2023-12-24 05:00:00+00:00"
+    },
+    "selection_contract": "Complete returned frozen authority rowset"
+  },
+  {
+    "path": "governance\\transition_event_diagnosis_v1\\control_trace_rows_2023.csv",
+    "sha256": "34CA83E500C775E8A4F9877286348E414EDFA90EF8E1E56DA6A95D3C49B143EB",
+    "size": 217993,
+    "row_count": 1223,
+    "schema": [
+      "event_key",
+      "entry_time",
+      "pair",
+      "decision",
+      "entry_market_state_if_reached",
+      "actual_pair_open_before_event",
+      "shadow_active_before_event",
+      "open_position_count_before_event",
+      "cash_before_event",
+      "marked_equity_before_event",
+      "gross_before_event"
+    ],
+    "identity_contract": [
+      "event_key"
+    ],
+    "duplicate_identity_count": 0,
+    "entry_period": {
+      "min": "2023-01-01 14:00:00+00:00",
+      "max": "2023-12-24 05:00:00+00:00"
+    },
+    "selection_contract": "Complete returned frozen authority rowset"
+  },
+  {
+    "path": "governance\\transition_event_diagnosis_v1\\control_trades_2023.csv",
+    "sha256": "F690EF12324AF9CCD428F69AD4F9CD1033C964BAC2A4F0B75A45E668ECA88D29",
+    "size": 121240,
+    "row_count": 237,
+    "schema": [
+      "policy_id",
+      "portfolio_id",
+      "universe_id",
+      "cost_multiplier",
+      "pair",
+      "signal_time",
+      "entry_time",
+      "exit_time",
+      "holding_hours",
+      "exit_reason",
+      "entry_price",
+      "exit_price",
+      "quantity",
+      "entry_notional",
+      "exit_notional",
+      "entry_cost",
+      "exit_cost",
+      "gross_pnl",
+      "net_pnl",
+      "period_id",
+      "membership_rank",
+      "support_families",
+      "support_count",
+      "atr24_at_signal",
+      "high_water_at_exit",
+      "entry_market_state",
+      "exit_market_state",
+      "protection_floor_at_exit"
+    ],
+    "identity_contract": [
+      "pair",
+      "entry_time"
+    ],
+    "duplicate_identity_count": 0,
+    "entry_period": {
+      "min": "2023-01-02 07:00:00+00:00",
+      "max": "2023-12-22 11:00:00+00:00"
+    },
+    "selection_contract": "Complete returned frozen authority rowset"
+  },
+  {
+    "path": "governance\\transition_event_diagnosis_v1\\diagnostic_measurements.json",
+    "sha256": "D51E7B85F387B5884F010249FC1272C82D139C740240E29F10DA109E611B1ECB",
+    "size": 818280
+  },
+  {
+    "path": "governance\\transition_event_diagnosis_v1\\direct_2022.csv",
+    "sha256": "F31E44A819AA59E0F44090B010B63E07DE68A2AC440450736660E5E4445183DD",
+    "size": 115821,
+    "row_count": 173,
+    "schema": [
+      "policy_id",
+      "portfolio_id",
+      "universe_id",
+      "cost_multiplier",
+      "pair",
+      "signal_time",
+      "entry_time",
+      "exit_time",
+      "holding_hours",
+      "exit_reason",
+      "entry_price",
+      "exit_price",
+      "quantity",
+      "entry_notional",
+      "exit_notional",
+      "entry_cost",
+      "exit_cost",
+      "gross_pnl",
+      "net_pnl",
+      "period_id",
+      "membership_rank",
+      "support_families",
+      "support_count",
+      "atr24_at_signal",
+      "high_water_at_exit",
+      "entry_market_state",
+      "exit_market_state",
+      "protection_floor_at_exit",
+      "event_key",
+      "calendar_month",
+      "calendar_quarter",
+      "entry_hour_utc",
+      "entry_atr_fraction",
+      "actual_pair_open_before_event",
+      "shadow_active_before_event",
+      "open_position_count_before_event",
+      "cash_before_event",
+      "marked_equity_before_event",
+      "gross_before_event"
+    ],
+    "identity_contract": [
+      "pair",
+      "entry_time"
+    ],
+    "duplicate_identity_count": 0,
+    "entry_period": {
+      "min": "2022-01-01 19:00:00+00:00",
+      "max": "2022-12-22 22:00:00+00:00"
+    },
+    "selection_contract": "Frozen P19 direct mapping"
+  },
+  {
+    "path": "governance\\transition_event_diagnosis_v1\\direct_2023.csv",
+    "sha256": "9AE8C505CE3E239F79924BB0C59CB3C546D9DC16B1D6FB3F154769D47F8AFA30",
+    "size": 87771,
+    "row_count": 131,
+    "schema": [
+      "policy_id",
+      "portfolio_id",
+      "universe_id",
+      "cost_multiplier",
+      "pair",
+      "signal_time",
+      "entry_time",
+      "exit_time",
+      "holding_hours",
+      "exit_reason",
+      "entry_price",
+      "exit_price",
+      "quantity",
+      "entry_notional",
+      "exit_notional",
+      "entry_cost",
+      "exit_cost",
+      "gross_pnl",
+      "net_pnl",
+      "period_id",
+      "membership_rank",
+      "support_families",
+      "support_count",
+      "atr24_at_signal",
+      "high_water_at_exit",
+      "entry_market_state",
+      "exit_market_state",
+      "protection_floor_at_exit",
+      "event_key",
+      "calendar_month",
+      "calendar_quarter",
+      "entry_hour_utc",
+      "entry_atr_fraction",
+      "actual_pair_open_before_event",
+      "shadow_active_before_event",
+      "open_position_count_before_event",
+      "cash_before_event",
+      "marked_equity_before_event",
+      "gross_before_event"
+    ],
+    "identity_contract": [
+      "pair",
+      "entry_time"
+    ],
+    "duplicate_identity_count": 0,
+    "entry_period": {
+      "min": "2023-01-02 07:00:00+00:00",
+      "max": "2023-12-11 23:00:00+00:00"
+    },
+    "selection_contract": "Frozen P19 direct mapping"
+  },
+  {
+    "path": "governance\\transition_event_diagnosis_v1\\execution_contract.json",
+    "sha256": "B2A7C71B5E82B5EDB07C5EA3CB76F29C697A5EE5B7A0E9981EC4AA80B6CD1C77",
+    "size": 10274
+  },
+  {
+    "path": "governance\\transition_event_diagnosis_v1\\frozen_control_trace_2022.csv",
+    "sha256": "4F72189F5FF55ED62ABF1E4D01845039D5DAE57DC85897D48CA215F67A06AE57",
+    "size": 190094,
+    "row_count": 1065,
+    "schema": [
+      "event_key",
+      "entry_time",
+      "pair",
+      "decision",
+      "entry_market_state_if_reached",
+      "actual_pair_open_before_event",
+      "shadow_active_before_event",
+      "open_position_count_before_event",
+      "cash_before_event",
+      "marked_equity_before_event",
+      "gross_before_event"
+    ],
+    "identity_contract": [
+      "event_key"
+    ],
+    "duplicate_identity_count": 0,
+    "entry_period": {
+      "min": "2022-01-01 19:00:00+00:00",
+      "max": "2022-12-22 22:00:00+00:00"
+    },
+    "selection_contract": "Complete returned frozen authority rowset"
+  },
+  {
+    "path": "governance\\transition_event_diagnosis_v1\\frozen_p19_result.json",
+    "sha256": "221CC3BCF5E062CE36CE2BEE10E3A9EE22448A8A8E4EF54F01DAF331E8B52DE7",
+    "size": 8775
+  },
+  {
+    "path": "governance\\transition_event_diagnosis_v1\\frozen_p38_observer.py",
+    "sha256": "E96298B1E68F0BA4585BE2958E2E9EA984F4877902AC5E7669DB7ABB2B358096",
+    "size": 45646
+  },
+  {
+    "path": "governance\\transition_event_diagnosis_v1\\frozen_p38_v1r11_source_package.ps1",
+    "sha256": "33535B69296890AA5A70833B196F22FBD204308E14061AF4E9EC6BE5F7DB7867",
+    "size": 141228
+  },
+  {
+    "path": "governance\\transition_event_diagnosis_v1\\frozen_p43_authority.json",
+    "sha256": "8BBB8FB176DC5F3A36FDB25E07A54219A786951E5CF97C37A1314C3612C31CEE",
+    "size": 6518
+  },
+  {
+    "path": "governance\\transition_event_diagnosis_v1\\governance_report.json",
+    "sha256": "B017C6B11A13A1907A0D08B2C4B65AFE07BFCD7CA20F283905E66D292F72740B",
+    "size": 902
+  },
+  {
+    "path": "governance\\transition_event_diagnosis_v1\\parity.json",
+    "sha256": "E0CDA99F0475559B0EEAE2D5437858427C27856C70C6CBE0F72F0FF31E24ADFA",
+    "size": 2570
+  },
+  {
+    "path": "governance\\transition_event_diagnosis_v1\\protocol.json",
+    "sha256": "3AA56D3ABF2C5BD2ECD87378A39A88C209D8C7832CB7A78CE2887E8880111A0C",
+    "size": 3189
+  },
+  {
+    "path": "governance\\transition_event_diagnosis_v1\\replayed_p38_result.json",
+    "sha256": "8256DA90B75A3BFD33EBAF2378355CF32BBC84FC85BF8CE5601328DB56C55CDC",
+    "size": 8915
+  },
+  {
+    "path": "governance\\transition_event_diagnosis_v1\\summary.md",
+    "sha256": "51DDC96FCA329E961A50DD0922F5BDAA1C40B9B85CB3FED547C24CB51B453A29",
+    "size": 7339
+  },
+  {
+    "path": "governance\\transition_event_diagnosis_v1\\treatment_shadow_release_rows_2023.csv",
+    "sha256": "FE1DEAF168334876A3310E14BCCD01C21B15D2C2B4EB4C6C9CDB3E6C428A6B6F",
+    "size": 21283,
+    "row_count": 130,
+    "schema": [
+      "pair",
+      "shadow_entry_time",
+      "shadow_entry_price",
+      "shadow_source_event_key",
+      "release_time",
+      "release_reason"
+    ],
+    "identity_contract": null,
+    "selection_contract": "Complete returned frozen authority rowset"
+  },
+  {
+    "path": "governance\\transition_event_diagnosis_v1\\treatment_shadow_suppression_rows_2023.csv",
+    "sha256": "5E5C934DAAA510ADFA8E68C619B75E9E168EA7D998261B87B16EC161B7A66070",
+    "size": 74465,
+    "row_count": 314,
+    "schema": [
+      "event_key",
+      "pair",
+      "signal_time",
+      "entry_time",
+      "shadow_source_event_key",
+      "shadow_entry_time",
+      "shadow_entry_price",
+      "shadow_age_hours",
+      "shadow_max_exit_time"
+    ],
+    "identity_contract": [
+      "event_key"
+    ],
+    "duplicate_identity_count": 0,
+    "entry_period": {
+      "min": "2023-01-12 15:00:00+00:00",
+      "max": "2023-12-21 18:00:00+00:00"
+    },
+    "selection_contract": "Complete returned frozen authority rowset"
+  },
+  {
+    "path": "governance\\transition_event_diagnosis_v1\\treatment_trace_rows_2023.csv",
+    "sha256": "94EAD40CAA4E13BF2644ABF6958C304EAC7AA0FB5427B69384918DA9AC2FECB9",
+    "size": 217158,
+    "row_count": 1223,
+    "schema": [
+      "event_key",
+      "entry_time",
+      "pair",
+      "decision",
+      "entry_market_state_if_reached",
+      "actual_pair_open_before_event",
+      "shadow_active_before_event",
+      "open_position_count_before_event",
+      "cash_before_event",
+      "marked_equity_before_event",
+      "gross_before_event"
+    ],
+    "identity_contract": [
+      "event_key"
+    ],
+    "duplicate_identity_count": 0,
+    "entry_period": {
+      "min": "2023-01-01 14:00:00+00:00",
+      "max": "2023-12-24 05:00:00+00:00"
+    },
+    "selection_contract": "Complete returned frozen authority rowset"
+  },
+  {
+    "path": "governance\\transition_event_diagnosis_v1\\treatment_trades_2023.csv",
+    "sha256": "98D5EC83F55BC47DABE56E42929DBEDDB2FB6380C50C36643F67F40F09B913F8",
+    "size": 66409,
+    "row_count": 130,
+    "schema": [
+      "policy_id",
+      "portfolio_id",
+      "universe_id",
+      "cost_multiplier",
+      "pair",
+      "signal_time",
+      "entry_time",
+      "exit_time",
+      "holding_hours",
+      "exit_reason",
+      "entry_price",
+      "exit_price",
+      "quantity",
+      "entry_notional",
+      "exit_notional",
+      "entry_cost",
+      "exit_cost",
+      "gross_pnl",
+      "net_pnl",
+      "period_id",
+      "membership_rank",
+      "support_families",
+      "support_count",
+      "atr24_at_signal",
+      "high_water_at_exit",
+      "entry_market_state",
+      "exit_market_state",
+      "protection_floor_at_exit"
+    ],
+    "identity_contract": [
+      "pair",
+      "entry_time"
+    ],
+    "duplicate_identity_count": 0,
+    "entry_period": {
+      "min": "2023-01-09 17:00:00+00:00",
+      "max": "2023-12-22 11:00:00+00:00"
+    },
+    "selection_contract": "Complete returned frozen authority rowset"
+  },
+  {
+    "path": "scripts\\research\\transition_p38_export.py",
+    "sha256": "E2FE0712011A836AF36ABACB042AB65797823DD6561ED1F55D5414EF27FC046E"
+  },
+  {
+    "path": "scripts\\research\\transition_event_diagnosis.py",
+    "sha256": "6BA969114B9FB84B7869C7D802B5E46633E7F148F027DC6A6AAF2178B8F55702"
+  },
+  {
+    "path": "scripts\\research\\transition_diagnosis_finalize.py",
+    "sha256": "FBDF39E77963C27B03DCC51AC70A2D1FA863CBB334B0EEE4890E1E294A76D64B"
+  }
+]

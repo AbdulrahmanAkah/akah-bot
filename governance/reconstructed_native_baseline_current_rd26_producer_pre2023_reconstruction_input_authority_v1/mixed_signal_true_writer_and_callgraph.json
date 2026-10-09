@@ -1,0 +1,675 @@
+{
+  "bounded_same_module_callgraph": [
+    {
+      "analysis": {
+        "calls": [
+          "RunnerError",
+          "dumps",
+          "evaluate_policy_hard_gates",
+          "exit_reason_summary",
+          "filter_robustness_events",
+          "int",
+          "isoformat",
+          "items",
+          "len",
+          "list",
+          "load_feature_frames",
+          "mkdir",
+          "output_manifest",
+          "parse_args",
+          "parser",
+          "period_metrics",
+          "print",
+          "report_payload",
+          "resolve",
+          "run_all_portfolios",
+          "run_preflight",
+          "scan_focus_signals",
+          "sha256",
+          "sum",
+          "to_csv",
+          "validate_outputs",
+          "verify_execution_inputs",
+          "write_json"
+        ],
+        "io_calls": [
+          {
+            "call": "to_csv",
+            "expr": "events.to_csv(output / 'signal-events-2022-2023.csv', index=False, lineterminator='\\n')",
+            "line": 89
+          },
+          {
+            "call": "to_csv",
+            "expr": "funnel.to_csv(output / 'signal-funnel-2022-2023.csv', index=False, lineterminator='\\n')",
+            "line": 94
+          },
+          {
+            "call": "to_csv",
+            "expr": "run_metrics.to_csv(output / 'portfolio-run-metrics.csv', index=False, lineterminator='\\n')",
+            "line": 99
+          },
+          {
+            "call": "to_csv",
+            "expr": "periods.to_csv(output / 'portfolio-period-metrics.csv', index=False, lineterminator='\\n')",
+            "line": 104
+          },
+          {
+            "call": "to_csv",
+            "expr": "routing.to_csv(output / 'routing-summary.csv', index=False, lineterminator='\\n')",
+            "line": 109
+          },
+          {
+            "call": "to_csv",
+            "expr": "trades.to_csv(output / 'trade-ledger.csv', index=False, lineterminator='\\n')",
+            "line": 114
+          },
+          {
+            "call": "to_csv",
+            "expr": "daily.to_csv(output / 'daily-equity.csv', index=False, lineterminator='\\n')",
+            "line": 119
+          },
+          {
+            "call": "to_csv",
+            "expr": "concentrations.to_csv(output / 'concentration-diagnostics.csv', index=False, lineterminator='\\n')",
+            "line": 124
+          },
+          {
+            "call": "to_csv",
+            "expr": "break_even.to_csv(output / 'break-even-cost-multiplier.csv', index=False, lineterminator='\\n')",
+            "line": 129
+          },
+          {
+            "call": "to_csv",
+            "expr": "reasons.to_csv(output / 'exit-reason-summary.csv', index=False, lineterminator='\\n')",
+            "line": 134
+          },
+          {
+            "call": "to_csv",
+            "expr": "gates.to_csv(output / 'hard-gate-evaluation.csv', index=False, lineterminator='\\n')",
+            "line": 139
+          },
+          {
+            "call": "to_csv",
+            "expr": "selection.to_csv(output / 'policy-selection.csv', index=False, lineterminator='\\n')",
+            "line": 144
+          }
+        ],
+        "path_literals": [
+          "break-even-cost-multiplier.csv",
+          "concentration-diagnostics.csv",
+          "daily-equity.csv",
+          "exit-reason-summary.csv",
+          "hard-gate-evaluation.csv",
+          "input-and-conformance-audit.json",
+          "output-manifest.json",
+          "policy-selection.csv",
+          "portfolio-period-metrics.csv",
+          "portfolio-run-metrics.csv",
+          "rd26-p1-exit-architecture-robustness-report-v1.json",
+          "routing-summary.csv",
+          "selected-exit-architecture-freeze.json",
+          "signal-events-2022-2023.csv",
+          "signal-funnel-2022-2023.csv",
+          "trade-ledger.csv"
+        ]
+      },
+      "depth": 0,
+      "function": "main",
+      "module": "scripts/research/run_rd26_exit_architecture.py",
+      "source": "def main() -> int:\n    args = parser().parse_args()\n    repo = args.repo_root.resolve()\n    raw_root = (\n        args.raw_root.resolve()\n        if args.raw_root is not None\n        else (repo / DEFAULT_RAW_ROOT).resolve()\n    )\n    mode_count = sum(\n        int(value) for value in (args.preflight_only, args.execute, args.validate_only)\n    )\n    if mode_count != 1:\n        raise RunnerError(\"choose exactly one runner mode\")\n\n    if args.validate_only:\n        print(json.dumps(validate_outputs(repo), indent=2, sort_keys=True))\n        return 0\n\n    if args.preflight_only:\n        audit = run_preflight(repo=repo, raw_root=raw_root)\n        print(json.dumps(audit, indent=2, sort_keys=True))\n        return 0\n\n    if not args.expected_freeze_commit:\n        raise RunnerError(\"--expected-freeze-commit is required for execution\")\n    membership, pairs, lineage = verify_execution_inputs(\n        repo=repo,\n        raw_root=raw_root,\n        expected_freeze_commit=args.expected_freeze_commit,\n    )\n    frames = load_feature_frames(\n        raw_root=raw_root,\n        pairs=pairs,\n        cutoff=DATA_CUTOFF,\n    )\n    events, funnel = scan_focus_signals(\n        membership=membership,\n        features=frames,\n        periods=ROBUSTNESS_PERIODS,\n        data_start=DATA_START,\n        data_cutoff=DATA_CUTOFF,\n        guard_each_period_hours=None,\n    )\n    events = filter_robustness_events(events)\n\n    output = repo / OUTPUT\n    output.mkdir(parents=True, exist_ok=False)\n    audit = {\n        \"schema_version\": \"rd26-p1-input-conformance-audit-v1\",\n        \"source_commit\": EXPECTED_PARENT,\n        \"freeze_commit\": args.expected_freeze_commit,\n        \"lineage\": lineage,\n        \"preflight_audit_sha256\": sha256(repo / PREFLIGHT_AUDIT),\n        \"membership_sha256\": sha256(repo / MEMBERSHIP),\n        \"pair_count\": len(pairs),\n        \"pairs\": pairs,\n        \"focus_families\": list(FOCUS_FAMILIES),\n        \"policies\": list(POLICIES),\n        \"selection_periods\": {\n            name: [start.isoformat(), end.isoformat()]\n            for name, (start, end) in ROBUSTNESS_PERIODS.items()\n        },\n        \"2022_2023_used_for_architecture_selection\": True,\n        \"2024_accessed\": False,\n        \"post_2024_accessed\": False,\n        \"production_authorized\": False,\n    }\n    write_json(output / \"input-and-conformance-audit.json\", audit)\n\n    run_metrics, trades, daily, routing, concentrations, break_even = run_all_portfolios(\n        events=events, frames=frames\n    )\n    periods = period_metrics(trades)\n    reasons = exit_reason_summary(trades)\n    gates, selection = evaluate_policy_hard_gates(\n        run_metrics=run_metrics,\n        periods=periods,\n        concentrations=concentrations,\n        break_even=break_even,\n    )\n    report, selected_freeze = report_payload(\n        run_metrics=run_metrics,\n        concentrations=concentrations,\n        selection=selection,\n        event_count=len(events),\n        freeze_commit=args.expected_freeze_commit,\n    )\n\n    events.to_csv(\n        output / \"signal-events-2022-2023.csv\",\n        index=False,\n        lineterminator=\"\\n\",\n    )\n    funnel.to_csv(\n        output / \"signal-funnel-2022-2023.csv\",\n        index=False,\n        lineterminator=\"\\n\",\n    )\n    run_metrics.to_csv(\n        output / \"portfolio-run-metrics.csv\",\n        index=False,\n        lineterminator=\"\\n\",\n    )\n    periods.to_csv(\n        output / \"portfolio-period-metrics.csv\",\n        index=False,\n        lineterminator=\"\\n\",\n    )\n    routing.to_csv(\n        output / \"routing-summary.csv\",\n        index=False,\n        lineterminator=\"\\n\",\n    )\n    trades.to_csv(\n        output / \"trade-ledger.csv\",\n        index=False,\n        lineterminator=\"\\n\",\n    )\n    daily.to_csv(\n        output / \"daily-equity.csv\",\n        index=False,\n        lineterminator=\"\\n\",\n    )\n    concentrations.to_csv(\n        output / \"concentration-diagnostics.csv\",\n        index=False,\n        lineterminator=\"\\n\",\n    )\n    break_even.to_csv(\n        output / \"break-even-cost-multiplier.csv\",\n        index=False,\n        lineterminator=\"\\n\",\n    )\n    reasons.to_csv(\n        output / \"exit-reason-summary.csv\",\n        index=False,\n        lineterminator=\"\\n\",\n    )\n    gates.to_csv(\n        output / \"hard-gate-evaluation.csv\",\n        index=False,\n        lineterminator=\"\\n\",\n    )\n    selection.to_csv(\n        output / \"policy-selection.csv\",\n        index=False,\n        lineterminator=\"\\n\",\n    )\n    write_json(output / \"selected-exit-architecture-freeze.json\", selected_freeze)\n    write_json(\n        output / \"rd26-p1-exit-architecture-robustness-report-v1.json\",\n        report,\n    )\n    write_json(\n        output / \"output-manifest.json\",\n        output_manifest(output, report[\"decision\"]),\n    )\n\n    result = validate_outputs(repo)\n    print(json.dumps(result, indent=2, sort_keys=True))\n    return 0"
+    },
+    {
+      "analysis": {
+        "calls": [
+          "date",
+          "enumerate",
+          "len",
+          "prepare_features",
+          "print",
+          "read_parquet",
+          "to_pydatetime"
+        ],
+        "io_calls": [
+          {
+            "call": "read_parquet",
+            "expr": "pd.read_parquet(path, engine='pyarrow', filters=[('timestamp', '<', cutoff_value)])",
+            "line": 11
+          }
+        ],
+        "path_literals": [
+          "/",
+          "1h.parquet"
+        ]
+      },
+      "depth": 1,
+      "function": "load_feature_frames",
+      "module": "scripts/research/run_rd26_exit_architecture.py",
+      "source": "def load_feature_frames(\n    *,\n    raw_root: Path,\n    pairs: list[str],\n    cutoff: pd.Timestamp,\n) -> dict[str, pd.DataFrame]:\n    frames: dict[str, pd.DataFrame] = {}\n    cutoff_value = cutoff.to_pydatetime()\n    for index, pair in enumerate(pairs, start=1):\n        path = raw_root / pair / \"1h.parquet\"\n        raw = pd.read_parquet(\n            path,\n            engine=\"pyarrow\",\n            filters=[(\"timestamp\", \"<\", cutoff_value)],\n        )\n        frame = prepare_features(raw, cutoff=cutoff)\n        frames[pair] = frame\n        print(\n            f\"RD26_FEATURE_SOURCE={index}/{len(pairs)}:{pair}:{len(frame)}:cutoff={cutoff.date()}\",\n            flush=True,\n        )\n    return frames"
+    },
+    {
+      "analysis": {
+        "calls": [
+          "append",
+          "encode",
+          "hexdigest",
+          "join",
+          "sha256",
+          "stat"
+        ],
+        "io_calls": [],
+        "path_literals": []
+      },
+      "depth": 1,
+      "function": "output_manifest",
+      "module": "scripts/research/run_rd26_exit_architecture.py",
+      "source": "def output_manifest(output: Path, decision: str) -> dict[str, Any]:\n    files = []\n    for name in OUTPUT_NAMES:\n        path = output / name\n        files.append(\n            {\n                \"path\": name,\n                \"bytes\": path.stat().st_size,\n                \"sha256\": sha256(path),\n            }\n        )\n    deterministic = hashlib.sha256(\n        \"\".join(f\"{item['path']}:{item['sha256']}\\n\" for item in files).encode(\"utf-8\")\n    ).hexdigest()\n    return {\n        \"schema_version\": \"rd26-p1-output-manifest-v1\",\n        \"decision\": decision,\n        \"deterministic_hash\": deterministic,\n        \"files\": files,\n        \"2022_2023_used_for_architecture_selection\": True,\n        \"2024_accessed\": False,\n        \"post_2024_accessed\": False,\n        \"production_authorized\": False,\n    }"
+    },
+    {
+      "analysis": {
+        "calls": [
+          "ArgumentParser",
+          "add_argument"
+        ],
+        "io_calls": [],
+        "path_literals": []
+      },
+      "depth": 1,
+      "function": "parser",
+      "module": "scripts/research/run_rd26_exit_architecture.py",
+      "source": "def parser() -> argparse.ArgumentParser:\n    value = argparse.ArgumentParser()\n    value.add_argument(\"--repo-root\", type=Path, required=True)\n    value.add_argument(\"--raw-root\", type=Path, default=None)\n    value.add_argument(\"--preflight-only\", action=\"store_true\")\n    value.add_argument(\"--execute\", action=\"store_true\")\n    value.add_argument(\"--validate-only\", action=\"store_true\")\n    value.add_argument(\"--expected-freeze-commit\", default=None)\n    return value"
+    },
+    {
+      "analysis": {
+        "calls": [
+          "float",
+          "int",
+          "len",
+          "list",
+          "max",
+          "min",
+          "str"
+        ],
+        "io_calls": [],
+        "path_literals": []
+      },
+      "depth": 1,
+      "function": "report_payload",
+      "module": "scripts/research/run_rd26_exit_architecture.py",
+      "source": "def report_payload(\n    *,\n    run_metrics: pd.DataFrame,\n    concentrations: pd.DataFrame,\n    selection: pd.DataFrame,\n    event_count: int,\n    freeze_commit: str,\n) -> tuple[dict[str, Any], dict[str, Any]]:\n    selected_rows = selection.loc[selection[\"selected\"]]\n    selected_policy = str(selected_rows.iloc[0][\"policy_id\"]) if len(selected_rows) == 1 else None\n\n    policy_summaries: dict[str, dict[str, Any]] = {}\n    for policy_id in POLICIES:\n        stress = run_metrics.loc[\n            (run_metrics[\"policy_id\"] == policy_id)\n            & (run_metrics[\"portfolio_id\"] == \"UNION_FOCUS\")\n            & (run_metrics[\"cost_multiplier\"] == 2.0)\n        ]\n        policy_summaries[policy_id] = {\n            \"worst_universe_2x_net_return\": float(stress[\"net_return\"].min()),\n            \"worst_universe_2x_profit_factor\": float(stress[\"profit_factor\"].min()),\n            \"worst_universe_2x_maximum_drawdown\": float(stress[\"maximum_drawdown\"].max()),\n            \"minimum_2x_trade_count\": int(stress[\"trade_count\"].min()),\n        }\n\n    concentration_trigger = False\n    maximum_largest_winner_share = 0.0\n    if selected_policy is not None:\n        selected_conc = concentrations.loc[\n            (concentrations[\"policy_id\"] == selected_policy)\n            & (concentrations[\"portfolio_id\"] == \"UNION_FOCUS\")\n            & (concentrations[\"cost_multiplier\"] == 2.0)\n        ]\n        maximum_largest_winner_share = float(\n            selected_conc[\"largest_winner_positive_pnl_share\"].max()\n        )\n        concentration_trigger = maximum_largest_winner_share > CONCENTRATION_TRIGGER\n\n    if selected_policy is None:\n        decision = \"RD26_EXIT_ARCHITECTURE_NO_FINALIST_RISK_OR_ROUTER_REDESIGN_REQUIRED\"\n        next_stage = \"RD27_RISK_SIZING_OR_CAPITAL_ROUTER_ARCHITECTURE_REQUIRED\"\n    elif concentration_trigger:\n        decision = \"RD26_EXIT_ARCHITECTURE_SELECTED_CROSS_VENUE_CONTRIBUTION_REVIEW_REQUIRED\"\n        next_stage = \"RD26X_CROSS_VENUE_CONTRIBUTION_REVIEW\"\n    else:\n        decision = \"RD26_EXIT_ARCHITECTURE_SELECTED_2024_CONFIRMATION_AUTHORIZED\"\n        next_stage = \"RD27_CLEAN_2024_INTERNAL_CONFIRMATION\"\n\n    selected_freeze = {\n        \"schema_version\": \"rd26-p1-selected-exit-architecture-freeze-v1\",\n        \"stage\": \"RD26_EXIT_ARCHITECTURE_EXPOSED_ROBUSTNESS_2022_2023\",\n        \"selected_policy\": selected_policy,\n        \"selection_basis\": (\"PASS_ALL_HARD_GATES_THEN_MAXIMIZE_WORST_UNIVERSE_2X_NET_RETURN\"),\n        \"policy_summaries\": policy_summaries,\n        \"cross_venue_contribution_review_required\": concentration_trigger,\n        \"maximum_selected_largest_winner_positive_pnl_share\": (maximum_largest_winner_share),\n        \"freeze_commit\": freeze_commit,\n        \"2022_2023_used_for_architecture_selection\": True,\n        \"2024_accessed\": False,\n        \"post_2024_accessed\": False,\n        \"production_authorized\": False,\n    }\n    report = {\n        \"schema_version\": \"rd26-p1-exit-architecture-robustness-report-v1\",\n        \"stage\": \"RD26_EXIT_ARCHITECTURE_EXPOSED_ROBUSTNESS_2022_2023\",\n        \"status\": \"PASS\",\n        \"decision\": decision,\n        \"next_stage\": next_stage,\n        \"source_commit\": EXPECTED_PARENT,\n        \"freeze_commit\": freeze_commit,\n        \"focus_families\": list(FOCUS_FAMILIES),\n        \"policy_count\": len(POLICIES),\n        \"policies\": list(POLICIES),\n        \"selected_policy\": selected_policy,\n        \"policy_summaries\": policy_summaries,\n        \"signal_event_count_2022_2023\": event_count,\n        \"cross_venue_contribution_review_required\": concentration_trigger,\n        \"2022_2023_used_for_architecture_selection\": True,\n        \"2024_accessed\": False,\n        \"post_2024_accessed\": False,\n        \"production_authorized\": False,\n    }\n    return report, selected_freeze"
+    },
+    {
+      "analysis": {
+        "calls": [
+          "DataFrame",
+          "RunnerError",
+          "append",
+          "concat",
+          "concentration_diagnostics",
+          "copy",
+          "fixed_path_pf1_break_even_multiplier",
+          "from_records",
+          "items",
+          "len",
+          "print",
+          "replay_policy",
+          "standalone_events",
+          "union_events"
+        ],
+        "io_calls": [],
+        "path_literals": []
+      },
+      "depth": 1,
+      "function": "run_all_portfolios",
+      "module": "scripts/research/run_rd26_exit_architecture.py",
+      "source": "def run_all_portfolios(\n    *,\n    events: pd.DataFrame,\n    frames: dict[str, pd.DataFrame],\n) -> tuple[\n    pd.DataFrame,\n    pd.DataFrame,\n    pd.DataFrame,\n    pd.DataFrame,\n    pd.DataFrame,\n    pd.DataFrame,\n]:\n    run_rows: list[dict[str, Any]] = []\n    trade_sets: list[pd.DataFrame] = []\n    daily_sets: list[pd.DataFrame] = []\n    routing_rows: list[dict[str, Any]] = []\n    concentration_rows: list[dict[str, Any]] = []\n    break_even_rows: list[dict[str, Any]] = []\n\n    for policy_id in POLICIES:\n        for universe in (\"C2\", \"D2\", \"E2\"):\n            portfolios = {\n                \"UNION_FOCUS\": union_events(events, universe_id=universe),\n                FAMILY_MOMENTUM_BREAKOUT: standalone_events(\n                    events,\n                    universe_id=universe,\n                    family_id=FAMILY_MOMENTUM_BREAKOUT,\n                ),\n                FAMILY_RELATIVE_STRENGTH_ROTATION: standalone_events(\n                    events,\n                    universe_id=universe,\n                    family_id=FAMILY_RELATIVE_STRENGTH_ROTATION,\n                ),\n            }\n            for portfolio_id, portfolio_events in portfolios.items():\n                base_trade_for_be: pd.DataFrame | None = None\n                for cost_multiplier in COST_MULTIPLIERS:\n                    trades, daily, metrics, counters = replay_policy(\n                        policy_id=policy_id,\n                        portfolio_id=portfolio_id,\n                        universe_id=universe,\n                        cost_multiplier=cost_multiplier,\n                        events=portfolio_events,\n                        frames=frames,\n                    )\n                    run_rows.append(metrics)\n                    if len(trades):\n                        trade_sets.append(trades)\n                    if len(daily):\n                        daily_sets.append(daily)\n                    routing_rows.append(\n                        {\n                            \"policy_id\": policy_id,\n                            \"portfolio_id\": portfolio_id,\n                            \"universe_id\": universe,\n                            \"cost_multiplier\": cost_multiplier,\n                            **counters,\n                        }\n                    )\n                    concentration_rows.append(\n                        {\n                            \"policy_id\": policy_id,\n                            \"portfolio_id\": portfolio_id,\n                            \"universe_id\": universe,\n                            \"cost_multiplier\": cost_multiplier,\n                            **concentration_diagnostics(trades),\n                        }\n                    )\n                    if cost_multiplier == 1.0:\n                        base_trade_for_be = trades.copy()\n                    print(\n                        \"RD26_PORTFOLIO=\"\n                        f\"{policy_id}:{portfolio_id}:{universe}:{cost_multiplier}x:\"\n                        f\"net={metrics['net_return']:.6f}:\"\n                        f\"pf={metrics['profit_factor']:.6f}:\"\n                        f\"dd={metrics['maximum_drawdown']:.6f}:\"\n                        f\"trades={metrics['trade_count']}\",\n                        flush=True,\n                    )\n                if base_trade_for_be is None:\n                    raise RunnerError(\"base-cost trade ledger missing\")\n                break_even_rows.append(\n                    {\n                        \"policy_id\": policy_id,\n                        \"portfolio_id\": portfolio_id,\n                        \"universe_id\": universe,\n                        \"pf1_break_even_cost_multiplier\": (\n                            fixed_path_pf1_break_even_multiplier(base_trade_for_be)\n                        ),\n                        \"method\": (\"BASE_ROUTED_QUANTITIES_AND_FILLS_FIXED_COST_SCALED_UNTIL_PF_1\"),\n                    }\n                )\n\n    run_metrics = pd.DataFrame.from_records(run_rows)\n    trades = pd.concat(trade_sets, ignore_index=True) if trade_sets else pd.DataFrame()\n    daily = pd.concat(daily_sets, ignore_index=True) if daily_sets else pd.DataFrame()\n    routing = pd.DataFrame.from_records(routing_rows)\n    concentrations = pd.DataFrame.from_records(concentration_rows)\n    break_even = pd.DataFrame.from_records(break_even_rows)\n    return run_metrics, trades, daily, routing, concentrations, break_even"
+    },
+    {
+      "analysis": {
+        "calls": [
+          "RunnerError",
+          "compare_focus_signal_equivalence",
+          "git",
+          "is_file",
+          "isoformat",
+          "len",
+          "load_feature_frames",
+          "load_membership",
+          "raw_pairs",
+          "read_csv",
+          "scan_focus_signals",
+          "sha256",
+          "verify_lineage",
+          "write_json"
+        ],
+        "io_calls": [
+          {
+            "call": "read_csv",
+            "expr": "pd.read_csv(repo / RD23_SIGNAL_EVENTS, low_memory=False)",
+            "line": 35
+          }
+        ],
+        "path_literals": [
+          "1h.parquet"
+        ]
+      },
+      "depth": 1,
+      "function": "run_preflight",
+      "module": "scripts/research/run_rd26_exit_architecture.py",
+      "source": "def run_preflight(\n    *,\n    repo: Path,\n    raw_root: Path,\n) -> dict[str, Any]:\n    lineage = verify_lineage(repo)\n    head = git(repo, \"rev-parse\", \"HEAD\")\n    if head != EXPECTED_PARENT:\n        raise RunnerError(f\"RD26 preflight HEAD {head} != expected parent {EXPECTED_PARENT}\")\n\n    membership_path = repo / MEMBERSHIP\n    if not membership_path.is_file():\n        raise RunnerError(\"PIT membership source is missing\")\n    membership = load_membership(membership_path)\n    pairs = raw_pairs(membership_path)\n    if not pairs:\n        raise RunnerError(\"no PIT pairs found\")\n    missing = [pair for pair in pairs if not (raw_root / pair / \"1h.parquet\").is_file()]\n    if missing:\n        raise RunnerError(f\"raw 1h sources missing: {missing[:20]}\")\n\n    features = load_feature_frames(\n        raw_root=raw_root,\n        pairs=pairs,\n        cutoff=PREFLIGHT_CUTOFF,\n    )\n    generated, _funnel = scan_focus_signals(\n        membership=membership,\n        features=features,\n        periods=PREFLIGHT_PERIODS,\n        data_start=PREFLIGHT_START,\n        data_cutoff=PREFLIGHT_CUTOFF,\n        guard_each_period_hours=168,\n    )\n    frozen = pd.read_csv(repo / RD23_SIGNAL_EVENTS, low_memory=False)\n    equivalence = compare_focus_signal_equivalence(generated, frozen)\n\n    audit = {\n        \"schema_version\": \"rd26-p0-rd23-focus-signal-equivalence-audit-v1\",\n        \"stage\": \"RD26_ARCHITECTURE_PREREGISTRATION_PRE_2022_2023\",\n        \"head\": head,\n        \"lineage\": lineage,\n        \"membership_sha256\": sha256(membership_path),\n        \"pair_count\": len(pairs),\n        \"pairs\": pairs,\n        \"signal_equivalence\": equivalence,\n        \"preflight_data_cutoff_exclusive\": PREFLIGHT_CUTOFF.isoformat(),\n        \"2022_2023_accessed\": False,\n        \"2024_accessed\": False,\n        \"post_2024_accessed\": False,\n        \"production_authorized\": False,\n    }\n    write_json(repo / PREFLIGHT_AUDIT, audit)\n    return audit"
+    },
+    {
+      "analysis": {
+        "calls": [
+          "hexdigest",
+          "open",
+          "read",
+          "sha256",
+          "update"
+        ],
+        "io_calls": [
+          {
+            "call": "open",
+            "expr": "path.open('rb')",
+            "line": 3
+          }
+        ],
+        "path_literals": []
+      },
+      "depth": 1,
+      "function": "sha256",
+      "module": "scripts/research/run_rd26_exit_architecture.py",
+      "source": "def sha256(path: Path) -> str:\n    digest = hashlib.sha256()\n    with path.open(\"rb\") as handle:\n        while chunk := handle.read(1024 * 1024):\n            digest.update(chunk)\n    return digest.hexdigest()"
+    },
+    {
+      "analysis": {
+        "calls": [
+          "RunnerError",
+          "any",
+          "bool",
+          "get",
+          "int",
+          "is_file",
+          "isinstance",
+          "len",
+          "load_json",
+          "read_csv",
+          "set",
+          "sha256",
+          "stat",
+          "str",
+          "to_datetime"
+        ],
+        "io_calls": [
+          {
+            "call": "read_csv",
+            "expr": "pd.read_csv(output / 'signal-events-2022-2023.csv', low_memory=False)",
+            "line": 35
+          },
+          {
+            "call": "read_csv",
+            "expr": "pd.read_csv(output / 'trade-ledger.csv', low_memory=False)",
+            "line": 39
+          }
+        ],
+        "path_literals": [
+          "output-manifest.json",
+          "rd26-p1-exit-architecture-robustness-report-v1.json",
+          "signal-events-2022-2023.csv",
+          "trade-ledger.csv"
+        ]
+      },
+      "depth": 1,
+      "function": "validate_outputs",
+      "module": "scripts/research/run_rd26_exit_architecture.py",
+      "source": "def validate_outputs(repo: Path) -> dict[str, Any]:\n    output = repo / OUTPUT\n    manifest_path = output / \"output-manifest.json\"\n    if not manifest_path.is_file():\n        raise RunnerError(\"RD26 output manifest missing\")\n    manifest = load_json(manifest_path)\n    by_name = {\n        str(item[\"path\"]): item for item in manifest.get(\"files\", []) if isinstance(item, dict)\n    }\n    if set(by_name) != set(OUTPUT_NAMES):\n        raise RunnerError(\"RD26 manifest output set drifted\")\n    for name in OUTPUT_NAMES:\n        path = output / name\n        if not path.is_file():\n            raise RunnerError(f\"RD26 output missing: {name}\")\n        item = by_name[name]\n        if path.stat().st_size != int(item[\"bytes\"]):\n            raise RunnerError(f\"RD26 byte-size drift: {name}\")\n        if sha256(path) != str(item[\"sha256\"]):\n            raise RunnerError(f\"RD26 hash drift: {name}\")\n\n    report = load_json(output / \"rd26-p1-exit-architecture-robustness-report-v1.json\")\n    if report.get(\"status\") != \"PASS\":\n        raise RunnerError(\"RD26 report status drifted\")\n    if report.get(\"2022_2023_used_for_architecture_selection\") is not True:\n        raise RunnerError(\"RD26 selection-use flag drifted\")\n    for field in (\n        \"2024_accessed\",\n        \"post_2024_accessed\",\n        \"production_authorized\",\n    ):\n        if report.get(field) is not False:\n            raise RunnerError(f\"RD26 prohibited flag true: {field}\")\n\n    signals = pd.read_csv(output / \"signal-events-2022-2023.csv\", low_memory=False)\n    signal_times = pd.to_datetime(signals[\"timestamp\"], utc=True, errors=\"raise\")\n    if bool((signal_times < DATA_START).any()) or bool((signal_times >= DATA_CUTOFF).any()):\n        raise RunnerError(\"RD26 signal ledger crossed sealed boundary\")\n    trades = pd.read_csv(output / \"trade-ledger.csv\", low_memory=False)\n    if len(trades):\n        exits = pd.to_datetime(trades[\"exit_time\"], utc=True, errors=\"raise\")\n        if bool((exits >= DATA_CUTOFF).any()):\n            raise RunnerError(\"RD26 trade exit crossed into 2024\")\n    return {\n        \"status\": \"PASS\",\n        \"decision\": report[\"decision\"],\n        \"selected_policy\": report[\"selected_policy\"],\n        \"signal_event_count_2022_2023\": len(signals),\n        \"manifest_hash\": sha256(manifest_path),\n        \"2024_accessed\": False,\n    }"
+    },
+    {
+      "analysis": {
+        "calls": [
+          "RunnerError",
+          "get",
+          "git",
+          "is_file",
+          "load_json",
+          "load_membership",
+          "raw_pairs",
+          "sha256",
+          "verify_lineage"
+        ],
+        "io_calls": [],
+        "path_literals": [
+          "1h.parquet"
+        ]
+      },
+      "depth": 1,
+      "function": "verify_execution_inputs",
+      "module": "scripts/research/run_rd26_exit_architecture.py",
+      "source": "def verify_execution_inputs(\n    *,\n    repo: Path,\n    raw_root: Path,\n    expected_freeze_commit: str,\n) -> tuple[list[Any], list[str], dict[str, Any]]:\n    lineage = verify_lineage(repo)\n    head = git(repo, \"rev-parse\", \"HEAD\")\n    if head != expected_freeze_commit:\n        raise RunnerError(f\"RD26 execution HEAD {head} != freeze {expected_freeze_commit}\")\n    audit = load_json(repo / PREFLIGHT_AUDIT)\n    if audit.get(\"signal_equivalence\", {}).get(\"equivalence_passed\") is not True:\n        raise RunnerError(\"pre-freeze RD23 focus signal equivalence did not pass\")\n    if audit.get(\"2022_2023_accessed\") is not False:\n        raise RunnerError(\"pre-freeze audit indicates 2022-2023 access\")\n\n    membership_path = repo / MEMBERSHIP\n    if sha256(membership_path) != audit.get(\"membership_sha256\"):\n        raise RunnerError(\"membership source changed after freeze\")\n    membership = load_membership(membership_path)\n    pairs = raw_pairs(membership_path)\n    if pairs != audit.get(\"pairs\"):\n        raise RunnerError(\"PIT pair set changed after freeze\")\n    missing = [pair for pair in pairs if not (raw_root / pair / \"1h.parquet\").is_file()]\n    if missing:\n        raise RunnerError(f\"raw 1h sources missing: {missing[:20]}\")\n    return membership, pairs, lineage"
+    },
+    {
+      "analysis": {
+        "calls": [
+          "dumps",
+          "mkdir",
+          "write_text"
+        ],
+        "io_calls": [],
+        "path_literals": []
+      },
+      "depth": 1,
+      "function": "write_json",
+      "module": "scripts/research/run_rd26_exit_architecture.py",
+      "source": "def write_json(path: Path, value: Any) -> None:\n    path.parent.mkdir(parents=True, exist_ok=True)\n    path.write_text(\n        json.dumps(\n            value,\n            indent=2,\n            sort_keys=True,\n            ensure_ascii=False,\n            allow_nan=False,\n            default=str,\n        )\n        + \"\\n\",\n        encoding=\"utf-8\",\n        newline=\"\\n\",\n    )"
+    },
+    {
+      "analysis": {
+        "calls": [
+          "RunnerError",
+          "join",
+          "run",
+          "strip"
+        ],
+        "io_calls": [],
+        "path_literals": []
+      },
+      "depth": 2,
+      "function": "git",
+      "module": "scripts/research/run_rd26_exit_architecture.py",
+      "source": "def git(repo: Path, *args: str) -> str:\n    completed = subprocess.run(\n        [\"git\", *args],\n        cwd=repo,\n        capture_output=True,\n        text=True,\n        encoding=\"utf-8\",\n        errors=\"replace\",\n        check=False,\n    )\n    if completed.returncode != 0:\n        raise RunnerError(f\"git {' '.join(args)} failed: {completed.stderr}\")\n    return completed.stdout.strip()"
+    },
+    {
+      "analysis": {
+        "calls": [
+          "load_membership",
+          "sorted"
+        ],
+        "io_calls": [],
+        "path_literals": []
+      },
+      "depth": 2,
+      "function": "raw_pairs",
+      "module": "scripts/research/run_rd26_exit_architecture.py",
+      "source": "def raw_pairs(membership_path: Path) -> list[str]:\n    membership = load_membership(membership_path)\n    return sorted({pair for snapshot in membership for pair, _rank in snapshot.members})"
+    },
+    {
+      "analysis": {
+        "calls": [
+          "RunnerError",
+          "get",
+          "is_file",
+          "list",
+          "load_json",
+          "sha256",
+          "validate_constants"
+        ],
+        "io_calls": [],
+        "path_literals": []
+      },
+      "depth": 2,
+      "function": "verify_lineage",
+      "module": "scripts/research/run_rd26_exit_architecture.py",
+      "source": "def verify_lineage(repo: Path) -> dict[str, Any]:\n    validate_constants()\n    diagnosis_path = repo / RD25_DIAGNOSIS\n    if not diagnosis_path.is_file():\n        raise RunnerError(\"corrected RD25 diagnosis is missing\")\n    if sha256(diagnosis_path) != RD25_DIAGNOSIS_SHA256:\n        raise RunnerError(\"corrected RD25 diagnosis hash drifted\")\n    diagnosis = load_json(diagnosis_path)\n    if diagnosis.get(\"decision\") != (\n        \"RD25_DIAGNOSIS_COMPLETE_ARCHITECTURE_PREREGISTRATION_REQUIRED\"\n    ):\n        raise RunnerError(\"RD25 decision does not authorize RD26\")\n    if diagnosis.get(\"dd_only_failure_families\") != list(FOCUS_FAMILIES):\n        raise RunnerError(\"RD25 corrected focus-family classification drifted\")\n    if diagnosis.get(\"multi_failure_families\") != [\n        \"MOMENTUM_ACCELERATION\",\n        \"VOLATILITY_EXPANSION\",\n    ]:\n        raise RunnerError(\"RD25 corrected multi-failure classification drifted\")\n    for field in (\n        \"2022_2023_accessed\",\n        \"2024_accessed\",\n        \"post_2024_accessed\",\n        \"production_authorized\",\n    ):\n        if diagnosis.get(field) is not False:\n            raise RunnerError(f\"RD25 prohibited flag is true: {field}\")\n\n    signal_path = repo / RD23_SIGNAL_EVENTS\n    if not signal_path.is_file():\n        raise RunnerError(\"frozen RD23 signal ledger is missing\")\n    if sha256(signal_path) != RD23_SIGNAL_EVENTS_SHA256:\n        raise RunnerError(\"frozen RD23 signal ledger hash drifted\")\n\n    return {\n        \"source_commit\": EXPECTED_PARENT,\n        \"rd25_diagnosis_sha256\": RD25_DIAGNOSIS_SHA256,\n        \"rd23_signal_events_sha256\": RD23_SIGNAL_EVENTS_SHA256,\n        \"focus_families\": list(FOCUS_FAMILIES),\n        \"policies\": list(POLICIES),\n    }"
+    },
+    {
+      "analysis": {
+        "calls": [
+          "RunnerError",
+          "isinstance",
+          "loads",
+          "read_text"
+        ],
+        "io_calls": [],
+        "path_literals": []
+      },
+      "depth": 2,
+      "function": "load_json",
+      "module": "scripts/research/run_rd26_exit_architecture.py",
+      "source": "def load_json(path: Path) -> dict[str, Any]:\n    value = json.loads(path.read_text(encoding=\"utf-8-sig\"))\n    if not isinstance(value, dict):\n        raise RunnerError(f\"JSON object expected: {path}\")\n    return value"
+    }
+  ],
+  "mixed_csv_data_rows_read": false,
+  "occurrence_count": 9,
+  "occurrences": [
+    {
+      "analysis": {},
+      "context": "RD25_DIAGNOSIS_SHA256 = \"e9102397d6337801c163d4e78b5f365a7ea79f47b2db4469c67da04a537bc69e\"\nRD23_SIGNAL_EVENTS = Path(\"data/research/rd23_p2_runtime/signal-events.csv\")\nRD23_SIGNAL_EVENTS_SHA256 = \"cdd6f078a5851a38be3f44722dcca7d6ccccb771b4647e9b467d14de3fc9d264\"\nMEMBERSHIP = Path(\"data/research/rd18_p3x_a3b_runtime/effective-operational-membership.csv\")\nPROTOCOL = Path(\"data/research/rd26_p1/rd26-p1-exit-architecture-robustness-protocol-v1.json\")\nPREFLIGHT_AUDIT = Path(\"data/research/rd26_p0_runtime/rd23-focus-signal-equivalence-audit-v1.json\")\nOUTPUT = Path(\"data/research/rd26_p1_runtime\")\nDEFAULT_RAW_ROOT = Path(\"data/raw/rd16b/kucoin\")\n\nOUTPUT_NAMES = (\n    \"input-and-conformance-audit.json\",\n    \"signal-events-2022-2023.csv\",\n    \"signal-funnel-2022-2023.csv\",\n    \"portfolio-run-metrics.csv\",\n    \"portfolio-period-metrics.csv\",\n    \"routing-summary.csv\",\n    \"trade-ledger.csv\",\n    \"daily-equity.csv\",\n    \"concentration-diagnostics.csv\",\n    \"break-even-cost-multiplier.csv\",\n    \"exit-reason-summary.csv\",\n    \"hard-gate-evaluation.csv\",\n    \"policy-selection.csv\",\n    \"selected-exit-architecture-freeze.json\",",
+      "function": null,
+      "function_source": null,
+      "line": 60,
+      "path": "scripts/research/run_rd26_exit_architecture.py",
+      "role": "REFERENCE",
+      "sha256": "9C096C6E7C4784D9B91A7EFC55FA85F46755B2D850B78E7A5E90980294DC9ACE"
+    },
+    {
+      "analysis": {
+        "calls": [
+          "RunnerError",
+          "any",
+          "bool",
+          "get",
+          "int",
+          "is_file",
+          "isinstance",
+          "len",
+          "load_json",
+          "read_csv",
+          "set",
+          "sha256",
+          "stat",
+          "str",
+          "to_datetime"
+        ],
+        "io_calls": [
+          {
+            "call": "read_csv",
+            "expr": "pd.read_csv(output / 'signal-events-2022-2023.csv', low_memory=False)",
+            "line": 35
+          },
+          {
+            "call": "read_csv",
+            "expr": "pd.read_csv(output / 'trade-ledger.csv', low_memory=False)",
+            "line": 39
+          }
+        ],
+        "path_literals": [
+          "output-manifest.json",
+          "rd26-p1-exit-architecture-robustness-report-v1.json",
+          "signal-events-2022-2023.csv",
+          "trade-ledger.csv"
+        ]
+      },
+      "context": "        raise RunnerError(\"RD26 report status drifted\")\n    if report.get(\"2022_2023_used_for_architecture_selection\") is not True:\n        raise RunnerError(\"RD26 selection-use flag drifted\")\n    for field in (\n        \"2024_accessed\",\n        \"post_2024_accessed\",\n        \"production_authorized\",\n    ):\n        if report.get(field) is not False:\n            raise RunnerError(f\"RD26 prohibited flag true: {field}\")\n\n    signals = pd.read_csv(output / \"signal-events-2022-2023.csv\", low_memory=False)\n    signal_times = pd.to_datetime(signals[\"timestamp\"], utc=True, errors=\"raise\")\n    if bool((signal_times < DATA_START).any()) or bool((signal_times >= DATA_CUTOFF).any()):\n        raise RunnerError(\"RD26 signal ledger crossed sealed boundary\")\n    trades = pd.read_csv(output / \"trade-ledger.csv\", low_memory=False)\n    if len(trades):\n        exits = pd.to_datetime(trades[\"exit_time\"], utc=True, errors=\"raise\")\n        if bool((exits >= DATA_CUTOFF).any()):\n            raise RunnerError(\"RD26 trade exit crossed into 2024\")\n    return {\n        \"status\": \"PASS\",\n        \"decision\": report[\"decision\"],\n        \"selected_policy\": report[\"selected_policy\"],",
+      "function": "validate_outputs",
+      "function_source": "def validate_outputs(repo: Path) -> dict[str, Any]:\n    output = repo / OUTPUT\n    manifest_path = output / \"output-manifest.json\"\n    if not manifest_path.is_file():\n        raise RunnerError(\"RD26 output manifest missing\")\n    manifest = load_json(manifest_path)\n    by_name = {\n        str(item[\"path\"]): item for item in manifest.get(\"files\", []) if isinstance(item, dict)\n    }\n    if set(by_name) != set(OUTPUT_NAMES):\n        raise RunnerError(\"RD26 manifest output set drifted\")\n    for name in OUTPUT_NAMES:\n        path = output / name\n        if not path.is_file():\n            raise RunnerError(f\"RD26 output missing: {name}\")\n        item = by_name[name]\n        if path.stat().st_size != int(item[\"bytes\"]):\n            raise RunnerError(f\"RD26 byte-size drift: {name}\")\n        if sha256(path) != str(item[\"sha256\"]):\n            raise RunnerError(f\"RD26 hash drift: {name}\")\n\n    report = load_json(output / \"rd26-p1-exit-architecture-robustness-report-v1.json\")\n    if report.get(\"status\") != \"PASS\":\n        raise RunnerError(\"RD26 report status drifted\")\n    if report.get(\"2022_2023_used_for_architecture_selection\") is not True:\n        raise RunnerError(\"RD26 selection-use flag drifted\")\n    for field in (\n        \"2024_accessed\",\n        \"post_2024_accessed\",\n        \"production_authorized\",\n    ):\n        if report.get(field) is not False:\n            raise RunnerError(f\"RD26 prohibited flag true: {field}\")\n\n    signals = pd.read_csv(output / \"signal-events-2022-2023.csv\", low_memory=False)\n    signal_times = pd.to_datetime(signals[\"timestamp\"], utc=True, errors=\"raise\")\n    if bool((signal_times < DATA_START).any()) or bool((signal_times >= DATA_CUTOFF).any()):\n        raise RunnerError(\"RD26 signal ledger crossed sealed boundary\")\n    trades = pd.read_csv(output / \"trade-ledger.csv\", low_memory=False)\n    if len(trades):\n        exits = pd.to_datetime(trades[\"exit_time\"], utc=True, errors=\"raise\")\n        if bool((exits >= DATA_CUTOFF).any()):\n            raise RunnerError(\"RD26 trade exit crossed into 2024\")\n    return {\n        \"status\": \"PASS\",\n        \"decision\": report[\"decision\"],\n        \"selected_policy\": report[\"selected_policy\"],\n        \"signal_event_count_2022_2023\": len(signals),\n        \"manifest_hash\": sha256(manifest_path),\n        \"2024_accessed\": False,\n    }",
+      "line": 543,
+      "path": "scripts/research/run_rd26_exit_architecture.py",
+      "role": "READER",
+      "sha256": "9C096C6E7C4784D9B91A7EFC55FA85F46755B2D850B78E7A5E90980294DC9ACE"
+    },
+    {
+      "analysis": {
+        "calls": [
+          "RunnerError",
+          "dumps",
+          "evaluate_policy_hard_gates",
+          "exit_reason_summary",
+          "filter_robustness_events",
+          "int",
+          "isoformat",
+          "items",
+          "len",
+          "list",
+          "load_feature_frames",
+          "mkdir",
+          "output_manifest",
+          "parse_args",
+          "parser",
+          "period_metrics",
+          "print",
+          "report_payload",
+          "resolve",
+          "run_all_portfolios",
+          "run_preflight",
+          "scan_focus_signals",
+          "sha256",
+          "sum",
+          "to_csv",
+          "validate_outputs",
+          "verify_execution_inputs",
+          "write_json"
+        ],
+        "io_calls": [
+          {
+            "call": "to_csv",
+            "expr": "events.to_csv(output / 'signal-events-2022-2023.csv', index=False, lineterminator='\\n')",
+            "line": 89
+          },
+          {
+            "call": "to_csv",
+            "expr": "funnel.to_csv(output / 'signal-funnel-2022-2023.csv', index=False, lineterminator='\\n')",
+            "line": 94
+          },
+          {
+            "call": "to_csv",
+            "expr": "run_metrics.to_csv(output / 'portfolio-run-metrics.csv', index=False, lineterminator='\\n')",
+            "line": 99
+          },
+          {
+            "call": "to_csv",
+            "expr": "periods.to_csv(output / 'portfolio-period-metrics.csv', index=False, lineterminator='\\n')",
+            "line": 104
+          },
+          {
+            "call": "to_csv",
+            "expr": "routing.to_csv(output / 'routing-summary.csv', index=False, lineterminator='\\n')",
+            "line": 109
+          },
+          {
+            "call": "to_csv",
+            "expr": "trades.to_csv(output / 'trade-ledger.csv', index=False, lineterminator='\\n')",
+            "line": 114
+          },
+          {
+            "call": "to_csv",
+            "expr": "daily.to_csv(output / 'daily-equity.csv', index=False, lineterminator='\\n')",
+            "line": 119
+          },
+          {
+            "call": "to_csv",
+            "expr": "concentrations.to_csv(output / 'concentration-diagnostics.csv', index=False, lineterminator='\\n')",
+            "line": 124
+          },
+          {
+            "call": "to_csv",
+            "expr": "break_even.to_csv(output / 'break-even-cost-multiplier.csv', index=False, lineterminator='\\n')",
+            "line": 129
+          },
+          {
+            "call": "to_csv",
+            "expr": "reasons.to_csv(output / 'exit-reason-summary.csv', index=False, lineterminator='\\n')",
+            "line": 134
+          },
+          {
+            "call": "to_csv",
+            "expr": "gates.to_csv(output / 'hard-gate-evaluation.csv', index=False, lineterminator='\\n')",
+            "line": 139
+          },
+          {
+            "call": "to_csv",
+            "expr": "selection.to_csv(output / 'policy-selection.csv', index=False, lineterminator='\\n')",
+            "line": 144
+          }
+        ],
+        "path_literals": [
+          "break-even-cost-multiplier.csv",
+          "concentration-diagnostics.csv",
+          "daily-equity.csv",
+          "exit-reason-summary.csv",
+          "hard-gate-evaluation.csv",
+          "input-and-conformance-audit.json",
+          "output-manifest.json",
+          "policy-selection.csv",
+          "portfolio-period-metrics.csv",
+          "portfolio-run-metrics.csv",
+          "rd26-p1-exit-architecture-robustness-report-v1.json",
+          "routing-summary.csv",
+          "selected-exit-architecture-freeze.json",
+          "signal-events-2022-2023.csv",
+          "signal-funnel-2022-2023.csv",
+          "trade-ledger.csv"
+        ]
+      },
+      "context": "        break_even=break_even,\n    )\n    report, selected_freeze = report_payload(\n        run_metrics=run_metrics,\n        concentrations=concentrations,\n        selection=selection,\n        event_count=len(events),\n        freeze_commit=args.expected_freeze_commit,\n    )\n\n    events.to_csv(\n        output / \"signal-events-2022-2023.csv\",\n        index=False,\n        lineterminator=\"\\n\",\n    )\n    funnel.to_csv(\n        output / \"signal-funnel-2022-2023.csv\",\n        index=False,\n        lineterminator=\"\\n\",\n    )\n    run_metrics.to_csv(\n        output / \"portfolio-run-metrics.csv\",\n        index=False,\n        lineterminator=\"\\n\",",
+      "function": "main",
+      "function_source": "def main() -> int:\n    args = parser().parse_args()\n    repo = args.repo_root.resolve()\n    raw_root = (\n        args.raw_root.resolve()\n        if args.raw_root is not None\n        else (repo / DEFAULT_RAW_ROOT).resolve()\n    )\n    mode_count = sum(\n        int(value) for value in (args.preflight_only, args.execute, args.validate_only)\n    )\n    if mode_count != 1:\n        raise RunnerError(\"choose exactly one runner mode\")\n\n    if args.validate_only:\n        print(json.dumps(validate_outputs(repo), indent=2, sort_keys=True))\n        return 0\n\n    if args.preflight_only:\n        audit = run_preflight(repo=repo, raw_root=raw_root)\n        print(json.dumps(audit, indent=2, sort_keys=True))\n        return 0\n\n    if not args.expected_freeze_commit:\n        raise RunnerError(\"--expected-freeze-commit is required for execution\")\n    membership, pairs, lineage = verify_execution_inputs(\n        repo=repo,\n        raw_root=raw_root,\n        expected_freeze_commit=args.expected_freeze_commit,\n    )\n    frames = load_feature_frames(\n        raw_root=raw_root,\n        pairs=pairs,\n        cutoff=DATA_CUTOFF,\n    )\n    events, funnel = scan_focus_signals(\n        membership=membership,\n        features=frames,\n        periods=ROBUSTNESS_PERIODS,\n        data_start=DATA_START,\n        data_cutoff=DATA_CUTOFF,\n        guard_each_period_hours=None,\n    )\n    events = filter_robustness_events(events)\n\n    output = repo / OUTPUT\n    output.mkdir(parents=True, exist_ok=False)\n    audit = {\n        \"schema_version\": \"rd26-p1-input-conformance-audit-v1\",\n        \"source_commit\": EXPECTED_PARENT,\n        \"freeze_commit\": args.expected_freeze_commit,\n        \"lineage\": lineage,\n        \"preflight_audit_sha256\": sha256(repo / PREFLIGHT_AUDIT),\n        \"membership_sha256\": sha256(repo / MEMBERSHIP),\n        \"pair_count\": len(pairs),\n        \"pairs\": pairs,\n        \"focus_families\": list(FOCUS_FAMILIES),\n        \"policies\": list(POLICIES),\n        \"selection_periods\": {\n            name: [start.isoformat(), end.isoformat()]\n            for name, (start, end) in ROBUSTNESS_PERIODS.items()\n        },\n        \"2022_2023_used_for_architecture_selection\": True,\n        \"2024_accessed\": False,\n        \"post_2024_accessed\": False,\n        \"production_authorized\": False,\n    }\n    write_json(output / \"input-and-conformance-audit.json\", audit)\n\n    run_metrics, trades, daily, routing, concentrations, break_even = run_all_portfolios(\n        events=events, frames=frames\n    )\n    periods = period_metrics(trades)\n    reasons = exit_reason_summary(trades)\n    gates, selection = evaluate_policy_hard_gates(\n        run_metrics=run_metrics,\n        periods=periods,\n        concentrations=concentrations,\n        break_even=break_even,\n    )\n    report, selected_freeze = report_payload(\n        run_metrics=run_metrics,\n        concentrations=concentrations,\n        selection=selection,\n        event_count=len(events),\n        freeze_commit=args.expected_freeze_commit,\n    )\n\n    events.to_csv(\n        output / \"signal-events-2022-2023.csv\",\n        index=False,\n        lineterminator=\"\\n\",\n    )\n    funnel.to_csv(\n        output / \"signal-funnel-2022-2023.csv\",\n        index=False,\n        lineterminator=\"\\n\",\n    )\n    run_metrics.to_csv(\n        output / \"portfolio-run-metrics.csv\",\n        index=False,\n        lineterminator=\"\\n\",\n    )\n    periods.to_csv(\n        output / \"portfolio-period-metrics.csv\",\n        index=False,\n        lineterminator=\"\\n\",\n    )\n    routing.to_csv(\n        output / \"routing-summary.csv\",\n        index=False,\n        lineterminator=\"\\n\",\n    )\n    trades.to_csv(\n        output / \"trade-ledger.csv\",\n        index=False,\n        lineterminator=\"\\n\",\n    )\n    daily.to_csv(\n        output / \"daily-equity.csv\",\n        index=False,\n        lineterminator=\"\\n\",\n    )\n    concentrations.to_csv(\n        output / \"concentration-diagnostics.csv\",\n        index=False,\n        lineterminator=\"\\n\",\n    )\n    break_even.to_csv(\n        output / \"break-even-cost-multiplier.csv\",\n        index=False,\n        lineterminator=\"\\n\",\n    )\n    reasons.to_csv(\n        output / \"exit-reason-summary.csv\",\n        index=False,\n        lineterminator=\"\\n\",\n    )\n    gates.to_csv(\n        output / \"hard-gate-evaluation.csv\",\n        index=False,\n        lineterminator=\"\\n\",\n    )\n    selection.to_csv(\n        output / \"policy-selection.csv\",\n        index=False,\n        lineterminator=\"\\n\",\n    )\n    write_json(output / \"selected-exit-architecture-freeze.json\", selected_freeze)\n    write_json(\n        output / \"rd26-p1-exit-architecture-robustness-report-v1.json\",\n        report,\n    )\n    write_json(\n        output / \"output-manifest.json\",\n        output_manifest(output, report[\"decision\"]),\n    )\n\n    result = validate_outputs(repo)\n    print(json.dumps(result, indent=2, sort_keys=True))\n    return 0",
+      "line": 651,
+      "path": "scripts/research/run_rd26_exit_architecture.py",
+      "role": "WRITER",
+      "sha256": "9C096C6E7C4784D9B91A7EFC55FA85F46755B2D850B78E7A5E90980294DC9ACE"
+    },
+    {
+      "analysis": {},
+      "context": "    \"rd27-p0-adaptive-position-lifecycle-brain-protocol-v1.json\"\n)\nPROTOCOL_SHA256 = \"82e19cd9f996f0592614f4b56de7dd1bbd13f96d6cf378ae182d2726b18e3143\"\nP0B_AUDIT = Path(\n    \"data/research/rd27_p0b/\"\n    \"rd27-p0b-causal-state-engine-audit-v1.json\"\n)\nP0B_AUDIT_SHA256 = \"1e3b68bf9cb9b50aaef4b1cf53e224a3634732e81d4fc74db999a5eac1fa3773\"\nSTATE_ENGINE = Path(\"src/spotbot/research/rd27_adaptive_lifecycle.py\")\nSTATE_ENGINE_SHA256 = \"ee205cda74d70a530734bbfb4843c2dbfc8bf950122254aa2aceb8766a90f9ad\"\n\nRD26_SIGNAL_EVENTS = Path(\"data/research/rd26_p1_runtime/signal-events-2022-2023.csv\")\nRD26_SIGNAL_EVENTS_SHA256 = \"6462f576cee9681751368a7755d3ca51ebf945ced54ea7b7f18b47bc469ba725\"\nEXPECTED_SIGNAL_EVENT_COUNT = 7073\nRD26_RUN_METRICS = Path(\"data/research/rd26_p1_runtime/portfolio-run-metrics.csv\")\n\nDEFAULT_RAW_ROOT = Path(\"data/raw/rd16b/kucoin\")\nOUTPUT = Path(\"data/research/rd27_p1_runtime\")\n\nOUTPUT_NAMES = (\n    \"input-and-conformance-audit.json\",\n    \"market-state-summary.csv\",\n    \"portfolio-run-metrics.csv\",\n    \"portfolio-period-metrics.csv\",",
+      "function": null,
+      "function_source": null,
+      "line": 66,
+      "path": "scripts/research/run_rd27_lifecycle_ablation.py",
+      "role": "REFERENCE",
+      "sha256": "7DFC388F3BF8EF6EFA16E0640CF924158999A9923674C7701B8919872755CBB5"
+    },
+    {
+      "analysis": {},
+      "context": "PROTOCOL = Path(\"data/research/rd28_p0/rd28-p0-evidence-gated-lifecycle-redesign-protocol-v1.json\")\nPROTOCOL_SHA256 = \"65ddf7ec98320d305d3dc59906539217821a4af935f672c5ea839a367f8c0df7\"\nP0B_AUDIT = Path(\"data/research/rd28_p0b/rd28-p0b-evidence-gated-lifecycle-engine-audit-v1.json\")\nP0B_AUDIT_SHA256 = \"bd171a39f189c86ca110303859480f3bbcc70f0f511558123d1aab66b7e89b1e\"\nP0C_AUDIT = Path(\"data/research/rd28_p0c/rd28-p0c-portfolio-replay-integration-audit-v1.json\")\nP0C_AUDIT_SHA256 = \"ca89da00948f583fc9237d17fd550145e6884ef19531ab2492818cc37fb1368e\"\nENGINE = Path(\"src/spotbot/research/rd28_evidence_gated_lifecycle.py\")\nENGINE_SHA256 = \"cf5fc2ce83db12aec3a9f4d43039e628898f4cd70537e571a0367de62df1b510\"\nREPLAY = Path(\"src/spotbot/research/rd28_lifecycle_replay.py\")\nREPLAY_SHA256 = \"4ad1ead99210ef0f27cc4f42754a554b647c3fc799c636ce4686c7e0bdaa149e\"\n\nRD26_SIGNAL_EVENTS = Path(\"data/research/rd26_p1_runtime/signal-events-2022-2023.csv\")\nRD26_SIGNAL_EVENTS_SHA256 = \"6462f576cee9681751368a7755d3ca51ebf945ced54ea7b7f18b47bc469ba725\"\nEXPECTED_SIGNAL_EVENT_COUNT = 7073\nRD27_RUN_METRICS = Path(\"data/research/rd27_p1_runtime/portfolio-run-metrics.csv\")\n\nDEFAULT_RAW_ROOT = Path(\"data/raw/rd16b/kucoin\")\nOUTPUT = Path(\"data/research/rd28_p1_runtime\")\n\nOUTPUT_NAMES = (\n    \"input-and-conformance-audit.json\",\n    \"market-state-summary.csv\",\n    \"portfolio-run-metrics.csv\",\n    \"portfolio-period-metrics.csv\",",
+      "function": null,
+      "function_source": null,
+      "line": 74,
+      "path": "scripts/research/run_rd28_evidence_gated_lifecycle.py",
+      "role": "REFERENCE",
+      "sha256": "2DB133BDD7E4ED8E7BB763842E9FD4D4CEEF4BD92027E195A92031399FA3FEAF"
+    },
+    {
+      "analysis": {},
+      "context": "P0B_AUDIT_SHA256 = \"07c7ba7c1762b6539b9921be3d736e332609c1d6be494a7741f5a2019bf575e9\"\nP0C_AUDIT = Path(\"data/research/rd29_p0c/rd29-p0c-thesis-portfolio-replay-audit-v1.json\")\nP0C_AUDIT_SHA256 = \"3b92f57b87d90a91d8e85fab480bb00f7377189f0730151d70e7cad7531fe10e\"\n\nENGINE = Path(\"src/spotbot/research/rd29_thesis_context.py\")\nENGINE_SHA256 = \"53e189efd8eabe7b8f3560077e11c2d3dc9757229b6ec6553e501142ad90f2c4\"\nREPLAY = Path(\"src/spotbot/research/rd29_thesis_replay.py\")\nREPLAY_SHA256 = \"c499946623cfde87812bd63442bd9d67fe7baa3ef7de55bfb83355140984144b\"\nMEMBERSHIP = Path(\"data/research/rd18_p3x_a3b_runtime/effective-operational-membership.csv\")\nMEMBERSHIP_SHA256 = \"f7d6012ce8cd691583b9b6276ddf36371bfe0bbd9b28f810b676ad0177fb559e\"\n\nRD26_SIGNAL_EVENTS = Path(\"data/research/rd26_p1_runtime/signal-events-2022-2023.csv\")\nRD26_SIGNAL_EVENTS_SHA256 = \"6462f576cee9681751368a7755d3ca51ebf945ced54ea7b7f18b47bc469ba725\"\nEXPECTED_SIGNAL_EVENT_COUNT = 7073\nRD28_RUN_METRICS = Path(\"data/research/rd28_p1_runtime/portfolio-run-metrics.csv\")\n\nDEFAULT_RAW_ROOT = Path(\"data/raw/rd16b/kucoin\")\nOUTPUT = Path(\"data/research/rd29_p1_runtime\")\n\nOUTPUT_NAMES = (\n    \"input-and-conformance-audit.json\",\n    \"market-state-summary.csv\",\n    \"portfolio-run-metrics.csv\",\n    \"portfolio-period-metrics.csv\",",
+      "function": null,
+      "function_source": null,
+      "line": 79,
+      "path": "scripts/research/run_rd29_thesis_confidence_lifecycle.py",
+      "role": "REFERENCE",
+      "sha256": "AECEDDE051C0F4C25882591FB441A3AB69EE2FA22AF0253789E7B1B3667EC434"
+    },
+    {
+      "analysis": {},
+      "context": "\nSTATE_ENGINE = Path(\"src/spotbot/research/rd30_family_specialist_state.py\")\nSTATE_ENGINE_SHA256 = \"648536ceb36c01d0a759d99c142a8fe0e464e40996f1faaafe9300891790bdc1\"\nREPLAY = Path(\"src/spotbot/research/rd30_replacement_replay.py\")\nREPLAY_SHA256 = \"169521bf5a684e10fe17000463fc7a816ef9a5917a5313af5dd6509d0aa47606\"\nREPLAY_TEST = Path(\"tests/research/test_rd30_replacement_replay.py\")\nREPLAY_TEST_SHA256 = \"8b13e9b66c189f90e883ebd4f0daa8f0fcf63723da9e373b8dfe6e07a07fafac\"\n\nMEMBERSHIP = Path(\"data/research/rd18_p3x_a3b_runtime/effective-operational-membership.csv\")\nMEMBERSHIP_SHA256 = \"f7d6012ce8cd691583b9b6276ddf36371bfe0bbd9b28f810b676ad0177fb559e\"\n\nRD26_SIGNAL_EVENTS = Path(\"data/research/rd26_p1_runtime/signal-events-2022-2023.csv\")\nRD26_SIGNAL_EVENTS_SHA256 = \"6462f576cee9681751368a7755d3ca51ebf945ced54ea7b7f18b47bc469ba725\"\nEXPECTED_SIGNAL_EVENT_COUNT = 7073\n\nRD29_RUN_METRICS = Path(\"data/research/rd29_p1_runtime/portfolio-run-metrics.csv\")\n\nDEFAULT_RAW_ROOT = Path(\"data/raw/rd16b/kucoin\")\nOUTPUT = Path(\"data/research/rd30_p1_runtime\")\n\nOUTPUT_NAMES = (\n    \"input-and-conformance-audit.json\",\n    \"market-state-summary.csv\",\n    \"portfolio-run-metrics.csv\",",
+      "function": null,
+      "function_source": null,
+      "line": 91,
+      "path": "scripts/research/run_rd30_family_specialist_replacement_aware.py",
+      "role": "REFERENCE",
+      "sha256": "C6CDEF9F0C3A086FD1091E4A9168F6949E28B0A3E16AB8E80E3D6F12B76CA561"
+    },
+    {
+      "analysis": {},
+      "context": "GOVERNOR_TEST_SHA256 = \"ea0b32e75c77db573dd0ce7ba32c89bf8334a5546e3455043569273aee55bf5f\"\n\nREPLAY = Path(\"src/spotbot/research/rd31_regime_governed_replay.py\")\nREPLAY_SHA256 = \"cf979223bf53141ad715ff6d4e79ad394653a7a3e42e546b9e43424a42dc7f4c\"\n\nREPLAY_TEST = Path(\"tests/research/test_rd31_regime_governed_replay.py\")\nREPLAY_TEST_SHA256 = \"46ce66ff1ef7f1eedda07c225d31e03891aebf612250e349364a4f77a87763b4\"\n\nMEMBERSHIP = Path(\"data/research/rd18_p3x_a3b_runtime/effective-operational-membership.csv\")\nMEMBERSHIP_SHA256 = \"f7d6012ce8cd691583b9b6276ddf36371bfe0bbd9b28f810b676ad0177fb559e\"\n\nRD26_SIGNAL_EVENTS = Path(\"data/research/rd26_p1_runtime/signal-events-2022-2023.csv\")\nRD26_SIGNAL_EVENTS_SHA256 = \"6462f576cee9681751368a7755d3ca51ebf945ced54ea7b7f18b47bc469ba725\"\nEXPECTED_SIGNAL_EVENT_COUNT = 7073\n\nRD30_RUN_METRICS = Path(\"data/research/rd30_p1_runtime/portfolio-run-metrics.csv\")\nRD30_REPORT = Path(\n    \"data/research/rd30_p1_runtime/rd30-p1-family-specialist-replacement-aware-report-v1.json\"\n)\nRD30_REPORT_SHA256 = \"e54c2aaf96c5a8c327cae39e1945cc90c867a39c880e6145263562583593ee15\"\n\nDEFAULT_RAW_ROOT = Path(\"data/raw/rd16b/kucoin\")\nOUTPUT = Path(\"data/research/rd31_p1_runtime\")\n",
+      "function": null,
+      "function_source": null,
+      "line": 117,
+      "path": "scripts/research/run_rd31_market_regime_admission_governor.py",
+      "role": "REFERENCE",
+      "sha256": "3B6D938093B4F00883A3665399CBEA01FD892E2B610FC7F4B2EBA01F8F51457B"
+    },
+    {
+      "analysis": {},
+      "context": "    \"target-censoring-preregistration-v1.json\"\n)\nP1_PROTOCOL_BLOB = \"3f0d56b6beca1fda481c65dac8fc84cb120bd073\"\nP1_PROTOCOL_SHA256 = \"fb6924739f9d2ec339e5063c0abe13e59a82866581fea269224d1a9069fa0f18\"\nP1_AUDIT = Path(\"data/research/rd41_p1/rd41-p1-preregistration-audit-v1.json\")\nP1_AUDIT_BLOB = \"9b1dd7166dc3c9458a29cadde46b278ae2b5d610\"\n\nRD32_TRADES = Path(\"data/research/rd32_p3_runtime/trade-ledger.csv\")\nRD32_TRADES_BLOB = \"6749de85cb14733388e0f76a6557124d3212398b\"\nRD32_TRADES_SHA256 = \"07f49e0e9235f736f54ee9dd59142c16fc4e7b99e83781b1ee26b9338def117e\"\n\nRD26_SIGNALS = Path(\"data/research/rd26_p1_runtime/signal-events-2022-2023.csv\")\nRD26_SIGNALS_SHA256 = \"6462f576cee9681751368a7755d3ca51ebf945ced54ea7b7f18b47bc469ba725\"\nEXPECTED_SIGNAL_EVENT_COUNT = 7073\n\nMEMBERSHIP = Path(\"data/research/rd18_p3x_a3b_runtime/effective-operational-membership.csv\")\nMEMBERSHIP_SHA256 = \"f7d6012ce8cd691583b9b6276ddf36371bfe0bbd9b28f810b676ad0177fb559e\"\n\nDEFAULT_RAW_ROOT = Path(\"data/raw/rd16b/kucoin\")\nOUTPUT = Path(\"data/research/rd41_p2_runtime\")\n\nOUTPUT_NAMES = (\n    \"input-and-conformance-audit.json\",\n    \"full-control-risk-set-ledger.csv\",",
+      "function": null,
+      "function_source": null,
+      "line": 105,
+      "path": "scripts/research/run_rd41_full_risk_set_censoring_reconciliation.py",
+      "role": "REFERENCE",
+      "sha256": "F15CB245B34E268A97C43A3561EF5B1B4E8F5205397F9F83E10F52F28D3998D8"
+    }
+  ],
+  "protected_year_rows_read": false,
+  "status": "PASS",
+  "target": "data/research/rd26_p1_runtime/signal-events-2022-2023.csv",
+  "writer_count": 1
+}

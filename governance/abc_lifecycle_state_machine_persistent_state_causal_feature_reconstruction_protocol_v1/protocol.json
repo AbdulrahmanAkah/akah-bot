@@ -1,0 +1,230 @@
+{
+  "A_donchian_reconstruction": {
+    "boundary": "minimum low of the previous ten completed 4H bars; current bar excluded; history may predate entry",
+    "condition_now": "current_completed_4h_close < donchian_prev10_low",
+    "continuous_measurement": true,
+    "legacy_signal_event_semantics_unchanged": true,
+    "margin": "current_completed_4h_close - donchian_prev10_low",
+    "primitive": "DONCHIAN_CLOSE_BREAK_10_V1"
+  },
+  "B_atr_ratchet_reconstruction": {
+    "atr": "continuous T0 Wilder ATR(22), with current TR included, using the exact frozen primitive implementation semantics",
+    "candidate_boundary_rule": "subsequent B condition compares the current completed 4H close with the previous ratchet stop",
+    "first_memory_rule": "first memory initializes the ratchet but cannot produce a B candidate on the same decision row",
+    "legacy_signal_event_semantics_unchanged": true,
+    "primitive": "POST_MEMORY_ATR_RATCHET_22_3_V1",
+    "ratchet_formula": "exactly the frozen ABC primitive update law; this protocol does not invent or restate a different formula",
+    "shadow_observational_continuation": "For measurement only, continue the frozen ratchet state through the native Control lifecycle even after a legacy B event would have occurred. This continuation creates no hypothetical exit, no trading action, and no runtime authority."
+  },
+  "authority_bindings": {
+    "abc_primitive_protocol": {
+      "path": "governance/abc_exit_primitives_preregistration_v1/protocol.json",
+      "sha256": "0D33547991D394C3CDEF1F03500EFD49DCEE1E8FEF41C8BD02007792CBFA3BD1"
+    },
+    "lifecycle_state_machine_protocol": {
+      "path": "governance/abc_lifecycle_state_machine_protocol_v1/protocol.json",
+      "sha256": "A628F07CE417339B1547BC8C1E1E9AD9D8360451CD0996E366C9C474A3167B0F"
+    },
+    "observability_catalog": {
+      "path": "governance/abc_lifecycle_state_machine_persistent_state_observability_protocol_v1/observability_catalog.json",
+      "sha256": "12DF152B4191916DFD9F7E5EABE5F6AB62AE3DDA8A8D58237F4E1C69EA73BF29"
+    },
+    "observability_protocol": {
+      "path": "governance/abc_lifecycle_state_machine_persistent_state_observability_protocol_v1/protocol.json",
+      "sha256": "9DA4404781476E07D42F421BB422B44D2A24553E86E6C8E674D4A270BB764D7F"
+    },
+    "observational_trace_canonical": {
+      "path": "governance/abc_lifecycle_state_machine_observational_trace_v1/canonical_result.json",
+      "sha256": "48FE5760D7975FF6EA652CCEE62905CF456A2532B8EBE7F37305A21A1720DF45"
+    },
+    "prior_trace_authority_recovery": {
+      "authority_critical_missing_count": 0,
+      "path": "governance/abc_lifecycle_state_machine_persistent_state_source_authority_targeted_recovery_v1_retry_v1_retry_v1_retry_v1_retry_v1/canonical_result.json",
+      "sha256": "1DF2B9881528096E3F3BC1780D51154F8461913A2CE8250252F8A1A00B611BC0"
+    },
+    "protocol_amendment_review": {
+      "path": "governance/abc_lifecycle_state_machine_persistent_state_observability_protocol_amendment_review_v1/canonical_result.json",
+      "resolved_without_amendment_count": 6,
+      "sha256": "1002101405757303F321C074729C50448D36AF4915FF415379394F642736776F",
+      "true_amendment_required_count": 0
+    },
+    "source_gap_disposition": {
+      "path": "governance/abc_lifecycle_state_machine_persistent_state_observability_source_gap_review_v1/observable_gap_disposition.csv",
+      "sha256": "D7FB129EDDE54E539C19718B9718E34CAF5861ED0C9095CCCAAB85A266A495F0"
+    }
+  },
+  "authorization_after_this_freeze": {
+    "adaptive_logic": false,
+    "deterministic_reconstruction_implementation_work": true,
+    "exit_action": false,
+    "feature_materialization": false,
+    "persistent_state_definition": false,
+    "raw_market_row_access": false,
+    "runtime_state_machine": false
+  },
+  "causal_time_contract": {
+    "aggregation_binding_failure": "FAIL_CLOSED_BEFORE_MATERIALIZATION",
+    "decision_input_granularity": "completed_4h_bars_only",
+    "four_hour_aggregation": "Reuse the exact successful trace reconstruction alignment/aggregation semantics. No new resample origin, label, closure, timezone, or boundary convention may be invented.",
+    "future_information": "FORBIDDEN",
+    "lookahead": "FORBIDDEN",
+    "per_decision_cutoff": "Only source information causally eligible under the already-frozen trace/primitive semantics may contribute to a reconstructed value at that decision row.",
+    "raw_input_granularity": "1h"
+  },
+  "decision_grid_alignment_contract": {
+    "authority": "existing frozen observational trace decision grid",
+    "implementation_preflight_requirement": "Before any raw row read, resolve and freeze the exact trace row identity/key columns from the existing trace artifact schema and prove uniqueness/parity. If the exact identity cannot be resolved uniquely, fail closed before market-data access.",
+    "lifecycle_count_exact": 2020,
+    "no_existing_column_mutation": true,
+    "no_row_addition": true,
+    "no_row_deletion": true,
+    "no_row_reordering": true,
+    "primary_alignment": "preserve the frozen trace row order exactly; reconstructed feature rows are appended 1:1 to those rows",
+    "row_count_exact": 14059
+  },
+  "frozen_scope": {
+    "2024_access": false,
+    "2025_access": false,
+    "control_lifecycle_count": 2020,
+    "decision_grid_row_count": 14059,
+    "economic_outcome_access": false,
+    "legacy_signal_counts": {
+      "A": 135,
+      "B": 31,
+      "C": 74
+    },
+    "memory_observed_lifecycle_count": 1270,
+    "pnl_access": false,
+    "target_observable_count": 22,
+    "target_observables": [
+      "R_after_t",
+      "R_before_t",
+      "R_delta_from_prev_decision",
+      "a_condition_now",
+      "a_condition_recovered_now",
+      "a_condition_true_run_length",
+      "a_margin_delta_from_prev",
+      "atr22_current",
+      "b_condition_now",
+      "b_condition_recovered_now",
+      "b_condition_true_run_length",
+      "b_margin_delta_from_prev",
+      "close_delta_from_prev_decision",
+      "close_minus_R_before_t",
+      "close_minus_donchian_prev10_low",
+      "close_minus_ratchet_stop_before_t",
+      "donchian_prev10_low",
+      "high_minus_R_before_t",
+      "progress_margin_delta_from_prev",
+      "ratchet_stop_before_t",
+      "structural_break_margin_delta_from_prev",
+      "volatility_damage_margin_delta_from_prev"
+    ],
+    "trading_behavior_mutation": false,
+    "years": [
+      2019,
+      2020,
+      2021,
+      2022,
+      2023
+    ]
+  },
+  "lag_and_delta_contract": {
+    "close_delta_from_prev_decision": "current close minus previous decision-row close",
+    "cross_lifecycle_lag": "FORBIDDEN",
+    "first_decision_row_lags": null,
+    "lag_basis": "immediately prior frozen decision row within the same native Control lifecycle",
+    "margin_deltas": "current reconstructed margin minus the immediately previous decision-row value of the same margin when both are ready"
+  },
+  "later_implementation_preflight_gates": {
+    "no_market_row_read_until_all_above_pass": true,
+    "resolve_exact_1h_to_4h_aggregation_binding_before_raw_access": true,
+    "resolve_exact_B_ratchet_update_callable_or_equivalent_frozen_source_binding_before_raw_access": true,
+    "resolve_exact_timestamp_timezone_and_boundary_semantics_before_raw_access": true,
+    "resolve_exact_trace_identity_before_raw_access": true
+  },
+  "later_reconstruction_acceptance_gates": {
+    "control_lifecycles_exact": 2020,
+    "existing_frozen_invariants_must_remain_pass": true,
+    "legacy_A_signal_count_exact": 135,
+    "legacy_B_signal_count_exact": 31,
+    "legacy_C_signal_count_exact": 74,
+    "memory_observed_lifecycle_count_exact": 1270,
+    "no_2024_access": true,
+    "no_2025_access": true,
+    "no_economic_outcome_read": true,
+    "no_existing_trace_value_mutation": true,
+    "no_pnl_read": true,
+    "no_threshold_or_state_selection": true,
+    "output_rows_exact": 14059,
+    "target_observable_columns_only": true
+  },
+  "measurement_only_contract": {
+    "adaptive_logic": false,
+    "binning": false,
+    "clipping": false,
+    "exit_action": false,
+    "exit_arbiter": false,
+    "frequency_threshold_selection": false,
+    "outcome_scaling": false,
+    "persistence_horizon_selection": false,
+    "persistent_state_definition": false,
+    "quantile_thresholding": false,
+    "ranking": false,
+    "runtime_state_machine": false
+  },
+  "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_CAUSAL_FEATURE_RECONSTRUCTION_IMPLEMENTATION_V1",
+  "observable_formula_authority": {
+    "ambiguity_rule": "If these frozen authorities do not determine a feature uniquely, fail closed and route to semantic review; do not choose a convention.",
+    "general_rule": "Per-observable names, meanings and measurement intent come from the frozen observability catalog. Primitive-specific formulas and event semantics come from the frozen ABC protocol. Lifecycle phase semantics come from the frozen LSM protocol. The amendment review proves that the six prior semantic gaps require no protocol amendment.",
+    "no_formula_reinterpretation": true
+  },
+  "preprogress_C_reconstruction": {
+    "event_semantics": "legacy C event semantics remain unchanged",
+    "expected_phase": "UNCONFIRMED",
+    "preprogress_age_and_rows_after_event": "causal counters only; measurement does not create a persistent state",
+    "primitive": "NO_STRUCTURAL_PROGRESS_AFTER_12_BARS_V1"
+  },
+  "progress_memory_reconstruction": {
+    "R_after_t": "update the progress reference after evaluating the current decision using the frozen progress-memory update semantics",
+    "R_before_t": "max(entry_price, highs of eligible completed 4H bars strictly prior to the current decision bar)",
+    "delta_rule": "lag-1 decision-row delta as defined by the frozen observability catalog; first eligible lag is null",
+    "eligible_4h_bar_rule": "bar_open >= entry_time AND bar_close <= decision_time; partial entry bar excluded",
+    "margins": [
+      "close_minus_R_before_t",
+      "high_minus_R_before_t"
+    ],
+    "memory_now": "current_completed_4h_close > R_before_t",
+    "memory_seen": "causal latch: prior memory_seen OR memory_now",
+    "no_future_high": true
+  },
+  "purpose": "Deterministically reconstruct only the market-data-dependent persistent-state observability features on the already-frozen Control decision grid, using causal information available no later than each decision boundary, without changing trading behavior or defining persistent states.",
+  "readiness_and_null_contract": {
+    "A_condition_readiness": "null until the previous-ten-completed-4H boundary is available",
+    "B_condition_readiness": "null until ATR and a previous ratchet stop are causally available; first-memory same-row candidate remains unavailable",
+    "lagged_delta_first_row": null,
+    "no_false_fill_for_unknown_boolean": true,
+    "no_imputation": true,
+    "no_zero_fill": true,
+    "not_ready_representation": null,
+    "recovery_boolean": "True only when both current and immediately previous condition states are ready, previous is true, and current is false. False only when both states are ready and that transition did not occur; otherwise null.",
+    "run_length": "When condition readiness is true: consecutive true rows count upward; a ready false row resets to zero. Not-ready rows are null and do not fabricate a run."
+  },
+  "schema_version": "abc-persistent-state-causal-feature-reconstruction-protocol-v1",
+  "source_authority": {
+    "membership": "data/research/rd18_p3x_a3b_runtime/effective-operational-membership.csv",
+    "raw_file_pattern": "<raw_root>/<pair>/1h.parquet",
+    "raw_root": "data/raw/rd16b/kucoin",
+    "raw_schema_already_proven_before_this_protocol": true,
+    "raw_schema_required_roles": [
+      "timestamp",
+      "open",
+      "high",
+      "low",
+      "close"
+    ],
+    "reconstruction_must_use_pre_2024_rows_only": true
+  },
+  "status": "FROZEN_PROTOCOL",
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_CAUSAL_FEATURE_RECONSTRUCTION_PROTOCOL_FREEZE_V1"
+}

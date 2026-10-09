@@ -1,0 +1,26 @@
+{
+  "close_position_method": {
+    "excerpt": "120:        )\n121:        self._observe_calls += 1\n122:\n123:    def close_position(\n124:        self,\n125:        *,\n126:        pair: str,\n127:        closed_at: pd.Timestamp,\n128:    ) -> None:\n129:        pair = str(pair)\n130:        position = self._active.get(pair)\n131:        if position is None:\n132:            return\n133:\n134:        closed_at = _utc(closed_at)\n135:        if closed_at >= position.entry_time:\n136:            self.observe_position(pair=pair, decision_time=closed_at)\n137:        latest = self._latest.pop(pair, None)\n138:        if latest is not None:\n139:            self._archived.append(latest)\n140:        self._active.pop(pair, None)\n141:        self._close_calls += 1\n142:\n143:    def diagnostics(self) -> dict[str, Any]:\n144:        results = list(self._archived) + list(self._latest.values())",
+    "forbidden_outcome_names": [],
+    "signature": {
+      "args": [
+        "self"
+      ],
+      "kwarg": null,
+      "kwonlyargs": [
+        "pair",
+        "closed_at"
+      ],
+      "line": 123,
+      "name": "close_position",
+      "vararg": null
+    }
+  },
+  "contract_forbidden_outcome_names": [],
+  "contract_has_identity": false,
+  "contract_has_time": false,
+  "identity_arguments": [],
+  "path": "src/spotbot/research/rd27_later_trigger_v2_native_hook.py",
+  "sha256": "E149C5C354B08801920CA87F61F397C9C7969EA7E6BE7C081AFF865CF9168EFD",
+  "time_arguments": []
+}

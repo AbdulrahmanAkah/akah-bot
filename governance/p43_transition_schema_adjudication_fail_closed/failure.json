@@ -1,0 +1,18 @@
+{
+  "schema_version": "akah-p43-technical-fail-closed-v1",
+  "task_id": "FINAL_EXIT_BRAIN_PRE_2024_ARCHITECTURE_P43_PREEXISTING_EVENT_LEVEL_TRANSITION_AUTHORITY_SCHEMA_ADJUDICATION_V1",
+  "status": "TECHNICAL_OR_PARITY_FAILURE_FAIL_CLOSED_NO_SCIENTIFIC_CONCLUSION",
+  "error_type": "RuntimeError",
+  "error": "P43_P13_STATE_KEY_NOT_UNIQUE matches=[{'key': 'entry_market_state', 'values': ['RISK_ON', 'TRANSITION']}, {'key': 'exit_market_state', 'values': ['RISK_OFF', 'RISK_ON', 'TRANSITION']}]",
+  "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\abdul\\AppData\\Local\\Temp\\akah_p43_52c9a7af254d412fa75746cb509505b5\\p43.py\", line 699, in main\n    result = run_adjudication(pre)\n  File \"C:\\Users\\abdul\\AppData\\Local\\Temp\\akah_p43_52c9a7af254d412fa75746cb509505b5\\p43.py\", line 454, in run_adjudication\n    p13_schema = derive_p13_schema(p13_rows)\n  File \"C:\\Users\\abdul\\AppData\\Local\\Temp\\akah_p43_52c9a7af254d412fa75746cb509505b5\\p43.py\", line 245, in derive_p13_schema\n    die(f\"P43_P13_STATE_KEY_NOT_UNIQUE matches={state_matches}\")\n    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\abdul\\AppData\\Local\\Temp\\akah_p43_52c9a7af254d412fa75746cb509505b5\\p43.py\", line 96, in die\n    raise RuntimeError(msg)\nRuntimeError: P43_P13_STATE_KEY_NOT_UNIQUE matches=[{'key': 'entry_market_state', 'values': ['RISK_ON', 'TRANSITION']}, {'key': 'exit_market_state', 'values': ['RISK_OFF', 'RISK_ON', 'TRANSITION']}]\n",
+  "governance": {
+    "2023_new_raw_or_replay_accessed": false,
+    "2024_used_as_fresh_holdout": false,
+    "2024_used_to_define_new_runtime_rule": false,
+    "2025_accessed": false,
+    "lookahead_or_future_information_used": false,
+    "pair_or_event_identity_used_as_runtime_rule": false,
+    "posthoc_outcome_threshold_search_used": false,
+    "production_changed": false
+  }
+}

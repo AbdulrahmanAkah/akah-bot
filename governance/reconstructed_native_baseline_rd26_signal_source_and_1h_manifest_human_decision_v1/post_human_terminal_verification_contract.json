@@ -1,0 +1,72 @@
+{
+  "allowed_columns": [
+    "signal timestamp and schema metadata",
+    "1h timestamp column after pre-2023 authorization"
+  ],
+  "authority_id": "AKAH_BOT_RECONSTRUCTED_NATIVE_BASELINE_TERMINAL_INPUT_VERIFICATION_CONTRACT_V1",
+  "current_blockers": [
+    "human selection of actual constructor/universe context",
+    "authorized pre-2023 signal materialization",
+    "selected pair/file manifest",
+    "timestamp/completion and continuity verification",
+    "future max-exit classification after coverage proof"
+  ],
+  "economic_analysis": false,
+  "forbidden_columns": [
+    "open",
+    "high",
+    "low",
+    "close",
+    "volume",
+    "turnover",
+    "returns",
+    "exit_price",
+    "exit_reason",
+    "exit_time",
+    "gross_pnl",
+    "net_pnl",
+    "return_fraction",
+    "mfe",
+    "mae",
+    "holding_hours"
+  ],
+  "human_semantic_selection": {
+    "context": "FULL_EXISTING_NATIVE_MATRIX_AS_STUDY_STRATA",
+    "signal_input_status": "NO_CURRENT_AUTHORIZED_PRE2023_SIGNAL_ARTIFACT",
+    "status": "BOUND",
+    "strata_authority": "governance/reconstructed_native_baseline_rd26_signal_source_and_1h_manifest_human_decision_v1/full_native_matrix_strata_contract.json",
+    "strata_count": 9
+  },
+  "inputs_to_bind_before_terminal_run": [
+    "one actual RD27 constructor/universe tuple or an explicitly declared native matrix",
+    "immutable authorized pre-2023 signal artifact",
+    "raw_root identity and no unbound override",
+    "sorted unique signal pair list",
+    "per-pair 1h file path and sha256",
+    "BTC-USDT state-sensor file path and sha256",
+    "timestamp semantic and information-available time",
+    "hourly continuity and duplicate/conflict audit",
+    "future max-exit coverage proof"
+  ],
+  "native_replay_executed": false,
+  "next_bottleneck": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_PRE2023_SIGNAL_MATERIALIZATION_AND_1H_INPUT_VERIFICATION_V1",
+  "real_replay_authorized": false,
+  "status": "CONTRACT_DEFINED_PREREQUISITES_NOT_READY",
+  "study_identity": {
+    "cost_multiplier": 1.0,
+    "max_hold_hours": 168,
+    "policy_id": "rd27.FULL_ADAPTIVE_LIFECYCLE_BRAIN",
+    "policy_is_prospective_not_historical": true,
+    "study_window": "2022-01-01T00:00:00Z <= authorized input time < 2023-01-01T00:00:00Z"
+  },
+  "terminal_checks": [
+    "verify artifact sha256 and exact schema without opening protected rows",
+    "verify signal timestamps are pre-2023 and PIT-safe",
+    "derive sorted unique pairs only from the authorized signal artifact",
+    "enumerate exactly one 1h.parquet per selected pair plus BTC-USDT state sensor",
+    "read timestamp column only after metadata prove selected files are authorized pre-2023 inputs",
+    "verify UTC normalization, unique timestamps, stable ordering, 3600-second spacing, and no missing hour in rolling-24 windows",
+    "verify required max-exit row existence for every eligible candidate before replay; record this as coverage evidence",
+    "verify typed cost_multiplier is Python float 1.0"
+  ]
+}

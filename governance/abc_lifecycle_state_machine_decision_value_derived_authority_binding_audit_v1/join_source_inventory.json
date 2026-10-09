@@ -1,0 +1,1797 @@
+{
+  "schema_version": "akah-dv-binding-source-inventory-v1",
+  "source_count": 40,
+  "sources": [
+    {
+      "candidate_lifecycle_column": "__trade_id",
+      "candidate_time_column": "decision_time_exact",
+      "columns": [
+        "scope",
+        "cost_multiplier",
+        "floor_type",
+        "floor_timestamp",
+        "offset_steps",
+        "timestamp",
+        "cash_before_events",
+        "exit_notional",
+        "exit_fees",
+        "entry_notional",
+        "entry_fees",
+        "cash",
+        "free_cash",
+        "reserved_cash",
+        "market_value",
+        "equity",
+        "open_positions",
+        "gross_exposure",
+        "cumulative_fees",
+        "cash_identity_error",
+        "equity_identity_error",
+        "entering_trade_ids",
+        "exiting_trade_ids",
+        "open_trade_ids",
+        "open_symbols",
+        "drawdown"
+      ],
+      "exact_column_name_match": false,
+      "path": "data/research/rd16pit_a2a/floor-event-window.csv",
+      "score": 7,
+      "semantics": {
+        "baseline_action": [],
+        "cost": [
+          "cost_multiplier",
+          "exit_fees",
+          "entry_fees",
+          "cumulative_fees"
+        ],
+        "decision_time": [
+          "floor_timestamp",
+          "timestamp"
+        ],
+        "lifecycle": [
+          "entering_trade_ids",
+          "exiting_trade_ids",
+          "open_trade_ids"
+        ],
+        "notional": [
+          "exit_notional",
+          "entry_notional"
+        ],
+        "pair": [
+          "market_value",
+          "open_symbols"
+        ],
+        "value": []
+      },
+      "sha256": "D349DB543C76C0F2629FD9E89955AE4B58EE17A664B7B39AA7D097076A5C390C",
+      "source_lifecycle_column": "entering_trade_ids",
+      "source_time_column": "floor_timestamp"
+    },
+    {
+      "candidate_lifecycle_column": "__trade_id",
+      "candidate_time_column": "decision_time_exact",
+      "columns": [
+        "scope",
+        "cost_multiplier",
+        "floor_type",
+        "floor_timestamp",
+        "trade_id",
+        "source_candidate_id",
+        "symbol",
+        "engine_id",
+        "entry_open_time",
+        "exit_bar_close",
+        "quantity",
+        "entry_price",
+        "mark_price",
+        "position_market_value",
+        "entry_notional",
+        "entry_fee_at_multiplier",
+        "planned_exit_notional",
+        "planned_exit_fee_at_multiplier",
+        "risk_budget"
+      ],
+      "exact_column_name_match": false,
+      "path": "data/research/rd16pit_a2a/floor-open-positions.csv",
+      "score": 7,
+      "semantics": {
+        "baseline_action": [],
+        "cost": [
+          "cost_multiplier",
+          "entry_fee_at_multiplier",
+          "planned_exit_fee_at_multiplier"
+        ],
+        "decision_time": [
+          "floor_timestamp"
+        ],
+        "lifecycle": [
+          "trade_id"
+        ],
+        "notional": [
+          "entry_notional",
+          "planned_exit_notional"
+        ],
+        "pair": [
+          "symbol",
+          "position_market_value"
+        ],
+        "value": []
+      },
+      "sha256": "807E765B5D206E6AB962062F2A313FD8793005DBF7C136D7B405750A91842F6E",
+      "source_lifecycle_column": "trade_id",
+      "source_time_column": "floor_timestamp"
+    },
+    {
+      "candidate_lifecycle_column": "__trade_id",
+      "candidate_time_column": "decision_time_exact",
+      "columns": [
+        "trade_id",
+        "symbol",
+        "entry_timestamp",
+        "exit_timestamp",
+        "entry_price",
+        "exit_price",
+        "quantity",
+        "entry_fee",
+        "exit_fee",
+        "gross_pnl",
+        "net_pnl",
+        "holding_bars",
+        "exit_reason"
+      ],
+      "exact_column_name_match": false,
+      "path": "data/research/rd10/smoke-backtest/trades.csv",
+      "score": 3,
+      "semantics": {
+        "baseline_action": [],
+        "cost": [
+          "entry_fee",
+          "exit_fee"
+        ],
+        "decision_time": [
+          "entry_timestamp",
+          "exit_timestamp"
+        ],
+        "lifecycle": [
+          "trade_id"
+        ],
+        "notional": [],
+        "pair": [
+          "symbol"
+        ],
+        "value": []
+      },
+      "sha256": "318D5E9353A471B27CEBFE4034BB8CE3D4F21C9A7B59134566D624F07B347876",
+      "source_lifecycle_column": "trade_id",
+      "source_time_column": "entry_timestamp"
+    },
+    {
+      "candidate_lifecycle_column": "__trade_id",
+      "candidate_time_column": "decision_time_exact",
+      "columns": [
+        "trade_id",
+        "symbol",
+        "entry_timestamp",
+        "exit_timestamp",
+        "entry_price",
+        "exit_price",
+        "quantity",
+        "entry_fee",
+        "exit_fee",
+        "gross_pnl",
+        "net_pnl",
+        "holding_bars",
+        "exit_reason"
+      ],
+      "exact_column_name_match": false,
+      "path": "data/research/rd11/per-asset/ada_usdt/trades.csv",
+      "score": 3,
+      "semantics": {
+        "baseline_action": [],
+        "cost": [
+          "entry_fee",
+          "exit_fee"
+        ],
+        "decision_time": [
+          "entry_timestamp",
+          "exit_timestamp"
+        ],
+        "lifecycle": [
+          "trade_id"
+        ],
+        "notional": [],
+        "pair": [
+          "symbol"
+        ],
+        "value": []
+      },
+      "sha256": "F7C0F97BF059D3B86842E45F701F64846CBAAF3A6193126F40A06C0273C09B0A",
+      "source_lifecycle_column": "trade_id",
+      "source_time_column": "entry_timestamp"
+    },
+    {
+      "candidate_lifecycle_column": "__trade_id",
+      "candidate_time_column": "decision_time_exact",
+      "columns": [
+        "trade_id",
+        "symbol",
+        "entry_timestamp",
+        "exit_timestamp",
+        "entry_price",
+        "exit_price",
+        "quantity",
+        "entry_fee",
+        "exit_fee",
+        "gross_pnl",
+        "net_pnl",
+        "holding_bars",
+        "exit_reason"
+      ],
+      "exact_column_name_match": false,
+      "path": "data/research/rd11/per-asset/avax_usdt/trades.csv",
+      "score": 3,
+      "semantics": {
+        "baseline_action": [],
+        "cost": [
+          "entry_fee",
+          "exit_fee"
+        ],
+        "decision_time": [
+          "entry_timestamp",
+          "exit_timestamp"
+        ],
+        "lifecycle": [
+          "trade_id"
+        ],
+        "notional": [],
+        "pair": [
+          "symbol"
+        ],
+        "value": []
+      },
+      "sha256": "76CB5CF654222869864D7FE01AF316BC122A07E2F992FCDE2CAED7D06D870D4F",
+      "source_lifecycle_column": "trade_id",
+      "source_time_column": "entry_timestamp"
+    },
+    {
+      "candidate_lifecycle_column": "__trade_id",
+      "candidate_time_column": "decision_time_exact",
+      "columns": [
+        "trade_id",
+        "symbol",
+        "entry_timestamp",
+        "exit_timestamp",
+        "entry_price",
+        "exit_price",
+        "quantity",
+        "entry_fee",
+        "exit_fee",
+        "gross_pnl",
+        "net_pnl",
+        "holding_bars",
+        "exit_reason"
+      ],
+      "exact_column_name_match": false,
+      "path": "data/research/rd11/per-asset/btc_usdt/trades.csv",
+      "score": 3,
+      "semantics": {
+        "baseline_action": [],
+        "cost": [
+          "entry_fee",
+          "exit_fee"
+        ],
+        "decision_time": [
+          "entry_timestamp",
+          "exit_timestamp"
+        ],
+        "lifecycle": [
+          "trade_id"
+        ],
+        "notional": [],
+        "pair": [
+          "symbol"
+        ],
+        "value": []
+      },
+      "sha256": "69CC5D374EA3DECEE38126996F18BB33208878770C6B2DB5E49E24476C1448F8",
+      "source_lifecycle_column": "trade_id",
+      "source_time_column": "entry_timestamp"
+    },
+    {
+      "candidate_lifecycle_column": "__trade_id",
+      "candidate_time_column": "decision_time_exact",
+      "columns": [
+        "trade_id",
+        "symbol",
+        "entry_timestamp",
+        "exit_timestamp",
+        "entry_price",
+        "exit_price",
+        "quantity",
+        "entry_fee",
+        "exit_fee",
+        "gross_pnl",
+        "net_pnl",
+        "holding_bars",
+        "exit_reason"
+      ],
+      "exact_column_name_match": false,
+      "path": "data/research/rd11/per-asset/dot_usdt/trades.csv",
+      "score": 3,
+      "semantics": {
+        "baseline_action": [],
+        "cost": [
+          "entry_fee",
+          "exit_fee"
+        ],
+        "decision_time": [
+          "entry_timestamp",
+          "exit_timestamp"
+        ],
+        "lifecycle": [
+          "trade_id"
+        ],
+        "notional": [],
+        "pair": [
+          "symbol"
+        ],
+        "value": []
+      },
+      "sha256": "1FBF21C846CE2ED78FF659FDCCF09DFAB8D5516619D88202877E83890F2D5302",
+      "source_lifecycle_column": "trade_id",
+      "source_time_column": "entry_timestamp"
+    },
+    {
+      "candidate_lifecycle_column": "__trade_id",
+      "candidate_time_column": "decision_time_exact",
+      "columns": [
+        "trade_id",
+        "symbol",
+        "entry_timestamp",
+        "exit_timestamp",
+        "entry_price",
+        "exit_price",
+        "quantity",
+        "entry_fee",
+        "exit_fee",
+        "gross_pnl",
+        "net_pnl",
+        "holding_bars",
+        "exit_reason"
+      ],
+      "exact_column_name_match": false,
+      "path": "data/research/rd11/per-asset/eth_usdt/trades.csv",
+      "score": 3,
+      "semantics": {
+        "baseline_action": [],
+        "cost": [
+          "entry_fee",
+          "exit_fee"
+        ],
+        "decision_time": [
+          "entry_timestamp",
+          "exit_timestamp"
+        ],
+        "lifecycle": [
+          "trade_id"
+        ],
+        "notional": [],
+        "pair": [
+          "symbol"
+        ],
+        "value": []
+      },
+      "sha256": "594F3800B5C5BCC3384677B1CD9295EE3BA72CF2EAC073E31D32AF905FFF071B",
+      "source_lifecycle_column": "trade_id",
+      "source_time_column": "entry_timestamp"
+    },
+    {
+      "candidate_lifecycle_column": "__trade_id",
+      "candidate_time_column": "decision_time_exact",
+      "columns": [
+        "trade_id",
+        "symbol",
+        "entry_timestamp",
+        "exit_timestamp",
+        "entry_price",
+        "exit_price",
+        "quantity",
+        "entry_fee",
+        "exit_fee",
+        "gross_pnl",
+        "net_pnl",
+        "holding_bars",
+        "exit_reason"
+      ],
+      "exact_column_name_match": false,
+      "path": "data/research/rd11/portfolio/trades.csv",
+      "score": 3,
+      "semantics": {
+        "baseline_action": [],
+        "cost": [
+          "entry_fee",
+          "exit_fee"
+        ],
+        "decision_time": [
+          "entry_timestamp",
+          "exit_timestamp"
+        ],
+        "lifecycle": [
+          "trade_id"
+        ],
+        "notional": [],
+        "pair": [
+          "symbol"
+        ],
+        "value": []
+      },
+      "sha256": "A7F1E636EECC0C8D4E7E61D7644A7A06C5239CD1C37723CD5B53AC6505EF3AD5",
+      "source_lifecycle_column": "trade_id",
+      "source_time_column": "entry_timestamp"
+    },
+    {
+      "candidate_lifecycle_column": "__trade_id",
+      "candidate_time_column": "decision_time_exact",
+      "columns": [
+        "trade_id",
+        "symbol",
+        "entry_timestamp",
+        "exit_timestamp",
+        "entry_price",
+        "exit_price",
+        "quantity",
+        "entry_fee",
+        "exit_fee",
+        "gross_pnl",
+        "net_pnl",
+        "holding_bars",
+        "exit_reason"
+      ],
+      "exact_column_name_match": false,
+      "path": "data/research/rd12/baseline/per-asset/ada_usdt/trades.csv",
+      "score": 3,
+      "semantics": {
+        "baseline_action": [],
+        "cost": [
+          "entry_fee",
+          "exit_fee"
+        ],
+        "decision_time": [
+          "entry_timestamp",
+          "exit_timestamp"
+        ],
+        "lifecycle": [
+          "trade_id"
+        ],
+        "notional": [],
+        "pair": [
+          "symbol"
+        ],
+        "value": []
+      },
+      "sha256": "F7C0F97BF059D3B86842E45F701F64846CBAAF3A6193126F40A06C0273C09B0A",
+      "source_lifecycle_column": "trade_id",
+      "source_time_column": "entry_timestamp"
+    },
+    {
+      "candidate_lifecycle_column": "__trade_id",
+      "candidate_time_column": "decision_time_exact",
+      "columns": [
+        "trade_id",
+        "symbol",
+        "entry_timestamp",
+        "exit_timestamp",
+        "entry_price",
+        "exit_price",
+        "quantity",
+        "entry_fee",
+        "exit_fee",
+        "gross_pnl",
+        "net_pnl",
+        "holding_bars",
+        "exit_reason"
+      ],
+      "exact_column_name_match": false,
+      "path": "data/research/rd12/baseline/per-asset/avax_usdt/trades.csv",
+      "score": 3,
+      "semantics": {
+        "baseline_action": [],
+        "cost": [
+          "entry_fee",
+          "exit_fee"
+        ],
+        "decision_time": [
+          "entry_timestamp",
+          "exit_timestamp"
+        ],
+        "lifecycle": [
+          "trade_id"
+        ],
+        "notional": [],
+        "pair": [
+          "symbol"
+        ],
+        "value": []
+      },
+      "sha256": "76CB5CF654222869864D7FE01AF316BC122A07E2F992FCDE2CAED7D06D870D4F",
+      "source_lifecycle_column": "trade_id",
+      "source_time_column": "entry_timestamp"
+    },
+    {
+      "candidate_lifecycle_column": "__trade_id",
+      "candidate_time_column": "decision_time_exact",
+      "columns": [
+        "trade_id",
+        "symbol",
+        "entry_timestamp",
+        "exit_timestamp",
+        "entry_price",
+        "exit_price",
+        "quantity",
+        "entry_fee",
+        "exit_fee",
+        "gross_pnl",
+        "net_pnl",
+        "holding_bars",
+        "exit_reason"
+      ],
+      "exact_column_name_match": false,
+      "path": "data/research/rd12/baseline/per-asset/btc_usdt/trades.csv",
+      "score": 3,
+      "semantics": {
+        "baseline_action": [],
+        "cost": [
+          "entry_fee",
+          "exit_fee"
+        ],
+        "decision_time": [
+          "entry_timestamp",
+          "exit_timestamp"
+        ],
+        "lifecycle": [
+          "trade_id"
+        ],
+        "notional": [],
+        "pair": [
+          "symbol"
+        ],
+        "value": []
+      },
+      "sha256": "69CC5D374EA3DECEE38126996F18BB33208878770C6B2DB5E49E24476C1448F8",
+      "source_lifecycle_column": "trade_id",
+      "source_time_column": "entry_timestamp"
+    },
+    {
+      "candidate_lifecycle_column": "__trade_id",
+      "candidate_time_column": "decision_time_exact",
+      "columns": [
+        "trade_id",
+        "symbol",
+        "entry_timestamp",
+        "exit_timestamp",
+        "entry_price",
+        "exit_price",
+        "quantity",
+        "entry_fee",
+        "exit_fee",
+        "gross_pnl",
+        "net_pnl",
+        "holding_bars",
+        "exit_reason"
+      ],
+      "exact_column_name_match": false,
+      "path": "data/research/rd12/baseline/per-asset/dot_usdt/trades.csv",
+      "score": 3,
+      "semantics": {
+        "baseline_action": [],
+        "cost": [
+          "entry_fee",
+          "exit_fee"
+        ],
+        "decision_time": [
+          "entry_timestamp",
+          "exit_timestamp"
+        ],
+        "lifecycle": [
+          "trade_id"
+        ],
+        "notional": [],
+        "pair": [
+          "symbol"
+        ],
+        "value": []
+      },
+      "sha256": "1FBF21C846CE2ED78FF659FDCCF09DFAB8D5516619D88202877E83890F2D5302",
+      "source_lifecycle_column": "trade_id",
+      "source_time_column": "entry_timestamp"
+    },
+    {
+      "candidate_lifecycle_column": "__trade_id",
+      "candidate_time_column": "decision_time_exact",
+      "columns": [
+        "trade_id",
+        "symbol",
+        "entry_timestamp",
+        "exit_timestamp",
+        "entry_price",
+        "exit_price",
+        "quantity",
+        "entry_fee",
+        "exit_fee",
+        "gross_pnl",
+        "net_pnl",
+        "holding_bars",
+        "exit_reason"
+      ],
+      "exact_column_name_match": false,
+      "path": "data/research/rd12/baseline/per-asset/eth_usdt/trades.csv",
+      "score": 3,
+      "semantics": {
+        "baseline_action": [],
+        "cost": [
+          "entry_fee",
+          "exit_fee"
+        ],
+        "decision_time": [
+          "entry_timestamp",
+          "exit_timestamp"
+        ],
+        "lifecycle": [
+          "trade_id"
+        ],
+        "notional": [],
+        "pair": [
+          "symbol"
+        ],
+        "value": []
+      },
+      "sha256": "594F3800B5C5BCC3384677B1CD9295EE3BA72CF2EAC073E31D32AF905FFF071B",
+      "source_lifecycle_column": "trade_id",
+      "source_time_column": "entry_timestamp"
+    },
+    {
+      "candidate_lifecycle_column": "__trade_id",
+      "candidate_time_column": "decision_time_exact",
+      "columns": [
+        "trade_id",
+        "symbol",
+        "entry_timestamp",
+        "exit_timestamp",
+        "entry_price",
+        "exit_price",
+        "quantity",
+        "entry_fee",
+        "exit_fee",
+        "gross_pnl",
+        "net_pnl",
+        "holding_bars",
+        "exit_reason"
+      ],
+      "exact_column_name_match": false,
+      "path": "data/research/rd12/baseline/portfolio/trades.csv",
+      "score": 3,
+      "semantics": {
+        "baseline_action": [],
+        "cost": [
+          "entry_fee",
+          "exit_fee"
+        ],
+        "decision_time": [
+          "entry_timestamp",
+          "exit_timestamp"
+        ],
+        "lifecycle": [
+          "trade_id"
+        ],
+        "notional": [],
+        "pair": [
+          "symbol"
+        ],
+        "value": []
+      },
+      "sha256": "A7F1E636EECC0C8D4E7E61D7644A7A06C5239CD1C37723CD5B53AC6505EF3AD5",
+      "source_lifecycle_column": "trade_id",
+      "source_time_column": "entry_timestamp"
+    },
+    {
+      "candidate_lifecycle_column": "__trade_id",
+      "candidate_time_column": "decision_time_exact",
+      "columns": [
+        "trade_id",
+        "symbol",
+        "entry_timestamp",
+        "exit_timestamp",
+        "entry_price",
+        "exit_price",
+        "quantity",
+        "entry_fee",
+        "exit_fee",
+        "gross_pnl",
+        "net_pnl",
+        "holding_bars",
+        "exit_reason"
+      ],
+      "exact_column_name_match": false,
+      "path": "data/research/rd12/variants/RD12_E01_NO_LONG_TERM_TREND/per-asset/ada_usdt/trades.csv",
+      "score": 3,
+      "semantics": {
+        "baseline_action": [],
+        "cost": [
+          "entry_fee",
+          "exit_fee"
+        ],
+        "decision_time": [
+          "entry_timestamp",
+          "exit_timestamp"
+        ],
+        "lifecycle": [
+          "trade_id"
+        ],
+        "notional": [],
+        "pair": [
+          "symbol"
+        ],
+        "value": []
+      },
+      "sha256": "F7C0F97BF059D3B86842E45F701F64846CBAAF3A6193126F40A06C0273C09B0A",
+      "source_lifecycle_column": "trade_id",
+      "source_time_column": "entry_timestamp"
+    },
+    {
+      "candidate_lifecycle_column": "__trade_id",
+      "candidate_time_column": "decision_time_exact",
+      "columns": [
+        "trade_id",
+        "symbol",
+        "entry_timestamp",
+        "exit_timestamp",
+        "entry_price",
+        "exit_price",
+        "quantity",
+        "entry_fee",
+        "exit_fee",
+        "gross_pnl",
+        "net_pnl",
+        "holding_bars",
+        "exit_reason"
+      ],
+      "exact_column_name_match": false,
+      "path": "data/research/rd12/variants/RD12_E01_NO_LONG_TERM_TREND/per-asset/avax_usdt/trades.csv",
+      "score": 3,
+      "semantics": {
+        "baseline_action": [],
+        "cost": [
+          "entry_fee",
+          "exit_fee"
+        ],
+        "decision_time": [
+          "entry_timestamp",
+          "exit_timestamp"
+        ],
+        "lifecycle": [
+          "trade_id"
+        ],
+        "notional": [],
+        "pair": [
+          "symbol"
+        ],
+        "value": []
+      },
+      "sha256": "76CB5CF654222869864D7FE01AF316BC122A07E2F992FCDE2CAED7D06D870D4F",
+      "source_lifecycle_column": "trade_id",
+      "source_time_column": "entry_timestamp"
+    },
+    {
+      "candidate_lifecycle_column": "__trade_id",
+      "candidate_time_column": "decision_time_exact",
+      "columns": [
+        "trade_id",
+        "symbol",
+        "entry_timestamp",
+        "exit_timestamp",
+        "entry_price",
+        "exit_price",
+        "quantity",
+        "entry_fee",
+        "exit_fee",
+        "gross_pnl",
+        "net_pnl",
+        "holding_bars",
+        "exit_reason"
+      ],
+      "exact_column_name_match": false,
+      "path": "data/research/rd12/variants/RD12_E01_NO_LONG_TERM_TREND/per-asset/btc_usdt/trades.csv",
+      "score": 3,
+      "semantics": {
+        "baseline_action": [],
+        "cost": [
+          "entry_fee",
+          "exit_fee"
+        ],
+        "decision_time": [
+          "entry_timestamp",
+          "exit_timestamp"
+        ],
+        "lifecycle": [
+          "trade_id"
+        ],
+        "notional": [],
+        "pair": [
+          "symbol"
+        ],
+        "value": []
+      },
+      "sha256": "69CC5D374EA3DECEE38126996F18BB33208878770C6B2DB5E49E24476C1448F8",
+      "source_lifecycle_column": "trade_id",
+      "source_time_column": "entry_timestamp"
+    },
+    {
+      "candidate_lifecycle_column": "__trade_id",
+      "candidate_time_column": "decision_time_exact",
+      "columns": [
+        "trade_id",
+        "symbol",
+        "entry_timestamp",
+        "exit_timestamp",
+        "entry_price",
+        "exit_price",
+        "quantity",
+        "entry_fee",
+        "exit_fee",
+        "gross_pnl",
+        "net_pnl",
+        "holding_bars",
+        "exit_reason"
+      ],
+      "exact_column_name_match": false,
+      "path": "data/research/rd12/variants/RD12_E01_NO_LONG_TERM_TREND/per-asset/dot_usdt/trades.csv",
+      "score": 3,
+      "semantics": {
+        "baseline_action": [],
+        "cost": [
+          "entry_fee",
+          "exit_fee"
+        ],
+        "decision_time": [
+          "entry_timestamp",
+          "exit_timestamp"
+        ],
+        "lifecycle": [
+          "trade_id"
+        ],
+        "notional": [],
+        "pair": [
+          "symbol"
+        ],
+        "value": []
+      },
+      "sha256": "1FBF21C846CE2ED78FF659FDCCF09DFAB8D5516619D88202877E83890F2D5302",
+      "source_lifecycle_column": "trade_id",
+      "source_time_column": "entry_timestamp"
+    },
+    {
+      "candidate_lifecycle_column": "__trade_id",
+      "candidate_time_column": "decision_time_exact",
+      "columns": [
+        "trade_id",
+        "symbol",
+        "entry_timestamp",
+        "exit_timestamp",
+        "entry_price",
+        "exit_price",
+        "quantity",
+        "entry_fee",
+        "exit_fee",
+        "gross_pnl",
+        "net_pnl",
+        "holding_bars",
+        "exit_reason"
+      ],
+      "exact_column_name_match": false,
+      "path": "data/research/rd12/variants/RD12_E01_NO_LONG_TERM_TREND/per-asset/eth_usdt/trades.csv",
+      "score": 3,
+      "semantics": {
+        "baseline_action": [],
+        "cost": [
+          "entry_fee",
+          "exit_fee"
+        ],
+        "decision_time": [
+          "entry_timestamp",
+          "exit_timestamp"
+        ],
+        "lifecycle": [
+          "trade_id"
+        ],
+        "notional": [],
+        "pair": [
+          "symbol"
+        ],
+        "value": []
+      },
+      "sha256": "594F3800B5C5BCC3384677B1CD9295EE3BA72CF2EAC073E31D32AF905FFF071B",
+      "source_lifecycle_column": "trade_id",
+      "source_time_column": "entry_timestamp"
+    },
+    {
+      "candidate_lifecycle_column": "__trade_id",
+      "candidate_time_column": "decision_time_exact",
+      "columns": [
+        "trade_id",
+        "symbol",
+        "entry_timestamp",
+        "exit_timestamp",
+        "entry_price",
+        "exit_price",
+        "quantity",
+        "entry_fee",
+        "exit_fee",
+        "gross_pnl",
+        "net_pnl",
+        "holding_bars",
+        "exit_reason"
+      ],
+      "exact_column_name_match": false,
+      "path": "data/research/rd12/variants/RD12_E01_NO_LONG_TERM_TREND/portfolio/trades.csv",
+      "score": 3,
+      "semantics": {
+        "baseline_action": [],
+        "cost": [
+          "entry_fee",
+          "exit_fee"
+        ],
+        "decision_time": [
+          "entry_timestamp",
+          "exit_timestamp"
+        ],
+        "lifecycle": [
+          "trade_id"
+        ],
+        "notional": [],
+        "pair": [
+          "symbol"
+        ],
+        "value": []
+      },
+      "sha256": "A7F1E636EECC0C8D4E7E61D7644A7A06C5239CD1C37723CD5B53AC6505EF3AD5",
+      "source_lifecycle_column": "trade_id",
+      "source_time_column": "entry_timestamp"
+    },
+    {
+      "candidate_lifecycle_column": "__trade_id",
+      "candidate_time_column": "decision_time_exact",
+      "columns": [
+        "trade_id",
+        "symbol",
+        "entry_timestamp",
+        "exit_timestamp",
+        "entry_price",
+        "exit_price",
+        "quantity",
+        "entry_fee",
+        "exit_fee",
+        "gross_pnl",
+        "net_pnl",
+        "holding_bars",
+        "exit_reason"
+      ],
+      "exact_column_name_match": false,
+      "path": "data/research/rd12/variants/RD12_E02_NO_MEDIUM_TERM_ALIGNMENT/per-asset/ada_usdt/trades.csv",
+      "score": 3,
+      "semantics": {
+        "baseline_action": [],
+        "cost": [
+          "entry_fee",
+          "exit_fee"
+        ],
+        "decision_time": [
+          "entry_timestamp",
+          "exit_timestamp"
+        ],
+        "lifecycle": [
+          "trade_id"
+        ],
+        "notional": [],
+        "pair": [
+          "symbol"
+        ],
+        "value": []
+      },
+      "sha256": "CE06D5578550E418B4ECF91105BD60EC579C50C713AB45C246C5C70B087E3CB1",
+      "source_lifecycle_column": "trade_id",
+      "source_time_column": "entry_timestamp"
+    },
+    {
+      "candidate_lifecycle_column": "__trade_id",
+      "candidate_time_column": "decision_time_exact",
+      "columns": [
+        "trade_id",
+        "symbol",
+        "entry_timestamp",
+        "exit_timestamp",
+        "entry_price",
+        "exit_price",
+        "quantity",
+        "entry_fee",
+        "exit_fee",
+        "gross_pnl",
+        "net_pnl",
+        "holding_bars",
+        "exit_reason"
+      ],
+      "exact_column_name_match": false,
+      "path": "data/research/rd12/variants/RD12_E02_NO_MEDIUM_TERM_ALIGNMENT/per-asset/avax_usdt/trades.csv",
+      "score": 3,
+      "semantics": {
+        "baseline_action": [],
+        "cost": [
+          "entry_fee",
+          "exit_fee"
+        ],
+        "decision_time": [
+          "entry_timestamp",
+          "exit_timestamp"
+        ],
+        "lifecycle": [
+          "trade_id"
+        ],
+        "notional": [],
+        "pair": [
+          "symbol"
+        ],
+        "value": []
+      },
+      "sha256": "87DC9303C937C53556944BB1C46FC236264D9161F99D5EBAE2C2C778745EA9CF",
+      "source_lifecycle_column": "trade_id",
+      "source_time_column": "entry_timestamp"
+    },
+    {
+      "candidate_lifecycle_column": "__trade_id",
+      "candidate_time_column": "decision_time_exact",
+      "columns": [
+        "trade_id",
+        "symbol",
+        "entry_timestamp",
+        "exit_timestamp",
+        "entry_price",
+        "exit_price",
+        "quantity",
+        "entry_fee",
+        "exit_fee",
+        "gross_pnl",
+        "net_pnl",
+        "holding_bars",
+        "exit_reason"
+      ],
+      "exact_column_name_match": false,
+      "path": "data/research/rd12/variants/RD12_E02_NO_MEDIUM_TERM_ALIGNMENT/per-asset/btc_usdt/trades.csv",
+      "score": 3,
+      "semantics": {
+        "baseline_action": [],
+        "cost": [
+          "entry_fee",
+          "exit_fee"
+        ],
+        "decision_time": [
+          "entry_timestamp",
+          "exit_timestamp"
+        ],
+        "lifecycle": [
+          "trade_id"
+        ],
+        "notional": [],
+        "pair": [
+          "symbol"
+        ],
+        "value": []
+      },
+      "sha256": "69CC5D374EA3DECEE38126996F18BB33208878770C6B2DB5E49E24476C1448F8",
+      "source_lifecycle_column": "trade_id",
+      "source_time_column": "entry_timestamp"
+    },
+    {
+      "candidate_lifecycle_column": "__trade_id",
+      "candidate_time_column": "decision_time_exact",
+      "columns": [
+        "trade_id",
+        "symbol",
+        "entry_timestamp",
+        "exit_timestamp",
+        "entry_price",
+        "exit_price",
+        "quantity",
+        "entry_fee",
+        "exit_fee",
+        "gross_pnl",
+        "net_pnl",
+        "holding_bars",
+        "exit_reason"
+      ],
+      "exact_column_name_match": false,
+      "path": "data/research/rd12/variants/RD12_E02_NO_MEDIUM_TERM_ALIGNMENT/per-asset/dot_usdt/trades.csv",
+      "score": 3,
+      "semantics": {
+        "baseline_action": [],
+        "cost": [
+          "entry_fee",
+          "exit_fee"
+        ],
+        "decision_time": [
+          "entry_timestamp",
+          "exit_timestamp"
+        ],
+        "lifecycle": [
+          "trade_id"
+        ],
+        "notional": [],
+        "pair": [
+          "symbol"
+        ],
+        "value": []
+      },
+      "sha256": "7CB2B8EB6D53C270A3E4713182FB7B6DE0681F7990510D8753D34521965ED9C8",
+      "source_lifecycle_column": "trade_id",
+      "source_time_column": "entry_timestamp"
+    },
+    {
+      "candidate_lifecycle_column": "__trade_id",
+      "candidate_time_column": "decision_time_exact",
+      "columns": [
+        "trade_id",
+        "symbol",
+        "entry_timestamp",
+        "exit_timestamp",
+        "entry_price",
+        "exit_price",
+        "quantity",
+        "entry_fee",
+        "exit_fee",
+        "gross_pnl",
+        "net_pnl",
+        "holding_bars",
+        "exit_reason"
+      ],
+      "exact_column_name_match": false,
+      "path": "data/research/rd12/variants/RD12_E02_NO_MEDIUM_TERM_ALIGNMENT/per-asset/eth_usdt/trades.csv",
+      "score": 3,
+      "semantics": {
+        "baseline_action": [],
+        "cost": [
+          "entry_fee",
+          "exit_fee"
+        ],
+        "decision_time": [
+          "entry_timestamp",
+          "exit_timestamp"
+        ],
+        "lifecycle": [
+          "trade_id"
+        ],
+        "notional": [],
+        "pair": [
+          "symbol"
+        ],
+        "value": []
+      },
+      "sha256": "7E3261483F4D206C323C4514DAFA3DE946FC1876CF4C0D395C8057026CECBB89",
+      "source_lifecycle_column": "trade_id",
+      "source_time_column": "entry_timestamp"
+    },
+    {
+      "candidate_lifecycle_column": "__trade_id",
+      "candidate_time_column": "decision_time_exact",
+      "columns": [
+        "trade_id",
+        "symbol",
+        "entry_timestamp",
+        "exit_timestamp",
+        "entry_price",
+        "exit_price",
+        "quantity",
+        "entry_fee",
+        "exit_fee",
+        "gross_pnl",
+        "net_pnl",
+        "holding_bars",
+        "exit_reason"
+      ],
+      "exact_column_name_match": false,
+      "path": "data/research/rd12/variants/RD12_E02_NO_MEDIUM_TERM_ALIGNMENT/portfolio/trades.csv",
+      "score": 3,
+      "semantics": {
+        "baseline_action": [],
+        "cost": [
+          "entry_fee",
+          "exit_fee"
+        ],
+        "decision_time": [
+          "entry_timestamp",
+          "exit_timestamp"
+        ],
+        "lifecycle": [
+          "trade_id"
+        ],
+        "notional": [],
+        "pair": [
+          "symbol"
+        ],
+        "value": []
+      },
+      "sha256": "96D2E48CFD7E30D8E63823A465837282D954BD16E071938B235FA49629D7D370",
+      "source_lifecycle_column": "trade_id",
+      "source_time_column": "entry_timestamp"
+    },
+    {
+      "candidate_lifecycle_column": "__trade_id",
+      "candidate_time_column": "decision_time_exact",
+      "columns": [
+        "trade_id",
+        "symbol",
+        "entry_timestamp",
+        "exit_timestamp",
+        "entry_price",
+        "exit_price",
+        "quantity",
+        "entry_fee",
+        "exit_fee",
+        "gross_pnl",
+        "net_pnl",
+        "holding_bars",
+        "exit_reason"
+      ],
+      "exact_column_name_match": false,
+      "path": "data/research/rd12/variants/RD12_E03_NO_RSI_ENTRY_FILTER/per-asset/ada_usdt/trades.csv",
+      "score": 3,
+      "semantics": {
+        "baseline_action": [],
+        "cost": [
+          "entry_fee",
+          "exit_fee"
+        ],
+        "decision_time": [
+          "entry_timestamp",
+          "exit_timestamp"
+        ],
+        "lifecycle": [
+          "trade_id"
+        ],
+        "notional": [],
+        "pair": [
+          "symbol"
+        ],
+        "value": []
+      },
+      "sha256": "6088194D9B3653B65F7A2A9FCD5A999F30D953AFFD6403D37552A7094D2BC108",
+      "source_lifecycle_column": "trade_id",
+      "source_time_column": "entry_timestamp"
+    },
+    {
+      "candidate_lifecycle_column": "__trade_id",
+      "candidate_time_column": "decision_time_exact",
+      "columns": [
+        "trade_id",
+        "symbol",
+        "entry_timestamp",
+        "exit_timestamp",
+        "entry_price",
+        "exit_price",
+        "quantity",
+        "entry_fee",
+        "exit_fee",
+        "gross_pnl",
+        "net_pnl",
+        "holding_bars",
+        "exit_reason"
+      ],
+      "exact_column_name_match": false,
+      "path": "data/research/rd12/variants/RD12_E03_NO_RSI_ENTRY_FILTER/per-asset/avax_usdt/trades.csv",
+      "score": 3,
+      "semantics": {
+        "baseline_action": [],
+        "cost": [
+          "entry_fee",
+          "exit_fee"
+        ],
+        "decision_time": [
+          "entry_timestamp",
+          "exit_timestamp"
+        ],
+        "lifecycle": [
+          "trade_id"
+        ],
+        "notional": [],
+        "pair": [
+          "symbol"
+        ],
+        "value": []
+      },
+      "sha256": "CB6B9551501689D1C89A227955B2304B7BB65F4D178146C3B4B4AD033FFF33EB",
+      "source_lifecycle_column": "trade_id",
+      "source_time_column": "entry_timestamp"
+    },
+    {
+      "candidate_lifecycle_column": "__trade_id",
+      "candidate_time_column": "decision_time_exact",
+      "columns": [
+        "trade_id",
+        "symbol",
+        "entry_timestamp",
+        "exit_timestamp",
+        "entry_price",
+        "exit_price",
+        "quantity",
+        "entry_fee",
+        "exit_fee",
+        "gross_pnl",
+        "net_pnl",
+        "holding_bars",
+        "exit_reason"
+      ],
+      "exact_column_name_match": false,
+      "path": "data/research/rd12/variants/RD12_E03_NO_RSI_ENTRY_FILTER/per-asset/btc_usdt/trades.csv",
+      "score": 3,
+      "semantics": {
+        "baseline_action": [],
+        "cost": [
+          "entry_fee",
+          "exit_fee"
+        ],
+        "decision_time": [
+          "entry_timestamp",
+          "exit_timestamp"
+        ],
+        "lifecycle": [
+          "trade_id"
+        ],
+        "notional": [],
+        "pair": [
+          "symbol"
+        ],
+        "value": []
+      },
+      "sha256": "8B0F9EEB82C16AEE5C9F932EEA6297C4D66F1FC5745EA637F9E637FD77386175",
+      "source_lifecycle_column": "trade_id",
+      "source_time_column": "entry_timestamp"
+    },
+    {
+      "candidate_lifecycle_column": "__trade_id",
+      "candidate_time_column": "decision_time_exact",
+      "columns": [
+        "trade_id",
+        "symbol",
+        "entry_timestamp",
+        "exit_timestamp",
+        "entry_price",
+        "exit_price",
+        "quantity",
+        "entry_fee",
+        "exit_fee",
+        "gross_pnl",
+        "net_pnl",
+        "holding_bars",
+        "exit_reason"
+      ],
+      "exact_column_name_match": false,
+      "path": "data/research/rd12/variants/RD12_E03_NO_RSI_ENTRY_FILTER/per-asset/dot_usdt/trades.csv",
+      "score": 3,
+      "semantics": {
+        "baseline_action": [],
+        "cost": [
+          "entry_fee",
+          "exit_fee"
+        ],
+        "decision_time": [
+          "entry_timestamp",
+          "exit_timestamp"
+        ],
+        "lifecycle": [
+          "trade_id"
+        ],
+        "notional": [],
+        "pair": [
+          "symbol"
+        ],
+        "value": []
+      },
+      "sha256": "49AB11E99F4627595559BEAE57B02219371AAF484B25970C1D69E92BA494F963",
+      "source_lifecycle_column": "trade_id",
+      "source_time_column": "entry_timestamp"
+    },
+    {
+      "candidate_lifecycle_column": "__trade_id",
+      "candidate_time_column": "decision_time_exact",
+      "columns": [
+        "trade_id",
+        "symbol",
+        "entry_timestamp",
+        "exit_timestamp",
+        "entry_price",
+        "exit_price",
+        "quantity",
+        "entry_fee",
+        "exit_fee",
+        "gross_pnl",
+        "net_pnl",
+        "holding_bars",
+        "exit_reason"
+      ],
+      "exact_column_name_match": false,
+      "path": "data/research/rd12/variants/RD12_E03_NO_RSI_ENTRY_FILTER/per-asset/eth_usdt/trades.csv",
+      "score": 3,
+      "semantics": {
+        "baseline_action": [],
+        "cost": [
+          "entry_fee",
+          "exit_fee"
+        ],
+        "decision_time": [
+          "entry_timestamp",
+          "exit_timestamp"
+        ],
+        "lifecycle": [
+          "trade_id"
+        ],
+        "notional": [],
+        "pair": [
+          "symbol"
+        ],
+        "value": []
+      },
+      "sha256": "017C88B02D3DB3763297B68CE6D69C26EA6427601FA7BBE2A8819C0DC39C8F27",
+      "source_lifecycle_column": "trade_id",
+      "source_time_column": "entry_timestamp"
+    },
+    {
+      "candidate_lifecycle_column": "__trade_id",
+      "candidate_time_column": "decision_time_exact",
+      "columns": [
+        "trade_id",
+        "symbol",
+        "entry_timestamp",
+        "exit_timestamp",
+        "entry_price",
+        "exit_price",
+        "quantity",
+        "entry_fee",
+        "exit_fee",
+        "gross_pnl",
+        "net_pnl",
+        "holding_bars",
+        "exit_reason"
+      ],
+      "exact_column_name_match": false,
+      "path": "data/research/rd12/variants/RD12_E03_NO_RSI_ENTRY_FILTER/portfolio/trades.csv",
+      "score": 3,
+      "semantics": {
+        "baseline_action": [],
+        "cost": [
+          "entry_fee",
+          "exit_fee"
+        ],
+        "decision_time": [
+          "entry_timestamp",
+          "exit_timestamp"
+        ],
+        "lifecycle": [
+          "trade_id"
+        ],
+        "notional": [],
+        "pair": [
+          "symbol"
+        ],
+        "value": []
+      },
+      "sha256": "BF6B10970808E92EFC21C99BB0DA714D59F063AE52902E0E888658D2D16AE424",
+      "source_lifecycle_column": "trade_id",
+      "source_time_column": "entry_timestamp"
+    },
+    {
+      "candidate_lifecycle_column": "__trade_id",
+      "candidate_time_column": "decision_time_exact",
+      "columns": [
+        "trade_id",
+        "symbol",
+        "entry_timestamp",
+        "exit_timestamp",
+        "entry_price",
+        "exit_price",
+        "quantity",
+        "entry_fee",
+        "exit_fee",
+        "gross_pnl",
+        "net_pnl",
+        "holding_bars",
+        "exit_reason"
+      ],
+      "exact_column_name_match": false,
+      "path": "data/research/rd12/variants/RD12_E04_NO_VOLUME_CONFIRMATION/per-asset/ada_usdt/trades.csv",
+      "score": 3,
+      "semantics": {
+        "baseline_action": [],
+        "cost": [
+          "entry_fee",
+          "exit_fee"
+        ],
+        "decision_time": [
+          "entry_timestamp",
+          "exit_timestamp"
+        ],
+        "lifecycle": [
+          "trade_id"
+        ],
+        "notional": [],
+        "pair": [
+          "symbol"
+        ],
+        "value": []
+      },
+      "sha256": "F7C0F97BF059D3B86842E45F701F64846CBAAF3A6193126F40A06C0273C09B0A",
+      "source_lifecycle_column": "trade_id",
+      "source_time_column": "entry_timestamp"
+    },
+    {
+      "candidate_lifecycle_column": "__trade_id",
+      "candidate_time_column": "decision_time_exact",
+      "columns": [
+        "trade_id",
+        "symbol",
+        "entry_timestamp",
+        "exit_timestamp",
+        "entry_price",
+        "exit_price",
+        "quantity",
+        "entry_fee",
+        "exit_fee",
+        "gross_pnl",
+        "net_pnl",
+        "holding_bars",
+        "exit_reason"
+      ],
+      "exact_column_name_match": false,
+      "path": "data/research/rd12/variants/RD12_E04_NO_VOLUME_CONFIRMATION/per-asset/avax_usdt/trades.csv",
+      "score": 3,
+      "semantics": {
+        "baseline_action": [],
+        "cost": [
+          "entry_fee",
+          "exit_fee"
+        ],
+        "decision_time": [
+          "entry_timestamp",
+          "exit_timestamp"
+        ],
+        "lifecycle": [
+          "trade_id"
+        ],
+        "notional": [],
+        "pair": [
+          "symbol"
+        ],
+        "value": []
+      },
+      "sha256": "2CE00721924565DF4253E2BC609738235D9062A540DE85531ED1E7C8E9628ADB",
+      "source_lifecycle_column": "trade_id",
+      "source_time_column": "entry_timestamp"
+    },
+    {
+      "candidate_lifecycle_column": "__trade_id",
+      "candidate_time_column": "decision_time_exact",
+      "columns": [
+        "trade_id",
+        "symbol",
+        "entry_timestamp",
+        "exit_timestamp",
+        "entry_price",
+        "exit_price",
+        "quantity",
+        "entry_fee",
+        "exit_fee",
+        "gross_pnl",
+        "net_pnl",
+        "holding_bars",
+        "exit_reason"
+      ],
+      "exact_column_name_match": false,
+      "path": "data/research/rd12/variants/RD12_E04_NO_VOLUME_CONFIRMATION/per-asset/btc_usdt/trades.csv",
+      "score": 3,
+      "semantics": {
+        "baseline_action": [],
+        "cost": [
+          "entry_fee",
+          "exit_fee"
+        ],
+        "decision_time": [
+          "entry_timestamp",
+          "exit_timestamp"
+        ],
+        "lifecycle": [
+          "trade_id"
+        ],
+        "notional": [],
+        "pair": [
+          "symbol"
+        ],
+        "value": []
+      },
+      "sha256": "0C9D3FFDB4858702F7CC8E122750BD42A7CACAA7AB6665770CF979CD3AB11158",
+      "source_lifecycle_column": "trade_id",
+      "source_time_column": "entry_timestamp"
+    },
+    {
+      "candidate_lifecycle_column": "__trade_id",
+      "candidate_time_column": "decision_time_exact",
+      "columns": [
+        "trade_id",
+        "symbol",
+        "entry_timestamp",
+        "exit_timestamp",
+        "entry_price",
+        "exit_price",
+        "quantity",
+        "entry_fee",
+        "exit_fee",
+        "gross_pnl",
+        "net_pnl",
+        "holding_bars",
+        "exit_reason"
+      ],
+      "exact_column_name_match": false,
+      "path": "data/research/rd12/variants/RD12_E04_NO_VOLUME_CONFIRMATION/per-asset/dot_usdt/trades.csv",
+      "score": 3,
+      "semantics": {
+        "baseline_action": [],
+        "cost": [
+          "entry_fee",
+          "exit_fee"
+        ],
+        "decision_time": [
+          "entry_timestamp",
+          "exit_timestamp"
+        ],
+        "lifecycle": [
+          "trade_id"
+        ],
+        "notional": [],
+        "pair": [
+          "symbol"
+        ],
+        "value": []
+      },
+      "sha256": "C93499A56F296A73819D42D4E5A4D443D1D245D0AC43E79B58D46C4F0C242B45",
+      "source_lifecycle_column": "trade_id",
+      "source_time_column": "entry_timestamp"
+    },
+    {
+      "candidate_lifecycle_column": "__trade_id",
+      "candidate_time_column": "decision_time_exact",
+      "columns": [
+        "trade_id",
+        "symbol",
+        "entry_timestamp",
+        "exit_timestamp",
+        "entry_price",
+        "exit_price",
+        "quantity",
+        "entry_fee",
+        "exit_fee",
+        "gross_pnl",
+        "net_pnl",
+        "holding_bars",
+        "exit_reason"
+      ],
+      "exact_column_name_match": false,
+      "path": "data/research/rd12/variants/RD12_E04_NO_VOLUME_CONFIRMATION/per-asset/eth_usdt/trades.csv",
+      "score": 3,
+      "semantics": {
+        "baseline_action": [],
+        "cost": [
+          "entry_fee",
+          "exit_fee"
+        ],
+        "decision_time": [
+          "entry_timestamp",
+          "exit_timestamp"
+        ],
+        "lifecycle": [
+          "trade_id"
+        ],
+        "notional": [],
+        "pair": [
+          "symbol"
+        ],
+        "value": []
+      },
+      "sha256": "E15B59F7580ED977AB6DF7BF86EF89C356A5760988F94C63628F6D4606BDFE00",
+      "source_lifecycle_column": "trade_id",
+      "source_time_column": "entry_timestamp"
+    },
+    {
+      "candidate_lifecycle_column": "__trade_id",
+      "candidate_time_column": "decision_time_exact",
+      "columns": [
+        "trade_id",
+        "symbol",
+        "entry_timestamp",
+        "exit_timestamp",
+        "entry_price",
+        "exit_price",
+        "quantity",
+        "entry_fee",
+        "exit_fee",
+        "gross_pnl",
+        "net_pnl",
+        "holding_bars",
+        "exit_reason"
+      ],
+      "exact_column_name_match": false,
+      "path": "data/research/rd12/variants/RD12_E04_NO_VOLUME_CONFIRMATION/portfolio/trades.csv",
+      "score": 3,
+      "semantics": {
+        "baseline_action": [],
+        "cost": [
+          "entry_fee",
+          "exit_fee"
+        ],
+        "decision_time": [
+          "entry_timestamp",
+          "exit_timestamp"
+        ],
+        "lifecycle": [
+          "trade_id"
+        ],
+        "notional": [],
+        "pair": [
+          "symbol"
+        ],
+        "value": []
+      },
+      "sha256": "E39CADF8FAD6A7302D6DB3BAEC531AD2A0DE39AD5C9EB9F2062829577C94DDFD",
+      "source_lifecycle_column": "trade_id",
+      "source_time_column": "entry_timestamp"
+    },
+    {
+      "candidate_lifecycle_column": "__trade_id",
+      "candidate_time_column": "decision_time_exact",
+      "columns": [
+        "trade_id",
+        "symbol",
+        "entry_timestamp",
+        "exit_timestamp",
+        "entry_price",
+        "exit_price",
+        "quantity",
+        "entry_fee",
+        "exit_fee",
+        "gross_pnl",
+        "net_pnl",
+        "holding_bars",
+        "exit_reason"
+      ],
+      "exact_column_name_match": false,
+      "path": "data/research/rd12/variants/RD12_E05_NO_VOLATILITY_SANITY/per-asset/ada_usdt/trades.csv",
+      "score": 3,
+      "semantics": {
+        "baseline_action": [],
+        "cost": [
+          "entry_fee",
+          "exit_fee"
+        ],
+        "decision_time": [
+          "entry_timestamp",
+          "exit_timestamp"
+        ],
+        "lifecycle": [
+          "trade_id"
+        ],
+        "notional": [],
+        "pair": [
+          "symbol"
+        ],
+        "value": []
+      },
+      "sha256": "F7C0F97BF059D3B86842E45F701F64846CBAAF3A6193126F40A06C0273C09B0A",
+      "source_lifecycle_column": "trade_id",
+      "source_time_column": "entry_timestamp"
+    }
+  ]
+}

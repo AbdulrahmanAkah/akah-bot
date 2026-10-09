@@ -1,0 +1,34 @@
+{
+  "all_dynamic_input_authority_ready": false,
+  "code_lineage_blockers": [],
+  "gaps": [
+    {
+      "exact_blocker": "RD27 caller constructs union/MB/RSR for C2/D2/E2. Frozen prospective universe PRE2022_UNION and portfolio label EAA_SHADOW_PARITY_NATIVE do not choose one of these actual constructors. No rename, union, or substitution is authorized.",
+      "id": "SIGNAL_PORTFOLIO_SELECTION",
+      "required_decision": "Explicit prospective signal population + membership/universe mapping + union versus standalone constructor, preserving or expressly amending prior scalar authority.",
+      "role": "events"
+    },
+    {
+      "exact_blocker": "Named source is mixed 2022-2023 CSV and its legacy loader reads all rows. Declared SHA is source evidence only, not a newly authorized 2022-only executable input manifest.",
+      "id": "AUTHORIZED_2022_SIGNAL_INPUT_PROJECTION",
+      "required_decision": "Exact authorized signal artifact/projection and immutable identity; prohibit calling mixed-year legacy loader as-is.",
+      "role": "events"
+    },
+    {
+      "exact_blocker": "raw_root override, pair set, exact per-pair 1h file identities and study cutoff are not bound for the new study. Canonical 4H cannot supply missing native 1h authority.",
+      "id": "ONE_HOUR_SOURCE_MANIFEST",
+      "required_decision": "Prospective raw_root/pair-file manifest and permitted window, without market-row reads in this mission.",
+      "role": "frames"
+    },
+    {
+      "exact_blocker": "Native timestamp convention is assumed by hourly scheduling, not certified for selected files; rolling 24 rows is not guaranteed 24 contiguous hours; normalizer silently keeps last duplicates. Current full low touch is a bar simulation, not exact intrabar availability. Future max-exit-bar existence also conditions admission.",
+      "id": "ONE_HOUR_PIT_AND_COMPLETENESS",
+      "required_decision": "Explicit timestamp/availability/contiguity/duplicate and missingness authority for selected 1h source and signal membership. Preserve policy; do not infer OHLC intrabar ordering.",
+      "role": "events,frames"
+    }
+  ],
+  "next_bottleneck": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_RD26_SIGNAL_PORTFOLIO_AND_1H_MANIFEST_PIT_BINDING_DECISION_V1",
+  "reopen_historical_executable_search": false,
+  "status": "EXACT_DECISIONS_REQUIRED_NOT_GENERIC_SOURCE_SEARCH",
+  "transitive_mutation_blockers": []
+}

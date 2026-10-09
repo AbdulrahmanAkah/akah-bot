@@ -1,0 +1,34 @@
+{
+  "authority_id": "AKAH_BOT_PRE2023_NATIVE_1H_REMATERIALIZATION_EXECUTION_CONTRACT_V1",
+  "execution_permissions": {
+    "current_raw_root_mutation_forbidden": true,
+    "future_execution_requires_separate_governed_task": true,
+    "market_rows_authorized_in_this_task": false,
+    "network_authorized_in_this_task": false,
+    "protected_year_rows_must_never_be_requested_or_opened": true
+  },
+  "must_not_mutate_current_root": "data/raw/rd16b/kucoin",
+  "next_bottleneck": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_PRE2023_SIGNAL_RECONSTRUCTION_EXECUTION_CONTRACT_EXACT_RESIDUAL_V1",
+  "output_root": "data/research/reconstructed_native_baseline_pre2023/native-1h-2022-v1",
+  "request_boundary": {
+    "pagination_until_guard_present": true,
+    "remote_boundary_count": 0,
+    "since_reaches_remote_request_boundary": false,
+    "strict_preopen_request_boundary_ready": false,
+    "until_reaches_remote_request_boundary": false
+  },
+  "residuals": [
+    "REMOTE_FETCH_BOUNDARY_NOT_EXACTLY_BOUND"
+  ],
+  "source_entrypoint": "src/spotbot/research/rd16b_hourly_readiness.py::run_rd16b",
+  "source_exchange_scope": "KuCoin spot USDT as frozen by RD16B/current native source authority",
+  "status": "BLOCKED",
+  "store": {
+    "new_isolated_root": "data/research/reconstructed_native_baseline_pre2023/native-1h-2022-v1",
+    "physical_writer_bound": true,
+    "store_root_configurable": true
+  },
+  "target_interval": "1h",
+  "target_since": "2022-01-01T00:00:00Z",
+  "target_until_exclusive": "2023-01-01T00:00:00Z"
+}

@@ -1,0 +1,196 @@
+{
+  "schema_version": "final-exit-brain-pre-2024-architecture-p35-transition-admission-causal-mechanism-attribution-and-candidate-freeze-v1",
+  "task_id": "FINAL_EXIT_BRAIN_PRE_2024_ARCHITECTURE_P35_TRANSITION_ADMISSION_CAUSAL_MECHANISM_ATTRIBUTION_AND_CANDIDATE_FREEZE_V1",
+  "status": "PASS_P35_COMPLETED",
+  "classification": "DIRECT_TRANSITION_LOSS_REMOVAL_IS_PRIMARY_POSITIVE_MECHANISM_DOWNSTREAM_PORTFOLIO_PATH_EFFECT_NET_ADVERSE_FREEZE_ADMISSION_ONLY_CANDIDATE_FOR_REPLICATION_PROTOCOL",
+  "scientific_question": "What causally explains the positive 2022 P19 endpoint: direct removal of TRANSITION trades, or downstream portfolio reallocation/sizing path effects?",
+  "answer": "The positive endpoint is driven by direct removal of loss-making TRANSITION trades. Downstream portfolio-path effects are net adverse and offset part of the direct benefit rather than causing the improvement.",
+  "authority": {
+    "starting_revision": 255,
+    "starting_head": "ea5c0cef647d7fda7e8ed43364c78fbd445ec2d0",
+    "github_revision_255_sync_commit": "4d7646f346b8cbd6657b81beda080385aba8c8ea",
+    "p19_result_path": "C:\\Users\\abdul\\Downloads\\EAA_EXIT_BRAIN_P19_2022_TRANSITION_ADMISSION_COMPONENT_ABLATION_CANONICAL_RESULT_20260914_010117.json",
+    "p19_result_sha256": "221CC3BCF5E062CE36CE2BEE10E3A9EE22448A8A8E4EF54F01DAF331E8B52DE7",
+    "p34_result_path": "governance/final_exit_brain_pre_2024_architecture_p34_transition_admission_authority_audit_and_reuse_adjudication_v1/canonical_result.json",
+    "p34_result_sha256": "552410D04DFE2B70234680B6B98E7D56B23B1A571431F1894BC60ED9A538DD99"
+  },
+  "mechanism": {
+    "endpoint": 5263.64279887882,
+    "direct_transition_loss_removal": {
+      "directly_ablated_control_trade_count": 173,
+      "directly_ablated_control_trade_pnl": -8163.217282531882,
+      "benefit_from_removal": 8163.217282531882,
+      "transition_suppressed_signal_count": 668,
+      "suppressed_signal_to_direct_control_trade_conversion": 0.25898203592814373
+    },
+    "indirect_portfolio_path": {
+      "common_trade_sizing_path_effect": 62.59861172806268,
+      "residual_control_only_trade_count": 11,
+      "residual_control_only_pnl": -2985.5135324891517,
+      "benefit_from_avoiding_residual_control_only_trades": 2985.5135324891517,
+      "treatment_only_trade_count": 17,
+      "treatment_only_pnl": -5947.686627870382,
+      "net_indirect_portfolio_path_effect": -2899.5744836531676
+    },
+    "state_lineage": {
+      "control_only_transition_count": 176,
+      "control_only_transition_pnl": -8380.181762190457,
+      "direct_transition_count": 173,
+      "direct_transition_pnl": -8163.217282531882,
+      "residual_transition_path_count": 3,
+      "residual_transition_path_pnl": -216.96447965857533,
+      "control_only_risk_on_count": 8,
+      "control_only_risk_on_pnl": -2768.549052830576,
+      "treatment_only_risk_on_count": 17,
+      "treatment_only_risk_on_pnl": -5947.686627870382
+    },
+    "blocker_lineage": {
+      "control_only_by_treatment_blocker": {
+        "SAME_PAIR_OPEN": {
+          "event_count": 7,
+          "mean_realized_pnl": -501.0467546126283,
+          "sum_realized_pnl": -3507.3272822883982
+        },
+        "SHADOW_STATIC_SAME_PAIR_OPEN_SUPPRESSED": {
+          "event_count": 4,
+          "mean_realized_pnl": 130.45343744981164,
+          "sum_realized_pnl": 521.8137497992466
+        },
+        "TRANSITION_ADMISSION_ABLATED": {
+          "event_count": 173,
+          "mean_realized_pnl": -47.186227066658276,
+          "sum_realized_pnl": -8163.217282531882
+        }
+      },
+      "treatment_only_by_control_blocker": {
+        "POSITION_SLOTS_FULL": {
+          "event_count": 1,
+          "mean_realized_pnl": -335.6048844975713,
+          "sum_realized_pnl": -335.6048844975713
+        },
+        "SAME_PAIR_OPEN": {
+          "event_count": 3,
+          "mean_realized_pnl": -394.1095118183436,
+          "sum_realized_pnl": -1182.3285354550308
+        },
+        "SHADOW_STATIC_SAME_PAIR_OPEN_SUPPRESSED": {
+          "event_count": 13,
+          "mean_realized_pnl": -340.75024676290616,
+          "sum_realized_pnl": -4429.75320791778
+        }
+      }
+    },
+    "ratios": {
+      "net_endpoint_as_fraction_of_direct_benefit": 0.6448000361502398,
+      "adverse_path_offset_as_fraction_of_direct_benefit": 0.3551999638497731
+    },
+    "reconciliation": {
+      "direct_benefit_plus_indirect_path_effect": 5263.6427988787145,
+      "p19_primary_endpoint": 5263.64279887882,
+      "absolute_error": 1.0550138540565968e-10
+    }
+  },
+  "gates": {
+    "P34_CAUSAL_REUSE_AUTHORITY_ALL_GATES_PASS": true,
+    "P19_ENDPOINT_NATIVE_RECONCILIATION_WITHIN_TOLERANCE": true,
+    "CONTROL_ONLY_BLOCKER_COUNTS_RECONCILE": true,
+    "CONTROL_ONLY_BLOCKER_PNL_RECONCILES": true,
+    "TREATMENT_ONLY_BLOCKER_COUNTS_RECONCILE": true,
+    "TREATMENT_ONLY_BLOCKER_PNL_RECONCILES": true,
+    "CONTROL_ONLY_STATE_COUNTS_RECONCILE": true,
+    "CONTROL_ONLY_STATE_PNL_RECONCILES": true,
+    "TREATMENT_ONLY_STATE_COUNTS_RECONCILE": true,
+    "TREATMENT_ONLY_STATE_PNL_RECONCILES": true,
+    "COMMON_TRADES_ALL_RISK_ON_AND_NO_COMMON_TRANSITION": true,
+    "DIRECT_TRANSITION_REMOVAL_BENEFIT_POSITIVE": true,
+    "INDIRECT_PORTFOLIO_PATH_EFFECT_NEGATIVE": true,
+    "DIRECT_BENEFIT_EXCEEDS_ABS_ADVERSE_PATH_EFFECT": true,
+    "MECHANISM_RECONSTRUCTS_ENDPOINT": true,
+    "TREATMENT_ONLY_RISK_ON_NET_PNL_NEGATIVE": true,
+    "NO_TRANSITION_ADMITTED_IN_TREATMENT": true
+  },
+  "candidate_freeze": {
+    "candidate_id": "PRE_2024_P13_TRANSITION_ADMISSION_ONLY_ABLATION_V1",
+    "status": "FROZEN_FOR_FUTURE_REPLICATION_PROTOCOL_ONLY",
+    "source_authority": {
+      "p19_result_sha256": "221CC3BCF5E062CE36CE2BEE10E3A9EE22448A8A8E4EF54F01DAF331E8B52DE7",
+      "p34_classification": "SUPPORTED_PRE_2024_TRANSITION_ADMISSION_ONLY_HYPOTHESIS_P19_CAUSAL_REUSE_ALL_FROZEN_GATES_PASS_NO_2023_PROMOTION",
+      "p35_mechanism_classification": "DIRECT_TRANSITION_LOSS_REMOVAL_IS_PRIMARY_POSITIVE_MECHANISM_DOWNSTREAM_PORTFOLIO_PATH_EFFECT_NET_ADVERSE_FREEZE_ADMISSION_ONLY_CANDIDATE_FOR_REPLICATION_PROTOCOL"
+    },
+    "runtime_semantics": {
+      "state_authority": "ENTRY_MARKET_STATE_ONLY",
+      "RISK_ON": "IDENTICAL_TO_P13",
+      "RISK_OFF": "IDENTICAL_TO_P13",
+      "TRANSITION": "DO_NOT_ADMIT_POSITION"
+    },
+    "must_remain_identical_to_p13": [
+      "entry signal generation",
+      "market-state construction",
+      "RISK_ON admission semantics",
+      "RISK_OFF admission semantics",
+      "target slot sizing",
+      "cash sizing",
+      "gross exposure sizing",
+      "capacity sizing",
+      "actual same-pair open guard",
+      "synthetic shadow semantics for admitted entries",
+      "shadow release rules",
+      "adaptive lifecycle",
+      "exit logic",
+      "cost model",
+      "holding horizons"
+    ],
+    "not_authorized": [
+      "2023 access or replay",
+      "2024 access or fresh holdout use",
+      "2025 access",
+      "threshold search",
+      "TRANSITION subfilter search",
+      "sizing search",
+      "parameter optimization",
+      "model fit",
+      "production promotion"
+    ]
+  },
+  "decision": {
+    "sizing_search_now": false,
+    "transition_admission_only_candidate_frozen": true,
+    "automatic_replication": false,
+    "automatic_2023_access": false,
+    "automatic_2024_access": false,
+    "automatic_2025_access": false,
+    "production_promotion": false
+  },
+  "next_bottleneck": "TRANSITION_ADMISSION_ONLY_CANDIDATE_REPLICATION_AUTHORITY_PROTOCOL_FREEZE",
+  "boundaries": {
+    "new_market_replay": false,
+    "raw_market_data_access": false,
+    "2023_access": false,
+    "2024_access": false,
+    "2025_access": false,
+    "candidate_search": false,
+    "threshold_search": false,
+    "sizing_search": false,
+    "parameter_search": false,
+    "model_fit": false,
+    "production_change": false
+  },
+  "artifacts": {
+    "candidate_freeze.json": {
+      "path": "governance/final_exit_brain_pre_2024_architecture_p35_transition_admission_causal_mechanism_attribution_and_candidate_freeze_v1/candidate_freeze.json",
+      "sha256": "84BF62B1C150A8365B83D963EF36A4C61936E3AD08D68890CEC2117B087321F3"
+    },
+    "canonical_result.json": {
+      "path": "governance/final_exit_brain_pre_2024_architecture_p35_transition_admission_causal_mechanism_attribution_and_candidate_freeze_v1/canonical_result.json",
+      "sha256": "BDD3F9A03FE54E25BE15543164E02C5F087F12F58B701EFB52E8E9F765DE6D40"
+    },
+    "mechanism_attribution.json": {
+      "path": "governance/final_exit_brain_pre_2024_architecture_p35_transition_admission_causal_mechanism_attribution_and_candidate_freeze_v1/mechanism_attribution.json",
+      "sha256": "27176DDF0D9DB827F239E8088A01BE9552742D84D12CA58F9E45EB8DFCFBC204"
+    },
+    "mechanism_gate_ledger.json": {
+      "path": "governance/final_exit_brain_pre_2024_architecture_p35_transition_admission_causal_mechanism_attribution_and_candidate_freeze_v1/mechanism_gate_ledger.json",
+      "sha256": "60F7226366882333A7521D71EBB0574215ECFF7769E6096E807395654E930390"
+    }
+  }
+}

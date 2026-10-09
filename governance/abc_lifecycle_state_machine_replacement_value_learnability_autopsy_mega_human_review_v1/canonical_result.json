@@ -1,0 +1,35 @@
+{
+  "authorized_axis": "FEATURE_INFORMATION_AUDIT_NONLINEAR_LEARNABILITY_BOUND",
+  "constraints": {
+    "2024_access": false,
+    "2025_access": false,
+    "model_selection": false,
+    "model_zoo": false,
+    "portfolio_policy_replay": false,
+    "production_changed": false,
+    "push": false,
+    "runtime_future_information": false,
+    "threshold_search": false
+  },
+  "finding": {
+    "baseline_parity": "PASS_2X_METRIC_AND_EXACT_TRADE",
+    "decomposition_identity": "PASS",
+    "pair_rows": 1700665
+  },
+  "nonlinear_probe": {
+    "dim": 64,
+    "gamma_rule": "1/P",
+    "lambda": 10.0,
+    "seeds": {
+      "candidate": 75501,
+      "direct": 75503,
+      "incumbent": 75502
+    },
+    "training_sample_cap_per_head_year": 50000,
+    "type": "RFF_RIDGE"
+  },
+  "reviewed_revision": 755,
+  "schema_version": "akah-rev755-learnability-autopsy-human-review-v1",
+  "source_disposition": "REPLACEMENT_VALUE_LEARNABILITY_AUTOPSY_COMPLETE_NO_MODEL_SELECTION_NO_RUNTIME_RULE",
+  "status": "PASS_INFORMATION_AUDIT_AUTHORIZED"
+}

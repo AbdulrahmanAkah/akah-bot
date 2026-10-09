@@ -1,0 +1,501 @@
+{
+  "authority_id": "AKAH_BOT_RECONSTRUCTED_NATIVE_BASELINE_STUDY_CONTRACT_V1",
+  "strict_2022_remote_boundary": {
+    "authority": "governance/rnb_boundary/remote_boundary_authority.json",
+    "status": "PASS_RESEARCH_ONLY_ADAPTER_TESTED",
+    "acquisition_executed": true,
+    "verified_manifest": "governance/rnb_acquisition/verified_manifest.json",
+    "verified_manifest_sha256": "E0E67858BCB9BF5377D7CA548182214B53C7DBC9D186C49CDE1DE9F35B54BA70",
+    "network_requests": 135,
+    "protected_rows_requested_or_read": 0,
+    "ready_for_native_replay": false,
+    "next_required": "2022_SIGNAL_AND_STATE_INPUT_CONSTRUCTION"
+  },
+  "cohort_contract": {
+    "all_exclusions_and_coverage_states_must_be_logged": true,
+    "definition": "ALL_ADMISSIONS_GENERATED_BY_THE_FROZEN_BASELINE_INSIDE_THE_PREDECLARED_WINDOW",
+    "historical_153_roster_is_reference_only": true,
+    "historical_33_is_not_required": true
+  },
+  "current_rd26_events_lifecycle_interprocedural_read_binding": {
+    "aliases": "governance/reconstructed_native_baseline_current_rd26_events_lifecycle_interprocedural_read_binding_v1/events_alias_and_mutation_graph.json",
+    "contract": "governance/reconstructed_native_baseline_current_rd26_events_lifecycle_interprocedural_read_binding_v1/reconstruction_input_authority_contract.json",
+    "decision": "governance/reconstructed_native_baseline_current_rd26_events_lifecycle_interprocedural_read_binding_v1/exact_binding_decision.json",
+    "helpers": "governance/reconstructed_native_baseline_current_rd26_events_lifecycle_interprocedural_read_binding_v1/interprocedural_helper_trace.json",
+    "lifecycle": "governance/reconstructed_native_baseline_current_rd26_events_lifecycle_interprocedural_read_binding_v1/events_lifecycle_sites.json",
+    "paths": "governance/reconstructed_native_baseline_current_rd26_events_lifecycle_interprocedural_read_binding_v1/true_read_symbolic_path_binding.json",
+    "preopen": "governance/reconstructed_native_baseline_current_rd26_events_lifecycle_interprocedural_read_binding_v1/true_read_preopen_authority_audit.json",
+    "primary_producer": "governance/reconstructed_native_baseline_current_rd26_events_lifecycle_interprocedural_read_binding_v1/events_primary_producer_binding.json",
+    "reads": "governance/reconstructed_native_baseline_current_rd26_events_lifecycle_interprocedural_read_binding_v1/true_read_dependencies.json",
+    "rev214_literal_input_model": "SUPERSEDED",
+    "rev215_zero_read_model": "NOT_YET_SUPERSEDED",
+    "status": "EVENTS_PRIMARY_PRODUCER_BOUND_INTERPROCEDURAL_READ_TRACE_STILL_EMPTY"
+  },
+  "current_rd26_logical_input_path_and_config_binding": {
+    "config_authority": "governance/reconstructed_native_baseline_current_rd26_logical_input_path_and_config_binding_v1/producer_config_authority_binding.json",
+    "decision": "governance/reconstructed_native_baseline_current_rd26_logical_input_path_and_config_binding_v1/path_binding_decision.json",
+    "logical_manifest": "governance/reconstructed_native_baseline_current_rd26_logical_input_path_and_config_binding_v1/unique_logical_input_manifest.json",
+    "occurrence_normalization": "governance/reconstructed_native_baseline_current_rd26_logical_input_path_and_config_binding_v1/read_occurrence_normalization.json",
+    "role_classification": "governance/reconstructed_native_baseline_current_rd26_logical_input_path_and_config_binding_v1/logical_input_role_classification.json",
+    "root_binding": "governance/reconstructed_native_baseline_current_rd26_logical_input_path_and_config_binding_v1/repo_root_and_raw_root_binding.json",
+    "status": "MEMBERSHIP_FRAMES_LOGICAL_INPUT_PATHS_AND_CONFIG_AUTHORITY_BOUND"
+  },
+  "current_rd26_logical_input_preopen_authority": {
+    "contract": "governance/reconstructed_native_baseline_current_rd26_logical_input_preopen_authority_v1/pre2023_reconstruction_input_authority_contract.json",
+    "decision": "governance/reconstructed_native_baseline_current_rd26_logical_input_preopen_authority_v1/preopen_authority_decision.json",
+    "membership_authority": "governance/reconstructed_native_baseline_current_rd26_logical_input_preopen_authority_v1/membership_preopen_semantic_authority.json",
+    "native_1h_authority": "governance/reconstructed_native_baseline_current_rd26_logical_input_preopen_authority_v1/native_1h_preopen_metadata_authority.json",
+    "source_provenance": "governance/reconstructed_native_baseline_current_rd26_logical_input_preopen_authority_v1/logical_input_source_provenance.json",
+    "status": "MEMBERSHIP_FRAMES_PREOPEN_2022_EXACT_RESIDUAL_REMAINS",
+    "validation_authority": "governance/reconstructed_native_baseline_current_rd26_logical_input_preopen_authority_v1/validation_only_artifact_authority.json"
+  },
+  "current_rd26_membership_frames_provenance": {
+    "argument_definitions": "governance/reconstructed_native_baseline_current_rd26_membership_frames_provenance_v1/caller_argument_reaching_definitions.json",
+    "call_binding": "governance/reconstructed_native_baseline_current_rd26_membership_frames_provenance_v1/scan_focus_signals_call_binding.json",
+    "config_authority": "governance/reconstructed_native_baseline_current_rd26_membership_frames_provenance_v1/scan_focus_signals_config_authority.json",
+    "contract": "governance/reconstructed_native_baseline_current_rd26_membership_frames_provenance_v1/pre2023_signal_reconstruction_input_contract.json",
+    "decision": "governance/reconstructed_native_baseline_current_rd26_membership_frames_provenance_v1/exact_binding_decision.json",
+    "events_primary_pipeline": "scan_focus_signals(membership, frames, ...) -> filter_robustness_events(events)",
+    "helper_trace": "governance/reconstructed_native_baseline_current_rd26_membership_frames_provenance_v1/membership_frames_interprocedural_trace.json",
+    "path_binding": "governance/reconstructed_native_baseline_current_rd26_membership_frames_provenance_v1/membership_frames_symbolic_path_binding.json",
+    "preopen_audit": "governance/reconstructed_native_baseline_current_rd26_membership_frames_provenance_v1/membership_frames_preopen_authority_audit.json",
+    "status": "MEMBERSHIP_FRAMES_TRUE_READS_FOUND_PATH_BINDING_RESIDUAL_REMAINS",
+    "true_reads": "governance/reconstructed_native_baseline_current_rd26_membership_frames_provenance_v1/membership_frames_true_read_dependencies.json"
+  },
+  "current_rd26_pre2023_reconstruction_input_authority": {
+    "decision": "governance/reconstructed_native_baseline_current_rd26_producer_pre2023_reconstruction_input_authority_v1/reconstruction_input_authority_decision.json",
+    "execution_contract": "governance/reconstructed_native_baseline_current_rd26_producer_pre2023_reconstruction_input_authority_v1/pre2023_reconstruction_execution_contract.json",
+    "input_matrix": "governance/reconstructed_native_baseline_current_rd26_producer_pre2023_reconstruction_input_authority_v1/producer_input_source_matrix.json",
+    "physical_audit": "governance/reconstructed_native_baseline_current_rd26_producer_pre2023_reconstruction_input_authority_v1/producer_input_preopen_physical_isolation_audit.json",
+    "status": "CURRENT_RD26_PRODUCER_PRE2023_RECONSTRUCTION_EXACT_INPUT_RESIDUAL_REMAINS",
+    "writer": "governance/reconstructed_native_baseline_current_rd26_producer_pre2023_reconstruction_input_authority_v1/mixed_signal_true_writer_and_callgraph.json"
+  },
+  "current_rd26_true_read_dependency_dataflow": {
+    "backward_dataflow": "governance/reconstructed_native_baseline_current_rd26_true_read_dependency_dataflow_v1/written_object_backward_dataflow.json",
+    "contract": "governance/reconstructed_native_baseline_current_rd26_true_read_dependency_dataflow_v1/reconstruction_input_authority_contract.json",
+    "decision": "governance/reconstructed_native_baseline_current_rd26_true_read_dependency_dataflow_v1/exact_residual_decision.json",
+    "preopen_audit": "governance/reconstructed_native_baseline_current_rd26_true_read_dependency_dataflow_v1/true_read_preopen_2022_authority_audit.json",
+    "rev214_literal_input_model_disposition": "SUPERSEDED_BY_TRUE_READ_DEPENDENCY_GRAPH",
+    "status": "TRUE_READ_DEPENDENCY_EXTRACTION_INCOMPLETE",
+    "symbolic_paths": "governance/reconstructed_native_baseline_current_rd26_true_read_dependency_dataflow_v1/symbolic_path_resolution.json",
+    "true_reads": "governance/reconstructed_native_baseline_current_rd26_true_read_dependency_dataflow_v1/true_upstream_read_dependencies.json",
+    "writer_binding": "governance/reconstructed_native_baseline_current_rd26_true_read_dependency_dataflow_v1/true_writer_binding.json"
+  },
+  "detector_contract": {
+    "memory": "UNCHANGED",
+    "v2": "UNCHANGED",
+    "v2_authority": "DIAGNOSTIC_ONLY",
+    "v2_exit_authority": false
+  },
+  "economics_gate": "HUMAN_REVIEW_AFTER_M3_ONLY",
+  "events_frames_exact_upstream_authority_gap_closure": {
+    "all_dynamic_input_authority_ready": false,
+    "bookkeeping_advance_authorized": false,
+    "canonical_4h_bound_as_native_frames": false,
+    "decision_path": "governance/ef_exact_v1/exact_upstream_authority_gap_closure_decision.json",
+    "events_semantic_role": "READ_ONLY_PRE_ADMISSION_SIGNAL_EVENT_DATAFRAME",
+    "events_transitive_mutation_status": "PROVEN_NO_TRANSITIVE_MUTATION",
+    "frames_semantic_role": "READ_ONLY_PAIR_KEYED_1H_FEATURE_DATAFRAMES",
+    "frames_transitive_mutation_status": "PROVEN_NO_TRANSITIVE_MUTATION",
+    "invalid_cross_module_caller_edges": 7,
+    "previous_16_field_events_schema": "REJECTED_LOCAL_COUNTERS_NOT_EVENTS_INPUT",
+    "real_replay_authorized": false,
+    "reconciliation_path": "governance/ef_exact_v1/rev202_rev203_lineage_reconciliation.json",
+    "remaining_gaps_path": "governance/ef_exact_v1/exact_remaining_authority_gaps.json",
+    "rev202_frames_loader_leaves_preserved": 8,
+    "source_contract_path": "governance/ef_exact_v1/corrected_events_frames_source_contract.json",
+    "status": "EXACT_SOURCE_CODE_ROLES_RESOLVED_PROSPECTIVE_SIGNAL_1H_INPUT_PIT_DECISIONS_REQUIRED",
+    "updated_input_contract_path": "governance/ef_exact_v1/corrected_input_contract.json",
+    "valid_rd27_loader_caller_edges": 1
+  },
+  "events_frames_prospective_source_binding": {
+    "all_dynamic_sources_bound": false,
+    "binding_decision_path": "governance/reconstructed_native_baseline_events_frames_prospective_source_binding_v1/events_frames_prospective_source_binding_decision.json",
+    "human_packet_path": "governance/reconstructed_native_baseline_events_frames_prospective_source_binding_v1/source_composition_human_decision_packet.json",
+    "source_contract_path": "governance/reconstructed_native_baseline_events_frames_prospective_source_binding_v1/bound_or_partial_source_contract.json",
+    "status": "PARTIAL_FREEZE_EVENTS_FRAMES_SOURCE_BINDING_PENDING",
+    "updated_input_contract_path": "governance/reconstructed_native_baseline_events_frames_prospective_source_binding_v1/prospective_source_binding_updated_input_contract.json"
+  },
+  "events_frames_source_authority_decision": {
+    "all_dynamic_source_authorities_bound": false,
+    "decision_path": "governance/reconstructed_native_baseline_events_frames_adapter_source_authority_decision_v1/events_frames_source_authority_decision.json",
+    "prospective_source_contract_path": "governance/reconstructed_native_baseline_events_frames_adapter_source_authority_decision_v1/events_frames_prospective_source_contract.json",
+    "status": "PARTIAL_FREEZE_EVENTS_FRAMES_PROSPECTIVE_SOURCE_BINDING_REQUIRED",
+    "updated_contract_path": "governance/reconstructed_native_baseline_events_frames_adapter_source_authority_decision_v1/events_frames_source_updated_input_contract.json"
+  },
+  "events_frames_source_role_correction_audit": {
+    "corrected_source_contract_path": "governance/reconstructed_native_baseline_events_frames_source_role_correction_audit_v1/corrected_events_frames_source_contract.json",
+    "events_semantic_role": "READ_ONLY_UPSTREAM_INPUT",
+    "events_semantics_corrected": false,
+    "frames_semantic_role": "READ_ONLY_UPSTREAM_INPUT",
+    "frames_upstream_lineage_complete": false,
+    "previous_human_candidate_set": "REJECTED_NOT_UPSTREAM_PRODUCER_AUTHORITY",
+    "role_decision_path": "governance/reconstructed_native_baseline_events_frames_source_role_correction_audit_v1/events_frames_role_semantics_decision.json",
+    "status": "CORRECTED_EVENTS_FRAMES_ROLE_SEMANTICS_PENDING_LINEAGE_CLOSURE",
+    "updated_input_contract_path": "governance/reconstructed_native_baseline_events_frames_source_role_correction_audit_v1/corrected_input_contract.json"
+  },
+  "events_frames_upstream_producer_role_audit_closure": {
+    "closure_decision_path": "governance/reconstructed_native_baseline_events_frames_upstream_producer_role_audit_closure_v1/upstream_role_audit_closure_decision.json",
+    "events_upstream_ready": false,
+    "frames_upstream_ready": false,
+    "status": "EXACT_EVENTS_FRAMES_UPSTREAM_AUTHORITY_GAP_REMAINS"
+  },
+  "historical_truth_claim": false,
+  "identity_contract": {
+    "historical_identity_bridge_may_be_recorded_as_context_only": true,
+    "lifecycle_id_required": true,
+    "must_not_reuse_historical_trade_id_as_new_primary_identity": true,
+    "run_id_required": true
+  },
+  "information_time_contract": {
+    "bar_timestamp_not_sufficient_by_itself": true,
+    "information_available_time_required": true,
+    "no_within_bar_order_from_ohlc": true
+  },
+  "internal_bookkeeping_contract": {
+    "economic_analysis_authorized": false,
+    "economic_identifier_hits": [
+      "equity"
+    ],
+    "explicit_decision_required_if_runtime_needs_it": true,
+    "native_internal_bookkeeping_authorized": false,
+    "outcome_identifier_hits": [
+      "exit_price",
+      "exit_reason"
+    ],
+    "pnl_as_research_outcome_authorized": false,
+    "static_surface_status": "SURFACE_DETECTED_REQUIRES_DECISION"
+  },
+  "membership_semantics_and_native_1h_footer_diagnosis": {
+    "decision": "governance/reconstructed_native_baseline_membership_semantics_and_1h_footer_diagnosis_v1/exact_residual_decision.json",
+    "footer_aggregate": "governance/reconstructed_native_baseline_membership_semantics_and_1h_footer_diagnosis_v1/native_1h_footer_aggregate_classification.json",
+    "footer_detail": "governance/reconstructed_native_baseline_membership_semantics_and_1h_footer_diagnosis_v1/native_1h_exact_footer_diagnosis.json",
+    "membership": "governance/reconstructed_native_baseline_membership_semantics_and_1h_footer_diagnosis_v1/membership_static_pit_semantic_authority.json",
+    "membership_producer": "governance/reconstructed_native_baseline_membership_semantics_and_1h_footer_diagnosis_v1/membership_exact_producer_trace.json",
+    "status": "CURRENT_1H_PARQUETS_NOT_PREOPEN_2022_ISOLATABLE_UPSTREAM_REMATERIALIZATION_REQUIRED"
+  },
+  "native_1h_upstream_pre2023_rematerialization_authority": {
+    "contract": "governance/reconstructed_native_baseline_native_1h_upstream_rematerialization_authority_v1/pre2023_native_1h_rematerialization_contract.json",
+    "decision": "governance/reconstructed_native_baseline_native_1h_upstream_rematerialization_authority_v1/upstream_rematerialization_authority_decision.json",
+    "membership_static_pit_authority_ready": true,
+    "producer_chain": "governance/reconstructed_native_baseline_native_1h_upstream_rematerialization_authority_v1/native_1h_producer_chain_binding.json",
+    "status": "NATIVE_1H_UPSTREAM_PREOPEN_TIME_BOUND_CAPABILITY_IDENTIFIED_EXECUTION_CONTRACT_PENDING",
+    "time_bound_audit": "governance/reconstructed_native_baseline_native_1h_upstream_rematerialization_authority_v1/upstream_time_bound_capability_audit.json",
+    "writers": "governance/reconstructed_native_baseline_native_1h_upstream_rematerialization_authority_v1/native_1h_writer_occurrence_classification.json"
+  },
+  "next_bottleneck": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_PRE2023_SIGNAL_RECONSTRUCTION_EXECUTION_CONTRACT_EXACT_RESIDUAL_V1",
+  "physically_isolated_2022_signal_source_authority": {
+    "authority": "governance/reconstructed_native_baseline_pre2023_physically_isolated_2022_source_authority_v1/physically_isolated_2022_source_authority.json",
+    "one_hour_metadata_inventory": "governance/reconstructed_native_baseline_pre2023_physically_isolated_2022_source_authority_v1/all_native_1h_metadata_inventory.json",
+    "status": "NOT_READY"
+  },
+  "pre2023_physical_2022_exact_residual": {
+    "decision": "governance/reconstructed_native_baseline_pre2023_physical_2022_exact_residual_v1/exact_residual_decision.json",
+    "funnel": "governance/reconstructed_native_baseline_pre2023_physical_2022_exact_residual_v1/candidate_rejection_funnel.json",
+    "nearest_candidates": "governance/reconstructed_native_baseline_pre2023_physical_2022_exact_residual_v1/nearest_to_ready_candidates.json",
+    "source_binding": "governance/reconstructed_native_baseline_pre2023_physical_2022_exact_residual_v1/rev212_candidate_authority_source_binding.json",
+    "status": "NO_SCHEMA_AND_PREOPEN_CANDIDATE_OLD_ARTIFACT_SEARCH_CLOSED_MOVE_TO_CURRENT_RD26_PRODUCER_RECONSTRUCTION"
+  },
+  "pre2023_reconstruction_execution_contract_hardening": {
+    "argument_propagation": "governance/reconstructed_native_baseline_pre2023_execution_contract_hardening_v1/since_until_interprocedural_propagation.json",
+    "contract": "governance/reconstructed_native_baseline_pre2023_execution_contract_hardening_v1/pre2023_native_1h_execution_contract.json",
+    "decision": "governance/reconstructed_native_baseline_pre2023_execution_contract_hardening_v1/execution_contract_authority_decision.json",
+    "entrypoint": "governance/reconstructed_native_baseline_pre2023_execution_contract_hardening_v1/rd16b_entrypoint_and_argument_binding.json",
+    "isolated_output": "governance/reconstructed_native_baseline_pre2023_execution_contract_hardening_v1/isolated_output_root_contract.json",
+    "pagination": "governance/reconstructed_native_baseline_pre2023_execution_contract_hardening_v1/pagination_until_guard_audit.json",
+    "remote_boundary": "governance/reconstructed_native_baseline_pre2023_execution_contract_hardening_v1/remote_fetch_boundary_authority.json",
+    "status": "PRE2023_RECONSTRUCTION_EXECUTION_CONTRACT_EXACT_RESIDUAL_REMAINS",
+    "store_binding": "governance/reconstructed_native_baseline_pre2023_execution_contract_hardening_v1/parquet_store_write_path_binding.json"
+  },
+  "pre2023_signal_materialization_and_1h_input_verification": {
+    "candidate_audit": "governance/reconstructed_native_baseline_pre2023_signal_materialization_and_1h_input_verification_v1/pre2023_signal_materialization_candidates.json",
+    "construction_contract": "governance/reconstructed_native_baseline_pre2023_signal_materialization_and_1h_input_verification_v1/pre2023_signal_materialization_construction_contract.json",
+    "current_authority_decision": "governance/reconstructed_native_baseline_pre2023_signal_materialization_construction_authority_v1/construction_authority_decision.json",
+    "current_information_availability_contract": "governance/reconstructed_native_baseline_pre2023_signal_materialization_construction_authority_v1/one_hour_information_availability_contract.json",
+    "current_materialization_contract": "governance/reconstructed_native_baseline_pre2023_signal_materialization_construction_authority_v1/pre2023_signal_materialization_contract.json",
+    "current_preopen_isolation_proof": "governance/reconstructed_native_baseline_pre2023_signal_materialization_preopen_2022_upstream_source_authority_v1/preopen_2022_isolation_proof.json",
+    "current_rd23_candidate_classification": "NOT_SEMANTICALLY_COMPATIBLE",
+    "current_rd23_candidate_decision": "governance/reconstructed_native_baseline_pre2023_signal_materialization_preopen_2022_upstream_source_authority_v1/pre2023_signal_upstream_source_authority_decision.json",
+    "current_timestamp_binding": "governance/reconstructed_native_baseline_pre2023_signal_materialization_construction_authority_v1/one_hour_timestamp_semantic_binding.json",
+    "decision": "governance/reconstructed_native_baseline_pre2023_signal_materialization_and_1h_input_verification_v1/input_verification_progress_decision.json",
+    "future_coverage_contract": "governance/reconstructed_native_baseline_pre2023_signal_materialization_and_1h_input_verification_v1/max_exit_administrative_coverage_contract.json",
+    "one_hour_inventory": "governance/reconstructed_native_baseline_pre2023_signal_materialization_and_1h_input_verification_v1/one_hour_raw_root_inventory.json",
+    "producer_trace": "governance/reconstructed_native_baseline_pre2023_signal_materialization_and_1h_input_verification_v1/mixed_signal_producer_trace.json",
+    "status": "EXACT_RD23_CANDIDATE_INCOMPATIBLE_PREOPEN_SOURCE_GAP_REMAINS",
+    "timestamp_semantic_audit": "governance/reconstructed_native_baseline_pre2023_signal_materialization_and_1h_input_verification_v1/one_hour_timestamp_semantic_source_audit.json"
+  },
+  "pre2023_signal_materialization_construction_authority": {
+    "authority_path": "governance/reconstructed_native_baseline_pre2023_signal_materialization_construction_authority_v1/construction_authority_decision.json",
+    "future_coverage_classification": "ADMINISTRATIVE_COVERAGE_REQUIREMENT_NOT_CAUSAL_SIGNAL",
+    "future_information_leakage": false,
+    "next_bottleneck": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_PRE2023_SIGNAL_MATERIALIZATION_PHYSICALLY_ISOLATED_2022_SOURCE_AUTHORITY_V1",
+    "one_hour_information_availability_path": "governance/reconstructed_native_baseline_pre2023_signal_materialization_construction_authority_v1/one_hour_information_availability_contract.json",
+    "one_hour_timestamp_authority_path": "governance/reconstructed_native_baseline_pre2023_signal_materialization_construction_authority_v1/one_hour_timestamp_semantic_binding.json",
+    "one_hour_timestamp_semantic": "BAR_CLOSE_TIME",
+    "pre2023_signal_materialization_ready": false,
+    "selected_pair_set_bound": false,
+    "status": "EXACT_GAP_CONFIRMED",
+    "upstream_preopen_isolation_status": "NOT_AVAILABLE_CURRENT_RAW_ROOT"
+  },
+  "prospective_runner": {
+    "context_authority": "governance/reconstructed_native_baseline_rd26_signal_source_and_1h_manifest_exact_residual_gap_v1/prospective_portfolio_universe_semantic_binding.json",
+    "historical_producer_claim": false,
+    "selected": null,
+    "selection_is_prospective_functional_choice": true,
+    "status": "PROSPECTIVE_CONTEXT_AND_INPUT_INSTANCE_UNRESOLVED",
+    "terminal_contract": "governance/reconstructed_native_baseline_rd26_signal_source_and_1h_manifest_exact_residual_gap_v1/terminal_input_verification_contract.json"
+  },
+  "prospective_scalar_human_decision": {
+    "cost_multiplier": "1.0",
+    "decision_authority": "governance/reconstructed_native_baseline_prospective_scalar_human_decision_v1/human_scalar_decision.json",
+    "policy_id": "rd27.FULL_ADAPTIVE_LIFECYCLE_BRAIN",
+    "status": "BOUND",
+    "updated_contract": "governance/reconstructed_native_baseline_prospective_scalar_human_decision_v1/human_selected_scalar_contract.json"
+  },
+  "prospective_scalar_selection": {
+    "all_scalar_roles_bound": false,
+    "decision_path": "governance/reconstructed_native_baseline_prospective_scalar_selection_decision_v1/prospective_scalar_selection_decision.json",
+    "human_decision_packet_path": "governance/reconstructed_native_baseline_prospective_scalar_selection_decision_v1/scalar_human_decision_packet.json",
+    "human_decision_required_roles": [
+      "policy_id",
+      "cost_multiplier"
+    ],
+    "status": "PARTIAL_FREEZE_PROSPECTIVE_SCALAR_HUMAN_DECISION_REQUIRED",
+    "updated_contract_path": "governance/reconstructed_native_baseline_prospective_scalar_selection_decision_v1/scalar_selection_updated_input_contract.json"
+  },
+  "rd26_signal_portfolio_and_1h_manifest_pit_binding_decision": {
+    "binding_decision_path": "governance/reconstructed_native_baseline_rd26_signal_portfolio_and_1h_manifest_pit_binding_decision_v1/rd26_signal_portfolio_and_1h_manifest_pit_binding_decision.json",
+    "completed_bar_availability_ready": false,
+    "future_bar_semantics_ready": false,
+    "hourly_continuity_ready": false,
+    "one_hour_manifest_surface_ready": false,
+    "signal_2022_source_ready": false,
+    "signal_constructor_ready": false,
+    "status": "PARTIAL_BINDING_EXACT_GAPS_REMAIN_HUMAN_CONTEXT_AND_INPUT_AUTHORITY_REQUIRED",
+    "study_window_coverage_ready": false,
+    "turnover_proxy_ready": false
+  },
+  "rd26_signal_source_and_1h_manifest_exact_gap_closure": {
+    "closure_decision_path": "governance/reconstructed_native_baseline_rd26_signal_source_and_1h_manifest_exact_gap_closure_v1/exact_gap_closure_decision.json",
+    "cost_multiplier_typed_binding_ready": true,
+    "exact_residual_gap_authority": "governance/reconstructed_native_baseline_rd26_signal_source_and_1h_manifest_exact_residual_gap_v1/exact_residual_gap_decision.json",
+    "future_bar_path": "governance/reconstructed_native_baseline_rd26_signal_source_and_1h_manifest_exact_gap_closure_v1/max_exit_future_bar_exact_dataflow.json",
+    "future_bar_semantics_ready": false,
+    "human_decision_packet": "governance/reconstructed_native_baseline_rd26_signal_source_and_1h_manifest_exact_residual_gap_v1/human_decision_packet.json",
+    "manifest_path": "governance/reconstructed_native_baseline_rd26_signal_source_and_1h_manifest_exact_gap_closure_v1/one_hour_exact_manifest.json",
+    "one_hour_manifest_ready": false,
+    "raw_root_ready": true,
+    "raw_root_trace_path": "governance/reconstructed_native_baseline_rd26_signal_source_and_1h_manifest_exact_gap_closure_v1/raw_root_exact_trace.json",
+    "runner_trace_path": "governance/reconstructed_native_baseline_rd26_signal_source_and_1h_manifest_exact_gap_closure_v1/runner_exact_input_trace.json",
+    "signal_constructor_ready": false,
+    "signal_context_path": "governance/reconstructed_native_baseline_rd26_signal_source_and_1h_manifest_exact_gap_closure_v1/signal_constructor_portfolio_universe_exact_context.json",
+    "signal_materialization_path": "governance/reconstructed_native_baseline_rd26_signal_source_and_1h_manifest_exact_gap_closure_v1/signal_2022_materialization_search.json",
+    "signal_pre2023_materialization_ready": false,
+    "status": "SEMANTIC_CONTRACTS_CLOSED_TERMINAL_INPUT_AUTHORITY_PENDING",
+    "timestamp_audit_path": "governance/reconstructed_native_baseline_rd26_signal_source_and_1h_manifest_exact_gap_closure_v1/timestamp_only_integrity_audit.json",
+    "timestamp_integrity_ready": false,
+    "typed_cost_path": "governance/reconstructed_native_baseline_rd26_signal_source_and_1h_manifest_exact_gap_closure_v1/cost_multiplier_typed_execution_binding.json"
+  },
+  "rd26_signal_source_and_1h_manifest_human_decision": {
+    "decision_authority": "governance/reconstructed_native_baseline_rd26_signal_source_and_1h_manifest_human_decision_v1/human_semantic_decision.json",
+    "post_human_terminal_contract": "governance/reconstructed_native_baseline_rd26_signal_source_and_1h_manifest_human_decision_v1/post_human_terminal_verification_contract.json",
+    "signal_input_status": "UNRESOLVED_NO_AUTHORIZED_PRE2023_ARTIFACT",
+    "status": "BOUND_FULL_NATIVE_MATRIX_9_STRATA",
+    "strata_contract": "governance/reconstructed_native_baseline_rd26_signal_source_and_1h_manifest_human_decision_v1/full_native_matrix_strata_contract.json",
+    "strata_count": 9
+  },
+  "rd27_native_replay": {
+    "function": "replay_lifecycle_policy",
+    "parameters": [
+      "policy_id",
+      "portfolio_id",
+      "universe_id",
+      "cost_multiplier",
+      "events",
+      "frames",
+      "state_frame",
+      "replay_start",
+      "replay_cutoff",
+      "async_memory_shadow_enabled",
+      "async_memory_observations",
+      "async_memory_diagnostics",
+      "observable_adapter_enabled",
+      "observable_primitive_rows",
+      "observable_symbol_bindings",
+      "observable_policy",
+      "observable_adapter_diagnostics",
+      "observable_memory_predicate_enabled",
+      "observable_memory_predicate_diagnostics",
+      "observable_later_trigger_predicate_enabled",
+      "observable_later_trigger_predicate_diagnostics",
+      "async_exit_candidate_shadow_enabled",
+      "async_exit_candidate_diagnostics",
+      "later_trigger_v2_shadow_hook"
+    ],
+    "required_runtime_roles": [
+      "policy_id",
+      "portfolio_id",
+      "universe_id",
+      "cost_multiplier",
+      "events",
+      "frames",
+      "state_frame"
+    ],
+    "source_path": "src/spotbot/research/rd27_lifecycle_replay.py",
+    "source_sha256": "E3944A4655DDDF21C394FE1DB541F2645F529C00BD8390B22D652BD8EF5BBF83"
+  },
+  "recorder_protocol_authority": "governance/AKAH_BOT_RECONSTRUCTED_NATIVE_EVENT_RECORDER_PROTOCOL_V1.json",
+  "runner_input_authority_decision": {
+    "decision_authority": "governance/reconstructed_native_baseline_runner_input_authority_decision_v1/runner_input_authority_decision.json",
+    "selected_existing_runner": null,
+    "state": "THIN_RUNNER_INPUT_CONTRACT_REQUIRED",
+    "thin_runner_required": true,
+    "thin_runner_spec_path": "governance/reconstructed_native_baseline_runner_input_authority_decision_v1/thin_runner_input_contract_spec.json"
+  },
+  "runtime_input_roles": {
+    "cost_multiplier": {
+      "authority_status": "BOUND_BY_EXPLICIT_PROSPECTIVE_HUMAN_DECISION",
+      "expression": "float(1.0)",
+      "required": true
+    },
+    "events": {
+      "authority_path": "governance/ef_exact_v1/events_exact_upstream_authority.json",
+      "authority_status": "SOURCE_CODE_BRANCHES_BOUND_CONTEXT_SELECTION_AND_PRE2023_INPUT_PENDING",
+      "execution_ready": false,
+      "expression": "portfolio_events from union_events or standalone_events; selection not yet authorized",
+      "required": true
+    },
+    "frames": {
+      "authority_path": "governance/ef_exact_v1/frames_exact_upstream_authority.json",
+      "authority_status": "DEFAULT_RAW_ROOT_BOUND_MANIFEST_AND_COMPLETION_AUTHORITY_PENDING",
+      "execution_ready": false,
+      "expression": "run_rd27_lifecycle_ablation.load_feature_frames(raw_root=raw_root, pairs=pairs)",
+      "required": true
+    },
+    "policy_id": {
+      "authority_status": "BOUND_BY_EXPLICIT_PROSPECTIVE_HUMAN_DECISION",
+      "expression": "rd27.FULL_ADAPTIVE_LIFECYCLE_BRAIN",
+      "required": true
+    },
+    "portfolio_id": {
+      "authority_status": "PENDING_CONTEXT_DECISION",
+      "expression": null,
+      "required": true
+    },
+    "state_frame": {
+      "authority_status": "BOUND_DEFAULT_BTC_USDT_PATH_PENDING_FILE_VERIFICATION",
+      "expression": "load_state_frame(raw_root)",
+      "required": true
+    },
+    "universe_id": {
+      "authority_status": "PENDING_CONTEXT_DECISION",
+      "expression": null,
+      "required": true
+    }
+  },
+  "status": "PRE2023_RECONSTRUCTION_EXECUTION_CONTRACT_EXACT_RESIDUAL_REMAINS",
+  "study_label": "RECONSTRUCTED_NATIVE_BASELINE_STUDY",
+  "terminal_contract": {
+    "administrative_end": "DISTINCT_EVENT",
+    "coverage_loss": "DISTINCT_EVENT",
+    "native_terminal": "RUNTIME_NATIVE_POLICY_TERMINAL",
+    "post_native_close_primary_observation": false,
+    "same_time_ordering": "RUNTIME_SEQUENCE_OR_UNRESOLVED"
+  },
+  "thin_runner_input_contract_freeze": {
+    "authority_gap_count": 6,
+    "authority_gaps": [
+      {
+        "gap": "UNRESOLVED_NO_LITERAL_AUTHORITY",
+        "role": "policy_id"
+      },
+      {
+        "gap": "UNRESOLVED_NO_LITERAL_AUTHORITY",
+        "role": "cost_multiplier"
+      },
+      {
+        "gap": "UNRESOLVED_NO_UNIQUE_PRODUCER_DEFINITION",
+        "role": "events"
+      },
+      {
+        "gap": "PIT_AUTHORITY_UNRESOLVED",
+        "role": "events"
+      },
+      {
+        "gap": "UNRESOLVED_NO_UNIQUE_PRODUCER_DEFINITION",
+        "role": "frames"
+      },
+      {
+        "gap": "PIT_AUTHORITY_UNRESOLVED",
+        "role": "frames"
+      }
+    ],
+    "contract_path": "governance/reconstructed_native_baseline_thin_runner_input_contract_freeze_v1/thin_runner_frozen_input_contract.json",
+    "decision_path": "governance/reconstructed_native_baseline_thin_runner_input_contract_freeze_v1/thin_runner_input_contract_freeze_decision.json",
+    "status": "PARTIAL_FREEZE_INPUT_AUTHORITY_GAPS_REMAIN",
+    "window_contract_path": "governance/reconstructed_native_baseline_thin_runner_input_contract_freeze_v1/study_window_predeclaration_contract.json"
+  },
+  "thin_runner_input_gap_adjudication": {
+    "all_target_roles_bound": false,
+    "decision_path": "governance/reconstructed_native_baseline_thin_runner_input_authority_gap_adjudication_v1/role_by_role_gap_adjudication.json",
+    "remaining_gap_count": 4,
+    "remaining_gaps": [
+      {
+        "blocker": "UNRESOLVED_MULTIPLE_CORROBORATED_AUTHORITIES",
+        "role": "policy_id"
+      },
+      {
+        "blocker": "UNRESOLVED_MULTIPLE_CORROBORATED_AUTHORITIES",
+        "role": "cost_multiplier"
+      },
+      {
+        "blocker": "NO_UNIQUE_PRODUCER_REACHED_BY_INTERPROCEDURAL_TRACE",
+        "role": "events"
+      },
+      {
+        "blocker": "NO_UNIQUE_PRODUCER_REACHED_BY_INTERPROCEDURAL_TRACE",
+        "role": "frames"
+      }
+    ],
+    "status": "PARTIAL_FREEZE_INPUT_AUTHORITY_GAPS_REMAIN",
+    "updated_contract_path": "governance/reconstructed_native_baseline_thin_runner_input_authority_gap_adjudication_v1/updated_thin_runner_input_contract.json"
+  },
+  "thin_runner_input_gap_closure": {
+    "adapter_decision_path": "governance/reconstructed_native_baseline_thin_runner_input_authority_gap_closure_v1/events_frames_adapter_contract_decision.json",
+    "consumer_contract_path": "governance/reconstructed_native_baseline_thin_runner_input_authority_gap_closure_v1/events_frames_consumer_contract.json",
+    "dynamic_roles_all_bound": false,
+    "remaining_gap_count": 4,
+    "remaining_gaps": [
+      {
+        "gap": "UNRESOLVED_MULTIPLE_BASELINE_CANDIDATES",
+        "role": "policy_id"
+      },
+      {
+        "gap": "UNRESOLVED_MULTIPLE_BASELINE_CANDIDATES",
+        "role": "cost_multiplier"
+      },
+      {
+        "gap": "NO_UNIQUE_EXISTING_BUILDER_WITH_FIELD_PIT_AND_EXACT_GOVERNANCE_AUTHORITY",
+        "role": "events"
+      },
+      {
+        "gap": "NO_UNIQUE_EXISTING_BUILDER_WITH_FIELD_PIT_AND_EXACT_GOVERNANCE_AUTHORITY",
+        "role": "frames"
+      }
+    ],
+    "scalar_decision_path": "governance/reconstructed_native_baseline_thin_runner_input_authority_gap_closure_v1/prospective_scalar_semantic_decision.json",
+    "scalar_roles_all_bound": false,
+    "status": "PARTIAL_FREEZE_PROSPECTIVE_SCALAR_SELECTION_REQUIRED",
+    "updated_contract_path": "governance/reconstructed_native_baseline_thin_runner_input_authority_gap_closure_v1/gap_closure_updated_input_contract.json"
+  },
+  "window_contract": {
+    "protected_years_forbidden": [
+      "2023",
+      "2024",
+      "2025"
+    ],
+    "status": "MUST_BE_PREDECLARED_BEFORE_REAL_REPLAY",
+    "window_must_use_existing_authorized_data_only": true,
+    "window_selection_must_not_use_v2_incidence_or_economics": true
+  }
+}

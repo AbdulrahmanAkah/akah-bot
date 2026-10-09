@@ -1,0 +1,173 @@
+{
+  "entry_setups": [
+    "BREAKOUT",
+    "PULLBACK_RECLAIM",
+    "REACCELERATION",
+    "SMALL_LIQUIDITY_SWEEP_REVERSAL"
+  ],
+  "exits": [
+    "PROTECTIVE_STOP",
+    "THESIS_DECAY",
+    "THESIS_FAILURE_2CHECK",
+    "STRUCTURAL_TRAILING",
+    "STALE_LOSER_14D",
+    "WINNER_90D_SAFETY"
+  ],
+  "no_fixed_profit_cap": true,
+  "profiles": {
+    "P01": {
+      "base_risk": 0.0065,
+      "max_heat": 0.04,
+      "max_initial_risk": 0.009,
+      "max_positions": 5,
+      "weight_cap": 0.25
+    },
+    "P02": {
+      "base_risk": 0.009,
+      "max_heat": 0.06,
+      "max_initial_risk": 0.0125,
+      "max_positions": 6,
+      "weight_cap": 0.3
+    },
+    "REV": {
+      "base_risk": 0.0045,
+      "max_heat": 0.02,
+      "max_initial_risk": 0.0065,
+      "max_positions": 3,
+      "weight_cap": 0.1
+    }
+  },
+  "recipes": [
+    {
+      "cost_hurdle": false,
+      "exit": "DECAY",
+      "family": "HYBRID",
+      "id": "M01_V4_HYBRID_DECAY_P01",
+      "profile": "P01",
+      "soft_dd": false,
+      "soft_fib": true,
+      "strict_regime": false
+    },
+    {
+      "cost_hurdle": false,
+      "exit": "CONVEX",
+      "family": "HYBRID",
+      "id": "M02_V4_HYBRID_CONVEX_P01",
+      "profile": "P01",
+      "soft_dd": false,
+      "soft_fib": true,
+      "strict_regime": false
+    },
+    {
+      "cost_hurdle": false,
+      "exit": "DECAY",
+      "family": "HYBRID",
+      "id": "M03_V4_HYBRID_DECAY_P02",
+      "profile": "P02",
+      "soft_dd": false,
+      "soft_fib": true,
+      "strict_regime": false
+    },
+    {
+      "cost_hurdle": false,
+      "exit": "CONVEX",
+      "family": "HYBRID",
+      "id": "M04_V4_HYBRID_CONVEX_P02",
+      "profile": "P02",
+      "soft_dd": false,
+      "soft_fib": true,
+      "strict_regime": false
+    },
+    {
+      "cost_hurdle": false,
+      "exit": "CONVEX",
+      "family": "BREAKOUT",
+      "id": "M05_BREAKOUT_CONVEX_P02",
+      "profile": "P02",
+      "soft_dd": false,
+      "soft_fib": true,
+      "strict_regime": false
+    },
+    {
+      "cost_hurdle": false,
+      "exit": "CONVEX",
+      "family": "PULLBACK",
+      "id": "M06_PULLBACK_CONVEX_P02",
+      "profile": "P02",
+      "soft_dd": false,
+      "soft_fib": true,
+      "strict_regime": false
+    },
+    {
+      "cost_hurdle": false,
+      "exit": "CONVEX",
+      "family": "REACCEL",
+      "id": "M07_REACCEL_CONVEX_P02",
+      "profile": "P02",
+      "soft_dd": false,
+      "soft_fib": true,
+      "strict_regime": false
+    },
+    {
+      "cost_hurdle": false,
+      "exit": "CONVEX",
+      "family": "HYBRID_REACCEL",
+      "id": "M08_HYBRID_REACCEL_CONVEX_P02",
+      "profile": "P02",
+      "soft_dd": false,
+      "soft_fib": true,
+      "strict_regime": false
+    },
+    {
+      "cost_hurdle": true,
+      "exit": "CONVEX",
+      "family": "HYBRID_REACCEL",
+      "id": "M09_HYBRID_REACCEL_COST_HURDLE_P02",
+      "profile": "P02",
+      "soft_dd": false,
+      "soft_fib": true,
+      "strict_regime": false
+    },
+    {
+      "cost_hurdle": false,
+      "exit": "CONVEX",
+      "family": "HYBRID_REACCEL",
+      "id": "M10_HYBRID_REACCEL_STRICT_REGIME_P02",
+      "profile": "P02",
+      "soft_dd": true,
+      "soft_fib": true,
+      "strict_regime": true
+    },
+    {
+      "cost_hurdle": true,
+      "exit": "REVERSAL",
+      "family": "REVERSAL",
+      "id": "M11_LIQUIDITY_SWEEP_REVERSAL_SMALL",
+      "profile": "REV",
+      "soft_dd": false,
+      "soft_fib": false,
+      "strict_regime": false
+    },
+    {
+      "cost_hurdle": true,
+      "exit": "CONVEX",
+      "family": "ROUTER",
+      "id": "M12_REGIME_ROUTER_TREND_PLUS_REVERSAL",
+      "profile": "P02",
+      "soft_dd": false,
+      "soft_fib": true,
+      "strict_regime": false
+    }
+  ],
+  "schema_version": "akah-manual-recipe-registry-v1",
+  "score_components": [
+    "MARKET_REGIME",
+    "ASSET_TREND",
+    "RELATIVE_STRENGTH",
+    "SETUP",
+    "VOLUME_MOMENTUM",
+    "STRUCTURE",
+    "LIQUIDITY",
+    "SOFT_FIB_OPTIONAL"
+  ]
+}

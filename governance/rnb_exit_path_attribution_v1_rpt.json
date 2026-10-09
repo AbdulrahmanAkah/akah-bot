@@ -1,0 +1,69 @@
+{
+  "authority_bindings": {
+    "by_hold_sha256": "AA463BE4F164E136890B25900D2917384BEA8B90592AD818696DFC4F3F99B3A3",
+    "by_reason_sha256": "207232D0882DC479EBA9F0D3545007EFC29B54EA67CE1476B727BE620772E07A",
+    "by_reason_state_sha256": "C32337DC6FD83A82DDE05C027D79C7DF4E6B633C1DFDD39299542A2C770CBF67",
+    "by_state_sha256": "42EBB4ECA824691E268813AC2EAFF96606F326A4FED0B6CE941E9FE193B84B68",
+    "loss_concentration_sha256": "1B8B60129EC5DB500CA2B214794F89700022AC4A1A976268A92ADB3BB3A11D06",
+    "shadow_observability_sha256": "2197B89A71B7C087409F38FDE39A80C3AAA3C83A7974B08C939A377BFD49CA7B",
+    "summary_sha256": "62038B42FDB18C4991C090E72D720388E81C5205733B45379F34BDEA7ADFA50E"
+  },
+  "branch": "research/rd48-cross-venue-price-level-basis-direct-utility-v1",
+  "evidence": [
+    {
+      "path": "governance/rnb_exit_path_attribution_v1/exit_path_summary.json",
+      "sha256": "62038B42FDB18C4991C090E72D720388E81C5205733B45379F34BDEA7ADFA50E"
+    },
+    {
+      "path": "governance/rnb_exit_path_attribution_v1/by_exit_reason.json",
+      "sha256": "207232D0882DC479EBA9F0D3545007EFC29B54EA67CE1476B727BE620772E07A"
+    },
+    {
+      "path": "governance/rnb_exit_path_attribution_v1/by_market_state_transition.json",
+      "sha256": "42EBB4ECA824691E268813AC2EAFF96606F326A4FED0B6CE941E9FE193B84B68"
+    },
+    {
+      "path": "governance/rnb_exit_path_attribution_v1/by_exit_reason_and_state_transition.json",
+      "sha256": "C32337DC6FD83A82DDE05C027D79C7DF4E6B633C1DFDD39299542A2C770CBF67"
+    },
+    {
+      "path": "governance/rnb_exit_path_attribution_v1/by_holding_bucket.json",
+      "sha256": "AA463BE4F164E136890B25900D2917384BEA8B90592AD818696DFC4F3F99B3A3"
+    },
+    {
+      "path": "governance/rnb_exit_path_attribution_v1/loss_concentration.json",
+      "sha256": "1B8B60129EC5DB500CA2B214794F89700022AC4A1A976268A92ADB3BB3A11D06"
+    },
+    {
+      "path": "governance/rnb_exit_path_attribution_v1/shadow_observability.json",
+      "sha256": "2197B89A71B7C087409F38FDE39A80C3AAA3C83A7974B08C939A377BFD49CA7B"
+    }
+  ],
+  "firewall": {
+    "market_data_read": false,
+    "native_replay_executed": false,
+    "network": false,
+    "optimization": false,
+    "push": false,
+    "retuning": false
+  },
+  "governed_schema_version": "akah-provenance-phase-governed-v1",
+  "next_bottleneck": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_SHADOW_EVENT_RUNTIME_INSTRUMENTATION_V1",
+  "north_star_effect": "Identifies where the native exit brain loses money before any shadow comparison or tuning.",
+  "objective": "Attribute reconstructed native baseline PnL to exit reason, market-state transition, combined exit path, and holding-time surfaces.",
+  "resolution_class": "NATIVE_EXIT_PATH_ATTRIBUTION_COMPLETE",
+  "state_updates": {
+    "exit_path_attribution_complete": true,
+    "retuning_authorized": false,
+    "roadmap_position": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_SHADOW_EVENT_RUNTIME_INSTRUMENTATION_V1",
+    "shadow_runtime_columns": [],
+    "shadow_runtime_observable": false,
+    "unique_portfolios": 3,
+    "unique_universe_used": "C2"
+  },
+  "status": "PASS",
+  "summary": "Attributed the three unique reconstructed native portfolios by exit reason, entry/exit market-state transition, combined exit path, holding bucket, and absolute-loss concentration. No replay or tuning performed.",
+  "task_id": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_EXIT_PATH_ATTRIBUTION_V1",
+  "task_start_head": "12315ec8250d2ad5dfcef9f3846947f5e790a481",
+  "task_start_revision": 233
+}

@@ -1,0 +1,70 @@
+{
+  "authority_bindings": {
+    "candidate_dossier_sha256": "46713563A26DF132B94561D993C3EC4DF70BEF25E0702033A1972B370CD9B9E1",
+    "direction_sha256": "177532749DEE1987A40FA408190C9DBD6BD6328FDC3BC1F3D50181F23199B663",
+    "previous_contract_sha256": "FB0A39F24A65C4CD9858D436CF595836B8106F98366A51257E9C80B193705AB8",
+    "recorder_protocol_sha256": "3EBD673458E1B4EFA21A9568BD58E4EA8F3D255ACA366339182A62592DDC52D6",
+    "roadmap_sha256": "F15E0DEB7BF6DC1B5660D5476E348F837548D8A9C097B7A6B919A32D89CA2DBE",
+    "scalar_decision_sha256": "DA6A4A7A155C0A01A295E87088FDB0FEA6D081BB07F8E36483585C65E5857552",
+    "study_contract_sha256": "DE10723B5F8C55C92F383ABAFE9D1C971A5126E0D484CBBEF4C52DF856EA6C25",
+    "updated_contract_sha256": "975652BF0FE6677BF22C7B01F5D03EA31D3D7162D8562310F7C9DF44276ECE1A"
+  },
+  "branch": "research/rd48-cross-venue-price-level-basis-direct-utility-v1",
+  "evidence": [
+    {
+      "path": "governance/reconstructed_native_baseline_prospective_scalar_selection_decision_v1/scalar_candidate_authority_dossier.json",
+      "sha256": "46713563A26DF132B94561D993C3EC4DF70BEF25E0702033A1972B370CD9B9E1"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_prospective_scalar_selection_decision_v1/scalar_human_decision_packet.json",
+      "sha256": "8A754FED1F60E890B8ADE5C6769531EACFB705C82D82FA3092DEC95AD8AEB484"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_prospective_scalar_selection_decision_v1/prospective_scalar_selection_decision.json",
+      "sha256": "DA6A4A7A155C0A01A295E87088FDB0FEA6D081BB07F8E36483585C65E5857552"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_prospective_scalar_selection_decision_v1/scalar_selection_updated_input_contract.json",
+      "sha256": "975652BF0FE6677BF22C7B01F5D03EA31D3D7162D8562310F7C9DF44276ECE1A"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_prospective_scalar_selection_decision_v1.json",
+      "sha256": "32377661F8FB06E94A264D953D93CCA9836E5DA429E923FA4D843038625625BB"
+    }
+  ],
+  "firewall": {
+    "economic_analysis": false,
+    "git_fetch": false,
+    "historical_executable_search_reopened": false,
+    "market_rows_read": false,
+    "native_replay_executed": false,
+    "network": false,
+    "protected_years_opened": false,
+    "push": false,
+    "source_mutation": false,
+    "v2_incidence_used_for_selection": false
+  },
+  "governed_schema_version": "akah-provenance-phase-governed-v1",
+  "next_bottleneck": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_PROSPECTIVE_SCALAR_HUMAN_DECISION_V1",
+  "north_star_effect": "Fixes one policy identity and nominal cost setting before adapter construction without outcome-driven selection.",
+  "objective": "Bind policy_id and cost_multiplier prospectively only when one surviving candidate has both current RD27/baseline source authority and non-circular governance exact-key authority. Otherwise create a bounded human decision packet. No incidence or economics.",
+  "resolution_class": "RECONSTRUCTED_NATIVE_PROSPECTIVE_SCALAR_SELECTION_DECISION_COMPLETE",
+  "state_updates": {
+    "all_scalar_roles_bound": false,
+    "economics_authorized": false,
+    "native_replay_executed": false,
+    "prospective_scalar_selection": "COMPLETE",
+    "roadmap_position": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_PROSPECTIVE_SCALAR_HUMAN_DECISION_V1",
+    "scalar_human_decision_required_roles": [
+      "policy_id",
+      "cost_multiplier"
+    ],
+    "study_contract_status": "PARTIAL_FREEZE_PROSPECTIVE_SCALAR_HUMAN_DECISION_REQUIRED",
+    "v2_incidence_used_for_selection": false
+  },
+  "status": "PASS",
+  "summary": "Applied a strict non-scoring source+non-circular-governance authority gate to policy_id and cost_multiplier. Residual ambiguity is converted to a bounded human decision packet.",
+  "task_id": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_PROSPECTIVE_SCALAR_SELECTION_DECISION_V1",
+  "task_start_head": "2351f5d833cff4dccd9c2e8ae554aa31ba8d7a4c",
+  "task_start_revision": 197
+}

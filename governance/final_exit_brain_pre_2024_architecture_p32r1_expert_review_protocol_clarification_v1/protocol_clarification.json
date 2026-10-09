@@ -1,0 +1,97 @@
+{
+  "schema_version": "final-exit-brain-pre-2024-architecture-p32r1-expert-review-protocol-clarification-v1",
+  "stage": "FINAL_EXIT_BRAIN_PRE_2024_ARCHITECTURE_P32R1_STATE_CONDITIONED_SHADOW_AUTHORITY_EXPERT_REVIEW_PROTOCOL_CLARIFICATION_V1",
+  "status": "PASS_P32R1_EXPERT_REVIEW_ACCEPTED_PROTOCOL_CLARIFIED_NO_REPLAY",
+  "authority": {
+    "charter_revision_at_start": 242,
+    "charter_sha256_at_start": "F33E453E9B0D8F7CEFEEC988CABCD80802C3AE640CD99AB652D784B8CE9E2DF9",
+    "source_head": "8e3f5af943ccc910fa2ab3fd78ce172e30ea62f4",
+    "p32_canonical_path": "C:\\Users\\abdul\\Downloads\\FINAL_EXIT_BRAIN_PRE_2024_ARCHITECTURE_P32_STATE_CONDITIONED_SHADOW_AUTHORITY_HYPOTHESIS_PROTOCOL_FREEZE_V1_CANONICAL_RESULT_20260914_210745.json",
+    "p32_canonical_sha256": "8C161F6DD2FDC4F47D8D2BE06898B80E85251D29CBADFE876F8ABF9B45DC4A3F",
+    "p31_canonical_path": "C:\\Users\\abdul\\Downloads\\FINAL_EXIT_BRAIN_PRE_2024_ARCHITECTURE_P31_EVIDENCE_AND_AUTHORITY_AUDIT_V1_CANONICAL_RESULT_20260914_210116.json",
+    "p31_canonical_sha256": "A14C5FDC2B406D3EC9DEC1C5F1AA040B33DC062F88AEB52D491C09A1116C518B"
+  },
+  "expert_review_checkpoint": {
+    "user_review_status": "APPROVED",
+    "review_disposition": "KEEP_P32_BEHAVIOR_UNCHANGED_CLARIFY_TECHNICAL_PARITY_ONLY",
+    "candidate_logic_changed": false,
+    "support_gates_changed": false,
+    "new_numeric_threshold_introduced": false,
+    "new_market_state_introduced": false,
+    "new_runtime_identity_logic_introduced": false,
+    "replay_authorized_by_this_clarification_task": false
+  },
+  "candidate_contract_unchanged": {
+    "candidate_id": "PRE_2024_P13_STATE_CONDITIONED_SHADOW_AUTHORITY_RISK_ON_ONLY_V1",
+    "single_change": "ENTRY_STATE_CONDITIONS_SYNTHETIC_SHADOW_CREATION_AUTHORITY",
+    "market_state_used_for_shadow_authority": "ENTRY_MARKET_STATE_ONLY",
+    "TRANSITION_admission": "UNCHANGED_FROM_P13_AND_REMAINS_ALLOWED",
+    "TRANSITION_synthetic_shadow": "DO_NOT_CREATE",
+    "RISK_ON_synthetic_shadow": "CREATE_EXACTLY_AS_P13",
+    "actual_same_pair_open_blocking": "UNCHANGED_FOR_ALL_STATES",
+    "same_pair_secondary": "DISABLED",
+    "entry_signal": "UNCHANGED",
+    "position_sizing": "UNCHANGED",
+    "exit_rule": "UNCHANGED",
+    "APG_AP_TOUCH": "UNCHANGED",
+    "time_budget": "UNCHANGED"
+  },
+  "clarified_pre_replay_technical_fail_closed_gates": [
+    {
+      "gate_id": "P32R1_RISK_ON_P13_SHADOW_PARITY",
+      "requirement": "For every RISK_ON entry, synthetic-shadow creation semantics, creation count, release semantics, and same-pair suppression semantics must exactly match the P13 2022 baseline. Any mismatch is TECHNICAL_OR_PARITY_FAILURE.",
+      "economic_gate": false
+    },
+    {
+      "gate_id": "P32R1_RISK_OFF_P13_FULL_PARITY",
+      "requirement": "RISK_OFF admission and all synthetic-shadow/occupancy behavior must remain exactly as P13. This clarification explicitly binds RISK_OFF shadow creation, release, and suppression parity in addition to the already frozen policy non-change.",
+      "economic_gate": false
+    },
+    {
+      "gate_id": "P32R1_TRANSITION_SHADOW_ZERO_AND_ACTUAL_GUARD_PRESERVED",
+      "requirement": "TRANSITION synthetic-shadow creation count must equal zero in the candidate, while TRANSITION admission remains enabled and the native actual-open same-pair blocking guard remains active through the actual position close.",
+      "economic_gate": false
+    }
+  ],
+  "frozen_p33_support_gates_unchanged": {
+    "absolute_profit_gate": "CANDIDATE_2022_NET_PNL_GT_0",
+    "drawdown_non_degradation_gate": "CANDIDATE_2022_MAX_DRAWDOWN_LE_P13_2022_MAX_DRAWDOWN",
+    "primary_component_gate": "CANDIDATE_2022_NET_PNL_MINUS_P13_2022_NET_PNL_GT_0",
+    "scientific_support_requires_all_four": true,
+    "transition_preservation_gate": "TRANSITION_ADMISSION_POLICY_REMAINS_ENABLED_AND_DIRECT_STATE_ABLATION_COUNT_EQ_0"
+  },
+  "p33_execution_contract": {
+    "next_stage": "FINAL_EXIT_BRAIN_PRE_2024_ARCHITECTURE_P33_STATE_CONDITIONED_SHADOW_AUTHORITY_2022_EXPLORATORY_REPLAY_V1",
+    "2022_raw_read_authorized_by_p32": true,
+    "2022_exact_p13_baseline_replay_authorized_by_p32": true,
+    "2022_candidate_replay_authorized_by_p32": true,
+    "2023_access_authorized": false,
+    "2024_replay_authorized": false,
+    "2025_access_authorized": false,
+    "candidate_search_authorized": false,
+    "parameter_search_authorized": false,
+    "threshold_search_authorized": false,
+    "model_fit_authorized": false,
+    "production_change_authorized": false,
+    "must_pass_exact_p13_baseline_parity_before_candidate_attribution": true,
+    "must_prove_candidate_diff_is_only_transition_shadow_creation_authority": true,
+    "must_emit_all_original_p32_required_outputs": true
+  },
+  "post_p33_replication_boundary": {
+    "successful_2022_exploratory_support_is_not_external_validation": true,
+    "automatic_2023_access_after_p33": false,
+    "automatic_2025_access_after_p33": false,
+    "automatic_production_promotion_after_p33": false,
+    "separate_replication_authority_protocol_required_before_any_later_year": true
+  },
+  "safety": {
+    "market_data_opened": false,
+    "replay_executed": false,
+    "candidate_executed": false,
+    "threshold_search_executed": false,
+    "parameter_search_executed": false,
+    "model_fit_executed": false,
+    "production_change_executed": false,
+    "network_calls": 0
+  }
+}

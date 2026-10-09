@@ -1,0 +1,69 @@
+{
+  "authority_bindings": {
+    "parity_json_sha256": "9572B41908809B26D8846484147C85FD3037CABFC6E8A8BAE47DAF3F1FF001D7",
+    "parity_rows_sha256": "47618557A5B55C1B3BE8FE57173B5B3C02BC89C271396C19A94B94979D54650C",
+    "prior_input_gate_path": "governance/v2_ntl_input_gate.json",
+    "prior_input_gate_sha256": "C709B42C309783FF451491DC5745983B2F88E0CD1AF80D27B262C09129535769",
+    "prior_ntl_report_path": "governance/v2_ntl_rpt.json",
+    "prior_ntl_report_sha256": "464D042D45506765A9A20985D895DB342C5D2C2B90BCA3054C5E8E9F2695BE6F",
+    "rd27_replay_sha256": "E3944A4655DDDF21C394FE1DB541F2645F529C00BD8390B22D652BD8EF5BBF83",
+    "source_authority_path": "governance/AKAH_BOT_RD27_NATIVE_TERMINAL_SOURCE_AUTHORITY_V1.json",
+    "source_authority_sha256": "A7430573E2D55362CC7E85C9DB606D048734DFDA8584240811FEE1B876BAB31F"
+  },
+  "branch": "research/rd48-cross-venue-price-level-basis-direct-utility-v1",
+  "evidence": [
+    {
+      "path": "governance/v2_phase_a_native_replay_input_authority_decision_v1/replay_lifecycle_policy_signature.json",
+      "sha256": "5941C83C78A5566C87BAEB0729568FF7C43133F8B58423C197AB0923F1D6736B"
+    },
+    {
+      "path": "governance/v2_phase_a_native_replay_input_authority_decision_v1/replay_lifecycle_policy_callsites.json",
+      "sha256": "9A4CC6DD85B7A111AC9A35240D7C3E0371921E7D3BB3049F5473003AAC34B3E2"
+    },
+    {
+      "path": "governance/v2_phase_a_native_replay_input_authority_decision_v1/governed_historical_binding_inventory.json",
+      "sha256": "B8E6BE45EB78AE8F1816906D79008CECD10B4DFA6C4275583BB2C894F17C9BCF"
+    },
+    {
+      "path": "governance/v2_phase_a_native_replay_input_authority_decision_v1/input_authority_matrix.json",
+      "sha256": "ACF04B52C7B6560C5CE318FAC3DE163364414FCC7175C5A6D0DB97C28B724A98"
+    },
+    {
+      "path": "governance/v2_phase_a_native_replay_input_authority_decision_v1/input_authority_decision.json",
+      "sha256": "624150780341A2372E8E7C17CD1B1231125152B1AC429EB8077412752910394A"
+    },
+    {
+      "path": "governance/v2_phase_a_native_replay_input_authority_decision_v1.json",
+      "sha256": "D78BAA3E287665F756BB9D3626B5DCD832F3AE718C0F4CA70445438B8CA03394"
+    }
+  ],
+  "firewall": {
+    "economics": false,
+    "market_rows_read": false,
+    "native_replay_executed": false,
+    "outcome_fields_read": false,
+    "pnl": false,
+    "push": false,
+    "source_mutation": false
+  },
+  "governed_schema_version": "akah-provenance-phase-governed-v1",
+  "next_bottleneck": "CAUSAL_EXIT_BRAIN_V2_PHASE_A_NATIVE_REPLAY_INPUT_AUTHORITY_GAP_ADJUDICATION_V1",
+  "north_star_effect": "Prevents construction of a synthetic historical native replay from unbound hourly/state/admission inputs.",
+  "objective": "Decide whether current governed repository evidence contains an exact historical input authority binding the 33-lifecycle cohort to replay_lifecycle_policy and its original runtime inputs. Do not run native replay or read market rows.",
+  "resolution_class": "NATIVE_REPLAY_INPUT_AUTHORITY_NOT_BOUND_CURRENT_GOVERNED_EVIDENCE",
+  "state_updates": {
+    "actual_exit_authority": false,
+    "economics_authorized": false,
+    "roadmap_position": "NATIVE_REPLAY_INPUT_AUTHORITY_GAP_ADJUDICATION_REQUIRED",
+    "v2_phase_a_native_replay_executed": false,
+    "v2_phase_a_native_replay_input_authority_decision": "NOT_BOUND_CURRENT_GOVERNED_EVIDENCE",
+    "v2_phase_a_native_replay_input_authority_missing_roles": [
+      "HISTORICAL_NATIVE_PRODUCER_BINDING"
+    ]
+  },
+  "status": "PASS",
+  "summary": "Decision completed: current governed evidence does not certify the exact historical native replay inputs required to reconstruct the 33 original lifecycles. No synthetic replay was attempted.",
+  "task_id": "CAUSAL_EXIT_BRAIN_V2_PHASE_A_NATIVE_REPLAY_INPUT_AUTHORITY_DECISION_V1",
+  "task_start_head": "fa2c602c57b1a1ec1dfc1ccfa7bb6a3835bef8b4",
+  "task_start_revision": 187
+}

@@ -1,0 +1,615 @@
+{
+  "bare_filename_literal_promotion": false,
+  "frames_read_count": 8,
+  "membership_read_count": 6,
+  "reads": [
+    {
+      "argument_root": "membership",
+      "call": "load_json(repo / PREFLIGHT_AUDIT)",
+      "call_name": "load_json",
+      "caller_function": "verify_execution_inputs",
+      "caller_line": 277,
+      "caller_module": "scripts/research/run_rd26_exit_architecture.py",
+      "depth": 1,
+      "governance_mentions": [],
+      "path_binding_status": "UNRESOLVED",
+      "path_expression": "repo / PREFLIGHT_AUDIT",
+      "preopen_status": "PATH_BINDING_REQUIRED",
+      "provenance": "main.membership@587->scripts/research/run_rd26_exit_architecture.py::verify_execution_inputs",
+      "role": "UNRESOLVED_SYMBOLIC_INPUT",
+      "row_access_performed": false,
+      "symbolic_path": "<args.repo_root>/data/research/rd26_p0_runtime/rd23-focus-signal-equivalence-audit-v1.json",
+      "symbolic_path_canonical": "<args.repo_root>/data/research/rd26_p0_runtime/rd23-focus-signal-equivalence-audit-v1.json"
+    },
+    {
+      "argument_root": "membership",
+      "call": "load_membership(membership_path)",
+      "call_name": "load_membership",
+      "caller_function": "verify_execution_inputs",
+      "caller_line": 286,
+      "caller_module": "scripts/research/run_rd26_exit_architecture.py",
+      "depth": 1,
+      "governance_mentions": [],
+      "path_binding_status": "UNRESOLVED",
+      "path_expression": "membership_path",
+      "preopen_status": "PATH_BINDING_REQUIRED",
+      "provenance": "main.membership@587->scripts/research/run_rd26_exit_architecture.py::verify_execution_inputs",
+      "role": "UNRESOLVED_SYMBOLIC_INPUT",
+      "row_access_performed": false,
+      "symbolic_path": "<args.repo_root>/data/research/rd18_p3x_a3b_runtime/effective-operational-membership.csv",
+      "symbolic_path_canonical": "<args.repo_root>/data/research/rd18_p3x_a3b_runtime/effective-operational-membership.csv"
+    },
+    {
+      "argument_root": "membership",
+      "call": "path.read_text(encoding=\"utf-8-sig\")",
+      "call_name": "path.read_text",
+      "caller_function": "load_json",
+      "caller_line": 116,
+      "caller_module": "scripts/research/run_rd26_exit_architecture.py",
+      "depth": 2,
+      "governance_mentions": [],
+      "path_binding_status": "UNRESOLVED",
+      "path_expression": "",
+      "preopen_status": "PATH_BINDING_REQUIRED",
+      "provenance": "main.membership@587->scripts/research/run_rd26_exit_architecture.py::verify_execution_inputs->scripts/research/run_rd26_exit_architecture.py::load_json",
+      "role": "UNRESOLVED_SYMBOLIC_INPUT",
+      "row_access_performed": false,
+      "symbolic_path": "",
+      "symbolic_path_canonical": ""
+    },
+    {
+      "argument_root": "membership",
+      "call": "pd.read_csv(path, low_memory=False)",
+      "call_name": "pd.read_csv",
+      "caller_function": "load_membership",
+      "caller_line": 226,
+      "caller_module": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "depth": 2,
+      "governance_mentions": [],
+      "path_binding_status": "UNRESOLVED",
+      "path_expression": "path",
+      "preopen_status": "PATH_BINDING_REQUIRED",
+      "provenance": "main.membership@587->scripts/research/run_rd26_exit_architecture.py::verify_execution_inputs->src/spotbot/research/rd20_p2_minimal_pullback.py::load_membership",
+      "role": "UNRESOLVED_SYMBOLIC_INPUT",
+      "row_access_performed": false,
+      "symbolic_path": "<args.repo_root>/data/research/rd18_p3x_a3b_runtime/effective-operational-membership.csv",
+      "symbolic_path_canonical": "<args.repo_root>/data/research/rd18_p3x_a3b_runtime/effective-operational-membership.csv"
+    },
+    {
+      "argument_root": "membership",
+      "call": "load_json(diagnosis_path)",
+      "call_name": "load_json",
+      "caller_function": "verify_lineage",
+      "caller_line": 151,
+      "caller_module": "scripts/research/run_rd26_exit_architecture.py",
+      "depth": 4,
+      "governance_mentions": [],
+      "path_binding_status": "UNRESOLVED",
+      "path_expression": "diagnosis_path",
+      "preopen_status": "PATH_BINDING_REQUIRED",
+      "provenance": "main.membership@587->scripts/research/run_rd26_exit_architecture.py::verify_execution_inputs->return@293->verify_execution_inputs.lineage@273->scripts/research/run_rd26_exit_architecture.py::verify_lineage",
+      "role": "UNRESOLVED_SYMBOLIC_INPUT",
+      "row_access_performed": false,
+      "symbolic_path": "<args.repo_root>/data/research/rd25_p1_runtime/diagnosis.json",
+      "symbolic_path_canonical": "<args.repo_root>/data/research/rd25_p1_runtime/diagnosis.json"
+    },
+    {
+      "argument_root": "membership",
+      "call": "load_membership(membership_path)",
+      "call_name": "load_membership",
+      "caller_function": "raw_pairs",
+      "caller_line": 140,
+      "caller_module": "scripts/research/run_rd26_exit_architecture.py",
+      "depth": 4,
+      "governance_mentions": [],
+      "path_binding_status": "UNRESOLVED",
+      "path_expression": "membership_path",
+      "preopen_status": "PATH_BINDING_REQUIRED",
+      "provenance": "main.membership@587->scripts/research/run_rd26_exit_architecture.py::verify_execution_inputs->return@293->verify_execution_inputs.pairs@287->scripts/research/run_rd26_exit_architecture.py::raw_pairs",
+      "role": "UNRESOLVED_SYMBOLIC_INPUT",
+      "row_access_performed": false,
+      "symbolic_path": "<args.repo_root>/data/research/rd18_p3x_a3b_runtime/effective-operational-membership.csv",
+      "symbolic_path_canonical": "<args.repo_root>/data/research/rd18_p3x_a3b_runtime/effective-operational-membership.csv"
+    },
+    {
+      "argument_root": "frames",
+      "call": "load_feature_frames(\n        raw_root=raw_root,\n        pairs=pairs,\n        cutoff=DATA_CUTOFF,\n    )",
+      "call_name": "load_feature_frames",
+      "caller_function": "main",
+      "caller_line": 592,
+      "caller_module": "scripts/research/run_rd26_exit_architecture.py",
+      "depth": 0,
+      "governance_mentions": [
+        {
+          "authority_language": true,
+          "path": "governance/ef_exact_v1/corrected_events_frames_source_contract.json",
+          "pit_language": true,
+          "pre2023_language": true,
+          "sha256": "807533414FFD0C3C9DBAE72200828BAA39F288A74CA6D52F4393571008A7F7AA"
+        },
+        {
+          "authority_language": true,
+          "path": "governance/ef_exact_v1/frames_exact_upstream_authority.json",
+          "pit_language": true,
+          "pre2023_language": false,
+          "sha256": "CD05EEAF9FB379986BE1B0C1A16F90A11B263F67BE8E98D65B45C27FA5423C81"
+        },
+        {
+          "authority_language": true,
+          "path": "governance/ef_exact_v1/frames_rev202_loader_leaf_adjudication.json",
+          "pit_language": true,
+          "pre2023_language": false,
+          "sha256": "0D9F34081E5378E4397ED13F2507D1FF2320C85D5FA00C9F7FD305DEFBC9DCB7"
+        },
+        {
+          "authority_language": true,
+          "path": "governance/ef_exact_v1/source_evidence.json",
+          "pit_language": true,
+          "pre2023_language": false,
+          "sha256": "7045E5248FD430763F14326B2DE569CA26BDCA709005C52271308613760DCF77"
+        },
+        {
+          "authority_language": false,
+          "path": "governance/reconstructed_native_baseline_current_rd26_events_lifecycle_interprocedural_read_binding_v1/events_primary_producer_binding.json",
+          "pit_language": false,
+          "pre2023_language": false,
+          "sha256": "7BF3306ED696236021D1CC6AB4CA37D10D5992931B20B86B6D10E0F22A79CD90"
+        },
+        {
+          "authority_language": true,
+          "path": "governance/reconstructed_native_baseline_current_rd26_producer_pre2023_reconstruction_input_authority_v1/mixed_signal_true_writer_and_callgraph.json",
+          "pit_language": true,
+          "pre2023_language": false,
+          "sha256": "16FA3896AD1D69B9FCFB20FBBBB62CE115E96FB3FF2F80DA767412629BD31718"
+        },
+        {
+          "authority_language": true,
+          "path": "governance/reconstructed_native_baseline_current_rd26_true_read_dependency_dataflow_v1/symbolic_path_resolution.json",
+          "pit_language": false,
+          "pre2023_language": false,
+          "sha256": "FDB8E9B52D91E47963E95CA392D061685D061B8463C6B1CE546FCBD22966473D"
+        },
+        {
+          "authority_language": true,
+          "path": "governance/reconstructed_native_baseline_pre2023_physical_2022_exact_residual_v1/candidate_rejection_funnel.json",
+          "pit_language": true,
+          "pre2023_language": true,
+          "sha256": "69F9B10E83CF89C934022C932883715FF7C46572126575060AD66DA08FC9EC6C"
+        },
+        {
+          "authority_language": true,
+          "path": "governance/reconstructed_native_baseline_pre2023_physical_2022_exact_residual_v1/nearest_candidate_exact_evidence.json",
+          "pit_language": true,
+          "pre2023_language": true,
+          "sha256": "65247C6AFFE490774B431EF5F8682C8C319E04D3A0880DEB2C71FD43B25433AA"
+        },
+        {
+          "authority_language": true,
+          "path": "governance/reconstructed_native_baseline_pre2023_physical_2022_exact_residual_v1/nearest_to_ready_candidates.json",
+          "pit_language": true,
+          "pre2023_language": true,
+          "sha256": "CB8149F3D54490A9802E38916793242CA8F28F48764557E53D9524FCC19F3889"
+        },
+        {
+          "authority_language": false,
+          "path": "governance/reconstructed_native_baseline_pre2023_physically_isolated_2022_source_authority_v1/all_native_1h_metadata_inventory.json",
+          "pit_language": false,
+          "pre2023_language": true,
+          "sha256": "320B0F91583189A547815C4741BFAA2C12B52012858098A4D4CA2AC6B7BDC005"
+        },
+        {
+          "authority_language": true,
+          "path": "governance/reconstructed_native_baseline_pre2023_physically_isolated_2022_source_authority_v1/exact_signal_producer_source_references.json",
+          "pit_language": true,
+          "pre2023_language": false,
+          "sha256": "2DB0FB320226EF20010B6C6AEF4B070342EC83A0E686FCCF3E4D263C2DED2D7E"
+        },
+        {
+          "authority_language": true,
+          "path": "governance/reconstructed_native_baseline_pre2023_signal_materialization_and_1h_input_verification_v1.json",
+          "pit_language": false,
+          "pre2023_language": true,
+          "sha256": "78BAA88C667FA4C69389C80330F8BA1C9BBE762B14D6D5EBCE2A5916C8A418A4"
+        },
+        {
+          "authority_language": true,
+          "path": "governance/reconstructed_native_baseline_pre2023_signal_materialization_and_1h_input_verification_v1/input_verification_progress_decision.json",
+          "pit_language": false,
+          "pre2023_language": true,
+          "sha256": "975667C0BB938A8A2E9319E4A21173A07A9AF3704B3D4C9B8CDBA2673E0C448D"
+        },
+        {
+          "authority_language": true,
+          "path": "governance/reconstructed_native_baseline_pre2023_signal_materialization_and_1h_input_verification_v1/mixed_signal_producer_trace.json",
+          "pit_language": false,
+          "pre2023_language": false,
+          "sha256": "44E6B4B5350B273C3CC27F46C93B42B73CDEBBF8CB60BB14B94241EB98C7EC98"
+        },
+        {
+          "authority_language": true,
+          "path": "governance/reconstructed_native_baseline_pre2023_signal_materialization_and_1h_input_verification_v1/one_hour_raw_root_inventory.json",
+          "pit_language": false,
+          "pre2023_language": true,
+          "sha256": "2F08C8C12861469B0CA61CD56843F08EF9E75CF130A491F9AB62E3CB8DFCAEF3"
+        },
+        {
+          "authority_language": true,
+          "path": "governance/reconstructed_native_baseline_pre2023_signal_materialization_and_1h_input_verification_v1/pre2023_signal_materialization_construction_contract.json",
+          "pit_language": true,
+          "pre2023_language": true,
+          "sha256": "CF373D28D7B25FC480E42CE0451FA01745F27B7C853D7F26CBC2F3630BC13C85"
+        },
+        {
+          "authority_language": true,
+          "path": "governance/reconstructed_native_baseline_pre2023_signal_materialization_construction_authority_v1/rd16b_one_hour_true_producer_binding.json",
+          "pit_language": false,
+          "pre2023_language": false,
+          "sha256": "E209EB74DA74AE8D80CBF14CB182AD25BDE16EBC5732DC60C1A0AA43067D5630"
+        },
+        {
+          "authority_language": true,
+          "path": "governance/reconstructed_native_baseline_pre2023_signal_materialization_construction_authority_v1/terminal_post_materialization_verification_contract.json",
+          "pit_language": false,
+          "pre2023_language": true,
+          "sha256": "F811E462731FEE9D9D54BCA120F2061F143D979D0056F28C8AA18BFFFDFF80FA"
+        },
+        {
+          "authority_language": true,
+          "path": "governance/reconstructed_native_baseline_pre2023_signal_materialization_construction_authority_v1/upstream_preopen_2022_isolation_audit.json",
+          "pit_language": false,
+          "pre2023_language": true,
+          "sha256": "0EB479B1FEEF5F34A9D706A7B0F36D0FB60123AD01CDE9256906A6F0CA96E3F8"
+        },
+        {
+          "authority_language": true,
+          "path": "governance/reconstructed_native_baseline_pre2023_signal_materialization_construction_authority_v1_rpt.json",
+          "pit_language": true,
+          "pre2023_language": true,
+          "sha256": "8340B98DBF719BE2C456921CD47651C539FDA62BC8FECCB7D5A533F5F358C435"
+        },
+        {
+          "authority_language": true,
+          "path": "governance/reconstructed_native_baseline_pre2023_signal_materialization_preopen_2022_upstream_source_authority_v1/post_signal_authorization_terminal_verification_contract.json",
+          "pit_language": false,
+          "pre2023_language": false,
+          "sha256": "263016522496CE4654772DF778E39B10D9E9EB79B98B32EBD1146B9E0796E059"
+        },
+        {
+          "authority_language": true,
+          "path": "governance/reconstructed_native_baseline_pre2023_signal_materialization_preopen_2022_upstream_source_authority_v1/preopen_2022_isolation_proof.json",
+          "pit_language": false,
+          "pre2023_language": true,
+          "sha256": "B60BCC406D48B9900AE146A78C5F565B3C2F7C7E7CBBD95D536302B29606440D"
+        },
+        {
+          "authority_language": true,
+          "path": "governance/reconstructed_native_baseline_pre2023_signal_materialization_preopen_2022_upstream_source_authority_v1/rd23_signal_true_producer_chain.json",
+          "pit_language": true,
+          "pre2023_language": false,
+          "sha256": "90D7F70F5E6CE04923C7337573D1EA229106D595FB31B1DAA8F2E882E801CA2A"
+        },
+        {
+          "authority_language": true,
+          "path": "governance/reconstructed_native_baseline_pre2023_signal_materialization_preopen_2022_upstream_source_authority_v1/rd23_signal_upstream_source_binding.json",
+          "pit_language": true,
+          "pre2023_language": false,
+          "sha256": "90E00715BE45E1C8C06F800E5691115211054662E6CE9B14E41933ABEF2A8420"
+        },
+        {
+          "authority_language": true,
+          "path": "governance/reconstructed_native_baseline_pre2023_signal_materialization_preopen_2022_upstream_source_authority_v1_rpt.json",
+          "pit_language": true,
+          "pre2023_language": true,
+          "sha256": "88897CD57F6CBE309C7BC5FB877B2D3851245733A4FD8D21964CF921B68BD846"
+        },
+        {
+          "authority_language": true,
+          "path": "governance/reconstructed_native_baseline_rd26_signal_source_and_1h_manifest_exact_residual_gap_v1/exact_residual_gap_decision.json",
+          "pit_language": true,
+          "pre2023_language": true,
+          "sha256": "46919B8E51D5AED693334035ADC23D37C9E51532A159FE47D21735AB8AE4DCD5"
+        },
+        {
+          "authority_language": true,
+          "path": "governance/reconstructed_native_baseline_rd26_signal_source_and_1h_manifest_exact_residual_gap_v1/one_hour_universe_manifest_contract.json",
+          "pit_language": true,
+          "pre2023_language": true,
+          "sha256": "B4488671CC74F529A135C7F75F185CCA6AC4FBEADB9A72860CFAC83FCE568F69"
+        },
+        {
+          "authority_language": true,
+          "path": "governance/reconstructed_native_baseline_rd26_signal_source_and_1h_manifest_exact_residual_gap_v1/raw_root_semantic_binding.json",
+          "pit_language": false,
+          "pre2023_language": false,
+          "sha256": "B4C501AB5A95DCF48D93E50D2E4B0887558C4A2753ED69F40FB6BC7BC3639469"
+        },
+        {
+          "authority_language": true,
+          "path": "governance/reconstructed_native_baseline_rd26_signal_source_and_1h_manifest_exact_residual_gap_v1_rpt.json",
+          "pit_language": false,
+          "pre2023_language": true,
+          "sha256": "2474667454597184E82951D900A8DDA22C5A20C1A149D572CEFB83EC788431C3"
+        },
+        {
+          "authority_language": true,
+          "path": "governance/reconstructed_native_baseline_rd26_signal_source_and_1h_manifest_human_decision_v1/full_native_matrix_strata_contract.json",
+          "pit_language": false,
+          "pre2023_language": true,
+          "sha256": "8824EFBE23B5FB2EC988B158D8AA5962916F2D3143C6C5EE931FAD2EB7DB22DE"
+        },
+        {
+          "authority_language": true,
+          "path": "governance/v2_phase_a_native_replay_input_authority_decision_v1/governed_historical_binding_inventory.json",
+          "pit_language": true,
+          "pre2023_language": false,
+          "sha256": "B8E6BE45EB78AE8F1816906D79008CECD10B4DFA6C4275583BB2C894F17C9BCF"
+        },
+        {
+          "authority_language": true,
+          "path": "governance/v2_phase_a_native_replay_input_authority_gap_adjudication_v1/historical_native_producer_adjudication.json",
+          "pit_language": true,
+          "pre2023_language": false,
+          "sha256": "FFD3E569467343DA5E5B56093E55C301028B411B54D4C8BF0DCF60ECDD63AE16"
+        },
+        {
+          "authority_language": true,
+          "path": "governance/v2_phase_a_native_replay_input_authority_gap_adjudication_v1/historical_native_producer_candidates.json",
+          "pit_language": true,
+          "pre2023_language": false,
+          "sha256": "4022F2BFB5DCE01AB69FDF189ABB238EE49F59C37C048D4A7FBE5269218AB99C"
+        }
+      ],
+      "path_binding_status": "UNRESOLVED",
+      "path_expression": "raw_root",
+      "preopen_status": "PATH_BINDING_REQUIRED",
+      "provenance": "main.frames@592",
+      "resolved_concrete_path": "C:\\SIRAJ\\Repositories\\spot-speculation-bot\\data\\raw\\rd16b\\kucoin",
+      "role": "UNRESOLVED_SYMBOLIC_INPUT",
+      "row_access_performed": false,
+      "symbolic_path": "data/raw/rd16b/kucoin",
+      "symbolic_path_canonical": "data/raw/rd16b/kucoin"
+    },
+    {
+      "argument_root": "frames",
+      "call": "pd.read_parquet(\n            path,\n            engine=\"pyarrow\",\n            filters=[(\"timestamp\", \"<\", cutoff_value)],\n        )",
+      "call_name": "pd.read_parquet",
+      "caller_function": "load_feature_frames",
+      "caller_line": 197,
+      "caller_module": "scripts/research/run_rd26_exit_architecture.py",
+      "depth": 1,
+      "governance_mentions": [
+        {
+          "authority_language": true,
+          "path": "governance/ef_exact_v1/corrected_events_frames_source_contract.json",
+          "pit_language": true,
+          "pre2023_language": true,
+          "sha256": "807533414FFD0C3C9DBAE72200828BAA39F288A74CA6D52F4393571008A7F7AA"
+        },
+        {
+          "authority_language": true,
+          "path": "governance/ef_exact_v1/frames_exact_upstream_authority.json",
+          "pit_language": true,
+          "pre2023_language": false,
+          "sha256": "CD05EEAF9FB379986BE1B0C1A16F90A11B263F67BE8E98D65B45C27FA5423C81"
+        },
+        {
+          "authority_language": true,
+          "path": "governance/ef_exact_v1/frames_rev202_loader_leaf_adjudication.json",
+          "pit_language": true,
+          "pre2023_language": false,
+          "sha256": "0D9F34081E5378E4397ED13F2507D1FF2320C85D5FA00C9F7FD305DEFBC9DCB7"
+        },
+        {
+          "authority_language": true,
+          "path": "governance/ef_exact_v1/source_evidence.json",
+          "pit_language": true,
+          "pre2023_language": false,
+          "sha256": "7045E5248FD430763F14326B2DE569CA26BDCA709005C52271308613760DCF77"
+        },
+        {
+          "authority_language": true,
+          "path": "governance/reconstructed_native_baseline_current_rd26_producer_pre2023_reconstruction_input_authority_v1/mixed_signal_true_writer_and_callgraph.json",
+          "pit_language": true,
+          "pre2023_language": false,
+          "sha256": "16FA3896AD1D69B9FCFB20FBBBB62CE115E96FB3FF2F80DA767412629BD31718"
+        },
+        {
+          "authority_language": false,
+          "path": "governance/reconstructed_native_baseline_pre2023_physically_isolated_2022_source_authority_v1/all_native_1h_metadata_inventory.json",
+          "pit_language": false,
+          "pre2023_language": true,
+          "sha256": "320B0F91583189A547815C4741BFAA2C12B52012858098A4D4CA2AC6B7BDC005"
+        },
+        {
+          "authority_language": true,
+          "path": "governance/reconstructed_native_baseline_pre2023_physically_isolated_2022_source_authority_v1/exact_signal_producer_source_references.json",
+          "pit_language": true,
+          "pre2023_language": false,
+          "sha256": "2DB0FB320226EF20010B6C6AEF4B070342EC83A0E686FCCF3E4D263C2DED2D7E"
+        },
+        {
+          "authority_language": true,
+          "path": "governance/reconstructed_native_baseline_pre2023_signal_materialization_and_1h_input_verification_v1/one_hour_raw_root_inventory.json",
+          "pit_language": false,
+          "pre2023_language": true,
+          "sha256": "2F08C8C12861469B0CA61CD56843F08EF9E75CF130A491F9AB62E3CB8DFCAEF3"
+        },
+        {
+          "authority_language": true,
+          "path": "governance/reconstructed_native_baseline_pre2023_signal_materialization_construction_authority_v1/rd16b_one_hour_true_producer_binding.json",
+          "pit_language": false,
+          "pre2023_language": false,
+          "sha256": "E209EB74DA74AE8D80CBF14CB182AD25BDE16EBC5732DC60C1A0AA43067D5630"
+        },
+        {
+          "authority_language": true,
+          "path": "governance/reconstructed_native_baseline_pre2023_signal_materialization_construction_authority_v1/terminal_post_materialization_verification_contract.json",
+          "pit_language": false,
+          "pre2023_language": true,
+          "sha256": "F811E462731FEE9D9D54BCA120F2061F143D979D0056F28C8AA18BFFFDFF80FA"
+        },
+        {
+          "authority_language": true,
+          "path": "governance/reconstructed_native_baseline_pre2023_signal_materialization_construction_authority_v1/upstream_preopen_2022_isolation_audit.json",
+          "pit_language": false,
+          "pre2023_language": true,
+          "sha256": "0EB479B1FEEF5F34A9D706A7B0F36D0FB60123AD01CDE9256906A6F0CA96E3F8"
+        },
+        {
+          "authority_language": true,
+          "path": "governance/reconstructed_native_baseline_pre2023_signal_materialization_preopen_2022_upstream_source_authority_v1/post_signal_authorization_terminal_verification_contract.json",
+          "pit_language": false,
+          "pre2023_language": false,
+          "sha256": "263016522496CE4654772DF778E39B10D9E9EB79B98B32EBD1146B9E0796E059"
+        },
+        {
+          "authority_language": true,
+          "path": "governance/reconstructed_native_baseline_pre2023_signal_materialization_preopen_2022_upstream_source_authority_v1/rd23_signal_true_producer_chain.json",
+          "pit_language": true,
+          "pre2023_language": false,
+          "sha256": "90D7F70F5E6CE04923C7337573D1EA229106D595FB31B1DAA8F2E882E801CA2A"
+        },
+        {
+          "authority_language": true,
+          "path": "governance/reconstructed_native_baseline_pre2023_signal_materialization_preopen_2022_upstream_source_authority_v1/rd23_signal_upstream_source_binding.json",
+          "pit_language": true,
+          "pre2023_language": false,
+          "sha256": "90E00715BE45E1C8C06F800E5691115211054662E6CE9B14E41933ABEF2A8420"
+        },
+        {
+          "authority_language": true,
+          "path": "governance/reconstructed_native_baseline_rd26_signal_source_and_1h_manifest_exact_residual_gap_v1/one_hour_universe_manifest_contract.json",
+          "pit_language": true,
+          "pre2023_language": true,
+          "sha256": "B4488671CC74F529A135C7F75F185CCA6AC4FBEADB9A72860CFAC83FCE568F69"
+        },
+        {
+          "authority_language": true,
+          "path": "governance/reconstructed_native_baseline_rd26_signal_source_and_1h_manifest_exact_residual_gap_v1/raw_root_semantic_binding.json",
+          "pit_language": false,
+          "pre2023_language": false,
+          "sha256": "B4C501AB5A95DCF48D93E50D2E4B0887558C4A2753ED69F40FB6BC7BC3639469"
+        }
+      ],
+      "path_binding_status": "BOUND_SYMBOLIC_TEMPLATE",
+      "path_expression": "path",
+      "preopen_status": "ROWGROUP_METADATA_AUTHORITY_BOUND_PAIR_SCOPE_PENDING",
+      "provenance": "main.frames@592->scripts/research/run_rd26_exit_architecture.py::load_feature_frames",
+      "role": "NATIVE_1H_FRAME_SOURCE_TEMPLATE",
+      "row_access_performed": false,
+      "symbolic_path": "data/raw/rd16b/kucoin/<pair>/1h.parquet",
+      "symbolic_path_canonical": "data/raw/rd16b/kucoin/<pair>/1h.parquet",
+      "timestamp_semantic": "BAR_CLOSE_TIME"
+    },
+    {
+      "argument_root": "frames",
+      "call": "load_json(repo / PREFLIGHT_AUDIT)",
+      "call_name": "load_json",
+      "caller_function": "verify_execution_inputs",
+      "caller_line": 277,
+      "caller_module": "scripts/research/run_rd26_exit_architecture.py",
+      "depth": 2,
+      "governance_mentions": [],
+      "path_binding_status": "UNRESOLVED",
+      "path_expression": "repo / PREFLIGHT_AUDIT",
+      "preopen_status": "PATH_BINDING_REQUIRED",
+      "provenance": "main.frames@592->main.pairs@587->scripts/research/run_rd26_exit_architecture.py::verify_execution_inputs",
+      "role": "UNRESOLVED_SYMBOLIC_INPUT",
+      "row_access_performed": false,
+      "symbolic_path": "<args.repo_root>/data/research/rd26_p0_runtime/rd23-focus-signal-equivalence-audit-v1.json",
+      "symbolic_path_canonical": "<args.repo_root>/data/research/rd26_p0_runtime/rd23-focus-signal-equivalence-audit-v1.json"
+    },
+    {
+      "argument_root": "frames",
+      "call": "load_membership(membership_path)",
+      "call_name": "load_membership",
+      "caller_function": "verify_execution_inputs",
+      "caller_line": 286,
+      "caller_module": "scripts/research/run_rd26_exit_architecture.py",
+      "depth": 2,
+      "governance_mentions": [],
+      "path_binding_status": "UNRESOLVED",
+      "path_expression": "membership_path",
+      "preopen_status": "PATH_BINDING_REQUIRED",
+      "provenance": "main.frames@592->main.pairs@587->scripts/research/run_rd26_exit_architecture.py::verify_execution_inputs",
+      "role": "UNRESOLVED_SYMBOLIC_INPUT",
+      "row_access_performed": false,
+      "symbolic_path": "<args.repo_root>/data/research/rd18_p3x_a3b_runtime/effective-operational-membership.csv",
+      "symbolic_path_canonical": "<args.repo_root>/data/research/rd18_p3x_a3b_runtime/effective-operational-membership.csv"
+    },
+    {
+      "argument_root": "frames",
+      "call": "path.read_text(encoding=\"utf-8-sig\")",
+      "call_name": "path.read_text",
+      "caller_function": "load_json",
+      "caller_line": 116,
+      "caller_module": "scripts/research/run_rd26_exit_architecture.py",
+      "depth": 3,
+      "governance_mentions": [],
+      "path_binding_status": "UNRESOLVED",
+      "path_expression": "",
+      "preopen_status": "PATH_BINDING_REQUIRED",
+      "provenance": "main.frames@592->main.pairs@587->scripts/research/run_rd26_exit_architecture.py::verify_execution_inputs->scripts/research/run_rd26_exit_architecture.py::load_json",
+      "role": "UNRESOLVED_SYMBOLIC_INPUT",
+      "row_access_performed": false,
+      "symbolic_path": "",
+      "symbolic_path_canonical": ""
+    },
+    {
+      "argument_root": "frames",
+      "call": "pd.read_csv(path, low_memory=False)",
+      "call_name": "pd.read_csv",
+      "caller_function": "load_membership",
+      "caller_line": 226,
+      "caller_module": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "depth": 3,
+      "governance_mentions": [],
+      "path_binding_status": "UNRESOLVED",
+      "path_expression": "path",
+      "preopen_status": "PATH_BINDING_REQUIRED",
+      "provenance": "main.frames@592->main.pairs@587->scripts/research/run_rd26_exit_architecture.py::verify_execution_inputs->src/spotbot/research/rd20_p2_minimal_pullback.py::load_membership",
+      "role": "UNRESOLVED_SYMBOLIC_INPUT",
+      "row_access_performed": false,
+      "symbolic_path": "<args.repo_root>/data/research/rd18_p3x_a3b_runtime/effective-operational-membership.csv",
+      "symbolic_path_canonical": "<args.repo_root>/data/research/rd18_p3x_a3b_runtime/effective-operational-membership.csv"
+    },
+    {
+      "argument_root": "frames",
+      "call": "load_json(diagnosis_path)",
+      "call_name": "load_json",
+      "caller_function": "verify_lineage",
+      "caller_line": 151,
+      "caller_module": "scripts/research/run_rd26_exit_architecture.py",
+      "depth": 5,
+      "governance_mentions": [],
+      "path_binding_status": "UNRESOLVED",
+      "path_expression": "diagnosis_path",
+      "preopen_status": "PATH_BINDING_REQUIRED",
+      "provenance": "main.frames@592->main.pairs@587->scripts/research/run_rd26_exit_architecture.py::verify_execution_inputs->return@293->verify_execution_inputs.lineage@273->scripts/research/run_rd26_exit_architecture.py::verify_lineage",
+      "role": "UNRESOLVED_SYMBOLIC_INPUT",
+      "row_access_performed": false,
+      "symbolic_path": "<args.repo_root>/data/research/rd25_p1_runtime/diagnosis.json",
+      "symbolic_path_canonical": "<args.repo_root>/data/research/rd25_p1_runtime/diagnosis.json"
+    },
+    {
+      "argument_root": "frames",
+      "call": "load_membership(membership_path)",
+      "call_name": "load_membership",
+      "caller_function": "raw_pairs",
+      "caller_line": 140,
+      "caller_module": "scripts/research/run_rd26_exit_architecture.py",
+      "depth": 5,
+      "governance_mentions": [],
+      "path_binding_status": "UNRESOLVED",
+      "path_expression": "membership_path",
+      "preopen_status": "PATH_BINDING_REQUIRED",
+      "provenance": "main.frames@592->main.pairs@587->scripts/research/run_rd26_exit_architecture.py::verify_execution_inputs->return@293->verify_execution_inputs.pairs@287->scripts/research/run_rd26_exit_architecture.py::raw_pairs",
+      "role": "UNRESOLVED_SYMBOLIC_INPUT",
+      "row_access_performed": false,
+      "symbolic_path": "<args.repo_root>/data/research/rd18_p3x_a3b_runtime/effective-operational-membership.csv",
+      "symbolic_path_canonical": "<args.repo_root>/data/research/rd18_p3x_a3b_runtime/effective-operational-membership.csv"
+    }
+  ],
+  "status": "PASS",
+  "true_read_dependency_count": 14
+}

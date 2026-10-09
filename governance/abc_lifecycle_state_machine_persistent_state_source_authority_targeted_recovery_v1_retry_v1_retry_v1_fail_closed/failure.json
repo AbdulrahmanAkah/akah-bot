@@ -1,0 +1,15 @@
+{
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_SOURCE_AUTHORITY_TARGETED_RECOVERY_V1_RETRY_V1_RETRY_V1",
+  "status": "TECHNICAL_OR_AUTHORITY_FAILURE_FAIL_CLOSED_NO_SCIENTIFIC_CONCLUSION",
+  "error_type": "RuntimeError",
+  "error": "HISTORY_TASK_EVENTS_MISSING=['ABC_LIFECYCLE_STATE_MACHINE_OBSERVATIONAL_TRACE_EXECUTION_V1_RETRY_V1', 'ABC_LIFECYCLE_STATE_MACHINE_OBSERVATIONAL_TRACE_MANDATORY_REVIEW_V1']",
+  "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\abdul\\AppData\\Local\\Temp\\akah_prior_trace_authority_recovery_retry2_37863a8d75fe4f14949fc2085664a99e\\retry2.py\", line 518, in main\n    history_auth, local_auth = reconcile_history_and_hashes()\n                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^\n  File \"C:\\Users\\abdul\\AppData\\Local\\Temp\\akah_prior_trace_authority_recovery_retry2_37863a8d75fe4f14949fc2085664a99e\\retry2.py\", line 349, in reconcile_history_and_hashes\n    events = find_history_events({TRACE_TASK, TRACE_REVIEW_TASK})\n  File \"C:\\Users\\abdul\\AppData\\Local\\Temp\\akah_prior_trace_authority_recovery_retry2_37863a8d75fe4f14949fc2085664a99e\\retry2.py\", line 338, in find_history_events\n    die(f\"HISTORY_TASK_EVENTS_MISSING={missing}\")\n    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\abdul\\AppData\\Local\\Temp\\akah_prior_trace_authority_recovery_retry2_37863a8d75fe4f14949fc2085664a99e\\retry2.py\", line 64, in die\n    raise RuntimeError(msg)\nRuntimeError: HISTORY_TASK_EVENTS_MISSING=['ABC_LIFECYCLE_STATE_MACHINE_OBSERVATIONAL_TRACE_EXECUTION_V1_RETRY_V1', 'ABC_LIFECYCLE_STATE_MACHINE_OBSERVATIONAL_TRACE_MANDATORY_REVIEW_V1']\n",
+  "scientific_scope_changed": false,
+  "market_data_rows_accessed": false,
+  "market_data_values_accessed": false,
+  "economic_outcomes_read": false,
+  "pnl_columns_read": false,
+  "reconstruction_implemented": false,
+  "2024_accessed": false,
+  "2025_accessed": false
+}

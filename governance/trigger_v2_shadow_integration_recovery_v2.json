@@ -1,0 +1,54 @@
+{
+  "firewall": {
+    "actual_exit_authority": false,
+    "economics": false,
+    "native_lifecycle_replay_mutated": false,
+    "outcome_fields": false,
+    "parameter_tuning": false
+  },
+  "hashes": {
+    "module_after": "AC8E88D9C49F811190F7158CE75159C0E546ED6C8FAB51A2E5F011740C6BD9DB",
+    "module_before": "8301D5B28453654DCACD7BA637375A7AD456A71CFC7D3A8C9D6A0DB2FEFD78F6",
+    "test_after": "17105BEA6B2CA3CFFB9CBA71D4DD7AAA6BE4235DE0767E11392E1FE7BEDD6349",
+    "test_before": "15828CE7BD68FA2AD41E473D6FD468462980B0645B4468913B8A19290F7A92BE"
+  },
+  "recovery": {
+    "fixture_entry_price_changes": 7,
+    "fixture_semantics": "entry=102 makes first bar non-memory and second bar the intended first structural breakout above prior high=103",
+    "import_order_corrected": true,
+    "memory_formula_changed": false,
+    "shadow_replay_logic_changed": false,
+    "trigger_formula_changed": false
+  },
+  "root_cause": {
+    "class": "TEST_FIXTURE_MEMORY_TIMING_ASSUMPTION_ERROR",
+    "details": "Fixtures expected first memory at 8h while bar 0-4 close=101 already satisfied frozen memory predicate against entry_price=100.",
+    "memory_predicate_implicated": false,
+    "shadow_replay_logic_implicated": false
+  },
+  "status": "PASS",
+  "task_id": "CAUSAL_EXIT_BRAIN_LATER_TRIGGER_V2_SHADOW_REPLAY_INTEGRATION_RECOVERY_V2",
+  "validation": {
+    "protected_source_parity": "PASS",
+    "ruff": "PASS",
+    "targeted_pytest": "PASS",
+    "targeted_tail": [
+      "........................................................................ [ 27%]",
+      "........................................................................ [ 55%]",
+      "........................................................................ [ 83%]",
+      "...........................................                              [100%]",
+      "259 passed in 21.01s"
+    ],
+    "wide_rd27_pytest": "PASS",
+    "wide_tail": [
+      "........................................................................ [ 14%]",
+      "........................................................................ [ 29%]",
+      "........................................................................ [ 44%]",
+      "........................................................................ [ 59%]",
+      "........................................................................ [ 74%]",
+      "........................................................................ [ 89%]",
+      "..................................................                       [100%]",
+      "482 passed, 1919 deselected in 15.36s"
+    ]
+  }
+}

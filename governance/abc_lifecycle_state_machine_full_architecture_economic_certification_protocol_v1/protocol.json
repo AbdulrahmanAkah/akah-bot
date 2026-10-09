@@ -1,0 +1,58 @@
+{
+  "2024_access": false,
+  "adapter": {
+    "admission": "STRICT_ARBITER_EXACT_ENTRY_FILTER",
+    "exit": "CHECKPOINT_SIGN_NEXT_OPEN",
+    "ranking": "MFE5_DESC_PAIR_ASC"
+  },
+  "benchmark_gate": {
+    "continuous_log_excess_gt": 0.0,
+    "cost_stress_multiplier": 2.0
+  },
+  "governor": {
+    "breadth_sma_days": 50,
+    "breadth_threshold": 0.5,
+    "btc_sma_days": 200,
+    "data_unavailable": "BLOCK_ADMISSIONS_NO_FORCED_LIQUIDATION",
+    "gross_formula": "0.90*m*v",
+    "m": {
+      "mixed": 0.5,
+      "risk_off": 0.0,
+      "risk_on": 1.0
+    },
+    "new_cap_formula": "0.18*m*v",
+    "reference_universe": "CURRENT_OPERATIONAL_PIT_FIXED_ACROSS_UNIVERSE_ARMS",
+    "vol_lookback_days": 20,
+    "vol_target": 0.3
+  },
+  "model_refit": false,
+  "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_CANONICAL_ENTRY_RANKING_ADAPTER_STRICT_PARITY_V1",
+  "no_post_result_selection": true,
+  "production_change": false,
+  "risk_arms": [
+    "NONE",
+    "FROZEN_GOVERNOR"
+  ],
+  "risk_gates": {
+    "mdd_floor": -0.25,
+    "positive_year_retention": 0.7,
+    "worst_year_floor": -0.15
+  },
+  "schema_version": "abc-full-architecture-economic-certification-protocol-v1",
+  "start_revision": 524,
+  "system": {
+    "K": 5,
+    "exit": "CHECKPOINT_SIGN",
+    "leverage": false,
+    "max_gross": 0.9,
+    "max_position": 0.18,
+    "ranking": "FROZEN_MFE5_BASE14"
+  },
+  "target_revision": 532,
+  "threshold_search": false,
+  "universe_arms": [
+    "CURRENT",
+    "D2",
+    "C2"
+  ]
+}

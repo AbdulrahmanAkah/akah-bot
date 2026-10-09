@@ -1,0 +1,106 @@
+{
+  "accepted_disposition": "BINDING_NOT_PROVEN",
+  "authorization": {
+    "2024_access": false,
+    "2025_access": false,
+    "crosswalk_materialization": false,
+    "d2_expansion": false,
+    "derived_export": false,
+    "feature_search": false,
+    "identity_temporal_crosswalk_forensic": true,
+    "m1_m2_training": false,
+    "new_recursive_inventory": false,
+    "new_replay": false,
+    "production_change": false,
+    "push": false,
+    "raw_reopening": false,
+    "threshold_search": false
+  },
+  "bounded_source_count": 12,
+  "bounded_source_paths": [
+    "data/research/rd16pit_a2a/floor-event-window.csv",
+    "data/research/rd16pit_a2a/floor-open-positions.csv",
+    "data/research/rd10/smoke-backtest/trades.csv",
+    "data/research/rd11/per-asset/ada_usdt/trades.csv",
+    "data/research/rd11/per-asset/avax_usdt/trades.csv",
+    "data/research/rd11/per-asset/btc_usdt/trades.csv",
+    "data/research/rd11/per-asset/dot_usdt/trades.csv",
+    "data/research/rd11/per-asset/eth_usdt/trades.csv",
+    "data/research/rd11/portfolio/trades.csv",
+    "data/research/rd12/baseline/per-asset/ada_usdt/trades.csv",
+    "data/research/rd12/baseline/per-asset/avax_usdt/trades.csv",
+    "data/research/rd12/baseline/per-asset/btc_usdt/trades.csv"
+  ],
+  "created_at_utc": "2026-09-25T20:28:03.817120+00:00",
+  "exact_core": {
+    "columns": [
+      "__year",
+      "pair",
+      "entry_time",
+      "decision_time_exact",
+      "__trade_id",
+      "__week_id",
+      "__p0_one_step_mark_return",
+      "__p1_immediate_bridge_advantage",
+      "__p2_downstream_residual",
+      "__p3_total_continuation",
+      "__p4_full_horizon_price_gap"
+    ],
+    "feasibility_inventory_sha256": "78451C25C62EFC101E01D41EE811913505D9B5D213BB974721E3B3A99104AAEE",
+    "feasibility_result_sha256": "8E7A7DDFDF772EF0612500D32A9DC50FCA5C01BE8D231E70312DD258275453EE",
+    "inventory_record": {
+      "columns": [
+        "__year",
+        "pair",
+        "entry_time",
+        "decision_time_exact",
+        "__trade_id",
+        "__week_id",
+        "__p0_one_step_mark_return",
+        "__p1_immediate_bridge_advantage",
+        "__p2_downstream_residual",
+        "__p3_total_continuation",
+        "__p4_full_horizon_price_gap"
+      ],
+      "exact_core": true,
+      "git_tracked": true,
+      "kind": "csv_header",
+      "path": "governance/abc_lifecycle_state_machine_continuation_value_exact_target_algebra_temporal_alignment_forensic_v1/clean_target_primitive_ledger.csv",
+      "policy_cash_ready": false,
+      "score": 4,
+      "semantic_categories": {
+        "baseline_action": false,
+        "decision_time": true,
+        "lifecycle": true,
+        "notional": false,
+        "state": true,
+        "value": true
+      },
+      "sha256": "84C2870D6549EA09C40B39AF03EC61FF15DD1FCD1DEA0424E0DA5ED7BA2134EF"
+    },
+    "path": "governance/abc_lifecycle_state_machine_continuation_value_exact_target_algebra_temporal_alignment_forensic_v1/clean_target_primitive_ledger.csv",
+    "semantics": {
+      "baseline_action": [],
+      "cost": [],
+      "decision_time": [
+        "decision_time_exact"
+      ],
+      "lifecycle": [
+        "__trade_id"
+      ],
+      "notional": [],
+      "pair": [
+        "pair"
+      ],
+      "value": [
+        "__p1_immediate_bridge_advantage"
+      ]
+    },
+    "sha256": "84C2870D6549EA09C40B39AF03EC61FF15DD1FCD1DEA0424E0DA5ED7BA2134EF"
+  },
+  "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_DECISION_VALUE_IDENTITY_TEMPORAL_CROSSWALK_FORENSIC_V1",
+  "reviewed_revision": 693,
+  "schema_version": "akah-rev693-dv-binding-human-review-v1",
+  "status": "PASS_REV693_HUMAN_REVIEW_CROSSWALK_FORENSIC_AUTHORIZED",
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_DECISION_VALUE_DERIVED_AUTHORITY_BINDING_AUDIT_HUMAN_REVIEW_V1"
+}

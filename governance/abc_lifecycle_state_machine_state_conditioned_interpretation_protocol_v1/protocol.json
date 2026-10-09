@@ -1,0 +1,31 @@
+{
+  "action_mapping_authorized": false,
+  "context_catalog_sha256": "B5643D40AA2228CAA775EBFE19CBBE437001928392F01645EA4759EE474C6623",
+  "economic_outcomes_authorized": false,
+  "new_thresholds_authorized": false,
+  "next_if_valid": "ABC_LIFECYCLE_STATE_MACHINE_STATE_CONDITIONED_INTERPRETATION_OBSERVATIONAL_MATERIALIZATION_V1",
+  "protocol_id": "ABC_LIFECYCLE_STATE_MACHINE_STATE_CONDITIONED_INTERPRETATION_PROTOCOL_V1",
+  "required_outputs": [
+    "interpretation_context_grid.csv",
+    "context_counts.csv",
+    "context_lifecycle_coverage.csv",
+    "context_transition_counts.csv",
+    "noninterpretation_audit.json"
+  ],
+  "schema_version": "abc-state-conditioned-interpretation-protocol-v1",
+  "source_bindings": [
+    {
+      "path": "governance/abc_lifecycle_state_machine_causal_runtime_state_tracker_integration_readiness_shadow_materialization_v1/integration_state_packets.csv",
+      "sha256": "3E9A61780E86EB0D2104178C946F8805FC46718833590687A0ECA5B312F1348E"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_causal_runtime_state_tracker_integration_readiness_shadow_materialization_v1/integration_transition_packets.csv",
+      "sha256": "83B9B3DA75DCF5428AD1E36CAE2811FB54D44FEC1FB4D1EB96450FDC20FD8B45"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_causal_runtime_state_tracker_integration_readiness_mandatory_review_v1/mandatory_review.json",
+      "sha256": "95B7405873A3AA24022D4AE117A7ADE2905AE1A6CB48FDF6956A6ADE975D8C78"
+    }
+  ],
+  "status": "FROZEN_BEFORE_OBSERVATIONAL_MATERIALIZATION"
+}

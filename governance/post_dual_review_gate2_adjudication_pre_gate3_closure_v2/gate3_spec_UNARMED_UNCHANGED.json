@@ -1,0 +1,91 @@
+{
+  "capital_capacity": 0.005,
+  "claim_family_must_not_shrink": true,
+  "concentration": {
+    "annual_and_top3_top5": "DIAGNOSTIC_ONLY",
+    "asset_residual": "P-max(0,max_asset_net)>0",
+    "campaign_residual": "P-max(0,max_campaign_net)>0",
+    "interpretation": "DELETION_ATTRIBUTION_NOT_COUNTERFACTUAL_REPLAY",
+    "scenario": "2X",
+    "unit": "CAMPAIGN_ALL_LEGS_AND_FEES"
+  },
+  "costs_round_trip": {
+    "1X": 0.0025,
+    "2X": 0.005
+  },
+  "economic_replay_authorized": false,
+  "funded_grammars": [],
+  "hard_rules": [
+    "2022_2X_NET_GT_0",
+    "2023_2X_NET_GT_0",
+    "COMBINED_1X_2X_NET_GT_0",
+    "HOURLY_MTM_MDD_LE_20_PERCENT_1X_2X",
+    "ALL_RISK_EXECUTION_LIMITS_PASS",
+    "CONCENTRATION_PASS",
+    "UNCERTAINTY_PASS"
+  ],
+  "outputs": [
+    "hourly_equity",
+    "daily_equity",
+    "campaign_ledger",
+    "asset_attribution",
+    "risk_audit",
+    "execution_audit",
+    "role_interventions",
+    "qualification"
+  ],
+  "primary_claim_family": [
+    "FS_ICT_2022_CORE_CRYPTO_LONG",
+    "FS_CLASSICAL_FULL_LONG"
+  ],
+  "production_authorized": false,
+  "protocol_id": "AKAH_GATE3_PRECOMMITTED_QUALIFICATION_V1",
+  "quantity_normalizer": "UNRESOLVED_HISTORICAL_PIT_AUTHORITY_REQUIRED",
+  "risk": {
+    "asset_mtm": 0.18,
+    "cluster": "CRYPTO_SPOT_LONG_ZERO_DIVERSIFICATION_CREDIT",
+    "contract": "AKAH_CURRENT_MTM_THESIS_RISK_V1",
+    "distinct_assets": 5,
+    "gross_mtm": 0.9,
+    "initial_equity": 100000,
+    "new_thesis": 0.005,
+    "open_stop_risk": 0.025
+  },
+  "roles": {
+    "ALPHA_ROLE": "PAIRED_LCB_GT_0_AND_EACH_YEAR_NET_DELTA_GE_0_AND_RISK_PASS_AND_INTERVENTIONS",
+    "DEFINING_ROLE": "ALTERNATE_GRAMMAR",
+    "HARD_SAFETY": "NEVER_ABLATE",
+    "RISK_FEASIBILITY_ROLE": "FULL_PASS_ABLATED_RISK_FAIL_WITH_UNCERTAINTY",
+    "profit_drawdown_tradeoff": "TRADEOFF_UNRESOLVED"
+  },
+  "router": "AKAH_STRUCTURAL_ROUTER_V1",
+  "scope_status": "PROSPECTIVE_BLOCKED",
+  "selector": "AKAH_SHARED_FEASIBILITY_FIFO_LIQUIDITY_V1",
+  "semantic_change": "NEW_VERSION_DELTA_GATE1_GATE2_RETEST_INVALIDATES_OLD_RUNNER",
+  "statuses": [
+    "TECHNICAL_FAIL",
+    "ECONOMIC_NOT_QUALIFIED",
+    "EVIDENCE_INCONCLUSIVE",
+    "QUALIFIED_EXPOSED_RESEARCH"
+  ],
+  "uncertainty": {
+    "LCB": "theta-quantile(theta_star-theta,1-.05/M)>0",
+    "correction": "BONFERRONI_FIXED_PRIMARY_FAMILY",
+    "estimator": "arch.bootstrap.optimal_block_length:stationary",
+    "family_alpha": 0.05,
+    "insufficient_support": "EVIDENCE_INCONCLUSIVE",
+    "paired_indices": true,
+    "replications": 9999,
+    "seed": "AKAH_GATE3_UNCERTAINTY_V1",
+    "series": "DAILY_NET_MTM_LOG_RETURN_INCLUDING_CASH_DAYS",
+    "stratify": "YEAR",
+    "within_year_block_length": "MAX_ACROSS_PREREGISTERED_ARMS",
+    "year_combination": "ORIGINAL_DAY_WEIGHTS"
+  },
+  "unknown_capacity": "NO_NEW_RISK",
+  "version": 2,
+  "window": {
+    "since": "2022-01-01T00:00:00Z",
+    "until_exclusive": "2024-01-01T00:00:00Z"
+  }
+}

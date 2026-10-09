@@ -1,0 +1,59 @@
+{
+  "2024_access": false,
+  "authorized_repair": {
+    "actual_draws": 4999,
+    "alpha": 0.05,
+    "calendar_dgp_fix": "ADVANCE_MARKET_AR_OVER_EVERY_DECISION_CALENDAR_WEEK_AND_SHARE_ACROSS_BOTH_TEST_YEARS",
+    "calibration_null_reps": 500,
+    "independent_validation_null_reps": 1000,
+    "inner_block_draws": 399,
+    "power_min": 0.8,
+    "power_reps_per_pattern": 500,
+    "primary_mue": 0.05,
+    "real_outcomes_used_to_calibrate_mapping": false,
+    "repair_count_limit": 1,
+    "type": "SPLIT_MONTE_CARLO_EMPIRICAL_NULL_CALIBRATION_OF_EXISTING_COMPOSITE_BLOCK_P",
+    "type1_upper95_max": 0.08
+  },
+  "feature_search": false,
+  "model_zoo": false,
+  "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_INFERENCE_ARCHITECTURE_LIMITED_REPAIR_AND_VALUE_REQUALIFICATION_V1",
+  "old_abs_p0_control": true,
+  "old_inference_status": "PASS_INFERENCE_INVALID_DIAGNOSIS",
+  "old_null_scenarios": [
+    {
+      "effect_fraction_of_reference_mse": 0.0,
+      "false_positive_upper_95": 0.0843610631252197,
+      "pattern": NaN,
+      "reject_rate": 0.06,
+      "rejections": 30,
+      "reps": 500
+    }
+  ],
+  "old_p0_supportive": true,
+  "old_primary_mue_scenarios": [
+    {
+      "effect_fraction_of_reference_mse": 0.05,
+      "false_positive_upper_95": NaN,
+      "pattern": "LINEAR",
+      "reject_rate": 0.172,
+      "rejections": 86,
+      "reps": 500
+    },
+    {
+      "effect_fraction_of_reference_mse": 0.05,
+      "false_positive_upper_95": NaN,
+      "pattern": "INTERACTION",
+      "reject_rate": 0.174,
+      "rejections": 87,
+      "reps": 500
+    }
+  ],
+  "production_changed": false,
+  "raw": false,
+  "rev680_rewritten": false,
+  "rev686_disposition": "INFERENCE_INVALID",
+  "schema_version": "akah-rev686-inference-architecture-limited-repair-mega-v1-human-review",
+  "status": "PASS_REV686_HUMAN_REVIEW_LIMITED_INFERENCE_REPAIR_AUTHORIZED",
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_EXPERT_GUIDED_VALUE_QUALIFICATION_SYNTHESIS_HUMAN_REVIEW_V1"
+}

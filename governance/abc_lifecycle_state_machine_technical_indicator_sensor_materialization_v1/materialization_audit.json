@@ -1,0 +1,94 @@
+{
+  "causal_rule": "ONLY_COMPLETE_4H_BARS_WITH_BLOCK_END_LE_DECISION_TIME; EXACT_DECISION_BLOCK_REQUIRED_FOR_SENSOR_ROW",
+  "direct_exchange_fetch": "NOT_NEEDED_CANONICAL_OHLCV_VOLUME_AVAILABLE",
+  "families": {
+    "ADX_DMI": 5,
+    "BOLLINGER_VOLATILITY": 5,
+    "MACD": 6,
+    "MOMENTUM_EXHAUSTION": 13,
+    "TREND_EMA": 9,
+    "VOLUME_LIQUIDITY_PROXY": 6
+  },
+  "indicator_feature_count": 44,
+  "liquidity_scope": "VOLUME_BASED_PROXIES_ONLY_NOT_HISTORICAL_ORDER_BOOK_LIQUIDITY",
+  "missingness": {
+    "adx14": 0,
+    "adx_delta3": 0,
+    "atr14_4h_price_fraction": 0,
+    "bb_percent_b20": 0,
+    "bb_width20": 0,
+    "bb_width_delta3": 0,
+    "bb_z20": 0,
+    "cci20": 0,
+    "cmf20": 0,
+    "dmi_spread14": 0,
+    "dollar_volume_z20": 0,
+    "ema21_50_spread_atr": 0,
+    "ema21_slope3_atr": 0,
+    "ema50_slope3_atr": 0,
+    "ema9_21_spread_atr": 0,
+    "ema9_slope3_atr": 0,
+    "ema_alignment_score": 0,
+    "macd_hist_atr": 0,
+    "macd_hist_delta1_atr": 0,
+    "macd_hist_drawdown_from_peak5_atr": 0,
+    "macd_hist_slope3_atr": 0,
+    "macd_line_atr": 0,
+    "macd_signal_atr": 0,
+    "mfi14": 0,
+    "minus_di14": 0,
+    "obv_change5_norm": 0,
+    "plus_di14": 0,
+    "price_ema21_atr": 0,
+    "price_ema50_atr": 0,
+    "price_ema9_atr": 0,
+    "roc3": 0,
+    "roc6": 0,
+    "rsi14": 0,
+    "rsi14_delta1": 0,
+    "rsi14_delta3": 0,
+    "rsi14_distance_50": 0,
+    "rsi14_drawdown_from_peak5": 0,
+    "rsi14_peak5": 0,
+    "rsi7": 0,
+    "stoch_d3": 0,
+    "stoch_k14": 0,
+    "volume_roc5": 0,
+    "volume_z20": 0,
+    "williams_r14": 0
+  },
+  "network_calls": 0,
+  "row_count": 14059,
+  "years": {
+    "2019": {
+      "decision_rows": 1931,
+      "exact_completed_4h_indicator_rows": 1931,
+      "pair_frame_count": 7,
+      "volume_present_all_pairs": true
+    },
+    "2020": {
+      "decision_rows": 3537,
+      "exact_completed_4h_indicator_rows": 3537,
+      "pair_frame_count": 9,
+      "volume_present_all_pairs": true
+    },
+    "2021": {
+      "decision_rows": 3381,
+      "exact_completed_4h_indicator_rows": 3381,
+      "pair_frame_count": 15,
+      "volume_present_all_pairs": true
+    },
+    "2022": {
+      "decision_rows": 2364,
+      "exact_completed_4h_indicator_rows": 2364,
+      "pair_frame_count": 15,
+      "volume_present_all_pairs": true
+    },
+    "2023": {
+      "decision_rows": 2846,
+      "exact_completed_4h_indicator_rows": 2846,
+      "pair_frame_count": 14,
+      "volume_present_all_pairs": true
+    }
+  }
+}

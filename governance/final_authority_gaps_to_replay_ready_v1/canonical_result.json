@@ -1,0 +1,88 @@
+{
+  "2024_ROWS_ACCESSED": "NO",
+  "2025_ROWS_ACCESSED": "NO",
+  "AUTHORITY_GAPS_REPLAY_BLOCKING_OPEN": 0,
+  "E2E_RECEIPT_HARNESS": "PASS",
+  "ECONOMIC_REPLAY_EXECUTED": "NO",
+  "FINAL_FUNDED_GRAMMARS": [
+    "FS_ICT_SESSION_OWNER_V8",
+    "FS_CLASSICAL_FULL_LONG",
+    "HYB_FAILED_AUCTION_HTF_OWNER_V8"
+  ],
+  "GATE3_PRECOMMIT_FREEZE": "PASS",
+  "GATE3_REPLAY_PREFLIGHT": "PASS",
+  "GATE3_REPLAY_RUNNER_BUILT": "YES",
+  "MATERIAL_IMPLEMENTATION_BUGS_OPEN_IN_FUNDED_SCOPE": 0,
+  "MATERIAL_SPEC_AMBIGUITIES_OPEN_IN_FUNDED_SCOPE": 0,
+  "NEXT_ACTION": "RUN_THE_SINGLE_FROZEN_GATE3_REPLAY_WITH_EXPLICIT_AUTHORIZATION",
+  "PNL_READ": "NO",
+  "PRODUCTION_CHANGE": "NO",
+  "QUARANTINED_GRAMMARS": {
+    "FS_DOW_CRYPTO_ADAPTED_LONG": "CONTEXT_ONLY_NO_OWNER_STOP",
+    "FS_ELLIOTT_PROOF_RESUMPTION_V8": "RECURSIVE_HISTORICAL_OBJECTIVE_OWNER_NOT_CERTIFIED",
+    "FS_HARMONIC_CAUSAL_ADAPTATION_V8": "EXACT_VERSION_RESERVE_NOT_CERTIFIED",
+    "FS_WYCKOFF_FRESH_CAUSE_V8": "WY_ACCUMULATION_SOURCE/WY_CONTEXT_REACCUMULATION/WY_DISTRIBUTION_MANAGEMENT",
+    "HYB_CORRECTIVE_PROOF_LOCATION_V9": "UNFUNDED_PARENT_GRAMMARS",
+    "HYB_MARKUP_CONTINUATION": "H1_MARKUP_PARENT"
+  },
+  "QUARANTINED_PATH_UNREACHABILITY": "PASS",
+  "READY_FOR_SINGLE_GATE3_REPLAY": "YES",
+  "bounded_preflight": {
+    "checkpoint_count": 365012,
+    "eligible_pairs": 317,
+    "missing_raw_pairs": [
+      "BCHSV-USDT",
+      "DCK-USDT",
+      "FITFI-USDT",
+      "ISP-USDT",
+      "MYRIA-USDT",
+      "NKN-USDT",
+      "SFUND-USDT",
+      "SKEY-USDT",
+      "STRAX-USDT",
+      "SWEAT-USDT",
+      "TIME-USDT",
+      "VAI-USDT",
+      "VERSE-USDT",
+      "WAX-USDT",
+      "XEM-USDT",
+      "XEN-USDT"
+    ],
+    "pairs_inspected": 301,
+    "peak_rss_bytes": 614825984,
+    "ready_by_grammar": {
+      "FS_CLASSICAL_FULL_LONG": 1411,
+      "FS_ICT_SESSION_OWNER_V8": 54,
+      "HYB_FAILED_AUCTION_HTF_OWNER_V8": 20
+    },
+    "ready_candidate_count": 1485,
+    "wall_seconds": 628.1562608000822
+  },
+  "complete_2023_terminal_hour": false,
+  "dow_contract": "All funded entries require complete current PIT Dow permission; incomplete data means UNKNOWN and cash/abstention, NOT fabricated bullish breadth.",
+  "old_readiness": "V13 all-eight-arm FAIL_CLOSED preserved; this new subset does not erase its missing doctrine findings.",
+  "outcome": "PASS",
+  "precommit_sha256": "941EBC1CA48FB18BADCD15122AB9447842FD439C6B20846E66AF693229EBD413",
+  "regression_correction": "Test module name collision corrected to exact qualified implementation module; no trading behavior modified.",
+  "research_gaps_not_claimed_closed": {
+    "ECONOMIC_VALUE": "NOT_TESTED_IN_THIS_MISSION",
+    "FS_DOW_CRYPTO_ADAPTED_LONG": "CONTEXT_ONLY_NO_OWNER_STOP",
+    "FS_ELLIOTT_PROOF_RESUMPTION_V8": "RECURSIVE_HISTORICAL_OBJECTIVE_OWNER_NOT_CERTIFIED",
+    "FS_HARMONIC_CAUSAL_ADAPTATION_V8": "EXACT_VERSION_RESERVE_NOT_CERTIFIED",
+    "FS_WYCKOFF_FRESH_CAUSE_V8": "WY_ACCUMULATION_SOURCE/WY_CONTEXT_REACCUMULATION/WY_DISTRIBUTION_MANAGEMENT",
+    "HISTORICAL_EXCHANGE_RULES": "EXCLUDED_BY_USER_NOT_CLOSED",
+    "HYB_CORRECTIVE_PROOF_LOCATION_V9": "UNFUNDED_PARENT_GRAMMARS",
+    "HYB_MARKUP_CONTINUATION": "H1_MARKUP_PARENT",
+    "INDEPENDENT_REVIEW": "INHERITED_USER_WAIVER_NOT_A_PASS"
+  },
+  "runner": "scripts/research/integration_v14/runner.py:execute_authorized",
+  "runner_preflight_command": ".venv/Scripts/python.exe -B -m scripts.research.integration_v14.runner",
+  "scientific_conclusion": "NONE_ENGINEERING_READINESS_ONLY",
+  "source_version_sha256": "DD224BD31F9E73AE988E3B96D88C4339767F7AF7E435A54D8FE1690826EAF00F",
+  "task_id": "AKAH_FINAL_AUTHORITY_GAPS_TO_REPLAY_READY_MISSION_V1",
+  "terminal_contract": "Final completed close 2023-12-31 23UTC; 23UTC-to-2024 terminal hour explicitly missing; never invent a mark.",
+  "test_counts": {
+    "regression_results.xml": 650,
+    "synthetic_results.xml": 28
+  }
+}

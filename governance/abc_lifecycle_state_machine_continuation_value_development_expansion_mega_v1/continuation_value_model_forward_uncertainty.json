@@ -1,0 +1,72 @@
+{
+  "block_bootstrap_reps_completed": 48,
+  "feature_catalog": {
+    "concept_mapping": {
+      "age": "continuation_advantage",
+      "optional_exit_intent": "hold_optional_exits_suppressed",
+      "progress": "progress_margin_delta_from_prev",
+      "volatility": "atr22_current"
+    },
+    "interactions": []
+  },
+  "features": [
+    "continuation_advantage",
+    "progress_margin_delta_from_prev",
+    "atr22_current",
+    "hold_optional_exits_suppressed"
+  ],
+  "model_tuned": false,
+  "parameters": {
+    "beta": [
+      0.0053738999955268004,
+      0.055581364066840465,
+      -4.733918519812538e-09,
+      -2.893399061436314e-07,
+      -1.4862932606538374e-07
+    ],
+    "features": [
+      "continuation_advantage",
+      "progress_margin_delta_from_prev",
+      "atr22_current",
+      "hold_optional_exits_suppressed"
+    ],
+    "medians": {
+      "atr22_current": 2.0614960915950897,
+      "continuation_advantage": -0.004357207189948264,
+      "hold_optional_exits_suppressed": 0.0,
+      "progress_margin_delta_from_prev": -0.00154
+    },
+    "mu": [
+      0.005373899995526798,
+      -11.37504912858746,
+      134.82021561410548,
+      0.03237597911227154
+    ],
+    "sd": [
+      0.055588634535297575,
+      219.6090938304486,
+      328.3250480802063,
+      0.26054039973288373
+    ]
+  },
+  "ridge_alpha": 1.0,
+  "sign_stable_forward_pass": true,
+  "status": "FIT_FIXED_RIDGE",
+  "target_exactness": "EXACT_TWO_SIDED_CURRENT_DYNAMIC_TOP6_2019_2023_STATE_ACTION_VALUE_WITH_FROZEN_BINARY_VOL_CONTEXT",
+  "train_rows": 7660,
+  "train_target_mean": 0.005373899995526798,
+  "year_results": {
+    "2022": {
+      "predicted_high_minus_low_actual_mean": 0.051583041856793216,
+      "rows": 2065,
+      "spearman": 0.9999894848449179,
+      "target_mean": -0.0034658233483792922
+    },
+    "2023": {
+      "predicted_high_minus_low_actual_mean": 0.059271108612390586,
+      "rows": 2565,
+      "spearman": 0.9999932731491132,
+      "target_mean": 0.009528079412073905
+    }
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "external_signal_schedule_semantics": {
+    "candidate_id_role_when_external_schedule_present": "OPAQUE_HYPOTHESIS_LABEL_FOR_AUDIT_AND_EXIT_REASON; DO_NOT_VALIDATE_AS_A_B_C",
+    "membership_key": "(pair, int(_utc(positions[pair].entry_time).value), int(decision_time.value))",
+    "signal_reason": "EXTERNAL_STATE_CONDITIONED_HYPOTHESIS_SIGNAL",
+    "signal_source": "EXACT_FIRST_ELIGIBLE_HYPOTHESIS_DECISION_ROW_PER_LIFECYCLE_FROM_ACCEPTED_ELIGIBILITY_GRID",
+    "type_semantics": "MAPPING_PAIR_TO_SET_OF_ENTRY_TIME_NS_DECISION_TIME_NS_TUPLES"
+  },
+  "legacy_parity_gate": {
+    "candidate_modes": [
+      "CONTROL_NONE",
+      "A",
+      "B",
+      "C"
+    ],
+    "comparison": "PRE_PATCH_VS_POST_PATCH_OUTPUT_PARITY_ON_EXISTING_TRACKED_TEST_FIXTURES_OR_EQUIVALENT_OFFLINE_FIXTURE; NO_2023_OR_LATER_ECONOMIC_VALIDATION_CONSUMPTION",
+    "required_before_external_replay": true,
+    "tolerance": "EXACT_FOR_CATEGORICAL_AND_COUNTERS; NUMERIC_1E-12_MAX_ABS_OR_EXISTING_TEST_TOLERANCE_IF_STRICTER"
+  },
+  "must_remain_unchanged": [
+    "INITIAL_CASH_AND_PORTFOLIO_CAPACITY",
+    "ENTRY_SELECTION_AND_ORDERING",
+    "POSITION_SIZING",
+    "CASH_DEBIT_AND_CREDIT",
+    "NATIVE_EXIT_DECISION",
+    "NATIVE_PREEMPTION_AND_TIE_PRIORITY",
+    "CANDIDATE_EXECUTION_AT_NEXT_HOUR_OPEN",
+    "NO_VALID_EXECUTION_PRICE_HANDLING",
+    "FEES_AND_COST_MULTIPLIER",
+    "TRADE_RECORD_ACCOUNTING",
+    "DAILY_AND_PORTFOLIO_METRICS"
+  ],
+  "new_persistence_horizon": false,
+  "new_portfolio_rule_created": false,
+  "new_threshold_created": false,
+  "production_change_authorized": false,
+  "required_control_flow": {
+    "external_mode": "IF external_signal_schedule IS NOT None: require candidate_id in preregistered H1-H6; signal iff exact membership key is present; schedule execution at decision_time + 1 hour through existing pending machinery.",
+    "legacy_mode": "IF external_signal_schedule IS None: preserve validate_candidate_id and evaluate_completed_4h behavior exactly."
+  },
+  "required_signature_extension": {
+    "default": "None",
+    "legacy_parameters": {
+      "kw_defaults": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        "'UNION_FOCUS'",
+        "'C2'",
+        "1.0"
+      ],
+      "kwarg": null,
+      "kwonly": [
+        "candidate_id",
+        "events",
+        "frames",
+        "state_frame",
+        "four_hour",
+        "replay_start",
+        "replay_cutoff",
+        "portfolio_id",
+        "universe_id",
+        "cost_multiplier"
+      ],
+      "positional": [],
+      "return_annotation": "tuple[pd.DataFrame, pd.DataFrame, dict[str, Any], dict[str, int], pd.DataFrame]",
+      "vararg": null
+    },
+    "new_kwonly_parameter": "external_signal_schedule"
+  },
+  "schema_version": "abc-portfolio-external-signal-adapter-patch-contract-v1",
+  "target_function": "replay_overlay",
+  "target_function_source_sha256_before_patch": "4722514EFDCF1701F2F7BBF242467C74B028756F2426C89E558AC68C8BA00E43",
+  "target_module": "src/spotbot/research/abc_exit_primitives_v1.py",
+  "target_module_sha256_before_patch": "B04F4EA4E95A1DA324036C14C5889F334702A30D0AF5AA66C4B7F6993C8395B2"
+}

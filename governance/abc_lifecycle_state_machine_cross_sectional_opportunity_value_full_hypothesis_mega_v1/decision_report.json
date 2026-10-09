@@ -1,0 +1,570 @@
+{
+  "2024_access": false,
+  "authority": {
+    "2024_access": false,
+    "contract_preflight": {
+      "checks": {
+        "control_cost_columns": [
+          "year",
+          "policy_id",
+          "portfolio_id",
+          "universe_id",
+          "cost_multiplier",
+          "pair",
+          "signal_time",
+          "entry_time",
+          "exit_time",
+          "holding_hours",
+          "exit_reason",
+          "entry_price",
+          "exit_price",
+          "quantity",
+          "entry_notional",
+          "exit_notional",
+          "entry_cost",
+          "exit_cost",
+          "gross_pnl",
+          "net_pnl",
+          "period_id",
+          "membership_rank",
+          "support_families",
+          "support_count",
+          "atr24_at_signal",
+          "high_water_at_exit",
+          "entry_market_state",
+          "exit_market_state",
+          "protection_floor_at_exit"
+        ],
+        "narrow_snapshot_count": 248,
+        "raw_sample_checked": 6,
+        "raw_sample_pass": 6,
+        "rd23_source_sha256": "6F23405F56BEC0B828130DA6BD57B606659F354892AF4278C9EC18DEEC704AF8",
+        "rd27_signatures": {
+          "apply_completed_bar_update": "(position: 'LifecyclePosition', *, decision: 'ExitDecision', completed_high: 'float') -> 'LifecyclePosition'",
+          "build_market_state_frame": "(raw: 'pd.DataFrame', *, cutoff: 'pd.Timestamp | None' = None) -> 'pd.DataFrame'",
+          "evaluate_adaptive_exit": "(position: 'LifecyclePosition', *, current_open_time: 'pd.Timestamp', current_open: 'float', current_low: 'float', prior_asset_close: 'float', market_state: 'str') -> 'ExitDecision'",
+          "new_lifecycle_position": "(*, pair: 'str', entry_time: 'pd.Timestamp', entry_price: 'float', atr24_at_signal: 'float') -> 'LifecyclePosition'"
+        },
+        "wide_snapshot_count": 257
+      },
+      "problems": [],
+      "status": "PASS"
+    },
+    "cost": {
+      "median_entry_cost_fraction": 0.00125,
+      "sample_count": 1000,
+      "source": "control-trades.csv"
+    },
+    "governor_binary_no_vol": {
+      "algebra": "gross_budget_fraction = scale * m  [v removed]",
+      "effective_cap_max": 0.9,
+      "effective_cap_min": 0.0,
+      "factor_identity_proof": {
+        "gross_max": 0.9,
+        "gross_min": 0.0,
+        "identity": "gross_budget_fraction = scale * m * v",
+        "m_max": 1.0,
+        "m_min": 0.0,
+        "max_abs_error": 8.326672684688674e-17,
+        "rows_proven": 1626,
+        "scale": 0.9,
+        "v_max": 1.0,
+        "v_min": 0.1492391718328883
+      },
+      "max_abs_delta_vs_selected_binary_vol": 0.706605074946131,
+      "result_path": "governance/abc_lifecycle_state_machine_governor_structural_factorial_fast_v1/governor_factorial_result.json",
+      "result_sha256": "AE30EB872D4FA600F959D696238E9C868E56A91DFA2A8B4976009EF3DC34378E",
+      "row_count": 1626,
+      "selected_governor": "BINARY_NO_VOL",
+      "source": "RECONSTRUCTED_FROM_FROZEN_SELECTED_BINARY_VOL_FACTOR_COLUMNS",
+      "time_column": "action_time",
+      "timeline_path": "governance/abc_lifecycle_state_machine_governor_structural_factorial_fast_v1/selected_development_governor_timeline.csv",
+      "timeline_sha256": "6532B4501F2734EDE3F1D66DB931231C7915235AEEA3B8E654845A6F24341E2B",
+      "variant_declared_in_arms": true,
+      "variant_declared_in_candidate_rows": true
+    },
+    "governor_binary_vol": {
+      "binding_mode": "DIRECT_GROSS_FRACTION",
+      "effective_cap_max": 0.9,
+      "effective_cap_min": 0.0,
+      "exposure_column": "gross_budget_fraction",
+      "legacy_selected": {
+        "continuous_mtm_max_drawdown": -0.19079247606398098,
+        "development_gate_pass": true,
+        "excess_log_x1": 0.6471289382329076,
+        "excess_log_x2": 0.6198880926269715,
+        "excess_pass": true,
+        "final_wealth_x1": 3.6589449042130644,
+        "final_wealth_x2": 2.9794982149046993,
+        "risk_mode": "BINARY_VOL",
+        "risk_pass": true,
+        "worst_annual_return": -0.07644949091360065
+      },
+      "observed_raw_max": 0.9,
+      "observed_raw_min": 0.0,
+      "result_path": "governance/abc_lifecycle_state_machine_governor_structural_factorial_fast_v1/governor_factorial_result.json",
+      "result_sha256": "AE30EB872D4FA600F959D696238E9C868E56A91DFA2A8B4976009EF3DC34378E",
+      "selected_governor": "BINARY_VOL",
+      "selected_populated_row_count": 1626,
+      "source_row_count": 1826,
+      "time_column": "action_time",
+      "timeline_path": "governance/abc_lifecycle_state_machine_governor_structural_factorial_fast_v1/selected_development_governor_timeline.csv",
+      "timeline_sha256": "6532B4501F2734EDE3F1D66DB931231C7915235AEEA3B8E654845A6F24341E2B",
+      "variant_filter_applied": true
+    },
+    "governor_factorial_preflight": {
+      "probes": [
+        {
+          "binary_no_vol": 0.0,
+          "binary_vol": 0.0,
+          "time": "2019-01-01T00:00:00+00:00",
+          "vol_only": 0.0
+        },
+        {
+          "binary_no_vol": 0.0,
+          "binary_vol": 0.0,
+          "time": "2020-01-01T00:00:00+00:00",
+          "vol_only": 0.3773722154837429
+        },
+        {
+          "binary_no_vol": 0.9,
+          "binary_vol": 0.307422860879827,
+          "time": "2021-01-01T00:00:00+00:00",
+          "vol_only": 0.30742286087982706
+        },
+        {
+          "binary_no_vol": 0.0,
+          "binary_vol": 0.0,
+          "time": "2022-01-01T00:00:00+00:00",
+          "vol_only": 0.3424160810144105
+        },
+        {
+          "binary_no_vol": 0.0,
+          "binary_vol": 0.0,
+          "time": "2023-01-01T00:00:00+00:00",
+          "vol_only": 0.534120281876222
+        },
+        {
+          "binary_no_vol": 0.9,
+          "binary_vol": 0.4359750055549138,
+          "time": "2023-12-31T23:00:00+00:00",
+          "vol_only": 0.43597500555491386
+        }
+      ],
+      "vol_only": {
+        "algebra": "gross_budget_fraction = scale * v  [m removed]",
+        "effective_cap_max": 0.9,
+        "effective_cap_min": 0.13431525464959945,
+        "factor_identity_proof": {
+          "gross_max": 0.9,
+          "gross_min": 0.0,
+          "identity": "gross_budget_fraction = scale * m * v",
+          "m_max": 1.0,
+          "m_min": 0.0,
+          "max_abs_error": 8.326672684688674e-17,
+          "rows_proven": 1626,
+          "scale": 0.9,
+          "v_max": 1.0,
+          "v_min": 0.1492391718328883
+        },
+        "max_abs_delta_vs_selected_binary_vol": 0.9,
+        "result_path": "governance/abc_lifecycle_state_machine_governor_structural_factorial_fast_v1/governor_factorial_result.json",
+        "result_sha256": "AE30EB872D4FA600F959D696238E9C868E56A91DFA2A8B4976009EF3DC34378E",
+        "row_count": 1626,
+        "selected_governor": "VOL_ONLY",
+        "source": "RECONSTRUCTED_FROM_FROZEN_SELECTED_BINARY_VOL_FACTOR_COLUMNS",
+        "time_column": "action_time",
+        "timeline_path": "governance/abc_lifecycle_state_machine_governor_structural_factorial_fast_v1/selected_development_governor_timeline.csv",
+        "timeline_sha256": "6532B4501F2734EDE3F1D66DB931231C7915235AEEA3B8E654845A6F24341E2B",
+        "variant_declared_in_arms": true,
+        "variant_declared_in_candidate_rows": true
+      }
+    },
+    "previous_rev729": {
+      "disposition": "PIT_BREADTH_X_PERSISTENT_HARVESTING_NOT_QUALIFIED",
+      "path": "governance/abc_lifecycle_state_machine_pit_breadth_x_persistent_harvesting_architecture_decision_mega_v1/canonical_result.json",
+      "runtime_opportunities": 60662,
+      "sha256": "6E0D37CCA0E21C61E1FE9BB891048898D43D3F36063093C5D24D2A17141A01BA",
+      "wide_pair_count": 317
+    },
+    "status": "PASS",
+    "wide": {
+      "eligibility_path": "data/research/rd18_p1r2/corrected-weekly-eligibility.csv",
+      "eligibility_sha256": "E1AEE88885A479A0038B6574E7DE7F01A47E274B330EF88D9CB1606BC2CB98AB",
+      "max_snapshot_size": 317,
+      "membership_tiebreak_rank_source": "CORRECTED_WEEKLY_RANKINGS.LIQUIDITY_RANK",
+      "pair_count": 317,
+      "ranking_column": "liquidity_rank",
+      "ranking_path": "data/research/rd18_p1r2/corrected-weekly-rankings.csv",
+      "ranking_sha256": "DA5BF7A416DF988663D6357954096806531B8C08FC60680520AFEF0295B045EA",
+      "snapshot_count": 257,
+      "trading_rank_source": "DAILY_CAUSAL_RS7_OVER_SIGMA20"
+    }
+  },
+  "certification": "NONE_MULTIPLE_HYPOTHESIS_DISCOVERY",
+  "descriptive_best_2x_binary_vol": {
+    "auc_winner10": 0.4762220603639356,
+    "continuous_mtm_mdd": -0.27064308626116773,
+    "corr_overlay": false,
+    "cost_multiplier": 2.0,
+    "day_ge_0p5_fraction": 0.14168377823408623,
+    "gate_fraction": 0.8162050760848084,
+    "gate_rows": 289108,
+    "gated_mean_h0_net_2x": 0.007713466827284046,
+    "gated_winner10_rate": 0.11906623130456438,
+    "mdd_rank_2x": 10.0,
+    "mean_gross_fraction": 0.1061019557790156,
+    "old_gate_mdd_pass": false,
+    "old_gate_worst_year_pass": false,
+    "open_positions_at_cutoff": 20,
+    "portfolio_variant": "BINARY_VOL",
+    "positive_day_fraction": 0.3586584531143053,
+    "ranker": "R03_TREND_MU",
+    "rejections": "{'SIZE_OR_CAPACITY_TOO_SMALL': 115522, 'SAME_PAIR_OPEN': 28927, 'RISK_GOVERNOR_FORCED_EXIT': 652, 'MAX_POSITIONS': 140204}",
+    "rows": 354210,
+    "spearman": -0.05747736176419871,
+    "terminal_equity": 214329.87279848757,
+    "terminal_wealth": 2.1432987279848756,
+    "total_cost": 32345.309833634004,
+    "trade_count": 4435,
+    "wealth_rank_2x": 1.0,
+    "worst_year_2x": -0.14007451541002658
+  },
+  "descriptive_best_2x_with_mdd_le_20pct": {
+    "auc_winner10": 0.48823768727028993,
+    "continuous_mtm_mdd": -0.14772122002723032,
+    "corr_overlay": false,
+    "cost_multiplier": 2.0,
+    "day_ge_0p5_fraction": 0.06228610540725531,
+    "gate_fraction": 0.1748962479884814,
+    "gate_rows": 61950,
+    "gated_mean_h0_net_2x": 0.006777130401773263,
+    "gated_winner10_rate": 0.11081517352703793,
+    "mdd_rank_2x": 1.0,
+    "mean_gross_fraction": 0.04711726447270729,
+    "old_gate_mdd_pass": true,
+    "old_gate_worst_year_pass": true,
+    "open_positions_at_cutoff": 20,
+    "portfolio_variant": "BINARY_VOL",
+    "positive_day_fraction": 0.2799452429842574,
+    "ranker": "R09_ALL_DOWNSIDE_ADJ",
+    "rejections": "{'SIZE_OR_CAPACITY_TOO_SMALL': 27498, 'SAME_PAIR_OPEN': 7949, 'RISK_GOVERNOR_FORCED_EXIT': 240, 'MAX_POSITIONS': 24564}",
+    "rows": 354210,
+    "spearman": 0.09426451505120108,
+    "terminal_equity": 137863.52879836486,
+    "terminal_wealth": 1.3786352879836485,
+    "total_cost": 12065.161012719089,
+    "trade_count": 1919,
+    "wealth_rank_2x": 16.0,
+    "worst_year_2x": -0.023324762344274275
+  },
+  "event_audit": {
+    "2024_access": false,
+    "event_keys_pre_feature": 364635,
+    "family_counts": {
+      "MOMENTUM_ACCELERATION": 240273,
+      "MOMENTUM_BREAKOUT": 68763,
+      "RELATIVE_STRENGTH_ROTATION": 6465,
+      "VOLATILITY_EXPANSION": 101334
+    },
+    "materialized_rows": 364546,
+    "old_daily_top20_filter_applied": false,
+    "pair_count": 317
+  },
+  "full_wide_opportunity_rows": 364546,
+  "h0_labeled_rows": 363794,
+  "label_audit": {
+    "censored_rows": 1777,
+    "input_rows": 364546,
+    "labeled_rows": 363794,
+    "rejections": {
+      "H0_LABEL_UNAVAILABLE": 752
+    }
+  },
+  "pareto_rankers": [
+    "R03_TREND_MU",
+    "R05_MARKET_MU",
+    "R09_ALL_DOWNSIDE_ADJ",
+    "R12_ALL_CAPITAL_EFFICIENCY",
+    "R13_FULL_VECTOR",
+    "R14_FULL_VECTOR_DURATION",
+    "R16_RAW_ADX_DMI"
+  ],
+  "portfolio_run_count": 42,
+  "previous_REV729": {
+    "B_2x": {
+      "arm": "B",
+      "continuous_mtm_mdd": -0.2045188877583365,
+      "cost_multiplier": 2.0,
+      "day_ge_0p5_fraction": 0.0728368017524644,
+      "exit_mode": "H0",
+      "mean_gross_fraction": 0.0649567322095306,
+      "open_positions_at_cutoff": 0,
+      "positive_day_fraction": 0.2387732749178532,
+      "scope": "NARROW",
+      "terminal_equity": 132842.00625480505,
+      "terminal_wealth": 1.3284200625480505,
+      "total_cost": 29049.18305653527,
+      "trade_count": 1250
+    },
+    "D_2x": {
+      "arm": "D",
+      "continuous_mtm_mdd": -0.4291739327217617,
+      "cost_multiplier": 2.0,
+      "day_ge_0p5_fraction": 0.0991237677984666,
+      "exit_mode": "H0",
+      "mean_gross_fraction": 0.0769535702957674,
+      "open_positions_at_cutoff": 17,
+      "positive_day_fraction": 0.2705366922234392,
+      "scope": "WIDE",
+      "terminal_equity": 123351.8754369784,
+      "terminal_wealth": 1.233518754369784,
+      "total_cost": 37865.35979976176,
+      "trade_count": 5366
+    }
+  },
+  "protocol": {
+    "2024_access": false,
+    "certification": "NONE_DISCOVERY_ONLY_MULTIPLE_HYPOTHESES",
+    "execution_optimization": "FAST_EXACT_SHARED_IMMUTABLE_REPLAY_CACHE_REFERENCE_EQUIVALENCE_TESTED",
+    "feature_groups": {
+      "ALL": [
+        "fam_momentum_breakout",
+        "fam_volatility_expansion",
+        "fam_relative_strength_rotation",
+        "fam_momentum_acceleration",
+        "family_count",
+        "daily_r7",
+        "daily_r30",
+        "daily_sigma20",
+        "daily_rs7",
+        "daily_cs_rank_pct",
+        "membership_rank_pct",
+        "eligibility_age_days",
+        "ret6",
+        "ret24",
+        "ret72",
+        "ret168",
+        "rv24",
+        "rv72",
+        "ema9_21",
+        "ema21_50",
+        "ema21_slope6",
+        "adx14",
+        "dmi_spread",
+        "trend_quality",
+        "atr24_frac",
+        "close_location",
+        "base_width_atr",
+        "dist_above_24h_high",
+        "dist_above_72h_high",
+        "support_distance",
+        "btc_ret24",
+        "btc_ret72",
+        "btc_ret168",
+        "btc_rv24",
+        "breadth_r7_positive",
+        "dispersion_r7",
+        "median_sigma20",
+        "log_turnover24",
+        "volume_ratio_4_20"
+      ],
+      "FAMILY": [
+        "fam_momentum_breakout",
+        "fam_volatility_expansion",
+        "fam_relative_strength_rotation",
+        "fam_momentum_acceleration",
+        "family_count"
+      ],
+      "LIQ_TENURE": [
+        "log_turnover24",
+        "volume_ratio_4_20",
+        "membership_rank_pct",
+        "eligibility_age_days"
+      ],
+      "MARKET": [
+        "btc_ret24",
+        "btc_ret72",
+        "btc_ret168",
+        "btc_rv24",
+        "breadth_r7_positive",
+        "dispersion_r7",
+        "median_sigma20"
+      ],
+      "STRUCTURE": [
+        "atr24_frac",
+        "close_location",
+        "base_width_atr",
+        "dist_above_24h_high",
+        "dist_above_72h_high",
+        "support_distance"
+      ],
+      "TREND": [
+        "ret6",
+        "ret24",
+        "ret72",
+        "ret168",
+        "rv24",
+        "rv72",
+        "ema9_21",
+        "ema21_50",
+        "ema21_slope6",
+        "adx14",
+        "dmi_spread",
+        "trend_quality"
+      ],
+      "XSEC": [
+        "daily_r7",
+        "daily_r30",
+        "daily_sigma20",
+        "daily_rs7",
+        "daily_cs_rank_pct",
+        "membership_rank_pct",
+        "eligibility_age_days"
+      ]
+    },
+    "hard_cutoff_exclusive": "2024-01-01T00:00:00Z",
+    "models": {
+      "bin_additive": "train-quintile shrinkage, no tuned bins",
+      "logit_lambda": 10.0,
+      "ridge_lambda": 10.0
+    },
+    "overlays": {
+      "BINARY_NO_VOL": "full-vector sensitivity",
+      "CORR80_MAX2": {
+        "lookback_days": 90,
+        "max_similar_incumbents": 2,
+        "min_obs": 60,
+        "threshold": 0.8
+      }
+    },
+    "portfolio": {
+      "H0": "unchanged from REV729",
+      "active_replacement": false,
+      "costs": [
+        1.0,
+        2.0
+      ],
+      "max_positions": 20,
+      "per_position_risk_budget": 0.0075,
+      "position_weight_cap": 0.05
+    },
+    "production": false,
+    "push": false,
+    "rankers": [
+      {
+        "form": "BASELINE",
+        "group": "BASELINE",
+        "id": "R00_BASELINE_RS7_SIGMA20"
+      },
+      {
+        "form": "MU",
+        "group": "FAMILY",
+        "id": "R01_FAMILY_MU"
+      },
+      {
+        "form": "MU",
+        "group": "XSEC",
+        "id": "R02_XSEC_MU"
+      },
+      {
+        "form": "MU",
+        "group": "TREND",
+        "id": "R03_TREND_MU"
+      },
+      {
+        "form": "MU",
+        "group": "STRUCTURE",
+        "id": "R04_STRUCTURE_MU"
+      },
+      {
+        "form": "MU",
+        "group": "MARKET",
+        "id": "R05_MARKET_MU"
+      },
+      {
+        "form": "MU",
+        "group": "LIQ_TENURE",
+        "id": "R06_LIQ_TENURE_MU"
+      },
+      {
+        "form": "MU_NO_GATE",
+        "group": "ALL",
+        "id": "R07_ALL_MU_NO_GATE"
+      },
+      {
+        "form": "MU",
+        "group": "ALL",
+        "id": "R08_ALL_MU_POSITIVE"
+      },
+      {
+        "form": "DOWNSIDE",
+        "group": "ALL",
+        "id": "R09_ALL_DOWNSIDE_ADJ"
+      },
+      {
+        "form": "TAIL",
+        "group": "ALL",
+        "id": "R10_ALL_TAIL_EXPECTATION"
+      },
+      {
+        "form": "LCB",
+        "group": "ALL",
+        "id": "R11_ALL_LCB"
+      },
+      {
+        "form": "CAPEFF",
+        "group": "ALL",
+        "id": "R12_ALL_CAPITAL_EFFICIENCY"
+      },
+      {
+        "form": "FULL",
+        "group": "ALL",
+        "id": "R13_FULL_VECTOR"
+      },
+      {
+        "form": "FULL_DURATION",
+        "group": "ALL",
+        "id": "R14_FULL_VECTOR_DURATION"
+      },
+      {
+        "form": "TREND_P10",
+        "group": "TREND",
+        "id": "R15_TREND_P10"
+      },
+      {
+        "form": "RAW_ADX_DMI",
+        "group": "TREND",
+        "id": "R16_RAW_ADX_DMI"
+      },
+      {
+        "form": "BIN_ADDITIVE",
+        "group": "ALL",
+        "id": "R17_BIN_ADDITIVE_ALL"
+      }
+    ],
+    "schema_version": "akah-cross-sectional-opportunity-value-full-hypothesis-protocol-v1",
+    "status": "FROZEN_BEFORE_OUTCOMES",
+    "tail_targets": [
+      0.05,
+      0.1,
+      0.2
+    ],
+    "training": {
+      "expanding": true,
+      "primary_target": "h0_net_return_2x",
+      "purge": "label_end < test_year_start",
+      "targets_under": "FROZEN_H0",
+      "test_years": [
+        2020,
+        2021,
+        2022,
+        2023
+      ]
+    }
+  },
+  "ranker_count": 18,
+  "schema_version": "akah-cross-sectional-opportunity-value-full-hypothesis-report-v1",
+  "status": "PASS_COMPLETE_DISCOVERY",
+  "walkforward_prediction_rows": 354210
+}

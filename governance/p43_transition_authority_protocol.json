@@ -1,0 +1,17 @@
+{
+  "task_id": "FINAL_EXIT_BRAIN_PRE_2024_ARCHITECTURE_P43_PREEXISTING_EVENT_LEVEL_TRANSITION_AUTHORITY_SCHEMA_ADJUDICATION_V1_RETRY_V1",
+  "objective": "Bind the 2022 direct event set and adjudicate availability of an independently authoritative 2023 Control ledger before the bounded P38 export.",
+  "scope": "Derived artifacts and frozen source only; no market rows or replay.",
+  "identity": ["pair", "entry_time"],
+  "lineage_key": ["period_id", "signal_time_utc_iso", "pair"],
+  "trace_key": "event_key already serialized by frozen P19 observer",
+  "direct_selection": "Intersect Control event keys with treatment trace decision TRANSITION_ADMISSION_ABLATED; verify entry_market_state TRANSITION. Never select by PnL or exit state.",
+  "pnl_authority": "net_pnl reconciled to entire P13 ledger before subset evaluation",
+  "2023_control_selection": "P38 Control source lineage, 237 trades and 15663.044356264174 net PnL; never the TRANSITION subset outcome",
+  "absence_scope": "All 13402 P42 audited rowset schemas plus exact P38 export hashes in full P42 inventory and recorded P38 output paths",
+  "missing_export_action": "Close and sync authority task; separately admit one frozen P38 control/treatment export with full parity and cross-year diagnosis.",
+  "numerical_tolerance": "1e-8 for 2022 CSV/binary-float serialization only",
+  "next_bottleneck": "TRANSITION_2023_EVENT_LEVEL_EXPORT_REPLAY_AND_CROSS_YEAR_DIAGNOSIS_V1",
+  "forbidden": ["2024 access", "2025 access", "production changes", "candidate search", "threshold tuning", "exit_market_state admission selection"],
+  "prebegin_checks": ["revision/head/SHA/branch", "remote manifest", "tracked/index clean", "no active task", "source hashes", "composite uniqueness/non-null", "P13 whole-ledger parity", "P19 exact direct set", "output absence", "stageability", "compile", "Ruff"]
+}

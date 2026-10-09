@@ -1,0 +1,60 @@
+{
+  "authority_id": "AKAH_BOT_RD16B_ONE_HOUR_TRUE_PRODUCER_BINDING_V1",
+  "status": "BOUND",
+  "raw_root": "data/raw/rd16b/kucoin",
+  "dataset_layout": "<raw_root>/<pair>/1h.parquet",
+  "producer_chain": [
+    {
+      "path": "scripts/research/run_rd16b_hourly_readiness.py",
+      "role": "CLI_WRAPPER",
+      "sha256": "3683A20C51BAAEBEF257E5235FD433AD31DE32E348FCAE80C56253D4D10DDFE4",
+      "binding": "Parses since/until/download and calls run_rd16b."
+    },
+    {
+      "path": "src/spotbot/research/rd16b_hourly_readiness.py",
+      "function": "run_rd16b",
+      "line": 718,
+      "role": "READINESS_ORCHESTRATOR",
+      "sha256": "62C4139AC2E4F5CE7C852F582CB829398935A9CEE78155617B13B657325F4F37",
+      "binding": "Loads configured symbols, calls _acquire_hourly, validates and writes the RD16B manifests."
+    },
+    {
+      "path": "src/spotbot/research/rd16b_hourly_readiness.py",
+      "function": "_acquire_hourly",
+      "line": 211,
+      "role": "ACQUISITION_AND_LOCAL_STORE_BINDING",
+      "binding": "Resolves the Parquet path through ParquetCandleStore and obtains provider history when download is enabled."
+    },
+    {
+      "path": "src/spotbot/data/provider.py",
+      "function": "normalize_ohlcv_rows",
+      "lines": "133-220",
+      "role": "EXCHANGE_ROW_NORMALIZER",
+      "sha256": "60BEE0AF8DB2C4EF0E74ED793A3A079D6ED021AE684B99119F7A25EA93F1D343",
+      "binding": "Converts exchange open timestamps to UTC close timestamps and drops incomplete candles at the as-of cutoff."
+    },
+    {
+      "path": "src/spotbot/data/store.py",
+      "function": "ParquetCandleStore.save",
+      "lines": "90-142",
+      "role": "PARQUET_WRITER",
+      "sha256": "CD89E30A1ECB703E61D1634DF0AF2F39FA16675D6881C102217B816C66240795",
+      "binding": "Validates, UTC-normalizes, stably sorts, and writes the immutable candle dataset."
+    }
+  ],
+  "source_semantics": {
+    "exchange_row_timestamp": "CANDLE_OPEN_TIME",
+    "stored_timestamp": "CANDLE_CLOSE_TIME",
+    "transformation": "stored_timestamp = exchange_open_timestamp + timeframe_duration",
+    "timeframe": "1h",
+    "timezone": "UTC",
+    "incomplete_bar_policy": "DROP_WHEN_CLOSE_TIME_EXCEEDS_REQUESTED_AS_OF_CUTOFF",
+    "sort_policy": "STABLE_ASCENDING_BY_TIMESTAMP",
+    "duplicate_policy": "MERGE_SORTS_AND_DROP_DUPLICATES_KEEP_LAST_THEN_VALIDATOR_REJECTS_ANY_REMAINING_DUPLICATES",
+    "stored_required_columns": ["timestamp", "open", "high", "low", "close", "volume"]
+  },
+  "raw_root_inventory_sha256": "NOT_A_SINGLE_MANIFEST_FOR_ALL_342_FILES",
+  "source_manifest_sha256": "A3B1D70C96E8B804C747DF2B5E788459C34D1F81E901F1BCD0DF5AD7A29B92DD",
+  "market_rows_read_for_this_binding": false,
+  "network_calls": 0
+}

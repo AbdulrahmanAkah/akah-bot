@@ -1,0 +1,69 @@
+{
+  "authority_bindings": {
+    "ntl_input_gate_sha256": "C709B42C309783FF451491DC5745983B2F88E0CD1AF80D27B262C09129535769",
+    "ntl_report_sha256": "464D042D45506765A9A20985D895DB342C5D2C2B90BCA3054C5E8E9F2695BE6F",
+    "parity_json_sha256": "9572B41908809B26D8846484147C85FD3037CABFC6E8A8BAE47DAF3F1FF001D7",
+    "parity_rows_sha256": "47618557A5B55C1B3BE8FE57173B5B3C02BC89C271396C19A94B94979D54650C",
+    "prior_input_authority_decision_path": "governance/v2_phase_a_native_replay_input_authority_decision_v1/input_authority_decision.json",
+    "prior_input_authority_decision_sha256": "624150780341A2372E8E7C17CD1B1231125152B1AC429EB8077412752910394A",
+    "prior_input_authority_matrix_sha256": "ACF04B52C7B6560C5CE318FAC3DE163364414FCC7175C5A6D0DB97C28B724A98",
+    "source_authority_sha256": "A7430573E2D55362CC7E85C9DB606D048734DFDA8584240811FEE1B876BAB31F"
+  },
+  "branch": "research/rd48-cross-venue-price-level-basis-direct-utility-v1",
+  "evidence": [
+    {
+      "path": "governance/v2_phase_a_native_replay_input_authority_gap_adjudication_v1/parity_git_lineage.json",
+      "sha256": "452B6057C85F040631AC13435DD5FB61F8E3C1371BF91377BE89782E80EA2DB2"
+    },
+    {
+      "path": "governance/v2_phase_a_native_replay_input_authority_gap_adjudication_v1/bounded_git_history_search.json",
+      "sha256": "EBBE02A651C7DFA40F727AB117D79BAA95123C0F175935FE078B6CCCE46B69A4"
+    },
+    {
+      "path": "governance/v2_phase_a_native_replay_input_authority_gap_adjudication_v1/historical_native_producer_candidates.json",
+      "sha256": "4022F2BFB5DCE01AB69FDF189ABB238EE49F59C37C048D4A7FBE5269218AB99C"
+    },
+    {
+      "path": "governance/v2_phase_a_native_replay_input_authority_gap_adjudication_v1/historical_native_producer_adjudication.json",
+      "sha256": "FFD3E569467343DA5E5B56093E55C301028B411B54D4C8BF0DCF60ECDD63AE16"
+    },
+    {
+      "path": "governance/v2_phase_a_native_replay_input_authority_gap_adjudication_v1/gap_adjudication_decision.json",
+      "sha256": "393366DB2AC886761EF07E26D0BA8F20067190E06AF4F994A771AEAA31C37AA4"
+    },
+    {
+      "path": "governance/v2_phase_a_native_replay_input_authority_gap_adjudication_v1.json",
+      "sha256": "0A3BE887A13D6F3C6B3353C2E10C800DBD670CAB93577B18B06F92E1FDA36C0F"
+    }
+  ],
+  "firewall": {
+    "economics": false,
+    "git_fetch": false,
+    "market_rows_read": false,
+    "native_replay_executed": false,
+    "network": false,
+    "outcome_data_rows_read": false,
+    "pnl": false,
+    "push": false,
+    "source_mutation": false
+  },
+  "governed_schema_version": "akah-provenance-phase-governed-v1",
+  "next_bottleneck": "CAUSAL_EXIT_BRAIN_V2_PHASE_A_NATIVE_TERMINAL_LEDGER_REPLAY_RECOVERY_V1",
+  "north_star_effect": "Prevents repeated provenance chasing and prevents substituting a plausible current runner for the unproven historical producer of the 33-lifecycle parity cohort.",
+  "objective": "Adjudicate the sole remaining historical native replay input-authority gap: HISTORICAL_NATIVE_PRODUCER_BINDING. Perform one bounded local Git/governance lineage search. Either recover an explicit historical binding or close the provenance search as not recoverable from current local evidence.",
+  "resolution_class": "HISTORICAL_NATIVE_PRODUCER_BINDING_RECOVERED",
+  "state_updates": {
+    "actual_exit_authority": false,
+    "economics_authorized": false,
+    "roadmap_position": "NATIVE_TERMINAL_LEDGER_REPLAY_RECOVERY_READY",
+    "v2_phase_a_historical_native_producer_binding": "BOUND",
+    "v2_phase_a_historical_native_producer_binding_candidate_count": 1,
+    "v2_phase_a_native_replay_executed": false,
+    "v2_phase_a_provenance_search_same_evidence_set": "CLOSED"
+  },
+  "status": "PASS",
+  "summary": "One unique exact historical native producer binding was recovered from bounded local Git/governance evidence. Terminal-ledger replay recovery may now use that authority without choosing new inputs.",
+  "task_id": "CAUSAL_EXIT_BRAIN_V2_PHASE_A_NATIVE_REPLAY_INPUT_AUTHORITY_GAP_ADJUDICATION_V1",
+  "task_start_head": "2a3f7a7fcc994757fb29bf1f812e5daa615550f9",
+  "task_start_revision": 188
+}

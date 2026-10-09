@@ -1,0 +1,35 @@
+{
+  "2024_access": false,
+  "2025_access": false,
+  "baseline_parity": "REQUIRED_1X_2X_METRIC_AND_EXACT_TRADE",
+  "hard_cutoff_exclusive": "2024-01-01T00:00:00Z",
+  "lambda": 10.0,
+  "opportunity_source_revision": 731,
+  "oracle_bound_reference_revision": 749,
+  "policies": [
+    {
+      "description": "Exact F10 baseline; no learned replacement",
+      "id": "B00_F10_BASELINE",
+      "mode": "NONE"
+    },
+    {
+      "description": "Replace only when direct predicted incremental replacement value is > 0",
+      "id": "B01_RVB_MEAN_POSITIVE",
+      "mode": "MEAN_POSITIVE"
+    },
+    {
+      "description": "Replace only when predicted value minus one fixed model standard error is > 0",
+      "id": "B02_RVB_LCB1_POSITIVE",
+      "mode": "LCB1_POSITIVE"
+    }
+  ],
+  "production_changed": false,
+  "push": false,
+  "schema_version": "akah-rvb-protocol-v1",
+  "source_revision": 751,
+  "walkforward_test_years": [
+    2021,
+    2022,
+    2023
+  ]
+}

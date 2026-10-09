@@ -1,0 +1,159 @@
+{
+  "groups": {
+    "age": {
+      "coverage": 1.0,
+      "field": "checkpoint_age_hours",
+      "method": "CERTIFIED_LEDGER_FIELD",
+      "path": "governance/abc_lifecycle_state_machine_independent_decision_ledger_pi0_native_action_full_pipeline_mega_v1/independent_decision_ledger.csv.gz",
+      "sha256": "4D731BC300DA520A01175C76B437293BB4BCCBEE19CF386F953B427F99234F75"
+    },
+    "breadth": {
+      "attempts": [],
+      "candidate_count": 0,
+      "selected": null,
+      "status": "NOT_PROVEN"
+    },
+    "current_return": {
+      "attempts": [],
+      "candidate_count": 0,
+      "selected": null,
+      "status": "NOT_PROVEN"
+    },
+    "drawdown": {
+      "attempts": [
+        {
+          "core_rows": 2593,
+          "coverage": 1.0,
+          "covered_rows": 2593,
+          "duplicate_core_keys": 0,
+          "fallback_semantic_match": true,
+          "field": "macd_hist_drawdown_from_peak5_atr",
+          "nonfinite_core_values": 0,
+          "path": "governance/abc_lifecycle_state_machine_technical_indicator_sensor_materialization_v1/technical_indicator_sensor_grid.csv",
+          "source_rows_scanned": 14059,
+          "source_sha256": "03DE5B800F1018441632BD29C4157CDEEF688FD51FD38158ACCC9592B8BDAEA2",
+          "status": "PASS"
+        }
+      ],
+      "candidate_count": 2,
+      "selected": {
+        "coverage": 1.0,
+        "fallback_semantic_match": true,
+        "field": "macd_hist_drawdown_from_peak5_atr",
+        "method": "TRACKED_DERIVED_PIT_SOURCE",
+        "path": "governance/abc_lifecycle_state_machine_technical_indicator_sensor_materialization_v1/technical_indicator_sensor_grid.csv",
+        "sha256": "03DE5B800F1018441632BD29C4157CDEEF688FD51FD38158ACCC9592B8BDAEA2"
+      },
+      "status": "PASS"
+    },
+    "execution_quality": {
+      "attempts": [
+        {
+          "core_rows": 2593,
+          "coverage": 0.0,
+          "covered_rows": 0,
+          "duplicate_core_keys": 0,
+          "fallback_semantic_match": true,
+          "field": "pre_entry_staleness_hours",
+          "nonfinite_core_values": 0,
+          "path": "governance/abc_lifecycle_state_machine_dynamic_universe_currency_selection_breadth_audit_v1/entry_event_universe_with_membership_rank.csv",
+          "source_rows_scanned": 6183,
+          "source_sha256": "13A637BDA827A0B1F8031AAA48C81D1633DCAC6BAFE7F903C3606F15D1535E9B",
+          "status": "INCOMPLETE"
+        }
+      ],
+      "candidate_count": 1,
+      "selected": null,
+      "status": "NOT_PROVEN"
+    },
+    "relative_strength": {
+      "attempts": [],
+      "candidate_count": 0,
+      "selected": null,
+      "status": "NOT_PROVEN"
+    },
+    "trend": {
+      "attempts": [
+        {
+          "core_rows": 2593,
+          "coverage": 1.0,
+          "covered_rows": 2593,
+          "duplicate_core_keys": 0,
+          "fallback_semantic_match": false,
+          "field": "dmi_spread14",
+          "nonfinite_core_values": 0,
+          "path": "governance/abc_lifecycle_state_machine_technical_indicator_sensor_materialization_v1/technical_indicator_sensor_grid.csv",
+          "source_rows_scanned": 14059,
+          "source_sha256": "03DE5B800F1018441632BD29C4157CDEEF688FD51FD38158ACCC9592B8BDAEA2",
+          "status": "PASS"
+        }
+      ],
+      "candidate_count": 16,
+      "selected": {
+        "coverage": 1.0,
+        "fallback_semantic_match": false,
+        "field": "dmi_spread14",
+        "method": "TRACKED_DERIVED_PIT_SOURCE",
+        "path": "governance/abc_lifecycle_state_machine_technical_indicator_sensor_materialization_v1/technical_indicator_sensor_grid.csv",
+        "sha256": "03DE5B800F1018441632BD29C4157CDEEF688FD51FD38158ACCC9592B8BDAEA2"
+      },
+      "status": "PASS"
+    },
+    "volatility": {
+      "attempts": [
+        {
+          "core_rows": 2593,
+          "coverage": 1.0,
+          "covered_rows": 2593,
+          "duplicate_core_keys": 0,
+          "fallback_semantic_match": true,
+          "field": "atr14_4h_price_fraction",
+          "nonfinite_core_values": 0,
+          "path": "governance/abc_lifecycle_state_machine_technical_indicator_sensor_materialization_v1/technical_indicator_sensor_grid.csv",
+          "source_rows_scanned": 14059,
+          "source_sha256": "03DE5B800F1018441632BD29C4157CDEEF688FD51FD38158ACCC9592B8BDAEA2",
+          "status": "PASS"
+        }
+      ],
+      "candidate_count": 6,
+      "selected": {
+        "coverage": 1.0,
+        "fallback_semantic_match": true,
+        "field": "atr14_4h_price_fraction",
+        "method": "TRACKED_DERIVED_PIT_SOURCE",
+        "path": "governance/abc_lifecycle_state_machine_technical_indicator_sensor_materialization_v1/technical_indicator_sensor_grid.csv",
+        "sha256": "03DE5B800F1018441632BD29C4157CDEEF688FD51FD38158ACCC9592B8BDAEA2"
+      },
+      "status": "PASS"
+    }
+  },
+  "inventory_files": 18,
+  "missing_groups": [
+    "current_return",
+    "breadth",
+    "relative_strength",
+    "execution_quality"
+  ],
+  "no_outcome_rank_or_feature_search": true,
+  "runtime_forbidden_fields": [
+    "future",
+    "oracle",
+    "target",
+    "label",
+    "mfe",
+    "mae",
+    "best_open",
+    "best_return",
+    "pnl",
+    "decision_value",
+    "outcome",
+    "winner",
+    "right_censored",
+    "ret_168h",
+    "ret_72h_open",
+    "ret_24h_open"
+  ],
+  "schema_version": "akah-composite-pit-feature-authority-matrix-v1",
+  "selection_rule": "DETERMINISTIC_SOURCE_PRIORITY_THEN_FIELD_PRIORITY;_FIRST_100PCT_CAUSAL_NUMERIC_BINDING",
+  "status": "INCOMPLETE"
+}

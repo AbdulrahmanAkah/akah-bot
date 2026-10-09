@@ -1,0 +1,125 @@
+{
+  "acceptance_parity": {
+    "all_existing_trace_invariants_must_remain_pass": true,
+    "decision_represented_lifecycles": 1782,
+    "decision_rows": 14059,
+    "legacy_signal_counts": {
+      "A": 135,
+      "B": 31,
+      "C": 74
+    },
+    "memory_observed_lifecycles": 1270,
+    "total_control_lifecycles": 2020,
+    "zero_eligible_lifecycles": 238
+  },
+  "decision_identity": [
+    "year",
+    "pair",
+    "entry_time",
+    "native_exit_time",
+    "decision_time_4h"
+  ],
+  "entry_price_authority": {
+    "derive_entry_price_from_raw": false,
+    "identity_plus_entry_price_mapping_sha256": "83CC850A1D6D26EE5F7B60EBDFEE1EB78C91542C210CF041FB40E62B057CCE56",
+    "path": "data/research/abc_exit_primitives_2019_2023_v1/control-trades.csv",
+    "sha256": "BA2CF871453DDFAC53DD53494C5B47D29C20BC1777370928135A8FB2D01E8ABE"
+  },
+  "forbidden": {
+    "2024_rows": true,
+    "2025_rows": true,
+    "adaptive_logic": true,
+    "economic_outcomes": true,
+    "exit_action": true,
+    "exit_arbiter": true,
+    "horizon_selection": true,
+    "persistent_state_definition": true,
+    "pnl_columns": true,
+    "runtime_state_machine": true,
+    "threshold_selection": true
+  },
+  "lifecycle_identity": [
+    "year",
+    "pair",
+    "entry_time",
+    "native_exit_time"
+  ],
+  "population": {
+    "decision_grid_rows": 14059,
+    "decision_represented_lifecycles": 1782,
+    "total_control_lifecycles": 2020,
+    "zero_decision_lifecycles_role": "POPULATION_SUMMARY_ONLY_NO_MATERIALIZED_DECISION_ROWS",
+    "zero_eligible_lifecycles": 238
+  },
+  "purpose": "Execute the frozen non-economic 22-observable reconstruction on the existing 14059 decision rows only.",
+  "raw_market_authorization": {
+    "2024_rows_authorized": false,
+    "2025_rows_authorized": false,
+    "columns": [
+      "timestamp",
+      "open",
+      "high",
+      "low",
+      "close",
+      "volume"
+    ],
+    "no_lower_time_bound": true,
+    "pair_count": 28,
+    "pairs": [
+      "ADA-USDT",
+      "ATOM-USDT",
+      "AVAX-USDT",
+      "BNB-USDT",
+      "BTC-USDT",
+      "DOGE-USDT",
+      "DOT-USDT",
+      "ETH-USDT",
+      "GRAM-USDT",
+      "INJ-USDT",
+      "JASMY-USDT",
+      "KAS-USDT",
+      "KCS-USDT",
+      "LINK-USDT",
+      "LTC-USDT",
+      "LUNC-USDT",
+      "MANA-USDT",
+      "NEAR-USDT",
+      "NEO-USDT",
+      "OP-USDT",
+      "SAND-USDT",
+      "SHIB-USDT",
+      "SOL-USDT",
+      "TRX-USDT",
+      "VET-USDT",
+      "XMR-USDT",
+      "XRP-USDT",
+      "XTZ-USDT"
+    ],
+    "parquet_predicate_pushdown_required": true,
+    "post_read_assertion": "max(timestamp) < 2024-01-01T00:00:00Z",
+    "predicate": [
+      [
+        "timestamp",
+        "<",
+        "2024-01-01T00:00:00+00:00"
+      ]
+    ],
+    "reason_no_lower_bound": "PRESERVE_FROZEN_T0_WARMUP_AND_CONTINUOUS_ATR22_DONCHIAN10_SERIES",
+    "root": "data/raw/rd16b/kucoin"
+  },
+  "reconstruction": {
+    "decision_times_source": "governance/abc_lifecycle_state_machine_observational_trace_v1/decision_grid_trace.csv",
+    "entry_price_source": "data/research/abc_exit_primitives_2019_2023_v1/control-trades.csv",
+    "implementation_module": "src/spotbot/research/abc_persistent_state_feature_reconstruction_v1.py",
+    "implementation_sha256": "EEBB00249D549C6354A79228D5E674890FA25203469530FFD3E3E1FF8C9E7F81",
+    "must_materialize_exact_rows": 14059,
+    "must_preserve_decision_identity_and_order": true,
+    "no_existing_trace_mutation": true,
+    "no_row_addition": true,
+    "no_row_deletion": true,
+    "prepare_four_hour_bars": "DELEGATES_TO_FROZEN_ABC_BUILD_FOUR_HOUR_BARS",
+    "zero_decision_lifecycles_materialized": false,
+    "zero_decision_lifecycles_remain_in_summary": true
+  },
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_CAUSAL_FEATURE_RECONSTRUCTION_EXECUTION_V1"
+}

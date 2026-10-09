@@ -1,0 +1,67 @@
+{
+  "forbidden_actions": [
+    "NO_PRODUCTION_CHANGE",
+    "NO_EXIT_ACTION",
+    "NO_EXIT_ARBITER",
+    "NO_ADAPTIVE_POLICY",
+    "NO_OPTIMIZATION",
+    "NO_PNL_READ",
+    "NO_ECONOMIC_OUTCOME_READ",
+    "NO_MARKET_DATA_ACCESS",
+    "NO_2024_ACCESS",
+    "NO_2025_ACCESS",
+    "NO_PUSH"
+  ],
+  "information_set": "CURRENT_AND_PRIOR_CAUSAL_NON_ECONOMIC_OBSERVABLES_ONLY",
+  "mandatory_invariants": [
+    "SHADOW_TRACE_MUST_EXACTLY_REPRODUCE_ACCEPTED_PERSISTENT_STATE_GRID",
+    "RUNTIME_TRANSITIONS_MUST_EXACTLY_REPRODUCE_REVIEWED_TRANSITION_LEDGER",
+    "NO_FUTURE_ROW_ACCESS",
+    "NO_PAIR_OR_EVENT_IDENTITY_AS_RULE",
+    "NO_THRESHOLD_OR_HORIZON_SELECTION",
+    "NO_EXIT_MAPPING_OR_ARBITRATION"
+  ],
+  "post_freeze_gate": {
+    "next_if_valid": "ABC_LIFECYCLE_STATE_MACHINE_CAUSAL_RUNTIME_STATE_TRACKER_SHADOW_MATERIALIZATION_V1",
+    "production_runtime_authorized": false,
+    "shadow_materialization_authorized": true
+  },
+  "protocol_id": "ABC_LIFECYCLE_STATE_MACHINE_CAUSAL_RUNTIME_STATE_TRACKER_PROTOCOL_V1",
+  "required_shadow_outputs": [
+    "runtime_state_trace.csv",
+    "runtime_transition_trace.csv",
+    "runtime_parity_audit.json",
+    "causal_information_audit.json",
+    "canonical_result.json",
+    "output_manifest.json"
+  ],
+  "schema_version": "abc-causal-runtime-state-tracker-protocol-v1",
+  "sequential_processing": "ONE_EXISTING_DECISION_ROW_AT_A_TIME_WITHIN_LIFECYCLE",
+  "source_bindings": [
+    {
+      "path": "governance/abc_lifecycle_state_machine_persistent_state_transition_protocol_v1/protocol.json",
+      "sha256": "4B126CD6EC26EC8BC307A7EC00D9359EFB67DF77FF2126A40597DBF45021FB3A"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_persistent_state_transition_protocol_v1/transition_catalog.json",
+      "sha256": "14BAB86519AEF25BAE6FF9BFFDB4D2BC160C7E02DD5E40F170384A5030F2AE4F"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_persistent_state_transition_mandatory_review_v1/mandatory_review.json",
+      "sha256": "B59FC0166E72A0954E16A12ED3583181DD8492CE51A750C4EF84185A6E5A83C1"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_persistent_state_transition_mandatory_review_v1/canonical_result.json",
+      "sha256": "C86DC32D36F56D2DFC9974864CEEF9A202609CF093DA71F7F1BED98D059FAF72"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_persistent_state_definition_protocol_v1/state_definition_catalog.json",
+      "sha256": "F399071B310E7D49D8B642BFB4929215305C7D774E023DE4099E4C94511BBDC1"
+    }
+  ],
+  "state_update_catalog_sha256": "EC8EE68E69F8E8F1EE22AE83AE5344256501B1DC9B28F58043C470C9E4F70AFF",
+  "state_vector_has_exit_authority": false,
+  "state_vector_has_parameter_retuning_authority": false,
+  "state_vector_has_position_sizing_authority": false,
+  "status": "FROZEN_BEFORE_SHADOW_MATERIALIZATION"
+}

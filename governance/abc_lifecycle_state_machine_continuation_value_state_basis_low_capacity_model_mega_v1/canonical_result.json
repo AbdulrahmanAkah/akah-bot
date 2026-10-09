@@ -1,0 +1,194 @@
+{
+  "2024_access": false,
+  "block_forward": {
+    "bootstrap_reps": 320,
+    "passed": false,
+    "status": "FAIL_BLOCK_FORWARD_ROBUSTNESS",
+    "year_results": {
+      "2022": {
+        "bootstrap_completed": 320,
+        "passed": false,
+        "rows": 2065,
+        "spearman": -0.014521096643045238,
+        "spearman_p10": -0.08993924000906617,
+        "spread": 0.0007765418464243572,
+        "spread_p10": -0.003834711865903413
+      },
+      "2023": {
+        "bootstrap_completed": 320,
+        "passed": false,
+        "rows": 2565,
+        "spearman": 0.026189844636657852,
+        "spearman_p10": -0.002209035653279605,
+        "spread": 0.000713691782791296,
+        "spread_p10": -0.001984247536527209
+      }
+    }
+  },
+  "block_forward_pass": false,
+  "cost2x_pass": false,
+  "decision_counts": {
+    "DEFER": 7,
+    "KILL": 2,
+    "PROMOTE": 4
+  },
+  "entry_x_continuation": {
+    "entry_score": "score_mfe10_base14_adx",
+    "join_keys": [
+      "pair",
+      "entry_time"
+    ],
+    "joined_rows": 1553,
+    "status": "PASS_DIAGNOSTIC_ONLY_ENTRY_PARENT_NOT_VALUE_AUTHORITY",
+    "year_results": {
+      "2022": {
+        "rows": 282,
+        "spearman_entry_score_vs_continuation": -0.15734555413077164
+      },
+      "2023": {
+        "rows": 334,
+        "spearman_entry_score_vs_continuation": -0.11498806815818861
+      }
+    }
+  },
+  "feature_search": false,
+  "join_audit": {
+    "2024_rows_used": 0,
+    "available_state_columns": [
+      "base_state",
+      "native_market_state_context",
+      "memory_now",
+      "memory_seen",
+      "C_signal",
+      "A_signal",
+      "B_signal",
+      "a_condition_now",
+      "b_condition_now",
+      "a_condition_recovered_now",
+      "b_condition_recovered_now",
+      "a_condition_true_run_length",
+      "b_condition_true_run_length",
+      "hours_since_entry",
+      "hours_since_first_memory_or_null",
+      "progress_margin_delta_from_prev",
+      "structural_break_margin_delta_from_prev",
+      "volatility_damage_margin_delta_from_prev",
+      "a_margin_delta_from_prev",
+      "b_margin_delta_from_prev",
+      "close_delta_from_prev_decision",
+      "R_delta_from_prev_decision",
+      "atr22_current"
+    ],
+    "grid_rows": 14059,
+    "join_coverage": 1.0,
+    "join_keys": [
+      "pair",
+      "entry_time",
+      "decision_time_exact==decision_time_4h"
+    ],
+    "missing_preregistered_columns": [],
+    "target_rows": 12290
+  },
+  "max_single_feature_abs_forward_spearman": 0.08922098051420611,
+  "model_family_search": false,
+  "model_forward_pass": false,
+  "model_status": "FIT_FIXED_RIDGE",
+  "model_train_rows": 7660,
+  "model_tuned": false,
+  "model_year_results": {
+    "2022": {
+      "predicted_high_minus_low_actual_mean": 0.0007765418464243572,
+      "rows": 2065,
+      "spearman": -0.014521096643045238,
+      "target_mean": -0.003465823348379279
+    },
+    "2023": {
+      "predicted_high_minus_low_actual_mean": 0.000713691782791296,
+      "rows": 2565,
+      "spearman": 0.026189844636657852,
+      "target_mean": 0.00952807941207391
+    }
+  },
+  "near_perfect_anomaly": false,
+  "negative_control_pass": true,
+  "new_counterfactual_replay": false,
+  "new_raw_access": false,
+  "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_CONTINUATION_VALUE_STATE_BASIS_LOW_CAPACITY_MODEL_MEGA_HUMAN_REVIEW_V1",
+  "post_review_route": "HUMAN_REVIEW_THEN_STATE_REPRESENTATION_FAILURE_ATTRIBUTION_NO_RETUNING",
+  "production_changed": false,
+  "push": false,
+  "research_model_authorized": false,
+  "sanity_pass": true,
+  "schema_version": "akah-rev564-state-conditioned-continuation-maximum-evidence-mega-v1-state-basis-mega-result",
+  "shadow": {
+    "authorized_for_research_shadow": false,
+    "portfolio_replay_executed": false,
+    "production_authorized": false,
+    "rule": "LCB>0 HOLD; UCB<0 EXIT; ELSE PI0",
+    "status": "DIAGNOSTIC_ONLY_MODEL_NOT_AUTHORIZED",
+    "year_results": [
+      {
+        "EXIT_rows": 11,
+        "EXIT_sign_precision": 0.45454545454545453,
+        "EXIT_target_mean": 0.013744985114935491,
+        "HOLD_rows": 1286,
+        "HOLD_sign_precision": 0.30793157076205285,
+        "HOLD_target_mean": -0.005692178347959228,
+        "PI0_rows": 768,
+        "PI0_target_mean": 1.565274063550631e-05,
+        "rows": 2065,
+        "year": 2022
+      },
+      {
+        "EXIT_rows": 4,
+        "EXIT_sign_precision": 0.75,
+        "EXIT_target_mean": -0.012700010496829024,
+        "HOLD_rows": 1413,
+        "HOLD_sign_precision": 0.44090587402689313,
+        "HOLD_target_mean": 0.005746280911214082,
+        "PI0_rows": 1148,
+        "PI0_target_mean": 0.014260303838337453,
+        "rows": 2565,
+        "year": 2023
+      }
+    ]
+  },
+  "stable_context_count": 2,
+  "state_basis_feature_count": 30,
+  "state_basis_features": [
+    "hours_since_entry",
+    "hours_since_first_memory_or_null",
+    "hours_since_first_memory_or_null__missing",
+    "progress_margin_delta_from_prev",
+    "structural_break_margin_delta_from_prev",
+    "a_margin_delta_from_prev",
+    "close_delta_from_prev_decision",
+    "R_delta_from_prev_decision",
+    "atr22_current",
+    "a_condition_true_run_length",
+    "__bin_memory_now",
+    "__bin_memory_seen",
+    "__bin_C_signal",
+    "__bin_A_signal",
+    "__bin_B_signal",
+    "__bin_a_condition_now",
+    "__bin_a_condition_recovered_now",
+    "__cat_base_state__CONFIRMED",
+    "__cat_base_state__EARLY_PROGRESS",
+    "__cat_base_state__UNCONFIRMED",
+    "__cat_native_market_state_context__RISK_OFF",
+    "__cat_native_market_state_context__RISK_ON",
+    "__cat_native_market_state_context__TRANSITION",
+    "__ix_progress_x_atr",
+    "__ix_structural_x_atr",
+    "__ix_memory_x_progress",
+    "__ix_memory_x_age",
+    "__ix_market_RISK_OFF_x_progress",
+    "__ix_market_RISK_ON_x_progress",
+    "__ix_market_TRANSITION_x_progress"
+  ],
+  "status": "PASS_STATE_BASIS_MAXIMUM_EVIDENCE_COMPLETE",
+  "target_rows": 12290,
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_CONTINUATION_VALUE_STATE_BASIS_LOW_CAPACITY_MODEL_MEGA_V1",
+  "threshold_search": false
+}

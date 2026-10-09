@@ -1,0 +1,49 @@
+{
+  "schema_version": "abc-persistent-state-source-authority-binding-remediation-v1",
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_SOURCE_AUTHORITY_BINDING_REMEDIATION_V1",
+  "status": "PASS_BINDING_REMEDIATION_COMPLETE",
+  "summary": {
+    "reviewed_binding_gap_count": 16,
+    "resolved_binding_gap_count": 0,
+    "unresolved_binding_gap_count": 16,
+    "resolved_observables": [],
+    "unresolved_observables": [
+      "a_condition_now",
+      "a_condition_recovered_now",
+      "a_condition_true_run_length",
+      "a_margin_delta_from_prev",
+      "atr22_current",
+      "b_condition_now",
+      "b_condition_recovered_now",
+      "b_condition_true_run_length",
+      "b_margin_delta_from_prev",
+      "close_delta_from_prev_decision",
+      "close_minus_donchian_prev10_low",
+      "close_minus_ratchet_stop_before_t",
+      "donchian_prev10_low",
+      "ratchet_stop_before_t",
+      "structural_break_margin_delta_from_prev",
+      "volatility_damage_margin_delta_from_prev"
+    ],
+    "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_SOURCE_AUTHORITY_BINDING_GAP_REVIEW_V1",
+    "route_reason": "ONE_OR_MORE_OF_16_BINDING_GAPS_REMAIN_UNRESOLVED"
+  },
+  "raw_schema_binding": {
+    "parquet_file_count": 342,
+    "schema_signature_count": 1,
+    "required_schema_roles_proven": true
+  },
+  "constraints": {
+    "market_data_file_metadata_accessed": true,
+    "market_data_parquet_footer_schema_accessed": true,
+    "market_data_rows_accessed": false,
+    "market_data_values_accessed": false,
+    "economic_outcomes_read": false,
+    "pnl_columns_read": false,
+    "observable_values_materialized": false,
+    "threshold_selected": false,
+    "persistent_state_defined": false,
+    "2024_accessed": false,
+    "2025_accessed": false
+  }
+}

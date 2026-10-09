@@ -1,0 +1,110 @@
+{
+  "2024_access": false,
+  "actionable_winner_model_metrics": [
+    {
+      "auc": 0.6677096370463079,
+      "period": "TRAIN_2019_2021",
+      "rank_corr": 0.2884770262047088,
+      "recovery_fraction": 0.5586854460093896,
+      "rows": 213
+    },
+    {
+      "auc": 0.6152882205513784,
+      "period": "FORWARD_2022_2023",
+      "rank_corr": 0.1996850555091939,
+      "recovery_fraction": 0.495575221238938,
+      "rows": 113
+    },
+    {
+      "auc": 0.6776859504132231,
+      "period": "2022",
+      "rank_corr": 0.3077964261030575,
+      "recovery_fraction": 0.5,
+      "rows": 66
+    },
+    {
+      "auc": 0.5289855072463768,
+      "period": "2023",
+      "rank_corr": 0.0502043712338805,
+      "recovery_fraction": 0.4893617021276595,
+      "rows": 47
+    }
+  ],
+  "candidate_pnl_sum_2019_2023": 24331.29652041274,
+  "control_pnl_sum_2019_2023": 5793.6940480835365,
+  "delta_pnl_sum_2019_2023": 18537.602472329207,
+  "forward_both_years_nonnegative": false,
+  "forward_delta_pnl_2022_2023": 1486.896275097315,
+  "horizon_240": {
+    "annual_rows": [],
+    "delta_pnl_sum_2019_2023": NaN,
+    "exact_portfolio_capability_supported": false
+  },
+  "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_CONTEXT_WINNER_HORIZON_ECONOMIC_SYNTHESIS_MANDATORY_REVIEW_V1",
+  "production_changed": false,
+  "schema_version": "abc-context-winner-horizon-economic-synthesis-v1",
+  "selected_context_winner_policy": "E_DROP20_MFE5+W_EXIT_Q50",
+  "selected_policy_annual": [
+    {
+      "candidate_capital_notional_hours": 49255264.35172349,
+      "candidate_max_drawdown": 0.1271645542578179,
+      "candidate_pnl": -1580.0463728680625,
+      "candidate_trade_count": 233,
+      "control_capital_notional_hours": 63984719.62986983,
+      "control_max_drawdown": 0.1760883185611982,
+      "control_pnl": -7526.65908870603,
+      "control_trade_count": 314,
+      "delta_pnl": 5946.612715837968,
+      "year": 2019
+    },
+    {
+      "candidate_capital_notional_hours": 131386878.57080416,
+      "candidate_max_drawdown": 0.0846916750710629,
+      "candidate_pnl": 22016.916582123507,
+      "candidate_trade_count": 391,
+      "control_capital_notional_hours": 169794618.65072972,
+      "control_max_drawdown": 0.0913325999901115,
+      "control_pnl": 21761.79672339997,
+      "control_trade_count": 473,
+      "delta_pnl": 255.11985872354128,
+      "year": 2020
+    },
+    {
+      "candidate_capital_notional_hours": 230061033.630906,
+      "candidate_max_drawdown": 0.266878295159986,
+      "candidate_pnl": 11749.190218059986,
+      "candidate_trade_count": 446,
+      "control_capital_notional_hours": 227492850.9130774,
+      "control_max_drawdown": 0.2638772781596525,
+      "control_pnl": 900.2165953896038,
+      "control_trade_count": 441,
+      "delta_pnl": 10848.973622670384,
+      "year": 2021
+    },
+    {
+      "candidate_capital_notional_hours": 91430612.53745644,
+      "candidate_max_drawdown": 0.2348685463004266,
+      "candidate_pnl": -22217.197562334608,
+      "candidate_trade_count": 317,
+      "control_capital_notional_hours": 102772625.4528273,
+      "control_max_drawdown": 0.2723002903072951,
+      "control_pnl": -26552.44384960465,
+      "control_trade_count": 358,
+      "delta_pnl": 4335.246287270042,
+      "year": 2022
+    },
+    {
+      "candidate_capital_notional_hours": 114959003.58762358,
+      "candidate_max_drawdown": 0.0917949576016424,
+      "candidate_pnl": 14362.433655431916,
+      "candidate_trade_count": 287,
+      "control_capital_notional_hours": 173133545.56824896,
+      "control_max_drawdown": 0.1236767522822406,
+      "control_pnl": 17210.783667604643,
+      "control_trade_count": 434,
+      "delta_pnl": -2848.3500121727266,
+      "year": 2023
+    }
+  ],
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_CONTEXT_WINNER_HORIZON_ECONOMIC_SYNTHESIS_V1"
+}

@@ -1,0 +1,43 @@
+{
+  "authority_id": "AKAH_BOT_RECONSTRUCTED_NATIVE_BASELINE_TERMINAL_INPUT_VERIFICATION_CONTRACT_V1",
+  "status": "CONTRACT_DEFINED_PREREQUISITES_NOT_READY",
+  "study_identity": {
+    "policy_id": "rd27.FULL_ADAPTIVE_LIFECYCLE_BRAIN",
+    "cost_multiplier": 1.0,
+    "policy_is_prospective_not_historical": true,
+    "study_window": "2022-01-01T00:00:00Z <= authorized input time < 2023-01-01T00:00:00Z",
+    "max_hold_hours": 168
+  },
+  "inputs_to_bind_before_terminal_run": [
+    "one actual RD27 constructor/universe tuple or an explicitly declared native matrix",
+    "immutable authorized pre-2023 signal artifact",
+    "raw_root identity and no unbound override",
+    "sorted unique signal pair list",
+    "per-pair 1h file path and sha256",
+    "BTC-USDT state-sensor file path and sha256",
+    "timestamp semantic and information-available time",
+    "hourly continuity and duplicate/conflict audit",
+    "future max-exit coverage proof"
+  ],
+  "terminal_checks": [
+    "verify artifact sha256 and exact schema without opening protected rows",
+    "verify signal timestamps are pre-2023 and PIT-safe",
+    "derive sorted unique pairs only from the authorized signal artifact",
+    "enumerate exactly one 1h.parquet per selected pair plus BTC-USDT state sensor",
+    "read timestamp column only after metadata prove selected files are authorized pre-2023 inputs",
+    "verify UTC normalization, unique timestamps, stable ordering, 3600-second spacing, and no missing hour in rolling-24 windows",
+    "verify required max-exit row existence for every eligible candidate before replay; record this as coverage evidence",
+    "verify typed cost_multiplier is Python float 1.0"
+  ],
+  "allowed_columns": ["signal timestamp and schema metadata", "1h timestamp column after pre-2023 authorization"],
+  "forbidden_columns": ["open", "high", "low", "close", "volume", "turnover", "returns", "exit_price", "exit_reason", "exit_time", "gross_pnl", "net_pnl", "return_fraction", "mfe", "mae", "holding_hours"],
+  "current_blockers": [
+    "human selection of actual constructor/universe context",
+    "authorized pre-2023 signal materialization",
+    "selected pair/file manifest",
+    "timestamp/completion and continuity verification",
+    "future max-exit classification after coverage proof"
+  ],
+  "native_replay_executed": false,
+  "economic_analysis": false
+}

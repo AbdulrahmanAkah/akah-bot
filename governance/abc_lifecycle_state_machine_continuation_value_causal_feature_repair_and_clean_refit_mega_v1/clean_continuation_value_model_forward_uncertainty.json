@@ -1,0 +1,97 @@
+{
+  "block_bootstrap_reps_completed": 48,
+  "clean_near_perfect_anomaly": false,
+  "feature_catalog": {
+    "allowed_direct_source_count": 31,
+    "concept_mapping": {
+      "age": "hours_since_entry",
+      "progress": "progress_margin_delta_from_prev",
+      "volatility": "atr22_current"
+    },
+    "interactions": [],
+    "provenance_rule": "DIRECT_FEATURE_MUST_EXIST_IN_CAUSAL_DECISION_GRID_AND_PASS_HARD_BANNED_TOKENS"
+  },
+  "feature_search_performed": false,
+  "features": [
+    "hours_since_entry",
+    "progress_margin_delta_from_prev",
+    "atr22_current"
+  ],
+  "legacy_model_features": [
+    "continuation_advantage",
+    "progress_margin_delta_from_prev",
+    "atr22_current",
+    "hold_optional_exits_suppressed"
+  ],
+  "legacy_model_forward_results": {
+    "2022": {
+      "predicted_high_minus_low_actual_mean": 0.051583041856793216,
+      "rows": 2065,
+      "spearman": 0.9999894848449179,
+      "target_mean": -0.0034658233483792922
+    },
+    "2023": {
+      "predicted_high_minus_low_actual_mean": 0.059271108612390586,
+      "rows": 2565,
+      "spearman": 0.9999932731491132,
+      "target_mean": 0.009528079412073905
+    }
+  },
+  "max_abs_single_feature_forward_spearman": 0.08862339099311708,
+  "model_tuned": false,
+  "negative_control_pass": true,
+  "parameters": {
+    "beta": [
+      0.005373899995526803,
+      -0.0012701525159577365,
+      7.118665512540138e-06,
+      -0.0021452393772987853
+    ],
+    "features": [
+      "hours_since_entry",
+      "progress_margin_delta_from_prev",
+      "atr22_current"
+    ],
+    "medians": {
+      "atr22_current": 2.0614960915950897,
+      "hours_since_entry": 24.0,
+      "progress_margin_delta_from_prev": -0.00154
+    },
+    "mu": [
+      30.967493472584856,
+      -11.37504912858746,
+      134.82021561410548
+    ],
+    "sd": [
+      25.001360030564232,
+      219.6090938304486,
+      328.3250480802063
+    ]
+  },
+  "provenance_pass": true,
+  "research_model_authorized": false,
+  "ridge_alpha": 1.0,
+  "sanity_gate_pass": true,
+  "sign_stable_forward_pass": false,
+  "single_feature_identity_pass": true,
+  "source_target_rows": 12290,
+  "source_target_sha256": "00183B5FF19ADB3BC370117A7EEA2C972DFA0840B35A2AA3997F1EFB4EC9DE77",
+  "status": "FIT_FIXED_RIDGE",
+  "threshold_search_performed": false,
+  "train_rows": 7660,
+  "train_target_mean": 0.005373899995526805,
+  "year_results": {
+    "2022": {
+      "predicted_high_minus_low_actual_mean": -0.0035873313434622695,
+      "rows": 2065,
+      "spearman": -0.1042680898122972,
+      "target_mean": -0.003465823348379279
+    },
+    "2023": {
+      "predicted_high_minus_low_actual_mean": -0.006578731666710638,
+      "rows": 2565,
+      "spearman": -0.06785275051859531,
+      "target_mean": 0.00952807941207391
+    }
+  }
+}

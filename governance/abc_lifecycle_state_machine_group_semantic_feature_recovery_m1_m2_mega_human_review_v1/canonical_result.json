@@ -1,0 +1,54 @@
+{
+  "accepted_closed_features": [
+    "age",
+    "current_return",
+    "drawdown",
+    "trend",
+    "volatility"
+  ],
+  "accepted_disposition": "MEGA_GROUP_SEMANTIC_FEATURE_AUTHORITY_INCOMPLETE",
+  "accepted_feasibility": "PASS_FROZEN_REV711",
+  "accepted_ledger_certificate": "PASS_FROZEN_REV711",
+  "accepted_remaining_features": [
+    "breadth",
+    "execution_quality",
+    "relative_strength"
+  ],
+  "authorization": {
+    "2024": false,
+    "2025": false,
+    "bounded_raw_2019_2023_feature_materialization_if_needed": true,
+    "completed_hour_only": true,
+    "exclusive_2024_cutoff": "2024-01-01T00:00:00+00:00",
+    "feature_search": false,
+    "final_strategy_summary_pre2024": true,
+    "fixed_m1_m2": true,
+    "model3": false,
+    "per_year_economics": true,
+    "production": false,
+    "push": false,
+    "raw_columns": [
+      "timestamp",
+      "close",
+      "volume"
+    ],
+    "raw_use_only_for": [
+      "breadth",
+      "relative_strength",
+      "execution_quality"
+    ],
+    "threshold_search": false,
+    "tracked_feature_authority_first": true
+  },
+  "created_at_utc": "2026-09-26T19:12:15.644852+00:00",
+  "definitions": {
+    "breadth": "active C2 fraction with completed 24h return > 0",
+    "execution_quality": "held pair trailing 24 completed hourly quote-turnover proxy=sum(volume*close)",
+    "relative_strength": "held pair completed 24h return minus active C2 equal-weight mean completed 24h return"
+  },
+  "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_FINAL_STRATEGY_COMPLETION_MEGA_V1",
+  "reviewed_revision": 715,
+  "schema_version": "akah-rev715-final-strategy-completion-human-review-v1",
+  "status": "PASS_REV715_FINAL_STRATEGY_COMPLETION_MEGA_AUTHORIZED",
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_GROUP_SEMANTIC_FEATURE_RECOVERY_M1_M2_MEGA_HUMAN_REVIEW_V1"
+}

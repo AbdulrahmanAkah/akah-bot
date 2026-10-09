@@ -1,0 +1,39 @@
+{
+  "2022_2023_fresh_holdout": false,
+  "2024_access": false,
+  "branch_nulls": [
+    "WITHIN_TRADE_PHASE_SHIFT_A",
+    "WITHIN_TRADE_PHASE_SHIFT_B",
+    "ONE_ROW_PER_TRADE_YEAR_PERM_A",
+    "ONE_ROW_PER_TRADE_YEAR_PERM_B"
+  ],
+  "cost_identity_tolerance": 1e-10,
+  "estimand_material_abs_diff": 0.002,
+  "feature_search": false,
+  "indicator_search": false,
+  "inference_unit": "TRADE_CLUSTER_PRIMARY_DECISION_LEVEL_SECONDARY",
+  "model_family_search": false,
+  "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_CONTINUATION_VALUE_DECISION_VS_TRADE_ESTIMAND_AUDIT_V1",
+  "null_thresholds": {
+    "max_abs_value_spearman": 0.1,
+    "max_auc_deviation_from_half": 0.08,
+    "max_phase_persistence_delta": 0.12,
+    "min_coverage": 0.7
+  },
+  "schema_version": "akah-rev604-cluster-null-v2-and-sensor-lineage-maximum-evidence-mega-v1-protocol",
+  "sensor_lineage_gate": "candidate must be governed canonical materialization with all 17 plus keys, own-manifest hash parity, all 17 selected by compression, and either explicit upstream reference OR unique governed all-17 candidate reconstruction",
+  "status": "PASS_PROTOCOL_FROZEN",
+  "target_definition": "UNCHANGED_EXACT_EXIT_NOW_VS_HOLD_ONE_STEP_THEN_PI0",
+  "target_redesign": false,
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_CONTINUATION_VALUE_CLUSTER_NULL_V2_AND_ESTIMAND_PROTOCOL_FREEZE_V1",
+  "value_nulls": [
+    "CLEAN_PHASE_A",
+    "CLEAN_PHASE_B",
+    "CLEAN_ONE_A",
+    "CLEAN_ONE_B",
+    "INTERVENTION_PHASE_A",
+    "INTERVENTION_PHASE_B",
+    "INTERVENTION_ONE_A",
+    "INTERVENTION_ONE_B"
+  ]
+}

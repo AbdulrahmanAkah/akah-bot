@@ -1,0 +1,46 @@
+{
+  "authority_bindings": {},
+  "branch": "research/rd48-cross-venue-price-level-basis-direct-utility-v1",
+  "evidence": [
+    {
+      "path": "governance/v2_phase_a_native_terminal_source_authority_recovery_v1/source_inventory.json",
+      "sha256": "7893657CA52F84244178122B42B97E267E9B8ED9A5ADC2C26894DABCDC6BFE41"
+    },
+    {
+      "path": "governance/v2_phase_a_native_terminal_source_authority_recovery_v1/rd27_replay_terminal_path_analysis.json",
+      "sha256": "35E1FE327DDF2C99559F1E9E586227D566AA1225FFA45B5D8CB85E64366E8B5F"
+    },
+    {
+      "path": "governance/v2_phase_a_native_terminal_source_authority_recovery_v1/native_hook_close_contract_analysis.json",
+      "sha256": "8F082A7B033D30D74688AD79B373CC9C685562653D1BDCF2C5ADCDFB83767B45"
+    },
+    {
+      "path": "governance/v2_phase_a_native_terminal_source_authority_recovery_v1/native_terminal_test_evidence.json",
+      "sha256": "7DEF8CE5D33A510ADB42B92BAA43BA5F9FF44F7E1C0945952E5C96A63E9279CC"
+    }
+  ],
+  "firewall": {
+    "actual_exit_authority_mutation": false,
+    "economics": false,
+    "market_data_read": false,
+    "outcome_fields": false,
+    "pnl": false,
+    "push": false,
+    "source_mutation": false
+  },
+  "governed_schema_version": "akah-provenance-phase-governed-v1",
+  "next_bottleneck": "CAUSAL_EXIT_BRAIN_V2_PHASE_A_NATIVE_TERMINAL_BOUNDARY_AUTHORITY_REVIEW_RECOVERY_V2",
+  "north_star_effect": "Moves authority from derived Phase-A reports to the original RD27 runtime lifecycle source.",
+  "objective": "Recover native-terminal authority review using a source-first audit of the RD27 lifecycle replay and native hook contract. Bind the exact runtime close path only if identity, decision-time availability, native position removal/termination, and hook close ordering are proven without prohibited outcome fields.",
+  "resolution_class": "SOURCE_FIRST_NATIVE_TERMINAL_AUTHORITY_RECOVERY_FAIL_CLOSED",
+  "state_updates": {
+    "actual_exit_authority": false,
+    "economics_authorized": false,
+    "v2_phase_a_native_terminal_source_authority": "NOT_CERTIFIED"
+  },
+  "status": "FAIL_CLOSED",
+  "summary": "Source-first native terminal authority recovery failed closed: RuntimeError:HOOK_CLOSE_CONTRACT_LACKS_IDENTITY_OR_TIME",
+  "task_id": "CAUSAL_EXIT_BRAIN_V2_PHASE_A_NATIVE_TERMINAL_BOUNDARY_AUTHORITY_REVIEW_RECOVERY_V1",
+  "task_start_head": "1c23072e934d2ed3b296d867f24dd36c03c8c555",
+  "task_start_revision": 184
+}

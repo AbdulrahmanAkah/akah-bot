@@ -1,0 +1,568 @@
+{
+  "block_bootstrap_reps_completed": 48,
+  "feature_search_performed": false,
+  "features": [
+    "hours_since_entry",
+    "hours_since_first_memory_or_null",
+    "hours_since_first_memory_or_null__missing",
+    "progress_margin_delta_from_prev",
+    "structural_break_margin_delta_from_prev",
+    "a_margin_delta_from_prev",
+    "close_delta_from_prev_decision",
+    "R_delta_from_prev_decision",
+    "atr22_current",
+    "a_condition_true_run_length",
+    "__bin_memory_now",
+    "__bin_memory_seen",
+    "__bin_C_signal",
+    "__bin_A_signal",
+    "__bin_B_signal",
+    "__bin_a_condition_now",
+    "__bin_a_condition_recovered_now",
+    "__cat_base_state__CONFIRMED",
+    "__cat_base_state__EARLY_PROGRESS",
+    "__cat_base_state__UNCONFIRMED",
+    "__cat_native_market_state_context__RISK_OFF",
+    "__cat_native_market_state_context__RISK_ON",
+    "__cat_native_market_state_context__TRANSITION",
+    "__ix_progress_x_atr",
+    "__ix_structural_x_atr",
+    "__ix_memory_x_progress",
+    "__ix_memory_x_age",
+    "__ix_market_RISK_OFF_x_progress",
+    "__ix_market_RISK_ON_x_progress",
+    "__ix_market_TRANSITION_x_progress"
+  ],
+  "model_family_search_performed": false,
+  "model_tuned": false,
+  "parameters": {
+    "beta": [
+      0.005373899995526803,
+      0.0005740908742729188,
+      -0.0003995059652407803,
+      0.00029786184503221257,
+      -0.0031387826202769315,
+      0.002939798416248141,
+      0.002939798416249421,
+      -0.0006851053495066748,
+      0.0003510114795878832,
+      -0.0020978401360847334,
+      -0.0012033408155597267,
+      -0.0001463587917790206,
+      -0.00029786184504603734,
+      -0.00047775444070764593,
+      0.00091131532460733,
+      0.0002082926178858178,
+      0.0005490460599305481,
+      0.00014127690577286973,
+      -0.00012635531790487094,
+      -0.0002593846009967808,
+      0.0002978618450298997,
+      0.000801862696621996,
+      2.750297833385319e-05,
+      -0.00023056917240568746,
+      0.005834884228332455,
+      -0.0059935418304173675,
+      0.0010626902023092215,
+      -0.001359252607219123,
+      0.00013124269553007142,
+      -0.002816365705060987,
+      -0.0014592165198096458
+    ],
+    "features": [
+      "hours_since_entry",
+      "hours_since_first_memory_or_null",
+      "hours_since_first_memory_or_null__missing",
+      "progress_margin_delta_from_prev",
+      "structural_break_margin_delta_from_prev",
+      "a_margin_delta_from_prev",
+      "close_delta_from_prev_decision",
+      "R_delta_from_prev_decision",
+      "atr22_current",
+      "a_condition_true_run_length",
+      "__bin_memory_now",
+      "__bin_memory_seen",
+      "__bin_C_signal",
+      "__bin_A_signal",
+      "__bin_B_signal",
+      "__bin_a_condition_now",
+      "__bin_a_condition_recovered_now",
+      "__cat_base_state__CONFIRMED",
+      "__cat_base_state__EARLY_PROGRESS",
+      "__cat_base_state__UNCONFIRMED",
+      "__cat_native_market_state_context__RISK_OFF",
+      "__cat_native_market_state_context__RISK_ON",
+      "__cat_native_market_state_context__TRANSITION",
+      "__ix_progress_x_atr",
+      "__ix_structural_x_atr",
+      "__ix_memory_x_progress",
+      "__ix_memory_x_age",
+      "__ix_market_RISK_OFF_x_progress",
+      "__ix_market_RISK_ON_x_progress",
+      "__ix_market_TRANSITION_x_progress"
+    ],
+    "medians": {
+      "R_delta_from_prev_decision": 0.0,
+      "__bin_A_signal": 0.0,
+      "__bin_B_signal": 0.0,
+      "__bin_C_signal": 0.0,
+      "__bin_a_condition_now": 0.0,
+      "__bin_a_condition_recovered_now": 0.0,
+      "__bin_memory_now": 0.0,
+      "__bin_memory_seen": 1.0,
+      "__cat_base_state__CONFIRMED": 1.0,
+      "__cat_base_state__EARLY_PROGRESS": 0.0,
+      "__cat_base_state__UNCONFIRMED": 0.0,
+      "__cat_native_market_state_context__RISK_OFF": 0.0,
+      "__cat_native_market_state_context__RISK_ON": 1.0,
+      "__cat_native_market_state_context__TRANSITION": 0.0,
+      "__ix_market_RISK_OFF_x_progress": 0.0,
+      "__ix_market_RISK_ON_x_progress": 0.0,
+      "__ix_market_TRANSITION_x_progress": 0.0,
+      "__ix_memory_x_age": 17.0,
+      "__ix_memory_x_progress": 0.0,
+      "__ix_progress_x_atr": -1.0601123799447662e-05,
+      "__ix_structural_x_atr": -1.1581022769982465e-05,
+      "a_condition_true_run_length": 0.0,
+      "a_margin_delta_from_prev": -0.00161,
+      "atr22_current": 2.0614960915950897,
+      "close_delta_from_prev_decision": 0.00128,
+      "hours_since_entry": 24.0,
+      "hours_since_first_memory_or_null": 16.0,
+      "hours_since_first_memory_or_null__missing": 0.0,
+      "progress_margin_delta_from_prev": -0.00154,
+      "structural_break_margin_delta_from_prev": -0.00161
+    },
+    "mu": [
+      30.967493472584856,
+      22.46266318537859,
+      0.29112271540469975,
+      -11.37504912858746,
+      -11.12055301717362,
+      -11.12055301717362,
+      10.747957311547005,
+      18.022696838496085,
+      134.82021561410548,
+      0.009399477806788513,
+      0.18851174934725848,
+      0.7088772845953003,
+      0.004438642297650131,
+      0.007571801566579634,
+      0.0016971279373368146,
+      0.008746736292428198,
+      0.005483028720626632,
+      0.6195822454308094,
+      0.08929503916449086,
+      0.29112271540469975,
+      0.016057441253263707,
+      0.5424281984334204,
+      0.4415143603133159,
+      -11320.25016278513,
+      -12756.894450276204,
+      -9.626646650855083,
+      25.13929503916449,
+      -0.18756826854699704,
+      -5.26529470484073,
+      -5.921997776609656
+    ],
+    "sd": [
+      25.001360030564232,
+      21.792590788453285,
+      0.454279957713406,
+      219.6090938304486,
+      222.5759741226282,
+      222.5759741226282,
+      179.76126371790588,
+      123.36256285444021,
+      328.3250480802063,
+      0.10303693829141483,
+      0.39112027524189397,
+      0.454279957713406,
+      0.06647511378105075,
+      0.08668603917365227,
+      0.04116124019148507,
+      0.09311407464319732,
+      0.07384419487458317,
+      0.48548953292293096,
+      0.2851691342784189,
+      0.454279957713406,
+      0.1256964591134599,
+      0.4981965957106635,
+      0.4965676489164788,
+      267874.8076016971,
+      279908.23651190544,
+      206.66978919959536,
+      27.700256788248083,
+      8.913997246106387,
+      184.68118204577704,
+      118.7776027660057
+    ]
+  },
+  "ridge_alpha": 1.0,
+  "sign_stable_forward_pass": false,
+  "source_target_rows": 12290,
+  "state_basis_catalog": {
+    "categorical_training_levels": {
+      "base_state": [
+        "CONFIRMED",
+        "EARLY_PROGRESS",
+        "UNCONFIRMED"
+      ],
+      "native_market_state_context": [
+        "RISK_OFF",
+        "RISK_ON",
+        "TRANSITION"
+      ]
+    },
+    "dropped_by_input_support_gate": [
+      {
+        "feature": "volatility_damage_margin_delta_from_prev",
+        "reason": "FIXED_INPUT_SUPPORT_GATE",
+        "train_nonmissing_coverage": 0.5399477806788512,
+        "train_unique": 4112
+      },
+      {
+        "feature": "b_margin_delta_from_prev",
+        "reason": "FIXED_INPUT_SUPPORT_GATE",
+        "train_nonmissing_coverage": 0.5399477806788512,
+        "train_unique": 4112
+      },
+      {
+        "feature": "b_condition_true_run_length",
+        "reason": "FIXED_INPUT_SUPPORT_GATE",
+        "train_nonmissing_coverage": 0.6195822454308094,
+        "train_unique": 13
+      },
+      {
+        "feature": "__bin_b_condition_now",
+        "reason": "FIXED_INPUT_SUPPORT_GATE",
+        "train_nonmissing_coverage": 0.6195822454308094,
+        "train_unique": 2
+      },
+      {
+        "feature": "__bin_b_condition_recovered_now",
+        "reason": "FIXED_INPUT_SUPPORT_GATE",
+        "train_nonmissing_coverage": 0.5399477806788512,
+        "train_unique": 2
+      },
+      {
+        "feature": "__ix_voldamage_x_atr",
+        "reason": "FIXED_INPUT_SUPPORT_GATE",
+        "train_nonmissing_coverage": 0.5399477806788512,
+        "train_unique": 4135
+      },
+      {
+        "feature": "__ix_market_RISK_OFF_x_voldamage",
+        "reason": "FIXED_INPUT_SUPPORT_GATE",
+        "train_nonmissing_coverage": 0.5399477806788512,
+        "train_unique": 51
+      },
+      {
+        "feature": "__ix_market_RISK_ON_x_voldamage",
+        "reason": "FIXED_INPUT_SUPPORT_GATE",
+        "train_nonmissing_coverage": 0.5399477806788512,
+        "train_unique": 2420
+      },
+      {
+        "feature": "__ix_market_TRANSITION_x_voldamage",
+        "reason": "FIXED_INPUT_SUPPORT_GATE",
+        "train_nonmissing_coverage": 0.5399477806788512,
+        "train_unique": 1654
+      }
+    ],
+    "feature_count": 30,
+    "feature_search_performed": false,
+    "features": [
+      "hours_since_entry",
+      "hours_since_first_memory_or_null",
+      "hours_since_first_memory_or_null__missing",
+      "progress_margin_delta_from_prev",
+      "structural_break_margin_delta_from_prev",
+      "a_margin_delta_from_prev",
+      "close_delta_from_prev_decision",
+      "R_delta_from_prev_decision",
+      "atr22_current",
+      "a_condition_true_run_length",
+      "__bin_memory_now",
+      "__bin_memory_seen",
+      "__bin_C_signal",
+      "__bin_A_signal",
+      "__bin_B_signal",
+      "__bin_a_condition_now",
+      "__bin_a_condition_recovered_now",
+      "__cat_base_state__CONFIRMED",
+      "__cat_base_state__EARLY_PROGRESS",
+      "__cat_base_state__UNCONFIRMED",
+      "__cat_native_market_state_context__RISK_OFF",
+      "__cat_native_market_state_context__RISK_ON",
+      "__cat_native_market_state_context__TRANSITION",
+      "__ix_progress_x_atr",
+      "__ix_structural_x_atr",
+      "__ix_memory_x_progress",
+      "__ix_memory_x_age",
+      "__ix_market_RISK_OFF_x_progress",
+      "__ix_market_RISK_ON_x_progress",
+      "__ix_market_TRANSITION_x_progress"
+    ],
+    "input_support_gate": {
+      "min_train_nonmissing_coverage": 0.65,
+      "min_train_unique": 2
+    },
+    "interaction_catalog_frozen": true,
+    "outcome_based_selection": false,
+    "provenance": [
+      {
+        "feature": "hours_since_entry",
+        "kind": "DIRECT_NUMERIC_CAUSAL_STATE",
+        "source_column": "hours_since_entry"
+      },
+      {
+        "feature": "hours_since_first_memory_or_null",
+        "kind": "DIRECT_NUMERIC_CAUSAL_STATE",
+        "source_column": "hours_since_first_memory_or_null"
+      },
+      {
+        "feature": "hours_since_first_memory_or_null__missing",
+        "kind": "MISSINGNESS_INDICATOR",
+        "source_column": "hours_since_first_memory_or_null"
+      },
+      {
+        "feature": "progress_margin_delta_from_prev",
+        "kind": "DIRECT_NUMERIC_CAUSAL_STATE",
+        "source_column": "progress_margin_delta_from_prev"
+      },
+      {
+        "feature": "structural_break_margin_delta_from_prev",
+        "kind": "DIRECT_NUMERIC_CAUSAL_STATE",
+        "source_column": "structural_break_margin_delta_from_prev"
+      },
+      {
+        "feature": "volatility_damage_margin_delta_from_prev",
+        "kind": "DIRECT_NUMERIC_CAUSAL_STATE",
+        "source_column": "volatility_damage_margin_delta_from_prev"
+      },
+      {
+        "feature": "a_margin_delta_from_prev",
+        "kind": "DIRECT_NUMERIC_CAUSAL_STATE",
+        "source_column": "a_margin_delta_from_prev"
+      },
+      {
+        "feature": "b_margin_delta_from_prev",
+        "kind": "DIRECT_NUMERIC_CAUSAL_STATE",
+        "source_column": "b_margin_delta_from_prev"
+      },
+      {
+        "feature": "close_delta_from_prev_decision",
+        "kind": "DIRECT_NUMERIC_CAUSAL_STATE",
+        "source_column": "close_delta_from_prev_decision"
+      },
+      {
+        "feature": "R_delta_from_prev_decision",
+        "kind": "DIRECT_NUMERIC_CAUSAL_STATE",
+        "source_column": "R_delta_from_prev_decision"
+      },
+      {
+        "feature": "atr22_current",
+        "kind": "DIRECT_NUMERIC_CAUSAL_STATE",
+        "source_column": "atr22_current"
+      },
+      {
+        "feature": "a_condition_true_run_length",
+        "kind": "DIRECT_ORDINAL_CAUSAL_STATE",
+        "source_column": "a_condition_true_run_length"
+      },
+      {
+        "feature": "b_condition_true_run_length",
+        "kind": "DIRECT_ORDINAL_CAUSAL_STATE",
+        "source_column": "b_condition_true_run_length"
+      },
+      {
+        "feature": "__bin_memory_now",
+        "kind": "DIRECT_BINARY_CAUSAL_STATE",
+        "source_column": "memory_now"
+      },
+      {
+        "feature": "__bin_memory_seen",
+        "kind": "DIRECT_BINARY_CAUSAL_STATE",
+        "source_column": "memory_seen"
+      },
+      {
+        "feature": "__bin_C_signal",
+        "kind": "DIRECT_BINARY_CAUSAL_STATE",
+        "source_column": "C_signal"
+      },
+      {
+        "feature": "__bin_A_signal",
+        "kind": "DIRECT_BINARY_CAUSAL_STATE",
+        "source_column": "A_signal"
+      },
+      {
+        "feature": "__bin_B_signal",
+        "kind": "DIRECT_BINARY_CAUSAL_STATE",
+        "source_column": "B_signal"
+      },
+      {
+        "feature": "__bin_a_condition_now",
+        "kind": "DIRECT_BINARY_CAUSAL_STATE",
+        "source_column": "a_condition_now"
+      },
+      {
+        "feature": "__bin_b_condition_now",
+        "kind": "DIRECT_BINARY_CAUSAL_STATE",
+        "source_column": "b_condition_now"
+      },
+      {
+        "feature": "__bin_a_condition_recovered_now",
+        "kind": "DIRECT_BINARY_CAUSAL_STATE",
+        "source_column": "a_condition_recovered_now"
+      },
+      {
+        "feature": "__bin_b_condition_recovered_now",
+        "kind": "DIRECT_BINARY_CAUSAL_STATE",
+        "source_column": "b_condition_recovered_now"
+      },
+      {
+        "category": "CONFIRMED",
+        "feature": "__cat_base_state__CONFIRMED",
+        "kind": "TRAIN_CATEGORY_ONE_HOT",
+        "source_column": "base_state"
+      },
+      {
+        "category": "EARLY_PROGRESS",
+        "feature": "__cat_base_state__EARLY_PROGRESS",
+        "kind": "TRAIN_CATEGORY_ONE_HOT",
+        "source_column": "base_state"
+      },
+      {
+        "category": "UNCONFIRMED",
+        "feature": "__cat_base_state__UNCONFIRMED",
+        "kind": "TRAIN_CATEGORY_ONE_HOT",
+        "source_column": "base_state"
+      },
+      {
+        "category": "RISK_OFF",
+        "feature": "__cat_native_market_state_context__RISK_OFF",
+        "kind": "TRAIN_CATEGORY_ONE_HOT",
+        "source_column": "native_market_state_context"
+      },
+      {
+        "category": "RISK_ON",
+        "feature": "__cat_native_market_state_context__RISK_ON",
+        "kind": "TRAIN_CATEGORY_ONE_HOT",
+        "source_column": "native_market_state_context"
+      },
+      {
+        "category": "TRANSITION",
+        "feature": "__cat_native_market_state_context__TRANSITION",
+        "kind": "TRAIN_CATEGORY_ONE_HOT",
+        "source_column": "native_market_state_context"
+      },
+      {
+        "dependencies": [
+          "progress_margin_delta_from_prev",
+          "atr22_current"
+        ],
+        "feature": "__ix_progress_x_atr",
+        "kind": "PREREGISTERED_INTERACTION"
+      },
+      {
+        "dependencies": [
+          "structural_break_margin_delta_from_prev",
+          "atr22_current"
+        ],
+        "feature": "__ix_structural_x_atr",
+        "kind": "PREREGISTERED_INTERACTION"
+      },
+      {
+        "dependencies": [
+          "volatility_damage_margin_delta_from_prev",
+          "atr22_current"
+        ],
+        "feature": "__ix_voldamage_x_atr",
+        "kind": "PREREGISTERED_INTERACTION"
+      },
+      {
+        "dependencies": [
+          "__memory_seen_numeric",
+          "progress_margin_delta_from_prev"
+        ],
+        "feature": "__ix_memory_x_progress",
+        "kind": "PREREGISTERED_INTERACTION"
+      },
+      {
+        "dependencies": [
+          "__memory_seen_numeric",
+          "hours_since_entry"
+        ],
+        "feature": "__ix_memory_x_age",
+        "kind": "PREREGISTERED_INTERACTION"
+      },
+      {
+        "dependencies": [
+          "__cat_native_market_state_context__RISK_OFF",
+          "progress_margin_delta_from_prev"
+        ],
+        "feature": "__ix_market_RISK_OFF_x_progress",
+        "kind": "PREREGISTERED_INTERACTION"
+      },
+      {
+        "dependencies": [
+          "__cat_native_market_state_context__RISK_OFF",
+          "volatility_damage_margin_delta_from_prev"
+        ],
+        "feature": "__ix_market_RISK_OFF_x_voldamage",
+        "kind": "PREREGISTERED_INTERACTION"
+      },
+      {
+        "dependencies": [
+          "__cat_native_market_state_context__RISK_ON",
+          "progress_margin_delta_from_prev"
+        ],
+        "feature": "__ix_market_RISK_ON_x_progress",
+        "kind": "PREREGISTERED_INTERACTION"
+      },
+      {
+        "dependencies": [
+          "__cat_native_market_state_context__RISK_ON",
+          "volatility_damage_margin_delta_from_prev"
+        ],
+        "feature": "__ix_market_RISK_ON_x_voldamage",
+        "kind": "PREREGISTERED_INTERACTION"
+      },
+      {
+        "dependencies": [
+          "__cat_native_market_state_context__TRANSITION",
+          "progress_margin_delta_from_prev"
+        ],
+        "feature": "__ix_market_TRANSITION_x_progress",
+        "kind": "PREREGISTERED_INTERACTION"
+      },
+      {
+        "dependencies": [
+          "__cat_native_market_state_context__TRANSITION",
+          "volatility_damage_margin_delta_from_prev"
+        ],
+        "feature": "__ix_market_TRANSITION_x_voldamage",
+        "kind": "PREREGISTERED_INTERACTION"
+      }
+    ]
+  },
+  "status": "FIT_FIXED_RIDGE",
+  "threshold_search_performed": false,
+  "train_rows": 7660,
+  "train_target_mean": 0.005373899995526805,
+  "year_results": {
+    "2022": {
+      "predicted_high_minus_low_actual_mean": 0.0007765418464243572,
+      "rows": 2065,
+      "spearman": -0.014521096643045238,
+      "target_mean": -0.003465823348379279
+    },
+    "2023": {
+      "predicted_high_minus_low_actual_mean": 0.000713691782791296,
+      "rows": 2565,
+      "spearman": 0.026189844636657852,
+      "target_mean": 0.00952807941207391
+    }
+  }
+}

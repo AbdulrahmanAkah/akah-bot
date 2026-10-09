@@ -1,0 +1,33 @@
+{
+  "authority_id": "AKAH_BOT_RD27_ONE_HOUR_UNIVERSE_MANIFEST_CONTRACT_V1",
+  "status": "PENDING_AUTHORIZED_SIGNAL_PAIR_SET",
+  "raw_root_authority": "governance/reconstructed_native_baseline_rd26_signal_source_and_1h_manifest_exact_residual_gap_v1/raw_root_semantic_binding.json",
+  "path_template": "data/raw/rd16b/kucoin/<pair>/1h.parquet",
+  "pair_derivation": {
+    "source": "scripts/research/run_rd27_lifecycle_ablation.py:820-822",
+    "expression": "sorted(set(events['pair'].astype(str)))",
+    "normalization": "string conversion only; no alias mapping is defined in the source",
+    "pit_requirement": "pairs must come from the authorized pre-2023 signal artifact selected for the study"
+  },
+  "required_files": {
+    "per_signal_pair": "one 1h.parquet file at the exact template path",
+    "state_sensor": "BTC-USDT/1h.parquet is always required by load_state_frame",
+    "expected_pair_count": null,
+    "expected_file_count": null
+  },
+  "current_filesystem_observation": {
+    "raw_root_exists": true,
+    "top_level_directory_count": 342,
+    "selected_pair_membership_instantiated": false,
+    "per_pair_file_metadata_audit_completed": false,
+    "market_rows_read": false
+  },
+  "unresolved_items": [
+    "authorized signal artifact",
+    "selected constructor and actual universe",
+    "sorted unique pair list",
+    "per-pair file identity and sha256",
+    "missing/extraneous file classification"
+  ],
+  "forbidden_substitution": "do not use the canonical 4H artifact as native RD27 frames"
+}

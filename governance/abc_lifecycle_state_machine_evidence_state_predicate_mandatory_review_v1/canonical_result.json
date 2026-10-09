@@ -1,0 +1,33 @@
+{
+  "schema_version": "abc-lifecycle-evidence-state-predicate-mandatory-review-canonical-v1",
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_EVIDENCE_STATE_PREDICATE_MANDATORY_REVIEW_V1",
+  "status": "PASS_REVIEW_COMPLETE",
+  "materialization_row_count": 14059,
+  "overlay_counts": {
+    "stalled_evidence_candidate": 74,
+    "structural_break_evidence_candidate": 135,
+    "volatility_damage_evidence_candidate": 31
+  },
+  "same_row_cooccurrence": {
+    "STALLED__STRUCTURAL_BREAK": 1,
+    "STALLED__VOLATILITY_DAMAGE": 0,
+    "STRUCTURAL_BREAK__VOLATILITY_DAMAGE": 5,
+    "TRIPLE": 0
+  },
+  "event_local_evidence_representation_accepted": true,
+  "evidence_sequence_protocol_work_authorized": true,
+  "persistent_state_protocol_work_authorized_now": false,
+  "persistent_state_authorized": false,
+  "runtime_state_machine_authorized": false,
+  "adaptive_logic_authorized": false,
+  "exit_action_authorized": false,
+  "exit_arbiter_authorized": false,
+  "candidate_combination_trading_logic_authorized": false,
+  "new_threshold_created": false,
+  "market_data_accessed": false,
+  "economic_outcomes_read": false,
+  "pnl_columns_read": false,
+  "2024_accessed": false,
+  "2025_accessed": false,
+  "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_EVIDENCE_SEQUENCE_PROTOCOL_FREEZE_V1"
+}

@@ -1,0 +1,21 @@
+{
+  "allowed_dispositions": [
+    "EXACT_CROSSWALK_PROVEN",
+    "DETERMINISTIC_CROSSWALK_MATERIALIZATION_REQUIRED",
+    "CROSSWALK_NOT_RECOVERABLE_FROM_EXISTING_DERIVED_AUTHORITY"
+  ],
+  "forbidden": [
+    "outcome_based_matching",
+    "fuzzy_identity_matching",
+    "posthoc_time_offset_search",
+    "threshold_relaxation_after_results",
+    "raw_reopening",
+    "new_replay",
+    "2024_or_2025_access",
+    "model_training",
+    "feature_search"
+  ],
+  "note": "This V1 can return DETERMINISTIC_CROSSWALK_MATERIALIZATION_REQUIRED only if a complete unique shared-anchor crosswalk is proven but no materialized crosswalk artifact exists. Because shared-anchor proof itself is exact, V1 classifies such a case as EXACT_CROSSWALK_PROVEN and leaves materialization to human review; no weaker mapping is promoted.",
+  "proof_rule": "EXACT_CROSSWALK_PROVEN requires a shared Git-tracked non-outcome anchor containing identity/pair plus time, 100% exact-core key coverage, and zero duplicate keys in the source. Partial overlap, discovered offsets, fuzzy matching, pair-only identity, outcome fields and post-hoc relaxed coverage thresholds cannot prove a crosswalk.",
+  "schema_version": "akah-dv-crosswalk-protocol-v1"
+}

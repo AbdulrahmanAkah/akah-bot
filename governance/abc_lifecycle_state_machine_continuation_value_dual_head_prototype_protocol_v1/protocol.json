@@ -1,0 +1,103 @@
+{
+  "2024_access": false,
+  "clean_head": {
+    "bridge_component": "GLOBAL_TRAIN_CLEAN_MEAN_ONLY",
+    "reason": "prior immediate_bridge component had no directional family evidence",
+    "target": "downstream_residual"
+  },
+  "combined_value_formula": "P(clean|S)*Q_clean(S)+(1-P(clean|S))*Q_intervention(S)",
+  "counterfactual_replay": false,
+  "development_folds": [
+    {
+      "test": 2020,
+      "train": [
+        2019
+      ]
+    },
+    {
+      "test": 2021,
+      "train": [
+        2019,
+        2020
+      ]
+    }
+  ],
+  "family_sets": {
+    "BRANCH_HAZARD": [
+      "CORE_AGE",
+      "EVIDENCE_AGE",
+      "DAMAGE_AGE"
+    ],
+    "CLEAN_RESIDUAL_VALUE": [
+      "CORE_AGE",
+      "EVIDENCE_AGE",
+      "DAMAGE_AGE"
+    ],
+    "INTERVENTION_VALUE": [
+      "EVIDENCE_AGE",
+      "DAMAGE_AGE"
+    ],
+    "MECHANISM_HAZARD": [
+      "CORE_AGE",
+      "EVIDENCE_AGE",
+      "DAMAGE_AGE",
+      "SIGNAL_MARKET"
+    ]
+  },
+  "feature_search": false,
+  "gates": {
+    "combined_shadow_requires_all_primary_heads_all_folds": true,
+    "hazard": {
+      "auc_gt": 0.55,
+      "brier_skill_gt": 0.0,
+      "coverage_gte": 0.5,
+      "high_minus_low_rate_gt": 0.0
+    },
+    "negative_control_margin": 0.02,
+    "value": {
+      "2x_cost_same_gates": true,
+      "coverage_gte": 0.5,
+      "high_minus_low_actual_mean_gt": 0.0,
+      "spearman_gt": 0.0
+    }
+  },
+  "head_min_family_votes": {
+    "BRANCH_HAZARD": 2,
+    "CLEAN_RESIDUAL_VALUE": 2,
+    "INTERVENTION_VALUE": 1,
+    "MECHANISM_HAZARD": 2
+  },
+  "historical_confirmation": [
+    {
+      "fresh_holdout": false,
+      "test": 2022,
+      "train": [
+        2019,
+        2020,
+        2021
+      ]
+    },
+    {
+      "fresh_holdout": false,
+      "test": 2023,
+      "train": [
+        2019,
+        2020,
+        2021
+      ]
+    }
+  ],
+  "mechanism_hazard_role": "AUXILIARY_DIAGNOSTIC_NOT_REQUIRED_FOR_PRIMARY_COMBINATION",
+  "minimum_signature_train_support": 50,
+  "model_class": "FIXED_EQUAL_WEIGHT_EMPIRICAL_BAYES_SIGNATURE_SHRINKAGE",
+  "model_family_search": false,
+  "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_CONTINUATION_VALUE_DUAL_HEAD_CAUSAL_MODELING_TABLE_MATERIALIZATION_V1",
+  "portfolio_replay": false,
+  "production_changed": false,
+  "raw_access": false,
+  "runtime_threshold_search": false,
+  "schema_version": "akah-rev579-dual-head-prototype-maximum-evidence-mega-v1-protocol",
+  "smooth_alpha": 50.0,
+  "status": "PASS_PROTOCOL_FROZEN",
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_CONTINUATION_VALUE_DUAL_HEAD_PROTOTYPE_PROTOCOL_FREEZE_V1"
+}

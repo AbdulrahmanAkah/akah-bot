@@ -1,0 +1,1145 @@
+{
+  "all_risky_checks_completed_pre_begin": true,
+  "charter_revision": 308,
+  "control_entry_price_authority": {
+    "control_rows": 2020,
+    "control_sha256": "BA2CF871453DDFAC53DD53494C5B47D29C20BC1777370928135A8FB2D01E8ABE",
+    "entry_price_all_finite_positive": true,
+    "entry_price_authority_ready": true,
+    "identity_plus_entry_price_mapping_sha256": "83CC850A1D6D26EE5F7B60EBDFEE1EB78C91542C210CF041FB40E62B057CCE56",
+    "identity_sets_equal_to_lifecycle_summary": true,
+    "pnl_or_economic_outcome_columns_loaded": false,
+    "selected_columns_only": [
+      "pair",
+      "entry_time",
+      "exit_time",
+      "entry_price",
+      "year"
+    ]
+  },
+  "control_trade_identity_and_entry_price_only_accessed": true,
+  "economic_outcomes_read": false,
+  "execution_contract": {
+    "acceptance_parity": {
+      "all_existing_trace_invariants_must_remain_pass": true,
+      "decision_represented_lifecycles": 1782,
+      "decision_rows": 14059,
+      "legacy_signal_counts": {
+        "A": 135,
+        "B": 31,
+        "C": 74
+      },
+      "memory_observed_lifecycles": 1270,
+      "total_control_lifecycles": 2020,
+      "zero_eligible_lifecycles": 238
+    },
+    "decision_identity": [
+      "year",
+      "pair",
+      "entry_time",
+      "native_exit_time",
+      "decision_time_4h"
+    ],
+    "entry_price_authority": {
+      "derive_entry_price_from_raw": false,
+      "identity_plus_entry_price_mapping_sha256": "83CC850A1D6D26EE5F7B60EBDFEE1EB78C91542C210CF041FB40E62B057CCE56",
+      "path": "data/research/abc_exit_primitives_2019_2023_v1/control-trades.csv",
+      "sha256": "BA2CF871453DDFAC53DD53494C5B47D29C20BC1777370928135A8FB2D01E8ABE"
+    },
+    "forbidden": {
+      "2024_rows": true,
+      "2025_rows": true,
+      "adaptive_logic": true,
+      "economic_outcomes": true,
+      "exit_action": true,
+      "exit_arbiter": true,
+      "horizon_selection": true,
+      "persistent_state_definition": true,
+      "pnl_columns": true,
+      "runtime_state_machine": true,
+      "threshold_selection": true
+    },
+    "lifecycle_identity": [
+      "year",
+      "pair",
+      "entry_time",
+      "native_exit_time"
+    ],
+    "population": {
+      "decision_grid_rows": 14059,
+      "decision_represented_lifecycles": 1782,
+      "total_control_lifecycles": 2020,
+      "zero_decision_lifecycles_role": "POPULATION_SUMMARY_ONLY_NO_MATERIALIZED_DECISION_ROWS",
+      "zero_eligible_lifecycles": 238
+    },
+    "purpose": "Execute the frozen non-economic 22-observable reconstruction on the existing 14059 decision rows only.",
+    "raw_market_authorization": {
+      "2024_rows_authorized": false,
+      "2025_rows_authorized": false,
+      "columns": [
+        "timestamp",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume"
+      ],
+      "no_lower_time_bound": true,
+      "pair_count": 28,
+      "pairs": [
+        "ADA-USDT",
+        "ATOM-USDT",
+        "AVAX-USDT",
+        "BNB-USDT",
+        "BTC-USDT",
+        "DOGE-USDT",
+        "DOT-USDT",
+        "ETH-USDT",
+        "GRAM-USDT",
+        "INJ-USDT",
+        "JASMY-USDT",
+        "KAS-USDT",
+        "KCS-USDT",
+        "LINK-USDT",
+        "LTC-USDT",
+        "LUNC-USDT",
+        "MANA-USDT",
+        "NEAR-USDT",
+        "NEO-USDT",
+        "OP-USDT",
+        "SAND-USDT",
+        "SHIB-USDT",
+        "SOL-USDT",
+        "TRX-USDT",
+        "VET-USDT",
+        "XMR-USDT",
+        "XRP-USDT",
+        "XTZ-USDT"
+      ],
+      "parquet_predicate_pushdown_required": true,
+      "post_read_assertion": "max(timestamp) < 2024-01-01T00:00:00Z",
+      "predicate": [
+        [
+          "timestamp",
+          "<",
+          "2024-01-01T00:00:00+00:00"
+        ]
+      ],
+      "reason_no_lower_bound": "PRESERVE_FROZEN_T0_WARMUP_AND_CONTINUOUS_ATR22_DONCHIAN10_SERIES",
+      "root": "data/raw/rd16b/kucoin"
+    },
+    "reconstruction": {
+      "decision_times_source": "governance/abc_lifecycle_state_machine_observational_trace_v1/decision_grid_trace.csv",
+      "entry_price_source": "data/research/abc_exit_primitives_2019_2023_v1/control-trades.csv",
+      "implementation_module": "src/spotbot/research/abc_persistent_state_feature_reconstruction_v1.py",
+      "implementation_sha256": "EEBB00249D549C6354A79228D5E674890FA25203469530FFD3E3E1FF8C9E7F81",
+      "must_materialize_exact_rows": 14059,
+      "must_preserve_decision_identity_and_order": true,
+      "no_existing_trace_mutation": true,
+      "no_row_addition": true,
+      "no_row_deletion": true,
+      "prepare_four_hour_bars": "DELEGATES_TO_FROZEN_ABC_BUILD_FOUR_HOUR_BARS",
+      "zero_decision_lifecycles_materialized": false,
+      "zero_decision_lifecycles_remain_in_summary": true
+    },
+    "task_id": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_CAUSAL_FEATURE_RECONSTRUCTION_EXECUTION_V1"
+  },
+  "historical_reconstruction_executed": false,
+  "market_data_file_metadata_accessed": true,
+  "market_data_rows_accessed": false,
+  "market_data_values_accessed": false,
+  "observable_values_materialized": false,
+  "pnl_columns_read": false,
+  "prior_filtered_parquet_loader_authority": {
+    "candidate_binding_digest_sha256": "39ABA86A71C55F1AABD24E608480C2040D8306DBF95307195B2524F372D753D3",
+    "candidate_count": 47,
+    "candidates": [
+      {
+        "function": "load_year_inputs",
+        "lineno": 78,
+        "path": "scripts/research/run_abc_exit_primitives_2019_2023_v1.py",
+        "source": "def load_year_inputs(repo: Path, membership, year: int):\n    ys=pd.Timestamp(f\"{year}-01-01T00:00:00Z\")\n    ye=pd.Timestamp(f\"{year+1}-01-01T00:00:00Z\")\n    pairs=year_pairs(membership,year)\n    if not pairs:\n        raise RunnerError(f\"no C2 pairs {year}\")\n    raw_by_pair={}\n    features={}\n    four_hour={}\n    for pair in pairs:\n        path=repo/RAW_ROOT/pair/\"1h.parquet\"\n        if not path.is_file():\n            raise RunnerError(f\"raw pair missing {pair}\")\n        raw=pd.read_parquet(\n            path,engine=\"pyarrow\",\n            columns=[\"timestamp\",\"open\",\"high\",\"low\",\"close\",\"volume\"],\n            filters=[(\"timestamp\",\"<\",ye.to_pydatetime())],\n        )\n        raw[\"timestamp\"]=pd.to_datetime(raw[\"timestamp\"],utc=True,errors=\"raise\")\n        if len(raw) and raw[\"timestamp\"].max()>=ye:\n            raise RunnerError(f\"sealed cutoff violation {pair} {year}\")\n        raw_by_pair[pair]=raw\n        features[pair]=prepare_features(raw,cutoff=ye)\n        four_hour[pair]=build_four_hour_bars(raw,cutoff=ye)\n\n    btc_path=repo/RAW_ROOT/\"BTC-USDT\"/\"1h.parquet\"\n    btc=pd.read_parquet(\n        btc_path,engine=\"pyarrow\",\n        columns=[\"timestamp\",\"open\",\"high\",\"low\",\"close\",\"volume\"],\n        filters=[(\"timestamp\",\"<\",ye.to_pydatetime())],\n    )\n    btc[\"timestamp\"]=pd.to_datetime(btc[\"timestamp\"],utc=True,errors=\"raise\")\n    if len(btc) and btc[\"timestamp\"].max()>=ye:\n        raise RunnerError(f\"BTC sealed cutoff violation {year}\")\n    state_frame=build_market_state_frame(btc,cutoff=ye)\n\n    periods={f\"YEAR_{year}\":(ys,ye)}\n    generated,_=scan_focus_signals(\n        membership=membership,features=features,periods=periods,\n        data_start=ys,data_cutoff=ye,guard_each_period_hours=None,\n    )\n    events=union_events(generated,universe_id=\"C2\")\n    if len(events):\n        events[\"timestamp\"]=pd.to_datetime(events[\"timestamp\"],utc=True,errors=\"raise\")\n        entry=events[\"timestamp\"]+pd.Timedelta(hours=1)\n        events=events.loc[(entry>=ys)&((entry+pd.Timedelta(hours=168))<ye)].copy()\n    return ys,ye,pairs,raw_by_pair,features,four_hour,state_frame,events.reset_index(drop=True)",
+        "source_sha256": "C6E92E4980C50526263B7B0D4E22747E96B49FDA2118529DAC5DA7A81EF1364C"
+      },
+      {
+        "function": "market_authority",
+        "lineno": 168,
+        "path": "scripts/research/run_eaa_same_pair_secondary_shadow_parity.py",
+        "source": "def market_authority(*, raw_root: Path, pairs: list[str], rd26: Any, state: Any) -> tuple[dict[str, pd.DataFrame], pd.DataFrame, list[dict[str, Any]]]:\n    frames: dict[str, pd.DataFrame] = {}; audit: list[dict[str, Any]] = []; cutoff = CUT.to_pydatetime()\n    for index, pair in enumerate(pairs, start=1):\n        path = raw_root / pair / \"1h.parquet\"\n        if not path.is_file():\n            raise ProofError(f\"raw source missing: {path}\")\n        raw = pd.read_parquet(path, engine=\"pyarrow\", filters=[(\"timestamp\", \"<\", cutoff)])\n        timestamps = pd.to_datetime(raw[\"timestamp\"], utc=True, errors=\"raise\")\n        if raw.empty or bool((timestamps >= CUT).any()):\n            raise ProofError(f\"raw cutoff pushdown failed: {pair}\")\n        feature = rd26.prepare_features(raw, cutoff=CUT); frames[pair] = feature\n        audit.append({\"pair\": pair, \"row_count_materialized\": len(feature), \"first_timestamp\": utc(feature[\"timestamp\"].iloc[0]).isoformat(), \"last_timestamp\": utc(feature[\"timestamp\"].iloc[-1]).isoformat(), \"cutoff_exclusive\": CUT.isoformat()})\n        print(f\"RAW_PRE2022={index}/{len(pairs)}:{pair}:{len(feature)}\", flush=True)\n    btc_raw = pd.read_parquet(raw_root / \"BTC-USDT\" / \"1h.parquet\", engine=\"pyarrow\", filters=[(\"timestamp\", \"<\", cutoff)])\n    if bool((pd.to_datetime(btc_raw[\"timestamp\"], utc=True, errors=\"raise\") >= CUT).any()):\n        raise ProofError(\"BTC state source crossed pre-2022 cutoff\")\n    state_frame = state.build_market_state_frame(btc_raw, cutoff=CUT)\n    if bool((pd.to_datetime(state_frame[\"timestamp\"], utc=True, errors=\"raise\") >= CUT).any()):\n        raise ProofError(\"state frame crossed pre-2022 cutoff\")\n    return frames, state_frame, audit",
+        "source_sha256": "8438DE5BA561867528E8D0996CAC83D36C0F60B19603287D996DCA32909E3D27"
+      },
+      {
+        "function": "load_hourly",
+        "lineno": 365,
+        "path": "scripts/research/run_rd18_p3e_base_performance.py",
+        "source": "def load_hourly(\n    repo: Path,\n    trade_frames: Mapping[str, pd.DataFrame],\n) -> dict[str, pd.DataFrame]:\n    symbols = sorted(\n        {\n            str(symbol)\n            for frame in trade_frames.values()\n            for symbol in frame[\"symbol\"].astype(str).unique()\n        }\n    )\n    store = ParquetCandleStore(repo / \"data/raw/rd16b\")\n    cutoff = SEALED_CUTOFF.to_pydatetime()\n    result: dict[str, pd.DataFrame] = {}\n    for index, symbol in enumerate(symbols, start=1):\n        data_path = store.dataset_path(\n            exchange_id=\"kucoin\",\n            symbol=symbol,\n            timeframe=\"1h\",\n        )\n        metadata_path = store.metadata_path(data_path)\n        metadata = load_json(metadata_path)\n        expected = metadata.get(\"sha256\")\n        if not isinstance(expected, str):\n            raise BasePerformanceError(f\"hourly metadata hash missing: {symbol}\")\n        if sha256(data_path) != expected:\n            raise BasePerformanceError(f\"hourly source hash mismatch: {symbol}\")\n        frame = pd.read_parquet(\n            str(data_path),\n            engine=\"pyarrow\",\n            filters=[(\"timestamp\", \"<\", cutoff)],\n        )\n        normalized = normalize_hourly_bars(frame)\n        result[symbol] = normalized\n        print(\n            f\"P3E_BASE_BAR_LOAD={index}/{len(symbols)}:{symbol}:{len(normalized)}\",\n            flush=True,\n        )\n    return result",
+        "source_sha256": "E86E10E102B138A9C7630D66806AB5C5B6366BA0EA657D373E6B9CD00A76E59E"
+      },
+      {
+        "function": "load_hourly",
+        "lineno": 270,
+        "path": "scripts/research/run_rd18_p3e_cash_feasibility_remediation.py",
+        "source": "def load_hourly(\n    repo: Path,\n    candidates: Mapping[str, pd.DataFrame],\n) -> dict[str, pd.DataFrame]:\n    symbols = sorted(\n        {\n            str(symbol)\n            for frame in candidates.values()\n            for symbol in frame[\"symbol\"].astype(str).unique()\n        }\n    )\n    store = ParquetCandleStore(repo / \"data/raw/rd16b\")\n    cutoff = SEALED_CUTOFF.to_pydatetime()\n    result: dict[str, pd.DataFrame] = {}\n    for index, symbol in enumerate(symbols, start=1):\n        path = store.dataset_path(\n            exchange_id=\"kucoin\",\n            symbol=symbol,\n            timeframe=\"1h\",\n        )\n        metadata = load_json(store.metadata_path(path))\n        expected = metadata.get(\"sha256\")\n        if not isinstance(expected, str) or sha256(path) != expected:\n            raise RemediationError(f\"hourly source hash mismatch: {symbol}\")\n        frame = pd.read_parquet(\n            str(path),\n            engine=\"pyarrow\",\n            filters=[(\"timestamp\", \"<\", cutoff)],\n        )\n        result[symbol] = normalize_hourly_bars(frame)\n        print(\n            f\"P3E_CASH_BAR_LOAD={index}/{len(symbols)}:{symbol}:{len(result[symbol])}\",\n            flush=True,\n        )\n    return result",
+        "source_sha256": "CA7DB7DBBC38554B6B2FCC5AF2AA00A9F8E091E46823750EA8AD97765D1216A9"
+      },
+      {
+        "function": "load_hourly",
+        "lineno": 359,
+        "path": "scripts/research/run_rd18_p3e_technical_dry_run.py",
+        "source": "def load_hourly(\n    repo: Path,\n    selected: dict[str, pd.DataFrame],\n) -> dict[str, pd.DataFrame]:\n    symbols = sorted(\n        {\n            str(symbol)\n            for frame in selected.values()\n            for symbol in frame[\"symbol\"].astype(str).unique()\n        }\n    )\n    store = ParquetCandleStore(repo / \"data/raw/rd16b\")\n    frames: dict[str, pd.DataFrame] = {}\n    cutoff = SEALED_CUTOFF.to_pydatetime()\n\n    for index, symbol in enumerate(symbols, start=1):\n        data_path = store.dataset_path(\n            exchange_id=\"kucoin\",\n            symbol=symbol,\n            timeframe=\"1h\",\n        )\n        metadata_path = store.metadata_path(data_path)\n        if not data_path.is_file():\n            raise DryRunError(f\"sealed 1h source missing: {data_path}\")\n        if not metadata_path.is_file():\n            raise DryRunError(f\"sealed 1h metadata missing: {metadata_path}\")\n\n        metadata = load_json(metadata_path)\n        expected_hash = metadata.get(\"sha256\")\n        if not isinstance(expected_hash, str):\n            raise DryRunError(f\"sealed 1h metadata SHA missing: {symbol}\")\n        actual_hash = sha256(data_path)\n        if actual_hash != expected_hash:\n            raise DryRunError(f\"sealed 1h source hash mismatch: {symbol}\")\n        if not all(\n            (\n                metadata.get(\"exchange_id\") == \"kucoin\",\n                metadata.get(\"symbol\") == symbol,\n                metadata.get(\"timeframe\") == \"1h\",\n            )\n        ):\n            raise DryRunError(f\"sealed 1h metadata identity drift: {symbol}\")\n\n        frame = pd.read_parquet(\n            str(data_path),\n            engine=\"pyarrow\",\n            filters=[(\"timestamp\", \"<\", cutoff)],\n        )\n        normalized = normalize_hourly_bars(frame)\n        if normalized.empty:\n            raise DryRunError(f\"sealed 1h filtered source is empty: {symbol}\")\n        timestamps = pd.to_datetime(\n            normalized[\"timestamp\"],\n            utc=True,\n            errors=\"raise\",\n        )\n        if bool((timestamps >= SEALED_CUTOFF).any()):\n            raise DryRunError(f\"post-2024 row entered memory: {symbol}\")\n\n        frames[symbol] = normalized\n        print(\n            \"P3E_DRY_RUN_BAR_LOAD=\"\n            f\"{index}/{len(symbols)}:{symbol}:\"\n            f\"{len(normalized)}:\"\n            f\"{timestamps.iloc[0].isoformat()}:\"\n            f\"{timestamps.iloc[-1].isoformat()}\",\n            flush=True,\n        )\n    return frames",
+        "source_sha256": "100837C98D55D237BF7DE59640C8BD7F34ACD54F142A4361D0F853A0BF223A9C"
+      },
+      {
+        "function": "feature_integration_preflight",
+        "lineno": 309,
+        "path": "scripts/research/run_rd19_p2a_technical_dry_run.py",
+        "source": "def feature_integration_preflight(\n    source_rows: list[dict[str, object]],\n    variants: list[dict[str, object]],\n    *,\n    raw_root: Path,\n) -> list[dict[str, object]]:\n    representative: dict[str, dict[str, object]] = {}\n    for variant in variants:\n        family = str(variant[\"entry_family\"])\n        representative.setdefault(family, variant)\n    if set(representative) != {\n        \"CONFIRMED_PULLBACK\",\n        \"VOLATILITY_CONTRACTION_BREAKOUT\",\n    }:\n        raise P2ARunnerError(\"both entry families were not resolved\")\n\n    rows: list[dict[str, object]] = []\n    cutoff = SEALED_CUTOFF.to_pydatetime()\n    for pair in _sample_pairs(source_rows):\n        frame = pd.read_parquet(\n            _parquet_path(raw_root, pair),\n            engine=\"pyarrow\",\n            filters=[(\"timestamp\", \"<\", cutoff)],\n        )\n        normalized = normalize_bars(frame.tail(2600))\n        if len(normalized) < 2200:\n            raise P2ARunnerError(f\"insufficient sealed bars for feature preflight: {pair}\")\n        for family, variant in sorted(representative.items()):\n            featured = feature_frame(normalized, variant)\n            numeric = featured[\n                [\n                    \"momentum_fast\",\n                    \"momentum_slow\",\n                    \"trend_persistence\",\n                    \"atr\",\n                    \"atr_percent\",\n                ]\n            ].dropna()\n            if numeric.empty:\n                raise P2ARunnerError(f\"feature preflight produced no valid rows: {pair}/{family}\")\n            maximum_timestamp = pd.Timestamp(featured[\"timestamp\"].max())\n            if maximum_timestamp >= SEALED_CUTOFF:\n                raise P2ARunnerError(f\"post-2024 row entered feature memory: {pair}\")\n            rows.append(\n                {\n                    \"pair\": pair,\n                    \"entry_family\": family,\n                    \"variant_id\": str(variant[\"variant_id\"]),\n                    \"source_rows_loaded\": len(normalized),\n                    \"valid_feature_rows\": len(numeric),\n                    \"maximum_timestamp\": maximum_timestamp.isoformat(),\n                    \"post_2024_accessed\": False,\n                }\n            )\n    return rows",
+        "source_sha256": "DC9A3B7E8A16CB471AEA57ABBDB96762F9289868AAA62BC5E4828AC75DAA8ED5"
+      },
+      {
+        "function": "load_raw_frames",
+        "lineno": 179,
+        "path": "scripts/research/run_rd19_p2c_discovery.py",
+        "source": "def load_raw_frames(\n    raw_root: Path,\n    pairs: list[str],\n) -> dict[str, pd.DataFrame]:\n    frames: dict[str, pd.DataFrame] = {}\n    cutoff = DATA_CUTOFF.to_pydatetime()\n    for index, pair in enumerate(pairs, start=1):\n        path = raw_root / pair / \"1h.parquet\"\n        if not path.is_file():\n            raise P2CExecutionError(f\"sealed hourly source missing: {path}\")\n        frame = pd.read_parquet(\n            path,\n            engine=\"pyarrow\",\n            filters=[(\"timestamp\", \"<\", cutoff)],\n        )\n        normalized = p2a.normalize_bars(frame)\n        if bool(\n            (\n                pd.to_datetime(\n                    normalized[\"timestamp\"],\n                    utc=True,\n                    errors=\"raise\",\n                )\n                >= DATA_CUTOFF\n            ).any()\n        ):\n            raise P2CExecutionError(f\"2024 market row entered memory: {pair}\")\n        frames[pair] = normalized\n        print(\n            f\"RD19_P2C_SOURCE={index}/{len(pairs)}:{pair}:{len(normalized)}\",\n            flush=True,\n        )\n    return frames",
+        "source_sha256": "F90A4B4BB492682B75E410EE77071674AB7E7BD8533325B16944EE5EA7F97536"
+      },
+      {
+        "function": "load_raw_frames",
+        "lineno": 217,
+        "path": "scripts/research/run_rd19_p2c_r1_correction.py",
+        "source": "def load_raw_frames(\n    raw_root: Path,\n    pairs: list[str],\n) -> dict[str, pd.DataFrame]:\n    frames: dict[str, pd.DataFrame] = {}\n    cutoff = DATA_CUTOFF.to_pydatetime()\n    for index, pair in enumerate(pairs, start=1):\n        path = raw_root / pair / \"1h.parquet\"\n        if not path.is_file():\n            raise P2CR1Error(f\"sealed hourly source missing: {path}\")\n        frame = pd.read_parquet(\n            path,\n            engine=\"pyarrow\",\n            filters=[(\"timestamp\", \"<\", cutoff)],\n        )\n        normalized = p2a.normalize_bars(frame)\n        maximum = pd.to_datetime(\n            normalized[\"timestamp\"],\n            utc=True,\n            errors=\"raise\",\n        ).max()\n        if maximum >= DATA_CUTOFF:\n            raise P2CR1Error(f\"2024 market row entered memory: {pair}\")\n        frames[pair] = normalized\n        print(\n            f\"RD19_P2C_R1_SOURCE={index}/{len(pairs)}:{pair}:{len(normalized)}\",\n            flush=True,\n        )\n    return frames",
+        "source_sha256": "7092EACBC7544939687211D1C62C11EFCDDE01ED4CBF0F9788D912A55CC88525"
+      },
+      {
+        "function": "load_features",
+        "lineno": 173,
+        "path": "scripts/research/run_rd20_p1_p2a.py",
+        "source": "def load_features(raw_root: Path, pairs: list[str]) -> dict[str, pd.DataFrame]:\n    result: dict[str, pd.DataFrame] = {}\n    cutoff = DATA_CUTOFF.to_pydatetime()\n    for index, pair in enumerate(pairs, start=1):\n        path = raw_root / pair / \"1h.parquet\"\n        frame = pd.read_parquet(\n            path,\n            engine=\"pyarrow\",\n            filters=[(\"timestamp\", \"<\", cutoff)],\n        )\n        featured = prepare_features(frame)\n        if len(featured) and featured[\"timestamp\"].max() >= DATA_CUTOFF:\n            raise RunnerError(f\"sealed 2024 row loaded: {pair}\")\n        result[pair] = featured\n        print(\n            f\"RD20_P2A_FEATURE_SOURCE={index}/{len(pairs)}:{pair}:{len(featured)}\",\n            flush=True,\n        )\n    return result",
+        "source_sha256": "B5C3E92B357D82EF2F4B00DF6FE7A091D0868A8B483022CB907F4BFF761E2C6D"
+      },
+      {
+        "function": "load_features_and_diagnose",
+        "lineno": 123,
+        "path": "scripts/research/run_rd20_p2a_r1_timestamp_correction.py",
+        "source": "def load_features_and_diagnose(\n    raw_root: Path,\n    pairs: list[str],\n) -> tuple[dict[str, pd.DataFrame], pd.DataFrame]:\n    features: dict[str, pd.DataFrame] = {}\n    diagnosis_rows: list[dict[str, Any]] = []\n    cutoff = DATA_CUTOFF.to_pydatetime()\n\n    for index, pair in enumerate(pairs, start=1):\n        path = raw_root / pair / \"1h.parquet\"\n        if not path.is_file():\n            raise CorrectionError(f\"raw source missing: {path}\")\n        raw = pd.read_parquet(path, engine=\"pyarrow\", filters=[(\"timestamp\", \"<\", cutoff)])\n        featured = prepare_features(raw)\n        if len(featured) and featured[\"timestamp\"].max() >= DATA_CUTOFF:\n            raise CorrectionError(f\"sealed row loaded: {pair}\")\n\n        parsed = pd.to_datetime(featured[\"timestamp\"], utc=True, errors=\"raise\")\n        native = parsed.astype(\"int64\").to_numpy()\n        normalized = parsed.dt.as_unit(\"ns\").astype(\"int64\").to_numpy()\n        native_equal_ns = bool((native == normalized).all()) if len(native) else True\n        corrected = fast_lookup(featured)\n        if len(featured):\n            sample_positions = sorted({0, len(featured) // 2, len(featured) - 1})\n            corrected_sample_hits = sum(\n                int(pd.Timestamp(featured.iloc[pos][\"timestamp\"]).value) in corrected\n                for pos in sample_positions\n            )\n            old_sample_hits = sum(\n                int(pd.Timestamp(featured.iloc[pos][\"timestamp\"]).value) in {int(native[pos])}\n                for pos in sample_positions\n            )\n        else:\n            corrected_sample_hits = 0\n            old_sample_hits = 0\n            sample_positions = []\n\n        diagnosis_rows.append(\n            {\n                \"pair\": pair,\n                \"timestamp_dtype\": str(parsed.dtype),\n                \"row_count\": len(featured),\n                \"native_integer_unit_already_ns\": native_equal_ns,\n                \"sample_count\": len(sample_positions),\n                \"old_native_key_sample_hits\": old_sample_hits,\n                \"corrected_ns_key_sample_hits\": corrected_sample_hits,\n            }\n        )\n        features[pair] = featured\n        print(f\"RD20_P2A_R1_FEATURE_SOURCE={index}/{len(pairs)}:{pair}:{len(featured)}\", flush=True)\n\n    diagnosis = pd.DataFrame.from_records(diagnosis_rows)\n    if diagnosis.empty:\n        raise CorrectionError(\"timestamp diagnosis is empty\")\n    if int(diagnosis[\"corrected_ns_key_sample_hits\"].sum()) != int(diagnosis[\"sample_count\"].sum()):\n        raise CorrectionError(\"corrected ns lookup failed sampled source timestamps\")\n    mismatch_pairs = int((~diagnosis[\"native_integer_unit_already_ns\"]).sum())\n    if mismatch_pairs <= 0:\n        raise CorrectionError(\n            \"no native timestamp-unit mismatch was observed; diagnosis not confirmed\"\n        )\n    return features, diagnosis",
+        "source_sha256": "E66630349DE6633F1769542A0FD00EFFC2DE0D78589D198A1EFD5312FF6F02D5"
+      },
+      {
+        "function": "load_features",
+        "lineno": 190,
+        "path": "scripts/research/run_rd20_p3_core_edge.py",
+        "source": "def load_features(\n    raw_root: Path,\n    pairs: list[str],\n) -> dict[str, pd.DataFrame]:\n    features: dict[str, pd.DataFrame] = {}\n    cutoff = DATA_CUTOFF.to_pydatetime()\n    for index, pair in enumerate(pairs, start=1):\n        path = raw_root / pair / \"1h.parquet\"\n        if not path.is_file():\n            raise RunnerError(f\"raw source missing: {path}\")\n        raw = pd.read_parquet(\n            path,\n            engine=\"pyarrow\",\n            filters=[(\"timestamp\", \"<\", cutoff)],\n        )\n        featured = prepare_economic_frame(raw)\n        if len(featured) and featured[\"timestamp\"].max() >= DATA_CUTOFF:\n            raise RunnerError(f\"sealed row loaded: {pair}\")\n        features[pair] = featured\n        print(\n            f\"RD20_P3_FEATURE_SOURCE={index}/{len(pairs)}:{pair}:{len(featured)}\",\n            flush=True,\n        )\n    return features",
+        "source_sha256": "F4692C93662D94AAFB127D3F7C881BF1E7B86E771357D34F8209D7D7F503725F"
+      },
+      {
+        "function": "load_features",
+        "lineno": 223,
+        "path": "scripts/research/run_rd21_horizon_discovery.py",
+        "source": "def load_features(\n    raw_root: Path,\n    pairs: list[str],\n) -> dict[str, pd.DataFrame]:\n    features: dict[str, pd.DataFrame] = {}\n    cutoff = DISCOVERY_CUTOFF.to_pydatetime()\n    for index, pair in enumerate(pairs, start=1):\n        path = raw_root / pair / \"1h.parquet\"\n        if not path.is_file():\n            raise RunnerError(f\"raw source missing: {path}\")\n        raw = pd.read_parquet(\n            path,\n            engine=\"pyarrow\",\n            filters=[(\"timestamp\", \"<\", cutoff)],\n        )\n        featured = prepare_economic_frame(raw)\n        if len(featured) and featured[\"timestamp\"].max() >= DISCOVERY_CUTOFF:\n            raise RunnerError(f\"2022+ raw row loaded during discovery: {pair}\")\n        features[pair] = featured\n        print(\n            f\"RD21_DISCOVERY_FEATURE_SOURCE={index}/{len(pairs)}:{pair}:{len(featured)}\",\n            flush=True,\n        )\n    return features",
+        "source_sha256": "D5FCEFA873D48941B8F97DB7C2B8752B2AEFF40518C15B4631BD09748D60FD37"
+      },
+      {
+        "function": "load_features",
+        "lineno": 231,
+        "path": "scripts/research/run_rd22_structural_risk_on_pullback.py",
+        "source": "def load_features(\n    raw_root: Path,\n    pairs: list[str],\n) -> dict[str, pd.DataFrame]:\n    features: dict[str, pd.DataFrame] = {}\n    cutoff = DISCOVERY_CUTOFF.to_pydatetime()\n    for index, pair in enumerate(pairs, start=1):\n        path = raw_root / pair / \"1h.parquet\"\n        if not path.is_file():\n            raise RunnerError(f\"raw source missing: {path}\")\n        raw = pd.read_parquet(\n            path,\n            engine=\"pyarrow\",\n            filters=[(\"timestamp\", \"<\", cutoff)],\n        )\n        featured = prepare_economic_frame(raw)\n        if len(featured) and featured[\"timestamp\"].max() >= DISCOVERY_CUTOFF:\n            raise RunnerError(f\"2022+ raw row loaded during discovery: {pair}\")\n        features[pair] = featured\n        print(\n            f\"RD22_DISCOVERY_FEATURE_SOURCE={index}/{len(pairs)}:{pair}:{len(featured)}\",\n            flush=True,\n        )\n    return features",
+        "source_sha256": "409378FDBBE83DB8C19651909870981BCBB71482F7CDD72082FF638F15D65451"
+      },
+      {
+        "function": "load_features",
+        "lineno": 169,
+        "path": "scripts/research/run_rd23_multifamily_raw_edge.py",
+        "source": "def load_features(raw_root: Path, pairs: list[str]) -> dict[str, pd.DataFrame]:\n    features: dict[str, pd.DataFrame] = {}\n    cutoff = DATA_CUTOFF.to_pydatetime()\n    for index, pair in enumerate(pairs, start=1):\n        path = raw_root / pair / \"1h.parquet\"\n        raw = pd.read_parquet(\n            path,\n            engine=\"pyarrow\",\n            filters=[(\"timestamp\", \"<\", cutoff)],\n        )\n        frame = prepare_features(raw)\n        if len(frame) and frame[\"timestamp\"].max() >= DATA_CUTOFF:\n            raise RunnerError(f\"sealed 2022+ bar loaded: {pair}\")\n        features[pair] = frame\n        print(\n            f\"RD23_FEATURE_SOURCE={index}/{len(pairs)}:{pair}:{len(frame)}\",\n            flush=True,\n        )\n    return features",
+        "source_sha256": "7B31BB16FCDECA633D3BEA2951BECA049A8FEEC5158EA634F5ADE48B650CAAB7"
+      },
+      {
+        "function": "load_frames",
+        "lineno": 203,
+        "path": "scripts/research/run_rd24_parallel_minimal_portfolio.py",
+        "source": "def load_frames(\n    *,\n    raw_root: Path,\n    pairs: list[str],\n) -> dict[str, pd.DataFrame]:\n    frames: dict[str, pd.DataFrame] = {}\n    cutoff = DATA_CUTOFF.to_pydatetime()\n    for index, pair in enumerate(pairs, start=1):\n        path = raw_root / pair / \"1h.parquet\"\n        raw = pd.read_parquet(\n            path,\n            engine=\"pyarrow\",\n            filters=[(\"timestamp\", \"<\", cutoff)],\n        )\n        frame = normalize_economic_bars(raw)\n        frames[pair] = frame\n        print(\n            f\"RD24_ECONOMIC_SOURCE={index}/{len(pairs)}:{pair}:{len(frame)}\",\n            flush=True,\n        )\n    return frames",
+        "source_sha256": "600229E2AB16D7A01AFACF51612EA0527C67F09B5D78B6F49E505F70CB6D2C9A"
+      },
+      {
+        "function": "load_frames",
+        "lineno": 242,
+        "path": "scripts/research/run_rd25_portfolio_translation_diagnosis.py",
+        "source": "def load_frames(raw_root: Path, pairs: list[str]) -> dict[str, pd.DataFrame]:\n    frames: dict[str, pd.DataFrame] = {}\n    cutoff = DATA_CUTOFF.to_pydatetime()\n    for index, pair in enumerate(pairs, start=1):\n        raw = pd.read_parquet(\n            raw_root / pair / \"1h.parquet\",\n            engine=\"pyarrow\",\n            filters=[(\"timestamp\", \"<\", cutoff)],\n        )\n        frame = normalize_economic_bars(raw)\n        prior_close = frame[\"close\"].shift(1)\n        true_range = pd.concat(\n            [\n                frame[\"high\"] - frame[\"low\"],\n                (frame[\"high\"] - prior_close).abs(),\n                (frame[\"low\"] - prior_close).abs(),\n            ],\n            axis=1,\n        ).max(axis=1)\n        frame[\"atr24\"] = true_range.rolling(24, min_periods=24).mean()\n        frames[pair] = frame\n        print(f\"RD25_RAW_SOURCE={index}/{len(pairs)}:{pair}:{len(frame)}\", flush=True)\n    return frames",
+        "source_sha256": "B58BAD692ADE183F1FA105AF2A42D73732695C5C50F91262E2BE765A28472E02"
+      },
+      {
+        "function": "load_feature_frames",
+        "lineno": 187,
+        "path": "scripts/research/run_rd26_exit_architecture.py",
+        "source": "def load_feature_frames(\n    *,\n    raw_root: Path,\n    pairs: list[str],\n    cutoff: pd.Timestamp,\n) -> dict[str, pd.DataFrame]:\n    frames: dict[str, pd.DataFrame] = {}\n    cutoff_value = cutoff.to_pydatetime()\n    for index, pair in enumerate(pairs, start=1):\n        path = raw_root / pair / \"1h.parquet\"\n        raw = pd.read_parquet(\n            path,\n            engine=\"pyarrow\",\n            filters=[(\"timestamp\", \"<\", cutoff_value)],\n        )\n        frame = prepare_features(raw, cutoff=cutoff)\n        frames[pair] = frame\n        print(\n            f\"RD26_FEATURE_SOURCE={index}/{len(pairs)}:{pair}:{len(frame)}:cutoff={cutoff.date()}\",\n            flush=True,\n        )\n    return frames",
+        "source_sha256": "9C096C6E7C4784D9B91A7EFC55FA85F46755B2D850B78E7A5E90980294DC9ACE"
+      },
+      {
+        "function": "load_feature_frames",
+        "lineno": 242,
+        "path": "scripts/research/run_rd27_lifecycle_ablation.py",
+        "source": "def load_feature_frames(\n    *,\n    raw_root: Path,\n    pairs: list[str],\n) -> dict[str, pd.DataFrame]:\n    frames: dict[str, pd.DataFrame] = {}\n    cutoff_value = DATA_CUTOFF.to_pydatetime()\n    for index, pair in enumerate(pairs, start=1):\n        path = raw_root / pair / \"1h.parquet\"\n        if not path.is_file():\n            raise RunnerError(f\"raw 1h source missing: {path}\")\n        raw = pd.read_parquet(\n            path,\n            engine=\"pyarrow\",\n            filters=[(\"timestamp\", \"<\", cutoff_value)],\n        )\n        frame = prepare_features(raw, cutoff=DATA_CUTOFF)\n        frames[pair] = frame\n        print(\n            f\"RD27_FEATURE_SOURCE={index}/{len(pairs)}:{pair}:{len(frame)}:\"\n            f\"cutoff={DATA_CUTOFF.date()}\",\n            flush=True,\n        )\n    return frames",
+        "source_sha256": "7DFC388F3BF8EF6EFA16E0640CF924158999A9923674C7701B8919872755CBB5"
+      },
+      {
+        "function": "load_state_frame",
+        "lineno": 268,
+        "path": "scripts/research/run_rd27_lifecycle_ablation.py",
+        "source": "def load_state_frame(raw_root: Path) -> pd.DataFrame:\n    path = raw_root / \"BTC-USDT\" / \"1h.parquet\"\n    if not path.is_file():\n        raise RunnerError(f\"BTC state-sensor source missing: {path}\")\n    raw = pd.read_parquet(\n        path,\n        engine=\"pyarrow\",\n        filters=[(\"timestamp\", \"<\", DATA_CUTOFF.to_pydatetime())],\n    )\n    frame = build_market_state_frame(raw, cutoff=DATA_CUTOFF)\n    selection = frame.loc[\n        (frame[\"timestamp\"] >= DATA_START)\n        & (frame[\"timestamp\"] < DATA_CUTOFF)\n    ].copy()\n    if selection.empty:\n        raise RunnerError(\"BTC state frame has no 2022-2023 rows\")\n    if not bool(selection[\"state_ready\"].all()):\n        first_bad = selection.loc[~selection[\"state_ready\"], \"timestamp\"].iloc[0]\n        raise RunnerError(f\"BTC state sensor not ready inside selection window: {first_bad}\")\n    return frame",
+        "source_sha256": "7DFC388F3BF8EF6EFA16E0640CF924158999A9923674C7701B8919872755CBB5"
+      },
+      {
+        "function": "load_feature_frames",
+        "lineno": 289,
+        "path": "scripts/research/run_rd28_evidence_gated_lifecycle.py",
+        "source": "def load_feature_frames(\n    *,\n    raw_root: Path,\n    pairs: list[str],\n) -> dict[str, pd.DataFrame]:\n    frames: dict[str, pd.DataFrame] = {}\n    cutoff_value = DATA_CUTOFF.to_pydatetime()\n    for index, pair in enumerate(pairs, start=1):\n        path = raw_root / pair / \"1h.parquet\"\n        if not path.is_file():\n            raise RunnerError(f\"raw 1h source missing: {path}\")\n        raw = pd.read_parquet(\n            path,\n            engine=\"pyarrow\",\n            filters=[(\"timestamp\", \"<\", cutoff_value)],\n        )\n        frame = prepare_features(raw, cutoff=DATA_CUTOFF)\n        frames[pair] = frame\n        print(\n            f\"RD28_FEATURE_SOURCE={index}/{len(pairs)}:{pair}:{len(frame)}:\"\n            f\"cutoff={DATA_CUTOFF.date()}\",\n            flush=True,\n        )\n    return frames",
+        "source_sha256": "2DB133BDD7E4ED8E7BB763842E9FD4D4CEEF4BD92027E195A92031399FA3FEAF"
+      },
+      {
+        "function": "load_state_frame",
+        "lineno": 315,
+        "path": "scripts/research/run_rd28_evidence_gated_lifecycle.py",
+        "source": "def load_state_frame(raw_root: Path) -> pd.DataFrame:\n    path = raw_root / \"BTC-USDT\" / \"1h.parquet\"\n    if not path.is_file():\n        raise RunnerError(f\"BTC state-sensor source missing: {path}\")\n    raw = pd.read_parquet(\n        path,\n        engine=\"pyarrow\",\n        filters=[(\"timestamp\", \"<\", DATA_CUTOFF.to_pydatetime())],\n    )\n    frame = build_market_state_frame(raw, cutoff=DATA_CUTOFF)\n    selection = frame.loc[\n        (frame[\"timestamp\"] >= DATA_START) & (frame[\"timestamp\"] < DATA_CUTOFF)\n    ].copy()\n    if selection.empty:\n        raise RunnerError(\"BTC state frame has no 2022-2023 rows\")\n    if not bool(selection[\"state_ready\"].all()):\n        first_bad = selection.loc[\n            ~selection[\"state_ready\"],\n            \"timestamp\",\n        ].iloc[0]\n        raise RunnerError(f\"BTC state sensor not ready inside selection window: {first_bad}\")\n    return frame",
+        "source_sha256": "2DB133BDD7E4ED8E7BB763842E9FD4D4CEEF4BD92027E195A92031399FA3FEAF"
+      },
+      {
+        "function": "load_feature_frames",
+        "lineno": 365,
+        "path": "scripts/research/run_rd29_thesis_confidence_lifecycle.py",
+        "source": "def load_feature_frames(\n    *,\n    raw_root: Path,\n    pairs: list[str],\n) -> dict[str, pd.DataFrame]:\n    frames: dict[str, pd.DataFrame] = {}\n    cutoff = DATA_CUTOFF.to_pydatetime()\n    for index, pair in enumerate(pairs, start=1):\n        path = raw_root / pair / \"1h.parquet\"\n        if not path.is_file():\n            raise RunnerError(f\"raw 1h source missing: {path}\")\n        raw = pd.read_parquet(\n            path,\n            engine=\"pyarrow\",\n            filters=[(\"timestamp\", \"<\", cutoff)],\n        )\n        frame = prepare_features(raw, cutoff=DATA_CUTOFF)\n        frames[pair] = frame\n        print(\n            f\"RD29_FEATURE_SOURCE={index}/{len(pairs)}:{pair}:\"\n            f\"{len(frame)}:cutoff={DATA_CUTOFF.date()}\",\n            flush=True,\n        )\n    return frames",
+        "source_sha256": "AECEDDE051C0F4C25882591FB441A3AB69EE2FA22AF0253789E7B1B3667EC434"
+      },
+      {
+        "function": "load_state_frame",
+        "lineno": 391,
+        "path": "scripts/research/run_rd29_thesis_confidence_lifecycle.py",
+        "source": "def load_state_frame(raw_root: Path) -> pd.DataFrame:\n    path = raw_root / \"BTC-USDT\" / \"1h.parquet\"\n    if not path.is_file():\n        raise RunnerError(f\"BTC state source missing: {path}\")\n    raw = pd.read_parquet(\n        path,\n        engine=\"pyarrow\",\n        filters=[(\"timestamp\", \"<\", DATA_CUTOFF.to_pydatetime())],\n    )\n    frame = build_market_state_frame(raw, cutoff=DATA_CUTOFF)\n    selection = frame.loc[\n        (frame[\"timestamp\"] >= DATA_START) & (frame[\"timestamp\"] < DATA_CUTOFF)\n    ].copy()\n    if selection.empty or not bool(selection[\"state_ready\"].all()):\n        raise RunnerError(\"BTC state sensor incomplete in 2022-2023\")\n    return frame",
+        "source_sha256": "AECEDDE051C0F4C25882591FB441A3AB69EE2FA22AF0253789E7B1B3667EC434"
+      },
+      {
+        "function": "load_feature_frames",
+        "lineno": 445,
+        "path": "scripts/research/run_rd30_family_specialist_replacement_aware.py",
+        "source": "def load_feature_frames(\n    *,\n    raw_root: Path,\n    pairs: list[str],\n) -> dict[str, pd.DataFrame]:\n    frames: dict[str, pd.DataFrame] = {}\n    cutoff = DATA_CUTOFF.to_pydatetime()\n    for index, pair in enumerate(pairs, start=1):\n        path = raw_root / pair / \"1h.parquet\"\n        if not path.is_file():\n            raise RunnerError(f\"raw 1h source missing: {path}\")\n        raw = pd.read_parquet(\n            path,\n            engine=\"pyarrow\",\n            filters=[(\"timestamp\", \"<\", cutoff)],\n        )\n        frame = prepare_features(\n            raw,\n            cutoff=DATA_CUTOFF,\n        )\n        frames[pair] = frame\n        print(\n            f\"RD30_FEATURE_SOURCE=\"\n            f\"{index}/{len(pairs)}:{pair}:\"\n            f\"{len(frame)}:cutoff={DATA_CUTOFF.date()}\",\n            flush=True,\n        )\n    return frames",
+        "source_sha256": "C6CDEF9F0C3A086FD1091E4A9168F6949E28B0A3E16AB8E80E3D6F12B76CA561"
+      },
+      {
+        "function": "load_state_frame",
+        "lineno": 475,
+        "path": "scripts/research/run_rd30_family_specialist_replacement_aware.py",
+        "source": "def load_state_frame(\n    raw_root: Path,\n) -> pd.DataFrame:\n    path = raw_root / \"BTC-USDT\" / \"1h.parquet\"\n    if not path.is_file():\n        raise RunnerError(f\"BTC state source missing: {path}\")\n    raw = pd.read_parquet(\n        path,\n        engine=\"pyarrow\",\n        filters=[\n            (\n                \"timestamp\",\n                \"<\",\n                DATA_CUTOFF.to_pydatetime(),\n            )\n        ],\n    )\n    frame = build_market_state_frame(\n        raw,\n        cutoff=DATA_CUTOFF,\n    )\n    selection = frame.loc[\n        (frame[\"timestamp\"] >= DATA_START) & (frame[\"timestamp\"] < DATA_CUTOFF)\n    ].copy()\n    if selection.empty or not bool(selection[\"state_ready\"].all()):\n        raise RunnerError(\"BTC state sensor incomplete in 2022-2023\")\n    return frame",
+        "source_sha256": "C6CDEF9F0C3A086FD1091E4A9168F6949E28B0A3E16AB8E80E3D6F12B76CA561"
+      },
+      {
+        "function": "load_feature_frames",
+        "lineno": 640,
+        "path": "scripts/research/run_rd31_market_regime_admission_governor.py",
+        "source": "def load_feature_frames(\n    *,\n    raw_root: Path,\n    pairs: list[str],\n) -> dict[str, pd.DataFrame]:\n    frames: dict[str, pd.DataFrame] = {}\n    cutoff = DATA_CUTOFF.to_pydatetime()\n    for index, pair in enumerate(pairs, start=1):\n        path = raw_root / pair / \"1h.parquet\"\n        if not path.is_file():\n            raise RunnerError(f\"raw 1h source missing: {path}\")\n        raw = pd.read_parquet(\n            path,\n            engine=\"pyarrow\",\n            filters=[(\"timestamp\", \"<\", cutoff)],\n        )\n        frame = prepare_features(\n            raw,\n            cutoff=DATA_CUTOFF,\n        )\n        frames[pair] = frame\n        print(\n            \"RD31_FEATURE_SOURCE=\"\n            f\"{index}/{len(pairs)}:{pair}:\"\n            f\"{len(frame)}:cutoff={DATA_CUTOFF.date()}\",\n            flush=True,\n        )\n    return frames",
+        "source_sha256": "3B6D938093B4F00883A3665399CBEA01FD892E2B610FC7F4B2EBA01F8F51457B"
+      },
+      {
+        "function": "load_state_frame",
+        "lineno": 670,
+        "path": "scripts/research/run_rd31_market_regime_admission_governor.py",
+        "source": "def load_state_frame(\n    raw_root: Path,\n) -> pd.DataFrame:\n    path = raw_root / \"BTC-USDT\" / \"1h.parquet\"\n    if not path.is_file():\n        raise RunnerError(f\"BTC state source missing: {path}\")\n    raw = pd.read_parquet(\n        path,\n        engine=\"pyarrow\",\n        filters=[\n            (\n                \"timestamp\",\n                \"<\",\n                DATA_CUTOFF.to_pydatetime(),\n            )\n        ],\n    )\n    frame = build_market_state_frame(\n        raw,\n        cutoff=DATA_CUTOFF,\n    )\n    selection = frame.loc[\n        (frame[\"timestamp\"] >= DATA_START) & (frame[\"timestamp\"] < DATA_CUTOFF)\n    ].copy()\n    if selection.empty or not bool(selection[\"state_ready\"].all()):\n        raise RunnerError(\"BTC state sensor incomplete in 2022-2023\")\n    return frame",
+        "source_sha256": "3B6D938093B4F00883A3665399CBEA01FD892E2B610FC7F4B2EBA01F8F51457B"
+      },
+      {
+        "function": "load_feature_frames",
+        "lineno": 325,
+        "path": "scripts/research/run_rd35_new_alpha_source_diagnostic.py",
+        "source": "def load_feature_frames(\n    *,\n    raw_root: Path,\n    pairs: list[str],\n) -> dict[str, pd.DataFrame]:\n    frames: dict[str, pd.DataFrame] = {}\n    cutoff = DATA_CUTOFF.to_pydatetime()\n    for index, pair in enumerate(pairs, start=1):\n        path = raw_root / pair / \"1h.parquet\"\n        if not path.is_file():\n            raise RunnerError(f\"raw 1h source missing: {path}\")\n        raw = pd.read_parquet(\n            path,\n            engine=\"pyarrow\",\n            filters=[(\"timestamp\", \"<\", cutoff)],\n        )\n        frame = prepare_features(raw)\n        frames[pair] = frame\n        print(\n            \"RD35_FEATURE_SOURCE=\"\n            f\"{index}/{len(pairs)}:{pair}:\"\n            f\"{len(frame)}:cutoff={DATA_CUTOFF.date()}\",\n            flush=True,\n        )\n    return frames",
+        "source_sha256": "F7CB98A51ECEC10087D806703FB3E7F6FBBBABC5D8F7E490850B2E7DA06280FF"
+      },
+      {
+        "function": "load_target_frames",
+        "lineno": 407,
+        "path": "scripts/research/run_rd36_cross_venue_flow_state_diagnostic.py",
+        "source": "def load_target_frames(\n    repo: Path,\n    pairs: list[str],\n) -> dict[str, pd.DataFrame]:\n    frames: dict[str, pd.DataFrame] = {}\n    cutoff = DATA_CUTOFF.to_pydatetime()\n    for index, pair in enumerate(pairs, start=1):\n        path = repo / KUCOIN_RAW_ROOT / pair / \"1h.parquet\"\n        if not path.is_file():\n            raise RunnerError(f\"KuCoin target source missing: {path}\")\n        raw = pd.read_parquet(\n            path,\n            columns=[\"timestamp\", \"open\"],\n            engine=\"pyarrow\",\n            filters=[(\"timestamp\", \"<\", cutoff)],\n        )\n        frame = normalize_target_bars(raw, pair=pair)\n        frames[pair] = frame\n        print(\n            \"RD36_P3_TARGET_SOURCE=\"\n            f\"{index}/{len(pairs)}:{pair}:{len(frame)}:\"\n            f\"cutoff={DATA_CUTOFF.date()}\",\n            flush=True,\n        )\n    return frames",
+        "source_sha256": "A4AFF91472BBB134EC44D04988BA41992B951798A338E9F9B7AB7B91EDDB18F5"
+      },
+      {
+        "function": "load_target_lookups",
+        "lineno": 326,
+        "path": "scripts/research/run_rd37_exit_shadow_ablation.py",
+        "source": "def load_target_lookups(\n    repo: Path,\n    pairs: list[str],\n) -> dict[str, dict[int, float]]:\n    start = DATA_START.to_pydatetime()\n    cutoff = DATA_CUTOFF.to_pydatetime()\n    lookups: dict[str, dict[int, float]] = {}\n\n    for index, pair in enumerate(pairs, start=1):\n        path = repo / KUCOIN_ROOT / pair / \"1h.parquet\"\n        if not path.is_file():\n            raise RunnerError(f\"KuCoin target missing: {path}\")\n        frame = pd.read_parquet(\n            path,\n            columns=[\"timestamp\", \"open\"],\n            engine=\"pyarrow\",\n            filters=[\n                (\"timestamp\", \">=\", start),\n                (\"timestamp\", \"<\", cutoff),\n            ],\n        )\n        frame[\"timestamp\"] = pd.to_datetime(\n            frame[\"timestamp\"], utc=True, errors=\"raise\"\n        ).dt.as_unit(\"ns\")\n        frame[\"open\"] = pd.to_numeric(frame[\"open\"], errors=\"raise\").astype(float)\n        frame = frame.sort_values(\"timestamp\", kind=\"stable\").reset_index(drop=True)\n        if frame[\"timestamp\"].duplicated().any():\n            raise RunnerError(f\"duplicate KuCoin target timestamp: {pair}\")\n        if bool((frame[\"open\"] <= 0.0).any()):\n            raise RunnerError(f\"non-positive KuCoin open: {pair}\")\n        lookups[pair] = {\n            int(timestamp): float(price)\n            for timestamp, price in zip(\n                frame[\"timestamp\"].astype(\"int64\").tolist(),\n                frame[\"open\"].tolist(),\n                strict=True,\n            )\n        }\n        print(\n            f\"RD37_P5_TARGET={index}/{len(pairs)}:{pair}:rows={len(frame)}\",\n            flush=True,\n        )\n    return lookups",
+        "source_sha256": "423A69639899B145DBB1D34383B6E2869BFDE10595B4F0708217ACA793F6C5D0"
+      },
+      {
+        "function": "load_targets",
+        "lineno": 352,
+        "path": "scripts/research/run_rd37_microstructure_stress_diagnostic.py",
+        "source": "def load_targets(\n    repo: Path,\n    pairs: list[str],\n) -> dict[str, pd.DataFrame]:\n    cutoff = DATA_CUTOFF.to_pydatetime()\n    result: dict[str, pd.DataFrame] = {}\n    for index, pair in enumerate(pairs, start=1):\n        path = repo / KUCOIN_RAW_ROOT / pair / \"1h.parquet\"\n        if not path.is_file():\n            raise RunnerError(f\"KuCoin target missing: {path}\")\n        raw = pd.read_parquet(\n            path,\n            columns=[\"timestamp\", \"open\"],\n            engine=\"pyarrow\",\n            filters=[(\"timestamp\", \"<\", cutoff)],\n        )\n        result[pair] = normalize_target_bars(raw, pair=pair)\n        print(\n            f\"RD37_P3_TARGET={index}/{len(pairs)}:{pair}:rows={len(result[pair])}\",\n            flush=True,\n        )\n    return result",
+        "source_sha256": "EB7864F46098538CF94E8ECF231099EE606AF2B83920F7AE7B625D17289173A2"
+      },
+      {
+        "function": "load_prices",
+        "lineno": 353,
+        "path": "scripts/research/run_rd38_cross_sectional_resilience_diagnostic.py",
+        "source": "def load_prices(\n    repo: Path,\n    pairs: list[str],\n) -> dict[\n    str,\n    dict[int, tuple[float, float]],\n]:\n    start = SOURCE_HISTORY_START.to_pydatetime()\n    cutoff = DATA_CUTOFF.to_pydatetime()\n    lookups: dict[\n        str,\n        dict[int, tuple[float, float]],\n    ] = {}\n\n    for index, pair in enumerate(\n        pairs,\n        start=1,\n    ):\n        path = repo / KUCOIN_ROOT / pair / \"1h.parquet\"\n        if not path.is_file():\n            raise RunnerError(f\"KuCoin source missing: {path}\")\n\n        raw = pd.read_parquet(\n            path,\n            columns=[\n                \"timestamp\",\n                \"open\",\n                \"close\",\n            ],\n            engine=\"pyarrow\",\n            filters=[\n                (\n                    \"timestamp\",\n                    \">=\",\n                    start,\n                ),\n                (\n                    \"timestamp\",\n                    \"<\",\n                    cutoff,\n                ),\n            ],\n        )\n        frame = normalize_price_frame(\n            raw,\n            pair=pair,\n        )\n        lookups[pair] = price_lookup(frame)\n        print(\n            f\"RD38_P2_SOURCE={index}/{len(pairs)}:{pair}:rows={len(frame)}\",\n            flush=True,\n        )\n    return lookups",
+        "source_sha256": "C47028D1B8C2D4B6D543DFE5D50ACA9DE3703D7526EB07F257FA2059B5BA2FFC"
+      },
+      {
+        "function": "load_prices",
+        "lineno": 280,
+        "path": "scripts/research/run_rd39_trade_conditioned_lifecycle_path_diagnostic.py",
+        "source": "def load_prices(\n    repo: Path,\n    pairs: list[str],\n) -> dict[str, dict[int, tuple[float, float, float, float]]]:\n    lookups: dict[str, dict[int, tuple[float, float, float, float]]] = {}\n    start = DATA_START.to_pydatetime()\n    cutoff = DATA_CUTOFF.to_pydatetime()\n\n    for index, pair in enumerate(pairs, start=1):\n        path = repo / KUCOIN_ROOT / pair / \"1h.parquet\"\n        if not path.is_file():\n            raise RunnerError(f\"KuCoin source missing: {path}\")\n\n        raw = pd.read_parquet(\n            path,\n            columns=[\"timestamp\", \"open\", \"high\", \"low\", \"close\"],\n            engine=\"pyarrow\",\n            filters=[\n                (\"timestamp\", \">=\", start),\n                (\"timestamp\", \"<\", cutoff),\n            ],\n        )\n        frame = normalize_price_frame(raw, pair=pair)\n        lookups[pair] = price_lookup(frame)\n        print(\n            f\"RD39_P2_SOURCE={index}/{len(pairs)}:{pair}:rows={len(frame)}\",\n            flush=True,\n        )\n    return lookups",
+        "source_sha256": "75427018B5AB281100A5D240134CD5361ADCDECB76D911BAA5BEFADCDE6422B8"
+      },
+      {
+        "function": "load_prices",
+        "lineno": 378,
+        "path": "scripts/research/run_rd40_transition_dynamics_governor_diagnostic.py",
+        "source": "def load_prices(\n    repo: Path,\n    pairs: list[str],\n) -> tuple[\n    dict[str, dict[int, tuple[float, float, float, float]]],\n    pd.DataFrame,\n]:\n    lookups: dict[str, dict[int, tuple[float, float, float, float]]] = {}\n    completeness_rows: list[dict[str, Any]] = []\n    start = DATA_START.to_pydatetime()\n    cutoff = DATA_CUTOFF.to_pydatetime()\n    expected_hours = int((DATA_CUTOFF - DATA_START).total_seconds() // 3600)\n\n    for index, pair in enumerate(pairs, start=1):\n        path = repo / KUCOIN_ROOT / pair / \"1h.parquet\"\n        if not path.is_file():\n            raise RunnerError(f\"KuCoin source missing: {path}\")\n\n        raw = pd.read_parquet(\n            path,\n            columns=[\"timestamp\", \"open\", \"high\", \"low\", \"close\"],\n            engine=\"pyarrow\",\n            filters=[\n                (\"timestamp\", \">=\", start),\n                (\"timestamp\", \"<\", cutoff),\n            ],\n        )\n        frame = normalize_price_frame(raw, pair=pair)\n        lookup = price_lookup(frame)\n        lookups[pair] = lookup\n\n        observed = len(frame)\n        completeness_rows.append(\n            {\n                \"pair\": pair,\n                \"period_start\": DATA_START,\n                \"period_end_exclusive\": DATA_CUTOFF,\n                \"expected_clock_hour_count\": expected_hours,\n                \"observed_valid_count\": observed,\n                \"zero_activity_during_known_halt_count\": 0,\n                \"missing_count\": expected_hours - observed,\n                \"data_completeness_class_for_present_rows\": \"OBSERVED_VALID\",\n                \"zero_activity_inferred_from_flat_ohlc\": False,\n                \"imputation_used\": False,\n                \"forward_fill_used\": False,\n                \"backfill_used\": False,\n                \"synthetic_bar_used\": False,\n            }\n        )\n        print(\n            f\"RD40_P2_SOURCE={index}/{len(pairs)}:{pair}:rows={observed}\",\n            flush=True,\n        )\n\n    return lookups, pd.DataFrame.from_records(completeness_rows)",
+        "source_sha256": "719779E24A4B61F5A6DCD080108FDC9F2465C55D5940F1FCFC91A418AFFC424D"
+      },
+      {
+        "function": "load_feature_frames",
+        "lineno": 357,
+        "path": "scripts/research/run_rd41_full_risk_set_censoring_reconciliation.py",
+        "source": "def load_feature_frames(\n    *,\n    raw_root: Path,\n    pairs: list[str],\n) -> dict[str, pd.DataFrame]:\n    frames: dict[str, pd.DataFrame] = {}\n    cutoff = DATA_CUTOFF.to_pydatetime()\n    for index, pair in enumerate(pairs, start=1):\n        path = raw_root / pair / \"1h.parquet\"\n        if not path.is_file():\n            raise RunnerError(f\"raw 1h source missing: {path}\")\n        raw = pd.read_parquet(\n            path,\n            engine=\"pyarrow\",\n            filters=[(\"timestamp\", \"<\", cutoff)],\n        )\n        frame = prepare_features(raw, cutoff=DATA_CUTOFF)\n        if len(frame) and pd.Timestamp(frame[\"timestamp\"].max()) >= DATA_CUTOFF:\n            raise RunnerError(f\"2024+ feature row loaded: {pair}\")\n        frames[pair] = frame\n        print(\n            f\"RD41_P2_FEATURE_SOURCE={index}/{len(pairs)}:{pair}:rows={len(frame)}\",\n            flush=True,\n        )\n    return frames",
+        "source_sha256": "F15CB245B34E268A97C43A3561EF5B1B4E8F5205397F9F83E10F52F28D3998D8"
+      },
+      {
+        "function": "load_state_frame",
+        "lineno": 384,
+        "path": "scripts/research/run_rd41_full_risk_set_censoring_reconciliation.py",
+        "source": "def load_state_frame(raw_root: Path) -> pd.DataFrame:\n    path = raw_root / \"BTC-USDT\" / \"1h.parquet\"\n    if not path.is_file():\n        raise RunnerError(f\"BTC state source missing: {path}\")\n    raw = pd.read_parquet(\n        path,\n        engine=\"pyarrow\",\n        filters=[(\"timestamp\", \"<\", DATA_CUTOFF.to_pydatetime())],\n    )\n    frame = build_market_state_frame(raw, cutoff=DATA_CUTOFF)\n    selected = frame.loc[(frame[\"timestamp\"] >= DATA_START) & (frame[\"timestamp\"] < DATA_CUTOFF)]\n    if selected.empty or not bool(selected[\"state_ready\"].all()):\n        raise RunnerError(\"BTC state sensor incomplete in 2022-2023\")\n    return frame",
+        "source_sha256": "F15CB245B34E268A97C43A3561EF5B1B4E8F5205397F9F83E10F52F28D3998D8"
+      },
+      {
+        "function": "load_prices",
+        "lineno": 286,
+        "path": "scripts/research/run_rd41_rcv_terminal_hazard_diagnostic.py",
+        "source": "def load_prices(\n    *,\n    raw_root: Path,\n    pairs: list[str],\n) -> dict[str, dict[int, tuple[float, float, float, float]]]:\n    lookups = {}\n    for index, pair in enumerate(pairs, start=1):\n        path = raw_root / pair / \"1h.parquet\"\n        if not path.is_file():\n            raise RunnerError(f\"KuCoin source missing: {path}\")\n        raw = pd.read_parquet(\n            path,\n            columns=[\"timestamp\", \"open\", \"high\", \"low\", \"close\"],\n            engine=\"pyarrow\",\n            filters=[\n                (\"timestamp\", \">=\", DATA_START.to_pydatetime()),\n                (\"timestamp\", \"<\", DATA_CUTOFF.to_pydatetime()),\n            ],\n        )\n        frame = normalize_price_frame(raw, pair=pair)\n        lookups[pair] = price_lookup(frame)\n        print(\n            f\"RD41_P4_SOURCE={index}/{len(pairs)}:{pair}:rows={len(frame)}\",\n            flush=True,\n        )\n    return lookups",
+        "source_sha256": "B3E8F5980E43F8CC768C8F43D36938EBC76BC89379C004D5EEEFC63AB07F6892"
+      },
+      {
+        "function": "load_feature_frames",
+        "lineno": 289,
+        "path": "scripts/research/run_rd42_context_support_census.py",
+        "source": "def load_feature_frames(\n    raw_root: Path,\n    pairs: list[str],\n) -> dict[str, pd.DataFrame]:\n    frames: dict[str, pd.DataFrame] = {}\n    cutoff = DATA_CUTOFF.to_pydatetime()\n    for index, pair in enumerate(pairs, start=1):\n        path = raw_root / pair / \"1h.parquet\"\n        if not path.is_file():\n            raise RunnerError(f\"raw 1h source missing: {path}\")\n        raw = pd.read_parquet(\n            path,\n            engine=\"pyarrow\",\n            filters=[(\"timestamp\", \"<\", cutoff)],\n        )\n        frame = prepare_features(raw, cutoff=DATA_CUTOFF)\n        frames[pair] = frame\n        print(\n            f\"RD42_P2_CONTEXT_SOURCE={index}/{len(pairs)}:{pair}:rows={len(frame)}\",\n            flush=True,\n        )\n    return frames",
+        "source_sha256": "38AE63A9FFD9E5B5ED4DE6E16DF0288EBE208C549BE9D245218DF6571A55125C"
+      },
+      {
+        "function": "load_state_frame",
+        "lineno": 313,
+        "path": "scripts/research/run_rd42_context_support_census.py",
+        "source": "def load_state_frame(raw_root: Path) -> pd.DataFrame:\n    path = raw_root / \"BTC-USDT\" / \"1h.parquet\"\n    if not path.is_file():\n        raise RunnerError(f\"BTC state source missing: {path}\")\n    raw = pd.read_parquet(\n        path,\n        engine=\"pyarrow\",\n        filters=[(\"timestamp\", \"<\", DATA_CUTOFF.to_pydatetime())],\n    )\n    state = build_market_state_frame(raw, cutoff=DATA_CUTOFF)\n    selection = state.loc[(state[\"timestamp\"] >= DATA_START) & (state[\"timestamp\"] < DATA_CUTOFF)]\n    if selection.empty or not bool(selection[\"state_ready\"].all()):\n        raise RunnerError(\"BTC state sensor incomplete in 2022-2023\")\n    return state",
+        "source_sha256": "38AE63A9FFD9E5B5ED4DE6E16DF0288EBE208C549BE9D245218DF6571A55125C"
+      },
+      {
+        "function": "load_raw_frames",
+        "lineno": 243,
+        "path": "scripts/research/run_rd43_control_relative_state.py",
+        "source": "def load_raw_frames(\n    *,\n    raw_root: Path,\n    pairs: list[str],\n) -> tuple[dict[str, pd.DataFrame], dict[str, int]]:\n    frames: dict[str, pd.DataFrame] = {}\n    duplicate_counts: dict[str, int] = {}\n    cutoff_value = DATA_CUTOFF.to_pydatetime()\n\n    for index, pair in enumerate(pairs, start=1):\n        path = raw_root / pair / \"1h.parquet\"\n        if not path.is_file():\n            raise RunnerError(f\"raw 1h source missing: {path}\")\n        raw = pd.read_parquet(\n            path,\n            engine=\"pyarrow\",\n            columns=list(RAW_ALLOWED_COLUMNS),\n            filters=[(\"timestamp\", \"<\", cutoff_value)],\n        )\n        frame, duplicate_count = normalize_raw_bars(raw)\n        frames[pair] = frame\n        duplicate_counts[pair] = duplicate_count\n        print(\n            f\"RD43_P2_RAW_SOURCE={index}/{len(pairs)}:\"\n            f\"{pair}:rows={len(frame)}:duplicates_removed={duplicate_count}:\"\n            f\"cutoff_exclusive={DATA_CUTOFF.isoformat()}\",\n            flush=True,\n        )\n    return frames, duplicate_counts",
+        "source_sha256": "6652ACF4BA7573AB096C1192AFC96275A4AF1970FF6007E9A2E6674C8B0294B5"
+      },
+      {
+        "function": "load_raw_frames",
+        "lineno": 274,
+        "path": "scripts/research/run_rd44_control_relative_dynamics.py",
+        "source": "def load_raw_frames(\n    *,\n    raw_root: Path,\n    pairs: list[str],\n) -> tuple[dict[str, pd.DataFrame], dict[str, int]]:\n    frames: dict[str, pd.DataFrame] = {}\n    duplicate_counts: dict[str, int] = {}\n    cutoff_value = DATA_CUTOFF.to_pydatetime()\n\n    for index, pair in enumerate(pairs, start=1):\n        path = raw_root / pair / \"1h.parquet\"\n        if not path.is_file():\n            raise RunnerError(f\"raw 1h source missing: {path}\")\n        raw = pd.read_parquet(\n            path,\n            engine=\"pyarrow\",\n            columns=list(RAW_ALLOWED_COLUMNS),\n            filters=[(\"timestamp\", \"<\", cutoff_value)],\n        )\n        frame, duplicate_count = normalize_raw_bars(raw)\n        frames[pair] = frame\n        duplicate_counts[pair] = duplicate_count\n        if index % 10 == 0 or index == len(pairs):\n            print(\n                f\"RD44_P2_RAW_LOAD_PROGRESS={index}/{len(pairs)}\",\n                flush=True,\n            )\n    return frames, duplicate_counts",
+        "source_sha256": "BD355980FA57E834926E77B85BECDC7999160889DC8E52D3BB4C9920B9B3E8F1"
+      },
+      {
+        "function": "raw_source_for_pair",
+        "lineno": 199,
+        "path": "scripts/research/run_rd45_market_participation_state.py",
+        "source": "def raw_source_for_pair(\n    *,\n    pair: str,\n    raw_root: Path,\n) -> tuple[dict[int, float] | None, dict[str, Any]]:\n    path = raw_root / pair / \"1h.parquet\"\n    record: dict[str, Any] = {\n        \"record_type\": \"PAIR_SOURCE\",\n        \"pair\": pair,\n        \"source_path\": str(path),\n        \"source_file_present\": path.is_file(),\n        \"raw_row_count_loaded\": 0,\n        \"minimum_timestamp_loaded\": \"\",\n        \"maximum_timestamp_loaded\": \"\",\n        \"q24_available_timestamp_count\": 0,\n        \"source_status\": \"MISSING_FILE\",\n    }\n    if not path.is_file():\n        return None, record\n\n    raw = pd.read_parquet(\n        path,\n        engine=\"pyarrow\",\n        columns=[\"timestamp\", \"close\", \"volume\"],\n        filters=[(\"timestamp\", \"<\", DATA_CUTOFF.to_pydatetime())],\n    )\n    if len(raw):\n        timestamps = pd.to_datetime(raw[\"timestamp\"], utc=True, errors=\"raise\")\n        if bool((timestamps >= DATA_CUTOFF).any()):\n            raise RunnerError(f\"2024+ raw row loaded for {pair}\")\n        record[\"raw_row_count_loaded\"] = int(len(raw))\n        record[\"minimum_timestamp_loaded\"] = as_iso(timestamps.min())\n        record[\"maximum_timestamp_loaded\"] = as_iso(timestamps.max())\n\n    lookup = build_q24_lookup(raw)\n    record[\"q24_available_timestamp_count\"] = int(len(lookup))\n    record[\"source_status\"] = \"READY\" if lookup else \"NO_VALID_Q24\"\n    return lookup, record",
+        "source_sha256": "516D306A7B61849524A885A297D4F1C2EB2241F32396027E6E70FD25BAD28233"
+      },
+      {
+        "function": "load_kucoin",
+        "lineno": 170,
+        "path": "scripts/research/run_rd46_cross_venue_return_disagreement.py",
+        "source": "def load_kucoin(repo: Path, symbol: str) -> tuple[dict[int, tuple[float, float]], dict[str, Any]]:\n    path = repo / KUCOIN_ROOT / symbol / \"1h.parquet\"\n    if not path.is_file():\n        raise RunnerError(f\"missing KuCoin source: {path}\")\n    raw = pd.read_parquet(\n        path,\n        engine=\"pyarrow\",\n        columns=[\"timestamp\", \"open\", \"close\"],\n        filters=[\n            (\"timestamp\", \">=\", DATA_START.to_pydatetime()),\n            (\"timestamp\", \"<\", DATA_CUTOFF.to_pydatetime()),\n        ],\n    )\n    ts = pd.to_datetime(raw[\"timestamp\"], utc=True, errors=\"raise\")\n    if bool((ts >= DATA_CUTOFF).any()):\n        raise RunnerError(f\"2024+ KuCoin row loaded: {symbol}\")\n    lookup = kucoin_hour_lookup(raw)\n    return lookup, {\n        \"record_type\": \"KUCOIN_SYMBOL\",\n        \"venue\": \"KUCOIN_SPOT\",\n        \"symbol\": symbol,\n        \"source_path\": str(path.relative_to(repo)),\n        \"loaded_row_count\": int(len(raw)),\n        \"valid_hour_count\": int(len(lookup)),\n        \"status\": \"READY\",\n    }",
+        "source_sha256": "634331E681592E067CB82730B1F3460AA32346ACD96B8F3460E51264D9CD1C99"
+      },
+      {
+        "function": "load_kucoin",
+        "lineno": 167,
+        "path": "scripts/research/run_rd47_cross_venue_candle_geometry.py",
+        "source": "def load_kucoin(\n    repo: Path, symbol: str\n) -> tuple[dict[int, tuple[float, float, float]], dict[str, Any]]:\n    path = repo / KUCOIN_ROOT / symbol / \"1h.parquet\"\n    if not path.is_file():\n        raise RunnerError(f\"missing KuCoin source: {path}\")\n    raw = pd.read_parquet(\n        path,\n        engine=\"pyarrow\",\n        columns=[\"timestamp\", \"high\", \"low\", \"close\"],\n        filters=[\n            (\"timestamp\", \">=\", DATA_START.to_pydatetime()),\n            (\"timestamp\", \"<\", DATA_CUTOFF.to_pydatetime()),\n        ],\n    )\n    ts = pd.to_datetime(raw[\"timestamp\"], utc=True, errors=\"raise\")\n    if bool((ts >= DATA_CUTOFF).any()):\n        raise RunnerError(f\"2024+ KuCoin row loaded: {symbol}\")\n    lookup = kucoin_hour_lookup(raw)\n    valid_geometry = sum(candle_geometry(v) is not None for v in lookup.values())\n    return lookup, {\n        \"record_type\": \"KUCOIN_SYMBOL\",\n        \"venue\": \"KUCOIN_SPOT\",\n        \"symbol\": symbol,\n        \"source_path\": str(path.relative_to(repo)),\n        \"loaded_row_count\": int(len(raw)),\n        \"available_hour_count\": int(len(lookup)),\n        \"geometry_valid_hour_count\": int(valid_geometry),\n        \"geometry_invalid_hour_count\": int(len(lookup) - valid_geometry),\n        \"status\": \"READY\",\n    }",
+        "source_sha256": "89A949C255F7867F82CA0494829EC0ED124765F9DB0107890F7DF1F7A8C0C6BD"
+      },
+      {
+        "function": "load_kucoin",
+        "lineno": 206,
+        "path": "scripts/research/run_rd48_cross_venue_price_level_basis.py",
+        "source": "def load_kucoin(\n    repo: Path,\n    symbol: str,\n) -> tuple[dict[int, float], dict[str, Any]]:\n    path = repo / KUCOIN_ROOT / symbol / \"1h.parquet\"\n    if not path.is_file():\n        raise RunnerError(f\"missing KuCoin source: {path}\")\n\n    raw = pd.read_parquet(\n        path,\n        engine=\"pyarrow\",\n        columns=[\"timestamp\", \"close\"],\n        filters=[\n            (\"timestamp\", \">=\", DATA_START.to_pydatetime()),\n            (\"timestamp\", \"<\", DATA_CUTOFF.to_pydatetime()),\n        ],\n    )\n\n    ts = pd.to_datetime(raw[\"timestamp\"], utc=True, errors=\"raise\")\n    if bool((ts >= DATA_CUTOFF).any()):\n        raise RunnerError(f\"2024+ KuCoin row loaded: {symbol}\")\n\n    lookup = kucoin_hour_lookup(raw)\n    return lookup, {\n        \"record_type\": \"KUCOIN_SYMBOL\",\n        \"venue\": \"KUCOIN_SPOT\",\n        \"symbol\": symbol,\n        \"source_path\": str(path.relative_to(repo)),\n        \"loaded_row_count\": int(len(raw)),\n        \"available_valid_close_hour_count\": int(len(lookup)),\n        \"status\": \"READY\",\n    }",
+        "source_sha256": "8C9A41947F5B8C2F71A31FFD81E2FF0E95D4208C4E89D86DD82008B0F8D35E8F"
+      },
+      {
+        "function": "_load",
+        "lineno": 396,
+        "path": "src/spotbot/research/rd18_p3e_sensitivity.py",
+        "source": "    def _load(self, pair: str) -> pd.DatetimeIndex:\n        if pair not in self.generated:\n            raise SensitivityError(f\"readiness pair is not GENERATED: {pair}\")\n        symbol = self.symbol_by_pair.get(pair)\n        if symbol is None:\n            raise SensitivityError(f\"readiness pair lacks symbol mapping: {pair}\")\n        frames: dict[str, pd.DataFrame] = {}\n        for timeframe in TIMEFRAMES:\n            path = self.store.dataset_path(\n                exchange_id=\"kucoin\",\n                symbol=symbol,\n                timeframe=timeframe,\n            )\n            metadata_path = self.store.metadata_path(path)\n            if not path.is_file() or not metadata_path.is_file():\n                raise SensitivityError(f\"readiness source missing: {pair}:{timeframe}\")\n            metadata = json_load(metadata_path)\n            expected = metadata.get(\"sha256\")\n            if not isinstance(expected, str):\n                raise SensitivityError(f\"readiness metadata SHA missing: {pair}:{timeframe}\")\n            if self._sha256(path) != expected:\n                raise SensitivityError(f\"readiness source hash mismatch: {pair}:{timeframe}\")\n            frame = pd.read_parquet(\n                str(path),\n                engine=\"pyarrow\",\n                filters=[\n                    (\n                        \"timestamp\",\n                        \"<\",\n                        SEALED_CUTOFF.to_pydatetime(),\n                    )\n                ],\n            )\n            frame[\"timestamp\"] = pd.to_datetime(\n                frame[\"timestamp\"],\n                utc=True,\n                errors=\"raise\",\n            ).astype(\"datetime64[ns, UTC]\")\n            if bool((frame[\"timestamp\"] >= SEALED_CUTOFF).any()):\n                raise SensitivityError(\n                    f\"post-2024 readiness row entered memory: {pair}:{timeframe}\"\n                )\n            frames[timeframe] = frame.sort_values(\n                \"timestamp\",\n                kind=\"stable\",\n            ).reset_index(drop=True)\n        try:\n            feature = build_feature_frame(frames, symbol=symbol)\n        except FeatureDataError as exc:\n            raise SensitivityError(f\"cannot build readiness features: {pair}: {exc}\") from exc\n        completed = pd.DatetimeIndex(\n            pd.to_datetime(\n                feature[\"timestamp\"],\n                utc=True,\n                errors=\"raise\",\n            )\n        )\n        completed = completed[\n            (completed >= PRIMARY_START) & (completed < SEALED_CUTOFF)\n        ].sort_values()\n        if completed.has_duplicates:\n            raise SensitivityError(f\"readiness feature times duplicate: {pair}\")\n        self._completed[pair] = completed\n        return completed",
+        "source_sha256": "79AD3DED7787AC7E574AC94EA3592C3976959EF45F4698ED4D8F34226F86D763"
+      },
+      {
+        "function": "get_symbol",
+        "lineno": 328,
+        "path": "src/spotbot/research/rd18_p3e_sensitivity.py",
+        "source": "    def get_symbol(self, symbol: str) -> pd.DataFrame:\n        cached = self._frames.get(symbol)\n        if cached is not None:\n            return cached\n        path = self.store.dataset_path(\n            exchange_id=\"kucoin\",\n            symbol=symbol,\n            timeframe=\"1h\",\n        )\n        metadata_path = self.store.metadata_path(path)\n        if not path.is_file() or not metadata_path.is_file():\n            raise SensitivityError(f\"sealed 1h source or metadata missing: {symbol}\")\n        metadata = json_load(metadata_path)\n        expected = metadata.get(\"sha256\")\n        if not isinstance(expected, str):\n            raise SensitivityError(f\"sealed 1h metadata SHA missing: {symbol}\")\n        if self._sha256(path) != expected:\n            raise SensitivityError(f\"sealed 1h source hash mismatch: {symbol}\")\n        frame = pd.read_parquet(\n            str(path),\n            engine=\"pyarrow\",\n            filters=[\n                (\n                    \"timestamp\",\n                    \"<\",\n                    SEALED_CUTOFF.to_pydatetime(),\n                )\n            ],\n        )\n        normalized = normalize_hourly_bars(frame)\n        self._frames[symbol] = normalized\n        return normalized",
+        "source_sha256": "79AD3DED7787AC7E574AC94EA3592C3976959EF45F4698ED4D8F34226F86D763"
+      }
+    ],
+    "classification": "FILTER_AT_PARQUET_READ_LITERAL_EVIDENCE_PRESENT",
+    "source_gap_evidence_sha256": "64D17011F4DFB8CC1A77EEF3E6D501D3F2FB92C0038C1DFF62F9C90C558B517B",
+    "source_gap_independent_evidence_present": true
+  },
+  "protocol_contract": {
+    "2023_follow_into_2024": false,
+    "abc_protocol_sha256": "0D33547991D394C3CDEF1F03500EFD49DCEE1E8FEF41C8BD02007792CBFA3BD1",
+    "abc_source_sha256": "B04F4EA4E95A1DA324036C14C5889F334702A30D0AF5AA66C4B7F6993C8395B2",
+    "abc_test_sha256": "793AAA6E7E85E6D256B1C8F92A04E6AA224D34D27BA6C54D00D4B6DDE395EBE3",
+    "allowed_market_data": "PRE2024_ONLY_USING_ALREADY_PROVEN_TEMPORAL_SOURCE_AUTHORITY",
+    "annual_admission_rule": "entry_time>=Y_start AND entry_time+168h<Y_end",
+    "control_trades_bound_by_lsm": true,
+    "implementation_module_sha256": "EEBB00249D549C6354A79228D5E674890FA25203469530FFD3E3E1FF8C9E7F81",
+    "implementation_test_sha256": "9060BEF7B400B0A6FCE79D3DE0E56060FD51FD735E55FE1597E596266C12CBE3",
+    "indicator_series_continuous_from_frozen_T0": true,
+    "indicator_series_do_not_reset_at_year": true,
+    "lsm_protocol_sha256": "A628F07CE417339B1547BC8C1E1E9AD9D8360451CD0996E366C9C474A3167B0F",
+    "materialization_exact_14059_decision_rows": true,
+    "observability_protocol_sha256": "9DA4404781476E07D42F421BB422B44D2A24553E86E6C8E674D4A270BB764D7F",
+    "pre2019_warmup_allowed_for_indicators_no_trades_or_pnl": true,
+    "reconstruction_protocol_sha256": "080B99D1FCB534CEBF8C32E1E8D34A41B750D6EAA9DD9A5402DC8A1E392838AF",
+    "trace_canonical_sha256": "48FE5760D7975FF6EA652CCEE62905CF456A2532B8EBE7F37305A21A1720DF45",
+    "zero_decision_lifecycles_population_summary_only": true
+  },
+  "raw_footer_schema_authority": {
+    "all_files_present": true,
+    "all_required_schemas_present": true,
+    "files": [
+      {
+        "num_rows_footer_metadata": 48182,
+        "pair": "ADA-USDT",
+        "path": "data/raw/rd16b/kucoin/ADA-USDT/1h.parquet",
+        "row_groups": 1,
+        "schema_names": [
+          "timestamp",
+          "open",
+          "high",
+          "low",
+          "close",
+          "volume"
+        ],
+        "size_bytes": 2538961,
+        "timestamp_stats": {
+          "available": true,
+          "maximum": "2025-01-01 00:00:00+00:00",
+          "minimum": "2019-07-04 11:00:00+00:00"
+        }
+      },
+      {
+        "num_rows_footer_metadata": 49166,
+        "pair": "ATOM-USDT",
+        "path": "data/raw/rd16b/kucoin/ATOM-USDT/1h.parquet",
+        "row_groups": 1,
+        "schema_names": [
+          "timestamp",
+          "open",
+          "high",
+          "low",
+          "close",
+          "volume"
+        ],
+        "size_bytes": 2224986,
+        "timestamp_stats": {
+          "available": true,
+          "maximum": "2025-01-01 00:00:00+00:00",
+          "minimum": "2019-05-24 11:00:00+00:00"
+        }
+      },
+      {
+        "num_rows_footer_metadata": 33542,
+        "pair": "AVAX-USDT",
+        "path": "data/raw/rd16b/kucoin/AVAX-USDT/1h.parquet",
+        "row_groups": 1,
+        "schema_names": [
+          "timestamp",
+          "open",
+          "high",
+          "low",
+          "close",
+          "volume"
+        ],
+        "size_bytes": 1302735,
+        "timestamp_stats": {
+          "available": true,
+          "maximum": "2025-01-01 00:00:00+00:00",
+          "minimum": "2021-03-05 11:00:00+00:00"
+        }
+      },
+      {
+        "num_rows_footer_metadata": 48542,
+        "pair": "BNB-USDT",
+        "path": "data/raw/rd16b/kucoin/BNB-USDT/1h.parquet",
+        "row_groups": 1,
+        "schema_names": [
+          "timestamp",
+          "open",
+          "high",
+          "low",
+          "close",
+          "volume"
+        ],
+        "size_bytes": 2008383,
+        "timestamp_stats": {
+          "available": true,
+          "maximum": "2025-01-01 00:00:00+00:00",
+          "minimum": "2019-06-19 11:00:00+00:00"
+        }
+      },
+      {
+        "num_rows_footer_metadata": 52608,
+        "pair": "BTC-USDT",
+        "path": "data/raw/rd16b/kucoin/BTC-USDT/1h.parquet",
+        "row_groups": 1,
+        "schema_names": [
+          "timestamp",
+          "open",
+          "high",
+          "low",
+          "close",
+          "volume"
+        ],
+        "size_bytes": 2325503,
+        "timestamp_stats": {
+          "available": true,
+          "maximum": "2025-01-01 00:00:00+00:00",
+          "minimum": "2019-01-01 01:00:00+00:00"
+        }
+      },
+      {
+        "num_rows_footer_metadata": 34125,
+        "pair": "DOGE-USDT",
+        "path": "data/raw/rd16b/kucoin/DOGE-USDT/1h.parquet",
+        "row_groups": 1,
+        "schema_names": [
+          "timestamp",
+          "open",
+          "high",
+          "low",
+          "close",
+          "volume"
+        ],
+        "size_bytes": 1353718,
+        "timestamp_stats": {
+          "available": true,
+          "maximum": "2025-01-01 00:00:00+00:00",
+          "minimum": "2021-02-09 04:00:00+00:00"
+        }
+      },
+      {
+        "num_rows_footer_metadata": 38239,
+        "pair": "DOT-USDT",
+        "path": "data/raw/rd16b/kucoin/DOT-USDT/1h.parquet",
+        "row_groups": 1,
+        "schema_names": [
+          "timestamp",
+          "open",
+          "high",
+          "low",
+          "close",
+          "volume"
+        ],
+        "size_bytes": 1710262,
+        "timestamp_stats": {
+          "available": true,
+          "maximum": "2025-01-01 00:00:00+00:00",
+          "minimum": "2020-08-21 18:00:00+00:00"
+        }
+      },
+      {
+        "num_rows_footer_metadata": 52608,
+        "pair": "ETH-USDT",
+        "path": "data/raw/rd16b/kucoin/ETH-USDT/1h.parquet",
+        "row_groups": 1,
+        "schema_names": [
+          "timestamp",
+          "open",
+          "high",
+          "low",
+          "close",
+          "volume"
+        ],
+        "size_bytes": 2215326,
+        "timestamp_stats": {
+          "available": true,
+          "maximum": "2025-01-01 00:00:00+00:00",
+          "minimum": "2019-01-01 01:00:00+00:00"
+        }
+      },
+      {
+        "num_rows_footer_metadata": 19118,
+        "pair": "GRAM-USDT",
+        "path": "data/raw/rd16b/kucoin/GRAM-USDT/1h.parquet",
+        "row_groups": 1,
+        "schema_names": [
+          "timestamp",
+          "open",
+          "high",
+          "low",
+          "close",
+          "volume"
+        ],
+        "size_bytes": 770974,
+        "timestamp_stats": {
+          "available": true,
+          "maximum": "2025-01-01 00:00:00+00:00",
+          "minimum": "2022-10-27 11:00:00+00:00"
+        }
+      },
+      {
+        "num_rows_footer_metadata": 28046,
+        "pair": "INJ-USDT",
+        "path": "data/raw/rd16b/kucoin/INJ-USDT/1h.parquet",
+        "row_groups": 1,
+        "schema_names": [
+          "timestamp",
+          "open",
+          "high",
+          "low",
+          "close",
+          "volume"
+        ],
+        "size_bytes": 980018,
+        "timestamp_stats": {
+          "available": true,
+          "maximum": "2025-01-01 00:00:00+00:00",
+          "minimum": "2021-10-20 11:00:00+00:00"
+        }
+      },
+      {
+        "num_rows_footer_metadata": 27880,
+        "pair": "JASMY-USDT",
+        "path": "data/raw/rd16b/kucoin/JASMY-USDT/1h.parquet",
+        "row_groups": 1,
+        "schema_names": [
+          "timestamp",
+          "open",
+          "high",
+          "low",
+          "close",
+          "volume"
+        ],
+        "size_bytes": 1106597,
+        "timestamp_stats": {
+          "available": true,
+          "maximum": "2025-01-01 00:00:00+00:00",
+          "minimum": "2021-10-27 09:00:00+00:00"
+        }
+      },
+      {
+        "num_rows_footer_metadata": 14534,
+        "pair": "KAS-USDT",
+        "path": "data/raw/rd16b/kucoin/KAS-USDT/1h.parquet",
+        "row_groups": 1,
+        "schema_names": [
+          "timestamp",
+          "open",
+          "high",
+          "low",
+          "close",
+          "volume"
+        ],
+        "size_bytes": 628251,
+        "timestamp_stats": {
+          "available": true,
+          "maximum": "2025-01-01 00:00:00+00:00",
+          "minimum": "2023-05-06 11:00:00+00:00"
+        }
+      },
+      {
+        "num_rows_footer_metadata": 52607,
+        "pair": "KCS-USDT",
+        "path": "data/raw/rd16b/kucoin/KCS-USDT/1h.parquet",
+        "row_groups": 1,
+        "schema_names": [
+          "timestamp",
+          "open",
+          "high",
+          "low",
+          "close",
+          "volume"
+        ],
+        "size_bytes": 2047225,
+        "timestamp_stats": {
+          "available": true,
+          "maximum": "2025-01-01 00:00:00+00:00",
+          "minimum": "2019-01-01 02:00:00+00:00"
+        }
+      },
+      {
+        "num_rows_footer_metadata": 38270,
+        "pair": "LINK-USDT",
+        "path": "data/raw/rd16b/kucoin/LINK-USDT/1h.parquet",
+        "row_groups": 1,
+        "schema_names": [
+          "timestamp",
+          "open",
+          "high",
+          "low",
+          "close",
+          "volume"
+        ],
+        "size_bytes": 1746808,
+        "timestamp_stats": {
+          "available": true,
+          "maximum": "2025-01-01 00:00:00+00:00",
+          "minimum": "2020-08-20 11:00:00+00:00"
+        }
+      },
+      {
+        "num_rows_footer_metadata": 52608,
+        "pair": "LTC-USDT",
+        "path": "data/raw/rd16b/kucoin/LTC-USDT/1h.parquet",
+        "row_groups": 1,
+        "schema_names": [
+          "timestamp",
+          "open",
+          "high",
+          "low",
+          "close",
+          "volume"
+        ],
+        "size_bytes": 2212089,
+        "timestamp_stats": {
+          "available": true,
+          "maximum": "2025-01-01 00:00:00+00:00",
+          "minimum": "2019-01-01 01:00:00+00:00"
+        }
+      },
+      {
+        "num_rows_footer_metadata": 22807,
+        "pair": "LUNC-USDT",
+        "path": "data/raw/rd16b/kucoin/LUNC-USDT/1h.parquet",
+        "row_groups": 1,
+        "schema_names": [
+          "timestamp",
+          "open",
+          "high",
+          "low",
+          "close",
+          "volume"
+        ],
+        "size_bytes": 935137,
+        "timestamp_stats": {
+          "available": true,
+          "maximum": "2025-01-01 00:00:00+00:00",
+          "minimum": "2022-05-26 18:00:00+00:00"
+        }
+      },
+      {
+        "num_rows_footer_metadata": 33256,
+        "pair": "MANA-USDT",
+        "path": "data/raw/rd16b/kucoin/MANA-USDT/1h.parquet",
+        "row_groups": 1,
+        "schema_names": [
+          "timestamp",
+          "open",
+          "high",
+          "low",
+          "close",
+          "volume"
+        ],
+        "size_bytes": 1644890,
+        "timestamp_stats": {
+          "available": true,
+          "maximum": "2025-01-01 00:00:00+00:00",
+          "minimum": "2021-03-17 09:00:00+00:00"
+        }
+      },
+      {
+        "num_rows_footer_metadata": 30518,
+        "pair": "NEAR-USDT",
+        "path": "data/raw/rd16b/kucoin/NEAR-USDT/1h.parquet",
+        "row_groups": 1,
+        "schema_names": [
+          "timestamp",
+          "open",
+          "high",
+          "low",
+          "close",
+          "volume"
+        ],
+        "size_bytes": 1334378,
+        "timestamp_stats": {
+          "available": true,
+          "maximum": "2025-01-01 00:00:00+00:00",
+          "minimum": "2021-07-09 11:00:00+00:00"
+        }
+      },
+      {
+        "num_rows_footer_metadata": 52607,
+        "pair": "NEO-USDT",
+        "path": "data/raw/rd16b/kucoin/NEO-USDT/1h.parquet",
+        "row_groups": 1,
+        "schema_names": [
+          "timestamp",
+          "open",
+          "high",
+          "low",
+          "close",
+          "volume"
+        ],
+        "size_bytes": 2445343,
+        "timestamp_stats": {
+          "available": true,
+          "maximum": "2025-01-01 00:00:00+00:00",
+          "minimum": "2019-01-01 02:00:00+00:00"
+        }
+      },
+      {
+        "num_rows_footer_metadata": 22687,
+        "pair": "OP-USDT",
+        "path": "data/raw/rd16b/kucoin/OP-USDT/1h.parquet",
+        "row_groups": 1,
+        "schema_names": [
+          "timestamp",
+          "open",
+          "high",
+          "low",
+          "close",
+          "volume"
+        ],
+        "size_bytes": 599953,
+        "timestamp_stats": {
+          "available": true,
+          "maximum": "2025-01-01 00:00:00+00:00",
+          "minimum": "2022-05-31 18:00:00+00:00"
+        }
+      },
+      {
+        "num_rows_footer_metadata": 32894,
+        "pair": "SAND-USDT",
+        "path": "data/raw/rd16b/kucoin/SAND-USDT/1h.parquet",
+        "row_groups": 1,
+        "schema_names": [
+          "timestamp",
+          "open",
+          "high",
+          "low",
+          "close",
+          "volume"
+        ],
+        "size_bytes": 1646324,
+        "timestamp_stats": {
+          "available": true,
+          "maximum": "2025-01-01 00:00:00+00:00",
+          "minimum": "2021-04-01 11:00:00+00:00"
+        }
+      },
+      {
+        "num_rows_footer_metadata": 31961,
+        "pair": "SHIB-USDT",
+        "path": "data/raw/rd16b/kucoin/SHIB-USDT/1h.parquet",
+        "row_groups": 1,
+        "schema_names": [
+          "timestamp",
+          "open",
+          "high",
+          "low",
+          "close",
+          "volume"
+        ],
+        "size_bytes": 1195953,
+        "timestamp_stats": {
+          "available": true,
+          "maximum": "2025-01-01 00:00:00+00:00",
+          "minimum": "2021-05-10 08:00:00+00:00"
+        }
+      },
+      {
+        "num_rows_footer_metadata": 29894,
+        "pair": "SOL-USDT",
+        "path": "data/raw/rd16b/kucoin/SOL-USDT/1h.parquet",
+        "row_groups": 1,
+        "schema_names": [
+          "timestamp",
+          "open",
+          "high",
+          "low",
+          "close",
+          "volume"
+        ],
+        "size_bytes": 1265932,
+        "timestamp_stats": {
+          "available": true,
+          "maximum": "2025-01-01 00:00:00+00:00",
+          "minimum": "2021-08-04 11:00:00+00:00"
+        }
+      },
+      {
+        "num_rows_footer_metadata": 52608,
+        "pair": "TRX-USDT",
+        "path": "data/raw/rd16b/kucoin/TRX-USDT/1h.parquet",
+        "row_groups": 1,
+        "schema_names": [
+          "timestamp",
+          "open",
+          "high",
+          "low",
+          "close",
+          "volume"
+        ],
+        "size_bytes": 2445976,
+        "timestamp_stats": {
+          "available": true,
+          "maximum": "2025-01-01 00:00:00+00:00",
+          "minimum": "2019-01-01 01:00:00+00:00"
+        }
+      },
+      {
+        "num_rows_footer_metadata": 52608,
+        "pair": "VET-USDT",
+        "path": "data/raw/rd16b/kucoin/VET-USDT/1h.parquet",
+        "row_groups": 1,
+        "schema_names": [
+          "timestamp",
+          "open",
+          "high",
+          "low",
+          "close",
+          "volume"
+        ],
+        "size_bytes": 2688484,
+        "timestamp_stats": {
+          "available": true,
+          "maximum": "2025-01-01 00:00:00+00:00",
+          "minimum": "2019-01-01 01:00:00+00:00"
+        }
+      },
+      {
+        "num_rows_footer_metadata": 33088,
+        "pair": "XMR-USDT",
+        "path": "data/raw/rd16b/kucoin/XMR-USDT/1h.parquet",
+        "row_groups": 1,
+        "schema_names": [
+          "timestamp",
+          "open",
+          "high",
+          "low",
+          "close",
+          "volume"
+        ],
+        "size_bytes": 1030579,
+        "timestamp_stats": {
+          "available": true,
+          "maximum": "2025-01-01 00:00:00+00:00",
+          "minimum": "2021-03-24 09:00:00+00:00"
+        }
+      },
+      {
+        "num_rows_footer_metadata": 52608,
+        "pair": "XRP-USDT",
+        "path": "data/raw/rd16b/kucoin/XRP-USDT/1h.parquet",
+        "row_groups": 1,
+        "schema_names": [
+          "timestamp",
+          "open",
+          "high",
+          "low",
+          "close",
+          "volume"
+        ],
+        "size_bytes": 2473870,
+        "timestamp_stats": {
+          "available": true,
+          "maximum": "2025-01-01 00:00:00+00:00",
+          "minimum": "2019-01-01 01:00:00+00:00"
+        }
+      },
+      {
+        "num_rows_footer_metadata": 48325,
+        "pair": "XTZ-USDT",
+        "path": "data/raw/rd16b/kucoin/XTZ-USDT/1h.parquet",
+        "row_groups": 1,
+        "schema_names": [
+          "timestamp",
+          "open",
+          "high",
+          "low",
+          "close",
+          "volume"
+        ],
+        "size_bytes": 2309460,
+        "timestamp_stats": {
+          "available": true,
+          "maximum": "2025-01-01 00:00:00+00:00",
+          "minimum": "2019-06-28 12:00:00+00:00"
+        }
+      }
+    ],
+    "footer_schema_metadata_only": true,
+    "market_rows_read": false,
+    "pair_count": 28,
+    "raw_root": "data/raw/rd16b/kucoin",
+    "required_columns": [
+      "timestamp",
+      "open",
+      "high",
+      "low",
+      "close",
+      "volume"
+    ]
+  },
+  "schema_version": "abc-persistent-state-causal-feature-reconstruction-execution-preflight-v2",
+  "source_head": "b8017564f383a5f0b0f91f4b4b6bafc22d436547",
+  "status": "PASS_PRE_BEGIN_EXECUTION_PREFLIGHT_V2",
+  "trace_population_contract": {
+    "decision_grid_row_count": 14059,
+    "decision_identity_unique": true,
+    "decision_represented_lifecycles": 1782,
+    "decision_times_on_utc_4h_boundaries": true,
+    "decision_times_strictly_increasing_within_lifecycle": true,
+    "decision_times_within_entry_native_exit": true,
+    "memory_lifecycle_sets_equal": true,
+    "memory_observed_lifecycle_count": 1270,
+    "pair_count": 28,
+    "pairs": [
+      "ADA-USDT",
+      "ATOM-USDT",
+      "AVAX-USDT",
+      "BNB-USDT",
+      "BTC-USDT",
+      "DOGE-USDT",
+      "DOT-USDT",
+      "ETH-USDT",
+      "GRAM-USDT",
+      "INJ-USDT",
+      "JASMY-USDT",
+      "KAS-USDT",
+      "KCS-USDT",
+      "LINK-USDT",
+      "LTC-USDT",
+      "LUNC-USDT",
+      "MANA-USDT",
+      "NEAR-USDT",
+      "NEO-USDT",
+      "OP-USDT",
+      "SAND-USDT",
+      "SHIB-USDT",
+      "SOL-USDT",
+      "TRX-USDT",
+      "VET-USDT",
+      "XMR-USDT",
+      "XRP-USDT",
+      "XTZ-USDT"
+    ],
+    "partition_equation": "1782+238=2020",
+    "per_lifecycle_decision_row_count_matches_summary": true,
+    "represented_equals_positive_eligible_set": true,
+    "signal_counts": {
+      "A": 135,
+      "B": 31,
+      "C": 74
+    },
+    "total_control_lifecycles": 2020,
+    "zero_duration_lifecycle_count": 30,
+    "zero_eligible_absent_from_decision_grid": true,
+    "zero_eligible_lifecycles": 238
+  }
+}

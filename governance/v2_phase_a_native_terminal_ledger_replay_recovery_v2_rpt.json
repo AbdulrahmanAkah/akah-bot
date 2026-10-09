@@ -1,0 +1,39 @@
+{
+  "authority_bindings": {},
+  "branch": "research/rd48-cross-venue-price-level-basis-direct-utility-v1",
+  "evidence": [
+    {
+      "path": "governance/v2_phase_a_native_terminal_ledger_replay_recovery_v2/accepted_binding_evidence.json",
+      "sha256": "CF5E991DD74A8E91D5194D646D112F1CFC8439103774A87C405F331C6307E044"
+    }
+  ],
+  "firewall": {
+    "economics": false,
+    "heuristic_producer_selection": false,
+    "main_repo_source_mutation": false,
+    "network": false,
+    "outcome_fields_read_from_control": false,
+    "pnl": false,
+    "protected_years": false,
+    "push": false,
+    "temporary_worktree_instrumentation": true
+  },
+  "governed_schema_version": "akah-provenance-phase-governed-v1",
+  "next_bottleneck": "CAUSAL_EXIT_BRAIN_V2_PHASE_A_HISTORICAL_PRODUCER_EXECUTABLE_AUTHORITY_DECISION_V1",
+  "north_star_effect": "Preserves the distinction between recovered historical provenance and a newly chosen runner. No executable will be selected by filename similarity, score, or current-code plausibility.",
+  "objective": "Resolve the executable historical producer strictly from the one accepted historical binding without heuristic scoring. If and only if one executable contract is explicitly bound, execute that historical producer in an isolated detached worktree and recover the 33 native terminal boundaries.",
+  "resolution_class": "HISTORICAL_PRODUCER_EXECUTABLE_AUTHORITY_NOT_BOUND",
+  "state_updates": {
+    "actual_exit_authority": false,
+    "economics_authorized": false,
+    "heuristic_producer_selection": false,
+    "v2_phase_a_historical_executable_authority": "NOT_BOUND",
+    "v2_phase_a_native_recertified": false,
+    "v2_phase_a_native_terminal_ledger": "NOT_CERTIFIED"
+  },
+  "status": "FAIL_CLOSED",
+  "summary": "Recovery V2 failed closed before any unbound executable was run: AuthorityGap:NO_EXPLICIT_EXECUTABLE_AUTHORITY_IN_ACCEPTED_BINDING",
+  "task_id": "CAUSAL_EXIT_BRAIN_V2_PHASE_A_NATIVE_TERMINAL_LEDGER_REPLAY_RECOVERY_V2",
+  "task_start_head": "7264c2ca2f77c76f86cf2935145a3a1525a86f38",
+  "task_start_revision": 190
+}

@@ -1,0 +1,20 @@
+{
+  "authority_id": "AKAH_BOT_MIXED_SIGNAL_NINE_OCCURRENCE_ROLE_CLASSIFICATION_V1",
+  "mixed_signal_path": "data/research/rd26_p1_runtime/signal-events-2022-2023.csv",
+  "mixed_signal_sha256": "6462F576CEE9681751368A7755D3CA51EBF945CED54EA7B7F18B47BC469BA725",
+  "occurrence_count": 9,
+  "true_producer_occurrence_count": 1,
+  "protected_year_rows_read": false,
+  "occurrences": [
+    {"ordinal": 1, "path": "scripts/research/run_rd27_lifecycle_ablation.py", "line": 66, "role": "REFERENCE_ONLY", "detail": "RD26_SIGNAL_EVENTS path constant consumed by loader; not a writer."},
+    {"ordinal": 2, "path": "scripts/research/run_rd28_evidence_gated_lifecycle.py", "line": 74, "role": "REFERENCE_ONLY", "detail": "Downstream signal path constant; not a writer."},
+    {"ordinal": 3, "path": "scripts/research/run_rd29_thesis_confidence_lifecycle.py", "line": 79, "role": "REFERENCE_ONLY", "detail": "Downstream signal path constant; not a writer."},
+    {"ordinal": 4, "path": "scripts/research/run_rd30_family_specialist_replacement_aware.py", "line": 91, "role": "REFERENCE_ONLY", "detail": "Downstream signal path constant; not a writer."},
+    {"ordinal": 5, "path": "scripts/research/run_rd31_market_regime_admission_governor.py", "line": 117, "role": "REFERENCE_ONLY", "detail": "Downstream signal path constant; not a writer."},
+    {"ordinal": 6, "path": "scripts/research/run_rd41_full_risk_set_censoring_reconciliation.py", "line": 105, "role": "REFERENCE_ONLY", "detail": "Downstream signal path constant; not a writer."},
+    {"ordinal": 7, "path": "scripts/research/run_rd26_exit_architecture.py", "line": 60, "role": "REFERENCE_ONLY", "detail": "RD23_SIGNAL_EVENTS preflight reference; not the mixed output writer."},
+    {"ordinal": 8, "path": "scripts/research/run_rd26_exit_architecture.py", "line": 543, "role": "VALIDATOR_READBACK", "detail": "validate_outputs reads the already-created mixed output to validate timestamps; it does not produce it."},
+    {"ordinal": 9, "path": "scripts/research/run_rd26_exit_architecture.py", "line": 651, "role": "TRUE_PRODUCER_WRITER", "detail": "main writes events.to_csv(output / signal-events-2022-2023.csv)."}
+  ],
+  "role_decision": "Only occurrence 9 is the mixed signal artifact writer; occurrence 7 is a preflight equivalence reference to the older RD23 artifact, not an upstream producer of the mixed file."
+}

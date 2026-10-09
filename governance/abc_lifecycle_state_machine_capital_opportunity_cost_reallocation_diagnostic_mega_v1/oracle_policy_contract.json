@@ -1,0 +1,21 @@
+{
+  "D06_semantics": "Absolute Oracle Ceiling / outer theoretical ruler only",
+  "candidate_future_value": "candidate notional carried from current entry open to frozen H0 exit after future exit cost; censored candidates carried to cutoff mark",
+  "canonical_constraints_preserved": [
+    "BINARY_VOL",
+    "POSITION_WEIGHT_CAP",
+    "PER_POSITION_RISK_BUDGET",
+    "MAX_POSITIONS",
+    "HOUR_PARTICIPATION",
+    "DAY_PARTICIPATION",
+    "MIN_NOTIONAL",
+    "transaction_costs"
+  ],
+  "future_information_used_for_runtime_rule": false,
+  "incumbent_hold_value": "current quantity carried to frozen H0 structural exit after future exit cost; censored positions carried to cutoff mark",
+  "normal_action_in_full_reallocation": "includes the candidate's canonical normal entry when it is already fundable, so replacement must beat that action rather than a zero-entry strawman",
+  "replacement_decision": "replace only when projected local terminal wealth is strictly greater than the frozen normal action",
+  "schema_version": "akah-capital-oracle-policy-contract-v1",
+  "sell_now_value": "current open gross value less current exit cost",
+  "status": "DIAGNOSTIC_ONLY"
+}

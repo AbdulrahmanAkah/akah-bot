@@ -1,0 +1,114 @@
+{
+  "authority_id": "AKAH_BOT_RD27_NATIVE_TERMINAL_SOURCE_AUTHORITY_V1",
+  "schema_version": "akah-rd27-native-terminal-source-authority-v1",
+  "status": "PASS",
+  "authority_scope": "Source contract for non-delegated RD27 replay terminal transitions; not a certificate of 33 historical terminal events",
+  "rd27_replay_path": "src/spotbot/research/rd27_lifecycle_replay.py",
+  "rd27_replay_sha256": "E3944A4655DDDF21C394FE1DB541F2645F529C00BD8390B22D652BD8EF5BBF83",
+  "terminal_function": "replay_lifecycle_policy",
+  "native_terminal_helper": "_close_position",
+  "native_transition_authority": "Native decision control flow and positions[pair] deletion; neither shadow candidate nor observer return value is an authority",
+  "supported_policies": [
+    "ADAPTIVE_EXIT_FIXED_CAPITAL",
+    "STATIC_EXIT_STATE_ROUTER",
+    "FULL_ADAPTIVE_LIFECYCLE_BRAIN"
+  ],
+  "delegation_exception": {
+    "policy": "CONTROL_TIME_FAIL_72_FIXED_CAPITAL",
+    "lines": [326, 346],
+    "callee": "rd26_replay_policy",
+    "meaning": "Returns before RD27 loop; the two V2 hook close sites do not observe this policy. CONTROL roster metadata alone must not choose this or any other RD27 policy."
+  },
+  "terminal_paths": [
+    {
+      "path_id": "RD27_EXISTING_POSITION_NATIVE_TERMINATION",
+      "scope_lines": [442, 522],
+      "decision": "Adaptive ExitDecision.should_exit at lines 467-487 or frozen static max-hold/time-failure branches at lines 490-498",
+      "close_branch": "if exit_price is not None and exit_reason is not None",
+      "native_close_helper_call_line": 501,
+      "observer_call_line": 518,
+      "removal_line": 521,
+      "removal_statement": "del positions[pair]",
+      "shadow_role": "Existing-position observe callback precedes native decision; no callback return is consumed."
+    },
+    {
+      "path_id": "RD27_ENTRY_BAR_NATIVE_TERMINATION",
+      "scope_lines": [656, 708],
+      "decision": "evaluate_adaptive_exit followed by if decision.should_exit",
+      "native_close_helper_call_line": 686,
+      "observer_call_line": 703,
+      "removal_line": 706,
+      "removal_statement": "del positions[pair]",
+      "shadow_role": "Native admission and sync occur before entry-bar decision; close observer does not cause termination."
+    }
+  ],
+  "decision_authority": {
+    "path": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+    "sha256": "A2C0B25B0053CEEF1AA5C3AC5DB1442C1DCF333845F7345FB1F80A9AD3E1290E",
+    "function": "evaluate_adaptive_exit",
+    "lines": [549, 630],
+    "priority_order": ["MAX_HOLD", "PROTECTION_GAP", "STAGNATION", "PROTECTION_TOUCH"],
+    "floor_sources": ["ADVERSE_GUARD", "PROFIT_TRAIL", "MONOTONIC_PRIOR_FLOOR"],
+    "floor_source_is_not_a_separate_terminal_path": true,
+    "max_hold_hours": 168,
+    "source_modified": false
+  },
+  "identity_data_flow": {
+    "schedule": "events raw pair -> scheduled item; signal_time -> entry_time = signal_time + 1h",
+    "admission": "pair = str(item['pair']); ReplayPosition(pair=pair, entry_time=timestamp, ...); positions[pair] = position at line 645",
+    "existing_position": "for pair in sorted(list(positions)): position = positions[pair] at lines 442-443",
+    "terminal_binding": "The same local position and pair reach _close_position, observer.close_position and deletion",
+    "runtime_lifecycle_key": ["pair", "position.entry_time"],
+    "same_pair_is_not_lifecycle_identity_alone": true,
+    "trade_id_bridge_rule": "Bind the exact runtime pair and admission entry_time to exactly one authorized canonical trade_id using explicit input symbol mapping and unique entry/admission identity. Reject zero/multiple matches; include portfolio/universe/run identity when multiple runs coexist.",
+    "canonical_33_bridge_instantiated_in_this_task": false,
+    "reason": "Execution inputs and the historical runner are a separately admitted ledger task. No synthetic trade ID is promoted to canonical identity."
+  },
+  "time_data_flow": {
+    "clock_source": "pd.date_range(replay_start, replay_cutoff, freq='h', inclusive='left') at line 437",
+    "decision_binding": "timestamp -> current_open_time; previous asset/state reads use timestamp - 1h",
+    "terminal_binding": "timestamp -> _close_position(timestamp=timestamp) -> observer(closed_at=timestamp)",
+    "not_from_outcome_table": true,
+    "resolution": "Native hourly bar-index timestamp; not automatically an exact intrabar wall-clock crossing time",
+    "open_time_branches": "Max-hold, gap and prior-close stagnation conditions have open-time inputs",
+    "touch_branch_caveat": "PROTECTION_TOUCH inspects current hourly low. OHLC alone locates the touch within that bar, not its exact instant; the full low is verified only on completion. Do not label the bar-open terminal timestamp as full-low information availability.",
+    "ledger_requirement": "Retain source branch, native runtime timestamp and a separate information-availability convention. Do not manufacture subbar order or recast current-low evidence as completed at bar open. No policy change is authorized."
+  },
+  "ordering_evidence": {
+    "existing_position": ["observe completed information", "native decision", "native close helper", "cash/trade bookkeeping", "optional observer notifications", "position deletion"],
+    "entry_position": ["native admission", "position store", "optional sync", "native entry-bar decision", "native close helper", "bookkeeping", "optional close notifications", "position deletion"],
+    "terminal_sequence_identity": "Runtime callback/order ordinal plus source path; not a guessed statistical tie priority",
+    "native_close_helper_returns_before_removal": true
+  },
+  "hook_role": {
+    "path": "src/spotbot/research/rd27_later_trigger_v2_native_hook.py",
+    "sha256": "E149C5C354B08801920CA87F61F397C9C7969EA7E6BE7C081AFF865CF9168EFD",
+    "role": "CORROBORATING_OBSERVER_NOT_TERMINAL_DECISION_AUTHORITY",
+    "close_keyword_only_args": ["pair", "closed_at"],
+    "state_binding": "sync_native_position stores NativeV2Position(entry_time, entry_price, symbol, ...) in self._active[pair]; close looks up that state then archives and removes it",
+    "historical_event_ledger_export_present": false
+  },
+  "previous_failure_adjudication": {
+    "class": "TECHNICAL_ADJUDICATOR_FALSE_NEGATIVE",
+    "evidence": "governance/v2_phase_a_native_terminal_source_authority_recovery_v1/native_hook_close_contract_analysis.json",
+    "structured_path": "$.close_position_method.signature.kwonlyargs",
+    "value": ["pair", "closed_at"],
+    "contradictory_result_paths": ["$.identity_arguments", "$.time_arguments", "$.contract_has_identity", "$.contract_has_time"],
+    "conclusion": "The recorded empty detected argument sets do not establish absent identity/time. Both keyword arguments and bound class state carry them."
+  },
+  "test_evidence": {
+    "new_test": "tests/research/test_rd27_native_terminal_source_authority.py",
+    "ruff": "PASS",
+    "targeted_pytest": "35 passed",
+    "synthetic_cases": ["static time failure", "max hold", "entry-bar touch", "existing-position gap", "existing-position touch"],
+    "observer_off_on_parity": "PASS_EXACT_ALL_FOUR_NATIVE_OUTPUTS",
+    "canonical_market_rows_used": false
+  },
+  "forbidden_outcome_fields_used": [],
+  "economics_authorized": false,
+  "actual_exit_authority_mutated": false,
+  "native_source_mutated": false,
+  "protected_year_data_read": false,
+  "canonical_terminal_count_claimed": null,
+  "next_task": "CAUSAL_EXIT_BRAIN_V2_PHASE_A_NATIVE_TERMINAL_LEDGER_REPLAY_V1"
+}

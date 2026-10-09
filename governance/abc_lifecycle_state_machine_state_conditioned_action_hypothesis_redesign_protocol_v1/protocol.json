@@ -1,0 +1,43 @@
+{
+  "2023_status": "ALREADY_OBSERVED_NOT_VALIDATION",
+  "2024_access": false,
+  "2024_status": "SEALED_FINAL_HOLDOUT",
+  "aggregate_average_cannot_rescue_bad_year": true,
+  "execution": "DECISION_TIME_PLUS_1H_FIRST_1H_OPEN",
+  "first_trigger_only_per_lifecycle": true,
+  "next_if_pass": "ABC_LIFECYCLE_STATE_MACHINE_STATE_CONDITIONED_ACTION_HYPOTHESIS_REDESIGN_ELIGIBILITY_MATERIALIZATION_V1",
+  "numeric_tuning": false,
+  "primary_economic_authority": "CANONICAL_EXECUTABLE_PORTFOLIO_REPLAY",
+  "prior_direct_mark_evidence_role": "DIAGNOSTIC_NON_BINDING_BECAUSE_DECISION_TIME_MARK_IS_NOT_EXECUTION_FILL",
+  "ranking": false,
+  "redesigned_hypotheses": {
+    "R10_CONFIRMED_CONTINUATION_WITH_VOLATILITY_DAMAGE": "BASE=CONFIRMED AND H4 damage continuation AND VOLATILITY_DAMAGE active",
+    "R1_CONFIRMED_STRUCTURAL_BREAK_ONLY": "BASE=CONFIRMED AND STRUCTURAL_BREAK active AND VOLATILITY_DAMAGE inactive",
+    "R2_CONFIRMED_VOLATILITY_DAMAGE_ONLY": "BASE=CONFIRMED AND VOLATILITY_DAMAGE active AND STRUCTURAL_BREAK inactive",
+    "R3_CONFIRMED_CONFLUENT_DAMAGE": "BASE=CONFIRMED AND STRUCTURAL_BREAK active AND VOLATILITY_DAMAGE active",
+    "R4_EARLY_PROGRESS_STRUCTURAL_BREAK": "BASE=EARLY_PROGRESS AND STRUCTURAL_BREAK active",
+    "R5_UNCONFIRMED_STALLED_STRUCTURAL_BREAK": "BASE=UNCONFIRMED AND STALLED active AND STRUCTURAL_BREAK active",
+    "R6_UNCONFIRMED_STRUCTURAL_BREAK_NO_STALL": "BASE=UNCONFIRMED AND STRUCTURAL_BREAK active AND STALLED inactive",
+    "R7_CONFIRMED_ONSET_STRUCTURAL_BREAK_ONLY": "BASE=CONFIRMED AND H3 damage onset AND STRUCTURAL_BREAK active AND VOLATILITY_DAMAGE inactive",
+    "R8_CONFIRMED_ONSET_WITH_VOLATILITY_DAMAGE": "BASE=CONFIRMED AND H3 damage onset AND VOLATILITY_DAMAGE active",
+    "R9_CONFIRMED_CONTINUATION_STRUCTURAL_BREAK_ONLY": "BASE=CONFIRMED AND H4 damage continuation AND STRUCTURAL_BREAK active AND VOLATILITY_DAMAGE inactive"
+  },
+  "schema_version": "abc-action-hypothesis-redesign-protocol-v1",
+  "source_bindings": {
+    "governance/abc_lifecycle_state_machine_state_conditioned_action_hypothesis_adjudication_mandatory_review_v1/mandatory_review.json": "C7AC0CC53611F606CA8C0F63F00EFDD442A4F9DAEBE75BB4229C9290116DFBFE",
+    "governance/abc_lifecycle_state_machine_state_conditioned_action_hypothesis_eligibility_materialization_v1/action_hypothesis_eligibility_grid.csv": "F989B216B163F3CFD9315FA61BA64EC138D5826F51F9D62344E5118CCF89F146",
+    "scripts/research/run_abc_exit_primitives_2019_2023_v1.py": "C6E92E4980C50526263B7B0D4E22747E96B49FDA2118529DAC5DA7A81EF1364C",
+    "src/spotbot/research/abc_exit_primitives_v1.py": "70148C2A1254E1A05C9820FAFA0F6302166C6BE653D27D8FBAF0859FA03D56E1"
+  },
+  "status": "FROZEN_BEFORE_REDESIGNED_REPLAY",
+  "survival_rule": "EVERY_YEAR_2019_2023_MUST_HAVE_CANDIDATE_EXECUTED_GT_0_AND_DELTA_PORTFOLIO_NET_PNL_GT_0",
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_STATE_CONDITIONED_ACTION_HYPOTHESIS_REDESIGN_PROTOCOL_FREEZE_V1",
+  "winner_selection": false,
+  "years_treated_as_development": [
+    2019,
+    2020,
+    2021,
+    2022,
+    2023
+  ]
+}

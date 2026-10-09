@@ -1,0 +1,131 @@
+{
+  "candidate_csv_count_header_audited": 82,
+  "candidate_replay_executed": false,
+  "control_economic_like_columns": [
+    "gross_pnl",
+    "net_pnl"
+  ],
+  "control_has_full_lifecycle_identity": false,
+  "control_price_like_columns": [
+    "entry_price",
+    "exit_price"
+  ],
+  "control_time_like_columns": [
+    "entry_time",
+    "exit_time"
+  ],
+  "counterfactual_evaluation_executed": false,
+  "counterfactual_evaluation_execution_authorized": false,
+  "counterfactual_evaluation_protocol_work_authorized": true,
+  "economic_outcomes_read": false,
+  "feature_economic_like_columns": [],
+  "feature_price_like_columns": [],
+  "feature_time_like_columns": [
+    "decision_time_4h",
+    "entry_time",
+    "native_exit_time"
+  ],
+  "known_authorities": {
+    "causal_feature_grid": {
+      "header": [
+        "year",
+        "pair",
+        "entry_time",
+        "native_exit_time",
+        "decision_time_4h",
+        "base_state",
+        "memory_now",
+        "memory_seen",
+        "C_signal",
+        "A_signal",
+        "B_signal",
+        "hours_since_entry",
+        "hours_since_first_memory_or_null",
+        "native_market_state_context",
+        "R_after_t",
+        "R_before_t",
+        "R_delta_from_prev_decision",
+        "a_condition_now",
+        "a_condition_recovered_now",
+        "a_condition_true_run_length",
+        "a_margin_delta_from_prev",
+        "atr22_current",
+        "b_condition_now",
+        "b_condition_recovered_now",
+        "b_condition_true_run_length",
+        "b_margin_delta_from_prev",
+        "close_delta_from_prev_decision",
+        "close_minus_R_before_t",
+        "close_minus_donchian_prev10_low",
+        "close_minus_ratchet_stop_before_t",
+        "donchian_prev10_low",
+        "high_minus_R_before_t",
+        "progress_margin_delta_from_prev",
+        "ratchet_stop_before_t",
+        "structural_break_margin_delta_from_prev",
+        "volatility_damage_margin_delta_from_prev"
+      ],
+      "path": "governance/abc_lifecycle_state_machine_persistent_state_causal_feature_reconstruction_execution_v1/decision_grid_reconstructed_features.csv",
+      "sha256": "15707D9D66E466FD1706646ADDFCFD2316E6210186EF3C1B4A735D9DF7880F42"
+    },
+    "control_trades": {
+      "header": [
+        "year",
+        "policy_id",
+        "portfolio_id",
+        "universe_id",
+        "cost_multiplier",
+        "pair",
+        "signal_time",
+        "entry_time",
+        "exit_time",
+        "holding_hours",
+        "exit_reason",
+        "entry_price",
+        "exit_price",
+        "quantity",
+        "entry_notional",
+        "exit_notional",
+        "entry_cost",
+        "exit_cost",
+        "gross_pnl",
+        "net_pnl",
+        "period_id",
+        "membership_rank",
+        "support_families",
+        "support_count",
+        "atr24_at_signal",
+        "high_water_at_exit",
+        "entry_market_state",
+        "exit_market_state",
+        "protection_floor_at_exit"
+      ],
+      "path": "data/research/abc_exit_primitives_2019_2023_v1/control-trades.csv",
+      "sha256": "BA2CF871453DDFAC53DD53494C5B47D29C20BC1777370928135A8FB2D01E8ABE"
+    },
+    "exit_primitive_module": {
+      "code_markers": {
+        "contains_entry_price_semantics": true,
+        "contains_exit_price_semantics": true,
+        "contains_fee_semantics": false,
+        "contains_replay_semantics": true,
+        "contains_return_semantics": true
+      },
+      "path": "src/spotbot/research/abc_exit_primitives_v1.py",
+      "sha256": "B04F4EA4E95A1DA324036C14C5889F334702A30D0AF5AA66C4B7F6993C8395B2"
+    }
+  },
+  "pnl_values_read": false,
+  "protocol_design_questions": [
+    "Which tracked source is the canonical decision-time mark/exit-price authority for every candidate 4H decision row?",
+    "Which existing implementation defines fees/slippage/return accounting for a hypothetical early exit without creating a new economic convention?",
+    "Can candidate decision rows be joined one-to-one to canonical control lifecycles using only existing lifecycle keys and decision_time_4h?",
+    "Which years may be used for hypothesis evaluation versus protected validation under the current charter without reopening sealed holdouts?",
+    "Does an existing canonical replay path already calculate counterfactual exit economics, or must a separately reviewed evaluator be built?"
+  ],
+  "raw_market_rows_read": false,
+  "row_values_read": false,
+  "schema_version": "abc-action-hypothesis-counterfactual-evaluation-source-capability-audit-v1",
+  "status": "PASS_CAPABILITY_AUDIT_COMPLETE",
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_STATE_CONDITIONED_ACTION_HYPOTHESIS_COUNTERFACTUAL_EVALUATION_SOURCE_CAPABILITY_AUDIT_V1"
+}

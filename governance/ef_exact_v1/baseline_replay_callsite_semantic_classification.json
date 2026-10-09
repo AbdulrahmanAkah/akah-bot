@@ -1,0 +1,92 @@
+{
+  "baseline_relevant_count": 1,
+  "callsites": [
+    {
+      "baseline_relevant": false,
+      "classification": "DEFINITELY_ANOTHER_POLICY_CONTROL_OR_ABLATION",
+      "evidence": [
+        {
+          "evidence_id": "scripts/research/run_eaa_same_pair_secondary_shadow_parity.py:229-251",
+          "source_sha256": "8438DE5BA561867528E8D0996CAC83D36C0F60B19603287D996DCA32909E3D27"
+        }
+      ],
+      "function": "main",
+      "line": 240,
+      "path": "scripts/research/run_eaa_same_pair_secondary_shadow_parity.py",
+      "policy_expression": "rd27.STATIC_EXIT_STATE_ROUTER",
+      "reason": "Explicit keyword STATIC_EXIT_STATE_ROUTER; pre-2022 EAA proof, not FULL_ADAPTIVE."
+    },
+    {
+      "baseline_relevant": true,
+      "classification": "GENERIC_WRAPPER_CAPABLE_OF_FULL_ADAPTIVE",
+      "evidence": [
+        {
+          "evidence_id": "scripts/research/run_rd27_lifecycle_ablation.py:19-48",
+          "source_sha256": "7DFC388F3BF8EF6EFA16E0640CF924158999A9923674C7701B8919872755CBB5"
+        },
+        {
+          "evidence_id": "scripts/research/run_rd27_lifecycle_ablation.py:402-428",
+          "source_sha256": "7DFC388F3BF8EF6EFA16E0640CF924158999A9923674C7701B8919872755CBB5"
+        },
+        {
+          "evidence_id": "src/spotbot/research/rd27_lifecycle_replay.py:65-81",
+          "source_sha256": "E3944A4655DDDF21C394FE1DB541F2645F529C00BD8390B22D652BD8EF5BBF83"
+        }
+      ],
+      "function": "run_all_portfolios",
+      "line": 420,
+      "path": "scripts/research/run_rd27_lifecycle_ablation.py",
+      "policy_expression": "policy_id",
+      "reason": "Unpatched RD27 imported function; local loop covers four policies and three portfolio constructors per C2/D2/E2 universe. Retain FULL_ADAPTIVE branch."
+    },
+    {
+      "baseline_relevant": false,
+      "classification": "DEFINITELY_ANOTHER_POLICY_CONTROL_OR_ABLATION",
+      "evidence": [
+        {
+          "evidence_id": "src/spotbot/research/a10_selective_protection_asymmetry.py:244-268",
+          "source_sha256": "BF4794A3F42A547A3D20D80D0ACD7A9132973B68BA3FFB2738B3EF29ECD0AB0F"
+        }
+      ],
+      "function": "_replay_selective",
+      "line": 248,
+      "path": "src/spotbot/research/a10_selective_protection_asymmetry.py",
+      "policy_expression": "rd27.FULL_ADAPTIVE_LIFECYCLE_BRAIN",
+      "reason": "Policy label is FULL_ADAPTIVE but both decision and update functions are monkey-patched for A10 selective treatment and restored in finally; never unpatched at this call."
+    },
+    {
+      "baseline_relevant": false,
+      "classification": "DEFINITELY_ANOTHER_POLICY_CONTROL_OR_ABLATION",
+      "evidence": [
+        {
+          "evidence_id": "src/spotbot/research/a4r1_reversible_floor_replay.py:129-152",
+          "source_sha256": "161B7680A2098BBE97E4B9BE3A9BA7F0A918AAD04926CBA6F783CED7B97FE16E"
+        }
+      ],
+      "function": "replay_reversible_floor_candidate",
+      "line": 132,
+      "path": "src/spotbot/research/a4r1_reversible_floor_replay.py",
+      "policy_expression": "rd27.FULL_ADAPTIVE_LIFECYCLE_BRAIN",
+      "reason": "A4R1 treatment monkey-patches native decision/update before call, then restores; not selected frozen native behavior."
+    },
+    {
+      "baseline_relevant": false,
+      "classification": "DEFINITELY_ANOTHER_POLICY_CONTROL_OR_ABLATION",
+      "evidence": [
+        {
+          "evidence_id": "src/spotbot/research/eaa_same_pair_secondary_shadow.py:193-215",
+          "source_sha256": "1096CD43E814A08E8F6BB969CD2722FA883C04D54C9462AFD461489AE3E76390"
+        }
+      ],
+      "function": "replay_same_pair_secondary_shadow",
+      "line": 203,
+      "path": "src/spotbot/research/eaa_same_pair_secondary_shadow.py",
+      "policy_expression": "rd27.STATIC_EXIT_STATE_ROUTER",
+      "reason": "Disabled shadow delegates explicitly to STATIC_EXIT_STATE_ROUTER, no parameter permits FULL_ADAPTIVE here."
+    }
+  ],
+  "consumer_is_not_source_authority": true,
+  "historical_truth_claim": false,
+  "selected_policy": "rd27.FULL_ADAPTIVE_LIFECYCLE_BRAIN",
+  "unresolved_classification_count": 0
+}

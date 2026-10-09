@@ -1,0 +1,54 @@
+{
+  "2024_access": false,
+  "capture_thresholds": [
+    0.25,
+    0.5,
+    0.75
+  ],
+  "diagnostic_only": true,
+  "entry_context_features": [
+    "pre_return_24h",
+    "pre_return_72h",
+    "pre_realized_vol_24h",
+    "pre_realized_vol_72h",
+    "pre_atr24h_price_fraction",
+    "pre_range24h_price_fraction",
+    "pre_range72h_price_fraction",
+    "pre_position_in_24h_range",
+    "pre_distance_above_24h_high_fraction",
+    "pre_ema9_21_spread_fraction",
+    "pre_ema21_50_spread_fraction",
+    "pre_ema21_slope6_fraction",
+    "pre_volume_last4_vs_prior20",
+    "entry_gap_vs_prev_close"
+  ],
+  "entry_rule_mutation": false,
+  "exit_rule_mutation": false,
+  "hourly_open_oracle_semantics": "FEE_ADJUSTED_BEST_HOURLY_OPEN_WITHIN_NATIVE_LIFESPAN; HINDSIGHT; NOT_PORTFOLIO_REPLAY",
+  "intrabar_oracle_semantics": "FEE_ADJUSTED_HINDSIGHT_HIGH_CEILING_NONEXECUTABLE",
+  "mfe_thresholds": [
+    0.01,
+    0.02,
+    0.05,
+    0.1,
+    0.2
+  ],
+  "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_HOURLY_TRADE_PATH_OPPORTUNITY_MATERIALIZATION_V1",
+  "path_semantics": "ENTRY_HOUR_INCLUDED; NATIVE_EXIT_HOUR_INTRABAR_HIGH_LOW_EXCLUDED_BECAUSE_EXIT_AT_HOUR_OPEN",
+  "pre_entry_context_semantics": "STRICTLY_PRE_ENTRY_HOURLY_BARS_ONLY",
+  "schema_version": "abc-trade-opportunity-decomposition-protocol-v1",
+  "status": "FROZEN",
+  "survivor_reference_ids": [
+    "EB3A_A_ONSET_SEVERE_GIVEBACK",
+    "EB3B_A_CONT_BEARISH_STRUCTURE"
+  ],
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_TRADE_OPPORTUNITY_DECOMPOSITION_PROTOCOL_FREEZE_V1",
+  "threshold_optimization": false,
+  "years": [
+    2019,
+    2020,
+    2021,
+    2022,
+    2023
+  ]
+}

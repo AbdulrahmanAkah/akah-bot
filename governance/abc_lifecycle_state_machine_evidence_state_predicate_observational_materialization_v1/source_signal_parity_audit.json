@@ -1,0 +1,22 @@
+{
+  "schema_version": "abc-lifecycle-evidence-overlay-source-signal-parity-audit-v1",
+  "status": "PASS",
+  "source_signal_counts": {
+    "C_signal": 74,
+    "A_signal": 135,
+    "B_signal": 31
+  },
+  "overlay_counts": {
+    "stalled_evidence_candidate": 74,
+    "structural_break_evidence_candidate": 135,
+    "volatility_damage_evidence_candidate": 31
+  },
+  "expected_source_signal_counts": {
+    "C_signal": 74,
+    "A_signal": 135,
+    "B_signal": 31
+  },
+  "stalled_equals_C_under_frozen_phase_invariant": true,
+  "structural_break_equals_A": true,
+  "volatility_damage_equals_B_under_frozen_phase_invariant": true
+}

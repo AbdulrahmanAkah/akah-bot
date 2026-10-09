@@ -1,0 +1,347 @@
+{
+  "calls": [
+    {
+      "arguments": [
+        {
+          "expr": "repo",
+          "index": 0,
+          "kind": "positional",
+          "trace": {
+            "name": "repo",
+            "status": "LOCAL_ASSIGNMENT",
+            "upstream": {
+              "call": "resolve",
+              "definition_count": 0,
+              "expr": "args.repo_root.resolve()",
+              "status": "CALL"
+            }
+          }
+        }
+      ],
+      "call": "load_signal_events",
+      "enclosing_function": "main",
+      "expression": "load_signal_events(repo)",
+      "line": 820
+    },
+    {
+      "arguments": [
+        {
+          "expr": "raw_root",
+          "kind": "keyword",
+          "name": "raw_root",
+          "trace": {
+            "name": "raw_root",
+            "status": "LOCAL_ASSIGNMENT",
+            "upstream": {
+              "body": {
+                "call": "resolve",
+                "definition_count": 0,
+                "expr": "args.raw_root.resolve()",
+                "status": "CALL"
+              },
+              "orelse": {
+                "call": "resolve",
+                "definition_count": 0,
+                "expr": "(repo / DEFAULT_RAW_ROOT).resolve()",
+                "status": "CALL"
+              },
+              "status": "CONDITIONAL"
+            }
+          }
+        },
+        {
+          "expr": "pairs",
+          "kind": "keyword",
+          "name": "pairs",
+          "trace": {
+            "name": "pairs",
+            "status": "LOCAL_ASSIGNMENT",
+            "upstream": {
+              "call": "sorted",
+              "definition_count": 0,
+              "expr": "sorted(set(events['pair'].astype(str)))",
+              "status": "CALL"
+            }
+          }
+        }
+      ],
+      "call": "load_feature_frames",
+      "enclosing_function": "main",
+      "expression": "load_feature_frames(raw_root=raw_root, pairs=pairs)",
+      "line": 822
+    },
+    {
+      "arguments": [
+        {
+          "expr": "policy_id",
+          "kind": "keyword",
+          "name": "policy_id",
+          "trace": {
+            "name": "policy_id",
+            "status": "UNRESOLVED_NAME"
+          }
+        },
+        {
+          "expr": "portfolio_id",
+          "kind": "keyword",
+          "name": "portfolio_id",
+          "trace": {
+            "name": "portfolio_id",
+            "status": "UNRESOLVED_NAME"
+          }
+        },
+        {
+          "expr": "universe",
+          "kind": "keyword",
+          "name": "universe_id",
+          "trace": {
+            "name": "universe",
+            "status": "UNRESOLVED_NAME"
+          }
+        },
+        {
+          "expr": "cost_multiplier",
+          "kind": "keyword",
+          "name": "cost_multiplier",
+          "trace": {
+            "name": "cost_multiplier",
+            "status": "UNRESOLVED_NAME"
+          }
+        },
+        {
+          "expr": "portfolio_events",
+          "kind": "keyword",
+          "name": "events",
+          "trace": {
+            "name": "portfolio_events",
+            "status": "UNRESOLVED_NAME"
+          }
+        },
+        {
+          "expr": "frames",
+          "kind": "keyword",
+          "name": "frames",
+          "trace": {
+            "branches": [
+              {
+                "caller": "scripts/research/run_rd26_exit_architecture.py:631",
+                "upstream": {
+                  "name": "frames",
+                  "status": "LOCAL_ASSIGNMENT",
+                  "upstream": {
+                    "call": "load_feature_frames",
+                    "definition_count": 9,
+                    "expr": "load_feature_frames(raw_root=raw_root, pairs=pairs, cutoff=DATA_CUTOFF)",
+                    "status": "CALL"
+                  }
+                }
+              },
+              {
+                "caller": "scripts/research/run_rd27_lifecycle_ablation.py:853",
+                "upstream": {
+                  "name": "frames",
+                  "status": "LOCAL_ASSIGNMENT",
+                  "upstream": {
+                    "call": "load_feature_frames",
+                    "definition_count": 9,
+                    "expr": "load_feature_frames(raw_root=raw_root, pairs=pairs)",
+                    "status": "CALL"
+                  }
+                }
+              },
+              {
+                "caller": "scripts/research/run_rd28_evidence_gated_lifecycle.py:989",
+                "upstream": {
+                  "name": "frames",
+                  "status": "LOCAL_ASSIGNMENT",
+                  "upstream": {
+                    "call": "load_feature_frames",
+                    "definition_count": 9,
+                    "expr": "load_feature_frames(raw_root=raw_root, pairs=pairs)",
+                    "status": "CALL"
+                  }
+                }
+              },
+              {
+                "caller": "scripts/research/run_rd29_thesis_confidence_lifecycle.py:973",
+                "upstream": {
+                  "name": "frames",
+                  "status": "LOCAL_ASSIGNMENT",
+                  "upstream": {
+                    "call": "load_feature_frames",
+                    "definition_count": 9,
+                    "expr": "load_feature_frames(raw_root=raw_root, pairs=pairs)",
+                    "status": "CALL"
+                  }
+                }
+              },
+              {
+                "caller": "scripts/research/run_rd30_family_specialist_replacement_aware.py:1322",
+                "upstream": {
+                  "name": "frames",
+                  "status": "LOCAL_ASSIGNMENT",
+                  "upstream": {
+                    "call": "load_feature_frames",
+                    "definition_count": 9,
+                    "expr": "load_feature_frames(raw_root=raw_root, pairs=pairs)",
+                    "status": "CALL"
+                  }
+                }
+              },
+              {
+                "caller": "scripts/research/run_rd31_market_regime_admission_governor.py:2192",
+                "upstream": {
+                  "name": "frames",
+                  "status": "LOCAL_ASSIGNMENT",
+                  "upstream": {
+                    "call": "load_feature_frames",
+                    "definition_count": 9,
+                    "expr": "load_feature_frames(raw_root=raw_root, pairs=pairs)",
+                    "status": "CALL"
+                  }
+                }
+              },
+              {
+                "caller": "scripts/research/run_rd32_mb_signal_quality_admission.py:1210",
+                "upstream": {
+                  "name": "frames",
+                  "status": "LOCAL_ASSIGNMENT",
+                  "upstream": {
+                    "call": "load_feature_frames",
+                    "definition_count": 9,
+                    "expr": "rd31.load_feature_frames(raw_root=raw_root, pairs=pairs)",
+                    "status": "CALL"
+                  }
+                }
+              },
+              {
+                "caller": "scripts/research/run_rd33_temporal_mb_architecture.py:1602",
+                "upstream": {
+                  "name": "frames",
+                  "status": "LOCAL_ASSIGNMENT",
+                  "upstream": {
+                    "call": "load_feature_frames",
+                    "definition_count": 9,
+                    "expr": "rd31.load_feature_frames(raw_root=raw_root, pairs=pairs)",
+                    "status": "CALL"
+                  }
+                }
+              }
+            ],
+            "name": "frames",
+            "status": "PARAMETER_BRANCHES"
+          }
+        },
+        {
+          "expr": "state_frame",
+          "kind": "keyword",
+          "name": "state_frame",
+          "trace": {
+            "branches": [
+              {
+                "caller": "scripts/research/run_rd27_lifecycle_ablation.py:853",
+                "upstream": {
+                  "name": "state_frame",
+                  "status": "LOCAL_ASSIGNMENT",
+                  "upstream": {
+                    "call": "load_state_frame",
+                    "definition_count": 7,
+                    "expr": "load_state_frame(raw_root)",
+                    "status": "CALL"
+                  }
+                }
+              },
+              {
+                "caller": "scripts/research/run_rd28_evidence_gated_lifecycle.py:989",
+                "upstream": {
+                  "name": "state_frame",
+                  "status": "LOCAL_ASSIGNMENT",
+                  "upstream": {
+                    "call": "load_state_frame",
+                    "definition_count": 7,
+                    "expr": "load_state_frame(raw_root)",
+                    "status": "CALL"
+                  }
+                }
+              },
+              {
+                "caller": "scripts/research/run_rd29_thesis_confidence_lifecycle.py:973",
+                "upstream": {
+                  "name": "state_frame",
+                  "status": "LOCAL_ASSIGNMENT",
+                  "upstream": {
+                    "call": "load_state_frame",
+                    "definition_count": 7,
+                    "expr": "load_state_frame(raw_root)",
+                    "status": "CALL"
+                  }
+                }
+              },
+              {
+                "caller": "scripts/research/run_rd30_family_specialist_replacement_aware.py:1322",
+                "upstream": {
+                  "name": "state_frame",
+                  "status": "LOCAL_ASSIGNMENT",
+                  "upstream": {
+                    "call": "load_state_frame",
+                    "definition_count": 7,
+                    "expr": "load_state_frame(raw_root)",
+                    "status": "CALL"
+                  }
+                }
+              },
+              {
+                "caller": "scripts/research/run_rd31_market_regime_admission_governor.py:2192",
+                "upstream": {
+                  "name": "state_frame",
+                  "status": "LOCAL_ASSIGNMENT",
+                  "upstream": {
+                    "call": "load_state_frame",
+                    "definition_count": 7,
+                    "expr": "load_state_frame(raw_root)",
+                    "status": "CALL"
+                  }
+                }
+              },
+              {
+                "caller": "scripts/research/run_rd32_mb_signal_quality_admission.py:1210",
+                "upstream": {
+                  "name": "state_frame",
+                  "status": "LOCAL_ASSIGNMENT",
+                  "upstream": {
+                    "call": "load_state_frame",
+                    "definition_count": 7,
+                    "expr": "rd31.load_state_frame(raw_root)",
+                    "status": "CALL"
+                  }
+                }
+              },
+              {
+                "caller": "scripts/research/run_rd33_temporal_mb_architecture.py:1602",
+                "upstream": {
+                  "name": "state_frame",
+                  "status": "LOCAL_ASSIGNMENT",
+                  "upstream": {
+                    "call": "load_state_frame",
+                    "definition_count": 7,
+                    "expr": "rd31.load_state_frame(raw_root)",
+                    "status": "CALL"
+                  }
+                }
+              }
+            ],
+            "name": "state_frame",
+            "status": "PARAMETER_BRANCHES"
+          }
+        }
+      ],
+      "call": "replay_lifecycle_policy",
+      "enclosing_function": "run_all_portfolios",
+      "expression": "replay_lifecycle_policy(policy_id=policy_id, portfolio_id=portfolio_id, universe_id=universe, cost_multiplier=cost_multiplier, events=portfolio_events, frames=frames, state_frame=state_frame)",
+      "line": 420
+    }
+  ],
+  "runner": "scripts/research/run_rd27_lifecycle_ablation.py",
+  "runner_sha256": "7DFC388F3BF8EF6EFA16E0640CF924158999A9923674C7701B8919872755CBB5",
+  "status": "PASS"
+}

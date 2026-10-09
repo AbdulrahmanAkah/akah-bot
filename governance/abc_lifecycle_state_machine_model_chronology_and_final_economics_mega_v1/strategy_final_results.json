@@ -1,0 +1,167 @@
+{
+  "2024_used": false,
+  "2025_used": false,
+  "by_test_block": {
+    "B01": {
+      "direct_gain_1x_total": 1319.398703469442,
+      "direct_gain_2x_total": 1319.398703469442,
+      "first_override_lifecycles": 30,
+      "positive_gain_fraction_1x": 0.5333333333333333,
+      "positive_gain_fraction_2x": 0.5333333333333333
+    },
+    "B02": {
+      "direct_gain_1x_total": -563.7332450500669,
+      "direct_gain_2x_total": -563.7332450500669,
+      "first_override_lifecycles": 26,
+      "positive_gain_fraction_1x": 0.6538461538461539,
+      "positive_gain_fraction_2x": 0.6538461538461539
+    },
+    "B03": {
+      "direct_gain_1x_total": 461.7282315539123,
+      "direct_gain_2x_total": 461.7282315539123,
+      "first_override_lifecycles": 21,
+      "positive_gain_fraction_1x": 0.5714285714285714,
+      "positive_gain_fraction_2x": 0.5714285714285714
+    },
+    "B04": {
+      "direct_gain_1x_total": -3663.1644331033694,
+      "direct_gain_2x_total": -3663.1644331033694,
+      "first_override_lifecycles": 16,
+      "positive_gain_fraction_1x": 0.625,
+      "positive_gain_fraction_2x": 0.625
+    },
+    "B05": {
+      "direct_gain_1x_total": 677.6057376231893,
+      "direct_gain_2x_total": 677.6057376231893,
+      "first_override_lifecycles": 9,
+      "positive_gain_fraction_1x": 0.5555555555555556,
+      "positive_gain_fraction_2x": 0.5555555555555556
+    },
+    "B06": {
+      "direct_gain_1x_total": -5782.74494865497,
+      "direct_gain_2x_total": -5782.74494865497,
+      "first_override_lifecycles": 19,
+      "positive_gain_fraction_1x": 0.42105263157894735,
+      "positive_gain_fraction_2x": 0.42105263157894735
+    }
+  },
+  "by_test_year": {
+    "2023": {
+      "direct_gain_1x_total": -7550.909954161863,
+      "direct_gain_2x_total": -7550.909954161863,
+      "first_override_lifecycles": 121,
+      "positive_gain_fraction_1x": 0.5619834710743802,
+      "positive_gain_fraction_2x": 0.5619834710743802
+    }
+  },
+  "chronology_protocol": {
+    "blocks": [
+      {
+        "block_id": "B01",
+        "test_end_exclusive_utc": "2023-02-27T00:00:00+00:00",
+        "test_start_utc": "2023-01-02T00:00:00+00:00"
+      },
+      {
+        "block_id": "B02",
+        "test_end_exclusive_utc": "2023-04-24T00:00:00+00:00",
+        "test_start_utc": "2023-02-27T00:00:00+00:00"
+      },
+      {
+        "block_id": "B03",
+        "test_end_exclusive_utc": "2023-06-19T00:00:00+00:00",
+        "test_start_utc": "2023-04-24T00:00:00+00:00"
+      },
+      {
+        "block_id": "B04",
+        "test_end_exclusive_utc": "2023-08-14T00:00:00+00:00",
+        "test_start_utc": "2023-06-19T00:00:00+00:00"
+      },
+      {
+        "block_id": "B05",
+        "test_end_exclusive_utc": "2023-10-09T00:00:00+00:00",
+        "test_start_utc": "2023-08-14T00:00:00+00:00"
+      },
+      {
+        "block_id": "B06",
+        "test_end_exclusive_utc": "2023-12-04T00:00:00+00:00",
+        "test_start_utc": "2023-10-09T00:00:00+00:00"
+      }
+    ],
+    "candidate_block_count": 6,
+    "feature_selection": "FROZEN_REV719",
+    "first_test_start_utc": "2023-01-02T00:00:00+00:00",
+    "lifecycle_boundary_rule": "train lifecycle must be fully ended by test start using max decision + 4h conservative bound; test lifecycle first decision must fall inside block",
+    "min_test_rows": 10,
+    "min_train_rows": 50,
+    "min_valid_blocks": 3,
+    "protocol_id": "EXPANDING_52W_WARMUP_NONOVERLAP_8W_OOT_LIFECYCLE_PURGED_V1",
+    "selection_basis": "CALENDAR_ONLY_NO_OUTCOME_OR_MODEL_PERFORMANCE_INPUT",
+    "status": "PASS",
+    "target_embargo_hours": 4,
+    "test_block_days": 56,
+    "threshold_tuning": false,
+    "train_scaling": "TRAIN_ONLY_PER_BLOCK",
+    "warmup_days": 364
+  },
+  "cross_block_sign_consistency_1x": "MIXED",
+  "cross_block_sign_consistency_2x": "MIXED",
+  "cross_year_sign_consistency_1x": "ALL_NONPOSITIVE",
+  "cross_year_sign_consistency_2x": "ALL_NONPOSITIVE",
+  "development_scope": "FROZEN_REV719_FEATURES_WITH_EXPANDING_52W_WARMUP_NONOVERLAP_8W_OOT_LIFECYCLE_PURGED",
+  "direct_gain_1x_mean_cash": -62.40421449720548,
+  "direct_gain_1x_on_intervention_notional": -0.004543772236372973,
+  "direct_gain_1x_total_cash": -7550.909954161863,
+  "direct_gain_2x_mean_cash": -62.40421449720548,
+  "direct_gain_2x_on_intervention_notional": -0.004543772236372973,
+  "direct_gain_2x_total_cash": -7550.909954161863,
+  "feature_authority_status": "PASS",
+  "feature_raw_fallback_used": true,
+  "first_override_lifecycles": 121,
+  "interpretation": "Development/rolling-OOT result only. No fresh 2024 confirmation was opened in this mega.",
+  "intervention_coverage_lifecycles": 0.3558823529411765,
+  "intervention_notional_total": 1661815.2410274227,
+  "ledger_rows": 2593,
+  "lifecycle_count": 340,
+  "m1_interface": [
+    "mu",
+    "downside"
+  ],
+  "m1_m2_status": "PASS_FIXED_M1_M2_ROLLING_OOT_PILOT",
+  "model3_used": false,
+  "models": [
+    "M1_FIXED_RIDGE_VALUE",
+    "M2_FIXED_WEIGHTED_LOGISTIC"
+  ],
+  "no_new_raw_access": true,
+  "oot_prediction_rows": 1218,
+  "oracle_ceiling_capture_fraction_1x": -0.02136066617780218,
+  "oracle_ceiling_capture_fraction_2x": -0.02136066617780218,
+  "oracle_direct_gain_ceiling_total_cash": 353495.9954577027,
+  "outcome_feature_search_used": false,
+  "positive_gain_fraction_1x": 0.5619834710743802,
+  "positive_gain_fraction_2x": 0.5619834710743802,
+  "positive_test_block_count_1x": 3,
+  "positive_test_block_count_2x": 3,
+  "positive_test_year_count_1x": 0,
+  "positive_test_year_count_2x": 0,
+  "qualified_disagreement_rows": 559,
+  "robustness_classification": "NONPOSITIVE_AT_1X_AND_2X_COST",
+  "rolling_test_blocks": [
+    "B01",
+    "B02",
+    "B03",
+    "B04",
+    "B05",
+    "B06"
+  ],
+  "rolling_test_years": [
+    2023
+  ],
+  "schema_version": "akah-model-chronology-final-strategy-results-pre2024-v1",
+  "selection_rule": "FIRST_OOT_PI0_DISAGREEMENT_ONLY_WHEN_M1_MU_95CI_AND_M2_LOGIT_95CI_AGREE_ON_NONZERO_SIGN",
+  "status": "COMPLETE",
+  "tested_block_count": 6,
+  "tested_year_count": 1,
+  "threshold_tuning_used": false,
+  "trade_equal_training_weights": "PER_TRAINING_BLOCK_ONLY"
+}

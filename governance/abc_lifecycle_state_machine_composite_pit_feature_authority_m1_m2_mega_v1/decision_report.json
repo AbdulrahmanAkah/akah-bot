@@ -1,0 +1,69 @@
+{
+  "certified_ledger": {
+    "path": "governance/abc_lifecycle_state_machine_independent_decision_ledger_pi0_native_action_full_pipeline_mega_v1/independent_decision_ledger.csv.gz",
+    "rows": 2593,
+    "sha256": "4D731BC300DA520A01175C76B437293BB4BCCBEE19CF386F953B427F99234F75"
+  },
+  "feature_authority_status": "INCOMPLETE",
+  "feature_lineage": null,
+  "frozen_feasibility": {
+    "by_year": {
+      "2022": {
+        "mean_y": -0.0050651723735110525,
+        "n": 1208,
+        "positive_fraction": 0.30960264900662254
+      },
+      "2023": {
+        "mean_y": 0.0094450336218512,
+        "n": 1385,
+        "positive_fraction": 0.45126353790613716
+      }
+    },
+    "lifecycle_count": 340,
+    "oracle_direct_gain_ceiling_mean_per_row_cash": 136.32703257142413,
+    "oracle_direct_gain_ceiling_total_cash": 353495.9954577027,
+    "oracle_pi0_disagreement_fraction": 0.5881218665638257,
+    "oracle_pi0_disagreement_rows": 1525,
+    "row_count": 2593,
+    "status": "PASS",
+    "target_sign_counts": {
+      "EXIT_BETTER": 1525,
+      "HOLD_BETTER": 999,
+      "TIE": 69
+    },
+    "y_abs_mean": 0.025733350660271808,
+    "y_mean": 0.002685169047073876,
+    "y_quantiles": {
+      "median": -0.00463773911024562,
+      "p10": -0.03293386865665688,
+      "p25": -0.018648514735550153,
+      "p75": 0.01261056427332676,
+      "p90": 0.05058928022288903
+    }
+  },
+  "interpretation_guardrails": {
+    "2024_confirmation_used": false,
+    "feature_selection_by_outcome": false,
+    "model3": false,
+    "pair_identity_runtime_feature": false,
+    "threshold_tuning": false,
+    "year_identity_runtime_feature": false
+  },
+  "m1_m2": {
+    "status": "NOT_RUN"
+  },
+  "model_readiness": {
+    "feature_inventory_files": 18,
+    "ledger_rows": 2593,
+    "missing_feature_groups": [
+      "current_return",
+      "breadth",
+      "relative_strength",
+      "execution_quality"
+    ],
+    "no_model_fit_executed": true,
+    "no_outcome_based_selection": true,
+    "status": "BLOCKED_FEATURE_AUTHORITY_INCOMPLETE"
+  },
+  "schema_version": "akah-composite-pit-feature-m1-m2-decision-report-v1"
+}

@@ -1,0 +1,45 @@
+{
+  "canonical_state_frame_used": true,
+  "cohort_causal_validation": {
+    "causal_state_covered": 3024,
+    "cohort_rows": 3024,
+    "coverage_fraction": 1.0,
+    "event_datetime_unit_normalized_to": "ns",
+    "first_ready_state_time": "2022-02-07 00:00:00+00:00",
+    "future_state_matches": 0,
+    "max_event_time": "2022-12-22 21:00:00+00:00",
+    "max_state_age_hours": 0.0,
+    "min_event_time": "2022-02-07 00:00:00+00:00",
+    "min_state_age_hours": 0.0,
+    "missing_state_count": 0,
+    "state_datetime_unit_normalized_to": "ns",
+    "unready_state_count": 0
+  },
+  "future_state_use": false,
+  "interpretation": "The loader's whole-window readiness guard is broader than the frozen eligible cohort; every eligible event has a ready causal state at or before event time.",
+  "state_imputation": false,
+  "state_loader_mode": {
+    "candidate_count": 2,
+    "guard_exception": "BTC state sensor not ready inside selection window: 2022-01-01 01:00:00+00:00",
+    "mode": "CAPTURED_CANONICAL_STATE_FRAME_AT_GUARD",
+    "selected_columns": [
+      "timestamp",
+      "open",
+      "high",
+      "low",
+      "close",
+      "ema720",
+      "ema720_168h_ago",
+      "return_72h",
+      "atr24_pct",
+      "atr24_pct_median_720h",
+      "volatility_shock",
+      "state_ready",
+      "market_state"
+    ],
+    "selected_local_name": "frame",
+    "selected_rows": 8759,
+    "signature": "(raw_root: 'Path') -> 'pd.DataFrame'"
+  },
+  "status": "PASS"
+}

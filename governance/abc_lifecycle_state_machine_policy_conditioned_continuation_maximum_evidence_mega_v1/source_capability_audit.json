@@ -1,0 +1,208 @@
+{
+  "candidate_continuation_csv_count": 9,
+  "candidate_continuation_csvs": [
+    {
+      "columns": [
+        "year",
+        "pair",
+        "entry_time",
+        "native_exit_time",
+        "decision_time_4h",
+        "scheduled_execution_time",
+        "target_status",
+        "counterfactual_exit_price",
+        "counterfactual_net_pnl",
+        "native_net_pnl",
+        "executable_exit_delta_net",
+        "continuation_value_net"
+      ],
+      "explicit_exit": false,
+      "explicit_hold": false,
+      "notional": false,
+      "path": "governance/abc_lifecycle_state_machine_causal_feature_broadening_executable_continuation_diagnostic_materialization_v1/executable_continuation_target.csv",
+      "size_bytes": 2933294
+    },
+    {
+      "columns": [
+        "feature",
+        "family",
+        "nonmissing_executable_rows",
+        "missing_executable_rows",
+        "spearman_rho",
+        "abs_spearman_rho",
+        "q4_minus_q1_mean_exit_delta",
+        "q1_count",
+        "q4_count",
+        "spearman_2019",
+        "spearman_2020",
+        "spearman_2021",
+        "spearman_2022",
+        "spearman_2023",
+        "annual_rho_sign_sequence",
+        "annual_same_sign_count",
+        "spearman_unconfirmed",
+        "spearman_early_progress",
+        "spearman_confirmed",
+        "within_phase_weighted_spearman",
+        "diagnostic_rank"
+      ],
+      "explicit_exit": false,
+      "explicit_hold": false,
+      "notional": false,
+      "path": "governance/abc_lifecycle_state_machine_causal_feature_broadening_executable_continuation_diagnostic_materialization_v1/feature_attribution.csv",
+      "size_bytes": 14157
+    },
+    {
+      "columns": [
+        "family",
+        "feature_count",
+        "median_abs_spearman_rho",
+        "max_abs_spearman_rho",
+        "features_with_4plus_same_annual_signs"
+      ],
+      "explicit_exit": false,
+      "explicit_hold": false,
+      "notional": false,
+      "path": "governance/abc_lifecycle_state_machine_causal_feature_broadening_executable_continuation_diagnostic_materialization_v1/feature_family_summary.csv",
+      "size_bytes": 393
+    },
+    {
+      "columns": [
+        "hypothesis",
+        "status",
+        "evidence_quality",
+        "exactness",
+        "main_metric",
+        "reason",
+        "next_action"
+      ],
+      "explicit_exit": false,
+      "explicit_hold": false,
+      "notional": false,
+      "path": "governance/abc_lifecycle_state_machine_policy_conditioned_value_mega_discovery_v1/decision_matrix.csv",
+      "size_bytes": 2866
+    },
+    {
+      "columns": [
+        "pair",
+        "run_count",
+        "median_snapshots",
+        "max_snapshots",
+        "total_snapshots"
+      ],
+      "explicit_exit": false,
+      "explicit_hold": false,
+      "notional": false,
+      "path": "governance/abc_lifecycle_state_machine_policy_conditioned_value_mega_discovery_v1/maturity_tenure_by_pair.csv",
+      "size_bytes": 686
+    },
+    {
+      "columns": [
+        "decision_time",
+        "entries",
+        "exits",
+        "members"
+      ],
+      "explicit_exit": false,
+      "explicit_hold": false,
+      "notional": false,
+      "path": "governance/abc_lifecycle_state_machine_policy_conditioned_value_mega_discovery_v1/maturity_turnover_by_snapshot.csv",
+      "size_bytes": 8221
+    },
+    {
+      "columns": [
+        "year",
+        "pair",
+        "entry_time",
+        "native_exit_time",
+        "decision_time_4h",
+        "interpretation_context_key",
+        "decision_time_dt",
+        "hypothesis_id",
+        "decision_exit_price",
+        "entry_time_norm",
+        "native_exit_time_norm",
+        "entry_price",
+        "quantity",
+        "entry_notional",
+        "entry_cost",
+        "net_pnl",
+        "side_cost_rate",
+        "counterfactual_exit_notional",
+        "counterfactual_exit_cost",
+        "counterfactual_gross_pnl",
+        "counterfactual_net_pnl",
+        "direct_exit_delta_net",
+        "continuation_value_net"
+      ],
+      "explicit_exit": false,
+      "explicit_hold": false,
+      "notional": true,
+      "path": "governance/abc_lifecycle_state_machine_state_conditioned_action_hypothesis_2023_temporal_validation_execution_v1/validation_2023_direct_continuation_value_ledger.csv",
+      "size_bytes": 50698
+    },
+    {
+      "columns": [
+        "year",
+        "pair",
+        "entry_time",
+        "native_exit_time",
+        "decision_time_4h",
+        "interpretation_context_key",
+        "decision_time_dt",
+        "hypothesis_id",
+        "decision_exit_price",
+        "entry_time_norm",
+        "native_exit_time_norm",
+        "entry_price",
+        "quantity",
+        "entry_notional",
+        "entry_cost",
+        "net_pnl",
+        "side_cost_rate",
+        "counterfactual_exit_notional",
+        "counterfactual_exit_cost",
+        "counterfactual_gross_pnl",
+        "counterfactual_net_pnl",
+        "direct_exit_delta_net",
+        "continuation_value_net"
+      ],
+      "explicit_exit": false,
+      "explicit_hold": false,
+      "notional": true,
+      "path": "governance/abc_lifecycle_state_machine_state_conditioned_action_hypothesis_counterfactual_direct_continuation_value_execution_v1/direct_continuation_value_ledger.csv",
+      "size_bytes": 230443
+    },
+    {
+      "columns": [
+        "hypothesis_id",
+        "year",
+        "evaluable_lifecycle_count",
+        "sum_direct_exit_delta_net",
+        "mean_direct_exit_delta_net",
+        "sum_continuation_value_net",
+        "mean_continuation_value_net",
+        "immediate_exit_better_count",
+        "native_continuation_better_count",
+        "tie_count"
+      ],
+      "explicit_exit": false,
+      "explicit_hold": false,
+      "notional": false,
+      "path": "governance/abc_lifecycle_state_machine_state_conditioned_action_hypothesis_counterfactual_direct_continuation_value_execution_v1/direct_continuation_value_summary.csv",
+      "size_bytes": 3645
+    }
+  ],
+  "current_engine_source_sha256": "EE6C74F098ABDA63213E40CB6D0CC57F6BA012D35F90475361F7A25B94621284",
+  "engine_tokens": {
+    "adaptive_protection_present": true,
+    "adaptive_stagnation_present": true,
+    "external_exit_schedule_surface": true,
+    "external_trade_arbiter_surface": false,
+    "max_hold_168_present": true,
+    "native_optional_exit_suppression_surface": false
+  },
+  "exact_two_sided_engine_surface": false,
+  "interpretation": "CURRENT_ENGINE_HAS_EXTERNAL_EXIT_SCHEDULE_BUT_NO_PROVEN_NATIVE_OPTIONAL_EXIT_HOLD_SUPPRESSION_SURFACE",
+  "schema_version": "akah-rev552-continuation-value-maximum-evidence-mega-v1-source-capability-audit"
+}

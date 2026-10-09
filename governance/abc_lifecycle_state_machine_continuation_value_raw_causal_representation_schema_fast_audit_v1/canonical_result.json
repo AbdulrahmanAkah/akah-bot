@@ -1,0 +1,54 @@
+{
+  "2024_access": false,
+  "encoder_train_only_statistics": true,
+  "families": {
+    "CORE_AGE": {
+      "binary": [
+        "memory_seen"
+      ],
+      "categorical": [
+        "base_state",
+        "native_market_state_context"
+      ],
+      "numeric": []
+    },
+    "DAMAGE_AGE": {
+      "binary": [],
+      "categorical": [],
+      "numeric": [
+        "progress_margin_delta_from_prev",
+        "structural_break_margin_delta_from_prev",
+        "volatility_damage_margin_delta_from_prev"
+      ]
+    },
+    "EVIDENCE_AGE": {
+      "binary": [
+        "a_condition_now",
+        "b_condition_now",
+        "memory_seen"
+      ],
+      "categorical": [],
+      "numeric": []
+    },
+    "SIGNAL_MARKET": {
+      "binary": [
+        "A_signal",
+        "B_signal",
+        "C_signal"
+      ],
+      "categorical": [
+        "native_market_state_context"
+      ],
+      "numeric": []
+    }
+  },
+  "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_CONTINUATION_VALUE_RAW_VS_SIGNATURE_REAL_RESIDUAL_FAST_PROOF_V1",
+  "pair_identity_in_model_inputs": false,
+  "ridge_alpha": 100.0,
+  "rows": 12290,
+  "schema_version": "akah-rev638-raw-representation-target-separation-v6-fast-proof-mega-v1-raw-schema",
+  "sensor_values_read": false,
+  "status": "PASS_RAW_CAUSAL_REPRESENTATION_SCHEMA_AUDIT",
+  "target_or_future_columns_in_model_inputs": false,
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_CONTINUATION_VALUE_RAW_CAUSAL_REPRESENTATION_SCHEMA_FAST_AUDIT_V1"
+}

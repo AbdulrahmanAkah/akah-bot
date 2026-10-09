@@ -1,0 +1,1372 @@
+{
+  "reference_count": 273,
+  "references": [
+    {
+      "context": "        raise ProofError(\"implementation protocol authority drift\")\n    return load_object(args.p4p4r_json), load_object(args.p4p5r_json)\n\n\ndef load_signals(path: Path) -> pd.DataFrame:\n    columns = [\"timestamp\", \"pair\", \"membership_rank\", \"period_id\", \"support_families\", \"support_count\", \"atr24_at_signal\"]\n    frame = pd.read_csv(path, usecols=columns, low_memory=False)\n    if len(frame) != 3962:\n        raise ProofError(f\"signal row count drift: {len(frame)}\")\n    frame[\"timestamp\"] = pd.to_datetime(frame[\"timestamp\"], utc=True, errors=\"raise\")\n    frame[\"membership_rank\"] = pd.to_numeric(frame[\"membership_rank\"], errors=\"raise\").astype(int)\n    frame[\"atr24_at_signal\"] = pd.to_numeric(frame[\"atr24_at_signal\"], errors=\"raise\").astype(float)",
+      "line": 151,
+      "path": "scripts/research/run_eaa_same_pair_secondary_shadow_parity.py"
+    },
+    {
+      "context": "    columns = [\"timestamp\", \"pair\", \"membership_rank\", \"period_id\", \"support_families\", \"support_count\", \"atr24_at_signal\"]\n    frame = pd.read_csv(path, usecols=columns, low_memory=False)\n    if len(frame) != 3962:\n        raise ProofError(f\"signal row count drift: {len(frame)}\")\n    frame[\"timestamp\"] = pd.to_datetime(frame[\"timestamp\"], utc=True, errors=\"raise\")\n    frame[\"membership_rank\"] = pd.to_numeric(frame[\"membership_rank\"], errors=\"raise\").astype(int)\n    frame[\"atr24_at_signal\"] = pd.to_numeric(frame[\"atr24_at_signal\"], errors=\"raise\").astype(float)\n    frame[\"pair\"] = frame[\"pair\"].astype(str); frame[\"period_id\"] = frame[\"period_id\"].astype(str); frame[\"support_families\"] = frame[\"support_families\"].astype(str)\n    if bool((frame[\"timestamp\"] >= CUT).any()):\n        raise ProofError(\"signal ledger crossed sealed pre-2022 cutoff\")\n    for period_id, (start, end) in PERIODS.items():\n        subset = frame[frame[\"period_id\"] == period_id]",
+      "line": 156,
+      "path": "scripts/research/run_eaa_same_pair_secondary_shadow_parity.py"
+    },
+    {
+      "context": "    frame = pd.read_csv(path, usecols=columns, low_memory=False)\n    if len(frame) != 3962:\n        raise ProofError(f\"signal row count drift: {len(frame)}\")\n    frame[\"timestamp\"] = pd.to_datetime(frame[\"timestamp\"], utc=True, errors=\"raise\")\n    frame[\"membership_rank\"] = pd.to_numeric(frame[\"membership_rank\"], errors=\"raise\").astype(int)\n    frame[\"atr24_at_signal\"] = pd.to_numeric(frame[\"atr24_at_signal\"], errors=\"raise\").astype(float)\n    frame[\"pair\"] = frame[\"pair\"].astype(str); frame[\"period_id\"] = frame[\"period_id\"].astype(str); frame[\"support_families\"] = frame[\"support_families\"].astype(str)\n    if bool((frame[\"timestamp\"] >= CUT).any()):\n        raise ProofError(\"signal ledger crossed sealed pre-2022 cutoff\")\n    for period_id, (start, end) in PERIODS.items():\n        subset = frame[frame[\"period_id\"] == period_id]\n        if len(subset) != PERIOD_SIGNAL_COUNTS[period_id] or bool((subset[\"timestamp\"] < start).any()) or bool((subset[\"timestamp\"] >= end).any()):",
+      "line": 157,
+      "path": "scripts/research/run_eaa_same_pair_secondary_shadow_parity.py"
+    },
+    {
+      "context": "        raise ProofError(\"signal ledger crossed sealed pre-2022 cutoff\")\n    for period_id, (start, end) in PERIODS.items():\n        subset = frame[frame[\"period_id\"] == period_id]\n        if len(subset) != PERIOD_SIGNAL_COUNTS[period_id] or bool((subset[\"timestamp\"] < start).any()) or bool((subset[\"timestamp\"] >= end).any()):\n            raise ProofError(f\"signal period authority drift: {period_id}\")\n    return frame.sort_values([\"period_id\", \"timestamp\", \"membership_rank\", \"pair\"], kind=\"stable\").reset_index(drop=True)\n\n\ndef market_authority(*, raw_root: Path, pairs: list[str], rd26: Any, state: Any) -> tuple[dict[str, pd.DataFrame], pd.DataFrame, list[dict[str, Any]]]:\n    frames: dict[str, pd.DataFrame] = {}; audit: list[dict[str, Any]] = []; cutoff = CUT.to_pydatetime()\n    for index, pair in enumerate(pairs, start=1):\n        path = raw_root / pair / \"1h.parquet\"",
+      "line": 165,
+      "path": "scripts/research/run_eaa_same_pair_secondary_shadow_parity.py"
+    },
+    {
+      "context": "    membership_path: Path,\n) -> list[str]:\n    membership = load_membership(membership_path)\n    if not membership:\n        raise RunnerError(\"effective membership schedule is empty\")\n    return sorted({pair for snapshot in membership for pair, _membership_rank in snapshot.members})\n\n\ndef verify_raw_sources(raw_root: Path, pairs: list[str]) -> dict[str, Any]:\n    missing = [pair for pair in pairs if not (raw_root / pair / \"1h.parquet\").is_file()]\n    if missing:\n        raise RunnerError(f\"missing 1h sources for membership pairs: {missing[:20]}\")",
+      "line": 158,
+      "path": "scripts/research/run_rd20_p1_p2a.py"
+    },
+    {
+      "context": "    if len(events):\n        event_output = events.copy()\n        event_output[\"timestamp\"] = pd.to_datetime(\n            event_output[\"timestamp\"], utc=True, errors=\"raise\"\n        ).astype(str)\n        event_output.to_csv(out / \"signal-events.csv\", index=False, lineterminator=\"\\n\")\n    else:\n        pd.DataFrame(\n            columns=[\n                \"universe_id\",\n                \"partition_id\",\n                \"timestamp\",",
+      "line": 313,
+      "path": "scripts/research/run_rd20_p1_p2a.py"
+    },
+    {
+      "context": "                \"universe_id\",\n                \"partition_id\",\n                \"timestamp\",\n                \"candidate_rank\",\n                \"pair\",\n                \"membership_rank\",\n                \"trend_strength_percentile\",\n                \"recovery_impulse_percentile\",\n                \"score\",\n                \"past_72h_return\",\n                \"recovery_impulse_atr\",\n                \"decision_close\",",
+      "line": 322,
+      "path": "scripts/research/run_rd20_p1_p2a.py"
+    },
+    {
+      "context": "                \"recovery_impulse_atr\",\n                \"decision_close\",\n                \"ema24\",\n                \"initial_stop_reference\",\n            ]\n        ).to_csv(out / \"signal-events.csv\", index=False, lineterminator=\"\\n\")\n\n    write_json(out / \"signal-sufficiency.json\", sufficiency)\n\n    p3_authorized = bool(sufficiency[\"passed\"])\n    decision = (\n        \"RD20_P2A_PRE_PNL_SIGNAL_AUDIT_COMPLETE_P3_AUTHORIZED\"",
+      "line": 332,
+      "path": "scripts/research/run_rd20_p1_p2a.py"
+    },
+    {
+      "context": "\n    manifest_files = [\n        \"frozen-candidate-contract.json\",\n        \"raw-source-audit.json\",\n        \"pre-pnl-signal-funnel.csv\",\n        \"signal-events.csv\",\n        \"signal-sufficiency.json\",\n        \"pre-economic-gate-evaluation.csv\",\n        \"rd20-p2a-pre-pnl-report-v1.json\",\n    ]\n    rows = []\n    for name in manifest_files:",
+      "line": 395,
+      "path": "scripts/research/run_rd20_p1_p2a.py"
+    },
+    {
+      "context": "                \"universe_id\",\n                \"partition_id\",\n                \"timestamp\",\n                \"candidate_rank\",\n                \"pair\",\n                \"membership_rank\",\n                \"trend_strength_percentile\",\n                \"recovery_impulse_percentile\",\n                \"score\",\n                \"past_72h_return\",\n                \"recovery_impulse_atr\",\n                \"decision_close\",",
+      "line": 298,
+      "path": "scripts/research/run_rd20_p2a_r1_timestamp_correction.py"
+    },
+    {
+      "context": "                \"decision_close\",\n                \"ema24\",\n                \"initial_stop_reference\",\n            ]\n        )\n    event_output.to_csv(output / \"signal-events.csv\", index=False, lineterminator=\"\\n\")\n    write_json(output / \"signal-sufficiency.json\", sufficiency)\n\n    correction = {\n        \"schema_version\": \"rd20-p2a-r1-correction-diagnosis-v1\",\n        \"candidate_id\": CANDIDATE_ID,\n        \"original_commit\": EXPECTED_PARENT,",
+      "line": 309,
+      "path": "scripts/research/run_rd20_p2a_r1_timestamp_correction.py"
+    },
+    {
+      "context": "\n    names = [\n        \"frozen-candidate-contract.json\",\n        \"timestamp-unit-diagnosis.csv\",\n        \"pre-pnl-signal-funnel.csv\",\n        \"signal-events.csv\",\n        \"signal-sufficiency.json\",\n        \"correction-diagnosis.json\",\n        \"pre-economic-gate-evaluation.csv\",\n        \"rd20-p2a-r1-pre-pnl-report-v1.json\",\n    ]\n    write_json(output / \"output-manifest.json\", output_manifest(output, names, decision))",
+      "line": 382,
+      "path": "scripts/research/run_rd20_p2a_r1_timestamp_correction.py"
+    },
+    {
+      "context": "    validate_signal_event_parity,\n)\n\nEXPECTED_PARENT = \"2d35b39497916d63c4026f367b2257710a3e4d0c\"\nP2A_R1_OUTPUT = Path(\"data/research/rd20_p2a_r1_runtime\")\nSIGNAL_EVENTS = P2A_R1_OUTPUT / \"signal-events.csv\"\nFROZEN_CANDIDATE = P2A_R1_OUTPUT / \"frozen-candidate-contract.json\"\nPRE_PNL_FUNNEL = P2A_R1_OUTPUT / \"pre-pnl-signal-funnel.csv\"\nP2A_R1_REPORT = P2A_R1_OUTPUT / \"rd20-p2a-r1-pre-pnl-report-v1.json\"\nP3_PROTOCOL = Path(\"data/research/rd20_p3/rd20-p3-core-edge-economic-protocol-v1.json\")\nOUTPUT = Path(\"data/research/rd20_p3_runtime\")\nDEFAULT_RAW_ROOT = Path(\"data/raw/rd16b/kucoin\")",
+      "line": 40,
+      "path": "scripts/research/run_rd20_p3_core_edge.py"
+    },
+    {
+      "context": "    validate_constants,\n    variant_gate_rows,\n)\n\nEXPECTED_SOURCE_COMMIT = \"24f3c8732e0c7bb968fe587753545694bae092d0\"\nP2A_EVENTS = Path(\"data/research/rd20_p2a_r1_runtime/signal-events.csv\")\nP3_REPORT = Path(\"data/research/rd20_p3_runtime/rd20-p3-core-edge-report-v1.json\")\nP3_RUN_METRICS = Path(\"data/research/rd20_p3_runtime/run-metrics.csv\")\nP3_FORWARD = Path(\"data/research/rd20_p3_runtime/forward-horizon-diagnostics.csv\")\nP3_TRADES = Path(\"data/research/rd20_p3_runtime/trade-ledger.csv\")\nP3_BREAK_EVEN = Path(\"data/research/rd20_p3_runtime/break-even-cost-multiplier.csv\")\nP3_DIAGNOSIS = Path(\"data/research/rd21_p0_runtime/rd20-p3-failure-diagnosis-v1.json\")",
+      "line": 36,
+      "path": "scripts/research/run_rd21_horizon_discovery.py"
+    },
+    {
+      "context": "        \"universe_id\",\n        \"partition_id\",\n        \"timestamp\",\n        \"candidate_rank\",\n        \"pair\",\n        \"membership_rank\",\n        \"score\",\n        \"initial_stop_reference\",\n    }\n    missing = sorted(required.difference(events.columns))\n    if missing:\n        raise RunnerError(f\"signal event columns missing: {missing}\")",
+      "line": 205,
+      "path": "scripts/research/run_rd21_horizon_discovery.py"
+    },
+    {
+      "context": "    validate_constants,\n    variant_gate_rows,\n)\n\nEXPECTED_SOURCE_COMMIT = \"6dc05e52bdc8479e3b9b5328a72c3c1fb4ae4626\"\nP2A_EVENTS = Path(\"data/research/rd20_p2a_r1_runtime/signal-events.csv\")\nRD21_REPORT = Path(\"data/research/rd21_p2_runtime/rd21-p2-discovery-report-v1.json\")\nRD21_METRICS = Path(\"data/research/rd21_p2_runtime/variant-metrics.csv\")\nRD21_CONCENTRATION = Path(\"data/research/rd21_p2_runtime/concentration-diagnostics.csv\")\nRD21_TRADES = Path(\"data/research/rd21_p2_runtime/trade-ledger.csv\")\nRD21_GATES = Path(\"data/research/rd21_p2_runtime/variant-hard-gates.csv\")\nRD21_DIAGNOSIS = Path(\"data/research/rd22_p0_runtime/rd21-no-finalist-diagnosis-v1.json\")",
+      "line": 36,
+      "path": "scripts/research/run_rd22_structural_risk_on_pullback.py"
+    },
+    {
+      "context": "        \"universe_id\",\n        \"partition_id\",\n        \"timestamp\",\n        \"candidate_rank\",\n        \"pair\",\n        \"membership_rank\",\n        \"score\",\n        \"initial_stop_reference\",\n    }\n    missing = sorted(required.difference(events.columns))\n    if missing:\n        raise RunnerError(f\"signal event columns missing: {missing}\")",
+      "line": 213,
+      "path": "scripts/research/run_rd22_structural_risk_on_pullback.py"
+    },
+    {
+      "context": "OUTPUT = Path(\"data/research/rd23_p2_runtime\")\n\nOUTPUT_NAMES = (\n    \"input-and-conformance-audit.json\",\n    \"family-signal-funnel.csv\",\n    \"signal-events.csv\",\n    \"family-overlap-matrix.csv\",\n    \"overlap-summary.json\",\n    \"forward-event-returns.csv\",\n    \"raw-edge-metrics.csv\",\n    \"family-horizon-hard-gates.csv\",\n    \"family-selection.csv\",",
+      "line": 43,
+      "path": "scripts/research/run_rd23_multifamily_raw_edge.py"
+    },
+    {
+      "context": "\n    output = repo / OUTPUT\n    output.mkdir(parents=True, exist_ok=True)\n    write_json(output / \"input-and-conformance-audit.json\", audit)\n    funnel.to_csv(output / \"family-signal-funnel.csv\", index=False, lineterminator=\"\\n\")\n    events.to_csv(output / \"signal-events.csv\", index=False, lineterminator=\"\\n\")\n    overlap_matrix.to_csv(\n        output / \"family-overlap-matrix.csv\",\n        index=False,\n        lineterminator=\"\\n\",\n    )\n    write_json(output / \"overlap-summary.json\", overlap_summary)",
+      "line": 312,
+      "path": "scripts/research/run_rd23_multifamily_raw_edge.py"
+    },
+    {
+      "context": "    union_events,\n    validate_constants,\n)\n\nEXPECTED_PARENT = \"f0120353dac3a3ac47ad44039c749c4e46cf2069\"\nRD23_SIGNAL_EVENTS = Path(\"data/research/rd23_p2_runtime/signal-events.csv\")\nRD23_QUALIFIED_FREEZE = Path(\"data/research/rd23_p2_runtime/qualified-family-freeze.json\")\nRD23_REPORT = Path(\"data/research/rd23_p2_runtime/rd23-p2-multifamily-raw-edge-report-v1.json\")\nRD23_MANIFEST = Path(\"data/research/rd23_p2_runtime/output-manifest.json\")\nPROTOCOL = Path(\"data/research/rd24_p2/rd24-p2-parallel-minimal-portfolio-protocol-v1.json\")\nOUTPUT = Path(\"data/research/rd24_p2_runtime\")\nDEFAULT_RAW_ROOT = Path(\"data/raw/rd16b/kucoin\")",
+      "line": 38,
+      "path": "scripts/research/run_rd24_parallel_minimal_portfolio.py"
+    },
+    {
+      "context": "    union_events,\n)\n\nEXPECTED_PARENT = \"78592564dfd7a454c2842b096cb2bc54db320502\"\nDEFAULT_RAW_ROOT = Path(\"data/raw/rd16b/kucoin\")\nRD23_SIGNALS = Path(\"data/research/rd23_p2_runtime/signal-events.csv\")\nRD24_OUTPUT = Path(\"data/research/rd24_p2_runtime\")\nPROTOCOL = Path(\"data/research/rd25_p1/rd25-p1-portfolio-translation-diagnosis-v1.json\")\nOUTPUT = Path(\"data/research/rd25_p1_runtime\")\n\nEXPECTED_INPUT_HASHES = {\n    RD24_OUTPUT / \"output-manifest.json\": (",
+      "line": 32,
+      "path": "scripts/research/run_rd25_portfolio_translation_diagnosis.py"
+    },
+    {
+      "context": "            \"period_id\": str(raw[\"period_id\"]),\n            \"signal_time\": signal_time,\n            \"entry_time\": entry_time,\n            \"exit_time\": exit_time,\n            \"entry_price\": entry_price,\n            \"atr24_at_signal\": atr,\n            \"net_final_return\": net_final,\n            \"gross_final_return\": gross_final,\n            \"winner\": bool(float(raw[\"net_pnl\"]) > 0.0),\n            \"mae_return\": mae_return,\n            \"mfe_return\": mfe_return,\n            \"mae_atr\": mae_atr,",
+      "line": 459,
+      "path": "scripts/research/run_rd25_portfolio_translation_diagnosis.py"
+    },
+    {
+      "context": ")\n\nEXPECTED_PARENT = \"f40107fab876d709c353fc47b63d1347fabf2ada\"\nRD25_DIAGNOSIS = Path(\"data/research/rd25_p1_runtime/diagnosis.json\")\nRD25_DIAGNOSIS_SHA256 = \"e9102397d6337801c163d4e78b5f365a7ea79f47b2db4469c67da04a537bc69e\"\nRD23_SIGNAL_EVENTS = Path(\"data/research/rd23_p2_runtime/signal-events.csv\")\nRD23_SIGNAL_EVENTS_SHA256 = \"cdd6f078a5851a38be3f44722dcca7d6ccccb771b4647e9b467d14de3fc9d264\"\nMEMBERSHIP = Path(\"data/research/rd18_p3x_a3b_runtime/effective-operational-membership.csv\")\nPROTOCOL = Path(\"data/research/rd26_p1/rd26-p1-exit-architecture-robustness-protocol-v1.json\")\nPREFLIGHT_AUDIT = Path(\"data/research/rd26_p0_runtime/rd23-focus-signal-equivalence-audit-v1.json\")\nOUTPUT = Path(\"data/research/rd26_p1_runtime\")\nDEFAULT_RAW_ROOT = Path(\"data/raw/rd16b/kucoin\")",
+      "line": 50,
+      "path": "scripts/research/run_rd26_exit_architecture.py"
+    },
+    {
+      "context": "OUTPUT = Path(\"data/research/rd26_p1_runtime\")\nDEFAULT_RAW_ROOT = Path(\"data/raw/rd16b/kucoin\")\n\nOUTPUT_NAMES = (\n    \"input-and-conformance-audit.json\",\n    \"signal-events-2022-2023.csv\",\n    \"signal-funnel-2022-2023.csv\",\n    \"portfolio-run-metrics.csv\",\n    \"portfolio-period-metrics.csv\",\n    \"routing-summary.csv\",\n    \"trade-ledger.csv\",\n    \"daily-equity.csv\",",
+      "line": 60,
+      "path": "scripts/research/run_rd26_exit_architecture.py"
+    },
+    {
+      "context": "        \"production_authorized\",\n    ):\n        if report.get(field) is not False:\n            raise RunnerError(f\"RD26 prohibited flag true: {field}\")\n\n    signals = pd.read_csv(output / \"signal-events-2022-2023.csv\", low_memory=False)\n    signal_times = pd.to_datetime(signals[\"timestamp\"], utc=True, errors=\"raise\")\n    if bool((signal_times < DATA_START).any()) or bool((signal_times >= DATA_CUTOFF).any()):\n        raise RunnerError(\"RD26 signal ledger crossed sealed boundary\")\n    trades = pd.read_csv(output / \"trade-ledger.csv\", low_memory=False)\n    if len(trades):\n        exits = pd.to_datetime(trades[\"exit_time\"], utc=True, errors=\"raise\")",
+      "line": 543,
+      "path": "scripts/research/run_rd26_exit_architecture.py"
+    },
+    {
+      "context": "        event_count=len(events),\n        freeze_commit=args.expected_freeze_commit,\n    )\n\n    events.to_csv(\n        output / \"signal-events-2022-2023.csv\",\n        index=False,\n        lineterminator=\"\\n\",\n    )\n    funnel.to_csv(\n        output / \"signal-funnel-2022-2023.csv\",\n        index=False,",
+      "line": 651,
+      "path": "scripts/research/run_rd26_exit_architecture.py"
+    },
+    {
+      "context": ")\nP0B_AUDIT_SHA256 = \"1e3b68bf9cb9b50aaef4b1cf53e224a3634732e81d4fc74db999a5eac1fa3773\"\nSTATE_ENGINE = Path(\"src/spotbot/research/rd27_adaptive_lifecycle.py\")\nSTATE_ENGINE_SHA256 = \"ee205cda74d70a530734bbfb4843c2dbfc8bf950122254aa2aceb8766a90f9ad\"\n\nRD26_SIGNAL_EVENTS = Path(\"data/research/rd26_p1_runtime/signal-events-2022-2023.csv\")\nRD26_SIGNAL_EVENTS_SHA256 = \"6462f576cee9681751368a7755d3ca51ebf945ced54ea7b7f18b47bc469ba725\"\nEXPECTED_SIGNAL_EVENT_COUNT = 7073\nRD26_RUN_METRICS = Path(\"data/research/rd26_p1_runtime/portfolio-run-metrics.csv\")\n\nDEFAULT_RAW_ROOT = Path(\"data/raw/rd16b/kucoin\")\nOUTPUT = Path(\"data/research/rd27_p1_runtime\")",
+      "line": 66,
+      "path": "scripts/research/run_rd27_lifecycle_ablation.py"
+    },
+    {
+      "context": "ENGINE = Path(\"src/spotbot/research/rd28_evidence_gated_lifecycle.py\")\nENGINE_SHA256 = \"cf5fc2ce83db12aec3a9f4d43039e628898f4cd70537e571a0367de62df1b510\"\nREPLAY = Path(\"src/spotbot/research/rd28_lifecycle_replay.py\")\nREPLAY_SHA256 = \"4ad1ead99210ef0f27cc4f42754a554b647c3fc799c636ce4686c7e0bdaa149e\"\n\nRD26_SIGNAL_EVENTS = Path(\"data/research/rd26_p1_runtime/signal-events-2022-2023.csv\")\nRD26_SIGNAL_EVENTS_SHA256 = \"6462f576cee9681751368a7755d3ca51ebf945ced54ea7b7f18b47bc469ba725\"\nEXPECTED_SIGNAL_EVENT_COUNT = 7073\nRD27_RUN_METRICS = Path(\"data/research/rd27_p1_runtime/portfolio-run-metrics.csv\")\n\nDEFAULT_RAW_ROOT = Path(\"data/raw/rd16b/kucoin\")\nOUTPUT = Path(\"data/research/rd28_p1_runtime\")",
+      "line": 74,
+      "path": "scripts/research/run_rd28_evidence_gated_lifecycle.py"
+    },
+    {
+      "context": "REPLAY = Path(\"src/spotbot/research/rd29_thesis_replay.py\")\nREPLAY_SHA256 = \"c499946623cfde87812bd63442bd9d67fe7baa3ef7de55bfb83355140984144b\"\nMEMBERSHIP = Path(\"data/research/rd18_p3x_a3b_runtime/effective-operational-membership.csv\")\nMEMBERSHIP_SHA256 = \"f7d6012ce8cd691583b9b6276ddf36371bfe0bbd9b28f810b676ad0177fb559e\"\n\nRD26_SIGNAL_EVENTS = Path(\"data/research/rd26_p1_runtime/signal-events-2022-2023.csv\")\nRD26_SIGNAL_EVENTS_SHA256 = \"6462f576cee9681751368a7755d3ca51ebf945ced54ea7b7f18b47bc469ba725\"\nEXPECTED_SIGNAL_EVENT_COUNT = 7073\nRD28_RUN_METRICS = Path(\"data/research/rd28_p1_runtime/portfolio-run-metrics.csv\")\n\nDEFAULT_RAW_ROOT = Path(\"data/raw/rd16b/kucoin\")\nOUTPUT = Path(\"data/research/rd29_p1_runtime\")",
+      "line": 79,
+      "path": "scripts/research/run_rd29_thesis_confidence_lifecycle.py"
+    },
+    {
+      "context": "    mismatches: list[dict[str, Any]] = []\n    for row in events.to_dict(orient=\"records\"):\n        timestamp = pd.Timestamp(row[\"timestamp\"])\n        universe = str(row[\"universe_id\"])\n        pair = str(row[\"pair\"])\n        expected_rank = int(row[\"membership_rank\"])\n        members = dict(\n            membership_at(\n                snapshots,\n                universe_id=universe,\n                timestamp=timestamp,\n            )",
+      "line": 336,
+      "path": "scripts/research/run_rd29_thesis_confidence_lifecycle.py"
+    },
+    {
+      "context": "REPLAY_TEST_SHA256 = \"8b13e9b66c189f90e883ebd4f0daa8f0fcf63723da9e373b8dfe6e07a07fafac\"\n\nMEMBERSHIP = Path(\"data/research/rd18_p3x_a3b_runtime/effective-operational-membership.csv\")\nMEMBERSHIP_SHA256 = \"f7d6012ce8cd691583b9b6276ddf36371bfe0bbd9b28f810b676ad0177fb559e\"\n\nRD26_SIGNAL_EVENTS = Path(\"data/research/rd26_p1_runtime/signal-events-2022-2023.csv\")\nRD26_SIGNAL_EVENTS_SHA256 = \"6462f576cee9681751368a7755d3ca51ebf945ced54ea7b7f18b47bc469ba725\"\nEXPECTED_SIGNAL_EVENT_COUNT = 7073\n\nRD29_RUN_METRICS = Path(\"data/research/rd29_p1_runtime/portfolio-run-metrics.csv\")\n\nDEFAULT_RAW_ROOT = Path(\"data/raw/rd16b/kucoin\")",
+      "line": 91,
+      "path": "scripts/research/run_rd30_family_specialist_replacement_aware.py"
+    },
+    {
+      "context": "    mismatches: list[dict[str, Any]] = []\n    for row in events.to_dict(orient=\"records\"):\n        timestamp = pd.Timestamp(row[\"timestamp\"])\n        universe = str(row[\"universe_id\"])\n        pair = str(row[\"pair\"])\n        expected_rank = int(row[\"membership_rank\"])\n        members = dict(\n            membership_at(\n                snapshots,\n                universe_id=universe,\n                timestamp=timestamp,\n            )",
+      "line": 416,
+      "path": "scripts/research/run_rd30_family_specialist_replacement_aware.py"
+    },
+    {
+      "context": "REPLAY_TEST_SHA256 = \"46ce66ff1ef7f1eedda07c225d31e03891aebf612250e349364a4f77a87763b4\"\n\nMEMBERSHIP = Path(\"data/research/rd18_p3x_a3b_runtime/effective-operational-membership.csv\")\nMEMBERSHIP_SHA256 = \"f7d6012ce8cd691583b9b6276ddf36371bfe0bbd9b28f810b676ad0177fb559e\"\n\nRD26_SIGNAL_EVENTS = Path(\"data/research/rd26_p1_runtime/signal-events-2022-2023.csv\")\nRD26_SIGNAL_EVENTS_SHA256 = \"6462f576cee9681751368a7755d3ca51ebf945ced54ea7b7f18b47bc469ba725\"\nEXPECTED_SIGNAL_EVENT_COUNT = 7073\n\nRD30_RUN_METRICS = Path(\"data/research/rd30_p1_runtime/portfolio-run-metrics.csv\")\nRD30_REPORT = Path(\n    \"data/research/rd30_p1_runtime/rd30-p1-family-specialist-replacement-aware-report-v1.json\"",
+      "line": 117,
+      "path": "scripts/research/run_rd31_market_regime_admission_governor.py"
+    },
+    {
+      "context": "    mismatches: list[dict[str, Any]] = []\n    for row in events.to_dict(orient=\"records\"):\n        timestamp = pd.Timestamp(row[\"timestamp\"])\n        universe = str(row[\"universe_id\"])\n        pair = str(row[\"pair\"])\n        expected_rank = int(row[\"membership_rank\"])\n        members = dict(\n            membership_at(\n                snapshots,\n                universe_id=universe,\n                timestamp=timestamp,\n            )",
+      "line": 611,
+      "path": "scripts/research/run_rd31_market_regime_admission_governor.py"
+    },
+    {
+      "context": "                portfolio_events = _eligible_events(raw_events)\n                records = sorted(\n                    portfolio_events.to_dict(orient=\"records\"),\n                    key=lambda item: (\n                        pd.Timestamp(item[\"timestamp\"]),\n                        int(item[\"membership_rank\"]),\n                        str(item[\"pair\"]),\n                    ),\n                )\n                governor_state: str | None = (\n                    OPEN if policy_id == REGIME_HYSTERESIS_ADMISSION_GOVERNOR else None\n                )",
+      "line": 785,
+      "path": "scripts/research/run_rd31_market_regime_admission_governor.py"
+    },
+    {
+      "context": "                            \"portfolio_id\": portfolio_id,\n                            \"universe_id\": universe,\n                            \"signal_time\": signal_time,\n                            \"action_time\": (signal_time + pd.Timedelta(hours=1)),\n                            \"pair\": str(item[\"pair\"]),\n                            \"membership_rank\": int(item[\"membership_rank\"]),\n                            \"family_bucket\": bucket,\n                            \"support_families\": \"|\".join(support),\n                            \"btc_state\": btc_state,\n                            \"market_context\": (market_context.context),\n                            \"governor_prior_state\": (prior_state),\n                            \"governor_next_state\": (governor_state),",
+      "line": 847,
+      "path": "scripts/research/run_rd31_market_regime_admission_governor.py"
+    },
+    {
+      "context": "                (hysteresis[\"universe_id\"] == universe)\n                & (hysteresis[\"portfolio_id\"] == portfolio_id)\n            ].sort_values(\n                [\n                    \"signal_time\",\n                    \"membership_rank\",\n                    \"pair\",\n                ],\n                kind=\"stable\",\n            )\n\n            updates: dict[int, str] = {}",
+      "line": 956,
+      "path": "scripts/research/run_rd31_market_regime_admission_governor.py"
+    },
+    {
+      "context": "    state_series: dict[str, pd.Series] = {}\n    for universe in EXPECTED_UNIVERSES:\n        subset = hysteresis_events.loc[hysteresis_events[\"universe_id\"] == universe].sort_values(\n            [\n                \"signal_time\",\n                \"membership_rank\",\n                \"pair\",\n            ],\n            kind=\"stable\",\n        )\n        updates: dict[int, str] = {}\n        for signal_time, group in subset.groupby(",
+      "line": 1283,
+      "path": "scripts/research/run_rd31_market_regime_admission_governor.py"
+    },
+    {
+      "context": "                    \"policy_id\": policy_id,\n                    \"universe_id\": universe,\n                    \"stress_cost_multiplier\": 2.0,\n                    \"signal_count\": len(union),\n                    \"distinct_signal_pairs\": int(union[\"pair\"].astype(str).nunique()),\n                    \"mean_signal_membership_rank\": (\n                        float(\n                            pd.to_numeric(\n                                union[\"membership_rank\"],\n                                errors=\"raise\",\n                            ).mean()\n                        )",
+      "line": 1420,
+      "path": "scripts/research/run_rd31_market_regime_admission_governor.py"
+    },
+    {
+      "context": "                    \"signal_count\": len(union),\n                    \"distinct_signal_pairs\": int(union[\"pair\"].astype(str).nunique()),\n                    \"mean_signal_membership_rank\": (\n                        float(\n                            pd.to_numeric(\n                                union[\"membership_rank\"],\n                                errors=\"raise\",\n                            ).mean()\n                        )\n                        if len(union)\n                        else math.nan\n                    ),",
+      "line": 1423,
+      "path": "scripts/research/run_rd31_market_regime_admission_governor.py"
+    },
+    {
+      "context": "    required = {\n        \"family_id\",\n        \"universe_id\",\n        \"timestamp\",\n        \"pair\",\n        \"membership_rank\",\n    }\n    missing = sorted(required.difference(events.columns))\n    if missing:\n        raise RunnerError(f\"signal ledger missing origin fields: {missing}\")\n\n    family_events = events.loc[events[\"family_id\"].astype(str).isin(FAMILIES)].copy()",
+      "line": 401,
+      "path": "scripts/research/run_rd34_dual_family_persistence_diagnostic.py"
+    },
+    {
+      "context": "            \"family_id\": family,\n            \"universe_id\": str(row[\"universe_id\"]),\n            \"period_id\": period_id_for(pd.Timestamp(row[\"timestamp\"])),\n            \"pair\": str(row[\"pair\"]),\n            \"timestamp\": pd.Timestamp(row[\"timestamp\"]),\n            \"membership_rank\": int(row[\"membership_rank\"]),\n        }\n        if family == FAMILY_MOMENTUM_BREAKOUT:\n            if \"aux_value\" not in row:\n                raise RunnerError(\"MB signal ledger lost frozen aux_value\")\n            normalized[\"aux_value\"] = row[\"aux_value\"]\n",
+      "line": 442,
+      "path": "scripts/research/run_rd34_dual_family_persistence_diagnostic.py"
+    },
+    {
+      "context": "                \"family_id\": origin.family_id,\n                \"universe_id\": origin.universe_id,\n                \"period_id\": origin.period_id,\n                \"pair\": origin.pair,\n                \"signal_time\": origin.signal_time,\n                \"membership_rank\": origin.membership_rank,\n                \"breakout_reference\": (origin.breakout_reference),\n                \"rd31_admission_policy\": ADMISSION_POLICY,\n                \"rd31_admission_portfolio\": ADMISSION_PORTFOLIO,\n            }\n        )\n",
+      "line": 457,
+      "path": "scripts/research/run_rd34_dual_family_persistence_diagnostic.py"
+    },
+    {
+      "context": "        pd.DataFrame.from_records(rows)\n        .sort_values(\n            [\n                \"signal_time\",\n                \"universe_id\",\n                \"membership_rank\",\n                \"pair\",\n                \"family_id\",\n            ],\n            kind=\"stable\",\n        )\n        .reset_index(drop=True)",
+      "line": 472,
+      "path": "scripts/research/run_rd34_dual_family_persistence_diagnostic.py"
+    },
+    {
+      "context": "            \"family_id\": row[\"family_id\"],\n            \"universe_id\": row[\"universe_id\"],\n            \"period_id\": row[\"period_id\"],\n            \"pair\": row[\"pair\"],\n            \"timestamp\": row[\"signal_time\"],\n            \"membership_rank\": row[\"membership_rank\"],\n        }\n        if row[\"family_id\"] == FAMILY_MOMENTUM_BREAKOUT:\n            event[\"aux_value\"] = row[\"breakout_reference\"]\n\n        origin = origin_from_event(event)\n        members_t1 = None",
+      "line": 532,
+      "path": "scripts/research/run_rd34_dual_family_persistence_diagnostic.py"
+    },
+    {
+      "context": "        \"family_id\",\n        \"universe_id\",\n        \"period_id\",\n        \"pair\",\n        \"timestamp\",\n        \"membership_rank\",\n        \"signal_strength\",\n        \"turnover_ratio\",\n        \"return_6h\",\n        \"return_24h\",\n        \"return_72h\",\n        \"breadth_24h\",",
+      "line": 433,
+      "path": "scripts/research/run_rd35_new_alpha_source_diagnostic.py"
+    },
+    {
+      "context": "        event_frame = event_frame.sort_values(\n            [\n                \"timestamp\",\n                \"universe_id\",\n                \"family_id\",\n                \"membership_rank\",\n                \"pair\",\n            ],\n            kind=\"stable\",\n        ).reset_index(drop=True)\n\n    generation_summary = (",
+      "line": 452,
+      "path": "scripts/research/run_rd35_new_alpha_source_diagnostic.py"
+    },
+    {
+      "context": "                        {\n                            \"family_id\": state[\"family_id\"],\n                            \"universe_id\": universe,\n                            \"period_id\": state[\"period_id\"],\n                            \"pair\": pair,\n                            \"membership_rank\": rank,\n                            \"source_time\": state[\"source_time\"],\n                            \"reference_time\": reference_time,\n                            \"horizon_hours\": horizon,\n                            \"exit_time\": markout[\"exit_time\"],\n                            \"entry_price\": markout[\"entry_price\"],\n                            \"exit_price\": markout[\"exit_price\"],",
+      "line": 501,
+      "path": "scripts/research/run_rd36_cross_venue_flow_state_diagnostic.py"
+    },
+    {
+      "context": "    columns = [\n        \"family_id\",\n        \"universe_id\",\n        \"period_id\",\n        \"pair\",\n        \"membership_rank\",\n        \"source_time\",\n        \"reference_time\",\n        \"horizon_hours\",\n        \"exit_time\",\n        \"entry_price\",\n        \"exit_price\",",
+      "line": 518,
+      "path": "scripts/research/run_rd36_cross_venue_flow_state_diagnostic.py"
+    },
+    {
+      "context": "        result = result.sort_values(\n            [\n                \"reference_time\",\n                \"family_id\",\n                \"universe_id\",\n                \"membership_rank\",\n                \"pair\",\n                \"horizon_hours\",\n            ],\n            kind=\"stable\",\n        ).reset_index(drop=True)\n    return result",
+      "line": 535,
+      "path": "scripts/research/run_rd36_cross_venue_flow_state_diagnostic.py"
+    },
+    {
+      "context": "        \"entry_cost\",\n        \"exit_cost\",\n        \"gross_pnl\",\n        \"net_pnl\",\n        \"period_id\",\n        \"membership_rank\",\n        \"support_families\",\n    }\n    missing = sorted(required.difference(frame.columns))\n    if missing:\n        raise RunnerError(f\"RD32 trade ledger missing frozen fields: {missing}\")\n",
+      "line": 255,
+      "path": "scripts/research/run_rd37_exit_shadow_ablation.py"
+    },
+    {
+      "context": "                        {\n                            \"family_id\": event[\"family_id\"],\n                            \"universe_id\": universe,\n                            \"period_id\": event[\"period_id\"],\n                            \"pair\": pair,\n                            \"membership_rank\": rank,\n                            \"source_hour\": event[\"source_hour\"],\n                            \"reference_time\": reference_time,\n                            \"horizon_hours\": horizon,\n                            \"exit_time\": markout[\"exit_time\"],\n                            \"entry_price\": markout[\"entry_price\"],\n                            \"exit_price\": markout[\"exit_price\"],",
+      "line": 557,
+      "path": "scripts/research/run_rd37_microstructure_stress_diagnostic.py"
+    },
+    {
+      "context": "    columns = [\n        \"family_id\",\n        \"universe_id\",\n        \"period_id\",\n        \"pair\",\n        \"membership_rank\",\n        \"source_hour\",\n        \"reference_time\",\n        \"horizon_hours\",\n        \"exit_time\",\n        \"entry_price\",\n        \"exit_price\",",
+      "line": 573,
+      "path": "scripts/research/run_rd37_microstructure_stress_diagnostic.py"
+    },
+    {
+      "context": "        result = result.sort_values(\n            [\n                \"reference_time\",\n                \"family_id\",\n                \"universe_id\",\n                \"membership_rank\",\n                \"pair\",\n                \"horizon_hours\",\n            ],\n            kind=\"stable\",\n        ).reset_index(drop=True)\n    return result",
+      "line": 590,
+      "path": "scripts/research/run_rd37_microstructure_stress_diagnostic.py"
+    },
+    {
+      "context": "\nRD32_TRADES = Path(\"data/research/rd32_p3_runtime/trade-ledger.csv\")\nRD32_TRADES_BLOB = \"6749de85cb14733388e0f76a6557124d3212398b\"\nRD32_TRADES_SHA256 = \"07f49e0e9235f736f54ee9dd59142c16fc4e7b99e83781b1ee26b9338def117e\"\n\nRD26_SIGNALS = Path(\"data/research/rd26_p1_runtime/signal-events-2022-2023.csv\")\nRD26_SIGNALS_SHA256 = \"6462f576cee9681751368a7755d3ca51ebf945ced54ea7b7f18b47bc469ba725\"\nEXPECTED_SIGNAL_EVENT_COUNT = 7073\n\nMEMBERSHIP = Path(\"data/research/rd18_p3x_a3b_runtime/effective-operational-membership.csv\")\nMEMBERSHIP_SHA256 = \"f7d6012ce8cd691583b9b6276ddf36371bfe0bbd9b28f810b676ad0177fb559e\"\n",
+      "line": 105,
+      "path": "scripts/research/run_rd41_full_risk_set_censoring_reconciliation.py"
+    },
+    {
+      "context": "    mismatches: list[dict[str, Any]] = []\n    for row in events.to_dict(orient=\"records\"):\n        timestamp = pd.Timestamp(row[\"timestamp\"])\n        universe = str(row[\"universe_id\"])\n        pair = str(row[\"pair\"])\n        expected_rank = int(row[\"membership_rank\"])\n        members = dict(\n            membership_at(\n                snapshots,\n                universe_id=universe,\n                timestamp=timestamp,\n            )",
+      "line": 328,
+      "path": "scripts/research/run_rd41_full_risk_set_censoring_reconciliation.py"
+    },
+    {
+      "context": "        \"universe_id\": universe,\n        \"period_id\": str(item.get(\"period_id\", \"\")),\n        \"pair\": str(item[\"pair\"]),\n        \"signal_time\": utc(item[\"signal_time\"]),\n        \"entry_time\": entry_time,\n        \"membership_rank\": int(item[\"membership_rank\"]),\n        \"support_families\": str(item[\"support_families\"]),\n        \"exclusion_reason\": reason,\n        \"contract_violation\": contract_violation,\n        \"governor_state_after_signal\": governor_state,\n        \"original_completion_eligible\": original_completion_eligible(entry_time),\n    }",
+      "line": 415,
+      "path": "scripts/research/run_rd41_full_risk_set_censoring_reconciliation.py"
+    },
+    {
+      "context": "                position.last_mark = float(bar[\"open\"])\n\n        entries = sorted(\n            scheduled.get(int(timestamp.value), []),\n            key=lambda item: (\n                int(item[\"membership_rank\"]),\n                str(item[\"pair\"]),\n            ),\n        )\n        for item in entries:\n            pair = str(item[\"pair\"])\n            signal_time = utc(item[\"signal_time\"])",
+      "line": 573,
+      "path": "scripts/research/run_rd41_full_risk_set_censoring_reconciliation.py"
+    },
+    {
+      "context": "                continue\n\n            entry_price = float(entry_bar[\"open\"])\n            if not math.isfinite(entry_price) or entry_price <= 0.0:\n                raise RunnerError(\"invalid entry open price\")\n            atr = float(item[\"atr24_at_signal\"])\n            if not math.isfinite(atr) or atr <= 0.0:\n                raise RunnerError(\"invalid entry ATR\")\n\n            notional = float(sizing.notional)\n            quantity = notional / entry_price\n            entry_cost = notional * side_cost",
+      "line": 721,
+      "path": "scripts/research/run_rd41_full_risk_set_censoring_reconciliation.py"
+    },
+    {
+      "context": "\n            specialist = new_specialist_position(\n                pair=pair,\n                entry_time=timestamp,\n                entry_price=entry_price,\n                atr24_at_signal=atr,\n                support_families=support,\n            )\n            positions[pair] = ReplayPosition(\n                pair=pair,\n                signal_time=signal_time,\n                entry_time=timestamp,",
+      "line": 737,
+      "path": "scripts/research/run_rd41_full_risk_set_censoring_reconciliation.py"
+    },
+    {
+      "context": "                max_exit_time=utc(item[\"max_exit_time\"]),\n                entry_price=entry_price,\n                quantity=quantity,\n                entry_notional=notional,\n                entry_cost=entry_cost,\n                membership_rank=int(item[\"membership_rank\"]),\n                support_families=support,\n                period_id=str(item[\"period_id\"]),\n                atr24_at_signal=atr,\n                specialist=specialist,\n                entry_market_state=entry_state,\n                entry_market_context=entry_context.context,",
+      "line": 749,
+      "path": "scripts/research/run_rd41_full_risk_set_censoring_reconciliation.py"
+    },
+    {
+      "context": "                entry_notional=notional,\n                entry_cost=entry_cost,\n                membership_rank=int(item[\"membership_rank\"]),\n                support_families=support,\n                period_id=str(item[\"period_id\"]),\n                atr24_at_signal=atr,\n                specialist=specialist,\n                entry_market_state=entry_state,\n                entry_market_context=entry_context.context,\n                last_mark=entry_price,\n            )\n            next_position_id += 1",
+      "line": 752,
+      "path": "scripts/research/run_rd41_full_risk_set_censoring_reconciliation.py"
+    },
+    {
+      "context": "                \"entry_cost\": position.entry_cost,\n                \"exit_cost\": np.nan,\n                \"gross_pnl\": np.nan,\n                \"net_pnl\": np.nan,\n                \"period_id\": position.period_id,\n                \"membership_rank\": position.membership_rank,\n                \"support_families\": \"|\".join(position.support_families),\n                \"support_count\": len(position.support_families),\n                \"atr24_at_signal\": position.atr24_at_signal,\n                \"high_water_at_exit\": np.nan,\n                \"entry_market_state\": position.entry_market_state,\n                \"exit_market_state\": \"\",",
+      "line": 807,
+      "path": "scripts/research/run_rd41_full_risk_set_censoring_reconciliation.py"
+    },
+    {
+      "context": "                \"net_pnl\": np.nan,\n                \"period_id\": position.period_id,\n                \"membership_rank\": position.membership_rank,\n                \"support_families\": \"|\".join(position.support_families),\n                \"support_count\": len(position.support_families),\n                \"atr24_at_signal\": position.atr24_at_signal,\n                \"high_water_at_exit\": np.nan,\n                \"entry_market_state\": position.entry_market_state,\n                \"exit_market_state\": \"\",\n                \"entry_market_context\": position.entry_market_context,\n                \"exit_market_context\": \"\",\n                \"lifecycle_class\": position.specialist.lifecycle_class,",
+      "line": 810,
+      "path": "scripts/research/run_rd41_full_risk_set_censoring_reconciliation.py"
+    },
+    {
+      "context": "        )\n\n    risk = pd.DataFrame.from_records(risk_rows)\n    if len(risk):\n        risk = risk.sort_values(\n            [\"entry_time\", \"membership_rank\", \"pair\"],\n            kind=\"stable\",\n        ).reset_index(drop=True)\n\n    exclusion = pd.DataFrame.from_records(exclusions)\n    return risk, exclusion, governor_timeline\n",
+      "line": 830,
+      "path": "scripts/research/run_rd41_full_risk_set_censoring_reconciliation.py"
+    },
+    {
+      "context": "    \"entry_time\",\n    \"exit_time\",\n    \"risk_set_class\",\n    \"censor_time\",\n    \"entry_price\",\n    \"atr24_at_signal\",\n)\nRAW_ALLOWED_COLUMNS = (\"timestamp\", \"high\", \"close\")\n\nOUTPUT_NAMES = (\n    \"control-relative-state-ledger.csv\",\n    \"control-relative-state-data-quality-summary.csv\",",
+      "line": 75,
+      "path": "scripts/research/run_rd43_control_relative_state.py"
+    },
+    {
+      "context": "        usecols=list(RISK_ALLOWED_COLUMNS),\n        low_memory=False,\n    )\n    age = pd.read_csv(repo / AGE_CENSUS, low_memory=False)\n\n    state = risk[[\"control_position_id\", \"entry_price\", \"atr24_at_signal\"]].copy()\n    structural = risk.loc[:, list(STRUCTURAL_RISK_COLUMNS)].copy()\n    normalized = normalize_structural_risk_set(structural)\n    landmark_rows = build_landmark_risk_rows(normalized)\n    parity = landmark_parity(landmark_rows, age)\n    return landmark_rows, state, parity\n",
+      "line": 235,
+      "path": "scripts/research/run_rd43_control_relative_state.py"
+    },
+    {
+      "context": "    \"entry_time\",\n    \"exit_time\",\n    \"risk_set_class\",\n    \"censor_time\",\n    \"entry_price\",\n    \"atr24_at_signal\",\n)\nRAW_ALLOWED_COLUMNS = (\"timestamp\", \"high\", \"close\")\n\nOUTPUT_NAMES = (\n    \"control-relative-dynamics-ledger.csv\",\n    \"control-relative-dynamics-data-quality-summary.csv\",",
+      "line": 79,
+      "path": "scripts/research/run_rd44_control_relative_dynamics.py"
+    },
+    {
+      "context": "        usecols=list(RISK_ALLOWED_COLUMNS),\n        low_memory=False,\n    )\n    age = pd.read_csv(repo / AGE_CENSUS, low_memory=False)\n\n    state = risk[[\"control_position_id\", \"entry_price\", \"atr24_at_signal\"]].copy()\n    structural = risk.loc[:, list(STRUCTURAL_RISK_COLUMNS)].copy()\n    normalized = normalize_structural_risk_set(structural)\n    landmark_rows = build_landmark_risk_rows(normalized)\n    parity = landmark_parity(landmark_rows, age)\n\n    if len(landmark_rows) != 1996:",
+      "line": 261,
+      "path": "scripts/research/run_rd44_control_relative_dynamics.py"
+    },
+    {
+      "context": "            \"decision_time\": pd.Timestamp(row[\"decision_time\"]),\n            \"landmark_age_hours\": int(row[\"landmark_age_hours\"]),\n            \"completed_information_time\": completed,\n            \"previous_q24_information_time\": completed - pd.Timedelta(hours=12),\n            \"peer_count\": 0,\n            \"held_membership_rank\": math.nan,\n            \"held_q24_current\": math.nan,\n            \"held_q24_previous_12h\": math.nan,\n            \"peer_median_q24_current\": math.nan,\n            \"peer_median_12h_log_turnover_change\": math.nan,\n            \"held_12h_log_turnover_change\": math.nan,\n            AXIS_LEVEL: math.nan,",
+      "line": 308,
+      "path": "scripts/research/run_rd45_market_participation_state.py"
+    },
+    {
+      "context": "            held_pair_absent_count += 1\n            base[\"feature_status\"] = \"HELD_PAIR_NOT_IN_PEER_SET\"\n            feature_records.append(base)\n            continue\n        held_pair_in_peer_set_count += 1\n        base[\"held_membership_rank\"] = ranks[held_pair]\n\n        current_ns = int(completed.value)\n        previous_ns = int((completed - pd.Timedelta(hours=12)).value)\n        current_q24 = {\n            pair: (\n                None if q24_by_pair.get(pair) is None else q24_by_pair[pair].get(current_ns)  # type: ignore[union-attr]",
+      "line": 349,
+      "path": "scripts/research/run_rd45_market_participation_state.py"
+    },
+    {
+      "context": "        \"production_authorized\",\n    ):\n        if p2.get(key) is not False:\n            raise ValidationError(f\"P2A forbidden activity flag drift: {key}={p2.get(key)}\")\n\n    events_path = repo / P2_OUTPUT / \"signal-events.csv\"\n    events = pd.read_csv(events_path)\n    forbidden_columns = {\n        \"forward_return\",\n        \"future_return\",\n        \"pnl\",\n        \"net_pnl\",",
+      "line": 116,
+      "path": "scripts/research/validate_rd20_p1_p2a.py"
+    },
+    {
+      "context": "        \"production_authorized\",\n    ):\n        if report.get(key) is not False:\n            raise ValidationError(f\"forbidden activity flag drift: {key}\")\n\n    events = pd.read_csv(output / \"signal-events.csv\")\n    if len(events) != int(report[\"candidate_event_count\"]):\n        raise ValidationError(\"candidate event count drift\")\n    if len(events):\n        times = pd.to_datetime(events[\"timestamp\"], utc=True, errors=\"raise\")\n        if times.max() >= DATA_CUTOFF:\n            raise ValidationError(\"2024 event leaked into R1\")",
+      "line": 125,
+      "path": "scripts/research/validate_rd20_p2a_r1_timestamp_correction.py"
+    },
+    {
+      "context": "\nOUTPUT = Path(\"data/research/rd23_p2_runtime\")\nOUTPUT_NAMES = (\n    \"input-and-conformance-audit.json\",\n    \"family-signal-funnel.csv\",\n    \"signal-events.csv\",\n    \"family-overlap-matrix.csv\",\n    \"overlap-summary.json\",\n    \"forward-event-returns.csv\",\n    \"raw-edge-metrics.csv\",\n    \"family-horizon-hard-gates.csv\",\n    \"family-selection.csv\",",
+      "line": 29,
+      "path": "scripts/research/validate_rd23_multifamily_raw_edge.py"
+    },
+    {
+      "context": "    report = load_json(output / \"rd23-p2-multifamily-raw-edge-report-v1.json\")\n    audit = load_json(output / \"input-and-conformance-audit.json\")\n    freeze = load_json(output / \"qualified-family-freeze.json\")\n    overlap = load_json(output / \"overlap-summary.json\")\n    funnel = pd.read_csv(output / \"family-signal-funnel.csv\")\n    events = pd.read_csv(output / \"signal-events.csv\", low_memory=False)\n    forward = pd.read_csv(output / \"forward-event-returns.csv\", low_memory=False)\n    metrics = pd.read_csv(output / \"raw-edge-metrics.csv\", low_memory=False)\n    selection = pd.read_csv(output / \"family-selection.csv\", low_memory=False)\n\n    if report.get(\"passed\") is not True:\n        raise ValidationError(\"report did not pass\")",
+      "line": 121,
+      "path": "scripts/research/validate_rd23_multifamily_raw_edge.py"
+    },
+    {
+      "context": "    current_market_state: str,\n) -> tuple[float, str]:\n    \"\"\"Return C_now using frozen RD27 formulas but excluding historical carry.\"\"\"\n    validate_constants()\n    _require_state(current_market_state)\n    atr = position.atr24_at_signal\n    adverse = (\n        position.entry_price\n        - ADVERSE_GUARD_ATR_BY_STATE[current_market_state] * atr\n    )\n    candidates: list[tuple[float, str]] = [(adverse, \"ADVERSE_GUARD\")]\n",
+      "line": 111,
+      "path": "src/spotbot/research/a4r1_reversible_floor_candidate.py"
+    },
+    {
+      "context": "    max_exit_time: pd.Timestamp\n    entry_price: float\n    quantity: float\n    entry_notional: float\n    entry_cost: float\n    membership_rank: int\n    support_families: tuple[str, ...]\n    period_id: str\n    atr24_at_signal: float\n    lifecycle: LifecyclePosition\n    entry_market_state: str\n    last_mark: float",
+      "line": 58,
+      "path": "src/spotbot/research/eaa_same_pair_secondary_shadow.py"
+    },
+    {
+      "context": "    entry_notional: float\n    entry_cost: float\n    membership_rank: int\n    support_families: tuple[str, ...]\n    period_id: str\n    atr24_at_signal: float\n    lifecycle: LifecyclePosition\n    entry_market_state: str\n    last_mark: float\n    is_secondary: bool\n\n",
+      "line": 61,
+      "path": "src/spotbot/research/eaa_same_pair_secondary_shadow.py"
+    },
+    {
+      "context": "        \"entry_cost\": position.entry_cost,\n        \"exit_cost\": exit_cost,\n        \"gross_pnl\": gross_pnl,\n        \"net_pnl\": net_pnl,\n        \"period_id\": position.period_id,\n        \"membership_rank\": position.membership_rank,\n        \"support_families\": \"|\".join(position.support_families),\n        \"support_count\": len(position.support_families),\n        \"atr24_at_signal\": position.atr24_at_signal,\n        \"high_water_at_exit\": position.lifecycle.high_water_prior,\n        \"entry_market_state\": position.entry_market_state,\n        \"exit_market_state\": exit_market_state,",
+      "line": 159,
+      "path": "src/spotbot/research/eaa_same_pair_secondary_shadow.py"
+    },
+    {
+      "context": "        \"net_pnl\": net_pnl,\n        \"period_id\": position.period_id,\n        \"membership_rank\": position.membership_rank,\n        \"support_families\": \"|\".join(position.support_families),\n        \"support_count\": len(position.support_families),\n        \"atr24_at_signal\": position.atr24_at_signal,\n        \"high_water_at_exit\": position.lifecycle.high_water_prior,\n        \"entry_market_state\": position.entry_market_state,\n        \"exit_market_state\": exit_market_state,\n        \"protection_floor_at_exit\": position.lifecycle.protection_floor,\n        \"is_secondary\": position.is_secondary,\n    }, float(cash_credit)",
+      "line": 162,
+      "path": "src/spotbot/research/eaa_same_pair_secondary_shadow.py"
+    },
+    {
+      "context": "        max_exit_time = entry_time + pd.Timedelta(hours=168)\n        if entry_time < replay_start or max_exit_time >= replay_cutoff:\n            continue\n        scheduled.setdefault(int(entry_time.value), []).append({**raw, \"signal_time\": signal_time, \"entry_time\": entry_time, \"max_exit_time\": max_exit_time})\n    for items in scheduled.values():\n        items.sort(key=lambda item: (int(item[\"membership_rank\"]), str(item[\"pair\"])))\n\n    counters = {\n        \"signal_events\": len(events), \"missing_entry_bar\": 0, \"missing_exit_bar_precheck\": 0,\n        \"same_pair_open\": 0, \"position_slots_full\": 0, \"gross_limit_rejection\": 0,\n        \"capacity_unavailable\": 0, \"capacity_capped_entries\": 0, \"cash_capped_entries\": 0,\n        \"admitted_entries\": 0, \"risk_off_suppressed_entries\": 0, \"entry_bar_adaptive_exits\": 0,",
+      "line": 228,
+      "path": "src/spotbot/research/eaa_same_pair_secondary_shadow.py"
+    },
+    {
+      "context": "            cash -= required_cash; cash = max(cash, 0.0)\n            support = tuple(sorted(f for f in str(item[\"support_families\"]).split(\"|\") if f))\n            position_id = _secondary_id(period_id, signal_time, pair) if secondary_attempt else f\"NATIVE::{pair}\"\n            if position_id in positions:\n                raise SamePairSecondaryShadowError(f\"position identity collision: {position_id}\")\n            lifecycle = new_lifecycle_position(pair=pair, entry_time=timestamp, entry_price=entry_price, atr24_at_signal=float(item[\"atr24_at_signal\"]))\n            positions[position_id] = ShadowPosition(position_id, pair, signal_time, timestamp, _utc(item[\"max_exit_time\"]), entry_price, quantity, notional, entry_cost, int(item[\"membership_rank\"]), support, period_id, float(item[\"atr24_at_signal\"]), lifecycle, entry_state, entry_price, secondary_attempt)\n            counters[\"admitted_entries\"] += 1\n            if secondary_attempt:\n                diagnostics[\"secondary_executed_count\"] += 1\n                diagnostics[\"secondary_execution_records\"].append({\n                    \"cash_before_entry\": float(cash_before), \"entry_cost\": float(entry_cost), \"entry_notional\": float(notional),",
+      "line": 352,
+      "path": "src/spotbot/research/eaa_same_pair_secondary_shadow.py"
+    },
+    {
+      "context": "            support = tuple(sorted(f for f in str(item[\"support_families\"]).split(\"|\") if f))\n            position_id = _secondary_id(period_id, signal_time, pair) if secondary_attempt else f\"NATIVE::{pair}\"\n            if position_id in positions:\n                raise SamePairSecondaryShadowError(f\"position identity collision: {position_id}\")\n            lifecycle = new_lifecycle_position(pair=pair, entry_time=timestamp, entry_price=entry_price, atr24_at_signal=float(item[\"atr24_at_signal\"]))\n            positions[position_id] = ShadowPosition(position_id, pair, signal_time, timestamp, _utc(item[\"max_exit_time\"]), entry_price, quantity, notional, entry_cost, int(item[\"membership_rank\"]), support, period_id, float(item[\"atr24_at_signal\"]), lifecycle, entry_state, entry_price, secondary_attempt)\n            counters[\"admitted_entries\"] += 1\n            if secondary_attempt:\n                diagnostics[\"secondary_executed_count\"] += 1\n                diagnostics[\"secondary_execution_records\"].append({\n                    \"cash_before_entry\": float(cash_before), \"entry_cost\": float(entry_cost), \"entry_notional\": float(notional),\n                    \"entry_state\": entry_state, \"entry_time\": timestamp.isoformat(), \"equity_before_entry\": float(equity_open),",
+      "line": 353,
+      "path": "src/spotbot/research/eaa_same_pair_secondary_shadow.py"
+    },
+    {
+      "context": "        \"reclaim_pass_after_touch\": 0,\n        \"candidate_events\": 0,\n    }\n\n    ready_rows: list[dict[str, Any]] = []\n    for pair, membership_rank in members:\n        frame = features.get(pair)\n        index = lookups.get(pair, {}).get(timestamp_ns)\n        if frame is None or index is None:\n            continue\n        row = frame.iloc[index]\n        if not bool(row[\"feature_ready\"]):",
+      "line": 350,
+      "path": "src/spotbot/research/rd20_p2_minimal_pullback.py"
+    },
+    {
+      "context": "            continue\n        counters[\"feature_ready_pass\"] += 1\n        ready_rows.append(\n            {\n                \"pair\": pair,\n                \"membership_rank\": membership_rank,\n                \"index\": index,\n                \"past_72h_return\": float(row[\"past_72h_return\"]),\n                \"recovery_impulse_atr\": float(row[\"recovery_impulse_atr\"]),\n            }\n        )\n",
+      "line": 362,
+      "path": "src/spotbot/research/rd20_p2_minimal_pullback.py"
+    },
+    {
+      "context": "        )\n        rows.append(\n            {\n                \"timestamp\": timestamp,\n                \"pair\": pair,\n                \"membership_rank\": int(item[\"membership_rank\"]),\n                \"trend_strength_percentile\": trend_pct,\n                \"recovery_impulse_percentile\": recovery_pct,\n                \"score\": score,\n                \"past_72h_return\": float(row[\"past_72h_return\"]),\n                \"recovery_impulse_atr\": float(row[\"recovery_impulse_atr\"]),\n                \"decision_close\": float(row[\"close\"]),",
+      "line": 402,
+      "path": "src/spotbot/research/rd20_p2_minimal_pullback.py"
+    },
+    {
+      "context": "        )\n\n    rows.sort(\n        key=lambda row: (\n            -float(row[\"score\"]),\n            int(row[\"membership_rank\"]),\n            str(row[\"pair\"]),\n        )\n    )\n    counters[\"candidate_events\"] = len(rows)\n    return rows, counters\n",
+      "line": 417,
+      "path": "src/spotbot/research/rd20_p2_minimal_pullback.py"
+    },
+    {
+      "context": "    stop_price: float\n    quantity: float\n    entry_notional: float\n    entry_cost: float\n    score: float\n    membership_rank: int\n    scheduled_thesis_exit: bool = False\n    last_mark: float = 0.0\n    max_survived_high: float = 0.0\n    min_survived_low: float = math.inf\n\n",
+      "line": 62,
+      "path": "src/spotbot/research/rd20_p3_core_edge.py"
+    },
+    {
+      "context": "        \"universe_id\",\n        \"partition_id\",\n        \"timestamp\",\n        \"candidate_rank\",\n        \"pair\",\n        \"membership_rank\",\n        \"trend_strength_percentile\",\n        \"recovery_impulse_percentile\",\n        \"score\",\n        \"past_72h_return\",\n        \"recovery_impulse_atr\",\n        \"decision_close\",",
+      "line": 102,
+      "path": "src/spotbot/research/rd20_p3_core_edge.py"
+    },
+    {
+      "context": "        \"ema24\",\n        \"initial_stop_reference\",\n    }\n    missing = sorted(required.difference(events.columns))\n    if missing:\n        raise P3Error(f\"signal-events columns missing: {missing}\")\n    frame = events.copy()\n    frame[\"timestamp\"] = pd.to_datetime(frame[\"timestamp\"], utc=True, errors=\"raise\")\n    if bool((frame[\"timestamp\"] >= DATA_CUTOFF).any()):\n        raise P3Error(\"2024 or later signal entered P3\")\n    lookups = {pair: fast_lookup(value) for pair, value in features.items()}\n    checked = 0",
+      "line": 114,
+      "path": "src/spotbot/research/rd20_p3_core_edge.py"
+    },
+    {
+      "context": "        \"mfe_return\": mfe,\n        \"mae_return\": mae,\n        \"exit_capture_ratio\": capture,\n        \"base_cost_dollars_per_multiplier\": base_cost_dollars_per_multiplier,\n        \"score\": position.score,\n        \"membership_rank\": position.membership_rank,\n    }\n\n\ndef replay_universe(\n    *,\n    universe_id: str,",
+      "line": 318,
+      "path": "src/spotbot/research/rd20_p3_core_edge.py"
+    },
+    {
+      "context": "                    stop_price=stop_price,\n                    quantity=quantity,\n                    entry_notional=notional,\n                    entry_cost=entry_cost,\n                    score=float(raw[\"score\"]),\n                    membership_rank=int(raw[\"membership_rank\"]),\n                    last_mark=entry_price,\n                    max_survived_high=entry_price,\n                    min_survived_low=entry_price,\n                )\n                positions[pair] = position\n                route[\"admitted_entries\"] += 1",
+      "line": 510,
+      "path": "src/spotbot/research/rd20_p3_core_edge.py"
+    },
+    {
+      "context": "    selected = selected.loc[\n        (selected[\"timestamp\"] >= DISCOVERY_START) & (selected[\"timestamp\"] < DISCOVERY_CUTOFF)\n    ].copy()\n    selected[\"entry_time\"] = selected[\"timestamp\"] + pd.Timedelta(hours=1)\n    selected = selected.sort_values(\n        [\"entry_time\", \"candidate_rank\", \"membership_rank\", \"pair\"],\n        kind=\"stable\",\n    )\n    entries_by_time = {\n        pd.Timestamp(timestamp): group.copy()\n        for timestamp, group in selected.groupby(\"entry_time\", sort=True)\n    }",
+      "line": 138,
+      "path": "src/spotbot/research/rd21_horizon_pullback.py"
+    },
+    {
+      "context": "                    stop_price=stop_price,\n                    quantity=quantity,\n                    entry_notional=notional,\n                    entry_cost=entry_cost,\n                    score=float(raw[\"score\"]),\n                    membership_rank=int(raw[\"membership_rank\"]),\n                    last_mark=entry_price,\n                    max_survived_high=entry_price,\n                    min_survived_low=entry_price,\n                )\n                route[\"admitted_entries\"] += 1\n                gross_after = existing_gross + notional",
+      "line": 323,
+      "path": "src/spotbot/research/rd21_horizon_pullback.py"
+    },
+    {
+      "context": "    selected = selected.loc[\n        (selected[\"timestamp\"] >= DISCOVERY_START) & (selected[\"timestamp\"] < DISCOVERY_CUTOFF)\n    ].copy()\n    selected[\"entry_time\"] = selected[\"timestamp\"] + pd.Timedelta(hours=1)\n    selected = selected.sort_values(\n        [\"entry_time\", \"candidate_rank\", \"membership_rank\", \"pair\"],\n        kind=\"stable\",\n    )\n    entries_by_time = {\n        pd.Timestamp(timestamp): group.copy()\n        for timestamp, group in selected.groupby(\"entry_time\", sort=True)\n    }",
+      "line": 204,
+      "path": "src/spotbot/research/rd22_structural_risk_on_pullback.py"
+    },
+    {
+      "context": "                    stop_price=stop_price,\n                    quantity=quantity,\n                    entry_notional=notional,\n                    entry_cost=entry_cost,\n                    score=float(raw[\"score\"]),\n                    membership_rank=int(raw[\"membership_rank\"]),\n                    last_mark=entry_price,\n                    max_survived_high=entry_price,\n                    min_survived_low=entry_price,\n                )\n                route[\"admitted_entries\"] += 1\n                gross_after = existing_gross + notional",
+      "line": 401,
+      "path": "src/spotbot/research/rd22_structural_risk_on_pullback.py"
+    },
+    {
+      "context": ") -> dict[str, Any] | None:\n    now: list[tuple[float, int, str]] = []\n    previous: list[tuple[float, int, str]] = []\n    previous_time = timestamp - pd.Timedelta(hours=1)\n\n    for pair, membership_rank in members:\n        current_row = _row_at(pair, timestamp, features, lookups)\n        previous_row = _row_at(pair, previous_time, features, lookups)\n        if current_row is not None and bool(current_row[\"feature_ready\"]):\n            now.append((float(current_row[\"return_72h\"]), membership_rank, pair))\n        if previous_row is not None and bool(previous_row[\"feature_ready\"]):\n            previous.append((float(previous_row[\"return_72h\"]), membership_rank, pair))",
+      "line": 237,
+      "path": "src/spotbot/research/rd23_multifamily_raw_edge.py"
+    },
+    {
+      "context": "\n    for pair, membership_rank in members:\n        current_row = _row_at(pair, timestamp, features, lookups)\n        previous_row = _row_at(pair, previous_time, features, lookups)\n        if current_row is not None and bool(current_row[\"feature_ready\"]):\n            now.append((float(current_row[\"return_72h\"]), membership_rank, pair))\n        if previous_row is not None and bool(previous_row[\"feature_ready\"]):\n            previous.append((float(previous_row[\"return_72h\"]), membership_rank, pair))\n\n    if len(now) < 2 or len(previous) < 2:\n        return None\n    now.sort(key=lambda item: (-item[0], item[1], item[2]))",
+      "line": 241,
+      "path": "src/spotbot/research/rd23_multifamily_raw_edge.py"
+    },
+    {
+      "context": "        current_row = _row_at(pair, timestamp, features, lookups)\n        previous_row = _row_at(pair, previous_time, features, lookups)\n        if current_row is not None and bool(current_row[\"feature_ready\"]):\n            now.append((float(current_row[\"return_72h\"]), membership_rank, pair))\n        if previous_row is not None and bool(previous_row[\"feature_ready\"]):\n            previous.append((float(previous_row[\"return_72h\"]), membership_rank, pair))\n\n    if len(now) < 2 or len(previous) < 2:\n        return None\n    now.sort(key=lambda item: (-item[0], item[1], item[2]))\n    previous.sort(key=lambda item: (-item[0], item[1], item[2]))\n    current_return, membership_rank, current_pair = now[0]",
+      "line": 243,
+      "path": "src/spotbot/research/rd23_multifamily_raw_edge.py"
+    },
+    {
+      "context": "\n    if len(now) < 2 or len(previous) < 2:\n        return None\n    now.sort(key=lambda item: (-item[0], item[1], item[2]))\n    previous.sort(key=lambda item: (-item[0], item[1], item[2]))\n    current_return, membership_rank, current_pair = now[0]\n    previous_pair = previous[0][2]\n    if current_return <= 0.0 or current_pair == previous_pair:\n        return None\n    second_return = now[1][0]\n    row = _row_at(current_pair, timestamp, features, lookups)\n    if row is None:",
+      "line": 249,
+      "path": "src/spotbot/research/rd23_multifamily_raw_edge.py"
+    },
+    {
+      "context": "    if row is None:\n        return None\n    return {\n        \"family_id\": FAMILY_RELATIVE_STRENGTH_ROTATION,\n        \"pair\": current_pair,\n        \"membership_rank\": int(membership_rank),\n        \"signal_strength\": float(current_return - second_return),\n        \"decision_close\": float(row[\"close\"]),\n        \"return_72h\": float(current_return),\n        \"aux_value\": float(second_return),\n    }\n",
+      "line": 260,
+      "path": "src/spotbot/research/rd23_multifamily_raw_edge.py"
+    },
+    {
+      "context": "        \"asset_checks\": len(members),\n        \"feature_ready_pass\": 0,\n        **{f\"events_{family}\": 0 for family in FAMILIES},\n    }\n\n    for pair, membership_rank in members:\n        row = _row_at(pair, timestamp, features, lookups)\n        if row is None or not bool(row[\"feature_ready\"]):\n            continue\n        counters[\"feature_ready_pass\"] += 1\n        common = {\n            \"pair\": pair,",
+      "line": 283,
+      "path": "src/spotbot/research/rd23_multifamily_raw_edge.py"
+    },
+    {
+      "context": "        if row is None or not bool(row[\"feature_ready\"]):\n            continue\n        counters[\"feature_ready_pass\"] += 1\n        common = {\n            \"pair\": pair,\n            \"membership_rank\": int(membership_rank),\n            \"decision_close\": float(row[\"close\"]),\n            \"return_72h\": float(row[\"return_72h\"]),\n        }\n\n        family_rows: list[dict[str, Any]] = []\n        if bool(row[\"momentum_breakout\"]):",
+      "line": 290,
+      "path": "src/spotbot/research/rd23_multifamily_raw_edge.py"
+    },
+    {
+      "context": "\n    events.sort(\n        key=lambda row: (\n            str(row[\"family_id\"]),\n            -float(row[\"signal_strength\"]),\n            int(row[\"membership_rank\"]),\n            str(row[\"pair\"]),\n        )\n    )\n    return events, counters\n\n",
+      "line": 369,
+      "path": "src/spotbot/research/rd23_multifamily_raw_edge.py"
+    },
+    {
+      "context": "    scheduled_exit_time: pd.Timestamp\n    entry_price: float\n    quantity: float\n    entry_notional: float\n    entry_cost: float\n    membership_rank: int\n    support_families: tuple[str, ...]\n    period_id: str\n    last_mark: float\n\n\ndef period_for(timestamp: pd.Timestamp) -> str:",
+      "line": 68,
+      "path": "src/spotbot/research/rd24_minimal_portfolio.py"
+    },
+    {
+      "context": "        \"universe_id\",\n        \"period_id\",\n        \"timestamp\",\n        \"family_id\",\n        \"pair\",\n        \"membership_rank\",\n    }\n    missing = sorted(required.difference(events.columns))\n    if missing:\n        raise RD24Error(f\"RD23 signal ledger missing columns: {missing}\")\n    frame = events.loc[:, list(required)].copy()\n    frame[\"timestamp\"] = pd.to_datetime(frame[\"timestamp\"], utc=True, errors=\"raise\")",
+      "line": 121,
+      "path": "src/spotbot/research/rd24_minimal_portfolio.py"
+    },
+    {
+      "context": "    missing = sorted(required.difference(events.columns))\n    if missing:\n        raise RD24Error(f\"RD23 signal ledger missing columns: {missing}\")\n    frame = events.loc[:, list(required)].copy()\n    frame[\"timestamp\"] = pd.to_datetime(frame[\"timestamp\"], utc=True, errors=\"raise\")\n    frame[\"membership_rank\"] = pd.to_numeric(frame[\"membership_rank\"], errors=\"raise\").astype(int)\n    frame[\"family_id\"] = frame[\"family_id\"].astype(str)\n    frame[\"pair\"] = frame[\"pair\"].astype(str)\n    frame[\"universe_id\"] = frame[\"universe_id\"].astype(str)\n    frame[\"period_id\"] = frame[\"period_id\"].astype(str)\n    frame = frame.loc[frame[\"family_id\"].isin(QUALIFIED_FAMILIES)].copy()\n    if frame.empty:",
+      "line": 128,
+      "path": "src/spotbot/research/rd24_minimal_portfolio.py"
+    },
+    {
+      "context": "        raise RD24Error(\"unexpected universe in signal ledger\")\n    for record in frame[[\"timestamp\", \"period_id\"]].to_dict(orient=\"records\"):\n        if period_for(pd.Timestamp(record[\"timestamp\"])) != str(record[\"period_id\"]):\n            raise RD24Error(\"signal period label drifted\")\n    return frame.sort_values(\n        [\"universe_id\", \"timestamp\", \"family_id\", \"membership_rank\", \"pair\"],\n        kind=\"stable\",\n    ).reset_index(drop=True)\n\n\ndef standalone_events(\n    events: pd.DataFrame,",
+      "line": 146,
+      "path": "src/spotbot/research/rd24_minimal_portfolio.py"
+    },
+    {
+      "context": "    frame = events.loc[\n        (events[\"universe_id\"] == universe_id) & (events[\"family_id\"] == family_id)\n    ].copy()\n    frame[\"support_families\"] = family_id\n    return frame.sort_values(\n        [\"timestamp\", \"membership_rank\", \"pair\"],\n        kind=\"stable\",\n    ).reset_index(drop=True)\n\n\ndef union_events(\n    events: pd.DataFrame,",
+      "line": 162,
+      "path": "src/spotbot/research/rd24_minimal_portfolio.py"
+    },
+    {
+      "context": "    ].copy()\n    rows: list[dict[str, Any]] = []\n    grouped = frame.groupby([\"timestamp\", \"pair\"], sort=True)\n    for (timestamp, pair), group in grouped:\n        family_set = tuple(sorted(set(group[\"family_id\"].astype(str))))\n        ranks = pd.to_numeric(group[\"membership_rank\"], errors=\"raise\").astype(int)\n        periods = sorted(set(group[\"period_id\"].astype(str)))\n        if len(periods) != 1:\n            raise RD24Error(\"union event spans multiple period labels\")\n        rows.append(\n            {\n                \"timestamp\": pd.Timestamp(timestamp),",
+      "line": 181,
+      "path": "src/spotbot/research/rd24_minimal_portfolio.py"
+    },
+    {
+      "context": "            raise RD24Error(\"union event spans multiple period labels\")\n        rows.append(\n            {\n                \"timestamp\": pd.Timestamp(timestamp),\n                \"pair\": str(pair),\n                \"membership_rank\": int(ranks.min()),\n                \"period_id\": periods[0],\n                \"support_families\": \"|\".join(family_set),\n                \"support_count\": len(family_set),\n            }\n        )\n    if not rows:",
+      "line": 189,
+      "path": "src/spotbot/research/rd24_minimal_portfolio.py"
+    },
+    {
+      "context": "    if not rows:\n        return pd.DataFrame(\n            columns=[\n                \"timestamp\",\n                \"pair\",\n                \"membership_rank\",\n                \"period_id\",\n                \"support_families\",\n                \"support_count\",\n            ]\n        )\n    return (",
+      "line": 200,
+      "path": "src/spotbot/research/rd24_minimal_portfolio.py"
+    },
+    {
+      "context": "            ]\n        )\n    return (\n        pd.DataFrame.from_records(rows)\n        .sort_values(\n            [\"timestamp\", \"membership_rank\", \"pair\"],\n            kind=\"stable\",\n        )\n        .reset_index(drop=True)\n    )\n\n",
+      "line": 209,
+      "path": "src/spotbot/research/rd24_minimal_portfolio.py"
+    },
+    {
+      "context": "                    \"entry_cost\": position.entry_cost,\n                    \"exit_cost\": exit_cost,\n                    \"gross_pnl\": gross_pnl,\n                    \"net_pnl\": net_pnl,\n                    \"period_id\": position.period_id,\n                    \"membership_rank\": position.membership_rank,\n                    \"support_families\": \"|\".join(position.support_families),\n                    \"support_count\": len(position.support_families),\n                }\n            )\n            del positions[pair]\n            counters[\"scheduled_exits\"] += 1",
+      "line": 323,
+      "path": "src/spotbot/research/rd24_minimal_portfolio.py"
+    },
+    {
+      "context": "        equity_open, gross_open = _marked_equity(cash=cash, positions=positions)\n\n        # Entries are deterministic: better PIT membership rank, then pair.\n        entries = sorted(\n            scheduled.get(int(timestamp.value), []),\n            key=lambda item: (int(item[\"membership_rank\"]), str(item[\"pair\"])),\n        )\n        for item in entries:\n            pair = str(item[\"pair\"])\n            if pair in positions:\n                counters[\"same_pair_open\"] += 1\n                continue",
+      "line": 342,
+      "path": "src/spotbot/research/rd24_minimal_portfolio.py"
+    },
+    {
+      "context": "                scheduled_exit_time=pd.Timestamp(item[\"scheduled_exit_time\"]),\n                entry_price=entry_price,\n                quantity=quantity,\n                entry_notional=notional,\n                entry_cost=entry_cost,\n                membership_rank=int(item[\"membership_rank\"]),\n                support_families=support,\n                period_id=str(item[\"period_id\"]),\n                last_mark=entry_price,\n            )\n            counters[\"admitted_entries\"] += 1\n",
+      "line": 428,
+      "path": "src/spotbot/research/rd24_minimal_portfolio.py"
+    },
+    {
+      "context": "    max_exit_time: pd.Timestamp\n    entry_price: float\n    quantity: float\n    entry_notional: float\n    entry_cost: float\n    membership_rank: int\n    support_families: tuple[str, ...]\n    period_id: str\n    atr24_at_signal: float\n    high_water: float\n    last_mark: float\n",
+      "line": 93,
+      "path": "src/spotbot/research/rd26_exit_architecture.py"
+    },
+    {
+      "context": "    entry_notional: float\n    entry_cost: float\n    membership_rank: int\n    support_families: tuple[str, ...]\n    period_id: str\n    atr24_at_signal: float\n    high_water: float\n    last_mark: float\n\n\ndef validate_constants() -> None:\n    if FOCUS_FAMILIES != (",
+      "line": 96,
+      "path": "src/spotbot/research/rd26_exit_architecture.py"
+    },
+    {
+      "context": ") -> dict[str, Any] | None:\n    now: list[tuple[float, int, str]] = []\n    previous: list[tuple[float, int, str]] = []\n    previous_time = timestamp - pd.Timedelta(hours=1)\n\n    for pair, membership_rank in members:\n        current_row = _row_at(pair, timestamp, features, lookups)\n        previous_row = _row_at(pair, previous_time, features, lookups)\n        if current_row is not None and bool(current_row[\"feature_ready\"]):\n            now.append((float(current_row[\"return_72h\"]), membership_rank, pair))\n        if previous_row is not None and bool(previous_row[\"feature_ready\"]):\n            previous.append((float(previous_row[\"return_72h\"]), membership_rank, pair))",
+      "line": 229,
+      "path": "src/spotbot/research/rd26_exit_architecture.py"
+    },
+    {
+      "context": "\n    for pair, membership_rank in members:\n        current_row = _row_at(pair, timestamp, features, lookups)\n        previous_row = _row_at(pair, previous_time, features, lookups)\n        if current_row is not None and bool(current_row[\"feature_ready\"]):\n            now.append((float(current_row[\"return_72h\"]), membership_rank, pair))\n        if previous_row is not None and bool(previous_row[\"feature_ready\"]):\n            previous.append((float(previous_row[\"return_72h\"]), membership_rank, pair))\n\n    if len(now) < 2 or len(previous) < 2:\n        return None\n    now.sort(key=lambda item: (-item[0], item[1], item[2]))",
+      "line": 233,
+      "path": "src/spotbot/research/rd26_exit_architecture.py"
+    },
+    {
+      "context": "        current_row = _row_at(pair, timestamp, features, lookups)\n        previous_row = _row_at(pair, previous_time, features, lookups)\n        if current_row is not None and bool(current_row[\"feature_ready\"]):\n            now.append((float(current_row[\"return_72h\"]), membership_rank, pair))\n        if previous_row is not None and bool(previous_row[\"feature_ready\"]):\n            previous.append((float(previous_row[\"return_72h\"]), membership_rank, pair))\n\n    if len(now) < 2 or len(previous) < 2:\n        return None\n    now.sort(key=lambda item: (-item[0], item[1], item[2]))\n    previous.sort(key=lambda item: (-item[0], item[1], item[2]))\n    current_return, membership_rank, current_pair = now[0]",
+      "line": 235,
+      "path": "src/spotbot/research/rd26_exit_architecture.py"
+    },
+    {
+      "context": "\n    if len(now) < 2 or len(previous) < 2:\n        return None\n    now.sort(key=lambda item: (-item[0], item[1], item[2]))\n    previous.sort(key=lambda item: (-item[0], item[1], item[2]))\n    current_return, membership_rank, current_pair = now[0]\n    previous_pair = previous[0][2]\n    if current_return <= 0.0 or current_pair == previous_pair:\n        return None\n    second_return = now[1][0]\n    row = _row_at(current_pair, timestamp, features, lookups)\n    if row is None:",
+      "line": 241,
+      "path": "src/spotbot/research/rd26_exit_architecture.py"
+    },
+    {
+      "context": "    if row is None:\n        return None\n    return {\n        \"family_id\": FAMILY_RELATIVE_STRENGTH_ROTATION,\n        \"pair\": current_pair,\n        \"membership_rank\": int(membership_rank),\n        \"signal_strength\": float(current_return - second_return),\n        \"decision_close\": float(row[\"close\"]),\n        \"return_72h\": float(current_return),\n        \"aux_value\": float(second_return),\n        \"atr24_at_signal\": float(row[\"atr24_prior\"]),\n    }",
+      "line": 252,
+      "path": "src/spotbot/research/rd26_exit_architecture.py"
+    },
+    {
+      "context": "        \"membership_rank\": int(membership_rank),\n        \"signal_strength\": float(current_return - second_return),\n        \"decision_close\": float(row[\"close\"]),\n        \"return_72h\": float(current_return),\n        \"aux_value\": float(second_return),\n        \"atr24_at_signal\": float(row[\"atr24_prior\"]),\n    }\n\n\ndef evaluate_hour(\n    *,\n    timestamp: pd.Timestamp,",
+      "line": 257,
+      "path": "src/spotbot/research/rd26_exit_architecture.py"
+    },
+    {
+      "context": "        \"feature_ready_pass\": 0,\n        f\"events_{FAMILY_MOMENTUM_BREAKOUT}\": 0,\n        f\"events_{FAMILY_RELATIVE_STRENGTH_ROTATION}\": 0,\n    }\n\n    for pair, membership_rank in members:\n        row = _row_at(pair, timestamp, features, lookups)\n        if row is None or not bool(row[\"feature_ready\"]):\n            continue\n        counters[\"feature_ready_pass\"] += 1\n        if bool(row[\"momentum_breakout\"]):\n            counters[f\"events_{FAMILY_MOMENTUM_BREAKOUT}\"] += 1",
+      "line": 277,
+      "path": "src/spotbot/research/rd26_exit_architecture.py"
+    },
+    {
+      "context": "            counters[f\"events_{FAMILY_MOMENTUM_BREAKOUT}\"] += 1\n            events.append(\n                {\n                    \"family_id\": FAMILY_MOMENTUM_BREAKOUT,\n                    \"pair\": pair,\n                    \"membership_rank\": int(membership_rank),\n                    \"signal_strength\": float(\n                        (row[\"close\"] - row[\"prior_72h_high\"]) / row[\"atr24_prior\"]\n                    ),\n                    \"decision_close\": float(row[\"close\"]),\n                    \"return_72h\": float(row[\"return_72h\"]),\n                    \"aux_value\": float(row[\"prior_72h_high\"]),",
+      "line": 288,
+      "path": "src/spotbot/research/rd26_exit_architecture.py"
+    },
+    {
+      "context": "                        (row[\"close\"] - row[\"prior_72h_high\"]) / row[\"atr24_prior\"]\n                    ),\n                    \"decision_close\": float(row[\"close\"]),\n                    \"return_72h\": float(row[\"return_72h\"]),\n                    \"aux_value\": float(row[\"prior_72h_high\"]),\n                    \"atr24_at_signal\": float(row[\"atr24_prior\"]),\n                }\n            )\n\n    relative = None\n    if allow_relative_strength:\n        relative = _relative_strength_event(",
+      "line": 295,
+      "path": "src/spotbot/research/rd26_exit_architecture.py"
+    },
+    {
+      "context": "\n    events.sort(\n        key=lambda row: (\n            str(row[\"family_id\"]),\n            -float(row[\"signal_strength\"]),\n            int(row[\"membership_rank\"]),\n            str(row[\"pair\"]),\n        )\n    )\n    return events, counters\n\n",
+      "line": 315,
+      "path": "src/spotbot/research/rd26_exit_architecture.py"
+    },
+    {
+      "context": "        \"period_id\",\n        \"timestamp\",\n        \"candidate_rank\",\n        \"family_id\",\n        \"pair\",\n        \"membership_rank\",\n        \"signal_strength\",\n        \"decision_close\",\n        \"return_72h\",\n        \"aux_value\",\n    }\n    missing = sorted(required.difference(events.columns))",
+      "line": 424,
+      "path": "src/spotbot/research/rd26_exit_architecture.py"
+    },
+    {
+      "context": "        raise RD26Error(f\"focus event ledger missing columns: {missing}\")\n    frame = events.loc[:, sorted(required)].copy()\n    frame[\"timestamp\"] = pd.to_datetime(frame[\"timestamp\"], utc=True, errors=\"raise\")\n    frame = frame.loc[frame[\"family_id\"].isin(FOCUS_FAMILIES)].copy()\n    frame[\"candidate_rank\"] = pd.to_numeric(frame[\"candidate_rank\"], errors=\"raise\").astype(int)\n    frame[\"membership_rank\"] = pd.to_numeric(frame[\"membership_rank\"], errors=\"raise\").astype(int)\n    return frame.sort_values(\n        [\"universe_id\", \"timestamp\", \"family_id\", \"candidate_rank\", \"pair\"],\n        kind=\"stable\",\n    ).reset_index(drop=True)\n\n",
+      "line": 437,
+      "path": "src/spotbot/research/rd26_exit_architecture.py"
+    },
+    {
+      "context": "        \"period_id\",\n        \"timestamp\",\n        \"candidate_rank\",\n        \"family_id\",\n        \"pair\",\n        \"membership_rank\",\n    ]\n    numeric_columns = [\n        \"signal_strength\",\n        \"decision_close\",\n        \"return_72h\",\n        \"aux_value\",",
+      "line": 457,
+      "path": "src/spotbot/research/rd26_exit_architecture.py"
+    },
+    {
+      "context": "    max_exit = frame[\"timestamp\"] + pd.Timedelta(hours=MAX_HOLD_HOURS + 1)\n    frame = frame.loc[max_exit < DATA_CUTOFF].copy()\n    if frame.empty:\n        raise RD26Error(\"2022-2023 focus signal ledger is empty\")\n    return frame.sort_values(\n        [\"universe_id\", \"timestamp\", \"family_id\", \"membership_rank\", \"pair\"],\n        kind=\"stable\",\n    ).reset_index(drop=True)\n\n\ndef standalone_events(\n    events: pd.DataFrame,",
+      "line": 528,
+      "path": "src/spotbot/research/rd26_exit_architecture.py"
+    },
+    {
+      "context": "    frame = events.loc[\n        (events[\"universe_id\"] == universe_id) & (events[\"family_id\"] == family_id)\n    ].copy()\n    frame[\"support_families\"] = family_id\n    return frame.sort_values(\n        [\"timestamp\", \"membership_rank\", \"pair\"],\n        kind=\"stable\",\n    ).reset_index(drop=True)\n\n\ndef union_events(\n    events: pd.DataFrame,",
+      "line": 544,
+      "path": "src/spotbot/research/rd26_exit_architecture.py"
+    },
+    {
+      "context": "    frame = events.loc[events[\"universe_id\"] == universe_id].copy()\n    rows: list[dict[str, Any]] = []\n    grouped = frame.groupby([\"timestamp\", \"pair\"], sort=True)\n    for (timestamp, pair), group in grouped:\n        family_set = tuple(sorted(set(group[\"family_id\"].astype(str))))\n        ranks = pd.to_numeric(group[\"membership_rank\"], errors=\"raise\").astype(int)\n        periods = sorted(set(group[\"period_id\"].astype(str)))\n        atrs = pd.to_numeric(group[\"atr24_at_signal\"], errors=\"raise\").astype(float)\n        if len(periods) != 1:\n            raise RD26Error(\"union event spans multiple period labels\")\n        if float(atrs.max() - atrs.min()) > 1e-12:\n            raise RD26Error(\"same pair-time union event has inconsistent ATR\")",
+      "line": 559,
+      "path": "src/spotbot/research/rd26_exit_architecture.py"
+    },
+    {
+      "context": "    grouped = frame.groupby([\"timestamp\", \"pair\"], sort=True)\n    for (timestamp, pair), group in grouped:\n        family_set = tuple(sorted(set(group[\"family_id\"].astype(str))))\n        ranks = pd.to_numeric(group[\"membership_rank\"], errors=\"raise\").astype(int)\n        periods = sorted(set(group[\"period_id\"].astype(str)))\n        atrs = pd.to_numeric(group[\"atr24_at_signal\"], errors=\"raise\").astype(float)\n        if len(periods) != 1:\n            raise RD26Error(\"union event spans multiple period labels\")\n        if float(atrs.max() - atrs.min()) > 1e-12:\n            raise RD26Error(\"same pair-time union event has inconsistent ATR\")\n        rows.append(\n            {",
+      "line": 561,
+      "path": "src/spotbot/research/rd26_exit_architecture.py"
+    },
+    {
+      "context": "            raise RD26Error(\"same pair-time union event has inconsistent ATR\")\n        rows.append(\n            {\n                \"timestamp\": pd.Timestamp(timestamp),\n                \"pair\": str(pair),\n                \"membership_rank\": int(ranks.min()),\n                \"period_id\": periods[0],\n                \"support_families\": \"|\".join(family_set),\n                \"support_count\": len(family_set),\n                \"atr24_at_signal\": float(atrs.iloc[0]),\n            }\n        )",
+      "line": 570,
+      "path": "src/spotbot/research/rd26_exit_architecture.py"
+    },
+    {
+      "context": "                \"pair\": str(pair),\n                \"membership_rank\": int(ranks.min()),\n                \"period_id\": periods[0],\n                \"support_families\": \"|\".join(family_set),\n                \"support_count\": len(family_set),\n                \"atr24_at_signal\": float(atrs.iloc[0]),\n            }\n        )\n    if not rows:\n        return pd.DataFrame(\n            columns=[\n                \"timestamp\",",
+      "line": 574,
+      "path": "src/spotbot/research/rd26_exit_architecture.py"
+    },
+    {
+      "context": "    if not rows:\n        return pd.DataFrame(\n            columns=[\n                \"timestamp\",\n                \"pair\",\n                \"membership_rank\",\n                \"period_id\",\n                \"support_families\",\n                \"support_count\",\n                \"atr24_at_signal\",\n            ]\n        )",
+      "line": 582,
+      "path": "src/spotbot/research/rd26_exit_architecture.py"
+    },
+    {
+      "context": "                \"pair\",\n                \"membership_rank\",\n                \"period_id\",\n                \"support_families\",\n                \"support_count\",\n                \"atr24_at_signal\",\n            ]\n        )\n    return (\n        pd.DataFrame.from_records(rows)\n        .sort_values(\n            [\"timestamp\", \"membership_rank\", \"pair\"],",
+      "line": 586,
+      "path": "src/spotbot/research/rd26_exit_architecture.py"
+    },
+    {
+      "context": "            ]\n        )\n    return (\n        pd.DataFrame.from_records(rows)\n        .sort_values(\n            [\"timestamp\", \"membership_rank\", \"pair\"],\n            kind=\"stable\",\n        )\n        .reset_index(drop=True)\n    )\n\n",
+      "line": 592,
+      "path": "src/spotbot/research/rd26_exit_architecture.py"
+    },
+    {
+      "context": "        \"entry_cost\": position.entry_cost,\n        \"exit_cost\": exit_cost,\n        \"gross_pnl\": gross_pnl,\n        \"net_pnl\": net_pnl,\n        \"period_id\": position.period_id,\n        \"membership_rank\": position.membership_rank,\n        \"support_families\": \"|\".join(position.support_families),\n        \"support_count\": len(position.support_families),\n        \"atr24_at_signal\": position.atr24_at_signal,\n        \"high_water_at_exit\": position.high_water,\n    }\n    return record, cash_credit",
+      "line": 672,
+      "path": "src/spotbot/research/rd26_exit_architecture.py"
+    },
+    {
+      "context": "        \"net_pnl\": net_pnl,\n        \"period_id\": position.period_id,\n        \"membership_rank\": position.membership_rank,\n        \"support_families\": \"|\".join(position.support_families),\n        \"support_count\": len(position.support_families),\n        \"atr24_at_signal\": position.atr24_at_signal,\n        \"high_water_at_exit\": position.high_water,\n    }\n    return record, cash_credit\n\n\ndef replay_policy(",
+      "line": 675,
+      "path": "src/spotbot/research/rd26_exit_architecture.py"
+    },
+    {
+      "context": "                    exit_price = float(bar[\"open\"])\n                    exit_reason = \"TIME_FAILURE_72H_CLOSE_NOT_ABOVE_ENTRY\"\n                    counters[\"time_failure_exits\"] += 1\n\n            if exit_price is None and profit_trail_enabled:\n                arm_level = position.entry_price + PROFIT_TRAIL_ARM_ATR * position.atr24_at_signal\n                if position.high_water >= arm_level:\n                    floor = position.high_water - PROFIT_TRAIL_GAP_ATR * position.atr24_at_signal\n                    if float(bar[\"open\"]) <= floor:\n                        exit_price = float(bar[\"open\"])\n                        exit_reason = \"PROFIT_TRAIL_GAP\"\n                        counters[\"profit_trail_gap_exits\"] += 1",
+      "line": 764,
+      "path": "src/spotbot/research/rd26_exit_architecture.py"
+    },
+    {
+      "context": "                    counters[\"time_failure_exits\"] += 1\n\n            if exit_price is None and profit_trail_enabled:\n                arm_level = position.entry_price + PROFIT_TRAIL_ARM_ATR * position.atr24_at_signal\n                if position.high_water >= arm_level:\n                    floor = position.high_water - PROFIT_TRAIL_GAP_ATR * position.atr24_at_signal\n                    if float(bar[\"open\"]) <= floor:\n                        exit_price = float(bar[\"open\"])\n                        exit_reason = \"PROFIT_TRAIL_GAP\"\n                        counters[\"profit_trail_gap_exits\"] += 1\n                    elif float(bar[\"low\"]) <= floor:\n                        exit_price = floor",
+      "line": 766,
+      "path": "src/spotbot/research/rd26_exit_architecture.py"
+    },
+    {
+      "context": "                position.last_mark = float(bar[\"open\"])\n\n        equity_open, gross_open = _marked_equity(cash=cash, positions=positions)\n        entries = sorted(\n            scheduled.get(int(timestamp.value), []),\n            key=lambda item: (int(item[\"membership_rank\"]), str(item[\"pair\"])),\n        )\n        for item in entries:\n            pair = str(item[\"pair\"])\n            if pair in positions:\n                counters[\"same_pair_open\"] += 1\n                continue",
+      "line": 799,
+      "path": "src/spotbot/research/rd26_exit_architecture.py"
+    },
+    {
+      "context": "                raise RD26Error(\"negative cash after entry\")\n            cash = max(cash, 0.0)\n            support = tuple(\n                sorted(family for family in str(item[\"support_families\"]).split(\"|\") if family)\n            )\n            atr = float(item[\"atr24_at_signal\"])\n            if not math.isfinite(atr) or atr <= 0.0:\n                raise RD26Error(\"invalid frozen signal ATR at admission\")\n            positions[pair] = Position(\n                pair=pair,\n                signal_time=pd.Timestamp(item[\"signal_time\"]),\n                entry_time=timestamp,",
+      "line": 878,
+      "path": "src/spotbot/research/rd26_exit_architecture.py"
+    },
+    {
+      "context": "                max_exit_time=pd.Timestamp(item[\"max_exit_time\"]),\n                entry_price=entry_price,\n                quantity=quantity,\n                entry_notional=notional,\n                entry_cost=entry_cost,\n                membership_rank=int(item[\"membership_rank\"]),\n                support_families=support,\n                period_id=str(item[\"period_id\"]),\n                atr24_at_signal=atr,\n                high_water=entry_price,\n                last_mark=entry_price,\n            )",
+      "line": 890,
+      "path": "src/spotbot/research/rd26_exit_architecture.py"
+    },
+    {
+      "context": "                entry_notional=notional,\n                entry_cost=entry_cost,\n                membership_rank=int(item[\"membership_rank\"]),\n                support_families=support,\n                period_id=str(item[\"period_id\"]),\n                atr24_at_signal=atr,\n                high_water=entry_price,\n                last_mark=entry_price,\n            )\n            counters[\"admitted_entries\"] += 1\n\n        for pair, position in positions.items():",
+      "line": 893,
+      "path": "src/spotbot/research/rd26_exit_architecture.py"
+    },
+    {
+      "context": "@dataclass(frozen=True)\nclass LifecyclePosition:\n    pair: str\n    entry_time: pd.Timestamp\n    entry_price: float\n    atr24_at_signal: float\n    high_water_prior: float\n    protection_floor: float | None = None\n\n\n@dataclass(frozen=True)\nclass ExitDecision:",
+      "line": 248,
+      "path": "src/spotbot/research/rd27_adaptive_lifecycle.py"
+    },
+    {
+      "context": "def new_lifecycle_position(\n    *,\n    pair: str,\n    entry_time: pd.Timestamp,\n    entry_price: float,\n    atr24_at_signal: float,\n) -> LifecyclePosition:\n    if not pair:\n        raise RD27StateError(\"pair is required\")\n    if not math.isfinite(entry_price) or entry_price <= 0.0:\n        raise RD27StateError(\"entry price must be positive and finite\")\n    if not math.isfinite(atr24_at_signal) or atr24_at_signal <= 0.0:",
+      "line": 489,
+      "path": "src/spotbot/research/rd27_adaptive_lifecycle.py"
+    },
+    {
+      "context": ") -> LifecyclePosition:\n    if not pair:\n        raise RD27StateError(\"pair is required\")\n    if not math.isfinite(entry_price) or entry_price <= 0.0:\n        raise RD27StateError(\"entry price must be positive and finite\")\n    if not math.isfinite(atr24_at_signal) or atr24_at_signal <= 0.0:\n        raise RD27StateError(\"signal ATR must be positive and finite\")\n    timestamp = pd.Timestamp(entry_time)\n    if timestamp.tzinfo is None:\n        timestamp = timestamp.tz_localize(\"UTC\")\n    else:\n        timestamp = timestamp.tz_convert(\"UTC\")",
+      "line": 495,
+      "path": "src/spotbot/research/rd27_adaptive_lifecycle.py"
+    },
+    {
+      "context": "        timestamp = timestamp.tz_convert(\"UTC\")\n    return LifecyclePosition(\n        pair=pair,\n        entry_time=timestamp,\n        entry_price=float(entry_price),\n        atr24_at_signal=float(atr24_at_signal),\n        high_water_prior=float(entry_price),\n        protection_floor=None,\n    )\n\n\ndef _effective_protection_floor(",
+      "line": 506,
+      "path": "src/spotbot/research/rd27_adaptive_lifecycle.py"
+    },
+    {
+      "context": "    position: LifecyclePosition,\n    *,\n    market_state: str,\n) -> tuple[float, str]:\n    _require_state(market_state)\n    atr = position.atr24_at_signal\n    adverse = position.entry_price - ADVERSE_GUARD_ATR_BY_STATE[market_state] * atr\n    candidates: list[tuple[float, str]] = [(adverse, \"ADVERSE_GUARD\")]\n\n    arm_level = position.entry_price + PROFIT_ARM_ATR * atr\n    if position.high_water_prior >= arm_level:\n        trail = (",
+      "line": 518,
+      "path": "src/spotbot/research/rd27_adaptive_lifecycle.py"
+    },
+    {
+      "context": "    max_exit_time: pd.Timestamp\n    entry_price: float\n    quantity: float\n    entry_notional: float\n    entry_cost: float\n    membership_rank: int\n    support_families: tuple[str, ...]\n    period_id: str\n    atr24_at_signal: float\n    lifecycle: LifecyclePosition\n    entry_market_state: str\n    last_mark: float",
+      "line": 93,
+      "path": "src/spotbot/research/rd27_lifecycle_replay.py"
+    },
+    {
+      "context": "    entry_notional: float\n    entry_cost: float\n    membership_rank: int\n    support_families: tuple[str, ...]\n    period_id: str\n    atr24_at_signal: float\n    lifecycle: LifecyclePosition\n    entry_market_state: str\n    last_mark: float\n\n\ndef validate_policy_constants() -> None:",
+      "line": 96,
+      "path": "src/spotbot/research/rd27_lifecycle_replay.py"
+    },
+    {
+      "context": "        \"entry_cost\": position.entry_cost,\n        \"exit_cost\": exit_cost,\n        \"gross_pnl\": gross_pnl,\n        \"net_pnl\": net_pnl,\n        \"period_id\": position.period_id,\n        \"membership_rank\": position.membership_rank,\n        \"support_families\": \"|\".join(position.support_families),\n        \"support_count\": len(position.support_families),\n        \"atr24_at_signal\": position.atr24_at_signal,\n        \"high_water_at_exit\": position.lifecycle.high_water_prior,\n        \"entry_market_state\": position.entry_market_state,\n        \"exit_market_state\": exit_market_state,",
+      "line": 235,
+      "path": "src/spotbot/research/rd27_lifecycle_replay.py"
+    },
+    {
+      "context": "        \"net_pnl\": net_pnl,\n        \"period_id\": position.period_id,\n        \"membership_rank\": position.membership_rank,\n        \"support_families\": \"|\".join(position.support_families),\n        \"support_count\": len(position.support_families),\n        \"atr24_at_signal\": position.atr24_at_signal,\n        \"high_water_at_exit\": position.lifecycle.high_water_prior,\n        \"entry_market_state\": position.entry_market_state,\n        \"exit_market_state\": exit_market_state,\n        \"protection_floor_at_exit\": position.lifecycle.protection_floor,\n    }\n    return record, cash_credit",
+      "line": 238,
+      "path": "src/spotbot/research/rd27_lifecycle_replay.py"
+    },
+    {
+      "context": "            if bar is not None:\n                position.last_mark = float(bar[\"open\"])\n\n        entries = sorted(\n            scheduled.get(int(timestamp.value), []),\n            key=lambda item: (int(item[\"membership_rank\"]), str(item[\"pair\"])),\n        )\n        for item in entries:\n            pair = str(item[\"pair\"])\n            if pair in positions:\n                counters[\"same_pair_open\"] += 1\n                continue",
+      "line": 531,
+      "path": "src/spotbot/research/rd27_lifecycle_replay.py"
+    },
+    {
+      "context": "                    family\n                    for family in str(item[\"support_families\"]).split(\"|\")\n                    if family\n                )\n            )\n            atr = float(item[\"atr24_at_signal\"])\n            lifecycle = new_lifecycle_position(\n                pair=pair,\n                entry_time=timestamp,\n                entry_price=entry_price,\n                atr24_at_signal=atr,\n            )",
+      "line": 621,
+      "path": "src/spotbot/research/rd27_lifecycle_replay.py"
+    },
+    {
+      "context": "            atr = float(item[\"atr24_at_signal\"])\n            lifecycle = new_lifecycle_position(\n                pair=pair,\n                entry_time=timestamp,\n                entry_price=entry_price,\n                atr24_at_signal=atr,\n            )\n            position = ReplayPosition(\n                pair=pair,\n                signal_time=signal_time,\n                entry_time=timestamp,\n                max_exit_time=pd.Timestamp(item[\"max_exit_time\"]),",
+      "line": 626,
+      "path": "src/spotbot/research/rd27_lifecycle_replay.py"
+    },
+    {
+      "context": "                max_exit_time=pd.Timestamp(item[\"max_exit_time\"]),\n                entry_price=entry_price,\n                quantity=quantity,\n                entry_notional=notional,\n                entry_cost=entry_cost,\n                membership_rank=int(item[\"membership_rank\"]),\n                support_families=support,\n                period_id=str(item[\"period_id\"]),\n                atr24_at_signal=atr,\n                lifecycle=lifecycle,\n                entry_market_state=entry_state,\n                last_mark=entry_price,",
+      "line": 637,
+      "path": "src/spotbot/research/rd27_lifecycle_replay.py"
+    },
+    {
+      "context": "                entry_notional=notional,\n                entry_cost=entry_cost,\n                membership_rank=int(item[\"membership_rank\"]),\n                support_families=support,\n                period_id=str(item[\"period_id\"]),\n                atr24_at_signal=atr,\n                lifecycle=lifecycle,\n                entry_market_state=entry_state,\n                last_mark=entry_price,\n            )\n            positions[pair] = position\n            if later_trigger_v2_shadow_hook is not None:",
+      "line": 640,
+      "path": "src/spotbot/research/rd27_lifecycle_replay.py"
+    },
+    {
+      "context": "@dataclass(frozen=True)\nclass EvidencePosition:\n    pair: str\n    entry_time: pd.Timestamp\n    entry_price: float\n    atr24_at_signal: float\n    entry_market_state: str\n    signal_family: str\n    high_water_prior: float\n\n\n@dataclass(frozen=True)",
+      "line": 76,
+      "path": "src/spotbot/research/rd28_evidence_gated_lifecycle.py"
+    },
+    {
+      "context": "def new_evidence_position(\n    *,\n    pair: str,\n    entry_time: pd.Timestamp,\n    entry_price: float,\n    atr24_at_signal: float,\n    entry_market_state: str,\n    signal_family: str,\n) -> EvidencePosition:\n    validate_constants()\n    if not pair:\n        raise RD28LifecycleError(\"pair is required\")",
+      "line": 196,
+      "path": "src/spotbot/research/rd28_evidence_gated_lifecycle.py"
+    },
+    {
+      "context": "    validate_constants()\n    if not pair:\n        raise RD28LifecycleError(\"pair is required\")\n    if not math.isfinite(entry_price) or entry_price <= 0.0:\n        raise RD28LifecycleError(\"entry price must be positive and finite\")\n    if not math.isfinite(atr24_at_signal) or atr24_at_signal <= 0.0:\n        raise RD28LifecycleError(\"signal ATR must be positive and finite\")\n    _require_state(entry_market_state)\n    _require_family(signal_family)\n    return EvidencePosition(\n        pair=pair,\n        entry_time=_utc_timestamp(entry_time),",
+      "line": 205,
+      "path": "src/spotbot/research/rd28_evidence_gated_lifecycle.py"
+    },
+    {
+      "context": "    _require_family(signal_family)\n    return EvidencePosition(\n        pair=pair,\n        entry_time=_utc_timestamp(entry_time),\n        entry_price=float(entry_price),\n        atr24_at_signal=float(atr24_at_signal),\n        entry_market_state=entry_market_state,\n        signal_family=signal_family,\n        high_water_prior=float(entry_price),\n    )\n\n",
+      "line": 213,
+      "path": "src/spotbot/research/rd28_evidence_gated_lifecycle.py"
+    },
+    {
+      "context": "    trade_weak = float(prior_asset_close) <= position.entry_price\n    deteriorated = state_deteriorated(\n        entry_state=position.entry_market_state,\n        current_state=current_market_state,\n    )\n    arm_level = position.entry_price + PROFIT_ARM_ATR * position.atr24_at_signal\n    profit_lock_armed = position.high_water_prior >= arm_level\n    giveback_floor = (\n        position.high_water_prior - PROFIT_GIVEBACK_ATR * position.atr24_at_signal\n    )\n\n    def decision(reason: str) -> EvidenceExitDecision:",
+      "line": 280,
+      "path": "src/spotbot/research/rd28_evidence_gated_lifecycle.py"
+    },
+    {
+      "context": "        current_state=current_market_state,\n    )\n    arm_level = position.entry_price + PROFIT_ARM_ATR * position.atr24_at_signal\n    profit_lock_armed = position.high_water_prior >= arm_level\n    giveback_floor = (\n        position.high_water_prior - PROFIT_GIVEBACK_ATR * position.atr24_at_signal\n    )\n\n    def decision(reason: str) -> EvidenceExitDecision:\n        return EvidenceExitDecision(\n            should_exit=True,\n            exit_price=float(current_open),",
+      "line": 283,
+      "path": "src/spotbot/research/rd28_evidence_gated_lifecycle.py"
+    },
+    {
+      "context": "    max_exit_time: pd.Timestamp\n    entry_price: float\n    quantity: float\n    entry_notional: float\n    entry_cost: float\n    membership_rank: int\n    support_families: tuple[str, ...]\n    period_id: str\n    atr24_at_signal: float\n    evidence: EvidencePosition\n    entry_market_state: str\n    last_mark: float",
+      "line": 76,
+      "path": "src/spotbot/research/rd28_lifecycle_replay.py"
+    },
+    {
+      "context": "    entry_notional: float\n    entry_cost: float\n    membership_rank: int\n    support_families: tuple[str, ...]\n    period_id: str\n    atr24_at_signal: float\n    evidence: EvidencePosition\n    entry_market_state: str\n    last_mark: float\n\n\ndef validate_replay_constants() -> None:",
+      "line": 79,
+      "path": "src/spotbot/research/rd28_lifecycle_replay.py"
+    },
+    {
+      "context": "            \"entry_cost\": position.entry_cost,\n            \"exit_cost\": exit_cost,\n            \"gross_pnl\": gross_pnl,\n            \"net_pnl\": net_pnl,\n            \"period_id\": position.period_id,\n            \"membership_rank\": position.membership_rank,\n            \"support_families\": \"|\".join(position.support_families),\n            \"support_count\": len(position.support_families),\n            \"atr24_at_signal\": position.atr24_at_signal,\n            \"high_water_at_exit\": position.evidence.high_water_prior,\n            \"entry_market_state\": position.entry_market_state,\n            \"exit_market_state\": exit_market_state,",
+      "line": 179,
+      "path": "src/spotbot/research/rd28_lifecycle_replay.py"
+    },
+    {
+      "context": "            \"net_pnl\": net_pnl,\n            \"period_id\": position.period_id,\n            \"membership_rank\": position.membership_rank,\n            \"support_families\": \"|\".join(position.support_families),\n            \"support_count\": len(position.support_families),\n            \"atr24_at_signal\": position.atr24_at_signal,\n            \"high_water_at_exit\": position.evidence.high_water_prior,\n            \"entry_market_state\": position.entry_market_state,\n            \"exit_market_state\": exit_market_state,\n        },\n        cash_credit,\n    )",
+      "line": 182,
+      "path": "src/spotbot/research/rd28_lifecycle_replay.py"
+    },
+    {
+      "context": "            if bar is not None:\n                position.last_mark = float(bar[\"open\"])\n\n        entries = sorted(\n            scheduled.get(int(timestamp.value), []),\n            key=lambda item: (int(item[\"membership_rank\"]), str(item[\"pair\"])),\n        )\n        for item in entries:\n            pair = str(item[\"pair\"])\n            if pair in positions:\n                counters[\"same_pair_open\"] += 1\n                continue",
+      "line": 437,
+      "path": "src/spotbot/research/rd28_lifecycle_replay.py"
+    },
+    {
+      "context": "            cash -= notional + entry_cost\n            if cash < -1e-7:\n                raise RD28ReplayError(\"negative cash after entry\")\n            cash = max(cash, 0.0)\n            support = _support_families(item[\"support_families\"])\n            atr = float(item[\"atr24_at_signal\"])\n            evidence = new_evidence_position(\n                pair=pair,\n                entry_time=timestamp,\n                entry_price=entry_price,\n                atr24_at_signal=atr,\n                entry_market_state=entry_state,",
+      "line": 513,
+      "path": "src/spotbot/research/rd28_lifecycle_replay.py"
+    },
+    {
+      "context": "            atr = float(item[\"atr24_at_signal\"])\n            evidence = new_evidence_position(\n                pair=pair,\n                entry_time=timestamp,\n                entry_price=entry_price,\n                atr24_at_signal=atr,\n                entry_market_state=entry_state,\n                signal_family=support[0],\n            )\n            positions[pair] = ReplayPosition(\n                pair=pair,\n                signal_time=signal_time,",
+      "line": 518,
+      "path": "src/spotbot/research/rd28_lifecycle_replay.py"
+    },
+    {
+      "context": "                max_exit_time=_utc_timestamp(item[\"max_exit_time\"]),\n                entry_price=entry_price,\n                quantity=quantity,\n                entry_notional=notional,\n                entry_cost=entry_cost,\n                membership_rank=int(item[\"membership_rank\"]),\n                support_families=support,\n                period_id=str(item[\"period_id\"]),\n                atr24_at_signal=atr,\n                evidence=evidence,\n                entry_market_state=entry_state,\n                last_mark=entry_price,",
+      "line": 531,
+      "path": "src/spotbot/research/rd28_lifecycle_replay.py"
+    },
+    {
+      "context": "                entry_notional=notional,\n                entry_cost=entry_cost,\n                membership_rank=int(item[\"membership_rank\"]),\n                support_families=support,\n                period_id=str(item[\"period_id\"]),\n                atr24_at_signal=atr,\n                evidence=evidence,\n                entry_market_state=entry_state,\n                last_mark=entry_price,\n            )\n            counters[\"admitted_entries\"] += 1\n",
+      "line": 534,
+      "path": "src/spotbot/research/rd28_lifecycle_replay.py"
+    },
+    {
+      "context": "@dataclass(frozen=True)\nclass ThesisPosition:\n    pair: str\n    entry_time: pd.Timestamp\n    entry_price: float\n    atr24_at_signal: float\n    entry_market_context: str\n    support_families: tuple[str, ...]\n    momentum_breakout_reference: float | None\n    high_water_prior: float\n\n",
+      "line": 106,
+      "path": "src/spotbot/research/rd29_thesis_context.py"
+    },
+    {
+      "context": "        raise RD29ContextError(\"duplicate PIT pair\")\n    if pair not in member_pairs:\n        return True, None, None\n\n    rows: list[tuple[float, int, str]] = []\n    for member_pair, membership_rank in members:\n        value = return_72h_by_pair.get(member_pair)\n        if value is None or not math.isfinite(float(value)):\n            return False, None, None\n        rows.append((float(value), int(membership_rank), str(member_pair)))\n    rows.sort(key=lambda item: (-item[0], item[1], item[2]))\n    for rank, (value, _membership_rank, current_pair) in enumerate(rows, 1):",
+      "line": 225,
+      "path": "src/spotbot/research/rd29_thesis_context.py"
+    },
+    {
+      "context": "    rows: list[tuple[float, int, str]] = []\n    for member_pair, membership_rank in members:\n        value = return_72h_by_pair.get(member_pair)\n        if value is None or not math.isfinite(float(value)):\n            return False, None, None\n        rows.append((float(value), int(membership_rank), str(member_pair)))\n    rows.sort(key=lambda item: (-item[0], item[1], item[2]))\n    for rank, (value, _membership_rank, current_pair) in enumerate(rows, 1):\n        if current_pair == pair:\n            return True, value, rank\n    raise RD29ContextError(\"RS pair disappeared during ranking\")\n",
+      "line": 229,
+      "path": "src/spotbot/research/rd29_thesis_context.py"
+    },
+    {
+      "context": "        value = return_72h_by_pair.get(member_pair)\n        if value is None or not math.isfinite(float(value)):\n            return False, None, None\n        rows.append((float(value), int(membership_rank), str(member_pair)))\n    rows.sort(key=lambda item: (-item[0], item[1], item[2]))\n    for rank, (value, _membership_rank, current_pair) in enumerate(rows, 1):\n        if current_pair == pair:\n            return True, value, rank\n    raise RD29ContextError(\"RS pair disappeared during ranking\")\n\n\ndef momentum_breakout_thesis_status(",
+      "line": 231,
+      "path": "src/spotbot/research/rd29_thesis_context.py"
+    },
+    {
+      "context": "def new_thesis_position(\n    *,\n    pair: str,\n    entry_time: pd.Timestamp,\n    entry_price: float,\n    atr24_at_signal: float,\n    entry_market_context: str,\n    support_families: tuple[str, ...] | list[str],\n    momentum_breakout_reference: float | None,\n) -> ThesisPosition:\n    families = _families(support_families)\n    if not pair:",
+      "line": 424,
+      "path": "src/spotbot/research/rd29_thesis_context.py"
+    },
+    {
+      "context": "    families = _families(support_families)\n    if not pair:\n        raise RD29ContextError(\"pair required\")\n    if not math.isfinite(entry_price) or entry_price <= 0.0:\n        raise RD29ContextError(\"invalid entry price\")\n    if not math.isfinite(atr24_at_signal) or atr24_at_signal <= 0.0:\n        raise RD29ContextError(\"invalid ATR\")\n    if entry_market_context not in MARKET_CONTEXTS:\n        raise RD29ContextError(\"invalid entry market context\")\n    if FAMILY_MOMENTUM_BREAKOUT in families:\n        if breakout := momentum_breakout_reference:\n            if not math.isfinite(float(breakout)) or float(breakout) <= 0.0:",
+      "line": 434,
+      "path": "src/spotbot/research/rd29_thesis_context.py"
+    },
+    {
+      "context": "            raise RD29ContextError(\"MB position requires breakout reference\")\n    return ThesisPosition(\n        pair,\n        _utc(entry_time),\n        float(entry_price),\n        float(atr24_at_signal),\n        entry_market_context,\n        families,\n        (float(momentum_breakout_reference) if momentum_breakout_reference is not None else None),\n        float(entry_price),\n    )\n",
+      "line": 448,
+      "path": "src/spotbot/research/rd29_thesis_context.py"
+    },
+    {
+      "context": "        raise RD29ContextError(\"invalid current open\")\n    if not math.isfinite(prior_close) or prior_close <= 0.0:\n        raise RD29ContextError(\"invalid prior close\")\n    age = age_hours(position, current_open_time)\n    checkpoint = is_thesis_checkpoint(age)\n    arm = position.entry_price + PROFIT_ARM_ATR * position.atr24_at_signal\n    armed = position.high_water_prior >= arm\n    giveback = position.high_water_prior - PROFIT_GIVEBACK_ATR * position.atr24_at_signal\n    if age >= MAX_HOLD_HOURS:\n        return LifecycleExitDecision(\n            True,\n            open_price,",
+      "line": 487,
+      "path": "src/spotbot/research/rd29_thesis_context.py"
+    },
+    {
+      "context": "        raise RD29ContextError(\"invalid prior close\")\n    age = age_hours(position, current_open_time)\n    checkpoint = is_thesis_checkpoint(age)\n    arm = position.entry_price + PROFIT_ARM_ATR * position.atr24_at_signal\n    armed = position.high_water_prior >= arm\n    giveback = position.high_water_prior - PROFIT_GIVEBACK_ATR * position.atr24_at_signal\n    if age >= MAX_HOLD_HOURS:\n        return LifecycleExitDecision(\n            True,\n            open_price,\n            MAX_HOLD_EXIT_REASON,\n            age,",
+      "line": 489,
+      "path": "src/spotbot/research/rd29_thesis_context.py"
+    },
+    {
+      "context": "    max_exit_time: pd.Timestamp\n    entry_price: float\n    quantity: float\n    entry_notional: float\n    entry_cost: float\n    membership_rank: int\n    support_families: tuple[str, ...]\n    period_id: str\n    atr24_at_signal: float\n    thesis: ThesisPosition\n    entry_market_state: str\n    entry_market_context: str",
+      "line": 70,
+      "path": "src/spotbot/research/rd29_thesis_replay.py"
+    },
+    {
+      "context": "    entry_notional: float\n    entry_cost: float\n    membership_rank: int\n    support_families: tuple[str, ...]\n    period_id: str\n    atr24_at_signal: float\n    thesis: ThesisPosition\n    entry_market_state: str\n    entry_market_context: str\n    last_mark: float\n\n",
+      "line": 73,
+      "path": "src/spotbot/research/rd29_thesis_replay.py"
+    },
+    {
+      "context": "            \"entry_cost\": position.entry_cost,\n            \"exit_cost\": exit_cost,\n            \"gross_pnl\": gross_pnl,\n            \"net_pnl\": net_pnl,\n            \"period_id\": position.period_id,\n            \"membership_rank\": position.membership_rank,\n            \"support_families\": \"|\".join(position.support_families),\n            \"support_count\": len(position.support_families),\n            \"atr24_at_signal\": position.atr24_at_signal,\n            \"high_water_at_exit\": position.thesis.high_water_prior,\n            \"entry_market_state\": position.entry_market_state,\n            \"exit_market_state\": exit_market_state,",
+      "line": 297,
+      "path": "src/spotbot/research/rd29_thesis_replay.py"
+    },
+    {
+      "context": "            \"net_pnl\": net_pnl,\n            \"period_id\": position.period_id,\n            \"membership_rank\": position.membership_rank,\n            \"support_families\": \"|\".join(position.support_families),\n            \"support_count\": len(position.support_families),\n            \"atr24_at_signal\": position.atr24_at_signal,\n            \"high_water_at_exit\": position.thesis.high_water_prior,\n            \"entry_market_state\": position.entry_market_state,\n            \"exit_market_state\": exit_market_state,\n            \"entry_market_context\": position.entry_market_context,\n            \"exit_market_context\": exit_market_context,\n            \"mb_breakout_reference\": (position.thesis.momentum_breakout_reference),",
+      "line": 300,
+      "path": "src/spotbot/research/rd29_thesis_replay.py"
+    },
+    {
+      "context": "                position.last_mark = float(bar[\"open\"])\n\n        entries = sorted(\n            scheduled.get(int(timestamp.value), []),\n            key=lambda item: (\n                int(item[\"membership_rank\"]),\n                str(item[\"pair\"]),\n            ),\n        )\n        for item in entries:\n            pair = str(item[\"pair\"])\n            if pair in positions:",
+      "line": 518,
+      "path": "src/spotbot/research/rd29_thesis_replay.py"
+    },
+    {
+      "context": "                notional = max_cash_notional\n            if notional <= 0.0:\n                continue\n\n            entry_price = float(entry_bar[\"open\"])\n            atr = float(item[\"atr24_at_signal\"])\n            quantity = notional / entry_price\n            entry_cost = notional * side_cost\n            cash -= notional + entry_cost\n            if cash < -1e-7:\n                raise RD29ReplayError(\"negative cash after entry\")\n            cash = max(cash, 0.0)",
+      "line": 626,
+      "path": "src/spotbot/research/rd29_thesis_replay.py"
+    },
+    {
+      "context": "\n            thesis = new_thesis_position(\n                pair=pair,\n                entry_time=timestamp,\n                entry_price=entry_price,\n                atr24_at_signal=atr,\n                entry_market_context=entry_context.context,\n                support_families=support,\n                momentum_breakout_reference=breakout_reference,\n            )\n            positions[pair] = ReplayPosition(\n                pair=pair,",
+      "line": 638,
+      "path": "src/spotbot/research/rd29_thesis_replay.py"
+    },
+    {
+      "context": "                max_exit_time=_utc(item[\"max_exit_time\"]),\n                entry_price=entry_price,\n                quantity=quantity,\n                entry_notional=notional,\n                entry_cost=entry_cost,\n                membership_rank=int(item[\"membership_rank\"]),\n                support_families=support,\n                period_id=str(item[\"period_id\"]),\n                atr24_at_signal=atr,\n                thesis=thesis,\n                entry_market_state=entry_state,\n                entry_market_context=entry_context.context,",
+      "line": 652,
+      "path": "src/spotbot/research/rd29_thesis_replay.py"
+    },
+    {
+      "context": "                entry_notional=notional,\n                entry_cost=entry_cost,\n                membership_rank=int(item[\"membership_rank\"]),\n                support_families=support,\n                period_id=str(item[\"period_id\"]),\n                atr24_at_signal=atr,\n                thesis=thesis,\n                entry_market_state=entry_state,\n                entry_market_context=entry_context.context,\n                last_mark=entry_price,\n            )\n            counters[\"admitted_entries\"] += 1",
+      "line": 655,
+      "path": "src/spotbot/research/rd29_thesis_replay.py"
+    },
+    {
+      "context": "@dataclass(frozen=True)\nclass SpecialistPosition:\n    pair: str\n    entry_time: pd.Timestamp\n    entry_price: float\n    atr24_at_signal: float\n    support_families: tuple[str, ...]\n    lifecycle_class: str\n    high_water_prior: float\n    degraded_since: pd.Timestamp | None = None\n    last_checkpoint_time: pd.Timestamp | None = None\n",
+      "line": 67,
+      "path": "src/spotbot/research/rd30_family_specialist_state.py"
+    },
+    {
+      "context": "def new_specialist_position(\n    *,\n    pair: str,\n    entry_time: pd.Timestamp,\n    entry_price: float,\n    atr24_at_signal: float,\n    support_families: tuple[str, ...] | list[str],\n) -> SpecialistPosition:\n    validate_constants()\n    families = _families(support_families)\n    if not pair:\n        raise RD30StateError(\"pair required\")",
+      "line": 199,
+      "path": "src/spotbot/research/rd30_family_specialist_state.py"
+    },
+    {
+      "context": "    families = _families(support_families)\n    if not pair:\n        raise RD30StateError(\"pair required\")\n    if not math.isfinite(float(entry_price)) or float(entry_price) <= 0.0:\n        raise RD30StateError(\"invalid entry price\")\n    if not math.isfinite(float(atr24_at_signal)) or float(atr24_at_signal) <= 0.0:\n        raise RD30StateError(\"invalid ATR\")\n    return SpecialistPosition(\n        pair=str(pair),\n        entry_time=_utc(entry_time),\n        entry_price=float(entry_price),\n        atr24_at_signal=float(atr24_at_signal),",
+      "line": 208,
+      "path": "src/spotbot/research/rd30_family_specialist_state.py"
+    },
+    {
+      "context": "        raise RD30StateError(\"invalid ATR\")\n    return SpecialistPosition(\n        pair=str(pair),\n        entry_time=_utc(entry_time),\n        entry_price=float(entry_price),\n        atr24_at_signal=float(atr24_at_signal),\n        support_families=families,\n        lifecycle_class=lifecycle_class_for_support(families),\n        high_water_prior=float(entry_price),\n    )\n\n",
+      "line": 214,
+      "path": "src/spotbot/research/rd30_family_specialist_state.py"
+    },
+    {
+      "context": "        raise RD30StateError(\"invalid current open\")\n    if not math.isfinite(prior_close) or prior_close <= 0.0:\n        raise RD30StateError(\"invalid prior close\")\n\n    age = age_hours(position, current_open_time)\n    arm = position.entry_price + PROFIT_ARM_ATR * position.atr24_at_signal\n    armed = position.high_water_prior >= arm\n    giveback = position.high_water_prior - PROFIT_GIVEBACK_ATR * position.atr24_at_signal\n\n    if age >= MAX_HOLD_HOURS:\n        return ScheduledExitDecision(\n            True,",
+      "line": 262,
+      "path": "src/spotbot/research/rd30_family_specialist_state.py"
+    },
+    {
+      "context": "        raise RD30StateError(\"invalid prior close\")\n\n    age = age_hours(position, current_open_time)\n    arm = position.entry_price + PROFIT_ARM_ATR * position.atr24_at_signal\n    armed = position.high_water_prior >= arm\n    giveback = position.high_water_prior - PROFIT_GIVEBACK_ATR * position.atr24_at_signal\n\n    if age >= MAX_HOLD_HOURS:\n        return ScheduledExitDecision(\n            True,\n            open_price,\n            MAX_HOLD_EXIT_REASON,",
+      "line": 264,
+      "path": "src/spotbot/research/rd30_family_specialist_state.py"
+    },
+    {
+      "context": "    max_exit_time: pd.Timestamp\n    entry_price: float\n    quantity: float\n    entry_notional: float\n    entry_cost: float\n    membership_rank: int\n    support_families: tuple[str, ...]\n    period_id: str\n    atr24_at_signal: float\n    specialist: SpecialistPosition\n    entry_market_state: str\n    entry_market_context: str",
+      "line": 73,
+      "path": "src/spotbot/research/rd30_replacement_replay.py"
+    },
+    {
+      "context": "    entry_notional: float\n    entry_cost: float\n    membership_rank: int\n    support_families: tuple[str, ...]\n    period_id: str\n    atr24_at_signal: float\n    specialist: SpecialistPosition\n    entry_market_state: str\n    entry_market_context: str\n    last_mark: float\n\n",
+      "line": 76,
+      "path": "src/spotbot/research/rd30_replacement_replay.py"
+    },
+    {
+      "context": "            \"entry_cost\": position.entry_cost,\n            \"exit_cost\": exit_cost,\n            \"gross_pnl\": gross_pnl,\n            \"net_pnl\": net_pnl,\n            \"period_id\": position.period_id,\n            \"membership_rank\": position.membership_rank,\n            \"support_families\": \"|\".join(position.support_families),\n            \"support_count\": len(position.support_families),\n            \"atr24_at_signal\": position.atr24_at_signal,\n            \"high_water_at_exit\": (position.specialist.high_water_prior),\n            \"entry_market_state\": (position.entry_market_state),\n            \"exit_market_state\": exit_market_state,",
+      "line": 422,
+      "path": "src/spotbot/research/rd30_replacement_replay.py"
+    },
+    {
+      "context": "            \"net_pnl\": net_pnl,\n            \"period_id\": position.period_id,\n            \"membership_rank\": position.membership_rank,\n            \"support_families\": \"|\".join(position.support_families),\n            \"support_count\": len(position.support_families),\n            \"atr24_at_signal\": position.atr24_at_signal,\n            \"high_water_at_exit\": (position.specialist.high_water_prior),\n            \"entry_market_state\": (position.entry_market_state),\n            \"exit_market_state\": exit_market_state,\n            \"entry_market_context\": (position.entry_market_context),\n            \"exit_market_context\": exit_market_context,\n            \"lifecycle_class\": (position.specialist.lifecycle_class),",
+      "line": 425,
+      "path": "src/spotbot/research/rd30_replacement_replay.py"
+    },
+    {
+      "context": "                position.last_mark = float(bar[\"open\"])\n\n        entries = sorted(\n            scheduled.get(int(timestamp.value), []),\n            key=lambda item: (\n                int(item[\"membership_rank\"]),\n                str(item[\"pair\"]),\n            ),\n        )\n        for item in entries:\n            pair = str(item[\"pair\"])\n            if pair in positions:",
+      "line": 657,
+      "path": "src/spotbot/research/rd30_replacement_replay.py"
+    },
+    {
+      "context": "                counters[\"atomic_replacement_count\"] += 1\n\n            entry_price = float(entry_bar[\"open\"])\n            if not math.isfinite(entry_price) or entry_price <= 0.0:\n                raise RD30ReplayError(\"invalid entry open price\")\n            atr = float(item[\"atr24_at_signal\"])\n            if not math.isfinite(atr) or atr <= 0.0:\n                raise RD30ReplayError(\"invalid entry ATR\")\n\n            notional = float(sizing.notional)\n            quantity = notional / entry_price\n            entry_cost = notional * side_cost",
+      "line": 844,
+      "path": "src/spotbot/research/rd30_replacement_replay.py"
+    },
+    {
+      "context": "\n            specialist = new_specialist_position(\n                pair=pair,\n                entry_time=timestamp,\n                entry_price=entry_price,\n                atr24_at_signal=atr,\n                support_families=support,\n            )\n            positions[pair] = ReplayPosition(\n                pair=pair,\n                signal_time=signal_time,\n                entry_time=timestamp,",
+      "line": 860,
+      "path": "src/spotbot/research/rd30_replacement_replay.py"
+    },
+    {
+      "context": "                max_exit_time=_utc(item[\"max_exit_time\"]),\n                entry_price=entry_price,\n                quantity=quantity,\n                entry_notional=notional,\n                entry_cost=entry_cost,\n                membership_rank=int(item[\"membership_rank\"]),\n                support_families=support,\n                period_id=str(item[\"period_id\"]),\n                atr24_at_signal=atr,\n                specialist=specialist,\n                entry_market_state=entry_state,\n                entry_market_context=(entry_context.context),",
+      "line": 872,
+      "path": "src/spotbot/research/rd30_replacement_replay.py"
+    },
+    {
+      "context": "                entry_notional=notional,\n                entry_cost=entry_cost,\n                membership_rank=int(item[\"membership_rank\"]),\n                support_families=support,\n                period_id=str(item[\"period_id\"]),\n                atr24_at_signal=atr,\n                specialist=specialist,\n                entry_market_state=entry_state,\n                entry_market_context=(entry_context.context),\n                last_mark=entry_price,\n            )\n            counters[\"admitted_entries\"] += 1",
+      "line": 875,
+      "path": "src/spotbot/research/rd30_replacement_replay.py"
+    },
+    {
+      "context": "                position.last_mark = float(bar[\"open\"])\n\n        entries = sorted(\n            scheduled.get(int(timestamp.value), []),\n            key=lambda item: (\n                int(item[\"membership_rank\"]),\n                str(item[\"pair\"]),\n            ),\n        )\n        for item in entries:\n            pair = str(item[\"pair\"])\n            signal_time = _utc(item[\"signal_time\"])",
+      "line": 346,
+      "path": "src/spotbot/research/rd31_regime_governed_replay.py"
+    },
+    {
+      "context": "                counters[\"cash_capped_entries\"] += 1\n\n            entry_price = float(entry_bar[\"open\"])\n            if not math.isfinite(entry_price) or entry_price <= 0.0:\n                raise RD31ReplayError(\"invalid entry open price\")\n            atr = float(item[\"atr24_at_signal\"])\n            if not math.isfinite(atr) or atr <= 0.0:\n                raise RD31ReplayError(\"invalid entry ATR\")\n\n            notional = float(sizing.notional)\n            quantity = notional / entry_price\n            entry_cost = notional * side_cost",
+      "line": 468,
+      "path": "src/spotbot/research/rd31_regime_governed_replay.py"
+    },
+    {
+      "context": "\n            specialist = new_specialist_position(\n                pair=pair,\n                entry_time=timestamp,\n                entry_price=entry_price,\n                atr24_at_signal=atr,\n                support_families=support,\n            )\n            positions[pair] = ReplayPosition(\n                pair=pair,\n                signal_time=signal_time,\n                entry_time=timestamp,",
+      "line": 484,
+      "path": "src/spotbot/research/rd31_regime_governed_replay.py"
+    },
+    {
+      "context": "                max_exit_time=_utc(item[\"max_exit_time\"]),\n                entry_price=entry_price,\n                quantity=quantity,\n                entry_notional=notional,\n                entry_cost=entry_cost,\n                membership_rank=int(item[\"membership_rank\"]),\n                support_families=support,\n                period_id=str(item[\"period_id\"]),\n                atr24_at_signal=atr,\n                specialist=specialist,\n                entry_market_state=entry_state,\n                entry_market_context=(entry_context.context),",
+      "line": 496,
+      "path": "src/spotbot/research/rd31_regime_governed_replay.py"
+    },
+    {
+      "context": "                entry_notional=notional,\n                entry_cost=entry_cost,\n                membership_rank=int(item[\"membership_rank\"]),\n                support_families=support,\n                period_id=str(item[\"period_id\"]),\n                atr24_at_signal=atr,\n                specialist=specialist,\n                entry_market_state=entry_state,\n                entry_market_context=(entry_context.context),\n                last_mark=entry_price,\n            )\n            counters[\"admitted_entries\"] += 1",
+      "line": 499,
+      "path": "src/spotbot/research/rd31_regime_governed_replay.py"
+    },
+    {
+      "context": "                position.last_mark = float(bar[\"open\"])\n\n        entries = sorted(\n            scheduled.get(int(timestamp.value), []),\n            key=lambda item: (\n                int(item[\"membership_rank\"]),\n                str(item[\"pair\"]),\n            ),\n        )\n        for item in entries:\n            pair = str(item[\"pair\"])\n            signal_time = _utc(item[\"signal_time\"])",
+      "line": 424,
+      "path": "src/spotbot/research/rd32_mb_signal_quality_replay.py"
+    },
+    {
+      "context": "                counters[\"cash_capped_entries\"] += 1\n\n            entry_price = float(entry_bar[\"open\"])\n            if not math.isfinite(entry_price) or entry_price <= 0.0:\n                raise RD32ReplayError(\"invalid entry open price\")\n            atr = float(item[\"atr24_at_signal\"])\n            if not math.isfinite(atr) or atr <= 0.0:\n                raise RD32ReplayError(\"invalid entry ATR\")\n\n            notional = float(sizing.notional)\n            quantity = notional / entry_price\n            entry_cost = notional * side_cost",
+      "line": 581,
+      "path": "src/spotbot/research/rd32_mb_signal_quality_replay.py"
+    },
+    {
+      "context": "            admitted_support = tuple(admission.admissible_families)\n            specialist = new_specialist_position(\n                pair=pair,\n                entry_time=timestamp,\n                entry_price=entry_price,\n                atr24_at_signal=atr,\n                support_families=admitted_support,\n            )\n            positions[pair] = ReplayPosition(\n                pair=pair,\n                signal_time=signal_time,\n                entry_time=timestamp,",
+      "line": 600,
+      "path": "src/spotbot/research/rd32_mb_signal_quality_replay.py"
+    },
+    {
+      "context": "                max_exit_time=_utc(item[\"max_exit_time\"]),\n                entry_price=entry_price,\n                quantity=quantity,\n                entry_notional=notional,\n                entry_cost=entry_cost,\n                membership_rank=int(item[\"membership_rank\"]),\n                support_families=admitted_support,\n                period_id=str(item[\"period_id\"]),\n                atr24_at_signal=atr,\n                specialist=specialist,\n                entry_market_state=entry_state,\n                entry_market_context=(entry_context.context),",
+      "line": 612,
+      "path": "src/spotbot/research/rd32_mb_signal_quality_replay.py"
+    },
+    {
+      "context": "                entry_notional=notional,\n                entry_cost=entry_cost,\n                membership_rank=int(item[\"membership_rank\"]),\n                support_families=admitted_support,\n                period_id=str(item[\"period_id\"]),\n                atr24_at_signal=atr,\n                specialist=specialist,\n                entry_market_state=entry_state,\n                entry_market_context=(entry_context.context),\n                last_mark=entry_price,\n            )\n            counters[\"admitted_entries\"] += 1",
+      "line": 615,
+      "path": "src/spotbot/research/rd32_mb_signal_quality_replay.py"
+    },
+    {
+      "context": "    pair: str\n    signal_time: pd.Timestamp\n    normal_entry_time: pd.Timestamp\n    breakout_reference: float\n    signal_close: float\n    membership_rank: int\n    period_id: str\n    target_slot_fraction: float\n    origin_support_families: tuple[str, ...]\n    origin_admissible_families: tuple[str, ...]\n    origin_key: str\n",
+      "line": 65,
+      "path": "src/spotbot/research/rd33_temporal_mb_architecture.py"
+    },
+    {
+      "context": "    return numeric\n\n\ndef _rank(value: Any) -> int:\n    if isinstance(value, bool):\n        raise RD33TemporalMBError(\"membership_rank must be a positive integer\")\n    rank = int(value)\n    if float(value) != float(rank) or rank <= 0:\n        raise RD33TemporalMBError(\"membership_rank must be a positive integer\")\n    return rank\n\n",
+      "line": 109,
+      "path": "src/spotbot/research/rd33_temporal_mb_architecture.py"
+    },
+    {
+      "context": "def _rank(value: Any) -> int:\n    if isinstance(value, bool):\n        raise RD33TemporalMBError(\"membership_rank must be a positive integer\")\n    rank = int(value)\n    if float(value) != float(rank) or rank <= 0:\n        raise RD33TemporalMBError(\"membership_rank must be a positive integer\")\n    return rank\n\n\ndef _families(value: tuple[str, ...] | list[str]) -> tuple[str, ...]:\n    raw = tuple(value)\n    result = tuple(sorted(set(raw)))",
+      "line": 112,
+      "path": "src/spotbot/research/rd33_temporal_mb_architecture.py"
+    },
+    {
+      "context": "    universe_id: str,\n    pair: str,\n    signal_time: pd.Timestamp,\n    breakout_reference: float,\n    signal_close: float,\n    membership_rank: int,\n    period_id: str,\n    support_families: tuple[str, ...] | list[str],\n    rd31_decision: AdmissionDecision,\n) -> PendingMBOrigin:\n    \"\"\"Create a pending MB origin after, and only after, frozen RD31 admission.\n",
+      "line": 153,
+      "path": "src/spotbot/research/rd33_temporal_mb_architecture.py"
+    },
+    {
+      "context": "        breakout_reference=_finite_positive(\n            breakout_reference,\n            label=\"breakout_reference\",\n        ),\n        signal_close=_finite_positive(signal_close, label=\"signal_close\"),\n        membership_rank=_rank(membership_rank),\n        period_id=str(period_id),\n        target_slot_fraction=slot,\n        origin_support_families=support,\n        origin_admissible_families=admissible,\n        origin_key=_origin_key(\n            universe_id=str(universe_id),",
+      "line": 196,
+      "path": "src/spotbot/research/rd33_temporal_mb_architecture.py"
+    },
+    {
+      "context": "class EntryIntent:\n    entry_kind: str\n    pair: str\n    signal_time: pd.Timestamp\n    actual_entry_time: pd.Timestamp\n    membership_rank: int\n    period_id: str\n    support_families: tuple[str, ...]\n    target_slot_fraction: float\n    atr24_at_signal: float\n    capacity_source: float\n    entry_market_state: str",
+      "line": 111,
+      "path": "src/spotbot/research/rd33_temporal_mb_replay.py"
+    },
+    {
+      "context": "    actual_entry_time: pd.Timestamp\n    membership_rank: int\n    period_id: str\n    support_families: tuple[str, ...]\n    target_slot_fraction: float\n    atr24_at_signal: float\n    capacity_source: float\n    entry_market_state: str\n    entry_market_context: str\n    origin_key: str | None\n\n",
+      "line": 115,
+      "path": "src/spotbot/research/rd33_temporal_mb_replay.py"
+    },
+    {
+      "context": "            }\n        )\n    rows.sort(\n        key=lambda item: (\n            _utc(item[\"normal_entry_time\"]),\n            int(item[\"membership_rank\"]),\n            str(item[\"pair\"]),\n        )\n    )\n    duplicate_keys: set[tuple[int, int, str]] = set()\n    for item in rows:\n        key = (",
+      "line": 189,
+      "path": "src/spotbot/research/rd33_temporal_mb_replay.py"
+    },
+    {
+      "context": "    )\n    duplicate_keys: set[tuple[int, int, str]] = set()\n    for item in rows:\n        key = (\n            int(_utc(item[\"normal_entry_time\"]).value),\n            int(item[\"membership_rank\"]),\n            str(item[\"pair\"]),\n        )\n        if key in duplicate_keys:\n            raise RD33ReplayError(\n                \"ambiguous duplicate original event ordering at one control clock\"\n            )",
+      "line": 197,
+      "path": "src/spotbot/research/rd33_temporal_mb_replay.py"
+    },
+    {
+      "context": "                \"event_seq\": int(item[\"event_seq\"]),\n                \"universe_id\": universe_id,\n                \"pair\": pair,\n                \"signal_time\": signal_time,\n                \"normal_entry_time\": _utc(item[\"normal_entry_time\"]),\n                \"membership_rank\": int(item[\"membership_rank\"]),\n                \"support_families\": \"|\".join(support),\n                \"entry_market_state\": entry_state,\n                \"entry_market_context\": entry_context.context,\n                \"breakout_reference\": (\n                    float(breakout_reference) if breakout_reference is not None else math.nan\n                ),",
+      "line": 286,
+      "path": "src/spotbot/research/rd33_temporal_mb_replay.py"
+    },
+    {
+      "context": "    return EntryIntent(\n        entry_kind=ENTRY_KIND_RS,\n        pair=str(item[\"pair\"]),\n        signal_time=_utc(item[\"signal_time\"]),\n        actual_entry_time=_utc(item[\"normal_entry_time\"]),\n        membership_rank=int(item[\"membership_rank\"]),\n        period_id=str(item[\"period_id\"]),\n        support_families=(FAMILY_RELATIVE_STRENGTH_ROTATION,),\n        target_slot_fraction=float(ledger_row[\"target_slot_fraction\"]),\n        atr24_at_signal=float(item[\"atr24_at_signal\"]),\n        capacity_source=float(capacity_source),\n        entry_market_state=str(ledger_row[\"entry_market_state\"]),",
+      "line": 439,
+      "path": "src/spotbot/research/rd33_temporal_mb_replay.py"
+    },
+    {
+      "context": "        actual_entry_time=_utc(item[\"normal_entry_time\"]),\n        membership_rank=int(item[\"membership_rank\"]),\n        period_id=str(item[\"period_id\"]),\n        support_families=(FAMILY_RELATIVE_STRENGTH_ROTATION,),\n        target_slot_fraction=float(ledger_row[\"target_slot_fraction\"]),\n        atr24_at_signal=float(item[\"atr24_at_signal\"]),\n        capacity_source=float(capacity_source),\n        entry_market_state=str(ledger_row[\"entry_market_state\"]),\n        entry_market_context=str(ledger_row[\"entry_market_context\"]),\n        origin_key=None,\n    )\n",
+      "line": 443,
+      "path": "src/spotbot/research/rd33_temporal_mb_replay.py"
+    },
+    {
+      "context": "\ndef _intent_from_confirmed_mb(\n    *,\n    origin: PendingMBOrigin,\n    confirmation: TemporalMBDecision,\n    atr24_at_signal: float,\n    capacity_source: float,\n    entry_market_state: str,\n    entry_market_context: str,\n) -> EntryIntent:\n    if confirmation.status != CONFIRMED or confirmation.actual_entry_time is None:\n        raise RD33ReplayError(\"MB entry intent requires confirmed temporal decision\")",
+      "line": 455,
+      "path": "src/spotbot/research/rd33_temporal_mb_replay.py"
+    },
+    {
+      "context": "    return EntryIntent(\n        entry_kind=ENTRY_KIND_MB,\n        pair=origin.pair,\n        signal_time=origin.signal_time,\n        actual_entry_time=_utc(confirmation.actual_entry_time),\n        membership_rank=origin.membership_rank,\n        period_id=origin.period_id,\n        support_families=(FAMILY_MOMENTUM_BREAKOUT,),\n        target_slot_fraction=origin.target_slot_fraction,\n        atr24_at_signal=float(atr24_at_signal),\n        capacity_source=float(capacity_source),\n        entry_market_state=entry_market_state,",
+      "line": 467,
+      "path": "src/spotbot/research/rd33_temporal_mb_replay.py"
+    },
+    {
+      "context": "        actual_entry_time=_utc(confirmation.actual_entry_time),\n        membership_rank=origin.membership_rank,\n        period_id=origin.period_id,\n        support_families=(FAMILY_MOMENTUM_BREAKOUT,),\n        target_slot_fraction=origin.target_slot_fraction,\n        atr24_at_signal=float(atr24_at_signal),\n        capacity_source=float(capacity_source),\n        entry_market_state=entry_market_state,\n        entry_market_context=entry_market_context,\n        origin_key=origin.origin_key,\n    )\n",
+      "line": 471,
+      "path": "src/spotbot/research/rd33_temporal_mb_replay.py"
+    },
+    {
+      "context": "        counters[\"cash_capped_entries\"] += 1\n\n    entry_price = float(entry_bar[\"open\"])\n    if not math.isfinite(entry_price) or entry_price <= 0.0:\n        raise RD33ReplayError(\"invalid entry open price\")\n    atr = float(intent.atr24_at_signal)\n    if not math.isfinite(atr) or atr <= 0.0:\n        raise RD33ReplayError(\"invalid entry ATR\")\n\n    notional = float(sizing.notional)\n    quantity = notional / entry_price\n    entry_cost = notional * side_cost",
+      "line": 569,
+      "path": "src/spotbot/research/rd33_temporal_mb_replay.py"
+    },
+    {
+      "context": "\n    specialist = new_specialist_position(\n        pair=intent.pair,\n        entry_time=timestamp,\n        entry_price=entry_price,\n        atr24_at_signal=atr,\n        support_families=intent.support_families,\n    )\n    positions[intent.pair] = ReplayPosition(\n        pair=intent.pair,\n        signal_time=intent.signal_time,\n        entry_time=timestamp,",
+      "line": 585,
+      "path": "src/spotbot/research/rd33_temporal_mb_replay.py"
+    },
+    {
+      "context": "        max_exit_time=max_exit_time,\n        entry_price=entry_price,\n        quantity=quantity,\n        entry_notional=notional,\n        entry_cost=entry_cost,\n        membership_rank=intent.membership_rank,\n        support_families=intent.support_families,\n        period_id=intent.period_id,\n        atr24_at_signal=atr,\n        specialist=specialist,\n        entry_market_state=intent.entry_market_state,\n        entry_market_context=intent.entry_market_context,",
+      "line": 597,
+      "path": "src/spotbot/research/rd33_temporal_mb_replay.py"
+    },
+    {
+      "context": "        entry_notional=notional,\n        entry_cost=entry_cost,\n        membership_rank=intent.membership_rank,\n        support_families=intent.support_families,\n        period_id=intent.period_id,\n        atr24_at_signal=atr,\n        specialist=specialist,\n        entry_market_state=intent.entry_market_state,\n        entry_market_context=intent.entry_market_context,\n        last_mark=entry_price,\n    )\n    counters[\"admitted_entries\"] += 1",
+      "line": 600,
+      "path": "src/spotbot/research/rd33_temporal_mb_replay.py"
+    },
+    {
+      "context": "                    universe_id=universe_id,\n                    pair=str(item[\"pair\"]),\n                    signal_time=_utc(item[\"signal_time\"]),\n                    breakout_reference=breakout_reference,\n                    signal_close=float(signal_bar[\"close\"]),\n                    membership_rank=int(item[\"membership_rank\"]),\n                    period_id=str(item[\"period_id\"]),\n                    support_families=support,\n                    rd31_decision=admission,\n                )\n                pending_by_pair, registration = register_pending(\n                    pending_by_pair,",
+      "line": 877,
+      "path": "src/spotbot/research/rd33_temporal_mb_replay.py"
+    },
+    {
+      "context": "                    origin,\n                )\n                if registration.accepted:\n                    counters[\"mb_pending_registered\"] += 1\n                    pending_origin_meta[origin.origin_key] = {\n                        \"atr24_at_signal\": float(item[\"atr24_at_signal\"]),\n                        \"entry_market_state\": str(row[\"entry_market_state\"]),\n                        \"entry_market_context\": str(row[\"entry_market_context\"]),\n                    }\n                    pending_rows.append(\n                        _pending_row(\n                            policy_id=policy_id,",
+      "line": 889,
+      "path": "src/spotbot/research/rd33_temporal_mb_replay.py"
+    },
+    {
+      "context": "\n        # RS has deterministic priority at the same open. This preserves the\n        # frozen RS path; an actual RS open cancels same-pair pending MB.\n        rs_intents.sort(\n            key=lambda intent: (\n                intent.membership_rank,\n                intent.pair,\n            )\n        )\n        for intent in rs_intents:\n            cash, opened, _reason = _execute_entry_intent(\n                intent=intent,",
+      "line": 928,
+      "path": "src/spotbot/research/rd33_temporal_mb_replay.py"
+    },
+    {
+      "context": "                    raise RD33ReplayError(\"pending origin metadata disappeared\")\n                mb_intents.append(\n                    _intent_from_confirmed_mb(\n                        origin=origin,\n                        confirmation=decision,\n                        atr24_at_signal=float(meta[\"atr24_at_signal\"]),\n                        capacity_source=float(\n                            confirmation_bar[\"trailing_24h_quote_turnover_proxy\"]\n                        ),\n                        entry_market_state=str(meta[\"entry_market_state\"]),\n                        entry_market_context=str(meta[\"entry_market_context\"]),\n                    )",
+      "line": 1047,
+      "path": "src/spotbot/research/rd33_temporal_mb_replay.py"
+    },
+    {
+      "context": "            )\n            pending_origin_meta.pop(origin.origin_key, None)\n\n        mb_intents.sort(\n            key=lambda intent: (\n                intent.membership_rank,\n                intent.pair,\n            )\n        )\n        for intent in mb_intents:\n            cash, _opened, _reason = _execute_entry_intent(\n                intent=intent,",
+      "line": 1070,
+      "path": "src/spotbot/research/rd33_temporal_mb_replay.py"
+    },
+    {
+      "context": "        \"event_seq\",\n        \"universe_id\",\n        \"pair\",\n        \"signal_time\",\n        \"normal_entry_time\",\n        \"membership_rank\",\n        \"support_families\",\n        \"entry_market_state\",\n        \"entry_market_context\",\n        \"governor_prior_state\",\n        \"governor_next_state\",\n        \"governor_changed\",",
+      "line": 1184,
+      "path": "src/spotbot/research/rd33_temporal_mb_replay.py"
+    },
+    {
+      "context": "    family_id: str\n    universe_id: str\n    period_id: str\n    pair: str\n    signal_time: pd.Timestamp\n    membership_rank: int\n    breakout_reference: float | None = None\n\n\n@dataclass(frozen=True)\nclass Outcome:\n    family_id: str",
+      "line": 71,
+      "path": "src/spotbot/research/rd34_dual_family_persistence.py"
+    },
+    {
+      "context": "    return numeric\n\n\ndef _positive_rank(value: Any) -> int:\n    if isinstance(value, bool):\n        raise RD34PersistenceError(\"membership_rank must be a positive integer\")\n    rank = int(value)\n    if rank <= 0 or float(value) != float(rank):\n        raise RD34PersistenceError(\"membership_rank must be a positive integer\")\n    return rank\n\n",
+      "line": 106,
+      "path": "src/spotbot/research/rd34_dual_family_persistence.py"
+    },
+    {
+      "context": "def _positive_rank(value: Any) -> int:\n    if isinstance(value, bool):\n        raise RD34PersistenceError(\"membership_rank must be a positive integer\")\n    rank = int(value)\n    if rank <= 0 or float(value) != float(rank):\n        raise RD34PersistenceError(\"membership_rank must be a positive integer\")\n    return rank\n\n\ndef validate_constants() -> None:\n    if MB_RULE_ORDER != (\n        MB_TWO_BAR_BREAKOUT_PERSISTENCE,",
+      "line": 109,
+      "path": "src/spotbot/research/rd34_dual_family_persistence.py"
+    },
+    {
+      "context": "        \"family_id\",\n        \"universe_id\",\n        \"period_id\",\n        \"pair\",\n        \"timestamp\",\n        \"membership_rank\",\n    }\n    missing = sorted(required.difference(row))\n    if missing:\n        raise RD34PersistenceError(f\"origin missing fields: {missing}\")\n\n    family = str(row[\"family_id\"])",
+      "line": 146,
+      "path": "src/spotbot/research/rd34_dual_family_persistence.py"
+    },
+    {
+      "context": "        family_id=family,\n        universe_id=universe,\n        period_id=period,\n        pair=pair,\n        signal_time=timestamp,\n        membership_rank=_positive_rank(row[\"membership_rank\"]),\n        breakout_reference=breakout_reference,\n    )\n\n\ndef build_lookups(\n    features: Mapping[str, pd.DataFrame],",
+      "line": 188,
+      "path": "src/spotbot/research/rd34_dual_family_persistence.py"
+    },
+    {
+      "context": "def participation_event(\n    *,\n    universe_id: str,\n    timestamp: Any,\n    pair: str,\n    membership_rank: int,\n    features: Mapping[str, pd.DataFrame],\n    lookups: Mapping[str, Mapping[int, int]],\n) -> dict[str, Any] | None:\n    timestamp = utc_timestamp(timestamp)\n    current = row_at(pair, timestamp, features, lookups)\n    previous = row_at(",
+      "line": 328,
+      "path": "src/spotbot/research/rd35_new_alpha_source.py"
+    },
+    {
+      "context": "        \"family_id\": FAMILY_PARTICIPATION_SHOCK_CONTINUATION,\n        \"universe_id\": universe_id,\n        \"period_id\": period_for(timestamp),\n        \"pair\": pair,\n        \"timestamp\": timestamp,\n        \"membership_rank\": positive_rank(membership_rank),\n        \"signal_strength\": float(current[\"turnover_ratio\"]),\n        \"turnover_ratio\": float(current[\"turnover_ratio\"]),\n        \"return_6h\": float(current[\"return_6h\"]),\n        \"return_24h\": float(current[\"return_24h\"]),\n        \"return_72h\": float(current[\"return_72h\"]),\n        \"breadth_24h\": math.nan,",
+      "line": 351,
+      "path": "src/spotbot/research/rd35_new_alpha_source.py"
+    },
+    {
+      "context": "def capitulation_event(\n    *,\n    universe_id: str,\n    timestamp: Any,\n    pair: str,\n    membership_rank: int,\n    features: Mapping[str, pd.DataFrame],\n    lookups: Mapping[str, Mapping[int, int]],\n) -> dict[str, Any] | None:\n    timestamp = utc_timestamp(timestamp)\n    current = row_at(pair, timestamp, features, lookups)\n    previous = row_at(",
+      "line": 367,
+      "path": "src/spotbot/research/rd35_new_alpha_source.py"
+    },
+    {
+      "context": "        \"family_id\": FAMILY_CAPITULATION_PARTICIPATION_RECLAIM,\n        \"universe_id\": universe_id,\n        \"period_id\": period_for(timestamp),\n        \"pair\": pair,\n        \"timestamp\": timestamp,\n        \"membership_rank\": positive_rank(membership_rank),\n        \"signal_strength\": float(strength),\n        \"turnover_ratio\": float(current[\"turnover_ratio\"]),\n        \"return_6h\": float(current[\"return_6h\"]),\n        \"return_24h\": float(current[\"return_24h\"]),\n        \"return_72h\": float(current[\"return_72h\"]),\n        \"breadth_24h\": math.nan,",
+      "line": 397,
+      "path": "src/spotbot/research/rd35_new_alpha_source.py"
+    },
+    {
+      "context": "        \"family_id\": FAMILY_BREADTH_THRUST_LEADER,\n        \"universe_id\": universe_id,\n        \"period_id\": period_for(timestamp),\n        \"pair\": leader_pair,\n        \"timestamp\": timestamp,\n        \"membership_rank\": int(leader_rank),\n        \"signal_strength\": float(breadth_now - breadth_previous),\n        \"turnover_ratio\": (\n            float(leader_row[\"turnover_ratio\"])\n            if math.isfinite(float(leader_row[\"turnover_ratio\"]))\n            else math.nan\n        ),",
+      "line": 485,
+      "path": "src/spotbot/research/rd35_new_alpha_source.py"
+    },
+    {
+      "context": "        \"pit_members_now\": len(current_members),\n        \"pit_members_previous\": len(previous_members),\n        **{f\"events_{family}\": 0 for family in FAMILY_ORDER},\n    }\n\n    for pair, membership_rank in current_members:\n        event = participation_event(\n            universe_id=universe_id,\n            timestamp=timestamp,\n            pair=pair,\n            membership_rank=membership_rank,\n            features=features,",
+      "line": 525,
+      "path": "src/spotbot/research/rd35_new_alpha_source.py"
+    },
+    {
+      "context": "    for pair, membership_rank in current_members:\n        event = participation_event(\n            universe_id=universe_id,\n            timestamp=timestamp,\n            pair=pair,\n            membership_rank=membership_rank,\n            features=features,\n            lookups=lookups,\n        )\n        if event is not None:\n            events.append(event)\n            counters[f\"events_{FAMILY_PARTICIPATION_SHOCK_CONTINUATION}\"] += 1",
+      "line": 530,
+      "path": "src/spotbot/research/rd35_new_alpha_source.py"
+    },
+    {
+      "context": "\n        event = capitulation_event(\n            universe_id=universe_id,\n            timestamp=timestamp,\n            pair=pair,\n            membership_rank=membership_rank,\n            features=features,\n            lookups=lookups,\n        )\n        if event is not None:\n            events.append(event)\n            counters[f\"events_{FAMILY_CAPITULATION_PARTICIPATION_RECLAIM}\"] += 1",
+      "line": 542,
+      "path": "src/spotbot/research/rd35_new_alpha_source.py"
+    },
+    {
+      "context": "    family_rank = {family: index for index, family in enumerate(FAMILY_ORDER)}\n    events.sort(\n        key=lambda row: (\n            family_rank[str(row[\"family_id\"])],\n            -float(row[\"signal_strength\"]),\n            int(row[\"membership_rank\"]),\n            str(row[\"pair\"]),\n        )\n    )\n    return events, counters\n\n",
+      "line": 567,
+      "path": "src/spotbot/research/rd35_new_alpha_source.py"
+    },
+    {
+      "context": "    decision = utc(decision_time)\n    if not DATA_START <= decision < DATA_CUTOFF:\n        raise RD38P2Error(f\"decision outside frozen periods: {decision}\")\n\n    return_maps: dict[str, dict[int, float]] = {}\n    for pair, _membership_rank in members:\n        lookup = lookups.get(pair)\n        if lookup is None:\n            return None\n        values: dict[int, float] = {}\n        for horizon in HORIZONS:\n            value = trailing_return(",
+      "line": 230,
+      "path": "src/spotbot/research/rd38_cross_sectional_resilience.py"
+    },
+    {
+      "context": "    negative_breadth_24h = float(\n        sum(return_maps[pair][24] < 0.0 for pair, _rank in members) / CROSS_SECTION_SIZE\n    )\n\n    rows: list[dict[str, Any]] = []\n    for pair, membership_rank in members:\n        r6 = return_maps[pair][6]\n        r24 = return_maps[pair][24]\n        r72 = return_maps[pair][72]\n        rank6 = ranks[6][pair]\n        rank24 = ranks[24][pair]\n        rank72 = ranks[72][pair]",
+      "line": 262,
+      "path": "src/spotbot/research/rd38_cross_sectional_resilience.py"
+    },
+    {
+      "context": "            {\n                \"universe_id\": universe_id,\n                \"decision_time\": decision,\n                \"period_id\": period_for(decision),\n                \"pair\": pair,\n                \"membership_rank\": int(membership_rank),\n                \"return_6h\": r6,\n                \"return_24h\": r24,\n                \"return_72h\": r72,\n                \"percentile_rank_6h\": rank6,\n                \"percentile_rank_24h\": rank24,\n                \"percentile_rank_72h\": rank72,",
+      "line": 285,
+      "path": "src/spotbot/research/rd38_cross_sectional_resilience.py"
+    },
+    {
+      "context": "            str(row[\"universe_id\"]),\n            str(row[\"pair\"]),\n        ),\n    )\n    context_fields = (\n        \"membership_rank\",\n        \"return_6h\",\n        \"return_24h\",\n        \"return_72h\",\n        \"percentile_rank_6h\",\n        \"percentile_rank_24h\",\n        \"percentile_rank_72h\",",
+      "line": 321,
+      "path": "src/spotbot/research/rd38_cross_sectional_resilience.py"
+    },
+    {
+      "context": "        **row,\n        \"data_quality_class\": quality,\n        \"expected_hourly_bar_count\": expected_bar_count,\n        \"observed_hourly_bar_count\": observed_bar_count,\n        \"entry_price\": float(row[\"entry_price\"]),\n        \"atr24_at_signal\": float(row[\"atr24_at_signal\"]),\n        \"completed_mark\": np.nan,\n        \"completed_high_water\": np.nan,\n        \"high_water_gain_atr\": np.nan,\n        \"pullback_from_high_water_atr\": np.nan,\n        \"current_mark_entry_distance_atr\": np.nan,\n        \"profit_trail_arm_distance_atr\": np.nan,",
+      "line": 126,
+      "path": "src/spotbot/research/rd43_control_relative_state.py"
+    },
+    {
+      "context": "        raise RD43P2Error(\"2024+ landmark decision entered reconstruction\")\n\n    landmark = int(row[\"landmark_age_hours\"])\n    expected_bar_count = landmark\n    entry_price = float(row[\"entry_price\"])\n    atr = float(row[\"atr24_at_signal\"])\n\n    if not math.isfinite(entry_price) or entry_price <= 0.0:\n        return _empty_reconstruction(\n            row,\n            quality=INVALID_ENTRY_PRICE,\n            expected_bar_count=expected_bar_count,",
+      "line": 157,
+      "path": "src/spotbot/research/rd43_control_relative_state.py"
+    },
+    {
+      "context": "        **row,\n        \"data_quality_class\": VALID,\n        \"expected_hourly_bar_count\": expected_bar_count,\n        \"observed_hourly_bar_count\": int(len(window)),\n        \"entry_price\": entry_price,\n        \"atr24_at_signal\": atr,\n        \"completed_mark\": completed_mark,\n        \"completed_high_water\": high_water,\n        \"high_water_gain_atr\": float(high_water_gain),\n        \"pullback_from_high_water_atr\": float(pullback),\n        \"current_mark_entry_distance_atr\": float(mark_entry),\n        \"profit_trail_arm_distance_atr\": float(arm_distance),",
+      "line": 245,
+      "path": "src/spotbot/research/rd43_control_relative_state.py"
+    },
+    {
+      "context": "    bar_frames: dict[str, pd.DataFrame],\n) -> pd.DataFrame:\n    required_state = {\n        \"control_position_id\",\n        \"entry_price\",\n        \"atr24_at_signal\",\n    }\n    missing = sorted(required_state.difference(position_state.columns))\n    if missing:\n        raise RD43P2Error(f\"position state missing columns: {missing}\")\n    if position_state[\"control_position_id\"].astype(str).duplicated().any():\n        raise RD43P2Error(\"duplicate position state id\")",
+      "line": 267,
+      "path": "src/spotbot/research/rd43_control_relative_state.py"
+    },
+    {
+      "context": "        position_state.loc[:, list(required_state)],\n        on=\"control_position_id\",\n        how=\"left\",\n        validate=\"many_to_one\",\n    )\n    if rows[[\"entry_price\", \"atr24_at_signal\"]].isna().any().any():\n        raise RD43P2Error(\"landmark row missing entry price or signal ATR\")\n\n    records: list[dict[str, Any]] = []\n    total = len(rows)\n    for index, raw in enumerate(rows.to_dict(orient=\"records\"), start=1):\n        pair = str(raw[\"pair\"])",
+      "line": 281,
+      "path": "src/spotbot/research/rd43_control_relative_state.py"
+    },
+    {
+      "context": "        **row,\n        \"data_quality_class\": quality,\n        \"expected_hourly_bar_count\": expected_bar_count,\n        \"observed_hourly_bar_count\": observed_bar_count,\n        \"entry_price\": float(row[\"entry_price\"]),\n        \"atr24_at_signal\": float(row[\"atr24_at_signal\"]),\n        \"reference_time_12h\": pd.NaT,\n        \"audit_reference_mark_12h\": np.nan,\n        \"audit_completed_mark\": np.nan,\n        \"audit_reference_high_water_12h\": np.nan,\n        \"audit_completed_high_water\": np.nan,\n        \"audit_completed_high_water_time\": pd.NaT,",
+      "line": 142,
+      "path": "src/spotbot/research/rd44_control_relative_dynamics.py"
+    },
+    {
+      "context": "            expected_bar_count=expected_bar_count,\n            observed_bar_count=0,\n        )\n\n    entry_price = float(row[\"entry_price\"])\n    atr = float(row[\"atr24_at_signal\"])\n    if not math.isfinite(entry_price) or entry_price <= 0.0:\n        return _empty_reconstruction(\n            row,\n            quality=INVALID_ENTRY_PRICE,\n            expected_bar_count=expected_bar_count,\n            observed_bar_count=0,",
+      "line": 213,
+      "path": "src/spotbot/research/rd44_control_relative_dynamics.py"
+    },
+    {
+      "context": "        **row,\n        \"data_quality_class\": VALID,\n        \"expected_hourly_bar_count\": expected_bar_count,\n        \"observed_hourly_bar_count\": int(len(window)),\n        \"entry_price\": entry_price,\n        \"atr24_at_signal\": atr,\n        \"reference_time_12h\": reference_time,\n        \"audit_reference_mark_12h\": float(reference_mark),\n        \"audit_completed_mark\": completed_mark,\n        \"audit_reference_high_water_12h\": float(reference_high_water),\n        \"audit_completed_high_water\": completed_high_water,\n        \"audit_completed_high_water_time\": completed_high_water_time,",
+      "line": 391,
+      "path": "src/spotbot/research/rd44_control_relative_dynamics.py"
+    },
+    {
+      "context": ") -> pd.DataFrame:\n    validate_constants()\n    required_state = {\n        \"control_position_id\",\n        \"entry_price\",\n        \"atr24_at_signal\",\n    }\n    missing = sorted(required_state.difference(position_state.columns))\n    if missing:\n        raise RD44P2Error(f\"position state missing columns: {missing}\")\n    if position_state[\"control_position_id\"].astype(str).duplicated().any():\n        raise RD44P2Error(\"duplicate position state id\")",
+      "line": 419,
+      "path": "src/spotbot/research/rd44_control_relative_dynamics.py"
+    },
+    {
+      "context": "        position_state.loc[:, list(required_state)],\n        on=\"control_position_id\",\n        how=\"left\",\n        validate=\"many_to_one\",\n    )\n    if rows[[\"entry_price\", \"atr24_at_signal\"]].isna().any().any():\n        raise RD44P2Error(\"landmark row missing entry price or frozen signal ATR\")\n\n    records: list[dict[str, Any]] = []\n    total = len(rows)\n    for index, raw in enumerate(rows.to_dict(orient=\"records\"), start=1):\n        pair = str(raw[\"pair\"])",
+      "line": 433,
+      "path": "src/spotbot/research/rd44_control_relative_dynamics.py"
+    }
+  ],
+  "rows_read": false,
+  "status": "PASS"
+}

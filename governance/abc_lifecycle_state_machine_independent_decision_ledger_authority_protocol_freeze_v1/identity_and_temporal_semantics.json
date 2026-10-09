@@ -1,0 +1,27 @@
+{
+  "coverage": {
+    "all_eligible_checkpoints_required": true,
+    "outcome_based_row_filtering_forbidden": true,
+    "zero_intervention_rows_retained": true
+  },
+  "lifecycle_identity": {
+    "must_come_from_canonical_execution_or_trade_authority": true,
+    "outcome_derived_identity_forbidden": true,
+    "pair_only_identity_forbidden": true,
+    "stable_across_checkpoints": true
+  },
+  "primary_key": [
+    "lifecycle_id",
+    "decision_time_utc"
+  ],
+  "schema_version": "akah-decision-ledger-identity-temporal-semantics-v1",
+  "time_contract": {
+    "decision_grid": "CANONICAL_LEGAL_4H_CHECKPOINTS_ONLY",
+    "decision_time_meaning": "ACTION_TIME_AT_LEGAL_CHECKPOINT",
+    "legal_step_hours": 4,
+    "next_checkpoint_rule": "hold_step_mark_time_utc=decision_time_utc+4h",
+    "posthoc_offset_matching_forbidden": true,
+    "state_cutoff_rule": "state_information_cutoff_utc<=decision_time_utc",
+    "timezone": "UTC"
+  }
+}

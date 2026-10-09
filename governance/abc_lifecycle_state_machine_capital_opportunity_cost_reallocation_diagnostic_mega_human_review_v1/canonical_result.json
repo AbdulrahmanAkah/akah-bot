@@ -1,0 +1,140 @@
+{
+  "2024_access": false,
+  "authorized_axis": "CAUSAL_BLOCKED_REPLACEMENT_MECHANISM_DISCOVERY",
+  "authorized_next": "ABC_LIFECYCLE_STATE_MACHINE_CAUSAL_BLOCKED_REPLACEMENT_MECHANISM_DISCOVERY_MEGA_V1",
+  "certification": "DISCOVERY_ONLY_NO_POSTHOC_WINNER_CERTIFICATION",
+  "created_at_utc": "2026-09-28T17:07:26.231312+00:00",
+  "diagnostic_evidence": {
+    "blocked_replacement_oracle_2x": {
+      "action_mode": "BLOCKED_REPLACE",
+      "continuous_mtm_mdd": -0.06208325924796709,
+      "cost_multiplier": 2.0,
+      "day_ge_0p5_fraction": 0.13552361396303902,
+      "mean_gross_fraction": 0.06402132160913308,
+      "open_positions_at_cutoff": 20,
+      "positive_day_fraction": 0.46885694729637234,
+      "ranker": "C01_BLOCKED_REPLACEMENT_ORACLE",
+      "rejections": "{'SIZE_OR_CAPACITY_TOO_SMALL': 170007, 'SAME_PAIR_OPEN': 33784, 'RISK_GOVERNOR_FORCED_EXIT': 472, 'MAX_POSITIONS': 71375}",
+      "terminal_equity": 1123290.3086935668,
+      "terminal_wealth": 11.232903086935668,
+      "total_cost": 101034.15286802592,
+      "trade_count": 13922,
+      "variant": "C01_BLOCKED_REPLACEMENT_ORACLE"
+    },
+    "blocked_shadow_summary": {
+      "by_reason": {
+        "CAPITAL_CAPACITY": {
+          "median_positive_projected_delta": 779.5589423159527,
+          "positive_count": 291,
+          "positive_fraction": 0.004516809983547015,
+          "rows": 64426,
+          "sum_positive_projected_delta": 302666.5718806526
+        },
+        "MAX_POSITIONS": {
+          "median_positive_projected_delta": 384.8916764131641,
+          "positive_count": 81291,
+          "positive_fraction": 0.9589142897586524,
+          "rows": 84774,
+          "sum_positive_projected_delta": 47432683.15190977
+        }
+      },
+      "median_positive_projected_incremental_terminal_delta": 385.9562532629693,
+      "positive_fraction": 0.5467962466487936,
+      "positive_oracle_replacement_count": 81582,
+      "rows": 149200,
+      "sum_positive_projected_incremental_terminal_delta": 47735349.72379042,
+      "warning": "Projected deltas overlap in time and are non-additive; use funded counterfactual wealth as the economic bound."
+    },
+    "f10_2x": {
+      "action_mode": "NONE",
+      "continuous_mtm_mdd": -0.26758260156638225,
+      "cost_multiplier": 2.0,
+      "day_ge_0p5_fraction": 0.1375770020533881,
+      "mean_gross_fraction": 0.10531620405429827,
+      "open_positions_at_cutoff": 20,
+      "positive_day_fraction": 0.3648186173853525,
+      "ranker": "C00_F10_ACTUAL",
+      "rejections": "{'SIZE_OR_CAPACITY_TOO_SMALL': 171048, 'SAME_PAIR_OPEN': 28923, 'RISK_GOVERNOR_FORCED_EXIT': 577, 'MAX_POSITIONS': 84774}",
+      "terminal_equity": 217559.85217179195,
+      "terminal_wealth": 2.1755985217179195,
+      "total_cost": 31715.52537963624,
+      "trade_count": 4343,
+      "variant": "C00_F10_ACTUAL"
+    },
+    "full_reallocation_2x": {
+      "action_mode": "FULL_REALLOC",
+      "continuous_mtm_mdd": -0.07892989985547161,
+      "cost_multiplier": 2.0,
+      "day_ge_0p5_fraction": 0.12525667351129363,
+      "mean_gross_fraction": 0.05025665354428961,
+      "open_positions_at_cutoff": 11,
+      "positive_day_fraction": 0.3353867214236824,
+      "ranker": "C03_FULL_REALLOCATION_ORACLE",
+      "rejections": "{'SIZE_OR_CAPACITY_TOO_SMALL': 172634, 'SAME_PAIR_OPEN': 22148, 'RISK_GOVERNOR_FORCED_EXIT': 288, 'MAX_POSITIONS': 41768}",
+      "terminal_equity": 637079.612354116,
+      "terminal_wealth": 6.370796123541161,
+      "total_cost": 558435.9299911947,
+      "trade_count": 52547,
+      "variant": "C03_FULL_REALLOCATION_ORACLE"
+    },
+    "gap_decomposition": {
+      "admission_interaction_after_oracle_rank_reallocation": 0.8711735958643372,
+      "all_admission_oracle_rank_plus_reallocation_delta": 5.045541443225139,
+      "blocked_replacement_only_delta": 9.057304565217748,
+      "f10_actual_2x_wealth": 2.1755985217179195,
+      "full_reallocation_same_f10_order_delta": 4.195197601823241,
+      "negative_continuation_release_only_delta": 2.217440754357064,
+      "non_additivity_warning": "These counterfactual wealth deltas are path-dependent and must not be summed.",
+      "oracle_warning": "Future H0 continuation values and H0 candidate outcomes are diagnostic-only and cannot be promoted directly into runtime decisions.",
+      "ranking_interaction_after_reallocation": -0.020829754462439176,
+      "same_gate_oracle_rank_plus_reallocation_delta": 4.174367847360802,
+      "schema_version": "akah-capital-reallocation-gap-decomposition-v1"
+    }
+  },
+  "hard_cutoff_exclusive": "2024-01-01T00:00:00Z",
+  "policies": [
+    {
+      "description": "Exact F10 baseline; no replacement",
+      "id": "R00_F10_ACTUAL",
+      "mode": "NONE"
+    },
+    {
+      "description": "Blocked candidate may replace the incumbent with the lowest entry F10 score when candidate F10 score is strictly higher",
+      "id": "R01_SCORE_GAP",
+      "mode": "SCORE_GAP"
+    },
+    {
+      "description": "R01 plus incumbent executable unrealized net return must be <= 0",
+      "id": "R02_SCORE_GAP_LOSER",
+      "mode": "SCORE_GAP_LOSER"
+    },
+    {
+      "description": "R01 plus incumbent age must be >= 24 completed hours",
+      "id": "R03_SCORE_GAP_STALE24",
+      "mode": "SCORE_GAP_STALE24"
+    },
+    {
+      "description": "R01 plus incumbent is nonpositive OR at least 24 completed hours old",
+      "id": "R04_SCORE_GAP_LOSER_OR_STALE24",
+      "mode": "SCORE_GAP_LOSER_OR_STALE24"
+    },
+    {
+      "description": "R01 plus incumbent is nonpositive AND at least 24 completed hours old",
+      "id": "R05_SCORE_GAP_LOSER_AND_STALE24",
+      "mode": "SCORE_GAP_LOSER_AND_STALE24"
+    }
+  ],
+  "reviewed_revision": 749,
+  "runtime_information_contract": {
+    "candidate_f10_score": true,
+    "completed_holding_age": true,
+    "current_executable_unrealized_net_return": true,
+    "event_identity_rule": false,
+    "future_h0_information": false,
+    "incumbent_entry_f10_score": true,
+    "pair_identity_rule": false
+  },
+  "schema_version": "akah-rev749-causal-blocked-replacement-human-review-v1",
+  "source_disposition": "CAPITAL_OPPORTUNITY_COST_REALLOCATION_DIAGNOSTIC_COMPLETE_NO_RUNTIME_RULE",
+  "status": "PASS_CAUSAL_DISCOVERY_AUTHORIZED"
+}

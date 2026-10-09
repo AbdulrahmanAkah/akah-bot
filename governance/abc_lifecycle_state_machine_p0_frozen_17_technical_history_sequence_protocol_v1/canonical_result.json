@@ -1,0 +1,102 @@
+{
+  "2024_access": false,
+  "empirical_null": {
+    "min_changed_share": 0.3,
+    "outcome_permutations": 64,
+    "quantile": 0.95,
+    "time_shift": "7D_WEEK_CIRCULAR_SHIFT_Q95",
+    "train_joint_bundle_derangements": 16
+  },
+  "exposed_diagnostics": [
+    "EXPOSED_2019_2021_TO_2022",
+    "EXPOSED_2019_2021_TO_2023"
+  ],
+  "feature_search": false,
+  "fixed_feature_counts": {
+    "S1_MACD5": 25,
+    "S2_MACD_BOLL_VOL_ATR9": 45,
+    "S3_ALL17": 85
+  },
+  "fold_pass_requires": [
+    "positive_residual_spearman_above_max_empirical_null_q95",
+    "positive_full_rank_lift_vs_structural",
+    "positive_residual_quartile_spread",
+    "train_null_changed_share_gte_0p30"
+  ],
+  "history_transforms": [
+    "CUR",
+    "LAG1",
+    "LAG2",
+    "DELTA1",
+    "MEAN3"
+  ],
+  "model_search": false,
+  "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_P0_FROZEN_17_TECHNICAL_HISTORY_SEQUENCE_MATERIALIZATION_AND_PIT_AUDIT_V1",
+  "population": "CLEAN_BELLMAN_ROWS",
+  "ridge_alpha": 100.0,
+  "rolling_development_folds": [
+    "DEV_2019_TO_2020",
+    "DEV_2019_2020_TO_2021"
+  ],
+  "rsi_adx_dmi_volume_reopen": false,
+  "schema_version": "akah-rev674-frozen17-p0-technical-history-sequence-mega-v1-protocol",
+  "sensor_values_read": false,
+  "stage_order": [
+    "S1_MACD5",
+    "S2_MACD_BOLL_VOL_ATR9",
+    "S3_ALL17"
+  ],
+  "stage_proof_requires": "BOTH_ROLLING_DEVELOPMENT_FOLDS_PASS",
+  "stage_selection": "EARLIEST_PROVEN_STAGE_IN_FROZEN_HISTORICAL_ORDER_NOT_POSTHOC_SEARCH",
+  "stages": {
+    "S1_MACD5": [
+      "macd_hist_atr",
+      "macd_hist_delta1_atr",
+      "macd_hist_drawdown_from_peak5_atr",
+      "macd_hist_slope3_atr",
+      "macd_signal_atr"
+    ],
+    "S2_MACD_BOLL_VOL_ATR9": [
+      "macd_hist_atr",
+      "macd_hist_delta1_atr",
+      "macd_hist_drawdown_from_peak5_atr",
+      "macd_hist_slope3_atr",
+      "macd_signal_atr",
+      "atr14_4h_price_fraction",
+      "bb_percent_b20",
+      "bb_width20",
+      "bb_width_delta3"
+    ],
+    "S3_ALL17": [
+      "macd_hist_atr",
+      "macd_hist_delta1_atr",
+      "macd_hist_drawdown_from_peak5_atr",
+      "macd_hist_slope3_atr",
+      "macd_signal_atr",
+      "atr14_4h_price_fraction",
+      "bb_percent_b20",
+      "bb_width20",
+      "bb_width_delta3",
+      "ema21_50_spread_atr",
+      "ema21_slope3_atr",
+      "ema50_slope3_atr",
+      "ema9_21_spread_atr",
+      "ema9_slope3_atr",
+      "ema_alignment_score",
+      "price_ema21_atr",
+      "price_ema9_atr"
+    ]
+  },
+  "status": "PASS_P0_TECHNICAL_HISTORY_PROTOCOL_FROZEN",
+  "structural_baseline": [
+    "AGE",
+    "ORDINAL",
+    "CALENDAR_QUARTER",
+    "AGE_X_ORDINAL"
+  ],
+  "target": "P0_ONE_STEP_4H_MARK_RETURN",
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_P0_FROZEN_17_TECHNICAL_HISTORY_SEQUENCE_PROTOCOL_FREEZE_V1",
+  "test_sampling": "ONE_FIXED_HASHED_ROW_PER_TRADE_SAME_ACROSS_STAGES_AND_NULLS",
+  "threshold_search": false,
+  "training_weight": "EQUAL_TOTAL_WEIGHT_PER_TRADE"
+}

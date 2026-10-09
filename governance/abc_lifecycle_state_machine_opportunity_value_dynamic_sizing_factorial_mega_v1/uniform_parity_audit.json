@@ -1,0 +1,1200 @@
+{
+  "float_numeric_policy": {
+    "absolute_floor": 1e-12,
+    "relative": 2e-14
+  },
+  "integer_metrics": "EXACT",
+  "reference_count": 12,
+  "rows": [
+    {
+      "cost_multiplier": 1.0,
+      "governor": "BINARY_VOL",
+      "metric_checks": [
+        {
+          "abs_diff": 0.0,
+          "key": "terminal_equity",
+          "new": 227586.02359456147,
+          "old": 227586.02359456147,
+          "rel_diff": 0.0,
+          "status": "PASS",
+          "tolerance": 4.551720471891229e-09
+        },
+        {
+          "abs_diff": 0.0,
+          "key": "terminal_wealth",
+          "new": 2.275860235945615,
+          "old": 2.275860235945615,
+          "rel_diff": 0.0,
+          "status": "PASS",
+          "tolerance": 1e-12
+        },
+        {
+          "abs_diff": 0.0,
+          "key": "continuous_mtm_mdd",
+          "new": -0.2448754570581435,
+          "old": -0.2448754570581435,
+          "rel_diff": 0.0,
+          "status": "PASS",
+          "tolerance": 1e-12
+        },
+        {
+          "abs_diff": 1.8189894035458565e-12,
+          "key": "total_cost",
+          "new": 16066.715591324919,
+          "old": 16066.71559132492,
+          "rel_diff": 1.1321476335387448e-16,
+          "status": "PASS",
+          "tolerance": 3.213343118264984e-10
+        },
+        {
+          "abs_diff": 6.938893903907228e-17,
+          "key": "mean_gross_fraction",
+          "new": 0.10451214903191697,
+          "old": 0.1045121490319169,
+          "rel_diff": 6.938893903907228e-17,
+          "status": "PASS",
+          "tolerance": 1e-12
+        },
+        {
+          "abs_diff": 5.551115123125783e-17,
+          "key": "positive_day_fraction",
+          "new": 0.37097878165639975,
+          "old": 0.3709787816563997,
+          "rel_diff": 5.551115123125783e-17,
+          "status": "PASS",
+          "tolerance": 1e-12
+        },
+        {
+          "abs_diff": 2.7755575615628914e-17,
+          "key": "day_ge_0p5_fraction",
+          "new": 0.13552361396303902,
+          "old": 0.135523613963039,
+          "rel_diff": 2.7755575615628914e-17,
+          "status": "PASS",
+          "tolerance": 1e-12
+        },
+        {
+          "key": "trade_count",
+          "new": 4338,
+          "old": 4338,
+          "status": "PASS_EXACT"
+        },
+        {
+          "key": "open_positions_at_cutoff",
+          "new": 20,
+          "old": 20,
+          "status": "PASS_EXACT"
+        }
+      ],
+      "selector": "SEL_F10_ADX",
+      "source_ranker": "F10_RANK_2T_ADX",
+      "status": "PASS",
+      "trade_ledger_check": {
+        "cost_multiplier": 1.0,
+        "governor": "BINARY_VOL",
+        "numeric_max_abs_diff": {
+          "entry_notional": 1.8189894035458565e-12,
+          "entry_price": 0.0,
+          "entry_score": 4.440892098500626e-16,
+          "exit_price": 0.0,
+          "net_pnl": 1.8189894035458565e-12
+        },
+        "selector": "SEL_F10_ADX",
+        "source_ranker": "F10_RANK_2T_ADX",
+        "status": "PASS_EXACT_LEDGER",
+        "trade_count": 4338
+      }
+    },
+    {
+      "cost_multiplier": 2.0,
+      "governor": "BINARY_VOL",
+      "metric_checks": [
+        {
+          "abs_diff": 0.0,
+          "key": "terminal_equity",
+          "new": 217559.85217179195,
+          "old": 217559.85217179195,
+          "rel_diff": 0.0,
+          "status": "PASS",
+          "tolerance": 4.351197043435839e-09
+        },
+        {
+          "abs_diff": 0.0,
+          "key": "terminal_wealth",
+          "new": 2.1755985217179195,
+          "old": 2.1755985217179195,
+          "rel_diff": 0.0,
+          "status": "PASS",
+          "tolerance": 1e-12
+        },
+        {
+          "abs_diff": 5.551115123125783e-17,
+          "key": "continuous_mtm_mdd",
+          "new": -0.26758260156638225,
+          "old": -0.2675826015663822,
+          "rel_diff": 5.551115123125783e-17,
+          "status": "PASS",
+          "tolerance": 1e-12
+        },
+        {
+          "abs_diff": 0.0,
+          "key": "total_cost",
+          "new": 31715.52537963624,
+          "old": 31715.52537963624,
+          "rel_diff": 0.0,
+          "status": "PASS",
+          "tolerance": 6.343105075927249e-10
+        },
+        {
+          "abs_diff": 6.938893903907228e-17,
+          "key": "mean_gross_fraction",
+          "new": 0.10531620405429827,
+          "old": 0.1053162040542982,
+          "rel_diff": 6.938893903907228e-17,
+          "status": "PASS",
+          "tolerance": 1e-12
+        },
+        {
+          "abs_diff": 0.0,
+          "key": "positive_day_fraction",
+          "new": 0.3648186173853525,
+          "old": 0.3648186173853525,
+          "rel_diff": 0.0,
+          "status": "PASS",
+          "tolerance": 1e-12
+        },
+        {
+          "abs_diff": 0.0,
+          "key": "day_ge_0p5_fraction",
+          "new": 0.1375770020533881,
+          "old": 0.1375770020533881,
+          "rel_diff": 0.0,
+          "status": "PASS",
+          "tolerance": 1e-12
+        },
+        {
+          "key": "trade_count",
+          "new": 4343,
+          "old": 4343,
+          "status": "PASS_EXACT"
+        },
+        {
+          "key": "open_positions_at_cutoff",
+          "new": 20,
+          "old": 20,
+          "status": "PASS_EXACT"
+        }
+      ],
+      "selector": "SEL_F10_ADX",
+      "source_ranker": "F10_RANK_2T_ADX",
+      "status": "PASS",
+      "trade_ledger_check": {
+        "cost_multiplier": 2.0,
+        "governor": "BINARY_VOL",
+        "numeric_max_abs_diff": {
+          "entry_notional": 1.8189894035458565e-12,
+          "entry_price": 0.0,
+          "entry_score": 4.440892098500626e-16,
+          "exit_price": 0.0,
+          "net_pnl": 1.8189894035458565e-12
+        },
+        "selector": "SEL_F10_ADX",
+        "source_ranker": "F10_RANK_2T_ADX",
+        "status": "PASS_EXACT_LEDGER",
+        "trade_count": 4343
+      }
+    },
+    {
+      "cost_multiplier": 1.0,
+      "governor": "BINARY_NO_VOL",
+      "metric_checks": [
+        {
+          "abs_diff": 0.0,
+          "key": "terminal_equity",
+          "new": 212110.6168091368,
+          "old": 212110.6168091368,
+          "rel_diff": 0.0,
+          "status": "PASS",
+          "tolerance": 4.242212336182736e-09
+        },
+        {
+          "abs_diff": 0.0,
+          "key": "terminal_wealth",
+          "new": 2.121106168091368,
+          "old": 2.121106168091368,
+          "rel_diff": 0.0,
+          "status": "PASS",
+          "tolerance": 1e-12
+        },
+        {
+          "abs_diff": 0.0,
+          "key": "continuous_mtm_mdd",
+          "new": -0.2900112915131685,
+          "old": -0.2900112915131685,
+          "rel_diff": 0.0,
+          "status": "PASS",
+          "tolerance": 1e-12
+        },
+        {
+          "abs_diff": 1.8189894035458565e-12,
+          "key": "total_cost",
+          "new": 15865.212535555595,
+          "old": 15865.212535555596,
+          "rel_diff": 1.1465269686550441e-16,
+          "status": "PASS",
+          "tolerance": 3.173042507111119e-10
+        },
+        {
+          "abs_diff": 0.0,
+          "key": "mean_gross_fraction",
+          "new": 0.114307194695542,
+          "old": 0.114307194695542,
+          "rel_diff": 0.0,
+          "status": "PASS",
+          "tolerance": 1e-12
+        },
+        {
+          "abs_diff": 0.0,
+          "key": "positive_day_fraction",
+          "new": 0.3668720054757016,
+          "old": 0.3668720054757016,
+          "rel_diff": 0.0,
+          "status": "PASS",
+          "tolerance": 1e-12
+        },
+        {
+          "abs_diff": 2.7755575615628914e-17,
+          "key": "day_ge_0p5_fraction",
+          "new": 0.13826146475017112,
+          "old": 0.1382614647501711,
+          "rel_diff": 2.7755575615628914e-17,
+          "status": "PASS",
+          "tolerance": 1e-12
+        },
+        {
+          "key": "trade_count",
+          "new": 4135,
+          "old": 4135,
+          "status": "PASS_EXACT"
+        },
+        {
+          "key": "open_positions_at_cutoff",
+          "new": 20,
+          "old": 20,
+          "status": "PASS_EXACT"
+        }
+      ],
+      "selector": "SEL_F10_ADX",
+      "source_ranker": "F10_RANK_2T_ADX",
+      "status": "PASS",
+      "trade_ledger_check": {
+        "cost_multiplier": 1.0,
+        "governor": "BINARY_NO_VOL",
+        "numeric_max_abs_diff": {
+          "entry_notional": 1.8189894035458565e-12,
+          "entry_price": 0.0,
+          "entry_score": 4.440892098500626e-16,
+          "exit_price": 0.0,
+          "net_pnl": 4.547473508864641e-13
+        },
+        "selector": "SEL_F10_ADX",
+        "source_ranker": "F10_RANK_2T_ADX",
+        "status": "PASS_EXACT_LEDGER",
+        "trade_count": 4135
+      }
+    },
+    {
+      "cost_multiplier": 2.0,
+      "governor": "BINARY_NO_VOL",
+      "metric_checks": [
+        {
+          "abs_diff": 0.0,
+          "key": "terminal_equity",
+          "new": 195981.5146814945,
+          "old": 195981.5146814945,
+          "rel_diff": 0.0,
+          "status": "PASS",
+          "tolerance": 3.91963029362989e-09
+        },
+        {
+          "abs_diff": 0.0,
+          "key": "terminal_wealth",
+          "new": 1.959815146814945,
+          "old": 1.959815146814945,
+          "rel_diff": 0.0,
+          "status": "PASS",
+          "tolerance": 1e-12
+        },
+        {
+          "abs_diff": 0.0,
+          "key": "continuous_mtm_mdd",
+          "new": -0.3174641144675433,
+          "old": -0.3174641144675433,
+          "rel_diff": 0.0,
+          "status": "PASS",
+          "tolerance": 1e-12
+        },
+        {
+          "abs_diff": 0.0,
+          "key": "total_cost",
+          "new": 31184.041919943385,
+          "old": 31184.041919943385,
+          "rel_diff": 0.0,
+          "status": "PASS",
+          "tolerance": 6.236808383988677e-10
+        },
+        {
+          "abs_diff": 1.3877787807814457e-17,
+          "key": "mean_gross_fraction",
+          "new": 0.11668132923412092,
+          "old": 0.1166813292341209,
+          "rel_diff": 1.3877787807814457e-17,
+          "status": "PASS",
+          "tolerance": 1e-12
+        },
+        {
+          "abs_diff": 0.0,
+          "key": "positive_day_fraction",
+          "new": 0.3613963039014374,
+          "old": 0.3613963039014374,
+          "rel_diff": 0.0,
+          "status": "PASS",
+          "tolerance": 1e-12
+        },
+        {
+          "abs_diff": 0.0,
+          "key": "day_ge_0p5_fraction",
+          "new": 0.1403148528405202,
+          "old": 0.1403148528405202,
+          "rel_diff": 0.0,
+          "status": "PASS",
+          "tolerance": 1e-12
+        },
+        {
+          "key": "trade_count",
+          "new": 4135,
+          "old": 4135,
+          "status": "PASS_EXACT"
+        },
+        {
+          "key": "open_positions_at_cutoff",
+          "new": 20,
+          "old": 20,
+          "status": "PASS_EXACT"
+        }
+      ],
+      "selector": "SEL_F10_ADX",
+      "source_ranker": "F10_RANK_2T_ADX",
+      "status": "PASS",
+      "trade_ledger_check": {
+        "cost_multiplier": 2.0,
+        "governor": "BINARY_NO_VOL",
+        "numeric_max_abs_diff": {
+          "entry_notional": 1.8189894035458565e-12,
+          "entry_price": 0.0,
+          "entry_score": 4.440892098500626e-16,
+          "exit_price": 0.0,
+          "net_pnl": 9.094947017729282e-13
+        },
+        "selector": "SEL_F10_ADX",
+        "source_ranker": "F10_RANK_2T_ADX",
+        "status": "PASS_EXACT_LEDGER",
+        "trade_count": 4135
+      }
+    },
+    {
+      "cost_multiplier": 1.0,
+      "governor": "BINARY_VOL",
+      "metric_checks": [
+        {
+          "abs_diff": 0.0,
+          "key": "terminal_equity",
+          "new": 201444.41984170792,
+          "old": 201444.41984170792,
+          "rel_diff": 0.0,
+          "status": "PASS",
+          "tolerance": 4.028888396834158e-09
+        },
+        {
+          "abs_diff": 4.440892098500626e-16,
+          "key": "terminal_wealth",
+          "new": 2.0144441984170793,
+          "old": 2.01444419841708,
+          "rel_diff": 2.204524752778068e-16,
+          "status": "PASS",
+          "tolerance": 1e-12
+        },
+        {
+          "abs_diff": 5.551115123125783e-17,
+          "key": "continuous_mtm_mdd",
+          "new": -0.25603695641792545,
+          "old": -0.2560369564179254,
+          "rel_diff": 5.551115123125783e-17,
+          "status": "PASS",
+          "tolerance": 1e-12
+        },
+        {
+          "abs_diff": 1.8189894035458565e-12,
+          "key": "total_cost",
+          "new": 15416.054637163841,
+          "old": 15416.05463716384,
+          "rel_diff": 1.179931860880135e-16,
+          "status": "PASS",
+          "tolerance": 3.083210927432768e-10
+        },
+        {
+          "abs_diff": 8.326672684688674e-17,
+          "key": "mean_gross_fraction",
+          "new": 0.10771940059384208,
+          "old": 0.107719400593842,
+          "rel_diff": 8.326672684688674e-17,
+          "status": "PASS",
+          "tolerance": 1e-12
+        },
+        {
+          "abs_diff": 0.0,
+          "key": "positive_day_fraction",
+          "new": 0.3668720054757016,
+          "old": 0.3668720054757016,
+          "rel_diff": 0.0,
+          "status": "PASS",
+          "tolerance": 1e-12
+        },
+        {
+          "abs_diff": 2.7755575615628914e-17,
+          "key": "day_ge_0p5_fraction",
+          "new": 0.14099931553730322,
+          "old": 0.1409993155373032,
+          "rel_diff": 2.7755575615628914e-17,
+          "status": "PASS",
+          "tolerance": 1e-12
+        },
+        {
+          "key": "trade_count",
+          "new": 4395,
+          "old": 4395,
+          "status": "PASS_EXACT"
+        },
+        {
+          "key": "open_positions_at_cutoff",
+          "new": 20,
+          "old": 20,
+          "status": "PASS_EXACT"
+        }
+      ],
+      "selector": "SEL_F16_ADX_TAIL",
+      "source_ranker": "F16_RANK_2T_ADX_TAIL",
+      "status": "PASS",
+      "trade_ledger_check": {
+        "cost_multiplier": 1.0,
+        "governor": "BINARY_VOL",
+        "numeric_max_abs_diff": {
+          "entry_notional": 1.8189894035458565e-12,
+          "entry_price": 0.0,
+          "entry_score": 8.881784197001252e-16,
+          "exit_price": 0.0,
+          "net_pnl": 1.8189894035458565e-12
+        },
+        "selector": "SEL_F16_ADX_TAIL",
+        "source_ranker": "F16_RANK_2T_ADX_TAIL",
+        "status": "PASS_EXACT_LEDGER",
+        "trade_count": 4395
+      }
+    },
+    {
+      "cost_multiplier": 2.0,
+      "governor": "BINARY_VOL",
+      "metric_checks": [
+        {
+          "abs_diff": 0.0,
+          "key": "terminal_equity",
+          "new": 211579.21904873257,
+          "old": 211579.21904873257,
+          "rel_diff": 0.0,
+          "status": "PASS",
+          "tolerance": 4.231584380974652e-09
+        },
+        {
+          "abs_diff": 0.0,
+          "key": "terminal_wealth",
+          "new": 2.115792190487326,
+          "old": 2.115792190487326,
+          "rel_diff": 0.0,
+          "status": "PASS",
+          "tolerance": 1e-12
+        },
+        {
+          "abs_diff": 0.0,
+          "key": "continuous_mtm_mdd",
+          "new": -0.2517901582507691,
+          "old": -0.2517901582507691,
+          "rel_diff": 0.0,
+          "status": "PASS",
+          "tolerance": 1e-12
+        },
+        {
+          "abs_diff": 0.0,
+          "key": "total_cost",
+          "new": 30849.969496324324,
+          "old": 30849.969496324324,
+          "rel_diff": 0.0,
+          "status": "PASS",
+          "tolerance": 6.169993899264865e-10
+        },
+        {
+          "abs_diff": 9.71445146547012e-17,
+          "key": "mean_gross_fraction",
+          "new": 0.10646610018413649,
+          "old": 0.1064661001841364,
+          "rel_diff": 9.71445146547012e-17,
+          "status": "PASS",
+          "tolerance": 1e-12
+        },
+        {
+          "abs_diff": 0.0,
+          "key": "positive_day_fraction",
+          "new": 0.3620807665982204,
+          "old": 0.3620807665982204,
+          "rel_diff": 0.0,
+          "status": "PASS",
+          "tolerance": 1e-12
+        },
+        {
+          "abs_diff": 0.0,
+          "key": "day_ge_0p5_fraction",
+          "new": 0.1403148528405202,
+          "old": 0.1403148528405202,
+          "rel_diff": 0.0,
+          "status": "PASS",
+          "tolerance": 1e-12
+        },
+        {
+          "key": "trade_count",
+          "new": 4408,
+          "old": 4408,
+          "status": "PASS_EXACT"
+        },
+        {
+          "key": "open_positions_at_cutoff",
+          "new": 20,
+          "old": 20,
+          "status": "PASS_EXACT"
+        }
+      ],
+      "selector": "SEL_F16_ADX_TAIL",
+      "source_ranker": "F16_RANK_2T_ADX_TAIL",
+      "status": "PASS",
+      "trade_ledger_check": {
+        "cost_multiplier": 2.0,
+        "governor": "BINARY_VOL",
+        "numeric_max_abs_diff": {
+          "entry_notional": 1.8189894035458565e-12,
+          "entry_price": 0.0,
+          "entry_score": 8.881784197001252e-16,
+          "exit_price": 0.0,
+          "net_pnl": 1.8189894035458565e-12
+        },
+        "selector": "SEL_F16_ADX_TAIL",
+        "source_ranker": "F16_RANK_2T_ADX_TAIL",
+        "status": "PASS_EXACT_LEDGER",
+        "trade_count": 4408
+      }
+    },
+    {
+      "cost_multiplier": 1.0,
+      "governor": "BINARY_NO_VOL",
+      "metric_checks": [
+        {
+          "abs_diff": 2.9103830456733704e-11,
+          "key": "terminal_equity",
+          "new": 222550.41621085742,
+          "old": 222550.41621085745,
+          "rel_diff": 1.3077410032412165e-16,
+          "status": "PASS",
+          "tolerance": 4.451008324217149e-09
+        },
+        {
+          "abs_diff": 0.0,
+          "key": "terminal_wealth",
+          "new": 2.225504162108574,
+          "old": 2.225504162108574,
+          "rel_diff": 0.0,
+          "status": "PASS",
+          "tolerance": 1e-12
+        },
+        {
+          "abs_diff": 5.551115123125783e-17,
+          "key": "continuous_mtm_mdd",
+          "new": -0.27529907494891803,
+          "old": -0.275299074948918,
+          "rel_diff": 5.551115123125783e-17,
+          "status": "PASS",
+          "tolerance": 1e-12
+        },
+        {
+          "abs_diff": 0.0,
+          "key": "total_cost",
+          "new": 16040.96473367646,
+          "old": 16040.96473367646,
+          "rel_diff": 0.0,
+          "status": "PASS",
+          "tolerance": 3.208192946735292e-10
+        },
+        {
+          "abs_diff": 5.551115123125783e-17,
+          "key": "mean_gross_fraction",
+          "new": 0.11494802440534055,
+          "old": 0.1149480244053405,
+          "rel_diff": 5.551115123125783e-17,
+          "status": "PASS",
+          "tolerance": 1e-12
+        },
+        {
+          "abs_diff": 0.0,
+          "key": "positive_day_fraction",
+          "new": 0.3675564681724846,
+          "old": 0.3675564681724846,
+          "rel_diff": 0.0,
+          "status": "PASS",
+          "tolerance": 1e-12
+        },
+        {
+          "abs_diff": 8.326672684688674e-17,
+          "key": "day_ge_0p5_fraction",
+          "new": 0.14236824093086928,
+          "old": 0.1423682409308692,
+          "rel_diff": 8.326672684688674e-17,
+          "status": "PASS",
+          "tolerance": 1e-12
+        },
+        {
+          "key": "trade_count",
+          "new": 4116,
+          "old": 4116,
+          "status": "PASS_EXACT"
+        },
+        {
+          "key": "open_positions_at_cutoff",
+          "new": 20,
+          "old": 20,
+          "status": "PASS_EXACT"
+        }
+      ],
+      "selector": "SEL_F16_ADX_TAIL",
+      "source_ranker": "F16_RANK_2T_ADX_TAIL",
+      "status": "PASS",
+      "trade_ledger_check": {
+        "cost_multiplier": 1.0,
+        "governor": "BINARY_NO_VOL",
+        "numeric_max_abs_diff": {
+          "entry_notional": 1.8189894035458565e-12,
+          "entry_price": 0.0,
+          "entry_score": 8.881784197001252e-16,
+          "exit_price": 0.0,
+          "net_pnl": 4.547473508864641e-13
+        },
+        "selector": "SEL_F16_ADX_TAIL",
+        "source_ranker": "F16_RANK_2T_ADX_TAIL",
+        "status": "PASS_EXACT_LEDGER",
+        "trade_count": 4116
+      }
+    },
+    {
+      "cost_multiplier": 2.0,
+      "governor": "BINARY_NO_VOL",
+      "metric_checks": [
+        {
+          "abs_diff": 2.9103830456733704e-11,
+          "key": "terminal_equity",
+          "new": 205440.11041402386,
+          "old": 205440.11041402383,
+          "rel_diff": 1.4166576525918283e-16,
+          "status": "PASS",
+          "tolerance": 4.108802208280477e-09
+        },
+        {
+          "abs_diff": 0.0,
+          "key": "terminal_wealth",
+          "new": 2.0544011041402386,
+          "old": 2.0544011041402386,
+          "rel_diff": 0.0,
+          "status": "PASS",
+          "tolerance": 1e-12
+        },
+        {
+          "abs_diff": 5.551115123125783e-17,
+          "key": "continuous_mtm_mdd",
+          "new": -0.29779799695991704,
+          "old": -0.297797996959917,
+          "rel_diff": 5.551115123125783e-17,
+          "status": "PASS",
+          "tolerance": 1e-12
+        },
+        {
+          "abs_diff": 0.0,
+          "key": "total_cost",
+          "new": 31496.393689295324,
+          "old": 31496.393689295324,
+          "rel_diff": 0.0,
+          "status": "PASS",
+          "tolerance": 6.299278737859064e-10
+        },
+        {
+          "abs_diff": 5.551115123125783e-17,
+          "key": "mean_gross_fraction",
+          "new": 0.11726114988103965,
+          "old": 0.1172611498810396,
+          "rel_diff": 5.551115123125783e-17,
+          "status": "PASS",
+          "tolerance": 1e-12
+        },
+        {
+          "abs_diff": 0.0,
+          "key": "positive_day_fraction",
+          "new": 0.3620807665982204,
+          "old": 0.3620807665982204,
+          "rel_diff": 0.0,
+          "status": "PASS",
+          "tolerance": 1e-12
+        },
+        {
+          "abs_diff": 8.326672684688674e-17,
+          "key": "day_ge_0p5_fraction",
+          "new": 0.14236824093086928,
+          "old": 0.1423682409308692,
+          "rel_diff": 8.326672684688674e-17,
+          "status": "PASS",
+          "tolerance": 1e-12
+        },
+        {
+          "key": "trade_count",
+          "new": 4116,
+          "old": 4116,
+          "status": "PASS_EXACT"
+        },
+        {
+          "key": "open_positions_at_cutoff",
+          "new": 20,
+          "old": 20,
+          "status": "PASS_EXACT"
+        }
+      ],
+      "selector": "SEL_F16_ADX_TAIL",
+      "source_ranker": "F16_RANK_2T_ADX_TAIL",
+      "status": "PASS",
+      "trade_ledger_check": {
+        "cost_multiplier": 2.0,
+        "governor": "BINARY_NO_VOL",
+        "numeric_max_abs_diff": {
+          "entry_notional": 1.8189894035458565e-12,
+          "entry_price": 0.0,
+          "entry_score": 8.881784197001252e-16,
+          "exit_price": 0.0,
+          "net_pnl": 9.094947017729282e-13
+        },
+        "selector": "SEL_F16_ADX_TAIL",
+        "source_ranker": "F16_RANK_2T_ADX_TAIL",
+        "status": "PASS_EXACT_LEDGER",
+        "trade_count": 4116
+      }
+    },
+    {
+      "cost_multiplier": 1.0,
+      "governor": "BINARY_VOL",
+      "metric_checks": [
+        {
+          "abs_diff": 2.9103830456733704e-11,
+          "key": "terminal_equity",
+          "new": 181104.03494079362,
+          "old": 181104.0349407936,
+          "rel_diff": 1.6070227516602987e-16,
+          "status": "PASS",
+          "tolerance": 3.622080698815872e-09
+        },
+        {
+          "abs_diff": 2.220446049250313e-16,
+          "key": "terminal_wealth",
+          "new": 1.8110403494079361,
+          "old": 1.811040349407936,
+          "rel_diff": 1.226061059311141e-16,
+          "status": "PASS",
+          "tolerance": 1e-12
+        },
+        {
+          "abs_diff": 2.7755575615628914e-17,
+          "key": "continuous_mtm_mdd",
+          "new": -0.20222984409163292,
+          "old": -0.2022298440916329,
+          "rel_diff": 2.7755575615628914e-17,
+          "status": "PASS",
+          "tolerance": 1e-12
+        },
+        {
+          "abs_diff": 0.0,
+          "key": "total_cost",
+          "new": 10323.45053104047,
+          "old": 10323.45053104047,
+          "rel_diff": 0.0,
+          "status": "PASS",
+          "tolerance": 2.0646901062080939e-10
+        },
+        {
+          "abs_diff": 9.71445146547012e-17,
+          "key": "mean_gross_fraction",
+          "new": 0.07792352495751839,
+          "old": 0.0779235249575183,
+          "rel_diff": 9.71445146547012e-17,
+          "status": "PASS",
+          "tolerance": 1e-12
+        },
+        {
+          "abs_diff": 5.551115123125783e-17,
+          "key": "positive_day_fraction",
+          "new": 0.34154688569472963,
+          "old": 0.3415468856947296,
+          "rel_diff": 5.551115123125783e-17,
+          "status": "PASS",
+          "tolerance": 1e-12
+        },
+        {
+          "abs_diff": 1.3877787807814457e-17,
+          "key": "day_ge_0p5_fraction",
+          "new": 0.10609171800136892,
+          "old": 0.1060917180013689,
+          "rel_diff": 1.3877787807814457e-17,
+          "status": "PASS",
+          "tolerance": 1e-12
+        },
+        {
+          "key": "trade_count",
+          "new": 2664,
+          "old": 2664,
+          "status": "PASS_EXACT"
+        },
+        {
+          "key": "open_positions_at_cutoff",
+          "new": 19,
+          "old": 19,
+          "status": "PASS_EXACT"
+        }
+      ],
+      "selector": "SEL_F07_D50_MARKET50",
+      "source_ranker": "F07_TREND_D50_MARKET50",
+      "status": "PASS",
+      "trade_ledger_check": {
+        "cost_multiplier": 1.0,
+        "governor": "BINARY_VOL",
+        "numeric_max_abs_diff": {
+          "entry_notional": 1.8189894035458565e-12,
+          "entry_price": 0.0,
+          "entry_score": 9.996344030316351e-17,
+          "exit_price": 0.0,
+          "net_pnl": 4.547473508864641e-13
+        },
+        "selector": "SEL_F07_D50_MARKET50",
+        "source_ranker": "F07_TREND_D50_MARKET50",
+        "status": "PASS_EXACT_LEDGER",
+        "trade_count": 2664
+      }
+    },
+    {
+      "cost_multiplier": 2.0,
+      "governor": "BINARY_VOL",
+      "metric_checks": [
+        {
+          "abs_diff": 0.0,
+          "key": "terminal_equity",
+          "new": 169436.0720672613,
+          "old": 169436.0720672613,
+          "rel_diff": 0.0,
+          "status": "PASS",
+          "tolerance": 3.3887214413452257e-09
+        },
+        {
+          "abs_diff": 0.0,
+          "key": "terminal_wealth",
+          "new": 1.694360720672613,
+          "old": 1.694360720672613,
+          "rel_diff": 0.0,
+          "status": "PASS",
+          "tolerance": 1e-12
+        },
+        {
+          "abs_diff": 2.7755575615628914e-17,
+          "key": "continuous_mtm_mdd",
+          "new": -0.21700302356128742,
+          "old": -0.2170030235612874,
+          "rel_diff": 2.7755575615628914e-17,
+          "status": "PASS",
+          "tolerance": 1e-12
+        },
+        {
+          "abs_diff": 3.637978807091713e-12,
+          "key": "total_cost",
+          "new": 20244.065200497622,
+          "old": 20244.065200497625,
+          "rel_diff": 1.7970594201614638e-16,
+          "status": "PASS",
+          "tolerance": 4.048813040099525e-10
+        },
+        {
+          "abs_diff": 2.7755575615628914e-17,
+          "key": "mean_gross_fraction",
+          "new": 0.07937019436836502,
+          "old": 0.079370194368365,
+          "rel_diff": 2.7755575615628914e-17,
+          "status": "PASS",
+          "tolerance": 1e-12
+        },
+        {
+          "abs_diff": 5.551115123125783e-17,
+          "key": "positive_day_fraction",
+          "new": 0.33401779603011633,
+          "old": 0.3340177960301163,
+          "rel_diff": 5.551115123125783e-17,
+          "status": "PASS",
+          "tolerance": 1e-12
+        },
+        {
+          "abs_diff": 4.163336342344337e-17,
+          "key": "day_ge_0p5_fraction",
+          "new": 0.10951403148528405,
+          "old": 0.109514031485284,
+          "rel_diff": 4.163336342344337e-17,
+          "status": "PASS",
+          "tolerance": 1e-12
+        },
+        {
+          "key": "trade_count",
+          "new": 2663,
+          "old": 2663,
+          "status": "PASS_EXACT"
+        },
+        {
+          "key": "open_positions_at_cutoff",
+          "new": 19,
+          "old": 19,
+          "status": "PASS_EXACT"
+        }
+      ],
+      "selector": "SEL_F07_D50_MARKET50",
+      "source_ranker": "F07_TREND_D50_MARKET50",
+      "status": "PASS",
+      "trade_ledger_check": {
+        "cost_multiplier": 2.0,
+        "governor": "BINARY_VOL",
+        "numeric_max_abs_diff": {
+          "entry_notional": 1.8189894035458565e-12,
+          "entry_price": 0.0,
+          "entry_score": 9.996344030316351e-17,
+          "exit_price": 0.0,
+          "net_pnl": 4.547473508864641e-13
+        },
+        "selector": "SEL_F07_D50_MARKET50",
+        "source_ranker": "F07_TREND_D50_MARKET50",
+        "status": "PASS_EXACT_LEDGER",
+        "trade_count": 2663
+      }
+    },
+    {
+      "cost_multiplier": 1.0,
+      "governor": "BINARY_NO_VOL",
+      "metric_checks": [
+        {
+          "abs_diff": 0.0,
+          "key": "terminal_equity",
+          "new": 218706.85993917388,
+          "old": 218706.85993917388,
+          "rel_diff": 0.0,
+          "status": "PASS",
+          "tolerance": 4.374137198783478e-09
+        },
+        {
+          "abs_diff": 0.0,
+          "key": "terminal_wealth",
+          "new": 2.187068599391739,
+          "old": 2.187068599391739,
+          "rel_diff": 0.0,
+          "status": "PASS",
+          "tolerance": 1e-12
+        },
+        {
+          "abs_diff": 5.551115123125783e-17,
+          "key": "continuous_mtm_mdd",
+          "new": -0.21828020544785487,
+          "old": -0.2182802054478548,
+          "rel_diff": 5.551115123125783e-17,
+          "status": "PASS",
+          "tolerance": 1e-12
+        },
+        {
+          "abs_diff": 0.0,
+          "key": "total_cost",
+          "new": 11151.60815384147,
+          "old": 11151.60815384147,
+          "rel_diff": 0.0,
+          "status": "PASS",
+          "tolerance": 2.2303216307682938e-10
+        },
+        {
+          "abs_diff": 1.3877787807814457e-17,
+          "key": "mean_gross_fraction",
+          "new": 0.08119249863063842,
+          "old": 0.0811924986306384,
+          "rel_diff": 1.3877787807814457e-17,
+          "status": "PASS",
+          "tolerance": 1e-12
+        },
+        {
+          "abs_diff": 5.551115123125783e-17,
+          "key": "positive_day_fraction",
+          "new": 0.33880903490759756,
+          "old": 0.3388090349075975,
+          "rel_diff": 5.551115123125783e-17,
+          "status": "PASS",
+          "tolerance": 1e-12
+        },
+        {
+          "abs_diff": 2.7755575615628914e-17,
+          "key": "day_ge_0p5_fraction",
+          "new": 0.10335386721423682,
+          "old": 0.1033538672142368,
+          "rel_diff": 2.7755575615628914e-17,
+          "status": "PASS",
+          "tolerance": 1e-12
+        },
+        {
+          "key": "trade_count",
+          "new": 2569,
+          "old": 2569,
+          "status": "PASS_EXACT"
+        },
+        {
+          "key": "open_positions_at_cutoff",
+          "new": 19,
+          "old": 19,
+          "status": "PASS_EXACT"
+        }
+      ],
+      "selector": "SEL_F07_D50_MARKET50",
+      "source_ranker": "F07_TREND_D50_MARKET50",
+      "status": "PASS",
+      "trade_ledger_check": {
+        "cost_multiplier": 1.0,
+        "governor": "BINARY_NO_VOL",
+        "numeric_max_abs_diff": {
+          "entry_notional": 1.8189894035458565e-12,
+          "entry_price": 0.0,
+          "entry_score": 9.996344030316351e-17,
+          "exit_price": 0.0,
+          "net_pnl": 4.547473508864641e-13
+        },
+        "selector": "SEL_F07_D50_MARKET50",
+        "source_ranker": "F07_TREND_D50_MARKET50",
+        "status": "PASS_EXACT_LEDGER",
+        "trade_count": 2569
+      }
+    },
+    {
+      "cost_multiplier": 2.0,
+      "governor": "BINARY_NO_VOL",
+      "metric_checks": [
+        {
+          "abs_diff": 0.0,
+          "key": "terminal_equity",
+          "new": 207165.02397226417,
+          "old": 207165.02397226417,
+          "rel_diff": 0.0,
+          "status": "PASS",
+          "tolerance": 4.143300479445283e-09
+        },
+        {
+          "abs_diff": 0.0,
+          "key": "terminal_wealth",
+          "new": 2.0716502397226417,
+          "old": 2.0716502397226417,
+          "rel_diff": 0.0,
+          "status": "PASS",
+          "tolerance": 1e-12
+        },
+        {
+          "abs_diff": 5.551115123125783e-17,
+          "key": "continuous_mtm_mdd",
+          "new": -0.23197126898069387,
+          "old": -0.2319712689806938,
+          "rel_diff": 5.551115123125783e-17,
+          "status": "PASS",
+          "tolerance": 1e-12
+        },
+        {
+          "abs_diff": 0.0,
+          "key": "total_cost",
+          "new": 22006.776034921524,
+          "old": 22006.776034921524,
+          "rel_diff": 0.0,
+          "status": "PASS",
+          "tolerance": 4.4013552069843046e-10
+        },
+        {
+          "abs_diff": 0.0,
+          "key": "mean_gross_fraction",
+          "new": 0.0823100889813962,
+          "old": 0.0823100889813962,
+          "rel_diff": 0.0,
+          "status": "PASS",
+          "tolerance": 1e-12
+        },
+        {
+          "abs_diff": 0.0,
+          "key": "positive_day_fraction",
+          "new": 0.3333333333333333,
+          "old": 0.3333333333333333,
+          "rel_diff": 0.0,
+          "status": "PASS",
+          "tolerance": 1e-12
+        },
+        {
+          "abs_diff": 0.0,
+          "key": "day_ge_0p5_fraction",
+          "new": 0.1054072553045859,
+          "old": 0.1054072553045859,
+          "rel_diff": 0.0,
+          "status": "PASS",
+          "tolerance": 1e-12
+        },
+        {
+          "key": "trade_count",
+          "new": 2569,
+          "old": 2569,
+          "status": "PASS_EXACT"
+        },
+        {
+          "key": "open_positions_at_cutoff",
+          "new": 19,
+          "old": 19,
+          "status": "PASS_EXACT"
+        }
+      ],
+      "selector": "SEL_F07_D50_MARKET50",
+      "source_ranker": "F07_TREND_D50_MARKET50",
+      "status": "PASS",
+      "trade_ledger_check": {
+        "cost_multiplier": 2.0,
+        "governor": "BINARY_NO_VOL",
+        "numeric_max_abs_diff": {
+          "entry_notional": 1.8189894035458565e-12,
+          "entry_price": 0.0,
+          "entry_score": 9.996344030316351e-17,
+          "exit_price": 0.0,
+          "net_pnl": 1.8189894035458565e-12
+        },
+        "selector": "SEL_F07_D50_MARKET50",
+        "source_ranker": "F07_TREND_D50_MARKET50",
+        "status": "PASS_EXACT_LEDGER",
+        "trade_count": 2569
+      }
+    }
+  ],
+  "schema_version": "akah-rev733-uniform-sizing-parity-v1",
+  "status": "PASS"
+}

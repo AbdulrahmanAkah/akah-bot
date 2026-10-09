@@ -1,0 +1,1796 @@
+{
+  "material_record_count": 24,
+  "records": [
+    {
+      "anchors": [
+        "AKAH_BOT_RD27_NATIVE_TERMINAL_SOURCE_AUTHORITY_V1"
+      ],
+      "forbidden_outcome_field_names_present_in_text": [
+        "exit_price",
+        "exit_reason"
+      ],
+      "native_callsite_path_references": [
+        "tests/research/test_rd27_native_terminal_source_authority.py"
+      ],
+      "path": "governance/AKAH_BOT_RD27_NATIVE_TERMINAL_SOURCE_AUTHORITY_V1.json",
+      "path_literals": [
+        "governance/v2_phase_a_native_terminal_source_authority_recovery_v1/native_hook_close_contract_analysis.json",
+        "src/spotbot/research/rd27_adaptive_lifecycle.py",
+        "src/spotbot/research/rd27_later_trigger_v2_native_hook.py",
+        "src/spotbot/research/rd27_lifecycle_replay.py"
+      ],
+      "references_native_replay": true,
+      "references_shadow_replay": false,
+      "role_matches": {
+        "ADMISSIONS_BINDING": [
+          "\\badmission"
+        ],
+        "HISTORICAL_IDENTITY_BRIDGE": [
+          "\\btrade_id\\b",
+          "\\bpair\\b"
+        ],
+        "HISTORICAL_NATIVE_PRODUCER_BINDING": [
+          "replay_lifecycle_policy"
+        ],
+        "HOURLY_INPUT_BINDING": [
+          "\\bhourly\\b"
+        ],
+        "RD27_POLICY_CONFIG_BINDING": [
+          "rd27",
+          "policy",
+          "MAX_HOLD_HOURS"
+        ],
+        "STATE_FRAME_BINDING": []
+      },
+      "sha256": "A7430573E2D55362CC7E85C9DB606D048734DFDA8584240811FEE1B876BAB31F",
+      "sha256_literals": [
+        "A2C0B25B0053CEEF1AA5C3AC5DB1442C1DCF333845F7345FB1F80A9AD3E1290E",
+        "E149C5C354B08801920CA87F61F397C9C7969EA7E6BE7C081AFF865CF9168EFD",
+        "E3944A4655DDDF21C394FE1DB541F2645F529C00BD8390B22D652BD8EF5BBF83"
+      ],
+      "sha256_literals_count": 3
+    },
+    {
+      "anchors": [
+        "trigger_v2_shadow_parity_v1",
+        "v2_ntl_input_gate",
+        "AKAH_BOT_RD27_NATIVE_TERMINAL_SOURCE_AUTHORITY_V1"
+      ],
+      "forbidden_outcome_field_names_present_in_text": [
+        "exit_price",
+        "exit_reason",
+        "exit_time",
+        "gross_pnl",
+        "holding_hours",
+        "mae",
+        "mfe",
+        "net_pnl",
+        "return_fraction"
+      ],
+      "native_callsite_path_references": [
+        "scripts/research/run_eaa_same_pair_secondary_shadow_parity.py",
+        "scripts/research/run_rd27_lifecycle_ablation.py",
+        "src/spotbot/research/a10_selective_protection_asymmetry.py",
+        "src/spotbot/research/a4r1_reversible_floor_replay.py",
+        "src/spotbot/research/eaa_same_pair_secondary_shadow.py",
+        "tests/research/test_a10_selective_protection_asymmetry.py",
+        "tests/research/test_a4r1_reversible_floor_replay.py",
+        "tests/research/test_rd27_async_exit_candidate_shadow.py",
+        "tests/research/test_rd27_async_memory_shadow_replay.py",
+        "tests/research/test_rd27_later_trigger_v2_native_hook.py",
+        "tests/research/test_rd27_lifecycle_replay.py",
+        "tests/research/test_rd27_native_terminal_source_authority.py",
+        "tests/research/test_rd27_observable_later_trigger_predicate.py",
+        "tests/research/test_rd27_observable_memory_adapter.py",
+        "tests/research/test_rd27_observable_memory_predicate.py"
+      ],
+      "path": "governance/AKAH_BOT_SYSTEM_CHARTER.json",
+      "path_literals": [
+        "data/research/ams-v3/kucoin-spot-usdt/ams-v3-kucoin-spot-usdt-1d.parquet",
+        "data/research/ams-v3/kucoin-spot-usdt/ams-v3-kucoin-spot-usdt-4h.parquet",
+        "data/research/ams-v3/kucoin-spot-usdt/ams-v3-kucoin-spot-usdt-8h.parquet",
+        "data/research/ams-v3/kucoin-spot-usdt/ams-v3-kucoin-spot-usdt-availability.parquet",
+        "data/research/ams_v2/regime_router_v1/ams-v2-regime-features-v1.parquet",
+        "data/research/ams_v2/regime_router_v1/ams-v2-regime-routing-v1.parquet",
+        "data/research/asset_ranking/v1/asset-ranking-engine-v1.parquet",
+        "data/research/multi_asset_daily/kucoin/AAVE_USDT.parquet",
+        "data/research/multi_asset_daily/kucoin/ADA_USDT.parquet",
+        "data/research/multi_asset_daily/kucoin/AVAX_USDT.parquet",
+        "data/research/multi_asset_daily/kucoin/BNB_USDT.parquet",
+        "data/research/multi_asset_daily/kucoin/BTC_USDT.parquet",
+        "data/research/multi_asset_daily/kucoin/DEXE_USDT.parquet",
+        "data/research/multi_asset_daily/kucoin/DOGE_USDT.parquet",
+        "data/research/multi_asset_daily/kucoin/DOT_USDT.parquet",
+        "data/research/multi_asset_daily/kucoin/ENA_USDT.parquet",
+        "data/research/multi_asset_daily/kucoin/ETH_USDT.parquet",
+        "data/research/multi_asset_daily/kucoin/GRAM_USDT.parquet",
+        "data/research/multi_asset_daily/kucoin/HYPE_USDT.parquet",
+        "data/research/multi_asset_daily/kucoin/LINK_USDT.parquet",
+        "data/research/multi_asset_daily/kucoin/LTC_USDT.parquet",
+        "data/research/multi_asset_daily/kucoin/NEAR_USDT.parquet",
+        "data/research/multi_asset_daily/kucoin/ONDO_USDT.parquet",
+        "data/research/multi_asset_daily/kucoin/PEPE_USDT.parquet",
+        "data/research/multi_asset_daily/kucoin/SEI_USDT.parquet",
+        "data/research/multi_asset_daily/kucoin/SHIB_USDT.parquet",
+        "data/research/multi_asset_daily/kucoin/SNX_USDT.parquet",
+        "data/research/multi_asset_daily/kucoin/SOL_USDT.parquet",
+        "data/research/multi_asset_daily/kucoin/SUI_USDT.parquet",
+        "data/research/multi_asset_daily/kucoin/SYN_USDT.parquet",
+        "data/research/multi_asset_daily/kucoin/TAO_USDT.parquet",
+        "data/research/multi_asset_daily/kucoin/TRX_USDT.parquet",
+        "data/research/multi_asset_daily/kucoin/UNI_USDT.parquet",
+        "data/research/multi_asset_daily/kucoin/XLM_USDT.parquet",
+        "data/research/multi_asset_daily/kucoin/XMR_USDT.parquet",
+        "data/research/multi_asset_daily/kucoin/XRP_USDT.parquet",
+        "data/research/multi_asset_daily/kucoin/ZEC_USDT.parquet",
+        "data/research/rd01/dominance/raw/coinmetrics-community-market-cap-panel-2021-2024.json",
+        "data/research/rd04/eligibility/raw/defillama-stablecoins-catalogue.json",
+        "data/research/rd04/kucoin-native-quote-turnover-v1/ams-rd04-d5a-native-quote-turnover-1d.parquet",
+        "data/research/rd04/kucoin-native-quote-turnover-v1/ams-rd04-d5a-native-quote-turnover-4h.parquet",
+        "data/research/rd04/kucoin-spot-usdt-adjudicated-v1/",
+        "data/research/rd04/kucoin-spot-usdt-adjudicated-v1/ams-rd04-d0c-kucoin-adjudicated-1d.parquet",
+        "data/research/rd04/kucoin-spot-usdt-adjudicated-v1/ams-rd04-d0c-kucoin-adjudicated-4h.parquet",
+        "data/research/rd04/kucoin-spot-usdt-adjudicated-v1/ams-rd04-d0c-kucoin-adjudicated-8h.parquet",
+        "data/research/rd04/kucoin-spot-usdt-adjudicated-v1/ams-rd04-d0c-kucoin-adjudicated-availability.parquet",
+        "data/research/rd04/kucoin-spot-usdt-expanded-v1/ams-rd04-d0b-kucoin-expanded-1d.parquet",
+        "data/research/rd04/kucoin-spot-usdt-expanded-v1/ams-rd04-d0b-kucoin-expanded-4h.parquet",
+        "data/research/rd04/kucoin-spot-usdt-expanded-v1/ams-rd04-d0b-kucoin-expanded-8h.parquet",
+        "data/research/rd04/kucoin-spot-usdt-expanded-v1/ams-rd04-d0b-kucoin-expanded-availability.parquet",
+        "data/research/rd09b/v2/manifests/credit-usage.csv",
+        "data/research/rd09b/v2/manifests/query-execution-manifest.csv",
+        "data/research/rd09b/v2/manual-exports/avalanche_c_2022_03.csv",
+        "data/research/rd09b/v2/manual-exports/avalanche_c_2023_03.csv",
+        "data/research/rd09b/v2/manual-exports/avalanche_c_2024_03.csv",
+        "data/research/rd09b/v2/manual-exports/bitcoin_2022_03.csv",
+        "data/research/rd09b/v2/manual-exports/bitcoin_2023_03.csv",
+        "data/research/rd09b/v2/manual-exports/bitcoin_2024_03.csv",
+        "data/research/rd09b/v2/manual-exports/cardano_2022_03.csv",
+        "data/research/rd09b/v2/manual-exports/cardano_2023_03.csv",
+        "data/research/rd09b/v2/manual-exports/cardano_2024_03.csv",
+        "data/research/rd09b/v2/manual-exports/ethereum_2022_03.csv",
+        "data/research/rd09b/v2/manual-exports/ethereum_2023_03.csv",
+        "data/research/rd09b/v2/manual-exports/ethereum_2024_03.csv",
+        "data/research/rd09b/v2/manual-exports/polkadot_2022_03.csv",
+        "data/research/rd09b/v2/manual-exports/polkadot_2023_03.csv",
+        "data/research/rd09b/v2/manual-exports/polkadot_2024_03.csv",
+        "data/research/rd09b/v2/manual-exports/rd09b-v2-manual-acquisition-validation.csv",
+        "data/research/rd09c/acquisition-plan-v1.csv",
+        "data/research/rd09c/browser-pilot/avalanche_c_2022_03.csv",
+        "data/research/rd09c/browser-pilot/bitcoin_2022_03.csv",
+        "data/research/rd09c/browser-pilot/cardano_2022_03.csv",
+        "data/research/rd09c/browser-pilot/ethereum_2022_03.csv",
+        "data/research/rd09c/browser-pilot/polkadot_2022_03.csv",
+        "data/research/rd09c/dune-template-registry-v1.csv",
+        "data/research/rd09c/template-source-reconciliation.csv",
+        "data/research/rd10/smoke-backtest/equity-curve.csv",
+        "data/research/rd10/smoke-backtest/fills.csv",
+        "data/research/rd10/smoke-backtest/orders.csv",
+        "data/research/rd10/smoke-backtest/signals.csv",
+        "data/research/rd10/smoke-backtest/trades.csv",
+        "data/research/rd10/strategy-specification-v1.json",
+        "data/research/rd11/per-asset/ada_usdt/equity-curve.csv",
+        "data/research/rd11/per-asset/ada_usdt/fills.csv",
+        "data/research/rd11/per-asset/ada_usdt/orders.csv",
+        "data/research/rd11/per-asset/ada_usdt/signals.csv",
+        "data/research/rd11/per-asset/ada_usdt/trades.csv",
+        "data/research/rd11/per-asset/avax_usdt/equity-curve.csv",
+        "data/research/rd11/per-asset/avax_usdt/fills.csv",
+        "data/research/rd11/per-asset/avax_usdt/orders.csv",
+        "data/research/rd11/per-asset/avax_usdt/signals.csv",
+        "data/research/rd11/per-asset/avax_usdt/trades.csv",
+        "data/research/rd11/per-asset/btc_usdt/equity-curve.csv",
+        "data/research/rd11/per-asset/btc_usdt/fills.csv",
+        "data/research/rd11/per-asset/btc_usdt/orders.csv",
+        "data/research/rd11/per-asset/btc_usdt/signals.csv",
+        "data/research/rd11/per-asset/btc_usdt/trades.csv",
+        "data/research/rd11/per-asset/dot_usdt/equity-curve.csv",
+        "data/research/rd11/per-asset/dot_usdt/fills.csv",
+        "data/research/rd11/per-asset/dot_usdt/orders.csv",
+        "data/research/rd11/per-asset/dot_usdt/signals.csv",
+        "data/research/rd11/per-asset/dot_usdt/trades.csv",
+        "data/research/rd11/per-asset/eth_usdt/equity-curve.csv",
+        "data/research/rd11/per-asset/eth_usdt/fills.csv",
+        "data/research/rd11/per-asset/eth_usdt/orders.csv",
+        "data/research/rd11/per-asset/eth_usdt/signals.csv",
+        "data/research/rd11/per-asset/eth_usdt/trades.csv",
+        "data/research/rd11/portfolio/cash-ledger.csv",
+        "data/research/rd11/portfolio/equity-curve.csv",
+        "data/research/rd11/portfolio/fills.csv",
+        "data/research/rd11/portfolio/orders.csv",
+        "data/research/rd11/portfolio/positions.csv",
+        "data/research/rd11/portfolio/ranked-signals.csv",
+        "data/research/rd11/portfolio/signals.csv",
+        "data/research/rd11/portfolio/trades.csv",
+        "data/research/rd11/rd11-data-eligibility-v1.csv",
+        "data/research/rd11/rd11-final-report-v1.json",
+        "data/research/rd11/rd11-per-asset-summary-v1.csv",
+        "data/research/rd11/rd11-quarterly-summary-v1.csv",
+        "data/research/rd11/rd11-regime-summary-v1.csv",
+        "data/research/rd11/rd11-yearly-summary-v1.csv",
+        "data/research/rd12/baseline/per-asset/ada_usdt/equity-curve.csv",
+        "data/research/rd12/baseline/per-asset/ada_usdt/fills.csv",
+        "data/research/rd12/baseline/per-asset/ada_usdt/orders.csv",
+        "data/research/rd12/baseline/per-asset/ada_usdt/signals.csv",
+        "data/research/rd12/baseline/per-asset/ada_usdt/trades.csv",
+        "data/research/rd12/baseline/per-asset/avax_usdt/equity-curve.csv",
+        "data/research/rd12/baseline/per-asset/avax_usdt/fills.csv",
+        "data/research/rd12/baseline/per-asset/avax_usdt/orders.csv",
+        "data/research/rd12/baseline/per-asset/avax_usdt/signals.csv",
+        "data/research/rd12/baseline/per-asset/avax_usdt/trades.csv",
+        "data/research/rd12/baseline/per-asset/btc_usdt/equity-curve.csv",
+        "data/research/rd12/baseline/per-asset/btc_usdt/fills.csv",
+        "data/research/rd12/baseline/per-asset/btc_usdt/orders.csv",
+        "data/research/rd12/baseline/per-asset/btc_usdt/signals.csv",
+        "data/research/rd12/baseline/per-asset/btc_usdt/trades.csv",
+        "data/research/rd12/baseline/per-asset/dot_usdt/equity-curve.csv",
+        "data/research/rd12/baseline/per-asset/dot_usdt/fills.csv",
+        "data/research/rd12/baseline/per-asset/dot_usdt/orders.csv",
+        "data/research/rd12/baseline/per-asset/dot_usdt/signals.csv",
+        "data/research/rd12/baseline/per-asset/dot_usdt/trades.csv",
+        "data/research/rd12/baseline/per-asset/eth_usdt/equity-curve.csv",
+        "data/research/rd12/baseline/per-asset/eth_usdt/fills.csv",
+        "data/research/rd12/baseline/per-asset/eth_usdt/orders.csv",
+        "data/research/rd12/baseline/per-asset/eth_usdt/signals.csv",
+        "data/research/rd12/baseline/per-asset/eth_usdt/trades.csv",
+        "data/research/rd12/baseline/portfolio/cash-ledger.csv",
+        "data/research/rd12/baseline/portfolio/equity-curve.csv",
+        "data/research/rd12/baseline/portfolio/fills.csv",
+        "data/research/rd12/baseline/portfolio/orders.csv",
+        "data/research/rd12/baseline/portfolio/positions.csv",
+        "data/research/rd12/baseline/portfolio/ranked-signals.csv",
+        "data/research/rd12/baseline/portfolio/signals.csv",
+        "data/research/rd12/baseline/portfolio/trades.csv",
+        "data/research/rd12/rd12-component-classification-v1.csv",
+        "data/research/rd12/rd12-concentration-analysis-v1.csv",
+        "data/research/rd12/rd12-per-asset-comparison-v1.csv",
+        "data/research/rd12/rd12-portfolio-comparison-v1.csv",
+        "data/research/rd12/rd12-regime-comparison-v1.csv",
+        "data/research/rd12/rd12-variant-registry-v1.csv",
+        "data/research/rd12/rd12-yearly-comparison-v1.csv",
+        "data/research/rd12/variants/RD12_E01_NO_LONG_TERM_TREND/per-asset/ada_usdt/equity-curve.csv",
+        "data/research/rd12/variants/RD12_E01_NO_LONG_TERM_TREND/per-asset/ada_usdt/fills.csv",
+        "data/research/rd12/variants/RD12_E01_NO_LONG_TERM_TREND/per-asset/ada_usdt/orders.csv",
+        "data/research/rd12/variants/RD12_E01_NO_LONG_TERM_TREND/per-asset/ada_usdt/signals.csv",
+        "data/research/rd12/variants/RD12_E01_NO_LONG_TERM_TREND/per-asset/ada_usdt/trades.csv",
+        "data/research/rd12/variants/RD12_E01_NO_LONG_TERM_TREND/per-asset/avax_usdt/equity-curve.csv",
+        "data/research/rd12/variants/RD12_E01_NO_LONG_TERM_TREND/per-asset/avax_usdt/fills.csv",
+        "data/research/rd12/variants/RD12_E01_NO_LONG_TERM_TREND/per-asset/avax_usdt/orders.csv",
+        "data/research/rd12/variants/RD12_E01_NO_LONG_TERM_TREND/per-asset/avax_usdt/signals.csv",
+        "data/research/rd12/variants/RD12_E01_NO_LONG_TERM_TREND/per-asset/avax_usdt/trades.csv",
+        "data/research/rd12/variants/RD12_E01_NO_LONG_TERM_TREND/per-asset/btc_usdt/equity-curve.csv",
+        "data/research/rd12/variants/RD12_E01_NO_LONG_TERM_TREND/per-asset/btc_usdt/fills.csv",
+        "data/research/rd12/variants/RD12_E01_NO_LONG_TERM_TREND/per-asset/btc_usdt/orders.csv",
+        "data/research/rd12/variants/RD12_E01_NO_LONG_TERM_TREND/per-asset/btc_usdt/signals.csv",
+        "data/research/rd12/variants/RD12_E01_NO_LONG_TERM_TREND/per-asset/btc_usdt/trades.csv",
+        "data/research/rd12/variants/RD12_E01_NO_LONG_TERM_TREND/per-asset/dot_usdt/equity-curve.csv",
+        "data/research/rd12/variants/RD12_E01_NO_LONG_TERM_TREND/per-asset/dot_usdt/fills.csv",
+        "data/research/rd12/variants/RD12_E01_NO_LONG_TERM_TREND/per-asset/dot_usdt/orders.csv",
+        "data/research/rd12/variants/RD12_E01_NO_LONG_TERM_TREND/per-asset/dot_usdt/signals.csv",
+        "data/research/rd12/variants/RD12_E01_NO_LONG_TERM_TREND/per-asset/dot_usdt/trades.csv",
+        "data/research/rd12/variants/RD12_E01_NO_LONG_TERM_TREND/per-asset/eth_usdt/equity-curve.csv",
+        "data/research/rd12/variants/RD12_E01_NO_LONG_TERM_TREND/per-asset/eth_usdt/fills.csv",
+        "data/research/rd12/variants/RD12_E01_NO_LONG_TERM_TREND/per-asset/eth_usdt/orders.csv",
+        "data/research/rd12/variants/RD12_E01_NO_LONG_TERM_TREND/per-asset/eth_usdt/signals.csv",
+        "data/research/rd12/variants/RD12_E01_NO_LONG_TERM_TREND/per-asset/eth_usdt/trades.csv",
+        "data/research/rd12/variants/RD12_E01_NO_LONG_TERM_TREND/portfolio/cash-ledger.csv",
+        "data/research/rd12/variants/RD12_E01_NO_LONG_TERM_TREND/portfolio/equity-curve.csv",
+        "data/research/rd12/variants/RD12_E01_NO_LONG_TERM_TREND/portfolio/fills.csv",
+        "data/research/rd12/variants/RD12_E01_NO_LONG_TERM_TREND/portfolio/orders.csv",
+        "data/research/rd12/variants/RD12_E01_NO_LONG_TERM_TREND/portfolio/positions.csv",
+        "data/research/rd12/variants/RD12_E01_NO_LONG_TERM_TREND/portfolio/ranked-signals.csv",
+        "data/research/rd12/variants/RD12_E01_NO_LONG_TERM_TREND/portfolio/signals.csv",
+        "data/research/rd12/variants/RD12_E01_NO_LONG_TERM_TREND/portfolio/trades.csv",
+        "data/research/rd12/variants/RD12_E02_NO_MEDIUM_TERM_ALIGNMENT/per-asset/ada_usdt/equity-curve.csv",
+        "data/research/rd12/variants/RD12_E02_NO_MEDIUM_TERM_ALIGNMENT/per-asset/ada_usdt/fills.csv",
+        "data/research/rd12/variants/RD12_E02_NO_MEDIUM_TERM_ALIGNMENT/per-asset/ada_usdt/orders.csv",
+        "data/research/rd12/variants/RD12_E02_NO_MEDIUM_TERM_ALIGNMENT/per-asset/ada_usdt/signals.csv",
+        "data/research/rd12/variants/RD12_E02_NO_MEDIUM_TERM_ALIGNMENT/per-asset/ada_usdt/trades.csv",
+        "data/research/rd12/variants/RD12_E02_NO_MEDIUM_TERM_ALIGNMENT/per-asset/avax_usdt/equity-curve.csv"
+      ],
+      "references_native_replay": true,
+      "references_shadow_replay": true,
+      "role_matches": {
+        "ADMISSIONS_BINDING": [
+          "\\badmission",
+          "\\badmissions\\b"
+        ],
+        "HISTORICAL_IDENTITY_BRIDGE": [
+          "\\btrade_id\\b",
+          "\\bposition_id\\b",
+          "\\bpair\\b"
+        ],
+        "HISTORICAL_NATIVE_PRODUCER_BINDING": [
+          "replay_lifecycle_policy"
+        ],
+        "HOURLY_INPUT_BINDING": [
+          "\\bhourly\\b",
+          "hourly_rows",
+          "hourly_path"
+        ],
+        "RD27_POLICY_CONFIG_BINDING": [
+          "rd27",
+          "policy",
+          "MAX_HOLD_HOURS"
+        ],
+        "STATE_FRAME_BINDING": [
+          "\\bstate_frame\\b"
+        ]
+      },
+      "sha256": "E8BA27290EB49A5FF07BD5FA83B8EE7BE641A78377435ABB58FACCBD493A5AB9",
+      "sha256_literals": [
+        "0001BBBF254F3D7DA54DC293C8900A35E54F35922EACB7C6D4B6D6D989651E70",
+        "0028E3B75385B3BEDEC98EDAB756A5533EE7F2EC5E7AE470A6A08B49722F6101",
+        "002AD0DC5AD7E1C7ACF7E0079BB1A68C4B29EB453A3EB1F72AFADEC869665E49",
+        "003F863B1A9B50CAA1E0A588729304C25FD29D7EDBD8EC18138E6D97D985121B",
+        "004BF2B92EFAE1AF2BA048F3D466FB250EF621FB88FE1C11C3925FB6622BBB5D",
+        "00510ACCD42DAA6BF0423DEC6DB638877A66F432D42F7ADCB79502F6D20B8B38",
+        "0054AF27D9910FCD169A957BC83104507971DF1E2D1D084B1A35548E0E3F6414",
+        "00643810A705C01F80E06228BEBDF3C0006F080263CE83CEB069CFCBB5B58B96",
+        "0067ABAA3C7C38743B899ABA44B4E1BA69D71B828F8B88503F57E0B76FF1BB15",
+        "00780EDFADA0619A9B695CD14C19A53FD4CA20E79CD10509A755BF175BC84A2C",
+        "00783F894711C98215C26F1CFA14E8829BC492F4F305778174D474F0F4F34CE8",
+        "009AD251882EA3B0ACC658BB26537B60450987436DF66CE3062C15C1FD4DDCBF",
+        "00A549719BAF37984166AC25AF45FBA4D1762FF2AED727B54AB0B7F8F400814D",
+        "00A85D4287C8A48321E209607CA59CB50321CA3E248949E414CA58CB121381C6",
+        "00B2F7438F932EC77B26630A4A5349616DEFA3A903E9D6FE8E9A39C4D10B4E03",
+        "00BE26121C2B526F1EB071977A6C58638B341B0294A942F1AA76843486501C4C",
+        "00C8946CF13030B754964B5C049732CDA147D7087A816F8B547B2EE7FBAC187C",
+        "00C9946460B840475983188BF5ACA836B063E3A325E2A90C1413C92293ABA003",
+        "00D72DF0FE3694016C6E5124A76F8AB0410F3F27A91D29E6509EE4C6BBACA4C1",
+        "00F211B07DF460257BB8DB4DC097DE7546BD75E54B0327770B5FD3F588BDBF56",
+        "0100F02377F6529C951D62B9465AF488AE6F937DD2CDCA8B02254C1789A73901",
+        "010CBF5674106D495DC5BA83A74FA1EF5A07D04B805ACA34400AF2086D249799",
+        "010DD745FA4DB657B103829DC14A0D140A237B8196E050C13CDCD5B372B0350E",
+        "010F20B920C3CA4599FD008179E42F809CCFC82A56B4A2A98E0DAADF41C43478",
+        "0112E37A7601F14288AAD61DD32F255B56C8E0E369C2D4AD266220A4FF336D1C",
+        "011512E960570C6AA935A6DA1E7F5C0052899BDDC43095F3026406B7B5191A45",
+        "0115CA16556AA390FCF8B2CA636AF60D8945AB8C457FD66749DC266CDF850184",
+        "011BC352B80F57505CDF8A29DF27857D9D34F9A7948A2B43ACF02A038BFCC149",
+        "0121B8A5B5650CE6F84BD215EDFB8CF8A1465B761688588C4606920C696B3F91",
+        "0137007E6D906D8114AE2547EE1E0F6392C13002DA9A7FD6EFE625B385C820C3",
+        "013A42400C11FC7882438EEB1E64940F8DECCDA52510E5C2ABB296AB34531C53",
+        "013B0140C8F0089C192C6F4AB1A91A06CD3CC6BA14F1F986571FA06CA1CD5E23",
+        "013BB96D6F9FCE02AC9CFC995015CE38E51A43562985315A598E7904F5C4EEC7",
+        "014AFE794F4360FBA0D5C8BF50F466E56A4ECE022D0B9443691B215ABA883A26",
+        "0151E358F8493C2BB4E91BF5AD5B4309043A1E50412477074B2300FAE170CD18",
+        "0151ED6952C5FB747F42DD5D1166D1FD7AB9A2138994434B21B26B0C39A774A0",
+        "015B12152AAE13D8E134B589DD2976285387E10A841891499992A98C210B5F06",
+        "016265D25F178E376E2B174EFE983F6FFBE35D94D4D08E59DDCE2FF5AA4B8283",
+        "016BA78FF46493766A50F99F8984607E1BDDF5104B4C4149D9EF36AA13DC66D8",
+        "016DF1AEA527B8AFD39CEB340EDD7D1A5DE18985D7D2CB0896A4D121DF019894",
+        "01731A8D668991E59E0DBF860D7522A5FFF7EE6D3BF074442CBFC36C0D9168C2",
+        "017C567B33A3B00FA14AF79F2CE6B68EFD88377AC0D545604C1330508919D573",
+        "017C88B02D3DB3763297B68CE6D69C26EA6427601FA7BBE2A8819C0DC39C8F27",
+        "018B5967E70B52E4D231898391B52AEE757383A5B23874533CED9BCDB3767E82",
+        "018FF6E21AD977D438D4682FBEFB265ACB4D372D2185A0289C21686BDA1CBAA1",
+        "0193C6E4D2CFD2330A3166DFF50CF8C1A0A342155356F132CB636032CDE9C349",
+        "0197797E21AD9BE21B91CD585A23D0C5138F19E8797DC4AB65667741D90C78E7",
+        "0197F91711403EF3B2B53C8FE055E547D67F2BAC59C9527BC77C15F628F1A583",
+        "01A409096C27EC5FE2F60FBCEDFC0A31146EC0D80446A4CF68789CBADE68A151",
+        "01A6460AA897C30DB7ED01D9F88DD15C1FF62D8D971C967A82C1FA9A7622595F",
+        "01AAF238476F78F6E53A5A5A76F9089037B590696C6488F633664777B06F3B63",
+        "01ADA08C1B42B96B9C83E316716B614939AAD5910D9FE03F35F0661765FAB080",
+        "01BA4719C80B6FE911B091A7C05124B64EEECE964E09C058EF8F9805DACA546B",
+        "01CD2A2B3BF1B5EA0FD1B713DBF737C7B5FC8B36A59CC6D06AA9704313CC020D",
+        "01CD4D27051FE653F91385B45EEDC43660A2E861BB2F2488FE2C3D34AB01B187",
+        "01CE0182C65CCF5AF4832B1E316FF04202F75CE1A0CE5D1D0B2A7847A83E53D8",
+        "01CE1B2C6D340A1ACBC70435FE65B1684CD87B891228796F77C6D001F2967790",
+        "01D6132221BA4F4A9BD66E59C3E630B6D377C8407621B06983881BDD68E75EAB",
+        "02108F52A4D33C706735235C877325AC3FABE4402B3FA612B75AA58B74C3FDC2",
+        "021411E6689064FE04062F481B5C9E76EC616A832D3AF7E77B43C2BF6AE11829",
+        "022C56809209A4FF9FBB0C9F001593CEB31714DC930E8EB022FB186F5B2EB797",
+        "0233F6571F32A75C780385975833C1A20DDE2A257A9B4251A089018B3E7896F8",
+        "024695EA1F5BACEFC1A103973B9A815009E3A2F5F9119D7B4075155B8F8A7C2E",
+        "0248FDA710D596678F8D89EC30F5656D7C80595E1E2DE1A7C01EE98BD636BACD",
+        "024D74468FFA2EB88A92FDC8A17FB7F13FBEB7710EAFF5511D4B31027AD77C0A",
+        "0252A82D995961A91969C9C81B70D17991D378635C39AAD057E6F558CEDC6A60",
+        "0258F8802AB583EB7F57D81A7676873AB10BB29DFDB285F8040AD8A9D927EF13",
+        "025C6F933E4A1B27A60F2221C97A3E3946D9A7EE6711CE2389A7BFF234DF8975",
+        "025F20C45083E80B15233FDD36F8ABA966366654A5BFBECFE38C9604CC61901E",
+        "026B39136130551343508A291ADA8398E81C5915E88CA0FF79C4D92BA769A55E",
+        "0272015A766986DA09DA548731D5E4DD94CA5722E579797FC4B3C808B78C8E2D",
+        "028DCD9817C3C8238881A3AE0D28C9FC8F58C0654C5325B0B2B6D093AAB80A84",
+        "02909B613CDC528092F01880AB14E5FFCBD9F78A67D7EE23EBFC19E3F7EDF15B",
+        "0298161ECDBAADDFE67230353E8810A6C18F1D4C4C2495572499DBD79C12A169",
+        "02A433DD735F5FCF1A7EF8C8B481A7004433A3FD77628F19FF80C0A174628B35",
+        "02B42216392355DAADFFB03BB60578F91767152B1FA4D5824835B532C508FF9D",
+        "02CC7FBF053CAFA1EC3A7A2CF5A5CABF59FB0AE9A56CB9A03F6F74AD82A5D9B7",
+        "02CF0960BC70A2E7171E4A95B0DD9C1B8F99E9E781C4FE9D82235C1CEF1DFC87",
+        "02E2CB7069526AB4717C1C4B20A8720BFD45E1F5F1C9434BBAB5E485C986A04F",
+        "02E31663810837DAFD04B09DFD9FB6B3AA1E0FAB93418F9332B134436458D4B7",
+        "02E413FAC8D5473041617CF5F1FB36AF5CAA057A76F674C9075AAABCED5FA176",
+        "02E41AF91DBEA458A54E4A00702873AC9AE1CF7788A0FAF282E4FBE08A89B1D3",
+        "02EDD22C0B18B3ED7CF11D32EDD7788B39E676238DA8C1DEC5280C8C30CB2F0A",
+        "02F54B151900EDDBF62ABA6742601448D1F162751319E85C0CAD899E17460D77",
+        "02FCAE88BD120F599563734DC51F95DAEA3E96193A44C16BCAD5A646DE82AC94",
+        "0304BE91B9E2744D5524092BD411ADAF70F801FD608522E1E6EEA9E3AB553749",
+        "03056631B5BCFBC1866EC1BDA5743D392318097D4D9875029B0627F092A1E263",
+        "030751306256D9BB8434E17B0F163425061C4E50BF2F297396ED5E9A6A5137EB",
+        "0318C9D6ADAC42C30DF3A30F28ED485BE88852AC31B51B25CDCF5B64BB88B4D4",
+        "031E985F589B38FAAFD9C7D07C0220549FB5A40A8DEB9D8ADCB05228CDAB04D7",
+        "031FF2BCBB101146121C60D5705EBD4A4D61075B577DE15635A3D0B5A31E5BD1",
+        "03268C3B3A25B2C795B8A4808F0DCF62D9461522758390DE1C4415EABE6D6685",
+        "032DAD9BD8F04FE6D2B2FA1AD2B775AF52459FDD060A1A2FD238AB096512ACE9",
+        "03344D5D54E3DF7338618706ABAEB933D7639E0356E30D10ECB6F904930F6253",
+        "033A955C3D13826886692A20690BFB74B6029FEDD7778DD7E7D25FEA5DD50105",
+        "0345F6480C23D787E009FFE283F521BE2DF457FFEEB9AE1DF8031C921EF17F14",
+        "03465348B7AD758D882A7CE6FDEF061FC0B01FA51E70EAA800133C50DFC1B374",
+        "034A60EED33E89C5E5405C81BB9CD0A414A8D04212F4931B86C31100E7039BF2",
+        "034AEF1F34A3EF513A22040FDA7CC7371A21C9109654E272EC974A80A7D8E2F6",
+        "0364C04C9CC9A4A03D0A3CEB5C9B42205E92B913F3E56CF3BB1B557957E769A4"
+      ],
+      "sha256_literals_count": 7462
+    },
+    {
+      "anchors": [],
+      "forbidden_outcome_field_names_present_in_text": [],
+      "native_callsite_path_references": [
+        "scripts/research/run_eaa_same_pair_secondary_shadow_parity.py",
+        "src/spotbot/research/eaa_same_pair_secondary_shadow.py",
+        "tests/research/test_a10_selective_protection_asymmetry.py",
+        "tests/research/test_a4r1_reversible_floor_replay.py",
+        "tests/research/test_rd27_lifecycle_replay.py"
+      ],
+      "path": "governance/akah_parent_evidence.json",
+      "path_literals": [
+        "reports/research/ams-rd04-d5c1-labelled-pit-control-trades-v1.csv",
+        "reports/research/ams-rd04-d5d0-bf01-debug-bundle-snapshot-v1.md",
+        "reports/research/ams-rd04-d5d0-bf01-source-schema-snapshot-v1.md",
+        "reports/research/rd16p-multitimeframe-cross-sectional-portfolio-methodology-v1.md",
+        "reports/research/rd18-p1r-methodology-v1.md",
+        "scripts/research/ams_v3_f01_walk_forward_harness.py",
+        "scripts/research/ams_v5r1_native_common.py",
+        "scripts/research/audit_ams_md01_universe.py",
+        "scripts/research/finalize_ams_v3_kucoin_4h_dataset.py",
+        "scripts/research/register_ams_v4_protocol.py",
+        "scripts/research/run_ams_ati_v1_shadow_diagnostics.py",
+        "scripts/research/run_eaa_same_pair_secondary_shadow_parity.py",
+        "scripts/research/run_rd02_d0_trade_lifecycle.py",
+        "scripts/research/run_rd04_d0_pit_universe_readiness.py",
+        "scripts/research/run_rd04_d0a_investable_universe.py",
+        "scripts/research/run_rd04_d0b_pit_data_expansion.py",
+        "scripts/research/run_rd04_d1_pit_universe_replay.py",
+        "scripts/research/run_rd04_d2_universe_membership_attribution.py",
+        "scripts/research/run_rd04_d4_hypothesis_registration.py",
+        "scripts/research/run_rd04_d5a_liquidity_floor.py",
+        "scripts/research/run_rd04_d5b2_structural_stop_evaluation.py",
+        "scripts/research/run_rd04_d5d2_pit_equal_weight_benchmark.py",
+        "scripts/research/run_rd04_final_adjudication.py",
+        "scripts/research/run_rd05_p1_signal_data_contract.py",
+        "scripts/research/run_rd16pit_a2a.py",
+        "scripts/research/run_rd18_p1r2_panel_repair.py",
+        "scripts/research/run_rd18_p1r_kucoin.py",
+        "scripts/research/run_rd18_p2r2_structural_comparison.py",
+        "scripts/research/run_rd18_p2r_structural_comparison.py",
+        "scripts/research/run_rd18_p2s2_risk_redesign.py",
+        "scripts/research/run_rd18_p2s_risk_redesign.py",
+        "scripts/research/run_rd18_p2u2_confidence_universe.py",
+        "scripts/research/run_rd18_p2u_confidence_universe.py",
+        "scripts/research/run_rd18_p3e_sensitivity.py",
+        "scripts/research/run_rd18_p3e_technical_dry_run.py",
+        "scripts/research/run_rd18_p3x_a1b.py",
+        "scripts/research/run_rd18_p3x_a2.py",
+        "scripts/research/run_rd25_portfolio_translation_diagnosis.py",
+        "scripts/research/run_rd31_market_regime_admission_governor.py",
+        "scripts/research/run_rd32_mb_signal_quality_admission.py",
+        "scripts/research/run_rd33_temporal_mb_architecture.py",
+        "scripts/research/run_rd34_dual_family_persistence_diagnostic.py",
+        "scripts/research/run_rd35_new_alpha_source_diagnostic.py",
+        "scripts/research/run_rd36_cross_venue_flow_state_diagnostic.py",
+        "scripts/research/run_rd37_exit_shadow_ablation.py",
+        "scripts/research/run_rd37_microstructure_stress_diagnostic.py",
+        "scripts/research/run_rd39_trade_conditioned_lifecycle_path_diagnostic.py",
+        "scripts/research/run_rd40_transition_dynamics_governor_diagnostic.py",
+        "scripts/research/run_rd41_full_risk_set_censoring_reconciliation.py",
+        "scripts/research/run_rd41_rcv_terminal_hazard_diagnostic.py",
+        "scripts/research/run_rd43_control_relative_state.py",
+        "scripts/research/run_rd43_direct_utility_transport.py",
+        "scripts/research/run_rd44_control_relative_dynamics.py",
+        "scripts/research/run_rd44_direct_utility_transport.py",
+        "scripts/research/validate_rd18_p1r_kucoin.py",
+        "scripts/research/validate_rd18_p3x_a1b.py",
+        "scripts/research/validate_rd18_p3x_a2.py",
+        "src/spotbot/research/a4r1_reversible_floor_candidate.py",
+        "src/spotbot/research/adaptive_stops.py",
+        "src/spotbot/research/adaptive_trade_types.py",
+        "src/spotbot/research/aggressive_reacceleration.py",
+        "src/spotbot/research/ams_md01_momentum.py",
+        "src/spotbot/research/ams_md01r1_universe.py",
+        "src/spotbot/research/ams_md01r2_sources.py",
+        "src/spotbot/research/ams_v2_f01_canonical_artifacts.py",
+        "src/spotbot/research/ams_v2_regime_features.py",
+        "src/spotbot/research/ams_v4_active_conviction_swing.py",
+        "src/spotbot/research/compression_expansion.py",
+        "src/spotbot/research/cross_sectional_rotation.py",
+        "src/spotbot/research/eaa_same_pair_secondary_shadow.py",
+        "src/spotbot/research/kucoin_rd18_p1r2.py",
+        "src/spotbot/research/liquidity_sweep_reversal.py",
+        "src/spotbot/research/rd02_profit_protection.py",
+        "src/spotbot/research/rd02_trade_lifecycle.py",
+        "src/spotbot/research/rd04_final_adjudication.py",
+        "src/spotbot/research/rd04_hypothesis_registration.py",
+        "src/spotbot/research/rd04_idiosyncratic_tail_label_join.py",
+        "src/spotbot/research/rd04_liquidity_floor.py",
+        "src/spotbot/research/rd04_membership_failure_diagnostics.py",
+        "src/spotbot/research/rd04_midweek_pullback_diagnostic.py",
+        "src/spotbot/research/rd04_structural_stop_overlay_engine.py",
+        "src/spotbot/research/rd04_structural_stop_source_transform.py",
+        "src/spotbot/research/rd04_universe_membership_attribution.py",
+        "src/spotbot/research/rd05_signal_data_contract.py",
+        "src/spotbot/research/rd10_smoke_backtest.py",
+        "src/spotbot/research/rd11_multi_asset_backtest.py",
+        "src/spotbot/research/rd12_component_attribution.py",
+        "src/spotbot/research/rd14_scored_breakout.py",
+        "src/spotbot/research/rd15_scoring_redesign.py",
+        "src/spotbot/research/rd16c_smoke.py",
+        "src/spotbot/research/rd16d_baseline.py",
+        "src/spotbot/research/rd16d_metrics.py",
+        "src/spotbot/research/rd16d_reporting.py",
+        "src/spotbot/research/rd16g_evaluation.py",
+        "src/spotbot/research/rd16h_evaluation.py",
+        "src/spotbot/research/rd16k_evaluation.py",
+        "src/spotbot/research/rd16k_remediation.py",
+        "src/spotbot/research/rd16n_evaluation.py",
+        "src/spotbot/research/rd16n_signals.py",
+        "src/spotbot/research/rd16o_signals.py",
+        "src/spotbot/research/rd16p_portfolio.py",
+        "src/spotbot/research/rd16q_domains.py",
+        "src/spotbot/research/rd16r_evaluation.py",
+        "src/spotbot/research/rd16r_universe.py",
+        "src/spotbot/research/rd16t_evaluation.py",
+        "src/spotbot/research/rd16t_signals.py",
+        "src/spotbot/research/rd18_p3e_performance.py",
+        "src/spotbot/research/rd18_p3e_replay.py",
+        "src/spotbot/research/rd18_p3x_a1b_asset_gate.py",
+        "src/spotbot/research/rd18_p3x_a2_generator.py",
+        "src/spotbot/research/rd19_p1_architecture.py",
+        "src/spotbot/research/rd19_p2a_engine.py",
+        "src/spotbot/research/rd19_p2c_discovery.py",
+        "src/spotbot/research/rd19_p2c_r1_engine.py",
+        "src/spotbot/research/rd20_p2_minimal_pullback.py",
+        "src/spotbot/research/rd20_p3_core_edge.py",
+        "src/spotbot/research/rd21_horizon_pullback.py",
+        "src/spotbot/research/rd22_structural_risk_on_pullback.py",
+        "src/spotbot/research/rd23_multifamily_raw_edge.py",
+        "src/spotbot/research/rd24_minimal_portfolio.py",
+        "src/spotbot/research/rd26_exit_architecture.py",
+        "src/spotbot/research/rd27_adaptive_lifecycle.py",
+        "src/spotbot/research/rd27_lifecycle_replay.py",
+        "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+        "src/spotbot/research/rd28_lifecycle_replay.py",
+        "src/spotbot/research/rd29_thesis_context.py",
+        "src/spotbot/research/rd29_thesis_replay.py",
+        "src/spotbot/research/rd30_replacement_replay.py",
+        "src/spotbot/research/rd31_regime_governed_replay.py",
+        "src/spotbot/research/rd32_mb_signal_quality_admission.py",
+        "src/spotbot/research/rd32_mb_signal_quality_replay.py",
+        "src/spotbot/research/rd33_temporal_mb_replay.py",
+        "src/spotbot/research/rd34_dual_family_persistence.py",
+        "src/spotbot/research/rd35_new_alpha_source.py",
+        "src/spotbot/research/rd36_cross_venue_flow_state.py",
+        "src/spotbot/research/rd37_microstructure_stress.py",
+        "src/spotbot/research/rd40_transition_dynamics_governor.py",
+        "src/spotbot/research/rd41_full_risk_set_censoring.py",
+        "src/spotbot/research/rd41_rcv_terminal_hazard_diagnostic.py",
+        "src/spotbot/research/rd42_context_support_census.py",
+        "src/spotbot/research/rd43_control_relative_state.py",
+        "src/spotbot/research/rd43_direct_utility_transport.py",
+        "src/spotbot/research/rd44_control_relative_dynamics.py",
+        "src/spotbot/research/rd44_direct_utility_transport.py",
+        "src/spotbot/research/simulator.py",
+        "src/spotbot/research/volatility_breakout.py",
+        "src/spotbot/strategies/regime_momentum_breakout.py"
+      ],
+      "references_native_replay": false,
+      "references_shadow_replay": false,
+      "role_matches": {
+        "ADMISSIONS_BINDING": [],
+        "HISTORICAL_IDENTITY_BRIDGE": [
+          "\\btrade_id\\b"
+        ],
+        "HISTORICAL_NATIVE_PRODUCER_BINDING": [],
+        "HOURLY_INPUT_BINDING": [],
+        "RD27_POLICY_CONFIG_BINDING": [
+          "rd27",
+          "policy"
+        ],
+        "STATE_FRAME_BINDING": []
+      },
+      "sha256": "84AB45FFB32508D3300BF17C3EF7701C3BD236836AAE72FD4D8B6FDF5486F703",
+      "sha256_literals": [
+        "001468886134102A6381BE04929665D9C2CAD9AF8B1DD458FFFCB59AC30247E7",
+        "004EE6D3BA4E9C6A5A2367A2568EEC5D5EB8C630626464BCFAA716FFAB3280AA",
+        "00552EC9023C23902AFB1FA572612EF3201622F64CB74F6E83A00E0E52605711",
+        "005DF62B7D35097366EBA1F855E92E6DEAAB81177C05684A3F34165E0F3D4D12",
+        "0070D1D0D0BC24A3DBD73BADF009F767C6AE2E3B5810BBCA6F70E508D5ADD1E3",
+        "0071CB6BDA9D7BC80F7F71659539B3885A2517DC0476E0C76AD0789961E1EF02",
+        "008E701714F98AC7E64F8B749C8C77317CC8E7098EF1AD277C5A9A3A4E672574",
+        "00A6FAC305D755FB8061B5379485F1C2579D1F7FC1B2F7728A4DBD0268ED4CC0",
+        "00DD2AEE9A0C7504304DE1531284F1DA657059CAA668E0B18F046DEE04B19A21",
+        "00F33FA2EB34CF2333502B4219F9362CC5B6874EF594F71BD58387B1F020D2C7",
+        "0118A7AACEBF84929FDB5109F546CD0E64C466FB60713453019C1E54B3A3E2A8",
+        "0119B6858C28599A602180E2904E4557FBB440427F565575AEE5916A68F2E78C",
+        "0146D3DD344D1C85DFFB37C3636C8A6B7B27474CC9802FBA966C9071ACD64A28",
+        "015D29E946EEF420B4C027F53F70E95812B6DD29F3CE51F6C14D5FD9CB5BE527",
+        "015FE885DE12D56444E8D60581B437AB7138BA6C3EE9B6C399F5E10AF91B5950",
+        "0192E368F1B321AB1AC7BF0BA264591066EC0C850B67EF94421D4B2D0D792EBB",
+        "01BD82AC16C5A1D9978CFA868FEAF027C4A967118D3C3C40670319C0CD86C6C8",
+        "01C31EA5B30843F92A98A3040F9096AFA49B46C7CB84E611532A7C243D15BCBD",
+        "01C9B56957A2A127A3BE9D2AD9164A9D1DA71508B582C057679A63737C946652",
+        "02108F52A4D33C706735235C877325AC3FABE4402B3FA612B75AA58B74C3FDC2",
+        "0233F6571F32A75C780385975833C1A20DDE2A257A9B4251A089018B3E7896F8",
+        "023E7A28D6A3BE622053B6738F4BD04486E027A54B6385A43806ED7D58E12993",
+        "029459DE6B1F296584A461D7A3BBD6875503D71F29680B9A2078A65C4CD52DBE",
+        "029AAA616436A7DFE8F6DABDE070DC462475A3681F93C13CE64146B71499E9F9",
+        "0319CEB92D6651755655DDC43E69A3125BB09C5F90DFDA034B97BDEE567C55AC",
+        "032A720E0A6FB797E2C0628F2FDCB11A10223D8C8ED12643F8AD815D5B39E7DA",
+        "0330F64C6DBA2527D9A903B9F266EF9FA130F37084EEA7F9158A7906B8E28F5A",
+        "0352D71AB0BC1563EBEC78909F8AEA2431E6C6E73A095A7662CF11EBE9B6FD0E",
+        "038481A2422618F0D8C7152C724608EC080FE4BC9F33F885F8811DE18E41C126",
+        "03B59C99065A2CE3A4562B29B8AFCE9889573617A21CBB7D08728F7B6A78BC86",
+        "03F7001914711C827B62D4E33DD8514E9839E98BF657E5BEE5276DF9A86D6E4B",
+        "03FDEAA901BA7C1C64A545408BD5A8BEF4BB6515B4B70137062B5D2F8FF89CC4",
+        "040D7034982DD34612B18010BC4F3880DDA7DA00A8D629653B125C7B86E1AA73",
+        "04168EC65468D8F62B3B012E2B75A464CBF5E75EC99092BF62CC145AD1BBC0C3",
+        "04452CBC3A056839623DCC82B5DE1E0BE7D151E0A1DA1A1CB6F16BAC61999460",
+        "044D8F0CB8676D65AC522EC38C07BCD37F11E706BB43FCA63FC190B056DAD520",
+        "0450420FE1F34DFC7E5F9754DA3EC9295FFDBF37993BE231A7C1F2C17D4C48F4",
+        "047CDDD0E0552E60F345FD724A947605E7764BF185DE9A4F69CC77AD12D91114",
+        "0514D1653C3B051148298E830D4B9093D187309EFC6CACEBBA425369B213E43D",
+        "05150E920A4DE25E987DC7F89198DD81F6A4332C5755846A784BA630D823BC9B",
+        "052B173D7B012E4FF1C2C2CABEAB2D0446B29C8BC63A91B3AE9829B01DF4A712",
+        "0552F57ED5ACA1C1A1B6ECC6CE793869130067CCE7166907BD21E47C87FE07E4",
+        "0557859091B2DEAE37AFB58374FABAEF4D0DA59D2A4A2B76FCDA6756E44DD5C5",
+        "05AE7981AB6B93AE840344F1BE2B0F0CF1838B76437CD1F87AEE5C1DDA5C3D1C",
+        "05AFF6EAC348D6AF58E684932C3B29C2DADDAE25706038FC6F7FC1A555C4142E",
+        "05B217EBEF086CC4FFA0510A69B16E106D7CEA5E237E6F9FA0F8B1A8C94EE377",
+        "05B73986326CD3EFCD0D30D3233B58B98E4444F75EE66DCFE9F2EA3F59CE1DCE",
+        "05DF809C488C59DB948E3829CDEAF888E64FED564DF6ECE5435A8AD7434DEE7B",
+        "05EA9D301688E44A8C1936B78866C49C1192506A6BAB60198C4407BDFDA7D8B0",
+        "06057EE9C5DD965B99FB305D9C6FCA714DF5FAA3AC8DB48E5F0F53CBF6550EBE",
+        "062C5562E717675122CD3DB346FA50F2DC29C68EC888DD06A733F8EBAAAEC41B",
+        "0657AF8B651B43AC4C297B18E24942962E449A72D548BFC21495FC88521DAA1F",
+        "066560BCECF986CD5DC486CA690997B06E9280AFCAB2172E0ED29C222AE2A214",
+        "0668D13119825AABEA5ACB636ABAD318EC273F9F20EB18456ECB7252A34BE56B",
+        "066984185882CB4978033E352C50B4358F2AB50E0E1DF2DA649E22113354B396",
+        "06975584AA4C35A7D7E97D93E667DCE9130755D3FEC126C4EDB396041C1F7354",
+        "069E1F2B7A00721135D289141B63F32D71667EEF6A83BFEB155B0DC71A4D2652",
+        "06C99F040E342203D6476D24F5C3BA929A360C8C48A5551655C86F132CAF10E4",
+        "06DCEF9EC341458C8B679475B74D39DD234831C71C554DA974858AD4F52DF09F",
+        "06F5C3C2842ACF6EE49CC3CE7CBFE34E28C8D90D51D2126453CD58E5C76BE419",
+        "074BF0931A55FFF7DF52A5693636228E5EF000BCD5A93E12F94C1A4E1D28D287",
+        "074ED3587222D6371D1585DBD6C62F0BF7619F1502574F7696E282AB451DA7CB",
+        "076E657B1E58421AEB019CDDC0879C37A795D25F4F1FBA6B1171BB5F0340B231",
+        "077170BD2C548D917FDED571F8FFDDBEC1E3DEE51366864D96B630CB33C61BA4",
+        "07B129A05E8864988CC13409ED6C8C7FF437011BC173E54A07015F793540F6FD",
+        "07D3C34D08A6BD2C82625554301F5AC8CFA909EB21DA7DC7BC57B6FE7471F77F",
+        "07E08617304D0046AE076C6672FCA896BEADA583977FEC3A8DE49D2BAAF92E93",
+        "07ED436F05F68B4E0B784EDBF246938C46C3660F1B0AACA30C298E3BC38908CB",
+        "0813FF127C9EE472D17717598D4DACA874B50E629A405078817FD5079717D31A",
+        "0829921F424E0C7FEA66589FFB0835C67B1A88DA625008CC84C277C7A7B12E36",
+        "08571A269DC96A58DBB7283261AB8A7D80287B9ABC7659D645E018164D100519",
+        "0879EED4512CE57161046FB9738C01F159F7A8D732E8A96C9F021617FE45591D",
+        "087BA2BE56D550B1B0F18FC8250D1830B39F18FA38C35B324F389AC46D961CCF",
+        "087C3DA860EB8C0BFA0CC924483CA1BF5A50E9A1C26D92C19A30A0F01102E6AC",
+        "087C5673A5A4CA34F2D17CD5ECDB7F6CFB49288D55BDF1D478C314EB030C9421",
+        "08DEBA5DCA8BE803A20DD393FF4E56AE580A780FD597CE61B3D955CF69FAAD6F",
+        "092C21AA56D949ED81B11424A0F66CEEE629465473CB1A93399D02D6565FF00B",
+        "092C347A34BF044B1A9203F921AB8BBD9694D1D725E8224788B7DECC1594A03A",
+        "094C42AD3E871A3CAB7B8249AFED72A9D7D069B3C43A107FAAE5E9083776E3C8",
+        "096016FA410DB65D7FA447F42A01E3B8FD3F4DDED166E4F75463619A5A14A066",
+        "0960D20DEAA726B6AFE585B8E97984B1AFF54D5BC2B5E37741BBD4A75646BB9B",
+        "09750EACD3A0C2B97C2D4FB0DC719B6AB71AD68AA30EBB92D1C9EDFBA5794D79",
+        "0997681F2085B3F89C32468640B2E307E548B6627AAA0A1E30C7D16BF52650ED",
+        "09979A5FECF039EB48FE80DE02DBFD061CC16F01849470B2ABA858698C68F1EA",
+        "09AF4396C39F363FEAFF25AD846A37FD0E8860935AE869AFDC19A425B28EDFEA",
+        "09F4C1DD46B5CBF01E9BA420D5D5298E0F239D2CA0ED6CD1280B9BAF914130B6",
+        "09FFA15021A8B014D097DB7D21F9D9DAAD30A54CBF0286AD6B6D4A5044283547",
+        "0A623AB9252E018AB7DD8BFEC9F3ACD597AB3CA29FB1FA80493E36C18E2B7EA4",
+        "0A7E81B5DC8AC9055C67E4D068BFD518185950682DE2FAD83C9D90FEF728F586",
+        "0AB0D9F3089474040EE147D15491CB885340AE5E2F52B83F10AE6FC013CA1FAD",
+        "0ABF19D7B94F6B22FB6CCC0BBAA86F88123A7ADDEFBA89191D1076699FD4BD3C",
+        "0ACF0D4A1AE644C1561D22E9E6BDDEA1054B6F7A91F9F4F852A2D4FAC2F646F4",
+        "0ACF61319E125C1237B074ABBA8B6A3774703060E64CBDDA26F28CFEF1E4381B",
+        "0ADFABFBCBDB64CCD077597F3C8FF49622EDBC6ED7CE448E74F8354EF2D0CFE1",
+        "0AF0E9093CA8168AA518FFE84BF00DC97A4DE74371A00D3DE013C7C024624502",
+        "0B12189B58A70347F82BCF8A6ADC16FCE6EC9CEBD947DB41E85E4CD72B73A1C1",
+        "0B1E6EA7B42C7233578BBAF291592BFF1CDCCB522372C76BB3783EAB440E111C",
+        "0B46B954B62148C35CEB205C73092A12B375080B9FA2D04FB2AABC8AD76011F4",
+        "0B49A021392F6D2009C2E9C5C08452CF8ED257118D09444CE8975C29C63855E0",
+        "0B5067124492C9A1A4E3E55266CDCC932EACA15AAB08EC76327D272F011161FE"
+      ],
+      "sha256_literals_count": 2238
+    },
+    {
+      "anchors": [],
+      "forbidden_outcome_field_names_present_in_text": [],
+      "native_callsite_path_references": [
+        "tests/research/test_rd27_async_memory_shadow_replay.py",
+        "tests/research/test_rd27_lifecycle_replay.py"
+      ],
+      "path": "governance/async_replay_v1.json",
+      "path_literals": [
+        "governance/async_replay_v1.json",
+        "src/spotbot/research/rd27_adaptive_lifecycle.py",
+        "src/spotbot/research/rd27_async_memory_shadow.py",
+        "src/spotbot/research/rd27_lifecycle_replay.py"
+      ],
+      "references_native_replay": true,
+      "references_shadow_replay": false,
+      "role_matches": {
+        "ADMISSIONS_BINDING": [
+          "\\badmission",
+          "\\badmissions\\b"
+        ],
+        "HISTORICAL_IDENTITY_BRIDGE": [
+          "\\bposition_id\\b",
+          "\\bpair\\b"
+        ],
+        "HISTORICAL_NATIVE_PRODUCER_BINDING": [
+          "replay_lifecycle_policy"
+        ],
+        "HOURLY_INPUT_BINDING": [
+          "\\bhourly\\b"
+        ],
+        "RD27_POLICY_CONFIG_BINDING": [
+          "rd27",
+          "policy"
+        ],
+        "STATE_FRAME_BINDING": []
+      },
+      "sha256": "C3871577BCF196DC245E04D7FB3125332DC0964BD4D9B045FF1981E4D64A21DD",
+      "sha256_literals": [
+        "1DF5706AE3D140C07684CBF378115A39B9D8629410BB4C33CCC17F87579E232D",
+        "3FB4AAC711B9F8D52F68457D99B0434BCECB32B773155BA8BB1A4FFB85BE0219",
+        "7E17D7D83B195AEAC7995782DBD45C25E7B0F0FEA26CE548899BCBFADF15986B",
+        "85179314ED8F403F36ABF0FFCE5D2180916070AC689DD517DA351258EE70A843",
+        "A12D30BACD1334B0CD51FDD02F3BEA6C7B85A9AE85CD1D23F0A6EDF9B6FB897E",
+        "B85AFA24E8B1549A7FACFF0A5826E1F4752CDD79B6A6D4B8AFF96A2D367BA38A"
+      ],
+      "sha256_literals_count": 6
+    },
+    {
+      "anchors": [],
+      "forbidden_outcome_field_names_present_in_text": [],
+      "native_callsite_path_references": [
+        "tests/research/test_rd27_async_exit_candidate_shadow.py",
+        "tests/research/test_rd27_async_memory_shadow_replay.py",
+        "tests/research/test_rd27_lifecycle_replay.py",
+        "tests/research/test_rd27_observable_later_trigger_predicate.py",
+        "tests/research/test_rd27_observable_memory_adapter.py",
+        "tests/research/test_rd27_observable_memory_predicate.py"
+      ],
+      "path": "governance/exit_cand_v1.json",
+      "path_literals": [
+        "governance/exit_cand_v1.json",
+        "governance/trigger_pred_v1.json",
+        "src/spotbot/research/rd27_async_exit_candidate_shadow.py",
+        "src/spotbot/research/rd27_async_memory_shadow.py",
+        "src/spotbot/research/rd27_lifecycle_replay.py"
+      ],
+      "references_native_replay": false,
+      "references_shadow_replay": false,
+      "role_matches": {
+        "ADMISSIONS_BINDING": [
+          "\\badmission"
+        ],
+        "HISTORICAL_IDENTITY_BRIDGE": [
+          "\\bposition_id\\b"
+        ],
+        "HISTORICAL_NATIVE_PRODUCER_BINDING": [],
+        "HOURLY_INPUT_BINDING": [],
+        "RD27_POLICY_CONFIG_BINDING": [
+          "rd27"
+        ],
+        "STATE_FRAME_BINDING": []
+      },
+      "sha256": "F749F922C486D9D196D4B8ACBDBA98C4C9B4FE4E23E3BA7DEA27CBE18AFE8E64",
+      "sha256_literals": [
+        "3D86A563A48F3ED132F3640A2A52E6A55AE09DD17FCED824FBA328CAA8B75EFE",
+        "3FB4AAC711B9F8D52F68457D99B0434BCECB32B773155BA8BB1A4FFB85BE0219",
+        "45F98E6F8A4B99387FA728A79BCD34D9830FB5C762385E7FBC4ABCF5F8382D56",
+        "5F25948CB5AF5B34E39033FA0A149B74567106E583097B1C11090668A0565CAE",
+        "64657DAB456EE03780AC9D09997548487124AAC589BA2A4366C24BF07E6EEF4E",
+        "9732F46E644F9CD773309D6E341553B921876E9A2ECAED5086841D06C4B7246B",
+        "A2C0B25B0053CEEF1AA5C3AC5DB1442C1DCF333845F7345FB1F80A9AD3E1290E",
+        "B0F138D7ED4A60EB36F742767B9B514DDE6B60BC88375A1C2ED823ADBDF4DC4B",
+        "BE07010AFB94CCD17870D4598203E4B707EF33B950F0B195D6B2D311D5B35FAA",
+        "BE4E037B0593149DD2999F8B2636B83298CFB0841F55C47888B560FAF728CB6C",
+        "D7AF674EEEEDE4223A1AFF2ED5734AB5B4A9CC8D1D0327325CE287393AC18B04",
+        "E6084BEBE118C0CFDEB403B5CF5F641814F1E7BDFE6E1314082E35AFB56B42DA"
+      ],
+      "sha256_literals_count": 12
+    },
+    {
+      "anchors": [],
+      "forbidden_outcome_field_names_present_in_text": [],
+      "native_callsite_path_references": [
+        "tests/research/test_rd27_async_memory_shadow_replay.py",
+        "tests/research/test_rd27_lifecycle_replay.py",
+        "tests/research/test_rd27_observable_memory_adapter.py",
+        "tests/research/test_rd27_observable_memory_predicate.py"
+      ],
+      "path": "governance/memory_pred_v1.json",
+      "path_literals": [
+        "governance/memory_pred_v1.json",
+        "governance/observable_v1.json",
+        "src/spotbot/research/rd27_async_memory_shadow.py",
+        "src/spotbot/research/rd27_lifecycle_replay.py",
+        "src/spotbot/research/rd27_observable_memory_predicate.py"
+      ],
+      "references_native_replay": false,
+      "references_shadow_replay": false,
+      "role_matches": {
+        "ADMISSIONS_BINDING": [
+          "\\badmission",
+          "\\badmissions\\b"
+        ],
+        "HISTORICAL_IDENTITY_BRIDGE": [
+          "\\bposition_id\\b",
+          "\\bpair\\b"
+        ],
+        "HISTORICAL_NATIVE_PRODUCER_BINDING": [],
+        "HOURLY_INPUT_BINDING": [
+          "\\bhourly\\b"
+        ],
+        "RD27_POLICY_CONFIG_BINDING": [
+          "rd27",
+          "policy"
+        ],
+        "STATE_FRAME_BINDING": []
+      },
+      "sha256": "2296C6F7EE2AC8CA79A47FD2287A3E6350D74710EB1CB86FC4F3D927E3BE4974",
+      "sha256_literals": [
+        "03998BC98E222D5C728E3A34275508648643149FFEE58755FC1E30211966871A",
+        "3764882FE31DC72A757057E4AD54794D8AB5F0FF6278036DF790DEB05EBB3A12",
+        "3D0B90AC4BD2766FE1DCA6F58AC3A6BCD307196F25C1C75DD7A8B9D83D32F3BB",
+        "3FB4AAC711B9F8D52F68457D99B0434BCECB32B773155BA8BB1A4FFB85BE0219",
+        "5D952A97B984732B2227784D927C8C7A5B7843BD2897D98AA90710BF2E4FB4B2",
+        "5DDB0F0E89B428A62C37F7AD7C9FAB3663286F0A2CEFAAB06DDA1FC6B2278177",
+        "5F25948CB5AF5B34E39033FA0A149B74567106E583097B1C11090668A0565CAE",
+        "783196DFC1A8A5F2E4843253BF1218AE90F85CD995A8AE8EECC206D8236A26DD",
+        "7E17D7D83B195AEAC7995782DBD45C25E7B0F0FEA26CE548899BCBFADF15986B",
+        "BE07010AFB94CCD17870D4598203E4B707EF33B950F0B195D6B2D311D5B35FAA"
+      ],
+      "sha256_literals_count": 10
+    },
+    {
+      "anchors": [],
+      "forbidden_outcome_field_names_present_in_text": [],
+      "native_callsite_path_references": [
+        "tests/research/test_rd27_async_memory_shadow_replay.py",
+        "tests/research/test_rd27_lifecycle_replay.py",
+        "tests/research/test_rd27_observable_memory_adapter.py"
+      ],
+      "path": "governance/observable_v1.json",
+      "path_literals": [
+        "data/research/rd04/kucoin-spot-usdt-adjudicated-v1/ams-rd04-d0c-kucoin-adjudicated-4h.parquet",
+        "governance/async_replay_v1.json",
+        "governance/observable_v1.json",
+        "src/spotbot/research/rd27_adaptive_lifecycle.py",
+        "src/spotbot/research/rd27_async_memory_shadow.py",
+        "src/spotbot/research/rd27_lifecycle_replay.py",
+        "src/spotbot/research/rd27_observable_memory_adapter.py"
+      ],
+      "references_native_replay": false,
+      "references_shadow_replay": false,
+      "role_matches": {
+        "ADMISSIONS_BINDING": [
+          "\\badmission"
+        ],
+        "HISTORICAL_IDENTITY_BRIDGE": [
+          "\\bposition_id\\b",
+          "\\bpair\\b"
+        ],
+        "HISTORICAL_NATIVE_PRODUCER_BINDING": [],
+        "HOURLY_INPUT_BINDING": [
+          "\\bhourly\\b"
+        ],
+        "RD27_POLICY_CONFIG_BINDING": [
+          "rd27",
+          "policy"
+        ],
+        "STATE_FRAME_BINDING": []
+      },
+      "sha256": "3D0B90AC4BD2766FE1DCA6F58AC3A6BCD307196F25C1C75DD7A8B9D83D32F3BB",
+      "sha256_literals": [
+        "1C72416F889137B68FF48008C5760E809D0A94A5647569BAB631E96904CEBD72",
+        "3FB4AAC711B9F8D52F68457D99B0434BCECB32B773155BA8BB1A4FFB85BE0219",
+        "5C2434F60F648002F0CF4A97BF01BDFC4EB2E3AC4AE309F6AA0AB1A0943AEDE0",
+        "6696C736BE8E70043989E8B060417B2E6380DDA54B1AAA7A4C23073D9C267A39",
+        "7E17D7D83B195AEAC7995782DBD45C25E7B0F0FEA26CE548899BCBFADF15986B",
+        "9D453FF37D7B2951D17E516C890DFB3D5E0B521B0CC9AF6E0BF398E56C2E203E",
+        "BE07010AFB94CCD17870D4598203E4B707EF33B950F0B195D6B2D311D5B35FAA",
+        "C3871577BCF196DC245E04D7FB3125332DC0964BD4D9B045FF1981E4D64A21DD",
+        "CD6234B31EF765BD7087DA5D2C3FDE9A9522D4D2A0E8AB614F6018283A3755B0",
+        "DC2EF11417414B33D30AA1B2C343014DF6F8EE865E497F9F71CE9F154FE76F7D"
+      ],
+      "sha256_literals_count": 10
+    },
+    {
+      "anchors": [],
+      "forbidden_outcome_field_names_present_in_text": [
+        "exit_price",
+        "exit_reason"
+      ],
+      "native_callsite_path_references": [
+        "src/spotbot/research/eaa_same_pair_secondary_shadow.py",
+        "tests/research/test_rd27_lifecycle_replay.py"
+      ],
+      "path": "governance/phase_c.json",
+      "path_literals": [
+        "governance/phase_a.json",
+        "governance/phase_b.json",
+        "governance/phase_c.json",
+        "src/spotbot/core/engine.py",
+        "src/spotbot/core/models.py",
+        "src/spotbot/core/portfolio.py",
+        "src/spotbot/research/eaa_same_pair_secondary_shadow.py",
+        "src/spotbot/research/rd27_adaptive_lifecycle.py",
+        "src/spotbot/research/rd27_lifecycle_replay.py",
+        "src/spotbot/research/rd28_evidence_gated_lifecycle.py"
+      ],
+      "references_native_replay": true,
+      "references_shadow_replay": false,
+      "role_matches": {
+        "ADMISSIONS_BINDING": [],
+        "HISTORICAL_IDENTITY_BRIDGE": [
+          "\\bposition_id\\b",
+          "\\bpair\\b"
+        ],
+        "HISTORICAL_NATIVE_PRODUCER_BINDING": [
+          "replay_lifecycle_policy"
+        ],
+        "HOURLY_INPUT_BINDING": [],
+        "RD27_POLICY_CONFIG_BINDING": [
+          "rd27",
+          "policy"
+        ],
+        "STATE_FRAME_BINDING": []
+      },
+      "sha256": "22456D634ABB67B64B2BDF69024FEB18A6658D2DE3AE709AA5AEDCBF31AAB341",
+      "sha256_literals": [
+        "1096CD43E814A08E8F6BB969CD2722FA883C04D54C9462AFD461489AE3E76390",
+        "174941DD5BBFA5677672D08DD1ED19AED60B4412C745356E6454CE89AE5E4909",
+        "1B7B348F420D64543098BB7789E7F8969DA9F5DC29FB968FB05EE5008F8667FF",
+        "289C0940236EF9EE4AA7A36FCB678102D6E0997EDAB92C4CF425BE83D2478A7B",
+        "5552FCCAED70F27D2EC033FDDD9394DC9E2792C8CB7E47B52D4CD4E41EA96D9C",
+        "82E2BF09E1A74A101580C625E0F71987484A9368F597FDD7515E4B31F4E0B425",
+        "9217A85865CCA590605C74CC96E9FB00D9E215D4493E2499E5CA9A75C6A6B0F1",
+        "9C8079887F7265D20F22D1ABC043A6FF53B490A7241D291700E0730CFF91F72C",
+        "CF3E1591120C158DE1EE2582A99230A03C361F3ECA597C4A409B715F16038BE0",
+        "CF5FC2CE83DB12AEC3A9F4D43039E628898F4CD70537E571A0367DE62DF1B510",
+        "EE205CDA74D70A530734BBFB4843C2DBFC8BF950122254AA2ACEB8766A90F9AD"
+      ],
+      "sha256_literals_count": 11
+    },
+    {
+      "anchors": [],
+      "forbidden_outcome_field_names_present_in_text": [
+        "exit_reason",
+        "exit_time",
+        "holding_hours"
+      ],
+      "native_callsite_path_references": [
+        "tests/research/test_rd27_async_exit_candidate_shadow.py",
+        "tests/research/test_rd27_async_memory_shadow_replay.py",
+        "tests/research/test_rd27_lifecycle_replay.py",
+        "tests/research/test_rd27_observable_later_trigger_predicate.py",
+        "tests/research/test_rd27_observable_memory_adapter.py",
+        "tests/research/test_rd27_observable_memory_predicate.py"
+      ],
+      "path": "governance/spec_proto_rpt.json",
+      "path_literals": [
+        "governance/exit_cand_v1.json",
+        "governance/spec_proto_rpt.json",
+        "governance/spec_proto_v1.json",
+        "reports/research/ams-rd04-d5c1-labelled-pit-control-trades-v1.csv",
+        "scripts/research/run_rd04_d5c1_idiosyncratic_tail_label_join.py",
+        "src/spotbot/research/rd04_idiosyncratic_tail_label_join.py",
+        "src/spotbot/research/rd27_exit_candidate_specificity_protocol.py"
+      ],
+      "references_native_replay": false,
+      "references_shadow_replay": false,
+      "role_matches": {
+        "ADMISSIONS_BINDING": [
+          "\\badmission"
+        ],
+        "HISTORICAL_IDENTITY_BRIDGE": [
+          "\\btrade_id\\b"
+        ],
+        "HISTORICAL_NATIVE_PRODUCER_BINDING": [],
+        "HOURLY_INPUT_BINDING": [],
+        "RD27_POLICY_CONFIG_BINDING": [
+          "rd27",
+          "policy"
+        ],
+        "STATE_FRAME_BINDING": []
+      },
+      "sha256": "7AD075E50CB22FF3769CC6F3BA212E9AC0520830108275BBA5C8D58B4F46274A",
+      "sha256_literals": [
+        "2AE48ED1D287B4D36C2A85A7358C260C2A9373EE16715AC304CAE348B941CDE0",
+        "3574E70F11F80C7F97FF9CD0DFE76A82172E76B9413A5D0A6FB42F7B8B5601C9",
+        "3FB4AAC711B9F8D52F68457D99B0434BCECB32B773155BA8BB1A4FFB85BE0219",
+        "45F98E6F8A4B99387FA728A79BCD34D9830FB5C762385E7FBC4ABCF5F8382D56",
+        "5F25948CB5AF5B34E39033FA0A149B74567106E583097B1C11090668A0565CAE",
+        "6646B460C136C6E602A462E8F3D3798B0DBB66D37FF1F6FB201581E2BF991B50",
+        "782CEA4D8037E6D2C72FBE7B37FF69F10E66DC728396E6B4B58C28559BEEB225",
+        "7A9BF47A15602A53EC6593BB6414B6F2D839F2ED20199F89F020D52CA90E1021",
+        "A2C0B25B0053CEEF1AA5C3AC5DB1442C1DCF333845F7345FB1F80A9AD3E1290E",
+        "AD64E2A22ADAB15D14FC38051C9C2053221A29FF662950A2BA0BFE69AF76DC2B",
+        "B0F138D7ED4A60EB36F742767B9B514DDE6B60BC88375A1C2ED823ADBDF4DC4B",
+        "BE07010AFB94CCD17870D4598203E4B707EF33B950F0B195D6B2D311D5B35FAA",
+        "D7AF674EEEEDE4223A1AFF2ED5734AB5B4A9CC8D1D0327325CE287393AC18B04",
+        "E6084BEBE118C0CFDEB403B5CF5F641814F1E7BDFE6E1314082E35AFB56B42DA",
+        "F0D1362EA451D2EDC61F4E540142ADC6BD86C1584310630BA43A01E0054AC312",
+        "F481BF4977FDA67613ACBE6C99938EA0D5BF2345CCE21DEC65CB5C031E1C1E8B"
+      ],
+      "sha256_literals_count": 16
+    },
+    {
+      "anchors": [],
+      "forbidden_outcome_field_names_present_in_text": [],
+      "native_callsite_path_references": [
+        "tests/research/test_rd27_async_memory_shadow_replay.py",
+        "tests/research/test_rd27_lifecycle_replay.py",
+        "tests/research/test_rd27_observable_later_trigger_predicate.py",
+        "tests/research/test_rd27_observable_memory_adapter.py",
+        "tests/research/test_rd27_observable_memory_predicate.py"
+      ],
+      "path": "governance/trigger_pred_v1.json",
+      "path_literals": [
+        "governance/memory_pred_v1.json",
+        "governance/trigger_pred_v1.json",
+        "src/spotbot/research/rd27_adaptive_lifecycle.py",
+        "src/spotbot/research/rd27_async_memory_shadow.py",
+        "src/spotbot/research/rd27_lifecycle_replay.py",
+        "src/spotbot/research/rd27_observable_later_trigger_predicate.py"
+      ],
+      "references_native_replay": false,
+      "references_shadow_replay": false,
+      "role_matches": {
+        "ADMISSIONS_BINDING": [
+          "\\badmission",
+          "\\badmissions\\b"
+        ],
+        "HISTORICAL_IDENTITY_BRIDGE": [
+          "\\bposition_id\\b",
+          "\\bpair\\b"
+        ],
+        "HISTORICAL_NATIVE_PRODUCER_BINDING": [],
+        "HOURLY_INPUT_BINDING": [],
+        "RD27_POLICY_CONFIG_BINDING": [
+          "rd27",
+          "policy"
+        ],
+        "STATE_FRAME_BINDING": []
+      },
+      "sha256": "3D86A563A48F3ED132F3640A2A52E6A55AE09DD17FCED824FBA328CAA8B75EFE",
+      "sha256_literals": [
+        "2296C6F7EE2AC8CA79A47FD2287A3E6350D74710EB1CB86FC4F3D927E3BE4974",
+        "2A14B73100772D27455066CD0ECEE4BDA9453EB5903967A6F5A9681514B05A51",
+        "3FB001EA5D54DC9CA6EF531A0830ACE9AA8649A8AD2ADECE2F32BCCCF4904899",
+        "3FB4AAC711B9F8D52F68457D99B0434BCECB32B773155BA8BB1A4FFB85BE0219",
+        "5F25948CB5AF5B34E39033FA0A149B74567106E583097B1C11090668A0565CAE",
+        "639529E601D2D394935ADD28231C624D1FAA309A15CCBD060FC6281E4743B6EC",
+        "7E17D7D83B195AEAC7995782DBD45C25E7B0F0FEA26CE548899BCBFADF15986B",
+        "846BBAD896CA71706BBE0D7C46B1467C63DFEB98F6D2C3FF6B85B0953D5520D5",
+        "A2C0B25B0053CEEF1AA5C3AC5DB1442C1DCF333845F7345FB1F80A9AD3E1290E",
+        "BE07010AFB94CCD17870D4598203E4B707EF33B950F0B195D6B2D311D5B35FAA",
+        "D88EECA01CA142316CE4607738EF3419FDB795049041CEC18AEEA65C004F11D1",
+        "E6084BEBE118C0CFDEB403B5CF5F641814F1E7BDFE6E1314082E35AFB56B42DA"
+      ],
+      "sha256_literals_count": 12
+    },
+    {
+      "anchors": [],
+      "forbidden_outcome_field_names_present_in_text": [],
+      "native_callsite_path_references": [
+        "tests/research/test_rd27_later_trigger_v2_native_hook.py"
+      ],
+      "path": "governance/trigger_v2_native_hook_recovery_v3_rpt.json",
+      "path_literals": [
+        "governance/trigger_v2_native_hook_recovery_v3.json",
+        "src/spotbot/research/rd27_later_trigger_v2_native_hook.py",
+        "src/spotbot/research/rd27_lifecycle_replay.py"
+      ],
+      "references_native_replay": false,
+      "references_shadow_replay": false,
+      "role_matches": {
+        "ADMISSIONS_BINDING": [],
+        "HISTORICAL_IDENTITY_BRIDGE": [],
+        "HISTORICAL_NATIVE_PRODUCER_BINDING": [],
+        "HOURLY_INPUT_BINDING": [],
+        "RD27_POLICY_CONFIG_BINDING": [
+          "rd27"
+        ],
+        "STATE_FRAME_BINDING": []
+      },
+      "sha256": "32E8C4334A996B04463B263D637E8C8CAF5B3183F5C52118FD57AC2F03B31496",
+      "sha256_literals": [
+        "388D53B5CF5B8E91E5CDC4D0E85E226FF58749B2BD89CC01802D73313C512396",
+        "3CC049B5E38851A13B73CC7C0B36128EF906BE6A9AAFB97CCED85C36CCD9CE94",
+        "AC8E88D9C49F811190F7158CE75159C0E546ED6C8FAB51A2E5F011740C6BD9DB",
+        "C4EF32CA2DD97A598CB0850AAC8B560CA2474C6A6EEF219113231B445543F876",
+        "E149C5C354B08801920CA87F61F397C9C7969EA7E6BE7C081AFF865CF9168EFD",
+        "E3944A4655DDDF21C394FE1DB541F2645F529C00BD8390B22D652BD8EF5BBF83",
+        "EBC8AEC479D3EF64512C7C52ACD8CC412376FE624E61E9B7F08EFAEBE216CFE8"
+      ],
+      "sha256_literals_count": 7
+    },
+    {
+      "anchors": [
+        "trigger_v2_shadow_parity_v1"
+      ],
+      "forbidden_outcome_field_names_present_in_text": [],
+      "native_callsite_path_references": [],
+      "path": "governance/trigger_v2_post_hook_behavioral_adj_v1_rpt.json",
+      "path_literals": [
+        "governance/trigger_v2_native_hook_recovery_v3.json",
+        "governance/trigger_v2_post_hook_behavioral_adj_v1.json",
+        "governance/trigger_v2_shadow_parity_v1.json"
+      ],
+      "references_native_replay": false,
+      "references_shadow_replay": false,
+      "role_matches": {
+        "ADMISSIONS_BINDING": [],
+        "HISTORICAL_IDENTITY_BRIDGE": [],
+        "HISTORICAL_NATIVE_PRODUCER_BINDING": [],
+        "HOURLY_INPUT_BINDING": [],
+        "RD27_POLICY_CONFIG_BINDING": [
+          "rd27"
+        ],
+        "STATE_FRAME_BINDING": []
+      },
+      "sha256": "75C32E7226262C5414D1041260705BD646726179357F232D0E19A983B83104D4",
+      "sha256_literals": [
+        "19261DB603716B559210E407B12F6011663F51853C6248E944D96E504FD44D5C",
+        "32E8C4334A996B04463B263D637E8C8CAF5B3183F5C52118FD57AC2F03B31496",
+        "3CC049B5E38851A13B73CC7C0B36128EF906BE6A9AAFB97CCED85C36CCD9CE94",
+        "47618557A5B55C1B3BE8FE57173B5B3C02BC89C271396C19A94B94979D54650C",
+        "9572B41908809B26D8846484147C85FD3037CABFC6E8A8BAE47DAF3F1FF001D7",
+        "AC8E88D9C49F811190F7158CE75159C0E546ED6C8FAB51A2E5F011740C6BD9DB",
+        "E149C5C354B08801920CA87F61F397C9C7969EA7E6BE7C081AFF865CF9168EFD",
+        "E3944A4655DDDF21C394FE1DB541F2645F529C00BD8390B22D652BD8EF5BBF83",
+        "EBC8AEC479D3EF64512C7C52ACD8CC412376FE624E61E9B7F08EFAEBE216CFE8"
+      ],
+      "sha256_literals_count": 9
+    },
+    {
+      "anchors": [
+        "trigger_v2_shadow_parity_v1"
+      ],
+      "forbidden_outcome_field_names_present_in_text": [],
+      "native_callsite_path_references": [],
+      "path": "governance/trigger_v2_shadow_parity_v1_rpt.json",
+      "path_literals": [
+        "governance/trigger_v2_shadow_parity_v1.json",
+        "governance/trigger_v2_shadow_parity_v1_rows.csv"
+      ],
+      "references_native_replay": false,
+      "references_shadow_replay": false,
+      "role_matches": {
+        "ADMISSIONS_BINDING": [],
+        "HISTORICAL_IDENTITY_BRIDGE": [],
+        "HISTORICAL_NATIVE_PRODUCER_BINDING": [],
+        "HOURLY_INPUT_BINDING": [],
+        "RD27_POLICY_CONFIG_BINDING": [],
+        "STATE_FRAME_BINDING": []
+      },
+      "sha256": "64D9B33E2A44999799DC45BCEC250D05373C670781240740869AF80AD83172BD",
+      "sha256_literals": [
+        "1C72416F889137B68FF48008C5760E809D0A94A5647569BAB631E96904CEBD72",
+        "47618557A5B55C1B3BE8FE57173B5B3C02BC89C271396C19A94B94979D54650C",
+        "621E4506BEEABBF87EA183DDB19CAB072D60EF1ED85F6651A5581DF7FD2E4C11",
+        "782CEA4D8037E6D2C72FBE7B37FF69F10E66DC728396E6B4B58C28559BEEB225",
+        "9572B41908809B26D8846484147C85FD3037CABFC6E8A8BAE47DAF3F1FF001D7",
+        "AC8E88D9C49F811190F7158CE75159C0E546ED6C8FAB51A2E5F011740C6BD9DB"
+      ],
+      "sha256_literals_count": 6
+    },
+    {
+      "anchors": [
+        "trigger_v2_shadow_parity_v1"
+      ],
+      "forbidden_outcome_field_names_present_in_text": [],
+      "native_callsite_path_references": [],
+      "path": "governance/trigger_v2_shadow_parity_v1_rpt_gov.json",
+      "path_literals": [
+        "governance/trigger_v2_shadow_parity_v1_rpt.json"
+      ],
+      "references_native_replay": false,
+      "references_shadow_replay": false,
+      "role_matches": {
+        "ADMISSIONS_BINDING": [],
+        "HISTORICAL_IDENTITY_BRIDGE": [],
+        "HISTORICAL_NATIVE_PRODUCER_BINDING": [],
+        "HOURLY_INPUT_BINDING": [],
+        "RD27_POLICY_CONFIG_BINDING": [],
+        "STATE_FRAME_BINDING": []
+      },
+      "sha256": "13AE3BFE1BDB1816DC29CAD5DD713439151D9ECE535535E8017C9B87855B1AC1",
+      "sha256_literals": [
+        "64D9B33E2A44999799DC45BCEC250D05373C670781240740869AF80AD83172BD"
+      ],
+      "sha256_literals_count": 1
+    },
+    {
+      "anchors": [],
+      "forbidden_outcome_field_names_present_in_text": [],
+      "native_callsite_path_references": [],
+      "path": "governance/v2_a2_boundary.json",
+      "path_literals": [
+        "governance/AKAH_BOT_V2_PHASE_A_COHORT_COVERAGE_AUDIT_PROTOCOL_V1.json",
+        "governance/spec_exec_v1_input.json",
+        "governance/trigger_v2_native_hook_recovery_v3.json",
+        "governance/v2_a2_reconcile.json",
+        "src/spotbot/research/rd27_later_trigger_v2_native_hook.py",
+        "src/spotbot/research/rd27_lifecycle_replay.py"
+      ],
+      "references_native_replay": true,
+      "references_shadow_replay": false,
+      "role_matches": {
+        "ADMISSIONS_BINDING": [],
+        "HISTORICAL_IDENTITY_BRIDGE": [],
+        "HISTORICAL_NATIVE_PRODUCER_BINDING": [
+          "replay_lifecycle_policy"
+        ],
+        "HOURLY_INPUT_BINDING": [],
+        "RD27_POLICY_CONFIG_BINDING": [
+          "rd27",
+          "policy",
+          "MAX_HOLD_HOURS"
+        ],
+        "STATE_FRAME_BINDING": []
+      },
+      "sha256": "7E292FEF01930EFDA68D58883296C56EA3D995B29E1A9849894B8EB489196554",
+      "sha256_literals": [
+        "6F6A90B00C3F6B61A4D24D7A6F94A11703789AA4E8D82F9CD7A351D6CE5EF8E2",
+        "E149C5C354B08801920CA87F61F397C9C7969EA7E6BE7C081AFF865CF9168EFD",
+        "E3944A4655DDDF21C394FE1DB541F2645F529C00BD8390B22D652BD8EF5BBF83",
+        "EBC8AEC479D3EF64512C7C52ACD8CC412376FE624E61E9B7F08EFAEBE216CFE8"
+      ],
+      "sha256_literals_count": 4
+    },
+    {
+      "anchors": [
+        "trigger_v2_shadow_parity_v1"
+      ],
+      "forbidden_outcome_field_names_present_in_text": [],
+      "native_callsite_path_references": [],
+      "path": "governance/v2_a2_exec.py",
+      "path_literals": [
+        "data/research/rd04/kucoin-spot-usdt-adjudicated-v1/",
+        "governance/AKAH_BOT_EXIT_BRAIN_RESEARCH_DIRECTION_V1.json",
+        "governance/AKAH_BOT_V2_COHORT_OBSERVATION_REFERENCE_DIAGNOSTIC_PROTOCOL_V1.json",
+        "governance/AKAH_BOT_V2_PHASE_A_COHORT_COVERAGE_AUDIT_PROTOCOL_V1.json",
+        "governance/AKAH_BOT_V2_PHASE_B_OBSERVATION_OPPORTUNITY_PROTOCOL_V1.json",
+        "governance/AKAH_BOT_V2_PHASE_C_TIMING_REFERENCE_DEPENDENCE_PROTOCOL_V1.json",
+        "governance/spec_exec_v1_input.json",
+        "governance/spec_exec_v1_lifecycles.csv",
+        "governance/spec_exec_v1_roster.csv",
+        "governance/spec_exec_v1_rpt.json",
+        "governance/trigger_v2_shadow_parity_v1_rows.csv",
+        "governance/trigger_v2_shadow_parity_v1_rpt.json",
+        "governance/v2_a2",
+        "reports/research/ams-rd04-d5c1-labelled-pit-control-trades-v1.csv"
+      ],
+      "references_native_replay": false,
+      "references_shadow_replay": true,
+      "role_matches": {
+        "ADMISSIONS_BINDING": [
+          "\\badmission"
+        ],
+        "HISTORICAL_IDENTITY_BRIDGE": [
+          "\\btrade_id\\b",
+          "\\bposition_id\\b"
+        ],
+        "HISTORICAL_NATIVE_PRODUCER_BINDING": [],
+        "HOURLY_INPUT_BINDING": [],
+        "RD27_POLICY_CONFIG_BINDING": [
+          "rd27",
+          "MAX_HOLD_HOURS"
+        ],
+        "STATE_FRAME_BINDING": []
+      },
+      "sha256": "2024D8592843FAD8B7EE70E2D8EBB35994784E25076BECBE4D036E1B457DE83B",
+      "sha256_literals": [
+        "1C72416F889137B68FF48008C5760E809D0A94A5647569BAB631E96904CEBD72",
+        "6A64B7600261CC105064F250A3D5E6E794A90432C08C9218FC6A9A234B25BFD7",
+        "782CEA4D8037E6D2C72FBE7B37FF69F10E66DC728396E6B4B58C28559BEEB225",
+        "7CC2058A75C5B9F959E1176DD7B47E066C45A6BDF4B19278F339ED6BD97E20A5",
+        "B6BA4548C7BD6E955682FAA00C58784317ED0F8CAD5AB3B486FCB6142C837C1A",
+        "CF713ABE14F6B4085B95BEFE06A4508BF71BFD300BF6CEAC64ACDFEE1F7CACD4",
+        "FC805957ECC389EACA3DDD8F9F640F4960AB8DA027A6C2C5FC275F5619DB3DD4"
+      ],
+      "sha256_literals_count": 7
+    },
+    {
+      "anchors": [
+        "trigger_v2_shadow_parity_v1"
+      ],
+      "forbidden_outcome_field_names_present_in_text": [],
+      "native_callsite_path_references": [],
+      "path": "governance/v2_a2_rpt.json",
+      "path_literals": [
+        "data/research/rd04/kucoin-spot-usdt-adjudicated-v1/ams-rd04-d0c-kucoin-adjudicated-4h.parquet",
+        "governance/AKAH_BOT_EXIT_BRAIN_RESEARCH_DIRECTION_V1.json",
+        "governance/AKAH_BOT_V2_COHORT_OBSERVATION_REFERENCE_DIAGNOSTIC_PROTOCOL_V1.json",
+        "governance/AKAH_BOT_V2_PHASE_A_COHORT_COVERAGE_AUDIT_PROTOCOL_V1.json",
+        "governance/AKAH_BOT_V2_PHASE_B_OBSERVATION_OPPORTUNITY_PROTOCOL_V1.json",
+        "governance/AKAH_BOT_V2_PHASE_C_TIMING_REFERENCE_DEPENDENCE_PROTOCOL_V1.json",
+        "governance/spec_exec_v1_input.json",
+        "governance/spec_exec_v1_lifecycles.csv",
+        "governance/spec_exec_v1_result.json",
+        "governance/spec_exec_v1_roster.csv",
+        "governance/spec_exec_v1_rpt.json",
+        "governance/trigger_v2_shadow_parity_v1.json",
+        "governance/trigger_v2_shadow_parity_v1_rows.csv",
+        "governance/trigger_v2_shadow_parity_v1_rpt.json",
+        "governance/v2_a2_audit.csv",
+        "governance/v2_a2_boundary.json",
+        "governance/v2_a2_coverage.csv",
+        "governance/v2_a2_events.csv",
+        "governance/v2_a2_exec.py",
+        "governance/v2_a2_reconcile.json",
+        "governance/v2_a2_run.log",
+        "governance/v2_a2_schema.json",
+        "reports/research/ams-rd04-d5c1-labelled-pit-control-trades-v1.csv"
+      ],
+      "references_native_replay": false,
+      "references_shadow_replay": false,
+      "role_matches": {
+        "ADMISSIONS_BINDING": [],
+        "HISTORICAL_IDENTITY_BRIDGE": [],
+        "HISTORICAL_NATIVE_PRODUCER_BINDING": [],
+        "HOURLY_INPUT_BINDING": [],
+        "RD27_POLICY_CONFIG_BINDING": [
+          "rd27"
+        ],
+        "STATE_FRAME_BINDING": []
+      },
+      "sha256": "DB96508649946F0BE1CA22453296CE132452ACEE522BD130C4C4DBB1515E955B",
+      "sha256_literals": [
+        "0506256122DBDD193FF441011B3B50543DA77BF06E222DBD3FF8AEB7A66F64AF",
+        "1C72416F889137B68FF48008C5760E809D0A94A5647569BAB631E96904CEBD72",
+        "2024D8592843FAD8B7EE70E2D8EBB35994784E25076BECBE4D036E1B457DE83B",
+        "2518A9E9FE46CE8D2EDA97D594AAF0AE1EAB6ABF86B82206ED80C7E92A9F26F3",
+        "47618557A5B55C1B3BE8FE57173B5B3C02BC89C271396C19A94B94979D54650C",
+        "49EC61395988544E54A424120B3D5CC4161112A56D34A55911DC63041B51A7BC",
+        "4B1B594A3F26E5465F42A32997AFF44E055D57A794B350D55778E43DEB34C12B",
+        "5812ABDA91C55F6082DA80F89149154F9B5350464CBFAD11D9E521F06DE2F202",
+        "611AB5185EF1425CA0101D12611B30938F830B9C5E975C1D6ABF68B629F43760",
+        "64D9B33E2A44999799DC45BCEC250D05373C670781240740869AF80AD83172BD",
+        "6A64B7600261CC105064F250A3D5E6E794A90432C08C9218FC6A9A234B25BFD7",
+        "6F6A90B00C3F6B61A4D24D7A6F94A11703789AA4E8D82F9CD7A351D6CE5EF8E2",
+        "7752FD8C456DA58148BF2A0ADE30D03E856C61785431AAFE1AE8D05ACAC03877",
+        "782CEA4D8037E6D2C72FBE7B37FF69F10E66DC728396E6B4B58C28559BEEB225",
+        "7CC2058A75C5B9F959E1176DD7B47E066C45A6BDF4B19278F339ED6BD97E20A5",
+        "7E292FEF01930EFDA68D58883296C56EA3D995B29E1A9849894B8EB489196554",
+        "7FC6DEE1A0D4C224E01A8FDF575EAC024C73E28D565675F47CDD02ADFC47D22C",
+        "9572B41908809B26D8846484147C85FD3037CABFC6E8A8BAE47DAF3F1FF001D7",
+        "96D9005054E1BFA5F4C15F708B5628D0B7CF2316FA26B64ABC585EE99FCADFBA",
+        "9C1E78F3ACAA2B5283828B6F672151083B0724E474550340B04C34799BFC3BA3",
+        "B6BA4548C7BD6E955682FAA00C58784317ED0F8CAD5AB3B486FCB6142C837C1A",
+        "CF713ABE14F6B4085B95BEFE06A4508BF71BFD300BF6CEAC64ACDFEE1F7CACD4",
+        "D7E12EBE33599F6F42030DFFC52FEA677B3990B8FB16B5C017915ADF30B502CF",
+        "FC805957ECC389EACA3DDD8F9F640F4960AB8DA027A6C2C5FC275F5619DB3DD4"
+      ],
+      "sha256_literals_count": 24
+    },
+    {
+      "anchors": [
+        "AKAH_BOT_RD27_NATIVE_TERMINAL_SOURCE_AUTHORITY_V1"
+      ],
+      "forbidden_outcome_field_names_present_in_text": [],
+      "native_callsite_path_references": [
+        "tests/research/test_rd27_native_terminal_source_authority.py"
+      ],
+      "path": "governance/v2_ns2_rpt.json",
+      "path_literals": [
+        "governance/AKAH_BOT_RD27_NATIVE_TERMINAL_SOURCE_AUTHORITY_V1.json",
+        "governance/v2_phase_a_native_terminal_source_authority_recovery_v1/native_hook_close_contract_analysis.json"
+      ],
+      "references_native_replay": false,
+      "references_shadow_replay": false,
+      "role_matches": {
+        "ADMISSIONS_BINDING": [],
+        "HISTORICAL_IDENTITY_BRIDGE": [
+          "\\bpair\\b"
+        ],
+        "HISTORICAL_NATIVE_PRODUCER_BINDING": [],
+        "HOURLY_INPUT_BINDING": [],
+        "RD27_POLICY_CONFIG_BINDING": [
+          "rd27"
+        ],
+        "STATE_FRAME_BINDING": []
+      },
+      "sha256": "6CBD06962232B6E46780474F0D991A26D0EB38DFAE0AE737B31F6E4844478BDF",
+      "sha256_literals": [
+        "2EDCCD417894164351FD76C32C64F2A28FD6D7E5BE280F0B6D078FD30EA1E066",
+        "8F082A7B033D30D74688AD79B373CC9C685562653D1BDCF2C5ADCDFB83767B45",
+        "A2C0B25B0053CEEF1AA5C3AC5DB1442C1DCF333845F7345FB1F80A9AD3E1290E",
+        "A7430573E2D55362CC7E85C9DB606D048734DFDA8584240811FEE1B876BAB31F",
+        "E149C5C354B08801920CA87F61F397C9C7969EA7E6BE7C081AFF865CF9168EFD",
+        "E3944A4655DDDF21C394FE1DB541F2645F529C00BD8390B22D652BD8EF5BBF83"
+      ],
+      "sha256_literals_count": 6
+    },
+    {
+      "anchors": [
+        "trigger_v2_shadow_parity_v1",
+        "AKAH_BOT_RD27_NATIVE_TERMINAL_SOURCE_AUTHORITY_V1"
+      ],
+      "forbidden_outcome_field_names_present_in_text": [
+        "exit_time"
+      ],
+      "native_callsite_path_references": [],
+      "path": "governance/v2_ntl_input_gate.json",
+      "path_literals": [
+        "data/research/rd04/kucoin-spot-usdt-adjudicated-v1/ams-rd04-d0c-kucoin-adjudicated-4h.parquet",
+        "governance/AKAH_BOT_RD27_NATIVE_TERMINAL_SOURCE_AUTHORITY_V1.json",
+        "governance/spec_exec_v1_input.json",
+        "governance/spec_exec_v1_lifecycles.csv",
+        "governance/spec_exec_v1_roster.csv",
+        "governance/trigger_redesign_exec_v1_rows.csv",
+        "governance/trigger_v2_shadow_parity_v1.json",
+        "governance/trigger_v2_shadow_parity_v1_rows.csv",
+        "governance/trigger_v2_shadow_parity_v1_rpt.json",
+        "reports/research/ams-rd04-d5c1-labelled-pit-control-trades-v1.csv",
+        "src/spotbot/research/rd27_later_trigger_v2_shadow_replay.py"
+      ],
+      "references_native_replay": true,
+      "references_shadow_replay": true,
+      "role_matches": {
+        "ADMISSIONS_BINDING": [
+          "\\badmission"
+        ],
+        "HISTORICAL_IDENTITY_BRIDGE": [
+          "\\btrade_id\\b",
+          "\\bposition_id\\b"
+        ],
+        "HISTORICAL_NATIVE_PRODUCER_BINDING": [
+          "replay_lifecycle_policy"
+        ],
+        "HOURLY_INPUT_BINDING": [
+          "\\bhourly\\b"
+        ],
+        "RD27_POLICY_CONFIG_BINDING": [
+          "rd27",
+          "policy",
+          "MAX_HOLD_HOURS"
+        ],
+        "STATE_FRAME_BINDING": [
+          "\\bstate_frame\\b"
+        ]
+      },
+      "sha256": "C709B42C309783FF451491DC5745983B2F88E0CD1AF80D27B262C09129535769",
+      "sha256_literals": [
+        "1C72416F889137B68FF48008C5760E809D0A94A5647569BAB631E96904CEBD72",
+        "30D02AB64632229009F640A8AAA7B35705D9AF461A3128780CD661D104E87B38",
+        "47618557A5B55C1B3BE8FE57173B5B3C02BC89C271396C19A94B94979D54650C",
+        "4B1B594A3F26E5465F42A32997AFF44E055D57A794B350D55778E43DEB34C12B",
+        "621E4506BEEABBF87EA183DDB19CAB072D60EF1ED85F6651A5581DF7FD2E4C11",
+        "64D9B33E2A44999799DC45BCEC250D05373C670781240740869AF80AD83172BD",
+        "6F6A90B00C3F6B61A4D24D7A6F94A11703789AA4E8D82F9CD7A351D6CE5EF8E2",
+        "782CEA4D8037E6D2C72FBE7B37FF69F10E66DC728396E6B4B58C28559BEEB225",
+        "9572B41908809B26D8846484147C85FD3037CABFC6E8A8BAE47DAF3F1FF001D7",
+        "A7430573E2D55362CC7E85C9DB606D048734DFDA8584240811FEE1B876BAB31F",
+        "AC8E88D9C49F811190F7158CE75159C0E546ED6C8FAB51A2E5F011740C6BD9DB",
+        "D7E12EBE33599F6F42030DFFC52FEA677B3990B8FB16B5C017915ADF30B502CF"
+      ],
+      "sha256_literals_count": 12
+    },
+    {
+      "anchors": [
+        "trigger_v2_shadow_parity_v1",
+        "v2_ntl_input_gate",
+        "AKAH_BOT_RD27_NATIVE_TERMINAL_SOURCE_AUTHORITY_V1"
+      ],
+      "forbidden_outcome_field_names_present_in_text": [],
+      "native_callsite_path_references": [],
+      "path": "governance/v2_ntl_rpt.json",
+      "path_literals": [
+        "governance/AKAH_BOT_RD27_NATIVE_TERMINAL_SOURCE_AUTHORITY_V1.json",
+        "governance/spec_exec_v1_input.json",
+        "governance/trigger_v2_shadow_parity_v1_rpt.json",
+        "governance/v2_ntl_input_gate.json",
+        "src/spotbot/research/rd27_later_trigger_v2_shadow_replay.py"
+      ],
+      "references_native_replay": true,
+      "references_shadow_replay": true,
+      "role_matches": {
+        "ADMISSIONS_BINDING": [
+          "\\badmission"
+        ],
+        "HISTORICAL_IDENTITY_BRIDGE": [],
+        "HISTORICAL_NATIVE_PRODUCER_BINDING": [
+          "replay_lifecycle_policy"
+        ],
+        "HOURLY_INPUT_BINDING": [
+          "\\bhourly\\b"
+        ],
+        "RD27_POLICY_CONFIG_BINDING": [
+          "rd27",
+          "policy"
+        ],
+        "STATE_FRAME_BINDING": []
+      },
+      "sha256": "464D042D45506765A9A20985D895DB342C5D2C2B90BCA3054C5E8E9F2695BE6F",
+      "sha256_literals": [
+        "64D9B33E2A44999799DC45BCEC250D05373C670781240740869AF80AD83172BD",
+        "6F6A90B00C3F6B61A4D24D7A6F94A11703789AA4E8D82F9CD7A351D6CE5EF8E2",
+        "A7430573E2D55362CC7E85C9DB606D048734DFDA8584240811FEE1B876BAB31F",
+        "AC8E88D9C49F811190F7158CE75159C0E546ED6C8FAB51A2E5F011740C6BD9DB",
+        "C709B42C309783FF451491DC5745983B2F88E0CD1AF80D27B262C09129535769"
+      ],
+      "sha256_literals_count": 5
+    },
+    {
+      "anchors": [],
+      "forbidden_outcome_field_names_present_in_text": [
+        "exit_price",
+        "exit_reason",
+        "mae",
+        "mfe"
+      ],
+      "native_callsite_path_references": [
+        "scripts/research/run_eaa_same_pair_secondary_shadow_parity.py",
+        "scripts/research/run_rd27_lifecycle_ablation.py",
+        "src/spotbot/research/a10_selective_protection_asymmetry.py",
+        "src/spotbot/research/a4r1_reversible_floor_replay.py",
+        "src/spotbot/research/eaa_same_pair_secondary_shadow.py",
+        "tests/research/test_a10_selective_protection_asymmetry.py",
+        "tests/research/test_a4r1_reversible_floor_replay.py",
+        "tests/research/test_rd27_async_exit_candidate_shadow.py",
+        "tests/research/test_rd27_async_memory_shadow_replay.py",
+        "tests/research/test_rd27_later_trigger_v2_native_hook.py",
+        "tests/research/test_rd27_lifecycle_replay.py",
+        "tests/research/test_rd27_observable_later_trigger_predicate.py",
+        "tests/research/test_rd27_observable_memory_adapter.py",
+        "tests/research/test_rd27_observable_memory_predicate.py"
+      ],
+      "path": "governance/v2_phase_a_native_terminal_source_authority_recovery_v1/native_terminal_test_evidence.json",
+      "path_literals": [
+        "scripts/research/ams_v3_f01_walk_forward_harness.py",
+        "scripts/research/run_eaa_same_pair_secondary_shadow_parity.py",
+        "scripts/research/run_rd27_lifecycle_ablation.py",
+        "scripts/research/run_rd28_evidence_gated_lifecycle.py",
+        "scripts/research/run_rd29_thesis_confidence_lifecycle.py",
+        "scripts/research/run_rd30_family_specialist_replacement_aware.py",
+        "scripts/research/run_rd31_market_regime_admission_governor.py",
+        "scripts/research/run_rd41_full_risk_set_censoring_reconciliation.py",
+        "scripts/research/run_rd42_context_support_census.py",
+        "src/spotbot/core/engine.py",
+        "src/spotbot/research/a10_selective_protection_asymmetry.py",
+        "src/spotbot/research/a4r1_reversible_floor_replay.py",
+        "src/spotbot/research/ams_md01_momentum.py",
+        "src/spotbot/research/ams_v5_native_engine.py",
+        "src/spotbot/research/eaa_same_pair_secondary_shadow.py",
+        "src/spotbot/research/rd04_structural_stop_overlay_engine.py",
+        "src/spotbot/research/rd04_structural_stop_source_transform.py",
+        "src/spotbot/research/rd19_p2c_r1_engine.py",
+        "src/spotbot/research/rd26_exit_architecture.py",
+        "src/spotbot/research/rd27_adaptive_lifecycle.py",
+        "src/spotbot/research/rd27_async_exit_candidate_shadow.py",
+        "src/spotbot/research/rd27_async_memory_shadow.py",
+        "src/spotbot/research/rd27_exit_candidate_specificity_protocol.py",
+        "src/spotbot/research/rd27_later_trigger_v2_native_hook.py",
+        "src/spotbot/research/rd27_later_trigger_v2_shadow_replay.py",
+        "src/spotbot/research/rd27_lifecycle_replay.py",
+        "src/spotbot/research/rd27_observable_later_trigger_predicate.py",
+        "src/spotbot/research/rd27_observable_later_trigger_v2.py",
+        "src/spotbot/research/rd27_observable_memory_predicate.py",
+        "src/spotbot/research/rd28_lifecycle_replay.py",
+        "src/spotbot/research/rd29_thesis_replay.py",
+        "src/spotbot/research/rd30_replacement_replay.py",
+        "src/spotbot/research/rd31_regime_governed_replay.py",
+        "src/spotbot/research/rd32_mb_signal_quality_replay.py",
+        "src/spotbot/research/rd33_temporal_mb_replay.py",
+        "src/spotbot/research/simulator.py"
+      ],
+      "references_native_replay": true,
+      "references_shadow_replay": false,
+      "role_matches": {
+        "ADMISSIONS_BINDING": [
+          "\\badmission"
+        ],
+        "HISTORICAL_IDENTITY_BRIDGE": [
+          "\\bposition_id\\b",
+          "\\bpair\\b"
+        ],
+        "HISTORICAL_NATIVE_PRODUCER_BINDING": [
+          "replay_lifecycle_policy"
+        ],
+        "HOURLY_INPUT_BINDING": [],
+        "RD27_POLICY_CONFIG_BINDING": [
+          "rd27",
+          "policy"
+        ],
+        "STATE_FRAME_BINDING": []
+      },
+      "sha256": "7DEF8CE5D33A510ADB42B92BAA43BA5F9FF44F7E1C0945952E5C96A63E9279CC",
+      "sha256_literals": [
+        "03998BC98E222D5C728E3A34275508648643149FFEE58755FC1E30211966871A",
+        "044D8F0CB8676D65AC522EC38C07BCD37F11E706BB43FCA63FC190B056DAD520",
+        "0AB0D9F3089474040EE147D15491CB885340AE5E2F52B83F10AE6FC013CA1FAD",
+        "1096CD43E814A08E8F6BB969CD2722FA883C04D54C9462AFD461489AE3E76390",
+        "1290748EA7E8A0343C1A15CEDFC1220AA423F04C11FDD558311B06AC7DA90359",
+        "161B7680A2098BBE97E4B9BE3A9BA7F0A918AAD04926CBA6F783CED7B97FE16E",
+        "169521BF5A684E10FE17000463FC7A816EF9A5917A5313AF5DD6509D0AA47606",
+        "17105BEA6B2CA3CFFB9CBA71D4DD7AAA6BE4235DE0767E11392E1FE7BEDD6349",
+        "1DF5706AE3D140C07684CBF378115A39B9D8629410BB4C33CCC17F87579E232D",
+        "289C0940236EF9EE4AA7A36FCB678102D6E0997EDAB92C4CF425BE83D2478A7B",
+        "2DB133BDD7E4ED8E7BB763842E9FD4D4CEEF4BD92027E195A92031399FA3FEAF",
+        "388D53B5CF5B8E91E5CDC4D0E85E226FF58749B2BD89CC01802D73313C512396",
+        "38AE63A9FFD9E5B5ED4DE6E16DF0288EBE208C549BE9D245218DF6571A55125C",
+        "3B6D938093B4F00883A3665399CBEA01FD892E2B610FC7F4B2EBA01F8F51457B",
+        "3CC049B5E38851A13B73CC7C0B36128EF906BE6A9AAFB97CCED85C36CCD9CE94",
+        "45F98E6F8A4B99387FA728A79BCD34D9830FB5C762385E7FBC4ABCF5F8382D56",
+        "4AD1EAD99210EF0F27CC4F42754A554B647C3FC799C636CE4686C7E0BDAA149E",
+        "5F25948CB5AF5B34E39033FA0A149B74567106E583097B1C11090668A0565CAE",
+        "64657DAB456EE03780AC9D09997548487124AAC589BA2A4366C24BF07E6EEF4E",
+        "6646B460C136C6E602A462E8F3D3798B0DBB66D37FF1F6FB201581E2BF991B50",
+        "6696C736BE8E70043989E8B060417B2E6380DDA54B1AAA7A4C23073D9C267A39",
+        "6DDCE79DE97615B37C969187A3E5342497D01A872C497EA330AD113E17390431",
+        "793D5D36C97331A1D87BC96ABC5CCF32D4FFA76C992AC9E21F54D33E15707CD5",
+        "79FE4BB7E2E7D31E8B36F31CDA4A028F2E22B8DD958102A78E1FDD4D9B064CFF",
+        "7C8A0EA168A16367DA62FA32D6BF797D78C03789CE906067F5FE252599F543C0",
+        "7DFC388F3BF8EF6EFA16E0640CF924158999A9923674C7701B8919872755CBB5",
+        "8438DE5BA561867528E8D0996CAC83D36C0F60B19603287D996DCA32909E3D27",
+        "8CDE82581EA3BB642B7BACE3340FFAD3E15F0B71627743D068F2E58B81705303",
+        "9217A85865CCA590605C74CC96E9FB00D9E215D4493E2499E5CA9A75C6A6B0F1",
+        "9A0BD0BA12C421BEEB9582764F4F0DF651BE9997E6B8E2FEA2EB738D1362C307",
+        "A0B37C791E37821405F9AC8C1A24AE97EEABD38F6C52CF7CC942124D519D7179",
+        "AC8E88D9C49F811190F7158CE75159C0E546ED6C8FAB51A2E5F011740C6BD9DB",
+        "AD64E2A22ADAB15D14FC38051C9C2053221A29FF662950A2BA0BFE69AF76DC2B",
+        "AECEDDE051C0F4C25882591FB441A3AB69EE2FA22AF0253789E7B1B3667EC434",
+        "B436456E8FAE2E88568D188E5BF3F840A927621C1ED6B4A991495A89B98F8F71",
+        "BC8D301EDDE62AA3BC1C17D4A999155818DC4A91104F87C0B304F2FF6C3F621B",
+        "BF4794A3F42A547A3D20D80D0ACD7A9132973B68BA3FFB2738B3EF29ECD0AB0F",
+        "C499946623CFDE87812BD63442BD9D67FE7BAA3EF7DE55BFB83355140984144B",
+        "C6CDEF9F0C3A086FD1091E4A9168F6949E28B0A3E16AB8E80E3D6F12B76CA561",
+        "CF979223BF53141AD715FF6D4E79AD394653A7A3E42E546B9E43424A42DC7F4C",
+        "D7AF674EEEEDE4223A1AFF2ED5734AB5B4A9CC8D1D0327325CE287393AC18B04",
+        "D88EECA01CA142316CE4607738EF3419FDB795049041CEC18AEEA65C004F11D1",
+        "E149C5C354B08801920CA87F61F397C9C7969EA7E6BE7C081AFF865CF9168EFD",
+        "E3944A4655DDDF21C394FE1DB541F2645F529C00BD8390B22D652BD8EF5BBF83",
+        "E6084BEBE118C0CFDEB403B5CF5F641814F1E7BDFE6E1314082E35AFB56B42DA",
+        "F15CB245B34E268A97C43A3561EF5B1B4E8F5205397F9F83E10F52F28D3998D8",
+        "F6E98B188629DF54490B6F77213455F8A93E941EA8C2F416534E0C1F916C1C94"
+      ],
+      "sha256_literals_count": 47
+    },
+    {
+      "anchors": [],
+      "forbidden_outcome_field_names_present_in_text": [
+        "exit_price",
+        "exit_reason"
+      ],
+      "native_callsite_path_references": [],
+      "path": "governance/v2_phase_a_native_terminal_source_authority_recovery_v1/rd27_replay_terminal_path_analysis.json",
+      "path_literals": [
+        "src/spotbot/research/rd27_lifecycle_replay.py"
+      ],
+      "references_native_replay": true,
+      "references_shadow_replay": false,
+      "role_matches": {
+        "ADMISSIONS_BINDING": [],
+        "HISTORICAL_IDENTITY_BRIDGE": [
+          "\\bpair\\b"
+        ],
+        "HISTORICAL_NATIVE_PRODUCER_BINDING": [
+          "replay_lifecycle_policy"
+        ],
+        "HOURLY_INPUT_BINDING": [],
+        "RD27_POLICY_CONFIG_BINDING": [
+          "rd27",
+          "policy"
+        ],
+        "STATE_FRAME_BINDING": [
+          "\\bstate_frame\\b"
+        ]
+      },
+      "sha256": "35E1FE327DDF2C99559F1E9E586227D566AA1225FFA45B5D8CB85E64366E8B5F",
+      "sha256_literals": [
+        "E3944A4655DDDF21C394FE1DB541F2645F529C00BD8390B22D652BD8EF5BBF83"
+      ],
+      "sha256_literals_count": 1
+    },
+    {
+      "anchors": [],
+      "forbidden_outcome_field_names_present_in_text": [],
+      "native_callsite_path_references": [
+        "scripts/research/run_eaa_same_pair_secondary_shadow_parity.py",
+        "src/spotbot/research/eaa_same_pair_secondary_shadow.py"
+      ],
+      "path": "scripts/research/run_eaa_same_pair_secondary_shadow_parity.py",
+      "path_literals": [
+        "scripts/research/run_eaa_same_pair_secondary_shadow_parity.py",
+        "src/spotbot/research/eaa_same_pair_secondary_shadow.py",
+        "src/spotbot/research/rd26_exit_architecture.py",
+        "src/spotbot/research/rd27_adaptive_lifecycle.py",
+        "src/spotbot/research/rd27_lifecycle_replay.py"
+      ],
+      "references_native_replay": true,
+      "references_shadow_replay": false,
+      "role_matches": {
+        "ADMISSIONS_BINDING": [
+          "\\badmission"
+        ],
+        "HISTORICAL_IDENTITY_BRIDGE": [
+          "\\bpair\\b"
+        ],
+        "HISTORICAL_NATIVE_PRODUCER_BINDING": [
+          "replay_lifecycle_policy"
+        ],
+        "HOURLY_INPUT_BINDING": [],
+        "RD27_POLICY_CONFIG_BINDING": [
+          "rd27",
+          "policy"
+        ],
+        "STATE_FRAME_BINDING": [
+          "\\bstate_frame\\b"
+        ]
+      },
+      "sha256": "8438DE5BA561867528E8D0996CAC83D36C0F60B19603287D996DCA32909E3D27",
+      "sha256_literals": [
+        "1290748EA7E8A0343C1A15CEDFC1220AA423F04C11FDD558311B06AC7DA90359",
+        "5B47130872D327060AB63889E30C4EEC48CA19AC7E4AC209DB8B1714CA7B8216",
+        "636CC3C61EA951FDEFD7A55115376D20E0453034EE28FD4F8A4EAE96085E54A4",
+        "82E2BF09E1A74A101580C625E0F71987484A9368F597FDD7515E4B31F4E0B425",
+        "ABCCD5BC6CB10792CFAA3B260B4326E8F1DA5312CDCD8E4E5E8593AE17AD5B71",
+        "BBCE8ED353207EE779C14A2182E453A12363C8553C761DD393102208B1328EAA",
+        "BFD184F4C4CB9EBD177A6FD9E8B7F5172CE413121EB64243DCFAB8FF9EE1EDFC",
+        "EE205CDA74D70A530734BBFB4843C2DBFC8BF950122254AA2ACEB8766A90F9AD"
+      ],
+      "sha256_literals_count": 8
+    },
+    {
+      "anchors": [],
+      "forbidden_outcome_field_names_present_in_text": [
+        "exit_time",
+        "net_pnl"
+      ],
+      "native_callsite_path_references": [],
+      "path": "scripts/research/run_rd27_lifecycle_ablation.py",
+      "path_literals": [
+        "data/raw/rd16b/kucoin",
+        "data/research/rd26_p1_runtime/portfolio-run-metrics.csv",
+        "data/research/rd26_p1_runtime/signal-events-2022-2023.csv",
+        "data/research/rd27_p0/",
+        "data/research/rd27_p0b/",
+        "data/research/rd27_p1_runtime",
+        "src/spotbot/research/rd27_adaptive_lifecycle.py"
+      ],
+      "references_native_replay": true,
+      "references_shadow_replay": false,
+      "role_matches": {
+        "ADMISSIONS_BINDING": [],
+        "HISTORICAL_IDENTITY_BRIDGE": [
+          "\\bpair\\b"
+        ],
+        "HISTORICAL_NATIVE_PRODUCER_BINDING": [
+          "replay_lifecycle_policy"
+        ],
+        "HOURLY_INPUT_BINDING": [],
+        "RD27_POLICY_CONFIG_BINDING": [
+          "rd27",
+          "policy"
+        ],
+        "STATE_FRAME_BINDING": [
+          "\\bstate_frame\\b"
+        ]
+      },
+      "sha256": "7DFC388F3BF8EF6EFA16E0640CF924158999A9923674C7701B8919872755CBB5",
+      "sha256_literals": [
+        "1e3b68bf9cb9b50aaef4b1cf53e224a3634732e81d4fc74db999a5eac1fa3773",
+        "6462f576cee9681751368a7755d3ca51ebf945ced54ea7b7f18b47bc469ba725",
+        "82e19cd9f996f0592614f4b56de7dd1bbd13f96d6cf378ae182d2726b18e3143",
+        "ee205cda74d70a530734bbfb4843c2dbfc8bf950122254aa2aceb8766a90f9ad"
+      ],
+      "sha256_literals_count": 4
+    }
+  ],
+  "searched_text_file_count": 1063
+}

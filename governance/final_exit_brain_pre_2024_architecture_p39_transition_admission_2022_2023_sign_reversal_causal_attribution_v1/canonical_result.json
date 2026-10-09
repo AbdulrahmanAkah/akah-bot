@@ -1,0 +1,86 @@
+{
+  "schema_version": "final-exit-brain-p39-transition-admission-2022-2023-sign-reversal-causal-attribution-v1",
+  "task_id": "FINAL_EXIT_BRAIN_PRE_2024_ARCHITECTURE_P39_TRANSITION_ADMISSION_2022_2023_SIGN_REVERSAL_CAUSAL_ATTRIBUTION_V1",
+  "status": "PASS_P39_TEMPORAL_SIGN_REVERSAL_CAUSAL_ATTRIBUTION_COMPLETED",
+  "classification": "DIRECT_TRANSITION_COMPONENT_SIGN_REVERSED_DOWNSTREAM_PATH_COMPONENT_DID_NOT_ACROSS_2022_2023",
+  "frozen_candidate_status": "CLOSED_NO_REOPEN",
+  "periods": {
+    "2022": {
+      "label": "2022",
+      "primary_endpoint": 5263.64279887882,
+      "direct_transition_control_trade_pnl": -8163.217282531882,
+      "direct_transition_ablation_effect": 8163.217282531882,
+      "downstream_portfolio_path_effect": -2899.574483653062,
+      "directly_ablated_trade_count": 173,
+      "source_paths": {
+        "direct_transition_pnl": "transition_ablation_lineage.directly_ablated_control_trade_pnl",
+        "directly_ablated_count": "transition_ablation_lineage.directly_ablated_control_trade_count",
+        "transition_blocker_pnl": "transition_ablation_lineage.control_only_by_treatment_blocker.TRANSITION_ADMISSION_ABLATED.sum_realized_pnl",
+        "reconstructed_endpoint": "exact_effect_decomposition.reconstructed_endpoint",
+        "reconciliation_error": "exact_effect_decomposition.reconciliation_error"
+      },
+      "reconstructed_endpoint": 5263.6427988787145,
+      "reconciliation_error": -1.0550138540565968e-10,
+      "p19_accounting_identity_endpoint": 5263.6427988787145,
+      "transition_blocker_event_count": 173,
+      "transition_blocker_sum_realized_pnl": -8163.217282531882
+    },
+    "2023": {
+      "label": "2023",
+      "primary_endpoint": -10190.915009873337,
+      "direct_transition_control_trade_pnl": 1489.0311650100994,
+      "direct_transition_ablation_effect": -1489.0311650100994,
+      "downstream_portfolio_path_effect": -8701.883844863238,
+      "directly_ablated_trade_count": 131,
+      "source_paths": {
+        "direct_transition_pnl": "transition_ablation_lineage.directly_ablated_control_trade_pnl",
+        "directly_ablated_count": "transition_ablation_lineage.directly_ablated_control_trade_count",
+        "transition_blocker_pnl": "transition_ablation_lineage.control_only_by_treatment_blocker.TRANSITION_ADMISSION_ABLATED.sum_realized_pnl",
+        "reconstructed_endpoint": "exact_effect_decomposition.reconstructed_endpoint",
+        "reconciliation_error": "exact_effect_decomposition.reconciliation_error"
+      },
+      "reconstructed_endpoint": -10190.915009873377,
+      "reconciliation_error": -4.001776687800884e-11,
+      "p19_accounting_identity_endpoint": -10190.915009873377,
+      "transition_blocker_event_count": 131,
+      "transition_blocker_sum_realized_pnl": 1489.0311650100994
+    }
+  },
+  "cross_period_attribution": {
+    "endpoint_sign_reversed": true,
+    "direct_transition_component_sign_reversed": true,
+    "downstream_portfolio_path_component_sign_reversed": false,
+    "endpoint_change_2023_minus_2022": -15454.557808752157,
+    "direct_component_change_2023_minus_2022": -9652.24844754198,
+    "downstream_path_component_change_2023_minus_2022": -5802.309361210176,
+    "algebra_reconciliation_error": -9.094947017729282e-13
+  },
+  "authority": {
+    "p19_2022_result": {
+      "path": "C:\\Users\\abdul\\Downloads\\EAA_EXIT_BRAIN_P19_2022_TRANSITION_ADMISSION_COMPONENT_ABLATION_CANONICAL_RESULT_20260914_010117.json",
+      "sha256": "221CC3BCF5E062CE36CE2BEE10E3A9EE22448A8A8E4EF54F01DAF331E8B52DE7"
+    },
+    "p38_2023_canonical": {
+      "path": "governance/final_exit_brain_pre_2024_architecture_p38_transition_admission_only_2023_temporal_replication_execution_retry_v1_retry_v1_retry_v1_retry_v1/canonical_result.json",
+      "sha256": "AEFBBF145DE3B771C439773EF356A18A17669A54C0B8F2AAC297049AB557F36C"
+    },
+    "p38_2023_source_result": {
+      "path": "governance/final_exit_brain_pre_2024_architecture_p38_transition_admission_only_2023_temporal_replication_execution_retry_v1_retry_v1_retry_v1_retry_v1/source_2023_replication_result.json",
+      "sha256": "2C18FDD45FBD4DD4163689DDC3CC27425479ABD95D5B722513BFAFF3548E2F7B"
+    },
+    "p38_classification": "TEMPORAL_REPLICATION_NOT_SUPPORTED_PRIMARY_DELTA_NONPOSITIVE_CLOSE_CANDIDATE"
+  },
+  "scope": {
+    "new_market_data_access": false,
+    "new_2023_replay": false,
+    "2024_access": false,
+    "2025_access": false,
+    "candidate_search": false,
+    "threshold_search": false,
+    "sizing_search": false,
+    "parameter_search": false,
+    "model_fit": false,
+    "production_change": false
+  },
+  "next_bottleneck": "TRANSITION_STATE_CONDITIONING_TEMPORAL_INSTABILITY_DIAGNOSIS_BEFORE_ANY_NEW_CANDIDATE"
+}

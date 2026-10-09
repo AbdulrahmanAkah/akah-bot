@@ -1,0 +1,457 @@
+{
+  "2022_2023_fresh_holdout": false,
+  "2024_access": false,
+  "folds": {
+    "DEV_2019_2020_TO_2021": {
+      "integrity": {
+        "cross_split_trade_ids_removed": 0,
+        "embargo_hours": 168,
+        "embargo_rows_removed": 28,
+        "fold": "DEV_2019_2020_TO_2021",
+        "future_overlap_clear": true,
+        "future_overlap_rows_purged": 0,
+        "test_rows": 3000,
+        "test_start": "2021-01-01 08:00:00+00:00",
+        "test_trades": 356,
+        "trade_disjoint": true,
+        "train_rows": 4632,
+        "train_trades": 581
+      },
+      "metadata": {
+        "freshness": "ROLLING_DEVELOPMENT",
+        "name": "DEV_2019_2020_TO_2021",
+        "test_year": 2021,
+        "train_years": [
+          2019,
+          2020
+        ]
+      },
+      "metrics": {
+        "one_per_trade": {
+          "branch": {
+            "actual_rate": 0.1936416184971098,
+            "auc": 0.7031241641256085,
+            "brier_skill": 0.06650046015246613,
+            "coverage": 0.9719101123595506,
+            "high_minus_low_event_rate": 0.1445086705202312,
+            "pred_mean": 0.2526290047410169,
+            "rows": 346
+          },
+          "clean": {
+            "actual_mean": -0.015715951873000865,
+            "coverage": 0.8947368421052632,
+            "high_minus_low_actual_mean": -0.000566667777929325,
+            "mae": 0.022218547055849903,
+            "pred_mean": -0.011038136469367178,
+            "rows": 68,
+            "sign_accuracy": 0.7941176470588235,
+            "spearman": 0.015971575783544443
+          },
+          "intervention": {
+            "actual_mean": -0.007078733932962094,
+            "coverage": 0.9634831460674157,
+            "high_minus_low_actual_mean": 0.0028473411363561223,
+            "mae": 0.043973330951610816,
+            "pred_mean": 0.011417911939965266,
+            "rows": 343,
+            "sign_accuracy": 0.2944606413994169,
+            "spearman": 0.1092429268852197
+          }
+        },
+        "row": {
+          "branch": {
+            "actual_rate": 0.3042105263157895,
+            "auc": 0.6283350811773198,
+            "brier_skill": 0.040044137454264606,
+            "coverage": 0.95,
+            "high_minus_low_event_rate": 0.13734233415629102,
+            "pred_mean": 0.267665687839941,
+            "rows": 2850
+          },
+          "clean": {
+            "actual_mean": -0.014141972452098122,
+            "coverage": 0.9236725663716814,
+            "high_minus_low_actual_mean": 0.00746871956473511,
+            "mae": 0.022553476301777477,
+            "pred_mean": -0.010791051111143667,
+            "rows": 835,
+            "sign_accuracy": 0.7209580838323353,
+            "spearman": 0.20808936890570554
+          },
+          "intervention": {
+            "actual_mean": 0.013255685757332934,
+            "coverage": 0.9708969465648855,
+            "high_minus_low_actual_mean": 0.0040890629703298174,
+            "mae": 0.05224545520337103,
+            "pred_mean": 0.011325267163958094,
+            "rows": 2035,
+            "sign_accuracy": 0.4619164619164619,
+            "spearman": 0.04596909776762161
+          }
+        },
+        "trade_mean": {
+          "clean": {
+            "actual_mean": -0.01506755023259855,
+            "coverage": 1.0,
+            "high_minus_low_actual_mean": 0.00866120211791841,
+            "mae": 0.01710044528682085,
+            "pred_mean": -0.010592414531682283,
+            "rows": 76,
+            "sign_accuracy": 0.8157894736842105,
+            "spearman": 0.09398560482519505
+          },
+          "intervention": {
+            "actual_mean": -0.004447100768743132,
+            "coverage": 1.0,
+            "high_minus_low_actual_mean": -0.0107431639919199,
+            "mae": 0.04050915657162032,
+            "pred_mean": 0.011468653782219557,
+            "rows": 346,
+            "sign_accuracy": 0.3699421965317919,
+            "spearman": -0.09964935172901479
+          }
+        }
+      }
+    },
+    "DEV_2019_TO_2020": {
+      "integrity": {
+        "cross_split_trade_ids_removed": 0,
+        "embargo_hours": 168,
+        "embargo_rows_removed": 0,
+        "fold": "DEV_2019_TO_2020",
+        "future_overlap_clear": true,
+        "future_overlap_rows_purged": 0,
+        "test_rows": 2944,
+        "test_start": "2020-01-03 16:00:00+00:00",
+        "test_trades": 352,
+        "trade_disjoint": true,
+        "train_rows": 1716,
+        "train_trades": 229
+      },
+      "metadata": {
+        "freshness": "ROLLING_DEVELOPMENT",
+        "name": "DEV_2019_TO_2020",
+        "test_year": 2020,
+        "train_years": [
+          2019
+        ]
+      },
+      "metrics": {
+        "one_per_trade": {
+          "branch": {
+            "actual_rate": 0.1804733727810651,
+            "auc": 0.6270047937503699,
+            "brier_skill": 0.04070204734676819,
+            "coverage": 0.9602272727272727,
+            "high_minus_low_event_rate": 0.08723651335468205,
+            "pred_mean": 0.2274073724524434,
+            "rows": 338
+          },
+          "clean": {
+            "actual_mean": -0.009049315516129076,
+            "coverage": 0.49230769230769234,
+            "high_minus_low_actual_mean": 0.010004267494995112,
+            "mae": 0.013545429550064877,
+            "pred_mean": -0.011192785366431084,
+            "rows": 32,
+            "sign_accuracy": 0.6875,
+            "spearman": 0.1882738920314129
+          },
+          "intervention": {
+            "actual_mean": 0.0012392742981097928,
+            "coverage": 0.9545454545454546,
+            "high_minus_low_actual_mean": -0.0019424252832701654,
+            "mae": 0.03161705180313016,
+            "pred_mean": 0.00949768961141407,
+            "rows": 336,
+            "sign_accuracy": 0.37797619047619047,
+            "spearman": -0.014520487843479455
+          }
+        },
+        "row": {
+          "branch": {
+            "actual_rate": 0.28522984174830446,
+            "auc": 0.5740740611784303,
+            "brier_skill": 0.01904891405521536,
+            "coverage": 0.9014945652173914,
+            "high_minus_low_event_rate": 0.11788216213269367,
+            "pred_mean": 0.23537985069211362,
+            "rows": 2654
+          },
+          "clean": {
+            "actual_mean": -0.008579481411549133,
+            "coverage": 0.43509615384615385,
+            "high_minus_low_actual_mean": 0.009399198069312595,
+            "mae": 0.013037458831983175,
+            "pred_mean": -0.011938359991625149,
+            "rows": 362,
+            "sign_accuracy": 0.7016574585635359,
+            "spearman": 0.26228165150361915
+          },
+          "intervention": {
+            "actual_mean": 0.013016090132593508,
+            "coverage": 0.9488636363636364,
+            "high_minus_low_actual_mean": -0.0001726320073824339,
+            "mae": 0.036946569272162284,
+            "pred_mean": 0.010164110929248956,
+            "rows": 2004,
+            "sign_accuracy": 0.501996007984032,
+            "spearman": -0.04119035314952389
+          }
+        },
+        "trade_mean": {
+          "clean": {
+            "actual_mean": -0.007793223395353107,
+            "coverage": 1.0,
+            "high_minus_low_actual_mean": 0.00774417916986197,
+            "mae": 0.010010267863571298,
+            "pred_mean": -0.011312967423958839,
+            "rows": 65,
+            "sign_accuracy": 0.7846153846153846,
+            "spearman": 0.33393820083679215
+          },
+          "intervention": {
+            "actual_mean": 0.001229223858746548,
+            "coverage": 1.0,
+            "high_minus_low_actual_mean": -0.0011442026542931207,
+            "mae": 0.027432105417478113,
+            "pred_mean": 0.009556460529527107,
+            "rows": 342,
+            "sign_accuracy": 0.4152046783625731,
+            "spearman": -0.06283852985554703
+          }
+        }
+      }
+    },
+    "EXPOSED_2019_2021_TO_2022": {
+      "integrity": {
+        "cross_split_trade_ids_removed": 0,
+        "embargo_hours": 168,
+        "embargo_rows_removed": 1,
+        "fold": "EXPOSED_2019_2021_TO_2022",
+        "future_overlap_clear": true,
+        "future_overlap_rows_purged": 0,
+        "test_rows": 2065,
+        "test_start": "2022-01-02 00:00:00+00:00",
+        "test_trades": 282,
+        "trade_disjoint": true,
+        "train_rows": 7659,
+        "train_trades": 937
+      },
+      "metadata": {
+        "freshness": "EXPOSED_HISTORICAL_FORWARD_CONFIRMATION",
+        "name": "EXPOSED_2019_2021_TO_2022",
+        "test_year": 2022,
+        "train_years": [
+          2019,
+          2020,
+          2021
+        ]
+      },
+      "metrics": {
+        "one_per_trade": {
+          "branch": {
+            "actual_rate": 0.2490974729241877,
+            "auc": 0.6629041248606466,
+            "brier_skill": 0.05199110545720609,
+            "coverage": 0.9822695035460993,
+            "high_minus_low_event_rate": 0.12112514351320322,
+            "pred_mean": 0.2719692827626485,
+            "rows": 277
+          },
+          "clean": {
+            "actual_mean": -0.01463288715871485,
+            "coverage": 0.9506172839506173,
+            "high_minus_low_actual_mean": 0.0077742917737718634,
+            "mae": 0.014373897426504816,
+            "pred_mean": -0.012303396133128131,
+            "rows": 77,
+            "sign_accuracy": 0.7792207792207793,
+            "spearman": 0.2644558918542861
+          },
+          "intervention": {
+            "actual_mean": -0.006964945974719955,
+            "coverage": 0.9964539007092199,
+            "high_minus_low_actual_mean": 0.00727214593096626,
+            "mae": 0.030525627156675852,
+            "pred_mean": 0.012433049581235412,
+            "rows": 281,
+            "sign_accuracy": 0.28825622775800713,
+            "spearman": 0.10073299807851974
+          }
+        },
+        "row": {
+          "branch": {
+            "actual_rate": 0.35389930898321814,
+            "auc": 0.5957441934552444,
+            "brier_skill": 0.02869165223198611,
+            "coverage": 0.9811138014527845,
+            "high_minus_low_event_rate": 0.11293163647205595,
+            "pred_mean": 0.28151490102677384,
+            "rows": 2026
+          },
+          "clean": {
+            "actual_mean": -0.01622734194624337,
+            "coverage": 0.966804979253112,
+            "high_minus_low_actual_mean": 0.01088591606256408,
+            "mae": 0.013741229632349944,
+            "pred_mean": -0.01237288752520777,
+            "rows": 699,
+            "sign_accuracy": 0.8168812589413448,
+            "spearman": 0.3383524429352007
+          },
+          "intervention": {
+            "actual_mean": 0.0033260086566637296,
+            "coverage": 0.977645305514158,
+            "high_minus_low_actual_mean": 0.003918476269118799,
+            "mae": 0.035026309596864945,
+            "pred_mean": 0.01217392091030025,
+            "rows": 1312,
+            "sign_accuracy": 0.4115853658536585,
+            "spearman": 0.031061970478074425
+          }
+        },
+        "trade_mean": {
+          "clean": {
+            "actual_mean": -0.015049885556310191,
+            "coverage": 1.0,
+            "high_minus_low_actual_mean": 0.0064055432452828544,
+            "mae": 0.011171833969119853,
+            "pred_mean": -0.012069861616760878,
+            "rows": 81,
+            "sign_accuracy": 0.8271604938271605,
+            "spearman": 0.23536851140289383
+          },
+          "intervention": {
+            "actual_mean": -0.00782799664084876,
+            "coverage": 1.0,
+            "high_minus_low_actual_mean": 0.003654461055008466,
+            "mae": 0.02937421009711833,
+            "pred_mean": 0.012451527126854881,
+            "rows": 282,
+            "sign_accuracy": 0.2624113475177305,
+            "spearman": 0.06921491172919438
+          }
+        }
+      }
+    },
+    "EXPOSED_2019_2021_TO_2023": {
+      "integrity": {
+        "cross_split_trade_ids_removed": 0,
+        "embargo_hours": 168,
+        "embargo_rows_removed": 0,
+        "fold": "EXPOSED_2019_2021_TO_2023",
+        "future_overlap_clear": true,
+        "future_overlap_rows_purged": 0,
+        "test_rows": 2565,
+        "test_start": "2023-01-02 16:00:00+00:00",
+        "test_trades": 334,
+        "trade_disjoint": true,
+        "train_rows": 7660,
+        "train_trades": 937
+      },
+      "metadata": {
+        "freshness": "EXPOSED_HISTORICAL_FORWARD_CONFIRMATION",
+        "name": "EXPOSED_2019_2021_TO_2023",
+        "test_year": 2023,
+        "train_years": [
+          2019,
+          2020,
+          2021
+        ]
+      },
+      "metrics": {
+        "one_per_trade": {
+          "branch": {
+            "actual_rate": 0.2222222222222222,
+            "auc": 0.6880934989043097,
+            "brier_skill": 0.06628602655109317,
+            "coverage": 0.9970059880239521,
+            "high_minus_low_event_rate": 0.1882034632034632,
+            "pred_mean": 0.266215131682976,
+            "rows": 333
+          },
+          "clean": {
+            "actual_mean": -0.00833341712222746,
+            "coverage": 0.987012987012987,
+            "high_minus_low_actual_mean": 0.006663505428281702,
+            "mae": 0.011553147566887249,
+            "pred_mean": -0.011372211993498615,
+            "rows": 76,
+            "sign_accuracy": 0.7631578947368421,
+            "spearman": 0.35047980594491907
+          },
+          "intervention": {
+            "actual_mean": 0.0020519668534255777,
+            "coverage": 0.9970059880239521,
+            "high_minus_low_actual_mean": -0.008260757300482476,
+            "mae": 0.028416131531205084,
+            "pred_mean": 0.012527375741499217,
+            "rows": 333,
+            "sign_accuracy": 0.3813813813813814,
+            "spearman": -0.03121120926903206
+          }
+        },
+        "row": {
+          "branch": {
+            "actual_rate": 0.3257187869239858,
+            "auc": 0.6427476155228333,
+            "brier_skill": 0.04955311101800941,
+            "coverage": 0.9898635477582846,
+            "high_minus_low_event_rate": 0.1862810214900247,
+            "pred_mean": 0.2870451923863594,
+            "rows": 2539
+          },
+          "clean": {
+            "actual_mean": -0.006909211332543239,
+            "coverage": 0.9879372738238842,
+            "high_minus_low_actual_mean": 0.005878972655791378,
+            "mae": 0.013186560061473129,
+            "pred_mean": -0.011853617596920916,
+            "rows": 819,
+            "sign_accuracy": 0.702075702075702,
+            "spearman": 0.2469508484481379
+          },
+          "intervention": {
+            "actual_mean": 0.017349295344767642,
+            "coverage": 0.9879032258064516,
+            "high_minus_low_actual_mean": 0.007032107567343503,
+            "mae": 0.038227194787500036,
+            "pred_mean": 0.012285291361578007,
+            "rows": 1715,
+            "sign_accuracy": 0.5102040816326531,
+            "spearman": 0.07014103331949337
+          }
+        },
+        "trade_mean": {
+          "clean": {
+            "actual_mean": -0.007329774408499069,
+            "coverage": 1.0,
+            "high_minus_low_actual_mean": 0.0034547801179432534,
+            "mae": 0.010629511842096344,
+            "pred_mean": -0.011736873876134897,
+            "rows": 77,
+            "sign_accuracy": 0.7532467532467533,
+            "spearman": 0.29436740061695327
+          },
+          "intervention": {
+            "actual_mean": 0.0015049698240220603,
+            "coverage": 1.0,
+            "high_minus_low_actual_mean": 0.00017024682809058263,
+            "mae": 0.026624801344753833,
+            "pred_mean": 0.012400641507602379,
+            "rows": 333,
+            "sign_accuracy": 0.4084084084084084,
+            "spearman": -0.012884676154029058
+          }
+        }
+      }
+    }
+  },
+  "model_family_changed": false,
+  "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_CONTINUATION_VALUE_TRADE_PATH_PRESERVING_NEGATIVE_CONTROL_EXECUTION_V1",
+  "purge_integrity_pass": true,
+  "schema_version": "akah-rev595-target-dependence-cluster-validation-maximum-evidence-mega-v1-clustered-revalidation",
+  "status": "PASS_CLUSTERED_PURGED_REVALIDATION",
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_CONTINUATION_VALUE_TRADE_CLUSTERED_PURGED_BASELINE_HEAD_REVALIDATION_V1"
+}

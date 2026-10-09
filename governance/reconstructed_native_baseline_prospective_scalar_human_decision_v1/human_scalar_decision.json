@@ -1,0 +1,136 @@
+{
+  "authority_id": "AKAH_BOT_RECONSTRUCTED_NATIVE_BASELINE_PROSPECTIVE_SCALAR_HUMAN_DECISION_V1",
+  "cost_multiplier": {
+    "bound_value": "1.0",
+    "candidate_evidence": {
+      "auto_bind_eligible": false,
+      "choice_token": "C1",
+      "decisive_governance_evidence": [],
+      "decisive_source_evidence": [],
+      "governance_evidence": [
+        {
+          "authority_markers": [
+            "authority",
+            "bound",
+            "frozen",
+            "canonical",
+            "control",
+            "baseline"
+          ],
+          "baseline_markers": [
+            "baseline",
+            "native",
+            "control",
+            "frozen",
+            "canonical",
+            "rd27"
+          ],
+          "experiment_markers": [
+            "ablation",
+            "shadow",
+            "fixture",
+            "synthetic",
+            "secondary"
+          ],
+          "json_paths": [
+            "$.native_replay_callsites[26].keyword_args.cost_multiplier",
+            "$.native_replay_callsites[27].keyword_args.cost_multiplier"
+          ],
+          "kind": "NONCIRCULAR_GOVERNANCE_EXACT_KEY",
+          "path": "governance/v2_phase_a_native_replay_input_authority_decision_v1/replay_lifecycle_policy_callsites.json",
+          "sha256": "9A4CC6DD85B7A111AC9A35240D7C3E0371921E7D3BB3049F5473003AAC34B3E2"
+        }
+      ],
+      "source_evidence": [],
+      "value": "1.0"
+    },
+    "choice_token": "C1"
+  },
+  "decision_semantics": "PROSPECTIVE_BASELINE_DEFINITION_NOT_HISTORICAL_RECOVERY",
+  "human_rationale": "Prospective reconstructed RD27 baseline: rd27.FULL_ADAPTIVE_LIFECYCLE_BRAIN selected as the full adaptive lifecycle policy identity; cost_multiplier 1.0 selected as the nominal baseline cost setting. No V2 incidence, PnL, economic outcomes, protected-year evidence, or historical-frequency criterion was used.",
+  "next_bottleneck": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_EVENTS_FRAMES_ADAPTER_SOURCE_AUTHORITY_DECISION_V1",
+  "policy_id": {
+    "bound_value": "rd27.FULL_ADAPTIVE_LIFECYCLE_BRAIN",
+    "candidate_evidence": {
+      "auto_bind_eligible": false,
+      "choice_token": "P5",
+      "decisive_governance_evidence": [],
+      "decisive_source_evidence": [],
+      "governance_evidence": [
+        {
+          "authority_markers": [
+            "authority",
+            "bound",
+            "control",
+            "baseline"
+          ],
+          "baseline_markers": [
+            "baseline",
+            "native",
+            "control",
+            "rd27"
+          ],
+          "experiment_markers": [
+            "ablation",
+            "shadow",
+            "synthetic",
+            "variant",
+            "secondary"
+          ],
+          "json_paths": [
+            "$.native_replay_non_test_callsites[2].keyword_args.policy_id",
+            "$.native_replay_non_test_callsites[3].keyword_args.policy_id"
+          ],
+          "kind": "NONCIRCULAR_GOVERNANCE_EXACT_KEY",
+          "path": "governance/v2_phase_a_native_replay_input_authority_decision_v1/input_authority_decision.json",
+          "sha256": "624150780341A2372E8E7C17CD1B1231125152B1AC429EB8077412752910394A"
+        },
+        {
+          "authority_markers": [
+            "authority",
+            "bound",
+            "frozen",
+            "canonical",
+            "control",
+            "baseline"
+          ],
+          "baseline_markers": [
+            "baseline",
+            "native",
+            "control",
+            "frozen",
+            "canonical",
+            "rd27"
+          ],
+          "experiment_markers": [
+            "ablation",
+            "shadow",
+            "fixture",
+            "synthetic",
+            "secondary"
+          ],
+          "json_paths": [
+            "$.native_replay_callsites[2].keyword_args.policy_id",
+            "$.native_replay_callsites[3].keyword_args.policy_id",
+            "$.native_replay_callsites[5].keyword_args.policy_id",
+            "$.native_replay_callsites[6].keyword_args.policy_id"
+          ],
+          "kind": "NONCIRCULAR_GOVERNANCE_EXACT_KEY",
+          "path": "governance/v2_phase_a_native_replay_input_authority_decision_v1/replay_lifecycle_policy_callsites.json",
+          "sha256": "9A4CC6DD85B7A111AC9A35240D7C3E0371921E7D3BB3049F5473003AAC34B3E2"
+        }
+      ],
+      "source_evidence": [],
+      "value": "rd27.FULL_ADAPTIVE_LIFECYCLE_BRAIN"
+    },
+    "choice_token": "P5"
+  },
+  "selection_firewall": {
+    "economic_outcomes_used": false,
+    "historical_frequency_used": false,
+    "pnl_used": false,
+    "protected_years_used": false,
+    "v2_incidence_used": false
+  },
+  "status": "HUMAN_DECISION_ACCEPTED"
+}

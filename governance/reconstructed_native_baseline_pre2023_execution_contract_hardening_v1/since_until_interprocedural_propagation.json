@@ -1,0 +1,103 @@
+{
+  "acquire_bound_parameter_taints": {
+    "adapter": [],
+    "download": [
+      "DOWNLOAD"
+    ],
+    "exchange_id": [],
+    "provider": [],
+    "since": [
+      "SINCE"
+    ],
+    "store": [
+      "STORE_ROOT"
+    ],
+    "symbol": [],
+    "until": [
+      "UNTIL"
+    ]
+  },
+  "hop_count": 3,
+  "hops": [
+    {
+      "argument_taints": {
+        "pos_0": [
+          "STORE_ROOT"
+        ]
+      },
+      "bound_parameter_taints": {
+        "data_path": [
+          "STORE_ROOT"
+        ]
+      },
+      "call": "store.metadata_path(data_path)",
+      "from_function": "_acquire_hourly",
+      "from_module": "src/spotbot/research/rd16b_hourly_readiness.py",
+      "line": 227,
+      "to_function": "metadata_path",
+      "to_module": "src/spotbot/data/store.py"
+    },
+    {
+      "argument_taints": {
+        "page_limit": [],
+        "since": [
+          "STORE_ROOT"
+        ],
+        "symbol": [],
+        "timeframe": [],
+        "until": [
+          "UNTIL"
+        ]
+      },
+      "bound_parameter_taints": {
+        "page_limit": [],
+        "since": [
+          "STORE_ROOT"
+        ],
+        "symbol": [],
+        "timeframe": [],
+        "until": [
+          "UNTIL"
+        ]
+      },
+      "call": "provider.fetch_history(\n        symbol=symbol,\n        timeframe=SIGNAL_TIMEFRAME,\n        since=fetch_since,\n        until=until,\n        page_limit=1_000,\n    )",
+      "from_function": "_acquire_hourly",
+      "from_module": "src/spotbot/research/rd16b_hourly_readiness.py",
+      "line": 297,
+      "to_function": "fetch_history",
+      "to_module": "src/spotbot/data/provider.py"
+    },
+    {
+      "argument_taints": {
+        "exchange_id": [],
+        "overwrite": [],
+        "pos_0": [
+          "STORE_ROOT",
+          "UNTIL"
+        ],
+        "symbol": [],
+        "timeframe": []
+      },
+      "bound_parameter_taints": {
+        "exchange_id": [],
+        "overwrite": [],
+        "self": [
+          "STORE_ROOT",
+          "UNTIL"
+        ],
+        "symbol": [],
+        "timeframe": []
+      },
+      "call": "store.save(\n        merged,\n        exchange_id=exchange_id,\n        symbol=symbol,\n        timeframe=SIGNAL_TIMEFRAME,\n        overwrite=True,\n    )",
+      "from_function": "_acquire_hourly",
+      "from_module": "src/spotbot/research/rd16b_hourly_readiness.py",
+      "line": 310,
+      "to_function": "save",
+      "to_module": "src/spotbot/data/store.py"
+    }
+  ],
+  "remote_boundaries": [],
+  "remote_boundary_count": 0,
+  "status": "PASS",
+  "unresolved": []
+}

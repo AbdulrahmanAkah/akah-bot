@@ -1,0 +1,45 @@
+{
+  "authorization": {
+    "2024": false,
+    "2025": false,
+    "conditional_feasibility": true,
+    "conditional_fixed_m1_m2_pilot": true,
+    "conditional_ledger_certification": true,
+    "conditional_materialization": true,
+    "feature_search": false,
+    "model3": false,
+    "new_replay": false,
+    "production": false,
+    "push": false,
+    "raw": false,
+    "threshold_search": false,
+    "tracked_pre2024_source_binding": true
+  },
+  "created_at_utc": "2026-09-26T12:51:22.570443+00:00",
+  "fixed_model_contract": {
+    "ci_z": 1.96,
+    "interactions": [
+      "drawdown_x_trend",
+      "trend_x_breadth"
+    ],
+    "logit_lambda": 10.0,
+    "model_count": 2,
+    "ridge_lambda": 10.0,
+    "selection": "first disagreement only when both model 95pct intervals agree on sign"
+  },
+  "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_INDEPENDENT_DECISION_LEDGER_FAST_MEGA_EXECUTION_V1",
+  "performance_contract": {
+    "cache_first": true,
+    "compressed_large_outputs": true,
+    "header_first": true,
+    "known_authority_directories_only": true,
+    "max_candidate_files": 96,
+    "max_rows_per_selected_source": 300000,
+    "native_threads": 1,
+    "single_process": true
+  },
+  "reviewed_revision": 701,
+  "schema_version": "akah-rev701-mega-human-review-v1",
+  "status": "PASS_REV701_FAST_MEGA_AUTHORIZED",
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_INDEPENDENT_DECISION_LEDGER_AUTHORITY_PROTOCOL_FREEZE_HUMAN_REVIEW_V1"
+}

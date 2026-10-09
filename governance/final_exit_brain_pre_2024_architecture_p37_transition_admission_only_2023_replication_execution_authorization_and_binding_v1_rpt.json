@@ -1,0 +1,38 @@
+{
+  "task_id": "FINAL_EXIT_BRAIN_PRE_2024_ARCHITECTURE_P37_TRANSITION_ADMISSION_ONLY_2023_REPLICATION_EXECUTION_AUTHORIZATION_AND_BINDING_V1",
+  "outcome": "PASS",
+  "classification": "2023_REPLICATION_EXECUTION_AUTHORIZED_AND_SOURCE_PERIOD_BINDING_FROZEN_NO_2023_DATA_ACCESSED",
+  "summary": "P37 authorized the next governed task for ROBUSTNESS_2023 access/replay and froze the exact canonical-observer period binding. P37 itself accessed no 2023 market data.",
+  "north_star_effect": "Prevents source/harness adaptation after seeing the temporal replication outcome.",
+  "next_bottleneck": "TRANSITION_ADMISSION_ONLY_2023_TEMPORAL_REPLICATION_EXECUTION_V1",
+  "result_ref": "governance/final_exit_brain_pre_2024_architecture_p37_transition_admission_only_2023_replication_execution_authorization_and_binding_v1/canonical_result.json",
+  "result_sha256": "A9AF1700F377EFCC8ADBC44E5D6394835B6226A0A5018CC6FCC8C8EF6C6F65BB",
+  "evidence": [
+    {
+      "path": "governance/final_exit_brain_pre_2024_architecture_p37_transition_admission_only_2023_replication_execution_authorization_and_binding_v1/authorization.json",
+      "sha256": "333252EBC29E1256C6D0C0B327232264F1C3C4891B43A82EBCCAE94A6117ABC0"
+    },
+    {
+      "path": "governance/final_exit_brain_pre_2024_architecture_p37_transition_admission_only_2023_replication_execution_authorization_and_binding_v1/canonical_result.json",
+      "sha256": "A9AF1700F377EFCC8ADBC44E5D6394835B6226A0A5018CC6FCC8C8EF6C6F65BB"
+    },
+    {
+      "path": "governance/final_exit_brain_pre_2024_architecture_p37_transition_admission_only_2023_replication_execution_authorization_and_binding_v1/execution_binding.json",
+      "sha256": "02C9F57EEE51DA558D40BEB9642B8AA766C6EC8246A3FE6B0B256B20454D50BE"
+    },
+    {
+      "path": "governance/final_exit_brain_pre_2024_architecture_p37_transition_admission_only_2023_replication_execution_authorization_and_binding_v1/p19_observer_2023_period_bound_preview.py",
+      "sha256": "47344B9E88ED406EF35DF729F8CF1AB6A5459250B5E8F9371BA50F43E0FDC6F3"
+    }
+  ],
+  "governance_declarations": {
+    "2023_new_raw_or_replay_accessed": false,
+    "2024_used_as_fresh_holdout": false,
+    "2024_used_to_define_new_runtime_rule": false,
+    "2025_accessed": false,
+    "lookahead_or_future_information_used": false,
+    "pair_or_event_identity_used_as_runtime_rule": false,
+    "posthoc_outcome_threshold_search_used": false,
+    "production_changed": false
+  }
+}

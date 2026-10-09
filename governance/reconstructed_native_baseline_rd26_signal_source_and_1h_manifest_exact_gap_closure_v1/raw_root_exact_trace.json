@@ -1,0 +1,216 @@
+{
+  "existing_roots": [],
+  "raw_root_status": "RAW_ROOT_REMAINS_UNBOUND",
+  "status": "PASS",
+  "trace_candidates": [
+    {
+      "argument": {
+        "expr": "raw_root",
+        "kind": "keyword",
+        "name": "raw_root",
+        "trace": {
+          "name": "raw_root",
+          "status": "LOCAL_ASSIGNMENT",
+          "upstream": {
+            "body": {
+              "call": "resolve",
+              "definition_count": 0,
+              "expr": "args.raw_root.resolve()",
+              "status": "CALL"
+            },
+            "orelse": {
+              "call": "resolve",
+              "definition_count": 0,
+              "expr": "(repo / DEFAULT_RAW_ROOT).resolve()",
+              "status": "CALL"
+            },
+            "status": "CONDITIONAL"
+          }
+        }
+      },
+      "call_line": 822
+    },
+    {
+      "evidence_literal": {
+        "origin": "governance/ef_exact_v1/frames_exact_upstream_authority.json.source_template",
+        "value": "raw_root / pair / '1h.parquet'",
+        "years": []
+      }
+    },
+    {
+      "evidence_literal": {
+        "origin": "governance/ef_exact_v1/exact_remaining_authority_gaps.json.gaps[2].exact_blocker",
+        "value": "raw_root override, pair set, exact per-pair 1h file identities and study cutoff are not bound for the new study. Canonical 4H cannot supply missing native 1h authority.",
+        "years": []
+      }
+    },
+    {
+      "evidence_literal": {
+        "origin": "governance/ef_exact_v1/exact_remaining_authority_gaps.json.gaps[2].required_decision",
+        "value": "Prospective raw_root/pair-file manifest and permitted window, without market-row reads in this mission.",
+        "years": []
+      }
+    },
+    {
+      "evidence_literal": {
+        "origin": "governance/reconstructed_native_baseline_rd26_signal_portfolio_and_1h_manifest_pit_binding_decision_v1/one_hour_manifest_binding.json.manifest_binding_status",
+        "value": "RAW_ROOT_NOT_STATICALLY_BOUND_TO_EXISTING_DIRECTORY",
+        "years": []
+      }
+    },
+    {
+      "evidence_literal": {
+        "origin": "governance/reconstructed_native_baseline_rd26_signal_portfolio_and_1h_manifest_pit_binding_decision_v1/one_hour_manifest_binding.json.raw_root_candidates[0].value",
+        "value": "raw_root / pair / '1h.parquet'",
+        "years": []
+      }
+    },
+    {
+      "evidence_literal": {
+        "origin": "governance/reconstructed_native_baseline_rd26_signal_source_and_1h_manifest_exact_gap_closure_v1/runner_exact_input_trace.json.calls[1].arguments[0].expr",
+        "value": "raw_root",
+        "years": []
+      }
+    },
+    {
+      "evidence_literal": {
+        "origin": "governance/reconstructed_native_baseline_rd26_signal_source_and_1h_manifest_exact_gap_closure_v1/runner_exact_input_trace.json.calls[1].arguments[0].name",
+        "value": "raw_root",
+        "years": []
+      }
+    },
+    {
+      "evidence_literal": {
+        "origin": "governance/reconstructed_native_baseline_rd26_signal_source_and_1h_manifest_exact_gap_closure_v1/runner_exact_input_trace.json.calls[1].arguments[0].trace.name",
+        "value": "raw_root",
+        "years": []
+      }
+    },
+    {
+      "evidence_literal": {
+        "origin": "governance/reconstructed_native_baseline_rd26_signal_source_and_1h_manifest_exact_gap_closure_v1/runner_exact_input_trace.json.calls[1].arguments[0].trace.upstream.body.expr",
+        "value": "args.raw_root.resolve()",
+        "years": []
+      }
+    },
+    {
+      "evidence_literal": {
+        "origin": "governance/reconstructed_native_baseline_rd26_signal_source_and_1h_manifest_exact_gap_closure_v1/runner_exact_input_trace.json.calls[1].arguments[0].trace.upstream.orelse.expr",
+        "value": "(repo / DEFAULT_RAW_ROOT).resolve()",
+        "years": []
+      }
+    },
+    {
+      "evidence_literal": {
+        "origin": "governance/reconstructed_native_baseline_rd26_signal_source_and_1h_manifest_exact_gap_closure_v1/runner_exact_input_trace.json.calls[1].expression",
+        "value": "load_feature_frames(raw_root=raw_root, pairs=pairs)",
+        "years": []
+      }
+    },
+    {
+      "evidence_literal": {
+        "origin": "governance/reconstructed_native_baseline_rd26_signal_source_and_1h_manifest_exact_gap_closure_v1/runner_exact_input_trace.json.calls[2].arguments[5].trace.branches[0].upstream.upstream.expr",
+        "value": "load_feature_frames(raw_root=raw_root, pairs=pairs, cutoff=DATA_CUTOFF)",
+        "years": []
+      }
+    },
+    {
+      "evidence_literal": {
+        "origin": "governance/reconstructed_native_baseline_rd26_signal_source_and_1h_manifest_exact_gap_closure_v1/runner_exact_input_trace.json.calls[2].arguments[5].trace.branches[1].upstream.upstream.expr",
+        "value": "load_feature_frames(raw_root=raw_root, pairs=pairs)",
+        "years": []
+      }
+    },
+    {
+      "evidence_literal": {
+        "origin": "governance/reconstructed_native_baseline_rd26_signal_source_and_1h_manifest_exact_gap_closure_v1/runner_exact_input_trace.json.calls[2].arguments[5].trace.branches[2].upstream.upstream.expr",
+        "value": "load_feature_frames(raw_root=raw_root, pairs=pairs)",
+        "years": []
+      }
+    },
+    {
+      "evidence_literal": {
+        "origin": "governance/reconstructed_native_baseline_rd26_signal_source_and_1h_manifest_exact_gap_closure_v1/runner_exact_input_trace.json.calls[2].arguments[5].trace.branches[3].upstream.upstream.expr",
+        "value": "load_feature_frames(raw_root=raw_root, pairs=pairs)",
+        "years": []
+      }
+    },
+    {
+      "evidence_literal": {
+        "origin": "governance/reconstructed_native_baseline_rd26_signal_source_and_1h_manifest_exact_gap_closure_v1/runner_exact_input_trace.json.calls[2].arguments[5].trace.branches[4].upstream.upstream.expr",
+        "value": "load_feature_frames(raw_root=raw_root, pairs=pairs)",
+        "years": []
+      }
+    },
+    {
+      "evidence_literal": {
+        "origin": "governance/reconstructed_native_baseline_rd26_signal_source_and_1h_manifest_exact_gap_closure_v1/runner_exact_input_trace.json.calls[2].arguments[5].trace.branches[5].upstream.upstream.expr",
+        "value": "load_feature_frames(raw_root=raw_root, pairs=pairs)",
+        "years": []
+      }
+    },
+    {
+      "evidence_literal": {
+        "origin": "governance/reconstructed_native_baseline_rd26_signal_source_and_1h_manifest_exact_gap_closure_v1/runner_exact_input_trace.json.calls[2].arguments[5].trace.branches[6].upstream.upstream.expr",
+        "value": "rd31.load_feature_frames(raw_root=raw_root, pairs=pairs)",
+        "years": []
+      }
+    },
+    {
+      "evidence_literal": {
+        "origin": "governance/reconstructed_native_baseline_rd26_signal_source_and_1h_manifest_exact_gap_closure_v1/runner_exact_input_trace.json.calls[2].arguments[5].trace.branches[7].upstream.upstream.expr",
+        "value": "rd31.load_feature_frames(raw_root=raw_root, pairs=pairs)",
+        "years": []
+      }
+    },
+    {
+      "evidence_literal": {
+        "origin": "governance/reconstructed_native_baseline_rd26_signal_source_and_1h_manifest_exact_gap_closure_v1/runner_exact_input_trace.json.calls[2].arguments[6].trace.branches[0].upstream.upstream.expr",
+        "value": "load_state_frame(raw_root)",
+        "years": []
+      }
+    },
+    {
+      "evidence_literal": {
+        "origin": "governance/reconstructed_native_baseline_rd26_signal_source_and_1h_manifest_exact_gap_closure_v1/runner_exact_input_trace.json.calls[2].arguments[6].trace.branches[1].upstream.upstream.expr",
+        "value": "load_state_frame(raw_root)",
+        "years": []
+      }
+    },
+    {
+      "evidence_literal": {
+        "origin": "governance/reconstructed_native_baseline_rd26_signal_source_and_1h_manifest_exact_gap_closure_v1/runner_exact_input_trace.json.calls[2].arguments[6].trace.branches[2].upstream.upstream.expr",
+        "value": "load_state_frame(raw_root)",
+        "years": []
+      }
+    },
+    {
+      "evidence_literal": {
+        "origin": "governance/reconstructed_native_baseline_rd26_signal_source_and_1h_manifest_exact_gap_closure_v1/runner_exact_input_trace.json.calls[2].arguments[6].trace.branches[3].upstream.upstream.expr",
+        "value": "load_state_frame(raw_root)",
+        "years": []
+      }
+    },
+    {
+      "evidence_literal": {
+        "origin": "governance/reconstructed_native_baseline_rd26_signal_source_and_1h_manifest_exact_gap_closure_v1/runner_exact_input_trace.json.calls[2].arguments[6].trace.branches[4].upstream.upstream.expr",
+        "value": "load_state_frame(raw_root)",
+        "years": []
+      }
+    },
+    {
+      "evidence_literal": {
+        "origin": "governance/reconstructed_native_baseline_rd26_signal_source_and_1h_manifest_exact_gap_closure_v1/runner_exact_input_trace.json.calls[2].arguments[6].trace.branches[5].upstream.upstream.expr",
+        "value": "rd31.load_state_frame(raw_root)",
+        "years": []
+      }
+    },
+    {
+      "evidence_literal": {
+        "origin": "governance/reconstructed_native_baseline_rd26_signal_source_and_1h_manifest_exact_gap_closure_v1/runner_exact_input_trace.json.calls[2].arguments[6].trace.branches[6].upstream.upstream.expr",
+        "value": "rd31.load_state_frame(raw_root)",
+        "years": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,157 @@
+{
+  "schema_version": "abc-overlap-and-redundancy-protocol-v1",
+  "protocol_id": "ABC_OVERLAP_AND_REDUNDANCY_PROTOCOL_V1",
+  "status": "FROZEN_BEFORE_ANY_OVERLAP_MEASUREMENT",
+  "scientific_role": "Measure whether the three frozen causal primitives detect the same fixed-Control lifecycles, nearby lifecycle moments, or materially distinct lifecycle failure modes. This is not a combination test.",
+  "candidate_set": [
+    "C",
+    "A",
+    "B"
+  ],
+  "pairwise_comparisons": [
+    "C__A",
+    "C__B",
+    "A__B"
+  ],
+  "years": [
+    2019,
+    2020,
+    2021,
+    2022,
+    2023
+  ],
+  "analysis_population": {
+    "primary": "FIXED_CONTROL_LIFECYCLES_FROM_DIRECT_EFFECT_ATTRIBUTION",
+    "lifecycle_identity_fields": [
+      "year",
+      "pair",
+      "entry_time",
+      "control_exit_time"
+    ],
+    "identity_use": "RETROSPECTIVE_ATTRIBUTION_ONLY_NOT_RUNTIME_RULE",
+    "candidate_signal_presence_field": "candidate_signal_time",
+    "candidate_execution_field": "candidate_executed",
+    "native_preemption_field": "native_preempted",
+    "direct_effect_field": "direct_effect_delta_pnl",
+    "lead_field": "lead_hours_vs_native"
+  },
+  "source_bindings": [
+    {
+      "path": "governance/abc_exit_primitives_2019_2023_execution_v1/canonical_result.json",
+      "sha256": "79713AFB6B4AC490889C0605ACD527DD669DEB4A5D150D54732092873519CB0C"
+    },
+    {
+      "path": "data/research/abc_exit_primitives_2019_2023_v1/direct-effect-attribution.csv",
+      "sha256": "989812F5F9928EE8C3C8A7787B80316128555BD9B9131F6CAD25E8139F049F97"
+    },
+    {
+      "path": "data/research/abc_exit_primitives_2019_2023_v1/candidate-interventions.csv",
+      "sha256": "E0D058FE6D1F4E050A786C72AABE31874EE77A4F99DDF36AAF70EF7F5F58FCCE"
+    },
+    {
+      "path": "governance/abc_2019_2023_mandatory_causal_review_v1/canonical_result.json",
+      "sha256": "E55BAFB31DDE51622D37FB2075C3D123A95EF4BD08DA118D595C101A6ACA9052"
+    },
+    {
+      "path": "governance/abc_2019_2023_mandatory_causal_review_v1/causal_review.json",
+      "sha256": "F6C87A2CB3CCBBE6B39AFED8C2BC78CD51C86EADC1690648AC4CD8A8F315509F"
+    }
+  ],
+  "fixed_definitions": {
+    "signal_lifecycle_set": "For candidate X, the set of fixed Control lifecycle identities for which candidate_signal_time is non-null.",
+    "executed_lifecycle_set": "For candidate X, the set of fixed Control lifecycle identities for which candidate_executed is true.",
+    "preempted_lifecycle_set": "For candidate X, the set of fixed Control lifecycle identities for which native_preempted is true.",
+    "same_lifecycle_signal_overlap": "A fixed Control lifecycle on which both members of a candidate pair emitted a signal.",
+    "same_lifecycle_execution_overlap": "A fixed Control lifecycle on which both members of a candidate pair executed their candidate exit.",
+    "signal_time_delta_hours": "candidate_2_signal_time - candidate_1_signal_time on same-lifecycle signal overlaps; signed hours.",
+    "absolute_signal_time_delta_hours": "Absolute value of signal_time_delta_hours.",
+    "simultaneous_signal": "Both signals have identical candidate_signal_time. Since signals are generated on completed 4H closes, this is exact same-decision-bar simultaneity.",
+    "within_one_4h_bar": "absolute_signal_time_delta_hours <= 4.",
+    "within_two_4h_bars": "absolute_signal_time_delta_hours <= 8.",
+    "direct_effect_sign": "POSITIVE if >0, NEGATIVE if <0, ZERO only within absolute tolerance 1e-9.",
+    "same_lifecycle_direct_sign_concordance": "Whether two executed candidate exits on the same fixed Control lifecycle have the same direct-effect sign."
+  },
+  "mandatory_pairwise_metrics": {
+    "counts": [
+      "candidate_1_signal_lifecycle_count",
+      "candidate_2_signal_lifecycle_count",
+      "signal_intersection_count",
+      "signal_union_count",
+      "candidate_1_only_signal_count",
+      "candidate_2_only_signal_count",
+      "candidate_1_executed_lifecycle_count",
+      "candidate_2_executed_lifecycle_count",
+      "executed_intersection_count",
+      "preempted_intersection_count"
+    ],
+    "set_metrics": [
+      "signal_jaccard = intersection / union",
+      "signal_containment_1_in_2 = intersection / candidate_1_signal_count",
+      "signal_containment_2_in_1 = intersection / candidate_2_signal_count",
+      "execution_jaccard = executed_intersection / executed_union"
+    ],
+    "timing_metrics_on_same_lifecycle_signal_overlap": [
+      "simultaneous_signal_count",
+      "within_one_4h_bar_count",
+      "within_two_4h_bars_count",
+      "signed_signal_time_delta_hours_mean",
+      "signed_signal_time_delta_hours_median",
+      "absolute_signal_time_delta_hours_mean",
+      "absolute_signal_time_delta_hours_median",
+      "absolute_signal_time_delta_hours_min",
+      "absolute_signal_time_delta_hours_max"
+    ],
+    "direct_effect_metrics_on_same_lifecycle_executed_overlap": [
+      "same_direct_sign_count",
+      "opposite_direct_sign_count",
+      "candidate_1_direct_effect_sum",
+      "candidate_2_direct_effect_sum",
+      "direct_effect_difference_sum = candidate_1_direct - candidate_2_direct",
+      "absolute_direct_effect_difference_median"
+    ],
+    "native_preemption_metrics": [
+      "candidate_1_native_preempted_count",
+      "candidate_2_native_preempted_count",
+      "same_lifecycle_both_native_preempted_count"
+    ]
+  },
+  "reporting_granularity": {
+    "pooled_five_year": true,
+    "per_year": true,
+    "per_pair_identity_summary": true,
+    "raw_same_lifecycle_overlap_rows": true,
+    "candidate_to_candidate_ranking": false
+  },
+  "zero_denominator_policy": "Return null metric plus explicit denominator=0; never coerce to zero similarity.",
+  "no_threshold_adjudication": {
+    "enabled": true,
+    "reason": "No Jaccard, containment, lag, or sign-concordance threshold is frozen for declaring candidates redundant or complementary. Raw metrics are the scientific output. Any later categorical interpretation requires a new protocol frozen before using it for architecture decisions."
+  },
+  "forbidden_actions": [
+    "NO_CANDIDATE_COMBINATION_REPLAY",
+    "NO_PRIORITY_ORDER_TEST",
+    "NO_OR_LOGIC",
+    "NO_AND_LOGIC",
+    "NO_EXIT_ARBITER",
+    "NO_PARAMETER_RETUNING",
+    "NO_NEW_THRESHOLDS",
+    "NO_RUNTIME_USE_OF_PAIR_IDENTITY",
+    "NO_CANDIDATE_RANKING",
+    "NO_MARKET_DATA_ACCESS",
+    "NO_2024_ACCESS",
+    "NO_2025_ACCESS",
+    "NO_PRODUCTION_CHANGE"
+  ],
+  "execution_requirements": {
+    "must_verify_source_hashes_before_measurement": true,
+    "must_use_only_frozen_direct_effect_outputs": true,
+    "must_publish_all_three_pairwise_comparisons": true,
+    "must_publish_all_five_years_even_when_overlap_is_zero": true,
+    "must_preserve_original_candidate_semantics": true,
+    "must_not_modify_protocol_after_first_overlap_result": true
+  },
+  "post_execution_gate": {
+    "next_bottleneck_if_valid": "ABC_OVERLAP_AND_REDUNDANCY_MANDATORY_REVIEW_V1",
+    "architecture_progression_after_review_only": "Only after a separate review may the project decide whether evidence justifies moving toward LIFECYCLE_STATE_MACHINE protocol work, repeating/closing a primitive, or another preregistered diagnostic."
+  }
+}

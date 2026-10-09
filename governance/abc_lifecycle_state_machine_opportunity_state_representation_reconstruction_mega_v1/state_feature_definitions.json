@@ -1,0 +1,78 @@
+{
+  "capital_margin_to_capacity": "candidate state-quality percentile minus implied top-MAX_POSITIONS percentile cutoff; no outcome information",
+  "density_z168": "current event count versus prior 168 clock-hour mean/std, shifted one hour",
+  "groups": {
+    "CAPITAL": {
+      "count": 4,
+      "features": [
+        "capital_pressure_ratio",
+        "capital_overflow_ratio",
+        "capital_margin_to_capacity",
+        "capital_gap_to_leader"
+      ]
+    },
+    "COMPETITION": {
+      "count": 6,
+      "features": [
+        "cs_trend_quality_rank",
+        "cs_ret24_rank",
+        "cs_path_eff24_rank",
+        "cs_path_accel_rank",
+        "cs_path_posfrac12_rank",
+        "cs_state_quality_rank"
+      ]
+    },
+    "REGIME": {
+      "count": 12,
+      "features": [
+        "regime_event_count_log",
+        "regime_ret24_median",
+        "regime_ret24_dispersion",
+        "regime_trend_quality_median",
+        "regime_trend_quality_dispersion",
+        "regime_eff24_median",
+        "regime_eff24_dispersion",
+        "regime_positive_ret24_frac",
+        "regime_turnover_expansion_median",
+        "regime_family_entropy",
+        "regime_leadership_persistence",
+        "regime_density_z168"
+      ]
+    },
+    "TRAJECTORY": {
+      "count": 18,
+      "features": [
+        "path_eff6",
+        "path_eff12",
+        "path_eff24",
+        "path_eff72",
+        "path_posfrac6",
+        "path_posfrac12",
+        "path_posfrac24",
+        "path_accel3_12",
+        "path_accel6_24",
+        "path_vol_ratio6_24",
+        "path_vol_ratio24_72",
+        "path_range_ratio6_24",
+        "path_drawdown24",
+        "path_drawdown72",
+        "path_recovery24",
+        "path_close_location24",
+        "path_turnover_ratio6_24",
+        "path_turnover_ratio24_72"
+      ]
+    }
+  },
+  "hard_cutoff_exclusive": "2024-01-01T00:00:00Z",
+  "leadership_persistence": "Jaccard of current vs exactly prior-hour top-20%-by-state-quality pair sets; pair identity used only for aggregate market-state scalar",
+  "outcome_derived_features": false,
+  "raw_bar_causality": "1H bar completion_time = bar_open_time + 1h; merge_asof backward with completion_time <= entry_time",
+  "schema_version": "akah-opportunity-state-feature-definitions-v1",
+  "state_quality_rank_components": [
+    "trend_quality",
+    "ret24",
+    "path_eff24",
+    "path_accel3_12",
+    "path_posfrac12"
+  ]
+}

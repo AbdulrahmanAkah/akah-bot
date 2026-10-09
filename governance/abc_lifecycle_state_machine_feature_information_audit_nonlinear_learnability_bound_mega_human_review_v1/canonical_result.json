@@ -1,0 +1,61 @@
+{
+  "authorized_axis": "TEMPORAL_REPLACEMENT_STATE_RECONSTRUCTION",
+  "constraints": {
+    "2024_access": false,
+    "2025_access": false,
+    "model_selection": false,
+    "model_zoo": false,
+    "portfolio_policy_replay": false,
+    "production_changed": false,
+    "push": false,
+    "runtime_future_information": false,
+    "threshold_search": false
+  },
+  "probe": {
+    "dim": 64,
+    "gamma_rule": "1/P",
+    "lambda": 10.0,
+    "training_sample_cap": 50000,
+    "type": "RFF_RIDGE"
+  },
+  "reviewed_revision": 757,
+  "schema_version": "akah-rev757-feature-information-human-review-v1",
+  "source_disposition": "FEATURE_INFORMATION_AUDIT_NONLINEAR_LEARNABILITY_BOUND_COMPLETE_NO_MODEL_SELECTION_NO_RUNTIME_RULE",
+  "source_nonlinear_summary": {
+    "candidate_increment": {
+      "rows": 1697985,
+      "weighted_pearson": -0.023605047564003338,
+      "weighted_positive_precision": 0.31845581960585867,
+      "weighted_sign_accuracy": 0.5914015730409868,
+      "weighted_top_decile_positive_precision": 0.3203605729732595
+    },
+    "decomposed_delta": {
+      "rows": 1697985,
+      "weighted_pearson": -0.013571355814470092,
+      "weighted_positive_precision": 0.5058144182157545,
+      "weighted_sign_accuracy": 0.5033678153811724,
+      "weighted_top_decile_positive_precision": 0.5159183281948898
+    },
+    "direct_delta": {
+      "rows": 1697985,
+      "weighted_pearson": -0.010643180462197024,
+      "weighted_positive_precision": 0.5238987351258808,
+      "weighted_sign_accuracy": 0.5091187495767041,
+      "weighted_top_decile_positive_precision": 0.5248906071019473
+    },
+    "incumbent_continuation": {
+      "rows": 1697985,
+      "weighted_pearson": -0.017167155234093383,
+      "weighted_positive_precision": 0.3054411226154273,
+      "weighted_sign_accuracy": 0.3839421431873662,
+      "weighted_top_decile_positive_precision": 0.3332741690886551
+    }
+  },
+  "status": "PASS_TEMPORAL_STATE_RECONSTRUCTION_AUTHORIZED",
+  "temporal_state_contract": {
+    "current_hour_high_low_close_volume": false,
+    "decision_time_information": "current open + completed bars strictly before decision hour",
+    "future_features": false,
+    "pair_or_event_identity": false
+  }
+}

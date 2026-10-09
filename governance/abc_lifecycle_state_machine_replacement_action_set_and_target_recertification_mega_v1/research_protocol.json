@@ -1,0 +1,42 @@
+{
+  "2024_access": false,
+  "2025_access": false,
+  "ledger": {
+    "all_binding_flags_independent": true,
+    "identities_audit_only": true,
+    "model_source": "PERSISTED_REV759_COEFFICIENTS_NO_REFIT",
+    "test_years": [
+      2021,
+      2022,
+      2023
+    ]
+  },
+  "mission": "FULL_OOT_DECISION_LEDGER_PLUS_ONE_FIXED_SLOT_CONSTRAINT_ABLATION",
+  "production_changed": false,
+  "project_north_star": "AKAH is not optimized for marginal F10 improvements and REV749 11.23x is not treated as the project ceiling. The research goal is to remove structural bottlenecks that prevent causal capture of large market trends and disciplined exits, so the bot can enter strong opportunities and exit when the thesis weakens without human emotional hesitation.",
+  "push": false,
+  "risk_reporting": {
+    "diagnostic_not_promotion": true,
+    "mdd20_gate": -0.2,
+    "worst_year_gate": -0.1
+  },
+  "schema_version": "akah-replacement-action-set-target-recertification-protocol-v1",
+  "slot_ablation": {
+    "control_max_positions": 20,
+    "diagnostic": "MAX_POSITIONS_ALONE_CANNOT_REJECT",
+    "frozen": [
+      "F10",
+      "H0",
+      "BINARY_VOL",
+      "gross budget",
+      "POSITION_WEIGHT_CAP",
+      "PER_POSITION_RISK_BUDGET",
+      "canonical liquidity",
+      "transaction costs",
+      "same-pair rule"
+    ],
+    "incumbent_sales": false,
+    "position_count_search": false
+  },
+  "source_revision": 759
+}

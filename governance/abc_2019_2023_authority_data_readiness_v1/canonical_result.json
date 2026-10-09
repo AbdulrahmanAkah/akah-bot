@@ -1,0 +1,15 @@
+{
+  "schema_version": "abc-2019-2023-authority-data-readiness-v1",
+  "task_id": "ABC_2019_2023_AUTHORITY_DATA_READINESS_AUDIT_V1",
+  "classification": "BLOCKED",
+  "pre2019_warmup_accessed": true,
+  "pre2019_trades_or_pnl_computed": false,
+  "2024_access": false,
+  "2025_access": false,
+  "pair_count": 0,
+  "blockers": [
+    "NO_EXPLICIT_YEAR_PARTITIONED_CAUSAL_MARKET_BAR_AUTHORITY_DISCOVERED",
+    "UNPARTITIONED_OR_YEAR_UNBOUND_MARKET_FILES_SKIPPED_TO_PRESERVE_2024_SEAL"
+  ],
+  "next_bottleneck": "ABC_DATA_READINESS_REMEDIATION_BEFORE_MAX_HOLD_PROOF"
+}

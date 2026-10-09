@@ -1,0 +1,59 @@
+{
+  "definition": "V2 is strictly actionable only when v2_while_native_open is true and v2 lead to native exit is > 0h. Exact first-1H-open precedence is enforced in the next portfolio replay.",
+  "native_loss_share_on_actionable_v2_trades": 0.30785307687278324,
+  "overall_counts": {
+    "memory_before_exit": 460,
+    "memory_only": 205,
+    "no_memory": 288,
+    "v2_before_or_at_exit": 255,
+    "v2_collision": 22,
+    "v2_strictly_actionable": 233
+  },
+  "overall_memory_lead_buckets_hours": {
+    "0-4": 37,
+    "12-24": 125,
+    "24-48": 125,
+    "4-8": 46,
+    "48-72": 54,
+    "8-12": 41,
+    "<=0": 9,
+    ">72": 23
+  },
+  "overall_v2_actionable_lead_buckets_hours": {
+    "0-4": 37,
+    "12-24": 71,
+    "24-48": 59,
+    "4-8": 20,
+    "48-72": 15,
+    "8-12": 25,
+    "<=0": 0,
+    ">72": 6
+  },
+  "portfolio_counts": {
+    "MOMENTUM_BREAKOUT": {
+      "memory_before_exit": 142,
+      "memory_only": 70,
+      "no_memory": 91,
+      "v2_before_or_at_exit": 72,
+      "v2_collision": 6,
+      "v2_strictly_actionable": 66
+    },
+    "RELATIVE_STRENGTH_ROTATION": {
+      "memory_before_exit": 118,
+      "memory_only": 46,
+      "no_memory": 71,
+      "v2_before_or_at_exit": 72,
+      "v2_collision": 7,
+      "v2_strictly_actionable": 65
+    },
+    "UNION_FOCUS": {
+      "memory_before_exit": 200,
+      "memory_only": 89,
+      "no_memory": 126,
+      "v2_before_or_at_exit": 111,
+      "v2_collision": 9,
+      "v2_strictly_actionable": 102
+    }
+  },
+  "status": "PASS"
+}

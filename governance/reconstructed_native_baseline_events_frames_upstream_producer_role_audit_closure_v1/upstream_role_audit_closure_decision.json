@@ -1,0 +1,201 @@
+{
+  "all_dynamic_input_authority_ready": false,
+  "blockers": {
+    "events": [
+      "EVENTS_TRANSITIVE_NON_MUTATION_NOT_PROVEN",
+      "EVENTS_LINEAGE_UNRESOLVED",
+      "EVENTS_NO_CONSTRUCTOR_OR_LOADER_AUTHORITY"
+    ],
+    "frames": [
+      "FRAMES_TRANSITIVE_NON_MUTATION_NOT_PROVEN",
+      "FRAMES_LINEAGE_UNRESOLVED",
+      "FRAMES_NO_LOADER_LINEAGE",
+      "FRAMES_CANONICAL_4H_LOADER_AUTHORITY_NOT_BOUND"
+    ]
+  },
+  "events_upstream_ready": false,
+  "frames_upstream_ready": false,
+  "next_bottleneck": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_EVENTS_FRAMES_EXACT_UPSTREAM_AUTHORITY_GAP_CLOSURE_V1",
+  "roles": {
+    "events": {
+      "constructor_count": 0,
+      "loader_count": 0,
+      "replayish_count": 0,
+      "unresolved": [
+        {
+          "call": "copy",
+          "callsite_line": 240,
+          "callsite_path": "scripts/research/run_eaa_same_pair_secondary_shadow_parity.py",
+          "defs": 0,
+          "expr": "signals[signals['period_id'] == period_id].copy()",
+          "kind": "UNRESOLVED_CALL_NONUNIQUE_OR_UNKNOWN",
+          "literal_paths": []
+        },
+        {
+          "callsite_line": 420,
+          "callsite_path": "scripts/research/run_rd27_lifecycle_ablation.py",
+          "kind": "UNRESOLVED_NAME",
+          "name": "portfolio_events"
+        },
+        {
+          "callsite_line": 248,
+          "callsite_path": "src/spotbot/research/a10_selective_protection_asymmetry.py",
+          "kind": "UNRESOLVED_FUNCTION_PARAMETER_NO_CALLERS",
+          "name": "events"
+        },
+        {
+          "callsite_line": 248,
+          "callsite_path": "src/spotbot/research/a10_selective_protection_asymmetry.py",
+          "kind": "UNRESOLVED_FUNCTION_PARAMETER_NO_CALLERS",
+          "name": "events"
+        },
+        {
+          "callsite_line": 132,
+          "callsite_path": "src/spotbot/research/a4r1_reversible_floor_replay.py",
+          "kind": "UNRESOLVED_FUNCTION_PARAMETER_NO_CALLERS",
+          "name": "events"
+        },
+        {
+          "call": "copy",
+          "callsite_line": 203,
+          "callsite_path": "src/spotbot/research/eaa_same_pair_secondary_shadow.py",
+          "defs": 0,
+          "expr": "signals[signals['period_id'] == period_id].copy()",
+          "kind": "UNRESOLVED_CALL_NONUNIQUE_OR_UNKNOWN",
+          "literal_paths": []
+        },
+        {
+          "call": "copy",
+          "callsite_line": 203,
+          "callsite_path": "src/spotbot/research/eaa_same_pair_secondary_shadow.py",
+          "defs": 0,
+          "expr": "signals[signals['period_id'] == period_id].copy()",
+          "kind": "UNRESOLVED_CALL_NONUNIQUE_OR_UNKNOWN",
+          "literal_paths": []
+        }
+      ],
+      "unresolved_count": 7
+    },
+    "frames": {
+      "constructor_count": 0,
+      "loader_count": 0,
+      "replayish_count": 0,
+      "unresolved": [
+        {
+          "callsite_line": 240,
+          "callsite_path": "scripts/research/run_eaa_same_pair_secondary_shadow_parity.py",
+          "kind": "UNRESOLVED_NAME",
+          "name": "frames"
+        },
+        {
+          "call": "load_feature_frames",
+          "callsite_line": 420,
+          "callsite_path": "scripts/research/run_rd27_lifecycle_ablation.py",
+          "defs": 9,
+          "expr": "load_feature_frames(raw_root=raw_root, pairs=pairs, cutoff=DATA_CUTOFF)",
+          "kind": "UNRESOLVED_CALL_NONUNIQUE_OR_UNKNOWN",
+          "literal_paths": []
+        },
+        {
+          "call": "load_feature_frames",
+          "callsite_line": 420,
+          "callsite_path": "scripts/research/run_rd27_lifecycle_ablation.py",
+          "defs": 9,
+          "expr": "load_feature_frames(raw_root=raw_root, pairs=pairs)",
+          "kind": "UNRESOLVED_CALL_NONUNIQUE_OR_UNKNOWN",
+          "literal_paths": []
+        },
+        {
+          "call": "load_feature_frames",
+          "callsite_line": 420,
+          "callsite_path": "scripts/research/run_rd27_lifecycle_ablation.py",
+          "defs": 9,
+          "expr": "load_feature_frames(raw_root=raw_root, pairs=pairs)",
+          "kind": "UNRESOLVED_CALL_NONUNIQUE_OR_UNKNOWN",
+          "literal_paths": []
+        },
+        {
+          "call": "load_feature_frames",
+          "callsite_line": 420,
+          "callsite_path": "scripts/research/run_rd27_lifecycle_ablation.py",
+          "defs": 9,
+          "expr": "load_feature_frames(raw_root=raw_root, pairs=pairs)",
+          "kind": "UNRESOLVED_CALL_NONUNIQUE_OR_UNKNOWN",
+          "literal_paths": []
+        },
+        {
+          "call": "load_feature_frames",
+          "callsite_line": 420,
+          "callsite_path": "scripts/research/run_rd27_lifecycle_ablation.py",
+          "defs": 9,
+          "expr": "load_feature_frames(raw_root=raw_root, pairs=pairs)",
+          "kind": "UNRESOLVED_CALL_NONUNIQUE_OR_UNKNOWN",
+          "literal_paths": []
+        },
+        {
+          "call": "load_feature_frames",
+          "callsite_line": 420,
+          "callsite_path": "scripts/research/run_rd27_lifecycle_ablation.py",
+          "defs": 9,
+          "expr": "load_feature_frames(raw_root=raw_root, pairs=pairs)",
+          "kind": "UNRESOLVED_CALL_NONUNIQUE_OR_UNKNOWN",
+          "literal_paths": []
+        },
+        {
+          "call": "load_feature_frames",
+          "callsite_line": 420,
+          "callsite_path": "scripts/research/run_rd27_lifecycle_ablation.py",
+          "defs": 9,
+          "expr": "rd31.load_feature_frames(raw_root=raw_root, pairs=pairs)",
+          "kind": "UNRESOLVED_CALL_NONUNIQUE_OR_UNKNOWN",
+          "literal_paths": []
+        },
+        {
+          "call": "load_feature_frames",
+          "callsite_line": 420,
+          "callsite_path": "scripts/research/run_rd27_lifecycle_ablation.py",
+          "defs": 9,
+          "expr": "rd31.load_feature_frames(raw_root=raw_root, pairs=pairs)",
+          "kind": "UNRESOLVED_CALL_NONUNIQUE_OR_UNKNOWN",
+          "literal_paths": []
+        },
+        {
+          "callsite_line": 248,
+          "callsite_path": "src/spotbot/research/a10_selective_protection_asymmetry.py",
+          "kind": "UNRESOLVED_FUNCTION_PARAMETER_NO_CALLERS",
+          "name": "frames"
+        },
+        {
+          "callsite_line": 248,
+          "callsite_path": "src/spotbot/research/a10_selective_protection_asymmetry.py",
+          "kind": "UNRESOLVED_FUNCTION_PARAMETER_NO_CALLERS",
+          "name": "frames"
+        },
+        {
+          "callsite_line": 132,
+          "callsite_path": "src/spotbot/research/a4r1_reversible_floor_replay.py",
+          "kind": "UNRESOLVED_FUNCTION_PARAMETER_NO_CALLERS",
+          "name": "frames"
+        },
+        {
+          "callsite_line": 203,
+          "callsite_path": "src/spotbot/research/eaa_same_pair_secondary_shadow.py",
+          "kind": "UNRESOLVED_NAME",
+          "name": "frames"
+        },
+        {
+          "callsite_line": 203,
+          "callsite_path": "src/spotbot/research/eaa_same_pair_secondary_shadow.py",
+          "kind": "UNRESOLVED_NAME",
+          "name": "frames"
+        }
+      ],
+      "unresolved_count": 14
+    }
+  },
+  "status": "PASS",
+  "transitive_mutation": {
+    "events": "UNKNOWN",
+    "frames": "UNKNOWN"
+  }
+}

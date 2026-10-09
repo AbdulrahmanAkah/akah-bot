@@ -1,0 +1,74 @@
+{
+  "authority_bindings": {
+    "contract_sha256": "33E047214748197BEA85BC5C0C7668F15DCABA10235FBB4B6FBF48E7EF00CD06",
+    "decision_sha256": "4C4BD1CE64A1778BCA847320A3C684C8E9A000AA54FF0BF9E825E19EC63E0612",
+    "membership_sha256": "FDED7FB32AEAC8771B8F5F629A52427D239B06A4FC87AA24B2083AD821EBE30A",
+    "native_sha256": "12911244371D3BE64A92D373021F6190CEE9DC9A3B36B9AF30AF5F6CEAB77C45",
+    "source_provenance_sha256": "7C3CD6110A4B64592BFAFB018C6C0B6363AFC1D106A0036E82E522D199E38B83",
+    "study_contract_sha256": "D44813026C3800B44AA8577B7F6722198A74FFEA0303FB8162E19EE32285A0B4",
+    "validation_sha256": "5CC58A10A9FE6378B5ABB05E0087D041ACA6E24D4474B2CC7B865158D91304CE"
+  },
+  "branch": "research/rd48-cross-venue-price-level-basis-direct-utility-v1",
+  "evidence": [
+    {
+      "path": "governance/reconstructed_native_baseline_current_rd26_logical_input_preopen_authority_v1/logical_input_source_provenance.json",
+      "sha256": "7C3CD6110A4B64592BFAFB018C6C0B6363AFC1D106A0036E82E522D199E38B83"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_current_rd26_logical_input_preopen_authority_v1/membership_preopen_semantic_authority.json",
+      "sha256": "FDED7FB32AEAC8771B8F5F629A52427D239B06A4FC87AA24B2083AD821EBE30A"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_current_rd26_logical_input_preopen_authority_v1/native_1h_preopen_metadata_authority.json",
+      "sha256": "12911244371D3BE64A92D373021F6190CEE9DC9A3B36B9AF30AF5F6CEAB77C45"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_current_rd26_logical_input_preopen_authority_v1/validation_only_artifact_authority.json",
+      "sha256": "5CC58A10A9FE6378B5ABB05E0087D041ACA6E24D4474B2CC7B865158D91304CE"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_current_rd26_logical_input_preopen_authority_v1/pre2023_reconstruction_input_authority_contract.json",
+      "sha256": "33E047214748197BEA85BC5C0C7668F15DCABA10235FBB4B6FBF48E7EF00CD06"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_current_rd26_logical_input_preopen_authority_v1/preopen_authority_decision.json",
+      "sha256": "4C4BD1CE64A1778BCA847320A3C684C8E9A000AA54FF0BF9E825E19EC63E0612"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_current_rd26_logical_input_preopen_authority_v1.json",
+      "sha256": "C13CE060C172546E522DEF5EA311084AB06792A0BDACD5F4C9F81C9ABE1F985A"
+    }
+  ],
+  "firewall": {
+    "economic_analysis": false,
+    "market_rows_read": false,
+    "mixed_csv_data_rows_read": false,
+    "native_replay_executed": false,
+    "network": false,
+    "protected_year_rows_read": false,
+    "push": false,
+    "source_code_mutation": false,
+    "v2_incidence_used": false
+  },
+  "governed_schema_version": "akah-provenance-phase-governed-v1",
+  "next_bottleneck": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_CURRENT_RD26_PRODUCER_MEMBERSHIP_FRAMES_PREOPEN_2022_EXACT_RESIDUAL_V1",
+  "north_star_effect": "Adjudicate pre-open <=2022 authority for the unique logical inputs: distinguish payload membership and native 1H frames from validation-only artifacts, bind source/provenance without row reads, and quantify native 1H row-group isolation from metadata only.",
+  "objective": "Adjudicate pre-open <=2022 authority for the unique logical inputs: distinguish payload membership and native 1H frames from validation-only artifacts, bind source/provenance without row reads, and quantify native 1H row-group isolation from metadata only.",
+  "resolution_class": "MEMBERSHIP_FRAMES_PREOPEN_2022_EXACT_RESIDUAL_REMAINS",
+  "state_updates": {
+    "economic_analysis": false,
+    "membership_preopen_authority_ready": false,
+    "native_all_files_have_safe_pre2023_rowgroups": false,
+    "native_files_with_any_safe_pre2023_rowgroup": 0,
+    "native_files_without_safe_pre2023_rowgroup": 342,
+    "native_replay_executed": false,
+    "reconstruction_execution_contract_ready": false,
+    "roadmap_position": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_CURRENT_RD26_PRODUCER_MEMBERSHIP_FRAMES_PREOPEN_2022_EXACT_RESIDUAL_V1",
+    "validation_gate_authority_ready": true
+  },
+  "status": "PASS",
+  "summary": "Adjudicated unique logical inputs without protected or market row reads: membership_ready=False; validation_ready=True; native_files=342, native_all_have_safe_pre2023_rowgroups=False.",
+  "task_id": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_CURRENT_RD26_PRODUCER_MEMBERSHIP_FRAMES_PREOPEN_2022_AUTHORITY_V1",
+  "task_start_head": "1e27912573d91a02f304d9a8cac7b41de40f3f81",
+  "task_start_revision": 218
+}

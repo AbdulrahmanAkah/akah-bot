@@ -1,0 +1,33 @@
+{
+  "V10_R1_R3_R4": "UNCHANGED_WITH_ORIGINAL_SCOPE_NOT_INDEPENDENTLY_RECERTIFIED",
+  "V10_unconditional_R2_closure": "INVALIDATED_BY_LOCKED_REVIEW_SUPERSEDED_BY_V11",
+  "old_versions_preserved": true,
+  "repairs": [
+    {
+      "defect": "PREBIND_ADD_STOP_SCALAR_UNBOUND",
+      "id": "F1",
+      "proof": "Immutable native LPS bar + original stage stop + actual fill receipt; exact source derivation at bind and actual kernel; B0 unchanged",
+      "status": "CLOSED_TECHNICALLY"
+    },
+    {
+      "defect": "PREBIND_PIT_BOOLEAN_CAN_BE_FLIPPED",
+      "id": "F2",
+      "proof": "Explicit Known[PitMembership], live source parents, pair/checkpoint/period parity and false preservation through actual kernel; caller bool denied",
+      "status": "CLOSED_TECHNICALLY"
+    },
+    {
+      "defect": "SHALLOW_FROZEN_PRODUCED_MUTABLE_DICTIONARIES",
+      "id": "F3",
+      "proof": "Recursive immutable payload + exact emission seal; full issue fields checked before bind and actual admission; parent/router liveness",
+      "status": "CLOSED_TECHNICALLY"
+    },
+    {
+      "defect": "MISSING_ARCH_AND_SPOTBOT_DATA_IN_OLD_HANDOFF",
+      "id": "EXPORT_DEPENDENCIES",
+      "proof": "Exact dependency lock arch8.0.0 + data/core source; 465 exported tests pass in python -S with no editable spotbot fallback",
+      "status": "CLOSED_TECHNICALLY"
+    }
+  ],
+  "supplied_review_items_closed_in_synthetic_scope": true,
+  "targets_risk_grammar_changed": false
+}

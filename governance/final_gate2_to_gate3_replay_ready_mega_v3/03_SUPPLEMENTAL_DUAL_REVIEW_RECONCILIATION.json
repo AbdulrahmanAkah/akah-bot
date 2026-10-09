@@ -1,0 +1,2147 @@
+{
+  "proxy_sha256": "1AC7B6A1D7AB8E1878A30C3F5B9461A0503F2C451CDDD49F9F4EB4CA4A4DFC52",
+  "independent_sha256": "EB299491759F490662B2AB91D58AAA293B3AC5EBDA8031B31A2140E9A448B3A0",
+  "same_34_ids": true,
+  "cases": [
+    {
+      "case_id": "G2-SV-0001",
+      "source_case": {
+        "case_id": "G2-P-0002",
+        "engine_row": null,
+        "kind": "NO_INTENT",
+        "pair": "BTC-USDT",
+        "prefix_maxima": [
+          "2023-10-28 21:00:00+00:00",
+          "2023-10-28 20:00:00+00:00",
+          "2023-10-28 00:00:00+00:00"
+        ],
+        "reserve": false,
+        "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+        "time": "2023-10-28 21:00:00+00:00"
+      },
+      "proxy": {
+        "case_id": "G2-SV-0001",
+        "school": "ICT",
+        "action": "REJECT",
+        "recognize_asset_time": false,
+        "context": "Daily/4H bullish; Saturday 17:00 is outside the bounded session",
+        "structure": "Impulse followed by consolidation",
+        "location": "Upper local range",
+        "trigger": "No current legal weekday raid-MSS-retracement chain",
+        "invalidation": "A raid low cannot be assigned to a legal active setup",
+        "management": "No new ICT owner; a weekend observation is not a funded session",
+        "differs": [
+          "trigger"
+        ]
+      },
+      "independent": {
+        "case_id": "G2-SV-0001",
+        "reviewer_id": "INDEPENDENT_DOMAIN_REVIEWER_SUPPLEMENTAL_V1",
+        "reviewer_type": "AI_ASSISTANT_PER_USER_EXPLICIT_INSTRUCTION",
+        "human_action": "REJECT",
+        "differences": [
+          "DIFFERENT_CONTEXT",
+          "DIFFERENT_STRUCTURE",
+          "DIFFERENT_LOCATION",
+          "DIFFERENT_TRIGGER",
+          "DIFFERENT_INVALIDATION",
+          "DIFFERENT_MANAGEMENT"
+        ],
+        "context": "Blind prefix context: asset 1D=UP, 4H=UP, 1H=BALANCED; RS=FLAT. Displayed NY session=Saturday 17:00.",
+        "structure": "No complete, live bullish ICT raid->MSS/FVG->later-retracement setup is defensible at the checkpoint under the displayed session/context.",
+        "location": "Checkpoint is not a clean live ICT long location in the recent normalized 1H span 97.87\u00e2\u20ac\u201c102.88.",
+        "trigger": "The required causal chain is stale, incomplete, off-session, or contradicted by the higher-timeframe/market context at the checkpoint.",
+        "invalidation": "Without a valid live owning raid, there is no source-valid protective stop for a new ICT long.",
+        "management": "No new ICT long should be opened from this checkpoint; wait for a fresh causally complete sequence.",
+        "recognition_flag": true,
+        "recognition_note": "Recognized as likely recurred primary-control geometry/session from the earlier locked review; judgment was re-evaluated from this blind packet.",
+        "blind_anchor_counts_last24h": {
+          "CONFIRMED_PIVOT_L": 4,
+          "THREE_BAR_GAP_GEOMETRY_ONLY": 2,
+          "CONFIRMED_PIVOT_H": 6,
+          "CLOSE_ABOVE_CONFIRMED_HIGH": 2,
+          "BAR_LOW_BELOW_CONFIRMED_LOW_AND_CLOSE_RECLAIMS": 1
+        }
+      },
+      "exact_agreement": true
+    },
+    {
+      "case_id": "G2-SV-0002",
+      "source_case": {
+        "case_id": "G2-P-0004",
+        "engine_row": null,
+        "kind": "NO_INTENT",
+        "pair": "AVAX-USDT",
+        "prefix_maxima": [
+          "2022-08-18 14:00:00+00:00",
+          "2022-08-18 12:00:00+00:00",
+          "2022-08-18 00:00:00+00:00"
+        ],
+        "reserve": false,
+        "system_id": "FS_WYCKOFF_FULL_LONG",
+        "time": "2022-08-18 14:00:00+00:00"
+      },
+      "proxy": {
+        "case_id": "G2-SV-0002",
+        "school": "WYCKOFF",
+        "action": "REJECT",
+        "recognize_asset_time": false,
+        "context": "Daily bear; 4H recovery now retreating; RS weakens",
+        "structure": "Recovery followed by lower structure",
+        "location": "Below the recent recovery high",
+        "trigger": "No fresh owned LPS acceptance during ongoing correction",
+        "invalidation": "Failure of the recovery support invalidates any proposed LPS",
+        "management": "No complete Wyckoff campaign",
+        "differs": [
+          "trigger"
+        ]
+      },
+      "independent": {
+        "case_id": "G2-SV-0002",
+        "reviewer_id": "INDEPENDENT_DOMAIN_REVIEWER_SUPPLEMENTAL_V1",
+        "reviewer_type": "AI_ASSISTANT_PER_USER_EXPLICIT_INSTRUCTION",
+        "human_action": "REJECT",
+        "differences": [
+          "DIFFERENT_CONTEXT",
+          "DIFFERENT_STRUCTURE",
+          "DIFFERENT_LOCATION",
+          "DIFFERENT_TRIGGER",
+          "DIFFERENT_INVALIDATION",
+          "DIFFERENT_MANAGEMENT"
+        ],
+        "context": "Blind prefix context: asset 1D=UP, 4H=DOWN, 1H=DOWN; RS=WEAKENING.",
+        "structure": "No complete bullish Wyckoff accumulation/reaccumulation-to-markup sequence with a valid live SOS/LPS chain is defensible at the checkpoint.",
+        "location": "Checkpoint is either inside unresolved range/markdown or after a move whose owning test/LPS is not live; recent normalized 1H span 97.43\u00e2\u20ac\u201c110.62.",
+        "trigger": "A spring/reclaim, first rebound, or isolated breakout is insufficient without the source-valid later ownership/test sequence and compatible context.",
+        "invalidation": "No valid funded Wyckoff long owner is established, so no protective stop should be invented.",
+        "management": "No active Wyckoff long campaign should be funded from this checkpoint.",
+        "recognition_flag": true,
+        "recognition_note": "Recognized as likely recurred primary-control geometry/session from the earlier locked review; judgment was re-evaluated from this blind packet.",
+        "blind_anchor_counts_last24h": {
+          "CONFIRMED_PIVOT_L": 3,
+          "CONFIRMED_PIVOT_H": 2,
+          "THREE_BAR_GAP_GEOMETRY_ONLY": 2,
+          "CLOSE_ABOVE_CONFIRMED_HIGH": 3
+        }
+      },
+      "exact_agreement": true
+    },
+    {
+      "case_id": "G2-SV-0003",
+      "source_case": {
+        "case_id": "G2-P-0005",
+        "engine_row": null,
+        "kind": "NO_INTENT",
+        "pair": "LIKE-USDT",
+        "prefix_maxima": [
+          "2022-04-23 15:00:00+00:00",
+          "2022-04-23 12:00:00+00:00",
+          "2022-04-23 00:00:00+00:00"
+        ],
+        "reserve": false,
+        "system_id": "FS_WYCKOFF_FULL_LONG",
+        "time": "2022-04-23 15:00:00+00:00"
+      },
+      "proxy": {
+        "case_id": "G2-SV-0003",
+        "school": "WYCKOFF",
+        "action": "REJECT",
+        "recognize_asset_time": false,
+        "context": "Daily down; market and RS deteriorate",
+        "structure": "Bottom range with failed short recovery",
+        "location": "At a renewed downward impulse",
+        "trigger": "No completed SOS and subsequent successful LPS",
+        "invalidation": "The renewed range breakdown defeats the proposed long",
+        "management": "Wait; no Wyckoff owner",
+        "differs": [
+          "trigger"
+        ]
+      },
+      "independent": {
+        "case_id": "G2-SV-0003",
+        "reviewer_id": "INDEPENDENT_DOMAIN_REVIEWER_SUPPLEMENTAL_V1",
+        "reviewer_type": "AI_ASSISTANT_PER_USER_EXPLICIT_INSTRUCTION",
+        "human_action": "REJECT",
+        "differences": [
+          "DIFFERENT_CONTEXT",
+          "DIFFERENT_STRUCTURE",
+          "DIFFERENT_LOCATION",
+          "DIFFERENT_TRIGGER",
+          "DIFFERENT_INVALIDATION",
+          "DIFFERENT_MANAGEMENT"
+        ],
+        "context": "Blind prefix context: asset 1D=BALANCED, 4H=UP, 1H=BALANCED; RS=IMPROVING.",
+        "structure": "No complete bullish Wyckoff accumulation/reaccumulation-to-markup sequence with a valid live SOS/LPS chain is defensible at the checkpoint.",
+        "location": "Checkpoint is either inside unresolved range/markdown or after a move whose owning test/LPS is not live; recent normalized 1H span 98.60\u00e2\u20ac\u201c102.92.",
+        "trigger": "A spring/reclaim, first rebound, or isolated breakout is insufficient without the source-valid later ownership/test sequence and compatible context.",
+        "invalidation": "No valid funded Wyckoff long owner is established, so no protective stop should be invented.",
+        "management": "No active Wyckoff long campaign should be funded from this checkpoint.",
+        "recognition_flag": true,
+        "recognition_note": "Recognized as likely recurred primary-control geometry/session from the earlier locked review; judgment was re-evaluated from this blind packet.",
+        "blind_anchor_counts_last24h": {
+          "CONFIRMED_PIVOT_L": 3,
+          "BAR_LOW_BELOW_CONFIRMED_LOW_AND_CLOSE_RECLAIMS": 2,
+          "CONFIRMED_PIVOT_H": 1
+        }
+      },
+      "exact_agreement": true
+    },
+    {
+      "case_id": "G2-SV-0004",
+      "source_case": {
+        "case_id": "G2-P-0014",
+        "engine_row": null,
+        "kind": "NO_INTENT",
+        "pair": "BTC-USDT",
+        "prefix_maxima": [
+          "2023-11-07 22:00:00+00:00",
+          "2023-11-07 20:00:00+00:00",
+          "2023-11-07 00:00:00+00:00"
+        ],
+        "reserve": false,
+        "system_id": "FS_WYCKOFF_FULL_LONG",
+        "time": "2023-11-07 22:00:00+00:00"
+      },
+      "proxy": {
+        "case_id": "G2-SV-0004",
+        "school": "WYCKOFF",
+        "action": "UNRESOLVED",
+        "recognize_asset_time": false,
+        "context": "Daily/4H and market trend positive; flat RS ratio",
+        "structure": "Possible reaccumulation after impulse",
+        "location": "Range upper edge",
+        "trigger": "A renewed high is visible; cause/readiness ownership is not certified",
+        "invalidation": "Owned LPS floor is not unambiguously identified",
+        "management": "Possible structural Wyckoff hold; P&F cause and readiness remain unbound",
+        "differs": [
+          "structure",
+          "invalidation",
+          "management"
+        ]
+      },
+      "independent": {
+        "case_id": "G2-SV-0004",
+        "reviewer_id": "INDEPENDENT_DOMAIN_REVIEWER_SUPPLEMENTAL_V1",
+        "reviewer_type": "AI_ASSISTANT_PER_USER_EXPLICIT_INSTRUCTION",
+        "human_action": "ACCEPT",
+        "differences": [],
+        "context": "Blind prefix context: asset 1D=UP, 4H=BALANCED, 1H=BALANCED; RS=FLAT.",
+        "structure": "The blind prefix is consistent with a bullish Wyckoff accumulation/reaccumulation-to-markup sequence with an accepted breakout/SOS and a defensible later test/LPS before renewed strength.",
+        "location": "Checkpoint is on the markup side of the recent structure; normalized 1H span is 97.11\u00e2\u20ac\u201c101.18, close=100.00.",
+        "trigger": "Breakout/SOS is followed by a held pullback/test and renewed strength rather than a simple first impulse from the low.",
+        "invalidation": "Invalidate below the owning test/LPS or spring low; the exact stop must remain tied to that owner, not widened after entry. Recent structural lower region is near 97.11.",
+        "management": "Wyckoff owns the thesis; continue while markup and the owning LPS/test remain valid, with later management only from confirmed subsequent structure.",
+        "recognition_flag": true,
+        "recognition_note": "Recognized as likely recurred primary-control geometry/session from the earlier locked review; judgment was re-evaluated from this blind packet.",
+        "blind_anchor_counts_last24h": {
+          "CONFIRMED_PIVOT_H": 4,
+          "CLOSE_ABOVE_CONFIRMED_HIGH": 6,
+          "BAR_LOW_BELOW_CONFIRMED_LOW_AND_CLOSE_RECLAIMS": 2,
+          "CONFIRMED_PIVOT_L": 3,
+          "THREE_BAR_GAP_GEOMETRY_ONLY": 2
+        }
+      },
+      "exact_agreement": false
+    },
+    {
+      "case_id": "G2-SV-0005",
+      "source_case": {
+        "case_id": "G2-P-0018",
+        "engine_row": null,
+        "kind": "NO_INTENT",
+        "pair": "ETC-USDT",
+        "prefix_maxima": [
+          "2023-01-12 03:00:00+00:00",
+          "2023-01-12 00:00:00+00:00",
+          "2023-01-12 00:00:00+00:00"
+        ],
+        "reserve": false,
+        "system_id": "FS_WYCKOFF_FULL_LONG",
+        "time": "2023-01-12 03:00:00+00:00"
+      },
+      "proxy": {
+        "case_id": "G2-SV-0005",
+        "school": "WYCKOFF",
+        "action": "UNRESOLVED",
+        "recognize_asset_time": false,
+        "context": "Daily bearish backdrop; 4H local recovery and RS improve",
+        "structure": "Possible base-SOS-LPS sequence",
+        "location": "Recent pullback after local advance",
+        "trigger": "Local recovery is visible; phase/cause ownership is missing",
+        "invalidation": "The low of the candidate pullback would matter, but ownership is unclear",
+        "management": "Do not infer a complete Wyckoff campaign from the bounce alone",
+        "differs": [
+          "structure",
+          "invalidation",
+          "management"
+        ]
+      },
+      "independent": {
+        "case_id": "G2-SV-0005",
+        "reviewer_id": "INDEPENDENT_DOMAIN_REVIEWER_SUPPLEMENTAL_V1",
+        "reviewer_type": "AI_ASSISTANT_PER_USER_EXPLICIT_INSTRUCTION",
+        "human_action": "UNRESOLVED",
+        "differences": [
+          "DIFFERENT_STRUCTURE",
+          "DIFFERENT_LOCATION",
+          "DIFFERENT_TRIGGER",
+          "DIFFERENT_INVALIDATION",
+          "DIFFERENT_MANAGEMENT"
+        ],
+        "context": "Blind prefix context: asset 1D=UP, 4H=UP, 1H=DOWN; RS=FLAT.",
+        "structure": "A possible accumulation/reaccumulation transition is present, but phase ownership and the relationship between the breakout, test/LPS and current move are not unique enough for a locked ACCEPT.",
+        "location": "Potential range/markup decision area lies inside the recent normalized 1H span 94.00\u00e2\u20ac\u201c105.41.",
+        "trigger": "Strength/reclaim features are visible, but I cannot certify a complete source-valid range->SOS->confirmed LPS/reclaim sequence from the neutral view.",
+        "invalidation": "A valid invalidation would belong to the owning spring/test/LPS, which remains ambiguous.",
+        "management": "Do not fund until the phase and owning evidence chain are uniquely established.",
+        "recognition_flag": true,
+        "recognition_note": "Recognized as likely recurred primary-control geometry/session from the earlier locked review; judgment was re-evaluated from this blind packet.",
+        "blind_anchor_counts_last24h": {
+          "CONFIRMED_PIVOT_L": 3,
+          "THREE_BAR_GAP_GEOMETRY_ONLY": 6,
+          "CONFIRMED_PIVOT_H": 3,
+          "BAR_LOW_BELOW_CONFIRMED_LOW_AND_CLOSE_RECLAIMS": 1,
+          "CLOSE_ABOVE_CONFIRMED_HIGH": 4
+        }
+      },
+      "exact_agreement": true
+    },
+    {
+      "case_id": "G2-SV-0006",
+      "source_case": {
+        "case_id": "G2-P-0019",
+        "engine_row": null,
+        "kind": "NO_INTENT",
+        "pair": "AVAX-USDT",
+        "prefix_maxima": [
+          "2022-01-03 12:00:00+00:00",
+          "2022-01-03 12:00:00+00:00",
+          "2022-01-03 00:00:00+00:00"
+        ],
+        "reserve": false,
+        "system_id": "FS_WYCKOFF_FULL_LONG",
+        "time": "2022-01-03 12:00:00+00:00"
+      },
+      "proxy": {
+        "case_id": "G2-SV-0006",
+        "school": "WYCKOFF",
+        "action": "REJECT",
+        "recognize_asset_time": false,
+        "context": "Daily deteriorating; broad market down and local range wide",
+        "structure": "Wide trading range after impulse",
+        "location": "Middle of range, retreating from upper area",
+        "trigger": "No fresh SOS/test at the checkpoint",
+        "invalidation": "Lower range boundary is hypothetical until setup ownership exists",
+        "management": "No completed Wyckoff long",
+        "differs": [
+          "trigger"
+        ]
+      },
+      "independent": {
+        "case_id": "G2-SV-0006",
+        "reviewer_id": "INDEPENDENT_DOMAIN_REVIEWER_SUPPLEMENTAL_V1",
+        "reviewer_type": "AI_ASSISTANT_PER_USER_EXPLICIT_INSTRUCTION",
+        "human_action": "REJECT",
+        "differences": [
+          "DIFFERENT_CONTEXT",
+          "DIFFERENT_STRUCTURE",
+          "DIFFERENT_LOCATION",
+          "DIFFERENT_TRIGGER",
+          "DIFFERENT_INVALIDATION",
+          "DIFFERENT_MANAGEMENT"
+        ],
+        "context": "Blind prefix context: asset 1D=UP, 4H=BALANCED, 1H=UP; RS=FLAT.",
+        "structure": "No complete bullish Wyckoff accumulation/reaccumulation-to-markup sequence with a valid live SOS/LPS chain is defensible at the checkpoint.",
+        "location": "Checkpoint is either inside unresolved range/markdown or after a move whose owning test/LPS is not live; recent normalized 1H span 91.55\u00e2\u20ac\u201c105.11.",
+        "trigger": "A spring/reclaim, first rebound, or isolated breakout is insufficient without the source-valid later ownership/test sequence and compatible context.",
+        "invalidation": "No valid funded Wyckoff long owner is established, so no protective stop should be invented.",
+        "management": "No active Wyckoff long campaign should be funded from this checkpoint.",
+        "recognition_flag": true,
+        "recognition_note": "Recognized as likely recurred primary-control geometry/session from the earlier locked review; judgment was re-evaluated from this blind packet.",
+        "blind_anchor_counts_last24h": {
+          "CONFIRMED_PIVOT_H": 6,
+          "BAR_LOW_BELOW_CONFIRMED_LOW_AND_CLOSE_RECLAIMS": 4,
+          "CONFIRMED_PIVOT_L": 4,
+          "THREE_BAR_GAP_GEOMETRY_ONLY": 1
+        }
+      },
+      "exact_agreement": true
+    },
+    {
+      "case_id": "G2-SV-0007",
+      "source_case": {
+        "case_id": "G2-P-0020",
+        "engine_row": null,
+        "kind": "NO_INTENT",
+        "pair": "BAX-USDT",
+        "prefix_maxima": [
+          "2022-04-23 17:00:00+00:00",
+          "2022-04-23 16:00:00+00:00",
+          "2022-04-23 00:00:00+00:00"
+        ],
+        "reserve": false,
+        "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+        "time": "2022-04-23 17:00:00+00:00"
+      },
+      "proxy": {
+        "case_id": "G2-SV-0007",
+        "school": "ICT",
+        "action": "REJECT",
+        "recognize_asset_time": false,
+        "context": "Saturday 13:00; market down",
+        "structure": "Descending local structure",
+        "location": "Inside decline",
+        "trigger": "No legal weekday ICT activation",
+        "invalidation": "No active raid owner to protect",
+        "management": "No new session trade",
+        "differs": [
+          "trigger"
+        ]
+      },
+      "independent": {
+        "case_id": "G2-SV-0007",
+        "reviewer_id": "INDEPENDENT_DOMAIN_REVIEWER_SUPPLEMENTAL_V1",
+        "reviewer_type": "AI_ASSISTANT_PER_USER_EXPLICIT_INSTRUCTION",
+        "human_action": "REJECT",
+        "differences": [
+          "DIFFERENT_CONTEXT",
+          "DIFFERENT_STRUCTURE",
+          "DIFFERENT_LOCATION",
+          "DIFFERENT_TRIGGER",
+          "DIFFERENT_INVALIDATION",
+          "DIFFERENT_MANAGEMENT"
+        ],
+        "context": "Blind prefix context: asset 1D=UP, 4H=BALANCED, 1H=DOWN; RS=FLAT. Displayed NY session=Saturday 13:00.",
+        "structure": "No complete, live bullish ICT raid->MSS/FVG->later-retracement setup is defensible at the checkpoint under the displayed session/context.",
+        "location": "Checkpoint is not a clean live ICT long location in the recent normalized 1H span 99.00\u00e2\u20ac\u201c111.11.",
+        "trigger": "The required causal chain is stale, incomplete, off-session, or contradicted by the higher-timeframe/market context at the checkpoint.",
+        "invalidation": "Without a valid live owning raid, there is no source-valid protective stop for a new ICT long.",
+        "management": "No new ICT long should be opened from this checkpoint; wait for a fresh causally complete sequence.",
+        "recognition_flag": true,
+        "recognition_note": "Recognized as likely recurred primary-control geometry/session from the earlier locked review; judgment was re-evaluated from this blind packet.",
+        "blind_anchor_counts_last24h": {
+          "CONFIRMED_PIVOT_H": 4,
+          "CONFIRMED_PIVOT_L": 5,
+          "BAR_LOW_BELOW_CONFIRMED_LOW_AND_CLOSE_RECLAIMS": 3
+        }
+      },
+      "exact_agreement": true
+    },
+    {
+      "case_id": "G2-SV-0008",
+      "source_case": {
+        "case_id": "G2-P-0021",
+        "engine_row": null,
+        "kind": "NO_INTENT",
+        "pair": "AVAX-USDT",
+        "prefix_maxima": [
+          "2023-08-23 19:00:00+00:00",
+          "2023-08-23 16:00:00+00:00",
+          "2023-08-23 00:00:00+00:00"
+        ],
+        "reserve": false,
+        "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+        "time": "2023-08-23 19:00:00+00:00"
+      },
+      "proxy": {
+        "case_id": "G2-SV-0008",
+        "school": "ICT",
+        "action": "REJECT",
+        "recognize_asset_time": false,
+        "context": "Asset and 4H falling; broad market just broke down",
+        "structure": "Bearish impulse with bounce",
+        "location": "Below former structure",
+        "trigger": "Bounce does not establish a bullish HTF draw and legal chain",
+        "invalidation": "Recent bounce low alone is not a complete ICT thesis",
+        "management": "Reject rather than reverse the bearish context by assumption",
+        "differs": [
+          "trigger"
+        ]
+      },
+      "independent": {
+        "case_id": "G2-SV-0008",
+        "reviewer_id": "INDEPENDENT_DOMAIN_REVIEWER_SUPPLEMENTAL_V1",
+        "reviewer_type": "AI_ASSISTANT_PER_USER_EXPLICIT_INSTRUCTION",
+        "human_action": "REJECT",
+        "differences": [
+          "DIFFERENT_CONTEXT",
+          "DIFFERENT_STRUCTURE",
+          "DIFFERENT_LOCATION",
+          "DIFFERENT_TRIGGER",
+          "DIFFERENT_INVALIDATION",
+          "DIFFERENT_MANAGEMENT"
+        ],
+        "context": "Blind prefix context: asset 1D=DOWN, 4H=DOWN, 1H=DOWN; RS=FLAT. Displayed NY session=Wednesday 15:00.",
+        "structure": "No complete, live bullish ICT raid->MSS/FVG->later-retracement setup is defensible at the checkpoint under the displayed session/context.",
+        "location": "Checkpoint is not a clean live ICT long location in the recent normalized 1H span 93.39\u00e2\u20ac\u201c105.14.",
+        "trigger": "The required causal chain is stale, incomplete, off-session, or contradicted by the higher-timeframe/market context at the checkpoint.",
+        "invalidation": "Without a valid live owning raid, there is no source-valid protective stop for a new ICT long.",
+        "management": "No new ICT long should be opened from this checkpoint; wait for a fresh causally complete sequence.",
+        "recognition_flag": true,
+        "recognition_note": "Recognized as likely recurred primary-control geometry/session from the earlier locked review; judgment was re-evaluated from this blind packet.",
+        "blind_anchor_counts_last24h": {
+          "CONFIRMED_PIVOT_L": 4,
+          "CONFIRMED_PIVOT_H": 3,
+          "BAR_LOW_BELOW_CONFIRMED_LOW_AND_CLOSE_RECLAIMS": 2,
+          "CLOSE_ABOVE_CONFIRMED_HIGH": 10,
+          "THREE_BAR_GAP_GEOMETRY_ONLY": 7
+        }
+      },
+      "exact_agreement": true
+    },
+    {
+      "case_id": "G2-SV-0009",
+      "source_case": {
+        "case_id": "G2-P-0023",
+        "engine_row": null,
+        "kind": "NO_INTENT",
+        "pair": "BAX-USDT",
+        "prefix_maxima": [
+          "2023-05-10 17:00:00+00:00",
+          "2023-05-10 16:00:00+00:00",
+          "2023-05-10 00:00:00+00:00"
+        ],
+        "reserve": false,
+        "system_id": "FS_WYCKOFF_FULL_LONG",
+        "time": "2023-05-10 17:00:00+00:00"
+      },
+      "proxy": {
+        "case_id": "G2-SV-0009",
+        "school": "WYCKOFF",
+        "action": "REJECT",
+        "recognize_asset_time": false,
+        "context": "Asset markdown and declining RS",
+        "structure": "Blowoff followed by persistent markdown",
+        "location": "Near lower end of collapse",
+        "trigger": "No established base/SOS/LPS sequence",
+        "invalidation": "Continuing breakdown invalidates accumulation inference",
+        "management": "No Wyckoff campaign",
+        "differs": [
+          "trigger"
+        ]
+      },
+      "independent": {
+        "case_id": "G2-SV-0009",
+        "reviewer_id": "INDEPENDENT_DOMAIN_REVIEWER_SUPPLEMENTAL_V1",
+        "reviewer_type": "AI_ASSISTANT_PER_USER_EXPLICIT_INSTRUCTION",
+        "human_action": "REJECT",
+        "differences": [
+          "DIFFERENT_CONTEXT",
+          "DIFFERENT_STRUCTURE",
+          "DIFFERENT_LOCATION",
+          "DIFFERENT_TRIGGER",
+          "DIFFERENT_INVALIDATION",
+          "DIFFERENT_MANAGEMENT"
+        ],
+        "context": "Blind prefix context: asset 1D=DOWN, 4H=DOWN, 1H=DOWN; RS=FLAT.",
+        "structure": "No complete bullish Wyckoff accumulation/reaccumulation-to-markup sequence with a valid live SOS/LPS chain is defensible at the checkpoint.",
+        "location": "Checkpoint is either inside unresolved range/markdown or after a move whose owning test/LPS is not live; recent normalized 1H span 92.34\u00e2\u20ac\u201c111.14.",
+        "trigger": "A spring/reclaim, first rebound, or isolated breakout is insufficient without the source-valid later ownership/test sequence and compatible context.",
+        "invalidation": "No valid funded Wyckoff long owner is established, so no protective stop should be invented.",
+        "management": "No active Wyckoff long campaign should be funded from this checkpoint.",
+        "recognition_flag": true,
+        "recognition_note": "Recognized as likely recurred primary-control geometry/session from the earlier locked review; judgment was re-evaluated from this blind packet.",
+        "blind_anchor_counts_last24h": {
+          "BAR_LOW_BELOW_CONFIRMED_LOW_AND_CLOSE_RECLAIMS": 4,
+          "CONFIRMED_PIVOT_L": 4,
+          "CONFIRMED_PIVOT_H": 4,
+          "THREE_BAR_GAP_GEOMETRY_ONLY": 2,
+          "CLOSE_ABOVE_CONFIRMED_HIGH": 5
+        }
+      },
+      "exact_agreement": true
+    },
+    {
+      "case_id": "G2-SV-0010",
+      "source_case": {
+        "case_id": "G2-P-0024",
+        "engine_row": null,
+        "kind": "NO_INTENT",
+        "pair": "ETC-USDT",
+        "prefix_maxima": [
+          "2023-10-27 06:00:00+00:00",
+          "2023-10-27 04:00:00+00:00",
+          "2023-10-27 00:00:00+00:00"
+        ],
+        "reserve": false,
+        "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+        "time": "2023-10-27 06:00:00+00:00"
+      },
+      "proxy": {
+        "case_id": "G2-SV-0010",
+        "school": "ICT",
+        "action": "REJECT",
+        "recognize_asset_time": false,
+        "context": "Friday 02:00; asset locally rising but RS weak",
+        "structure": "Local recovery",
+        "location": "Upper part of recovery",
+        "trigger": "Pre-08:30 timing excludes bounded ICT entry",
+        "invalidation": "No legal session raid low",
+        "management": "Wait for a legal session setup",
+        "differs": [
+          "trigger"
+        ]
+      },
+      "independent": {
+        "case_id": "G2-SV-0010",
+        "reviewer_id": "INDEPENDENT_DOMAIN_REVIEWER_SUPPLEMENTAL_V1",
+        "reviewer_type": "AI_ASSISTANT_PER_USER_EXPLICIT_INSTRUCTION",
+        "human_action": "REJECT",
+        "differences": [
+          "DIFFERENT_CONTEXT",
+          "DIFFERENT_STRUCTURE",
+          "DIFFERENT_LOCATION",
+          "DIFFERENT_TRIGGER",
+          "DIFFERENT_INVALIDATION",
+          "DIFFERENT_MANAGEMENT"
+        ],
+        "context": "Blind prefix context: asset 1D=BALANCED, 4H=UP, 1H=BALANCED; RS=FLAT. Displayed NY session=Friday 02:00.",
+        "structure": "No complete, live bullish ICT raid->MSS/FVG->later-retracement setup is defensible at the checkpoint under the displayed session/context.",
+        "location": "Checkpoint is not a clean live ICT long location in the recent normalized 1H span 97.41\u00e2\u20ac\u201c106.83.",
+        "trigger": "The required causal chain is stale, incomplete, off-session, or contradicted by the higher-timeframe/market context at the checkpoint.",
+        "invalidation": "Without a valid live owning raid, there is no source-valid protective stop for a new ICT long.",
+        "management": "No new ICT long should be opened from this checkpoint; wait for a fresh causally complete sequence.",
+        "recognition_flag": true,
+        "recognition_note": "Recognized as likely recurred primary-control geometry/session from the earlier locked review; judgment was re-evaluated from this blind packet.",
+        "blind_anchor_counts_last24h": {
+          "CONFIRMED_PIVOT_H": 4,
+          "CLOSE_ABOVE_CONFIRMED_HIGH": 2,
+          "CONFIRMED_PIVOT_L": 4,
+          "THREE_BAR_GAP_GEOMETRY_ONLY": 3
+        }
+      },
+      "exact_agreement": true
+    },
+    {
+      "case_id": "G2-SV-0011",
+      "source_case": {
+        "case_id": "G2-P-0030",
+        "engine_row": null,
+        "kind": "NO_INTENT",
+        "pair": "BTC-USDT",
+        "prefix_maxima": [
+          "2022-05-03 09:00:00+00:00",
+          "2022-05-03 08:00:00+00:00",
+          "2022-05-03 00:00:00+00:00"
+        ],
+        "reserve": false,
+        "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+        "time": "2022-05-03 09:00:00+00:00"
+      },
+      "proxy": {
+        "case_id": "G2-SV-0011",
+        "school": "ICT",
+        "action": "REJECT",
+        "recognize_asset_time": false,
+        "context": "Tuesday 05:00; asset/market backdrop weak",
+        "structure": "Lower structure",
+        "location": "Inside bearish recovery",
+        "trigger": "Outside bounded entry session",
+        "invalidation": "No active bounded-session invalidation",
+        "management": "No ICT entry",
+        "differs": [
+          "trigger"
+        ]
+      },
+      "independent": {
+        "case_id": "G2-SV-0011",
+        "reviewer_id": "INDEPENDENT_DOMAIN_REVIEWER_SUPPLEMENTAL_V1",
+        "reviewer_type": "AI_ASSISTANT_PER_USER_EXPLICIT_INSTRUCTION",
+        "human_action": "REJECT",
+        "differences": [
+          "DIFFERENT_CONTEXT",
+          "DIFFERENT_STRUCTURE",
+          "DIFFERENT_LOCATION",
+          "DIFFERENT_TRIGGER",
+          "DIFFERENT_INVALIDATION",
+          "DIFFERENT_MANAGEMENT"
+        ],
+        "context": "Blind prefix context: asset 1D=DOWN, 4H=BALANCED, 1H=BALANCED; RS=FLAT. Displayed NY session=Tuesday 05:00.",
+        "structure": "No complete, live bullish ICT raid->MSS/FVG->later-retracement setup is defensible at the checkpoint under the displayed session/context.",
+        "location": "Checkpoint is not a clean live ICT long location in the recent normalized 1H span 97.04\u00e2\u20ac\u201c101.70.",
+        "trigger": "The required causal chain is stale, incomplete, off-session, or contradicted by the higher-timeframe/market context at the checkpoint.",
+        "invalidation": "Without a valid live owning raid, there is no source-valid protective stop for a new ICT long.",
+        "management": "No new ICT long should be opened from this checkpoint; wait for a fresh causally complete sequence.",
+        "recognition_flag": true,
+        "recognition_note": "Recognized as likely recurred primary-control geometry/session from the earlier locked review; judgment was re-evaluated from this blind packet.",
+        "blind_anchor_counts_last24h": {
+          "CONFIRMED_PIVOT_H": 5,
+          "BAR_LOW_BELOW_CONFIRMED_LOW_AND_CLOSE_RECLAIMS": 3,
+          "CONFIRMED_PIVOT_L": 4
+        }
+      },
+      "exact_agreement": true
+    },
+    {
+      "case_id": "G2-SV-0012",
+      "source_case": {
+        "case_id": "G2-P-0034",
+        "engine_row": null,
+        "kind": "NO_INTENT",
+        "pair": "AVAX-USDT",
+        "prefix_maxima": [
+          "2022-05-20 14:00:00+00:00",
+          "2022-05-20 12:00:00+00:00",
+          "2022-05-20 00:00:00+00:00"
+        ],
+        "reserve": false,
+        "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+        "time": "2022-05-20 14:00:00+00:00"
+      },
+      "proxy": {
+        "case_id": "G2-SV-0012",
+        "school": "ICT",
+        "action": "REJECT",
+        "recognize_asset_time": false,
+        "context": "Friday 10:00; asset/market declining",
+        "structure": "Sharp selloff then rebound",
+        "location": "Under prior internal structure",
+        "trigger": "Rebound alone lacks bullish draw and full later-MSS/FVG/retrace chain",
+        "invalidation": "Low of rebound is not enough to certify owner chain",
+        "management": "No funded long from a bounce alone",
+        "differs": [
+          "trigger"
+        ]
+      },
+      "independent": {
+        "case_id": "G2-SV-0012",
+        "reviewer_id": "INDEPENDENT_DOMAIN_REVIEWER_SUPPLEMENTAL_V1",
+        "reviewer_type": "AI_ASSISTANT_PER_USER_EXPLICIT_INSTRUCTION",
+        "human_action": "REJECT",
+        "differences": [
+          "DIFFERENT_CONTEXT",
+          "DIFFERENT_STRUCTURE",
+          "DIFFERENT_LOCATION",
+          "DIFFERENT_TRIGGER",
+          "DIFFERENT_INVALIDATION",
+          "DIFFERENT_MANAGEMENT"
+        ],
+        "context": "Blind prefix context: asset 1D=DOWN, 4H=DOWN, 1H=DOWN; RS=WEAKENING. Displayed NY session=Friday 10:00.",
+        "structure": "No complete, live bullish ICT raid->MSS/FVG->later-retracement setup is defensible at the checkpoint under the displayed session/context.",
+        "location": "Checkpoint is not a clean live ICT long location in the recent normalized 1H span 87.91\u00e2\u20ac\u201c114.41.",
+        "trigger": "The required causal chain is stale, incomplete, off-session, or contradicted by the higher-timeframe/market context at the checkpoint.",
+        "invalidation": "Without a valid live owning raid, there is no source-valid protective stop for a new ICT long.",
+        "management": "No new ICT long should be opened from this checkpoint; wait for a fresh causally complete sequence.",
+        "recognition_flag": true,
+        "recognition_note": "Recognized as likely recurred primary-control geometry/session from the earlier locked review; judgment was re-evaluated from this blind packet.",
+        "blind_anchor_counts_last24h": {
+          "CLOSE_ABOVE_CONFIRMED_HIGH": 4,
+          "CONFIRMED_PIVOT_H": 3,
+          "CONFIRMED_PIVOT_L": 2,
+          "THREE_BAR_GAP_GEOMETRY_ONLY": 2
+        }
+      },
+      "exact_agreement": true
+    },
+    {
+      "case_id": "G2-SV-0013",
+      "source_case": {
+        "case_id": "G2-P-0053",
+        "engine_row": {
+          "broad_eligible": true,
+          "event": "RAID_INVALIDATED",
+          "metadata": "{\"raid_low\": 28210.1, \"raid_time\": \"2023-04-04 13:00:00+00:00\"}",
+          "pair": "BTC-USDT",
+          "stage": "INVALIDATION",
+          "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+          "timestamp": "2023-04-04 14:00:00+00:00"
+        },
+        "kind": "INTERMEDIATE",
+        "pair": "BTC-USDT",
+        "prefix_maxima": [
+          "2023-04-04 14:00:00+00:00",
+          "2023-04-04 12:00:00+00:00",
+          "2023-04-04 00:00:00+00:00"
+        ],
+        "reserve": false,
+        "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+        "time": "2023-04-04 14:00:00+00:00"
+      },
+      "proxy": {
+        "case_id": "G2-SV-0013",
+        "school": "ICT",
+        "action": "ACCEPT",
+        "recognize_asset_time": false,
+        "context": "Tuesday 10:00; daily/4H bullish and market supports continuation",
+        "structure": "Sell-side reclaim followed by later internal break and gap",
+        "location": "Retracement into later gap near 100",
+        "trigger": "Confirmed high 99.47 broken before current gap retracement; creation and touch are separate bars",
+        "invalidation": "Owned local raid/recovery low around 98.82; breach cancels thesis",
+        "management": "ICT owns; protect raid low, use visible opposing liquidity and session expiry",
+        "differs": []
+      },
+      "independent": {
+        "case_id": "G2-SV-0013",
+        "reviewer_id": "INDEPENDENT_DOMAIN_REVIEWER_SUPPLEMENTAL_V1",
+        "reviewer_type": "AI_ASSISTANT_PER_USER_EXPLICIT_INSTRUCTION",
+        "human_action": "REJECT",
+        "differences": [
+          "DIFFERENT_CONTEXT",
+          "DIFFERENT_STRUCTURE",
+          "DIFFERENT_LOCATION",
+          "DIFFERENT_TRIGGER",
+          "DIFFERENT_INVALIDATION",
+          "DIFFERENT_MANAGEMENT"
+        ],
+        "context": "Blind prefix context: asset 1D=UP, 4H=BALANCED, 1H=BALANCED; RS=FLAT. Displayed NY session=Tuesday 10:00.",
+        "structure": "No complete, live bullish ICT raid->MSS/FVG->later-retracement setup is defensible at the checkpoint under the displayed session/context.",
+        "location": "Checkpoint is not a clean live ICT long location in the recent normalized 1H span 96.91\u00e2\u20ac\u201c101.65.",
+        "trigger": "The required causal chain is stale, incomplete, off-session, or contradicted by the higher-timeframe/market context at the checkpoint.",
+        "invalidation": "Without a valid live owning raid, there is no source-valid protective stop for a new ICT long.",
+        "management": "No new ICT long should be opened from this checkpoint; wait for a fresh causally complete sequence.",
+        "recognition_flag": true,
+        "recognition_note": "Recognized as likely recurred primary-control geometry/session from the earlier locked review; judgment was re-evaluated from this blind packet.",
+        "blind_anchor_counts_last24h": {
+          "CONFIRMED_PIVOT_H": 6,
+          "CONFIRMED_PIVOT_L": 3,
+          "CLOSE_ABOVE_CONFIRMED_HIGH": 6,
+          "THREE_BAR_GAP_GEOMETRY_ONLY": 2
+        }
+      },
+      "exact_agreement": false
+    },
+    {
+      "case_id": "G2-SV-0014",
+      "source_case": {
+        "case_id": "G2-P-0054",
+        "engine_row": {
+          "broad_eligible": true,
+          "event": "SESSION_EXPIRY",
+          "metadata": "{}",
+          "pair": "BTC-USDT",
+          "stage": "RESET",
+          "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+          "timestamp": "2023-06-06 20:00:00+00:00"
+        },
+        "kind": "INTERMEDIATE",
+        "pair": "BTC-USDT",
+        "prefix_maxima": [
+          "2023-06-06 20:00:00+00:00",
+          "2023-06-06 20:00:00+00:00",
+          "2023-06-06 00:00:00+00:00"
+        ],
+        "reserve": false,
+        "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+        "time": "2023-06-06 20:00:00+00:00"
+      },
+      "proxy": {
+        "case_id": "G2-SV-0014",
+        "school": "ICT",
+        "action": "REJECT",
+        "recognize_asset_time": false,
+        "context": "Tuesday 16:00; mixed context",
+        "structure": "Rebound after local decline",
+        "location": "Inside rebound",
+        "trigger": "NY16 lifecycle is expiring, not a fresh entry permission",
+        "invalidation": "Any prior raid owner expires with its session",
+        "management": "Do not enter a new ICT position at the expiry checkpoint",
+        "differs": [
+          "trigger"
+        ]
+      },
+      "independent": {
+        "case_id": "G2-SV-0014",
+        "reviewer_id": "INDEPENDENT_DOMAIN_REVIEWER_SUPPLEMENTAL_V1",
+        "reviewer_type": "AI_ASSISTANT_PER_USER_EXPLICIT_INSTRUCTION",
+        "human_action": "REJECT",
+        "differences": [
+          "DIFFERENT_CONTEXT",
+          "DIFFERENT_STRUCTURE",
+          "DIFFERENT_LOCATION",
+          "DIFFERENT_TRIGGER",
+          "DIFFERENT_INVALIDATION",
+          "DIFFERENT_MANAGEMENT"
+        ],
+        "context": "Blind prefix context: asset 1D=BALANCED, 4H=BALANCED, 1H=BALANCED; RS=FLAT. Displayed NY session=Tuesday 16:00.",
+        "structure": "No complete, live bullish ICT raid->MSS/FVG->later-retracement setup is defensible at the checkpoint under the displayed session/context.",
+        "location": "Checkpoint is not a clean live ICT long location in the recent normalized 1H span 93.61\u00e2\u20ac\u201c101.42.",
+        "trigger": "The required causal chain is stale, incomplete, off-session, or contradicted by the higher-timeframe/market context at the checkpoint.",
+        "invalidation": "Without a valid live owning raid, there is no source-valid protective stop for a new ICT long.",
+        "management": "No new ICT long should be opened from this checkpoint; wait for a fresh causally complete sequence.",
+        "recognition_flag": true,
+        "recognition_note": "Recognized as likely recurred primary-control geometry/session from the earlier locked review; judgment was re-evaluated from this blind packet.",
+        "blind_anchor_counts_last24h": {
+          "BAR_LOW_BELOW_CONFIRMED_LOW_AND_CLOSE_RECLAIMS": 3,
+          "CONFIRMED_PIVOT_L": 4,
+          "THREE_BAR_GAP_GEOMETRY_ONLY": 6,
+          "CONFIRMED_PIVOT_H": 3,
+          "CLOSE_ABOVE_CONFIRMED_HIGH": 6
+        }
+      },
+      "exact_agreement": true
+    },
+    {
+      "case_id": "G2-SV-0015",
+      "source_case": {
+        "case_id": "G2-P-0061",
+        "engine_row": {
+          "broad_eligible": true,
+          "event": "SELLING_CLIMAX",
+          "metadata": "{\"low\": 0.162, \"spread\": 0.06877, \"volume\": 6317974.995988}",
+          "pair": "WOO-USDT",
+          "stage": "STRUCTURAL",
+          "system_id": "FS_WYCKOFF_FULL_LONG",
+          "timestamp": "2022-05-11 16:00:00+00:00"
+        },
+        "kind": "INTERMEDIATE",
+        "pair": "WOO-USDT",
+        "prefix_maxima": [
+          "2022-05-11 16:00:00+00:00",
+          "2022-05-11 16:00:00+00:00",
+          "2022-05-11 00:00:00+00:00"
+        ],
+        "reserve": false,
+        "system_id": "FS_WYCKOFF_FULL_LONG",
+        "time": "2022-05-11 16:00:00+00:00"
+      },
+      "proxy": {
+        "case_id": "G2-SV-0015",
+        "school": "WYCKOFF",
+        "action": "REJECT",
+        "recognize_asset_time": false,
+        "context": "Daily/market markdown",
+        "structure": "Terminal bounce in persistent decline",
+        "location": "Below unestablished base",
+        "trigger": "No causal SC-AR-ST/cause and SOS/LPS chain",
+        "invalidation": "A falling low defeats proposed long structure",
+        "management": "No Wyckoff entry",
+        "differs": [
+          "trigger"
+        ]
+      },
+      "independent": {
+        "case_id": "G2-SV-0015",
+        "reviewer_id": "INDEPENDENT_DOMAIN_REVIEWER_SUPPLEMENTAL_V1",
+        "reviewer_type": "AI_ASSISTANT_PER_USER_EXPLICIT_INSTRUCTION",
+        "human_action": "REJECT",
+        "differences": [
+          "DIFFERENT_CONTEXT",
+          "DIFFERENT_STRUCTURE",
+          "DIFFERENT_LOCATION",
+          "DIFFERENT_TRIGGER",
+          "DIFFERENT_INVALIDATION",
+          "DIFFERENT_MANAGEMENT"
+        ],
+        "context": "Blind prefix context: asset 1D=DOWN, 4H=DOWN, 1H=DOWN; RS=WEAKENING.",
+        "structure": "No complete bullish Wyckoff accumulation/reaccumulation-to-markup sequence with a valid live SOS/LPS chain is defensible at the checkpoint.",
+        "location": "Checkpoint is either inside unresolved range/markdown or after a move whose owning test/LPS is not live; recent normalized 1H span 77.43\u00e2\u20ac\u201c155.16.",
+        "trigger": "A spring/reclaim, first rebound, or isolated breakout is insufficient without the source-valid later ownership/test sequence and compatible context.",
+        "invalidation": "No valid funded Wyckoff long owner is established, so no protective stop should be invented.",
+        "management": "No active Wyckoff long campaign should be funded from this checkpoint.",
+        "recognition_flag": true,
+        "recognition_note": "Recognized as likely recurred primary-control geometry/session from the earlier locked review; judgment was re-evaluated from this blind packet.",
+        "blind_anchor_counts_last24h": {
+          "CONFIRMED_PIVOT_H": 5,
+          "CONFIRMED_PIVOT_L": 4,
+          "THREE_BAR_GAP_GEOMETRY_ONLY": 1,
+          "BAR_LOW_BELOW_CONFIRMED_LOW_AND_CLOSE_RECLAIMS": 1
+        }
+      },
+      "exact_agreement": true
+    },
+    {
+      "case_id": "G2-SV-0016",
+      "source_case": {
+        "case_id": "G2-P-0062",
+        "engine_row": {
+          "broad_eligible": true,
+          "event": "AUTOMATIC_RALLY",
+          "metadata": "{\"high\": 0.16901}",
+          "pair": "WOO-USDT",
+          "stage": "STRUCTURAL",
+          "system_id": "FS_WYCKOFF_FULL_LONG",
+          "timestamp": "2022-07-14 12:00:00+00:00"
+        },
+        "kind": "INTERMEDIATE",
+        "pair": "WOO-USDT",
+        "prefix_maxima": [
+          "2022-07-14 12:00:00+00:00",
+          "2022-07-14 12:00:00+00:00",
+          "2022-07-14 00:00:00+00:00"
+        ],
+        "reserve": false,
+        "system_id": "FS_WYCKOFF_FULL_LONG",
+        "time": "2022-07-14 12:00:00+00:00"
+      },
+      "proxy": {
+        "case_id": "G2-SV-0016",
+        "school": "WYCKOFF",
+        "action": "REJECT",
+        "recognize_asset_time": false,
+        "context": "Daily bear; recovery fades and RS lacks leadership",
+        "structure": "Lower highs after failed rally",
+        "location": "Below local highs",
+        "trigger": "No fresh owned LPS after SOS",
+        "invalidation": "New downside damage cancels putative support",
+        "management": "No structural Wyckoff long now",
+        "differs": [
+          "trigger"
+        ]
+      },
+      "independent": {
+        "case_id": "G2-SV-0016",
+        "reviewer_id": "INDEPENDENT_DOMAIN_REVIEWER_SUPPLEMENTAL_V1",
+        "reviewer_type": "AI_ASSISTANT_PER_USER_EXPLICIT_INSTRUCTION",
+        "human_action": "REJECT",
+        "differences": [
+          "DIFFERENT_CONTEXT",
+          "DIFFERENT_STRUCTURE",
+          "DIFFERENT_LOCATION",
+          "DIFFERENT_TRIGGER",
+          "DIFFERENT_INVALIDATION",
+          "DIFFERENT_MANAGEMENT"
+        ],
+        "context": "Blind prefix context: asset 1D=UP, 4H=DOWN, 1H=BALANCED; RS=FLAT.",
+        "structure": "No complete bullish Wyckoff accumulation/reaccumulation-to-markup sequence with a valid live SOS/LPS chain is defensible at the checkpoint.",
+        "location": "Checkpoint is either inside unresolved range/markdown or after a move whose owning test/LPS is not live; recent normalized 1H span 92.68\u00e2\u20ac\u201c110.17.",
+        "trigger": "A spring/reclaim, first rebound, or isolated breakout is insufficient without the source-valid later ownership/test sequence and compatible context.",
+        "invalidation": "No valid funded Wyckoff long owner is established, so no protective stop should be invented.",
+        "management": "No active Wyckoff long campaign should be funded from this checkpoint.",
+        "recognition_flag": true,
+        "recognition_note": "Recognized as likely recurred primary-control geometry/session from the earlier locked review; judgment was re-evaluated from this blind packet.",
+        "blind_anchor_counts_last24h": {
+          "CLOSE_ABOVE_CONFIRMED_HIGH": 7,
+          "CONFIRMED_PIVOT_H": 3,
+          "CONFIRMED_PIVOT_L": 3,
+          "THREE_BAR_GAP_GEOMETRY_ONLY": 4
+        }
+      },
+      "exact_agreement": true
+    },
+    {
+      "case_id": "G2-SV-0017",
+      "source_case": {
+        "case_id": "G2-P-0066",
+        "engine_row": {
+          "broad_eligible": true,
+          "event": "SELLING_CLIMAX",
+          "metadata": "{\"low\": 0.02128, \"spread\": 0.000559999999999998, \"volume\": 406850.84660000005}",
+          "pair": "ANKR-USDT",
+          "stage": "STRUCTURAL",
+          "system_id": "FS_WYCKOFF_FULL_LONG",
+          "timestamp": "2023-08-16 16:00:00+00:00"
+        },
+        "kind": "INTERMEDIATE",
+        "pair": "ANKR-USDT",
+        "prefix_maxima": [
+          "2023-08-16 16:00:00+00:00",
+          "2023-08-16 16:00:00+00:00",
+          "2023-08-16 00:00:00+00:00"
+        ],
+        "reserve": false,
+        "system_id": "FS_WYCKOFF_FULL_LONG",
+        "time": "2023-08-16 16:00:00+00:00"
+      },
+      "proxy": {
+        "case_id": "G2-SV-0017",
+        "school": "WYCKOFF",
+        "action": "REJECT",
+        "recognize_asset_time": false,
+        "context": "Asset lower structure; market correction",
+        "structure": "Range breakdown",
+        "location": "Below range support",
+        "trigger": "Breakdown is not an LPS confirmation",
+        "invalidation": "Lost range floor defeats the base",
+        "management": "No campaign",
+        "differs": [
+          "trigger"
+        ]
+      },
+      "independent": {
+        "case_id": "G2-SV-0017",
+        "reviewer_id": "INDEPENDENT_DOMAIN_REVIEWER_SUPPLEMENTAL_V1",
+        "reviewer_type": "AI_ASSISTANT_PER_USER_EXPLICIT_INSTRUCTION",
+        "human_action": "REJECT",
+        "differences": [
+          "DIFFERENT_CONTEXT",
+          "DIFFERENT_STRUCTURE",
+          "DIFFERENT_LOCATION",
+          "DIFFERENT_TRIGGER",
+          "DIFFERENT_INVALIDATION",
+          "DIFFERENT_MANAGEMENT"
+        ],
+        "context": "Blind prefix context: asset 1D=DOWN, 4H=DOWN, 1H=DOWN; RS=WEAKENING.",
+        "structure": "No complete bullish Wyckoff accumulation/reaccumulation-to-markup sequence with a valid live SOS/LPS chain is defensible at the checkpoint.",
+        "location": "Checkpoint is either inside unresolved range/markdown or after a move whose owning test/LPS is not live; recent normalized 1H span 98.15\u00e2\u20ac\u201c112.59.",
+        "trigger": "A spring/reclaim, first rebound, or isolated breakout is insufficient without the source-valid later ownership/test sequence and compatible context.",
+        "invalidation": "No valid funded Wyckoff long owner is established, so no protective stop should be invented.",
+        "management": "No active Wyckoff long campaign should be funded from this checkpoint.",
+        "recognition_flag": true,
+        "recognition_note": "Recognized as likely recurred primary-control geometry/session from the earlier locked review; judgment was re-evaluated from this blind packet.",
+        "blind_anchor_counts_last24h": {
+          "CONFIRMED_PIVOT_L": 4,
+          "CONFIRMED_PIVOT_H": 3,
+          "THREE_BAR_GAP_GEOMETRY_ONLY": 2,
+          "BAR_LOW_BELOW_CONFIRMED_LOW_AND_CLOSE_RECLAIMS": 1
+        }
+      },
+      "exact_agreement": true
+    },
+    {
+      "case_id": "G2-SV-0018",
+      "source_case": {
+        "case_id": "G2-P-0068",
+        "engine_row": {
+          "broad_eligible": true,
+          "event": "NEW_STRONGER_SC",
+          "metadata": "{\"reason\": \"RESEED_NEW_SC\"}",
+          "pair": "ETH-USDT",
+          "stage": "RESET",
+          "system_id": "FS_WYCKOFF_FULL_LONG",
+          "timestamp": "2023-03-09 00:00:00+00:00"
+        },
+        "kind": "INTERMEDIATE",
+        "pair": "ETH-USDT",
+        "prefix_maxima": [
+          "2023-03-09 00:00:00+00:00",
+          "2023-03-09 00:00:00+00:00",
+          "2023-03-09 00:00:00+00:00"
+        ],
+        "reserve": false,
+        "system_id": "FS_WYCKOFF_FULL_LONG",
+        "time": "2023-03-09 00:00:00+00:00"
+      },
+      "proxy": {
+        "case_id": "G2-SV-0018",
+        "school": "WYCKOFF",
+        "action": "REJECT",
+        "recognize_asset_time": false,
+        "context": "Market mixed; local price weak despite relative improvement",
+        "structure": "Lower high and renewed low",
+        "location": "Lower part of local decline",
+        "trigger": "Relative improvement cannot substitute for SOS/LPS",
+        "invalidation": "Local structural floor has failed",
+        "management": "No Wyckoff owner",
+        "differs": [
+          "trigger"
+        ]
+      },
+      "independent": {
+        "case_id": "G2-SV-0018",
+        "reviewer_id": "INDEPENDENT_DOMAIN_REVIEWER_SUPPLEMENTAL_V1",
+        "reviewer_type": "AI_ASSISTANT_PER_USER_EXPLICIT_INSTRUCTION",
+        "human_action": "REJECT",
+        "differences": [
+          "DIFFERENT_CONTEXT",
+          "DIFFERENT_STRUCTURE",
+          "DIFFERENT_LOCATION",
+          "DIFFERENT_TRIGGER",
+          "DIFFERENT_INVALIDATION",
+          "DIFFERENT_MANAGEMENT"
+        ],
+        "context": "Blind prefix context: asset 1D=BALANCED, 4H=BALANCED, 1H=BALANCED; RS=FLAT.",
+        "structure": "No complete bullish Wyckoff accumulation/reaccumulation-to-markup sequence with a valid live SOS/LPS chain is defensible at the checkpoint.",
+        "location": "Checkpoint is either inside unresolved range/markdown or after a move whose owning test/LPS is not live; recent normalized 1H span 99.35\u00e2\u20ac\u201c103.34.",
+        "trigger": "A spring/reclaim, first rebound, or isolated breakout is insufficient without the source-valid later ownership/test sequence and compatible context.",
+        "invalidation": "No valid funded Wyckoff long owner is established, so no protective stop should be invented.",
+        "management": "No active Wyckoff long campaign should be funded from this checkpoint.",
+        "recognition_flag": true,
+        "recognition_note": "Recognized as likely recurred primary-control geometry/session from the earlier locked review; judgment was re-evaluated from this blind packet.",
+        "blind_anchor_counts_last24h": {
+          "THREE_BAR_GAP_GEOMETRY_ONLY": 2,
+          "CONFIRMED_PIVOT_H": 4,
+          "CONFIRMED_PIVOT_L": 3,
+          "BAR_LOW_BELOW_CONFIRMED_LOW_AND_CLOSE_RECLAIMS": 2
+        }
+      },
+      "exact_agreement": true
+    },
+    {
+      "case_id": "G2-SV-0019",
+      "source_case": {
+        "case_id": "G2-P-0075",
+        "engine_row": {
+          "broad_eligible": true,
+          "event": "RAID_INVALIDATED",
+          "metadata": "{\"raid_low\": 0.57815, \"raid_time\": \"2022-04-05 14:00:00+00:00\"}",
+          "pair": "WOO-USDT",
+          "stage": "INVALIDATION",
+          "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+          "timestamp": "2022-04-05 15:00:00+00:00"
+        },
+        "kind": "INTERMEDIATE",
+        "pair": "WOO-USDT",
+        "prefix_maxima": [
+          "2022-04-05 15:00:00+00:00",
+          "2022-04-05 12:00:00+00:00",
+          "2022-04-05 00:00:00+00:00"
+        ],
+        "reserve": false,
+        "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+        "time": "2022-04-05 15:00:00+00:00"
+      },
+      "proxy": {
+        "case_id": "G2-SV-0019",
+        "school": "ICT",
+        "action": "REJECT",
+        "recognize_asset_time": false,
+        "context": "Tuesday 11:00; market improving but asset suffers local damage",
+        "structure": "Earlier internal break no longer protected",
+        "location": "Below recent local support around 100.61",
+        "trigger": "No current later retracement that preserves raid structure",
+        "invalidation": "Current move below protected local floor",
+        "management": "Prior possible ICT chain must not be resurrected",
+        "differs": [
+          "trigger"
+        ]
+      },
+      "independent": {
+        "case_id": "G2-SV-0019",
+        "reviewer_id": "INDEPENDENT_DOMAIN_REVIEWER_SUPPLEMENTAL_V1",
+        "reviewer_type": "AI_ASSISTANT_PER_USER_EXPLICIT_INSTRUCTION",
+        "human_action": "REJECT",
+        "differences": [
+          "DIFFERENT_CONTEXT",
+          "DIFFERENT_STRUCTURE",
+          "DIFFERENT_LOCATION",
+          "DIFFERENT_TRIGGER",
+          "DIFFERENT_INVALIDATION",
+          "DIFFERENT_MANAGEMENT"
+        ],
+        "context": "Blind prefix context: asset 1D=UP, 4H=DOWN, 1H=BALANCED; RS=WEAKENING. Displayed NY session=Tuesday 11:00.",
+        "structure": "No complete, live bullish ICT raid->MSS/FVG->later-retracement setup is defensible at the checkpoint under the displayed session/context.",
+        "location": "Checkpoint is not a clean live ICT long location in the recent normalized 1H span 95.60\u00e2\u20ac\u201c112.28.",
+        "trigger": "The required causal chain is stale, incomplete, off-session, or contradicted by the higher-timeframe/market context at the checkpoint.",
+        "invalidation": "Without a valid live owning raid, there is no source-valid protective stop for a new ICT long.",
+        "management": "No new ICT long should be opened from this checkpoint; wait for a fresh causally complete sequence.",
+        "recognition_flag": true,
+        "recognition_note": "Recognized as likely recurred primary-control geometry/session from the earlier locked review; judgment was re-evaluated from this blind packet.",
+        "blind_anchor_counts_last24h": {
+          "BAR_LOW_BELOW_CONFIRMED_LOW_AND_CLOSE_RECLAIMS": 1,
+          "CONFIRMED_PIVOT_L": 3,
+          "CLOSE_ABOVE_CONFIRMED_HIGH": 4,
+          "THREE_BAR_GAP_GEOMETRY_ONLY": 2,
+          "CONFIRMED_PIVOT_H": 4
+        }
+      },
+      "exact_agreement": true
+    },
+    {
+      "case_id": "G2-SV-0020",
+      "source_case": {
+        "case_id": "G2-P-0076",
+        "engine_row": {
+          "broad_eligible": true,
+          "event": "SELLSIDE_RAIDED",
+          "metadata": "{\"anchors\": {\"ny_0830_hourly_proxy\": 11.88, \"ny_midnight\": 11.773}, \"bias\": \"BULLISH_DRAW\", \"dealing\": \"DISCOUNT\", \"internal_high\": 11.892, \"sell_level\": 11.715, \"smt\": false, \"target\": 11.995}",
+          "pair": "AVAX-USDT",
+          "stage": "FAILED_AUCTION",
+          "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+          "timestamp": "2022-12-21 20:00:00+00:00"
+        },
+        "kind": "INTERMEDIATE",
+        "pair": "AVAX-USDT",
+        "prefix_maxima": [
+          "2022-12-21 20:00:00+00:00",
+          "2022-12-21 20:00:00+00:00",
+          "2022-12-21 00:00:00+00:00"
+        ],
+        "reserve": false,
+        "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+        "time": "2022-12-21 20:00:00+00:00"
+      },
+      "proxy": {
+        "case_id": "G2-SV-0020",
+        "school": "ICT",
+        "action": "REJECT",
+        "recognize_asset_time": false,
+        "context": "Wednesday 15:00; daily/market bearish and RS weak",
+        "structure": "Weak base in markdown",
+        "location": "Inside flat low area",
+        "trigger": "No bullish HTF draw and complete fresh chain",
+        "invalidation": "No owned raid low for a qualified long",
+        "management": "Do not trade the base by assumption",
+        "differs": [
+          "trigger"
+        ]
+      },
+      "independent": {
+        "case_id": "G2-SV-0020",
+        "reviewer_id": "INDEPENDENT_DOMAIN_REVIEWER_SUPPLEMENTAL_V1",
+        "reviewer_type": "AI_ASSISTANT_PER_USER_EXPLICIT_INSTRUCTION",
+        "human_action": "REJECT",
+        "differences": [
+          "DIFFERENT_CONTEXT",
+          "DIFFERENT_STRUCTURE",
+          "DIFFERENT_LOCATION",
+          "DIFFERENT_TRIGGER",
+          "DIFFERENT_INVALIDATION",
+          "DIFFERENT_MANAGEMENT"
+        ],
+        "context": "Blind prefix context: asset 1D=BALANCED, 4H=DOWN, 1H=BALANCED; RS=FLAT. Displayed NY session=Wednesday 15:00.",
+        "structure": "No complete, live bullish ICT raid->MSS/FVG->later-retracement setup is defensible at the checkpoint under the displayed session/context.",
+        "location": "Checkpoint is not a clean live ICT long location in the recent normalized 1H span 95.15\u00e2\u20ac\u201c103.16.",
+        "trigger": "The required causal chain is stale, incomplete, off-session, or contradicted by the higher-timeframe/market context at the checkpoint.",
+        "invalidation": "Without a valid live owning raid, there is no source-valid protective stop for a new ICT long.",
+        "management": "No new ICT long should be opened from this checkpoint; wait for a fresh causally complete sequence.",
+        "recognition_flag": true,
+        "recognition_note": "Recognized as likely recurred primary-control geometry/session from the earlier locked review; judgment was re-evaluated from this blind packet.",
+        "blind_anchor_counts_last24h": {
+          "CONFIRMED_PIVOT_H": 3,
+          "CONFIRMED_PIVOT_L": 3,
+          "THREE_BAR_GAP_GEOMETRY_ONLY": 1
+        }
+      },
+      "exact_agreement": true
+    },
+    {
+      "case_id": "G2-SV-0021",
+      "source_case": {
+        "engine_row": {
+          "broad_eligible": true,
+          "event": "NO_SPRING_LPS",
+          "metadata": "{\"market_state\": \"D_DEMAND_DOMINANT\", \"readiness\": {\"BASE_FORMED\": true, \"BULLISH_ACTIVITY\": true, \"DOWNSIDE_OBJECTIVE_CONTEXT\": true, \"DOWNWARD_STRIDE_BROKEN\": true, \"HIGHER_HIGHS\": true, \"HIGHER_LOWS\": true, \"PS_SC_ST\": true, \"RELATIVE_STRENGTH\": true, \"UPWARD_POTENTIAL_GE_3R\": true}, \"stop\": 39.357, \"target\": 52.34481}",
+          "pair": "FTT-USDT",
+          "stage": "THESIS_INTENT",
+          "system_id": "FS_WYCKOFF_FULL_LONG",
+          "timestamp": "2022-01-14 08:00:00+00:00"
+        },
+        "kind": "POSITIVE",
+        "pair": "FTT-USDT",
+        "supplemental_case_id": "G2-S-0012",
+        "system_id": "FS_WYCKOFF_FULL_LONG",
+        "time": "2022-01-14 08:00:00+00:00"
+      },
+      "proxy": {
+        "case_id": "G2-SV-0021",
+        "school": "WYCKOFF",
+        "action": "UNRESOLVED",
+        "recognize_asset_time": false,
+        "context": "Local RS improves; broad market and higher backdrop remain weak",
+        "structure": "Possible local SOS/base recovery",
+        "location": "Near resistance around 100",
+        "trigger": "Breakout visible; cause, readiness and LPS ownership not available",
+        "invalidation": "Potential range floor, not certified as campaign invalidation",
+        "management": "Keep diagnostic pending cause/phase evidence",
+        "differs": [
+          "structure",
+          "invalidation",
+          "management"
+        ]
+      },
+      "independent": {
+        "case_id": "G2-SV-0021",
+        "reviewer_id": "INDEPENDENT_DOMAIN_REVIEWER_SUPPLEMENTAL_V1",
+        "reviewer_type": "AI_ASSISTANT_PER_USER_EXPLICIT_INSTRUCTION",
+        "human_action": "REJECT",
+        "differences": [
+          "DIFFERENT_CONTEXT",
+          "DIFFERENT_STRUCTURE",
+          "DIFFERENT_LOCATION",
+          "DIFFERENT_TRIGGER",
+          "DIFFERENT_INVALIDATION",
+          "DIFFERENT_MANAGEMENT"
+        ],
+        "context": "Blind prefix context: asset 1D=BALANCED, 4H=UP, 1H=UP; RS=IMPROVING.",
+        "structure": "No complete bullish Wyckoff accumulation/reaccumulation-to-markup sequence with a valid live SOS/LPS chain is defensible at the checkpoint.",
+        "location": "Checkpoint is either inside unresolved range/markdown or after a move whose owning test/LPS is not live; recent normalized 1H span 89.41\u00e2\u20ac\u201c101.78.",
+        "trigger": "A spring/reclaim, first rebound, or isolated breakout is insufficient without the source-valid later ownership/test sequence and compatible context.",
+        "invalidation": "No valid funded Wyckoff long owner is established, so no protective stop should be invented.",
+        "management": "No active Wyckoff long campaign should be funded from this checkpoint.",
+        "recognition_flag": false,
+        "recognition_note": "",
+        "blind_anchor_counts_last24h": {
+          "CLOSE_ABOVE_CONFIRMED_HIGH": 7,
+          "THREE_BAR_GAP_GEOMETRY_ONLY": 9,
+          "CONFIRMED_PIVOT_H": 2,
+          "CONFIRMED_PIVOT_L": 4,
+          "BAR_LOW_BELOW_CONFIRMED_LOW_AND_CLOSE_RECLAIMS": 1
+        }
+      },
+      "exact_agreement": false
+    },
+    {
+      "case_id": "G2-SV-0022",
+      "source_case": {
+        "engine_row": {
+          "broad_eligible": true,
+          "event": "NO_SPRING_LPS",
+          "metadata": "{\"market_state\": \"D_DEMAND_DOMINANT\", \"readiness\": {\"BASE_FORMED\": true, \"BULLISH_ACTIVITY\": true, \"DOWNSIDE_OBJECTIVE_CONTEXT\": true, \"DOWNWARD_STRIDE_BROKEN\": true, \"HIGHER_HIGHS\": true, \"HIGHER_LOWS\": true, \"PS_SC_ST\": true, \"RELATIVE_STRENGTH\": true, \"UPWARD_POTENTIAL_GE_3R\": true}, \"stop\": 0.019742, \"target\": 0.030402679999999998}",
+          "pair": "ACH-USDT",
+          "stage": "THESIS_INTENT",
+          "system_id": "FS_WYCKOFF_FULL_LONG",
+          "timestamp": "2023-12-23 08:00:00+00:00"
+        },
+        "kind": "POSITIVE",
+        "pair": "ACH-USDT",
+        "supplemental_case_id": "G2-S-0003",
+        "system_id": "FS_WYCKOFF_FULL_LONG",
+        "time": "2023-12-23 08:00:00+00:00"
+      },
+      "proxy": {
+        "case_id": "G2-SV-0022",
+        "school": "WYCKOFF",
+        "action": "REJECT",
+        "recognize_asset_time": false,
+        "context": "Daily bottom recovery; market up, local asset correction deep",
+        "structure": "Wide range with current structural damage",
+        "location": "Retreating from rebound high",
+        "trigger": "No fresh held LPS acceptance at the endpoint",
+        "invalidation": "Support breach would invalidate any recovery thesis",
+        "management": "No new Wyckoff campaign",
+        "differs": [
+          "trigger"
+        ]
+      },
+      "independent": {
+        "case_id": "G2-SV-0022",
+        "reviewer_id": "INDEPENDENT_DOMAIN_REVIEWER_SUPPLEMENTAL_V1",
+        "reviewer_type": "AI_ASSISTANT_PER_USER_EXPLICIT_INSTRUCTION",
+        "human_action": "REJECT",
+        "differences": [
+          "DIFFERENT_CONTEXT",
+          "DIFFERENT_STRUCTURE",
+          "DIFFERENT_LOCATION",
+          "DIFFERENT_TRIGGER",
+          "DIFFERENT_INVALIDATION",
+          "DIFFERENT_MANAGEMENT"
+        ],
+        "context": "Blind prefix context: asset 1D=BALANCED, 4H=BALANCED, 1H=BALANCED; RS=FLAT.",
+        "structure": "No complete bullish Wyckoff accumulation/reaccumulation-to-markup sequence with a valid live SOS/LPS chain is defensible at the checkpoint.",
+        "location": "Checkpoint is either inside unresolved range/markdown or after a move whose owning test/LPS is not live; recent normalized 1H span 93.92\u00e2\u20ac\u201c104.56.",
+        "trigger": "A spring/reclaim, first rebound, or isolated breakout is insufficient without the source-valid later ownership/test sequence and compatible context.",
+        "invalidation": "No valid funded Wyckoff long owner is established, so no protective stop should be invented.",
+        "management": "No active Wyckoff long campaign should be funded from this checkpoint.",
+        "recognition_flag": false,
+        "recognition_note": "",
+        "blind_anchor_counts_last24h": {
+          "CLOSE_ABOVE_CONFIRMED_HIGH": 6,
+          "CONFIRMED_PIVOT_L": 4,
+          "THREE_BAR_GAP_GEOMETRY_ONLY": 2,
+          "CONFIRMED_PIVOT_H": 3
+        }
+      },
+      "exact_agreement": true
+    },
+    {
+      "case_id": "G2-SV-0023",
+      "source_case": {
+        "engine_row": {
+          "broad_eligible": true,
+          "event": "FVG",
+          "metadata": "{\"bearish_mss_exit\": true, \"day_boundary\": \"NY_AFTERNOON\", \"execution_array\": \"FVG\", \"fvg_created_at\": \"2023-02-28 18:00:00+00:00\", \"mss_time\": \"2023-02-28 18:00:00+00:00\", \"order_block_diagnostic_only\": true, \"raid_time\": \"2023-02-28 16:00:00+00:00\", \"retrace_time\": \"2023-02-28 20:00:00+00:00\", \"smt_supporting_only\": true, \"stop\": 0.5155, \"target\": 0.5449}",
+          "pair": "POLS-USDT",
+          "stage": "THESIS_INTENT",
+          "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+          "timestamp": "2023-02-28 20:00:00+00:00"
+        },
+        "kind": "POSITIVE",
+        "pair": "POLS-USDT",
+        "supplemental_case_id": "G2-S-0009",
+        "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+        "time": "2023-02-28 20:00:00+00:00"
+      },
+      "proxy": {
+        "case_id": "G2-SV-0023",
+        "school": "ICT",
+        "action": "ACCEPT",
+        "recognize_asset_time": false,
+        "context": "Tuesday 15:00; higher trend positive with 4H correction; market broadly constructive",
+        "structure": "Raid-reclaim then later MSS and FVG",
+        "location": "Later retracement into gap 98.48-100.23",
+        "trigger": "Raid near bar -8, MSS -3, FVG -2, retrace current: strictly later sequence",
+        "invalidation": "Raid low about 97.853",
+        "management": "ICT owns; frozen opposing liquidity near 103.06, stop at raid low, native MSS/session exit",
+        "differs": []
+      },
+      "independent": {
+        "case_id": "G2-SV-0023",
+        "reviewer_id": "INDEPENDENT_DOMAIN_REVIEWER_SUPPLEMENTAL_V1",
+        "reviewer_type": "AI_ASSISTANT_PER_USER_EXPLICIT_INSTRUCTION",
+        "human_action": "ACCEPT",
+        "differences": [],
+        "context": "Blind prefix context: asset 1D=UP, 4H=BALANCED, 1H=BALANCED; RS=FLAT. Displayed NY session=Tuesday 15:00.",
+        "structure": "A defensible bullish ICT sequence is visible near the checkpoint: sell-side sweep/reclaim, later bullish structural break/displacement with gap geometry, then a later retracement/hold.",
+        "location": "Decision area is the late retracement/hold within the recent normalized 1H span 97.21\u00e2\u20ac\u201c104.56; checkpoint close=100.00.",
+        "trigger": "The causal order visible in the supplied anchors is consistent with raid/reclaim -> later break/FVG creation -> later retracement, and the checkpoint remains inside the allowed intraday window.",
+        "invalidation": "Invalidation belongs below the owning raid/protected low; no arbitrary stop is inferred beyond the visible structural lower region near 97.21.",
+        "management": "ICT owns the setup only while the same raid/MSS/FVG chain remains live; no same-bar creation/retracement and no revival of stale session evidence.",
+        "recognition_flag": false,
+        "recognition_note": "",
+        "blind_anchor_counts_last24h": {
+          "CONFIRMED_PIVOT_L": 4,
+          "THREE_BAR_GAP_GEOMETRY_ONLY": 3,
+          "CONFIRMED_PIVOT_H": 5,
+          "BAR_LOW_BELOW_CONFIRMED_LOW_AND_CLOSE_RECLAIMS": 1,
+          "CLOSE_ABOVE_CONFIRMED_HIGH": 2
+        }
+      },
+      "exact_agreement": true
+    },
+    {
+      "case_id": "G2-SV-0024",
+      "source_case": {
+        "engine_row": {
+          "broad_eligible": true,
+          "event": "NO_SPRING_LPS",
+          "metadata": "{\"market_state\": \"E_MARKUP\", \"readiness\": {\"BASE_FORMED\": true, \"BULLISH_ACTIVITY\": true, \"DOWNSIDE_OBJECTIVE_CONTEXT\": true, \"DOWNWARD_STRIDE_BROKEN\": true, \"HIGHER_HIGHS\": true, \"HIGHER_LOWS\": true, \"PS_SC_ST\": true, \"RELATIVE_STRENGTH\": true, \"UPWARD_POTENTIAL_GE_3R\": true}, \"stop\": 0.03533, \"target\": 0.0681869}",
+          "pair": "ORBS-USDT",
+          "stage": "THESIS_INTENT",
+          "system_id": "FS_WYCKOFF_FULL_LONG",
+          "timestamp": "2022-07-18 12:00:00+00:00"
+        },
+        "kind": "POSITIVE",
+        "pair": "ORBS-USDT",
+        "supplemental_case_id": "G2-S-0013",
+        "system_id": "FS_WYCKOFF_FULL_LONG",
+        "time": "2022-07-18 12:00:00+00:00"
+      },
+      "proxy": {
+        "case_id": "G2-SV-0024",
+        "school": "WYCKOFF",
+        "action": "REJECT",
+        "recognize_asset_time": false,
+        "context": "Daily/market bearish bottom range",
+        "structure": "Unconfirmed accumulation candidate",
+        "location": "Middle/upper portion of low range",
+        "trigger": "No owned SOS/LPS and readiness chain",
+        "invalidation": "Range low is not enough without confirmed setup",
+        "management": "Context observation only",
+        "differs": [
+          "trigger"
+        ]
+      },
+      "independent": {
+        "case_id": "G2-SV-0024",
+        "reviewer_id": "INDEPENDENT_DOMAIN_REVIEWER_SUPPLEMENTAL_V1",
+        "reviewer_type": "AI_ASSISTANT_PER_USER_EXPLICIT_INSTRUCTION",
+        "human_action": "REJECT",
+        "differences": [
+          "DIFFERENT_CONTEXT",
+          "DIFFERENT_STRUCTURE",
+          "DIFFERENT_LOCATION",
+          "DIFFERENT_TRIGGER",
+          "DIFFERENT_INVALIDATION",
+          "DIFFERENT_MANAGEMENT"
+        ],
+        "context": "Blind prefix context: asset 1D=BALANCED, 4H=UP, 1H=BALANCED; RS=WEAKENING.",
+        "structure": "No complete bullish Wyckoff accumulation/reaccumulation-to-markup sequence with a valid live SOS/LPS chain is defensible at the checkpoint.",
+        "location": "Checkpoint is either inside unresolved range/markdown or after a move whose owning test/LPS is not live; recent normalized 1H span 95.24\u00e2\u20ac\u201c101.42.",
+        "trigger": "A spring/reclaim, first rebound, or isolated breakout is insufficient without the source-valid later ownership/test sequence and compatible context.",
+        "invalidation": "No valid funded Wyckoff long owner is established, so no protective stop should be invented.",
+        "management": "No active Wyckoff long campaign should be funded from this checkpoint.",
+        "recognition_flag": false,
+        "recognition_note": "",
+        "blind_anchor_counts_last24h": {
+          "CONFIRMED_PIVOT_L": 4,
+          "CONFIRMED_PIVOT_H": 3,
+          "CLOSE_ABOVE_CONFIRMED_HIGH": 7,
+          "BAR_LOW_BELOW_CONFIRMED_LOW_AND_CLOSE_RECLAIMS": 3
+        }
+      },
+      "exact_agreement": true
+    },
+    {
+      "case_id": "G2-SV-0025",
+      "source_case": {
+        "engine_row": {
+          "broad_eligible": true,
+          "event": "FVG",
+          "metadata": "{\"bearish_mss_exit\": true, \"day_boundary\": \"NY_AFTERNOON\", \"execution_array\": \"FVG\", \"fvg_created_at\": \"2022-08-01 16:00:00+00:00\", \"mss_time\": \"2022-08-01 16:00:00+00:00\", \"order_block_diagnostic_only\": true, \"raid_time\": \"2022-08-01 14:00:00+00:00\", \"retrace_time\": \"2022-08-01 19:00:00+00:00\", \"smt_supporting_only\": true, \"stop\": 0.6041, \"target\": 0.6362}",
+          "pair": "POLS-USDT",
+          "stage": "THESIS_INTENT",
+          "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+          "timestamp": "2022-08-01 19:00:00+00:00"
+        },
+        "kind": "POSITIVE",
+        "pair": "POLS-USDT",
+        "supplemental_case_id": "G2-S-0010",
+        "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+        "time": "2022-08-01 19:00:00+00:00"
+      },
+      "proxy": {
+        "case_id": "G2-SV-0025",
+        "school": "ICT",
+        "action": "UNRESOLVED",
+        "recognize_asset_time": false,
+        "context": "Monday 15:00; daily bearish but local recovery and market 4H improve",
+        "structure": "Raids followed by later break and gap",
+        "location": "Current pullback reaches an older gap",
+        "trigger": "Local raid-MSS-retrace plausible; exact HTF draw and owner gap ambiguity remain",
+        "invalidation": "Candidate raid low 95.813 if that chain is selected",
+        "management": "Need causal HTF/owner binding, not a guessed ICT trade",
+        "differs": [
+          "structure",
+          "invalidation",
+          "management"
+        ]
+      },
+      "independent": {
+        "case_id": "G2-SV-0025",
+        "reviewer_id": "INDEPENDENT_DOMAIN_REVIEWER_SUPPLEMENTAL_V1",
+        "reviewer_type": "AI_ASSISTANT_PER_USER_EXPLICIT_INSTRUCTION",
+        "human_action": "REJECT",
+        "differences": [
+          "DIFFERENT_CONTEXT",
+          "DIFFERENT_STRUCTURE",
+          "DIFFERENT_LOCATION",
+          "DIFFERENT_TRIGGER",
+          "DIFFERENT_INVALIDATION",
+          "DIFFERENT_MANAGEMENT"
+        ],
+        "context": "Blind prefix context: asset 1D=UP, 4H=UP, 1H=BALANCED; RS=IMPROVING. Displayed NY session=Monday 15:00.",
+        "structure": "No complete, live bullish ICT raid->MSS/FVG->later-retracement setup is defensible at the checkpoint under the displayed session/context.",
+        "location": "Checkpoint is not a clean live ICT long location in the recent normalized 1H span 95.81\u00e2\u20ac\u201c107.30.",
+        "trigger": "The required causal chain is stale, incomplete, off-session, or contradicted by the higher-timeframe/market context at the checkpoint.",
+        "invalidation": "Without a valid live owning raid, there is no source-valid protective stop for a new ICT long.",
+        "management": "No new ICT long should be opened from this checkpoint; wait for a fresh causally complete sequence.",
+        "recognition_flag": false,
+        "recognition_note": "",
+        "blind_anchor_counts_last24h": {
+          "BAR_LOW_BELOW_CONFIRMED_LOW_AND_CLOSE_RECLAIMS": 4,
+          "CONFIRMED_PIVOT_H": 5,
+          "CONFIRMED_PIVOT_L": 4,
+          "THREE_BAR_GAP_GEOMETRY_ONLY": 4,
+          "CLOSE_ABOVE_CONFIRMED_HIGH": 4
+        }
+      },
+      "exact_agreement": false
+    },
+    {
+      "case_id": "G2-SV-0026",
+      "source_case": {
+        "engine_row": {
+          "broad_eligible": true,
+          "event": "NO_SPRING_LPS",
+          "metadata": "{\"market_state\": \"D_DEMAND_DOMINANT\", \"readiness\": {\"BASE_FORMED\": true, \"BULLISH_ACTIVITY\": true, \"DOWNSIDE_OBJECTIVE_CONTEXT\": true, \"DOWNWARD_STRIDE_BROKEN\": true, \"HIGHER_HIGHS\": true, \"HIGHER_LOWS\": true, \"PS_SC_ST\": true, \"RELATIVE_STRENGTH\": true, \"UPWARD_POTENTIAL_GE_3R\": true}, \"stop\": 0.2996, \"target\": 0.65912}",
+          "pair": "POLS-USDT",
+          "stage": "THESIS_INTENT",
+          "system_id": "FS_WYCKOFF_FULL_LONG",
+          "timestamp": "2023-11-06 04:00:00+00:00"
+        },
+        "kind": "POSITIVE",
+        "pair": "POLS-USDT",
+        "supplemental_case_id": "G2-S-0008",
+        "system_id": "FS_WYCKOFF_FULL_LONG",
+        "time": "2023-11-06 04:00:00+00:00"
+      },
+      "proxy": {
+        "case_id": "G2-SV-0026",
+        "school": "WYCKOFF",
+        "action": "UNRESOLVED",
+        "recognize_asset_time": false,
+        "context": "Daily/market bullish, RS strong",
+        "structure": "Possible reaccumulation after impulse",
+        "location": "Pullback toward 100 after local spike",
+        "trigger": "Possible LPS; cause/readiness not certified in visible prefix",
+        "invalidation": "Pullback low requires owned LPS identity",
+        "management": "Possible Wyckoff campaign, not enough phase/cause detail to certify",
+        "differs": [
+          "structure",
+          "invalidation",
+          "management"
+        ]
+      },
+      "independent": {
+        "case_id": "G2-SV-0026",
+        "reviewer_id": "INDEPENDENT_DOMAIN_REVIEWER_SUPPLEMENTAL_V1",
+        "reviewer_type": "AI_ASSISTANT_PER_USER_EXPLICIT_INSTRUCTION",
+        "human_action": "ACCEPT",
+        "differences": [],
+        "context": "Blind prefix context: asset 1D=UP, 4H=UP, 1H=UP; RS=IMPROVING.",
+        "structure": "The blind prefix is consistent with a bullish Wyckoff accumulation/reaccumulation-to-markup sequence with an accepted breakout/SOS and a defensible later test/LPS before renewed strength.",
+        "location": "Checkpoint is on the markup side of the recent structure; normalized 1H span is 89.27\u00e2\u20ac\u201c111.80, close=100.00.",
+        "trigger": "Breakout/SOS is followed by a held pullback/test and renewed strength rather than a simple first impulse from the low.",
+        "invalidation": "Invalidate below the owning test/LPS or spring low; the exact stop must remain tied to that owner, not widened after entry. Recent structural lower region is near 89.27.",
+        "management": "Wyckoff owns the thesis; continue while markup and the owning LPS/test remain valid, with later management only from confirmed subsequent structure.",
+        "recognition_flag": false,
+        "recognition_note": "",
+        "blind_anchor_counts_last24h": {
+          "CLOSE_ABOVE_CONFIRMED_HIGH": 13,
+          "THREE_BAR_GAP_GEOMETRY_ONLY": 4,
+          "CONFIRMED_PIVOT_H": 4,
+          "CONFIRMED_PIVOT_L": 3
+        }
+      },
+      "exact_agreement": false
+    },
+    {
+      "case_id": "G2-SV-0027",
+      "source_case": {
+        "engine_row": {
+          "broad_eligible": true,
+          "event": "FVG",
+          "metadata": "{\"bearish_mss_exit\": true, \"day_boundary\": \"NY_AFTERNOON\", \"execution_array\": \"FVG\", \"fvg_created_at\": \"2022-11-04 15:00:00+00:00\", \"mss_time\": \"2022-11-04 15:00:00+00:00\", \"order_block_diagnostic_only\": true, \"raid_time\": \"2022-11-04 13:00:00+00:00\", \"retrace_time\": \"2022-11-04 18:00:00+00:00\", \"smt_supporting_only\": true, \"stop\": 0.1689, \"target\": 0.1715}",
+          "pair": "ADX-USDT",
+          "stage": "THESIS_INTENT",
+          "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+          "timestamp": "2022-11-04 18:00:00+00:00"
+        },
+        "kind": "POSITIVE",
+        "pair": "ADX-USDT",
+        "supplemental_case_id": "G2-S-0002",
+        "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+        "time": "2022-11-04 18:00:00+00:00"
+      },
+      "proxy": {
+        "case_id": "G2-SV-0027",
+        "school": "ICT",
+        "action": "REJECT",
+        "recognize_asset_time": false,
+        "context": "Friday 14:00; daily/market bearish with narrow local improvement",
+        "structure": "Recovery without a fresh full raid chain",
+        "location": "Near upper local range",
+        "trigger": "Earlier break/gaps do not prove an active later retracement now",
+        "invalidation": "No active chain-specific raid floor identified",
+        "management": "No fresh ICT entry",
+        "differs": [
+          "trigger"
+        ]
+      },
+      "independent": {
+        "case_id": "G2-SV-0027",
+        "reviewer_id": "INDEPENDENT_DOMAIN_REVIEWER_SUPPLEMENTAL_V1",
+        "reviewer_type": "AI_ASSISTANT_PER_USER_EXPLICIT_INSTRUCTION",
+        "human_action": "REJECT",
+        "differences": [
+          "DIFFERENT_CONTEXT",
+          "DIFFERENT_STRUCTURE",
+          "DIFFERENT_LOCATION",
+          "DIFFERENT_TRIGGER",
+          "DIFFERENT_INVALIDATION",
+          "DIFFERENT_MANAGEMENT"
+        ],
+        "context": "Blind prefix context: asset 1D=BALANCED, 4H=BALANCED, 1H=BALANCED; RS=IMPROVING. Displayed NY session=Friday 14:00.",
+        "structure": "No complete, live bullish ICT raid->MSS/FVG->later-retracement setup is defensible at the checkpoint under the displayed session/context.",
+        "location": "Checkpoint is not a clean live ICT long location in the recent normalized 1H span 93.80\u00e2\u20ac\u201c100.58.",
+        "trigger": "The required causal chain is stale, incomplete, off-session, or contradicted by the higher-timeframe/market context at the checkpoint.",
+        "invalidation": "Without a valid live owning raid, there is no source-valid protective stop for a new ICT long.",
+        "management": "No new ICT long should be opened from this checkpoint; wait for a fresh causally complete sequence.",
+        "recognition_flag": false,
+        "recognition_note": "",
+        "blind_anchor_counts_last24h": {
+          "THREE_BAR_GAP_GEOMETRY_ONLY": 8,
+          "CONFIRMED_PIVOT_H": 2,
+          "CONFIRMED_PIVOT_L": 2,
+          "CLOSE_ABOVE_CONFIRMED_HIGH": 9
+        }
+      },
+      "exact_agreement": true
+    },
+    {
+      "case_id": "G2-SV-0028",
+      "source_case": {
+        "engine_row": {
+          "broad_eligible": true,
+          "event": "SPRING_TEST",
+          "metadata": "{\"market_state\": \"D_DEMAND_DOMINANT\", \"readiness\": {\"BASE_FORMED\": true, \"BULLISH_ACTIVITY\": true, \"DOWNSIDE_OBJECTIVE_CONTEXT\": true, \"DOWNWARD_STRIDE_BROKEN\": true, \"HIGHER_HIGHS\": true, \"HIGHER_LOWS\": true, \"PS_SC_ST\": true, \"RELATIVE_STRENGTH\": true, \"UPWARD_POTENTIAL_GE_3R\": true}, \"stop\": 0.911, \"target\": 2.03153}",
+          "pair": "ALICE-USDT",
+          "stage": "THESIS_INTENT",
+          "system_id": "FS_WYCKOFF_FULL_LONG",
+          "timestamp": "2023-11-07 00:00:00+00:00"
+        },
+        "kind": "POSITIVE",
+        "pair": "ALICE-USDT",
+        "supplemental_case_id": "G2-S-0006",
+        "system_id": "FS_WYCKOFF_FULL_LONG",
+        "time": "2023-11-07 00:00:00+00:00"
+      },
+      "proxy": {
+        "case_id": "G2-SV-0028",
+        "school": "WYCKOFF",
+        "action": "UNRESOLVED",
+        "recognize_asset_time": false,
+        "context": "Daily/market bullish and local RS strong",
+        "structure": "Higher-low continuation after advance",
+        "location": "At held local breakout area",
+        "trigger": "Possible LPS but Wyckoff cause/readiness branch not bound",
+        "invalidation": "Higher low near 93 is visible, ownership is not",
+        "management": "Diagnostic Wyckoff continuation until cause/readiness supplied",
+        "differs": [
+          "structure",
+          "invalidation",
+          "management"
+        ]
+      },
+      "independent": {
+        "case_id": "G2-SV-0028",
+        "reviewer_id": "INDEPENDENT_DOMAIN_REVIEWER_SUPPLEMENTAL_V1",
+        "reviewer_type": "AI_ASSISTANT_PER_USER_EXPLICIT_INSTRUCTION",
+        "human_action": "ACCEPT",
+        "differences": [],
+        "context": "Blind prefix context: asset 1D=UP, 4H=UP, 1H=UP; RS=IMPROVING.",
+        "structure": "The blind prefix is consistent with a bullish Wyckoff accumulation/reaccumulation-to-markup sequence with an accepted breakout/SOS and a defensible later test/LPS before renewed strength.",
+        "location": "Checkpoint is on the markup side of the recent structure; normalized 1H span is 89.11\u00e2\u20ac\u201c103.66, close=100.00.",
+        "trigger": "Breakout/SOS is followed by a held pullback/test and renewed strength rather than a simple first impulse from the low.",
+        "invalidation": "Invalidate below the owning test/LPS or spring low; the exact stop must remain tied to that owner, not widened after entry. Recent structural lower region is near 89.11.",
+        "management": "Wyckoff owns the thesis; continue while markup and the owning LPS/test remain valid, with later management only from confirmed subsequent structure.",
+        "recognition_flag": false,
+        "recognition_note": "",
+        "blind_anchor_counts_last24h": {
+          "CONFIRMED_PIVOT_L": 4,
+          "CLOSE_ABOVE_CONFIRMED_HIGH": 10,
+          "THREE_BAR_GAP_GEOMETRY_ONLY": 6,
+          "CONFIRMED_PIVOT_H": 3
+        }
+      },
+      "exact_agreement": false
+    },
+    {
+      "case_id": "G2-SV-0029",
+      "source_case": {
+        "engine_row": {
+          "broad_eligible": true,
+          "event": "FVG",
+          "metadata": "{\"bearish_mss_exit\": true, \"day_boundary\": \"NY_AFTERNOON\", \"execution_array\": \"FVG\", \"fvg_created_at\": \"2023-09-28 15:00:00+00:00\", \"mss_time\": \"2023-09-28 15:00:00+00:00\", \"order_block_diagnostic_only\": true, \"raid_time\": \"2023-09-28 14:00:00+00:00\", \"retrace_time\": \"2023-09-28 19:00:00+00:00\", \"smt_supporting_only\": true, \"stop\": 0.01515, \"target\": 0.01544}",
+          "pair": "ACH-USDT",
+          "stage": "THESIS_INTENT",
+          "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+          "timestamp": "2023-09-28 19:00:00+00:00"
+        },
+        "kind": "POSITIVE",
+        "pair": "ACH-USDT",
+        "supplemental_case_id": "G2-S-0005",
+        "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+        "time": "2023-09-28 19:00:00+00:00"
+      },
+      "proxy": {
+        "case_id": "G2-SV-0029",
+        "school": "ICT",
+        "action": "UNRESOLVED",
+        "recognize_asset_time": false,
+        "context": "Thursday 15:00; market daily mixed and 4H range; asset recovery",
+        "structure": "Later internal break and multiple gaps",
+        "location": "Current return through the upper gap",
+        "trigger": "MSS/gap visible, but a fresh owned raid and selected active gap not certified",
+        "invalidation": "Possible low near 97.99; exact raid ownership unresolved",
+        "management": "Do not certify ICT management without chain ownership",
+        "differs": [
+          "structure",
+          "invalidation",
+          "management"
+        ]
+      },
+      "independent": {
+        "case_id": "G2-SV-0029",
+        "reviewer_id": "INDEPENDENT_DOMAIN_REVIEWER_SUPPLEMENTAL_V1",
+        "reviewer_type": "AI_ASSISTANT_PER_USER_EXPLICIT_INSTRUCTION",
+        "human_action": "REJECT",
+        "differences": [
+          "DIFFERENT_CONTEXT",
+          "DIFFERENT_STRUCTURE",
+          "DIFFERENT_LOCATION",
+          "DIFFERENT_TRIGGER",
+          "DIFFERENT_INVALIDATION",
+          "DIFFERENT_MANAGEMENT"
+        ],
+        "context": "Blind prefix context: asset 1D=UP, 4H=DOWN, 1H=BALANCED; RS=WEAKENING. Displayed NY session=Thursday 15:00.",
+        "structure": "No complete, live bullish ICT raid->MSS/FVG->later-retracement setup is defensible at the checkpoint under the displayed session/context.",
+        "location": "Checkpoint is not a clean live ICT long location in the recent normalized 1H span 97.99\u00e2\u20ac\u201c104.96.",
+        "trigger": "The required causal chain is stale, incomplete, off-session, or contradicted by the higher-timeframe/market context at the checkpoint.",
+        "invalidation": "Without a valid live owning raid, there is no source-valid protective stop for a new ICT long.",
+        "management": "No new ICT long should be opened from this checkpoint; wait for a fresh causally complete sequence.",
+        "recognition_flag": false,
+        "recognition_note": "",
+        "blind_anchor_counts_last24h": {
+          "CONFIRMED_PIVOT_L": 2,
+          "CONFIRMED_PIVOT_H": 3,
+          "THREE_BAR_GAP_GEOMETRY_ONLY": 3,
+          "CLOSE_ABOVE_CONFIRMED_HIGH": 4
+        }
+      },
+      "exact_agreement": false
+    },
+    {
+      "case_id": "G2-SV-0030",
+      "source_case": {
+        "engine_row": {
+          "broad_eligible": true,
+          "event": "FVG",
+          "metadata": "{\"bearish_mss_exit\": true, \"day_boundary\": \"NY_AFTERNOON\", \"execution_array\": \"FVG\", \"fvg_created_at\": \"2022-06-27 17:00:00+00:00\", \"mss_time\": \"2022-06-27 17:00:00+00:00\", \"order_block_diagnostic_only\": true, \"raid_time\": \"2022-06-27 15:00:00+00:00\", \"retrace_time\": \"2022-06-27 19:00:00+00:00\", \"smt_supporting_only\": true, \"stop\": 0.0427, \"target\": 0.04389}",
+          "pair": "ORBS-USDT",
+          "stage": "THESIS_INTENT",
+          "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+          "timestamp": "2022-06-27 19:00:00+00:00"
+        },
+        "kind": "POSITIVE",
+        "pair": "ORBS-USDT",
+        "supplemental_case_id": "G2-S-0014",
+        "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+        "time": "2022-06-27 19:00:00+00:00"
+      },
+      "proxy": {
+        "case_id": "G2-SV-0030",
+        "school": "ICT",
+        "action": "REJECT",
+        "recognize_asset_time": false,
+        "context": "Monday 15:00; asset/market bearish and activity thin",
+        "structure": "Small local recovery",
+        "location": "At prior gap and local resistance",
+        "trigger": "Current internal break is too late to certify an earlier activation/retrace sequence",
+        "invalidation": "No complete owned raid-MSS-FVG sequence",
+        "management": "Do not combine stale gap with current break",
+        "differs": [
+          "trigger"
+        ]
+      },
+      "independent": {
+        "case_id": "G2-SV-0030",
+        "reviewer_id": "INDEPENDENT_DOMAIN_REVIEWER_SUPPLEMENTAL_V1",
+        "reviewer_type": "AI_ASSISTANT_PER_USER_EXPLICIT_INSTRUCTION",
+        "human_action": "REJECT",
+        "differences": [
+          "DIFFERENT_CONTEXT",
+          "DIFFERENT_STRUCTURE",
+          "DIFFERENT_LOCATION",
+          "DIFFERENT_TRIGGER",
+          "DIFFERENT_INVALIDATION",
+          "DIFFERENT_MANAGEMENT"
+        ],
+        "context": "Blind prefix context: asset 1D=DOWN, 4H=BALANCED, 1H=BALANCED; RS=IMPROVING. Displayed NY session=Monday 15:00.",
+        "structure": "No complete, live bullish ICT raid->MSS/FVG->later-retracement setup is defensible at the checkpoint under the displayed session/context.",
+        "location": "Checkpoint is not a clean live ICT long location in the recent normalized 1H span 96.70\u00e2\u20ac\u201c100.86.",
+        "trigger": "The required causal chain is stale, incomplete, off-session, or contradicted by the higher-timeframe/market context at the checkpoint.",
+        "invalidation": "Without a valid live owning raid, there is no source-valid protective stop for a new ICT long.",
+        "management": "No new ICT long should be opened from this checkpoint; wait for a fresh causally complete sequence.",
+        "recognition_flag": false,
+        "recognition_note": "",
+        "blind_anchor_counts_last24h": {
+          "BAR_LOW_BELOW_CONFIRMED_LOW_AND_CLOSE_RECLAIMS": 1,
+          "CONFIRMED_PIVOT_H": 3,
+          "CONFIRMED_PIVOT_L": 2,
+          "THREE_BAR_GAP_GEOMETRY_ONLY": 2,
+          "CLOSE_ABOVE_CONFIRMED_HIGH": 3
+        }
+      },
+      "exact_agreement": true
+    },
+    {
+      "case_id": "G2-SV-0031",
+      "source_case": {
+        "engine_row": {
+          "broad_eligible": true,
+          "event": "FVG",
+          "metadata": "{\"bearish_mss_exit\": true, \"day_boundary\": \"NY_AFTERNOON\", \"execution_array\": \"FVG\", \"fvg_created_at\": \"2023-11-20 18:00:00+00:00\", \"mss_time\": \"2023-11-20 18:00:00+00:00\", \"order_block_diagnostic_only\": true, \"raid_time\": \"2023-11-20 14:00:00+00:00\", \"retrace_time\": \"2023-11-20 19:00:00+00:00\", \"smt_supporting_only\": true, \"stop\": 0.001365, \"target\": 0.001456}",
+          "pair": "TURBOS-USDT",
+          "stage": "THESIS_INTENT",
+          "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+          "timestamp": "2023-11-20 19:00:00+00:00"
+        },
+        "kind": "POSITIVE",
+        "pair": "TURBOS-USDT",
+        "supplemental_case_id": "G2-S-0007",
+        "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+        "time": "2023-11-20 19:00:00+00:00"
+      },
+      "proxy": {
+        "case_id": "G2-SV-0031",
+        "school": "ICT",
+        "action": "ACCEPT",
+        "recognize_asset_time": false,
+        "context": "Monday 14:00; local 4H turns up in a higher recovery; broad market bullish",
+        "structure": "Raid then later MSS and gap creation",
+        "location": "Current later gap touch",
+        "trigger": "Raid -11, MSS -2, FVG -1, current low 96.255 enters gap 95.926-96.321",
+        "invalidation": "Owned raid low about 89.685",
+        "management": "ICT owns; opposing liquidity near 102.168 and native session/MSS management",
+        "differs": []
+      },
+      "independent": {
+        "case_id": "G2-SV-0031",
+        "reviewer_id": "INDEPENDENT_DOMAIN_REVIEWER_SUPPLEMENTAL_V1",
+        "reviewer_type": "AI_ASSISTANT_PER_USER_EXPLICIT_INSTRUCTION",
+        "human_action": "ACCEPT",
+        "differences": [],
+        "context": "Blind prefix context: asset 1D=UP, 4H=BALANCED, 1H=DOWN; RS=FLAT. Displayed NY session=Monday 14:00.",
+        "structure": "A defensible bullish ICT sequence is visible near the checkpoint: sell-side sweep/reclaim, later bullish structural break/displacement with gap geometry, then a later retracement/hold.",
+        "location": "Decision area is the late retracement/hold within the recent normalized 1H span 89.68\u00e2\u20ac\u201c110.18; checkpoint close=100.00.",
+        "trigger": "The causal order visible in the supplied anchors is consistent with raid/reclaim -> later break/FVG creation -> later retracement, and the checkpoint remains inside the allowed intraday window.",
+        "invalidation": "Invalidation belongs below the owning raid/protected low; no arbitrary stop is inferred beyond the visible structural lower region near 89.68.",
+        "management": "ICT owns the setup only while the same raid/MSS/FVG chain remains live; no same-bar creation/retracement and no revival of stale session evidence.",
+        "recognition_flag": false,
+        "recognition_note": "",
+        "blind_anchor_counts_last24h": {
+          "CONFIRMED_PIVOT_H": 1,
+          "BAR_LOW_BELOW_CONFIRMED_LOW_AND_CLOSE_RECLAIMS": 3,
+          "CONFIRMED_PIVOT_L": 4,
+          "THREE_BAR_GAP_GEOMETRY_ONLY": 4,
+          "CLOSE_ABOVE_CONFIRMED_HIGH": 3
+        }
+      },
+      "exact_agreement": true
+    },
+    {
+      "case_id": "G2-SV-0032",
+      "source_case": {
+        "engine_row": {
+          "broad_eligible": true,
+          "event": "FVG",
+          "metadata": "{\"bearish_mss_exit\": true, \"day_boundary\": \"NY_AFTERNOON\", \"execution_array\": \"FVG\", \"fvg_created_at\": \"2023-01-24 17:00:00+00:00\", \"mss_time\": \"2023-01-24 17:00:00+00:00\", \"order_block_diagnostic_only\": true, \"raid_time\": \"2023-01-24 14:00:00+00:00\", \"retrace_time\": \"2023-01-24 18:00:00+00:00\", \"smt_supporting_only\": true, \"stop\": 0.02849, \"target\": 0.02958}",
+          "pair": "RVN-USDT",
+          "stage": "THESIS_INTENT",
+          "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+          "timestamp": "2023-01-24 18:00:00+00:00"
+        },
+        "kind": "POSITIVE",
+        "pair": "RVN-USDT",
+        "supplemental_case_id": "G2-S-0001",
+        "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+        "time": "2023-01-24 18:00:00+00:00"
+      },
+      "proxy": {
+        "case_id": "G2-SV-0032",
+        "school": "ICT",
+        "action": "ACCEPT",
+        "recognize_asset_time": false,
+        "context": "Tuesday 13:00; local and market 4H markup after daily base",
+        "structure": "Sell-side raid then later displacement and gap",
+        "location": "Current retracement into 94.333-94.689 gap",
+        "trigger": "Raid -7, MSS -2, FVG -1, current retracement is later",
+        "invalidation": "Raid low about 91.839",
+        "management": "ICT owner with protected raid low and causally visible opposing liquidity; session expiry applies",
+        "differs": []
+      },
+      "independent": {
+        "case_id": "G2-SV-0032",
+        "reviewer_id": "INDEPENDENT_DOMAIN_REVIEWER_SUPPLEMENTAL_V1",
+        "reviewer_type": "AI_ASSISTANT_PER_USER_EXPLICIT_INSTRUCTION",
+        "human_action": "ACCEPT",
+        "differences": [],
+        "context": "Blind prefix context: asset 1D=UP, 4H=UP, 1H=BALANCED; RS=IMPROVING. Displayed NY session=Tuesday 13:00.",
+        "structure": "A defensible bullish ICT sequence is visible near the checkpoint: sell-side sweep/reclaim, later bullish structural break/displacement with gap geometry, then a later retracement/hold.",
+        "location": "Decision area is the late retracement/hold within the recent normalized 1H span 89.25\u00e2\u20ac\u201c102.95; checkpoint close=100.00.",
+        "trigger": "The causal order visible in the supplied anchors is consistent with raid/reclaim -> later break/FVG creation -> later retracement, and the checkpoint remains inside the allowed intraday window.",
+        "invalidation": "Invalidation belongs below the owning raid/protected low; no arbitrary stop is inferred beyond the visible structural lower region near 89.25.",
+        "management": "ICT owns the setup only while the same raid/MSS/FVG chain remains live; no same-bar creation/retracement and no revival of stale session evidence.",
+        "recognition_flag": false,
+        "recognition_note": "",
+        "blind_anchor_counts_last24h": {
+          "CONFIRMED_PIVOT_H": 3,
+          "CONFIRMED_PIVOT_L": 3,
+          "BAR_LOW_BELOW_CONFIRMED_LOW_AND_CLOSE_RECLAIMS": 2,
+          "THREE_BAR_GAP_GEOMETRY_ONLY": 3,
+          "CLOSE_ABOVE_CONFIRMED_HIGH": 11
+        }
+      },
+      "exact_agreement": true
+    },
+    {
+      "case_id": "G2-SV-0033",
+      "source_case": {
+        "engine_row": {
+          "broad_eligible": true,
+          "event": "FVG",
+          "metadata": "{\"bearish_mss_exit\": true, \"day_boundary\": \"POST_NY_0830\", \"execution_array\": \"FVG\", \"fvg_created_at\": \"2022-12-09 15:00:00+00:00\", \"mss_time\": \"2022-12-09 15:00:00+00:00\", \"order_block_diagnostic_only\": true, \"raid_time\": \"2022-12-09 14:00:00+00:00\", \"retrace_time\": \"2022-12-09 16:00:00+00:00\", \"smt_supporting_only\": true, \"stop\": 1.875842, \"target\": 1.976856}",
+          "pair": "SNX-USDT",
+          "stage": "THESIS_INTENT",
+          "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+          "timestamp": "2022-12-09 16:00:00+00:00"
+        },
+        "kind": "POSITIVE",
+        "pair": "SNX-USDT",
+        "supplemental_case_id": "G2-S-0011",
+        "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+        "time": "2022-12-09 16:00:00+00:00"
+      },
+      "proxy": {
+        "case_id": "G2-SV-0033",
+        "school": "ICT",
+        "action": "ACCEPT",
+        "recognize_asset_time": false,
+        "context": "Friday 11:00; local bullish recovery, broader daily still weak",
+        "structure": "Fresh raid-MSS-gap chain inside local recovery",
+        "location": "Current later retracement around 100",
+        "trigger": "Raid -2, MSS and FVG -1, current touch after creation; bullish local chain complete",
+        "invalidation": "Owned raid low about 98.239",
+        "management": "ICT bounded reversal/continuation owner; opposing local liquidity near 102.883; do not infer macro bull",
+        "differs": []
+      },
+      "independent": {
+        "case_id": "G2-SV-0033",
+        "reviewer_id": "INDEPENDENT_DOMAIN_REVIEWER_SUPPLEMENTAL_V1",
+        "reviewer_type": "AI_ASSISTANT_PER_USER_EXPLICIT_INSTRUCTION",
+        "human_action": "REJECT",
+        "differences": [
+          "DIFFERENT_CONTEXT",
+          "DIFFERENT_STRUCTURE",
+          "DIFFERENT_LOCATION",
+          "DIFFERENT_TRIGGER",
+          "DIFFERENT_INVALIDATION",
+          "DIFFERENT_MANAGEMENT"
+        ],
+        "context": "Blind prefix context: asset 1D=UP, 4H=UP, 1H=BALANCED; RS=WEAKENING. Displayed NY session=Friday 11:00.",
+        "structure": "No complete, live bullish ICT raid->MSS/FVG->later-retracement setup is defensible at the checkpoint under the displayed session/context.",
+        "location": "Checkpoint is not a clean live ICT long location in the recent normalized 1H span 96.51\u00e2\u20ac\u201c105.79.",
+        "trigger": "The required causal chain is stale, incomplete, off-session, or contradicted by the higher-timeframe/market context at the checkpoint.",
+        "invalidation": "Without a valid live owning raid, there is no source-valid protective stop for a new ICT long.",
+        "management": "No new ICT long should be opened from this checkpoint; wait for a fresh causally complete sequence.",
+        "recognition_flag": false,
+        "recognition_note": "",
+        "blind_anchor_counts_last24h": {
+          "BAR_LOW_BELOW_CONFIRMED_LOW_AND_CLOSE_RECLAIMS": 2,
+          "THREE_BAR_GAP_GEOMETRY_ONLY": 3,
+          "CONFIRMED_PIVOT_L": 5,
+          "CONFIRMED_PIVOT_H": 3,
+          "CLOSE_ABOVE_CONFIRMED_HIGH": 1
+        }
+      },
+      "exact_agreement": false
+    },
+    {
+      "case_id": "G2-SV-0034",
+      "source_case": {
+        "engine_row": {
+          "broad_eligible": true,
+          "event": "SPRING_TEST",
+          "metadata": "{\"market_state\": \"D_DEMAND_DOMINANT\", \"readiness\": {\"BASE_FORMED\": true, \"BULLISH_ACTIVITY\": true, \"DOWNSIDE_OBJECTIVE_CONTEXT\": true, \"DOWNWARD_STRIDE_BROKEN\": true, \"HIGHER_HIGHS\": true, \"HIGHER_LOWS\": true, \"PS_SC_ST\": true, \"RELATIVE_STRENGTH\": true, \"UPWARD_POTENTIAL_GE_3R\": true}, \"stop\": 0.019742, \"target\": 0.02744138}",
+          "pair": "ACH-USDT",
+          "stage": "THESIS_INTENT",
+          "system_id": "FS_WYCKOFF_FULL_LONG",
+          "timestamp": "2023-12-16 16:00:00+00:00"
+        },
+        "kind": "POSITIVE",
+        "pair": "ACH-USDT",
+        "supplemental_case_id": "G2-S-0004",
+        "system_id": "FS_WYCKOFF_FULL_LONG",
+        "time": "2023-12-16 16:00:00+00:00"
+      },
+      "proxy": {
+        "case_id": "G2-SV-0034",
+        "school": "WYCKOFF",
+        "action": "REJECT",
+        "recognize_asset_time": false,
+        "context": "Daily/market positive but asset correcting",
+        "structure": "Range after higher advance",
+        "location": "Mid-range recovery rather than fresh LPS",
+        "trigger": "No completed current SOS followed by owned LPS confirmation",
+        "invalidation": "Range floor needs ownership before management can be assigned",
+        "management": "No complete new Wyckoff thesis at this checkpoint",
+        "differs": [
+          "trigger"
+        ]
+      },
+      "independent": {
+        "case_id": "G2-SV-0034",
+        "reviewer_id": "INDEPENDENT_DOMAIN_REVIEWER_SUPPLEMENTAL_V1",
+        "reviewer_type": "AI_ASSISTANT_PER_USER_EXPLICIT_INSTRUCTION",
+        "human_action": "REJECT",
+        "differences": [
+          "DIFFERENT_CONTEXT",
+          "DIFFERENT_STRUCTURE",
+          "DIFFERENT_LOCATION",
+          "DIFFERENT_TRIGGER",
+          "DIFFERENT_INVALIDATION",
+          "DIFFERENT_MANAGEMENT"
+        ],
+        "context": "Blind prefix context: asset 1D=UP, 4H=BALANCED, 1H=UP; RS=FLAT.",
+        "structure": "No complete bullish Wyckoff accumulation/reaccumulation-to-markup sequence with a valid live SOS/LPS chain is defensible at the checkpoint.",
+        "location": "Checkpoint is either inside unresolved range/markdown or after a move whose owning test/LPS is not live; recent normalized 1H span 89.88\u00e2\u20ac\u201c100.92.",
+        "trigger": "A spring/reclaim, first rebound, or isolated breakout is insufficient without the source-valid later ownership/test sequence and compatible context.",
+        "invalidation": "No valid funded Wyckoff long owner is established, so no protective stop should be invented.",
+        "management": "No active Wyckoff long campaign should be funded from this checkpoint.",
+        "recognition_flag": false,
+        "recognition_note": "",
+        "blind_anchor_counts_last24h": {
+          "CONFIRMED_PIVOT_L": 2,
+          "THREE_BAR_GAP_GEOMETRY_ONLY": 3,
+          "CLOSE_ABOVE_CONFIRMED_HIGH": 4,
+          "CONFIRMED_PIVOT_H": 4
+        }
+      },
+      "exact_agreement": true
+    }
+  ],
+  "exact_agreements": 26,
+  "agreement_is_not_gate": true,
+  "map_opened_after_proxy_lock": true
+}

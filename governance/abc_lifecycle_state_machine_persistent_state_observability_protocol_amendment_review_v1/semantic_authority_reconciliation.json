@@ -1,0 +1,125 @@
+{
+  "schema_version": "abc-persistent-state-observability-semantic-authority-reconciliation-v1",
+  "authority": {
+    "PROGRESS_MEMORY_R": {
+      "proven": true,
+      "hits": [
+        {
+          "authority": "ABC_PROTOCOL",
+          "matched_tokens": [
+            "memory_now",
+            "memory_seen"
+          ]
+        },
+        {
+          "authority": "LSM_PROTOCOL",
+          "matched_tokens": [
+            "r_before_t",
+            "memory_now",
+            "memory_seen"
+          ]
+        },
+        {
+          "authority": "OBS_CATALOG",
+          "matched_tokens": [
+            "r_before_t",
+            "memory_now",
+            "memory_seen"
+          ]
+        }
+      ]
+    },
+    "A_DONCHIAN": {
+      "proven": true,
+      "hits": [
+        {
+          "authority": "ABC_PROTOCOL",
+          "matched_tokens": [
+            "DONCHIAN_CLOSE_BREAK_10_V1",
+            "donchian"
+          ]
+        },
+        {
+          "authority": "LSM_PROTOCOL",
+          "matched_tokens": [
+            "DONCHIAN_CLOSE_BREAK_10_V1",
+            "donchian"
+          ]
+        },
+        {
+          "authority": "OBS_CATALOG",
+          "matched_tokens": [
+            "donchian"
+          ]
+        }
+      ]
+    },
+    "B_ATR_RATCHET": {
+      "proven": true,
+      "hits": [
+        {
+          "authority": "ABC_PROTOCOL",
+          "matched_tokens": [
+            "POST_MEMORY_ATR_RATCHET_22_3_V1",
+            "atr",
+            "ratchet"
+          ]
+        },
+        {
+          "authority": "LSM_PROTOCOL",
+          "matched_tokens": [
+            "POST_MEMORY_ATR_RATCHET_22_3_V1",
+            "atr",
+            "ratchet"
+          ]
+        },
+        {
+          "authority": "OBS_PROTOCOL",
+          "matched_tokens": [
+            "atr"
+          ]
+        },
+        {
+          "authority": "OBS_CATALOG",
+          "matched_tokens": [
+            "atr",
+            "ratchet"
+          ]
+        }
+      ]
+    },
+    "OHLC": {
+      "proven": true,
+      "hits": [
+        {
+          "authority": "FROZEN_MARKET_BAR_SCHEMA",
+          "matched_tokens": [
+            "open/high/low/close"
+          ]
+        }
+      ]
+    },
+    "CAUSAL_TRANSFORMS": {
+      "proven": true,
+      "hits": [
+        {
+          "authority": "OBS_PROTOCOL",
+          "matched_tokens": [
+            "run_length"
+          ]
+        },
+        {
+          "authority": "OBS_CATALOG",
+          "matched_tokens": [
+            "run_length",
+            "recovered_now",
+            "immediate prior"
+          ]
+        }
+      ]
+    }
+  },
+  "market_data_rows_accessed": false,
+  "market_data_values_accessed": false,
+  "protocol_mutated": false
+}

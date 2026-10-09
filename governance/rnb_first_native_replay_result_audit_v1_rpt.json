@@ -1,0 +1,53 @@
+{
+  "authority_bindings": {
+    "audit_sha256": "A4D1AEEE53DC13A43DAB8761700B614426F4E9409F10F8EE78AABB19AA9B412B",
+    "economic_surface_sha256": "39819722809775EEDBD6179BA162A3E174F3D0AD3E12BD10144EF57F46BA38FA",
+    "parity_sha256": "E148637128CAE3C74C19E93B99FC8548A150B5EFEE471125F278FBECF3357579",
+    "schema_sha256": "61203950B4A117CE70CD02F51C68A210351A403346A8BE9ECB03CA79AFEB79B5"
+  },
+  "branch": "research/rd48-cross-venue-price-level-basis-direct-utility-v1",
+  "evidence": [
+    {
+      "path": "governance/rnb_first_native_replay_result_audit_v1/result_audit.json",
+      "sha256": "A4D1AEEE53DC13A43DAB8761700B614426F4E9409F10F8EE78AABB19AA9B412B"
+    },
+    {
+      "path": "governance/rnb_first_native_replay_result_audit_v1/cross_universe_parity.json",
+      "sha256": "E148637128CAE3C74C19E93B99FC8548A150B5EFEE471125F278FBECF3357579"
+    },
+    {
+      "path": "governance/rnb_first_native_replay_result_audit_v1/economic_surface.json",
+      "sha256": "39819722809775EEDBD6179BA162A3E174F3D0AD3E12BD10144EF57F46BA38FA"
+    },
+    {
+      "path": "governance/rnb_first_native_replay_result_audit_v1/schema_inventory.json",
+      "sha256": "61203950B4A117CE70CD02F51C68A210351A403346A8BE9ECB03CA79AFEB79B5"
+    }
+  ],
+  "firewall": {
+    "market_data_read": false,
+    "native_replay_executed": false,
+    "network": false,
+    "optimization": false,
+    "push": false,
+    "retuning": false
+  },
+  "governed_schema_version": "akah-provenance-phase-governed-v1",
+  "next_bottleneck": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_UNIVERSE_STRATA_DIVERGENCE_AUDIT_V1",
+  "north_star_effect": "Determines whether the nine replay strata contain independent universe information and exposes the actual native economic surface for exit-brain interpretation.",
+  "objective": "Audit integrity, cross-universe independence/redundancy, and raw economic surfaces of the first reconstructed native replay without rerunning or tuning.",
+  "resolution_class": "UNIVERSE_STRATA_CONTAIN_DIVERGENT_REPLAY_INFORMATION",
+  "state_updates": {
+    "cross_universe_classification": "UNIVERSE_STRATA_CONTAIN_DIVERGENT_REPLAY_INFORMATION",
+    "cross_universe_exact": false,
+    "economic_surface_exposed": true,
+    "first_native_replay_result_audit": "PASS",
+    "optimization_performed": false,
+    "roadmap_position": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_UNIVERSE_STRATA_DIVERGENCE_AUDIT_V1"
+  },
+  "status": "PASS",
+  "summary": "First native replay result audit PASS. Integrity verified for 2244 trades across 9 strata. At least one replay surface differs across C2/D2/E2; universe strata carry divergent information and require bounded attribution before interpretation.",
+  "task_id": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_FIRST_NATIVE_REPLAY_RESULT_AUDIT_V1",
+  "task_start_head": "36980c387e7046d2f606e131887f58079a8b2814",
+  "task_start_revision": 230
+}

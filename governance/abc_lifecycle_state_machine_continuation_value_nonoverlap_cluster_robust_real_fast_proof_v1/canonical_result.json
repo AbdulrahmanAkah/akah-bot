@@ -1,0 +1,84 @@
+{
+  "2024_access": false,
+  "circular_shift_quantile": 0.95,
+  "cluster_unit": "7D_WEEK",
+  "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_CONTINUATION_VALUE_CLUSTER_AWARE_NEGATIVE_CONTROL_FAST_PROOF_V1",
+  "nonoverlap_parity_spacing_days": 14,
+  "schema_version": "akah-rev654-latent-cluster-dependence-v8-fast-proof-mega-v1-cluster-real",
+  "status": "PASS_NONOVERLAP_CLUSTER_ROBUST_REAL_PROOF_EXECUTED",
+  "summary": {
+    "CORE_AGE": {
+      "folds": [
+        {
+          "cluster_robust_pass": false,
+          "family": "CORE_AGE",
+          "feature_count": 7,
+          "fold": "DEV_2019_TO_2020",
+          "median_rho": 0.37874097007223945,
+          "min_parity_weeks": 18,
+          "mode": "REAL",
+          "null_changed_share": null,
+          "null_eligible_share": null,
+          "parities_json": "[{\"parity\":0,\"weeks\":18,\"rho\":0.3023735810113519,\"shift_abs_q95\":0.5087719298245613,\"shift_abs_median\":0.15995872033023736,\"pass\":false,\"status\":\"OK\"},{\"parity\":1,\"weeks\":18,\"rho\":0.45510835913312697,\"shift_abs_q95\":0.36553147574819395,\"shift_abs_median\":0.16821465428276572,\"pass\":true,\"status\":\"OK\"}]",
+          "test_rows": 832,
+          "time_matched_null": false,
+          "train_rows": 399
+        },
+        {
+          "cluster_robust_pass": false,
+          "family": "CORE_AGE",
+          "feature_count": 7,
+          "fold": "DEV_2019_2020_TO_2021",
+          "median_rho": 0.12365894974590627,
+          "min_parity_weeks": 22,
+          "mode": "REAL",
+          "null_changed_share": null,
+          "null_eligible_share": null,
+          "parities_json": "[{\"parity\":0,\"weeks\":22,\"rho\":0.17108977978543197,\"shift_abs_q95\":0.3167701863354037,\"shift_abs_median\":0.1293054771315641,\"pass\":false,\"status\":\"OK\"},{\"parity\":1,\"weeks\":22,\"rho\":0.07622811970638058,\"shift_abs_q95\":0.3280632411067194,\"shift_abs_median\":0.13833992094861663,\"pass\":false,\"status\":\"OK\"}]",
+          "test_rows": 904,
+          "time_matched_null": false,
+          "train_rows": 1231
+        }
+      ],
+      "real_cluster_robust_rolling_pass": false,
+      "rolling_median_nonoverlap_rho": 0.25119995990907285
+    },
+    "EVIDENCE_AGE": {
+      "folds": [
+        {
+          "cluster_robust_pass": false,
+          "family": "EVIDENCE_AGE",
+          "feature_count": 3,
+          "fold": "DEV_2019_TO_2020",
+          "median_rho": 0.42334187042842625,
+          "min_parity_weeks": 18,
+          "mode": "REAL",
+          "null_changed_share": null,
+          "null_eligible_share": null,
+          "parities_json": "[{\"parity\":0,\"weeks\":18,\"rho\":0.38066680719593315,\"shift_abs_q95\":0.4736493551831364,\"shift_abs_median\":0.15601098655571033,\"pass\":false,\"status\":\"OK\"},{\"parity\":1,\"weeks\":18,\"rho\":0.46601693366091934,\"shift_abs_q95\":0.33005208219192056,\"shift_abs_median\":0.13077535332132703,\"pass\":true,\"status\":\"OK\"}]",
+          "test_rows": 832,
+          "time_matched_null": false,
+          "train_rows": 399
+        },
+        {
+          "cluster_robust_pass": false,
+          "family": "EVIDENCE_AGE",
+          "feature_count": 3,
+          "fold": "DEV_2019_2020_TO_2021",
+          "median_rho": 0.16845837292329296,
+          "min_parity_weeks": 22,
+          "mode": "REAL",
+          "null_changed_share": null,
+          "null_eligible_share": null,
+          "parities_json": "[{\"parity\":0,\"weeks\":22,\"rho\":0.25190625121997506,\"shift_abs_q95\":0.35300763904144494,\"shift_abs_median\":0.15024005117603895,\"pass\":false,\"status\":\"OK\"},{\"parity\":1,\"weeks\":22,\"rho\":0.08501049462661087,\"shift_abs_q95\":0.2992369410856702,\"shift_abs_median\":0.13601679140257739,\"pass\":false,\"status\":\"OK\"}]",
+          "test_rows": 904,
+          "time_matched_null": false,
+          "train_rows": 1231
+        }
+      ],
+      "real_cluster_robust_rolling_pass": false,
+      "rolling_median_nonoverlap_rho": 0.2959001216758596
+    }
+  },
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_CONTINUATION_VALUE_NONOVERLAP_CLUSTER_ROBUST_REAL_FAST_PROOF_V1"
+}

@@ -1,0 +1,42 @@
+{
+  "authority_bindings": {
+    "failed_attempt_report_sha256": "33DAA1F39FAF97AEF2D1667B8DD2D55843CE5B3DB1D277E5247D9FB135E5A64C",
+    "selection_adjudication_sha256": "1F866209A8E0437A6E8B698AE0F6C8B37364128FB152DD1DE85FAD9584BB7D3C"
+  },
+  "branch": "research/rd48-cross-venue-price-level-basis-direct-utility-v1",
+  "evidence": [
+    {
+      "path": "governance/trigger_v2_impl_recovery_v1.json",
+      "sha256": "6232E55E9D88F991DFFAB2BAAB6BE42FCBC485BB0A5797B8C1094A9A9DDE88BD"
+    },
+    {
+      "path": "src/spotbot/research/rd27_observable_later_trigger_v2.py",
+      "sha256": "3CC049B5E38851A13B73CC7C0B36128EF906BE6A9AAFB97CCED85C36CCD9CE94"
+    },
+    {
+      "path": "tests/research/test_rd27_observable_later_trigger_v2.py",
+      "sha256": "BC8D301EDDE62AA3BC1C17D4A999155818DC4A91104F87C0B304F2FF6C3F621B"
+    }
+  ],
+  "firewall": {},
+  "governed_schema_version": "akah-provenance-phase-governed-v1",
+  "next_bottleneck": "CAUSAL_EXIT_BRAIN_LATER_TRIGGER_V2_SHADOW_REPLAY_INTEGRATION_V1",
+  "north_star_effect": "Restores the governed V2 predicate as a validated shadow-only component ready for replay integration without changing memory, V1 or exits.",
+  "objective": "Recover Trigger V2 implementation from the governed test-fixture failure by correcting synthetic OHLC/4H fixtures only, recreating the unchanged governed predicate, and validating it with broad regression and protected-source parity.",
+  "resolution_class": "IMPLEMENTATION_RECOVERED_AND_VALIDATED",
+  "state_updates": {
+    "actual_exit_authority": false,
+    "economic_test_authorized": false,
+    "later_trigger_v2_implementation": "PASS_RECOVERED",
+    "later_trigger_v2_implementation_recovery": "PASS",
+    "later_trigger_v2_parameter_count": 0,
+    "later_trigger_v2_replay_integrated": false,
+    "later_trigger_v2_selected_id": "FAILED_BREAKOUT_REFERENCE",
+    "later_trigger_v2_shadow_only": true
+  },
+  "status": "PASS",
+  "summary": "Recovered Trigger V2 implementation. The prior failure was confined to invalid synthetic fixtures; corrected fixtures now satisfy canonical OHLC and exact-4H contracts. Trigger formula remained unchanged and RD27 regressions plus protected-source parity passed.",
+  "task_id": "CAUSAL_EXIT_BRAIN_LATER_TRIGGER_V2_IMPLEMENTATION_RECOVERY_V1",
+  "task_start_head": "36ee036249c6f3fdfd5462e964a0375091b361f2",
+  "task_start_revision": 168
+}

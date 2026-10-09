@@ -1,0 +1,732 @@
+{
+  "classification": "PROVEN_NATIVE_MAX_HOLD_168H_RUNTIME_CONTRACT",
+  "protocol_semantics_proven": true,
+  "protocol_semantic_errors": [],
+  "protocol_binding": {
+    "protocol_sha256": "0D33547991D394C3CDEF1F03500EFD49DCEE1E8FEF41C8BD02007792CBFA3BD1",
+    "control_max_hold_hours": 168,
+    "annual_admission_rule": "entry_time>=Y_start AND entry_time+168h<Y_end",
+    "native_runtime_must_prove_close_by_entry_plus_168h": true,
+    "forced_year_end_liquidation": false,
+    "2023_follow_into_2024": false
+  },
+  "rev277_prior_source_and_test_evidence_valid": true,
+  "rev277_prior_evidence_errors": [],
+  "source_enforcement_refs": [
+    {
+      "path": "src/spotbot/research/eaa_same_pair_secondary_shadow.py",
+      "sha256": "1096CD43E814A08E8F6BB969CD2722FA883C04D54C9462AFD461489AE3E76390",
+      "references": [
+        {
+          "line": 223,
+          "text": "max_exit_time = entry_time + pd.Timedelta(hours=168)"
+        },
+        {
+          "line": 235,
+          "text": "\"max_hold_exits\": 0, \"time_failure_exits\": 0, \"adaptive_stagnation_exits\": 0,"
+        },
+        {
+          "line": 259,
+          "text": "reason = \"MAX_HOLD_168H\"; counters[\"max_hold_exits\"] += 1"
+        }
+      ]
+    },
+    {
+      "path": "src/spotbot/research/rd16t_signals.py",
+      "sha256": "937605B4CBFC148606F1231D21A38C327352CCAB579EC421C177EBC08A696669",
+      "references": [
+        {
+          "line": 531,
+          "text": "maximum_holding_bars = ("
+        },
+        {
+          "line": 576,
+          "text": "\"maximum_holding_bars\": maximum_holding_bars,"
+        },
+        {
+          "line": 623,
+          "text": "\"maximum_holding_bars\","
+        }
+      ]
+    },
+    {
+      "path": "src/spotbot/research/rd19_p2a_engine.py",
+      "sha256": "CA9AC0A81C09A346E462295F75AE19C0A1E230FE3E670AFFF8F046D20339B70D",
+      "references": [
+        {
+          "line": 231,
+          "text": "snapshot[\"return_168h\"],"
+        },
+        {
+          "line": 292,
+          "text": "featured[\"return_168h\"] = featured[\"close\"] / featured[\"close\"].shift(168) - 1.0"
+        },
+        {
+          "line": 317,
+          "text": "\"return_168h\","
+        },
+        {
+          "line": 428,
+          "text": "exit_reason = \"MAX_HOLDING_SAFEGUARD\""
+        },
+        {
+          "line": 431,
+          "text": "maximum_holding = int(config[\"maximum_holding_bars\"])"
+        },
+        {
+          "line": 434,
+          "text": "end = min(len(bars), entry_index + maximum_holding + 1)"
+        }
+      ]
+    },
+    {
+      "path": "src/spotbot/research/rd19_p2c_discovery.py",
+      "sha256": "C910299779BE2792EEC979A87311A23548998267468968A5F6538BCD047D062B",
+      "references": [
+        {
+          "line": 208,
+          "text": "frame[\"return_168h\"] = close / close.shift(168) - 1.0"
+        },
+        {
+          "line": 336,
+          "text": "\"return_168h\","
+        },
+        {
+          "line": 726,
+          "text": "elif int(position[\"bars_held\"]) >= int(config[\"maximum_holding_bars\"]):"
+        },
+        {
+          "line": 728,
+          "text": "exit_reason = \"MAX_HOLDING_SAFEGUARD\""
+        }
+      ]
+    },
+    {
+      "path": "src/spotbot/research/rd19_p2c_r1_engine.py",
+      "sha256": "B436456E8FAE2E88568D188E5BF3F840A927621C1ED6B4A991495A89B98F8F71",
+      "references": [
+        {
+          "line": 52,
+          "text": "\"THESIS_AND_MAX_HOLD_EXIT_NEXT_BAR\","
+        },
+        {
+          "line": 163,
+          "text": "frame[\"return_168h\"] = close / close.shift(168) - 1.0"
+        },
+        {
+          "line": 312,
+          "text": "(\"close\", \"breadth_ema\", \"return_168h\"),"
+        },
+        {
+          "line": 317,
+          "text": "returns.append(frame.value(index, \"return_168h\"))"
+        },
+        {
+          "line": 664,
+          "text": "\"next_bar_max_holding_exits\": 0,"
+        },
+        {
+          "line": 761,
+          "text": "elif reason == \"MAX_HOLDING_SAFEGUARD\":"
+        },
+        {
+          "line": 762,
+          "text": "diagnostics[\"next_bar_max_holding_exits\"] += 1"
+        },
+        {
+          "line": 932,
+          "text": "if int(position[\"bars_held\"]) >= int(config[\"maximum_holding_bars\"]):"
+        },
+        {
+          "line": 933,
+          "text": "pending_exits[pair] = \"MAX_HOLDING_SAFEGUARD\""
+        }
+      ]
+    },
+    {
+      "path": "src/spotbot/research/rd19_p2_discovery_freeze.py",
+      "sha256": "EA7D5D80D80F679D7F3F4D95D41B75A4F7FBA46EC4D6948C546FBDBA7C72F636",
+      "references": [
+        {
+          "line": 113,
+          "text": "\"maximum_holding_bars\": 720,"
+        },
+        {
+          "line": 121,
+          "text": "\"maximum_holding_bars\": 720,"
+        }
+      ]
+    },
+    {
+      "path": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "sha256": "1AA0596DC0B18097D71E1CDB127D2355FC806ECD4A8824A983BA038FA2DD9BC4",
+      "references": [
+        {
+          "line": 92,
+          "text": "\"maximum_holding_period\": None,"
+        },
+        {
+          "line": 582,
+          "text": "if FROZEN_CONTRACT[\"maximum_holding_period\"] is not None:"
+        }
+      ]
+    },
+    {
+      "path": "src/spotbot/research/rd26_exit_architecture.py",
+      "sha256": "1290748EA7E8A0343C1A15CEDFC1220AA423F04C11FDD558311B06AC7DA90359",
+      "references": [
+        {
+          "line": 38,
+          "text": "MAX_HOLD_HOURS: Final = 168"
+        },
+        {
+          "line": 107,
+          "text": "if MAX_HOLD_HOURS != 168 or TIME_FAILURE_HOURS != 72:"
+        },
+        {
+          "line": 523,
+          "text": "max_exit = frame[\"timestamp\"] + pd.Timedelta(hours=MAX_HOLD_HOURS + 1)"
+        },
+        {
+          "line": 701,
+          "text": "max_exit_time = entry_time + pd.Timedelta(hours=MAX_HOLD_HOURS)"
+        },
+        {
+          "line": 728,
+          "text": "\"max_hold_exits\": 0,"
+        },
+        {
+          "line": 745,
+          "text": "exit_reason = \"MAX_HOLD_168H\""
+        },
+        {
+          "line": 746,
+          "text": "counters[\"max_hold_exits\"] += 1"
+        }
+      ]
+    },
+    {
+      "path": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "sha256": "A2C0B25B0053CEEF1AA5C3AC5DB1442C1DCF333845F7345FB1F80A9AD3E1290E",
+      "references": [
+        {
+          "line": 32,
+          "text": "MAX_HOLD_HOURS: Final = 168"
+        },
+        {
+          "line": 286,
+          "text": "if MAX_HOLD_HOURS != 168 or not math.isclose(PROFIT_ARM_ATR, 4.0):"
+        },
+        {
+          "line": 573,
+          "text": "if age_hours >= MAX_HOLD_HOURS:"
+        },
+        {
+          "line": 577,
+          "text": "exit_reason=\"MAX_HOLD_168H\","
+        },
+        {
+          "line": 667,
+          "text": "if age_hours == MAX_HOLD_HOURS:"
+        },
+        {
+          "line": 668,
+          "text": "return True, float(current_open), \"MAX_HOLD_168H\""
+        },
+        {
+          "line": 685,
+          "text": "\"maximum_hold_hours\": MAX_HOLD_HOURS,"
+        }
+      ]
+    },
+    {
+      "path": "src/spotbot/research/rd27_lifecycle_replay.py",
+      "sha256": "E3944A4655DDDF21C394FE1DB541F2645F529C00BD8390B22D652BD8EF5BBF83",
+      "references": [
+        {
+          "line": 396,
+          "text": "max_exit_time = entry_time + pd.Timedelta(hours=168)"
+        },
+        {
+          "line": 428,
+          "text": "\"max_hold_exits\": 0,"
+        },
+        {
+          "line": 479,
+          "text": "if exit_reason == \"MAX_HOLD_168H\":"
+        },
+        {
+          "line": 480,
+          "text": "counters[\"max_hold_exits\"] += 1"
+        },
+        {
+          "line": 492,
+          "text": "exit_reason = \"MAX_HOLD_168H\""
+        },
+        {
+          "line": 493,
+          "text": "counters[\"max_hold_exits\"] += 1"
+        },
+        {
+          "line": 683,
+          "text": "elif reason == \"MAX_HOLD_168H\":"
+        },
+        {
+          "line": 684,
+          "text": "counters[\"max_hold_exits\"] += 1"
+        }
+      ]
+    },
+    {
+      "path": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "sha256": "CF5FC2CE83DB12AEC3A9F4D43039E628898F4CD70537E571A0367DE62DF1B510",
+      "references": [
+        {
+          "line": 52,
+          "text": "MAX_HOLD_HOURS: Final = 168"
+        },
+        {
+          "line": 64,
+          "text": "MAX_HOLD_REASON: Final = \"MAX_HOLD_168H\""
+        },
+        {
+          "line": 126,
+          "text": "MAX_HOLD_HOURS,"
+        },
+        {
+          "line": 299,
+          "text": "if age >= MAX_HOLD_HOURS:"
+        },
+        {
+          "line": 300,
+          "text": "return decision(MAX_HOLD_REASON)"
+        },
+        {
+          "line": 342,
+          "text": "if age >= MAX_HOLD_HOURS:"
+        },
+        {
+          "line": 343,
+          "text": "reason = MAX_HOLD_REASON"
+        },
+        {
+          "line": 430,
+          "text": "\"maximum_hold_hours\": MAX_HOLD_HOURS,"
+        }
+      ]
+    },
+    {
+      "path": "src/spotbot/research/rd28_lifecycle_replay.py",
+      "sha256": "4AD1EAD99210EF0F27CC4F42754A554B647C3FC799C636CE4686C7E0BDAA149E",
+      "references": [
+        {
+          "line": 38,
+          "text": "MAX_HOLD_REASON,"
+        },
+        {
+          "line": 233,
+          "text": "common = (MAX_HOLD_REASON, PROFIT_GIVEBACK_REASON, BACKUP_TIME_FAIL_REASON)"
+        },
+        {
+          "line": 310,
+          "text": "max_exit_time = entry_time + pd.Timedelta(hours=168)"
+        },
+        {
+          "line": 347,
+          "text": "\"max_hold_exits\": 0,"
+        },
+        {
+          "line": 394,
+          "text": "MAX_HOLD_REASON: \"max_hold_exits\","
+        }
+      ]
+    },
+    {
+      "path": "src/spotbot/research/rd29_thesis_context.py",
+      "sha256": "53E189EFD8EABE7B8F3560077E11C2D3DC9757229B6EC6553E501142AD90F2C4",
+      "references": [
+        {
+          "line": 47,
+          "text": "MAX_HOLD_HOURS: Final = 168"
+        },
+        {
+          "line": 54,
+          "text": "MAX_HOLD_EXIT_REASON: Final = \"MAX_HOLD_168H\""
+        },
+        {
+          "line": 150,
+          "text": "if MAX_HOLD_HOURS != 168 or PAIR_COOLDOWN_RELEASE_HOURS != 72:"
+        },
+        {
+          "line": 490,
+          "text": "if age >= MAX_HOLD_HOURS:"
+        },
+        {
+          "line": 494,
+          "text": "MAX_HOLD_EXIT_REASON,"
+        },
+        {
+          "line": 640,
+          "text": "\"maximum_hold_hours\": MAX_HOLD_HOURS,"
+        }
+      ]
+    },
+    {
+      "path": "src/spotbot/research/rd29_thesis_replay.py",
+      "sha256": "C499946623CFDE87812BD63442BD9D67FE7BAA3EF7DE55BFB83355140984144B",
+      "references": [
+        {
+          "line": 35,
+          "text": "MAX_HOLD_EXIT_REASON,"
+        },
+        {
+          "line": 383,
+          "text": "max_exit_time = entry_time + pd.Timedelta(hours=168)"
+        },
+        {
+          "line": 417,
+          "text": "\"max_hold_exits\": 0,"
+        },
+        {
+          "line": 475,
+          "text": "elif reason == MAX_HOLD_EXIT_REASON:"
+        },
+        {
+          "line": 476,
+          "text": "counters[\"max_hold_exits\"] += 1"
+        }
+      ]
+    },
+    {
+      "path": "src/spotbot/research/rd30_family_specialist_state.py",
+      "sha256": "648536CEB36C01D0A759D99C142A8FE0E464E40996F1FAAAFE9300891790BDC1",
+      "references": [
+        {
+          "line": 15,
+          "text": "MAX_HOLD_HOURS,"
+        },
+        {
+          "line": 49,
+          "text": "MAX_HOLD_EXIT_REASON: Final = \"MAX_HOLD_168H\""
+        },
+        {
+          "line": 125,
+          "text": "if MAX_HOLD_HOURS != 168:"
+        },
+        {
+          "line": 266,
+          "text": "if age >= MAX_HOLD_HOURS:"
+        },
+        {
+          "line": 270,
+          "text": "MAX_HOLD_EXIT_REASON,"
+        },
+        {
+          "line": 467,
+          "text": "\"maximum_hold_hours\": MAX_HOLD_HOURS,"
+        }
+      ]
+    },
+    {
+      "path": "src/spotbot/research/rd30_replacement_replay.py",
+      "sha256": "169521BF5A684E10FE17000463FC7A816EF9A5917A5313AF5DD6509D0AA47606",
+      "references": [
+        {
+          "line": 40,
+          "text": "MAX_HOLD_EXIT_REASON,"
+        },
+        {
+          "line": 490,
+          "text": "max_exit_time = entry_time + pd.Timedelta(hours=168)"
+        },
+        {
+          "line": 525,
+          "text": "\"max_hold_exits\": 0,"
+        },
+        {
+          "line": 604,
+          "text": "elif reason == MAX_HOLD_EXIT_REASON:"
+        },
+        {
+          "line": 605,
+          "text": "counters[\"max_hold_exits\"] += 1"
+        }
+      ]
+    },
+    {
+      "path": "src/spotbot/research/rd31_regime_governed_replay.py",
+      "sha256": "CF979223BF53141AD715FF6D4E79AD394653A7A3E42E546B9E43424A42DC7F4C",
+      "references": [
+        {
+          "line": 32,
+          "text": "MAX_HOLD_EXIT_REASON,"
+        },
+        {
+          "line": 149,
+          "text": "\"max_hold_exits\": 0,"
+        },
+        {
+          "line": 235,
+          "text": "max_exit_time = entry_time + pd.Timedelta(hours=168)"
+        },
+        {
+          "line": 309,
+          "text": "elif reason == MAX_HOLD_EXIT_REASON:"
+        },
+        {
+          "line": 310,
+          "text": "counters[\"max_hold_exits\"] += 1"
+        }
+      ]
+    },
+    {
+      "path": "src/spotbot/research/rd32_mb_signal_quality_replay.py",
+      "sha256": "7C8A0EA168A16367DA62FA32D6BF797D78C03789CE906067F5FE252599F543C0",
+      "references": [
+        {
+          "line": 35,
+          "text": "MAX_HOLD_EXIT_REASON,"
+        },
+        {
+          "line": 112,
+          "text": "\"max_hold_exits\": 0,"
+        },
+        {
+          "line": 312,
+          "text": "max_exit_time = entry_time + pd.Timedelta(hours=168)"
+        },
+        {
+          "line": 387,
+          "text": "elif reason == MAX_HOLD_EXIT_REASON:"
+        },
+        {
+          "line": 388,
+          "text": "counters[\"max_hold_exits\"] += 1"
+        }
+      ]
+    },
+    {
+      "path": "src/spotbot/research/rd33_temporal_mb_replay.py",
+      "sha256": "A0B37C791E37821405F9AC8C1A24AE97EEABD38F6C52CF7CC942124D519D7179",
+      "references": [
+        {
+          "line": 42,
+          "text": "MAX_HOLD_EXIT_REASON,"
+        },
+        {
+          "line": 175,
+          "text": "control_max_exit_time = normal_entry_time + pd.Timedelta(hours=168)"
+        },
+        {
+          "line": 325,
+          "text": "\"max_hold_exits\": 0,"
+        },
+        {
+          "line": 513,
+          "text": "max_exit_time = timestamp + pd.Timedelta(hours=168)"
+        },
+        {
+          "line": 787,
+          "text": "elif reason == MAX_HOLD_EXIT_REASON:"
+        },
+        {
+          "line": 788,
+          "text": "counters[\"max_hold_exits\"] += 1"
+        },
+        {
+          "line": 1256,
+          "text": "\"maximum_hold_hours\": 168,"
+        }
+      ]
+    },
+    {
+      "path": "src/spotbot/research/rd41_full_risk_set_censoring.py",
+      "sha256": "99547A02835A2F076855E15C54C630F819879705F044F2EB39B2189BBB71D929",
+      "references": [
+        {
+          "line": 28,
+          "text": "MAX_HOLD: Final = \"MAX_HOLD_168H\""
+        },
+        {
+          "line": 33,
+          "text": "MAX_HOLD,"
+        },
+        {
+          "line": 67,
+          "text": "return bool(entry + pd.Timedelta(hours=168) < DATA_CUTOFF)"
+        },
+        {
+          "line": 79,
+          "text": "MAX_HOLD,"
+        }
+      ]
+    },
+    {
+      "path": "src/spotbot/research/rd41_rcv_terminal_hazard_diagnostic.py",
+      "sha256": "29930D9B3A561C8947FD6FAE9B0199221B959AA9A902D5100FD1DEB336292728",
+      "references": [
+        {
+          "line": 26,
+          "text": "MAX_HOLD: Final = \"MAX_HOLD_168H\""
+        },
+        {
+          "line": 261,
+          "text": "if exit_reason not in {TIME_FAILURE, MAX_HOLD}:"
+        },
+        {
+          "line": 751,
+          "text": "\"max_hold_non_event_count\": nonevent_count,"
+        },
+        {
+          "line": 757,
+          "text": "\"max_hold_median_channel\": ("
+        }
+      ]
+    },
+    {
+      "path": "governance/v2_a2_exec.py",
+      "sha256": "2024D8592843FAD8B7EE70E2D8EBB35994784E25076BECBE4D036E1B457DE83B",
+      "references": [
+        {
+          "line": 4,
+          "text": "It must not certify that entry + max hold is the actual native lifecycle end."
+        },
+        {
+          "line": 149,
+          "text": "hold = manifest[\"native_rd27_max_hold_hours\"]"
+        },
+        {
+          "line": 152,
+          "text": "need(hold == 168, \"MAX_HOLD_DRIFT\")"
+        },
+        {
+          "line": 155,
+          "text": "\"ENTRY_PLUS_NATIVE_RD27_MAX_HOLD_HOURS\", \"PRIOR_WINDOW_DRIFT\")"
+        },
+        {
+          "line": 389,
+          "text": "\"no_native_close_inferred_from_max_hold\": True,"
+        }
+      ]
+    },
+    {
+      "path": "governance/final_exit_brain_pre_2024_architecture_p37_transition_admission_only_2023_replication_execution_authorization_and_binding_v1/p19_observer_2023_period_bound_preview.py",
+      "sha256": "47344B9E88ED406EF35DF729F8CF1AB6A5459250B5E8F9371BA50F43E0FDC6F3",
+      "references": [
+        {
+          "line": 158,
+          "text": "max_exit_time = entry_time + pd.Timedelta(hours=168)"
+        },
+        {
+          "line": 172,
+          "text": "counters = {'signal_events': len(events), 'missing_entry_bar': 0, 'missing_exit_bar_precheck': 0, 'same_pair_open': 0, 'shadow_same_pair_suppressed': 0, 'position_slots_full': 0, 'gross_limit_rejection': 0, 'capacity_unavailable': 0, 'capacity_capped_entries': 0, 'cash_capped_entries': 0, 'admitted_entries': 0, 'risk_off_suppressed_entries': 0, 'transition_admission_suppressed': 0, 'entry_bar_adap"
+        },
+        {
+          "line": 190,
+          "text": "if exit_reason == 'MAX_HOLD_168H':"
+        },
+        {
+          "line": 191,
+          "text": "counters['max_hold_exits'] += 1"
+        },
+        {
+          "line": 209,
+          "text": "release_reason = 'SHADOW_MAX_HOLD_168H'"
+        },
+        {
+          "line": 210,
+          "text": "counters['shadow_max_hold_168h_releases'] += 1"
+        },
+        {
+          "line": 335,
+          "text": "shadows[pair] = {'pair': pair, 'entry_time': timestamp, 'entry_price': entry_price, 'max_exit_time': timestamp + pd.Timedelta(hours=168), 'source_event_key': event_key}"
+        },
+        {
+          "line": 349,
+          "text": "elif reason == 'MAX_HOLD_168H':"
+        },
+        {
+          "line": 350,
+          "text": "counters['max_hold_exits'] += 1"
+        }
+      ]
+    },
+    {
+      "path": "governance/transition_event_diagnosis_v1/frozen_p38_observer.py",
+      "sha256": "E96298B1E68F0BA4585BE2958E2E9EA984F4877902AC5E7669DB7ABB2B358096",
+      "references": [
+        {
+          "line": 157,
+          "text": "max_exit_time = entry_time + pd.Timedelta(hours=168)"
+        },
+        {
+          "line": 171,
+          "text": "counters = {'signal_events': len(events), 'missing_entry_bar': 0, 'missing_exit_bar_precheck': 0, 'same_pair_open': 0, 'shadow_same_pair_suppressed': 0, 'position_slots_full': 0, 'gross_limit_rejection': 0, 'capacity_unavailable': 0, 'capacity_capped_entries': 0, 'cash_capped_entries': 0, 'admitted_entries': 0, 'risk_off_suppressed_entries': 0, 'transition_admission_suppressed': 0, 'entry_bar_adap"
+        },
+        {
+          "line": 189,
+          "text": "if exit_reason == 'MAX_HOLD_168H':"
+        },
+        {
+          "line": 190,
+          "text": "counters['max_hold_exits'] += 1"
+        },
+        {
+          "line": 208,
+          "text": "release_reason = 'SHADOW_MAX_HOLD_168H'"
+        },
+        {
+          "line": 209,
+          "text": "counters['shadow_max_hold_168h_releases'] += 1"
+        },
+        {
+          "line": 334,
+          "text": "shadows[pair] = {'pair': pair, 'entry_time': timestamp, 'entry_price': entry_price, 'max_exit_time': timestamp + pd.Timedelta(hours=168), 'source_event_key': event_key}"
+        },
+        {
+          "line": 348,
+          "text": "elif reason == 'MAX_HOLD_168H':"
+        },
+        {
+          "line": 349,
+          "text": "counters['max_hold_exits'] += 1"
+        }
+      ]
+    }
+  ],
+  "changed_source_enforcement_files": [],
+  "current_head_targeted_test_rerun": {
+    "ran": true,
+    "returncode": 0,
+    "files": [
+      "tests/research/test_a4r1_reversible_floor_candidate.py",
+      "tests/research/test_rd16c_registered_families.py",
+      "tests/research/test_rd16p_cross_sectional_portfolio.py",
+      "tests/research/test_rd16t_long_horizon.py",
+      "tests/research/test_rd19_p2c_r1_engine.py",
+      "tests/research/test_rd24_minimal_portfolio.py",
+      "tests/research/test_rd26_exit_architecture.py",
+      "tests/research/test_rd27_adaptive_lifecycle.py",
+      "tests/research/test_rd27_async_exit_candidate_shadow.py",
+      "tests/research/test_rd27_async_memory_shadow_replay.py",
+      "tests/research/test_rd27_native_terminal_source_authority.py",
+      "tests/research/test_rd28_evidence_gated_lifecycle.py",
+      "tests/research/test_rd29_thesis_context.py",
+      "tests/research/test_rd29_thesis_replay.py",
+      "tests/research/test_rd30_family_specialist_state.py",
+      "tests/research/test_rd30_replacement_replay.py",
+      "tests/research/test_rd33_temporal_mb_replay.py",
+      "tests/research/test_rd41_full_risk_set_censoring.py",
+      "tests/research/test_rnb_signal_2022.py",
+      "tests/research/test_v2_phase_a_recovery.py"
+    ],
+    "stdout": "........................................................................ [ 23%]\n........................................................................ [ 46%]\n........................................................................ [ 69%]\n........................................................................ [ 92%]\n.......................                                                  [100%]\n311 passed in 10.61s\n",
+    "stderr": "",
+    "pass": true
+  },
+  "source_enforcement_proven": true,
+  "governance_authority_proven": true,
+  "max_hold_168h_proven": true,
+  "annual_entry_window_semantics_changed": false,
+  "new_runtime_rule_created": false
+}

@@ -1,0 +1,98 @@
+{
+  "2022_2023": "EXPOSED_DIAGNOSTIC_ONLY",
+  "authorization_families": {
+    "BRANCH": [
+      "CORE_AGE",
+      "DAMAGE_AGE",
+      "EVIDENCE_AGE"
+    ],
+    "CLEAN": [
+      "CORE_AGE",
+      "DAMAGE_AGE",
+      "EVIDENCE_AGE"
+    ],
+    "INTERVENTION": [
+      "DAMAGE_AGE",
+      "EVIDENCE_AGE"
+    ]
+  },
+  "family_map_alpha": 50.0,
+  "family_map_min_support": 50,
+  "feature_search": false,
+  "indicator_search": false,
+  "model_family_search": false,
+  "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_CONTINUATION_VALUE_FAMILY_REAL_RESIDUAL_ATTRIBUTION_V1",
+  "pair_age_null": "ROLLING_DIAGNOSTIC_ONLY_NOT_RUNTIME_RULE_NOT_AUTHORIZATION_GATE",
+  "population_families": {
+    "BRANCH": [
+      "CORE_AGE",
+      "EVIDENCE_AGE",
+      "DAMAGE_AGE",
+      "SIGNAL_MARKET"
+    ],
+    "CLEAN": [
+      "CORE_AGE",
+      "EVIDENCE_AGE",
+      "DAMAGE_AGE",
+      "SIGNAL_MARKET"
+    ],
+    "INTERVENTION": [
+      "EVIDENCE_AGE",
+      "DAMAGE_AGE",
+      "SIGNAL_MARKET"
+    ]
+  },
+  "primary_null": {
+    "branch_max_abs_delta_auc": 0.03,
+    "branch_max_positive_brier_lift": 0.015,
+    "min_signature_changed_share": 0.3,
+    "salts": [
+      "A",
+      "B"
+    ],
+    "strata": [
+      "AGE",
+      "ORDINAL",
+      "CALENDAR_QUARTER"
+    ],
+    "value_max_abs_residual_spearman": 0.1
+  },
+  "primary_structural_baseline": [
+    "AGE",
+    "ORDINAL",
+    "CALENDAR_QUARTER",
+    "AGE_X_ORDINAL"
+  ],
+  "raw": false,
+  "real_gate": "BOTH_ROLLING_DEVELOPMENT_FOLDS_POSITIVE_INCREMENTAL_SIGNAL",
+  "replay": false,
+  "schema_version": "akah-rev630-family-residual-v5-fast-proof-mega-v1-protocol",
+  "status": "PASS_PROTOCOL_FROZEN",
+  "stripped_family_columns": {
+    "CORE_AGE": [
+      "base_state",
+      "native_market_state_context",
+      "memory_seen"
+    ],
+    "DAMAGE_AGE": [
+      "__sign_progress_margin_delta_from_prev",
+      "__sign_structural_break_margin_delta_from_prev",
+      "__sign_volatility_damage_margin_delta_from_prev"
+    ],
+    "EVIDENCE_AGE": [
+      "a_condition_now",
+      "b_condition_now",
+      "memory_seen"
+    ],
+    "SIGNAL_MARKET": [
+      "A_signal",
+      "B_signal",
+      "C_signal",
+      "native_market_state_context"
+    ]
+  },
+  "target_redesign": false,
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_CONTINUATION_VALUE_FAMILY_RESIDUAL_V5_FAST_PROTOCOL_FREEZE_V1",
+  "technical_sensor_fit": false,
+  "unseen_signature_correction": 0.0
+}

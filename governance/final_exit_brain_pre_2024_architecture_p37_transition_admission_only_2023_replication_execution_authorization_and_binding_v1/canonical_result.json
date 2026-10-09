@@ -1,0 +1,304 @@
+{
+  "schema_version": "final-exit-brain-pre-2024-architecture-p37-transition-admission-only-2023-replication-execution-authorization-and-binding-v1",
+  "task_id": "FINAL_EXIT_BRAIN_PRE_2024_ARCHITECTURE_P37_TRANSITION_ADMISSION_ONLY_2023_REPLICATION_EXECUTION_AUTHORIZATION_AND_BINDING_V1",
+  "status": "PASS_P37_AUTHORIZED_NO_2023_DATA_ACCESSED",
+  "classification": "2023_REPLICATION_EXECUTION_AUTHORIZED_AND_SOURCE_PERIOD_BINDING_FROZEN_NO_2023_DATA_ACCESSED",
+  "candidate_id": "PRE_2024_P13_TRANSITION_ADMISSION_ONLY_ABLATION_V1",
+  "authorization": {
+    "schema_version": "akah-p37-2023-replication-execution-authorization-v1",
+    "task_id": "FINAL_EXIT_BRAIN_PRE_2024_ARCHITECTURE_P37_TRANSITION_ADMISSION_ONLY_2023_REPLICATION_EXECUTION_AUTHORIZATION_AND_BINDING_V1",
+    "status": "PASS_AUTHORIZATION_AND_BINDING_FROZEN",
+    "classification": "2023_REPLICATION_EXECUTION_AUTHORIZED_AND_SOURCE_PERIOD_BINDING_FROZEN_NO_2023_DATA_ACCESSED",
+    "candidate_id": "PRE_2024_P13_TRANSITION_ADMISSION_ONLY_ABLATION_V1",
+    "authorized_next_task": "TRANSITION_ADMISSION_ONLY_2023_TEMPORAL_REPLICATION_EXECUTION_V1",
+    "authorization": {
+      "2023_data_access_in_p37": false,
+      "2023_replay_in_p37": false,
+      "2023_data_access_in_next_execution_task": true,
+      "2023_replay_in_next_execution_task": true,
+      "2024_access": false,
+      "2025_access": false,
+      "new_candidate_search": false,
+      "threshold_search": false,
+      "sizing_search": false,
+      "parameter_search": false,
+      "model_fit": false,
+      "production_change": false
+    },
+    "source_binding": {
+      "schema_version": "akah-p37-2023-replication-execution-binding-v1",
+      "candidate_id": "PRE_2024_P13_TRANSITION_ADMISSION_ONLY_ABLATION_V1",
+      "source": {
+        "p19_observer_path": "C:\\Users\\abdul\\Downloads\\EAA_EXIT_BRAIN_P19_2022_TRANSITION_ADMISSION_ABLATION_OBSERVER_20260914_040044.py",
+        "p19_observer_sha256": "1CB8F15E04A2A7A19C7003024B2F56743EBCF23256CE0E1C2FAAB70CE82405CC",
+        "source_length_bytes": 51041,
+        "contains_external_full_adaptive_replay": true,
+        "function_inventory": [
+          {
+            "name": "need",
+            "lineno": 42,
+            "args": [
+              "condition",
+              "message"
+            ],
+            "kwonlyargs": []
+          },
+          {
+            "name": "sha256",
+            "lineno": 46,
+            "args": [
+              "path"
+            ],
+            "kwonlyargs": []
+          },
+          {
+            "name": "utc",
+            "lineno": 56,
+            "args": [
+              "value"
+            ],
+            "kwonlyargs": []
+          },
+          {
+            "name": "event_key_from_event",
+            "lineno": 60,
+            "args": [
+              "row"
+            ],
+            "kwonlyargs": []
+          },
+          {
+            "name": "event_key_from_trade",
+            "lineno": 63,
+            "args": [
+              "row"
+            ],
+            "kwonlyargs": []
+          },
+          {
+            "name": "pair_set_sha",
+            "lineno": 66,
+            "args": [
+              "pairs"
+            ],
+            "kwonlyargs": []
+          },
+          {
+            "name": "event_ledger_sha",
+            "lineno": 69,
+            "args": [
+              "events"
+            ],
+            "kwonlyargs": []
+          },
+          {
+            "name": "trade_key_set",
+            "lineno": 80,
+            "args": [
+              "frame"
+            ],
+            "kwonlyargs": []
+          },
+          {
+            "name": "jsonable",
+            "lineno": 83,
+            "args": [
+              "value"
+            ],
+            "kwonlyargs": []
+          },
+          {
+            "name": "dict_exact_nan_aware",
+            "lineno": 96,
+            "args": [
+              "a",
+              "b",
+              "label"
+            ],
+            "kwonlyargs": []
+          },
+          {
+            "name": "frame_exact",
+            "lineno": 104,
+            "args": [
+              "a",
+              "b",
+              "label"
+            ],
+            "kwonlyargs": []
+          },
+          {
+            "name": "trade_map",
+            "lineno": 117,
+            "args": [
+              "frame",
+              "label"
+            ],
+            "kwonlyargs": []
+          },
+          {
+            "name": "trace_map",
+            "lineno": 125,
+            "args": [
+              "rows",
+              "label"
+            ],
+            "kwonlyargs": []
+          },
+          {
+            "name": "canonical_csv_hash",
+            "lineno": 133,
+            "args": [
+              "frame",
+              "path"
+            ],
+            "kwonlyargs": []
+          },
+          {
+            "name": "grouped_divergent",
+            "lineno": 137,
+            "args": [
+              "rows",
+              "field"
+            ],
+            "kwonlyargs": []
+          },
+          {
+            "name": "parse_args",
+            "lineno": 154,
+            "args": [],
+            "kwonlyargs": []
+          },
+          {
+            "name": "external_full_adaptive_replay",
+            "lineno": 168,
+            "args": [],
+            "kwonlyargs": [
+              "rd27",
+              "state",
+              "events",
+              "frames",
+              "state_frame",
+              "policy_id",
+              "portfolio_id",
+              "shadow_guard_enabled",
+              "transition_admission_ablated"
+            ]
+          },
+          {
+            "name": "main",
+            "lineno": 627,
+            "args": [],
+            "kwonlyargs": []
+          }
+        ]
+      },
+      "period_binding": {
+        "source_period": "ROBUSTNESS_2022",
+        "target_period": "ROBUSTNESS_2023",
+        "ast_detected_period_rows": [
+          {
+            "kind": "str",
+            "value": "ROBUSTNESS_2022",
+            "lineno": 25
+          }
+        ],
+        "authorized_ast_literal_changes": [
+          {
+            "lineno": 23,
+            "from": "2022-01-01T00:00:00Z",
+            "to": "2023-01-01T00:00:00Z"
+          },
+          {
+            "lineno": 24,
+            "from": "2023-01-01T00:00:00Z",
+            "to": "2024-01-01T00:00:00Z"
+          },
+          {
+            "lineno": 25,
+            "from": "ROBUSTNESS_2022",
+            "to": "ROBUSTNESS_2023"
+          }
+        ],
+        "integer_year_binding_count": 0,
+        "reversible_to_exact_original_ast": true,
+        "patched_preview_sha256": "47344B9E88ED406EF35DF729F8CF1AB6A5459250B5E8F9371BA50F43E0FDC6F3",
+        "patched_preview_compiles": true
+      },
+      "execution_contract_for_next_task": {
+        "observer_authority": "P19_EXACT_OBSERVER_SHA",
+        "period_rebinding": "ONLY_AUTHORIZED_AST_LITERAL_CHANGES_FROM_THIS_BINDING",
+        "strategy_runtime_semantics_change": "NONE_BEYOND_PREEXISTING_P19_TRANSITION_ADMISSION_ABLATION",
+        "control_candidate_pair": "P13_CONTROL_VS_TRANSITION_ADMISSION_ONLY_TREATMENT",
+        "must_begin_governed_task_before_any_2023_DATA_ACCESS": true,
+        "2023_data_access_authorized_for_next_execution_task": true,
+        "2023_market_replay_authorized_for_next_execution_task": true,
+        "2024_access_authorized": false,
+        "2025_access_authorized": false,
+        "threshold_search_authorized": false,
+        "sizing_search_authorized": false,
+        "parameter_search_authorized": false,
+        "candidate_search_authorized": false,
+        "model_fit_authorized": false,
+        "production_change_authorized": false
+      },
+      "io_surface_observations": {
+        "path_home_reference_present": false,
+        "downloads_reference_present": false,
+        "data_reference_present": true
+      },
+      "p36_protocol_anchor": {
+        "classification": "TRANSITION_ADMISSION_ONLY_REPLICATION_PROTOCOL_FROZEN_NO_DATA_ACCESSED",
+        "candidate_id": "PRE_2024_P13_TRANSITION_ADMISSION_ONLY_ABLATION_V1",
+        "replication_period": {
+          "period_id": "ROBUSTNESS_2023",
+          "start_utc": "2023-01-01T00:00:00Z",
+          "end_utc_exclusive": "2024-01-01T00:00:00Z",
+          "access_in_p36": false,
+          "execution_in_p36": false,
+          "future_access_requires_separate_authorized_task": true
+        },
+        "primary_endpoint": {
+          "name": "FINAL_PORTFOLIO_NET_PNL_TREATMENT_MINUS_CONTROL",
+          "formula": "candidate_net_pnl - control_net_pnl",
+          "direction": "GREATER_THAN_ZERO_SUPPORTS_REPLICATION",
+          "threshold_search": false
+        },
+        "frozen_primary_support_gates": {
+          "CANDIDATE_NET_PNL_MINUS_CONTROL_NET_PNL_GT_0": true,
+          "CANDIDATE_NET_PNL_GT_0": true,
+          "CANDIDATE_MAX_DRAWDOWN_LE_CONTROL_MAX_DRAWDOWN": true,
+          "TRANSITION_ADMISSION_ZERO_AND_SINGLE_COMPONENT_CONTRACT": true
+        }
+      }
+    },
+    "authority": {
+      "starting_revision": 257,
+      "starting_head": "866308499b161c543872ca3159ec6668679a719a",
+      "github_revision_257_sync_commit": "134fc9403446ce7ed4c30c26b060585fd2af8625",
+      "p36_result_path": "governance/final_exit_brain_pre_2024_architecture_p36_transition_admission_only_candidate_replication_authority_protocol_freeze_v1/canonical_result.json",
+      "p36_git_blob_sha256": "CB89BAE54CF31D076B650096F124E602D28B7BBEE09094AD9D2BF236CD4C0F5D",
+      "p36_worktree_sha256": "60DCA1B1D060095160E5B9EEAFAB8C83FA0FFA2A04D0CD372B1A0009055627B2"
+    },
+    "next_bottleneck": "TRANSITION_ADMISSION_ONLY_2023_TEMPORAL_REPLICATION_EXECUTION_V1"
+  },
+  "next_bottleneck": "TRANSITION_ADMISSION_ONLY_2023_TEMPORAL_REPLICATION_EXECUTION_V1",
+  "artifacts": {
+    "authorization.json": {
+      "path": "governance/final_exit_brain_pre_2024_architecture_p37_transition_admission_only_2023_replication_execution_authorization_and_binding_v1/authorization.json",
+      "sha256": "333252EBC29E1256C6D0C0B327232264F1C3C4891B43A82EBCCAE94A6117ABC0"
+    },
+    "canonical_result.json": {
+      "path": "governance/final_exit_brain_pre_2024_architecture_p37_transition_admission_only_2023_replication_execution_authorization_and_binding_v1/canonical_result.json",
+      "sha256": "28AB500A51F69B68D8CE8A724159E6EB8CE953853D6DF556576F7D03798D75D0"
+    },
+    "execution_binding.json": {
+      "path": "governance/final_exit_brain_pre_2024_architecture_p37_transition_admission_only_2023_replication_execution_authorization_and_binding_v1/execution_binding.json",
+      "sha256": "02C9F57EEE51DA558D40BEB9642B8AA766C6EC8246A3FE6B0B256B20454D50BE"
+    },
+    "p19_observer_2023_period_bound_preview.py": {
+      "path": "governance/final_exit_brain_pre_2024_architecture_p37_transition_admission_only_2023_replication_execution_authorization_and_binding_v1/p19_observer_2023_period_bound_preview.py",
+      "sha256": "47344B9E88ED406EF35DF729F8CF1AB6A5459250B5E8F9371BA50F43E0FDC6F3"
+    }
+  }
+}

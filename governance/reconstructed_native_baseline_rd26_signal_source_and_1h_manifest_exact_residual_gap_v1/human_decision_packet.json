@@ -1,0 +1,44 @@
+{
+  "authority_id": "AKAH_BOT_RD26_SIGNAL_SOURCE_AND_1H_MANIFEST_HUMAN_DECISION_PACKET_V2",
+  "status": "REQUIRED",
+  "decision_scope": "Freeze the prospective input instance; do not reinterpret historical truth and do not use outcomes.",
+  "already_frozen_and_not_reopened": [
+    "policy_id = rd27.FULL_ADAPTIVE_LIFECYCLE_BRAIN",
+    "cost_multiplier = float(1.0)",
+    "native 1H source role",
+    "Memory/V2 formulas",
+    "protected-year firewall"
+  ],
+  "choice_1_context": {
+    "question": "Which source-faithful RD27 context is the reconstructed baseline study?",
+    "native_options": [
+      "one actual tuple: UNION_FOCUS with one of C2/D2/E2",
+      "one actual tuple: MOMENTUM_BREAKOUT standalone with one of C2/D2/E2",
+      "one actual tuple: RELATIVE_STRENGTH_ROTATION standalone with one of C2/D2/E2",
+      "the full existing native matrix of the three constructors across C2/D2/E2, explicitly treated as study strata"
+    ],
+    "forbidden": ["PRE2022_UNION as a substitute for C2/D2/E2", "EAA_SHADOW_PARITY_NATIVE as a substitute for UNION_FOCUS", "outcome-based selection"]
+  },
+  "choice_2_signal_input": {
+    "question": "Which immutable pre-2023 signal artifact or protected-row-safe materialization is authorized?",
+    "current_answer": "none in current evidence",
+    "required_submission": ["path", "sha256", "schema", "producer or partition selector", "PIT availability contract"],
+    "forbidden": "calling data/research/rd26_p1_runtime/signal-events-2022-2023.csv as-is"
+  },
+  "post_decision_terminal_job": [
+    "instantiate selected pair set",
+    "enumerate and hash exact 1H files",
+    "timestamp-only audit after authorization",
+    "prove rolling-24 continuity and duplicate/conflict semantics",
+    "prove max-exit coverage makes the precheck administrative/vacuous",
+    "only then consider a separately authorized thin runner"
+  ],
+  "rules": [
+    "DO_NOT_USE_PNL",
+    "DO_NOT_USE_V2_INCIDENCE",
+    "DO_NOT_OPEN_2023_ROWS",
+    "DO_NOT_RUN_NATIVE_REPLAY",
+    "DO_NOT_CREATE_A_NEW_DETECTOR",
+    "DO_NOT_REOPEN_HISTORICAL_EXECUTABLE_PRODUCER_SEARCH"
+  ]
+}

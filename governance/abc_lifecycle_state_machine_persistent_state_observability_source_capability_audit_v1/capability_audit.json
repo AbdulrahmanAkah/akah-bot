@@ -1,0 +1,38 @@
+{
+  "schema_version": "abc-persistent-state-observability-source-capability-audit-v1",
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_OBSERVABILITY_SOURCE_CAPABILITY_AUDIT_V1",
+  "status": "PASS_CAPABILITY_AUDIT_COMPLETE",
+  "observable_count": 42,
+  "capability_counts": {
+    "DERIVABLE_FROM_EXISTING_FROZEN_OUTPUTS_WITHOUT_MARKET_DATA": 9,
+    "DIRECTLY_AVAILABLE_IN_EXISTING_FROZEN_OUTPUT": 11,
+    "NOT_CURRENTLY_DERIVABLE_WITH_PROVEN_AUTHORITY": 22
+  },
+  "raw_reconstruction_authority": {
+    "memory_semantics_frozen": false,
+    "a_donchian_semantics_frozen": true,
+    "b_atr_ratchet_semantics_frozen": true,
+    "pre2024_raw_root_authority_found": true,
+    "parquet_loader_authority_found": true,
+    "four_hour_construction_authority_found": true,
+    "causal_timestamp_filtering_authority_found": true,
+    "successful_trace_reconstruction_proof": true,
+    "raw_reconstruction_authority_proven": false
+  },
+  "routing_decision": {
+    "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_OBSERVABILITY_SOURCE_GAP_REVIEW_V1",
+    "reason": "UNPROVEN_OBSERVABLE_CAPABILITY_PRESENT"
+  },
+  "constraints": {
+    "market_data_rows_accessed": false,
+    "market_data_values_accessed": false,
+    "economic_outcomes_read": false,
+    "pnl_columns_read": false,
+    "observable_values_materialized": false,
+    "new_threshold_created": false,
+    "persistence_horizon_selected": false,
+    "state_defined": false,
+    "2024_accessed": false,
+    "2025_accessed": false
+  }
+}

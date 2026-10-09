@@ -1,0 +1,21 @@
+{
+  "actions": [
+    "ADD_SLOT_BYPASS",
+    "REPLACE_PREDICTED_DIRECT",
+    "REPLACE_WORST_UNREALIZED_NEGATIVE",
+    "REPLACE_OLDEST_24H",
+    "REPLACE_LOWEST_ENTRY_SCORE",
+    "REPLACE_LOCAL_ORACLE_BEST",
+    "REPLACE_DETERMINISTIC_RANDOM"
+  ],
+  "continuation": "single action once, then exact pi0; no repeated learned/oracle switching",
+  "horizons_hours": [
+    24,
+    72,
+    168
+  ],
+  "primary_target": "liquidation-adjusted portfolio wealth difference divided by decision-hour equity",
+  "sample_events": 800,
+  "schema_version": "akah-single-switch-branch-sample-v1",
+  "selection": "deterministic hash within year and block-reason quotas before observing branch outcomes"
+}

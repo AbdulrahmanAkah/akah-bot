@@ -1,0 +1,19 @@
+{
+  "authority_id": "AKAH_BOT_RD27_MAX_EXIT_FUTURE_BAR_SEMANTIC_CLASSIFICATION_V1",
+  "status": "COVERAGE_PROOF_REQUIRED_BEFORE_ADMINISTRATIVE_ONLY_CLASSIFICATION",
+  "source_paths": [
+    {"path": "src/spotbot/research/rd27_lifecycle_replay.py", "sha256": "E3944A4655DDDF21C394FE1DB541F2645F529C00BD8390B22D652BD8EF5BBF83", "lines": "393-405, 559-567"},
+    {"path": "src/spotbot/research/rd26_exit_architecture.py", "sha256": "1290748EA7E8A0343C1A15CEDFC1220AA423F04C11FDD558311B06AC7DA90359", "lines": "697-709, 814-822"}
+  ],
+  "dataflow": {
+    "max_exit_time": "entry_time + 168 hours",
+    "window_filter": "events are not scheduled when max_exit_time >= replay_cutoff",
+    "admission_precheck": "missing max-exit bar increments missing_exit_bar_precheck and skips the entry before native position creation",
+    "future_ohlcv_values_used_for_this_check": false,
+    "future_existence_can_affect_admission_in_current_source": true
+  },
+  "classification": "DEPENDENCY_PRESENT_REQUIRES_TERMINAL_COVERAGE_PROOF",
+  "future_information_leakage": "UNRESOLVED",
+  "administrative_only_condition": "It may be classified administrative only for the study if the terminal manifest proves every eligible candidate has the required max-exit bar and the precheck is therefore vacuous, or if a future runner performs the eligibility filter outside causal policy state.",
+  "forbidden": "Do not call future-bar existence administrative-only merely from variable names or from the existence of a cutoff filter."
+}

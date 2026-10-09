@@ -1,0 +1,61 @@
+{
+  "action": {
+    "fill_price": "current asset 1H open",
+    "fill_time": "current hourly open at which trigger is first satisfied",
+    "reason_prefix": "PRE_PROGRESS_THESIS_NON_CONFIRMATION",
+    "type": "EXIT"
+  },
+  "contract_id": "AKAH_RNB_PRE_PROGRESS_THESIS_NON_CONFIRMATION_ACTION_V1",
+  "development_year_only": true,
+  "forbidden": {
+    "exit_reason_filter_search": true,
+    "market_state_filter_search": true,
+    "memory_as_exit": true,
+    "protected_year_access": true,
+    "time_threshold_search": true,
+    "v2_rescue": true,
+    "winner_loss_label_filtering": true
+  },
+  "independent_validation_required_before_generalization": true,
+  "memory_role": "POST_PROGRESS_STATE_MARKER_ONLY",
+  "next_bottleneck": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_PRE_PROGRESS_THESIS_NON_CONFIRMATION_COUNTERFACTUAL_PORTFOLIO_REPLAY_V1",
+  "portfolio_semantics": {
+    "cost_model": "UNCHANGED_NATIVE_COST_MODEL",
+    "early_exit_releases_cash_and_slot": "YES_CAUSAL_PORTFOLIO_PATH_EFFECT",
+    "entry_logic": "UNCHANGED_NATIVE_ADMISSION_AND_ENTRY",
+    "full_portfolio_replay_required": true,
+    "position_sizing": "UNCHANGED_NATIVE_SIZING_AT_ADMISSION"
+  },
+  "precedence": {
+    "adaptive_protection_touch": "INTRABAR_AFTER_OPEN_ACTION_WINS",
+    "native_open_time_exits_win": [
+      "ADAPTIVE_PROTECTION_GAP",
+      "ADAPTIVE_STAGNATION_24H_CLOSE_NOT_ABOVE_ENTRY",
+      "ADAPTIVE_STAGNATION_48H_CLOSE_NOT_ABOVE_ENTRY",
+      "ADAPTIVE_STAGNATION_72H_CLOSE_NOT_ABOVE_ENTRY",
+      "MAX_HOLD_168H"
+    ]
+  },
+  "production_authorized": false,
+  "retuning_authorized": false,
+  "scientific_role": "Evaluate thesis non-confirmation before structural progress. This is distinct from post-progress V2 deterioration.",
+  "scope": "RECONSTRUCTED_NATIVE_BASELINE_2022_DEVELOPMENT_DIAGNOSTIC_ONLY",
+  "state_boundary": {
+    "POST_PROGRESS": "First causal Memory event has occurred; this contract becomes permanently inactive for that position.",
+    "PRE_PROGRESS": "No causal Memory event has occurred since entry."
+  },
+  "status": "FROZEN_FOR_DIAGNOSTIC_COUNTERFACTUAL_REPLAY",
+  "trigger": {
+    "condition": "position remains PRE_PROGRESS and age_hours >= STAGNATION_HOURS_BY_STATE[current_market_state]",
+    "evaluation_time": "each native hourly open",
+    "frozen_hours_by_state": {
+      "RISK_OFF": 24,
+      "RISK_ON": 72,
+      "TRANSITION": 48
+    },
+    "market_state_cutoff": "prior completed BTC 1H bar, identical to frozen RD27 lifecycle semantics",
+    "new_threshold_introduced": false,
+    "prior_close_below_entry_required": false
+  },
+  "v2_role": "DESCRIPTIVE_POST_PROGRESS_DETERIORATION_EVIDENCE_NOT_DIRECT_EXIT"
+}

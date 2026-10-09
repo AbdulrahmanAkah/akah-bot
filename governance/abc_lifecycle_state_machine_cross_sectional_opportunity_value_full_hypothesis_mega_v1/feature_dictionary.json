@@ -1,0 +1,133 @@
+{
+  "event_audit": {
+    "2024_access": false,
+    "event_keys_pre_feature": 364635,
+    "family_counts": {
+      "MOMENTUM_ACCELERATION": 240273,
+      "MOMENTUM_BREAKOUT": 68763,
+      "RELATIVE_STRENGTH_ROTATION": 6465,
+      "VOLATILITY_EXPANSION": 101334
+    },
+    "materialized_rows": 364546,
+    "old_daily_top20_filter_applied": false,
+    "pair_count": 317
+  },
+  "groups": {
+    "ALL": [
+      "fam_momentum_breakout",
+      "fam_volatility_expansion",
+      "fam_relative_strength_rotation",
+      "fam_momentum_acceleration",
+      "family_count",
+      "daily_r7",
+      "daily_r30",
+      "daily_sigma20",
+      "daily_rs7",
+      "daily_cs_rank_pct",
+      "membership_rank_pct",
+      "eligibility_age_days",
+      "ret6",
+      "ret24",
+      "ret72",
+      "ret168",
+      "rv24",
+      "rv72",
+      "ema9_21",
+      "ema21_50",
+      "ema21_slope6",
+      "adx14",
+      "dmi_spread",
+      "trend_quality",
+      "atr24_frac",
+      "close_location",
+      "base_width_atr",
+      "dist_above_24h_high",
+      "dist_above_72h_high",
+      "support_distance",
+      "btc_ret24",
+      "btc_ret72",
+      "btc_ret168",
+      "btc_rv24",
+      "breadth_r7_positive",
+      "dispersion_r7",
+      "median_sigma20",
+      "log_turnover24",
+      "volume_ratio_4_20"
+    ],
+    "FAMILY": [
+      "fam_momentum_breakout",
+      "fam_volatility_expansion",
+      "fam_relative_strength_rotation",
+      "fam_momentum_acceleration",
+      "family_count"
+    ],
+    "LIQ_TENURE": [
+      "log_turnover24",
+      "volume_ratio_4_20",
+      "membership_rank_pct",
+      "eligibility_age_days"
+    ],
+    "MARKET": [
+      "btc_ret24",
+      "btc_ret72",
+      "btc_ret168",
+      "btc_rv24",
+      "breadth_r7_positive",
+      "dispersion_r7",
+      "median_sigma20"
+    ],
+    "STRUCTURE": [
+      "atr24_frac",
+      "close_location",
+      "base_width_atr",
+      "dist_above_24h_high",
+      "dist_above_72h_high",
+      "support_distance"
+    ],
+    "TREND": [
+      "ret6",
+      "ret24",
+      "ret72",
+      "ret168",
+      "rv24",
+      "rv72",
+      "ema9_21",
+      "ema21_50",
+      "ema21_slope6",
+      "adx14",
+      "dmi_spread",
+      "trend_quality"
+    ],
+    "XSEC": [
+      "daily_r7",
+      "daily_r30",
+      "daily_sigma20",
+      "daily_rs7",
+      "daily_cs_rank_pct",
+      "membership_rank_pct",
+      "eligibility_age_days"
+    ]
+  },
+  "label_audit": {
+    "censored_rows": 1777,
+    "input_rows": 364546,
+    "labeled_rows": 363794,
+    "rejections": {
+      "H0_LABEL_UNAVAILABLE": 752
+    }
+  },
+  "pair_identity_runtime_feature": false,
+  "path_features_at_entry": false,
+  "schema_version": "akah-entry-only-causal-feature-dictionary-v1",
+  "targets": {
+    "capital_efficiency": "log(1+h0_net_return_2x)/sqrt(1+holding_days)",
+    "downside": "max(-h0_net_return_2x,0)",
+    "duration": "h0_holding_hours",
+    "mu": "h0_net_return_2x",
+    "tail": [
+      "winner_5",
+      "winner_10",
+      "winner_20"
+    ]
+  }
+}

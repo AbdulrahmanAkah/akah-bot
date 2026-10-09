@@ -1,0 +1,34 @@
+{
+  "authority_id": "AKAH_BOT_RD23_SIGNAL_UPSTREAM_SOURCE_BINDING_V1",
+  "status": "PARTIALLY_BOUND_PREOPEN_ISOLATION_UNPROVEN",
+  "sources": [
+    {
+      "path": "data/raw/rd16b/kucoin",
+      "role": "1H_MARKET_FEATURE_SOURCE",
+      "layout": "<pair>/1h.parquet",
+      "file_count_metadata": 342,
+      "source_binding": "Bound by run_rd23 default raw root and RD16B authority.",
+      "preopen_isolation": "NOT_PROVEN"
+    },
+    {
+      "path": "data/research/rd18_p3x_a3b_runtime/effective-operational-membership.csv",
+      "role": "PIT_MEMBERSHIP_SOURCE",
+      "sha256": "F7D6012CE8CD691583B9B6276DDF36371BFE0BBD9B28F810B676AD0177FB559E",
+      "source_binding": "Bound by run_rd23 load_membership call; current artifact rows were not opened in this mission."
+    },
+    {
+      "path": "data/research/rd22_p2_runtime/rd22-p2-discovery-report-v1.json",
+      "role": "INPUT_GATE_REPORT",
+      "sha256": "655E456DF5C371574D3C81CFFB70D4AEE90568FA77C9A60F337BE91295549FF"
+    }
+  ],
+  "source_selector": {
+    "signal_cutoff": "2022-01-01T00:00:00Z",
+    "raw_selector": "Parquet timestamp < 2022-01-01T00:00:00Z",
+    "preopen_selector": "NONE_PROVEN",
+    "post_load_assertion": "events timestamp < 2022-01-01T00:00:00Z"
+  },
+  "exact_source_gap": "The current raw Parquet inventory contains row groups crossing the protected 2023 boundary; a logical filter does not prove that protected rows were not opened.",
+  "upstream_source_authority_ready": false,
+  "protected_year_rows_read": false
+}

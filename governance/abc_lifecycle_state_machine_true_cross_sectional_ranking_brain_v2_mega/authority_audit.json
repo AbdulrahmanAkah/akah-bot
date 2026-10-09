@@ -1,0 +1,61 @@
+{
+  "2024_access": false,
+  "cost": {
+    "median_entry_cost_fraction": 0.00125,
+    "sample_count": 1000,
+    "source": "control-trades.csv"
+  },
+  "governor": {
+    "binding_mode": "DIRECT_GROSS_FRACTION",
+    "effective_cap_max": 0.9,
+    "effective_cap_min": 0.0,
+    "exposure_column": "gross_budget_fraction",
+    "legacy_selected": {
+      "continuous_mtm_max_drawdown": -0.19079247606398098,
+      "development_gate_pass": true,
+      "excess_log_x1": 0.6471289382329076,
+      "excess_log_x2": 0.6198880926269715,
+      "excess_pass": true,
+      "final_wealth_x1": 3.6589449042130644,
+      "final_wealth_x2": 2.9794982149046993,
+      "risk_mode": "BINARY_VOL",
+      "risk_pass": true,
+      "worst_annual_return": -0.07644949091360065
+    },
+    "observed_raw_max": 0.9,
+    "observed_raw_min": 0.0,
+    "result_path": "governance/abc_lifecycle_state_machine_governor_structural_factorial_fast_v1/governor_factorial_result.json",
+    "result_sha256": "AE30EB872D4FA600F959D696238E9C868E56A91DFA2A8B4976009EF3DC34378E",
+    "selected_governor": "BINARY_VOL",
+    "selected_populated_row_count": 1626,
+    "source_row_count": 1826,
+    "time_column": "action_time",
+    "timeline_path": "governance/abc_lifecycle_state_machine_governor_structural_factorial_fast_v1/selected_development_governor_timeline.csv",
+    "timeline_sha256": "6532B4501F2734EDE3F1D66DB931231C7915235AEEA3B8E654845A6F24341E2B",
+    "variant_filter_applied": true
+  },
+  "rev731_predictions": {
+    "path": "governance/abc_lifecycle_state_machine_cross_sectional_opportunity_value_full_hypothesis_mega_v1/walkforward_predictions.csv.gz",
+    "rows": 354210,
+    "sha256": "C65C62F5FE3B4A48A2BEB8DADE257D0628305D4EE5349945FAAF215A937B2319"
+  },
+  "rev731_training_labels": {
+    "column_count": 64,
+    "manifest_sha256": "144AE8D14AF4E5B0A98084FCC96A35607240BB52762538E8287271CE0A43345A",
+    "path": "governance/abc_lifecycle_state_machine_cross_sectional_opportunity_value_full_hypothesis_mega_v1/h0_value_label_ledger.csv.gz",
+    "sha256": "144AE8D14AF4E5B0A98084FCC96A35607240BB52762538E8287271CE0A43345A"
+  },
+  "rev741_canonical": {
+    "path": "governance/abc_lifecycle_state_machine_opportunity_value_ranking_brain_reconstruction_mega_v1/canonical_result.json",
+    "sha256": "0BE92F87BB5A3C5163E025B2529F359B746753B920995BE350E01699D4980610"
+  },
+  "rev741_metrics": {
+    "path": "governance/abc_lifecycle_state_machine_opportunity_value_ranking_brain_reconstruction_mega_v1/portfolio_metrics.csv",
+    "sha256": "1D69E888C8B6E8B6C985EC48DCEA314E6E98BB0B1C4F5857D81D6A581CBA7B8E"
+  },
+  "rev741_trades": {
+    "path": "governance/abc_lifecycle_state_machine_opportunity_value_ranking_brain_reconstruction_mega_v1/trades.csv.gz",
+    "sha256": "39D65A3FBCB7E373F2DD07D9ED2DD9F5AAF874933F83652503B9607C1F957C9B"
+  },
+  "schema_version": "akah-v2-authority-audit-v1"
+}

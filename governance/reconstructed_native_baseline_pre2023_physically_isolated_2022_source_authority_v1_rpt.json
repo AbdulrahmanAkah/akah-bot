@@ -1,0 +1,65 @@
+{
+  "authority_bindings": {
+    "authority_sha256": "90F05329511708144D2E30DD75D1EAEC0FA1233BCCB3C0D677C17B8DE9B0BEF0",
+    "one_hour_inventory_sha256": "320B0F91583189A547815C4741BFAA2C12B52012858098A4D4CA2AC6B7BDC005",
+    "study_contract_sha256": "EE7597D43E8112FC0AFD580C52AADF4CC8ED28083B03326397ED6738BE73740E"
+  },
+  "branch": "research/rd48-cross-venue-price-level-basis-direct-utility-v1",
+  "evidence": [
+    {
+      "path": "governance/reconstructed_native_baseline_pre2023_physically_isolated_2022_source_authority_v1/bounded_signal_source_metadata_scan.json",
+      "sha256": "6AA2174C52EF5329332CB3A42AE86B6016A9C5A6DBC995EA8AF55677DE14CBBB"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_pre2023_physically_isolated_2022_source_authority_v1/exact_signal_producer_source_references.json",
+      "sha256": "2DB0FB320226EF20010B6C6AEF4B070342EC83A0E686FCCF3E4D263C2DED2D7E"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_pre2023_physically_isolated_2022_source_authority_v1/all_native_1h_metadata_inventory.json",
+      "sha256": "320B0F91583189A547815C4741BFAA2C12B52012858098A4D4CA2AC6B7BDC005"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_pre2023_physically_isolated_2022_source_authority_v1/physically_isolated_2022_source_authority.json",
+      "sha256": "90F05329511708144D2E30DD75D1EAEC0FA1233BCCB3C0D677C17B8DE9B0BEF0"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_pre2023_physically_isolated_2022_source_authority_v1/materialization_execution_contract.json",
+      "sha256": "FEA949AC18B98162808E6CDA3AA377223E4815043A0ECFFADE778589B1605E7E"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_pre2023_physically_isolated_2022_source_authority_v1/authority_decision.json",
+      "sha256": "A464B7DC98938A5EFEAD2311EAAE9EA252EF27BC539B1EA9A38F1E4D7650F661"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_pre2023_physically_isolated_2022_source_authority_v1.json",
+      "sha256": "84EA087FDAD3C978A256C24C8FA28D41E943823FF0BC677E1ED48960B530D924"
+    }
+  ],
+  "firewall": {
+    "economic_analysis": false,
+    "git_fetch": false,
+    "mixed_csv_rows_read": false,
+    "native_replay_executed": false,
+    "network": false,
+    "protected_year_rows_read": false,
+    "push": false,
+    "v2_incidence_used": false
+  },
+  "governed_schema_version": "akah-provenance-phase-governed-v1",
+  "next_bottleneck": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_PRE2023_SIGNAL_MATERIALIZATION_PHYSICALLY_ISOLATED_2022_SOURCE_EXACT_RESIDUAL_V1",
+  "north_star_effect": "Exhaust the bounded metadata/source evidence for a physically isolated <=2022 RD27-compatible signal source, while precomputing metadata/hash authority for all native 1H files.",
+  "objective": "Exhaust the bounded metadata/source evidence for a physically isolated <=2022 RD27-compatible signal source, while precomputing metadata/hash authority for all native 1H files.",
+  "resolution_class": "PRE2023_PHYSICAL_SOURCE_EXACT_RESIDUAL",
+  "state_updates": {
+    "all_native_1h_metadata_inventory_ready": true,
+    "economic_analysis": false,
+    "native_replay_executed": false,
+    "pre2023_signal_materialization_authority_ready": false,
+    "roadmap_position": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_PRE2023_SIGNAL_MATERIALIZATION_PHYSICALLY_ISOLATED_2022_SOURCE_EXACT_RESIDUAL_V1"
+  },
+  "status": "PASS",
+  "summary": "Completed bounded signal-source metadata authority scan and precomputed hashes/Parquet metadata for all native 1H files without reading protected-year or market rows.",
+  "task_id": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_PRE2023_SIGNAL_MATERIALIZATION_PHYSICALLY_ISOLATED_2022_SOURCE_AUTHORITY_V1",
+  "task_start_head": "6f3fd6ac4d1546697d3cfcef553578583fd431f8",
+  "task_start_revision": 211
+}

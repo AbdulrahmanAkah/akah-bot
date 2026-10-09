@@ -1,0 +1,76 @@
+{
+  "economic_rows_read": false,
+  "external_replay_authorized_now": false,
+  "hypotheses": [
+    "H1_WATCH_STALLED",
+    "H2_WATCH_DAMAGE_ACTIVE",
+    "H3_PROTECT_DAMAGE_ONSET",
+    "H4_PROTECT_DAMAGE_CONTINUATION",
+    "H5_EXIT_CONFLUENT_DAMAGE",
+    "H6_DEESCALATE_DAMAGE_CLEAR"
+  ],
+  "implementation_scope": "RESEARCH_MODULE_ONLY_DEFAULT_DISABLED_OPTIONAL_PARAMETER",
+  "legacy_parity_required_before_execution": true,
+  "next_if_pass": "ABC_LIFECYCLE_STATE_MACHINE_STATE_CONDITIONED_ACTION_HYPOTHESIS_PORTFOLIO_EXTERNAL_SIGNAL_ADAPTER_IMPLEMENTATION_AND_PARITY_V1",
+  "patch_contract_sha256": "C633DC1071B9485CA829C1257312D72026F946F5D17BC9D22F2FAABAF0B29428",
+  "portfolio_replay_executed": false,
+  "schema_version": "abc-action-hypothesis-portfolio-external-signal-adapter-protocol-v1",
+  "source_evidence": {
+    "candidate_none_guard_seen": true,
+    "canonical_runner_callsites": [
+      {
+        "candidate_arg": "None",
+        "line": 181,
+        "source": "replay_overlay(\n            candidate_id=None,events=events,frames=features,state_frame=state,four_hour=h4,\n            replay_start=ys,replay_cutoff=ye,\n        )"
+      },
+      {
+        "candidate_arg": "candidate",
+        "line": 217,
+        "source": "replay_overlay(\n                candidate_id=candidate,events=events,frames=features,state_frame=state,\n                four_hour=h4,replay_start=ys,replay_cutoff=ye,\n            )"
+      }
+    ],
+    "economic_rows_read": false,
+    "external_signal_parameter_present": false,
+    "internal_evaluate_completed_4h_call": true,
+    "internal_validate_candidate_id_call": true,
+    "module_path": "src/spotbot/research/abc_exit_primitives_v1.py",
+    "module_sha256": "B04F4EA4E95A1DA324036C14C5889F334702A30D0AF5AA66C4B7F6993C8395B2",
+    "portfolio_replay_executed": false,
+    "replay_overlay_function_source_sha256": "4722514EFDCF1701F2F7BBF242467C74B028756F2426C89E558AC68C8BA00E43",
+    "replay_overlay_signature": {
+      "kw_defaults": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        "'UNION_FOCUS'",
+        "'C2'",
+        "1.0"
+      ],
+      "kwarg": null,
+      "kwonly": [
+        "candidate_id",
+        "events",
+        "frames",
+        "state_frame",
+        "four_hour",
+        "replay_start",
+        "replay_cutoff",
+        "portfolio_id",
+        "universe_id",
+        "cost_multiplier"
+      ],
+      "positional": [],
+      "return_annotation": "tuple[pd.DataFrame, pd.DataFrame, dict[str, Any], dict[str, int], pd.DataFrame]",
+      "vararg": null
+    },
+    "runner_path": "scripts/research/run_abc_exit_primitives_2019_2023_v1.py",
+    "runner_sha256": "C6E92E4980C50526263B7B0D4E22747E96B49FDA2118529DAC5DA7A81EF1364C"
+  },
+  "source_mutation_authorized_next_task": true,
+  "status": "FROZEN_BEFORE_SOURCE_MUTATION",
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_STATE_CONDITIONED_ACTION_HYPOTHESIS_PORTFOLIO_EXTERNAL_SIGNAL_ADAPTER_PROTOCOL_FREEZE_V1"
+}

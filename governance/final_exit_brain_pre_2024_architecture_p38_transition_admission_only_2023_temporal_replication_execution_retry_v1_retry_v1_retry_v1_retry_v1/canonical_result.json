@@ -1,0 +1,343 @@
+{
+  "schema_version": "final-exit-brain-pre-2024-architecture-p38-transition-admission-only-2023-temporal-replication-execution-v1-retry-v1r11",
+  "task_id": "FINAL_EXIT_BRAIN_PRE_2024_ARCHITECTURE_P38_TRANSITION_ADMISSION_ONLY_2023_TEMPORAL_REPLICATION_EXECUTION_V1_RETRY_V1_RETRY_V1_RETRY_V1_RETRY_V1",
+  "status": "PASS_P38_2023_TEMPORAL_REPLICATION_COMPLETED",
+  "classification": "TEMPORAL_REPLICATION_NOT_SUPPORTED_PRIMARY_DELTA_NONPOSITIVE_CLOSE_CANDIDATE",
+  "candidate_id": "PRE_2024_P13_TRANSITION_ADMISSION_ONLY_ABLATION_V1",
+  "period": "ROBUSTNESS_2023",
+  "metrics": {
+    "control_final_equity": 115663.04435626417,
+    "candidate_final_equity": 105472.12934639084,
+    "control_net_pnl": 15663.044356264174,
+    "candidate_net_pnl": 5472.129346390837,
+    "net_pnl_delta": -10190.915009873337,
+    "control_maximum_drawdown": 0.08898912235451983,
+    "candidate_maximum_drawdown": 0.08507892745471297,
+    "control_trade_count": 237,
+    "candidate_trade_count": 130,
+    "candidate_admitted_transition_trade_count": 0
+  },
+  "frozen_primary_gates": {
+    "CANDIDATE_NET_PNL_MINUS_CONTROL_NET_PNL_GT_0": false,
+    "CANDIDATE_NET_PNL_GT_0": true,
+    "CANDIDATE_MAX_DRAWDOWN_LE_CONTROL_MAX_DRAWDOWN": true,
+    "TRANSITION_ADMISSION_ZERO_AND_SINGLE_COMPONENT_CONTRACT": true
+  },
+  "mechanism": {
+    "available": true,
+    "exact_effect_decomposition": {
+      "common_control_net_pnl": 236.29014829430582,
+      "common_delta_interpretation": "SIZING_PATH_EFFECT_ONLY",
+      "common_entry_time_price_exact": true,
+      "common_exit_time_reason_price_exact": true,
+      "common_normalized_return_parity": true,
+      "common_trade_count": 85,
+      "common_trade_pnl_delta": -177.62850191447325,
+      "common_treatment_net_pnl": 58.66164637983256,
+      "control_only_net_pnl": 15426.75420796989,
+      "control_only_trade_count": 152,
+      "reconciliation_error": -4.001776687800884e-11,
+      "reconstructed_endpoint": -10190.915009873377,
+      "treatment_only_net_pnl": 5413.467700010988,
+      "treatment_only_trade_count": 45
+    },
+    "transition_ablation_lineage": {
+      "control_only_by_entry_market_state": {
+        "RISK_ON": {
+          "event_count": 16,
+          "mean_realized_pnl": 749.4762201878367,
+          "sum_realized_pnl": 11991.619523005387
+        },
+        "TRANSITION": {
+          "event_count": 136,
+          "mean_realized_pnl": 25.258343271797823,
+          "sum_realized_pnl": 3435.134684964504
+        }
+      },
+      "control_only_by_treatment_blocker": {
+        "SAME_PAIR_OPEN": {
+          "event_count": 5,
+          "mean_realized_pnl": 261.0076806608874,
+          "sum_realized_pnl": 1305.038403304437
+        },
+        "SHADOW_STATIC_SAME_PAIR_OPEN_SUPPRESSED": {
+          "event_count": 16,
+          "mean_realized_pnl": 789.5427899784596,
+          "sum_realized_pnl": 12632.684639655354
+        },
+        "TRANSITION_ADMISSION_ABLATED": {
+          "event_count": 131,
+          "mean_realized_pnl": 11.366650114580912,
+          "sum_realized_pnl": 1489.0311650100994
+        }
+      },
+      "directly_ablated_control_trade_count": 131,
+      "directly_ablated_control_trade_pnl": 1489.0311650100994,
+      "downstream_portfolio_state_effects_allowed_in_endpoint": true,
+      "transition_suppressed_signal_count": 437,
+      "treatment_only_by_control_blocker": {
+        "SAME_PAIR_OPEN": {
+          "event_count": 20,
+          "mean_realized_pnl": 132.6655024396833,
+          "sum_realized_pnl": 2653.3100487936663
+        },
+        "SHADOW_STATIC_SAME_PAIR_OPEN_SUPPRESSED": {
+          "event_count": 25,
+          "mean_realized_pnl": 110.40630604869285,
+          "sum_realized_pnl": 2760.1576512173215
+        }
+      },
+      "treatment_only_by_entry_market_state": {
+        "RISK_ON": {
+          "event_count": 45,
+          "mean_realized_pnl": 120.29928222246639,
+          "sum_realized_pnl": 5413.467700010988
+        }
+      }
+    }
+  },
+  "source_result": {
+    "path": "C:\\Users\\abdul\\Downloads\\akah_p38_preflight_x1tkxztf\\observer_output_2023\\EAA_EXIT_BRAIN_P19_2022_TRANSITION_ADMISSION_COMPONENT_ABLATION_CANONICAL_RESULT_20260919_154405.json",
+    "sha256": "EECB8D03197789BB3B9F31AD46CAFFF3C38C136183B96FFE89FE85FFC2F2BFBA",
+    "schema_version": "eaa-exit-brain-p19-2022-transition-admission-component-ablation-result-v1"
+  },
+  "execution_audit": {
+    "return_code": 0,
+    "historical_source": {
+      "head": "b3142d0135d393088ab3fe55c53b0e28ec7574cb",
+      "snapshot_path": "C:\\Users\\abdul\\Downloads\\akah_p38_preflight_x1tkxztf\\historical_repo_b3142d",
+      "materialized_pre_begin": true,
+      "market_data_read": false,
+      "membership_content_read": false,
+      "source_bindings": {
+        "src/spotbot/research/rd26_exit_architecture.py": {
+          "path": "src/spotbot/research/rd26_exit_architecture.py",
+          "expected_worktree_sha256": "1290748EA7E8A0343C1A15CEDFC1220AA423F04C11FDD558311B06AC7DA90359",
+          "git_archive_raw_sha256": "1290748EA7E8A0343C1A15CEDFC1220AA423F04C11FDD558311B06AC7DA90359",
+          "lf_normalized_sha256": "1290748EA7E8A0343C1A15CEDFC1220AA423F04C11FDD558311B06AC7DA90359",
+          "crlf_windows_worktree_sha256": "C06289B1B305405CC9ED45846B2E2DC3D1741E1D5765A5598A3A5C23672129BE",
+          "selected_mode": "RAW_GIT_ARCHIVE",
+          "final_snapshot_sha256": "1290748EA7E8A0343C1A15CEDFC1220AA423F04C11FDD558311B06AC7DA90359",
+          "raw_ast_semantic_sha256": "8C80ECBA1AB72366FE555C187AB5C6130CBAC7B5B54FC1394BA9131DB9EEE3E0",
+          "final_ast_semantic_sha256": "8C80ECBA1AB72366FE555C187AB5C6130CBAC7B5B54FC1394BA9131DB9EEE3E0",
+          "semantic_ast_unchanged": true
+        },
+        "src/spotbot/research/rd27_lifecycle_replay.py": {
+          "path": "src/spotbot/research/rd27_lifecycle_replay.py",
+          "expected_worktree_sha256": "82E2BF09E1A74A101580C625E0F71987484A9368F597FDD7515E4B31F4E0B425",
+          "git_archive_raw_sha256": "DD845A6A7B004B3C1E60515DBBEB254E179030F0F63E4D8C15334E726828F60E",
+          "lf_normalized_sha256": "82E2BF09E1A74A101580C625E0F71987484A9368F597FDD7515E4B31F4E0B425",
+          "crlf_windows_worktree_sha256": "DD845A6A7B004B3C1E60515DBBEB254E179030F0F63E4D8C15334E726828F60E",
+          "selected_mode": "LF_NORMALIZED",
+          "final_snapshot_sha256": "82E2BF09E1A74A101580C625E0F71987484A9368F597FDD7515E4B31F4E0B425",
+          "raw_ast_semantic_sha256": "61E92286493B180536B22A07356641AF1C145C8870A1B1599C5055255D9DA1C0",
+          "final_ast_semantic_sha256": "61E92286493B180536B22A07356641AF1C145C8870A1B1599C5055255D9DA1C0",
+          "semantic_ast_unchanged": true
+        },
+        "src/spotbot/research/rd27_adaptive_lifecycle.py": {
+          "path": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+          "expected_worktree_sha256": "EE205CDA74D70A530734BBFB4843C2DBFC8BF950122254AA2ACEB8766A90F9AD",
+          "git_archive_raw_sha256": "147D780B5EE1C6951C6E008CBBED0AAD65F568357FFA6370295374213B18C6AA",
+          "lf_normalized_sha256": "EE205CDA74D70A530734BBFB4843C2DBFC8BF950122254AA2ACEB8766A90F9AD",
+          "crlf_windows_worktree_sha256": "147D780B5EE1C6951C6E008CBBED0AAD65F568357FFA6370295374213B18C6AA",
+          "selected_mode": "LF_NORMALIZED",
+          "final_snapshot_sha256": "EE205CDA74D70A530734BBFB4843C2DBFC8BF950122254AA2ACEB8766A90F9AD",
+          "raw_ast_semantic_sha256": "1CEC00F7FFA62B4676A4E254E1A3A79BC583D766E56900FF1EBF25D2BE21C7CB",
+          "final_ast_semantic_sha256": "1CEC00F7FFA62B4676A4E254E1A3A79BC583D766E56900FF1EBF25D2BE21C7CB",
+          "semantic_ast_unchanged": true
+        }
+      },
+      "line_ending_authority_rule": "MATCH_EXACT_P19_WORKTREE_SHA_USING_RAW_LF_OR_CRLF_VARIANT_WITH_AST_SEMANTIC_EQUALITY_PROOF",
+      "membership_authority": {
+        "source_path": "C:\\SIRAJ\\Repositories\\spot-speculation-bot\\data\\research\\rd18_p3x_a3b_runtime\\effective-operational-membership.csv",
+        "source_sha256": "F7D6012CE8CD691583B9B6276DDF36371BFE0BBD9B28F810B676AD0177FB559E",
+        "mode": "UNTRACKED_LOCAL_RUNTIME_AUTHORITY",
+        "copied_to_snapshot": "C:\\Users\\abdul\\Downloads\\akah_p38_preflight_x1tkxztf\\historical_repo_b3142d\\data\\research\\rd18_p3x_a3b_runtime\\effective-operational-membership.csv",
+        "copied_sha256": "F7D6012CE8CD691583B9B6276DDF36371BFE0BBD9B28F810B676AD0177FB559E",
+        "verified_after_begin": true
+      }
+    },
+    "pair_set_2023": {
+      "period_id": "ROBUSTNESS_2023",
+      "start_inclusive": "2023-01-01T00:00:00Z",
+      "end_exclusive": "2024-01-01T00:00:00Z",
+      "universe_id": "D2",
+      "pair_count": 12,
+      "pairs": [
+        "AVAX-USDT",
+        "BTC-USDT",
+        "DOGE-USDT",
+        "ETH-USDT",
+        "INJ-USDT",
+        "LINK-USDT",
+        "LTC-USDT",
+        "OP-USDT",
+        "SHIB-USDT",
+        "SOL-USDT",
+        "XMR-USDT",
+        "XRP-USDT"
+      ],
+      "pair_set_sha256": "15991CF2122184D7B1E2E1D07A0FCE128506266430A7000C565BA575680EA664",
+      "raw_root": "C:\\SIRAJ\\Repositories\\spot-speculation-bot\\data\\raw\\rd16b\\kucoin",
+      "raw_file_existence_pass": true,
+      "membership_sha256": "F7D6012CE8CD691583B9B6276DDF36371BFE0BBD9B28F810B676AD0177FB559E",
+      "market_rows_materialized_by_this_function": false
+    },
+    "observer_argument_sha256": "E96298B1E68F0BA4585BE2958E2E9EA984F4877902AC5E7669DB7ABB2B358096",
+    "execution_observer_sha256": "E96298B1E68F0BA4585BE2958E2E9EA984F4877902AC5E7669DB7ABB2B358096",
+    "internal_capture": {
+      "control": {
+        "metrics": {
+          "net_pnl": 15663.044356264174,
+          "maximum_drawdown": 0.08898912235451983,
+          "trade_count": 237,
+          "final_equity": 115663.04435626417
+        },
+        "counters": {
+          "signal_events": 1223,
+          "missing_entry_bar": 0,
+          "missing_exit_bar_precheck": 0,
+          "same_pair_open": 368,
+          "shadow_same_pair_suppressed": 536,
+          "position_slots_full": 7,
+          "gross_limit_rejection": 0,
+          "capacity_unavailable": 0,
+          "capacity_capped_entries": 9,
+          "cash_capped_entries": 0,
+          "admitted_entries": 237,
+          "risk_off_suppressed_entries": 75,
+          "transition_admission_suppressed": 0,
+          "entry_bar_adaptive_exits": 1,
+          "max_hold_exits": 0,
+          "time_failure_exits": 0,
+          "adaptive_stagnation_exits": 46,
+          "adaptive_protection_gap_exits": 25,
+          "adaptive_protection_touch_exits": 166,
+          "shadow_time_failure_72h_releases": 119,
+          "shadow_max_hold_168h_releases": 118,
+          "entry_state_RISK_ON": 101,
+          "entry_state_TRANSITION": 136,
+          "entry_state_RISK_OFF": 75
+        },
+        "row_counts": {
+          "trades": 237,
+          "daily": 365,
+          "trace_rows": 1223,
+          "shadow_release_rows": 237,
+          "shadow_suppression_rows": 536
+        }
+      },
+      "treatment": {
+        "metrics": {
+          "net_pnl": 5472.129346390837,
+          "maximum_drawdown": 0.08507892745471297,
+          "trade_count": 130,
+          "final_equity": 105472.12934639084
+        },
+        "counters": {
+          "signal_events": 1223,
+          "missing_entry_bar": 0,
+          "missing_exit_bar_precheck": 0,
+          "same_pair_open": 217,
+          "shadow_same_pair_suppressed": 314,
+          "position_slots_full": 3,
+          "gross_limit_rejection": 0,
+          "capacity_unavailable": 0,
+          "capacity_capped_entries": 8,
+          "cash_capped_entries": 0,
+          "admitted_entries": 130,
+          "risk_off_suppressed_entries": 122,
+          "transition_admission_suppressed": 437,
+          "entry_bar_adaptive_exits": 0,
+          "max_hold_exits": 0,
+          "time_failure_exits": 0,
+          "adaptive_stagnation_exits": 18,
+          "adaptive_protection_gap_exits": 14,
+          "adaptive_protection_touch_exits": 98,
+          "shadow_time_failure_72h_releases": 65,
+          "shadow_max_hold_168h_releases": 65,
+          "entry_state_RISK_ON": 130,
+          "entry_state_TRANSITION": 437,
+          "entry_state_RISK_OFF": 122
+        },
+        "row_counts": {
+          "trades": 130,
+          "daily": 365,
+          "trace_rows": 1223,
+          "shadow_release_rows": 130,
+          "shadow_suppression_rows": 314
+        }
+      }
+    },
+    "capture_path": "C:\\Users\\abdul\\Downloads\\akah_p38_preflight_x1tkxztf\\observer_internal_capture.json",
+    "capture_sha256": "628C218345678A841C437E8DBD20DB55B732FD0264AFDAFF9612C580B7C3A5FF",
+    "output_dir": "C:\\Users\\abdul\\Downloads\\akah_p38_preflight_x1tkxztf\\observer_output_2023",
+    "log_path": "C:\\Users\\abdul\\Downloads\\akah_p38_preflight_x1tkxztf\\p38_retry_v1r11_2023_replay_full.log",
+    "log_sha256": "0CC2BC97EE93DCD2B545EF604281BE4CA0698519C382C4EF9353208AE2C2D39C",
+    "resolved_result_path": "C:\\Users\\abdul\\Downloads\\akah_p38_preflight_x1tkxztf\\observer_output_2023\\EAA_EXIT_BRAIN_P19_2022_TRANSITION_ADMISSION_COMPONENT_ABLATION_CANONICAL_RESULT_20260919_154405.json",
+    "resolved_result_sha256": "EECB8D03197789BB3B9F31AD46CAFFF3C38C136183B96FFE89FE85FFC2F2BFBA",
+    "result_binding_mode": "FRESH_OUTPUT_DIR_PLUS_SCHEMA_PLUS_INTERNAL_CAPTURE_RECONCILIATION",
+    "fresh_output_dir_before_replay": true,
+    "schema_candidate_count": 1,
+    "cli_binding_sha256": "15A2B7766650549CD09B30C492033E164AF8843A824C98526B6DC5DCF4EE8344"
+  },
+  "boundaries": {
+    "2023_accessed": true,
+    "2023_replayed": true,
+    "2024_accessed": false,
+    "2025_accessed": false,
+    "candidate_search": false,
+    "threshold_search": false,
+    "sizing_search": false,
+    "parameter_search": false,
+    "model_fit": false,
+    "production_change": false
+  },
+  "next_bottleneck": "TRANSITION_ADMISSION_CANDIDATE_CLOSED_RETURN_TO_RESEARCH",
+  "artifacts": {
+    "canonical_result.json": {
+      "path": "governance/final_exit_brain_pre_2024_architecture_p38_transition_admission_only_2023_temporal_replication_execution_retry_v1_retry_v1_retry_v1_retry_v1/canonical_result.json",
+      "sha256": "9683A0F4E6F81B9F015A9B29687141ECAF9E1CADBDBF5F0D57CC799F66A9A93B"
+    },
+    "execution_audit.json": {
+      "path": "governance/final_exit_brain_pre_2024_architecture_p38_transition_admission_only_2023_temporal_replication_execution_retry_v1_retry_v1_retry_v1_retry_v1/execution_audit.json",
+      "sha256": "44F4BC1068D0AF1D9D747AADF91DD073228E7470FC86365882CB5C29F00AEFA7"
+    },
+    "harness_transform_audit.json": {
+      "path": "governance/final_exit_brain_pre_2024_architecture_p38_transition_admission_only_2023_temporal_replication_execution_retry_v1_retry_v1_retry_v1_retry_v1/harness_transform_audit.json",
+      "sha256": "777722870C8C92962951BFB1F5C80AA901F846C1E0EA057FAB5A1DB7B7F0EBB9"
+    },
+    "historical_source_snapshot_audit.json": {
+      "path": "governance/final_exit_brain_pre_2024_architecture_p38_transition_admission_only_2023_temporal_replication_execution_retry_v1_retry_v1_retry_v1_retry_v1/historical_source_snapshot_audit.json",
+      "sha256": "0F3950C1EAE2024A0C74E828CC53525292D10E794A00234DF887807C0B2B7061"
+    },
+    "historical_source_snapshot_prebegin_audit.json": {
+      "path": "governance/final_exit_brain_pre_2024_architecture_p38_transition_admission_only_2023_temporal_replication_execution_retry_v1_retry_v1_retry_v1_retry_v1/historical_source_snapshot_prebegin_audit.json",
+      "sha256": "11C868F3DFDC6716A2A485B6558C4C599D6F18E81C60227FA146770A81384DB5"
+    },
+    "observer_cli_binding_preflight.json": {
+      "path": "governance/final_exit_brain_pre_2024_architecture_p38_transition_admission_only_2023_temporal_replication_execution_retry_v1_retry_v1_retry_v1_retry_v1/observer_cli_binding_preflight.json",
+      "sha256": "15A2B7766650549CD09B30C492033E164AF8843A824C98526B6DC5DCF4EE8344"
+    },
+    "observer_internal_capture.json": {
+      "path": "governance/final_exit_brain_pre_2024_architecture_p38_transition_admission_only_2023_temporal_replication_execution_retry_v1_retry_v1_retry_v1_retry_v1/observer_internal_capture.json",
+      "sha256": "628C218345678A841C437E8DBD20DB55B732FD0264AFDAFF9612C580B7C3A5FF"
+    },
+    "p38_retry_v1r11_2023_replay_full.log": {
+      "path": "governance/final_exit_brain_pre_2024_architecture_p38_transition_admission_only_2023_temporal_replication_execution_retry_v1_retry_v1_retry_v1_retry_v1/p38_retry_v1r11_2023_replay_full.log",
+      "sha256": "0CC2BC97EE93DCD2B545EF604281BE4CA0698519C382C4EF9353208AE2C2D39C"
+    },
+    "pair_set_2023_audit.json": {
+      "path": "governance/final_exit_brain_pre_2024_architecture_p38_transition_admission_only_2023_temporal_replication_execution_retry_v1_retry_v1_retry_v1_retry_v1/pair_set_2023_audit.json",
+      "sha256": "A9E670834D75BDF12CE9AE7F0E4474069E2C20CD6BA074EF6C7B7A14E19032CE"
+    },
+    "source_2023_replication_result.json": {
+      "path": "governance/final_exit_brain_pre_2024_architecture_p38_transition_admission_only_2023_temporal_replication_execution_retry_v1_retry_v1_retry_v1_retry_v1/source_2023_replication_result.json",
+      "sha256": "2C18FDD45FBD4DD4163689DDC3CC27425479ABD95D5B722513BFAFF3548E2F7B"
+    },
+    "stageability_preflight.json": {
+      "path": "governance/final_exit_brain_pre_2024_architecture_p38_transition_admission_only_2023_temporal_replication_execution_retry_v1_retry_v1_retry_v1_retry_v1/stageability_preflight.json",
+      "sha256": "BA409778E65FCFC015C13DE2D46F0E5B75E3B491800FF1CBB98F079B2732C173"
+    }
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "interpretation": {
+    "D01_minus_D00": "ranking gap inside current F10 admission gate",
+    "D02_minus_D00": "admission expansion under unchanged F10 ranking",
+    "D03_minus_D01": "additional admission value when ranking is already perfect",
+    "D04": "perfect positive admission + ranking inside current capital mechanics",
+    "D05_minus_D04": "governor relaxation effect under oracle admission/ranking",
+    "D06_minus_D04": "liquidity-cap relaxation effect under oracle admission/ranking",
+    "D07_minus_D00": "governor relaxation effect on actual F10",
+    "D08_minus_D00": "liquidity-cap relaxation effect on actual F10"
+  },
+  "oracle_warning": "H0 outcome labels are future information and are used only to measure diagnostic upper bounds.",
+  "schema_version": "akah-capture-gap-diagnostic-variants-v1",
+  "variants": [
+    {
+      "description": "Actual frozen F10 mechanics",
+      "gate_mode": "F10_GATE",
+      "governor": "BINARY_VOL",
+      "id": "D00_F10_ACTUAL",
+      "score_mode": "F10_SCORE",
+      "unlimited_liquidity": false
+    },
+    {
+      "description": "Same admission gate; perfect outcome ranking",
+      "gate_mode": "F10_GATE",
+      "governor": "BINARY_VOL",
+      "id": "D01_F10_GATE_ORACLE_RANK",
+      "score_mode": "H0_ORACLE",
+      "unlimited_liquidity": false
+    },
+    {
+      "description": "Remove F10 gate; keep F10 ranking",
+      "gate_mode": "ALL",
+      "governor": "BINARY_VOL",
+      "id": "D02_ALL_ADMISSION_F10_RANK",
+      "score_mode": "F10_SCORE",
+      "unlimited_liquidity": false
+    },
+    {
+      "description": "All opportunities; perfect outcome ranking",
+      "gate_mode": "ALL",
+      "governor": "BINARY_VOL",
+      "id": "D03_ALL_ORACLE_RANK",
+      "score_mode": "H0_ORACLE",
+      "unlimited_liquidity": false
+    },
+    {
+      "description": "Perfect positive admission + perfect ranking",
+      "gate_mode": "H0_POSITIVE",
+      "governor": "BINARY_VOL",
+      "id": "D04_POSITIVE_ORACLE",
+      "score_mode": "H0_ORACLE",
+      "unlimited_liquidity": false
+    },
+    {
+      "description": "D04 with no-vol governor",
+      "gate_mode": "H0_POSITIVE",
+      "governor": "BINARY_NO_VOL",
+      "id": "D05_POSITIVE_ORACLE_NO_VOL",
+      "score_mode": "H0_ORACLE",
+      "unlimited_liquidity": false
+    },
+    {
+      "description": "D04 with liquidity cap removed",
+      "gate_mode": "H0_POSITIVE",
+      "governor": "BINARY_VOL",
+      "id": "D06_POSITIVE_ORACLE_UNLIM_LIQ",
+      "score_mode": "H0_ORACLE",
+      "unlimited_liquidity": true
+    },
+    {
+      "description": "Incumbent under no-vol governor",
+      "gate_mode": "F10_GATE",
+      "governor": "BINARY_NO_VOL",
+      "id": "D07_F10_ACTUAL_NO_VOL",
+      "score_mode": "F10_SCORE",
+      "unlimited_liquidity": false
+    },
+    {
+      "description": "Incumbent with liquidity cap removed",
+      "gate_mode": "F10_GATE",
+      "governor": "BINARY_VOL",
+      "id": "D08_F10_ACTUAL_UNLIM_LIQ",
+      "score_mode": "F10_SCORE",
+      "unlimited_liquidity": true
+    }
+  ]
+}

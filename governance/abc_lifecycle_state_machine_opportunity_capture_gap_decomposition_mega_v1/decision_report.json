@@ -1,0 +1,36 @@
+{
+  "2024_access": false,
+  "additional_admission_value_with_oracle_ranking": 0.6422460927389215,
+  "admission_gap_under_f10_ranking_terminal_wealth_delta": -0.5005335515223532,
+  "baseline_f10_2x_wealth": 2.1755985217179195,
+  "c4s_attribution": {
+    "highest_quintile_mean_h0_net_2x": 0.013611590178682154,
+    "highest_quintile_winner10_rate": 0.13637857377587906,
+    "lowest_quintile_mean_h0_net_2x": 0.004770602015248207,
+    "lowest_quintile_winner10_rate": 0.10998924108251262,
+    "quintile_rows": 5,
+    "role": "ATTRIBUTION_ONLY_NO_RUNTIME_RULE",
+    "schema_version": "akah-c4s-attribution-summary-v1"
+  },
+  "certification": "NONE_DIAGNOSTIC_ONLY",
+  "governor_gap_f10": -0.2157833749029745,
+  "governor_gap_oracle_positive": 0.18389784780327645,
+  "harvest_gap": {
+    "mean_best_open_within_h0_window_net_return_2x": 0.1645575155529582,
+    "mean_governor_or_early_exit_gap": 0.002176348296649163,
+    "mean_h0_harvest_gap": 0.1386728405418884,
+    "mean_h0_planned_net_return_2x": 0.025884675011069808,
+    "mean_realized_trade_return": 0.02370832671442064,
+    "note": "Best-open bound uses future prices only as a diagnostic upper bound; it is not a runtime exit rule.",
+    "notional_weighted_governor_or_early_exit_gap": 0.0019585872049238074,
+    "notional_weighted_h0_harvest_gap": 0.13601997955266182,
+    "trade_count": 4343
+  },
+  "liquidity_gap_f10": 2.0956802046155065,
+  "liquidity_gap_oracle_positive": 1217126.8377114187,
+  "oracle_warning": "Future outcomes and best-open prices were used only for diagnostic bounds and MUST NOT be promoted directly into runtime rules.",
+  "perfect_positive_admission_ranking_gap_vs_f10": 5.842542518826331,
+  "ranking_gap_same_gate_terminal_wealth_delta": 1.233058048477174,
+  "schema_version": "akah-opportunity-capture-gap-decision-report-v1",
+  "status": "PASS_COMPLETE_DIAGNOSTIC"
+}

@@ -1,0 +1,56 @@
+{
+  "authority_bindings": {
+    "pre_admission_source_facts": {
+      "arg_names": [
+        "policy_id",
+        "portfolio_id",
+        "universe_id",
+        "cost_multiplier",
+        "events",
+        "frames",
+        "state_frame",
+        "replay_start",
+        "replay_cutoff",
+        "async_memory_shadow_enabled",
+        "async_memory_observations",
+        "async_memory_diagnostics",
+        "observable_adapter_enabled",
+        "observable_primitive_rows",
+        "observable_symbol_bindings",
+        "observable_policy",
+        "observable_adapter_diagnostics",
+        "observable_memory_predicate_enabled",
+        "observable_memory_predicate_diagnostics",
+        "observable_later_trigger_predicate_enabled",
+        "observable_later_trigger_predicate_diagnostics",
+        "async_exit_candidate_shadow_enabled",
+        "async_exit_candidate_diagnostics"
+      ],
+      "assignment_sites": 1,
+      "delete_sites": 2,
+      "first_body_lineno": 275,
+      "function_lineno": 247,
+      "has_any_annotation_surface": true,
+      "load_sites": 1,
+      "signature_line_count": 28
+    }
+  },
+  "branch": "research/rd48-cross-venue-price-level-basis-direct-utility-v1",
+  "evidence": [],
+  "firewall": {},
+  "governed_schema_version": "akah-provenance-phase-governed-v1",
+  "next_bottleneck": "CAUSAL_EXIT_BRAIN_LATER_TRIGGER_V2_NATIVE_LIFECYCLE_REPLAY_HOOK_RECOVERY_V1",
+  "north_star_effect": "Places governed V2 observation on the native lifecycle clock while preserving all existing trading authority.",
+  "objective": "Add a source-aware, default-disabled observational Later Trigger V2 hook to native RD27 lifecycle replay without changing native trade decisions.",
+  "resolution_class": "SOURCE_AWARE_NATIVE_HOOK_FAIL_CLOSED",
+  "state_updates": {
+    "actual_exit_authority": false,
+    "economic_test_authorized": false,
+    "later_trigger_v2_native_lifecycle_hook": "FAIL_CLOSED"
+  },
+  "status": "FAIL_CLOSED",
+  "summary": "Source-aware native V2 hook implementation failed closed: RuntimeError:RUFF_FAILED",
+  "task_id": "CAUSAL_EXIT_BRAIN_LATER_TRIGGER_V2_NATIVE_LIFECYCLE_REPLAY_HOOK_V1",
+  "task_start_head": "c2e45df5be7dd35346b2757a93dca8e2697375e1",
+  "task_start_revision": 173
+}

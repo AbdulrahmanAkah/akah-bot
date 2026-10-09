@@ -1,0 +1,98 @@
+{
+  "main_return_code": 0,
+  "main_error": null,
+  "calls": [
+    {
+      "transition_admission_ablated": false,
+      "policy_id": "FULL_ADAPTIVE_PLUS_CAUSAL_STATIC_SHADOW_SAME_PAIR_OCCUPANCY_GUARD_V1",
+      "portfolio_id": "EAA_EXIT_BRAIN_P13_SHADOW_GUARD",
+      "result": {
+        "metrics": {
+          "net_pnl": 15663.044356264174,
+          "maximum_drawdown": 0.08898912235451983,
+          "trade_count": 237,
+          "final_equity": 115663.04435626417
+        },
+        "counters": {
+          "signal_events": 1223,
+          "missing_entry_bar": 0,
+          "missing_exit_bar_precheck": 0,
+          "same_pair_open": 368,
+          "shadow_same_pair_suppressed": 536,
+          "position_slots_full": 7,
+          "gross_limit_rejection": 0,
+          "capacity_unavailable": 0,
+          "capacity_capped_entries": 9,
+          "cash_capped_entries": 0,
+          "admitted_entries": 237,
+          "risk_off_suppressed_entries": 75,
+          "transition_admission_suppressed": 0,
+          "entry_bar_adaptive_exits": 1,
+          "max_hold_exits": 0,
+          "time_failure_exits": 0,
+          "adaptive_stagnation_exits": 46,
+          "adaptive_protection_gap_exits": 25,
+          "adaptive_protection_touch_exits": 166,
+          "shadow_time_failure_72h_releases": 119,
+          "shadow_max_hold_168h_releases": 118,
+          "entry_state_RISK_ON": 101,
+          "entry_state_TRANSITION": 136,
+          "entry_state_RISK_OFF": 75
+        },
+        "row_counts": {
+          "trades": 237,
+          "daily": 365,
+          "trace_rows": 1223,
+          "shadow_release_rows": 237,
+          "shadow_suppression_rows": 536
+        }
+      }
+    },
+    {
+      "transition_admission_ablated": true,
+      "policy_id": "FULL_ADAPTIVE_PLUS_SHADOW_GUARD_TRANSITION_ADMISSION_ABLATED_V1",
+      "portfolio_id": "EAA_EXIT_BRAIN_P19_TRANSITION_ABLATED",
+      "result": {
+        "metrics": {
+          "net_pnl": 5472.129346390837,
+          "maximum_drawdown": 0.08507892745471297,
+          "trade_count": 130,
+          "final_equity": 105472.12934639084
+        },
+        "counters": {
+          "signal_events": 1223,
+          "missing_entry_bar": 0,
+          "missing_exit_bar_precheck": 0,
+          "same_pair_open": 217,
+          "shadow_same_pair_suppressed": 314,
+          "position_slots_full": 3,
+          "gross_limit_rejection": 0,
+          "capacity_unavailable": 0,
+          "capacity_capped_entries": 8,
+          "cash_capped_entries": 0,
+          "admitted_entries": 130,
+          "risk_off_suppressed_entries": 122,
+          "transition_admission_suppressed": 437,
+          "entry_bar_adaptive_exits": 0,
+          "max_hold_exits": 0,
+          "time_failure_exits": 0,
+          "adaptive_stagnation_exits": 18,
+          "adaptive_protection_gap_exits": 14,
+          "adaptive_protection_touch_exits": 98,
+          "shadow_time_failure_72h_releases": 65,
+          "shadow_max_hold_168h_releases": 65,
+          "entry_state_RISK_ON": 130,
+          "entry_state_TRANSITION": 437,
+          "entry_state_RISK_OFF": 122
+        },
+        "row_counts": {
+          "trades": 130,
+          "daily": 365,
+          "trace_rows": 1223,
+          "shadow_release_rows": 130,
+          "shadow_suppression_rows": 314
+        }
+      }
+    }
+  ]
+}

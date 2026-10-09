@@ -1,0 +1,37 @@
+{
+  "acquire_call": "_acquire_hourly(\n                adapter=adapter,\n                provider=provider,\n                store=store,\n                exchange_id=exchange,\n                symbol=symbol,\n                since=since_utc,\n                until=until_utc,\n                download=download,\n            )",
+  "acquire_call_line": 786,
+  "download_parameter_present": true,
+  "end_line": 938,
+  "function": "run_rd16b",
+  "line": 718,
+  "module": "src/spotbot/research/rd16b_hourly_readiness.py",
+  "module_sha256": "62C4139AC2E4F5CE7C852F582CB829398935A9CEE78155617B13B657325F4F37",
+  "parameters": [
+    {
+      "annotation": "Path",
+      "default": null,
+      "name": "store_root"
+    },
+    {
+      "annotation": "datetime",
+      "default": null,
+      "name": "since"
+    },
+    {
+      "annotation": "datetime",
+      "default": null,
+      "name": "until"
+    },
+    {
+      "annotation": "bool",
+      "default": null,
+      "name": "download"
+    }
+  ],
+  "since_expr": "since_utc",
+  "source_sha256": "F9935F77DA6B96499A7AA64BAAC0BF3FB95E43BC221AF2DE7EDE1E9722BE5098",
+  "status": "PASS",
+  "store_root_parameter_present": true,
+  "until_expr": "until_utc"
+}

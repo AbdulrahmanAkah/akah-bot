@@ -1,0 +1,14 @@
+hypothesis,status,evidence_quality,metric,reason,next_action
+EXACT_ONE_STEP_CONTINUATION_TARGET,PROMOTE,HIGH,rows=12290,Exact target remains valid and reused without raw replay.,CLOSED
+LEGACY_LEAKED_VALUE_MODEL,KILL,HIGH,leakage_confirmed,Post-decision leakage invalidated the near-perfect model.,DO_NOT_USE
+CLEAN_THREE_FEATURE_RIDGE,KILL,HIGH,forward_failed_2022_2023,The provenance-clean sparse model showed negative forward rank/spread and failed costs.,DO_NOT_USE_AS_VALUE_AUTHORITY
+STATE_CONDITIONED_CAUSAL_ATTRIBUTION,PROMOTE,HIGH,stable_contexts=2,Preregistered state surfaces are descriptive evidence only; no threshold/rule selection.,KEEP_STATE_SURFACE
+STATE_BASIS_LOW_CAPACITY_MODEL,DEFER,HIGH,forward=False;block=False;cost2x=False;sanity=True,One fixed state-basis ridge; no model-family or feature search.,HUMAN_REVIEW_THEN_STATE_REPRESENTATION_FAILURE_ATTRIBUTION_NO_RETUNING
+COST2X_ROBUSTNESS,DEFER,MEDIUM_HIGH,FAIL_BLOCK_FORWARD_ROBUSTNESS,Uses unchanged predictions against exact 2x-cost target.,KEEP_AS_ROBUSTNESS_EVIDENCE
+CONSERVATIVE_ONE_STEP_SHADOW_SIGN_DIRECT_EFFECT,DEFER,MEDIUM_HIGH,DIAGNOSTIC_ONLY_MODEL_NOT_AUTHORIZED,No portfolio replay or production authority.,HUMAN_REVIEW
+TENURE_AS_CONTINUATION_STATE,PROMOTE,MEDIUM_HIGH,PASS_DIAGNOSTIC,Tenure remains causal state; no threshold selected.,KEEP_NO_THRESHOLD
+MARKET_STATE_CONTEXT,PROMOTE,MEDIUM_HIGH,native_market_state_context_preregistered,"Market-state context is explicit causal state, not a replacement for BINARY_VOL.",KEEP_IN_VALUE_SURFACE
+ENTRY_X_CONTINUATION,DEFER,MEDIUM,PASS_DIAGNOSTIC_ONLY_ENTRY_PARENT_NOT_VALUE_AUTHORITY,Entry realizable-value parent remains unproven.,WAIT
+VALUE_AWARE_SIZING,DEFER,MEDIUM,no_multiplier,Sizing requires validated entry and continuation value authorities.,WAIT
+SHADOW_QUEUE_REPLACEMENT_PREEMPTION,DEFER,MEDIUM,no_runtime_action,Replacement/preemption remains forbidden.,WAIT
+POST168_EARNED_HORIZON,DEFER,MEDIUM,168h_frozen,No horizon extension in this chain.,KEEP_168H

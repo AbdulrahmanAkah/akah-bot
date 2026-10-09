@@ -1,0 +1,51 @@
+{
+  "adaptive_logic_authorized": false,
+  "exit_action_authorized": false,
+  "interface_contract_sha256": "DEFE9A675CD92D1251E4E30E5C133CE519F0CB4D78329CF0C0FFD9C355105587",
+  "next_if_valid": "ABC_LIFECYCLE_STATE_MACHINE_CAUSAL_RUNTIME_STATE_TRACKER_INTEGRATION_READINESS_SHADOW_MATERIALIZATION_V1",
+  "production_integration_authorized": false,
+  "protocol_id": "ABC_LIFECYCLE_STATE_MACHINE_CAUSAL_RUNTIME_STATE_TRACKER_INTEGRATION_READINESS_PROTOCOL_V1",
+  "required_shadow_checks": [
+    "STATE_PACKET_EXACT_PARITY",
+    "TRANSITION_PACKET_EXACT_PARITY",
+    "LIFECYCLE_RESET_ISOLATION",
+    "CHECKPOINT_RESTORE_EXACT_SUFFIX_PARITY",
+    "NO_FUTURE_OR_ECONOMIC_INPUTS"
+  ],
+  "schema_version": "abc-causal-runtime-tracker-integration-readiness-protocol-v1",
+  "source_bindings": [
+    {
+      "path": "governance/abc_lifecycle_state_machine_causal_runtime_state_tracker_shadow_materialization_v1/runtime_state_trace.csv",
+      "sha256": "3E9A61780E86EB0D2104178C946F8805FC46718833590687A0ECA5B312F1348E"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_causal_runtime_state_tracker_shadow_materialization_v1/runtime_transition_trace.csv",
+      "sha256": "83B9B3DA75DCF5428AD1E36CAE2811FB54D44FEC1FB4D1EB96450FDC20FD8B45"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_causal_runtime_state_tracker_shadow_materialization_v1/canonical_result.json",
+      "sha256": "11EA7F1FE0E4013C9C09AD3B88293A0FFE7A04F9BA8320395687E47BBFE9728F"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_causal_runtime_state_tracker_reference_implementation_v1/reference_tracker.py",
+      "sha256": "CA0366E07FD02305A029E65C5C7DC5378D10E9D0D964A8F39B6FD2069FE82B5B"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_causal_runtime_state_tracker_reference_implementation_v1/parity_result.json",
+      "sha256": "78E85EAE7FCB8AC11E23E8EAD25EEBB03947D7CD2A743B07D6DC47CC733650A2"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_causal_runtime_state_tracker_reference_implementation_v1/canonical_result.json",
+      "sha256": "173212B63219DA92DF1EBE6208BDE7523758B56F6B81CC06E17388C89E432FA8"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_causal_runtime_state_tracker_reference_implementation_mandatory_review_v1/mandatory_review.json",
+      "sha256": "AD9F4FDF497F7D6933CD511A010B71829E0D37B41F7E9AD657708BC334232284"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_causal_runtime_state_tracker_reference_implementation_mandatory_review_v1/canonical_result.json",
+      "sha256": "C718CE7DE359A1B1DBF4EAD83EA064AC4980AB3FF6C996B0CC4F66E30E871929"
+    }
+  ],
+  "status": "FROZEN_BEFORE_SHADOW_MATERIALIZATION"
+}

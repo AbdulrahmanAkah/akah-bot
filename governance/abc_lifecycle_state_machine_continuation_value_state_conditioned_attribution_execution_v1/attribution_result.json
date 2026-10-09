@@ -1,0 +1,107 @@
+{
+  "2024_access": false,
+  "context_surface_rows": 62,
+  "continuous_correlation_rows": 36,
+  "feature_search": false,
+  "join_audit": {
+    "2024_rows_used": 0,
+    "available_state_columns": [
+      "base_state",
+      "native_market_state_context",
+      "memory_now",
+      "memory_seen",
+      "C_signal",
+      "A_signal",
+      "B_signal",
+      "a_condition_now",
+      "b_condition_now",
+      "a_condition_recovered_now",
+      "b_condition_recovered_now",
+      "a_condition_true_run_length",
+      "b_condition_true_run_length",
+      "hours_since_entry",
+      "hours_since_first_memory_or_null",
+      "progress_margin_delta_from_prev",
+      "structural_break_margin_delta_from_prev",
+      "volatility_damage_margin_delta_from_prev",
+      "a_margin_delta_from_prev",
+      "b_margin_delta_from_prev",
+      "close_delta_from_prev_decision",
+      "R_delta_from_prev_decision",
+      "atr22_current"
+    ],
+    "grid_rows": 14059,
+    "join_coverage": 1.0,
+    "join_keys": [
+      "pair",
+      "entry_time",
+      "decision_time_exact==decision_time_4h"
+    ],
+    "missing_preregistered_columns": [],
+    "target_rows": 12290
+  },
+  "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_CONTINUATION_VALUE_STATE_BASIS_LOW_CAPACITY_MODEL_MEGA_V1",
+  "oracle_headroom": {
+    "2022": {
+      "always_hold_mean": -0.003465823348379279,
+      "cost2x_always_hold_mean": -0.0034614856470671597,
+      "cost2x_perfect_sign_oracle_increment_vs_exit": 0.011835273666556703,
+      "perfect_sign_oracle_increment_vs_exit": 0.011850104836564915,
+      "positive_share": 0.3336561743341404,
+      "rows": 2065
+    },
+    "2023": {
+      "always_hold_mean": 0.00952807941207391,
+      "cost2x_always_hold_mean": 0.009516154406551907,
+      "cost2x_perfect_sign_oracle_increment_vs_exit": 0.019596682017881867,
+      "perfect_sign_oracle_increment_vs_exit": 0.019621239263518307,
+      "positive_share": 0.4409356725146199,
+      "rows": 2565
+    },
+    "TRAIN_2019_2021": {
+      "always_hold_mean": 0.005373899995526805,
+      "cost2x_always_hold_mean": 0.005367174213304621,
+      "cost2x_perfect_sign_oracle_increment_vs_exit": 0.02023795264060959,
+      "perfect_sign_oracle_increment_vs_exit": 0.020263313483517616,
+      "positive_share": 0.41932114882506527,
+      "rows": 7660
+    }
+  },
+  "runtime_rule_selected": false,
+  "schema_version": "akah-rev564-state-conditioned-continuation-maximum-evidence-mega-v1-state-attribution-result",
+  "stable_context_count": 2,
+  "stable_contexts": [
+    {
+      "context_family": "CORE_CONTEXT",
+      "context_key": "CONFIRMED|RISK_ON|True",
+      "cost2x_2022_mean": 0.004667275250445117,
+      "cost2x_2023_mean": 0.01415460060870899,
+      "cost2x_train_mean": 0.004756619228034538,
+      "mean_2022": 0.0046731239662978034,
+      "mean_2023": 0.014172338203456755,
+      "rows_2022": 383,
+      "rows_2023": 772,
+      "sign": "POS",
+      "train_mean": 0.004762579903758885,
+      "train_rows": 2721
+    },
+    {
+      "context_family": "CORE_CONTEXT",
+      "context_key": "EARLY_PROGRESS|RISK_ON|True",
+      "cost2x_2022_mean": 0.0016669911890761751,
+      "cost2x_2023_mean": 0.012106621877291467,
+      "cost2x_train_mean": 0.006944201955137688,
+      "mean_2022": 0.001669080150465988,
+      "mean_2023": 0.012121793082651487,
+      "rows_2022": 40,
+      "rows_2023": 104,
+      "sign": "POS",
+      "train_mean": 0.006952903962600271,
+      "train_rows": 328
+    }
+  ],
+  "state_surface_rows": 182,
+  "status": "PASS_STATE_ATTRIBUTION_COMPLETE",
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_CONTINUATION_VALUE_STATE_CONDITIONED_ATTRIBUTION_EXECUTION_V1",
+  "threshold_search": false
+}

@@ -1,0 +1,154 @@
+{
+  "2024_access": false,
+  "DAMAGE_AGE": {
+    "clean_component": true,
+    "hazard": true,
+    "invalid_value": true
+  },
+  "architecture_evidence": "DUAL_HEAD_FEASIBLE_FOR_PROTOCOL_DESIGN",
+  "clean_directional_pairs": [
+    {
+      "family": "CORE_AGE",
+      "state_view": "CURRENT_STATE",
+      "target_component": "continuation_advantage"
+    },
+    {
+      "family": "EVIDENCE_AGE",
+      "state_view": "CURRENT_STATE",
+      "target_component": "continuation_advantage"
+    },
+    {
+      "family": "DAMAGE_AGE",
+      "state_view": "CURRENT_STATE",
+      "target_component": "continuation_advantage"
+    },
+    {
+      "family": "CORE_AGE",
+      "state_view": "CURRENT_STATE",
+      "target_component": "__downstream_residual"
+    },
+    {
+      "family": "EVIDENCE_AGE",
+      "state_view": "CURRENT_STATE",
+      "target_component": "__downstream_residual"
+    },
+    {
+      "family": "DAMAGE_AGE",
+      "state_view": "CURRENT_STATE",
+      "target_component": "__downstream_residual"
+    },
+    {
+      "family": "CORE_AGE",
+      "state_view": "NEXT_STATE",
+      "target_component": "__downstream_residual"
+    },
+    {
+      "family": "EVIDENCE_AGE",
+      "state_view": "NEXT_STATE",
+      "target_component": "__downstream_residual"
+    },
+    {
+      "family": "DAMAGE_AGE",
+      "state_view": "NEXT_STATE",
+      "target_component": "__downstream_residual"
+    }
+  ],
+  "counterfactual_replay": false,
+  "decision_matrix": [
+    {
+      "disposition": "PROMOTE",
+      "evidence": "EXACT_CONTINUATION_TARGET",
+      "reason": "12290 exact rows retained"
+    },
+    {
+      "disposition": "PROMOTE",
+      "evidence": "CLEAN_BELLMAN_CAUSAL_SUBSET",
+      "reason": "3687 rows with exact Bellman identity and causal next-state validity"
+    },
+    {
+      "disposition": "PROMOTE",
+      "evidence": "INTERVENED_BRANCH_EXPLICIT_ACCOUNTING",
+      "reason": "8603 rows independently retained and structurally classified"
+    },
+    {
+      "disposition": "PROMOTE",
+      "evidence": "CLEAN_COMPONENT_STATE_SIGNAL",
+      "reason": "[{\"family\":\"CORE_AGE\",\"state_view\":\"CURRENT_STATE\",\"target_component\":\"continuation_advantage\"},{\"family\":\"EVIDENCE_AGE\",\"state_view\":\"CURRENT_STATE\",\"target_component\":\"continuation_advantage\"},{\"family\":\"DAMAGE_AGE\",\"state_view\":\"CURRENT_STATE\",\"target_component\":\"continuation_advantage\"},{\"family\":\"CORE_AGE\",\"state_view\":\"CURRENT_STATE\",\"target_component\":\"__downstream_residual\"},{\"family\":\"EVIDENCE_AGE\",\"state_view\":\"CURRENT_STATE\",\"target_component\":\"__downstream_residual\"},{\"family\":\"DAMAGE_AGE\",\"state_view\":\"CURRENT_STATE\",\"target_component\":\"__downstream_residual\"},{\"family\":\"CORE_AGE\",\"state_view\":\"NEXT_STATE\",\"target_component\":\"__downstream_residual\"},{\"family\":\"EVIDENCE_AGE\",\"state_view\":\"NEXT_STATE\",\"target_component\":\"__downstream_residual\"},{\"family\":\"DAMAGE_AGE\",\"state_view\":\"NEXT_STATE\",\"target_component\":\"__downstream_residual\"}]"
+    },
+    {
+      "disposition": "PROMOTE",
+      "evidence": "INTERVENTION_HAZARD_SIGNAL",
+      "reason": "{\"branch\":[\"CORE_AGE\",\"EVIDENCE_AGE\",\"DAMAGE_AGE\"],\"mechanism\":[{\"family\":\"CORE_AGE\",\"invalidation_class\":\"LINKED_MANDATORY_ONLY\"},{\"family\":\"EVIDENCE_AGE\",\"invalidation_class\":\"LINKED_MANDATORY_ONLY\"},{\"family\":\"DAMAGE_AGE\",\"invalidation_class\":\"LINKED_MANDATORY_ONLY\"},{\"family\":\"SIGNAL_MARKET\",\"invalidation_class\":\"LINKED_MANDATORY_ONLY\"},{\"family\":\"CORE_AGE\",\"invalidation_class\":\"NO_NEXT_STATE_AVAILABLE\"}]}"
+    },
+    {
+      "disposition": "PROMOTE",
+      "evidence": "INTERVENTION_VALUE_SIGNAL",
+      "reason": "DAMAGE_AGE,EVIDENCE_AGE"
+    },
+    {
+      "disposition": "PROMOTE",
+      "evidence": "DAMAGE_AGE_CROSS_BRANCH",
+      "reason": "clean=True;hazard=True;invalid_value=True"
+    },
+    {
+      "disposition": "DEFER",
+      "evidence": "NEW_RUNTIME_POLICY",
+      "reason": "no runtime selection authorized in this chain"
+    },
+    {
+      "disposition": "DEFER",
+      "evidence": "NEW_MODEL_FAMILY",
+      "reason": "architecture attribution precedes model choice"
+    },
+    {
+      "disposition": "DEFER",
+      "evidence": "POST_168",
+      "reason": "horizon remains frozen"
+    }
+  ],
+  "feature_search": false,
+  "hazard_pass_families": [
+    "CORE_AGE",
+    "EVIDENCE_AGE",
+    "DAMAGE_AGE"
+  ],
+  "intervened_branch_rows": 8603,
+  "invalid_value_pass_families": [
+    "DAMAGE_AGE",
+    "EVIDENCE_AGE"
+  ],
+  "mechanism_hazard_pass_pairs": [
+    {
+      "family": "CORE_AGE",
+      "invalidation_class": "LINKED_MANDATORY_ONLY"
+    },
+    {
+      "family": "EVIDENCE_AGE",
+      "invalidation_class": "LINKED_MANDATORY_ONLY"
+    },
+    {
+      "family": "DAMAGE_AGE",
+      "invalidation_class": "LINKED_MANDATORY_ONLY"
+    },
+    {
+      "family": "SIGNAL_MARKET",
+      "invalidation_class": "LINKED_MANDATORY_ONLY"
+    },
+    {
+      "family": "CORE_AGE",
+      "invalidation_class": "NO_NEXT_STATE_AVAILABLE"
+    }
+  ],
+  "model_family_search": false,
+  "new_model_fit": false,
+  "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_CONTINUATION_VALUE_DUAL_HEAD_ARCHITECTURE_FEASIBILITY_HUMAN_REVIEW_V1",
+  "production_changed": false,
+  "proposed_post_review_route": "DUAL_HEAD_RECURSIVE_VALUE_PLUS_INTERVENTION_HAZARD_VALUE_PROTOCOL_DESIGN_V1",
+  "push": false,
+  "raw_access": false,
+  "runtime_rule_selected": false,
+  "schema_version": "akah-rev573-dual-branch-continuation-maximum-evidence-mega-v1-architecture-synthesis",
+  "status": "PASS_DUAL_HEAD_ARCHITECTURE_FEASIBILITY_SYNTHESIS_COMPLETE",
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_CONTINUATION_VALUE_DUAL_HEAD_ARCHITECTURE_FEASIBILITY_SYNTHESIS_V1",
+  "threshold_search": false
+}

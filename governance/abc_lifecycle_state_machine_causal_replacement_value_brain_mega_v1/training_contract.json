@@ -1,0 +1,19 @@
+{
+  "2024_access": false,
+  "candidate_incumbent_rows": "all feasible one-for-one incumbent replacements",
+  "hyperparameter_search": false,
+  "lambda": 10.0,
+  "model": "single standardized ridge",
+  "model_zoo": false,
+  "purge_rule": "event_time < test_year_start AND label_end < test_year_start",
+  "schema_version": "akah-rvb-training-contract-v1",
+  "source_trajectory": "exact 2x F10 baseline blocked events",
+  "target": "oracle_incremental_local_replacement_terminal_delta_fraction_of_current_equity",
+  "target_runtime_use": false,
+  "threshold_search": false,
+  "walkforward_test_years": [
+    2021,
+    2022,
+    2023
+  ]
+}

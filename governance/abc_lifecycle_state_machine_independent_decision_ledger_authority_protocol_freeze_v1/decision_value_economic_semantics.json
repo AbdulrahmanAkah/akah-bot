@@ -1,0 +1,20 @@
+{
+  "action_space": [
+    "EXIT",
+    "HOLD_ONE_LEGAL_STEP_THEN_PI0"
+  ],
+  "baseline_policy": "pi0",
+  "cost_policy": {
+    "all_action_differential_costs_required": true,
+    "cost2x_evaluation_later_required": true,
+    "double_counting_forbidden": true,
+    "fees": "CANONICAL_EXECUTION_AUTHORITY",
+    "slippage": "CANONICAL_EXECUTION_AUTHORITY_OR_EXPLICIT_ZERO_ONLY_IF_PROVEN"
+  },
+  "decision_value_formula": "Y_t=(NetCash(HOLD one legal 4h step then pi0)-NetCash(EXIT now))/CurrentNotional",
+  "legal_step_hours": 4,
+  "materialization_status": "NOT_EXECUTED",
+  "notional_convention": "Marked live-position economic value immediately before the decision; exact price/quantity source must be canonically bound before materialization and identical across actions.",
+  "schema_version": "akah-decision-value-economic-semantics-v1",
+  "single_override_future_policy": "First qualified disagreement only; override for one legal step then return to pi0. No intervention contributes zero DirectGain."
+}

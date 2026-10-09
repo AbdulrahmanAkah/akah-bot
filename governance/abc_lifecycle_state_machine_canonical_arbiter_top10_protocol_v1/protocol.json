@@ -1,0 +1,56 @@
+{
+  "2024_access": false,
+  "canonical": {
+    "arbiter_controls": [
+      "entry_admission",
+      "same_batch_priority",
+      "exit_schedule"
+    ],
+    "canonical_controls": [
+      "raw_open_price",
+      "fee_application",
+      "hourly_marks",
+      "sealed_cutoff"
+    ],
+    "event_row_deletion_allowed": false,
+    "native_replay_overlay_parity_claimed": false,
+    "repair_mode": "EXTERNAL_ARBITER_SIDECAR_FIRST_DIVERGENCE",
+    "verification": [
+      "FIRST_DIVERGENCE_PREFIX",
+      "2022",
+      "2023"
+    ]
+  },
+  "core_v2": {
+    "candidate_pool": "D2_EVIDENCE_STRONG_UNION_LEGACY_CURRENT",
+    "hysteresis_exit_rank": 14,
+    "mfe5_role": "DOWNSTREAM_ENTRY_COMPETITION_ONLY",
+    "mfe5_used_for_core_selection": false,
+    "outcomes_used_for_core_selection": false,
+    "selection_rank": "EXISTING_PIT_BROAD_RANK",
+    "target_top_n": 10
+  },
+  "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_CANONICAL_EXTERNAL_ARBITER_FIRST_DIVERGENCE_REPAIR_V1",
+  "no_model_refit": true,
+  "no_parameter_search": true,
+  "portfolio": {
+    "K": 5,
+    "cost_multipliers": [
+      1.0,
+      2.0
+    ],
+    "exit": "CHECKPOINT_SIGN_NEXT_OPEN",
+    "governor": "BINARY_VOL",
+    "position_cap": 0.18
+  },
+  "production_change": false,
+  "schema_version": "abc-canonical-arbiter-top10-protocol-v1",
+  "upgrade_gate": {
+    "benchmark_coverage_min": 0.9,
+    "benchmark_excess_x1_gt": 0.0,
+    "benchmark_excess_x2_gt": 0.0,
+    "mdd_floor": -0.25,
+    "wealth_gt_current_binary_vol_at_both_costs": true,
+    "worst_year_floor": -0.15
+  }
+}

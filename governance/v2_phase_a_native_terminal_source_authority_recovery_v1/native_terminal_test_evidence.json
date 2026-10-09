@@ -1,0 +1,567 @@
+{
+  "hit_count": 47,
+  "hits": [
+    {
+      "excerpts": [
+        "1135:    cost = specification.transaction_cost\n1136:\n1137:    def close_position(symbol: str, position: OpenPosition, *, price: float,\n1138:                       timestamp: pd.Timestamp, reason: str) -> None:\n1139:        nonlocal cash, gross_turnover, total_fees",
+        "1180:            )\n1181:            if until is not None and bar_start >= until:\n1182:                close_position(\n1183:                    symbol,\n1184:                    position,",
+        "1188:                )\n1189:            elif math.isfinite(bar_low) and bar_low <= position.stop_price:\n1190:                close_position(\n1191:                    symbol, position, price=min(bar_open, position.stop_price),\n1192:                    timestamp=timestamp, reason=\"STOP\",",
+        "1275:            bar_low = float(row[contract.low_price])\n1276:            if math.isfinite(bar_low) and bar_low <= position.stop_price:\n1277:                close_position(\n1278:                    symbol, position, price=min(bar_open, position.stop_price),\n1279:                    timestamp=timestamp, reason=\"STOP\",",
+        "1345:    for symbol in list(positions):\n1346:        position = positions[symbol]\n1347:        close_position(\n1348:            symbol, position, price=last_prices.get(symbol, position.entry_price),\n1349:            timestamp=final_timestamp, reason=\"END_OF_FOLD\","
+      ],
+      "path": "scripts/research/ams_v3_f01_walk_forward_harness.py",
+      "sha256": "8CDE82581EA3BB642B7BACE3340FFAD3E15F0B71627743D068F2E58B81705303",
+      "terms": [
+        "close_position("
+      ]
+    },
+    {
+      "excerpts": [
+        "128:        \"p4p5r\": args.p4p5r_json, \"signals\": args.signals,\n129:        \"rd26\": repo / \"src/spotbot/research/rd26_exit_architecture.py\",\n130:        \"rd27\": repo / \"src/spotbot/research/rd27_lifecycle_replay.py\",\n131:        \"state\": repo / \"src/spotbot/research/rd27_adaptive_lifecycle.py\",\n132:    }",
+        "229:    from spotbot.research import rd26_exit_architecture as rd26\n230:    from spotbot.research import rd27_adaptive_lifecycle as state\n231:    from spotbot.research import rd27_lifecycle_replay as rd27\n232:    shadow.validate_shadow_constants()\n233:    signals = load_signals(args.signals); pairs = sorted(set(signals[\"pair\"].astype(str)))"
+      ],
+      "path": "scripts/research/run_eaa_same_pair_secondary_shadow_parity.py",
+      "sha256": "8438DE5BA561867528E8D0996CAC83D36C0F60B19603287D996DCA32909E3D27",
+      "terms": [
+        "rd27_lifecycle_replay"
+      ]
+    },
+    {
+      "excerpts": [
+        "41:    build_market_state_frame,\n42:)\n43:from spotbot.research.rd27_lifecycle_replay import (  # noqa: E402\n44:    POLICIES,\n45:    active_component_count,"
+      ],
+      "path": "scripts/research/run_rd27_lifecycle_ablation.py",
+      "sha256": "7DFC388F3BF8EF6EFA16E0640CF924158999A9923674C7701B8919872755CBB5",
+      "terms": [
+        "rd27_lifecycle_replay"
+      ]
+    },
+    {
+      "excerpts": [
+        "41:    build_market_state_frame,\n42:)\n43:from spotbot.research.rd27_lifecycle_replay import (  # noqa: E402\n44:    STATIC_EXIT_STATE_ROUTER,\n45:    build_state_lookup,"
+      ],
+      "path": "scripts/research/run_rd28_evidence_gated_lifecycle.py",
+      "sha256": "2DB133BDD7E4ED8E7BB763842E9FD4D4CEEF4BD92027E195A92031399FA3FEAF",
+      "terms": [
+        "rd27_lifecycle_replay"
+      ]
+    },
+    {
+      "excerpts": [
+        "44:    build_market_state_frame,\n45:)\n46:from spotbot.research.rd27_lifecycle_replay import build_state_lookup  # noqa: E402\n47:from spotbot.research.rd29_thesis_context import (  # noqa: E402\n48:    POLICIES,"
+      ],
+      "path": "scripts/research/run_rd29_thesis_confidence_lifecycle.py",
+      "sha256": "AECEDDE051C0F4C25882591FB441A3AB69EE2FA22AF0253789E7B1B3667EC434",
+      "terms": [
+        "rd27_lifecycle_replay"
+      ]
+    },
+    {
+      "excerpts": [
+        "44:    build_market_state_frame,\n45:)\n46:from spotbot.research.rd27_lifecycle_replay import (  # noqa: E402\n47:    build_state_lookup,\n48:)"
+      ],
+      "path": "scripts/research/run_rd30_family_specialist_replacement_aware.py",
+      "sha256": "C6CDEF9F0C3A086FD1091E4A9168F6949E28B0A3E16AB8E80E3D6F12B76CA561",
+      "terms": [
+        "rd27_lifecycle_replay"
+      ]
+    },
+    {
+      "excerpts": [
+        "47:    build_market_state_frame,\n48:)\n49:from spotbot.research.rd27_lifecycle_replay import (  # noqa: E402\n50:    build_state_lookup,\n51:)"
+      ],
+      "path": "scripts/research/run_rd31_market_regime_admission_governor.py",
+      "sha256": "3B6D938093B4F00883A3665399CBEA01FD892E2B610FC7F4B2EBA01F8F51457B",
+      "terms": [
+        "rd27_lifecycle_replay"
+      ]
+    },
+    {
+      "excerpts": [
+        "34:    build_market_state_frame,\n35:)\n36:from spotbot.research.rd27_lifecycle_replay import (  # noqa: E402\n37:    build_state_lookup,\n38:)",
+        "523:                    raise RunnerError(f\"prohibited control exit reason: {reason}\")\n524:\n525:                record, credit = _close_position(\n526:                    position=position,\n527:                    timestamp=timestamp,"
+      ],
+      "path": "scripts/research/run_rd41_full_risk_set_censoring_reconciliation.py",
+      "sha256": "F15CB245B34E268A97C43A3561EF5B1B4E8F5205397F9F83E10F52F28D3998D8",
+      "terms": [
+        "rd27_lifecycle_replay",
+        "close_position("
+      ]
+    },
+    {
+      "excerpts": [
+        "28:    build_market_state_frame,\n29:)\n30:from spotbot.research.rd27_lifecycle_replay import (  # noqa: E402\n31:    build_state_lookup,\n32:)",
+        "83:RD27_STATE = Path(\"src/spotbot/research/rd27_adaptive_lifecycle.py\")\n84:RD27_STATE_BLOB = \"134daae001a0fcfad0ff8c2a9bd359ac2a8ebc3f\"\n85:RD27_REPLAY = Path(\"src/spotbot/research/rd27_lifecycle_replay.py\")\n86:RD27_REPLAY_BLOB = \"fb306060f3a6dfbf81c54423458c055239fe9b00\"\n87:RD26_ENGINE = Path(\"src/spotbot/research/rd26_exit_architecture.py\")"
+      ],
+      "path": "scripts/research/run_rd42_context_support_census.py",
+      "sha256": "38AE63A9FFD9E5B5ED4DE6E16DF0288EBE208C549BE9D245218DF6571A55125C",
+      "terms": [
+        "rd27_lifecycle_replay"
+      ]
+    },
+    {
+      "excerpts": [
+        "308:        )\n309:\n310:    def _close_position(\n311:        self,\n312:        *,",
+        "383:        fill_price = self._sell_fill_price(candle.open)\n384:\n385:        self._close_position(\n386:            symbol=order.symbol,\n387:            quantity=quantity,",
+        "422:        fill_price = self._sell_fill_price(stop_reference)\n423:\n424:        self._close_position(\n425:            symbol=candle.symbol,\n426:            quantity=position.quantity,",
+        "559:            return\n560:        fill_price = self._sell_fill_price(candle.close)\n561:        self._close_position(\n562:            symbol=candle.symbol,\n563:            quantity=position.quantity,"
+      ],
+      "path": "src/spotbot/core/engine.py",
+      "sha256": "9217A85865CCA590605C74CC96E9FB00D9E215D4493E2499E5CA9A75C6A6B0F1",
+      "terms": [
+        "close_position("
+      ]
+    },
+    {
+      "excerpts": [
+        "14:\n15:from spotbot.research import a4r1_reversible_floor_candidate as candidate\n16:from spotbot.research import rd27_lifecycle_replay as rd27\n17:\n18:SCHEMA_VERSION: Final = \"a10-selective-protection-asymmetry-v1\""
+      ],
+      "path": "src/spotbot/research/a10_selective_protection_asymmetry.py",
+      "sha256": "BF4794A3F42A547A3D20D80D0ACD7A9132973B68BA3FFB2738B3EF29ECD0AB0F",
+      "terms": [
+        "rd27_lifecycle_replay"
+      ]
+    },
+    {
+      "excerpts": [
+        "14:\n15:from spotbot.research import a4r1_reversible_floor_candidate as candidate\n16:from spotbot.research import rd27_lifecycle_replay as rd27\n17:\n18:SCHEMA_VERSION: Final = \"a4r1-reversible-floor-paired-replay-v1\""
+      ],
+      "path": "src/spotbot/research/a4r1_reversible_floor_replay.py",
+      "sha256": "161B7680A2098BBE97E4B9BE3A9BA7F0A918AAD04926CBA6F783CED7B97FE16E",
+      "terms": [
+        "rd27_lifecycle_replay"
+      ]
+    },
+    {
+      "excerpts": [
+        "757:        )\n758:\n759:    def close_position(\n760:        symbol: str,\n761:        *,",
+        "912:        for symbol, reason in pending_exits.pop(timestamp, []):\n913:            if symbol in positions and symbol in rows_by_symbol.index:\n914:                close_position(\n915:                    symbol,\n916:                    timestamp=timestamp,",
+        "928:                    else positions[symbol].entry_price\n929:                )\n930:                close_position(\n931:                    symbol,\n932:                    timestamp=timestamp,",
+        "1150:            else positions[symbol].entry_price\n1151:        )\n1152:        close_position(\n1153:            symbol,\n1154:            timestamp=liquidation_timestamp,"
+      ],
+      "path": "src/spotbot/research/ams_md01_momentum.py",
+      "sha256": "793D5D36C97331A1D87BC96ABC5CCF32D4FFA76C992AC9E21F54D33E15707CD5",
+      "terms": [
+        "close_position("
+      ]
+    },
+    {
+      "excerpts": [
+        "897:\n898:\n899:def _close_position(\n900:    *,\n901:    positions: dict[str, V5OpenPosition],",
+        "1076:            current_row = rows[symbol]\n1077:            if timestamp >= pd.Timestamp(current_row[\"tradable_until\"]):\n1078:                cash = _close_position(\n1079:                    positions=positions,\n1080:                    symbol=symbol,",
+        "1309:                fill_type = \"TRAILING_EXIT\" if position.trailing_activated else \"STOP_EXIT\"\n1310:                stopped_position_id = position.position_id\n1311:                cash = _close_position(\n1312:                    positions=positions,\n1313:                    symbol=symbol,",
+        "1335:            if symbol in rows:\n1336:                exit_row = rows[symbol]\n1337:                cash = _close_position(\n1338:                    positions=positions,\n1339:                    symbol=symbol,",
+        "1530:                else last_prices[symbol]\n1531:            )\n1532:            cash = _close_position(\n1533:                positions=positions,\n1534:                symbol=symbol,"
+      ],
+      "path": "src/spotbot/research/ams_v5_native_engine.py",
+      "sha256": "79FE4BB7E2E7D31E8B36F31CDA4A028F2E22B8DD958102A78E1FDD4D9B064CFF",
+      "terms": [
+        "close_position("
+      ]
+    },
+    {
+      "excerpts": [
+        "15:import pandas as pd\n16:\n17:from spotbot.research import rd27_lifecycle_replay as rd27\n18:from spotbot.research.rd26_exit_architecture import (\n19:    BASE_ROUND_TRIP_COST,",
+        "129:\n130:\n131:def _close_position(*, position: ShadowPosition, timestamp: pd.Timestamp, exit_price: float, exit_reason: str, exit_market_state: str, side_cost: float, portfolio_id: str, universe_id: str, cost_multiplier: float) -> tuple[dict[str, Any], float]:\n132:    exit_notional = position.quantity * exit_price\n133:    exit_cost = exit_notional * side_cost",
+        "261:                reason = \"TIME_FAILURE_72H_CLOSE_NOT_ABOVE_ENTRY\"; counters[\"time_failure_exits\"] += 1\n262:            if reason is not None:\n263:                record, credit = _close_position(position=position, timestamp=timestamp, exit_price=float(bar[\"open\"]), exit_reason=reason, exit_market_state=current_state, side_cost=side_cost, portfolio_id=portfolio_id, universe_id=universe_id, cost_multiplier=cost_multiplier)\n264:                cash += credit; trades.append(record); del positions[position_id]\n265:"
+      ],
+      "path": "src/spotbot/research/eaa_same_pair_secondary_shadow.py",
+      "sha256": "1096CD43E814A08E8F6BB969CD2722FA883C04D54C9462AFD461489AE3E76390",
+      "terms": [
+        "rd27_lifecycle_replay",
+        "close_position("
+      ]
+    },
+    {
+      "excerpts": [
+        "131:        )\n132:\n133:    def close_position(\n134:        symbol: str,\n135:        *,",
+        "312:                        else positions[symbol].entry_price\n313:                    )\n314:                    close_position(\n315:                        symbol,\n316:                        timestamp=timestamp,",
+        "341:                    execution.exit_price / position.entry_price - 1.0,\n342:                )\n343:                close_position(\n344:                    symbol,\n345:                    timestamp=timestamp,",
+        "351:            for symbol, reason in pending_exits.pop(timestamp, []):\n352:                if symbol in positions and symbol in rows_by_symbol.index:\n353:                    close_position(\n354:                        symbol,\n355:                        timestamp=timestamp,",
+        "366:            for symbol, reason in pending_exits.pop(timestamp, []):\n367:                if symbol in positions and symbol in rows_by_symbol.index:\n368:                    close_position(\n369:                        symbol,\n370:                        timestamp=timestamp,",
+        "382:                        else positions[symbol].entry_price\n383:                    )\n384:                    close_position(\n385:                        symbol,\n386:                        timestamp=timestamp,",
+        "524:                    execution.exit_price / position.entry_price - 1.0,\n525:                )\n526:                close_position(\n527:                    symbol,\n528:                    timestamp=timestamp,",
+        "660:            else positions[symbol].entry_price\n661:        )\n662:        close_position(\n663:            symbol,\n664:            timestamp=liquidation_timestamp,"
+      ],
+      "path": "src/spotbot/research/rd04_structural_stop_overlay_engine.py",
+      "sha256": "0AB0D9F3089474040EE147D15491CB885340AE5E2F52B83F10AE6FC013CA1FAD",
+      "terms": [
+        "close_position("
+      ]
+    },
+    {
+      "excerpts": [
+        "254:                        else positions[symbol].entry_price\n255:                    )\n256:                    close_position(\n257:                        symbol,\n258:                        timestamp=timestamp,",
+        "285:                    execution.exit_price / position.entry_price - 1.0,\n286:                )\n287:                close_position(\n288:                    symbol,\n289:                    timestamp=timestamp,",
+        "295:            for symbol, reason in pending_exits.pop(timestamp, []):\n296:                if symbol in positions and symbol in rows_by_symbol.index:\n297:                    close_position(\n298:                        symbol,\n299:                        timestamp=timestamp,",
+        "404:        \"                    execution.exit_price / position.entry_price - 1.0,\\n\"\n405:        \"                )\\n\"\n406:        \"                close_position(\\n\"\n407:        \"                    symbol,\\n\"\n408:        \"                    timestamp=timestamp,\\n\""
+      ],
+      "path": "src/spotbot/research/rd04_structural_stop_source_transform.py",
+      "sha256": "9A0BD0BA12C421BEEB9582764F4F0DF651BE9997E6B8E2FEA2EB738D1362C307",
+      "terms": [
+        "close_position("
+      ]
+    },
+    {
+      "excerpts": [
+        "668:    )\n669:\n670:    def close_position(\n671:        pair: str,\n672:        timestamp: pd.Timestamp,",
+        "751:                raise P2CR1Error(f\"pending exit bar missing: {pair}/{timestamp}\")\n752:            reason = pending_exits.pop(pair)\n753:            close_position(\n754:                pair,\n755:                timestamp,",
+        "912:            if stop_hit:\n913:                reason = \"STRUCTURAL_TRAIL\" if bool(position[\"trail_active\"]) else \"INITIAL_STOP\"\n914:                close_position(pair, timestamp, stop_price, reason)\n915:                diagnostics[\"stop_exits\"] += 1\n916:                continue",
+        "917:\n918:            if timestamp == partition_end:\n919:                close_position(\n920:                    pair,\n921:                    timestamp,"
+      ],
+      "path": "src/spotbot/research/rd19_p2c_r1_engine.py",
+      "sha256": "B436456E8FAE2E88568D188E5BF3F840A927621C1ED6B4A991495A89B98F8F71",
+      "terms": [
+        "close_position("
+      ]
+    },
+    {
+      "excerpts": [
+        "633:\n634:\n635:def _close_position(\n636:    *,\n637:    position: Position,",
+        "775:\n776:            if exit_price is not None and exit_reason is not None:\n777:                record, credit = _close_position(\n778:                    position=position,\n779:                    timestamp=timestamp,"
+      ],
+      "path": "src/spotbot/research/rd26_exit_architecture.py",
+      "sha256": "1290748EA7E8A0343C1A15CEDFC1220AA423F04C11FDD558311B06AC7DA90359",
+      "terms": [
+        "close_position("
+      ]
+    },
+    {
+      "excerpts": [
+        "154:        self._counts[\"shadow_exit_candidates_emitted\"] += 1\n155:\n156:    def close_position(self, position_id: str) -> None:\n157:        self._states[position_id] = replace(self._active(position_id), archived=True)\n158:",
+        "162:        return {\n163:            \"protocol_id\": CANDIDATE_PROTOCOL_ID, \"async_exit_candidate_shadow_enabled\": True,\n164:            \"parameter_count\": CANDIDATE_PARAMETER_COUNT, \"actual_exit_authority\": False,\n165:            **self._counts, \"lifecycles_observed\": len(records),\n166:            \"memory_established_lifecycles\": sum(row.memory_established for row in records),"
+      ],
+      "path": "src/spotbot/research/rd27_async_exit_candidate_shadow.py",
+      "sha256": "45F98E6F8A4B99387FA728A79BCD34D9830FB5C762385E7FBC4ABCF5F8382D56",
+      "terms": [
+        "close_position(",
+        "actual_exit_authority"
+      ]
+    },
+    {
+      "excerpts": [
+        "317:            self._exit_candidate_shadow.observe_memory(after)\n318:\n319:    def close_position(self, pair: str, timestamp: pd.Timestamp, reason: str) -> None:\n320:        \"\"\"After native close: archive one pre-reset summary and remove the sidecar.\"\"\"\n321:        if _utc(timestamp) != self._timestamp or pair not in self._pair_ids:",
+        "344:        self._counts[\"resets\"] += 1\n345:        if self._memory_predicate is not None:\n346:            self._memory_predicate.close_position(position_id)\n347:        if self._later_trigger_predicate is not None:\n348:            self._later_trigger_predicate.close_position(position_id)",
+        "346:            self._memory_predicate.close_position(position_id)\n347:        if self._later_trigger_predicate is not None:\n348:            self._later_trigger_predicate.close_position(position_id)\n349:        if self._exit_candidate_shadow is not None:\n350:            self._exit_candidate_shadow.close_position(position_id)",
+        "348:            self._later_trigger_predicate.close_position(position_id)\n349:        if self._exit_candidate_shadow is not None:\n350:            self._exit_candidate_shadow.close_position(position_id)\n351:        del self._active[position_id]\n352:        del self._entries[position_id]"
+      ],
+      "path": "src/spotbot/research/rd27_async_memory_shadow.py",
+      "sha256": "D7AF674EEEEDE4223A1AFF2ED5734AB5B4A9CC8D1D0327325CE287393AC18B04",
+      "terms": [
+        "close_position("
+      ]
+    },
+    {
+      "excerpts": [
+        "53:    economic_metrics_allowed: bool = False\n54:    threshold_optimization_allowed: bool = False\n55:    actual_exit_authority: bool = False\n56:    timing_descriptive_only: bool = True\n57:    regime_descriptive_only: bool = True"
+      ],
+      "path": "src/spotbot/research/rd27_exit_candidate_specificity_protocol.py",
+      "sha256": "AD64E2A22ADAB15D14FC38051C9C2053221A29FF662950A2BA0BFE69AF76DC2B",
+      "terms": [
+        "actual_exit_authority"
+      ]
+    },
+    {
+      "excerpts": [
+        "121:        self._observe_calls += 1\n122:\n123:    def close_position(\n124:        self,\n125:        *,",
+        "152:            \"memory_count\": sum(result.first_memory_time is not None for result in results),\n153:            \"candidate_count\": sum(result.candidate_time is not None for result in results),\n154:            \"actual_exit_authority\": False,\n155:            \"native_position_mutation\": False,\n156:            \"economic_fields\": False,",
+        "153:            \"candidate_count\": sum(result.candidate_time is not None for result in results),\n154:            \"actual_exit_authority\": False,\n155:            \"native_position_mutation\": False,\n156:            \"economic_fields\": False,\n157:            \"parameter_count\": 0,",
+        "163:        \"protocol_id\": PROTOCOL_ID,\n164:        \"default_enabled\": False,\n165:        \"actual_exit_authority\": False,\n166:        \"native_position_mutation\": False,\n167:        \"economic_fields\": False,",
+        "164:        \"default_enabled\": False,\n165:        \"actual_exit_authority\": False,\n166:        \"native_position_mutation\": False,\n167:        \"economic_fields\": False,\n168:        \"parameter_count\": 0,"
+      ],
+      "path": "src/spotbot/research/rd27_later_trigger_v2_native_hook.py",
+      "sha256": "E149C5C354B08801920CA87F61F397C9C7969EA7E6BE7C081AFF865CF9168EFD",
+      "terms": [
+        "close_position(",
+        "actual_exit_authority",
+        "native_position_mutation"
+      ]
+    },
+    {
+      "excerpts": [
+        "263:        \"generic_latch\": True,\n264:        \"one_shot_candidate\": True,\n265:        \"actual_exit_authority\": False,\n266:        \"native_lifecycle_replay_mutation\": False,\n267:        \"economic_fields\": False,"
+      ],
+      "path": "src/spotbot/research/rd27_later_trigger_v2_shadow_replay.py",
+      "sha256": "AC8E88D9C49F811190F7158CE75159C0E546ED6C8FAB51A2E5F011740C6BD9DB",
+      "terms": [
+        "actual_exit_authority"
+      ]
+    },
+    {
+      "excerpts": [
+        "193:\n194:\n195:def _close_position(\n196:    *,\n197:    position: ReplayPosition,",
+        "499:\n500:            if exit_price is not None and exit_reason is not None:\n501:                record, credit = _close_position(\n502:                    position=position,\n503:                    timestamp=timestamp,",
+        "514:                trades.append(record)\n515:                if async_shadow is not None:\n516:                    async_shadow.close_position(pair, timestamp, exit_reason)\n517:                if later_trigger_v2_shadow_hook is not None:\n518:                    later_trigger_v2_shadow_hook.close_position(",
+        "516:                    async_shadow.close_position(pair, timestamp, exit_reason)\n517:                if later_trigger_v2_shadow_hook is not None:\n518:                    later_trigger_v2_shadow_hook.close_position(\n519:                        pair=pair, closed_at=timestamp\n520:                    )",
+        "684:                        counters[\"max_hold_exits\"] += 1\n685:                    counters[\"entry_bar_adaptive_exits\"] += 1\n686:                    record, credit = _close_position(\n687:                        position=position,\n688:                        timestamp=timestamp,",
+        "699:                    trades.append(record)\n700:                    if async_shadow is not None:\n701:                        async_shadow.close_position(pair, timestamp, reason)\n702:                    if later_trigger_v2_shadow_hook is not None:\n703:                        later_trigger_v2_shadow_hook.close_position(",
+        "701:                        async_shadow.close_position(pair, timestamp, reason)\n702:                    if later_trigger_v2_shadow_hook is not None:\n703:                        later_trigger_v2_shadow_hook.close_position(\n704:                            pair=pair, closed_at=timestamp\n705:                        )"
+      ],
+      "path": "src/spotbot/research/rd27_lifecycle_replay.py",
+      "sha256": "E3944A4655DDDF21C394FE1DB541F2645F529C00BD8390B22D652BD8EF5BBF83",
+      "terms": [
+        "close_position("
+      ]
+    },
+    {
+      "excerpts": [
+        "182:        return ObservablePolicyDecision(\"trigger\", candidate)\n183:\n184:    def close_position(self, position_id: str) -> None:\n185:        if position_id not in self._active:\n186:            raise RD27StateError(\"trigger close for unknown/closed position\")"
+      ],
+      "path": "src/spotbot/research/rd27_observable_later_trigger_predicate.py",
+      "sha256": "E6084BEBE118C0CFDEB403B5CF5F641814F1E7BDFE6E1314082E35AFB56B42DA",
+      "terms": [
+        "close_position("
+      ]
+    },
+    {
+      "excerpts": [
+        "231:        \"strictly_later_required\": True,\n232:        \"same_time_forbidden\": True,\n233:        \"actual_exit_authority\": False,\n234:        \"market_data_loading\": False,\n235:        \"economic_fields\": False,"
+      ],
+      "path": "src/spotbot/research/rd27_observable_later_trigger_v2.py",
+      "sha256": "3CC049B5E38851A13B73CC7C0B36128EF906BE6A9AAFB97CCED85C36CCD9CE94",
+      "terms": [
+        "actual_exit_authority"
+      ]
+    },
+    {
+      "excerpts": [
+        "205:        return ObservablePolicyDecision(\"memory\", observed)\n206:\n207:    def close_position(self, position_id: str) -> None:\n208:        if position_id not in self._active:\n209:            raise RD27StateError(\"predicate close for unknown/closed position\")"
+      ],
+      "path": "src/spotbot/research/rd27_observable_memory_predicate.py",
+      "sha256": "5F25948CB5AF5B34E39033FA0A149B74567106E583097B1C11090668A0565CAE",
+      "terms": [
+        "close_position("
+      ]
+    },
+    {
+      "excerpts": [
+        "24:)\n25:from spotbot.research.rd27_adaptive_lifecycle import MARKET_STATES, RISK_OFF\n26:from spotbot.research.rd27_lifecycle_replay import (\n27:    STATIC_EXIT_STATE_ROUTER,\n28:    build_state_lookup,",
+        "28:    build_state_lookup,\n29:)\n30:from spotbot.research.rd27_lifecycle_replay import (\n31:    replay_lifecycle_policy as rd27_replay_lifecycle_policy,\n32:)",
+        "136:\n137:\n138:def _close_position(\n139:    *,\n140:    position: ReplayPosition,",
+        "397:                    raise RD28ReplayError(f\"unknown RD28 exit reason: {reason}\")\n398:                counters[counter_by_reason[reason]] += 1\n399:                record, credit = _close_position(\n400:                    position=position,\n401:                    timestamp=timestamp,"
+      ],
+      "path": "src/spotbot/research/rd28_lifecycle_replay.py",
+      "sha256": "4AD1EAD99210EF0F27CC4F42754A554B647C3FC799C636CE4686C7E0BDAA149E",
+      "terms": [
+        "rd27_lifecycle_replay",
+        "close_position("
+      ]
+    },
+    {
+      "excerpts": [
+        "25:    performance_metrics,\n26:)\n27:from spotbot.research.rd27_lifecycle_replay import build_state_lookup\n28:from spotbot.research.rd28_evidence_gated_lifecycle import (\n29:    ROUTER_TIME_FAIL_72_CONTROL as RD28_CONTROL,",
+        "253:\n254:\n255:def _close_position(\n256:    *,\n257:    position: ReplayPosition,",
+        "478:                    raise RD29ReplayError(f\"unknown RD29 exit reason: {reason}\")\n479:\n480:                record, credit = _close_position(\n481:                    position=position,\n482:                    timestamp=timestamp,"
+      ],
+      "path": "src/spotbot/research/rd29_thesis_replay.py",
+      "sha256": "C499946623CFDE87812BD63442BD9D67FE7BAA3EF7DE55BFB83355140984144B",
+      "terms": [
+        "rd27_lifecycle_replay",
+        "close_position("
+      ]
+    },
+    {
+      "excerpts": [
+        "28:    performance_metrics,\n29:)\n30:from spotbot.research.rd27_lifecycle_replay import build_state_lookup\n31:from spotbot.research.rd29_thesis_replay import (\n32:    ROUTER_TIME_FAIL_72_CONTROL as RD29_CONTROL,",
+        "377:\n378:\n379:def _close_position(\n380:    *,\n381:    position: ReplayPosition,",
+        "606:                else:\n607:                    raise RD30ReplayError(f\"unknown RD30 exit reason: {reason}\")\n608:                record, credit = _close_position(\n609:                    position=position,\n610:                    timestamp=timestamp,",
+        "814:                        incumbent_context.context,\n815:                    )\n816:                record, credit = _close_position(\n817:                    position=incumbent,\n818:                    timestamp=timestamp,"
+      ],
+      "path": "src/spotbot/research/rd30_replacement_replay.py",
+      "sha256": "169521BF5A684E10FE17000463FC7A816EF9A5917A5313AF5DD6509D0AA47606",
+      "terms": [
+        "rd27_lifecycle_replay",
+        "close_position("
+      ]
+    },
+    {
+      "excerpts": [
+        "24:    performance_metrics,\n25:)\n26:from spotbot.research.rd27_lifecycle_replay import build_state_lookup\n27:from spotbot.research.rd29_thesis_replay import (\n28:    causal_context_at,",
+        "314:                    )\n315:\n316:                record, credit = _close_position(\n317:                    position=position,\n318:                    timestamp=timestamp,"
+      ],
+      "path": "src/spotbot/research/rd31_regime_governed_replay.py",
+      "sha256": "CF979223BF53141AD715FF6D4E79AD394653A7A3E42E546B9E43424A42DC7F4C",
+      "terms": [
+        "rd27_lifecycle_replay",
+        "close_position("
+      ]
+    },
+    {
+      "excerpts": [
+        "27:    performance_metrics,\n28:)\n29:from spotbot.research.rd27_lifecycle_replay import build_state_lookup\n30:from spotbot.research.rd29_thesis_replay import (\n31:    causal_context_at,",
+        "392:                    )\n393:\n394:                record, credit = _close_position(\n395:                    position=position,\n396:                    timestamp=timestamp,"
+      ],
+      "path": "src/spotbot/research/rd32_mb_signal_quality_replay.py",
+      "sha256": "7C8A0EA168A16367DA62FA32D6BF797D78C03789CE906067F5FE252599F543C0",
+      "terms": [
+        "rd27_lifecycle_replay",
+        "close_position("
+      ]
+    },
+    {
+      "excerpts": [
+        "33:    performance_metrics,\n34:)\n35:from spotbot.research.rd27_lifecycle_replay import build_state_lookup\n36:from spotbot.research.rd29_thesis_context import AdmissionDecision\n37:from spotbot.research.rd29_thesis_replay import (",
+        "791:                        f\"RD33 lifecycle emitted prohibited exit reason: {reason}\"\n792:                    )\n793:                record, credit = _close_position(\n794:                    position=position,\n795:                    timestamp=timestamp,"
+      ],
+      "path": "src/spotbot/research/rd33_temporal_mb_replay.py",
+      "sha256": "A0B37C791E37821405F9AC8C1A24AE97EEABD38F6C52CF7CC942124D519D7179",
+      "terms": [
+        "rd27_lifecycle_replay",
+        "close_position("
+      ]
+    },
+    {
+      "excerpts": [
+        "491:\n492:\n493:def _close_position(\n494:    *,\n495:    position: _OpenPosition,",
+        "865:\n866:            trade, proceeds = (\n867:                _close_position(\n868:                    position=position,\n869:                    exit_bar_timestamp=timestamp,",
+        "1058:\n1059:                trade, proceeds = (\n1060:                    _close_position(\n1061:                        position=position,\n1062:                        exit_bar_timestamp=(",
+        "1093:\n1094:            trade, proceeds = (\n1095:                _close_position(\n1096:                    position=position,\n1097:                    exit_bar_timestamp=timestamp,"
+      ],
+      "path": "src/spotbot/research/simulator.py",
+      "sha256": "6DDCE79DE97615B37C969187A3E5342497D01A872C497EA330AD113E17390431",
+      "terms": [
+        "close_position("
+      ]
+    },
+    {
+      "excerpts": [
+        "8:\n9:from spotbot.research import a4r1_reversible_floor_candidate as candidate\n10:from spotbot.research import rd27_lifecycle_replay as rd27\n11:from spotbot.research.a10_selective_protection_asymmetry import (\n12:    DIAGNOSTIC_CAN_RESCUE_PRIMARY,"
+      ],
+      "path": "tests/research/test_a10_selective_protection_asymmetry.py",
+      "sha256": "F6E98B188629DF54490B6F77213455F8A93E941EA8C2F416534E0C1F916C1C94",
+      "terms": [
+        "rd27_lifecycle_replay"
+      ]
+    },
+    {
+      "excerpts": [
+        "5:\n6:from spotbot.research import rd27_adaptive_lifecycle as lifecycle\n7:from spotbot.research import rd27_lifecycle_replay as rd27\n8:from spotbot.research.a4r1_reversible_floor_replay import (\n9:    TREATMENT_POLICY_ID,"
+      ],
+      "path": "tests/research/test_a4r1_reversible_floor_replay.py",
+      "sha256": "044D8F0CB8676D65AC522EC38C07BCD37F11E706BB43FCA63FC190B056DAD520",
+      "terms": [
+        "rd27_lifecycle_replay"
+      ]
+    },
+    {
+      "excerpts": [
+        "16:from test_rd27_observable_memory_adapter import row\n17:\n18:from spotbot.research import rd27_lifecycle_replay as replay\n19:from spotbot.research.rd27_adaptive_lifecycle import (\n20:    AsyncTriggerNotReadyError,",
+        "248:    names = {f.name for f in fields(event)}\n249:    assert not names & {\"pnl\", \"mfe\", \"mae\", \"exit_reason\", \"exit_price\", \"regime\"}\n250:    assert c[\"actual_exit_authority\"] is False\n251:\n252:",
+        "274:    assert observer.diagnostics()[\"candidate_events\"] == first[\"candidate_events\"]\n275:    assert observer.diagnostics()[\"position_records\"][1].candidate is None\n276:    observer.close_position(\"A\")\n277:    with pytest.raises(RD27StateError, match=\"reused\"):\n278:        observer.open_position(\"A\", \"AAA\")"
+      ],
+      "path": "tests/research/test_rd27_async_exit_candidate_shadow.py",
+      "sha256": "64657DAB456EE03780AC9D09997548487124AAC589BA2A4366C24BF07E6EEF4E",
+      "terms": [
+        "rd27_lifecycle_replay",
+        "close_position(",
+        "actual_exit_authority"
+      ]
+    },
+    {
+      "excerpts": [
+        "8:from pandas.testing import assert_frame_equal\n9:\n10:from spotbot.research import rd27_lifecycle_replay as replay\n11:from spotbot.research.rd27_adaptive_lifecycle import RISK_ON, RD27StateError\n12:from spotbot.research.rd27_async_memory_shadow import ("
+      ],
+      "path": "tests/research/test_rd27_async_memory_shadow_replay.py",
+      "sha256": "1DF5706AE3D140C07684CBF378115A39B9D8629410BB4C33CCC17F87579E232D",
+      "terms": [
+        "rd27_lifecycle_replay"
+      ]
+    },
+    {
+      "excerpts": [
+        "267:    assert encoded == json.dumps(protocol_summary(), sort_keys=True, allow_nan=False)\n268:    for field in (\"empirical_execution\", \"outcome_fields_allowed\", \"economic_metrics_allowed\",\n269:                  \"actual_exit_authority\", \"threshold_optimization_allowed\"):\n270:        assert a[field] is False\n271:    assert a[\"selectivity_status\"] == \"SELECTIVITY_NOT_YET_EXECUTED\""
+      ],
+      "path": "tests/research/test_rd27_exit_candidate_specificity_protocol.py",
+      "sha256": "6646B460C136C6E602A462E8F3D3798B0DBB66D37FF1F6FB201581E2BF991B50",
+      "terms": [
+        "actual_exit_authority"
+      ]
+    },
+    {
+      "excerpts": [
+        "6:import pandas.testing as pdt\n7:\n8:from spotbot.research import rd27_lifecycle_replay as rd27\n9:from spotbot.research.rd26_exit_architecture import DATA_START, FAMILY_MOMENTUM_BREAKOUT\n10:from spotbot.research.rd27_adaptive_lifecycle import RISK_ON",
+        "9:from spotbot.research.rd26_exit_architecture import DATA_START, FAMILY_MOMENTUM_BREAKOUT\n10:from spotbot.research.rd27_adaptive_lifecycle import RISK_ON\n11:from spotbot.research.rd27_later_trigger_v2_native_hook import (\n12:    NativeV2ShadowHook,\n13:    contract_summary,",
+        "29:        self.observe_calls += 1\n30:\n31:    def close_position(self, **kwargs):\n32:        assert kwargs[\"pair\"] == \"AAA-USDT\"\n33:        self.close_calls += 1",
+        "144:    summary = contract_summary()\n145:    assert summary[\"default_enabled\"] is False\n146:    assert summary[\"actual_exit_authority\"] is False\n147:    assert summary[\"native_position_mutation\"] is False\n148:    assert summary[\"parameter_count\"] == 0",
+        "145:    assert summary[\"default_enabled\"] is False\n146:    assert summary[\"actual_exit_authority\"] is False\n147:    assert summary[\"native_position_mutation\"] is False\n148:    assert summary[\"parameter_count\"] == 0\n149:",
+        "171:    assert diagnostics[\"memory_count\"] == 1\n172:    assert diagnostics[\"candidate_count\"] == 1\n173:    assert diagnostics[\"actual_exit_authority\"] is False\n174:\n175:"
+      ],
+      "path": "tests/research/test_rd27_later_trigger_v2_native_hook.py",
+      "sha256": "388D53B5CF5B8E91E5CDC4D0E85E226FF58749B2BD89CC01802D73313C512396",
+      "terms": [
+        "rd27_lifecycle_replay",
+        "rd27_later_trigger_v2_native_hook",
+        "close_position(",
+        "actual_exit_authority",
+        "native_position_mutation"
+      ]
+    },
+    {
+      "excerpts": [
+        "45:def test_contract_shadow_only():\n46:    c = contract_summary()\n47:    assert c[\"actual_exit_authority\"] is False\n48:    assert c[\"native_lifecycle_replay_mutation\"] is False\n49:    assert c[\"economic_fields\"] is False"
+      ],
+      "path": "tests/research/test_rd27_later_trigger_v2_shadow_replay.py",
+      "sha256": "17105BEA6B2CA3CFFB9CBA71D4DD7AAA6BE4235DE0767E11392E1FE7BEDD6349",
+      "terms": [
+        "actual_exit_authority"
+      ]
+    },
+    {
+      "excerpts": [
+        "13:)\n14:from spotbot.research.rd27_adaptive_lifecycle import RISK_OFF, RISK_ON, TRANSITION\n15:from spotbot.research.rd27_lifecycle_replay import (\n16:    ADAPTIVE_EXIT_FIXED_CAPITAL,\n17:    CONTROL_TIME_FAIL_72_FIXED_CAPITAL,"
+      ],
+      "path": "tests/research/test_rd27_lifecycle_replay.py",
+      "sha256": "289C0940236EF9EE4AA7A36FCB678102D6E0997EDAB92C4CF425BE83D2478A7B",
+      "terms": [
+        "rd27_lifecycle_replay"
+      ]
+    },
+    {
+      "excerpts": [
+        "15:from test_rd27_observable_memory_adapter import row, snapshot\n16:\n17:from spotbot.research import rd27_lifecycle_replay as replay\n18:from spotbot.research.rd27_adaptive_lifecycle import (\n19:    AsyncTriggerNotReadyError,",
+        "390:        policy(**kwargs)\n391:    policy.open_position(position_id=\"A\", replay_pair=\"pair\", entry_time=at(0))\n392:    policy.close_position(\"A\")\n393:    with pytest.raises(RD27StateError, match=\"unknown/closed\"):\n394:        policy(**kwargs)",
+        "463:                       snapshot=bar(4, low=100, close=103), prior_state=None) for pid in (\"A\", \"B\")]\n464:    assert [value.observed for value in outcomes] == [True, False]\n465:    policy.close_position(\"A\")\n466:    policy.close_position(\"B\")\n467:    assert policy.diagnostics()[\"active_position_count\"] == 0",
+        "464:    assert [value.observed for value in outcomes] == [True, False]\n465:    policy.close_position(\"A\")\n466:    policy.close_position(\"B\")\n467:    assert policy.diagnostics()[\"active_position_count\"] == 0"
+      ],
+      "path": "tests/research/test_rd27_observable_later_trigger_predicate.py",
+      "sha256": "D88EECA01CA142316CE4607738EF3419FDB795049041CEC18AEEA65C004F11D1",
+      "terms": [
+        "rd27_lifecycle_replay",
+        "close_position("
+      ]
+    },
+    {
+      "excerpts": [
+        "88:    summary = contract_summary()\n89:    assert summary[\"parameter_count\"] == 0\n90:    assert summary[\"actual_exit_authority\"] is False\n91:    assert summary[\"market_data_loading\"] is False\n92:    assert summary[\"economic_fields\"] is False"
+      ],
+      "path": "tests/research/test_rd27_observable_later_trigger_v2.py",
+      "sha256": "BC8D301EDDE62AA3BC1C17D4A999155818DC4A91104F87C0B304F2FF6C3F621B",
+      "terms": [
+        "actual_exit_authority"
+      ]
+    },
+    {
+      "excerpts": [
+        "14:)\n15:\n16:from spotbot.research import rd27_lifecycle_replay as replay\n17:from spotbot.research.rd27_adaptive_lifecycle import (\n18:    RD27StateError,"
+      ],
+      "path": "tests/research/test_rd27_observable_memory_adapter.py",
+      "sha256": "6696C736BE8E70043989E8B060417B2E6380DDA54B1AAA7A4C23073D9C267A39",
+      "terms": [
+        "rd27_lifecycle_replay"
+      ]
+    },
+    {
+      "excerpts": [
+        "9:from test_rd27_observable_memory_adapter import row, snapshot\n10:\n11:from spotbot.research import rd27_lifecycle_replay as replay\n12:from spotbot.research.rd27_adaptive_lifecycle import (\n13:    RD27StateError,",
+        "221:    assert values == [True, False, True]\n222:    assert memory.latest_seen_time == at(12) and memory.episode_count == 2\n223:    policy.close_position(\"A\")\n224:    assert policy.diagnostics()[\"active_position_count\"] == 0\n225:",
+        "232:        policy(position=context, snapshot=snapshot(), prior_state=state)\n233:    policy.open_position(position_id=\"A\", replay_pair=\"pair\", entry_time=at(0), entry_price=100)\n234:    policy.close_position(\"A\")\n235:    with pytest.raises(RD27StateError, match=\"unknown/closed\"):\n236:        policy(position=context, snapshot=snapshot(), prior_state=state)"
+      ],
+      "path": "tests/research/test_rd27_observable_memory_predicate.py",
+      "sha256": "03998BC98E222D5C728E3A34275508648643149FFEE58755FC1E30211966871A",
+      "terms": [
+        "rd27_lifecycle_replay",
+        "close_position("
+      ]
+    }
+  ]
+}

@@ -1,0 +1,299 @@
+{
+  "code_path_trace_status": "PASS_TRACE_MATERIALIZED",
+  "control_audit": {
+    "duplicates": 0,
+    "native_exit_field": "exit_time",
+    "quantity_field": "quantity",
+    "rows": 2020,
+    "status": "PASS"
+  },
+  "current_notional": {
+    "new_authority_search": false,
+    "new_replay_classification": false,
+    "prior_scientific_recovery_revision": 705,
+    "proof": {
+      "coverage": 1.0,
+      "method": "DERIVED_QUANTITY_X_DECISION_MARK_PRICE",
+      "path": "governance/abc_lifecycle_state_machine_exact_one_step_continuation_value_mega_v1/exact_two_sided_continuation_ledger.csv",
+      "price_field": "current_mark_price",
+      "source_sha256": "3FCA5959BA38B95D5F8F2D42B41D6A2AA6E2ECC8AD0E5C0B2B4E6E1057C49139",
+      "status": "PASS"
+    },
+    "status": "PASS_FROZEN_METHOD_REMATERIALIZED"
+  },
+  "hold_cost": {
+    "algebra": "hold_cost = hold_net * r / (1-r), where code proves exit_cost=gross*r and anchor is canonical hold net cash",
+    "bad": 0,
+    "baseline_exit_cost_rate": 0.00125,
+    "code_evidence": [
+      {
+        "line": 292,
+        "path": "src/spotbot/research/abc_exit_primitives_v1.py",
+        "sha256": "EE6C74F098ABDA63213E40CB6D0CC57F6BA012D35F90475361F7A25B94621284",
+        "snippet": "00289:     policy_id: str,\n00290:     portfolio_id: str,\n00291:     universe_id: str,\n00292:     cost_multiplier: float,\n00293: ) -> tuple[dict[str, Any], float]:\n00294:     exit_notional = position.quantity * exit_price\n00295:     exit_cost = exit_notional * side_cost\n00296:     gross_pnl = exit_notional - position.entry_notional"
+      },
+      {
+        "line": 294,
+        "path": "src/spotbot/research/abc_exit_primitives_v1.py",
+        "sha256": "EE6C74F098ABDA63213E40CB6D0CC57F6BA012D35F90475361F7A25B94621284",
+        "snippet": "00291:     universe_id: str,\n00292:     cost_multiplier: float,\n00293: ) -> tuple[dict[str, Any], float]:\n00294:     exit_notional = position.quantity * exit_price\n00295:     exit_cost = exit_notional * side_cost\n00296:     gross_pnl = exit_notional - position.entry_notional\n00297:     net_pnl = gross_pnl - position.entry_cost - exit_cost\n00298:     cash_credit = exit_notional - exit_cost"
+      },
+      {
+        "line": 295,
+        "path": "src/spotbot/research/abc_exit_primitives_v1.py",
+        "sha256": "EE6C74F098ABDA63213E40CB6D0CC57F6BA012D35F90475361F7A25B94621284",
+        "snippet": "00292:     cost_multiplier: float,\n00293: ) -> tuple[dict[str, Any], float]:\n00294:     exit_notional = position.quantity * exit_price\n00295:     exit_cost = exit_notional * side_cost\n00296:     gross_pnl = exit_notional - position.entry_notional\n00297:     net_pnl = gross_pnl - position.entry_cost - exit_cost\n00298:     cash_credit = exit_notional - exit_cost\n00299:     holding_hours = int((_utc(timestamp) - position.entry_time).total_seconds() / 3600.0)"
+      },
+      {
+        "line": 296,
+        "path": "src/spotbot/research/abc_exit_primitives_v1.py",
+        "sha256": "EE6C74F098ABDA63213E40CB6D0CC57F6BA012D35F90475361F7A25B94621284",
+        "snippet": "00293: ) -> tuple[dict[str, Any], float]:\n00294:     exit_notional = position.quantity * exit_price\n00295:     exit_cost = exit_notional * side_cost\n00296:     gross_pnl = exit_notional - position.entry_notional\n00297:     net_pnl = gross_pnl - position.entry_cost - exit_cost\n00298:     cash_credit = exit_notional - exit_cost\n00299:     holding_hours = int((_utc(timestamp) - position.entry_time).total_seconds() / 3600.0)\n00300:     return {"
+      },
+      {
+        "line": 297,
+        "path": "src/spotbot/research/abc_exit_primitives_v1.py",
+        "sha256": "EE6C74F098ABDA63213E40CB6D0CC57F6BA012D35F90475361F7A25B94621284",
+        "snippet": "00294:     exit_notional = position.quantity * exit_price\n00295:     exit_cost = exit_notional * side_cost\n00296:     gross_pnl = exit_notional - position.entry_notional\n00297:     net_pnl = gross_pnl - position.entry_cost - exit_cost\n00298:     cash_credit = exit_notional - exit_cost\n00299:     holding_hours = int((_utc(timestamp) - position.entry_time).total_seconds() / 3600.0)\n00300:     return {\n00301:         \"policy_id\": policy_id,"
+      },
+      {
+        "line": 298,
+        "path": "src/spotbot/research/abc_exit_primitives_v1.py",
+        "sha256": "EE6C74F098ABDA63213E40CB6D0CC57F6BA012D35F90475361F7A25B94621284",
+        "snippet": "00295:     exit_cost = exit_notional * side_cost\n00296:     gross_pnl = exit_notional - position.entry_notional\n00297:     net_pnl = gross_pnl - position.entry_cost - exit_cost\n00298:     cash_credit = exit_notional - exit_cost\n00299:     holding_hours = int((_utc(timestamp) - position.entry_time).total_seconds() / 3600.0)\n00300:     return {\n00301:         \"policy_id\": policy_id,\n00302:         \"portfolio_id\": portfolio_id,"
+      },
+      {
+        "line": 817,
+        "path": "src/spotbot/research/abc_exit_primitives_v1.py",
+        "sha256": "EE6C74F098ABDA63213E40CB6D0CC57F6BA012D35F90475361F7A25B94621284",
+        "snippet": "00814:                 modified_exit_time = scheduled\n00815:                 modified_exit_price = float(hour.iloc[0][\"open\"])\n00816: \n00817:     quantity = float(trade[\"quantity\"])\n00818:     entry_notional = float(trade[\"entry_notional\"])\n00819:     entry_cost = float(trade[\"entry_cost\"])\n00820:     modified_exit_notional = quantity * modified_exit_price\n00821:     modified_exit_cost = modified_exit_notional * side_cost"
+      },
+      {
+        "line": 819,
+        "path": "src/spotbot/research/abc_exit_primitives_v1.py",
+        "sha256": "EE6C74F098ABDA63213E40CB6D0CC57F6BA012D35F90475361F7A25B94621284",
+        "snippet": "00816: \n00817:     quantity = float(trade[\"quantity\"])\n00818:     entry_notional = float(trade[\"entry_notional\"])\n00819:     entry_cost = float(trade[\"entry_cost\"])\n00820:     modified_exit_notional = quantity * modified_exit_price\n00821:     modified_exit_cost = modified_exit_notional * side_cost\n00822:     modified_net_pnl = modified_exit_notional - entry_notional - entry_cost - modified_exit_cost\n00823:     control_net_pnl = float(trade[\"net_pnl\"])"
+      },
+      {
+        "line": 820,
+        "path": "src/spotbot/research/abc_exit_primitives_v1.py",
+        "sha256": "EE6C74F098ABDA63213E40CB6D0CC57F6BA012D35F90475361F7A25B94621284",
+        "snippet": "00817:     quantity = float(trade[\"quantity\"])\n00818:     entry_notional = float(trade[\"entry_notional\"])\n00819:     entry_cost = float(trade[\"entry_cost\"])\n00820:     modified_exit_notional = quantity * modified_exit_price\n00821:     modified_exit_cost = modified_exit_notional * side_cost\n00822:     modified_net_pnl = modified_exit_notional - entry_notional - entry_cost - modified_exit_cost\n00823:     control_net_pnl = float(trade[\"net_pnl\"])\n00824:     delta = modified_net_pnl - control_net_pnl"
+      },
+      {
+        "line": 821,
+        "path": "src/spotbot/research/abc_exit_primitives_v1.py",
+        "sha256": "EE6C74F098ABDA63213E40CB6D0CC57F6BA012D35F90475361F7A25B94621284",
+        "snippet": "00818:     entry_notional = float(trade[\"entry_notional\"])\n00819:     entry_cost = float(trade[\"entry_cost\"])\n00820:     modified_exit_notional = quantity * modified_exit_price\n00821:     modified_exit_cost = modified_exit_notional * side_cost\n00822:     modified_net_pnl = modified_exit_notional - entry_notional - entry_cost - modified_exit_cost\n00823:     control_net_pnl = float(trade[\"net_pnl\"])\n00824:     delta = modified_net_pnl - control_net_pnl\n00825: "
+      },
+      {
+        "line": 822,
+        "path": "src/spotbot/research/abc_exit_primitives_v1.py",
+        "sha256": "EE6C74F098ABDA63213E40CB6D0CC57F6BA012D35F90475361F7A25B94621284",
+        "snippet": "00819:     entry_cost = float(trade[\"entry_cost\"])\n00820:     modified_exit_notional = quantity * modified_exit_price\n00821:     modified_exit_cost = modified_exit_notional * side_cost\n00822:     modified_net_pnl = modified_exit_notional - entry_notional - entry_cost - modified_exit_cost\n00823:     control_net_pnl = float(trade[\"net_pnl\"])\n00824:     delta = modified_net_pnl - control_net_pnl\n00825: \n00826:     return {"
+      }
+    ],
+    "control_rate_audit": {
+      "baseline_rate": 0.00125,
+      "rate_summary": {
+        "1.0": {
+          "count": 2020,
+          "max": 0.0012500000000000002,
+          "mean": 0.00125,
+          "min": 0.0012499999999999998,
+          "spread": 4.336808689942018e-19
+        }
+      },
+      "rows": 2020,
+      "status": "PASS"
+    },
+    "coverage": 1.0,
+    "method": "CODE_PATH_PROPORTIONAL_EXIT_COST_INVERTED_FROM_HOLD_NET",
+    "status": "PASS"
+  },
+  "missing_fields": [
+    "pi0_action"
+  ],
+  "new_replay_executed": false,
+  "pi0_action": {
+    "attempts": [
+      {
+        "code_delay_hours": 1.0,
+        "coverage": 0.22175086772078673,
+        "issue_count": 258,
+        "observed_offsets": [
+          1.0,
+          2.0,
+          3.0,
+          4.0
+        ]
+      },
+      {
+        "code_delay_hours": 4.0,
+        "coverage": 0.33243347473968377,
+        "issue_count": 233,
+        "observed_offsets": [
+          1.0,
+          2.0,
+          3.0,
+          4.0
+        ]
+      },
+      {
+        "code_delay_hours": 8.0,
+        "coverage": 0.0,
+        "issue_count": 340,
+        "observed_offsets": [
+          1.0,
+          2.0,
+          3.0,
+          4.0
+        ]
+      }
+    ],
+    "code_delay_candidates": [
+      1.0,
+      4.0,
+      8.0
+    ],
+    "code_delay_evidence": [
+      {
+        "hours": 1.0,
+        "line": 394,
+        "path": "src/spotbot/research/abc_exit_primitives_v1.py",
+        "sha256": "EE6C74F098ABDA63213E40CB6D0CC57F6BA012D35F90475361F7A25B94621284",
+        "snippet": "00391:     for raw in events.to_dict(orient=\"records\"):\n00392:         signal_time = _utc(raw[\"timestamp\"])\n00393:         entry_time = signal_time + pd.Timedelta(hours=1)\n00394:         max_exit_time = entry_time + pd.Timedelta(hours=MAX_HOLD_HOURS)\n00395:         if entry_time < replay_start or not (max_exit_time < replay_cutoff):\n00396:             continue\n00397:         scheduled.setdefault(int(entry_time.value), []).append(\n00398:             {**raw, \"signal_time\": signal_time, \"entry_time\": entry_time, \"max_exit_time\": max_exit_time}"
+      },
+      {
+        "hours": 1.0,
+        "line": 395,
+        "path": "src/spotbot/research/abc_exit_primitives_v1.py",
+        "sha256": "EE6C74F098ABDA63213E40CB6D0CC57F6BA012D35F90475361F7A25B94621284",
+        "snippet": "00392:         signal_time = _utc(raw[\"timestamp\"])\n00393:         entry_time = signal_time + pd.Timedelta(hours=1)\n00394:         max_exit_time = entry_time + pd.Timedelta(hours=MAX_HOLD_HOURS)\n00395:         if entry_time < replay_start or not (max_exit_time < replay_cutoff):\n00396:             continue\n00397:         scheduled.setdefault(int(entry_time.value), []).append(\n00398:             {**raw, \"signal_time\": signal_time, \"entry_time\": entry_time, \"max_exit_time\": max_exit_time}\n00399:         )"
+      },
+      {
+        "hours": 1.0,
+        "line": 204,
+        "path": "governance/abc_lifecycle_state_machine_two_sided_one_step_execution_surface_v1/two_sided_research_sidecar_v1.py",
+        "sha256": "56139B4FBEAF789B03368BBD73ED667C3C876527A33E6BDFE470778EC6B03FD0",
+        "snippet": "00201:                     ),\n00202:                     {\"optional_exits_suppressed\": suppressed, \"mandatory_exits_seen\": mandatory_seen},\n00203:                 )\n00204:             if ts < hold_until:\n00205:                 suppressed += 1\n00206:                 survivor_decision = suppress_optional_decision(decision)\n00207:                 lifecycle = _survivor_update(rd27, lifecycle, survivor_decision, bar)\n00208:                 ts += pd.Timedelta(hours=1)"
+      },
+      {
+        "hours": 1.0,
+        "line": 225,
+        "path": "governance/abc_lifecycle_state_machine_two_sided_one_step_execution_surface_v1/two_sided_research_sidecar_v1.py",
+        "sha256": "56139B4FBEAF789B03368BBD73ED667C3C876527A33E6BDFE470778EC6B03FD0",
+        "snippet": "00222:             )\n00223:         lifecycle = _survivor_update(rd27, lifecycle, decision, bar)\n00224:         ts += pd.Timedelta(hours=1)\n00225:     raise TwoSidedSurfaceError(\"HOLD_BRANCH_REACHED_END_WITHOUT_EXIT\")\n00226: \n00227: \n00228: def self_test() -> None:\n00229:     assert classify_exit_reason(\"MAX_HOLD_168H\") == \"MANDATORY\""
+      },
+      {
+        "hours": 8.0,
+        "line": 266,
+        "path": "governance/abc_lifecycle_state_machine_two_sided_one_step_execution_surface_v1/two_sided_research_sidecar_v1.py",
+        "sha256": "56139B4FBEAF789B03368BBD73ED667C3C876527A33E6BDFE470778EC6B03FD0",
+        "snippet": "00263:         bars[int(ts.value)] = {\"open\": 100.0 + h, \"high\": 101.0 + h, \"low\": 99.0 + h, \"close\": 100.5 + h}\n00264:     state = lambda _ts: \"RISK_ON\"\n00265:     rd = _R({4: \"ADAPTIVE_STAGNATION_24H\", 6: \"ADAPTIVE_PROTECTION_TOUCH\"})\n00266:     hold, audit = simulate_hold_one_step_then_pi0(\n00267:         rd27=rd, lifecycle_snapshot={\"x\": 1}, decision_time=start, step_hours=4,\n00268:         max_exit_time=start + pd.Timedelta(hours=8), bar_lookup=bars,\n00269:         market_state_at=state, quantity=1.0, exit_side_cost=0.0,\n00270:     )"
+      },
+      {
+        "hours": 8.0,
+        "line": 267,
+        "path": "governance/abc_lifecycle_state_machine_two_sided_one_step_execution_surface_v1/two_sided_research_sidecar_v1.py",
+        "sha256": "56139B4FBEAF789B03368BBD73ED667C3C876527A33E6BDFE470778EC6B03FD0",
+        "snippet": "00264:     state = lambda _ts: \"RISK_ON\"\n00265:     rd = _R({4: \"ADAPTIVE_STAGNATION_24H\", 6: \"ADAPTIVE_PROTECTION_TOUCH\"})\n00266:     hold, audit = simulate_hold_one_step_then_pi0(\n00267:         rd27=rd, lifecycle_snapshot={\"x\": 1}, decision_time=start, step_hours=4,\n00268:         max_exit_time=start + pd.Timedelta(hours=8), bar_lookup=bars,\n00269:         market_state_at=state, quantity=1.0, exit_side_cost=0.0,\n00270:     )\n00271:     assert audit[\"optional_exits_suppressed\"] == 1"
+      },
+      {
+        "hours": 8.0,
+        "line": 268,
+        "path": "governance/abc_lifecycle_state_machine_two_sided_one_step_execution_surface_v1/two_sided_research_sidecar_v1.py",
+        "sha256": "56139B4FBEAF789B03368BBD73ED667C3C876527A33E6BDFE470778EC6B03FD0",
+        "snippet": "00265:     rd = _R({4: \"ADAPTIVE_STAGNATION_24H\", 6: \"ADAPTIVE_PROTECTION_TOUCH\"})\n00266:     hold, audit = simulate_hold_one_step_then_pi0(\n00267:         rd27=rd, lifecycle_snapshot={\"x\": 1}, decision_time=start, step_hours=4,\n00268:         max_exit_time=start + pd.Timedelta(hours=8), bar_lookup=bars,\n00269:         market_state_at=state, quantity=1.0, exit_side_cost=0.0,\n00270:     )\n00271:     assert audit[\"optional_exits_suppressed\"] == 1\n00272:     assert hold.exit_reason == \"ADAPTIVE_PROTECTION_TOUCH\" and hold.mandatory_exit"
+      },
+      {
+        "hours": 8.0,
+        "line": 269,
+        "path": "governance/abc_lifecycle_state_machine_two_sided_one_step_execution_surface_v1/two_sided_research_sidecar_v1.py",
+        "sha256": "56139B4FBEAF789B03368BBD73ED667C3C876527A33E6BDFE470778EC6B03FD0",
+        "snippet": "00266:     hold, audit = simulate_hold_one_step_then_pi0(\n00267:         rd27=rd, lifecycle_snapshot={\"x\": 1}, decision_time=start, step_hours=4,\n00268:         max_exit_time=start + pd.Timedelta(hours=8), bar_lookup=bars,\n00269:         market_state_at=state, quantity=1.0, exit_side_cost=0.0,\n00270:     )\n00271:     assert audit[\"optional_exits_suppressed\"] == 1\n00272:     assert hold.exit_reason == \"ADAPTIVE_PROTECTION_TOUCH\" and hold.mandatory_exit\n00273:     rd2 = _R({8: \"ADAPTIVE_STAGNATION_24H\"})"
+      },
+      {
+        "hours": 8.0,
+        "line": 272,
+        "path": "governance/abc_lifecycle_state_machine_two_sided_one_step_execution_surface_v1/two_sided_research_sidecar_v1.py",
+        "sha256": "56139B4FBEAF789B03368BBD73ED667C3C876527A33E6BDFE470778EC6B03FD0",
+        "snippet": "00269:         market_state_at=state, quantity=1.0, exit_side_cost=0.0,\n00270:     )\n00271:     assert audit[\"optional_exits_suppressed\"] == 1\n00272:     assert hold.exit_reason == \"ADAPTIVE_PROTECTION_TOUCH\" and hold.mandatory_exit\n00273:     rd2 = _R({8: \"ADAPTIVE_STAGNATION_24H\"})\n00274:     hold2, audit2 = simulate_hold_one_step_then_pi0(\n00275:         rd27=rd2, lifecycle_snapshot={\"x\": 1}, decision_time=start, step_hours=4,\n00276:         max_exit_time=start + pd.Timedelta(hours=8), bar_lookup=bars,"
+      },
+      {
+        "hours": 8.0,
+        "line": 274,
+        "path": "governance/abc_lifecycle_state_machine_two_sided_one_step_execution_surface_v1/two_sided_research_sidecar_v1.py",
+        "sha256": "56139B4FBEAF789B03368BBD73ED667C3C876527A33E6BDFE470778EC6B03FD0",
+        "snippet": "00271:     assert audit[\"optional_exits_suppressed\"] == 1\n00272:     assert hold.exit_reason == \"ADAPTIVE_PROTECTION_TOUCH\" and hold.mandatory_exit\n00273:     rd2 = _R({8: \"ADAPTIVE_STAGNATION_24H\"})\n00274:     hold2, audit2 = simulate_hold_one_step_then_pi0(\n00275:         rd27=rd2, lifecycle_snapshot={\"x\": 1}, decision_time=start, step_hours=4,\n00276:         max_exit_time=start + pd.Timedelta(hours=8), bar_lookup=bars,\n00277:         market_state_at=state, quantity=1.0, exit_side_cost=0.0,\n00278:     )"
+      },
+      {
+        "hours": 8.0,
+        "line": 275,
+        "path": "governance/abc_lifecycle_state_machine_two_sided_one_step_execution_surface_v1/two_sided_research_sidecar_v1.py",
+        "sha256": "56139B4FBEAF789B03368BBD73ED667C3C876527A33E6BDFE470778EC6B03FD0",
+        "snippet": "00272:     assert hold.exit_reason == \"ADAPTIVE_PROTECTION_TOUCH\" and hold.mandatory_exit\n00273:     rd2 = _R({8: \"ADAPTIVE_STAGNATION_24H\"})\n00274:     hold2, audit2 = simulate_hold_one_step_then_pi0(\n00275:         rd27=rd2, lifecycle_snapshot={\"x\": 1}, decision_time=start, step_hours=4,\n00276:         max_exit_time=start + pd.Timedelta(hours=8), bar_lookup=bars,\n00277:         market_state_at=state, quantity=1.0, exit_side_cost=0.0,\n00278:     )\n00279:     assert hold2.exit_time == start + pd.Timedelta(hours=4)"
+      },
+      {
+        "hours": 4.0,
+        "line": 275,
+        "path": "governance/abc_lifecycle_state_machine_two_sided_one_step_execution_surface_v1/two_sided_research_sidecar_v1.py",
+        "sha256": "56139B4FBEAF789B03368BBD73ED667C3C876527A33E6BDFE470778EC6B03FD0",
+        "snippet": "00272:     assert hold.exit_reason == \"ADAPTIVE_PROTECTION_TOUCH\" and hold.mandatory_exit\n00273:     rd2 = _R({8: \"ADAPTIVE_STAGNATION_24H\"})\n00274:     hold2, audit2 = simulate_hold_one_step_then_pi0(\n00275:         rd27=rd2, lifecycle_snapshot={\"x\": 1}, decision_time=start, step_hours=4,\n00276:         max_exit_time=start + pd.Timedelta(hours=8), bar_lookup=bars,\n00277:         market_state_at=state, quantity=1.0, exit_side_cost=0.0,\n00278:     )\n00279:     assert hold2.exit_time == start + pd.Timedelta(hours=4)"
+      },
+      {
+        "hours": 8.0,
+        "line": 276,
+        "path": "governance/abc_lifecycle_state_machine_two_sided_one_step_execution_surface_v1/two_sided_research_sidecar_v1.py",
+        "sha256": "56139B4FBEAF789B03368BBD73ED667C3C876527A33E6BDFE470778EC6B03FD0",
+        "snippet": "00273:     rd2 = _R({8: \"ADAPTIVE_STAGNATION_24H\"})\n00274:     hold2, audit2 = simulate_hold_one_step_then_pi0(\n00275:         rd27=rd2, lifecycle_snapshot={\"x\": 1}, decision_time=start, step_hours=4,\n00276:         max_exit_time=start + pd.Timedelta(hours=8), bar_lookup=bars,\n00277:         market_state_at=state, quantity=1.0, exit_side_cost=0.0,\n00278:     )\n00279:     assert hold2.exit_time == start + pd.Timedelta(hours=4)\n00280:     assert hold2.exit_reason == \"ADAPTIVE_STAGNATION_24H\""
+      },
+      {
+        "hours": 4.0,
+        "line": 276,
+        "path": "governance/abc_lifecycle_state_machine_two_sided_one_step_execution_surface_v1/two_sided_research_sidecar_v1.py",
+        "sha256": "56139B4FBEAF789B03368BBD73ED667C3C876527A33E6BDFE470778EC6B03FD0",
+        "snippet": "00273:     rd2 = _R({8: \"ADAPTIVE_STAGNATION_24H\"})\n00274:     hold2, audit2 = simulate_hold_one_step_then_pi0(\n00275:         rd27=rd2, lifecycle_snapshot={\"x\": 1}, decision_time=start, step_hours=4,\n00276:         max_exit_time=start + pd.Timedelta(hours=8), bar_lookup=bars,\n00277:         market_state_at=state, quantity=1.0, exit_side_cost=0.0,\n00278:     )\n00279:     assert hold2.exit_time == start + pd.Timedelta(hours=4)\n00280:     assert hold2.exit_reason == \"ADAPTIVE_STAGNATION_24H\""
+      },
+      {
+        "hours": 8.0,
+        "line": 277,
+        "path": "governance/abc_lifecycle_state_machine_two_sided_one_step_execution_surface_v1/two_sided_research_sidecar_v1.py",
+        "sha256": "56139B4FBEAF789B03368BBD73ED667C3C876527A33E6BDFE470778EC6B03FD0",
+        "snippet": "00274:     hold2, audit2 = simulate_hold_one_step_then_pi0(\n00275:         rd27=rd2, lifecycle_snapshot={\"x\": 1}, decision_time=start, step_hours=4,\n00276:         max_exit_time=start + pd.Timedelta(hours=8), bar_lookup=bars,\n00277:         market_state_at=state, quantity=1.0, exit_side_cost=0.0,\n00278:     )\n00279:     assert hold2.exit_time == start + pd.Timedelta(hours=4)\n00280:     assert hold2.exit_reason == \"ADAPTIVE_STAGNATION_24H\"\n00281:     assert audit2[\"optional_exits_suppressed\"] == 0"
+      },
+      {
+        "hours": 4.0,
+        "line": 277,
+        "path": "governance/abc_lifecycle_state_machine_two_sided_one_step_execution_surface_v1/two_sided_research_sidecar_v1.py",
+        "sha256": "56139B4FBEAF789B03368BBD73ED667C3C876527A33E6BDFE470778EC6B03FD0",
+        "snippet": "00274:     hold2, audit2 = simulate_hold_one_step_then_pi0(\n00275:         rd27=rd2, lifecycle_snapshot={\"x\": 1}, decision_time=start, step_hours=4,\n00276:         max_exit_time=start + pd.Timedelta(hours=8), bar_lookup=bars,\n00277:         market_state_at=state, quantity=1.0, exit_side_cost=0.0,\n00278:     )\n00279:     assert hold2.exit_time == start + pd.Timedelta(hours=4)\n00280:     assert hold2.exit_reason == \"ADAPTIVE_STAGNATION_24H\"\n00281:     assert audit2[\"optional_exits_suppressed\"] == 0"
+      },
+      {
+        "hours": 8.0,
+        "line": 279,
+        "path": "governance/abc_lifecycle_state_machine_two_sided_one_step_execution_surface_v1/two_sided_research_sidecar_v1.py",
+        "sha256": "56139B4FBEAF789B03368BBD73ED667C3C876527A33E6BDFE470778EC6B03FD0",
+        "snippet": "00276:         max_exit_time=start + pd.Timedelta(hours=8), bar_lookup=bars,\n00277:         market_state_at=state, quantity=1.0, exit_side_cost=0.0,\n00278:     )\n00279:     assert hold2.exit_time == start + pd.Timedelta(hours=4)\n00280:     assert hold2.exit_reason == \"ADAPTIVE_STAGNATION_24H\"\n00281:     assert audit2[\"optional_exits_suppressed\"] == 0\n00282: \n00283: "
+      },
+      {
+        "hours": 4.0,
+        "line": 279,
+        "path": "governance/abc_lifecycle_state_machine_two_sided_one_step_execution_surface_v1/two_sided_research_sidecar_v1.py",
+        "sha256": "56139B4FBEAF789B03368BBD73ED667C3C876527A33E6BDFE470778EC6B03FD0",
+        "snippet": "00276:         max_exit_time=start + pd.Timedelta(hours=8), bar_lookup=bars,\n00277:         market_state_at=state, quantity=1.0, exit_side_cost=0.0,\n00278:     )\n00279:     assert hold2.exit_time == start + pd.Timedelta(hours=4)\n00280:     assert hold2.exit_reason == \"ADAPTIVE_STAGNATION_24H\"\n00281:     assert audit2[\"optional_exits_suppressed\"] == 0\n00282: \n00283: "
+      },
+      {
+        "hours": 4.0,
+        "line": 280,
+        "path": "governance/abc_lifecycle_state_machine_two_sided_one_step_execution_surface_v1/two_sided_research_sidecar_v1.py",
+        "sha256": "56139B4FBEAF789B03368BBD73ED667C3C876527A33E6BDFE470778EC6B03FD0",
+        "snippet": "00277:         market_state_at=state, quantity=1.0, exit_side_cost=0.0,\n00278:     )\n00279:     assert hold2.exit_time == start + pd.Timedelta(hours=4)\n00280:     assert hold2.exit_reason == \"ADAPTIVE_STAGNATION_24H\"\n00281:     assert audit2[\"optional_exits_suppressed\"] == 0\n00282: \n00283: \n00284: if __name__ == \"__main__\":"
+      }
+    ],
+    "method": "CODE_PATH_DELAY_PLUS_100PCT_LIFECYCLE_PARITY",
+    "passing_candidate_count": 0,
+    "status": "NOT_PROVEN"
+  },
+  "status": "BLOCKED"
+}

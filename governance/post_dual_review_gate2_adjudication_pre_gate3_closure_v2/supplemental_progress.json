@@ -1,0 +1,614 @@
+{
+  "needs": {
+    "FS_ICT_2022_CORE_CRYPTO_LONG:2022": 0,
+    "FS_ICT_2022_CORE_CRYPTO_LONG:2023": 0,
+    "FS_WYCKOFF_FULL_LONG:2022": 0,
+    "FS_WYCKOFF_FULL_LONG:2023": 0
+  },
+  "readers": {
+    "ACH-USDT": {
+      "bounded_input_sha256": "889ca85e08286dd6749c60397a3f4e12c5b8a7b02c439803266208a99396471c",
+      "cache_key": "c66c9b4c8eb5d54717dde2f9390cef74e5770fb3939af38bac970123a4ebdf9e",
+      "max": "2023-12-31 23:00:00+00:00",
+      "min": "2022-05-25 09:00:00+00:00",
+      "protected_rows_loaded": 0,
+      "rows": 14055
+    },
+    "ADX-USDT": {
+      "bounded_input_sha256": "65672ae74739de88a9bf4539a7849e171fcf890b87dd5a22c9d2b6c398a330be",
+      "cache_key": "ffcc0e59fd1e4dc5039560d925fe1016722b5451df0245e2dd5adc1f22793f48",
+      "max": "2023-12-31 23:00:00+00:00",
+      "min": "2021-11-17 11:00:00+00:00",
+      "protected_rows_loaded": 0,
+      "rows": 18589
+    },
+    "ALICE-USDT": {
+      "bounded_input_sha256": "f8f6dd59f449f0d919edc822b107357cc0cb0f5ba900a182a2127038b71fbf3a",
+      "cache_key": "b14d63f86f104e8236fcea0c48e9883288a9c93e41ec515a7cdcdf0cc8470260",
+      "max": "2023-12-31 23:00:00+00:00",
+      "min": "2021-09-23 11:00:00+00:00",
+      "protected_rows_loaded": 0,
+      "rows": 19909
+    },
+    "ASTR-USDT": {
+      "bounded_input_sha256": "c896a7886b2055939fb3df927f0a8f4ada4debc66462f11e704f915466d7171c",
+      "cache_key": "0d29eb96758ea5c12fa84e96dfeffde9af9e87284e0cec406e14ba5e127f4847",
+      "max": "2023-12-31 23:00:00+00:00",
+      "min": "2022-01-20 10:00:00+00:00",
+      "protected_rows_loaded": 0,
+      "rows": 17054
+    },
+    "BCH-USDT": {
+      "bounded_input_sha256": "753a509d8fa67d0000e10968d8ec1a4bbc4c35617d5d0c963339acc79dfb5f03",
+      "cache_key": "efd80dec34055bc4d1573033fe65e6b2f097149554fab3dc69ad20e4a27c5f5f",
+      "max": "2023-12-31 23:00:00+00:00",
+      "min": "2021-09-01 00:00:00+00:00",
+      "protected_rows_loaded": 0,
+      "rows": 20448
+    },
+    "BOBA-USDT": {
+      "bounded_input_sha256": "39b6e0846f00342ad264c2557f5c6ed4d9e7b7150a83050c27c844bb32ba6049",
+      "cache_key": "1c78ac0aa3efe4c2332e65a4d919f429c1372e649bfa329b50eeb35618512d10",
+      "max": "2023-12-31 23:00:00+00:00",
+      "min": "2022-05-10 10:00:00+00:00",
+      "protected_rows_loaded": 0,
+      "rows": 14414
+    },
+    "BTC-USDT": {
+      "bounded_input_sha256": "1c2bf4b09825434089b3d8654e57b4563b5a6e3f6c3c9e331b964167f24f0c7e",
+      "cache_key": "45b5ae1e4d1cdc5882af97839ff05fba91283d01f876d802240a6f9dafa2ba8c",
+      "max": "2023-12-31 23:00:00+00:00",
+      "min": "2021-09-01 00:00:00+00:00",
+      "protected_rows_loaded": 0,
+      "rows": 20448
+    },
+    "COMP-USDT": {
+      "bounded_input_sha256": "fb08e03828883e478f5df73156d513e1f143da3a5e0775f8b7b9f13ee5abd22e",
+      "cache_key": "866f51fefb784bff87dec4d6723effad0b88266c71b1023b0aecf2005f7bddaa",
+      "max": "2023-12-31 23:00:00+00:00",
+      "min": "2021-09-01 00:00:00+00:00",
+      "protected_rows_loaded": 0,
+      "rows": 20448
+    },
+    "DEXE-USDT": {
+      "bounded_input_sha256": "bff0e17b1350abe9e4f9fec79ac085ec8b3bd79da208d0954775642ba4a1ec72",
+      "cache_key": "96fe65bbd6ed054ef44a4786531bc26717c1c724e22c80e9642d5626551fd7d7",
+      "max": "2023-12-31 23:00:00+00:00",
+      "min": "2021-09-27 11:00:00+00:00",
+      "protected_rows_loaded": 0,
+      "rows": 19813
+    },
+    "ERG-USDT": {
+      "bounded_input_sha256": "caa259eefbcd01f004ada0a93df0145041401a64514e41117e26a07dbf8d4aaf",
+      "cache_key": "01170f1e8e4d61453aca5168779cbcb976562a1f53e1bfee4126e404405a9a55",
+      "max": "2023-12-31 23:00:00+00:00",
+      "min": "2021-09-01 00:00:00+00:00",
+      "protected_rows_loaded": 0,
+      "rows": 20448
+    },
+    "ETH-USDT": {
+      "bounded_input_sha256": "cf5afbe2bd784dac87bb8478709ffb88b8e005d2c6f7a2f5e5048fcab857d8a9",
+      "cache_key": "20af5af7eb522e7c0ed5f1e04b44d4f869048ee1bae4708ca3303b6edb6286ec",
+      "max": "2023-12-31 23:00:00+00:00",
+      "min": "2021-09-01 00:00:00+00:00",
+      "protected_rows_loaded": 0,
+      "rows": 20448
+    },
+    "FORTH-USDT": {
+      "bounded_input_sha256": "d31e1550d67a14b2cd0363efb29fe0d50ef9ac15beec53a2ad79d1b72efe469e",
+      "cache_key": "8b06593b7af916a02d840fb05692e89b9e32085dd83594ce7720648d4c180632",
+      "max": "2023-12-31 23:00:00+00:00",
+      "min": "2021-09-01 00:00:00+00:00",
+      "protected_rows_loaded": 0,
+      "rows": 20448
+    },
+    "FTT-USDT": {
+      "bounded_input_sha256": "9d094c7cedd59a7e1af8bc9fc148aefeffa451103e2e227937f95960076bfa34",
+      "cache_key": "1c1e76631f6624adbfde0968dd77e32d9a3e7077916066bbf8fe3963dc322dea",
+      "max": "2023-12-31 23:00:00+00:00",
+      "min": "2021-09-24 11:00:00+00:00",
+      "protected_rows_loaded": 0,
+      "rows": 19885
+    },
+    "GALAX-USDT": {
+      "bounded_input_sha256": "2f0cb9e374c5ab45c740d1a0481bd41e8dcfbef6e9b0884c042d15fa46e3533f",
+      "cache_key": "ffdfddee981466401c70f27f2f1d55cf79531621be56ba352f3099f856a78e78",
+      "max": "2023-12-31 23:00:00+00:00",
+      "min": "2021-09-01 00:00:00+00:00",
+      "protected_rows_loaded": 0,
+      "rows": 20448
+    },
+    "GMEE-USDT": {
+      "bounded_input_sha256": "b1518b5f0848096633bd88a9067e283a08457b4b09e908b7cdd5080f0bf1bfce",
+      "cache_key": "e7f440d8881d24c64796cfe3aab9a730e16df21329a49b87d95ada531c8bc27a",
+      "max": "2023-12-31 23:00:00+00:00",
+      "min": "2021-09-01 00:00:00+00:00",
+      "protected_rows_loaded": 0,
+      "rows": 20448
+    },
+    "GMT-USDT": {
+      "bounded_input_sha256": "1ba4f9c00a65ed7ac6aee2b8851ac182da1bae94a1a2fdcac282b77250e0bb44",
+      "cache_key": "8eedc235acb965e2b04171d6872b72d226111278675792925297d6f21451c765",
+      "max": "2023-12-31 23:00:00+00:00",
+      "min": "2022-03-18 11:00:00+00:00",
+      "protected_rows_loaded": 0,
+      "rows": 15685
+    },
+    "GMX-USDT": {
+      "bounded_input_sha256": "edaa2e98605ecea195f56e81c8e491b15821a6cdcead770a65d8685973428597",
+      "cache_key": "a44a11161f3c69fdc0380e2fb6c294fcf4d4bfd894441b4d9d93ec9113220527",
+      "max": "2023-12-31 23:00:00+00:00",
+      "min": "2022-10-14 11:00:00+00:00",
+      "protected_rows_loaded": 0,
+      "rows": 10645
+    },
+    "GRT-USDT": {
+      "bounded_input_sha256": "e0f16b773b19917a1ecf554a8455813973ae7fa3e2a24e743148192a8fae8b4d",
+      "cache_key": "06b5aa273f99699827bafe6f186119aa07cc34b27d6c71c8fe9b77e8cd10cd0a",
+      "max": "2023-12-31 23:00:00+00:00",
+      "min": "2021-09-01 00:00:00+00:00",
+      "protected_rows_loaded": 0,
+      "rows": 20448
+    },
+    "JST-USDT": {
+      "bounded_input_sha256": "d29f44f9f86bcc78dfd0baf0e5e872f34569e22bc03f880b2fd3e00a7fcaea16",
+      "cache_key": "32c6e0b01bb9a19c9c71d66b63c74f903833e1750078db194cc3433e59492361",
+      "max": "2023-12-31 23:00:00+00:00",
+      "min": "2021-09-01 00:00:00+00:00",
+      "protected_rows_loaded": 0,
+      "rows": 20448
+    },
+    "LINK-USDT": {
+      "bounded_input_sha256": "d73797d5e3ac293296f4b20aa7733e7aab5af521f8d2985710965bed0627c826",
+      "cache_key": "b30a910e6c7a774447ad095c296beb19b0acbedaac8566911a0475740733626f",
+      "max": "2023-12-31 23:00:00+00:00",
+      "min": "2021-09-01 00:00:00+00:00",
+      "protected_rows_loaded": 0,
+      "rows": 20448
+    },
+    "NFT-USDT": {
+      "bounded_input_sha256": "45fc29a1fd100e6a997efdd7e337d6aedb7e3ddc2caebcf4d96116a455afe1d3",
+      "cache_key": "6f8df2bc20102e1906765e3510847d43f53c122643c446d7ad654c557517c1d0",
+      "max": "2023-12-31 23:00:00+00:00",
+      "min": "2021-09-01 00:00:00+00:00",
+      "protected_rows_loaded": 0,
+      "rows": 20448
+    },
+    "ORBS-USDT": {
+      "bounded_input_sha256": "94c2ee11d1476d93a7ced7b585593b677b54878cb50a2a07a84504c801902eba",
+      "cache_key": "64d892000b2da5cc6cd5133640412e5f8e9f452a7bb9449395d7751670861789",
+      "max": "2023-12-31 23:00:00+00:00",
+      "min": "2021-09-01 00:00:00+00:00",
+      "protected_rows_loaded": 0,
+      "rows": 20448
+    },
+    "POLS-USDT": {
+      "bounded_input_sha256": "bfc00995d0027f2d330ef1c1b18df0bec84ffacbd2bc9a31295a1fc153db01d8",
+      "cache_key": "4df79d8afcf51a07b5c532df56c9afaac55b1869ff36cadc41b10babcae98178",
+      "max": "2023-12-31 23:00:00+00:00",
+      "min": "2021-09-01 00:00:00+00:00",
+      "protected_rows_loaded": 0,
+      "rows": 20448
+    },
+    "RUNE-USDT": {
+      "bounded_input_sha256": "e33e0e176a36387a38d4abea657146249ac3e096da2cae533547237386107580",
+      "cache_key": "576baee069e770c63ea136f02e519d357bd75acb086fec90e160d10a7c637fb0",
+      "max": "2023-12-31 23:00:00+00:00",
+      "min": "2021-09-28 10:00:00+00:00",
+      "protected_rows_loaded": 0,
+      "rows": 19790
+    },
+    "RVN-USDT": {
+      "bounded_input_sha256": "a4b4c726338ef97e9f38abe78069bb6630f16fb6df21f07c5e1ac239526a448f",
+      "cache_key": "6fd59972dacde70b1ca16c78927c32c3de0e6c1d87d1e1e05e294aef4332ad9a",
+      "max": "2023-12-31 23:00:00+00:00",
+      "min": "2022-08-31 11:00:00+00:00",
+      "protected_rows_loaded": 0,
+      "rows": 11701
+    },
+    "SNX-USDT": {
+      "bounded_input_sha256": "04f56ea4ef7b280054a00b1b19c2af09b21dfb0ca61c81a38fde715120999410",
+      "cache_key": "5921d5214c3cf357fb8fb5dc0e2535950879bc9018dcce3247eb44622a434551",
+      "max": "2023-12-31 23:00:00+00:00",
+      "min": "2021-09-01 00:00:00+00:00",
+      "protected_rows_loaded": 0,
+      "rows": 20448
+    },
+    "TRB-USDT": {
+      "bounded_input_sha256": "519321f589a9200eabaca5f5b3658bc2109962784f7535d80fc50ea3e9ab12f6",
+      "cache_key": "7178363c0e5410993e51ab1f7580daef4539a90d5fdd56621e50bad6b3cf9219",
+      "max": "2023-12-31 23:00:00+00:00",
+      "min": "2021-09-08 10:00:00+00:00",
+      "protected_rows_loaded": 0,
+      "rows": 20270
+    },
+    "TURBOS-USDT": {
+      "bounded_input_sha256": "60ad1cb5a8a161971951c276f606bb93cac02ae82e52876f92e34a10e690ad2c",
+      "cache_key": "9360512de9b64cf2d242ec98dca3d8a9d5852a5ba026cca2e5c3d6942f375f09",
+      "max": "2023-12-31 23:00:00+00:00",
+      "min": "2023-05-15 11:00:00+00:00",
+      "protected_rows_loaded": 0,
+      "rows": 5533
+    },
+    "XCH-USDT": {
+      "bounded_input_sha256": "a7f2b2f2bf4efa67dd5ebcbfc579161a8929777be9b9bab5364dfe564a562454",
+      "cache_key": "aaad4eb7787414a2548431f2a89a436e4848526be73980fc967a65cfa9ea4253",
+      "max": "2023-12-31 23:00:00+00:00",
+      "min": "2021-09-01 00:00:00+00:00",
+      "protected_rows_loaded": 0,
+      "rows": 20448
+    },
+    "XPRT-USDT": {
+      "bounded_input_sha256": "af0576ca6cca7f5d8de2feec2c589fe16be26017e55732a1315646ba0c7b0b89",
+      "cache_key": "a90fef102724209ede7c74d8cee2b1f4dc31bd19ea1dc787eec45864212b1a85",
+      "max": "2023-12-31 23:00:00+00:00",
+      "min": "2021-09-14 10:00:00+00:00",
+      "protected_rows_loaded": 0,
+      "rows": 20126
+    }
+  },
+  "reviews_locked": false,
+  "scans": [
+    {
+      "pair": "NFT-USDT",
+      "selected": []
+    },
+    {
+      "pair": "RVN-USDT",
+      "selected": [
+        "G2-S-0001"
+      ]
+    },
+    {
+      "pair": "GMT-USDT",
+      "selected": []
+    },
+    {
+      "pair": "ASTR-USDT",
+      "selected": []
+    },
+    {
+      "pair": "ADX-USDT",
+      "selected": [
+        "G2-S-0002"
+      ]
+    },
+    {
+      "pair": "ACH-USDT",
+      "selected": [
+        "G2-S-0003",
+        "G2-S-0004",
+        "G2-S-0005"
+      ]
+    },
+    {
+      "pair": "ALICE-USDT",
+      "selected": [
+        "G2-S-0006"
+      ]
+    },
+    {
+      "pair": "ERG-USDT",
+      "selected": []
+    },
+    {
+      "pair": "TURBOS-USDT",
+      "selected": [
+        "G2-S-0007"
+      ]
+    },
+    {
+      "pair": "POLS-USDT",
+      "selected": [
+        "G2-S-0008",
+        "G2-S-0009",
+        "G2-S-0010"
+      ]
+    },
+    {
+      "pair": "GRT-USDT",
+      "selected": []
+    },
+    {
+      "pair": "XPRT-USDT",
+      "selected": []
+    },
+    {
+      "pair": "SNX-USDT",
+      "selected": [
+        "G2-S-0011"
+      ]
+    },
+    {
+      "pair": "COMP-USDT",
+      "selected": []
+    },
+    {
+      "pair": "GMX-USDT",
+      "selected": []
+    },
+    {
+      "pair": "BCH-USDT",
+      "selected": []
+    },
+    {
+      "pair": "LINK-USDT",
+      "selected": []
+    },
+    {
+      "pair": "DEXE-USDT",
+      "selected": []
+    },
+    {
+      "pair": "RUNE-USDT",
+      "selected": []
+    },
+    {
+      "pair": "XCH-USDT",
+      "selected": []
+    },
+    {
+      "pair": "FTT-USDT",
+      "selected": [
+        "G2-S-0012"
+      ]
+    },
+    {
+      "pair": "TRB-USDT",
+      "selected": []
+    },
+    {
+      "pair": "GMEE-USDT",
+      "selected": []
+    },
+    {
+      "pair": "FORTH-USDT",
+      "selected": []
+    },
+    {
+      "pair": "GALAX-USDT",
+      "selected": []
+    },
+    {
+      "pair": "BOBA-USDT",
+      "selected": []
+    },
+    {
+      "pair": "JST-USDT",
+      "selected": []
+    },
+    {
+      "pair": "ORBS-USDT",
+      "selected": [
+        "G2-S-0013",
+        "G2-S-0014"
+      ]
+    }
+  ],
+  "selected": [
+    {
+      "engine_row": {
+        "broad_eligible": true,
+        "event": "FVG",
+        "metadata": "{\"bearish_mss_exit\": true, \"day_boundary\": \"NY_AFTERNOON\", \"execution_array\": \"FVG\", \"fvg_created_at\": \"2023-01-24 17:00:00+00:00\", \"mss_time\": \"2023-01-24 17:00:00+00:00\", \"order_block_diagnostic_only\": true, \"raid_time\": \"2023-01-24 14:00:00+00:00\", \"retrace_time\": \"2023-01-24 18:00:00+00:00\", \"smt_supporting_only\": true, \"stop\": 0.02849, \"target\": 0.02958}",
+        "pair": "RVN-USDT",
+        "stage": "THESIS_INTENT",
+        "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+        "timestamp": "2023-01-24 18:00:00+00:00"
+      },
+      "kind": "POSITIVE",
+      "pair": "RVN-USDT",
+      "supplemental_case_id": "G2-S-0001",
+      "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+      "time": "2023-01-24 18:00:00+00:00"
+    },
+    {
+      "engine_row": {
+        "broad_eligible": true,
+        "event": "FVG",
+        "metadata": "{\"bearish_mss_exit\": true, \"day_boundary\": \"NY_AFTERNOON\", \"execution_array\": \"FVG\", \"fvg_created_at\": \"2022-11-04 15:00:00+00:00\", \"mss_time\": \"2022-11-04 15:00:00+00:00\", \"order_block_diagnostic_only\": true, \"raid_time\": \"2022-11-04 13:00:00+00:00\", \"retrace_time\": \"2022-11-04 18:00:00+00:00\", \"smt_supporting_only\": true, \"stop\": 0.1689, \"target\": 0.1715}",
+        "pair": "ADX-USDT",
+        "stage": "THESIS_INTENT",
+        "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+        "timestamp": "2022-11-04 18:00:00+00:00"
+      },
+      "kind": "POSITIVE",
+      "pair": "ADX-USDT",
+      "supplemental_case_id": "G2-S-0002",
+      "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+      "time": "2022-11-04 18:00:00+00:00"
+    },
+    {
+      "engine_row": {
+        "broad_eligible": true,
+        "event": "NO_SPRING_LPS",
+        "metadata": "{\"market_state\": \"D_DEMAND_DOMINANT\", \"readiness\": {\"BASE_FORMED\": true, \"BULLISH_ACTIVITY\": true, \"DOWNSIDE_OBJECTIVE_CONTEXT\": true, \"DOWNWARD_STRIDE_BROKEN\": true, \"HIGHER_HIGHS\": true, \"HIGHER_LOWS\": true, \"PS_SC_ST\": true, \"RELATIVE_STRENGTH\": true, \"UPWARD_POTENTIAL_GE_3R\": true}, \"stop\": 0.019742, \"target\": 0.030402679999999998}",
+        "pair": "ACH-USDT",
+        "stage": "THESIS_INTENT",
+        "system_id": "FS_WYCKOFF_FULL_LONG",
+        "timestamp": "2023-12-23 08:00:00+00:00"
+      },
+      "kind": "POSITIVE",
+      "pair": "ACH-USDT",
+      "supplemental_case_id": "G2-S-0003",
+      "system_id": "FS_WYCKOFF_FULL_LONG",
+      "time": "2023-12-23 08:00:00+00:00"
+    },
+    {
+      "engine_row": {
+        "broad_eligible": true,
+        "event": "SPRING_TEST",
+        "metadata": "{\"market_state\": \"D_DEMAND_DOMINANT\", \"readiness\": {\"BASE_FORMED\": true, \"BULLISH_ACTIVITY\": true, \"DOWNSIDE_OBJECTIVE_CONTEXT\": true, \"DOWNWARD_STRIDE_BROKEN\": true, \"HIGHER_HIGHS\": true, \"HIGHER_LOWS\": true, \"PS_SC_ST\": true, \"RELATIVE_STRENGTH\": true, \"UPWARD_POTENTIAL_GE_3R\": true}, \"stop\": 0.019742, \"target\": 0.02744138}",
+        "pair": "ACH-USDT",
+        "stage": "THESIS_INTENT",
+        "system_id": "FS_WYCKOFF_FULL_LONG",
+        "timestamp": "2023-12-16 16:00:00+00:00"
+      },
+      "kind": "POSITIVE",
+      "pair": "ACH-USDT",
+      "supplemental_case_id": "G2-S-0004",
+      "system_id": "FS_WYCKOFF_FULL_LONG",
+      "time": "2023-12-16 16:00:00+00:00"
+    },
+    {
+      "engine_row": {
+        "broad_eligible": true,
+        "event": "FVG",
+        "metadata": "{\"bearish_mss_exit\": true, \"day_boundary\": \"NY_AFTERNOON\", \"execution_array\": \"FVG\", \"fvg_created_at\": \"2023-09-28 15:00:00+00:00\", \"mss_time\": \"2023-09-28 15:00:00+00:00\", \"order_block_diagnostic_only\": true, \"raid_time\": \"2023-09-28 14:00:00+00:00\", \"retrace_time\": \"2023-09-28 19:00:00+00:00\", \"smt_supporting_only\": true, \"stop\": 0.01515, \"target\": 0.01544}",
+        "pair": "ACH-USDT",
+        "stage": "THESIS_INTENT",
+        "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+        "timestamp": "2023-09-28 19:00:00+00:00"
+      },
+      "kind": "POSITIVE",
+      "pair": "ACH-USDT",
+      "supplemental_case_id": "G2-S-0005",
+      "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+      "time": "2023-09-28 19:00:00+00:00"
+    },
+    {
+      "engine_row": {
+        "broad_eligible": true,
+        "event": "SPRING_TEST",
+        "metadata": "{\"market_state\": \"D_DEMAND_DOMINANT\", \"readiness\": {\"BASE_FORMED\": true, \"BULLISH_ACTIVITY\": true, \"DOWNSIDE_OBJECTIVE_CONTEXT\": true, \"DOWNWARD_STRIDE_BROKEN\": true, \"HIGHER_HIGHS\": true, \"HIGHER_LOWS\": true, \"PS_SC_ST\": true, \"RELATIVE_STRENGTH\": true, \"UPWARD_POTENTIAL_GE_3R\": true}, \"stop\": 0.911, \"target\": 2.03153}",
+        "pair": "ALICE-USDT",
+        "stage": "THESIS_INTENT",
+        "system_id": "FS_WYCKOFF_FULL_LONG",
+        "timestamp": "2023-11-07 00:00:00+00:00"
+      },
+      "kind": "POSITIVE",
+      "pair": "ALICE-USDT",
+      "supplemental_case_id": "G2-S-0006",
+      "system_id": "FS_WYCKOFF_FULL_LONG",
+      "time": "2023-11-07 00:00:00+00:00"
+    },
+    {
+      "engine_row": {
+        "broad_eligible": true,
+        "event": "FVG",
+        "metadata": "{\"bearish_mss_exit\": true, \"day_boundary\": \"NY_AFTERNOON\", \"execution_array\": \"FVG\", \"fvg_created_at\": \"2023-11-20 18:00:00+00:00\", \"mss_time\": \"2023-11-20 18:00:00+00:00\", \"order_block_diagnostic_only\": true, \"raid_time\": \"2023-11-20 14:00:00+00:00\", \"retrace_time\": \"2023-11-20 19:00:00+00:00\", \"smt_supporting_only\": true, \"stop\": 0.001365, \"target\": 0.001456}",
+        "pair": "TURBOS-USDT",
+        "stage": "THESIS_INTENT",
+        "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+        "timestamp": "2023-11-20 19:00:00+00:00"
+      },
+      "kind": "POSITIVE",
+      "pair": "TURBOS-USDT",
+      "supplemental_case_id": "G2-S-0007",
+      "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+      "time": "2023-11-20 19:00:00+00:00"
+    },
+    {
+      "engine_row": {
+        "broad_eligible": true,
+        "event": "NO_SPRING_LPS",
+        "metadata": "{\"market_state\": \"D_DEMAND_DOMINANT\", \"readiness\": {\"BASE_FORMED\": true, \"BULLISH_ACTIVITY\": true, \"DOWNSIDE_OBJECTIVE_CONTEXT\": true, \"DOWNWARD_STRIDE_BROKEN\": true, \"HIGHER_HIGHS\": true, \"HIGHER_LOWS\": true, \"PS_SC_ST\": true, \"RELATIVE_STRENGTH\": true, \"UPWARD_POTENTIAL_GE_3R\": true}, \"stop\": 0.2996, \"target\": 0.65912}",
+        "pair": "POLS-USDT",
+        "stage": "THESIS_INTENT",
+        "system_id": "FS_WYCKOFF_FULL_LONG",
+        "timestamp": "2023-11-06 04:00:00+00:00"
+      },
+      "kind": "POSITIVE",
+      "pair": "POLS-USDT",
+      "supplemental_case_id": "G2-S-0008",
+      "system_id": "FS_WYCKOFF_FULL_LONG",
+      "time": "2023-11-06 04:00:00+00:00"
+    },
+    {
+      "engine_row": {
+        "broad_eligible": true,
+        "event": "FVG",
+        "metadata": "{\"bearish_mss_exit\": true, \"day_boundary\": \"NY_AFTERNOON\", \"execution_array\": \"FVG\", \"fvg_created_at\": \"2023-02-28 18:00:00+00:00\", \"mss_time\": \"2023-02-28 18:00:00+00:00\", \"order_block_diagnostic_only\": true, \"raid_time\": \"2023-02-28 16:00:00+00:00\", \"retrace_time\": \"2023-02-28 20:00:00+00:00\", \"smt_supporting_only\": true, \"stop\": 0.5155, \"target\": 0.5449}",
+        "pair": "POLS-USDT",
+        "stage": "THESIS_INTENT",
+        "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+        "timestamp": "2023-02-28 20:00:00+00:00"
+      },
+      "kind": "POSITIVE",
+      "pair": "POLS-USDT",
+      "supplemental_case_id": "G2-S-0009",
+      "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+      "time": "2023-02-28 20:00:00+00:00"
+    },
+    {
+      "engine_row": {
+        "broad_eligible": true,
+        "event": "FVG",
+        "metadata": "{\"bearish_mss_exit\": true, \"day_boundary\": \"NY_AFTERNOON\", \"execution_array\": \"FVG\", \"fvg_created_at\": \"2022-08-01 16:00:00+00:00\", \"mss_time\": \"2022-08-01 16:00:00+00:00\", \"order_block_diagnostic_only\": true, \"raid_time\": \"2022-08-01 14:00:00+00:00\", \"retrace_time\": \"2022-08-01 19:00:00+00:00\", \"smt_supporting_only\": true, \"stop\": 0.6041, \"target\": 0.6362}",
+        "pair": "POLS-USDT",
+        "stage": "THESIS_INTENT",
+        "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+        "timestamp": "2022-08-01 19:00:00+00:00"
+      },
+      "kind": "POSITIVE",
+      "pair": "POLS-USDT",
+      "supplemental_case_id": "G2-S-0010",
+      "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+      "time": "2022-08-01 19:00:00+00:00"
+    },
+    {
+      "engine_row": {
+        "broad_eligible": true,
+        "event": "FVG",
+        "metadata": "{\"bearish_mss_exit\": true, \"day_boundary\": \"POST_NY_0830\", \"execution_array\": \"FVG\", \"fvg_created_at\": \"2022-12-09 15:00:00+00:00\", \"mss_time\": \"2022-12-09 15:00:00+00:00\", \"order_block_diagnostic_only\": true, \"raid_time\": \"2022-12-09 14:00:00+00:00\", \"retrace_time\": \"2022-12-09 16:00:00+00:00\", \"smt_supporting_only\": true, \"stop\": 1.875842, \"target\": 1.976856}",
+        "pair": "SNX-USDT",
+        "stage": "THESIS_INTENT",
+        "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+        "timestamp": "2022-12-09 16:00:00+00:00"
+      },
+      "kind": "POSITIVE",
+      "pair": "SNX-USDT",
+      "supplemental_case_id": "G2-S-0011",
+      "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+      "time": "2022-12-09 16:00:00+00:00"
+    },
+    {
+      "engine_row": {
+        "broad_eligible": true,
+        "event": "NO_SPRING_LPS",
+        "metadata": "{\"market_state\": \"D_DEMAND_DOMINANT\", \"readiness\": {\"BASE_FORMED\": true, \"BULLISH_ACTIVITY\": true, \"DOWNSIDE_OBJECTIVE_CONTEXT\": true, \"DOWNWARD_STRIDE_BROKEN\": true, \"HIGHER_HIGHS\": true, \"HIGHER_LOWS\": true, \"PS_SC_ST\": true, \"RELATIVE_STRENGTH\": true, \"UPWARD_POTENTIAL_GE_3R\": true}, \"stop\": 39.357, \"target\": 52.34481}",
+        "pair": "FTT-USDT",
+        "stage": "THESIS_INTENT",
+        "system_id": "FS_WYCKOFF_FULL_LONG",
+        "timestamp": "2022-01-14 08:00:00+00:00"
+      },
+      "kind": "POSITIVE",
+      "pair": "FTT-USDT",
+      "supplemental_case_id": "G2-S-0012",
+      "system_id": "FS_WYCKOFF_FULL_LONG",
+      "time": "2022-01-14 08:00:00+00:00"
+    },
+    {
+      "engine_row": {
+        "broad_eligible": true,
+        "event": "NO_SPRING_LPS",
+        "metadata": "{\"market_state\": \"E_MARKUP\", \"readiness\": {\"BASE_FORMED\": true, \"BULLISH_ACTIVITY\": true, \"DOWNSIDE_OBJECTIVE_CONTEXT\": true, \"DOWNWARD_STRIDE_BROKEN\": true, \"HIGHER_HIGHS\": true, \"HIGHER_LOWS\": true, \"PS_SC_ST\": true, \"RELATIVE_STRENGTH\": true, \"UPWARD_POTENTIAL_GE_3R\": true}, \"stop\": 0.03533, \"target\": 0.0681869}",
+        "pair": "ORBS-USDT",
+        "stage": "THESIS_INTENT",
+        "system_id": "FS_WYCKOFF_FULL_LONG",
+        "timestamp": "2022-07-18 12:00:00+00:00"
+      },
+      "kind": "POSITIVE",
+      "pair": "ORBS-USDT",
+      "supplemental_case_id": "G2-S-0013",
+      "system_id": "FS_WYCKOFF_FULL_LONG",
+      "time": "2022-07-18 12:00:00+00:00"
+    },
+    {
+      "engine_row": {
+        "broad_eligible": true,
+        "event": "FVG",
+        "metadata": "{\"bearish_mss_exit\": true, \"day_boundary\": \"NY_AFTERNOON\", \"execution_array\": \"FVG\", \"fvg_created_at\": \"2022-06-27 17:00:00+00:00\", \"mss_time\": \"2022-06-27 17:00:00+00:00\", \"order_block_diagnostic_only\": true, \"raid_time\": \"2022-06-27 15:00:00+00:00\", \"retrace_time\": \"2022-06-27 19:00:00+00:00\", \"smt_supporting_only\": true, \"stop\": 0.0427, \"target\": 0.04389}",
+        "pair": "ORBS-USDT",
+        "stage": "THESIS_INTENT",
+        "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+        "timestamp": "2022-06-27 19:00:00+00:00"
+      },
+      "kind": "POSITIVE",
+      "pair": "ORBS-USDT",
+      "supplemental_case_id": "G2-S-0014",
+      "system_id": "FS_ICT_2022_CORE_CRYPTO_LONG",
+      "time": "2022-06-27 19:00:00+00:00"
+    }
+  ]
+}

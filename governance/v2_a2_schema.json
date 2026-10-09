@@ -1,0 +1,29 @@
+{
+  "compatibility": "PASS",
+  "fields": {
+    "bar_close_time": "timestamp[ms, tz=UTC]",
+    "bar_open_time": "timestamp[us, tz=UTC]",
+    "close": "double",
+    "high": "double",
+    "low": "double",
+    "open": "double",
+    "source_exchange": "large_string",
+    "source_symbol": "large_string",
+    "symbol": "large_string",
+    "volume": "double"
+  },
+  "scalar_types": {
+    "bar_close_time": {
+      "end_exclusive": "2023-01-01T00:00:00+00:00",
+      "end_type": "timestamp[ms, tz=UTC]",
+      "start": "2022-01-01T00:00:00+00:00",
+      "start_type": "timestamp[ms, tz=UTC]"
+    },
+    "bar_open_time": {
+      "end_exclusive": "2023-01-01T00:00:00+00:00",
+      "end_type": "timestamp[us, tz=UTC]",
+      "start": "2022-01-01T00:00:00+00:00",
+      "start_type": "timestamp[us, tz=UTC]"
+    }
+  }
+}

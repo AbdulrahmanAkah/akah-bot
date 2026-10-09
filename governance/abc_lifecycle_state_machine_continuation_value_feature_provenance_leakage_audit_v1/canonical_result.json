@@ -1,0 +1,50 @@
+{
+  "exact_target_reuse": true,
+  "near_perfect_forward_rank_anomaly": true,
+  "new_counterfactual_replay_required": false,
+  "new_raw_access_required": false,
+  "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_CONTINUATION_VALUE_CAUSAL_FEATURE_REPAIR_AND_CLEAN_REFIT_MEGA_V1",
+  "old_feature_catalog": {
+    "concept_mapping": {
+      "age": "continuation_advantage",
+      "optional_exit_intent": "hold_optional_exits_suppressed",
+      "progress": "progress_margin_delta_from_prev",
+      "volatility": "atr22_current"
+    },
+    "interactions": []
+  },
+  "old_features": [
+    "continuation_advantage",
+    "progress_margin_delta_from_prev",
+    "atr22_current",
+    "hold_optional_exits_suppressed"
+  ],
+  "repair_authorized": true,
+  "repair_rule": "DIRECT_FEATURES_MUST_EXIST_IN_CAUSAL_DECISION_GRID; POST_BRANCH/OUTCOME/FUTURE FIELDS FORBIDDEN; INTERACTIONS_ALLOWED_ONLY_IF_ALL_DEPENDENCIES_PASS; CONCEPT_SET_AND_FIXED_RIDGE_CLASS_REMAIN_UNCHANGED",
+  "schema_version": "akah-rev561-continuation-leakage-repair-maximum-evidence-mega-v1-provenance-audit",
+  "status": "PASS_LEAKAGE_CONFIRMED",
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_CONTINUATION_VALUE_FEATURE_PROVENANCE_LEAKAGE_AUDIT_V1",
+  "unsafe_feature_count": 2,
+  "unsafe_features": [
+    {
+      "dependencies": "continuation_advantage",
+      "feature": "continuation_advantage",
+      "in_decision_grid": false,
+      "provenance_reason": "NOT_IN_CAUSAL_DECISION_GRID",
+      "safe_at_decision": false,
+      "spearman_2022": 1.0,
+      "spearman_2023": 1.0,
+      "spearman_train": 0.9999999999999998
+    },
+    {
+      "dependencies": "hold_optional_exits_suppressed",
+      "feature": "hold_optional_exits_suppressed",
+      "in_decision_grid": false,
+      "provenance_reason": "NOT_IN_CAUSAL_DECISION_GRID",
+      "safe_at_decision": false,
+      "spearman_2022": 0.007926854065264981,
+      "spearman_2023": -0.02401675250982911,
+      "spearman_train": -0.004642665722528163
+    }
+  ]
+}

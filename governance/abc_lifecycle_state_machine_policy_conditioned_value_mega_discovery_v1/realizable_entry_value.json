@@ -1,0 +1,78 @@
+{
+  "2024_access": false,
+  "2024plus_rows_used": 0,
+  "analysis_scope_audit": {
+    "control_trades": {
+      "2024plus_rows_used": 0,
+      "anchor": "YEAR_SERIES",
+      "label": "control_trades",
+      "max_year": 2023,
+      "min_year": 2019,
+      "raw_rows": 2020,
+      "rows_excluded_2024plus": 0,
+      "rows_excluded_pre2019": 0,
+      "rows_used_2019_2023": 2020
+    },
+    "entry_event_universe": {
+      "2024plus_rows_used": 0,
+      "anchor": "YEAR_SERIES",
+      "label": "entry_event_universe",
+      "max_year": 2023,
+      "min_year": 2019,
+      "raw_rows": 6183,
+      "rows_excluded_2024plus": 0,
+      "rows_excluded_pre2019": 0,
+      "rows_used_2019_2023": 6183
+    }
+  },
+  "candidate_scores_pre_outcome_order": [
+    "score_mfe10_base14_adx",
+    "score_mfe5_base14"
+  ],
+  "control_source": "data/research/abc_exit_primitives_2019_2023_v1/control-trades.csv",
+  "development_score_edges": [
+    -0.0435540886341294,
+    0.06834890449375965,
+    0.11297166002768243,
+    0.16234893468656583,
+    0.24812611060938217,
+    0.959777359767704
+  ],
+  "entry_source": "governance/abc_lifecycle_state_machine_context_winner_horizon_entry_event_universe_v1/entry_event_universe_2019_2023.csv",
+  "eval_rows_2022_2023": 792,
+  "forward_years": {
+    "2022": {
+      "bin_means": [
+        -0.000499857866578153,
+        -0.010023950079822092,
+        -0.0033547299924930403,
+        -0.010762066924406443,
+        -0.015986190238074998
+      ],
+      "rows": 358,
+      "spearman": -0.1651362961891624,
+      "top_minus_bottom_frozen_bin_return": -0.015486332371496846
+    },
+    "2023": {
+      "bin_means": [
+        0.003669625247383893,
+        -0.0017057397685455021,
+        0.0031072544170592377,
+        0.009531885452347687,
+        0.004342142603466438
+      ],
+      "rows": 434,
+      "spearman": -0.07778260165901553,
+      "top_minus_bottom_frozen_bin_return": 0.0006725173560825446
+    }
+  },
+  "interpretation": "This tests conversion of a frozen tail score into realized net return under the existing control trade policy. MFE probability itself is not treated as value.",
+  "join_contract": "EXACT_COMPOSITE:pair+entry_time=pair+entry_time",
+  "join_rows": 2020,
+  "model_refit_of_entry_tail_classifier": false,
+  "return_definition": "net_pnl/entry_notional",
+  "selected_score": "score_mfe10_base14_adx",
+  "sign_stable_forward_pass": false,
+  "threshold_search": false,
+  "train_rows_2019_2021": 1228
+}

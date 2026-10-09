@@ -1,0 +1,79 @@
+{
+  "authority_id": "AKAH_BOT_RECONSTRUCTED_NATIVE_RD27_FULL_MATRIX_STRATA_CONTRACT_V1",
+  "cost_multiplier_execution_type": "float",
+  "cost_multiplier_execution_value": 1.0,
+  "economic_analysis_authorized": false,
+  "next_bottleneck": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_PRE2023_SIGNAL_MATERIALIZATION_AND_1H_INPUT_VERIFICATION_V1",
+  "pair_set_rule": "Derive the sorted unique signal pair set from the authorized pre-2023 signal input across all nine strata; add BTC-USDT as the state sensor if not already present.",
+  "policy_id": "rd27.FULL_ADAPTIVE_LIFECYCLE_BRAIN",
+  "raw_root": "data/raw/rd16b/kucoin",
+  "real_replay_authorized": false,
+  "signal_input_status": "UNRESOLVED_NO_AUTHORIZED_PRE2023_ARTIFACT",
+  "status": "FROZEN",
+  "strata": [
+    {
+      "family_id": null,
+      "portfolio_id": "UNION_FOCUS",
+      "signal_constructor": "union_events",
+      "stratum_id": "S01",
+      "universe_id": "C2"
+    },
+    {
+      "family_id": null,
+      "portfolio_id": "UNION_FOCUS",
+      "signal_constructor": "union_events",
+      "stratum_id": "S02",
+      "universe_id": "D2"
+    },
+    {
+      "family_id": null,
+      "portfolio_id": "UNION_FOCUS",
+      "signal_constructor": "union_events",
+      "stratum_id": "S03",
+      "universe_id": "E2"
+    },
+    {
+      "family_id": "MOMENTUM_BREAKOUT",
+      "portfolio_id": "MOMENTUM_BREAKOUT",
+      "signal_constructor": "standalone_events",
+      "stratum_id": "S04",
+      "universe_id": "C2"
+    },
+    {
+      "family_id": "MOMENTUM_BREAKOUT",
+      "portfolio_id": "MOMENTUM_BREAKOUT",
+      "signal_constructor": "standalone_events",
+      "stratum_id": "S05",
+      "universe_id": "D2"
+    },
+    {
+      "family_id": "MOMENTUM_BREAKOUT",
+      "portfolio_id": "MOMENTUM_BREAKOUT",
+      "signal_constructor": "standalone_events",
+      "stratum_id": "S06",
+      "universe_id": "E2"
+    },
+    {
+      "family_id": "RELATIVE_STRENGTH_ROTATION",
+      "portfolio_id": "RELATIVE_STRENGTH_ROTATION",
+      "signal_constructor": "standalone_events",
+      "stratum_id": "S07",
+      "universe_id": "C2"
+    },
+    {
+      "family_id": "RELATIVE_STRENGTH_ROTATION",
+      "portfolio_id": "RELATIVE_STRENGTH_ROTATION",
+      "signal_constructor": "standalone_events",
+      "stratum_id": "S08",
+      "universe_id": "D2"
+    },
+    {
+      "family_id": "RELATIVE_STRENGTH_ROTATION",
+      "portfolio_id": "RELATIVE_STRENGTH_ROTATION",
+      "signal_constructor": "standalone_events",
+      "stratum_id": "S09",
+      "universe_id": "E2"
+    }
+  ],
+  "strata_count": 9
+}

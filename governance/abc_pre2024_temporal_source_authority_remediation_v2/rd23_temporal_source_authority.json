@@ -1,0 +1,435 @@
+{
+  "schema_version": "abc-rd23-temporal-source-authority-v2",
+  "classification": "EXACT_HISTORICAL_RD23_SOURCE_LINEAGE_BOUND",
+  "bindings": {
+    "runner": {
+      "path": "scripts/research/run_rd23_multifamily_raw_edge.py",
+      "sha256": "7B31BB16FCDECA633D3BEA2951BECA049A8FEEC5158EA634F5ADE48B650CAAB7"
+    },
+    "engine": {
+      "path": "src/spotbot/research/rd23_multifamily_raw_edge.py",
+      "sha256": "6F23405F56BEC0B828130DA6BD57B606659F354892AF4278C9EC18DEEC704AF8"
+    },
+    "membership": {
+      "path": "data/research/rd18_p3x_a3b_runtime/effective-operational-membership.csv",
+      "sha256": "F7D6012CE8CD691583B9B6276DDF36371BFE0BBD9B28F810B676AD0177FB559E"
+    },
+    "raw_root": "data/raw/rd16b/kucoin",
+    "historical_scope": "2019-01-01 inclusive to 2022-01-01 exclusive",
+    "safe_read_contract": "pd.read_parquet(engine=pyarrow, filters=[('timestamp','<',cutoff)]) + post-read max(timestamp)<cutoff assertion",
+    "rd23_input_audit": {
+      "path": "data/research/rd23_p2_runtime/input-and-conformance-audit.json",
+      "sha256": "81177AAB107038C5654833F20A04140701F5F7A45F06DE2EDAA3C29AF0066EB8",
+      "content": {
+        "2022_2023_used_for_selection": false,
+        "2024_accessed": false,
+        "data_cutoff_exclusive": "2022-01-01T00:00:00+00:00",
+        "families": [
+          "MOMENTUM_BREAKOUT",
+          "VOLATILITY_EXPANSION",
+          "STRUCTURAL_REVERSAL",
+          "RELATIVE_STRENGTH_ROTATION",
+          "MOMENTUM_ACCELERATION",
+          "BASE_RANGE_BREAKOUT"
+        ],
+        "family_count": 6,
+        "freeze_commit": "7082a8a8b97095dd62f8caaeec939cd56eb75fb9",
+        "frozen_protocol_sha256": "ec8089911f67d572e62a2861bb84b37dfff30e448c67f8aef16a4a067dd5e97b",
+        "head": "7082a8a8b97095dd62f8caaeec939cd56eb75fb9",
+        "pair_count": 35,
+        "pairs": [
+          "ADA-USDT",
+          "ATOM-USDT",
+          "AVAX-USDT",
+          "BNB-USDT",
+          "BTC-USDT",
+          "DOGE-USDT",
+          "DOT-USDT",
+          "ETH-USDT",
+          "FET-USDT",
+          "FIL-USDT",
+          "GRAM-USDT",
+          "ICP-USDT",
+          "INJ-USDT",
+          "JASMY-USDT",
+          "KAS-USDT",
+          "KCS-USDT",
+          "LINK-USDT",
+          "LTC-USDT",
+          "LUNC-USDT",
+          "MANA-USDT",
+          "NEAR-USDT",
+          "NEO-USDT",
+          "ONDO-USDT",
+          "OP-USDT",
+          "PEPE-USDT",
+          "SAND-USDT",
+          "SHIB-USDT",
+          "SOL-USDT",
+          "SUI-USDT",
+          "TRX-USDT",
+          "VET-USDT",
+          "WIF-USDT",
+          "XMR-USDT",
+          "XRP-USDT",
+          "XTZ-USDT"
+        ],
+        "portfolio_replay_authorized": false,
+        "post_2024_accessed": false,
+        "production_authorized": false,
+        "rd22_report_sha256": "655e456dec5f371574d3c81cffb70d4aee90568fa77c9a60f337be91295549ff",
+        "selection_periods": {
+          "DISCOVERY_2019_2020": [
+            "2019-01-01T00:00:00+00:00",
+            "2021-01-01T00:00:00+00:00"
+          ],
+          "TEMPORAL_REPLICATION_2021": [
+            "2021-01-01T00:00:00+00:00",
+            "2022-01-01T00:00:00+00:00"
+          ]
+        },
+        "source_commit": "b17d37416ff617202886629dd8154569a7427ddd"
+      }
+    },
+    "rd23_report": {
+      "path": "data/research/rd23_p2_runtime/rd23-p2-multifamily-raw-edge-report-v1.json",
+      "sha256": "E6AC534BFF6B1A11517480987C31897C4C4CB21647FBB5C2C811282FE7424917",
+      "content": {
+        "2022_2023_used_for_selection": false,
+        "2024_accessed": false,
+        "decision": "RD23_P2_MULTIFAMILY_RAW_EDGE_TOURNAMENT_MULTIPLE_FAMILIES_CONFIRMED_RD24_PARALLEL_MINIMAL_PORTFOLIO_AUTHORIZED",
+        "event_counts_by_family": {
+          "BASE_RANGE_BREAKOUT": 742,
+          "MOMENTUM_ACCELERATION": 19785,
+          "MOMENTUM_BREAKOUT": 7456,
+          "RELATIVE_STRENGTH_ROTATION": 4881,
+          "STRUCTURAL_REVERSAL": 4906,
+          "VOLATILITY_EXPANSION": 8563
+        },
+        "families": [
+          "MOMENTUM_BREAKOUT",
+          "VOLATILITY_EXPANSION",
+          "STRUCTURAL_REVERSAL",
+          "RELATIVE_STRENGTH_ROTATION",
+          "MOMENTUM_ACCELERATION",
+          "BASE_RANGE_BREAKOUT"
+        ],
+        "family_count": 6,
+        "historical_exit_simulation_executed": false,
+        "next_stage": "RD24_QUALIFIED_FAMILY_MINIMAL_PORTFOLIO_EVALUATION_PARALLEL",
+        "overlap_summary": {
+          "maximum_families_on_one_event_key": 5,
+          "multi_family_event_key_share": 0.1618700385281721,
+          "multi_family_event_keys": 6260,
+          "unique_event_keys": 38673
+        },
+        "passed": true,
+        "portfolio_replay_executed": false,
+        "position_sizing_executed": false,
+        "post_2024_accessed": false,
+        "production_authorized": false,
+        "qualified_families": [
+          "MOMENTUM_BREAKOUT",
+          "VOLATILITY_EXPANSION",
+          "RELATIVE_STRENGTH_ROTATION",
+          "MOMENTUM_ACCELERATION"
+        ],
+        "qualified_family_count": 4,
+        "schema_version": "rd23-p2-multifamily-raw-edge-report-v1",
+        "selected_horizon_hours": {
+          "MOMENTUM_ACCELERATION": 168,
+          "MOMENTUM_BREAKOUT": 168,
+          "RELATIVE_STRENGTH_ROTATION": 168,
+          "VOLATILITY_EXPANSION": 168
+        },
+        "selection_data": "2019_2020_DISCOVERY_AND_2021_TEMPORAL_REPLICATION",
+        "stage": "RD23_P2_MULTIFAMILY_RAW_EDGE_TOURNAMENT"
+      }
+    }
+  },
+  "membership_snapshot_count": 903,
+  "membership_min_decision_time": "2019-04-01T00:00:00+00:00",
+  "membership_max_effective_end": "2025-01-01T00:00:00+00:00",
+  "pairs_2019_2021": [
+    "ADA-USDT",
+    "ATOM-USDT",
+    "AVAX-USDT",
+    "BNB-USDT",
+    "BTC-USDT",
+    "DOGE-USDT",
+    "DOT-USDT",
+    "ETH-USDT",
+    "KCS-USDT",
+    "LTC-USDT",
+    "MANA-USDT",
+    "NEO-USDT",
+    "SAND-USDT",
+    "SHIB-USDT",
+    "TRX-USDT",
+    "VET-USDT",
+    "XRP-USDT",
+    "XTZ-USDT"
+  ],
+  "pair_count_2019_2021": 18,
+  "raw_pair_files_missing": [],
+  "source_evidence": {
+    "ADA-USDT:2020": {
+      "missing": false,
+      "rows": 13117,
+      "path": "data/raw/rd16b/kucoin/ADA-USDT/1h.parquet",
+      "sha256": "8F585AC8B067D883078D7234A0E0B64CBE5C4EE0D9D475B7FEFA37BC0B00AB7C",
+      "min_timestamp": "2019-07-04T11:00:00+00:00",
+      "max_timestamp": "2020-12-31T23:00:00+00:00"
+    },
+    "ADA-USDT:2021": {
+      "missing": false,
+      "rows": 21877,
+      "path": "data/raw/rd16b/kucoin/ADA-USDT/1h.parquet",
+      "sha256": "8F585AC8B067D883078D7234A0E0B64CBE5C4EE0D9D475B7FEFA37BC0B00AB7C",
+      "min_timestamp": "2019-07-04T11:00:00+00:00",
+      "max_timestamp": "2021-12-31T23:00:00+00:00"
+    },
+    "ATOM-USDT:2020": {
+      "missing": false,
+      "rows": 14101,
+      "path": "data/raw/rd16b/kucoin/ATOM-USDT/1h.parquet",
+      "sha256": "6CE2DAF7F94959F2CF3BE56A884D8FF1B397EF4EBBDCBC4B52D27D8C9EE4B45A",
+      "min_timestamp": "2019-05-24T11:00:00+00:00",
+      "max_timestamp": "2020-12-31T23:00:00+00:00"
+    },
+    "ATOM-USDT:2021": {
+      "missing": false,
+      "rows": 22861,
+      "path": "data/raw/rd16b/kucoin/ATOM-USDT/1h.parquet",
+      "sha256": "6CE2DAF7F94959F2CF3BE56A884D8FF1B397EF4EBBDCBC4B52D27D8C9EE4B45A",
+      "min_timestamp": "2019-05-24T11:00:00+00:00",
+      "max_timestamp": "2021-12-31T23:00:00+00:00"
+    },
+    "AVAX-USDT:2021": {
+      "missing": false,
+      "rows": 7237,
+      "path": "data/raw/rd16b/kucoin/AVAX-USDT/1h.parquet",
+      "sha256": "39E0D8FF2B0190B1D203D2E5F761FC9F8C75A054F9ECDCB6CB01A0426E359D09",
+      "min_timestamp": "2021-03-05T11:00:00+00:00",
+      "max_timestamp": "2021-12-31T23:00:00+00:00"
+    },
+    "BNB-USDT:2021": {
+      "missing": false,
+      "rows": 22237,
+      "path": "data/raw/rd16b/kucoin/BNB-USDT/1h.parquet",
+      "sha256": "2A8DB08E2D07197F356F993A2F249DDAE4F8F1236663F9D54E2B820483702220",
+      "min_timestamp": "2019-06-19T11:00:00+00:00",
+      "max_timestamp": "2021-12-31T23:00:00+00:00"
+    },
+    "BTC-USDT:2019": {
+      "missing": false,
+      "rows": 8759,
+      "path": "data/raw/rd16b/kucoin/BTC-USDT/1h.parquet",
+      "sha256": "16AD84288C8EC859DA367B9CAFAF1C76A05045DE4F81289B4B31B7840C08D773",
+      "min_timestamp": "2019-01-01T01:00:00+00:00",
+      "max_timestamp": "2019-12-31T23:00:00+00:00"
+    },
+    "BTC-USDT:2020": {
+      "missing": false,
+      "rows": 17543,
+      "path": "data/raw/rd16b/kucoin/BTC-USDT/1h.parquet",
+      "sha256": "16AD84288C8EC859DA367B9CAFAF1C76A05045DE4F81289B4B31B7840C08D773",
+      "min_timestamp": "2019-01-01T01:00:00+00:00",
+      "max_timestamp": "2020-12-31T23:00:00+00:00"
+    },
+    "BTC-USDT:2021": {
+      "missing": false,
+      "rows": 26303,
+      "path": "data/raw/rd16b/kucoin/BTC-USDT/1h.parquet",
+      "sha256": "16AD84288C8EC859DA367B9CAFAF1C76A05045DE4F81289B4B31B7840C08D773",
+      "min_timestamp": "2019-01-01T01:00:00+00:00",
+      "max_timestamp": "2021-12-31T23:00:00+00:00"
+    },
+    "DOGE-USDT:2021": {
+      "missing": false,
+      "rows": 7820,
+      "path": "data/raw/rd16b/kucoin/DOGE-USDT/1h.parquet",
+      "sha256": "D1FF46FFF28CD664DA61A11ABC8207E1E1D2E3745ACFD8D274157B98305591E7",
+      "min_timestamp": "2021-02-09T04:00:00+00:00",
+      "max_timestamp": "2021-12-31T23:00:00+00:00"
+    },
+    "DOT-USDT:2021": {
+      "missing": false,
+      "rows": 11934,
+      "path": "data/raw/rd16b/kucoin/DOT-USDT/1h.parquet",
+      "sha256": "5FC2185BA5EE45B81C127636EFCCE7508E49ABBB9046C647CAC71B0023C55EF9",
+      "min_timestamp": "2020-08-21T18:00:00+00:00",
+      "max_timestamp": "2021-12-31T23:00:00+00:00"
+    },
+    "ETH-USDT:2019": {
+      "missing": false,
+      "rows": 8759,
+      "path": "data/raw/rd16b/kucoin/ETH-USDT/1h.parquet",
+      "sha256": "58BDAC8B9D0F724BFABBED33F20BF9B5954F9CB9258F6D135E7C3622F431DC6E",
+      "min_timestamp": "2019-01-01T01:00:00+00:00",
+      "max_timestamp": "2019-12-31T23:00:00+00:00"
+    },
+    "ETH-USDT:2020": {
+      "missing": false,
+      "rows": 17543,
+      "path": "data/raw/rd16b/kucoin/ETH-USDT/1h.parquet",
+      "sha256": "58BDAC8B9D0F724BFABBED33F20BF9B5954F9CB9258F6D135E7C3622F431DC6E",
+      "min_timestamp": "2019-01-01T01:00:00+00:00",
+      "max_timestamp": "2020-12-31T23:00:00+00:00"
+    },
+    "ETH-USDT:2021": {
+      "missing": false,
+      "rows": 26303,
+      "path": "data/raw/rd16b/kucoin/ETH-USDT/1h.parquet",
+      "sha256": "58BDAC8B9D0F724BFABBED33F20BF9B5954F9CB9258F6D135E7C3622F431DC6E",
+      "min_timestamp": "2019-01-01T01:00:00+00:00",
+      "max_timestamp": "2021-12-31T23:00:00+00:00"
+    },
+    "KCS-USDT:2019": {
+      "missing": false,
+      "rows": 8758,
+      "path": "data/raw/rd16b/kucoin/KCS-USDT/1h.parquet",
+      "sha256": "1213E113C36228B8350A36034D3FED318549BDADAFFE90BE7F85D18D128B2597",
+      "min_timestamp": "2019-01-01T02:00:00+00:00",
+      "max_timestamp": "2019-12-31T23:00:00+00:00"
+    },
+    "KCS-USDT:2020": {
+      "missing": false,
+      "rows": 17542,
+      "path": "data/raw/rd16b/kucoin/KCS-USDT/1h.parquet",
+      "sha256": "1213E113C36228B8350A36034D3FED318549BDADAFFE90BE7F85D18D128B2597",
+      "min_timestamp": "2019-01-01T02:00:00+00:00",
+      "max_timestamp": "2020-12-31T23:00:00+00:00"
+    },
+    "KCS-USDT:2021": {
+      "missing": false,
+      "rows": 26302,
+      "path": "data/raw/rd16b/kucoin/KCS-USDT/1h.parquet",
+      "sha256": "1213E113C36228B8350A36034D3FED318549BDADAFFE90BE7F85D18D128B2597",
+      "min_timestamp": "2019-01-01T02:00:00+00:00",
+      "max_timestamp": "2021-12-31T23:00:00+00:00"
+    },
+    "LTC-USDT:2019": {
+      "missing": false,
+      "rows": 8759,
+      "path": "data/raw/rd16b/kucoin/LTC-USDT/1h.parquet",
+      "sha256": "FCEBC722158DF6BA2C9B0E8A6F83C4CDE730D0E80BA59760818B13FB38C27ED6",
+      "min_timestamp": "2019-01-01T01:00:00+00:00",
+      "max_timestamp": "2019-12-31T23:00:00+00:00"
+    },
+    "LTC-USDT:2020": {
+      "missing": false,
+      "rows": 17543,
+      "path": "data/raw/rd16b/kucoin/LTC-USDT/1h.parquet",
+      "sha256": "FCEBC722158DF6BA2C9B0E8A6F83C4CDE730D0E80BA59760818B13FB38C27ED6",
+      "min_timestamp": "2019-01-01T01:00:00+00:00",
+      "max_timestamp": "2020-12-31T23:00:00+00:00"
+    },
+    "LTC-USDT:2021": {
+      "missing": false,
+      "rows": 26303,
+      "path": "data/raw/rd16b/kucoin/LTC-USDT/1h.parquet",
+      "sha256": "FCEBC722158DF6BA2C9B0E8A6F83C4CDE730D0E80BA59760818B13FB38C27ED6",
+      "min_timestamp": "2019-01-01T01:00:00+00:00",
+      "max_timestamp": "2021-12-31T23:00:00+00:00"
+    },
+    "MANA-USDT:2021": {
+      "missing": false,
+      "rows": 6951,
+      "path": "data/raw/rd16b/kucoin/MANA-USDT/1h.parquet",
+      "sha256": "2AF31F0AA3B2CA4A03D8F6196942A072EE639575AB81262CC9149E88CB984E49",
+      "min_timestamp": "2021-03-17T09:00:00+00:00",
+      "max_timestamp": "2021-12-31T23:00:00+00:00"
+    },
+    "NEO-USDT:2019": {
+      "missing": false,
+      "rows": 8758,
+      "path": "data/raw/rd16b/kucoin/NEO-USDT/1h.parquet",
+      "sha256": "43C32C282421DF9E7CB402CCA6B00998D198DAF5AF3AF55AD124C9CAD2921224",
+      "min_timestamp": "2019-01-01T02:00:00+00:00",
+      "max_timestamp": "2019-12-31T23:00:00+00:00"
+    },
+    "SAND-USDT:2021": {
+      "missing": false,
+      "rows": 6589,
+      "path": "data/raw/rd16b/kucoin/SAND-USDT/1h.parquet",
+      "sha256": "55C92DC5FA8CAF71905F61C544228BD122562B6BEE312AED0582EA13F85CFD7C",
+      "min_timestamp": "2021-04-01T11:00:00+00:00",
+      "max_timestamp": "2021-12-31T23:00:00+00:00"
+    },
+    "SHIB-USDT:2021": {
+      "missing": false,
+      "rows": 5656,
+      "path": "data/raw/rd16b/kucoin/SHIB-USDT/1h.parquet",
+      "sha256": "73EDFB07C68C519844FEFAB59DB2011E92800D6D70A32976A1D87E59CDC07F87",
+      "min_timestamp": "2021-05-10T08:00:00+00:00",
+      "max_timestamp": "2021-12-31T23:00:00+00:00"
+    },
+    "TRX-USDT:2019": {
+      "missing": false,
+      "rows": 8759,
+      "path": "data/raw/rd16b/kucoin/TRX-USDT/1h.parquet",
+      "sha256": "FD8995B2F8B0B330CD89ECA4A3177D37C187441A19B3E8246C515A9706C4F8D9",
+      "min_timestamp": "2019-01-01T01:00:00+00:00",
+      "max_timestamp": "2019-12-31T23:00:00+00:00"
+    },
+    "TRX-USDT:2020": {
+      "missing": false,
+      "rows": 17543,
+      "path": "data/raw/rd16b/kucoin/TRX-USDT/1h.parquet",
+      "sha256": "FD8995B2F8B0B330CD89ECA4A3177D37C187441A19B3E8246C515A9706C4F8D9",
+      "min_timestamp": "2019-01-01T01:00:00+00:00",
+      "max_timestamp": "2020-12-31T23:00:00+00:00"
+    },
+    "TRX-USDT:2021": {
+      "missing": false,
+      "rows": 26303,
+      "path": "data/raw/rd16b/kucoin/TRX-USDT/1h.parquet",
+      "sha256": "FD8995B2F8B0B330CD89ECA4A3177D37C187441A19B3E8246C515A9706C4F8D9",
+      "min_timestamp": "2019-01-01T01:00:00+00:00",
+      "max_timestamp": "2021-12-31T23:00:00+00:00"
+    },
+    "VET-USDT:2021": {
+      "missing": false,
+      "rows": 26303,
+      "path": "data/raw/rd16b/kucoin/VET-USDT/1h.parquet",
+      "sha256": "A97B5ED4E9D7A4E86E340842D660F2CD4E5950776800F4C9B9F29D09E23E3CD5",
+      "min_timestamp": "2019-01-01T01:00:00+00:00",
+      "max_timestamp": "2021-12-31T23:00:00+00:00"
+    },
+    "XRP-USDT:2019": {
+      "missing": false,
+      "rows": 8759,
+      "path": "data/raw/rd16b/kucoin/XRP-USDT/1h.parquet",
+      "sha256": "6BCABB39ED418CC7D6E6351B993E10C78A70B336AA9B3238D572B194CB8170EB",
+      "min_timestamp": "2019-01-01T01:00:00+00:00",
+      "max_timestamp": "2019-12-31T23:00:00+00:00"
+    },
+    "XRP-USDT:2020": {
+      "missing": false,
+      "rows": 17543,
+      "path": "data/raw/rd16b/kucoin/XRP-USDT/1h.parquet",
+      "sha256": "6BCABB39ED418CC7D6E6351B993E10C78A70B336AA9B3238D572B194CB8170EB",
+      "min_timestamp": "2019-01-01T01:00:00+00:00",
+      "max_timestamp": "2020-12-31T23:00:00+00:00"
+    },
+    "XRP-USDT:2021": {
+      "missing": false,
+      "rows": 26303,
+      "path": "data/raw/rd16b/kucoin/XRP-USDT/1h.parquet",
+      "sha256": "6BCABB39ED418CC7D6E6351B993E10C78A70B336AA9B3238D572B194CB8170EB",
+      "min_timestamp": "2019-01-01T01:00:00+00:00",
+      "max_timestamp": "2021-12-31T23:00:00+00:00"
+    },
+    "XTZ-USDT:2020": {
+      "missing": false,
+      "rows": 13260,
+      "path": "data/raw/rd16b/kucoin/XTZ-USDT/1h.parquet",
+      "sha256": "155D21280A4A347DF94D28075BD13CB6F3A13837C473F3535607A50DEBB72B8D",
+      "min_timestamp": "2019-06-28T12:00:00+00:00",
+      "max_timestamp": "2020-12-31T23:00:00+00:00"
+    }
+  },
+  "why_rev278_false_negative": "Rev278 required filenames/manifests to prove temporal bounds before opening an unbounded file. RD23 already supplies stronger executable authority: exact raw root + PIT pair cohort + pyarrow timestamp predicate pushdown + post-read cutoff assertion, and historically executed 2019-2021 under that contract.",
+  "unrelated_unbounded_repository_files_required_to_resolve": false
+}

@@ -1,0 +1,53 @@
+{
+  "2024_access": false,
+  "population": {
+    "base_control_rows": 2020,
+    "base_cost_rows": 2020,
+    "control_identity_columns": [
+      "policy_id",
+      "portfolio_id",
+      "universe_id"
+    ],
+    "control_identity_combos": [
+      {
+        "policy_id": "FULL_ADAPTIVE_LIFECYCLE_BRAIN",
+        "portfolio_id": "UNION_FOCUS",
+        "universe_id": "C2"
+      }
+    ],
+    "cost_authority": {
+      "available_cost_multipliers": [
+        1.0
+      ],
+      "cost_multiplier_column_present": true,
+      "selected_cost_multiplier": 1.0
+    },
+    "frozen_governor": "BINARY_VOL",
+    "governor_timeline_sha256": "6532B4501F2734EDE3F1D66DB931231C7915235AEEA3B8E654845A6F24341E2B",
+    "population_exactness": "CURRENT_DYNAMIC_TOP6_INTERSECT_STRICT_EXECUTION_IDENTITY;FROZEN_BINARY_VOL_CONTEXT_BOUND;STRICT_LEDGER_NOT_ASSUMED_TO_PROVE_BINARY_VOL_OCCUPANCY",
+    "strict_execution_identity_bound": true,
+    "strict_rows": 2092,
+    "strict_sha256": "54ABFD835E10A141BCCE49033F68131D2A95FD76A7D4AB11CAFE110C53915F71",
+    "top6_after_strict_intersection": 402,
+    "top6_before_strict_intersection": 1813,
+    "top6_rows": 1813,
+    "top6_rule": "membership_rank<=6"
+  },
+  "raw_authority": {
+    "authority": "SHA_BOUND_ABC_RUNNER_RAW_ROOT_LITERAL",
+    "full_pair_coverage": 20,
+    "path": "C:\\SIRAJ\\Repositories\\spot-speculation-bot\\data\\raw\\rd16b\\kucoin",
+    "repo_relative": "data/raw/rd16b/kucoin",
+    "required_pair_count": 20,
+    "runner_sha256": "C6E92E4980C50526263B7B0D4E22747E96B49FDA2118529DAC5DA7A81EF1364C"
+  },
+  "step": {
+    "decision_time_column": "decision_time_4h",
+    "distribution": {
+      "4.0": 12277
+    },
+    "mode_share": 1.0,
+    "positive_diff_count": 12277,
+    "step_hours": 4
+  }
+}

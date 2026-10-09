@@ -1,0 +1,37 @@
+{
+  "2024_access": false,
+  "aggregate_rescue": false,
+  "model_refit": false,
+  "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_EXIT_BRAIN_ACTION_GATE_SCHEDULE_MATERIALIZATION_V1",
+  "policies": {
+    "EB2A_SCORE_POS_STRUCTURAL_BREAK": {
+      "description": "score>0 AND STRUCTURAL_BREAK active now"
+    },
+    "EB2B_SCORE_POS_VOLATILITY_DAMAGE": {
+      "description": "score>0 AND VOLATILITY_DAMAGE active now"
+    },
+    "EB2C_SCORE_POS_DAMAGE_ANY": {
+      "description": "score>0 AND (STRUCTURAL_BREAK OR VOLATILITY_DAMAGE) active now"
+    },
+    "EB2D_SCORE_POS_CONFIRMED_DAMAGE": {
+      "description": "score>0 AND base_phase=CONFIRMED AND (STRUCTURAL_BREAK OR VOLATILITY_DAMAGE)"
+    },
+    "EB2E_SCORE_POS_PERSIST2_DAMAGE_ANY": {
+      "description": "current and immediately-prior lifecycle decisions both score>0 AND current (STRUCTURAL_BREAK OR VOLATILITY_DAMAGE)"
+    }
+  },
+  "policy_count": 5,
+  "ranking": false,
+  "schema_version": "abc-exit-brain-action-gate-redesign-protocol-v1",
+  "score_threshold_changed": false,
+  "source_score": "FROZEN_EB1_CAUSAL_TECH_LINEAR_EDGE",
+  "status": "FROZEN",
+  "strict_rule": "EVERY_2020_2023_YEAR_REQUIRES_PLANNED_GT_0_AND_EXECUTED_GT_0_AND_DELTA_PORTFOLIO_NET_PNL_GT_0",
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_EXIT_BRAIN_CANDIDATE_REDESIGN_PROTOCOL_FREEZE_V1",
+  "validation_years": [
+    2020,
+    2021,
+    2022,
+    2023
+  ]
+}

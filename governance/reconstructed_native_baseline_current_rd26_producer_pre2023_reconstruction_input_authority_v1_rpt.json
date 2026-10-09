@@ -1,0 +1,68 @@
+{
+  "authority_bindings": {
+    "decision_sha256": "7548D303C87F35CC71A8F57B0226C84B8684D18F2379DDF1D9AA600E8B9C0918",
+    "execution_contract_sha256": "59BA59EFFD7393D26AA1D2689D974D7C8699B019B2D2707216BE21BC97E93829",
+    "input_matrix_sha256": "AADEF97C3BC86112A6BFFA4B999500AADCF4004A6F2FB5C48D18A746CDAADE1D",
+    "study_contract_sha256": "C396BCA7A70BBB65A2990DAF6A8C11E252681926A404E6E88B41BAB150916C1D",
+    "writer_sha256": "16FA3896AD1D69B9FCFB20FBBBB62CE115E96FB3FF2F80DA767412629BD31718"
+  },
+  "branch": "research/rd48-cross-venue-price-level-basis-direct-utility-v1",
+  "evidence": [
+    {
+      "path": "governance/reconstructed_native_baseline_current_rd26_producer_pre2023_reconstruction_input_authority_v1/mixed_signal_true_writer_and_callgraph.json",
+      "sha256": "16FA3896AD1D69B9FCFB20FBBBB62CE115E96FB3FF2F80DA767412629BD31718"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_current_rd26_producer_pre2023_reconstruction_input_authority_v1/producer_input_source_matrix.json",
+      "sha256": "AADEF97C3BC86112A6BFFA4B999500AADCF4004A6F2FB5C48D18A746CDAADE1D"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_current_rd26_producer_pre2023_reconstruction_input_authority_v1/producer_input_preopen_physical_isolation_audit.json",
+      "sha256": "3020884192011B2AEFF43BF39F2873232768FAC41C93A5DDEA2EEBB499EDAFBA"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_current_rd26_producer_pre2023_reconstruction_input_authority_v1/pre2023_reconstruction_execution_contract.json",
+      "sha256": "59BA59EFFD7393D26AA1D2689D974D7C8699B019B2D2707216BE21BC97E93829"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_current_rd26_producer_pre2023_reconstruction_input_authority_v1/reconstruction_input_authority_decision.json",
+      "sha256": "7548D303C87F35CC71A8F57B0226C84B8684D18F2379DDF1D9AA600E8B9C0918"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_current_rd26_producer_pre2023_reconstruction_input_authority_v1.json",
+      "sha256": "C740134B0AA8D0173F2C58EA7E36CA8CFD50D90756031C5A7428BFEF8A5D61AF"
+    }
+  ],
+  "firewall": {
+    "economic_analysis": false,
+    "git_fetch": false,
+    "market_rows_read": false,
+    "mixed_csv_data_rows_read": false,
+    "native_replay_executed": false,
+    "network": false,
+    "protected_year_rows_read": false,
+    "push": false,
+    "source_code_mutation": false,
+    "v2_incidence_used": false
+  },
+  "governed_schema_version": "akah-provenance-phase-governed-v1",
+  "next_bottleneck": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_CURRENT_RD26_PRODUCER_PRE2023_RECONSTRUCTION_INPUT_EXACT_RESIDUAL_V1",
+  "north_star_effect": "Trace the current RD26 mixed-signal writer through a bounded same-module callgraph, bind its exact physical/config inputs, and classify whether each can be supplied from pre-open <=2022 authority without reading protected-year rows.",
+  "objective": "Trace the current RD26 mixed-signal writer through a bounded same-module callgraph, bind its exact physical/config inputs, and classify whether each can be supplied from pre-open <=2022 authority without reading protected-year rows.",
+  "resolution_class": "CURRENT_RD26_PRODUCER_PRE2023_RECONSTRUCTION_EXACT_INPUT_RESIDUAL_REMAINS",
+  "state_updates": {
+    "blocked_input_count": 16,
+    "economic_analysis": false,
+    "native_replay_executed": false,
+    "preopen_ready_input_count": 0,
+    "producer_data_input_count": 16,
+    "reconstruction_execution_contract_ready": false,
+    "roadmap_position": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_CURRENT_RD26_PRODUCER_PRE2023_RECONSTRUCTION_INPUT_EXACT_RESIDUAL_V1",
+    "writer_ready": true
+  },
+  "status": "PASS",
+  "summary": "Bound 1 exact writer occurrence(s) and 16 materialized producer inputs; 0 are pre-open <=2022 safe and 16 remain blocked.",
+  "task_id": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_CURRENT_RD26_PRODUCER_PRE2023_RECONSTRUCTION_INPUT_AUTHORITY_V1",
+  "task_start_head": "432551853312460efea22ebdb54ba041bedd0f40",
+  "task_start_revision": 213
+}

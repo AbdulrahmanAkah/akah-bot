@@ -1,0 +1,59 @@
+{
+  "2022_2023_fresh_holdout": false,
+  "2024_access": false,
+  "combined_shadow_executed": false,
+  "combined_shadow_positive": false,
+  "decision_matrix": [
+    {
+      "disposition": "RETIRE_AS_FINAL_NULL",
+      "evidence": "LEGACY_ADJACENT_ROTATION_NULL",
+      "reason": "serially confoundable by construction"
+    },
+    {
+      "disposition": "FAIL",
+      "evidence": "REPLACEMENT_NEGATIVE_CONTROLS",
+      "reason": "REPLACEMENT_NULLS_NOT_CLEAN_SEQUENCE_REPAIR_BLOCKED"
+    },
+    {
+      "disposition": "PRESERVE_DEFERRED",
+      "evidence": "17_PROVEN_TECHNICAL_SENSORS",
+      "reason": "prior compressed authority preserved; physical binding/history use not evaluated when forensic gate is closed"
+    },
+    {
+      "disposition": "SKIPPED",
+      "evidence": "INTERVENTION_HISTORY_SEQUENCE_REPAIR",
+      "reason": "SKIPPED_BY_NEGATIVE_CONTROL_FORENSIC_GATE"
+    },
+    {
+      "disposition": "SKIPPED",
+      "evidence": "COMBINED_DIRECT_EFFECT_SHADOW",
+      "reason": "SKIPPED_BY_FROZEN_VALIDATION_GATES"
+    },
+    {
+      "disposition": "SEALED",
+      "evidence": "2024",
+      "reason": "not accessed"
+    },
+    {
+      "disposition": "DEFER",
+      "evidence": "PORTFOLIO_REPLAY",
+      "reason": "not executed"
+    },
+    {
+      "disposition": "DEFER",
+      "evidence": "PRODUCTION_RUNTIME",
+      "reason": "not authorized"
+    }
+  ],
+  "history_sequence_validation_pass": false,
+  "negative_control_forensics_clear": false,
+  "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_CONTINUATION_VALUE_HISTORY_SEQUENCE_REPAIR_SYNTHESIS_HUMAN_REVIEW_V1",
+  "portfolio_replay": false,
+  "production_changed": false,
+  "proposed_post_review_route": "NEGATIVE_CONTROL_STATE_TIME_CONFOUND_DEEP_REVIEW_V1",
+  "push": false,
+  "schema_version": "akah-rev586-dual-head-history-technical-sequence-maximum-evidence-mega-v1-synthesis",
+  "status": "PASS_HISTORY_SEQUENCE_REPAIR_SYNTHESIS_COMPLETE",
+  "synthesis_status": "NEGATIVE_CONTROL_OR_STATE_TIME_CONFOUND_NOT_CLEARED",
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_CONTINUATION_VALUE_HISTORY_SEQUENCE_REPAIR_SYNTHESIS_V1"
+}

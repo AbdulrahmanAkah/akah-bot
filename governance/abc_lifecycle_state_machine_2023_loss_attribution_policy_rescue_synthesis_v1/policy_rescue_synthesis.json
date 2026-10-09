@@ -1,0 +1,370 @@
+{
+  "2024_access": false,
+  "development_selected_rescue_policy_id": "E_DROP10_MFE5+W_EXIT_Q50",
+  "development_selection": {
+    "all_three_nonnegative": true,
+    "candidate_capital_notional_hours_sum": 435226340.4889592,
+    "delta_2019": 2409.5820586553164,
+    "delta_2020": 3983.6227324596985,
+    "delta_2021": 9020.305452999004,
+    "dev_delta_sum": 15413.510244114019,
+    "mdd_nonworse_years": 2,
+    "pass_robust_gate": true,
+    "policy_id": "E_DROP10_MFE5+W_EXIT_Q50",
+    "worst_year_delta": 2409.5820586553164
+  },
+  "horizon_240_exact_portfolio_capability_supported": false,
+  "incumbent_policy_id": "E_DROP20_MFE5+W_EXIT_Q50",
+  "incumbent_prior_economic_evidence": {
+    "delta_pnl_2019_2023": 18537.602472329207,
+    "forward_both_nonnegative": false,
+    "forward_delta_pnl_2022_2023": 1486.896275097315
+  },
+  "incumbent_temporal_rows": [
+    {
+      "candidate_capital_notional_hours": 91430612.53745644,
+      "candidate_maximum_drawdown": 0.2348685463004266,
+      "candidate_net_pnl": -22217.197562334608,
+      "candidate_profit_factor": 0.6884826524213423,
+      "candidate_trade_count": 317,
+      "candidate_win_rate": 0.4069400630914827,
+      "control_capital_notional_hours": 102772625.4528273,
+      "control_maximum_drawdown": 0.2723002903072951,
+      "control_net_pnl": -26552.44384960465,
+      "control_profit_factor": 0.6707321177309898,
+      "control_trade_count": 358,
+      "control_win_rate": 0.3547486033519553,
+      "delta_maximum_drawdown": -0.0374317440068684,
+      "delta_net_pnl": 4335.246287270042,
+      "entry_policy_id": "E_DROP20_MFE5",
+      "policy_id": "E_DROP20_MFE5+W_EXIT_Q50",
+      "rejected_entry_event_keys": 173,
+      "winner_candidate_executed": 33,
+      "winner_policy_id": "W_EXIT_Q50",
+      "winner_signal_lifecycles": 40,
+      "year": 2022
+    },
+    {
+      "candidate_capital_notional_hours": 114959003.58762358,
+      "candidate_maximum_drawdown": 0.0917949576016424,
+      "candidate_net_pnl": 14362.433655431916,
+      "candidate_profit_factor": 1.2071025332166272,
+      "candidate_trade_count": 287,
+      "candidate_win_rate": 0.494773519163763,
+      "control_capital_notional_hours": 173133545.56824896,
+      "control_maximum_drawdown": 0.1236767522822406,
+      "control_net_pnl": 17210.783667604643,
+      "control_profit_factor": 1.1859409218816437,
+      "control_trade_count": 434,
+      "control_win_rate": 0.4516129032258064,
+      "delta_maximum_drawdown": -0.0318817946805982,
+      "delta_net_pnl": -2848.3500121727266,
+      "entry_policy_id": "E_DROP20_MFE5",
+      "policy_id": "E_DROP20_MFE5+W_EXIT_Q50",
+      "rejected_entry_event_keys": 497,
+      "winner_candidate_executed": 13,
+      "winner_policy_id": "W_EXIT_Q50",
+      "winner_signal_lifecycles": 25,
+      "year": 2023
+    }
+  ],
+  "loss_mechanism_diagnosis": {
+    "factorial_2022": {
+      "control_pnl": -26552.44384960465,
+      "entry_only_delta": 4109.845816944959,
+      "entry_only_pnl": -22442.59803265969,
+      "entry_shapley_contribution": 3863.15002334868,
+      "incumbent_combined_pnl": -22217.197562334608,
+      "incumbent_delta_vs_control": 4335.246287270042,
+      "raw_interaction_delta": -493.39158719255647,
+      "winner_only_delta": 718.7920575176395,
+      "winner_only_pnl": -25833.65179208701,
+      "winner_shapley_contribution": 472.0962639213613,
+      "year": 2022
+    },
+    "factorial_2023": {
+      "control_pnl": 17210.783667604643,
+      "entry_only_delta": -4602.052400264831,
+      "entry_only_pnl": 12608.731267339812,
+      "entry_shapley_contribution": -3942.44105627259,
+      "incumbent_combined_pnl": 14362.433655431916,
+      "incumbent_delta_vs_control": -2848.3500121727266,
+      "raw_interaction_delta": 1319.222687984482,
+      "winner_only_delta": 434.4797001076222,
+      "winner_only_pnl": 17645.263367712265,
+      "winner_shapley_contribution": 1094.0910440998632,
+      "year": 2023
+    },
+    "incumbent_path_mechanisms_2022": [
+      {
+        "candidate_pnl_sum": -3856.406845115311,
+        "control_pnl_sum": 0.0,
+        "delta_pnl_mean": -107.1224123643142,
+        "delta_pnl_sum": -3856.406845115311,
+        "group_type": "path_class",
+        "group_value": "CANDIDATE_ONLY_REDEPLOYED_OR_NEW_PATH",
+        "policy_role": "incumbent",
+        "rows": 36,
+        "year": 2022
+      },
+      {
+        "candidate_pnl_sum": -20666.424260972835,
+        "control_pnl_sum": -20274.697208988586,
+        "delta_pnl_mean": -1.579544564452639,
+        "delta_pnl_sum": -391.7270519842544,
+        "group_type": "path_class",
+        "group_value": "BOTH_SAME_EXIT",
+        "policy_role": "incumbent",
+        "rows": 248,
+        "year": 2022
+      },
+      {
+        "candidate_pnl_sum": 2305.633543753658,
+        "control_pnl_sum": 27.594178409426377,
+        "delta_pnl_mean": 69.03149591952217,
+        "delta_pnl_sum": 2278.039365344232,
+        "group_type": "path_class",
+        "group_value": "BOTH_DIFFERENT_EXIT",
+        "policy_role": "incumbent",
+        "rows": 33,
+        "year": 2022
+      },
+      {
+        "candidate_pnl_sum": 0.0,
+        "control_pnl_sum": -6305.340819025579,
+        "delta_pnl_mean": 81.8875431042283,
+        "delta_pnl_sum": 6305.340819025579,
+        "group_type": "path_class",
+        "group_value": "CONTROL_ONLY_REMOVED_OR_DISPLACED",
+        "policy_role": "incumbent",
+        "rows": 77,
+        "year": 2022
+      }
+    ],
+    "incumbent_path_mechanisms_2023": [
+      {
+        "candidate_pnl_sum": 0.0,
+        "control_pnl_sum": 2595.028207319674,
+        "delta_pnl_mean": -12.783390183840758,
+        "delta_pnl_sum": -2595.028207319674,
+        "group_type": "path_class",
+        "group_value": "CONTROL_ONLY_REMOVED_OR_DISPLACED",
+        "policy_role": "incumbent",
+        "rows": 203,
+        "year": 2023
+      },
+      {
+        "candidate_pnl_sum": -747.4650625146448,
+        "control_pnl_sum": 0.0,
+        "delta_pnl_mean": -13.34759040204723,
+        "delta_pnl_sum": -747.4650625146448,
+        "group_type": "path_class",
+        "group_value": "CANDIDATE_ONLY_REDEPLOYED_OR_NEW_PATH",
+        "policy_role": "incumbent",
+        "rows": 56,
+        "year": 2023
+      },
+      {
+        "candidate_pnl_sum": 12993.660317140926,
+        "control_pnl_sum": 13025.406388961215,
+        "delta_pnl_mean": -0.1456241826618727,
+        "delta_pnl_sum": -31.74607182028825,
+        "group_type": "path_class",
+        "group_value": "BOTH_SAME_EXIT",
+        "policy_role": "incumbent",
+        "rows": 218,
+        "year": 2023
+      },
+      {
+        "candidate_pnl_sum": 2116.238400805672,
+        "control_pnl_sum": 1590.3490713238348,
+        "delta_pnl_mean": 40.45302534475674,
+        "delta_pnl_sum": 525.8893294818376,
+        "group_type": "path_class",
+        "group_value": "BOTH_DIFFERENT_EXIT",
+        "policy_role": "incumbent",
+        "rows": 13,
+        "year": 2023
+      }
+    ],
+    "rescue_path_mechanisms_2022": [
+      {
+        "candidate_pnl_sum": -4374.028077652122,
+        "control_pnl_sum": 0.0,
+        "delta_pnl_mean": -174.9611231060849,
+        "delta_pnl_sum": -4374.028077652122,
+        "group_type": "path_class",
+        "group_value": "CANDIDATE_ONLY_REDEPLOYED_OR_NEW_PATH",
+        "policy_role": "rescue",
+        "rows": 25,
+        "year": 2022
+      },
+      {
+        "candidate_pnl_sum": -20378.200461643868,
+        "control_pnl_sum": -19849.36874017126,
+        "delta_pnl_mean": -1.909139788709787,
+        "delta_pnl_sum": -528.831721472611,
+        "group_type": "path_class",
+        "group_value": "BOTH_SAME_EXIT",
+        "policy_role": "rescue",
+        "rows": 277,
+        "year": 2022
+      },
+      {
+        "candidate_pnl_sum": 2943.6899969528117,
+        "control_pnl_sum": -740.9983642694831,
+        "delta_pnl_mean": 94.4791887492896,
+        "delta_pnl_sum": 3684.688361222295,
+        "group_type": "path_class",
+        "group_value": "BOTH_DIFFERENT_EXIT",
+        "policy_role": "rescue",
+        "rows": 39,
+        "year": 2022
+      },
+      {
+        "candidate_pnl_sum": 0.0,
+        "control_pnl_sum": -5962.076745163991,
+        "delta_pnl_mean": 141.95420821819027,
+        "delta_pnl_sum": 5962.076745163991,
+        "group_type": "path_class",
+        "group_value": "CONTROL_ONLY_REMOVED_OR_DISPLACED",
+        "policy_role": "rescue",
+        "rows": 42,
+        "year": 2022
+      }
+    ],
+    "rescue_path_mechanisms_2023": [
+      {
+        "candidate_pnl_sum": 0.0,
+        "control_pnl_sum": 4612.692082917332,
+        "delta_pnl_mean": -40.46221125366081,
+        "delta_pnl_sum": -4612.692082917332,
+        "group_type": "path_class",
+        "group_value": "CONTROL_ONLY_REMOVED_OR_DISPLACED",
+        "policy_role": "rescue",
+        "rows": 114,
+        "year": 2023
+      },
+      {
+        "candidate_pnl_sum": 11771.366930799388,
+        "control_pnl_sum": 11750.690874550048,
+        "delta_pnl_mean": 0.068920187497813,
+        "delta_pnl_sum": 20.676056249343915,
+        "group_type": "path_class",
+        "group_value": "BOTH_SAME_EXIT",
+        "policy_role": "rescue",
+        "rows": 300,
+        "year": 2023
+      },
+      {
+        "candidate_pnl_sum": 1453.189677501338,
+        "control_pnl_sum": 847.400710137342,
+        "delta_pnl_mean": 30.28944836819977,
+        "delta_pnl_sum": 605.7889673639954,
+        "group_type": "path_class",
+        "group_value": "BOTH_DIFFERENT_EXIT",
+        "policy_role": "rescue",
+        "rows": 20,
+        "year": 2023
+      },
+      {
+        "candidate_pnl_sum": 2415.6370920847285,
+        "control_pnl_sum": 0.0,
+        "delta_pnl_mean": 51.39653387414316,
+        "delta_pnl_sum": 2415.6370920847285,
+        "group_type": "path_class",
+        "group_value": "CANDIDATE_ONLY_REDEPLOYED_OR_NEW_PATH",
+        "policy_role": "rescue",
+        "rows": 47,
+        "year": 2023
+      }
+    ],
+    "schema_version": "akah-cross-year-loss-mechanism-diagnosis-v1",
+    "temporal_compare": {
+      "incumbent": {
+        "both_nonnegative": false,
+        "delta_2022": 4335.246287270042,
+        "delta_2023": -2848.3500121727266,
+        "delta_sum_2022_2023": 1486.896275097315
+      },
+      "incumbent_policy_id": "E_DROP20_MFE5+W_EXIT_Q50",
+      "selected": {
+        "both_nonnegative": false,
+        "delta_2022": 4743.90530726139,
+        "delta_2023": -1570.58996721913,
+        "delta_sum_2022_2023": 3173.31534004226
+      },
+      "selected_policy_id": "E_DROP10_MFE5+W_EXIT_Q50"
+    }
+  },
+  "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_2023_LOSS_ATTRIBUTION_POLICY_RESCUE_MANDATORY_REVIEW_V1",
+  "pristine_holdout_required_before_production": true,
+  "production_changed": false,
+  "promotion_status": "RESEARCH_ONLY_NO_PRODUCTION_CHANGE",
+  "schema_version": "abc-2023-loss-attribution-policy-rescue-synthesis-v1",
+  "selected_temporal_rows": [
+    {
+      "candidate_capital_notional_hours": 94765968.5410356,
+      "candidate_maximum_drawdown": 0.2262787550714573,
+      "candidate_net_pnl": -21808.53854234326,
+      "candidate_profit_factor": 0.7043942675125573,
+      "candidate_trade_count": 341,
+      "candidate_win_rate": 0.4134897360703812,
+      "control_capital_notional_hours": 102772625.4528273,
+      "control_maximum_drawdown": 0.2723002903072951,
+      "control_net_pnl": -26552.44384960465,
+      "control_profit_factor": 0.6707321177309898,
+      "control_trade_count": 358,
+      "control_win_rate": 0.3547486033519553,
+      "delta_maximum_drawdown": -0.0460215352358378,
+      "delta_net_pnl": 4743.90530726139,
+      "entry_policy_id": "E_DROP10_MFE5",
+      "policy_id": "E_DROP10_MFE5+W_EXIT_Q50",
+      "rejected_entry_event_keys": 93,
+      "winner_candidate_executed": 39,
+      "winner_policy_id": "W_EXIT_Q50",
+      "winner_signal_lifecycles": 40,
+      "year": 2022
+    },
+    {
+      "candidate_capital_notional_hours": 137766780.63389784,
+      "candidate_maximum_drawdown": 0.1069183689002306,
+      "candidate_net_pnl": 15640.193700385513,
+      "candidate_profit_factor": 1.1927819630340677,
+      "candidate_trade_count": 367,
+      "candidate_win_rate": 0.4877384196185286,
+      "control_capital_notional_hours": 173133545.56824896,
+      "control_maximum_drawdown": 0.1236767522822406,
+      "control_net_pnl": 17210.783667604643,
+      "control_profit_factor": 1.1859409218816437,
+      "control_trade_count": 434,
+      "control_win_rate": 0.4516129032258064,
+      "delta_maximum_drawdown": -0.0167583833820099,
+      "delta_net_pnl": -1570.58996721913,
+      "entry_policy_id": "E_DROP10_MFE5",
+      "policy_id": "E_DROP10_MFE5+W_EXIT_Q50",
+      "rejected_entry_event_keys": 294,
+      "winner_candidate_executed": 20,
+      "winner_policy_id": "W_EXIT_Q50",
+      "winner_signal_lifecycles": 25,
+      "year": 2023
+    }
+  ],
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_2023_LOSS_ATTRIBUTION_POLICY_RESCUE_SYNTHESIS_V1",
+  "temporal_selected_vs_incumbent": {
+    "incumbent": {
+      "both_nonnegative": false,
+      "delta_2022": 4335.246287270042,
+      "delta_2023": -2848.3500121727266,
+      "delta_sum_2022_2023": 1486.896275097315
+    },
+    "incumbent_policy_id": "E_DROP20_MFE5+W_EXIT_Q50",
+    "selected": {
+      "both_nonnegative": false,
+      "delta_2022": 4743.90530726139,
+      "delta_2023": -1570.58996721913,
+      "delta_sum_2022_2023": 3173.31534004226
+    },
+    "selected_policy_id": "E_DROP10_MFE5+W_EXIT_Q50"
+  }
+}

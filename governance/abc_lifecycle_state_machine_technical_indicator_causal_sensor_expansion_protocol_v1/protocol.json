@@ -1,0 +1,72 @@
+{
+  "2024_access": false,
+  "action_selection": false,
+  "direct_exchange_fetch_policy": "ONLY_IF_CANONICAL_OHLCV_CAPABILITY_AUDIT_FAILS; DO_NOT_SILENTLY_MIX_DATA_SOURCES",
+  "economic_outcomes_read": false,
+  "families": {
+    "ADX_DMI": 5,
+    "BOLLINGER_VOLATILITY": 5,
+    "MACD": 6,
+    "MOMENTUM_EXHAUSTION": 13,
+    "TREND_EMA": 9,
+    "VOLUME_LIQUIDITY_PROXY": 6
+  },
+  "historical_order_book_liquidity_claimed": false,
+  "indicator_feature_count": 44,
+  "interaction_pairs_preregistered": [
+    [
+      "rsi14",
+      "atr24h_price_fraction"
+    ],
+    [
+      "rsi14",
+      "realized_vol_72h"
+    ],
+    [
+      "rsi14",
+      "mfe_return_so_far"
+    ],
+    [
+      "rsi14",
+      "giveback_fraction_of_mfe"
+    ],
+    [
+      "macd_hist_atr",
+      "realized_vol_72h"
+    ],
+    [
+      "macd_hist_delta1_atr",
+      "realized_vol_72h"
+    ],
+    [
+      "macd_hist_atr",
+      "mfe_return_so_far"
+    ],
+    [
+      "macd_hist_atr",
+      "giveback_fraction_of_mfe"
+    ],
+    [
+      "adx14",
+      "realized_vol_72h"
+    ],
+    [
+      "adx14",
+      "b_current_run_decisions"
+    ],
+    [
+      "price_ema21_atr",
+      "b_current_run_decisions"
+    ],
+    [
+      "bb_percent_b20",
+      "giveback_fraction_of_mfe"
+    ]
+  ],
+  "network_calls_planned": 0,
+  "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_TECHNICAL_INDICATOR_SOURCE_CAPABILITY_AUDIT_V1",
+  "schema_version": "abc-technical-indicator-causal-sensor-protocol-v1",
+  "status": "FROZEN_BEFORE_NEW_OUTCOME_DIAGNOSTICS",
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_TECHNICAL_INDICATOR_CAUSAL_SENSOR_EXPANSION_PROTOCOL_FREEZE_V1",
+  "volume_liquidity_proxies_only": true
+}

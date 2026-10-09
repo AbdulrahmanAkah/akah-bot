@@ -1,0 +1,102 @@
+{
+  "authority_id": "AKAH_BOT_RD26_SIGNAL_SOURCE_AND_1H_MANIFEST_HUMAN_DECISION_V1",
+  "constructor_mapping": {
+    "MOMENTUM_BREAKOUT": {
+      "constructor": "standalone_events",
+      "family_id": "MOMENTUM_BREAKOUT"
+    },
+    "RELATIVE_STRENGTH_ROTATION": {
+      "constructor": "standalone_events",
+      "family_id": "RELATIVE_STRENGTH_ROTATION"
+    },
+    "UNION_FOCUS": {
+      "constructor": "union_events",
+      "family_id": null
+    }
+  },
+  "decision_scope": "Prospective reconstructed native RD27 input context only; not historical truth.",
+  "next_bottleneck": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_PRE2023_SIGNAL_MATERIALIZATION_AND_1H_INPUT_VERIFICATION_V1",
+  "portfolio_mode": "NOT_PRESENT_IN_NATIVE_CONTRACT",
+  "selected_context": "FULL_EXISTING_NATIVE_MATRIX_AS_STUDY_STRATA",
+  "selection_basis": [
+    "FULL_MATRIX_IS_EXPLICITLY_LISTED_AS_A_NATIVE_OPTION_IN_THE_CODEX_HUMAN_PACKET",
+    "SOURCE_EXPOSES_ALL_THREE_PORTFOLIO_BRANCHES_ACROSS_C2_D2_E2",
+    "NO_PNL_USED",
+    "NO_V2_INCIDENCE_USED",
+    "NO_OUTCOME_BASED_SELECTION",
+    "NO_PROTECTED_YEAR_ROWS_OPENED"
+  ],
+  "signal_input_decision": {
+    "mixed_source_forbidden_as_is": "data/research/rd26_p1_runtime/signal-events-2022-2023.csv",
+    "selection": null,
+    "status": "NO_CURRENT_AUTHORIZED_PRE2023_SIGNAL_ARTIFACT"
+  },
+  "status": "HUMAN_DECISION_ACCEPTED",
+  "strata": [
+    {
+      "family_id": null,
+      "portfolio_id": "UNION_FOCUS",
+      "signal_constructor": "union_events",
+      "stratum_id": "S01",
+      "universe_id": "C2"
+    },
+    {
+      "family_id": null,
+      "portfolio_id": "UNION_FOCUS",
+      "signal_constructor": "union_events",
+      "stratum_id": "S02",
+      "universe_id": "D2"
+    },
+    {
+      "family_id": null,
+      "portfolio_id": "UNION_FOCUS",
+      "signal_constructor": "union_events",
+      "stratum_id": "S03",
+      "universe_id": "E2"
+    },
+    {
+      "family_id": "MOMENTUM_BREAKOUT",
+      "portfolio_id": "MOMENTUM_BREAKOUT",
+      "signal_constructor": "standalone_events",
+      "stratum_id": "S04",
+      "universe_id": "C2"
+    },
+    {
+      "family_id": "MOMENTUM_BREAKOUT",
+      "portfolio_id": "MOMENTUM_BREAKOUT",
+      "signal_constructor": "standalone_events",
+      "stratum_id": "S05",
+      "universe_id": "D2"
+    },
+    {
+      "family_id": "MOMENTUM_BREAKOUT",
+      "portfolio_id": "MOMENTUM_BREAKOUT",
+      "signal_constructor": "standalone_events",
+      "stratum_id": "S06",
+      "universe_id": "E2"
+    },
+    {
+      "family_id": "RELATIVE_STRENGTH_ROTATION",
+      "portfolio_id": "RELATIVE_STRENGTH_ROTATION",
+      "signal_constructor": "standalone_events",
+      "stratum_id": "S07",
+      "universe_id": "C2"
+    },
+    {
+      "family_id": "RELATIVE_STRENGTH_ROTATION",
+      "portfolio_id": "RELATIVE_STRENGTH_ROTATION",
+      "signal_constructor": "standalone_events",
+      "stratum_id": "S08",
+      "universe_id": "D2"
+    },
+    {
+      "family_id": "RELATIVE_STRENGTH_ROTATION",
+      "portfolio_id": "RELATIVE_STRENGTH_ROTATION",
+      "signal_constructor": "standalone_events",
+      "stratum_id": "S09",
+      "universe_id": "E2"
+    }
+  ],
+  "strata_count": 9,
+  "universe_mode": "NOT_PRESENT_IN_NATIVE_CONTRACT"
+}

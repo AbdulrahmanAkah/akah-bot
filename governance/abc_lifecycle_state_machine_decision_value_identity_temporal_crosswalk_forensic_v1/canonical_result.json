@@ -1,0 +1,56 @@
+{
+  "2024_access": false,
+  "2025_access": false,
+  "bounded_source_count": 12,
+  "created_at_utc": "2026-09-25T20:43:53.296620+00:00",
+  "crosswalk_materialized": false,
+  "d2_expansion": false,
+  "derived_export_executed": false,
+  "disposition": "CROSSWALK_NOT_RECOVERABLE_FROM_EXISTING_DERIVED_AUTHORITY",
+  "disposition_detail": [],
+  "disposition_reason": "No bounded shared non-outcome identity/time anchor among the twelve previously audited sources produced a complete unique crosswalk to the exact-core ledger. Partial overlaps, if any, are retained as diagnostics only and do not authorize materialization.",
+  "exact_core": {
+    "columns": [
+      "__year",
+      "pair",
+      "entry_time",
+      "decision_time_exact",
+      "__trade_id",
+      "__week_id",
+      "__p0_one_step_mark_return",
+      "__p1_immediate_bridge_advantage",
+      "__p2_downstream_residual",
+      "__p3_total_continuation",
+      "__p4_full_horizon_price_gap"
+    ],
+    "header_class": {
+      "context": [],
+      "identity": [
+        "__trade_id"
+      ],
+      "pair": [
+        "pair"
+      ],
+      "time": [
+        "entry_time",
+        "decision_time_exact"
+      ]
+    },
+    "path": "governance/abc_lifecycle_state_machine_continuation_value_exact_target_algebra_temporal_alignment_forensic_v1/clean_target_primitive_ledger.csv",
+    "sha256": "84C2870D6549EA09C40B39AF03EC61FF15DD1FCD1DEA0424E0DA5ED7BA2134EF"
+  },
+  "m1_m2_executed": false,
+  "new_inventory_executed": false,
+  "new_replay": false,
+  "next_action_by_disposition": {
+    "CROSSWALK_NOT_RECOVERABLE_FROM_EXISTING_DERIVED_AUTHORITY": "Do not train M1/M2 and do not run another broad audit. Human review must choose between a specifically named upstream derived-authority reconstruction from known producers or acquiring independent derived decision-ledger authority.",
+    "DETERMINISTIC_CROSSWALK_MATERIALIZATION_REQUIRED": "Human review may authorize only the proven deterministic crosswalk materialization, followed by exact parity/PIT verification.",
+    "EXACT_CROSSWALK_PROVEN": "Human review may authorize materialization of the exact crosswalk and then a bounded action/notional/cost authority join with parity/PIT proof. M1/M2 remain unauthorized until that join is certified."
+  },
+  "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_DECISION_VALUE_IDENTITY_TEMPORAL_CROSSWALK_FORENSIC_HUMAN_REVIEW_V1",
+  "production_changed": false,
+  "push": false,
+  "schema_version": "akah-decision-value-identity-temporal-crosswalk-forensic-v1",
+  "status": "PASS_DECISION_VALUE_IDENTITY_TEMPORAL_CROSSWALK_FORENSIC_COMPLETE",
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_DECISION_VALUE_IDENTITY_TEMPORAL_CROSSWALK_FORENSIC_V1"
+}

@@ -1,0 +1,95 @@
+{
+  "authority_id": "AKAH_BOT_CURRENT_RD26_PRE2023_SIGNAL_RECONSTRUCTION_EXECUTION_CONTRACT_V1",
+  "blocked_inputs": [
+    {
+      "path": "C:\\SIRAJ\\Repositories\\spot-speculation-bot\\break-even-cost-multiplier.csv",
+      "preopen_status": "PATH_LITERAL_NOT_MATERIALIZED"
+    },
+    {
+      "path": "C:\\SIRAJ\\Repositories\\spot-speculation-bot\\concentration-diagnostics.csv",
+      "preopen_status": "PATH_LITERAL_NOT_MATERIALIZED"
+    },
+    {
+      "path": "C:\\SIRAJ\\Repositories\\spot-speculation-bot\\daily-equity.csv",
+      "preopen_status": "PATH_LITERAL_NOT_MATERIALIZED"
+    },
+    {
+      "path": "C:\\SIRAJ\\Repositories\\spot-speculation-bot\\exit-reason-summary.csv",
+      "preopen_status": "PATH_LITERAL_NOT_MATERIALIZED"
+    },
+    {
+      "path": "C:\\SIRAJ\\Repositories\\spot-speculation-bot\\hard-gate-evaluation.csv",
+      "preopen_status": "PATH_LITERAL_NOT_MATERIALIZED"
+    },
+    {
+      "path": "C:\\SIRAJ\\Repositories\\spot-speculation-bot\\input-and-conformance-audit.json",
+      "preopen_status": "PATH_LITERAL_NOT_MATERIALIZED"
+    },
+    {
+      "path": "C:\\SIRAJ\\Repositories\\spot-speculation-bot\\output-manifest.json",
+      "preopen_status": "PATH_LITERAL_NOT_MATERIALIZED"
+    },
+    {
+      "path": "C:\\SIRAJ\\Repositories\\spot-speculation-bot\\policy-selection.csv",
+      "preopen_status": "PATH_LITERAL_NOT_MATERIALIZED"
+    },
+    {
+      "path": "C:\\SIRAJ\\Repositories\\spot-speculation-bot\\portfolio-period-metrics.csv",
+      "preopen_status": "PATH_LITERAL_NOT_MATERIALIZED"
+    },
+    {
+      "path": "C:\\SIRAJ\\Repositories\\spot-speculation-bot\\portfolio-run-metrics.csv",
+      "preopen_status": "PATH_LITERAL_NOT_MATERIALIZED"
+    },
+    {
+      "path": "C:\\SIRAJ\\Repositories\\spot-speculation-bot\\rd26-p1-exit-architecture-robustness-report-v1.json",
+      "preopen_status": "PATH_LITERAL_NOT_MATERIALIZED"
+    },
+    {
+      "path": "C:\\SIRAJ\\Repositories\\spot-speculation-bot\\routing-summary.csv",
+      "preopen_status": "PATH_LITERAL_NOT_MATERIALIZED"
+    },
+    {
+      "path": "C:\\SIRAJ\\Repositories\\spot-speculation-bot\\selected-exit-architecture-freeze.json",
+      "preopen_status": "PATH_LITERAL_NOT_MATERIALIZED"
+    },
+    {
+      "path": "C:\\SIRAJ\\Repositories\\spot-speculation-bot\\signal-funnel-2022-2023.csv",
+      "preopen_status": "PATH_LITERAL_NOT_MATERIALIZED"
+    },
+    {
+      "path": "C:\\SIRAJ\\Repositories\\spot-speculation-bot\\trade-ledger.csv",
+      "preopen_status": "PATH_LITERAL_NOT_MATERIALIZED"
+    },
+    {
+      "path": "C:\\SIRAJ\\Repositories\\spot-speculation-bot\\1h.parquet",
+      "preopen_status": "PATH_LITERAL_NOT_MATERIALIZED"
+    }
+  ],
+  "economic_analysis": false,
+  "input_count": 16,
+  "mixed_output_forbidden_as_input": "data/research/rd26_p1_runtime/signal-events-2022-2023.csv",
+  "must_not_open_2023_rows": true,
+  "native_replay": false,
+  "network": false,
+  "output_max_time_exclusive": "2023-01-01T00:00:00Z",
+  "preopen_ready_input_count": 0,
+  "required_output_columns": [
+    "timestamp",
+    "universe_id",
+    "period_id",
+    "family_id",
+    "pair",
+    "membership_rank",
+    "atr24_at_signal"
+  ],
+  "status": "BLOCKED",
+  "writer_count": 1,
+  "writer_occurrences": [
+    {
+      "function": "main",
+      "line": 651,
+      "path": "scripts/research/run_rd26_exit_architecture.py"
+    }
+  ]
+}

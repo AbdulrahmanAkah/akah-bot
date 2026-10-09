@@ -1,0 +1,84 @@
+{
+  "task_id": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_PRE_PROGRESS_THESIS_NON_CONFIRMATION_COUNTERFACTUAL_MECHANISM_ATTRIBUTION_V1",
+  "objective": "Attribute the adverse pre-progress thesis-non-confirmation portfolio counterfactual into direct action, common path/size, CF-only admission, and omitted-native-admission channels using existing frozen artifacts only.",
+  "axis": "REGIME_DEPENDENT_CONTINUATION_AUTHORITY_AND_LIFECYCLE_HORIZON_ARCHITECTURE",
+  "started_at_utc": "2026-09-18T22:31:52+00:00",
+  "completed_analysis_at_utc": "2026-09-18T22:39:01.783351+00:00",
+  "starting_charter_revision": 241,
+  "starting_head": "c2089bd025304ddea88822c1a59ba6a25c069b96",
+  "outcome": "PASS",
+  "alignment": "ALIGNED_WITH_SCOPE_UPDATE",
+  "vision_impact": "ADVANCES",
+  "summary": "Completed exact additive mechanism attribution for the adverse pre-progress thesis-non-confirmation counterfactual using frozen Revision 241 artifacts only. The full action is adverse in all three portfolios, while the direct pre-progress exit channel is beneficial in only one of three and adverse in two; downstream admission coupling is not an all-portfolio adverse explanation. The candidate is closed rejected without retuning or rescue filters.",
+  "north_star_effect": "Separates direct exit quality from portfolio-coupling effects and prevents a rejected exit rule from being rescued by posthoc tuning, preserving causal research integrity.",
+  "next_bottleneck": "STATE_CONDITIONED_SHADOW_AUTHORITY_P32",
+  "result_ref": "governance/rnb_pre_progress_thesis_non_confirmation_counterfactual_mechanism_attribution_v1/mechanism_attribution.json",
+  "result_sha256": "1CDA818845B0B74B12F47D8836DFE6C5F84016EE81016BA48563AED45CD0AB83",
+  "evidence": [
+    {
+      "path": "governance/rnb_pre_progress_thesis_non_confirmation_counterfactual_mechanism_attribution_v1/entry_level_attribution.csv",
+      "sha256": "9465FE6A967852667CC736CDAC5777246B9F60880C845DE87B82EBE8E19B1E6F"
+    },
+    {
+      "path": "governance/rnb_pre_progress_thesis_non_confirmation_counterfactual_mechanism_attribution_v1/mechanism_attribution.json",
+      "sha256": "1CDA818845B0B74B12F47D8836DFE6C5F84016EE81016BA48563AED45CD0AB83"
+    },
+    {
+      "path": "governance/rnb_pre_progress_thesis_non_confirmation_counterfactual_mechanism_attribution_v1/mechanism_by_exit_path.json",
+      "sha256": "6F10903462115D5005E61428E69826BA0659BB544098F28539FB72D95108553C"
+    },
+    {
+      "path": "governance/rnb_pre_progress_thesis_non_confirmation_counterfactual_mechanism_attribution_v1/pre_progress_non_confirmation_candidate_closure.json",
+      "sha256": "A58F5AE39CFC382B8B23375D9CBEE5173C1FC066A164F0F6F23B795B81C7644A"
+    },
+    {
+      "path": "governance/rnb_pre_progress_thesis_non_confirmation_counterfactual_mechanism_attribution_v1/next_hypothesis_authority.json",
+      "sha256": "A4128BD9280BF9059B2CF02664F81803B11AA1AF804800943F5199662C272C6E"
+    },
+    {
+      "path": "governance/rnb_shadow_action_counterfactual_mechanism_attribution_v1/entry_level_attribution.csv",
+      "sha256": "C4CAF7916488FB1A09B5858653B2C142D891CAAAC73E3F3F03D647FD915DE4CE"
+    },
+    {
+      "path": "data/research/reconstructed_native_baseline_pre2023/pre-progress-thesis-non-confirmation-counterfactual-v1/mechanism_rows.csv",
+      "sha256": "7B0DFEB0F5591400A885834E91F5E524A9CC666ED4E18661CEF818E0CCC8C442"
+    },
+    {
+      "path": "governance/rnb_pre_progress_thesis_non_confirmation_counterfactual_v1/counterfactual_delta.json",
+      "sha256": "AA8D48DCC1D6C743A828C697E54F804904F58B1D3F84B02528580B60812EC484"
+    }
+  ],
+  "governance_declarations": {
+    "lookahead_or_future_information_used": false,
+    "2023_new_raw_or_replay_accessed": false,
+    "2024_used_to_define_new_runtime_rule": false,
+    "posthoc_outcome_threshold_search_used": false,
+    "2025_accessed": false,
+    "2024_used_as_fresh_holdout": false,
+    "pair_or_event_identity_used_as_runtime_rule": false,
+    "production_changed": false
+  },
+  "classification": "FULL_PORTFOLIO_ACTION_ADVERSE_ALL_THREE_AND_DIRECT_ACTION_NOT_ROBUST_ACROSS_PORTFOLIOS",
+  "aggregate_mechanism_attribution": {
+    "total_trade_pnl_delta": -449.1689617042557,
+    "direct_pre_progress_delta": -752.1665957817661,
+    "same_path_and_size_delta": -71.43770923913945,
+    "cf_extra_admissions_delta": 129.5634667049942,
+    "native_omitted_admissions_delta": 244.87187661165763,
+    "admission_path_net_delta": 374.4353433166518,
+    "direct_action_adverse_portfolio_count": 2,
+    "direct_action_beneficial_portfolio_count": 1,
+    "admission_path_adverse_portfolio_count": 1,
+    "all_three_total_effects_adverse": true,
+    "direct_action_robustly_beneficial": false
+  },
+  "firewall": {
+    "market_data_read": false,
+    "replay_executed": false,
+    "network": false,
+    "optimization": false,
+    "retuning": false,
+    "protected_year_rows_read": false,
+    "production_authorized": false
+  }
+}

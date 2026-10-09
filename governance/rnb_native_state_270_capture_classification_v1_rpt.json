@@ -1,0 +1,56 @@
+{
+  "authority_bindings": {
+    "boundaries_sha256": "6A4084EC1A55DB1170D15E91DB9882CF9DC12C990BE77AAE45EBBED063C6ED5B",
+    "classification_sha256": "BFEF4D347264C719E7A5BF047C9D515E1ADBFEFA61DA6032111034A8AB3B5224",
+    "decision_sha256": "1E863417535EC400F8229400DEDD26D7A77CAF86D869EA7B08AF377A04B3F2FA",
+    "inventory_sha256": "032B5BD8000BCD4BDAB90A1DCE6C8C8BB0C9F0C1C88A959D4957B7F1CC54D522"
+  },
+  "branch": "research/rd48-cross-venue-price-level-basis-direct-utility-v1",
+  "evidence": [
+    {
+      "path": "governance/rnb_native_state_270_capture_classification_v1/capture_inventory.json",
+      "sha256": "032B5BD8000BCD4BDAB90A1DCE6C8C8BB0C9F0C1C88A959D4957B7F1CC54D522"
+    },
+    {
+      "path": "governance/rnb_native_state_270_capture_classification_v1/state_boundary_candidates.json",
+      "sha256": "6A4084EC1A55DB1170D15E91DB9882CF9DC12C990BE77AAE45EBBED063C6ED5B"
+    },
+    {
+      "path": "governance/rnb_native_state_270_capture_classification_v1/exact_classification.json",
+      "sha256": "BFEF4D347264C719E7A5BF047C9D515E1ADBFEFA61DA6032111034A8AB3B5224"
+    },
+    {
+      "path": "governance/rnb_native_state_270_capture_classification_v1/decision.json",
+      "sha256": "1E863417535EC400F8229400DEDD26D7A77CAF86D869EA7B08AF377A04B3F2FA"
+    },
+    {
+      "path": "governance/rnb_native_state_270_capture_classification_v1.json",
+      "sha256": "92EF1DB754EA2927F8D38E8F46D89D9A7F4D9B56A6D52B4184F5D122475EB5BE"
+    }
+  ],
+  "firewall": {
+    "cohort_frozen": false,
+    "market_rows_read": false,
+    "native_replay_executed": false,
+    "network": false,
+    "runner_execution": false,
+    "signals_dropped": false
+  },
+  "governed_schema_version": "akah-provenance-phase-governed-v1",
+  "next_bottleneck": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_NATIVE_STATE_INPUT_CONSTRUCTION_REPAIR_V1",
+  "north_star_effect": "Determines whether the 270 misses are causal boundary/warm-up exclusions or an internal join/coverage defect before cohort freeze.",
+  "objective": "Classify all 270 exact native-state misses from rev226 capture against captured native-state availability, without rerunning signal construction or reading market rows.",
+  "resolution_class": "NATIVE_STATE_MISSING_270_INTERNAL_DEFECT_REPAIR_REQUIRED",
+  "state_updates": {
+    "cohort_frozen": false,
+    "native_state_missing_classification": "JOIN_OR_COVERAGE_DEFECT_PRESENT",
+    "native_state_missing_count": 270,
+    "roadmap_position": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_NATIVE_STATE_INPUT_CONSTRUCTION_REPAIR_V1",
+    "signals_dropped": 0
+  },
+  "status": "PASS",
+  "summary": "Capture-only classification of 270 native-state misses: JOIN_OR_COVERAGE_DEFECT_PRESENT; runner not executed, market rows not read.",
+  "task_id": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_NATIVE_STATE_SIGNAL_COVERAGE_EXACT_RESIDUAL_V1",
+  "task_start_head": "f55c0074943ce55f0c6c9f9525b6df0415ce9886",
+  "task_start_revision": 226
+}

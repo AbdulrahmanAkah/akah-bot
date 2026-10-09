@@ -1,0 +1,32 @@
+{
+  "2024_access": false,
+  "action_threshold": false,
+  "descriptive_sort": [
+    "ANNUAL_SAME_SIGN_COUNT_DESC",
+    "ABS_SPEARMAN_DESC",
+    "COVERAGE_DESC"
+  ],
+  "execution_time": "DECISION_TIME_PLUS_1H",
+  "feature_promotion_authority": false,
+  "metrics": [
+    "SPEARMAN_RHO",
+    "Q4_MINUS_Q1_MEAN_EXIT_DELTA",
+    "ANNUAL_SPEARMAN_SIGN_SEQUENCE",
+    "WITHIN_BASE_PHASE_SPEARMAN"
+  ],
+  "native_preemption": "NATIVE_EXIT_TIME_LT_SCHEDULED_EXECUTION",
+  "native_tie_priority": "NATIVE_EXIT_TIME_EQ_SCHEDULED_EXECUTION",
+  "next_if_pass": "ABC_LIFECYCLE_STATE_MACHINE_CAUSAL_FEATURE_BROADENING_EXECUTABLE_CONTINUATION_DIAGNOSTIC_MATERIALIZATION_V1",
+  "no_valid_execution_price": "TARGET_UNAVAILABLE",
+  "quartile_boundaries_depend_on_feature_only_not_outcome": true,
+  "schema_version": "abc-causal-feature-executable-continuation-diagnostic-protocol-v1",
+  "source_bindings": {
+    "data/research/abc_exit_primitives_2019_2023_v1/control-trades.csv": "BA2CF871453DDFAC53DD53494C5B47D29C20BC1777370928135A8FB2D01E8ABE",
+    "governance/abc_lifecycle_state_machine_state_conditioned_action_hypothesis_eligibility_materialization_v1/action_hypothesis_eligibility_grid.csv": "F989B216B163F3CFD9315FA61BA64EC138D5826F51F9D62344E5118CCF89F146",
+    "scripts/research/run_abc_exit_primitives_2019_2023_v1.py": "C6E92E4980C50526263B7B0D4E22747E96B49FDA2118529DAC5DA7A81EF1364C",
+    "src/spotbot/research/abc_exit_primitives_v1.py": "AE8623E32D7E13F7CB9DB6E22E643060054D84BEFC7D29C465CA84D97C887634"
+  },
+  "status": "FROZEN_BEFORE_CONTROL_PNL_READ",
+  "target": "EXECUTABLE_EXIT_DELTA_NET=COUNTERFACTUAL_NEXT_1H_OPEN_EXIT_NET_PNL_MINUS_NATIVE_NET_PNL",
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_CAUSAL_FEATURE_BROADENING_EXECUTABLE_CONTINUATION_DIAGNOSTIC_PROTOCOL_FREEZE_V1"
+}

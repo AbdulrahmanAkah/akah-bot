@@ -1,0 +1,46 @@
+{
+  "authority_id": "AKAH_BOT_RD26_PRE2023_SIGNAL_SOURCE_ACCESS_CONTRACT_V1",
+  "status": "UNRESOLVED_NO_AUTHORIZED_PRE2023_MATERIALIZATION",
+  "legacy_source": {
+    "path": "data/research/rd26_p1_runtime/signal-events-2022-2023.csv",
+    "sha256": "6462F576CEE9681751368A7755D3CA51EBF945CED54EA7B7F18B47BC469BA725",
+    "declared_source_line": 66,
+    "loader_line": 226,
+    "format": "CSV",
+    "storage_partitioning": "none demonstrated",
+    "loader_behavior": "pd.read_csv reads the file before timestamp filtering",
+    "safe_to_use_as_is": false,
+    "reason": "the source is mixed 2022-2023 and reading it as the legacy loader input would open protected-year rows"
+  },
+  "search_result": {
+    "safe_existing_pre2023_materialization_found": false,
+    "existing_source_surface_found": true,
+    "market_or_signal_rows_read": false,
+    "protected_year_rows_read": false,
+    "source_directed_evidence": "rev205 signal_2022_source_authority and rev206 signal_2022_materialization_search"
+  },
+  "authorized_options": [
+    {
+      "option": "existing immutable 2022-only artifact",
+      "required_identity": ["path", "sha256", "schema", "PIT availability contract"]
+    },
+    {
+      "option": "pre-authorized 2022-only materialization",
+      "required_identity": ["producer", "input authority", "row selector", "output path", "output sha256", "schema"],
+      "constraint": "must not open 2023 rows during materialization"
+    },
+    {
+      "option": "partitioned source",
+      "required_identity": ["partition or row-group selector", "timestamp statistics authority", "PIT semantics"],
+      "constraint": "selector must exclude protected partitions before row access"
+    }
+  ],
+  "terminal_requirement": {
+    "pre2023_window": "2022-01-01T00:00:00Z <= signal_time < 2023-01-01T00:00:00Z",
+    "expected_schema": ["timestamp", "universe_id", "period_id", "family_id", "pair", "membership_rank", "atr24_at_signal"],
+    "additional_fields": "may be retained only when needed by the selected constructor/replay contract",
+    "pit_rule": "signal row must be available at its signal timestamp and may schedule entry only at signal_time + 1 hour",
+    "required_artifact_sha256": true
+  },
+  "exact_blocker": "No authorized 2022-only signal artifact or pre-2023-safe selector is present in current evidence. The mixed CSV cannot be used as-is."
+}

@@ -1,0 +1,27 @@
+{
+  "deferred_states": [
+    "HEALTHY_TREND",
+    "DETERIORATING",
+    "FAILED"
+  ],
+  "defined_states": [
+    "STALLED_ACTIVE_V1",
+    "STRUCTURAL_BREAK_ACTIVE_V1",
+    "VOLATILITY_DAMAGE_ACTIVE_V1"
+  ],
+  "design_basis": {
+    "a_and_b_lifecycles_preobserved": 7,
+    "a_and_b_same_row_preobserved": 8,
+    "a_recovery_rows_preobserved": 86,
+    "a_true_rows_preobserved": 156,
+    "b_recovery_rows_preobserved": 17,
+    "b_true_rows_preobserved": 70,
+    "stalled_latch_rows_preobserved": 237,
+    "stalled_lifecycles_preobserved": 74
+  },
+  "economic_selection_used": false,
+  "horizon_selection_used": false,
+  "schema_version": "abc-persistent-state-definition-design-decision-v1",
+  "status": "PASS_CONSERVATIVE_SOURCE_NATIVE_DEFINITION_SELECTED",
+  "threshold_selection_used": false
+}

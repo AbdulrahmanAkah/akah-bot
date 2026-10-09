@@ -1,0 +1,187 @@
+{
+  "numeric_tolerance": {
+    "absolute_floor": 1e-12,
+    "integer_metrics": "EXACT",
+    "relative": 2e-14
+  },
+  "reference_new_ranker": "F00_TREND_REF",
+  "reference_old_ranker": "R03_TREND_MU",
+  "rows": [
+    {
+      "cost_multiplier": 1.0,
+      "metric_checks": [
+        {
+          "abs_diff": 4.3655745685100555e-10,
+          "key": "terminal_equity",
+          "new": 235630.4471583425,
+          "old": 235630.44715834293,
+          "rel_diff": 1.8527209115621644e-15,
+          "status": "PASS",
+          "tolerance": 4.712608943166859e-09
+        },
+        {
+          "abs_diff": 4.440892098500626e-15,
+          "key": "terminal_wealth",
+          "new": 2.356304471583425,
+          "old": 2.3563044715834294,
+          "rel_diff": 1.8846851720806525e-15,
+          "status": "PASS",
+          "tolerance": 1e-12
+        },
+        {
+          "abs_diff": 1.0547118733938987e-15,
+          "key": "continuous_mtm_mdd",
+          "new": -0.25489988053047363,
+          "old": -0.2548998805304726,
+          "rel_diff": 1.0547118733938987e-15,
+          "status": "PASS",
+          "tolerance": 1e-12
+        },
+        {
+          "abs_diff": 0.0,
+          "key": "total_cost",
+          "new": 16545.84296861251,
+          "old": 16545.84296861251,
+          "rel_diff": 0.0,
+          "status": "PASS",
+          "tolerance": 3.309168593722502e-10
+        },
+        {
+          "abs_diff": 4.163336342344337e-17,
+          "key": "mean_gross_fraction",
+          "new": 0.10359227075065665,
+          "old": 0.1035922707506566,
+          "rel_diff": 4.163336342344337e-17,
+          "status": "PASS",
+          "tolerance": 1e-12
+        },
+        {
+          "abs_diff": 0.0,
+          "key": "positive_day_fraction",
+          "new": 0.3675564681724846,
+          "old": 0.3675564681724846,
+          "rel_diff": 0.0,
+          "status": "PASS",
+          "tolerance": 1e-12
+        },
+        {
+          "abs_diff": 0.0,
+          "key": "day_ge_0p5_fraction",
+          "new": 0.1375770020533881,
+          "old": 0.1375770020533881,
+          "rel_diff": 0.0,
+          "status": "PASS",
+          "tolerance": 1e-12
+        },
+        {
+          "key": "trade_count",
+          "new": 4398,
+          "old": 4398,
+          "status": "PASS_EXACT"
+        },
+        {
+          "key": "open_positions_at_cutoff",
+          "new": 20,
+          "old": 20,
+          "status": "PASS_EXACT"
+        }
+      ],
+      "new_mdd": -0.25489988053047363,
+      "new_terminal_wealth": 2.356304471583425,
+      "new_trade_count": 4398,
+      "old_mdd": -0.2548998805304726,
+      "old_terminal_wealth": 2.3563044715834294,
+      "old_trade_count": 4398,
+      "status": "PASS"
+    },
+    {
+      "cost_multiplier": 2.0,
+      "metric_checks": [
+        {
+          "abs_diff": 2.9103830456733704e-10,
+          "key": "terminal_equity",
+          "new": 214329.8727984879,
+          "old": 214329.8727984876,
+          "rel_diff": 1.3578989282607848e-15,
+          "status": "PASS",
+          "tolerance": 4.286597455969758e-09
+        },
+        {
+          "abs_diff": 2.6645352591003757e-15,
+          "key": "terminal_wealth",
+          "new": 2.1432987279848787,
+          "old": 2.143298727984876,
+          "rel_diff": 1.2431935988715681e-15,
+          "status": "PASS",
+          "tolerance": 1e-12
+        },
+        {
+          "abs_diff": 3.885780586188048e-16,
+          "key": "continuous_mtm_mdd",
+          "new": -0.2706430862611673,
+          "old": -0.2706430862611677,
+          "rel_diff": 3.885780586188048e-16,
+          "status": "PASS",
+          "tolerance": 1e-12
+        },
+        {
+          "abs_diff": 2.1827872842550278e-11,
+          "key": "total_cost",
+          "new": 32345.309833634026,
+          "old": 32345.309833634004,
+          "rel_diff": 6.748388856010502e-16,
+          "status": "PASS",
+          "tolerance": 6.469061966726805e-10
+        },
+        {
+          "abs_diff": 1.3877787807814457e-17,
+          "key": "mean_gross_fraction",
+          "new": 0.10610195577901559,
+          "old": 0.1061019557790156,
+          "rel_diff": 1.3877787807814457e-17,
+          "status": "PASS",
+          "tolerance": 1e-12
+        },
+        {
+          "abs_diff": 0.0,
+          "key": "positive_day_fraction",
+          "new": 0.3586584531143053,
+          "old": 0.3586584531143053,
+          "rel_diff": 0.0,
+          "status": "PASS",
+          "tolerance": 1e-12
+        },
+        {
+          "abs_diff": 2.7755575615628914e-17,
+          "key": "day_ge_0p5_fraction",
+          "new": 0.14168377823408623,
+          "old": 0.1416837782340862,
+          "rel_diff": 2.7755575615628914e-17,
+          "status": "PASS",
+          "tolerance": 1e-12
+        },
+        {
+          "key": "trade_count",
+          "new": 4435,
+          "old": 4435,
+          "status": "PASS_EXACT"
+        },
+        {
+          "key": "open_positions_at_cutoff",
+          "new": 20,
+          "old": 20,
+          "status": "PASS_EXACT"
+        }
+      ],
+      "new_mdd": -0.2706430862611673,
+      "new_terminal_wealth": 2.1432987279848787,
+      "new_trade_count": 4435,
+      "old_mdd": -0.2706430862611677,
+      "old_terminal_wealth": 2.143298727984876,
+      "old_trade_count": 4435,
+      "status": "PASS"
+    }
+  ],
+  "schema_version": "akah-rev731-r03-replay-parity-v1",
+  "status": "PASS"
+}

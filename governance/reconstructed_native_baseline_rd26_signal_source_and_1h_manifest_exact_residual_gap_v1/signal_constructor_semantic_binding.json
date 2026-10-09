@@ -1,0 +1,52 @@
+{
+  "authority_id": "AKAH_BOT_RD26_SIGNAL_CONSTRUCTOR_SEMANTIC_BINDING_V1",
+  "status": "BRANCHES_BOUND_SELECTION_PENDING",
+  "loader": {
+    "path": "scripts/research/run_rd27_lifecycle_ablation.py",
+    "function": "load_signal_events",
+    "lines": "225-239",
+    "source_sha256": "7DFC388F3BF8EF6EFA16E0640CF924158999A9923674C7701B8919872755CBB5",
+    "behavior": "reads the configured signal ledger, normalizes timestamp to UTC, applies frozen robustness filters, and returns a pre-admission event dataframe"
+  },
+  "constructors": {
+    "union_events": {
+      "path": "src/spotbot/research/rd26_exit_architecture.py",
+      "source_sha256": "1290748EA7E8A0343C1A15CEDFC1220AA423F04C11FDD558311B06AC7DA90359",
+      "lines": "549-596",
+      "inputs": ["universe_id", "timestamp", "pair", "family_id", "membership_rank", "period_id", "atr24_at_signal"],
+      "semantics": "filters one actual universe, groups by timestamp and pair, requires one period and consistent ATR, and emits one union event with support families/count"
+    },
+    "standalone_events": {
+      "path": "src/spotbot/research/rd26_exit_architecture.py",
+      "source_sha256": "1290748EA7E8A0343C1A15CEDFC1220AA423F04C11FDD558311B06AC7DA90359",
+      "lines": "533-546",
+      "inputs": ["universe_id", "family_id"],
+      "semantics": "filters one actual universe and one focus family, adds that family as support_families, and preserves event rows"
+    }
+  },
+  "runner_bindings": {
+    "source": "scripts/research/run_rd27_lifecycle_ablation.py:402-416",
+    "actual_constructor_branches": [
+      {"portfolio_id": "UNION_FOCUS", "constructor": "union_events"},
+      {"portfolio_id": "MOMENTUM_BREAKOUT", "constructor": "standalone_events", "family_id": "MOMENTUM_BREAKOUT"},
+      {"portfolio_id": "RELATIVE_STRENGTH_ROTATION", "constructor": "standalone_events", "family_id": "RELATIVE_STRENGTH_ROTATION"}
+    ],
+    "actual_universe_values": ["C2", "D2", "E2"],
+    "policy_loop_includes_full_adaptive": true
+  },
+  "required_input_columns_before_constructor": [
+    "timestamp",
+    "universe_id",
+    "period_id",
+    "family_id",
+    "pair",
+    "membership_rank",
+    "atr24_at_signal"
+  ],
+  "selection": {
+    "selected_constructor": null,
+    "selected_universe": null,
+    "reason": "the current source exposes multiple semantically distinct branches and no FULL_ADAPTIVE-specific selector",
+    "next_action": "human decision packet must freeze one tuple or an explicitly declared native matrix"
+  }
+}

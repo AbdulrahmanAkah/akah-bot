@@ -1,0 +1,65 @@
+{
+  "2024_access": false,
+  "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_CONTINUATION_VALUE_TRADE_CLUSTERED_PURGED_BASELINE_HEAD_REVALIDATION_V1",
+  "nonoverlap_sample_is_diagnostic_only": true,
+  "sampling_results": [
+    {
+      "adjacent_pairs": 10737,
+      "adjacent_target_spearman": 0.8742556386500651,
+      "positive_share": 0.4094385679414158,
+      "rows": 12290,
+      "sample": "ALL_ROWS",
+      "target_mean": 0.004755628351773937,
+      "trades": 1553
+    },
+    {
+      "adjacent_pairs": 0,
+      "adjacent_target_spearman": null,
+      "positive_share": 0.32260141661300706,
+      "rows": 1553,
+      "sample": "HASHED_ONE_ROW_PER_TRADE",
+      "target_mean": -0.003277296043186866,
+      "trades": 1553
+    },
+    {
+      "adjacent_pairs": 5040,
+      "adjacent_target_spearman": 0.8134608026758371,
+      "positive_share": 0.4119520703776733,
+      "rows": 6593,
+      "sample": "SPACED_8H",
+      "target_mean": 0.0045015759871310295,
+      "trades": 1553
+    },
+    {
+      "adjacent_pairs": 3099,
+      "adjacent_target_spearman": 0.7626555773700135,
+      "positive_share": 0.411006018916595,
+      "rows": 4652,
+      "sample": "SPACED_12H",
+      "target_mean": 0.004587479241737235,
+      "trades": 1553
+    },
+    {
+      "adjacent_pairs": 1181,
+      "adjacent_target_spearman": 0.6439198437944911,
+      "positive_share": 0.422457937088515,
+      "rows": 2734,
+      "sample": "SPACED_24H",
+      "target_mean": 0.004570040618020611,
+      "trades": 1553
+    },
+    {
+      "adjacent_pairs": 0,
+      "adjacent_target_spearman": null,
+      "positive_share": 0.42433998712169996,
+      "rows": 1553,
+      "sample": "NONOVERLAPPING_FUTURE_WINDOWS",
+      "target_mean": 0.0027892943200971236,
+      "trades": 1553
+    }
+  ],
+  "schema_version": "akah-rev595-target-dependence-cluster-validation-maximum-evidence-mega-v1-sampling-diagnostics",
+  "spacing_selection_performed": false,
+  "status": "PASS_TRADE_CLUSTER_SAMPLING_DIAGNOSTICS",
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_CONTINUATION_VALUE_TRADE_CLUSTER_SAMPLING_OVERLAP_DIAGNOSTICS_V1"
+}

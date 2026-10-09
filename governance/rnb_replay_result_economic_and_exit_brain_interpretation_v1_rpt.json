@@ -1,0 +1,48 @@
+{
+  "authority_bindings": {
+    "diagnostic_sha256": "20697F0F8E2E393ACE9E3A0435D1775493A67AD1775A7AD292D6600285897F13",
+    "economic_summary_sha256": "9640A6E2C7F5E73DE35F8C59EB121CE75017A20A2C958CB880E17393A28DFDED",
+    "exit_path_surface_sha256": "E392A84B8E8E79635D853842EA0AC4AADAA94085514280AA81B797B14B982794"
+  },
+  "branch": "research/rd48-cross-venue-price-level-basis-direct-utility-v1",
+  "evidence": [
+    {
+      "path": "governance/rnb_replay_result_economic_and_exit_brain_interpretation_v1/economic_summary.json",
+      "sha256": "9640A6E2C7F5E73DE35F8C59EB121CE75017A20A2C958CB880E17393A28DFDED"
+    },
+    {
+      "path": "governance/rnb_replay_result_economic_and_exit_brain_interpretation_v1/exit_path_surface.json",
+      "sha256": "E392A84B8E8E79635D853842EA0AC4AADAA94085514280AA81B797B14B982794"
+    },
+    {
+      "path": "governance/rnb_replay_result_economic_and_exit_brain_interpretation_v1/exit_brain_diagnostic.json",
+      "sha256": "20697F0F8E2E393ACE9E3A0435D1775493A67AD1775A7AD292D6600285897F13"
+    }
+  ],
+  "firewall": {
+    "market_data_read": false,
+    "native_replay_executed": false,
+    "network": false,
+    "optimization": false,
+    "push": false,
+    "retuning": false
+  },
+  "governed_schema_version": "akah-provenance-phase-governed-v1",
+  "next_bottleneck": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_EXIT_PATH_ATTRIBUTION_V1",
+  "north_star_effect": "Resolve replay-result semantics and move directly into exit-brain interpretation without rerunning or tuning.",
+  "objective": "Interpret the three unique replay portfolios economically and expose exit-path diagnostics without tuning or rerunning.",
+  "resolution_class": "NATIVE_BASELINE_ECONOMICALLY_NEGATIVE_ACROSS_ALL_THREE_UNIQUE_PORTFOLIOS",
+  "state_updates": {
+    "native_baseline_all_negative_2022": true,
+    "native_baseline_all_profit_factor_below_one": true,
+    "retuning_authorized": false,
+    "roadmap_position": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_EXIT_PATH_ATTRIBUTION_V1",
+    "target_0p5_daily_met": false,
+    "unique_economic_portfolio_count": 3
+  },
+  "status": "PASS",
+  "summary": "Collapsed redundant C2/D2/E2 repetitions to three unique portfolios. All three reconstructed native baselines are negative in 2022 with profit factor below 1; project objective is not met. Proceed to causal exit-path attribution, not retuning.",
+  "task_id": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_REPLAY_RESULT_ECONOMIC_AND_EXIT_BRAIN_INTERPRETATION_V1",
+  "task_start_head": "6d09dbcaba2676df28ac560926d4858cf6a06216",
+  "task_start_revision": 232
+}

@@ -1,0 +1,78 @@
+{
+  "2024_access": false,
+  "age_bins": [
+    "0_24",
+    "24_48",
+    "48_72",
+    "72_96",
+    "96_120",
+    "120_144",
+    "144_168"
+  ],
+  "bellman_bridge": {
+    "bridge_net_cash": "quantity*next_current_mark_price*(1-exit_side_cost_rate)",
+    "causal_next_state_validity": "optional_exits_suppressed==0 and mandatory_exits_seen==0 and hold_exit_time>t+4h",
+    "downstream_residual": "(hold_then_pi0_net_cash-bridge_net_cash)/current_position_notional",
+    "eligibility": "hold survives to t+4h and next exact decision row exists",
+    "identity": "immediate_bridge_advantage+downstream_residual==continuation_advantage",
+    "immediate_bridge_advantage": "(bridge_net_cash-exit_now_net_cash)/current_position_notional"
+  },
+  "exact_component_identity": {
+    "cost_component": "continuation_advantage-price_gap_component",
+    "expected_reconstruction": "price_gap_component*(1-base_exit_side_cost_rate)",
+    "price_gap_component": "(hold_then_pi0_price-exit_now_price)/current_mark_price"
+  },
+  "fixed_cohorts": [
+    "SUPPRESSION_ACTIVE",
+    "HOLD_NATIVE_PI0_MATCH",
+    "HOLD_TIMING_BEFORE_AT_AFTER_STEP",
+    "EXIT_NOW_REASON_CLASS",
+    "HOLD_REASON_CLASS",
+    "MANDATORY_SEEN",
+    "BRANCH_REASON_TRANSITION"
+  ],
+  "fixed_signature_families": {
+    "CORE_AGE": [
+      "base_state",
+      "native_market_state_context",
+      "memory_seen",
+      "__age_bin"
+    ],
+    "DAMAGE_AGE": [
+      "__sign_progress_margin_delta_from_prev",
+      "__sign_structural_break_margin_delta_from_prev",
+      "__sign_volatility_damage_margin_delta_from_prev",
+      "__age_bin"
+    ],
+    "EVIDENCE_AGE": [
+      "a_condition_now",
+      "b_condition_now",
+      "memory_seen",
+      "__age_bin"
+    ],
+    "SIGNAL_MARKET": [
+      "A_signal",
+      "B_signal",
+      "C_signal",
+      "native_market_state_context"
+    ]
+  },
+  "model_training": false,
+  "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_CONTINUATION_VALUE_TARGET_MECHANISM_DECOMPOSITION_EXECUTION_V1",
+  "production_changed": false,
+  "run_buckets": [
+    "0",
+    "1",
+    "2",
+    "3_PLUS"
+  ],
+  "runtime_rule_selection": false,
+  "schema_version": "akah-rev568-continuation-mechanism-bellman-maximum-evidence-mega-v1-mechanism-protocol",
+  "signature_forward_coverage_gate": 0.5,
+  "signature_min_train_rows": 50,
+  "stable_contexts_are_recheck_only": true,
+  "status": "PASS_PROTOCOL_FROZEN",
+  "target_formula": "(hold_then_pi0_net_cash-exit_now_net_cash)/current_position_notional",
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_CONTINUATION_VALUE_TARGET_MECHANISM_DECOMPOSITION_PROTOCOL_FREEZE_V1",
+  "threshold_search": false
+}

@@ -1,0 +1,24 @@
+{
+  "active_task_payload": {
+    "axis": "REGIME_DEPENDENT_CONTINUATION_AUTHORITY_AND_LIFECYCLE_HORIZON_ARCHITECTURE",
+    "objective": "Diagnose the reproducible 270/3294 native-state signal coverage misses exactly before freezing the reconstructed cohort, using the native runner's own runtime state and no post-hoc row dropping.",
+    "schema_version": "akah-bot-active-task-v1",
+    "started_at_utc": "2026-09-18T18:10:43+00:00",
+    "starting_branch": "research/rd48-cross-venue-price-level-basis-direct-utility-v1",
+    "starting_charter_revision": 225,
+    "starting_charter_sha256": "A1BF1CAC62D75D26775B2D3D7C588EBB7406BBC217B53B42542BC9AF659CE02F",
+    "starting_head": "12e781f8e52dd07e4b28a5352ccb95fa61833ec3",
+    "task_id": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_RECONSTRUCTED_COHORT_FREEZE_V1"
+  },
+  "capture_method": "BUILTINS_PRINT_CALLER_LOCALS",
+  "hits": [
+    {
+      "context": "00121:         \"signal_count\": len(events),\n00122:         \"signal_pair_count\": events.pair.nunique(),\n00123:         \"signal_min_time\": events.timestamp.min(),\n00124:         \"signal_max_time\": events.timestamp.max(),\n00125:         \"signal_schema\": list(events.columns),\n00126:         \"membership_sha256\": sha(MEMBERSHIP),\n00127:         \"one_hour_manifest_sha256\": sha(MANIFEST),\n00128:         \"strata\": strata_records,\n00129:         \"policy_id\": \"rd27.FULL_ADAPTIVE_LIFECYCLE_BRAIN\",\n00130:         \"cost_multiplier\": 1.0,\n00131:         \"state_ready_first_time\": state_frame.loc[state_frame.state_ready, \"timestamp\"].min(),\n00132:         \"state_unavailable_signal_count\": len(missing),\n00133:         \"state_unavailable_unique_times\": missing.timestamp.nunique(),\n00134:         \"state_unavailable_signals\": missing[list(sorted(required))].to_dict(\"records\"),\n00135:         \"state_input_status\": \"FAIL_CLOSED\" if len(missing) else \"PASS\",\n00136:         \"cohort_frozen\": False,\n00137:         \"ready_for_native_replay\": False,\n00138:         \"native_replay_executed\": False,\n00139:         \"economic_analysis\": False,\n00140:         \"protected_year_rows_read\": 0,\n00141:         \"window_binding\": \"Native bytecode/private cutoff=2023; native globals unchanged\",\n00142:     }\n00143:     write_new(EVIDENCE / \"construction_and_state_audit.json\", audit)\n00144:     print(\n00145:         f\"NATIVE_STATE_SIGNAL_COVERAGE={'FAIL_CLOSED' if len(missing) else 'PASS'} \"\n00146:         f\"missing={len(missing)}\",\n00147:         flush=True,\n00148:     )\n00149: \n00150: \n00151: if __name__ == \"__main__\":\n00152:     main()",
+      "line": 145,
+      "text": "f\"NATIVE_STATE_SIGNAL_COVERAGE={'FAIL_CLOSED' if len(missing) else 'PASS'} \""
+    }
+  ],
+  "runner": "scripts/research/run_rnb_2022_signals.py",
+  "runner_sha256": "6F52F38AE6E2A1D5A66DC1205F4943522C56C4FF51D2BD844A4EADB9422D19D6",
+  "status": "PASS"
+}

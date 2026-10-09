@@ -1,0 +1,156 @@
+{
+  "2024_access": false,
+  "cost": {
+    "median_entry_cost_fraction": 0.00125,
+    "sample_count": 1000,
+    "source": "control-trades.csv"
+  },
+  "execution_source": {
+    "pipeline": "_load_prev731_predictions -> prepare_focus_components -> focus_candidate_view",
+    "predictions": "governance/abc_lifecycle_state_machine_cross_sectional_opportunity_value_full_hypothesis_mega_v1/walkforward_predictions.csv.gz",
+    "predictions_sha256": "C65C62F5FE3B4A48A2BEB8DADE257D0628305D4EE5349945FAAF215A937B2319",
+    "revision": 731,
+    "rows": 354210
+  },
+  "governor_binary_no_vol": {
+    "algebra": "gross_budget_fraction = scale * m  [v removed]",
+    "effective_cap_max": 0.9,
+    "effective_cap_min": 0.0,
+    "factor_identity_proof": {
+      "gross_max": 0.9,
+      "gross_min": 0.0,
+      "identity": "gross_budget_fraction = scale * m * v",
+      "m_max": 1.0,
+      "m_min": 0.0,
+      "max_abs_error": 8.326672684688674e-17,
+      "rows_proven": 1626,
+      "scale": 0.9,
+      "v_max": 1.0,
+      "v_min": 0.1492391718328883
+    },
+    "max_abs_delta_vs_selected_binary_vol": 0.706605074946131,
+    "result_path": "governance/abc_lifecycle_state_machine_governor_structural_factorial_fast_v1/governor_factorial_result.json",
+    "result_sha256": "AE30EB872D4FA600F959D696238E9C868E56A91DFA2A8B4976009EF3DC34378E",
+    "row_count": 1626,
+    "selected_governor": "BINARY_NO_VOL",
+    "source": "RECONSTRUCTED_FROM_FROZEN_SELECTED_BINARY_VOL_FACTOR_COLUMNS",
+    "time_column": "action_time",
+    "timeline_path": "governance/abc_lifecycle_state_machine_governor_structural_factorial_fast_v1/selected_development_governor_timeline.csv",
+    "timeline_sha256": "6532B4501F2734EDE3F1D66DB931231C7915235AEEA3B8E654845A6F24341E2B",
+    "variant_declared_in_arms": true,
+    "variant_declared_in_candidate_rows": true
+  },
+  "governor_binary_vol": {
+    "binding_mode": "DIRECT_GROSS_FRACTION",
+    "effective_cap_max": 0.9,
+    "effective_cap_min": 0.0,
+    "exposure_column": "gross_budget_fraction",
+    "legacy_selected": {
+      "continuous_mtm_max_drawdown": -0.19079247606398098,
+      "development_gate_pass": true,
+      "excess_log_x1": 0.6471289382329076,
+      "excess_log_x2": 0.6198880926269715,
+      "excess_pass": true,
+      "final_wealth_x1": 3.6589449042130644,
+      "final_wealth_x2": 2.9794982149046993,
+      "risk_mode": "BINARY_VOL",
+      "risk_pass": true,
+      "worst_annual_return": -0.07644949091360065
+    },
+    "observed_raw_max": 0.9,
+    "observed_raw_min": 0.0,
+    "result_path": "governance/abc_lifecycle_state_machine_governor_structural_factorial_fast_v1/governor_factorial_result.json",
+    "result_sha256": "AE30EB872D4FA600F959D696238E9C868E56A91DFA2A8B4976009EF3DC34378E",
+    "selected_governor": "BINARY_VOL",
+    "selected_populated_row_count": 1626,
+    "source_row_count": 1826,
+    "time_column": "action_time",
+    "timeline_path": "governance/abc_lifecycle_state_machine_governor_structural_factorial_fast_v1/selected_development_governor_timeline.csv",
+    "timeline_sha256": "6532B4501F2734EDE3F1D66DB931231C7915235AEEA3B8E654845A6F24341E2B",
+    "variant_filter_applied": true
+  },
+  "governor_factorial_preflight": {
+    "probes": [
+      {
+        "binary_no_vol": 0.0,
+        "binary_vol": 0.0,
+        "time": "2019-01-01T00:00:00+00:00",
+        "vol_only": 0.0
+      },
+      {
+        "binary_no_vol": 0.0,
+        "binary_vol": 0.0,
+        "time": "2020-01-01T00:00:00+00:00",
+        "vol_only": 0.3773722154837429
+      },
+      {
+        "binary_no_vol": 0.9,
+        "binary_vol": 0.307422860879827,
+        "time": "2021-01-01T00:00:00+00:00",
+        "vol_only": 0.30742286087982706
+      },
+      {
+        "binary_no_vol": 0.0,
+        "binary_vol": 0.0,
+        "time": "2022-01-01T00:00:00+00:00",
+        "vol_only": 0.3424160810144105
+      },
+      {
+        "binary_no_vol": 0.0,
+        "binary_vol": 0.0,
+        "time": "2023-01-01T00:00:00+00:00",
+        "vol_only": 0.534120281876222
+      },
+      {
+        "binary_no_vol": 0.9,
+        "binary_vol": 0.4359750055549138,
+        "time": "2023-12-31T23:00:00+00:00",
+        "vol_only": 0.43597500555491386
+      }
+    ],
+    "vol_only": {
+      "algebra": "gross_budget_fraction = scale * v  [m removed]",
+      "effective_cap_max": 0.9,
+      "effective_cap_min": 0.13431525464959945,
+      "factor_identity_proof": {
+        "gross_max": 0.9,
+        "gross_min": 0.0,
+        "identity": "gross_budget_fraction = scale * m * v",
+        "m_max": 1.0,
+        "m_min": 0.0,
+        "max_abs_error": 8.326672684688674e-17,
+        "rows_proven": 1626,
+        "scale": 0.9,
+        "v_max": 1.0,
+        "v_min": 0.1492391718328883
+      },
+      "max_abs_delta_vs_selected_binary_vol": 0.9,
+      "result_path": "governance/abc_lifecycle_state_machine_governor_structural_factorial_fast_v1/governor_factorial_result.json",
+      "result_sha256": "AE30EB872D4FA600F959D696238E9C868E56A91DFA2A8B4976009EF3DC34378E",
+      "row_count": 1626,
+      "selected_governor": "VOL_ONLY",
+      "source": "RECONSTRUCTED_FROM_FROZEN_SELECTED_BINARY_VOL_FACTOR_COLUMNS",
+      "time_column": "action_time",
+      "timeline_path": "governance/abc_lifecycle_state_machine_governor_structural_factorial_fast_v1/selected_development_governor_timeline.csv",
+      "timeline_sha256": "6532B4501F2734EDE3F1D66DB931231C7915235AEEA3B8E654845A6F24341E2B",
+      "variant_declared_in_arms": true,
+      "variant_declared_in_candidate_rows": true
+    }
+  },
+  "prev733": {
+    "canonical": "governance/abc_lifecycle_state_machine_trend_alpha_risk_harvesting_factorial_mega_v1/canonical_result.json",
+    "canonical_sha256": "962F6BC67244846811FD970985D9AC0EA83ADBA52D47C518BED4E0E391B07273",
+    "ledger": "governance/abc_lifecycle_state_machine_trend_alpha_risk_harvesting_factorial_mega_v1/focused_score_ledger.csv.gz",
+    "ledger_role": "AUDIT_ONLY",
+    "ledger_rows": 354210,
+    "ledger_sha256": "1FAC1215C6C00727EBB8DF3ACE17D4D77B2F457039E44B7CE60AFA29C2FC4764",
+    "manifest": "governance/abc_lifecycle_state_machine_trend_alpha_risk_harvesting_factorial_mega_v1/output_manifest.json",
+    "manifest_sha256": "1B01C7825DBAC816718CC8021CC1C55DA8BF326092C6C4ECC25CD714A0CB6BCA",
+    "metrics": "governance/abc_lifecycle_state_machine_trend_alpha_risk_harvesting_factorial_mega_v1/factorial_portfolio_metrics.csv",
+    "metrics_sha256": "C8CB8EFFF29728555AC21DA526F7902E63CDE07871DA2E7BF9C484CA76E745CE",
+    "trades": "governance/abc_lifecycle_state_machine_trend_alpha_risk_harvesting_factorial_mega_v1/factorial_trades.csv.gz",
+    "trades_sha256": "9BB3F3675F9A596D2F542F7AA0A8E8F49198AD629F16A6EA936EA5306F3704F3"
+  },
+  "raw_frame_pair_count": 301,
+  "schema_version": "akah-dynamic-sizing-authority-audit-v1"
+}

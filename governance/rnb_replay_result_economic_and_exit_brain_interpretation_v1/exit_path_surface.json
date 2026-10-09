@@ -1,0 +1,483 @@
+{
+  "portfolio_surfaces": {
+    "MOMENTUM_BREAKOUT": {
+      "entry_cost": {
+        "max": 22.436141122006163,
+        "mean": 12.889887161536434,
+        "median": 10.592025128798978,
+        "min": 9.6143849324569,
+        "sum": 3003.343708637989
+      },
+      "entry_price": {
+        "max": 44875.1,
+        "mean": 5194.847463915665,
+        "median": 73.735,
+        "min": 0.00016515,
+        "sum": 1210399.45909235
+      },
+      "exit_cost": {
+        "max": 23.7186314095472,
+        "mean": 12.842959664235348,
+        "median": 10.640276068578856,
+        "min": 9.203118994974783,
+        "sum": 2992.409601766836
+      },
+      "exit_price": {
+        "max": 47601.2,
+        "mean": 5200.0839703172815,
+        "median": 74.53699999999999,
+        "min": 0.00016794,
+        "sum": 1211619.5650839265
+      },
+      "exit_reason_column": "exit_reason",
+      "exit_reasons": [
+        {
+          "count": 174,
+          "mean_holding_hours": 25.264367816091955,
+          "net_pnl_mean": -52.400274464167566,
+          "net_pnl_sum": -9117.647756765156,
+          "reason": "ADAPTIVE_PROTECTION_TOUCH",
+          "win_rate": 0.5
+        },
+        {
+          "count": 28,
+          "mean_holding_hours": 56.32142857142857,
+          "net_pnl_mean": -168.42823902673462,
+          "net_pnl_sum": -4715.990692748569,
+          "reason": "ADAPTIVE_STAGNATION_48H_CLOSE_NOT_ABOVE_ENTRY",
+          "win_rate": 0.0
+        },
+        {
+          "count": 16,
+          "mean_holding_hours": 24.25,
+          "net_pnl_mean": 23.78064652267227,
+          "net_pnl_sum": 380.49034436275633,
+          "reason": "ADAPTIVE_PROTECTION_GAP",
+          "win_rate": 0.5
+        },
+        {
+          "count": 13,
+          "mean_holding_hours": 37.0,
+          "net_pnl_mean": -232.85411068963006,
+          "net_pnl_sum": -3027.103438965191,
+          "reason": "ADAPTIVE_STAGNATION_24H_CLOSE_NOT_ABOVE_ENTRY",
+          "win_rate": 0.0
+        },
+        {
+          "count": 1,
+          "mean_holding_hours": 98.0,
+          "net_pnl_mean": -29.31942990431751,
+          "net_pnl_sum": -29.31942990431751,
+          "reason": "ADAPTIVE_STAGNATION_72H_CLOSE_NOT_ABOVE_ENTRY",
+          "win_rate": 0.0
+        },
+        {
+          "count": 1,
+          "mean_holding_hours": 168.0,
+          "net_pnl_mean": 1766.5321666934176,
+          "net_pnl_sum": 1766.5321666934176,
+          "reason": "MAX_HOLD_168H",
+          "win_rate": 1.0
+        }
+      ],
+      "gross_pnl": {
+        "max": 1811.0473263178171,
+        "mean": -37.54199784086797,
+        "median": -64.6049054738769,
+        "min": -1302.3761095013651,
+        "sum": -8747.285496922237
+      },
+      "holding_buckets": [
+        {
+          "bucket": "<=24",
+          "count": 115,
+          "net_pnl_mean": -154.7676566471972,
+          "net_pnl_sum": -17798.28051442768,
+          "win_rate": 0.41739130434782606
+        },
+        {
+          "bucket": "24-48",
+          "count": 73,
+          "net_pnl_mean": -66.97474702483663,
+          "net_pnl_sum": -4889.156532813075,
+          "win_rate": 0.3698630136986301
+        },
+        {
+          "bucket": "48-72",
+          "count": 31,
+          "net_pnl_mean": 26.00617821013447,
+          "net_pnl_sum": 806.1915245141685,
+          "win_rate": 0.3548387096774194
+        },
+        {
+          "bucket": "72-120",
+          "count": 12,
+          "net_pnl_mean": 308.55647538256994,
+          "net_pnl_sum": 3702.6777045908393,
+          "win_rate": 0.6666666666666666
+        },
+        {
+          "bucket": "120-168",
+          "count": 2,
+          "net_pnl_mean": 1717.764505404343,
+          "net_pnl_sum": 3435.529010808686,
+          "win_rate": 1.0
+        },
+        {
+          "bucket": ">168",
+          "count": 0
+        }
+      ],
+      "holding_hours": {
+        "max": 168.0,
+        "mean": 30.506437768240342,
+        "median": 25.0,
+        "min": 0.0,
+        "sum": 7108.0
+      },
+      "net_pnl": {
+        "max": 1766.5321666934176,
+        "mean": -63.27484466663974,
+        "median": -83.76379978578217,
+        "min": -1345.6204216085007,
+        "sum": -14743.038807327059
+      },
+      "pnl_distribution": {
+        "flat": 0,
+        "largest_loss": -1345.6204216085007,
+        "largest_win": 1766.5321666934176,
+        "loss_sum": -54103.64295203812,
+        "losses": 137,
+        "mean_loss": -394.91710183969434,
+        "mean_win": 410.0062931740734,
+        "median_loss": -321.3752079647237,
+        "median_win": 283.37724674105607,
+        "win_sum": 39360.60414471105,
+        "wins": 96
+      },
+      "trade_count": 233
+    },
+    "RELATIVE_STRENGTH_ROTATION": {
+      "entry_cost": {
+        "max": 23.72680850124012,
+        "mean": 13.007686037076281,
+        "median": 11.25,
+        "min": 9.860746116646084,
+        "sum": 2458.452661007417
+      },
+      "entry_price": {
+        "max": 46905.8,
+        "mean": 4847.518147217778,
+        "median": 39.849,
+        "min": 0.00017499,
+        "sum": 916180.9298241601
+      },
+      "exit_cost": {
+        "max": 25.378019489242643,
+        "mean": 12.958245007239595,
+        "median": 11.099748577672775,
+        "min": 9.60176969282794,
+        "sum": 2449.1083063682836
+      },
+      "exit_price": {
+        "max": 46861.45,
+        "mean": 4826.0305593565645,
+        "median": 38.599,
+        "min": 0.00018455,
+        "sum": 912119.7757183907
+      },
+      "exit_reason_column": "exit_reason",
+      "exit_reasons": [
+        {
+          "count": 114,
+          "mean_holding_hours": 22.18421052631579,
+          "net_pnl_mean": -4.237806797466786,
+          "net_pnl_sum": -483.10997491121356,
+          "reason": "ADAPTIVE_PROTECTION_TOUCH",
+          "win_rate": 0.47368421052631576
+        },
+        {
+          "count": 36,
+          "mean_holding_hours": 34.611111111111114,
+          "net_pnl_mean": -167.48411913793902,
+          "net_pnl_sum": -6029.428288965804,
+          "reason": "ADAPTIVE_STAGNATION_24H_CLOSE_NOT_ABOVE_ENTRY",
+          "win_rate": 0.0
+        },
+        {
+          "count": 28,
+          "mean_holding_hours": 52.17857142857143,
+          "net_pnl_mean": -277.7738908856832,
+          "net_pnl_sum": -7777.668944799129,
+          "reason": "ADAPTIVE_STAGNATION_48H_CLOSE_NOT_ABOVE_ENTRY",
+          "win_rate": 0.0
+        },
+        {
+          "count": 9,
+          "mean_holding_hours": 30.88888888888889,
+          "net_pnl_mean": 207.31144396538696,
+          "net_pnl_sum": 1865.8029956884827,
+          "reason": "ADAPTIVE_PROTECTION_GAP",
+          "win_rate": 0.5555555555555556
+        },
+        {
+          "count": 1,
+          "mean_holding_hours": 72.0,
+          "net_pnl_mean": -338.86634857031913,
+          "net_pnl_sum": -338.86634857031913,
+          "reason": "ADAPTIVE_STAGNATION_72H_CLOSE_NOT_ABOVE_ENTRY",
+          "win_rate": 0.0
+        },
+        {
+          "count": 1,
+          "mean_holding_hours": 168.0,
+          "net_pnl_mean": 380.2258828752219,
+          "net_pnl_sum": 380.2258828752219,
+          "reason": "MAX_HOLD_168H",
+          "win_rate": 1.0
+        }
+      ],
+      "gross_pnl": {
+        "max": 1900.3773887706463,
+        "mean": -39.55282386934951,
+        "median": -116.05578533907284,
+        "min": -1416.4587105580667,
+        "sum": -7475.483711307057
+      },
+      "holding_buckets": [
+        {
+          "bucket": "<=24",
+          "count": 95,
+          "net_pnl_mean": -193.6472346817256,
+          "net_pnl_sum": -18396.48729476393,
+          "win_rate": 0.28421052631578947
+        },
+        {
+          "bucket": "24-48",
+          "count": 58,
+          "net_pnl_mean": -53.404238179341675,
+          "net_pnl_sum": -3097.445814401817,
+          "win_rate": 0.29310344827586204
+        },
+        {
+          "bucket": "48-72",
+          "count": 28,
+          "net_pnl_mean": 227.3331856373267,
+          "net_pnl_sum": 6365.329197845147,
+          "win_rate": 0.39285714285714285
+        },
+        {
+          "bucket": "72-120",
+          "count": 7,
+          "net_pnl_mean": 337.90476425180225,
+          "net_pnl_sum": 2365.333349762616,
+          "win_rate": 0.5714285714285714
+        },
+        {
+          "bucket": "120-168",
+          "count": 1,
+          "net_pnl_mean": 380.2258828752219,
+          "net_pnl_sum": 380.2258828752219,
+          "win_rate": 1.0
+        },
+        {
+          "bucket": ">168",
+          "count": 0
+        }
+      ],
+      "holding_hours": {
+        "max": 168.0,
+        "mean": 30.444444444444443,
+        "median": 24.0,
+        "min": 0.0,
+        "sum": 5754.0
+      },
+      "net_pnl": {
+        "max": 1874.733424469341,
+        "mean": -65.51875491366539,
+        "median": -137.83264501041083,
+        "min": -1456.8497315562329,
+        "sum": -12383.04467868276
+      },
+      "pnl_distribution": {
+        "flat": 0,
+        "largest_loss": -1456.8497315562329,
+        "largest_win": 1874.733424469341,
+        "loss_sum": -47203.08736248301,
+        "losses": 129,
+        "mean_loss": -365.915405910721,
+        "mean_win": 580.3340447300042,
+        "median_loss": -314.5695978575707,
+        "median_win": 433.76873858040267,
+        "win_sum": 34820.04268380025,
+        "wins": 60
+      },
+      "trade_count": 189
+    },
+    "UNION_FOCUS": {
+      "entry_cost": {
+        "max": 22.306422749909903,
+        "mean": 12.005499009120369,
+        "median": 10.328971858761982,
+        "min": 8.51731671115807,
+        "sum": 3913.7926769732403
+      },
+      "entry_price": {
+        "max": 45896.1,
+        "mean": 5118.328454863681,
+        "median": 44.8035,
+        "min": 0.00016515,
+        "sum": 1668575.07628556
+      },
+      "exit_cost": {
+        "max": 23.562239665410104,
+        "mean": 11.942182112410816,
+        "median": 10.185295218420357,
+        "min": 8.25515503445293,
+        "sum": 3893.1513686459257
+      },
+      "exit_price": {
+        "max": 46867.23333333334,
+        "mean": 5105.862477139382,
+        "median": 45.991,
+        "min": 0.00016794,
+        "sum": 1664511.1675474383
+      },
+      "exit_reason_column": "exit_reason",
+      "exit_reasons": [
+        {
+          "count": 225,
+          "mean_holding_hours": 23.493333333333332,
+          "net_pnl_mean": -39.74699335819112,
+          "net_pnl_sum": -8943.073505593002,
+          "reason": "ADAPTIVE_PROTECTION_TOUCH",
+          "win_rate": 0.48
+        },
+        {
+          "count": 40,
+          "mean_holding_hours": 32.3,
+          "net_pnl_mean": -168.52330389610879,
+          "net_pnl_sum": -6740.932155844352,
+          "reason": "ADAPTIVE_STAGNATION_24H_CLOSE_NOT_ABOVE_ENTRY",
+          "win_rate": 0.0
+        },
+        {
+          "count": 38,
+          "mean_holding_hours": 54.76315789473684,
+          "net_pnl_mean": -233.18396209958433,
+          "net_pnl_sum": -8860.990559784204,
+          "reason": "ADAPTIVE_STAGNATION_48H_CLOSE_NOT_ABOVE_ENTRY",
+          "win_rate": 0.0
+        },
+        {
+          "count": 21,
+          "mean_holding_hours": 26.61904761904762,
+          "net_pnl_mean": 8.675425415562719,
+          "net_pnl_sum": 182.1839337268171,
+          "reason": "ADAPTIVE_PROTECTION_GAP",
+          "win_rate": 0.47619047619047616
+        },
+        {
+          "count": 1,
+          "mean_holding_hours": 72.0,
+          "net_pnl_mean": -309.4391490001825,
+          "net_pnl_sum": -309.4391490001825,
+          "reason": "ADAPTIVE_STAGNATION_72H_CLOSE_NOT_ABOVE_ENTRY",
+          "win_rate": 0.0
+        },
+        {
+          "count": 1,
+          "mean_holding_hours": 168.0,
+          "net_pnl_mean": 352.2607290239875,
+          "net_pnl_sum": 352.2607290239875,
+          "reason": "MAX_HOLD_168H",
+          "win_rate": 1.0
+        }
+      ],
+      "gross_pnl": {
+        "max": 1706.0030120790943,
+        "mean": -50.65351736764346,
+        "median": -124.47757012798365,
+        "min": -1627.640347350973,
+        "sum": -16513.046661851768
+      },
+      "holding_buckets": [
+        {
+          "bucket": "<=24",
+          "count": 171,
+          "net_pnl_mean": -174.4277455950524,
+          "net_pnl_sum": -29827.144496753957,
+          "win_rate": 0.3567251461988304
+        },
+        {
+          "bucket": "24-48",
+          "count": 101,
+          "net_pnl_mean": -54.51200448447762,
+          "net_pnl_sum": -5505.71245293224,
+          "win_rate": 0.32673267326732675
+        },
+        {
+          "bucket": "48-72",
+          "count": 40,
+          "net_pnl_mean": 112.71296171051956,
+          "net_pnl_sum": 4508.5184684207825,
+          "win_rate": 0.35
+        },
+        {
+          "bucket": "72-120",
+          "count": 11,
+          "net_pnl_mean": 298.7760881963704,
+          "net_pnl_sum": 3286.536970160074,
+          "win_rate": 0.7272727272727273
+        },
+        {
+          "bucket": "120-168",
+          "count": 3,
+          "net_pnl_mean": 1072.6036012114685,
+          "net_pnl_sum": 3217.8108036344056,
+          "win_rate": 1.0
+        },
+        {
+          "bucket": ">168",
+          "count": 0
+        }
+      ],
+      "holding_hours": {
+        "max": 168.0,
+        "mean": 29.012269938650306,
+        "median": 24.0,
+        "min": 0.0,
+        "sum": 9458.0
+      },
+      "net_pnl": {
+        "max": 1682.9819634188718,
+        "mean": -74.60119848917465,
+        "median": -142.93615127887853,
+        "min": -1663.7444819409054,
+        "sum": -24319.990707470934
+      },
+      "pnl_distribution": {
+        "flat": 0,
+        "largest_loss": -1663.7444819409054,
+        "largest_win": 1682.9819634188718,
+        "loss_sum": -75667.96615912921,
+        "losses": 207,
+        "mean_loss": -365.54573023733917,
+        "mean_win": 431.49559203074205,
+        "median_loss": -299.4257764772387,
+        "median_win": 324.428240773364,
+        "win_sum": 51347.975451658305,
+        "wins": 119
+      },
+      "trade_count": 326
+    }
+  },
+  "reason": "C2/D2/E2 semantic parity proven",
+  "shadow_or_exit_related_columns": [
+    "entry_market_state",
+    "exit_market_state",
+    "exit_reason"
+  ],
+  "status": "PASS",
+  "unique_universe_used": "C2"
+}

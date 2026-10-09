@@ -8,12 +8,14 @@ from __future__ import annotations
 
 import math
 from dataclasses import dataclass, replace
-from typing import Any, Final
+from typing import Any, Final, Literal
 
 import pandas as pd
 
 SCHEMA_VERSION: Final = "rd27-adaptive-lifecycle-state-engine-v1"
 STAGE: Final = "RD27_P0B_CAUSAL_STATE_ENGINE_PRE_ECONOMIC_EXECUTION"
+ASYNC_MEMORY_PROTOCOL_ID: Final = "CAUSAL_EXIT_BRAIN_ASYNC_MEMORY_STATE_MACHINE_V1"
+DEFAULT_ASYNC_MEMORY_ENABLED: Final = False
 
 RISK_ON: Final = "RISK_ON"
 TRANSITION: Final = "TRANSITION"
@@ -54,6 +56,179 @@ PROFIT_TRAIL_GAP_ATR_BY_STATE: Final = {
 
 class RD27StateError(RuntimeError):
     """Raised when the frozen RD27-P0B causal contract is violated."""
+
+
+class AsyncTriggerNotReadyError(RD27StateError):
+    """Typed candidate rejection; other chronology/schema errors remain fatal."""
+
+    def __init__(
+        self, message: str, *, reason: Literal["MEMORY_NOT_ESTABLISHED", "NOT_STRICTLY_LATER"],
+    ) -> None:
+        super().__init__(message)
+        self.reason = reason
+
+
+@dataclass(frozen=True)
+class AsyncMemoryState:
+    """Per-position shadow bookkeeping; never consumed by an exit decision.
+
+    Times identify completed observations, not unfinished-bar/open timestamps.
+    The caller supplies causal observations; this module defines no predicates.
+    Age is measured at the latest processed event, not at wall-clock time.
+    """
+
+    position_id: str
+    enabled: bool = DEFAULT_ASYNC_MEMORY_ENABLED
+    memory_seen: bool = False
+    first_seen_time: pd.Timestamp | None = None
+    latest_seen_time: pd.Timestamp | None = None
+    episode_count: int = 0
+    previous_memory_observation: bool = False
+    trigger_latched: bool = False
+    trigger_time: pd.Timestamp | None = None
+    last_memory_observation_time: pd.Timestamp | None = None
+    last_memory_observation_value: bool | None = None
+    last_trigger_observation_time: pd.Timestamp | None = None
+    last_trigger_observation_value: bool | None = None
+    latest_event_time: pd.Timestamp | None = None
+    reset_reason: str | None = None
+    reset_time: pd.Timestamp | None = None
+
+    def __post_init__(self) -> None:
+        if not isinstance(self.position_id, str) or not self.position_id.strip():
+            raise RD27StateError("async memory requires a non-empty position_id")
+        if type(self.enabled) is not bool:
+            raise RD27StateError("async memory enabled must be boolean")
+
+    @property
+    def current_age_hours(self) -> int | None:
+        """Whole elapsed hours since latest true observation; no expiry policy."""
+        if self.latest_seen_time is None or self.latest_event_time is None:
+            return None
+        return int((self.latest_event_time - self.latest_seen_time) // pd.Timedelta(hours=1))
+
+
+def new_async_memory_state(
+    *, position_id: str, enabled: bool = DEFAULT_ASYNC_MEMORY_ENABLED,
+) -> AsyncMemoryState:
+    """Start an independent lifecycle; enabling authorizes shadow state only."""
+    return AsyncMemoryState(position_id=position_id, enabled=enabled)
+
+
+def _async_utc(value: pd.Timestamp) -> pd.Timestamp:
+    # Timestamp(None)/Timestamp('now') would introduce wall-clock dependence.
+    if value is None or (isinstance(value, str) and value.lower().strip() in {"now", "today"}):
+        raise RD27StateError("async memory requires an explicit timestamp")
+    try:
+        timestamp = pd.Timestamp(value)
+        if pd.isna(timestamp):
+            raise ValueError("NaT")
+        return (
+            timestamp.tz_localize("UTC")
+            if timestamp.tzinfo is None
+            else timestamp.tz_convert("UTC")
+        )
+    except (TypeError, ValueError, OverflowError) as exc:
+        raise RD27StateError("invalid async memory timestamp") from exc
+
+
+def _async_event_time(
+    state: AsyncMemoryState, timestamp: pd.Timestamp, decision_time: pd.Timestamp,
+) -> pd.Timestamp:
+    timestamp = _async_utc(timestamp)
+    decision_time = _async_utc(decision_time)
+    if timestamp > decision_time:
+        raise RD27StateError("async event is not yet available at decision time")
+    if state.latest_event_time is not None and timestamp < state.latest_event_time:
+        raise RD27StateError("async event timestamp moves backward")
+    return timestamp
+
+
+def _async_observation_time(
+    state: AsyncMemoryState, completed_at: pd.Timestamp, decision_time: pd.Timestamp,
+    observed: bool,
+) -> pd.Timestamp:
+    if type(observed) is not bool:
+        raise RD27StateError("async observation must be boolean, not missing or coerced")
+    timestamp = _async_event_time(state, completed_at, decision_time)
+    if state.reset_time is not None and timestamp <= state.reset_time:
+        raise RD27StateError("async observation must be strictly after reset")
+    return timestamp
+
+
+def observe_async_memory(
+    state: AsyncMemoryState, *, observed: bool, completed_at: pd.Timestamp,
+    decision_time: pd.Timestamp,
+) -> AsyncMemoryState:
+    """Consume a completed causal boolean; disabled mode returns an equal copy.
+
+    Identical duplicates at the current event frontier are idempotent. A retry
+    behind a later event fails closed rather than rewinding the causal clock.
+    """
+    if not state.enabled:
+        return replace(state)
+    timestamp = _async_observation_time(state, completed_at, decision_time, observed)
+    if timestamp == state.last_memory_observation_time:
+        if observed != state.last_memory_observation_value:
+            raise RD27StateError("conflicting duplicate memory observation")
+        return replace(state)
+    return replace(
+        state,
+        memory_seen=state.memory_seen or observed,
+        first_seen_time=timestamp if observed and not state.memory_seen else state.first_seen_time,
+        latest_seen_time=timestamp if observed else state.latest_seen_time,
+        episode_count=state.episode_count + int(observed and not state.previous_memory_observation),
+        previous_memory_observation=observed,
+        last_memory_observation_time=timestamp,
+        last_memory_observation_value=observed,
+        latest_event_time=timestamp,
+    )
+
+
+def observe_async_trigger(
+    state: AsyncMemoryState, *, observed: bool, completed_at: pd.Timestamp,
+    decision_time: pd.Timestamp,
+) -> AsyncMemoryState:
+    """Latch only a strictly later trigger; no exit/order action is produced."""
+    if not state.enabled:
+        return replace(state)
+    timestamp = _async_observation_time(state, completed_at, decision_time, observed)
+    if timestamp == state.last_trigger_observation_time:
+        if observed != state.last_trigger_observation_value:
+            raise RD27StateError("conflicting duplicate trigger observation")
+        return replace(state)
+    if observed:
+        if not state.memory_seen or state.first_seen_time is None:
+            raise AsyncTriggerNotReadyError(
+                "true trigger requires established memory", reason="MEMORY_NOT_ESTABLISHED",
+            )
+        if timestamp <= state.first_seen_time:
+            raise AsyncTriggerNotReadyError(
+                "true trigger must be strictly later than memory establishment",
+                reason="NOT_STRICTLY_LATER",
+            )
+    return replace(
+        state,
+        trigger_latched=state.trigger_latched or observed,
+        trigger_time=timestamp if observed and not state.trigger_latched else state.trigger_time,
+        last_trigger_observation_time=timestamp,
+        last_trigger_observation_value=observed,
+        latest_event_time=timestamp,
+    )
+
+
+def reset_async_memory_state(
+    state: AsyncMemoryState, *, reset_at: pd.Timestamp, reason: str,
+    decision_time: pd.Timestamp,
+) -> AsyncMemoryState:
+    """Clear lifecycle memory, retaining position identity, enable flag and reset audit."""
+    if not isinstance(reason, str) or not reason.strip():
+        raise RD27StateError("async reset requires a non-empty reason")
+    timestamp = _async_event_time(state, reset_at, decision_time)
+    return AsyncMemoryState(
+        position_id=state.position_id, enabled=state.enabled,
+        latest_event_time=timestamp, reset_time=timestamp, reset_reason=reason,
+    )
 
 
 @dataclass(frozen=True)
@@ -511,4 +686,7 @@ def contract_summary() -> dict[str, Any]:
         "profit_arm_atr": PROFIT_ARM_ATR,
         "economic_execution_performed": False,
         "real_market_data_loader_present": False,
+        "async_memory_protocol_id": ASYNC_MEMORY_PROTOCOL_ID,
+        "async_memory_default_enabled": DEFAULT_ASYNC_MEMORY_ENABLED,
+        "async_memory_changes_exit_decisions": False,
     }

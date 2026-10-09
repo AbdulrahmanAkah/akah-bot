@@ -1,0 +1,43 @@
+{
+  "authority_bindings": {
+    "equivalence_proof_sha256": "E4BA9965184DF5B5F4019B1F8F6606343939C895B00B436F9E47C8D9E552A736",
+    "repair_audit_sha256": "78B2880D5352162B65E3CEB6F139AB037CAE2C91BD93F94155C3D3876571D738"
+  },
+  "branch": "research/rd48-cross-venue-price-level-basis-direct-utility-v1",
+  "evidence": [
+    {
+      "path": "governance/rnb_native_state_input_construction_repair_v1/runtime_to_canonical_equivalence_class_proof.json",
+      "sha256": "E4BA9965184DF5B5F4019B1F8F6606343939C895B00B436F9E47C8D9E552A736"
+    },
+    {
+      "path": "governance/rnb_native_state_input_construction_repair_v1/availability_admissibility_repair.json",
+      "sha256": "78B2880D5352162B65E3CEB6F139AB037CAE2C91BD93F94155C3D3876571D738"
+    }
+  ],
+  "firewall": {
+    "economic_analysis": false,
+    "native_replay_executed": false,
+    "network": false,
+    "outcome_filtering": false,
+    "protected_year_rows_read": false,
+    "push": false
+  },
+  "governed_schema_version": "akah-provenance-phase-governed-v1",
+  "next_bottleneck": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_RECONSTRUCTED_COHORT_FREEZE_WITH_STATE_ADMISSIBILITY_V1",
+  "north_star_effect": "Preserves causal native-state eligibility and reaches a frozen replay cohort without outcome-based filtering.",
+  "objective": "Resolve native-state input construction by enforcing the native runner's own fail-closed state-availability precondition as a causal study-admissibility rule; preserve all 270 excluded signals explicitly.",
+  "resolution_class": "CAUSAL_DEDUPLICATED_RUNTIME_EQUIVALENCE_CLASS_ADMISSIBILITY",
+  "state_updates": {
+    "excluded_canonical_rows": 270,
+    "replay_eligible_rows": 3024,
+    "roadmap_position": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_RECONSTRUCTED_COHORT_FREEZE_WITH_STATE_ADMISSIBILITY_V1",
+    "runtime_missing_records": 270,
+    "signals_deleted": 0,
+    "unique_runtime_equivalence_classes": 90
+  },
+  "status": "PASS",
+  "summary": "Resolved 270 runtime fail-closed records into 90 unique disjoint canonical equivalence classes; excluded 270 canonical rows once, leaving 3024 replay-eligible rows. No outcomes or arbitrary variant selection.",
+  "task_id": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_NATIVE_STATE_INPUT_CONSTRUCTION_REPAIR_V1",
+  "task_start_head": "983905f204395e9c3a6c83fc37272061a22dac0e",
+  "task_start_revision": 227
+}

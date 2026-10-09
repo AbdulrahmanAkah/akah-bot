@@ -1,0 +1,18 @@
+{
+  "schema_version": "akah-p38-technical-fail-closed-v1",
+  "task_id": "FINAL_EXIT_BRAIN_PRE_2024_ARCHITECTURE_P38_TRANSITION_ADMISSION_ONLY_2023_TEMPORAL_REPLICATION_EXECUTION_V1",
+  "status": "TECHNICAL_OR_PARITY_FAILURE_FAIL_CLOSED_NO_SCIENTIFIC_CONCLUSION",
+  "error_type": "RuntimeError",
+  "error": "P38_2023_REPLAY_FAILED_WITHOUT_RESULT\nusage: P38_2023_TEMPORAL_REPLICATION_OBSERVER.py [-h] --repo-root REPO_ROOT\n                                                 --raw-root RAW_ROOT\n                                                 --output-dir OUTPUT_DIR\n                                                 --p13-json P13_JSON\n                                                 --p13-candidate-trades P13_CANDIDATE_TRADES\n                                                 --p13-suppressions P13_SUPPRESSIONS\n                                                 --p13-releases P13_RELEASES\n                                                 --p13-trace P13_TRACE\n                                                 --pair-set-sha PAIR_SET_SHA\n                                                 --observer-sha OBSERVER_SHA\nP38_2023_TEMPORAL_REPLICATION_OBSERVER.py: error: the following arguments are required: --repo-root, --raw-root, --output-dir, --p13-json, --p13-candidate-trades, --p13-suppressions, --p13-releases, --p13-trace, --pair-set-sha, --observer-sha",
+  "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\abdul\\AppData\\Local\\Temp\\akah_p38_d75626787aa24c9c9fecda1a35a7e6db\\p38.py\", line 946, in main\n    result, source_result_path, execution_audit = execute_2023(exec_path, prep_root)\n                                                  ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\abdul\\AppData\\Local\\Temp\\akah_p38_d75626787aa24c9c9fecda1a35a7e6db\\p38.py\", line 604, in execute_2023\n    die(f\"P38_2023_REPLAY_FAILED_WITHOUT_RESULT\\n{tail}\")\n    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\abdul\\AppData\\Local\\Temp\\akah_p38_d75626787aa24c9c9fecda1a35a7e6db\\p38.py\", line 95, in die\n    raise RuntimeError(msg)\nRuntimeError: P38_2023_REPLAY_FAILED_WITHOUT_RESULT\nusage: P38_2023_TEMPORAL_REPLICATION_OBSERVER.py [-h] --repo-root REPO_ROOT\n                                                 --raw-root RAW_ROOT\n                                                 --output-dir OUTPUT_DIR\n                                                 --p13-json P13_JSON\n                                                 --p13-candidate-trades P13_CANDIDATE_TRADES\n                                                 --p13-suppressions P13_SUPPRESSIONS\n                                                 --p13-releases P13_RELEASES\n                                                 --p13-trace P13_TRACE\n                                                 --pair-set-sha PAIR_SET_SHA\n                                                 --observer-sha OBSERVER_SHA\nP38_2023_TEMPORAL_REPLICATION_OBSERVER.py: error: the following arguments are required: --repo-root, --raw-root, --output-dir, --p13-json, --p13-candidate-trades, --p13-suppressions, --p13-releases, --p13-trace, --pair-set-sha, --observer-sha\n",
+  "governance": {
+    "2023_new_raw_or_replay_accessed": true,
+    "2024_used_as_fresh_holdout": false,
+    "2024_used_to_define_new_runtime_rule": false,
+    "2025_accessed": false,
+    "lookahead_or_future_information_used": false,
+    "pair_or_event_identity_used_as_runtime_rule": false,
+    "posthoc_outcome_threshold_search_used": false,
+    "production_changed": false
+  }
+}

@@ -1,0 +1,368 @@
+{
+  "current_brain_benchmarks": {
+    "all44_status": "NEGATIVE_CONTROL_NOT_DEFAULT_ARCHITECTURE",
+    "entry_with_selected_indicator": "BASE14_PLUS_ADX_DMI",
+    "entry_without_indicators": "BASE14",
+    "winner_secondary_indicator_check": "CAUSAL18_PLUS_TREND_EMA_PLUS_MOMENTUM_EXHAUSTION",
+    "winner_with_selected_indicator": "CAUSAL18_PLUS_TREND_EMA",
+    "winner_without_indicators": "CAUSAL18"
+  },
+  "daily_regime_layer": {
+    "continuous_sensors": [
+      "daily_return_1d",
+      "daily_return_5d",
+      "daily_return_20d",
+      "daily_ema20_50_spread_atr",
+      "daily_ema50_200_spread_atr",
+      "daily_ema20_slope5_atr",
+      "daily_ema50_slope5_atr",
+      "daily_adx14",
+      "daily_dmi_spread14",
+      "daily_atr14_price_fraction",
+      "daily_realized_vol20",
+      "daily_bb_width20",
+      "daily_range20_price_fraction",
+      "daily_position_in_20d_range",
+      "daily_drawdown_from_20d_high",
+      "daily_volume_z20",
+      "daily_atr_percentile100"
+    ],
+    "descriptive_states": {
+      "trend": [
+        "BULL_TREND",
+        "BEAR_TREND",
+        "RANGE",
+        "TRANSITION"
+      ],
+      "volatility": [
+        "LOW_VOL",
+        "NORMAL_VOL",
+        "HIGH_VOL"
+      ]
+    },
+    "fixed_semantics": {
+      "bear_trend": "close<ema20<ema50<ema200 AND adx14>=20",
+      "bull_trend": "close>ema20>ema50>ema200 AND adx14>=20",
+      "high_vol": "causal trailing 100D ATR percentile >=0.75",
+      "low_vol": "causal trailing 100D ATR percentile <=0.25",
+      "normal_vol": "otherwise",
+      "range": "adx14<20",
+      "transition": "OTHERWISE"
+    },
+    "role": "CONTEXT_LAYER_NOT_GENERIC_FEATURE_DUMP",
+    "snapshot_rule": "LAST_COMPLETE_DAILY_BAR_END_LE_DECISION_TIME",
+    "timeframe": "1D_COMPLETE_BARS_ONLY"
+  },
+  "design_chain": {
+    "final_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_MULTI_SCHOOL_REGIME_HORIZON_HEAVY_FEATURE_STORE_MATERIALIZATION_V1",
+    "start_revision": 460,
+    "target_revision": 464,
+    "tasks": [
+      "MULTI_SCHOOL_REGIME_HORIZON_HUMAN_REVIEW",
+      "FAST_EXACT_MULTI_SCHOOL_REGIME_HORIZON_PROTOCOL_FREEZE",
+      "MULTI_SCHOOL_REGIME_HORIZON_SOURCE_CAPABILITY_AUDIT",
+      "MULTI_SCHOOL_REGIME_HORIZON_EXECUTION_MANIFEST_FREEZE"
+    ]
+  },
+  "entry_targets": {
+    "preservation_metrics": [
+      "explosive10_retained_fraction",
+      "low_lt2_removed_fraction",
+      "material5_retained_fraction"
+    ],
+    "primary": [
+      "MFE_GE_5PCT",
+      "MFE_GE_10PCT"
+    ],
+    "secondary": [
+      "MFE_GE_2PCT"
+    ]
+  },
+  "evaluation_axes": [
+    "predictive_value",
+    "incremental_value_over_current_brain",
+    "economic_value",
+    "coverage",
+    "cross_year_stability",
+    "regime_conditional_value",
+    "calibration",
+    "explosive_winner_preservation",
+    "lost_winner_reduction",
+    "capital_capacity_effect"
+  ],
+  "fast_exact_execution": {
+    "heavy_once": [
+      "daily regime series by pair",
+      "confirmed 4H pivot stream by pair",
+      "SMC sensor series",
+      "harmonic geometry sensor series",
+      "wave structure sensor series",
+      "extended post-168 hourly path cache"
+    ],
+    "mandatory_heavy_recompute": [
+      "sentinel 2019",
+      "sentinel 2023 where 2024 access is not required"
+    ],
+    "no_repeat_proofs": [
+      "4H completion semantics",
+      "lifecycle join semantics",
+      "indicator 44 computation semantics",
+      "zero-duration native exit semantics"
+    ],
+    "resource_policy": "ONE_TARGET_YEAR_PER_SUBPROCESS; horizon worker may load target year plus next year for 2019-2022 only; never load 2024",
+    "reuse": [
+      "entry snapshots",
+      "winner half-giveback snapshots",
+      "single-school models",
+      "fusion models",
+      "regime stratification",
+      "retention/calibration"
+    ]
+  },
+  "global_constraints": {
+    "2023_horizon_policy": "RIGHT_CENSOR_AT_2024_BOUNDARY_NEVER_READ_2024",
+    "2024_access": false,
+    "candidate_ranking_before_preregistered_gates": false,
+    "entry_mutation_during_diagnostics": false,
+    "fast_exact_policy": "HEAVY_MATERIALIZATION_ONCE_FAST_REUSE_AFTERWARD",
+    "forward_years": [
+      2022,
+      2023
+    ],
+    "production_threshold_selection": false,
+    "train_discovery_years": [
+      2019,
+      2020,
+      2021
+    ],
+    "winner_action_mutation_during_diagnostics": false,
+    "years": [
+      2019,
+      2020,
+      2021,
+      2022,
+      2023
+    ]
+  },
+  "horizon_168_study": {
+    "2023_policy": "right-censor any requested horizon crossing 2024-01-01T00:00:00Z",
+    "boundary_candidate_definition": "native holding duration in [167.5h,168.5h], plus source-native time/cap exit reason when such a reason column exists",
+    "economic_rule": "Trade-level oracle/headroom is not a portfolio-return bound.",
+    "metrics": [
+      "marginal_mfe_after_168",
+      "marginal_best_hourly_open_after_168",
+      "time_to_post168_peak",
+      "fraction_reaching_additional_2_5_10pct",
+      "fixed_horizon_net_delta_vs_168",
+      "capital_hours_added",
+      "opportunity_cost_proxy",
+      "portfolio_capacity_redeployment_effect"
+    ],
+    "opportunity_horizons_hours": [
+      168,
+      240,
+      336,
+      504,
+      720,
+      1008
+    ],
+    "purpose": "TEST_WHETHER_168H_CAP_TRUNCATES_VALUE_OR_PROTECTS_CAPITAL_CAPACITY",
+    "uncapped_semantics": "NO_FAKE_UNCAPPED_EXIT; opportunity path can extend to available data, but economic replay requires an explicit fixed horizon or future structural policy"
+  },
+  "planned_execution_chain_after_design": [
+    {
+      "rev": 465,
+      "task": "HEAVY_FEATURE_STORE_MATERIALIZATION"
+    },
+    {
+      "rev": 466,
+      "task": "FEATURE_STORE_MANDATORY_REVIEW"
+    },
+    {
+      "rev": 467,
+      "task": "DAILY_REGIME_DIAGNOSTIC"
+    },
+    {
+      "rev": 468,
+      "task": "SINGLE_SCHOOL_ENTRY_ATTRIBUTION"
+    },
+    {
+      "rev": 469,
+      "task": "SINGLE_SCHOOL_WINNER_ATTRIBUTION"
+    },
+    {
+      "rev": 470,
+      "task": "SCHOOL_COMPATIBILITY_AND_FUSION"
+    },
+    {
+      "rev": 471,
+      "task": "CURRENT_BRAIN_AUGMENTATION_NO_INDICATORS"
+    },
+    {
+      "rev": 472,
+      "task": "CURRENT_BRAIN_AUGMENTATION_SELECTED_INDICATORS"
+    },
+    {
+      "rev": 473,
+      "task": "REGIME_CONDITIONAL_INTERACTION"
+    },
+    {
+      "rev": 474,
+      "task": "POST168_EXTENDED_PATH_MATERIALIZATION"
+    },
+    {
+      "rev": 475,
+      "task": "HORIZON_OPPORTUNITY_AND_CAPACITY_DIAGNOSTIC"
+    },
+    {
+      "rev": 476,
+      "task": "SURVIVOR_ECONOMIC_REPLAY"
+    },
+    {
+      "rev": 477,
+      "task": "FULL_SYNTHESIS"
+    },
+    {
+      "rev": 478,
+      "task": "FULL_SYNTHESIS_MANDATORY_REVIEW"
+    }
+  ],
+  "regime_interaction_design": {
+    "entry": "Evaluate fixed frozen models overall and stratified by Daily Trend x Volatility state when minimum cohort size is met.",
+    "interaction_use": "CONTEXT_DEPENDENT_POLICY_DESIGN_ONLY_AFTER_FORWARD_STABILITY",
+    "minimum_rows_entry_stratum": 50,
+    "minimum_rows_winner_stratum": 20,
+    "winner": "Evaluate recovery discrimination within regime strata; do not fit tiny-stratum models."
+  },
+  "schema_version": "akah-multi-school-regime-horizon-mega-design-v1",
+  "school_comparison_matrix": {
+    "compatibility_gate": {
+      "max_absolute_score_correlation_for_nonredundant_pair": 0.9,
+      "minimum_forward_rows_entry": 100,
+      "minimum_forward_rows_winner": 30,
+      "note": "No family is promoted solely by discovery-year performance.",
+      "require_combined_forward_incremental_auc_min": 0.005,
+      "require_nonnegative_incremental_direction_both_forward_years": true
+    },
+    "for_each_fusion_compare": [
+      "SCHOOL_ONLY",
+      "CURRENT_BRAIN_PLUS_SCHOOL_NO_INDICATORS",
+      "CURRENT_BRAIN_PLUS_SELECTED_INDICATORS_PLUS_SCHOOL",
+      "CURRENT_BRAIN_PLUS_DAILY_REGIME_PLUS_SCHOOL",
+      "CURRENT_BRAIN_PLUS_SELECTED_INDICATORS_PLUS_DAILY_REGIME_PLUS_SCHOOL"
+    ],
+    "pairwise_fusions": [
+      "SMC+HARMONIC",
+      "SMC+WAVE",
+      "HARMONIC+WAVE"
+    ],
+    "single_school": [
+      "SMC",
+      "HARMONIC",
+      "WAVE"
+    ],
+    "triple_fusion": [
+      "SMC+HARMONIC+WAVE"
+    ]
+  },
+  "schools": {
+    "HARMONIC_MECHANICAL": {
+      "anti_hindsight": "D pivot is usable only after causal pivot confirmation; projected PRZ uses XABC plus current observable price only",
+      "features": [
+        "xab_ratio",
+        "abc_ratio",
+        "bcd_ratio",
+        "xad_ratio",
+        "confirmed_xabcd_available",
+        "confirmed_pattern_direction",
+        "gartley_completion_score",
+        "bat_completion_score",
+        "butterfly_completion_score",
+        "crab_completion_score",
+        "best_confirmed_pattern_score",
+        "projected_prz_gartley_score",
+        "projected_prz_bat_score",
+        "projected_prz_butterfly_score",
+        "projected_prz_crab_score",
+        "best_projected_prz_score",
+        "distance_to_best_prz_atr"
+      ],
+      "pattern_families": [
+        "GARTLEY",
+        "BAT",
+        "BUTTERFLY",
+        "CRAB"
+      ],
+      "principle": "RATIO_GEOMETRY_PROXIES_NOT_DISCRETIONARY_PATTERN_NAMING",
+      "timeframe": "4H_CONFIRMED_CAUSAL_PIVOTS"
+    },
+    "SMC_MECHANICAL": {
+      "features": [
+        "last_confirmed_swing_high_distance_atr",
+        "last_confirmed_swing_low_distance_atr",
+        "dealing_range_position",
+        "structure_direction",
+        "bos_up",
+        "bos_down",
+        "choch_up",
+        "choch_down",
+        "liquidity_sweep_high",
+        "liquidity_sweep_low",
+        "bullish_displacement",
+        "bearish_displacement",
+        "bullish_fvg_gap_atr",
+        "bearish_fvg_gap_atr",
+        "recent_bullish_fvg_count5",
+        "recent_bearish_fvg_count5",
+        "bullish_orderblock_proxy_distance_atr",
+        "bearish_orderblock_proxy_distance_atr",
+        "bullish_orderblock_proxy_age",
+        "bearish_orderblock_proxy_age"
+      ],
+      "pivot_confirmation": "2_LEFT_2_RIGHT; pivot at t-2 becomes observable only at t close",
+      "principle": "CAUSAL_CONFIRMED_SWING_AND_LIQUIDITY_GEOMETRY_NO_DISCRETIONARY_LABELS",
+      "timeframe": "4H_COMPLETE_BARS"
+    },
+    "WAVE_STRUCTURE_MECHANICAL": {
+      "features": [
+        "latest_wave_direction",
+        "latest_wave_return_abs",
+        "latest_wave_duration_bars",
+        "prior_wave_return_abs",
+        "prior_wave_duration_bars",
+        "retracement_ratio",
+        "same_direction_extension_ratio",
+        "wave_velocity",
+        "wave_velocity_ratio",
+        "pivot_alternation_quality",
+        "higher_high_count_recent",
+        "higher_low_count_recent",
+        "lower_high_count_recent",
+        "lower_low_count_recent",
+        "correction_depth",
+        "impulse_extension_score",
+        "wave_overlap_flag",
+        "wave_acceleration"
+      ],
+      "principle": "MECHANICAL_SWING_WAVE_STRUCTURE_NOT_SUBJECTIVE_ELLIOTT_COUNTING",
+      "timeframe": "4H_CONFIRMED_CAUSAL_PIVOTS"
+    }
+  },
+  "starting_authority": {
+    "bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_INDICATOR_AUGMENTED_ENTRY_WINNER_HUMAN_REVIEW_V1",
+    "charter_sha256": "82261884CB668CEFA9E7846EC23A80CCAD1F41516F8D03320D98A1F7C29B4674",
+    "head": "269a970022aaff848d12edebd23381010a6d7e64",
+    "revision": 460
+  },
+  "winner_targets": {
+    "primary": [
+      "RECOVER_AFTER_HALF_GIVEBACK",
+      "FAIL_TO_RECOVER_AFTER_HALF_GIVEBACK"
+    ],
+    "secondary": [
+      "FUTURE_MFE_GE_5PCT_FROM_GIVEBACK",
+      "FUTURE_MFE_GE_10PCT_FROM_GIVEBACK",
+      "LOST_WINNER_TO_NONPOSITIVE_NET"
+    ]
+  }
+}

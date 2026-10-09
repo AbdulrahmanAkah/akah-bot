@@ -1,0 +1,41 @@
+{
+  "2024_access": false,
+  "governor_factorial": [
+    "ORIGINAL_FROZEN_REFERENCE",
+    "BINARY_VOL",
+    "BINARY_NO_VOL",
+    "VOL_ONLY"
+  ],
+  "governor_selection": {
+    "excess_log_x1_gt": 0.0,
+    "excess_log_x2_gt": 0.0,
+    "fallback": "ORIGINAL_FROZEN",
+    "risk_mdd_floor": -0.25,
+    "select": "MAX_2X_EXCESS_AMONG_PASSERS",
+    "worst_year_floor": -0.15
+  },
+  "hybrid": {
+    "K": 5,
+    "challenger": "D2_EVIDENCE_STRONG_ADDITIONAL_ONLY",
+    "core": "CURRENT_OPERATIONAL",
+    "exit": "CHECKPOINT_SIGN_NEXT_OPEN",
+    "future_core_priority": "PREEMPT_LOWEST_SCORE_CHALLENGER_AT_CURRENT_OPEN_IF_REQUIRED",
+    "new_entry_threshold": null,
+    "position_cap": 0.18,
+    "same_batch_priority": "CORE_THEN_CHALLENGER_MFE5_DESC"
+  },
+  "model_refit": false,
+  "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_CANONICAL_PARITY_ROOT_CAUSE_FORENSIC_V1",
+  "production_change": false,
+  "schema_version": "abc-fast-breakthrough-protocol-v1",
+  "speed": {
+    "new_c2_replay": false,
+    "new_wide_signal_generation": false,
+    "reuse_governor_sensor_timeline": true,
+    "reuse_wide_signals": true,
+    "reuse_wide_trades": true
+  },
+  "start_revision": 534,
+  "target_revision": 541,
+  "threshold_search": false
+}

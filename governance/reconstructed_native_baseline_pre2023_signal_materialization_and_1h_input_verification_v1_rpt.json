@@ -1,0 +1,84 @@
+{
+  "authority_bindings": {
+    "decision_sha256": "975667C0BB938A8A2E9319E4A21173A07A9AF3704B3D4C9B8CDBA2673E0C448D",
+    "future_coverage_sha256": "F5457978ADB0678ADB9A273624D62F547CA07B790B7D92F92D0EFD969FE10807",
+    "one_hour_inventory_sha256": "2F08C8C12861469B0CA61CD56843F08EF9E75CF130A491F9AB62E3CB8DFCAEF3",
+    "signal_candidates_sha256": "7A46A04A791CEB3441551931FDE72C3AB4BFD66A4CDA1C82D98190BB210A7C0E",
+    "signal_construction_sha256": "CF373D28D7B25FC480E42CE0451FA01745F27B7C853D7F26CBC2F3630BC13C85",
+    "signal_producer_sha256": "44E6B4B5350B273C3CC27F46C93B42B73CDEBBF8CB60BB14B94241EB98C7EC98",
+    "strata_contract_sha256": "8824EFBE23B5FB2EC988B158D8AA5962916F2D3143C6C5EE931FAD2EB7DB22DE",
+    "study_contract_sha256": "29E98FB2E92E2BB145EF11FC065EAD82E94BFC266BC4975E2FA998EF12419283",
+    "timestamp_semantic_sha256": "AF0B2D59216A543E4641F04483FB0CA147096DAA0EA5EE8F647810125B1273CC"
+  },
+  "branch": "research/rd48-cross-venue-price-level-basis-direct-utility-v1",
+  "evidence": [
+    {
+      "path": "governance/reconstructed_native_baseline_pre2023_signal_materialization_and_1h_input_verification_v1/mixed_signal_producer_trace.json",
+      "sha256": "44E6B4B5350B273C3CC27F46C93B42B73CDEBBF8CB60BB14B94241EB98C7EC98"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_pre2023_signal_materialization_and_1h_input_verification_v1/pre2023_signal_materialization_candidates.json",
+      "sha256": "7A46A04A791CEB3441551931FDE72C3AB4BFD66A4CDA1C82D98190BB210A7C0E"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_pre2023_signal_materialization_and_1h_input_verification_v1/pre2023_signal_materialization_construction_contract.json",
+      "sha256": "CF373D28D7B25FC480E42CE0451FA01745F27B7C853D7F26CBC2F3630BC13C85"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_pre2023_signal_materialization_and_1h_input_verification_v1/one_hour_raw_root_inventory.json",
+      "sha256": "2F08C8C12861469B0CA61CD56843F08EF9E75CF130A491F9AB62E3CB8DFCAEF3"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_pre2023_signal_materialization_and_1h_input_verification_v1/one_hour_timestamp_semantic_source_audit.json",
+      "sha256": "AF0B2D59216A543E4641F04483FB0CA147096DAA0EA5EE8F647810125B1273CC"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_pre2023_signal_materialization_and_1h_input_verification_v1/max_exit_administrative_coverage_contract.json",
+      "sha256": "F5457978ADB0678ADB9A273624D62F547CA07B790B7D92F92D0EFD969FE10807"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_pre2023_signal_materialization_and_1h_input_verification_v1/input_verification_progress_decision.json",
+      "sha256": "975667C0BB938A8A2E9319E4A21173A07A9AF3704B3D4C9B8CDBA2673E0C448D"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_pre2023_signal_materialization_and_1h_input_verification_v1.json",
+      "sha256": "78BAA88C667FA4C69389C80330F8BA1C9BBE762B14D6D5EBCE2A5916C8A418A4"
+    }
+  ],
+  "firewall": {
+    "adapter_implemented": false,
+    "economic_analysis": false,
+    "git_fetch": false,
+    "native_replay_executed": false,
+    "network": false,
+    "protected_year_rows_read": false,
+    "push": false,
+    "recorder_implemented": false,
+    "source_code_mutation": false,
+    "thin_runner_implemented": false
+  },
+  "governed_schema_version": "akah-provenance-phase-governed-v1",
+  "next_bottleneck": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_PRE2023_SIGNAL_MATERIALIZATION_CONSTRUCTION_AUTHORITY_V1",
+  "north_star_effect": "Trace the mixed signal producer and any pre-2023-safe materialization authority, inventory the bound native 1H root, inspect timestamp semantics from source, and freeze the remaining terminal coverage contract without opening protected-year or OHLCV rows.",
+  "objective": "Trace the mixed signal producer and any pre-2023-safe materialization authority, inventory the bound native 1H root, inspect timestamp semantics from source, and freeze the remaining terminal coverage contract without opening protected-year or OHLCV rows.",
+  "resolution_class": "AUTHORIZED_PRE2023_SIGNAL_MATERIALIZATION_REMAINS_PRIMARY_BLOCKER",
+  "state_updates": {
+    "all_dynamic_input_authority_ready": false,
+    "available_1h_file_count": 342,
+    "economic_analysis": false,
+    "future_coverage_status": "DEPENDENCY_PRESENT_REQUIRES_SELECTED_PAIR_TIMESTAMP_COVERAGE_PROOF",
+    "native_replay_executed": false,
+    "pre2023_signal_materialization_ready": false,
+    "raw_root_bound": true,
+    "roadmap_position": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_PRE2023_SIGNAL_MATERIALIZATION_CONSTRUCTION_AUTHORITY_V1",
+    "selected_pair_set_bound": false,
+    "strata_count": 9,
+    "study_context": "FULL_EXISTING_NATIVE_MATRIX_AS_STUDY_STRATA",
+    "timestamp_semantic_status": "UNDECLARED_ROW_CLOCK_OPEN_CLOSE_MEANING_NOT_PROVEN"
+  },
+  "status": "PASS",
+  "summary": "Completed the maximal safe terminal-side follow-up after the 9-strata human decision. Traced the mixed signal producer surface, audited pre-2023 materialization candidates without opening protected rows, froze a construction contract, inventoried the bound native 1H root, audited timestamp semantics from source, and froze future max-exit coverage as an administrative contract pending exact selected-pair timestamp proof.",
+  "task_id": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_PRE2023_SIGNAL_MATERIALIZATION_AND_1H_INPUT_VERIFICATION_V1",
+  "task_start_head": "83f8d97cd00d521015751cf6b5ab2cfbdb7ee002",
+  "task_start_revision": 208
+}

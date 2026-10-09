@@ -1,0 +1,258 @@
+{
+  "schema_version": "akah-p38-retry-v1r11-static-authority-prebegin-v1",
+  "cli_contract": {
+    "required": [
+      "--observer-sha",
+      "--output-dir",
+      "--p13-candidate-trades",
+      "--p13-json",
+      "--p13-releases",
+      "--p13-suppressions",
+      "--p13-trace",
+      "--pair-set-sha",
+      "--raw-root",
+      "--repo-root"
+    ],
+    "all_long_options": [
+      "--observer-sha",
+      "--output-dir",
+      "--p13-candidate-trades",
+      "--p13-json",
+      "--p13-releases",
+      "--p13-suppressions",
+      "--p13-trace",
+      "--pair-set-sha",
+      "--raw-root",
+      "--repo-root"
+    ],
+    "rows": [
+      {
+        "lineno": 135,
+        "options": [
+          "--repo-root"
+        ],
+        "required": true
+      },
+      {
+        "lineno": 136,
+        "options": [
+          "--raw-root"
+        ],
+        "required": true
+      },
+      {
+        "lineno": 137,
+        "options": [
+          "--output-dir"
+        ],
+        "required": true
+      },
+      {
+        "lineno": 138,
+        "options": [
+          "--p13-json"
+        ],
+        "required": true
+      },
+      {
+        "lineno": 139,
+        "options": [
+          "--p13-candidate-trades"
+        ],
+        "required": true
+      },
+      {
+        "lineno": 140,
+        "options": [
+          "--p13-suppressions"
+        ],
+        "required": true
+      },
+      {
+        "lineno": 141,
+        "options": [
+          "--p13-releases"
+        ],
+        "required": true
+      },
+      {
+        "lineno": 142,
+        "options": [
+          "--p13-trace"
+        ],
+        "required": true
+      },
+      {
+        "lineno": 143,
+        "options": [
+          "--pair-set-sha"
+        ],
+        "required": true
+      },
+      {
+        "lineno": 144,
+        "options": [
+          "--observer-sha"
+        ],
+        "required": true
+      }
+    ]
+  },
+  "historical_source_static_preflight": {
+    "historical_source_head": "b3142d0135d393088ab3fe55c53b0e28ec7574cb",
+    "historical_source_paths": [
+      "src/spotbot/research/rd26_exit_architecture.py",
+      "src/spotbot/research/rd27_lifecycle_replay.py",
+      "src/spotbot/research/rd27_adaptive_lifecycle.py"
+    ],
+    "local_membership_path_bound": "C:\\SIRAJ\\Repositories\\spot-speculation-bot\\data\\research\\rd18_p3x_a3b_runtime\\effective-operational-membership.csv",
+    "local_membership_expected_sha256": "F7D6012CE8CD691583B9B6276DDF36371BFE0BBD9B28F810B676AD0177FB559E",
+    "membership_git_tree_expectation": "UNTRACKED_LOCAL_RUNTIME_AUTHORITY",
+    "membership_content_read_pre_begin": false,
+    "raw_root_bound_string_only": "C:\\SIRAJ\\Repositories\\spot-speculation-bot\\data\\raw\\rd16b\\kucoin",
+    "membership_formula": {
+      "universe_id": "D2",
+      "decision_time_lt": "2024-01-01T00:00:00Z",
+      "effective_end_gt": "2023-01-01T00:00:00Z",
+      "pair_field": "effective_pair",
+      "sort_unique": true,
+      "hash": "SHA256_UTF8_NEWLINE_JOIN_NO_TRAILING_NEWLINE",
+      "compute_after_begin_only": true
+    },
+    "pre_begin_2023_market_data_read": false,
+    "pre_begin_membership_rows_parsed": false
+  },
+  "external_replay_static_contract": {
+    "function": "external_full_adaptive_replay",
+    "required_return_keys": [
+      "counters",
+      "daily",
+      "metrics",
+      "trades"
+    ],
+    "selected_return_lineno": 385,
+    "selected_return_mapping": {
+      "trades": {
+        "kind": "Name",
+        "id": "trade_frame"
+      },
+      "daily": {
+        "kind": "Name",
+        "id": "daily_frame"
+      },
+      "metrics": {
+        "kind": "Name",
+        "id": "metrics"
+      },
+      "counters": {
+        "kind": "Name",
+        "id": "counters"
+      },
+      "trace_rows": {
+        "kind": "Name",
+        "id": "trace_rows"
+      },
+      "shadow_release_rows": {
+        "kind": "Name",
+        "id": "shadow_release_rows"
+      },
+      "shadow_suppression_rows": {
+        "kind": "Name",
+        "id": "shadow_suppression_rows"
+      }
+    },
+    "metrics_binding": "RETURN_KEY_metrics_MAPS_TO_LOCAL_NAME_metrics",
+    "counters_binding": "RETURN_KEY_counters_MAPS_TO_LOCAL_NAME_counters",
+    "runtime_metric_keys_required_after_begin": [
+      "net_pnl",
+      "maximum_drawdown",
+      "trade_count",
+      "final_equity"
+    ],
+    "metrics_and_counters_capture_supported": true
+  },
+  "fixed_cli_values_pre_begin": {
+    "--p13-json": "C:\\Users\\abdul\\Downloads\\EAA_EXIT_BRAIN_P13_2022_CAUSAL_STATIC_SHADOW_SAME_PAIR_GUARD_CANONICAL_RESULT_20260914_003052.json",
+    "--p13-candidate-trades": "C:\\Users\\abdul\\Downloads\\EAA_EXIT_BRAIN_P13_2022_SHADOW_GUARD_CANDIDATE_TRADES_20260914_003052.csv",
+    "--p13-suppressions": "C:\\Users\\abdul\\Downloads\\EAA_EXIT_BRAIN_P13_2022_SHADOW_SUPPRESSED_SIGNALS_20260914_003052.csv",
+    "--p13-releases": "C:\\Users\\abdul\\Downloads\\EAA_EXIT_BRAIN_P13_2022_SHADOW_RELEASE_LEDGER_20260914_003052.csv",
+    "--p13-trace": "C:\\Users\\abdul\\Downloads\\EAA_EXIT_BRAIN_P13_2022_CANDIDATE_EVENT_DECISION_TRACE_20260914_003052.csv",
+    "--output-dir": "C:\\Users\\abdul\\Downloads\\akah_p38_preflight_x1tkxztf\\observer_output_2023",
+    "--observer-sha": "E96298B1E68F0BA4585BE2958E2E9EA984F4877902AC5E7669DB7ABB2B358096"
+  },
+  "deferred_until_after_begin": {
+    "--repo-root": "TEMP_HISTORICAL_SOURCE_SNAPSHOT_AT_B3142D",
+    "--raw-root": "C:\\SIRAJ\\Repositories\\spot-speculation-bot\\data\\raw\\rd16b\\kucoin",
+    "--pair-set-sha": "COMPUTE_FROM_CANONICAL_MEMBERSHIP_FOR_2023"
+  },
+  "artifact_authority": {
+    "p13_json": {
+      "path": "C:\\Users\\abdul\\Downloads\\EAA_EXIT_BRAIN_P13_2022_CAUSAL_STATIC_SHADOW_SAME_PAIR_GUARD_CANONICAL_RESULT_20260914_003052.json",
+      "sha256": "AD0CB6CF1B10EF160C3D753E7A4B81728C228F70E17769BA3B29875D6C78EC5B"
+    },
+    "p13_candidate_trades": {
+      "path": "C:\\Users\\abdul\\Downloads\\EAA_EXIT_BRAIN_P13_2022_SHADOW_GUARD_CANDIDATE_TRADES_20260914_003052.csv",
+      "sha256": "AC2EBBB85692CBE0E4692BB045755A6C703A4B809682FFBB0B875E9FF24BA67A"
+    },
+    "p13_suppressions": {
+      "path": "C:\\Users\\abdul\\Downloads\\EAA_EXIT_BRAIN_P13_2022_SHADOW_SUPPRESSED_SIGNALS_20260914_003052.csv",
+      "sha256": "4499E13A929CF6B0B7B7D6E0793A4D0370868A75D9BD659B417D328850372C62"
+    },
+    "p13_releases": {
+      "path": "C:\\Users\\abdul\\Downloads\\EAA_EXIT_BRAIN_P13_2022_SHADOW_RELEASE_LEDGER_20260914_003052.csv",
+      "sha256": "FCBF40A5CD30669CEF44F7C99D518A23B29517D040FD7E07A7D3F7C8AC112E8A"
+    },
+    "p13_trace": {
+      "path": "C:\\Users\\abdul\\Downloads\\EAA_EXIT_BRAIN_P13_2022_CANDIDATE_EVENT_DECISION_TRACE_20260914_003052.csv",
+      "sha256": "4F72189F5FF55ED62ABF1E4D01845039D5DAE57DC85897D48CA215F67A06AE57"
+    },
+    "p19_result": {
+      "path": "C:\\Users\\abdul\\Downloads\\EAA_EXIT_BRAIN_P19_2022_TRANSITION_ADMISSION_COMPONENT_ABLATION_CANONICAL_RESULT_20260914_010117.json",
+      "sha256": "221CC3BCF5E062CE36CE2BEE10E3A9EE22448A8A8E4EF54F01DAF331E8B52DE7"
+    },
+    "p19_observer": {
+      "path": "C:\\Users\\abdul\\Downloads\\EAA_EXIT_BRAIN_P19_2022_TRANSITION_ADMISSION_ABLATION_OBSERVER_20260914_040044.py",
+      "sha256": "1CB8F15E04A2A7A19C7003024B2F56743EBCF23256CE0E1C2FAAB70CE82405CC"
+    },
+    "observer_sha_semantic_audit": {
+      "original_p19_observer_authority_sha256": "1CB8F15E04A2A7A19C7003024B2F56743EBCF23256CE0E1C2FAAB70CE82405CC",
+      "execution_observer_sha256": "E96298B1E68F0BA4585BE2958E2E9EA984F4877902AC5E7669DB7ABB2B358096",
+      "reference_count": 4,
+      "references": [
+        {
+          "lineno": 410,
+          "segment": "need(sha256(Path(__file__).resolve()) == args.observer_sha.upper(), 'OBSERVER_SHA_DRIFT')"
+        },
+        {
+          "lineno": 410,
+          "segment": "sha256(Path(__file__).resolve()) == args.observer_sha.upper()"
+        },
+        {
+          "lineno": 410,
+          "segment": "args.observer_sha.upper()"
+        },
+        {
+          "lineno": 549,
+          "segment": "args.observer_sha.upper()"
+        }
+      ],
+      "explicit_original_literal_guard": false,
+      "self_file_hash_guard": true,
+      "argument_mode": "ACTUAL_DERIVATIVE_EXECUTION_OBSERVER_SHA",
+      "argument_sha256": "E96298B1E68F0BA4585BE2958E2E9EA984F4877902AC5E7669DB7ABB2B358096"
+    }
+  },
+  "raw_market_boundary_contract": {
+    "historical_rd26_load_feature_frames": "PYARROW_FILTER_TIMESTAMP_LT_CUTOFF",
+    "replication_cutoff_exclusive": "2024-01-01T00:00:00Z",
+    "2024_rows_materialized": false,
+    "verified_from_historical_source_contract": true
+  },
+  "pre_begin_boundaries": {
+    "2023_market_data_read": false,
+    "membership_rows_parsed": false,
+    "historical_wrapper_executed": false,
+    "raw_root_listed": false,
+    "observer_executed": false
+  }
+}

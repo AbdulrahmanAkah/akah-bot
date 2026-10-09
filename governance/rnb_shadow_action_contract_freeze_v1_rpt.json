@@ -1,0 +1,56 @@
+{
+  "authority_bindings": {
+    "actionability_sha256": "D18F4CED25DD91F978C65D4FEDA03A9A9606797D51E3B57991A9C5D02EF23C1A",
+    "cohort_diagnostic_sha256": "5C5DF9A2CA5D797EE86FC428F23C92307490E75F8240B55D944771BFBC4AC3D3",
+    "contract_sha256": "A1D531E42F3F9F630A75B7ED0B9737DCD0D2D60C553862765C3902DE6E16005D",
+    "freeze_audit_sha256": "6D7BE29F9E2419BE97E2FAE517A448D13E28B8FF74477734BA5053B99B939AA2",
+    "shadow_events_sha256": "0241C3C61E5BB8038596F5129648D8195B82422842EB4CDCA573FC4176E07627"
+  },
+  "branch": "research/rd48-cross-venue-price-level-basis-direct-utility-v1",
+  "evidence": [
+    {
+      "path": "governance/rnb_shadow_action_contract_freeze_v1/shadow_cohort_diagnostic.json",
+      "sha256": "5C5DF9A2CA5D797EE86FC428F23C92307490E75F8240B55D944771BFBC4AC3D3"
+    },
+    {
+      "path": "governance/rnb_shadow_action_contract_freeze_v1/actionability_surface.json",
+      "sha256": "D18F4CED25DD91F978C65D4FEDA03A9A9606797D51E3B57991A9C5D02EF23C1A"
+    },
+    {
+      "path": "governance/rnb_shadow_action_contract_freeze_v1/shadow_action_contract.json",
+      "sha256": "A1D531E42F3F9F630A75B7ED0B9737DCD0D2D60C553862765C3902DE6E16005D"
+    },
+    {
+      "path": "governance/rnb_shadow_action_contract_freeze_v1/freeze_audit.json",
+      "sha256": "6D7BE29F9E2419BE97E2FAE517A448D13E28B8FF74477734BA5053B99B939AA2"
+    }
+  ],
+  "firewall": {
+    "market_data_read": false,
+    "native_replay_executed": false,
+    "network": false,
+    "optimization": false,
+    "push": false,
+    "retuning": false
+  },
+  "governed_schema_version": "akah-provenance-phase-governed-v1",
+  "next_bottleneck": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_SHADOW_ACTION_COUNTERFACTUAL_PORTFOLIO_REPLAY_V1",
+  "north_star_effect": "Converts Memory/V2 from descriptive shadow events into a predeclared causal action contract suitable for portfolio counterfactual replay, without tuning on outcomes.",
+  "objective": "Freeze a causal diagnostic shadow action contract after a broad one-pass analysis of the already-instrumented 748 unique native trades.",
+  "resolution_class": "PREDECLARED_POST_PROGRESS_V2_DIAGNOSTIC_ACTION_CONTRACT_FROZEN",
+  "state_updates": {
+    "contract_id": "AKAH_RNB_POST_PROGRESS_V2_DIAGNOSTIC_ACTION_V1",
+    "memory_only_count": 205,
+    "native_exit_mutation": false,
+    "production_authorized": false,
+    "retuning": false,
+    "roadmap_position": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_SHADOW_ACTION_COUNTERFACTUAL_PORTFOLIO_REPLAY_V1",
+    "shadow_action_contract_frozen": true,
+    "v2_strictly_actionable_count": 233
+  },
+  "status": "PASS",
+  "summary": "Completed one-pass broad analysis of the 748 shadow-instrumented native trades and froze a non-tuned diagnostic action contract: Memory changes state only; first causal V2 triggers exit at the next 1H open unless the native exit occurs at or before that fill. Native entries, costs, quantity, and safety precedence remain unchanged.",
+  "task_id": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_SHADOW_ACTION_CONTRACT_FREEZE_V1",
+  "task_start_head": "250b077f2f41aecf4ee02e1aa5016d1f2c532c4e",
+  "task_start_revision": 236
+}

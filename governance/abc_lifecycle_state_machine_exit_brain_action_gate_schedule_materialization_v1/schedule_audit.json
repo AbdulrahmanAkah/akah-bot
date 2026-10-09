@@ -1,0 +1,34 @@
+{
+  "2024_access": false,
+  "model_refit": false,
+  "policy_count": 5,
+  "policy_definitions": {
+    "EB2A_SCORE_POS_STRUCTURAL_BREAK": {
+      "description": "score>0 AND STRUCTURAL_BREAK active now"
+    },
+    "EB2B_SCORE_POS_VOLATILITY_DAMAGE": {
+      "description": "score>0 AND VOLATILITY_DAMAGE active now"
+    },
+    "EB2C_SCORE_POS_DAMAGE_ANY": {
+      "description": "score>0 AND (STRUCTURAL_BREAK OR VOLATILITY_DAMAGE) active now"
+    },
+    "EB2D_SCORE_POS_CONFIRMED_DAMAGE": {
+      "description": "score>0 AND base_phase=CONFIRMED AND (STRUCTURAL_BREAK OR VOLATILITY_DAMAGE)"
+    },
+    "EB2E_SCORE_POS_PERSIST2_DAMAGE_ANY": {
+      "description": "current and immediately-prior lifecycle decisions both score>0 AND current (STRUCTURAL_BREAK OR VOLATILITY_DAMAGE)"
+    }
+  },
+  "policy_ids": [
+    "EB2A_SCORE_POS_STRUCTURAL_BREAK",
+    "EB2B_SCORE_POS_VOLATILITY_DAMAGE",
+    "EB2C_SCORE_POS_DAMAGE_ANY",
+    "EB2D_SCORE_POS_CONFIRMED_DAMAGE",
+    "EB2E_SCORE_POS_PERSIST2_DAMAGE_ANY"
+  ],
+  "schema_version": "abc-exit-brain-action-gate-schedule-audit-v1",
+  "source_score_is_frozen_eb1": true,
+  "target_or_pnl_read": false,
+  "threshold_changed": false,
+  "total_schedule_rows": 234
+}

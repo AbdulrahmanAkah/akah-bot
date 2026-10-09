@@ -1,0 +1,51 @@
+{
+  "authority_id": "AKAH_BOT_PRE2023_SIGNAL_MATERIALIZATION_CONTRACT_V1",
+  "status": "FROZEN_CONSTRUCTION_CONTRACT_BLOCKED_PENDING_PREOPEN_SOURCE",
+  "study_context": "FULL_EXISTING_NATIVE_MATRIX_AS_STUDY_STRATA",
+  "strata_count": 9,
+  "policy_id": "rd27.FULL_ADAPTIVE_LIFECYCLE_BRAIN",
+  "cost_multiplier_execution_type": "float",
+  "cost_multiplier_execution_value": 1.0,
+  "date_bounds": {
+    "start_inclusive": "2022-01-01T00:00:00Z",
+    "end_exclusive": "2023-01-01T00:00:00Z"
+  },
+  "required_output_columns": [
+    "timestamp",
+    "universe_id",
+    "period_id",
+    "family_id",
+    "pair",
+    "membership_rank",
+    "atr24_at_signal"
+  ],
+  "forbidden_output_columns": [
+    "exit_price",
+    "exit_reason",
+    "exit_time",
+    "gross_pnl",
+    "net_pnl",
+    "holding_hours",
+    "mae",
+    "mfe",
+    "return_fraction"
+  ],
+  "selection_requirement": "A physical file/partition/row-group subset or source date selector must prove that only timestamps before 2023-01-01 are opened.",
+  "pit_requirement": "Every signal row must use only information available at its timestamp; membership and atr24_at_signal must be bound to the selected nine-strata context.",
+  "sort_order": "timestamp_ascending_then_deterministic_identity",
+  "duplicate_policy": "FAIL_CLOSED_OR_DETERMINISTIC_DEDUPLICATION_ONLY_IF_AUTHORIZED_BY_SOURCE_CONTRACT",
+  "timezone": "UTC",
+  "immutable_output_rule": true,
+  "output_path": "TO_BE_BOUND_AFTER_PREOPEN_SOURCE_AUTHORITY",
+  "output_format": "TO_BE_BOUND_BY_AUTHORIZED_MATERIALIZATION_TASK",
+  "provenance_requirements": [
+    "upstream path and SHA256",
+    "selector and inclusive/exclusive bounds",
+    "schema",
+    "producer/source commit or source SHA",
+    "protected-year rows opened = false",
+    "output SHA256"
+  ],
+  "materialization_performed": false,
+  "protected_year_rows_read": false
+}

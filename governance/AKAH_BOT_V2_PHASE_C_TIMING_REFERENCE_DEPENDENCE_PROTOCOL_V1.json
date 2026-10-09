@@ -1,0 +1,145 @@
+{
+  "automatic_phase_d_transition": false,
+  "cumulative_incidence_policy": {
+    "forbidden": [
+      "1-minus-Kaplan-Meier treating native close as ordinary censoring for the primary V2 probability.",
+      "Extrapolation beyond observed support.",
+      "Selecting display horizons because the curve looks favorable."
+    ],
+    "interpretation": "Descriptive for the audited cohort; not proof of a population-level probability.",
+    "method_if_permitted": "NONPARAMETRIC_AALEN_JOHANSEN_DESCRIPTIVE",
+    "must_show_number_at_risk": true,
+    "required_curves": [
+      "FIRST_V2_CUMULATIVE_INCIDENCE",
+      "NATIVE_CLOSE_BEFORE_V2_CUMULATIVE_INCIDENCE"
+    ],
+    "skip_if": [
+      "Terminal ordering is materially unresolved.",
+      "Coverage loss cannot be handled defensibly.",
+      "Phase B exposure ledger is not certified."
+    ]
+  },
+  "economics_authorized": false,
+  "fail_or_stop_conditions": [
+    "Phase A or B not certified.",
+    "Event-time analysis ignores competing native close.",
+    "Cumulative incidence is presented despite unresolved material coverage/ordering defects.",
+    "Reference diagnostics are restricted only to triggered lifecycles.",
+    "Clustering/dependence is ignored while events are visibly concentrated.",
+    "Any result is used to tune V2 or create V3 inside Phase C."
+  ],
+  "first_event_analysis": {
+    "administrative_censoring": "ADMINISTRATIVE_WINDOW_END_WHILE_OPEN_AND_OBSERVABLE",
+    "competing_event": "NATIVE_CLOSE_BEFORE_V2",
+    "coverage_loss": "SEPARATE_LOSS_OF_OBSERVATION_CLASS",
+    "event_of_interest": "FIRST_VALID_V2_WHILE_NATIVE_LIFECYCLE_OPEN",
+    "event_time_table_fields": [
+      "elapsed_time_since_memory",
+      "number_at_risk_before_time",
+      "first_v2_events",
+      "native_close_competing_events",
+      "administrative_censorings",
+      "coverage_losses",
+      "unresolved_ties"
+    ],
+    "time_origin": "FIRST_MEMORY_TIME",
+    "unresolved_ties": "EXPLICIT_AND_NOT_FORCE_CLASSIFIED"
+  },
+  "fixed_analysis_rules": [
+    "Use all distinct observed event times for the primary event-time table.",
+    "Do not choose 24h/48h/etc as primary analytical cutoffs based on results.",
+    "If fixed display points are needed, they must be operationally preregistered before viewing Phase C results.",
+    "Median among observed V2 cases may be labeled only as median among observed V2 cases.",
+    "If a cohort-level event-time quantile is not estimable, report NOT_ESTIMABLE.",
+    "Descriptive sensitivity must not be converted into an optimization loop."
+  ],
+  "market_dependence_diagnostic": {
+    "at_risk_overlap_pairwise_fields": [
+      "lifecycle_id_a",
+      "lifecycle_id_b",
+      "overlap_hours",
+      "union_hours",
+      "overlap_to_union_ratio",
+      "same_symbol"
+    ],
+    "calendar_views": [
+      "Memory events by UTC date",
+      "V2 events by UTC date",
+      "Memory events by 4H bar identity",
+      "V2 events by 4H bar identity"
+    ],
+    "event_concurrency": "Number of audited lifecycles simultaneously at risk at each event time.",
+    "forbidden_claims": [
+      "25 lifecycles equal 25 independent experiments.",
+      "Episode count equals effective independent sample size.",
+      "Bootstrap creates new information."
+    ],
+    "goal": "Expose shared exposure/clustering without pretending to estimate independent effective sample size.",
+    "regime_episode_policy": "If an already-authorized frozen market-regime series exists, an episode is a contiguous period of the same existing regime on the frozen benchmark. Do not invent new episodes through correlation optimization.",
+    "required_summaries": [
+      "Distribution of Memory/V2 across dates and existing regime episodes where available.",
+      "Largest cluster shares.",
+      "Symbol diversity inside clusters.",
+      "Descriptive leave-one-existing-episode-out sensitivity using the same rule for every episode where meaningful."
+    ]
+  },
+  "objective": "Explain V2 frequency through timing, observation support, frozen-reference age and shared market exposure before making any decision-usefulness claim.",
+  "parent_protocol": "governance/AKAH_BOT_V2_COHORT_OBSERVATION_REFERENCE_DIAGNOSTIC_PROTOCOL_V1.json",
+  "pass_criteria": [
+    "All conclusions distinguish observation from generalization.",
+    "Timing is interpreted jointly with number-at-risk and valid evaluation opportunities.",
+    "Reference age is measured without changing V2.",
+    "Shared-market clustering is made visible.",
+    "No economic claim, exit recommendation, tuned threshold, or new detector is introduced."
+  ],
+  "protocol_id": "AKAH_BOT_V2_PHASE_C_TIMING_REFERENCE_DEPENDENCE_PROTOCOL_V1",
+  "reference_age_diagnostic": {
+    "definitions": {
+      "normalized_reference_distance": "(current_close - frozen_reference_price) / frozen_reference_price",
+      "strict_new_running_high": "Strict update of the declared running-high state; do not label it a new market structure without a separate definition.",
+      "subsequent_progress_event": "New occurrence of the existing frozen Memory formula."
+    },
+    "per_evaluable_bar_fields": [
+      "lifecycle_id",
+      "evaluation_time",
+      "elapsed_hours_since_reference_freeze",
+      "completed_bar_count_since_freeze",
+      "subsequent_memory_true_count",
+      "strict_new_running_high_count",
+      "current_prior_structural_high",
+      "frozen_reference_price",
+      "current_close",
+      "close_minus_frozen_reference",
+      "normalized_reference_distance",
+      "current_structure_minus_frozen_reference"
+    ],
+    "population": "ALL_AUDITED_MEMORY_LIFECYCLES_NOT_ONLY_V2_TRIGGERED",
+    "reference_identity_fields": [
+      "reference_frozen_at",
+      "reference_origin_type",
+      "reference_origin_snapshot_identity",
+      "reference_origin_time",
+      "reference_origin_ambiguity"
+    ],
+    "reference_is_frozen_and_unchanged": true,
+    "rules": [
+      "Reference age at V2 equals time from first Memory to V2; do not count these as independent evidence.",
+      "Do not refresh, roll, replace, or optimize the frozen reference.",
+      "Do not use quantity, PnL, MFE, MAE, fees, or economic outcome fields.",
+      "Describe triggered and non-triggered paths through their terminal observation point."
+    ]
+  },
+  "required_outputs": [
+    "first_event_time_table",
+    "cumulative_incidence_report_or_documented_skip_reason",
+    "reference_age_path_ledger",
+    "reference_age_summary",
+    "market_clustering_report",
+    "phase_c_limitations_statement"
+  ],
+  "requires_phase_a_pass": true,
+  "requires_phase_b_pass": true,
+  "schema_version": "akah-v2-phase-c-timing-reference-dependence-v1",
+  "status": "FROZEN",
+  "success_next_task": "CAUSAL_EXIT_BRAIN_V2_PHASE_A_C_HUMAN_REVIEW_V1"
+}

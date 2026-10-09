@@ -1,0 +1,215 @@
+{
+  "artifacts": {
+    "common_trade_effect": {
+      "path": "C:\\Users\\abdul\\Downloads\\EAA_EXIT_BRAIN_P19_2022_COMMON_TRADE_EFFECT_20260914_010117.csv",
+      "row_count": 31,
+      "sha256": "22BF9D2E65E2056911EB3A23D0C2FB94EB74ADB9080DCC56B585DAD067B2A6B1"
+    },
+    "divergent_trade_lineage": {
+      "path": "C:\\Users\\abdul\\Downloads\\EAA_EXIT_BRAIN_P19_2022_DIVERGENT_TRADE_LINEAGE_20260914_010117.csv",
+      "row_count": 201,
+      "sha256": "7FC21D07D83D2B03CCC72C69D4C2C2A970090A5058A13668CD6526615272CCB1"
+    },
+    "treatment_event_trace": {
+      "path": "C:\\Users\\abdul\\Downloads\\EAA_EXIT_BRAIN_P19_2022_TRANSITION_ABLATED_EVENT_TRACE_20260914_010117.csv",
+      "row_count": 1065,
+      "sha256": "D58205F56A9DDD39ED3B3AF3E5CDD3AF03F49E1BF4DB517E8D3705C1BC3F3F9B"
+    },
+    "treatment_trades": {
+      "path": "C:\\Users\\abdul\\Downloads\\EAA_EXIT_BRAIN_P19_2022_TRANSITION_ABLATED_TREATMENT_TRADES_20260914_010117.csv",
+      "row_count": 48,
+      "sha256": "3EEB0658E49D50882FC053FE53067F7AC2378B2B68A32210BC0B66A9D2E2D0FB"
+    }
+  },
+  "authority": {
+    "membership_sha256": "F7D6012CE8CD691583B9B6276DDF36371BFE0BBD9B28F810B676AD0177FB559E",
+    "observer_sha256": "1CB8F15E04A2A7A19C7003024B2F56743EBCF23256CE0E1C2FAAB70CE82405CC",
+    "p13_candidate_event_trace_sha256": "4F72189F5FF55ED62ABF1E4D01845039D5DAE57DC85897D48CA215F67A06AE57",
+    "p13_candidate_trades_sha256": "AC2EBBB85692CBE0E4692BB045755A6C703A4B809682FFBB0B875E9FF24BA67A",
+    "p13_canonical_result_sha256": "AD0CB6CF1B10EF160C3D753E7A4B81728C228F70E17769BA3B29875D6C78EC5B",
+    "p13_shadow_release_ledger_sha256": "FCBF40A5CD30669CEF44F7C99D518A23B29517D040FD7E07A7D3F7C8AC112E8A",
+    "p13_shadow_suppression_ledger_sha256": "4499E13A929CF6B0B7B7D6E0793A4D0370868A75D9BD659B417D328850372C62",
+    "p18_canonical_result_sha256": "AA4D7D96471F7B4A6152F92D16DC7D8749524E41FF2598CCA9A7DAFE9DD740D2",
+    "p18_transition_ablation_protocol_sha256": "3A3847DE62F1D7450374533C8A392725E7D7F837F8ECD109A46736C6980A48EA"
+  },
+  "classification": "TRANSITION_ADMISSION_ABLATION_PRIMARY_ENDPOINT_POSITIVE_EXPLORATORY_SUPPORT",
+  "control_parity": {
+    "control_id": "FULL_ADAPTIVE_PLUS_CAUSAL_STATIC_SHADOW_SAME_PAIR_OCCUPANCY_GUARD_V1",
+    "exact_p13_candidate_trades_csv_sha": true,
+    "exact_p13_counters": true,
+    "exact_p13_metrics": true,
+    "exact_p13_release_csv_sha": true,
+    "exact_p13_suppression_csv_sha": true,
+    "exact_p13_trace_csv_sha": true,
+    "final_equity": 95751.79942435949,
+    "net_pnl": -4248.200575640512,
+    "trade_count": 215
+  },
+  "exact_effect_decomposition": {
+    "common_control_net_pnl": 6900.530239380617,
+    "common_delta_interpretation": "SIZING_PATH_EFFECT_ONLY",
+    "common_entry_time_price_exact": true,
+    "common_exit_time_reason_price_exact": true,
+    "common_normalized_return_parity": true,
+    "common_trade_count": 31,
+    "common_trade_pnl_delta": 62.59861172806268,
+    "common_treatment_net_pnl": 6963.12885110868,
+    "control_only_net_pnl": -11148.730815021034,
+    "control_only_trade_count": 184,
+    "reconciliation_error": -1.0550138540565968e-10,
+    "reconstructed_endpoint": 5263.6427988787145,
+    "treatment_only_net_pnl": -5947.686627870382,
+    "treatment_only_trade_count": 17
+  },
+  "handoff_contract": {
+    "failure_send_full_log_only": true,
+    "success_send_only_this_json": true
+  },
+  "interpretation_gate": {
+    "adaptive_exit_parameter_change_selected": false,
+    "automatic_2023_replay": false,
+    "automatic_2024_access": false,
+    "component_adopted": false,
+    "same_pair_secondary_policy_combination_selected": false,
+    "separate_post_p19_decision_required": true,
+    "shadow_guard_change_selected": false,
+    "stagnation_exit_change_selected": false,
+    "transition_substate_rule_selected": false,
+    "transition_threshold_selected": false,
+    "treatment_is_component_ablation_not_selected_production_rule": true
+  },
+  "primary_endpoint": {
+    "name": "FINAL_PORTFOLIO_NET_PNL_TREATMENT_MINUS_CONTROL",
+    "significance_threshold_used": false,
+    "support_direction": "GREATER_THAN_ZERO",
+    "supported_exploratory": true,
+    "treatment_net_pnl_above_zero": true,
+    "value": 5263.64279887882
+  },
+  "risk_on_common_trade_diagnostic": {
+    "common_risk_on_trade_count": 31,
+    "common_transition_trade_count": 0,
+    "treatment_all_admitted_trades_risk_on": true
+  },
+  "safety": {
+    "2023_replayed": false,
+    "2024_accessed": false,
+    "adaptive_exit_parameter_change_executed": false,
+    "candidate_count_tested": 1,
+    "cooldown_search_executed": false,
+    "market_feature_threshold_search_executed": false,
+    "model_fit_executed": false,
+    "network_calls": 0,
+    "parameter_optimization_executed": false,
+    "production_activation": false,
+    "repo_mutation": false,
+    "same_pair_secondary_policy_combination_executed": false,
+    "shadow_guard_variant_search_executed": false,
+    "stagnation_exit_change_executed": false,
+    "transition_subfilter_search_executed": false,
+    "transition_threshold_search_executed": false
+  },
+  "schema_version": "eaa-exit-brain-p19-2022-transition-admission-component-ablation-result-v1",
+  "stage": "EAA_EXIT_BRAIN_P19_2022_TRANSITION_ADMISSION_COMPONENT_ABLATION_EXECUTION",
+  "status": "PASS_EXIT_BRAIN_P19_TRANSITION_ADMISSION_COMPONENT_ABLATION_COMPLETED_EXPLORATORY_ONLY",
+  "transition_ablation_lineage": {
+    "control_only_by_entry_market_state": {
+      "RISK_ON": {
+        "event_count": 8,
+        "mean_realized_pnl": -346.068631603822,
+        "sum_realized_pnl": -2768.549052830576
+      },
+      "TRANSITION": {
+        "event_count": 176,
+        "mean_realized_pnl": -47.61466910335487,
+        "sum_realized_pnl": -8380.181762190457
+      }
+    },
+    "control_only_by_treatment_blocker": {
+      "SAME_PAIR_OPEN": {
+        "event_count": 7,
+        "mean_realized_pnl": -501.0467546126283,
+        "sum_realized_pnl": -3507.3272822883982
+      },
+      "SHADOW_STATIC_SAME_PAIR_OPEN_SUPPRESSED": {
+        "event_count": 4,
+        "mean_realized_pnl": 130.45343744981164,
+        "sum_realized_pnl": 521.8137497992466
+      },
+      "TRANSITION_ADMISSION_ABLATED": {
+        "event_count": 173,
+        "mean_realized_pnl": -47.186227066658276,
+        "sum_realized_pnl": -8163.217282531882
+      }
+    },
+    "directly_ablated_control_trade_count": 173,
+    "directly_ablated_control_trade_pnl": -8163.217282531882,
+    "downstream_portfolio_state_effects_allowed_in_endpoint": true,
+    "transition_suppressed_signal_count": 668,
+    "treatment_only_by_control_blocker": {
+      "POSITION_SLOTS_FULL": {
+        "event_count": 1,
+        "mean_realized_pnl": -335.6048844975713,
+        "sum_realized_pnl": -335.6048844975713
+      },
+      "SAME_PAIR_OPEN": {
+        "event_count": 3,
+        "mean_realized_pnl": -394.1095118183436,
+        "sum_realized_pnl": -1182.3285354550308
+      },
+      "SHADOW_STATIC_SAME_PAIR_OPEN_SUPPRESSED": {
+        "event_count": 13,
+        "mean_realized_pnl": -340.75024676290616,
+        "sum_realized_pnl": -4429.75320791778
+      }
+    },
+    "treatment_only_by_entry_market_state": {
+      "RISK_ON": {
+        "event_count": 17,
+        "mean_realized_pnl": -349.86391928649306,
+        "sum_realized_pnl": -5947.686627870382
+      }
+    }
+  },
+  "treatment": {
+    "admitted_transition_trade_count": 0,
+    "component_difference": "TRANSITION_ADMISSION_ONLY",
+    "decision_counters": {
+      "adaptive_protection_gap_exits": 1,
+      "adaptive_protection_touch_exits": 35,
+      "adaptive_stagnation_exits": 11,
+      "admitted_entries": 48,
+      "capacity_capped_entries": 0,
+      "capacity_unavailable": 0,
+      "cash_capped_entries": 0,
+      "entry_bar_adaptive_exits": 1,
+      "entry_state_RISK_OFF": 166,
+      "entry_state_RISK_ON": 48,
+      "entry_state_TRANSITION": 668,
+      "gross_limit_rejection": 0,
+      "max_hold_exits": 1,
+      "missing_entry_bar": 0,
+      "missing_exit_bar_precheck": 0,
+      "position_slots_full": 5,
+      "risk_off_suppressed_entries": 166,
+      "same_pair_open": 104,
+      "shadow_max_hold_168h_releases": 21,
+      "shadow_same_pair_suppressed": 74,
+      "shadow_time_failure_72h_releases": 27,
+      "signal_events": 1065,
+      "time_failure_exits": 0,
+      "transition_admission_suppressed": 668
+    },
+    "final_equity": 101015.44222323831,
+    "maximum_drawdown": 0.06937009339939092,
+    "mean_holding_hours": 43.458333333333336,
+    "minimum_cash": 9875.53822964082,
+    "net_pnl": 1015.4422232383076,
+    "profit_factor": 1.059758393518959,
+    "trade_count": 48,
+    "transition_admission_suppressed_count": 668,
+    "treatment_id": "FULL_ADAPTIVE_PLUS_SHADOW_GUARD_TRANSITION_ADMISSION_ABLATED_V1",
+    "turnover": 17.578724735276875,
+    "win_rate": 0.4375
+  }
+}

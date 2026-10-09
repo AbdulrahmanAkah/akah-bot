@@ -1,0 +1,60 @@
+{
+  "authority_bindings": {
+    "rd27_lifecycle_replay_sha256": "E3944A4655DDDF21C394FE1DB541F2645F529C00BD8390B22D652BD8EF5BBF83",
+    "v2_native_hook_recovery_v3_report_sha256": "32E8C4334A996B04463B263D637E8C8CAF5B3183F5C52118FD57AC2F03B31496",
+    "v2_native_hook_recovery_v3_sha256": "EBC8AEC479D3EF64512C7C52ACD8CC412376FE624E61E9B7F08EFAEBE216CFE8",
+    "v2_native_hook_source_sha256": "E149C5C354B08801920CA87F61F397C9C7969EA7E6BE7C081AFF865CF9168EFD",
+    "v2_shadow_parity_rows_sha256": "47618557A5B55C1B3BE8FE57173B5B3C02BC89C271396C19A94B94979D54650C",
+    "v2_shadow_parity_sha256": "9572B41908809B26D8846484147C85FD3037CABFC6E8A8BAE47DAF3F1FF001D7",
+    "v2_shadow_replay_source_sha256": "AC8E88D9C49F811190F7158CE75159C0E546ED6C8FAB51A2E5F011740C6BD9DB",
+    "v2_trigger_source_sha256": "3CC049B5E38851A13B73CC7C0B36128EF906BE6A9AAFB97CCED85C36CCD9CE94"
+  },
+  "branch": "research/rd48-cross-venue-price-level-basis-direct-utility-v1",
+  "evidence": [
+    {
+      "path": "governance/trigger_v2_post_hook_behavioral_adj_v1.json",
+      "sha256": "19261DB603716B559210E407B12F6011663F51853C6248E944D96E504FD44D5C"
+    },
+    {
+      "path": "governance/trigger_v2_shadow_parity_v1.json",
+      "sha256": "9572B41908809B26D8846484147C85FD3037CABFC6E8A8BAE47DAF3F1FF001D7"
+    },
+    {
+      "path": "governance/trigger_v2_native_hook_recovery_v3.json",
+      "sha256": "EBC8AEC479D3EF64512C7C52ACD8CC412376FE624E61E9B7F08EFAEBE216CFE8"
+    }
+  ],
+  "firewall": {
+    "2023_economics": false,
+    "2024_access": false,
+    "2025_access": false,
+    "actual_exit_authority": false,
+    "economics": false,
+    "market_replay": false,
+    "outcome_fields": false,
+    "source_mutation": false
+  },
+  "governed_schema_version": "akah-provenance-phase-governed-v1",
+  "next_bottleneck": "CAUSAL_EXIT_BRAIN_LATER_TRIGGER_V3_SELECTIVITY_REDESIGN_PROTOCOL_V1",
+  "north_star_effect": "Prevents outcome-driven rescue and keeps the exit-brain program focused on causal structural discrimination before economics.",
+  "objective": "Adjudicate Later Trigger V2 after exact real-cohort parity and successful default-disabled native lifecycle hook integration, without using economics or outcome fields.",
+  "resolution_class": "DO_NOT_ADVANCE_TO_ECONOMICS_REDESIGN_TRIGGER",
+  "state_updates": {
+    "actual_exit_authority": false,
+    "economic_test_authorized": false,
+    "later_trigger_v2_behavioral_verdict": "DO_NOT_ADVANCE_TO_ECONOMICS",
+    "later_trigger_v2_candidate_free_after_memory": 2,
+    "later_trigger_v2_candidate_given_memory": 0.92,
+    "later_trigger_v2_native_hook_default_enabled": false,
+    "later_trigger_v2_native_hook_status": "PASS",
+    "later_trigger_v2_post_hook_behavioral_adjudication": "PASS",
+    "later_trigger_v2_real_candidates": 23,
+    "later_trigger_v2_real_memory": 25,
+    "later_trigger_v3_redesign_required": true
+  },
+  "status": "PASS",
+  "summary": "Post-hook adjudication confirms V2 implementation and native-hook integration are correct, but the trigger remains behaviorally broad: 23/25 Memory lifecycles become candidates, leaving only 2/25 candidate-free. No economic testing is authorized; proceed to a bounded V3 selectivity redesign protocol.",
+  "task_id": "CAUSAL_EXIT_BRAIN_LATER_TRIGGER_V2_POST_HOOK_BEHAVIORAL_ADJUDICATION_V1",
+  "task_start_head": "b29cd66ae68077a74b3a07974d94034470005d4b",
+  "task_start_revision": 177
+}

@@ -1,0 +1,48 @@
+{
+  "all_scalar_roles_bound": false,
+  "roles": {
+    "cost_multiplier": {
+      "bound_value": null,
+      "evidence": [],
+      "status": "UNRESOLVED_NO_LITERAL_AUTHORITY",
+      "unique_literal_values": []
+    },
+    "policy_id": {
+      "bound_value": null,
+      "evidence": [],
+      "status": "UNRESOLVED_NO_LITERAL_AUTHORITY",
+      "unique_literal_values": []
+    },
+    "portfolio_id": {
+      "bound_value": "EAA_SHADOW_PARITY_NATIVE",
+      "evidence": [
+        {
+          "callsite_path": "scripts/research/run_eaa_same_pair_secondary_shadow_parity.py",
+          "expression": "'EAA_SHADOW_PARITY_NATIVE'",
+          "line": 240,
+          "value": "EAA_SHADOW_PARITY_NATIVE"
+        }
+      ],
+      "status": "BOUND_UNIQUE_LITERAL_FROM_CURRENT_NATIVE_CALLSITES",
+      "unique_literal_values": [
+        "EAA_SHADOW_PARITY_NATIVE"
+      ]
+    },
+    "universe_id": {
+      "bound_value": "PRE2022_UNION",
+      "evidence": [
+        {
+          "callsite_path": "scripts/research/run_eaa_same_pair_secondary_shadow_parity.py",
+          "expression": "'PRE2022_UNION'",
+          "line": 240,
+          "value": "PRE2022_UNION"
+        }
+      ],
+      "status": "BOUND_UNIQUE_LITERAL_FROM_CURRENT_NATIVE_CALLSITES",
+      "unique_literal_values": [
+        "PRE2022_UNION"
+      ]
+    }
+  },
+  "status": "PASS"
+}

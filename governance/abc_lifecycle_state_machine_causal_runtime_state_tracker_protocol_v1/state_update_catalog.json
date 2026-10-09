@@ -1,0 +1,18 @@
+{
+  "base_phase_update": "CONSUME_EXISTING_CAUSAL_BASE_PHASE_SEMANTICS_ONLY_NO_NEW_PHASE_RULE",
+  "catalog_id": "ABC_LIFECYCLE_STATE_MACHINE_CAUSAL_RUNTIME_STATE_TRACKER_UPDATE_CATALOG_V1",
+  "initialization": "FIRST_EXISTING_DECISION_ROW_DIRECT_CAUSAL_SNAPSHOT_NO_SYNTHETIC_PREHISTORY",
+  "output_authority": "RESEARCH_SHADOW_STATE_TRACE_ONLY",
+  "same_decision_update_order": "SIMULTANEOUS_VECTOR_UPDATE_NO_OVERLAY_PRIORITY",
+  "schema_version": "abc-causal-runtime-state-tracker-update-catalog-v1",
+  "stalled_update": "LATCH_C_WHILE_PRE_MEMORY; CLEAR_WHEN_MEMORY_SEEN; NO_DURATION_THRESHOLD",
+  "state_vector": [
+    "base_state",
+    "stalled_active",
+    "structural_break_active",
+    "volatility_damage_active"
+  ],
+  "structural_break_update": "CURRENT_A_CONDITION_BOOLEAN; CLEAR_WHEN_A_FALSE; SOURCE_RECOVERY_FLAG_DESCRIPTIVE",
+  "terminal_behavior": "NO_SYNTHETIC_CLEAR_OR_EXIT_ACTION",
+  "volatility_damage_update": "CURRENT_B_CONDITION_BOOLEAN_IN_EXISTING_CONFIRMED_DOMAIN; CLEAR_WHEN_B_FALSE; SOURCE_RECOVERY_FLAG_DESCRIPTIVE"
+}

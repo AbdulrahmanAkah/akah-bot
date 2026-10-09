@@ -1,0 +1,102 @@
+{
+  "task_id": "AKAH_SINGLE_FROZEN_ALL_NINE_GATE3_REPLAY_V15",
+  "starting_head": "841455262a2fa9108407daa636cf55b86b452b3e",
+  "charter_revision": 787,
+  "status": "EXACT_SEP22_20H_CHECKPOINT_RESUMED_CERTIFIED_TELEMETRY_REPAIR_IN_PROGRESS_NOT_COMPLETED",
+  "replay_running": true,
+  "live_handoff": ".akah_bot/v15_live_recovery_handoff.json",
+  "live_supervisor_status": ".akah_bot/economic-guarded-20261007T232702/status.json",
+  "live_worker_status": ".akah_bot/economic-guarded-20261007T232702/arm-01/status.json",
+  "completed_arms": 0,
+  "requested_arms": 18,
+  "unexpected_previous_exit": {
+    "worker_pid": 7008,
+    "last_clock": "2021-10-26T15:00:00Z",
+    "last_wall_seconds": 4884,
+    "cause": "UNPROVEN",
+    "exit_code": "NOT_CAPTURED_BY_OLD_LAUNCHER"
+  },
+  "verified_findings": [
+    "Input memorymapping: 2 synthetic tests passed, exact values/units/SHA/read-only arrays and tamper rejection.",
+    "27 synthetic resume tests passed, including all18 actual open-campaign consumer/pipeline ledgers and exact scheduler capacity/calendar.",
+    "58 combined synthetic storage/index/checkpoint/input/resume tests passed BEFORE later archive-deepcopy repair. Counts overlap; not additive.",
+    "Immutable source checkpoint databases now resume into NEW mutable working copies. Repeated loading cannot see subsequent resumed writes.",
+    "Full301 seven-day scaling/indexed source benchmark exact: 22828 pair ticks, 74527 nodes; speedup 1.0033446700870925, NOT material acceleration.",
+    "Full regression exposed SQLite deepcopy incompatibility in native admission previews. Repaired independent snapshot; mutable isolation and original failed fill tests both passed (2 tests). Full regression not completed.",
+    "File-backed exact numeric bar histories retain all history. Final full-scope disk-memory/speed certification incomplete.",
+    "Windows 64-bit priority handle fixed; below-normal verified.",
+    "Supervisor captured OS exit75 on safety-aborted synthetic group. Aborted test group is NOT a pass. Zero economic arms completed."
+  ],
+  "new_runtime_test_evidence": {
+    "report_paths": [
+      ".akah_bot/v15_resume_unit_results_run03.xml",
+      ".akah_bot/v15_bounded_unit_run01.xml",
+      ".akah_bot/v15_copy_minimal_results_run01.xml",
+      ".akah_bot/v15_input_unit_results_run04.xml"
+    ],
+    "counts_overlap_not_additive": true,
+    "combined_regression_completed": true,
+    "completed_base_tests": 676,
+    "base_regression_certificate": ".akah_bot/guarded-suite-20261007T174717/certificate.json",
+    "new_diagnostic_journal_config_certified": true,
+    "new_configuration_regression": ".akah_bot/cache-validation-20261007T232416/synthetic.xml; 120 passed, counts overlap",
+    "new_harness_regression": ".akah_bot/harness-validation-20261007T232028/synthetic.xml; 59 passed",
+    "new_full_scope_differential": ".akah_bot/v15_full_scope_7d_disk_cache256_seen_source_report.json; exact seven-day 301-pair signature",
+    "grouped_status": ".akah_bot/v15_regression_suite_status.json",
+    "full_scope_signature": "e1169c2cb946a7449cd487a35486b8abb257ab72fbc80feedfb9510e042cebba",
+    "measured_full301_seven_day_indexed_speedup": 1.0033446700870925,
+    "scientific_economic_accuracy_certified": false
+  },
+  "operational_safety": {
+    "minimum_probe_start_free_mib": 1024,
+    "minimum_running_free_mib": 512,
+    "maximum_probe_private_mib": 384,
+    "workers": 1,
+    "priority": "BELOW_NORMAL",
+    "watchdog_seconds": 1,
+    "status_write_seconds": 10,
+    "captured_os_exit_code": 75,
+    "last_guard_abort": "Available physical 462987264 bytes, test process private 100495360 bytes.",
+    "latest_observed_available_physical_bytes": 760942592,
+    "other_applications_terminated": false,
+    "guarantee_of_no_system_freeze": false,
+    "long_economic_runner_using_new_harness": true
+  },
+  "remaining_work": [
+    "User cannot close working applications. Adapt with a single smaller owned worker, suspension without forced trim, resident-aware resume, unchanged 512MiB physical and 1GiB commit reserve. Do not request application closure again.",
+    "Current 51-test harness, 120-test configuration and full301 seven-day source differential passed. Certificate 5BF022182276E50C52F7C37292E3FAC906D678750ADA0E5EE85C2B6EEE21E881 binds exact lossless checkpoint migration and native private working-set observation; resumed worker confirmed September17 noon cursor. Unsupported OS counters retain the old conservative RSS rule.",
+    "Continue guarded actual frozen replay. Long-horizon memory bound and whole-replay speedup remain unproven; repair/resume any captured operational breach without changing policy or protected period.",
+    "Complete all18 actual frozen historical replay arms, then governed complete/verify/authorized closeout."
+  ],
+  "follow_up": {
+    "status": "DELETED_AT_EXPLICIT_USER_REQUEST",
+    "monitoring_mode": "FOREGROUND_ASSISTANT_ONLY_NO_SCHEDULED_AUTOMATION",
+    "supervisor_running": true,
+    "supervisor_pid_at_last_observation": 34148,
+    "adaptive_resource_receipt": ".akah_bot/v15_adaptive_resource_receipt.json",
+    "current_synthetic_suite": ".akah_bot/guarded-suite-20261007T174717",
+    "launch_environment": "HOST_OUTSIDE_SANDBOX_SAME_SINGLE_WORKER_RESOURCE_GUARD",
+    "source_hash_environment_comparison": {
+      "sandbox_receipt": ".akah_bot/source_hash_timing_sandbox.json",
+      "host_receipt": ".akah_bot/source_hash_timing_host.json",
+      "files": 649,
+      "sandbox_median_seconds": 9.180464099859819,
+      "host_median_seconds": 0.4206425999291241,
+      "source_sha_parity": true,
+      "full_replay_speedup_claimed": false
+    },
+    "completed_synthetic_group_tests": 676,
+    "next_group": "GUARDED_RESUMED_EIGHTEEN_FROZEN_ECONOMIC_ARMS",
+    "replay_running": true,
+    "notification_automation_created": false
+  },
+  "2024_rows_accessed": false,
+  "2025_rows_accessed": false,
+  "production_changed": false,
+  "new_governed_task_started": false,
+  "charter_revision_consumed": false,
+  "tracked_files_changed": false,
+  "partial_traces_are_scientific_results": false,
+  "scientific_conclusion": "NONE_REPLAY_NOT_COMPLETED",
+  "ready_for_safe_recoverable_restart": true
+}

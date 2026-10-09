@@ -1,0 +1,488 @@
+{
+  "calls": [
+    {
+      "call_line": 695,
+      "caller_function": "replay_policy",
+      "caller_path": "src/spotbot/research/rd26_exit_architecture.py",
+      "classification": "PROVEN_READ_ONLY",
+      "evidence": [
+        {
+          "end_line": 190,
+          "evidence_id": "src/spotbot/research/rd26_exit_architecture.py:187-190",
+          "function": "fast_lookup",
+          "line": 187,
+          "source_sha256": "1290748EA7E8A0343C1A15CEDFC1220AA423F04C11FDD558311B06AC7DA90359"
+        }
+      ],
+      "helper": "fast_lookup",
+      "reason": "frame originates from frames.items(); helper reads timestamp Series and creates integer index dictionary, no write to input.",
+      "receiving_parameter_or_receiver": "frame (positional 0)",
+      "role": "frames.value"
+    },
+    {
+      "call_line": 695,
+      "caller_function": "replay_policy",
+      "caller_path": "src/spotbot/research/rd26_exit_architecture.py",
+      "classification": "PROVEN_READ_ONLY",
+      "evidence": [
+        {
+          "evidence_id": "src/spotbot/research/rd26_exit_architecture.py:695-695",
+          "source_sha256": "1290748EA7E8A0343C1A15CEDFC1220AA423F04C11FDD558311B06AC7DA90359"
+        }
+      ],
+      "helper": "frames.items",
+      "reason": "Dictionary iteration only; values flow only to reviewed fast_lookup and _bar_at.",
+      "receiving_parameter_or_receiver": "frames",
+      "role": "frames"
+    },
+    {
+      "call_line": 698,
+      "caller_function": "replay_policy",
+      "caller_path": "src/spotbot/research/rd26_exit_architecture.py",
+      "classification": "PROVEN_READ_ONLY",
+      "evidence": [
+        {
+          "evidence_id": "src/spotbot/research/rd26_exit_architecture.py:698-698",
+          "source_sha256": "1290748EA7E8A0343C1A15CEDFC1220AA423F04C11FDD558311B06AC7DA90359"
+        }
+      ],
+      "helper": "events.to_dict",
+      "reason": "pandas to_dict orient=records reads DataFrame and creates record containers; local {**raw,...} scheduled dictionaries do not write source DataFrame.",
+      "receiving_parameter_or_receiver": "events",
+      "role": "events"
+    },
+    {
+      "call_line": 718,
+      "caller_function": "replay_policy",
+      "caller_path": "src/spotbot/research/rd26_exit_architecture.py",
+      "classification": "PROVEN_READ_ONLY",
+      "evidence": [
+        {
+          "evidence_id": "src/spotbot/research/rd26_exit_architecture.py:718-718",
+          "source_sha256": "1290748EA7E8A0343C1A15CEDFC1220AA423F04C11FDD558311B06AC7DA90359"
+        }
+      ],
+      "helper": "len",
+      "reason": "len(DataFrame) read-only.",
+      "receiving_parameter_or_receiver": "events",
+      "role": "events"
+    },
+    {
+      "call_line": 737,
+      "caller_function": "replay_policy",
+      "caller_path": "src/spotbot/research/rd26_exit_architecture.py",
+      "classification": "PROVEN_READ_ONLY",
+      "evidence": [
+        {
+          "end_line": 611,
+          "evidence_id": "src/spotbot/research/rd26_exit_architecture.py:599-611",
+          "function": "_bar_at",
+          "line": 599,
+          "source_sha256": "1290748EA7E8A0343C1A15CEDFC1220AA423F04C11FDD558311B06AC7DA90359"
+        }
+      ],
+      "helper": "_bar_at",
+      "reason": "Exact module-local _bar_at reads dict.get and frame.iloc; returned Series never written, only scalar field extraction.",
+      "receiving_parameter_or_receiver": "frames (positional 2)",
+      "role": "frames"
+    },
+    {
+      "call_line": 750,
+      "caller_function": "replay_policy",
+      "caller_path": "src/spotbot/research/rd26_exit_architecture.py",
+      "classification": "PROVEN_READ_ONLY",
+      "evidence": [
+        {
+          "end_line": 611,
+          "evidence_id": "src/spotbot/research/rd26_exit_architecture.py:599-611",
+          "function": "_bar_at",
+          "line": 599,
+          "source_sha256": "1290748EA7E8A0343C1A15CEDFC1220AA423F04C11FDD558311B06AC7DA90359"
+        }
+      ],
+      "helper": "_bar_at",
+      "reason": "Exact module-local _bar_at reads dict.get and frame.iloc; returned Series never written, only scalar field extraction.",
+      "receiving_parameter_or_receiver": "frames (positional 2)",
+      "role": "frames"
+    },
+    {
+      "call_line": 792,
+      "caller_function": "replay_policy",
+      "caller_path": "src/spotbot/research/rd26_exit_architecture.py",
+      "classification": "PROVEN_READ_ONLY",
+      "evidence": [
+        {
+          "end_line": 611,
+          "evidence_id": "src/spotbot/research/rd26_exit_architecture.py:599-611",
+          "function": "_bar_at",
+          "line": 599,
+          "source_sha256": "1290748EA7E8A0343C1A15CEDFC1220AA423F04C11FDD558311B06AC7DA90359"
+        }
+      ],
+      "helper": "_bar_at",
+      "reason": "Exact module-local _bar_at reads dict.get and frame.iloc; returned Series never written, only scalar field extraction.",
+      "receiving_parameter_or_receiver": "frames (positional 2)",
+      "role": "frames"
+    },
+    {
+      "call_line": 810,
+      "caller_function": "replay_policy",
+      "caller_path": "src/spotbot/research/rd26_exit_architecture.py",
+      "classification": "PROVEN_READ_ONLY",
+      "evidence": [
+        {
+          "end_line": 611,
+          "evidence_id": "src/spotbot/research/rd26_exit_architecture.py:599-611",
+          "function": "_bar_at",
+          "line": 599,
+          "source_sha256": "1290748EA7E8A0343C1A15CEDFC1220AA423F04C11FDD558311B06AC7DA90359"
+        }
+      ],
+      "helper": "_bar_at",
+      "reason": "Exact module-local _bar_at reads dict.get and frame.iloc; returned Series never written, only scalar field extraction.",
+      "receiving_parameter_or_receiver": "frames (positional 2)",
+      "role": "frames"
+    },
+    {
+      "call_line": 814,
+      "caller_function": "replay_policy",
+      "caller_path": "src/spotbot/research/rd26_exit_architecture.py",
+      "classification": "PROVEN_READ_ONLY",
+      "evidence": [
+        {
+          "end_line": 611,
+          "evidence_id": "src/spotbot/research/rd26_exit_architecture.py:599-611",
+          "function": "_bar_at",
+          "line": 599,
+          "source_sha256": "1290748EA7E8A0343C1A15CEDFC1220AA423F04C11FDD558311B06AC7DA90359"
+        }
+      ],
+      "helper": "_bar_at",
+      "reason": "Exact module-local _bar_at reads dict.get and frame.iloc; returned Series never written, only scalar field extraction.",
+      "receiving_parameter_or_receiver": "frames (positional 2)",
+      "role": "frames"
+    },
+    {
+      "call_line": 823,
+      "caller_function": "replay_policy",
+      "caller_path": "src/spotbot/research/rd26_exit_architecture.py",
+      "classification": "PROVEN_READ_ONLY",
+      "evidence": [
+        {
+          "end_line": 611,
+          "evidence_id": "src/spotbot/research/rd26_exit_architecture.py:599-611",
+          "function": "_bar_at",
+          "line": 599,
+          "source_sha256": "1290748EA7E8A0343C1A15CEDFC1220AA423F04C11FDD558311B06AC7DA90359"
+        }
+      ],
+      "helper": "_bar_at",
+      "reason": "Exact module-local _bar_at reads dict.get and frame.iloc; returned Series never written, only scalar field extraction.",
+      "receiving_parameter_or_receiver": "frames (positional 2)",
+      "role": "frames"
+    },
+    {
+      "call_line": 900,
+      "caller_function": "replay_policy",
+      "caller_path": "src/spotbot/research/rd26_exit_architecture.py",
+      "classification": "PROVEN_READ_ONLY",
+      "evidence": [
+        {
+          "end_line": 611,
+          "evidence_id": "src/spotbot/research/rd26_exit_architecture.py:599-611",
+          "function": "_bar_at",
+          "line": 599,
+          "source_sha256": "1290748EA7E8A0343C1A15CEDFC1220AA423F04C11FDD558311B06AC7DA90359"
+        }
+      ],
+      "helper": "_bar_at",
+      "reason": "Exact module-local _bar_at reads dict.get and frame.iloc; returned Series never written, only scalar field extraction.",
+      "receiving_parameter_or_receiver": "frames (positional 2)",
+      "role": "frames"
+    },
+    {
+      "call_line": 331,
+      "caller_function": "replay_lifecycle_policy",
+      "caller_path": "src/spotbot/research/rd27_lifecycle_replay.py",
+      "classification": "PROVEN_READ_ONLY",
+      "evidence": [
+        {
+          "evidence_id": "src/spotbot/research/rd27_lifecycle_replay.py:27-29",
+          "source_sha256": "E3944A4655DDDF21C394FE1DB541F2645F529C00BD8390B22D652BD8EF5BBF83"
+        },
+        {
+          "end_line": 964,
+          "evidence_id": "src/spotbot/research/rd26_exit_architecture.py:681-964",
+          "function": "replay_policy",
+          "line": 681,
+          "source_sha256": "1290748EA7E8A0343C1A15CEDFC1220AA423F04C11FDD558311B06AC7DA90359"
+        }
+      ],
+      "helper": "rd26_replay_policy",
+      "reason": "ImportFrom rd26_exit_architecture.replay_policy AS rd26_replay_policy; audited separately below; branch unreachable for FULL_ADAPTIVE.",
+      "receiving_parameter_or_receiver": "events,frames",
+      "role": "events,frames"
+    },
+    {
+      "call_line": 388,
+      "caller_function": "replay_lifecycle_policy",
+      "caller_path": "src/spotbot/research/rd27_lifecycle_replay.py",
+      "classification": "PROVEN_READ_ONLY",
+      "evidence": [
+        {
+          "end_line": 190,
+          "evidence_id": "src/spotbot/research/rd26_exit_architecture.py:187-190",
+          "function": "fast_lookup",
+          "line": 187,
+          "source_sha256": "1290748EA7E8A0343C1A15CEDFC1220AA423F04C11FDD558311B06AC7DA90359"
+        }
+      ],
+      "helper": "fast_lookup",
+      "reason": "frame originates from frames.items(); helper reads timestamp Series and creates integer index dictionary, no write to input.",
+      "receiving_parameter_or_receiver": "frame (positional 0)",
+      "role": "frames.value"
+    },
+    {
+      "call_line": 388,
+      "caller_function": "replay_lifecycle_policy",
+      "caller_path": "src/spotbot/research/rd27_lifecycle_replay.py",
+      "classification": "PROVEN_READ_ONLY",
+      "evidence": [
+        {
+          "evidence_id": "src/spotbot/research/rd27_lifecycle_replay.py:388-388",
+          "source_sha256": "E3944A4655DDDF21C394FE1DB541F2645F529C00BD8390B22D652BD8EF5BBF83"
+        }
+      ],
+      "helper": "frames.items",
+      "reason": "Dictionary iteration only; values flow only to reviewed fast_lookup and _bar_at.",
+      "receiving_parameter_or_receiver": "frames",
+      "role": "frames"
+    },
+    {
+      "call_line": 393,
+      "caller_function": "replay_lifecycle_policy",
+      "caller_path": "src/spotbot/research/rd27_lifecycle_replay.py",
+      "classification": "PROVEN_READ_ONLY",
+      "evidence": [
+        {
+          "evidence_id": "src/spotbot/research/rd27_lifecycle_replay.py:393-393",
+          "source_sha256": "E3944A4655DDDF21C394FE1DB541F2645F529C00BD8390B22D652BD8EF5BBF83"
+        }
+      ],
+      "helper": "events.to_dict",
+      "reason": "pandas to_dict orient=records reads DataFrame and creates record containers; local {**raw,...} scheduled dictionaries do not write source DataFrame.",
+      "receiving_parameter_or_receiver": "events",
+      "role": "events"
+    },
+    {
+      "call_line": 416,
+      "caller_function": "replay_lifecycle_policy",
+      "caller_path": "src/spotbot/research/rd27_lifecycle_replay.py",
+      "classification": "PROVEN_READ_ONLY",
+      "evidence": [
+        {
+          "evidence_id": "src/spotbot/research/rd27_lifecycle_replay.py:416-416",
+          "source_sha256": "E3944A4655DDDF21C394FE1DB541F2645F529C00BD8390B22D652BD8EF5BBF83"
+        }
+      ],
+      "helper": "len",
+      "reason": "len(DataFrame) read-only.",
+      "receiving_parameter_or_receiver": "events",
+      "role": "events"
+    },
+    {
+      "call_line": 448,
+      "caller_function": "replay_lifecycle_policy",
+      "caller_path": "src/spotbot/research/rd27_lifecycle_replay.py",
+      "classification": "PROVEN_READ_ONLY",
+      "evidence": [
+        {
+          "end_line": 183,
+          "evidence_id": "src/spotbot/research/rd27_lifecycle_replay.py:171-183",
+          "function": "_bar_at",
+          "line": 171,
+          "source_sha256": "E3944A4655DDDF21C394FE1DB541F2645F529C00BD8390B22D652BD8EF5BBF83"
+        }
+      ],
+      "helper": "_bar_at",
+      "reason": "Exact module-local _bar_at reads dict.get and frame.iloc; returned Series never written, only scalar field extraction.",
+      "receiving_parameter_or_receiver": "frames (positional 2)",
+      "role": "frames"
+    },
+    {
+      "call_line": 451,
+      "caller_function": "replay_lifecycle_policy",
+      "caller_path": "src/spotbot/research/rd27_lifecycle_replay.py",
+      "classification": "PROVEN_READ_ONLY",
+      "evidence": [
+        {
+          "end_line": 183,
+          "evidence_id": "src/spotbot/research/rd27_lifecycle_replay.py:171-183",
+          "function": "_bar_at",
+          "line": 171,
+          "source_sha256": "E3944A4655DDDF21C394FE1DB541F2645F529C00BD8390B22D652BD8EF5BBF83"
+        }
+      ],
+      "helper": "_bar_at",
+      "reason": "Exact module-local _bar_at reads dict.get and frame.iloc; returned Series never written, only scalar field extraction.",
+      "receiving_parameter_or_receiver": "frames (positional 2)",
+      "role": "frames"
+    },
+    {
+      "call_line": 525,
+      "caller_function": "replay_lifecycle_policy",
+      "caller_path": "src/spotbot/research/rd27_lifecycle_replay.py",
+      "classification": "PROVEN_READ_ONLY",
+      "evidence": [
+        {
+          "end_line": 183,
+          "evidence_id": "src/spotbot/research/rd27_lifecycle_replay.py:171-183",
+          "function": "_bar_at",
+          "line": 171,
+          "source_sha256": "E3944A4655DDDF21C394FE1DB541F2645F529C00BD8390B22D652BD8EF5BBF83"
+        }
+      ],
+      "helper": "_bar_at",
+      "reason": "Exact module-local _bar_at reads dict.get and frame.iloc; returned Series never written, only scalar field extraction.",
+      "receiving_parameter_or_receiver": "frames (positional 2)",
+      "role": "frames"
+    },
+    {
+      "call_line": 555,
+      "caller_function": "replay_lifecycle_policy",
+      "caller_path": "src/spotbot/research/rd27_lifecycle_replay.py",
+      "classification": "PROVEN_READ_ONLY",
+      "evidence": [
+        {
+          "end_line": 183,
+          "evidence_id": "src/spotbot/research/rd27_lifecycle_replay.py:171-183",
+          "function": "_bar_at",
+          "line": 171,
+          "source_sha256": "E3944A4655DDDF21C394FE1DB541F2645F529C00BD8390B22D652BD8EF5BBF83"
+        }
+      ],
+      "helper": "_bar_at",
+      "reason": "Exact module-local _bar_at reads dict.get and frame.iloc; returned Series never written, only scalar field extraction.",
+      "receiving_parameter_or_receiver": "frames (positional 2)",
+      "role": "frames"
+    },
+    {
+      "call_line": 559,
+      "caller_function": "replay_lifecycle_policy",
+      "caller_path": "src/spotbot/research/rd27_lifecycle_replay.py",
+      "classification": "PROVEN_READ_ONLY",
+      "evidence": [
+        {
+          "end_line": 183,
+          "evidence_id": "src/spotbot/research/rd27_lifecycle_replay.py:171-183",
+          "function": "_bar_at",
+          "line": 171,
+          "source_sha256": "E3944A4655DDDF21C394FE1DB541F2645F529C00BD8390B22D652BD8EF5BBF83"
+        }
+      ],
+      "helper": "_bar_at",
+      "reason": "Exact module-local _bar_at reads dict.get and frame.iloc; returned Series never written, only scalar field extraction.",
+      "receiving_parameter_or_receiver": "frames (positional 2)",
+      "role": "frames"
+    },
+    {
+      "call_line": 568,
+      "caller_function": "replay_lifecycle_policy",
+      "caller_path": "src/spotbot/research/rd27_lifecycle_replay.py",
+      "classification": "PROVEN_READ_ONLY",
+      "evidence": [
+        {
+          "end_line": 183,
+          "evidence_id": "src/spotbot/research/rd27_lifecycle_replay.py:171-183",
+          "function": "_bar_at",
+          "line": 171,
+          "source_sha256": "E3944A4655DDDF21C394FE1DB541F2645F529C00BD8390B22D652BD8EF5BBF83"
+        }
+      ],
+      "helper": "_bar_at",
+      "reason": "Exact module-local _bar_at reads dict.get and frame.iloc; returned Series never written, only scalar field extraction.",
+      "receiving_parameter_or_receiver": "frames (positional 2)",
+      "role": "frames"
+    },
+    {
+      "call_line": 657,
+      "caller_function": "replay_lifecycle_policy",
+      "caller_path": "src/spotbot/research/rd27_lifecycle_replay.py",
+      "classification": "PROVEN_READ_ONLY",
+      "evidence": [
+        {
+          "end_line": 183,
+          "evidence_id": "src/spotbot/research/rd27_lifecycle_replay.py:171-183",
+          "function": "_bar_at",
+          "line": 171,
+          "source_sha256": "E3944A4655DDDF21C394FE1DB541F2645F529C00BD8390B22D652BD8EF5BBF83"
+        }
+      ],
+      "helper": "_bar_at",
+      "reason": "Exact module-local _bar_at reads dict.get and frame.iloc; returned Series never written, only scalar field extraction.",
+      "receiving_parameter_or_receiver": "frames (positional 2)",
+      "role": "frames"
+    },
+    {
+      "call_line": 714,
+      "caller_function": "replay_lifecycle_policy",
+      "caller_path": "src/spotbot/research/rd27_lifecycle_replay.py",
+      "classification": "PROVEN_READ_ONLY",
+      "evidence": [
+        {
+          "end_line": 183,
+          "evidence_id": "src/spotbot/research/rd27_lifecycle_replay.py:171-183",
+          "function": "_bar_at",
+          "line": 171,
+          "source_sha256": "E3944A4655DDDF21C394FE1DB541F2645F529C00BD8390B22D652BD8EF5BBF83"
+        }
+      ],
+      "helper": "_bar_at",
+      "reason": "Exact module-local _bar_at reads dict.get and frame.iloc; returned Series never written, only scalar field extraction.",
+      "receiving_parameter_or_receiver": "frames (positional 2)",
+      "role": "frames"
+    }
+  ],
+  "derived_alias_operations": [
+    {
+      "evidence": {
+        "evidence_id": "src/spotbot/research/rd27_lifecycle_replay.py:171-183",
+        "source_sha256": "E3944A4655DDDF21C394FE1DB541F2645F529C00BD8390B22D652BD8EF5BBF83"
+      },
+      "operations": "frames.get -> frame.iloc[index] -> Series; no assignment through returned Series",
+      "path": "src/spotbot/research/rd27_lifecycle_replay.py"
+    },
+    {
+      "evidence": {
+        "end_line": 190,
+        "evidence_id": "src/spotbot/research/rd26_exit_architecture.py:187-190",
+        "function": "fast_lookup",
+        "line": 187,
+        "source_sha256": "1290748EA7E8A0343C1A15CEDFC1220AA423F04C11FDD558311B06AC7DA90359"
+      },
+      "operations": "timestamp selection -> pd.to_datetime -> dt.as_unit -> astype -> to_numpy -> enumerate; only reads/allocations",
+      "path": "src/spotbot/research/rd26_exit_architecture.py"
+    },
+    {
+      "evidence": {
+        "evidence_id": "src/spotbot/research/rd27_lifecycle_replay.py:393-407",
+        "source_sha256": "E3944A4655DDDF21C394FE1DB541F2645F529C00BD8390B22D652BD8EF5BBF83"
+      },
+      "operations": "to_dict records -> new scheduled mapping -> immutable scalar extraction; no alias container passed to native decision helpers",
+      "path": "src/spotbot/research/rd27_lifecycle_replay.py"
+    }
+  ],
+  "events": "PROVEN_NO_TRANSITIVE_MUTATION",
+  "frames": "PROVEN_NO_TRANSITIVE_MUTATION",
+  "real_or_synthetic_replay_executed": false,
+  "remaining_helper_blockers": [],
+  "rev203_errors": [
+    "Imported rd26_replay_policy alias treated as missing definition",
+    "Eight unqualified _bar_at names treated as ambiguity instead of module-local binding",
+    "pandas DataFrame.to_dict treated as unknown mutator",
+    "frames.items -> fast_lookup(frame) omitted from reported alias inventory"
+  ],
+  "scalar_boundary": "float/int/str/Timestamp values extracted from records or Series; decisions/positions receive scalar values, not events/frames containers. Runtime dictionaries and position state mutations are not input mutations.",
+  "scope": "Declared pandas DataFrame/dict of DataFrame with primitive scalar fields, current unpatched native source; not arbitrary user subclasses or mutable object cells.",
+  "status": "PASS"
+}

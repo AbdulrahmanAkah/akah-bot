@@ -1,0 +1,60 @@
+{
+  "catalog_id": "ABC_STATE_CONDITIONED_ACTION_HYPOTHESIS_V1",
+  "hypotheses": [
+    {
+      "candidate_action": "HOLD_CONTROL",
+      "id": "H0_HOLD_CONTROL",
+      "predicate": "TRUE_FOR_EVERY_DECISION_ROW",
+      "purpose": "Unconditional control comparator; does not assert that the context is healthy."
+    },
+    {
+      "candidate_action": "WATCH",
+      "id": "H1_WATCH_STALLED",
+      "predicate": "CURRENT_OVERLAY_CONTAINS_STALLED",
+      "purpose": "Observe unresolved pre-progress stall evidence without converting it to an exit."
+    },
+    {
+      "candidate_action": "WATCH",
+      "id": "H2_WATCH_DAMAGE_ACTIVE",
+      "predicate": "CURRENT_OVERLAY_CONTAINS_STRUCTURAL_BREAK_OR_VOLATILITY_DAMAGE",
+      "purpose": "Observe currently active damage evidence independently of onset versus continuation."
+    },
+    {
+      "candidate_action": "PROTECT_CANDIDATE",
+      "id": "H3_PROTECT_DAMAGE_ONSET",
+      "predicate": "STRUCTURAL_BREAK_ACTIVATE_OR_VOLATILITY_DAMAGE_ACTIVATE",
+      "purpose": "Test whether newly activating damage should justify a protective response."
+    },
+    {
+      "candidate_action": "PROTECT_CANDIDATE",
+      "id": "H4_PROTECT_DAMAGE_CONTINUATION",
+      "predicate": "STRUCTURAL_BREAK_CONTINUE_OR_VOLATILITY_DAMAGE_CONTINUE",
+      "purpose": "Test whether continuing source-native damage should justify a protective response."
+    },
+    {
+      "candidate_action": "EXIT_CANDIDATE",
+      "id": "H5_EXIT_CONFLUENT_DAMAGE",
+      "predicate": "STRUCTURAL_BREAK_AND_VOLATILITY_DAMAGE_SIMULTANEOUSLY_ACTIVE",
+      "purpose": "Sparse preregistered exit candidate based only on simultaneous source-native damage; not an authorized exit rule."
+    },
+    {
+      "candidate_action": "DEESCALATE_CANDIDATE",
+      "id": "H6_DEESCALATE_DAMAGE_CLEAR",
+      "predicate": "STRUCTURAL_BREAK_CLEAR_OR_VOLATILITY_DAMAGE_CLEAR",
+      "purpose": "Test whether source-native recovery/clear transitions support de-escalating prior concern."
+    }
+  ],
+  "schema_version": "abc-state-conditioned-action-hypothesis-catalog-v1",
+  "semantics": {
+    "candidate_action_is_not_exit_authority": true,
+    "candidate_action_is_not_runtime_action": true,
+    "hypotheses_are_preregistered_test_candidates": true,
+    "hypotheses_may_overlap": true,
+    "no_absence_of_damage_equals_healthy": true,
+    "no_frequency_as_quality": true,
+    "no_new_numeric_threshold": true,
+    "no_persistence_horizon": true,
+    "no_priority_order": true,
+    "no_winner_selected": true
+  }
+}

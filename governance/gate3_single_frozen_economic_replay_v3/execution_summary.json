@@ -1,0 +1,31 @@
+{
+  "task_id": "AKAH_SINGLE_FROZEN_GATE3_ECONOMIC_REPLAY_V3",
+  "status": "TECHNICAL_FAIL",
+  "governance_outcome": "FAIL_CLOSED",
+  "scientific_conclusion": "NONE",
+  "failure_phase": "CAUSAL_EVENT_STAGING_BEFORE_PORTFOLIO_SIMULATION",
+  "error": "Object of type Timestamp is not JSON serializable",
+  "root_cause": "Real event timestamp is pandas.Timestamp; stage_market serializes the whole event using json.dumps(e) without a timestamp encoder.",
+  "attempt_count": 1,
+  "automatic_rerun": false,
+  "ECONOMIC_REPLAY_ATTEMPTED": "YES",
+  "ECONOMIC_REPLAY_COMPLETED": "NO",
+  "FUNDED_PORTFOLIO_SIMULATION_EXECUTED": "NO",
+  "PNL_QUALIFICATION_EXECUTED": "NO",
+  "2024_ROWS_ACCESSED": "NO",
+  "2025_ROWS_ACCESSED": "NO",
+  "PRODUCTION_CHANGED": "NO",
+  "FROZEN_POLICY_OR_THRESHOLDS_CHANGED": "NO",
+  "READY_FOR_SINGLE_GATE3_REPLAY": "NO",
+  "prior_readiness_reinterpretation": "The earlier synthetic/preflight certificate did not cover the actual producer timestamp type. It is historical evidence, not authority for another V3 run after this technical failure.",
+  "staging_only": {
+    "committed_pairs": 2,
+    "committed_bar_rows": 35038,
+    "committed_intents": 0,
+    "cache_sha256": "72DB6E8B0CDEA8E7A690DB06AB622C65E472A09B16800900A018BEC3C75B727E",
+    "cache_bytes": 6610944,
+    "cache_is_partial_and_not_scientific_economic_authority": true
+  },
+  "next_bottleneck": "AKAH_GATE3_EVENT_SERIALIZATION_REPAIR_AND_REFREEZE_BEFORE_NEW_AUTHORIZED_REPLAY",
+  "required_before_another_economic_attempt": "A separately governed mechanical repair, actual-producer-schema regression proof, new immutable freeze and authorization. Preserve this attempt and do not edit/remove STARTED to bypass the one-run guard."
+}

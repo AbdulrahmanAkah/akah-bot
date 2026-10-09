@@ -1,0 +1,45 @@
+{
+  "authority_bindings": {
+    "recovery_v2_fail_report_sha256": "C4EF32CA2DD97A598CB0850AAC8B560CA2474C6A6EEF219113231B445543F876",
+    "shadow_replay_sha256": "AC8E88D9C49F811190F7158CE75159C0E546ED6C8FAB51A2E5F011740C6BD9DB",
+    "trigger_v2_sha256": "3CC049B5E38851A13B73CC7C0B36128EF906BE6A9AAFB97CCED85C36CCD9CE94"
+  },
+  "branch": "research/rd48-cross-venue-price-level-basis-direct-utility-v1",
+  "evidence": [
+    {
+      "path": "governance/trigger_v2_native_hook_recovery_v3.json",
+      "sha256": "EBC8AEC479D3EF64512C7C52ACD8CC412376FE624E61E9B7F08EFAEBE216CFE8"
+    },
+    {
+      "path": "src/spotbot/research/rd27_later_trigger_v2_native_hook.py",
+      "sha256": "E149C5C354B08801920CA87F61F397C9C7969EA7E6BE7C081AFF865CF9168EFD"
+    },
+    {
+      "path": "tests/research/test_rd27_later_trigger_v2_native_hook.py",
+      "sha256": "388D53B5CF5B8E91E5CDC4D0E85E226FF58749B2BD89CC01802D73313C512396"
+    },
+    {
+      "path": "src/spotbot/research/rd27_lifecycle_replay.py",
+      "sha256": "E3944A4655DDDF21C394FE1DB541F2645F529C00BD8390B22D652BD8EF5BBF83"
+    }
+  ],
+  "firewall": {},
+  "governed_schema_version": "akah-provenance-phase-governed-v1",
+  "next_bottleneck": "CAUSAL_EXIT_BRAIN_LATER_TRIGGER_V2_POST_HOOK_BEHAVIORAL_ADJUDICATION_V1",
+  "north_star_effect": "Places governed V2 observation on native lifecycle timing without granting V2 exit or native-position authority.",
+  "objective": "Recover the native V2 lifecycle hook after the Ruff-only B905 failure, retaining the AST-derived signature patch and requiring exact native output parity.",
+  "resolution_class": "V2_NATIVE_LIFECYCLE_OBSERVATIONAL_HOOK_RECOVERED_V3",
+  "state_updates": {
+    "actual_exit_authority": false,
+    "economic_test_authorized": false,
+    "later_trigger_v2_native_hook_default_enabled": false,
+    "later_trigger_v2_native_hook_output_parity": "PASS",
+    "later_trigger_v2_native_hook_recovery_v3": "PASS",
+    "later_trigger_v2_native_lifecycle_hook": "PASS_RECOVERED_V3"
+  },
+  "status": "PASS",
+  "summary": "Recovery V3 retained the AST-derived native hook patch and corrected the two Ruff B905 test-only findings with explicit strict zip parity. The default-disabled observational hook passed exact native output parity, targeted tests, wide RD27 regression, signature validation and protected V2 source parity.",
+  "task_id": "CAUSAL_EXIT_BRAIN_LATER_TRIGGER_V2_NATIVE_LIFECYCLE_REPLAY_HOOK_RECOVERY_V3",
+  "task_start_head": "7dc18989e43d0d1a6bf40bcf836b2720766399fc",
+  "task_start_revision": 176
+}

@@ -1,0 +1,151 @@
+{
+  "assignment_count": 14,
+  "assignments": [
+    {
+      "depth": 0,
+      "expr": "filter_robustness_events(events)",
+      "function": "main",
+      "line": 605,
+      "module": "scripts/research/run_rd26_exit_architecture.py",
+      "target": "events"
+    },
+    {
+      "depth": 1,
+      "expr": "frame.loc[max_exit < DATA_CUTOFF].copy()",
+      "function": "filter_robustness_events",
+      "line": 524,
+      "module": "src/spotbot/research/rd26_exit_architecture.py",
+      "target": "frame"
+    },
+    {
+      "depth": 2,
+      "expr": "frame.loc[max_exit < DATA_CUTOFF].copy()",
+      "function": "filter_robustness_events",
+      "line": 524,
+      "module": "src/spotbot/research/rd26_exit_architecture.py",
+      "target": "frame"
+    },
+    {
+      "depth": 2,
+      "expr": "frame.loc[max_exit < DATA_CUTOFF].copy()",
+      "function": "filter_robustness_events",
+      "line": 524,
+      "module": "src/spotbot/research/rd26_exit_architecture.py",
+      "target": "frame"
+    },
+    {
+      "depth": 2,
+      "expr": "frame.loc[max_exit < DATA_CUTOFF].copy()",
+      "function": "filter_robustness_events",
+      "line": 524,
+      "module": "src/spotbot/research/rd26_exit_architecture.py",
+      "target": "frame"
+    },
+    {
+      "depth": 3,
+      "expr": "frame.loc[max_exit < DATA_CUTOFF].copy()",
+      "function": "filter_robustness_events",
+      "line": 524,
+      "module": "src/spotbot/research/rd26_exit_architecture.py",
+      "target": "frame"
+    },
+    {
+      "depth": 3,
+      "expr": "frame.loc[max_exit < DATA_CUTOFF].copy()",
+      "function": "filter_robustness_events",
+      "line": 524,
+      "module": "src/spotbot/research/rd26_exit_architecture.py",
+      "target": "frame"
+    },
+    {
+      "depth": 3,
+      "expr": "frame.loc[max_exit < DATA_CUTOFF].copy()",
+      "function": "filter_robustness_events",
+      "line": 524,
+      "module": "src/spotbot/research/rd26_exit_architecture.py",
+      "target": "frame"
+    },
+    {
+      "depth": 4,
+      "expr": "frame.loc[max_exit < DATA_CUTOFF].copy()",
+      "function": "filter_robustness_events",
+      "line": 524,
+      "module": "src/spotbot/research/rd26_exit_architecture.py",
+      "target": "frame"
+    },
+    {
+      "depth": 4,
+      "expr": "frame.loc[max_exit < DATA_CUTOFF].copy()",
+      "function": "filter_robustness_events",
+      "line": 524,
+      "module": "src/spotbot/research/rd26_exit_architecture.py",
+      "target": "frame"
+    },
+    {
+      "depth": 4,
+      "expr": "frame.loc[max_exit < DATA_CUTOFF].copy()",
+      "function": "filter_robustness_events",
+      "line": 524,
+      "module": "src/spotbot/research/rd26_exit_architecture.py",
+      "target": "frame"
+    },
+    {
+      "depth": 5,
+      "expr": "frame.loc[max_exit < DATA_CUTOFF].copy()",
+      "function": "filter_robustness_events",
+      "line": 524,
+      "module": "src/spotbot/research/rd26_exit_architecture.py",
+      "target": "frame"
+    },
+    {
+      "depth": 5,
+      "expr": "frame.loc[max_exit < DATA_CUTOFF].copy()",
+      "function": "filter_robustness_events",
+      "line": 524,
+      "module": "src/spotbot/research/rd26_exit_architecture.py",
+      "target": "frame"
+    },
+    {
+      "depth": 5,
+      "expr": "frame.loc[max_exit < DATA_CUTOFF].copy()",
+      "function": "filter_robustness_events",
+      "line": 524,
+      "module": "src/spotbot/research/rd26_exit_architecture.py",
+      "target": "frame"
+    }
+  ],
+  "call_count": 2,
+  "calls": [
+    {
+      "call": "filter_robustness_events(events)",
+      "call_name": "filter_robustness_events",
+      "depth": 0,
+      "function": "main",
+      "is_read_call": false,
+      "line": 605,
+      "module": "scripts/research/run_rd26_exit_architecture.py"
+    },
+    {
+      "call": "frame.loc[max_exit < DATA_CUTOFF].copy()",
+      "call_name": "frame.loc[max_exit < DATA_CUTOFF].copy",
+      "depth": 1,
+      "function": "filter_robustness_events",
+      "is_read_call": false,
+      "line": 524,
+      "module": "src/spotbot/research/rd26_exit_architecture.py"
+    }
+  ],
+  "seed_names": [
+    "events"
+  ],
+  "status": "PASS",
+  "unresolved_dependencies": [
+    {
+      "function": "main",
+      "module": "scripts/research/run_rd26_exit_architecture.py",
+      "name": "filter_robustness_events",
+      "reason": "NO_PRIOR_ASSIGNMENT_PARAMETER_OR_OUTER_SCOPE"
+    }
+  ],
+  "writer_receiver": "events"
+}

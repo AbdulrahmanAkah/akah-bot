@@ -1,0 +1,55 @@
+{
+  "authority_bindings": {
+    "aggregation_audit_sha256": "932D4CA053E29DC3BB80486CDADC4BE00C6CCCB1ACE1455A04DC29503E904F58",
+    "manifest_sha256": "E7D138B468CA8D75E2E1A08E738C237E3CAEC960FE9D9EDE78CAF1A0E47AA6D1",
+    "semantics_sha256": "1FAB8D29170C287008E79585B382E451A701D2A2A9B514C573FD0A4C5DA2E251",
+    "shadow_events_sha256": "0241C3C61E5BB8038596F5129648D8195B82422842EB4CDCA573FC4176E07627"
+  },
+  "branch": "research/rd48-cross-venue-price-level-basis-direct-utility-v1",
+  "evidence": [
+    {
+      "path": "governance/rnb_shadow_event_runtime_instrumentation_v1/frozen_shadow_semantics.json",
+      "sha256": "1FAB8D29170C287008E79585B382E451A701D2A2A9B514C573FD0A4C5DA2E251"
+    },
+    {
+      "path": "governance/rnb_shadow_event_runtime_instrumentation_v1/four_hour_aggregation_audit.json",
+      "sha256": "932D4CA053E29DC3BB80486CDADC4BE00C6CCCB1ACE1455A04DC29503E904F58"
+    },
+    {
+      "path": "governance/rnb_shadow_event_runtime_instrumentation_v1/instrumentation_manifest.json",
+      "sha256": "E7D138B468CA8D75E2E1A08E738C237E3CAEC960FE9D9EDE78CAF1A0E47AA6D1"
+    },
+    {
+      "path": "data/research/reconstructed_native_baseline_pre2023/shadow-runtime-instrumentation-v1/shadow-events.csv",
+      "sha256": "0241C3C61E5BB8038596F5129648D8195B82422842EB4CDCA573FC4176E07627"
+    }
+  ],
+  "firewall": {
+    "native_exit_mutation": false,
+    "network": false,
+    "optimization": false,
+    "protected_year_rows_read": false,
+    "push": false,
+    "retuning": false
+  },
+  "governed_schema_version": "akah-provenance-phase-governed-v1",
+  "next_bottleneck": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_SHADOW_TIMING_ATTRIBUTION_V1",
+  "north_star_effect": "Expose causal shadow timing relative to unchanged native exits without fitting or exit mutation.",
+  "objective": "Instrument frozen Memory and V2 shadow events on the unique reconstructed native trades using isolated 2022 1H bars aggregated causally to completed UTC 4H bars.",
+  "resolution_class": "FROZEN_MEMORY_V2_SHADOW_RUNTIME_INSTRUMENTED",
+  "state_updates": {
+    "memory_observed_count": 590,
+    "memory_while_native_open_count": 460,
+    "native_exit_mutation": false,
+    "roadmap_position": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_SHADOW_TIMING_ATTRIBUTION_V1",
+    "shadow_runtime_instrumented": true,
+    "unique_trade_count": 748,
+    "v2_observed_count": 504,
+    "v2_while_native_open_count": 255
+  },
+  "status": "PASS",
+  "summary": "Instrumented frozen Memory/V2 shadow events for 748 unique native trades using isolated 2022 bars; native exits remained unchanged.",
+  "task_id": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_SHADOW_EVENT_RUNTIME_INSTRUMENTATION_V1",
+  "task_start_head": "f68b336c3ad73bff66cfcc9e13cc2f04d169ca9e",
+  "task_start_revision": 234
+}

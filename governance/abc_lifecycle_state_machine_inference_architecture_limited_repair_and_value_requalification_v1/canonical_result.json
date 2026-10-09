@@ -1,0 +1,65 @@
+{
+  "2024_access": false,
+  "additional_inference_repair_authorized": false,
+  "calibration": {
+    "alpha": 0.05,
+    "block_lengths_weeks": [
+      4,
+      8
+    ],
+    "calendar_dgp": "CONTINUOUS_ALL_CALENDAR_DECISION_WEEKS_SHARED_ACROSS_2020_2021+TRADE_RANDOM_EFFECT+WITHIN_TRADE_AR",
+    "calibration_null_reps": 500,
+    "conditional_on_frozen_predictors": true,
+    "inference_valid": false,
+    "inner_block_draws": 399,
+    "method": "SPLIT_MONTE_CARLO_EMPIRICAL_NULL_CALIBRATION_OF_COMPOSITE_CALENDAR_BLOCK_P",
+    "power_at_primary_mue": {
+      "minimum_required": 0.8,
+      "mue_fraction": 0.05,
+      "pass": false,
+      "patterns": {
+        "INTERACTION": {
+          "reject_rate": 0.13,
+          "rejections": 65,
+          "reps": 500
+        },
+        "LINEAR": {
+          "reject_rate": 0.11,
+          "rejections": 55,
+          "reps": 500
+        }
+      }
+    },
+    "power_reps_per_pattern": 500,
+    "powered_at_primary_mue": false,
+    "validation": {
+      "false_positive_rate": 0.069,
+      "false_positive_upper_95": 0.08641472022863728,
+      "false_rejections": 69,
+      "pass": false,
+      "upper_limit": 0.08
+    },
+    "validation_null_reps": 1000
+  },
+  "context": {
+    "executed": false
+  },
+  "continuation": {
+    "executed": false
+  },
+  "disposition": "LIMITED_REPAIR_INFERENCE_NOT_VALIDATED",
+  "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_INFERENCE_ARCHITECTURE_LIMITED_REPAIR_SYNTHESIS_V1",
+  "one_next_route": "INFERENCE_ARCHITECTURE_EXPERT_REVIEW_AFTER_LIMITED_REPAIR_V1",
+  "p0_reanalysis": {
+    "executed": false
+  },
+  "production_changed": false,
+  "push": false,
+  "raw_access": false,
+  "repair_count_used": 1,
+  "replay": false,
+  "rev680_status_preserved": true,
+  "schema_version": "akah-rev686-inference-architecture-limited-repair-mega-v1-execution",
+  "status": "PASS_LIMITED_INFERENCE_REPAIR_AND_VALUE_REQUALIFICATION_COMPLETE",
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_INFERENCE_ARCHITECTURE_LIMITED_REPAIR_AND_VALUE_REQUALIFICATION_V1"
+}

@@ -1,0 +1,94 @@
+{
+  "actual_semantic_role": "READ_ONLY_PAIR_KEYED_1H_FEATURE_DATAFRAMES",
+  "availability": {
+    "bar_close_time_field": false,
+    "current_low_touch": "Replay passes full current low into exit simulation; no exact intrabar information time/order follows from OHLC.",
+    "future_coverage_precheck": "RD27 checks max_exit_time row existence at admission. This is a future-coverage dependency, not proof of PIT availability; requires explicit study missingness handling.",
+    "high_low_close_volume": "Only after bar completion as full-bar observations",
+    "native_consumption_evidence": {
+      "evidence_id": "src/spotbot/research/rd27_lifecycle_replay.py:448-478",
+      "source_sha256": "E3944A4655DDDF21C394FE1DB541F2645F529C00BD8390B22D652BD8EF5BBF83"
+    },
+    "open": "At bar open, subject to source contract",
+    "precheck_evidence": {
+      "evidence_id": "src/spotbot/research/rd27_lifecycle_replay.py:555-566",
+      "source_sha256": "E3944A4655DDDF21C394FE1DB541F2645F529C00BD8390B22D652BD8EF5BBF83"
+    },
+    "source_timestamp_definition_bound": false,
+    "time_basis_inferred_by_consumer": "timestamp is current hourly open; prior close at timestamp-1h"
+  },
+  "baseline_relevant_lineage_code_resolved": true,
+  "canonical_4h_binding": "NOT_BOUND_DIFFERENT_FREQUENCY_SCHEMA_AND_SOURCE_EDGE",
+  "canonical_4h_prompt_sha_not_reverified": "1C72416F889137B68FF48008C5760E809D0A94A5647569BAB631E96904CEBD72",
+  "canonical_4h_role": "Separate observable primitive input, not established as native frames source",
+  "default_root": "data/raw/rd16b/kucoin",
+  "execution_authorized": false,
+  "feature_constructor": {
+    "end_line": 184,
+    "evidence_id": "src/spotbot/research/rd26_exit_architecture.py:144-184",
+    "function": "prepare_features",
+    "line": 144,
+    "source_sha256": "1290748EA7E8A0343C1A15CEDFC1220AA423F04C11FDD558311B06AC7DA90359"
+  },
+  "input_schema": [
+    "timestamp",
+    "open",
+    "high",
+    "low",
+    "close",
+    "volume"
+  ],
+  "joins": "dict key exact pair; timestamp normalized UTC -> int64 nanoseconds -> iloc row index. No canonical-symbol inference.",
+  "loader": {
+    "end_line": 265,
+    "evidence_id": "scripts/research/run_rd27_lifecycle_ablation.py:242-265",
+    "function": "load_feature_frames",
+    "line": 242,
+    "source_sha256": "7DFC388F3BF8EF6EFA16E0640CF924158999A9923674C7701B8919872755CBB5"
+  },
+  "lookup_evidence": [
+    {
+      "end_line": 190,
+      "evidence_id": "src/spotbot/research/rd26_exit_architecture.py:187-190",
+      "function": "fast_lookup",
+      "line": 187,
+      "source_sha256": "1290748EA7E8A0343C1A15CEDFC1220AA423F04C11FDD558311B06AC7DA90359"
+    },
+    {
+      "end_line": 183,
+      "evidence_id": "src/spotbot/research/rd27_lifecycle_replay.py:171-183",
+      "function": "_bar_at",
+      "line": 171,
+      "source_sha256": "E3944A4655DDDF21C394FE1DB541F2645F529C00BD8390B22D652BD8EF5BBF83"
+    }
+  ],
+  "normalization": {
+    "end_line": 141,
+    "evidence_id": "src/spotbot/research/rd26_exit_architecture.py:121-141",
+    "function": "normalize_bars",
+    "line": 121,
+    "source_sha256": "1290748EA7E8A0343C1A15CEDFC1220AA423F04C11FDD558311B06AC7DA90359"
+  },
+  "normalization_behavior": "Select/copy six raw columns; UTC conversion; numeric conversion; stable timestamp sort; duplicate timestamp keep=last; reset index; positive OHLC/nonnegative volume checks.",
+  "prospective_source_fully_bound": false,
+  "required_field_origins": {
+    "close": "raw.close -> numeric float",
+    "high": "raw.high -> numeric float",
+    "low": "raw.low -> numeric float",
+    "open": "raw.open -> numeric float",
+    "trailing_24h_quote_turnover_proxy": "sum(volume_i * close_i for the current and preceding 23 rows), rolling(24, min_periods=24)"
+  },
+  "source_template": "raw_root / pair / '1h.parquet'",
+  "status": "HOURLY_LOADER_AND_FEATURE_CODE_BOUND_MANIFEST_AND_AVAILABILITY_UNBOUND",
+  "transitive_mutation_status": "PROVEN_NO_TRANSITIVE_MUTATION",
+  "turnover_authority": {
+    "evidence_id": "src/spotbot/research/rd26_exit_architecture.py:180-184",
+    "source_sha256": "1290748EA7E8A0343C1A15CEDFC1220AA423F04C11FDD558311B06AC7DA90359"
+  },
+  "turnover_causal_when": "24 contiguous completed 1h rows; current row completes before use. RD27 takes signal_bar at t-1h for admission at t.",
+  "turnover_consumption": {
+    "evidence_id": "src/spotbot/research/rd27_lifecycle_replay.py:568-574",
+    "source_sha256": "E3944A4655DDDF21C394FE1DB541F2645F529C00BD8390B22D652BD8EF5BBF83"
+  },
+  "turnover_is_rows_not_validated_hours": true
+}

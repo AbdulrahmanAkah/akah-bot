@@ -1,0 +1,26 @@
+{
+  "grammars": [
+    "FS_CLASSICAL_FULL_LONG",
+    "FS_WYCKOFF_FULL_LONG",
+    "FS_HARMONIC_FULL_LONG",
+    "FS_ELLIOTT_FULL_LONG",
+    "FS_DOW_CRYPTO_ADAPTED_LONG",
+    "HYB_MARKUP_CONTINUATION",
+    "HYB_FAILED_AUCTION_REVERSAL",
+    "HYB_CORRECTIVE_COMPLETION_RESUMPTION"
+  ],
+  "quarantined_aliases": [
+    "H1_V2_ACCEPTED_MARKUP",
+    "H2_V2_RANGE_ROTATION",
+    "H3_V2_CORRECTION_RESUMPTION"
+  ],
+  "runtime_exclusion": "stage_market only scans final scope; SourceBoundRouter has no permission for other grammars; bind_request and bridge reject quarantine; old event-row economics never called",
+  "blockers": {
+    "FS_CLASSICAL_FULL_LONG": "Changed-version reserve fidelity/management design choice not independently recertified",
+    "FS_WYCKOFF_FULL_LONG": "P&F count line/segment, downside stride and new reaccumulation cause/readiness ownership doctrine",
+    "FS_HARMONIC_FULL_LONG": "Family-specific direction/ratios/stop/management matrix",
+    "FS_ELLIOTT_FULL_LONG": "Parent-child grammar and owner-count choice",
+    "FS_DOW_CRYPTO_ADAPTED_LONG": "Protective-stop owner; frozen context scarcity not a complete grammar",
+    "ALL_HYBRIDS": "Numeric management/source binding unresolved; legacy graph unreachable from funded runner"
+  }
+}

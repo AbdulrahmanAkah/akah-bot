@@ -1,0 +1,91 @@
+{
+  "authority_bindings": {
+    "control_parity_sha256": "E3B66FEA651C6E409DE66773E7FD3F62C90712F169358080DE85B5B3F95A2A7E",
+    "counterfactual_daily_sha256": "4DEECD86A132613CDAC9A3477428C87712E1A53366D72E0307BEA5CF5EF607A2",
+    "counterfactual_trades_sha256": "A8D66E356CCC65DF372EF58EFB0DF86B2BC7FD681EB88578F1E3F32A000C9798",
+    "delta_sha256": "AA8D48DCC1D6C743A828C697E54F804904F58B1D3F84B02528580B60812EC484",
+    "manifest_sha256": "FC810C403B978A3273811DE5AB7844D3927C37794B37ABC8274C08001EC9BB79",
+    "mechanism_rows_sha256": "7B0DFEB0F5591400A885834E91F5E524A9CC666ED4E18661CEF818E0CCC8C442",
+    "result_sha256": "5C969278209826831B1849F15CFA562E395E4535F4F9B76B9E294D785B953814",
+    "shadow_parity_sha256": "717F61FD6586C3DA585A9C74A9D9D6446E595184E90202F1F305BA15BB326DF6"
+  },
+  "branch": "research/rd48-cross-venue-price-level-basis-direct-utility-v1",
+  "evidence": [
+    {
+      "path": "governance/rnb_pre_progress_thesis_non_confirmation_counterfactual_v1/control_parity.json",
+      "sha256": "E3B66FEA651C6E409DE66773E7FD3F62C90712F169358080DE85B5B3F95A2A7E"
+    },
+    {
+      "path": "governance/rnb_pre_progress_thesis_non_confirmation_counterfactual_v1/shadow_authority_parity.json",
+      "sha256": "717F61FD6586C3DA585A9C74A9D9D6446E595184E90202F1F305BA15BB326DF6"
+    },
+    {
+      "path": "governance/rnb_pre_progress_thesis_non_confirmation_counterfactual_v1/counterfactual_result.json",
+      "sha256": "5C969278209826831B1849F15CFA562E395E4535F4F9B76B9E294D785B953814"
+    },
+    {
+      "path": "governance/rnb_pre_progress_thesis_non_confirmation_counterfactual_v1/counterfactual_delta.json",
+      "sha256": "AA8D48DCC1D6C743A828C697E54F804904F58B1D3F84B02528580B60812EC484"
+    },
+    {
+      "path": "governance/rnb_pre_progress_thesis_non_confirmation_counterfactual_v1/manifest.json",
+      "sha256": "FC810C403B978A3273811DE5AB7844D3927C37794B37ABC8274C08001EC9BB79"
+    },
+    {
+      "path": "governance/rnb_pre_progress_thesis_non_confirmation_counterfactual_v1/source_and_precedence_audit.json",
+      "sha256": "EE7823C7B7C9FFD5083B64CB02043E394696CEA5AFAEE5FF549AE674B82256C0"
+    },
+    {
+      "path": "data/research/reconstructed_native_baseline_pre2023/pre-progress-thesis-non-confirmation-counterfactual-v1/trades.csv",
+      "sha256": "A8D66E356CCC65DF372EF58EFB0DF86B2BC7FD681EB88578F1E3F32A000C9798"
+    },
+    {
+      "path": "data/research/reconstructed_native_baseline_pre2023/pre-progress-thesis-non-confirmation-counterfactual-v1/daily.csv",
+      "sha256": "4DEECD86A132613CDAC9A3477428C87712E1A53366D72E0307BEA5CF5EF607A2"
+    },
+    {
+      "path": "data/research/reconstructed_native_baseline_pre2023/pre-progress-thesis-non-confirmation-counterfactual-v1/metrics.json",
+      "sha256": "85267513A8ADCC8BC59C08BF9FBC913A246451C351D69C5D1DBBA297C976C68F"
+    },
+    {
+      "path": "data/research/reconstructed_native_baseline_pre2023/pre-progress-thesis-non-confirmation-counterfactual-v1/counters.json",
+      "sha256": "FF71548DDA8E51EB8FED7BBA14B37200474DBAAD3276C482C4B8DF02B6082ADC"
+    },
+    {
+      "path": "data/research/reconstructed_native_baseline_pre2023/pre-progress-thesis-non-confirmation-counterfactual-v1/mechanism_rows.csv",
+      "sha256": "7B0DFEB0F5591400A885834E91F5E524A9CC666ED4E18661CEF818E0CCC8C442"
+    }
+  ],
+  "firewall": {
+    "network": false,
+    "optimization": false,
+    "production_authorized": false,
+    "protected_year_rows_read": false,
+    "push": false,
+    "retuning": false
+  },
+  "governed_schema_version": "akah-provenance-phase-governed-v1",
+  "next_bottleneck": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_PRE_PROGRESS_THESIS_NON_CONFIRMATION_COUNTERFACTUAL_MECHANISM_ATTRIBUTION_V1",
+  "north_star_effect": "Tests whether earlier thesis non-confirmation before Memory improves the native exit brain without fitted thresholds.",
+  "objective": "Execute the frozen pre-progress thesis-non-confirmation action as a full causal portfolio counterfactual with native control and Memory/V2 observation parity gates.",
+  "resolution_class": "MIXED_OR_ADVERSE_COUNTERFACTUAL_EFFECT",
+  "state_updates": {
+    "all_maximum_drawdowns_not_worse": false,
+    "all_net_returns_improved": false,
+    "all_profit_factors_improved": false,
+    "contract_id": "AKAH_RNB_PRE_PROGRESS_THESIS_NON_CONFIRMATION_ACTION_V1",
+    "control_native_parity": true,
+    "counterfactual_classification": "MIXED_OR_ADVERSE_COUNTERFACTUAL_EFFECT",
+    "new_threshold_introduced": false,
+    "pre_progress_counterfactual_complete": true,
+    "production_authorized": false,
+    "retuning": false,
+    "roadmap_position": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_PRE_PROGRESS_THESIS_NON_CONFIRMATION_COUNTERFACTUAL_MECHANISM_ATTRIBUTION_V1",
+    "shadow_authority_parity": true
+  },
+  "status": "PASS",
+  "summary": "Executed the preregistered pre-progress non-confirmation action as a full 2022 portfolio counterfactual using only the existing RD27 72/48/24h state-specific stagnation horizons, after native control and Memory/V2 observation parity gates.",
+  "task_id": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_PRE_PROGRESS_THESIS_NON_CONFIRMATION_COUNTERFACTUAL_PORTFOLIO_REPLAY_V1",
+  "task_start_head": "1cef008128d6da19d9b09ac2b73801d68a2e0e0d",
+  "task_start_revision": 240
+}

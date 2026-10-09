@@ -1,0 +1,119 @@
+{
+  "schema_version": "akah-manual-github-evidence-ledger-v1",
+  "authorship": "Assistant-authored manual synthesis from direct GitHub review; terminal does not infer or select strategies.",
+  "repository": "AbdulrahmanAkah/akah-bot",
+  "principles": [
+    "Use point-in-time causal eligibility; never revive fixed-universe survivorship bias.",
+    "Treat old REJECT decisions as whole-system verdicts, not proof that every signal primitive inside was useless.",
+    "Prefer sparse trend/momentum setups with asymmetric payoff over high-turnover rotation.",
+    "Use OHLCV primitives as confluence around a setup, not standalone alpha claims.",
+    "Protect downside with immutable initial stop and hard portfolio governor, but do not cap winners with a fixed profit target.",
+    "Allow a proven winner to mature into a long runner when trend structure remains valid.",
+    "Use reversal only as a small independent sleeve; it is not the primary engine.",
+    "Cost robustness is measured at 1x and 2x; no result is promoted automatically from the same research period."
+  ],
+  "evidence": [
+    {
+      "id": "AMS_V1_H01_VOLATILITY_BREAKOUT",
+      "source_ref": "research/ams-v1-h01-volatility-breakout",
+      "source_path": "reports/research/ams-v1-h01-volatility-breakout.json",
+      "use": "ENTRY_PRIMITIVE",
+      "facts": {"trade_count": 86, "average_trade_return": 0.09578640005084262, "win_rate": 0.43023255813953487, "median_trade_return": -0.0502461318941792},
+      "lesson": "Breakout can create large winners, but the old whole-system drawdown was unacceptable. Carry forward the setup, not the old risk envelope."
+    },
+    {
+      "id": "MOMENTUM_REACCELERATION_V1",
+      "source_ref": "research/momentum-reacceleration-v1",
+      "source_path": "reports/research/momentum-reacceleration-v1.json",
+      "use": "TREND_MOMENTUM_PRIMITIVE",
+      "facts": {"annualized_return": 0.48373867606679255, "maximum_drawdown": -0.6381782599302224, "sharpe": 0.9401897261255582, "total_return": 3.8517581279606015},
+      "lesson": "Momentum/reacceleration had substantial gross economic value but excessive drawdown. Preserve alpha logic and redesign risk."
+    },
+    {
+      "id": "MOMENTUM_REACCELERATION_V2_RISK_CONTROL",
+      "source_ref": "research/momentum-reacceleration-v2-risk-control",
+      "source_path": "reports/research/momentum-reacceleration-v2-risk-control.json",
+      "use": "RISK_LESSON",
+      "facts": {"annualized_return": 0.2284336288275921, "maximum_drawdown": -0.255078551762996, "sharpe": 0.8463803255918614},
+      "lesson": "Heavy throttling reduced drawdown but also suppressed too much return. Test soft throttle separately rather than making it mandatory."
+    },
+    {
+      "id": "AMS_V1_H03_LIQUIDITY_SWEEP_REVERSAL",
+      "source_ref": "research/ams-v1-h03-liquidity-sweep-reversal",
+      "source_path": "reports/research/ams-v1-h03-liquidity-sweep-reversal.json",
+      "use": "SMALL_REVERSAL_SLEEVE",
+      "facts": {"trade_count": 87, "average_trade_return": 0.030911293090153714, "win_rate": 0.5172413793103449, "median_trade_return": 0.0020340593426650955},
+      "lesson": "Reversal is not strong enough as the core engine, but is useful as a smaller independent route in non-trending states."
+    },
+    {
+      "id": "AMS_V1_H04_CROSS_SECTIONAL_ROTATION",
+      "source_ref": "research/ams-v1-h04-cross-sectional-rotation",
+      "source_path": "reports/research/ams-v1-h04-cross-sectional-rotation.json",
+      "use": "NEGATIVE_DESIGN_CONSTRAINT",
+      "facts": {"trade_count": 637, "average_trade_return": 0.004346236581630976, "turnover": 769.0},
+      "lesson": "Frequent rotation created churn. Do not replace a valid incumbent merely because a new candidate appears."
+    },
+    {
+      "id": "AMS_V4_ACTIVE_CONVICTION",
+      "source_ref": "research/ams-v4-active-conviction-swing-v1",
+      "source_path": "src/spotbot/research/ams_v4_active_conviction_swing.py",
+      "use": "CORE_ARCHITECTURE",
+      "facts": {"entry_families": ["BREAKOUT", "PULLBACK_CONTINUATION", "HYBRID"], "score_threshold": 55, "runner_only_supported": true, "soft_fibonacci_score_supported": true},
+      "lesson": "Use regime + trend + relative strength + setup + volume/structure/liquidity confluence with causal next-open execution. Fibonacci is a soft score only."
+    },
+    {
+      "id": "AMS_V5_PULLBACK_REACCELERATION",
+      "source_ref": "research/ams-v5-active-pullback-reacceleration-v1",
+      "source_path": "src/spotbot/research/ams_v5_active_pullback_reacceleration.py",
+      "use": "SETUP_EXTENSION",
+      "facts": {"families": ["SHALLOW_PULLBACK_RECLAIM", "DEEP_PULLBACK_RECOVERY", "MOMENTUM_REACCELERATION"]},
+      "lesson": "Pullback/reacceleration are setup types inside a trend engine, not a standalone universal strategy."
+    },
+    {
+      "id": "RD02_TRADE_LIFECYCLE",
+      "source_ref": "research/rd02-trade-lifecycle-diagnostics-v1",
+      "source_path": "reports/research/ams-rd02-d0-trade-lifecycle-diagnostics-v1.json",
+      "use": "EXIT_ARCHITECTURE",
+      "facts": {"severe_giveback_after_10pct_rate": 0.40540540540540543, "stale_loser_14d_rate": 0.1360544217687075},
+      "lesson": "Protect proven winners from severe giveback, but distinguish them from stale losers; one fixed holding horizon is wrong."
+    },
+    {
+      "id": "RD04_PIT_UNIVERSE",
+      "source_ref": "research/rd04-final-adjudication-and-closure-v1",
+      "source_path": "reports/research/ams-rd04-final-adjudication-v1.json",
+      "use": "CAUSAL_UNIVERSE_CONSTRAINT",
+      "facts": {"fixed_base_compounded_return": 2.6861470605832247, "pit_base_compounded_return": -0.4810345157020558},
+      "lesson": "Fixed-universe backtests can be badly misleading. New strategy must use the canonical point-in-time candidate/eligibility surface."
+    },
+    {
+      "id": "RD05_RD08_PRIMITIVE_SIGNAL_CLOSURE",
+      "source_refs": ["research/rd06-final-evidence-completion-v1", "research/rd08-market-state-timing-v1"],
+      "use": "DESIGN_CONSTRAINT",
+      "facts": {"weekly_primitives_confirmed": 0, "intraweek_primitives_confirmed": 0},
+      "lesson": "Do not treat individual indicators as alpha. Use them only as confluence around a historically supported setup."
+    },
+    {
+      "id": "RD19_COST_AWARE_TREND_CONVEXITY",
+      "source_ref": "research/rd19-p1-cost-aware-cross-sectional-trend-convexity-v1",
+      "source_path": "data/research/rd19_p1_runtime/rd19-p1-architecture-specification-v1.json",
+      "use": "CORE_ARCHITECTURE",
+      "facts": {"primary_sleeve": "CROSS_SECTIONAL_TREND_CONVEXITY", "allowed_entries": ["CONFIRMED_PULLBACK", "VOLATILITY_CONTRACTION_BREAKOUT"], "profit_cap_allowed": false, "structural_trailing_required": true},
+      "lesson": "Core should be sparse, cost-aware, trend-aligned, cross-sectionally ranked, with confirmed pullback or contraction breakout and convex trailing exits."
+    },
+    {
+      "id": "REV767_REV769_RECENT",
+      "use": "RECENT_CONSTRAINTS",
+      "facts": {"general_slot_bypass": "FAILED", "heuristic_composition": "FAILED_TO_BEAT_F10", "cost_reduction": "MATERIAL", "selective_upsize_interaction": "CONDITIONAL"},
+      "lesson": "Do not return to broad slot bypass, pyramiding, reacquisition, or heuristic replacement as the main engine. First prove the trade recipe itself."
+    }
+  ],
+  "manual_synthesis": {
+    "primary_engine": "TREND_CONVEXITY_HYBRID",
+    "trend_setups": ["BREAKOUT", "PULLBACK_RECLAIM", "REACCELERATION"],
+    "secondary_engine": "SMALL_LIQUIDITY_SWEEP_REVERSAL",
+    "entry_confluence": ["MARKET_REGIME", "ASSET_TREND", "RELATIVE_STRENGTH", "SETUP", "VOLUME_OR_MOMENTUM", "STRUCTURE", "LIQUIDITY", "EXTENSION_GUARD"],
+    "exit": ["IMMUTABLE_INITIAL_STOP", "STRUCTURAL_TRAILING", "TWO_CHECK_TREND_FAILURE", "STALE_LOSER_EXIT", "WINNER_MATURATION_TO_LONG_RUNNER"],
+    "risk": ["RISK_SIZING", "HEAT_CAP", "HARD_GROSS_GOVERNOR", "NO_FIXED_PROFIT_CAP"],
+    "forbidden_core_behaviors": ["FAST_ROTATION", "GENERAL_SLOT_BYPASS", "BLIND_TIME_EXIT", "HARD_FIBONACCI_GATE", "INDICATOR_AS_STANDALONE_ALPHA", "AUTOMATIC_SAME_PERIOD_PROMOTION"]
+  }
+}

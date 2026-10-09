@@ -1,0 +1,3093 @@
+{
+  "connected_components": [
+    {
+      "paths": [
+        "data/research/abc_exit_primitives_2019_2023_v1/control-trades.csv"
+      ],
+      "roles": {
+        "baseline_action": [
+          {
+            "fields": [
+              "holding_hours"
+            ],
+            "path": "data/research/abc_exit_primitives_2019_2023_v1/control-trades.csv"
+          }
+        ],
+        "cost": [
+          {
+            "fields": [
+              "cost_multiplier",
+              "entry_cost",
+              "exit_cost"
+            ],
+            "path": "data/research/abc_exit_primitives_2019_2023_v1/control-trades.csv"
+          }
+        ],
+        "decision_time": [],
+        "exit_cash": [],
+        "hold_cash": [],
+        "identity": [],
+        "notional": [
+          {
+            "fields": [
+              "quantity",
+              "entry_notional",
+              "exit_notional"
+            ],
+            "path": "data/research/abc_exit_primitives_2019_2023_v1/control-trades.csv"
+          }
+        ],
+        "pair": [
+          {
+            "fields": [
+              "pair",
+              "entry_market_state",
+              "exit_market_state"
+            ],
+            "path": "data/research/abc_exit_primitives_2019_2023_v1/control-trades.csv"
+          }
+        ],
+        "pit": [],
+        "target_value": []
+      }
+    },
+    {
+      "paths": [
+        "governance/AKAH_BOT_RD27_NATIVE_TERMINAL_SOURCE_AUTHORITY_V1.json",
+        "governance/v2_phase_a_native_terminal_source_authority_recovery_v1/native_hook_close_contract_analysis.json",
+        "src/spotbot/research/rd27_adaptive_lifecycle.py",
+        "src/spotbot/research/rd27_later_trigger_v2_native_hook.py",
+        "src/spotbot/research/rd27_lifecycle_replay.py"
+      ],
+      "roles": {
+        "baseline_action": [
+          {
+            "fields": [
+              "max_hold_hours"
+            ],
+            "path": "governance/AKAH_BOT_RD27_NATIVE_TERMINAL_SOURCE_AUTHORITY_V1.json"
+          },
+          {
+            "fields": [
+              "MAX_HOLD_168H",
+              "MAX_HOLD_HOURS",
+              "maximum_hold_hours",
+              "stagnation_threshold_hours"
+            ],
+            "path": "src/spotbot/research/rd27_adaptive_lifecycle.py"
+          },
+          {
+            "fields": [
+              "MAX_HOLD_168H",
+              "holding_hours",
+              "max_hold_exits"
+            ],
+            "path": "src/spotbot/research/rd27_lifecycle_replay.py"
+          }
+        ],
+        "cost": [
+          {
+            "fields": [
+              "BASE_ROUND_TRIP_COST",
+              "COST_MULTIPLIERS",
+              "cost",
+              "cost_multiplier",
+              "entry_cost",
+              "exit_cost",
+              "side_cost"
+            ],
+            "path": "src/spotbot/research/rd27_lifecycle_replay.py"
+          }
+        ],
+        "decision_time": [
+          {
+            "fields": [
+              "Timestamp",
+              "decision_time",
+              "timestamp"
+            ],
+            "path": "src/spotbot/research/rd27_later_trigger_v2_native_hook.py"
+          },
+          {
+            "fields": [
+              "Timestamp",
+              "decision_time",
+              "timestamp",
+              "timestamps"
+            ],
+            "path": "src/spotbot/research/rd27_adaptive_lifecycle.py"
+          },
+          {
+            "fields": [
+              "Timestamp",
+              "_utc_timestamp",
+              "begin_timestamp",
+              "decision_time",
+              "end_timestamp",
+              "timestamp",
+              "timestamps"
+            ],
+            "path": "src/spotbot/research/rd27_lifecycle_replay.py"
+          }
+        ],
+        "exit_cash": [],
+        "hold_cash": [],
+        "identity": [
+          {
+            "fields": [
+              "same_pair_is_not_lifecycle_identity_alone",
+              "trade_id_bridge_rule"
+            ],
+            "path": "governance/AKAH_BOT_RD27_NATIVE_TERMINAL_SOURCE_AUTHORITY_V1.json"
+          },
+          {
+            "fields": [
+              "position_id"
+            ],
+            "path": "src/spotbot/research/rd27_later_trigger_v2_native_hook.py"
+          },
+          {
+            "fields": [
+              "position_id"
+            ],
+            "path": "src/spotbot/research/rd27_adaptive_lifecycle.py"
+          }
+        ],
+        "notional": [
+          {
+            "fields": [
+              "TARGET_SLOT_NOTIONAL_FRACTION",
+              "capacity_notional",
+              "entry_notional",
+              "exit_notional",
+              "max_cash_notional",
+              "notional",
+              "quantity",
+              "target_notional"
+            ],
+            "path": "src/spotbot/research/rd27_lifecycle_replay.py"
+          }
+        ],
+        "pair": [
+          {
+            "fields": [
+              "canonical_market_rows_used",
+              "same_pair_is_not_lifecycle_identity_alone"
+            ],
+            "path": "governance/AKAH_BOT_RD27_NATIVE_TERMINAL_SOURCE_AUTHORITY_V1.json"
+          },
+          {
+            "fields": [
+              "MISSING_SYMBOL_BINDING",
+              "pair",
+              "symbol",
+              "symbol_bindings"
+            ],
+            "path": "src/spotbot/research/rd27_later_trigger_v2_native_hook.py"
+          },
+          {
+            "fields": [
+              "MARKET_STATES",
+              "build_market_state_frame",
+              "classify_market_state",
+              "entry_market_state",
+              "market",
+              "market_state",
+              "market_states",
+              "open_position_market_state",
+              "pair",
+              "real_market_data_loader_present"
+            ],
+            "path": "src/spotbot/research/rd27_adaptive_lifecycle.py"
+          },
+          {
+            "fields": [
+              "MARKET_STATES",
+              "entry_market_state",
+              "exit_market_state",
+              "market",
+              "market_state",
+              "observable_symbol_bindings",
+              "pair",
+              "same_pair_open",
+              "symbol",
+              "symbol_bindings"
+            ],
+            "path": "src/spotbot/research/rd27_lifecycle_replay.py"
+          }
+        ],
+        "pit": [
+          {
+            "fields": [
+              "_async_observation_time",
+              "capital",
+              "capital_admission_decision",
+              "capital_router",
+              "last_memory_observation_time",
+              "last_trigger_observation_time"
+            ],
+            "path": "src/spotbot/research/rd27_adaptive_lifecycle.py"
+          },
+          {
+            "fields": [
+              "ADAPTIVE_EXIT_FIXED_CAPITAL",
+              "CONTROL_TIME_FAIL_72_FIXED_CAPITAL",
+              "capital",
+              "capital_admission_decision"
+            ],
+            "path": "src/spotbot/research/rd27_lifecycle_replay.py"
+          }
+        ],
+        "target_value": []
+      }
+    },
+    {
+      "paths": [
+        "governance/AKAH_BOT_RECONSTRUCTED_NATIVE_BASELINE_STUDY_CONTRACT_V1.json",
+        "governance/AKAH_BOT_RECONSTRUCTED_NATIVE_EVENT_RECORDER_PROTOCOL_V1.json",
+        "governance/ef_exact_v1/corrected_events_frames_source_contract.json",
+        "governance/ef_exact_v1/corrected_input_contract.json",
+        "governance/ef_exact_v1/events_exact_upstream_authority.json",
+        "governance/ef_exact_v1/exact_remaining_authority_gaps.json",
+        "governance/ef_exact_v1/exact_upstream_authority_gap_closure_decision.json",
+        "governance/ef_exact_v1/frames_exact_upstream_authority.json",
+        "governance/ef_exact_v1/rev202_rev203_lineage_reconciliation.json",
+        "governance/reconstructed_native_baseline_current_rd26_events_lifecycle_interprocedural_read_binding_v1/events_alias_and_mutation_graph.json",
+        "governance/reconstructed_native_baseline_current_rd26_events_lifecycle_interprocedural_read_binding_v1/events_lifecycle_sites.json",
+        "governance/reconstructed_native_baseline_current_rd26_events_lifecycle_interprocedural_read_binding_v1/events_primary_producer_binding.json",
+        "governance/reconstructed_native_baseline_current_rd26_events_lifecycle_interprocedural_read_binding_v1/exact_binding_decision.json",
+        "governance/reconstructed_native_baseline_current_rd26_events_lifecycle_interprocedural_read_binding_v1/interprocedural_helper_trace.json",
+        "governance/reconstructed_native_baseline_current_rd26_events_lifecycle_interprocedural_read_binding_v1/reconstruction_input_authority_contract.json",
+        "governance/reconstructed_native_baseline_current_rd26_events_lifecycle_interprocedural_read_binding_v1/true_read_dependencies.json",
+        "governance/reconstructed_native_baseline_current_rd26_events_lifecycle_interprocedural_read_binding_v1/true_read_preopen_authority_audit.json",
+        "governance/reconstructed_native_baseline_current_rd26_events_lifecycle_interprocedural_read_binding_v1/true_read_symbolic_path_binding.json",
+        "governance/reconstructed_native_baseline_current_rd26_logical_input_path_and_config_binding_v1/logical_input_role_classification.json",
+        "governance/reconstructed_native_baseline_current_rd26_logical_input_path_and_config_binding_v1/path_binding_decision.json",
+        "governance/reconstructed_native_baseline_current_rd26_logical_input_path_and_config_binding_v1/producer_config_authority_binding.json",
+        "governance/reconstructed_native_baseline_current_rd26_logical_input_path_and_config_binding_v1/read_occurrence_normalization.json",
+        "governance/reconstructed_native_baseline_current_rd26_logical_input_path_and_config_binding_v1/repo_root_and_raw_root_binding.json",
+        "governance/reconstructed_native_baseline_current_rd26_logical_input_path_and_config_binding_v1/unique_logical_input_manifest.json",
+        "governance/reconstructed_native_baseline_current_rd26_logical_input_preopen_authority_v1/logical_input_source_provenance.json",
+        "governance/reconstructed_native_baseline_current_rd26_logical_input_preopen_authority_v1/membership_preopen_semantic_authority.json",
+        "governance/reconstructed_native_baseline_current_rd26_logical_input_preopen_authority_v1/native_1h_preopen_metadata_authority.json",
+        "governance/reconstructed_native_baseline_current_rd26_logical_input_preopen_authority_v1/pre2023_reconstruction_input_authority_contract.json",
+        "governance/reconstructed_native_baseline_current_rd26_logical_input_preopen_authority_v1/preopen_authority_decision.json",
+        "governance/reconstructed_native_baseline_current_rd26_logical_input_preopen_authority_v1/validation_only_artifact_authority.json",
+        "governance/reconstructed_native_baseline_current_rd26_membership_frames_provenance_v1/caller_argument_reaching_definitions.json",
+        "governance/reconstructed_native_baseline_current_rd26_membership_frames_provenance_v1/exact_binding_decision.json",
+        "governance/reconstructed_native_baseline_current_rd26_membership_frames_provenance_v1/membership_frames_interprocedural_trace.json",
+        "governance/reconstructed_native_baseline_current_rd26_membership_frames_provenance_v1/membership_frames_preopen_authority_audit.json",
+        "governance/reconstructed_native_baseline_current_rd26_membership_frames_provenance_v1/membership_frames_symbolic_path_binding.json",
+        "governance/reconstructed_native_baseline_current_rd26_membership_frames_provenance_v1/membership_frames_true_read_dependencies.json",
+        "governance/reconstructed_native_baseline_current_rd26_membership_frames_provenance_v1/pre2023_signal_reconstruction_input_contract.json",
+        "governance/reconstructed_native_baseline_current_rd26_membership_frames_provenance_v1/scan_focus_signals_call_binding.json",
+        "governance/reconstructed_native_baseline_current_rd26_membership_frames_provenance_v1/scan_focus_signals_config_authority.json",
+        "governance/reconstructed_native_baseline_current_rd26_producer_pre2023_reconstruction_input_authority_v1/mixed_signal_true_writer_and_callgraph.json",
+        "governance/reconstructed_native_baseline_current_rd26_producer_pre2023_reconstruction_input_authority_v1/pre2023_reconstruction_execution_contract.json",
+        "governance/reconstructed_native_baseline_current_rd26_producer_pre2023_reconstruction_input_authority_v1/producer_input_preopen_physical_isolation_audit.json",
+        "governance/reconstructed_native_baseline_current_rd26_producer_pre2023_reconstruction_input_authority_v1/producer_input_source_matrix.json",
+        "governance/reconstructed_native_baseline_current_rd26_producer_pre2023_reconstruction_input_authority_v1/reconstruction_input_authority_decision.json",
+        "governance/reconstructed_native_baseline_current_rd26_true_read_dependency_dataflow_v1/exact_residual_decision.json",
+        "governance/reconstructed_native_baseline_current_rd26_true_read_dependency_dataflow_v1/reconstruction_input_authority_contract.json",
+        "governance/reconstructed_native_baseline_current_rd26_true_read_dependency_dataflow_v1/symbolic_path_resolution.json",
+        "governance/reconstructed_native_baseline_current_rd26_true_read_dependency_dataflow_v1/true_read_preopen_2022_authority_audit.json",
+        "governance/reconstructed_native_baseline_current_rd26_true_read_dependency_dataflow_v1/true_upstream_read_dependencies.json",
+        "governance/reconstructed_native_baseline_current_rd26_true_read_dependency_dataflow_v1/true_writer_binding.json",
+        "governance/reconstructed_native_baseline_current_rd26_true_read_dependency_dataflow_v1/written_object_backward_dataflow.json",
+        "governance/reconstructed_native_baseline_events_frames_adapter_source_authority_decision_v1/events_frames_prospective_source_contract.json",
+        "governance/reconstructed_native_baseline_events_frames_adapter_source_authority_decision_v1/events_frames_source_authority_decision.json",
+        "governance/reconstructed_native_baseline_events_frames_adapter_source_authority_decision_v1/events_frames_source_updated_input_contract.json",
+        "governance/reconstructed_native_baseline_events_frames_prospective_source_binding_v1/bound_or_partial_source_contract.json",
+        "governance/reconstructed_native_baseline_events_frames_prospective_source_binding_v1/events_frames_prospective_source_binding_decision.json",
+        "governance/reconstructed_native_baseline_events_frames_prospective_source_binding_v1/prospective_source_binding_updated_input_contract.json",
+        "governance/reconstructed_native_baseline_events_frames_prospective_source_binding_v1/source_composition_human_decision_packet.json",
+        "governance/reconstructed_native_baseline_events_frames_source_role_correction_audit_v1/corrected_events_frames_source_contract.json",
+        "governance/reconstructed_native_baseline_events_frames_source_role_correction_audit_v1/corrected_input_contract.json",
+        "governance/reconstructed_native_baseline_events_frames_source_role_correction_audit_v1/events_frames_role_semantics_decision.json",
+        "governance/reconstructed_native_baseline_events_frames_upstream_producer_role_audit_closure_v1/upstream_role_audit_closure_decision.json",
+        "governance/reconstructed_native_baseline_membership_semantics_and_1h_footer_diagnosis_v1/exact_residual_decision.json",
+        "governance/reconstructed_native_baseline_membership_semantics_and_1h_footer_diagnosis_v1/membership_exact_producer_trace.json",
+        "governance/reconstructed_native_baseline_membership_semantics_and_1h_footer_diagnosis_v1/membership_static_pit_semantic_authority.json",
+        "governance/reconstructed_native_baseline_membership_semantics_and_1h_footer_diagnosis_v1/native_1h_exact_footer_diagnosis.json",
+        "governance/reconstructed_native_baseline_membership_semantics_and_1h_footer_diagnosis_v1/native_1h_footer_aggregate_classification.json",
+        "governance/reconstructed_native_baseline_native_1h_upstream_rematerialization_authority_v1/native_1h_producer_chain_binding.json",
+        "governance/reconstructed_native_baseline_native_1h_upstream_rematerialization_authority_v1/native_1h_writer_occurrence_classification.json",
+        "governance/reconstructed_native_baseline_native_1h_upstream_rematerialization_authority_v1/pre2023_native_1h_rematerialization_contract.json",
+        "governance/reconstructed_native_baseline_native_1h_upstream_rematerialization_authority_v1/upstream_rematerialization_authority_decision.json"
+      ],
+      "roles": {
+        "baseline_action": [
+          {
+            "fields": [
+              "max_hold_exits"
+            ],
+            "path": "governance/reconstructed_native_baseline_events_frames_adapter_source_authority_decision_v1/events_frames_prospective_source_contract.json"
+          }
+        ],
+        "cost": [
+          {
+            "fields": [
+              "cost_multiplier",
+              "cost_multiplier_typed_binding_ready",
+              "typed_cost_path"
+            ],
+            "path": "governance/AKAH_BOT_RECONSTRUCTED_NATIVE_BASELINE_STUDY_CONTRACT_V1.json"
+          },
+          {
+            "fields": [
+              "cost_multiplier"
+            ],
+            "path": "governance/reconstructed_native_baseline_events_frames_adapter_source_authority_decision_v1/events_frames_source_updated_input_contract.json"
+          },
+          {
+            "fields": [
+              "cost_multiplier"
+            ],
+            "path": "governance/ef_exact_v1/corrected_input_contract.json"
+          },
+          {
+            "fields": [
+              "cost_multiplier"
+            ],
+            "path": "governance/reconstructed_native_baseline_events_frames_source_role_correction_audit_v1/corrected_input_contract.json"
+          },
+          {
+            "fields": [
+              "cost_multiplier"
+            ],
+            "path": "governance/reconstructed_native_baseline_events_frames_prospective_source_binding_v1/prospective_source_binding_updated_input_contract.json"
+          }
+        ],
+        "decision_time": [
+          {
+            "fields": [
+              "bar_timestamp_not_sufficient_by_itself",
+              "current_timestamp_binding",
+              "one_hour_timestamp_authority_path",
+              "one_hour_timestamp_semantic",
+              "timestamp_audit_path",
+              "timestamp_integrity_ready",
+              "timestamp_semantic_audit"
+            ],
+            "path": "governance/AKAH_BOT_RECONSTRUCTED_NATIVE_BASELINE_STUDY_CONTRACT_V1.json"
+          },
+          {
+            "fields": [
+              "timestamp_semantic"
+            ],
+            "path": "governance/reconstructed_native_baseline_current_rd26_membership_frames_provenance_v1/membership_frames_true_read_dependencies.json"
+          },
+          {
+            "fields": [
+              "bar_close_time_field",
+              "signal_timestamp",
+              "source_timestamp_definition_bound"
+            ],
+            "path": "governance/ef_exact_v1/corrected_events_frames_source_contract.json"
+          },
+          {
+            "fields": [
+              "native_1h_timestamp_semantic"
+            ],
+            "path": "governance/reconstructed_native_baseline_current_rd26_events_lifecycle_interprocedural_read_binding_v1/reconstruction_input_authority_contract.json"
+          },
+          {
+            "fields": [
+              "row_groups_with_parseable_timestamp_stats",
+              "row_groups_with_timestamp_stats"
+            ],
+            "path": "governance/reconstructed_native_baseline_membership_semantics_and_1h_footer_diagnosis_v1/native_1h_footer_aggregate_classification.json"
+          },
+          {
+            "fields": [
+              "timestamp"
+            ],
+            "path": "governance/reconstructed_native_baseline_current_rd26_events_lifecycle_interprocedural_read_binding_v1/interprocedural_helper_trace.json"
+          },
+          {
+            "fields": [
+              "bar_close_time_field",
+              "source_timestamp_definition_bound"
+            ],
+            "path": "governance/ef_exact_v1/frames_exact_upstream_authority.json"
+          },
+          {
+            "fields": [
+              "timestamp_semantic"
+            ],
+            "path": "governance/reconstructed_native_baseline_current_rd26_membership_frames_provenance_v1/membership_frames_preopen_authority_audit.json"
+          },
+          {
+            "fields": [
+              "native_1h_timestamp_semantic",
+              "timestamp_semantic"
+            ],
+            "path": "governance/reconstructed_native_baseline_current_rd26_membership_frames_provenance_v1/pre2023_signal_reconstruction_input_contract.json"
+          },
+          {
+            "fields": [
+              "native_1h_timestamp_semantic"
+            ],
+            "path": "governance/reconstructed_native_baseline_current_rd26_true_read_dependency_dataflow_v1/reconstruction_input_authority_contract.json"
+          },
+          {
+            "fields": [
+              "timestamp_column_present"
+            ],
+            "path": "governance/reconstructed_native_baseline_membership_semantics_and_1h_footer_diagnosis_v1/native_1h_exact_footer_diagnosis.json"
+          },
+          {
+            "fields": [
+              "signal_timestamp"
+            ],
+            "path": "governance/ef_exact_v1/events_exact_upstream_authority.json"
+          },
+          {
+            "fields": [
+              "timestamp_semantic"
+            ],
+            "path": "governance/reconstructed_native_baseline_native_1h_upstream_rematerialization_authority_v1/pre2023_native_1h_rematerialization_contract.json"
+          }
+        ],
+        "exit_cash": [],
+        "hold_cash": [],
+        "identity": [
+          {
+            "fields": [
+              "lifecycle_id_required",
+              "must_not_reuse_historical_trade_id_as_new_primary_identity"
+            ],
+            "path": "governance/AKAH_BOT_RECONSTRUCTED_NATIVE_BASELINE_STUDY_CONTRACT_V1.json"
+          }
+        ],
+        "notional": [],
+        "pair": [
+          {
+            "fields": [
+              "selected_pair_set_bound",
+              "symbolic_paths"
+            ],
+            "path": "governance/AKAH_BOT_RECONSTRUCTED_NATIVE_BASELINE_STUDY_CONTRACT_V1.json"
+          },
+          {
+            "fields": [
+              "must_not_read_market_rows_in_authority_phase"
+            ],
+            "path": "governance/reconstructed_native_baseline_current_rd26_logical_input_preopen_authority_v1/pre2023_reconstruction_input_authority_contract.json"
+          },
+          {
+            "fields": [
+              "market_rows_read"
+            ],
+            "path": "governance/reconstructed_native_baseline_current_rd26_events_lifecycle_interprocedural_read_binding_v1/true_read_preopen_authority_audit.json"
+          },
+          {
+            "fields": [
+              "symbolic_path",
+              "symbolic_path_canonical"
+            ],
+            "path": "governance/reconstructed_native_baseline_current_rd26_membership_frames_provenance_v1/membership_frames_true_read_dependencies.json"
+          },
+          {
+            "fields": [
+              "pairs"
+            ],
+            "path": "governance/reconstructed_native_baseline_current_rd26_membership_frames_provenance_v1/membership_frames_interprocedural_trace.json"
+          },
+          {
+            "fields": [
+              "symbolic_path",
+              "symbolic_path_canonical"
+            ],
+            "path": "governance/reconstructed_native_baseline_current_rd26_membership_frames_provenance_v1/membership_frames_symbolic_path_binding.json"
+          },
+          {
+            "fields": [
+              "same_pair_open",
+              "symbol"
+            ],
+            "path": "governance/reconstructed_native_baseline_events_frames_adapter_source_authority_decision_v1/events_frames_prospective_source_contract.json"
+          },
+          {
+            "fields": [
+              "pair"
+            ],
+            "path": "governance/reconstructed_native_baseline_current_rd26_logical_input_preopen_authority_v1/native_1h_preopen_metadata_authority.json"
+          },
+          {
+            "fields": [
+              "root_symbol"
+            ],
+            "path": "governance/reconstructed_native_baseline_current_rd26_membership_frames_provenance_v1/caller_argument_reaching_definitions.json"
+          },
+          {
+            "fields": [
+              "pair"
+            ],
+            "path": "governance/reconstructed_native_baseline_current_rd26_events_lifecycle_interprocedural_read_binding_v1/interprocedural_helper_trace.json"
+          },
+          {
+            "fields": [
+              "symbol"
+            ],
+            "path": "governance/reconstructed_native_baseline_events_frames_source_role_correction_audit_v1/events_frames_role_semantics_decision.json"
+          },
+          {
+            "fields": [
+              "symbol"
+            ],
+            "path": "governance/reconstructed_native_baseline_events_frames_prospective_source_binding_v1/source_composition_human_decision_packet.json"
+          },
+          {
+            "fields": [
+              "market_rows_read"
+            ],
+            "path": "governance/ef_exact_v1/exact_upstream_authority_gap_closure_decision.json"
+          },
+          {
+            "fields": [
+              "symbolic_bindings"
+            ],
+            "path": "governance/reconstructed_native_baseline_current_rd26_events_lifecycle_interprocedural_read_binding_v1/events_primary_producer_binding.json"
+          },
+          {
+            "fields": [
+              "market_rows_read",
+              "symbolic_path",
+              "symbolic_path_canonical"
+            ],
+            "path": "governance/reconstructed_native_baseline_current_rd26_membership_frames_provenance_v1/membership_frames_preopen_authority_audit.json"
+          },
+          {
+            "fields": [
+              "symbol"
+            ],
+            "path": "governance/reconstructed_native_baseline_events_frames_prospective_source_binding_v1/bound_or_partial_source_contract.json"
+          },
+          {
+            "fields": [
+              "root_symbol",
+              "symbol",
+              "symbolic_path",
+              "symbolic_path_canonical"
+            ],
+            "path": "governance/reconstructed_native_baseline_current_rd26_membership_frames_provenance_v1/pre2023_signal_reconstruction_input_contract.json"
+          },
+          {
+            "fields": [
+              "market_rows_read"
+            ],
+            "path": "governance/reconstructed_native_baseline_current_rd26_true_read_dependency_dataflow_v1/true_read_preopen_2022_authority_audit.json"
+          },
+          {
+            "fields": [
+              "symbol"
+            ],
+            "path": "governance/reconstructed_native_baseline_events_frames_prospective_source_binding_v1/events_frames_prospective_source_binding_decision.json"
+          },
+          {
+            "fields": [
+              "symbol"
+            ],
+            "path": "governance/reconstructed_native_baseline_current_rd26_membership_frames_provenance_v1/scan_focus_signals_config_authority.json"
+          },
+          {
+            "fields": [
+              "raw_symbolic_path"
+            ],
+            "path": "governance/reconstructed_native_baseline_current_rd26_logical_input_path_and_config_binding_v1/read_occurrence_normalization.json"
+          },
+          {
+            "fields": [
+              "market_rows_read",
+              "pair"
+            ],
+            "path": "governance/reconstructed_native_baseline_membership_semantics_and_1h_footer_diagnosis_v1/native_1h_exact_footer_diagnosis.json"
+          },
+          {
+            "fields": [
+              "raw_symbolic_path"
+            ],
+            "path": "governance/reconstructed_native_baseline_current_rd26_logical_input_path_and_config_binding_v1/unique_logical_input_manifest.json"
+          },
+          {
+            "fields": [
+              "market_row_read_authorized"
+            ],
+            "path": "governance/reconstructed_native_baseline_native_1h_upstream_rematerialization_authority_v1/pre2023_native_1h_rematerialization_contract.json"
+          },
+          {
+            "fields": [
+              "symbol"
+            ],
+            "path": "governance/reconstructed_native_baseline_current_rd26_logical_input_path_and_config_binding_v1/producer_config_authority_binding.json"
+          },
+          {
+            "fields": [
+              "symbol"
+            ],
+            "path": "governance/reconstructed_native_baseline_events_frames_prospective_source_binding_v1/prospective_source_binding_updated_input_contract.json"
+          }
+        ],
+        "pit": [
+          {
+            "fields": [
+              "information_time_contract",
+              "membership_static_pit_authority_ready",
+              "rd26_signal_portfolio_and_1h_manifest_pit_binding_decision"
+            ],
+            "path": "governance/AKAH_BOT_RECONSTRUCTED_NATIVE_BASELINE_STUDY_CONTRACT_V1.json"
+          },
+          {
+            "fields": [
+              "pit"
+            ],
+            "path": "governance/reconstructed_native_baseline_current_rd26_logical_input_preopen_authority_v1/pre2023_reconstruction_input_authority_contract.json"
+          },
+          {
+            "fields": [
+              "pit_language"
+            ],
+            "path": "governance/reconstructed_native_baseline_current_rd26_membership_frames_provenance_v1/membership_frames_true_read_dependencies.json"
+          },
+          {
+            "fields": [
+              "complete_source_pit_certified",
+              "pit_contract"
+            ],
+            "path": "governance/ef_exact_v1/corrected_events_frames_source_contract.json"
+          },
+          {
+            "fields": [
+              "pit"
+            ],
+            "path": "governance/reconstructed_native_baseline_current_rd26_logical_input_preopen_authority_v1/logical_input_source_provenance.json"
+          },
+          {
+            "fields": [
+              "pit"
+            ],
+            "path": "governance/reconstructed_native_baseline_current_rd26_logical_input_preopen_authority_v1/membership_preopen_semantic_authority.json"
+          },
+          {
+            "fields": [
+              "pit_authority_status",
+              "pit_supporting_governance",
+              "pit_terms"
+            ],
+            "path": "governance/reconstructed_native_baseline_events_frames_adapter_source_authority_decision_v1/events_frames_source_updated_input_contract.json"
+          },
+          {
+            "fields": [
+              "governance_pit_authority_ready",
+              "pit"
+            ],
+            "path": "governance/reconstructed_native_baseline_membership_semantics_and_1h_footer_diagnosis_v1/membership_static_pit_semantic_authority.json"
+          },
+          {
+            "fields": [
+              "pit_markers"
+            ],
+            "path": "governance/reconstructed_native_baseline_events_frames_adapter_source_authority_decision_v1/events_frames_prospective_source_contract.json"
+          },
+          {
+            "fields": [
+              "pit_markers"
+            ],
+            "path": "governance/reconstructed_native_baseline_events_frames_prospective_source_binding_v1/source_composition_human_decision_packet.json"
+          },
+          {
+            "fields": [
+              "pit_authority_status",
+              "pit_supporting_governance",
+              "pit_terms"
+            ],
+            "path": "governance/ef_exact_v1/corrected_input_contract.json"
+          },
+          {
+            "fields": [
+              "pit_language"
+            ],
+            "path": "governance/reconstructed_native_baseline_current_rd26_membership_frames_provenance_v1/membership_frames_preopen_authority_audit.json"
+          },
+          {
+            "fields": [
+              "pit_markers"
+            ],
+            "path": "governance/reconstructed_native_baseline_events_frames_prospective_source_binding_v1/bound_or_partial_source_contract.json"
+          },
+          {
+            "fields": [
+              "pit_language"
+            ],
+            "path": "governance/reconstructed_native_baseline_current_rd26_membership_frames_provenance_v1/pre2023_signal_reconstruction_input_contract.json"
+          },
+          {
+            "fields": [
+              "pit"
+            ],
+            "path": "governance/reconstructed_native_baseline_current_rd26_logical_input_preopen_authority_v1/validation_only_artifact_authority.json"
+          },
+          {
+            "fields": [
+              "pit_markers"
+            ],
+            "path": "governance/reconstructed_native_baseline_events_frames_prospective_source_binding_v1/events_frames_prospective_source_binding_decision.json"
+          },
+          {
+            "fields": [
+              "complete_source_pit_certified",
+              "pit_contract"
+            ],
+            "path": "governance/ef_exact_v1/events_exact_upstream_authority.json"
+          },
+          {
+            "fields": [
+              "pit_authority_status",
+              "pit_supporting_governance",
+              "pit_terms"
+            ],
+            "path": "governance/reconstructed_native_baseline_events_frames_source_role_correction_audit_v1/corrected_input_contract.json"
+          },
+          {
+            "fields": [
+              "pit_authority_status",
+              "pit_markers",
+              "pit_supporting_governance",
+              "pit_terms"
+            ],
+            "path": "governance/reconstructed_native_baseline_events_frames_prospective_source_binding_v1/prospective_source_binding_updated_input_contract.json"
+          }
+        ],
+        "target_value": []
+      }
+    },
+    {
+      "paths": [
+        "governance/AKAH_BOT_SYSTEM_CHARTER.json"
+      ],
+      "roles": {
+        "baseline_action": [],
+        "cost": [],
+        "decision_time": [],
+        "exit_cash": [],
+        "hold_cash": [],
+        "identity": [],
+        "notional": [],
+        "pair": [],
+        "pit": [],
+        "target_value": []
+      }
+    },
+    {
+      "paths": [
+        "governance/abc_lifecycle_state_machine_checkpoint_sign_independent_execution_certificate_v1/strict_execution_trades.csv"
+      ],
+      "roles": {
+        "baseline_action": [
+          {
+            "fields": [
+              "holding_hours"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_checkpoint_sign_independent_execution_certificate_v1/strict_execution_trades.csv"
+          }
+        ],
+        "cost": [
+          {
+            "fields": [
+              "entry_fee",
+              "exit_fee"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_checkpoint_sign_independent_execution_certificate_v1/strict_execution_trades.csv"
+          }
+        ],
+        "decision_time": [],
+        "exit_cash": [],
+        "hold_cash": [],
+        "identity": [],
+        "notional": [
+          {
+            "fields": [
+              "quantity",
+              "entry_notional"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_checkpoint_sign_independent_execution_certificate_v1/strict_execution_trades.csv"
+          }
+        ],
+        "pair": [
+          {
+            "fields": [
+              "pair"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_checkpoint_sign_independent_execution_certificate_v1/strict_execution_trades.csv"
+          }
+        ],
+        "pit": [],
+        "target_value": []
+      }
+    },
+    {
+      "paths": [
+        "governance/abc_lifecycle_state_machine_continuation_value_dual_head_causal_modeling_table_v1/canonical_result.json"
+      ],
+      "roles": {
+        "baseline_action": [],
+        "cost": [],
+        "decision_time": [],
+        "exit_cash": [],
+        "hold_cash": [],
+        "identity": [],
+        "notional": [],
+        "pair": [
+          {
+            "fields": [
+              "SIGNAL_MARKET",
+              "native_market_state_context"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_continuation_value_dual_head_causal_modeling_table_v1/canonical_result.json"
+          }
+        ],
+        "pit": [],
+        "target_value": []
+      }
+    },
+    {
+      "paths": [
+        "governance/abc_lifecycle_state_machine_continuation_value_dual_head_causal_modeling_table_v1/dual_head_causal_modeling_table.csv"
+      ],
+      "roles": {
+        "baseline_action": [],
+        "cost": [
+          {
+            "fields": [
+              "continuation_advantage_cost2x",
+              "__immediate_bridge_advantage_cost2x",
+              "__downstream_residual_cost2x"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_continuation_value_dual_head_causal_modeling_table_v1/dual_head_causal_modeling_table.csv"
+          }
+        ],
+        "decision_time": [
+          {
+            "fields": [
+              "decision_time_exact"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_continuation_value_dual_head_causal_modeling_table_v1/dual_head_causal_modeling_table.csv"
+          }
+        ],
+        "exit_cash": [],
+        "hold_cash": [],
+        "identity": [],
+        "notional": [],
+        "pair": [
+          {
+            "fields": [
+              "pair",
+              "__sig_SIGNAL_MARKET"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_continuation_value_dual_head_causal_modeling_table_v1/dual_head_causal_modeling_table.csv"
+          }
+        ],
+        "pit": [],
+        "target_value": [
+          {
+            "fields": [
+              "continuation_advantage",
+              "continuation_advantage_cost2x",
+              "__immediate_bridge_advantage",
+              "__immediate_bridge_advantage_cost2x"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_continuation_value_dual_head_causal_modeling_table_v1/dual_head_causal_modeling_table.csv"
+          }
+        ]
+      }
+    },
+    {
+      "paths": [
+        "governance/abc_lifecycle_state_machine_continuation_value_exact_target_algebra_temporal_alignment_forensic_v1/canonical_result.json"
+      ],
+      "roles": {
+        "baseline_action": [
+          {
+            "fields": [
+              "exit_now_vs_current_mark_max_relative_gap"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_continuation_value_exact_target_algebra_temporal_alignment_forensic_v1/canonical_result.json"
+          }
+        ],
+        "cost": [],
+        "decision_time": [],
+        "exit_cash": [],
+        "hold_cash": [],
+        "identity": [],
+        "notional": [],
+        "pair": [],
+        "pit": [],
+        "target_value": []
+      }
+    },
+    {
+      "paths": [
+        "governance/abc_lifecycle_state_machine_continuation_value_exact_target_algebra_temporal_alignment_forensic_v1/clean_target_primitive_ledger.csv"
+      ],
+      "roles": {
+        "baseline_action": [],
+        "cost": [],
+        "decision_time": [
+          {
+            "fields": [
+              "decision_time_exact"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_continuation_value_exact_target_algebra_temporal_alignment_forensic_v1/clean_target_primitive_ledger.csv"
+          }
+        ],
+        "exit_cash": [],
+        "hold_cash": [],
+        "identity": [
+          {
+            "fields": [
+              "__trade_id"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_continuation_value_exact_target_algebra_temporal_alignment_forensic_v1/clean_target_primitive_ledger.csv"
+          }
+        ],
+        "notional": [],
+        "pair": [
+          {
+            "fields": [
+              "pair"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_continuation_value_exact_target_algebra_temporal_alignment_forensic_v1/clean_target_primitive_ledger.csv"
+          }
+        ],
+        "pit": [],
+        "target_value": [
+          {
+            "fields": [
+              "__p1_immediate_bridge_advantage"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_continuation_value_exact_target_algebra_temporal_alignment_forensic_v1/clean_target_primitive_ledger.csv"
+          }
+        ]
+      }
+    },
+    {
+      "paths": [
+        "governance/abc_lifecycle_state_machine_continuation_value_exact_target_algebra_temporal_alignment_forensic_v1/output_manifest.json"
+      ],
+      "roles": {
+        "baseline_action": [],
+        "cost": [],
+        "decision_time": [],
+        "exit_cash": [],
+        "hold_cash": [],
+        "identity": [],
+        "notional": [],
+        "pair": [],
+        "pit": [],
+        "target_value": []
+      }
+    },
+    {
+      "paths": [
+        "governance/abc_lifecycle_state_machine_continuation_value_intervened_branch_mechanism_decomposition_v1/intervened_branch_ledger.csv"
+      ],
+      "roles": {
+        "baseline_action": [
+          {
+            "fields": [
+              "exit_now_time",
+              "exit_now_price",
+              "exit_now_reason",
+              "exit_now_net_cash",
+              "exit_now_net_cash_cost2x",
+              "hold_then_pi0_time",
+              "hold_then_pi0_price",
+              "hold_then_pi0_reason",
+              "hold_then_pi0_net_cash",
+              "hold_then_pi0_net_cash_cost2x",
+              "hold_optional_exits_suppressed",
+              "hold_mandatory_exits_seen",
+              "hold_exit_time",
+              "hold_delay_h"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_continuation_value_intervened_branch_mechanism_decomposition_v1/intervened_branch_ledger.csv"
+          }
+        ],
+        "cost": [
+          {
+            "fields": [
+              "__trade_entry_cost",
+              "__trade_exit_cost",
+              "entry_cost",
+              "exit_cost",
+              "base_exit_side_cost_rate",
+              "exit_now_net_cash_cost2x",
+              "hold_then_pi0_net_cash_cost2x",
+              "continuation_advantage_cost2x"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_continuation_value_intervened_branch_mechanism_decomposition_v1/intervened_branch_ledger.csv"
+          }
+        ],
+        "decision_time": [
+          {
+            "fields": [
+              "decision_time_4h",
+              "decision_time_exact",
+              "next_decision_time"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_continuation_value_intervened_branch_mechanism_decomposition_v1/intervened_branch_ledger.csv"
+          }
+        ],
+        "exit_cash": [],
+        "hold_cash": [],
+        "identity": [],
+        "notional": [
+          {
+            "fields": [
+              "__trade_quantity",
+              "__trade_entry_notional",
+              "__trade_exit_notional",
+              "quantity",
+              "entry_notional",
+              "exit_notional",
+              "current_position_notional"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_continuation_value_intervened_branch_mechanism_decomposition_v1/intervened_branch_ledger.csv"
+          }
+        ],
+        "pair": [
+          {
+            "fields": [
+              "pair",
+              "native_market_state_context"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_continuation_value_intervened_branch_mechanism_decomposition_v1/intervened_branch_ledger.csv"
+          }
+        ],
+        "pit": [],
+        "target_value": [
+          {
+            "fields": [
+              "continuation_advantage",
+              "continuation_advantage_cost2x"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_continuation_value_intervened_branch_mechanism_decomposition_v1/intervened_branch_ledger.csv"
+          }
+        ]
+      }
+    },
+    {
+      "paths": [
+        "governance/abc_lifecycle_state_machine_decision_value_derived_authority_binding_audit_human_review_v1/canonical_result.json"
+      ],
+      "roles": {
+        "baseline_action": [
+          {
+            "fields": [
+              "baseline_action",
+              "threshold_search"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_decision_value_derived_authority_binding_audit_human_review_v1/canonical_result.json"
+          }
+        ],
+        "cost": [
+          {
+            "fields": [
+              "cost"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_decision_value_derived_authority_binding_audit_human_review_v1/canonical_result.json"
+          }
+        ],
+        "decision_time": [
+          {
+            "fields": [
+              "decision_time"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_decision_value_derived_authority_binding_audit_human_review_v1/canonical_result.json"
+          }
+        ],
+        "exit_cash": [],
+        "hold_cash": [],
+        "identity": [],
+        "notional": [
+          {
+            "fields": [
+              "notional"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_decision_value_derived_authority_binding_audit_human_review_v1/canonical_result.json"
+          }
+        ],
+        "pair": [
+          {
+            "fields": [
+              "pair"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_decision_value_derived_authority_binding_audit_human_review_v1/canonical_result.json"
+          }
+        ],
+        "pit": [],
+        "target_value": []
+      }
+    },
+    {
+      "paths": [
+        "governance/abc_lifecycle_state_machine_decision_value_derived_authority_binding_audit_v1/canonical_result.json"
+      ],
+      "roles": {
+        "baseline_action": [
+          {
+            "fields": [
+              "baseline_action",
+              "threshold_search"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_decision_value_derived_authority_binding_audit_v1/canonical_result.json"
+          }
+        ],
+        "cost": [
+          {
+            "fields": [
+              "cost"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_decision_value_derived_authority_binding_audit_v1/canonical_result.json"
+          }
+        ],
+        "decision_time": [
+          {
+            "fields": [
+              "decision_time"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_decision_value_derived_authority_binding_audit_v1/canonical_result.json"
+          }
+        ],
+        "exit_cash": [],
+        "hold_cash": [],
+        "identity": [],
+        "notional": [
+          {
+            "fields": [
+              "notional"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_decision_value_derived_authority_binding_audit_v1/canonical_result.json"
+          }
+        ],
+        "pair": [
+          {
+            "fields": [
+              "pair"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_decision_value_derived_authority_binding_audit_v1/canonical_result.json"
+          }
+        ],
+        "pit": [
+          {
+            "fields": [
+              "pit_requirement"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_decision_value_derived_authority_binding_audit_v1/canonical_result.json"
+          }
+        ],
+        "target_value": []
+      }
+    },
+    {
+      "paths": [
+        "governance/abc_lifecycle_state_machine_decision_value_derived_authority_binding_audit_v1/exact_core_candidate.json"
+      ],
+      "roles": {
+        "baseline_action": [
+          {
+            "fields": [
+              "baseline_action"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_decision_value_derived_authority_binding_audit_v1/exact_core_candidate.json"
+          }
+        ],
+        "cost": [
+          {
+            "fields": [
+              "cost"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_decision_value_derived_authority_binding_audit_v1/exact_core_candidate.json"
+          }
+        ],
+        "decision_time": [
+          {
+            "fields": [
+              "decision_time"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_decision_value_derived_authority_binding_audit_v1/exact_core_candidate.json"
+          }
+        ],
+        "exit_cash": [],
+        "hold_cash": [],
+        "identity": [],
+        "notional": [
+          {
+            "fields": [
+              "notional"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_decision_value_derived_authority_binding_audit_v1/exact_core_candidate.json"
+          }
+        ],
+        "pair": [
+          {
+            "fields": [
+              "pair"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_decision_value_derived_authority_binding_audit_v1/exact_core_candidate.json"
+          }
+        ],
+        "pit": [],
+        "target_value": []
+      }
+    },
+    {
+      "paths": [
+        "governance/abc_lifecycle_state_machine_decision_value_derived_authority_binding_audit_v1/semantic_provenance_hits.json"
+      ],
+      "roles": {
+        "baseline_action": [],
+        "cost": [],
+        "decision_time": [],
+        "exit_cash": [],
+        "hold_cash": [],
+        "identity": [],
+        "notional": [],
+        "pair": [],
+        "pit": [],
+        "target_value": []
+      }
+    },
+    {
+      "paths": [
+        "governance/abc_lifecycle_state_machine_decision_value_derived_authority_binding_audit_v1/summary.md"
+      ],
+      "roles": {
+        "baseline_action": [
+          {
+            "fields": [
+              "threshold"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_decision_value_derived_authority_binding_audit_v1/summary.md"
+          }
+        ],
+        "cost": [
+          {
+            "fields": [
+              "costs"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_decision_value_derived_authority_binding_audit_v1/summary.md"
+          }
+        ],
+        "decision_time": [],
+        "exit_cash": [],
+        "hold_cash": [],
+        "identity": [],
+        "notional": [
+          {
+            "fields": [
+              "notional"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_decision_value_derived_authority_binding_audit_v1/summary.md"
+          }
+        ],
+        "pair": [],
+        "pit": [],
+        "target_value": []
+      }
+    },
+    {
+      "paths": [
+        "governance/abc_lifecycle_state_machine_decision_value_feasibility_certificate_human_review_v1/canonical_result.json"
+      ],
+      "roles": {
+        "baseline_action": [
+          {
+            "fields": [
+              "baseline_action",
+              "threshold_search"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_decision_value_feasibility_certificate_human_review_v1/canonical_result.json"
+          }
+        ],
+        "cost": [
+          {
+            "fields": [
+              "cost"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_decision_value_feasibility_certificate_human_review_v1/canonical_result.json"
+          }
+        ],
+        "decision_time": [
+          {
+            "fields": [
+              "decision_time"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_decision_value_feasibility_certificate_human_review_v1/canonical_result.json"
+          }
+        ],
+        "exit_cash": [],
+        "hold_cash": [],
+        "identity": [],
+        "notional": [
+          {
+            "fields": [
+              "notional"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_decision_value_feasibility_certificate_human_review_v1/canonical_result.json"
+          }
+        ],
+        "pair": [
+          {
+            "fields": [
+              "pair"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_decision_value_feasibility_certificate_human_review_v1/canonical_result.json"
+          }
+        ],
+        "pit": [],
+        "target_value": []
+      }
+    },
+    {
+      "paths": [
+        "governance/abc_lifecycle_state_machine_decision_value_feasibility_certificate_v1/authority_inventory.json"
+      ],
+      "roles": {
+        "baseline_action": [
+          {
+            "fields": [
+              "baseline_action"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_decision_value_feasibility_certificate_v1/authority_inventory.json"
+          }
+        ],
+        "cost": [],
+        "decision_time": [
+          {
+            "fields": [
+              "decision_time"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_decision_value_feasibility_certificate_v1/authority_inventory.json"
+          }
+        ],
+        "exit_cash": [],
+        "hold_cash": [],
+        "identity": [],
+        "notional": [
+          {
+            "fields": [
+              "notional"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_decision_value_feasibility_certificate_v1/authority_inventory.json"
+          }
+        ],
+        "pair": [],
+        "pit": [],
+        "target_value": []
+      }
+    },
+    {
+      "paths": [
+        "governance/abc_lifecycle_state_machine_decision_value_feasibility_certificate_v1/canonical_result.json"
+      ],
+      "roles": {
+        "baseline_action": [
+          {
+            "fields": [
+              "no_posthoc_threshold_hunt",
+              "return_to_pi0_after_hold_override",
+              "threshold_search"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_decision_value_feasibility_certificate_v1/canonical_result.json"
+          }
+        ],
+        "cost": [],
+        "decision_time": [],
+        "exit_cash": [],
+        "hold_cash": [],
+        "identity": [],
+        "notional": [],
+        "pair": [
+          {
+            "fields": [
+              "symbol"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_decision_value_feasibility_certificate_v1/canonical_result.json"
+          }
+        ],
+        "pit": [],
+        "target_value": []
+      }
+    },
+    {
+      "paths": [
+        "governance/abc_lifecycle_state_machine_exact_one_step_continuation_value_mega_v1/canonical_result.json"
+      ],
+      "roles": {
+        "baseline_action": [
+          {
+            "fields": [
+              "max_hold_hours",
+              "threshold_search",
+              "threshold_tuned"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_exact_one_step_continuation_value_mega_v1/canonical_result.json"
+          }
+        ],
+        "cost": [
+          {
+            "fields": [
+              "available_cost_multipliers",
+              "base_cost_rows",
+              "cost2x_stress",
+              "cost_authority",
+              "cost_multiplier_column_present",
+              "selected_cost_multiplier"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_exact_one_step_continuation_value_mega_v1/canonical_result.json"
+          }
+        ],
+        "decision_time": [
+          {
+            "fields": [
+              "decision_time_column"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_exact_one_step_continuation_value_mega_v1/canonical_result.json"
+          }
+        ],
+        "exit_cash": [],
+        "hold_cash": [],
+        "identity": [],
+        "notional": [],
+        "pair": [
+          {
+            "fields": [
+              "full_pair_coverage",
+              "pair",
+              "pair_audits",
+              "required_pair_count"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_exact_one_step_continuation_value_mega_v1/canonical_result.json"
+          }
+        ],
+        "pit": [],
+        "target_value": []
+      }
+    },
+    {
+      "paths": [
+        "governance/abc_lifecycle_state_machine_exact_one_step_continuation_value_mega_v1/decision_matrix.csv"
+      ],
+      "roles": {
+        "baseline_action": [],
+        "cost": [],
+        "decision_time": [],
+        "exit_cash": [],
+        "hold_cash": [],
+        "identity": [],
+        "notional": [],
+        "pair": [],
+        "pit": [],
+        "target_value": []
+      }
+    },
+    {
+      "paths": [
+        "governance/abc_lifecycle_state_machine_exact_one_step_continuation_value_mega_v1/exact_two_sided_continuation_ledger.csv"
+      ],
+      "roles": {
+        "baseline_action": [
+          {
+            "fields": [
+              "exit_now_time",
+              "exit_now_price",
+              "exit_now_reason",
+              "exit_now_net_cash",
+              "exit_now_net_cash_cost2x",
+              "hold_then_pi0_time",
+              "hold_then_pi0_price",
+              "hold_then_pi0_reason",
+              "hold_then_pi0_net_cash",
+              "hold_then_pi0_net_cash_cost2x",
+              "hold_optional_exits_suppressed",
+              "hold_mandatory_exits_seen"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_exact_one_step_continuation_value_mega_v1/exact_two_sided_continuation_ledger.csv"
+          }
+        ],
+        "cost": [
+          {
+            "fields": [
+              "__trade_entry_cost",
+              "__trade_exit_cost",
+              "entry_cost",
+              "exit_cost",
+              "base_exit_side_cost_rate",
+              "exit_now_net_cash_cost2x",
+              "hold_then_pi0_net_cash_cost2x",
+              "continuation_advantage_cost2x"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_exact_one_step_continuation_value_mega_v1/exact_two_sided_continuation_ledger.csv"
+          }
+        ],
+        "decision_time": [
+          {
+            "fields": [
+              "decision_time_4h",
+              "decision_time_exact"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_exact_one_step_continuation_value_mega_v1/exact_two_sided_continuation_ledger.csv"
+          }
+        ],
+        "exit_cash": [],
+        "hold_cash": [],
+        "identity": [],
+        "notional": [
+          {
+            "fields": [
+              "__trade_quantity",
+              "__trade_entry_notional",
+              "__trade_exit_notional",
+              "quantity",
+              "entry_notional",
+              "exit_notional",
+              "current_position_notional"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_exact_one_step_continuation_value_mega_v1/exact_two_sided_continuation_ledger.csv"
+          }
+        ],
+        "pair": [
+          {
+            "fields": [
+              "pair",
+              "native_market_state_context"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_exact_one_step_continuation_value_mega_v1/exact_two_sided_continuation_ledger.csv"
+          }
+        ],
+        "pit": [],
+        "target_value": [
+          {
+            "fields": [
+              "continuation_advantage",
+              "continuation_advantage_cost2x"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_exact_one_step_continuation_value_mega_v1/exact_two_sided_continuation_ledger.csv"
+          }
+        ]
+      }
+    },
+    {
+      "paths": [
+        "governance/abc_lifecycle_state_machine_p0_frozen_17_technical_history_sequence_materialization_and_pit_audit_v1/p0_technical_sequence_modeling_table.csv"
+      ],
+      "roles": {
+        "baseline_action": [],
+        "cost": [],
+        "decision_time": [
+          {
+            "fields": [
+              "decision_time_exact"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_p0_frozen_17_technical_history_sequence_materialization_and_pit_audit_v1/p0_technical_sequence_modeling_table.csv"
+          }
+        ],
+        "exit_cash": [],
+        "hold_cash": [],
+        "identity": [
+          {
+            "fields": [
+              "__trade_id"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_p0_frozen_17_technical_history_sequence_materialization_and_pit_audit_v1/p0_technical_sequence_modeling_table.csv"
+          }
+        ],
+        "notional": [],
+        "pair": [
+          {
+            "fields": [
+              "pair"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_p0_frozen_17_technical_history_sequence_materialization_and_pit_audit_v1/p0_technical_sequence_modeling_table.csv"
+          }
+        ],
+        "pit": [],
+        "target_value": []
+      }
+    },
+    {
+      "paths": [
+        "governance/abc_lifecycle_state_machine_two_sided_one_step_execution_surface_v1/two_sided_research_sidecar_v1.py"
+      ],
+      "roles": {
+        "baseline_action": [
+          {
+            "fields": [
+              "EXIT_NOW",
+              "EXIT_NOW_UNREACHABLE",
+              "HOLD_BRANCH_REACHED_END_WITHOUT_EXIT",
+              "HOLD_ONE_STEP_THEN_PI0",
+              "MAX_HOLD_168H",
+              "RESEARCH_EXIT_NOW_FIRST_LEGAL_OPEN",
+              "hold",
+              "hold2",
+              "hold_until",
+              "simulate_exit_now",
+              "simulate_hold_one_step_then_pi0",
+              "stagnation_threshold_hours"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_two_sided_one_step_execution_surface_v1/two_sided_research_sidecar_v1.py"
+          }
+        ],
+        "cost": [
+          {
+            "fields": [
+              "exit_side_cost"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_two_sided_one_step_execution_surface_v1/two_sided_research_sidecar_v1.py"
+          }
+        ],
+        "decision_time": [
+          {
+            "fields": [
+              "Timestamp",
+              "decision_time"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_two_sided_one_step_execution_surface_v1/two_sided_research_sidecar_v1.py"
+          }
+        ],
+        "exit_cash": [],
+        "hold_cash": [],
+        "identity": [],
+        "notional": [
+          {
+            "fields": [
+              "quantity"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_two_sided_one_step_execution_surface_v1/two_sided_research_sidecar_v1.py"
+          }
+        ],
+        "pair": [
+          {
+            "fields": [
+              "market_state",
+              "market_state_at"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_two_sided_one_step_execution_surface_v1/two_sided_research_sidecar_v1.py"
+          }
+        ],
+        "pit": [],
+        "target_value": []
+      }
+    },
+    {
+      "paths": [
+        "scripts/research/run_abc_exit_primitives_2019_2023_v1.py"
+      ],
+      "roles": {
+        "baseline_action": [],
+        "cost": [
+          {
+            "fields": [
+              "cost_multiplier"
+            ],
+            "path": "scripts/research/run_abc_exit_primitives_2019_2023_v1.py"
+          }
+        ],
+        "decision_time": [
+          {
+            "fields": [
+              "Timestamp",
+              "decision_time",
+              "timestamp"
+            ],
+            "path": "scripts/research/run_abc_exit_primitives_2019_2023_v1.py"
+          }
+        ],
+        "exit_cash": [],
+        "hold_cash": [],
+        "identity": [
+          {
+            "fields": [
+              "candidate_id"
+            ],
+            "path": "scripts/research/run_abc_exit_primitives_2019_2023_v1.py"
+          }
+        ],
+        "notional": [],
+        "pair": [
+          {
+            "fields": [
+              "build_market_state_frame",
+              "four_hour_by_pair",
+              "hourly_by_pair",
+              "pair",
+              "pairs",
+              "raw_by_pair",
+              "year_pairs"
+            ],
+            "path": "scripts/research/run_abc_exit_primitives_2019_2023_v1.py"
+          }
+        ],
+        "pit": [],
+        "target_value": []
+      }
+    },
+    {
+      "paths": [
+        "src/spotbot/research/abc_exit_primitives_v1.py"
+      ],
+      "roles": {
+        "baseline_action": [
+          {
+            "fields": [
+              "MAX_HOLD_168H",
+              "MAX_HOLD_HOURS",
+              "holding_hours",
+              "max_hold_exits",
+              "mean_holding_hours"
+            ],
+            "path": "src/spotbot/research/abc_exit_primitives_v1.py"
+          }
+        ],
+        "cost": [
+          {
+            "fields": [
+              "BASE_ROUND_TRIP_COST",
+              "cost",
+              "cost_multiplier",
+              "entry_cost",
+              "exit_cost",
+              "modified_exit_cost",
+              "side_cost"
+            ],
+            "path": "src/spotbot/research/abc_exit_primitives_v1.py"
+          }
+        ],
+        "decision_time": [
+          {
+            "fields": [
+              "Timestamp",
+              "bar_close_time",
+              "decision_time",
+              "timestamp"
+            ],
+            "path": "src/spotbot/research/abc_exit_primitives_v1.py"
+          }
+        ],
+        "exit_cash": [],
+        "hold_cash": [],
+        "identity": [
+          {
+            "fields": [
+              "candidate_id",
+              "validate_candidate_id"
+            ],
+            "path": "src/spotbot/research/abc_exit_primitives_v1.py"
+          }
+        ],
+        "notional": [
+          {
+            "fields": [
+              "TARGET_SLOT_NOTIONAL_FRACTION",
+              "capacity_notional",
+              "entry_notional",
+              "exit_notional",
+              "max_cash_notional",
+              "modified_exit_notional",
+              "notional",
+              "quantity",
+              "target_notional"
+            ],
+            "path": "src/spotbot/research/abc_exit_primitives_v1.py"
+          }
+        ],
+        "pair": [
+          {
+            "fields": [
+              "_pair",
+              "bottom_pair_delta_pnl",
+              "by_pair",
+              "entry_market_state",
+              "exit_market_state",
+              "four_hour_by_pair",
+              "hourly_by_pair",
+              "market",
+              "market_state",
+              "pair",
+              "same_pair_open",
+              "top_pair_delta_pnl"
+            ],
+            "path": "src/spotbot/research/abc_exit_primitives_v1.py"
+          }
+        ],
+        "pit": [
+          {
+            "fields": [
+              "capital_admission_decision"
+            ],
+            "path": "src/spotbot/research/abc_exit_primitives_v1.py"
+          }
+        ],
+        "target_value": []
+      }
+    }
+  ],
+  "coverage": {
+    "baseline_action": [
+      {
+        "fields": [
+          "holding_hours"
+        ],
+        "path": "data/research/abc_exit_primitives_2019_2023_v1/control-trades.csv"
+      },
+      {
+        "fields": [
+          "max_hold_hours"
+        ],
+        "path": "governance/AKAH_BOT_RD27_NATIVE_TERMINAL_SOURCE_AUTHORITY_V1.json"
+      },
+      {
+        "fields": [
+          "holding_hours"
+        ],
+        "path": "governance/abc_lifecycle_state_machine_checkpoint_sign_independent_execution_certificate_v1/strict_execution_trades.csv"
+      },
+      {
+        "fields": [
+          "exit_now_vs_current_mark_max_relative_gap"
+        ],
+        "path": "governance/abc_lifecycle_state_machine_continuation_value_exact_target_algebra_temporal_alignment_forensic_v1/canonical_result.json"
+      },
+      {
+        "fields": [
+          "exit_now_time",
+          "exit_now_price",
+          "exit_now_reason",
+          "exit_now_net_cash",
+          "exit_now_net_cash_cost2x",
+          "hold_then_pi0_time",
+          "hold_then_pi0_price",
+          "hold_then_pi0_reason",
+          "hold_then_pi0_net_cash",
+          "hold_then_pi0_net_cash_cost2x",
+          "hold_optional_exits_suppressed",
+          "hold_mandatory_exits_seen",
+          "hold_exit_time",
+          "hold_delay_h"
+        ],
+        "path": "governance/abc_lifecycle_state_machine_continuation_value_intervened_branch_mechanism_decomposition_v1/intervened_branch_ledger.csv"
+      },
+      {
+        "fields": [
+          "baseline_action",
+          "threshold_search"
+        ],
+        "path": "governance/abc_lifecycle_state_machine_decision_value_derived_authority_binding_audit_human_review_v1/canonical_result.json"
+      },
+      {
+        "fields": [
+          "baseline_action",
+          "threshold_search"
+        ],
+        "path": "governance/abc_lifecycle_state_machine_decision_value_derived_authority_binding_audit_v1/canonical_result.json"
+      },
+      {
+        "fields": [
+          "baseline_action"
+        ],
+        "path": "governance/abc_lifecycle_state_machine_decision_value_derived_authority_binding_audit_v1/exact_core_candidate.json"
+      },
+      {
+        "fields": [
+          "threshold"
+        ],
+        "path": "governance/abc_lifecycle_state_machine_decision_value_derived_authority_binding_audit_v1/summary.md"
+      },
+      {
+        "fields": [
+          "baseline_action",
+          "threshold_search"
+        ],
+        "path": "governance/abc_lifecycle_state_machine_decision_value_feasibility_certificate_human_review_v1/canonical_result.json"
+      },
+      {
+        "fields": [
+          "baseline_action"
+        ],
+        "path": "governance/abc_lifecycle_state_machine_decision_value_feasibility_certificate_v1/authority_inventory.json"
+      },
+      {
+        "fields": [
+          "no_posthoc_threshold_hunt",
+          "return_to_pi0_after_hold_override",
+          "threshold_search"
+        ],
+        "path": "governance/abc_lifecycle_state_machine_decision_value_feasibility_certificate_v1/canonical_result.json"
+      },
+      {
+        "fields": [
+          "max_hold_hours",
+          "threshold_search",
+          "threshold_tuned"
+        ],
+        "path": "governance/abc_lifecycle_state_machine_exact_one_step_continuation_value_mega_v1/canonical_result.json"
+      },
+      {
+        "fields": [
+          "exit_now_time",
+          "exit_now_price",
+          "exit_now_reason",
+          "exit_now_net_cash",
+          "exit_now_net_cash_cost2x",
+          "hold_then_pi0_time",
+          "hold_then_pi0_price",
+          "hold_then_pi0_reason",
+          "hold_then_pi0_net_cash",
+          "hold_then_pi0_net_cash_cost2x",
+          "hold_optional_exits_suppressed",
+          "hold_mandatory_exits_seen"
+        ],
+        "path": "governance/abc_lifecycle_state_machine_exact_one_step_continuation_value_mega_v1/exact_two_sided_continuation_ledger.csv"
+      },
+      {
+        "fields": [
+          "EXIT_NOW",
+          "EXIT_NOW_UNREACHABLE",
+          "HOLD_BRANCH_REACHED_END_WITHOUT_EXIT",
+          "HOLD_ONE_STEP_THEN_PI0",
+          "MAX_HOLD_168H",
+          "RESEARCH_EXIT_NOW_FIRST_LEGAL_OPEN",
+          "hold",
+          "hold2",
+          "hold_until",
+          "simulate_exit_now",
+          "simulate_hold_one_step_then_pi0",
+          "stagnation_threshold_hours"
+        ],
+        "path": "governance/abc_lifecycle_state_machine_two_sided_one_step_execution_surface_v1/two_sided_research_sidecar_v1.py"
+      },
+      {
+        "fields": [
+          "MAX_HOLD_168H",
+          "MAX_HOLD_HOURS",
+          "holding_hours",
+          "max_hold_exits",
+          "mean_holding_hours"
+        ],
+        "path": "src/spotbot/research/abc_exit_primitives_v1.py"
+      },
+      {
+        "fields": [
+          "MAX_HOLD_168H",
+          "MAX_HOLD_HOURS",
+          "maximum_hold_hours",
+          "stagnation_threshold_hours"
+        ],
+        "path": "src/spotbot/research/rd27_adaptive_lifecycle.py"
+      },
+      {
+        "fields": [
+          "MAX_HOLD_168H",
+          "holding_hours",
+          "max_hold_exits"
+        ],
+        "path": "src/spotbot/research/rd27_lifecycle_replay.py"
+      },
+      {
+        "fields": [
+          "max_hold_exits"
+        ],
+        "path": "governance/reconstructed_native_baseline_events_frames_adapter_source_authority_decision_v1/events_frames_prospective_source_contract.json"
+      }
+    ],
+    "cost": [
+      {
+        "fields": [
+          "cost_multiplier",
+          "entry_cost",
+          "exit_cost"
+        ],
+        "path": "data/research/abc_exit_primitives_2019_2023_v1/control-trades.csv"
+      },
+      {
+        "fields": [
+          "cost_multiplier",
+          "cost_multiplier_typed_binding_ready",
+          "typed_cost_path"
+        ],
+        "path": "governance/AKAH_BOT_RECONSTRUCTED_NATIVE_BASELINE_STUDY_CONTRACT_V1.json"
+      },
+      {
+        "fields": [
+          "entry_fee",
+          "exit_fee"
+        ],
+        "path": "governance/abc_lifecycle_state_machine_checkpoint_sign_independent_execution_certificate_v1/strict_execution_trades.csv"
+      },
+      {
+        "fields": [
+          "continuation_advantage_cost2x",
+          "__immediate_bridge_advantage_cost2x",
+          "__downstream_residual_cost2x"
+        ],
+        "path": "governance/abc_lifecycle_state_machine_continuation_value_dual_head_causal_modeling_table_v1/dual_head_causal_modeling_table.csv"
+      },
+      {
+        "fields": [
+          "__trade_entry_cost",
+          "__trade_exit_cost",
+          "entry_cost",
+          "exit_cost",
+          "base_exit_side_cost_rate",
+          "exit_now_net_cash_cost2x",
+          "hold_then_pi0_net_cash_cost2x",
+          "continuation_advantage_cost2x"
+        ],
+        "path": "governance/abc_lifecycle_state_machine_continuation_value_intervened_branch_mechanism_decomposition_v1/intervened_branch_ledger.csv"
+      },
+      {
+        "fields": [
+          "cost"
+        ],
+        "path": "governance/abc_lifecycle_state_machine_decision_value_derived_authority_binding_audit_human_review_v1/canonical_result.json"
+      },
+      {
+        "fields": [
+          "cost"
+        ],
+        "path": "governance/abc_lifecycle_state_machine_decision_value_derived_authority_binding_audit_v1/canonical_result.json"
+      },
+      {
+        "fields": [
+          "cost"
+        ],
+        "path": "governance/abc_lifecycle_state_machine_decision_value_derived_authority_binding_audit_v1/exact_core_candidate.json"
+      },
+      {
+        "fields": [
+          "costs"
+        ],
+        "path": "governance/abc_lifecycle_state_machine_decision_value_derived_authority_binding_audit_v1/summary.md"
+      },
+      {
+        "fields": [
+          "cost"
+        ],
+        "path": "governance/abc_lifecycle_state_machine_decision_value_feasibility_certificate_human_review_v1/canonical_result.json"
+      },
+      {
+        "fields": [
+          "available_cost_multipliers",
+          "base_cost_rows",
+          "cost2x_stress",
+          "cost_authority",
+          "cost_multiplier_column_present",
+          "selected_cost_multiplier"
+        ],
+        "path": "governance/abc_lifecycle_state_machine_exact_one_step_continuation_value_mega_v1/canonical_result.json"
+      },
+      {
+        "fields": [
+          "__trade_entry_cost",
+          "__trade_exit_cost",
+          "entry_cost",
+          "exit_cost",
+          "base_exit_side_cost_rate",
+          "exit_now_net_cash_cost2x",
+          "hold_then_pi0_net_cash_cost2x",
+          "continuation_advantage_cost2x"
+        ],
+        "path": "governance/abc_lifecycle_state_machine_exact_one_step_continuation_value_mega_v1/exact_two_sided_continuation_ledger.csv"
+      },
+      {
+        "fields": [
+          "exit_side_cost"
+        ],
+        "path": "governance/abc_lifecycle_state_machine_two_sided_one_step_execution_surface_v1/two_sided_research_sidecar_v1.py"
+      },
+      {
+        "fields": [
+          "cost_multiplier"
+        ],
+        "path": "scripts/research/run_abc_exit_primitives_2019_2023_v1.py"
+      },
+      {
+        "fields": [
+          "BASE_ROUND_TRIP_COST",
+          "cost",
+          "cost_multiplier",
+          "entry_cost",
+          "exit_cost",
+          "modified_exit_cost",
+          "side_cost"
+        ],
+        "path": "src/spotbot/research/abc_exit_primitives_v1.py"
+      },
+      {
+        "fields": [
+          "BASE_ROUND_TRIP_COST",
+          "COST_MULTIPLIERS",
+          "cost",
+          "cost_multiplier",
+          "entry_cost",
+          "exit_cost",
+          "side_cost"
+        ],
+        "path": "src/spotbot/research/rd27_lifecycle_replay.py"
+      },
+      {
+        "fields": [
+          "cost_multiplier"
+        ],
+        "path": "governance/ef_exact_v1/corrected_input_contract.json"
+      },
+      {
+        "fields": [
+          "cost_multiplier"
+        ],
+        "path": "governance/reconstructed_native_baseline_events_frames_adapter_source_authority_decision_v1/events_frames_source_updated_input_contract.json"
+      },
+      {
+        "fields": [
+          "cost_multiplier"
+        ],
+        "path": "governance/reconstructed_native_baseline_events_frames_prospective_source_binding_v1/prospective_source_binding_updated_input_contract.json"
+      },
+      {
+        "fields": [
+          "cost_multiplier"
+        ],
+        "path": "governance/reconstructed_native_baseline_events_frames_source_role_correction_audit_v1/corrected_input_contract.json"
+      }
+    ],
+    "decision_time": [
+      {
+        "fields": [
+          "bar_timestamp_not_sufficient_by_itself",
+          "current_timestamp_binding",
+          "one_hour_timestamp_authority_path",
+          "one_hour_timestamp_semantic",
+          "timestamp_audit_path",
+          "timestamp_integrity_ready",
+          "timestamp_semantic_audit"
+        ],
+        "path": "governance/AKAH_BOT_RECONSTRUCTED_NATIVE_BASELINE_STUDY_CONTRACT_V1.json"
+      },
+      {
+        "fields": [
+          "decision_time_exact"
+        ],
+        "path": "governance/abc_lifecycle_state_machine_continuation_value_dual_head_causal_modeling_table_v1/dual_head_causal_modeling_table.csv"
+      },
+      {
+        "fields": [
+          "decision_time_exact"
+        ],
+        "path": "governance/abc_lifecycle_state_machine_continuation_value_exact_target_algebra_temporal_alignment_forensic_v1/clean_target_primitive_ledger.csv"
+      },
+      {
+        "fields": [
+          "decision_time_4h",
+          "decision_time_exact",
+          "next_decision_time"
+        ],
+        "path": "governance/abc_lifecycle_state_machine_continuation_value_intervened_branch_mechanism_decomposition_v1/intervened_branch_ledger.csv"
+      },
+      {
+        "fields": [
+          "decision_time"
+        ],
+        "path": "governance/abc_lifecycle_state_machine_decision_value_derived_authority_binding_audit_human_review_v1/canonical_result.json"
+      },
+      {
+        "fields": [
+          "decision_time"
+        ],
+        "path": "governance/abc_lifecycle_state_machine_decision_value_derived_authority_binding_audit_v1/canonical_result.json"
+      },
+      {
+        "fields": [
+          "decision_time"
+        ],
+        "path": "governance/abc_lifecycle_state_machine_decision_value_derived_authority_binding_audit_v1/exact_core_candidate.json"
+      },
+      {
+        "fields": [
+          "decision_time"
+        ],
+        "path": "governance/abc_lifecycle_state_machine_decision_value_feasibility_certificate_human_review_v1/canonical_result.json"
+      },
+      {
+        "fields": [
+          "decision_time"
+        ],
+        "path": "governance/abc_lifecycle_state_machine_decision_value_feasibility_certificate_v1/authority_inventory.json"
+      },
+      {
+        "fields": [
+          "decision_time_column"
+        ],
+        "path": "governance/abc_lifecycle_state_machine_exact_one_step_continuation_value_mega_v1/canonical_result.json"
+      },
+      {
+        "fields": [
+          "decision_time_4h",
+          "decision_time_exact"
+        ],
+        "path": "governance/abc_lifecycle_state_machine_exact_one_step_continuation_value_mega_v1/exact_two_sided_continuation_ledger.csv"
+      },
+      {
+        "fields": [
+          "decision_time_exact"
+        ],
+        "path": "governance/abc_lifecycle_state_machine_p0_frozen_17_technical_history_sequence_materialization_and_pit_audit_v1/p0_technical_sequence_modeling_table.csv"
+      },
+      {
+        "fields": [
+          "Timestamp",
+          "decision_time"
+        ],
+        "path": "governance/abc_lifecycle_state_machine_two_sided_one_step_execution_surface_v1/two_sided_research_sidecar_v1.py"
+      },
+      {
+        "fields": [
+          "Timestamp",
+          "decision_time",
+          "timestamp"
+        ],
+        "path": "scripts/research/run_abc_exit_primitives_2019_2023_v1.py"
+      },
+      {
+        "fields": [
+          "Timestamp",
+          "bar_close_time",
+          "decision_time",
+          "timestamp"
+        ],
+        "path": "src/spotbot/research/abc_exit_primitives_v1.py"
+      },
+      {
+        "fields": [
+          "Timestamp",
+          "decision_time",
+          "timestamp",
+          "timestamps"
+        ],
+        "path": "src/spotbot/research/rd27_adaptive_lifecycle.py"
+      },
+      {
+        "fields": [
+          "Timestamp",
+          "decision_time",
+          "timestamp"
+        ],
+        "path": "src/spotbot/research/rd27_later_trigger_v2_native_hook.py"
+      },
+      {
+        "fields": [
+          "Timestamp",
+          "_utc_timestamp",
+          "begin_timestamp",
+          "decision_time",
+          "end_timestamp",
+          "timestamp",
+          "timestamps"
+        ],
+        "path": "src/spotbot/research/rd27_lifecycle_replay.py"
+      },
+      {
+        "fields": [
+          "bar_close_time_field",
+          "signal_timestamp",
+          "source_timestamp_definition_bound"
+        ],
+        "path": "governance/ef_exact_v1/corrected_events_frames_source_contract.json"
+      },
+      {
+        "fields": [
+          "signal_timestamp"
+        ],
+        "path": "governance/ef_exact_v1/events_exact_upstream_authority.json"
+      },
+      {
+        "fields": [
+          "bar_close_time_field",
+          "source_timestamp_definition_bound"
+        ],
+        "path": "governance/ef_exact_v1/frames_exact_upstream_authority.json"
+      },
+      {
+        "fields": [
+          "timestamp"
+        ],
+        "path": "governance/reconstructed_native_baseline_current_rd26_events_lifecycle_interprocedural_read_binding_v1/interprocedural_helper_trace.json"
+      },
+      {
+        "fields": [
+          "native_1h_timestamp_semantic"
+        ],
+        "path": "governance/reconstructed_native_baseline_current_rd26_events_lifecycle_interprocedural_read_binding_v1/reconstruction_input_authority_contract.json"
+      },
+      {
+        "fields": [
+          "timestamp_semantic"
+        ],
+        "path": "governance/reconstructed_native_baseline_current_rd26_membership_frames_provenance_v1/membership_frames_preopen_authority_audit.json"
+      },
+      {
+        "fields": [
+          "timestamp_semantic"
+        ],
+        "path": "governance/reconstructed_native_baseline_current_rd26_membership_frames_provenance_v1/membership_frames_true_read_dependencies.json"
+      },
+      {
+        "fields": [
+          "native_1h_timestamp_semantic",
+          "timestamp_semantic"
+        ],
+        "path": "governance/reconstructed_native_baseline_current_rd26_membership_frames_provenance_v1/pre2023_signal_reconstruction_input_contract.json"
+      },
+      {
+        "fields": [
+          "native_1h_timestamp_semantic"
+        ],
+        "path": "governance/reconstructed_native_baseline_current_rd26_true_read_dependency_dataflow_v1/reconstruction_input_authority_contract.json"
+      },
+      {
+        "fields": [
+          "timestamp_column_present"
+        ],
+        "path": "governance/reconstructed_native_baseline_membership_semantics_and_1h_footer_diagnosis_v1/native_1h_exact_footer_diagnosis.json"
+      },
+      {
+        "fields": [
+          "row_groups_with_parseable_timestamp_stats",
+          "row_groups_with_timestamp_stats"
+        ],
+        "path": "governance/reconstructed_native_baseline_membership_semantics_and_1h_footer_diagnosis_v1/native_1h_footer_aggregate_classification.json"
+      },
+      {
+        "fields": [
+          "timestamp_semantic"
+        ],
+        "path": "governance/reconstructed_native_baseline_native_1h_upstream_rematerialization_authority_v1/pre2023_native_1h_rematerialization_contract.json"
+      }
+    ],
+    "exit_cash": [],
+    "hold_cash": [],
+    "identity": [
+      {
+        "fields": [
+          "same_pair_is_not_lifecycle_identity_alone",
+          "trade_id_bridge_rule"
+        ],
+        "path": "governance/AKAH_BOT_RD27_NATIVE_TERMINAL_SOURCE_AUTHORITY_V1.json"
+      },
+      {
+        "fields": [
+          "lifecycle_id_required",
+          "must_not_reuse_historical_trade_id_as_new_primary_identity"
+        ],
+        "path": "governance/AKAH_BOT_RECONSTRUCTED_NATIVE_BASELINE_STUDY_CONTRACT_V1.json"
+      },
+      {
+        "fields": [
+          "__trade_id"
+        ],
+        "path": "governance/abc_lifecycle_state_machine_continuation_value_exact_target_algebra_temporal_alignment_forensic_v1/clean_target_primitive_ledger.csv"
+      },
+      {
+        "fields": [
+          "__trade_id"
+        ],
+        "path": "governance/abc_lifecycle_state_machine_p0_frozen_17_technical_history_sequence_materialization_and_pit_audit_v1/p0_technical_sequence_modeling_table.csv"
+      },
+      {
+        "fields": [
+          "candidate_id"
+        ],
+        "path": "scripts/research/run_abc_exit_primitives_2019_2023_v1.py"
+      },
+      {
+        "fields": [
+          "candidate_id",
+          "validate_candidate_id"
+        ],
+        "path": "src/spotbot/research/abc_exit_primitives_v1.py"
+      },
+      {
+        "fields": [
+          "position_id"
+        ],
+        "path": "src/spotbot/research/rd27_adaptive_lifecycle.py"
+      },
+      {
+        "fields": [
+          "position_id"
+        ],
+        "path": "src/spotbot/research/rd27_later_trigger_v2_native_hook.py"
+      }
+    ],
+    "notional": [
+      {
+        "fields": [
+          "quantity",
+          "entry_notional",
+          "exit_notional"
+        ],
+        "path": "data/research/abc_exit_primitives_2019_2023_v1/control-trades.csv"
+      },
+      {
+        "fields": [
+          "quantity",
+          "entry_notional"
+        ],
+        "path": "governance/abc_lifecycle_state_machine_checkpoint_sign_independent_execution_certificate_v1/strict_execution_trades.csv"
+      },
+      {
+        "fields": [
+          "__trade_quantity",
+          "__trade_entry_notional",
+          "__trade_exit_notional",
+          "quantity",
+          "entry_notional",
+          "exit_notional",
+          "current_position_notional"
+        ],
+        "path": "governance/abc_lifecycle_state_machine_continuation_value_intervened_branch_mechanism_decomposition_v1/intervened_branch_ledger.csv"
+      },
+      {
+        "fields": [
+          "notional"
+        ],
+        "path": "governance/abc_lifecycle_state_machine_decision_value_derived_authority_binding_audit_human_review_v1/canonical_result.json"
+      },
+      {
+        "fields": [
+          "notional"
+        ],
+        "path": "governance/abc_lifecycle_state_machine_decision_value_derived_authority_binding_audit_v1/canonical_result.json"
+      },
+      {
+        "fields": [
+          "notional"
+        ],
+        "path": "governance/abc_lifecycle_state_machine_decision_value_derived_authority_binding_audit_v1/exact_core_candidate.json"
+      },
+      {
+        "fields": [
+          "notional"
+        ],
+        "path": "governance/abc_lifecycle_state_machine_decision_value_derived_authority_binding_audit_v1/summary.md"
+      },
+      {
+        "fields": [
+          "notional"
+        ],
+        "path": "governance/abc_lifecycle_state_machine_decision_value_feasibility_certificate_human_review_v1/canonical_result.json"
+      },
+      {
+        "fields": [
+          "notional"
+        ],
+        "path": "governance/abc_lifecycle_state_machine_decision_value_feasibility_certificate_v1/authority_inventory.json"
+      },
+      {
+        "fields": [
+          "__trade_quantity",
+          "__trade_entry_notional",
+          "__trade_exit_notional",
+          "quantity",
+          "entry_notional",
+          "exit_notional",
+          "current_position_notional"
+        ],
+        "path": "governance/abc_lifecycle_state_machine_exact_one_step_continuation_value_mega_v1/exact_two_sided_continuation_ledger.csv"
+      },
+      {
+        "fields": [
+          "quantity"
+        ],
+        "path": "governance/abc_lifecycle_state_machine_two_sided_one_step_execution_surface_v1/two_sided_research_sidecar_v1.py"
+      },
+      {
+        "fields": [
+          "TARGET_SLOT_NOTIONAL_FRACTION",
+          "capacity_notional",
+          "entry_notional",
+          "exit_notional",
+          "max_cash_notional",
+          "modified_exit_notional",
+          "notional",
+          "quantity",
+          "target_notional"
+        ],
+        "path": "src/spotbot/research/abc_exit_primitives_v1.py"
+      },
+      {
+        "fields": [
+          "TARGET_SLOT_NOTIONAL_FRACTION",
+          "capacity_notional",
+          "entry_notional",
+          "exit_notional",
+          "max_cash_notional",
+          "notional",
+          "quantity",
+          "target_notional"
+        ],
+        "path": "src/spotbot/research/rd27_lifecycle_replay.py"
+      }
+    ],
+    "pair": [
+      {
+        "fields": [
+          "pair",
+          "entry_market_state",
+          "exit_market_state"
+        ],
+        "path": "data/research/abc_exit_primitives_2019_2023_v1/control-trades.csv"
+      },
+      {
+        "fields": [
+          "canonical_market_rows_used",
+          "same_pair_is_not_lifecycle_identity_alone"
+        ],
+        "path": "governance/AKAH_BOT_RD27_NATIVE_TERMINAL_SOURCE_AUTHORITY_V1.json"
+      },
+      {
+        "fields": [
+          "selected_pair_set_bound",
+          "symbolic_paths"
+        ],
+        "path": "governance/AKAH_BOT_RECONSTRUCTED_NATIVE_BASELINE_STUDY_CONTRACT_V1.json"
+      },
+      {
+        "fields": [
+          "pair"
+        ],
+        "path": "governance/abc_lifecycle_state_machine_checkpoint_sign_independent_execution_certificate_v1/strict_execution_trades.csv"
+      },
+      {
+        "fields": [
+          "SIGNAL_MARKET",
+          "native_market_state_context"
+        ],
+        "path": "governance/abc_lifecycle_state_machine_continuation_value_dual_head_causal_modeling_table_v1/canonical_result.json"
+      },
+      {
+        "fields": [
+          "pair",
+          "__sig_SIGNAL_MARKET"
+        ],
+        "path": "governance/abc_lifecycle_state_machine_continuation_value_dual_head_causal_modeling_table_v1/dual_head_causal_modeling_table.csv"
+      },
+      {
+        "fields": [
+          "pair"
+        ],
+        "path": "governance/abc_lifecycle_state_machine_continuation_value_exact_target_algebra_temporal_alignment_forensic_v1/clean_target_primitive_ledger.csv"
+      },
+      {
+        "fields": [
+          "pair",
+          "native_market_state_context"
+        ],
+        "path": "governance/abc_lifecycle_state_machine_continuation_value_intervened_branch_mechanism_decomposition_v1/intervened_branch_ledger.csv"
+      },
+      {
+        "fields": [
+          "pair"
+        ],
+        "path": "governance/abc_lifecycle_state_machine_decision_value_derived_authority_binding_audit_human_review_v1/canonical_result.json"
+      },
+      {
+        "fields": [
+          "pair"
+        ],
+        "path": "governance/abc_lifecycle_state_machine_decision_value_derived_authority_binding_audit_v1/canonical_result.json"
+      },
+      {
+        "fields": [
+          "pair"
+        ],
+        "path": "governance/abc_lifecycle_state_machine_decision_value_derived_authority_binding_audit_v1/exact_core_candidate.json"
+      },
+      {
+        "fields": [
+          "pair"
+        ],
+        "path": "governance/abc_lifecycle_state_machine_decision_value_feasibility_certificate_human_review_v1/canonical_result.json"
+      },
+      {
+        "fields": [
+          "symbol"
+        ],
+        "path": "governance/abc_lifecycle_state_machine_decision_value_feasibility_certificate_v1/canonical_result.json"
+      },
+      {
+        "fields": [
+          "full_pair_coverage",
+          "pair",
+          "pair_audits",
+          "required_pair_count"
+        ],
+        "path": "governance/abc_lifecycle_state_machine_exact_one_step_continuation_value_mega_v1/canonical_result.json"
+      },
+      {
+        "fields": [
+          "pair",
+          "native_market_state_context"
+        ],
+        "path": "governance/abc_lifecycle_state_machine_exact_one_step_continuation_value_mega_v1/exact_two_sided_continuation_ledger.csv"
+      },
+      {
+        "fields": [
+          "pair"
+        ],
+        "path": "governance/abc_lifecycle_state_machine_p0_frozen_17_technical_history_sequence_materialization_and_pit_audit_v1/p0_technical_sequence_modeling_table.csv"
+      },
+      {
+        "fields": [
+          "market_state",
+          "market_state_at"
+        ],
+        "path": "governance/abc_lifecycle_state_machine_two_sided_one_step_execution_surface_v1/two_sided_research_sidecar_v1.py"
+      },
+      {
+        "fields": [
+          "build_market_state_frame",
+          "four_hour_by_pair",
+          "hourly_by_pair",
+          "pair",
+          "pairs",
+          "raw_by_pair",
+          "year_pairs"
+        ],
+        "path": "scripts/research/run_abc_exit_primitives_2019_2023_v1.py"
+      },
+      {
+        "fields": [
+          "_pair",
+          "bottom_pair_delta_pnl",
+          "by_pair",
+          "entry_market_state",
+          "exit_market_state",
+          "four_hour_by_pair",
+          "hourly_by_pair",
+          "market",
+          "market_state",
+          "pair",
+          "same_pair_open",
+          "top_pair_delta_pnl"
+        ],
+        "path": "src/spotbot/research/abc_exit_primitives_v1.py"
+      },
+      {
+        "fields": [
+          "MARKET_STATES",
+          "build_market_state_frame",
+          "classify_market_state",
+          "entry_market_state",
+          "market",
+          "market_state",
+          "market_states",
+          "open_position_market_state",
+          "pair",
+          "real_market_data_loader_present"
+        ],
+        "path": "src/spotbot/research/rd27_adaptive_lifecycle.py"
+      },
+      {
+        "fields": [
+          "MISSING_SYMBOL_BINDING",
+          "pair",
+          "symbol",
+          "symbol_bindings"
+        ],
+        "path": "src/spotbot/research/rd27_later_trigger_v2_native_hook.py"
+      },
+      {
+        "fields": [
+          "MARKET_STATES",
+          "entry_market_state",
+          "exit_market_state",
+          "market",
+          "market_state",
+          "observable_symbol_bindings",
+          "pair",
+          "same_pair_open",
+          "symbol",
+          "symbol_bindings"
+        ],
+        "path": "src/spotbot/research/rd27_lifecycle_replay.py"
+      },
+      {
+        "fields": [
+          "market_rows_read"
+        ],
+        "path": "governance/ef_exact_v1/exact_upstream_authority_gap_closure_decision.json"
+      },
+      {
+        "fields": [
+          "symbolic_bindings"
+        ],
+        "path": "governance/reconstructed_native_baseline_current_rd26_events_lifecycle_interprocedural_read_binding_v1/events_primary_producer_binding.json"
+      },
+      {
+        "fields": [
+          "pair"
+        ],
+        "path": "governance/reconstructed_native_baseline_current_rd26_events_lifecycle_interprocedural_read_binding_v1/interprocedural_helper_trace.json"
+      },
+      {
+        "fields": [
+          "market_rows_read"
+        ],
+        "path": "governance/reconstructed_native_baseline_current_rd26_events_lifecycle_interprocedural_read_binding_v1/true_read_preopen_authority_audit.json"
+      },
+      {
+        "fields": [
+          "symbol"
+        ],
+        "path": "governance/reconstructed_native_baseline_current_rd26_logical_input_path_and_config_binding_v1/producer_config_authority_binding.json"
+      },
+      {
+        "fields": [
+          "raw_symbolic_path"
+        ],
+        "path": "governance/reconstructed_native_baseline_current_rd26_logical_input_path_and_config_binding_v1/read_occurrence_normalization.json"
+      },
+      {
+        "fields": [
+          "raw_symbolic_path"
+        ],
+        "path": "governance/reconstructed_native_baseline_current_rd26_logical_input_path_and_config_binding_v1/unique_logical_input_manifest.json"
+      },
+      {
+        "fields": [
+          "pair"
+        ],
+        "path": "governance/reconstructed_native_baseline_current_rd26_logical_input_preopen_authority_v1/native_1h_preopen_metadata_authority.json"
+      },
+      {
+        "fields": [
+          "must_not_read_market_rows_in_authority_phase"
+        ],
+        "path": "governance/reconstructed_native_baseline_current_rd26_logical_input_preopen_authority_v1/pre2023_reconstruction_input_authority_contract.json"
+      },
+      {
+        "fields": [
+          "root_symbol"
+        ],
+        "path": "governance/reconstructed_native_baseline_current_rd26_membership_frames_provenance_v1/caller_argument_reaching_definitions.json"
+      },
+      {
+        "fields": [
+          "pairs"
+        ],
+        "path": "governance/reconstructed_native_baseline_current_rd26_membership_frames_provenance_v1/membership_frames_interprocedural_trace.json"
+      },
+      {
+        "fields": [
+          "market_rows_read",
+          "symbolic_path",
+          "symbolic_path_canonical"
+        ],
+        "path": "governance/reconstructed_native_baseline_current_rd26_membership_frames_provenance_v1/membership_frames_preopen_authority_audit.json"
+      },
+      {
+        "fields": [
+          "symbolic_path",
+          "symbolic_path_canonical"
+        ],
+        "path": "governance/reconstructed_native_baseline_current_rd26_membership_frames_provenance_v1/membership_frames_symbolic_path_binding.json"
+      },
+      {
+        "fields": [
+          "symbolic_path",
+          "symbolic_path_canonical"
+        ],
+        "path": "governance/reconstructed_native_baseline_current_rd26_membership_frames_provenance_v1/membership_frames_true_read_dependencies.json"
+      },
+      {
+        "fields": [
+          "root_symbol",
+          "symbol",
+          "symbolic_path",
+          "symbolic_path_canonical"
+        ],
+        "path": "governance/reconstructed_native_baseline_current_rd26_membership_frames_provenance_v1/pre2023_signal_reconstruction_input_contract.json"
+      },
+      {
+        "fields": [
+          "symbol"
+        ],
+        "path": "governance/reconstructed_native_baseline_current_rd26_membership_frames_provenance_v1/scan_focus_signals_config_authority.json"
+      },
+      {
+        "fields": [
+          "market_rows_read"
+        ],
+        "path": "governance/reconstructed_native_baseline_current_rd26_true_read_dependency_dataflow_v1/true_read_preopen_2022_authority_audit.json"
+      },
+      {
+        "fields": [
+          "same_pair_open",
+          "symbol"
+        ],
+        "path": "governance/reconstructed_native_baseline_events_frames_adapter_source_authority_decision_v1/events_frames_prospective_source_contract.json"
+      },
+      {
+        "fields": [
+          "symbol"
+        ],
+        "path": "governance/reconstructed_native_baseline_events_frames_prospective_source_binding_v1/bound_or_partial_source_contract.json"
+      },
+      {
+        "fields": [
+          "symbol"
+        ],
+        "path": "governance/reconstructed_native_baseline_events_frames_prospective_source_binding_v1/events_frames_prospective_source_binding_decision.json"
+      },
+      {
+        "fields": [
+          "symbol"
+        ],
+        "path": "governance/reconstructed_native_baseline_events_frames_prospective_source_binding_v1/prospective_source_binding_updated_input_contract.json"
+      },
+      {
+        "fields": [
+          "symbol"
+        ],
+        "path": "governance/reconstructed_native_baseline_events_frames_prospective_source_binding_v1/source_composition_human_decision_packet.json"
+      },
+      {
+        "fields": [
+          "symbol"
+        ],
+        "path": "governance/reconstructed_native_baseline_events_frames_source_role_correction_audit_v1/events_frames_role_semantics_decision.json"
+      },
+      {
+        "fields": [
+          "market_rows_read",
+          "pair"
+        ],
+        "path": "governance/reconstructed_native_baseline_membership_semantics_and_1h_footer_diagnosis_v1/native_1h_exact_footer_diagnosis.json"
+      },
+      {
+        "fields": [
+          "market_row_read_authorized"
+        ],
+        "path": "governance/reconstructed_native_baseline_native_1h_upstream_rematerialization_authority_v1/pre2023_native_1h_rematerialization_contract.json"
+      }
+    ],
+    "pit": [
+      {
+        "fields": [
+          "information_time_contract",
+          "membership_static_pit_authority_ready",
+          "rd26_signal_portfolio_and_1h_manifest_pit_binding_decision"
+        ],
+        "path": "governance/AKAH_BOT_RECONSTRUCTED_NATIVE_BASELINE_STUDY_CONTRACT_V1.json"
+      },
+      {
+        "fields": [
+          "pit_requirement"
+        ],
+        "path": "governance/abc_lifecycle_state_machine_decision_value_derived_authority_binding_audit_v1/canonical_result.json"
+      },
+      {
+        "fields": [
+          "capital_admission_decision"
+        ],
+        "path": "src/spotbot/research/abc_exit_primitives_v1.py"
+      },
+      {
+        "fields": [
+          "_async_observation_time",
+          "capital",
+          "capital_admission_decision",
+          "capital_router",
+          "last_memory_observation_time",
+          "last_trigger_observation_time"
+        ],
+        "path": "src/spotbot/research/rd27_adaptive_lifecycle.py"
+      },
+      {
+        "fields": [
+          "ADAPTIVE_EXIT_FIXED_CAPITAL",
+          "CONTROL_TIME_FAIL_72_FIXED_CAPITAL",
+          "capital",
+          "capital_admission_decision"
+        ],
+        "path": "src/spotbot/research/rd27_lifecycle_replay.py"
+      },
+      {
+        "fields": [
+          "complete_source_pit_certified",
+          "pit_contract"
+        ],
+        "path": "governance/ef_exact_v1/corrected_events_frames_source_contract.json"
+      },
+      {
+        "fields": [
+          "pit_authority_status",
+          "pit_supporting_governance",
+          "pit_terms"
+        ],
+        "path": "governance/ef_exact_v1/corrected_input_contract.json"
+      },
+      {
+        "fields": [
+          "complete_source_pit_certified",
+          "pit_contract"
+        ],
+        "path": "governance/ef_exact_v1/events_exact_upstream_authority.json"
+      },
+      {
+        "fields": [
+          "pit"
+        ],
+        "path": "governance/reconstructed_native_baseline_current_rd26_logical_input_preopen_authority_v1/logical_input_source_provenance.json"
+      },
+      {
+        "fields": [
+          "pit"
+        ],
+        "path": "governance/reconstructed_native_baseline_current_rd26_logical_input_preopen_authority_v1/membership_preopen_semantic_authority.json"
+      },
+      {
+        "fields": [
+          "pit"
+        ],
+        "path": "governance/reconstructed_native_baseline_current_rd26_logical_input_preopen_authority_v1/pre2023_reconstruction_input_authority_contract.json"
+      },
+      {
+        "fields": [
+          "pit"
+        ],
+        "path": "governance/reconstructed_native_baseline_current_rd26_logical_input_preopen_authority_v1/validation_only_artifact_authority.json"
+      },
+      {
+        "fields": [
+          "pit_language"
+        ],
+        "path": "governance/reconstructed_native_baseline_current_rd26_membership_frames_provenance_v1/membership_frames_preopen_authority_audit.json"
+      },
+      {
+        "fields": [
+          "pit_language"
+        ],
+        "path": "governance/reconstructed_native_baseline_current_rd26_membership_frames_provenance_v1/membership_frames_true_read_dependencies.json"
+      },
+      {
+        "fields": [
+          "pit_language"
+        ],
+        "path": "governance/reconstructed_native_baseline_current_rd26_membership_frames_provenance_v1/pre2023_signal_reconstruction_input_contract.json"
+      },
+      {
+        "fields": [
+          "pit_markers"
+        ],
+        "path": "governance/reconstructed_native_baseline_events_frames_adapter_source_authority_decision_v1/events_frames_prospective_source_contract.json"
+      },
+      {
+        "fields": [
+          "pit_authority_status",
+          "pit_supporting_governance",
+          "pit_terms"
+        ],
+        "path": "governance/reconstructed_native_baseline_events_frames_adapter_source_authority_decision_v1/events_frames_source_updated_input_contract.json"
+      },
+      {
+        "fields": [
+          "pit_markers"
+        ],
+        "path": "governance/reconstructed_native_baseline_events_frames_prospective_source_binding_v1/bound_or_partial_source_contract.json"
+      },
+      {
+        "fields": [
+          "pit_markers"
+        ],
+        "path": "governance/reconstructed_native_baseline_events_frames_prospective_source_binding_v1/events_frames_prospective_source_binding_decision.json"
+      },
+      {
+        "fields": [
+          "pit_authority_status",
+          "pit_markers",
+          "pit_supporting_governance",
+          "pit_terms"
+        ],
+        "path": "governance/reconstructed_native_baseline_events_frames_prospective_source_binding_v1/prospective_source_binding_updated_input_contract.json"
+      },
+      {
+        "fields": [
+          "pit_markers"
+        ],
+        "path": "governance/reconstructed_native_baseline_events_frames_prospective_source_binding_v1/source_composition_human_decision_packet.json"
+      },
+      {
+        "fields": [
+          "pit_authority_status",
+          "pit_supporting_governance",
+          "pit_terms"
+        ],
+        "path": "governance/reconstructed_native_baseline_events_frames_source_role_correction_audit_v1/corrected_input_contract.json"
+      },
+      {
+        "fields": [
+          "governance_pit_authority_ready",
+          "pit"
+        ],
+        "path": "governance/reconstructed_native_baseline_membership_semantics_and_1h_footer_diagnosis_v1/membership_static_pit_semantic_authority.json"
+      }
+    ],
+    "target_value": [
+      {
+        "fields": [
+          "continuation_advantage",
+          "continuation_advantage_cost2x",
+          "__immediate_bridge_advantage",
+          "__immediate_bridge_advantage_cost2x"
+        ],
+        "path": "governance/abc_lifecycle_state_machine_continuation_value_dual_head_causal_modeling_table_v1/dual_head_causal_modeling_table.csv"
+      },
+      {
+        "fields": [
+          "__p1_immediate_bridge_advantage"
+        ],
+        "path": "governance/abc_lifecycle_state_machine_continuation_value_exact_target_algebra_temporal_alignment_forensic_v1/clean_target_primitive_ledger.csv"
+      },
+      {
+        "fields": [
+          "continuation_advantage",
+          "continuation_advantage_cost2x"
+        ],
+        "path": "governance/abc_lifecycle_state_machine_continuation_value_intervened_branch_mechanism_decomposition_v1/intervened_branch_ledger.csv"
+      },
+      {
+        "fields": [
+          "continuation_advantage",
+          "continuation_advantage_cost2x"
+        ],
+        "path": "governance/abc_lifecycle_state_machine_exact_one_step_continuation_value_mega_v1/exact_two_sided_continuation_ledger.csv"
+      }
+    ]
+  },
+  "required_roles": [
+    "identity",
+    "decision_time",
+    "baseline_action",
+    "notional",
+    "exit_cash",
+    "hold_cash",
+    "cost",
+    "target_value",
+    "pit"
+  ],
+  "schema_version": "akah-decision-ledger-role-coverage-v1"
+}

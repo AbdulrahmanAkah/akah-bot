@@ -1,0 +1,153 @@
+{
+  "schema_version": "abc-lifecycle-persistent-state-observability-protocol-v1",
+  "protocol_id": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_OBSERVABILITY_PROTOCOL_V1",
+  "status": "FROZEN_BEFORE_SOURCE_CAPABILITY_AUDIT",
+  "research_stage": "LIFECYCLE_STATE_MACHINE_PERSISTENCE_OBSERVABILITY",
+  "observability_catalog_sha256": "12DF152B4191916DFD9F7E5EABE5F6AB62AE3DDA8A8D58237F4E1C69EA73BF29",
+  "source_capability_requirements_sha256": "BEDE872AD3C4C047CCB79985D9D15CA0550230985FD3103D130E7D849BFE422D",
+  "source_bindings": [
+    {
+      "path": "governance/AKAH_EXIT_BRAIN_RESEARCH_DOCTRINE_CURRENT.json",
+      "sha256": "B3F0F632446C7BCEE4B4BEC27CACDECD9EF6562B568872153186E69B1E00B8D9"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_evidence_sequence_protocol_v1/protocol.json",
+      "sha256": "062CB9F6F9AC58441CE5E0188C643F52BBBF40815F1F0B5538F07E4FAFC47729"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_evidence_sequence_protocol_v1/sequence_event_catalog.json",
+      "sha256": "006D100C86F1466702B8107B747AAE915CD23D500C812FF4FBBA96A6FEEDAD47"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_evidence_sequence_observational_materialization_v1/canonical_result.json",
+      "sha256": "D70DDE12C8234C2F26E8E94903C6D0B242215DFE6CE9CD50AED7584DFAAD89AD"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_evidence_sequence_observational_materialization_v1/output_manifest.json",
+      "sha256": "E7B53A721F50CEDE20B08A5A74557A37EBFBC04EC01E0B08D005C2D33A45EDD8"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_evidence_sequence_observational_materialization_v1/lifecycle_sequence_ledger.csv",
+      "sha256": "B235DA84F3512808766517E1571634D3EA9CF546180F0A48943BA85260775CAB"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_evidence_sequence_mandatory_review_v1/canonical_result.json",
+      "sha256": "D4E50253A5124F5DAD79BC2C4F40098D2A9CD3CD3AA02EFA39C83D6FB03E8867"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_evidence_sequence_mandatory_review_v1/mandatory_review.json",
+      "sha256": "15745E2CEDB2572FFA8696AC0446E0B66292F3AD641895B049F917FBB74D8FEE"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_evidence_state_predicate_observational_materialization_v1/materialized_decision_grid.csv",
+      "sha256": "D4BFD3F6CD16EAAE65479DB25CB3757AFEDC77E6E5D3D138B4FA51A009016472"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_evidence_state_predicate_observational_materialization_v1/canonical_result.json",
+      "sha256": "636EAB1819744573CC1C54621AF147100FEFB002983EE0F48406EEF272B5AC6D"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_observational_trace_v1/decision_grid_trace.csv",
+      "sha256": "FCD1F134B0140724D9FBDE5955B4031D8BC79934935916100ABEA040C7CF65F1"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_observational_trace_v1/canonical_result.json",
+      "sha256": "48FE5760D7975FF6EA652CCEE62905CF456A2532B8EBE7F37305A21A1720DF45"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_observational_trace_v1/output_manifest.json",
+      "sha256": "C860AF80280CD7FA0594B39180BFE08B938AEC7BCCE8B833599311829BA4ECDE"
+    }
+  ],
+  "population": {
+    "frozen_control_lifecycles": 2020,
+    "frozen_decision_rows": 14059,
+    "years": [
+      2019,
+      2020,
+      2021,
+      2022,
+      2023
+    ],
+    "2024_access": false,
+    "2025_access": false,
+    "lifecycle_identity_runtime_role": "NONE"
+  },
+  "causal_alignment": {
+    "observation_time": "EXISTING_COMPLETED_4H_DECISION_TIME",
+    "current_row_information_cutoff": "CURRENT_COMPLETED_4H_BAR_CLOSE_ONLY",
+    "previous_row_lag": "IMMEDIATE_PRIOR_EXISTING_DECISION_ROW_WITHIN_SAME_LIFECYCLE",
+    "future_rows_for_current_observation": false,
+    "future_outcomes": false,
+    "interpolation": false,
+    "backfill_from_future": false
+  },
+  "counter_semantics": {
+    "cumulative_counters_use_only_current_and_prior_rows": true,
+    "run_length_resets_are_row_local_and_causal": true,
+    "run_length_cutoff": null,
+    "persistence_horizon": null,
+    "minimum_duration": null,
+    "maximum_duration": null,
+    "gap_statistic_threshold": null,
+    "sequence_frequency_threshold": null
+  },
+  "continuous_margin_semantics": {
+    "boundary_margins_preserve_sign": true,
+    "no_binning": true,
+    "no_clipping": true,
+    "no_quantile_thresholds": true,
+    "no_outcome_based_scaling": true,
+    "atr_normalization_required": false,
+    "raw_margin_values_required": true
+  },
+  "interpretation_limits": {
+    "observable_is_not_state": true,
+    "run_length_is_not_persistence_definition": true,
+    "recovery_event_is_not_recovery_state": true,
+    "negative_margin_is_not_exit_action": true,
+    "absence_of_damage_is_not_healthy_trend": true,
+    "sequence_signature_is_not_runtime_class": true,
+    "market_context_is_not_state_definition": true
+  },
+  "mandatory_source_capability_gate": {
+    "task_id": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_OBSERVABILITY_SOURCE_CAPABILITY_AUDIT_V1",
+    "must_complete_before_materialization": true,
+    "market_data_rows_accessed": false,
+    "source_code_inspection_allowed": true,
+    "csv_header_inspection_allowed": true,
+    "json_metadata_inspection_allowed": true,
+    "full_market_data_read_allowed": false,
+    "pnl_or_economic_outcome_read_allowed": false
+  },
+  "forbidden_actions": [
+    "NO_PERSISTENT_STATE_DEFINITION",
+    "NO_PERSISTENCE_HORIZON_SELECTION",
+    "NO_RUN_LENGTH_CUTOFF_SELECTION",
+    "NO_STATE_DURATION_RULE",
+    "NO_SEQUENCE_FREQUENCY_RULE",
+    "NO_GAP_STATISTIC_RULE",
+    "NO_OUTCOME_TUNING",
+    "NO_THRESHOLD_SEARCH",
+    "NO_SEQUENCE_RANKING",
+    "NO_RUNTIME_STATE_TRANSITION",
+    "NO_STATE_TO_EXIT_MAPPING",
+    "NO_ADAPTIVE_LOGIC",
+    "NO_EXIT_ARBITER",
+    "NO_CANDIDATE_REPLAY",
+    "NO_PORTFOLIO_REPLAY",
+    "NO_MARKET_DATA_ACCESS_IN_THIS_FREEZE",
+    "NO_PNL_READ",
+    "NO_2024_ACCESS",
+    "NO_2025_ACCESS",
+    "NO_PRODUCTION_CHANGE"
+  ],
+  "post_capability_audit_materialization_requirements": {
+    "materialization_must_cover_all_existing_14059_decision_rows": true,
+    "zero_decision_lifecycles_remain_in_population_summary": true,
+    "zero_duration_lifecycles_remain_in_population_summary": true,
+    "missing_observable_must_be_explicit_not_imputed": true,
+    "state_labels_must_not_be_materialized": true,
+    "persistent_state_assignments_must_not_be_materialized": true
+  }
+}

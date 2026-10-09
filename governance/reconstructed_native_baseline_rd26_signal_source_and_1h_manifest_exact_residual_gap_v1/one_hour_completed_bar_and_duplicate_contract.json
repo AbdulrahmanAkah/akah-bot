@@ -1,0 +1,30 @@
+{
+  "authority_id": "AKAH_BOT_RD27_ONE_HOUR_COMPLETED_BAR_AND_DUPLICATE_CONTRACT_V1",
+  "status": "TIMESTAMP_SEMANTIC_AND_COMPLETION_AUTHORITY_UNRESOLVED",
+  "source": {
+    "normalizer": "src/spotbot/research/rd26_exit_architecture.py:121-141",
+    "feature_builder": "src/spotbot/research/rd26_exit_architecture.py:144-184",
+    "loader": "scripts/research/run_rd27_lifecycle_ablation.py:242-265",
+    "source_sha256": "1290748EA7E8A0343C1A15CEDFC1220AA423F04C11FDD558311B06AC7DA90359"
+  },
+  "bound_code_behavior": {
+    "timestamp_column": "timestamp",
+    "timezone_normalization": "pd.to_datetime(..., utc=True, errors='raise')",
+    "sort": "stable ascending timestamp",
+    "duplicate_policy": "drop_duplicates('timestamp', keep='last')",
+    "cutoff": "timestamp < DATA_CUTOFF; rows at or beyond cutoff are rejected",
+    "parquet_filter": "timestamp < 2024-01-01T00:00:00Z"
+  },
+  "not_bound_by_source": {
+    "timestamp_semantic": "source does not declare bar-open versus bar-close meaning",
+    "information_available_time": "no explicit completed-bar field or availability timestamp",
+    "hourly_continuity_validation": "not performed by normalize_bars",
+    "duplicate_conflict_policy": "keep-last is deterministic but does not fail closed on conflicting duplicate values"
+  },
+  "required_terminal_law": {
+    "eligible_bar": "a row may affect a decision only at or after its independently authorized information-available/completed-bar timestamp",
+    "no_within_bar_order": true,
+    "precondition": "timestamp semantics and completed-bar availability must be bound for the selected files before replay",
+    "conflicting_duplicate": "must be detected and adjudicated before accepting the manifest; silent keep-last is insufficient as an authority contract"
+  }
+}

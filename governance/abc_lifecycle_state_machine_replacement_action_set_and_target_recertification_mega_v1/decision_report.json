@@ -1,0 +1,66 @@
+{
+  "2024_access": false,
+  "baseline_parity": "PASS_TWO_INDEPENDENT_BASELINE_PATHS",
+  "interpretation_rule": {
+    "if_clear_return_gain_without_risk_deterioration": "slot architecture becomes primary bottleneck candidate before replacement learning",
+    "if_no_return_gain": "selective replacement remains economically relevant but current target must be replaced by a single-switch policy-consistent target",
+    "if_return_gain_with_risk_deterioration": "not success; added exposure only"
+  },
+  "ledger": {
+    "candidate_events": 289108,
+    "candidate_events_with_slates": 84931,
+    "decomposition_max_abs_error": 2.7755575615628914e-17,
+    "oot_pair_rows": 1697985,
+    "pair_rows_all_years": 1700665,
+    "unique_candidate_event_ids": 289108,
+    "unique_decision_timestamps": 11619,
+    "unique_incumbent_lifecycle_ids_oot": 3258,
+    "unique_incumbent_lifecycles": 3258
+  },
+  "no_model_refit": true,
+  "no_position_count_search": true,
+  "production_changed": false,
+  "project_north_star": "AKAH is not optimized for marginal F10 improvements and REV749 11.23x is not treated as the project ceiling. The research goal is to remove structural bottlenecks that prevent causal capture of large market trends and disciplined exits, so the bot can enter strong opportunities and exit when the thesis weakens without human emotional hesitation.",
+  "rev759_saved_model_reproduction": "PASS",
+  "schema_version": "akah-recert-decision-v1",
+  "slot_ablation": {
+    "control_mdd": -0.26758260156638225,
+    "control_wealth": 2.1755985217179195,
+    "control_worst_year": -0.11771935704255765,
+    "diagnostic_mdd": -0.40857063020704987,
+    "diagnostic_wealth": 1.782156496686961,
+    "diagnostic_worst_year": -0.20123036456824417,
+    "mdd_delta": -0.14098802864066762,
+    "risk_report": {
+      "control": {
+        "mdd": -0.26758260156638225,
+        "wealth": 2.1755985217179195,
+        "worst_year": -0.11771935704255765
+      },
+      "deltas": {
+        "mdd": -0.14098802864066762,
+        "wealth": -0.3934420250309585,
+        "worst_year": -0.08351100752568652
+      },
+      "diagnostic": {
+        "mdd": -0.40857063020704987,
+        "wealth": 1.782156496686961,
+        "worst_year": -0.20123036456824417
+      },
+      "existing_gates": {
+        "mdd20": false,
+        "worst_year_ge_minus_10pct": false
+      },
+      "promotion_authorized": false,
+      "schema_version": "akah-slot-ablation-risk-report-v1",
+      "structural_diagnostic": {
+        "mdd_not_worse_than_control": false,
+        "strict_dual_improvement_vs_control": false,
+        "wealth_improved": false,
+        "worst_year_not_worse_than_control": false
+      }
+    },
+    "wealth_delta": -0.3934420250309585
+  },
+  "status": "PASS_DIAGNOSTIC_COMPLETE"
+}

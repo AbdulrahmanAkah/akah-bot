@@ -1,0 +1,25 @@
+{
+  "allowed_inputs_if_later_authorized": [
+    "tracked_pre2024_execution_cache",
+    "canonical_control_lifecycles",
+    "canonical_pi0_logic",
+    "canonical_cost_semantics"
+  ],
+  "forbidden": [
+    "raw_reopening_without_separate_authorization",
+    "2024",
+    "2025",
+    "feature_search",
+    "threshold_search"
+  ],
+  "missing_fields": [
+    "current_notional",
+    "hold_cost",
+    "pi0_action"
+  ],
+  "next_action": "HUMAN_REVIEW_BEFORE_ANY_REPLAY",
+  "required_scope": "ONLY_THE_NAMED_MISSING_FIELDS_AT_LEGAL_4H_CHECKPOINTS_FOR_FROZEN_2019_2023_LIFECYCLES",
+  "route_disposition": "BOUNDED_REPLAY_REQUIRED_FOR_EXPLICIT_FIELDS",
+  "schema_version": "akah-bounded-replay-requirement-v1",
+  "status": "REPLAY_NOT_EXECUTED"
+}

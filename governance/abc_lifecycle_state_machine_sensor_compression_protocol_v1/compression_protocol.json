@@ -1,0 +1,36 @@
+{
+  "2024_access": false,
+  "eligibility_source": "PRIOR_REVIEWED_BOTH_POSITIVE_LOYO_AND_FORWARD_FAMILY_EVIDENCE",
+  "eligible_families": [
+    "MACD",
+    "BOLLINGER_VOLATILITY",
+    "TREND_EMA"
+  ],
+  "eligible_sensor_count": 20,
+  "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_SENSOR_COMPRESSION_MATERIALIZATION_V1",
+  "pnl_read": false,
+  "prior_family_evidence": {
+    "BOLLINGER_VOLATILITY": {
+      "config": "BASELINE44_PLUS_BOLLINGER_VOLATILITY",
+      "forward_delta": 0.0195202032401271,
+      "loyo_delta": 0.0141610457965786
+    },
+    "MACD": {
+      "config": "BASELINE44_PLUS_MACD",
+      "forward_delta": 0.0172998456362251,
+      "loyo_delta": 0.0163435742574759
+    },
+    "TREND_EMA": {
+      "config": "BASELINE44_PLUS_TREND_EMA",
+      "forward_delta": 0.0061308289924912,
+      "loyo_delta": 0.0078860672649654
+    }
+  },
+  "redundancy_metric": "ABS_SPEARMAN_SENSOR_TO_SENSOR",
+  "redundancy_threshold": 0.95,
+  "representative_rule": "MAX_NONMISSING_COVERAGE_THEN_LEXICOGRAPHIC",
+  "schema_version": "abc-sensor-compression-protocol-v1",
+  "status": "FROZEN",
+  "target_read": false,
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_SENSOR_COMPRESSION_PROTOCOL_FREEZE_V1"
+}

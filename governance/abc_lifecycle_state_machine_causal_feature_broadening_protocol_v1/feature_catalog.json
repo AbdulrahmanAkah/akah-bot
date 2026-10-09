@@ -1,0 +1,354 @@
+[
+  {
+    "causal_cutoff": "ALL_SOURCE_TIMESTAMPS_STRICTLY_BEFORE_DECISION_TIME",
+    "definition": "Current causal close return versus entry-hour open proxy.",
+    "economic_outcome_dependency": false,
+    "family": "PROGRESS_GIVEBACK_PATH",
+    "feature": "current_return_from_entry",
+    "threshold_selected": false
+  },
+  {
+    "causal_cutoff": "ALL_SOURCE_TIMESTAMPS_STRICTLY_BEFORE_DECISION_TIME",
+    "definition": "Maximum favorable excursion observed strictly before decision.",
+    "economic_outcome_dependency": false,
+    "family": "PROGRESS_GIVEBACK_PATH",
+    "feature": "mfe_return_so_far",
+    "threshold_selected": false
+  },
+  {
+    "causal_cutoff": "ALL_SOURCE_TIMESTAMPS_STRICTLY_BEFORE_DECISION_TIME",
+    "definition": "Maximum adverse excursion observed strictly before decision.",
+    "economic_outcome_dependency": false,
+    "family": "PROGRESS_GIVEBACK_PATH",
+    "feature": "mae_return_so_far",
+    "threshold_selected": false
+  },
+  {
+    "causal_cutoff": "ALL_SOURCE_TIMESTAMPS_STRICTLY_BEFORE_DECISION_TIME",
+    "definition": "Fractional drawdown from path high-water price to current close.",
+    "economic_outcome_dependency": false,
+    "family": "PROGRESS_GIVEBACK_PATH",
+    "feature": "giveback_from_peak_pct",
+    "threshold_selected": false
+  },
+  {
+    "causal_cutoff": "ALL_SOURCE_TIMESTAMPS_STRICTLY_BEFORE_DECISION_TIME",
+    "definition": "Amount surrendered from high-water divided by favorable excursion amount.",
+    "economic_outcome_dependency": false,
+    "family": "PROGRESS_GIVEBACK_PATH",
+    "feature": "giveback_fraction_of_mfe",
+    "threshold_selected": false
+  },
+  {
+    "causal_cutoff": "ALL_SOURCE_TIMESTAMPS_STRICTLY_BEFORE_DECISION_TIME",
+    "definition": "Current favorable progress divided by maximum favorable progress.",
+    "economic_outcome_dependency": false,
+    "family": "PROGRESS_GIVEBACK_PATH",
+    "feature": "retained_mfe_fraction",
+    "threshold_selected": false
+  },
+  {
+    "causal_cutoff": "ALL_SOURCE_TIMESTAMPS_STRICTLY_BEFORE_DECISION_TIME",
+    "definition": "Hours since the hourly bar that established current high-water.",
+    "economic_outcome_dependency": false,
+    "family": "PROGRESS_GIVEBACK_PATH",
+    "feature": "high_water_age_hours",
+    "threshold_selected": false
+  },
+  {
+    "causal_cutoff": "ALL_SOURCE_TIMESTAMPS_STRICTLY_BEFORE_DECISION_TIME",
+    "definition": "Absolute net move divided by cumulative hourly close travel.",
+    "economic_outcome_dependency": false,
+    "family": "PROGRESS_GIVEBACK_PATH",
+    "feature": "path_efficiency_abs",
+    "threshold_selected": false
+  },
+  {
+    "causal_cutoff": "ALL_SOURCE_TIMESTAMPS_STRICTLY_BEFORE_DECISION_TIME",
+    "definition": "Signed net move divided by cumulative hourly close travel.",
+    "economic_outcome_dependency": false,
+    "family": "PROGRESS_GIVEBACK_PATH",
+    "feature": "path_efficiency_signed",
+    "threshold_selected": false
+  },
+  {
+    "causal_cutoff": "ALL_SOURCE_TIMESTAMPS_STRICTLY_BEFORE_DECISION_TIME",
+    "definition": "Current close location between lifecycle trough and peak.",
+    "economic_outcome_dependency": false,
+    "family": "PROGRESS_GIVEBACK_PATH",
+    "feature": "path_position_0_1",
+    "threshold_selected": false
+  },
+  {
+    "causal_cutoff": "ALL_SOURCE_TIMESTAMPS_STRICTLY_BEFORE_DECISION_TIME",
+    "definition": "Trailing causal 24-hour true-range mean divided by current price.",
+    "economic_outcome_dependency": false,
+    "family": "DAMAGE_MAGNITUDE_VELOCITY_STRUCTURE",
+    "feature": "atr24h_price_fraction",
+    "threshold_selected": false
+  },
+  {
+    "causal_cutoff": "ALL_SOURCE_TIMESTAMPS_STRICTLY_BEFORE_DECISION_TIME",
+    "definition": "High-water drawdown normalized by trailing 24-hour true-range mean.",
+    "economic_outcome_dependency": false,
+    "family": "DAMAGE_MAGNITUDE_VELOCITY_STRUCTURE",
+    "feature": "drawdown_from_peak_atr24h",
+    "threshold_selected": false
+  },
+  {
+    "causal_cutoff": "ALL_SOURCE_TIMESTAMPS_STRICTLY_BEFORE_DECISION_TIME",
+    "definition": "Current distance from entry normalized by trailing 24-hour true-range mean.",
+    "economic_outcome_dependency": false,
+    "family": "DAMAGE_MAGNITUDE_VELOCITY_STRUCTURE",
+    "feature": "distance_from_entry_atr24h",
+    "threshold_selected": false
+  },
+  {
+    "causal_cutoff": "ALL_SOURCE_TIMESTAMPS_STRICTLY_BEFORE_DECISION_TIME",
+    "definition": "Causal current return versus close available before decision minus four hours.",
+    "economic_outcome_dependency": false,
+    "family": "DAMAGE_MAGNITUDE_VELOCITY_STRUCTURE",
+    "feature": "return_4h",
+    "threshold_selected": false
+  },
+  {
+    "causal_cutoff": "ALL_SOURCE_TIMESTAMPS_STRICTLY_BEFORE_DECISION_TIME",
+    "definition": "Causal current return versus close available before decision minus eight hours.",
+    "economic_outcome_dependency": false,
+    "family": "DAMAGE_MAGNITUDE_VELOCITY_STRUCTURE",
+    "feature": "return_8h",
+    "threshold_selected": false
+  },
+  {
+    "causal_cutoff": "ALL_SOURCE_TIMESTAMPS_STRICTLY_BEFORE_DECISION_TIME",
+    "definition": "Causal current return versus close available before decision minus twelve hours.",
+    "economic_outcome_dependency": false,
+    "family": "DAMAGE_MAGNITUDE_VELOCITY_STRUCTURE",
+    "feature": "return_12h",
+    "threshold_selected": false
+  },
+  {
+    "causal_cutoff": "ALL_SOURCE_TIMESTAMPS_STRICTLY_BEFORE_DECISION_TIME",
+    "definition": "Most recent causal four-hour return minus preceding four-hour return.",
+    "economic_outcome_dependency": false,
+    "family": "DAMAGE_MAGNITUDE_VELOCITY_STRUCTURE",
+    "feature": "return_acceleration_8h",
+    "threshold_selected": false
+  },
+  {
+    "causal_cutoff": "ALL_SOURCE_TIMESTAMPS_STRICTLY_BEFORE_DECISION_TIME",
+    "definition": "High-low range of last four completed hourly bars divided by price.",
+    "economic_outcome_dependency": false,
+    "family": "DAMAGE_MAGNITUDE_VELOCITY_STRUCTURE",
+    "feature": "range_last4h_price_fraction",
+    "threshold_selected": false
+  },
+  {
+    "causal_cutoff": "ALL_SOURCE_TIMESTAMPS_STRICTLY_BEFORE_DECISION_TIME",
+    "definition": "Last-four-hour range versus mean of up to five preceding non-overlapping four-hour ranges.",
+    "economic_outcome_dependency": false,
+    "family": "DAMAGE_MAGNITUDE_VELOCITY_STRUCTURE",
+    "feature": "range_last4h_vs_prior20h",
+    "threshold_selected": false
+  },
+  {
+    "causal_cutoff": "ALL_SOURCE_TIMESTAMPS_STRICTLY_BEFORE_DECISION_TIME",
+    "definition": "Current close location inside last-four-hour high-low range.",
+    "economic_outcome_dependency": false,
+    "family": "DAMAGE_MAGNITUDE_VELOCITY_STRUCTURE",
+    "feature": "close_location_last4h",
+    "threshold_selected": false
+  },
+  {
+    "causal_cutoff": "ALL_SOURCE_TIMESTAMPS_STRICTLY_BEFORE_DECISION_TIME",
+    "definition": "Std dev of causal hourly close returns over trailing 24 hours.",
+    "economic_outcome_dependency": false,
+    "family": "VOLATILITY_VOLUME_REGIME",
+    "feature": "realized_vol_24h",
+    "threshold_selected": false
+  },
+  {
+    "causal_cutoff": "ALL_SOURCE_TIMESTAMPS_STRICTLY_BEFORE_DECISION_TIME",
+    "definition": "Std dev of causal hourly close returns over trailing 72 hours.",
+    "economic_outcome_dependency": false,
+    "family": "VOLATILITY_VOLUME_REGIME",
+    "feature": "realized_vol_72h",
+    "threshold_selected": false
+  },
+  {
+    "causal_cutoff": "ALL_SOURCE_TIMESTAMPS_STRICTLY_BEFORE_DECISION_TIME",
+    "definition": "Short-term realized volatility divided by 72-hour realized volatility.",
+    "economic_outcome_dependency": false,
+    "family": "VOLATILITY_VOLUME_REGIME",
+    "feature": "vol_ratio_24h_72h",
+    "threshold_selected": false
+  },
+  {
+    "causal_cutoff": "ALL_SOURCE_TIMESTAMPS_STRICTLY_BEFORE_DECISION_TIME",
+    "definition": "Count of lower block highs across the last three four-hour blocks.",
+    "economic_outcome_dependency": false,
+    "family": "DAMAGE_MAGNITUDE_VELOCITY_STRUCTURE",
+    "feature": "lower_high_count_last3x4h",
+    "threshold_selected": false
+  },
+  {
+    "causal_cutoff": "ALL_SOURCE_TIMESTAMPS_STRICTLY_BEFORE_DECISION_TIME",
+    "definition": "Count of lower block lows across the last three four-hour blocks.",
+    "economic_outcome_dependency": false,
+    "family": "DAMAGE_MAGNITUDE_VELOCITY_STRUCTURE",
+    "feature": "lower_low_count_last3x4h",
+    "threshold_selected": false
+  },
+  {
+    "causal_cutoff": "ALL_SOURCE_TIMESTAMPS_STRICTLY_BEFORE_DECISION_TIME",
+    "definition": "Last-four-hour volume versus equivalent four-hour volume from prior 20-hour mean; NaN when unavailable.",
+    "economic_outcome_dependency": false,
+    "family": "VOLATILITY_VOLUME_REGIME",
+    "feature": "volume_last4h_vs_prior20h",
+    "threshold_selected": false
+  },
+  {
+    "causal_cutoff": "ALL_SOURCE_TIMESTAMPS_STRICTLY_BEFORE_DECISION_TIME",
+    "definition": "Hours from lifecycle entry to decision.",
+    "economic_outcome_dependency": false,
+    "family": "LIFECYCLE_EVENT_MEMORY",
+    "feature": "hours_since_entry",
+    "threshold_selected": false
+  },
+  {
+    "causal_cutoff": "ALL_SOURCE_TIMESTAMPS_STRICTLY_BEFORE_DECISION_TIME",
+    "definition": "One-based eligible decision index within lifecycle.",
+    "economic_outcome_dependency": false,
+    "family": "LIFECYCLE_EVENT_MEMORY",
+    "feature": "decision_index_in_lifecycle",
+    "threshold_selected": false
+  },
+  {
+    "causal_cutoff": "ALL_SOURCE_TIMESTAMPS_STRICTLY_BEFORE_DECISION_TIME",
+    "definition": "Hours since first EARLY_PROGRESS or CONFIRMED observation.",
+    "economic_outcome_dependency": false,
+    "family": "LIFECYCLE_EVENT_MEMORY",
+    "feature": "hours_since_first_progress",
+    "threshold_selected": false
+  },
+  {
+    "causal_cutoff": "ALL_SOURCE_TIMESTAMPS_STRICTLY_BEFORE_DECISION_TIME",
+    "definition": "Eligible decisions elapsed since first progress observation.",
+    "economic_outcome_dependency": false,
+    "family": "LIFECYCLE_EVENT_MEMORY",
+    "feature": "decisions_since_first_progress",
+    "threshold_selected": false
+  },
+  {
+    "causal_cutoff": "ALL_SOURCE_TIMESTAMPS_STRICTLY_BEFORE_DECISION_TIME",
+    "definition": "Hours since first CONFIRMED observation.",
+    "economic_outcome_dependency": false,
+    "family": "LIFECYCLE_EVENT_MEMORY",
+    "feature": "hours_since_confirmation",
+    "threshold_selected": false
+  },
+  {
+    "causal_cutoff": "ALL_SOURCE_TIMESTAMPS_STRICTLY_BEFORE_DECISION_TIME",
+    "definition": "Eligible decisions elapsed since first CONFIRMED observation.",
+    "economic_outcome_dependency": false,
+    "family": "LIFECYCLE_EVENT_MEMORY",
+    "feature": "decisions_since_confirmation",
+    "threshold_selected": false
+  },
+  {
+    "causal_cutoff": "ALL_SOURCE_TIMESTAMPS_STRICTLY_BEFORE_DECISION_TIME",
+    "definition": "Current consecutive STRUCTURAL_BREAK-active decision run length.",
+    "economic_outcome_dependency": false,
+    "family": "LIFECYCLE_EVENT_MEMORY",
+    "feature": "a_current_run_decisions",
+    "threshold_selected": false
+  },
+  {
+    "causal_cutoff": "ALL_SOURCE_TIMESTAMPS_STRICTLY_BEFORE_DECISION_TIME",
+    "definition": "Current consecutive VOLATILITY_DAMAGE-active decision run length.",
+    "economic_outcome_dependency": false,
+    "family": "LIFECYCLE_EVENT_MEMORY",
+    "feature": "b_current_run_decisions",
+    "threshold_selected": false
+  },
+  {
+    "causal_cutoff": "ALL_SOURCE_TIMESTAMPS_STRICTLY_BEFORE_DECISION_TIME",
+    "definition": "Current consecutive STALLED-active decision run length.",
+    "economic_outcome_dependency": false,
+    "family": "LIFECYCLE_EVENT_MEMORY",
+    "feature": "stalled_current_run_decisions",
+    "threshold_selected": false
+  },
+  {
+    "causal_cutoff": "ALL_SOURCE_TIMESTAMPS_STRICTLY_BEFORE_DECISION_TIME",
+    "definition": "Number of STRUCTURAL_BREAK inactive-to-active transitions so far.",
+    "economic_outcome_dependency": false,
+    "family": "LIFECYCLE_EVENT_MEMORY",
+    "feature": "a_activation_count_so_far",
+    "threshold_selected": false
+  },
+  {
+    "causal_cutoff": "ALL_SOURCE_TIMESTAMPS_STRICTLY_BEFORE_DECISION_TIME",
+    "definition": "Number of VOLATILITY_DAMAGE inactive-to-active transitions so far.",
+    "economic_outcome_dependency": false,
+    "family": "LIFECYCLE_EVENT_MEMORY",
+    "feature": "b_activation_count_so_far",
+    "threshold_selected": false
+  },
+  {
+    "causal_cutoff": "ALL_SOURCE_TIMESTAMPS_STRICTLY_BEFORE_DECISION_TIME",
+    "definition": "Number of STALLED inactive-to-active transitions so far.",
+    "economic_outcome_dependency": false,
+    "family": "LIFECYCLE_EVENT_MEMORY",
+    "feature": "stalled_activation_count_so_far",
+    "threshold_selected": false
+  },
+  {
+    "causal_cutoff": "ALL_SOURCE_TIMESTAMPS_STRICTLY_BEFORE_DECISION_TIME",
+    "definition": "Fraction of eligible decisions with STRUCTURAL_BREAK active so far.",
+    "economic_outcome_dependency": false,
+    "family": "LIFECYCLE_EVENT_MEMORY",
+    "feature": "a_active_fraction_so_far",
+    "threshold_selected": false
+  },
+  {
+    "causal_cutoff": "ALL_SOURCE_TIMESTAMPS_STRICTLY_BEFORE_DECISION_TIME",
+    "definition": "Fraction of eligible decisions with VOLATILITY_DAMAGE active so far.",
+    "economic_outcome_dependency": false,
+    "family": "LIFECYCLE_EVENT_MEMORY",
+    "feature": "b_active_fraction_so_far",
+    "threshold_selected": false
+  },
+  {
+    "causal_cutoff": "ALL_SOURCE_TIMESTAMPS_STRICTLY_BEFORE_DECISION_TIME",
+    "definition": "Fraction of eligible decisions with STALLED active so far.",
+    "economic_outcome_dependency": false,
+    "family": "LIFECYCLE_EVENT_MEMORY",
+    "feature": "stalled_active_fraction_so_far",
+    "threshold_selected": false
+  },
+  {
+    "causal_cutoff": "ALL_SOURCE_TIMESTAMPS_STRICTLY_BEFORE_DECISION_TIME",
+    "definition": "Hours since most recent STRUCTURAL_BREAK activation.",
+    "economic_outcome_dependency": false,
+    "family": "LIFECYCLE_EVENT_MEMORY",
+    "feature": "hours_since_a_activation",
+    "threshold_selected": false
+  },
+  {
+    "causal_cutoff": "ALL_SOURCE_TIMESTAMPS_STRICTLY_BEFORE_DECISION_TIME",
+    "definition": "Hours since most recent VOLATILITY_DAMAGE activation.",
+    "economic_outcome_dependency": false,
+    "family": "LIFECYCLE_EVENT_MEMORY",
+    "feature": "hours_since_b_activation",
+    "threshold_selected": false
+  },
+  {
+    "causal_cutoff": "ALL_SOURCE_TIMESTAMPS_STRICTLY_BEFORE_DECISION_TIME",
+    "definition": "Hours since most recent STALLED activation.",
+    "economic_outcome_dependency": false,
+    "family": "LIFECYCLE_EVENT_MEMORY",
+    "feature": "hours_since_stalled_activation",
+    "threshold_selected": false
+  }
+]

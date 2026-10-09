@@ -1,0 +1,83 @@
+{
+  "authority_bindings": {
+    "contract_sha256": "DCF090781D0B44F6BEF1D8B33F73120702A70AB79755004E124047B3EA7494B3",
+    "decision_sha256": "DD38AA0275278E4376D1D5E4CBDDC73DB7EB53C33DD24D55CDA575242454C840",
+    "entry_sha256": "4B0961004E3F7B2219478272EA6365CEAEECD10E95E08181E88D01ED95B2D300",
+    "isolated_sha256": "94224EE1D6A4865B5C31F666589C353FFC058B23B19C7063735D8654F9004BA3",
+    "pagination_sha256": "FC8E58CAE3023C54BCA336F84CED795B4FF37EDF758641EFD3BAF3D91D7FFFF4",
+    "propagation_sha256": "388FB0F87A4912232D1FE7CA793CBE247699ACBC472EE7829A4C5FE1682FCA83",
+    "remote_sha256": "C3D11B3C6DBD9339DE3C2441B465241DA0D89AC49EE5892EB14FC2CE5E0AA073",
+    "store_sha256": "06BA5D5DE61E38D74C71B0B0BB533DF680E5BB3B5354219794AAA3418539865D",
+    "study_contract_sha256": "54270D5530A043947B96E5DF1E357A68CC3DD04C2501D6FF01A0A9A5E173A434"
+  },
+  "branch": "research/rd48-cross-venue-price-level-basis-direct-utility-v1",
+  "evidence": [
+    {
+      "path": "governance/reconstructed_native_baseline_pre2023_execution_contract_hardening_v1/rd16b_entrypoint_and_argument_binding.json",
+      "sha256": "4B0961004E3F7B2219478272EA6365CEAEECD10E95E08181E88D01ED95B2D300"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_pre2023_execution_contract_hardening_v1/since_until_interprocedural_propagation.json",
+      "sha256": "388FB0F87A4912232D1FE7CA793CBE247699ACBC472EE7829A4C5FE1682FCA83"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_pre2023_execution_contract_hardening_v1/remote_fetch_boundary_authority.json",
+      "sha256": "C3D11B3C6DBD9339DE3C2441B465241DA0D89AC49EE5892EB14FC2CE5E0AA073"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_pre2023_execution_contract_hardening_v1/pagination_until_guard_audit.json",
+      "sha256": "FC8E58CAE3023C54BCA336F84CED795B4FF37EDF758641EFD3BAF3D91D7FFFF4"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_pre2023_execution_contract_hardening_v1/parquet_store_write_path_binding.json",
+      "sha256": "06BA5D5DE61E38D74C71B0B0BB533DF680E5BB3B5354219794AAA3418539865D"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_pre2023_execution_contract_hardening_v1/isolated_output_root_contract.json",
+      "sha256": "94224EE1D6A4865B5C31F666589C353FFC058B23B19C7063735D8654F9004BA3"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_pre2023_execution_contract_hardening_v1/pre2023_native_1h_execution_contract.json",
+      "sha256": "DCF090781D0B44F6BEF1D8B33F73120702A70AB79755004E124047B3EA7494B3"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_pre2023_execution_contract_hardening_v1/execution_contract_authority_decision.json",
+      "sha256": "DD38AA0275278E4376D1D5E4CBDDC73DB7EB53C33DD24D55CDA575242454C840"
+    },
+    {
+      "path": "governance/reconstructed_native_baseline_pre2023_execution_contract_hardening_v1.json",
+      "sha256": "CAA9FD81E805C0367D90E96E7A43F80B2746003F0FF3E2CA698B01D8DF60A143"
+    }
+  ],
+  "firewall": {
+    "economic_analysis": false,
+    "market_rows_read": false,
+    "native_replay_executed": false,
+    "network": false,
+    "protected_year_rows_read": false,
+    "push": false,
+    "source_code_mutation": false
+  },
+  "governed_schema_version": "akah-provenance-phase-governed-v1",
+  "next_bottleneck": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_PRE2023_SIGNAL_RECONSTRUCTION_EXECUTION_CONTRACT_EXACT_RESIDUAL_V1",
+  "north_star_effect": "Prevents any network or market-row execution until the upstream request boundary and isolated write surface are causally proven safe for <=2022 rematerialization.",
+  "objective": "Harden the pre-2023 reconstruction execution contract by proving exact since/until propagation from run_rd16b to the remote fetch boundary, auditing pagination end-bound behavior, binding the physical Parquet store writer, and proving output can target a new isolated root without mutating the current native raw root.",
+  "resolution_class": "PRE2023_RECONSTRUCTION_EXECUTION_CONTRACT_EXACT_RESIDUAL_REMAINS",
+  "state_updates": {
+    "isolated_output_root_ready": true,
+    "market_rows_read": false,
+    "network_calls": 0,
+    "pagination_until_guard_present": true,
+    "pre2023_execution_contract_ready": false,
+    "remote_fetch_boundary_count": 0,
+    "roadmap_position": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_PRE2023_SIGNAL_RECONSTRUCTION_EXECUTION_CONTRACT_EXACT_RESIDUAL_V1",
+    "since_reaches_remote_request_boundary": false,
+    "store_write_authority_ready": true,
+    "until_reaches_remote_request_boundary": false
+  },
+  "status": "PASS",
+  "summary": "Strict source-level contract audit: remote_boundaries=0; since_at_remote=False; until_at_remote=False; pagination_until_guard=True; store_write_ready=True; isolated_root_ready=True.",
+  "task_id": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_PRE2023_SIGNAL_RECONSTRUCTION_EXECUTION_CONTRACT_V1",
+  "task_start_head": "5344fffe6fdc06646a2788904ca6a57bb5dd651f",
+  "task_start_revision": 221
+}

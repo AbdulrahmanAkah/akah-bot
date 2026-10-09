@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "actual_adapter": "EventExecutionBridge market_contract -> PortfolioKernel",
+  "real_provider": "gate3_market_v3.stage_market predicate-bounded raw -> canonical HTF/pivots -> immutable causal intent and completed-bar DB -> chronological bridge",
+  "certification": "Synthetic provider-to-database integration plus actual adapter tests, not only a toy event queue",
+  "tests": [
+    "tests/research/test_multi_school_fidelity.py",
+    "tests/research/test_multi_school_evidence_review.py",
+    "tests/research/test_post_dual_review_closure.py",
+    "tests/research/test_gate3_market_v3.py"
+  ],
+  "test_log_sha256": "66F362B56450E6037448C8B5CEE68F105F1FEB79CB10C1ADF5B34528E8F0D454",
+  "market_economic_replay_executed": false,
+  "checks": [
+    "protected cutoff",
+    "next-open/no same-bar",
+    "stop-first collision",
+    "gap stop at executable open",
+    "shared capacity across open/close",
+    "known_at management",
+    "quarantine",
+    "lattice/dust/adverse rounding",
+    "campaign B0",
+    "current MTM risk",
+    "fees and cash",
+    "missing open/capacity fail closed",
+    "new governed task and explicit token"
+  ]
+}

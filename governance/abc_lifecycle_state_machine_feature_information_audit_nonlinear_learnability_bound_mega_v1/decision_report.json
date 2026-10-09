@@ -1,0 +1,47 @@
+{
+  "2024_access": false,
+  "baseline_parity": "PASS_2X_METRIC_AND_EXACT_TRADE",
+  "decomposition_max_abs_error": 2.7755575615628914e-17,
+  "linear_reference": "REV755 fixed standardized ridge",
+  "model_selection": false,
+  "model_zoo": false,
+  "next_interpretation": "Use feature/group information metrics and fixed nonlinear OOT diagnostics to decide whether the current causal state contains recoverable nonlinear information. Do not certify a runtime rule from this task.",
+  "nonlinear_probe": "fixed RFF-Ridge only",
+  "nonlinear_summary": {
+    "candidate_increment": {
+      "rows": 1697985,
+      "weighted_pearson": -0.023605047564003338,
+      "weighted_positive_precision": 0.31845581960585867,
+      "weighted_sign_accuracy": 0.5914015730409868,
+      "weighted_top_decile_positive_precision": 0.3203605729732595
+    },
+    "decomposed_delta": {
+      "rows": 1697985,
+      "weighted_pearson": -0.013571355814470092,
+      "weighted_positive_precision": 0.5058144182157545,
+      "weighted_sign_accuracy": 0.5033678153811724,
+      "weighted_top_decile_positive_precision": 0.5159183281948898
+    },
+    "direct_delta": {
+      "rows": 1697985,
+      "weighted_pearson": -0.010643180462197024,
+      "weighted_positive_precision": 0.5238987351258808,
+      "weighted_sign_accuracy": 0.5091187495767041,
+      "weighted_top_decile_positive_precision": 0.5248906071019473
+    },
+    "incumbent_continuation": {
+      "rows": 1697985,
+      "weighted_pearson": -0.017167155234093383,
+      "weighted_positive_precision": 0.3054411226154273,
+      "weighted_sign_accuracy": 0.3839421431873662,
+      "weighted_top_decile_positive_precision": 0.3332741690886551
+    }
+  },
+  "pair_rows": 1700665,
+  "portfolio_policy_replay": false,
+  "posthoc_winner_certified": false,
+  "runtime_future_information": false,
+  "schema_version": "akah-feature-information-nonlinear-bound-decision-v1",
+  "status": "PASS_DIAGNOSTIC_COMPLETE",
+  "threshold_search": false
+}

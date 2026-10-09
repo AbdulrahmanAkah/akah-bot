@@ -1,0 +1,85 @@
+{
+  "definition_catalog": "state_definition_catalog.json",
+  "mandatory_invariants": [
+    "NO_BASE_PHASE_MUTATION",
+    "NO_NEW_THRESHOLD",
+    "NO_PERSISTENCE_HORIZON_SELECTION",
+    "NO_RUN_LENGTH_CUTOFF",
+    "NO_OVERLAY_PRIORITY",
+    "NO_FAILED_SYNTHESIS_FROM_A_AND_B",
+    "NO_HEALTHY_TREND_FROM_ABSENCE_OF_DAMAGE",
+    "NO_DETERIORATING_COMBINATION_RULE",
+    "NO_RUNTIME_STATE_MACHINE_ACTIVATION",
+    "NO_EXIT_ACTION",
+    "NO_EXIT_ARBITER",
+    "NO_MARKET_DATA_ACCESS",
+    "NO_PNL_OR_ECONOMIC_OUTCOME_READ",
+    "NO_2024_ACCESS",
+    "NO_2025_ACCESS",
+    "NO_PRODUCTION_CHANGE"
+  ],
+  "materialization_contract": {
+    "base_state_unchanged": true,
+    "derive_only": [
+      "stalled_active",
+      "structural_break_active",
+      "volatility_damage_active",
+      "persistent_overlay_count",
+      "persistent_overlay_signature"
+    ],
+    "one_output_row_per_existing_feature_row": true,
+    "required_descriptive_outputs": [
+      "materialized_persistent_state_grid.csv",
+      "persistent_state_episode_ledger.csv",
+      "overlay_signature_counts.csv",
+      "coexistence_counts.csv",
+      "recovery_audit.json",
+      "completeness_audit.json"
+    ],
+    "row_identity_and_order_unchanged": true
+  },
+  "population_contract": {
+    "decision_represented_lifecycles": 1782,
+    "decision_rows": 14059,
+    "total_control_lifecycles": 2020,
+    "zero_eligible_lifecycles": 238
+  },
+  "post_freeze_gate": {
+    "exit_action_authorized_now": false,
+    "next_if_valid": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_DEFINITION_OBSERVATIONAL_MATERIALIZATION_V1",
+    "runtime_state_machine_authorized_now": false
+  },
+  "protocol_id": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_DEFINITION_PROTOCOL_FREEZE_V1",
+  "schema_version": "abc-persistent-state-definition-protocol-v1",
+  "source_bindings": [
+    {
+      "path": "governance/abc_lifecycle_state_machine_persistent_state_causal_feature_reconstruction_execution_v1/canonical_result.json",
+      "sha256": "1887C6A105FA7D02B1805BA632654D2913FB333BB0EC8C08CEA80F815974960A"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_persistent_state_causal_feature_reconstruction_mandatory_review_v1/canonical_result.json",
+      "sha256": "1B8222ADCCBE0793E3A452EBCAC671DB3961ED8FE129A76C97B5D0EE46519D03"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_persistent_state_causal_feature_reconstruction_mandatory_review_v1/mandatory_review.json",
+      "sha256": "A96A7F90F0C186A16D403D433C87512FEF9F5328163232C08AFEFAC06052698C"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_persistent_state_observability_protocol_v1/protocol.json",
+      "sha256": "9DA4404781476E07D42F421BB422B44D2A24553E86E6C8E674D4A270BB764D7F"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_persistent_state_observability_protocol_v1/observability_catalog.json",
+      "sha256": "12DF152B4191916DFD9F7E5EABE5F6AB62AE3DDA8A8D58237F4E1C69EA73BF29"
+    },
+    {
+      "path": "governance/AKAH_EXIT_BRAIN_RESEARCH_DOCTRINE_CURRENT.json",
+      "sha256": "B3F0F632446C7BCEE4B4BEC27CACDECD9EF6562B568872153186E69B1E00B8D9"
+    },
+    {
+      "path": "SHA_BOUND_FEATURE_CSV",
+      "sha256": "15707D9D66E466FD1706646ADDFCFD2316E6210186EF3C1B4A735D9DF7880F42"
+    }
+  ],
+  "status": "FROZEN_BEFORE_OBSERVATIONAL_MATERIALIZATION"
+}

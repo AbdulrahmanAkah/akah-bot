@@ -1,0 +1,66 @@
+{
+  "2024_access": false,
+  "admission_change": "ONLY_C05_DIAGNOSTIC_OUTER_BOUND",
+  "baseline_costs": [
+    1.0,
+    2.0
+  ],
+  "custom_baseline_parity": "REQUIRED_2_OF_2_METRIC_AND_TRADE",
+  "diagnostic_cost_multiplier": 2.0,
+  "governor": "BINARY_VOL",
+  "h0": "FROZEN",
+  "hard_cutoff_exclusive": "2024-01-01T00:00:00Z",
+  "liquidity": "CANONICAL",
+  "max_positions": 20,
+  "opportunity_source_revision": 731,
+  "oracle_policy": "DIAGNOSTIC_ONLY",
+  "position_weight_cap": 0.05,
+  "production_changed": false,
+  "schema_version": "akah-capital-opportunity-cost-reallocation-protocol-v1",
+  "sizing": "CANONICAL",
+  "source_revision": 747,
+  "variants": [
+    {
+      "action_mode": "NONE",
+      "description": "Exact F10 incumbent; no oracle action",
+      "gate_mode": "F10_GATE",
+      "id": "C00_F10_ACTUAL",
+      "score_mode": "F10_SCORE"
+    },
+    {
+      "action_mode": "BLOCKED_REPLACE",
+      "description": "F10 order/gate; oracle one-for-one replacement only when candidate would otherwise be unfunded",
+      "gate_mode": "F10_GATE",
+      "id": "C01_BLOCKED_REPLACEMENT_ORACLE",
+      "score_mode": "F10_SCORE"
+    },
+    {
+      "action_mode": "PRUNE_ONLY",
+      "description": "F10 order/gate; oracle early release of incumbents whose future H0 continuation is worse than selling now",
+      "gate_mode": "F10_GATE",
+      "id": "C02_NEGATIVE_CONTINUATION_RELEASE_ORACLE",
+      "score_mode": "F10_SCORE"
+    },
+    {
+      "action_mode": "FULL_REALLOC",
+      "description": "F10 order/gate; oracle negative-continuation release plus capital reallocation to candidates when locally superior",
+      "gate_mode": "F10_GATE",
+      "id": "C03_FULL_REALLOCATION_ORACLE",
+      "score_mode": "F10_SCORE"
+    },
+    {
+      "action_mode": "FULL_REALLOC",
+      "description": "Same F10 gate; oracle candidate ordering plus full oracle reallocation",
+      "gate_mode": "F10_GATE",
+      "id": "C04_SAME_GATE_ORACLE_RANK_REALLOC",
+      "score_mode": "H0_ORACLE"
+    },
+    {
+      "action_mode": "FULL_REALLOC",
+      "description": "All opportunities; oracle candidate ordering plus full oracle reallocation under canonical liquidity/governor",
+      "gate_mode": "ALL",
+      "id": "C05_ALL_ADMISSION_ORACLE_RANK_REALLOC",
+      "score_mode": "H0_ORACLE"
+    }
+  ]
+}

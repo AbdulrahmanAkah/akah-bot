@@ -1,0 +1,33 @@
+{
+  "schema_version": "abc-lifecycle-persistent-state-observability-source-capability-requirements-v1",
+  "audit_task_id": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_OBSERVABILITY_SOURCE_CAPABILITY_AUDIT_V1",
+  "audit_mode": "READ_ONLY_SCHEMA_AND_SOURCE_CODE_CAPABILITY_AUDIT",
+  "market_data_rows_accessed_in_audit": false,
+  "allowed_capability_classes": [
+    "DIRECTLY_AVAILABLE_IN_EXISTING_FROZEN_OUTPUT",
+    "DERIVABLE_FROM_EXISTING_FROZEN_OUTPUTS_WITHOUT_MARKET_DATA",
+    "DERIVABLE_CAUSALLY_FROM_FROZEN_PRE2024_MARKET_DATA_AND_EXISTING_CODE",
+    "NOT_CURRENTLY_DERIVABLE_WITH_PROVEN_AUTHORITY"
+  ],
+  "required_audit_outputs": [
+    "observable_source_capability_matrix.csv",
+    "required_source_code_bindings.json",
+    "raw_reconstruction_need_summary.json",
+    "capability_audit.json",
+    "canonical_result.json"
+  ],
+  "audit_must_not": [
+    "READ_MARKET_DATA_ROWS",
+    "READ_PNL_OR_ECONOMIC_OUTCOMES",
+    "MATERIALIZE_OBSERVABLE_VALUES",
+    "SELECT_THRESHOLDS",
+    "SELECT_PERSISTENCE_HORIZON",
+    "DEFINE_STATES",
+    "AUTHORIZE_RUNTIME_LOGIC"
+  ],
+  "post_audit_routing": {
+    "if_all_required_observables_existing_output_derivable": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_OBSERVABILITY_MATERIALIZATION_V1",
+    "if_any_required_observable_requires_raw_reconstruction": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_CAUSAL_FEATURE_RECONSTRUCTION_PROTOCOL_FREEZE_V1",
+    "if_any_required_observable_unproven": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_OBSERVABILITY_SOURCE_GAP_REVIEW_V1"
+  }
+}

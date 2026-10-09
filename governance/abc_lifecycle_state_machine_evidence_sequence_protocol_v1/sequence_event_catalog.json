@@ -1,0 +1,62 @@
+{
+  "schema_version": "abc-lifecycle-evidence-sequence-event-catalog-v1",
+  "catalog_id": "ABC_LIFECYCLE_STATE_MACHINE_EVIDENCE_SEQUENCE_EVENT_CATALOG_V1",
+  "event_types": [
+    {
+      "event_type": "ENTRY",
+      "source": "lifecycle_summary.entry_time",
+      "semantic_role": "LIFECYCLE_BOUNDARY",
+      "may_repeat_per_lifecycle": false
+    },
+    {
+      "event_type": "FIRST_MEMORY",
+      "source": "lifecycle_summary.first_memory_time",
+      "semantic_role": "BASE_PHASE_TRANSITION_MARKER_TO_EARLY_PROGRESS",
+      "may_repeat_per_lifecycle": false
+    },
+    {
+      "event_type": "CONFIRMED_PHASE_ENTRY",
+      "source": "earliest materialized decision row with base_state == CONFIRMED",
+      "semantic_role": "BASE_PHASE_ENTRY_MARKER",
+      "may_repeat_per_lifecycle": false
+    },
+    {
+      "event_type": "STALLED_EVIDENCE",
+      "source": "decision_time_4h where stalled_evidence_candidate == true",
+      "semantic_role": "EVENT_LOCAL_EVIDENCE",
+      "may_repeat_per_lifecycle": false,
+      "source_overlay": "STALLED_EVIDENCE_CANDIDATE_V1"
+    },
+    {
+      "event_type": "STRUCTURAL_BREAK_EVIDENCE",
+      "source": "decision_time_4h where structural_break_evidence_candidate == true",
+      "semantic_role": "EVENT_LOCAL_EVIDENCE",
+      "may_repeat_per_lifecycle": false,
+      "source_overlay": "STRUCTURAL_BREAK_EVIDENCE_CANDIDATE_V1"
+    },
+    {
+      "event_type": "VOLATILITY_DAMAGE_EVIDENCE",
+      "source": "decision_time_4h where volatility_damage_evidence_candidate == true",
+      "semantic_role": "EVENT_LOCAL_EVIDENCE",
+      "may_repeat_per_lifecycle": false,
+      "source_overlay": "VOLATILITY_DAMAGE_EVIDENCE_CANDIDATE_V1"
+    },
+    {
+      "event_type": "NATIVE_EXIT",
+      "source": "lifecycle_summary.native_exit_time",
+      "semantic_role": "LIFECYCLE_BOUNDARY",
+      "may_repeat_per_lifecycle": false
+    }
+  ],
+  "canonical_serialization_order_within_simultaneous_event_set": [
+    "ENTRY",
+    "FIRST_MEMORY",
+    "CONFIRMED_PHASE_ENTRY",
+    "STALLED_EVIDENCE",
+    "STRUCTURAL_BREAK_EVIDENCE",
+    "VOLATILITY_DAMAGE_EVIDENCE",
+    "NATIVE_EXIT"
+  ],
+  "serialization_order_has_priority_meaning": false,
+  "simultaneous_events_are_unordered_semantically": true
+}

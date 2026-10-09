@@ -1,0 +1,105 @@
+{
+  "2024_access": false,
+  "abs_p0_pipeline_control_pass": true,
+  "calendar_topology": {
+    "entry_week_definition": "FLOOR((UTC_TIME-EPOCH).TOTAL_SECONDS/604800)_UNIT_INDEPENDENT",
+    "required_block_lengths_weeks": [
+      4,
+      8
+    ],
+    "rows": [
+      {
+        "calendar_span_weeks": 51,
+        "fold": "DEV_2019_TO_2020",
+        "max_entry_week": 2659,
+        "min_entry_week": 2609,
+        "occupied_entry_weeks": 35,
+        "supports_4w": true,
+        "supports_8w": true,
+        "test_year": 2020,
+        "trades": 65
+      },
+      {
+        "calendar_span_weeks": 52,
+        "fold": "DEV_2019_2020_TO_2021",
+        "max_entry_week": 2712,
+        "min_entry_week": 2661,
+        "occupied_entry_weeks": 40,
+        "supports_4w": true,
+        "supports_8w": true,
+        "test_year": 2021,
+        "trades": 76
+      }
+    ],
+    "supports_all_preregistered_blocks": true
+  },
+  "calibration": {
+    "inference_valid": false,
+    "power_min": 0.8,
+    "powered_at_primary_mue": false,
+    "primary_mue_fraction": 0.05,
+    "scenarios": [
+      {
+        "effect_fraction_of_reference_mse": 0.0,
+        "false_positive_upper_95": 0.08436106312521979,
+        "pattern": "NULL",
+        "reject_rate": 0.06,
+        "rejections": 30,
+        "reps": 500
+      },
+      {
+        "effect_fraction_of_reference_mse": 0.025,
+        "pattern": "LINEAR",
+        "reject_rate": 0.124,
+        "rejections": 62,
+        "reps": 500
+      },
+      {
+        "effect_fraction_of_reference_mse": 0.025,
+        "pattern": "INTERACTION",
+        "reject_rate": 0.116,
+        "rejections": 58,
+        "reps": 500
+      },
+      {
+        "effect_fraction_of_reference_mse": 0.05,
+        "pattern": "LINEAR",
+        "reject_rate": 0.172,
+        "rejections": 86,
+        "reps": 500
+      },
+      {
+        "effect_fraction_of_reference_mse": 0.05,
+        "pattern": "INTERACTION",
+        "reject_rate": 0.174,
+        "rejections": 87,
+        "reps": 500
+      },
+      {
+        "effect_fraction_of_reference_mse": 0.1,
+        "pattern": "LINEAR",
+        "reject_rate": 0.296,
+        "rejections": 148,
+        "reps": 500
+      },
+      {
+        "effect_fraction_of_reference_mse": 0.1,
+        "pattern": "INTERACTION",
+        "reject_rate": 0.328,
+        "rejections": 164,
+        "reps": 500
+      }
+    ],
+    "type1_upper_limit": 0.08
+  },
+  "claim_if_positive": "EXPLORATORY_REANALYSIS_REQUIRES_INDEPENDENT_REPLICATION",
+  "inference_valid": false,
+  "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_DIRECT_CONTINUATION_MEAN_DOWNSIDE_QUALIFICATION_V1",
+  "p0_reanalysis_supportive_under_new_inference": true,
+  "powered_at_primary_mue": false,
+  "primary_mue_fraction": 0.05,
+  "rev680_reclassified": false,
+  "schema_version": "akah-rev680-expert-guided-value-qualification-mega-v1-experiment-a",
+  "status": "PASS_INFERENCE_INVALID_DIAGNOSIS",
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_INFERENCE_POWER_CALIBRATION_AND_P0_REANALYSIS_V1"
+}

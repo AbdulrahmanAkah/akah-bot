@@ -1,0 +1,88 @@
+{
+  "counterfactual_post_native_close": {
+    "included_in_primary_study": false,
+    "may_be_separate_future_diagnostic": true,
+    "requirements_if_ever_authorized": [
+      "Separate study identifier.",
+      "Separate administrative window fixed in advance.",
+      "No merge into primary V2 numerator or denominator.",
+      "No economic interpretation.",
+      "No assumption that closed-position state remains valid."
+    ]
+  },
+  "economics_authorized": false,
+  "fail_or_stop_conditions": [
+    "Required native terminal time cannot be obtained without violating the outcome firewall.",
+    "Event ordering ambiguity materially affects primary classification and cannot be resolved.",
+    "Coverage gaps are counted as signal-free opportunities.",
+    "Short follow-up is silently treated as equivalent to long follow-up."
+  ],
+  "first_event_types": {
+    "ADMINISTRATIVE_WINDOW_END": "Right censoring if lifecycle remained open and observable.",
+    "COVERAGE_LOSS": "Loss to follow-up / observation validity; not automatically treated as independent right censoring.",
+    "NATIVE_CLOSED_BEFORE_V2": "Competing terminal event in the primary original-lifecycle study.",
+    "TERMINAL_ORDER_UNRESOLVED": "Unresolved ordering; blocks certified event classification for that lifecycle.",
+    "V2_OBSERVED": "Event of interest."
+  },
+  "native_close_policy": {
+    "classification": "COMPETING_TERMINAL_EVENT",
+    "if_v2_precedes_close": "V2 is the first event; later close does not compete with the already-observed first V2.",
+    "reason": "The primary question is whether V2 appears while the original native lifecycle is still open; native close makes later V2 impossible within that lifecycle."
+  },
+  "objective": "Measure how much valid post-Memory observation opportunity each lifecycle had, and distinguish no observed V2 from lack of sufficient opportunity.",
+  "observation_opportunity_rules": [
+    "Do not define a magic sufficient-followup horizon.",
+    "Report both elapsed clock time and count of valid completed evaluation opportunities.",
+    "Eight hours with two valid post-Memory evaluations is not equivalent to one hundred hours with many evaluations.",
+    "A missing or unavailable bar is not an evaluable opportunity.",
+    "Do not delete short-followup lifecycles merely to equalize follow-up.",
+    "After first V2, later time does not remain in the at-risk denominator for first-V2 analysis."
+  ],
+  "parent_protocol": "governance/AKAH_BOT_V2_COHORT_OBSERVATION_REFERENCE_DIAGNOSTIC_PROTOCOL_V1.json",
+  "pass_criteria": [
+    "Every audited Memory lifecycle has a documented exposure interval, including zero-opportunity cases.",
+    "First-event classification is reproducible from causal evidence.",
+    "Native close uses an authorized causal terminal source.",
+    "Coverage loss is distinct from clean no-signal follow-up.",
+    "No post-native-close counterfactual data is merged into primary results."
+  ],
+  "protocol_id": "AKAH_BOT_V2_PHASE_B_OBSERVATION_OPPORTUNITY_PROTOCOL_V1",
+  "required_outputs": [
+    "observation_opportunity_ledger",
+    "first_event_classification_table",
+    "followup_distribution_summary",
+    "terminal_source_authority_report"
+  ],
+  "required_per_lifecycle_fields": [
+    "lifecycle_id",
+    "first_memory_time",
+    "first_eligible_post_memory_bar_time",
+    "calendar_followup_after_memory",
+    "verified_post_memory_bar_count",
+    "evaluable_opportunities_before_first_event",
+    "time_to_first_v2",
+    "time_to_native_close_if_before_v2",
+    "time_to_administrative_end",
+    "coverage_gap_status",
+    "event_free_time_at_risk",
+    "first_event_type",
+    "first_event_time",
+    "terminal_order_status",
+    "evidence_reference"
+  ],
+  "requires_phase_a_pass": true,
+  "same_time_event_ordering": {
+    "preferred_authority": [
+      "runtime_sequence_index",
+      "verified information_available_time",
+      "verified decision-loop ordering"
+    ],
+    "rule": "Do not invent a statistical tie-break priority. If causal ordering cannot be resolved, classify TERMINAL_ORDER_UNRESOLVED."
+  },
+  "schema_version": "akah-v2-phase-b-observation-opportunity-v1",
+  "status": "FROZEN",
+  "study_population": "All Phase-A-audited Memory lifecycles, including those with zero strictly-later evaluable post-Memory bars; zero opportunity is measured, not silently excluded.",
+  "success_next_task": "CAUSAL_EXIT_BRAIN_V2_PHASE_C_TIMING_REFERENCE_DEPENDENCE_EXECUTION_V1",
+  "time_at_risk_rule": "Time at risk starts at first Memory and ends at the first of: first valid V2, verified native close before V2, administrative study end, or loss of valid observation.",
+  "time_origin": "FIRST_MEMORY_TIME"
+}

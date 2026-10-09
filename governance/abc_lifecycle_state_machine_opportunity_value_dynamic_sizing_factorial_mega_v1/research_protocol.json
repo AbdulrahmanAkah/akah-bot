@@ -1,0 +1,52 @@
+{
+  "2024_access": false,
+  "absolute_position_weight_cap": 0.05,
+  "cost_multipliers": [
+    1.0,
+    2.0
+  ],
+  "discovery_only": true,
+  "execution_source_predictions": "governance/abc_lifecycle_state_machine_cross_sectional_opportunity_value_full_hypothesis_mega_v1/walkforward_predictions.csv.gz",
+  "execution_source_predictions_sha256": "C65C62F5FE3B4A48A2BEB8DADE257D0628305D4EE5349945FAAF215A937B2319",
+  "frozen_h0": true,
+  "governors": [
+    "BINARY_VOL",
+    "BINARY_NO_VOL"
+  ],
+  "hard_cutoff_exclusive": "2024-01-01T00:00:00Z",
+  "max_positions": 20,
+  "new_feature_search": false,
+  "new_model_refit": false,
+  "portfolio_runs": 96,
+  "posthoc_certification": false,
+  "rev733_component_ledger": "governance/abc_lifecycle_state_machine_trend_alpha_risk_harvesting_factorial_mega_v1/focused_score_ledger.csv.gz",
+  "rev733_component_ledger_role": "AUDIT_ONLY",
+  "rev733_component_ledger_sha256": "1FAC1215C6C00727EBB8DF3ACE17D4D77B2F457039E44B7CE60AFA29C2FC4764",
+  "risk_multiplier_range": [
+    0.5,
+    1.5
+  ],
+  "schema_version": "akah-opportunity-value-dynamic-sizing-protocol-v1",
+  "selectors": [
+    "SEL_F10_ADX",
+    "SEL_F16_ADX_TAIL",
+    "SEL_F07_D50_MARKET50"
+  ],
+  "signal_rematerialization": false,
+  "sizing_policies": [
+    "SZ00_UNIFORM",
+    "SZ01_SAFE",
+    "SZ02_ADX",
+    "SZ03_TAIL",
+    "SZ04_MARKET",
+    "SZ05_SAFE_ADX",
+    "SZ06_SAFE_ADX_TAIL",
+    "SZ07_ALL4"
+  ],
+  "source_revision": 733,
+  "uniform_parity_reference_count": 12,
+  "weight_cap_multiplier_range": [
+    0.5,
+    1.0
+  ]
+}

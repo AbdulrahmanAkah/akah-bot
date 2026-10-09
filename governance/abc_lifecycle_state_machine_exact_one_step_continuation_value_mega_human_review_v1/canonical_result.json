@@ -1,0 +1,133 @@
+{
+  "2024_access": false,
+  "accepted": {
+    "baseline_parity": true,
+    "direction_x_volatility_hypothesis": true,
+    "exact_target": true,
+    "post168_extension": false,
+    "production_policy": false,
+    "replacement_preemption": false,
+    "research_surface": true,
+    "shadow_policy": false,
+    "sizing": false
+  },
+  "baseline_parity_accepted": true,
+  "exact_target_accepted_as_research_authority": true,
+  "frozen_core": "CURRENT_DYNAMIC_TOP6",
+  "frozen_governor": "BINARY_VOL",
+  "ledger_summary": {
+    "exit_now_reason_counts": {
+      "ADAPTIVE_PROTECTION_GAP": 3,
+      "ADAPTIVE_PROTECTION_TOUCH": 66,
+      "ADAPTIVE_STAGNATION_24H_CLOSE_NOT_ABOVE_ENTRY": 6,
+      "ADAPTIVE_STAGNATION_48H_CLOSE_NOT_ABOVE_ENTRY": 5,
+      "ADAPTIVE_STAGNATION_72H_CLOSE_NOT_ABOVE_ENTRY": 2,
+      "RESEARCH_EXIT_NOW_FIRST_LEGAL_OPEN": 2511
+    },
+    "hold_then_pi0_reason_counts": {
+      "ADAPTIVE_PROTECTION_GAP": 217,
+      "ADAPTIVE_PROTECTION_TOUCH": 1351,
+      "ADAPTIVE_STAGNATION_24H_CLOSE_NOT_ABOVE_ENTRY": 282,
+      "ADAPTIVE_STAGNATION_48H_CLOSE_NOT_ABOVE_ENTRY": 614,
+      "ADAPTIVE_STAGNATION_72H_CLOSE_NOT_ABOVE_ENTRY": 88,
+      "MAX_HOLD_168H": 41
+    },
+    "mandatory_exit_observations_total": 1609,
+    "optional_exit_suppressions_total": 101,
+    "overall": {
+      "mean_x1": 0.002685169047073876,
+      "mean_x2": 0.002681808384937362,
+      "median_x1": -0.00463773911024562,
+      "median_x2": -0.0046319346808211675,
+      "p10_x1": -0.03293386865665688,
+      "p90_x1": 0.05058928022288903,
+      "positive_share_x1": 0.3852680293096799,
+      "positive_share_x2": 0.3852680293096799,
+      "rows": 2593
+    },
+    "years": {
+      "2019": {
+        "mean_x1": null,
+        "mean_x2": null,
+        "median_x1": null,
+        "median_x2": null,
+        "p10_x1": null,
+        "p90_x1": null,
+        "positive_share_x1": null,
+        "positive_share_x2": null,
+        "rows": 0
+      },
+      "2020": {
+        "mean_x1": null,
+        "mean_x2": null,
+        "median_x1": null,
+        "median_x2": null,
+        "p10_x1": null,
+        "p90_x1": null,
+        "positive_share_x1": null,
+        "positive_share_x2": null,
+        "rows": 0
+      },
+      "2021": {
+        "mean_x1": null,
+        "mean_x2": null,
+        "median_x1": null,
+        "median_x2": null,
+        "p10_x1": null,
+        "p90_x1": null,
+        "positive_share_x1": null,
+        "positive_share_x2": null,
+        "rows": 0
+      },
+      "2022": {
+        "mean_x1": -0.0050651723735110525,
+        "mean_x2": -0.005058832983807033,
+        "median_x1": -0.009526160885631931,
+        "median_x2": -0.00951423828126945,
+        "p10_x1": -0.03882825391538369,
+        "p90_x1": 0.036811236946822,
+        "positive_share_x1": 0.30960264900662254,
+        "positive_share_x2": 0.30960264900662254,
+        "rows": 1208
+      },
+      "2023": {
+        "mean_x1": 0.0094450336218512,
+        "mean_x2": 0.009433212553488429,
+        "median_x1": -0.001020812841936474,
+        "median_x2": -0.0010195352288678984,
+        "p10_x1": -0.025946716399122077,
+        "p90_x1": 0.05788119614357247,
+        "positive_share_x1": 0.45126353790613716,
+        "positive_share_x2": 0.45126353790613716,
+        "rows": 1385
+      }
+    }
+  },
+  "max_hold_hours": 168,
+  "model_diagnosis": {
+    "diagnosis": "DEVELOPMENT_SUPPORT_GAP",
+    "explanation": "The exact target exists, but fixed-model development support is below the preregistered minimum. Review support/coverage without tuning.",
+    "feature_count": 4,
+    "features": [
+      "continuation_advantage",
+      "progress_margin_delta_from_prev",
+      "atr22_current",
+      "hold_optional_exits_suppressed"
+    ],
+    "model_status": "INSUFFICIENT_FOR_FIXED_MODEL",
+    "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_CONTINUATION_VALUE_DEVELOPMENT_SUPPORT_REVIEW_V1",
+    "sign_stable_forward_pass": null,
+    "train_rows": 0,
+    "year_results": {}
+  },
+  "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_CONTINUATION_VALUE_DEVELOPMENT_SUPPORT_REVIEW_V1",
+  "production_changed": false,
+  "push": false,
+  "schema_version": "akah-rev557-exact-continuation-human-review-v1-canonical-result",
+  "source_head": "33fa85f27c109c0dcaebe2b882b7039b3a440eea",
+  "source_revision": 557,
+  "status": "PASS_HUMAN_REVIEW_COMPLETE",
+  "target_rows": 2593,
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_EXACT_ONE_STEP_CONTINUATION_VALUE_MEGA_HUMAN_REVIEW_V1",
+  "threshold_search": false
+}

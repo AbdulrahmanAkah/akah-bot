@@ -1,0 +1,45 @@
+{
+  "acquire_until_related_controls": [
+    {
+      "condition_or_iter": "last_existing > pd.Timestamp(until)",
+      "contains_break": false,
+      "contains_return": false,
+      "kind": "If",
+      "line": 240,
+      "loaded_names": [
+        "last_existing",
+        "pd",
+        "until"
+      ]
+    },
+    {
+      "condition_or_iter": "last_existing < pd.Timestamp(until)",
+      "contains_break": false,
+      "contains_return": false,
+      "kind": "If",
+      "line": 247,
+      "loaded_names": [
+        "last_existing",
+        "pd",
+        "until"
+      ]
+    },
+    {
+      "condition_or_iter": "last_existing < pd.Timestamp(until)",
+      "contains_break": false,
+      "contains_return": true,
+      "kind": "If",
+      "line": 281,
+      "loaded_names": [
+        "last_existing",
+        "pd",
+        "until"
+      ]
+    }
+  ],
+  "downstream_until_guard_sources": [],
+  "pagination_until_guard_present": true,
+  "remote_since_bound": false,
+  "remote_until_bound": false,
+  "status": "PASS"
+}

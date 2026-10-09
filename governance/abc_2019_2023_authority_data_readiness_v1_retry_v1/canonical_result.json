@@ -1,0 +1,33 @@
+{
+  "schema_version": "abc-2019-2023-authority-data-readiness-retry-v1",
+  "task_id": "ABC_2019_2023_AUTHORITY_DATA_READINESS_AUDIT_V1_RETRY_V1",
+  "classification": "BLOCKED",
+  "pair_count": 1,
+  "ready_pairs_by_year": {
+    "2019": 0,
+    "2020": 0,
+    "2021": 0,
+    "2022": 0,
+    "2023": 0
+  },
+  "blockers": [
+    "NO_PAIR_READY_FOR_ATR22_AND_DONCHIAN10_AT_2019_YEAR_START",
+    "NO_PAIR_READY_FOR_ATR22_AND_DONCHIAN10_AT_2020_YEAR_START",
+    "NO_PAIR_READY_FOR_ATR22_AND_DONCHIAN10_AT_2021_YEAR_START",
+    "NO_PAIR_READY_FOR_ATR22_AND_DONCHIAN10_AT_2022_YEAR_START",
+    "NO_PAIR_READY_FOR_ATR22_AND_DONCHIAN10_AT_2023_YEAR_START"
+  ],
+  "pre2019_warmup_access_authority": {
+    "path": "governance/abc_pre2019_warmup_data_access_authorization_v1/canonical_result.json",
+    "sha256": "87133C576D7BE31F92F0091763ECACEA23B0749744289AF38133365CA560EC8D"
+  },
+  "abc_preregistration_authority": {
+    "path": "governance/abc_exit_primitives_preregistration_v1/protocol.json",
+    "sha256": "0D33547991D394C3CDEF1F03500EFD49DCEE1E8FEF41C8BD02007792CBFA3BD1"
+  },
+  "2023_raw_market_data_accessed_for_readiness": true,
+  "candidate_results_computed": false,
+  "2024_used": false,
+  "2025_accessed": false,
+  "next_bottleneck": "ABC_NATIVE_MAX_HOLD_168H_RUNTIME_PROOF_V1"
+}

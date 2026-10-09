@@ -1,0 +1,419 @@
+{
+  "candidate": {
+    "duplicate_keys": 0,
+    "missing_key_rows": 0,
+    "rows_seen": 3687,
+    "status": "PASS",
+    "unique_keys": 3687
+  },
+  "sources": [
+    {
+      "exact_column_name_match": false,
+      "key_audit": {
+        "candidate_coverage": 0.0,
+        "candidate_key_count": 3687,
+        "duplicate_keys": 11,
+        "intersection_count": 0,
+        "missing_key_rows": 191,
+        "rows_seen": 208,
+        "status": "PASS",
+        "unique_keys": 6
+      },
+      "path": "data/research/rd16pit_a2a/floor-event-window.csv",
+      "semantics": {
+        "baseline_action": [],
+        "cost": [
+          "cost_multiplier",
+          "exit_fees",
+          "entry_fees",
+          "cumulative_fees"
+        ],
+        "decision_time": [
+          "floor_timestamp",
+          "timestamp"
+        ],
+        "lifecycle": [
+          "entering_trade_ids",
+          "exiting_trade_ids",
+          "open_trade_ids"
+        ],
+        "notional": [
+          "exit_notional",
+          "entry_notional"
+        ],
+        "pair": [
+          "market_value",
+          "open_symbols"
+        ],
+        "value": []
+      }
+    },
+    {
+      "exact_column_name_match": false,
+      "key_audit": {
+        "candidate_coverage": 0.0,
+        "candidate_key_count": 3687,
+        "duplicate_keys": 22,
+        "intersection_count": 0,
+        "missing_key_rows": 0,
+        "rows_seen": 35,
+        "status": "PASS",
+        "unique_keys": 13
+      },
+      "path": "data/research/rd16pit_a2a/floor-open-positions.csv",
+      "semantics": {
+        "baseline_action": [],
+        "cost": [
+          "cost_multiplier",
+          "entry_fee_at_multiplier",
+          "planned_exit_fee_at_multiplier"
+        ],
+        "decision_time": [
+          "floor_timestamp"
+        ],
+        "lifecycle": [
+          "trade_id"
+        ],
+        "notional": [
+          "entry_notional",
+          "planned_exit_notional"
+        ],
+        "pair": [
+          "symbol",
+          "position_market_value"
+        ],
+        "value": []
+      }
+    },
+    {
+      "exact_column_name_match": false,
+      "key_audit": {
+        "candidate_coverage": 0.0,
+        "candidate_key_count": 3687,
+        "duplicate_keys": 0,
+        "intersection_count": 0,
+        "missing_key_rows": 0,
+        "rows_seen": 2,
+        "status": "PASS",
+        "unique_keys": 2
+      },
+      "path": "data/research/rd10/smoke-backtest/trades.csv",
+      "semantics": {
+        "baseline_action": [],
+        "cost": [
+          "entry_fee",
+          "exit_fee"
+        ],
+        "decision_time": [
+          "entry_timestamp",
+          "exit_timestamp"
+        ],
+        "lifecycle": [
+          "trade_id"
+        ],
+        "notional": [],
+        "pair": [
+          "symbol"
+        ],
+        "value": []
+      }
+    },
+    {
+      "exact_column_name_match": false,
+      "key_audit": {
+        "candidate_coverage": 0.0,
+        "candidate_key_count": 3687,
+        "duplicate_keys": 0,
+        "intersection_count": 0,
+        "missing_key_rows": 0,
+        "rows_seen": 3,
+        "status": "PASS",
+        "unique_keys": 3
+      },
+      "path": "data/research/rd11/per-asset/ada_usdt/trades.csv",
+      "semantics": {
+        "baseline_action": [],
+        "cost": [
+          "entry_fee",
+          "exit_fee"
+        ],
+        "decision_time": [
+          "entry_timestamp",
+          "exit_timestamp"
+        ],
+        "lifecycle": [
+          "trade_id"
+        ],
+        "notional": [],
+        "pair": [
+          "symbol"
+        ],
+        "value": []
+      }
+    },
+    {
+      "exact_column_name_match": false,
+      "key_audit": {
+        "candidate_coverage": 0.0,
+        "candidate_key_count": 3687,
+        "duplicate_keys": 0,
+        "intersection_count": 0,
+        "missing_key_rows": 0,
+        "rows_seen": 2,
+        "status": "PASS",
+        "unique_keys": 2
+      },
+      "path": "data/research/rd11/per-asset/avax_usdt/trades.csv",
+      "semantics": {
+        "baseline_action": [],
+        "cost": [
+          "entry_fee",
+          "exit_fee"
+        ],
+        "decision_time": [
+          "entry_timestamp",
+          "exit_timestamp"
+        ],
+        "lifecycle": [
+          "trade_id"
+        ],
+        "notional": [],
+        "pair": [
+          "symbol"
+        ],
+        "value": []
+      }
+    },
+    {
+      "exact_column_name_match": false,
+      "key_audit": {
+        "candidate_coverage": 0.0,
+        "candidate_key_count": 3687,
+        "duplicate_keys": 0,
+        "intersection_count": 0,
+        "missing_key_rows": 0,
+        "rows_seen": 13,
+        "status": "PASS",
+        "unique_keys": 13
+      },
+      "path": "data/research/rd11/per-asset/btc_usdt/trades.csv",
+      "semantics": {
+        "baseline_action": [],
+        "cost": [
+          "entry_fee",
+          "exit_fee"
+        ],
+        "decision_time": [
+          "entry_timestamp",
+          "exit_timestamp"
+        ],
+        "lifecycle": [
+          "trade_id"
+        ],
+        "notional": [],
+        "pair": [
+          "symbol"
+        ],
+        "value": []
+      }
+    },
+    {
+      "exact_column_name_match": false,
+      "key_audit": {
+        "candidate_coverage": 0.0,
+        "candidate_key_count": 3687,
+        "duplicate_keys": 0,
+        "intersection_count": 0,
+        "missing_key_rows": 0,
+        "rows_seen": 4,
+        "status": "PASS",
+        "unique_keys": 4
+      },
+      "path": "data/research/rd11/per-asset/dot_usdt/trades.csv",
+      "semantics": {
+        "baseline_action": [],
+        "cost": [
+          "entry_fee",
+          "exit_fee"
+        ],
+        "decision_time": [
+          "entry_timestamp",
+          "exit_timestamp"
+        ],
+        "lifecycle": [
+          "trade_id"
+        ],
+        "notional": [],
+        "pair": [
+          "symbol"
+        ],
+        "value": []
+      }
+    },
+    {
+      "exact_column_name_match": false,
+      "key_audit": {
+        "candidate_coverage": 0.0,
+        "candidate_key_count": 3687,
+        "duplicate_keys": 0,
+        "intersection_count": 0,
+        "missing_key_rows": 0,
+        "rows_seen": 6,
+        "status": "PASS",
+        "unique_keys": 6
+      },
+      "path": "data/research/rd11/per-asset/eth_usdt/trades.csv",
+      "semantics": {
+        "baseline_action": [],
+        "cost": [
+          "entry_fee",
+          "exit_fee"
+        ],
+        "decision_time": [
+          "entry_timestamp",
+          "exit_timestamp"
+        ],
+        "lifecycle": [
+          "trade_id"
+        ],
+        "notional": [],
+        "pair": [
+          "symbol"
+        ],
+        "value": []
+      }
+    },
+    {
+      "exact_column_name_match": false,
+      "key_audit": {
+        "candidate_coverage": 0.0,
+        "candidate_key_count": 3687,
+        "duplicate_keys": 0,
+        "intersection_count": 0,
+        "missing_key_rows": 0,
+        "rows_seen": 24,
+        "status": "PASS",
+        "unique_keys": 24
+      },
+      "path": "data/research/rd11/portfolio/trades.csv",
+      "semantics": {
+        "baseline_action": [],
+        "cost": [
+          "entry_fee",
+          "exit_fee"
+        ],
+        "decision_time": [
+          "entry_timestamp",
+          "exit_timestamp"
+        ],
+        "lifecycle": [
+          "trade_id"
+        ],
+        "notional": [],
+        "pair": [
+          "symbol"
+        ],
+        "value": []
+      }
+    },
+    {
+      "exact_column_name_match": false,
+      "key_audit": {
+        "candidate_coverage": 0.0,
+        "candidate_key_count": 3687,
+        "duplicate_keys": 0,
+        "intersection_count": 0,
+        "missing_key_rows": 0,
+        "rows_seen": 3,
+        "status": "PASS",
+        "unique_keys": 3
+      },
+      "path": "data/research/rd12/baseline/per-asset/ada_usdt/trades.csv",
+      "semantics": {
+        "baseline_action": [],
+        "cost": [
+          "entry_fee",
+          "exit_fee"
+        ],
+        "decision_time": [
+          "entry_timestamp",
+          "exit_timestamp"
+        ],
+        "lifecycle": [
+          "trade_id"
+        ],
+        "notional": [],
+        "pair": [
+          "symbol"
+        ],
+        "value": []
+      }
+    },
+    {
+      "exact_column_name_match": false,
+      "key_audit": {
+        "candidate_coverage": 0.0,
+        "candidate_key_count": 3687,
+        "duplicate_keys": 0,
+        "intersection_count": 0,
+        "missing_key_rows": 0,
+        "rows_seen": 2,
+        "status": "PASS",
+        "unique_keys": 2
+      },
+      "path": "data/research/rd12/baseline/per-asset/avax_usdt/trades.csv",
+      "semantics": {
+        "baseline_action": [],
+        "cost": [
+          "entry_fee",
+          "exit_fee"
+        ],
+        "decision_time": [
+          "entry_timestamp",
+          "exit_timestamp"
+        ],
+        "lifecycle": [
+          "trade_id"
+        ],
+        "notional": [],
+        "pair": [
+          "symbol"
+        ],
+        "value": []
+      }
+    },
+    {
+      "exact_column_name_match": false,
+      "key_audit": {
+        "candidate_coverage": 0.0,
+        "candidate_key_count": 3687,
+        "duplicate_keys": 0,
+        "intersection_count": 0,
+        "missing_key_rows": 0,
+        "rows_seen": 13,
+        "status": "PASS",
+        "unique_keys": 13
+      },
+      "path": "data/research/rd12/baseline/per-asset/btc_usdt/trades.csv",
+      "semantics": {
+        "baseline_action": [],
+        "cost": [
+          "entry_fee",
+          "exit_fee"
+        ],
+        "decision_time": [
+          "entry_timestamp",
+          "exit_timestamp"
+        ],
+        "lifecycle": [
+          "trade_id"
+        ],
+        "notional": [],
+        "pair": [
+          "symbol"
+        ],
+        "value": []
+      }
+    }
+  ]
+}

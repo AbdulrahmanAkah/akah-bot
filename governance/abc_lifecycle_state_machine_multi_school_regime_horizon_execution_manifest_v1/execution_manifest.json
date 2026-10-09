@@ -1,0 +1,95 @@
+{
+  "2024_access": false,
+  "all44_default": false,
+  "capability_audit_sha256": "EF99AC23359A50CEA0AFB4731662CC59BDE04D7B61062202FCA4C9960D434F97",
+  "entry_current_baseline": "BASE14",
+  "entry_selected_indicator_baseline": "BASE14_PLUS_ADX_DMI",
+  "fast_reuse_consumers": [
+    "daily_regime_diagnostic",
+    "single_school_entry_attribution",
+    "single_school_winner_attribution",
+    "school_compatibility_and_fusion",
+    "current_brain_augmentation_no_indicators",
+    "current_brain_augmentation_selected_indicators",
+    "regime_conditional_interaction"
+  ],
+  "heavy_cache_artifacts": [
+    "school_regime_entry_feature_store_2019_2023.csv",
+    "school_regime_winner_feature_store_2019_2023.csv",
+    "school_regime_series_year_manifests.json",
+    "post168_extended_path_cache_2019_2023_right_censored.csv"
+  ],
+  "horizon_target_year_worker_policy": "one target year per subprocess; may load next year for 2019-2022 only; never 2024",
+  "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_MULTI_SCHOOL_REGIME_HORIZON_HEAVY_FEATURE_STORE_MATERIALIZATION_V1",
+  "protocol_sha256": "ADDA152C4F2AA3A0CE37520E93D67F8679F50A00879F932BB378235CD1847B57",
+  "schema_version": "abc-multi-school-regime-horizon-execution-manifest-v1",
+  "sentinel_recompute_years": [
+    2019,
+    2023
+  ],
+  "stage_plan": [
+    {
+      "rev": 465,
+      "task": "HEAVY_FEATURE_STORE_MATERIALIZATION"
+    },
+    {
+      "rev": 466,
+      "task": "FEATURE_STORE_MANDATORY_REVIEW"
+    },
+    {
+      "rev": 467,
+      "task": "DAILY_REGIME_DIAGNOSTIC"
+    },
+    {
+      "rev": 468,
+      "task": "SINGLE_SCHOOL_ENTRY_ATTRIBUTION"
+    },
+    {
+      "rev": 469,
+      "task": "SINGLE_SCHOOL_WINNER_ATTRIBUTION"
+    },
+    {
+      "rev": 470,
+      "task": "SCHOOL_COMPATIBILITY_AND_FUSION"
+    },
+    {
+      "rev": 471,
+      "task": "CURRENT_BRAIN_AUGMENTATION_NO_INDICATORS"
+    },
+    {
+      "rev": 472,
+      "task": "CURRENT_BRAIN_AUGMENTATION_SELECTED_INDICATORS"
+    },
+    {
+      "rev": 473,
+      "task": "REGIME_CONDITIONAL_INTERACTION"
+    },
+    {
+      "rev": 474,
+      "task": "POST168_EXTENDED_PATH_MATERIALIZATION"
+    },
+    {
+      "rev": 475,
+      "task": "HORIZON_OPPORTUNITY_AND_CAPACITY_DIAGNOSTIC"
+    },
+    {
+      "rev": 476,
+      "task": "SURVIVOR_ECONOMIC_REPLAY"
+    },
+    {
+      "rev": 477,
+      "task": "FULL_SYNTHESIS"
+    },
+    {
+      "rev": 478,
+      "task": "FULL_SYNTHESIS_MANDATORY_REVIEW"
+    }
+  ],
+  "start_revision_after_design": 464,
+  "status": "FROZEN",
+  "survivor_only_expensive_replay": true,
+  "target_revision_after_full_execution": 478,
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_MULTI_SCHOOL_REGIME_HORIZON_EXECUTION_MANIFEST_FREEZE_V1",
+  "winner_current_baseline": "CAUSAL18",
+  "winner_selected_indicator_baseline": "CAUSAL18_PLUS_TREND_EMA"
+}

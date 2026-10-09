@@ -1,0 +1,578 @@
+{
+  "2024_access": false,
+  "2025_access": false,
+  "created_at_utc": "2026-09-25T21:21:58.204630+00:00",
+  "d2_expansion": false,
+  "derived_export_executed": false,
+  "disposition": "INDEPENDENT_DECISION_LEDGER_AUTHORITY_REQUIRED",
+  "exact_core": {
+    "path": "governance/abc_lifecycle_state_machine_continuation_value_exact_target_algebra_temporal_alignment_forensic_v1/clean_target_primitive_ledger.csv",
+    "sha256": "84C2870D6549EA09C40B39AF03EC61FF15DD1FCD1DEA0424E0DA5ED7BA2134EF"
+  },
+  "global_role_coverage": {
+    "baseline_action": true,
+    "cost": true,
+    "decision_time": true,
+    "exit_cash": false,
+    "hold_cash": false,
+    "identity": true,
+    "notional": true,
+    "pair": true,
+    "pit": true,
+    "target_value": true
+  },
+  "graph_edge_count": 74,
+  "graph_node_count": 100,
+  "m1_m2_executed": false,
+  "missing_global_roles": [
+    "exit_cash",
+    "hold_cash"
+  ],
+  "new_inventory_executed": false,
+  "new_replay": false,
+  "next_action_by_disposition": {
+    "DERIVED_DECISION_LEDGER_RECONSTRUCTION_FEASIBLE": "Human review may authorize a frozen reconstruction protocol and materialization of one authoritative pre-2024 derived decision ledger, followed by parity/PIT certification. M1/M2 remain unauthorized until ledger certification.",
+    "INDEPENDENT_DECISION_LEDGER_AUTHORITY_REQUIRED": "Stop historical artifact excavation. Human review must authorize a new independent derived decision-ledger authority under a frozen schema before selective policy modeling.",
+    "SPECIFIC_UPSTREAM_DERIVED_EXPORT_REQUIRED": "Human review may authorize exactly one named upstream derived export/materialization carrying the missing identity/action/notional/cash/cost fields forward from the identified producer graph. No raw reopening."
+  },
+  "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_UPSTREAM_DECISION_LEDGER_AUTHORITY_RECONSTRUCTION_FEASIBILITY_HUMAN_REVIEW_V1",
+  "partial_components": [
+    {
+      "missing_roles": [
+        "exit_cash",
+        "hold_cash",
+        "target_value"
+      ],
+      "paths": [
+        "governance/AKAH_BOT_RD27_NATIVE_TERMINAL_SOURCE_AUTHORITY_V1.json",
+        "governance/v2_phase_a_native_terminal_source_authority_recovery_v1/native_hook_close_contract_analysis.json",
+        "src/spotbot/research/rd27_adaptive_lifecycle.py",
+        "src/spotbot/research/rd27_later_trigger_v2_native_hook.py",
+        "src/spotbot/research/rd27_lifecycle_replay.py"
+      ],
+      "present_roles": [
+        "identity",
+        "decision_time",
+        "baseline_action",
+        "notional",
+        "cost"
+      ],
+      "roles": {
+        "baseline_action": [
+          {
+            "fields": [
+              "max_hold_hours"
+            ],
+            "path": "governance/AKAH_BOT_RD27_NATIVE_TERMINAL_SOURCE_AUTHORITY_V1.json"
+          },
+          {
+            "fields": [
+              "MAX_HOLD_168H",
+              "MAX_HOLD_HOURS",
+              "maximum_hold_hours",
+              "stagnation_threshold_hours"
+            ],
+            "path": "src/spotbot/research/rd27_adaptive_lifecycle.py"
+          },
+          {
+            "fields": [
+              "MAX_HOLD_168H",
+              "holding_hours",
+              "max_hold_exits"
+            ],
+            "path": "src/spotbot/research/rd27_lifecycle_replay.py"
+          }
+        ],
+        "cost": [
+          {
+            "fields": [
+              "BASE_ROUND_TRIP_COST",
+              "COST_MULTIPLIERS",
+              "cost",
+              "cost_multiplier",
+              "entry_cost",
+              "exit_cost",
+              "side_cost"
+            ],
+            "path": "src/spotbot/research/rd27_lifecycle_replay.py"
+          }
+        ],
+        "decision_time": [
+          {
+            "fields": [
+              "Timestamp",
+              "decision_time",
+              "timestamp"
+            ],
+            "path": "src/spotbot/research/rd27_later_trigger_v2_native_hook.py"
+          },
+          {
+            "fields": [
+              "Timestamp",
+              "decision_time",
+              "timestamp",
+              "timestamps"
+            ],
+            "path": "src/spotbot/research/rd27_adaptive_lifecycle.py"
+          },
+          {
+            "fields": [
+              "Timestamp",
+              "_utc_timestamp",
+              "begin_timestamp",
+              "decision_time",
+              "end_timestamp",
+              "timestamp",
+              "timestamps"
+            ],
+            "path": "src/spotbot/research/rd27_lifecycle_replay.py"
+          }
+        ],
+        "exit_cash": [],
+        "hold_cash": [],
+        "identity": [
+          {
+            "fields": [
+              "same_pair_is_not_lifecycle_identity_alone",
+              "trade_id_bridge_rule"
+            ],
+            "path": "governance/AKAH_BOT_RD27_NATIVE_TERMINAL_SOURCE_AUTHORITY_V1.json"
+          },
+          {
+            "fields": [
+              "position_id"
+            ],
+            "path": "src/spotbot/research/rd27_later_trigger_v2_native_hook.py"
+          },
+          {
+            "fields": [
+              "position_id"
+            ],
+            "path": "src/spotbot/research/rd27_adaptive_lifecycle.py"
+          }
+        ],
+        "notional": [
+          {
+            "fields": [
+              "TARGET_SLOT_NOTIONAL_FRACTION",
+              "capacity_notional",
+              "entry_notional",
+              "exit_notional",
+              "max_cash_notional",
+              "notional",
+              "quantity",
+              "target_notional"
+            ],
+            "path": "src/spotbot/research/rd27_lifecycle_replay.py"
+          }
+        ],
+        "pair": [
+          {
+            "fields": [
+              "canonical_market_rows_used",
+              "same_pair_is_not_lifecycle_identity_alone"
+            ],
+            "path": "governance/AKAH_BOT_RD27_NATIVE_TERMINAL_SOURCE_AUTHORITY_V1.json"
+          },
+          {
+            "fields": [
+              "MISSING_SYMBOL_BINDING",
+              "pair",
+              "symbol",
+              "symbol_bindings"
+            ],
+            "path": "src/spotbot/research/rd27_later_trigger_v2_native_hook.py"
+          },
+          {
+            "fields": [
+              "MARKET_STATES",
+              "build_market_state_frame",
+              "classify_market_state",
+              "entry_market_state",
+              "market",
+              "market_state",
+              "market_states",
+              "open_position_market_state",
+              "pair",
+              "real_market_data_loader_present"
+            ],
+            "path": "src/spotbot/research/rd27_adaptive_lifecycle.py"
+          },
+          {
+            "fields": [
+              "MARKET_STATES",
+              "entry_market_state",
+              "exit_market_state",
+              "market",
+              "market_state",
+              "observable_symbol_bindings",
+              "pair",
+              "same_pair_open",
+              "symbol",
+              "symbol_bindings"
+            ],
+            "path": "src/spotbot/research/rd27_lifecycle_replay.py"
+          }
+        ],
+        "pit": [
+          {
+            "fields": [
+              "_async_observation_time",
+              "capital",
+              "capital_admission_decision",
+              "capital_router",
+              "last_memory_observation_time",
+              "last_trigger_observation_time"
+            ],
+            "path": "src/spotbot/research/rd27_adaptive_lifecycle.py"
+          },
+          {
+            "fields": [
+              "ADAPTIVE_EXIT_FIXED_CAPITAL",
+              "CONTROL_TIME_FAIL_72_FIXED_CAPITAL",
+              "capital",
+              "capital_admission_decision"
+            ],
+            "path": "src/spotbot/research/rd27_lifecycle_replay.py"
+          }
+        ],
+        "target_value": []
+      }
+    },
+    {
+      "missing_roles": [
+        "identity",
+        "exit_cash",
+        "hold_cash"
+      ],
+      "paths": [
+        "governance/abc_lifecycle_state_machine_continuation_value_intervened_branch_mechanism_decomposition_v1/intervened_branch_ledger.csv"
+      ],
+      "present_roles": [
+        "decision_time",
+        "baseline_action",
+        "notional",
+        "cost",
+        "target_value"
+      ],
+      "roles": {
+        "baseline_action": [
+          {
+            "fields": [
+              "exit_now_time",
+              "exit_now_price",
+              "exit_now_reason",
+              "exit_now_net_cash",
+              "exit_now_net_cash_cost2x",
+              "hold_then_pi0_time",
+              "hold_then_pi0_price",
+              "hold_then_pi0_reason",
+              "hold_then_pi0_net_cash",
+              "hold_then_pi0_net_cash_cost2x",
+              "hold_optional_exits_suppressed",
+              "hold_mandatory_exits_seen",
+              "hold_exit_time",
+              "hold_delay_h"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_continuation_value_intervened_branch_mechanism_decomposition_v1/intervened_branch_ledger.csv"
+          }
+        ],
+        "cost": [
+          {
+            "fields": [
+              "__trade_entry_cost",
+              "__trade_exit_cost",
+              "entry_cost",
+              "exit_cost",
+              "base_exit_side_cost_rate",
+              "exit_now_net_cash_cost2x",
+              "hold_then_pi0_net_cash_cost2x",
+              "continuation_advantage_cost2x"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_continuation_value_intervened_branch_mechanism_decomposition_v1/intervened_branch_ledger.csv"
+          }
+        ],
+        "decision_time": [
+          {
+            "fields": [
+              "decision_time_4h",
+              "decision_time_exact",
+              "next_decision_time"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_continuation_value_intervened_branch_mechanism_decomposition_v1/intervened_branch_ledger.csv"
+          }
+        ],
+        "exit_cash": [],
+        "hold_cash": [],
+        "identity": [],
+        "notional": [
+          {
+            "fields": [
+              "__trade_quantity",
+              "__trade_entry_notional",
+              "__trade_exit_notional",
+              "quantity",
+              "entry_notional",
+              "exit_notional",
+              "current_position_notional"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_continuation_value_intervened_branch_mechanism_decomposition_v1/intervened_branch_ledger.csv"
+          }
+        ],
+        "pair": [
+          {
+            "fields": [
+              "pair",
+              "native_market_state_context"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_continuation_value_intervened_branch_mechanism_decomposition_v1/intervened_branch_ledger.csv"
+          }
+        ],
+        "pit": [],
+        "target_value": [
+          {
+            "fields": [
+              "continuation_advantage",
+              "continuation_advantage_cost2x"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_continuation_value_intervened_branch_mechanism_decomposition_v1/intervened_branch_ledger.csv"
+          }
+        ]
+      }
+    },
+    {
+      "missing_roles": [
+        "identity",
+        "exit_cash",
+        "hold_cash"
+      ],
+      "paths": [
+        "governance/abc_lifecycle_state_machine_exact_one_step_continuation_value_mega_v1/exact_two_sided_continuation_ledger.csv"
+      ],
+      "present_roles": [
+        "decision_time",
+        "baseline_action",
+        "notional",
+        "cost",
+        "target_value"
+      ],
+      "roles": {
+        "baseline_action": [
+          {
+            "fields": [
+              "exit_now_time",
+              "exit_now_price",
+              "exit_now_reason",
+              "exit_now_net_cash",
+              "exit_now_net_cash_cost2x",
+              "hold_then_pi0_time",
+              "hold_then_pi0_price",
+              "hold_then_pi0_reason",
+              "hold_then_pi0_net_cash",
+              "hold_then_pi0_net_cash_cost2x",
+              "hold_optional_exits_suppressed",
+              "hold_mandatory_exits_seen"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_exact_one_step_continuation_value_mega_v1/exact_two_sided_continuation_ledger.csv"
+          }
+        ],
+        "cost": [
+          {
+            "fields": [
+              "__trade_entry_cost",
+              "__trade_exit_cost",
+              "entry_cost",
+              "exit_cost",
+              "base_exit_side_cost_rate",
+              "exit_now_net_cash_cost2x",
+              "hold_then_pi0_net_cash_cost2x",
+              "continuation_advantage_cost2x"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_exact_one_step_continuation_value_mega_v1/exact_two_sided_continuation_ledger.csv"
+          }
+        ],
+        "decision_time": [
+          {
+            "fields": [
+              "decision_time_4h",
+              "decision_time_exact"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_exact_one_step_continuation_value_mega_v1/exact_two_sided_continuation_ledger.csv"
+          }
+        ],
+        "exit_cash": [],
+        "hold_cash": [],
+        "identity": [],
+        "notional": [
+          {
+            "fields": [
+              "__trade_quantity",
+              "__trade_entry_notional",
+              "__trade_exit_notional",
+              "quantity",
+              "entry_notional",
+              "exit_notional",
+              "current_position_notional"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_exact_one_step_continuation_value_mega_v1/exact_two_sided_continuation_ledger.csv"
+          }
+        ],
+        "pair": [
+          {
+            "fields": [
+              "pair",
+              "native_market_state_context"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_exact_one_step_continuation_value_mega_v1/exact_two_sided_continuation_ledger.csv"
+          }
+        ],
+        "pit": [],
+        "target_value": [
+          {
+            "fields": [
+              "continuation_advantage",
+              "continuation_advantage_cost2x"
+            ],
+            "path": "governance/abc_lifecycle_state_machine_exact_one_step_continuation_value_mega_v1/exact_two_sided_continuation_ledger.csv"
+          }
+        ]
+      }
+    },
+    {
+      "missing_roles": [
+        "exit_cash",
+        "hold_cash",
+        "target_value"
+      ],
+      "paths": [
+        "src/spotbot/research/abc_exit_primitives_v1.py"
+      ],
+      "present_roles": [
+        "identity",
+        "decision_time",
+        "baseline_action",
+        "notional",
+        "cost"
+      ],
+      "roles": {
+        "baseline_action": [
+          {
+            "fields": [
+              "MAX_HOLD_168H",
+              "MAX_HOLD_HOURS",
+              "holding_hours",
+              "max_hold_exits",
+              "mean_holding_hours"
+            ],
+            "path": "src/spotbot/research/abc_exit_primitives_v1.py"
+          }
+        ],
+        "cost": [
+          {
+            "fields": [
+              "BASE_ROUND_TRIP_COST",
+              "cost",
+              "cost_multiplier",
+              "entry_cost",
+              "exit_cost",
+              "modified_exit_cost",
+              "side_cost"
+            ],
+            "path": "src/spotbot/research/abc_exit_primitives_v1.py"
+          }
+        ],
+        "decision_time": [
+          {
+            "fields": [
+              "Timestamp",
+              "bar_close_time",
+              "decision_time",
+              "timestamp"
+            ],
+            "path": "src/spotbot/research/abc_exit_primitives_v1.py"
+          }
+        ],
+        "exit_cash": [],
+        "hold_cash": [],
+        "identity": [
+          {
+            "fields": [
+              "candidate_id",
+              "validate_candidate_id"
+            ],
+            "path": "src/spotbot/research/abc_exit_primitives_v1.py"
+          }
+        ],
+        "notional": [
+          {
+            "fields": [
+              "TARGET_SLOT_NOTIONAL_FRACTION",
+              "capacity_notional",
+              "entry_notional",
+              "exit_notional",
+              "max_cash_notional",
+              "modified_exit_notional",
+              "notional",
+              "quantity",
+              "target_notional"
+            ],
+            "path": "src/spotbot/research/abc_exit_primitives_v1.py"
+          }
+        ],
+        "pair": [
+          {
+            "fields": [
+              "_pair",
+              "bottom_pair_delta_pnl",
+              "by_pair",
+              "entry_market_state",
+              "exit_market_state",
+              "four_hour_by_pair",
+              "hourly_by_pair",
+              "market",
+              "market_state",
+              "pair",
+              "same_pair_open",
+              "top_pair_delta_pnl"
+            ],
+            "path": "src/spotbot/research/abc_exit_primitives_v1.py"
+          }
+        ],
+        "pit": [
+          {
+            "fields": [
+              "capital_admission_decision"
+            ],
+            "path": "src/spotbot/research/abc_exit_primitives_v1.py"
+          }
+        ],
+        "target_value": []
+      }
+    }
+  ],
+  "producer_files": [
+    "governance/abc_lifecycle_state_machine_continuation_value_exact_target_algebra_temporal_alignment_forensic_v1/output_manifest.json",
+    "governance/abc_lifecycle_state_machine_decision_value_derived_authority_binding_audit_human_review_v1/canonical_result.json",
+    "governance/abc_lifecycle_state_machine_decision_value_derived_authority_binding_audit_v1/canonical_result.json",
+    "governance/abc_lifecycle_state_machine_decision_value_derived_authority_binding_audit_v1/exact_core_candidate.json",
+    "governance/abc_lifecycle_state_machine_decision_value_derived_authority_binding_audit_v1/semantic_provenance_hits.json",
+    "governance/abc_lifecycle_state_machine_decision_value_derived_authority_binding_audit_v1/summary.md",
+    "governance/abc_lifecycle_state_machine_decision_value_feasibility_certificate_human_review_v1/canonical_result.json",
+    "governance/abc_lifecycle_state_machine_decision_value_feasibility_certificate_v1/authority_inventory.json",
+    "governance/abc_lifecycle_state_machine_decision_value_feasibility_certificate_v1/canonical_result.json",
+    "governance/abc_lifecycle_state_machine_decision_value_identity_temporal_crosswalk_forensic_human_review_v1/canonical_result.json",
+    "governance/abc_lifecycle_state_machine_decision_value_identity_temporal_crosswalk_forensic_v1/bounded_source_crosswalk_results.json",
+    "governance/abc_lifecycle_state_machine_decision_value_identity_temporal_crosswalk_forensic_v1/canonical_result.json",
+    "governance/abc_lifecycle_state_machine_decision_value_identity_temporal_crosswalk_forensic_v1/exact_core_lineage.json",
+    "governance/abc_lifecycle_state_machine_decision_value_identity_temporal_crosswalk_forensic_v1/summary.md"
+  ],
+  "producer_reference_hit_count": 120,
+  "production_changed": false,
+  "push": false,
+  "reason": "The bounded upstream lineage graph does not preserve enough tracked pre-2024 authority to reconstruct every required decision-ledger semantic role safely. Another broad artifact search is not authorized.",
+  "reconstruction_executed": false,
+  "schema_version": "akah-upstream-decision-ledger-authority-reconstruction-feasibility-v1",
+  "seed_count": 26,
+  "status": "PASS_UPSTREAM_DECISION_LEDGER_AUTHORITY_RECONSTRUCTION_FEASIBILITY_COMPLETE",
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_UPSTREAM_DECISION_LEDGER_AUTHORITY_RECONSTRUCTION_FEASIBILITY_V1"
+}

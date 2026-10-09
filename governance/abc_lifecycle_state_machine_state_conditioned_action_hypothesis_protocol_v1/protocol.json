@@ -1,0 +1,48 @@
+{
+  "action_selection_authorized": false,
+  "economic_outcomes_authorized": false,
+  "exit_action_authorized": false,
+  "hypothesis_catalog_sha256": "5625E31F61BB30AE8387436D263EE4670A4184A804283EF6B2C2AA5CC3FFAA05",
+  "next_if_valid": "ABC_LIFECYCLE_STATE_MACHINE_STATE_CONDITIONED_ACTION_HYPOTHESIS_ELIGIBILITY_MATERIALIZATION_V1",
+  "protocol_id": "ABC_LIFECYCLE_STATE_MACHINE_STATE_CONDITIONED_ACTION_HYPOTHESIS_PROTOCOL_V1",
+  "required_outputs": [
+    "action_hypothesis_eligibility_grid.csv",
+    "action_hypothesis_counts.csv",
+    "action_hypothesis_lifecycle_coverage.csv",
+    "action_hypothesis_coactivation_counts.csv",
+    "nonselection_audit.json"
+  ],
+  "runtime_action_authorized": false,
+  "schema_version": "abc-state-conditioned-action-hypothesis-protocol-v1",
+  "source_bindings": [
+    {
+      "path": "governance/abc_lifecycle_state_machine_state_conditioned_interpretation_protocol_v1/protocol.json",
+      "sha256": "CDB6040CB9905FCDD6075C717B5BF08B6F6156B252780C0E599BC58B7575B917"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_state_conditioned_interpretation_protocol_v1/context_catalog.json",
+      "sha256": "B5643D40AA2228CAA775EBFE19CBBE437001928392F01645EA4759EE474C6623"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_state_conditioned_interpretation_mandatory_review_v1/mandatory_review.json",
+      "sha256": "04440B5778E19FFBA9AA18D68A9246340D3E8AC3D00BD67448556CD491E67573"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_state_conditioned_interpretation_mandatory_review_v1/canonical_result.json",
+      "sha256": "BE6D02CA768A13A8EC8B3EF4E003078E85B0DA12863EEA71AF138CA6F9174A95"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_state_conditioned_interpretation_observational_materialization_v1/interpretation_context_grid.csv",
+      "sha256": "E7876CBA4B4E06A40C0945970F999ECE2A565431EFF85C502E1BE1DF57DD05B8"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_state_conditioned_interpretation_observational_materialization_v1/context_counts.csv",
+      "sha256": "F06A211B1610F15E699FF32D21ED5A269ECD531397DBF900A19AF1D793724D60"
+    },
+    {
+      "path": "governance/abc_lifecycle_state_machine_state_conditioned_interpretation_observational_materialization_v1/noninterpretation_audit.json",
+      "sha256": "A106F34E6154A6D35E39CCB58B75010DF8EF6B2B4DB8B981A36B3FE6BDF0E223"
+    }
+  ],
+  "status": "FROZEN_BEFORE_ELIGIBILITY_MATERIALIZATION"
+}

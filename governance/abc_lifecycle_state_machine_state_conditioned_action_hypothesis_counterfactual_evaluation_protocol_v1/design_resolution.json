@@ -1,0 +1,51 @@
+{
+  "cost_accounting_authority": {
+    "method": "For each development-year control trade, derive the per-side cost rate from entry_cost/entry_notional; require equality to exit_cost/exit_notional and constancy across the development cohort before computing any counterfactual.",
+    "new_cost_convention": false,
+    "source": "data/research/abc_exit_primitives_2019_2023_v1/control-trades.csv"
+  },
+  "decision_time_price_authority": {
+    "formula": "decision_close = R_before_t + close_minus_R_before_t",
+    "semantic_reason": "Both fields are frozen causal feature outputs and algebraically reconstruct the current completed 4H close without future information.",
+    "source": "governance/abc_lifecycle_state_machine_persistent_state_causal_feature_reconstruction_execution_v1/decision_grid_reconstructed_features.csv"
+  },
+  "join_authority": {
+    "control_native_exit_mapping": "native_exit_time == control.exit_time",
+    "decision_key": "decision_time_4h",
+    "lifecycle_keys": [
+      "year",
+      "pair",
+      "entry_time",
+      "native_exit_time"
+    ],
+    "required_cardinality": "ONE_FEATURE_ROW_PER_LIFECYCLE_PLUS_DECISION_TIME_AND_ONE_CONTROL_ROW_PER_LIFECYCLE"
+  },
+  "replay_decision": {
+    "direct_event_conditioned_continuation_value_only": true,
+    "portfolio_replay_required_for_this_stage": false,
+    "reason": "The first economic question is whether continuation after a preregistered context added or destroyed direct trade value. Capital-redeployment effects are a later mechanism and must not contaminate this first diagnostic."
+  },
+  "schema_version": "abc-action-hypothesis-counterfactual-design-resolution-v1",
+  "static_exit_module_markers": {
+    "direct_effect_present": true,
+    "entry_cost_semantics_present": true,
+    "entry_price_semantics_present": true,
+    "exit_cost_semantics_present": true,
+    "exit_price_semantics_present": true,
+    "net_pnl_semantics_present": true,
+    "replay_overlay_present": true
+  },
+  "status": "PASS_STATIC_RESOLUTION",
+  "year_policy": {
+    "2023_economic_values_read_in_this_chain": false,
+    "2024_access": false,
+    "2025_access": false,
+    "development_economic_years": [
+      2019,
+      2020,
+      2021,
+      2022
+    ],
+    "protected_temporal_validation_year": 2023
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "2024": false,
+  "2025": false,
+  "chronology": {
+    "blocks": [
+      {
+        "block_id": "B01",
+        "test_end_exclusive_utc": "2023-02-27T00:00:00+00:00",
+        "test_start_utc": "2023-01-02T00:00:00+00:00"
+      },
+      {
+        "block_id": "B02",
+        "test_end_exclusive_utc": "2023-04-24T00:00:00+00:00",
+        "test_start_utc": "2023-02-27T00:00:00+00:00"
+      },
+      {
+        "block_id": "B03",
+        "test_end_exclusive_utc": "2023-06-19T00:00:00+00:00",
+        "test_start_utc": "2023-04-24T00:00:00+00:00"
+      },
+      {
+        "block_id": "B04",
+        "test_end_exclusive_utc": "2023-08-14T00:00:00+00:00",
+        "test_start_utc": "2023-06-19T00:00:00+00:00"
+      },
+      {
+        "block_id": "B05",
+        "test_end_exclusive_utc": "2023-10-09T00:00:00+00:00",
+        "test_start_utc": "2023-08-14T00:00:00+00:00"
+      },
+      {
+        "block_id": "B06",
+        "test_end_exclusive_utc": "2023-12-04T00:00:00+00:00",
+        "test_start_utc": "2023-10-09T00:00:00+00:00"
+      }
+    ],
+    "candidate_block_count": 6,
+    "feature_selection": "FROZEN_REV719",
+    "first_test_start_utc": "2023-01-02T00:00:00+00:00",
+    "lifecycle_boundary_rule": "train lifecycle must be fully ended by test start using max decision + 4h conservative bound; test lifecycle first decision must fall inside block",
+    "min_test_rows": 10,
+    "min_train_rows": 50,
+    "min_valid_blocks": 3,
+    "protocol_id": "EXPANDING_52W_WARMUP_NONOVERLAP_8W_OOT_LIFECYCLE_PURGED_V1",
+    "selection_basis": "CALENDAR_ONLY_NO_OUTCOME_OR_MODEL_PERFORMANCE_INPUT",
+    "status": "PASS",
+    "target_embargo_hours": 4,
+    "test_block_days": 56,
+    "threshold_tuning": false,
+    "train_scaling": "TRAIN_ONLY_PER_BLOCK",
+    "warmup_days": 364
+  },
+  "cost_stress_formula": "Y_2X = Y_1X - (hold_path_total_cost - exit_now_cost) / current_notional",
+  "gate": {
+    "ci_z": 1.96,
+    "duration_threshold": null,
+    "exit_tail_dominance": "-mu_upper > max(0,mu_upper+downside_upper95) at both 1x and 2x",
+    "first_qualified_disagreement_only": true,
+    "hold_tail_dominance": "mu_lower > downside_upper95 at both 1x and 2x",
+    "requires_1x_2x_m1_and_m2_action_agreement": true
+  },
+  "m1": {
+    "capacity": "same frozen ridge design",
+    "interactions": [
+      "drawdown_x_trend",
+      "trend_x_breadth"
+    ],
+    "lambda": 10.0,
+    "outputs": [
+      "mu_1x",
+      "downside_1x",
+      "mu_2x",
+      "downside_2x",
+      "expected_remaining_hours"
+    ]
+  },
+  "m2": {
+    "lambda": 10.0,
+    "target": "1[Y_1x>0]",
+    "weight": "abs(Y_1x) trade-equal"
+  },
+  "new_raw_or_replay": false,
+  "no_outcome_tuning": true,
+  "policy_id": "TAIL_DOMINANCE_1X_2X_M1_M2_FIRST_OVERRIDE_V1",
+  "schema_version": "akah-risk-aware-selective-policy-protocol-v1"
+}

@@ -1,0 +1,53 @@
+{
+  "task_id": "CAUSAL_EXIT_BRAIN_V2_PHASE_A_NATIVE_TERMINAL_BOUNDARY_AUTHORITY_REVIEW_RECOVERY_V2",
+  "task_start_revision": 185,
+  "task_start_head": "b2e069413dc5a203e420ad9001322a5670095a4f",
+  "branch": "research/rd48-cross-venue-price-level-basis-direct-utility-v1",
+  "objective": "Bind native RD27 terminal source control flow, identity, runtime time and ordering independently of hook signature heuristics; distinguish source authority from cohort execution authority.",
+  "status": "PASS",
+  "resolution_class": "NATIVE_RD27_SOURCE_TRANSITION_AUTHORITY_BOUND_COHORT_EXECUTION_NOT_YET_BOUND",
+  "summary": "Source contract bound: two native removal sites, runtime pair plus entry-time identity and native loop timestamp; prior hook argument rejection disproven by keyword-only parameters and class-state flow. 35 synthetic tests pass including exact observer parity. Historical 33-event ledger remains a separate execution gate; delegated control and intrabar timestamp caveats explicit.",
+  "north_star_effect": "Removes a technical authority false negative without mistaking source code or synthetic parity for historical lifecycle evidence.",
+  "event_type": "NATIVE_TERMINAL_SOURCE_AUTHORITY_RECOVERY",
+  "next_bottleneck": "CAUSAL_EXIT_BRAIN_V2_PHASE_A_NATIVE_TERMINAL_LEDGER_REPLAY_V1",
+  "state_updates": {
+    "v2_phase_a_native_terminal_source_authority": "SOURCE_CONTRACT_BOUND",
+    "v2_phase_a_native_terminal_source_authority_path": "governance/AKAH_BOT_RD27_NATIVE_TERMINAL_SOURCE_AUTHORITY_V1.json",
+    "v2_phase_a_native_terminal_source_recovery_v2": "PASS",
+    "v2_phase_a_native_terminal_authority": "SOURCE_BOUND_EMPIRICAL_LEDGER_PENDING",
+    "v2_phase_a_native_certifiable": false,
+    "roadmap_position": "PHASE_A_NATIVE_TERMINAL_LEDGER_PENDING",
+    "actual_exit_authority": false,
+    "economics_authorized": false
+  },
+  "firewall": {
+    "outcome_fields": false,
+    "market_data_read": false,
+    "economics": false,
+    "pnl": false,
+    "actual_exit_authority_mutation": false,
+    "native_source_mutation": false,
+    "test_source_added": true,
+    "push": false
+  },
+  "authority_bindings": {
+    "rd27_replay_sha256": "E3944A4655DDDF21C394FE1DB541F2645F529C00BD8390B22D652BD8EF5BBF83",
+    "rd27_state_sha256": "A2C0B25B0053CEEF1AA5C3AC5DB1442C1DCF333845F7345FB1F80A9AD3E1290E",
+    "native_hook_sha256": "E149C5C354B08801920CA87F61F397C9C7969EA7E6BE7C081AFF865CF9168EFD",
+    "source_authority_sha256": "A7430573E2D55362CC7E85C9DB606D048734DFDA8584240811FEE1B876BAB31F"
+  },
+  "evidence": [
+    {
+      "path": "governance/AKAH_BOT_RD27_NATIVE_TERMINAL_SOURCE_AUTHORITY_V1.json",
+      "sha256": "A7430573E2D55362CC7E85C9DB606D048734DFDA8584240811FEE1B876BAB31F"
+    },
+    {
+      "path": "tests/research/test_rd27_native_terminal_source_authority.py",
+      "sha256": "2EDCCD417894164351FD76C32C64F2A28FD6D7E5BE280F0B6D078FD30EA1E066"
+    },
+    {
+      "path": "governance/v2_phase_a_native_terminal_source_authority_recovery_v1/native_hook_close_contract_analysis.json",
+      "sha256": "8F082A7B033D30D74688AD79B373CC9C685562653D1BDCF2C5ADCDFB83767B45"
+    }
+  ]
+}

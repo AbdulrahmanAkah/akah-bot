@@ -1,0 +1,77 @@
+{
+  "aliases": [
+    "events"
+  ],
+  "authority_id": "AKAH_BOT_CURRENT_RD26_EVENTS_TRUE_READ_RECONSTRUCTION_INPUT_AUTHORITY_V1",
+  "forbidden_mixed_input_count": 0,
+  "future_information_leakage": false,
+  "helper_count": 10,
+  "must_not_open_2023_rows": true,
+  "must_not_read_mixed_output_as_reconstruction_input": true,
+  "native_1h_timestamp_semantic": "BAR_CLOSE_TIME",
+  "preopen_authority_blocked_count": 0,
+  "primary_producer_sites": [
+    {
+      "call_names": [
+        "scan_focus_signals"
+      ],
+      "expr": "scan_focus_signals(\n        membership=membership,\n        features=frames,\n        periods=ROBUSTNESS_PERIODS,\n        data_start=DATA_START,\n        data_cutoff=DATA_CUTOFF,\n        guard_each_period_hours=None,\n    )",
+      "kind": "ASSIGN",
+      "line": 597,
+      "loaded_names": [
+        "DATA_CUTOFF",
+        "DATA_START",
+        "ROBUSTNESS_PERIODS",
+        "frames",
+        "membership",
+        "scan_focus_signals"
+      ],
+      "targets": [
+        "events",
+        "funnel"
+      ]
+    },
+    {
+      "call_names": [
+        "filter_robustness_events"
+      ],
+      "expr": "filter_robustness_events(events)",
+      "kind": "ASSIGN",
+      "line": 605,
+      "loaded_names": [
+        "events",
+        "filter_robustness_events"
+      ],
+      "targets": [
+        "events"
+      ]
+    }
+  ],
+  "required_output_columns": [
+    "timestamp",
+    "universe_id",
+    "period_id",
+    "family_id",
+    "pair",
+    "membership_rank",
+    "atr24_at_signal"
+  ],
+  "root_producer_call_count": 2,
+  "status": "BLOCKED",
+  "target_output": "data/research/rd26_p1_runtime/signal-events-2022-2023.csv",
+  "true_inputs": [],
+  "true_read_dependency_count": 0,
+  "unresolved_path_count": 0,
+  "writer": {
+    "function": "main",
+    "function_end_line": 722,
+    "function_line": 562,
+    "module": "scripts/research/run_rd26_exit_architecture.py",
+    "module_sha256": "9C096C6E7C4784D9B91A7EFC55FA85F46755B2D850B78E7A5E90980294DC9ACE",
+    "receiver": "events",
+    "receiver_root": "events",
+    "writer_call": "events.to_csv(\n        output / \"signal-events-2022-2023.csv\",\n        index=False,\n        lineterminator=\"\\n\",\n    )",
+    "writer_line": 650
+  },
+  "written_object": "events"
+}

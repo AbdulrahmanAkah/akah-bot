@@ -1,0 +1,523 @@
+{
+  "adjudication": {
+    "control_discrimination_claim": "UNRESOLVED_BY_DESIGN",
+    "economic_judgment": false,
+    "master_population_equals_control_population": true,
+    "next_step": "HUMAN_GOVERNED_BEHAVIORAL_ADJUDICATION",
+    "selectivity_threshold_applied": false
+  },
+  "authority": {
+    "canonical_control_identity_count": 153,
+    "control_sha256": "782CEA4D8037E6D2C72FBE7B37FF69F10E66DC728396E6B4B58C28559BEEB225",
+    "native_rd27_max_hold_hours": 168,
+    "observable_4h_sha256": "1C72416F889137B68FF48008C5760E809D0A94A5647569BAB631E96904CEBD72",
+    "protocol_sha256": "3574E70F11F80C7F97FF9CD0DFE76A82172E76B9413A5D0A6FB42F7B8B5601C9"
+  },
+  "candidate_formula": "MEMORY_SEEN_AND_NEWLY_LATCHED_STRICTLY_LATER_TRIGGER",
+  "cohorts": {
+    "candidate": 25,
+    "control_candidates": 25,
+    "eligible": 33,
+    "eligible_controls": 33,
+    "latched_trigger": 25,
+    "memory": 25,
+    "raw_trigger": 33,
+    "trigger_before_memory": 14
+  },
+  "determinism": {
+    "snapshot_duplicates_deduplicated": 0,
+    "structural_invariants": "PASS",
+    "unique_lifecycle_validation": "PASS"
+  },
+  "episodes": {
+    "memory_episode_count_at_candidate": {
+      "count": 25,
+      "maximum": 4.0,
+      "median": 2.0,
+      "minimum": 1.0,
+      "p90": 3.6000000000000014,
+      "q25": 1.0,
+      "q75": 2.0
+    },
+    "raw_trigger_candidates_before_latch": {
+      "count": 33,
+      "maximum": 12.0,
+      "median": 1.0,
+      "minimum": 1.0,
+      "p90": 10.8,
+      "q25": 1.0,
+      "q75": 6.0
+    },
+    "raw_trigger_total": 331,
+    "repeated_trigger_after_candidate_total": 209
+  },
+  "execution_window": {
+    "admission_cutoff_exclusive": "2022-12-25T00:00:00+00:00",
+    "observation_censoring": "ENTRY_PLUS_NATIVE_RD27_MAX_HOLD_HOURS",
+    "protected_boundary_exclusive": "2023-01-01T00:00:00+00:00",
+    "returned_years": [
+      2022
+    ],
+    "window_start": "2022-01-01T00:00:00+00:00"
+  },
+  "firewall": {
+    "actual_exit_authority": false,
+    "control_projection_fields": [
+      "candidate_id",
+      "canonical_symbol",
+      "entry_price",
+      "entry_time",
+      "fold_id",
+      "portfolio_mode",
+      "position_id",
+      "previous_position_id",
+      "quantity",
+      "symbol",
+      "trade_id",
+      "universe_mode"
+    ],
+    "economic_metrics_read": false,
+    "forbidden_fields_materialized": false,
+    "outcome_fields_read": false,
+    "posthoc_fields_materialized": false,
+    "predicate_mutation": false,
+    "production_activation": false,
+    "protected_year_row_values_returned": false,
+    "threshold_search": false
+  },
+  "memory_formula": "COMPLETED_4H_CLOSE_BREAKS_PRIOR_POST_ENTRY_STRUCTURAL_HIGH",
+  "metrics": {
+    "candidate_free_fraction": {
+      "denominator": 33,
+      "numerator": 8,
+      "status": "DEFINED",
+      "value": 0.24242424242424243
+    },
+    "candidate_incidence": {
+      "denominator": 33,
+      "numerator": 25,
+      "status": "DEFINED",
+      "value": 0.7575757575757576
+    },
+    "conditional_candidate_incidence_after_memory": {
+      "denominator": 25,
+      "numerator": 25,
+      "status": "DEFINED",
+      "value": 1.0
+    },
+    "control_candidate_incidence": {
+      "denominator": 33,
+      "numerator": 25,
+      "status": "DEFINED",
+      "value": 0.7575757575757576
+    },
+    "latched_trigger_incidence": {
+      "denominator": 33,
+      "numerator": 25,
+      "status": "DEFINED",
+      "value": 0.7575757575757576
+    },
+    "memory_incidence": {
+      "denominator": 33,
+      "numerator": 25,
+      "status": "DEFINED",
+      "value": 0.7575757575757576
+    },
+    "raw_trigger_incidence": {
+      "denominator": 33,
+      "numerator": 33,
+      "status": "DEFINED",
+      "value": 1.0
+    },
+    "trigger_before_memory_incidence": {
+      "denominator": 33,
+      "numerator": 14,
+      "status": "DEFINED",
+      "value": 0.42424242424242425
+    }
+  },
+  "parameter_count": 0,
+  "protocol_id": "CAUSAL_EXIT_BRAIN_SHADOW_EXIT_CANDIDATE_BEHAVIORAL_SPECIFICITY_PROTOCOL_V1",
+  "protocol_summary": {
+    "actual_exit_authority": false,
+    "adjudication": {
+      "empty": "INSUFFICIENT_ELIGIBLE_DENOMINATOR; retain null metrics",
+      "initial": "SELECTIVITY_NOT_YET_EXECUTED",
+      "pass_meaning": "Protocol/software conformance only, not sufficient selectivity, profitability, deployment or permission for an execution study",
+      "prohibited_labels": "No NEAR_UNIVERSAL or NONTRIVIALLY_SELECTIVE cutoff is authorized",
+      "structural_failure": "FAIL_CLOSED; no selectivity or actionability conclusion",
+      "structurally_valid_nonempty": "SELECTIVITY_OBSERVABLE; raw measurements only; CONTROL_DISCRIMINATION_UNRESOLVED until governed review"
+    },
+    "allowed_control_fields": [
+      "candidate_id",
+      "canonical_symbol",
+      "entry_price",
+      "entry_time",
+      "fold_id",
+      "portfolio_mode",
+      "position_id",
+      "previous_position_id",
+      "quantity",
+      "symbol",
+      "trade_id",
+      "universe_mode"
+    ],
+    "allowed_diagnostic_schema": [
+      "lifecycle_id",
+      "trade_id",
+      "symbol",
+      "entry_time",
+      "observed_through",
+      "first_memory_time",
+      "raw_trigger_times",
+      "latched_trigger_time",
+      "candidate_times",
+      "memory_episodes_at_candidate",
+      "causal_snapshot_evidence_verified",
+      "entry_regime",
+      "memory_regime",
+      "trigger_regime"
+    ],
+    "allowed_observable_schema": [
+      "symbol",
+      "source_exchange",
+      "source_symbol",
+      "bar_open_time",
+      "bar_close_time",
+      "open",
+      "high",
+      "low",
+      "close",
+      "volume"
+    ],
+    "candidate_formula": "MEMORY_SEEN_AND_NEWLY_LATCHED_STRICTLY_LATER_TRIGGER",
+    "cohorts": {
+      "A": "All unique lifecycles in separately authorized window with unambiguous identity, causal primitive coverage and at least one full post-entry completed 4H snapshot; freeze eligibility before events and report first-bar/no-prior unavailability",
+      "B": "A with first memory established",
+      "C": "A with at least one raw trigger candidate",
+      "D": "A with generic strictly-later trigger latch",
+      "E": "A with one-shot candidate",
+      "F": "A intersect immutable canonical control roster, joined exactly on trade_id"
+    },
+    "control_authority": {
+      "binding": "Charter latest_async_ready_state_control_denominator_authority_audit; latest_async_ready_state_control_identity_semantics_authority_audit; latest_async_ready_state_control_hourly_evidence_authority_gap_closure_v2",
+      "eligible_denominator": "Measured |F|, not automatically 153; report all 153 identities as eligible, out-of-window or predeclared coverage exclusion",
+      "join_identity": "trade_id",
+      "membership": "ALL_PIT_TRADES_REPORTED_UNCHANGED; universe_mode=PIT_UNIVERSE and portfolio_mode=CONTROL; no label/outcome/candidate selection",
+      "not_a_false_positive_label": true,
+      "path": "reports/research/ams-rd04-d5c1-labelled-pit-control-trades-v1.csv",
+      "roster_identity_count": 153,
+      "sha256": "782CEA4D8037E6D2C72FBE7B37FF69F10E66DC728396E6B4B58C28559BEEB225"
+    },
+    "economic_metrics_allowed": false,
+    "empirical_execution": false,
+    "episode_distributions": {
+      "memory_episodes_at_candidate": "generic episode count captured in candidate, E only",
+      "one_shot": "candidate events per lifecycle must be 0 or 1; D and E must coincide",
+      "raw_candidates_before_latch": "count of distinct raw trigger timestamps < latch, D",
+      "repeated_deterioration_after_candidate": "raw times > candidate time, E",
+      "same_time_rejections": "raw time == first memory, separate from before-memory, A",
+      "triggers_before_memory": "raw times < first memory; all raw if never memory, A"
+    },
+    "field_firewall": "Exact allowlists; unknown names denied. Project before values are read. No outcome/posthoc field may define cohort, state, censoring or judgment.",
+    "forbidden_fields": [
+      "exit_price",
+      "exit_reason",
+      "exit_time",
+      "gross_pnl",
+      "net_pnl",
+      "pnl",
+      "holding_hours",
+      "holding_duration",
+      "future_holding_duration",
+      "mfe",
+      "mae",
+      "return_fraction",
+      "alignment_tier",
+      "all_categories",
+      "event_association",
+      "event_count",
+      "event_ids",
+      "natural_reselection_sequence",
+      "primary_categories",
+      "timing_labels"
+    ],
+    "later_execution_requirements": [
+      "Separate admission and input manifest: exact hashes, years, window, lifecycle identity mapping, completed primitive coverage, and frozen observation/censoring convention",
+      "Reverify canonical roster SHA and 153 unique trade_id values using permitted projection; do not assume this protocol read or certified current CSV bytes",
+      "Register all window-eligible admissions before candidate calculation, including no-memory/no-trigger lifecycles; publish predeclared exclusions without event filtering",
+      "Master cohort and control complement must be declared independently; if A=F, report that equality and do not claim target/control discrimination or invent new controls",
+      "Observation ends at the last authorized causal boundary, limited by online native lifecycle-close notification if applicable; never import historical exit_time, exit_reason or holding duration to truncate exposure. No candidate-dependent censoring",
+      "Retain exposure/coverage ledger; partial coverage cannot be silently counted as a candidate-free lifecycle. Coverage loss after eligibility fails closed",
+      "Run existing adapter/memory/trigger/candidate unchanged, fully post-entry completed 4H bars only; no external substitute predicate events or temporal backfill",
+      "Prove native parity via isolated synthetic regression/opaque parity certificate, not by importing economic trade columns into this protocol",
+      "Bind generic latch and snapshot evidence, one-shot state, exact trade-to-lifecycle mapping, causal regime availability and complete per-lifecycle diagnostics",
+      "Prove identical runs, shuffled equivalent rows, exact duplicate deduplication, conflict rejection, unique post-normalization IDs and position isolation",
+      "No implicit protected-year, real-row, economic, threshold, formula-change or exit authorization follows from naming the next execution task"
+    ],
+    "memory_formula": "COMPLETED_4H_CLOSE_BREAKS_PRIOR_POST_ENTRY_STRUCTURAL_HIGH",
+    "observable_contract": "4H completed snapshots only: bar_open_time >= lifecycle entry and bar_close_time <= decision boundary; exclude entry-spanning bars. Preserve existing UTC, identity and duplicate semantics.",
+    "outcome_fields_allowed": false,
+    "parameter_count": 0,
+    "primary_metrics": {
+      "candidate_free_fraction": "(|A| - |E|) / |A| = 1 - candidate_incidence when defined",
+      "candidate_incidence": "|E| / |A|",
+      "conditional_candidate_incidence_after_memory": "|E| / |B|",
+      "control_candidate_incidence": "|E intersect F| / |F|",
+      "latched_trigger_incidence": "|D| / |A|",
+      "memory_incidence": "|B| / |A|",
+      "raw_trigger_incidence": "|C| / |A|",
+      "trigger_before_memory_incidence": "|lifecycles in A with raw trigger before first memory, including never-memory lifecycles| / |A|"
+    },
+    "protocol_id": "CAUSAL_EXIT_BRAIN_SHADOW_EXIT_CANDIDATE_BEHAVIORAL_SPECIFICITY_PROTOCOL_V1",
+    "regime_context": {
+      "counts": "candidate counts by regime at first memory and at latched trigger",
+      "eligibility_dependency": false,
+      "incidence": "by regime at entry: E in entry group / A in same entry group; conditional memory-group incidence: E / B with same first-memory regime",
+      "invalid_denominator": "No candidate-time regime incidence using candidate-only counts",
+      "labels": [
+        "RISK_ON",
+        "TRANSITION",
+        "RISK_OFF",
+        "UNAVAILABLE"
+      ],
+      "source": "separately SHA-bound causal RD27 state-frame manifest; availability <= event",
+      "unavailable": "retain explicit unknown category and report coverage; never backfill"
+    },
+    "regime_descriptive_only": true,
+    "selectivity_status": "SELECTIVITY_NOT_YET_EXECUTED",
+    "structural_fail_conditions": [
+      "candidate without memory or valid generic latch",
+      "candidate <= first memory",
+      "candidate timestamp not exactly first latch",
+      "more than one candidate per lifecycle",
+      "event outside causal lifecycle or study boundary",
+      "ambiguous control/position identity",
+      "outcome-field dependency",
+      "causal snapshot unavailable for attempted eligible row",
+      "conflicting duplicate identity",
+      "equivalent input ordering changes results",
+      "native parity failure",
+      "unaccounted roster identities",
+      "post-event eligibility change",
+      "noncausal context",
+      "missing required execution evidence"
+    ],
+    "symbol_concentration": {
+      "counts": "|E_symbol| and |A_symbol|; incidence = |E_symbol| / |A_symbol|",
+      "eligibility_dependency": false,
+      "share": "|E_symbol| / |E|; report all symbols, descending candidate count then symbol",
+      "top_shares": "cumulative share for every rank k, including ties with lexical order; no selected top-k cutoff, eligibility gate or economic ranking"
+    },
+    "symbol_concentration_descriptive_only": true,
+    "threshold_optimization_allowed": false,
+    "timing_descriptive_only": true,
+    "timing_distributions": {
+      "eligibility_dependency": false,
+      "entry_to_candidate": "candidate time - entry time, E only",
+      "entry_to_memory": "first memory time - entry time, B only",
+      "memory_to_trigger": "candidate time - first memory time, E only",
+      "quantiles": "linear interpolation at (n-1)*p; empty count=0 and all statistics null",
+      "statistics": [
+        "count",
+        "minimum",
+        "q25",
+        "median",
+        "q75",
+        "p90",
+        "maximum"
+      ],
+      "unit": "fractional UTC hours; no rounding before calculation"
+    },
+    "trade_parity_required": true,
+    "trigger_formula": "CURRENT_COMPLETED_4H_CLOSE_BELOW_PREVIOUS_COMPLETED_4H_LOW",
+    "zero_denominator": "value=null, status=UNDEFINED_ZERO_DENOMINATOR; not zero or perfect"
+  },
+  "regime_context": {
+    "status": "NOT_AVAILABLE_FROM_AUTHORIZED_EXECUTION_INPUT",
+    "used_for_eligibility": false
+  },
+  "roster_accounting": {
+    "accounting_exact": true,
+    "canonical_total": 153,
+    "coverage_excluded": 0,
+    "eligible": 33,
+    "out_of_window": 120
+  },
+  "status": "PASS",
+  "symbol_concentration": {
+    "descriptive_only": true,
+    "rows": [
+      {
+        "candidate_incidence": 1.0,
+        "candidates": 2,
+        "eligible": 2,
+        "symbol": "AAVE"
+      },
+      {
+        "candidate_incidence": 1.0,
+        "candidates": 1,
+        "eligible": 1,
+        "symbol": "ALGO"
+      },
+      {
+        "candidate_incidence": 1.0,
+        "candidates": 1,
+        "eligible": 1,
+        "symbol": "COMP"
+      },
+      {
+        "candidate_incidence": 1.0,
+        "candidates": 1,
+        "eligible": 1,
+        "symbol": "CRO"
+      },
+      {
+        "candidate_incidence": 1.0,
+        "candidates": 1,
+        "eligible": 1,
+        "symbol": "CRV"
+      },
+      {
+        "candidate_incidence": 1.0,
+        "candidates": 1,
+        "eligible": 1,
+        "symbol": "DASH"
+      },
+      {
+        "candidate_incidence": 1.0,
+        "candidates": 2,
+        "eligible": 2,
+        "symbol": "DOGE"
+      },
+      {
+        "candidate_incidence": 0.3333333333333333,
+        "candidates": 1,
+        "eligible": 3,
+        "symbol": "ETC"
+      },
+      {
+        "candidate_incidence": 0.0,
+        "candidates": 0,
+        "eligible": 1,
+        "symbol": "ETH"
+      },
+      {
+        "candidate_incidence": 1.0,
+        "candidates": 1,
+        "eligible": 1,
+        "symbol": "FTT"
+      },
+      {
+        "candidate_incidence": 1.0,
+        "candidates": 1,
+        "eligible": 1,
+        "symbol": "ICP"
+      },
+      {
+        "candidate_incidence": 1.0,
+        "candidates": 1,
+        "eligible": 1,
+        "symbol": "LDO"
+      },
+      {
+        "candidate_incidence": 1.0,
+        "candidates": 2,
+        "eligible": 2,
+        "symbol": "LRC"
+      },
+      {
+        "candidate_incidence": 0.0,
+        "candidates": 0,
+        "eligible": 1,
+        "symbol": "LTC"
+      },
+      {
+        "candidate_incidence": 0.0,
+        "candidates": 0,
+        "eligible": 1,
+        "symbol": "MANA"
+      },
+      {
+        "candidate_incidence": 1.0,
+        "candidates": 1,
+        "eligible": 1,
+        "symbol": "PAXG"
+      },
+      {
+        "candidate_incidence": 0.6666666666666666,
+        "candidates": 2,
+        "eligible": 3,
+        "symbol": "QNT"
+      },
+      {
+        "candidate_incidence": 1.0,
+        "candidates": 1,
+        "eligible": 1,
+        "symbol": "SHIB"
+      },
+      {
+        "candidate_incidence": 0.5,
+        "candidates": 2,
+        "eligible": 4,
+        "symbol": "SNX"
+      },
+      {
+        "candidate_incidence": 1.0,
+        "candidates": 1,
+        "eligible": 1,
+        "symbol": "UNI"
+      },
+      {
+        "candidate_incidence": 1.0,
+        "candidates": 1,
+        "eligible": 1,
+        "symbol": "XMR"
+      },
+      {
+        "candidate_incidence": 1.0,
+        "candidates": 1,
+        "eligible": 1,
+        "symbol": "XRP"
+      },
+      {
+        "candidate_incidence": 1.0,
+        "candidates": 1,
+        "eligible": 1,
+        "symbol": "ZEC"
+      }
+    ],
+    "top_symbol_candidate_share": 0.08
+  },
+  "task_id": "CAUSAL_EXIT_BRAIN_SHADOW_EXIT_CANDIDATE_BEHAVIORAL_SPECIFICITY_EXECUTION_V1",
+  "timing": {
+    "entry_to_candidate_hours": {
+      "count": 25,
+      "maximum": 116.0,
+      "median": 24.0,
+      "minimum": 8.0,
+      "p90": 78.4,
+      "q25": 16.0,
+      "q75": 44.0
+    },
+    "entry_to_memory_hours": {
+      "count": 25,
+      "maximum": 104.0,
+      "median": 4.0,
+      "minimum": 4.0,
+      "p90": 58.400000000000006,
+      "q25": 4.0,
+      "q75": 16.0
+    },
+    "memory_to_trigger_hours": {
+      "count": 25,
+      "maximum": 56.0,
+      "median": 12.0,
+      "minimum": 4.0,
+      "p90": 30.400000000000006,
+      "q25": 8.0,
+      "q75": 20.0
+    }
+  },
+  "trigger_formula": "CURRENT_COMPLETED_4H_CLOSE_BELOW_PREVIOUS_COMPLETED_4H_LOW"
+}

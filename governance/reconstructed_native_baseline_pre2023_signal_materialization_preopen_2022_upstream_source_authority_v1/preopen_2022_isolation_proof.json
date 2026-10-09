@@ -1,0 +1,28 @@
+{
+  "authority_id": "AKAH_BOT_RD23_PREOPEN_2022_ISOLATION_PROOF_V1",
+  "status": "FAIL_CLOSED_NOT_PROVEN",
+  "target_cutoff_for_protected_year_firewall": "2023-01-01T00:00:00Z",
+  "producer_signal_cutoff": "2022-01-01T00:00:00Z",
+  "raw_root": "data/raw/rd16b/kucoin",
+  "metadata_only_audit": {
+    "parquet_files": 342,
+    "row_groups": 342,
+    "timestamp_statistics_missing": 0,
+    "row_groups_max_timestamp_at_or_before_2022": 0,
+    "row_groups_crossing_2023_cutoff": 255,
+    "future_only_row_groups": 87
+  },
+  "acceptable_preopen_mechanisms_checked": {
+    "separate_pre2023_file": false,
+    "year_partition": false,
+    "pre2023_row_group_subset": false,
+    "source_date_api_selector": false,
+    "already_authorized_pre2023_upstream_artifact": false
+  },
+  "logical_filter": "pd.read_parquet(... filters=[('timestamp','<', cutoff)])",
+  "logical_filter_safety": "INSUFFICIENT_WHEN_PHYSICAL_ROW_GROUPS_CROSS_PROTECTED_BOUNDARY",
+  "decision": "Using or recreating the RD23 artifact from the current raw root cannot be authorized as a protected-year-safe pre-open path.",
+  "protected_year_rows_read": false,
+  "market_rows_read": false,
+  "network_calls": 0
+}

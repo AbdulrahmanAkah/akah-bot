@@ -1,0 +1,178 @@
+{
+  "all_eligible_legal_checkpoints_accounted": true,
+  "columns": [
+    {
+      "name": "lifecycle_id",
+      "required": true,
+      "role": "canonical_row_identity",
+      "runtime_allowed": true,
+      "type": "string"
+    },
+    {
+      "name": "pair",
+      "required": true,
+      "role": "identity_context",
+      "runtime_allowed": false,
+      "type": "string"
+    },
+    {
+      "name": "entry_time_utc",
+      "required": true,
+      "role": "identity_context",
+      "runtime_allowed": true,
+      "type": "timestamp_utc"
+    },
+    {
+      "name": "decision_time_utc",
+      "required": true,
+      "role": "row_time",
+      "runtime_allowed": true,
+      "type": "timestamp_utc"
+    },
+    {
+      "name": "checkpoint_age_hours",
+      "required": true,
+      "role": "lifecycle_state",
+      "runtime_allowed": true,
+      "type": "integer"
+    },
+    {
+      "name": "pi0_action",
+      "required": true,
+      "role": "baseline_policy_action",
+      "runtime_allowed": true,
+      "type": "enum(EXIT,HOLD)"
+    },
+    {
+      "name": "current_notional",
+      "required": true,
+      "role": "economic_denominator",
+      "runtime_allowed": true,
+      "type": "decimal"
+    },
+    {
+      "name": "exit_now_gross_cash",
+      "required": true,
+      "role": "counterfactual_cash",
+      "runtime_allowed": false,
+      "type": "decimal"
+    },
+    {
+      "name": "exit_now_cost",
+      "required": true,
+      "role": "execution_cost",
+      "runtime_allowed": true,
+      "type": "decimal"
+    },
+    {
+      "formula": "exit_now_gross_cash-exit_now_cost",
+      "name": "exit_now_net_cash",
+      "required": true,
+      "role": "counterfactual_cash",
+      "runtime_allowed": false,
+      "type": "decimal"
+    },
+    {
+      "formula": "decision_time_utc+4h",
+      "name": "hold_step_mark_time_utc",
+      "required": true,
+      "role": "target_time",
+      "runtime_allowed": false,
+      "type": "timestamp_utc"
+    },
+    {
+      "name": "hold_step_cost",
+      "required": true,
+      "role": "execution_cost",
+      "runtime_allowed": false,
+      "type": "decimal"
+    },
+    {
+      "name": "pi0_return_action_after_hold_step",
+      "required": true,
+      "role": "target_policy_continuation",
+      "runtime_allowed": false,
+      "type": "enum(EXIT,HOLD,TERMINAL)"
+    },
+    {
+      "name": "hold_one_step_then_pi0_net_cash",
+      "required": true,
+      "role": "counterfactual_cash",
+      "runtime_allowed": false,
+      "type": "decimal"
+    },
+    {
+      "formula": "(hold_one_step_then_pi0_net_cash-exit_now_net_cash)/current_notional",
+      "name": "decision_value_y",
+      "required": true,
+      "role": "target",
+      "runtime_allowed": false,
+      "type": "decimal"
+    },
+    {
+      "name": "target_sign",
+      "required": true,
+      "role": "derived_target",
+      "runtime_allowed": false,
+      "type": "enum(HOLD_BETTER,EXIT_BETTER,TIE)"
+    },
+    {
+      "name": "state_information_cutoff_utc",
+      "required": true,
+      "role": "pit_guard",
+      "runtime_allowed": true,
+      "type": "timestamp_utc"
+    },
+    {
+      "name": "pit_valid",
+      "required": true,
+      "role": "validity",
+      "runtime_allowed": true,
+      "type": "boolean"
+    },
+    {
+      "name": "support_valid",
+      "required": true,
+      "role": "validity",
+      "runtime_allowed": true,
+      "type": "boolean"
+    },
+    {
+      "name": "row_valid",
+      "required": true,
+      "role": "validity",
+      "runtime_allowed": true,
+      "type": "boolean"
+    },
+    {
+      "name": "invalid_reason",
+      "required": true,
+      "role": "audit",
+      "runtime_allowed": false,
+      "type": "string"
+    },
+    {
+      "name": "source_authority_refs",
+      "required": true,
+      "role": "lineage",
+      "runtime_allowed": false,
+      "type": "json_array"
+    },
+    {
+      "name": "source_authority_sha256",
+      "required": true,
+      "role": "lineage",
+      "runtime_allowed": false,
+      "type": "json_object"
+    }
+  ],
+  "duplicate_primary_key_policy": "FAIL_CLOSED",
+  "ledger_grain": "ONE_LIFECYCLE_X_ONE_LEGAL_4H_DECISION_CHECKPOINT",
+  "legal_step_hours": 4,
+  "materialization_status": "PROTOCOL_ONLY_NO_ROWS",
+  "primary_key": [
+    "lifecycle_id",
+    "decision_time_utc"
+  ],
+  "schema_version": "akah-independent-decision-ledger-schema-v1"
+}

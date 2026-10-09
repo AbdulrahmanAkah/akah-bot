@@ -1,0 +1,90 @@
+{
+  "candidates": [
+    {
+      "description": "Trend MU exact REV731 reference",
+      "id": "F00_TREND_REF"
+    },
+    {
+      "description": "Trend MU - 0.25*predicted downside",
+      "id": "F01_TREND_D25"
+    },
+    {
+      "description": "Trend MU - 0.50*predicted downside",
+      "id": "F02_TREND_D50"
+    },
+    {
+      "description": "Trend MU - 1.00*predicted downside",
+      "id": "F03_TREND_D100"
+    },
+    {
+      "description": "Trend MU + 0.50*tail expectation",
+      "id": "F04_TREND_TAIL50"
+    },
+    {
+      "description": "Trend MU - 0.50*downside + 0.50*tail",
+      "id": "F05_TREND_D50_TAIL50"
+    },
+    {
+      "description": "Trend MU + 0.50*market MU",
+      "id": "F06_TREND_MARKET50"
+    },
+    {
+      "description": "Trend MU - 0.50*downside + 0.50*market MU",
+      "id": "F07_TREND_D50_MARKET50"
+    },
+    {
+      "description": "Trend MU + 0.50*tail + 0.25*market MU",
+      "id": "F08_TREND_TAIL50_MARKET25"
+    },
+    {
+      "description": "Trend MU - 0.50*downside + 0.50*tail + 0.25*market MU",
+      "id": "F09_TREND_D50_TAIL50_MARKET25"
+    },
+    {
+      "description": "2*Trend rank + ADX/DMI quality rank",
+      "id": "F10_RANK_2T_ADX"
+    },
+    {
+      "description": "2*Trend rank + downside-safety rank",
+      "id": "F11_RANK_2T_SAFE"
+    },
+    {
+      "description": "2*Trend rank + tail-expectation rank",
+      "id": "F12_RANK_2T_TAIL"
+    },
+    {
+      "description": "2*Trend rank + market-context rank",
+      "id": "F13_RANK_2T_MARKET"
+    },
+    {
+      "description": "2*Trend rank + downside-safety + tail",
+      "id": "F14_RANK_2T_SAFE_TAIL"
+    },
+    {
+      "description": "2*Trend rank + ADX/DMI + downside-safety",
+      "id": "F15_RANK_2T_ADX_SAFE"
+    },
+    {
+      "description": "2*Trend rank + ADX/DMI + tail",
+      "id": "F16_RANK_2T_ADX_TAIL"
+    },
+    {
+      "description": "2*Trend rank + downside-safety + tail + market",
+      "id": "F17_RANK_2T_SAFE_TAIL_MARKET"
+    },
+    {
+      "description": "2*Trend rank + ADX/DMI + downside-safety + tail",
+      "id": "F18_RANK_2T_ADX_SAFE_TAIL"
+    },
+    {
+      "description": "2*Trend rank + ADX/DMI + downside-safety + tail + market",
+      "id": "F19_RANK_2T_ADX_SAFE_TAIL_MARKET"
+    }
+  ],
+  "direct_positive_gate": "direct downside/market combinations gate on combined score > 0",
+  "direct_score_units": "predicted H0 net-return units",
+  "rank_fusion": "within-entry-hour contemporaneous percentile ranks; Trend receives 2x rank weight",
+  "rank_gate": "Trend MU > 0",
+  "schema_version": "akah-focused-candidate-definitions-v1",
+  "score_ledger_mode": "COMPONENT_LEDGER_RECONSTRUCTABLE_NOT_20X_WIDE"
+}

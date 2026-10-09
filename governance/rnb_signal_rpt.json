@@ -1,0 +1,71 @@
+{
+  "authority_bindings": {
+    "construction_state_audit_sha256": "2C6AA138CE3A0597F12F18745037261754C196028FA555A20B4243472B89691F",
+    "determinism_btc_evidence_sha256": "005C230DF8DDD53B901465BB468819A32D82C1B4C44396E85C8081D61BB3DFBB",
+    "module_sha256": "A9A8567131BBC7208102576B8DBD60D23A73190C8A5622CE70AAE7FA5339C78D",
+    "runner_sha256": "6F52F38AE6E2A1D5A66DC1205F4943522C56C4FF51D2BD844A4EADB9422D19D6",
+    "signal_events_sha256": "A1932E30C8C39AB33A6513529ADCC96418451B51038722AA7898D2882EA34467",
+    "test_sha256": "17DDFC5747F2B2C363550F96D02A2659B8D8059EB04B3B545D9A6C3F3A4B72E2"
+  },
+  "branch": "research/rd48-cross-venue-price-level-basis-direct-utility-v1",
+  "evidence": [
+    {
+      "path": "data/research/reconstructed_native_baseline_pre2023/signal-events-2022-v1.csv",
+      "sha256": "A1932E30C8C39AB33A6513529ADCC96418451B51038722AA7898D2882EA34467"
+    },
+    {
+      "path": "governance/rnb_signals/construction_and_state_audit.json",
+      "sha256": "2C6AA138CE3A0597F12F18745037261754C196028FA555A20B4243472B89691F"
+    },
+    {
+      "path": "scripts/research/run_rnb_2022_signals.py",
+      "sha256": "6F52F38AE6E2A1D5A66DC1205F4943522C56C4FF51D2BD844A4EADB9422D19D6"
+    },
+    {
+      "path": "src/spotbot/research/rnb_signal_2022.py",
+      "sha256": "A9A8567131BBC7208102576B8DBD60D23A73190C8A5622CE70AAE7FA5339C78D"
+    },
+    {
+      "path": "tests/research/test_rnb_signal_2022.py",
+      "sha256": "17DDFC5747F2B2C363550F96D02A2659B8D8059EB04B3B545D9A6C3F3A4B72E2"
+    },
+    {
+      "path": "governance/rnb_signals/determinism_and_btc_causal_coverage_v1.json",
+      "sha256": "005C230DF8DDD53B901465BB468819A32D82C1B4C44396E85C8081D61BB3DFBB"
+    }
+  ],
+  "firewall": {
+    "2023_new_raw_or_replay_accessed": false,
+    "2024_used_as_fresh_holdout": false,
+    "2024_used_to_define_new_runtime_rule": false,
+    "2025_accessed": false,
+    "economic_analysis": false,
+    "lookahead_or_future_information_used": false,
+    "native_replay_executed": false,
+    "pair_or_event_identity_used_as_runtime_rule": false,
+    "posthoc_outcome_threshold_search_used": false,
+    "production_changed": false,
+    "push": false
+  },
+  "next_bottleneck": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_RECONSTRUCTED_COHORT_FREEZE_V1",
+  "north_star_effect": "Establish reproducible causal pre-admission signals and prove native input readiness.",
+  "objective": "Construct deterministic 2022-only signals using native RD26 functions and verify nine-strata native input/state coverage without replay.",
+  "resolution_class": "RNB_2022_SIGNAL_AND_STATE_INPUT_CONSTRUCTION_READY",
+  "state_updates": {
+    "btc_causal_coverage": true,
+    "economic_analysis": false,
+    "native_replay_executed": false,
+    "nine_strata_state_input_coverage": true,
+    "rd26_2022_signal_and_state_input_construction_ready": true,
+    "roadmap_position": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_RECONSTRUCTED_COHORT_FREEZE_V1",
+    "signal_event_count": 3294,
+    "signal_pair_count": 15,
+    "signal_reconstruction_deterministic": true,
+    "signal_sha256": "A1932E30C8C39AB33A6513529ADCC96418451B51038722AA7898D2882EA34467"
+  },
+  "status": "PASS",
+  "summary": "2022-only signal/state construction ready: events=3294, pairs=15; canonical signal SHA matches two independent temporary-output rebuilds with network hard-blocked; BTC causal coverage PASS; nine-strata state/input authority PASS.",
+  "task_id": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_2022_SIGNAL_AND_STATE_INPUT_CONSTRUCTION_V1",
+  "task_start_head": "a89c391074599162deda20877077e0ba40930833",
+  "task_start_revision": 224
+}

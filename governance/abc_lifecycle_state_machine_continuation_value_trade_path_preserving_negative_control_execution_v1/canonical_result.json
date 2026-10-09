@@ -1,0 +1,736 @@
+{
+  "2022_2023_fresh_holdout": false,
+  "2024_access": false,
+  "all_path_preserving_nulls_all_folds_pass": false,
+  "folds": {
+    "DEV_2019_2020_TO_2021": {
+      "integrity": {
+        "cross_split_trade_ids_removed": 0,
+        "embargo_hours": 168,
+        "embargo_rows_removed": 28,
+        "fold": "DEV_2019_2020_TO_2021",
+        "future_overlap_clear": true,
+        "future_overlap_rows_purged": 0,
+        "test_rows": 3000,
+        "test_start": "2021-01-01 08:00:00+00:00",
+        "test_trades": 356,
+        "trade_disjoint": true,
+        "train_rows": 4632,
+        "train_trades": 581
+      },
+      "metadata": {
+        "freshness": "ROLLING_DEVELOPMENT",
+        "name": "DEV_2019_2020_TO_2021",
+        "test_year": 2021,
+        "train_years": [
+          2019,
+          2020
+        ]
+      },
+      "nulls": {
+        "TRADE_PATH_ROTATION_A": {
+          "branch": {
+            "actual_rate": 0.1988472622478386,
+            "auc": 0.6785528099259722,
+            "brier_skill": 0.06632063475226957,
+            "coverage": 0.9747191011235955,
+            "high_minus_low_event_rate": 0.15447478572852302,
+            "pred_mean": 0.268250500319684,
+            "rows": 347
+          },
+          "clean": {
+            "actual_mean": -0.015542391573061847,
+            "coverage": 0.881578947368421,
+            "high_minus_low_actual_mean": -0.01468080169771605,
+            "mae": 0.024881499510926212,
+            "pred_mean": -0.010935224198806874,
+            "rows": 67,
+            "sign_accuracy": 0.6716417910447762,
+            "spearman": -0.2486107017358597
+          },
+          "coverage_pass": true,
+          "intervention": {
+            "actual_mean": -0.006730927519663266,
+            "coverage": 0.9550561797752809,
+            "high_minus_low_actual_mean": 0.010248546055462786,
+            "mae": 0.042865625267781704,
+            "pred_mean": 0.009441607066626338,
+            "rows": 340,
+            "sign_accuracy": 0.31176470588235294,
+            "spearman": 0.08549041306810892
+          },
+          "null_clean": false,
+          "pass": false,
+          "path_audits": {
+            "branch": {
+              "adjacent_pairs_null": 3683,
+              "adjacent_pairs_real": 4051,
+              "assigned_rows": 4249,
+              "assigned_trades": 566,
+              "coverage": 0.917314335060449,
+              "null_adjacent_spearman": 0.9362587290609572,
+              "path_persistence_abs_delta": 0.0028195334318471543,
+              "real_adjacent_spearman": 0.9390782624928043,
+              "salt": "TRADE_PATH_ROTATION_A|BRANCH",
+              "target": "is_clean_bellman",
+              "total_trades": 581
+            },
+            "clean": {
+              "adjacent_pairs_null": 888,
+              "adjacent_pairs_real": 1126,
+              "assigned_rows": 976,
+              "assigned_trades": 88,
+              "coverage": 0.7928513403736799,
+              "null_adjacent_spearman": 0.765384152775848,
+              "path_persistence_abs_delta": 0.020438158135444806,
+              "real_adjacent_spearman": 0.7858223109112928,
+              "salt": "TRADE_PATH_ROTATION_A|CLEAN",
+              "target": "__downstream_residual",
+              "total_trades": 105
+            },
+            "intervention": {
+              "adjacent_pairs_null": 2365,
+              "adjacent_pairs_real": 2820,
+              "assigned_rows": 2925,
+              "assigned_trades": 560,
+              "coverage": 0.8600411643634225,
+              "null_adjacent_spearman": 0.9117031814275033,
+              "path_persistence_abs_delta": 0.002174759777192059,
+              "real_adjacent_spearman": 0.9138779412046953,
+              "salt": "TRADE_PATH_ROTATION_A|INV",
+              "target": "continuation_advantage",
+              "total_trades": 581
+            }
+          },
+          "path_persistence_pass": true,
+          "salt": "TRADE_PATH_ROTATION_A"
+        },
+        "TRADE_PATH_ROTATION_B": {
+          "branch": {
+            "actual_rate": 0.1988472622478386,
+            "auc": 0.7049317068084663,
+            "brier_skill": 0.07000353844925888,
+            "coverage": 0.9747191011235955,
+            "high_minus_low_event_rate": 0.19378531073446328,
+            "pred_mean": 0.26570293857973215,
+            "rows": 347
+          },
+          "clean": {
+            "actual_mean": -0.015542391573061847,
+            "coverage": 0.881578947368421,
+            "high_minus_low_actual_mean": -0.004379076387696643,
+            "mae": 0.024611844818828072,
+            "pred_mean": -0.010792404186476956,
+            "rows": 67,
+            "sign_accuracy": 0.6716417910447762,
+            "spearman": -0.1422146810428524
+          },
+          "coverage_pass": true,
+          "intervention": {
+            "actual_mean": -0.006730927519663266,
+            "coverage": 0.9550561797752809,
+            "high_minus_low_actual_mean": 0.013917423889433175,
+            "mae": 0.042767873932109644,
+            "pred_mean": 0.009459989664329257,
+            "rows": 340,
+            "sign_accuracy": 0.31176470588235294,
+            "spearman": 0.1306492939591026
+          },
+          "null_clean": false,
+          "pass": false,
+          "path_audits": {
+            "branch": {
+              "adjacent_pairs_null": 3683,
+              "adjacent_pairs_real": 4051,
+              "assigned_rows": 4249,
+              "assigned_trades": 566,
+              "coverage": 0.917314335060449,
+              "null_adjacent_spearman": 0.9362587290609572,
+              "path_persistence_abs_delta": 0.0028195334318471543,
+              "real_adjacent_spearman": 0.9390782624928043,
+              "salt": "TRADE_PATH_ROTATION_B|BRANCH",
+              "target": "is_clean_bellman",
+              "total_trades": 581
+            },
+            "clean": {
+              "adjacent_pairs_null": 888,
+              "adjacent_pairs_real": 1126,
+              "assigned_rows": 976,
+              "assigned_trades": 88,
+              "coverage": 0.7928513403736799,
+              "null_adjacent_spearman": 0.765384152775848,
+              "path_persistence_abs_delta": 0.020438158135444806,
+              "real_adjacent_spearman": 0.7858223109112928,
+              "salt": "TRADE_PATH_ROTATION_B|CLEAN",
+              "target": "__downstream_residual",
+              "total_trades": 105
+            },
+            "intervention": {
+              "adjacent_pairs_null": 2365,
+              "adjacent_pairs_real": 2820,
+              "assigned_rows": 2925,
+              "assigned_trades": 560,
+              "coverage": 0.8600411643634225,
+              "null_adjacent_spearman": 0.9117031814275033,
+              "path_persistence_abs_delta": 0.002174759777192059,
+              "real_adjacent_spearman": 0.9138779412046953,
+              "salt": "TRADE_PATH_ROTATION_B|INV",
+              "target": "continuation_advantage",
+              "total_trades": 581
+            }
+          },
+          "path_persistence_pass": true,
+          "salt": "TRADE_PATH_ROTATION_B"
+        }
+      }
+    },
+    "DEV_2019_TO_2020": {
+      "integrity": {
+        "cross_split_trade_ids_removed": 0,
+        "embargo_hours": 168,
+        "embargo_rows_removed": 0,
+        "fold": "DEV_2019_TO_2020",
+        "future_overlap_clear": true,
+        "future_overlap_rows_purged": 0,
+        "test_rows": 2944,
+        "test_start": "2020-01-03 16:00:00+00:00",
+        "test_trades": 352,
+        "trade_disjoint": true,
+        "train_rows": 1716,
+        "train_trades": 229
+      },
+      "metadata": {
+        "freshness": "ROLLING_DEVELOPMENT",
+        "name": "DEV_2019_TO_2020",
+        "test_year": 2020,
+        "train_years": [
+          2019
+        ]
+      },
+      "nulls": {
+        "TRADE_PATH_ROTATION_A": {
+          "branch": {
+            "actual_rate": 0.1676470588235294,
+            "auc": 0.6595375364205567,
+            "brier_skill": 0.04483845088191585,
+            "coverage": 0.9659090909090909,
+            "high_minus_low_event_rate": 0.0745008477802,
+            "pred_mean": 0.24995682705845806,
+            "rows": 340
+          },
+          "clean": {
+            "actual_mean": null,
+            "coverage": 0.13846153846153847,
+            "high_minus_low_actual_mean": null,
+            "mae": null,
+            "pred_mean": null,
+            "rows": 9,
+            "sign_accuracy": null,
+            "spearman": null
+          },
+          "coverage_pass": true,
+          "intervention": {
+            "actual_mean": 0.0007026608219261659,
+            "coverage": 0.9204545454545454,
+            "high_minus_low_actual_mean": 0.0017609017500956892,
+            "mae": 0.027574939132705208,
+            "pred_mean": 0.0048721390218544516,
+            "rows": 324,
+            "sign_accuracy": 0.38580246913580246,
+            "spearman": 0.10511746511703342
+          },
+          "null_clean": false,
+          "pass": false,
+          "path_audits": {
+            "branch": {
+              "adjacent_pairs_null": 1339,
+              "adjacent_pairs_real": 1487,
+              "assigned_rows": 1561,
+              "assigned_trades": 222,
+              "coverage": 0.9096736596736597,
+              "null_adjacent_spearman": 0.9289913396861162,
+              "path_persistence_abs_delta": 0.0025897718030857275,
+              "real_adjacent_spearman": 0.931581111489202,
+              "salt": "TRADE_PATH_ROTATION_A|BRANCH",
+              "target": "is_clean_bellman",
+              "total_trades": 229
+            },
+            "clean": {
+              "adjacent_pairs_null": 262,
+              "adjacent_pairs_real": 359,
+              "assigned_rows": 294,
+              "assigned_trades": 32,
+              "coverage": 0.7368421052631579,
+              "null_adjacent_spearman": 0.8297724269377807,
+              "path_persistence_abs_delta": 0.0004343340318068156,
+              "real_adjacent_spearman": 0.8302067609695876,
+              "salt": "TRADE_PATH_ROTATION_A|CLEAN",
+              "target": "__downstream_residual",
+              "total_trades": 40
+            },
+            "intervention": {
+              "adjacent_pairs_null": 891,
+              "adjacent_pairs_real": 1088,
+              "assigned_rows": 1110,
+              "assigned_trades": 219,
+              "coverage": 0.8428246013667426,
+              "null_adjacent_spearman": 0.9131356133161633,
+              "path_persistence_abs_delta": 0.006280817238579872,
+              "real_adjacent_spearman": 0.9194164305547432,
+              "salt": "TRADE_PATH_ROTATION_A|INV",
+              "target": "continuation_advantage",
+              "total_trades": 229
+            }
+          },
+          "path_persistence_pass": true,
+          "salt": "TRADE_PATH_ROTATION_A"
+        },
+        "TRADE_PATH_ROTATION_B": {
+          "branch": {
+            "actual_rate": 0.1676470588235294,
+            "auc": 0.6084557683962557,
+            "brier_skill": 0.029621820969137902,
+            "coverage": 0.9659090909090909,
+            "high_minus_low_event_rate": 0.08823529411764705,
+            "pred_mean": 0.25167231310519234,
+            "rows": 340
+          },
+          "clean": {
+            "actual_mean": null,
+            "coverage": 0.13846153846153847,
+            "high_minus_low_actual_mean": null,
+            "mae": null,
+            "pred_mean": null,
+            "rows": 9,
+            "sign_accuracy": null,
+            "spearman": null
+          },
+          "coverage_pass": true,
+          "intervention": {
+            "actual_mean": 0.0007026608219261659,
+            "coverage": 0.9204545454545454,
+            "high_minus_low_actual_mean": 0.00036110988786541506,
+            "mae": 0.02762027901414497,
+            "pred_mean": 0.004722887324691627,
+            "rows": 324,
+            "sign_accuracy": 0.3765432098765432,
+            "spearman": 0.0738110433414607
+          },
+          "null_clean": false,
+          "pass": false,
+          "path_audits": {
+            "branch": {
+              "adjacent_pairs_null": 1339,
+              "adjacent_pairs_real": 1487,
+              "assigned_rows": 1561,
+              "assigned_trades": 222,
+              "coverage": 0.9096736596736597,
+              "null_adjacent_spearman": 0.9289913396861162,
+              "path_persistence_abs_delta": 0.0025897718030857275,
+              "real_adjacent_spearman": 0.931581111489202,
+              "salt": "TRADE_PATH_ROTATION_B|BRANCH",
+              "target": "is_clean_bellman",
+              "total_trades": 229
+            },
+            "clean": {
+              "adjacent_pairs_null": 262,
+              "adjacent_pairs_real": 359,
+              "assigned_rows": 294,
+              "assigned_trades": 32,
+              "coverage": 0.7368421052631579,
+              "null_adjacent_spearman": 0.8297724269377807,
+              "path_persistence_abs_delta": 0.0004343340318068156,
+              "real_adjacent_spearman": 0.8302067609695876,
+              "salt": "TRADE_PATH_ROTATION_B|CLEAN",
+              "target": "__downstream_residual",
+              "total_trades": 40
+            },
+            "intervention": {
+              "adjacent_pairs_null": 891,
+              "adjacent_pairs_real": 1088,
+              "assigned_rows": 1110,
+              "assigned_trades": 219,
+              "coverage": 0.8428246013667426,
+              "null_adjacent_spearman": 0.9131356133161633,
+              "path_persistence_abs_delta": 0.006280817238579872,
+              "real_adjacent_spearman": 0.9194164305547432,
+              "salt": "TRADE_PATH_ROTATION_B|INV",
+              "target": "continuation_advantage",
+              "total_trades": 229
+            }
+          },
+          "path_persistence_pass": true,
+          "salt": "TRADE_PATH_ROTATION_B"
+        }
+      }
+    },
+    "EXPOSED_2019_2021_TO_2022": {
+      "integrity": {
+        "cross_split_trade_ids_removed": 0,
+        "embargo_hours": 168,
+        "embargo_rows_removed": 1,
+        "fold": "EXPOSED_2019_2021_TO_2022",
+        "future_overlap_clear": true,
+        "future_overlap_rows_purged": 0,
+        "test_rows": 2065,
+        "test_start": "2022-01-02 00:00:00+00:00",
+        "test_trades": 282,
+        "trade_disjoint": true,
+        "train_rows": 7659,
+        "train_trades": 937
+      },
+      "metadata": {
+        "freshness": "EXPOSED_HISTORICAL_FORWARD_CONFIRMATION",
+        "name": "EXPOSED_2019_2021_TO_2022",
+        "test_year": 2022,
+        "train_years": [
+          2019,
+          2020,
+          2021
+        ]
+      },
+      "nulls": {
+        "TRADE_PATH_ROTATION_A": {
+          "branch": {
+            "actual_rate": 0.24372759856630824,
+            "auc": 0.5838095901867856,
+            "brier_skill": 0.03533359640246969,
+            "coverage": 0.9893617021276596,
+            "high_minus_low_event_rate": -0.014600840336134457,
+            "pred_mean": 0.26067955986864105,
+            "rows": 279
+          },
+          "clean": {
+            "actual_mean": -0.016012852372095328,
+            "coverage": 0.9506172839506173,
+            "high_minus_low_actual_mean": -0.0015718057643288996,
+            "mae": 0.014457115034707915,
+            "pred_mean": -0.012797476261250712,
+            "rows": 77,
+            "sign_accuracy": 0.8311688311688312,
+            "spearman": -0.07694901668697507
+          },
+          "coverage_pass": true,
+          "intervention": {
+            "actual_mean": -0.008048227052102166,
+            "coverage": 1.0,
+            "high_minus_low_actual_mean": 0.0018577982489064327,
+            "mae": 0.02975763434607423,
+            "pred_mean": 0.009607155122407174,
+            "rows": 282,
+            "sign_accuracy": 0.24822695035460993,
+            "spearman": 0.10670760482395922
+          },
+          "null_clean": false,
+          "pass": false,
+          "path_audits": {
+            "branch": {
+              "adjacent_pairs_null": 6132,
+              "adjacent_pairs_real": 6722,
+              "assigned_rows": 7045,
+              "assigned_trades": 913,
+              "coverage": 0.9198328763546155,
+              "null_adjacent_spearman": 0.9355245129105714,
+              "path_persistence_abs_delta": 0.002814097129248183,
+              "real_adjacent_spearman": 0.9383386100398196,
+              "salt": "TRADE_PATH_ROTATION_A|BRANCH",
+              "target": "is_clean_bellman",
+              "total_trades": 937
+            },
+            "clean": {
+              "adjacent_pairs_null": 1562,
+              "adjacent_pairs_real": 1954,
+              "assigned_rows": 1717,
+              "assigned_trades": 155,
+              "coverage": 0.804215456674473,
+              "null_adjacent_spearman": 0.7324340403507136,
+              "path_persistence_abs_delta": 0.025281448091117986,
+              "real_adjacent_spearman": 0.7577154884418316,
+              "salt": "TRADE_PATH_ROTATION_A|CLEAN",
+              "target": "__downstream_residual",
+              "total_trades": 181
+            },
+            "intervention": {
+              "adjacent_pairs_null": 3909,
+              "adjacent_pairs_real": 4587,
+              "assigned_rows": 4815,
+              "assigned_trades": 906,
+              "coverage": 0.8716509775524982,
+              "null_adjacent_spearman": 0.909027391778412,
+              "path_persistence_abs_delta": 0.005629354627996408,
+              "real_adjacent_spearman": 0.9146567464064084,
+              "salt": "TRADE_PATH_ROTATION_A|INV",
+              "target": "continuation_advantage",
+              "total_trades": 937
+            }
+          },
+          "path_persistence_pass": true,
+          "salt": "TRADE_PATH_ROTATION_A"
+        },
+        "TRADE_PATH_ROTATION_B": {
+          "branch": {
+            "actual_rate": 0.24372759856630824,
+            "auc": 0.6287635907443546,
+            "brier_skill": 0.03763858644701412,
+            "coverage": 0.9893617021276596,
+            "high_minus_low_event_rate": 0.09165210239539426,
+            "pred_mean": 0.2639103876436745,
+            "rows": 279
+          },
+          "clean": {
+            "actual_mean": -0.016012852372095328,
+            "coverage": 0.9506172839506173,
+            "high_minus_low_actual_mean": 0.002301768301918734,
+            "mae": 0.014173307903150228,
+            "pred_mean": -0.013109580417203538,
+            "rows": 77,
+            "sign_accuracy": 0.8311688311688312,
+            "spearman": 0.09619943804158793
+          },
+          "coverage_pass": true,
+          "intervention": {
+            "actual_mean": -0.008048227052102166,
+            "coverage": 1.0,
+            "high_minus_low_actual_mean": 5.686161681229575e-05,
+            "mae": 0.03000043140972961,
+            "pred_mean": 0.00979480703949553,
+            "rows": 282,
+            "sign_accuracy": 0.2553191489361702,
+            "spearman": 0.07439876125269967
+          },
+          "null_clean": false,
+          "pass": false,
+          "path_audits": {
+            "branch": {
+              "adjacent_pairs_null": 6132,
+              "adjacent_pairs_real": 6722,
+              "assigned_rows": 7045,
+              "assigned_trades": 913,
+              "coverage": 0.9198328763546155,
+              "null_adjacent_spearman": 0.9355245129105714,
+              "path_persistence_abs_delta": 0.002814097129248183,
+              "real_adjacent_spearman": 0.9383386100398196,
+              "salt": "TRADE_PATH_ROTATION_B|BRANCH",
+              "target": "is_clean_bellman",
+              "total_trades": 937
+            },
+            "clean": {
+              "adjacent_pairs_null": 1562,
+              "adjacent_pairs_real": 1954,
+              "assigned_rows": 1717,
+              "assigned_trades": 155,
+              "coverage": 0.804215456674473,
+              "null_adjacent_spearman": 0.7324340403507136,
+              "path_persistence_abs_delta": 0.025281448091117986,
+              "real_adjacent_spearman": 0.7577154884418316,
+              "salt": "TRADE_PATH_ROTATION_B|CLEAN",
+              "target": "__downstream_residual",
+              "total_trades": 181
+            },
+            "intervention": {
+              "adjacent_pairs_null": 3909,
+              "adjacent_pairs_real": 4587,
+              "assigned_rows": 4815,
+              "assigned_trades": 906,
+              "coverage": 0.8716509775524982,
+              "null_adjacent_spearman": 0.909027391778412,
+              "path_persistence_abs_delta": 0.005629354627996408,
+              "real_adjacent_spearman": 0.9146567464064084,
+              "salt": "TRADE_PATH_ROTATION_B|INV",
+              "target": "continuation_advantage",
+              "total_trades": 937
+            }
+          },
+          "path_persistence_pass": true,
+          "salt": "TRADE_PATH_ROTATION_B"
+        }
+      }
+    },
+    "EXPOSED_2019_2021_TO_2023": {
+      "integrity": {
+        "cross_split_trade_ids_removed": 0,
+        "embargo_hours": 168,
+        "embargo_rows_removed": 0,
+        "fold": "EXPOSED_2019_2021_TO_2023",
+        "future_overlap_clear": true,
+        "future_overlap_rows_purged": 0,
+        "test_rows": 2565,
+        "test_start": "2023-01-02 16:00:00+00:00",
+        "test_trades": 334,
+        "trade_disjoint": true,
+        "train_rows": 7660,
+        "train_trades": 937
+      },
+      "metadata": {
+        "freshness": "EXPOSED_HISTORICAL_FORWARD_CONFIRMATION",
+        "name": "EXPOSED_2019_2021_TO_2023",
+        "test_year": 2023,
+        "train_years": [
+          2019,
+          2020,
+          2021
+        ]
+      },
+      "nulls": {
+        "TRADE_PATH_ROTATION_A": {
+          "branch": {
+            "actual_rate": 0.2125748502994012,
+            "auc": 0.7467734161623735,
+            "brier_skill": 0.09116449525884796,
+            "coverage": 1.0,
+            "high_minus_low_event_rate": 0.20451855836471222,
+            "pred_mean": 0.269148404279533,
+            "rows": 334
+          },
+          "clean": {
+            "actual_mean": -0.008002102828927314,
+            "coverage": 1.0,
+            "high_minus_low_actual_mean": 0.0005501663618797054,
+            "mae": 0.012482218117698635,
+            "pred_mean": -0.012987244763584063,
+            "rows": 77,
+            "sign_accuracy": 0.7402597402597403,
+            "spearman": 0.11905103135333152
+          },
+          "coverage_pass": true,
+          "intervention": {
+            "actual_mean": 0.0007868346108580342,
+            "coverage": 0.9970059880239521,
+            "high_minus_low_actual_mean": -0.000541756218534672,
+            "mae": 0.02687686590929277,
+            "pred_mean": 0.009484226242990371,
+            "rows": 333,
+            "sign_accuracy": 0.36036036036036034,
+            "spearman": 0.05066939936927889
+          },
+          "null_clean": false,
+          "pass": false,
+          "path_audits": {
+            "branch": {
+              "adjacent_pairs_null": 6133,
+              "adjacent_pairs_real": 6723,
+              "assigned_rows": 7046,
+              "assigned_trades": 913,
+              "coverage": 0.9198433420365535,
+              "null_adjacent_spearman": 0.9355291675629555,
+              "path_persistence_abs_delta": 0.002813324438195375,
+              "real_adjacent_spearman": 0.9383424920011508,
+              "salt": "TRADE_PATH_ROTATION_A|BRANCH",
+              "target": "is_clean_bellman",
+              "total_trades": 937
+            },
+            "clean": {
+              "adjacent_pairs_null": 1562,
+              "adjacent_pairs_real": 1954,
+              "assigned_rows": 1717,
+              "assigned_trades": 155,
+              "coverage": 0.804215456674473,
+              "null_adjacent_spearman": 0.7324340403507136,
+              "path_persistence_abs_delta": 0.025281448091117986,
+              "real_adjacent_spearman": 0.7577154884418316,
+              "salt": "TRADE_PATH_ROTATION_A|CLEAN",
+              "target": "__downstream_residual",
+              "total_trades": 181
+            },
+            "intervention": {
+              "adjacent_pairs_null": 3910,
+              "adjacent_pairs_real": 4588,
+              "assigned_rows": 4816,
+              "assigned_trades": 906,
+              "coverage": 0.8716742081447963,
+              "null_adjacent_spearman": 0.9089887426376813,
+              "path_persistence_abs_delta": 0.005636176233707935,
+              "real_adjacent_spearman": 0.9146249188713892,
+              "salt": "TRADE_PATH_ROTATION_A|INV",
+              "target": "continuation_advantage",
+              "total_trades": 937
+            }
+          },
+          "path_persistence_pass": true,
+          "salt": "TRADE_PATH_ROTATION_A"
+        },
+        "TRADE_PATH_ROTATION_B": {
+          "branch": {
+            "actual_rate": 0.2125748502994012,
+            "auc": 0.7360092111604991,
+            "brier_skill": 0.08471266705236913,
+            "coverage": 1.0,
+            "high_minus_low_event_rate": 0.19254079254079254,
+            "pred_mean": 0.2687623875890955,
+            "rows": 334
+          },
+          "clean": {
+            "actual_mean": -0.008002102828927314,
+            "coverage": 1.0,
+            "high_minus_low_actual_mean": 0.007595427502046583,
+            "mae": 0.012257567431812163,
+            "pred_mean": -0.012781042291168764,
+            "rows": 77,
+            "sign_accuracy": 0.7402597402597403,
+            "spearman": 0.3337219976636069
+          },
+          "coverage_pass": true,
+          "intervention": {
+            "actual_mean": 0.0007868346108580342,
+            "coverage": 0.9970059880239521,
+            "high_minus_low_actual_mean": 0.0018020600132187864,
+            "mae": 0.0270494580236398,
+            "pred_mean": 0.009616114485096462,
+            "rows": 333,
+            "sign_accuracy": 0.37237237237237236,
+            "spearman": 0.07058235417292417
+          },
+          "null_clean": false,
+          "pass": false,
+          "path_audits": {
+            "branch": {
+              "adjacent_pairs_null": 6133,
+              "adjacent_pairs_real": 6723,
+              "assigned_rows": 7046,
+              "assigned_trades": 913,
+              "coverage": 0.9198433420365535,
+              "null_adjacent_spearman": 0.9355291675629555,
+              "path_persistence_abs_delta": 0.002813324438195375,
+              "real_adjacent_spearman": 0.9383424920011508,
+              "salt": "TRADE_PATH_ROTATION_B|BRANCH",
+              "target": "is_clean_bellman",
+              "total_trades": 937
+            },
+            "clean": {
+              "adjacent_pairs_null": 1562,
+              "adjacent_pairs_real": 1954,
+              "assigned_rows": 1717,
+              "assigned_trades": 155,
+              "coverage": 0.804215456674473,
+              "null_adjacent_spearman": 0.7324340403507136,
+              "path_persistence_abs_delta": 0.025281448091117986,
+              "real_adjacent_spearman": 0.7577154884418316,
+              "salt": "TRADE_PATH_ROTATION_B|CLEAN",
+              "target": "__downstream_residual",
+              "total_trades": 181
+            },
+            "intervention": {
+              "adjacent_pairs_null": 3910,
+              "adjacent_pairs_real": 4588,
+              "assigned_rows": 4816,
+              "assigned_trades": 906,
+              "coverage": 0.8716742081447963,
+              "null_adjacent_spearman": 0.9089887426376813,
+              "path_persistence_abs_delta": 0.005636176233707935,
+              "real_adjacent_spearman": 0.9146249188713892,
+              "salt": "TRADE_PATH_ROTATION_B|INV",
+              "target": "continuation_advantage",
+              "total_trades": 937
+            }
+          },
+          "path_persistence_pass": true,
+          "salt": "TRADE_PATH_ROTATION_B"
+        }
+      }
+    }
+  },
+  "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_CONTINUATION_VALUE_STATE_TIME_CONFOUND_RECONCILIATION_V1",
+  "schema_version": "akah-rev595-target-dependence-cluster-validation-maximum-evidence-mega-v1-path-preserving-nulls",
+  "status": "PASS_NULL_EXECUTION_COMPLETE",
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_CONTINUATION_VALUE_TRADE_PATH_PRESERVING_NEGATIVE_CONTROL_EXECUTION_V1"
+}

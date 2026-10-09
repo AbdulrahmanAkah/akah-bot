@@ -1,0 +1,201 @@
+{
+  "2024_access": false,
+  "contract_preflight": {
+    "checks": {
+      "control_cost_columns": [
+        "year",
+        "policy_id",
+        "portfolio_id",
+        "universe_id",
+        "cost_multiplier",
+        "pair",
+        "signal_time",
+        "entry_time",
+        "exit_time",
+        "holding_hours",
+        "exit_reason",
+        "entry_price",
+        "exit_price",
+        "quantity",
+        "entry_notional",
+        "exit_notional",
+        "entry_cost",
+        "exit_cost",
+        "gross_pnl",
+        "net_pnl",
+        "period_id",
+        "membership_rank",
+        "support_families",
+        "support_count",
+        "atr24_at_signal",
+        "high_water_at_exit",
+        "entry_market_state",
+        "exit_market_state",
+        "protection_floor_at_exit"
+      ],
+      "narrow_snapshot_count": 248,
+      "raw_sample_checked": 6,
+      "raw_sample_pass": 6,
+      "rd23_source_sha256": "6F23405F56BEC0B828130DA6BD57B606659F354892AF4278C9EC18DEEC704AF8",
+      "rd27_signatures": {
+        "apply_completed_bar_update": "(position: 'LifecyclePosition', *, decision: 'ExitDecision', completed_high: 'float') -> 'LifecyclePosition'",
+        "build_market_state_frame": "(raw: 'pd.DataFrame', *, cutoff: 'pd.Timestamp | None' = None) -> 'pd.DataFrame'",
+        "evaluate_adaptive_exit": "(position: 'LifecyclePosition', *, current_open_time: 'pd.Timestamp', current_open: 'float', current_low: 'float', prior_asset_close: 'float', market_state: 'str') -> 'ExitDecision'",
+        "new_lifecycle_position": "(*, pair: 'str', entry_time: 'pd.Timestamp', entry_price: 'float', atr24_at_signal: 'float') -> 'LifecyclePosition'"
+      },
+      "wide_snapshot_count": 257
+    },
+    "problems": [],
+    "status": "PASS"
+  },
+  "cost": {
+    "median_entry_cost_fraction": 0.00125,
+    "sample_count": 1000,
+    "source": "control-trades.csv"
+  },
+  "governor_binary_no_vol": {
+    "algebra": "gross_budget_fraction = scale * m  [v removed]",
+    "effective_cap_max": 0.9,
+    "effective_cap_min": 0.0,
+    "factor_identity_proof": {
+      "gross_max": 0.9,
+      "gross_min": 0.0,
+      "identity": "gross_budget_fraction = scale * m * v",
+      "m_max": 1.0,
+      "m_min": 0.0,
+      "max_abs_error": 8.326672684688674e-17,
+      "rows_proven": 1626,
+      "scale": 0.9,
+      "v_max": 1.0,
+      "v_min": 0.1492391718328883
+    },
+    "max_abs_delta_vs_selected_binary_vol": 0.706605074946131,
+    "result_path": "governance/abc_lifecycle_state_machine_governor_structural_factorial_fast_v1/governor_factorial_result.json",
+    "result_sha256": "AE30EB872D4FA600F959D696238E9C868E56A91DFA2A8B4976009EF3DC34378E",
+    "row_count": 1626,
+    "selected_governor": "BINARY_NO_VOL",
+    "source": "RECONSTRUCTED_FROM_FROZEN_SELECTED_BINARY_VOL_FACTOR_COLUMNS",
+    "time_column": "action_time",
+    "timeline_path": "governance/abc_lifecycle_state_machine_governor_structural_factorial_fast_v1/selected_development_governor_timeline.csv",
+    "timeline_sha256": "6532B4501F2734EDE3F1D66DB931231C7915235AEEA3B8E654845A6F24341E2B",
+    "variant_declared_in_arms": true,
+    "variant_declared_in_candidate_rows": true
+  },
+  "governor_binary_vol": {
+    "binding_mode": "DIRECT_GROSS_FRACTION",
+    "effective_cap_max": 0.9,
+    "effective_cap_min": 0.0,
+    "exposure_column": "gross_budget_fraction",
+    "legacy_selected": {
+      "continuous_mtm_max_drawdown": -0.19079247606398098,
+      "development_gate_pass": true,
+      "excess_log_x1": 0.6471289382329076,
+      "excess_log_x2": 0.6198880926269715,
+      "excess_pass": true,
+      "final_wealth_x1": 3.6589449042130644,
+      "final_wealth_x2": 2.9794982149046993,
+      "risk_mode": "BINARY_VOL",
+      "risk_pass": true,
+      "worst_annual_return": -0.07644949091360065
+    },
+    "observed_raw_max": 0.9,
+    "observed_raw_min": 0.0,
+    "result_path": "governance/abc_lifecycle_state_machine_governor_structural_factorial_fast_v1/governor_factorial_result.json",
+    "result_sha256": "AE30EB872D4FA600F959D696238E9C868E56A91DFA2A8B4976009EF3DC34378E",
+    "selected_governor": "BINARY_VOL",
+    "selected_populated_row_count": 1626,
+    "source_row_count": 1826,
+    "time_column": "action_time",
+    "timeline_path": "governance/abc_lifecycle_state_machine_governor_structural_factorial_fast_v1/selected_development_governor_timeline.csv",
+    "timeline_sha256": "6532B4501F2734EDE3F1D66DB931231C7915235AEEA3B8E654845A6F24341E2B",
+    "variant_filter_applied": true
+  },
+  "governor_factorial_preflight": {
+    "probes": [
+      {
+        "binary_no_vol": 0.0,
+        "binary_vol": 0.0,
+        "time": "2019-01-01T00:00:00+00:00",
+        "vol_only": 0.0
+      },
+      {
+        "binary_no_vol": 0.0,
+        "binary_vol": 0.0,
+        "time": "2020-01-01T00:00:00+00:00",
+        "vol_only": 0.3773722154837429
+      },
+      {
+        "binary_no_vol": 0.9,
+        "binary_vol": 0.307422860879827,
+        "time": "2021-01-01T00:00:00+00:00",
+        "vol_only": 0.30742286087982706
+      },
+      {
+        "binary_no_vol": 0.0,
+        "binary_vol": 0.0,
+        "time": "2022-01-01T00:00:00+00:00",
+        "vol_only": 0.3424160810144105
+      },
+      {
+        "binary_no_vol": 0.0,
+        "binary_vol": 0.0,
+        "time": "2023-01-01T00:00:00+00:00",
+        "vol_only": 0.534120281876222
+      },
+      {
+        "binary_no_vol": 0.9,
+        "binary_vol": 0.4359750055549138,
+        "time": "2023-12-31T23:00:00+00:00",
+        "vol_only": 0.43597500555491386
+      }
+    ],
+    "vol_only": {
+      "algebra": "gross_budget_fraction = scale * v  [m removed]",
+      "effective_cap_max": 0.9,
+      "effective_cap_min": 0.13431525464959945,
+      "factor_identity_proof": {
+        "gross_max": 0.9,
+        "gross_min": 0.0,
+        "identity": "gross_budget_fraction = scale * m * v",
+        "m_max": 1.0,
+        "m_min": 0.0,
+        "max_abs_error": 8.326672684688674e-17,
+        "rows_proven": 1626,
+        "scale": 0.9,
+        "v_max": 1.0,
+        "v_min": 0.1492391718328883
+      },
+      "max_abs_delta_vs_selected_binary_vol": 0.9,
+      "result_path": "governance/abc_lifecycle_state_machine_governor_structural_factorial_fast_v1/governor_factorial_result.json",
+      "result_sha256": "AE30EB872D4FA600F959D696238E9C868E56A91DFA2A8B4976009EF3DC34378E",
+      "row_count": 1626,
+      "selected_governor": "VOL_ONLY",
+      "source": "RECONSTRUCTED_FROM_FROZEN_SELECTED_BINARY_VOL_FACTOR_COLUMNS",
+      "time_column": "action_time",
+      "timeline_path": "governance/abc_lifecycle_state_machine_governor_structural_factorial_fast_v1/selected_development_governor_timeline.csv",
+      "timeline_sha256": "6532B4501F2734EDE3F1D66DB931231C7915235AEEA3B8E654845A6F24341E2B",
+      "variant_declared_in_arms": true,
+      "variant_declared_in_candidate_rows": true
+    }
+  },
+  "previous_rev729": {
+    "disposition": "PIT_BREADTH_X_PERSISTENT_HARVESTING_NOT_QUALIFIED",
+    "path": "governance/abc_lifecycle_state_machine_pit_breadth_x_persistent_harvesting_architecture_decision_mega_v1/canonical_result.json",
+    "runtime_opportunities": 60662,
+    "sha256": "6E0D37CCA0E21C61E1FE9BB891048898D43D3F36063093C5D24D2A17141A01BA",
+    "wide_pair_count": 317
+  },
+  "status": "PASS",
+  "wide": {
+    "eligibility_path": "data/research/rd18_p1r2/corrected-weekly-eligibility.csv",
+    "eligibility_sha256": "E1AEE88885A479A0038B6574E7DE7F01A47E274B330EF88D9CB1606BC2CB98AB",
+    "max_snapshot_size": 317,
+    "membership_tiebreak_rank_source": "CORRECTED_WEEKLY_RANKINGS.LIQUIDITY_RANK",
+    "pair_count": 317,
+    "ranking_column": "liquidity_rank",
+    "ranking_path": "data/research/rd18_p1r2/corrected-weekly-rankings.csv",
+    "ranking_sha256": "DA5BF7A416DF988663D6357954096806531B8C08FC60680520AFEF0295B045EA",
+    "snapshot_count": 257,
+    "trading_rank_source": "DAILY_CAUSAL_RS7_OVER_SIGMA20"
+  }
+}

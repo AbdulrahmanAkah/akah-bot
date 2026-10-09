@@ -1,0 +1,57 @@
+{
+  "2024_access": false,
+  "aggregate_rescue": false,
+  "candidate_id": "EB1_CAUSAL_TECH_LINEAR_EDGE",
+  "schema_version": "abc-exit-brain-candidate-robustness-adjudication-v1",
+  "strict_rule": "EVERY_VALIDATION_YEAR_REQUIRES_PLANNED_GT_0_AND_EXECUTED_GT_0_AND_DELTA_PORTFOLIO_NET_PNL_GT_0",
+  "survives_all_forward_validation_years": false,
+  "training_year": 2019,
+  "validation_years": [
+    2020,
+    2021,
+    2022,
+    2023
+  ],
+  "year_results": [
+    {
+      "candidate_executed": 247,
+      "delta_portfolio_net_pnl": -20749.556063211392,
+      "executed_positive": true,
+      "passed": false,
+      "planned_first_positive_lifecycle_count": 288,
+      "planned_positive": true,
+      "portfolio_delta_positive": false,
+      "year": 2020
+    },
+    {
+      "candidate_executed": 260,
+      "delta_portfolio_net_pnl": 5123.502467483297,
+      "executed_positive": true,
+      "passed": true,
+      "planned_first_positive_lifecycle_count": 309,
+      "planned_positive": true,
+      "portfolio_delta_positive": true,
+      "year": 2021
+    },
+    {
+      "candidate_executed": 204,
+      "delta_portfolio_net_pnl": -562.7508658489533,
+      "executed_positive": true,
+      "passed": false,
+      "planned_first_positive_lifecycle_count": 239,
+      "planned_positive": true,
+      "portfolio_delta_positive": false,
+      "year": 2022
+    },
+    {
+      "candidate_executed": 217,
+      "delta_portfolio_net_pnl": -14025.642421146506,
+      "executed_positive": true,
+      "passed": false,
+      "planned_first_positive_lifecycle_count": 249,
+      "planned_positive": true,
+      "portfolio_delta_positive": false,
+      "year": 2023
+    }
+  ]
+}

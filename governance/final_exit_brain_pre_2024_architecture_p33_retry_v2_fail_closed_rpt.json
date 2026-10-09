@@ -1,0 +1,26 @@
+{
+  "task_id": "FINAL_EXIT_BRAIN_PRE_2024_ARCHITECTURE_P33_STATE_CONDITIONED_SHADOW_AUTHORITY_2022_EXPLORATORY_REPLAY_RETRY_V2",
+  "outcome": "FAIL_CLOSED",
+  "classification": "TECHNICAL_OR_PARITY_FAILURE_FAIL_CLOSED_NO_SCIENTIFIC_CONCLUSION",
+  "summary": "P33 retry V2 failed closed after task admission due to a technical/parity execution failure. No scientific conclusion is recorded. No 2023/2024/2025 access, threshold/parameter search, model fitting, or production change occurred.",
+  "north_star_effect": "Preserves causal and governance integrity by closing the failed retry rather than leaving an active task or interpreting an incomplete replay.",
+  "next_bottleneck": "FINAL_EXIT_BRAIN_PRE_2024_ARCHITECTURE_P33_STATE_CONDITIONED_SHADOW_AUTHORITY_2022_EXPLORATORY_REPLAY_RETRY_V3",
+  "result_ref": "governance/final_exit_brain_pre_2024_architecture_p33_retry_v2_fail_closed/failure.json",
+  "result_sha256": "CFC208BAE29CC808F6E771C1C59448A82FA5FA555C5B46DC83D70096ED75A873",
+  "evidence": [
+    {
+      "path": "governance/final_exit_brain_pre_2024_architecture_p33_retry_v2_fail_closed/failure.json",
+      "sha256": "CFC208BAE29CC808F6E771C1C59448A82FA5FA555C5B46DC83D70096ED75A873"
+    }
+  ],
+  "governance_declarations": {
+    "production_changed": false,
+    "2023_new_raw_or_replay_accessed": false,
+    "posthoc_outcome_threshold_search_used": false,
+    "2024_used_as_fresh_holdout": false,
+    "2025_accessed": false,
+    "2024_used_to_define_new_runtime_rule": false,
+    "pair_or_event_identity_used_as_runtime_rule": false,
+    "lookahead_or_future_information_used": false
+  }
+}

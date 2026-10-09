@@ -1,0 +1,33 @@
+{
+  "cause_counts": {
+    "ENTRY_ADMISSION_INTERFACE_DIVERGENCE": 99,
+    "EXIT_PATH_DIVERGENCE": 414,
+    "SAME_PAIR_OCCUPANCY_DIVERGENCE": 28
+  },
+  "dominant_causes": [
+    {
+      "cause": "EXIT_PATH_DIVERGENCE",
+      "count": 414
+    },
+    {
+      "cause": "ENTRY_ADMISSION_INTERFACE_DIVERGENCE",
+      "count": 99
+    },
+    {
+      "cause": "SAME_PAIR_OCCUPANCY_DIVERGENCE",
+      "count": 28
+    }
+  ],
+  "fix_contract": [
+    "DO_NOT_FORCE_REPLAY_OVERLAY_TO_EMULATE_EXTERNAL_ADMISSION_BY_DROPPING_ROWS_IF_NATIVE_OCCUPANCY_PATH_CHANGES",
+    "SEPARATE_ENTRY_ARBITER_FROM_NATIVE_LIFECYCLE_STATE",
+    "PRESERVE_CANONICAL_PRICES_FEES_NATIVE_EXIT_PREEMPTION_AND_MARK_TO_MARKET",
+    "VERIFY_FIRST_DIVERGENCE_BEFORE_FULL_YEAR_REPLAY"
+  ],
+  "next_parity_test": "FIRST_DIVERGENCE_PREFIX_REPLAY_THEN_TWO_FORWARD_YEARS_ONLY",
+  "no_full_historical_rerun_required": true,
+  "pricing_or_quantity_only_explanation_supported": false,
+  "reported_parity_pass": false,
+  "root_cause_classification": "EXIT_PATH_DIVERGENCE",
+  "schema_version": "akah-canonical-parity-root-cause-forensics-v1"
+}

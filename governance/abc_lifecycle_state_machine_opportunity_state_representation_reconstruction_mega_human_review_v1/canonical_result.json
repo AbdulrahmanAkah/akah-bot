@@ -1,0 +1,140 @@
+{
+  "2024_access": false,
+  "absolute_oracle_ceiling_semantics": "D06 remains outer mathematical ruler; not an executable target",
+  "authorized_axis": "CAPITAL_OPPORTUNITY_COST_AND_REALLOCATION_ORACLE_DIAGNOSTIC_BOUNDS",
+  "authorized_next": "ABC_LIFECYCLE_STATE_MACHINE_CAPITAL_OPPORTUNITY_COST_REALLOCATION_DIAGNOSTIC_MEGA_V1",
+  "created_at_utc": "2026-09-28T16:21:13.442632+00:00",
+  "frozen": {
+    "f10_admission": "YES except explicit C05 outer bound",
+    "governor": "BINARY_VOL",
+    "h0": "YES",
+    "liquidity": "CANONICAL",
+    "max_positions": "YES",
+    "position_cap": "YES",
+    "sizing": "YES"
+  },
+  "hard_cutoff_exclusive": "2024-01-01T00:00:00Z",
+  "oracle_policy": "DIAGNOSTIC_ONLY_NEVER_RUNTIME",
+  "representation_evidence": {
+    "augmented_state_pairwise_2x": {
+      "continuous_mtm_mdd": -0.29885437990313013,
+      "cost_multiplier": 2.0,
+      "day_ge_0p5_fraction": 0.12457221081451061,
+      "description": "Same pairwise learner on old39 + reconstructed state",
+      "head": "AUGMENTED_STATE_PAIRWISE",
+      "mean_gross_fraction": 0.11223357457497962,
+      "open_positions_at_cutoff": 20,
+      "positive_day_fraction": 0.35728952772073924,
+      "ranker": "S02_AUGMENTED_STATE_PAIRWISE",
+      "rejections": "{'SIZE_OR_CAPACITY_TOO_SMALL': 116167, 'SAME_PAIR_OPEN': 29274, 'RISK_GOVERNOR_FORCED_EXIT': 597, 'MAX_POSITIONS': 139189}",
+      "terminal_equity": 177534.08855870937,
+      "terminal_wealth": 1.7753408855870936,
+      "total_cost": 32515.26894471901,
+      "trade_count": 4458,
+      "variant": "S02_AUGMENTED_STATE_PAIRWISE",
+      "worst_year_2x": -0.1444458991619908
+    },
+    "f10_incumbent_2x": {
+      "continuous_mtm_mdd": -0.26758260156638225,
+      "cost_multiplier": 2.0,
+      "day_ge_0p5_fraction": 0.1375770020533881,
+      "description": null,
+      "head": "F10",
+      "mean_gross_fraction": 0.10531620405429827,
+      "open_positions_at_cutoff": 20,
+      "positive_day_fraction": 0.3648186173853525,
+      "ranker": "S00_F10_INCUMBENT",
+      "rejections": "{'SIZE_OR_CAPACITY_TOO_SMALL': 115259, 'SAME_PAIR_OPEN': 28923, 'RISK_GOVERNOR_FORCED_EXIT': 577, 'MAX_POSITIONS': 140563}",
+      "terminal_equity": 217559.85217179195,
+      "terminal_wealth": 2.1755985217179195,
+      "total_cost": 31715.52537963624,
+      "trade_count": 4343,
+      "variant": "S00_F10_INCUMBENT",
+      "worst_year_2x": -0.11771935704255765
+    },
+    "f10_state_fusion_2x": {
+      "continuous_mtm_mdd": -0.31969324331401905,
+      "cost_multiplier": 2.0,
+      "day_ge_0p5_fraction": 0.13620807665982204,
+      "description": "Fixed equal fusion of F10 rank and augmented-state pairwise rank",
+      "head": "F10_STATE_FUSION",
+      "mean_gross_fraction": 0.11609283740726634,
+      "open_positions_at_cutoff": 20,
+      "positive_day_fraction": 0.3613963039014374,
+      "ranker": "S03_F10_STATE_FUSION",
+      "rejections": "{'SIZE_OR_CAPACITY_TOO_SMALL': 116055, 'SAME_PAIR_OPEN': 29205, 'RISK_GOVERNOR_FORCED_EXIT': 684, 'MAX_POSITIONS': 139304}",
+      "terminal_equity": 163034.5782012007,
+      "terminal_wealth": 1.6303457820120069,
+      "total_cost": 31131.690072855134,
+      "trade_count": 4524,
+      "variant": "S03_F10_STATE_FUSION",
+      "worst_year_2x": -0.13271113174571914
+    },
+    "old39_pairwise_control_2x": {
+      "continuous_mtm_mdd": -0.27061617959776174,
+      "cost_multiplier": 2.0,
+      "day_ge_0p5_fraction": 0.12251882272416154,
+      "description": null,
+      "head": "BASE39_PAIRWISE",
+      "mean_gross_fraction": 0.11008006571937491,
+      "open_positions_at_cutoff": 20,
+      "positive_day_fraction": 0.3600273785078713,
+      "ranker": "S01_BASE39_PAIRWISE_CONTROL",
+      "rejections": "{'SIZE_OR_CAPACITY_TOO_SMALL': 116228, 'SAME_PAIR_OPEN': 29350, 'RISK_GOVERNOR_FORCED_EXIT': 645, 'MAX_POSITIONS': 139027}",
+      "terminal_equity": 210796.59150430263,
+      "terminal_wealth": 2.1079659150430263,
+      "total_cost": 34320.505989933554,
+      "trade_count": 4483,
+      "variant": "S01_BASE39_PAIRWISE_CONTROL",
+      "worst_year_2x": -0.11770298790075284
+    }
+  },
+  "reviewed_revision": 747,
+  "schema_version": "akah-rev747-capital-opportunity-cost-human-review-v1",
+  "source_disposition": "OPPORTUNITY_STATE_REPRESENTATION_RECONSTRUCTION_COMPLETE_NO_POSTHOC_CERTIFICATION",
+  "status": "PASS_CAPITAL_DIAGNOSTIC_AUTHORIZED",
+  "variants": [
+    {
+      "action_mode": "NONE",
+      "description": "Exact F10 incumbent; no oracle action",
+      "gate_mode": "F10_GATE",
+      "id": "C00_F10_ACTUAL",
+      "score_mode": "F10_SCORE"
+    },
+    {
+      "action_mode": "BLOCKED_REPLACE",
+      "description": "F10 order/gate; oracle one-for-one replacement only when candidate would otherwise be unfunded",
+      "gate_mode": "F10_GATE",
+      "id": "C01_BLOCKED_REPLACEMENT_ORACLE",
+      "score_mode": "F10_SCORE"
+    },
+    {
+      "action_mode": "PRUNE_ONLY",
+      "description": "F10 order/gate; oracle early release of incumbents whose future H0 continuation is worse than selling now",
+      "gate_mode": "F10_GATE",
+      "id": "C02_NEGATIVE_CONTINUATION_RELEASE_ORACLE",
+      "score_mode": "F10_SCORE"
+    },
+    {
+      "action_mode": "FULL_REALLOC",
+      "description": "F10 order/gate; oracle negative-continuation release plus capital reallocation to candidates when locally superior",
+      "gate_mode": "F10_GATE",
+      "id": "C03_FULL_REALLOCATION_ORACLE",
+      "score_mode": "F10_SCORE"
+    },
+    {
+      "action_mode": "FULL_REALLOC",
+      "description": "Same F10 gate; oracle candidate ordering plus full oracle reallocation",
+      "gate_mode": "F10_GATE",
+      "id": "C04_SAME_GATE_ORACLE_RANK_REALLOC",
+      "score_mode": "H0_ORACLE"
+    },
+    {
+      "action_mode": "FULL_REALLOC",
+      "description": "All opportunities; oracle candidate ordering plus full oracle reallocation under canonical liquidity/governor",
+      "gate_mode": "ALL",
+      "id": "C05_ALL_ADMISSION_ORACLE_RANK_REALLOC",
+      "score_mode": "H0_ORACLE"
+    }
+  ]
+}

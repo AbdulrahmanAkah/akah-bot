@@ -1,0 +1,29 @@
+{
+  "authority_id": "AKAH_BOT_RD23_SIGNAL_PIT_AND_UNIVERSE_CONTRACT_V1",
+  "status": "PARTIAL_SOURCE_CONTRACT_NOT_CURRENT_BASELINE_AUTHORITY",
+  "source_pit_contract": {
+    "membership_source": "data/research/rd18_p3x_a3b_runtime/effective-operational-membership.csv",
+    "membership_binding": "load_membership -> MembershipSnapshot(decision_time,effective_end,members)",
+    "scan_start": "ceil(max(snapshot.decision_time, DATA_START), 1h)",
+    "scan_end": "min(snapshot.effective_end, DATA_CUTOFF)",
+    "feature_timestamp_requirement": "row at the signal timestamp and prior features must exist and be feature_ready",
+    "signal_admission_delay": "RD23 artifact is a signal timestamp; RD27 native entry scheduling adds one hour in its own contract",
+    "pit_status": "SOURCE_DEFINED_FOR_RD23_DIAGNOSTIC_PIPELINE_ONLY"
+  },
+  "universe_semantics": {
+    "source_universe_ids": ["C2", "D2", "E2"],
+    "membership_rank": "copied from effective membership snapshot",
+    "pair": "copied from membership member tuple",
+    "current_nine_strata_binding": "NOT_BOUND_BY_THIS_ARTIFACT"
+  },
+  "family_semantics": {
+    "rd23_families": ["MOMENTUM_BREAKOUT", "VOLATILITY_EXPANSION", "STRUCTURAL_REVERSAL", "RELATIVE_STRENGTH_ROTATION", "MOMENTUM_ACCELERATION", "BASE_RANGE_BREAKOUT"],
+    "required_current_families": ["UNION_FOCUS", "MOMENTUM_BREAKOUT", "RELATIVE_STRENGTH_ROTATION"],
+    "union_focus_present": false,
+    "family_contract_status": "INCOMPATIBLE_WITH_FROZEN_FULL_MATRIX_CONSTRUCTORS"
+  },
+  "required_current_signal_schema": ["timestamp", "universe_id", "period_id", "family_id", "pair", "membership_rank", "atr24_at_signal"],
+  "rd23_emitted_schema_missing": ["atr24_at_signal"],
+  "outcome_fields_authorized": false,
+  "protected_year_rows_read": false
+}

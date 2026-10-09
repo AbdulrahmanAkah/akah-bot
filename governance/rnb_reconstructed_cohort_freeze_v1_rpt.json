@@ -1,0 +1,58 @@
+{
+  "authority_bindings": {
+    "audit_sha256": "D5AC71B786AE0AE0A59D9CF5E39C1FC8B19CA8B027D65C66949D4E96126C7787",
+    "cohort_sha256": "7AFD82EA68D4AD131FE6EBA54E7C0BFB210CDAABB0D2C98F28CFF1B3278E83FD",
+    "excluded_sha256": "084C6DFCF542175A42646EB187AC98E1330CBD4E7EC19BFE5E7040B6E14C6F5B",
+    "manifest_sha256": "ED0FBF9B176CF6CAF12F3F3582BF4E14713A4B2E86EDC1375C9E6B5A634862CE",
+    "ready_sha256": "E32975F957AC4546F35848B4655C9251AADE2B6EFBCA96FCE9506A01377F1921"
+  },
+  "branch": "research/rd48-cross-venue-price-level-basis-direct-utility-v1",
+  "evidence": [
+    {
+      "path": "data/research/reconstructed_native_baseline_pre2023/replay-cohort-2022-native-state-eligible-v1.csv",
+      "sha256": "7AFD82EA68D4AD131FE6EBA54E7C0BFB210CDAABB0D2C98F28CFF1B3278E83FD"
+    },
+    {
+      "path": "data/research/reconstructed_native_baseline_pre2023/replay-cohort-2022-native-state-excluded-v1.csv",
+      "sha256": "084C6DFCF542175A42646EB187AC98E1330CBD4E7EC19BFE5E7040B6E14C6F5B"
+    },
+    {
+      "path": "governance/rnb_reconstructed_cohort_freeze_v1/cohort_manifest.json",
+      "sha256": "ED0FBF9B176CF6CAF12F3F3582BF4E14713A4B2E86EDC1375C9E6B5A634862CE"
+    },
+    {
+      "path": "governance/rnb_reconstructed_cohort_freeze_v1/freeze_audit.json",
+      "sha256": "D5AC71B786AE0AE0A59D9CF5E39C1FC8B19CA8B027D65C66949D4E96126C7787"
+    },
+    {
+      "path": "governance/AKAH_BOT_RECONSTRUCTED_NATIVE_BASELINE_READY_FOR_FIRST_NATIVE_REPLAY_V1.json",
+      "sha256": "E32975F957AC4546F35848B4655C9251AADE2B6EFBCA96FCE9506A01377F1921"
+    }
+  ],
+  "firewall": {
+    "economic_analysis": false,
+    "native_replay_executed": false,
+    "network": false,
+    "outcome_filtering": false,
+    "protected_year_rows_read": false,
+    "push": false
+  },
+  "governed_schema_version": "akah-provenance-phase-governed-v1",
+  "next_bottleneck": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_FIRST_NATIVE_REPLAY_V1",
+  "north_star_effect": "Finish replay preparation without arbitrary variant selection.",
+  "objective": "Freeze reconstructed 2022 replay cohort after deduplicated native-state fail-closed equivalence-class admissibility.",
+  "resolution_class": "RECONSTRUCTED_NATIVE_BASELINE_COHORT_FROZEN_READY_FOR_FIRST_NATIVE_REPLAY",
+  "state_updates": {
+    "excluded_count": 270,
+    "native_replay_executed": false,
+    "ready_for_first_native_replay": true,
+    "replay_cohort_count": 3024,
+    "replay_cohort_frozen": true,
+    "roadmap_position": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_FIRST_NATIVE_REPLAY_V1"
+  },
+  "status": "PASS",
+  "summary": "Frozen replay cohort: 3024 eligible canonical rows; 270 excluded rows from 90 unique fail-closed equivalence classes represented by 270 runtime records. Ready for first native replay.",
+  "task_id": "CAUSAL_EXIT_BRAIN_RECONSTRUCTED_NATIVE_BASELINE_RECONSTRUCTED_COHORT_FREEZE_WITH_STATE_ADMISSIBILITY_V1",
+  "task_start_head": "721b3de8ff7e434916d6f3b81d2ee31fe78bb6ba",
+  "task_start_revision": 228
+}

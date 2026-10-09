@@ -1,0 +1,85 @@
+{
+  "authority_id": "AKAH_BOT_RD26_PROSPECTIVE_PORTFOLIO_UNIVERSE_SEMANTIC_BINDING_V1",
+  "status": "HUMAN_DECISION_REQUIRED",
+  "policy_id": "rd27.FULL_ADAPTIVE_LIFECYCLE_BRAIN",
+  "policy_authority": "governance/reconstructed_native_baseline_prospective_scalar_human_decision_v1/human_scalar_decision.json",
+  "source": {
+    "runner": "scripts/research/run_rd27_lifecycle_ablation.py",
+    "runner_sha256": "7DFC388F3BF8EF6EFA16E0640CF924158999A9923674C7701B8919872755CBB5",
+    "loop_lines": "402-428",
+    "replay_source": "src/spotbot/research/rd27_lifecycle_replay.py",
+    "replay_sha256": "E3944A4655DDDF21C394FE1DB541F2645F529C00BD8390B22D652BD8EF5BBF83"
+  },
+  "native_contract": {
+    "portfolio_id": {
+      "present": true,
+      "meaning": "metadata label passed to replay and emitted in metrics/trades; event population is selected by the runner before the call",
+      "source_line": 422,
+      "actual_values": [
+        "UNION_FOCUS",
+        "MOMENTUM_BREAKOUT",
+        "RELATIVE_STRENGTH_ROTATION"
+      ]
+    },
+    "portfolio_mode": {
+      "present": false,
+      "meaning": "no native field or mode selector with this name"
+    },
+    "universe_id": {
+      "present": true,
+      "meaning": "signal universe filter and replay metadata",
+      "source_line": 423,
+      "actual_values": ["C2", "D2", "E2"]
+    },
+    "universe_mode": {
+      "present": false,
+      "meaning": "no native field or mode selector with this name"
+    }
+  },
+  "constructor_mapping": {
+    "UNION_FOCUS": {
+      "constructor": "union_events",
+      "source_lines": "405, 549-596",
+      "population": "all focus-family events for the selected actual C2/D2/E2 universe, collapsed by timestamp and pair"
+    },
+    "MOMENTUM_BREAKOUT": {
+      "constructor": "standalone_events",
+      "family": "MOMENTUM_BREAKOUT",
+      "source_lines": "406-410, 533-546",
+      "population": "only the selected universe and momentum-breakout family"
+    },
+    "RELATIVE_STRENGTH_ROTATION": {
+      "constructor": "standalone_events",
+      "family": "RELATIVE_STRENGTH_ROTATION",
+      "source_lines": "411-415, 533-546",
+      "population": "only the selected universe and relative-strength-rotation family"
+    }
+  },
+  "prior_labels": {
+    "portfolio_id": {
+      "value": "EAA_SHADOW_PARITY_NATIVE",
+      "disposition": "NOT_A_VALID_RD27_ABLATION_SELECTION",
+      "reason": "appears in the static-policy parity callsite, not in the prospective FULL_ADAPTIVE runner branch"
+    },
+    "universe_id": {
+      "value": "PRE2022_UNION",
+      "disposition": "NOT_A_VALID_RD27_ABLATION_SELECTOR",
+      "reason": "the current RD27 runner accepts and constructs only C2, D2, or E2"
+    }
+  },
+  "decision": {
+    "required": true,
+    "reason": "FULL_ADAPTIVE is a policy branch, while the runner exposes three actual constructors across three actual universes; source semantics do not select one tuple without a prospective study design choice",
+    "valid_native_options": [
+      "freeze one actual (constructor, universe) tuple",
+      "freeze an explicitly declared matrix of the existing actual tuples as the reconstructed baseline study strata"
+    ],
+    "forbidden": [
+      "rename PRE2022_UNION to C2/D2/E2",
+      "rename EAA_SHADOW_PARITY_NATIVE to UNION_FOCUS",
+      "select by PnL, incidence, or output count",
+      "use a static-policy parity source as FULL_ADAPTIVE signal authority"
+    ],
+    "human_packet": "governance/reconstructed_native_baseline_rd26_signal_source_and_1h_manifest_exact_residual_gap_v1/human_decision_packet.json"
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "current_raw_root_must_be_mutated": false,
+  "physical_writer_bound": true,
+  "resolved_store_methods": [
+    {
+      "class": "ParquetCandleStore",
+      "line": 58,
+      "method": "dataset_path",
+      "module": "src/spotbot/data/store.py",
+      "path_expressions": [
+        {
+          "expr": "self.root\n            / exchange_component\n            / symbol_component\n            / f\"{timeframe_component}.parquet\"",
+          "line": 78
+        },
+        {
+          "expr": "self.root\n            / exchange_component\n            / symbol_component",
+          "line": 78
+        },
+        {
+          "expr": "self.root\n            / exchange_component",
+          "line": 78
+        }
+      ],
+      "source_sha256": "9B13107C0DBA413339EE85520D9B2F3B6E26BF3F4C8B8D6C511185E13AD6A58A",
+      "write_calls": []
+    },
+    {
+      "class": "ParquetCandleStore",
+      "line": 85,
+      "method": "metadata_path",
+      "module": "src/spotbot/data/store.py",
+      "path_expressions": [],
+      "source_sha256": "D46984CB08402DC220CDEF27B3259C5AA0D7DFE14E4E6B4B0121B28D3325D93A",
+      "write_calls": []
+    },
+    {
+      "class": "ParquetCandleStore",
+      "line": 90,
+      "method": "save",
+      "module": "src/spotbot/data/store.py",
+      "path_expressions": [],
+      "source_sha256": "2CD7CF67D48DE15A0E740F91C016FE9E6919C485129137BAA10D76B7AEB92A8B",
+      "write_calls": [
+        {
+          "call": "normalized.to_parquet(\n                temporary_data_path,\n                index=False,\n                engine=\"pyarrow\",\n            )",
+          "line": 158,
+          "tail": "to_parquet"
+        }
+      ]
+    },
+    {
+      "class": "ParquetCandleStore",
+      "line": 219,
+      "method": "load",
+      "module": "src/spotbot/data/store.py",
+      "path_expressions": [],
+      "source_sha256": "83DB8F1B9F6AB0113A05C0064DE5C05BD2B2ECE4764ED9C04D14C3307D4451EB",
+      "write_calls": [
+        {
+          "call": "pd.read_parquet(\n            str(data_path)\n        )",
+          "line": 279,
+          "tail": "read_parquet"
+        }
+      ]
+    }
+  ],
+  "run_rd16b_store_root_uses": [
+    {
+      "call": "ParquetCandleStore(store_root)",
+      "call_name": "ParquetCandleStore",
+      "line": 760
+    }
+  ],
+  "status": "PASS",
+  "store_calls_from_acquire": [
+    {
+      "call": "store.dataset_path(\n        exchange_id=exchange_id,\n        symbol=symbol,\n        timeframe=SIGNAL_TIMEFRAME,\n    )",
+      "line": 222,
+      "method": "dataset_path",
+      "resolved": true
+    },
+    {
+      "call": "store.metadata_path(data_path)",
+      "line": 227,
+      "method": "metadata_path",
+      "resolved": true
+    },
+    {
+      "call": "store.save(\n        merged,\n        exchange_id=exchange_id,\n        symbol=symbol,\n        timeframe=SIGNAL_TIMEFRAME,\n        overwrite=True,\n    )",
+      "line": 310,
+      "method": "save",
+      "resolved": true
+    },
+    {
+      "call": "store.load(\n            exchange_id=exchange_id,\n            symbol=symbol,\n            timeframe=SIGNAL_TIMEFRAME,\n            verify_integrity=True,\n        )",
+      "line": 231,
+      "method": "load",
+      "resolved": true
+    }
+  ],
+  "store_parameter_class": "ParquetCandleStore",
+  "store_root_configurable": true
+}

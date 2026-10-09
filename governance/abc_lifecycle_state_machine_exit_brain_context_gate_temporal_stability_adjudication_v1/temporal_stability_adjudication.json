@@ -1,0 +1,175 @@
+{
+  "2024_access": false,
+  "aggregate_rescue": false,
+  "policy_results": [
+    {
+      "policy_id": "EB3A_A_ONSET_SEVERE_GIVEBACK",
+      "survives_2022_2023_temporal_stability": true,
+      "year_results": [
+        {
+          "delta_portfolio_net_pnl": 817.4665712459828,
+          "executed": 11,
+          "executed_positive": true,
+          "passed": true,
+          "planned": 13,
+          "planned_positive": true,
+          "portfolio_delta_positive": true,
+          "year": 2022
+        },
+        {
+          "delta_portfolio_net_pnl": 275.0999983667716,
+          "executed": 3,
+          "executed_positive": true,
+          "passed": true,
+          "planned": 3,
+          "planned_positive": true,
+          "portfolio_delta_positive": true,
+          "year": 2023
+        }
+      ]
+    },
+    {
+      "policy_id": "EB3B_A_CONT_BEARISH_STRUCTURE",
+      "survives_2022_2023_temporal_stability": true,
+      "year_results": [
+        {
+          "delta_portfolio_net_pnl": 610.422149983031,
+          "executed": 1,
+          "executed_positive": true,
+          "passed": true,
+          "planned": 1,
+          "planned_positive": true,
+          "portfolio_delta_positive": true,
+          "year": 2022
+        },
+        {
+          "delta_portfolio_net_pnl": 385.8157434653112,
+          "executed": 1,
+          "executed_positive": true,
+          "passed": true,
+          "planned": 1,
+          "planned_positive": true,
+          "portfolio_delta_positive": true,
+          "year": 2023
+        }
+      ]
+    },
+    {
+      "policy_id": "EB3C_B_ONSET_SEVERE_GIVEBACK",
+      "survives_2022_2023_temporal_stability": false,
+      "year_results": [
+        {
+          "delta_portfolio_net_pnl": 181.015427017599,
+          "executed": 2,
+          "executed_positive": true,
+          "passed": true,
+          "planned": 3,
+          "planned_positive": true,
+          "portfolio_delta_positive": true,
+          "year": 2022
+        },
+        {
+          "delta_portfolio_net_pnl": -1414.549048499277,
+          "executed": 2,
+          "executed_positive": true,
+          "passed": false,
+          "planned": 3,
+          "planned_positive": true,
+          "portfolio_delta_positive": false,
+          "year": 2023
+        }
+      ]
+    },
+    {
+      "policy_id": "EB3D_CONFIRMED_DAMAGE_NEG_MOMENTUM",
+      "survives_2022_2023_temporal_stability": false,
+      "year_results": [
+        {
+          "delta_portfolio_net_pnl": 138.98044323167414,
+          "executed": 4,
+          "executed_positive": true,
+          "passed": true,
+          "planned": 6,
+          "planned_positive": true,
+          "portfolio_delta_positive": true,
+          "year": 2022
+        },
+        {
+          "delta_portfolio_net_pnl": -1124.171546911413,
+          "executed": 5,
+          "executed_positive": true,
+          "passed": false,
+          "planned": 6,
+          "planned_positive": true,
+          "portfolio_delta_positive": false,
+          "year": 2023
+        }
+      ]
+    },
+    {
+      "policy_id": "EB3E_CONFIRMED_WINNER_GIVEBACK",
+      "survives_2022_2023_temporal_stability": false,
+      "year_results": [
+        {
+          "delta_portfolio_net_pnl": 0.0,
+          "executed": 0,
+          "executed_positive": false,
+          "passed": false,
+          "planned": 0,
+          "planned_positive": false,
+          "portfolio_delta_positive": false,
+          "year": 2022
+        },
+        {
+          "delta_portfolio_net_pnl": 0.0,
+          "executed": 0,
+          "executed_positive": false,
+          "passed": false,
+          "planned": 0,
+          "planned_positive": false,
+          "portfolio_delta_positive": false,
+          "year": 2023
+        }
+      ]
+    },
+    {
+      "policy_id": "EB3F_DAMAGED_LOSER_THESIS_FAILURE",
+      "survives_2022_2023_temporal_stability": false,
+      "year_results": [
+        {
+          "delta_portfolio_net_pnl": -647.324834964762,
+          "executed": 13,
+          "executed_positive": true,
+          "passed": false,
+          "planned": 17,
+          "planned_positive": true,
+          "portfolio_delta_positive": false,
+          "year": 2022
+        },
+        {
+          "delta_portfolio_net_pnl": -760.6652554711181,
+          "executed": 6,
+          "executed_positive": true,
+          "passed": false,
+          "planned": 7,
+          "planned_positive": true,
+          "portfolio_delta_positive": false,
+          "year": 2023
+        }
+      ]
+    }
+  ],
+  "ranking": false,
+  "schema_version": "abc-exit-brain-context-gate-temporal-stability-adjudication-v1",
+  "strict_rule": "BOTH_2022_AND_2023_REQUIRE_PLANNED_GT_0_EXECUTED_GT_0_DELTA_PORTFOLIO_NET_PNL_GT_0",
+  "survivor_count": 2,
+  "survivor_policy_ids": [
+    "EB3A_A_ONSET_SEVERE_GIVEBACK",
+    "EB3B_A_CONT_BEARISH_STRUCTURE"
+  ],
+  "years": [
+    2022,
+    2023
+  ],
+  "years_are_not_pristine_final_holdout": true
+}

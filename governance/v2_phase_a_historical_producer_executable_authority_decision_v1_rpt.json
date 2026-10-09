@@ -1,0 +1,73 @@
+{
+  "authority_bindings": {
+    "accepted_historical_binding_path": "governance/v2_phase_a_native_replay_input_authority_gap_adjudication_v1/historical_native_producer_adjudication.json",
+    "accepted_historical_binding_sha256": "FFD3E569467343DA5E5B56093E55C301028B411B54D4C8BF0DCF60ECDD63AE16",
+    "parity_json_sha256": "9572B41908809B26D8846484147C85FD3037CABFC6E8A8BAE47DAF3F1FF001D7",
+    "parity_rows_sha256": "47618557A5B55C1B3BE8FE57173B5B3C02BC89C271396C19A94B94979D54650C",
+    "source_authority_sha256": "A7430573E2D55362CC7E85C9DB606D048734DFDA8584240811FEE1B876BAB31F"
+  },
+  "branch": "research/rd48-cross-venue-price-level-basis-direct-utility-v1",
+  "evidence": [
+    {
+      "path": "governance/v2_phase_a_historical_producer_executable_authority_decision_v1/parity_artifact_birth.json",
+      "sha256": "ECC2E978D6ABE3FB2185B226E6CAA2006B3D3A077A93510EB96BD9A2F0A97517"
+    },
+    {
+      "path": "governance/v2_phase_a_historical_producer_executable_authority_decision_v1/parity_producer_contract.json",
+      "sha256": "764647B0B8DCDA43855420FF40F792D115DBC48DBC0ABB808393C5C6BC4B1E0A"
+    },
+    {
+      "path": "governance/v2_phase_a_historical_producer_executable_authority_decision_v1/parity_producer_input_lineage.json",
+      "sha256": "FCD5B26121F37381815B1E0FD7FC6092273422C2EC8E009FFA37F6A055E2FBBC"
+    },
+    {
+      "path": "governance/v2_phase_a_historical_producer_executable_authority_decision_v1/native_upstream_producer_candidates.json",
+      "sha256": "4ED86B7D3855C592D26B3219A698221A9789275C83DC07517B779D10FBF4AB3D"
+    },
+    {
+      "path": "governance/v2_phase_a_historical_producer_executable_authority_decision_v1/causal_producer_chain_adjudication.json",
+      "sha256": "B7C68C14907F142E05921CE18EC8F62EBEC3BA02B5D1775DD610C898D494AB13"
+    },
+    {
+      "path": "governance/v2_phase_a_historical_producer_executable_authority_decision_v1/historical_executable_authority_decision.json",
+      "sha256": "B52272C4AB39C07AE4ED220EB2F0EACAD0ACCD16CE1A528606E1920596C7E731"
+    },
+    {
+      "path": "governance/v2_phase_a_historical_producer_executable_authority_decision_v1.json",
+      "sha256": "982C88D82EC5DD104179EEF440F802B774AA3C790A6BCB7703860067E3CE6545"
+    }
+  ],
+  "firewall": {
+    "economics": false,
+    "git_fetch": false,
+    "heuristic_scoring": false,
+    "market_rows_read": false,
+    "native_replay_executed": false,
+    "network": false,
+    "outcome_rows_read": false,
+    "pnl": false,
+    "protected_years": false,
+    "push": false,
+    "source_mutation": false
+  },
+  "governed_schema_version": "akah-provenance-phase-governed-v1",
+  "next_bottleneck": "CAUSAL_EXIT_BRAIN_V2_PHASE_A_NATIVE_TERMINAL_BOUNDARY_METHOD_DECISION_V1",
+  "north_star_effect": "Either establishes one executable through an artifact producer chain or closes historical executable recovery from current local evidence. Prevents further filename/score-based producer selection.",
+  "objective": "Adjudicate historical producer executable authority through the causal Git lineage of the parity artifacts: artifact birth commit -> exact parity writer -> exact input artifacts -> upstream writer that reaches replay_lifecycle_policy. No scoring, replay, or market-row reads.",
+  "resolution_class": "HISTORICAL_PRODUCER_EXECUTABLE_AUTHORITY_NOT_RECOVERABLE_CURRENT_LOCAL_EVIDENCE",
+  "state_updates": {
+    "actual_exit_authority": false,
+    "economics_authorized": false,
+    "heuristic_producer_selection": false,
+    "roadmap_position": "NATIVE_TERMINAL_BOUNDARY_METHOD_DECISION_REQUIRED",
+    "v2_phase_a_executable_provenance_current_local_evidence": "CLOSED",
+    "v2_phase_a_historical_executable_authority": "NOT_RECOVERABLE_FROM_CURRENT_LOCAL_EVIDENCE",
+    "v2_phase_a_historical_executable_authority_count": 0,
+    "v2_phase_a_native_replay_executed": false
+  },
+  "status": "PASS",
+  "summary": "The bounded causal producer-lineage audit did not establish one historical native executable. Further executable selection would require a new reconstruction choice rather than historical recovery; historical executable provenance is closed for the current local evidence set.",
+  "task_id": "CAUSAL_EXIT_BRAIN_V2_PHASE_A_HISTORICAL_PRODUCER_EXECUTABLE_AUTHORITY_DECISION_V1",
+  "task_start_head": "c240a7380c40764538f96d172ba6b812ceb55fb4",
+  "task_start_revision": 191
+}

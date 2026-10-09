@@ -1,0 +1,5004 @@
+{
+  "2024_market_data_access": false,
+  "dependency_files": [
+    {
+      "depth": 0,
+      "parse": "PASS",
+      "path": "src/spotbot/research/rd31_regime_governed_replay.py",
+      "sha256": "CF979223BF53141AD715FF6D4E79AD394653A7A3E42E546B9E43424A42DC7F4C"
+    },
+    {
+      "depth": 1,
+      "parse": "PASS",
+      "path": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "sha256": "1AA0596DC0B18097D71E1CDB127D2355FC806ECD4A8824A983BA038FA2DD9BC4"
+    },
+    {
+      "depth": 1,
+      "parse": "PASS",
+      "path": "src/spotbot/research/rd26_exit_architecture.py",
+      "sha256": "1290748EA7E8A0343C1A15CEDFC1220AA423F04C11FDD558311B06AC7DA90359"
+    },
+    {
+      "depth": 1,
+      "parse": "PASS",
+      "path": "src/spotbot/research/rd27_lifecycle_replay.py",
+      "sha256": "E3944A4655DDDF21C394FE1DB541F2645F529C00BD8390B22D652BD8EF5BBF83"
+    },
+    {
+      "depth": 1,
+      "parse": "PASS",
+      "path": "src/spotbot/research/rd29_thesis_replay.py",
+      "sha256": "C499946623CFDE87812BD63442BD9D67FE7BAA3EF7DE55BFB83355140984144B"
+    },
+    {
+      "depth": 1,
+      "parse": "PASS",
+      "path": "src/spotbot/research/rd30_family_specialist_state.py",
+      "sha256": "648536CEB36C01D0A759D99C142A8FE0E464E40996F1FAAAFE9300891790BDC1"
+    },
+    {
+      "depth": 1,
+      "parse": "PASS",
+      "path": "src/spotbot/research/rd30_replacement_replay.py",
+      "sha256": "169521BF5A684E10FE17000463FC7A816EF9A5917A5313AF5DD6509D0AA47606"
+    },
+    {
+      "depth": 1,
+      "parse": "PASS",
+      "path": "src/spotbot/research/rd31_regime_admission_governor.py",
+      "sha256": "AB38E80C8BC9F99C7A6E262A1A7F648642E3ED628032FEC3A137FB4E33A06368"
+    },
+    {
+      "depth": 2,
+      "parse": "PASS",
+      "path": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "sha256": "A2C0B25B0053CEEF1AA5C3AC5DB1442C1DCF333845F7345FB1F80A9AD3E1290E"
+    },
+    {
+      "depth": 2,
+      "parse": "PASS",
+      "path": "src/spotbot/research/rd27_async_exit_candidate_shadow.py",
+      "sha256": "45F98E6F8A4B99387FA728A79BCD34D9830FB5C762385E7FBC4ABCF5F8382D56"
+    },
+    {
+      "depth": 2,
+      "parse": "PASS",
+      "path": "src/spotbot/research/rd27_async_memory_shadow.py",
+      "sha256": "D7AF674EEEEDE4223A1AFF2ED5734AB5B4A9CC8D1D0327325CE287393AC18B04"
+    },
+    {
+      "depth": 2,
+      "parse": "PASS",
+      "path": "src/spotbot/research/rd27_observable_later_trigger_predicate.py",
+      "sha256": "E6084BEBE118C0CFDEB403B5CF5F641814F1E7BDFE6E1314082E35AFB56B42DA"
+    },
+    {
+      "depth": 2,
+      "parse": "PASS",
+      "path": "src/spotbot/research/rd27_observable_memory_adapter.py",
+      "sha256": "BE07010AFB94CCD17870D4598203E4B707EF33B950F0B195D6B2D311D5B35FAA"
+    },
+    {
+      "depth": 2,
+      "parse": "PASS",
+      "path": "src/spotbot/research/rd27_observable_memory_predicate.py",
+      "sha256": "5F25948CB5AF5B34E39033FA0A149B74567106E583097B1C11090668A0565CAE"
+    },
+    {
+      "depth": 2,
+      "parse": "PASS",
+      "path": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "sha256": "CF5FC2CE83DB12AEC3A9F4D43039E628898F4CD70537E571A0367DE62DF1B510"
+    },
+    {
+      "depth": 2,
+      "parse": "PASS",
+      "path": "src/spotbot/research/rd28_lifecycle_replay.py",
+      "sha256": "4AD1EAD99210EF0F27CC4F42754A554B647C3FC799C636CE4686C7E0BDAA149E"
+    },
+    {
+      "depth": 2,
+      "parse": "PASS",
+      "path": "src/spotbot/research/rd29_thesis_context.py",
+      "sha256": "53E189EFD8EABE7B8F3560077E11C2D3DC9757229B6EC6553E501142AD90F2C4"
+    }
+  ],
+  "direct_current_baseline_reuse_proven": false,
+  "generic_current_baseline_adapter_functions": [],
+  "hysteresis_found": true,
+  "open_caution_locked_found": true,
+  "prior_metrics": {
+    "columns": [
+      "trade_count",
+      "final_equity",
+      "net_return",
+      "net_pnl",
+      "profit_factor",
+      "win_rate",
+      "maximum_drawdown",
+      "turnover",
+      "mean_holding_hours",
+      "policy_id",
+      "portfolio_id",
+      "universe_id",
+      "cost_multiplier",
+      "minimum_cash",
+      "atomic_replacement_count"
+    ],
+    "path": "data/research/rd31_p1_runtime/portfolio-run-metrics.csv",
+    "rows": 72,
+    "sample_net_pnl": [
+      "12654.444557877505",
+      "633.1656758773024",
+      "18868.41464252185",
+      "6794.875168005528",
+      "20052.124796476663",
+      "14790.51183119719",
+      "29618.818416991955",
+      "15856.355487451265",
+      "20322.38280185676",
+      "8192.506131354166",
+      "32328.71925431973",
+      "26565.025081912303",
+      "25014.811576626904",
+      "11888.415446329484",
+      "26199.253126777417",
+      "13627.40178350442",
+      "25541.77271142199",
+      "19880.983659404897",
+      "14869.079925729238",
+      "2818.037692977232",
+      "20596.534874716104",
+      "8586.666784570902",
+      "32062.104481867485",
+      "18269.81401487993",
+      "22256.248791740552",
+      "10187.098043789374",
+      "24904.835977320545",
+      "11925.41422395657",
+      "26428.460033645533",
+      "14026.39175436138",
+      "19311.55607477101",
+      "10906.83687863208",
+      "22864.361007750005",
+      "15142.172430878984",
+      "41220.41963383206",
+      "31716.95394512525",
+      "27186.58173932573",
+      "19409.8560931667",
+      "28352.70432645295",
+      "19400.42424582658",
+      "31456.774902445555",
+      "23388.935765858085",
+      "20498.909452144828",
+      "12028.481914278324",
+      "21598.304986612144",
+      "13559.3165119959",
+      "43445.27497255622",
+      "33558.28611594971",
+      "25592.05148390698",
+      "17408.66559807805"
+    ],
+    "sample_net_return": [
+      "0.1265444455787749",
+      "0.006331656758773",
+      "0.1886841464252184",
+      "0.0679487516800552",
+      "0.2005212479647666",
+      "0.1479051183119719",
+      "0.2961881841699196",
+      "0.1585635548745125",
+      "0.2032238280185676",
+      "0.0819250613135416",
+      "0.3232871925431972",
+      "0.2656502508191229",
+      "0.250148115766269",
+      "0.1188841544632948",
+      "0.2619925312677742",
+      "0.1362740178350441",
+      "0.2554177271142199",
+      "0.1988098365940489",
+      "0.1486907992572923",
+      "0.0281803769297723",
+      "0.2059653487471611",
+      "0.0858666678457089",
+      "0.3206210448186748",
+      "0.1826981401487992",
+      "0.2225624879174055",
+      "0.1018709804378936",
+      "0.2490483597732053",
+      "0.1192541422395656",
+      "0.2642846003364554",
+      "0.1402639175436137",
+      "0.1931155607477102",
+      "0.1090683687863207",
+      "0.2286436100775",
+      "0.1514217243087898",
+      "0.4122041963383207",
+      "0.3171695394512526",
+      "0.2718658173932573",
+      "0.194098560931667",
+      "0.2835270432645296",
+      "0.1940042424582657",
+      "0.3145677490244556",
+      "0.2338893576585807",
+      "0.2049890945214483",
+      "0.1202848191427832",
+      "0.2159830498661215",
+      "0.1355931651199591",
+      "0.4344527497255621",
+      "0.3355828611594971",
+      "0.2559205148390697",
+      "0.1740866559807805"
+    ],
+    "sample_policy_id": [
+      "FAMILY_QUALITY_CONTROL_EXITS",
+      "STRESSED_CONTEXT_MB_EXCLUSION",
+      "SUPPORTIVE_ONLY_ALL_FAMILIES",
+      "REGIME_HYSTERESIS_ADMISSION_GOVERNOR"
+    ],
+    "sample_universe_id": [
+      "C2",
+      "D2",
+      "E2"
+    ],
+    "sha256": "ECB49439A668877785E8409E9042B8318D05E7DA7442BA9457E09B073DE5EAFE"
+  },
+  "public_functions": [
+    {
+      "args": [
+        "support_families"
+      ],
+      "file": "src/spotbot/research/rd31_regime_governed_replay.py",
+      "function": "family_bucket"
+    },
+    {
+      "args": [],
+      "file": "src/spotbot/research/rd31_regime_governed_replay.py",
+      "function": "apply_entry_policy"
+    },
+    {
+      "args": [],
+      "file": "src/spotbot/research/rd31_regime_governed_replay.py",
+      "function": "replay_rd31_policy"
+    },
+    {
+      "args": [],
+      "file": "src/spotbot/research/rd31_regime_governed_replay.py",
+      "function": "contract_summary"
+    },
+    {
+      "args": [
+        "frame"
+      ],
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "function": "normalize_bars"
+    },
+    {
+      "args": [
+        "raw"
+      ],
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "function": "prepare_features"
+    },
+    {
+      "args": [
+        "frame"
+      ],
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "function": "fast_lookup"
+    },
+    {
+      "args": [
+        "path"
+      ],
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "function": "load_membership"
+    },
+    {
+      "args": [
+        "timestamp"
+      ],
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "function": "partition_for"
+    },
+    {
+      "args": [
+        "values",
+        "target"
+      ],
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "function": "percentile"
+    },
+    {
+      "args": [],
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "function": "evaluate_snapshot_hour"
+    },
+    {
+      "args": [],
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "function": "scan_signals"
+    },
+    {
+      "args": [
+        "funnel"
+      ],
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "function": "signal_sufficiency"
+    },
+    {
+      "args": [],
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "function": "fixed_risk_notional"
+    },
+    {
+      "args": [],
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "function": "validate_frozen_contract"
+    },
+    {
+      "args": [],
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "function": "validate_constants"
+    },
+    {
+      "args": [
+        "raw"
+      ],
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "function": "normalize_bars"
+    },
+    {
+      "args": [
+        "raw"
+      ],
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "function": "prepare_features"
+    },
+    {
+      "args": [
+        "frame"
+      ],
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "function": "fast_lookup"
+    },
+    {
+      "args": [],
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "function": "evaluate_hour"
+    },
+    {
+      "args": [],
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "function": "scan_focus_signals"
+    },
+    {
+      "args": [
+        "events"
+      ],
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "function": "normalize_focus_events"
+    },
+    {
+      "args": [
+        "generated",
+        "frozen"
+      ],
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "function": "compare_focus_signal_equivalence"
+    },
+    {
+      "args": [
+        "events"
+      ],
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "function": "filter_robustness_events"
+    },
+    {
+      "args": [
+        "events"
+      ],
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "function": "standalone_events"
+    },
+    {
+      "args": [
+        "events"
+      ],
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "function": "union_events"
+    },
+    {
+      "args": [
+        "policy_id"
+      ],
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "function": "policy_components"
+    },
+    {
+      "args": [],
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "function": "replay_policy"
+    },
+    {
+      "args": [],
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "function": "performance_metrics"
+    },
+    {
+      "args": [
+        "trades"
+      ],
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "function": "period_metrics"
+    },
+    {
+      "args": [
+        "trades"
+      ],
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "function": "concentration_diagnostics"
+    },
+    {
+      "args": [
+        "trades"
+      ],
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "function": "fixed_path_pf1_break_even_multiplier"
+    },
+    {
+      "args": [
+        "trades"
+      ],
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "function": "exit_reason_summary"
+    },
+    {
+      "args": [],
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "function": "evaluate_policy_hard_gates"
+    },
+    {
+      "args": [],
+      "file": "src/spotbot/research/rd27_lifecycle_replay.py",
+      "function": "validate_policy_constants"
+    },
+    {
+      "args": [
+        "policy_id"
+      ],
+      "file": "src/spotbot/research/rd27_lifecycle_replay.py",
+      "function": "policy_components"
+    },
+    {
+      "args": [
+        "policy_id"
+      ],
+      "file": "src/spotbot/research/rd27_lifecycle_replay.py",
+      "function": "active_component_count"
+    },
+    {
+      "args": [
+        "state_frame"
+      ],
+      "file": "src/spotbot/research/rd27_lifecycle_replay.py",
+      "function": "build_state_lookup"
+    },
+    {
+      "args": [],
+      "file": "src/spotbot/research/rd27_lifecycle_replay.py",
+      "function": "replay_lifecycle_policy"
+    },
+    {
+      "args": [],
+      "file": "src/spotbot/research/rd29_thesis_replay.py",
+      "function": "validate_replay_constants"
+    },
+    {
+      "args": [
+        "snapshots"
+      ],
+      "file": "src/spotbot/research/rd29_thesis_replay.py",
+      "function": "membership_at"
+    },
+    {
+      "args": [],
+      "file": "src/spotbot/research/rd29_thesis_replay.py",
+      "function": "return_72h_map_at"
+    },
+    {
+      "args": [],
+      "file": "src/spotbot/research/rd29_thesis_replay.py",
+      "function": "causal_context_at"
+    },
+    {
+      "args": [],
+      "file": "src/spotbot/research/rd29_thesis_replay.py",
+      "function": "momentum_breakout_reference_at_signal"
+    },
+    {
+      "args": [],
+      "file": "src/spotbot/research/rd29_thesis_replay.py",
+      "function": "entry_context_for_event"
+    },
+    {
+      "args": [],
+      "file": "src/spotbot/research/rd29_thesis_replay.py",
+      "function": "replay_rd29_policy"
+    },
+    {
+      "args": [],
+      "file": "src/spotbot/research/rd29_thesis_replay.py",
+      "function": "contract_summary"
+    },
+    {
+      "args": [],
+      "file": "src/spotbot/research/rd30_family_specialist_state.py",
+      "function": "validate_constants"
+    },
+    {
+      "args": [
+        "support_families"
+      ],
+      "file": "src/spotbot/research/rd30_family_specialist_state.py",
+      "function": "lifecycle_class_for_support"
+    },
+    {
+      "args": [
+        "policy_id"
+      ],
+      "file": "src/spotbot/research/rd30_family_specialist_state.py",
+      "function": "policy_components"
+    },
+    {
+      "args": [
+        "policy_id"
+      ],
+      "file": "src/spotbot/research/rd30_family_specialist_state.py",
+      "function": "active_component_count"
+    },
+    {
+      "args": [],
+      "file": "src/spotbot/research/rd30_family_specialist_state.py",
+      "function": "admission_decision"
+    },
+    {
+      "args": [],
+      "file": "src/spotbot/research/rd30_family_specialist_state.py",
+      "function": "new_specialist_position"
+    },
+    {
+      "args": [
+        "position",
+        "current_open_time"
+      ],
+      "file": "src/spotbot/research/rd30_family_specialist_state.py",
+      "function": "age_hours"
+    },
+    {
+      "args": [
+        "position"
+      ],
+      "file": "src/spotbot/research/rd30_family_specialist_state.py",
+      "function": "apply_completed_high"
+    },
+    {
+      "args": [
+        "position"
+      ],
+      "file": "src/spotbot/research/rd30_family_specialist_state.py",
+      "function": "evaluate_scheduled_exit"
+    },
+    {
+      "args": [
+        "position"
+      ],
+      "file": "src/spotbot/research/rd30_family_specialist_state.py",
+      "function": "update_replacement_state"
+    },
+    {
+      "args": [
+        "positions"
+      ],
+      "file": "src/spotbot/research/rd30_family_specialist_state.py",
+      "function": "select_replacement_incumbent"
+    },
+    {
+      "args": [],
+      "file": "src/spotbot/research/rd30_family_specialist_state.py",
+      "function": "contract_summary"
+    },
+    {
+      "args": [],
+      "file": "src/spotbot/research/rd30_replacement_replay.py",
+      "function": "validate_replay_constants"
+    },
+    {
+      "args": [],
+      "file": "src/spotbot/research/rd30_replacement_replay.py",
+      "function": "size_entry_from_marks"
+    },
+    {
+      "args": [
+        "positions"
+      ],
+      "file": "src/spotbot/research/rd30_replacement_replay.py",
+      "function": "plan_atomic_replacement"
+    },
+    {
+      "args": [],
+      "file": "src/spotbot/research/rd30_replacement_replay.py",
+      "function": "replay_rd30_policy"
+    },
+    {
+      "args": [],
+      "file": "src/spotbot/research/rd30_replacement_replay.py",
+      "function": "contract_summary"
+    },
+    {
+      "args": [],
+      "file": "src/spotbot/research/rd31_regime_admission_governor.py",
+      "function": "baseline_family_quality_admission"
+    },
+    {
+      "args": [],
+      "file": "src/spotbot/research/rd31_regime_admission_governor.py",
+      "function": "stressed_context_mb_exclusion_admission"
+    },
+    {
+      "args": [],
+      "file": "src/spotbot/research/rd31_regime_admission_governor.py",
+      "function": "supportive_only_all_families_admission"
+    },
+    {
+      "args": [],
+      "file": "src/spotbot/research/rd31_regime_admission_governor.py",
+      "function": "transition_governor"
+    },
+    {
+      "args": [],
+      "file": "src/spotbot/research/rd31_regime_admission_governor.py",
+      "function": "hysteresis_governor_admission"
+    },
+    {
+      "args": [],
+      "file": "src/spotbot/research/rd31_regime_admission_governor.py",
+      "function": "admission_decision"
+    },
+    {
+      "args": [
+        "policy_id"
+      ],
+      "file": "src/spotbot/research/rd31_regime_admission_governor.py",
+      "function": "active_component_count"
+    },
+    {
+      "args": [],
+      "file": "src/spotbot/research/rd31_regime_admission_governor.py",
+      "function": "contract_summary"
+    },
+    {
+      "args": [],
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "function": "new_async_memory_state"
+    },
+    {
+      "args": [
+        "state"
+      ],
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "function": "observe_async_memory"
+    },
+    {
+      "args": [
+        "state"
+      ],
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "function": "observe_async_trigger"
+    },
+    {
+      "args": [
+        "state"
+      ],
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "function": "reset_async_memory_state"
+    },
+    {
+      "args": [],
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "function": "validate_constants"
+    },
+    {
+      "args": [
+        "raw"
+      ],
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "function": "normalize_benchmark_bars"
+    },
+    {
+      "args": [],
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "function": "classify_market_state"
+    },
+    {
+      "args": [
+        "raw"
+      ],
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "function": "build_market_state_frame"
+    },
+    {
+      "args": [
+        "state_frame"
+      ],
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "function": "entry_market_state"
+    },
+    {
+      "args": [
+        "state_frame"
+      ],
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "function": "open_position_market_state"
+    },
+    {
+      "args": [
+        "market_state"
+      ],
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "function": "capital_admission_decision"
+    },
+    {
+      "args": [],
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "function": "new_lifecycle_position"
+    },
+    {
+      "args": [
+        "position"
+      ],
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "function": "evaluate_adaptive_exit"
+    },
+    {
+      "args": [
+        "position"
+      ],
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "function": "apply_completed_bar_update"
+    },
+    {
+      "args": [
+        "position"
+      ],
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "function": "evaluate_control_time_fail_exit"
+    },
+    {
+      "args": [],
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "function": "contract_summary"
+    },
+    {
+      "args": [
+        "before",
+        "after"
+      ],
+      "file": "src/spotbot/research/rd27_async_exit_candidate_shadow.py",
+      "function": "candidate_from_accepted_transition"
+    },
+    {
+      "args": [
+        "pair",
+        "entry_time",
+        "sequence"
+      ],
+      "file": "src/spotbot/research/rd27_async_memory_shadow.py",
+      "function": "async_memory_position_id"
+    },
+    {
+      "args": [],
+      "file": "src/spotbot/research/rd27_observable_later_trigger_predicate.py",
+      "function": "new_later_trigger_predicate_state"
+    },
+    {
+      "args": [
+        "state"
+      ],
+      "file": "src/spotbot/research/rd27_observable_later_trigger_predicate.py",
+      "function": "evaluate_later_trigger_predicate"
+    },
+    {
+      "args": [
+        "rows"
+      ],
+      "file": "src/spotbot/research/rd27_observable_memory_adapter.py",
+      "function": "normalize_4h_snapshots"
+    },
+    {
+      "args": [
+        "snapshots"
+      ],
+      "file": "src/spotbot/research/rd27_observable_memory_adapter.py",
+      "function": "latest_completed_snapshot_at_or_before"
+    },
+    {
+      "args": [],
+      "file": "src/spotbot/research/rd27_observable_memory_adapter.py",
+      "function": "no_observation_policy"
+    },
+    {
+      "args": [
+        "envelope"
+      ],
+      "file": "src/spotbot/research/rd27_observable_memory_adapter.py",
+      "function": "policy_observation"
+    },
+    {
+      "args": [],
+      "file": "src/spotbot/research/rd27_observable_memory_predicate.py",
+      "function": "new_memory_predicate_state"
+    },
+    {
+      "args": [
+        "state"
+      ],
+      "file": "src/spotbot/research/rd27_observable_memory_predicate.py",
+      "function": "evaluate_memory_predicate"
+    },
+    {
+      "args": [],
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "function": "validate_constants"
+    },
+    {
+      "args": [
+        "policy_id"
+      ],
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "function": "policy_components"
+    },
+    {
+      "args": [
+        "policy_id"
+      ],
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "function": "uses_evidence_exit"
+    },
+    {
+      "args": [
+        "policy_id"
+      ],
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "function": "active_component_count"
+    },
+    {
+      "args": [
+        "market_state"
+      ],
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "function": "router_admission"
+    },
+    {
+      "args": [
+        "market_state"
+      ],
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "function": "state_rank"
+    },
+    {
+      "args": [],
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "function": "state_deteriorated"
+    },
+    {
+      "args": [],
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "function": "new_evidence_position"
+    },
+    {
+      "args": [
+        "position",
+        "current_open_time"
+      ],
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "function": "age_hours"
+    },
+    {
+      "args": [
+        "position"
+      ],
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "function": "evaluate_evidence_exit"
+    },
+    {
+      "args": [
+        "position"
+      ],
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "function": "evaluate_router_time_fail_control_exit"
+    },
+    {
+      "args": [
+        "position"
+      ],
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "function": "apply_completed_asset_bar"
+    },
+    {
+      "args": [
+        "position"
+      ],
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "function": "escrow_slot_for_exit"
+    },
+    {
+      "args": [
+        "escrows"
+      ],
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "function": "active_escrow_slots"
+    },
+    {
+      "args": [],
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "function": "slot_capacity_available"
+    },
+    {
+      "args": [],
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "function": "contract_summary"
+    },
+    {
+      "args": [],
+      "file": "src/spotbot/research/rd28_lifecycle_replay.py",
+      "function": "validate_replay_constants"
+    },
+    {
+      "args": [
+        "position"
+      ],
+      "file": "src/spotbot/research/rd28_lifecycle_replay.py",
+      "function": "family_aware_exit_decision"
+    },
+    {
+      "args": [],
+      "file": "src/spotbot/research/rd28_lifecycle_replay.py",
+      "function": "replay_rd28_policy"
+    },
+    {
+      "args": [],
+      "file": "src/spotbot/research/rd28_lifecycle_replay.py",
+      "function": "contract_summary"
+    },
+    {
+      "args": [],
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "function": "validate_constants"
+    },
+    {
+      "args": [],
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "function": "compute_market_context"
+    },
+    {
+      "args": [],
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "function": "relative_strength_rank"
+    },
+    {
+      "args": [],
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "function": "momentum_breakout_thesis_status"
+    },
+    {
+      "args": [],
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "function": "relative_strength_thesis_status"
+    },
+    {
+      "args": [],
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "function": "aggregate_thesis_status"
+    },
+    {
+      "args": [],
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "function": "admission_decision"
+    },
+    {
+      "args": [],
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "function": "new_thesis_position"
+    },
+    {
+      "args": [
+        "position",
+        "current_open_time"
+      ],
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "function": "age_hours"
+    },
+    {
+      "args": [
+        "age"
+      ],
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "function": "is_thesis_checkpoint"
+    },
+    {
+      "args": [
+        "position"
+      ],
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "function": "evaluate_lifecycle_exit"
+    },
+    {
+      "args": [
+        "position"
+      ],
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "function": "apply_completed_high"
+    },
+    {
+      "args": [
+        "position"
+      ],
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "function": "cooldown_after_exit"
+    },
+    {
+      "args": [
+        "cooldowns"
+      ],
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "function": "pair_is_cooldown_blocked"
+    },
+    {
+      "args": [
+        "cooldowns"
+      ],
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "function": "active_pair_cooldowns"
+    },
+    {
+      "args": [
+        "policy_id"
+      ],
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "function": "policy_components"
+    },
+    {
+      "args": [
+        "policy_id"
+      ],
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "function": "active_component_count"
+    },
+    {
+      "args": [],
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "function": "contract_summary"
+    }
+  ],
+  "replay_functions": [
+    {
+      "args": [],
+      "file": "src/spotbot/research/rd31_regime_governed_replay.py",
+      "function": "replay_rd31_policy"
+    },
+    {
+      "args": [],
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "function": "replay_policy"
+    },
+    {
+      "args": [],
+      "file": "src/spotbot/research/rd27_lifecycle_replay.py",
+      "function": "replay_lifecycle_policy"
+    },
+    {
+      "args": [],
+      "file": "src/spotbot/research/rd29_thesis_replay.py",
+      "function": "validate_replay_constants"
+    },
+    {
+      "args": [],
+      "file": "src/spotbot/research/rd29_thesis_replay.py",
+      "function": "replay_rd29_policy"
+    },
+    {
+      "args": [],
+      "file": "src/spotbot/research/rd30_replacement_replay.py",
+      "function": "validate_replay_constants"
+    },
+    {
+      "args": [],
+      "file": "src/spotbot/research/rd30_replacement_replay.py",
+      "function": "replay_rd30_policy"
+    },
+    {
+      "args": [],
+      "file": "src/spotbot/research/rd28_lifecycle_replay.py",
+      "function": "validate_replay_constants"
+    },
+    {
+      "args": [],
+      "file": "src/spotbot/research/rd28_lifecycle_replay.py",
+      "function": "replay_rd28_policy"
+    }
+  ],
+  "retuning_performed": false,
+  "root_path": "src/spotbot/research/rd31_regime_governed_replay.py",
+  "root_sha256": "CF979223BF53141AD715FF6D4E79AD394653A7A3E42E546B9E43424A42DC7F4C",
+  "scalar_constants": [
+    {
+      "file": "src/spotbot/research/rd31_regime_governed_replay.py",
+      "name": "SCHEMA_VERSION",
+      "value": "rd31-regime-governed-portfolio-replay-v1"
+    },
+    {
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "name": "SCHEMA_VERSION",
+      "value": "rd20-p2-minimal-trend-pullback-v1"
+    },
+    {
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "name": "STAGE",
+      "value": "RD20_P2_MINIMAL_TREND_PULLBACK_CANDIDATE"
+    },
+    {
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "name": "CANDIDATE_ID",
+      "value": "RD20_MINIMAL_TREND_PULLBACK_V1"
+    },
+    {
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "name": "TREND_LOOKBACK_BARS",
+      "value": 72
+    },
+    {
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "name": "PULLBACK_EMA_BARS",
+      "value": 24
+    },
+    {
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "name": "PULLBACK_TOUCH_LOOKBACK_BARS",
+      "value": 12
+    },
+    {
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "name": "ATR_BARS",
+      "value": 24
+    },
+    {
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "name": "FIXED_RISK_FRACTION",
+      "value": 0.005
+    },
+    {
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "name": "MAXIMUM_SIMULTANEOUS_POSITIONS",
+      "value": 5
+    },
+    {
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "name": "MAXIMUM_GROSS_EXPOSURE",
+      "value": 0.9
+    },
+    {
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "name": "MAXIMUM_SINGLE_ASSET_NOTIONAL",
+      "value": 0.4
+    },
+    {
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "name": "BASE_ROUND_TRIP_COST",
+      "value": 0.0025
+    },
+    {
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "name": "STRESS_2X_ROUND_TRIP_COST",
+      "value": 0.005
+    },
+    {
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "name": "MINIMUM_CANDIDATE_EVENTS_PER_UNIVERSE",
+      "value": 75
+    },
+    {
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "name": "MINIMUM_CANDIDATE_EVENTS_PER_PARTITION_UNIVERSE",
+      "value": 1
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "name": "SCHEMA_VERSION",
+      "value": "rd26-exit-architecture-engine-v1"
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "name": "STAGE",
+      "value": "RD26_EXIT_ARCHITECTURE_EXPOSED_ROBUSTNESS_2022_2023"
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "name": "FAMILY_MOMENTUM_BREAKOUT",
+      "value": "MOMENTUM_BREAKOUT"
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "name": "FAMILY_RELATIVE_STRENGTH_ROTATION",
+      "value": "RELATIVE_STRENGTH_ROTATION"
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "name": "POLICY_BASELINE",
+      "value": "BASELINE_H168"
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "name": "POLICY_TIME_FAIL",
+      "value": "TIME_FAIL_72_H168"
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "name": "POLICY_PROFIT_TRAIL",
+      "value": "PROFIT_TRAIL_ARM6_GAP4_H168"
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "name": "POLICY_COMBINED",
+      "value": "TIME_FAIL_72_PLUS_PROFIT_TRAIL_ARM6_GAP4_H168"
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "name": "MAX_HOLD_HOURS",
+      "value": 168
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "name": "TIME_FAILURE_HOURS",
+      "value": 72
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "name": "PROFIT_TRAIL_ARM_ATR",
+      "value": 6.0
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "name": "PROFIT_TRAIL_GAP_ATR",
+      "value": 4.0
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "name": "BASE_ROUND_TRIP_COST",
+      "value": 0.0025
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "name": "INITIAL_EQUITY",
+      "value": 100000.0
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "name": "MAXIMUM_POSITIONS",
+      "value": 5
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "name": "MAXIMUM_GROSS_EXPOSURE",
+      "value": 0.9
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "name": "LIQUIDITY_CAPACITY_FRACTION_24H",
+      "value": 0.005
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "name": "MINIMUM_TRADES",
+      "value": 75
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "name": "MINIMUM_PROFIT_FACTOR_2X",
+      "value": 1.05
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "name": "MAXIMUM_DRAWDOWN_HARD",
+      "value": 0.2
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "name": "MINIMUM_BREAK_EVEN_COST_MULTIPLIER",
+      "value": 2.0
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "name": "CONCENTRATION_TRIGGER",
+      "value": 0.15
+    },
+    {
+      "file": "src/spotbot/research/rd27_lifecycle_replay.py",
+      "name": "SCHEMA_VERSION",
+      "value": "rd27-lifecycle-portfolio-replay-v1"
+    },
+    {
+      "file": "src/spotbot/research/rd27_lifecycle_replay.py",
+      "name": "CONTROL_TIME_FAIL_72_FIXED_CAPITAL",
+      "value": "CONTROL_TIME_FAIL_72_FIXED_CAPITAL"
+    },
+    {
+      "file": "src/spotbot/research/rd27_lifecycle_replay.py",
+      "name": "ADAPTIVE_EXIT_FIXED_CAPITAL",
+      "value": "ADAPTIVE_EXIT_FIXED_CAPITAL"
+    },
+    {
+      "file": "src/spotbot/research/rd27_lifecycle_replay.py",
+      "name": "STATIC_EXIT_STATE_ROUTER",
+      "value": "STATIC_EXIT_STATE_ROUTER"
+    },
+    {
+      "file": "src/spotbot/research/rd27_lifecycle_replay.py",
+      "name": "FULL_ADAPTIVE_LIFECYCLE_BRAIN",
+      "value": "FULL_ADAPTIVE_LIFECYCLE_BRAIN"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_replay.py",
+      "name": "SCHEMA_VERSION",
+      "value": "rd29-thesis-portfolio-replay-v1"
+    },
+    {
+      "file": "src/spotbot/research/rd30_family_specialist_state.py",
+      "name": "SCHEMA_VERSION",
+      "value": "rd30-family-specialist-state-engine-v1"
+    },
+    {
+      "file": "src/spotbot/research/rd30_family_specialist_state.py",
+      "name": "STAGE",
+      "value": "RD30_P0B_FAMILY_SPECIALIST_STATE_ENGINE_PRE_ECONOMIC_EXECUTION"
+    },
+    {
+      "file": "src/spotbot/research/rd30_family_specialist_state.py",
+      "name": "ROUTER_TIME_FAIL_72_CONTROL",
+      "value": "ROUTER_TIME_FAIL_72_CONTROL"
+    },
+    {
+      "file": "src/spotbot/research/rd30_family_specialist_state.py",
+      "name": "FAMILY_QUALITY_CONTROL_EXITS",
+      "value": "FAMILY_QUALITY_CONTROL_EXITS"
+    },
+    {
+      "file": "src/spotbot/research/rd30_family_specialist_state.py",
+      "name": "FAMILY_QUALITY_REPLACEMENT_AWARE_RS",
+      "value": "FAMILY_QUALITY_REPLACEMENT_AWARE_RS"
+    },
+    {
+      "file": "src/spotbot/research/rd30_family_specialist_state.py",
+      "name": "FULL_FAMILY_SPECIALIST_REPLACEMENT_BRAIN",
+      "value": "FULL_FAMILY_SPECIALIST_REPLACEMENT_BRAIN"
+    },
+    {
+      "file": "src/spotbot/research/rd30_family_specialist_state.py",
+      "name": "MB_SUPPORTED",
+      "value": "MB_SUPPORTED"
+    },
+    {
+      "file": "src/spotbot/research/rd30_family_specialist_state.py",
+      "name": "RS_ONLY",
+      "value": "RS_ONLY"
+    },
+    {
+      "file": "src/spotbot/research/rd30_family_specialist_state.py",
+      "name": "TIME_FAIL_EXIT_REASON",
+      "value": "TIME_FAILURE_72H_CLOSE_NOT_ABOVE_ENTRY"
+    },
+    {
+      "file": "src/spotbot/research/rd30_family_specialist_state.py",
+      "name": "PROFIT_GIVEBACK_EXIT_REASON",
+      "value": "PROFIT_GIVEBACK_LOCK_4ATR_ARM_3ATR_GIVEBACK"
+    },
+    {
+      "file": "src/spotbot/research/rd30_family_specialist_state.py",
+      "name": "MAX_HOLD_EXIT_REASON",
+      "value": "MAX_HOLD_168H"
+    },
+    {
+      "file": "src/spotbot/research/rd30_family_specialist_state.py",
+      "name": "REPLACEMENT_EXIT_REASON",
+      "value": "RS_DEGRADED_ATOMIC_REPLACEMENT"
+    },
+    {
+      "file": "src/spotbot/research/rd30_replacement_replay.py",
+      "name": "SCHEMA_VERSION",
+      "value": "rd30-replacement-aware-portfolio-replay-v1"
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_admission_governor.py",
+      "name": "SCHEMA_VERSION",
+      "value": "rd31-regime-admission-governor-v1"
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_admission_governor.py",
+      "name": "STAGE",
+      "value": "RD31_P0B_CAUSAL_REGIME_ADMISSION_GOVERNOR_PRE_ECONOMIC_EXECUTION"
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_admission_governor.py",
+      "name": "FAMILY_QUALITY_CONTROL_EXITS",
+      "value": "FAMILY_QUALITY_CONTROL_EXITS"
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_admission_governor.py",
+      "name": "STRESSED_CONTEXT_MB_EXCLUSION",
+      "value": "STRESSED_CONTEXT_MB_EXCLUSION"
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_admission_governor.py",
+      "name": "SUPPORTIVE_ONLY_ALL_FAMILIES",
+      "value": "SUPPORTIVE_ONLY_ALL_FAMILIES"
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_admission_governor.py",
+      "name": "REGIME_HYSTERESIS_ADMISSION_GOVERNOR",
+      "value": "REGIME_HYSTERESIS_ADMISSION_GOVERNOR"
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_admission_governor.py",
+      "name": "OPEN",
+      "value": "OPEN"
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_admission_governor.py",
+      "name": "CAUTION",
+      "value": "CAUTION"
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_admission_governor.py",
+      "name": "LOCKED",
+      "value": "LOCKED"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "name": "SCHEMA_VERSION",
+      "value": "rd27-adaptive-lifecycle-state-engine-v1"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "name": "STAGE",
+      "value": "RD27_P0B_CAUSAL_STATE_ENGINE_PRE_ECONOMIC_EXECUTION"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "name": "ASYNC_MEMORY_PROTOCOL_ID",
+      "value": "CAUSAL_EXIT_BRAIN_ASYNC_MEMORY_STATE_MACHINE_V1"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "name": "DEFAULT_ASYNC_MEMORY_ENABLED",
+      "value": false
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "name": "RISK_ON",
+      "value": "RISK_ON"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "name": "TRANSITION",
+      "value": "TRANSITION"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "name": "RISK_OFF",
+      "value": "RISK_OFF"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "name": "EMA_HOURS",
+      "value": 720
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "name": "EMA_SLOPE_LOOKBACK_HOURS",
+      "value": 168
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "name": "MOMENTUM_LOOKBACK_HOURS",
+      "value": 72
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "name": "VOLATILITY_ATR_HOURS",
+      "value": 24
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "name": "VOLATILITY_BASELINE_HOURS",
+      "value": 720
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "name": "VOLATILITY_SHOCK_MULTIPLE",
+      "value": 1.5
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "name": "MAX_HOLD_HOURS",
+      "value": 168
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "name": "PROFIT_ARM_ATR",
+      "value": 4.0
+    },
+    {
+      "file": "src/spotbot/research/rd27_async_exit_candidate_shadow.py",
+      "name": "CANDIDATE_PROTOCOL_ID",
+      "value": "CAUSAL_ASYNC_MEMORY_LATER_TRIGGER_SHADOW_EXIT_CANDIDATE_V1"
+    },
+    {
+      "file": "src/spotbot/research/rd27_async_exit_candidate_shadow.py",
+      "name": "DEFAULT_ASYNC_EXIT_CANDIDATE_SHADOW_ENABLED",
+      "value": false
+    },
+    {
+      "file": "src/spotbot/research/rd27_async_exit_candidate_shadow.py",
+      "name": "CANDIDATE_PARAMETER_COUNT",
+      "value": 0
+    },
+    {
+      "file": "src/spotbot/research/rd27_async_memory_shadow.py",
+      "name": "ASYNC_MEMORY_SHADOW_PROTOCOL_ID",
+      "value": "CAUSAL_EXIT_BRAIN_ASYNC_MEMORY_SHADOW_REPLAY_V1"
+    },
+    {
+      "file": "src/spotbot/research/rd27_async_memory_shadow.py",
+      "name": "DEFAULT_ASYNC_MEMORY_SHADOW_ENABLED",
+      "value": false
+    },
+    {
+      "file": "src/spotbot/research/rd27_observable_later_trigger_predicate.py",
+      "name": "LATER_TRIGGER_PROTOCOL_ID",
+      "value": "CAUSAL_EXIT_BRAIN_OBSERVABLE_LATER_TRIGGER_PREDICATE_V1"
+    },
+    {
+      "file": "src/spotbot/research/rd27_observable_later_trigger_predicate.py",
+      "name": "TRIGGER_PREDICATE",
+      "value": "CURRENT_COMPLETED_4H_CLOSE_BELOW_PREVIOUS_COMPLETED_4H_LOW"
+    },
+    {
+      "file": "src/spotbot/research/rd27_observable_later_trigger_predicate.py",
+      "name": "TRIGGER_PARAMETER_COUNT",
+      "value": 0
+    },
+    {
+      "file": "src/spotbot/research/rd27_observable_later_trigger_predicate.py",
+      "name": "DEFAULT_OBSERVABLE_LATER_TRIGGER_PREDICATE_ENABLED",
+      "value": false
+    },
+    {
+      "file": "src/spotbot/research/rd27_observable_memory_adapter.py",
+      "name": "OBSERVABLE_ADAPTER_PROTOCOL_ID",
+      "value": "CAUSAL_EXIT_BRAIN_OBSERVABLE_MEMORY_TRIGGER_ADAPTER_V1"
+    },
+    {
+      "file": "src/spotbot/research/rd27_observable_memory_adapter.py",
+      "name": "DEFAULT_OBSERVABLE_ADAPTER_ENABLED",
+      "value": false
+    },
+    {
+      "file": "src/spotbot/research/rd27_observable_memory_predicate.py",
+      "name": "MEMORY_PREDICATE_PROTOCOL_ID",
+      "value": "CAUSAL_EXIT_BRAIN_OBSERVABLE_MEMORY_PREDICATE_V1"
+    },
+    {
+      "file": "src/spotbot/research/rd27_observable_memory_predicate.py",
+      "name": "MEMORY_PREDICATE",
+      "value": "COMPLETED_4H_CLOSE_BREAKS_PRIOR_POST_ENTRY_STRUCTURAL_HIGH"
+    },
+    {
+      "file": "src/spotbot/research/rd27_observable_memory_predicate.py",
+      "name": "PREDICATE_PARAMETER_COUNT",
+      "value": 0
+    },
+    {
+      "file": "src/spotbot/research/rd27_observable_memory_predicate.py",
+      "name": "DEFAULT_OBSERVABLE_MEMORY_PREDICATE_ENABLED",
+      "value": false
+    },
+    {
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "name": "SCHEMA_VERSION",
+      "value": "rd28-evidence-gated-lifecycle-engine-v1"
+    },
+    {
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "name": "STAGE",
+      "value": "RD28_P0B_EVIDENCE_GATED_LIFECYCLE_PRE_ECONOMIC_EXECUTION"
+    },
+    {
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "name": "ROUTER_TIME_FAIL_72_CONTROL",
+      "value": "ROUTER_TIME_FAIL_72_CONTROL"
+    },
+    {
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "name": "EVIDENCE_GATED_LIFECYCLE_IMMEDIATE_RECYCLE",
+      "value": "EVIDENCE_GATED_LIFECYCLE_IMMEDIATE_RECYCLE"
+    },
+    {
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "name": "EVIDENCE_GATED_LIFECYCLE_SLOT_ESCROW",
+      "value": "EVIDENCE_GATED_LIFECYCLE_SLOT_ESCROW"
+    },
+    {
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "name": "FAMILY_AWARE_EVIDENCE_LIFECYCLE_SLOT_ESCROW",
+      "value": "FAMILY_AWARE_EVIDENCE_LIFECYCLE_SLOT_ESCROW"
+    },
+    {
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "name": "EARLIEST_EVIDENCE_EXIT_HOURS",
+      "value": 24
+    },
+    {
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "name": "BACKUP_TIME_FAILURE_HOURS",
+      "value": 72
+    },
+    {
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "name": "MAX_HOLD_HOURS",
+      "value": 168
+    },
+    {
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "name": "PROFIT_ARM_ATR",
+      "value": 4.0
+    },
+    {
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "name": "PROFIT_GIVEBACK_ATR",
+      "value": 3.0
+    },
+    {
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "name": "MAXIMUM_POSITION_SLOTS",
+      "value": 5
+    },
+    {
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "name": "EARLY_EVIDENCE_REASON",
+      "value": "EVIDENCE_GATED_REGIME_TRADE_INVALIDATION"
+    },
+    {
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "name": "FAMILY_MB_EVIDENCE_REASON",
+      "value": "FAMILY_AWARE_MB_RISK_OFF_TRADE_INVALIDATION"
+    },
+    {
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "name": "FAMILY_RS_EVIDENCE_REASON",
+      "value": "FAMILY_AWARE_RS_STATE_DETERIORATION_TRADE_INVALIDATION"
+    },
+    {
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "name": "PROFIT_GIVEBACK_REASON",
+      "value": "PROFIT_GIVEBACK_LOCK_4ATR_ARM_3ATR_GIVEBACK"
+    },
+    {
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "name": "BACKUP_TIME_FAIL_REASON",
+      "value": "TIME_FAILURE_72H_CLOSE_NOT_ABOVE_ENTRY"
+    },
+    {
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "name": "MAX_HOLD_REASON",
+      "value": "MAX_HOLD_168H"
+    },
+    {
+      "file": "src/spotbot/research/rd28_lifecycle_replay.py",
+      "name": "SCHEMA_VERSION",
+      "value": "rd28-lifecycle-portfolio-replay-v1"
+    },
+    {
+      "file": "src/spotbot/research/rd28_lifecycle_replay.py",
+      "name": "FAMILY_OVERLAP_RULE",
+      "value": "ALL_SUPPORTING_FAMILIES_MUST_INVALIDATE"
+    },
+    {
+      "file": "src/spotbot/research/rd28_lifecycle_replay.py",
+      "name": "FAMILY_OVERLAP_EXIT_REASON",
+      "value": "FAMILY_AWARE_ALL_SUPPORTING_FAMILIES_INVALIDATED"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "name": "SCHEMA_VERSION",
+      "value": "rd29-thesis-context-engine-v1"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "name": "STAGE",
+      "value": "RD29_P0B_THESIS_CONTEXT_ENGINE_PRE_ECONOMIC_EXECUTION"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "name": "SUPPORTIVE",
+      "value": "SUPPORTIVE"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "name": "MIXED",
+      "value": "MIXED"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "name": "STRESSED",
+      "value": "STRESSED"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "name": "UNAVAILABLE",
+      "value": "UNAVAILABLE"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "name": "ROUTER_TIME_FAIL_72_CONTROL",
+      "value": "ROUTER_TIME_FAIL_72_CONTROL"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "name": "THESIS_CONFIDENCE_LIFECYCLE",
+      "value": "THESIS_CONFIDENCE_LIFECYCLE"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "name": "THESIS_CONFIDENCE_PAIR_COOLDOWN",
+      "value": "THESIS_CONFIDENCE_PAIR_COOLDOWN"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "name": "FULL_FAMILY_QUALITY_THESIS_BRAIN",
+      "value": "FULL_FAMILY_QUALITY_THESIS_BRAIN"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "name": "MAX_HOLD_HOURS",
+      "value": 168
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "name": "PROFIT_ARM_ATR",
+      "value": 4.0
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "name": "PROFIT_GIVEBACK_ATR",
+      "value": 3.0
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "name": "PAIR_COOLDOWN_RELEASE_HOURS",
+      "value": 72
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "name": "THESIS_FAILURE_EXIT_REASON",
+      "value": "THESIS_FAILURE_IN_STRESSED_CONTEXT"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "name": "PROFIT_GIVEBACK_EXIT_REASON",
+      "value": "PROFIT_GIVEBACK_LOCK_4ATR_ARM_3ATR_GIVEBACK"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "name": "MAX_HOLD_EXIT_REASON",
+      "value": "MAX_HOLD_168H"
+    }
+  ],
+  "schema_version": "akah-rev517-rd31-interprocedural-reuse-audit-v1",
+  "semantic_reuse_candidate": true,
+  "semantic_token_hits": [
+    {
+      "file": "src/spotbot/research/rd31_regime_governed_replay.py",
+      "line": 1,
+      "text": "\"\"\"RD31 regime-governed portfolio replay."
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_governed_replay.py",
+      "line": 3,
+      "text": "This module freezes replay semantics only. It contains no raw-data loader and"
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_governed_replay.py",
+      "line": 46,
+      "text": "from spotbot.research.rd31_regime_admission_governor import ("
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_governed_replay.py",
+      "line": 49,
+      "text": "LOCKED,"
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_governed_replay.py",
+      "line": 50,
+      "text": "OPEN,"
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_governed_replay.py",
+      "line": 52,
+      "text": "REGIME_HYSTERESIS_ADMISSION_GOVERNOR,"
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_governed_replay.py",
+      "line": 57,
+      "text": "SCHEMA_VERSION: Final = \"rd31-regime-governed-portfolio-replay-v1\""
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_governed_replay.py",
+      "line": 61,
+      "text": "\"SUPPORTIVE_OPENS_ADMISSIONS\","
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_governed_replay.py",
+      "line": 62,
+      "text": "\"OPEN_MIXED_TO_CAUTION\","
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_governed_replay.py",
+      "line": 63,
+      "text": "\"CAUTION_MIXED_STAYS_CAUTION\","
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_governed_replay.py",
+      "line": 64,
+      "text": "\"LOCKED_MIXED_STAYS_LOCKED\","
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_governed_replay.py",
+      "line": 110,
+      "text": "if policy_id == REGIME_HYSTERESIS_ADMISSION_GOVERNOR:"
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_governed_replay.py",
+      "line": 112,
+      "text": "raise RD31ReplayError(\"hysteresis policy requires valid governor state\")"
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_governed_replay.py",
+      "line": 140,
+      "text": "\"same_pair_open\": 0,"
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_governed_replay.py",
+      "line": 151,
+      "text": "\"governor_state_OPEN\": 0,"
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_governed_replay.py",
+      "line": 152,
+      "text": "\"governor_state_CAUTION\": 0,"
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_governed_replay.py",
+      "line": 153,
+      "text": "\"governor_state_LOCKED\": 0,"
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_governed_replay.py",
+      "line": 154,
+      "text": "\"governor_locked_suppressions_MB\": 0,"
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_governed_replay.py",
+      "line": 155,
+      "text": "\"governor_locked_suppressions_RS\": 0,"
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_governed_replay.py",
+      "line": 156,
+      "text": "\"governor_locked_suppressions_OVERLAP\": 0,"
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_governed_replay.py",
+      "line": 256,
+      "text": "governor_state: str | None = OPEN if policy_id == REGIME_HYSTERESIS_ADMISSION_GOVERNOR else None"
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_governed_replay.py",
+      "line": 280,
+      "text": "raise RD31ReplayError(f\"open-position bar missing: {pair} {timestamp}\")"
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_governed_replay.py",
+      "line": 298,
+      "text": "current_open_time=timestamp,"
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_governed_replay.py",
+      "line": 299,
+      "text": "current_open=float(bar[\"open\"]),"
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_governed_replay.py",
+      "line": 341,
+      "text": "position.last_mark = float(bar[\"open\"])"
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_governed_replay.py",
+      "line": 383,
+      "text": "if policy_id == REGIME_HYSTERESIS_ADMISSION_GOVERNOR:"
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_governed_replay.py",
+      "line": 403,
+      "text": "if policy_id == REGIME_HYSTERESIS_ADMISSION_GOVERNOR and governor_state == LOCKED:"
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_governed_replay.py",
+      "line": 404,
+      "text": "counters[f\"governor_locked_suppressions_{bucket}\"] += 1"
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_governed_replay.py",
+      "line": 408,
+      "text": "counters[\"same_pair_open\"] += 1"
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_governed_replay.py",
+      "line": 465,
+      "text": "entry_price = float(entry_bar[\"open\"])"
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_governed_replay.py",
+      "line": 467,
+      "text": "raise RD31ReplayError(\"invalid entry open price\")"
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_governed_replay.py",
+      "line": 468,
+      "text": "atr = float(item[\"atr24_at_signal\"])"
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_governed_replay.py",
+      "line": 469,
+      "text": "if not math.isfinite(atr) or atr <= 0.0:"
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_governed_replay.py",
+      "line": 470,
+      "text": "raise RD31ReplayError(\"invalid entry ATR\")"
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_governed_replay.py",
+      "line": 484,
+      "text": "atr24_at_signal=atr,"
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_governed_replay.py",
+      "line": 499,
+      "text": "atr24_at_signal=atr,"
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_governed_replay.py",
+      "line": 542,
+      "text": "\"open_positions\": len(positions),"
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_governed_replay.py",
+      "line": 548,
+      "text": "raise RD31ReplayError(\"open positions remained at replay cutoff\")"
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_governed_replay.py",
+      "line": 590,
+      "text": "\"schema_version\": SCHEMA_VERSION,"
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_governed_replay.py",
+      "line": 593,
+      "text": "\"candidate_lifecycle\": (\"EXACT_RD30_TIME_FAIL72_MAX168_NO_PROFIT_NO_REPLACEMENT\"),"
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_governed_replay.py",
+      "line": 596,
+      "text": "\"governor_initial_state\": OPEN,"
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_governed_replay.py",
+      "line": 600,
+      "text": "\"scheduled_exit_fill\": \"CURRENT_1H_OPEN\","
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_governed_replay.py",
+      "line": 601,
+      "text": "\"entry_fill\": \"NEXT_1H_OPEN_AFTER_SIGNAL\","
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_governed_replay.py",
+      "line": 605,
+      "text": "\"forced_regime_exit\": False,"
+    },
+    {
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "line": 1,
+      "text": "\"\"\"RD20-P2 minimal Trend Pullback candidate and pre-PnL signal audit."
+    },
+    {
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "line": 18,
+      "text": "SCHEMA_VERSION: Final = \"rd20-p2-minimal-trend-pullback-v1\""
+    },
+    {
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "line": 19,
+      "text": "STAGE: Final = \"RD20_P2_MINIMAL_TREND_PULLBACK_CANDIDATE\""
+    },
+    {
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "line": 20,
+      "text": "CANDIDATE_ID: Final = \"RD20_MINIMAL_TREND_PULLBACK_V1\""
+    },
+    {
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "line": 25,
+      "text": "TREND_LOOKBACK_BARS: Final = 72"
+    },
+    {
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "line": 26,
+      "text": "PULLBACK_EMA_BARS: Final = 24"
+    },
+    {
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "line": 28,
+      "text": "ATR_BARS: Final = 24"
+    },
+    {
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "line": 30,
+      "text": "\"TREND_STRENGTH_PERCENTILE\": 0.5,"
+    },
+    {
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "line": 60,
+      "text": "\"setup_family\": \"TREND_PULLBACK_CONTINUATION\","
+    },
+    {
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "line": 63,
+      "text": "\"PAST_72H_RETURN_GT_ZERO\","
+    },
+    {
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "line": 64,
+      "text": "\"PRIOR_12H_CONTAINS_LOW_AT_OR_BELOW_EMA24\","
+    },
+    {
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "line": 65,
+      "text": "\"CURRENT_CLOSE_RECLAIMS_EMA24_FROM_BELOW_OR_EQUAL\","
+    },
+    {
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "line": 69,
+      "text": "\"id\": \"TREND_STRENGTH_PERCENTILE\","
+    },
+    {
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "line": 70,
+      "text": "\"source\": \"PAST_72H_RETURN\","
+    },
+    {
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "line": 75,
+      "text": "\"source\": \"(CURRENT_CLOSE-PRIOR_CLOSE)/ATR24\","
+    },
+    {
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "line": 87,
+      "text": "\"entry_execution\": \"NEXT_1H_BAR_OPEN\","
+    },
+    {
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "line": 90,
+      "text": "\"thesis_invalidation\": \"COMPLETED_1H_CLOSE_BELOW_EMA24_EXECUTE_NEXT_BAR_OPEN\","
+    },
+    {
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "line": 98,
+      "text": "\"A fresh EMA24 reclaim event is required. Continuous above-EMA state \""
+    },
+    {
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "line": 113,
+      "text": "\"evaluation_horizons_hours\": [24, 72, 168],"
+    },
+    {
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "line": 133,
+      "text": "required = {\"timestamp\", \"open\", \"high\", \"low\", \"close\"}"
+    },
+    {
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "line": 139,
+      "text": "for column in (\"open\", \"high\", \"low\", \"close\"):"
+    },
+    {
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "line": 169,
+      "text": "frame[\"ema24\"] = close.ewm("
+    },
+    {
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "line": 170,
+      "text": "span=PULLBACK_EMA_BARS,"
+    },
+    {
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "line": 172,
+      "text": "min_periods=PULLBACK_EMA_BARS,"
+    },
+    {
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "line": 174,
+      "text": "frame[\"prior_ema24\"] = frame[\"ema24\"].shift(1)"
+    },
+    {
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "line": 176,
+      "text": "frame[\"atr24\"] = true_range.rolling("
+    },
+    {
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "line": 177,
+      "text": "ATR_BARS,"
+    },
+    {
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "line": 178,
+      "text": "min_periods=ATR_BARS,"
+    },
+    {
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "line": 180,
+      "text": "frame[\"past_72h_return\"] = close / close.shift(TREND_LOOKBACK_BARS) - 1.0"
+    },
+    {
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "line": 182,
+      "text": "touch = low <= frame[\"ema24\"]"
+    },
+    {
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "line": 193,
+      "text": "frame[\"ema24_reclaim\"] = (close > frame[\"ema24\"]) & ("
+    },
+    {
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "line": 194,
+      "text": "frame[\"prior_close\"] <= frame[\"prior_ema24\"]"
+    },
+    {
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "line": 196,
+      "text": "frame[\"recovery_impulse_atr\"] = (close - frame[\"prior_close\"]) / frame[\"atr24\"]"
+    },
+    {
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "line": 203,
+      "text": "\"ema24\","
+    },
+    {
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "line": 204,
+      "text": "\"prior_ema24\","
+    },
+    {
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "line": 206,
+      "text": "\"atr24\","
+    },
+    {
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "line": 207,
+      "text": "\"past_72h_return\","
+    },
+    {
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "line": 208,
+      "text": "\"recovery_impulse_atr\","
+    },
+    {
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "line": 211,
+      "text": "].notna().all(axis=1) & (frame[\"atr24\"] > 0.0)"
+    },
+    {
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "line": 343,
+      "text": "\"trend_pass\": 0,"
+    },
+    {
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "line": 344,
+      "text": "\"touch_pass_after_trend\": 0,"
+    },
+    {
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "line": 364,
+      "text": "\"past_72h_return\": float(row[\"past_72h_return\"]),"
+    },
+    {
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "line": 365,
+      "text": "\"recovery_impulse_atr\": float(row[\"recovery_impulse_atr\"]),"
+    },
+    {
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "line": 372,
+      "text": "trend_values = [row[\"past_72h_return\"] for row in ready_rows]"
+    },
+    {
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "line": 373,
+      "text": "recovery_values = [row[\"recovery_impulse_atr\"] for row in ready_rows]"
+    },
+    {
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "line": 380,
+      "text": "if float(row[\"past_72h_return\"]) <= 0.0:"
+    },
+    {
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "line": 382,
+      "text": "counters[\"trend_pass\"] += 1"
+    },
+    {
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "line": 386,
+      "text": "counters[\"touch_pass_after_trend\"] += 1"
+    },
+    {
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "line": 388,
+      "text": "if not bool(row[\"ema24_reclaim\"]):"
+    },
+    {
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "line": 392,
+      "text": "trend_pct = percentile(trend_values, float(row[\"past_72h_return\"]))"
+    },
+    {
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "line": 393,
+      "text": "recovery_pct = percentile(recovery_values, float(row[\"recovery_impulse_atr\"]))"
+    },
+    {
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "line": 395,
+      "text": "trend_pct * SCORE_WEIGHTS[\"TREND_STRENGTH_PERCENTILE\"]"
+    },
+    {
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "line": 403,
+      "text": "\"trend_strength_percentile\": trend_pct,"
+    },
+    {
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "line": 406,
+      "text": "\"past_72h_return\": float(row[\"past_72h_return\"]),"
+    },
+    {
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "line": 407,
+      "text": "\"recovery_impulse_atr\": float(row[\"recovery_impulse_atr\"]),"
+    },
+    {
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "line": 409,
+      "text": "\"ema24\": float(row[\"ema24\"]),"
+    },
+    {
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "line": 450,
+      "text": "\"trend_pass\": 0,"
+    },
+    {
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "line": 451,
+      "text": "\"touch_pass_after_trend\": 0,"
+    },
+    {
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "line": 493,
+      "text": "\"trend_pass\": 0,"
+    },
+    {
+      "file": "src/spotbot/research/rd20_p2_minimal_pullback.py",
+      "line": 494,
+      "text": "\"touch_pass_after_trend\": 0,"
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "line": 12,
+      "text": "SCHEMA_VERSION: Final = \"rd26-exit-architecture-engine-v1\""
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "line": 28,
+      "text": "POLICY_TIME_FAIL: Final = \"TIME_FAIL_72_H168\""
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "line": 30,
+      "text": "POLICY_COMBINED: Final = \"TIME_FAIL_72_PLUS_PROFIT_TRAIL_ARM6_GAP4_H168\""
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "line": 39,
+      "text": "TIME_FAILURE_HOURS: Final = 72"
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "line": 40,
+      "text": "PROFIT_TRAIL_ARM_ATR: Final = 6.0"
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "line": 41,
+      "text": "PROFIT_TRAIL_GAP_ATR: Final = 4.0"
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "line": 96,
+      "text": "atr24_at_signal: float"
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "line": 107,
+      "text": "if MAX_HOLD_HOURS != 168 or TIME_FAILURE_HOURS != 72:"
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "line": 109,
+      "text": "if not math.isclose(PROFIT_TRAIL_ARM_ATR, 6.0):"
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "line": 111,
+      "text": "if not math.isclose(PROFIT_TRAIL_GAP_ATR, 4.0):"
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "line": 116,
+      "text": "raise RD26Error(\"cost matrix drifted\")"
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "line": 122,
+      "text": "required = {\"timestamp\", \"open\", \"high\", \"low\", \"close\", \"volume\"}"
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "line": 126,
+      "text": "frame = raw.loc[:, [\"timestamp\", \"open\", \"high\", \"low\", \"close\", \"volume\"]].copy()"
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "line": 128,
+      "text": "for column in (\"open\", \"high\", \"low\", \"close\", \"volume\"):"
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "line": 137,
+      "text": "if bool((frame[[\"open\", \"high\", \"low\", \"close\"]] <= 0.0).any().any()):"
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "line": 145,
+      "text": "\"\"\"Exact RD23 focus-family feature semantics, with a caller-supplied cutoff.\"\"\""
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "line": 160,
+      "text": "atr24_prior = true_range.shift(1).rolling(24, min_periods=24).mean()"
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "line": 163,
+      "text": "frame[\"atr24_prior\"] = atr24_prior"
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "line": 164,
+      "text": "frame[\"return_72h\"] = close / close.shift(72) - 1.0"
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "line": 165,
+      "text": "frame[\"prior_72h_high\"] = high.shift(1).rolling(72, min_periods=72).max()"
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "line": 166,
+      "text": "frame[\"previous_prior_72h_high\"] = frame[\"prior_72h_high\"].shift(1)"
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "line": 167,
+      "text": "frame[\"momentum_breakout\"] = (close > frame[\"prior_72h_high\"]) & ("
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "line": 168,
+      "text": "prior_close <= frame[\"previous_prior_72h_high\"]"
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "line": 173,
+      "text": "\"atr24_prior\","
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "line": 174,
+      "text": "\"return_72h\","
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "line": 175,
+      "text": "\"prior_72h_high\","
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "line": 176,
+      "text": "\"previous_prior_72h_high\","
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "line": 178,
+      "text": "].notna().all(axis=1) & (frame[\"atr24_prior\"] > 0.0)"
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "line": 233,
+      "text": "now.append((float(current_row[\"return_72h\"]), membership_rank, pair))"
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "line": 235,
+      "text": "previous.append((float(previous_row[\"return_72h\"]), membership_rank, pair))"
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "line": 255,
+      "text": "\"return_72h\": float(current_return),"
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "line": 257,
+      "text": "\"atr24_at_signal\": float(row[\"atr24_prior\"]),"
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "line": 290,
+      "text": "(row[\"close\"] - row[\"prior_72h_high\"]) / row[\"atr24_prior\"]"
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "line": 293,
+      "text": "\"return_72h\": float(row[\"return_72h\"]),"
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "line": 294,
+      "text": "\"aux_value\": float(row[\"prior_72h_high\"]),"
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "line": 295,
+      "text": "\"atr24_at_signal\": float(row[\"atr24_prior\"]),"
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "line": 427,
+      "text": "\"return_72h\","
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "line": 462,
+      "text": "\"return_72h\","
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "line": 561,
+      "text": "atrs = pd.to_numeric(group[\"atr24_at_signal\"], errors=\"raise\").astype(float)"
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "line": 564,
+      "text": "if float(atrs.max() - atrs.min()) > 1e-12:"
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "line": 565,
+      "text": "raise RD26Error(\"same pair-time union event has inconsistent ATR\")"
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "line": 574,
+      "text": "\"atr24_at_signal\": float(atrs.iloc[0]),"
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "line": 586,
+      "text": "\"atr24_at_signal\","
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "line": 675,
+      "text": "\"atr24_at_signal\": position.atr24_at_signal,"
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "line": 721,
+      "text": "\"same_pair_open\": 0,"
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "line": 739,
+      "text": "raise RD26Error(f\"open-position bar missing: {pair} {timestamp}\")"
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "line": 744,
+      "text": "exit_price = float(bar[\"open\"])"
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "line": 759,
+      "text": "exit_price = float(bar[\"open\"])"
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "line": 760,
+      "text": "exit_reason = \"TIME_FAILURE_72H_CLOSE_NOT_ABOVE_ENTRY\""
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "line": 764,
+      "text": "arm_level = position.entry_price + PROFIT_TRAIL_ARM_ATR * position.atr24_at_signal"
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "line": 766,
+      "text": "floor = position.high_water - PROFIT_TRAIL_GAP_ATR * position.atr24_at_signal"
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "line": 767,
+      "text": "if float(bar[\"open\"]) <= floor:"
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "line": 768,
+      "text": "exit_price = float(bar[\"open\"])"
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "line": 794,
+      "text": "position.last_mark = float(bar[\"open\"])"
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "line": 796,
+      "text": "equity_open, gross_open = _marked_equity(cash=cash, positions=positions)"
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "line": 804,
+      "text": "counters[\"same_pair_open\"] += 1"
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "line": 836,
+      "text": "equity_open, gross_open = _marked_equity("
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "line": 840,
+      "text": "if equity_open <= 0.0:"
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "line": 842,
+      "text": "gross_numerator = equity_open * MAXIMUM_GROSS_EXPOSURE - gross_open"
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "line": 851,
+      "text": "target_notional = equity_open * TARGET_SLOT_NOTIONAL_FRACTION"
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "line": 868,
+      "text": "entry_price = float(entry_bar[\"open\"])"
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "line": 878,
+      "text": "atr = float(item[\"atr24_at_signal\"])"
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "line": 879,
+      "text": "if not math.isfinite(atr) or atr <= 0.0:"
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "line": 880,
+      "text": "raise RD26Error(\"invalid frozen signal ATR at admission\")"
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "line": 893,
+      "text": "atr24_at_signal=atr,"
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "line": 928,
+      "text": "\"open_positions\": len(positions),"
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "line": 933,
+      "text": "raise RD26Error(\"open positions remained at 2024 sealed cutoff\")"
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "line": 1066,
+      "text": "\"minimum_loao_remaining_net_pnl\": 0.0,"
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "line": 1067,
+      "text": "\"minimum_loyo_remaining_net_pnl\": 0.0,"
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "line": 1097,
+      "text": "\"minimum_loao_remaining_net_pnl\": min(loao) if loao else total,"
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "line": 1098,
+      "text": "\"minimum_loyo_remaining_net_pnl\": min(loyo) if loyo else total,"
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "line": 1244,
+      "text": "\"STRESS_2X_LOAO_MIN_REMAINING_PNL_POSITIVE\": ("
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "line": 1245,
+      "text": "float(conc[\"minimum_loao_remaining_net_pnl\"]) > 0.0"
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "line": 1247,
+      "text": "\"STRESS_2X_LOYO_MIN_REMAINING_PNL_POSITIVE\": ("
+    },
+    {
+      "file": "src/spotbot/research/rd26_exit_architecture.py",
+      "line": 1248,
+      "text": "float(conc[\"minimum_loyo_remaining_net_pnl\"]) > 0.0"
+    },
+    {
+      "file": "src/spotbot/research/rd27_lifecycle_replay.py",
+      "line": 64,
+      "text": "SCHEMA_VERSION: Final = \"rd27-lifecycle-portfolio-replay-v1\""
+    },
+    {
+      "file": "src/spotbot/research/rd27_lifecycle_replay.py",
+      "line": 66,
+      "text": "CONTROL_TIME_FAIL_72_FIXED_CAPITAL: Final = \"CONTROL_TIME_FAIL_72_FIXED_CAPITAL\""
+    },
+    {
+      "file": "src/spotbot/research/rd27_lifecycle_replay.py",
+      "line": 72,
+      "text": "CONTROL_TIME_FAIL_72_FIXED_CAPITAL,"
+    },
+    {
+      "file": "src/spotbot/research/rd27_lifecycle_replay.py",
+      "line": 80,
+      "text": "\"\"\"Raised when frozen RD27 portfolio replay semantics are violated.\"\"\""
+    },
+    {
+      "file": "src/spotbot/research/rd27_lifecycle_replay.py",
+      "line": 96,
+      "text": "atr24_at_signal: float"
+    },
+    {
+      "file": "src/spotbot/research/rd27_lifecycle_replay.py",
+      "line": 104,
+      "text": "CONTROL_TIME_FAIL_72_FIXED_CAPITAL,"
+    },
+    {
+      "file": "src/spotbot/research/rd27_lifecycle_replay.py",
+      "line": 115,
+      "text": "if policy_id == CONTROL_TIME_FAIL_72_FIXED_CAPITAL:"
+    },
+    {
+      "file": "src/spotbot/research/rd27_lifecycle_replay.py",
+      "line": 238,
+      "text": "\"atr24_at_signal\": position.atr24_at_signal,"
+    },
+    {
+      "file": "src/spotbot/research/rd27_lifecycle_replay.py",
+      "line": 278,
+      "text": "At open t, explicit observations marked completed/available at t refer only"
+    },
+    {
+      "file": "src/spotbot/research/rd27_lifecycle_replay.py",
+      "line": 326,
+      "text": "if policy_id == CONTROL_TIME_FAIL_72_FIXED_CAPITAL:"
+    },
+    {
+      "file": "src/spotbot/research/rd27_lifecycle_replay.py",
+      "line": 419,
+      "text": "\"same_pair_open\": 0,"
+    },
+    {
+      "file": "src/spotbot/research/rd27_lifecycle_replay.py",
+      "line": 450,
+      "text": "raise RD27ReplayError(f\"open-position bar missing: {pair} {timestamp}\")"
+    },
+    {
+      "file": "src/spotbot/research/rd27_lifecycle_replay.py",
+      "line": 470,
+      "text": "current_open_time=timestamp,"
+    },
+    {
+      "file": "src/spotbot/research/rd27_lifecycle_replay.py",
+      "line": 471,
+      "text": "current_open=float(bar[\"open\"]),"
+    },
+    {
+      "file": "src/spotbot/research/rd27_lifecycle_replay.py",
+      "line": 491,
+      "text": "exit_price = float(bar[\"open\"])"
+    },
+    {
+      "file": "src/spotbot/research/rd27_lifecycle_replay.py",
+      "line": 494,
+      "text": "elif timestamp == position.entry_time + pd.Timedelta(hours=72):"
+    },
+    {
+      "file": "src/spotbot/research/rd27_lifecycle_replay.py",
+      "line": 496,
+      "text": "exit_price = float(bar[\"open\"])"
+    },
+    {
+      "file": "src/spotbot/research/rd27_lifecycle_replay.py",
+      "line": 497,
+      "text": "exit_reason = \"TIME_FAILURE_72H_CLOSE_NOT_ABOVE_ENTRY\""
+    },
+    {
+      "file": "src/spotbot/research/rd27_lifecycle_replay.py",
+      "line": 527,
+      "text": "position.last_mark = float(bar[\"open\"])"
+    },
+    {
+      "file": "src/spotbot/research/rd27_lifecycle_replay.py",
+      "line": 536,
+      "text": "counters[\"same_pair_open\"] += 1"
+    },
+    {
+      "file": "src/spotbot/research/rd27_lifecycle_replay.py",
+      "line": 576,
+      "text": "equity_open, gross_open = _marked_equity(cash=cash, positions=positions)"
+    },
+    {
+      "file": "src/spotbot/research/rd27_lifecycle_replay.py",
+      "line": 577,
+      "text": "if equity_open <= 0.0:"
+    },
+    {
+      "file": "src/spotbot/research/rd27_lifecycle_replay.py",
+      "line": 579,
+      "text": "gross_numerator = equity_open * MAXIMUM_GROSS_EXPOSURE - gross_open"
+    },
+    {
+      "file": "src/spotbot/research/rd27_lifecycle_replay.py",
+      "line": 588,
+      "text": "target_notional = equity_open * float(target_slot_fraction)"
+    },
+    {
+      "file": "src/spotbot/research/rd27_lifecycle_replay.py",
+      "line": 606,
+      "text": "entry_price = float(entry_bar[\"open\"])"
+    },
+    {
+      "file": "src/spotbot/research/rd27_lifecycle_replay.py",
+      "line": 621,
+      "text": "atr = float(item[\"atr24_at_signal\"])"
+    },
+    {
+      "file": "src/spotbot/research/rd27_lifecycle_replay.py",
+      "line": 626,
+      "text": "atr24_at_signal=atr,"
+    },
+    {
+      "file": "src/spotbot/research/rd27_lifecycle_replay.py",
+      "line": 640,
+      "text": "atr24_at_signal=atr,"
+    },
+    {
+      "file": "src/spotbot/research/rd27_lifecycle_replay.py",
+      "line": 654,
+      "text": "async_shadow.open_position(pair, timestamp, entry_price=entry_price)"
+    },
+    {
+      "file": "src/spotbot/research/rd27_lifecycle_replay.py",
+      "line": 667,
+      "text": "current_open_time=timestamp,"
+    },
+    {
+      "file": "src/spotbot/research/rd27_lifecycle_replay.py",
+      "line": 668,
+      "text": "current_open=entry_price,"
+    },
+    {
+      "file": "src/spotbot/research/rd27_lifecycle_replay.py",
+      "line": 754,
+      "text": "\"open_positions\": len(positions),"
+    },
+    {
+      "file": "src/spotbot/research/rd27_lifecycle_replay.py",
+      "line": 759,
+      "text": "raise RD27ReplayError(\"open positions remained at replay cutoff\")"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_replay.py",
+      "line": 29,
+      "text": "ROUTER_TIME_FAIL_72_CONTROL as RD28_CONTROL,"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_replay.py",
+      "line": 38,
+      "text": "ROUTER_TIME_FAIL_72_CONTROL,"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_replay.py",
+      "line": 49,
+      "text": "pair_is_cooldown_blocked,"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_replay.py",
+      "line": 53,
+      "text": "SCHEMA_VERSION: Final = \"rd29-thesis-portfolio-replay-v1\""
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_replay.py",
+      "line": 73,
+      "text": "atr24_at_signal: float"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_replay.py",
+      "line": 88,
+      "text": "raise RD29ReplayError(\"cost matrix drifted\")"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_replay.py",
+      "line": 143,
+      "text": "def return_72h_map_at("
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_replay.py",
+      "line": 153,
+      "text": "if row is None or \"return_72h\" not in row:"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_replay.py",
+      "line": 156,
+      "text": "value = row[\"return_72h\"]"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_replay.py",
+      "line": 179,
+      "text": "returns = return_72h_map_at("
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_replay.py",
+      "line": 191,
+      "text": "return_72h_by_pair=returns,"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_replay.py",
+      "line": 209,
+      "text": "if \"prior_72h_high\" not in row:"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_replay.py",
+      "line": 210,
+      "text": "raise RD29ReplayError(\"MB signal bar lacks prior_72h_high\")"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_replay.py",
+      "line": 211,
+      "text": "reference = float(row[\"prior_72h_high\"])"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_replay.py",
+      "line": 300,
+      "text": "\"atr24_at_signal\": position.atr24_at_signal,"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_replay.py",
+      "line": 321,
+      "text": "trades[\"policy_id\"] = ROUTER_TIME_FAIL_72_CONTROL"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_replay.py",
+      "line": 323,
+      "text": "daily[\"policy_id\"] = ROUTER_TIME_FAIL_72_CONTROL"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_replay.py",
+      "line": 324,
+      "text": "metrics[\"policy_id\"] = ROUTER_TIME_FAIL_72_CONTROL"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_replay.py",
+      "line": 347,
+      "text": "if policy_id == ROUTER_TIME_FAIL_72_CONTROL:"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_replay.py",
+      "line": 405,
+      "text": "\"same_pair_open\": 0,"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_replay.py",
+      "line": 443,
+      "text": "raise RD29ReplayError(f\"open-position bar missing: {pair} {timestamp}\")"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_replay.py",
+      "line": 460,
+      "text": "current_open_time=timestamp,"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_replay.py",
+      "line": 461,
+      "text": "current_open=float(bar[\"open\"]),"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_replay.py",
+      "line": 464,
+      "text": "return_72h_by_pair=current_returns,"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_replay.py",
+      "line": 513,
+      "text": "position.last_mark = float(bar[\"open\"])"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_replay.py",
+      "line": 525,
+      "text": "counters[\"same_pair_open\"] += 1"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_replay.py",
+      "line": 527,
+      "text": "if pair_is_cooldown_blocked("
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_replay.py",
+      "line": 593,
+      "text": "equity_open, gross_open = _marked_equity("
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_replay.py",
+      "line": 597,
+      "text": "if equity_open <= 0.0:"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_replay.py",
+      "line": 601,
+      "text": "(equity_open * MAXIMUM_GROSS_EXPOSURE - gross_open)"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_replay.py",
+      "line": 608,
+      "text": "target_notional = equity_open * float(admission.target_slot_fraction)"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_replay.py",
+      "line": 625,
+      "text": "entry_price = float(entry_bar[\"open\"])"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_replay.py",
+      "line": 626,
+      "text": "atr = float(item[\"atr24_at_signal\"])"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_replay.py",
+      "line": 638,
+      "text": "atr24_at_signal=atr,"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_replay.py",
+      "line": 655,
+      "text": "atr24_at_signal=atr,"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_replay.py",
+      "line": 695,
+      "text": "\"open_positions\": len(positions),"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_replay.py",
+      "line": 701,
+      "text": "raise RD29ReplayError(\"open positions remained at replay cutoff\")"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_replay.py",
+      "line": 737,
+      "text": "\"schema_version\": SCHEMA_VERSION,"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_replay.py",
+      "line": 739,
+      "text": "\"control_delegate\": \"RD28_ROUTER_TIME_FAIL_72_CONTROL\","
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_replay.py",
+      "line": 744,
+      "text": "\"open_position_context_cutoff\": \"PRIOR_COMPLETED_HOUR\","
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_replay.py",
+      "line": 745,
+      "text": "\"mb_reference_source\": \"SIGNAL_BAR_PRIOR_72H_HIGH\","
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_replay.py",
+      "line": 746,
+      "text": "\"rs_rank_source\": \"CURRENT_PIT_MEMBER_RETURN_72H\","
+    },
+    {
+      "file": "src/spotbot/research/rd30_family_specialist_state.py",
+      "line": 16,
+      "text": "PROFIT_ARM_ATR,"
+    },
+    {
+      "file": "src/spotbot/research/rd30_family_specialist_state.py",
+      "line": 17,
+      "text": "PROFIT_GIVEBACK_ATR,"
+    },
+    {
+      "file": "src/spotbot/research/rd30_family_specialist_state.py",
+      "line": 29,
+      "text": "SCHEMA_VERSION: Final = \"rd30-family-specialist-state-engine-v1\""
+    },
+    {
+      "file": "src/spotbot/research/rd30_family_specialist_state.py",
+      "line": 32,
+      "text": "ROUTER_TIME_FAIL_72_CONTROL: Final = \"ROUTER_TIME_FAIL_72_CONTROL\""
+    },
+    {
+      "file": "src/spotbot/research/rd30_family_specialist_state.py",
+      "line": 37,
+      "text": "ROUTER_TIME_FAIL_72_CONTROL,"
+    },
+    {
+      "file": "src/spotbot/research/rd30_family_specialist_state.py",
+      "line": 47,
+      "text": "TIME_FAIL_EXIT_REASON: Final = \"TIME_FAILURE_72H_CLOSE_NOT_ABOVE_ENTRY\""
+    },
+    {
+      "file": "src/spotbot/research/rd30_family_specialist_state.py",
+      "line": 48,
+      "text": "PROFIT_GIVEBACK_EXIT_REASON: Final = \"PROFIT_GIVEBACK_LOCK_4ATR_ARM_3ATR_GIVEBACK\""
+    },
+    {
+      "file": "src/spotbot/research/rd30_family_specialist_state.py",
+      "line": 67,
+      "text": "atr24_at_signal: float"
+    },
+    {
+      "file": "src/spotbot/research/rd30_family_specialist_state.py",
+      "line": 123,
+      "text": "if THESIS_CHECKPOINT_HOURS != (24, 48, 72, 96, 120, 144):"
+    },
+    {
+      "file": "src/spotbot/research/rd30_family_specialist_state.py",
+      "line": 127,
+      "text": "if not math.isclose(PROFIT_ARM_ATR, 4.0):"
+    },
+    {
+      "file": "src/spotbot/research/rd30_family_specialist_state.py",
+      "line": 129,
+      "text": "if not math.isclose(PROFIT_GIVEBACK_ATR, 3.0):"
+    },
+    {
+      "file": "src/spotbot/research/rd30_family_specialist_state.py",
+      "line": 147,
+      "text": "if policy_id == ROUTER_TIME_FAIL_72_CONTROL:"
+    },
+    {
+      "file": "src/spotbot/research/rd30_family_specialist_state.py",
+      "line": 199,
+      "text": "atr24_at_signal: float,"
+    },
+    {
+      "file": "src/spotbot/research/rd30_family_specialist_state.py",
+      "line": 208,
+      "text": "if not math.isfinite(float(atr24_at_signal)) or float(atr24_at_signal) <= 0.0:"
+    },
+    {
+      "file": "src/spotbot/research/rd30_family_specialist_state.py",
+      "line": 209,
+      "text": "raise RD30StateError(\"invalid ATR\")"
+    },
+    {
+      "file": "src/spotbot/research/rd30_family_specialist_state.py",
+      "line": 214,
+      "text": "atr24_at_signal=float(atr24_at_signal),"
+    },
+    {
+      "file": "src/spotbot/research/rd30_family_specialist_state.py",
+      "line": 223,
+      "text": "current_open_time: pd.Timestamp,"
+    },
+    {
+      "file": "src/spotbot/research/rd30_family_specialist_state.py",
+      "line": 225,
+      "text": "seconds = (_utc(current_open_time) - position.entry_time).total_seconds()"
+    },
+    {
+      "file": "src/spotbot/research/rd30_family_specialist_state.py",
+      "line": 248,
+      "text": "current_open_time: pd.Timestamp,"
+    },
+    {
+      "file": "src/spotbot/research/rd30_family_specialist_state.py",
+      "line": 249,
+      "text": "current_open: float,"
+    },
+    {
+      "file": "src/spotbot/research/rd30_family_specialist_state.py",
+      "line": 254,
+      "text": "open_price = float(current_open)"
+    },
+    {
+      "file": "src/spotbot/research/rd30_family_specialist_state.py",
+      "line": 256,
+      "text": "if not math.isfinite(open_price) or open_price <= 0.0:"
+    },
+    {
+      "file": "src/spotbot/research/rd30_family_specialist_state.py",
+      "line": 257,
+      "text": "raise RD30StateError(\"invalid current open\")"
+    },
+    {
+      "file": "src/spotbot/research/rd30_family_specialist_state.py",
+      "line": 261,
+      "text": "age = age_hours(position, current_open_time)"
+    },
+    {
+      "file": "src/spotbot/research/rd30_family_specialist_state.py",
+      "line": 262,
+      "text": "arm = position.entry_price + PROFIT_ARM_ATR * position.atr24_at_signal"
+    },
+    {
+      "file": "src/spotbot/research/rd30_family_specialist_state.py",
+      "line": 264,
+      "text": "giveback = position.high_water_prior - PROFIT_GIVEBACK_ATR * position.atr24_at_signal"
+    },
+    {
+      "file": "src/spotbot/research/rd30_family_specialist_state.py",
+      "line": 269,
+      "text": "open_price,"
+    },
+    {
+      "file": "src/spotbot/research/rd30_family_specialist_state.py",
+      "line": 277,
+      "text": "open_price,"
+    },
+    {
+      "file": "src/spotbot/research/rd30_family_specialist_state.py",
+      "line": 282,
+      "text": "if age == 72 and prior_close <= position.entry_price:"
+    },
+    {
+      "file": "src/spotbot/research/rd30_family_specialist_state.py",
+      "line": 285,
+      "text": "open_price,"
+    },
+    {
+      "file": "src/spotbot/research/rd30_family_specialist_state.py",
+      "line": 302,
+      "text": "current_open_time: pd.Timestamp,"
+    },
+    {
+      "file": "src/spotbot/research/rd30_family_specialist_state.py",
+      "line": 304,
+      "text": "return_72h_by_pair: dict[str, float | None],"
+    },
+    {
+      "file": "src/spotbot/research/rd30_family_specialist_state.py",
+      "line": 311,
+      "text": "age = age_hours(position, current_open_time)"
+    },
+    {
+      "file": "src/spotbot/research/rd30_family_specialist_state.py",
+      "line": 349,
+      "text": "return_72h_by_pair=return_72h_by_pair,"
+    },
+    {
+      "file": "src/spotbot/research/rd30_family_specialist_state.py",
+      "line": 351,
+      "text": "checkpoint_time = _utc(current_open_time)"
+    },
+    {
+      "file": "src/spotbot/research/rd30_family_specialist_state.py",
+      "line": 462,
+      "text": "\"schema_version\": SCHEMA_VERSION,"
+    },
+    {
+      "file": "src/spotbot/research/rd30_family_specialist_state.py",
+      "line": 468,
+      "text": "\"profit_arm_atr\": PROFIT_ARM_ATR,"
+    },
+    {
+      "file": "src/spotbot/research/rd30_family_specialist_state.py",
+      "line": 469,
+      "text": "\"profit_giveback_atr\": PROFIT_GIVEBACK_ATR,"
+    },
+    {
+      "file": "src/spotbot/research/rd30_replacement_replay.py",
+      "line": 3,
+      "text": "This module freezes replay semantics only. It contains no raw-data loader and"
+    },
+    {
+      "file": "src/spotbot/research/rd30_replacement_replay.py",
+      "line": 32,
+      "text": "ROUTER_TIME_FAIL_72_CONTROL as RD29_CONTROL,"
+    },
+    {
+      "file": "src/spotbot/research/rd30_replacement_replay.py",
+      "line": 44,
+      "text": "ROUTER_TIME_FAIL_72_CONTROL,"
+    },
+    {
+      "file": "src/spotbot/research/rd30_replacement_replay.py",
+      "line": 56,
+      "text": "SCHEMA_VERSION: Final = \"rd30-replacement-aware-portfolio-replay-v1\""
+    },
+    {
+      "file": "src/spotbot/research/rd30_replacement_replay.py",
+      "line": 76,
+      "text": "atr24_at_signal: float"
+    },
+    {
+      "file": "src/spotbot/research/rd30_replacement_replay.py",
+      "line": 115,
+      "text": "raise RD30ReplayError(\"cost matrix drifted\")"
+    },
+    {
+      "file": "src/spotbot/research/rd30_replacement_replay.py",
+      "line": 191,
+      "text": "gross_open = float(sum(marks))"
+    },
+    {
+      "file": "src/spotbot/research/rd30_replacement_replay.py",
+      "line": 192,
+      "text": "equity_open = float(cash) + gross_open"
+    },
+    {
+      "file": "src/spotbot/research/rd30_replacement_replay.py",
+      "line": 193,
+      "text": "if equity_open <= 0.0:"
+    },
+    {
+      "file": "src/spotbot/research/rd30_replacement_replay.py",
+      "line": 208,
+      "text": "(equity_open * MAXIMUM_GROSS_EXPOSURE - gross_open)"
+    },
+    {
+      "file": "src/spotbot/research/rd30_replacement_replay.py",
+      "line": 211,
+      "text": "target_notional = equity_open * float(target_slot_fraction)"
+    },
+    {
+      "file": "src/spotbot/research/rd30_replacement_replay.py",
+      "line": 297,
+      "text": "current_open_by_pair: dict[str, float],"
+    },
+    {
+      "file": "src/spotbot/research/rd30_replacement_replay.py",
+      "line": 320,
+      "text": "raw_exit_price = current_open_by_pair.get(incumbent.pair)"
+    },
+    {
+      "file": "src/spotbot/research/rd30_replacement_replay.py",
+      "line": 328,
+      "text": "\"INCUMBENT_CURRENT_OPEN_UNAVAILABLE\","
+    },
+    {
+      "file": "src/spotbot/research/rd30_replacement_replay.py",
+      "line": 339,
+      "text": "\"INCUMBENT_CURRENT_OPEN_INVALID\","
+    },
+    {
+      "file": "src/spotbot/research/rd30_replacement_replay.py",
+      "line": 425,
+      "text": "\"atr24_at_signal\": position.atr24_at_signal,"
+    },
+    {
+      "file": "src/spotbot/research/rd30_replacement_replay.py",
+      "line": 462,
+      "text": "if policy_id == ROUTER_TIME_FAIL_72_CONTROL:"
+    },
+    {
+      "file": "src/spotbot/research/rd30_replacement_replay.py",
+      "line": 514,
+      "text": "\"same_pair_open\": 0,"
+    },
+    {
+      "file": "src/spotbot/research/rd30_replacement_replay.py",
+      "line": 569,
+      "text": "raise RD30ReplayError(f\"open-position bar missing: {pair} {timestamp}\")"
+    },
+    {
+      "file": "src/spotbot/research/rd30_replacement_replay.py",
+      "line": 591,
+      "text": "current_open_time=timestamp,"
+    },
+    {
+      "file": "src/spotbot/research/rd30_replacement_replay.py",
+      "line": 592,
+      "text": "current_open=float(bar[\"open\"]),"
+    },
+    {
+      "file": "src/spotbot/research/rd30_replacement_replay.py",
+      "line": 629,
+      "text": "current_open_time=timestamp,"
+    },
+    {
+      "file": "src/spotbot/research/rd30_replacement_replay.py",
+      "line": 631,
+      "text": "return_72h_by_pair=current_returns,"
+    },
+    {
+      "file": "src/spotbot/research/rd30_replacement_replay.py",
+      "line": 652,
+      "text": "position.last_mark = float(bar[\"open\"])"
+    },
+    {
+      "file": "src/spotbot/research/rd30_replacement_replay.py",
+      "line": 664,
+      "text": "counters[\"same_pair_open\"] += 1"
+    },
+    {
+      "file": "src/spotbot/research/rd30_replacement_replay.py",
+      "line": 745,
+      "text": "current_open_by_pair: dict[str, float] = {}"
+    },
+    {
+      "file": "src/spotbot/research/rd30_replacement_replay.py",
+      "line": 754,
+      "text": "current_open_by_pair[incumbent_pair] = float(incumbent_bar[\"open\"])"
+    },
+    {
+      "file": "src/spotbot/research/rd30_replacement_replay.py",
+      "line": 763,
+      "text": "current_open_by_pair=(current_open_by_pair),"
+    },
+    {
+      "file": "src/spotbot/research/rd30_replacement_replay.py",
+      "line": 841,
+      "text": "entry_price = float(entry_bar[\"open\"])"
+    },
+    {
+      "file": "src/spotbot/research/rd30_replacement_replay.py",
+      "line": 843,
+      "text": "raise RD30ReplayError(\"invalid entry open price\")"
+    },
+    {
+      "file": "src/spotbot/research/rd30_replacement_replay.py",
+      "line": 844,
+      "text": "atr = float(item[\"atr24_at_signal\"])"
+    },
+    {
+      "file": "src/spotbot/research/rd30_replacement_replay.py",
+      "line": 845,
+      "text": "if not math.isfinite(atr) or atr <= 0.0:"
+    },
+    {
+      "file": "src/spotbot/research/rd30_replacement_replay.py",
+      "line": 846,
+      "text": "raise RD30ReplayError(\"invalid entry ATR\")"
+    },
+    {
+      "file": "src/spotbot/research/rd30_replacement_replay.py",
+      "line": 860,
+      "text": "atr24_at_signal=atr,"
+    },
+    {
+      "file": "src/spotbot/research/rd30_replacement_replay.py",
+      "line": 875,
+      "text": "atr24_at_signal=atr,"
+    },
+    {
+      "file": "src/spotbot/research/rd30_replacement_replay.py",
+      "line": 930,
+      "text": "\"open_positions\": len(positions),"
+    },
+    {
+      "file": "src/spotbot/research/rd30_replacement_replay.py",
+      "line": 939,
+      "text": "raise RD30ReplayError(\"open positions remained at replay cutoff\")"
+    },
+    {
+      "file": "src/spotbot/research/rd30_replacement_replay.py",
+      "line": 983,
+      "text": "\"schema_version\": SCHEMA_VERSION,"
+    },
+    {
+      "file": "src/spotbot/research/rd30_replacement_replay.py",
+      "line": 985,
+      "text": "\"control_delegate\": (\"EXACT_RD29_ROUTER_TIME_FAIL_72_CONTROL\"),"
+    },
+    {
+      "file": "src/spotbot/research/rd30_replacement_replay.py",
+      "line": 987,
+      "text": "\"open_position_context_cutoff\": (\"PRIOR_COMPLETED_HOUR\"),"
+    },
+    {
+      "file": "src/spotbot/research/rd30_replacement_replay.py",
+      "line": 989,
+      "text": "\"scheduled_exit_fill\": \"CURRENT_1H_OPEN\","
+    },
+    {
+      "file": "src/spotbot/research/rd30_replacement_replay.py",
+      "line": 990,
+      "text": "\"replacement_exit_fill\": \"CURRENT_1H_OPEN\","
+    },
+    {
+      "file": "src/spotbot/research/rd30_replacement_replay.py",
+      "line": 991,
+      "text": "\"replacement_entry_fill\": (\"SAME_CURRENT_1H_OPEN_AFTER_ATOMIC_EXIT\"),"
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_admission_governor.py",
+      "line": 30,
+      "text": "SCHEMA_VERSION: Final = \"rd31-regime-admission-governor-v1\""
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_admission_governor.py",
+      "line": 31,
+      "text": "STAGE: Final = \"RD31_P0B_CAUSAL_REGIME_ADMISSION_GOVERNOR_PRE_ECONOMIC_EXECUTION\""
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_admission_governor.py",
+      "line": 36,
+      "text": "REGIME_HYSTERESIS_ADMISSION_GOVERNOR: Final = \"REGIME_HYSTERESIS_ADMISSION_GOVERNOR\""
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_admission_governor.py",
+      "line": 41,
+      "text": "REGIME_HYSTERESIS_ADMISSION_GOVERNOR,"
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_admission_governor.py",
+      "line": 44,
+      "text": "OPEN: Final = \"OPEN\""
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_admission_governor.py",
+      "line": 45,
+      "text": "CAUTION: Final = \"CAUTION\""
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_admission_governor.py",
+      "line": 46,
+      "text": "LOCKED: Final = \"LOCKED\""
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_admission_governor.py",
+      "line": 47,
+      "text": "GOVERNOR_STATES: Final = (OPEN, CAUTION, LOCKED)"
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_admission_governor.py",
+      "line": 211,
+      "text": "next_state = LOCKED"
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_admission_governor.py",
+      "line": 214,
+      "text": "next_state = OPEN"
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_admission_governor.py",
+      "line": 215,
+      "text": "reason = \"SUPPORTIVE_OPENS_ADMISSIONS\""
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_admission_governor.py",
+      "line": 217,
+      "text": "if prior_state == OPEN:"
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_admission_governor.py",
+      "line": 218,
+      "text": "next_state = CAUTION"
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_admission_governor.py",
+      "line": 219,
+      "text": "reason = \"OPEN_MIXED_TO_CAUTION\""
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_admission_governor.py",
+      "line": 220,
+      "text": "elif prior_state == CAUTION:"
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_admission_governor.py",
+      "line": 221,
+      "text": "next_state = CAUTION"
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_admission_governor.py",
+      "line": 222,
+      "text": "reason = \"CAUTION_MIXED_STAYS_CAUTION\""
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_admission_governor.py",
+      "line": 224,
+      "text": "next_state = LOCKED"
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_admission_governor.py",
+      "line": 225,
+      "text": "reason = \"LOCKED_MIXED_STAYS_LOCKED\""
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_admission_governor.py",
+      "line": 239,
+      "text": "def hysteresis_governor_admission("
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_admission_governor.py",
+      "line": 254,
+      "text": "if state == LOCKED:"
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_admission_governor.py",
+      "line": 258,
+      "text": "reason=\"RD31_GOVERNOR_LOCKED_SUPPRESS_ALL\","
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_admission_governor.py",
+      "line": 261,
+      "text": "elif state == OPEN:"
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_admission_governor.py",
+      "line": 267,
+      "text": "elif state == CAUTION:"
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_admission_governor.py",
+      "line": 285,
+      "text": "reason=\"RD31_GOVERNOR_CAUTION_ADMITTED\","
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_admission_governor.py",
+      "line": 292,
+      "text": "reason=\"RD31_GOVERNOR_CAUTION_SUPPRESSED\","
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_admission_governor.py",
+      "line": 299,
+      "text": "policy_id=REGIME_HYSTERESIS_ADMISSION_GOVERNOR,"
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_admission_governor.py",
+      "line": 314,
+      "text": "governor_prior_state: str = OPEN,"
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_admission_governor.py",
+      "line": 363,
+      "text": "if policy_id == REGIME_HYSTERESIS_ADMISSION_GOVERNOR:"
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_admission_governor.py",
+      "line": 364,
+      "text": "return hysteresis_governor_admission("
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_admission_governor.py",
+      "line": 382,
+      "text": "if policy_id == REGIME_HYSTERESIS_ADMISSION_GOVERNOR:"
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_admission_governor.py",
+      "line": 389,
+      "text": "\"schema_version\": SCHEMA_VERSION,"
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_admission_governor.py",
+      "line": 393,
+      "text": "\"initial_governor_state\": OPEN,"
+    },
+    {
+      "file": "src/spotbot/research/rd31_regime_admission_governor.py",
+      "line": 398,
+      "text": "\"forced_regime_exit\": False,"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 4,
+      "text": "It freezes causal market-state, admission, and exit-decision semantics before RD27-P1."
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 15,
+      "text": "SCHEMA_VERSION: Final = \"rd27-adaptive-lifecycle-state-engine-v1\""
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 25,
+      "text": "EMA_HOURS: Final = 720"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 26,
+      "text": "EMA_SLOPE_LOOKBACK_HOURS: Final = 168"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 27,
+      "text": "MOMENTUM_LOOKBACK_HOURS: Final = 72"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 28,
+      "text": "VOLATILITY_ATR_HOURS: Final = 24"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 29,
+      "text": "VOLATILITY_BASELINE_HOURS: Final = 720"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 30,
+      "text": "VOLATILITY_SHOCK_MULTIPLE: Final = 1.5"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 33,
+      "text": "PROFIT_ARM_ATR: Final = 4.0"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 40,
+      "text": "ADVERSE_GUARD_ATR_BY_STATE: Final = {"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 46,
+      "text": "RISK_ON: 72,"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 50,
+      "text": "PROFIT_TRAIL_GAP_ATR_BY_STATE: Final = {"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 62,
+      "text": "\"\"\"Typed candidate rejection; other chronology/schema errors remain fatal.\"\"\""
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 75,
+      "text": "Times identify completed observations, not unfinished-bar/open timestamps."
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 248,
+      "text": "atr24_at_signal: float"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 268,
+      "text": "if (EMA_HOURS, EMA_SLOPE_LOOKBACK_HOURS, MOMENTUM_LOOKBACK_HOURS) != (720, 168, 72):"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 270,
+      "text": "if (VOLATILITY_ATR_HOURS, VOLATILITY_BASELINE_HOURS) != (24, 720):"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 271,
+      "text": "raise RD27StateError(\"volatility lookback contract drifted\")"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 272,
+      "text": "if not math.isclose(VOLATILITY_SHOCK_MULTIPLE, 1.5):"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 273,
+      "text": "raise RD27StateError(\"volatility shock multiple drifted\")"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 276,
+      "text": "if ADVERSE_GUARD_ATR_BY_STATE != {RISK_ON: 5.0, TRANSITION: 4.0, RISK_OFF: 3.0}:"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 278,
+      "text": "if STAGNATION_HOURS_BY_STATE != {RISK_ON: 72, TRANSITION: 48, RISK_OFF: 24}:"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 280,
+      "text": "if PROFIT_TRAIL_GAP_ATR_BY_STATE != {"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 286,
+      "text": "if MAX_HOLD_HOURS != 168 or not math.isclose(PROFIT_ARM_ATR, 4.0):"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 300,
+      "text": "required = {\"timestamp\", \"open\", \"high\", \"low\", \"close\"}"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 304,
+      "text": "frame = raw.loc[:, [\"timestamp\", \"open\", \"high\", \"low\", \"close\"]].copy()"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 306,
+      "text": "for column in (\"open\", \"high\", \"low\", \"close\"):"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 320,
+      "text": "if bool((frame[[\"open\", \"high\", \"low\", \"close\"]] <= 0.0).any().any()):"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 328,
+      "text": "ema720: float,"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 329,
+      "text": "ema720_168h_ago: float,"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 330,
+      "text": "return_72h: float,"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 331,
+      "text": "volatility_shock: bool,"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 333,
+      "text": "values = (close, ema720, ema720_168h_ago, return_72h)"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 337,
+      "text": "close > ema720"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 338,
+      "text": "and ema720 > ema720_168h_ago"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 339,
+      "text": "and return_72h > 0.0"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 340,
+      "text": "and not volatility_shock"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 343,
+      "text": "if (close < ema720 and return_72h < 0.0) or (volatility_shock and close < ema720):"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 369,
+      "text": "frame[\"ema720\"] = close.ewm("
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 370,
+      "text": "span=EMA_HOURS,"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 372,
+      "text": "min_periods=EMA_HOURS,"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 374,
+      "text": "frame[\"ema720_168h_ago\"] = frame[\"ema720\"].shift(EMA_SLOPE_LOOKBACK_HOURS)"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 375,
+      "text": "frame[\"return_72h\"] = close / close.shift(MOMENTUM_LOOKBACK_HOURS) - 1.0"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 376,
+      "text": "frame[\"atr24_pct\"] = ("
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 377,
+      "text": "true_range.rolling(VOLATILITY_ATR_HOURS, min_periods=VOLATILITY_ATR_HOURS).mean()"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 380,
+      "text": "frame[\"atr24_pct_median_720h\"] = frame[\"atr24_pct\"].rolling("
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 381,
+      "text": "VOLATILITY_BASELINE_HOURS,"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 382,
+      "text": "min_periods=VOLATILITY_BASELINE_HOURS,"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 384,
+      "text": "frame[\"volatility_shock\"] = ("
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 385,
+      "text": "frame[\"atr24_pct\"]"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 386,
+      "text": "> VOLATILITY_SHOCK_MULTIPLE * frame[\"atr24_pct_median_720h\"]"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 389,
+      "text": "\"ema720\","
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 390,
+      "text": "\"ema720_168h_ago\","
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 391,
+      "text": "\"return_72h\","
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 392,
+      "text": "\"atr24_pct\","
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 393,
+      "text": "\"atr24_pct_median_720h\","
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 405,
+      "text": "ema720=float(row.ema720),"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 406,
+      "text": "ema720_168h_ago=float(row.ema720_168h_ago),"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 407,
+      "text": "return_72h=float(row.return_72h),"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 408,
+      "text": "volatility_shock=bool(row.volatility_shock),"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 451,
+      "text": "def open_position_market_state("
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 454,
+      "text": "current_open_time: pd.Timestamp,"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 456,
+      "text": "\"\"\"At open t, lifecycle decisions use BTC state through completed bar t-1h only.\"\"\""
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 457,
+      "text": "timestamp = pd.Timestamp(current_open_time)"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 489,
+      "text": "atr24_at_signal: float,"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 495,
+      "text": "if not math.isfinite(atr24_at_signal) or atr24_at_signal <= 0.0:"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 496,
+      "text": "raise RD27StateError(\"signal ATR must be positive and finite\")"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 506,
+      "text": "atr24_at_signal=float(atr24_at_signal),"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 518,
+      "text": "atr = position.atr24_at_signal"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 519,
+      "text": "adverse = position.entry_price - ADVERSE_GUARD_ATR_BY_STATE[market_state] * atr"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 522,
+      "text": "arm_level = position.entry_price + PROFIT_ARM_ATR * atr"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 526,
+      "text": "- PROFIT_TRAIL_GAP_ATR_BY_STATE[market_state] * atr"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 537,
+      "text": "def _age_hours(position: LifecyclePosition, current_open_time: pd.Timestamp) -> int:"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 538,
+      "text": "timestamp = pd.Timestamp(current_open_time)"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 552,
+      "text": "current_open_time: pd.Timestamp,"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 553,
+      "text": "current_open: float,"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 562,
+      "text": "(\"current_open\", current_open),"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 569,
+      "text": "age_hours = _age_hours(position, current_open_time)"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 576,
+      "text": "exit_price=float(current_open),"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 585,
+      "text": "if current_open <= floor:"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 588,
+      "text": "exit_price=float(current_open),"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 600,
+      "text": "exit_price=float(current_open),"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 657,
+      "text": "current_open_time: pd.Timestamp,"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 658,
+      "text": "current_open: float,"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 661,
+      "text": "\"\"\"Pure RD26 TIME_FAIL_72_H168 control decision for synthetic parity tests.\"\"\""
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 662,
+      "text": "if not math.isfinite(current_open) or current_open <= 0.0:"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 663,
+      "text": "raise RD27StateError(\"current open must be positive and finite\")"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 666,
+      "text": "age_hours = _age_hours(position, current_open_time)"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 668,
+      "text": "return True, float(current_open), \"MAX_HOLD_168H\""
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 669,
+      "text": "if age_hours == 72 and prior_asset_close <= position.entry_price:"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 670,
+      "text": "return True, float(current_open), \"TIME_FAILURE_72H_CLOSE_NOT_ABOVE_ENTRY\""
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 677,
+      "text": "\"schema_version\": SCHEMA_VERSION,"
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 681,
+      "text": "\"open_position_state_cutoff\": \"PRIOR_COMPLETED_1H_BAR\","
+    },
+    {
+      "file": "src/spotbot/research/rd27_adaptive_lifecycle.py",
+      "line": 686,
+      "text": "\"profit_arm_atr\": PROFIT_ARM_ATR,"
+    },
+    {
+      "file": "src/spotbot/research/rd27_async_exit_candidate_shadow.py",
+      "line": 99,
+      "text": "def open_position(self, position_id: str, symbol: str) -> None:"
+    },
+    {
+      "file": "src/spotbot/research/rd27_async_memory_shadow.py",
+      "line": 61,
+      "text": "completed_at is an availability/close boundary, NOT an OHLC row's open label."
+    },
+    {
+      "file": "src/spotbot/research/rd27_async_memory_shadow.py",
+      "line": 72,
+      "text": "\"\"\"Run-local observer; immutable V1 states remain separate from trading state."
+    },
+    {
+      "file": "src/spotbot/research/rd27_async_memory_shadow.py",
+      "line": 75,
+      "text": "memory-before-trigger. Exact duplicates remain in the stream for accounting;"
+    },
+    {
+      "file": "src/spotbot/research/rd27_async_memory_shadow.py",
+      "line": 167,
+      "text": "def open_position("
+    },
+    {
+      "file": "src/spotbot/research/rd27_async_memory_shadow.py",
+      "line": 187,
+      "text": "self._memory_predicate.open_position("
+    },
+    {
+      "file": "src/spotbot/research/rd27_async_memory_shadow.py",
+      "line": 192,
+      "text": "self._later_trigger_predicate.open_position("
+    },
+    {
+      "file": "src/spotbot/research/rd27_async_memory_shadow.py",
+      "line": 200,
+      "text": "self._exit_candidate_shadow.open_position(position_id, record[\"symbol\"])"
+    },
+    {
+      "file": "src/spotbot/research/rd27_async_memory_shadow.py",
+      "line": 213,
+      "text": "remaining = []"
+    },
+    {
+      "file": "src/spotbot/research/rd27_async_memory_shadow.py",
+      "line": 216,
+      "text": "remaining.append(observation)"
+    },
+    {
+      "file": "src/spotbot/research/rd27_async_memory_shadow.py",
+      "line": 219,
+      "text": "self._pending = remaining"
+    },
+    {
+      "file": "src/spotbot/research/rd27_async_memory_shadow.py",
+      "line": 357,
+      "text": "\"\"\"New admissions had their chance; remaining IDs are unknown/not open.\"\"\""
+    },
+    {
+      "file": "src/spotbot/research/rd27_async_memory_shadow.py",
+      "line": 360,
+      "text": "\"shadow observation references unknown/not-open position: \""
+    },
+    {
+      "file": "src/spotbot/research/rd27_observable_later_trigger_predicate.py",
+      "line": 55,
+      "text": "previous != self.last_snapshot or previous.bar_open_time < self.entry_time"
+    },
+    {
+      "file": "src/spotbot/research/rd27_observable_later_trigger_predicate.py",
+      "line": 100,
+      "text": "if snapshot.bar_open_time < state.last_snapshot.bar_close_time:"
+    },
+    {
+      "file": "src/spotbot/research/rd27_observable_later_trigger_predicate.py",
+      "line": 102,
+      "text": "if snapshot.bar_open_time < state.entry_time:"
+    },
+    {
+      "file": "src/spotbot/research/rd27_observable_later_trigger_predicate.py",
+      "line": 134,
+      "text": "def open_position("
+    },
+    {
+      "file": "src/spotbot/research/rd27_observable_memory_adapter.py",
+      "line": 24,
+      "text": "\"symbol\", \"source_exchange\", \"source_symbol\", \"bar_open_time\", \"bar_close_time\","
+    },
+    {
+      "file": "src/spotbot/research/rd27_observable_memory_adapter.py",
+      "line": 25,
+      "text": "\"open\", \"high\", \"low\", \"close\", \"volume\","
+    },
+    {
+      "file": "src/spotbot/research/rd27_observable_memory_adapter.py",
+      "line": 68,
+      "text": "bar_open_time: pd.Timestamp"
+    },
+    {
+      "file": "src/spotbot/research/rd27_observable_memory_adapter.py",
+      "line": 70,
+      "text": "open: float"
+    },
+    {
+      "file": "src/spotbot/research/rd27_observable_memory_adapter.py",
+      "line": 79,
+      "text": "for name in (\"bar_open_time\", \"bar_close_time\"):"
+    },
+    {
+      "file": "src/spotbot/research/rd27_observable_memory_adapter.py",
+      "line": 81,
+      "text": "if self.bar_close_time - self.bar_open_time != pd.Timedelta(hours=4):"
+    },
+    {
+      "file": "src/spotbot/research/rd27_observable_memory_adapter.py",
+      "line": 83,
+      "text": "for name in (\"open\", \"high\", \"low\", \"close\", \"volume\"):"
+    },
+    {
+      "file": "src/spotbot/research/rd27_observable_memory_adapter.py",
+      "line": 94,
+      "text": "if self.high < max(self.open, self.close, self.low) or self.low > min("
+    },
+    {
+      "file": "src/spotbot/research/rd27_observable_memory_adapter.py",
+      "line": 95,
+      "text": "self.open, self.close, self.high,"
+    },
+    {
+      "file": "src/spotbot/research/rd27_observable_memory_adapter.py",
+      "line": 101,
+      "text": "return self.symbol, self.bar_open_time, self.bar_close_time"
+    },
+    {
+      "file": "src/spotbot/research/rd27_observable_memory_adapter.py",
+      "line": 114,
+      "text": "\"\"\"Exact schema, UTC, sorted unique bars; gaps allowed, overlaps rejected.\"\"\""
+    },
+    {
+      "file": "src/spotbot/research/rd27_observable_memory_adapter.py",
+      "line": 117,
+      "text": "raise ObservableAdapterError(\"expected exact canonical 10-field schema\")"
+    },
+    {
+      "file": "src/spotbot/research/rd27_observable_memory_adapter.py",
+      "line": 125,
+      "text": "raise ObservableAdapterError(\"expected exact canonical 10-field schema\")"
+    },
+    {
+      "file": "src/spotbot/research/rd27_observable_memory_adapter.py",
+      "line": 135,
+      "text": "if previous.symbol == current.symbol and current.bar_open_time < previous.bar_close_time:"
+    },
+    {
+      "file": "src/spotbot/research/rd27_observable_memory_adapter.py",
+      "line": 155,
+      "text": "if previous is not None and snapshot.bar_open_time < previous.bar_close_time:"
+    },
+    {
+      "file": "src/spotbot/research/rd27_observable_memory_adapter.py",
+      "line": 234,
+      "text": "The source close remains in the envelope. An event occurs at decision_time,"
+    },
+    {
+      "file": "src/spotbot/research/rd27_observable_memory_adapter.py",
+      "line": 253,
+      "text": "selection per open position per causal boundary; the same completed snapshot"
+    },
+    {
+      "file": "src/spotbot/research/rd27_observable_memory_predicate.py",
+      "line": 3,
+      "text": "Only full post-entry bars participate: bar_open_time >= entry_time and"
+    },
+    {
+      "file": "src/spotbot/research/rd27_observable_memory_predicate.py",
+      "line": 111,
+      "text": "if snapshot.bar_open_time < state.last_snapshot.bar_close_time:"
+    },
+    {
+      "file": "src/spotbot/research/rd27_observable_memory_predicate.py",
+      "line": 115,
+      "text": "if snapshot.bar_open_time < state.entry_time:"
+    },
+    {
+      "file": "src/spotbot/research/rd27_observable_memory_predicate.py",
+      "line": 146,
+      "text": "def open_position("
+    },
+    {
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "line": 22,
+      "text": "SCHEMA_VERSION: Final = \"rd28-evidence-gated-lifecycle-engine-v1\""
+    },
+    {
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "line": 25,
+      "text": "ROUTER_TIME_FAIL_72_CONTROL: Final = \"ROUTER_TIME_FAIL_72_CONTROL\""
+    },
+    {
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "line": 34,
+      "text": "ROUTER_TIME_FAIL_72_CONTROL,"
+    },
+    {
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "line": 51,
+      "text": "BACKUP_TIME_FAILURE_HOURS: Final = 72"
+    },
+    {
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "line": 53,
+      "text": "PROFIT_ARM_ATR: Final = 4.0"
+    },
+    {
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "line": 54,
+      "text": "PROFIT_GIVEBACK_ATR: Final = 3.0"
+    },
+    {
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "line": 57,
+      "text": "EARLY_EVIDENCE_REASON: Final = \"EVIDENCE_GATED_REGIME_TRADE_INVALIDATION\""
+    },
+    {
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "line": 62,
+      "text": "PROFIT_GIVEBACK_REASON: Final = \"PROFIT_GIVEBACK_LOCK_4ATR_ARM_3ATR_GIVEBACK\""
+    },
+    {
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "line": 63,
+      "text": "BACKUP_TIME_FAIL_REASON: Final = \"TIME_FAILURE_72H_CLOSE_NOT_ABOVE_ENTRY\""
+    },
+    {
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "line": 76,
+      "text": "atr24_at_signal: float"
+    },
+    {
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "line": 127,
+      "text": ") != (24, 72, 168):"
+    },
+    {
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "line": 129,
+      "text": "if not math.isclose(PROFIT_ARM_ATR, 4.0):"
+    },
+    {
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "line": 131,
+      "text": "if not math.isclose(PROFIT_GIVEBACK_ATR, 3.0):"
+    },
+    {
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "line": 136,
+      "text": "ROUTER_TIME_FAIL_72_CONTROL,"
+    },
+    {
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "line": 147,
+      "text": "if policy_id == ROUTER_TIME_FAIL_72_CONTROL:"
+    },
+    {
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "line": 160,
+      "text": "if policy_id == ROUTER_TIME_FAIL_72_CONTROL:"
+    },
+    {
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "line": 196,
+      "text": "atr24_at_signal: float,"
+    },
+    {
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "line": 205,
+      "text": "if not math.isfinite(atr24_at_signal) or atr24_at_signal <= 0.0:"
+    },
+    {
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "line": 206,
+      "text": "raise RD28LifecycleError(\"signal ATR must be positive and finite\")"
+    },
+    {
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "line": 213,
+      "text": "atr24_at_signal=float(atr24_at_signal),"
+    },
+    {
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "line": 220,
+      "text": "def age_hours(position: EvidencePosition, current_open_time: pd.Timestamp) -> int:"
+    },
+    {
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "line": 221,
+      "text": "timestamp = _utc_timestamp(current_open_time)"
+    },
+    {
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "line": 253,
+      "text": "current_open_time: pd.Timestamp,"
+    },
+    {
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "line": 254,
+      "text": "current_open: float,"
+    },
+    {
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "line": 260,
+      "text": "Evaluate at the current 1h open using only prior completed asset/BTC evidence."
+    },
+    {
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "line": 263,
+      "text": "Every RD28-P0B exit fills at the current 1h open."
+    },
+    {
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "line": 268,
+      "text": "(\"current_open\", current_open),"
+    },
+    {
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "line": 274,
+      "text": "age = age_hours(position, current_open_time)"
+    },
+    {
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "line": 280,
+      "text": "arm_level = position.entry_price + PROFIT_ARM_ATR * position.atr24_at_signal"
+    },
+    {
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "line": 283,
+      "text": "position.high_water_prior - PROFIT_GIVEBACK_ATR * position.atr24_at_signal"
+    },
+    {
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "line": 289,
+      "text": "exit_price=float(current_open),"
+    },
+    {
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "line": 332,
+      "text": "current_open_time: pd.Timestamp,"
+    },
+    {
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "line": 333,
+      "text": "current_open: float,"
+    },
+    {
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "line": 336,
+      "text": "\"\"\"Frozen RD27 static-router + TIME_FAIL_72 control exit semantics.\"\"\""
+    },
+    {
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "line": 337,
+      "text": "if not math.isfinite(current_open) or current_open <= 0.0:"
+    },
+    {
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "line": 338,
+      "text": "raise RD28LifecycleError(\"current open must be positive and finite\")"
+    },
+    {
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "line": 341,
+      "text": "age = age_hours(position, current_open_time)"
+    },
+    {
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "line": 350,
+      "text": "exit_price=float(current_open) if reason is not None else None,"
+    },
+    {
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "line": 383,
+      "text": "Reserve only a virtual position slot for evidence/profit exits before 72h."
+    },
+    {
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "line": 385,
+      "text": "Cash and notional are never reserved. At exactly entry+72h the slot is free."
+    },
+    {
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "line": 413,
+      "text": "open_position_count: int,"
+    },
+    {
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "line": 416,
+      "text": "if open_position_count < 0 or active_escrow_count < 0:"
+    },
+    {
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "line": 418,
+      "text": "return open_position_count + active_escrow_count < MAXIMUM_POSITION_SLOTS"
+    },
+    {
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "line": 424,
+      "text": "\"schema_version\": SCHEMA_VERSION,"
+    },
+    {
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "line": 431,
+      "text": "\"profit_arm_atr\": PROFIT_ARM_ATR,"
+    },
+    {
+      "file": "src/spotbot/research/rd28_evidence_gated_lifecycle.py",
+      "line": 432,
+      "text": "\"profit_giveback_atr\": PROFIT_GIVEBACK_ATR,"
+    },
+    {
+      "file": "src/spotbot/research/rd28_lifecycle_replay.py",
+      "line": 41,
+      "text": "ROUTER_TIME_FAIL_72_CONTROL,"
+    },
+    {
+      "file": "src/spotbot/research/rd28_lifecycle_replay.py",
+      "line": 57,
+      "text": "SCHEMA_VERSION: Final = \"rd28-lifecycle-portfolio-replay-v1\""
+    },
+    {
+      "file": "src/spotbot/research/rd28_lifecycle_replay.py",
+      "line": 63,
+      "text": "\"\"\"Raised when frozen RD28 portfolio replay semantics are violated.\"\"\""
+    },
+    {
+      "file": "src/spotbot/research/rd28_lifecycle_replay.py",
+      "line": 79,
+      "text": "atr24_at_signal: float"
+    },
+    {
+      "file": "src/spotbot/research/rd28_lifecycle_replay.py",
+      "line": 93,
+      "text": "raise RD28ReplayError(\"cost matrix drifted\")"
+    },
+    {
+      "file": "src/spotbot/research/rd28_lifecycle_replay.py",
+      "line": 182,
+      "text": "\"atr24_at_signal\": position.atr24_at_signal,"
+    },
+    {
+      "file": "src/spotbot/research/rd28_lifecycle_replay.py",
+      "line": 195,
+      "text": "current_open_time: pd.Timestamp,"
+    },
+    {
+      "file": "src/spotbot/research/rd28_lifecycle_replay.py",
+      "line": 196,
+      "text": "current_open: float,"
+    },
+    {
+      "file": "src/spotbot/research/rd28_lifecycle_replay.py",
+      "line": 203,
+      "text": "current_open_time=current_open_time,"
+    },
+    {
+      "file": "src/spotbot/research/rd28_lifecycle_replay.py",
+      "line": 204,
+      "text": "current_open=current_open,"
+    },
+    {
+      "file": "src/spotbot/research/rd28_lifecycle_replay.py",
+      "line": 214,
+      "text": "current_open_time: pd.Timestamp,"
+    },
+    {
+      "file": "src/spotbot/research/rd28_lifecycle_replay.py",
+      "line": 215,
+      "text": "current_open: float,"
+    },
+    {
+      "file": "src/spotbot/research/rd28_lifecycle_replay.py",
+      "line": 224,
+      "text": "current_open_time=current_open_time,"
+    },
+    {
+      "file": "src/spotbot/research/rd28_lifecycle_replay.py",
+      "line": 225,
+      "text": "current_open=current_open,"
+    },
+    {
+      "file": "src/spotbot/research/rd28_lifecycle_replay.py",
+      "line": 249,
+      "text": "current_open_time: pd.Timestamp,"
+    },
+    {
+      "file": "src/spotbot/research/rd28_lifecycle_replay.py",
+      "line": 250,
+      "text": "current_open: float,"
+    },
+    {
+      "file": "src/spotbot/research/rd28_lifecycle_replay.py",
+      "line": 257,
+      "text": "current_open_time=current_open_time,"
+    },
+    {
+      "file": "src/spotbot/research/rd28_lifecycle_replay.py",
+      "line": 258,
+      "text": "current_open=current_open,"
+    },
+    {
+      "file": "src/spotbot/research/rd28_lifecycle_replay.py",
+      "line": 282,
+      "text": "if policy_id == ROUTER_TIME_FAIL_72_CONTROL:"
+    },
+    {
+      "file": "src/spotbot/research/rd28_lifecycle_replay.py",
+      "line": 332,
+      "text": "\"same_pair_open\": 0,"
+    },
+    {
+      "file": "src/spotbot/research/rd28_lifecycle_replay.py",
+      "line": 341,
+      "text": "\"evidence_regime_trade_exits\": 0,"
+    },
+    {
+      "file": "src/spotbot/research/rd28_lifecycle_replay.py",
+      "line": 365,
+      "text": "raise RD28ReplayError(f\"open-position bar missing: {pair} {timestamp}\")"
+    },
+    {
+      "file": "src/spotbot/research/rd28_lifecycle_replay.py",
+      "line": 370,
+      "text": "current_open_time=timestamp,"
+    },
+    {
+      "file": "src/spotbot/research/rd28_lifecycle_replay.py",
+      "line": 371,
+      "text": "current_open=float(bar[\"open\"]),"
+    },
+    {
+      "file": "src/spotbot/research/rd28_lifecycle_replay.py",
+      "line": 378,
+      "text": "current_open_time=timestamp,"
+    },
+    {
+      "file": "src/spotbot/research/rd28_lifecycle_replay.py",
+      "line": 379,
+      "text": "current_open=float(bar[\"open\"]),"
+    },
+    {
+      "file": "src/spotbot/research/rd28_lifecycle_replay.py",
+      "line": 388,
+      "text": "EARLY_EVIDENCE_REASON: \"evidence_regime_trade_exits\","
+    },
+    {
+      "file": "src/spotbot/research/rd28_lifecycle_replay.py",
+      "line": 433,
+      "text": "position.last_mark = float(bar[\"open\"])"
+    },
+    {
+      "file": "src/spotbot/research/rd28_lifecycle_replay.py",
+      "line": 442,
+      "text": "counters[\"same_pair_open\"] += 1"
+    },
+    {
+      "file": "src/spotbot/research/rd28_lifecycle_replay.py",
+      "line": 445,
+      "text": "open_position_count=len(positions), active_escrow_count=len(escrows)"
+    },
+    {
+      "file": "src/spotbot/research/rd28_lifecycle_replay.py",
+      "line": 478,
+      "text": "equity_open, gross_open = _marked_equity(cash=cash, positions=positions)"
+    },
+    {
+      "file": "src/spotbot/research/rd28_lifecycle_replay.py",
+      "line": 479,
+      "text": "if equity_open <= 0.0:"
+    },
+    {
+      "file": "src/spotbot/research/rd28_lifecycle_replay.py",
+      "line": 483,
+      "text": "(equity_open * MAXIMUM_GROSS_EXPOSURE - gross_open)"
+    },
+    {
+      "file": "src/spotbot/research/rd28_lifecycle_replay.py",
+      "line": 489,
+      "text": "target_notional = equity_open * float(admission.target_slot_fraction)"
+    },
+    {
+      "file": "src/spotbot/research/rd28_lifecycle_replay.py",
+      "line": 505,
+      "text": "entry_price = float(entry_bar[\"open\"])"
+    },
+    {
+      "file": "src/spotbot/research/rd28_lifecycle_replay.py",
+      "line": 513,
+      "text": "atr = float(item[\"atr24_at_signal\"])"
+    },
+    {
+      "file": "src/spotbot/research/rd28_lifecycle_replay.py",
+      "line": 518,
+      "text": "atr24_at_signal=atr,"
+    },
+    {
+      "file": "src/spotbot/research/rd28_lifecycle_replay.py",
+      "line": 534,
+      "text": "atr24_at_signal=atr,"
+    },
+    {
+      "file": "src/spotbot/research/rd28_lifecycle_replay.py",
+      "line": 568,
+      "text": "\"open_positions\": len(positions),"
+    },
+    {
+      "file": "src/spotbot/research/rd28_lifecycle_replay.py",
+      "line": 575,
+      "text": "raise RD28ReplayError(\"open positions remained at replay cutoff\")"
+    },
+    {
+      "file": "src/spotbot/research/rd28_lifecycle_replay.py",
+      "line": 577,
+      "text": "raise RD28ReplayError(\"active escrow slots remained at replay cutoff\")"
+    },
+    {
+      "file": "src/spotbot/research/rd28_lifecycle_replay.py",
+      "line": 610,
+      "text": "\"schema_version\": SCHEMA_VERSION,"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "line": 22,
+      "text": "SCHEMA_VERSION: Final = \"rd29-thesis-context-engine-v1\""
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "line": 31,
+      "text": "ROUTER_TIME_FAIL_72_CONTROL: Final = \"ROUTER_TIME_FAIL_72_CONTROL\""
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "line": 36,
+      "text": "ROUTER_TIME_FAIL_72_CONTROL,"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "line": 46,
+      "text": "THESIS_CHECKPOINT_HOURS: Final = (24, 48, 72, 96, 120, 144)"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "line": 48,
+      "text": "PROFIT_ARM_ATR: Final = 4.0"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "line": 49,
+      "text": "PROFIT_GIVEBACK_ATR: Final = 3.0"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "line": 50,
+      "text": "PAIR_COOLDOWN_RELEASE_HOURS: Final = 72"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "line": 53,
+      "text": "PROFIT_GIVEBACK_EXIT_REASON: Final = \"PROFIT_GIVEBACK_LOCK_4ATR_ARM_3ATR_GIVEBACK\""
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "line": 65,
+      "text": "breadth_median_return_72h: float | None"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "line": 79,
+      "text": "current_return_72h: float | None = None"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "line": 106,
+      "text": "atr24_at_signal: float"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "line": 148,
+      "text": "if THESIS_CHECKPOINT_HOURS != (24, 48, 72, 96, 120, 144):"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "line": 150,
+      "text": "if MAX_HOLD_HOURS != 168 or PAIR_COOLDOWN_RELEASE_HOURS != 72:"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "line": 152,
+      "text": "if not math.isclose(PROFIT_ARM_ATR, 4.0):"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "line": 154,
+      "text": "if not math.isclose(PROFIT_GIVEBACK_ATR, 3.0):"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "line": 162,
+      "text": "return_72h_by_pair: dict[str, float | None],"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "line": 175,
+      "text": "value = return_72h_by_pair.get(pair)"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "line": 214,
+      "text": "return_72h_by_pair: dict[str, float | None],"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "line": 226,
+      "text": "value = return_72h_by_pair.get(member_pair)"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "line": 283,
+      "text": "return_72h_by_pair: dict[str, float | None],"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "line": 296,
+      "text": "return_72h_by_pair=return_72h_by_pair,"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "line": 304,
+      "text": "\"CURRENT_CROSS_SECTIONAL_RETURN_72H_UNAVAILABLE\","
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "line": 330,
+      "text": "return_72h_by_pair: dict[str, float | None],"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "line": 350,
+      "text": "return_72h_by_pair=return_72h_by_pair,"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "line": 424,
+      "text": "atr24_at_signal: float,"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "line": 434,
+      "text": "if not math.isfinite(atr24_at_signal) or atr24_at_signal <= 0.0:"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "line": 435,
+      "text": "raise RD29ContextError(\"invalid ATR\")"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "line": 448,
+      "text": "float(atr24_at_signal),"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "line": 456,
+      "text": "def age_hours(position: ThesisPosition, current_open_time: pd.Timestamp) -> int:"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "line": 457,
+      "text": "seconds = (_utc(current_open_time) - position.entry_time).total_seconds()"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "line": 472,
+      "text": "current_open_time: pd.Timestamp,"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "line": 473,
+      "text": "current_open: float,"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "line": 476,
+      "text": "return_72h_by_pair: dict[str, float | None],"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "line": 479,
+      "text": "open_price = float(current_open)"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "line": 481,
+      "text": "if not math.isfinite(open_price) or open_price <= 0.0:"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "line": 482,
+      "text": "raise RD29ContextError(\"invalid current open\")"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "line": 485,
+      "text": "age = age_hours(position, current_open_time)"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "line": 487,
+      "text": "arm = position.entry_price + PROFIT_ARM_ATR * position.atr24_at_signal"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "line": 489,
+      "text": "giveback = position.high_water_prior - PROFIT_GIVEBACK_ATR * position.atr24_at_signal"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "line": 493,
+      "text": "open_price,"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "line": 505,
+      "text": "open_price,"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "line": 531,
+      "text": "return_72h_by_pair=return_72h_by_pair,"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "line": 537,
+      "text": "open_price if should_exit else None,"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "line": 576,
+      "text": "def pair_is_cooldown_blocked("
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "line": 598,
+      "text": "if policy_id == ROUTER_TIME_FAIL_72_CONTROL:"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "line": 635,
+      "text": "\"schema_version\": SCHEMA_VERSION,"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "line": 641,
+      "text": "\"profit_arm_atr\": PROFIT_ARM_ATR,"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "line": 642,
+      "text": "\"profit_giveback_atr\": PROFIT_GIVEBACK_ATR,"
+    },
+    {
+      "file": "src/spotbot/research/rd29_thesis_context.py",
+      "line": 645,
+      "text": "\"thesis_missing_data_exit_behavior\": \"FAIL_OPEN_HOLD\","
+    }
+  ],
+  "test_exists": true,
+  "test_sha256": "46CE66FF1EF7F1EEDDA07C225D31E03891AEBF612250E349364A4F77A87763B4"
+}

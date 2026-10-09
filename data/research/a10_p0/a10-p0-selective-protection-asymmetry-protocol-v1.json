@@ -1,0 +1,696 @@
+{
+  "schema_version": "a10-p0-selective-protection-asymmetry-protocol-v1",
+  "stage": "A10_SELECTIVE_PROTECTION_ASYMMETRY_PROTOCOL_FREEZE",
+  "task_id": "FINAL_EXIT_BRAIN_ARCHITECTURE_RESET_A10_SELECTIVE_PROTECTION_ASYMMETRY_PROTOCOL_FREEZE_V1",
+  "status": "FROZEN_PRE_IMPLEMENTATION",
+  "created_at_utc": "2026-09-15T13:38:49+00:00",
+  "lineage": {
+    "branch": "research/rd48-cross-venue-price-level-basis-direct-utility-v1",
+    "starting_head": "ef31b70769da34c07bdbb308619e747020bf5f66",
+    "starting_charter_revision": 14,
+    "a9_adjudication_path": "C:\\Users\\abdul\\Downloads\\FINAL_EXIT_BRAIN_ARCHITECTURE_RESET_A9_FAILURE_ATTRIBUTION_AND_AXIS_ADJUDICATION_V1_FINAL_SCIENTIFIC_ADJUDICATION_V2_20260915_132634.json",
+    "a9_adjudication_sha256": "EF52E4DDFF7AEDBD704E657A61AD419640E2A924C151571BD9FF42AE80849F14",
+    "a4r1_source": {
+      "path": "C:\\SIRAJ\\Repositories\\spot-speculation-bot\\src\\spotbot\\research\\a4r1_reversible_floor_replay.py",
+      "sha256": "161B7680A2098BBE97E4B9BE3A9BA7F0A918AAD04926CBA6F783CED7B97FE16E",
+      "functions": [
+        {
+          "name": "_utc",
+          "args": [
+            "value"
+          ],
+          "kwonlyargs": [],
+          "lineno": 31,
+          "end_lineno": 33
+        },
+        {
+          "name": "replay_reversible_floor_candidate",
+          "args": [],
+          "kwonlyargs": [
+            "portfolio_id",
+            "universe_id",
+            "cost_multiplier",
+            "events",
+            "frames",
+            "state_frame",
+            "replay_start",
+            "replay_cutoff"
+          ],
+          "lineno": 36,
+          "end_lineno": 169
+        }
+      ],
+      "classes": [
+        "TreatmentReplayResult"
+      ],
+      "constants": [
+        {
+          "name": "SCHEMA_VERSION",
+          "value": "a4r1-reversible-floor-paired-replay-v1"
+        },
+        {
+          "name": "TREATMENT_POLICY_ID",
+          "value": "A4R1_REPAIRED_REVERSIBLE_FLOOR_SHADOW"
+        }
+      ],
+      "imports": [
+        "__future__",
+        "dataclasses",
+        "typing",
+        "pandas",
+        "spotbot.research",
+        "spotbot.research"
+      ]
+    },
+    "rd27_replay_source": {
+      "path": "C:\\SIRAJ\\Repositories\\spot-speculation-bot\\src\\spotbot\\research\\rd27_lifecycle_replay.py",
+      "sha256": "82E2BF09E1A74A101580C625E0F71987484A9368F597FDD7515E4B31F4E0B425",
+      "functions": [
+        {
+          "name": "validate_policy_constants",
+          "args": [],
+          "kwonlyargs": [],
+          "lineno": 77,
+          "end_lineno": 86
+        },
+        {
+          "name": "policy_components",
+          "args": [
+            "policy_id"
+          ],
+          "kwonlyargs": [],
+          "lineno": 89,
+          "end_lineno": 98
+        },
+        {
+          "name": "active_component_count",
+          "args": [
+            "policy_id"
+          ],
+          "kwonlyargs": [],
+          "lineno": 101,
+          "end_lineno": 103
+        },
+        {
+          "name": "build_state_lookup",
+          "args": [
+            "state_frame"
+          ],
+          "kwonlyargs": [],
+          "lineno": 106,
+          "end_lineno": 127
+        },
+        {
+          "name": "_utc_timestamp",
+          "args": [
+            "value"
+          ],
+          "kwonlyargs": [],
+          "lineno": 130,
+          "end_lineno": 136
+        },
+        {
+          "name": "_state_at",
+          "args": [
+            "lookup",
+            "timestamp"
+          ],
+          "kwonlyargs": [],
+          "lineno": 139,
+          "end_lineno": 143
+        },
+        {
+          "name": "_bar_at",
+          "args": [
+            "pair",
+            "timestamp",
+            "frames",
+            "lookups"
+          ],
+          "kwonlyargs": [],
+          "lineno": 146,
+          "end_lineno": 158
+        },
+        {
+          "name": "_marked_equity",
+          "args": [],
+          "kwonlyargs": [
+            "cash",
+            "positions"
+          ],
+          "lineno": 161,
+          "end_lineno": 167
+        },
+        {
+          "name": "_close_position",
+          "args": [],
+          "kwonlyargs": [
+            "position",
+            "timestamp",
+            "exit_price",
+            "exit_reason",
+            "exit_market_state",
+            "side_cost",
+            "policy_id",
+            "portfolio_id",
+            "universe_id",
+            "cost_multiplier"
+          ],
+          "lineno": 170,
+          "end_lineno": 219
+        },
+        {
+          "name": "replay_lifecycle_policy",
+          "args": [],
+          "kwonlyargs": [
+            "policy_id",
+            "portfolio_id",
+            "universe_id",
+            "cost_multiplier",
+            "events",
+            "frames",
+            "state_frame",
+            "replay_start",
+            "replay_cutoff"
+          ],
+          "lineno": 222,
+          "end_lineno": 636
+        }
+      ],
+      "classes": [
+        "RD27ReplayError",
+        "ReplayPosition"
+      ],
+      "constants": [
+        {
+          "name": "SCHEMA_VERSION",
+          "value": "rd27-lifecycle-portfolio-replay-v1"
+        },
+        {
+          "name": "CONTROL_TIME_FAIL_72_FIXED_CAPITAL",
+          "value": "CONTROL_TIME_FAIL_72_FIXED_CAPITAL"
+        },
+        {
+          "name": "ADAPTIVE_EXIT_FIXED_CAPITAL",
+          "value": "ADAPTIVE_EXIT_FIXED_CAPITAL"
+        },
+        {
+          "name": "STATIC_EXIT_STATE_ROUTER",
+          "value": "STATIC_EXIT_STATE_ROUTER"
+        },
+        {
+          "name": "FULL_ADAPTIVE_LIFECYCLE_BRAIN",
+          "value": "FULL_ADAPTIVE_LIFECYCLE_BRAIN"
+        },
+        {
+          "name": "POLICIES",
+          "value": "<NON_LITERAL>"
+        }
+      ],
+      "imports": [
+        "__future__",
+        "math",
+        "dataclasses",
+        "typing",
+        "numpy",
+        "pandas",
+        "spotbot.research.rd26_exit_architecture",
+        "spotbot.research.rd26_exit_architecture",
+        "spotbot.research.rd27_adaptive_lifecycle"
+      ]
+    },
+    "rd27_state_source": {
+      "path": "C:\\SIRAJ\\Repositories\\spot-speculation-bot\\src\\spotbot\\research\\rd27_adaptive_lifecycle.py",
+      "sha256": "EE205CDA74D70A530734BBFB4843C2DBFC8BF950122254AA2ACEB8766A90F9AD",
+      "functions": [
+        {
+          "name": "validate_constants",
+          "args": [],
+          "kwonlyargs": [],
+          "lineno": 90,
+          "end_lineno": 112
+        },
+        {
+          "name": "_require_state",
+          "args": [
+            "state"
+          ],
+          "kwonlyargs": [],
+          "lineno": 115,
+          "end_lineno": 117
+        },
+        {
+          "name": "normalize_benchmark_bars",
+          "args": [
+            "raw"
+          ],
+          "kwonlyargs": [
+            "cutoff"
+          ],
+          "lineno": 120,
+          "end_lineno": 147
+        },
+        {
+          "name": "classify_market_state",
+          "args": [],
+          "kwonlyargs": [
+            "close",
+            "ema720",
+            "ema720_168h_ago",
+            "return_72h",
+            "volatility_shock"
+          ],
+          "lineno": 150,
+          "end_lineno": 170
+        },
+        {
+          "name": "build_market_state_frame",
+          "args": [
+            "raw"
+          ],
+          "kwonlyargs": [
+            "cutoff"
+          ],
+          "lineno": 173,
+          "end_lineno": 237
+        },
+        {
+          "name": "_state_lookup",
+          "args": [
+            "state_frame"
+          ],
+          "kwonlyargs": [],
+          "lineno": 240,
+          "end_lineno": 260
+        },
+        {
+          "name": "entry_market_state",
+          "args": [
+            "state_frame"
+          ],
+          "kwonlyargs": [
+            "signal_time"
+          ],
+          "lineno": 263,
+          "end_lineno": 273
+        },
+        {
+          "name": "open_position_market_state",
+          "args": [
+            "state_frame"
+          ],
+          "kwonlyargs": [
+            "current_open_time"
+          ],
+          "lineno": 276,
+          "end_lineno": 291
+        },
+        {
+          "name": "capital_admission_decision",
+          "args": [
+            "market_state"
+          ],
+          "kwonlyargs": [],
+          "lineno": 294,
+          "end_lineno": 306
+        },
+        {
+          "name": "new_lifecycle_position",
+          "args": [],
+          "kwonlyargs": [
+            "pair",
+            "entry_time",
+            "entry_price",
+            "atr24_at_signal"
+          ],
+          "lineno": 309,
+          "end_lineno": 334
+        },
+        {
+          "name": "_effective_protection_floor",
+          "args": [
+            "position"
+          ],
+          "kwonlyargs": [
+            "market_state"
+          ],
+          "lineno": 337,
+          "end_lineno": 359
+        },
+        {
+          "name": "_age_hours",
+          "args": [
+            "position",
+            "current_open_time"
+          ],
+          "kwonlyargs": [],
+          "lineno": 362,
+          "end_lineno": 371
+        },
+        {
+          "name": "evaluate_adaptive_exit",
+          "args": [
+            "position"
+          ],
+          "kwonlyargs": [
+            "current_open_time",
+            "current_open",
+            "current_low",
+            "prior_asset_close",
+            "market_state"
+          ],
+          "lineno": 374,
+          "end_lineno": 455
+        },
+        {
+          "name": "apply_completed_bar_update",
+          "args": [
+            "position"
+          ],
+          "kwonlyargs": [
+            "decision",
+            "completed_high"
+          ],
+          "lineno": 458,
+          "end_lineno": 476
+        },
+        {
+          "name": "evaluate_control_time_fail_exit",
+          "args": [
+            "position"
+          ],
+          "kwonlyargs": [
+            "current_open_time",
+            "current_open",
+            "prior_asset_close"
+          ],
+          "lineno": 479,
+          "end_lineno": 496
+        },
+        {
+          "name": "contract_summary",
+          "args": [],
+          "kwonlyargs": [],
+          "lineno": 499,
+          "end_lineno": 514
+        }
+      ],
+      "classes": [
+        "RD27StateError",
+        "AdmissionDecision",
+        "LifecyclePosition",
+        "ExitDecision"
+      ],
+      "constants": [
+        {
+          "name": "SCHEMA_VERSION",
+          "value": "rd27-adaptive-lifecycle-state-engine-v1"
+        },
+        {
+          "name": "STAGE",
+          "value": "RD27_P0B_CAUSAL_STATE_ENGINE_PRE_ECONOMIC_EXECUTION"
+        },
+        {
+          "name": "RISK_ON",
+          "value": "RISK_ON"
+        },
+        {
+          "name": "TRANSITION",
+          "value": "TRANSITION"
+        },
+        {
+          "name": "RISK_OFF",
+          "value": "RISK_OFF"
+        },
+        {
+          "name": "MARKET_STATES",
+          "value": "<NON_LITERAL>"
+        },
+        {
+          "name": "EMA_HOURS",
+          "value": 720
+        },
+        {
+          "name": "EMA_SLOPE_LOOKBACK_HOURS",
+          "value": 168
+        },
+        {
+          "name": "MOMENTUM_LOOKBACK_HOURS",
+          "value": 72
+        },
+        {
+          "name": "VOLATILITY_ATR_HOURS",
+          "value": 24
+        },
+        {
+          "name": "VOLATILITY_BASELINE_HOURS",
+          "value": 720
+        },
+        {
+          "name": "VOLATILITY_SHOCK_MULTIPLE",
+          "value": 1.5
+        },
+        {
+          "name": "MAX_HOLD_HOURS",
+          "value": 168
+        },
+        {
+          "name": "PROFIT_ARM_ATR",
+          "value": 4.0
+        },
+        {
+          "name": "SLOT_FRACTION_BY_STATE",
+          "value": "<NON_LITERAL>"
+        },
+        {
+          "name": "ADVERSE_GUARD_ATR_BY_STATE",
+          "value": "<NON_LITERAL>"
+        },
+        {
+          "name": "STAGNATION_HOURS_BY_STATE",
+          "value": "<NON_LITERAL>"
+        },
+        {
+          "name": "PROFIT_TRAIL_GAP_ATR_BY_STATE",
+          "value": "<NON_LITERAL>"
+        }
+      ],
+      "imports": [
+        "__future__",
+        "math",
+        "dataclasses",
+        "typing",
+        "pandas"
+      ]
+    },
+    "a4r1_test_source": {
+      "path": "C:\\SIRAJ\\Repositories\\spot-speculation-bot\\tests\\research\\test_a4r1_reversible_floor_replay.py",
+      "sha256": "044D8F0CB8676D65AC522EC38C07BCD37F11E706BB43FCA63FC190B056DAD520",
+      "functions": [
+        {
+          "name": "asset_frame",
+          "args": [
+            "overrides"
+          ],
+          "kwonlyargs": [
+            "hours"
+          ],
+          "lineno": 18,
+          "end_lineno": 37
+        },
+        {
+          "name": "state_frame",
+          "args": [
+            "states"
+          ],
+          "kwonlyargs": [
+            "hours"
+          ],
+          "lineno": 40,
+          "end_lineno": 48
+        },
+        {
+          "name": "event",
+          "args": [],
+          "kwonlyargs": [],
+          "lineno": 51,
+          "end_lineno": 63
+        },
+        {
+          "name": "run_control_and_treatment",
+          "args": [
+            "states"
+          ],
+          "kwonlyargs": [
+            "overrides"
+          ],
+          "lineno": 66,
+          "end_lineno": 88
+        },
+        {
+          "name": "test_exact_parity_when_reversible_carry_never_activates",
+          "args": [],
+          "kwonlyargs": [],
+          "lineno": 91,
+          "end_lineno": 117
+        },
+        {
+          "name": "test_improving_transition_can_preserve_trade_control_exits",
+          "args": [],
+          "kwonlyargs": [],
+          "lineno": 120,
+          "end_lineno": 147
+        },
+        {
+          "name": "test_patch_is_restored_after_replay",
+          "args": [],
+          "kwonlyargs": [],
+          "lineno": 150,
+          "end_lineno": 156
+        }
+      ],
+      "classes": [],
+      "constants": [],
+      "imports": [
+        "__future__",
+        "pandas",
+        "pandas.testing",
+        "spotbot.research",
+        "spotbot.research",
+        "spotbot.research.a4r1_reversible_floor_replay",
+        "spotbot.research.rd26_exit_architecture"
+      ]
+    }
+  },
+  "scientific_rationale": {
+    "a4r1_mechanism_verdict": "REJECT_A4R1_GLOBAL_REVERSIBLE_FLOOR_MECHANISM",
+    "broader_axis_verdict": "RETAIN_PRIMARY_AXIS_MECHANISM_SPECIFIC_FAILURE",
+    "C2_aggregate_growth_delta": -5.263248895714945e-06,
+    "C2_aggregate_net_return_delta": -0.0035062274121323567,
+    "C2_aggregate_max_drawdown_delta": 0.0069859296588430375,
+    "floor_relaxation_active": true,
+    "cross_context_heterogeneity": true,
+    "interpretation": "Global reversible floor relaxation is rejected. The next experiment must isolate selective/asymmetric protection so that winner retention can be tested without allowing broad loser rescue to contaminate portfolio drawdown. Context heterogeneity is retained as a supporting diagnostic, not a tunable selector."
+  },
+  "research_question": "Can selective, causal protection asymmetry retain long winners without broadly rescuing losers, thereby improving the frozen RD27 control's C2 2022-2023 growth and net return without worsening maximum drawdown?",
+  "frozen_control": {
+    "policy": "FULL_ADAPTIVE_LIFECYCLE_BRAIN",
+    "implementation": "EXACT_CURRENT_RD27_CONTROL",
+    "signal_events": "EXACT_SAME_LEDGER_AS_CONTROL_AND_TREATMENT",
+    "capital_router": "UNCHANGED",
+    "entry_timing": "UNCHANGED",
+    "cost_multiplier": 1.0,
+    "maximum_hold": "UNCHANGED_FROM_RD27",
+    "market_state_taxonomy": "UNCHANGED_FOR_PRIMARY_A10_TEST",
+    "note": "The supporting regime-taxonomy axis may be diagnosed from outputs but may not be modified in the same economic experiment. This isolates protection asymmetry."
+  },
+  "candidate_design": {
+    "primary_candidate_id": "A10_WINNER_RETENTION_SELECTIVE_PROTECTION_V1",
+    "primary_candidate_role": "SOLE_ELIGIBLE_PRIMARY_CANDIDATE",
+    "primary_candidate_semantics": {
+      "scope": "PROFIT_PROTECTION_RELAXATION_ONLY",
+      "loser_rescue": false,
+      "eligibility_information_cutoff": "PRIOR_COMPLETED_TRADE_AND_MARKET_STATE_ONLY",
+      "winner_definition": "PRIOR_COMPLETED_CLOSE_STRICTLY_ABOVE_ENTRY_PRICE; zero threshold is structural, not optimized",
+      "continuation_authority": "REUSE_A4R1_CAUSAL_CONTINUATION_AUTHORITY_WITHOUT_THRESHOLD_OR_PARAMETER_CHANGE",
+      "relaxation_transform": "REUSE_A4R1_RELAXATION_MECHANIC/MAGNITUDE; implementation must bind source-grounded exact semantics before any market replay",
+      "adverse_protection_floor": "MAY_NOT_BE_LOOSENED_BY_PRIMARY_CANDIDATE",
+      "profit_protection_floor": "MAY_RELAX ONLY WHEN WINNER_DEFINITION AND FROZEN CONTINUATION_AUTHORITY BOTH HOLD",
+      "same_bar_information": "PROHIBITED",
+      "future_information": false
+    },
+    "diagnostic_arm_id": "A10_LOSER_RESCUE_DIAGNOSTIC_V1",
+    "diagnostic_arm_role": "REPORT_ONLY_FALSIFICATION_ARM_CANNOT_RESCUE_PRIMARY",
+    "diagnostic_arm_semantics": {
+      "scope": "ADVERSE_PROTECTION_RELAXATION_ONLY",
+      "winner_retention": false,
+      "loser_definition": "PRIOR_COMPLETED_CLOSE_AT_OR_BELOW_ENTRY_PRICE",
+      "continuation_authority": "REUSE_A4R1_CAUSAL_CONTINUATION_AUTHORITY_WITHOUT THRESHOLD_OR_PARAMETER_CHANGE",
+      "relaxation_transform": "REUSE_A4R1_RELAXATION_MECHANIC/MAGNITUDE; source-grounded binding required before replay",
+      "profit_protection_floor": "MAY_NOT_BE_LOOSENED_BY_DIAGNOSTIC_ARM",
+      "same_bar_information": "PROHIBITED",
+      "future_information": false
+    },
+    "selection_after_outcomes": "PROHIBITED",
+    "diagnostic_arm_may_be_promoted_after_primary_failure": false
+  },
+  "evaluation_contract": {
+    "primary_universe": "C2",
+    "secondary_universes": [
+      "D2",
+      "E2"
+    ],
+    "secondary_universes_can_rescue_primary": false,
+    "periods": [
+      "ROBUSTNESS_2022",
+      "ROBUSTNESS_2023"
+    ],
+    "aggregate_window": "AGGREGATE_2022_2023",
+    "cost_multiplier": 1.0,
+    "primary_decision_window": "C2::AGGREGATE_2022_2023",
+    "primary_gate": {
+      "candidate_daily_geometric_growth_gt_control": true,
+      "candidate_net_return_gt_control": true,
+      "candidate_maximum_drawdown_lte_control": true,
+      "all_three_required": true
+    },
+    "north_star_daily_growth": 0.005,
+    "north_star_is_reporting_target_not_gate_override": true,
+    "required_reports": [
+      "C2_AGGREGATE_2022_2023",
+      "C2_ROBUSTNESS_2022",
+      "C2_ROBUSTNESS_2023",
+      "D2_AGGREGATE_2022_2023",
+      "D2_ROBUSTNESS_2022",
+      "D2_ROBUSTNESS_2023",
+      "E2_AGGREGATE_2022_2023",
+      "E2_ROBUSTNESS_2022",
+      "E2_ROBUSTNESS_2023",
+      "CONTROL_VS_PRIMARY_EXIT_REASON_ATTRIBUTION",
+      "CONTROL_VS_PRIMARY_REGIME_EXPOSURE_ATTRIBUTION",
+      "CONTROL_VS_PRIMARY_HOLDING_TIME_ATTRIBUTION",
+      "PRIMARY_VS_DIAGNOSTIC_DESCRIPTIVE_COMPARISON"
+    ]
+  },
+  "implementation_gate_before_any_replay": {
+    "stage": "FINAL_EXIT_BRAIN_ARCHITECTURE_RESET_A10R1_SELECTIVE_PROTECTION_ASYMMETRY_IMPLEMENTATION_AND_PRE_REPLAY_CONFORMANCE_V1",
+    "must_pass": [
+      "EXACT_A4R1_CONTINUATION_AUTHORITY_SOURCE_BINDING",
+      "EXACT_A4R1_RELAXATION_TRANSFORM_SOURCE_BINDING",
+      "EXACT_RD27_CONTROL_SIGNATURE_BINDING",
+      "EVENT_SCHEMA_BINDING",
+      "STATE_WARMUP_CONTRACT_BINDING",
+      "SYNTHETIC_WINNER_RETENTION_UNIT_TESTS",
+      "SYNTHETIC_LOSER_RESCUE_DIAGNOSTIC_UNIT_TESTS",
+      "CONTROL_PARITY_WHEN_SELECTIVE_RELAXATION_NEVER_ACTIVATES",
+      "NO_SAME_BAR_LOOKAHEAD",
+      "NO_2024_OR_2025_ACCESS",
+      "RUFF_AND_PYTEST_PASS"
+    ],
+    "market_replay_authorized": false,
+    "next_replay_requires_separate_governance_authority": true
+  },
+  "prohibitions": {
+    "parameter_grid_search": true,
+    "threshold_search": true,
+    "post_result_retuning": true,
+    "new_signal_parameter_changes": true,
+    "entry_rule_changes": true,
+    "capital_router_changes": true,
+    "cost_changes": true,
+    "max_hold_changes_in_same_experiment": true,
+    "market_state_taxonomy_changes_in_same_experiment": true,
+    "2024_access": true,
+    "2025_access": true,
+    "production_mutation": true,
+    "network_fetch": true
+  },
+  "axis_governance": {
+    "primary_research_axis_retained": "REGIME_DEPENDENT_CONTINUATION_AUTHORITY_AND_LIFECYCLE_HORIZON_ARCHITECTURE",
+    "active_research_emphasis": "SELECTIVE_PROTECTION_ASYMMETRY_LOSER_RESCUE_VS_LONG_WINNER_RETENTION",
+    "supporting_axis": "CAUSAL_REGIME_TAXONOMY_PERSISTENCE_AND_PHASE_STRUCTURE",
+    "legacy_168h_max_hold_ceiling_status": "NOT_PRIMARY_A10_TARGET_BECAUSE_A9_DID_NOT_SHOW_INCREASED_HOLDING_OR_MAX_HOLD_PRESSURE"
+  },
+  "success_next": "FINAL_EXIT_BRAIN_ARCHITECTURE_RESET_A10R2_SELECTIVE_PROTECTION_ASYMMETRY_CAUSAL_PRE2024_SHADOW_REPLAY_V1",
+  "failure_next": "FINAL_EXIT_BRAIN_ARCHITECTURE_RESET_A10R1_IMPLEMENTATION_CONFORMANCE_REPAIR_OR_AXIS_REVIEW_V1"
+}

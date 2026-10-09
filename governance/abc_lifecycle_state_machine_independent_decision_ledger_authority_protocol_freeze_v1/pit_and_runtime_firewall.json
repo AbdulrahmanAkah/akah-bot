@@ -1,0 +1,24 @@
+{
+  "forbidden_runtime_information": [
+    "future_price",
+    "future_return",
+    "future_exit_reason",
+    "future_holding_duration",
+    "realized_target_value",
+    "posthoc_threshold_label",
+    "pair_or_event_identity_as_policy_rule"
+  ],
+  "pit_gate": "FAIL_ROW_IF_ANY_RUNTIME_INPUT_TIMESTAMP_EXCEEDS_DECISION_TIME",
+  "schema_version": "akah-decision-ledger-pit-runtime-firewall-v1",
+  "target_only_fields": [
+    "exit_now_gross_cash",
+    "exit_now_net_cash",
+    "hold_step_mark_time_utc",
+    "hold_step_cost",
+    "pi0_return_action_after_hold_step",
+    "hold_one_step_then_pi0_net_cash",
+    "decision_value_y",
+    "target_sign"
+  ],
+  "unknown_field_policy": "DENY_BY_DEFAULT"
+}

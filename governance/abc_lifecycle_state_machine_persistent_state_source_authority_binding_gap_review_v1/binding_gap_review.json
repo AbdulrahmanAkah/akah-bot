@@ -1,0 +1,54 @@
+{
+  "schema_version": "abc-persistent-state-source-authority-binding-gap-review-v1",
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_SOURCE_AUTHORITY_BINDING_GAP_REVIEW_V1",
+  "status": "PASS_BINDING_GAP_REVIEW_COMPLETE",
+  "reviewed_unresolved_binding_gap_count": 16,
+  "root_cause": {
+    "missing_component_counts": {
+      "prior_trace_reconstruction_proven": 16
+    },
+    "implementation_binding_components_observed": [],
+    "authority_critical_components_observed_as_missing": [
+      "prior_trace_reconstruction_proven"
+    ],
+    "unknown_components": []
+  },
+  "authority_reconciliation": {
+    "raw_root_exists": true,
+    "membership_exists": true,
+    "parquet_schema_roles_proven": true,
+    "semantic_amendment_closed": true,
+    "prior_trace_reconstruction_proven": false,
+    "group_semantic_authority": true
+  },
+  "authority_critical_missing_after_reconciliation": [
+    "prior_trace_reconstruction_proven"
+  ],
+  "architecture_decision": {
+    "causal_feature_reconstruction_protocol_work_authorized": false,
+    "new_deterministic_reconstruction_implementation_may_be_preregistered": false,
+    "legacy_implementation_binding_required": null,
+    "persistent_state_definition_authorized": false,
+    "runtime_state_machine_authorized": false,
+    "adaptive_logic_authorized": false,
+    "exit_action_authorized": false,
+    "exit_arbiter_authorized": false
+  },
+  "routing_decision": {
+    "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_PERSISTENT_STATE_SOURCE_AUTHORITY_TARGETED_RECOVERY_V1",
+    "reason": "ONE_OR_MORE_AUTHORITY_CRITICAL_OR_UNKNOWN_COMPONENTS_REMAIN_UNPROVEN"
+  },
+  "constraints": {
+    "market_data_rows_accessed": false,
+    "market_data_values_accessed": false,
+    "economic_outcomes_read": false,
+    "pnl_columns_read": false,
+    "observable_values_materialized": false,
+    "reconstruction_implemented": false,
+    "threshold_selected": false,
+    "persistence_horizon_selected": false,
+    "persistent_state_defined": false,
+    "2024_accessed": false,
+    "2025_accessed": false
+  }
+}

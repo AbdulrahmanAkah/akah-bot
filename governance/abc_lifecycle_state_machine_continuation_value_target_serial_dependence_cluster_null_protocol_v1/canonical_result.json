@@ -1,0 +1,87 @@
+{
+  "2022_2023_fresh_holdout": false,
+  "2024_access": false,
+  "dependence_lags_steps": [
+    1,
+    2,
+    3,
+    6,
+    12
+  ],
+  "feature_search": false,
+  "fixed_target": "existing exact EXIT_NOW vs HOLD_ONE_STEP_THEN_PI0 continuation advantage",
+  "model_family": "existing fixed equal-weight empirical-Bayes signature shrinkage heads only",
+  "model_family_search": false,
+  "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_CONTINUATION_VALUE_TARGET_SERIAL_DEPENDENCE_DECOMPOSITION_V1",
+  "null_block": "primary year x entry_half x exact_path_row_count; deterministic fallback year x exact_path_row_count; remaining singleton blocks excluded from null fit",
+  "null_thresholds": {
+    "max_abs_value_spearman": 0.1,
+    "max_auc_deviation_from_half": 0.08,
+    "max_path_persistence_abs_delta": 0.12,
+    "min_train_coverage": 0.7
+  },
+  "path_preserving_nulls": [
+    "TRADE_PATH_ROTATION_A",
+    "TRADE_PATH_ROTATION_B"
+  ],
+  "real_head_results_are_diagnostic_not_permission_gate_for_sequence_reopen": true,
+  "runtime_threshold_search": false,
+  "sampling_schemes": [
+    "ALL_ROWS",
+    "HASHED_ONE_ROW_PER_TRADE",
+    "SPACED_8H",
+    "SPACED_12H",
+    "SPACED_24H",
+    "NONOVERLAPPING_FUTURE_WINDOWS_DIAGNOSTIC_ONLY"
+  ],
+  "schema_version": "akah-rev595-target-dependence-cluster-validation-maximum-evidence-mega-v1-protocol",
+  "sequence_reopen_gate": "purge_integrity AND both path-preserving nulls clean in all folds",
+  "split_contract": {
+    "embargo_hours": 168,
+    "purge": "remove train row if max(exit_now_time,hold_then_pi0_time)>=test_start",
+    "trade_cluster_key": "pair+entry_time",
+    "trade_disjoint": true
+  },
+  "status": "PASS_PROTOCOL_FROZEN",
+  "target_redesign": false,
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_CONTINUATION_VALUE_TARGET_SERIAL_DEPENDENCE_CLUSTER_NULL_PROTOCOL_FREEZE_V1",
+  "validation_folds": [
+    {
+      "freshness": "ROLLING_DEVELOPMENT",
+      "name": "DEV_2019_TO_2020",
+      "test_year": 2020,
+      "train_years": [
+        2019
+      ]
+    },
+    {
+      "freshness": "ROLLING_DEVELOPMENT",
+      "name": "DEV_2019_2020_TO_2021",
+      "test_year": 2021,
+      "train_years": [
+        2019,
+        2020
+      ]
+    },
+    {
+      "freshness": "EXPOSED_HISTORICAL_FORWARD_CONFIRMATION",
+      "name": "EXPOSED_2019_2021_TO_2022",
+      "test_year": 2022,
+      "train_years": [
+        2019,
+        2020,
+        2021
+      ]
+    },
+    {
+      "freshness": "EXPOSED_HISTORICAL_FORWARD_CONFIRMATION",
+      "name": "EXPOSED_2019_2021_TO_2023",
+      "test_year": 2023,
+      "train_years": [
+        2019,
+        2020,
+        2021
+      ]
+    }
+  ]
+}

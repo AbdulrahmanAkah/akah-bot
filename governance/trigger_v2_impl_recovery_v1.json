@@ -1,0 +1,68 @@
+{
+  "firewall": {
+    "actual_exit_authority": false,
+    "economics": false,
+    "market_data": false,
+    "outcome_fields": false,
+    "production_activation": false,
+    "threshold_tuning": false
+  },
+  "protected_sources_after": {
+    "src/spotbot/research/rd27_async_exit_candidate_shadow.py": "45F98E6F8A4B99387FA728A79BCD34D9830FB5C762385E7FBC4ABCF5F8382D56",
+    "src/spotbot/research/rd27_async_memory_shadow.py": "D7AF674EEEEDE4223A1AFF2ED5734AB5B4A9CC8D1D0327325CE287393AC18B04",
+    "src/spotbot/research/rd27_lifecycle_replay.py": "B0F138D7ED4A60EB36F742767B9B514DDE6B60BC88375A1C2ED823ADBDF4DC4B",
+    "src/spotbot/research/rd27_observable_later_trigger_predicate.py": "E6084BEBE118C0CFDEB403B5CF5F641814F1E7BDFE6E1314082E35AFB56B42DA",
+    "src/spotbot/research/rd27_observable_memory_predicate.py": "5F25948CB5AF5B34E39033FA0A149B74567106E583097B1C11090668A0565CAE"
+  },
+  "protected_sources_before": {
+    "src/spotbot/research/rd27_async_exit_candidate_shadow.py": "45F98E6F8A4B99387FA728A79BCD34D9830FB5C762385E7FBC4ABCF5F8382D56",
+    "src/spotbot/research/rd27_async_memory_shadow.py": "D7AF674EEEEDE4223A1AFF2ED5734AB5B4A9CC8D1D0327325CE287393AC18B04",
+    "src/spotbot/research/rd27_lifecycle_replay.py": "B0F138D7ED4A60EB36F742767B9B514DDE6B60BC88375A1C2ED823ADBDF4DC4B",
+    "src/spotbot/research/rd27_observable_later_trigger_predicate.py": "E6084BEBE118C0CFDEB403B5CF5F641814F1E7BDFE6E1314082E35AFB56B42DA",
+    "src/spotbot/research/rd27_observable_memory_predicate.py": "5F25948CB5AF5B34E39033FA0A149B74567106E583097B1C11090668A0565CAE"
+  },
+  "recovery": {
+    "fixture_corrections_only": true,
+    "formula_changed": false,
+    "module": "src/spotbot/research/rd27_observable_later_trigger_v2.py",
+    "module_sha256": "3CC049B5E38851A13B73CC7C0B36128EF906BE6A9AAFB97CCED85C36CCD9CE94",
+    "selected_trigger_id": "FAILED_BREAKOUT_REFERENCE",
+    "test": "tests/research/test_rd27_observable_later_trigger_v2.py",
+    "test_sha256": "BC8D301EDDE62AA3BC1C17D4A999155818DC4A91104F87C0B304F2FF6C3F621B"
+  },
+  "root_cause": {
+    "class": "TEST_FIXTURE_CONSTRUCTION_ERROR",
+    "details": [
+      "synthetic open=100 was outside [low, high] for multiple bars",
+      "two spanning-entry fixtures used 8H snapshots although adapter requires exact 4H"
+    ],
+    "predicate_logic_implicated": false
+  },
+  "status": "PASS",
+  "task_id": "CAUSAL_EXIT_BRAIN_LATER_TRIGGER_V2_IMPLEMENTATION_RECOVERY_V1",
+  "validation": {
+    "protected_source_parity": "PASS",
+    "ruff": "PASS",
+    "targeted_pytest": "PASS",
+    "targeted_tail": [
+      "........................................................................ [ 18%]",
+      "........................................................................ [ 36%]",
+      "........................................................................ [ 54%]",
+      "........................................................................ [ 72%]",
+      "........................................................................ [ 90%]",
+      "........................................                                 [100%]",
+      "400 passed in 35.73s"
+    ],
+    "wide_rd27_pytest": "PASS",
+    "wide_tail": [
+      "........................................................................ [ 15%]",
+      "........................................................................ [ 30%]",
+      "........................................................................ [ 46%]",
+      "........................................................................ [ 61%]",
+      "........................................................................ [ 76%]",
+      "........................................................................ [ 92%]",
+      ".....................................                                    [100%]",
+      "469 passed, 1919 deselected in 44.31s"
+    ]
+  }
+}

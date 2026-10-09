@@ -1,0 +1,26 @@
+{
+  "authority_id": "AKAH_BOT_FROZEN_MEMORY_V2_SHADOW_SEMANTICS_V1",
+  "four_hour_construction": {
+    "alignment": "UTC fixed 4h close boundaries",
+    "bar_open_time": "bar_close_time - 4h",
+    "eligibility": "bar_open_time >= entry_time",
+    "entry_spanning_4h_bar_eligible": false,
+    "required_component_bars": 4,
+    "required_contiguous_1h_closes": true
+  },
+  "memory": {
+    "evaluation_order": "evaluate current close before adding current bar high",
+    "first_occurrence_only": true,
+    "predicate": "completed_close > max(entry_price, prior eligible post-entry completed-bar highs)"
+  },
+  "native_exit_mutation": false,
+  "native_exit_relation": "event_time <= native_exit_time counts as observable while native position remains available for the native decision timestamp",
+  "one_hour_timestamp_semantics": "BAR_CLOSE_TIME_UTC",
+  "status": "FROZEN",
+  "v2": {
+    "first_occurrence_only": true,
+    "predicate": "first strictly later completed 4h close < frozen Memory reference",
+    "reference": "structural reference frozen at first Memory occurrence",
+    "selected_candidate": "FAILED_BREAKOUT_REFERENCE"
+  }
+}

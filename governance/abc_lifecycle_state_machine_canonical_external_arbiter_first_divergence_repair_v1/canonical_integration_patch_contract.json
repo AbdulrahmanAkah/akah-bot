@@ -1,0 +1,20 @@
+{
+  "arbiter_controls": [
+    "entry_admission",
+    "same_batch_priority",
+    "exit_schedule"
+  ],
+  "canonical_controls": [
+    "raw_open_price",
+    "fee_application",
+    "hourly_marks",
+    "sealed_cutoff"
+  ],
+  "must_not": "drop/reorder canonical event rows to emulate admission",
+  "required_new_surface": "external_trade_arbiter_schedule",
+  "verification_order": [
+    "first_divergence_prefix",
+    "2022",
+    "2023"
+  ]
+}

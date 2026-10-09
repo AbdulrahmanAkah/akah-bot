@@ -1,0 +1,40 @@
+{
+  "2024_access": false,
+  "asset_return_reference": "ACCESSIBLE_PAIRS_LOADED_BY_CANONICAL_YEAR_INPUTS_NOT_FULL_EXCHANGE_SURVIVOR_BIAS_FREE_BENCHMARK",
+  "bottleneck_flags_descriptive_only": true,
+  "cross_year_signal_policy": "RIGHT_CENSOR_IF_168H_WINDOW_CROSSES_YEAR_END",
+  "currency_selection_authority": "CANONICAL_RUNNER_MEMBERSHIP_SOURCE",
+  "fixed_horizon_semantics": "FIVE_SLOTS_SAME_PAIR_GUARD_18PCT_FIXED_SLOT_APPROX_NO_THRESHOLD_SELECTION",
+  "funnel": [
+    "OBSERVED_MEMBERSHIP_CANDIDATES",
+    "SELECTED_EFFECTIVE_MEMBERS",
+    "ENTRY_EVENTS",
+    "CONTROL_TRADES",
+    "CAPITAL_DEPLOYMENT",
+    "REALIZED_PNL"
+  ],
+  "initial_equity": 100000.0,
+  "manual_coin_preselection": false,
+  "maximum_gross_exposure": 0.9,
+  "maximum_positions": 5,
+  "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_DYNAMIC_UNIVERSE_AND_CURRENCY_SELECTION_BREADTH_AUDIT_V1",
+  "production_change": false,
+  "return_ceiling_layers": {
+    "accepted_trade_oracle": "FROZEN_HOURLY_OPEN_HINDSIGHT_ORACLE_EXISTING_CACHE",
+    "all_signal_oracle": "INDEPENDENT_168H_BEST_HOURLY_OPEN_UPPER_SUM_IGNORES_CAPACITY",
+    "fixed_horizon_capacity_diagnostics": [
+      24,
+      72,
+      168
+    ]
+  },
+  "schema_version": "abc-market-capture-return-ceiling-dynamic-universe-protocol-v1",
+  "target_slot_fraction": 0.18,
+  "years": [
+    2019,
+    2020,
+    2021,
+    2022,
+    2023
+  ]
+}

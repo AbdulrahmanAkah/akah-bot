@@ -1,0 +1,35 @@
+{
+  "2024_access": false,
+  "canonical_decision_step_hours": 4,
+  "frozen_governor": "BINARY_VOL_CONTEXT_ONLY",
+  "identity_key": [
+    "pair",
+    "entry_time"
+  ],
+  "max_hold_hours": 168,
+  "model_change": false,
+  "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_CONTINUATION_VALUE_DEVELOPMENT_EXPANSION_MEGA_V1",
+  "occupancy_claim": false,
+  "population_claim": "CURRENT_DYNAMIC_TOP6_TRADE_IDENTITY_WITH_FROZEN_BINARY_VOL_CONTEXT;NOT_BINARY_VOL_POLICY_OCCUPANCY",
+  "production_changed": false,
+  "schema_version": "akah-rev558-continuation-development-support-repair-and-expansion-mega-v1r1-recovery-population-contract",
+  "selection": [
+    "cost_multiplier==1.0",
+    "membership_rank<=6",
+    "year in 2019..2023"
+  ],
+  "source_control": "data/research/abc_exit_primitives_2019_2023_v1/control-trades.csv",
+  "status": "PASS_FROZEN_RESEARCH_POPULATION_AUTHORITY",
+  "strict_execution_reason": "The strict ledger is temporally incomplete for the development years and is not a BINARY_VOL occupancy authority.",
+  "strict_execution_trades_role": "OVERLAP_DIAGNOSTIC_ONLY; MUST_NOT_NARROW_2019_2023_RESEARCH_POPULATION",
+  "threshold_search": false,
+  "two_sided_sidecar_path": "governance/abc_lifecycle_state_machine_two_sided_one_step_execution_surface_v1/two_sided_research_sidecar_v1.py",
+  "two_sided_sidecar_sha256": "56139B4FBEAF789B03368BBD73ED667C3C876527A33E6BDFE470778EC6B03FD0",
+  "year_counts": {
+    "2019": 285,
+    "2020": 399,
+    "2021": 405,
+    "2022": 325,
+    "2023": 399
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "2024_access": false,
+  "development_years": [
+    2019,
+    2020,
+    2021
+  ],
+  "entry_policy_ids": [
+    "E_ALL",
+    "E_DROP10_MFE5",
+    "E_DROP15_MFE5",
+    "E_DROP20_MFE5"
+  ],
+  "entry_thresholds": {
+    "q10": 0.2629725708266176,
+    "q15": 0.2876239336670193,
+    "q20": 0.30222745607687973
+  },
+  "factorial_attribution_policies": [
+    "E_ALL+W_NONE",
+    "E_DROP20_MFE5+W_NONE",
+    "E_ALL+W_EXIT_Q50",
+    "E_DROP20_MFE5+W_EXIT_Q50"
+  ],
+  "factorial_decomposition": [
+    "entry_only_delta",
+    "winner_only_delta",
+    "raw_interaction_delta",
+    "entry_shapley_contribution",
+    "winner_shapley_contribution"
+  ],
+  "forward_use": "TEMPORAL_STABILITY_EVIDENCE_NOT_SELECTION",
+  "forward_years": [
+    2022,
+    2023
+  ],
+  "grid": [
+    "E_ALL+W_NONE",
+    "E_ALL+W_EXIT_Q25",
+    "E_ALL+W_EXIT_Q33",
+    "E_ALL+W_EXIT_Q50",
+    "E_DROP10_MFE5+W_NONE",
+    "E_DROP10_MFE5+W_EXIT_Q25",
+    "E_DROP10_MFE5+W_EXIT_Q33",
+    "E_DROP10_MFE5+W_EXIT_Q50",
+    "E_DROP15_MFE5+W_NONE",
+    "E_DROP15_MFE5+W_EXIT_Q25",
+    "E_DROP15_MFE5+W_EXIT_Q33",
+    "E_DROP15_MFE5+W_EXIT_Q50",
+    "E_DROP20_MFE5+W_NONE",
+    "E_DROP20_MFE5+W_EXIT_Q25",
+    "E_DROP20_MFE5+W_EXIT_Q33",
+    "E_DROP20_MFE5+W_EXIT_Q50"
+  ],
+  "incumbent_policy_id": "E_DROP20_MFE5+W_EXIT_Q50",
+  "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_2023_LOSS_ATTRIBUTION_POLICY_RESCUE_DEVELOPMENT_GRID_V1",
+  "policy_promotion_status": "RESEARCH_ONLY_UNTIL_PRISTINE_HOLDOUT",
+  "schema_version": "akah-policy-rescue-grid-spec-v1",
+  "selection_gate": {
+    "all_three_development_years_nonnegative": true,
+    "development_delta_sum_positive": true,
+    "selection_order": [
+      "maximize_worst_year_delta",
+      "maximize_dev_delta_sum",
+      "minimize_candidate_capital_notional_hours"
+    ]
+  },
+  "trade_level_classes": [
+    "CONTROL_ONLY_REMOVED_OR_DISPLACED",
+    "CANDIDATE_ONLY_REDEPLOYED_OR_NEW_PATH",
+    "BOTH_DIFFERENT_EXIT",
+    "BOTH_SAME_EXIT",
+    "BOTH_PRESENT"
+  ],
+  "winner_policy_ids": [
+    "W_NONE",
+    "W_EXIT_Q25",
+    "W_EXIT_Q33",
+    "W_EXIT_Q50"
+  ]
+}

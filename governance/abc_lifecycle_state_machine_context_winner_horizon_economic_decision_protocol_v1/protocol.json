@@ -1,0 +1,38 @@
+{
+  "2024_access": false,
+  "development_stability_gate": "SUM_DELTA_PNL_GT_0_AND_AT_LEAST_2_OF_3_YEARS_NONNEGATIVE",
+  "development_years": [
+    2019,
+    2020,
+    2021
+  ],
+  "entry_policies": [
+    "E_ALL",
+    "E_DROP20_MFE5",
+    "E_DROP40_MFE5",
+    "E_DROP20_MFE10",
+    "E_DROP20_MFE5_ADVERSE",
+    "E_DROP40_MFE5_ADVERSE",
+    "E_DUAL_BOTTOM20"
+  ],
+  "entry_universe_requirement": "ALL_ENTRY_EVENT_ROWS_SCORED; UNSCORED_REDEPLOYMENT_FAILS_CLOSED",
+  "forward_years": [
+    2022,
+    2023
+  ],
+  "horizon_candidate_hours": 240,
+  "horizon_patch": "OPTIONAL_NATIVE_HOLDING_HOURS_DEFAULT_168_ONLY_IF_UNIQUE_AST_168_BODY_LITERAL_AND_DEFAULT_PARITY",
+  "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_CONTEXT_WINNER_HORIZON_ACTIONABLE_WINNER_MODEL_V1",
+  "production_change": false,
+  "schema_version": "abc-context-winner-horizon-economic-decision-protocol-v1",
+  "winner_action_time": "FIRST_COMPLETED_4H_DECISION_STRICTLY_AFTER_EVENT",
+  "winner_execution": "DECISION_PLUS_1H_STRICTLY_BEFORE_NATIVE_EXIT",
+  "winner_policies": [
+    "W_NONE",
+    "W_EXIT_Q25",
+    "W_EXIT_Q33",
+    "W_EXIT_Q50",
+    "W_EXIT_Q25_ADVERSE",
+    "W_EXIT_Q50_ADVERSE"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "rev214_authority": {
+    "path": "governance/reconstructed_native_baseline_current_rd26_producer_pre2023_reconstruction_input_authority_v1/mixed_signal_true_writer_and_callgraph.json",
+    "sha256": "16FA3896AD1D69B9FCFB20FBBBB62CE115E96FB3FF2F80DA767412629BD31718"
+  },
+  "status": "PASS",
+  "target_output": "data/research/rd26_p1_runtime/signal-events-2022-2023.csv",
+  "true_writer_count": 1,
+  "writer": {
+    "module": "scripts/research/run_rd26_exit_architecture.py",
+    "module_sha256": "9C096C6E7C4784D9B91A7EFC55FA85F46755B2D850B78E7A5E90980294DC9ACE",
+    "receiver_expr": "events",
+    "writer_call": "events.to_csv(\n        output / \"signal-events-2022-2023.csv\",\n        index=False,\n        lineterminator=\"\\n\",\n    )",
+    "writer_call_line": 650,
+    "writer_function": "main",
+    "writer_function_end_line": 722,
+    "writer_function_line": 562
+  }
+}

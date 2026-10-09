@@ -1,0 +1,18 @@
+{
+  "schema_version": "akah-p38-technical-fail-closed-v1",
+  "task_id": "FINAL_EXIT_BRAIN_PRE_2024_ARCHITECTURE_P38_TRANSITION_ADMISSION_ONLY_2023_TEMPORAL_REPLICATION_EXECUTION_V1_RETRY_V1_RETRY_V1",
+  "status": "TECHNICAL_OR_PARITY_FAILURE_FAIL_CLOSED_NO_SCIENTIFIC_CONCLUSION",
+  "error_type": "RuntimeError",
+  "error": "P38_V1R9_2023_RESULT_RESOLUTION_FAILED valid_count=0 candidates=['C:\\\\Users\\\\abdul\\\\Downloads\\\\akah_p38_preflight_fx1xtelx\\\\observer_output_2023\\\\EAA_EXIT_BRAIN_P19_2022_TRANSITION_ADMISSION_COMPONENT_ABLATION_CANONICAL_RESULT_20260919_150424.json']",
+  "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\abdul\\AppData\\Local\\Temp\\akah_p38_v1r9_21cd13d8d0cd40a4b5962b193590752a\\p38_v1r9.py\", line 1831, in main\n    result, source_result_path, execution_audit, internal = execute_2023(\n                                                            ~~~~~~~~~~~~^\n        exec_path, prep_root, cli_binding, hist_repo, source_audit\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"C:\\Users\\abdul\\AppData\\Local\\Temp\\akah_p38_v1r9_21cd13d8d0cd40a4b5962b193590752a\\p38_v1r9.py\", line 1478, in execute_2023\n    die(\n    ~~~^\n        \"P38_V1R9_2023_RESULT_RESOLUTION_FAILED \"\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n        f\"valid_count={len(valid)} candidates={[str(x[0]) for x in json_candidates]}\"\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"C:\\Users\\abdul\\AppData\\Local\\Temp\\akah_p38_v1r9_21cd13d8d0cd40a4b5962b193590752a\\p38_v1r9.py\", line 131, in die\n    raise RuntimeError(msg)\nRuntimeError: P38_V1R9_2023_RESULT_RESOLUTION_FAILED valid_count=0 candidates=['C:\\\\Users\\\\abdul\\\\Downloads\\\\akah_p38_preflight_fx1xtelx\\\\observer_output_2023\\\\EAA_EXIT_BRAIN_P19_2022_TRANSITION_ADMISSION_COMPONENT_ABLATION_CANONICAL_RESULT_20260919_150424.json']\n",
+  "governance": {
+    "2023_new_raw_or_replay_accessed": true,
+    "2024_used_as_fresh_holdout": false,
+    "2024_used_to_define_new_runtime_rule": false,
+    "2025_accessed": false,
+    "lookahead_or_future_information_used": false,
+    "pair_or_event_identity_used_as_runtime_rule": false,
+    "posthoc_outcome_threshold_search_used": false,
+    "production_changed": false
+  }
+}

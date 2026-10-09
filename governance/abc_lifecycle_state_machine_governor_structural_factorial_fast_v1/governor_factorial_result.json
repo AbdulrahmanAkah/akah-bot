@@ -1,0 +1,87 @@
+{
+  "2024_access": false,
+  "arms": [
+    "ORIGINAL_FROZEN_REFERENCE",
+    "BINARY_VOL",
+    "BINARY_NO_VOL",
+    "VOL_ONLY"
+  ],
+  "candidate_rows": [
+    {
+      "continuous_mtm_max_drawdown": -0.19079247606398098,
+      "development_gate_pass": true,
+      "excess_log_x1": 0.6471289382329076,
+      "excess_log_x2": 0.6198880926269715,
+      "excess_pass": true,
+      "final_wealth_x1": 3.6589449042130644,
+      "final_wealth_x2": 2.9794982149046993,
+      "risk_mode": "BINARY_VOL",
+      "risk_pass": true,
+      "worst_annual_return": -0.07644949091360065
+    },
+    {
+      "continuous_mtm_max_drawdown": -0.4027348330702034,
+      "development_gate_pass": false,
+      "excess_log_x1": 1.1637309553748618,
+      "excess_log_x2": 1.1025950664455753,
+      "excess_pass": true,
+      "final_wealth_x1": 11.452797397397804,
+      "final_wealth_x2": 7.621844166816302,
+      "risk_mode": "BINARY_NO_VOL",
+      "risk_pass": false,
+      "worst_annual_return": -0.17043531175114102
+    },
+    {
+      "continuous_mtm_max_drawdown": -0.2915143816946739,
+      "development_gate_pass": false,
+      "excess_log_x1": 0.7593221279272568,
+      "excess_log_x2": 0.7347333608953939,
+      "excess_pass": true,
+      "final_wealth_x1": 3.1525335687482365,
+      "final_wealth_x2": 2.3870194276408307,
+      "risk_mode": "VOL_ONLY",
+      "risk_pass": false,
+      "worst_annual_return": -0.18989376648899425
+    }
+  ],
+  "effective_selected_governor": "BINARY_VOL",
+  "fallback_used": false,
+  "known_history_development_selection": true,
+  "new_arms_only_replayed": true,
+  "original_frozen_reference": {
+    "annual_returns_json": "{\"2019\": -0.042879509231415, \"2020\": 0.4863836790398654, \"2021\": 0.6153568400262777, \"2022\": -0.0158851966250386, \"2023\": 0.3927458840983742}",
+    "benchmark_final_wealth_x1": 2.08903329104794,
+    "benchmark_final_wealth_x2": 1.8214370795356745,
+    "benchmark_mean_coverage": 1.0,
+    "candidate_compounded_return_x1": 2.149804980361966,
+    "candidate_compounded_return_x2": 1.6992290306336848,
+    "candidate_final_wealth_x1": 3.149804980361966,
+    "candidate_final_wealth_x2": 2.699229030633685,
+    "canonical_parity_pass": false,
+    "continuous_mtm_max_drawdown": -0.1331370577012619,
+    "excess_log_wealth_x1": 0.4106391211212068,
+    "excess_log_wealth_x2": 0.3933403943691895,
+    "research_certificate_pass": false,
+    "research_economic_gate_pass": true,
+    "risk_gate_pass": true,
+    "risk_mode": "FROZEN_GOVERNOR",
+    "technical_universe_pass": true,
+    "universe": "CURRENT",
+    "worst_annual_return": -0.042879509231415
+  },
+  "schema_version": "akah-governor-structural-factorial-fast-v1",
+  "selected_development_candidate": {
+    "continuous_mtm_max_drawdown": -0.19079247606398098,
+    "development_gate_pass": true,
+    "excess_log_x1": 0.6471289382329076,
+    "excess_log_x2": 0.6198880926269715,
+    "excess_pass": true,
+    "final_wealth_x1": 3.6589449042130644,
+    "final_wealth_x2": 2.9794982149046993,
+    "risk_mode": "BINARY_VOL",
+    "risk_pass": true,
+    "worst_annual_return": -0.07644949091360065
+  },
+  "selection_rule": "HIGHEST_2X_COST_EXCESS_LOG_WEALTH_AMONG_PREDECLARED_RISK_AND_EXCESS_PASSERS",
+  "threshold_search": false
+}

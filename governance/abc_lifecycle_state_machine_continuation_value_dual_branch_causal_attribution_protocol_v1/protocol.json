@@ -1,0 +1,77 @@
+{
+  "DAMAGE_AGE_status": "PRIOR_INDEPENDENT_DIRECTIONAL_FAMILY_RECHECK_REQUIRED",
+  "classification_semantics": "MUTUALLY_EXCLUSIVE_STRUCTURAL_CLASS_NOT_CLAIMED_AS_FIRST_TEMPORAL_CAUSE",
+  "clean_branch_state_views": [
+    "CURRENT_STATE",
+    "NEXT_STATE_FOR_RESIDUAL_ONLY_WHEN_CAUSALLY_VALID"
+  ],
+  "clean_branch_targets": [
+    "continuation_advantage",
+    "__immediate_bridge_advantage",
+    "__downstream_residual"
+  ],
+  "counterfactual_replay": false,
+  "coverage_gate": 0.5,
+  "development_period": "2019_2021",
+  "feature_search": false,
+  "fixed_signature_families": {
+    "CORE_AGE": [
+      "base_state",
+      "native_market_state_context",
+      "memory_seen",
+      "__age_bin"
+    ],
+    "DAMAGE_AGE": [
+      "__sign_progress_margin_delta_from_prev",
+      "__sign_structural_break_margin_delta_from_prev",
+      "__sign_volatility_damage_margin_delta_from_prev",
+      "__age_bin"
+    ],
+    "EVIDENCE_AGE": [
+      "a_condition_now",
+      "b_condition_now",
+      "memory_seen",
+      "__age_bin"
+    ],
+    "SIGNAL_MARKET": [
+      "A_signal",
+      "B_signal",
+      "C_signal",
+      "native_market_state_context"
+    ]
+  },
+  "forward_periods": [
+    2022,
+    2023
+  ],
+  "hazard_gates": {
+    "auc_gt": 0.55,
+    "both_forward_years_required": true,
+    "brier_skill_gt": 0.0,
+    "high_minus_low_event_rate_gt": 0.0
+  },
+  "invalid_branch_structural_classes": [
+    "EARLY_HOLD_TERMINATION",
+    "NO_NEXT_STATE_AVAILABLE",
+    "LINKED_MANDATORY_AND_SUPPRESSION",
+    "LINKED_MANDATORY_ONLY",
+    "LINKED_SUPPRESSION_ONLY",
+    "LINKED_AT_NEXT_BOUNDARY_NO_INTERVENTION",
+    "LINKED_OTHER_INVALID"
+  ],
+  "model_family_search": false,
+  "model_training": false,
+  "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_CONTINUATION_VALUE_CLEAN_BELLMAN_COMPONENT_ATTRIBUTION_V1",
+  "population": {
+    "clean_bellman_rows": 3687,
+    "invalid_branch_rows": 8603,
+    "target_rows": 12290
+  },
+  "raw_access": false,
+  "runtime_rule_selection": false,
+  "schema_version": "akah-rev573-dual-branch-continuation-maximum-evidence-mega-v1-protocol",
+  "signature_min_train_rows": 50,
+  "status": "PASS_PROTOCOL_FROZEN",
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_CONTINUATION_VALUE_DUAL_BRANCH_CAUSAL_ATTRIBUTION_PROTOCOL_FREEZE_V1",
+  "threshold_search": false
+}

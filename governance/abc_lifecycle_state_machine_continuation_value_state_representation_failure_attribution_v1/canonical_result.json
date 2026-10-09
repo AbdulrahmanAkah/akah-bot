@@ -1,0 +1,262 @@
+{
+  "2024_access": false,
+  "any_fixed_signature_two_year_directional_pass": true,
+  "feature_search": false,
+  "interpretation": "AT_LEAST_ONE_FIXED_SIGNATURE_FAMILY_HAS_DIRECTIONAL_FORWARD_EVIDENCE_BUT_NO_RUNTIME_SELECTION_AUTHORIZED",
+  "join_audit": {
+    "available_state_columns": [
+      "base_state",
+      "native_market_state_context",
+      "memory_now",
+      "memory_seen",
+      "C_signal",
+      "A_signal",
+      "B_signal",
+      "a_condition_now",
+      "b_condition_now",
+      "a_condition_recovered_now",
+      "b_condition_recovered_now",
+      "a_condition_true_run_length",
+      "b_condition_true_run_length",
+      "hours_since_entry",
+      "hours_since_first_memory_or_null",
+      "progress_margin_delta_from_prev",
+      "structural_break_margin_delta_from_prev",
+      "volatility_damage_margin_delta_from_prev",
+      "a_margin_delta_from_prev",
+      "b_margin_delta_from_prev",
+      "close_delta_from_prev_decision",
+      "R_delta_from_prev_decision",
+      "atr22_current"
+    ],
+    "coverage": 1.0,
+    "grid_source_labels": {
+      "A_signal": [
+        "A_signal"
+      ],
+      "B_signal": [
+        "B_signal"
+      ],
+      "C_signal": [
+        "C_signal"
+      ],
+      "R_delta_from_prev_decision": [
+        "R_delta_from_prev_decision"
+      ],
+      "a_condition_now": [
+        "a_condition_now"
+      ],
+      "a_condition_recovered_now": [
+        "a_condition_recovered_now"
+      ],
+      "a_condition_true_run_length": [
+        "a_condition_true_run_length"
+      ],
+      "a_margin_delta_from_prev": [
+        "a_margin_delta_from_prev"
+      ],
+      "atr22_current": [
+        "atr22_current"
+      ],
+      "b_condition_now": [
+        "b_condition_now"
+      ],
+      "b_condition_recovered_now": [
+        "b_condition_recovered_now"
+      ],
+      "b_condition_true_run_length": [
+        "b_condition_true_run_length"
+      ],
+      "b_margin_delta_from_prev": [
+        "b_margin_delta_from_prev"
+      ],
+      "base_state": [
+        "base_state"
+      ],
+      "close_delta_from_prev_decision": [
+        "close_delta_from_prev_decision"
+      ],
+      "hours_since_entry": [
+        "hours_since_entry"
+      ],
+      "hours_since_first_memory_or_null": [
+        "hours_since_first_memory_or_null"
+      ],
+      "memory_now": [
+        "memory_now"
+      ],
+      "memory_seen": [
+        "memory_seen"
+      ],
+      "native_market_state_context": [
+        "native_market_state_context"
+      ],
+      "progress_margin_delta_from_prev": [
+        "progress_margin_delta_from_prev"
+      ],
+      "structural_break_margin_delta_from_prev": [
+        "structural_break_margin_delta_from_prev"
+      ],
+      "volatility_damage_margin_delta_from_prev": [
+        "volatility_damage_margin_delta_from_prev"
+      ]
+    },
+    "ledger_vs_grid_parity": {
+      "A_signal": {
+        "ledger_present": true,
+        "mismatch_rows": 0
+      },
+      "B_signal": {
+        "ledger_present": true,
+        "mismatch_rows": 0
+      },
+      "C_signal": {
+        "ledger_present": true,
+        "mismatch_rows": 0
+      },
+      "R_delta_from_prev_decision": {
+        "ledger_present": true,
+        "mismatch_rows": 0
+      },
+      "a_condition_now": {
+        "ledger_present": true,
+        "mismatch_rows": 0
+      },
+      "a_condition_recovered_now": {
+        "ledger_present": true,
+        "mismatch_rows": 0
+      },
+      "a_condition_true_run_length": {
+        "ledger_present": true,
+        "mismatch_rows": 0
+      },
+      "a_margin_delta_from_prev": {
+        "ledger_present": true,
+        "mismatch_rows": 0
+      },
+      "atr22_current": {
+        "ledger_present": true,
+        "mismatch_rows": 0
+      },
+      "b_condition_now": {
+        "ledger_present": true,
+        "mismatch_rows": 0
+      },
+      "b_condition_recovered_now": {
+        "ledger_present": true,
+        "mismatch_rows": 0
+      },
+      "b_condition_true_run_length": {
+        "ledger_present": true,
+        "mismatch_rows": 0
+      },
+      "b_margin_delta_from_prev": {
+        "ledger_present": true,
+        "mismatch_rows": 0
+      },
+      "base_state": {
+        "ledger_present": true,
+        "mismatch_rows": 0
+      },
+      "close_delta_from_prev_decision": {
+        "ledger_present": true,
+        "mismatch_rows": 0
+      },
+      "hours_since_entry": {
+        "ledger_present": true,
+        "mismatch_rows": 0
+      },
+      "hours_since_first_memory_or_null": {
+        "ledger_present": true,
+        "mismatch_rows": 0
+      },
+      "memory_now": {
+        "ledger_present": true,
+        "mismatch_rows": 0
+      },
+      "memory_seen": {
+        "ledger_present": true,
+        "mismatch_rows": 0
+      },
+      "native_market_state_context": {
+        "ledger_present": true,
+        "mismatch_rows": 0
+      },
+      "progress_margin_delta_from_prev": {
+        "ledger_present": true,
+        "mismatch_rows": 0
+      },
+      "structural_break_margin_delta_from_prev": {
+        "ledger_present": true,
+        "mismatch_rows": 0
+      },
+      "volatility_damage_margin_delta_from_prev": {
+        "ledger_present": true,
+        "mismatch_rows": 0
+      }
+    },
+    "missing_state_columns": [],
+    "rows": 12290,
+    "state_authority": "DECISION_GRID_CANONICAL_PREMERGE_RENAME_NO_XY_SUFFIX"
+  },
+  "mechanism_subset_diagnostic_only": true,
+  "new_model_fit": false,
+  "next_bottleneck": "ABC_LIFECYCLE_STATE_MACHINE_CONTINUATION_VALUE_BELLMAN_FACTORIZATION_FEASIBILITY_V1",
+  "schema_version": "akah-rev568-continuation-mechanism-bellman-maximum-evidence-mega-v1-representation-failure-result",
+  "signature_family_summary": {
+    "CORE_AGE": {
+      "columns": [
+        "base_state",
+        "native_market_state_context",
+        "memory_seen",
+        "__age_bin"
+      ],
+      "status": "PASS_FIXED_SIGNATURE_EXECUTED",
+      "train_signature_count": 17,
+      "train_within_signature_variance_ratio": 1.008695255865335,
+      "two_year_directional_pass": false
+    },
+    "DAMAGE_AGE": {
+      "columns": [
+        "__sign_progress_margin_delta_from_prev",
+        "__sign_structural_break_margin_delta_from_prev",
+        "__sign_volatility_damage_margin_delta_from_prev",
+        "__age_bin"
+      ],
+      "status": "PASS_FIXED_SIGNATURE_EXECUTED",
+      "train_signature_count": 23,
+      "train_within_signature_variance_ratio": 1.0105187245721936,
+      "two_year_directional_pass": true
+    },
+    "EVIDENCE_AGE": {
+      "columns": [
+        "a_condition_now",
+        "b_condition_now",
+        "memory_seen",
+        "__age_bin"
+      ],
+      "status": "PASS_FIXED_SIGNATURE_EXECUTED",
+      "train_signature_count": 10,
+      "train_within_signature_variance_ratio": 1.00840066533569,
+      "two_year_directional_pass": false
+    },
+    "SIGNAL_MARKET": {
+      "columns": [
+        "A_signal",
+        "B_signal",
+        "C_signal",
+        "native_market_state_context"
+      ],
+      "status": "PASS_FIXED_SIGNATURE_EXECUTED",
+      "train_signature_count": 3,
+      "train_within_signature_variance_ratio": 1.0056212092329366,
+      "two_year_directional_pass": false
+    }
+  },
+  "status": "PASS_REPRESENTATION_FAILURE_ATTRIBUTION_COMPLETE",
+  "task_id": "ABC_LIFECYCLE_STATE_MACHINE_CONTINUATION_VALUE_STATE_REPRESENTATION_FAILURE_ATTRIBUTION_V1",
+  "threshold_search": false,
+  "two_year_directional_signature_families": [
+    "DAMAGE_AGE"
+  ]
+}

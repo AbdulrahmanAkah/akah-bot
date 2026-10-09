@@ -1,0 +1,11 @@
+evidence,disposition,reason
+EXACT_CONTINUATION_TARGET,PROMOTE,12290 exact rows retained
+CLEAN_BELLMAN_CAUSAL_SUBSET,PROMOTE,3687 rows with exact Bellman identity and causal next-state validity
+INTERVENED_BRANCH_EXPLICIT_ACCOUNTING,PROMOTE,8603 rows independently retained and structurally classified
+CLEAN_COMPONENT_STATE_SIGNAL,PROMOTE,"[{""family"":""CORE_AGE"",""state_view"":""CURRENT_STATE"",""target_component"":""continuation_advantage""},{""family"":""EVIDENCE_AGE"",""state_view"":""CURRENT_STATE"",""target_component"":""continuation_advantage""},{""family"":""DAMAGE_AGE"",""state_view"":""CURRENT_STATE"",""target_component"":""continuation_advantage""},{""family"":""CORE_AGE"",""state_view"":""CURRENT_STATE"",""target_component"":""__downstream_residual""},{""family"":""EVIDENCE_AGE"",""state_view"":""CURRENT_STATE"",""target_component"":""__downstream_residual""},{""family"":""DAMAGE_AGE"",""state_view"":""CURRENT_STATE"",""target_component"":""__downstream_residual""},{""family"":""CORE_AGE"",""state_view"":""NEXT_STATE"",""target_component"":""__downstream_residual""},{""family"":""EVIDENCE_AGE"",""state_view"":""NEXT_STATE"",""target_component"":""__downstream_residual""},{""family"":""DAMAGE_AGE"",""state_view"":""NEXT_STATE"",""target_component"":""__downstream_residual""}]"
+INTERVENTION_HAZARD_SIGNAL,PROMOTE,"{""branch"":[""CORE_AGE"",""EVIDENCE_AGE"",""DAMAGE_AGE""],""mechanism"":[{""family"":""CORE_AGE"",""invalidation_class"":""LINKED_MANDATORY_ONLY""},{""family"":""EVIDENCE_AGE"",""invalidation_class"":""LINKED_MANDATORY_ONLY""},{""family"":""DAMAGE_AGE"",""invalidation_class"":""LINKED_MANDATORY_ONLY""},{""family"":""SIGNAL_MARKET"",""invalidation_class"":""LINKED_MANDATORY_ONLY""},{""family"":""CORE_AGE"",""invalidation_class"":""NO_NEXT_STATE_AVAILABLE""}]}"
+INTERVENTION_VALUE_SIGNAL,PROMOTE,"DAMAGE_AGE,EVIDENCE_AGE"
+DAMAGE_AGE_CROSS_BRANCH,PROMOTE,clean=True;hazard=True;invalid_value=True
+NEW_RUNTIME_POLICY,DEFER,no runtime selection authorized in this chain
+NEW_MODEL_FAMILY,DEFER,architecture attribution precedes model choice
+POST_168,DEFER,horizon remains frozen

@@ -1,0 +1,1401 @@
+{
+  "roles": {
+    "events": {
+      "trace_count": 6,
+      "traces": [
+        {
+          "chain": [
+            {
+              "kind": "LOCAL_ASSIGNMENT",
+              "line": 239,
+              "name": "subset",
+              "path": "scripts/research/run_eaa_same_pair_secondary_shadow_parity.py"
+            }
+          ],
+          "depth": 1,
+          "expression": "signals[signals['period_id'] == period_id].copy()",
+          "function": "main",
+          "path": "scripts/research/run_eaa_same_pair_secondary_shadow_parity.py",
+          "producer_call": "copy",
+          "producer_definitions": [],
+          "status": "PRODUCER_CALL"
+        },
+        {
+          "chain": [],
+          "depth": 0,
+          "expression": "portfolio_events",
+          "function": "run_all_portfolios",
+          "path": "scripts/research/run_rd27_lifecycle_ablation.py",
+          "status": "UNRESOLVED_LOCAL_NAME"
+        },
+        {
+          "chain": [
+            {
+              "callee": "_replay_selective",
+              "caller_line": 302,
+              "caller_path": "src/spotbot/research/a10_selective_protection_asymmetry.py",
+              "kind": "CALLER_PARAMETER_BINDING",
+              "parameter": "events",
+              "passed_expression": "events"
+            }
+          ],
+          "depth": 1,
+          "function": "replay_winner_retention_candidate",
+          "parameter": "events",
+          "path": "src/spotbot/research/a10_selective_protection_asymmetry.py",
+          "status": "PARAMETER_WITH_NO_CALLERS"
+        },
+        {
+          "chain": [
+            {
+              "callee": "_replay_selective",
+              "caller_line": 329,
+              "caller_path": "src/spotbot/research/a10_selective_protection_asymmetry.py",
+              "kind": "CALLER_PARAMETER_BINDING",
+              "parameter": "events",
+              "passed_expression": "events"
+            }
+          ],
+          "depth": 1,
+          "function": "replay_loser_rescue_diagnostic",
+          "parameter": "events",
+          "path": "src/spotbot/research/a10_selective_protection_asymmetry.py",
+          "status": "PARAMETER_WITH_NO_CALLERS"
+        },
+        {
+          "chain": [],
+          "depth": 0,
+          "function": "replay_reversible_floor_candidate",
+          "parameter": "events",
+          "path": "src/spotbot/research/a4r1_reversible_floor_replay.py",
+          "status": "PARAMETER_WITH_NO_CALLERS"
+        },
+        {
+          "chain": [
+            {
+              "callee": "replay_same_pair_secondary_shadow",
+              "caller_line": 241,
+              "caller_path": "scripts/research/run_eaa_same_pair_secondary_shadow_parity.py",
+              "kind": "CALLER_PARAMETER_BINDING",
+              "parameter": "events",
+              "passed_expression": "subset"
+            },
+            {
+              "kind": "LOCAL_ASSIGNMENT",
+              "line": 239,
+              "name": "subset",
+              "path": "scripts/research/run_eaa_same_pair_secondary_shadow_parity.py"
+            }
+          ],
+          "depth": 2,
+          "expression": "signals[signals['period_id'] == period_id].copy()",
+          "function": "main",
+          "path": "scripts/research/run_eaa_same_pair_secondary_shadow_parity.py",
+          "producer_call": "copy",
+          "producer_definitions": [],
+          "status": "PRODUCER_CALL"
+        }
+      ],
+      "unique_producer_definitions": []
+    },
+    "frames": {
+      "trace_count": 14,
+      "traces": [
+        {
+          "chain": [],
+          "depth": 0,
+          "expression": "frames",
+          "function": "main",
+          "path": "scripts/research/run_eaa_same_pair_secondary_shadow_parity.py",
+          "status": "UNRESOLVED_LOCAL_NAME"
+        },
+        {
+          "chain": [
+            {
+              "callee": "run_all_portfolios",
+              "caller_line": 631,
+              "caller_path": "scripts/research/run_rd26_exit_architecture.py",
+              "kind": "CALLER_PARAMETER_BINDING",
+              "parameter": "frames",
+              "passed_expression": "frames"
+            },
+            {
+              "kind": "LOCAL_ASSIGNMENT",
+              "line": 592,
+              "name": "frames",
+              "path": "scripts/research/run_rd26_exit_architecture.py"
+            }
+          ],
+          "depth": 2,
+          "expression": "load_feature_frames(raw_root=raw_root, pairs=pairs, cutoff=DATA_CUTOFF)",
+          "function": "main",
+          "path": "scripts/research/run_rd26_exit_architecture.py",
+          "producer_call": "load_feature_frames",
+          "producer_definitions": [
+            {
+              "defaults": [],
+              "kw_defaults": [
+                null,
+                null,
+                null
+              ],
+              "lineno": 187,
+              "parameters": [
+                "raw_root",
+                "pairs",
+                "cutoff"
+              ],
+              "path": "scripts/research/run_rd26_exit_architecture.py",
+              "sha256": "9C096C6E7C4784D9B91A7EFC55FA85F46755B2D850B78E7A5E90980294DC9ACE"
+            },
+            {
+              "defaults": [],
+              "kw_defaults": [
+                null,
+                null
+              ],
+              "lineno": 242,
+              "parameters": [
+                "raw_root",
+                "pairs"
+              ],
+              "path": "scripts/research/run_rd27_lifecycle_ablation.py",
+              "sha256": "7DFC388F3BF8EF6EFA16E0640CF924158999A9923674C7701B8919872755CBB5"
+            },
+            {
+              "defaults": [],
+              "kw_defaults": [
+                null,
+                null
+              ],
+              "lineno": 289,
+              "parameters": [
+                "raw_root",
+                "pairs"
+              ],
+              "path": "scripts/research/run_rd28_evidence_gated_lifecycle.py",
+              "sha256": "2DB133BDD7E4ED8E7BB763842E9FD4D4CEEF4BD92027E195A92031399FA3FEAF"
+            },
+            {
+              "defaults": [],
+              "kw_defaults": [
+                null,
+                null
+              ],
+              "lineno": 365,
+              "parameters": [
+                "raw_root",
+                "pairs"
+              ],
+              "path": "scripts/research/run_rd29_thesis_confidence_lifecycle.py",
+              "sha256": "AECEDDE051C0F4C25882591FB441A3AB69EE2FA22AF0253789E7B1B3667EC434"
+            },
+            {
+              "defaults": [],
+              "kw_defaults": [
+                null,
+                null
+              ],
+              "lineno": 445,
+              "parameters": [
+                "raw_root",
+                "pairs"
+              ],
+              "path": "scripts/research/run_rd30_family_specialist_replacement_aware.py",
+              "sha256": "C6CDEF9F0C3A086FD1091E4A9168F6949E28B0A3E16AB8E80E3D6F12B76CA561"
+            },
+            {
+              "defaults": [],
+              "kw_defaults": [
+                null,
+                null
+              ],
+              "lineno": 640,
+              "parameters": [
+                "raw_root",
+                "pairs"
+              ],
+              "path": "scripts/research/run_rd31_market_regime_admission_governor.py",
+              "sha256": "3B6D938093B4F00883A3665399CBEA01FD892E2B610FC7F4B2EBA01F8F51457B"
+            },
+            {
+              "defaults": [],
+              "kw_defaults": [
+                null,
+                null
+              ],
+              "lineno": 325,
+              "parameters": [
+                "raw_root",
+                "pairs"
+              ],
+              "path": "scripts/research/run_rd35_new_alpha_source_diagnostic.py",
+              "sha256": "F7CB98A51ECEC10087D806703FB3E7F6FBBBABC5D8F7E490850B2E7DA06280FF"
+            },
+            {
+              "defaults": [],
+              "kw_defaults": [
+                null,
+                null
+              ],
+              "lineno": 357,
+              "parameters": [
+                "raw_root",
+                "pairs"
+              ],
+              "path": "scripts/research/run_rd41_full_risk_set_censoring_reconciliation.py",
+              "sha256": "F15CB245B34E268A97C43A3561EF5B1B4E8F5205397F9F83E10F52F28D3998D8"
+            },
+            {
+              "defaults": [],
+              "kw_defaults": [],
+              "lineno": 289,
+              "parameters": [
+                "raw_root",
+                "pairs"
+              ],
+              "path": "scripts/research/run_rd42_context_support_census.py",
+              "sha256": "38AE63A9FFD9E5B5ED4DE6E16DF0288EBE208C549BE9D245218DF6571A55125C"
+            }
+          ],
+          "status": "PRODUCER_CALL"
+        },
+        {
+          "chain": [
+            {
+              "callee": "run_all_portfolios",
+              "caller_line": 853,
+              "caller_path": "scripts/research/run_rd27_lifecycle_ablation.py",
+              "kind": "CALLER_PARAMETER_BINDING",
+              "parameter": "frames",
+              "passed_expression": "frames"
+            },
+            {
+              "kind": "LOCAL_ASSIGNMENT",
+              "line": 822,
+              "name": "frames",
+              "path": "scripts/research/run_rd27_lifecycle_ablation.py"
+            }
+          ],
+          "depth": 2,
+          "expression": "load_feature_frames(raw_root=raw_root, pairs=pairs)",
+          "function": "main",
+          "path": "scripts/research/run_rd27_lifecycle_ablation.py",
+          "producer_call": "load_feature_frames",
+          "producer_definitions": [
+            {
+              "defaults": [],
+              "kw_defaults": [
+                null,
+                null,
+                null
+              ],
+              "lineno": 187,
+              "parameters": [
+                "raw_root",
+                "pairs",
+                "cutoff"
+              ],
+              "path": "scripts/research/run_rd26_exit_architecture.py",
+              "sha256": "9C096C6E7C4784D9B91A7EFC55FA85F46755B2D850B78E7A5E90980294DC9ACE"
+            },
+            {
+              "defaults": [],
+              "kw_defaults": [
+                null,
+                null
+              ],
+              "lineno": 242,
+              "parameters": [
+                "raw_root",
+                "pairs"
+              ],
+              "path": "scripts/research/run_rd27_lifecycle_ablation.py",
+              "sha256": "7DFC388F3BF8EF6EFA16E0640CF924158999A9923674C7701B8919872755CBB5"
+            },
+            {
+              "defaults": [],
+              "kw_defaults": [
+                null,
+                null
+              ],
+              "lineno": 289,
+              "parameters": [
+                "raw_root",
+                "pairs"
+              ],
+              "path": "scripts/research/run_rd28_evidence_gated_lifecycle.py",
+              "sha256": "2DB133BDD7E4ED8E7BB763842E9FD4D4CEEF4BD92027E195A92031399FA3FEAF"
+            },
+            {
+              "defaults": [],
+              "kw_defaults": [
+                null,
+                null
+              ],
+              "lineno": 365,
+              "parameters": [
+                "raw_root",
+                "pairs"
+              ],
+              "path": "scripts/research/run_rd29_thesis_confidence_lifecycle.py",
+              "sha256": "AECEDDE051C0F4C25882591FB441A3AB69EE2FA22AF0253789E7B1B3667EC434"
+            },
+            {
+              "defaults": [],
+              "kw_defaults": [
+                null,
+                null
+              ],
+              "lineno": 445,
+              "parameters": [
+                "raw_root",
+                "pairs"
+              ],
+              "path": "scripts/research/run_rd30_family_specialist_replacement_aware.py",
+              "sha256": "C6CDEF9F0C3A086FD1091E4A9168F6949E28B0A3E16AB8E80E3D6F12B76CA561"
+            },
+            {
+              "defaults": [],
+              "kw_defaults": [
+                null,
+                null
+              ],
+              "lineno": 640,
+              "parameters": [
+                "raw_root",
+                "pairs"
+              ],
+              "path": "scripts/research/run_rd31_market_regime_admission_governor.py",
+              "sha256": "3B6D938093B4F00883A3665399CBEA01FD892E2B610FC7F4B2EBA01F8F51457B"
+            },
+            {
+              "defaults": [],
+              "kw_defaults": [
+                null,
+                null
+              ],
+              "lineno": 325,
+              "parameters": [
+                "raw_root",
+                "pairs"
+              ],
+              "path": "scripts/research/run_rd35_new_alpha_source_diagnostic.py",
+              "sha256": "F7CB98A51ECEC10087D806703FB3E7F6FBBBABC5D8F7E490850B2E7DA06280FF"
+            },
+            {
+              "defaults": [],
+              "kw_defaults": [
+                null,
+                null
+              ],
+              "lineno": 357,
+              "parameters": [
+                "raw_root",
+                "pairs"
+              ],
+              "path": "scripts/research/run_rd41_full_risk_set_censoring_reconciliation.py",
+              "sha256": "F15CB245B34E268A97C43A3561EF5B1B4E8F5205397F9F83E10F52F28D3998D8"
+            },
+            {
+              "defaults": [],
+              "kw_defaults": [],
+              "lineno": 289,
+              "parameters": [
+                "raw_root",
+                "pairs"
+              ],
+              "path": "scripts/research/run_rd42_context_support_census.py",
+              "sha256": "38AE63A9FFD9E5B5ED4DE6E16DF0288EBE208C549BE9D245218DF6571A55125C"
+            }
+          ],
+          "status": "PRODUCER_CALL"
+        },
+        {
+          "chain": [
+            {
+              "callee": "run_all_portfolios",
+              "caller_line": 989,
+              "caller_path": "scripts/research/run_rd28_evidence_gated_lifecycle.py",
+              "kind": "CALLER_PARAMETER_BINDING",
+              "parameter": "frames",
+              "passed_expression": "frames"
+            },
+            {
+              "kind": "LOCAL_ASSIGNMENT",
+              "line": 941,
+              "name": "frames",
+              "path": "scripts/research/run_rd28_evidence_gated_lifecycle.py"
+            }
+          ],
+          "depth": 2,
+          "expression": "load_feature_frames(raw_root=raw_root, pairs=pairs)",
+          "function": "main",
+          "path": "scripts/research/run_rd28_evidence_gated_lifecycle.py",
+          "producer_call": "load_feature_frames",
+          "producer_definitions": [
+            {
+              "defaults": [],
+              "kw_defaults": [
+                null,
+                null,
+                null
+              ],
+              "lineno": 187,
+              "parameters": [
+                "raw_root",
+                "pairs",
+                "cutoff"
+              ],
+              "path": "scripts/research/run_rd26_exit_architecture.py",
+              "sha256": "9C096C6E7C4784D9B91A7EFC55FA85F46755B2D850B78E7A5E90980294DC9ACE"
+            },
+            {
+              "defaults": [],
+              "kw_defaults": [
+                null,
+                null
+              ],
+              "lineno": 242,
+              "parameters": [
+                "raw_root",
+                "pairs"
+              ],
+              "path": "scripts/research/run_rd27_lifecycle_ablation.py",
+              "sha256": "7DFC388F3BF8EF6EFA16E0640CF924158999A9923674C7701B8919872755CBB5"
+            },
+            {
+              "defaults": [],
+              "kw_defaults": [
+                null,
+                null
+              ],
+              "lineno": 289,
+              "parameters": [
+                "raw_root",
+                "pairs"
+              ],
+              "path": "scripts/research/run_rd28_evidence_gated_lifecycle.py",
+              "sha256": "2DB133BDD7E4ED8E7BB763842E9FD4D4CEEF4BD92027E195A92031399FA3FEAF"
+            },
+            {
+              "defaults": [],
+              "kw_defaults": [
+                null,
+                null
+              ],
+              "lineno": 365,
+              "parameters": [
+                "raw_root",
+                "pairs"
+              ],
+              "path": "scripts/research/run_rd29_thesis_confidence_lifecycle.py",
+              "sha256": "AECEDDE051C0F4C25882591FB441A3AB69EE2FA22AF0253789E7B1B3667EC434"
+            },
+            {
+              "defaults": [],
+              "kw_defaults": [
+                null,
+                null
+              ],
+              "lineno": 445,
+              "parameters": [
+                "raw_root",
+                "pairs"
+              ],
+              "path": "scripts/research/run_rd30_family_specialist_replacement_aware.py",
+              "sha256": "C6CDEF9F0C3A086FD1091E4A9168F6949E28B0A3E16AB8E80E3D6F12B76CA561"
+            },
+            {
+              "defaults": [],
+              "kw_defaults": [
+                null,
+                null
+              ],
+              "lineno": 640,
+              "parameters": [
+                "raw_root",
+                "pairs"
+              ],
+              "path": "scripts/research/run_rd31_market_regime_admission_governor.py",
+              "sha256": "3B6D938093B4F00883A3665399CBEA01FD892E2B610FC7F4B2EBA01F8F51457B"
+            },
+            {
+              "defaults": [],
+              "kw_defaults": [
+                null,
+                null
+              ],
+              "lineno": 325,
+              "parameters": [
+                "raw_root",
+                "pairs"
+              ],
+              "path": "scripts/research/run_rd35_new_alpha_source_diagnostic.py",
+              "sha256": "F7CB98A51ECEC10087D806703FB3E7F6FBBBABC5D8F7E490850B2E7DA06280FF"
+            },
+            {
+              "defaults": [],
+              "kw_defaults": [
+                null,
+                null
+              ],
+              "lineno": 357,
+              "parameters": [
+                "raw_root",
+                "pairs"
+              ],
+              "path": "scripts/research/run_rd41_full_risk_set_censoring_reconciliation.py",
+              "sha256": "F15CB245B34E268A97C43A3561EF5B1B4E8F5205397F9F83E10F52F28D3998D8"
+            },
+            {
+              "defaults": [],
+              "kw_defaults": [],
+              "lineno": 289,
+              "parameters": [
+                "raw_root",
+                "pairs"
+              ],
+              "path": "scripts/research/run_rd42_context_support_census.py",
+              "sha256": "38AE63A9FFD9E5B5ED4DE6E16DF0288EBE208C549BE9D245218DF6571A55125C"
+            }
+          ],
+          "status": "PRODUCER_CALL"
+        },
+        {
+          "chain": [
+            {
+              "callee": "run_all_portfolios",
+              "caller_line": 973,
+              "caller_path": "scripts/research/run_rd29_thesis_confidence_lifecycle.py",
+              "kind": "CALLER_PARAMETER_BINDING",
+              "parameter": "frames",
+              "passed_expression": "frames"
+            },
+            {
+              "kind": "LOCAL_ASSIGNMENT",
+              "line": 937,
+              "name": "frames",
+              "path": "scripts/research/run_rd29_thesis_confidence_lifecycle.py"
+            }
+          ],
+          "depth": 2,
+          "expression": "load_feature_frames(raw_root=raw_root, pairs=pairs)",
+          "function": "main",
+          "path": "scripts/research/run_rd29_thesis_confidence_lifecycle.py",
+          "producer_call": "load_feature_frames",
+          "producer_definitions": [
+            {
+              "defaults": [],
+              "kw_defaults": [
+                null,
+                null,
+                null
+              ],
+              "lineno": 187,
+              "parameters": [
+                "raw_root",
+                "pairs",
+                "cutoff"
+              ],
+              "path": "scripts/research/run_rd26_exit_architecture.py",
+              "sha256": "9C096C6E7C4784D9B91A7EFC55FA85F46755B2D850B78E7A5E90980294DC9ACE"
+            },
+            {
+              "defaults": [],
+              "kw_defaults": [
+                null,
+                null
+              ],
+              "lineno": 242,
+              "parameters": [
+                "raw_root",
+                "pairs"
+              ],
+              "path": "scripts/research/run_rd27_lifecycle_ablation.py",
+              "sha256": "7DFC388F3BF8EF6EFA16E0640CF924158999A9923674C7701B8919872755CBB5"
+            },
+            {
+              "defaults": [],
+              "kw_defaults": [
+                null,
+                null
+              ],
+              "lineno": 289,
+              "parameters": [
+                "raw_root",
+                "pairs"
+              ],
+              "path": "scripts/research/run_rd28_evidence_gated_lifecycle.py",
+              "sha256": "2DB133BDD7E4ED8E7BB763842E9FD4D4CEEF4BD92027E195A92031399FA3FEAF"
+            },
+            {
+              "defaults": [],
+              "kw_defaults": [
+                null,
+                null
+              ],
+              "lineno": 365,
+              "parameters": [
+                "raw_root",
+                "pairs"
+              ],
+              "path": "scripts/research/run_rd29_thesis_confidence_lifecycle.py",
+              "sha256": "AECEDDE051C0F4C25882591FB441A3AB69EE2FA22AF0253789E7B1B3667EC434"
+            },
+            {
+              "defaults": [],
+              "kw_defaults": [
+                null,
+                null
+              ],
+              "lineno": 445,
+              "parameters": [
+                "raw_root",
+                "pairs"
+              ],
+              "path": "scripts/research/run_rd30_family_specialist_replacement_aware.py",
+              "sha256": "C6CDEF9F0C3A086FD1091E4A9168F6949E28B0A3E16AB8E80E3D6F12B76CA561"
+            },
+            {
+              "defaults": [],
+              "kw_defaults": [
+                null,
+                null
+              ],
+              "lineno": 640,
+              "parameters": [
+                "raw_root",
+                "pairs"
+              ],
+              "path": "scripts/research/run_rd31_market_regime_admission_governor.py",
+              "sha256": "3B6D938093B4F00883A3665399CBEA01FD892E2B610FC7F4B2EBA01F8F51457B"
+            },
+            {
+              "defaults": [],
+              "kw_defaults": [
+                null,
+                null
+              ],
+              "lineno": 325,
+              "parameters": [
+                "raw_root",
+                "pairs"
+              ],
+              "path": "scripts/research/run_rd35_new_alpha_source_diagnostic.py",
+              "sha256": "F7CB98A51ECEC10087D806703FB3E7F6FBBBABC5D8F7E490850B2E7DA06280FF"
+            },
+            {
+              "defaults": [],
+              "kw_defaults": [
+                null,
+                null
+              ],
+              "lineno": 357,
+              "parameters": [
+                "raw_root",
+                "pairs"
+              ],
+              "path": "scripts/research/run_rd41_full_risk_set_censoring_reconciliation.py",
+              "sha256": "F15CB245B34E268A97C43A3561EF5B1B4E8F5205397F9F83E10F52F28D3998D8"
+            },
+            {
+              "defaults": [],
+              "kw_defaults": [],
+              "lineno": 289,
+              "parameters": [
+                "raw_root",
+                "pairs"
+              ],
+              "path": "scripts/research/run_rd42_context_support_census.py",
+              "sha256": "38AE63A9FFD9E5B5ED4DE6E16DF0288EBE208C549BE9D245218DF6571A55125C"
+            }
+          ],
+          "status": "PRODUCER_CALL"
+        },
+        {
+          "chain": [
+            {
+              "callee": "run_all_portfolios",
+              "caller_line": 1322,
+              "caller_path": "scripts/research/run_rd30_family_specialist_replacement_aware.py",
+              "kind": "CALLER_PARAMETER_BINDING",
+              "parameter": "frames",
+              "passed_expression": "frames"
+            },
+            {
+              "kind": "LOCAL_ASSIGNMENT",
+              "line": 1276,
+              "name": "frames",
+              "path": "scripts/research/run_rd30_family_specialist_replacement_aware.py"
+            }
+          ],
+          "depth": 2,
+          "expression": "load_feature_frames(raw_root=raw_root, pairs=pairs)",
+          "function": "main",
+          "path": "scripts/research/run_rd30_family_specialist_replacement_aware.py",
+          "producer_call": "load_feature_frames",
+          "producer_definitions": [
+            {
+              "defaults": [],
+              "kw_defaults": [
+                null,
+                null,
+                null
+              ],
+              "lineno": 187,
+              "parameters": [
+                "raw_root",
+                "pairs",
+                "cutoff"
+              ],
+              "path": "scripts/research/run_rd26_exit_architecture.py",
+              "sha256": "9C096C6E7C4784D9B91A7EFC55FA85F46755B2D850B78E7A5E90980294DC9ACE"
+            },
+            {
+              "defaults": [],
+              "kw_defaults": [
+                null,
+                null
+              ],
+              "lineno": 242,
+              "parameters": [
+                "raw_root",
+                "pairs"
+              ],
+              "path": "scripts/research/run_rd27_lifecycle_ablation.py",
+              "sha256": "7DFC388F3BF8EF6EFA16E0640CF924158999A9923674C7701B8919872755CBB5"
+            },
+            {
+              "defaults": [],
+              "kw_defaults": [
+                null,
+                null
+              ],
+              "lineno": 289,
+              "parameters": [
+                "raw_root",
+                "pairs"
+              ],
+              "path": "scripts/research/run_rd28_evidence_gated_lifecycle.py",
+              "sha256": "2DB133BDD7E4ED8E7BB763842E9FD4D4CEEF4BD92027E195A92031399FA3FEAF"
+            },
+            {
+              "defaults": [],
+              "kw_defaults": [
+                null,
+                null
+              ],
+              "lineno": 365,
+              "parameters": [
+                "raw_root",
+                "pairs"
+              ],
+              "path": "scripts/research/run_rd29_thesis_confidence_lifecycle.py",
+              "sha256": "AECEDDE051C0F4C25882591FB441A3AB69EE2FA22AF0253789E7B1B3667EC434"
+            },
+            {
+              "defaults": [],
+              "kw_defaults": [
+                null,
+                null
+              ],
+              "lineno": 445,
+              "parameters": [
+                "raw_root",
+                "pairs"
+              ],
+              "path": "scripts/research/run_rd30_family_specialist_replacement_aware.py",
+              "sha256": "C6CDEF9F0C3A086FD1091E4A9168F6949E28B0A3E16AB8E80E3D6F12B76CA561"
+            },
+            {
+              "defaults": [],
+              "kw_defaults": [
+                null,
+                null
+              ],
+              "lineno": 640,
+              "parameters": [
+                "raw_root",
+                "pairs"
+              ],
+              "path": "scripts/research/run_rd31_market_regime_admission_governor.py",
+              "sha256": "3B6D938093B4F00883A3665399CBEA01FD892E2B610FC7F4B2EBA01F8F51457B"
+            },
+            {
+              "defaults": [],
+              "kw_defaults": [
+                null,
+                null
+              ],
+              "lineno": 325,
+              "parameters": [
+                "raw_root",
+                "pairs"
+              ],
+              "path": "scripts/research/run_rd35_new_alpha_source_diagnostic.py",
+              "sha256": "F7CB98A51ECEC10087D806703FB3E7F6FBBBABC5D8F7E490850B2E7DA06280FF"
+            },
+            {
+              "defaults": [],
+              "kw_defaults": [
+                null,
+                null
+              ],
+              "lineno": 357,
+              "parameters": [
+                "raw_root",
+                "pairs"
+              ],
+              "path": "scripts/research/run_rd41_full_risk_set_censoring_reconciliation.py",
+              "sha256": "F15CB245B34E268A97C43A3561EF5B1B4E8F5205397F9F83E10F52F28D3998D8"
+            },
+            {
+              "defaults": [],
+              "kw_defaults": [],
+              "lineno": 289,
+              "parameters": [
+                "raw_root",
+                "pairs"
+              ],
+              "path": "scripts/research/run_rd42_context_support_census.py",
+              "sha256": "38AE63A9FFD9E5B5ED4DE6E16DF0288EBE208C549BE9D245218DF6571A55125C"
+            }
+          ],
+          "status": "PRODUCER_CALL"
+        },
+        {
+          "chain": [
+            {
+              "callee": "run_all_portfolios",
+              "caller_line": 2192,
+              "caller_path": "scripts/research/run_rd31_market_regime_admission_governor.py",
+              "kind": "CALLER_PARAMETER_BINDING",
+              "parameter": "frames",
+              "passed_expression": "frames"
+            },
+            {
+              "kind": "LOCAL_ASSIGNMENT",
+              "line": 2147,
+              "name": "frames",
+              "path": "scripts/research/run_rd31_market_regime_admission_governor.py"
+            }
+          ],
+          "depth": 2,
+          "expression": "load_feature_frames(raw_root=raw_root, pairs=pairs)",
+          "function": "main",
+          "path": "scripts/research/run_rd31_market_regime_admission_governor.py",
+          "producer_call": "load_feature_frames",
+          "producer_definitions": [
+            {
+              "defaults": [],
+              "kw_defaults": [
+                null,
+                null,
+                null
+              ],
+              "lineno": 187,
+              "parameters": [
+                "raw_root",
+                "pairs",
+                "cutoff"
+              ],
+              "path": "scripts/research/run_rd26_exit_architecture.py",
+              "sha256": "9C096C6E7C4784D9B91A7EFC55FA85F46755B2D850B78E7A5E90980294DC9ACE"
+            },
+            {
+              "defaults": [],
+              "kw_defaults": [
+                null,
+                null
+              ],
+              "lineno": 242,
+              "parameters": [
+                "raw_root",
+                "pairs"
+              ],
+              "path": "scripts/research/run_rd27_lifecycle_ablation.py",
+              "sha256": "7DFC388F3BF8EF6EFA16E0640CF924158999A9923674C7701B8919872755CBB5"
+            },
+            {
+              "defaults": [],
+              "kw_defaults": [
+                null,
+                null
+              ],
+              "lineno": 289,
+              "parameters": [
+                "raw_root",
+                "pairs"
+              ],
+              "path": "scripts/research/run_rd28_evidence_gated_lifecycle.py",
+              "sha256": "2DB133BDD7E4ED8E7BB763842E9FD4D4CEEF4BD92027E195A92031399FA3FEAF"
+            },
+            {
+              "defaults": [],
+              "kw_defaults": [
+                null,
+                null
+              ],
+              "lineno": 365,
+              "parameters": [
+                "raw_root",
+                "pairs"
+              ],
+              "path": "scripts/research/run_rd29_thesis_confidence_lifecycle.py",
+              "sha256": "AECEDDE051C0F4C25882591FB441A3AB69EE2FA22AF0253789E7B1B3667EC434"
+            },
+            {
+              "defaults": [],
+              "kw_defaults": [
+                null,
+                null
+              ],
+              "lineno": 445,
+              "parameters": [
+                "raw_root",
+                "pairs"
+              ],
+              "path": "scripts/research/run_rd30_family_specialist_replacement_aware.py",
+              "sha256": "C6CDEF9F0C3A086FD1091E4A9168F6949E28B0A3E16AB8E80E3D6F12B76CA561"
+            },
+            {
+              "defaults": [],
+              "kw_defaults": [
+                null,
+                null
+              ],
+              "lineno": 640,
+              "parameters": [
+                "raw_root",
+                "pairs"
+              ],
+              "path": "scripts/research/run_rd31_market_regime_admission_governor.py",
+              "sha256": "3B6D938093B4F00883A3665399CBEA01FD892E2B610FC7F4B2EBA01F8F51457B"
+            },
+            {
+              "defaults": [],
+              "kw_defaults": [
+                null,
+                null
+              ],
+              "lineno": 325,
+              "parameters": [
+                "raw_root",
+                "pairs"
+              ],
+              "path": "scripts/research/run_rd35_new_alpha_source_diagnostic.py",
+              "sha256": "F7CB98A51ECEC10087D806703FB3E7F6FBBBABC5D8F7E490850B2E7DA06280FF"
+            },
+            {
+              "defaults": [],
+              "kw_defaults": [
+                null,
+                null
+              ],
+              "lineno": 357,
+              "parameters": [
+                "raw_root",
+                "pairs"
+              ],
+              "path": "scripts/research/run_rd41_full_risk_set_censoring_reconciliation.py",
+              "sha256": "F15CB245B34E268A97C43A3561EF5B1B4E8F5205397F9F83E10F52F28D3998D8"
+            },
+            {
+              "defaults": [],
+              "kw_defaults": [],
+              "lineno": 289,
+              "parameters": [
+                "raw_root",
+                "pairs"
+              ],
+              "path": "scripts/research/run_rd42_context_support_census.py",
+              "sha256": "38AE63A9FFD9E5B5ED4DE6E16DF0288EBE208C549BE9D245218DF6571A55125C"
+            }
+          ],
+          "status": "PRODUCER_CALL"
+        },
+        {
+          "chain": [
+            {
+              "callee": "run_all_portfolios",
+              "caller_line": 1210,
+              "caller_path": "scripts/research/run_rd32_mb_signal_quality_admission.py",
+              "kind": "CALLER_PARAMETER_BINDING",
+              "parameter": "frames",
+              "passed_expression": "frames"
+            },
+            {
+              "kind": "LOCAL_ASSIGNMENT",
+              "line": 1174,
+              "name": "frames",
+              "path": "scripts/research/run_rd32_mb_signal_quality_admission.py"
+            }
+          ],
+          "depth": 2,
+          "expression": "rd31.load_feature_frames(raw_root=raw_root, pairs=pairs)",
+          "function": "main",
+          "path": "scripts/research/run_rd32_mb_signal_quality_admission.py",
+          "producer_call": "load_feature_frames",
+          "producer_definitions": [
+            {
+              "defaults": [],
+              "kw_defaults": [
+                null,
+                null,
+                null
+              ],
+              "lineno": 187,
+              "parameters": [
+                "raw_root",
+                "pairs",
+                "cutoff"
+              ],
+              "path": "scripts/research/run_rd26_exit_architecture.py",
+              "sha256": "9C096C6E7C4784D9B91A7EFC55FA85F46755B2D850B78E7A5E90980294DC9ACE"
+            },
+            {
+              "defaults": [],
+              "kw_defaults": [
+                null,
+                null
+              ],
+              "lineno": 242,
+              "parameters": [
+                "raw_root",
+                "pairs"
+              ],
+              "path": "scripts/research/run_rd27_lifecycle_ablation.py",
+              "sha256": "7DFC388F3BF8EF6EFA16E0640CF924158999A9923674C7701B8919872755CBB5"
+            },
+            {
+              "defaults": [],
+              "kw_defaults": [
+                null,
+                null
+              ],
+              "lineno": 289,
+              "parameters": [
+                "raw_root",
+                "pairs"
+              ],
+              "path": "scripts/research/run_rd28_evidence_gated_lifecycle.py",
+              "sha256": "2DB133BDD7E4ED8E7BB763842E9FD4D4CEEF4BD92027E195A92031399FA3FEAF"
+            },
+            {
+              "defaults": [],
+              "kw_defaults": [
+                null,
+                null
+              ],
+              "lineno": 365,
+              "parameters": [
+                "raw_root",
+                "pairs"
+              ],
+              "path": "scripts/research/run_rd29_thesis_confidence_lifecycle.py",
+              "sha256": "AECEDDE051C0F4C25882591FB441A3AB69EE2FA22AF0253789E7B1B3667EC434"
+            },
+            {
+              "defaults": [],
+              "kw_defaults": [
+                null,
+                null
+              ],
+              "lineno": 445,
+              "parameters": [
+                "raw_root",
+                "pairs"
+              ],
+              "path": "scripts/research/run_rd30_family_specialist_replacement_aware.py",
+              "sha256": "C6CDEF9F0C3A086FD1091E4A9168F6949E28B0A3E16AB8E80E3D6F12B76CA561"
+            },
+            {
+              "defaults": [],
+              "kw_defaults": [
+                null,
+                null
+              ],
+              "lineno": 640,
+              "parameters": [
+                "raw_root",
+                "pairs"
+              ],
+              "path": "scripts/research/run_rd31_market_regime_admission_governor.py",
+              "sha256": "3B6D938093B4F00883A3665399CBEA01FD892E2B610FC7F4B2EBA01F8F51457B"
+            },
+            {
+              "defaults": [],
+              "kw_defaults": [
+                null,
+                null
+              ],
+              "lineno": 325,
+              "parameters": [
+                "raw_root",
+                "pairs"
+              ],
+              "path": "scripts/research/run_rd35_new_alpha_source_diagnostic.py",
+              "sha256": "F7CB98A51ECEC10087D806703FB3E7F6FBBBABC5D8F7E490850B2E7DA06280FF"
+            },
+            {
+              "defaults": [],
+              "kw_defaults": [
+                null,
+                null
+              ],
+              "lineno": 357,
+              "parameters": [
+                "raw_root",
+                "pairs"
+              ],
+              "path": "scripts/research/run_rd41_full_risk_set_censoring_reconciliation.py",
+              "sha256": "F15CB245B34E268A97C43A3561EF5B1B4E8F5205397F9F83E10F52F28D3998D8"
+            },
+            {
+              "defaults": [],
+              "kw_defaults": [],
+              "lineno": 289,
+              "parameters": [
+                "raw_root",
+                "pairs"
+              ],
+              "path": "scripts/research/run_rd42_context_support_census.py",
+              "sha256": "38AE63A9FFD9E5B5ED4DE6E16DF0288EBE208C549BE9D245218DF6571A55125C"
+            }
+          ],
+          "status": "PRODUCER_CALL"
+        },
+        {
+          "chain": [
+            {
+              "callee": "run_all_portfolios",
+              "caller_line": 1602,
+              "caller_path": "scripts/research/run_rd33_temporal_mb_architecture.py",
+              "kind": "CALLER_PARAMETER_BINDING",
+              "parameter": "frames",
+              "passed_expression": "frames"
+            },
+            {
+              "kind": "LOCAL_ASSIGNMENT",
+              "line": 1564,
+              "name": "frames",
+              "path": "scripts/research/run_rd33_temporal_mb_architecture.py"
+            }
+          ],
+          "depth": 2,
+          "expression": "rd31.load_feature_frames(raw_root=raw_root, pairs=pairs)",
+          "function": "main",
+          "path": "scripts/research/run_rd33_temporal_mb_architecture.py",
+          "producer_call": "load_feature_frames",
+          "producer_definitions": [
+            {
+              "defaults": [],
+              "kw_defaults": [
+                null,
+                null,
+                null
+              ],
+              "lineno": 187,
+              "parameters": [
+                "raw_root",
+                "pairs",
+                "cutoff"
+              ],
+              "path": "scripts/research/run_rd26_exit_architecture.py",
+              "sha256": "9C096C6E7C4784D9B91A7EFC55FA85F46755B2D850B78E7A5E90980294DC9ACE"
+            },
+            {
+              "defaults": [],
+              "kw_defaults": [
+                null,
+                null
+              ],
+              "lineno": 242,
+              "parameters": [
+                "raw_root",
+                "pairs"
+              ],
+              "path": "scripts/research/run_rd27_lifecycle_ablation.py",
+              "sha256": "7DFC388F3BF8EF6EFA16E0640CF924158999A9923674C7701B8919872755CBB5"
+            },
+            {
+              "defaults": [],
+              "kw_defaults": [
+                null,
+                null
+              ],
+              "lineno": 289,
+              "parameters": [
+                "raw_root",
+                "pairs"
+              ],
+              "path": "scripts/research/run_rd28_evidence_gated_lifecycle.py",
+              "sha256": "2DB133BDD7E4ED8E7BB763842E9FD4D4CEEF4BD92027E195A92031399FA3FEAF"
+            },
+            {
+              "defaults": [],
+              "kw_defaults": [
+                null,
+                null
+              ],
+              "lineno": 365,
+              "parameters": [
+                "raw_root",
+                "pairs"
+              ],
+              "path": "scripts/research/run_rd29_thesis_confidence_lifecycle.py",
+              "sha256": "AECEDDE051C0F4C25882591FB441A3AB69EE2FA22AF0253789E7B1B3667EC434"
+            },
+            {
+              "defaults": [],
+              "kw_defaults": [
+                null,
+                null
+              ],
+              "lineno": 445,
+              "parameters": [
+                "raw_root",
+                "pairs"
+              ],
+              "path": "scripts/research/run_rd30_family_specialist_replacement_aware.py",
+              "sha256": "C6CDEF9F0C3A086FD1091E4A9168F6949E28B0A3E16AB8E80E3D6F12B76CA561"
+            },
+            {
+              "defaults": [],
+              "kw_defaults": [
+                null,
+                null
+              ],
+              "lineno": 640,
+              "parameters": [
+                "raw_root",
+                "pairs"
+              ],
+              "path": "scripts/research/run_rd31_market_regime_admission_governor.py",
+              "sha256": "3B6D938093B4F00883A3665399CBEA01FD892E2B610FC7F4B2EBA01F8F51457B"
+            },
+            {
+              "defaults": [],
+              "kw_defaults": [
+                null,
+                null
+              ],
+              "lineno": 325,
+              "parameters": [
+                "raw_root",
+                "pairs"
+              ],
+              "path": "scripts/research/run_rd35_new_alpha_source_diagnostic.py",
+              "sha256": "F7CB98A51ECEC10087D806703FB3E7F6FBBBABC5D8F7E490850B2E7DA06280FF"
+            },
+            {
+              "defaults": [],
+              "kw_defaults": [
+                null,
+                null
+              ],
+              "lineno": 357,
+              "parameters": [
+                "raw_root",
+                "pairs"
+              ],
+              "path": "scripts/research/run_rd41_full_risk_set_censoring_reconciliation.py",
+              "sha256": "F15CB245B34E268A97C43A3561EF5B1B4E8F5205397F9F83E10F52F28D3998D8"
+            },
+            {
+              "defaults": [],
+              "kw_defaults": [],
+              "lineno": 289,
+              "parameters": [
+                "raw_root",
+                "pairs"
+              ],
+              "path": "scripts/research/run_rd42_context_support_census.py",
+              "sha256": "38AE63A9FFD9E5B5ED4DE6E16DF0288EBE208C549BE9D245218DF6571A55125C"
+            }
+          ],
+          "status": "PRODUCER_CALL"
+        },
+        {
+          "chain": [
+            {
+              "callee": "_replay_selective",
+              "caller_line": 302,
+              "caller_path": "src/spotbot/research/a10_selective_protection_asymmetry.py",
+              "kind": "CALLER_PARAMETER_BINDING",
+              "parameter": "frames",
+              "passed_expression": "frames"
+            }
+          ],
+          "depth": 1,
+          "function": "replay_winner_retention_candidate",
+          "parameter": "frames",
+          "path": "src/spotbot/research/a10_selective_protection_asymmetry.py",
+          "status": "PARAMETER_WITH_NO_CALLERS"
+        },
+        {
+          "chain": [
+            {
+              "callee": "_replay_selective",
+              "caller_line": 329,
+              "caller_path": "src/spotbot/research/a10_selective_protection_asymmetry.py",
+              "kind": "CALLER_PARAMETER_BINDING",
+              "parameter": "frames",
+              "passed_expression": "frames"
+            }
+          ],
+          "depth": 1,
+          "function": "replay_loser_rescue_diagnostic",
+          "parameter": "frames",
+          "path": "src/spotbot/research/a10_selective_protection_asymmetry.py",
+          "status": "PARAMETER_WITH_NO_CALLERS"
+        },
+        {
+          "chain": [],
+          "depth": 0,
+          "function": "replay_reversible_floor_candidate",
+          "parameter": "frames",
+          "path": "src/spotbot/research/a4r1_reversible_floor_replay.py",
+          "status": "PARAMETER_WITH_NO_CALLERS"
+        },
+        {
+          "chain": [
+            {
+              "callee": "replay_same_pair_secondary_shadow",
+              "caller_line": 241,
+              "caller_path": "scripts/research/run_eaa_same_pair_secondary_shadow_parity.py",
+              "kind": "CALLER_PARAMETER_BINDING",
+              "parameter": "frames",
+              "passed_expression": "frames"
+            }
+          ],
+          "depth": 1,
+          "expression": "frames",
+          "function": "main",
+          "path": "scripts/research/run_eaa_same_pair_secondary_shadow_parity.py",
+          "status": "UNRESOLVED_LOCAL_NAME"
+        },
+        {
+          "chain": [
+            {
+              "callee": "replay_same_pair_secondary_shadow",
+              "caller_line": 251,
+              "caller_path": "scripts/research/run_eaa_same_pair_secondary_shadow_parity.py",
+              "kind": "CALLER_PARAMETER_BINDING",
+              "parameter": "frames",
+              "passed_expression": "frames"
+            }
+          ],
+          "depth": 1,
+          "expression": "frames",
+          "function": "main",
+          "path": "scripts/research/run_eaa_same_pair_secondary_shadow_parity.py",
+          "status": "UNRESOLVED_LOCAL_NAME"
+        }
+      ],
+      "unique_producer_definitions": []
+    }
+  },
+  "status": "PASS"
+}
