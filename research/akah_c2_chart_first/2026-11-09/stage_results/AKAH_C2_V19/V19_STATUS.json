@@ -1,0 +1,37 @@
+{
+  "scope": "historical research only 2020-01-01 through 2023-12-31",
+  "daily_actionable_pairs": 305,
+  "candidate_policies": 8,
+  "analysed_portfolio_variants": 16,
+  "economic_scenarios": 44,
+  "cross_engine_max_nav_discrepancy_usdt": {
+    "BTC_REFERENCE_100": 0.0,
+    "V19_BREAKOUT_40": 1.4551915228366852e-10,
+    "V19_DUAL_60": 1.7462298274040222e-10,
+    "V19_BEAR_RECOVERY_35": 4.0745362639427185e-10
+  },
+  "prefix_invariance": {
+    "status": "PASS_PREFIX_INVARIANCE",
+    "cut_day": "2023-07-01",
+    "policies_checked": [
+      "V19_BEAR_RECOVERY_35"
+    ],
+    "modified_future_assets": [
+      "BTC",
+      "SOL",
+      "INJ",
+      "AVAX"
+    ],
+    "daily_equity_values_checked": 1277,
+    "trades_closed_before_cut_checked": 163,
+    "max_pre_cut_usdt_difference": 0.0,
+    "scope": "only future mutated, not independent PIT test"
+  },
+  "2023_5x_wave_sample_ge3m_usdt_quote_liquidity_at_some_point": 20,
+  "wave40_btc50_wave_entries": 7,
+  "C2_historical_PIT_certified": false,
+  "no_unbiased_test_post_research": true,
+  "historical_orderbook_certified": false,
+  "real_execution_approved": false,
+  "result": "RESEARCH_ONLY_NO_STABLE_EDGE_CERTIFICATION"
+}
